@@ -1,7 +1,5 @@
-package org.polarsys.kitalpha.vp.componentsamplesafetypattern.design.service;
-
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -10,10 +8,18 @@ package org.polarsys.kitalpha.vp.componentsamplesafetypattern.design.service;
  * Contributors:
  *  Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
+package org.polarsys.kitalpha.vp.componentsamplesafetypattern.design.service;
+
+import org.eclipse.emf.ecore.EObject;
+import org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.Safety;
+
 
 // Generated on 22.09.2014 at 12:07:08 CEST by Viewpoint DSL Generator V 0.1
 
 /**
+ * 
+ * @author Faycal ABKA
+ * 
  * <!-- begin-user-doc -->
  * This class is an implementation of the DoReMi JavaExtension '<em><b>[org.polarsys.kitalpha.vp.componentsamplesafetypattern.design.service.ComponentSampleSafetyPatternOpenJavaService]</b></em>'.
  * <!-- end-user-doc -->
@@ -30,6 +36,9 @@ public class ComponentSampleSafetyPatternOpenJavaService {
 	* @generated
 	*/
 	public ComponentSampleSafetyPatternOpenJavaService() {
-		// TODO Auto-generated method stub
+	}
+
+	public boolean isComponent(EObject eObject) {
+		return eObject instanceof Safety;
 	}
 }

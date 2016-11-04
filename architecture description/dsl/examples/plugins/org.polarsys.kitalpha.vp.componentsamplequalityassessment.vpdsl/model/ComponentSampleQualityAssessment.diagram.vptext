@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -8,58 +8,90 @@
  * Contributors:
  *  Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
- 
- /**
+
+/**
  *	Viewpoint ComponentSampleQualityAssessment
  *	@author: Benoît Langlois
  *	@date: 29/08/14
  *
  */
 import external "platform:/resource/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign"
-
 Diagrams ComponentSampleQualityAssessment.diagram {
 	DiagramExtension "ComponentSampleQualityAssessmentDiagram" {
 		extended-diagram: ComponentSampleDiagram
 		Mapping {
 			Container QualityAssessment_ComponentSample {
 				import: HardwareComponentContainer_CM Contains {
-
-					Node QualityAssessmentNode {
-						domain-context: ComponentSampleQualityAssessment.data.QualityAssessment provided-by association external emde.ExtensibleElement.ownedExtensions
+					Container QualityAssessmentNode {
+						domain-context: ComponentSampleQualityAssessment.data.QualityAssessment
+						provided-by association external emde.ExtensibleElement.ownedExtensions
 						Representation {
-							Label { content: "Quality: " + ComponentSampleQualityAssessment.data.QualityAssessment.confidenceLevel police: black alignment: center}
+							Label {
+								content: "Quality: " + ComponentSampleQualityAssessment.data.QualityAssessment.confidenceLevel
+								police: black
+							}
 							Style {
-								BasicStyle { border-color: black background: chocolate form: Square }
+								FlatStyle {
+									background: chocolate foreground: chocolate
+								}
 							}
 						}
+//						Representation {
+//							Label {
+//								content: "Quality: " + ComponentSampleQualityAssessment.data.QualityAssessment.confidenceLevel
+//								police: black
+//								alignment: center
+//							}
+//							Style {
+//								BasicStyle {
+//									border-color: black background: chocolate form: Square
+//								}
+//							}
+//						}
 						Contains {
-							BorderedNode QualityMeasureBorderedNode {
-								domain-context: ComponentSampleQualityAssessment.data.QualityMeasure  provided-by association ComponentSampleQualityAssessment.data.QualityAssessment.measures
+							Node QualityMeasureBorderedNode {
+								domain-context: ComponentSampleQualityAssessment.data.QualityMeasure
+								provided-by association ComponentSampleQualityAssessment.data.QualityAssessment.measures
 								Representation {
 									Label {
 										content: ComponentSampleQualityAssessment.data.QualityMeasure.measureValue
-										position: node alignment: center
+										position: node
+										alignment: center
 									}
-								Style {
-									BasicStyle { background: light_chocolate form: Square }
-							   	}
-							  }
+									Style {
+										Image {
+											path: "empty.png"
+										}
+									}
+								}
 							}
 						}
 					}
-				} 
+				}
 			}
 		}
 		Actions {
-			// QualityAssessmentNode actions
-			Create QualityAssessmentNodeCreate { label: "Quality Assessment" action-for: QualityAssessment_ComponentSample.QualityAssessmentNode}
-			Drop QualityAssessmentNodeDrop { label: "Drop Quality Assessment" action-for:  QualityAssessment_ComponentSample.QualityAssessmentNode}
-			Delete QualityAssessmentNodeDelete { label: "Delete Quality Assessment" action-for:  QualityAssessment_ComponentSample.QualityAssessmentNode}
+		// QualityAssessmentNode actions
+			Create QualityAssessmentNodeCreate {
+				label: "Quality Assessment" action-for: QualityAssessment_ComponentSample.QualityAssessmentNode
+			}
+			Drop QualityAssessmentNodeDrop {
+				label: "Drop Quality Assessment" action-for: QualityAssessment_ComponentSample.QualityAssessmentNode
+			}
+			Delete QualityAssessmentNodeDelete {
+				label: "Delete Quality Assessment" action-for: QualityAssessment_ComponentSample.QualityAssessmentNode
+			}
 
 			// QualityMeasureBorderedNode actions
-			Create QualityMeasureBorderedNodeCreate { label: "Quality Measure" action-for:  QualityAssessment_ComponentSample.QualityAssessmentNode.QualityMeasureBorderedNode}
-			Delete QualityMeasureBorderedNodeDelete { label: "Delete Quality Mesaure" action-for:  QualityAssessment_ComponentSample.QualityAssessmentNode.QualityMeasureBorderedNode}
-			Drop QualityMeasureBorderedNodeDrop { label: "Drop Quality Measure" action-for:  QualityAssessment_ComponentSample.QualityAssessmentNode.QualityMeasureBorderedNode}
+			Create QualityMeasureBorderedNodeCreate {
+				label: "Quality Measure" action-for: QualityAssessment_ComponentSample.QualityAssessmentNode.QualityMeasureBorderedNode
+			}
+			Delete QualityMeasureBorderedNodeDelete {
+				label: "Delete Quality Mesaure" action-for: QualityAssessment_ComponentSample.QualityAssessmentNode.QualityMeasureBorderedNode
+			}
+			Drop QualityMeasureBorderedNodeDrop {
+				label: "Drop Quality Measure" action-for: QualityAssessment_ComponentSample.QualityAssessmentNode.QualityMeasureBorderedNode
+			}
 		}
 	}
 }

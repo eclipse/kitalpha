@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="ASCII"?>
-<vp:Viewpoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:vp="http://www.polarsys.org/kitalpha/ad/viewpoint/1.0.0" name="Component Sample Framework" id="org.polarsys.kitalpha.vp.componentsampleframework" vpid="_yYhuMEI8EeSvPZ_bPTSMKQ">
-  <ruleSet vpid="_ydUjUmkQEeWGsuz71d277w" target="_yYhuMEI8EeSvPZ_bPTSMKQ">
-    <newRules name="RuleOne" id="ComponentSampleFramework.RuleOne" vpid="_ydUjU2kQEeWGsuz71d277w" implementation="org.polarsys.kitalpha.vp.componentsampleframework.af.businessrules.RuleOne" language="" type="Java"/>
-    <newRules name="RuleTwo" id="ComponentSampleFramework.RuleTwo" vpid="_ydUjVGkQEeWGsuz71d277w" implementation="org.polarsys.kitalpha.vp.componentsampleframework.af.businessrules.RuleTwo" language="" type="Java"/>
+<vp:Viewpoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:vp="http://www.polarsys.org/kitalpha/ad/viewpoint/1.0.0" name="Component Sample Framework" id="org.polarsys.kitalpha.vp.componentsampleframework" vpid="_yYhuMEI8EeSvPZ_bPTSMKQ" version="1.1.0.qualifier">
+  <ruleSet vpid="_UtQc9KHJEeaZw5dJjjkJMA" target="_yYhuMEI8EeSvPZ_bPTSMKQ">
+    <newRules name="RuleOne" id="ComponentSampleFramework.RuleOne" vpid="_UtQc9aHJEeaZw5dJjjkJMA" implementation="org.polarsys.kitalpha.vp.componentsampleframework.af.businessrules.RuleOne" language="" type="Java"/>
+    <newRules name="RuleTwo" id="ComponentSampleFramework.RuleTwo" vpid="_UtZm4KHJEeaZw5dJjjkJMA" implementation="org.polarsys.kitalpha.vp.componentsampleframework.af.businessrules.RuleTwo" language="" type="Java"/>
   </ruleSet>
-  <serviceSet vpid="_ydKyUWkQEeWGsuz71d277w" target="_yYhuMEI8EeSvPZ_bPTSMKQ">
-    <newServices name="Service1" id="ComponentSampleFramework.Service1" vpid="_ydUjUGkQEeWGsuz71d277w" relatedRules="_ydUjU2kQEeWGsuz71d277w" type="execute.rules"/>
-    <newServices name="Service2" id="ComponentSampleFramework.Service2" vpid="_ydUjUWkQEeWGsuz71d277w" relatedRules="_ydUjU2kQEeWGsuz71d277w _ydUjVGkQEeWGsuz71d277w" type="execute.rules"/>
+  <serviceSet vpid="_UtQc8aHJEeaZw5dJjjkJMA" target="_yYhuMEI8EeSvPZ_bPTSMKQ">
+    <newServices name="Service1" id="ComponentSampleFramework.Service1" vpid="_UtQc8qHJEeaZw5dJjjkJMA" relatedRules="_UtQc9aHJEeaZw5dJjjkJMA" type="execute.rules"/>
+    <newServices name="Service2" id="ComponentSampleFramework.Service2" vpid="_UtQc86HJEeaZw5dJjjkJMA" relatedRules="_UtQc9aHJEeaZw5dJjjkJMA _UtZm4KHJEeaZw5dJjjkJMA" type="execute.rules"/>
   </serviceSet>
-  <propertySet vpid="_ydKyUGkQEeWGsuz71d277w" target="_yYhuMEI8EeSvPZ_bPTSMKQ">
+  <propertySet vpid="_UtQc8KHJEeaZw5dJjjkJMA" target="_yYhuMEI8EeSvPZ_bPTSMKQ">
     <newProperties name="Copyright" id="ComponentSampleFramework.Copyright" value="PolarSys"/>
   </propertySet>
   <metamodel>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<af:AF xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:af="http://www.polarsys.org/kitalpha/ad/af/1.0.0" name="componentsamplearchitectureframework" id="_0uxlwKHWEea17aXpxhZ7TA" vpid="org.polarsys.kitalpha.af.componentsamplearchitectureframework">
+  <viewpoints href="../../org.polarsys.kitalpha.vp.componentsample.af/model/ComponentSample.vp#_upHvUEJfEeSX2_-AyeUK-w"/>
+  <viewpoints href="../../org.polarsys.kitalpha.vp.componentsampleframework.af/model/ComponentSampleFramework.vp#_yYhuMEI8EeSvPZ_bPTSMKQ"/>
+  <viewpoints href="../../org.polarsys.kitalpha.vp.componentsampleperformance.af/model/ComponentSamplePerformance.vp#_QDcNAEI_EeSvPZ_bPTSMKQ"/>
+  <viewpoints href="../../org.polarsys.kitalpha.vp.componentsamplesafety.af/model/ComponentSampleSafety.vp#_A4gecEJAEeSvPZ_bPTSMKQ"/>
+  <viewpoints href="../../org.polarsys.kitalpha.vp.componentsamplequalityassessment.af/model/ComponentSampleQualityAssessment.vp#_yAbP4EI_EeSvPZ_bPTSMKQ"/>
+  <viewpoints href="../../org.polarsys.kitalpha.vp.componentsamplesafetypattern.af/model/ComponentSampleSafetyPattern.vp#_MHv-EEJAEeSvPZ_bPTSMKQ"/>
+</af:AF>

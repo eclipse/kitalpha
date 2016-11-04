@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -96,10 +96,13 @@ public class ComponentSampleSafetyPackageImpl extends EPackageImpl implements Co
 	 */
 	public static ComponentSampleSafetyPackage init() {
 		if (isInited)
-			return (ComponentSampleSafetyPackage) EPackage.Registry.INSTANCE.getEPackage(ComponentSampleSafetyPackage.eNS_URI);
+			return (ComponentSampleSafetyPackage) EPackage.Registry.INSTANCE
+					.getEPackage(ComponentSampleSafetyPackage.eNS_URI);
 
 		// Obtain or create and register package
-		ComponentSampleSafetyPackageImpl theComponentSampleSafetyPackage = (ComponentSampleSafetyPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ComponentSampleSafetyPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ComponentSampleSafetyPackageImpl());
+		ComponentSampleSafetyPackageImpl theComponentSampleSafetyPackage = (ComponentSampleSafetyPackageImpl) (EPackage.Registry.INSTANCE
+				.get(eNS_URI) instanceof ComponentSampleSafetyPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
+						: new ComponentSampleSafetyPackageImpl());
 
 		isInited = true;
 
@@ -248,7 +251,8 @@ public class ComponentSampleSafetyPackageImpl extends EPackageImpl implements Co
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		ComponentSamplePackage theComponentSamplePackage = (ComponentSamplePackage) EPackage.Registry.INSTANCE.getEPackage(ComponentSamplePackage.eNS_URI);
+		ComponentSamplePackage theComponentSamplePackage = (ComponentSamplePackage) EPackage.Registry.INSTANCE
+				.getEPackage(ComponentSamplePackage.eNS_URI);
 		EmdePackage theEmdePackage = (EmdePackage) EPackage.Registry.INSTANCE.getEPackage(EmdePackage.eNS_URI);
 
 		// Create type parameters
@@ -261,29 +265,47 @@ public class ComponentSampleSafetyPackageImpl extends EPackageImpl implements Co
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(safetyEClass, Safety.class, "Safety", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getSafety_Criticality(), this.getCRITICALITY(), "criticality", null, 0, 1, Safety.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(getSafety_Dal(), this.getDAL_LEVEL(), "dal", null, 0, 1, Safety.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(getSafety_State(), this.getSTATE(), "state", null, 0, 1, Safety.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getSafety_Criticality(), this.getCRITICALITY(), "criticality", null, 0, 1, Safety.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSafety_Dal(), this.getDAL_LEVEL(), "dal", null, 0, 1, Safety.class, !IS_TRANSIENT, //$NON-NLS-1$
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSafety_State(), this.getSTATE(), "state", null, 0, 1, Safety.class, !IS_TRANSIENT, //$NON-NLS-1$
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
-		initEEnum(stateEEnum, org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.STATE.class, "STATE"); //$NON-NLS-1$
-		addEEnumLiteral(stateEEnum, org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.STATE.OPERATIVE);
+		initEEnum(stateEEnum, org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.STATE.class,
+				"STATE"); //$NON-NLS-1$
+		addEEnumLiteral(stateEEnum,
+				org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.STATE.OPERATIVE);
 		addEEnumLiteral(stateEEnum, org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.STATE.LOST);
-		addEEnumLiteral(stateEEnum, org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.STATE.ERRONEOUS);
+		addEEnumLiteral(stateEEnum,
+				org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.STATE.ERRONEOUS);
 
-		initEEnum(daL_LEVELEEnum, org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.DAL_LEVEL.class, "DAL_LEVEL"); //$NON-NLS-1$
-		addEEnumLiteral(daL_LEVELEEnum, org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.DAL_LEVEL.DAL_A);
-		addEEnumLiteral(daL_LEVELEEnum, org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.DAL_LEVEL.DAL_B);
-		addEEnumLiteral(daL_LEVELEEnum, org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.DAL_LEVEL.DAL_C);
-		addEEnumLiteral(daL_LEVELEEnum, org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.DAL_LEVEL.DAL_D);
-		addEEnumLiteral(daL_LEVELEEnum, org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.DAL_LEVEL.DAL_E);
+		initEEnum(daL_LEVELEEnum, org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.DAL_LEVEL.class,
+				"DAL_LEVEL"); //$NON-NLS-1$
+		addEEnumLiteral(daL_LEVELEEnum,
+				org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.DAL_LEVEL.DAL_A);
+		addEEnumLiteral(daL_LEVELEEnum,
+				org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.DAL_LEVEL.DAL_B);
+		addEEnumLiteral(daL_LEVELEEnum,
+				org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.DAL_LEVEL.DAL_C);
+		addEEnumLiteral(daL_LEVELEEnum,
+				org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.DAL_LEVEL.DAL_D);
+		addEEnumLiteral(daL_LEVELEEnum,
+				org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.DAL_LEVEL.DAL_E);
 
-		initEEnum(criticalityEEnum, org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.CRITICALITY.class, "CRITICALITY"); //$NON-NLS-1$
-		addEEnumLiteral(criticalityEEnum, org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.CRITICALITY.CATASTROPHIC);
-		addEEnumLiteral(criticalityEEnum, org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.CRITICALITY.HAZARDOUS);
-		addEEnumLiteral(criticalityEEnum, org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.CRITICALITY.MAJOR);
-		addEEnumLiteral(criticalityEEnum, org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.CRITICALITY.MINOR);
-		addEEnumLiteral(criticalityEEnum, org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.CRITICALITY.NO_SAFETY_EFFECT);
+		initEEnum(criticalityEEnum,
+				org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.CRITICALITY.class, "CRITICALITY"); //$NON-NLS-1$
+		addEEnumLiteral(criticalityEEnum,
+				org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.CRITICALITY.CATASTROPHIC);
+		addEEnumLiteral(criticalityEEnum,
+				org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.CRITICALITY.HAZARDOUS);
+		addEEnumLiteral(criticalityEEnum,
+				org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.CRITICALITY.MAJOR);
+		addEEnumLiteral(criticalityEEnum,
+				org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.CRITICALITY.MINOR);
+		addEEnumLiteral(criticalityEEnum,
+				org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.CRITICALITY.NO_SAFETY_EFFECT);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -303,7 +325,8 @@ public class ComponentSampleSafetyPackageImpl extends EPackageImpl implements Co
 	 */
 	protected void createConstraintAnnotations() {
 		String source = "http://www.polarsys.org/kitalpha/emde/1.0.0/constraint"; //$NON-NLS-1$	
-		addAnnotation(safetyEClass, source, new String[] { "ExtendedElement", " http://www.polarsys.org/kitalpha/ComponentSample/1.0.0#//AbstractComponent" //$NON-NLS-1$ //$NON-NLS-2$
+		addAnnotation(safetyEClass, source, new String[] { "ExtendedElement", //$NON-NLS-1$
+				" http://www.polarsys.org/kitalpha/ComponentSample/1.0.0#//AbstractComponent" //$NON-NLS-1$
 		});
 	}
 
@@ -315,7 +338,8 @@ public class ComponentSampleSafetyPackageImpl extends EPackageImpl implements Co
 	 */
 	protected void createConstraintMappingAnnotations() {
 		String source = "http://www.polarsys.org/kitalpha/emde/1.0.0/constraintMapping"; //$NON-NLS-1$	
-		addAnnotation(safetyEClass, source, new String[] { "Mapping", " platform:/resource/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//AbstractComponent" //$NON-NLS-1$ //$NON-NLS-2$
+		addAnnotation(safetyEClass, source, new String[] { "Mapping", //$NON-NLS-1$
+				" platform:/resource/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//AbstractComponent" //$NON-NLS-1$
 		});
 	}
 

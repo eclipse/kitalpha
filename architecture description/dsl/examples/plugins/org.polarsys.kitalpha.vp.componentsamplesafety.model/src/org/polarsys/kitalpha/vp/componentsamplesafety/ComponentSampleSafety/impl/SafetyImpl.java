@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -140,7 +140,8 @@ public class SafetyImpl extends ComponentElementImpl implements Safety {
 		CRITICALITY oldCriticality = criticality;
 		criticality = newCriticality == null ? CRITICALITY_EDEFAULT : newCriticality;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentSampleSafetyPackage.SAFETY__CRITICALITY, oldCriticality, criticality));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentSampleSafetyPackage.SAFETY__CRITICALITY,
+					oldCriticality, criticality));
 
 	}
 
@@ -166,7 +167,8 @@ public class SafetyImpl extends ComponentElementImpl implements Safety {
 		DAL_LEVEL oldDal = dal;
 		dal = newDal == null ? DAL_EDEFAULT : newDal;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentSampleSafetyPackage.SAFETY__DAL, oldDal, dal));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentSampleSafetyPackage.SAFETY__DAL, oldDal,
+					dal));
 
 	}
 
@@ -192,7 +194,8 @@ public class SafetyImpl extends ComponentElementImpl implements Safety {
 		STATE oldState = state;
 		state = newState == null ? STATE_EDEFAULT : newState;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentSampleSafetyPackage.SAFETY__STATE, oldState, state));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentSampleSafetyPackage.SAFETY__STATE, oldState,
+					state));
 
 	}
 

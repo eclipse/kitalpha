@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -130,7 +130,8 @@ public class PerformanceImpl extends ComponentElementImpl implements Performance
 		PerformanceStatus oldStatus = status;
 		status = newStatus;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ComponentSamplePerformancePackage.PERFORMANCE__STATUS, oldStatus, newStatus);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					ComponentSamplePerformancePackage.PERFORMANCE__STATUS, oldStatus, newStatus);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -151,14 +152,17 @@ public class PerformanceImpl extends ComponentElementImpl implements Performance
 		if (newStatus != status) {
 			NotificationChain msgs = null;
 			if (status != null)
-				msgs = ((InternalEObject) status).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ComponentSamplePerformancePackage.PERFORMANCE__STATUS, null, msgs);
+				msgs = ((InternalEObject) status).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - ComponentSamplePerformancePackage.PERFORMANCE__STATUS, null, msgs);
 			if (newStatus != null)
-				msgs = ((InternalEObject) newStatus).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ComponentSamplePerformancePackage.PERFORMANCE__STATUS, null, msgs);
+				msgs = ((InternalEObject) newStatus).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - ComponentSamplePerformancePackage.PERFORMANCE__STATUS, null, msgs);
 			msgs = basicSetStatus(newStatus, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentSamplePerformancePackage.PERFORMANCE__STATUS, newStatus, newStatus));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentSamplePerformancePackage.PERFORMANCE__STATUS,
+					newStatus, newStatus));
 
 	}
 
@@ -184,7 +188,8 @@ public class PerformanceImpl extends ComponentElementImpl implements Performance
 		int oldComplexity = complexity;
 		complexity = newComplexity;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentSamplePerformancePackage.PERFORMANCE__COMPLEXITY, oldComplexity, complexity));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					ComponentSamplePerformancePackage.PERFORMANCE__COMPLEXITY, oldComplexity, complexity));
 
 	}
 
@@ -210,7 +215,8 @@ public class PerformanceImpl extends ComponentElementImpl implements Performance
 		int oldCost = cost;
 		cost = newCost;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentSamplePerformancePackage.PERFORMANCE__COST, oldCost, cost));
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentSamplePerformancePackage.PERFORMANCE__COST,
+					oldCost, cost));
 
 	}
 

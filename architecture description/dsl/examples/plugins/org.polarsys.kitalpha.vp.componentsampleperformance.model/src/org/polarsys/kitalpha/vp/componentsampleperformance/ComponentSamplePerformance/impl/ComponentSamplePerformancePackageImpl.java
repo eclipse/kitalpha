@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -83,10 +83,13 @@ public class ComponentSamplePerformancePackageImpl extends EPackageImpl implemen
 	 */
 	public static ComponentSamplePerformancePackage init() {
 		if (isInited)
-			return (ComponentSamplePerformancePackage) EPackage.Registry.INSTANCE.getEPackage(ComponentSamplePerformancePackage.eNS_URI);
+			return (ComponentSamplePerformancePackage) EPackage.Registry.INSTANCE
+					.getEPackage(ComponentSamplePerformancePackage.eNS_URI);
 
 		// Obtain or create and register package
-		ComponentSamplePerformancePackageImpl theComponentSamplePerformancePackage = (ComponentSamplePerformancePackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ComponentSamplePerformancePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ComponentSamplePerformancePackageImpl());
+		ComponentSamplePerformancePackageImpl theComponentSamplePerformancePackage = (ComponentSamplePerformancePackageImpl) (EPackage.Registry.INSTANCE
+				.get(eNS_URI) instanceof ComponentSamplePerformancePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
+						: new ComponentSamplePerformancePackageImpl());
 
 		isInited = true;
 
@@ -224,7 +227,8 @@ public class ComponentSamplePerformancePackageImpl extends EPackageImpl implemen
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		ComponentSamplePackage theComponentSamplePackage = (ComponentSamplePackage) EPackage.Registry.INSTANCE.getEPackage(ComponentSamplePackage.eNS_URI);
+		ComponentSamplePackage theComponentSamplePackage = (ComponentSamplePackage) EPackage.Registry.INSTANCE
+				.getEPackage(ComponentSamplePackage.eNS_URI);
 		EmdePackage theEmdePackage = (EmdePackage) EPackage.Registry.INSTANCE.getEPackage(EmdePackage.eNS_URI);
 
 		// Create type parameters
@@ -237,13 +241,21 @@ public class ComponentSamplePerformancePackageImpl extends EPackageImpl implemen
 		performanceStatusEClass.getESuperTypes().add(theComponentSamplePackage.getComponentElement());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(performanceEClass, Performance.class, "Performance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getPerformance_Status(), this.getPerformanceStatus(), null, "status", null, 0, 1, Performance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(getPerformance_Complexity(), ecorePackage.getEInt(), "complexity", null, 0, 1, Performance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(getPerformance_Cost(), ecorePackage.getEInt(), "cost", null, 0, 1, Performance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEClass(performanceEClass, Performance.class, "Performance", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPerformance_Status(), this.getPerformanceStatus(), null, "status", null, 0, 1, //$NON-NLS-1$
+				Performance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPerformance_Complexity(), ecorePackage.getEInt(), "complexity", null, 0, 1, Performance.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPerformance_Cost(), ecorePackage.getEInt(), "cost", null, 0, 1, Performance.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(performanceStatusEClass, PerformanceStatus.class, "PerformanceStatus", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getPerformanceStatus_Overhead(), ecorePackage.getEBoolean(), "overhead", null, 0, 1, PerformanceStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEClass(performanceStatusEClass, PerformanceStatus.class, "PerformanceStatus", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPerformanceStatus_Overhead(), ecorePackage.getEBoolean(), "overhead", null, 0, 1, //$NON-NLS-1$
+				PerformanceStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -263,7 +275,8 @@ public class ComponentSamplePerformancePackageImpl extends EPackageImpl implemen
 	 */
 	protected void createConstraintAnnotations() {
 		String source = "http://www.polarsys.org/kitalpha/emde/1.0.0/constraint"; //$NON-NLS-1$	
-		addAnnotation(performanceEClass, source, new String[] { "ExtendedElement", " http://www.polarsys.org/kitalpha/ComponentSample/1.0.0#//AbstractComponent" //$NON-NLS-1$ //$NON-NLS-2$
+		addAnnotation(performanceEClass, source, new String[] { "ExtendedElement", //$NON-NLS-1$
+				" http://www.polarsys.org/kitalpha/ComponentSample/1.0.0#//AbstractComponent" //$NON-NLS-1$
 		});
 	}
 
@@ -275,7 +288,8 @@ public class ComponentSamplePerformancePackageImpl extends EPackageImpl implemen
 	 */
 	protected void createConstraintMappingAnnotations() {
 		String source = "http://www.polarsys.org/kitalpha/emde/1.0.0/constraintMapping"; //$NON-NLS-1$	
-		addAnnotation(performanceEClass, source, new String[] { "Mapping", " platform:/resource/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//AbstractComponent" //$NON-NLS-1$ //$NON-NLS-2$
+		addAnnotation(performanceEClass, source, new String[] { "Mapping", //$NON-NLS-1$
+				" platform:/resource/org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//AbstractComponent" //$NON-NLS-1$
 		});
 	}
 

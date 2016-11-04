@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015 Thales Global Services S.A.S.
+ * Copyright (c) 2015, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -20,21 +20,29 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.ILog;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.Status;
+import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.sirius.business.api.session.Session;
-import org.eclipse.sirius.business.api.session.factory.SessionFactory;
-import org.eclipse.sirius.ui.business.api.viewpoint.ViewpointSelection;
+import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.ui.tools.internal.operations.SemanticResourceAdditionOperation;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
+import org.polarsys.kitalpha.ad.integration.sirius.listeners.SiriusHelper;
+import org.polarsys.kitalpha.ad.services.manager.ViewpointActivationException;
+import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentModel;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSampleFactory;
 import org.polarsys.kitalpha.vp.componentsample.wizard.project.Activator;
@@ -46,7 +54,8 @@ import org.polarsys.kitalpha.vp.componentsample.wizard.project.Activator;
  */
 @SuppressWarnings("restriction")
 public class NewComponentsampleProject extends Wizard implements INewWizard {
-
+	
+	private static final ILog LOGGER = Activator.getDefault().getLog();
 	private IWizardPage page;
 	
 	public NewComponentsampleProject() { 
@@ -56,18 +65,17 @@ public class NewComponentsampleProject extends Wizard implements INewWizard {
 	}
 
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public String getWindowTitle() {
-		return "New Component sample Project";
+		return "New Component sample Project"; //$NON-NLS-1$
 	}
 	
 	@Override
 	public void addPages() {
-		page = new NewProjectPage("New Component sample Project");
+		page = new NewProjectPage("New Component sample Project"); //$NON-NLS-1$
 		addPage(page);
 	}
 
@@ -93,7 +101,7 @@ public class NewComponentsampleProject extends Wizard implements INewWizard {
 					protected void execute(IProgressMonitor monitor)
 							throws CoreException, InvocationTargetException, InterruptedException {
 						
-						monitor.beginTask("create project", 1);
+						monitor.beginTask("Project Creation", 1); //$NON-NLS-1$
 						csProject.create(monitor);
 						csProject.open(monitor);
 					}
@@ -108,17 +116,16 @@ public class NewComponentsampleProject extends Wizard implements INewWizard {
 							throws CoreException, InvocationTargetException, InterruptedException {
 
 						final ResourceSet resourceSet = new ResourceSetImpl();
-						final URI fileURI = buildPlatformResourceURI(projectName, modelName, "componentsample");
+						final URI fileURI = buildPlatformResourceURI(projectName, modelName, "componentsample"); //$NON-NLS-1$
 						final Resource resource = resourceSet.createResource(fileURI);
 						final ComponentModel componentModel = ComponentSampleFactory.eINSTANCE.createComponentModel();
 						componentModel.setName(modelName);
 						resource.getContents().add(componentModel);
 						try {
 							resource.save(Collections.emptyMap());
-							resource.load(Collections.emptyMap());
 
 							URI representationURI = buildPlatformResourceURI(projectName, modelName, "aird");
-							Session session = SessionFactory.INSTANCE.createSession(representationURI, monitor);
+							Session session = SessionManager.INSTANCE.getSession(representationURI, new NullProgressMonitor());
 
 							Collection<URI> uris = new HashSet<URI>();
 							uris.add(fileURI);
@@ -129,19 +136,16 @@ public class NewComponentsampleProject extends Wizard implements INewWizard {
 							SemanticResourceAdditionOperation addModelSession = new SemanticResourceAdditionOperation(sessions, uris);
 
 							getContainer().run(false, false, addModelSession);
-
-							Collection<Object> results = addModelSession.getResults();
-							for (Object object : results) {
-								if (object instanceof Session){
-									ViewpointSelection.openViewpointsSelectionDialog((Session)object);
-								}
-							}
 							
 							if (session != null && session.isOpen() == false){
+								session.save(new NullProgressMonitor());
 								session.open(monitor);
 							}
+							
+							referenceComponentSample(session);
+							
 						} catch (IOException e) {
-							e.printStackTrace();
+							LOGGER.log(new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage(), e));
 						}
 
 					}
@@ -153,22 +157,10 @@ public class NewComponentsampleProject extends Wizard implements INewWizard {
 			} catch (InterruptedException e){
 				return false;
 			}
-			
 		}
-		
 		return true;
 	}
 	
-//	private Viewpoint getComponentSampleViewpoint(){
-//		Set<Viewpoint> viewpoints = ViewpointRegistry.getInstance().getViewpoints();
-//		
-//		for (Viewpoint viewpoint : viewpoints) {
-//			if (viewpoint.getName().equalsIgnoreCase("componentsample")){
-//				return viewpoint;
-//			}
-//		}
-//		return null;
-//	}
 
 	private URI buildPlatformResourceURI(String projectName, String modelName, String extension) {
 		StringBuilder tmp = new StringBuilder();
@@ -177,6 +169,25 @@ public class NewComponentsampleProject extends Wizard implements INewWizard {
 	}
 
 
-	
+	private void referenceComponentSample(final Session session){
+		if (session != null){
+			final String COMPONENT_SAMPLE_ID = "org.polarsys.kitalpha.vp.componentsample";
+			final ViewpointManager viewpointManager = SiriusHelper.getViewpointManager(session);
+			Command ref = new RecordingCommand(session.getTransactionalEditingDomain()) {
+
+				@Override
+				protected void doExecute() {
+					try {
+						if (!viewpointManager.isReferenced(COMPONENT_SAMPLE_ID)){
+							viewpointManager.reference(COMPONENT_SAMPLE_ID);
+						}
+					} catch (ViewpointActivationException e) {
+						e.printStackTrace();
+					}
+				}
+			};
+			session.getTransactionalEditingDomain().getCommandStack().execute(ref);
+		}
+	}
 
 }

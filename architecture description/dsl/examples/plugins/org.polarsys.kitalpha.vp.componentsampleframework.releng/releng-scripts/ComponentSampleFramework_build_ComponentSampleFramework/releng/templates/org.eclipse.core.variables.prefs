@@ -1,3 +1,13 @@
+################################################################################
+#Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+#  All rights reserved. This program and the accompanying materials
+#  are made available under the terms of the Eclipse Public License v1.0
+#  which accompanies this distribution, and is available at
+#  http://www.eclipse.org/legal/epl-v10.html
+# 
+# Contributors:
+#  Thales Global Services S.A.S - initial API and implementation
+################################################################################
 #Wed Jan 04 10:05:55 CET 2012
 eclipse.preferences.version=1
 org.eclipse.core.variables.valueVariables=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><valueVariables><valueVariable description\="" name\="relengDir" readOnly\="false" value\="${system_property\:relengDir}"/><valueVariable description\="" name\="build.root" readOnly\="false" value\="${system_property\:build.root}"/><valueVariable description\="" name\="tools" readOnly\="false" value\="${system_property\:tools}"/><valueVariable description\="" name\="result" readOnly\="false" value\="${system_property\:result}"/><valueVariable description\="" name\="publish" readOnly\="false" value\="${system_property\:publish}"/><valueVariable description\="" name\="workspace" readOnly\="false" value\="${system_property\:workspace}"/><valueVariable description\="" name\="timestamp" readOnly\="false" value\="${system_property\:timestamp}"/><valueVariable description\="" name\="repository.location" readOnly\="false" value\="${system_property\:repository.location}"/></valueVariables>

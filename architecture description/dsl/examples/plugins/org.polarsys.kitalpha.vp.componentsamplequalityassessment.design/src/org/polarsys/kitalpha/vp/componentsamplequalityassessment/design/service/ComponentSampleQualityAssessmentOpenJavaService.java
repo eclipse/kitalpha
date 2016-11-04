@@ -1,7 +1,5 @@
-package org.polarsys.kitalpha.vp.componentsamplequalityassessment.design.service;
-
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -10,6 +8,7 @@ package org.polarsys.kitalpha.vp.componentsamplequalityassessment.design.service
  * Contributors:
  *  Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
+package org.polarsys.kitalpha.vp.componentsamplequalityassessment.design.service;
 
 // Generated on 22.09.2014 at 12:04:07 CEST by Viewpoint DSL Generator V 0.1
 
@@ -30,6 +29,5 @@ public class ComponentSampleQualityAssessmentOpenJavaService {
 	* @generated
 	*/
 	public ComponentSampleQualityAssessmentOpenJavaService() {
-		// TODO Auto-generated method stub
 	}
 }

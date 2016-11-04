@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -12,7 +12,6 @@
 package org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern;
 
 import org.eclipse.emf.common.util.EList;
-import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentElement;
 import org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.Safety;
 
 /**
@@ -33,7 +32,7 @@ import org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.Safe
  * @generated
  */
 
-public interface SafetyMode extends ComponentElement {
+public interface SafetyMode extends Safety {
 
 	/**
 	 * Returns the value of the '<em><b>Involved Components</b></em>' reference list.

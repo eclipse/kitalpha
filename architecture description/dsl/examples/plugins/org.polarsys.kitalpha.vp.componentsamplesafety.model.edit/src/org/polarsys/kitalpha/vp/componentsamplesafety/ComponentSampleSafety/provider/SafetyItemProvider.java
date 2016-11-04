@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -38,7 +38,8 @@ import org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.Safe
  * <!-- end-user-doc -->
  * @generated
  */
-public class SafetyItemProvider extends ComponentElementItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class SafetyItemProvider extends ComponentElementItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -80,12 +81,14 @@ public class SafetyItemProvider extends ComponentElementItemProvider implements 
 
 		// begin-extension-code
 		itemPropertyDescriptors.add(createItemPropertyDescriptor
-				// end-extension-code
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Safety_criticality_feature"), //$NON-NLS-1$
-						getString("_UI_PropertyDescriptor_description", "_UI_Safety_criticality_feature", "_UI_Safety_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						ComponentSampleSafetyPackage.Literals.SAFETY__CRITICALITY, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
-						// begin-extension-code
-						null));
+		// end-extension-code
+		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_Safety_criticality_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_Safety_criticality_feature", "_UI_Safety_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				ComponentSampleSafetyPackage.Literals.SAFETY__CRITICALITY, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
+				// begin-extension-code
+				null));
 		// end-extension-code
 	}
 
@@ -99,12 +102,14 @@ public class SafetyItemProvider extends ComponentElementItemProvider implements 
 
 		// begin-extension-code
 		itemPropertyDescriptors.add(createItemPropertyDescriptor
-				// end-extension-code
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Safety_dal_feature"), //$NON-NLS-1$
-						getString("_UI_PropertyDescriptor_description", "_UI_Safety_dal_feature", "_UI_Safety_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						ComponentSampleSafetyPackage.Literals.SAFETY__DAL, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
-						// begin-extension-code
-						null));
+		// end-extension-code
+		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_Safety_dal_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_Safety_dal_feature", "_UI_Safety_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				ComponentSampleSafetyPackage.Literals.SAFETY__DAL, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
+				// begin-extension-code
+				null));
 		// end-extension-code
 	}
 
@@ -118,12 +123,14 @@ public class SafetyItemProvider extends ComponentElementItemProvider implements 
 
 		// begin-extension-code
 		itemPropertyDescriptors.add(createItemPropertyDescriptor
-				// end-extension-code
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Safety_state_feature"), //$NON-NLS-1$
-						getString("_UI_PropertyDescriptor_description", "_UI_Safety_state_feature", "_UI_Safety_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						ComponentSampleSafetyPackage.Literals.SAFETY__STATE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
-						// begin-extension-code
-						null));
+		// end-extension-code
+		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_Safety_state_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_Safety_state_feature", "_UI_Safety_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				ComponentSampleSafetyPackage.Literals.SAFETY__STATE, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
+				// begin-extension-code
+				null));
 		// end-extension-code
 	}
 
@@ -186,7 +193,9 @@ public class SafetyItemProvider extends ComponentElementItemProvider implements 
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 		// begin-extension-code
 		{
-			CommandParameter commandParameter = createChildParameter(EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS, ComponentSampleSafetyFactory.eINSTANCE.createSafety());
+			CommandParameter commandParameter = createChildParameter(
+					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
+					ComponentSampleSafetyFactory.eINSTANCE.createSafety());
 			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 				newChildDescriptors.add(commandParameter);
 			}

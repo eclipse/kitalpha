@@ -1,38 +1,48 @@
 <?xml version="1.0" encoding="ASCII"?>
-<vpdesc:Viewpoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:commondata="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/commondata/1.0.0" xmlns:expression="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/expression/1.0.0" xmlns:viewpointactivityexplorer="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/viewpointactivityexplorer/1.0.0" xmlns:vpconf="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpconf/1.0.0" xmlns:vpdesc="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdesc/1.0.0" xmlns:vpdiagram="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0" name="ComponentSamplePerformance" shortName="ComponentSamplePerformance">
+<vpdesc:Viewpoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:commondata="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/commondata/1.0.0" xmlns:configuration="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/conf/1.0.0" xmlns:descAirdGenConf="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/DescAirdGenConf/1.0.0" xmlns:docGenConfiguration="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/DocGenConfiguration/1.0.0" xmlns:expression="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/expression/1.0.0" xmlns:viewpointactivityexplorer="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/viewpointactivityexplorer/1.0.0" xmlns:vpconf="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpconf/1.0.0" xmlns:vpdesc="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdesc/1.0.0" xmlns:vpdiagram="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0" name="ComponentSamplePerformance" shortName="ComponentSamplePerformance">
   <VP_Data name="ComponentSamplePerformance.data">
     <VP_Classes name="Performance" icon="Performance.png">
       <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="status" LocalTarget="//@VP_Data/@VP_Classes.1"/>
       <VP_Class_Attributes name="complexity">
         <owned_type xsi:type="vpdesc:ExternalAttributeType">
-          <type href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+          <type href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
         </owned_type>
       </VP_Class_Attributes>
       <VP_Class_Attributes name="cost">
         <owned_type xsi:type="vpdesc:ExternalAttributeType">
-          <type href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+          <type href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
         </owned_type>
       </VP_Class_Attributes>
-      <extends href="../../\org.polarsys.kitalpha.vp.componentsample\models\ComponentSample.ecore#//AbstractComponent"/>
+      <extends href="../../org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//AbstractComponent"/>
       <Inheritences xsi:type="vpdesc:ExternalSuperClass">
-        <superClass href="../../\org.polarsys.kitalpha.vp.componentsample\models\ComponentSample.ecore#//ComponentElement"/>
+        <superClass href="../../org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//ComponentElement"/>
       </Inheritences>
     </VP_Classes>
     <VP_Classes name="PerformanceStatus" icon="PerformanceStatus.png">
       <VP_Class_Attributes name="overhead">
         <owned_type xsi:type="vpdesc:ExternalAttributeType">
-          <type href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+          <type href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
         </owned_type>
       </VP_Class_Attributes>
       <Inheritences xsi:type="vpdesc:ExternalSuperClass">
-        <superClass href="../../\org.polarsys.kitalpha.vp.componentsample\models\ComponentSample.ecore#//ComponentElement"/>
+        <superClass href="../../org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//ComponentElement"/>
       </Inheritences>
     </VP_Classes>
-    <additionalExternalData href="../../\org.polarsys.kitalpha.vp.componentsample\models\ComponentSample.ecore#/"/>
+    <additionalExternalData href="../../org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#/"/>
   </VP_Data>
   <VP_Aspects xsi:type="vpconf:Configuration" name="ComponentSamplePerformance.conf">
     <vpConfigurationElements xsi:type="vpconf:TargetApplication" type="EMF"/>
     <vpConfigurationElements xsi:type="vpconf:GenerationConfiguration" projectName="org.polarsys.kitalpha.vp.componentsampleperformance" nsuri="http://www.polarsys.org/kitalpha/ComponentSamplePerformance/1.0.0"/>
+    <vpConfigurationElements xsi:type="vpconf:ViewConfiguration" activable="true"/>
+    <vpConfigurationElements xsi:type="vpconf:Release" viewpointVersion="1.1.0.qualifier" viewpointDescription="Component Sample Performance Viewpoint">
+      <requiredExecutionEnvironment>JavaSE-1.6</requiredExecutionEnvironment>
+    </vpConfigurationElements>
+    <vpConfigurationElements xsi:type="vpconf:Generation">
+      <ownedDataGenerationConf/>
+      <ownedExtensionGenConf xsi:type="configuration:DiagramGenerationConfiguration" overwriteVSM="true"/>
+      <ownedExtensionGenConf xsi:type="docGenConfiguration:DocumentationGenerationConfiguration"/>
+      <ownedExtensionGenConf xsi:type="descAirdGenConf:AirdGenerationConfiguration"/>
+    </vpConfigurationElements>
   </VP_Aspects>
   <VP_Aspects xsi:type="vpdiagram:DiagramSet" name="ComponentSamplePerformance.diagram">
     <diagrams xsi:type="vpdiagram:DiagramExtension" name="ComponentSamplePerformanceDiagram">
@@ -106,10 +116,10 @@
     <additionalExternalGroup href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#/"/>
   </VP_Aspects>
   <VP_Aspects xsi:type="viewpointactivityexplorer:ViewpointActivityExplorer" name="ComponentSamplePerformance.activityexplorer">
-    <ownedPages xsi:type="viewpointactivityexplorer:PageExtension" extendedPageID="org.polarsys.kitalpha.vp.componentsampleframework.viewpoint.management">
-      <ownedSections name="ComponentSamplePerformanceViewpointActivation" description="&lt;p>Start/Stop Component sample Performance Viewpoint&lt;/p>" activityExplorerItemID="org.polarsys.kitalpha.vp.ComponentSamplePerformance.start.stop.section" index="4" label="Component Sample Performance Viewpoint">
-        <ownedActivities imagePathOff="start.png" name="StartComponentSamplePerformanceViewpoint" description="Start Component sample Performance Viewpoint" activityExplorerItemID="org.polarsys.kitalpha.vp.ComponentSamplePerformance.start.activity" index="1" label="Start"/>
-        <ownedActivities imagePathOff="stop.png" name="StopComponentSamplePerformanceViewpoint" description="Stop Component sample Performance Viewpoint" activityExplorerItemID="org.polarsys.kitalpha.vp.ComponentSamplePerformance.start.activity" index="2" label="Stop"/>
+    <ownedPages xsi:type="viewpointactivityexplorer:PageExtension" extendedPageID="org.polarsys.kitalpha.vp.componentsample.activity.explorer.architecture">
+      <ownedSections name="ComponentSamplePerformanceViewpointSection" description="&lt;p>Reference/Unreference Component sample Performance Viewpoint&lt;/p>" activityExplorerItemID="org.polarsys.kitalpha.vp.ComponentSamplePerformance.start.stop.section" index="2" label="Component Sample Performance" expanded="true" filtering="true">
+        <ownedActivities hasPredicate="true" imagePathOff="reference.png" name="ReferenceComponentSamplePerformanceViewpoint" description="Reference Component sample Performance Viewpoint" activityExplorerItemID="org.polarsys.kitalpha.vp.ComponentSamplePerformance.start.activity" index="1" label="Reference"/>
+        <ownedActivities hasPredicate="true" imagePathOff="unreference.png" name="UnreferenceComponentSamplePerformanceViewpoint" description="Unreference Component sample Performance Viewpoint" activityExplorerItemID="org.polarsys.kitalpha.vp.ComponentSamplePerformance.start.activity" index="2" label="Unreference"/>
       </ownedSections>
     </ownedPages>
   </VP_Aspects>

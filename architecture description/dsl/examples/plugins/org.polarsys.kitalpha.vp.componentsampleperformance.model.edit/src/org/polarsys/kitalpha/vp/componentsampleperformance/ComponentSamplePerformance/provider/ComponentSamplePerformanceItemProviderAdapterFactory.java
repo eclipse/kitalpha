@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -53,7 +53,8 @@ import org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerfor
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentSamplePerformanceItemProviderAdapterFactory extends ComponentSamplePerformanceAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
+public class ComponentSamplePerformanceItemProviderAdapterFactory extends ComponentSamplePerformanceAdapterFactory
+		implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -76,7 +77,8 @@ public class ComponentSamplePerformanceItemProviderAdapterFactory extends Compon
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(ComponentSamplePerformanceEditPlugin.INSTANCE, ComponentSamplePerformancePackage.eNS_URI);
+	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(
+			ComponentSamplePerformanceEditPlugin.INSTANCE, ComponentSamplePerformancePackage.eNS_URI);
 
 	/**
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
@@ -327,13 +329,17 @@ public class ComponentSamplePerformanceItemProviderAdapterFactory extends Compon
 			@Override
 			public Object caseExtensibleElement(ExtensibleElement object) {
 				// begin-extension-code
-				if (ModelExtensionHelper.getInstance(object).isExtensionModelDisabled(EcoreUtil.getRootContainer(object).eClass().getEPackage().getNsURI(), "http://www.polarsys.org/kitalpha/ComponentSamplePerformance/1.0.0")) { //$NON-NLS-1$
+				if (ModelExtensionHelper.getInstance(object).isExtensionModelDisabled(
+						EcoreUtil.getRootContainer(object).eClass().getEPackage().getNsURI(),
+						"http://www.polarsys.org/kitalpha/ComponentSamplePerformance/1.0.0")) { //$NON-NLS-1$
 					return null;
 				}
 				// end-extension-code
 				// begin-extension-code
 				{
-					CommandParameter commandParameter = createChildParameter(EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS, ComponentSamplePerformanceFactory.eINSTANCE.createPerformance());
+					CommandParameter commandParameter = createChildParameter(
+							EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
+							ComponentSamplePerformanceFactory.eINSTANCE.createPerformance());
 					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 						newChildDescriptors.add(commandParameter);
 					}

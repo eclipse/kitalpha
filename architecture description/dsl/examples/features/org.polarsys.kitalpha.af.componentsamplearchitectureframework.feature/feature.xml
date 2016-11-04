@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+ 
+ Contributors:
+  Thales Global Services S.A.S - initial API and implementation
+-->
+<feature
+      id="org.polarsys.kitalpha.af.componentsamplearchitectureframework.feature"
+      label="componentsamplearchitectureframework Feature"
+      version="0.1.0">
+
+   <description url="http://www.example.com/description">
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <includes
+         id="org.polarsys.kitalpha.vp.componentsamplequalityassessment.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.polarsys.kitalpha.vp.componentsamplesafetypattern.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.polarsys.kitalpha.vp.componentsampleperformance.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.polarsys.kitalpha.vp.componentsample.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.polarsys.kitalpha.vp.componentsamplesafety.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.polarsys.kitalpha.vp.componentsampleframework.feature"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.polarsys.kitalpha.af.componentsamplearchitectureframework"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -28,8 +28,8 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.polarsys.kitalpha.emde.model.EmdePackage;
 import org.polarsys.kitalpha.emde.model.edit.provider.NewChildDescriptorHelper;
-import org.polarsys.kitalpha.vp.componentsample.ComponentSample.provider.ComponentElementItemProvider;
-import org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.ComponentSampleSafetyFactory;
+import org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.provider.SafetyItemProvider;
+import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.ComponentSampleSafetyPatternFactory;
 import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.ComponentSampleSafetyPatternPackage;
 import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.SafetyMode;
 
@@ -39,7 +39,8 @@ import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafe
  * <!-- end-user-doc -->
  * @generated
  */
-public class SafetyModeItemProvider extends ComponentElementItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class SafetyModeItemProvider extends SafetyItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -80,12 +81,15 @@ public class SafetyModeItemProvider extends ComponentElementItemProvider impleme
 
 		// begin-extension-code
 		itemPropertyDescriptors.add(createItemPropertyDescriptor
-				// end-extension-code
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_SafetyMode_involvedComponents_feature"), //$NON-NLS-1$
-						getString("_UI_PropertyDescriptor_description", "_UI_SafetyMode_involvedComponents_feature", "_UI_SafetyMode_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						ComponentSampleSafetyPatternPackage.Literals.SAFETY_MODE__INVOLVED_COMPONENTS, true, false, true, null, null,
-						// begin-extension-code
-						null));
+		// end-extension-code
+		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_SafetyMode_involvedComponents_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_SafetyMode_involvedComponents_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_SafetyMode_type"), //$NON-NLS-1$
+				ComponentSampleSafetyPatternPackage.Literals.SAFETY_MODE__INVOLVED_COMPONENTS, true, false, true, null,
+				null,
+				// begin-extension-code
+				null));
 		// end-extension-code
 	}
 
@@ -99,12 +103,15 @@ public class SafetyModeItemProvider extends ComponentElementItemProvider impleme
 
 		// begin-extension-code
 		itemPropertyDescriptors.add(createItemPropertyDescriptor
-				// end-extension-code
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_SafetyMode_pattern_feature"), //$NON-NLS-1$
-						getString("_UI_PropertyDescriptor_description", "_UI_SafetyMode_pattern_feature", "_UI_SafetyMode_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						ComponentSampleSafetyPatternPackage.Literals.SAFETY_MODE__PATTERN, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
-						// begin-extension-code
-						null));
+		// end-extension-code
+		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_SafetyMode_pattern_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_SafetyMode_pattern_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_SafetyMode_type"), //$NON-NLS-1$
+				ComponentSampleSafetyPatternPackage.Literals.SAFETY_MODE__PATTERN, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
+				// begin-extension-code
+				null));
 		// end-extension-code
 	}
 
@@ -165,7 +172,9 @@ public class SafetyModeItemProvider extends ComponentElementItemProvider impleme
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 		// begin-extension-code
 		{
-			CommandParameter commandParameter = createChildParameter(EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS, ComponentSampleSafetyFactory.eINSTANCE.createSafety());
+			CommandParameter commandParameter = createChildParameter(
+					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
+					ComponentSampleSafetyPatternFactory.eINSTANCE.createSafetyMode());
 			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 				newChildDescriptors.add(commandParameter);
 			}

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -53,7 +53,9 @@ import org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSample
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentSampleQualityAssessmentItemProviderAdapterFactory extends ComponentSampleQualityAssessmentAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
+public class ComponentSampleQualityAssessmentItemProviderAdapterFactory
+		extends ComponentSampleQualityAssessmentAdapterFactory
+		implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -76,7 +78,8 @@ public class ComponentSampleQualityAssessmentItemProviderAdapterFactory extends 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(ComponentSampleQualityAssessmentEditPlugin.INSTANCE, ComponentSampleQualityAssessmentPackage.eNS_URI);
+	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(
+			ComponentSampleQualityAssessmentEditPlugin.INSTANCE, ComponentSampleQualityAssessmentPackage.eNS_URI);
 
 	/**
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
@@ -327,13 +330,17 @@ public class ComponentSampleQualityAssessmentItemProviderAdapterFactory extends 
 			@Override
 			public Object caseExtensibleElement(ExtensibleElement object) {
 				// begin-extension-code
-				if (ModelExtensionHelper.getInstance(object).isExtensionModelDisabled(EcoreUtil.getRootContainer(object).eClass().getEPackage().getNsURI(), "http://www.polarsys.org/kitalpha/ComponentSampleQualityAssessment/1.0.0")) { //$NON-NLS-1$
+				if (ModelExtensionHelper.getInstance(object).isExtensionModelDisabled(
+						EcoreUtil.getRootContainer(object).eClass().getEPackage().getNsURI(),
+						"http://www.polarsys.org/kitalpha/ComponentSampleQualityAssessment/1.0.0")) { //$NON-NLS-1$
 					return null;
 				}
 				// end-extension-code
 				// begin-extension-code
 				{
-					CommandParameter commandParameter = createChildParameter(EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS, ComponentSampleQualityAssessmentFactory.eINSTANCE.createQualityAssessment());
+					CommandParameter commandParameter = createChildParameter(
+							EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
+							ComponentSampleQualityAssessmentFactory.eINSTANCE.createQualityAssessment());
 					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 						newChildDescriptors.add(commandParameter);
 					}

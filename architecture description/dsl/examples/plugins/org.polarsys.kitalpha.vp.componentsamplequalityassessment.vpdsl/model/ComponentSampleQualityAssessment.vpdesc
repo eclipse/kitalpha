@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="ASCII"?>
-<vpdesc:Viewpoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:commondata="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/commondata/1.0.0" xmlns:expression="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/expression/1.0.0" xmlns:viewpointactivityexplorer="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/viewpointactivityexplorer/1.0.0" xmlns:vpconf="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpconf/1.0.0" xmlns:vpdesc="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdesc/1.0.0" xmlns:vpdiagram="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0" name="ComponentSampleQualityAssessment" shortName="ComponentSampleQualityAssessment">
+<vpdesc:Viewpoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:commondata="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/commondata/1.0.0" xmlns:configuration="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/conf/1.0.0" xmlns:descAirdGenConf="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/DescAirdGenConf/1.0.0" xmlns:docGenConfiguration="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/DocGenConfiguration/1.0.0" xmlns:expression="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/expression/1.0.0" xmlns:viewpointactivityexplorer="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/viewpointactivityexplorer/1.0.0" xmlns:vpconf="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpconf/1.0.0" xmlns:vpdesc="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdesc/1.0.0" xmlns:vpdiagram="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0" name="ComponentSampleQualityAssessment" shortName="ComponentSampleQualityAssessment">
   <VP_Data name="ComponentSampleQualityAssessment.data">
     <VP_Classes name="QualityAssessment" description="Quality Assessment" icon="QualityAssessment.png">
       <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="basedOn" cardinality="0..*" type="reference" LocalTarget="//@VP_Data/@VP_Classes.0"/>
       <VP_Classes_Associations xsi:type="vpdesc:ExternalClassAssociation" name="context" cardinality="0..*" type="reference">
-        <ExternalTarget href="../../\org.polarsys.kitalpha.vp.componentsample\models\ComponentSample.ecore#//ComponentElement"/>
+        <ExternalTarget href="../../org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//ComponentElement"/>
       </VP_Classes_Associations>
       <VP_Classes_Associations xsi:type="vpdesc:LocalClassAssociation" name="measures" cardinality="0..*" LocalTarget="//@VP_Data/@VP_Classes.1"/>
       <VP_Class_Attributes name="maturityLevel">
@@ -26,9 +26,9 @@
           <type href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
         </owned_type>
       </VP_Class_Attributes>
-      <extends href="../../\org.polarsys.kitalpha.vp.componentsample\models\ComponentSample.ecore#//AbstractComponent"/>
+      <extends href="../../org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//AbstractComponent"/>
       <Inheritences xsi:type="vpdesc:ExternalSuperClass">
-        <superClass href="../../\org.polarsys.kitalpha.vp.componentsample\models\ComponentSample.ecore#//ComponentElement"/>
+        <superClass href="../../org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//ComponentElement"/>
       </Inheritences>
     </VP_Classes>
     <VP_Classes name="QualityMeasure" icon="QualityMeasure.png">
@@ -43,14 +43,24 @@
         </owned_type>
       </VP_Class_Attributes>
       <Inheritences xsi:type="vpdesc:ExternalSuperClass">
-        <superClass href="../../\org.polarsys.kitalpha.vp.componentsample\models\ComponentSample.ecore#//ComponentElement"/>
+        <superClass href="../../org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//ComponentElement"/>
       </Inheritences>
     </VP_Classes>
-    <additionalExternalData href="../../\org.polarsys.kitalpha.vp.componentsample\models\ComponentSample.ecore#/"/>
+    <additionalExternalData href="../../org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#/"/>
   </VP_Data>
   <VP_Aspects xsi:type="vpconf:Configuration" name="ComponentSampleQualityAssessment.conf">
     <vpConfigurationElements xsi:type="vpconf:TargetApplication" type="EMF"/>
     <vpConfigurationElements xsi:type="vpconf:GenerationConfiguration" projectName="org.polarsys.kitalpha.vp.componentsamplequalityassessment" nsuri="http://www.polarsys.org/kitalpha/ComponentSampleQualityAssessment/1.0.0"/>
+    <vpConfigurationElements xsi:type="vpconf:ViewConfiguration"/>
+    <vpConfigurationElements xsi:type="vpconf:Release" viewpointVersion="1.1.0.qualifier" viewpointDescription="Component Sample Quality Assessment Viewpoint">
+      <requiredExecutionEnvironment>JavaSE-1.6</requiredExecutionEnvironment>
+    </vpConfigurationElements>
+    <vpConfigurationElements xsi:type="vpconf:Generation">
+      <ownedDataGenerationConf/>
+      <ownedExtensionGenConf xsi:type="configuration:DiagramGenerationConfiguration" overwriteVSM="true"/>
+      <ownedExtensionGenConf xsi:type="docGenConfiguration:DocumentationGenerationConfiguration"/>
+      <ownedExtensionGenConf xsi:type="descAirdGenConf:AirdGenerationConfiguration"/>
+    </vpConfigurationElements>
   </VP_Aspects>
   <VP_Aspects xsi:type="vpdiagram:DiagramSet" name="ComponentSampleQualityAssessment.diagram">
     <diagrams xsi:type="vpdiagram:DiagramExtension" name="ComponentSampleQualityAssessmentDiagram">
@@ -58,7 +68,7 @@
         <diagram_Elements xsi:type="vpdiagram:Container" name="QualityAssessment_ComponentSample">
           <imports href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']"/>
           <children>
-            <owned_nodes xsi:type="vpdiagram:Node" name="QualityAssessmentNode">
+            <owned_nodes xsi:type="vpdiagram:Container" name="QualityAssessmentNode">
               <the_domain>
                 <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.0"/>
                 <chlidren_list xsi:type="commondata:ExternalAssociation">
@@ -72,10 +82,10 @@
                     <expressionElements xsi:type="expression:DomainElement" attribute="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.1"/>
                   </value>
                 </node_Label>
-                <style xsi:type="vpdiagram:BasicStyle" backgroundColor="chocolate"/>
+                <style xsi:type="vpdiagram:FlatStyle" backgroundColor="chocolate" forgroundColor="chocolate"/>
               </style>
               <children>
-                <owned_boderednodes name="QualityMeasureBorderedNode">
+                <owned_nodes xsi:type="vpdiagram:Node" name="QualityMeasureBorderedNode">
                   <the_domain>
                     <domain_Class xsi:type="commondata:LocalClass" class="//@VP_Data/@VP_Classes.1"/>
                     <chlidren_list xsi:type="commondata:LocalAssociation" reference="//@VP_Data/@VP_Classes.0/@VP_Classes_Associations.2"/>
@@ -86,9 +96,9 @@
                         <expressionElements xsi:type="expression:DomainElement" attribute="//@VP_Data/@VP_Classes.1/@VP_Class_Attributes.1"/>
                       </value>
                     </node_Label>
-                    <style xsi:type="vpdiagram:BasicStyle" backgroundColor="light_chocolate"/>
+                    <style xsi:type="vpdiagram:ImageStyle" imagePath="empty.png"/>
                   </style>
-                </owned_boderednodes>
+                </owned_nodes>
               </children>
             </owned_nodes>
           </children>
@@ -98,19 +108,19 @@
         <actions xsi:type="vpdiagram:Create" name="QualityAssessmentNodeCreate" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0" label="Quality Assessment"/>
         <actions xsi:type="vpdiagram:Drop" name="QualityAssessmentNodeDrop" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0" label="Drop Quality Assessment"/>
         <actions xsi:type="vpdiagram:Delete" name="QualityAssessmentNodeDelete" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0" label="Delete Quality Assessment"/>
-        <actions xsi:type="vpdiagram:Create" name="QualityMeasureBorderedNodeCreate" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0/@children/@owned_boderednodes.0" label="Quality Measure"/>
-        <actions xsi:type="vpdiagram:Delete" name="QualityMeasureBorderedNodeDelete" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0/@children/@owned_boderednodes.0" label="Delete Quality Mesaure"/>
-        <actions xsi:type="vpdiagram:Drop" name="QualityMeasureBorderedNodeDrop" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0/@children/@owned_boderednodes.0" label="Drop Quality Measure"/>
+        <actions xsi:type="vpdiagram:Create" name="QualityMeasureBorderedNodeCreate" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0/@children/@owned_nodes.0" label="Quality Measure"/>
+        <actions xsi:type="vpdiagram:Delete" name="QualityMeasureBorderedNodeDelete" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0/@children/@owned_nodes.0" label="Delete Quality Mesaure"/>
+        <actions xsi:type="vpdiagram:Drop" name="QualityMeasureBorderedNodeDrop" tool_For="//@VP_Aspects.1/@diagrams.0/@the_MappingSet/@diagram_Elements.0/@children/@owned_nodes.0/@children/@owned_nodes.0" label="Drop Quality Measure"/>
       </the_ActionSet>
       <extented_diagram href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']"/>
     </diagrams>
     <additionalExternalGroup href="../../org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign#/"/>
   </VP_Aspects>
   <VP_Aspects xsi:type="viewpointactivityexplorer:ViewpointActivityExplorer" name="ComponentSampleQualityAssessment.activityexplorer">
-    <ownedPages xsi:type="viewpointactivityexplorer:PageExtension" extendedPageID="org.polarsys.kitalpha.vp.componentsampleframework.viewpoint.management">
-      <ownedSections name="ComponentSampleQualityAssessmentViewpointActivation" description="&lt;p>Start/Stop Component sample Quality Assessment Viewpoint&lt;/p>" activityExplorerItemID="org.polarsys.kitalpha.vp.ComponentSampleQualityAssessment.start.stop.section" index="5" label="Component Sample Quality Assessment Viewpoint">
-        <ownedActivities imagePathOff="start.png" name="StartComponentSampleQualityAssessmentViewpoint" description="Start Component sample Quality Assessment Viewpoint" activityExplorerItemID="org.polarsys.kitalpha.vp.ComponentSampleQualityAssessment.start.activity" index="1" label="Start"/>
-        <ownedActivities imagePathOff="stop.png" name="StopComponentSampleQualityAssessmentViewpoint" description="Stop Component sample Quality Assessment Viewpoint" activityExplorerItemID="org.polarsys.kitalpha.vp.ComponentSampleQualityAssessment.start.activity" index="2" label="Stop"/>
+    <ownedPages xsi:type="viewpointactivityexplorer:PageExtension" extendedPageID="org.polarsys.kitalpha.vp.componentsample.activity.explorer.architecture">
+      <ownedSections name="ComponentSampleQualityAssessmentViewpointSection" description="&lt;p>Reference/Unreference Component sample Quality Assessment Viewpoint&lt;/p>" activityExplorerItemID="org.polarsys.kitalpha.vp.ComponentSampleQualityAssessment.start.stop.section" index="3" label="Component Sample Quality Assessment" expanded="true" filtering="true">
+        <ownedActivities hasPredicate="true" imagePathOff="reference.png" name="ReferenceComponentSampleQualityAssessmentViewpoint" description="Reference Component sample Quality Assessment Viewpoint" activityExplorerItemID="org.polarsys.kitalpha.vp.ComponentSampleQualityAssessment.start.activity" index="1" label="Reference"/>
+        <ownedActivities hasPredicate="true" imagePathOff="unreference.png" name="UnreferenceComponentSampleQualityAssessmentViewpoint" description="Unreference Component sample Quality Assessment Viewpoint" activityExplorerItemID="org.polarsys.kitalpha.vp.ComponentSampleQualityAssessment.start.activity" index="2" label="Unreference"/>
       </ownedSections>
     </ownedPages>
   </VP_Aspects>

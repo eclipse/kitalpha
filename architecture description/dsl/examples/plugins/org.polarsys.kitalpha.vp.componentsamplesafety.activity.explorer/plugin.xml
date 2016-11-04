@@ -1,38 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+ 
+ Contributors:
+  Thales Global Services S.A.S - initial API and implementation
+-->
 <?eclipse version="3.4"?>
 <plugin>
 <extension
       point="org.eclipse.amalgam.explorer.activity.ui.sectionsProvider">
 
 		<Section
-			   expanded="false"
-			   filtering="false"
+			   expanded="true"
+			   filtering="true"
 			   id="org.polarsys.kitalpha.vp.ComponentSampleSafety.start.stop.section"	   
-			   index="6"
-			   name="Component Sample Safety Viewpoint"
-			   pageId="org.polarsys.kitalpha.vp.componentsampleframework.viewpoint.management">
+			   index="4"
+			   name="Component Sample Safety"
+			   pageId="org.polarsys.kitalpha.vp.componentsample.activity.explorer.architecture">
 			<Description>
-				&lt;p&gt;Start/Stop Component sample Safety Viewpoint&lt;/p&gt;
+				&lt;p&gt;Reference/Unreference Component sample Safety Viewpoint&lt;/p&gt;
 			</Description>
 			<Activity
-				class="org.polarsys.kitalpha.vp.componentsamplesafety.activity.explorer.activity.StartComponentSampleSafetyViewpointActivity"
-				id="org.polarsys.kitalpha.vp.ComponentSampleSafety.start.activity"
+				class="org.polarsys.kitalpha.vp.componentsamplesafety.activity.explorer.activity.ActivateComponentSampleSafetyViewpointActivity"
+				id="org.polarsys.kitalpha.vp.ComponentSampleSafety.activate.activity"
 				index="1" 
-				image="icons/start.png"
-				name="Start">
+				image="icons/activate.png"
+				name="Activate">
 			<Description>
-				Start Component sample Safety Viewpoint
-			</Description>			</Activity>
+				Activate Component sample Safety Viewpoint
+			</Description>
+			<Predicate
+				class="org.polarsys.kitalpha.vp.componentsamplesafety.activity.explorer.predicate.AActivateComponentSampleSafetyViewpointPredicate">
+			</Predicate>
+			</Activity>
 
 			<Activity
-				class="org.polarsys.kitalpha.vp.componentsamplesafety.activity.explorer.activity.StopComponentSampleSafetyViewpointActivity"
-				id="org.polarsys.kitalpha.vp.ComponentSampleSafety.start.activity"
+				class="org.polarsys.kitalpha.vp.componentsamplesafety.activity.explorer.activity.DeactivateComponentSampleSafetyViewpointActivity"
+				id="org.polarsys.kitalpha.vp.ComponentSampleSafety.deactivate.activity"
 				index="2" 
-				image="icons/stop.png"
-				name="Stop">
+				image="icons/deactivate.png"
+				name="Deactivate">
 			<Description>
-				Stop Component sample Safety Viewpoint
-			</Description>			</Activity>
+				Deactivate Component sample Safety Viewpoint
+			</Description>
+			<Predicate
+				class="org.polarsys.kitalpha.vp.componentsamplesafety.activity.explorer.predicate.AdeactivateComponentSampleSafetyViewpointPredicate">
+			</Predicate>
+			</Activity>
+
+			<Activity
+				class="org.polarsys.kitalpha.vp.componentsamplesafety.activity.explorer.activity.ReferenceComponentSampleSafetyViewpointActivity"
+				id="org.polarsys.kitalpha.vp.ComponentSampleSafety.start.activity"
+				index="3" 
+				image="icons/reference.png"
+				name="Reference">
+			<Description>
+				Reference Component sample Safety Viewpoint
+			</Description>
+			<Predicate
+				class="org.polarsys.kitalpha.vp.componentsamplesafety.activity.explorer.predicate.AReferenceComponentSampleSafetyViewpointPredicate">
+			</Predicate>
+			</Activity>
+
+			<Activity
+				class="org.polarsys.kitalpha.vp.componentsamplesafety.activity.explorer.activity.UnreferenceComponentSampleSafetyViewpointActivity"
+				id="org.polarsys.kitalpha.vp.ComponentSampleSafety.start.activity"
+				index="4" 
+				image="icons/unreference.png"
+				name="Unreference">
+			<Description>
+				Unreference Component sample Safety Viewpoint
+			</Description>
+			<Predicate
+				class="org.polarsys.kitalpha.vp.componentsamplesafety.activity.explorer.predicate.AUnreferenceComponentSampleSafetyViewpointPredicate">
+			</Predicate>
+			</Activity>
 		</Section>
 </extension>
 </plugin>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ASCII"?>
+<generationChain:GenerationChain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:generationChain="http://www.eclipse.org/egf/1.0.0/generationChain" name="componentsamplearchitectureframework" factoryComponentName="org.polarsys.kitalpha.af.componentsamplearchitectureframework">
+  <elements xsi:type="generationChain:GenerationChain" name="componentsamplearchitectureframework">
+    <elements xsi:type="generationChain:FeatureAddition">
+      <additions>org.polarsys.kitalpha.vp.componentsample.feature</additions>
+      <additions>org.polarsys.kitalpha.vp.componentsampleframework.feature</additions>
+      <additions>org.polarsys.kitalpha.vp.componentsampleperformance.feature</additions>
+      <additions>org.polarsys.kitalpha.vp.componentsamplesafety.feature</additions>
+      <additions>org.polarsys.kitalpha.vp.componentsamplequalityassessment.feature</additions>
+      <additions>org.polarsys.kitalpha.vp.componentsamplesafetypattern.feature</additions>
+    </elements>
+  </elements>
+</generationChain:GenerationChain>

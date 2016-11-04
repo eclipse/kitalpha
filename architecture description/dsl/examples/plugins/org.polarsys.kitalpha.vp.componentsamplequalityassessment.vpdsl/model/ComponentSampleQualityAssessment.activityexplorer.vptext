@@ -1,37 +1,46 @@
-/**
- * Copyright (c) PolarSys, 2015. All rights reserved. 
+/*******************************************************************************
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
+ /**
  *
  *	Viewpoint ComponentSampleQualityAssessment
- *	@author: S0020807
+ *	@author: Faycal ABKA
  *	@date: 14/09/15
  *
  */
 activity-explorer ComponentSampleQualityAssessment.activityexplorer {
 	page-extensions {
-		extended-page org.polarsys.kitalpha.vp.componentsampleframework.viewpoint.management
-		section ComponentSampleQualityAssessmentViewpointActivation {
-			description "<p>Start/Stop Component sample Quality Assessment Viewpoint</p>"
+		extended-page org.polarsys.kitalpha.vp.componentsample.^activity.explorer.architecture
+		section ComponentSampleQualityAssessmentViewpointSection {
+			description "<p>Reference/Unreference Component sample Quality Assessment Viewpoint</p>"
 			id org.polarsys.kitalpha.vp.ComponentSampleQualityAssessment.start.stop.^section
-			label "Component Sample Quality Assessment Viewpoint"
-			index 5
-			filtering : false
-			expanded : false
+			label "Component Sample Quality Assessment"
+			index 3
+			filtering : true
+			expanded : true
 			activities {
-				activity StartComponentSampleQualityAssessmentViewpoint {
-					description "Start Component sample Quality Assessment Viewpoint"
+				activity ReferenceComponentSampleQualityAssessmentViewpoint {
+					description "Reference Component sample Quality Assessment Viewpoint"
 					id org.polarsys.kitalpha.vp.ComponentSampleQualityAssessment.start.^activity
-					label "Start"
+					label "Reference"
 					index 1
-					predicated : false
-					icon : "start.png"
+					predicated : true
+					icon : "reference.png"
 				}
-				activity StopComponentSampleQualityAssessmentViewpoint {
-					description "Stop Component sample Quality Assessment Viewpoint"
+				activity UnreferenceComponentSampleQualityAssessmentViewpoint {
+					description "Unreference Component sample Quality Assessment Viewpoint"
 					id org.polarsys.kitalpha.vp.ComponentSampleQualityAssessment.start.^activity
-					label "Stop"
+					label "Unreference"
 					index 2
-					predicated : false
-					icon : "stop.png"
+					predicated : true
+					icon : "unreference.png"
 				}
 			}
 		}

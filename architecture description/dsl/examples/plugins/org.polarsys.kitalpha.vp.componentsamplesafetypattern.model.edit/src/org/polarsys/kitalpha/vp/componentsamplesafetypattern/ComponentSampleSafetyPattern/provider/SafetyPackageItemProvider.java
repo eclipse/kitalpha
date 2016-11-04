@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -39,7 +39,8 @@ import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafe
  * <!-- end-user-doc -->
  * @generated
  */
-public class SafetyPackageItemProvider extends PackageItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class SafetyPackageItemProvider extends PackageItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -155,7 +156,9 @@ public class SafetyPackageItemProvider extends PackageItemProvider implements IE
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 		// begin-extension-code
 		{
-			CommandParameter commandParameter = createChildParameter(EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS, ComponentSampleSafetyFactory.eINSTANCE.createSafety());
+			CommandParameter commandParameter = createChildParameter(
+					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
+					ComponentSampleSafetyPatternFactory.eINSTANCE.createSafetyMode());
 			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 				newChildDescriptors.add(commandParameter);
 			}
@@ -164,13 +167,47 @@ public class SafetyPackageItemProvider extends PackageItemProvider implements IE
 
 		// begin-extension-code
 		{
-			CommandParameter commandParameter = createChildParameter(ComponentSampleSafetyPatternPackage.Literals.SAFETY_PACKAGE__MODES, ComponentSampleSafetyPatternFactory.eINSTANCE.createSafetyMode());
+			CommandParameter commandParameter = createChildParameter(
+					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
+					ComponentSampleSafetyFactory.eINSTANCE.createSafety());
 			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 				newChildDescriptors.add(commandParameter);
 			}
 		}
 		// end-extension-code
 
+		// begin-extension-code
+		{
+			CommandParameter commandParameter = createChildParameter(
+					ComponentSampleSafetyPatternPackage.Literals.SAFETY_PACKAGE__MODES,
+					ComponentSampleSafetyPatternFactory.eINSTANCE.createSafetyMode());
+			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+				newChildDescriptors.add(commandParameter);
+			}
+		}
+		// end-extension-code
+
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify = childFeature == EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS
+				|| childFeature == ComponentSampleSafetyPatternPackage.Literals.SAFETY_PACKAGE__MODES;
+
+		if (qualify) {
+			return getString("_UI_CreateChild_text2", //$NON-NLS-1$
+					new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

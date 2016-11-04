@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -38,7 +38,8 @@ import org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerfor
  * <!-- end-user-doc -->
  * @generated
  */
-public class PerformanceStatusItemProvider extends ComponentElementItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class PerformanceStatusItemProvider extends ComponentElementItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -78,12 +79,15 @@ public class PerformanceStatusItemProvider extends ComponentElementItemProvider 
 
 		// begin-extension-code
 		itemPropertyDescriptors.add(createItemPropertyDescriptor
-				// end-extension-code
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_PerformanceStatus_overhead_feature"), //$NON-NLS-1$
-						getString("_UI_PropertyDescriptor_description", "_UI_PerformanceStatus_overhead_feature", "_UI_PerformanceStatus_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						ComponentSamplePerformancePackage.Literals.PERFORMANCE_STATUS__OVERHEAD, true, false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null,
-						// begin-extension-code
-						null));
+		// end-extension-code
+		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_PerformanceStatus_overhead_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_PerformanceStatus_overhead_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_PerformanceStatus_type"), //$NON-NLS-1$
+				ComponentSamplePerformancePackage.Literals.PERFORMANCE_STATUS__OVERHEAD, true, false, false,
+				ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null,
+				// begin-extension-code
+				null));
 		// end-extension-code
 	}
 
@@ -144,7 +148,9 @@ public class PerformanceStatusItemProvider extends ComponentElementItemProvider 
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 		// begin-extension-code
 		{
-			CommandParameter commandParameter = createChildParameter(EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS, ComponentSamplePerformanceFactory.eINSTANCE.createPerformance());
+			CommandParameter commandParameter = createChildParameter(
+					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
+					ComponentSamplePerformanceFactory.eINSTANCE.createPerformance());
 			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 				newChildDescriptors.add(commandParameter);
 			}

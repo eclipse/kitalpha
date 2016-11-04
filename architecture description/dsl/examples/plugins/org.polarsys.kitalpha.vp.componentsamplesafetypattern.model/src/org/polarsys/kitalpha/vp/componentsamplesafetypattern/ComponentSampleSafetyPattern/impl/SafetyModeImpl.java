@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -18,8 +18,8 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.polarsys.kitalpha.vp.componentsample.ComponentSample.impl.ComponentElementImpl;
 import org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.Safety;
+import org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.impl.SafetyImpl;
 import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.ComponentSampleSafetyPatternPackage;
 import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.SAFETY_PATTERN;
 import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.SafetyMode;
@@ -38,7 +38,7 @@ import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafe
  *
  * @generated
  */
-public class SafetyModeImpl extends ComponentElementImpl implements SafetyMode {
+public class SafetyModeImpl extends SafetyImpl implements SafetyMode {
 
 	/**
 	 * The cached value of the '{@link #getInvolvedComponents() <em>Involved Components</em>}' reference list.
@@ -100,7 +100,8 @@ public class SafetyModeImpl extends ComponentElementImpl implements SafetyMode {
 	public EList<Safety> getInvolvedComponents() {
 
 		if (involvedComponents == null) {
-			involvedComponents = new EObjectResolvingEList<Safety>(Safety.class, this, ComponentSampleSafetyPatternPackage.SAFETY_MODE__INVOLVED_COMPONENTS);
+			involvedComponents = new EObjectResolvingEList<Safety>(Safety.class, this,
+					ComponentSampleSafetyPatternPackage.SAFETY_MODE__INVOLVED_COMPONENTS);
 		}
 		return involvedComponents;
 	}
@@ -127,7 +128,8 @@ public class SafetyModeImpl extends ComponentElementImpl implements SafetyMode {
 		SAFETY_PATTERN oldPattern = pattern;
 		pattern = newPattern == null ? PATTERN_EDEFAULT : newPattern;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ComponentSampleSafetyPatternPackage.SAFETY_MODE__PATTERN, oldPattern, pattern));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					ComponentSampleSafetyPatternPackage.SAFETY_MODE__PATTERN, oldPattern, pattern));
 
 	}
 

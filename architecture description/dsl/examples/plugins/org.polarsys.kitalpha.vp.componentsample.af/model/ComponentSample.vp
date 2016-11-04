@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="ASCII"?>
-<vp:Viewpoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sirius="http://www.polarsys.org/kitalpha/ad/sirius/1.0.0" xmlns:vp="http://www.polarsys.org/kitalpha/ad/viewpoint/1.0.0" name="Component Sample" id="org.polarsys.kitalpha.vp.componentsample" vpid="_upHvUEJfEeSX2_-AyeUK-w" version="1.1.0">
-  <ruleSet vpid="_n7IOEmq1EeavhfGmuKDYTg" target="_upHvUEJfEeSX2_-AyeUK-w">
-    <newRules name="RuleOne" id="ComponentSample.RuleOne" vpid="_n7IOE2q1EeavhfGmuKDYTg" implementation="org.polarsys.kitalpha.vp.componentsample.af.businessrules.RuleOne" language="" type="Java"/>
-    <newRules name="RuleTwo" id="ComponentSample.RuleTwo" vpid="_n7IOFGq1EeavhfGmuKDYTg" implementation="org.polarsys.kitalpha.vp.componentsample.af.businessrules.RuleTwo" language="" type="Java"/>
-    <newRules name="RuleThree" id="ComponentSample.RuleThree" vpid="_n7IOFWq1EeavhfGmuKDYTg" implementation="org.polarsys.kitalpha.vp.componentsample.af.businessrules.RuleThree" language="" type="Java"/>
+<vp:Viewpoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sirius="http://www.polarsys.org/kitalpha/ad/sirius/1.0.0" xmlns:vp="http://www.polarsys.org/kitalpha/ad/viewpoint/1.0.0" name="Component Sample" id="org.polarsys.kitalpha.vp.componentsample" vpid="_upHvUEJfEeSX2_-AyeUK-w" version="1.1.0.qualifier">
+  <ruleSet vpid="_8IlRgqD9EeaIoIXKF9oJhg" target="_upHvUEJfEeSX2_-AyeUK-w">
+    <newRules name="RuleOne" id="ComponentSample.RuleOne" vpid="_8IlRg6D9EeaIoIXKF9oJhg" implementation="org.polarsys.kitalpha.vp.componentsample.af.businessrules.RuleOne" language="" type="Java"/>
+    <newRules name="RuleTwo" id="ComponentSample.RuleTwo" vpid="_8IlRhKD9EeaIoIXKF9oJhg" implementation="org.polarsys.kitalpha.vp.componentsample.af.businessrules.RuleTwo" language="" type="Java"/>
+    <newRules name="RuleThree" id="ComponentSample.RuleThree" vpid="_8IlRhaD9EeaIoIXKF9oJhg" implementation="org.polarsys.kitalpha.vp.componentsample.af.businessrules.RuleThree" language="" type="Java"/>
   </ruleSet>
-  <serviceSet vpid="_n7IOEGq1EeavhfGmuKDYTg" target="_upHvUEJfEeSX2_-AyeUK-w">
-    <newServices name="MyService" id="ComponentSample.MyService" vpid="_n7IOEWq1EeavhfGmuKDYTg" relatedRules="_n7IOE2q1EeavhfGmuKDYTg _n7IOFWq1EeavhfGmuKDYTg" type="execute.rules"/>
+  <serviceSet vpid="_8IlRgKD9EeaIoIXKF9oJhg" target="_upHvUEJfEeSX2_-AyeUK-w">
+    <newServices name="MyService" id="ComponentSample.MyService" vpid="_8IlRgaD9EeaIoIXKF9oJhg" relatedRules="_8IlRg6D9EeaIoIXKF9oJhg _8IlRhaD9EeaIoIXKF9oJhg" type="execute.rules"/>
   </serviceSet>
   <parents href="../../org.polarsys.kitalpha.vp.componentsampleframework.af/model/ComponentSampleFramework.vp#_yYhuMEI8EeSvPZ_bPTSMKQ"/>
   <metamodel>

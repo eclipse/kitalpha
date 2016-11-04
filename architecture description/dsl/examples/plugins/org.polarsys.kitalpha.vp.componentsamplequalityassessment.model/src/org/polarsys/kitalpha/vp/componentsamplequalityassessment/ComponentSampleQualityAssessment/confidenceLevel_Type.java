@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -132,7 +132,8 @@ public enum confidenceLevel_Type implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final confidenceLevel_Type[] VALUES_ARRAY = new confidenceLevel_Type[] { NOT_ASSESSED, LOW, MEDIUM, HIGH, };
+	private static final confidenceLevel_Type[] VALUES_ARRAY = new confidenceLevel_Type[] { NOT_ASSESSED, LOW, MEDIUM,
+			HIGH, };
 
 	/**
 	 * A public read-only list of all the '<em><b>confidence Level Type</b></em>' enumerators.

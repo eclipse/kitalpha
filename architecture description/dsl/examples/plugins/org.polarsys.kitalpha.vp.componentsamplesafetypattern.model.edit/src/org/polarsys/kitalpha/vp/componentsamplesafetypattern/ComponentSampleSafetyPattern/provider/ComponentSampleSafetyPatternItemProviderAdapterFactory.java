@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -37,7 +37,10 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.polarsys.kitalpha.emde.extension.ModelExtensionHelper;
 import org.polarsys.kitalpha.emde.extension.edit.ChildCreationExtenderManager;
+import org.polarsys.kitalpha.emde.model.EmdePackage;
+import org.polarsys.kitalpha.emde.model.ExtensibleElement;
 import org.polarsys.kitalpha.emde.model.edit.provider.NewChildDescriptorHelper;
+import org.polarsys.kitalpha.emde.model.util.EmdeSwitch;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentModel;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSamplePackage;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.util.ComponentSampleSwitch;
@@ -54,7 +57,8 @@ import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafe
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentSampleSafetyPatternItemProviderAdapterFactory extends ComponentSampleSafetyPatternAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
+public class ComponentSampleSafetyPatternItemProviderAdapterFactory extends ComponentSampleSafetyPatternAdapterFactory
+		implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -77,7 +81,8 @@ public class ComponentSampleSafetyPatternItemProviderAdapterFactory extends Comp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(ComponentSampleSafetyPatternEditPlugin.INSTANCE, ComponentSampleSafetyPatternPackage.eNS_URI);
+	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(
+			ComponentSampleSafetyPatternEditPlugin.INSTANCE, ComponentSampleSafetyPatternPackage.eNS_URI);
 
 	/**
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
@@ -280,6 +285,107 @@ public class ComponentSampleSafetyPatternItemProviderAdapterFactory extends Comp
 	}
 
 	/**
+	 * A child creation extender for the {@link EmdePackage}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static class EmdeChildCreationExtender implements IChildCreationExtender {
+		/**
+		 * The switch for creating child descriptors specific to each extended class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		protected static class CreationSwitch extends EmdeSwitch<Object> {
+			/**
+			 * The child descriptors being populated.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected List<Object> newChildDescriptors;
+
+			/**
+			 * The domain in which to create the children.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected EditingDomain editingDomain;
+
+			/**
+			 * Creates the a switch for populating child descriptors in the given domain.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			CreationSwitch(List<Object> newChildDescriptors, EditingDomain editingDomain) {
+				this.newChildDescriptors = newChildDescriptors;
+				this.editingDomain = editingDomain;
+			}
+
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
+			public Object caseExtensibleElement(ExtensibleElement object) {
+				// begin-extension-code
+				if (ModelExtensionHelper.getInstance(object).isExtensionModelDisabled(
+						EcoreUtil.getRootContainer(object).eClass().getEPackage().getNsURI(),
+						"http://www.polarsys.org/kitalpha/ComponentSampleSafetyPattern/1.0.0")) { //$NON-NLS-1$
+					return null;
+				}
+				// end-extension-code
+				// begin-extension-code
+				{
+					CommandParameter commandParameter = createChildParameter(
+							EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
+							ComponentSampleSafetyPatternFactory.eINSTANCE.createSafetyMode());
+					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+						newChildDescriptors.add(commandParameter);
+					}
+				}
+				// end-extension-code
+
+				return null;
+			}
+
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			protected CommandParameter createChildParameter(Object feature, Object child) {
+				return new CommandParameter(null, feature, child);
+			}
+
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
+			ArrayList<Object> result = new ArrayList<Object>();
+			new CreationSwitch(result, editingDomain).doSwitch((EObject) object);
+			return result;
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public ResourceLocator getResourceLocator() {
+			return ComponentSampleSafetyPatternEditPlugin.INSTANCE;
+		}
+	}
+
+	/**
 	 * A child creation extender for the {@link ComponentSamplePackage}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -328,13 +434,17 @@ public class ComponentSampleSafetyPatternItemProviderAdapterFactory extends Comp
 			@Override
 			public Object caseComponentModel(ComponentModel object) {
 				// begin-extension-code
-				if (ModelExtensionHelper.getInstance(object).isExtensionModelDisabled(EcoreUtil.getRootContainer(object).eClass().getEPackage().getNsURI(), "http://www.polarsys.org/kitalpha/ComponentSampleSafetyPattern/1.0.0")) { //$NON-NLS-1$
+				if (ModelExtensionHelper.getInstance(object).isExtensionModelDisabled(
+						EcoreUtil.getRootContainer(object).eClass().getEPackage().getNsURI(),
+						"http://www.polarsys.org/kitalpha/ComponentSampleSafetyPattern/1.0.0")) { //$NON-NLS-1$
 					return null;
 				}
 				// end-extension-code
 				// begin-extension-code
 				{
-					CommandParameter commandParameter = createChildParameter(ComponentSamplePackage.Literals.COMPONENT_MODEL__PACKAGES, ComponentSampleSafetyPatternFactory.eINSTANCE.createSafetyPackage());
+					CommandParameter commandParameter = createChildParameter(
+							ComponentSamplePackage.Literals.COMPONENT_MODEL__PACKAGES,
+							ComponentSampleSafetyPatternFactory.eINSTANCE.createSafetyPackage());
 					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 						newChildDescriptors.add(commandParameter);
 					}

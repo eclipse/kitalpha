@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -16,8 +16,10 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.polarsys.kitalpha.emde.model.Element;
+import org.polarsys.kitalpha.emde.model.ElementExtension;
 import org.polarsys.kitalpha.emde.model.ExtensibleElement;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentElement;
+import org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.Safety;
 import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.ComponentSampleSafetyPatternPackage;
 import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.SafetyMode;
 import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.SafetyPackage;
@@ -105,6 +107,16 @@ public class ComponentSampleSafetyPatternAdapterFactory extends AdapterFactoryIm
 		@Override
 		public Adapter casePackage(org.polarsys.kitalpha.vp.componentsample.ComponentSample.Package object) {
 			return createPackageAdapter();
+		}
+
+		@Override
+		public Adapter caseElementExtension(ElementExtension object) {
+			return createElementExtensionAdapter();
+		}
+
+		@Override
+		public Adapter caseSafety(Safety object) {
+			return createSafetyAdapter();
 		}
 
 		@Override
@@ -207,6 +219,34 @@ public class ComponentSampleSafetyPatternAdapterFactory extends AdapterFactoryIm
 	 * @generated
 	 */
 	public Adapter createPackageAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.kitalpha.emde.model.ElementExtension <em>Element Extension</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.kitalpha.emde.model.ElementExtension
+	 * @generated
+	 */
+	public Adapter createElementExtensionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.Safety <em>Safety</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.Safety
+	 * @generated
+	 */
+	public Adapter createSafetyAdapter() {
 		return null;
 	}
 

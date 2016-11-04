@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -19,4 +19,31 @@ Configuration ComponentSampleQualityAssessment.conf {
 	target EMF
 	project org.polarsys.kitalpha.vp.componentsamplequalityassessment
 	nsuri "http://www.polarsys.org/kitalpha/ComponentSampleQualityAssessment/1.0.0"
+	view {
+		visible : true
+		activable : false
+	}
+	release {
+		version : 1.1.0.qualifier
+		description : "Component Sample Quality Assessment Viewpoint"
+		execution environments : "JavaSE-1.6"
+	}
+	generation {
+		data (
+			Model: true
+			Edit: true 
+			Editor: false
+			Test: false
+			Javadoc: false
+			OverwriteEcore: true
+		 )
+		 diagram (
+		 	OverwriteOdesign: true
+		 )
+		 documentation (
+		 	EcoreToHtml: false
+		 )
+		 ecore (
+			aird: false		)
+	}
 }

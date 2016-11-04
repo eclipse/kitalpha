@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -38,7 +38,8 @@ public class ComponentSampleSafetyFactoryImpl extends EFactoryImpl implements Co
 	 */
 	public static ComponentSampleSafetyFactory init() {
 		try {
-			ComponentSampleSafetyFactory theComponentSampleSafetyFactory = (ComponentSampleSafetyFactory) EPackage.Registry.INSTANCE.getEFactory(ComponentSampleSafetyPackage.eNS_URI);
+			ComponentSampleSafetyFactory theComponentSampleSafetyFactory = (ComponentSampleSafetyFactory) EPackage.Registry.INSTANCE
+					.getEFactory(ComponentSampleSafetyPackage.eNS_URI);
 			if (theComponentSampleSafetyFactory != null) {
 				return theComponentSampleSafetyFactory;
 			}
@@ -129,7 +130,8 @@ public class ComponentSampleSafetyFactoryImpl extends EFactoryImpl implements Co
 	public STATE createSTATEFromString(EDataType eDataType, String initialValue) {
 		STATE result = STATE.get(initialValue);
 		if (result == null)
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		return result;
 	}
 
@@ -150,7 +152,8 @@ public class ComponentSampleSafetyFactoryImpl extends EFactoryImpl implements Co
 	public DAL_LEVEL createDAL_LEVELFromString(EDataType eDataType, String initialValue) {
 		DAL_LEVEL result = DAL_LEVEL.get(initialValue);
 		if (result == null)
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		return result;
 	}
 
@@ -171,7 +174,8 @@ public class ComponentSampleSafetyFactoryImpl extends EFactoryImpl implements Co
 	public CRITICALITY createCRITICALITYFromString(EDataType eDataType, String initialValue) {
 		CRITICALITY result = CRITICALITY.get(initialValue);
 		if (result == null)
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		return result;
 	}
 

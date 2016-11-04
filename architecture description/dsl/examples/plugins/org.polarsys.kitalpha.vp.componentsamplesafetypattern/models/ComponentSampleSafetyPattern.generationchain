@@ -2,13 +2,11 @@
 <generationChain:GenerationChain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:genchainExtension="http://www.polarsys.org/kitalpha/emde/genchain/1.0.0" xmlns:generationChain="http://www.eclipse.org/egf/1.0.0/generationChain" name="ComponentSampleSafetyPattern" factoryComponentName="org.polarsys.kitalpha.vp.componentsamplesafetypattern">
   <elements xsi:type="generationChain:GenerationChain" name="ComponentSampleSafetyPattern">
     <elements xsi:type="genchainExtension:EmdeGeneration" name="Kitalpha eMDE Emf Generation for ComponentSampleSafetyPattern" modelPath="/org.polarsys.kitalpha.vp.componentsamplesafetypattern/models/ComponentSampleSafetyPattern.ecore" generateModel="true" generateEdit="true" pluginName="org.polarsys.kitalpha.vp.componentsamplesafetypattern.model" basePackage="org.polarsys.kitalpha.vp.componentsamplesafetypattern"/>
-    <elements xsi:type="generationChain:PluginAddition" name="Generated Plugins for ComponentSampleSafetyPattern">
+    <elements xsi:type="generationChain:PluginAddition" name="Generated Plugins for null">
       <additions>org.polarsys.kitalpha.vp.componentsamplesafetypattern.vpdsl</additions>
     </elements>
-    <elements xsi:type="generationChain:FeatureAddition" name="Generated Features for ComponentSampleSafetyPattern">
+    <elements xsi:type="generationChain:FeatureAddition" name="Generated Features for null">
       <additions>org.polarsys.kitalpha.vp.componentsamplesafetypattern.representation.feature</additions>
-      <additions>org.polarsys.kitalpha.vp.componentsamplesafetypattern.af.feature</additions>
-      <additions>org.polarsys.kitalpha.vp.componentsamplesafetypattern.rules.feature</additions>
     </elements>
   </elements>
 </generationChain:GenerationChain>

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -29,7 +29,8 @@ import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafe
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentSampleSafetyPatternFactoryImpl extends EFactoryImpl implements ComponentSampleSafetyPatternFactory {
+public class ComponentSampleSafetyPatternFactoryImpl extends EFactoryImpl
+		implements ComponentSampleSafetyPatternFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
@@ -38,7 +39,8 @@ public class ComponentSampleSafetyPatternFactoryImpl extends EFactoryImpl implem
 	 */
 	public static ComponentSampleSafetyPatternFactory init() {
 		try {
-			ComponentSampleSafetyPatternFactory theComponentSampleSafetyPatternFactory = (ComponentSampleSafetyPatternFactory) EPackage.Registry.INSTANCE.getEFactory(ComponentSampleSafetyPatternPackage.eNS_URI);
+			ComponentSampleSafetyPatternFactory theComponentSampleSafetyPatternFactory = (ComponentSampleSafetyPatternFactory) EPackage.Registry.INSTANCE
+					.getEFactory(ComponentSampleSafetyPatternPackage.eNS_URI);
 			if (theComponentSampleSafetyPatternFactory != null) {
 				return theComponentSampleSafetyPatternFactory;
 			}
@@ -133,7 +135,8 @@ public class ComponentSampleSafetyPatternFactoryImpl extends EFactoryImpl implem
 	public SAFETY_PATTERN createSAFETY_PATTERNFromString(EDataType eDataType, String initialValue) {
 		SAFETY_PATTERN result = SAFETY_PATTERN.get(initialValue);
 		if (result == null)
-			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		return result;
 	}
 

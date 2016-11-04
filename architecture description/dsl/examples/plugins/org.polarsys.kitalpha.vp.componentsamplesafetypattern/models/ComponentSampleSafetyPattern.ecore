@@ -6,7 +6,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="modes" upperBound="-1"
         eType="#//SafetyMode" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SafetyMode" eSuperTypes="../../org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#//ComponentElement">
+  <eClassifiers xsi:type="ecore:EClass" name="SafetyMode" eSuperTypes="../../org.polarsys.kitalpha.vp.componentsamplesafety/models/ComponentSampleSafety.ecore#//Safety">
     <eStructuralFeatures xsi:type="ecore:EReference" name="involvedComponents" upperBound="-1"
         eType="ecore:EClass ../../org.polarsys.kitalpha.vp.componentsamplesafety/models/ComponentSampleSafety.ecore#//Safety"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pattern" eType="#//SAFETY_PATTERN"/>
