@@ -43,7 +43,7 @@ public class PlatformReader implements Constants {
 		res.setPath(element.getAttribute("path"));
 		String tags = element.getAttribute("tags");
 		if (tags != null) {
-			for (String tag : tags.split(", "))
+			for (String tag : tags.split(","))
 				res.getTags().add(tag);
 		}
 		return res;
