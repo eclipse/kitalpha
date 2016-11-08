@@ -46,8 +46,8 @@ final class OpenViewAction extends Action implements IMenuCreator {
 		public void widgetSelected(SelectionEvent ee) {
 			try {
 				MenuItem menuItem = (MenuItem) ee.getSource();
-				String viewId = (String) menuItem.getData();
-				showView(viewId);
+				ViewElement viewElt = (ViewElement) menuItem.getData();
+				showView(viewElt.getId());
 			} catch (Exception e) {
 				AD_Log.getDefault().logError(e);
 			}
