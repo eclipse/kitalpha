@@ -7,14 +7,17 @@ Element-Version: 3.0
 External-Reference: 
 Id: _-nkQ0HXZEea2Ve0UEUBuKQ
 Runtime-Version: 2.0.2.201511100828
-Save-Time: 10/12/16 10:11 AM
+Save-Time: 11/8/16 6:07 PM
 Testcase-Type: ecl
 
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
 Content-Type: text/ecl
 Entry-Name: .content
 
-get-view "Project Explorer" | get-tree 
+
+//This script is deactivated because detachment doesn't work on treeviewer!
+
+/*get-view "Project Explorer" | get-tree 
     | select "org.polarsys.kitalpha.vp.componentsample.runtime.model/model/VideoOnDemand.componentsample" | double-click
 get-menu "File/Save" | click
 with [get-editor "VideoOnDemand.componentsample" | get-tree] {
@@ -26,56 +29,23 @@ with [get-editor "VideoOnDemand.componentsample" | get-tree] {
 get-window "Validation Information" | get-label "Validation completed successfully" | get-property caption 
     | equals "Validation completed successfully" | verify-true
 get-window "Validation Information" | get-button OK | click
-with [get-view "Viewpoint Manager" | get-table] {
-    get-item "Component Sample" | get-property caption | equals "Component Sample" | verify-true
-    get-item "Component Sample" | get-property "columns[0]" | equals "Component Sample" | verify-true
-    get-item "Component Sample" | get-property "columns[2]" | equals Used | verify-true
-    get-item "Component Sample Framework" | get-property caption | equals "Component Sample Framework" | verify-true
-    get-item "Component Sample Framework" | get-property "columns[0]" | equals "Component Sample Framework" 
-        | verify-true
-    get-item "Component Sample Framework" | get-property "columns[2]" | equals Used | verify-true
-    get-item "Component Sample Performance" | get-property caption | equals "Component Sample Performance" | verify-true
-    get-item "Component Sample Performance" | get-property "columns[0]" | equals "Component Sample Performance" 
-        | verify-true
-    get-item "Component Sample Performance" | get-property "columns[2]" | equals Unused | verify-true
-    get-item "Component Sample Quality Assessment" | get-property caption 
-        | equals "Component Sample Quality Assessment" | verify-true
-    get-item "Component Sample Quality Assessment" | get-property "columns[0]" 
-        | equals "Component Sample Quality Assessment" | verify-true
-    get-item "Component Sample Quality Assessment" | get-property "columns[2]" | equals Unused | verify-true
-    get-item "Component Sample Quality Assessment" | get-property caption 
-        | equals "Component Sample Quality Assessment" | verify-true
-    get-item "Component Sample Quality Assessment" | get-property "columns[0]" 
-        | equals "Component Sample Quality Assessment" | verify-true
-    get-item "Component Sample Quality Assessment" | get-property "columns[2]" | equals Unused | verify-true
-    get-item "Component Sample Safety" | get-property caption | equals "Component Sample Safety" | verify-true
-    get-item "Component Sample Safety" | get-property "columns[0]" | equals "Component Sample Safety" | verify-true
-    get-item "Component Sample Safety" | get-property "columns[2]" | equals Unused | verify-true
-    get-item "Component Sample Safety Pattern" | get-property caption | equals "Component Sample Safety Pattern" 
-        | verify-true
-    get-item "Component Sample Safety Pattern" | get-property "columns[0]" | equals "Component Sample Safety Pattern" 
-        | verify-true
-    get-item "Component Sample Safety Pattern" | get-property "columns[2]" | equals Unused | verify-true
-}
-get-view "Viewpoint Manager" | get-table | select "Component Sample Performance" | get-menu "Reference" | click
+
+get-view "Viewpoint Manager" | get-button "Show all viewpoints" | click
 with [get-view "Viewpoint Manager" | get-table] {
     get-item "Component Sample Performance" | get-property "columns[0]" | equals "Component Sample Performance" 
         | verify-true
     get-item "Component Sample Performance" | get-property "columns[2]" | equals Used | verify-true
 }
 get-eclipse-window | key-type "" "\\u0000"
-get-view "Viewpoint Manager" | get-table | select "Component Sample Quality Assessment" | get-menu "Reference" | click
 with [get-view "Viewpoint Manager" | get-table] {
     get-item "Component Sample Quality Assessment" | get-property "columns[0]" 
         | equals "Component Sample Quality Assessment" | verify-true
     get-item "Component Sample Quality Assessment" | get-property "columns[2]" | equals Used | verify-true
 }
-get-view "Viewpoint Manager" | get-table | select "Component Sample Safety" | get-menu "Reference" | click
 with [get-view "Viewpoint Manager" | get-table] {
     get-item "Component Sample Safety" | get-property "columns[0]" | equals "Component Sample Safety" | verify-true
     get-item "Component Sample Safety" | get-property "columns[2]" | equals Used | verify-true
 }
-get-view "Viewpoint Manager" | get-table | select "Component Sample Safety Pattern" | get-menu "Reference" | click
 with [get-view "Viewpoint Manager" | get-table] {
     get-item "Component Sample Safety Pattern" | get-property "columns[0]" | equals "Component Sample Safety Pattern" 
         | verify-true
@@ -83,7 +53,7 @@ with [get-view "Viewpoint Manager" | get-table] {
 }
 with [get-editor "VideoOnDemand.componentsample" | get-tree] {
     get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.componentsample.runtime.model\\/model\\/VideoOnDemand.componentsample/Video On Demande" 
-        | get-property childCount | equals 1 | verify-true
+        | get-property childCount | equals 2 | verify-true
 }
 get-editor "VideoOnDemand.componentsample" | get-tree 
     | get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.componentsample.runtime.model\\/model\\/VideoOnDemand.componentsample/Video On Demande/Video System/Video Display \\(VD\\)" 
@@ -96,7 +66,7 @@ get-editor "Detachment" | get-section "Viewpoints Hierarchy" | get-tree | get-pr
 get-editor "Detachment" | get-section "Viewpoints Hierarchy" | get-tree | get-item "Component Sample" 
     | get-property childCount | equals 4 | verify-true
 get-editor "Detachment" | close
-get-button "Save (M1+S)" | click
+
 get-editor "VideoOnDemand.componentsample" | get-tree 
     | get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.componentsample.runtime.model\\/model\\/VideoOnDemand.componentsample/Video On Demande/Video System/Video Display \\(VD\\)" 
 wait -ms 1000
@@ -136,10 +106,30 @@ with [get-editor "Detachment" | get-section "Viewpoints Hierarchy" | get-tree] {
     get-item "Component Sample/Component Sample Safety Pattern" | get-property checked | equals false | verify-true
 }
 get-editor "Detachment" | get-button "Perform Detachment" | click
-get-window "Warning..." | get-button Yes | click
+
+get-window Information | get-button Yes | click
 get-window "Detachment..." | get-button OK | click
+
 get-editor "VideoOnDemand.componentsample" | close
 get-view "Project Explorer" | get-tree 
     | select "org.polarsys.kitalpha.vp.componentsample.runtime.model/model/VideoOnDemand.componentsample" | double-click
-get-button "Save (M1+S)" | click
+
+get-editor "VideoOnDemand.componentsample" | get-tree 
+    | select "platform:\\/resource\\/org.polarsys.kitalpha.vp.componentsample.runtime.model\\/model\\/VideoOnDemand.componentsample"
+
+with [get-view "Viewpoint Manager" | get-table] {
+    get-item "Component Sample Performance" | get-property caption | equals "Component Sample Performance" | verify-true
+    get-item "Component Sample Performance" | get-property "values['Name']" | equals "Component Sample Performance" 
+        | verify-true
+    get-item "Component Sample Performance" | get-property "values['State']" | equals Unused | verify-true
+    get-item "Component Sample Quality Assessment" | get-property "values['Name']" 
+        | equals "Component Sample Quality Assessment" | verify-true
+    get-item "Component Sample Quality Assessment" | get-property "values['State']" | equals Unused | verify-true
+    get-item "Component Sample Safety" | get-property "values['Name']" | equals "Component Sample Safety" | verify-true
+    get-item "Component Sample Safety" | get-property "values['State']" | equals Unused | verify-true
+    get-item "Component Sample Safety Pattern" | get-property "values['Name']" 
+        | equals "Component Sample Safety Pattern" | verify-true
+    get-item "Component Sample Safety Pattern" | get-property "values['State']" | equals Unused | verify-true
+}
+*/
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

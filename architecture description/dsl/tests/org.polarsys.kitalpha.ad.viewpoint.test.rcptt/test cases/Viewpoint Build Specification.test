@@ -1,0 +1,44 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _QEesEKaMEeap-ORrGyGQRg,_7A2tkHiyEeaI368ba7nlrQ
+Element-Name: Viewpoint Build Specification
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _JdRukKaMEeap-ORrGyGQRg
+Runtime-Version: 2.0.2.201511100828
+Save-Time: 11/9/16 3:55 PM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.datatest.vpdsl/model/datatest.spec.vptext" 
+    | double-click
+with [get-editor "datatest.spec.vptext" | get-text-viewer] {
+    set-caret-pos 15 31
+    key-type Enter
+    key-type "M1+SPACE"
+    key-type Down -times 2
+    key-type Enter
+}
+get-window "Viewpoint Build File Creation Wizard" | get-button Finish | click
+with [get-editor "datatest.build.vptext" | get-text-viewer] {
+    set-caret-pos 12 56
+    key-type Enter
+    key-type "M1+SPACE"
+    key-type Up
+    key-type Enter
+}
+get-menu "File/Save All" | click
+get-view Outline | get-tree | get-item "datatest.build" | get-property childCount | equals 2 | verify-true
+get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.datatest.vpdsl/model/datatest.vpdesc" 
+    | double-click
+get-editor "datatest.vpdesc" | get-tree 
+    | get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.datatest.vpdsl\\/model\\/datatest.vpdesc/Viewpoint datatest/Build datatest.build" 
+    | click
+get-editor "datatest.vpdesc" | get-tree 
+    | get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.datatest.vpdsl\\/model\\/datatest.vpdesc/Viewpoint datatest/Build datatest.build" 
+    | get-property childCount | equals 2 | verify-true
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

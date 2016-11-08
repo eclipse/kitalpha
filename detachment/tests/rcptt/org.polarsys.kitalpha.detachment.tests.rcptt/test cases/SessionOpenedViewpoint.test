@@ -7,7 +7,7 @@ Element-Version: 3.0
 External-Reference: 
 Id: _Ryn70HWrEea2Ve0UEUBuKQ
 Runtime-Version: 2.0.2.201511100828
-Save-Time: 10/12/16 10:24 AM
+Save-Time: 11/8/16 6:04 PM
 Testcase-Type: ecl
 
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
@@ -36,67 +36,7 @@ with [get-editor "Video on demand Architecture"] {
 get-menu "Component Sample Performance" | click
 
 get-eclipse-window | key-type "" "\\u0000"
-with [get-editor "Video on demand Architecture"] {
-    with [get-palette | get-palette-entry Performance] {
-        mouse-move 57 11 button1 -height 23 -width 125
-        mouse-press 57 11 button1 -height 23 -width 125
-        mouse-release 57 11 button1 524288 -height 23 -width 125
-        mouse-move 28 18 -height 23 -width 125
-    }
-    with [get-diagram -index 1 | get-edit-part -name "Video on demand Architecture" | get-edit-part 
-        -name "Package Video System" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
-        with [get-edit-part -name "HWVideo Display (VD)" | get-edit-part 
-            -className DNodeContainerViewNodeContainerCompartment2EditPart] {
-            mouse-move 341 192 -height 261 -width 486
-            get-edit-part -name "HWVD Processor" | get-edit-part 
-                -className DNodeContainerViewNodeContainerCompartment2EditPart | mouse-move 196 157 -height 213 
-                -width 240
-        }
-        with [get-edit-part -name HWEthernet | get-edit-part 
-            -className DNodeContainerViewNodeContainerCompartment2EditPart] {
-            mouse-move 61 41 button1 -height 68 -width 148
-            mouse-press 61 41 button1 -height 68 -width 148
-            mouse-release 61 41 button1 524288 -height 68 -width 148
-        }
-    }
-    with [get-diagram -index 1 | get-edit-part -name "Video on demand Architecture" | get-edit-part 
-        -name "Package Video System" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
-        mouse-move 554 170 -height 304 -width 1228
-        with [get-edit-part -name "HWVideo Display (VD)" | get-edit-part 
-            -className DNodeContainerViewNodeContainerCompartment2EditPart] {
-            mouse-move 2 161 -height 261 -width 486
-            mouse-move 455 259 -height 261 -width 486
-        }
-    }
-    with [get-palette | get-palette-entry Status] {
-        mouse-move 48 15 button1 -height 23 -width 125
-        mouse-press 48 15 button1 -height 23 -width 125
-        mouse-release 48 15 button1 524288 -height 23 -width 125
-    }
-    with [get-diagram -index 1 | get-edit-part -name "Video on demand Architecture" | get-edit-part 
-        -name "Package Video System" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
-        mouse-move 489 192 -height 304 -width 1228
-        with [get-edit-part -name HWEthernet | get-edit-part 
-            -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part 
-            -name "Cost: 0/Complexity: 0" | get-edit-part 
-            -className DNodeContainerViewNodeContainerCompartment2EditPart] {
-            mouse-move 70 50 button1 -height 68 -width 148
-            mouse-press 70 50 button1 -height 68 -width 148
-            mouse-release 70 50 button1 524288 -height 68 -width 148
-        }
-    }
-    with [get-diagram -index 1 | get-edit-part -name "Video on demand Architecture"] {
-        with [get-edit-part -name "Package Video System" | get-edit-part 
-            -className DNodeContainerViewNodeContainerCompartmentEditPart] {
-            mouse-move 273 280 -height 304 -width 1228
-            mouse-hover 273 280 -height 304 -width 1228
-            mouse-move 171 272 -height 304 -width 1228
-        }
-        mouse-move 256 336 -height 523 -width 1250
-        mouse-hover 256 336 -mask ALT -height 523 -width 1250
-        mouse-move 259 336 -mask ALT -height 523 -width 1250
-    }
-}
+
 get-menu "File/Save" | click
 wait -ms 1000
 get-view "Viewpoint Manager" | get-table | get-item "Component Sample Performance" | get-property "columns[2]" 
@@ -105,22 +45,6 @@ get-editor "Video on demand Architecture" | get-diagram -index 1 | get-edit-part
     | mouse-move 132 548 -height 551 -width 1165
 get-view "Viewpoint Manager" | get-table | select "Component Sample Performance" | get-menu "Unreference" | click
 get-window "Unreference viewpoint Component Sample Performance" | get-button Yes | click
-with [get-editor "Video on demand Architecture" | get-diagram -index 1 | get-edit-part 
-    -name "Video on demand Architecture"] {
-    mouse-move 625 403 -height 551 -width 1165
-    mouse-move 170 39 -height 551 -width 1165
-}
-
-
-with [get-editor "Video on demand Architecture" | get-diagram -index 1 | get-edit-part 
-    -name "Video on demand Architecture" | get-edit-part -name "Package Video System" | get-edit-part 
-    -className DNodeContainerViewNodeContainerCompartmentEditPart] {
-    mouse-move 403 124 -height 304 -width 1228
-    mouse-move 278 24 -height 304 -width 1228
-}
-
-get-editor "Video on demand Architecture" | get-diagram -index 1 | get-edit-part -name "Video on demand Architecture" 
-    | mouse-move 411 477 -height 547 -width 1250
 
 get-tab-folder -index 2 | get-tab-item Detachment| click
 get-editor "Detachment" | close
