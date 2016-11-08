@@ -30,6 +30,14 @@ Copyright (c) 2014, 2016 Thales Global Services S.A.S.
          id="org.polarsys.kitalpha.vp.componentsamplesafety.af.feature"
          version="0.0.0"/>
 
+   <includes
+         id="org.polarsys.kitalpha.vp.componentsamplesafety.representation.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.polarsys.kitalpha.vp.componentsamplesafety.rules.feature"
+         version="0.0.0"/>
+
    <plugin
          id="org.polarsys.kitalpha.vp.componentsamplesafety.model.edit"
          download-size="0"
