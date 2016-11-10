@@ -44,7 +44,7 @@ public class PlatformReader implements Constants {
 		String tags = element.getAttribute("tags");
 		if (tags != null) {
 			for (String tag : tags.split(","))
-				res.getTags().add(tag);
+				res.getTags().add(tag.trim());
 		}
 		return res;
 	}
