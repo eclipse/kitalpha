@@ -22,13 +22,13 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Workspace#getRuleSets <em>Rule Sets</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Workspace#getServiceSets <em>Service Sets</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Workspace#getActiveViewpoints <em>Active Viewpoints</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Workspace#getPropertySets <em>Property Sets</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.ViewpointPackage#getWorkspace()
  * @model

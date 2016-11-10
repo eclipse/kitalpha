@@ -20,13 +20,13 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.NameElement#getName <em>Name</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.NameElement#getDescription <em>Description</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.NameElement#getId <em>Id</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.NameElement#getVpid <em>Vpid</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.ViewpointPackage#getNameElement()
  * @model

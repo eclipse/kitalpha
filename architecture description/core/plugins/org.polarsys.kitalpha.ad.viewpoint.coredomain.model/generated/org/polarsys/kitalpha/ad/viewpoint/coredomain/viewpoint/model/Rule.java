@@ -20,6 +20,7 @@ import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.tools.model.Viewp
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Rule#isLive <em>Live</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Rule#getImplementation <em>Implementation</em>}</li>
@@ -27,7 +28,6 @@ import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.tools.model.Viewp
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Rule#getLanguage <em>Language</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Rule#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.ViewpointPackage#getRule()
  * @model

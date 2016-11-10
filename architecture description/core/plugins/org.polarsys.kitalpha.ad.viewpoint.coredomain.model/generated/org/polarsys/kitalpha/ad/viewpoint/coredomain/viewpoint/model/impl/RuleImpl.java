@@ -27,6 +27,7 @@ import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.ViewpointPa
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.impl.RuleImpl#isLive <em>Live</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.impl.RuleImpl#getImplementation <em>Implementation</em>}</li>
@@ -34,7 +35,6 @@ import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.ViewpointPa
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.impl.RuleImpl#getLanguage <em>Language</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.impl.RuleImpl#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

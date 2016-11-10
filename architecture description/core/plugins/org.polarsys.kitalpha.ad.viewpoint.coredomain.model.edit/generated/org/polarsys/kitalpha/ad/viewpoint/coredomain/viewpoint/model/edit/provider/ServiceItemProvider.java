@@ -40,13 +40,7 @@ import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.ViewpointPa
  * @generated
  */
 public class ServiceItemProvider
-	extends NameElementItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends NameElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

@@ -34,11 +34,11 @@ import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.ViewpointPa
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.impl.RuleSetImpl#getHiddenRules <em>Hidden Rules</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.impl.RuleSetImpl#getNewRules <em>New Rules</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

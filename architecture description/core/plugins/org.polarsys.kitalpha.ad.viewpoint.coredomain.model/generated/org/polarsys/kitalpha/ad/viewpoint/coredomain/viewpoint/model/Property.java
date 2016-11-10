@@ -20,11 +20,11 @@ import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.tools.model.Viewp
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Property#getValue <em>Value</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Property#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.ViewpointPackage#getProperty()
  * @model

@@ -1,4 +1,4 @@
-//Generated with EGF 1.2.0.v20140805-0858
+//Generated with EGF 1.4.1.v20161010-1511
 package org.polarsys.kitalpha.ad.viewpoint.coredomain.patterns.eoperations.workspace;
 
 import org.eclipse.egf.common.helper.*;
@@ -8,7 +8,8 @@ import org.eclipse.egf.model.pattern.*;
 import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 
-public class getPropertySetPattern extends org.eclipse.egf.emf.pattern.model.call.Class.ClassimplementedGenOperationTODOoverride {
+public class getPropertySetPattern
+		extends org.eclipse.egf.emf.pattern.model.call.Class.ClassimplementedGenOperationTODOoverride {
 	protected static String nl;
 
 	public static synchronized getPropertySetPattern create(String lineSeparator) {
@@ -19,7 +20,11 @@ public class getPropertySetPattern extends org.eclipse.egf.emf.pattern.model.cal
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "\t\tPropertySet result = null;" + NL + "\t\tfor (PropertySet set : getPropertySets()) {" + NL + "\t\t\tif (vp.equals(set.getTarget())) {" + NL + "\t\t\t\tif (result != null)" + NL + "\t\t\t\t\tthrow new IllegalStateException(\"Multple propertyset is not expected\");" + NL + "\t\t\t\tresult = set;" + NL + "\t\t\t}" + NL + "\t\t}" + NL + "\t\treturn result;";
+	protected final String TEXT_1 = "\t\tPropertySet result = null;" + NL
+			+ "\t\tfor (PropertySet set : getPropertySets()) {" + NL + "\t\t\tViewpoint target = set.getTarget();" + NL
+			+ "\t\t\tif (target != null && vp.getId().equals(target.getId())) {" + NL + "\t\t\t\tif (result != null)"
+			+ NL + "\t\t\t\t\tthrow new IllegalStateException(\"Multple propertyset is not expected\");" + NL
+			+ "\t\t\t\tresult = set;" + NL + "\t\t\t}" + NL + "\t\t}" + NL + "\t\treturn result;";
 	protected final String TEXT_2 = NL;
 	protected final String TEXT_3 = NL;
 
@@ -99,7 +104,8 @@ public class getPropertySetPattern extends org.eclipse.egf.emf.pattern.model.cal
 																this.positiveOperationOffsetCorrection = (java.lang.String) positiveOperationOffsetCorrectionParameter;
 
 																if (preCondition(ctx)) {
-																	ctx.setNode(new Node.Container(currentNode, getClass()));
+																	ctx.setNode(new Node.Container(currentNode,
+																			getClass()));
 																	orchestration(ctx);
 																}
 

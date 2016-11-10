@@ -34,11 +34,11 @@ import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.ViewpointPa
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.impl.PropertySetImpl#getHiddenProperties <em>Hidden Properties</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.impl.PropertySetImpl#getNewProperties <em>New Properties</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
