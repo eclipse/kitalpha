@@ -1,10 +1,10 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
@@ -35,14 +35,14 @@ import com.google.common.collect.Sets;
  * @author Faycal Abka
  */
 public class DataWorkspaceEPackage extends HashMap<String, Object> implements
-		EPackage.Registry {
+EPackage.Registry {
 
 	private static final long serialVersionUID = 8725943628088716000L;
 
 	public static final DataWorkspaceEPackage INSTANCE = new DataWorkspaceEPackage();
 
 	private static final EPackage.Registry delegate = EPackage.Registry.INSTANCE;
-	
+
 	private final WorkspaceEventHandler wsEventHandler = new WorkspaceEventHandler(this);
 
 	private DataWorkspaceEPackage() {
@@ -50,91 +50,93 @@ public class DataWorkspaceEPackage extends HashMap<String, Object> implements
 		ResourcesPlugin.getWorkspace().addResourceChangeListener(wsEventHandler);
 	}
 
-	public void initializeDataWorkspaceRegistry(IWorkspace workspace) {
+	public void initializeDataWorkspaceRegistry(final IWorkspace workspace) {
 
-		List<IFile> workspaceEcores = WorkspaceResourceHelper.collectWorkspaceResources(workspace, "ecore"); //$NON-NLS-1$
+		final List<IFile> workspaceEcores = WorkspaceResourceHelper.collectWorkspaceResources(workspace, "ecore"); //$NON-NLS-1$
 
-		for (IFile iFile : workspaceEcores) {
+		for (final IFile iFile : workspaceEcores) {
 			registerEPackagesFrom(iFile);
 		}
 	}
 
-	public Collection<EPackage> registerEPackagesFrom(IFile file) {
-		
-		Collection<EPackage> addEPackages = new HashSet<EPackage>();
-		
+	public Collection<EPackage> registerEPackagesFrom(final IFile file) {
+
+		final Collection<EPackage> addEPackages = new HashSet<EPackage>();
+
 		if (file.isAccessible()){
-			String path = file.getFullPath().toOSString();
-			URI uri = ResourceHelper.URIFix.createPlatformResourceURI(path, true);
-			ResourceSet resourceSet = new ResourceSetImpl();
-			Resource resource = resourceSet.getResource(uri, true);
+			final String path = file.getFullPath().toOSString();
+			final URI uri = ResourceHelper.URIFix.createPlatformResourceURI(path, true);
+			final ResourceSet resourceSet = new ResourceSetImpl();
+			final Resource resource = resourceSet.getResource(uri, true);
 
-			TreeIterator<EObject> it = resource.getAllContents();
-
-			while (it.hasNext()) {
-				EObject next = it.next();
-
-				if (next instanceof EPackage) {
-					EPackage ePackage = (EPackage) next;
-					String ePackageUri = ePackage.getNsURI();
-					
-					addEPackages.add(ePackage);
-					if (!containsKey(ePackageUri))
-						put(ePackage.getNsURI(), ePackage);
-				}
-			}
-		}
-		return addEPackages;
-	}
-	
-	
-	
-	public Collection<EPackage> registerEPackagesFrom(java.io.File file) {
-		
-		Collection<EPackage> addEPackages = new HashSet<EPackage>();
-
-		if (file != null && file.isFile()){
-			String path = file.getAbsolutePath();
-			URI uri = URI.createFileURI(path);
-
-			ResourceSet resourceSet = new ResourceSetImpl();
-			Resource resource = resourceSet.getResource(uri, true);
-
-			TreeIterator<EObject> it = resource.getAllContents();
+			final TreeIterator<EObject> it = resource.getAllContents();
 
 			while (it.hasNext()) {
-				EObject next = it.next();
+				final EObject next = it.next();
 
 				if (next instanceof EPackage) {
-					EPackage ePackage = (EPackage) next;
-					String ePackageUri = ePackage.getNsURI();
+					final EPackage ePackage = (EPackage) next;
+					final String ePackageUri = ePackage.getNsURI();
 
 					addEPackages.add(ePackage);
-					if (!containsKey(ePackageUri))
+					if (!containsKey(ePackageUri)) {
 						put(ePackage.getNsURI(), ePackage);
+					}
 				}
 			}
 		}
 		return addEPackages;
 	}
 
-//	//TODO redefine it with temporary Map which hold <Path, NSURI>
-	
-	public void removeEPackagesOf(IFile file) {
-		
-		if (file.isAccessible()){
-			String path = file.getFullPath().toString();
-			URI uri = ResourceHelper.URIFix.createPlatformResourceURI(path, true);
-			ResourceSet resourceSet = new ResourceSetImpl();
-			Resource resource = resourceSet.getResource(uri, true);
 
-			TreeIterator<EObject> it = resource.getAllContents();
+
+	public Collection<EPackage> registerEPackagesFrom(final java.io.File file) {
+
+		final Collection<EPackage> addEPackages = new HashSet<EPackage>();
+
+		if ((file != null) && file.isFile()){
+			final String path = file.getAbsolutePath();
+			final URI uri = URI.createFileURI(path);
+
+			final ResourceSet resourceSet = new ResourceSetImpl();
+			final Resource resource = resourceSet.getResource(uri, true);
+
+			final TreeIterator<EObject> it = resource.getAllContents();
 
 			while (it.hasNext()) {
-				EObject next = it.next();
+				final EObject next = it.next();
 
 				if (next instanceof EPackage) {
-					EPackage ePackage = (EPackage) next;
+					final EPackage ePackage = (EPackage) next;
+					final String ePackageUri = ePackage.getNsURI();
+
+					addEPackages.add(ePackage);
+					if (!containsKey(ePackageUri)) {
+						put(ePackage.getNsURI(), ePackage);
+					}
+				}
+			}
+		}
+		return addEPackages;
+	}
+
+	//	//TODO redefine it with temporary Map which hold <Path, NSURI>
+
+	public void removeEPackagesOf(final IFile file) {
+
+		if (file.isAccessible()){
+			final String path = file.getFullPath().toString();
+			final URI uri = ResourceHelper.URIFix.createPlatformResourceURI(path, true);
+			final ResourceSet resourceSet = new ResourceSetImpl();
+			final Resource resource = resourceSet.getResource(uri, true);
+
+			final TreeIterator<EObject> it = resource.getAllContents();
+
+			while (it.hasNext()) {
+				final EObject next = it.next();
+
+				if (next instanceof EPackage) {
+					final EPackage ePackage = (EPackage) next;
 
 					if (containsKey(ePackage.getNsURI())) {
 						remove(ePackage.getNsURI());
@@ -145,28 +147,29 @@ public class DataWorkspaceEPackage extends HashMap<String, Object> implements
 	}
 
 	@Override
-	public Object get(Object key) {
+	public Object get(final Object key) {
 		final Object value = super.get(key);
-		if (value == null)
+		if (value == null) {
 			return delegate.get(key);
+		}
 		return value;
 	}
 
 	@Override
-	public EPackage getEPackage(String nsURI) {
-		Object workspaceObject = get(nsURI);
+	public EPackage getEPackage(final String nsURI) {
+		final Object workspaceObject = get(nsURI);
 		EPackage workspaceEPackage = null;
-		
+
 		if (workspaceObject instanceof EPackage.Descriptor){
 			workspaceEPackage = ((EPackage.Descriptor) workspaceObject).getEPackage();
 		} else {
 			workspaceEPackage = (EPackage)workspaceObject;
 		}
-		
+
 
 		if (workspaceEPackage == null){
-			Object object = delegate.getEPackage(nsURI);
-			
+			final Object object = delegate.getEPackage(nsURI);
+
 			if (object instanceof EPackage.Descriptor){
 				return ((EPackage.Descriptor)object).getEPackage();
 			}
@@ -177,11 +180,12 @@ public class DataWorkspaceEPackage extends HashMap<String, Object> implements
 	}
 
 	@Override
-	public EFactory getEFactory(String nsURI) {
-		EPackage ePackage = getEPackage(nsURI);
+	public EFactory getEFactory(final String nsURI) {
+		final EPackage ePackage = getEPackage(nsURI);
 
-		if (ePackage != null)
+		if (ePackage != null) {
 			return ePackage.getEFactoryInstance();
+		}
 		return delegate.getEFactory(nsURI);
 	}
 
@@ -190,9 +194,9 @@ public class DataWorkspaceEPackage extends HashMap<String, Object> implements
 		return Sets.union(Sets.newHashSet(super.values()),
 				Sets.newHashSet(delegate.values()));
 	}
-	
-	
-	public void dispose(IWorkspace ws){
+
+
+	public void dispose(final IWorkspace ws){
 		clear();
 		ws.removeResourceChangeListener(wsEventHandler);
 	}

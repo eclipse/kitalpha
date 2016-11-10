@@ -1,10 +1,10 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
@@ -24,54 +24,54 @@ import com.google.inject.Inject;
 
 /**
  * This class is about recomputing the content of template intercepted template.
- * 
+ *
  * @author Faycal Abka
  *
  */
 public class TemplateInterceptor implements IObserver {
-	
+
 	protected static final String SEPARATOR = ".";
-	protected static final String LINE_SEPARATOR = "\n";	
+	protected static final String LINE_SEPARATOR = "\n";
 	protected static final String INDENTATION = "	";
-	
-	
+
+
 	private Template template;
 	private EObject model; //diagram
-	private Collection<Class> classes = new HashSet<Class>();
-	
+	private final Collection<Class> classes = new HashSet<Class>();
+
 	@Inject
 	private IQualifiedNameProvider qualifiedNameProvider;
-	
 
-	
+
+
 	public TemplateInterceptor(){
 	}
-	
-	
-	
+
+
+
 	public Template getTemplate() {
 		return template;
 	}
 
-	public void setTemplate(Template template) {
+	public void setTemplate(final Template template) {
 		this.template = template;
 	}
-	
-	
-	
+
+
+
 	public EObject getModel() {
 		return model;
 	}
 
 
 
-	public void setModel(EObject model) {
+	public void setModel(final EObject model) {
 		this.model = model;
 	}
 
 
 
-	public void addAll(Collection<Class> newClasses){
+	public void addAll(final Collection<Class> newClasses){
 		classes.addAll(newClasses);
 	}
 
@@ -83,19 +83,19 @@ public class TemplateInterceptor implements IObserver {
 
 	@SuppressWarnings("deprecation")
 	@Override
-	public void update(Class vpClass, boolean isDiagramExtension)
+	public void update(final Class vpClass, final boolean isDiagramExtension)
 	{
-		Template template = getTemplate();
-		
+		final Template template = getTemplate();
+
 		if (template != null){
 
 			IGenerationStrategy newDiagGen;
-			
+
 			if (qualifiedNameProvider == null)
 			{
 				qualifiedNameProvider = new DefaultDeclarativeQualifiedNameProvider();
 			}
-			
+
 			if (isDiagramExtension)
 			{
 				newDiagGen = new ExtendedDiagramGeneration(model, qualifiedNameProvider);

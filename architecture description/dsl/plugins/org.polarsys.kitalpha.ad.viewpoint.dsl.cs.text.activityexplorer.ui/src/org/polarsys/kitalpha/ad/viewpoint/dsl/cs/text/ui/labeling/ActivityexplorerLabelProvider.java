@@ -1,10 +1,10 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
@@ -30,48 +30,50 @@ import com.google.inject.Inject;
 
 /**
  * Provides labels for a EObjects.
- * 
+ *
  * see http://www.eclipse.org/Xtext/documentation/latest/xtext.html#labelProvider
  */
 public class ActivityexplorerLabelProvider extends DefaultEObjectLabelProvider {
-	
+
 	@Inject
 	IExternalContentProvider contentProvider;
 
 	@Inject
-	public ActivityexplorerLabelProvider(AdapterFactoryLabelProvider delegate) {
+	public ActivityexplorerLabelProvider(final AdapterFactoryLabelProvider delegate) {
 		super(delegate);
 	}
-	
-	public String text(PageExtension element){
-		String extendedPageId = element.getExtendedPageID();
-		Viewpoint viewpoint = getRootContainer(element);
-		
+
+	public String text(final PageExtension element){
+		final String extendedPageId = element.getExtendedPageID();
+		final Viewpoint viewpoint = getRootContainer(element);
+
 		String pageName = ActivityExplorerAspectHelper.getPageName(viewpoint, extendedPageId);
-		
-		if (pageName == null || pageName.isEmpty()) {
+
+		if ((pageName == null) || pageName.isEmpty()) {
 			//Try to get via extension point
 			pageName = ActivityExplorerAspectHelper.getPageName(extendedPageId);
-			
-			if (pageName == null || pageName.isEmpty()) //Try to find in the current activity explorer
+
+			if ((pageName == null) || pageName.isEmpty()) {
 				pageName = findPageNameInCurrent(element, extendedPageId);
-			
+			}
+
 		}
-		
+
 		return "[Page Extension] " + pageName;  //$NON-NLS-1$
 	}
-	
-	private String findPageNameInCurrent(PageExtension element, String extendedPageId){
-		EObject container = EcoreUtil.getRootContainer(element);
+
+	private String findPageNameInCurrent(final PageExtension element, final String extendedPageId){
+		final EObject container = EcoreUtil.getRootContainer(element);
 		if (container instanceof ViewpointActivityExplorer){
-			ViewpointActivityExplorer _vae = (ViewpointActivityExplorer)container;
-			EList<AbstractPage> ownedPages = _vae.getOwnedPages();
-			
-			for (AbstractPage _p : ownedPages) {
+			final ViewpointActivityExplorer _vae = (ViewpointActivityExplorer)container;
+			final EList<AbstractPage> ownedPages = _vae.getOwnedPages();
+
+			for (final AbstractPage _p : ownedPages) {
 				if ((_p instanceof Page) && ((Page)_p).getActivityExplorerItemID().equals(extendedPageId)){
 					String name = ((Page)_p).getName();
-					if (name == null || name.isEmpty())
+					if ((name == null) || name.isEmpty()) {
 						name = extendedPageId;
+					}
 					return name;
 				}
 			}
@@ -79,40 +81,42 @@ public class ActivityexplorerLabelProvider extends DefaultEObjectLabelProvider {
 		return null;
 	}
 
-	public String text(SectionExtension element){
-		String extendedSectionId = element.getExtendedSectionID();
-		Viewpoint viewpoint = getRootContainer(element);
-		
+	public String text(final SectionExtension element){
+		final String extendedSectionId = element.getExtendedSectionID();
+		final Viewpoint viewpoint = getRootContainer(element);
+
 		String sectionName = ActivityExplorerAspectHelper.getSectionName(viewpoint, extendedSectionId);
-		
-		if (sectionName == null || sectionName.isEmpty()){
+
+		if ((sectionName == null) || sectionName.isEmpty()){
 			sectionName = ActivityExplorerAspectHelper.getSectionName(extendedSectionId);
-			
-			if (sectionName == null || sectionName.isEmpty()){
+
+			if ((sectionName == null) || sectionName.isEmpty()){
 				sectionName = findSectionNameInCurrent(element, extendedSectionId);
-				
-				if (sectionName == null || sectionName.isEmpty())
+
+				if ((sectionName == null) || sectionName.isEmpty()) {
 					sectionName = extendedSectionId;
+				}
 			}
 		}
-		
+
 		return "[Section Extension] " + sectionName; //$NON-NLS-1$
 	}
-	
-	
-	private String findSectionNameInCurrent(SectionExtension element, String extendedSectionId) {
-		EObject container = EcoreUtil.getRootContainer(element);
+
+
+	private String findSectionNameInCurrent(final SectionExtension element, final String extendedSectionId) {
+		final EObject container = EcoreUtil.getRootContainer(element);
 		if (container instanceof ViewpointActivityExplorer){
-			ViewpointActivityExplorer _vae = (ViewpointActivityExplorer)container;
-			EList<AbstractPage> ownedPages = _vae.getOwnedPages();
-			
-			for (AbstractPage _p : ownedPages) {
-				EList<Section> ownedSections = _p.getOwnedSections();
-				for (Section section : ownedSections) {
+			final ViewpointActivityExplorer _vae = (ViewpointActivityExplorer)container;
+			final EList<AbstractPage> ownedPages = _vae.getOwnedPages();
+
+			for (final AbstractPage _p : ownedPages) {
+				final EList<Section> ownedSections = _p.getOwnedSections();
+				for (final Section section : ownedSections) {
 					if (section.getActivityExplorerItemID().equals(extendedSectionId)){
 						String name = section.getName();
-						if (name == null || name.isEmpty())
+						if ((name == null) || name.isEmpty()) {
 							name = extendedSectionId;
+						}
 						return name;
 					}
 				}
@@ -121,12 +125,13 @@ public class ActivityexplorerLabelProvider extends DefaultEObjectLabelProvider {
 		return null;
 	}
 
-	private Viewpoint getRootContainer(EObject eObject){
-		EObject root = ProjectUtil.getRootViewpoint(eObject, contentProvider);
-		
-		if (root instanceof Viewpoint)
+	private Viewpoint getRootContainer(final EObject eObject){
+		final EObject root = ProjectUtil.getRootViewpoint(eObject, contentProvider);
+
+		if (root instanceof Viewpoint) {
 			return (Viewpoint)root;
-		
+		}
+
 		return null;
 	}
 }
