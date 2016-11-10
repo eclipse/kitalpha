@@ -84,6 +84,8 @@ final class OpenViewAction extends Action implements IMenuCreator {
 		if (resource == null)
 			return;
 		viewIds = ViewHelper.getViewIds(resource);
+		if (viewIds.isEmpty())
+			setEnabled(false);
 	}
 
 	public void dispose() {
