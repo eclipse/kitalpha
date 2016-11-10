@@ -1,0 +1,102 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _7A2tkHiyEeaI368ba7nlrQ,_sO_ToKaEEeap-ORrGyGQRg
+Element-Name: Viewpoint Diagram Specification
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _Y2JPoKaEEeap-ORrGyGQRg
+Runtime-Version: 2.0.2.201511100828
+Save-Time: 11/9/16 3:07 PM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.datatest.vpdsl/model/datatest.spec.vptext" 
+    | double-click
+with [get-editor "datatest.spec.vptext" | get-text-viewer] {
+    set-caret-pos 12 23
+    key-type Enter
+    key-type "M1+SPACE"
+    key-type Down -times 7
+    key-type Enter
+}
+get-window "Viewpoint Diagram File Creation Wizard" | get-button Finish | click
+get-view "Project Explorer" | get-tree | select "data/diagram workspace" | double-click
+with [get-editor "diagram workspace" | get-text-viewer] {
+    set-caret-pos 1 2
+    select-range 1 1 305 2
+    get-menu Copy | click
+}
+get-tab-folder -index 2 | get-tab-item "datatest.diagram.vptext" | click
+with [get-editor "datatest.diagram.vptext" | get-text-viewer] {
+    set-caret-pos 9 4
+    select-range 10 2 1 1
+    get-menu Paste | click
+    hover-text 14 37
+}
+with [get-view "Project Explorer" | get-tree] {
+    select "org.polarsys.kitalpha.vp.datatest.vpdsl/model/datatest.data.vptext" | double-click
+    select "data/data specification" | double-click
+}
+with [get-editor "data specification" | get-text-viewer] {
+    set-caret-pos 1 2
+    select-range 1 1 361 2
+    get-menu Copy | click
+}
+get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.datatest.vpdsl/model/datatest.data.vptext" 
+    | double-click
+with [get-editor "datatest.data.vptext" | get-text-viewer] {
+    set-caret-pos 10 1
+    select-range 11 2 1 1
+    get-menu Paste | click
+}
+get-tab-folder -index 2 | get-tab-item "*datatest.diagram.vptext" | click
+get-menu "File/Save All" | click
+get-view "Project Explorer" | get-tree 
+    | select "org.polarsys.kitalpha.vp.datatest.vpdsl/model/datatest.data.vptext" | double-click
+get-tab-folder -index 2 | get-tab-item "datatest.diagram.vptext" | click
+with [get-editor "datatest.diagram.vptext" | get-text-viewer] {
+    hover-text 14 37
+    set-caret-pos 14 26
+    select-range 14 25 14 36
+    key-type "M1+f"
+}
+with [get-window "Find/Replace"] {
+    get-combo -after [get-label "Find:"] | set-text datatest
+    get-button "Replace All" | click
+    get-button Close | click
+}
+with [get-editor "datatest.diagram.vptext" | get-text-viewer] {
+    hover-text 14 37
+    set-caret-pos 14 33
+    select-range 14 25 14 36
+    key-type "M1+f"
+}
+with [get-window "Find/Replace"] {
+    get-combo -after [get-label "Replace with:"] | set-text datatest
+    get-button "Replace All" | click
+    get-button Close | click
+}
+get-menu "File/Save As..." | click
+get-window "Save As" | get-button Cancel | click
+get-menu "File/Save All" | click
+with [get-editor "datatest.diagram.vptext" | get-text-viewer] {
+    set-caret-pos 11 10
+    type-text datatest
+    key-type "M1+s"
+}
+wait -ms 3000
+get-view Outline | get-tree | get-item "datatest.diagram/datatest.diagram" | get-property childCount | equals 6 
+    | verify-true
+get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.datatest.vpdsl/model/datatest.vpdesc" 
+    | double-click
+get-editor "datatest.vpdesc" | get-tree 
+    | get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.datatest.vpdsl\\/model\\/datatest.vpdesc/Viewpoint datatest" 
+    | get-property childCount | equals 4 | verify-true
+get-editor "datatest.vpdesc" | get-tree 
+    | get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.datatest.vpdsl\\/model\\/datatest.vpdesc/Viewpoint datatest/Diagram Set datatest.diagram" 
+    | get-property childCount | equals 6 | verify-true
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

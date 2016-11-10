@@ -1,0 +1,39 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _8OegEKaNEeap-ORrGyGQRg,_7A2tkHiyEeaI368ba7nlrQ
+Element-Name: Viewpoint Generate Textual Files
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _18Et4KaNEeap-ORrGyGQRg
+Runtime-Version: 2.0.2.201511100828
+Save-Time: 11/9/16 4:10 PM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.datatest.vpdsl/model/datatest.vpdesc"
+get-view "Project Explorer" | get-tree | get-item "org.polarsys.kitalpha.vp.datatest.vpdsl/model" 
+    | get-property childCount | equals 1 | verify-true
+get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.datatest.vpdsl/model/datatest.vpdesc" 
+    | get-menu "Viewpoint DSL/Generate vptext files" | click
+get-view "Project Explorer" | get-tree | get-item "org.polarsys.kitalpha.vp.datatest.vpdsl/model" 
+    | get-property childCount | equals 8 | verify-true
+get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.datatest.vpdsl/plugin.xml" | double-click
+get-editor "org.polarsys.kitalpha.vp.datatest.vpdsl" | get-tab-folder | get-tab-item Extensions | click
+get-editor "org.polarsys.kitalpha.vp.datatest.vpdsl" | get-section "All Extensions" | get-tree | get-property itemCount 
+    | equals 8 | verify-true
+with [get-view "Project Explorer" | get-tree] {
+    select "org.polarsys.kitalpha.vp.datatest.vpdsl/model/datatest.activityexplorer.vptext" "org.polarsys.kitalpha.vp.datatest.vpdsl/model/datatest.build.vptext" "org.polarsys.kitalpha.vp.datatest.vpdsl/model/datatest.conf.vptext" "org.polarsys.kitalpha.vp.datatest.vpdsl/model/datatest.data.vptext" "org.polarsys.kitalpha.vp.datatest.vpdsl/model/datatest.diagram.vptext" "org.polarsys.kitalpha.vp.datatest.vpdsl/model/datatest.services.vptext" "org.polarsys.kitalpha.vp.datatest.vpdsl/model/datatest.spec.vptext"
+    key-type Del
+}
+get-window Delete | get-button OK | click
+get-editor "org.polarsys.kitalpha.vp.datatest.vpdsl" | get-section "All Extensions" | get-tree | get-property itemCount 
+    | equals 1 | verify-true
+get-view "Project Explorer" | get-tree | get-item "org.polarsys.kitalpha.vp.datatest.vpdsl/model" 
+    | get-property childCount | equals 1 | verify-true
+get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.datatest.vpdsl/model/datatest.vpdesc" 
+    | get-menu "Viewpoint DSL/Generate vptext files" | click
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--
