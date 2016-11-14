@@ -39,13 +39,13 @@ import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Workspace;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.impl.WorkspaceImpl#getRuleSets <em>Rule Sets</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.impl.WorkspaceImpl#getServiceSets <em>Service Sets</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.impl.WorkspaceImpl#getActiveViewpoints <em>Active Viewpoints</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.impl.WorkspaceImpl#getPropertySets <em>Property Sets</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -211,7 +211,8 @@ public class WorkspaceImpl extends EObjectImpl implements Workspace {
 	public RuleSet getRuleSet(Viewpoint vp) {
 		RuleSet result = null;
 		for (RuleSet set : getRuleSets()) {
-			if (vp.equals(set.getTarget())) {
+			Viewpoint target = set.getTarget();
+			if (target != null && vp.getId().equals(target.getId())) {
 				if (result != null)
 					throw new IllegalStateException("Multple ruleset is not expected");
 				result = set;
@@ -232,7 +233,8 @@ public class WorkspaceImpl extends EObjectImpl implements Workspace {
 	public ServiceSet getServiceSet(Viewpoint vp) {
 		ServiceSet result = null;
 		for (ServiceSet set : getServiceSets()) {
-			if (vp.equals(set.getTarget())) {
+			Viewpoint target = set.getTarget();
+			if (target != null && vp.getId().equals(target.getId())) {
 				if (result != null)
 					throw new IllegalStateException("Multple ServiceSet is not expected");
 				result = set;
@@ -253,7 +255,8 @@ public class WorkspaceImpl extends EObjectImpl implements Workspace {
 	public PropertySet getPropertySet(Viewpoint vp) {
 		PropertySet result = null;
 		for (PropertySet set : getPropertySets()) {
-			if (vp.equals(set.getTarget())) {
+			Viewpoint target = set.getTarget();
+			if (target != null && vp.getId().equals(target.getId())) {
 				if (result != null)
 					throw new IllegalStateException("Multple propertyset is not expected");
 				result = set;

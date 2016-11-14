@@ -1,6 +1,7 @@
 		PropertySet result = null;
 		for (PropertySet set : getPropertySets()) {
-			if (vp.equals(set.getTarget())) {
+			Viewpoint target = set.getTarget();
+			if (target != null && vp.getId().equals(target.getId())) {
 				if (result != null)
 					throw new IllegalStateException("Multple propertyset is not expected");
 				result = set;

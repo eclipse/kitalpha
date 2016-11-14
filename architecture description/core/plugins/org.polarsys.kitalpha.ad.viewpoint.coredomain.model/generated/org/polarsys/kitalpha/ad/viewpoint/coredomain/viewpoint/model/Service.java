@@ -22,11 +22,11 @@ import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.tools.model.Viewp
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Service#getRelatedRules <em>Related Rules</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Service#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.ViewpointPackage#getService()
  * @model

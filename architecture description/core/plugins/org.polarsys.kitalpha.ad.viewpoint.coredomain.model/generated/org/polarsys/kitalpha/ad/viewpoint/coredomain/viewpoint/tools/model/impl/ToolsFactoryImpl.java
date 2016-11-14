@@ -36,7 +36,7 @@ public class ToolsFactoryImpl extends EFactoryImpl implements ToolsFactory {
 	 */
 	public static ToolsFactory init() {
 		try {
-			ToolsFactory theToolsFactory = (ToolsFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.polarsys.org/kitalpha/ad/viewpoint/tools/1.0.0"); 
+			ToolsFactory theToolsFactory = (ToolsFactory)EPackage.Registry.INSTANCE.getEFactory(ToolsPackage.eNS_URI);
 			if (theToolsFactory != null) {
 				return theToolsFactory;
 			}

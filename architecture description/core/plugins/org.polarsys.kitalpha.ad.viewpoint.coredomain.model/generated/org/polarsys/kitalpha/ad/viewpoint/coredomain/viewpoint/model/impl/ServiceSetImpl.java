@@ -34,11 +34,11 @@ import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.ViewpointPa
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.impl.ServiceSetImpl#getHiddenServices <em>Hidden Services</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.impl.ServiceSetImpl#getNewServices <em>New Services</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

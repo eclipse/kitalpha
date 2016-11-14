@@ -1,6 +1,7 @@
 		ServiceSet result = null;
 		for (ServiceSet set : getServiceSets()) {
-			if (vp.equals(set.getTarget())) {
+			Viewpoint target = set.getTarget();
+			if (target != null && vp.getId().equals(target.getId())) {
 				if (result != null)
 					throw new IllegalStateException("Multple ServiceSet is not expected");
 				result = set;

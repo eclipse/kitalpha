@@ -19,11 +19,11 @@ package org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.ValidationRule#getSeverity <em>Severity</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.ValidationRule#getMessage <em>Message</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.ViewpointPackage#getValidationRule()
  * @model

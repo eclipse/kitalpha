@@ -38,7 +38,7 @@ public class ViewpointFactoryImpl extends EFactoryImpl implements ViewpointFacto
 	 */
 	public static ViewpointFactory init() {
 		try {
-			ViewpointFactory theViewpointFactory = (ViewpointFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.polarsys.org/kitalpha/ad/viewpoint/1.0.0"); 
+			ViewpointFactory theViewpointFactory = (ViewpointFactory)EPackage.Registry.INSTANCE.getEFactory(ViewpointPackage.eNS_URI);
 			if (theViewpointFactory != null) {
 				return theViewpointFactory;
 			}

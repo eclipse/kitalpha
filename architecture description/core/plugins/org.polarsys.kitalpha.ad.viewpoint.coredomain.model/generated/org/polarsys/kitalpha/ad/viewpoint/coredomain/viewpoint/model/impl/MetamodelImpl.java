@@ -31,10 +31,10 @@ import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.ViewpointPa
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.impl.MetamodelImpl#getModels <em>Models</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

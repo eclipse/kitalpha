@@ -20,10 +20,10 @@ import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.tools.model.Viewp
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.ElementSet#getTarget <em>Target</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.ViewpointPackage#getElementSet()
  * @model

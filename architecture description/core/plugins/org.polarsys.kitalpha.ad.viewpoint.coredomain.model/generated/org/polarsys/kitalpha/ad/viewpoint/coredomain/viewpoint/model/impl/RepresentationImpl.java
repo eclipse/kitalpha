@@ -35,10 +35,10 @@ import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.ViewpointPa
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.impl.RepresentationImpl#getRepresentations <em>Representations</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

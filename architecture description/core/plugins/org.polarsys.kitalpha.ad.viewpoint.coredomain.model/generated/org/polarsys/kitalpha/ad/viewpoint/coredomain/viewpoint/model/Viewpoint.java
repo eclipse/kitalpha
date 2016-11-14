@@ -21,6 +21,7 @@ import org.osgi.framework.Version;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint#getRuleSet <em>Rule Set</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint#getServiceSet <em>Service Set</em>}</li>
@@ -32,7 +33,6 @@ import org.osgi.framework.Version;
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint#getRepresentation <em>Representation</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint#getVersion <em>Version</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.ViewpointPackage#getViewpoint()
  * @model
