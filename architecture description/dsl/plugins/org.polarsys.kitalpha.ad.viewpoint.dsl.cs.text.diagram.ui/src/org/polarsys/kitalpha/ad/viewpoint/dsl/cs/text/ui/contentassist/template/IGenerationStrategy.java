@@ -4,7 +4,7 @@
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
@@ -14,16 +14,16 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.output.TreeAppendable;
 
 /**
- * 
+ *
  * This interface aims to have diffrents diagram generation
- * 
+ *
  * @author Faycal Abka
  *
  */
 public interface IGenerationStrategy {
-	
+
 	static final String SEPARATOR = ".";
-	static final String LINE_SEPARATOR = "\n";	
+	static final String LINE_SEPARATOR = "\n";
 	static final String INDENTATION = "	";
 
 	/**

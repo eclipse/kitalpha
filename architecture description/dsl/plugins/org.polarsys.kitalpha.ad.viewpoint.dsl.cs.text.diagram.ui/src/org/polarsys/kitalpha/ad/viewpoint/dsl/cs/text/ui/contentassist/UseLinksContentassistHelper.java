@@ -1,10 +1,10 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
@@ -41,164 +41,166 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint;
  * @author Faycal Abka
  */
 public class UseLinksContentassistHelper {
-	public static final String MODEL_KEY = "model";	
-	public static final String DIAGRAM_KEY = "diagram";	
-	
-	private static final DiagramUseLinks imports = new DiagramUseLinks();	
-	
-	
-	
-	public static DiagramUseLinks getViewpointRepresentation(EObject model){	
-		
-		imports.clear();	
-		
-		String projectName = ResourceHelper.getProjectName(model);	
-		
-		Viewpoint vp = getRootViewpoint(model, projectName);	
-		
-		initImportsWithUsedViewpoints(vp);	
-		initImportsWithModelsAndDiagrams(vp);	
+	public static final String MODEL_KEY = "model";
+	public static final String DIAGRAM_KEY = "diagram";
+
+	private static final DiagramUseLinks imports = new DiagramUseLinks();
+
+
+
+	public static DiagramUseLinks getViewpointRepresentation(final EObject model){
+
+		imports.clear();
+
+		final String projectName = ResourceHelper.getProjectName(model);
+
+		final Viewpoint vp = getRootViewpoint(model, projectName);
+
+		initImportsWithUsedViewpoints(vp);
+		initImportsWithModelsAndDiagrams(vp);
 		initImportWithWorkspaceAndFSResources(vp);
-		
-		return imports;	
-		
-	}	
-	
-	private static void initImportWithWorkspaceAndFSResources(Viewpoint vp) {	
-		EList<String> wsResources = vp.getUseWorkspaceResource();
-		EList<String> fsResources = vp.getUseFSResource();	
-		
-		for (String uri : wsResources) {	
-			addImport(uri);	
-		}	
-		
-		for (String uri : fsResources) {	
-			addImport(uri);	
-		}	
-	}	
-	
-	private static void addImport(String uri) {	
-		URI tmp = URI.createURI(uri);	
-		
-		if (tmp.isFile() ||	
-				tmp.isHierarchical() ||	
-				tmp.isPlatform() ||	
-				tmp.isRelative()){	
-			if (tmp.lastSegment().endsWith(".ecore")){	
-				imports.put(MODEL_KEY, uri);	
-			}	
-			if (tmp.lastSegment().endsWith("odesign")){	
-				imports.put(DIAGRAM_KEY, uri);	
-			}	
-		} else {	
-			//TODO Log 	
-		}	
-	}	
-	
-	private static void initImportsWithModelsAndDiagrams(Viewpoint vp) {	
-		EList<String> usedModels = vp.getUseAnyEMFResource();	
-		EList<String> usedDiagrams = vp.getUseDiagramResource();	
-		
-		for (String uri : usedModels) {	
-			imports.put(MODEL_KEY, uri);	
-		}	
-		
-		for (String uri : usedDiagrams) {	
-			imports.put(DIAGRAM_KEY, uri);	
-		}	
-		
-	}	
-	
-	private static void initImportsWithUsedViewpoints(Viewpoint vp) {	
-		EList<Viewpoint> viewpoints = vp.getUseViewpoint();	
-		
-		for (Viewpoint viewpoint : viewpoints) {	
-			String vpProjectName = ResourceHelper.getProjectName(viewpoint);	
 
-			//FIXME: get this id form configuation aspect 	
-			String resource_id = vpProjectName.substring(0, vpProjectName.lastIndexOf("."));	
+		return imports;
 
-			org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint coreDomainViewpoint = CoreDomainViewpointHelper.getCoreDomainViewpoint(resource_id, null);	
+	}
 
-			if (coreDomainViewpoint == null){	
-				throw new RuntimeException("Could not find the viewpoint resource for the project: " + vpProjectName);	
-			} else {                        	
-				EList<EPackage> packages = coreDomainViewpoint.getMetamodel().getModels();	
-				EList<RepresentationElement> representations = coreDomainViewpoint.getRepresentation().getRepresentations();	
-				fillURI(packages, representations);	
-			}	
-		}	
-	}	
-	
-	private static void fillURI(EList<EPackage> packages,	
-			EList<RepresentationElement> representations) {	
-		
-		for (EPackage ePackage : packages) {
-			String nsuri = ePackage.getNsURI();	
-			URI uri = URI.createURI(nsuri);
-			URI p_uri = URIConverterHelper.getPlatformURI(uri);
-			
-			if (p_uri != null && !p_uri.isEmpty())
+	private static void initImportWithWorkspaceAndFSResources(final Viewpoint vp) {
+		final EList<String> wsResources = vp.getUseWorkspaceResource();
+		final EList<String> fsResources = vp.getUseFSResource();
+
+		for (final String uri : wsResources) {
+			addImport(uri);
+		}
+
+		for (final String uri : fsResources) {
+			addImport(uri);
+		}
+	}
+
+	private static void addImport(final String uri) {
+		final URI tmp = URI.createURI(uri);
+
+		if (tmp.isFile() ||
+				tmp.isHierarchical() ||
+				tmp.isPlatform() ||
+				tmp.isRelative()){
+			if (tmp.lastSegment().endsWith(".ecore")){
+				imports.put(MODEL_KEY, uri);
+			}
+			if (tmp.lastSegment().endsWith("odesign")){
+				imports.put(DIAGRAM_KEY, uri);
+			}
+		} else {
+			//TODO Log
+		}
+	}
+
+	private static void initImportsWithModelsAndDiagrams(final Viewpoint vp) {
+		final EList<String> usedModels = vp.getUseAnyEMFResource();
+		final EList<String> usedDiagrams = vp.getUseDiagramResource();
+
+		for (final String uri : usedModels) {
+			imports.put(MODEL_KEY, uri);
+		}
+
+		for (final String uri : usedDiagrams) {
+			imports.put(DIAGRAM_KEY, uri);
+		}
+
+	}
+
+	private static void initImportsWithUsedViewpoints(final Viewpoint vp) {
+		final EList<Viewpoint> viewpoints = vp.getUseViewpoint();
+
+		for (final Viewpoint viewpoint : viewpoints) {
+			final String vpProjectName = ResourceHelper.getProjectName(viewpoint);
+
+			//FIXME: get this id form configuation aspect
+			final String resource_id = vpProjectName.substring(0, vpProjectName.lastIndexOf("."));
+
+			final org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint coreDomainViewpoint = CoreDomainViewpointHelper.getCoreDomainViewpoint(resource_id, null);
+
+			if (coreDomainViewpoint == null){
+				throw new RuntimeException("Could not find the viewpoint resource for the project: " + vpProjectName);
+			} else {
+				final EList<EPackage> packages = coreDomainViewpoint.getMetamodel().getModels();
+				final EList<RepresentationElement> representations = coreDomainViewpoint.getRepresentation().getRepresentations();
+				fillURI(packages, representations);
+			}
+		}
+	}
+
+	private static void fillURI(final EList<EPackage> packages,
+			final EList<RepresentationElement> representations) {
+
+		for (final EPackage ePackage : packages) {
+			final String nsuri = ePackage.getNsURI();
+			final URI uri = URI.createURI(nsuri);
+			final URI p_uri = URIConverterHelper.getPlatformURI(uri);
+
+			if ((p_uri != null) && !p_uri.isEmpty()) {
 				imports.put(MODEL_KEY, p_uri.toString());
-			else {
-				Resource ePackageResource = ePackage.eResource();
+			} else {
+				final Resource ePackageResource = ePackage.eResource();
 				if (ePackageResource != null){
-					URI resource_uri = ePackageResource.getURI();
-					
-					if (resource_uri != null && !resource_uri.isEmpty())
+					final URI resource_uri = ePackageResource.getURI();
+
+					if ((resource_uri != null) && !resource_uri.isEmpty()) {
 						imports.put(MODEL_KEY, resource_uri.toString());
+					}
 				} else {
 					imports.put(MODEL_KEY, nsuri);
 				}
 			}
 		}
-	
-		for (RepresentationElement representationElement : representations) {	
-			if (representationElement instanceof SiriusRepresentation){	
-				Group group = ((SiriusRepresentation)representationElement).getOdesign();	
-				if (group.eResource().getURI().isPlatformResource()){	
-					String ptf_uri = ResourceHelper.URIFix.createPlatformResourceURI(group.eResource().getURI().toPlatformString(true), true).toString();	
-							imports.put(DIAGRAM_KEY, ptf_uri);	
-				}	
-				
-				if (group.eResource().getURI().isPlatformPlugin()){	
-					String plg_uri = ResourceHelper.URIFix.createPlatformPluginURI(group.eResource
-							().getURI().toPlatformString(true), true).toString();	
-							imports.put(DIAGRAM_KEY, plg_uri);	
-				}	
-			}	
-		}	
-	}        	
-	
-	
-	private static Viewpoint getRootViewpoint(EObject model, String projectName){
-		
-		ResourceSet fakeResourceSet = new ResourceSetImpl();	
+
+		for (final RepresentationElement representationElement : representations) {
+			if (representationElement instanceof SiriusRepresentation){
+				final Group group = ((SiriusRepresentation)representationElement).getOdesign();
+				if (group.eResource().getURI().isPlatformResource()){
+					final String ptf_uri = ResourceHelper.URIFix.createPlatformResourceURI(group.eResource().getURI().toPlatformString(true), true).toString();
+					imports.put(DIAGRAM_KEY, ptf_uri);
+				}
+
+				if (group.eResource().getURI().isPlatformPlugin()){
+					final String plg_uri = ResourceHelper.URIFix.createPlatformPluginURI(group.eResource
+							().getURI().toPlatformString(true), true).toString();
+					imports.put(DIAGRAM_KEY, plg_uri);
+				}
+			}
+		}
+	}
+
+
+	private static Viewpoint getRootViewpoint(final EObject model, final String projectName){
+
+		final ResourceSet fakeResourceSet = new ResourceSetImpl();
 		XtextResource resource;
 		Viewpoint viewpoint = null; //result
-		
-		ResourceHelper.loadPrimaryResource(projectName, fakeResourceSet);	
-		URI uri = ResourceHelper.getPrimaryResourceURI(projectName);
-		
-		resource = (XtextResource) fakeResourceSet.getResource(uri, false);	
+
+		ResourceHelper.loadPrimaryResource(projectName, fakeResourceSet);
+		final URI uri = ResourceHelper.getPrimaryResourceURI(projectName);
+
+		resource = (XtextResource) fakeResourceSet.getResource(uri, false);
 		String text = null;
-		
-		IEditorReference vpspecEditor = getOpenedEditor(uri);
-		
+
+		final IEditorReference vpspecEditor = getOpenedEditor(uri);
+
 		try {
 			if (vpspecEditor != null)
 			{
-				XtextEditor editor = (XtextEditor) vpspecEditor.getEditor(false);
+				final XtextEditor editor = (XtextEditor) vpspecEditor.getEditor(false);
 				text = editor.getDirtyStateEditorSupport().getDirtyStateManager().getActualContentProvider().getContent(uri);
 
-				if (text != null && !text.isEmpty() && resource != null)
+				if ((text != null) && !text.isEmpty() && (resource != null))
 				{
 					resource.reparse(text);
 				}
 				else
 				{
-					if (resource != null)
+					if (resource != null) {
 						resource.load(Collections.emptyMap());
+					}
 				}
 			}
 			else
@@ -207,60 +209,64 @@ public class UseLinksContentassistHelper {
 				{
 					resource.load(Collections.emptyMap());
 				}
-				
+
 			}
-			
-			viewpoint = getCurrentViewpoint(resource); 
-		} catch (IOException e) {
+
+			viewpoint = getCurrentViewpoint(resource);
+		} catch (final IOException e) {
 			e.printStackTrace();
 		}
-		
-		return viewpoint;
-	}	
 
-	
-	private static IEditorReference getOpenedEditor(URI uri) {
-		
-		IEditorReference[] editors = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getEditorReferences();
-		
-		for (IEditorReference iEditorReference : editors) {
-			String id = iEditorReference.getId();
-			
+		return viewpoint;
+	}
+
+
+	private static IEditorReference getOpenedEditor(final URI uri) {
+
+		final IEditorReference[] editors = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getEditorReferences();
+
+		for (final IEditorReference iEditorReference : editors) {
+			final String id = iEditorReference.getId();
+
 			if (id.equals(EditorIDs.VPSPEC_EDITOR_ID))
 			{
 				try {
-					IFile file = iEditorReference.getEditorInput().getAdapter(IFile.class);
-					
+					final IFile file = iEditorReference.getEditorInput().getAdapter(IFile.class);
+
 					if (file != null)
 					{
-						String project = file.getProject().getName().toString();
-						String segment = uri.segment(1);
+						final String project = file.getProject().getName().toString();
+						final String segment = uri.segment(1);
 
-						if (project.equalsIgnoreCase(segment))
+						if (project.equalsIgnoreCase(segment)) {
 							return iEditorReference;
+						}
 					}
-				
-				} catch (PartInitException e) {
+
+				} catch (final PartInitException e) {
 					e.printStackTrace();
 				}
 			}
-			
+
 		}
-		
+
 		return null;
 	}
 
-	private static Viewpoint getCurrentViewpoint(Resource resource) {	
-		
-		if (resource == null) return null;
-		
-		TreeIterator<EObject> it = resource.getAllContents();	
-		
-		while (it.hasNext()){	
-			EObject v = it.next();	
-			if (v instanceof Viewpoint)	
-			return (Viewpoint)v;	
-		}	
-		return null;	
+	private static Viewpoint getCurrentViewpoint(final Resource resource) {
+
+		if (resource == null) {
+			return null;
+		}
+
+		final TreeIterator<EObject> it = resource.getAllContents();
+
+		while (it.hasNext()){
+			final EObject v = it.next();
+			if (v instanceof Viewpoint) {
+				return (Viewpoint)v;
+			}
+		}
+		return null;
 	}
 }

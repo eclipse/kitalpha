@@ -4,7 +4,7 @@
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
@@ -33,128 +33,128 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.registry.DataWorkspaceEPac
 import com.google.common.collect.Lists;
 
 /**
- * 
+ *
  * @author Amine Lajmi
  *         Faycal ABKA
  *
  */
 public class ExternalDataHelper {
-		
+
 	private static final String MetamodelLoader_ExtensionPoint = "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.common.externaldataloader";
 	private static final String MetamodelLoader_configElement = "externaldataloader";
 	private static final String MetamodelLoader_id = "id";
 	private static final String NamespacePattern_configElement = "NamespacePattern";
 	private static final String NamespacePattern_value = "value";
 	private static final String TargetApplication = "target";
-	
-	
+
+
 	public static final String EMF_TARGET = "EMF";
-		
+
 	private static Map<String, List<Pattern>> metamodelLoaders;
 	private static Map<String, List<Pattern>> metamodelLoadersTarget; //<Target, List of nsuri patterns
-	
+
 	private static Map<String, URI> packagesInScopeURIs;
-	
+
 	//<target, scope>
 	private final static Map<String, Map<String, URI>> packagesInScopeURIsTarget = Collections.synchronizedMap(new LinkedHashMap<String, Map<String, URI>>());
-	
+
 	private ExternalDataHelper() {}
-	
+
 	public static Map<String, URI> getPackagesInScopeURIs() {
-		if (packagesInScopeURIs != null && !packagesInScopeURIs.isEmpty()) {
+		if ((packagesInScopeURIs != null) && !packagesInScopeURIs.isEmpty()) {
 			return packagesInScopeURIs;
 		}
 		try{
 			return lookupPackagesInScopeURis();
-		} catch (CoreException e) {
+		} catch (final CoreException e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
-	
-	public static Map<String, URI> getPackagesInScopeURIs(String target) {
-		if (packagesInScopeURIsTarget != null && packagesInScopeURIsTarget.get(target) != null && !packagesInScopeURIsTarget.get(target).isEmpty()) {
+
+	public static Map<String, URI> getPackagesInScopeURIs(final String target) {
+		if ((packagesInScopeURIsTarget != null) && (packagesInScopeURIsTarget.get(target) != null) && !packagesInScopeURIsTarget.get(target).isEmpty()) {
 			return packagesInScopeURIsTarget.get(target);
 		}
 		try{
 			lookupPackagesInScopeURis(); //Initialize the target
 			return packagesInScopeURIsTarget.get(target);
-		} catch (CoreException e) {
+		} catch (final CoreException e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
-	
+
 	public static Map<String, List<Pattern>> getAvailableMetamodelLoaders() {
-		if (metamodelLoaders != null && !metamodelLoaders.isEmpty()) {
+		if ((metamodelLoaders != null) && !metamodelLoaders.isEmpty()) {
 			return metamodelLoaders;
 		}
 		try {
 			return lookupMetamodelLoaders();
-		} catch (CoreException e) {
+		} catch (final CoreException e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
-	
+
 	private static Map<String, URI> lookupPackagesInScopeURis()  throws CoreException {
 		packagesInScopeURIs= Collections.synchronizedMap(new LinkedHashMap<String, URI>());
-//		packagesInScopeURIsTarget = Collections.synchronizedMap(new LinkedHashMap<String, Map<String, URI>>());
+		//		packagesInScopeURIsTarget = Collections.synchronizedMap(new LinkedHashMap<String, Map<String, URI>>());
 		metamodelLoaders = getAvailableMetamodelLoaders();
-		for (String loader: metamodelLoaders.keySet()) {
-			List<Pattern> patternList = metamodelLoaders.get(loader);
+		for (final String loader: metamodelLoaders.keySet()) {
+			final List<Pattern> patternList = metamodelLoaders.get(loader);
 			//Delegate finding packages to contributed loaders
-			Map<String, URI> packagesFound = findPackagesInScopeURIs(patternList);
-			for (Map.Entry<String, URI> candidate : packagesFound.entrySet()) {
+			final Map<String, URI> packagesFound = findPackagesInScopeURIs(patternList);
+			for (final Map.Entry<String, URI> candidate : packagesFound.entrySet()) {
 				if (!packagesInScopeURIs.containsKey(candidate.getKey())){
 					packagesInScopeURIs.put(candidate.getKey(), candidate.getValue());
 				}
 			}
 		}
-		
+
 		//Merge EMF target with others, because EMF is available every time
-		for (String target: metamodelLoadersTarget.keySet()) {
+		for (final String target: metamodelLoadersTarget.keySet()) {
 			if (!target.equals("EMF")){
 				merge(EMF_TARGET, target);
 			}
 		}
-		
-		for(String target: metamodelLoadersTarget.keySet()){
-			List<Pattern> patternList = metamodelLoadersTarget.get(target);
-			Map<String, URI> packagesFound = findPackagesInScopeURIs(patternList);
-			
-			for(Map.Entry<String, URI> candidate: packagesFound.entrySet()){
-				Map<String, URI> targetPatterns = packagesInScopeURIsTarget.get(target);
+
+		for(final String target: metamodelLoadersTarget.keySet()){
+			final List<Pattern> patternList = metamodelLoadersTarget.get(target);
+			final Map<String, URI> packagesFound = findPackagesInScopeURIs(patternList);
+
+			for(final Map.Entry<String, URI> candidate: packagesFound.entrySet()){
+				final Map<String, URI> targetPatterns = packagesInScopeURIsTarget.get(target);
 				if (!targetPatterns.containsKey(candidate)){
 					targetPatterns.put(candidate.getKey(), candidate.getValue());
 				}
 			}
 		}
-		
+
 		return packagesInScopeURIs;
 	}
-	
+
 	public static Map<String, List<Pattern>> lookupMetamodelLoaders() throws CoreException {
 		metamodelLoaders = new HashMap<String, List<Pattern>>();
 		metamodelLoadersTarget = new HashMap<String, List<Pattern>>();
-		IConfigurationElement[] config = Platform.getExtensionRegistry().getConfigurationElementsFor(MetamodelLoader_ExtensionPoint);
+		final IConfigurationElement[] config = Platform.getExtensionRegistry().getConfigurationElementsFor(MetamodelLoader_ExtensionPoint);
 		if (config.length != 0) {
-			for (IConfigurationElement iConfigElement : config){
+			for (final IConfigurationElement iConfigElement : config){
 				if (iConfigElement.getName().toLowerCase().equals(MetamodelLoader_configElement.toLowerCase())) {
 					//Get the loader
-					String loaderId = iConfigElement.getAttribute(MetamodelLoader_id);
-					String target = iConfigElement.getAttribute(TargetApplication);
-					
-					List<Pattern> availablePatterns = Lists.newArrayList();
-					
+					final String loaderId = iConfigElement.getAttribute(MetamodelLoader_id);
+					final String target = iConfigElement.getAttribute(TargetApplication);
+
+					final List<Pattern> availablePatterns = Lists.newArrayList();
+
 					packagesInScopeURIsTarget.put(target, Collections.synchronizedMap(new LinkedHashMap<String, URI>()));
-					
-					IConfigurationElement[] patterns = iConfigElement.getChildren();
+
+					final IConfigurationElement[] patterns = iConfigElement.getChildren();
 					//Get the patterns
-					for (IConfigurationElement candidate : patterns){
+					for (final IConfigurationElement candidate : patterns){
 						if (candidate.getName().toLowerCase().equals(NamespacePattern_configElement.toLowerCase())) {
-							String value = candidate.getAttribute(NamespacePattern_value);
-							Pattern namespacePattern = Pattern.compile(value);
+							final String value = candidate.getAttribute(NamespacePattern_value);
+							final Pattern namespacePattern = Pattern.compile(value);
 							availablePatterns.add(namespacePattern);
 						}
 					}
@@ -165,13 +165,13 @@ public class ExternalDataHelper {
 		}
 		return metamodelLoaders;
 	}
-	
-	public static boolean isPackageInScopeURIs(EPackage ePackage) {
+
+	public static boolean isPackageInScopeURIs(final EPackage ePackage) {
 		metamodelLoaders = getAvailableMetamodelLoaders();
-		for (Map.Entry<String, URI> candidatePackage : getPackagesFromRegistry().entrySet()) {	
-			for (String loader: metamodelLoaders.keySet()) {
-				List<Pattern> patternList = metamodelLoaders.get(loader);
-				for (Pattern candidate : patternList) {
+		for (final Map.Entry<String, URI> candidatePackage : getPackagesFromRegistry().entrySet()) {
+			for (final String loader: metamodelLoaders.keySet()) {
+				final List<Pattern> patternList = metamodelLoaders.get(loader);
+				for (final Pattern candidate : patternList) {
 					if (candidate.matcher(candidatePackage.getKey()).matches()) {
 						return true;
 					}
@@ -183,65 +183,67 @@ public class ExternalDataHelper {
 		}
 		return false;
 	}
-	
-	public static Map<String, URI> findPackagesInScopeURIs(List<Pattern> namespacePatterns) {
-		 Map<String, URI> packagesInScopeURIs = Collections.synchronizedMap(new LinkedHashMap<String, URI>());
-		 for (Map.Entry<String, URI> entry : getPackagesFromRegistry().entrySet()) {
-			 for (Pattern candidate: namespacePatterns) {
+
+	public static Map<String, URI> findPackagesInScopeURIs(final List<Pattern> namespacePatterns) {
+		final Map<String, URI> packagesInScopeURIs = Collections.synchronizedMap(new LinkedHashMap<String, URI>());
+		for (final Map.Entry<String, URI> entry : getPackagesFromRegistry().entrySet()) {
+			for (final Pattern candidate: namespacePatterns) {
 				if (candidate.matcher(entry.getKey()).matches()) {
 					packagesInScopeURIs.put(entry.getKey(), entry.getValue());
 				}
 			}
-		 }
+		}
 		return packagesInScopeURIs;
 	}
-	
+
 	public static Map<String, URI> getPackagesFromRegistry() {
-		Map<String, URI> ePackageNsURItoGenModelLocationMap = EcorePlugin.getEPackageNsURIToGenModelLocationMap(false);
+		final Map<String, URI> ePackageNsURItoGenModelLocationMap = EcorePlugin.getEPackageNsURIToGenModelLocationMap(false);
 		return ePackageNsURItoGenModelLocationMap;
 	}
-	
-	public static EPackage loadEPackage(String resourceOrNsURI, ResourceSet resourceSet) {
-		if (resourceSet.getPackageRegistry().containsKey(resourceOrNsURI))
+
+	public static EPackage loadEPackage(final String resourceOrNsURI, final ResourceSet resourceSet) {
+		if (resourceSet.getPackageRegistry().containsKey(resourceOrNsURI)) {
 			return resourceSet.getPackageRegistry().getEPackage(resourceOrNsURI);
-		URI uri = URI.createURI(resourceOrNsURI);
+		}
+		final URI uri = URI.createURI(resourceOrNsURI);
 		try {
 			if ("http".equalsIgnoreCase(uri.scheme())){
 				DataWorkspaceEPackage.INSTANCE.initializeDataWorkspaceRegistry(ResourcesPlugin.getWorkspace());
-				EPackage ecoreModel = DataWorkspaceEPackage.INSTANCE.getEPackage(uri.toString());
+				final EPackage ecoreModel = DataWorkspaceEPackage.INSTANCE.getEPackage(uri.toString());
 
 				if (ecoreModel != null){
-//					EcoreUtil.resolveAll(ecoreModel);
+					//					EcoreUtil.resolveAll(ecoreModel);
 					resourceSet.getResources().add(ecoreModel.eResource());
 					return ecoreModel;
 				}
 			}
 			if (uri.fragment() == null) {
-				Resource resource = resourceSet.getResource(uri, true);
-				if (resource.getContents().isEmpty())
+				final Resource resource = resourceSet.getResource(uri, true);
+				if (resource.getContents().isEmpty()) {
 					return null;
-				EPackage result = (EPackage) resource.getContents().get(0);
+				}
+				final EPackage result = (EPackage) resource.getContents().get(0);
 				return result;
 			}
-			EPackage result = (EPackage) resourceSet.getEObject(uri, true);
+			final EPackage result = (EPackage) resourceSet.getEObject(uri, true);
 			return result;
-		} catch (RuntimeException ex) {
+		} catch (final RuntimeException ex) {
 			if (uri.isPlatformResource()) {
-				String platformString = uri.toPlatformString(true);
-				URI platformPluginURI = ResourceHelper.URIFix.createPlatformPluginURI(platformString, true);
+				final String platformString = uri.toPlatformString(true);
+				final URI platformPluginURI = ResourceHelper.URIFix.createPlatformPluginURI(platformString, true);
 				return loadEPackage(platformPluginURI.toString(), resourceSet);
 			}
 			return null;
 		}
 	}
-	
+
 	/**
 	 * Merge the values of target1 in the values of target2
 	 * @param target1
 	 * @param target2
 	 */
-	private static void merge(String target1, String target2){
-		List<Pattern> patternListTarget1 = metamodelLoadersTarget.get(target1);
+	private static void merge(final String target1, final String target2){
+		final List<Pattern> patternListTarget1 = metamodelLoadersTarget.get(target1);
 		metamodelLoadersTarget.get(target2).addAll(patternListTarget1);
 	}
 }

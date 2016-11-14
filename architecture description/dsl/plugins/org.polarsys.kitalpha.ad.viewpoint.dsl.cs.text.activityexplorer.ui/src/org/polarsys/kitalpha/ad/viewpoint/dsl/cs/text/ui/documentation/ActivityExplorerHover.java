@@ -1,10 +1,10 @@
 /*******************************************************************************
- * Copyright (c) 2015 Thales Global Services S.A.S.
+ * Copyright (c) 2015, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
@@ -32,139 +32,118 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.Viewpoin
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.util.ProjectUtil;
 
 /**
- * 
+ *
  * @author Faycal Abka
  *
  */
 public class ActivityExplorerHover extends CommonEObjectHover {
-	
-	private static boolean descriptionSelector = false;
-	private static boolean iconSelector = false;
-	private static boolean activitiesSelectors = false;
-	private static boolean headerSelector = false;
-	
+
+	private boolean descriptionSelector = false;
+	private boolean iconSelector = false;
+	private boolean activitiesSelectors = false;
+	private boolean headerSelector = false;
+
 	@Override
-	protected Pair<EObject, IRegion> getXtextElementAt(XtextResource resource, final int offset) {
-		IParseResult parseResult = resource.getParseResult();
+	protected Pair<EObject, IRegion> getXtextElementAt(final XtextResource resource, final int offset) {
+		final IParseResult parseResult = resource.getParseResult();
 		if (parseResult != null){
-			ILeafNode leafNode = NodeModelUtils.findLeafNodeAtOffset(parseResult.getRootNode(), offset);
-			String value = leafNode.getText();
-			
-			if (value != null && value.equals("page")){ //$NON-NLS-1$
-				EObject semanticObject = NodeModelUtils.findActualSemanticObjectFor(leafNode);
-				if (semanticObject != null && semanticObject instanceof Page){
+			final ILeafNode leafNode = NodeModelUtils.findLeafNodeAtOffset(parseResult.getRootNode(), offset);
+			final EObject semanticObject = NodeModelUtils.findActualSemanticObjectFor(leafNode);
+			final String value = leafNode != null? leafNode.getText() : null;
+
+			if (value != null){
+				if (value.equals("page") && (semanticObject instanceof Page)){ //$NON-NLS-1$
 					return Tuples.create(semanticObject, (IRegion)new Region(leafNode.getOffset(), leafNode.getLength()));
 				}
-			}
-			
-			if (value != null && value.equals("header")){ //$NON-NLS-1$
-				EObject semanticObject = NodeModelUtils.findActualSemanticObjectFor(leafNode);
-				if (semanticObject != null && semanticObject instanceof Page){
+
+				if (value.equals("header") && (semanticObject instanceof Page)){ //$NON-NLS-1$
 					headerSelector = true;
 					return Tuples.create(semanticObject, (IRegion)new Region(leafNode.getOffset(), leafNode.getLength()));
 				}
-			}
-			
-			if (value != null && value.equals("description")){ //$NON-NLS-1$
-				EObject semanticObject = NodeModelUtils.findActualSemanticObjectFor(leafNode);
-				if (semanticObject != null){
+
+				if (value.equals("description") && (semanticObject != null)){ //$NON-NLS-1$
 					descriptionSelector = true;
 					return Tuples.create(semanticObject, (IRegion)new Region(leafNode.getOffset(), leafNode.getLength()));
 				}
-			}
-			
-			if (value != null && value.equals("icon")){ //$NON-NLS-1$
-				EObject semanticObject = NodeModelUtils.findActualSemanticObjectFor(leafNode);
-				if (semanticObject != null && semanticObject instanceof Activity){
+
+				if (value.equals("icon") && (semanticObject instanceof Activity)){ //$NON-NLS-1$
 					iconSelector = true;
 					return Tuples.create(semanticObject, (IRegion)new Region(leafNode.getOffset(), leafNode.getLength()));
 				}
-			}
-			
-			if (value != null && value.equals("activity")){ //$NON-NLS-1$
-				EObject semanticObject = NodeModelUtils.findActualSemanticObjectFor(leafNode);
-				if (semanticObject != null && semanticObject instanceof Activity){
+
+				if (value.equals("activity") && (semanticObject instanceof Activity)){ //$NON-NLS-1$
 					return Tuples.create(semanticObject, (IRegion)new Region(leafNode.getOffset(), leafNode.getLength()));
 				}
-			}
-			
-			if (value != null && value.equals("activities")){ //$NON-NLS-1$
-				EObject semanticObject = NodeModelUtils.findActualSemanticObjectFor(leafNode);
-				if (semanticObject != null && semanticObject instanceof Section){
+
+				if (value.equals("activities") && (semanticObject instanceof Section)){ //$NON-NLS-1$
 					activitiesSelectors = true;
 					return Tuples.create(semanticObject, (IRegion)new Region(leafNode.getOffset(), leafNode.getLength()));
 				}
-			}
-			
-			if (value != null && value.equals("section")){ //$NON-NLS-1$
-				EObject semanticObject = NodeModelUtils.findActualSemanticObjectFor(leafNode);
-				if (semanticObject != null && semanticObject instanceof Section){
+
+				if (value.equals("section") && (semanticObject instanceof Section)){ //$NON-NLS-1$
 					return Tuples.create(semanticObject, (IRegion)new Region(leafNode.getOffset(), leafNode.getLength()));
 				}
 			}
 		}
 		return super.getXtextElementAt(resource, offset);
 	}
-	
+
 	@Override
-	public Object getHoverInfo(EObject first, ITextViewer textViewer, IRegion hoverRegion) {
-			if (first instanceof Overview){
-				Overview overview = (Overview)first;
-				return getOverviewHTMLText(overview);
+	public Object getHoverInfo(final EObject first, final ITextViewer textViewer, final IRegion hoverRegion) {
+		if (first instanceof Overview){
+			final Overview overview = (Overview)first;
+			return getOverviewHTMLText(overview);
+		}
+
+		if (first instanceof Page){
+			final Page page = (Page)first;
+			if (headerSelector){
+				return getHeaderHTMLText(page);
 			}
-			
-			if (first instanceof Page){
-				Page page = (Page)first;
-				if (headerSelector){
-					return getHeaderHTMLText(page);
-				}
-				
-				return getPageHTMLText(page);
+			return getPageHTMLText(page);
+		}
+
+		if (first instanceof Section){
+			final Section section = (Section)first;
+			if (descriptionSelector){
+				descriptionSelector = false;
+				return section.getDescription();
 			}
-			
-			if (first instanceof Section){
-				Section section = (Section)first;
-				if (descriptionSelector){
-					descriptionSelector = false;
-					return section.getDescription();
-				}
-				
-				if (activitiesSelectors){
-					activitiesSelectors = false;
-					return getActivitiesHTMLText(section);
-				}
-				
-				return getSectionHTMLText(section);
+
+			if (activitiesSelectors){
+				activitiesSelectors = false;
+				return getActivitiesHTMLText(section);
 			}
-			
-			if (first instanceof Activity){
-				Activity activity = (Activity)first;
-				
-				return getActivityHTMLText(activity);
-			}
-			
-			return super.getHoverInfo(first, textViewer, hoverRegion);
+			return getSectionHTMLText(section);
+		}
+
+		if (first instanceof Activity){
+			final Activity activity = (Activity)first;
+			return getActivityHTMLText(activity);
+		}
+
+		return super.getHoverInfo(first, textViewer, hoverRegion);
 	}
 
-	private Object getPageHTMLText(Page page) {
-		StringBuffer result = new StringBuffer();
-		EList<Section> ownedSections = page.getOwnedSections();
-		
+	private Object getPageHTMLText(final Page page) {
+		final StringBuffer result = new StringBuffer();
+		final EList<Section> ownedSections = page.getOwnedSections();
+
 		result.append("<table border='0' width='100%'><tr><td colspan='2'><b>");
 		setLabelOrName(page, result);
 		result.append("</b></td></tr>");
 		result.append("<tr><td width='20'></td><td>");
-		for (Section section : ownedSections) {
+		for (final Section section : ownedSections) {
 			result.append(getSectionHTMLText(section));
 		}
 		result.append("</td></tr></table>");
-		
+
 		return result.toString();
 	}
 
-	private Object getSectionHTMLText(Section section) {
-		StringBuffer result = new StringBuffer();
-		
+	private Object getSectionHTMLText(final Section section) {
+		final StringBuffer result = new StringBuffer();
+
 		result.append("<table border='0' width='100%'>");
 		result.append("<tr>");
 		result.append("<td  colspan='2' style='background:#CFCBFF; color:#333333'>");
@@ -174,41 +153,41 @@ public class ActivityExplorerHover extends CommonEObjectHover {
 		result.append("<td width='80'></td><td>");
 		result.append(getActivitiesHTMLText(section));
 		result.append("</td></tr></table>");
-		
+
 		return result.toString();
 	}
 
-	private Object getActivitiesHTMLText(Section section) {
-		StringBuffer result = new StringBuffer();
-		EList<Activity> ownedActivities = section.getOwnedActivities();
-		
-		for (Activity activity : ownedActivities) {
+	private Object getActivitiesHTMLText(final Section section) {
+		final StringBuffer result = new StringBuffer();
+		final EList<Activity> ownedActivities = section.getOwnedActivities();
+
+		for (final Activity activity : ownedActivities) {
 			result.append(getActivityDescription(activity));
 			result.append("<br/>");
 		}
-		
+
 		return result.toString();
 	}
 
-	private Object getActivityHTMLText(Activity activity) {
-		
+	private Object getActivityHTMLText(final Activity activity) {
+
 		if (descriptionSelector){
 			descriptionSelector = false;
 			return activity.getDescription();
 		}
-		
+
 		if (iconSelector){
 			iconSelector = false;
 			return getActivityIcon(activity);
 		}
-		
-		
+
+
 		return getActivityDescription(activity);
 	}
 
-	private Object getActivityDescription(Activity activity) {
-		StringBuffer result = new StringBuffer();
-		
+	private Object getActivityDescription(final Activity activity) {
+		final StringBuffer result = new StringBuffer();
+
 		result.append("<table border='0' width='100%'>");
 		result.append("<tr>");
 		result.append("<td  width='80'>");
@@ -218,108 +197,112 @@ public class ActivityExplorerHover extends CommonEObjectHover {
 		result.append(getLink(activity));
 		result.append("</td>");
 		result.append("</table>");
-		
+
 		return result.toString();
 	}
 
-	private Object getLink(Activity activity) {
+	private Object getLink(final Activity activity) {
 		String label = activity.getLabel();
-		if (label == null || label.isEmpty())
+		if ((label == null) || label.isEmpty()){
 			label = activity.getName();
+		}
 		return "<a style='text-decoration: none; color:#000099'>" + label + "</a>";
 	}
 
-	private Object getActivityIcon(Activity activity) {
-		
-		StringBuffer result = new StringBuffer();
-		
-		String iconPath = activity.getImagePathOff();
+	private Object getActivityIcon(final Activity activity) {
 
-		if (iconPath != null && !iconPath.isEmpty()){
-			IProject project = ProjectUtil.getEclipseProjectOf(activity);
-			IFolder iconsFolder = ProjectUtil.getFolderInProject(project, "icons");
-			IFile icon = iconsFolder.getFile(iconPath);
+		final StringBuffer result = new StringBuffer();
+
+		final String iconPath = activity.getImagePathOff();
+
+		if ((iconPath != null) && !iconPath.isEmpty()){
+			final IProject project = ProjectUtil.getEclipseProjectOf(activity);
+			final IFolder iconsFolder = ProjectUtil.getFolderInProject(project, "icons");
+			final IFile icon = iconsFolder.getFile(iconPath);
 
 			result.append("<img src='");
-			if (icon != null)
+			if (icon != null){
 				result.append(icon.getLocation().toPortableString());
-			else
+			} else {
 				result.append("icons/").append(iconPath);
-
+			}
 			result.append("'/>");
 		}
-		
+
 		return result.toString();
 	}
 
-	private Object getOverviewHTMLText(Overview overview) {
+	private Object getOverviewHTMLText(final Overview overview) {
 
 		if (descriptionSelector){
 			descriptionSelector = false;
 			return overview.getDescription();
 		}
-		
-		
-		StringBuffer result = new StringBuffer();
-
-		String description = overview.getDescription();
-		String imageOn = overview.getImagePathOn();
-		String imageOff = overview.getImagePathOff();
 
 
-		Pair<IFile, IFile> icons = getIconFiles(overview, imageOn, imageOff);
+		final StringBuffer result = new StringBuffer();
+
+		final String description = overview.getDescription();
+		final String imageOn = overview.getImagePathOn();
+		final String imageOff = overview.getImagePathOff();
+
+
+		final Pair<IFile, IFile> icons = getIconFiles(overview, imageOn, imageOff);
 
 		result.append("<table border='0' width='100%'>")
 		.append("<tr><td width='150'><img src='");
 
-		if (icons.getFirst() != null)
+		if (icons.getFirst() != null){
 			result.append(icons.getFirst().getLocation().toPortableString());
-		else
+		} else {
 			result.append("icons/").append(imageOn);
-
+		}
 		result.append("'/></td><td rowspan='2'/>").append(description)
 		.append("</td></tr><tr><td width='150'><img src='");
 
-		if (icons.getSecond() != null)
+		if (icons.getSecond() != null){
 			result.append(icons.getSecond().getLocation().toPortableString());
-		else
+		} else {
 			result.append("icons/").append(imageOn);
+		}
 
 		result.append("'/></td></tr></table>");
 
 		return result.toString();
 	}
-	
-	protected Pair<IFile, IFile> getIconFiles(EObject eObject, String first, String second){
+
+	protected Pair<IFile, IFile> getIconFiles(final EObject eObject, final String first, final String second){
 		IFile firstIcon = null;
 		IFile secondIcon = null;
-		
-		IProject project = ProjectUtil.getEclipseProjectOf(eObject);
-		IFolder iconsFolder = ProjectUtil.getFolderInProject(project, "icons");
-		
-		if (first != null && !first.isEmpty())
+
+		final IProject project = ProjectUtil.getEclipseProjectOf(eObject);
+		final IFolder iconsFolder = ProjectUtil.getFolderInProject(project, "icons");
+
+		if ((first != null) && !first.isEmpty()){
 			firstIcon = iconsFolder.getFile(first);
-		
-		if (second != null && !first.isEmpty())
+		}
+
+		if ((second != null) && !first.isEmpty()){
 			secondIcon = iconsFolder.getFile(second);
-		
+		}
+
 		return Tuples.create(firstIcon, secondIcon);
 	}
-	
-	private Object getHeaderHTMLText(Page page) {
-		
+
+	private Object getHeaderHTMLText(final Page page) {
+
 		if (descriptionSelector){
 			descriptionSelector = false;
 			return page.getDescription();
 		}
-		
-		StringBuffer result = new StringBuffer();
-		
-		String iconOn = page.getImagePathOn();
-		String iconOff = page.getImagePathOff();
-		
-		Pair<IFile, IFile> icons = getIconFiles(page, iconOn, iconOff);
-		
+
+		final StringBuffer result = new StringBuffer();
+
+		final String iconOn = page.getImagePathOn();
+		final String iconOff = page.getImagePathOff();
+
+		final Pair<IFile, IFile> icons = getIconFiles(page, iconOn, iconOff);
+
 		result.append("<table border='0' width='100%'>").append("<tr>");
 		if (icons.getFirst() != null){
 			result.append("<td>");
@@ -332,24 +315,25 @@ public class ActivityExplorerHover extends CommonEObjectHover {
 			result.append("</td>");
 		}
 		result.append("</tr></table>");
-		
+
 		return result.toString();
 	}
-	
-	private void appendIconPath(StringBuffer buf, IFile file, String iconName){
+
+	private void appendIconPath(final StringBuffer buf, final IFile file, final String iconName){
 		buf.append("<img src='");
-		if (file != null)
+		if (file != null){
 			buf.append(file.getLocation().toPortableString());
-		else
+		} else {
 			buf.append("icons/").append(iconName);
+		}
 		buf.append("'/>");
 	}
-	
-	private void setLabelOrName(ActivityExplorerItem item, StringBuffer buffer){
+
+	private void setLabelOrName(final ActivityExplorerItem item, final StringBuffer buffer){
 		String label = item.getLabel();
-		if (label == null || label.isEmpty())
+		if ((label == null) || label.isEmpty()){
 			label = item.getName();
-		
+		}
 		buffer.append(label);
 	}
 }

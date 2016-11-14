@@ -1,10 +1,10 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
@@ -36,87 +36,75 @@ import com.google.inject.Inject;
 
 
 /**
- * 
+ *
  * @author Faycal Abka
  *
  */
-public class VpdiagramTemplateProposalProvider extends
-		CommonTemplateProposalProvider {
-	
-	private ResourceSet resourceSet;
-	
-	private static TemplateInterceptor interceptor;
-	
+public class VpdiagramTemplateProposalProvider extends CommonTemplateProposalProvider {
+
+	private static final TemplateInterceptor interceptor = new TemplateInterceptor();;
+
 
 	@Inject
-	public VpdiagramTemplateProposalProvider(TemplateStore templateStore,
-			ContextTypeRegistry registry, ContextTypeIdHelper helper) {
-		
+	public VpdiagramTemplateProposalProvider(final TemplateStore templateStore,
+			final ContextTypeRegistry registry, final ContextTypeIdHelper helper) {
 		super(templateStore, registry, helper);
 		this.templateStore = templateStore;
-		interceptor = createTemplateInterceptor();
-		
 	}
-	
-	private TemplateInterceptor createTemplateInterceptor()
-	{
-		return new TemplateInterceptor();
-	}
-	
-	
+
+
 	@Override
-	protected void createTemplates(TemplateContext templateContext, ContentAssistContext context, ITemplateAcceptor acceptor) {
-		
-		TemplateContextType contextType = templateContext.getContextType();
-		Template[] templates = templateStore.getTemplates(contextType.getId());		
-		
-		for (Template template: templates) {
+	protected void createTemplates(final TemplateContext templateContext, final ContentAssistContext context, final ITemplateAcceptor acceptor) {
+
+		final TemplateContextType contextType = templateContext.getContextType();
+		final Template[] templates = templateStore.getTemplates(contextType.getId());
+
+		for (final Template template: templates) {
 			if (template.getDescription().equals("Generate Diagrams for all classes")) {
 				interceptor.setTemplate(template);
-				fillInterceptorWithDataClasses(template, context);
+				fillInterceptorWithDataClasses(context);
 			}
 		}
-		
-		for (Template template : templates) {
-			if (!acceptor.canAcceptMoreTemplates())
+
+		for (final Template template : templates) {
+			if (!acceptor.canAcceptMoreTemplates()) {
 				return;
-			if (validate(template, templateContext)) {	
-				TemplateProposal proposal = createProposal(template, templateContext, context, getImage(template), getRelevance(template));
+			}
+			if (validate(template, templateContext)) {
+				final TemplateProposal proposal = createProposal(template, templateContext, context, getImage(template), getRelevance(template));
 				acceptor.accept(proposal);
 			}
 		}
 	}
 
-
-	public static TemplateInterceptor getInterceptor() {
+	public static synchronized TemplateInterceptor getInterceptor() {
 		return interceptor;
 	}
 
 
-	private void fillInterceptorWithDataClasses(Template template,
-			ContentAssistContext context) {
-		
-		EObject current = context.getCurrentModel();
-		
+	private void fillInterceptorWithDataClasses(final ContentAssistContext context) {
+		final ResourceSet resourceSet;
+		final EObject current = context.getCurrentModel();
+
 		interceptor.setModel(current);
-		
+
 		resourceSet = current.eResource().getResourceSet();
-		String projectName = ResourceHelper.getProjectName(current);
-		
-		List<URI> dataResourceURIs = ResourceHelper.getSecondaryResourceURIsByExtension(FileExtension.DATA_EXTENSION, projectName);
-		
-		if (dataResourceURIs == null || dataResourceURIs.isEmpty()){
+		final String projectName = ResourceHelper.getProjectName(current);
+
+		final List<URI> dataResourceURIs = ResourceHelper.getSecondaryResourceURIsByExtension(FileExtension.DATA_EXTENSION, projectName);
+
+		if ((dataResourceURIs == null) || dataResourceURIs.isEmpty()){
 			throw new RuntimeException("could not locate data resource in the project: " + projectName);
 		}
-		
-		interceptor.getClasses().clear();
-		
-		for (URI uri : dataResourceURIs) {
-			List<EObject> dataRoots = ResourceHelper.loadDataResource(uri, resourceSet);
 
-			for (EObject eObject : dataRoots) {
+		interceptor.getClasses().clear();
+
+		for (final URI uri : dataResourceURIs) {
+			final List<EObject> dataRoots = ResourceHelper.loadDataResource(uri, resourceSet);
+
+			for (final EObject eObject : dataRoots) {
 				if (eObject instanceof Data){
-					EList<org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class> classes = ((Data)eObject).getVP_Classes();
+					final EList<org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class> classes = ((Data)eObject).getVP_Classes();
 					interceptor.addAll(classes);
 				}
 			}
