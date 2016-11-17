@@ -16,14 +16,20 @@ import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.common.command.Command;
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.command.CompoundCommand;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.sirius.business.api.dialect.DialectManager;
 import org.eclipse.sirius.business.api.dialect.command.RefreshRepresentationsCommand;
 import org.eclipse.sirius.business.api.helper.SiriusUtil;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
+import org.eclipse.sirius.diagram.DSemanticDiagram;
+import org.eclipse.sirius.diagram.business.api.refresh.CanonicalSynchronizer;
+import org.eclipse.sirius.diagram.business.api.refresh.CanonicalSynchronizerFactory;
+import org.eclipse.sirius.diagram.ui.business.api.view.SiriusGMFHelper;
+import org.eclipse.sirius.diagram.ui.internal.refresh.SynchronizeGMFModelCommand;
 import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.polarsys.kitalpha.model.common.commands.action.ModelCommand;
 import org.polarsys.kitalpha.model.common.commands.contrib.refresh.Messages;
@@ -32,6 +38,7 @@ import org.polarsys.kitalpha.model.common.commands.exception.ModelCommandExcepti
 /**
  * @author Faycal Abka
  */
+@SuppressWarnings("restriction")
 public class RefreshRepresentation extends ModelCommand {
 	
 	Logger LOGGER = Logger.getLogger(RefreshRepresentation.class);
@@ -47,37 +54,47 @@ public class RefreshRepresentation extends ModelCommand {
 		
 		Session session = SessionManager.INSTANCE.getExistingSession(resource.getURI());
 		if (session == null){
-			//Unload all resources. Resources will be realoaded by opening
-			//Sirius session
-			EList<Resource> resources = resource.getResourceSet().getResources();
-			for (Resource resource2 : resources) {
-				if (!resource2.isLoaded()){
-					resource2.unload();
-				}
-			}
 			session = SessionManager.INSTANCE.getSession(resource.getURI(), subMonitor);
 		}
 		
-		if (!session.isOpen())
+		if (!session.isOpen()){
 			session.open(subMonitor);
+		}
 		
 		subMonitor.beginTask(Messages.REFRESH_REMPRESENTATIONS, IProgressMonitor.UNKNOWN);
 		
 		Collection<DRepresentation> allRepresentations = DialectManager.INSTANCE.getAllRepresentations(session);
 		TransactionalEditingDomain domain = session.getTransactionalEditingDomain();
 		
-		Command cmd = new RefreshRepresentationsCommand(domain, subMonitor, allRepresentations);
+		CompoundCommand compoundCommand = new CompoundCommand("Refresh Diagrams"); //$NON-NLS-1$
+
+		refreshGMFModelDiagrams(allRepresentations, domain, compoundCommand);
+		Command refreshDRepresentations = new RefreshRepresentationsCommand(domain, subMonitor, allRepresentations);
 		
-		if (cmd.canExecute())
-			domain.getCommandStack().execute(cmd);
+		compoundCommand.append(refreshDRepresentations);
+		
+		if (compoundCommand.canExecute())
+			domain.getCommandStack().execute(compoundCommand);
 
 		subMonitor.subTask(Messages.SAVE_SIRIUS_SESSION);
 		session.save(subMonitor);
 		
 		subMonitor.subTask(Messages.CLOSING_SIRIUS_SESSION);
 		session.close(subMonitor);
+		
 		subMonitor.done();
 
 	}
-
+	
+	private void refreshGMFModelDiagrams(Collection<DRepresentation> allRepresentations, TransactionalEditingDomain ed, CompoundCommand compoundCommand) {
+		for (DRepresentation representation : allRepresentations) {
+			if (representation instanceof DSemanticDiagram){
+				DSemanticDiagram diagram = (DSemanticDiagram)representation;
+				Diagram gmfDiagram = SiriusGMFHelper.getGmfDiagram(diagram);
+				CanonicalSynchronizer cs = CanonicalSynchronizerFactory.INSTANCE.createCanonicalSynchronizer(gmfDiagram);
+				SynchronizeGMFModelCommand refreshDSemanticDiagram = new SynchronizeGMFModelCommand(ed, cs);
+				compoundCommand.append(refreshDSemanticDiagram);
+			}
+		}
+	}
 }
