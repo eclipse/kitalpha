@@ -13,7 +13,8 @@ Require-Bundle: org.eclipse.ui,
  org.polarsys.kitalpha.ad.integration.sirius.model,
  org.eclipse.emf.transaction,
  org.eclipse.sirius.diagram,
- org.eclipse.sirius.ui
+ org.eclipse.sirius.ui,
+ org.eclipse.sirius.ext.base
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Import-Package: org.eclipse.sirius.ui.business.internal.commands
