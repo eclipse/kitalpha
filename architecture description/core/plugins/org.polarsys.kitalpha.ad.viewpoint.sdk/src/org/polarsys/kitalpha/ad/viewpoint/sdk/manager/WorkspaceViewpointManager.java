@@ -15,6 +15,7 @@ import org.eclipse.osgi.util.NLS;
 import org.osgi.framework.BundleException;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointActivationException;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
+import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.ViewpointFinder;
 import org.polarsys.kitalpha.ad.viewpoint.sdk.Messages;
 
 /**
@@ -22,6 +23,10 @@ import org.polarsys.kitalpha.ad.viewpoint.sdk.Messages;
  * 
  */
 public class WorkspaceViewpointManager extends ViewpointManager {
+
+	static {
+		VP_FINDER = new WorkspaceFinder();
+	}
 
 	protected void activateBundle(String id) throws ViewpointActivationException {
 		try {
@@ -42,6 +47,11 @@ public class WorkspaceViewpointManager extends ViewpointManager {
 		} catch (BundleException e) {
 			throw new ViewpointActivationException(NLS.bind(Messages.ManageBundle_error_title9, id), e);
 		}
+	}
+
+	private static class WorkspaceFinder extends ViewpointFinder {
+
+		
 	}
 
 }
