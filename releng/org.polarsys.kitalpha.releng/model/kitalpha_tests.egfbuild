@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="ASCII"?>
 <buildcore:Chain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:buildcore="http://www.eclipse.org/egf/1.0.1/buildcore" xmlns:builddeploy="http://www.eclipse.org/egf/1.0.0/builddeploy" xmlns:buildfile="http://www.eclipse.org/egf/1.0.0/buildfile" xmlns:buildscm="http://www.eclipse.org/egf/1.0.0/buildscm" xmlns:buildstep="http://www.eclipse.org/egf/1.0.2/buildstep" xmi:id="_ZWe-YLdiEd-SDOU_DXNA_g" name="Kitalpha_tests">
   <propertyPackages xmi:id="_lb5k0I5EEeOQ8YcnVfa6Wg" name="urls">
-    <properties xmi:id="_8RvscN-NEeWnTY4Di0td3w" key="sdk.url" value="https://hudson.polarsys.org/kitalpha/job/Kitalpha_master/lastSuccessfulBuild"/>
+    <properties xmi:id="_8RvscN-NEeWnTY4Di0td3w" key="sdk.url" value="https://hudson.polarsys.org/kitalpha/job/Kitalpha-v1.1.x/lastSuccessfulBuild/"/>
     <properties xmi:id="_SQl0IOX2EeWn8_iL6inCSQ" key="rcptt.url" value="http://download.eclipse.org/rcptt/release/2.0.2/runner/rcptt.runner-2.0.2.zip"/>
     <properties xmi:id="_jHR-0AFdEeawr7sRcA8zAQ" key="jacoco.url" value="http://search.maven.org/remotecontent?filepath=org/jacoco/jacoco/0.7.1.201405082137/jacoco-0.7.1.201405082137.zip"/>
-    <properties xmi:id="_YK42sAVjEeaiMI0G7SovBw" key="example.url" value="https://hudson.polarsys.org/kitalpha/job/Kitalpha_master/lastSuccessfulBuild/artifact/result/publish/org.polarsys.kitalpha.vp.componentsample.example.feature/site.p2"/>
+    <properties xmi:id="_YK42sAVjEeaiMI0G7SovBw" key="example.url" value="https://hudson.polarsys.org/kitalpha/job/Kitalpha-v1.1.x/lastSuccessfulBuild/artifact/result/publish/org.polarsys.kitalpha.vp.componentsample.example.feature/site.p2"/>
   </propertyPackages>
   <propertyPackages xmi:id="_vtRuAI5EEeOQ8YcnVfa6Wg" name="versions">
     <properties xmi:id="_6aWv4IodEeGSbqNfjJWsgA" key="kitalpha_version" value="1.1.0"/>

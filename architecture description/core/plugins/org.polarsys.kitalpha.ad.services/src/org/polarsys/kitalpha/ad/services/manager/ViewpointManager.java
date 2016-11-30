@@ -12,6 +12,7 @@
 package org.polarsys.kitalpha.ad.services.manager;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -60,7 +61,7 @@ public class ViewpointManager {
 	private static final String VIEWPOINT_STATE_READ_ONLY = "stateReadOnly";
 	private static final String VIEWPOINT_STATE_HIDDEN = "stateHidden";
 	private static final String VIEWPOINT_STATE_MUTABLE_ACTIVATION = "stateMutableActivation";
-	private final static Set<String> discarded = new HashSet<String>();
+	
 	private final static List<OverallListener> overallListeners = new ArrayList<OverallListener>();
 	private final static List<OverallListener2> overallListener2s = new ArrayList<OverallListener2>();
 	private final List<Listener> listeners = new ArrayList<Listener>();
@@ -70,6 +71,7 @@ public class ViewpointManager {
 	private static final int ACTIVE = 64;
 	private static final int INACTIVE = 128;
 	private final static Map<ResourceSet, ViewpointManager> instances = new HashMap<ResourceSet, ViewpointManager>();
+	protected static ViewpointFinder VP_FINDER = new CachingFinder();
 
 	private final Map<String, List<String>> dependencies = new HashMap<String, List<String>>();
 	private final Set<String> managed = new HashSet<String>();
@@ -106,15 +108,11 @@ public class ViewpointManager {
 	}
 
 	public static void pinError(Resource vp, Exception e) {
-		discarded.add(vp.getId());
-		String msg = "Resource '" + vp.getId() + "' cannot be loaded, The viewpoint is discarded.";
-		AD_Log.getDefault().logError(msg, e);
+		VP_FINDER.pinError(vp, e);
 	}
 
 	public static void pinError(Resource vp, String details) {
-		discarded.add(vp.getId());
-		String msg = "Resource '" + vp.getId() + "' cannot be loaded, The viewpoint is discarded.\n" + details;
-		AD_Log.getDefault().logError(msg);
+		VP_FINDER.pinError(vp, details);
 	}
 
 	public static Description[] getAvailableViewpointDescriptions() {
@@ -247,18 +245,7 @@ public class ViewpointManager {
 	}
 
 	public static Resource[] getAvailableViewpoints() {
-		SearchCriteria searchCriteria = new SearchCriteria();
-		searchCriteria.setDomain("AF");
-		searchCriteria.getTags().add("vp");
-		Resource[] resources = ResourceReuse.createHelper().getResources(searchCriteria);
-		if (discarded.isEmpty())
-			return resources;
-		List<Resource> result = new ArrayList<Resource>(resources.length);
-		for (Resource res : resources) {
-			if (!discarded.contains(res.getId()))
-				result.add(res);
-		}
-		return result.toArray(new Resource[result.size()]);
+		return VP_FINDER.getAvailableViewpoints();
 	}
 
 	/**
@@ -712,7 +699,7 @@ public class ViewpointManager {
 		ViewpointManager instance = null;
 		try {
 			IConfigurationElement[] elts = Platform.getExtensionRegistry().getConfigurationElementsFor("org.polarsys.kitalpha.ad.services.viewpoint.manager");
-			if (elts == null || elts.length == 0)
+			if (elts == null || elts.length == 0) 
 				instance = new ViewpointManager();
 			else
 				instance = (ViewpointManager) elts[0].createExecutableExtension("class");
@@ -755,4 +742,70 @@ public class ViewpointManager {
 
 	}
 
+	public static abstract class ViewpointFinder {
+		
+		private final Set<String> discarded = new HashSet<String>();
+		
+		public Resource[] getAvailableViewpoints() {
+			SearchCriteria searchCriteria = new SearchCriteria();
+			searchCriteria.setDomain("AF");
+			searchCriteria.getTags().add("vp");
+			Resource[] resources = ResourceReuse.createHelper().getResources(searchCriteria);
+			if (discarded.isEmpty())
+				return resources;
+			List<Resource> result = new ArrayList<Resource>(resources.length);
+			for (Resource res : resources) {
+				if (!discarded.contains(res.getId()))
+					result.add(res);
+			}
+			return result.toArray(new Resource[result.size()]);
+		}
+		
+		public void pinError(Resource vp, Exception e) {
+			pinError(vp.getId());
+			String msg = "Resource '" + vp.getId() + "' cannot be loaded, The viewpoint is discarded.";
+			AD_Log.getDefault().logError(msg, e);
+		}
+
+		public void pinError(Resource vp, String details) {
+			pinError(vp.getId());
+			String msg = "Resource '" + vp.getId() + "' cannot be loaded, The viewpoint is discarded.\n" + details;
+			AD_Log.getDefault().logError(msg);
+		}
+		
+		protected void pinError(String id) {
+			discarded.add(id);
+		}
+
+
+	}
+
+	private static class CachingFinder extends ViewpointFinder {
+
+		private Resource[] availableViewpoints;
+		
+		public Resource[] getAvailableViewpoints() {
+			if (availableViewpoints == null)
+				availableViewpoints = super.getAvailableViewpoints();
+			return availableViewpoints;
+		}
+		
+		protected void pinError(String id) {
+			super.pinError(id);
+			if (availableViewpoints != null)
+			{
+				for (Resource r : availableViewpoints) {
+					if (id.equals(r.getId())) {
+						List<Resource> result = new ArrayList<Resource>();
+						result.addAll(Arrays.asList(availableViewpoints));
+						result.remove(r);
+						availableViewpoints = result.toArray(new Resource[result.size()]);
+						return ;
+					}
+				}
+			}
+		}
+
+		
+	}
 }
