@@ -23,6 +23,7 @@ public class Tests {
 		TestSuite suite = new TestSuite("Viewpoint Manager Test Suite"); //$NON-NLS-1$
 		suite.addTest(new TestSuite(BasicTests.class));
 		suite.addTest(new TestSuite(BasicTests2.class));
+		suite.addTest(new TestSuite(BasicTests3.class));
 		return suite;
 	}
 
