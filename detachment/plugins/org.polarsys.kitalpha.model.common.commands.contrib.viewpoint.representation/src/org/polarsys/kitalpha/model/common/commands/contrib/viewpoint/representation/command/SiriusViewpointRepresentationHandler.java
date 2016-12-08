@@ -117,6 +117,8 @@ public class SiriusViewpointRepresentationHandler {
 	 * Append commands to delete all DView from the architecture Descriptioin viewpoints
 	 */
 	private void deleteDViews(){
+		if (usedSiriusViewpoints == null)
+			return ;
 		Collection<DView> ownedViews = session.getOwnedViews();
 		for (org.eclipse.sirius.viewpoint.description.Viewpoint viewpoint : usedSiriusViewpoints) {
 			for (final DView dView : ownedViews) {
@@ -447,7 +449,8 @@ public class SiriusViewpointRepresentationHandler {
 			}
 		}
 		cleanCommand.dispose();
-		usedSiriusViewpoints.clear();
+		if (usedSiriusViewpoints != null)
+			usedSiriusViewpoints.clear();
 	}
 	
 	/**
