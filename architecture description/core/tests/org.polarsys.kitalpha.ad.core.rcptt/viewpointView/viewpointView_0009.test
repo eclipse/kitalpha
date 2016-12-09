@@ -1,0 +1,73 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _fRyjcL3oEea1WotcWpS-kw,_hjYLkL3oEea1WotcWpS-kw
+Element-Name: viewpointView_0009
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _BgX4kb4pEea1WotcWpS-kw
+Runtime-Version: 2.0.2.201511100828
+Save-Time: 12/9/16 6:01 PM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+with [get-view "Model Explorer" | get-tree] {
+    select "b/b.aird" | double-click
+    select "b/b.aird/b.componentsample - [platform:\\/resource\\/b\\/b.componentsample]/b"
+}
+get-view "Viewpoint Manager" | get-label "Project b" | get-property caption | equals "Project b" | verify-true
+get-view "Viewpoint Manager" | get-table | select "Component Sample" | get-menu "Show view/Component Sample" | click
+
+get-view "Model Explorer" | get-tree 
+    | select "b/b.aird"
+
+with [get-view "Component Sample"] {
+    get-tab-folder | get-tab-item "Business rules" | click
+    get-button "Reference an existing rule" | click
+}
+with [get-view "Component Sample" | get-table] {
+    get-property itemCount | equals 6 | verify-true
+    get-item "org.polarsys.kitalpha.vp.componentsample.rule" | get-property index | equals 5 | verify-true
+    get-item "org.polarsys.kitalpha.vp.componentsample.rule" | get-property "values['Implementation']" | equals "" 
+        | verify-true
+    get-item "org.polarsys.kitalpha.vp.componentsample.rule" | get-property "values['Description']" | equals "" 
+        | verify-true
+    get-item "org.polarsys.kitalpha.vp.componentsample.rule" | get-property "values['Type']" | equals "-1" | verify-true
+    get-item "org.polarsys.kitalpha.vp.componentsample.rule" | get-property "values['Id']" 
+        | equals "org.polarsys.kitalpha.vp.componentsample.rule" | verify-true
+}
+get-view "Component Sample" | get-table | get-item "org.polarsys.kitalpha.vp.componentsample.rule" 
+    | get-property "image.path" | equals "org.polarsys.kitalpha.ad.viewpoint.ui/icons/empty.gif" | verify-true
+
+with [get-view "Component Sample" | get-table] {
+    select "org.polarsys.kitalpha.vp.componentsample.rule" | activate-cell-edit
+    get-combo | set-text pipo
+    apply-cell-edit -deactivate
+    key-type Enter
+    select pipo | activate-cell-edit -column 1
+    get-combo | select Java
+    apply-cell-edit -deactivate
+    select pipo | activate-cell-edit -column 2
+    get-combo | select "ComponentSample.RuleThree"
+    apply-cell-edit -deactivate
+}
+with [get-view "Component Sample"] {
+    with [get-table] {
+        get-item pipo | get-property "image.path" | equals "org.polarsys.kitalpha.ad.viewpoint.ui/icons/empty.gif" 
+            | verify-true
+        get-item pipo | get-property "values['Implementation']" | equals "ComponentSample.RuleThree" | verify-true
+        get-item pipo | get-property "values['Description']" | equals "" | verify-true
+        get-item pipo | get-property "values['Type']" | equals Java | verify-true
+        get-item pipo | get-property "values['Id']" | equals pipo | verify-true
+    }
+    with [get-button Delete] {
+        get-property enablement | equals true | verify-true
+        get-property tooltip | equals Delete | verify-true
+    }
+}
+get-view "Component Sample" | get-button Delete | click
+get-view "Component Sample" | get-table | get-property itemCount | equals 5 | verify-true
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--
