@@ -10,6 +10,14 @@
             class="org.polarsys.kitalpha.ad.viewpoint.integration.rules.JavaRuleProvider">
       </RuleProvider>
    </extension>
+   <extension
+         point="org.polarsys.kitalpha.ad.viewpoint.implementation.services">
+      <Implementation
+            class="org.polarsys.kitalpha.ad.viewpoint.integration.services.DefaultServiceImplementation"
+            label="Execute rules"
+            type="execute.rules">
+      </Implementation>
+   </extension>
 
 
 </plugin>
