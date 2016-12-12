@@ -129,6 +129,8 @@ public class LoadViewpointModelDialog extends TitleAreaDialog {
 			@Override
 			public String getText(Object element) {
 				Resource vp = (Resource) element;
+				if (vp.getName() == null)
+					return "No name  [" + vp.getProviderSymbolicName() + "]";
 				return vp.getName() + "  [" + vp.getProviderSymbolicName() + "]";
 			}
 		});

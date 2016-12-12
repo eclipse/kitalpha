@@ -113,7 +113,7 @@ public class Matcher {
 			return false;
 		if (idPattern != null && !idPattern.matcher(res.getId()).matches())
 			return false;
-		if (namePattern != null && !namePattern.matcher(res.getName()).matches())
+		if (namePattern != null && res.getName() != null && !namePattern.matcher(res.getName()).matches())
 			return false;
 		if (domainPattern != null && (res.getDomain() == null || !domainPattern.matcher(res.getDomain()).matches()))
 			return false;
