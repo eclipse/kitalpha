@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -13,6 +13,7 @@ package org.polarsys.kitalpha.doc.gen.business.core.ui.wizards;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -183,16 +184,38 @@ public abstract class HTMLDocumentationGenerationWizard extends Wizard
 		for (URI uri : modelURIList) 
 		{
 			URI semanticResourceURI = uri;
-			if (uri.lastSegment().endsWith(".aird")) 
+			if (uri.lastSegment().endsWith(".aird")) //$NON-NLS-1$
 			{
 				DiagramSessionHelper.setAirdUri(uri);
 				Session session = DiagramSessionHelper.initSession();
 				Collection<Resource> resources = session.getSemanticResources();
-
+				
 				if (!resources.isEmpty()) 
 				{
-					Resource semanticResource = resources.iterator().next();
-					semanticResourceURI = semanticResource.getURI();
+					/*
+					 * FIXME a workaround to skip launching the HTML GenDoc on the AFM models
+					 * AFM models are used by Kitalpha Viewpoint Framework and are the first
+					 * resource in session semantic resource list.
+					 * 
+					 * This solution must be replaced by a more generic mechanism for launching
+					 * the generation on models.
+					 * 
+					 * Bug: https://bugs.polarsys.org/show_bug.cgi?id=1338
+					 */
+					
+					Iterator<Resource> iterator = resources.iterator();
+					while (iterator.hasNext()){
+						Resource next = iterator.next();
+						URI uri2 = next.getURI();
+						if (uri2.lastSegment().endsWith(".afm")){ //$NON-NLS-1$
+							continue;
+						}
+						//Keeping the aird URI if the semantic resource uri is null (i.e., the semantic
+						//model doesn't exist)
+						semanticResourceURI = uri2 == null? semanticResourceURI : uri2;
+						break;
+					}
+					
 				}
 			}
 			execute(melodyLauncher, projectName, outputFolder, semanticResourceURI, copyright, logoAlt, logoPath);
