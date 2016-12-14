@@ -12,6 +12,11 @@
             tags="toto ,titi">
       </resource>
       <resource
+            domain="other domain"
+            id="resource5.id"
+            path="path://test.resourcereuse.resource5">
+      </resource>
+      <resource
             domain="test"
             id="resource2.id"
             name="My test resource 2"

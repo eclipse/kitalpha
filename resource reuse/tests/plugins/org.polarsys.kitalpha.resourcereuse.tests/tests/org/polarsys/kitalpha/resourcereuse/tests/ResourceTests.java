@@ -195,7 +195,7 @@ public class ResourceTests extends TestCase {
 		searchCriteria.setId("resource.*");
 		Resource[] resources = ResourceReuse.createHelper().getResources(searchCriteria);
 		assertNotNull(resources);
-		assertEquals(5, resources.length);
+		assertEquals(6, resources.length);
 	}
 
 	public void testSearchId2() throws Exception {
@@ -212,6 +212,15 @@ public class ResourceTests extends TestCase {
 		Resource[] resources = ResourceReuse.createHelper().getResources(searchCriteria);
 		assertNotNull(resources);
 		assertEquals(1, resources.length);
+	}
+
+	public void testSearchId4() throws Exception {
+		SearchCriteria searchCriteria = new SearchCriteria();
+		searchCriteria.setId("resource5.id");
+		Resource[] resources = ResourceReuse.createHelper().getResources(searchCriteria);
+		assertNotNull(resources);
+		assertEquals(1, resources.length);
+		assertNull(resources[0].getName());
 	}
 
 	public void testSearchEmptyCriteria() throws Exception {
