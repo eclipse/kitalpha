@@ -8,7 +8,10 @@ Bundle-Vendor: %VENDOR
 Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.kitalpha.model.common.commands,
  org.eclipse.sirius,
- org.eclipse.emf.transaction
+ org.eclipse.emf.transaction,
+ org.eclipse.sirius.diagram,
+ org.eclipse.sirius.diagram.ui,
+ org.eclipse.gmf.runtime.notation
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Import-Package: org.apache.log4j

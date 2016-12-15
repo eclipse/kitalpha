@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -22,7 +22,6 @@ import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.ui.dialogs.ContainerCheckedTreeViewer;
 import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.editor.FormEditor;
 import org.eclipse.ui.forms.widgets.FormToolkit;
@@ -44,7 +43,7 @@ import org.polarsys.kitalpha.model.detachment.ui.page.AbstractDetachmentFormPage
  */
 public class ViewpointsHierarchyPage extends AbstractDetachmentFormPage {
 
-	private ContainerCheckedTreeViewer treeViewer;
+	private ExtensionTreeViewer treeViewer;
 	
 	private Button selectAllButton;
 	private Button deSelectAllButton;
@@ -127,7 +126,7 @@ public class ViewpointsHierarchyPage extends AbstractDetachmentFormPage {
 
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				selectAll(true);
+				treeViewer.allChecked(true);
 			}
 		});
 
@@ -136,13 +135,10 @@ public class ViewpointsHierarchyPage extends AbstractDetachmentFormPage {
 		deSelectAllButton.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				selectAll(false);
+				treeViewer.allChecked(false);
 			}
+			
 		});
 	}
 	
-	@SuppressWarnings("deprecation") //$NON-NLS-1$
-	private void selectAll(boolean checked) {
-		treeViewer.setAllChecked(checked);
-	}
 }

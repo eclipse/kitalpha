@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -13,7 +13,11 @@ package org.polarsys.kitalpha.model.detachment.ui.editor;
 
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.EnumSet;
+import java.util.List;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
@@ -31,7 +35,6 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
-import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.forms.IManagedForm;
@@ -56,14 +59,10 @@ public class ModelDetachment extends SharedHeaderFormEditor {
 
 	
 	private Action perfomDetachment;
-	private static DetachmentEditorInput input;
 	private static ModelDetachment editor;
 	
 	public ModelDetachment() {
-		input = new DetachmentEditorInput();
-		setInput(input);
 		editor = this;
-		
 	}
 	
 	public void initAndLaunchDetachmentAction(final Resource resource){
@@ -170,11 +169,20 @@ public class ModelDetachment extends SharedHeaderFormEditor {
 	protected void addPages() {
 		
 		Set<AbstractDetachmentFormPage> pageRegistry = ModelDetachmentPageRegistry.INSTANCE.initRegistry(this);
-		for (AbstractDetachmentFormPage detachmentPage : pageRegistry) {
+		//Sort pages
+		List<AbstractDetachmentFormPage> sortedPages = new ArrayList<AbstractDetachmentFormPage>(pageRegistry);
+		Collections.sort(sortedPages, new Comparator<AbstractDetachmentFormPage>() {
+
+			@Override
+			public int compare(AbstractDetachmentFormPage arg0, AbstractDetachmentFormPage arg1) {
+				return arg0.getPartName().compareTo(arg1.getPartName());
+			}
+		});
+		
+		for (AbstractDetachmentFormPage detachmentPage : sortedPages) {
 			try {
 				addPage(detachmentPage);
 			} catch (PartInitException e) {
-				e.printStackTrace();
 				LOGGER.error(e.getMessage(), e);
 			}
 		}
@@ -199,13 +207,4 @@ public class ModelDetachment extends SharedHeaderFormEditor {
 	public boolean isDirty() {
 		return false;
 	}
-	
-	public static IEditorInput getInput(){
-		return input;
-	}
-	
-	public static ModelDetachment getEditor(){
-		return editor;
-	}
-	
 }

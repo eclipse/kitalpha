@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 THALES GLOBAL SERVICES.
+ * Copyright (c) 2014, 2016 THALES GLOBAL SERVICES.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,7 +10,9 @@
  *******************************************************************************/
 package org.polarsys.kitalpha.model.common.share.ui.utilities;
 
-import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.jface.viewers.CheckStateChangedEvent;
+import org.eclipse.jface.viewers.ICheckStateListener;
+import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.TreeItem;
 import org.eclipse.ui.dialogs.ContainerCheckedTreeViewer;
@@ -20,24 +22,52 @@ public class ExtensionTreeViewer extends ContainerCheckedTreeViewer {
 
 	public ExtensionTreeViewer(Composite parent, int style) {
 		super(parent, style);
+		addCheckStateListener(new ICheckStateListener() {
+			
+			@Override
+			public void checkStateChanged(CheckStateChangedEvent event) {
+				doCheckStateChanged(event.getElement(), event.getChecked());
+			}
+		});
 	}
 
-	// handle user click event
-	protected void handleSelect(SelectionEvent event) {
-		// call super class to notify change of check state
-		IViewpointTreeDescription selected_vpd = (IViewpointTreeDescription) event.item.getData();
-		
+	protected void doCheckStateChanged(Object element, boolean state) {
+		IViewpointTreeDescription selected_vpd = (IViewpointTreeDescription) element;
+
 		if (selected_vpd != null){
-			TreeItem item = (TreeItem)event.item;
-			item.setGrayed(false);
-			selected_vpd.setAsCandidateToKeep(item.getChecked());
+			boolean checked = state; //Arrays.asList(getCheckedElements()).contains(element);
+			setGrayChecked(selected_vpd, false);
+			selected_vpd.setAsCandidateToKeep(checked);
 			selected_vpd.updateCandidates(selected_vpd.isCandidateToKeep());
 			TreeItem [] allItems = getTree().getItems();
-			
+
 			updateCheckItems(allItems);
 		}
-		super.handleSelect(event);
+	}
+	
 
+
+	@Override
+	protected void doCheckStateChanged(Object element) {
+		//DO Nothing
+	}
+
+	private void allChecked(boolean state, Object[] items) {
+		IStructuredContentProvider cp = (IStructuredContentProvider)getContentProvider();
+		for (int i = 0; i < items.length; i++) {
+			setChecked(items [i], state);
+			Object[] children = cp.getElements(items[i]);
+			IViewpointTreeDescription vpd = (IViewpointTreeDescription)items[i];
+			vpd.setAsCandidateToKeep(state);
+			allChecked(state, children);
+		}
+		
+	}
+	public void allChecked(boolean state) {
+		IStructuredContentProvider cp = (IStructuredContentProvider)getContentProvider();
+		Object[] elements = cp.getElements(getInput());
+		
+		allChecked(state, elements);
 	}
 
 	private void updateCheckItems(TreeItem[] allItems) {

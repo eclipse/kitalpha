@@ -13,7 +13,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui.forms,
  org.polarsys.kitalpha.resourcereuse,
  org.polarsys.kitalpha.ad.af.coredomain.model,
- org.eclipse.emf.codegen.ecore
+ org.eclipse.emf.codegen.ecore,
+ org.eclipse.emf.transaction
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.model.common.share,

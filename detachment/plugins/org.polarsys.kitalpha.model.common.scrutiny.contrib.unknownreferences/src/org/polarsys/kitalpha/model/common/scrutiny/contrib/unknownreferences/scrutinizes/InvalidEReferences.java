@@ -1,3 +1,14 @@
+/*******************************************************************************
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
+
 package org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.scrutinizes;
 
 import java.util.ArrayList;
@@ -33,27 +44,6 @@ public class InvalidEReferences implements IScrutinize<Map<EObject, List<ERefere
 			if (eClass != null){
 				EList<EObject> eCrossReferences = eClass.eCrossReferences();
 				
-//				 for (EContentsEList.FeatureIterator featureIterator = (EContentsEList.FeatureIterator)eCrossReferences.iterator();
-//			       featureIterator.hasNext(); )
-//			  {
-//			    EReference eReference = (EReference)featureIterator.feature();
-//			    if (eReference != null && eReference.isChangeable()){
-//			    	Object value = eObject.eGet(eReference, true);
-//					if (value != null && value instanceof EObject && ((EObject)value).eIsProxy()){
-//						if (invalidEReferences.containsKey(eObject)){
-//							List<EReference> eRef = invalidEReferences.get(eObject);
-//							if (!eRef.contains(eReference)){
-//								eRef.add(eReference);
-//							}
-//						} else {
-//							List<EReference> list = new ArrayList<EReference>();
-//							list.add(eReference);
-//							invalidEReferences.put(eObject, list);
-//						}
-//					}
-//			    }
-//			  }
-				
 				for (EObject eCrossRef : eCrossReferences) {
 					if (eCrossRef instanceof EReference){
 						EReference ref = (EReference)eCrossRef;
@@ -80,8 +70,6 @@ public class InvalidEReferences implements IScrutinize<Map<EObject, List<ERefere
 
 	@Override
 	public void findIn(Resource resource) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
