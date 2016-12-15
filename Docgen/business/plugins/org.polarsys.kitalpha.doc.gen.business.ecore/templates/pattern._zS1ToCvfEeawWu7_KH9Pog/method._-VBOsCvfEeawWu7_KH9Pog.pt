@@ -6,4 +6,6 @@ if (element instanceof ENamedElement){
 } else {
 	fileName = "Default.html";
 }
+IConceptsHelper conceptsHelpersForObject = ExtensionService.INSTANCE.getConceptsHelpersForObject(element);
+title = conceptsHelpersForObject.getConceptLabel(element);
 %>
