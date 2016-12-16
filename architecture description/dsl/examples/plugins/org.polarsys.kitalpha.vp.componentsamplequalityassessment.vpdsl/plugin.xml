@@ -84,4 +84,14 @@ Contributors:
 	        name="activityexplorer"
 	        path="/org.polarsys.kitalpha.vp.componentsamplequalityassessment.vpdsl/model/ComponentSampleQualityAssessment.activityexplorer.vptext"/>
 	</extension>
+
+	<extension
+	     point="org.polarsys.kitalpha.resourcereuse.resources">
+	  <resource
+	        domain="vpdsl"
+	        id="org.polarsys.kitalpha.vp.componentsamplequalityassessment.vpdsl.resource.ComponentSampleQualityAssessment.services"
+	        tags="Viewpoint"
+	        name="services"
+	        path="/org.polarsys.kitalpha.vp.componentsamplequalityassessment.vpdsl/model/ComponentSampleQualityAssessment.services.vptext"/>
+	</extension>
 </plugin>

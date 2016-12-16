@@ -21,6 +21,7 @@ Diagrams ComponentSampleQualityAssessment.diagram {
 		extended-diagram: ComponentSampleDiagram
 		Mapping {
 			Container QualityAssessment_ComponentSample {
+				
 				import: HardwareComponentContainer_CM Contains {
 					Container QualityAssessmentNode {
 						domain-context: ComponentSampleQualityAssessment.data.QualityAssessment
@@ -36,18 +37,6 @@ Diagrams ComponentSampleQualityAssessment.diagram {
 								}
 							}
 						}
-//						Representation {
-//							Label {
-//								content: "Quality: " + ComponentSampleQualityAssessment.data.QualityAssessment.confidenceLevel
-//								police: black
-//								alignment: center
-//							}
-//							Style {
-//								BasicStyle {
-//									border-color: black background: chocolate form: Square
-//								}
-//							}
-//						}
 						Contains {
 							Node QualityMeasureBorderedNode {
 								domain-context: ComponentSampleQualityAssessment.data.QualityMeasure
@@ -67,6 +56,11 @@ Diagrams ComponentSampleQualityAssessment.diagram {
 							}
 						}
 					}
+				}
+			}
+			Container QualityAssessment_ComponentSample2 {
+				import: InnerHardwareComponentContainer_CM Contains {
+					reuse QualityAssessment_ComponentSample.QualityAssessmentNode
 				}
 			}
 		}

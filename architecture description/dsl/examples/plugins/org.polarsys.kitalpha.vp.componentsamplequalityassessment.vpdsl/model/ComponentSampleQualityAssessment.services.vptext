@@ -1,0 +1,14 @@
+/**
+ * Copyright (c) PolarSys, 2016. All rights reserved. 
+ *
+ *	Viewpoint ComponentSampleQualityAssessment
+ *	@author: Thomas Guiu
+ *	@date: 15/12/16
+ *
+ */
+Rules ComponentSampleQualityAssessment.rules {
+}
+
+Services ComponentSampleQualityAssessment.services {
+	 
+}

@@ -23,5 +23,7 @@ Viewpoint ComponentSampleQualityAssessment {
 	Data ComponentSampleQualityAssessment.data
 	Diagrams ComponentSampleQualityAssessment.diagram
 	Activity-Explorer ComponentSampleQualityAssessment.activityexplorer
+	Services ComponentSampleQualityAssessment.services
 	Configuration ComponentSampleQualityAssessment.conf
+	
 }
