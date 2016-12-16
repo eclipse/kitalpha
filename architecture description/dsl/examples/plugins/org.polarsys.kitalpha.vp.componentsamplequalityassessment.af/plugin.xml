@@ -36,5 +36,19 @@ Copyright (c) 2014, 2016 Thales Global Services S.A.S.
 	    	id="org.polarsys.kitalpha.vp.componentsamplequalityassessment.view">
 	 	</excludeSources>
 	</extension>
+
+   <extension
+         point="org.polarsys.kitalpha.ad.viewpoint.implementation.services">
+      <Implementation
+            label="Propagate QA upward"
+            type="propagate.qa.upward"
+            class="org.polarsys.kitalpha.vp.componentsamplequalityassessment.af.services.PropagateUpward">
+      </Implementation>
+      <Implementation
+            label="Propagate QA downward"
+            type="propagate.qa.downward"
+            class="org.polarsys.kitalpha.vp.componentsamplequalityassessment.af.services.PropagateDownward">
+      </Implementation>
+   </extension>
 </plugin>
 

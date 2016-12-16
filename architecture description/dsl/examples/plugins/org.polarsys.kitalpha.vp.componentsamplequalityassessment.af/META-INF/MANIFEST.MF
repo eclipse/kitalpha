@@ -7,5 +7,8 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.polarsys.kitalpha.ad.viewpoint.ui,
  org.polarsys.kitalpha.vp.componentsamplequalityassessment,
  org.polarsys.kitalpha.vp.componentsamplequalityassessment.design,
- org.polarsys.kitalpha.vp.componentsample.af
+ org.polarsys.kitalpha.vp.componentsample.af,
+ org.eclipse.emf.transaction,
+ org.polarsys.kitalpha.emde.model,
+ org.polarsys.kitalpha.vp.componentsamplequalityassessment.model
 
