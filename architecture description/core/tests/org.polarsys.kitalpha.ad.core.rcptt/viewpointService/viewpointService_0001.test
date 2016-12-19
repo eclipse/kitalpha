@@ -1,0 +1,242 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _Ca8rAMXrEeaiv_6URYLL1w,_h0A_oMXrEeaiv_6URYLL1w
+Element-Name: viewpointService_0001
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _fKL2oMXrEeaiv_6URYLL1w
+Runtime-Version: 2.0.2.201511100828
+Save-Time: 12/20/16 3:23 PM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+with [get-view "Model Explorer" | get-tree] {
+    select "b/b.aird" | get-menu Open | click
+    select "b/b.aird/Representations per category/ComponentSample/ComponentSampleDiagram/new ComponentSampleDiagram" 
+        | double-click
+}
+with [get-editor "new ComponentSampleDiagram"] {
+    with [get-diagram -index 1 | get-edit-part -name "new ComponentSampleDiagram" | get-edit-part -name "" 
+        | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+        mouse-move 713 244 -height 319 -width 954
+        mouse-move 661 165 -height 319 -width 954
+        get-edit-part -name "" -index 1 | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart 
+            | mouse-move 301 116 -height 156 -width 663
+        mouse-move 187 1 -height 319 -width 954
+    }
+    get-button Layers | click -arrow
+}
+get-menu "Component Sample Quality Assessment" | click
+with [get-editor "new ComponentSampleDiagram"] {
+    with [get-diagram -index 1 | get-edit-part -name "new ComponentSampleDiagram" | get-edit-part -name "" 
+        | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+        mouse-move 268 77 -height 319 -width 954
+        get-edit-part -name "" -index 1 | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart 
+            | mouse-move 22 84 -height 156 -width 663
+        mouse-move 692 211 -height 319 -width 954
+    }
+    with [get-palette | get-palette-entry "Quality Assessment"] {
+        mouse-move 73 21 button1 -height 37 -width 125
+        mouse-press 73 21 button1 -height 37 -width 125
+        mouse-release 73 21 button1 524288 -height 37 -width 125
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new ComponentSampleDiagram" | get-edit-part -name "" 
+        | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart | get-edit-part -name "" -index 1 
+        | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part -name "" 
+        | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part -name "" 
+        | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+        mouse-move 104 37 button1 -height 68 -width 148
+        mouse-press 104 37 button1 -height 68 -width 148
+        mouse-release 104 37 button1 524288 -height 68 -width 148
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new ComponentSampleDiagram"] {
+        get-edit-part -name "" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart 
+            | get-edit-part -name "" -index 1 | get-edit-part 
+            -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part -name "" | get-edit-part 
+            -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part -name "" | get-edit-part 
+            -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part 
+            -name "Quality: Not Assessed" | get-handle ResizeHandle -index 6 | mouse-hover 6 4 -height 7 -width 7
+        mouse-move 374 363 -height 375 -width 956
+    }
+}
+
+with [get-view Properties] {
+    get-property-tab Semantic | click
+    with [get-tree] {
+        select "[Quality Assessment]/Confidence Level" | activate-cell-edit -column 1
+        get-combo | select Low
+        apply-cell-edit -deactivate
+        select "[Quality Assessment]/Context" | activate-cell-edit -column 1
+        deactivate-cell-edit
+    }
+}
+with [get-editor "new ComponentSampleDiagram"] {
+    get-diagram -index 1 | get-edit-part -name "new ComponentSampleDiagram" | mouse-move 712 348 -height 375 -width 956
+    with [get-palette | get-palette-entry "Quality Measure"] {
+        mouse-move 56 18 button1 -height 23 -width 125
+        mouse-press 56 18 button1 -height 23 -width 125
+        mouse-release 56 18 button1 524288 -height 23 -width 125
+        mouse-move 44 7 -height 23 -width 125
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new ComponentSampleDiagram" | get-edit-part -name "" 
+        | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart | get-edit-part -name "" -index 1 
+        | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part -name "" 
+        | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part -name "" 
+        | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+        mouse-move 191 107 -height 113 -width 258
+        with [get-edit-part -name "Quality: Low" | get-edit-part 
+            -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+            mouse-move 47 33 button1 -height 68 -width 148
+            mouse-press 47 33 button1 -height 68 -width 148
+            mouse-release 47 33 button1 524288 -height 68 -width 148
+        }
+    }
+    get-diagram -index 1 | get-edit-part -name "new ComponentSampleDiagram" | mouse-move 422 361 -height 375 -width 956
+}
+with [get-view Properties | get-tree] {
+    select "[Quality Measure]/Measure Value" | activate-cell-edit -column 1
+    with [get-editbox] {
+        set-text 2
+        key-type "NUMPAD_ENTER" "\\u000D"
+    }
+    apply-cell-edit -deactivate
+}
+with [get-editor "new ComponentSampleDiagram" | get-diagram -index 1 | get-edit-part -name "new ComponentSampleDiagram" 
+    | get-edit-part -name "" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+    mouse-move 544 260 -height 319 -width 954
+    mouse-hover 544 260 -height 319 -width 954
+    with [get-edit-part -name "" -index 1 | get-edit-part 
+        -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part -name "" | get-edit-part 
+        -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part -name "" | get-edit-part 
+        -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+        with [get-edit-part -name "Quality: Low" | get-edit-part 
+            -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+            mouse-move 13 56 button1 -height 68 -width 148
+            mouse-press 13 56 button1 -height 68 -width 148
+            mouse-release 13 56 button1 524288 -height 68 -width 148
+            mouse-hover 13 56 -height 68 -width 148
+        }
+        mouse-move 93 68 -height 113 -width 258
+        mouse-hover 93 68 -height 113 -width 258
+    }
+    mouse-move 66 8 -height 319 -width 954
+}
+get-button "Save (M1+S)" | click
+with [get-editor "new ComponentSampleDiagram"] {
+    with [get-diagram -index 1] {
+        with [get-edit-part -name "new ComponentSampleDiagram" | get-edit-part -name "" | get-edit-part 
+            -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+            mouse-move 138 16 -height 319 -width 954
+            mouse-hover 138 16 -height 319 -width 954
+            with [get-edit-part -name "" -index 1 | get-edit-part 
+                -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part -name "" | get-edit-part 
+                -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part -name "" | get-edit-part 
+                -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+                mouse-move 55 75 button1 -height 113 -width 258
+                mouse-press 55 75 button1 -height 113 -width 258
+                mouse-release 55 75 button1 524288 -height 113 -width 258
+                mouse-hover 55 75 -height 113 -width 258
+                mouse-press 55 75 button3 -height 113 -width 258
+                mouse-release 55 75 button3 2097152 -height 113 -width 258
+            }
+        }
+        get-menu "Viewpoint Services/Component Sample Quality Assessment/Propagate upward" | click
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new ComponentSampleDiagram"] {
+        mouse-move 604 369 -height 375 -width 956
+        mouse-hover 604 369 -height 375 -width 956
+        mouse-move 202 321 -height 375 -width 956
+        with [get-edit-part -name "" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+            mouse-move 167 314 -height 319 -width 954
+            get-edit-part -name "" -index 2 | get-edit-part 
+                -className DNodeContainerViewNodeContainerCompartment2EditPart | mouse-move 68 107 -height 112 
+                -width 191
+            mouse-move 5 268 -height 319 -width 954
+        }
+    }
+}
+get-editor "new ComponentSampleDiagram" | get-diagram -index 1 | get-edit-part -name "new ComponentSampleDiagram" 
+    | get-edit-part -name "" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart 
+    | get-edit-part -name "" -index 1 | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart 
+    | get-edit-part -name "" | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart 
+    | get-edit-part -name "Quality: Low" | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart 
+    | get-property "element.name" | equals "Quality: Low" | verify-true
+with [get-editor "new ComponentSampleDiagram"] {
+    with [get-diagram -index 1] {
+        with [get-edit-part -name "new ComponentSampleDiagram" | get-edit-part -name "" | get-edit-part 
+            -className DNodeContainerViewNodeContainerCompartmentEditPart] {
+            mouse-move 279 68 -height 319 -width 954
+            with [get-edit-part -name "" -index 1 | get-edit-part 
+                -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+                mouse-move 34 101 -height 201 -width 663
+                with [get-edit-part -name "" | get-edit-part 
+                    -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+                    mouse-move 20 103 button1 -height 157 -width 301
+                    mouse-press 20 103 button1 -height 157 -width 301
+                    mouse-release 20 103 button1 524288 -height 157 -width 301
+                    mouse-press 20 103 button3 -height 157 -width 301
+                    mouse-release 20 103 button3 2097152 -height 157 -width 301
+                }
+            }
+        }
+        get-menu "Viewpoint Services/Component Sample Quality Assessment/Propagate upward" | click
+    }
+    with [get-diagram -index 1] {
+        with [get-edit-part -name "new ComponentSampleDiagram"] {
+            mouse-move 555 354 -height 375 -width 956
+            mouse-hover 555 418 -height 439 -width 1103
+            mouse-move 536 385 -height 439 -width 1103
+            with [get-edit-part -name "" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart 
+                | get-edit-part -name "" -index 1 | get-edit-part 
+                -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+                mouse-move 18 93 button1 -height 272 -width 810
+                mouse-press 18 93 button1 -height 272 -width 810
+                mouse-release 18 93 button1 524288 -height 272 -width 810
+                with [get-edit-part -name "" | get-edit-part 
+                    -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part -name "" 
+                    | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+                    mouse-hover 226 21 -height 113 -width 258
+                    mouse-move 202 35 -height 113 -width 258
+                }
+                mouse-move 81 245 button3 -height 272 -width 810
+                mouse-press 81 245 button3 -height 272 -width 810
+                mouse-release 81 245 button3 2097152 -height 272 -width 810
+            }
+        }
+        get-menu "Viewpoint Services/Component Sample Quality Assessment/Propagate downward" | click
+    }
+    with [get-diagram -index 1 | get-edit-part -name "new ComponentSampleDiagram" | get-edit-part -name "" 
+        | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart | get-edit-part -name "" -index 1 
+        | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+        mouse-move 671 88 -height 272 -width 823
+        with [get-edit-part -name "" -index 2 | get-edit-part 
+            -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+            mouse-move 159 43 -height 82 -width 161
+            with [get-edit-part -name "Quality: Low" | get-edit-part 
+                -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+                mouse-move 104 4 -height 68 -width 148
+                mouse-hover 104 4 -height 68 -width 148
+            }
+        }
+        mouse-move 484 43 -height 272 -width 823
+        mouse-move 389 14 -height 272 -width 823
+    }
+}
+with [get-editor "new ComponentSampleDiagram" | get-diagram -index 1 | get-edit-part -name "new ComponentSampleDiagram" 
+    | get-edit-part -name "" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart 
+    | get-edit-part -name "" -index 1 | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart] {
+    get-edit-part -name "" -index 1 | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart 
+        | get-edit-part -name "Quality: Low" | get-edit-part 
+        -className DNodeContainerViewNodeContainerCompartment2EditPart | get-property "element.name" 
+        | equals "Quality: Low" | verify-true
+    get-edit-part -name "" -index 2 | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart 
+        | get-edit-part -name "Quality: Low" | get-edit-part 
+        -className DNodeContainerViewNodeContainerCompartment2EditPart | get-property "element.name" 
+        | equals "Quality: Low" | verify-true
+}
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--
