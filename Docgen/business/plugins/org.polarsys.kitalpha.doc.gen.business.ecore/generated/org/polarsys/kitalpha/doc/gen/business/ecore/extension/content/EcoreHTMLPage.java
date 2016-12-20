@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20150924-1035
+//Generated with EGF 1.4.1.v20161010-1511
 package org.polarsys.kitalpha.doc.gen.business.ecore.extension.content;
 
 import org.eclipse.egf.common.helper.*;
@@ -13,6 +13,8 @@ import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.eclipse.sirius.diagram.DSemanticDiagram;
 import org.polarsys.kitalpha.doc.gen.business.core.util.SiriusHelper;
 import org.polarsys.kitalpha.doc.gen.business.core.util.DefaultSiriusDiagramHelper;
+import org.polarsys.kitalpha.doc.gen.business.core.helper.IConceptsHelper;
+import org.polarsys.kitalpha.doc.gen.business.core.services.ExtensionService;
 
 public class EcoreHTMLPage extends org.polarsys.kitalpha.doc.gen.business.core.doccontent.ElementDocContent {
 	protected static String nl;
@@ -145,6 +147,8 @@ public class EcoreHTMLPage extends org.polarsys.kitalpha.doc.gen.business.core.d
 		} else {
 			fileName = "Default.html";
 		}
+		IConceptsHelper conceptsHelpersForObject = ExtensionService.INSTANCE.getConceptsHelpersForObject(element);
+		title = conceptsHelpersForObject.getConceptLabel(element);
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "setContext", stringBuffer.toString());
