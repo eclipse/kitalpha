@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -279,7 +279,7 @@ public class IndexingConceptsTask implements ITaskProduction {
 		// index paragraph
 		Pattern pParagraphe = Pattern.compile(".*<p>(.*?)</p>.*");
 		Matcher mParagraphe = pParagraphe.matcher(pageContent);
-		if (mParagraphe.matches()) {
+		while (mParagraphe.find()) {
 			for (String currentConcept : concepts) {
 				for (int i = 1; i <= mParagraphe.groupCount(); i++) {
 					String paragraph = mParagraphe.group(i);
@@ -292,24 +292,44 @@ public class IndexingConceptsTask implements ITaskProduction {
 			}
 		}
 		// Index lists
-		Pattern pList = Pattern.compile(".*<ul (.*?)</ul>.*");
-		Matcher mList = pList.matcher(pageContent);
-		if (mList.matches()) {
-			for (String currentConcept : concepts) {
-				for (int i = 1; i <= mList.groupCount(); i++) {
-					String listGroup = mList.group(i);
-					String currentConcept_html = EscapeChars.forHTML(currentConcept);
-					if (listGroup.contains(currentConcept_html)) {
-						indexList(fileName, currentConcept);
-					}
-				}
-			}
-		}
+        final Pattern pListStartEnd = Pattern.compile("((<ul.*?>)|(</ul>))", Pattern.DOTALL);
+        final Matcher mListStartEnd = pListStartEnd.matcher(pageContent);
+        int level = 0;
+        int listStartIndex = -1;
+        while (mListStartEnd.find()) 
+        {
+        	if (mListStartEnd.group(2) != null) 
+        	{
+        		// A list start
+        		level += 1;
+        		if (level == 1) 
+        		{
+        			listStartIndex = mListStartEnd.start(2);
+        		}
+        	} 
+        	else 
+        	{
+        		// A list end
+        		level -= 1;
+        		if (level == 0) {
+        			final int listEndIndex = mListStartEnd.end(3);
+        			final String listText = pageContent.substring(listStartIndex, listEndIndex);
+        			for (final String currentConcept : concepts) 
+        			{
+        				String currentConcept_html = EscapeChars.forHTML(currentConcept);
+        				if (listText.contains(currentConcept_html)) 
+        				{
+        					indexList(fileName, currentConcept);
+        				}
+        			}
+        		}
+        	}
+        }
 
 		// Index tables
 		Pattern pTable = Pattern.compile(".*<table>(.*?)</table>.*");
 		Matcher mTable = pTable.matcher(pageContent);
-		if (mTable.matches()) {
+		while (mTable.find()) {
 			for (String currentConcept : concepts) {
 				for (int i = 1; i <= mTable.groupCount(); i++) {
 					String listGroup = mTable.group(i);
@@ -325,7 +345,7 @@ public class IndexingConceptsTask implements ITaskProduction {
 
 	private void indexList(String fileName, String currentConcept) {
 		List<String> list = conceptsToPageList.get(currentConcept);
-		if (list != null) {
+		if (list != null && ! list.contains(fileName)) {
 			list.add(fileName);
 		} else {
 			List<String> localList = new ArrayList<String>();
@@ -337,7 +357,7 @@ public class IndexingConceptsTask implements ITaskProduction {
 
 	private void indexParagraph(String fileName, String currentConcept) {
 		List<String> list = conceptsToPageParagraph.get(currentConcept);
-		if (list != null) {
+		if (list != null && ! list.contains(fileName)) {
 			list.add(fileName);
 		} else {
 			List<String> localList = new ArrayList<String>();
@@ -349,7 +369,7 @@ public class IndexingConceptsTask implements ITaskProduction {
 	private void indexTitle(String fileName, String currentConcept) {
 
 		List<String> list = conceptsToPageTitle.get(currentConcept);
-		if (list != null) {
+		if (list != null && ! list.contains(fileName)) {
 			list.add(fileName);
 		} else {
 			List<String> localList = new ArrayList<String>();
@@ -362,7 +382,7 @@ public class IndexingConceptsTask implements ITaskProduction {
 	private void indexTable(String fileName, String currentConcept) {
 
 		List<String> list = conceptsToPageTable.get(currentConcept);
-		if (list != null) {
+		if (list != null && ! list.contains(fileName)) {
 			list.add(fileName);
 		} else {
 			List<String> localList = new ArrayList<String>();
