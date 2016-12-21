@@ -1,0 +1,45 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _-r1Q8MOlEea0aONiKML7lA,_RSbzoMdfEeaiOcZP6MS8EQ
+Element-Name: DG_ecore_search
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _Q84WMMdmEeaiOcZP6MS8EQ
+Runtime-Version: 2.0.2.201511100828
+Save-Time: 12/21/16 11:25 AM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+IDs:
+1- EcoreDocgen_00002: https://bugs.polarsys.org/show_bug.cgi?id=1341: Checking if all lists are detected by the search engine
+2- EcoreDocgen_00003: https://bugs.polarsys.org/show_bug.cgi?id=1350: Checking that the links contain text
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-view "Project Explorer" | get-tree | select "org.eclipse.emf.ecore/model/ecoredoc.generationchain" 
+    | get-menu "Run Generation Chain" | click
+
+// Wating until the generation finishs
+loop {
+	if [ get-view "Project Explorer" | get-tree | get-property itemCount -raw | lt 4 ] {
+		wait 100
+		recur
+	}
+}
+
+// Bugs: 
+// 1- https://bugs.polarsys.org/show_bug.cgi?id=1341: Checking if all lists are detected by the search engine
+// 2- https://bugs.polarsys.org/show_bug.cgi?id=1350: Checking that the links contain text
+openInTextEditor -projectName "org.eclipse.emf.ecore.doc" 
+				 -parentFolders "output/output/ecore/concepts" 
+				 -fileName "12_EClass.html"
+				 
+findTextInFile -fileName "12_EClass.html" 
+			   -text "<ul><li><a href=\"../EClass_ecore_EClass.html\">EClass</a></li><li><a href=\"../EClass_ecore_EClassifier.html\">EClassifier</a></li></ul>"
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--
