@@ -6,7 +6,7 @@ Element-Type: context
 Element-Version: 2.0
 Id: _RSbzoMdfEeaiOcZP6MS8EQ
 Runtime-Version: 2.0.2.201511100828
-Save-Time: 12/21/16 10:57 AM
+Save-Time: 12/23/16 12:06 PM
 
 ------=_.ecl.context-718f04b4-ed39-33e3-af62-0995e4561998
 Content-Type: text/ecl
@@ -27,7 +27,7 @@ proc findTextInFile [ val fileName] [ val text ]{
 	
 	// Set the text to search in the Find/Replace dialog
 	with [get-window "Find/Replace"] {
-	    get-combo -after [get-label "Find:"] | select $text
+	    get-combo -after [get-label "Find:"] | set-text $text
 	    get-button Find | click
 	}
 	
