@@ -18,6 +18,15 @@
    </extension>
    
    <extension
+         point="org.polarsys.kitalpha.ad.viewpoint.ui.provider.selection">
+      <SelectionProvider
+      		id="org.polarsys.kitalpha.ad.integration.sirius.providers.siriusSelectionProvider"
+            class="org.polarsys.kitalpha.ad.integration.sirius.providers.SiriusSelectionProvider"
+            label="Sirius provider">
+      </SelectionProvider>
+   </extension>
+   
+   <extension
          point="org.eclipse.sirius.refreshExtensionProvider">
       <refreshExtensionProvider
             priority="highest"

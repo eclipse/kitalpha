@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014-2017 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,7 +39,7 @@ public interface AFSelectionProvider {
 			IConfigurationElement[] configurationElements = Platform.getExtensionRegistry().getConfigurationElementsFor(ID);
 			for (IConfigurationElement elt : configurationElements) {
 				String idAttr = elt.getAttribute("id");
-				if (DEFAULT_PROVIDER_ID.equals(idAttr))
+				if (id.equals(idAttr))
 					try {
 						return (AFSelectionProvider) elt.createExecutableExtension("class");
 					} catch (CoreException e) {
@@ -52,5 +52,6 @@ public interface AFSelectionProvider {
 	}
 
 	String ID = "org.polarsys.kitalpha.ad.viewpoint.ui.provider.selection";
-	public String DEFAULT_PROVIDER_ID = "com.thalesgroup.mde.melody.af.integration.provider.MelodySelectionProvider";
+	public String DEFAULT_PROVIDER_ID = "org.polarsys.capella.core.af.integration.provider.CapellaSelectionProvider";
+	public String DEFAULT_PROVIDER_ID2 = "org.polarsys.kitalpha.ad.integration.sirius.providers.SiriusSelectionProvider";
 }
