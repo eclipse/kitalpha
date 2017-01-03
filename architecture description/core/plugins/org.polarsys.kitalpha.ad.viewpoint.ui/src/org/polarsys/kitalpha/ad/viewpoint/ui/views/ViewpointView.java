@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016-2017 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -109,8 +109,12 @@ public class ViewpointView extends ViewPart implements ISelectionProvider {
 		}
 		selectionProvider = AFSelectionProvider.INSTANCE.getSelectionProvider(AFSelectionProvider.DEFAULT_PROVIDER_ID);
 		if (selectionProvider == null) {
-			AD_Log.getDefault().logError("Cannot find selection provider: " + AFSelectionProvider.DEFAULT_PROVIDER_ID);
-			selectionProvider = new DefaultSelectionProvider();
+			AD_Log.getDefault().logWarning("Cannot find selection provider: " + AFSelectionProvider.DEFAULT_PROVIDER_ID);
+			selectionProvider = AFSelectionProvider.INSTANCE.getSelectionProvider(AFSelectionProvider.DEFAULT_PROVIDER_ID2);
+			if (selectionProvider == null) {
+				AD_Log.getDefault().logError("Cannot find selection provider: " + AFSelectionProvider.DEFAULT_PROVIDER_ID2);
+				selectionProvider = new DefaultSelectionProvider();
+			}
 		}
 		loader.loadModel();
 		ResourcesPlugin.getWorkspace().addResourceChangeListener(loader, IResourceChangeEvent.PRE_REFRESH | IResourceChangeEvent.PRE_CLOSE | IResourceChangeEvent.POST_CHANGE | IResourceChangeEvent.PRE_DELETE);
