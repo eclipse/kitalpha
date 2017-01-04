@@ -12,6 +12,7 @@
 
 package org.polarsys.kitalpha.vp.componentsampleframework.af.businessrules;
 
+import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Property;
 import org.polarsys.kitalpha.ad.viewpoint.integration.rules.JavaRule;
 import org.polarsys.kitalpha.ad.viewpoint.utils.ModelAccessor;
 
@@ -21,11 +22,16 @@ public class RuleOne implements JavaRule {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.integration.rules.JavaRule#run(org.polarsys.kitalpha.ad.viewpoint.utils.ModelAccessor, java.lang.Object[])
 	 */
 	public void run(ModelAccessor properties, Object[] selection) {
-		// TODO Auto-generated method stub
+		Property property = properties.getProperties().get("Copyright");
+		String message = "Cannot read property 'Copyright'";
+		if (property != null)
+		{
+			message = "The property 'Copyright' value:\n"+property.getValue();
+		}
 		org.eclipse.jface.dialogs.MessageDialog.openInformation(
 				org.eclipse.ui.PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), 
 				"Java rule execution", 
-				"DSL Viewpoint generated rule \n Message from RuleOne rule");
+				message);
 
 	}
 
