@@ -18,7 +18,7 @@
         <acceleoCompiler 
             sourceFolder="${target.folder}"
             outputFolder="${target.folder}"
-            dependencies="${target.folder}/../../org.polarsys.kitalpha.vp.componentsamplequalityassessment.model;${target.folder}/../../org.polarsys.kitalpha.vp.componentsample.model;"
+            dependencies="${target.folder}/../../org.polarsys.kitalpha.vp.componentsamplequalityassessment.model;${target.folder}/../../org.polarsys.kitalpha.emde.model;${target.folder}/../../org.polarsys.kitalpha.emde;${target.folder}/../../org.polarsys.kitalpha.report;${target.folder}/../../org.polarsys.kitalpha.report.model.edit;${target.folder}/../../org.polarsys.kitalpha.report.model;${target.folder}/../../org.polarsys.kitalpha.emde.xmi;${target.folder}/../../org.polarsys.kitalpha.vp.componentsample.model;"
             binaryResource="false"
             packagesToRegister="">
         </acceleoCompiler>

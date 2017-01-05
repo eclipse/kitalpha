@@ -2,7 +2,7 @@
 <feature
       id="org.polarsys.kitalpha.ad.runtime.feature"
       label="Kitalpha AD Runtime Feature"
-      version="1.0.1.qualifier"
+      version="1.0.2.qualifier"
       provider-name="%providerName">
 
    <description>
