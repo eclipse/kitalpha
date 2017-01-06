@@ -1,0 +1,48 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Element-Name: ad-core
+Element-Type: testsuite
+Element-Version: 2.0
+Id: _EHoNoNKAEea3N_BJ6PbD3w
+Runtime-Version: 2.0.2.201511100828
+Save-Time: 1/4/17 2:17 PM
+
+------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8
+Content-Type: text/testcase
+Entry-Name: testcase-items
+
+__jJeAH9KEeaubIKE8Jm8lw	// kind: 'test' name: 'SiriusIntegration_00001' path: 'siriusIntegration/SiriusIntegration_00001.test'
+_VhCWEC4UEeaC0oR9ToVRjQ	// kind: 'test' name: 'viewpointEditor_00001' path: 'viewpointEditor/viewpointEditor_00001.test'
+_i7NNcC4aEeaC0oR9ToVRjQ	// kind: 'test' name: 'viewpointEditor_00002' path: 'viewpointEditor/viewpointEditor_00002.test'
+_36XdQC5BEeaC0oR9ToVRjQ	// kind: 'test' name: 'viewpointEditor_00003' path: 'viewpointEditor/viewpointEditor_00003.test'
+_9kIMEJtjEeaTGK8hCesxjQ	// kind: 'test' name: 'viewpointEditor_00004' path: 'viewpointEditor/viewpointEditor_00004.test'
+_13ywcJw9EeaaEqA4EGGwqg	// kind: 'test' name: 'viewpointEditor_00005' path: 'viewpointEditor/viewpointEditor_00005.test'
+_WBWmEJCGEeaUTYIf91BKLA	// kind: 'test' name: 'ViewpointManager_00020' path: 'ViewpointManager/ViewpointManager_00020.test'
+_QxyXoJCLEeaUTYIf91BKLA	// kind: 'test' name: 'ViewpointManager_00021' path: 'ViewpointManager/ViewpointManager_00021.test'
+_d05r0JCPEeaUTYIf91BKLA	// kind: 'test' name: 'ViewpointManager_00022' path: 'ViewpointManager/ViewpointManager_00022.test'
+_ZJb70EzvEeaqnfqT84uNJQ	// kind: 'test' name: 'ViewpointManager_00023' path: 'ViewpointManager/ViewpointManager_00023.test'
+_P0ZjUB3BEea9EIJxawXROw	// kind: 'test' name: 'viewpointManagerView_00001' path: 'viewpointManagerView/viewpointManagerView_00001.test'
+_uIxVMC7iEea7AZzApjI2hw	// kind: 'test' name: 'viewpointManagerView_00002' path: 'viewpointManagerView/viewpointManagerView_00002.test'
+_FK3bsDoDEeaR19Kr2i33JA	// kind: 'test' name: 'viewpointManagerView_00003' path: 'viewpointManagerView/viewpointManagerView_00003.test'
+_0lJ0YDx4EeamX57UFqA6ww	// kind: 'test' name: 'viewpointManagerView_00004' path: 'viewpointManagerView/viewpointManagerView_00004.test'
+_wZMeMD7REeaGdb4LG3g8lQ	// kind: 'test' name: 'viewpointManagerView_00005' path: 'viewpointManagerView/viewpointManagerView_00005.test'
+_ClT3MJBREeaUTYIf91BKLA	// kind: 'test' name: 'viewpointManagerView_00006' path: 'viewpointManagerView/viewpointManagerView_00006.test'
+_KWYxYJBSEeaUTYIf91BKLA	// kind: 'test' name: 'viewpointManagerView_00007' path: 'viewpointManagerView/viewpointManagerView_00007.test'
+_wB_McJFBEeaq_ZsAWABixA	// kind: 'test' name: 'viewpointManagerView_00008' path: 'viewpointManagerView/viewpointManagerView_00008.test'
+_6rHcYJFDEeaq_ZsAWABixA	// kind: 'test' name: 'viewpointManagerView_00009' path: 'viewpointManagerView/viewpointManagerView_00009.test'
+_9NRlMJFFEeaqz_ZsAWABixA	// kind: 'test' name: 'viewpointManagerView_00010' path: 'viewpointManagerView/viewpointManagerView_00010.test'
+_3A51MKpBEeajmvBjSp-fUQ	// kind: 'test' name: 'viewpointManagerView_00011' path: 'viewpointManagerView/viewpointManagerView_00011.test'
+_fKL2oMXrEeaiv_6URYLL1w	// kind: 'test' name: 'viewpointService_0001' path: 'viewpointService/viewpointService_0001.test'
+_vDH0sNJhEea4HYIUnTVcUQ	// kind: 'test' name: 'viewpointService_0002' path: 'viewpointService/viewpointService_0002.test'
+_X9vuEL3oEea1WotcWpS-kw	// kind: 'test' name: 'viewpointView_0001' path: 'viewpointView/viewpointView_0001.test'
+_QHntEL3tEea1WotcWpS-kw	// kind: 'test' name: 'viewpointView_0002' path: 'viewpointView/viewpointView_0002.test'
+_dgw4cL3tEea1WotcWpS-kw	// kind: 'test' name: 'viewpointView_0003' path: 'viewpointView/viewpointView_0003.test'
+_BW1HYL3vEea1WotcWpS-kw	// kind: 'test' name: 'viewpointView_0004' path: 'viewpointView/viewpointView_0004.test'
+_D94CIb3vEea1WotcWpS-kw	// kind: 'test' name: 'viewpointView_0005' path: 'viewpointView/viewpointView_0005.test'
+_FiKfYL3vEea1WotcWpS-kw	// kind: 'test' name: 'viewpointView_0006' path: 'viewpointView/viewpointView_0006.test'
+_HAL8kL3vEea1WotcWpS-kw	// kind: 'test' name: 'viewpointView_0007' path: 'viewpointView/viewpointView_0007.test'
+_nVl1cb4iEea1WotcWpS-kw	// kind: 'test' name: 'viewpointView_0008' path: 'viewpointView/viewpointView_0008.test'
+_BgX4kb4pEea1WotcWpS-kw	// kind: 'test' name: 'viewpointView_0009' path: 'viewpointView/viewpointView_0009.test'
+_otD2Ub4wEea1WotcWpS-kw	// kind: 'test' name: 'viewpointView_0010' path: 'viewpointView/viewpointView_0010.test'
+
+------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8--
