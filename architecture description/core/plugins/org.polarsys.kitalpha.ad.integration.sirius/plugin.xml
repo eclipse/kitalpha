@@ -20,7 +20,7 @@
    <extension
          point="org.polarsys.kitalpha.ad.viewpoint.ui.provider.selection">
       <SelectionProvider
-      		id="org.polarsys.kitalpha.ad.integration.sirius.providers.siriusSelectionProvider"
+      		id="org.polarsys.kitalpha.ad.integration.sirius.providers.SiriusSelectionProvider"
             class="org.polarsys.kitalpha.ad.integration.sirius.providers.SiriusSelectionProvider"
             label="Sirius provider">
       </SelectionProvider>
