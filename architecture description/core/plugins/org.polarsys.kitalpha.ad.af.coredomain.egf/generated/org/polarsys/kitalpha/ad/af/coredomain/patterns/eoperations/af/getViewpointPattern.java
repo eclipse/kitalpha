@@ -1,4 +1,4 @@
-//Generated with EGF 1.2.0.v20140805-0858
+//Generated with EGF 1.4.1.v20161010-1511
 package org.polarsys.kitalpha.ad.af.coredomain.patterns.eoperations.af;
 
 import org.eclipse.egf.common.helper.*;
@@ -8,7 +8,8 @@ import org.eclipse.egf.model.pattern.*;
 import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 
-public class getViewpointPattern extends org.eclipse.egf.emf.pattern.model.call.Class.ClassimplementedGenOperationTODOoverride {
+public class getViewpointPattern
+		extends org.eclipse.egf.emf.pattern.model.call.Class.ClassimplementedGenOperationTODOoverride {
 	protected static String nl;
 
 	public static synchronized getViewpointPattern create(String lineSeparator) {
@@ -19,7 +20,8 @@ public class getViewpointPattern extends org.eclipse.egf.emf.pattern.model.call.
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "\t\tfor (Viewpoint vp : getViewpoints()) {" + NL + "\t\t\tif (id.equals(vp.getId()))" + NL + "\t\t\t\treturn vp;" + NL + "\t\t}" + NL + "\t\treturn null;";
+	protected final String TEXT_1 = "\t\tfor (Viewpoint vp : getViewpoints()) {" + NL
+			+ "\t\t\tif (id.equals(vp.getId()))" + NL + "\t\t\t\treturn vp;" + NL + "\t\t}" + NL + "\t\treturn null;";
 	protected final String TEXT_2 = NL;
 	protected final String TEXT_3 = NL;
 
@@ -99,7 +101,8 @@ public class getViewpointPattern extends org.eclipse.egf.emf.pattern.model.call.
 																this.positiveOperationOffsetCorrection = (java.lang.String) positiveOperationOffsetCorrectionParameter;
 
 																if (preCondition(ctx)) {
-																	ctx.setNode(new Node.Container(currentNode, getClass()));
+																	ctx.setNode(new Node.Container(currentNode,
+																			getClass()));
 																	orchestration(ctx);
 																}
 

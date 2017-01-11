@@ -2,7 +2,7 @@
 <feature
       id="org.polarsys.kitalpha.ad.example.simplecomponent.safety.viewpoint.feature"
       label="Safety Viewpoint for Simplecomponent Feature (AD Example)"
-      version="1.1.0.qualifier"
+      version="1.1.1.qualifier"
       provider-name="%providerName">
 
    <description>
@@ -18,7 +18,7 @@
    </license>
 
    <requires>
-      <import feature="org.polarsys.kitalpha.emde.example.simplecomponent.safety.feature" version="1.1.0.qualifier"/>
+      <import feature="org.polarsys.kitalpha.emde.example.simplecomponent.safety.feature" version="1.1.1.qualifier"/>
    </requires>
 
    <plugin

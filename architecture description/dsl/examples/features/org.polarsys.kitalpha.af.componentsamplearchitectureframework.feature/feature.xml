@@ -12,7 +12,7 @@ Copyright (c) 2014, 2016 Thales Global Services S.A.S.
 <feature
       id="org.polarsys.kitalpha.af.componentsamplearchitectureframework.feature"
       label="componentsamplearchitectureframework Feature"
-      version="0.1.0">
+      version="1.1.1.qualifier">
 
    <description url="http://www.example.com/description">
       [Enter Feature Description here.]

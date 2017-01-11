@@ -12,7 +12,7 @@ Contributors:
 <feature
       id="org.polarsys.kitalpha.model.common.scrutiny.feature"
       label="%MODEL_SECRUTINY_FEATRE_NAME"
-      version="1.1.0.qualifier"
+      version="1.1.1.qualifier"
       provider-name="%providerName">
 
    <description>
