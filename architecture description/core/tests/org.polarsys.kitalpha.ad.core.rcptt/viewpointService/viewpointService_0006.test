@@ -7,7 +7,7 @@ Element-Version: 3.0
 External-Reference: 
 Id: _5bVKUNNAEeaNHYyDOA2Mcg
 Runtime-Version: 2.0.2.201511100828
-Save-Time: 1/5/17 1:24 PM
+Save-Time: 1/11/17 1:58 PM
 Testcase-Type: ecl
 
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
@@ -23,6 +23,8 @@ get-window "Java rule execution" | get-label "The property 'Copyright' value:Pol
     | equals "The property 'Copyright' value:\n"
     + "PolarSys" | verify-true
 get-window "Java rule execution" | get-button OK | click
+
+get-view "Model Explorer" | get-tree | select a
 with [get-view "Component Sample"] {
     get-tab-folder | get-tab-item "Business rules" | click
     get-button "Reference an existing rule" | click
