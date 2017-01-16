@@ -7,7 +7,7 @@ Element-Version: 3.0
 External-Reference: 
 Id: _Y2JPoKaEEeap-ORrGyGQRg
 Runtime-Version: 2.0.2.201511100828
-Save-Time: 11/9/16 3:07 PM
+Save-Time: 1/16/17 3:46 PM
 Testcase-Type: ecl
 
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
@@ -25,18 +25,6 @@ with [get-editor "datatest.spec.vptext" | get-text-viewer] {
 }
 get-window "Viewpoint Diagram File Creation Wizard" | get-button Finish | click
 get-view "Project Explorer" | get-tree | select "data/diagram workspace" | double-click
-with [get-editor "diagram workspace" | get-text-viewer] {
-    set-caret-pos 1 2
-    select-range 1 1 305 2
-    get-menu Copy | click
-}
-get-tab-folder -index 2 | get-tab-item "datatest.diagram.vptext" | click
-with [get-editor "datatest.diagram.vptext" | get-text-viewer] {
-    set-caret-pos 9 4
-    select-range 10 2 1 1
-    get-menu Paste | click
-    hover-text 14 37
-}
 with [get-view "Project Explorer" | get-tree] {
     select "org.polarsys.kitalpha.vp.datatest.vpdsl/model/datatest.data.vptext" | double-click
     select "data/data specification" | double-click
@@ -53,11 +41,20 @@ with [get-editor "datatest.data.vptext" | get-text-viewer] {
     select-range 11 2 1 1
     get-menu Paste | click
 }
-get-tab-folder -index 2 | get-tab-item "*datatest.diagram.vptext" | click
-get-menu "File/Save All" | click
-get-view "Project Explorer" | get-tree 
-    | select "org.polarsys.kitalpha.vp.datatest.vpdsl/model/datatest.data.vptext" | double-click
+with [get-editor "diagram workspace" | get-text-viewer] {
+    set-caret-pos 1 2
+    select-range 1 1 305 2
+    get-menu Copy | click
+}
 get-tab-folder -index 2 | get-tab-item "datatest.diagram.vptext" | click
+with [get-editor "datatest.diagram.vptext" | get-text-viewer] {
+    set-caret-pos 9 4
+    select-range 10 2 1 1
+    get-menu Paste | click
+    hover-text 14 37
+}
+get-tab-folder -index 2 | get-tab-item "*datatest.diagram.vptext" | click
+
 with [get-editor "datatest.diagram.vptext" | get-text-viewer] {
     hover-text 14 37
     set-caret-pos 14 26
@@ -80,15 +77,11 @@ with [get-window "Find/Replace"] {
     get-button "Replace All" | click
     get-button Close | click
 }
-get-menu "File/Save As..." | click
-get-window "Save As" | get-button Cancel | click
-get-menu "File/Save All" | click
 with [get-editor "datatest.diagram.vptext" | get-text-viewer] {
     set-caret-pos 11 10
     type-text datatest
-    key-type "M1+s"
 }
-wait -ms 3000
+get-menu "File/Save All" | click
 get-view Outline | get-tree | get-item "datatest.diagram/datatest.diagram" | get-property childCount | equals 6 
     | verify-true
 get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.datatest.vpdsl/model/datatest.vpdesc" 
