@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014-2017 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,7 +37,17 @@ public class ModelExtensionHelper {
 	public static ModelExtensionManager getInstance(Resource resource) {
 		return getInstance(resource.getResourceSet());
 	}
+	
+	/**
+	 * This method returns the ModelExtensionManager instance associated to the given ResourceSet instance.
+	 * 
+	 * @param ctx
+	 * @return a ModelExtensionManager instance.
+	 * @throws InvalidContextException if the parameter is null.
+	 */
 	public static ModelExtensionManager getInstance(final ResourceSet ctx) {
+		if (ctx == null)
+			throw new InvalidContextException();
 		ModelExtensionManager instance = instances.get(ctx);
 		if (instance == null) {
 			instances.put(ctx, instance = createInstance());
@@ -54,7 +64,18 @@ public class ModelExtensionHelper {
 		}
 		return instance;
 	}
+	
+	/**
+	 * This is an helper method to retrieve the ModelExtensionManager instance associated to the parameter's model.
+	 * 
+	 * @param ctx
+	 * @return a ModelExtensionManager instance.
+	 * @throws InvalidContextException if the parameter is not owned by a ResourceSet instance.
+	 */
+
 	public static ModelExtensionManager getInstance(EObject ctx) {
+		if (ctx == null || ctx.eResource() == null)
+			throw new InvalidContextException();
 		return getInstance(ctx.eResource());
 	}
 
