@@ -7,7 +7,7 @@ Element-Version: 3.0
 External-Reference: 
 Id: _KKECsJnAEeau1tOlZGduxg
 Runtime-Version: 2.0.2.201511100828
-Save-Time: 10/24/16 10:19 AM
+Save-Time: 1/19/17 3:02 PM
 Testcase-Type: ecl
 
 ------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
@@ -103,4 +103,12 @@ get-editor "org.polarsys.kitalpha.vp.visibility.af" | get-section "All Extension
     | select "org.polarsys.kitalpha.resourcereuse.resources/visibility (resource)"
 get-editor "org.polarsys.kitalpha.vp.visibility.af" | get-section "Extension Element Details" | get-editbox 
     -after [get-label "tags:"] | get-property text | equals "vp,stateMutableActivation" | verify-true
+    
+get-view "Project Explorer" | get-button -index 0 | click
+get-menu "Edit/Select All" | click
+get-menu "Edit/Delete" | click
+with [get-window "Delete Resources"] {
+    get-button "Delete project contents on disk (cannot be undone)" | check
+    get-button OK | click
+}
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

@@ -7,7 +7,7 @@ Element-Version: 3.0
 External-Reference: 
 Id: _GpsJcKaIEeap-ORrGyGQRg
 Runtime-Version: 2.0.2.201511100828
-Save-Time: 11/9/16 3:27 PM
+Save-Time: 1/19/17 3:37 PM
 Testcase-Type: ecl
 
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
@@ -36,11 +36,21 @@ with [get-editor "datatest.activityexplorer.vptext" | get-text-viewer] {
     select-range 1 1 11 2
     get-menu Paste | click
 }
+wait 3000
 get-menu "File/Save All" | click
+wait 3000
 get-view Outline | get-tree | get-item "datatest.activityexplorer" | get-property childCount | equals 4 | verify-true
 get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.datatest.vpdsl/model/datatest.vpdesc" 
     | double-click
 get-editor "datatest.vpdesc" | get-tree 
     | get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.datatest.vpdsl\\/model\\/datatest.vpdesc/Viewpoint datatest/\\[Viewpoint Activity Explorer\\] datatest.activityexplorer" 
     | get-property childCount | equals 4 | verify-true
+    
+get-view "Project Explorer" | get-button -index 0 | click
+get-menu "Edit/Select All" | click
+get-menu "Edit/Delete" | click
+with [get-window "Delete Resources"] {
+    get-button "Delete project contents on disk (cannot be undone)" | check
+    get-button OK | click
+}
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--
