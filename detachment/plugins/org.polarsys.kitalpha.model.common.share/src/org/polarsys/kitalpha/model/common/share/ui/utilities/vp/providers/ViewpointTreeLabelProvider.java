@@ -22,33 +22,27 @@ import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.IViewpointT
  */
 public class ViewpointTreeLabelProvider implements ILabelProvider {
 
-	@Override
 	public void addListener(ILabelProviderListener listener) {
 
 	}
 
-	@Override
 	public void dispose() {
 
 	}
 
-	@Override
 	public boolean isLabelProperty(Object element, String property) {
 		return false;
 	}
 
-	@Override
 	public void removeListener(ILabelProviderListener listener) {
 
 	}
 
-	@Override
 	public Image getImage(Object element) {
 		return PlatformUI.getWorkbench().getSharedImages()
 				.getImage(ISharedImages.IMG_OBJ_FOLDER);
 	}
 
-	@Override
 	public String getText(Object element) {
 		if (element instanceof IViewpointTreeDescription){
 			return ((IViewpointTreeDescription)element).getViewpointName();

@@ -9,7 +9,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.debug.ui,
  org.polarsys.kitalpha.cadence.core;visibility:=reexport
-Eclipse-LazyStart: true
+Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.cadence.ui.api,
  org.polarsys.kitalpha.cadence.ui.api.dialog,
  org.polarsys.kitalpha.cadence.ui.api.launch

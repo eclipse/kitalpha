@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.viewers.IStructuredContentProvider;
-import org.eclipse.jface.viewers.ITableLabelProvider;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.swt.SWT;
@@ -27,13 +26,15 @@ import org.polarsys.kitalpha.model.common.scrutiny.interfaces.IFeedback.IFeedbac
 /**
  * @author Faycal Abka
  */
-public class UnknownReferenceContentProvider extends LabelProvider implements ITableLabelProvider, IStructuredContentProvider {
 
-	@Override
+/*
+ * FIXME: due to Neon migration, ITableLabelProvider was removed from Implementation interface
+ */
+public class UnknownReferenceContentProvider extends LabelProvider implements IStructuredContentProvider {
+
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
 	}
 
-	@Override
 	public Object[] getElements(Object inputElement) {
 		ArrayList<IFeedbackMessage> elements = new ArrayList<IFeedbackMessage>();
 
@@ -46,7 +47,6 @@ public class UnknownReferenceContentProvider extends LabelProvider implements IT
 		return elements.toArray();
 	}
 
-	@Override
 	public Image getColumnImage(Object element, int columnIndex) {
 		if (element instanceof IFeedbackMessage) {
 			IFeedbackMessage feedbackMessage = (IFeedbackMessage) element;
@@ -64,13 +64,17 @@ public class UnknownReferenceContentProvider extends LabelProvider implements IT
 		return null;
 	}
 
-	@Override
 	public String getColumnText(Object element, int columnIndex) {
 		if (element instanceof IFeedbackMessage) {
 			IFeedbackMessage feedbackMessage = (IFeedbackMessage) element;
 			return feedbackMessage.getMessage();
 		}
 		return null;
+	}
+	
+	@Override
+	public void dispose() {
+		super.dispose();
 	}
 
 }

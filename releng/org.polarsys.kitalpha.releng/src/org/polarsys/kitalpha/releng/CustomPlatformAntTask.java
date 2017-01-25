@@ -86,11 +86,11 @@ public class CustomPlatformAntTask extends AbstractTask {
 						list.set(list.indexOf(line), product);
 				}
 
-				list.add("-Dosgi.requiredJavaVersion=1.5");
-				list.add("-Xms128m");
-				list.add("-Xmx512m");
-				list.add("-XX:PermSize=64M");
-				list.add("-XX:MaxPermSize=512M");
+//				list.add("-Dosgi.requiredJavaVersion=1.5");
+				list.add("-Xms512m");
+				list.add("-Xmx1024m");
+				list.add("-XX:PermSize=256M");
+//				list.add("-XX:MaxPermSize=512M");
 
 				writeFile(file, list);
 			}

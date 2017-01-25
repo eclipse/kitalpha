@@ -138,6 +138,7 @@
             <methods xmi:id="_Hlp4Qv4DEeSW086H-yDPeg" name="header" patternFilePath="templates/pattern._Hlp4QP4DEeSW086H-yDPeg/method._Hlp4Qv4DEeSW086H-yDPeg.pt"/>
             <methods xmi:id="_Hlp4Q_4DEeSW086H-yDPeg" name="init" patternFilePath="templates/pattern._Hlp4QP4DEeSW086H-yDPeg/method._Hlp4Q_4DEeSW086H-yDPeg.pt"/>
             <methods xmi:id="_Hlp4RP4DEeSW086H-yDPeg" name="preCondition" patternFilePath="templates/pattern._Hlp4QP4DEeSW086H-yDPeg/method._Hlp4RP4DEeSW086H-yDPeg.pt"/>
+            <methods xmi:id="_rs2woOejEeaCybmY6RBBlQ" name="eclipse_launch" patternFilePath="templates/pattern._Hlp4QP4DEeSW086H-yDPeg/method._rs2woOejEeaCybmY6RBBlQ.pt"/>
             <methods xmi:id="_Hlp4Rf4DEeSW086H-yDPeg" name="install_buckminster" patternFilePath="templates/pattern._Hlp4QP4DEeSW086H-yDPeg/method._Hlp4Rf4DEeSW086H-yDPeg.pt"/>
             <methods xmi:id="_Hlp4Rv4DEeSW086H-yDPeg" name="footer" patternFilePath="templates/pattern._Hlp4QP4DEeSW086H-yDPeg/method._Hlp4Rv4DEeSW086H-yDPeg.pt"/>
             <orchestration xmi:type="pattern:SuperCall" xmi:id="_Hlp4R_4DEeSW086H-yDPeg"/>
@@ -153,6 +154,22 @@
             <methods xmi:id="_5XTtxf4DEeSW086H-yDPeg" name="body" patternFilePath="templates/pattern._5XTtwP4DEeSW086H-yDPeg/method._5XTtxf4DEeSW086H-yDPeg.pt"/>
             <methods xmi:id="_5XTtxv4DEeSW086H-yDPeg" name="footer" patternFilePath="templates/pattern._5XTtwP4DEeSW086H-yDPeg/method._5XTtxv4DEeSW086H-yDPeg.pt"/>
             <orchestration xmi:type="pattern:SuperCall" xmi:id="_5XTtx_4DEeSW086H-yDPeg"/>
+          </elements>
+          <elements xmi:id="_nGnNAOedEeaEnovN32eoJw" name="Eclipse.Jdt.Prefs" superPattern="platform:/plugin/org.eclipse.egf.portfolio.eclipse.build/egf/Build.fcore#_8Rg8cabQEd-qVbFBxWG7lA"
+              headerMethod="#_nGnNAuedEeaEnovN32eoJw" conditionMethod="#_nGnNBOedEeaEnovN32eoJw"
+              initMethod="#_nGnNA-edEeaEnovN32eoJw" footerMethod="#_nGnNBuedEeaEnovN32eoJw">
+            <nature xmi:type="jetpattern:JetNature" xmi:id="_nGnNAeedEeaEnovN32eoJw"
+                name="JET"/>
+            <methods xmi:id="_nGnNAuedEeaEnovN32eoJw" name="header" patternFilePath="templates/pattern._nGnNAOedEeaEnovN32eoJw/method._nGnNAuedEeaEnovN32eoJw.pt"/>
+            <methods xmi:id="_nGnNA-edEeaEnovN32eoJw" name="init" patternFilePath="templates/pattern._nGnNAOedEeaEnovN32eoJw/method._nGnNA-edEeaEnovN32eoJw.pt"/>
+            <methods xmi:id="_nGnNBOedEeaEnovN32eoJw" name="preCondition" patternFilePath="templates/pattern._nGnNAOedEeaEnovN32eoJw/method._nGnNBOedEeaEnovN32eoJw.pt"/>
+            <methods xmi:id="_nGnNBeedEeaEnovN32eoJw" name="setFileName" patternFilePath="templates/pattern._nGnNAOedEeaEnovN32eoJw/method._nGnNBeedEeaEnovN32eoJw.pt"/>
+            <methods xmi:id="_nGnNBuedEeaEnovN32eoJw" name="footer" patternFilePath="templates/pattern._nGnNAOedEeaEnovN32eoJw/method._nGnNBuedEeaEnovN32eoJw.pt"/>
+            <methods xmi:id="_7yK2EOedEeaEnovN32eoJw" name="alterFilePath" patternFilePath="templates/pattern._nGnNAOedEeaEnovN32eoJw/method._7yK2EOedEeaEnovN32eoJw.pt"/>
+            <methods xmi:id="__q4NAOedEeaEnovN32eoJw" name="content" patternFilePath="templates/pattern._nGnNAOedEeaEnovN32eoJw/method.__q4NAOedEeaEnovN32eoJw.pt"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_nGnNB-edEeaEnovN32eoJw"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_BBAScOeeEeaEnovN32eoJw"
+                called="#__q4NAOedEeaEnovN32eoJw"/>
           </elements>
         </libraries>
       </viewpoints>
@@ -178,6 +195,7 @@
                   replacement="#_Hlp4QP4DEeSW086H-yDPeg"/>
               <substitutions xmi:id="_VnHLYP4EEeSW086H-yDPeg" replacedElement="platform:/plugin/org.eclipse.egf.portfolio.eclipse.build/egf/Build.fcore#_IfGS0I6XEd-e7viTqNBNrA"
                   replacement="#_5XTtwP4DEeSW086H-yDPeg"/>
+              <substitutions xmi:id="_86yHIOehEeaCybmY6RBBlQ" name="" replacement="#_nGnNAOedEeaEnovN32eoJw"/>
             </type>
           </invocationContracts>
         </invocationContractContainer>

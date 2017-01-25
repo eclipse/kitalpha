@@ -6,7 +6,7 @@ Bundle-Version: 1.1.0.qualifier
 Bundle-Activator: org.polarsys.kitalpha.cadence.core.Activator
 Bundle-Vendor: %providerName
 Require-Bundle: org.eclipse.core.runtime
-Eclipse-LazyStart: true
+Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.cadence.core.api,
  org.polarsys.kitalpha.cadence.core.api.parameter
 Bundle-RequiredExecutionEnvironment: J2SE-1.5

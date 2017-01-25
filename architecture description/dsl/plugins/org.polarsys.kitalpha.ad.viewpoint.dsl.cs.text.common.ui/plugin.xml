@@ -180,7 +180,7 @@ Contributors:
             point="org.eclipse.ui.ide.markerResolution">
         <markerResolutionGenerator
             class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.CommonExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-            markerType="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.common.check.fast">
+            markerType="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.common.ui.common.check.fast">
             <attribute
                 name="FIXABLE_KEY"
                 value="true">
@@ -188,7 +188,7 @@ Contributors:
         </markerResolutionGenerator>
         <markerResolutionGenerator
             class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.CommonExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-            markerType="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.common.check.normal">
+            markerType="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.common.ui.common.check.normal">
             <attribute
                 name="FIXABLE_KEY"
                 value="true">
@@ -196,7 +196,7 @@ Contributors:
         </markerResolutionGenerator>
         <markerResolutionGenerator
             class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.CommonExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-            markerType="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.common.check.expensive">
+            markerType="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.common.ui.common.check.expensive">
             <attribute
                 name="FIXABLE_KEY"
                 value="true">

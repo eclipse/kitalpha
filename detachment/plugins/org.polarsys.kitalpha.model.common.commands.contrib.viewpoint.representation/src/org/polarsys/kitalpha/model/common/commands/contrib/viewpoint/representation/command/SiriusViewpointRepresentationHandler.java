@@ -320,7 +320,7 @@ public class SiriusViewpointRepresentationHandler {
 			return usedSiriusViewpoints;
 		}
 		
-		usedSiriusViewpoints = new HashSet<>();
+		usedSiriusViewpoints = new HashSet<org.eclipse.sirius.viewpoint.description.Viewpoint>();
 		
 		Collection<Viewpoint> vps = getArchitectureDescriptionViewpoints();
 		for (Viewpoint viewpoint : vps) {
@@ -336,7 +336,7 @@ public class SiriusViewpointRepresentationHandler {
 	 * @return All Sirius viewpoint of Architecture Description or empty list
 	 */
 	private Collection<org.eclipse.sirius.viewpoint.description.Viewpoint> getSiriusViewpointsFromADViewpoint(Viewpoint viewpoint){
-		Collection<org.eclipse.sirius.viewpoint.description.Viewpoint> result = new HashSet<>();
+		Collection<org.eclipse.sirius.viewpoint.description.Viewpoint> result = new HashSet<org.eclipse.sirius.viewpoint.description.Viewpoint>();
 		
 		Representation representation = viewpoint.getRepresentation();
 		EList<RepresentationElement> representations = representation.getRepresentations();
@@ -355,14 +355,16 @@ public class SiriusViewpointRepresentationHandler {
 	 * @return viewpoint objects in viewpointToRemove
 	 */
 	private Collection<Viewpoint> getArchitectureDescriptionViewpoints(){
-		Collection<Viewpoint> result = new HashSet<>();
+		Collection<Viewpoint> result = new HashSet<Viewpoint>();
 		
 		for (final String id : viewpointsToRemove) {
 			try {
 				Viewpoint vp;
 				vp = getArchitectureFrameworkViewpoint(id);
 				result.add(vp);
-			} catch (IllegaleResourceReuseResult | ResourceNotFoundException e) {
+			} catch (IllegaleResourceReuseResult e ){
+				Activator.getDefault().getLog().log(new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage(), e));
+			} catch (ResourceNotFoundException e) {
 				Activator.getDefault().getLog().log(new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage(), e));
 			}
 		}

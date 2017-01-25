@@ -8,4 +8,4 @@ Bundle-SymbolicName: org.polarsys.kitalpha.emde.portfolio.emf.egf;singleton:=tru
 Bundle-Activator: org.polarsys.kitalpha.emde.portfolio.emf.egf.Activator
 Require-Bundle: org.eclipse.core.runtime
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: J2SE-1.5

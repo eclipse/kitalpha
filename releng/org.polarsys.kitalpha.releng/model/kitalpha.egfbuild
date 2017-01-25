@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="ASCII"?>
 <buildcore:Chain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:buildcore="http://www.eclipse.org/egf/1.0.1/buildcore" xmlns:builddeploy="http://www.eclipse.org/egf/1.0.0/builddeploy" xmlns:buildfile="http://www.eclipse.org/egf/1.0.0/buildfile" xmlns:buildscm="http://www.eclipse.org/egf/1.0.0/buildscm" xmlns:buildstep="http://www.eclipse.org/egf/1.0.2/buildstep" xmi:id="_ZWe-YLdiEd-SDOU_DXNA_g" name="Kitalpha">
   <propertyPackages xmi:id="_lb5k0I5EEeOQ8YcnVfa6Wg" name="urls">
-    <properties xmi:id="_kt6SMEE8EeOcseK798bpbA" key="egf.repo.url" value="https://hudson.eclipse.org/egf/job/buckminster-egf-mars/lastSuccessfulBuild/artifact/result/publish/org.eclipse.egf.site/site.p2/"/>
+    <properties xmi:id="_kt6SMEE8EeOcseK798bpbA" key="egf.repo.url" value="https://hudson.eclipse.org/egf/job/buckminster-egf-neon/lastSuccessfulBuild/artifact/result/publish/org.eclipse.egf.site/site.p2/"/>
     <properties xmi:id="_MWwdkPlvEeCFCIE_fWd_VQ" key="cloudsmith.download.prefix" value="http://download.eclipse.org/external/"/>
     <properties xmi:id="_MlqcQPlvEeCFCIE_fWd_VQ" key="polarion.download.prefix" value="http://download.eclipse.org/external/"/>
     <properties xmi:id="_LPrgwPlvEeCFCIE_fWd_VQ" key="eclipse.download.prefix" value="http://download.eclipse.org"/>
-    <properties xmi:id="_7e-7UI5hEeOQ8YcnVfa6Wg" key="sirius.repo.url" value="${eclipse.download.prefix}/sirius/updates/releases/4.1.2/${eclipse_version}"/>
+    <properties xmi:id="_7e-7UI5hEeOQ8YcnVfa6Wg" key="sirius.repo.url" value="${eclipse.download.prefix}/sirius/updates/releases/4.1.1/${eclipse_version}"/>
     <properties xmi:id="_n0G4oJPyEeODqo9Nw0Mw6Q" key="orbit.repo.url" value="${eclipse.download.prefix}/tools/orbit/downloads/drops/R20130827064939/repository/"/>
     <properties xmi:id="_eRQHEZk8EeOez_jbx14D1w" key="eclipse38.download.prefix" value="${eclipse.download.prefix}/releases/${eclipse_version}"/>
     <properties xmi:id="_efiO4BGGEeS7tbIPWaBUAQ" key="eef.repo.url" value="${eclipse.download.prefix}/modeling/emft/eef/updates/milestones/1.5/S201501090502/"/>
     <properties xmi:id="_snr1UBGGEeS7tbIPWaBUAQ" key="acceleo.repo.url" value="${eclipse.download.prefix}/modeling/m2t/acceleo/updates/releases/3.4"/>
-    <properties xmi:id="_dtoK4AdAEeSxv713mpB8TA" key="ecoretools2.repo.url" value="${eclipse.download.prefix}/ecoretools/updates/nightly/3.1.x/neon/"/>
-    <properties xmi:id="_BukoEVkbEeSo0vu-C-A3cw" key="diffmerge.repo.url" value="https://hudson.eclipse.org/diffmerge/job/buckminster-emf-diffmerge-master/129/artifact/result/publish/org.eclipse.emf.diffmerge.scm.feature/site.p2"/>
+    <properties xmi:id="_dtoK4AdAEeSxv713mpB8TA" key="ecoretools2.repo.url" value="${eclipse.download.prefix}/ecoretools/updates/nightly/3.1.x/${eclipse_version}"/>
+    <properties xmi:id="_BukoEVkbEeSo0vu-C-A3cw" key="diffmerge.repo.url" value="${eclipse.download.prefix}/diffmerge/releases/0.7.0/emf-diffmerge-site"/>
     <properties xmi:id="_YrTv8FkjEeSo0vu-C-A3cw" key="diffmerge.patterns.repo.url" value="${eclipse.download.prefix}/diffmerge/releases/0.7.0/edm-patterns-site"/>
     <properties xmi:id="_tAs5kCO3EeWTOe3dES9kkg" key="amalgam.repo.url" value="http://download.eclipse.org/modeling/amalgam/updates/nightly/1.8.0-N20161007-040549/mars"/>
     <properties xmi:id="_8RvscN-NEeWnTY4Di0td3w" key="gmf.repo.url" value="${sirius.repo.url}"/>
   </propertyPackages>
   <propertyPackages xmi:id="_vtRuAI5EEeOQ8YcnVfa6Wg" name="versions">
-    <properties xmi:id="_SowkIEhiEeOxuMV9a71i9w" key="eclipse_version" value="mars"/>
+    <properties xmi:id="_SowkIEhiEeOxuMV9a71i9w" key="eclipse_version" value="neon"/>
     <properties xmi:id="_6aWv4IodEeGSbqNfjJWsgA" key="kitalpha_version" value="1.1.0"/>
     <properties xmi:id="_3c6QMI5lEeOQ8YcnVfa6Wg" key="guava.version" value="11.0.2.v201303041551"/>
   </propertyPackages>
@@ -491,7 +491,7 @@
         <properties xmi:id="_Sg35ED5rEeSTuepII-sKzw" key="application" value="org.polarsys.kitalpha.application"/>
         <egfActivities xmi:id="_A3txZT5oEeSTuepII-sKzw" uri="platform:/plugin/org.polarsys.kitalpha.releng/egf/customPlatform.fcore#_iQtBQK1QEeCY7YPdntiIaQ"/>
       </steps>
-      <steps xsi:type="buildfile:ZipStep" xmi:id="_YEebIJKXEeSPapwxSH2ZqQ" name="zip juno results" baseDir="${publish}/${TP_name}" destinationFilePath="${publish}/kitalpha_${kitalpha_version}-${timestamp}-${TP_os}-${TP_ws}-${TP_arch}-mars.zip"/>
+      <steps xsi:type="buildfile:ZipStep" xmi:id="_YEebIJKXEeSPapwxSH2ZqQ" name="zip neon results" baseDir="${publish}/${TP_name}" destinationFilePath="${publish}/kitalpha_${kitalpha_version}-${timestamp}-${TP_os}-${TP_ws}-${TP_arch}-${eclipse_version}.zip"/>
     </steps>
     <steps xsi:type="buildcore:StepContainer" xmi:id="_NAn1cJWzEeSPapwxSH2ZqQ" name="TP_win32-win32-x86_64">
       <properties xmi:id="_NAn1cZWzEeSPapwxSH2ZqQ" key="TP_name" value="TP_win32-win32-x86_64" type="INLINED"/>
@@ -511,7 +511,7 @@
         <properties xmi:id="_NAn1fJWzEeSPapwxSH2ZqQ" key="application" value="org.polarsys.kitalpha.application"/>
         <egfActivities xmi:id="_NAn1fZWzEeSPapwxSH2ZqQ" uri="platform:/plugin/org.polarsys.kitalpha.releng/egf/customPlatform.fcore#_iQtBQK1QEeCY7YPdntiIaQ"/>
       </steps>
-      <steps xsi:type="buildfile:ZipStep" xmi:id="_NAn1fpWzEeSPapwxSH2ZqQ" name="zip juno results" baseDir="${publish}/${TP_name}" destinationFilePath="${publish}/kitalpha_${kitalpha_version}-${timestamp}-${TP_os}-${TP_ws}-${TP_arch}-mars.zip"/>
+      <steps xsi:type="buildfile:ZipStep" xmi:id="_NAn1fpWzEeSPapwxSH2ZqQ" name="zip neon results" baseDir="${publish}/${TP_name}" destinationFilePath="${publish}/kitalpha_${kitalpha_version}-${timestamp}-${TP_os}-${TP_ws}-${TP_arch}-${eclipse_version}.zip"/>
     </steps>
     <steps xsi:type="buildcore:StepContainer" xmi:id="_U6KkkJWzEeSPapwxSH2ZqQ" name="TP_linux-gtk-x86">
       <properties xmi:id="_U6KkkZWzEeSPapwxSH2ZqQ" key="TP_name" value="TP_linux-gtk-x86" type="INLINED"/>
@@ -531,7 +531,7 @@
         <properties xmi:id="_U6KknJWzEeSPapwxSH2ZqQ" key="application" value="org.polarsys.kitalpha.application"/>
         <egfActivities xmi:id="_U6KknZWzEeSPapwxSH2ZqQ" uri="platform:/plugin/org.polarsys.kitalpha.releng/egf/customPlatform.fcore#_iQtBQK1QEeCY7YPdntiIaQ"/>
       </steps>
-      <steps xsi:type="buildfile:TarStep" xmi:id="_bCk0wdExEeSTbrZQrXnDzg" name="tar juno results" description="" destfile="${publish}/kitalpha_${kitalpha_version}-${timestamp}-${TP_os}-${TP_ws}-${TP_arch}-mars.tar.gz" baseDir="${publish}/${TP_name}" compression="gzip"/>
+      <steps xsi:type="buildfile:TarStep" xmi:id="_bCk0wdExEeSTbrZQrXnDzg" name="tar neon results" description="" destfile="${publish}/kitalpha_${kitalpha_version}-${timestamp}-${TP_os}-${TP_ws}-${TP_arch}-${eclipse_version}.tar.gz" baseDir="${publish}/${TP_name}" compression="gzip"/>
     </steps>
     <steps xsi:type="buildcore:StepContainer" xmi:id="_caErsJWzEeSPapwxSH2ZqQ" name="TP_linux-gtk-x86_64">
       <properties xmi:id="_caErsZWzEeSPapwxSH2ZqQ" key="TP_name" value="TP_linux-gtk-x86_64" type="INLINED"/>
@@ -551,7 +551,7 @@
         <properties xmi:id="_caErvJWzEeSPapwxSH2ZqQ" key="application" value="org.polarsys.kitalpha.application"/>
         <egfActivities xmi:id="_caErvZWzEeSPapwxSH2ZqQ" uri="platform:/plugin/org.polarsys.kitalpha.releng/egf/customPlatform.fcore#_iQtBQK1QEeCY7YPdntiIaQ"/>
       </steps>
-      <steps xsi:type="buildfile:TarStep" xmi:id="_jSFz4NExEeSTbrZQrXnDzg" name="tar juno results" description="" destfile="${publish}/kitalpha_${kitalpha_version}-${timestamp}-${TP_os}-${TP_ws}-${TP_arch}-mars.tar.gz" baseDir="${publish}/${TP_name}" compression="gzip"/>
+      <steps xsi:type="buildfile:TarStep" xmi:id="_jSFz4NExEeSTbrZQrXnDzg" name="tar neon results" description="" destfile="${publish}/kitalpha_${kitalpha_version}-${timestamp}-${TP_os}-${TP_ws}-${TP_arch}-${eclipse_version}.tar.gz" baseDir="${publish}/${TP_name}" compression="gzip"/>
     </steps>
     <steps xsi:type="buildcore:StepContainer" xmi:id="_e0YK8JWzEeSPapwxSH2ZqQ" name="TP_macosx-cocoa-x86_64">
       <properties xmi:id="_e0YK8ZWzEeSPapwxSH2ZqQ" key="TP_name" value="eclipse" type="INLINED"/>
@@ -572,8 +572,8 @@
         <egfActivities xmi:id="_e0YK_ZWzEeSPapwxSH2ZqQ" uri="platform:/plugin/org.polarsys.kitalpha.releng/egf/customPlatform.fcore#_iQtBQK1QEeCY7YPdntiIaQ"/>
       </steps>
       <steps xsi:type="buildstep:AntStep" xmi:id="_Nu2DsMgDEeSUVaUqISCvPA" enabled="false" targetName="fixPermission" xml="&lt;target name=&quot;fixPermission&quot;>&#xD;&#xA;&#x9;&lt;chmod file=&quot;${publish}/${TP_name}/Eclipse.app/Contents/MacOS/eclipse&quot; perm=&quot;700&quot; verbose=&quot;true&quot;/>&#xD;&#xA;&lt;/target>"/>
-      <steps xsi:type="buildfile:TarStep" xmi:id="_3s0WwcfdEeSUVaUqISCvPA" name="Tar juno results" enabled="false" destfile="${publish}/kitalpha_${kitalpha_version}-${timestamp}-${TP_os}-${TP_ws}-${TP_arch}-juno.tar.gz" baseDir="${publish}/${TP_name}" compression="gzip"/>
-      <steps xsi:type="buildstep:AntStep" xmi:id="_HDKNEFfeEeaex5qjWky3Ig" targetName="Tar_macos_platform" xml="&#x9;&lt;target name=&quot;Tar_macos_platform&quot;>&#xD;&#xA;&#x9;&#x9;&lt;tar destfile=&quot;${publish}/kitalpha_${kitalpha_version}-${timestamp}-${TP_os}-${TP_ws}-${TP_arch}-mars.tar.gz&quot; compression=&quot;gzip&quot;>&#xD;&#xA;&#x9;&#x9;&#x9;&lt;tarfileset dir=&quot;${publish}&quot; filemode=&quot;750&quot; username=&quot;ant&quot; group=&quot;ant&quot;>&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&lt;include name=&quot;MacOS/eclipse&quot;/>&#xD;&#xA;&#x9;&#x9;&#x9;&lt;/tarfileset>&#xD;&#xA;&#x9;&#x9;&#x9;&lt;tarfileset dir=&quot;${publish}&quot;>&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&lt;include name=&quot;Info.plist&quot;/>&#xD;&#xA;&#x9;&#x9;&#x9;&lt;/tarfileset>&#xD;&#xA;&#x9;&#x9;&#x9;&lt;tarfileset dir=&quot;${publish}&quot;>&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&lt;include name=&quot;Resources/Eclipse.icns&quot;/>&#xD;&#xA;&#x9;&#x9;&#x9;&lt;/tarfileset>&#xD;&#xA;&#x9;&#x9;&#x9;&lt;tarfileset dir=&quot;${publish}&quot;>&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&lt;include name=&quot;eclipse/**&quot;/>&#xD;&#xA;&#x9;&#x9;&#x9;&lt;/tarfileset>&#xD;&#xA;&#x9;&#x9;&lt;/tar>&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&lt;delete dir=&quot;${publish}/MacOS&quot;/>&#xD;&#xA;&#x9;&#x9;&lt;delete dir=&quot;${publish}/Resources&quot;/>&#xD;&#xA;&#x9;&#x9;&lt;delete file=&quot;${publish}/Info.plist&quot;/>&#xD;&#xA;&#x9;&#x9;&lt;delete dir=&quot;${publish}/eclipse&quot;/>&#xD;&#xA;&#x9;&lt;/target>&#xD;&#xA;"/>
+      <steps xsi:type="buildfile:TarStep" xmi:id="_3s0WwcfdEeSUVaUqISCvPA" name="Tar neon results" description="" enabled="false" destfile="${publish}/kitalpha_${kitalpha_version}-${timestamp}-${TP_os}-${TP_ws}-${TP_arch}-${eclipse_version}.tar.gz" baseDir="${publish}/${TP_name}" compression="gzip"/>
+      <steps xsi:type="buildstep:AntStep" xmi:id="_HDKNEFfeEeaex5qjWky3Ig" targetName="Tar_macos_platform" xml="&#x9;&lt;target name=&quot;Tar_macos_platform&quot;>&#xD;&#xA;&#x9;&#x9;&lt;tar destfile=&quot;${publish}/kitalpha_${kitalpha_version}-${timestamp}-${TP_os}-${TP_ws}-${TP_arch}-${eclipse_version}.tar.gz&quot; compression=&quot;gzip&quot;>&#xD;&#xA;&#x9;&#x9;&#x9;&lt;tarfileset dir=&quot;${publish}&quot; filemode=&quot;750&quot; username=&quot;ant&quot; group=&quot;ant&quot;>&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&lt;include name=&quot;MacOS/eclipse&quot;/>&#xD;&#xA;&#x9;&#x9;&#x9;&lt;/tarfileset>&#xD;&#xA;&#x9;&#x9;&#x9;&lt;tarfileset dir=&quot;${publish}&quot;>&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&lt;include name=&quot;Info.plist&quot;/>&#xD;&#xA;&#x9;&#x9;&#x9;&lt;/tarfileset>&#xD;&#xA;&#x9;&#x9;&#x9;&lt;tarfileset dir=&quot;${publish}&quot;>&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&lt;include name=&quot;Resources/Eclipse.icns&quot;/>&#xD;&#xA;&#x9;&#x9;&#x9;&lt;/tarfileset>&#xD;&#xA;&#x9;&#x9;&#x9;&lt;tarfileset dir=&quot;${publish}&quot;>&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&lt;include name=&quot;eclipse/**&quot;/>&#xD;&#xA;&#x9;&#x9;&#x9;&lt;/tarfileset>&#xD;&#xA;&#x9;&#x9;&lt;/tar>&#xD;&#xA;&#xD;&#xA;&#x9;&#x9;&lt;delete dir=&quot;${publish}/MacOS&quot;/>&#xD;&#xA;&#x9;&#x9;&lt;delete dir=&quot;${publish}/Resources&quot;/>&#xD;&#xA;&#x9;&#x9;&lt;delete file=&quot;${publish}/Info.plist&quot;/>&#xD;&#xA;&#x9;&#x9;&lt;delete dir=&quot;${publish}/eclipse&quot;/>&#xD;&#xA;&#x9;&lt;/target>&#xD;&#xA;"/>
     </steps>
   </jobs>
   <jobs xmi:id="_Q1gsQKH8EeSCV64W9A5FeQ" name="clean all">

@@ -20,17 +20,14 @@ import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.ViewpointTr
  */
 public class ViewpointTreeProvider implements ITreeContentProvider  {
 	
-	@Override
 	public void dispose() {
 
 	}
 
-	@Override
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
 
 	}
 
-	@Override
 	public Object[] getElements(Object inputElement) {
 		
 		if (inputElement instanceof ViewpointTreeContainer)
@@ -38,7 +35,6 @@ public class ViewpointTreeProvider implements ITreeContentProvider  {
 		return getChildren(inputElement);
 	}
 
-	@Override
 	public Object[] getChildren(Object parentElement) {
 			if (parentElement instanceof IViewpointTreeDescription){
 				IViewpointTreeDescription vpd = (IViewpointTreeDescription)parentElement;
@@ -47,7 +43,6 @@ public class ViewpointTreeProvider implements ITreeContentProvider  {
 			return null;
 	}
 
-	@Override
 	public Object getParent(Object element) {
 		
 		if (element instanceof IViewpointTreeDescription){
@@ -57,7 +52,6 @@ public class ViewpointTreeProvider implements ITreeContentProvider  {
 		return null;
 	}
 
-	@Override
 	public boolean hasChildren(Object element) {
 		if (element instanceof IViewpointTreeDescription)
 			return ((IViewpointTreeDescription)element).hasChildren();
