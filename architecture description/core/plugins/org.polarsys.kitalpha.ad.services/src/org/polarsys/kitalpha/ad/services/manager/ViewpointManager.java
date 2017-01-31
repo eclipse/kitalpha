@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services.
+ * Copyright (c) 2016-2017 Thales Global Services.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -672,12 +672,34 @@ public class ViewpointManager {
 		void handleInactivation(Resource vp);
 	}
 
+	/**
+	 * This is an helper method to retrieve the ViewpointManager instance associated to the parameter's model.
+	 * 
+	 * @param ctx1
+	 * @return a ViewpointManager instance.
+	 * @throws IllegalArgumentException if the parameter is not owned by a ResourceSet instance.
+	 */
 	public static ViewpointManager getInstance(EObject ctx1) {
+		if (ctx1 == null || ctx1.eResource() == null)
+                {
+			throw new IllegalArgumentException();
+                }
 		ResourceSet ctx = ctx1.eResource().getResourceSet();
 		return getInstance(ctx);
 	}
 
+	/**
+	 * This method returns the ViewpointManager instance associated to the given ResourceSet instance.
+	 * 
+	 * @param ctx
+	 * @return a ViewpointManager instance.
+	 * @throws IllegalArgumentException if the parameter is null.
+	 */
 	public static ViewpointManager getInstance(final ResourceSet ctx) {
+		if (ctx == null)
+                {
+			throw new IllegalArgumentException();
+                }
 		ViewpointManager instance = instances.get(ctx);
 		if (instance == null) {
 			instances.put(ctx, instance = createInstance());
