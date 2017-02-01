@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016-2017 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -11,16 +11,12 @@
 package org.polarsys.kitalpha.ad.viewpoint.tests;
 
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.osgi.framework.Version;
-import org.polarsys.kitalpha.ad.services.manager.AlreadyInStateException;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointActivationException;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
-import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.Listener;
-import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.OverallListener;
-import org.polarsys.kitalpha.resourcereuse.helper.ResourceReuse;
-import org.polarsys.kitalpha.resourcereuse.model.Resource;
 
 import junit.framework.TestCase;
 
@@ -69,6 +65,30 @@ public class BasicTests extends TestCase {
 			m1.desactivate("");
 			fail("expecting an exception");
 		} catch (ViewpointActivationException e) {
+		}
+	}
+
+	public void testManager5() throws Exception {
+		try {
+			ViewpointManager m1 = ViewpointManager.getInstance(EcoreFactory.eINSTANCE.createEObject());
+			fail("expecting an exception");
+		} catch (IllegalArgumentException e) {
+		}
+	}
+	
+	public void testManager6() throws Exception {
+		try {
+			ViewpointManager m1 = ViewpointManager.getInstance((EObject)null);
+			fail("expecting an exception");
+		} catch (IllegalArgumentException e) {
+		}
+	}
+	
+	public void testManager7() throws Exception {
+		try {
+			ViewpointManager m1 = ViewpointManager.getInstance((ResourceSet)null);
+			fail("expecting an exception");
+		} catch (IllegalArgumentException e) {
 		}
 	}
 
