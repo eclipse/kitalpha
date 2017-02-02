@@ -1,74 +1,188 @@
 --- RCPTT testcase ---
 Format-Version: 1.0
-Contexts: _OEahgKZ7Eeap-ORrGyGQRg,_7A2tkHiyEeaI368ba7nlrQ
+Contexts: _7A2tkHiyEeaI368ba7nlrQ,_16YjAHiyEeaI368ba7nlrQ
 Element-Name: Viewpoint Data Specification
 Element-Type: testcase
 Element-Version: 3.0
 External-Reference: 
 Id: _g1Qm0KZ6Eeap-ORrGyGQRg
 Runtime-Version: 2.0.2.201511100828
-Save-Time: 1/19/17 3:37 PM
+Save-Time: 2/2/17 4:44 PM
 Testcase-Type: ecl
 
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
 Content-Type: text/ecl
 Entry-Name: .content
 
-with [get-view "Project Explorer" | get-tree] {
-    get-item "org.polarsys.kitalpha.vp.datatest.vpdsl" | get-property caption 
-        | equals "org.polarsys.kitalpha.vp.datatest.vpdsl" | verify-true
-    get-item data | get-property caption | equals data | verify-true
+get-menu "File/New/Other..." | click
+with [get-window New] {
+    get-editbox -after [get-label "Wizards:"] | set-text ds
+    get-tree | select "Kitalpha/Architecture description/Viewpoint DSL project"
+    get-button "Next >" | click
 }
-get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.datatest.vpdsl/model/datatest.spec.vptext" 
+with [get-window "New Viewpoint DSL Project"] {
+    get-editbox -after [get-label "Viewpoint short name :"] | set-text workflow
+    get-button "Next >" | click
+    get-button Finish | click
+}
+with [get-editor "workflow.spec.vptext" | get-text-viewer] {
+    set-caret-pos 11 16
+    open-declaration
+}
+with [get-editor "workflow.data.vptext" | get-text-viewer] {
+    set-caret-pos 10 1
+    key-type Tab
+    type-text "Class "
+    type-text "AbstractWorkflowElement "
+    key-type "M1+M3+'" "{"
+    key-type Enter
+    type-text abs
+    key-type "M1+SPACE"
+    key-type Enter
+    type-text " tr"
+    key-type "M1+SPACE"
+    key-type Enter -times 2
+    type-text Attr
+    key-type "M1+SPACE"
+    key-type Enter -times 2
+    key-type Tab
+    type-text "name T"
+    key-type BackSpace
+    type-text t
+    key-type "M1+SPACE"
+    type-text " ecore.EString"
+    key-type Down
+    key-type Enter -times 2
+    type-text "Class Node "
+    key-type "M1+M3+'" "{"
+    key-type Enter
+    type-text Abstract
+    key-type BackSpace -times 8
+    type-text superC
+    key-type "M1+SPACE"
+    key-type Enter
+    type-text " Abs "
+    key-type BackSpace
+    key-type "M1+SPACE"
+    key-type Enter -times 2
+    type-text "Attributes:"
+    key-type Enter
+    key-type Tab
+    type-text "desc type "
+    key-type "M1+SPACE"
+    type-text ESt
+    key-type Enter
+    key-type Up -times 2
+    key-type Right -times 8
+    key-type Left
+    key-type Enter
+    type-text abs
+    key-type "M1+SPACE"
+    key-type Enter
+    type-text " "
+    key-type "M1+SPACE"
+    type-text tr
+    key-type Enter
+    key-type Down -times 4
+    key-type Up
+    key-type Enter -times 2
+    type-text "Class TargetGoal "
+    key-type "M1+M3+'" "{"
+    key-type Enter
+    type-text superC
+    key-type "M1+SPACE"
+    key-type Enter
+    type-text " N"
+    key-type "M1+SPACE"
+    key-type Enter
+    key-type Down
+    key-type Enter -times 2
+    type-text "Class StepTask "
+    key-type "M1+M3+'" "{"
+    key-type Enter
+    type-text superC
+    key-type "M1+SPACE"
+    key-type Enter
+    type-text " "
+    key-type "M1+SPACE"
+    type-text Node
+    key-type Enter
+    key-type Down
+    key-type Enter -times 2
+    type-text "Class Link "
+    key-type "M1+M3+'" "{"
+    key-type Enter
+    type-text superC
+    key-type "M1+SPACE"
+    key-type Enter
+    type-text " "
+    key-type "M1+SPACE"
+    type-text ab
+    key-type BackSpace -times 2
+    type-text Ab
+    key-type "M1+SPACE"
+    key-type Enter -times 2
+    type-text Asso
+    key-type "M1+SPACE"
+    key-type Enter -times 2
+    key-type Tab
+    type-text "sourceNode ref"
+    key-type "M1+SPACE"
+    key-type Enter
+    type-text " "
+    type-text "[1,1] "
+    type-text " N"
+    key-type "M1+SPACE"
+    key-type Enter -times 2
+    type-text "targetNode refers "
+    type-text "[1,1] "
+    type-text " N"
+    key-type "M1+SPACE"
+    key-type Enter
+    key-type Up -times 21
+    key-type Enter -times 2
+    type-text "Class Workflow "
+    key-type "M1+M3+'" "{"
+    key-type Enter
+    type-text superCl
+    key-type "M1+SPACE"
+    key-type Enter
+    type-text " Ab"
+    key-type "M1+SPACE"
+    key-type Enter -times 2
+    type-text Asso
+    key-type "M1+SPACE"
+    key-type Enter -times 2
+    key-type Tab
+    type-text "nodes contains "
+    type-text "[0,*] "
+    type-text " N"
+    key-type "M1+SPACE"
+    key-type Enter -times 2
+    type-text linlks
+    type-text " contains "
+    type-text "[0,*] "
+    type-text "Node"
+}
+with [get-view Outline | get-tree] {
+    get-item "workflow.data/workflow.data" | get-property caption | equals "workflow.data" | verify-true
+    get-item "workflow.data/workflow.data" | get-property childCount | equals 6 | verify-true
+}
+get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.workflow.vpdsl/model/workflow.vpdesc" 
     | double-click
-with [get-editor "datatest.spec.vptext" | get-text-viewer] {
-    set-caret-pos 11 6
-    select-range 11 5 11 113
+with [get-editor "workflow.vpdesc" | get-tree] {
+    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.workflow.vpdsl\\/model\\/workflow.vpdesc/Viewpoint workflow/\\[Data\\] workflow.data" 
+        | get-property caption | equals "[Data] workflow.data" | verify-true
+    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.workflow.vpdsl\\/model\\/workflow.vpdesc/Viewpoint workflow/\\[Data\\] workflow.data" 
+        | get-property childCount | equals 0 | verify-true
 }
-get-editor "datatest.spec.vptext" | get-text-viewer | get-property "getSelectionText()" 
-    | equals "uses model \"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data/model/generated/Data.ecore\"" 
-    | verify-true
-
-with [get-view "Project Explorer" | get-tree] {
-    select "org.polarsys.kitalpha.vp.datatest.vpdsl/model/datatest.data.vptext" | double-click
-    select "data/data specification" | double-click
-}
-with [get-editor "data specification" | get-text-viewer] {
-    set-caret-pos 1 2
-    select-range 1 1 361 2
-    get-menu Copy | click
-}
-get-tab-folder -index 2 | get-tab-item "datatest.data.vptext" | click
-with [get-editor "datatest.data.vptext" | get-text-viewer] {
-    set-caret-pos 1 2
-    select-range 1 1 11 2
-    get-menu Paste | click
-}
-wait 3000
 get-menu "File/Save All" | click
-wait 3000
-get-view Outline | get-tree | get-item "datatest.data/datatest.data" | get-property childCount | equals 20 | verify-true
-with [get-view Outline | get-tree] {
-    get-item "datatest.data/datatest.data/ClassR" 
-        | get-property "getData().getChildren().EObjectNode[0].getEClass().getInstanceClassName()" 
-        | equals "org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Operation" | verify-true
-    get-item "datatest.data/datatest.data/ClassR" 
-        | get-property "getData().getChildren().EObjectNode[0].getEClass().getInstanceTypeName()" 
-        | equals "org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Operation" | verify-true
+with [get-editor "workflow.vpdesc" | get-tree] {
+    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.workflow.vpdsl\\/model\\/workflow.vpdesc/Viewpoint workflow/\\[Data\\] workflow.data" 
+        | get-property caption | equals "[Data] workflow.data" | verify-true
+    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.workflow.vpdsl\\/model\\/workflow.vpdesc/Viewpoint workflow/\\[Data\\] workflow.data" 
+        | get-property childCount | equals 6 | verify-true
 }
-with [get-view Outline | get-tree] {
-    get-item "datatest.data/datatest.data/ClassO/http:\\/\\/Class.annoitation.O.1" 
-        | get-property "getData().getChildren().EObjectNode[0].getEClass().getInstanceClassName()" 
-        | equals "org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Detail" | verify-true
-    get-item "datatest.data/datatest.data/ClassO/http:\\/\\/Class.annoitation.O.1" 
-        | get-property "getData().getChildren().EObjectNode[0].getEClass().getInstanceTypeName()" 
-        | equals "org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Detail" | verify-true
-}
-get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.datatest.vpdsl/model/datatest.vpdesc" 
-    | double-click
-get-editor "datatest.vpdesc" | get-tree 
-    | get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.datatest.vpdsl\\/model\\/datatest.vpdesc/Viewpoint datatest/\\[Data\\] datatest.data" 
-    | get-property childCount | equals 20 | verify-true
 
 get-view "Project Explorer" | get-button -index 0 | click
 get-menu "Edit/Select All" | click

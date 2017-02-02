@@ -7,53 +7,119 @@ Element-Version: 3.0
 External-Reference: 
 Id: _wfyLsKaKEeap-ORrGyGQRg
 Runtime-Version: 2.0.2.201511100828
-Save-Time: 1/19/17 3:36 PM
+Save-Time: 2/2/17 4:36 PM
 Testcase-Type: ecl
 
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
 Content-Type: text/ecl
 Entry-Name: .content
 
-get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.datatest.vpdsl/model/datatest.spec.vptext" 
+get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.workflow.vpdsl/model/workflow.spec.vptext" 
     | double-click
-with [get-editor "datatest.spec.vptext" | get-text-viewer] {
-    set-caret-pos 14 48
+with [get-editor "workflow.spec.vptext" | get-text-viewer] {
+    set-caret-pos 13 48
     key-type Enter
     key-type "M1+SPACE"
-    key-type Down -times 3
-    key-type Enter
 }
+get-window -from "CompletionProposalPopup.createProposalSelector()" | get-table | select "Services - New Services" 
+    | click -default
 get-window "Viewpoint Services File Creation Wizard" | get-button Finish | click
-get-view "Project Explorer" | get-tree | select "data/services specification" | double-click
-with [get-editor "services specification" | get-text-viewer] {
-    set-caret-pos 1 2
-    select-range 1 1 31 2
-    get-menu Copy | click
+with [get-editor "workflow.services.vptext" | get-text-viewer] {
+    set-caret-pos 9 23
+    key-type Enter
+    type-text Rul
+    key-type "M1+SPACE"
+    key-type Enter
+    type-text " getAllTasks"
+    key-type BackSpace
+    type-text Sptes
+    key-type BackSpace -times 4
+    type-text "teps "
+    key-type "M1+SPACE"
+    type-text ty
+    key-type Enter
+    type-text " J"
+    key-type "M1+SPACE"
+    key-type Enter -times 2
+    type-text Ru
+    key-type "M1+SPACE"
+    key-type Down
+    key-type Enter
+    set-caret-pos 11 17
+    key-type BackSpace -times 7
+    type-text getAllTargetGoals
+    key-type Down
+    type-text "Rule colorLinks type Java"
 }
-get-tab-folder -index 2 | get-tab-item "datatest.services.vptext" | click
-with [get-editor "datatest.services.vptext" | get-text-viewer] {
-    set-caret-pos 12 9
-    select-range 13 2 1 1
-    get-menu Paste | click
+with [get-view Outline | get-tree] {
+    get-item "workflow.services/workflow.rules" | get-property caption | equals "workflow.rules" | verify-true
+    get-item "workflow.services/workflow.rules" | get-property childCount | equals 3 | verify-true
 }
-wait 3000
-get-menu "File/Save All" | click
-wait 3000
-get-view Outline | get-tree | get-item "datatest.services/datatest.services" | get-property childCount | equals 3 
-    | verify-true
-get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.datatest.vpdsl/model/datatest.vpdesc" 
+with [get-editor "workflow.services.vptext" | get-text-viewer] {
+    set-caret-pos 15 29
+    key-type Enter
+    type-text Ser
+    key-type "M1+SPACE"
+    key-type Enter
+    type-text " ExecuteNodesServices or"
+    key-type "M1+SPACE"
+    key-type Enter
+    type-text " "
+    key-type "M1+SPACE"
+    type-text getA
+    key-type Down
+    key-type Enter
+    type-text ", "
+    key-type "M1+SPACE"
+    type-text getA
+    key-type Enter -times 2
+    key-type "M1+SPACE"
+}
+get-window -from "CompletionProposalPopup.createProposalSelector()" | get-table | select "Service - New Service" 
+    | click -default
+with [get-editor "workflow.services.vptext" | get-text-viewer] {
+    key-type "M1+SPACE"
+    type-text col
+    key-type Enter
+    set-caret-pos 17 22
+    key-type BackSpace -times 9
+    type-text ExecuteLinksPainting
+    set-caret-pos 18 5
+    key-type "M1+d"
+}
+with [get-view Outline | get-tree] {
+    get-item "workflow.services/workflow.services" | get-property caption | equals "workflow.services" | verify-true
+    get-item "workflow.services/workflow.services" | get-property childCount | equals 2 | verify-true
+}
+get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.workflow.vpdsl/model/workflow.vpdesc" 
     | double-click
-get-editor "datatest.vpdesc" | get-tree 
-    | get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.datatest.vpdsl\\/model\\/datatest.vpdesc/Viewpoint datatest/\\[Service Set\\] datatest.services" 
-    | get-property childCount | equals 3 | verify-true
-get-editor "datatest.vpdesc" | get-tree 
-    | get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.datatest.vpdsl\\/model\\/datatest.vpdesc/Viewpoint datatest/Property Set datatest.properties" 
-    | get-property childCount | equals 4 | verify-true
-get-eclipse-window | key-type "" "\\u0000"
-get-editor "datatest.vpdesc" | get-tree 
-    | get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.datatest.vpdsl\\/model\\/datatest.vpdesc/Viewpoint datatest/\\[Rule Set\\] datatest.rules" 
-    | get-property childCount | equals 4 | verify-true
-    
+with [get-editor "workflow.vpdesc" | get-tree] {
+    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.workflow.vpdsl\\/model\\/workflow.vpdesc/Viewpoint workflow" 
+        | get-property caption | equals "Viewpoint workflow" | verify-true
+    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.workflow.vpdsl\\/model\\/workflow.vpdesc/Viewpoint workflow" 
+        | get-property childCount | equals 4 | verify-true
+}
+get-tab-folder -index 2 | get-tab-item "*workflow.services.vptext" | click
+get-button "Save (M1+S)" | click
+get-tab-folder -index 2 | get-tab-item "workflow.vpdesc" | click
+with [get-editor "workflow.vpdesc" | get-tree] {
+    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.workflow.vpdsl\\/model\\/workflow.vpdesc/Viewpoint workflow" 
+        | get-property caption | equals "Viewpoint workflow" | verify-true
+    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.workflow.vpdsl\\/model\\/workflow.vpdesc/Viewpoint workflow" 
+        | get-property childCount | equals 6 | verify-true
+}
+with [get-editor "workflow.vpdesc" | get-tree] {
+    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.workflow.vpdsl\\/model\\/workflow.vpdesc/Viewpoint workflow/\\[Service Set\\] workflow.services" 
+        | get-property caption | equals "[Service Set] workflow.services" | verify-true
+    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.workflow.vpdsl\\/model\\/workflow.vpdesc/Viewpoint workflow/\\[Service Set\\] workflow.services" 
+        | get-property childCount | equals 2 | verify-true
+    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.workflow.vpdsl\\/model\\/workflow.vpdesc/Viewpoint workflow/\\[Rule Set\\] workflow.rules" 
+        | get-property caption | equals "[Rule Set] workflow.rules" | verify-true
+    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.workflow.vpdsl\\/model\\/workflow.vpdesc/Viewpoint workflow/\\[Rule Set\\] workflow.rules" 
+        | get-property childCount | equals 3 | verify-true
+}
+
+get-menu "File/Save All" | click
 get-view "Project Explorer" | get-button -index 0 | click
 get-menu "Edit/Select All" | click
 get-menu "Edit/Delete" | click
