@@ -13,7 +13,7 @@
     <properties xmi:id="_efiO4BGGEeS7tbIPWaBUAQ" key="eef.repo.url" value="${eclipse.download.prefix}/modeling/emft/eef/updates/milestones/1.5/S201501090502/"/>
     <properties xmi:id="_snr1UBGGEeS7tbIPWaBUAQ" key="acceleo.repo.url" value="${eclipse.download.prefix}/modeling/m2t/acceleo/updates/releases/3.4"/>
     <properties xmi:id="_dtoK4AdAEeSxv713mpB8TA" key="ecoretools2.repo.url" value="${eclipse.download.prefix}/ecoretools/updates/nightly/3.1.x/neon/"/>
-    <properties xmi:id="_BukoEVkbEeSo0vu-C-A3cw" key="diffmerge.repo.url" value="https://hudson.eclipse.org/diffmerge/job/buckminster-emf-diffmerge-master/129/artifact/result/publish/org.eclipse.emf.diffmerge.scm.feature/site.p2"/>
+    <properties xmi:id="_BukoEVkbEeSo0vu-C-A3cw" key="diffmerge.repo.url" value="${eclipse.download.prefix}/diffmerge/releases/0.7.0/emf-diffmerge-site"/>
     <properties xmi:id="_YrTv8FkjEeSo0vu-C-A3cw" key="diffmerge.patterns.repo.url" value="${eclipse.download.prefix}/diffmerge/releases/0.7.0/edm-patterns-site"/>
     <properties xmi:id="_tAs5kCO3EeWTOe3dES9kkg" key="amalgam.repo.url" value="http://download.eclipse.org/modeling/amalgam/updates/nightly/1.8.0-N20161007-040549/mars"/>
     <properties xmi:id="_8RvscN-NEeWnTY4Di0td3w" key="gmf.repo.url" value="${sirius.repo.url}"/>
