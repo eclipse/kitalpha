@@ -7,44 +7,65 @@ Element-Version: 3.0
 External-Reference: 
 Id: _JdRukKaMEeap-ORrGyGQRg
 Runtime-Version: 2.0.2.201511100828
-Save-Time: 1/19/17 3:37 PM
+Save-Time: 2/2/17 4:35 PM
 Testcase-Type: ecl
 
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
 Content-Type: text/ecl
 Entry-Name: .content
 
-get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.datatest.vpdsl/model/datatest.spec.vptext" 
+get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.workflow.vpdsl/model/workflow.spec.vptext" 
     | double-click
-with [get-editor "datatest.spec.vptext" | get-text-viewer] {
-    set-caret-pos 15 31
+with [get-editor "workflow.spec.vptext" | get-text-viewer] {
+    set-caret-pos 14 31
     key-type Enter
     key-type "M1+SPACE"
-    key-type Down -times 2
-    key-type Enter
 }
+get-window -from "CompletionProposalPopup.createProposalSelector()" | get-table | select "Build - New Build" | click 
+    -default
 get-window "Viewpoint Build File Creation Wizard" | get-button Finish | click
-with [get-editor "datatest.build.vptext" | get-text-viewer] {
+with [get-editor "workflow.build.vptext" | get-text-viewer] {
     set-caret-pos 12 56
     key-type Enter
     key-type "M1+SPACE"
-    key-type Up
-    key-type Enter
 }
-wait 3000
-get-menu "File/Save All" | click
-wait 3000
-
-get-view Outline | get-tree | get-item "datatest.build" | get-property childCount | equals 2 | verify-true
-get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.datatest.vpdsl/model/datatest.vpdesc" 
+get-window -from "CompletionProposalPopup.createProposalSelector()" | get-table | select "Hudson - Hudson deployment" 
+    | click -default
+with [get-view Outline | get-tree] {
+    get-item "workflow.build" | get-property caption | equals "workflow.build" | verify-true
+    get-item "workflow.build" | get-property childCount | equals 2 | verify-true
+    get-item "workflow.build/ant-1.8.O" | get-property caption | equals "ant-1.8.O" | verify-true
+    get-item "workflow.build/ant-1.8.O" | get-property childCount | equals 5 | verify-true
+}
+get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.workflow.vpdsl/model/workflow.vpdesc" 
     | double-click
-get-editor "datatest.vpdesc" | get-tree 
-    | get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.datatest.vpdsl\\/model\\/datatest.vpdesc/Viewpoint datatest/Build datatest.build" 
-    | click
-get-editor "datatest.vpdesc" | get-tree 
-    | get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.datatest.vpdsl\\/model\\/datatest.vpdesc/Viewpoint datatest/Build datatest.build" 
-    | get-property childCount | equals 2 | verify-true
+with [get-editor "workflow.vpdesc" | get-tree] {
+    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.workflow.vpdsl\\/model\\/workflow.vpdesc/Viewpoint workflow" 
+        | get-property caption | equals "Viewpoint workflow" | verify-true
+    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.workflow.vpdsl\\/model\\/workflow.vpdesc/Viewpoint workflow" 
+        | get-property childCount | equals 6 | verify-true
+}
+get-tab-folder -index 2 | get-tab-item "*workflow.build.vptext" | click
+get-menu "File/Save" | click
+get-tab-folder -index 2 | get-tab-item "workflow.vpdesc" | click
+with [get-editor "workflow.vpdesc" | get-tree] {
+    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.workflow.vpdsl\\/model\\/workflow.vpdesc/Viewpoint workflow" 
+        | get-property caption | equals "Viewpoint workflow" | verify-true
+    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.workflow.vpdsl\\/model\\/workflow.vpdesc/Viewpoint workflow" 
+        | get-property childCount | equals 7 | verify-true
+}
+with [get-editor "workflow.vpdesc" | get-tree] {
+    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.workflow.vpdsl\\/model\\/workflow.vpdesc/Viewpoint workflow/Build workflow.build/Repository: http:\\/\\/shortName\\/workflow.git" 
+        | get-property caption | equals "Repository: http://shortName/workflow.git" | verify-true
+    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.workflow.vpdsl\\/model\\/workflow.vpdesc/Viewpoint workflow/Build workflow.build/Repository: http:\\/\\/shortName\\/workflow.git" 
+        | get-property childCount | equals 1 | verify-true
+    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.workflow.vpdsl\\/model\\/workflow.vpdesc/Viewpoint workflow/Build workflow.build/Hudson Deployment" 
+        | get-property caption | equals "Hudson Deployment" | verify-true
+    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.workflow.vpdsl\\/model\\/workflow.vpdesc/Viewpoint workflow/Build workflow.build/Hudson Deployment" 
+        | get-property childCount | equals 5 | verify-true
+}
 
+get-menu "File/Save All" | click
 get-view "Project Explorer" | get-button -index 0 | click
 get-menu "Edit/Select All" | click
 get-menu "Edit/Delete" | click
