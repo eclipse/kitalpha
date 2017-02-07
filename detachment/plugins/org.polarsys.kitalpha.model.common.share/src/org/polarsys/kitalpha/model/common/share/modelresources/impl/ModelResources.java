@@ -40,12 +40,10 @@ public class ModelResources implements IModelResources {
 
 	
 	
-	@Override
 	public Map<URI, IModelResource> getModelResources() {
 		return modelResources;
 	}
 
-	@Override
 	public List<IModelResource> filterModelResourcesWithState(
 			ModelResourceState state) {
 		Collection<IModelResource> allModelResources = getModelResources().values();
@@ -62,17 +60,14 @@ public class ModelResources implements IModelResources {
 		return result;
 	}
 
-	@Override
 	public List<URI> getAllModelResourceURI() {
 		return new ArrayList<URI>(getModelResources().keySet());
 	}
 
-	@Override
 	public List<IModelResource> getAllModelResources() {
 		return new ArrayList<IModelResource>(getModelResources().values());
 	}
 
-	@Override
 	public List<URI> getModelResourceURIWithState(ModelResourceState state) {
 		Collection<IModelResource> allModelResources = getModelResources().values();
 		List<URI> result = new ArrayList<URI>();
@@ -92,7 +87,6 @@ public class ModelResources implements IModelResources {
 		return result;
 	}
 
-	@Override
 	public List<EObject> getAllResourcesEObjects() {
 		
 		if (allModelEObjects == null){
@@ -112,17 +106,14 @@ public class ModelResources implements IModelResources {
 		return allModelEObjects;
 	}
 
-	@Override
 	public void addResource(URI uri, IModelResource modelResource) {
 		getModelResources().put(uri, modelResource);
 	}
 
-	@Override
 	public IModelResource getModelResource(URI uri) {
 		return getModelResources().get(uri);
 	}
 
-	@Override
 	public List<IModelResource> getAllDeletionCandidates() {
 		
 		Collection<IModelResource> allResources = getAllModelResources();

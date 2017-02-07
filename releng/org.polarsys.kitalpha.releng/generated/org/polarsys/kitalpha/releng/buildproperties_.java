@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20160112-1239
+//Generated with EGF 1.4.1.v20161010-1704
 package org.polarsys.kitalpha.releng;
 
 import org.eclipse.egf.common.helper.*;
@@ -23,11 +23,11 @@ public class buildproperties_ extends org.eclipse.egf.portfolio.eclipse.build.bu
 			+ NL + "cloudsmith.download.prefix=http://download.cloudsmith.com" + NL
 			+ "polarion.download.prefix=http://community.polarion.com" + NL + "" + NL + "#director" + NL
 			+ "director.url=${eclipse.download.prefix}/tools/buckminster/products/director_latest.zip" + NL + "" + NL
-			+ "#buckminster installation" + NL + "buckminster.release=4.2" + NL
+			+ "#buckminster installation" + NL + "buckminster.release=4.5" + NL
 			+ "bm.headless.site=${eclipse.download.prefix}/tools/buckminster/headless-${buckminster.release}" + NL
 			+ "bm.external.site=${cloudsmith.download.prefix}/buckminster/external-${buckminster.release}" + NL
 			+ "polarion.site=${polarion.download.prefix}/projects/subversive/download/eclipse/2.0/update-site/" + NL
-			+ "" + NL + "#egf installation" + NL + "egf.release=helios" + NL
+			+ "" + NL + "#egf installation" + NL + "egf.release=neon" + NL
 			+ "egf.site=${eclipse.download.prefix}/egf/updates/${egf.release}/official/" + NL
 			+ "egf.eclipse.site=${eclipse.download.prefix}/releases/${egf.release}" + NL + "" + NL
 			+ "#buckminster build" + NL + "buckminster.loglevel=INFO" + NL + "buckminster.output.root=${result}/output"

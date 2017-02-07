@@ -47,21 +47,18 @@ public class ModelResource implements IModelResource {
 		this.isDeletionCandidate = false;
 	}
 
-	@Override
 	public URI getResourceURI() throws ModelResourceException {
 		if (resourceURI == null)
 			throw new ModelResourceException("The resource has no URI");
 		return resourceURI;
 	}
 
-	@Override
 	public List<EObject> getModelObjects() throws ModelResourceException {
 		if (modelObjects == null)
 			throw new ModelResourceException("The list is empty for the resource or null");
 		return new ArrayList<EObject>(modelObjects);
 	}
 
-	@Override
 	public void addModelObject(EObject eObject) throws ModelResourceException{
 		
 		String eObjectURI = EcoreUtil.getURI(eObject).trimFragment().toString();
@@ -79,17 +76,14 @@ public class ModelResource implements IModelResource {
 		modelObjects.add(eObject);
 	}
 
-	@Override
 	public ModelResourceState getResourceState() {
 		return state;
 	}
 
-	@Override
 	public void setAsCandidate(boolean isCandidate) {
 		this.isDeletionCandidate = isCandidate;
 	}
 
-	@Override
 	public boolean isCandidate() {
 		return this.isDeletionCandidate;
 	}

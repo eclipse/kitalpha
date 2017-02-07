@@ -19,7 +19,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="imagePathOff" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ActivityExplorerItem" abstract="true"
-      eSuperTypes="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc/model/vpdesc.ecore#//NamedElement">
+      eSuperTypes="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc/model/vpdesc.ecore#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="activityExplorerItemID"
         eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="index" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
@@ -32,7 +32,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="expanded" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="filtering" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ViewpointActivityExplorer" eSuperTypes="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc/model/vpdesc.ecore#//Aspect">
+  <eClassifiers xsi:type="ecore:EClass" name="ViewpointActivityExplorer" eSuperTypes="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc/model/vpdesc.ecore#//Aspect">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedPages" upperBound="-1"
         eType="#//AbstractPage" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedSectionExtensions"

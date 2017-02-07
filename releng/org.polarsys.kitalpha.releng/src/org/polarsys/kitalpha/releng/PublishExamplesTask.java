@@ -196,7 +196,7 @@ public class PublishExamplesTask implements ITaskProduction {
         ZipFileExporter fileExporter = null;
         try {
         	trace("Will publish zip " + zipPath);
-            fileExporter = new ZipFileExporter(zipPath, true);
+            fileExporter = new ZipFileExporter(zipPath, true, true);
             final ArrayList<IFile> resourceList = new ArrayList<IFile>();
 
             trace("Will visit project");
@@ -237,8 +237,10 @@ public class PublishExamplesTask implements ITaskProduction {
     		if (".svn".equals(resource.getName())) //$NON-NLS-1$
     			return false;
     		
-    		if (resource.getType() == IResource.FILE)
+    		if (resource.getType() == IResource.FILE){
+    			System.out.println("Add file: " + resource.getName());
     			resourceList.add((IFile) resource);
+    		}
     		
     		return true;
     	}

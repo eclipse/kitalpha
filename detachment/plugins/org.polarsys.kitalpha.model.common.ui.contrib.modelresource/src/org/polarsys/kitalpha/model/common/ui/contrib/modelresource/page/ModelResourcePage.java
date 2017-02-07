@@ -129,7 +129,6 @@ public class ModelResourcePage extends AbstractDetachmentFormPage {
 		checkboxTableViewer.addCheckStateListener(new ICheckStateListener() {
 			
 			@SuppressWarnings("rawtypes")
-			@Override
 			public void checkStateChanged(CheckStateChangedEvent event) {
 				String checkedURI = event.getElement().toString();
 				URI uri = URI.createURI(checkedURI);

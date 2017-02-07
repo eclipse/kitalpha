@@ -53,7 +53,6 @@ public class UsedAFViewpoints implements IScrutinize<ViewpointTreeContainer, Obj
   public UsedAFViewpoints() {
   }
 
-  @Override
   public void findIn(EObject eObject) {
     String ePackageURI = FinderAFViewpointHelper.getEPackageNsURI_of(eObject);
 
@@ -62,7 +61,6 @@ public class UsedAFViewpoints implements IScrutinize<ViewpointTreeContainer, Obj
     }
   }
 
-  @Override
   public void findIn(Resource resource) {
     if (!resource.getContents().isEmpty() && resource.getContents().get(0) instanceof Metadata) {
       Metadata root = (Metadata) resource.getContents().get(0);
@@ -72,7 +70,6 @@ public class UsedAFViewpoints implements IScrutinize<ViewpointTreeContainer, Obj
     }
   }
 
-  @Override
   public ViewpointTreeContainer getAnalysisResult() {
     if (container != null)
       return container;
@@ -99,7 +96,6 @@ public class UsedAFViewpoints implements IScrutinize<ViewpointTreeContainer, Obj
     container = vpTreeBuilder.getViewpointTreeContainer(filtredVpDependencies, usedViewpoints);
   }
 
-  @Override
   public Object getFeedbackAnalysisMessages() {
     // Not need to feedback the user. ViewpointTreeContainer is used for this aim
     return null;

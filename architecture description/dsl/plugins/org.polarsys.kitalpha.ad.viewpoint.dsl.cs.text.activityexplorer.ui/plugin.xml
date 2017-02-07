@@ -245,7 +245,7 @@ Contributors:
             point="org.eclipse.ui.ide.markerResolution">
         <markerResolutionGenerator
             class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.ActivityexplorerExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-            markerType="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.activityexplorer.check.fast">
+            markerType="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui.activityexplorer.check.fast">
             <attribute
                 name="FIXABLE_KEY"
                 value="true">
@@ -253,7 +253,7 @@ Contributors:
         </markerResolutionGenerator>
         <markerResolutionGenerator
             class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.ActivityexplorerExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-            markerType="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.activityexplorer.check.normal">
+            markerType="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui.activityexplorer.check.normal">
             <attribute
                 name="FIXABLE_KEY"
                 value="true">
@@ -261,7 +261,7 @@ Contributors:
         </markerResolutionGenerator>
         <markerResolutionGenerator
             class="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.ActivityexplorerExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-            markerType="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.activityexplorer.check.expensive">
+            markerType="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui.activityexplorer.check.expensive">
             <attribute
                 name="FIXABLE_KEY"
                 value="true">
@@ -326,7 +326,7 @@ Contributors:
        <category
              id="org.polarsys.kitalpha.ad.viewpoint.dsl.activityexplorer.cs.text.wizards.category"
              name="Activity Explorer"
-             parentCategory="org.polarsys.kitalpha.ad.viewpoint.dsl.services.project.category">
+             parentCategory="org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.category">
        </category>
        <wizard
              category="org.polarsys.kitalpha.wizard.category/org.polarsys.kitalpha.ad.wizard.category/org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.category"

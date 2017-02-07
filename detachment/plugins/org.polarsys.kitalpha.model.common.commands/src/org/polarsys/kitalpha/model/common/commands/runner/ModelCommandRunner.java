@@ -28,7 +28,6 @@ public class ModelCommandRunner implements IModelCommandRunner {
 	
 	private final ModelCommandStackBuilder actionsStack = new ModelCommandStackBuilder();
 
-	@Override
 	public void run(Resource resource, EnumSet<WorkflowType> workflows, IProgressMonitor monitor) throws ModelCommandException {
 		
 		

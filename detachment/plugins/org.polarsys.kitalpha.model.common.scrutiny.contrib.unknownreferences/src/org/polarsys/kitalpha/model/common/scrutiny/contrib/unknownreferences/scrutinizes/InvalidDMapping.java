@@ -34,7 +34,6 @@ public class InvalidDMapping implements IScrutinize<Set<DRepresentationElement>,
 		this.representationElements = new HashSet<DRepresentationElement>();
 	}
 
-	@Override
 	public void findIn(EObject eObject) {
 		
 		if (eObject instanceof DRepresentationElement) {
@@ -49,17 +48,14 @@ public class InvalidDMapping implements IScrutinize<Set<DRepresentationElement>,
 		
 	}
 
-	@Override
 	public void findIn(Resource resource) {
 		//Do nothing
 	}
 
-	@Override
 	public Set<DRepresentationElement> getAnalysisResult() {
 		return this.representationElements;
 	}
 
-	@Override
 	public Collection<IFeedbackMessage> getFeedbackAnalysisMessages() {
 		Feedback feedback = new Feedback();
 		

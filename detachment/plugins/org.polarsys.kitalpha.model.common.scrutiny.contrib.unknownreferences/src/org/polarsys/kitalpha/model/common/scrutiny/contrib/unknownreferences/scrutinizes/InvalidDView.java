@@ -35,7 +35,6 @@ public class InvalidDView implements IScrutinize<Set<DView>, Collection<IFeedbac
 		this.representationContainers = new HashSet<DView>();
 	}
 	
-	@Override
 	public void findIn(EObject eObject) {
 		if (eObject instanceof DView) {
 			DView dRepresentationContainer = (DView) eObject;
@@ -45,16 +44,13 @@ public class InvalidDView implements IScrutinize<Set<DView>, Collection<IFeedbac
 		}
 	}
 
-	@Override
 	public void findIn(Resource resource){
 	}
 
-	@Override
 	public Set<DView> getAnalysisResult() {
 		return this.representationContainers;
 	}
 
-	@Override
 	public Collection<IFeedbackMessage> getFeedbackAnalysisMessages() {
 		Feedback feedback = new Feedback();
 		

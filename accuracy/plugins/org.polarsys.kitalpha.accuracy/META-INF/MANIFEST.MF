@@ -15,7 +15,7 @@ Export-Package: org.polarsys.kitalpha.validation.configurer,
  org.polarsys.kitalpha.validation.ocl.provider.generic,
  org.polarsys.kitalpha.validation.ocl.provider.generic.util,
  org.polarsys.kitalpha.validation.provider.generic
-Eclipse-LazyStart: true
+Bundle-ActivationPolicy: lazy
 Bundle-Activator: org.polarsys.kitalpha.validation.AccuracyPlugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-Localization: plugin

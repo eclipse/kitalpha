@@ -13,7 +13,6 @@ public class DetachmentActionPropertyTester extends PropertyTester {
 	public DetachmentActionPropertyTester() {
 	}
 
-	@Override
 	public boolean test(Object receiver, String property, Object[] args, Object expectedValue){
 		if (property.equals(CHECK_CLOSE_SESSION)){
 			IResource resource = (IResource)receiver;

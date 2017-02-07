@@ -14,6 +14,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Stream;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.IPath;
@@ -133,6 +134,7 @@ public final class EMDEHelper {
 		}
 		return null;
 	}
+	
 
 	public static URI getEcoreURIFromGenModel(URI namespaceURI, URI genModelURI) {
 		ResourceSet resourceSet = new ResourceSetImpl();
@@ -140,6 +142,11 @@ public final class EMDEHelper {
 			// resourceSet.setURIConverter(new PlatformURIConverter());
 			Resource genModelResource = resourceSet.getResource(genModelURI, true);
 			EcoreUtil.resolveAll(genModelResource);
+			
+			for (Resource resource : resourceSet.getResources()) {
+				
+			}
+			
 			for (Resource resource : resourceSet.getResources()) {
 				for (TreeIterator<?> j = new EcoreUtil.ContentTreeIterator<Object>(resource.getContents()) {
 
@@ -149,6 +156,11 @@ public final class EMDEHelper {
 					protected Iterator<? extends EObject> getEObjectChildren(EObject eObject) {
 						return (eObject instanceof EPackage) ? ((EPackage) eObject).getESubpackages().iterator() : Collections.<EObject> emptyList().iterator();
 					}
+					
+					public java.util.Spliterator<java.util.Iterator<? extends Object>> spliterator() {
+						return super.spliterator();
+					};
+					
 				}; j.hasNext();) {
 					Object content = j.next();
 					if (content instanceof EPackage) {

@@ -534,6 +534,10 @@ public class ExtensibilityService {
 				protected Iterator<? extends EObject> getEObjectChildren(EObject eObject) {
 					return eObject instanceof EPackage ? ((EPackage) eObject).getESubpackages().iterator() : Collections.<EObject> emptyList().iterator();
 				}
+				
+				public java.util.Spliterator<java.util.Iterator<? extends Object>> spliterator() {
+					return super.spliterator();
+				};
 			}; j.hasNext();) {
 				Object content = j.next();
 				if (content instanceof EPackage) {

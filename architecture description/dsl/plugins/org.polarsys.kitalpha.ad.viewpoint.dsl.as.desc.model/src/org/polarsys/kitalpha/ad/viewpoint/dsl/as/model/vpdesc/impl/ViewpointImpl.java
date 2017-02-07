@@ -12,6 +12,7 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.impl;
 
 import java.util.Collection;
+import java.util.Spliterator;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -199,7 +200,7 @@ public class ViewpointImpl extends ShortNamedElementImpl implements Viewpoint {
 				 * 
 				 */
 				private static final long serialVersionUID = 1L;
-
+				
 				public void add(int index, Aspect object) {
 					if (AspectsAdditionsHelper.canAddMoreAspect(this, object)) {
 						super.add(index, object);
@@ -230,6 +231,11 @@ public class ViewpointImpl extends ShortNamedElementImpl implements Viewpoint {
 					}
 					return false;
 				};
+				
+				public Spliterator<Aspect> spliterator() {
+					return super.spliterator();
+				};
+				
 			};
 		}
 		return vP_Aspects;

@@ -26,27 +26,22 @@ import org.polarsys.kitalpha.model.detachment.ui.constants.Constants;
  */
 public class DetachmentEditorInput implements IEditorInput {
 
-	@Override
 	public Object getAdapter(Class adapter) {
 		return null;
 	}
 	
-	@Override
 	public String getToolTipText() {
 		return Constants.DETACHMENT;
 	}
 	
-	@Override
 	public IPersistableElement getPersistable() {
 		return null;
 	}
 	
-	@Override
 	public String getName() {
 		return Constants.DETACHMENT;
 	}
 	
-	@Override
 	public ImageDescriptor getImageDescriptor() {
 		
 		String IMG_PATH = "icons/run_detach.png";	//$NON-NLS-1$
@@ -56,7 +51,6 @@ public class DetachmentEditorInput implements IEditorInput {
 		return ImageDescriptor.createFromURL(url);
 	}
 	
-	@Override
 	public boolean exists() {
 		return false;
 	}

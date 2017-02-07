@@ -15,7 +15,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.jface.viewers.IStructuredContentProvider;
-import org.eclipse.jface.viewers.ITableLabelProvider;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.swt.graphics.Image;
@@ -31,7 +30,11 @@ import org.polarsys.kitalpha.model.common.share.modelresources.interfaces.ModelR
  * @author Faycal Abka
  *
  */
-public class ResourceCheckboxProvider extends LabelProvider implements ITableLabelProvider, IStructuredContentProvider {
+
+/*
+ * FIXME: due to Neon migration, ITableLabelProvider was removed from Implementation interface
+ */
+public class ResourceCheckboxProvider extends LabelProvider implements IStructuredContentProvider {
 
 	private ModelResourceState state;
 	
@@ -40,12 +43,10 @@ public class ResourceCheckboxProvider extends LabelProvider implements ITableLab
 	}
 	
 	
-	@Override
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
 		//Do nothing
 	}
 
-	@Override
 	public Object[] getElements(Object inputElement) {
 		
 		if (inputElement instanceof IModelResources){
@@ -76,12 +77,10 @@ public class ResourceCheckboxProvider extends LabelProvider implements ITableLab
 		return null;
 	}
 
-	@Override
 	public Image getColumnImage(Object element, int columnIndex) {
 		return null;
 	}
 
-	@Override
 	public String getColumnText(Object element, int columnIndex) {
 		return (String)element;
 	}
@@ -101,6 +100,11 @@ public class ResourceCheckboxProvider extends LabelProvider implements ITableLab
 		}
 		
 		return result;
+	}
+	
+	@Override
+	public void dispose() {
+		super.dispose();
 	}
 	
 }

@@ -349,7 +349,7 @@ Contributors:
             point="org.eclipse.ui.ide.markerResolution">
         <markerResolutionGenerator
             class="org.polarsys.kitalpha.ad.af.dsl.cs.text.ui.AfdescExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-            markerType="org.polarsys.kitalpha.ad.af.dsl.cs.text.ui.afdesc.check.fast">
+            markerType="org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui.afdesc.check.fast">
             <attribute
                 name="FIXABLE_KEY"
                 value="true">
@@ -357,7 +357,7 @@ Contributors:
         </markerResolutionGenerator>
         <markerResolutionGenerator
             class="org.polarsys.kitalpha.ad.af.dsl.cs.text.ui.AfdescExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-            markerType="org.polarsys.kitalpha.ad.af.dsl.cs.text.ui.afdesc.check.normal">
+            markerType="org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui.afdesc.check.normal">
             <attribute
                 name="FIXABLE_KEY"
                 value="true">
@@ -365,7 +365,7 @@ Contributors:
         </markerResolutionGenerator>
         <markerResolutionGenerator
             class="org.polarsys.kitalpha.ad.af.dsl.cs.text.ui.AfdescExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-            markerType="org.polarsys.kitalpha.ad.af.dsl.cs.text.ui.afdesc.check.expensive">
+            markerType="org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui.afdesc.check.expensive">
             <attribute
                 name="FIXABLE_KEY"
                 value="true">
@@ -438,7 +438,7 @@ Contributors:
   		<category
           id="org.polarsys.kitalpha.ad.af.dsl.servicies.project.wizards.category"
           name="Architecture Framework - Textual Architecture Framework DSL"
-          parentCategory="org.polarsys.kitalpha.wizard.category/org.polarsys.kitalpha.ad.wizard.category">
+          parentCategory="org.polarsys.kitalpha.ad.wizard.category">
   		</category>
   		<wizard
           category="org.polarsys.kitalpha.wizard.category/org.polarsys.kitalpha.ad.wizard.category/org.polarsys.kitalpha.ad.af.dsl.servicies.project.wizards.category"

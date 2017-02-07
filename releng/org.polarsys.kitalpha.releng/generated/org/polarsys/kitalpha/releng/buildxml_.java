@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20160112-1239
+//Generated with EGF 1.4.1.v20161010-1704
 package org.polarsys.kitalpha.releng;
 
 import org.eclipse.egf.common.helper.*;
@@ -7,6 +7,8 @@ import org.eclipse.emf.ecore.*;
 import org.eclipse.egf.model.pattern.*;
 import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
+import org.eclipse.egf.portfolio.eclipse.build.PropertiesHelper;
+import org.eclipse.egf.portfolio.eclipse.build.PropertyWrapper;
 
 public class buildxml_ extends org.eclipse.egf.portfolio.eclipse.build.buckminster.buildxml {
 	protected static String nl;
@@ -19,7 +21,37 @@ public class buildxml_ extends org.eclipse.egf.portfolio.eclipse.build.buckminst
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "    <target name=\"install.buckminster\">" + NL
+	protected final String TEXT_1 = "    <!-- This macro executes the default application of an eclipse installation that resides"
+			+ NL + "         in the folder ${buildtools}/@app" + NL + "      -->" + NL
+			+ "    <macrodef name=\"eclipse.launch\">" + NL + "        <attribute name=\"app\" />" + NL
+			+ "        <attribute name=\"workspace\" default=\"${workspace}\" />" + NL
+			+ "        <element name=\"args\" optional=\"true\" />" + NL + "        <sequential>" + NL
+			+ "            <!-- We assume that the eclipse installation is beneath ${tools} -->" + NL
+			+ "            <property name=\"@{app}.deploy.dir\" value=\"${tools}/@{app}\" />" + NL + "" + NL
+			+ "            <!-- Find the Eclipse launcher and assing its location to the @{app}.launcher property -->"
+			+ NL + "            <pathconvert property=\"@{app}.launcher\">" + NL + "                <first count=\"1\">"
+			+ NL + "                    <sort>" + NL
+			+ "                        <fileset dir=\"${@{app}.deploy.dir}/plugins\" includes=\"**/org.eclipse.equinox.launcher_*.jar\" />"
+			+ NL + "                        <reverse xmlns=\"antlib:org.apache.tools.ant.types.resources.comparators\">"
+			+ NL + "                            <date />" + NL + "                        </reverse>" + NL
+			+ "                    </sort>" + NL + "                </first>" + NL + "            </pathconvert>" + NL
+			+ "" + NL + "\t\t\t<!-- Copy Eclipse Variables preferences -->" + NL
+			+ "\t\t\t<copy file=\"${relengDir}/templates/org.eclipse.core.variables.prefs\"" + NL
+			+ "\t\t\t\ttoFile=\"@{workspace}/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.core.variables.prefs\"/>"
+			+ NL + "\t\t\t\t" + NL + "\t\t\t<!-- Copy Eclipse JDT preferences -->" + NL
+			+ "\t\t\t<copy file=\"${relengDir}/templates/org.eclipse.jdt.core.prefs\"" + NL
+			+ "\t\t\t\ttoFile=\"@{workspace}/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.core.prefs\"/>"
+			+ NL + "" + NL + "            <!-- Launch the eclipse application -->" + NL
+			+ "            <java fork=\"true\" jar=\"${@{app}.launcher}\" dir=\"${@{app}.deploy.dir}\" failonerror=\"true\">";
+	protected final String TEXT_2 = NL;
+	protected final String TEXT_3 = NL + "\t                <jvmarg value=\"-DrelengDir=relengDir\"/>";
+	protected final String TEXT_4 = NL + "\t                <jvmarg value=\"-D";
+	protected final String TEXT_5 = "=${";
+	protected final String TEXT_6 = "}\"/>";
+	protected final String TEXT_7 = NL + "                    <arg value=\"-data\" />" + NL
+			+ "                    <arg value=\"@{workspace}\" />" + NL + "                <args />" + NL
+			+ "            </java>" + NL + "        </sequential>" + NL + "    </macrodef>";
+	protected final String TEXT_8 = "    <target name=\"install.buckminster\">" + NL
 			+ "        <available file=\"${tools}/buckminster/buckminster\" property=\"buckminster.exists\" />" + NL
 			+ "        <antcall target=\"do.install.buckminster\" />" + NL + "\t</target>" + NL + "\t" + NL
 			+ "    <target name=\"do.install.buckminster\" unless=\"buckminster.exists\" depends=\"install.director\">"
@@ -44,8 +76,8 @@ public class buildxml_ extends org.eclipse.egf.portfolio.eclipse.build.buckminst
 			+ "                <arg value=\"-i\" />" + NL
 			+ "                <arg value=\"org.eclipse.buckminster.git.headless.feature.feature.group\" />" + NL
 			+ "            </args>" + NL + "        </eclipse.launch>" + NL + "    </target>" + NL;
-	protected final String TEXT_2 = NL;
-	protected final String TEXT_3 = NL;
+	protected final String TEXT_9 = NL;
+	protected final String TEXT_10 = NL;
 
 	public buildxml_() {
 		//Here is the constructor
@@ -81,8 +113,8 @@ public class buildxml_ extends org.eclipse.egf.portfolio.eclipse.build.buckminst
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_2);
-		stringBuffer.append(TEXT_3);
+		stringBuffer.append(TEXT_9);
+		stringBuffer.append(TEXT_10);
 		return stringBuffer.toString();
 	}
 
@@ -107,10 +139,43 @@ public class buildxml_ extends org.eclipse.egf.portfolio.eclipse.build.buckminst
 		return parameters;
 	}
 
+	protected void method_eclipse_launch(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
+
+		stringBuffer.append(TEXT_1);
+		stringBuffer.append(TEXT_2);
+		{
+			//<%@ egf:patternCall
+			//	patternId="platform:/plugin/org.eclipse.egf.portfolio.eclipse.build/egf/Build.fcore#LogicalName=org.eclipse.egf.portfolio.eclipse.build.buckminster.call.build.xml.Xmx"
+			//%>
+
+			InternalPatternContext ictx = (InternalPatternContext) ctx;
+			new Node.DataLeaf(ictx.getNode(), getClass(), null, stringBuffer.toString());
+			stringBuffer.setLength(0);
+
+			final Map<String, Object> callParameters = new HashMap<String, Object>();
+			CallHelper.executeWithParameterInjection(
+					"platform:/plugin/org.eclipse.egf.portfolio.eclipse.build/egf/Build.fcore#_VCSRcJ5MEd-3wvN5SnesGA",
+					new ExecutionContext((InternalPatternContext) ctx), callParameters);
+			stringBuffer.setLength(0);
+		}
+
+		stringBuffer.append(TEXT_3);
+		for (PropertyWrapper propertyWrapper : new PropertiesHelper().getRuntimeProperties(job)) {
+			stringBuffer.append(TEXT_4);
+			stringBuffer.append(propertyWrapper.getKey());
+			stringBuffer.append(TEXT_5);
+			stringBuffer.append(propertyWrapper.getKey());
+			stringBuffer.append(TEXT_6);
+		}
+		stringBuffer.append(TEXT_7);
+		InternalPatternContext ictx = (InternalPatternContext) ctx;
+		new Node.DataLeaf(ictx.getNode(), getClass(), "eclipse_launch", stringBuffer.toString());
+	}
+
 	protected void method_install_buckminster(final StringBuffer stringBuffer, final PatternContext ctx)
 			throws Exception {
 
-		stringBuffer.append(TEXT_1);
+		stringBuffer.append(TEXT_8);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "install_buckminster", stringBuffer.toString());
 	}

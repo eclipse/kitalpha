@@ -16,7 +16,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.emf.ecore,
  org.polarsys.kitalpha.cadence.ui,
  org.polarsys.kitalpha.resourcereuse
-Eclipse-LazyStart: true
+Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.composer.ui.actions
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Bundle-Localization: plugin

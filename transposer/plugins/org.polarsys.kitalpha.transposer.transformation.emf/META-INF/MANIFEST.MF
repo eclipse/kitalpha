@@ -8,7 +8,7 @@ Bundle-Vendor: %providerName
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  org.polarsys.kitalpha.transposer.transformation;visibility:=reexport,
  org.polarsys.kitalpha.transposer.transformation.emf.traces;visibility:=reexport
-Eclipse-LazyStart: true
+Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.transposer.transformation.emf,
  org.polarsys.kitalpha.transposer.transformation.emf.activities,
  org.polarsys.kitalpha.transposer.transformation.emf.resource,

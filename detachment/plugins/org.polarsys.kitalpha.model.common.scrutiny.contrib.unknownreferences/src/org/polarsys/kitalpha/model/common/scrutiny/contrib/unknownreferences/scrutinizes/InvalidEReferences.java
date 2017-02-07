@@ -25,7 +25,6 @@ public class InvalidEReferences implements IScrutinize<Map<EObject, List<ERefere
 	public InvalidEReferences() {
 	}
 
-	@Override
 	public void findIn(EObject eObject) {
 		if (!(eObject instanceof EClass) && !eObject.eIsProxy()){
 			EClass eClass = eObject.eClass();
@@ -78,18 +77,15 @@ public class InvalidEReferences implements IScrutinize<Map<EObject, List<ERefere
 		}
 	}
 
-	@Override
 	public void findIn(Resource resource) {
 		// TODO Auto-generated method stub
 
 	}
 
-	@Override
 	public Map<EObject, List<EReference>> getAnalysisResult() {
 		return invalidEReferences;
 	}
 
-	@Override
 	public Collection<IFeedbackMessage> getFeedbackAnalysisMessages() {
 		Feedback feedback = new Feedback();
 		

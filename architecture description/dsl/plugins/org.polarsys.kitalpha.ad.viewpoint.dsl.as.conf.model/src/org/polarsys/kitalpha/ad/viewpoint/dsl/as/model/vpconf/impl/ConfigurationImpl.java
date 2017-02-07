@@ -12,6 +12,7 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.impl;
 
 import java.util.Collection;
+import java.util.Spliterator;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -23,6 +24,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.Configuration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.ConfigurationElement;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.VpconfPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpconf.util.ConfigurationElementsAdditionsHelper;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Aspect;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.impl.AspectImpl;
 
 /**
@@ -119,6 +121,10 @@ public class ConfigurationImpl extends AspectImpl implements Configuration {
 					}
 					return false;
 
+				};
+				
+				public Spliterator<ConfigurationElement> spliterator() {
+					return super.spliterator();
 				};
 			};
 		}

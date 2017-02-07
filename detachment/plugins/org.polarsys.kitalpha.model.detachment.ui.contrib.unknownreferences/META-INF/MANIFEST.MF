@@ -10,7 +10,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui.forms,
  org.polarsys.kitalpha.model.common.scrutiny,
  org.polarsys.kitalpha.model.detachment.ui
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.model.detachment.ui.contrib.unknownreferences.pages,
  org.polarsys.kitalpha.model.detachment.ui.contrib.unknownreferences.providers
