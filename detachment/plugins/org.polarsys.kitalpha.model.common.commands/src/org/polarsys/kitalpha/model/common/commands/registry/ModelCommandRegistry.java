@@ -104,6 +104,7 @@ public class ModelCommandRegistry {
 		}
 
 
+		@Override
 		public int compareTo(RegistryActionElement arg0) {
 			
 			if (getPriority() - arg0.getPriority() < 0)

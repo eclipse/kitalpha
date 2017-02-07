@@ -86,6 +86,7 @@ public class ModelDetachment extends SharedHeaderFormEditor {
 							PlatformUI.getWorkbench().getProgressService()
 								.busyCursorWhile(new IRunnableWithProgress() {
 								
+								@Override
 								public void run(IProgressMonitor monitor) throws InvocationTargetException,
 										InterruptedException {
 										try {
@@ -97,6 +98,7 @@ public class ModelDetachment extends SharedHeaderFormEditor {
 											
 											Display.getDefault().syncExec(new Runnable() {
 												
+												@Override
 												public void run() {
 													MessageDialog.openConfirm(shell, Messages.CONFIRM_DIALOG_TITLE, Messages.FINISH_DETACHMENT_MESSAGE);
 													getEditorSite().getPage().closeEditor(editor, false);
@@ -109,6 +111,7 @@ public class ModelDetachment extends SharedHeaderFormEditor {
 
 											Display.getDefault().syncExec(new Runnable() {
 												
+												@Override
 												public void run() {
 													
 													IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage(), e);
@@ -170,6 +173,7 @@ public class ModelDetachment extends SharedHeaderFormEditor {
 		List<AbstractDetachmentFormPage> sortedPages = new ArrayList<AbstractDetachmentFormPage>(pageRegistry);
 		Collections.sort(sortedPages, new Comparator<AbstractDetachmentFormPage>() {
 
+			@Override
 			public int compare(AbstractDetachmentFormPage arg0, AbstractDetachmentFormPage arg1) {
 				return arg0.getPartName().compareTo(arg1.getPartName());
 			}
