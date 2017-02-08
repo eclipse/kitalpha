@@ -46,6 +46,7 @@ public class ModelResourcesScrutinizer implements IScrutinize<IModelResources, S
 	}
 
 	
+	@Override
 	public void findIn(EObject eObject) {
 
 
@@ -98,13 +99,16 @@ public class ModelResourcesScrutinizer implements IScrutinize<IModelResources, S
 	}
 
 	
+	@Override
 	public void findIn(Resource resource) {
 	}
 
+	@Override
 	public IModelResources getAnalysisResult() {
 		return modelResources;
 	}
 
+	@Override
 	public String getFeedbackAnalysisMessages() {
 		return null;
 	}

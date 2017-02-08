@@ -58,6 +58,7 @@ public class DetachmentActionHandler extends AbstractHandler {
 	
 	private IFile airdIResource;
 
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		
 		ISelection currentSelection = HandlerUtil.getCurrentSelection(event);
@@ -69,6 +70,7 @@ public class DetachmentActionHandler extends AbstractHandler {
 			
 			pMonitorService.run(false, false, new IRunnableWithProgress() {
 
+				@Override
 				public void run(IProgressMonitor monitor)
 						throws InvocationTargetException,
 						InterruptedException {
@@ -106,6 +108,7 @@ public class DetachmentActionHandler extends AbstractHandler {
 					LOGGER.error(e.getMessage());
 					
 					Display.getDefault().syncExec(new Runnable() {
+						@Override
 						public void run() {
 							IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, msg, null);
 							ErrorDialog.openError(shell, "Detachment Error", "Cannot perform Detach on your model. See the reasons below", status);

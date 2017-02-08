@@ -102,6 +102,7 @@ public class PreconditionRegistry {
 		}
 
 
+		@Override
 		public int compareTo(RegistryPreconditionElement arg0) {
 			if (getPriority() - arg0.getPriority() < 0)
 				return 1;

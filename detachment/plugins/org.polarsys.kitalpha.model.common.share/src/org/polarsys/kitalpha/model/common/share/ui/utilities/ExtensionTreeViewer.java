@@ -24,6 +24,7 @@ public class ExtensionTreeViewer extends ContainerCheckedTreeViewer {
 		super(parent, style);
 		addCheckStateListener(new ICheckStateListener() {
 			
+			@Override
 			public void checkStateChanged(CheckStateChangedEvent event) {
 				doCheckStateChanged(event.getElement(), event.getChecked());
 			}

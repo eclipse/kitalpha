@@ -46,6 +46,7 @@ public class MissingEPackage implements IScrutinize<MissingEPackageResultWrapper
 		this.anyTypes = new HashSet<AnyType>();
 	}
 
+	@Override
 	public void findIn(EObject eObject) {
 		if (eObject instanceof AnyType) {
 			AnyType anyType = (AnyType) eObject;
@@ -57,6 +58,7 @@ public class MissingEPackage implements IScrutinize<MissingEPackageResultWrapper
 		}
 	}
 
+	@Override
 	public void findIn(Resource resource) {
 		if (resource instanceof XMLResource) {
 			XMLResource xmlResource = (XMLResource) resource;
@@ -80,10 +82,12 @@ public class MissingEPackage implements IScrutinize<MissingEPackageResultWrapper
 		}
 	}
 
+	@Override
 	public MissingEPackageResultWrapper getAnalysisResult() {
 		return new MissingEPackageResultWrapper(ePackages, xmlResources, anyTypes);
 	}
 
+	@Override
 	public Collection<IFeedbackMessage> getFeedbackAnalysisMessages() {
 		Feedback feedback = new Feedback();
 

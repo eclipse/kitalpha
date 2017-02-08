@@ -24,10 +24,12 @@ public abstract class ModelCommand implements IModelCommand {
 	protected String modelAnalysisID;
 	protected WorkflowType workflow;
 	
+	@Override
 	public void setModelAnalysisID(String id) {
 		this.modelAnalysisID = id;
 	}
 
+	@Override
 	public String getModelAnalysisID() {
 		return this.modelAnalysisID;
 	}
@@ -40,6 +42,7 @@ public abstract class ModelCommand implements IModelCommand {
 		return this.workflow;
 	}
 
+	@Override
 	public abstract void exec(Resource resource, IProgressMonitor monitor)
 			throws ModelCommandException;
 

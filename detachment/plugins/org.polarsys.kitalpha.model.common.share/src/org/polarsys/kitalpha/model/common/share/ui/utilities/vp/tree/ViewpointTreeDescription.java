@@ -52,89 +52,108 @@ public class ViewpointTreeDescription implements IViewpointTreeDescription {
 		this.nsUris				= new HashSet<String>();
 	}
 
+	@Override
 	public String getViewpointName() {
 		return this.viewpointName;
 	}
 
+	@Override
 	public String getViewpointId() {
 		return this.viewpointId;
 	}
 
+	@Override
 	public Collection<IViewpointTreeDescription> getChildren() {
 		return this.children;
 	}
 
+	@Override
 	public Collection<IViewpointTreeDescription> getDependencies() {
 		return this.dependencies;
 	}
 
+	@Override
 	public String getRootEObject() {
 		return this.eRootPathFragment;
 	}
 
+	@Override
 	public void addChild(IViewpointTreeDescription child) {
 		if (this != child){
 			getChildren().add(child);
 		}
 	}
 
+	@Override
 	public void addDependency(IViewpointTreeDescription dependency) {
 		getDependencies().add(dependency);
 	}
 
+	@Override
 	public boolean hasChildren() {
 		return !getChildren().isEmpty();
 	}
 
+	@Override
 	public boolean hasDependencies() {
 		return !getDependencies().isEmpty();
 	}
 
+	@Override
 	public Collection<IViewpointTreeDescription> getParents() {
 		return this.parents;
 	}
 
 	//TODO checks if the current object is not in the parent/children list
+	@Override
 	public void addParent(IViewpointTreeDescription parent) {
 		if (this != parent){
 			getParents().add(parent);
 		}
 	}
 
+	@Override
 	public boolean hasParents() {
 		return !getParents().isEmpty();
 	}
 
 	
 
+	@Override
 	public boolean isCandidateToKeep() {
 		return this.isToKeep;
 	}
 
+	@Override
 	public void setAsCandidateToKeep(boolean toKeep) {
 		this.isToKeep = toKeep;
 	}
 
+	@Override
 	public Collection<String> getViewpointNsUri() {
 		return this.nsUris;
 	}
 
+	@Override
 	public void addViewpointNsUri(String nsuri) {
 		if (!getViewpointNsUri().contains(nsuri)){
 			getViewpointNsUri().add(nsuri);
 		}
 	}
 
+	@Override
 	public void addAllViewpointNsUri(Collection<String> nsuri) {
 		for (String uri : nsuri) {
 			addViewpointNsUri(uri);
 		}
 	}
 
+	@Override
 	public Collection<IViewpointTreeDescription> getUsedViewpoints() {
 		return this.usedViewpoints;
 	}
 
+	@Override
 	public void addUsedViewpoint(IViewpointTreeDescription usedVpd) {
 		if (!getUsedViewpoints().contains(usedVpd)){
 			getUsedViewpoints().add(usedVpd);

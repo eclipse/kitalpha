@@ -28,6 +28,7 @@ public class PreconditionRunner<T> implements IPreconditionRunner<T> {
 	private final PreconditionStackBuilder stackBuilder = new PreconditionStackBuilder();
 
 	@SuppressWarnings("unchecked")
+	@Override
 	public void run(T type, IProgressMonitor monitor) throws InvalidPreconditionException {
 		stackBuilder.buildPreconditionsStack();
 		Deque<IPrecondition> stack = stackBuilder.getPreconditionsStack();

@@ -11,8 +11,6 @@
 
 package org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.configuration;
 
-import java.util.Spliterator;
-
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.desc.CoreModelHelper;
@@ -106,18 +104,12 @@ public class VpDslConfigurationHelper {
 	
 	/**
 	 * @param object any model element
-	 * @return Ã  {@link EList} of <code> Required Execution Environment </code> specified in the {@link Release} configuration Element
+	 * @return à {@link EList} of <code> Required Execution Environment </code> specified in the {@link Release} configuration Element
 	 */
 	@SuppressWarnings("serial")
 	public static EList<String> getViewpointRequiredExecutionEnvironmentList(Object object){
 		final Release release = getViewpointConfigurationElement(object, Release.class);
-		return release != null ? release.getRequiredExecutionEnvironment() : new BasicEList<String>(){
-			{add(VIEWPOINT_EE_DEFAULT);}
-			
-			public Spliterator<String> spliterator() {
-				return super.spliterator();
-			};
-		};
+		return release != null ? release.getRequiredExecutionEnvironment() : new BasicEList<String>(){{add(VIEWPOINT_EE_DEFAULT);}};
 	}
 	
 	/**
