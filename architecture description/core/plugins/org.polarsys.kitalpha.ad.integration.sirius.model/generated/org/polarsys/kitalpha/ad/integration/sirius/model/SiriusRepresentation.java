@@ -22,10 +22,10 @@ import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Representat
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.integration.sirius.model.SiriusRepresentation#getOdesign <em>Odesign</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.integration.sirius.model.SiriusPackage#getSiriusRepresentation()
  * @model

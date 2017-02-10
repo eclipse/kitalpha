@@ -35,7 +35,8 @@ public class SafetyFactoryImpl extends EFactoryImpl implements SafetyFactory {
 	 */
 	public static SafetyFactory init() {
 		try {
-			SafetyFactory theSafetyFactory = (SafetyFactory) EPackage.Registry.INSTANCE.getEFactory("http://www.polarsys.org/kitalpha/emde/example/simplecomponent/safety"); //$NON-NLS-1$ 
+			SafetyFactory theSafetyFactory = (SafetyFactory) EPackage.Registry.INSTANCE
+					.getEFactory(SafetyPackage.eNS_URI);
 			if (theSafetyFactory != null) {
 				return theSafetyFactory;
 			}

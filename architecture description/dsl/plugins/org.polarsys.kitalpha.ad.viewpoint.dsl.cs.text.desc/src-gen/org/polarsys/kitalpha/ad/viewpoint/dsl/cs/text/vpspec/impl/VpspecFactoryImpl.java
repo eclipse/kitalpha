@@ -5,11 +5,12 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.VpspecFactory;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.VpspecPackage;
+
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.*;
 
 /**
  * <!-- begin-user-doc -->

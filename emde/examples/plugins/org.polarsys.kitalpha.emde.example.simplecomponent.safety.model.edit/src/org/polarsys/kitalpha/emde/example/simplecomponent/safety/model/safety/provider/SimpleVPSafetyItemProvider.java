@@ -38,7 +38,8 @@ import org.polarsys.kitalpha.emde.model.edit.provider.NewChildDescriptorHelper;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SimpleVPSafetyItemProvider extends ComponentElementItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class SimpleVPSafetyItemProvider extends ComponentElementItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -80,11 +81,14 @@ public class SimpleVPSafetyItemProvider extends ComponentElementItemProvider imp
 		// begin-extension-code
 		itemPropertyDescriptors.add(createItemPropertyDescriptor
 		// end-extension-code
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_SimpleVPSafety_complexity_feature"), //$NON-NLS-1$
-						getString("_UI_PropertyDescriptor_description", "_UI_SimpleVPSafety_complexity_feature", "_UI_SimpleVPSafety_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						SafetyPackage.Literals.SIMPLE_VP_SAFETY__COMPLEXITY, true, false, false, ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null,
-						// begin-extension-code
-						null));
+		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_SimpleVPSafety_complexity_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_SimpleVPSafety_complexity_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_SimpleVPSafety_type"), //$NON-NLS-1$
+				SafetyPackage.Literals.SIMPLE_VP_SAFETY__COMPLEXITY, true, false, false,
+				ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null,
+				// begin-extension-code
+				null));
 		// end-extension-code
 	}
 
@@ -99,11 +103,14 @@ public class SimpleVPSafetyItemProvider extends ComponentElementItemProvider imp
 		// begin-extension-code
 		itemPropertyDescriptors.add(createItemPropertyDescriptor
 		// end-extension-code
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_SimpleVPSafety_cost_feature"), //$NON-NLS-1$
-						getString("_UI_PropertyDescriptor_description", "_UI_SimpleVPSafety_cost_feature", "_UI_SimpleVPSafety_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						SafetyPackage.Literals.SIMPLE_VP_SAFETY__COST, true, false, false, ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null,
-						// begin-extension-code
-						null));
+		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_SimpleVPSafety_cost_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_SimpleVPSafety_cost_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_SimpleVPSafety_type"), //$NON-NLS-1$
+				SafetyPackage.Literals.SIMPLE_VP_SAFETY__COST, true, false, false,
+				ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null,
+				// begin-extension-code
+				null));
 		// end-extension-code
 	}
 
@@ -165,7 +172,9 @@ public class SimpleVPSafetyItemProvider extends ComponentElementItemProvider imp
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 		// begin-extension-code
 		{
-			CommandParameter commandParameter = createChildParameter(EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS, SafetyFactory.eINSTANCE.createSimpleVPSafety());
+			CommandParameter commandParameter = createChildParameter(
+					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
+					SafetyFactory.eINSTANCE.createSimpleVPSafety());
 			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 				newChildDescriptors.add(commandParameter);
 			}

@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20160112-1239
+//Generated with EGF 1.4.1.v20161010-1704
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.extensions.libs;
 
 import org.eclipse.egf.common.helper.*;
@@ -48,7 +48,7 @@ public class IconCopyerPattern {
 		for (Object iconElementParameter : iconElementList) {
 			for (Object activityExplorerProjectNameParameter : activityExplorerProjectNameList) {
 
-				this.iconElement = (org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Icon) iconElementParameter;
+				this.iconElement = (org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Icon) iconElementParameter;
 				this.activityExplorerProjectName = (java.lang.String) activityExplorerProjectNameParameter;
 
 				if (preCondition(ctx)) {
@@ -84,10 +84,10 @@ public class IconCopyerPattern {
 		return null;
 	}
 
-	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Icon iconElement = null;
+	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Icon iconElement = null;
 
 	public void set_iconElement(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Icon object) {
+			org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Icon object) {
 		this.iconElement = object;
 	}
 

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015 Thales Global Services S.A.S.
+ * Copyright (c) 2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -10,30 +10,24 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services;
 
+import com.google.inject.Singleton;
+import com.google.inject.Inject;
+
 import java.util.List;
 
-import org.eclipse.xtext.Action;
-import org.eclipse.xtext.Assignment;
-import org.eclipse.xtext.CrossReference;
-import org.eclipse.xtext.Grammar;
-import org.eclipse.xtext.GrammarUtil;
-import org.eclipse.xtext.Group;
-import org.eclipse.xtext.Keyword;
-import org.eclipse.xtext.ParserRule;
-import org.eclipse.xtext.RuleCall;
-import org.eclipse.xtext.TerminalRule;
-import org.eclipse.xtext.service.AbstractElementFinder.AbstractGrammarElementFinder;
+import org.eclipse.xtext.*;
 import org.eclipse.xtext.service.GrammarProvider;
+import org.eclipse.xtext.service.AbstractElementFinder.*;
 
-import com.google.inject.Inject;
-import com.google.inject.Singleton;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.CommonGrammarAccess;
+import org.eclipse.xtext.common.services.TerminalsGrammarAccess;
 
 @Singleton
 public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
 	public class ViewpointElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Viewpoint");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpspec.Viewpoint");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cViewpointAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cViewpointKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -158,45 +152,36 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		// * 
 		// ******************************************************************** /
 		//Viewpoint:
-		//	{Viewpoint} "Viewpoint" shortName=ID? "{" //('id:' id = EString)?
-		// ("name:" name=STRING) ("description:"
-		//	description=EString)? ("extends" parents+=[Viewpoint|FQN] ("," parents+=[Viewpoint|FQN])*)? ("aggregates"
-		//	dependencies+=[Viewpoint|FQN] ("," dependencies+=[Viewpoint|FQN])*)? //Viewpoint use link
-		// ("uses viewpoint"
-		//	useViewpoint+=[Viewpoint|FQN] ("," useViewpoint+=[Viewpoint|FQN])*)? //Viewpoint use resources
-		// ("uses model"
-		//	useAnyEMFResource+=EString ("," useAnyEMFResource+=EString)*)? ("uses diagram" useDiagramResource+=EString (","
-		//	useDiagramResource+=EString)*)? ("uses workspace" useWorkspaceResource+=EString (","
-		//	useWorkspaceResource+=EString)*)? ("uses filesystem" useFSResource+=EString ("," useFSResource+=EString)*)? ("Data"
-		//	VP_Data=[vpdesc::Data|FQN])? (type+="UI" VP_Aspects+=[vpui::UIDescription|FQN])? (type+="Diagrams"
-		//	VP_Aspects+=[vpdiagram::DiagramSet|FQN])? (type+="Activity-Explorer"
-		//	VP_Aspects+=[activtyExplorer::ViewpointActivityExplorer|FQN])? (type+="Services"
-		//	VP_Aspects+=[vpservices::ServiceSet|FQN])? //[services::Services | FQN])?
-		// (type+="Build"
-		//	VP_Aspects+=[vpbuild::Build|FQN])? (type+="Configuration" VP_Aspects+=[vpconf::Configuration|FQN])? "}";
+		//	{Viewpoint} 'Viewpoint' shortName=ID? '{' ('name:' name=STRING) ('description:' description=EString)? ('extends'
+		//	parents+=[Viewpoint|FQN] (',' parents+=[Viewpoint|FQN])*)? ('aggregates' dependencies+=[Viewpoint|FQN] (','
+		//	dependencies+=[Viewpoint|FQN])*)? ('uses viewpoint' useViewpoint+=[Viewpoint|FQN] (','
+		//	useViewpoint+=[Viewpoint|FQN])*)? ('uses model' useAnyEMFResource+=EString (',' useAnyEMFResource+=EString)*)?
+		//	('uses diagram' useDiagramResource+=EString (',' useDiagramResource+=EString)*)? ('uses workspace'
+		//	useWorkspaceResource+=EString (',' useWorkspaceResource+=EString)*)? ('uses filesystem' useFSResource+=EString (','
+		//	useFSResource+=EString)*)? ('Data' VP_Data=[vpdesc::Data|FQN])? (type+='UI' VP_Aspects+=[vpui::UIDescription|FQN])?
+		//	(type+='Diagrams' VP_Aspects+=[vpdiagram::DiagramSet|FQN])? (type+='Activity-Explorer'
+		//	VP_Aspects+=[activtyExplorer::ViewpointActivityExplorer|FQN])? (type+='Services'
+		//	VP_Aspects+=[vpservices::ServiceSet|FQN])? (type+='Build' VP_Aspects+=[vpbuild::Build|FQN])? (type+='Configuration'
+		//	VP_Aspects+=[vpconf::Configuration|FQN])? '}';
 		@Override public ParserRule getRule() { return rule; }
 
-		//{Viewpoint} "Viewpoint" shortName=ID? "{" //('id:' id = EString)?
-		// ("name:" name=STRING) ("description:"
-		//description=EString)? ("extends" parents+=[Viewpoint|FQN] ("," parents+=[Viewpoint|FQN])*)? ("aggregates"
-		//dependencies+=[Viewpoint|FQN] ("," dependencies+=[Viewpoint|FQN])*)? //Viewpoint use link
-		// ("uses viewpoint"
-		//useViewpoint+=[Viewpoint|FQN] ("," useViewpoint+=[Viewpoint|FQN])*)? //Viewpoint use resources
-		// ("uses model"
-		//useAnyEMFResource+=EString ("," useAnyEMFResource+=EString)*)? ("uses diagram" useDiagramResource+=EString (","
-		//useDiagramResource+=EString)*)? ("uses workspace" useWorkspaceResource+=EString ("," useWorkspaceResource+=EString)*)?
-		//("uses filesystem" useFSResource+=EString ("," useFSResource+=EString)*)? ("Data" VP_Data=[vpdesc::Data|FQN])?
-		//(type+="UI" VP_Aspects+=[vpui::UIDescription|FQN])? (type+="Diagrams" VP_Aspects+=[vpdiagram::DiagramSet|FQN])?
-		//(type+="Activity-Explorer" VP_Aspects+=[activtyExplorer::ViewpointActivityExplorer|FQN])? (type+="Services"
-		//VP_Aspects+=[vpservices::ServiceSet|FQN])? //[services::Services | FQN])?
-		// (type+="Build"
-		//VP_Aspects+=[vpbuild::Build|FQN])? (type+="Configuration" VP_Aspects+=[vpconf::Configuration|FQN])? "}"
+		//{Viewpoint} 'Viewpoint' shortName=ID? '{' ('name:' name=STRING) ('description:' description=EString)? ('extends'
+		//parents+=[Viewpoint|FQN] (',' parents+=[Viewpoint|FQN])*)? ('aggregates' dependencies+=[Viewpoint|FQN] (','
+		//dependencies+=[Viewpoint|FQN])*)? ('uses viewpoint' useViewpoint+=[Viewpoint|FQN] (','
+		//useViewpoint+=[Viewpoint|FQN])*)? ('uses model' useAnyEMFResource+=EString (',' useAnyEMFResource+=EString)*)?
+		//('uses diagram' useDiagramResource+=EString (',' useDiagramResource+=EString)*)? ('uses workspace'
+		//useWorkspaceResource+=EString (',' useWorkspaceResource+=EString)*)? ('uses filesystem' useFSResource+=EString (','
+		//useFSResource+=EString)*)? ('Data' VP_Data=[vpdesc::Data|FQN])? (type+='UI' VP_Aspects+=[vpui::UIDescription|FQN])?
+		//(type+='Diagrams' VP_Aspects+=[vpdiagram::DiagramSet|FQN])? (type+='Activity-Explorer'
+		//VP_Aspects+=[activtyExplorer::ViewpointActivityExplorer|FQN])? (type+='Services'
+		//VP_Aspects+=[vpservices::ServiceSet|FQN])? (type+='Build' VP_Aspects+=[vpbuild::Build|FQN])? (type+='Configuration'
+		//VP_Aspects+=[vpconf::Configuration|FQN])? '}'
 		public Group getGroup() { return cGroup; }
 
 		//{Viewpoint}
 		public Action getViewpointAction_0() { return cViewpointAction_0; }
 
-		//"Viewpoint"
+		//'Viewpoint'
 		public Keyword getViewpointKeyword_1() { return cViewpointKeyword_1; }
 
 		//shortName=ID?
@@ -205,13 +190,13 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getShortNameIDTerminalRuleCall_2_0() { return cShortNameIDTerminalRuleCall_2_0; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
-		//"name:" name=STRING
+		//('name:' name=STRING)
 		public Group getGroup_4() { return cGroup_4; }
 
-		//"name:"
+		//'name:'
 		public Keyword getNameKeyword_4_0() { return cNameKeyword_4_0; }
 
 		//name=STRING
@@ -220,10 +205,10 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getNameSTRINGTerminalRuleCall_4_1_0() { return cNameSTRINGTerminalRuleCall_4_1_0; }
 
-		//("description:" description=EString)?
+		//('description:' description=EString)?
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"description:"
+		//'description:'
 		public Keyword getDescriptionKeyword_5_0() { return cDescriptionKeyword_5_0; }
 
 		//description=EString
@@ -232,10 +217,10 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getDescriptionEStringParserRuleCall_5_1_0() { return cDescriptionEStringParserRuleCall_5_1_0; }
 
-		//("extends" parents+=[Viewpoint|FQN] ("," parents+=[Viewpoint|FQN])*)?
+		//('extends' parents+=[Viewpoint|FQN] (',' parents+=[Viewpoint|FQN])*)?
 		public Group getGroup_6() { return cGroup_6; }
 
-		//"extends"
+		//'extends'
 		public Keyword getExtendsKeyword_6_0() { return cExtendsKeyword_6_0; }
 
 		//parents+=[Viewpoint|FQN]
@@ -247,10 +232,10 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getParentsViewpointFQNParserRuleCall_6_1_0_1() { return cParentsViewpointFQNParserRuleCall_6_1_0_1; }
 
-		//("," parents+=[Viewpoint|FQN])*
+		//(',' parents+=[Viewpoint|FQN])*
 		public Group getGroup_6_2() { return cGroup_6_2; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_6_2_0() { return cCommaKeyword_6_2_0; }
 
 		//parents+=[Viewpoint|FQN]
@@ -262,10 +247,10 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getParentsViewpointFQNParserRuleCall_6_2_1_0_1() { return cParentsViewpointFQNParserRuleCall_6_2_1_0_1; }
 
-		//("aggregates" dependencies+=[Viewpoint|FQN] ("," dependencies+=[Viewpoint|FQN])*)?
+		//('aggregates' dependencies+=[Viewpoint|FQN] (',' dependencies+=[Viewpoint|FQN])*)?
 		public Group getGroup_7() { return cGroup_7; }
 
-		//"aggregates"
+		//'aggregates'
 		public Keyword getAggregatesKeyword_7_0() { return cAggregatesKeyword_7_0; }
 
 		//dependencies+=[Viewpoint|FQN]
@@ -277,10 +262,10 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getDependenciesViewpointFQNParserRuleCall_7_1_0_1() { return cDependenciesViewpointFQNParserRuleCall_7_1_0_1; }
 
-		//("," dependencies+=[Viewpoint|FQN])*
+		//(',' dependencies+=[Viewpoint|FQN])*
 		public Group getGroup_7_2() { return cGroup_7_2; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_7_2_0() { return cCommaKeyword_7_2_0; }
 
 		//dependencies+=[Viewpoint|FQN]
@@ -292,10 +277,10 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getDependenciesViewpointFQNParserRuleCall_7_2_1_0_1() { return cDependenciesViewpointFQNParserRuleCall_7_2_1_0_1; }
 
-		//("uses viewpoint" useViewpoint+=[Viewpoint|FQN] ("," useViewpoint+=[Viewpoint|FQN])*)?
+		//('uses viewpoint' useViewpoint+=[Viewpoint|FQN] (',' useViewpoint+=[Viewpoint|FQN])*)?
 		public Group getGroup_8() { return cGroup_8; }
 
-		//"uses viewpoint"
+		//'uses viewpoint'
 		public Keyword getUsesViewpointKeyword_8_0() { return cUsesViewpointKeyword_8_0; }
 
 		//useViewpoint+=[Viewpoint|FQN]
@@ -307,10 +292,10 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getUseViewpointViewpointFQNParserRuleCall_8_1_0_1() { return cUseViewpointViewpointFQNParserRuleCall_8_1_0_1; }
 
-		//("," useViewpoint+=[Viewpoint|FQN])*
+		//(',' useViewpoint+=[Viewpoint|FQN])*
 		public Group getGroup_8_2() { return cGroup_8_2; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_8_2_0() { return cCommaKeyword_8_2_0; }
 
 		//useViewpoint+=[Viewpoint|FQN]
@@ -322,10 +307,10 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getUseViewpointViewpointFQNParserRuleCall_8_2_1_0_1() { return cUseViewpointViewpointFQNParserRuleCall_8_2_1_0_1; }
 
-		//("uses model" useAnyEMFResource+=EString ("," useAnyEMFResource+=EString)*)?
+		//('uses model' useAnyEMFResource+=EString (',' useAnyEMFResource+=EString)*)?
 		public Group getGroup_9() { return cGroup_9; }
 
-		//"uses model"
+		//'uses model'
 		public Keyword getUsesModelKeyword_9_0() { return cUsesModelKeyword_9_0; }
 
 		//useAnyEMFResource+=EString
@@ -334,10 +319,10 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getUseAnyEMFResourceEStringParserRuleCall_9_1_0() { return cUseAnyEMFResourceEStringParserRuleCall_9_1_0; }
 
-		//("," useAnyEMFResource+=EString)*
+		//(',' useAnyEMFResource+=EString)*
 		public Group getGroup_9_2() { return cGroup_9_2; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_9_2_0() { return cCommaKeyword_9_2_0; }
 
 		//useAnyEMFResource+=EString
@@ -346,10 +331,10 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getUseAnyEMFResourceEStringParserRuleCall_9_2_1_0() { return cUseAnyEMFResourceEStringParserRuleCall_9_2_1_0; }
 
-		//("uses diagram" useDiagramResource+=EString ("," useDiagramResource+=EString)*)?
+		//('uses diagram' useDiagramResource+=EString (',' useDiagramResource+=EString)*)?
 		public Group getGroup_10() { return cGroup_10; }
 
-		//"uses diagram"
+		//'uses diagram'
 		public Keyword getUsesDiagramKeyword_10_0() { return cUsesDiagramKeyword_10_0; }
 
 		//useDiagramResource+=EString
@@ -358,10 +343,10 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getUseDiagramResourceEStringParserRuleCall_10_1_0() { return cUseDiagramResourceEStringParserRuleCall_10_1_0; }
 
-		//("," useDiagramResource+=EString)*
+		//(',' useDiagramResource+=EString)*
 		public Group getGroup_10_2() { return cGroup_10_2; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_10_2_0() { return cCommaKeyword_10_2_0; }
 
 		//useDiagramResource+=EString
@@ -370,10 +355,10 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getUseDiagramResourceEStringParserRuleCall_10_2_1_0() { return cUseDiagramResourceEStringParserRuleCall_10_2_1_0; }
 
-		//("uses workspace" useWorkspaceResource+=EString ("," useWorkspaceResource+=EString)*)?
+		//('uses workspace' useWorkspaceResource+=EString (',' useWorkspaceResource+=EString)*)?
 		public Group getGroup_11() { return cGroup_11; }
 
-		//"uses workspace"
+		//'uses workspace'
 		public Keyword getUsesWorkspaceKeyword_11_0() { return cUsesWorkspaceKeyword_11_0; }
 
 		//useWorkspaceResource+=EString
@@ -382,10 +367,10 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getUseWorkspaceResourceEStringParserRuleCall_11_1_0() { return cUseWorkspaceResourceEStringParserRuleCall_11_1_0; }
 
-		//("," useWorkspaceResource+=EString)*
+		//(',' useWorkspaceResource+=EString)*
 		public Group getGroup_11_2() { return cGroup_11_2; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_11_2_0() { return cCommaKeyword_11_2_0; }
 
 		//useWorkspaceResource+=EString
@@ -394,10 +379,10 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getUseWorkspaceResourceEStringParserRuleCall_11_2_1_0() { return cUseWorkspaceResourceEStringParserRuleCall_11_2_1_0; }
 
-		//("uses filesystem" useFSResource+=EString ("," useFSResource+=EString)*)?
+		//('uses filesystem' useFSResource+=EString (',' useFSResource+=EString)*)?
 		public Group getGroup_12() { return cGroup_12; }
 
-		//"uses filesystem"
+		//'uses filesystem'
 		public Keyword getUsesFilesystemKeyword_12_0() { return cUsesFilesystemKeyword_12_0; }
 
 		//useFSResource+=EString
@@ -406,10 +391,10 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getUseFSResourceEStringParserRuleCall_12_1_0() { return cUseFSResourceEStringParserRuleCall_12_1_0; }
 
-		//("," useFSResource+=EString)*
+		//(',' useFSResource+=EString)*
 		public Group getGroup_12_2() { return cGroup_12_2; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_12_2_0() { return cCommaKeyword_12_2_0; }
 
 		//useFSResource+=EString
@@ -418,10 +403,10 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getUseFSResourceEStringParserRuleCall_12_2_1_0() { return cUseFSResourceEStringParserRuleCall_12_2_1_0; }
 
-		//("Data" VP_Data=[vpdesc::Data|FQN])?
+		//('Data' VP_Data=[vpdesc::Data|FQN])?
 		public Group getGroup_13() { return cGroup_13; }
 
-		//"Data"
+		//'Data'
 		public Keyword getDataKeyword_13_0() { return cDataKeyword_13_0; }
 
 		//VP_Data=[vpdesc::Data|FQN]
@@ -433,13 +418,13 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getVP_DataDataFQNParserRuleCall_13_1_0_1() { return cVP_DataDataFQNParserRuleCall_13_1_0_1; }
 
-		//(type+="UI" VP_Aspects+=[vpui::UIDescription|FQN])?
+		//(type+='UI' VP_Aspects+=[vpui::UIDescription|FQN])?
 		public Group getGroup_14() { return cGroup_14; }
 
-		//type+="UI"
+		//type+='UI'
 		public Assignment getTypeAssignment_14_0() { return cTypeAssignment_14_0; }
 
-		//"UI"
+		//'UI'
 		public Keyword getTypeUIKeyword_14_0_0() { return cTypeUIKeyword_14_0_0; }
 
 		//VP_Aspects+=[vpui::UIDescription|FQN]
@@ -451,13 +436,13 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getVP_AspectsUIDescriptionFQNParserRuleCall_14_1_0_1() { return cVP_AspectsUIDescriptionFQNParserRuleCall_14_1_0_1; }
 
-		//(type+="Diagrams" VP_Aspects+=[vpdiagram::DiagramSet|FQN])?
+		//(type+='Diagrams' VP_Aspects+=[vpdiagram::DiagramSet|FQN])?
 		public Group getGroup_15() { return cGroup_15; }
 
-		//type+="Diagrams"
+		//type+='Diagrams'
 		public Assignment getTypeAssignment_15_0() { return cTypeAssignment_15_0; }
 
-		//"Diagrams"
+		//'Diagrams'
 		public Keyword getTypeDiagramsKeyword_15_0_0() { return cTypeDiagramsKeyword_15_0_0; }
 
 		//VP_Aspects+=[vpdiagram::DiagramSet|FQN]
@@ -469,13 +454,13 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getVP_AspectsDiagramSetFQNParserRuleCall_15_1_0_1() { return cVP_AspectsDiagramSetFQNParserRuleCall_15_1_0_1; }
 
-		//(type+="Activity-Explorer" VP_Aspects+=[activtyExplorer::ViewpointActivityExplorer|FQN])?
+		//(type+='Activity-Explorer' VP_Aspects+=[activtyExplorer::ViewpointActivityExplorer|FQN])?
 		public Group getGroup_16() { return cGroup_16; }
 
-		//type+="Activity-Explorer"
+		//type+='Activity-Explorer'
 		public Assignment getTypeAssignment_16_0() { return cTypeAssignment_16_0; }
 
-		//"Activity-Explorer"
+		//'Activity-Explorer'
 		public Keyword getTypeActivityExplorerKeyword_16_0_0() { return cTypeActivityExplorerKeyword_16_0_0; }
 
 		//VP_Aspects+=[activtyExplorer::ViewpointActivityExplorer|FQN]
@@ -487,13 +472,13 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getVP_AspectsViewpointActivityExplorerFQNParserRuleCall_16_1_0_1() { return cVP_AspectsViewpointActivityExplorerFQNParserRuleCall_16_1_0_1; }
 
-		//(type+="Services" VP_Aspects+=[vpservices::ServiceSet|FQN])?
+		//(type+='Services' VP_Aspects+=[vpservices::ServiceSet|FQN])?
 		public Group getGroup_17() { return cGroup_17; }
 
-		//type+="Services"
+		//type+='Services'
 		public Assignment getTypeAssignment_17_0() { return cTypeAssignment_17_0; }
 
-		//"Services"
+		//'Services'
 		public Keyword getTypeServicesKeyword_17_0_0() { return cTypeServicesKeyword_17_0_0; }
 
 		//VP_Aspects+=[vpservices::ServiceSet|FQN]
@@ -505,13 +490,13 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getVP_AspectsServiceSetFQNParserRuleCall_17_1_0_1() { return cVP_AspectsServiceSetFQNParserRuleCall_17_1_0_1; }
 
-		//(type+="Build" VP_Aspects+=[vpbuild::Build|FQN])?
+		//(type+='Build' VP_Aspects+=[vpbuild::Build|FQN])?
 		public Group getGroup_18() { return cGroup_18; }
 
-		//type+="Build"
+		//type+='Build'
 		public Assignment getTypeAssignment_18_0() { return cTypeAssignment_18_0; }
 
-		//"Build"
+		//'Build'
 		public Keyword getTypeBuildKeyword_18_0_0() { return cTypeBuildKeyword_18_0_0; }
 
 		//VP_Aspects+=[vpbuild::Build|FQN]
@@ -523,13 +508,13 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getVP_AspectsBuildFQNParserRuleCall_18_1_0_1() { return cVP_AspectsBuildFQNParserRuleCall_18_1_0_1; }
 
-		//(type+="Configuration" VP_Aspects+=[vpconf::Configuration|FQN])?
+		//(type+='Configuration' VP_Aspects+=[vpconf::Configuration|FQN])?
 		public Group getGroup_19() { return cGroup_19; }
 
-		//type+="Configuration"
+		//type+='Configuration'
 		public Assignment getTypeAssignment_19_0() { return cTypeAssignment_19_0; }
 
-		//"Configuration"
+		//'Configuration'
 		public Keyword getTypeConfigurationKeyword_19_0_0() { return cTypeConfigurationKeyword_19_0_0; }
 
 		//VP_Aspects+=[vpconf::Configuration|FQN]
@@ -541,7 +526,7 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getVP_AspectsConfigurationFQNParserRuleCall_19_1_0_1() { return cVP_AspectsConfigurationFQNParserRuleCall_19_1_0_1; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_20() { return cRightCurlyBracketKeyword_20; }
 	}
 	
@@ -552,11 +537,15 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 
 	private final CommonGrammarAccess gaCommon;
 
+	private final TerminalsGrammarAccess gaTerminals;
+
 	@Inject
 	public VpspecGrammarAccess(GrammarProvider grammarProvider,
-		CommonGrammarAccess gaCommon) {
+		CommonGrammarAccess gaCommon,
+		TerminalsGrammarAccess gaTerminals) {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaCommon = gaCommon;
+		this.gaTerminals = gaTerminals;
 		this.pViewpoint = new ViewpointElements();
 	}
 	
@@ -586,28 +575,27 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		return gaCommon;
 	}
 
+	public TerminalsGrammarAccess getTerminalsGrammarAccess() {
+		return gaTerminals;
+	}
+
 	
 	/// ********************************************************************
 	// * 							vpspec
 	// * 
 	// ******************************************************************** /
 	//Viewpoint:
-	//	{Viewpoint} "Viewpoint" shortName=ID? "{" //('id:' id = EString)?
-	// ("name:" name=STRING) ("description:"
-	//	description=EString)? ("extends" parents+=[Viewpoint|FQN] ("," parents+=[Viewpoint|FQN])*)? ("aggregates"
-	//	dependencies+=[Viewpoint|FQN] ("," dependencies+=[Viewpoint|FQN])*)? //Viewpoint use link
-	// ("uses viewpoint"
-	//	useViewpoint+=[Viewpoint|FQN] ("," useViewpoint+=[Viewpoint|FQN])*)? //Viewpoint use resources
-	// ("uses model"
-	//	useAnyEMFResource+=EString ("," useAnyEMFResource+=EString)*)? ("uses diagram" useDiagramResource+=EString (","
-	//	useDiagramResource+=EString)*)? ("uses workspace" useWorkspaceResource+=EString (","
-	//	useWorkspaceResource+=EString)*)? ("uses filesystem" useFSResource+=EString ("," useFSResource+=EString)*)? ("Data"
-	//	VP_Data=[vpdesc::Data|FQN])? (type+="UI" VP_Aspects+=[vpui::UIDescription|FQN])? (type+="Diagrams"
-	//	VP_Aspects+=[vpdiagram::DiagramSet|FQN])? (type+="Activity-Explorer"
-	//	VP_Aspects+=[activtyExplorer::ViewpointActivityExplorer|FQN])? (type+="Services"
-	//	VP_Aspects+=[vpservices::ServiceSet|FQN])? //[services::Services | FQN])?
-	// (type+="Build"
-	//	VP_Aspects+=[vpbuild::Build|FQN])? (type+="Configuration" VP_Aspects+=[vpconf::Configuration|FQN])? "}";
+	//	{Viewpoint} 'Viewpoint' shortName=ID? '{' ('name:' name=STRING) ('description:' description=EString)? ('extends'
+	//	parents+=[Viewpoint|FQN] (',' parents+=[Viewpoint|FQN])*)? ('aggregates' dependencies+=[Viewpoint|FQN] (','
+	//	dependencies+=[Viewpoint|FQN])*)? ('uses viewpoint' useViewpoint+=[Viewpoint|FQN] (','
+	//	useViewpoint+=[Viewpoint|FQN])*)? ('uses model' useAnyEMFResource+=EString (',' useAnyEMFResource+=EString)*)?
+	//	('uses diagram' useDiagramResource+=EString (',' useDiagramResource+=EString)*)? ('uses workspace'
+	//	useWorkspaceResource+=EString (',' useWorkspaceResource+=EString)*)? ('uses filesystem' useFSResource+=EString (','
+	//	useFSResource+=EString)*)? ('Data' VP_Data=[vpdesc::Data|FQN])? (type+='UI' VP_Aspects+=[vpui::UIDescription|FQN])?
+	//	(type+='Diagrams' VP_Aspects+=[vpdiagram::DiagramSet|FQN])? (type+='Activity-Explorer'
+	//	VP_Aspects+=[activtyExplorer::ViewpointActivityExplorer|FQN])? (type+='Services'
+	//	VP_Aspects+=[vpservices::ServiceSet|FQN])? (type+='Build' VP_Aspects+=[vpbuild::Build|FQN])? (type+='Configuration'
+	//	VP_Aspects+=[vpconf::Configuration|FQN])? '}';
 	public ViewpointElements getViewpointAccess() {
 		return pViewpoint;
 	}
@@ -616,7 +604,7 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		return getViewpointAccess().getRule();
 	}
 
-	//EString returns ecore::EString:
+	//EString:
 	//	STRING | ID;
 	public CommonGrammarAccess.EStringElements getEStringAccess() {
 		return gaCommon.getEStringAccess();
@@ -626,7 +614,7 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		return getEStringAccess().getRule();
 	}
 
-	//FQN returns ecore::EString:
+	//FQN:
 	//	ID ("." => ID)*;
 	public CommonGrammarAccess.FQNElements getFQNAccess() {
 		return gaCommon.getFQNAccess();
@@ -636,8 +624,8 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		return getFQNAccess().getRule();
 	}
 
-	//EBoolean returns ecore::EBoolean:
-	//	"true" | "false";
+	//EBoolean ecore::EBoolean:
+	//	'true' | 'false'
 	public CommonGrammarAccess.EBooleanElements getEBooleanAccess() {
 		return gaCommon.getEBooleanAccess();
 	}
@@ -646,8 +634,8 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 		return getEBooleanAccess().getRule();
 	}
 
-	//EInt returns ecore::EInt:
-	//	INT;
+	//EInt ecore::EInt:
+	//	INT
 	public CommonGrammarAccess.EIntElements getEIntAccess() {
 		return gaCommon.getEIntAccess();
 	}
@@ -657,45 +645,44 @@ public class VpspecGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//terminal ID:
-	//	"^"? ("a".."z" | "A".."Z" | "_") ("a".."z" | "A".."Z" | "_" | "0".."9")*;
+	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
 	public TerminalRule getIDRule() {
-		return gaCommon.getIDRule();
+		return gaTerminals.getIDRule();
 	} 
 
 	//terminal INT returns ecore::EInt:
-	//	"0".."9"+;
+	//	'0'..'9'+;
 	public TerminalRule getINTRule() {
-		return gaCommon.getINTRule();
+		return gaTerminals.getINTRule();
 	} 
 
 	//terminal STRING:
-	//	"\"" ("\\" . / * 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' * / | !("\\" | "\""))* "\"" | "\'" ("\\" .
-	//	/ * 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' * / | !("\\" | "\'"))* "\'";
+	//	'"' ('\\' . | !('\\' | '"'))* '"' | "'" ('\\' . | !('\\' | "'"))* "'";
 	public TerminalRule getSTRINGRule() {
-		return gaCommon.getSTRINGRule();
+		return gaTerminals.getSTRINGRule();
 	} 
 
 	//terminal ML_COMMENT:
-	//	"/ *"->"* /";
+	//	'/ *'->'* /';
 	public TerminalRule getML_COMMENTRule() {
-		return gaCommon.getML_COMMENTRule();
+		return gaTerminals.getML_COMMENTRule();
 	} 
 
 	//terminal SL_COMMENT:
-	//	"//" !("\n" | "\r")* ("\r"? "\n")?;
+	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
 	public TerminalRule getSL_COMMENTRule() {
-		return gaCommon.getSL_COMMENTRule();
+		return gaTerminals.getSL_COMMENTRule();
 	} 
 
 	//terminal WS:
-	//	(" " | "\t" | "\r" | "\n")+;
+	//	' ' | '\t' | '\r' | '\n'+;
 	public TerminalRule getWSRule() {
-		return gaCommon.getWSRule();
+		return gaTerminals.getWSRule();
 	} 
 
 	//terminal ANY_OTHER:
 	//	.;
 	public TerminalRule getANY_OTHERRule() {
-		return gaCommon.getANY_OTHERRule();
+		return gaTerminals.getANY_OTHERRule();
 	} 
 }

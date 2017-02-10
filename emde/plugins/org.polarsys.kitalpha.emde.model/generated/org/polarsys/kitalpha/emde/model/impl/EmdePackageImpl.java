@@ -93,7 +93,9 @@ public class EmdePackageImpl extends EPackageImpl implements EmdePackage {
 			return (EmdePackage) EPackage.Registry.INSTANCE.getEPackage(EmdePackage.eNS_URI);
 
 		// Obtain or create and register package
-		EmdePackageImpl theEmdePackage = (EmdePackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof EmdePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new EmdePackageImpl());
+		EmdePackageImpl theEmdePackage = (EmdePackageImpl) (EPackage.Registry.INSTANCE
+				.get(eNS_URI) instanceof EmdePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
+						: new EmdePackageImpl());
 
 		isInited = true;
 
@@ -219,10 +221,14 @@ public class EmdePackageImpl extends EPackageImpl implements EmdePackage {
 		// Initialize classes, features, and operations; add parameters
 		initEClass(elementEClass, Element.class, "Element", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
-		initEClass(extensibleElementEClass, ExtensibleElement.class, "ExtensibleElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getExtensibleElement_OwnedExtensions(), this.getElementExtension(), null, "ownedExtensions", null, 0, -1, ExtensibleElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEClass(extensibleElementEClass, ExtensibleElement.class, "ExtensibleElement", IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getExtensibleElement_OwnedExtensions(), this.getElementExtension(), null, "ownedExtensions", //$NON-NLS-1$
+				null, 0, -1, ExtensibleElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(elementExtensionEClass, ElementExtension.class, "ElementExtension", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEClass(elementExtensionEClass, ElementExtension.class, "ElementExtension", IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

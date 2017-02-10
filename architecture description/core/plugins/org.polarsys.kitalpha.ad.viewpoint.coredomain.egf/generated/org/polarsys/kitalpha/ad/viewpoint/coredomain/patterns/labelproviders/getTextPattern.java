@@ -1,4 +1,4 @@
-//Generated with EGF 1.2.0.v20140805-0858
+//Generated with EGF 1.4.1.v20161010-1704
 package org.polarsys.kitalpha.ad.viewpoint.coredomain.patterns.labelproviders;
 
 import org.eclipse.egf.common.helper.*;
@@ -19,7 +19,12 @@ public class getTextPattern extends org.eclipse.egf.emf.pattern.edit.call.ItemPr
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = NL + "\t\tif (object instanceof NameElement) {" + NL + "\t\t\tNameElement elt = (NameElement) object;" + NL + "\t\t\tString label = elt.getName();" + NL + "\t\t\tif (label == null)" + NL + "\t\t\t\tlabel = \"\";" + NL + "\t\t\tString id = elt.getId();" + NL + "\t\t\tif (id == null)" + NL + "\t\t\t\tid = \"no ID\";" + NL + "\t\t\tlabel = elt.eClass().getName() + \" [\" + id + \"] \" + label;" + NL + "\t\t\treturn label;" + NL + "\t\t}" + NL + "\t\treturn ((EObject) object).eClass().getName();" + NL;
+	protected final String TEXT_1 = NL + "\t\tif (object instanceof NameElement) {" + NL
+			+ "\t\t\tNameElement elt = (NameElement) object;" + NL + "\t\t\tString label = elt.getName();" + NL
+			+ "\t\t\tif (label == null)" + NL + "\t\t\t\tlabel = \"\";" + NL + "\t\t\tString id = elt.getId();" + NL
+			+ "\t\t\tif (id == null)" + NL + "\t\t\t\tid = \"no ID\";" + NL
+			+ "\t\t\tlabel = elt.eClass().getName() + \" [\" + id + \"] \" + label;" + NL + "\t\t\treturn label;" + NL
+			+ "\t\t}" + NL + "\t\treturn ((EObject) object).eClass().getName();" + NL;
 	protected final String TEXT_2 = NL;
 	protected final String TEXT_3 = NL;
 

@@ -77,7 +77,8 @@ public class ComponentModelImpl extends ComponentElementImpl implements Componen
 	public EList<AbstractComponent> getAbstractComponent() {
 
 		if (abstractComponent == null) {
-			abstractComponent = new EObjectContainmentEList<AbstractComponent>(AbstractComponent.class, this, SimplecomponentPackage.COMPONENT_MODEL__ABSTRACT_COMPONENT);
+			abstractComponent = new EObjectContainmentEList<AbstractComponent>(AbstractComponent.class, this,
+					SimplecomponentPackage.COMPONENT_MODEL__ABSTRACT_COMPONENT);
 		}
 		return abstractComponent;
 	}

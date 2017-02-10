@@ -49,7 +49,8 @@ import org.polarsys.kitalpha.emde.model.util.EmdeAdapterFactory;
  * end-user-doc -->
  * @generated
  */
-public class EmdeItemProviderAdapterFactory extends EmdeAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
+public class EmdeItemProviderAdapterFactory extends EmdeAdapterFactory
+		implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -72,7 +73,8 @@ public class EmdeItemProviderAdapterFactory extends EmdeAdapterFactory implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(EmdeEditPlugin.INSTANCE, EmdePackage.eNS_URI);
+	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(
+			EmdeEditPlugin.INSTANCE, EmdePackage.eNS_URI);
 
 	/**
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.

@@ -4,7 +4,6 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.parser.antlr;
 
 import java.io.InputStream;
-
 import org.eclipse.xtext.parser.antlr.IAntlrTokenFileProvider;
 
 public class ActivityexplorerAntlrTokenFileProvider implements IAntlrTokenFileProvider {

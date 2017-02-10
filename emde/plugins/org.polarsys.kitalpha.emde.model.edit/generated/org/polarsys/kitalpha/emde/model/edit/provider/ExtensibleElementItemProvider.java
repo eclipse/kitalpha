@@ -40,7 +40,10 @@ import org.polarsys.kitalpha.emde.model.ExtensibleElement;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ExtensibleElementItemProvider extends ElementItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, ITableItemFontProvider, IItemColorProvider, IItemFontProvider {
+public class ExtensibleElementItemProvider extends ElementItemProvider
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
+		IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider,
+		ITableItemFontProvider, IItemColorProvider, IItemFontProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

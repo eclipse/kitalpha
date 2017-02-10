@@ -29,7 +29,8 @@ import org.polarsys.kitalpha.emde.example.simplecomponent.model.simplecomponent.
  * <!-- end-user-doc -->
  * @generated
  */
-public class SoftwareComponentItemProvider extends AbstractComponentItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class SoftwareComponentItemProvider extends AbstractComponentItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

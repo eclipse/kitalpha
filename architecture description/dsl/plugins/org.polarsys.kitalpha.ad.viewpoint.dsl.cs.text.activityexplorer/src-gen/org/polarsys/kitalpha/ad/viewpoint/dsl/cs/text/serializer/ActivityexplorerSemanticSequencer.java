@@ -3,19 +3,24 @@
  */
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.serializer;
 
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Activity;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Overview;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Page;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.PageExtension;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Section;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.SectionExtension;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorer;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorerPackage;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.ActivityexplorerGrammarAccess;
-
 import com.google.inject.Inject;
+import java.util.Set;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.xtext.Action;
+import org.eclipse.xtext.Parameter;
+import org.eclipse.xtext.ParserRule;
+import org.eclipse.xtext.serializer.ISerializationContext;
+import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Activity;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Overview;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Page;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.PageExtension;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Section;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.SectionExtension;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.ViewpointActivityExplorer;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.ViewpointActivityExplorerPackage;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.ActivityexplorerGrammarAccess;
 
 @SuppressWarnings("all")
 public class ActivityexplorerSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -24,8 +29,13 @@ public class ActivityexplorerSemanticSequencer extends AbstractDelegatingSemanti
 	private ActivityexplorerGrammarAccess grammarAccess;
 	
 	@Override
-	public void createSequence(EObject context, EObject semanticObject) {
-		if(semanticObject.eClass().getEPackage() == ViewpointActivityExplorerPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+	public void sequence(ISerializationContext context, EObject semanticObject) {
+		EPackage epackage = semanticObject.eClass().getEPackage();
+		ParserRule rule = context.getParserRule();
+		Action action = context.getAssignedAction();
+		Set<Parameter> parameters = context.getEnabledBooleanParameters();
+		if (epackage == ViewpointActivityExplorerPackage.eINSTANCE)
+			switch (semanticObject.eClass().getClassifierID()) {
 			case ViewpointActivityExplorerPackage.ACTIVITY:
 				sequence_Activity(context, (Activity) semanticObject); 
 				return; 
@@ -48,10 +58,14 @@ public class ActivityexplorerSemanticSequencer extends AbstractDelegatingSemanti
 				sequence_ViewpointActivityExplorer(context, (ViewpointActivityExplorer) semanticObject); 
 				return; 
 			}
-		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
+		if (errorAcceptor != null)
+			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
 	
 	/**
+	 * Contexts:
+	 *     Activity returns Activity
+	 *
 	 * Constraint:
 	 *     (
 	 *         name=ID 
@@ -63,30 +77,41 @@ public class ActivityexplorerSemanticSequencer extends AbstractDelegatingSemanti
 	 *         imagePathOff=STRING?
 	 *     )
 	 */
-	protected void sequence_Activity(EObject context, Activity semanticObject) {
+	protected void sequence_Activity(ISerializationContext context, Activity semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
+	 * Contexts:
+	 *     Overview returns Overview
+	 *
 	 * Constraint:
 	 *     (description=STRING? imagePathOn=STRING? imagePathOff=STRING?)
 	 */
-	protected void sequence_Overview(EObject context, Overview semanticObject) {
+	protected void sequence_Overview(ISerializationContext context, Overview semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
+	 * Contexts:
+	 *     AbstractPage returns PageExtension
+	 *     PageExtension returns PageExtension
+	 *
 	 * Constraint:
 	 *     (extendedPageID=FQN ownedSections+=Section*)
 	 */
-	protected void sequence_PageExtension(EObject context, PageExtension semanticObject) {
+	protected void sequence_PageExtension(ISerializationContext context, PageExtension semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
+	 * Contexts:
+	 *     AbstractPage returns Page
+	 *     Page returns Page
+	 *
 	 * Constraint:
 	 *     (
 	 *         name=ID 
@@ -96,28 +121,35 @@ public class ActivityexplorerSemanticSequencer extends AbstractDelegatingSemanti
 	 *         label=STRING? 
 	 *         index=EInt 
 	 *         ownedOverview=Overview? 
-	 *         (imagePathOn=STRING? imagePathOff=STRING?)? 
+	 *         imagePathOn=STRING? 
+	 *         imagePathOff=STRING? 
 	 *         tabName=STRING? 
 	 *         hasPredicate=EBoolean? 
 	 *         showViewer=EBoolean? 
 	 *         ownedSections+=Section*
 	 *     )
 	 */
-	protected void sequence_Page(EObject context, Page semanticObject) {
+	protected void sequence_Page(ISerializationContext context, Page semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
+	 * Contexts:
+	 *     SectionExtension returns SectionExtension
+	 *
 	 * Constraint:
 	 *     (extendedSectionID=FQN ownedActivities+=Activity*)
 	 */
-	protected void sequence_SectionExtension(EObject context, SectionExtension semanticObject) {
+	protected void sequence_SectionExtension(ISerializationContext context, SectionExtension semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
+	 * Contexts:
+	 *     Section returns Section
+	 *
 	 * Constraint:
 	 *     (
 	 *         name=ID 
@@ -130,16 +162,21 @@ public class ActivityexplorerSemanticSequencer extends AbstractDelegatingSemanti
 	 *         ownedActivities+=Activity*
 	 *     )
 	 */
-	protected void sequence_Section(EObject context, Section semanticObject) {
+	protected void sequence_Section(ISerializationContext context, Section semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
+	 * Contexts:
+	 *     ViewpointActivityExplorer returns ViewpointActivityExplorer
+	 *
 	 * Constraint:
 	 *     (name=FQN ownedPages+=Page* ownedPages+=PageExtension* ownedSectionExtensions+=SectionExtension*)
 	 */
-	protected void sequence_ViewpointActivityExplorer(EObject context, ViewpointActivityExplorer semanticObject) {
+	protected void sequence_ViewpointActivityExplorer(ISerializationContext context, ViewpointActivityExplorer semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
+	
+	
 }

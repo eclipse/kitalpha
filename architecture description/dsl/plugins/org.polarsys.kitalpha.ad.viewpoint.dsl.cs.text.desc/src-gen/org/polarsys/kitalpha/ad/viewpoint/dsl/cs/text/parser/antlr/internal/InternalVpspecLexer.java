@@ -1,49 +1,46 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.parser.antlr.internal;
 
-import org.antlr.runtime.BaseRecognizer;
-import org.antlr.runtime.CharStream;
-import org.antlr.runtime.DFA;
-import org.antlr.runtime.EarlyExitException;
-import org.antlr.runtime.IntStream;
-import org.antlr.runtime.MismatchedSetException;
-import org.antlr.runtime.NoViableAltException;
-import org.antlr.runtime.RecognitionException;
-import org.antlr.runtime.RecognizerSharedState;
 // Hack: Use our own Lexer superclass by means of import. 
 // Currently there is no other way to specify the superclass for the lexer.
 import org.eclipse.xtext.parser.antlr.Lexer;
 
+
+import org.antlr.runtime.*;
+import java.util.Stack;
+import java.util.List;
+import java.util.ArrayList;
+
 @SuppressWarnings("all")
 public class InternalVpspecLexer extends Lexer {
-    public static final int RULE_ID=4;
-    public static final int T__29=29;
-    public static final int T__28=28;
-    public static final int T__27=27;
-    public static final int T__26=26;
-    public static final int T__25=25;
-    public static final int T__24=24;
-    public static final int T__23=23;
-    public static final int T__22=22;
-    public static final int RULE_ANY_OTHER=10;
-    public static final int T__21=21;
-    public static final int T__20=20;
-    public static final int EOF=-1;
+    public static final int RULE_STRING=5;
     public static final int RULE_SL_COMMENT=8;
-    public static final int RULE_ML_COMMENT=7;
     public static final int T__19=19;
+    public static final int T__15=15;
+    public static final int T__16=16;
+    public static final int T__17=17;
+    public static final int T__18=18;
+    public static final int T__11=11;
+    public static final int T__12=12;
+    public static final int T__13=13;
+    public static final int T__14=14;
+    public static final int EOF=-1;
     public static final int T__30=30;
     public static final int T__31=31;
-    public static final int RULE_STRING=5;
-    public static final int T__16=16;
-    public static final int T__15=15;
-    public static final int T__18=18;
-    public static final int T__17=17;
-    public static final int T__12=12;
-    public static final int T__11=11;
-    public static final int T__14=14;
-    public static final int T__13=13;
-    public static final int RULE_INT=6;
+    public static final int RULE_ID=4;
     public static final int RULE_WS=9;
+    public static final int RULE_ANY_OTHER=10;
+    public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
+    public static final int RULE_INT=6;
+    public static final int T__29=29;
+    public static final int T__22=22;
+    public static final int RULE_ML_COMMENT=7;
+    public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__25=25;
+    public static final int T__20=20;
+    public static final int T__21=21;
 
     // delegates
     // delegators
@@ -56,15 +53,15 @@ public class InternalVpspecLexer extends Lexer {
         super(input,state);
 
     }
-    public String getGrammarFileName() { return "../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g"; }
+    public String getGrammarFileName() { return "InternalVpspec.g"; }
 
     // $ANTLR start "T__11"
     public final void mT__11() throws RecognitionException {
         try {
             int _type = T__11;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:11:7: ( 'Viewpoint' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:11:9: 'Viewpoint'
+            // InternalVpspec.g:11:7: ( 'Viewpoint' )
+            // InternalVpspec.g:11:9: 'Viewpoint'
             {
             match("Viewpoint"); 
 
@@ -84,8 +81,8 @@ public class InternalVpspecLexer extends Lexer {
         try {
             int _type = T__12;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:12:7: ( '{' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:12:9: '{'
+            // InternalVpspec.g:12:7: ( '{' )
+            // InternalVpspec.g:12:9: '{'
             {
             match('{'); 
 
@@ -104,8 +101,8 @@ public class InternalVpspecLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:13:7: ( 'name:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:13:9: 'name:'
+            // InternalVpspec.g:13:7: ( 'name:' )
+            // InternalVpspec.g:13:9: 'name:'
             {
             match("name:"); 
 
@@ -125,8 +122,8 @@ public class InternalVpspecLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:14:7: ( 'description:' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:14:9: 'description:'
+            // InternalVpspec.g:14:7: ( 'description:' )
+            // InternalVpspec.g:14:9: 'description:'
             {
             match("description:"); 
 
@@ -146,8 +143,8 @@ public class InternalVpspecLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:15:7: ( 'extends' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:15:9: 'extends'
+            // InternalVpspec.g:15:7: ( 'extends' )
+            // InternalVpspec.g:15:9: 'extends'
             {
             match("extends"); 
 
@@ -167,8 +164,8 @@ public class InternalVpspecLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:16:7: ( ',' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:16:9: ','
+            // InternalVpspec.g:16:7: ( ',' )
+            // InternalVpspec.g:16:9: ','
             {
             match(','); 
 
@@ -187,8 +184,8 @@ public class InternalVpspecLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:17:7: ( 'aggregates' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:17:9: 'aggregates'
+            // InternalVpspec.g:17:7: ( 'aggregates' )
+            // InternalVpspec.g:17:9: 'aggregates'
             {
             match("aggregates"); 
 
@@ -208,8 +205,8 @@ public class InternalVpspecLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:18:7: ( 'uses viewpoint' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:18:9: 'uses viewpoint'
+            // InternalVpspec.g:18:7: ( 'uses viewpoint' )
+            // InternalVpspec.g:18:9: 'uses viewpoint'
             {
             match("uses viewpoint"); 
 
@@ -229,8 +226,8 @@ public class InternalVpspecLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:19:7: ( 'uses model' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:19:9: 'uses model'
+            // InternalVpspec.g:19:7: ( 'uses model' )
+            // InternalVpspec.g:19:9: 'uses model'
             {
             match("uses model"); 
 
@@ -250,8 +247,8 @@ public class InternalVpspecLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:20:7: ( 'uses diagram' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:20:9: 'uses diagram'
+            // InternalVpspec.g:20:7: ( 'uses diagram' )
+            // InternalVpspec.g:20:9: 'uses diagram'
             {
             match("uses diagram"); 
 
@@ -271,8 +268,8 @@ public class InternalVpspecLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:21:7: ( 'uses workspace' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:21:9: 'uses workspace'
+            // InternalVpspec.g:21:7: ( 'uses workspace' )
+            // InternalVpspec.g:21:9: 'uses workspace'
             {
             match("uses workspace"); 
 
@@ -292,8 +289,8 @@ public class InternalVpspecLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:22:7: ( 'uses filesystem' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:22:9: 'uses filesystem'
+            // InternalVpspec.g:22:7: ( 'uses filesystem' )
+            // InternalVpspec.g:22:9: 'uses filesystem'
             {
             match("uses filesystem"); 
 
@@ -313,8 +310,8 @@ public class InternalVpspecLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:23:7: ( 'Data' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:23:9: 'Data'
+            // InternalVpspec.g:23:7: ( 'Data' )
+            // InternalVpspec.g:23:9: 'Data'
             {
             match("Data"); 
 
@@ -334,8 +331,8 @@ public class InternalVpspecLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:24:7: ( 'UI' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:24:9: 'UI'
+            // InternalVpspec.g:24:7: ( 'UI' )
+            // InternalVpspec.g:24:9: 'UI'
             {
             match("UI"); 
 
@@ -355,8 +352,8 @@ public class InternalVpspecLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:25:7: ( 'Diagrams' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:25:9: 'Diagrams'
+            // InternalVpspec.g:25:7: ( 'Diagrams' )
+            // InternalVpspec.g:25:9: 'Diagrams'
             {
             match("Diagrams"); 
 
@@ -376,8 +373,8 @@ public class InternalVpspecLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:26:7: ( 'Activity-Explorer' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:26:9: 'Activity-Explorer'
+            // InternalVpspec.g:26:7: ( 'Activity-Explorer' )
+            // InternalVpspec.g:26:9: 'Activity-Explorer'
             {
             match("Activity-Explorer"); 
 
@@ -397,8 +394,8 @@ public class InternalVpspecLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:27:7: ( 'Services' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:27:9: 'Services'
+            // InternalVpspec.g:27:7: ( 'Services' )
+            // InternalVpspec.g:27:9: 'Services'
             {
             match("Services"); 
 
@@ -418,8 +415,8 @@ public class InternalVpspecLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:28:7: ( 'Build' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:28:9: 'Build'
+            // InternalVpspec.g:28:7: ( 'Build' )
+            // InternalVpspec.g:28:9: 'Build'
             {
             match("Build"); 
 
@@ -439,8 +436,8 @@ public class InternalVpspecLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:29:7: ( 'Configuration' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:29:9: 'Configuration'
+            // InternalVpspec.g:29:7: ( 'Configuration' )
+            // InternalVpspec.g:29:9: 'Configuration'
             {
             match("Configuration"); 
 
@@ -460,8 +457,8 @@ public class InternalVpspecLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:30:7: ( '}' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:30:9: '}'
+            // InternalVpspec.g:30:7: ( '}' )
+            // InternalVpspec.g:30:9: '}'
             {
             match('}'); 
 
@@ -480,8 +477,8 @@ public class InternalVpspecLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:31:7: ( '.' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:31:9: '.'
+            // InternalVpspec.g:31:7: ( '.' )
+            // InternalVpspec.g:31:9: '.'
             {
             match('.'); 
 
@@ -500,10 +497,10 @@ public class InternalVpspecLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:744:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:744:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalVpspec.g:744:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalVpspec.g:744:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:744:11: ( '^' )?
+            // InternalVpspec.g:744:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -512,7 +509,7 @@ public class InternalVpspecLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:744:11: '^'
+                    // InternalVpspec.g:744:11: '^'
                     {
                     match('^'); 
 
@@ -530,7 +527,7 @@ public class InternalVpspecLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:744:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalVpspec.g:744:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -543,7 +540,7 @@ public class InternalVpspecLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:
+            	    // InternalVpspec.g:
             	    {
             	    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
             	        input.consume();
@@ -579,10 +576,10 @@ public class InternalVpspecLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:746:10: ( ( '0' .. '9' )+ )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:746:12: ( '0' .. '9' )+
+            // InternalVpspec.g:746:10: ( ( '0' .. '9' )+ )
+            // InternalVpspec.g:746:12: ( '0' .. '9' )+
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:746:12: ( '0' .. '9' )+
+            // InternalVpspec.g:746:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -596,7 +593,7 @@ public class InternalVpspecLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:746:13: '0' .. '9'
+            	    // InternalVpspec.g:746:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -628,10 +625,10 @@ public class InternalVpspecLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:748:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:748:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalVpspec.g:748:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalVpspec.g:748:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:748:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalVpspec.g:748:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -649,10 +646,10 @@ public class InternalVpspecLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:748:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalVpspec.g:748:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:748:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalVpspec.g:748:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -668,7 +665,7 @@ public class InternalVpspecLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:748:21: '\\\\' .
+                    	    // InternalVpspec.g:748:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -676,7 +673,7 @@ public class InternalVpspecLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:748:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalVpspec.g:748:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -701,10 +698,10 @@ public class InternalVpspecLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:748:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalVpspec.g:748:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:748:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalVpspec.g:748:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -720,7 +717,7 @@ public class InternalVpspecLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:748:54: '\\\\' .
+                    	    // InternalVpspec.g:748:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -728,7 +725,7 @@ public class InternalVpspecLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:748:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalVpspec.g:748:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -771,12 +768,12 @@ public class InternalVpspecLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:750:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:750:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalVpspec.g:750:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalVpspec.g:750:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:750:24: ( options {greedy=false; } : . )*
+            // InternalVpspec.g:750:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -801,7 +798,7 @@ public class InternalVpspecLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:750:52: .
+            	    // InternalVpspec.g:750:52: .
             	    {
             	    matchAny(); 
 
@@ -831,12 +828,12 @@ public class InternalVpspecLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:752:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:752:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalVpspec.g:752:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalVpspec.g:752:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:752:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalVpspec.g:752:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -849,7 +846,7 @@ public class InternalVpspecLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:752:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalVpspec.g:752:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -869,7 +866,7 @@ public class InternalVpspecLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:752:40: ( ( '\\r' )? '\\n' )?
+            // InternalVpspec.g:752:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -878,9 +875,9 @@ public class InternalVpspecLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:752:41: ( '\\r' )? '\\n'
+                    // InternalVpspec.g:752:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:752:41: ( '\\r' )?
+                    // InternalVpspec.g:752:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -889,7 +886,7 @@ public class InternalVpspecLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:752:41: '\\r'
+                            // InternalVpspec.g:752:41: '\\r'
                             {
                             match('\r'); 
 
@@ -921,10 +918,10 @@ public class InternalVpspecLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:754:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:754:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalVpspec.g:754:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalVpspec.g:754:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:754:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalVpspec.g:754:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -938,7 +935,7 @@ public class InternalVpspecLexer extends Lexer {
 
                 switch (alt11) {
             	case 1 :
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:
+            	    // InternalVpspec.g:
             	    {
             	    if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
             	        input.consume();
@@ -978,8 +975,8 @@ public class InternalVpspecLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:756:16: ( . )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:756:18: .
+            // InternalVpspec.g:756:16: ( . )
+            // InternalVpspec.g:756:18: .
             {
             matchAny(); 
 
@@ -994,201 +991,201 @@ public class InternalVpspecLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        // InternalVpspec.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
         int alt12=28;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:1:10: T__11
+                // InternalVpspec.g:1:10: T__11
                 {
                 mT__11(); 
 
                 }
                 break;
             case 2 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:1:16: T__12
+                // InternalVpspec.g:1:16: T__12
                 {
                 mT__12(); 
 
                 }
                 break;
             case 3 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:1:22: T__13
+                // InternalVpspec.g:1:22: T__13
                 {
                 mT__13(); 
 
                 }
                 break;
             case 4 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:1:28: T__14
+                // InternalVpspec.g:1:28: T__14
                 {
                 mT__14(); 
 
                 }
                 break;
             case 5 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:1:34: T__15
+                // InternalVpspec.g:1:34: T__15
                 {
                 mT__15(); 
 
                 }
                 break;
             case 6 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:1:40: T__16
+                // InternalVpspec.g:1:40: T__16
                 {
                 mT__16(); 
 
                 }
                 break;
             case 7 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:1:46: T__17
+                // InternalVpspec.g:1:46: T__17
                 {
                 mT__17(); 
 
                 }
                 break;
             case 8 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:1:52: T__18
+                // InternalVpspec.g:1:52: T__18
                 {
                 mT__18(); 
 
                 }
                 break;
             case 9 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:1:58: T__19
+                // InternalVpspec.g:1:58: T__19
                 {
                 mT__19(); 
 
                 }
                 break;
             case 10 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:1:64: T__20
+                // InternalVpspec.g:1:64: T__20
                 {
                 mT__20(); 
 
                 }
                 break;
             case 11 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:1:70: T__21
+                // InternalVpspec.g:1:70: T__21
                 {
                 mT__21(); 
 
                 }
                 break;
             case 12 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:1:76: T__22
+                // InternalVpspec.g:1:76: T__22
                 {
                 mT__22(); 
 
                 }
                 break;
             case 13 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:1:82: T__23
+                // InternalVpspec.g:1:82: T__23
                 {
                 mT__23(); 
 
                 }
                 break;
             case 14 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:1:88: T__24
+                // InternalVpspec.g:1:88: T__24
                 {
                 mT__24(); 
 
                 }
                 break;
             case 15 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:1:94: T__25
+                // InternalVpspec.g:1:94: T__25
                 {
                 mT__25(); 
 
                 }
                 break;
             case 16 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:1:100: T__26
+                // InternalVpspec.g:1:100: T__26
                 {
                 mT__26(); 
 
                 }
                 break;
             case 17 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:1:106: T__27
+                // InternalVpspec.g:1:106: T__27
                 {
                 mT__27(); 
 
                 }
                 break;
             case 18 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:1:112: T__28
+                // InternalVpspec.g:1:112: T__28
                 {
                 mT__28(); 
 
                 }
                 break;
             case 19 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:1:118: T__29
+                // InternalVpspec.g:1:118: T__29
                 {
                 mT__29(); 
 
                 }
                 break;
             case 20 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:1:124: T__30
+                // InternalVpspec.g:1:124: T__30
                 {
                 mT__30(); 
 
                 }
                 break;
             case 21 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:1:130: T__31
+                // InternalVpspec.g:1:130: T__31
                 {
                 mT__31(); 
 
                 }
                 break;
             case 22 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:1:136: RULE_ID
+                // InternalVpspec.g:1:136: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
             case 23 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:1:144: RULE_INT
+                // InternalVpspec.g:1:144: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
             case 24 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:1:153: RULE_STRING
+                // InternalVpspec.g:1:153: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
             case 25 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:1:165: RULE_ML_COMMENT
+                // InternalVpspec.g:1:165: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
             case 26 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:1:181: RULE_SL_COMMENT
+                // InternalVpspec.g:1:181: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
             case 27 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:1:197: RULE_WS
+                // InternalVpspec.g:1:197: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
             case 28 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/parser/antlr/internal/InternalVpspec.g:1:205: RULE_ANY_OTHER
+                // InternalVpspec.g:1:205: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1202,54 +1199,19 @@ public class InternalVpspecLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\1\32\1\uffff\3\32\1\uffff\10\32\2\uffff\1\30\2\uffff\3"+
-        "\30\2\uffff\1\32\2\uffff\3\32\1\uffff\4\32\1\70\4\32\7\uffff\10"+
-        "\32\1\uffff\12\32\1\117\6\32\1\uffff\3\32\2\uffff\3\32\1\141\5\32"+
-        "\5\uffff\3\32\1\uffff\3\32\1\155\7\32\1\uffff\1\32\1\166\1\32\1"+
-        "\170\1\32\1\172\2\32\3\uffff\1\32\1\uffff\1\32\1\177\2\32\1\uffff"+
-        "\1\32\1\uffff\1\32\1\u0084\1\uffff";
+        "\1\uffff\1\32\1\uffff\3\32\1\uffff\10\32\2\uffff\1\30\2\uffff\3\30\2\uffff\1\32\2\uffff\3\32\1\uffff\4\32\1\70\4\32\7\uffff\10\32\1\uffff\12\32\1\117\6\32\1\uffff\3\32\2\uffff\3\32\1\141\5\32\5\uffff\3\32\1\uffff\3\32\1\155\7\32\1\uffff\1\32\1\166\1\32\1\170\1\32\1\172\2\32\3\uffff\1\32\1\uffff\1\32\1\177\2\32\1\uffff\1\32\1\uffff\1\32\1\u0084\1\uffff";
     static final String DFA12_eofS =
         "\u0085\uffff";
     static final String DFA12_minS =
-        "\1\0\1\151\1\uffff\1\141\1\145\1\170\1\uffff\1\147\1\163\1\141"+
-        "\1\111\1\143\1\145\1\165\1\157\2\uffff\1\101\2\uffff\2\0\1\52\2"+
-        "\uffff\1\145\2\uffff\1\155\1\163\1\164\1\uffff\1\147\1\145\1\164"+
-        "\1\141\1\60\1\164\1\162\1\151\1\156\7\uffff\1\167\1\145\1\143\1"+
-        "\145\1\162\1\163\1\141\1\147\1\uffff\1\151\1\166\1\154\1\146\1\160"+
-        "\1\72\1\162\1\156\1\145\1\40\1\60\1\162\1\166\1\151\1\144\1\151"+
-        "\1\157\1\uffff\1\151\1\144\1\147\1\144\1\uffff\1\141\1\151\1\143"+
-        "\1\60\1\147\1\151\1\160\1\163\1\141\5\uffff\1\155\1\164\1\145\1"+
-        "\uffff\1\165\1\156\1\164\1\60\1\164\1\163\1\171\1\163\1\162\1\164"+
-        "\1\151\1\uffff\1\145\1\60\1\55\1\60\1\141\1\60\1\157\1\163\3\uffff"+
-        "\1\164\1\uffff\1\156\1\60\1\151\1\72\1\uffff\1\157\1\uffff\1\156"+
-        "\1\60\1\uffff";
+        "\1\0\1\151\1\uffff\1\141\1\145\1\170\1\uffff\1\147\1\163\1\141\1\111\1\143\1\145\1\165\1\157\2\uffff\1\101\2\uffff\2\0\1\52\2\uffff\1\145\2\uffff\1\155\1\163\1\164\1\uffff\1\147\1\145\1\164\1\141\1\60\1\164\1\162\1\151\1\156\7\uffff\1\167\1\145\1\143\1\145\1\162\1\163\1\141\1\147\1\uffff\1\151\1\166\1\154\1\146\1\160\1\72\1\162\1\156\1\145\1\40\1\60\1\162\1\166\1\151\1\144\1\151\1\157\1\uffff\1\151\1\144\1\147\1\144\1\uffff\1\141\1\151\1\143\1\60\1\147\1\151\1\160\1\163\1\141\5\uffff\1\155\1\164\1\145\1\uffff\1\165\1\156\1\164\1\60\1\164\1\163\1\171\1\163\1\162\1\164\1\151\1\uffff\1\145\1\60\1\55\1\60\1\141\1\60\1\157\1\163\3\uffff\1\164\1\uffff\1\156\1\60\1\151\1\72\1\uffff\1\157\1\uffff\1\156\1\60\1\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\151\1\uffff\1\141\1\145\1\170\1\uffff\1\147\1\163\1"+
-        "\151\1\111\1\143\1\145\1\165\1\157\2\uffff\1\172\2\uffff\2\uffff"+
-        "\1\57\2\uffff\1\145\2\uffff\1\155\1\163\1\164\1\uffff\1\147\1\145"+
-        "\1\164\1\141\1\172\1\164\1\162\1\151\1\156\7\uffff\1\167\1\145\1"+
-        "\143\1\145\1\162\1\163\1\141\1\147\1\uffff\1\151\1\166\1\154\1\146"+
-        "\1\160\1\72\1\162\1\156\1\145\1\40\1\172\1\162\1\166\1\151\1\144"+
-        "\1\151\1\157\1\uffff\1\151\1\144\1\147\1\167\1\uffff\1\141\1\151"+
-        "\1\143\1\172\1\147\1\151\1\160\1\163\1\141\5\uffff\1\155\1\164\1"+
-        "\145\1\uffff\1\165\1\156\1\164\1\172\1\164\1\163\1\171\1\163\1\162"+
-        "\1\164\1\151\1\uffff\1\145\1\172\1\55\1\172\1\141\1\172\1\157\1"+
-        "\163\3\uffff\1\164\1\uffff\1\156\1\172\1\151\1\72\1\uffff\1\157"+
-        "\1\uffff\1\156\1\172\1\uffff";
+        "\1\uffff\1\151\1\uffff\1\141\1\145\1\170\1\uffff\1\147\1\163\1\151\1\111\1\143\1\145\1\165\1\157\2\uffff\1\172\2\uffff\2\uffff\1\57\2\uffff\1\145\2\uffff\1\155\1\163\1\164\1\uffff\1\147\1\145\1\164\1\141\1\172\1\164\1\162\1\151\1\156\7\uffff\1\167\1\145\1\143\1\145\1\162\1\163\1\141\1\147\1\uffff\1\151\1\166\1\154\1\146\1\160\1\72\1\162\1\156\1\145\1\40\1\172\1\162\1\166\1\151\1\144\1\151\1\157\1\uffff\1\151\1\144\1\147\1\167\1\uffff\1\141\1\151\1\143\1\172\1\147\1\151\1\160\1\163\1\141\5\uffff\1\155\1\164\1\145\1\uffff\1\165\1\156\1\164\1\172\1\164\1\163\1\171\1\163\1\162\1\164\1\151\1\uffff\1\145\1\172\1\55\1\172\1\141\1\172\1\157\1\163\3\uffff\1\164\1\uffff\1\156\1\172\1\151\1\72\1\uffff\1\157\1\uffff\1\156\1\172\1\uffff";
     static final String DFA12_acceptS =
-        "\2\uffff\1\2\3\uffff\1\6\10\uffff\1\24\1\25\1\uffff\1\26\1\27\3"+
-        "\uffff\1\33\1\34\1\uffff\1\26\1\2\3\uffff\1\6\11\uffff\1\24\1\25"+
-        "\1\27\1\30\1\31\1\32\1\33\10\uffff\1\16\21\uffff\1\3\4\uffff\1\15"+
-        "\11\uffff\1\10\1\11\1\12\1\13\1\14\3\uffff\1\22\13\uffff\1\5\10"+
-        "\uffff\1\17\1\20\1\21\1\uffff\1\1\4\uffff\1\7\1\uffff\1\4\2\uffff"+
-        "\1\23";
+        "\2\uffff\1\2\3\uffff\1\6\10\uffff\1\24\1\25\1\uffff\1\26\1\27\3\uffff\1\33\1\34\1\uffff\1\26\1\2\3\uffff\1\6\11\uffff\1\24\1\25\1\27\1\30\1\31\1\32\1\33\10\uffff\1\16\21\uffff\1\3\4\uffff\1\15\11\uffff\1\10\1\11\1\12\1\13\1\14\3\uffff\1\22\13\uffff\1\5\10\uffff\1\17\1\20\1\21\1\uffff\1\1\4\uffff\1\7\1\uffff\1\4\2\uffff\1\23";
     static final String DFA12_specialS =
-        "\1\2\23\uffff\1\0\1\1\157\uffff}>";
+        "\1\1\23\uffff\1\2\1\0\157\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\30\2\27\2\30\1\27\22\30\1\27\1\30\1\24\4\30\1\25\4\30\1"+
-            "\6\1\30\1\20\1\26\12\23\7\30\1\13\1\15\1\16\1\11\16\22\1\14"+
-            "\1\22\1\12\1\1\4\22\3\30\1\21\1\22\1\30\1\7\2\22\1\4\1\5\10"+
-            "\22\1\3\6\22\1\10\5\22\1\2\1\30\1\17\uff82\30",
+            "\11\30\2\27\2\30\1\27\22\30\1\27\1\30\1\24\4\30\1\25\4\30\1\6\1\30\1\20\1\26\12\23\7\30\1\13\1\15\1\16\1\11\16\22\1\14\1\22\1\12\1\1\4\22\3\30\1\21\1\22\1\30\1\7\2\22\1\4\1\5\10\22\1\3\6\22\1\10\5\22\1\2\1\30\1\17\uff82\30",
             "\1\31",
             "",
             "\1\34",
@@ -1421,16 +1383,6 @@ public class InternalVpspecLexer extends Lexer {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA12_20 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA12_20>='\u0000' && LA12_20<='\uFFFF')) ) {s = 44;}
-
-                        else s = 24;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
                         int LA12_21 = input.LA(1);
 
                         s = -1;
@@ -1440,7 +1392,7 @@ public class InternalVpspecLexer extends Lexer {
 
                         if ( s>=0 ) return s;
                         break;
-                    case 2 : 
+                    case 1 : 
                         int LA12_0 = input.LA(1);
 
                         s = -1;
@@ -1491,6 +1443,16 @@ public class InternalVpspecLexer extends Lexer {
                         else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 23;}
 
                         else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='(' && LA12_0<='+')||LA12_0=='-'||(LA12_0>=':' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||LA12_0=='|'||(LA12_0>='~' && LA12_0<='\uFFFF')) ) {s = 24;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA12_20 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA12_20>='\u0000' && LA12_20<='\uFFFF')) ) {s = 44;}
+
+                        else s = 24;
 
                         if ( s>=0 ) return s;
                         break;

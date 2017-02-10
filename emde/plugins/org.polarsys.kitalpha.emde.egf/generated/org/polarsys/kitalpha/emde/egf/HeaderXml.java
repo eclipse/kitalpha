@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20150924-1035
+//Generated with EGF 1.4.1.v20161010-1704
 package org.polarsys.kitalpha.emde.egf;
 
 import org.polarsys.kitalpha.emde.egf.utils.*;
@@ -90,10 +90,13 @@ public class HeaderXml extends org.eclipse.egf.emf.pattern.base.HeaderXml {
 	protected void method_doGenerate(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		{
-			GenBase copyrightHolder = argument instanceof GenBase ? (GenBase) argument : argument instanceof Object[] && ((Object[]) argument)[0] instanceof GenBase ? (GenBase) ((Object[]) argument)[0] : null;
+			GenBase copyrightHolder = argument instanceof GenBase ? (GenBase) argument
+					: argument instanceof Object[] && ((Object[]) argument)[0] instanceof GenBase
+							? (GenBase) ((Object[]) argument)[0] : null;
 			if (copyrightHolder != null && copyrightHolder.hasCopyright()) {
 				stringBuffer.append(TEXT_1);
-				stringBuffer.append(copyrightHolder.getCopyright(copyrightHolder.getGenModel().getIndentation(stringBuffer)));
+				stringBuffer.append(
+						copyrightHolder.getCopyright(copyrightHolder.getGenModel().getIndentation(stringBuffer)));
 				stringBuffer.append(TEXT_2);
 			}
 		}

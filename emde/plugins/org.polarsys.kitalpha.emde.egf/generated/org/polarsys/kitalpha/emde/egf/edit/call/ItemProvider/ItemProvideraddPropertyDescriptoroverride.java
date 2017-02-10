@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20150924-1035
+//Generated with EGF 1.4.1.v20161010-1704
 package org.polarsys.kitalpha.emde.egf.edit.call.ItemProvider;
 
 import org.polarsys.kitalpha.emde.egf.helper.*;
@@ -16,7 +16,8 @@ import org.eclipse.egf.model.pattern.*;
 import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 
-public class ItemProvideraddPropertyDescriptoroverride extends org.eclipse.egf.emf.pattern.edit.call.ItemProvider.ItemProvideraddPropertyDescriptoroverride {
+public class ItemProvideraddPropertyDescriptoroverride
+		extends org.eclipse.egf.emf.pattern.edit.call.ItemProvider.ItemProvideraddPropertyDescriptoroverride {
 	protected static String nl;
 
 	public static synchronized ItemProvideraddPropertyDescriptoroverride create(String lineSeparator) {
@@ -28,11 +29,15 @@ public class ItemProvideraddPropertyDescriptoroverride extends org.eclipse.egf.e
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
 	protected final String TEXT_1 = "\t\t// begin-extension-code" + NL + "\t\t";
-	protected final String TEXT_2 = "PropertyDescriptor = createItemPropertyDescriptor" + NL + "\t\t// end-extension-code\t\t";
-	protected final String TEXT_3 = NL + "\t\t// begin-extension-code" + NL + "\t\titemPropertyDescriptors.add" + NL + "\t\t\t(createItemPropertyDescriptor" + NL + "\t\t// end-extension-code";
-	protected final String TEXT_4 = NL + "\t\t// begin-extension-code" + NL + "\t\titemPropertyDescriptors.add" + NL + "\t\t\t(createItemPropertyDescriptor" + NL + "\t\t// end-extension-code";
+	protected final String TEXT_2 = "PropertyDescriptor = createItemPropertyDescriptor" + NL
+			+ "\t\t// end-extension-code\t\t";
+	protected final String TEXT_3 = NL + "\t\t// begin-extension-code" + NL + "\t\titemPropertyDescriptors.add" + NL
+			+ "\t\t\t(createItemPropertyDescriptor" + NL + "\t\t// end-extension-code";
+	protected final String TEXT_4 = NL + "\t\t// begin-extension-code" + NL + "\t\titemPropertyDescriptors.add" + NL
+			+ "\t\t\t(createItemPropertyDescriptor" + NL + "\t\t// end-extension-code";
 	protected final String TEXT_5 = NL + "\t\t\t\t(((";
-	protected final String TEXT_6 = ")adapterFactory).getRootAdapterFactory()," + NL + "\t\t\t\t getResourceLocator()," + NL + "\t\t\t\t getString(\"_UI_";
+	protected final String TEXT_6 = ")adapterFactory).getRootAdapterFactory()," + NL + "\t\t\t\t getResourceLocator(),"
+			+ NL + "\t\t\t\t getString(\"_UI_";
 	protected final String TEXT_7 = "_";
 	protected final String TEXT_8 = "_feature\"),";
 	protected final String TEXT_9 = NL + "\t\t\t\t getString(\"_UI_PropertyDescriptor_description\", \"_UI_";
@@ -54,18 +59,24 @@ public class ItemProvideraddPropertyDescriptoroverride extends org.eclipse.egf.e
 	protected final String TEXT_25 = NL + "\t\t\t\t null,";
 	protected final String TEXT_26 = NL + "\t\t\t\t getString(\"";
 	protected final String TEXT_27 = "\"),";
-	protected final String TEXT_28 = NL + "\t\t// begin-extension-code" + NL + "\t\t\t\t null);" + NL + "\t\titemPropertyDescriptors.add(";
+	protected final String TEXT_28 = NL + "\t\t// begin-extension-code" + NL + "\t\t\t\t null);" + NL
+			+ "\t\titemPropertyDescriptors.add(";
 	protected final String TEXT_29 = "PropertyDescriptor);" + NL + "\t\t// end-extension-code";
-	protected final String TEXT_30 = NL + "\t\t// begin-extension-code" + NL + "\t\t\t\t null));" + NL + "\t\t// end-extension-code";
-	protected final String TEXT_31 = NL + "\t\t// begin-extension-code" + NL + "\t\t\t\t null));" + NL + "\t\t// end-extension-code";
+	protected final String TEXT_30 = NL + "\t\t// begin-extension-code" + NL + "\t\t\t\t null));" + NL
+			+ "\t\t// end-extension-code";
+	protected final String TEXT_31 = NL + "\t\t// begin-extension-code" + NL + "\t\t\t\t null));" + NL
+			+ "\t\t// end-extension-code";
 	protected final String TEXT_32 = NL + "\t\t\t\t new String[] {";
 	protected final String TEXT_33 = NL + "\t\t\t\t\t\"";
 	protected final String TEXT_34 = "\"";
 	protected final String TEXT_35 = ",";
-	protected final String TEXT_36 = NL + "\t\t// begin-extension-code" + NL + "\t\t\t\t });" + NL + "\t\titemPropertyDescriptors.add(";
+	protected final String TEXT_36 = NL + "\t\t// begin-extension-code" + NL + "\t\t\t\t });" + NL
+			+ "\t\titemPropertyDescriptors.add(";
 	protected final String TEXT_37 = "PropertyDescriptor);" + NL + "\t\t// begin-extension-code";
-	protected final String TEXT_38 = NL + "\t\t// begin-extension-code" + NL + "\t\t\t\t }));" + NL + "\t\t// end-extension-code";
-	protected final String TEXT_39 = NL + "\t\t// begin-extension-code" + NL + "\t\t\t\t }));" + NL + "\t\t// end-extension-code";
+	protected final String TEXT_38 = NL + "\t\t// begin-extension-code" + NL + "\t\t\t\t }));" + NL
+			+ "\t\t// end-extension-code";
+	protected final String TEXT_39 = NL + "\t\t// begin-extension-code" + NL + "\t\t\t\t }));" + NL
+			+ "\t\t// end-extension-code";
 	protected final String TEXT_40 = NL;
 	protected final String TEXT_41 = NL;
 
@@ -159,7 +170,8 @@ public class ItemProvideraddPropertyDescriptoroverride extends org.eclipse.egf.e
 
 	protected void method_doGenerate(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
-		if (ExtensionHelper.hasExtensibleProviderFactory(genModel) || ExtensionHelper.hasChildCreationExtenders(genModel)) {
+		if (ExtensionHelper.hasExtensibleProviderFactory(genModel)
+				|| ExtensionHelper.hasChildCreationExtenders(genModel)) {
 			if (genFeature.getEcoreFeature() instanceof EReference && genFeature.getEcoreFeature().isMany() == false) {
 				stringBuffer.append(TEXT_1);
 				stringBuffer.append(genFeature.getName());
@@ -224,8 +236,10 @@ public class ItemProvideraddPropertyDescriptoroverride extends org.eclipse.egf.e
 			stringBuffer.append(genModel.getNonNLS());
 		}
 		if (genFeature.getPropertyFilterFlags().isEmpty()) {
-			if (ExtensionHelper.hasExtensibleProviderFactory(genModel) || ExtensionHelper.hasChildCreationExtenders(genModel)) {
-				if (genFeature.getEcoreFeature() instanceof EReference && genFeature.getEcoreFeature().isMany() == false) {
+			if (ExtensionHelper.hasExtensibleProviderFactory(genModel)
+					|| ExtensionHelper.hasChildCreationExtenders(genModel)) {
+				if (genFeature.getEcoreFeature() instanceof EReference
+						&& genFeature.getEcoreFeature().isMany() == false) {
 					stringBuffer.append(TEXT_28);
 					stringBuffer.append(genFeature.getName());
 					stringBuffer.append(TEXT_29);
@@ -249,8 +263,10 @@ public class ItemProvideraddPropertyDescriptoroverride extends org.eclipse.egf.e
 					stringBuffer.append(genModel.getNonNLS());
 				}
 			}
-			if (ExtensionHelper.hasExtensibleProviderFactory(genModel) || ExtensionHelper.hasChildCreationExtenders(genModel)) {
-				if (genFeature.getEcoreFeature() instanceof EReference && genFeature.getEcoreFeature().isMany() == false) {
+			if (ExtensionHelper.hasExtensibleProviderFactory(genModel)
+					|| ExtensionHelper.hasChildCreationExtenders(genModel)) {
+				if (genFeature.getEcoreFeature() instanceof EReference
+						&& genFeature.getEcoreFeature().isMany() == false) {
 					stringBuffer.append(TEXT_36);
 					stringBuffer.append(genFeature.getName());
 					stringBuffer.append(TEXT_37);

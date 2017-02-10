@@ -1,65 +1,62 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.antlr.internal;
 
-import org.antlr.runtime.BaseRecognizer;
-import org.antlr.runtime.CharStream;
-import org.antlr.runtime.DFA;
-import org.antlr.runtime.EarlyExitException;
-import org.antlr.runtime.IntStream;
-import org.antlr.runtime.MismatchedSetException;
-import org.antlr.runtime.NoViableAltException;
-import org.antlr.runtime.RecognitionException;
-import org.antlr.runtime.RecognizerSharedState;
 // Hack: Use our own Lexer superclass by means of import. 
 // Currently there is no other way to specify the superclass for the lexer.
 import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.Lexer;
 
+
+import org.antlr.runtime.*;
+import java.util.Stack;
+import java.util.List;
+import java.util.ArrayList;
+
 @SuppressWarnings("all")
 public class InternalVpconfLexer extends Lexer {
-    public static final int RULE_ID=5;
-    public static final int T__29=29;
-    public static final int T__28=28;
-    public static final int T__27=27;
-    public static final int T__26=26;
-    public static final int T__25=25;
-    public static final int T__24=24;
-    public static final int T__23=23;
-    public static final int T__22=22;
-    public static final int T__21=21;
-    public static final int RULE_ANY_OTHER=10;
-    public static final int T__20=20;
-    public static final int EOF=-1;
     public static final int T__19=19;
-    public static final int T__16=16;
     public static final int T__15=15;
-    public static final int T__18=18;
+    public static final int T__16=16;
     public static final int T__17=17;
-    public static final int T__12=12;
+    public static final int T__18=18;
     public static final int T__11=11;
-    public static final int T__14=14;
+    public static final int T__12=12;
     public static final int T__13=13;
+    public static final int T__14=14;
+    public static final int RULE_ID=5;
+    public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
     public static final int RULE_INT=4;
-    public static final int T__42=42;
-    public static final int T__43=43;
-    public static final int T__40=40;
-    public static final int T__41=41;
-    public static final int T__46=46;
-    public static final int T__47=47;
-    public static final int T__44=44;
-    public static final int T__45=45;
-    public static final int RULE_SL_COMMENT=8;
+    public static final int T__29=29;
+    public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
-    public static final int T__30=30;
-    public static final int T__31=31;
+    public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__25=25;
+    public static final int T__20=20;
+    public static final int T__21=21;
     public static final int RULE_STRING=6;
-    public static final int T__32=32;
+    public static final int RULE_SL_COMMENT=8;
+    public static final int T__37=37;
+    public static final int T__38=38;
+    public static final int T__39=39;
     public static final int T__33=33;
     public static final int T__34=34;
     public static final int T__35=35;
     public static final int T__36=36;
-    public static final int T__37=37;
-    public static final int T__38=38;
-    public static final int T__39=39;
+    public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
     public static final int RULE_WS=9;
+    public static final int RULE_ANY_OTHER=10;
+    public static final int T__44=44;
+    public static final int T__45=45;
+    public static final int T__46=46;
+    public static final int T__47=47;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__42=42;
+    public static final int T__43=43;
 
     // delegates
     // delegators
@@ -1671,7 +1668,7 @@ public class InternalVpconfLexer extends Lexer {
     static final String DFA12_acceptS =
         "\2\uffff\1\2\3\uffff\1\6\1\7\4\uffff\1\15\1\16\1\uffff\1\20\10\uffff\1\41\1\45\1\uffff\1\46\1\47\3\uffff\1\53\1\54\1\1\1\46\1\2\4\uffff\1\6\1\7\7\uffff\1\15\1\16\1\uffff\1\20\15\uffff\1\41\1\45\1\47\1\50\1\51\1\52\1\53\64\uffff\1\3\6\uffff\1\14\5\uffff\1\21\1\uffff\1\23\5\uffff\1\33\3\uffff\1\42\2\uffff\1\4\2\uffff\1\12\4\uffff\1\17\4\uffff\1\32\6\uffff\1\10\6\uffff\1\22\12\uffff\1\11\1\uffff\1\26\3\uffff\1\24\4\uffff\1\34\1\35\1\43\20\uffff\1\37\1\uffff\1\44\1\uffff\1\13\10\uffff\1\36\1\31\7\uffff\1\40\1\5\1\30\2\uffff\1\25\2\uffff\1\27";
     static final String DFA12_specialS =
-        "\1\1\34\uffff\1\2\1\0\u00de\uffff}>";
+        "\1\1\34\uffff\1\0\1\2\u00de\uffff}>";
     static final String[] DFA12_transitionS = {
             "\11\41\2\40\2\41\1\40\22\41\1\40\1\41\1\35\4\41\1\36\1\14\1\15\2\41\1\30\1\2\1\31\1\37\12\34\1\17\6\41\2\33\1\5\1\33\1\20\4\33\1\22\2\33\1\16\1\33\1\23\4\33\1\21\6\33\3\41\1\32\1\1\1\41\1\25\2\33\1\13\1\24\1\4\1\12\6\33\1\11\1\33\1\10\1\33\1\26\1\33\1\3\1\33\1\27\4\33\1\6\1\41\1\7\uff82\41",
             "\12\43\7\uffff\32\43\4\uffff\1\43\1\uffff\32\43",
@@ -1965,10 +1962,10 @@ public class InternalVpconfLexer extends Lexer {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA12_30 = input.LA(1);
+                        int LA12_29 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_30>='\u0000' && LA12_30<='\uFFFF')) ) {s = 70;}
+                        if ( ((LA12_29>='\u0000' && LA12_29<='\uFFFF')) ) {s = 70;}
 
                         else s = 33;
 
@@ -2047,10 +2044,10 @@ public class InternalVpconfLexer extends Lexer {
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA12_29 = input.LA(1);
+                        int LA12_30 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_29>='\u0000' && LA12_29<='\uFFFF')) ) {s = 70;}
+                        if ( ((LA12_30>='\u0000' && LA12_30<='\uFFFF')) ) {s = 70;}
 
                         else s = 33;
 

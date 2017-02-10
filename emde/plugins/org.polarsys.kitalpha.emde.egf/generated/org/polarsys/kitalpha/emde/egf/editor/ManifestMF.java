@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20150924-1035
+//Generated with EGF 1.4.1.v20161010-1704
 package org.polarsys.kitalpha.emde.egf.editor;
 
 import java.util.*;
@@ -16,7 +16,6 @@ public class ManifestMF {
 	public ManifestMF() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
-
 	}
 
 	public void generate(Object argument) throws Exception {

@@ -19,11 +19,11 @@ import org.polarsys.kitalpha.emde.model.ExtensibleElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.emde.example.simplecomponent.model.simplecomponent.ComponentElement#getName <em>Name</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.emde.example.simplecomponent.model.simplecomponent.ComponentElement#getDescription <em>Description</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.emde.example.simplecomponent.model.simplecomponent.SimplecomponentPackage#getComponentElement()
  * @model abstract="true"
@@ -33,7 +33,7 @@ public interface ComponentElement extends ExtensibleElement {
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
@@ -51,7 +51,7 @@ public interface ComponentElement extends ExtensibleElement {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.emde.example.simplecomponent.model.simplecomponent.ComponentElement#getName <em>Name</em>}' attribute.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Name</em>' attribute.
@@ -63,7 +63,7 @@ public interface ComponentElement extends ExtensibleElement {
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Description</em>' attribute isn't clear,
@@ -81,7 +81,7 @@ public interface ComponentElement extends ExtensibleElement {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.emde.example.simplecomponent.model.simplecomponent.ComponentElement#getDescription <em>Description</em>}' attribute.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Description</em>' attribute.

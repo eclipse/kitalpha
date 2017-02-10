@@ -37,7 +37,8 @@ public class SimplecomponentFactoryImpl extends EFactoryImpl implements Simpleco
 	 */
 	public static SimplecomponentFactory init() {
 		try {
-			SimplecomponentFactory theSimplecomponentFactory = (SimplecomponentFactory) EPackage.Registry.INSTANCE.getEFactory("http://www.polarsys.org/kitalpha/emde/example/simplecomponent"); //$NON-NLS-1$ 
+			SimplecomponentFactory theSimplecomponentFactory = (SimplecomponentFactory) EPackage.Registry.INSTANCE
+					.getEFactory(SimplecomponentPackage.eNS_URI);
 			if (theSimplecomponentFactory != null) {
 				return theSimplecomponentFactory;
 			}

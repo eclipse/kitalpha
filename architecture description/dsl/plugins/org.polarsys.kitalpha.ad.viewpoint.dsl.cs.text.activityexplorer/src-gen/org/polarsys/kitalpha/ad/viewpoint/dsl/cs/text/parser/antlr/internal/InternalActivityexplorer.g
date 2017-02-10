@@ -100,7 +100,7 @@ ruleViewpointActivityExplorer returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"FQN");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.FQN");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -130,7 +130,7 @@ ruleViewpointActivityExplorer returns [EObject current=null]
        			$current, 
        			"ownedPages",
         		lv_ownedPages_6_0, 
-        		"Page");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.Page");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -152,7 +152,7 @@ ruleViewpointActivityExplorer returns [EObject current=null]
        			$current, 
        			"ownedPages",
         		lv_ownedPages_8_0, 
-        		"PageExtension");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.PageExtension");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -170,7 +170,7 @@ ruleViewpointActivityExplorer returns [EObject current=null]
        			$current, 
        			"ownedSectionExtensions",
         		lv_ownedSectionExtensions_9_0, 
-        		"SectionExtension");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.SectionExtension");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -226,7 +226,7 @@ rulePage returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"ID");
+        		"org.eclipse.xtext.common.Terminals.ID");
 	    }
 
 )
@@ -252,7 +252,7 @@ rulePage returns [EObject current=null]
        			$current, 
        			"description",
         		lv_description_5_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -274,7 +274,7 @@ rulePage returns [EObject current=null]
        			$current, 
        			"fileExtensions",
         		lv_fileExtensions_7_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -295,7 +295,7 @@ rulePage returns [EObject current=null]
        			$current, 
        			"activityExplorerItemID",
         		lv_activityExplorerItemID_9_0, 
-        		"FQN");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.FQN");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -318,7 +318,7 @@ rulePage returns [EObject current=null]
        			$current, 
        			"label",
         		lv_label_11_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -339,7 +339,7 @@ rulePage returns [EObject current=null]
        			$current, 
        			"index",
         		lv_index_13_0, 
-        		"EInt");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EInt");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -357,7 +357,7 @@ rulePage returns [EObject current=null]
        			$current, 
        			"ownedOverview",
         		lv_ownedOverview_14_0, 
-        		"Overview");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.Overview");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -392,7 +392,7 @@ rulePage returns [EObject current=null]
        			$current, 
        			"imagePathOn",
         		lv_imagePathOn_19_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -418,7 +418,7 @@ rulePage returns [EObject current=null]
        			$current, 
        			"imagePathOff",
         		lv_imagePathOff_22_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -444,7 +444,7 @@ rulePage returns [EObject current=null]
        			$current, 
        			"tabName",
         		lv_tabName_25_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -469,7 +469,7 @@ rulePage returns [EObject current=null]
        			$current, 
        			"hasPredicate",
         		lv_hasPredicate_28_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -495,7 +495,7 @@ rulePage returns [EObject current=null]
        			$current, 
        			"showViewer",
         		lv_showViewer_31_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -521,7 +521,7 @@ rulePage returns [EObject current=null]
        			$current, 
        			"ownedSections",
         		lv_ownedSections_34_0, 
-        		"Section");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.Section");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -579,7 +579,7 @@ ruleSection returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"ID");
+        		"org.eclipse.xtext.common.Terminals.ID");
 	    }
 
 )
@@ -605,7 +605,7 @@ ruleSection returns [EObject current=null]
        			$current, 
        			"description",
         		lv_description_5_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -626,7 +626,7 @@ ruleSection returns [EObject current=null]
        			$current, 
        			"activityExplorerItemID",
         		lv_activityExplorerItemID_7_0, 
-        		"FQN");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.FQN");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -649,7 +649,7 @@ ruleSection returns [EObject current=null]
        			$current, 
        			"label",
         		lv_label_9_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -670,7 +670,7 @@ ruleSection returns [EObject current=null]
        			$current, 
        			"index",
         		lv_index_11_0, 
-        		"EInt");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EInt");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -696,7 +696,7 @@ ruleSection returns [EObject current=null]
        			$current, 
        			"filtering",
         		lv_filtering_14_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -722,7 +722,7 @@ ruleSection returns [EObject current=null]
        			$current, 
        			"expanded",
         		lv_expanded_17_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -748,7 +748,7 @@ ruleSection returns [EObject current=null]
        			$current, 
        			"ownedActivities",
         		lv_ownedActivities_20_0, 
-        		"Activity");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.Activity");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -806,7 +806,7 @@ ruleActivity returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"ID");
+        		"org.eclipse.xtext.common.Terminals.ID");
 	    }
 
 )
@@ -832,7 +832,7 @@ ruleActivity returns [EObject current=null]
        			$current, 
        			"description",
         		lv_description_5_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -853,7 +853,7 @@ ruleActivity returns [EObject current=null]
        			$current, 
        			"activityExplorerItemID",
         		lv_activityExplorerItemID_7_0, 
-        		"FQN");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.FQN");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -876,7 +876,7 @@ ruleActivity returns [EObject current=null]
        			$current, 
        			"label",
         		lv_label_9_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -897,7 +897,7 @@ ruleActivity returns [EObject current=null]
        			$current, 
        			"index",
         		lv_index_11_0, 
-        		"EInt");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EInt");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -923,7 +923,7 @@ ruleActivity returns [EObject current=null]
        			$current, 
        			"hasPredicate",
         		lv_hasPredicate_14_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -950,7 +950,7 @@ ruleActivity returns [EObject current=null]
        			$current, 
        			"imagePathOff",
         		lv_imagePathOff_17_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -1010,7 +1010,7 @@ rulePageExtension returns [EObject current=null]
        			$current, 
        			"extendedPageID",
         		lv_extendedPageID_4_0, 
-        		"FQN");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.FQN");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1028,7 +1028,7 @@ rulePageExtension returns [EObject current=null]
        			$current, 
        			"ownedSections",
         		lv_ownedSections_5_0, 
-        		"Section");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.Section");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1089,7 +1089,7 @@ ruleSectionExtension returns [EObject current=null]
        			$current, 
        			"extendedSectionID",
         		lv_extendedSectionID_4_0, 
-        		"FQN");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.FQN");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1107,7 +1107,7 @@ ruleSectionExtension returns [EObject current=null]
        			$current, 
        			"ownedActivities",
         		lv_ownedActivities_5_0, 
-        		"Activity");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer.Activity");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1169,7 +1169,7 @@ ruleOverview returns [EObject current=null]
        			$current, 
        			"description",
         		lv_description_4_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -1195,7 +1195,7 @@ ruleOverview returns [EObject current=null]
        			$current, 
        			"imagePathOn",
         		lv_imagePathOn_7_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -1221,7 +1221,7 @@ ruleOverview returns [EObject current=null]
        			$current, 
        			"imagePathOff",
         		lv_imagePathOff_10_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )

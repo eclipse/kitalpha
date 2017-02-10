@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -20,13 +20,14 @@ import org.eclipse.xtext.service.GrammarProvider;
 import org.eclipse.xtext.service.AbstractElementFinder.*;
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.CommonGrammarAccess;
+import org.eclipse.xtext.common.services.TerminalsGrammarAccess;
 
 @Singleton
 public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
 	public class DiagramsElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Diagrams");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Diagrams");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cDiagramsAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cImportsAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -58,7 +59,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class AbstractImportElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AbstractImport");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.AbstractImport");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cImportNameSpaceParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cImportGroupParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
@@ -78,20 +79,20 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ImportNameSpaceElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ImportNameSpace");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ImportNameSpace");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cImportKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cImportedNamespaceAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cImportedNamespaceFQNParserRuleCall_1_0 = (RuleCall)cImportedNamespaceAssignment_1.eContents().get(0);
 		
 		//ImportNameSpace:
-		//	"import" importedNamespace=FQN;
+		//	'import' importedNamespace=FQN;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"import" importedNamespace=FQN
+		//'import' importedNamespace=FQN
 		public Group getGroup() { return cGroup; }
 
-		//"import"
+		//'import'
 		public Keyword getImportKeyword_0() { return cImportKeyword_0; }
 
 		//importedNamespace=FQN
@@ -102,7 +103,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ImportGroupElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ImportGroup");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ImportGroup");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cImportKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cExternalKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -110,16 +111,16 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cImportedGroupEStringParserRuleCall_2_0 = (RuleCall)cImportedGroupAssignment_2.eContents().get(0);
 		
 		//ImportGroup:
-		//	"import" "external" importedGroup=EString;
+		//	'import' 'external' importedGroup=EString;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"import" "external" importedGroup=EString
+		//'import' 'external' importedGroup=EString
 		public Group getGroup() { return cGroup; }
 
-		//"import"
+		//'import'
 		public Keyword getImportKeyword_0() { return cImportKeyword_0; }
 
-		//"external"
+		//'external'
 		public Keyword getExternalKeyword_1() { return cExternalKeyword_1; }
 
 		//importedGroup=EString
@@ -130,11 +131,11 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class AspectElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Aspect");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Aspect");
 		private final RuleCall cDiagramSetParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		//Aspect returns vpdesc::Aspect:
-		//	DiagramSet;
+		//Aspect vpdesc::Aspect:
+		//	DiagramSet
 		@Override public ParserRule getRule() { return rule; }
 
 		//DiagramSet
@@ -142,7 +143,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class DiagramSetElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DiagramSet");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.DiagramSet");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cDiagramSetAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cDiagramsKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -157,17 +158,17 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		// * 							vpdiagram
 		// * 
 		// ******************************************************************** /
-		//DiagramSet returns vpdesc::Aspect:
-		//	{vpdiagram::DiagramSet} "Diagrams" name=FQN "{" diagrams+=DiagramRepresentation* "}";
+		//DiagramSet vpdesc::Aspect:
+		//	{vpdiagram::DiagramSet} 'Diagrams' name=FQN '{' diagrams+=DiagramRepresentation* '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpdiagram::DiagramSet} "Diagrams" name=FQN "{" diagrams+=DiagramRepresentation* "}"
+		//{vpdiagram::DiagramSet} 'Diagrams' name=FQN '{' diagrams+=DiagramRepresentation* '}'
 		public Group getGroup() { return cGroup; }
 
 		//{vpdiagram::DiagramSet}
 		public Action getDiagramSetAction_0() { return cDiagramSetAction_0; }
 
-		//"Diagrams"
+		//'Diagrams'
 		public Keyword getDiagramsKeyword_1() { return cDiagramsKeyword_1; }
 
 		//name=FQN
@@ -176,7 +177,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getNameFQNParserRuleCall_2_0() { return cNameFQNParserRuleCall_2_0; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
 		//diagrams+=DiagramRepresentation*
@@ -185,18 +186,18 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//DiagramRepresentation
 		public RuleCall getDiagramsDiagramRepresentationParserRuleCall_4_0() { return cDiagramsDiagramRepresentationParserRuleCall_4_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 
 	public class DiagramRepresentationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DiagramRepresentation");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.DiagramRepresentation");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cDiagramParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cDiagramExtensionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//DiagramRepresentation returns vpdiagram::DiagramRepresentation:
-		//	Diagram | DiagramExtension;
+		//DiagramRepresentation vpdiagram::DiagramRepresentation:
+		//	Diagram | DiagramExtension
 		@Override public ParserRule getRule() { return rule; }
 
 		//Diagram | DiagramExtension
@@ -210,13 +211,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class DiagramElementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DiagramElement");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.DiagramElement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cDiagramChildrenParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cBorderedNodeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//DiagramElement returns vpdiagram::DiagramElement:
-		//	DiagramChildren | BorderedNode;
+		//DiagramElement vpdiagram::DiagramElement:
+		//	DiagramChildren | BorderedNode
 		@Override public ParserRule getRule() { return rule; }
 
 		//DiagramChildren | BorderedNode
@@ -230,14 +231,14 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class DiagramChildrenElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DiagramChildren");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.DiagramChildren");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cAbstractEdgeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cContainerParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cNodeParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
-		//DiagramChildren returns vpdiagram::DiagramChildren:
-		//	AbstractEdge | Container | Node;
+		//DiagramChildren vpdiagram::DiagramChildren:
+		//	AbstractEdge | Container | Node
 		@Override public ParserRule getRule() { return rule; }
 
 		//AbstractEdge | Container | Node
@@ -254,14 +255,14 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class AbstractNodeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AbstractNode");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.AbstractNode");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cNodeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cBorderedNodeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cContainerParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
-		//AbstractNode returns vpdiagram::AbstractNode:
-		//	Node | BorderedNode | Container;
+		//AbstractNode vpdiagram::AbstractNode:
+		//	Node | BorderedNode | Container
 		@Override public ParserRule getRule() { return rule; }
 
 		//Node | BorderedNode | Container
@@ -278,13 +279,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class AbstractEdgeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AbstractEdge");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.AbstractEdge");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cEdgeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cEdgeImportParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//AbstractEdge returns vpdiagram::DiagramChildren:
-		//	Edge | EdgeImport;
+		//AbstractEdge vpdiagram::DiagramChildren:
+		//	Edge | EdgeImport
 		@Override public ParserRule getRule() { return rule; }
 
 		//Edge | EdgeImport
@@ -298,13 +299,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class AbstractDescriptionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AbstractDescription");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.AbstractDescription");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cContainerDescriptionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cNodeDescriptionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//AbstractDescription returns vpdiagram::AbstractDescription:
-		//	ContainerDescription | NodeDescription;
+		//AbstractDescription vpdiagram::AbstractDescription:
+		//	ContainerDescription | NodeDescription
 		@Override public ParserRule getRule() { return rule; }
 
 		//ContainerDescription | NodeDescription
@@ -318,13 +319,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class AbstractContainerStyleElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AbstractContainerStyle");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.AbstractContainerStyle");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cFlatStyleParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cImageStyleParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//AbstractContainerStyle returns vpdiagram::AbstractContainerStyle:
-		//	FlatStyle | ImageStyle;
+		//AbstractContainerStyle vpdiagram::AbstractContainerStyle:
+		//	FlatStyle | ImageStyle
 		@Override public ParserRule getRule() { return rule; }
 
 		//FlatStyle | ImageStyle
@@ -338,14 +339,14 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class AbstractNodeStyleElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AbstractNodeStyle");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.AbstractNodeStyle");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cImageStyleParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cBasicStyleParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cHistogramStyleParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
-		//AbstractNodeStyle returns vpdiagram::AbstractNodeStyle:
-		//	ImageStyle | BasicStyle | HistogramStyle;
+		//AbstractNodeStyle vpdiagram::AbstractNodeStyle:
+		//	ImageStyle | BasicStyle | HistogramStyle
 		@Override public ParserRule getRule() { return rule; }
 
 		//ImageStyle | BasicStyle | HistogramStyle
@@ -362,7 +363,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class DiagramElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Diagram");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Diagram");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cDiagramAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cDiagramKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -381,19 +382,19 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cThe_ActionSetActionSetParserRuleCall_7_0 = (RuleCall)cThe_ActionSetAssignment_7.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
-		//Diagram returns vpdiagram::DiagramRepresentation:
-		//	{vpdiagram::Diagram} "Diagram" name=STRING "{" ("description:" description=STRING)? the_domain=DomainContainer
-		//	the_MappingSet=MappingSet? the_ActionSet=ActionSet? "}";
+		//Diagram vpdiagram::DiagramRepresentation:
+		//	{vpdiagram::Diagram} 'Diagram' name=STRING '{' ('description:' description=STRING)? the_domain=DomainContainer
+		//	the_MappingSet=MappingSet? the_ActionSet=ActionSet? '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpdiagram::Diagram} "Diagram" name=STRING "{" ("description:" description=STRING)? the_domain=DomainContainer
-		//the_MappingSet=MappingSet? the_ActionSet=ActionSet? "}"
+		//{vpdiagram::Diagram} 'Diagram' name=STRING '{' ('description:' description=STRING)? the_domain=DomainContainer
+		//the_MappingSet=MappingSet? the_ActionSet=ActionSet? '}'
 		public Group getGroup() { return cGroup; }
 
 		//{vpdiagram::Diagram}
 		public Action getDiagramAction_0() { return cDiagramAction_0; }
 
-		//"Diagram"
+		//'Diagram'
 		public Keyword getDiagramKeyword_1() { return cDiagramKeyword_1; }
 
 		//name=STRING
@@ -402,13 +403,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getNameSTRINGTerminalRuleCall_2_0() { return cNameSTRINGTerminalRuleCall_2_0; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
-		//("description:" description=STRING)?
+		//('description:' description=STRING)?
 		public Group getGroup_4() { return cGroup_4; }
 
-		//"description:"
+		//'description:'
 		public Keyword getDescriptionKeyword_4_0() { return cDescriptionKeyword_4_0; }
 
 		//description=STRING
@@ -435,12 +436,12 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//ActionSet
 		public RuleCall getThe_ActionSetActionSetParserRuleCall_7_0() { return cThe_ActionSetActionSetParserRuleCall_7_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 	}
 
 	public class DiagramExtensionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DiagramExtension");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.DiagramExtension");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cDiagramExtensionAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cDiagramExtensionKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -460,21 +461,21 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cOwnedCustomizationsCustomizationsParserRuleCall_7_0 = (RuleCall)cOwnedCustomizationsAssignment_7.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
-		//DiagramExtension returns vpdiagram::DiagramRepresentation:
-		//	{vpdiagram::DiagramExtension} "DiagramExtension" name=STRING "{" ("extended-diagram:"
+		//DiagramExtension vpdiagram::DiagramRepresentation:
+		//	{vpdiagram::DiagramExtension} 'DiagramExtension' name=STRING '{' ('extended-diagram:'
 		//	extented_diagram=[siriusDiagramDescription::DiagramDescription|FQN])? the_MappingSet=MappingSet?
-		//	the_ActionSet=ActionSet? ownedCustomizations=Customizations? "}";
+		//	the_ActionSet=ActionSet? ownedCustomizations=Customizations? '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpdiagram::DiagramExtension} "DiagramExtension" name=STRING "{" ("extended-diagram:"
+		//{vpdiagram::DiagramExtension} 'DiagramExtension' name=STRING '{' ('extended-diagram:'
 		//extented_diagram=[siriusDiagramDescription::DiagramDescription|FQN])? the_MappingSet=MappingSet?
-		//the_ActionSet=ActionSet? ownedCustomizations=Customizations? "}"
+		//the_ActionSet=ActionSet? ownedCustomizations=Customizations? '}'
 		public Group getGroup() { return cGroup; }
 
 		//{vpdiagram::DiagramExtension}
 		public Action getDiagramExtensionAction_0() { return cDiagramExtensionAction_0; }
 
-		//"DiagramExtension"
+		//'DiagramExtension'
 		public Keyword getDiagramExtensionKeyword_1() { return cDiagramExtensionKeyword_1; }
 
 		//name=STRING
@@ -483,13 +484,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getNameSTRINGTerminalRuleCall_2_0() { return cNameSTRINGTerminalRuleCall_2_0; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
-		//("extended-diagram:" extented_diagram=[siriusDiagramDescription::DiagramDescription|FQN])?
+		//('extended-diagram:' extented_diagram=[siriusDiagramDescription::DiagramDescription|FQN])?
 		public Group getGroup_4() { return cGroup_4; }
 
-		//"extended-diagram:"
+		//'extended-diagram:'
 		public Keyword getExtendedDiagramKeyword_4_0() { return cExtendedDiagramKeyword_4_0; }
 
 		//extented_diagram=[siriusDiagramDescription::DiagramDescription|FQN]
@@ -519,12 +520,12 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//Customizations
 		public RuleCall getOwnedCustomizationsCustomizationsParserRuleCall_7_0() { return cOwnedCustomizationsCustomizationsParserRuleCall_7_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 	}
 
 	public class MappingSetElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MappingSet");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.MappingSet");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cMappingSetAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cMappingKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -533,20 +534,20 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cDiagram_ElementsDiagramChildrenParserRuleCall_3_0 = (RuleCall)cDiagram_ElementsAssignment_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//MappingSet returns vpdiagram::MappingSet:
-		//	{vpdiagram::MappingSet} "Mapping" "{" diagram_Elements+=DiagramChildren* "}";
+		//MappingSet vpdiagram::MappingSet:
+		//	{vpdiagram::MappingSet} 'Mapping' '{' diagram_Elements+=DiagramChildren* '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpdiagram::MappingSet} "Mapping" "{" diagram_Elements+=DiagramChildren* "}"
+		//{vpdiagram::MappingSet} 'Mapping' '{' diagram_Elements+=DiagramChildren* '}'
 		public Group getGroup() { return cGroup; }
 
 		//{vpdiagram::MappingSet}
 		public Action getMappingSetAction_0() { return cMappingSetAction_0; }
 
-		//"Mapping"
+		//'Mapping'
 		public Keyword getMappingKeyword_1() { return cMappingKeyword_1; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
 		//diagram_Elements+=DiagramChildren*
@@ -555,12 +556,12 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//DiagramChildren
 		public RuleCall getDiagram_ElementsDiagramChildrenParserRuleCall_3_0() { return cDiagram_ElementsDiagramChildrenParserRuleCall_3_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 
 	public class EdgeDescriptionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EdgeDescription");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.EdgeDescription");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cEdgeDescriptionAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cRepresentationKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -589,22 +590,22 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cStyleEdgeStyleParserRuleCall_7_0 = (RuleCall)cStyleAssignment_7.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
-		//EdgeDescription returns vpdiagram::EdgeDescription:
-		//	{vpdiagram::EdgeDescription} "Representation" "{" condition=Condition? ("BeginLabel" "{" begin_Label=Label "}")?
-		//	("CenterLabel" "{" center_label=Label "}")? ("EndLabel" "{" end_label=Label "}")? style=EdgeStyle? "}";
+		//EdgeDescription vpdiagram::EdgeDescription:
+		//	{vpdiagram::EdgeDescription} 'Representation' '{' condition=Condition? ('BeginLabel' '{' begin_Label=Label '}')?
+		//	('CenterLabel' '{' center_label=Label '}')? ('EndLabel' '{' end_label=Label '}')? style=EdgeStyle? '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpdiagram::EdgeDescription} "Representation" "{" condition=Condition? ("BeginLabel" "{" begin_Label=Label "}")?
-		//("CenterLabel" "{" center_label=Label "}")? ("EndLabel" "{" end_label=Label "}")? style=EdgeStyle? "}"
+		//{vpdiagram::EdgeDescription} 'Representation' '{' condition=Condition? ('BeginLabel' '{' begin_Label=Label '}')?
+		//('CenterLabel' '{' center_label=Label '}')? ('EndLabel' '{' end_label=Label '}')? style=EdgeStyle? '}'
 		public Group getGroup() { return cGroup; }
 
 		//{vpdiagram::EdgeDescription}
 		public Action getEdgeDescriptionAction_0() { return cEdgeDescriptionAction_0; }
 
-		//"Representation"
+		//'Representation'
 		public Keyword getRepresentationKeyword_1() { return cRepresentationKeyword_1; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
 		//condition=Condition?
@@ -613,13 +614,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//Condition
 		public RuleCall getConditionConditionParserRuleCall_3_0() { return cConditionConditionParserRuleCall_3_0; }
 
-		//("BeginLabel" "{" begin_Label=Label "}")?
+		//('BeginLabel' '{' begin_Label=Label '}')?
 		public Group getGroup_4() { return cGroup_4; }
 
-		//"BeginLabel"
+		//'BeginLabel'
 		public Keyword getBeginLabelKeyword_4_0() { return cBeginLabelKeyword_4_0; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_4_1() { return cLeftCurlyBracketKeyword_4_1; }
 
 		//begin_Label=Label
@@ -628,16 +629,16 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//Label
 		public RuleCall getBegin_LabelLabelParserRuleCall_4_2_0() { return cBegin_LabelLabelParserRuleCall_4_2_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_4_3() { return cRightCurlyBracketKeyword_4_3; }
 
-		//("CenterLabel" "{" center_label=Label "}")?
+		//('CenterLabel' '{' center_label=Label '}')?
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"CenterLabel"
+		//'CenterLabel'
 		public Keyword getCenterLabelKeyword_5_0() { return cCenterLabelKeyword_5_0; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_5_1() { return cLeftCurlyBracketKeyword_5_1; }
 
 		//center_label=Label
@@ -646,16 +647,16 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//Label
 		public RuleCall getCenter_labelLabelParserRuleCall_5_2_0() { return cCenter_labelLabelParserRuleCall_5_2_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_5_3() { return cRightCurlyBracketKeyword_5_3; }
 
-		//("EndLabel" "{" end_label=Label "}")?
+		//('EndLabel' '{' end_label=Label '}')?
 		public Group getGroup_6() { return cGroup_6; }
 
-		//"EndLabel"
+		//'EndLabel'
 		public Keyword getEndLabelKeyword_6_0() { return cEndLabelKeyword_6_0; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_6_1() { return cLeftCurlyBracketKeyword_6_1; }
 
 		//end_label=Label
@@ -664,7 +665,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//Label
 		public RuleCall getEnd_labelLabelParserRuleCall_6_2_0() { return cEnd_labelLabelParserRuleCall_6_2_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_6_3() { return cRightCurlyBracketKeyword_6_3; }
 
 		//style=EdgeStyle?
@@ -673,29 +674,29 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EdgeStyle
 		public RuleCall getStyleEdgeStyleParserRuleCall_7_0() { return cStyleEdgeStyleParserRuleCall_7_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 	}
 
 	public class ConditionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Condition");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Condition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cConditionAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cConditionKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cExpressionAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cExpressionForeignExpressionElementParserRuleCall_2_0 = (RuleCall)cExpressionAssignment_2.eContents().get(0);
 		
-		//Condition returns vpdiagram::Condition:
-		//	{vpdiagram::Condition} "condition:" expression=ForeignExpressionElement;
+		//Condition vpdiagram::Condition:
+		//	{vpdiagram::Condition} 'condition:' expression=ForeignExpressionElement
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpdiagram::Condition} "condition:" expression=ForeignExpressionElement
+		//{vpdiagram::Condition} 'condition:' expression=ForeignExpressionElement
 		public Group getGroup() { return cGroup; }
 
 		//{vpdiagram::Condition}
 		public Action getConditionAction_0() { return cConditionAction_0; }
 
-		//"condition:"
+		//'condition:'
 		public Keyword getConditionKeyword_1() { return cConditionKeyword_1; }
 
 		//expression=ForeignExpressionElement
@@ -706,7 +707,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class EdgeStyleElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EdgeStyle");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.EdgeStyle");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cEdgeStyleAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cStyleKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -729,28 +730,28 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cColorSystemColorsEnumRuleCall_6_1_0 = (RuleCall)cColorAssignment_6_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
-		//EdgeStyle returns vpdiagram::EdgeStyle:
-		//	{vpdiagram::EdgeStyle} "Style" "{" ("line-style:" lineStyle=LineStyle)? ("begin-decorator:"
-		//	beginDecorator=EdgeArrows)? ("end-decorator:" endDecorator=EdgeArrows)? ("color:" color=SystemColors)? "}";
+		//EdgeStyle vpdiagram::EdgeStyle:
+		//	{vpdiagram::EdgeStyle} 'Style' '{' ('line-style:' lineStyle=LineStyle)? ('begin-decorator:'
+		//	beginDecorator=EdgeArrows)? ('end-decorator:' endDecorator=EdgeArrows)? ('color:' color=SystemColors)? '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpdiagram::EdgeStyle} "Style" "{" ("line-style:" lineStyle=LineStyle)? ("begin-decorator:" beginDecorator=EdgeArrows)?
-		//("end-decorator:" endDecorator=EdgeArrows)? ("color:" color=SystemColors)? "}"
+		//{vpdiagram::EdgeStyle} 'Style' '{' ('line-style:' lineStyle=LineStyle)? ('begin-decorator:' beginDecorator=EdgeArrows)?
+		//('end-decorator:' endDecorator=EdgeArrows)? ('color:' color=SystemColors)? '}'
 		public Group getGroup() { return cGroup; }
 
 		//{vpdiagram::EdgeStyle}
 		public Action getEdgeStyleAction_0() { return cEdgeStyleAction_0; }
 
-		//"Style"
+		//'Style'
 		public Keyword getStyleKeyword_1() { return cStyleKeyword_1; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//("line-style:" lineStyle=LineStyle)?
+		//('line-style:' lineStyle=LineStyle)?
 		public Group getGroup_3() { return cGroup_3; }
 
-		//"line-style:"
+		//'line-style:'
 		public Keyword getLineStyleKeyword_3_0() { return cLineStyleKeyword_3_0; }
 
 		//lineStyle=LineStyle
@@ -759,10 +760,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//LineStyle
 		public RuleCall getLineStyleLineStyleEnumRuleCall_3_1_0() { return cLineStyleLineStyleEnumRuleCall_3_1_0; }
 
-		//("begin-decorator:" beginDecorator=EdgeArrows)?
+		//('begin-decorator:' beginDecorator=EdgeArrows)?
 		public Group getGroup_4() { return cGroup_4; }
 
-		//"begin-decorator:"
+		//'begin-decorator:'
 		public Keyword getBeginDecoratorKeyword_4_0() { return cBeginDecoratorKeyword_4_0; }
 
 		//beginDecorator=EdgeArrows
@@ -771,10 +772,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EdgeArrows
 		public RuleCall getBeginDecoratorEdgeArrowsEnumRuleCall_4_1_0() { return cBeginDecoratorEdgeArrowsEnumRuleCall_4_1_0; }
 
-		//("end-decorator:" endDecorator=EdgeArrows)?
+		//('end-decorator:' endDecorator=EdgeArrows)?
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"end-decorator:"
+		//'end-decorator:'
 		public Keyword getEndDecoratorKeyword_5_0() { return cEndDecoratorKeyword_5_0; }
 
 		//endDecorator=EdgeArrows
@@ -783,10 +784,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EdgeArrows
 		public RuleCall getEndDecoratorEdgeArrowsEnumRuleCall_5_1_0() { return cEndDecoratorEdgeArrowsEnumRuleCall_5_1_0; }
 
-		//("color:" color=SystemColors)?
+		//('color:' color=SystemColors)?
 		public Group getGroup_6() { return cGroup_6; }
 
-		//"color:"
+		//'color:'
 		public Keyword getColorKeyword_6_0() { return cColorKeyword_6_0; }
 
 		//color=SystemColors
@@ -795,12 +796,12 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//SystemColors
 		public RuleCall getColorSystemColorsEnumRuleCall_6_1_0() { return cColorSystemColorsEnumRuleCall_6_1_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 
 	public class ContainerElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Container");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Container");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cContainerAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cContainerKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -828,23 +829,23 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cChildrenContainerChildrenParserRuleCall_9_0 = (RuleCall)cChildrenAssignment_9.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
-		//Container returns vpdiagram::Container:
-		//	{vpdiagram::Container} "Container" name=EString "{" ("import:"
-		//	imports=[siriusDiagramDescription::ContainerMapping|FQN])? ("domain-context:" the_domain=NodeDomainElement)?
-		//	("content-layout:" contentLayout=ContainerLayout)? synchronizationMode=SynchronizationMode?
-		//	style+=ContainerDescription* children=ContainerChildren? "}";
+		//Container vpdiagram::Container:
+		//	{vpdiagram::Container} 'Container' name=EString '{' ('import:'
+		//	imports=[siriusDiagramDescription::ContainerMapping|FQN])? ('domain-context:' the_domain=NodeDomainElement)?
+		//	('content-layout:' contentLayout=ContainerLayout)? synchronizationMode=SynchronizationMode?
+		//	style+=ContainerDescription* children=ContainerChildren? '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpdiagram::Container} "Container" name=EString "{" ("import:"
-		//imports=[siriusDiagramDescription::ContainerMapping|FQN])? ("domain-context:" the_domain=NodeDomainElement)?
-		//("content-layout:" contentLayout=ContainerLayout)? synchronizationMode=SynchronizationMode?
-		//style+=ContainerDescription* children=ContainerChildren? "}"
+		//{vpdiagram::Container} 'Container' name=EString '{' ('import:'
+		//imports=[siriusDiagramDescription::ContainerMapping|FQN])? ('domain-context:' the_domain=NodeDomainElement)?
+		//('content-layout:' contentLayout=ContainerLayout)? synchronizationMode=SynchronizationMode?
+		//style+=ContainerDescription* children=ContainerChildren? '}'
 		public Group getGroup() { return cGroup; }
 
 		//{vpdiagram::Container}
 		public Action getContainerAction_0() { return cContainerAction_0; }
 
-		//"Container"
+		//'Container'
 		public Keyword getContainerKeyword_1() { return cContainerKeyword_1; }
 
 		//name=EString
@@ -853,13 +854,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
-		//("import:" imports=[siriusDiagramDescription::ContainerMapping|FQN])?
+		//('import:' imports=[siriusDiagramDescription::ContainerMapping|FQN])?
 		public Group getGroup_4() { return cGroup_4; }
 
-		//"import:"
+		//'import:'
 		public Keyword getImportKeyword_4_0() { return cImportKeyword_4_0; }
 
 		//imports=[siriusDiagramDescription::ContainerMapping|FQN]
@@ -871,10 +872,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getImportsContainerMappingFQNParserRuleCall_4_1_0_1() { return cImportsContainerMappingFQNParserRuleCall_4_1_0_1; }
 
-		//("domain-context:" the_domain=NodeDomainElement)?
+		//('domain-context:' the_domain=NodeDomainElement)?
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"domain-context:"
+		//'domain-context:'
 		public Keyword getDomainContextKeyword_5_0() { return cDomainContextKeyword_5_0; }
 
 		//the_domain=NodeDomainElement
@@ -883,10 +884,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//NodeDomainElement
 		public RuleCall getThe_domainNodeDomainElementParserRuleCall_5_1_0() { return cThe_domainNodeDomainElementParserRuleCall_5_1_0; }
 
-		//("content-layout:" contentLayout=ContainerLayout)?
+		//('content-layout:' contentLayout=ContainerLayout)?
 		public Group getGroup_6() { return cGroup_6; }
 
-		//"content-layout:"
+		//'content-layout:'
 		public Keyword getContentLayoutKeyword_6_0() { return cContentLayoutKeyword_6_0; }
 
 		//contentLayout=ContainerLayout
@@ -913,12 +914,12 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//ContainerChildren
 		public RuleCall getChildrenContainerChildrenParserRuleCall_9_0() { return cChildrenContainerChildrenParserRuleCall_9_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
 	}
 
 	public class ContainerChildrenElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ContainerChildren");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ContainerChildren");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cContainerChildrenAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cContainsKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -937,28 +938,28 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cOwned_nodesAbstractNodeParserRuleCall_4_0 = (RuleCall)cOwned_nodesAssignment_4.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//ContainerChildren returns vpdiagram::ContainerChildren:
-		//	{vpdiagram::ContainerChildren} "Contains" "{" ("reuse" reused_nodes+=[vpdiagram::AbstractNode|FQN] (","
-		//	reused_nodes+=[vpdiagram::AbstractNode|FQN])*)? owned_nodes+=AbstractNode* "}";
+		//ContainerChildren vpdiagram::ContainerChildren:
+		//	{vpdiagram::ContainerChildren} 'Contains' '{' ('reuse' reused_nodes+=[vpdiagram::AbstractNode|FQN] (','
+		//	reused_nodes+=[vpdiagram::AbstractNode|FQN])*)? owned_nodes+=AbstractNode* '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpdiagram::ContainerChildren} "Contains" "{" ("reuse" reused_nodes+=[vpdiagram::AbstractNode|FQN] (","
-		//reused_nodes+=[vpdiagram::AbstractNode|FQN])*)? owned_nodes+=AbstractNode* "}"
+		//{vpdiagram::ContainerChildren} 'Contains' '{' ('reuse' reused_nodes+=[vpdiagram::AbstractNode|FQN] (','
+		//reused_nodes+=[vpdiagram::AbstractNode|FQN])*)? owned_nodes+=AbstractNode* '}'
 		public Group getGroup() { return cGroup; }
 
 		//{vpdiagram::ContainerChildren}
 		public Action getContainerChildrenAction_0() { return cContainerChildrenAction_0; }
 
-		//"Contains"
+		//'Contains'
 		public Keyword getContainsKeyword_1() { return cContainsKeyword_1; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//("reuse" reused_nodes+=[vpdiagram::AbstractNode|FQN] ("," reused_nodes+=[vpdiagram::AbstractNode|FQN])*)?
+		//('reuse' reused_nodes+=[vpdiagram::AbstractNode|FQN] (',' reused_nodes+=[vpdiagram::AbstractNode|FQN])*)?
 		public Group getGroup_3() { return cGroup_3; }
 
-		//"reuse"
+		//'reuse'
 		public Keyword getReuseKeyword_3_0() { return cReuseKeyword_3_0; }
 
 		//reused_nodes+=[vpdiagram::AbstractNode|FQN]
@@ -970,10 +971,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getReused_nodesAbstractNodeFQNParserRuleCall_3_1_0_1() { return cReused_nodesAbstractNodeFQNParserRuleCall_3_1_0_1; }
 
-		//("," reused_nodes+=[vpdiagram::AbstractNode|FQN])*
+		//(',' reused_nodes+=[vpdiagram::AbstractNode|FQN])*
 		public Group getGroup_3_2() { return cGroup_3_2; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_3_2_0() { return cCommaKeyword_3_2_0; }
 
 		//reused_nodes+=[vpdiagram::AbstractNode|FQN]
@@ -991,12 +992,12 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//AbstractNode
 		public RuleCall getOwned_nodesAbstractNodeParserRuleCall_4_0() { return cOwned_nodesAbstractNodeParserRuleCall_4_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 
 	public class NodeDomainElementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NodeDomainElement");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.NodeDomainElement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cNodeDomainElementAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cDomain_ClassAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -1013,12 +1014,12 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cChlidren_listAssignment_2_1_1_1 = (Assignment)cGroup_2_1_1.eContents().get(1);
 		private final RuleCall cChlidren_listAbstractAssociation2ParserRuleCall_2_1_1_1_0 = (RuleCall)cChlidren_listAssignment_2_1_1_1.eContents().get(0);
 		
-		//NodeDomainElement returns vpdiagram::NodeDomainElement:
-		//	{vpdiagram::NodeDomainElement} domain_Class=AbstractClass ("provided-by" ("query" query=STRING | "association"
-		//	chlidren_list=AbstractAssociation2))?;
+		//NodeDomainElement vpdiagram::NodeDomainElement:
+		//	{vpdiagram::NodeDomainElement} domain_Class=AbstractClass ('provided-by' ('query' query=STRING | 'association'
+		//	chlidren_list=AbstractAssociation2))?
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpdiagram::NodeDomainElement} domain_Class=AbstractClass ("provided-by" ("query" query=STRING | "association"
+		//{vpdiagram::NodeDomainElement} domain_Class=AbstractClass ('provided-by' ('query' query=STRING | 'association'
 		//chlidren_list=AbstractAssociation2))?
 		public Group getGroup() { return cGroup; }
 
@@ -1031,19 +1032,19 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//AbstractClass
 		public RuleCall getDomain_ClassAbstractClassParserRuleCall_1_0() { return cDomain_ClassAbstractClassParserRuleCall_1_0; }
 
-		//("provided-by" ("query" query=STRING | "association" chlidren_list=AbstractAssociation2))?
+		//('provided-by' ('query' query=STRING | 'association' chlidren_list=AbstractAssociation2))?
 		public Group getGroup_2() { return cGroup_2; }
 
-		//"provided-by"
+		//'provided-by'
 		public Keyword getProvidedByKeyword_2_0() { return cProvidedByKeyword_2_0; }
 
-		//"query" query=STRING | "association" chlidren_list=AbstractAssociation2
+		//('query' query=STRING | 'association' chlidren_list=AbstractAssociation2)
 		public Alternatives getAlternatives_2_1() { return cAlternatives_2_1; }
 
-		//"query" query=STRING
+		//'query' query=STRING
 		public Group getGroup_2_1_0() { return cGroup_2_1_0; }
 
-		//"query"
+		//'query'
 		public Keyword getQueryKeyword_2_1_0_0() { return cQueryKeyword_2_1_0_0; }
 
 		//query=STRING
@@ -1052,10 +1053,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getQuerySTRINGTerminalRuleCall_2_1_0_1_0() { return cQuerySTRINGTerminalRuleCall_2_1_0_1_0; }
 
-		//"association" chlidren_list=AbstractAssociation2
+		//'association' chlidren_list=AbstractAssociation2
 		public Group getGroup_2_1_1() { return cGroup_2_1_1; }
 
-		//"association"
+		//'association'
 		public Keyword getAssociationKeyword_2_1_1_0() { return cAssociationKeyword_2_1_1_0; }
 
 		//chlidren_list=AbstractAssociation2
@@ -1066,7 +1067,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ContainerDescriptionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ContainerDescription");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ContainerDescription");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cContainerDescriptionAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cRepresentationKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -1087,22 +1088,22 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_5_3 = (Keyword)cGroup_5.eContents().get(3);
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
-		//ContainerDescription returns vpdiagram::ContainerDescription:
-		//	{vpdiagram::ContainerDescription} "Representation" "{" condition=Condition? ("Label" "{" node_Label=Label "}")?
-		//	("Style" => "{" style=AbstractContainerStyle "}")? "}";
+		//ContainerDescription vpdiagram::ContainerDescription:
+		//	{vpdiagram::ContainerDescription} 'Representation' '{' condition=Condition? ('Label' '{' node_Label=Label '}')?
+		//	('Style' => '{' style=AbstractContainerStyle '}')? '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpdiagram::ContainerDescription} "Representation" "{" condition=Condition? ("Label" "{" node_Label=Label "}")? ("Style"
-		//=> "{" style=AbstractContainerStyle "}")? "}"
+		//{vpdiagram::ContainerDescription} 'Representation' '{' condition=Condition? ('Label' '{' node_Label=Label '}')? ('Style'
+		//=> '{' style=AbstractContainerStyle '}')? '}'
 		public Group getGroup() { return cGroup; }
 
 		//{vpdiagram::ContainerDescription}
 		public Action getContainerDescriptionAction_0() { return cContainerDescriptionAction_0; }
 
-		//"Representation"
+		//'Representation'
 		public Keyword getRepresentationKeyword_1() { return cRepresentationKeyword_1; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
 		//condition=Condition?
@@ -1111,13 +1112,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//Condition
 		public RuleCall getConditionConditionParserRuleCall_3_0() { return cConditionConditionParserRuleCall_3_0; }
 
-		//("Label" "{" node_Label=Label "}")?
+		//('Label' '{' node_Label=Label '}')?
 		public Group getGroup_4() { return cGroup_4; }
 
-		//"Label"
+		//'Label'
 		public Keyword getLabelKeyword_4_0() { return cLabelKeyword_4_0; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_4_1() { return cLeftCurlyBracketKeyword_4_1; }
 
 		//node_Label=Label
@@ -1126,16 +1127,16 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//Label
 		public RuleCall getNode_LabelLabelParserRuleCall_4_2_0() { return cNode_LabelLabelParserRuleCall_4_2_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_4_3() { return cRightCurlyBracketKeyword_4_3; }
 
-		//("Style" => "{" style=AbstractContainerStyle "}")?
+		//('Style' => '{' style=AbstractContainerStyle '}')?
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"Style"
+		//'Style'
 		public Keyword getStyleKeyword_5_0() { return cStyleKeyword_5_0; }
 
-		//=> "{"
+		//=> '{'
 		public Keyword getLeftCurlyBracketKeyword_5_1() { return cLeftCurlyBracketKeyword_5_1; }
 
 		//style=AbstractContainerStyle
@@ -1144,15 +1145,15 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//AbstractContainerStyle
 		public RuleCall getStyleAbstractContainerStyleParserRuleCall_5_2_0() { return cStyleAbstractContainerStyleParserRuleCall_5_2_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_5_3() { return cRightCurlyBracketKeyword_5_3; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 
 	public class BasicStyleElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BasicStyle");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.BasicStyle");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cBasicStyleAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cBasicStyleKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -1171,28 +1172,28 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cFormNode_FormEnumRuleCall_5_1_0 = (RuleCall)cFormAssignment_5_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
-		//BasicStyle returns vpdiagram::BasicStyle:
-		//	{vpdiagram::BasicStyle} "BasicStyle" "{" ("border-color:" borderColor=SystemColors)? ("background:"
-		//	backgroundColor=SystemColors)? ("form:" form=Node_Form)? "}";
+		//BasicStyle vpdiagram::BasicStyle:
+		//	{vpdiagram::BasicStyle} 'BasicStyle' '{' ('border-color:' borderColor=SystemColors)? ('background:'
+		//	backgroundColor=SystemColors)? ('form:' form=Node_Form)? '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpdiagram::BasicStyle} "BasicStyle" "{" ("border-color:" borderColor=SystemColors)? ("background:"
-		//backgroundColor=SystemColors)? ("form:" form=Node_Form)? "}"
+		//{vpdiagram::BasicStyle} 'BasicStyle' '{' ('border-color:' borderColor=SystemColors)? ('background:'
+		//backgroundColor=SystemColors)? ('form:' form=Node_Form)? '}'
 		public Group getGroup() { return cGroup; }
 
 		//{vpdiagram::BasicStyle}
 		public Action getBasicStyleAction_0() { return cBasicStyleAction_0; }
 
-		//"BasicStyle"
+		//'BasicStyle'
 		public Keyword getBasicStyleKeyword_1() { return cBasicStyleKeyword_1; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//("border-color:" borderColor=SystemColors)?
+		//('border-color:' borderColor=SystemColors)?
 		public Group getGroup_3() { return cGroup_3; }
 
-		//"border-color:"
+		//'border-color:'
 		public Keyword getBorderColorKeyword_3_0() { return cBorderColorKeyword_3_0; }
 
 		//borderColor=SystemColors
@@ -1201,10 +1202,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//SystemColors
 		public RuleCall getBorderColorSystemColorsEnumRuleCall_3_1_0() { return cBorderColorSystemColorsEnumRuleCall_3_1_0; }
 
-		//("background:" backgroundColor=SystemColors)?
+		//('background:' backgroundColor=SystemColors)?
 		public Group getGroup_4() { return cGroup_4; }
 
-		//"background:"
+		//'background:'
 		public Keyword getBackgroundKeyword_4_0() { return cBackgroundKeyword_4_0; }
 
 		//backgroundColor=SystemColors
@@ -1213,10 +1214,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//SystemColors
 		public RuleCall getBackgroundColorSystemColorsEnumRuleCall_4_1_0() { return cBackgroundColorSystemColorsEnumRuleCall_4_1_0; }
 
-		//("form:" form=Node_Form)?
+		//('form:' form=Node_Form)?
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"form:"
+		//'form:'
 		public Keyword getFormKeyword_5_0() { return cFormKeyword_5_0; }
 
 		//form=Node_Form
@@ -1225,12 +1226,12 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//Node_Form
 		public RuleCall getFormNode_FormEnumRuleCall_5_1_0() { return cFormNode_FormEnumRuleCall_5_1_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 
 	public class HistogramStyleElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "HistogramStyle");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.HistogramStyle");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cHistogramStyleAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cHistogramStyleKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -1243,28 +1244,28 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSectionsHistogramSectionParserRuleCall_4_0 = (RuleCall)cSectionsAssignment_4.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//HistogramStyle returns vpdiagram::HistogramStyle:
-		//	{vpdiagram::HistogramStyle} "HistogramStyle" "{" ("border-color:" borderColor=SystemColors)?
-		//	sections+=HistogramSection* "}";
+		//HistogramStyle vpdiagram::HistogramStyle:
+		//	{vpdiagram::HistogramStyle} 'HistogramStyle' '{' ('border-color:' borderColor=SystemColors)?
+		//	sections+=HistogramSection* '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpdiagram::HistogramStyle} "HistogramStyle" "{" ("border-color:" borderColor=SystemColors)? sections+=HistogramSection*
-		//"}"
+		//{vpdiagram::HistogramStyle} 'HistogramStyle' '{' ('border-color:' borderColor=SystemColors)? sections+=HistogramSection*
+		//'}'
 		public Group getGroup() { return cGroup; }
 
 		//{vpdiagram::HistogramStyle}
 		public Action getHistogramStyleAction_0() { return cHistogramStyleAction_0; }
 
-		//"HistogramStyle"
+		//'HistogramStyle'
 		public Keyword getHistogramStyleKeyword_1() { return cHistogramStyleKeyword_1; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//("border-color:" borderColor=SystemColors)?
+		//('border-color:' borderColor=SystemColors)?
 		public Group getGroup_3() { return cGroup_3; }
 
-		//"border-color:"
+		//'border-color:'
 		public Keyword getBorderColorKeyword_3_0() { return cBorderColorKeyword_3_0; }
 
 		//borderColor=SystemColors
@@ -1279,12 +1280,12 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//HistogramSection
 		public RuleCall getSectionsHistogramSectionParserRuleCall_4_0() { return cSectionsHistogramSectionParserRuleCall_4_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 
 	public class HistogramSectionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "HistogramSection");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.HistogramSection");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cHistogramSectionAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cSectionKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -1311,30 +1312,30 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cMaxValueForeignExpressionElementParserRuleCall_7_1_0 = (RuleCall)cMaxValueAssignment_7_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
-		//HistogramSection returns vpdiagram::HistogramSection:
-		//	{vpdiagram::HistogramSection} "Section" "{" ("background:" backgroundColor=SystemColors)? ("foreground:"
-		//	forgroundColor=SystemColors)? ("minValue:" minValue=ForeignExpressionElement)? ("value:"
-		//	value=ForeignExpressionElement)? ("maxValue:" maxValue=ForeignExpressionElement)? "}";
+		//HistogramSection vpdiagram::HistogramSection:
+		//	{vpdiagram::HistogramSection} 'Section' '{' ('background:' backgroundColor=SystemColors)? ('foreground:'
+		//	forgroundColor=SystemColors)? ('minValue:' minValue=ForeignExpressionElement)? ('value:'
+		//	value=ForeignExpressionElement)? ('maxValue:' maxValue=ForeignExpressionElement)? '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpdiagram::HistogramSection} "Section" "{" ("background:" backgroundColor=SystemColors)? ("foreground:"
-		//forgroundColor=SystemColors)? ("minValue:" minValue=ForeignExpressionElement)? ("value:"
-		//value=ForeignExpressionElement)? ("maxValue:" maxValue=ForeignExpressionElement)? "}"
+		//{vpdiagram::HistogramSection} 'Section' '{' ('background:' backgroundColor=SystemColors)? ('foreground:'
+		//forgroundColor=SystemColors)? ('minValue:' minValue=ForeignExpressionElement)? ('value:'
+		//value=ForeignExpressionElement)? ('maxValue:' maxValue=ForeignExpressionElement)? '}'
 		public Group getGroup() { return cGroup; }
 
 		//{vpdiagram::HistogramSection}
 		public Action getHistogramSectionAction_0() { return cHistogramSectionAction_0; }
 
-		//"Section"
+		//'Section'
 		public Keyword getSectionKeyword_1() { return cSectionKeyword_1; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//("background:" backgroundColor=SystemColors)?
+		//('background:' backgroundColor=SystemColors)?
 		public Group getGroup_3() { return cGroup_3; }
 
-		//"background:"
+		//'background:'
 		public Keyword getBackgroundKeyword_3_0() { return cBackgroundKeyword_3_0; }
 
 		//backgroundColor=SystemColors
@@ -1343,10 +1344,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//SystemColors
 		public RuleCall getBackgroundColorSystemColorsEnumRuleCall_3_1_0() { return cBackgroundColorSystemColorsEnumRuleCall_3_1_0; }
 
-		//("foreground:" forgroundColor=SystemColors)?
+		//('foreground:' forgroundColor=SystemColors)?
 		public Group getGroup_4() { return cGroup_4; }
 
-		//"foreground:"
+		//'foreground:'
 		public Keyword getForegroundKeyword_4_0() { return cForegroundKeyword_4_0; }
 
 		//forgroundColor=SystemColors
@@ -1355,10 +1356,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//SystemColors
 		public RuleCall getForgroundColorSystemColorsEnumRuleCall_4_1_0() { return cForgroundColorSystemColorsEnumRuleCall_4_1_0; }
 
-		//("minValue:" minValue=ForeignExpressionElement)?
+		//('minValue:' minValue=ForeignExpressionElement)?
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"minValue:"
+		//'minValue:'
 		public Keyword getMinValueKeyword_5_0() { return cMinValueKeyword_5_0; }
 
 		//minValue=ForeignExpressionElement
@@ -1367,10 +1368,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//ForeignExpressionElement
 		public RuleCall getMinValueForeignExpressionElementParserRuleCall_5_1_0() { return cMinValueForeignExpressionElementParserRuleCall_5_1_0; }
 
-		//("value:" value=ForeignExpressionElement)?
+		//('value:' value=ForeignExpressionElement)?
 		public Group getGroup_6() { return cGroup_6; }
 
-		//"value:"
+		//'value:'
 		public Keyword getValueKeyword_6_0() { return cValueKeyword_6_0; }
 
 		//value=ForeignExpressionElement
@@ -1379,10 +1380,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//ForeignExpressionElement
 		public RuleCall getValueForeignExpressionElementParserRuleCall_6_1_0() { return cValueForeignExpressionElementParserRuleCall_6_1_0; }
 
-		//("maxValue:" maxValue=ForeignExpressionElement)?
+		//('maxValue:' maxValue=ForeignExpressionElement)?
 		public Group getGroup_7() { return cGroup_7; }
 
-		//"maxValue:"
+		//'maxValue:'
 		public Keyword getMaxValueKeyword_7_0() { return cMaxValueKeyword_7_0; }
 
 		//maxValue=ForeignExpressionElement
@@ -1391,12 +1392,12 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//ForeignExpressionElement
 		public RuleCall getMaxValueForeignExpressionElementParserRuleCall_7_1_0() { return cMaxValueForeignExpressionElementParserRuleCall_7_1_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 	}
 
 	public class ImageStyleElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ImageStyle");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ImageStyle");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cImageStyleAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cImageKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -1411,26 +1412,26 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cImagePathSTRINGTerminalRuleCall_4_1_0 = (RuleCall)cImagePathAssignment_4_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//ImageStyle returns vpdiagram::ImageStyle:
-		//	{vpdiagram::ImageStyle} "Image" "{" ("border:" borderColor=SystemColors)? ("path:" imagePath=STRING) "}";
+		//ImageStyle vpdiagram::ImageStyle:
+		//	{vpdiagram::ImageStyle} 'Image' '{' ('border:' borderColor=SystemColors)? ('path:' imagePath=STRING) '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpdiagram::ImageStyle} "Image" "{" ("border:" borderColor=SystemColors)? ("path:" imagePath=STRING) "}"
+		//{vpdiagram::ImageStyle} 'Image' '{' ('border:' borderColor=SystemColors)? ('path:' imagePath=STRING) '}'
 		public Group getGroup() { return cGroup; }
 
 		//{vpdiagram::ImageStyle}
 		public Action getImageStyleAction_0() { return cImageStyleAction_0; }
 
-		//"Image"
+		//'Image'
 		public Keyword getImageKeyword_1() { return cImageKeyword_1; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//("border:" borderColor=SystemColors)?
+		//('border:' borderColor=SystemColors)?
 		public Group getGroup_3() { return cGroup_3; }
 
-		//"border:"
+		//'border:'
 		public Keyword getBorderKeyword_3_0() { return cBorderKeyword_3_0; }
 
 		//borderColor=SystemColors
@@ -1439,10 +1440,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//SystemColors
 		public RuleCall getBorderColorSystemColorsEnumRuleCall_3_1_0() { return cBorderColorSystemColorsEnumRuleCall_3_1_0; }
 
-		//"path:" imagePath=STRING
+		//('path:' imagePath=STRING)
 		public Group getGroup_4() { return cGroup_4; }
 
-		//"path:"
+		//'path:'
 		public Keyword getPathKeyword_4_0() { return cPathKeyword_4_0; }
 
 		//imagePath=STRING
@@ -1451,12 +1452,12 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getImagePathSTRINGTerminalRuleCall_4_1_0() { return cImagePathSTRINGTerminalRuleCall_4_1_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 
 	public class FlatStyleElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "FlatStyle");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.FlatStyle");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cFlatStyleAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cFlatStyleKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -1477,28 +1478,28 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cForgroundColorSystemColorsEnumRuleCall_5_1_0 = (RuleCall)cForgroundColorAssignment_5_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
-		//FlatStyle returns vpdiagram::FlatStyle:
-		//	{vpdiagram::FlatStyle} "FlatStyle" "{" ("border:" borderColor=SystemColors)? ("background:"
-		//	backgroundStyle=BackgroundStyle? backgroundColor=SystemColors)? ("foreground:" forgroundColor=SystemColors)? "}";
+		//FlatStyle vpdiagram::FlatStyle:
+		//	{vpdiagram::FlatStyle} 'FlatStyle' '{' ('border:' borderColor=SystemColors)? ('background:'
+		//	backgroundStyle=BackgroundStyle? backgroundColor=SystemColors)? ('foreground:' forgroundColor=SystemColors)? '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpdiagram::FlatStyle} "FlatStyle" "{" ("border:" borderColor=SystemColors)? ("background:"
-		//backgroundStyle=BackgroundStyle? backgroundColor=SystemColors)? ("foreground:" forgroundColor=SystemColors)? "}"
+		//{vpdiagram::FlatStyle} 'FlatStyle' '{' ('border:' borderColor=SystemColors)? ('background:'
+		//backgroundStyle=BackgroundStyle? backgroundColor=SystemColors)? ('foreground:' forgroundColor=SystemColors)? '}'
 		public Group getGroup() { return cGroup; }
 
 		//{vpdiagram::FlatStyle}
 		public Action getFlatStyleAction_0() { return cFlatStyleAction_0; }
 
-		//"FlatStyle"
+		//'FlatStyle'
 		public Keyword getFlatStyleKeyword_1() { return cFlatStyleKeyword_1; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//("border:" borderColor=SystemColors)?
+		//('border:' borderColor=SystemColors)?
 		public Group getGroup_3() { return cGroup_3; }
 
-		//"border:"
+		//'border:'
 		public Keyword getBorderKeyword_3_0() { return cBorderKeyword_3_0; }
 
 		//borderColor=SystemColors
@@ -1507,10 +1508,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//SystemColors
 		public RuleCall getBorderColorSystemColorsEnumRuleCall_3_1_0() { return cBorderColorSystemColorsEnumRuleCall_3_1_0; }
 
-		//("background:" backgroundStyle=BackgroundStyle? backgroundColor=SystemColors)?
+		//('background:' backgroundStyle=BackgroundStyle? backgroundColor=SystemColors)?
 		public Group getGroup_4() { return cGroup_4; }
 
-		//"background:"
+		//'background:'
 		public Keyword getBackgroundKeyword_4_0() { return cBackgroundKeyword_4_0; }
 
 		//backgroundStyle=BackgroundStyle?
@@ -1525,10 +1526,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//SystemColors
 		public RuleCall getBackgroundColorSystemColorsEnumRuleCall_4_2_0() { return cBackgroundColorSystemColorsEnumRuleCall_4_2_0; }
 
-		//("foreground:" forgroundColor=SystemColors)?
+		//('foreground:' forgroundColor=SystemColors)?
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"foreground:"
+		//'foreground:'
 		public Keyword getForegroundKeyword_5_0() { return cForegroundKeyword_5_0; }
 
 		//forgroundColor=SystemColors
@@ -1537,12 +1538,12 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//SystemColors
 		public RuleCall getForgroundColorSystemColorsEnumRuleCall_5_1_0() { return cForgroundColorSystemColorsEnumRuleCall_5_1_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 
 	public class LabelElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Label");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Label");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cLabelAction_0 = (Action)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
@@ -1560,22 +1561,22 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cSizeAssignment_2_4 = (Assignment)cGroup_2.eContents().get(4);
 		private final RuleCall cSizeEIntParserRuleCall_2_4_0 = (RuleCall)cSizeAssignment_2_4.eContents().get(0);
 		
-		//Label returns vpdiagram::Label:
-		//	{vpdiagram::Label} ("content:" value=Expression) ("police:" bold?="bold"? italic?="italic"? color=SystemColors?
-		//	size=EInt?)?;
+		//Label vpdiagram::Label:
+		//	{vpdiagram::Label} ('content:' value=Expression) ('police:' bold?='bold'? italic?='italic'? color=SystemColors?
+		//	size=EInt?)?
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpdiagram::Label} ("content:" value=Expression) ("police:" bold?="bold"? italic?="italic"? color=SystemColors?
+		//{vpdiagram::Label} ('content:' value=Expression) ('police:' bold?='bold'? italic?='italic'? color=SystemColors?
 		//size=EInt?)?
 		public Group getGroup() { return cGroup; }
 
 		//{vpdiagram::Label}
 		public Action getLabelAction_0() { return cLabelAction_0; }
 
-		//"content:" value=Expression
+		//('content:' value=Expression)
 		public Group getGroup_1() { return cGroup_1; }
 
-		//"content:"
+		//'content:'
 		public Keyword getContentKeyword_1_0() { return cContentKeyword_1_0; }
 
 		//value=Expression
@@ -1584,22 +1585,22 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//Expression
 		public RuleCall getValueExpressionParserRuleCall_1_1_0() { return cValueExpressionParserRuleCall_1_1_0; }
 
-		//("police:" bold?="bold"? italic?="italic"? color=SystemColors? size=EInt?)?
+		//('police:' bold?='bold'? italic?='italic'? color=SystemColors? size=EInt?)?
 		public Group getGroup_2() { return cGroup_2; }
 
-		//"police:"
+		//'police:'
 		public Keyword getPoliceKeyword_2_0() { return cPoliceKeyword_2_0; }
 
-		//bold?="bold"?
+		//bold?='bold'?
 		public Assignment getBoldAssignment_2_1() { return cBoldAssignment_2_1; }
 
-		//"bold"
+		//'bold'
 		public Keyword getBoldBoldKeyword_2_1_0() { return cBoldBoldKeyword_2_1_0; }
 
-		//italic?="italic"?
+		//italic?='italic'?
 		public Assignment getItalicAssignment_2_2() { return cItalicAssignment_2_2; }
 
-		//"italic"
+		//'italic'
 		public Keyword getItalicItalicKeyword_2_2_0() { return cItalicItalicKeyword_2_2_0; }
 
 		//color=SystemColors?
@@ -1616,7 +1617,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class NodeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Node");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Node");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cNodeAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cNodeKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -1640,21 +1641,21 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cChildrenNodeChildrenParserRuleCall_8_0 = (RuleCall)cChildrenAssignment_8.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
-		//Node returns vpdiagram::Node:
-		//	{vpdiagram::Node} "Node" name=EString "{" ("import:" imports=[siriusDiagramDescription::NodeMapping|FQN])?
-		//	("domain-context:" the_domain=NodeDomainElement)? synchronizationMode=SynchronizationMode? style+=NodeDescription*
-		//	children=NodeChildren? "}";
+		//Node vpdiagram::Node:
+		//	{vpdiagram::Node} 'Node' name=EString '{' ('import:' imports=[siriusDiagramDescription::NodeMapping|FQN])?
+		//	('domain-context:' the_domain=NodeDomainElement)? synchronizationMode=SynchronizationMode? style+=NodeDescription*
+		//	children=NodeChildren? '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpdiagram::Node} "Node" name=EString "{" ("import:" imports=[siriusDiagramDescription::NodeMapping|FQN])?
-		//("domain-context:" the_domain=NodeDomainElement)? synchronizationMode=SynchronizationMode? style+=NodeDescription*
-		//children=NodeChildren? "}"
+		//{vpdiagram::Node} 'Node' name=EString '{' ('import:' imports=[siriusDiagramDescription::NodeMapping|FQN])?
+		//('domain-context:' the_domain=NodeDomainElement)? synchronizationMode=SynchronizationMode? style+=NodeDescription*
+		//children=NodeChildren? '}'
 		public Group getGroup() { return cGroup; }
 
 		//{vpdiagram::Node}
 		public Action getNodeAction_0() { return cNodeAction_0; }
 
-		//"Node"
+		//'Node'
 		public Keyword getNodeKeyword_1() { return cNodeKeyword_1; }
 
 		//name=EString
@@ -1663,13 +1664,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
-		//("import:" imports=[siriusDiagramDescription::NodeMapping|FQN])?
+		//('import:' imports=[siriusDiagramDescription::NodeMapping|FQN])?
 		public Group getGroup_4() { return cGroup_4; }
 
-		//"import:"
+		//'import:'
 		public Keyword getImportKeyword_4_0() { return cImportKeyword_4_0; }
 
 		//imports=[siriusDiagramDescription::NodeMapping|FQN]
@@ -1681,10 +1682,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getImportsNodeMappingFQNParserRuleCall_4_1_0_1() { return cImportsNodeMappingFQNParserRuleCall_4_1_0_1; }
 
-		//("domain-context:" the_domain=NodeDomainElement)?
+		//('domain-context:' the_domain=NodeDomainElement)?
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"domain-context:"
+		//'domain-context:'
 		public Keyword getDomainContextKeyword_5_0() { return cDomainContextKeyword_5_0; }
 
 		//the_domain=NodeDomainElement
@@ -1711,12 +1712,12 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//NodeChildren
 		public RuleCall getChildrenNodeChildrenParserRuleCall_8_0() { return cChildrenNodeChildrenParserRuleCall_8_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
 	}
 
 	public class NodeChildrenElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NodeChildren");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.NodeChildren");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cNodeChildrenAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cContainsKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -1735,28 +1736,28 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cOwned_boderednodesBorderedNodeParserRuleCall_4_0 = (RuleCall)cOwned_boderednodesAssignment_4.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//NodeChildren returns vpdiagram::NodeChildren:
-		//	{vpdiagram::NodeChildren} "Contains" "{" ("reuse" reused_boderednodes+=[vpdiagram::BorderedNode|FQN] (","
-		//	reused_boderednodes+=[vpdiagram::BorderedNode|FQN])*)? owned_boderednodes+=BorderedNode* "}";
+		//NodeChildren vpdiagram::NodeChildren:
+		//	{vpdiagram::NodeChildren} 'Contains' '{' ('reuse' reused_boderednodes+=[vpdiagram::BorderedNode|FQN] (','
+		//	reused_boderednodes+=[vpdiagram::BorderedNode|FQN])*)? owned_boderednodes+=BorderedNode* '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpdiagram::NodeChildren} "Contains" "{" ("reuse" reused_boderednodes+=[vpdiagram::BorderedNode|FQN] (","
-		//reused_boderednodes+=[vpdiagram::BorderedNode|FQN])*)? owned_boderednodes+=BorderedNode* "}"
+		//{vpdiagram::NodeChildren} 'Contains' '{' ('reuse' reused_boderednodes+=[vpdiagram::BorderedNode|FQN] (','
+		//reused_boderednodes+=[vpdiagram::BorderedNode|FQN])*)? owned_boderednodes+=BorderedNode* '}'
 		public Group getGroup() { return cGroup; }
 
 		//{vpdiagram::NodeChildren}
 		public Action getNodeChildrenAction_0() { return cNodeChildrenAction_0; }
 
-		//"Contains"
+		//'Contains'
 		public Keyword getContainsKeyword_1() { return cContainsKeyword_1; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//("reuse" reused_boderednodes+=[vpdiagram::BorderedNode|FQN] ("," reused_boderednodes+=[vpdiagram::BorderedNode|FQN])*)?
+		//('reuse' reused_boderednodes+=[vpdiagram::BorderedNode|FQN] (',' reused_boderednodes+=[vpdiagram::BorderedNode|FQN])*)?
 		public Group getGroup_3() { return cGroup_3; }
 
-		//"reuse"
+		//'reuse'
 		public Keyword getReuseKeyword_3_0() { return cReuseKeyword_3_0; }
 
 		//reused_boderednodes+=[vpdiagram::BorderedNode|FQN]
@@ -1768,10 +1769,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getReused_boderednodesBorderedNodeFQNParserRuleCall_3_1_0_1() { return cReused_boderednodesBorderedNodeFQNParserRuleCall_3_1_0_1; }
 
-		//("," reused_boderednodes+=[vpdiagram::BorderedNode|FQN])*
+		//(',' reused_boderednodes+=[vpdiagram::BorderedNode|FQN])*
 		public Group getGroup_3_2() { return cGroup_3_2; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_3_2_0() { return cCommaKeyword_3_2_0; }
 
 		//reused_boderednodes+=[vpdiagram::BorderedNode|FQN]
@@ -1789,12 +1790,12 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//BorderedNode
 		public RuleCall getOwned_boderednodesBorderedNodeParserRuleCall_4_0() { return cOwned_boderednodesBorderedNodeParserRuleCall_4_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 
 	public class BorderedNodeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BorderedNode");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.BorderedNode");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cBorderedNodeAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cBorderedNodeKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -1816,21 +1817,21 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cStyleNodeDescriptionParserRuleCall_7_0 = (RuleCall)cStyleAssignment_7.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
-		//BorderedNode returns vpdiagram::BorderedNode:
-		//	{vpdiagram::BorderedNode} "BorderedNode" name=EString "{" ("import:"
-		//	imports=[siriusDiagramDescription::NodeMapping|FQN])? ("domain-context:" the_domain=NodeDomainElement)?
-		//	synchronizationMode=SynchronizationMode? style+=NodeDescription* "}";
+		//BorderedNode vpdiagram::BorderedNode:
+		//	{vpdiagram::BorderedNode} 'BorderedNode' name=EString '{' ('import:'
+		//	imports=[siriusDiagramDescription::NodeMapping|FQN])? ('domain-context:' the_domain=NodeDomainElement)?
+		//	synchronizationMode=SynchronizationMode? style+=NodeDescription* '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpdiagram::BorderedNode} "BorderedNode" name=EString "{" ("import:"
-		//imports=[siriusDiagramDescription::NodeMapping|FQN])? ("domain-context:" the_domain=NodeDomainElement)?
-		//synchronizationMode=SynchronizationMode? style+=NodeDescription* "}"
+		//{vpdiagram::BorderedNode} 'BorderedNode' name=EString '{' ('import:'
+		//imports=[siriusDiagramDescription::NodeMapping|FQN])? ('domain-context:' the_domain=NodeDomainElement)?
+		//synchronizationMode=SynchronizationMode? style+=NodeDescription* '}'
 		public Group getGroup() { return cGroup; }
 
 		//{vpdiagram::BorderedNode}
 		public Action getBorderedNodeAction_0() { return cBorderedNodeAction_0; }
 
-		//"BorderedNode"
+		//'BorderedNode'
 		public Keyword getBorderedNodeKeyword_1() { return cBorderedNodeKeyword_1; }
 
 		//name=EString
@@ -1839,13 +1840,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
-		//("import:" imports=[siriusDiagramDescription::NodeMapping|FQN])?
+		//('import:' imports=[siriusDiagramDescription::NodeMapping|FQN])?
 		public Group getGroup_4() { return cGroup_4; }
 
-		//"import:"
+		//'import:'
 		public Keyword getImportKeyword_4_0() { return cImportKeyword_4_0; }
 
 		//imports=[siriusDiagramDescription::NodeMapping|FQN]
@@ -1857,10 +1858,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getImportsNodeMappingFQNParserRuleCall_4_1_0_1() { return cImportsNodeMappingFQNParserRuleCall_4_1_0_1; }
 
-		//("domain-context:" the_domain=NodeDomainElement)?
+		//('domain-context:' the_domain=NodeDomainElement)?
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"domain-context:"
+		//'domain-context:'
 		public Keyword getDomainContextKeyword_5_0() { return cDomainContextKeyword_5_0; }
 
 		//the_domain=NodeDomainElement
@@ -1881,12 +1882,12 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//NodeDescription
 		public RuleCall getStyleNodeDescriptionParserRuleCall_7_0() { return cStyleNodeDescriptionParserRuleCall_7_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 	}
 
 	public class NodeDescriptionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NodeDescription");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.NodeDescription");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cNodeDescriptionAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cRepresentationKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -1915,24 +1916,24 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_5_3 = (Keyword)cGroup_5.eContents().get(3);
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
-		//NodeDescription returns vpdiagram::NodeDescription:
-		//	{vpdiagram::NodeDescription} "Representation" "{" condition=Condition? ("Label" "{" node_Label=Label ("position:"
-		//	label_position=LabelPosition)? ("alignment:" label_alignement=LabelAlignment)? "}")? ("Style" "{"
-		//	style=AbstractNodeStyle "}")? "}";
+		//NodeDescription vpdiagram::NodeDescription:
+		//	{vpdiagram::NodeDescription} 'Representation' '{' condition=Condition? ('Label' '{' node_Label=Label ('position:'
+		//	label_position=LabelPosition)? ('alignment:' label_alignement=LabelAlignment)? '}')? ('Style' '{'
+		//	style=AbstractNodeStyle '}')? '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpdiagram::NodeDescription} "Representation" "{" condition=Condition? ("Label" "{" node_Label=Label ("position:"
-		//label_position=LabelPosition)? ("alignment:" label_alignement=LabelAlignment)? "}")? ("Style" "{"
-		//style=AbstractNodeStyle "}")? "}"
+		//{vpdiagram::NodeDescription} 'Representation' '{' condition=Condition? ('Label' '{' node_Label=Label ('position:'
+		//label_position=LabelPosition)? ('alignment:' label_alignement=LabelAlignment)? '}')? ('Style' '{'
+		//style=AbstractNodeStyle '}')? '}'
 		public Group getGroup() { return cGroup; }
 
 		//{vpdiagram::NodeDescription}
 		public Action getNodeDescriptionAction_0() { return cNodeDescriptionAction_0; }
 
-		//"Representation"
+		//'Representation'
 		public Keyword getRepresentationKeyword_1() { return cRepresentationKeyword_1; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
 		//condition=Condition?
@@ -1941,14 +1942,14 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//Condition
 		public RuleCall getConditionConditionParserRuleCall_3_0() { return cConditionConditionParserRuleCall_3_0; }
 
-		//("Label" "{" node_Label=Label ("position:" label_position=LabelPosition)? ("alignment:"
-		//label_alignement=LabelAlignment)? "}")?
+		//('Label' '{' node_Label=Label ('position:' label_position=LabelPosition)? ('alignment:'
+		//label_alignement=LabelAlignment)? '}')?
 		public Group getGroup_4() { return cGroup_4; }
 
-		//"Label"
+		//'Label'
 		public Keyword getLabelKeyword_4_0() { return cLabelKeyword_4_0; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_4_1() { return cLeftCurlyBracketKeyword_4_1; }
 
 		//node_Label=Label
@@ -1957,10 +1958,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//Label
 		public RuleCall getNode_LabelLabelParserRuleCall_4_2_0() { return cNode_LabelLabelParserRuleCall_4_2_0; }
 
-		//("position:" label_position=LabelPosition)?
+		//('position:' label_position=LabelPosition)?
 		public Group getGroup_4_3() { return cGroup_4_3; }
 
-		//"position:"
+		//'position:'
 		public Keyword getPositionKeyword_4_3_0() { return cPositionKeyword_4_3_0; }
 
 		//label_position=LabelPosition
@@ -1969,10 +1970,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//LabelPosition
 		public RuleCall getLabel_positionLabelPositionEnumRuleCall_4_3_1_0() { return cLabel_positionLabelPositionEnumRuleCall_4_3_1_0; }
 
-		//("alignment:" label_alignement=LabelAlignment)?
+		//('alignment:' label_alignement=LabelAlignment)?
 		public Group getGroup_4_4() { return cGroup_4_4; }
 
-		//"alignment:"
+		//'alignment:'
 		public Keyword getAlignmentKeyword_4_4_0() { return cAlignmentKeyword_4_4_0; }
 
 		//label_alignement=LabelAlignment
@@ -1981,16 +1982,16 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//LabelAlignment
 		public RuleCall getLabel_alignementLabelAlignmentEnumRuleCall_4_4_1_0() { return cLabel_alignementLabelAlignmentEnumRuleCall_4_4_1_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_4_5() { return cRightCurlyBracketKeyword_4_5; }
 
-		//("Style" "{" style=AbstractNodeStyle "}")?
+		//('Style' '{' style=AbstractNodeStyle '}')?
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"Style"
+		//'Style'
 		public Keyword getStyleKeyword_5_0() { return cStyleKeyword_5_0; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_5_1() { return cLeftCurlyBracketKeyword_5_1; }
 
 		//style=AbstractNodeStyle
@@ -1999,15 +2000,15 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//AbstractNodeStyle
 		public RuleCall getStyleAbstractNodeStyleParserRuleCall_5_2_0() { return cStyleAbstractNodeStyleParserRuleCall_5_2_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_5_3() { return cRightCurlyBracketKeyword_5_3; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 
 	public class ActionSetElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ActionSet");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ActionSet");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cActionSetAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cActionsKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -2018,20 +2019,20 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cOpenActionsOpenActionParserRuleCall_4_0 = (RuleCall)cOpenActionsAssignment_4.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//ActionSet returns vpdiagram::ActionSet:
-		//	{vpdiagram::ActionSet} "Actions" "{" actions+=Action* openActions+=OpenAction* "}";
+		//ActionSet vpdiagram::ActionSet:
+		//	{vpdiagram::ActionSet} 'Actions' '{' actions+=Action* openActions+=OpenAction* '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpdiagram::ActionSet} "Actions" "{" actions+=Action* openActions+=OpenAction* "}"
+		//{vpdiagram::ActionSet} 'Actions' '{' actions+=Action* openActions+=OpenAction* '}'
 		public Group getGroup() { return cGroup; }
 
 		//{vpdiagram::ActionSet}
 		public Action getActionSetAction_0() { return cActionSetAction_0; }
 
-		//"Actions"
+		//'Actions'
 		public Keyword getActionsKeyword_1() { return cActionsKeyword_1; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
 		//actions+=Action*
@@ -2046,12 +2047,12 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//OpenAction
 		public RuleCall getOpenActionsOpenActionParserRuleCall_4_0() { return cOpenActionsOpenActionParserRuleCall_4_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 
 	public class OpenActionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "OpenAction");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.OpenAction");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cOpenActionAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cOpenActionKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -2072,19 +2073,19 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cIconSTRINGTerminalRuleCall_6_1_0 = (RuleCall)cIconAssignment_6_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
-		//OpenAction returns vpdiagram::OpenAction:
-		//	{vpdiagram::OpenAction} "OpenAction" name=EString "{" ("precondition:" precondition=EString)? ("label:"
-		//	label=STRING)? ("icon:" icon=STRING)? "}";
+		//OpenAction vpdiagram::OpenAction:
+		//	{vpdiagram::OpenAction} 'OpenAction' name=EString '{' ('precondition:' precondition=EString)? ('label:'
+		//	label=STRING)? ('icon:' icon=STRING)? '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpdiagram::OpenAction} "OpenAction" name=EString "{" ("precondition:" precondition=EString)? ("label:" label=STRING)?
-		//("icon:" icon=STRING)? "}"
+		//{vpdiagram::OpenAction} 'OpenAction' name=EString '{' ('precondition:' precondition=EString)? ('label:' label=STRING)?
+		//('icon:' icon=STRING)? '}'
 		public Group getGroup() { return cGroup; }
 
 		//{vpdiagram::OpenAction}
 		public Action getOpenActionAction_0() { return cOpenActionAction_0; }
 
-		//"OpenAction"
+		//'OpenAction'
 		public Keyword getOpenActionKeyword_1() { return cOpenActionKeyword_1; }
 
 		//name=EString
@@ -2093,13 +2094,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
-		//("precondition:" precondition=EString)?
+		//('precondition:' precondition=EString)?
 		public Group getGroup_4() { return cGroup_4; }
 
-		//"precondition:"
+		//'precondition:'
 		public Keyword getPreconditionKeyword_4_0() { return cPreconditionKeyword_4_0; }
 
 		//precondition=EString
@@ -2108,10 +2109,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getPreconditionEStringParserRuleCall_4_1_0() { return cPreconditionEStringParserRuleCall_4_1_0; }
 
-		//("label:" label=STRING)?
+		//('label:' label=STRING)?
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"label:"
+		//'label:'
 		public Keyword getLabelKeyword_5_0() { return cLabelKeyword_5_0; }
 
 		//label=STRING
@@ -2120,10 +2121,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getLabelSTRINGTerminalRuleCall_5_1_0() { return cLabelSTRINGTerminalRuleCall_5_1_0; }
 
-		//("icon:" icon=STRING)?
+		//('icon:' icon=STRING)?
 		public Group getGroup_6() { return cGroup_6; }
 
-		//"icon:"
+		//'icon:'
 		public Keyword getIconKeyword_6_0() { return cIconKeyword_6_0; }
 
 		//icon=STRING
@@ -2132,20 +2133,20 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getIconSTRINGTerminalRuleCall_6_1_0() { return cIconSTRINGTerminalRuleCall_6_1_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 
 	public class ActionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Action");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Action");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cCreateParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cDeleteParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cDropParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cReconnectEdgeParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
-		//Action returns vpdiagram::Action:
-		//	Create | Delete | Drop | ReconnectEdge;
+		//Action vpdiagram::Action:
+		//	Create | Delete | Drop | ReconnectEdge
 		@Override public ParserRule getRule() { return rule; }
 
 		//Create | Delete | Drop | ReconnectEdge
@@ -2165,7 +2166,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class CreateElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Create");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Create");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cCreateAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cCreateKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -2193,19 +2194,19 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cIconSTRINGTerminalRuleCall_8_1_0 = (RuleCall)cIconAssignment_8_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
-		//Create returns vpdiagram::Action:
-		//	{vpdiagram::Create} "Create" name=EString "{" ("precondition:" precondition=EString)? ("label:" label=STRING)?
-		//	("action-for:" tool_For=[vpdiagram::DiagramElement|FQN]) onlyTheView?="only-view"? ("icon:" icon=STRING)? "}";
+		//Create vpdiagram::Action:
+		//	{vpdiagram::Create} 'Create' name=EString '{' ('precondition:' precondition=EString)? ('label:' label=STRING)?
+		//	('action-for:' tool_For=[vpdiagram::DiagramElement|FQN]) onlyTheView?='only-view'? ('icon:' icon=STRING)? '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpdiagram::Create} "Create" name=EString "{" ("precondition:" precondition=EString)? ("label:" label=STRING)?
-		//("action-for:" tool_For=[vpdiagram::DiagramElement|FQN]) onlyTheView?="only-view"? ("icon:" icon=STRING)? "}"
+		//{vpdiagram::Create} 'Create' name=EString '{' ('precondition:' precondition=EString)? ('label:' label=STRING)?
+		//('action-for:' tool_For=[vpdiagram::DiagramElement|FQN]) onlyTheView?='only-view'? ('icon:' icon=STRING)? '}'
 		public Group getGroup() { return cGroup; }
 
 		//{vpdiagram::Create}
 		public Action getCreateAction_0() { return cCreateAction_0; }
 
-		//"Create"
+		//'Create'
 		public Keyword getCreateKeyword_1() { return cCreateKeyword_1; }
 
 		//name=EString
@@ -2214,13 +2215,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
-		//("precondition:" precondition=EString)?
+		//('precondition:' precondition=EString)?
 		public Group getGroup_4() { return cGroup_4; }
 
-		//"precondition:"
+		//'precondition:'
 		public Keyword getPreconditionKeyword_4_0() { return cPreconditionKeyword_4_0; }
 
 		//precondition=EString
@@ -2229,10 +2230,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getPreconditionEStringParserRuleCall_4_1_0() { return cPreconditionEStringParserRuleCall_4_1_0; }
 
-		//("label:" label=STRING)?
+		//('label:' label=STRING)?
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"label:"
+		//'label:'
 		public Keyword getLabelKeyword_5_0() { return cLabelKeyword_5_0; }
 
 		//label=STRING
@@ -2241,10 +2242,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getLabelSTRINGTerminalRuleCall_5_1_0() { return cLabelSTRINGTerminalRuleCall_5_1_0; }
 
-		//"action-for:" tool_For=[vpdiagram::DiagramElement|FQN]
+		//('action-for:' tool_For=[vpdiagram::DiagramElement|FQN])
 		public Group getGroup_6() { return cGroup_6; }
 
-		//"action-for:"
+		//'action-for:'
 		public Keyword getActionForKeyword_6_0() { return cActionForKeyword_6_0; }
 
 		//tool_For=[vpdiagram::DiagramElement|FQN]
@@ -2256,16 +2257,16 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getTool_ForDiagramElementFQNParserRuleCall_6_1_0_1() { return cTool_ForDiagramElementFQNParserRuleCall_6_1_0_1; }
 
-		//onlyTheView?="only-view"?
+		//onlyTheView?='only-view'?
 		public Assignment getOnlyTheViewAssignment_7() { return cOnlyTheViewAssignment_7; }
 
-		//"only-view"
+		//'only-view'
 		public Keyword getOnlyTheViewOnlyViewKeyword_7_0() { return cOnlyTheViewOnlyViewKeyword_7_0; }
 
-		//("icon:" icon=STRING)?
+		//('icon:' icon=STRING)?
 		public Group getGroup_8() { return cGroup_8; }
 
-		//"icon:"
+		//'icon:'
 		public Keyword getIconKeyword_8_0() { return cIconKeyword_8_0; }
 
 		//icon=STRING
@@ -2274,12 +2275,12 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getIconSTRINGTerminalRuleCall_8_1_0() { return cIconSTRINGTerminalRuleCall_8_1_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
 	}
 
 	public class DeleteElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Delete");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Delete");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cDeleteAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cDeleteKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -2301,19 +2302,19 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTool_ForDiagramElementFQNParserRuleCall_6_1_0_1 = (RuleCall)cTool_ForDiagramElementCrossReference_6_1_0.eContents().get(1);
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
-		//Delete returns vpdiagram::Action:
-		//	{vpdiagram::Delete} "Delete" name=EString "{" ("precondition:" precondition=EString)? ("label:" label=STRING)?
-		//	("action-for:" tool_For=[vpdiagram::DiagramElement|FQN]) "}";
+		//Delete vpdiagram::Action:
+		//	{vpdiagram::Delete} 'Delete' name=EString '{' ('precondition:' precondition=EString)? ('label:' label=STRING)?
+		//	('action-for:' tool_For=[vpdiagram::DiagramElement|FQN]) '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpdiagram::Delete} "Delete" name=EString "{" ("precondition:" precondition=EString)? ("label:" label=STRING)?
-		//("action-for:" tool_For=[vpdiagram::DiagramElement|FQN]) "}"
+		//{vpdiagram::Delete} 'Delete' name=EString '{' ('precondition:' precondition=EString)? ('label:' label=STRING)?
+		//('action-for:' tool_For=[vpdiagram::DiagramElement|FQN]) '}'
 		public Group getGroup() { return cGroup; }
 
 		//{vpdiagram::Delete}
 		public Action getDeleteAction_0() { return cDeleteAction_0; }
 
-		//"Delete"
+		//'Delete'
 		public Keyword getDeleteKeyword_1() { return cDeleteKeyword_1; }
 
 		//name=EString
@@ -2322,13 +2323,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
-		//("precondition:" precondition=EString)?
+		//('precondition:' precondition=EString)?
 		public Group getGroup_4() { return cGroup_4; }
 
-		//"precondition:"
+		//'precondition:'
 		public Keyword getPreconditionKeyword_4_0() { return cPreconditionKeyword_4_0; }
 
 		//precondition=EString
@@ -2337,10 +2338,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getPreconditionEStringParserRuleCall_4_1_0() { return cPreconditionEStringParserRuleCall_4_1_0; }
 
-		//("label:" label=STRING)?
+		//('label:' label=STRING)?
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"label:"
+		//'label:'
 		public Keyword getLabelKeyword_5_0() { return cLabelKeyword_5_0; }
 
 		//label=STRING
@@ -2349,10 +2350,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getLabelSTRINGTerminalRuleCall_5_1_0() { return cLabelSTRINGTerminalRuleCall_5_1_0; }
 
-		//"action-for:" tool_For=[vpdiagram::DiagramElement|FQN]
+		//('action-for:' tool_For=[vpdiagram::DiagramElement|FQN])
 		public Group getGroup_6() { return cGroup_6; }
 
-		//"action-for:"
+		//'action-for:'
 		public Keyword getActionForKeyword_6_0() { return cActionForKeyword_6_0; }
 
 		//tool_For=[vpdiagram::DiagramElement|FQN]
@@ -2364,12 +2365,12 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getTool_ForDiagramElementFQNParserRuleCall_6_1_0_1() { return cTool_ForDiagramElementFQNParserRuleCall_6_1_0_1; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 
 	public class DropElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Drop");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Drop");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cDropAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cDropKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -2391,19 +2392,19 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTool_ForDiagramElementFQNParserRuleCall_6_1_0_1 = (RuleCall)cTool_ForDiagramElementCrossReference_6_1_0.eContents().get(1);
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
-		//Drop returns vpdiagram::Action:
-		//	{vpdiagram::Drop} "Drop" name=EString "{" ("precondition:" precondition=EString)? ("label:" label=STRING)?
-		//	("action-for:" tool_For=[vpdiagram::DiagramElement|FQN]) "}";
+		//Drop vpdiagram::Action:
+		//	{vpdiagram::Drop} 'Drop' name=EString '{' ('precondition:' precondition=EString)? ('label:' label=STRING)?
+		//	('action-for:' tool_For=[vpdiagram::DiagramElement|FQN]) '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpdiagram::Drop} "Drop" name=EString "{" ("precondition:" precondition=EString)? ("label:" label=STRING)?
-		//("action-for:" tool_For=[vpdiagram::DiagramElement|FQN]) "}"
+		//{vpdiagram::Drop} 'Drop' name=EString '{' ('precondition:' precondition=EString)? ('label:' label=STRING)?
+		//('action-for:' tool_For=[vpdiagram::DiagramElement|FQN]) '}'
 		public Group getGroup() { return cGroup; }
 
 		//{vpdiagram::Drop}
 		public Action getDropAction_0() { return cDropAction_0; }
 
-		//"Drop"
+		//'Drop'
 		public Keyword getDropKeyword_1() { return cDropKeyword_1; }
 
 		//name=EString
@@ -2412,13 +2413,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
-		//("precondition:" precondition=EString)?
+		//('precondition:' precondition=EString)?
 		public Group getGroup_4() { return cGroup_4; }
 
-		//"precondition:"
+		//'precondition:'
 		public Keyword getPreconditionKeyword_4_0() { return cPreconditionKeyword_4_0; }
 
 		//precondition=EString
@@ -2427,10 +2428,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getPreconditionEStringParserRuleCall_4_1_0() { return cPreconditionEStringParserRuleCall_4_1_0; }
 
-		//("label:" label=STRING)?
+		//('label:' label=STRING)?
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"label:"
+		//'label:'
 		public Keyword getLabelKeyword_5_0() { return cLabelKeyword_5_0; }
 
 		//label=STRING
@@ -2439,10 +2440,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getLabelSTRINGTerminalRuleCall_5_1_0() { return cLabelSTRINGTerminalRuleCall_5_1_0; }
 
-		//"action-for:" tool_For=[vpdiagram::DiagramElement|FQN]
+		//('action-for:' tool_For=[vpdiagram::DiagramElement|FQN])
 		public Group getGroup_6() { return cGroup_6; }
 
-		//"action-for:"
+		//'action-for:'
 		public Keyword getActionForKeyword_6_0() { return cActionForKeyword_6_0; }
 
 		//tool_For=[vpdiagram::DiagramElement|FQN]
@@ -2454,12 +2455,12 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getTool_ForDiagramElementFQNParserRuleCall_6_1_0_1() { return cTool_ForDiagramElementFQNParserRuleCall_6_1_0_1; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 
 	public class ReconnectEdgeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ReconnectEdge");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ReconnectEdge");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cReconnectEdgeAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cReconnectEdgeKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -2481,19 +2482,19 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTool_ForDiagramElementFQNParserRuleCall_6_1_0_1 = (RuleCall)cTool_ForDiagramElementCrossReference_6_1_0.eContents().get(1);
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
-		//ReconnectEdge returns vpdiagram::Action:
-		//	{vpdiagram::ReconnectEdge} "ReconnectEdge" name=EString "{" ("precondition:" precondition=EString)? ("label:"
-		//	label=STRING)? ("action-for:" tool_For=[vpdiagram::DiagramElement|FQN]) "}";
+		//ReconnectEdge vpdiagram::Action:
+		//	{vpdiagram::ReconnectEdge} 'ReconnectEdge' name=EString '{' ('precondition:' precondition=EString)? ('label:'
+		//	label=STRING)? ('action-for:' tool_For=[vpdiagram::DiagramElement|FQN]) '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpdiagram::ReconnectEdge} "ReconnectEdge" name=EString "{" ("precondition:" precondition=EString)? ("label:"
-		//label=STRING)? ("action-for:" tool_For=[vpdiagram::DiagramElement|FQN]) "}"
+		//{vpdiagram::ReconnectEdge} 'ReconnectEdge' name=EString '{' ('precondition:' precondition=EString)? ('label:'
+		//label=STRING)? ('action-for:' tool_For=[vpdiagram::DiagramElement|FQN]) '}'
 		public Group getGroup() { return cGroup; }
 
 		//{vpdiagram::ReconnectEdge}
 		public Action getReconnectEdgeAction_0() { return cReconnectEdgeAction_0; }
 
-		//"ReconnectEdge"
+		//'ReconnectEdge'
 		public Keyword getReconnectEdgeKeyword_1() { return cReconnectEdgeKeyword_1; }
 
 		//name=EString
@@ -2502,13 +2503,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
-		//("precondition:" precondition=EString)?
+		//('precondition:' precondition=EString)?
 		public Group getGroup_4() { return cGroup_4; }
 
-		//"precondition:"
+		//'precondition:'
 		public Keyword getPreconditionKeyword_4_0() { return cPreconditionKeyword_4_0; }
 
 		//precondition=EString
@@ -2517,10 +2518,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getPreconditionEStringParserRuleCall_4_1_0() { return cPreconditionEStringParserRuleCall_4_1_0; }
 
-		//("label:" label=STRING)?
+		//('label:' label=STRING)?
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"label:"
+		//'label:'
 		public Keyword getLabelKeyword_5_0() { return cLabelKeyword_5_0; }
 
 		//label=STRING
@@ -2529,10 +2530,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getLabelSTRINGTerminalRuleCall_5_1_0() { return cLabelSTRINGTerminalRuleCall_5_1_0; }
 
-		//"action-for:" tool_For=[vpdiagram::DiagramElement|FQN]
+		//('action-for:' tool_For=[vpdiagram::DiagramElement|FQN])
 		public Group getGroup_6() { return cGroup_6; }
 
-		//"action-for:"
+		//'action-for:'
 		public Keyword getActionForKeyword_6_0() { return cActionForKeyword_6_0; }
 
 		//tool_For=[vpdiagram::DiagramElement|FQN]
@@ -2544,12 +2545,12 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getTool_ForDiagramElementFQNParserRuleCall_6_1_0_1() { return cTool_ForDiagramElementFQNParserRuleCall_6_1_0_1; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 
 	public class DomainContainerElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DomainContainer");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.DomainContainer");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cDomainContainerAction_0 = (Action)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
@@ -2557,20 +2558,20 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cThe_domainAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cThe_domainAbstractClassParserRuleCall_1_1_0 = (RuleCall)cThe_domainAssignment_1_1.eContents().get(0);
 		
-		//DomainContainer returns vpdiagram::DomainContainer:
-		//	{vpdiagram::DomainContainer} ("domain-context:" the_domain=AbstractClass);
+		//DomainContainer vpdiagram::DomainContainer:
+		//	{vpdiagram::DomainContainer} ('domain-context:' the_domain=AbstractClass)
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpdiagram::DomainContainer} ("domain-context:" the_domain=AbstractClass)
+		//{vpdiagram::DomainContainer} ('domain-context:' the_domain=AbstractClass)
 		public Group getGroup() { return cGroup; }
 
 		//{vpdiagram::DomainContainer}
 		public Action getDomainContainerAction_0() { return cDomainContainerAction_0; }
 
-		//"domain-context:" the_domain=AbstractClass
+		//('domain-context:' the_domain=AbstractClass)
 		public Group getGroup_1() { return cGroup_1; }
 
-		//"domain-context:"
+		//'domain-context:'
 		public Keyword getDomainContextKeyword_1_0() { return cDomainContextKeyword_1_0; }
 
 		//the_domain=AbstractClass
@@ -2581,7 +2582,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class EdgeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Edge");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Edge");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cEdgeAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cEdgeKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -2623,25 +2624,25 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cE_descriptionEdgeDescriptionParserRuleCall_8_0 = (RuleCall)cE_descriptionAssignment_8.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
-		//Edge returns vpdiagram::AbstractEdge:
-		//	{vpdiagram::Edge} "Edge" name=EString "{" ("association-context:" the_domain=EdgeDomainAssociation |
-		//	"class-association-context:" the_domain=EdgeDomainElement) synchronizationMode=SynchronizationMode? ("source:"
-		//	source+=[vpdiagram::DiagramElement|FQN] ("," source+=[vpdiagram::DiagramElement|FQN])*) ("target:"
-		//	target+=[vpdiagram::DiagramElement|FQN] ("," target+=[vpdiagram::DiagramElement|FQN])*)
-		//	e_description+=EdgeDescription* "}";
+		//Edge vpdiagram::AbstractEdge:
+		//	{vpdiagram::Edge} 'Edge' name=EString '{' ('association-context:' the_domain=EdgeDomainAssociation |
+		//	'class-association-context:' the_domain=EdgeDomainElement) synchronizationMode=SynchronizationMode? ('source:'
+		//	source+=[vpdiagram::DiagramElement|FQN] (',' source+=[vpdiagram::DiagramElement|FQN])*) ('target:'
+		//	target+=[vpdiagram::DiagramElement|FQN] (',' target+=[vpdiagram::DiagramElement|FQN])*)
+		//	e_description+=EdgeDescription* '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpdiagram::Edge} "Edge" name=EString "{" ("association-context:" the_domain=EdgeDomainAssociation |
-		//"class-association-context:" the_domain=EdgeDomainElement) synchronizationMode=SynchronizationMode? ("source:"
-		//source+=[vpdiagram::DiagramElement|FQN] ("," source+=[vpdiagram::DiagramElement|FQN])*) ("target:"
-		//target+=[vpdiagram::DiagramElement|FQN] ("," target+=[vpdiagram::DiagramElement|FQN])*)
-		//e_description+=EdgeDescription* "}"
+		//{vpdiagram::Edge} 'Edge' name=EString '{' ('association-context:' the_domain=EdgeDomainAssociation |
+		//'class-association-context:' the_domain=EdgeDomainElement) synchronizationMode=SynchronizationMode? ('source:'
+		//source+=[vpdiagram::DiagramElement|FQN] (',' source+=[vpdiagram::DiagramElement|FQN])*) ('target:'
+		//target+=[vpdiagram::DiagramElement|FQN] (',' target+=[vpdiagram::DiagramElement|FQN])*)
+		//e_description+=EdgeDescription* '}'
 		public Group getGroup() { return cGroup; }
 
 		//{vpdiagram::Edge}
 		public Action getEdgeAction_0() { return cEdgeAction_0; }
 
-		//"Edge"
+		//'Edge'
 		public Keyword getEdgeKeyword_1() { return cEdgeKeyword_1; }
 
 		//name=EString
@@ -2650,16 +2651,16 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
-		//"association-context:" the_domain=EdgeDomainAssociation | "class-association-context:" the_domain=EdgeDomainElement
+		//('association-context:' the_domain=EdgeDomainAssociation | 'class-association-context:' the_domain=EdgeDomainElement)
 		public Alternatives getAlternatives_4() { return cAlternatives_4; }
 
-		//"association-context:" the_domain=EdgeDomainAssociation
+		//'association-context:' the_domain=EdgeDomainAssociation
 		public Group getGroup_4_0() { return cGroup_4_0; }
 
-		//"association-context:"
+		//'association-context:'
 		public Keyword getAssociationContextKeyword_4_0_0() { return cAssociationContextKeyword_4_0_0; }
 
 		//the_domain=EdgeDomainAssociation
@@ -2668,10 +2669,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EdgeDomainAssociation
 		public RuleCall getThe_domainEdgeDomainAssociationParserRuleCall_4_0_1_0() { return cThe_domainEdgeDomainAssociationParserRuleCall_4_0_1_0; }
 
-		//"class-association-context:" the_domain=EdgeDomainElement
+		//'class-association-context:' the_domain=EdgeDomainElement
 		public Group getGroup_4_1() { return cGroup_4_1; }
 
-		//"class-association-context:"
+		//'class-association-context:'
 		public Keyword getClassAssociationContextKeyword_4_1_0() { return cClassAssociationContextKeyword_4_1_0; }
 
 		//the_domain=EdgeDomainElement
@@ -2686,10 +2687,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//SynchronizationMode
 		public RuleCall getSynchronizationModeSynchronizationModeEnumRuleCall_5_0() { return cSynchronizationModeSynchronizationModeEnumRuleCall_5_0; }
 
-		//"source:" source+=[vpdiagram::DiagramElement|FQN] ("," source+=[vpdiagram::DiagramElement|FQN])*
+		//('source:' source+=[vpdiagram::DiagramElement|FQN] (',' source+=[vpdiagram::DiagramElement|FQN])*)
 		public Group getGroup_6() { return cGroup_6; }
 
-		//"source:"
+		//'source:'
 		public Keyword getSourceKeyword_6_0() { return cSourceKeyword_6_0; }
 
 		//source+=[vpdiagram::DiagramElement|FQN]
@@ -2701,10 +2702,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getSourceDiagramElementFQNParserRuleCall_6_1_0_1() { return cSourceDiagramElementFQNParserRuleCall_6_1_0_1; }
 
-		//("," source+=[vpdiagram::DiagramElement|FQN])*
+		//(',' source+=[vpdiagram::DiagramElement|FQN])*
 		public Group getGroup_6_2() { return cGroup_6_2; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_6_2_0() { return cCommaKeyword_6_2_0; }
 
 		//source+=[vpdiagram::DiagramElement|FQN]
@@ -2716,10 +2717,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getSourceDiagramElementFQNParserRuleCall_6_2_1_0_1() { return cSourceDiagramElementFQNParserRuleCall_6_2_1_0_1; }
 
-		//"target:" target+=[vpdiagram::DiagramElement|FQN] ("," target+=[vpdiagram::DiagramElement|FQN])*
+		//('target:' target+=[vpdiagram::DiagramElement|FQN] (',' target+=[vpdiagram::DiagramElement|FQN])*)
 		public Group getGroup_7() { return cGroup_7; }
 
-		//"target:"
+		//'target:'
 		public Keyword getTargetKeyword_7_0() { return cTargetKeyword_7_0; }
 
 		//target+=[vpdiagram::DiagramElement|FQN]
@@ -2731,10 +2732,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getTargetDiagramElementFQNParserRuleCall_7_1_0_1() { return cTargetDiagramElementFQNParserRuleCall_7_1_0_1; }
 
-		//("," target+=[vpdiagram::DiagramElement|FQN])*
+		//(',' target+=[vpdiagram::DiagramElement|FQN])*
 		public Group getGroup_7_2() { return cGroup_7_2; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_7_2_0() { return cCommaKeyword_7_2_0; }
 
 		//target+=[vpdiagram::DiagramElement|FQN]
@@ -2752,12 +2753,12 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EdgeDescription
 		public RuleCall getE_descriptionEdgeDescriptionParserRuleCall_8_0() { return cE_descriptionEdgeDescriptionParserRuleCall_8_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
 	}
 
 	public class EdgeImportElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EdgeImport");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.EdgeImport");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cEdgeImportAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cEdgeImportKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -2775,19 +2776,19 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cE_descriptionEdgeDescriptionParserRuleCall_6_0 = (RuleCall)cE_descriptionAssignment_6.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
-		//EdgeImport returns vpdiagram::AbstractEdge:
-		//	{vpdiagram::EdgeImport} "EdgeImport" name=EString "{" ("import:" imports=[siriusDiagramDescription::EdgeMapping|FQN])
-		//	synchronizationMode=SynchronizationMode? e_description+=EdgeDescription* "}";
+		//EdgeImport vpdiagram::AbstractEdge:
+		//	{vpdiagram::EdgeImport} 'EdgeImport' name=EString '{' ('import:' imports=[siriusDiagramDescription::EdgeMapping|FQN])
+		//	synchronizationMode=SynchronizationMode? e_description+=EdgeDescription* '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpdiagram::EdgeImport} "EdgeImport" name=EString "{" ("import:" imports=[siriusDiagramDescription::EdgeMapping|FQN])
-		//synchronizationMode=SynchronizationMode? e_description+=EdgeDescription* "}"
+		//{vpdiagram::EdgeImport} 'EdgeImport' name=EString '{' ('import:' imports=[siriusDiagramDescription::EdgeMapping|FQN])
+		//synchronizationMode=SynchronizationMode? e_description+=EdgeDescription* '}'
 		public Group getGroup() { return cGroup; }
 
 		//{vpdiagram::EdgeImport}
 		public Action getEdgeImportAction_0() { return cEdgeImportAction_0; }
 
-		//"EdgeImport"
+		//'EdgeImport'
 		public Keyword getEdgeImportKeyword_1() { return cEdgeImportKeyword_1; }
 
 		//name=EString
@@ -2796,13 +2797,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
-		//"import:" imports=[siriusDiagramDescription::EdgeMapping|FQN]
+		//('import:' imports=[siriusDiagramDescription::EdgeMapping|FQN])
 		public Group getGroup_4() { return cGroup_4; }
 
-		//"import:"
+		//'import:'
 		public Keyword getImportKeyword_4_0() { return cImportKeyword_4_0; }
 
 		//imports=[siriusDiagramDescription::EdgeMapping|FQN]
@@ -2826,12 +2827,12 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EdgeDescription
 		public RuleCall getE_descriptionEdgeDescriptionParserRuleCall_6_0() { return cE_descriptionEdgeDescriptionParserRuleCall_6_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 
 	public class EdgeDomainAssociationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EdgeDomainAssociation");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.EdgeDomainAssociation");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cEdgeDomainAssociationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
@@ -2842,23 +2843,23 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cTarget_LocatorAssignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
 		private final RuleCall cTarget_LocatorAbstractAssociation2ParserRuleCall_1_1_0 = (RuleCall)cTarget_LocatorAssignment_1_1.eContents().get(0);
 		
-		//EdgeDomainAssociation returns vpdiagram::EdgeDomainAssociation:
-		//	{vpdiagram::EdgeDomainAssociation} ("query:" target_query=STRING | target_Locator=AbstractAssociation2);
+		//EdgeDomainAssociation vpdiagram::EdgeDomainAssociation:
+		//	{vpdiagram::EdgeDomainAssociation} ('query:' target_query=STRING | target_Locator=AbstractAssociation2)
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpdiagram::EdgeDomainAssociation} ("query:" target_query=STRING | target_Locator=AbstractAssociation2)
+		//{vpdiagram::EdgeDomainAssociation} ('query:' target_query=STRING | target_Locator=AbstractAssociation2)
 		public Group getGroup() { return cGroup; }
 
 		//{vpdiagram::EdgeDomainAssociation}
 		public Action getEdgeDomainAssociationAction_0() { return cEdgeDomainAssociationAction_0; }
 
-		//"query:" target_query=STRING | target_Locator=AbstractAssociation2
+		//('query:' target_query=STRING | target_Locator=AbstractAssociation2)
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 
-		//"query:" target_query=STRING
+		//'query:' target_query=STRING
 		public Group getGroup_1_0() { return cGroup_1_0; }
 
-		//"query:"
+		//'query:'
 		public Keyword getQueryKeyword_1_0_0() { return cQueryKeyword_1_0_0; }
 
 		//target_query=STRING
@@ -2875,7 +2876,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class EdgeDomainElementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EdgeDomainElement");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.EdgeDomainElement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cEdgeDomainElementAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cThe_DomainAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -2899,14 +2900,14 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cSource_LocatorAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
 		private final RuleCall cSource_LocatorAbstractAssociation2ParserRuleCall_3_1_1_0 = (RuleCall)cSource_LocatorAssignment_3_1_1.eContents().get(0);
 		
-		//EdgeDomainElement returns vpdiagram::EdgeDomainAssociation:
-		//	{vpdiagram::EdgeDomainElement} the_Domain=AbstractClass ("target-query:" target_query=STRING | "target-association:"
-		//	target_Locator=AbstractAssociation2) ("source-query:" source_query=STRING | "source-association:"
-		//	source_Locator=AbstractAssociation2);
+		//EdgeDomainElement vpdiagram::EdgeDomainAssociation:
+		//	{vpdiagram::EdgeDomainElement} the_Domain=AbstractClass ('target-query:' target_query=STRING | 'target-association:'
+		//	target_Locator=AbstractAssociation2) ('source-query:' source_query=STRING | 'source-association:'
+		//	source_Locator=AbstractAssociation2)
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpdiagram::EdgeDomainElement} the_Domain=AbstractClass ("target-query:" target_query=STRING | "target-association:"
-		//target_Locator=AbstractAssociation2) ("source-query:" source_query=STRING | "source-association:"
+		//{vpdiagram::EdgeDomainElement} the_Domain=AbstractClass ('target-query:' target_query=STRING | 'target-association:'
+		//target_Locator=AbstractAssociation2) ('source-query:' source_query=STRING | 'source-association:'
 		//source_Locator=AbstractAssociation2)
 		public Group getGroup() { return cGroup; }
 
@@ -2919,13 +2920,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//AbstractClass
 		public RuleCall getThe_DomainAbstractClassParserRuleCall_1_0() { return cThe_DomainAbstractClassParserRuleCall_1_0; }
 
-		//"target-query:" target_query=STRING | "target-association:" target_Locator=AbstractAssociation2
+		//('target-query:' target_query=STRING | 'target-association:' target_Locator=AbstractAssociation2)
 		public Alternatives getAlternatives_2() { return cAlternatives_2; }
 
-		//"target-query:" target_query=STRING
+		//'target-query:' target_query=STRING
 		public Group getGroup_2_0() { return cGroup_2_0; }
 
-		//"target-query:"
+		//'target-query:'
 		public Keyword getTargetQueryKeyword_2_0_0() { return cTargetQueryKeyword_2_0_0; }
 
 		//target_query=STRING
@@ -2934,10 +2935,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getTarget_querySTRINGTerminalRuleCall_2_0_1_0() { return cTarget_querySTRINGTerminalRuleCall_2_0_1_0; }
 
-		//"target-association:" target_Locator=AbstractAssociation2
+		//'target-association:' target_Locator=AbstractAssociation2
 		public Group getGroup_2_1() { return cGroup_2_1; }
 
-		//"target-association:"
+		//'target-association:'
 		public Keyword getTargetAssociationKeyword_2_1_0() { return cTargetAssociationKeyword_2_1_0; }
 
 		//target_Locator=AbstractAssociation2
@@ -2946,13 +2947,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//AbstractAssociation2
 		public RuleCall getTarget_LocatorAbstractAssociation2ParserRuleCall_2_1_1_0() { return cTarget_LocatorAbstractAssociation2ParserRuleCall_2_1_1_0; }
 
-		//"source-query:" source_query=STRING | "source-association:" source_Locator=AbstractAssociation2
+		//('source-query:' source_query=STRING | 'source-association:' source_Locator=AbstractAssociation2)
 		public Alternatives getAlternatives_3() { return cAlternatives_3; }
 
-		//"source-query:" source_query=STRING
+		//'source-query:' source_query=STRING
 		public Group getGroup_3_0() { return cGroup_3_0; }
 
-		//"source-query:"
+		//'source-query:'
 		public Keyword getSourceQueryKeyword_3_0_0() { return cSourceQueryKeyword_3_0_0; }
 
 		//source_query=STRING
@@ -2961,10 +2962,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getSource_querySTRINGTerminalRuleCall_3_0_1_0() { return cSource_querySTRINGTerminalRuleCall_3_0_1_0; }
 
-		//"source-association:" source_Locator=AbstractAssociation2
+		//'source-association:' source_Locator=AbstractAssociation2
 		public Group getGroup_3_1() { return cGroup_3_1; }
 
-		//"source-association:"
+		//'source-association:'
 		public Keyword getSourceAssociationKeyword_3_1_0() { return cSourceAssociationKeyword_3_1_0; }
 
 		//source_Locator=AbstractAssociation2
@@ -2975,7 +2976,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class CustomizationsElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Customizations");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Customizations");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cCustomizationsAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cCustomizationsKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -2995,24 +2996,24 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		/// **********************************************
 		// * 				Style customization
 		// ********************************************** /
-		//Customizations returns styleCusto::Customizations:
-		//	{styleCusto::Customizations} "customizations" "{" (ownedCustomizationDescriptions+=StyleCustomizationDescriptions
+		//Customizations styleCusto::Customizations:
+		//	{styleCusto::Customizations} 'customizations' '{' (ownedCustomizationDescriptions+=StyleCustomizationDescriptions
 		//	ownedCustomizationDescriptions+=StyleCustomizationDescriptions*)? (ownedCustomizationReuse+=StyleCustomizationReuse
-		//	ownedCustomizationReuse+=StyleCustomizationReuse*)? "}";
+		//	ownedCustomizationReuse+=StyleCustomizationReuse*)? '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{styleCusto::Customizations} "customizations" "{" (ownedCustomizationDescriptions+=StyleCustomizationDescriptions
+		//{styleCusto::Customizations} 'customizations' '{' (ownedCustomizationDescriptions+=StyleCustomizationDescriptions
 		//ownedCustomizationDescriptions+=StyleCustomizationDescriptions*)? (ownedCustomizationReuse+=StyleCustomizationReuse
-		//ownedCustomizationReuse+=StyleCustomizationReuse*)? "}"
+		//ownedCustomizationReuse+=StyleCustomizationReuse*)? '}'
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::Customizations}
 		public Action getCustomizationsAction_0() { return cCustomizationsAction_0; }
 
-		//"customizations"
+		//'customizations'
 		public Keyword getCustomizationsKeyword_1() { return cCustomizationsKeyword_1; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
 		//(ownedCustomizationDescriptions+=StyleCustomizationDescriptions
@@ -3046,12 +3047,12 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//StyleCustomizationReuse
 		public RuleCall getOwnedCustomizationReuseStyleCustomizationReuseParserRuleCall_4_1_0() { return cOwnedCustomizationReuseStyleCustomizationReuseParserRuleCall_4_1_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 
 	public class StyleCustomizationDescriptionsElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "StyleCustomizationDescriptions");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.StyleCustomizationDescriptions");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cStyleCustomizationDescriptionsAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cCustomizationKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -3072,21 +3073,21 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cOwnedCustomizationsAbstractCustomizationParserRuleCall_6_1_0 = (RuleCall)cOwnedCustomizationsAssignment_6_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
-		//StyleCustomizationDescriptions returns styleCusto::StyleCustomizationDescriptions:
-		//	{styleCusto::StyleCustomizationDescriptions} "customization" name=ID ("when" "("
-		//	precondtionExpression=CustomizationExpression ")")? "with" "{" (ownedCustomizations+=AbstractCustomization
-		//	ownedCustomizations+=AbstractCustomization*)? "}";
+		//StyleCustomizationDescriptions styleCusto::StyleCustomizationDescriptions:
+		//	{styleCusto::StyleCustomizationDescriptions} 'customization' name=ID ('when' '('
+		//	precondtionExpression=CustomizationExpression ')')? 'with' '{' (ownedCustomizations+=AbstractCustomization
+		//	ownedCustomizations+=AbstractCustomization*)? '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{styleCusto::StyleCustomizationDescriptions} "customization" name=ID ("when" "("
-		//precondtionExpression=CustomizationExpression ")")? "with" "{" (ownedCustomizations+=AbstractCustomization
-		//ownedCustomizations+=AbstractCustomization*)? "}"
+		//{styleCusto::StyleCustomizationDescriptions} 'customization' name=ID ('when' '('
+		//precondtionExpression=CustomizationExpression ')')? 'with' '{' (ownedCustomizations+=AbstractCustomization
+		//ownedCustomizations+=AbstractCustomization*)? '}'
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::StyleCustomizationDescriptions}
 		public Action getStyleCustomizationDescriptionsAction_0() { return cStyleCustomizationDescriptionsAction_0; }
 
-		//"customization"
+		//'customization'
 		public Keyword getCustomizationKeyword_1() { return cCustomizationKeyword_1; }
 
 		//name=ID
@@ -3095,13 +3096,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 
-		//("when" "(" precondtionExpression=CustomizationExpression ")")?
+		//('when' '(' precondtionExpression=CustomizationExpression ')')?
 		public Group getGroup_3() { return cGroup_3; }
 
-		//"when"
+		//'when'
 		public Keyword getWhenKeyword_3_0() { return cWhenKeyword_3_0; }
 
-		//"("
+		//'('
 		public Keyword getLeftParenthesisKeyword_3_1() { return cLeftParenthesisKeyword_3_1; }
 
 		//precondtionExpression=CustomizationExpression
@@ -3110,13 +3111,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//CustomizationExpression
 		public RuleCall getPrecondtionExpressionCustomizationExpressionParserRuleCall_3_2_0() { return cPrecondtionExpressionCustomizationExpressionParserRuleCall_3_2_0; }
 
-		//")"
+		//')'
 		public Keyword getRightParenthesisKeyword_3_3() { return cRightParenthesisKeyword_3_3; }
 
-		//"with"
+		//'with'
 		public Keyword getWithKeyword_4() { return cWithKeyword_4; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
 
 		//(ownedCustomizations+=AbstractCustomization ownedCustomizations+=AbstractCustomization*)?
@@ -3134,20 +3135,20 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//AbstractCustomization
 		public RuleCall getOwnedCustomizationsAbstractCustomizationParserRuleCall_6_1_0() { return cOwnedCustomizationsAbstractCustomizationParserRuleCall_6_1_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 
 	public class AbstractCustomizationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AbstractCustomization");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.AbstractCustomization");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cEdgeStyleCustomizationParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cColorCustomizationParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cLabelCustomizationParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cAbstractNodeStyleCustomizationParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
-		//AbstractCustomization returns styleCusto::AbstractCustomization:
-		//	EdgeStyleCustomization | ColorCustomization | LabelCustomization | AbstractNodeStyleCustomization;
+		//AbstractCustomization styleCusto::AbstractCustomization:
+		//	EdgeStyleCustomization | ColorCustomization | LabelCustomization | AbstractNodeStyleCustomization
 		@Override public ParserRule getRule() { return rule; }
 
 		//EdgeStyleCustomization | ColorCustomization | LabelCustomization | AbstractNodeStyleCustomization
@@ -3167,7 +3168,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class EdgeStyleCustomizationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EdgeStyleCustomization");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.EdgeStyleCustomization");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cEdgeStyleCustomizationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cEdgeKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -3268,51 +3269,51 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cEndCenteringCenterStyleEnumRuleCall_16_2_0 = (RuleCall)cEndCenteringAssignment_16_2.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_17 = (Keyword)cGroup.eContents().get(17);
 		
-		//EdgeStyleCustomization returns styleCusto::EdgeStyleCustomization:
-		//	{styleCusto::EdgeStyleCustomization} "edge" ("(" (appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING] (","
-		//	appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING])*) ")")? "{" ("over-all-edges" ":" applyonAll=EBoolean)?
-		//	("source" ":" sourceArrow=EdgeArrows)? ("target" ":" targetArrow=EdgeArrows)? ("routing" ":"
-		//	routingStyle=EdgeRouting)? ("folding" ":" foldingStyle=FoldingStyle)? ("center-source-mappings" ":"
-		//	(centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (","
-		//	centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*))? ("center-target-mappings" ":"
-		//	(centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (","
+		//EdgeStyleCustomization styleCusto::EdgeStyleCustomization:
+		//	{styleCusto::EdgeStyleCustomization} 'edge' ('(' (appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING] (','
+		//	appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING])*) ')')? '{' ('over-all-edges' ':' applyonAll=EBoolean)?
+		//	('source' ':' sourceArrow=EdgeArrows)? ('target' ':' targetArrow=EdgeArrows)? ('routing' ':'
+		//	routingStyle=EdgeRouting)? ('folding' ':' foldingStyle=FoldingStyle)? ('center-source-mappings' ':'
+		//	(centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (','
+		//	centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*))? ('center-target-mappings' ':'
+		//	(centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (','
 		//	centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*))?
-		//	("begin-label-style-description" ":" beginLabelStyleDescription=[siriusDDStyle::BeginLabelStyleDescription|STRING])?
-		//	("center-label-style-description" ":"
-		//	centerLabelStyleDescription=[siriusDDStyle::CenterLabelStyleDescription|STRING])? ("end-label-style-description" ":"
-		//	endLabelStyleDescription=[siriusDDStyle::EndLabelStyleDescription|STRING])? ("line-style" ":" lineStyle=LineStyle)?
-		//	("size" ":" sizeComputationExpression=CustomizationExpression)? ("end-centering" ":" endCentering=CenterStyle)? "}";
+		//	('begin-label-style-description' ':' beginLabelStyleDescription=[siriusDDStyle::BeginLabelStyleDescription|STRING])?
+		//	('center-label-style-description' ':'
+		//	centerLabelStyleDescription=[siriusDDStyle::CenterLabelStyleDescription|STRING])? ('end-label-style-description' ':'
+		//	endLabelStyleDescription=[siriusDDStyle::EndLabelStyleDescription|STRING])? ('line-style' ':' lineStyle=LineStyle)?
+		//	('size' ':' sizeComputationExpression=CustomizationExpression)? ('end-centering' ':' endCentering=CenterStyle)? '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{styleCusto::EdgeStyleCustomization} "edge" ("(" (appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING] (","
-		//appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING])*) ")")? "{" ("over-all-edges" ":" applyonAll=EBoolean)?
-		//("source" ":" sourceArrow=EdgeArrows)? ("target" ":" targetArrow=EdgeArrows)? ("routing" ":"
-		//routingStyle=EdgeRouting)? ("folding" ":" foldingStyle=FoldingStyle)? ("center-source-mappings" ":"
-		//(centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (","
-		//centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*))? ("center-target-mappings" ":"
-		//(centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (","
-		//centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*))? ("begin-label-style-description"
-		//":" beginLabelStyleDescription=[siriusDDStyle::BeginLabelStyleDescription|STRING])? ("center-label-style-description"
-		//":" centerLabelStyleDescription=[siriusDDStyle::CenterLabelStyleDescription|STRING])? ("end-label-style-description"
-		//":" endLabelStyleDescription=[siriusDDStyle::EndLabelStyleDescription|STRING])? ("line-style" ":"
-		//lineStyle=LineStyle)? ("size" ":" sizeComputationExpression=CustomizationExpression)? ("end-centering" ":"
-		//endCentering=CenterStyle)? "}"
+		//{styleCusto::EdgeStyleCustomization} 'edge' ('(' (appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING] (','
+		//appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING])*) ')')? '{' ('over-all-edges' ':' applyonAll=EBoolean)?
+		//('source' ':' sourceArrow=EdgeArrows)? ('target' ':' targetArrow=EdgeArrows)? ('routing' ':'
+		//routingStyle=EdgeRouting)? ('folding' ':' foldingStyle=FoldingStyle)? ('center-source-mappings' ':'
+		//(centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (','
+		//centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*))? ('center-target-mappings' ':'
+		//(centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (','
+		//centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*))? ('begin-label-style-description'
+		//':' beginLabelStyleDescription=[siriusDDStyle::BeginLabelStyleDescription|STRING])? ('center-label-style-description'
+		//':' centerLabelStyleDescription=[siriusDDStyle::CenterLabelStyleDescription|STRING])? ('end-label-style-description'
+		//':' endLabelStyleDescription=[siriusDDStyle::EndLabelStyleDescription|STRING])? ('line-style' ':'
+		//lineStyle=LineStyle)? ('size' ':' sizeComputationExpression=CustomizationExpression)? ('end-centering' ':'
+		//endCentering=CenterStyle)? '}'
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::EdgeStyleCustomization}
 		public Action getEdgeStyleCustomizationAction_0() { return cEdgeStyleCustomizationAction_0; }
 
-		//"edge"
+		//'edge'
 		public Keyword getEdgeKeyword_1() { return cEdgeKeyword_1; }
 
-		//("(" (appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING] (","
-		//appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING])*) ")")?
+		//('(' (appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING] (','
+		//appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING])*) ')')?
 		public Group getGroup_2() { return cGroup_2; }
 
-		//"("
+		//'('
 		public Keyword getLeftParenthesisKeyword_2_0() { return cLeftParenthesisKeyword_2_0; }
 
-		//appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING] ("," appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING])*
+		//(appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING] (',' appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING])*)
 		public Group getGroup_2_1() { return cGroup_2_1; }
 
 		//appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING]
@@ -3324,10 +3325,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getAppliedOnEdgeStyleDescriptionSTRINGTerminalRuleCall_2_1_0_0_1() { return cAppliedOnEdgeStyleDescriptionSTRINGTerminalRuleCall_2_1_0_0_1; }
 
-		//("," appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING])*
+		//(',' appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING])*
 		public Group getGroup_2_1_1() { return cGroup_2_1_1; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_2_1_1_0() { return cCommaKeyword_2_1_1_0; }
 
 		//appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING]
@@ -3339,19 +3340,19 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getAppliedOnEdgeStyleDescriptionSTRINGTerminalRuleCall_2_1_1_1_0_1() { return cAppliedOnEdgeStyleDescriptionSTRINGTerminalRuleCall_2_1_1_1_0_1; }
 
-		//")"
+		//')'
 		public Keyword getRightParenthesisKeyword_2_2() { return cRightParenthesisKeyword_2_2; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
-		//("over-all-edges" ":" applyonAll=EBoolean)?
+		//('over-all-edges' ':' applyonAll=EBoolean)?
 		public Group getGroup_4() { return cGroup_4; }
 
-		//"over-all-edges"
+		//'over-all-edges'
 		public Keyword getOverAllEdgesKeyword_4_0() { return cOverAllEdgesKeyword_4_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_4_1() { return cColonKeyword_4_1; }
 
 		//applyonAll=EBoolean
@@ -3360,13 +3361,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EBoolean
 		public RuleCall getApplyonAllEBooleanParserRuleCall_4_2_0() { return cApplyonAllEBooleanParserRuleCall_4_2_0; }
 
-		//("source" ":" sourceArrow=EdgeArrows)?
+		//('source' ':' sourceArrow=EdgeArrows)?
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"source"
+		//'source'
 		public Keyword getSourceKeyword_5_0() { return cSourceKeyword_5_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_5_1() { return cColonKeyword_5_1; }
 
 		//sourceArrow=EdgeArrows
@@ -3375,13 +3376,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EdgeArrows
 		public RuleCall getSourceArrowEdgeArrowsEnumRuleCall_5_2_0() { return cSourceArrowEdgeArrowsEnumRuleCall_5_2_0; }
 
-		//("target" ":" targetArrow=EdgeArrows)?
+		//('target' ':' targetArrow=EdgeArrows)?
 		public Group getGroup_6() { return cGroup_6; }
 
-		//"target"
+		//'target'
 		public Keyword getTargetKeyword_6_0() { return cTargetKeyword_6_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_6_1() { return cColonKeyword_6_1; }
 
 		//targetArrow=EdgeArrows
@@ -3390,13 +3391,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EdgeArrows
 		public RuleCall getTargetArrowEdgeArrowsEnumRuleCall_6_2_0() { return cTargetArrowEdgeArrowsEnumRuleCall_6_2_0; }
 
-		//("routing" ":" routingStyle=EdgeRouting)?
+		//('routing' ':' routingStyle=EdgeRouting)?
 		public Group getGroup_7() { return cGroup_7; }
 
-		//"routing"
+		//'routing'
 		public Keyword getRoutingKeyword_7_0() { return cRoutingKeyword_7_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_7_1() { return cColonKeyword_7_1; }
 
 		//routingStyle=EdgeRouting
@@ -3405,13 +3406,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EdgeRouting
 		public RuleCall getRoutingStyleEdgeRoutingEnumRuleCall_7_2_0() { return cRoutingStyleEdgeRoutingEnumRuleCall_7_2_0; }
 
-		//("folding" ":" foldingStyle=FoldingStyle)?
+		//('folding' ':' foldingStyle=FoldingStyle)?
 		public Group getGroup_8() { return cGroup_8; }
 
-		//"folding"
+		//'folding'
 		public Keyword getFoldingKeyword_8_0() { return cFoldingKeyword_8_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_8_1() { return cColonKeyword_8_1; }
 
 		//foldingStyle=FoldingStyle
@@ -3420,18 +3421,18 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//FoldingStyle
 		public RuleCall getFoldingStyleFoldingStyleEnumRuleCall_8_2_0() { return cFoldingStyleFoldingStyleEnumRuleCall_8_2_0; }
 
-		//("center-source-mappings" ":" (centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (","
+		//('center-source-mappings' ':' (centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (','
 		//centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*))?
 		public Group getGroup_9() { return cGroup_9; }
 
-		//"center-source-mappings"
+		//'center-source-mappings'
 		public Keyword getCenterSourceMappingsKeyword_9_0() { return cCenterSourceMappingsKeyword_9_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_9_1() { return cColonKeyword_9_1; }
 
-		//centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (","
-		//centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*
+		//(centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (','
+		//centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*)
 		public Group getGroup_9_2() { return cGroup_9_2; }
 
 		//centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING]
@@ -3443,10 +3444,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getCenteredSourceMappingsDiagramElementMappingSTRINGTerminalRuleCall_9_2_0_0_1() { return cCenteredSourceMappingsDiagramElementMappingSTRINGTerminalRuleCall_9_2_0_0_1; }
 
-		//("," centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*
+		//(',' centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*
 		public Group getGroup_9_2_1() { return cGroup_9_2_1; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_9_2_1_0() { return cCommaKeyword_9_2_1_0; }
 
 		//centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING]
@@ -3458,18 +3459,18 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getCenteredSourceMappingsDiagramElementMappingSTRINGTerminalRuleCall_9_2_1_1_0_1() { return cCenteredSourceMappingsDiagramElementMappingSTRINGTerminalRuleCall_9_2_1_1_0_1; }
 
-		//("center-target-mappings" ":" (centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (","
+		//('center-target-mappings' ':' (centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (','
 		//centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*))?
 		public Group getGroup_10() { return cGroup_10; }
 
-		//"center-target-mappings"
+		//'center-target-mappings'
 		public Keyword getCenterTargetMappingsKeyword_10_0() { return cCenterTargetMappingsKeyword_10_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_10_1() { return cColonKeyword_10_1; }
 
-		//centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (","
-		//centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*
+		//(centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (','
+		//centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*)
 		public Group getGroup_10_2() { return cGroup_10_2; }
 
 		//centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING]
@@ -3481,10 +3482,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getCenteredTargetMappingsDiagramElementMappingSTRINGTerminalRuleCall_10_2_0_0_1() { return cCenteredTargetMappingsDiagramElementMappingSTRINGTerminalRuleCall_10_2_0_0_1; }
 
-		//("," centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*
+		//(',' centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*
 		public Group getGroup_10_2_1() { return cGroup_10_2_1; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_10_2_1_0() { return cCommaKeyword_10_2_1_0; }
 
 		//centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING]
@@ -3496,13 +3497,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getCenteredTargetMappingsDiagramElementMappingSTRINGTerminalRuleCall_10_2_1_1_0_1() { return cCenteredTargetMappingsDiagramElementMappingSTRINGTerminalRuleCall_10_2_1_1_0_1; }
 
-		//("begin-label-style-description" ":" beginLabelStyleDescription=[siriusDDStyle::BeginLabelStyleDescription|STRING])?
+		//('begin-label-style-description' ':' beginLabelStyleDescription=[siriusDDStyle::BeginLabelStyleDescription|STRING])?
 		public Group getGroup_11() { return cGroup_11; }
 
-		//"begin-label-style-description"
+		//'begin-label-style-description'
 		public Keyword getBeginLabelStyleDescriptionKeyword_11_0() { return cBeginLabelStyleDescriptionKeyword_11_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_11_1() { return cColonKeyword_11_1; }
 
 		//beginLabelStyleDescription=[siriusDDStyle::BeginLabelStyleDescription|STRING]
@@ -3514,13 +3515,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getBeginLabelStyleDescriptionBeginLabelStyleDescriptionSTRINGTerminalRuleCall_11_2_0_1() { return cBeginLabelStyleDescriptionBeginLabelStyleDescriptionSTRINGTerminalRuleCall_11_2_0_1; }
 
-		//("center-label-style-description" ":" centerLabelStyleDescription=[siriusDDStyle::CenterLabelStyleDescription|STRING])?
+		//('center-label-style-description' ':' centerLabelStyleDescription=[siriusDDStyle::CenterLabelStyleDescription|STRING])?
 		public Group getGroup_12() { return cGroup_12; }
 
-		//"center-label-style-description"
+		//'center-label-style-description'
 		public Keyword getCenterLabelStyleDescriptionKeyword_12_0() { return cCenterLabelStyleDescriptionKeyword_12_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_12_1() { return cColonKeyword_12_1; }
 
 		//centerLabelStyleDescription=[siriusDDStyle::CenterLabelStyleDescription|STRING]
@@ -3532,13 +3533,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getCenterLabelStyleDescriptionCenterLabelStyleDescriptionSTRINGTerminalRuleCall_12_2_0_1() { return cCenterLabelStyleDescriptionCenterLabelStyleDescriptionSTRINGTerminalRuleCall_12_2_0_1; }
 
-		//("end-label-style-description" ":" endLabelStyleDescription=[siriusDDStyle::EndLabelStyleDescription|STRING])?
+		//('end-label-style-description' ':' endLabelStyleDescription=[siriusDDStyle::EndLabelStyleDescription|STRING])?
 		public Group getGroup_13() { return cGroup_13; }
 
-		//"end-label-style-description"
+		//'end-label-style-description'
 		public Keyword getEndLabelStyleDescriptionKeyword_13_0() { return cEndLabelStyleDescriptionKeyword_13_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_13_1() { return cColonKeyword_13_1; }
 
 		//endLabelStyleDescription=[siriusDDStyle::EndLabelStyleDescription|STRING]
@@ -3550,13 +3551,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getEndLabelStyleDescriptionEndLabelStyleDescriptionSTRINGTerminalRuleCall_13_2_0_1() { return cEndLabelStyleDescriptionEndLabelStyleDescriptionSTRINGTerminalRuleCall_13_2_0_1; }
 
-		//("line-style" ":" lineStyle=LineStyle)?
+		//('line-style' ':' lineStyle=LineStyle)?
 		public Group getGroup_14() { return cGroup_14; }
 
-		//"line-style"
+		//'line-style'
 		public Keyword getLineStyleKeyword_14_0() { return cLineStyleKeyword_14_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_14_1() { return cColonKeyword_14_1; }
 
 		//lineStyle=LineStyle
@@ -3565,13 +3566,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//LineStyle
 		public RuleCall getLineStyleLineStyleEnumRuleCall_14_2_0() { return cLineStyleLineStyleEnumRuleCall_14_2_0; }
 
-		//("size" ":" sizeComputationExpression=CustomizationExpression)?
+		//('size' ':' sizeComputationExpression=CustomizationExpression)?
 		public Group getGroup_15() { return cGroup_15; }
 
-		//"size"
+		//'size'
 		public Keyword getSizeKeyword_15_0() { return cSizeKeyword_15_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_15_1() { return cColonKeyword_15_1; }
 
 		//sizeComputationExpression=CustomizationExpression
@@ -3580,13 +3581,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//CustomizationExpression
 		public RuleCall getSizeComputationExpressionCustomizationExpressionParserRuleCall_15_2_0() { return cSizeComputationExpressionCustomizationExpressionParserRuleCall_15_2_0; }
 
-		//("end-centering" ":" endCentering=CenterStyle)?
+		//('end-centering' ':' endCentering=CenterStyle)?
 		public Group getGroup_16() { return cGroup_16; }
 
-		//"end-centering"
+		//'end-centering'
 		public Keyword getEndCenteringKeyword_16_0() { return cEndCenteringKeyword_16_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_16_1() { return cColonKeyword_16_1; }
 
 		//endCentering=CenterStyle
@@ -3595,12 +3596,12 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//CenterStyle
 		public RuleCall getEndCenteringCenterStyleEnumRuleCall_16_2_0() { return cEndCenteringCenterStyleEnumRuleCall_16_2_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_17() { return cRightCurlyBracketKeyword_17; }
 	}
 
 	public class ColorCustomizationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ColorCustomization");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ColorCustomization");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cColorCustomizationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cPaintKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -3625,19 +3626,19 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cColorAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
 		private final RuleCall cColorSystemColorsEnumRuleCall_5_1_0 = (RuleCall)cColorAssignment_5_1.eContents().get(0);
 		
-		//ColorCustomization returns styleCusto::ColorCustomization:
-		//	{styleCusto::ColorCustomization} "paint" colorUseCase=ColorUseCase ("(" (appliedOn+=[ecore::EObject|STRING] (","
-		//	appliedOn+=[ecore::EObject|STRING])*) ")")? applyonAll?="over-all-colors"? ("with" color=SystemColors);
+		//ColorCustomization styleCusto::ColorCustomization:
+		//	{styleCusto::ColorCustomization} 'paint' colorUseCase=ColorUseCase ('(' (appliedOn+=[ecore::EObject|STRING] (','
+		//	appliedOn+=[ecore::EObject|STRING])*) ')')? applyonAll?='over-all-colors'? ('with' color=SystemColors)
 		@Override public ParserRule getRule() { return rule; }
 
-		//{styleCusto::ColorCustomization} "paint" colorUseCase=ColorUseCase ("(" (appliedOn+=[ecore::EObject|STRING] (","
-		//appliedOn+=[ecore::EObject|STRING])*) ")")? applyonAll?="over-all-colors"? ("with" color=SystemColors)
+		//{styleCusto::ColorCustomization} 'paint' colorUseCase=ColorUseCase ('(' (appliedOn+=[ecore::EObject|STRING] (','
+		//appliedOn+=[ecore::EObject|STRING])*) ')')? applyonAll?='over-all-colors'? ('with' color=SystemColors)
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::ColorCustomization}
 		public Action getColorCustomizationAction_0() { return cColorCustomizationAction_0; }
 
-		//"paint"
+		//'paint'
 		public Keyword getPaintKeyword_1() { return cPaintKeyword_1; }
 
 		//colorUseCase=ColorUseCase
@@ -3646,13 +3647,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//ColorUseCase
 		public RuleCall getColorUseCaseColorUseCaseEnumRuleCall_2_0() { return cColorUseCaseColorUseCaseEnumRuleCall_2_0; }
 
-		//("(" (appliedOn+=[ecore::EObject|STRING] ("," appliedOn+=[ecore::EObject|STRING])*) ")")?
+		//('(' (appliedOn+=[ecore::EObject|STRING] (',' appliedOn+=[ecore::EObject|STRING])*) ')')?
 		public Group getGroup_3() { return cGroup_3; }
 
-		//"("
+		//'('
 		public Keyword getLeftParenthesisKeyword_3_0() { return cLeftParenthesisKeyword_3_0; }
 
-		//appliedOn+=[ecore::EObject|STRING] ("," appliedOn+=[ecore::EObject|STRING])*
+		//(appliedOn+=[ecore::EObject|STRING] (',' appliedOn+=[ecore::EObject|STRING])*)
 		public Group getGroup_3_1() { return cGroup_3_1; }
 
 		//appliedOn+=[ecore::EObject|STRING]
@@ -3664,10 +3665,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getAppliedOnEObjectSTRINGTerminalRuleCall_3_1_0_0_1() { return cAppliedOnEObjectSTRINGTerminalRuleCall_3_1_0_0_1; }
 
-		//("," appliedOn+=[ecore::EObject|STRING])*
+		//(',' appliedOn+=[ecore::EObject|STRING])*
 		public Group getGroup_3_1_1() { return cGroup_3_1_1; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_3_1_1_0() { return cCommaKeyword_3_1_1_0; }
 
 		//appliedOn+=[ecore::EObject|STRING]
@@ -3679,19 +3680,19 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getAppliedOnEObjectSTRINGTerminalRuleCall_3_1_1_1_0_1() { return cAppliedOnEObjectSTRINGTerminalRuleCall_3_1_1_1_0_1; }
 
-		//")"
+		//')'
 		public Keyword getRightParenthesisKeyword_3_2() { return cRightParenthesisKeyword_3_2; }
 
-		//applyonAll?="over-all-colors"?
+		//applyonAll?='over-all-colors'?
 		public Assignment getApplyonAllAssignment_4() { return cApplyonAllAssignment_4; }
 
-		//"over-all-colors"
+		//'over-all-colors'
 		public Keyword getApplyonAllOverAllColorsKeyword_4_0() { return cApplyonAllOverAllColorsKeyword_4_0; }
 
-		//"with" color=SystemColors
+		//('with' color=SystemColors)
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"with"
+		//'with'
 		public Keyword getWithKeyword_5_0() { return cWithKeyword_5_0; }
 
 		//color=SystemColors
@@ -3702,7 +3703,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class LabelCustomizationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LabelCustomization");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.LabelCustomization");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cLabelCustomizationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cLabelKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -3760,36 +3761,36 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cExpressionCustomizationExpressionParserRuleCall_10_2_0 = (RuleCall)cExpressionAssignment_10_2.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		
-		//LabelCustomization returns styleCusto::LabelCustomization:
-		//	{styleCusto::LabelCustomization} "label" ("(" (appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING] (","
-		//	appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING])*) ")")? "{" ("over-all-labels" ":"
-		//	applyonAll=EBoolean)? ownedLabelAlignment=LabelAlignementCustomization? ("size" ":" size=EInt)? ("format" ":"
-		//	format=FontFormat)? ("color" ":" color=SystemColors) ("icon" "{" "show" ":" showIcon=EBoolean "path" ":"
-		//	iconPath=EString "}")? ("expression" ":" expression=CustomizationExpression)? "}";
+		//LabelCustomization styleCusto::LabelCustomization:
+		//	{styleCusto::LabelCustomization} 'label' ('(' (appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING] (','
+		//	appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING])*) ')')? '{' ('over-all-labels' ':'
+		//	applyonAll=EBoolean)? ownedLabelAlignment=LabelAlignementCustomization? ('size' ':' size=EInt)? ('format' ':'
+		//	format=FontFormat)? ('color' ':' color=SystemColors) ('icon' '{' 'show' ':' showIcon=EBoolean 'path' ':'
+		//	iconPath=EString '}')? ('expression' ':' expression=CustomizationExpression)? '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{styleCusto::LabelCustomization} "label" ("(" (appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING] (","
-		//appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING])*) ")")? "{" ("over-all-labels" ":" applyonAll=EBoolean)?
-		//ownedLabelAlignment=LabelAlignementCustomization? ("size" ":" size=EInt)? ("format" ":" format=FontFormat)? ("color"
-		//":" color=SystemColors) ("icon" "{" "show" ":" showIcon=EBoolean "path" ":" iconPath=EString "}")? ("expression" ":"
-		//expression=CustomizationExpression)? "}"
+		//{styleCusto::LabelCustomization} 'label' ('(' (appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING] (','
+		//appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING])*) ')')? '{' ('over-all-labels' ':' applyonAll=EBoolean)?
+		//ownedLabelAlignment=LabelAlignementCustomization? ('size' ':' size=EInt)? ('format' ':' format=FontFormat)? ('color'
+		//':' color=SystemColors) ('icon' '{' 'show' ':' showIcon=EBoolean 'path' ':' iconPath=EString '}')? ('expression' ':'
+		//expression=CustomizationExpression)? '}'
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::LabelCustomization}
 		public Action getLabelCustomizationAction_0() { return cLabelCustomizationAction_0; }
 
-		//"label"
+		//'label'
 		public Keyword getLabelKeyword_1() { return cLabelKeyword_1; }
 
-		//("(" (appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING] (","
-		//appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING])*) ")")?
+		//('(' (appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING] (','
+		//appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING])*) ')')?
 		public Group getGroup_2() { return cGroup_2; }
 
-		//"("
+		//'('
 		public Keyword getLeftParenthesisKeyword_2_0() { return cLeftParenthesisKeyword_2_0; }
 
-		//appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING] (","
-		//appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING])*
+		//(appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING] (','
+		//appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING])*)
 		public Group getGroup_2_1() { return cGroup_2_1; }
 
 		//appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING]
@@ -3801,10 +3802,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getAppliedOnBasicLabelStyleDescriptionSTRINGTerminalRuleCall_2_1_0_0_1() { return cAppliedOnBasicLabelStyleDescriptionSTRINGTerminalRuleCall_2_1_0_0_1; }
 
-		//("," appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING])*
+		//(',' appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING])*
 		public Group getGroup_2_1_1() { return cGroup_2_1_1; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_2_1_1_0() { return cCommaKeyword_2_1_1_0; }
 
 		//appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING]
@@ -3816,19 +3817,19 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getAppliedOnBasicLabelStyleDescriptionSTRINGTerminalRuleCall_2_1_1_1_0_1() { return cAppliedOnBasicLabelStyleDescriptionSTRINGTerminalRuleCall_2_1_1_1_0_1; }
 
-		//")"
+		//')'
 		public Keyword getRightParenthesisKeyword_2_2() { return cRightParenthesisKeyword_2_2; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
-		//("over-all-labels" ":" applyonAll=EBoolean)?
+		//('over-all-labels' ':' applyonAll=EBoolean)?
 		public Group getGroup_4() { return cGroup_4; }
 
-		//"over-all-labels"
+		//'over-all-labels'
 		public Keyword getOverAllLabelsKeyword_4_0() { return cOverAllLabelsKeyword_4_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_4_1() { return cColonKeyword_4_1; }
 
 		//applyonAll=EBoolean
@@ -3843,13 +3844,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//LabelAlignementCustomization
 		public RuleCall getOwnedLabelAlignmentLabelAlignementCustomizationParserRuleCall_5_0() { return cOwnedLabelAlignmentLabelAlignementCustomizationParserRuleCall_5_0; }
 
-		//("size" ":" size=EInt)?
+		//('size' ':' size=EInt)?
 		public Group getGroup_6() { return cGroup_6; }
 
-		//"size"
+		//'size'
 		public Keyword getSizeKeyword_6_0() { return cSizeKeyword_6_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_6_1() { return cColonKeyword_6_1; }
 
 		//size=EInt
@@ -3858,13 +3859,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EInt
 		public RuleCall getSizeEIntParserRuleCall_6_2_0() { return cSizeEIntParserRuleCall_6_2_0; }
 
-		//("format" ":" format=FontFormat)?
+		//('format' ':' format=FontFormat)?
 		public Group getGroup_7() { return cGroup_7; }
 
-		//"format"
+		//'format'
 		public Keyword getFormatKeyword_7_0() { return cFormatKeyword_7_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_7_1() { return cColonKeyword_7_1; }
 
 		//format=FontFormat
@@ -3873,13 +3874,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//FontFormat
 		public RuleCall getFormatFontFormatEnumRuleCall_7_2_0() { return cFormatFontFormatEnumRuleCall_7_2_0; }
 
-		//"color" ":" color=SystemColors
+		//('color' ':' color=SystemColors)
 		public Group getGroup_8() { return cGroup_8; }
 
-		//"color"
+		//'color'
 		public Keyword getColorKeyword_8_0() { return cColorKeyword_8_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_8_1() { return cColonKeyword_8_1; }
 
 		//color=SystemColors
@@ -3888,19 +3889,19 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//SystemColors
 		public RuleCall getColorSystemColorsEnumRuleCall_8_2_0() { return cColorSystemColorsEnumRuleCall_8_2_0; }
 
-		//("icon" "{" "show" ":" showIcon=EBoolean "path" ":" iconPath=EString "}")?
+		//('icon' '{' 'show' ':' showIcon=EBoolean 'path' ':' iconPath=EString '}')?
 		public Group getGroup_9() { return cGroup_9; }
 
-		//"icon"
+		//'icon'
 		public Keyword getIconKeyword_9_0() { return cIconKeyword_9_0; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_9_1() { return cLeftCurlyBracketKeyword_9_1; }
 
-		//"show"
+		//'show'
 		public Keyword getShowKeyword_9_2() { return cShowKeyword_9_2; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_9_3() { return cColonKeyword_9_3; }
 
 		//showIcon=EBoolean
@@ -3909,10 +3910,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EBoolean
 		public RuleCall getShowIconEBooleanParserRuleCall_9_4_0() { return cShowIconEBooleanParserRuleCall_9_4_0; }
 
-		//"path"
+		//'path'
 		public Keyword getPathKeyword_9_5() { return cPathKeyword_9_5; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_9_6() { return cColonKeyword_9_6; }
 
 		//iconPath=EString
@@ -3921,16 +3922,16 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getIconPathEStringParserRuleCall_9_7_0() { return cIconPathEStringParserRuleCall_9_7_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_9_8() { return cRightCurlyBracketKeyword_9_8; }
 
-		//("expression" ":" expression=CustomizationExpression)?
+		//('expression' ':' expression=CustomizationExpression)?
 		public Group getGroup_10() { return cGroup_10; }
 
-		//"expression"
+		//'expression'
 		public Keyword getExpressionKeyword_10_0() { return cExpressionKeyword_10_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_10_1() { return cColonKeyword_10_1; }
 
 		//expression=CustomizationExpression
@@ -3939,12 +3940,12 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//CustomizationExpression
 		public RuleCall getExpressionCustomizationExpressionParserRuleCall_10_2_0() { return cExpressionCustomizationExpressionParserRuleCall_10_2_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
 	}
 
 	public class LabelAlignementCustomizationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LabelAlignementCustomization");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.LabelAlignementCustomization");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cLabelAlignmentCustomizationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cAlignmentKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -3952,20 +3953,20 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cAlignmentAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cAlignmentLabelAlignmentEnumRuleCall_3_0 = (RuleCall)cAlignmentAssignment_3.eContents().get(0);
 		
-		//LabelAlignementCustomization returns styleCusto::LabelAlignmentCustomization:
-		//	{styleCusto::LabelAlignmentCustomization} "alignment" ":" alignment=LabelAlignment;
+		//LabelAlignementCustomization styleCusto::LabelAlignmentCustomization:
+		//	{styleCusto::LabelAlignmentCustomization} 'alignment' ':' alignment=LabelAlignment
 		@Override public ParserRule getRule() { return rule; }
 
-		//{styleCusto::LabelAlignmentCustomization} "alignment" ":" alignment=LabelAlignment
+		//{styleCusto::LabelAlignmentCustomization} 'alignment' ':' alignment=LabelAlignment
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::LabelAlignmentCustomization}
 		public Action getLabelAlignmentCustomizationAction_0() { return cLabelAlignmentCustomizationAction_0; }
 
-		//"alignment"
+		//'alignment'
 		public Keyword getAlignmentKeyword_1() { return cAlignmentKeyword_1; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 
 		//alignment=LabelAlignment
@@ -3976,13 +3977,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class AbstractNodeStyleCustomizationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AbstractNodeStyleCustomization");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.AbstractNodeStyleCustomization");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cContainerStyleCustomizationParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cNodeStyleCustomizationParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//AbstractNodeStyleCustomization returns styleCusto::AbstractNodeStyleCustomization:
-		//	ContainerStyleCustomization | NodeStyleCustomization;
+		//AbstractNodeStyleCustomization styleCusto::AbstractNodeStyleCustomization:
+		//	ContainerStyleCustomization | NodeStyleCustomization
 		@Override public ParserRule getRule() { return rule; }
 
 		//ContainerStyleCustomization | NodeStyleCustomization
@@ -3996,7 +3997,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ContainerStyleCustomizationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ContainerStyleCustomization");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ContainerStyleCustomization");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cContainerStyleCustomizationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cContainerKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -4047,39 +4048,39 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cOwnedSpecificContainerStyleCustomizationSpecificContainerStyleCustomizationParserRuleCall_10_0 = (RuleCall)cOwnedSpecificContainerStyleCustomizationAssignment_10.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		
-		//ContainerStyleCustomization returns styleCusto::ContainerStyleCustomization:
-		//	{styleCusto::ContainerStyleCustomization} "container" ("("
-		//	(appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING] (","
-		//	appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING])*) ")")? "{" ("over-all-containers" ":"
-		//	applyonAll=EBoolean)? ("width" ":" arcWith=EInt)? ("height" ":" arcHeight=EInt)? ("round-corner" ":"
-		//	roundedCorner=EBoolean)? ("tooltip-expression" ":" tooltipExpression=CustomizationExpression)? ("border-dimension"
-		//	":" borderSizeComputationExpression=CustomizationExpression)?
-		//	ownedSpecificContainerStyleCustomization+=SpecificContainerStyleCustomization* "}";
+		//ContainerStyleCustomization styleCusto::ContainerStyleCustomization:
+		//	{styleCusto::ContainerStyleCustomization} 'container' ('('
+		//	(appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING] (','
+		//	appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING])*) ')')? '{' ('over-all-containers' ':'
+		//	applyonAll=EBoolean)? ('width' ':' arcWith=EInt)? ('height' ':' arcHeight=EInt)? ('round-corner' ':'
+		//	roundedCorner=EBoolean)? ('tooltip-expression' ':' tooltipExpression=CustomizationExpression)? ('border-dimension'
+		//	':' borderSizeComputationExpression=CustomizationExpression)?
+		//	ownedSpecificContainerStyleCustomization+=SpecificContainerStyleCustomization* '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{styleCusto::ContainerStyleCustomization} "container" ("(" (appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING]
-		//("," appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING])*) ")")? "{" ("over-all-containers" ":"
-		//applyonAll=EBoolean)? ("width" ":" arcWith=EInt)? ("height" ":" arcHeight=EInt)? ("round-corner" ":"
-		//roundedCorner=EBoolean)? ("tooltip-expression" ":" tooltipExpression=CustomizationExpression)? ("border-dimension" ":"
+		//{styleCusto::ContainerStyleCustomization} 'container' ('(' (appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING]
+		//(',' appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING])*) ')')? '{' ('over-all-containers' ':'
+		//applyonAll=EBoolean)? ('width' ':' arcWith=EInt)? ('height' ':' arcHeight=EInt)? ('round-corner' ':'
+		//roundedCorner=EBoolean)? ('tooltip-expression' ':' tooltipExpression=CustomizationExpression)? ('border-dimension' ':'
 		//borderSizeComputationExpression=CustomizationExpression)?
-		//ownedSpecificContainerStyleCustomization+=SpecificContainerStyleCustomization* "}"
+		//ownedSpecificContainerStyleCustomization+=SpecificContainerStyleCustomization* '}'
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::ContainerStyleCustomization}
 		public Action getContainerStyleCustomizationAction_0() { return cContainerStyleCustomizationAction_0; }
 
-		//"container"
+		//'container'
 		public Keyword getContainerKeyword_1() { return cContainerKeyword_1; }
 
-		//("(" (appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING] (","
-		//appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING])*) ")")?
+		//('(' (appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING] (','
+		//appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING])*) ')')?
 		public Group getGroup_2() { return cGroup_2; }
 
-		//"("
+		//'('
 		public Keyword getLeftParenthesisKeyword_2_0() { return cLeftParenthesisKeyword_2_0; }
 
-		//appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING] (","
-		//appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING])*
+		//(appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING] (','
+		//appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING])*)
 		public Group getGroup_2_1() { return cGroup_2_1; }
 
 		//appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING]
@@ -4091,10 +4092,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getAppliedOnContainerStyleDescriptionSTRINGTerminalRuleCall_2_1_0_0_1() { return cAppliedOnContainerStyleDescriptionSTRINGTerminalRuleCall_2_1_0_0_1; }
 
-		//("," appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING])*
+		//(',' appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING])*
 		public Group getGroup_2_1_1() { return cGroup_2_1_1; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_2_1_1_0() { return cCommaKeyword_2_1_1_0; }
 
 		//appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING]
@@ -4106,19 +4107,19 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getAppliedOnContainerStyleDescriptionSTRINGTerminalRuleCall_2_1_1_1_0_1() { return cAppliedOnContainerStyleDescriptionSTRINGTerminalRuleCall_2_1_1_1_0_1; }
 
-		//")"
+		//')'
 		public Keyword getRightParenthesisKeyword_2_2() { return cRightParenthesisKeyword_2_2; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
-		//("over-all-containers" ":" applyonAll=EBoolean)?
+		//('over-all-containers' ':' applyonAll=EBoolean)?
 		public Group getGroup_4() { return cGroup_4; }
 
-		//"over-all-containers"
+		//'over-all-containers'
 		public Keyword getOverAllContainersKeyword_4_0() { return cOverAllContainersKeyword_4_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_4_1() { return cColonKeyword_4_1; }
 
 		//applyonAll=EBoolean
@@ -4127,13 +4128,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EBoolean
 		public RuleCall getApplyonAllEBooleanParserRuleCall_4_2_0() { return cApplyonAllEBooleanParserRuleCall_4_2_0; }
 
-		//("width" ":" arcWith=EInt)?
+		//('width' ':' arcWith=EInt)?
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"width"
+		//'width'
 		public Keyword getWidthKeyword_5_0() { return cWidthKeyword_5_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_5_1() { return cColonKeyword_5_1; }
 
 		//arcWith=EInt
@@ -4142,13 +4143,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EInt
 		public RuleCall getArcWithEIntParserRuleCall_5_2_0() { return cArcWithEIntParserRuleCall_5_2_0; }
 
-		//("height" ":" arcHeight=EInt)?
+		//('height' ':' arcHeight=EInt)?
 		public Group getGroup_6() { return cGroup_6; }
 
-		//"height"
+		//'height'
 		public Keyword getHeightKeyword_6_0() { return cHeightKeyword_6_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_6_1() { return cColonKeyword_6_1; }
 
 		//arcHeight=EInt
@@ -4157,13 +4158,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EInt
 		public RuleCall getArcHeightEIntParserRuleCall_6_2_0() { return cArcHeightEIntParserRuleCall_6_2_0; }
 
-		//("round-corner" ":" roundedCorner=EBoolean)?
+		//('round-corner' ':' roundedCorner=EBoolean)?
 		public Group getGroup_7() { return cGroup_7; }
 
-		//"round-corner"
+		//'round-corner'
 		public Keyword getRoundCornerKeyword_7_0() { return cRoundCornerKeyword_7_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_7_1() { return cColonKeyword_7_1; }
 
 		//roundedCorner=EBoolean
@@ -4172,13 +4173,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EBoolean
 		public RuleCall getRoundedCornerEBooleanParserRuleCall_7_2_0() { return cRoundedCornerEBooleanParserRuleCall_7_2_0; }
 
-		//("tooltip-expression" ":" tooltipExpression=CustomizationExpression)?
+		//('tooltip-expression' ':' tooltipExpression=CustomizationExpression)?
 		public Group getGroup_8() { return cGroup_8; }
 
-		//"tooltip-expression"
+		//'tooltip-expression'
 		public Keyword getTooltipExpressionKeyword_8_0() { return cTooltipExpressionKeyword_8_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_8_1() { return cColonKeyword_8_1; }
 
 		//tooltipExpression=CustomizationExpression
@@ -4187,13 +4188,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//CustomizationExpression
 		public RuleCall getTooltipExpressionCustomizationExpressionParserRuleCall_8_2_0() { return cTooltipExpressionCustomizationExpressionParserRuleCall_8_2_0; }
 
-		//("border-dimension" ":" borderSizeComputationExpression=CustomizationExpression)?
+		//('border-dimension' ':' borderSizeComputationExpression=CustomizationExpression)?
 		public Group getGroup_9() { return cGroup_9; }
 
-		//"border-dimension"
+		//'border-dimension'
 		public Keyword getBorderDimensionKeyword_9_0() { return cBorderDimensionKeyword_9_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_9_1() { return cColonKeyword_9_1; }
 
 		//borderSizeComputationExpression=CustomizationExpression
@@ -4208,19 +4209,19 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//SpecificContainerStyleCustomization
 		public RuleCall getOwnedSpecificContainerStyleCustomizationSpecificContainerStyleCustomizationParserRuleCall_10_0() { return cOwnedSpecificContainerStyleCustomizationSpecificContainerStyleCustomizationParserRuleCall_10_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
 	}
 
 	public class SpecificContainerStyleCustomizationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SpecificContainerStyleCustomization");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.SpecificContainerStyleCustomization");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cContainerWorkspaceImageCustomizationParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cFlatContainerStyleCustomizationParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cShapeContainerStyleCustomizationParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
-		//SpecificContainerStyleCustomization returns styleCusto::SpecificContainerStyleCustomization:
-		//	ContainerWorkspaceImageCustomization | FlatContainerStyleCustomization | ShapeContainerStyleCustomization;
+		//SpecificContainerStyleCustomization styleCusto::SpecificContainerStyleCustomization:
+		//	ContainerWorkspaceImageCustomization | FlatContainerStyleCustomization | ShapeContainerStyleCustomization
 		@Override public ParserRule getRule() { return rule; }
 
 		//ContainerWorkspaceImageCustomization | FlatContainerStyleCustomization | ShapeContainerStyleCustomization
@@ -4237,7 +4238,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ContainerWorkspaceImageCustomizationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ContainerWorkspaceImageCustomization");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ContainerWorkspaceImageCustomization");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cContainerWorkspaceImageCustomizationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cWorkspaceKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -4245,20 +4246,20 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cWorkspacePathAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cWorkspacePathEStringParserRuleCall_3_0 = (RuleCall)cWorkspacePathAssignment_3.eContents().get(0);
 		
-		//ContainerWorkspaceImageCustomization returns styleCusto::ContainerWorkspaceImageCustomization:
-		//	{styleCusto::ContainerWorkspaceImageCustomization} "workspace" ":" workspacePath=EString;
+		//ContainerWorkspaceImageCustomization styleCusto::ContainerWorkspaceImageCustomization:
+		//	{styleCusto::ContainerWorkspaceImageCustomization} 'workspace' ':' workspacePath=EString
 		@Override public ParserRule getRule() { return rule; }
 
-		//{styleCusto::ContainerWorkspaceImageCustomization} "workspace" ":" workspacePath=EString
+		//{styleCusto::ContainerWorkspaceImageCustomization} 'workspace' ':' workspacePath=EString
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::ContainerWorkspaceImageCustomization}
 		public Action getContainerWorkspaceImageCustomizationAction_0() { return cContainerWorkspaceImageCustomizationAction_0; }
 
-		//"workspace"
+		//'workspace'
 		public Keyword getWorkspaceKeyword_1() { return cWorkspaceKeyword_1; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 
 		//workspacePath=EString
@@ -4269,7 +4270,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class FlatContainerStyleCustomizationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "FlatContainerStyleCustomization");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.FlatContainerStyleCustomization");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cFlatContainerStyleCustomizationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cBackgroundKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -4277,20 +4278,20 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cBackgroundStyleAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cBackgroundStyleBackgroundStyleEnumRuleCall_3_0 = (RuleCall)cBackgroundStyleAssignment_3.eContents().get(0);
 		
-		//FlatContainerStyleCustomization returns styleCusto::FlatContainerStyleCustomization:
-		//	{styleCusto::FlatContainerStyleCustomization} "background" ":" backgroundStyle=BackgroundStyle;
+		//FlatContainerStyleCustomization styleCusto::FlatContainerStyleCustomization:
+		//	{styleCusto::FlatContainerStyleCustomization} 'background' ':' backgroundStyle=BackgroundStyle
 		@Override public ParserRule getRule() { return rule; }
 
-		//{styleCusto::FlatContainerStyleCustomization} "background" ":" backgroundStyle=BackgroundStyle
+		//{styleCusto::FlatContainerStyleCustomization} 'background' ':' backgroundStyle=BackgroundStyle
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::FlatContainerStyleCustomization}
 		public Action getFlatContainerStyleCustomizationAction_0() { return cFlatContainerStyleCustomizationAction_0; }
 
-		//"background"
+		//'background'
 		public Keyword getBackgroundKeyword_1() { return cBackgroundKeyword_1; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 
 		//backgroundStyle=BackgroundStyle
@@ -4301,7 +4302,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ShapeContainerStyleCustomizationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ShapeContainerStyleCustomization");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ShapeContainerStyleCustomization");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cShapeContainerStyleCustomizationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cShapeKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -4309,20 +4310,20 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cShapeAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cShapeContainerShapeEnumRuleCall_3_0 = (RuleCall)cShapeAssignment_3.eContents().get(0);
 		
-		//ShapeContainerStyleCustomization returns styleCusto::ShapeContainerStyleCustomization:
-		//	{styleCusto::ShapeContainerStyleCustomization} "shape" ":" shape=ContainerShape;
+		//ShapeContainerStyleCustomization styleCusto::ShapeContainerStyleCustomization:
+		//	{styleCusto::ShapeContainerStyleCustomization} 'shape' ':' shape=ContainerShape
 		@Override public ParserRule getRule() { return rule; }
 
-		//{styleCusto::ShapeContainerStyleCustomization} "shape" ":" shape=ContainerShape
+		//{styleCusto::ShapeContainerStyleCustomization} 'shape' ':' shape=ContainerShape
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::ShapeContainerStyleCustomization}
 		public Action getShapeContainerStyleCustomizationAction_0() { return cShapeContainerStyleCustomizationAction_0; }
 
-		//"shape"
+		//'shape'
 		public Keyword getShapeKeyword_1() { return cShapeKeyword_1; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 
 		//shape=ContainerShape
@@ -4333,7 +4334,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class NodeStyleCustomizationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NodeStyleCustomization");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.NodeStyleCustomization");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cNodeStyleCustomizationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cNodeKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -4389,39 +4390,39 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cOwnedSpecificNodeStyleCustomizationSpecificNodeStyleCustomizationParserRuleCall_11_0 = (RuleCall)cOwnedSpecificNodeStyleCustomizationAssignment_11.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
 		
-		//NodeStyleCustomization returns styleCusto::NodeStyleCustomization:
-		//	{styleCusto::NodeStyleCustomization} "node" ("(" (appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING] (","
-		//	appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING])*) ")")? "{" ("over-all-nodes" ":" applyonAll=EBoolean)?
-		//	("label-position" ":" labelPosition=LabelPosition)? ("hide-label" ":" hideLabelByDefault=EBoolean)? ("resize-kind"
-		//	":" resizeKind=ResizeKind)? ("tooltip-expression" ":" tooltipExpression=CustomizationExpression)? ("border-dimension"
-		//	":" borderSizeComputationExpression=CustomizationExpression)? ("size-dimension" ":"
+		//NodeStyleCustomization styleCusto::NodeStyleCustomization:
+		//	{styleCusto::NodeStyleCustomization} 'node' ('(' (appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING] (','
+		//	appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING])*) ')')? '{' ('over-all-nodes' ':' applyonAll=EBoolean)?
+		//	('label-position' ':' labelPosition=LabelPosition)? ('hide-label' ':' hideLabelByDefault=EBoolean)? ('resize-kind'
+		//	':' resizeKind=ResizeKind)? ('tooltip-expression' ':' tooltipExpression=CustomizationExpression)? ('border-dimension'
+		//	':' borderSizeComputationExpression=CustomizationExpression)? ('size-dimension' ':'
 		//	sizeComputationExpression=CustomizationExpression)?
-		//	ownedSpecificNodeStyleCustomization+=SpecificNodeStyleCustomization* "}";
+		//	ownedSpecificNodeStyleCustomization+=SpecificNodeStyleCustomization* '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{styleCusto::NodeStyleCustomization} "node" ("(" (appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING] (","
-		//appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING])*) ")")? "{" ("over-all-nodes" ":" applyonAll=EBoolean)?
-		//("label-position" ":" labelPosition=LabelPosition)? ("hide-label" ":" hideLabelByDefault=EBoolean)? ("resize-kind" ":"
-		//resizeKind=ResizeKind)? ("tooltip-expression" ":" tooltipExpression=CustomizationExpression)? ("border-dimension" ":"
-		//borderSizeComputationExpression=CustomizationExpression)? ("size-dimension" ":"
+		//{styleCusto::NodeStyleCustomization} 'node' ('(' (appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING] (','
+		//appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING])*) ')')? '{' ('over-all-nodes' ':' applyonAll=EBoolean)?
+		//('label-position' ':' labelPosition=LabelPosition)? ('hide-label' ':' hideLabelByDefault=EBoolean)? ('resize-kind' ':'
+		//resizeKind=ResizeKind)? ('tooltip-expression' ':' tooltipExpression=CustomizationExpression)? ('border-dimension' ':'
+		//borderSizeComputationExpression=CustomizationExpression)? ('size-dimension' ':'
 		//sizeComputationExpression=CustomizationExpression)?
-		//ownedSpecificNodeStyleCustomization+=SpecificNodeStyleCustomization* "}"
+		//ownedSpecificNodeStyleCustomization+=SpecificNodeStyleCustomization* '}'
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::NodeStyleCustomization}
 		public Action getNodeStyleCustomizationAction_0() { return cNodeStyleCustomizationAction_0; }
 
-		//"node"
+		//'node'
 		public Keyword getNodeKeyword_1() { return cNodeKeyword_1; }
 
-		//("(" (appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING] (","
-		//appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING])*) ")")?
+		//('(' (appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING] (','
+		//appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING])*) ')')?
 		public Group getGroup_2() { return cGroup_2; }
 
-		//"("
+		//'('
 		public Keyword getLeftParenthesisKeyword_2_0() { return cLeftParenthesisKeyword_2_0; }
 
-		//appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING] ("," appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING])*
+		//(appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING] (',' appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING])*)
 		public Group getGroup_2_1() { return cGroup_2_1; }
 
 		//appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING]
@@ -4433,10 +4434,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getAppliedOnNodeStyleDescriptionSTRINGTerminalRuleCall_2_1_0_0_1() { return cAppliedOnNodeStyleDescriptionSTRINGTerminalRuleCall_2_1_0_0_1; }
 
-		//("," appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING])*
+		//(',' appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING])*
 		public Group getGroup_2_1_1() { return cGroup_2_1_1; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_2_1_1_0() { return cCommaKeyword_2_1_1_0; }
 
 		//appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING]
@@ -4448,19 +4449,19 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getAppliedOnNodeStyleDescriptionSTRINGTerminalRuleCall_2_1_1_1_0_1() { return cAppliedOnNodeStyleDescriptionSTRINGTerminalRuleCall_2_1_1_1_0_1; }
 
-		//")"
+		//')'
 		public Keyword getRightParenthesisKeyword_2_2() { return cRightParenthesisKeyword_2_2; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
-		//("over-all-nodes" ":" applyonAll=EBoolean)?
+		//('over-all-nodes' ':' applyonAll=EBoolean)?
 		public Group getGroup_4() { return cGroup_4; }
 
-		//"over-all-nodes"
+		//'over-all-nodes'
 		public Keyword getOverAllNodesKeyword_4_0() { return cOverAllNodesKeyword_4_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_4_1() { return cColonKeyword_4_1; }
 
 		//applyonAll=EBoolean
@@ -4469,13 +4470,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EBoolean
 		public RuleCall getApplyonAllEBooleanParserRuleCall_4_2_0() { return cApplyonAllEBooleanParserRuleCall_4_2_0; }
 
-		//("label-position" ":" labelPosition=LabelPosition)?
+		//('label-position' ':' labelPosition=LabelPosition)?
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"label-position"
+		//'label-position'
 		public Keyword getLabelPositionKeyword_5_0() { return cLabelPositionKeyword_5_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_5_1() { return cColonKeyword_5_1; }
 
 		//labelPosition=LabelPosition
@@ -4484,13 +4485,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//LabelPosition
 		public RuleCall getLabelPositionLabelPositionEnumRuleCall_5_2_0() { return cLabelPositionLabelPositionEnumRuleCall_5_2_0; }
 
-		//("hide-label" ":" hideLabelByDefault=EBoolean)?
+		//('hide-label' ':' hideLabelByDefault=EBoolean)?
 		public Group getGroup_6() { return cGroup_6; }
 
-		//"hide-label"
+		//'hide-label'
 		public Keyword getHideLabelKeyword_6_0() { return cHideLabelKeyword_6_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_6_1() { return cColonKeyword_6_1; }
 
 		//hideLabelByDefault=EBoolean
@@ -4499,13 +4500,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EBoolean
 		public RuleCall getHideLabelByDefaultEBooleanParserRuleCall_6_2_0() { return cHideLabelByDefaultEBooleanParserRuleCall_6_2_0; }
 
-		//("resize-kind" ":" resizeKind=ResizeKind)?
+		//('resize-kind' ':' resizeKind=ResizeKind)?
 		public Group getGroup_7() { return cGroup_7; }
 
-		//"resize-kind"
+		//'resize-kind'
 		public Keyword getResizeKindKeyword_7_0() { return cResizeKindKeyword_7_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_7_1() { return cColonKeyword_7_1; }
 
 		//resizeKind=ResizeKind
@@ -4514,13 +4515,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//ResizeKind
 		public RuleCall getResizeKindResizeKindEnumRuleCall_7_2_0() { return cResizeKindResizeKindEnumRuleCall_7_2_0; }
 
-		//("tooltip-expression" ":" tooltipExpression=CustomizationExpression)?
+		//('tooltip-expression' ':' tooltipExpression=CustomizationExpression)?
 		public Group getGroup_8() { return cGroup_8; }
 
-		//"tooltip-expression"
+		//'tooltip-expression'
 		public Keyword getTooltipExpressionKeyword_8_0() { return cTooltipExpressionKeyword_8_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_8_1() { return cColonKeyword_8_1; }
 
 		//tooltipExpression=CustomizationExpression
@@ -4529,13 +4530,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//CustomizationExpression
 		public RuleCall getTooltipExpressionCustomizationExpressionParserRuleCall_8_2_0() { return cTooltipExpressionCustomizationExpressionParserRuleCall_8_2_0; }
 
-		//("border-dimension" ":" borderSizeComputationExpression=CustomizationExpression)?
+		//('border-dimension' ':' borderSizeComputationExpression=CustomizationExpression)?
 		public Group getGroup_9() { return cGroup_9; }
 
-		//"border-dimension"
+		//'border-dimension'
 		public Keyword getBorderDimensionKeyword_9_0() { return cBorderDimensionKeyword_9_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_9_1() { return cColonKeyword_9_1; }
 
 		//borderSizeComputationExpression=CustomizationExpression
@@ -4544,13 +4545,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//CustomizationExpression
 		public RuleCall getBorderSizeComputationExpressionCustomizationExpressionParserRuleCall_9_2_0() { return cBorderSizeComputationExpressionCustomizationExpressionParserRuleCall_9_2_0; }
 
-		//("size-dimension" ":" sizeComputationExpression=CustomizationExpression)?
+		//('size-dimension' ':' sizeComputationExpression=CustomizationExpression)?
 		public Group getGroup_10() { return cGroup_10; }
 
-		//"size-dimension"
+		//'size-dimension'
 		public Keyword getSizeDimensionKeyword_10_0() { return cSizeDimensionKeyword_10_0; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_10_1() { return cColonKeyword_10_1; }
 
 		//sizeComputationExpression=CustomizationExpression
@@ -4565,12 +4566,12 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//SpecificNodeStyleCustomization
 		public RuleCall getOwnedSpecificNodeStyleCustomizationSpecificNodeStyleCustomizationParserRuleCall_11_0() { return cOwnedSpecificNodeStyleCustomizationSpecificNodeStyleCustomizationParserRuleCall_11_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_12() { return cRightCurlyBracketKeyword_12; }
 	}
 
 	public class SpecificNodeStyleCustomizationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SpecificNodeStyleCustomization");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.SpecificNodeStyleCustomization");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cBundledImageCustomizationParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cLozengeCustomizationParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
@@ -4580,9 +4581,9 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSquareCustomizationParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
 		private final RuleCall cDotCustomizationParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
 		
-		//SpecificNodeStyleCustomization returns styleCusto::SpecificNodeStyleCustomization:
+		//SpecificNodeStyleCustomization styleCusto::SpecificNodeStyleCustomization:
 		//	BundledImageCustomization | LozengeCustomization | GaugeCustomization | EllipseCustomization |
-		//	NodeWorkspaceImageCustomization | SquareCustomization | DotCustomization;
+		//	NodeWorkspaceImageCustomization | SquareCustomization | DotCustomization
 		@Override public ParserRule getRule() { return rule; }
 
 		//BundledImageCustomization | LozengeCustomization | GaugeCustomization | EllipseCustomization |
@@ -4612,7 +4613,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class BundledImageCustomizationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BundledImageCustomization");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.BundledImageCustomization");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cBundledImageCustomizationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cShapeKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -4620,20 +4621,20 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cShapeAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cShapeBundledImageShapeEnumRuleCall_3_0 = (RuleCall)cShapeAssignment_3.eContents().get(0);
 		
-		//BundledImageCustomization returns styleCusto::BundledImageCustomization:
-		//	{styleCusto::BundledImageCustomization} "shape" ":" shape=BundledImageShape;
+		//BundledImageCustomization styleCusto::BundledImageCustomization:
+		//	{styleCusto::BundledImageCustomization} 'shape' ':' shape=BundledImageShape
 		@Override public ParserRule getRule() { return rule; }
 
-		//{styleCusto::BundledImageCustomization} "shape" ":" shape=BundledImageShape
+		//{styleCusto::BundledImageCustomization} 'shape' ':' shape=BundledImageShape
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::BundledImageCustomization}
 		public Action getBundledImageCustomizationAction_0() { return cBundledImageCustomizationAction_0; }
 
-		//"shape"
+		//'shape'
 		public Keyword getShapeKeyword_1() { return cShapeKeyword_1; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 
 		//shape=BundledImageShape
@@ -4644,7 +4645,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class LozengeCustomizationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LozengeCustomization");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.LozengeCustomization");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cLozengeCustomizationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cLozengeDimensionKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -4660,33 +4661,33 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cHeightComputationExpressionCustomizationExpressionParserRuleCall_9_0 = (RuleCall)cHeightComputationExpressionAssignment_9.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
-		//LozengeCustomization returns styleCusto::LozengeCustomization:
-		//	{styleCusto::LozengeCustomization} "lozenge-dimension" ":" "{" "width" ":"
-		//	widthComputationExpression=CustomizationExpression "height" ":" heightComputationExpression=CustomizationExpression
-		//	"}";
+		//LozengeCustomization styleCusto::LozengeCustomization:
+		//	{styleCusto::LozengeCustomization} 'lozenge-dimension' ':' '{' 'width' ':'
+		//	widthComputationExpression=CustomizationExpression 'height' ':' heightComputationExpression=CustomizationExpression
+		//	'}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{styleCusto::LozengeCustomization} "lozenge-dimension" ":" "{" "width" ":"
-		//widthComputationExpression=CustomizationExpression "height" ":" heightComputationExpression=CustomizationExpression
-		//"}"
+		//{styleCusto::LozengeCustomization} 'lozenge-dimension' ':' '{' 'width' ':'
+		//widthComputationExpression=CustomizationExpression 'height' ':' heightComputationExpression=CustomizationExpression
+		//'}'
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::LozengeCustomization}
 		public Action getLozengeCustomizationAction_0() { return cLozengeCustomizationAction_0; }
 
-		//"lozenge-dimension"
+		//'lozenge-dimension'
 		public Keyword getLozengeDimensionKeyword_1() { return cLozengeDimensionKeyword_1; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
-		//"width"
+		//'width'
 		public Keyword getWidthKeyword_4() { return cWidthKeyword_4; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_5() { return cColonKeyword_5; }
 
 		//widthComputationExpression=CustomizationExpression
@@ -4695,10 +4696,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//CustomizationExpression
 		public RuleCall getWidthComputationExpressionCustomizationExpressionParserRuleCall_6_0() { return cWidthComputationExpressionCustomizationExpressionParserRuleCall_6_0; }
 
-		//"height"
+		//'height'
 		public Keyword getHeightKeyword_7() { return cHeightKeyword_7; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_8() { return cColonKeyword_8; }
 
 		//heightComputationExpression=CustomizationExpression
@@ -4707,12 +4708,12 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//CustomizationExpression
 		public RuleCall getHeightComputationExpressionCustomizationExpressionParserRuleCall_9_0() { return cHeightComputationExpressionCustomizationExpressionParserRuleCall_9_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
 	}
 
 	public class GaugeCustomizationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "GaugeCustomization");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.GaugeCustomization");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cGaugeCustomizationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cGaugeAlignmentKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -4720,20 +4721,20 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cAlignementAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cAlignementAlignmentKindEnumRuleCall_3_0 = (RuleCall)cAlignementAssignment_3.eContents().get(0);
 		
-		//GaugeCustomization returns styleCusto::GaugeCustomization:
-		//	{styleCusto::GaugeCustomization} "gauge-alignment" ":" alignement=AlignmentKind;
+		//GaugeCustomization styleCusto::GaugeCustomization:
+		//	{styleCusto::GaugeCustomization} 'gauge-alignment' ':' alignement=AlignmentKind
 		@Override public ParserRule getRule() { return rule; }
 
-		//{styleCusto::GaugeCustomization} "gauge-alignment" ":" alignement=AlignmentKind
+		//{styleCusto::GaugeCustomization} 'gauge-alignment' ':' alignement=AlignmentKind
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::GaugeCustomization}
 		public Action getGaugeCustomizationAction_0() { return cGaugeCustomizationAction_0; }
 
-		//"gauge-alignment"
+		//'gauge-alignment'
 		public Keyword getGaugeAlignmentKeyword_1() { return cGaugeAlignmentKeyword_1; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 
 		//alignement=AlignmentKind
@@ -4744,7 +4745,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class EllipseCustomizationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EllipseCustomization");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.EllipseCustomization");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cEllipseCustomizationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cEllipseDimensionKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -4760,33 +4761,33 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cVerticalDiameterComputationExpressionCustomizationExpressionParserRuleCall_9_0 = (RuleCall)cVerticalDiameterComputationExpressionAssignment_9.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
-		//EllipseCustomization returns styleCusto::EllipseCustomization:
-		//	{styleCusto::EllipseCustomization} "ellipse-dimension" ":" "{" "horizontal" ":"
-		//	horizontalDiameterComputationExpression=CustomizationExpression "vertical" ":"
-		//	verticalDiameterComputationExpression=CustomizationExpression "}";
+		//EllipseCustomization styleCusto::EllipseCustomization:
+		//	{styleCusto::EllipseCustomization} 'ellipse-dimension' ':' '{' 'horizontal' ':'
+		//	horizontalDiameterComputationExpression=CustomizationExpression 'vertical' ':'
+		//	verticalDiameterComputationExpression=CustomizationExpression '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{styleCusto::EllipseCustomization} "ellipse-dimension" ":" "{" "horizontal" ":"
-		//horizontalDiameterComputationExpression=CustomizationExpression "vertical" ":"
-		//verticalDiameterComputationExpression=CustomizationExpression "}"
+		//{styleCusto::EllipseCustomization} 'ellipse-dimension' ':' '{' 'horizontal' ':'
+		//horizontalDiameterComputationExpression=CustomizationExpression 'vertical' ':'
+		//verticalDiameterComputationExpression=CustomizationExpression '}'
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::EllipseCustomization}
 		public Action getEllipseCustomizationAction_0() { return cEllipseCustomizationAction_0; }
 
-		//"ellipse-dimension"
+		//'ellipse-dimension'
 		public Keyword getEllipseDimensionKeyword_1() { return cEllipseDimensionKeyword_1; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
-		//"horizontal"
+		//'horizontal'
 		public Keyword getHorizontalKeyword_4() { return cHorizontalKeyword_4; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_5() { return cColonKeyword_5; }
 
 		//horizontalDiameterComputationExpression=CustomizationExpression
@@ -4795,10 +4796,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//CustomizationExpression
 		public RuleCall getHorizontalDiameterComputationExpressionCustomizationExpressionParserRuleCall_6_0() { return cHorizontalDiameterComputationExpressionCustomizationExpressionParserRuleCall_6_0; }
 
-		//"vertical"
+		//'vertical'
 		public Keyword getVerticalKeyword_7() { return cVerticalKeyword_7; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_8() { return cColonKeyword_8; }
 
 		//verticalDiameterComputationExpression=CustomizationExpression
@@ -4807,12 +4808,12 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//CustomizationExpression
 		public RuleCall getVerticalDiameterComputationExpressionCustomizationExpressionParserRuleCall_9_0() { return cVerticalDiameterComputationExpressionCustomizationExpressionParserRuleCall_9_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
 	}
 
 	public class NodeWorkspaceImageCustomizationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NodeWorkspaceImageCustomization");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.NodeWorkspaceImageCustomization");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cNodeWorkspaceImageCustomizationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cWorkspaceKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -4820,20 +4821,20 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cWorkspacePathAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cWorkspacePathEStringParserRuleCall_3_0 = (RuleCall)cWorkspacePathAssignment_3.eContents().get(0);
 		
-		//NodeWorkspaceImageCustomization returns styleCusto::NodeWorkspaceImageCustomization:
-		//	{styleCusto::NodeWorkspaceImageCustomization} "workspace" ":" workspacePath=EString;
+		//NodeWorkspaceImageCustomization styleCusto::NodeWorkspaceImageCustomization:
+		//	{styleCusto::NodeWorkspaceImageCustomization} 'workspace' ':' workspacePath=EString
 		@Override public ParserRule getRule() { return rule; }
 
-		//{styleCusto::NodeWorkspaceImageCustomization} "workspace" ":" workspacePath=EString
+		//{styleCusto::NodeWorkspaceImageCustomization} 'workspace' ':' workspacePath=EString
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::NodeWorkspaceImageCustomization}
 		public Action getNodeWorkspaceImageCustomizationAction_0() { return cNodeWorkspaceImageCustomizationAction_0; }
 
-		//"workspace"
+		//'workspace'
 		public Keyword getWorkspaceKeyword_1() { return cWorkspaceKeyword_1; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 
 		//workspacePath=EString
@@ -4844,7 +4845,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class SquareCustomizationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SquareCustomization");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.SquareCustomization");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cSquareCustomizationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cSquareDimensionKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -4860,29 +4861,29 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cHeightEIntParserRuleCall_9_0 = (RuleCall)cHeightAssignment_9.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
-		//SquareCustomization returns styleCusto::SquareCustomization:
-		//	{styleCusto::SquareCustomization} "square-dimension" ":" "{" "width" ":" width=EInt "height" ":" height=EInt "}";
+		//SquareCustomization styleCusto::SquareCustomization:
+		//	{styleCusto::SquareCustomization} 'square-dimension' ':' '{' 'width' ':' width=EInt 'height' ':' height=EInt '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{styleCusto::SquareCustomization} "square-dimension" ":" "{" "width" ":" width=EInt "height" ":" height=EInt "}"
+		//{styleCusto::SquareCustomization} 'square-dimension' ':' '{' 'width' ':' width=EInt 'height' ':' height=EInt '}'
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::SquareCustomization}
 		public Action getSquareCustomizationAction_0() { return cSquareCustomizationAction_0; }
 
-		//"square-dimension"
+		//'square-dimension'
 		public Keyword getSquareDimensionKeyword_1() { return cSquareDimensionKeyword_1; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
-		//"width"
+		//'width'
 		public Keyword getWidthKeyword_4() { return cWidthKeyword_4; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_5() { return cColonKeyword_5; }
 
 		//width=EInt
@@ -4891,10 +4892,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EInt
 		public RuleCall getWidthEIntParserRuleCall_6_0() { return cWidthEIntParserRuleCall_6_0; }
 
-		//"height"
+		//'height'
 		public Keyword getHeightKeyword_7() { return cHeightKeyword_7; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_8() { return cColonKeyword_8; }
 
 		//height=EInt
@@ -4903,12 +4904,12 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//EInt
 		public RuleCall getHeightEIntParserRuleCall_9_0() { return cHeightEIntParserRuleCall_9_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
 	}
 
 	public class DotCustomizationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DotCustomization");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.DotCustomization");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cDotCustomizationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cStrokeDimensionKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -4916,20 +4917,20 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cStrokeSizeComputationExpressionAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cStrokeSizeComputationExpressionCustomizationExpressionParserRuleCall_3_0 = (RuleCall)cStrokeSizeComputationExpressionAssignment_3.eContents().get(0);
 		
-		//DotCustomization returns styleCusto::DotCustomization:
-		//	{styleCusto::DotCustomization} "stroke-dimension" ":" strokeSizeComputationExpression=CustomizationExpression;
+		//DotCustomization styleCusto::DotCustomization:
+		//	{styleCusto::DotCustomization} 'stroke-dimension' ':' strokeSizeComputationExpression=CustomizationExpression
 		@Override public ParserRule getRule() { return rule; }
 
-		//{styleCusto::DotCustomization} "stroke-dimension" ":" strokeSizeComputationExpression=CustomizationExpression
+		//{styleCusto::DotCustomization} 'stroke-dimension' ':' strokeSizeComputationExpression=CustomizationExpression
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::DotCustomization}
 		public Action getDotCustomizationAction_0() { return cDotCustomizationAction_0; }
 
-		//"stroke-dimension"
+		//'stroke-dimension'
 		public Keyword getStrokeDimensionKeyword_1() { return cStrokeDimensionKeyword_1; }
 
-		//":"
+		//':'
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 
 		//strokeSizeComputationExpression=CustomizationExpression
@@ -4940,7 +4941,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class StyleCustomizationReuseElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "StyleCustomizationReuse");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.StyleCustomizationReuse");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cStyleCustomizationReuseAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cReuseKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -4964,27 +4965,27 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cAppliedOnEObjectCrossReference_4_1_1_0 = (CrossReference)cAppliedOnAssignment_4_1_1.eContents().get(0);
 		private final RuleCall cAppliedOnEObjectSTRINGTerminalRuleCall_4_1_1_0_1 = (RuleCall)cAppliedOnEObjectCrossReference_4_1_1_0.eContents().get(1);
 		
-		//StyleCustomizationReuse returns styleCusto::StyleCustomizationReuse:
-		//	{styleCusto::StyleCustomizationReuse} "reuse"
-		//	(reusedCustomization+=[siriusDescription::EStructuralFeatureCustomization|STRING] (","
-		//	reusedCustomization+=[siriusDescription::EStructuralFeatureCustomization|STRING])*) "on"
-		//	(appliedOn+=[ecore::EObject|STRING] ("," appliedOn+=[ecore::EObject|STRING])*);
+		//StyleCustomizationReuse styleCusto::StyleCustomizationReuse:
+		//	{styleCusto::StyleCustomizationReuse} 'reuse'
+		//	(reusedCustomization+=[siriusDescription::EStructuralFeatureCustomization|STRING] (','
+		//	reusedCustomization+=[siriusDescription::EStructuralFeatureCustomization|STRING])*) 'on'
+		//	(appliedOn+=[ecore::EObject|STRING] (',' appliedOn+=[ecore::EObject|STRING])*)
 		@Override public ParserRule getRule() { return rule; }
 
-		//{styleCusto::StyleCustomizationReuse} "reuse"
-		//(reusedCustomization+=[siriusDescription::EStructuralFeatureCustomization|STRING] (","
-		//reusedCustomization+=[siriusDescription::EStructuralFeatureCustomization|STRING])*) "on"
-		//(appliedOn+=[ecore::EObject|STRING] ("," appliedOn+=[ecore::EObject|STRING])*)
+		//{styleCusto::StyleCustomizationReuse} 'reuse'
+		//(reusedCustomization+=[siriusDescription::EStructuralFeatureCustomization|STRING] (','
+		//reusedCustomization+=[siriusDescription::EStructuralFeatureCustomization|STRING])*) 'on'
+		//(appliedOn+=[ecore::EObject|STRING] (',' appliedOn+=[ecore::EObject|STRING])*)
 		public Group getGroup() { return cGroup; }
 
 		//{styleCusto::StyleCustomizationReuse}
 		public Action getStyleCustomizationReuseAction_0() { return cStyleCustomizationReuseAction_0; }
 
-		//"reuse"
+		//'reuse'
 		public Keyword getReuseKeyword_1() { return cReuseKeyword_1; }
 
-		//reusedCustomization+=[siriusDescription::EStructuralFeatureCustomization|STRING] (","
-		//reusedCustomization+=[siriusDescription::EStructuralFeatureCustomization|STRING])*
+		//(reusedCustomization+=[siriusDescription::EStructuralFeatureCustomization|STRING] (','
+		//reusedCustomization+=[siriusDescription::EStructuralFeatureCustomization|STRING])*)
 		public Group getGroup_2() { return cGroup_2; }
 
 		//reusedCustomization+=[siriusDescription::EStructuralFeatureCustomization|STRING]
@@ -4996,10 +4997,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getReusedCustomizationEStructuralFeatureCustomizationSTRINGTerminalRuleCall_2_0_0_1() { return cReusedCustomizationEStructuralFeatureCustomizationSTRINGTerminalRuleCall_2_0_0_1; }
 
-		//("," reusedCustomization+=[siriusDescription::EStructuralFeatureCustomization|STRING])*
+		//(',' reusedCustomization+=[siriusDescription::EStructuralFeatureCustomization|STRING])*
 		public Group getGroup_2_1() { return cGroup_2_1; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_2_1_0() { return cCommaKeyword_2_1_0; }
 
 		//reusedCustomization+=[siriusDescription::EStructuralFeatureCustomization|STRING]
@@ -5011,10 +5012,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getReusedCustomizationEStructuralFeatureCustomizationSTRINGTerminalRuleCall_2_1_1_0_1() { return cReusedCustomizationEStructuralFeatureCustomizationSTRINGTerminalRuleCall_2_1_1_0_1; }
 
-		//"on"
+		//'on'
 		public Keyword getOnKeyword_3() { return cOnKeyword_3; }
 
-		//appliedOn+=[ecore::EObject|STRING] ("," appliedOn+=[ecore::EObject|STRING])*
+		//(appliedOn+=[ecore::EObject|STRING] (',' appliedOn+=[ecore::EObject|STRING])*)
 		public Group getGroup_4() { return cGroup_4; }
 
 		//appliedOn+=[ecore::EObject|STRING]
@@ -5026,10 +5027,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getAppliedOnEObjectSTRINGTerminalRuleCall_4_0_0_1() { return cAppliedOnEObjectSTRINGTerminalRuleCall_4_0_0_1; }
 
-		//("," appliedOn+=[ecore::EObject|STRING])*
+		//(',' appliedOn+=[ecore::EObject|STRING])*
 		public Group getGroup_4_1() { return cGroup_4_1; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_4_1_0() { return cCommaKeyword_4_1_0; }
 
 		//appliedOn+=[ecore::EObject|STRING]
@@ -5043,14 +5044,14 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class CustomizationExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CustomizationExpression");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.CustomizationExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cCustomizationExpressionAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cOwnedExpressionElementAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cOwnedExpressionElementAbstractComputableElementParserRuleCall_1_0 = (RuleCall)cOwnedExpressionElementAssignment_1.eContents().get(0);
 		
-		//CustomizationExpression returns styleCusto::CustomizationExpression:
-		//	{styleCusto::CustomizationExpression} ownedExpressionElement=AbstractComputableElement;
+		//CustomizationExpression styleCusto::CustomizationExpression:
+		//	{styleCusto::CustomizationExpression} ownedExpressionElement=AbstractComputableElement
 		@Override public ParserRule getRule() { return rule; }
 
 		//{styleCusto::CustomizationExpression} ownedExpressionElement=AbstractComputableElement
@@ -5067,7 +5068,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class AbstractClassElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AbstractClass");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.AbstractClass");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cLocalClass2ParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cExternalClassParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
@@ -5076,8 +5077,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		// * 							Common data
 		// * 
 		// ******************************************************************** /
-		//AbstractClass returns commondata::AbstractClass:
-		//	LocalClass2 | ExternalClass;
+		//AbstractClass commondata::AbstractClass:
+		//	LocalClass2 | ExternalClass
 		@Override public ParserRule getRule() { return rule; }
 
 		//LocalClass2 | ExternalClass
@@ -5091,15 +5092,15 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class LocalClass2Elements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LocalClass2");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.LocalClass2");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cLocalClassAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cClassAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final CrossReference cClassClassCrossReference_1_0 = (CrossReference)cClassAssignment_1.eContents().get(0);
 		private final RuleCall cClassClassFQNParserRuleCall_1_0_1 = (RuleCall)cClassClassCrossReference_1_0.eContents().get(1);
 		
-		//LocalClass2 returns commondata::AbstractClass:
-		//	{commondata::LocalClass} class=[vpdesc::Class|FQN];
+		//LocalClass2 commondata::AbstractClass:
+		//	{commondata::LocalClass} class=[vpdesc::Class|FQN]
 		@Override public ParserRule getRule() { return rule; }
 
 		//{commondata::LocalClass} class=[vpdesc::Class|FQN]
@@ -5119,7 +5120,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ExternalClassElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ExternalClass");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ExternalClass");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cExternalClassAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cExternalKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -5127,17 +5128,17 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cClassEClassCrossReference_2_0 = (CrossReference)cClassAssignment_2.eContents().get(0);
 		private final RuleCall cClassEClassFQNParserRuleCall_2_0_1 = (RuleCall)cClassEClassCrossReference_2_0.eContents().get(1);
 		
-		//ExternalClass returns commondata::AbstractClass:
-		//	{commondata::ExternalClass} "external" class=[ecore::EClass|FQN];
+		//ExternalClass commondata::AbstractClass:
+		//	{commondata::ExternalClass} 'external' class=[ecore::EClass|FQN]
 		@Override public ParserRule getRule() { return rule; }
 
-		//{commondata::ExternalClass} "external" class=[ecore::EClass|FQN]
+		//{commondata::ExternalClass} 'external' class=[ecore::EClass|FQN]
 		public Group getGroup() { return cGroup; }
 
 		//{commondata::ExternalClass}
 		public Action getExternalClassAction_0() { return cExternalClassAction_0; }
 
-		//"external"
+		//'external'
 		public Keyword getExternalKeyword_1() { return cExternalKeyword_1; }
 
 		//class=[ecore::EClass|FQN]
@@ -5151,13 +5152,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class AbstractAssociation2Elements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AbstractAssociation2");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.AbstractAssociation2");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cExternalAssociationParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cLocalAssociationParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//AbstractAssociation2 returns commondata::AbstractAssociation:
-		//	ExternalAssociation | LocalAssociation;
+		//AbstractAssociation2 commondata::AbstractAssociation:
+		//	ExternalAssociation | LocalAssociation
 		@Override public ParserRule getRule() { return rule; }
 
 		//ExternalAssociation | LocalAssociation
@@ -5171,15 +5172,15 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class LocalAssociationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LocalAssociation");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.LocalAssociation");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cLocalAssociationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cReferenceAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final CrossReference cReferenceAbstractAssociationCrossReference_1_0 = (CrossReference)cReferenceAssignment_1.eContents().get(0);
 		private final RuleCall cReferenceAbstractAssociationFQNParserRuleCall_1_0_1 = (RuleCall)cReferenceAbstractAssociationCrossReference_1_0.eContents().get(1);
 		
-		//LocalAssociation returns commondata::AbstractAssociation:
-		//	{commondata::LocalAssociation} reference=[vpdesc::AbstractAssociation|FQN];
+		//LocalAssociation commondata::AbstractAssociation:
+		//	{commondata::LocalAssociation} reference=[vpdesc::AbstractAssociation|FQN]
 		@Override public ParserRule getRule() { return rule; }
 
 		//{commondata::LocalAssociation} reference=[vpdesc::AbstractAssociation|FQN]
@@ -5199,7 +5200,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ExternalAssociationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ExternalAssociation");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ExternalAssociation");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cExternalAssociationAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cExternalKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -5207,17 +5208,17 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cReferenceEReferenceCrossReference_2_0 = (CrossReference)cReferenceAssignment_2.eContents().get(0);
 		private final RuleCall cReferenceEReferenceFQNParserRuleCall_2_0_1 = (RuleCall)cReferenceEReferenceCrossReference_2_0.eContents().get(1);
 		
-		//ExternalAssociation returns commondata::AbstractAssociation:
-		//	{commondata::ExternalAssociation} "external" reference=[ecore::EReference|FQN];
+		//ExternalAssociation commondata::AbstractAssociation:
+		//	{commondata::ExternalAssociation} 'external' reference=[ecore::EReference|FQN]
 		@Override public ParserRule getRule() { return rule; }
 
-		//{commondata::ExternalAssociation} "external" reference=[ecore::EReference|FQN]
+		//{commondata::ExternalAssociation} 'external' reference=[ecore::EReference|FQN]
 		public Group getGroup() { return cGroup; }
 
 		//{commondata::ExternalAssociation}
 		public Action getExternalAssociationAction_0() { return cExternalAssociationAction_0; }
 
-		//"external"
+		//'external'
 		public Keyword getExternalKeyword_1() { return cExternalKeyword_1; }
 
 		//reference=[ecore::EReference|FQN]
@@ -5231,13 +5232,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class AbstractAttributeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AbstractAttribute");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.AbstractAttribute");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cExternalAttributeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cLocalAttributeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//AbstractAttribute returns commondata::AbstractAttribute:
-		//	ExternalAttribute | LocalAttribute;
+		//AbstractAttribute commondata::AbstractAttribute:
+		//	ExternalAttribute | LocalAttribute
 		@Override public ParserRule getRule() { return rule; }
 
 		//ExternalAttribute | LocalAttribute
@@ -5251,15 +5252,15 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class LocalAttributeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LocalAttribute");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.LocalAttribute");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cLocalAttributeAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cAttributeAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final CrossReference cAttributeAttributeCrossReference_1_0 = (CrossReference)cAttributeAssignment_1.eContents().get(0);
 		private final RuleCall cAttributeAttributeFQNParserRuleCall_1_0_1 = (RuleCall)cAttributeAttributeCrossReference_1_0.eContents().get(1);
 		
-		//LocalAttribute returns commondata::AbstractAttribute:
-		//	{commondata::LocalAttribute} attribute=[vpdesc::Attribute|FQN];
+		//LocalAttribute commondata::AbstractAttribute:
+		//	{commondata::LocalAttribute} attribute=[vpdesc::Attribute|FQN]
 		@Override public ParserRule getRule() { return rule; }
 
 		//{commondata::LocalAttribute} attribute=[vpdesc::Attribute|FQN]
@@ -5279,7 +5280,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ExternalAttributeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ExternalAttribute");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ExternalAttribute");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cExternalAttributeAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cExternalKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -5287,17 +5288,17 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cAttributeEAttributeCrossReference_2_0 = (CrossReference)cAttributeAssignment_2.eContents().get(0);
 		private final RuleCall cAttributeEAttributeFQNParserRuleCall_2_0_1 = (RuleCall)cAttributeEAttributeCrossReference_2_0.eContents().get(1);
 		
-		//ExternalAttribute returns commondata::AbstractAttribute:
-		//	{commondata::ExternalAttribute} "external" attribute=[ecore::EAttribute|FQN];
+		//ExternalAttribute commondata::AbstractAttribute:
+		//	{commondata::ExternalAttribute} 'external' attribute=[ecore::EAttribute|FQN]
 		@Override public ParserRule getRule() { return rule; }
 
-		//{commondata::ExternalAttribute} "external" attribute=[ecore::EAttribute|FQN]
+		//{commondata::ExternalAttribute} 'external' attribute=[ecore::EAttribute|FQN]
 		public Group getGroup() { return cGroup; }
 
 		//{commondata::ExternalAttribute}
 		public Action getExternalAttributeAction_0() { return cExternalAttributeAction_0; }
 
-		//"external"
+		//'external'
 		public Keyword getExternalKeyword_1() { return cExternalKeyword_1; }
 
 		//attribute=[ecore::EAttribute|FQN]
@@ -5311,7 +5312,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Expression");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Expression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cExpressionAction_0 = (Action)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
@@ -5326,21 +5327,17 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		// * 							Expression
 		// * 
 		// ******************************************************************** /
-		//Expression returns expression::Expression:
-		//	{expression::Expression} //	(value = EString)?
-		// (expressionElements+=ExpressionElement ("+"
-		//	expressionElements+=ExpressionElement)*)?;
+		//Expression expression::Expression:
+		//	{expression::Expression} (expressionElements+=ExpressionElement ('+' expressionElements+=ExpressionElement)*)?
 		@Override public ParserRule getRule() { return rule; }
 
-		//{expression::Expression} //	(value = EString)?
-		// (expressionElements+=ExpressionElement ("+"
-		//expressionElements+=ExpressionElement)*)?
+		//{expression::Expression} (expressionElements+=ExpressionElement ('+' expressionElements+=ExpressionElement)*)?
 		public Group getGroup() { return cGroup; }
 
 		//{expression::Expression}
 		public Action getExpressionAction_0() { return cExpressionAction_0; }
 
-		//(expressionElements+=ExpressionElement ("+" expressionElements+=ExpressionElement)*)?
+		//(expressionElements+=ExpressionElement ('+' expressionElements+=ExpressionElement)*)?
 		public Group getGroup_1() { return cGroup_1; }
 
 		//expressionElements+=ExpressionElement
@@ -5349,10 +5346,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//ExpressionElement
 		public RuleCall getExpressionElementsExpressionElementParserRuleCall_1_0_0() { return cExpressionElementsExpressionElementParserRuleCall_1_0_0; }
 
-		//("+" expressionElements+=ExpressionElement)*
+		//('+' expressionElements+=ExpressionElement)*
 		public Group getGroup_1_1() { return cGroup_1_1; }
 
-		//"+"
+		//'+'
 		public Keyword getPlusSignKeyword_1_1_0() { return cPlusSignKeyword_1_1_0; }
 
 		//expressionElements+=ExpressionElement
@@ -5363,13 +5360,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class AbstractComputableElementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AbstractComputableElement");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.AbstractComputableElement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cJavaElementParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cStringElementParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//AbstractComputableElement returns expression::AbstractComputableElement:
-		//	JavaElement | StringElement;
+		//AbstractComputableElement expression::AbstractComputableElement:
+		//	JavaElement | StringElement
 		@Override public ParserRule getRule() { return rule; }
 
 		//JavaElement | StringElement
@@ -5383,13 +5380,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ExpressionElementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ExpressionElement");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ExpressionElement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cForeignExpressionElementParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cStringElementParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//ExpressionElement returns expression::ExpressionElement:
-		//	ForeignExpressionElement | StringElement;
+		//ExpressionElement expression::ExpressionElement:
+		//	ForeignExpressionElement | StringElement
 		@Override public ParserRule getRule() { return rule; }
 
 		//ForeignExpressionElement | StringElement
@@ -5403,13 +5400,13 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ForeignExpressionElementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ForeignExpressionElement");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ForeignExpressionElement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cJavaElementParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cDomainElementParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//ForeignExpressionElement returns expression::ForeignExpressionElement:
-		//	JavaElement | DomainElement;
+		//ForeignExpressionElement expression::ForeignExpressionElement:
+		//	JavaElement | DomainElement
 		@Override public ParserRule getRule() { return rule; }
 
 		//JavaElement | DomainElement
@@ -5423,24 +5420,24 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class JavaElementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "JavaElement");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.JavaElement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cJavaElementAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cJavaKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cMethodAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cMethodFQNParserRuleCall_2_0 = (RuleCall)cMethodAssignment_2.eContents().get(0);
 		
-		//JavaElement returns expression::JavaElement:
-		//	{expression::JavaElement} "Java" method=FQN;
+		//JavaElement expression::JavaElement:
+		//	{expression::JavaElement} 'Java' method=FQN
 		@Override public ParserRule getRule() { return rule; }
 
-		//{expression::JavaElement} "Java" method=FQN
+		//{expression::JavaElement} 'Java' method=FQN
 		public Group getGroup() { return cGroup; }
 
 		//{expression::JavaElement}
 		public Action getJavaElementAction_0() { return cJavaElementAction_0; }
 
-		//"Java"
+		//'Java'
 		public Keyword getJavaKeyword_1() { return cJavaKeyword_1; }
 
 		//method=FQN
@@ -5451,15 +5448,15 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class DomainElementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DomainElement");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.DomainElement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cDomainElementAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cAttributeAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final CrossReference cAttributeAttributeCrossReference_1_0 = (CrossReference)cAttributeAssignment_1.eContents().get(0);
 		private final RuleCall cAttributeAttributeFQNParserRuleCall_1_0_1 = (RuleCall)cAttributeAttributeCrossReference_1_0.eContents().get(1);
 		
-		//DomainElement returns expression::ForeignExpressionElement:
-		//	{expression::DomainElement} attribute=[vpdesc::Attribute|FQN];
+		//DomainElement expression::ForeignExpressionElement:
+		//	{expression::DomainElement} attribute=[vpdesc::Attribute|FQN]
 		@Override public ParserRule getRule() { return rule; }
 
 		//{expression::DomainElement} attribute=[vpdesc::Attribute|FQN]
@@ -5479,14 +5476,14 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class StringElementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "StringElement");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.StringElement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cStringElementAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueSTRINGTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
 		
-		//StringElement returns expression::StringElement:
-		//	{expression::StringElement} value=STRING;
+		//StringElement expression::StringElement:
+		//	{expression::StringElement} value=STRING
 		@Override public ParserRule getRule() { return rule; }
 
 		//{expression::StringElement} value=STRING
@@ -5504,7 +5501,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
 	public class AlignmentKindElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "AlignmentKind");
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.AlignmentKind");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cHORIZONTALEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cHORIZONTALHORIZONTALKeyword_0_0 = (Keyword)cHORIZONTALEnumLiteralDeclaration_0.eContents().get(0);
@@ -5513,10 +5510,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final EnumLiteralDeclaration cVERTICALEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
 		private final Keyword cVERTICALVERTICALKeyword_2_0 = (Keyword)cVERTICALEnumLiteralDeclaration_2.eContents().get(0);
 		
-		/// *********************************************
-		//  * 			Enum
-		//  ********************************************* / enum
-		//AlignmentKind returns siriusDiagram::AlignmentKind:
+		//enum AlignmentKind returns siriusDiagram::AlignmentKind:
 		//	HORIZONTAL | SQUARE | VERTICAL;
 		public EnumRule getRule() { return rule; }
 
@@ -5526,24 +5520,24 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//HORIZONTAL
 		public EnumLiteralDeclaration getHORIZONTALEnumLiteralDeclaration_0() { return cHORIZONTALEnumLiteralDeclaration_0; }
 
-		//"HORIZONTAL"
+		//'HORIZONTAL'
 		public Keyword getHORIZONTALHORIZONTALKeyword_0_0() { return cHORIZONTALHORIZONTALKeyword_0_0; }
 
 		//SQUARE
 		public EnumLiteralDeclaration getSQUAREEnumLiteralDeclaration_1() { return cSQUAREEnumLiteralDeclaration_1; }
 
-		//"SQUARE"
+		//'SQUARE'
 		public Keyword getSQUARESQUAREKeyword_1_0() { return cSQUARESQUAREKeyword_1_0; }
 
 		//VERTICAL
 		public EnumLiteralDeclaration getVERTICALEnumLiteralDeclaration_2() { return cVERTICALEnumLiteralDeclaration_2; }
 
-		//"VERTICAL"
+		//'VERTICAL'
 		public Keyword getVERTICALVERTICALKeyword_2_0() { return cVERTICALVERTICALKeyword_2_0; }
 	}
 
 	public class BundledImageShapeElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "BundledImageShape");
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.BundledImageShape");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cDotEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cDotDotKeyword_0_0 = (Keyword)cDotEnumLiteralDeclaration_0.eContents().get(0);
@@ -5566,36 +5560,36 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//dot
 		public EnumLiteralDeclaration getDotEnumLiteralDeclaration_0() { return cDotEnumLiteralDeclaration_0; }
 
-		//"dot"
+		//'dot'
 		public Keyword getDotDotKeyword_0_0() { return cDotDotKeyword_0_0; }
 
 		//ring
 		public EnumLiteralDeclaration getRingEnumLiteralDeclaration_1() { return cRingEnumLiteralDeclaration_1; }
 
-		//"ring"
+		//'ring'
 		public Keyword getRingRingKeyword_1_0() { return cRingRingKeyword_1_0; }
 
 		//square
 		public EnumLiteralDeclaration getSquareEnumLiteralDeclaration_2() { return cSquareEnumLiteralDeclaration_2; }
 
-		//"square"
+		//'square'
 		public Keyword getSquareSquareKeyword_2_0() { return cSquareSquareKeyword_2_0; }
 
 		//stroke
 		public EnumLiteralDeclaration getStrokeEnumLiteralDeclaration_3() { return cStrokeEnumLiteralDeclaration_3; }
 
-		//"stroke"
+		//'stroke'
 		public Keyword getStrokeStrokeKeyword_3_0() { return cStrokeStrokeKeyword_3_0; }
 
 		//triangle
 		public EnumLiteralDeclaration getTriangleEnumLiteralDeclaration_4() { return cTriangleEnumLiteralDeclaration_4; }
 
-		//"triangle"
+		//'triangle'
 		public Keyword getTriangleTriangleKeyword_4_0() { return cTriangleTriangleKeyword_4_0; }
 	}
 
 	public class ResizeKindElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "ResizeKind");
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ResizeKind");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cNONEEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cNONENONEKeyword_0_0 = (Keyword)cNONEEnumLiteralDeclaration_0.eContents().get(0);
@@ -5616,30 +5610,30 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//NONE
 		public EnumLiteralDeclaration getNONEEnumLiteralDeclaration_0() { return cNONEEnumLiteralDeclaration_0; }
 
-		//"NONE"
+		//'NONE'
 		public Keyword getNONENONEKeyword_0_0() { return cNONENONEKeyword_0_0; }
 
 		//NSEW
 		public EnumLiteralDeclaration getNSEWEnumLiteralDeclaration_1() { return cNSEWEnumLiteralDeclaration_1; }
 
-		//"NSEW"
+		//'NSEW'
 		public Keyword getNSEWNSEWKeyword_1_0() { return cNSEWNSEWKeyword_1_0; }
 
 		//EAST_WEST
 		public EnumLiteralDeclaration getEAST_WESTEnumLiteralDeclaration_2() { return cEAST_WESTEnumLiteralDeclaration_2; }
 
-		//"EAST_WEST"
+		//'EAST_WEST'
 		public Keyword getEAST_WESTEAST_WESTKeyword_2_0() { return cEAST_WESTEAST_WESTKeyword_2_0; }
 
 		//NORTH_SOUTH
 		public EnumLiteralDeclaration getNORTH_SOUTHEnumLiteralDeclaration_3() { return cNORTH_SOUTHEnumLiteralDeclaration_3; }
 
-		//"NORTH_SOUTH"
+		//'NORTH_SOUTH'
 		public Keyword getNORTH_SOUTHNORTH_SOUTHKeyword_3_0() { return cNORTH_SOUTHNORTH_SOUTHKeyword_3_0; }
 	}
 
 	public class ContainerShapeElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "ContainerShape");
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ContainerShape");
 		private final EnumLiteralDeclaration cParallelogramEnumLiteralDeclaration = (EnumLiteralDeclaration)rule.eContents().get(1);
 		private final Keyword cParallelogramParallelogramKeyword_0 = (Keyword)cParallelogramEnumLiteralDeclaration.eContents().get(0);
 		
@@ -5650,12 +5644,12 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//parallelogram
 		public EnumLiteralDeclaration getParallelogramEnumLiteralDeclaration() { return cParallelogramEnumLiteralDeclaration; }
 
-		//"parallelogram"
+		//'parallelogram'
 		public Keyword getParallelogramParallelogramKeyword_0() { return cParallelogramParallelogramKeyword_0; }
 	}
 
 	public class FontFormatElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "FontFormat");
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.FontFormat");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cItalicEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cItalicItalicKeyword_0_0 = (Keyword)cItalicEnumLiteralDeclaration_0.eContents().get(0);
@@ -5676,30 +5670,30 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//italic
 		public EnumLiteralDeclaration getItalicEnumLiteralDeclaration_0() { return cItalicEnumLiteralDeclaration_0; }
 
-		//"italic"
+		//'italic'
 		public Keyword getItalicItalicKeyword_0_0() { return cItalicItalicKeyword_0_0; }
 
 		//bold
 		public EnumLiteralDeclaration getBoldEnumLiteralDeclaration_1() { return cBoldEnumLiteralDeclaration_1; }
 
-		//"bold"
+		//'bold'
 		public Keyword getBoldBoldKeyword_1_0() { return cBoldBoldKeyword_1_0; }
 
 		//underline
 		public EnumLiteralDeclaration getUnderlineEnumLiteralDeclaration_2() { return cUnderlineEnumLiteralDeclaration_2; }
 
-		//"underline"
+		//'underline'
 		public Keyword getUnderlineUnderlineKeyword_2_0() { return cUnderlineUnderlineKeyword_2_0; }
 
 		//strike_through
 		public EnumLiteralDeclaration getStrike_throughEnumLiteralDeclaration_3() { return cStrike_throughEnumLiteralDeclaration_3; }
 
-		//"strike_through"
+		//'strike_through'
 		public Keyword getStrike_throughStrike_throughKeyword_3_0() { return cStrike_throughStrike_throughKeyword_3_0; }
 	}
 
 	public class CenterStyleElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "CenterStyle");
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.CenterStyle");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cBothEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cBothBothKeyword_0_0 = (Keyword)cBothEnumLiteralDeclaration_0.eContents().get(0);
@@ -5720,30 +5714,30 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//Both
 		public EnumLiteralDeclaration getBothEnumLiteralDeclaration_0() { return cBothEnumLiteralDeclaration_0; }
 
-		//"Both"
+		//'Both'
 		public Keyword getBothBothKeyword_0_0() { return cBothBothKeyword_0_0; }
 
 		//None
 		public EnumLiteralDeclaration getNoneEnumLiteralDeclaration_1() { return cNoneEnumLiteralDeclaration_1; }
 
-		//"None"
+		//'None'
 		public Keyword getNoneNoneKeyword_1_0() { return cNoneNoneKeyword_1_0; }
 
 		//Source
 		public EnumLiteralDeclaration getSourceEnumLiteralDeclaration_2() { return cSourceEnumLiteralDeclaration_2; }
 
-		//"Source"
+		//'Source'
 		public Keyword getSourceSourceKeyword_2_0() { return cSourceSourceKeyword_2_0; }
 
 		//Target
 		public EnumLiteralDeclaration getTargetEnumLiteralDeclaration_3() { return cTargetEnumLiteralDeclaration_3; }
 
-		//"Target"
+		//'Target'
 		public Keyword getTargetTargetKeyword_3_0() { return cTargetTargetKeyword_3_0; }
 	}
 
 	public class FoldingStyleElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "FoldingStyle");
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.FoldingStyle");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cNONEEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cNONENONEKeyword_0_0 = (Keyword)cNONEEnumLiteralDeclaration_0.eContents().get(0);
@@ -5762,24 +5756,24 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//NONE
 		public EnumLiteralDeclaration getNONEEnumLiteralDeclaration_0() { return cNONEEnumLiteralDeclaration_0; }
 
-		//"NONE"
+		//'NONE'
 		public Keyword getNONENONEKeyword_0_0() { return cNONENONEKeyword_0_0; }
 
 		//SOURCE
 		public EnumLiteralDeclaration getSOURCEEnumLiteralDeclaration_1() { return cSOURCEEnumLiteralDeclaration_1; }
 
-		//"SOURCE"
+		//'SOURCE'
 		public Keyword getSOURCESOURCEKeyword_1_0() { return cSOURCESOURCEKeyword_1_0; }
 
 		//TARGET
 		public EnumLiteralDeclaration getTARGETEnumLiteralDeclaration_2() { return cTARGETEnumLiteralDeclaration_2; }
 
-		//"TARGET"
+		//'TARGET'
 		public Keyword getTARGETTARGETKeyword_2_0() { return cTARGETTARGETKeyword_2_0; }
 	}
 
 	public class EdgeRoutingElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "EdgeRouting");
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.EdgeRouting");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cStraightEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cStraightStraightKeyword_0_0 = (Keyword)cStraightEnumLiteralDeclaration_0.eContents().get(0);
@@ -5798,24 +5792,24 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//straight
 		public EnumLiteralDeclaration getStraightEnumLiteralDeclaration_0() { return cStraightEnumLiteralDeclaration_0; }
 
-		//"straight"
+		//'straight'
 		public Keyword getStraightStraightKeyword_0_0() { return cStraightStraightKeyword_0_0; }
 
 		//manhattan
 		public EnumLiteralDeclaration getManhattanEnumLiteralDeclaration_1() { return cManhattanEnumLiteralDeclaration_1; }
 
-		//"manhattan"
+		//'manhattan'
 		public Keyword getManhattanManhattanKeyword_1_0() { return cManhattanManhattanKeyword_1_0; }
 
 		//tree
 		public EnumLiteralDeclaration getTreeEnumLiteralDeclaration_2() { return cTreeEnumLiteralDeclaration_2; }
 
-		//"tree"
+		//'tree'
 		public Keyword getTreeTreeKeyword_2_0() { return cTreeTreeKeyword_2_0; }
 	}
 
 	public class ColorUseCaseElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "ColorUseCase");
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ColorUseCase");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cBorderEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cBorderBorderKeyword_0_0 = (Keyword)cBorderEnumLiteralDeclaration_0.eContents().get(0);
@@ -5827,39 +5821,39 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cForegroundForegroundKeyword_3_0 = (Keyword)cForegroundEnumLiteralDeclaration_3.eContents().get(0);
 		
 		//enum ColorUseCase returns styleCusto::ColorUseCase:
-		//	Border | Color | Background | Foreground="foreground";
+		//	Border | Color | Background | Foreground='foreground';
 		public EnumRule getRule() { return rule; }
 
-		//Border | Color | Background | Foreground="foreground"
+		//Border | Color | Background | Foreground='foreground'
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//Border
 		public EnumLiteralDeclaration getBorderEnumLiteralDeclaration_0() { return cBorderEnumLiteralDeclaration_0; }
 
-		//"Border"
+		//'Border'
 		public Keyword getBorderBorderKeyword_0_0() { return cBorderBorderKeyword_0_0; }
 
 		//Color
 		public EnumLiteralDeclaration getColorEnumLiteralDeclaration_1() { return cColorEnumLiteralDeclaration_1; }
 
-		//"Color"
+		//'Color'
 		public Keyword getColorColorKeyword_1_0() { return cColorColorKeyword_1_0; }
 
 		//Background
 		public EnumLiteralDeclaration getBackgroundEnumLiteralDeclaration_2() { return cBackgroundEnumLiteralDeclaration_2; }
 
-		//"Background"
+		//'Background'
 		public Keyword getBackgroundBackgroundKeyword_2_0() { return cBackgroundBackgroundKeyword_2_0; }
 
-		//Foreground="foreground"
+		//Foreground='foreground'
 		public EnumLiteralDeclaration getForegroundEnumLiteralDeclaration_3() { return cForegroundEnumLiteralDeclaration_3; }
 
-		//"foreground"
+		//'foreground'
 		public Keyword getForegroundForegroundKeyword_3_0() { return cForegroundForegroundKeyword_3_0; }
 	}
 
 	public class Node_FormElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "Node_Form");
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Node_Form");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cSquareEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cSquareSquareKeyword_0_0 = (Keyword)cSquareEnumLiteralDeclaration_0.eContents().get(0);
@@ -5888,54 +5882,54 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//Square
 		public EnumLiteralDeclaration getSquareEnumLiteralDeclaration_0() { return cSquareEnumLiteralDeclaration_0; }
 
-		//"Square"
+		//'Square'
 		public Keyword getSquareSquareKeyword_0_0() { return cSquareSquareKeyword_0_0; }
 
 		//Lozenge
 		public EnumLiteralDeclaration getLozengeEnumLiteralDeclaration_1() { return cLozengeEnumLiteralDeclaration_1; }
 
-		//"Lozenge"
+		//'Lozenge'
 		public Keyword getLozengeLozengeKeyword_1_0() { return cLozengeLozengeKeyword_1_0; }
 
 		//Eclipse
 		public EnumLiteralDeclaration getEclipseEnumLiteralDeclaration_2() { return cEclipseEnumLiteralDeclaration_2; }
 
-		//"Eclipse"
+		//'Eclipse'
 		public Keyword getEclipseEclipseKeyword_2_0() { return cEclipseEclipseKeyword_2_0; }
 
 		//Note
 		public EnumLiteralDeclaration getNoteEnumLiteralDeclaration_3() { return cNoteEnumLiteralDeclaration_3; }
 
-		//"Note"
+		//'Note'
 		public Keyword getNoteNoteKeyword_3_0() { return cNoteNoteKeyword_3_0; }
 
 		//Dot
 		public EnumLiteralDeclaration getDotEnumLiteralDeclaration_4() { return cDotEnumLiteralDeclaration_4; }
 
-		//"Dot"
+		//'Dot'
 		public Keyword getDotDotKeyword_4_0() { return cDotDotKeyword_4_0; }
 
 		//Triangle
 		public EnumLiteralDeclaration getTriangleEnumLiteralDeclaration_5() { return cTriangleEnumLiteralDeclaration_5; }
 
-		//"Triangle"
+		//'Triangle'
 		public Keyword getTriangleTriangleKeyword_5_0() { return cTriangleTriangleKeyword_5_0; }
 
 		//Stroke
 		public EnumLiteralDeclaration getStrokeEnumLiteralDeclaration_6() { return cStrokeEnumLiteralDeclaration_6; }
 
-		//"Stroke"
+		//'Stroke'
 		public Keyword getStrokeStrokeKeyword_6_0() { return cStrokeStrokeKeyword_6_0; }
 
 		//Ring
 		public EnumLiteralDeclaration getRingEnumLiteralDeclaration_7() { return cRingEnumLiteralDeclaration_7; }
 
-		//"Ring"
+		//'Ring'
 		public Keyword getRingRingKeyword_7_0() { return cRingRingKeyword_7_0; }
 	}
 
 	public class BackgroundStyleElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "BackgroundStyle");
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.BackgroundStyle");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cGradientLeftToRightEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cGradientLeftToRightGradientLeftToRightKeyword_0_0 = (Keyword)cGradientLeftToRightEnumLiteralDeclaration_0.eContents().get(0);
@@ -5954,24 +5948,24 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//GradientLeftToRight
 		public EnumLiteralDeclaration getGradientLeftToRightEnumLiteralDeclaration_0() { return cGradientLeftToRightEnumLiteralDeclaration_0; }
 
-		//"GradientLeftToRight"
+		//'GradientLeftToRight'
 		public Keyword getGradientLeftToRightGradientLeftToRightKeyword_0_0() { return cGradientLeftToRightGradientLeftToRightKeyword_0_0; }
 
 		//Liquid
 		public EnumLiteralDeclaration getLiquidEnumLiteralDeclaration_1() { return cLiquidEnumLiteralDeclaration_1; }
 
-		//"Liquid"
+		//'Liquid'
 		public Keyword getLiquidLiquidKeyword_1_0() { return cLiquidLiquidKeyword_1_0; }
 
 		//GradientTopToBottom
 		public EnumLiteralDeclaration getGradientTopToBottomEnumLiteralDeclaration_2() { return cGradientTopToBottomEnumLiteralDeclaration_2; }
 
-		//"GradientTopToBottom"
+		//'GradientTopToBottom'
 		public Keyword getGradientTopToBottomGradientTopToBottomKeyword_2_0() { return cGradientTopToBottomGradientTopToBottomKeyword_2_0; }
 	}
 
 	public class LabelPositionElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "LabelPosition");
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.LabelPosition");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cBorderEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cBorderBorderKeyword_0_0 = (Keyword)cBorderEnumLiteralDeclaration_0.eContents().get(0);
@@ -5988,18 +5982,18 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//border
 		public EnumLiteralDeclaration getBorderEnumLiteralDeclaration_0() { return cBorderEnumLiteralDeclaration_0; }
 
-		//"border"
+		//'border'
 		public Keyword getBorderBorderKeyword_0_0() { return cBorderBorderKeyword_0_0; }
 
 		//node
 		public EnumLiteralDeclaration getNodeEnumLiteralDeclaration_1() { return cNodeEnumLiteralDeclaration_1; }
 
-		//"node"
+		//'node'
 		public Keyword getNodeNodeKeyword_1_0() { return cNodeNodeKeyword_1_0; }
 	}
 
 	public class LabelAlignmentElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "LabelAlignment");
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.LabelAlignment");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cCENTEREnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cCENTERCenterKeyword_0_0 = (Keyword)cCENTEREnumLiteralDeclaration_0.eContents().get(0);
@@ -6009,33 +6003,33 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRIGHTRightKeyword_2_0 = (Keyword)cRIGHTEnumLiteralDeclaration_2.eContents().get(0);
 		
 		//enum LabelAlignment returns sirius::LabelAlignment:
-		//	CENTER="center" | LEFT="left" | RIGHT="right";
+		//	CENTER='center' | LEFT='left' | RIGHT='right';
 		public EnumRule getRule() { return rule; }
 
-		//CENTER="center" | LEFT="left" | RIGHT="right"
+		//CENTER='center' | LEFT='left' | RIGHT='right'
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//CENTER="center"
+		//CENTER='center'
 		public EnumLiteralDeclaration getCENTEREnumLiteralDeclaration_0() { return cCENTEREnumLiteralDeclaration_0; }
 
-		//"center"
+		//'center'
 		public Keyword getCENTERCenterKeyword_0_0() { return cCENTERCenterKeyword_0_0; }
 
-		//LEFT="left"
+		//LEFT='left'
 		public EnumLiteralDeclaration getLEFTEnumLiteralDeclaration_1() { return cLEFTEnumLiteralDeclaration_1; }
 
-		//"left"
+		//'left'
 		public Keyword getLEFTLeftKeyword_1_0() { return cLEFTLeftKeyword_1_0; }
 
-		//RIGHT="right"
+		//RIGHT='right'
 		public EnumLiteralDeclaration getRIGHTEnumLiteralDeclaration_2() { return cRIGHTEnumLiteralDeclaration_2; }
 
-		//"right"
+		//'right'
 		public Keyword getRIGHTRightKeyword_2_0() { return cRIGHTRightKeyword_2_0; }
 	}
 
 	public class LineStyleElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "LineStyle");
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.LineStyle");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cSolidEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cSolidSolidKeyword_0_0 = (Keyword)cSolidEnumLiteralDeclaration_0.eContents().get(0);
@@ -6056,30 +6050,30 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//solid
 		public EnumLiteralDeclaration getSolidEnumLiteralDeclaration_0() { return cSolidEnumLiteralDeclaration_0; }
 
-		//"solid"
+		//'solid'
 		public Keyword getSolidSolidKeyword_0_0() { return cSolidSolidKeyword_0_0; }
 
 		//dash
 		public EnumLiteralDeclaration getDashEnumLiteralDeclaration_1() { return cDashEnumLiteralDeclaration_1; }
 
-		//"dash"
+		//'dash'
 		public Keyword getDashDashKeyword_1_0() { return cDashDashKeyword_1_0; }
 
 		//dot
 		public EnumLiteralDeclaration getDotEnumLiteralDeclaration_2() { return cDotEnumLiteralDeclaration_2; }
 
-		//"dot"
+		//'dot'
 		public Keyword getDotDotKeyword_2_0() { return cDotDotKeyword_2_0; }
 
 		//dash_dot
 		public EnumLiteralDeclaration getDash_dotEnumLiteralDeclaration_3() { return cDash_dotEnumLiteralDeclaration_3; }
 
-		//"dash_dot"
+		//'dash_dot'
 		public Keyword getDash_dotDash_dotKeyword_3_0() { return cDash_dotDash_dotKeyword_3_0; }
 	}
 
 	public class EdgeArrowsElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "EdgeArrows");
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.EdgeArrows");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cNoDecorationEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cNoDecorationNoDecorationKeyword_0_0 = (Keyword)cNoDecorationEnumLiteralDeclaration_0.eContents().get(0);
@@ -6107,83 +6101,83 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//enum EdgeArrows returns siriusDiagram::EdgeArrows:
 		//	NoDecoration | OutputArrow | InputArrow | OutputClosedArrow | InputClosedArrow | OutputFillClosedArrow |
 		//	InputFillClosedArrow | Diamond | FillDiamond | InputArrowWithDiamond |
-		//	InputArrowWithFillDiamond="InputArrowWothFillDiamond";
+		//	InputArrowWithFillDiamond='InputArrowWothFillDiamond';
 		public EnumRule getRule() { return rule; }
 
 		//NoDecoration | OutputArrow | InputArrow | OutputClosedArrow | InputClosedArrow | OutputFillClosedArrow |
 		//InputFillClosedArrow | Diamond | FillDiamond | InputArrowWithDiamond |
-		//InputArrowWithFillDiamond="InputArrowWothFillDiamond"
+		//InputArrowWithFillDiamond='InputArrowWothFillDiamond'
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//NoDecoration
 		public EnumLiteralDeclaration getNoDecorationEnumLiteralDeclaration_0() { return cNoDecorationEnumLiteralDeclaration_0; }
 
-		//"NoDecoration"
+		//'NoDecoration'
 		public Keyword getNoDecorationNoDecorationKeyword_0_0() { return cNoDecorationNoDecorationKeyword_0_0; }
 
 		//OutputArrow
 		public EnumLiteralDeclaration getOutputArrowEnumLiteralDeclaration_1() { return cOutputArrowEnumLiteralDeclaration_1; }
 
-		//"OutputArrow"
+		//'OutputArrow'
 		public Keyword getOutputArrowOutputArrowKeyword_1_0() { return cOutputArrowOutputArrowKeyword_1_0; }
 
 		//InputArrow
 		public EnumLiteralDeclaration getInputArrowEnumLiteralDeclaration_2() { return cInputArrowEnumLiteralDeclaration_2; }
 
-		//"InputArrow"
+		//'InputArrow'
 		public Keyword getInputArrowInputArrowKeyword_2_0() { return cInputArrowInputArrowKeyword_2_0; }
 
 		//OutputClosedArrow
 		public EnumLiteralDeclaration getOutputClosedArrowEnumLiteralDeclaration_3() { return cOutputClosedArrowEnumLiteralDeclaration_3; }
 
-		//"OutputClosedArrow"
+		//'OutputClosedArrow'
 		public Keyword getOutputClosedArrowOutputClosedArrowKeyword_3_0() { return cOutputClosedArrowOutputClosedArrowKeyword_3_0; }
 
 		//InputClosedArrow
 		public EnumLiteralDeclaration getInputClosedArrowEnumLiteralDeclaration_4() { return cInputClosedArrowEnumLiteralDeclaration_4; }
 
-		//"InputClosedArrow"
+		//'InputClosedArrow'
 		public Keyword getInputClosedArrowInputClosedArrowKeyword_4_0() { return cInputClosedArrowInputClosedArrowKeyword_4_0; }
 
 		//OutputFillClosedArrow
 		public EnumLiteralDeclaration getOutputFillClosedArrowEnumLiteralDeclaration_5() { return cOutputFillClosedArrowEnumLiteralDeclaration_5; }
 
-		//"OutputFillClosedArrow"
+		//'OutputFillClosedArrow'
 		public Keyword getOutputFillClosedArrowOutputFillClosedArrowKeyword_5_0() { return cOutputFillClosedArrowOutputFillClosedArrowKeyword_5_0; }
 
 		//InputFillClosedArrow
 		public EnumLiteralDeclaration getInputFillClosedArrowEnumLiteralDeclaration_6() { return cInputFillClosedArrowEnumLiteralDeclaration_6; }
 
-		//"InputFillClosedArrow"
+		//'InputFillClosedArrow'
 		public Keyword getInputFillClosedArrowInputFillClosedArrowKeyword_6_0() { return cInputFillClosedArrowInputFillClosedArrowKeyword_6_0; }
 
 		//Diamond
 		public EnumLiteralDeclaration getDiamondEnumLiteralDeclaration_7() { return cDiamondEnumLiteralDeclaration_7; }
 
-		//"Diamond"
+		//'Diamond'
 		public Keyword getDiamondDiamondKeyword_7_0() { return cDiamondDiamondKeyword_7_0; }
 
 		//FillDiamond
 		public EnumLiteralDeclaration getFillDiamondEnumLiteralDeclaration_8() { return cFillDiamondEnumLiteralDeclaration_8; }
 
-		//"FillDiamond"
+		//'FillDiamond'
 		public Keyword getFillDiamondFillDiamondKeyword_8_0() { return cFillDiamondFillDiamondKeyword_8_0; }
 
 		//InputArrowWithDiamond
 		public EnumLiteralDeclaration getInputArrowWithDiamondEnumLiteralDeclaration_9() { return cInputArrowWithDiamondEnumLiteralDeclaration_9; }
 
-		//"InputArrowWithDiamond"
+		//'InputArrowWithDiamond'
 		public Keyword getInputArrowWithDiamondInputArrowWithDiamondKeyword_9_0() { return cInputArrowWithDiamondInputArrowWithDiamondKeyword_9_0; }
 
-		//InputArrowWithFillDiamond="InputArrowWothFillDiamond"
+		//InputArrowWithFillDiamond='InputArrowWothFillDiamond'
 		public EnumLiteralDeclaration getInputArrowWithFillDiamondEnumLiteralDeclaration_10() { return cInputArrowWithFillDiamondEnumLiteralDeclaration_10; }
 
-		//"InputArrowWothFillDiamond"
+		//'InputArrowWothFillDiamond'
 		public Keyword getInputArrowWithFillDiamondInputArrowWothFillDiamondKeyword_10_0() { return cInputArrowWithFillDiamondInputArrowWothFillDiamondKeyword_10_0; }
 	}
 
 	public class SystemColorsElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "SystemColors");
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.SystemColors");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cBlackEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cBlackBlackKeyword_0_0 = (Keyword)cBlackEnumLiteralDeclaration_0.eContents().get(0);
@@ -6252,162 +6246,162 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//black
 		public EnumLiteralDeclaration getBlackEnumLiteralDeclaration_0() { return cBlackEnumLiteralDeclaration_0; }
 
-		//"black"
+		//'black'
 		public Keyword getBlackBlackKeyword_0_0() { return cBlackBlackKeyword_0_0; }
 
 		//blue
 		public EnumLiteralDeclaration getBlueEnumLiteralDeclaration_1() { return cBlueEnumLiteralDeclaration_1; }
 
-		//"blue"
+		//'blue'
 		public Keyword getBlueBlueKeyword_1_0() { return cBlueBlueKeyword_1_0; }
 
 		//red
 		public EnumLiteralDeclaration getRedEnumLiteralDeclaration_2() { return cRedEnumLiteralDeclaration_2; }
 
-		//"red"
+		//'red'
 		public Keyword getRedRedKeyword_2_0() { return cRedRedKeyword_2_0; }
 
 		//green
 		public EnumLiteralDeclaration getGreenEnumLiteralDeclaration_3() { return cGreenEnumLiteralDeclaration_3; }
 
-		//"green"
+		//'green'
 		public Keyword getGreenGreenKeyword_3_0() { return cGreenGreenKeyword_3_0; }
 
 		//yellow
 		public EnumLiteralDeclaration getYellowEnumLiteralDeclaration_4() { return cYellowEnumLiteralDeclaration_4; }
 
-		//"yellow"
+		//'yellow'
 		public Keyword getYellowYellowKeyword_4_0() { return cYellowYellowKeyword_4_0; }
 
 		//purple
 		public EnumLiteralDeclaration getPurpleEnumLiteralDeclaration_5() { return cPurpleEnumLiteralDeclaration_5; }
 
-		//"purple"
+		//'purple'
 		public Keyword getPurplePurpleKeyword_5_0() { return cPurplePurpleKeyword_5_0; }
 
 		//orange
 		public EnumLiteralDeclaration getOrangeEnumLiteralDeclaration_6() { return cOrangeEnumLiteralDeclaration_6; }
 
-		//"orange"
+		//'orange'
 		public Keyword getOrangeOrangeKeyword_6_0() { return cOrangeOrangeKeyword_6_0; }
 
 		//chocolate
 		public EnumLiteralDeclaration getChocolateEnumLiteralDeclaration_7() { return cChocolateEnumLiteralDeclaration_7; }
 
-		//"chocolate"
+		//'chocolate'
 		public Keyword getChocolateChocolateKeyword_7_0() { return cChocolateChocolateKeyword_7_0; }
 
 		//gray
 		public EnumLiteralDeclaration getGrayEnumLiteralDeclaration_8() { return cGrayEnumLiteralDeclaration_8; }
 
-		//"gray"
+		//'gray'
 		public Keyword getGrayGrayKeyword_8_0() { return cGrayGrayKeyword_8_0; }
 
 		//white
 		public EnumLiteralDeclaration getWhiteEnumLiteralDeclaration_9() { return cWhiteEnumLiteralDeclaration_9; }
 
-		//"white"
+		//'white'
 		public Keyword getWhiteWhiteKeyword_9_0() { return cWhiteWhiteKeyword_9_0; }
 
 		//dark_blue
 		public EnumLiteralDeclaration getDark_blueEnumLiteralDeclaration_10() { return cDark_blueEnumLiteralDeclaration_10; }
 
-		//"dark_blue"
+		//'dark_blue'
 		public Keyword getDark_blueDark_blueKeyword_10_0() { return cDark_blueDark_blueKeyword_10_0; }
 
 		//dark_red
 		public EnumLiteralDeclaration getDark_redEnumLiteralDeclaration_11() { return cDark_redEnumLiteralDeclaration_11; }
 
-		//"dark_red"
+		//'dark_red'
 		public Keyword getDark_redDark_redKeyword_11_0() { return cDark_redDark_redKeyword_11_0; }
 
 		//dark_green
 		public EnumLiteralDeclaration getDark_greenEnumLiteralDeclaration_12() { return cDark_greenEnumLiteralDeclaration_12; }
 
-		//"dark_green"
+		//'dark_green'
 		public Keyword getDark_greenDark_greenKeyword_12_0() { return cDark_greenDark_greenKeyword_12_0; }
 
 		//dark_yellow
 		public EnumLiteralDeclaration getDark_yellowEnumLiteralDeclaration_13() { return cDark_yellowEnumLiteralDeclaration_13; }
 
-		//"dark_yellow"
+		//'dark_yellow'
 		public Keyword getDark_yellowDark_yellowKeyword_13_0() { return cDark_yellowDark_yellowKeyword_13_0; }
 
 		//dark_purple
 		public EnumLiteralDeclaration getDark_purpleEnumLiteralDeclaration_14() { return cDark_purpleEnumLiteralDeclaration_14; }
 
-		//"dark_purple"
+		//'dark_purple'
 		public Keyword getDark_purpleDark_purpleKeyword_14_0() { return cDark_purpleDark_purpleKeyword_14_0; }
 
 		//dark_orange
 		public EnumLiteralDeclaration getDark_orangeEnumLiteralDeclaration_15() { return cDark_orangeEnumLiteralDeclaration_15; }
 
-		//"dark_orange"
+		//'dark_orange'
 		public Keyword getDark_orangeDark_orangeKeyword_15_0() { return cDark_orangeDark_orangeKeyword_15_0; }
 
 		//dark_chocolate
 		public EnumLiteralDeclaration getDark_chocolateEnumLiteralDeclaration_16() { return cDark_chocolateEnumLiteralDeclaration_16; }
 
-		//"dark_chocolate"
+		//'dark_chocolate'
 		public Keyword getDark_chocolateDark_chocolateKeyword_16_0() { return cDark_chocolateDark_chocolateKeyword_16_0; }
 
 		//dark_gray
 		public EnumLiteralDeclaration getDark_grayEnumLiteralDeclaration_17() { return cDark_grayEnumLiteralDeclaration_17; }
 
-		//"dark_gray"
+		//'dark_gray'
 		public Keyword getDark_grayDark_grayKeyword_17_0() { return cDark_grayDark_grayKeyword_17_0; }
 
 		//light_blue
 		public EnumLiteralDeclaration getLight_blueEnumLiteralDeclaration_18() { return cLight_blueEnumLiteralDeclaration_18; }
 
-		//"light_blue"
+		//'light_blue'
 		public Keyword getLight_blueLight_blueKeyword_18_0() { return cLight_blueLight_blueKeyword_18_0; }
 
 		//light_red
 		public EnumLiteralDeclaration getLight_redEnumLiteralDeclaration_19() { return cLight_redEnumLiteralDeclaration_19; }
 
-		//"light_red"
+		//'light_red'
 		public Keyword getLight_redLight_redKeyword_19_0() { return cLight_redLight_redKeyword_19_0; }
 
 		//light_green
 		public EnumLiteralDeclaration getLight_greenEnumLiteralDeclaration_20() { return cLight_greenEnumLiteralDeclaration_20; }
 
-		//"light_green"
+		//'light_green'
 		public Keyword getLight_greenLight_greenKeyword_20_0() { return cLight_greenLight_greenKeyword_20_0; }
 
 		//light_yellow
 		public EnumLiteralDeclaration getLight_yellowEnumLiteralDeclaration_21() { return cLight_yellowEnumLiteralDeclaration_21; }
 
-		//"light_yellow"
+		//'light_yellow'
 		public Keyword getLight_yellowLight_yellowKeyword_21_0() { return cLight_yellowLight_yellowKeyword_21_0; }
 
 		//light_purple
 		public EnumLiteralDeclaration getLight_purpleEnumLiteralDeclaration_22() { return cLight_purpleEnumLiteralDeclaration_22; }
 
-		//"light_purple"
+		//'light_purple'
 		public Keyword getLight_purpleLight_purpleKeyword_22_0() { return cLight_purpleLight_purpleKeyword_22_0; }
 
 		//light_orange
 		public EnumLiteralDeclaration getLight_orangeEnumLiteralDeclaration_23() { return cLight_orangeEnumLiteralDeclaration_23; }
 
-		//"light_orange"
+		//'light_orange'
 		public Keyword getLight_orangeLight_orangeKeyword_23_0() { return cLight_orangeLight_orangeKeyword_23_0; }
 
 		//light_chocolate
 		public EnumLiteralDeclaration getLight_chocolateEnumLiteralDeclaration_24() { return cLight_chocolateEnumLiteralDeclaration_24; }
 
-		//"light_chocolate"
+		//'light_chocolate'
 		public Keyword getLight_chocolateLight_chocolateKeyword_24_0() { return cLight_chocolateLight_chocolateKeyword_24_0; }
 
 		//light_gray
 		public EnumLiteralDeclaration getLight_grayEnumLiteralDeclaration_25() { return cLight_grayEnumLiteralDeclaration_25; }
 
-		//"light_gray"
+		//'light_gray'
 		public Keyword getLight_grayLight_grayKeyword_25_0() { return cLight_grayLight_grayKeyword_25_0; }
 	}
 
 	public class ContainerLayoutElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "ContainerLayout");
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ContainerLayout");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cFreeFormEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cFreeFormFreeFormKeyword_0_0 = (Keyword)cFreeFormEnumLiteralDeclaration_0.eContents().get(0);
@@ -6428,30 +6422,30 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		//FreeForm
 		public EnumLiteralDeclaration getFreeFormEnumLiteralDeclaration_0() { return cFreeFormEnumLiteralDeclaration_0; }
 
-		//"FreeForm"
+		//'FreeForm'
 		public Keyword getFreeFormFreeFormKeyword_0_0() { return cFreeFormFreeFormKeyword_0_0; }
 
 		//List
 		public EnumLiteralDeclaration getListEnumLiteralDeclaration_1() { return cListEnumLiteralDeclaration_1; }
 
-		//"List"
+		//'List'
 		public Keyword getListListKeyword_1_0() { return cListListKeyword_1_0; }
 
 		//HorizontalStack
 		public EnumLiteralDeclaration getHorizontalStackEnumLiteralDeclaration_2() { return cHorizontalStackEnumLiteralDeclaration_2; }
 
-		//"HorizontalStack"
+		//'HorizontalStack'
 		public Keyword getHorizontalStackHorizontalStackKeyword_2_0() { return cHorizontalStackHorizontalStackKeyword_2_0; }
 
 		//VerticalStack
 		public EnumLiteralDeclaration getVerticalStackEnumLiteralDeclaration_3() { return cVerticalStackEnumLiteralDeclaration_3; }
 
-		//"VerticalStack"
+		//'VerticalStack'
 		public Keyword getVerticalStackVerticalStackKeyword_3_0() { return cVerticalStackVerticalStackKeyword_3_0; }
 	}
 
 	public class SynchronizationModeElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "SynchronizationMode");
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.SynchronizationMode");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cSynchronizedEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cSynchronizedSynchronizedKeyword_0_0 = (Keyword)cSynchronizedEnumLiteralDeclaration_0.eContents().get(0);
@@ -6556,24 +6550,24 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	private final DotCustomizationElements pDotCustomization;
 	private final StyleCustomizationReuseElements pStyleCustomizationReuse;
 	private final CustomizationExpressionElements pCustomizationExpression;
-	private final AlignmentKindElements unknownRuleAlignmentKind;
-	private final BundledImageShapeElements unknownRuleBundledImageShape;
-	private final ResizeKindElements unknownRuleResizeKind;
-	private final ContainerShapeElements unknownRuleContainerShape;
-	private final FontFormatElements unknownRuleFontFormat;
-	private final CenterStyleElements unknownRuleCenterStyle;
-	private final FoldingStyleElements unknownRuleFoldingStyle;
-	private final EdgeRoutingElements unknownRuleEdgeRouting;
-	private final ColorUseCaseElements unknownRuleColorUseCase;
-	private final Node_FormElements unknownRuleNode_Form;
-	private final BackgroundStyleElements unknownRuleBackgroundStyle;
-	private final LabelPositionElements unknownRuleLabelPosition;
-	private final LabelAlignmentElements unknownRuleLabelAlignment;
-	private final LineStyleElements unknownRuleLineStyle;
-	private final EdgeArrowsElements unknownRuleEdgeArrows;
-	private final SystemColorsElements unknownRuleSystemColors;
-	private final ContainerLayoutElements unknownRuleContainerLayout;
-	private final SynchronizationModeElements unknownRuleSynchronizationMode;
+	private final AlignmentKindElements eAlignmentKind;
+	private final BundledImageShapeElements eBundledImageShape;
+	private final ResizeKindElements eResizeKind;
+	private final ContainerShapeElements eContainerShape;
+	private final FontFormatElements eFontFormat;
+	private final CenterStyleElements eCenterStyle;
+	private final FoldingStyleElements eFoldingStyle;
+	private final EdgeRoutingElements eEdgeRouting;
+	private final ColorUseCaseElements eColorUseCase;
+	private final Node_FormElements eNode_Form;
+	private final BackgroundStyleElements eBackgroundStyle;
+	private final LabelPositionElements eLabelPosition;
+	private final LabelAlignmentElements eLabelAlignment;
+	private final LineStyleElements eLineStyle;
+	private final EdgeArrowsElements eEdgeArrows;
+	private final SystemColorsElements eSystemColors;
+	private final ContainerLayoutElements eContainerLayout;
+	private final SynchronizationModeElements eSynchronizationMode;
 	private final AbstractClassElements pAbstractClass;
 	private final LocalClass2Elements pLocalClass2;
 	private final ExternalClassElements pExternalClass;
@@ -6595,11 +6589,15 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 
 	private final CommonGrammarAccess gaCommon;
 
+	private final TerminalsGrammarAccess gaTerminals;
+
 	@Inject
 	public VpdiagramGrammarAccess(GrammarProvider grammarProvider,
-		CommonGrammarAccess gaCommon) {
+		CommonGrammarAccess gaCommon,
+		TerminalsGrammarAccess gaTerminals) {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaCommon = gaCommon;
+		this.gaTerminals = gaTerminals;
 		this.pDiagrams = new DiagramsElements();
 		this.pAbstractImport = new AbstractImportElements();
 		this.pImportNameSpace = new ImportNameSpaceElements();
@@ -6670,24 +6668,24 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		this.pDotCustomization = new DotCustomizationElements();
 		this.pStyleCustomizationReuse = new StyleCustomizationReuseElements();
 		this.pCustomizationExpression = new CustomizationExpressionElements();
-		this.unknownRuleAlignmentKind = new AlignmentKindElements();
-		this.unknownRuleBundledImageShape = new BundledImageShapeElements();
-		this.unknownRuleResizeKind = new ResizeKindElements();
-		this.unknownRuleContainerShape = new ContainerShapeElements();
-		this.unknownRuleFontFormat = new FontFormatElements();
-		this.unknownRuleCenterStyle = new CenterStyleElements();
-		this.unknownRuleFoldingStyle = new FoldingStyleElements();
-		this.unknownRuleEdgeRouting = new EdgeRoutingElements();
-		this.unknownRuleColorUseCase = new ColorUseCaseElements();
-		this.unknownRuleNode_Form = new Node_FormElements();
-		this.unknownRuleBackgroundStyle = new BackgroundStyleElements();
-		this.unknownRuleLabelPosition = new LabelPositionElements();
-		this.unknownRuleLabelAlignment = new LabelAlignmentElements();
-		this.unknownRuleLineStyle = new LineStyleElements();
-		this.unknownRuleEdgeArrows = new EdgeArrowsElements();
-		this.unknownRuleSystemColors = new SystemColorsElements();
-		this.unknownRuleContainerLayout = new ContainerLayoutElements();
-		this.unknownRuleSynchronizationMode = new SynchronizationModeElements();
+		this.eAlignmentKind = new AlignmentKindElements();
+		this.eBundledImageShape = new BundledImageShapeElements();
+		this.eResizeKind = new ResizeKindElements();
+		this.eContainerShape = new ContainerShapeElements();
+		this.eFontFormat = new FontFormatElements();
+		this.eCenterStyle = new CenterStyleElements();
+		this.eFoldingStyle = new FoldingStyleElements();
+		this.eEdgeRouting = new EdgeRoutingElements();
+		this.eColorUseCase = new ColorUseCaseElements();
+		this.eNode_Form = new Node_FormElements();
+		this.eBackgroundStyle = new BackgroundStyleElements();
+		this.eLabelPosition = new LabelPositionElements();
+		this.eLabelAlignment = new LabelAlignmentElements();
+		this.eLineStyle = new LineStyleElements();
+		this.eEdgeArrows = new EdgeArrowsElements();
+		this.eSystemColors = new SystemColorsElements();
+		this.eContainerLayout = new ContainerLayoutElements();
+		this.eSynchronizationMode = new SynchronizationModeElements();
 		this.pAbstractClass = new AbstractClassElements();
 		this.pLocalClass2 = new LocalClass2Elements();
 		this.pExternalClass = new ExternalClassElements();
@@ -6732,6 +6730,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return gaCommon;
 	}
 
+	public TerminalsGrammarAccess getTerminalsGrammarAccess() {
+		return gaTerminals;
+	}
+
 	
 	//Diagrams:
 	//	{Diagrams} imports+=AbstractImport* diagrams=Aspect;
@@ -6754,7 +6756,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ImportNameSpace:
-	//	"import" importedNamespace=FQN;
+	//	'import' importedNamespace=FQN;
 	public ImportNameSpaceElements getImportNameSpaceAccess() {
 		return pImportNameSpace;
 	}
@@ -6764,7 +6766,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ImportGroup:
-	//	"import" "external" importedGroup=EString;
+	//	'import' 'external' importedGroup=EString;
 	public ImportGroupElements getImportGroupAccess() {
 		return pImportGroup;
 	}
@@ -6773,8 +6775,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getImportGroupAccess().getRule();
 	}
 
-	//Aspect returns vpdesc::Aspect:
-	//	DiagramSet;
+	//Aspect vpdesc::Aspect:
+	//	DiagramSet
 	public AspectElements getAspectAccess() {
 		return pAspect;
 	}
@@ -6787,8 +6789,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	// * 							vpdiagram
 	// * 
 	// ******************************************************************** /
-	//DiagramSet returns vpdesc::Aspect:
-	//	{vpdiagram::DiagramSet} "Diagrams" name=FQN "{" diagrams+=DiagramRepresentation* "}";
+	//DiagramSet vpdesc::Aspect:
+	//	{vpdiagram::DiagramSet} 'Diagrams' name=FQN '{' diagrams+=DiagramRepresentation* '}'
 	public DiagramSetElements getDiagramSetAccess() {
 		return pDiagramSet;
 	}
@@ -6797,8 +6799,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getDiagramSetAccess().getRule();
 	}
 
-	//DiagramRepresentation returns vpdiagram::DiagramRepresentation:
-	//	Diagram | DiagramExtension;
+	//DiagramRepresentation vpdiagram::DiagramRepresentation:
+	//	Diagram | DiagramExtension
 	public DiagramRepresentationElements getDiagramRepresentationAccess() {
 		return pDiagramRepresentation;
 	}
@@ -6807,8 +6809,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getDiagramRepresentationAccess().getRule();
 	}
 
-	//DiagramElement returns vpdiagram::DiagramElement:
-	//	DiagramChildren | BorderedNode;
+	//DiagramElement vpdiagram::DiagramElement:
+	//	DiagramChildren | BorderedNode
 	public DiagramElementElements getDiagramElementAccess() {
 		return pDiagramElement;
 	}
@@ -6817,8 +6819,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getDiagramElementAccess().getRule();
 	}
 
-	//DiagramChildren returns vpdiagram::DiagramChildren:
-	//	AbstractEdge | Container | Node;
+	//DiagramChildren vpdiagram::DiagramChildren:
+	//	AbstractEdge | Container | Node
 	public DiagramChildrenElements getDiagramChildrenAccess() {
 		return pDiagramChildren;
 	}
@@ -6827,8 +6829,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getDiagramChildrenAccess().getRule();
 	}
 
-	//AbstractNode returns vpdiagram::AbstractNode:
-	//	Node | BorderedNode | Container;
+	//AbstractNode vpdiagram::AbstractNode:
+	//	Node | BorderedNode | Container
 	public AbstractNodeElements getAbstractNodeAccess() {
 		return pAbstractNode;
 	}
@@ -6837,8 +6839,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getAbstractNodeAccess().getRule();
 	}
 
-	//AbstractEdge returns vpdiagram::DiagramChildren:
-	//	Edge | EdgeImport;
+	//AbstractEdge vpdiagram::DiagramChildren:
+	//	Edge | EdgeImport
 	public AbstractEdgeElements getAbstractEdgeAccess() {
 		return pAbstractEdge;
 	}
@@ -6847,8 +6849,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getAbstractEdgeAccess().getRule();
 	}
 
-	//AbstractDescription returns vpdiagram::AbstractDescription:
-	//	ContainerDescription | NodeDescription;
+	//AbstractDescription vpdiagram::AbstractDescription:
+	//	ContainerDescription | NodeDescription
 	public AbstractDescriptionElements getAbstractDescriptionAccess() {
 		return pAbstractDescription;
 	}
@@ -6857,8 +6859,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getAbstractDescriptionAccess().getRule();
 	}
 
-	//AbstractContainerStyle returns vpdiagram::AbstractContainerStyle:
-	//	FlatStyle | ImageStyle;
+	//AbstractContainerStyle vpdiagram::AbstractContainerStyle:
+	//	FlatStyle | ImageStyle
 	public AbstractContainerStyleElements getAbstractContainerStyleAccess() {
 		return pAbstractContainerStyle;
 	}
@@ -6867,8 +6869,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getAbstractContainerStyleAccess().getRule();
 	}
 
-	//AbstractNodeStyle returns vpdiagram::AbstractNodeStyle:
-	//	ImageStyle | BasicStyle | HistogramStyle;
+	//AbstractNodeStyle vpdiagram::AbstractNodeStyle:
+	//	ImageStyle | BasicStyle | HistogramStyle
 	public AbstractNodeStyleElements getAbstractNodeStyleAccess() {
 		return pAbstractNodeStyle;
 	}
@@ -6877,9 +6879,9 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getAbstractNodeStyleAccess().getRule();
 	}
 
-	//Diagram returns vpdiagram::DiagramRepresentation:
-	//	{vpdiagram::Diagram} "Diagram" name=STRING "{" ("description:" description=STRING)? the_domain=DomainContainer
-	//	the_MappingSet=MappingSet? the_ActionSet=ActionSet? "}";
+	//Diagram vpdiagram::DiagramRepresentation:
+	//	{vpdiagram::Diagram} 'Diagram' name=STRING '{' ('description:' description=STRING)? the_domain=DomainContainer
+	//	the_MappingSet=MappingSet? the_ActionSet=ActionSet? '}'
 	public DiagramElements getDiagramAccess() {
 		return pDiagram;
 	}
@@ -6888,10 +6890,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getDiagramAccess().getRule();
 	}
 
-	//DiagramExtension returns vpdiagram::DiagramRepresentation:
-	//	{vpdiagram::DiagramExtension} "DiagramExtension" name=STRING "{" ("extended-diagram:"
+	//DiagramExtension vpdiagram::DiagramRepresentation:
+	//	{vpdiagram::DiagramExtension} 'DiagramExtension' name=STRING '{' ('extended-diagram:'
 	//	extented_diagram=[siriusDiagramDescription::DiagramDescription|FQN])? the_MappingSet=MappingSet?
-	//	the_ActionSet=ActionSet? ownedCustomizations=Customizations? "}";
+	//	the_ActionSet=ActionSet? ownedCustomizations=Customizations? '}'
 	public DiagramExtensionElements getDiagramExtensionAccess() {
 		return pDiagramExtension;
 	}
@@ -6900,8 +6902,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getDiagramExtensionAccess().getRule();
 	}
 
-	//MappingSet returns vpdiagram::MappingSet:
-	//	{vpdiagram::MappingSet} "Mapping" "{" diagram_Elements+=DiagramChildren* "}";
+	//MappingSet vpdiagram::MappingSet:
+	//	{vpdiagram::MappingSet} 'Mapping' '{' diagram_Elements+=DiagramChildren* '}'
 	public MappingSetElements getMappingSetAccess() {
 		return pMappingSet;
 	}
@@ -6910,9 +6912,9 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getMappingSetAccess().getRule();
 	}
 
-	//EdgeDescription returns vpdiagram::EdgeDescription:
-	//	{vpdiagram::EdgeDescription} "Representation" "{" condition=Condition? ("BeginLabel" "{" begin_Label=Label "}")?
-	//	("CenterLabel" "{" center_label=Label "}")? ("EndLabel" "{" end_label=Label "}")? style=EdgeStyle? "}";
+	//EdgeDescription vpdiagram::EdgeDescription:
+	//	{vpdiagram::EdgeDescription} 'Representation' '{' condition=Condition? ('BeginLabel' '{' begin_Label=Label '}')?
+	//	('CenterLabel' '{' center_label=Label '}')? ('EndLabel' '{' end_label=Label '}')? style=EdgeStyle? '}'
 	public EdgeDescriptionElements getEdgeDescriptionAccess() {
 		return pEdgeDescription;
 	}
@@ -6921,8 +6923,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getEdgeDescriptionAccess().getRule();
 	}
 
-	//Condition returns vpdiagram::Condition:
-	//	{vpdiagram::Condition} "condition:" expression=ForeignExpressionElement;
+	//Condition vpdiagram::Condition:
+	//	{vpdiagram::Condition} 'condition:' expression=ForeignExpressionElement
 	public ConditionElements getConditionAccess() {
 		return pCondition;
 	}
@@ -6931,9 +6933,9 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getConditionAccess().getRule();
 	}
 
-	//EdgeStyle returns vpdiagram::EdgeStyle:
-	//	{vpdiagram::EdgeStyle} "Style" "{" ("line-style:" lineStyle=LineStyle)? ("begin-decorator:"
-	//	beginDecorator=EdgeArrows)? ("end-decorator:" endDecorator=EdgeArrows)? ("color:" color=SystemColors)? "}";
+	//EdgeStyle vpdiagram::EdgeStyle:
+	//	{vpdiagram::EdgeStyle} 'Style' '{' ('line-style:' lineStyle=LineStyle)? ('begin-decorator:'
+	//	beginDecorator=EdgeArrows)? ('end-decorator:' endDecorator=EdgeArrows)? ('color:' color=SystemColors)? '}'
 	public EdgeStyleElements getEdgeStyleAccess() {
 		return pEdgeStyle;
 	}
@@ -6942,11 +6944,11 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getEdgeStyleAccess().getRule();
 	}
 
-	//Container returns vpdiagram::Container:
-	//	{vpdiagram::Container} "Container" name=EString "{" ("import:"
-	//	imports=[siriusDiagramDescription::ContainerMapping|FQN])? ("domain-context:" the_domain=NodeDomainElement)?
-	//	("content-layout:" contentLayout=ContainerLayout)? synchronizationMode=SynchronizationMode?
-	//	style+=ContainerDescription* children=ContainerChildren? "}";
+	//Container vpdiagram::Container:
+	//	{vpdiagram::Container} 'Container' name=EString '{' ('import:'
+	//	imports=[siriusDiagramDescription::ContainerMapping|FQN])? ('domain-context:' the_domain=NodeDomainElement)?
+	//	('content-layout:' contentLayout=ContainerLayout)? synchronizationMode=SynchronizationMode?
+	//	style+=ContainerDescription* children=ContainerChildren? '}'
 	public ContainerElements getContainerAccess() {
 		return pContainer;
 	}
@@ -6955,9 +6957,9 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getContainerAccess().getRule();
 	}
 
-	//ContainerChildren returns vpdiagram::ContainerChildren:
-	//	{vpdiagram::ContainerChildren} "Contains" "{" ("reuse" reused_nodes+=[vpdiagram::AbstractNode|FQN] (","
-	//	reused_nodes+=[vpdiagram::AbstractNode|FQN])*)? owned_nodes+=AbstractNode* "}";
+	//ContainerChildren vpdiagram::ContainerChildren:
+	//	{vpdiagram::ContainerChildren} 'Contains' '{' ('reuse' reused_nodes+=[vpdiagram::AbstractNode|FQN] (','
+	//	reused_nodes+=[vpdiagram::AbstractNode|FQN])*)? owned_nodes+=AbstractNode* '}'
 	public ContainerChildrenElements getContainerChildrenAccess() {
 		return pContainerChildren;
 	}
@@ -6966,9 +6968,9 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getContainerChildrenAccess().getRule();
 	}
 
-	//NodeDomainElement returns vpdiagram::NodeDomainElement:
-	//	{vpdiagram::NodeDomainElement} domain_Class=AbstractClass ("provided-by" ("query" query=STRING | "association"
-	//	chlidren_list=AbstractAssociation2))?;
+	//NodeDomainElement vpdiagram::NodeDomainElement:
+	//	{vpdiagram::NodeDomainElement} domain_Class=AbstractClass ('provided-by' ('query' query=STRING | 'association'
+	//	chlidren_list=AbstractAssociation2))?
 	public NodeDomainElementElements getNodeDomainElementAccess() {
 		return pNodeDomainElement;
 	}
@@ -6977,9 +6979,9 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getNodeDomainElementAccess().getRule();
 	}
 
-	//ContainerDescription returns vpdiagram::ContainerDescription:
-	//	{vpdiagram::ContainerDescription} "Representation" "{" condition=Condition? ("Label" "{" node_Label=Label "}")?
-	//	("Style" => "{" style=AbstractContainerStyle "}")? "}";
+	//ContainerDescription vpdiagram::ContainerDescription:
+	//	{vpdiagram::ContainerDescription} 'Representation' '{' condition=Condition? ('Label' '{' node_Label=Label '}')?
+	//	('Style' => '{' style=AbstractContainerStyle '}')? '}'
 	public ContainerDescriptionElements getContainerDescriptionAccess() {
 		return pContainerDescription;
 	}
@@ -6988,9 +6990,9 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getContainerDescriptionAccess().getRule();
 	}
 
-	//BasicStyle returns vpdiagram::BasicStyle:
-	//	{vpdiagram::BasicStyle} "BasicStyle" "{" ("border-color:" borderColor=SystemColors)? ("background:"
-	//	backgroundColor=SystemColors)? ("form:" form=Node_Form)? "}";
+	//BasicStyle vpdiagram::BasicStyle:
+	//	{vpdiagram::BasicStyle} 'BasicStyle' '{' ('border-color:' borderColor=SystemColors)? ('background:'
+	//	backgroundColor=SystemColors)? ('form:' form=Node_Form)? '}'
 	public BasicStyleElements getBasicStyleAccess() {
 		return pBasicStyle;
 	}
@@ -6999,9 +7001,9 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getBasicStyleAccess().getRule();
 	}
 
-	//HistogramStyle returns vpdiagram::HistogramStyle:
-	//	{vpdiagram::HistogramStyle} "HistogramStyle" "{" ("border-color:" borderColor=SystemColors)?
-	//	sections+=HistogramSection* "}";
+	//HistogramStyle vpdiagram::HistogramStyle:
+	//	{vpdiagram::HistogramStyle} 'HistogramStyle' '{' ('border-color:' borderColor=SystemColors)?
+	//	sections+=HistogramSection* '}'
 	public HistogramStyleElements getHistogramStyleAccess() {
 		return pHistogramStyle;
 	}
@@ -7010,10 +7012,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getHistogramStyleAccess().getRule();
 	}
 
-	//HistogramSection returns vpdiagram::HistogramSection:
-	//	{vpdiagram::HistogramSection} "Section" "{" ("background:" backgroundColor=SystemColors)? ("foreground:"
-	//	forgroundColor=SystemColors)? ("minValue:" minValue=ForeignExpressionElement)? ("value:"
-	//	value=ForeignExpressionElement)? ("maxValue:" maxValue=ForeignExpressionElement)? "}";
+	//HistogramSection vpdiagram::HistogramSection:
+	//	{vpdiagram::HistogramSection} 'Section' '{' ('background:' backgroundColor=SystemColors)? ('foreground:'
+	//	forgroundColor=SystemColors)? ('minValue:' minValue=ForeignExpressionElement)? ('value:'
+	//	value=ForeignExpressionElement)? ('maxValue:' maxValue=ForeignExpressionElement)? '}'
 	public HistogramSectionElements getHistogramSectionAccess() {
 		return pHistogramSection;
 	}
@@ -7022,8 +7024,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getHistogramSectionAccess().getRule();
 	}
 
-	//ImageStyle returns vpdiagram::ImageStyle:
-	//	{vpdiagram::ImageStyle} "Image" "{" ("border:" borderColor=SystemColors)? ("path:" imagePath=STRING) "}";
+	//ImageStyle vpdiagram::ImageStyle:
+	//	{vpdiagram::ImageStyle} 'Image' '{' ('border:' borderColor=SystemColors)? ('path:' imagePath=STRING) '}'
 	public ImageStyleElements getImageStyleAccess() {
 		return pImageStyle;
 	}
@@ -7032,9 +7034,9 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getImageStyleAccess().getRule();
 	}
 
-	//FlatStyle returns vpdiagram::FlatStyle:
-	//	{vpdiagram::FlatStyle} "FlatStyle" "{" ("border:" borderColor=SystemColors)? ("background:"
-	//	backgroundStyle=BackgroundStyle? backgroundColor=SystemColors)? ("foreground:" forgroundColor=SystemColors)? "}";
+	//FlatStyle vpdiagram::FlatStyle:
+	//	{vpdiagram::FlatStyle} 'FlatStyle' '{' ('border:' borderColor=SystemColors)? ('background:'
+	//	backgroundStyle=BackgroundStyle? backgroundColor=SystemColors)? ('foreground:' forgroundColor=SystemColors)? '}'
 	public FlatStyleElements getFlatStyleAccess() {
 		return pFlatStyle;
 	}
@@ -7043,9 +7045,9 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getFlatStyleAccess().getRule();
 	}
 
-	//Label returns vpdiagram::Label:
-	//	{vpdiagram::Label} ("content:" value=Expression) ("police:" bold?="bold"? italic?="italic"? color=SystemColors?
-	//	size=EInt?)?;
+	//Label vpdiagram::Label:
+	//	{vpdiagram::Label} ('content:' value=Expression) ('police:' bold?='bold'? italic?='italic'? color=SystemColors?
+	//	size=EInt?)?
 	public LabelElements getLabelAccess() {
 		return pLabel;
 	}
@@ -7054,10 +7056,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getLabelAccess().getRule();
 	}
 
-	//Node returns vpdiagram::Node:
-	//	{vpdiagram::Node} "Node" name=EString "{" ("import:" imports=[siriusDiagramDescription::NodeMapping|FQN])?
-	//	("domain-context:" the_domain=NodeDomainElement)? synchronizationMode=SynchronizationMode? style+=NodeDescription*
-	//	children=NodeChildren? "}";
+	//Node vpdiagram::Node:
+	//	{vpdiagram::Node} 'Node' name=EString '{' ('import:' imports=[siriusDiagramDescription::NodeMapping|FQN])?
+	//	('domain-context:' the_domain=NodeDomainElement)? synchronizationMode=SynchronizationMode? style+=NodeDescription*
+	//	children=NodeChildren? '}'
 	public NodeElements getNodeAccess() {
 		return pNode;
 	}
@@ -7066,9 +7068,9 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getNodeAccess().getRule();
 	}
 
-	//NodeChildren returns vpdiagram::NodeChildren:
-	//	{vpdiagram::NodeChildren} "Contains" "{" ("reuse" reused_boderednodes+=[vpdiagram::BorderedNode|FQN] (","
-	//	reused_boderednodes+=[vpdiagram::BorderedNode|FQN])*)? owned_boderednodes+=BorderedNode* "}";
+	//NodeChildren vpdiagram::NodeChildren:
+	//	{vpdiagram::NodeChildren} 'Contains' '{' ('reuse' reused_boderednodes+=[vpdiagram::BorderedNode|FQN] (','
+	//	reused_boderednodes+=[vpdiagram::BorderedNode|FQN])*)? owned_boderednodes+=BorderedNode* '}'
 	public NodeChildrenElements getNodeChildrenAccess() {
 		return pNodeChildren;
 	}
@@ -7077,10 +7079,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getNodeChildrenAccess().getRule();
 	}
 
-	//BorderedNode returns vpdiagram::BorderedNode:
-	//	{vpdiagram::BorderedNode} "BorderedNode" name=EString "{" ("import:"
-	//	imports=[siriusDiagramDescription::NodeMapping|FQN])? ("domain-context:" the_domain=NodeDomainElement)?
-	//	synchronizationMode=SynchronizationMode? style+=NodeDescription* "}";
+	//BorderedNode vpdiagram::BorderedNode:
+	//	{vpdiagram::BorderedNode} 'BorderedNode' name=EString '{' ('import:'
+	//	imports=[siriusDiagramDescription::NodeMapping|FQN])? ('domain-context:' the_domain=NodeDomainElement)?
+	//	synchronizationMode=SynchronizationMode? style+=NodeDescription* '}'
 	public BorderedNodeElements getBorderedNodeAccess() {
 		return pBorderedNode;
 	}
@@ -7089,10 +7091,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getBorderedNodeAccess().getRule();
 	}
 
-	//NodeDescription returns vpdiagram::NodeDescription:
-	//	{vpdiagram::NodeDescription} "Representation" "{" condition=Condition? ("Label" "{" node_Label=Label ("position:"
-	//	label_position=LabelPosition)? ("alignment:" label_alignement=LabelAlignment)? "}")? ("Style" "{"
-	//	style=AbstractNodeStyle "}")? "}";
+	//NodeDescription vpdiagram::NodeDescription:
+	//	{vpdiagram::NodeDescription} 'Representation' '{' condition=Condition? ('Label' '{' node_Label=Label ('position:'
+	//	label_position=LabelPosition)? ('alignment:' label_alignement=LabelAlignment)? '}')? ('Style' '{'
+	//	style=AbstractNodeStyle '}')? '}'
 	public NodeDescriptionElements getNodeDescriptionAccess() {
 		return pNodeDescription;
 	}
@@ -7101,8 +7103,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getNodeDescriptionAccess().getRule();
 	}
 
-	//ActionSet returns vpdiagram::ActionSet:
-	//	{vpdiagram::ActionSet} "Actions" "{" actions+=Action* openActions+=OpenAction* "}";
+	//ActionSet vpdiagram::ActionSet:
+	//	{vpdiagram::ActionSet} 'Actions' '{' actions+=Action* openActions+=OpenAction* '}'
 	public ActionSetElements getActionSetAccess() {
 		return pActionSet;
 	}
@@ -7111,9 +7113,9 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getActionSetAccess().getRule();
 	}
 
-	//OpenAction returns vpdiagram::OpenAction:
-	//	{vpdiagram::OpenAction} "OpenAction" name=EString "{" ("precondition:" precondition=EString)? ("label:"
-	//	label=STRING)? ("icon:" icon=STRING)? "}";
+	//OpenAction vpdiagram::OpenAction:
+	//	{vpdiagram::OpenAction} 'OpenAction' name=EString '{' ('precondition:' precondition=EString)? ('label:'
+	//	label=STRING)? ('icon:' icon=STRING)? '}'
 	public OpenActionElements getOpenActionAccess() {
 		return pOpenAction;
 	}
@@ -7122,8 +7124,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getOpenActionAccess().getRule();
 	}
 
-	//Action returns vpdiagram::Action:
-	//	Create | Delete | Drop | ReconnectEdge;
+	//Action vpdiagram::Action:
+	//	Create | Delete | Drop | ReconnectEdge
 	public ActionElements getActionAccess() {
 		return pAction;
 	}
@@ -7132,9 +7134,9 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getActionAccess().getRule();
 	}
 
-	//Create returns vpdiagram::Action:
-	//	{vpdiagram::Create} "Create" name=EString "{" ("precondition:" precondition=EString)? ("label:" label=STRING)?
-	//	("action-for:" tool_For=[vpdiagram::DiagramElement|FQN]) onlyTheView?="only-view"? ("icon:" icon=STRING)? "}";
+	//Create vpdiagram::Action:
+	//	{vpdiagram::Create} 'Create' name=EString '{' ('precondition:' precondition=EString)? ('label:' label=STRING)?
+	//	('action-for:' tool_For=[vpdiagram::DiagramElement|FQN]) onlyTheView?='only-view'? ('icon:' icon=STRING)? '}'
 	public CreateElements getCreateAccess() {
 		return pCreate;
 	}
@@ -7143,9 +7145,9 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getCreateAccess().getRule();
 	}
 
-	//Delete returns vpdiagram::Action:
-	//	{vpdiagram::Delete} "Delete" name=EString "{" ("precondition:" precondition=EString)? ("label:" label=STRING)?
-	//	("action-for:" tool_For=[vpdiagram::DiagramElement|FQN]) "}";
+	//Delete vpdiagram::Action:
+	//	{vpdiagram::Delete} 'Delete' name=EString '{' ('precondition:' precondition=EString)? ('label:' label=STRING)?
+	//	('action-for:' tool_For=[vpdiagram::DiagramElement|FQN]) '}'
 	public DeleteElements getDeleteAccess() {
 		return pDelete;
 	}
@@ -7154,9 +7156,9 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getDeleteAccess().getRule();
 	}
 
-	//Drop returns vpdiagram::Action:
-	//	{vpdiagram::Drop} "Drop" name=EString "{" ("precondition:" precondition=EString)? ("label:" label=STRING)?
-	//	("action-for:" tool_For=[vpdiagram::DiagramElement|FQN]) "}";
+	//Drop vpdiagram::Action:
+	//	{vpdiagram::Drop} 'Drop' name=EString '{' ('precondition:' precondition=EString)? ('label:' label=STRING)?
+	//	('action-for:' tool_For=[vpdiagram::DiagramElement|FQN]) '}'
 	public DropElements getDropAccess() {
 		return pDrop;
 	}
@@ -7165,9 +7167,9 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getDropAccess().getRule();
 	}
 
-	//ReconnectEdge returns vpdiagram::Action:
-	//	{vpdiagram::ReconnectEdge} "ReconnectEdge" name=EString "{" ("precondition:" precondition=EString)? ("label:"
-	//	label=STRING)? ("action-for:" tool_For=[vpdiagram::DiagramElement|FQN]) "}";
+	//ReconnectEdge vpdiagram::Action:
+	//	{vpdiagram::ReconnectEdge} 'ReconnectEdge' name=EString '{' ('precondition:' precondition=EString)? ('label:'
+	//	label=STRING)? ('action-for:' tool_For=[vpdiagram::DiagramElement|FQN]) '}'
 	public ReconnectEdgeElements getReconnectEdgeAccess() {
 		return pReconnectEdge;
 	}
@@ -7176,8 +7178,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getReconnectEdgeAccess().getRule();
 	}
 
-	//DomainContainer returns vpdiagram::DomainContainer:
-	//	{vpdiagram::DomainContainer} ("domain-context:" the_domain=AbstractClass);
+	//DomainContainer vpdiagram::DomainContainer:
+	//	{vpdiagram::DomainContainer} ('domain-context:' the_domain=AbstractClass)
 	public DomainContainerElements getDomainContainerAccess() {
 		return pDomainContainer;
 	}
@@ -7186,12 +7188,12 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getDomainContainerAccess().getRule();
 	}
 
-	//Edge returns vpdiagram::AbstractEdge:
-	//	{vpdiagram::Edge} "Edge" name=EString "{" ("association-context:" the_domain=EdgeDomainAssociation |
-	//	"class-association-context:" the_domain=EdgeDomainElement) synchronizationMode=SynchronizationMode? ("source:"
-	//	source+=[vpdiagram::DiagramElement|FQN] ("," source+=[vpdiagram::DiagramElement|FQN])*) ("target:"
-	//	target+=[vpdiagram::DiagramElement|FQN] ("," target+=[vpdiagram::DiagramElement|FQN])*)
-	//	e_description+=EdgeDescription* "}";
+	//Edge vpdiagram::AbstractEdge:
+	//	{vpdiagram::Edge} 'Edge' name=EString '{' ('association-context:' the_domain=EdgeDomainAssociation |
+	//	'class-association-context:' the_domain=EdgeDomainElement) synchronizationMode=SynchronizationMode? ('source:'
+	//	source+=[vpdiagram::DiagramElement|FQN] (',' source+=[vpdiagram::DiagramElement|FQN])*) ('target:'
+	//	target+=[vpdiagram::DiagramElement|FQN] (',' target+=[vpdiagram::DiagramElement|FQN])*)
+	//	e_description+=EdgeDescription* '}'
 	public EdgeElements getEdgeAccess() {
 		return pEdge;
 	}
@@ -7200,9 +7202,9 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getEdgeAccess().getRule();
 	}
 
-	//EdgeImport returns vpdiagram::AbstractEdge:
-	//	{vpdiagram::EdgeImport} "EdgeImport" name=EString "{" ("import:" imports=[siriusDiagramDescription::EdgeMapping|FQN])
-	//	synchronizationMode=SynchronizationMode? e_description+=EdgeDescription* "}";
+	//EdgeImport vpdiagram::AbstractEdge:
+	//	{vpdiagram::EdgeImport} 'EdgeImport' name=EString '{' ('import:' imports=[siriusDiagramDescription::EdgeMapping|FQN])
+	//	synchronizationMode=SynchronizationMode? e_description+=EdgeDescription* '}'
 	public EdgeImportElements getEdgeImportAccess() {
 		return pEdgeImport;
 	}
@@ -7211,8 +7213,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getEdgeImportAccess().getRule();
 	}
 
-	//EdgeDomainAssociation returns vpdiagram::EdgeDomainAssociation:
-	//	{vpdiagram::EdgeDomainAssociation} ("query:" target_query=STRING | target_Locator=AbstractAssociation2);
+	//EdgeDomainAssociation vpdiagram::EdgeDomainAssociation:
+	//	{vpdiagram::EdgeDomainAssociation} ('query:' target_query=STRING | target_Locator=AbstractAssociation2)
 	public EdgeDomainAssociationElements getEdgeDomainAssociationAccess() {
 		return pEdgeDomainAssociation;
 	}
@@ -7221,10 +7223,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getEdgeDomainAssociationAccess().getRule();
 	}
 
-	//EdgeDomainElement returns vpdiagram::EdgeDomainAssociation:
-	//	{vpdiagram::EdgeDomainElement} the_Domain=AbstractClass ("target-query:" target_query=STRING | "target-association:"
-	//	target_Locator=AbstractAssociation2) ("source-query:" source_query=STRING | "source-association:"
-	//	source_Locator=AbstractAssociation2);
+	//EdgeDomainElement vpdiagram::EdgeDomainAssociation:
+	//	{vpdiagram::EdgeDomainElement} the_Domain=AbstractClass ('target-query:' target_query=STRING | 'target-association:'
+	//	target_Locator=AbstractAssociation2) ('source-query:' source_query=STRING | 'source-association:'
+	//	source_Locator=AbstractAssociation2)
 	public EdgeDomainElementElements getEdgeDomainElementAccess() {
 		return pEdgeDomainElement;
 	}
@@ -7236,10 +7238,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	/// **********************************************
 	// * 				Style customization
 	// ********************************************** /
-	//Customizations returns styleCusto::Customizations:
-	//	{styleCusto::Customizations} "customizations" "{" (ownedCustomizationDescriptions+=StyleCustomizationDescriptions
+	//Customizations styleCusto::Customizations:
+	//	{styleCusto::Customizations} 'customizations' '{' (ownedCustomizationDescriptions+=StyleCustomizationDescriptions
 	//	ownedCustomizationDescriptions+=StyleCustomizationDescriptions*)? (ownedCustomizationReuse+=StyleCustomizationReuse
-	//	ownedCustomizationReuse+=StyleCustomizationReuse*)? "}";
+	//	ownedCustomizationReuse+=StyleCustomizationReuse*)? '}'
 	public CustomizationsElements getCustomizationsAccess() {
 		return pCustomizations;
 	}
@@ -7248,10 +7250,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getCustomizationsAccess().getRule();
 	}
 
-	//StyleCustomizationDescriptions returns styleCusto::StyleCustomizationDescriptions:
-	//	{styleCusto::StyleCustomizationDescriptions} "customization" name=ID ("when" "("
-	//	precondtionExpression=CustomizationExpression ")")? "with" "{" (ownedCustomizations+=AbstractCustomization
-	//	ownedCustomizations+=AbstractCustomization*)? "}";
+	//StyleCustomizationDescriptions styleCusto::StyleCustomizationDescriptions:
+	//	{styleCusto::StyleCustomizationDescriptions} 'customization' name=ID ('when' '('
+	//	precondtionExpression=CustomizationExpression ')')? 'with' '{' (ownedCustomizations+=AbstractCustomization
+	//	ownedCustomizations+=AbstractCustomization*)? '}'
 	public StyleCustomizationDescriptionsElements getStyleCustomizationDescriptionsAccess() {
 		return pStyleCustomizationDescriptions;
 	}
@@ -7260,8 +7262,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getStyleCustomizationDescriptionsAccess().getRule();
 	}
 
-	//AbstractCustomization returns styleCusto::AbstractCustomization:
-	//	EdgeStyleCustomization | ColorCustomization | LabelCustomization | AbstractNodeStyleCustomization;
+	//AbstractCustomization styleCusto::AbstractCustomization:
+	//	EdgeStyleCustomization | ColorCustomization | LabelCustomization | AbstractNodeStyleCustomization
 	public AbstractCustomizationElements getAbstractCustomizationAccess() {
 		return pAbstractCustomization;
 	}
@@ -7270,20 +7272,20 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getAbstractCustomizationAccess().getRule();
 	}
 
-	//EdgeStyleCustomization returns styleCusto::EdgeStyleCustomization:
-	//	{styleCusto::EdgeStyleCustomization} "edge" ("(" (appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING] (","
-	//	appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING])*) ")")? "{" ("over-all-edges" ":" applyonAll=EBoolean)?
-	//	("source" ":" sourceArrow=EdgeArrows)? ("target" ":" targetArrow=EdgeArrows)? ("routing" ":"
-	//	routingStyle=EdgeRouting)? ("folding" ":" foldingStyle=FoldingStyle)? ("center-source-mappings" ":"
-	//	(centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (","
-	//	centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*))? ("center-target-mappings" ":"
-	//	(centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (","
+	//EdgeStyleCustomization styleCusto::EdgeStyleCustomization:
+	//	{styleCusto::EdgeStyleCustomization} 'edge' ('(' (appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING] (','
+	//	appliedOn+=[siriusDDStyle::EdgeStyleDescription|STRING])*) ')')? '{' ('over-all-edges' ':' applyonAll=EBoolean)?
+	//	('source' ':' sourceArrow=EdgeArrows)? ('target' ':' targetArrow=EdgeArrows)? ('routing' ':'
+	//	routingStyle=EdgeRouting)? ('folding' ':' foldingStyle=FoldingStyle)? ('center-source-mappings' ':'
+	//	(centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (','
+	//	centeredSourceMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*))? ('center-target-mappings' ':'
+	//	(centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING] (','
 	//	centeredTargetMappings+=[siriusDiagramDescription::DiagramElementMapping|STRING])*))?
-	//	("begin-label-style-description" ":" beginLabelStyleDescription=[siriusDDStyle::BeginLabelStyleDescription|STRING])?
-	//	("center-label-style-description" ":"
-	//	centerLabelStyleDescription=[siriusDDStyle::CenterLabelStyleDescription|STRING])? ("end-label-style-description" ":"
-	//	endLabelStyleDescription=[siriusDDStyle::EndLabelStyleDescription|STRING])? ("line-style" ":" lineStyle=LineStyle)?
-	//	("size" ":" sizeComputationExpression=CustomizationExpression)? ("end-centering" ":" endCentering=CenterStyle)? "}";
+	//	('begin-label-style-description' ':' beginLabelStyleDescription=[siriusDDStyle::BeginLabelStyleDescription|STRING])?
+	//	('center-label-style-description' ':'
+	//	centerLabelStyleDescription=[siriusDDStyle::CenterLabelStyleDescription|STRING])? ('end-label-style-description' ':'
+	//	endLabelStyleDescription=[siriusDDStyle::EndLabelStyleDescription|STRING])? ('line-style' ':' lineStyle=LineStyle)?
+	//	('size' ':' sizeComputationExpression=CustomizationExpression)? ('end-centering' ':' endCentering=CenterStyle)? '}'
 	public EdgeStyleCustomizationElements getEdgeStyleCustomizationAccess() {
 		return pEdgeStyleCustomization;
 	}
@@ -7292,9 +7294,9 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getEdgeStyleCustomizationAccess().getRule();
 	}
 
-	//ColorCustomization returns styleCusto::ColorCustomization:
-	//	{styleCusto::ColorCustomization} "paint" colorUseCase=ColorUseCase ("(" (appliedOn+=[ecore::EObject|STRING] (","
-	//	appliedOn+=[ecore::EObject|STRING])*) ")")? applyonAll?="over-all-colors"? ("with" color=SystemColors);
+	//ColorCustomization styleCusto::ColorCustomization:
+	//	{styleCusto::ColorCustomization} 'paint' colorUseCase=ColorUseCase ('(' (appliedOn+=[ecore::EObject|STRING] (','
+	//	appliedOn+=[ecore::EObject|STRING])*) ')')? applyonAll?='over-all-colors'? ('with' color=SystemColors)
 	public ColorCustomizationElements getColorCustomizationAccess() {
 		return pColorCustomization;
 	}
@@ -7303,12 +7305,12 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getColorCustomizationAccess().getRule();
 	}
 
-	//LabelCustomization returns styleCusto::LabelCustomization:
-	//	{styleCusto::LabelCustomization} "label" ("(" (appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING] (","
-	//	appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING])*) ")")? "{" ("over-all-labels" ":"
-	//	applyonAll=EBoolean)? ownedLabelAlignment=LabelAlignementCustomization? ("size" ":" size=EInt)? ("format" ":"
-	//	format=FontFormat)? ("color" ":" color=SystemColors) ("icon" "{" "show" ":" showIcon=EBoolean "path" ":"
-	//	iconPath=EString "}")? ("expression" ":" expression=CustomizationExpression)? "}";
+	//LabelCustomization styleCusto::LabelCustomization:
+	//	{styleCusto::LabelCustomization} 'label' ('(' (appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING] (','
+	//	appliedOn+=[siriusDStyle::BasicLabelStyleDescription|STRING])*) ')')? '{' ('over-all-labels' ':'
+	//	applyonAll=EBoolean)? ownedLabelAlignment=LabelAlignementCustomization? ('size' ':' size=EInt)? ('format' ':'
+	//	format=FontFormat)? ('color' ':' color=SystemColors) ('icon' '{' 'show' ':' showIcon=EBoolean 'path' ':'
+	//	iconPath=EString '}')? ('expression' ':' expression=CustomizationExpression)? '}'
 	public LabelCustomizationElements getLabelCustomizationAccess() {
 		return pLabelCustomization;
 	}
@@ -7317,8 +7319,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getLabelCustomizationAccess().getRule();
 	}
 
-	//LabelAlignementCustomization returns styleCusto::LabelAlignmentCustomization:
-	//	{styleCusto::LabelAlignmentCustomization} "alignment" ":" alignment=LabelAlignment;
+	//LabelAlignementCustomization styleCusto::LabelAlignmentCustomization:
+	//	{styleCusto::LabelAlignmentCustomization} 'alignment' ':' alignment=LabelAlignment
 	public LabelAlignementCustomizationElements getLabelAlignementCustomizationAccess() {
 		return pLabelAlignementCustomization;
 	}
@@ -7327,8 +7329,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getLabelAlignementCustomizationAccess().getRule();
 	}
 
-	//AbstractNodeStyleCustomization returns styleCusto::AbstractNodeStyleCustomization:
-	//	ContainerStyleCustomization | NodeStyleCustomization;
+	//AbstractNodeStyleCustomization styleCusto::AbstractNodeStyleCustomization:
+	//	ContainerStyleCustomization | NodeStyleCustomization
 	public AbstractNodeStyleCustomizationElements getAbstractNodeStyleCustomizationAccess() {
 		return pAbstractNodeStyleCustomization;
 	}
@@ -7337,14 +7339,14 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getAbstractNodeStyleCustomizationAccess().getRule();
 	}
 
-	//ContainerStyleCustomization returns styleCusto::ContainerStyleCustomization:
-	//	{styleCusto::ContainerStyleCustomization} "container" ("("
-	//	(appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING] (","
-	//	appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING])*) ")")? "{" ("over-all-containers" ":"
-	//	applyonAll=EBoolean)? ("width" ":" arcWith=EInt)? ("height" ":" arcHeight=EInt)? ("round-corner" ":"
-	//	roundedCorner=EBoolean)? ("tooltip-expression" ":" tooltipExpression=CustomizationExpression)? ("border-dimension"
-	//	":" borderSizeComputationExpression=CustomizationExpression)?
-	//	ownedSpecificContainerStyleCustomization+=SpecificContainerStyleCustomization* "}";
+	//ContainerStyleCustomization styleCusto::ContainerStyleCustomization:
+	//	{styleCusto::ContainerStyleCustomization} 'container' ('('
+	//	(appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING] (','
+	//	appliedOn+=[siriusDDStyle::ContainerStyleDescription|STRING])*) ')')? '{' ('over-all-containers' ':'
+	//	applyonAll=EBoolean)? ('width' ':' arcWith=EInt)? ('height' ':' arcHeight=EInt)? ('round-corner' ':'
+	//	roundedCorner=EBoolean)? ('tooltip-expression' ':' tooltipExpression=CustomizationExpression)? ('border-dimension'
+	//	':' borderSizeComputationExpression=CustomizationExpression)?
+	//	ownedSpecificContainerStyleCustomization+=SpecificContainerStyleCustomization* '}'
 	public ContainerStyleCustomizationElements getContainerStyleCustomizationAccess() {
 		return pContainerStyleCustomization;
 	}
@@ -7353,8 +7355,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getContainerStyleCustomizationAccess().getRule();
 	}
 
-	//SpecificContainerStyleCustomization returns styleCusto::SpecificContainerStyleCustomization:
-	//	ContainerWorkspaceImageCustomization | FlatContainerStyleCustomization | ShapeContainerStyleCustomization;
+	//SpecificContainerStyleCustomization styleCusto::SpecificContainerStyleCustomization:
+	//	ContainerWorkspaceImageCustomization | FlatContainerStyleCustomization | ShapeContainerStyleCustomization
 	public SpecificContainerStyleCustomizationElements getSpecificContainerStyleCustomizationAccess() {
 		return pSpecificContainerStyleCustomization;
 	}
@@ -7363,8 +7365,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getSpecificContainerStyleCustomizationAccess().getRule();
 	}
 
-	//ContainerWorkspaceImageCustomization returns styleCusto::ContainerWorkspaceImageCustomization:
-	//	{styleCusto::ContainerWorkspaceImageCustomization} "workspace" ":" workspacePath=EString;
+	//ContainerWorkspaceImageCustomization styleCusto::ContainerWorkspaceImageCustomization:
+	//	{styleCusto::ContainerWorkspaceImageCustomization} 'workspace' ':' workspacePath=EString
 	public ContainerWorkspaceImageCustomizationElements getContainerWorkspaceImageCustomizationAccess() {
 		return pContainerWorkspaceImageCustomization;
 	}
@@ -7373,8 +7375,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getContainerWorkspaceImageCustomizationAccess().getRule();
 	}
 
-	//FlatContainerStyleCustomization returns styleCusto::FlatContainerStyleCustomization:
-	//	{styleCusto::FlatContainerStyleCustomization} "background" ":" backgroundStyle=BackgroundStyle;
+	//FlatContainerStyleCustomization styleCusto::FlatContainerStyleCustomization:
+	//	{styleCusto::FlatContainerStyleCustomization} 'background' ':' backgroundStyle=BackgroundStyle
 	public FlatContainerStyleCustomizationElements getFlatContainerStyleCustomizationAccess() {
 		return pFlatContainerStyleCustomization;
 	}
@@ -7383,8 +7385,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getFlatContainerStyleCustomizationAccess().getRule();
 	}
 
-	//ShapeContainerStyleCustomization returns styleCusto::ShapeContainerStyleCustomization:
-	//	{styleCusto::ShapeContainerStyleCustomization} "shape" ":" shape=ContainerShape;
+	//ShapeContainerStyleCustomization styleCusto::ShapeContainerStyleCustomization:
+	//	{styleCusto::ShapeContainerStyleCustomization} 'shape' ':' shape=ContainerShape
 	public ShapeContainerStyleCustomizationElements getShapeContainerStyleCustomizationAccess() {
 		return pShapeContainerStyleCustomization;
 	}
@@ -7393,14 +7395,14 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getShapeContainerStyleCustomizationAccess().getRule();
 	}
 
-	//NodeStyleCustomization returns styleCusto::NodeStyleCustomization:
-	//	{styleCusto::NodeStyleCustomization} "node" ("(" (appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING] (","
-	//	appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING])*) ")")? "{" ("over-all-nodes" ":" applyonAll=EBoolean)?
-	//	("label-position" ":" labelPosition=LabelPosition)? ("hide-label" ":" hideLabelByDefault=EBoolean)? ("resize-kind"
-	//	":" resizeKind=ResizeKind)? ("tooltip-expression" ":" tooltipExpression=CustomizationExpression)? ("border-dimension"
-	//	":" borderSizeComputationExpression=CustomizationExpression)? ("size-dimension" ":"
+	//NodeStyleCustomization styleCusto::NodeStyleCustomization:
+	//	{styleCusto::NodeStyleCustomization} 'node' ('(' (appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING] (','
+	//	appliedOn+=[siriusDDStyle::NodeStyleDescription|STRING])*) ')')? '{' ('over-all-nodes' ':' applyonAll=EBoolean)?
+	//	('label-position' ':' labelPosition=LabelPosition)? ('hide-label' ':' hideLabelByDefault=EBoolean)? ('resize-kind'
+	//	':' resizeKind=ResizeKind)? ('tooltip-expression' ':' tooltipExpression=CustomizationExpression)? ('border-dimension'
+	//	':' borderSizeComputationExpression=CustomizationExpression)? ('size-dimension' ':'
 	//	sizeComputationExpression=CustomizationExpression)?
-	//	ownedSpecificNodeStyleCustomization+=SpecificNodeStyleCustomization* "}";
+	//	ownedSpecificNodeStyleCustomization+=SpecificNodeStyleCustomization* '}'
 	public NodeStyleCustomizationElements getNodeStyleCustomizationAccess() {
 		return pNodeStyleCustomization;
 	}
@@ -7409,9 +7411,9 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getNodeStyleCustomizationAccess().getRule();
 	}
 
-	//SpecificNodeStyleCustomization returns styleCusto::SpecificNodeStyleCustomization:
+	//SpecificNodeStyleCustomization styleCusto::SpecificNodeStyleCustomization:
 	//	BundledImageCustomization | LozengeCustomization | GaugeCustomization | EllipseCustomization |
-	//	NodeWorkspaceImageCustomization | SquareCustomization | DotCustomization;
+	//	NodeWorkspaceImageCustomization | SquareCustomization | DotCustomization
 	public SpecificNodeStyleCustomizationElements getSpecificNodeStyleCustomizationAccess() {
 		return pSpecificNodeStyleCustomization;
 	}
@@ -7420,8 +7422,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getSpecificNodeStyleCustomizationAccess().getRule();
 	}
 
-	//BundledImageCustomization returns styleCusto::BundledImageCustomization:
-	//	{styleCusto::BundledImageCustomization} "shape" ":" shape=BundledImageShape;
+	//BundledImageCustomization styleCusto::BundledImageCustomization:
+	//	{styleCusto::BundledImageCustomization} 'shape' ':' shape=BundledImageShape
 	public BundledImageCustomizationElements getBundledImageCustomizationAccess() {
 		return pBundledImageCustomization;
 	}
@@ -7430,10 +7432,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getBundledImageCustomizationAccess().getRule();
 	}
 
-	//LozengeCustomization returns styleCusto::LozengeCustomization:
-	//	{styleCusto::LozengeCustomization} "lozenge-dimension" ":" "{" "width" ":"
-	//	widthComputationExpression=CustomizationExpression "height" ":" heightComputationExpression=CustomizationExpression
-	//	"}";
+	//LozengeCustomization styleCusto::LozengeCustomization:
+	//	{styleCusto::LozengeCustomization} 'lozenge-dimension' ':' '{' 'width' ':'
+	//	widthComputationExpression=CustomizationExpression 'height' ':' heightComputationExpression=CustomizationExpression
+	//	'}'
 	public LozengeCustomizationElements getLozengeCustomizationAccess() {
 		return pLozengeCustomization;
 	}
@@ -7442,8 +7444,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getLozengeCustomizationAccess().getRule();
 	}
 
-	//GaugeCustomization returns styleCusto::GaugeCustomization:
-	//	{styleCusto::GaugeCustomization} "gauge-alignment" ":" alignement=AlignmentKind;
+	//GaugeCustomization styleCusto::GaugeCustomization:
+	//	{styleCusto::GaugeCustomization} 'gauge-alignment' ':' alignement=AlignmentKind
 	public GaugeCustomizationElements getGaugeCustomizationAccess() {
 		return pGaugeCustomization;
 	}
@@ -7452,10 +7454,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getGaugeCustomizationAccess().getRule();
 	}
 
-	//EllipseCustomization returns styleCusto::EllipseCustomization:
-	//	{styleCusto::EllipseCustomization} "ellipse-dimension" ":" "{" "horizontal" ":"
-	//	horizontalDiameterComputationExpression=CustomizationExpression "vertical" ":"
-	//	verticalDiameterComputationExpression=CustomizationExpression "}";
+	//EllipseCustomization styleCusto::EllipseCustomization:
+	//	{styleCusto::EllipseCustomization} 'ellipse-dimension' ':' '{' 'horizontal' ':'
+	//	horizontalDiameterComputationExpression=CustomizationExpression 'vertical' ':'
+	//	verticalDiameterComputationExpression=CustomizationExpression '}'
 	public EllipseCustomizationElements getEllipseCustomizationAccess() {
 		return pEllipseCustomization;
 	}
@@ -7464,8 +7466,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getEllipseCustomizationAccess().getRule();
 	}
 
-	//NodeWorkspaceImageCustomization returns styleCusto::NodeWorkspaceImageCustomization:
-	//	{styleCusto::NodeWorkspaceImageCustomization} "workspace" ":" workspacePath=EString;
+	//NodeWorkspaceImageCustomization styleCusto::NodeWorkspaceImageCustomization:
+	//	{styleCusto::NodeWorkspaceImageCustomization} 'workspace' ':' workspacePath=EString
 	public NodeWorkspaceImageCustomizationElements getNodeWorkspaceImageCustomizationAccess() {
 		return pNodeWorkspaceImageCustomization;
 	}
@@ -7474,8 +7476,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getNodeWorkspaceImageCustomizationAccess().getRule();
 	}
 
-	//SquareCustomization returns styleCusto::SquareCustomization:
-	//	{styleCusto::SquareCustomization} "square-dimension" ":" "{" "width" ":" width=EInt "height" ":" height=EInt "}";
+	//SquareCustomization styleCusto::SquareCustomization:
+	//	{styleCusto::SquareCustomization} 'square-dimension' ':' '{' 'width' ':' width=EInt 'height' ':' height=EInt '}'
 	public SquareCustomizationElements getSquareCustomizationAccess() {
 		return pSquareCustomization;
 	}
@@ -7484,8 +7486,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getSquareCustomizationAccess().getRule();
 	}
 
-	//DotCustomization returns styleCusto::DotCustomization:
-	//	{styleCusto::DotCustomization} "stroke-dimension" ":" strokeSizeComputationExpression=CustomizationExpression;
+	//DotCustomization styleCusto::DotCustomization:
+	//	{styleCusto::DotCustomization} 'stroke-dimension' ':' strokeSizeComputationExpression=CustomizationExpression
 	public DotCustomizationElements getDotCustomizationAccess() {
 		return pDotCustomization;
 	}
@@ -7494,11 +7496,11 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getDotCustomizationAccess().getRule();
 	}
 
-	//StyleCustomizationReuse returns styleCusto::StyleCustomizationReuse:
-	//	{styleCusto::StyleCustomizationReuse} "reuse"
-	//	(reusedCustomization+=[siriusDescription::EStructuralFeatureCustomization|STRING] (","
-	//	reusedCustomization+=[siriusDescription::EStructuralFeatureCustomization|STRING])*) "on"
-	//	(appliedOn+=[ecore::EObject|STRING] ("," appliedOn+=[ecore::EObject|STRING])*);
+	//StyleCustomizationReuse styleCusto::StyleCustomizationReuse:
+	//	{styleCusto::StyleCustomizationReuse} 'reuse'
+	//	(reusedCustomization+=[siriusDescription::EStructuralFeatureCustomization|STRING] (','
+	//	reusedCustomization+=[siriusDescription::EStructuralFeatureCustomization|STRING])*) 'on'
+	//	(appliedOn+=[ecore::EObject|STRING] (',' appliedOn+=[ecore::EObject|STRING])*)
 	public StyleCustomizationReuseElements getStyleCustomizationReuseAccess() {
 		return pStyleCustomizationReuse;
 	}
@@ -7507,8 +7509,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getStyleCustomizationReuseAccess().getRule();
 	}
 
-	//CustomizationExpression returns styleCusto::CustomizationExpression:
-	//	{styleCusto::CustomizationExpression} ownedExpressionElement=AbstractComputableElement;
+	//CustomizationExpression styleCusto::CustomizationExpression:
+	//	{styleCusto::CustomizationExpression} ownedExpressionElement=AbstractComputableElement
 	public CustomizationExpressionElements getCustomizationExpressionAccess() {
 		return pCustomizationExpression;
 	}
@@ -7517,13 +7519,10 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getCustomizationExpressionAccess().getRule();
 	}
 
-	/// *********************************************
-	//  * 			Enum
-	//  ********************************************* / enum
-	//AlignmentKind returns siriusDiagram::AlignmentKind:
+	//enum AlignmentKind returns siriusDiagram::AlignmentKind:
 	//	HORIZONTAL | SQUARE | VERTICAL;
 	public AlignmentKindElements getAlignmentKindAccess() {
-		return unknownRuleAlignmentKind;
+		return eAlignmentKind;
 	}
 	
 	public EnumRule getAlignmentKindRule() {
@@ -7533,7 +7532,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	//enum BundledImageShape returns siriusDiagram::BundledImageShape:
 	//	dot | ring | square | stroke | triangle;
 	public BundledImageShapeElements getBundledImageShapeAccess() {
-		return unknownRuleBundledImageShape;
+		return eBundledImageShape;
 	}
 	
 	public EnumRule getBundledImageShapeRule() {
@@ -7543,7 +7542,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	//enum ResizeKind returns siriusDiagram::ResizeKind:
 	//	NONE | NSEW | EAST_WEST | NORTH_SOUTH;
 	public ResizeKindElements getResizeKindAccess() {
-		return unknownRuleResizeKind;
+		return eResizeKind;
 	}
 	
 	public EnumRule getResizeKindRule() {
@@ -7553,7 +7552,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	//enum ContainerShape returns siriusDiagram::ContainerShape:
 	//	parallelogram;
 	public ContainerShapeElements getContainerShapeAccess() {
-		return unknownRuleContainerShape;
+		return eContainerShape;
 	}
 	
 	public EnumRule getContainerShapeRule() {
@@ -7563,7 +7562,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	//enum FontFormat returns sirius::FontFormat:
 	//	italic | bold | underline | strike_through;
 	public FontFormatElements getFontFormatAccess() {
-		return unknownRuleFontFormat;
+		return eFontFormat;
 	}
 	
 	public EnumRule getFontFormatRule() {
@@ -7573,7 +7572,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	//enum CenterStyle returns siriusDiagramDescription::CenteringStyle:
 	//	Both | None | Source | Target;
 	public CenterStyleElements getCenterStyleAccess() {
-		return unknownRuleCenterStyle;
+		return eCenterStyle;
 	}
 	
 	public EnumRule getCenterStyleRule() {
@@ -7583,7 +7582,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	//enum FoldingStyle returns siriusDiagramDescription::FoldingStyle:
 	//	NONE | SOURCE | TARGET;
 	public FoldingStyleElements getFoldingStyleAccess() {
-		return unknownRuleFoldingStyle;
+		return eFoldingStyle;
 	}
 	
 	public EnumRule getFoldingStyleRule() {
@@ -7593,7 +7592,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	//enum EdgeRouting returns siriusDiagram::EdgeRouting:
 	//	straight | manhattan | tree;
 	public EdgeRoutingElements getEdgeRoutingAccess() {
-		return unknownRuleEdgeRouting;
+		return eEdgeRouting;
 	}
 	
 	public EnumRule getEdgeRoutingRule() {
@@ -7601,9 +7600,9 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum ColorUseCase returns styleCusto::ColorUseCase:
-	//	Border | Color | Background | Foreground="foreground";
+	//	Border | Color | Background | Foreground='foreground';
 	public ColorUseCaseElements getColorUseCaseAccess() {
-		return unknownRuleColorUseCase;
+		return eColorUseCase;
 	}
 	
 	public EnumRule getColorUseCaseRule() {
@@ -7613,7 +7612,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	//enum Node_Form returns vpdiagram::Node_Form:
 	//	Square | Lozenge | Eclipse | Note | Dot | Triangle | Stroke | Ring;
 	public Node_FormElements getNode_FormAccess() {
-		return unknownRuleNode_Form;
+		return eNode_Form;
 	}
 	
 	public EnumRule getNode_FormRule() {
@@ -7623,7 +7622,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	//enum BackgroundStyle returns siriusDiagram::BackgroundStyle:
 	//	GradientLeftToRight | Liquid | GradientTopToBottom;
 	public BackgroundStyleElements getBackgroundStyleAccess() {
-		return unknownRuleBackgroundStyle;
+		return eBackgroundStyle;
 	}
 	
 	public EnumRule getBackgroundStyleRule() {
@@ -7633,7 +7632,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	//enum LabelPosition returns siriusDiagram::LabelPosition:
 	//	border | node;
 	public LabelPositionElements getLabelPositionAccess() {
-		return unknownRuleLabelPosition;
+		return eLabelPosition;
 	}
 	
 	public EnumRule getLabelPositionRule() {
@@ -7641,9 +7640,9 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum LabelAlignment returns sirius::LabelAlignment:
-	//	CENTER="center" | LEFT="left" | RIGHT="right";
+	//	CENTER='center' | LEFT='left' | RIGHT='right';
 	public LabelAlignmentElements getLabelAlignmentAccess() {
-		return unknownRuleLabelAlignment;
+		return eLabelAlignment;
 	}
 	
 	public EnumRule getLabelAlignmentRule() {
@@ -7653,7 +7652,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	//enum LineStyle returns siriusDiagram::LineStyle:
 	//	solid | dash | dot | dash_dot;
 	public LineStyleElements getLineStyleAccess() {
-		return unknownRuleLineStyle;
+		return eLineStyle;
 	}
 	
 	public EnumRule getLineStyleRule() {
@@ -7663,9 +7662,9 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	//enum EdgeArrows returns siriusDiagram::EdgeArrows:
 	//	NoDecoration | OutputArrow | InputArrow | OutputClosedArrow | InputClosedArrow | OutputFillClosedArrow |
 	//	InputFillClosedArrow | Diamond | FillDiamond | InputArrowWithDiamond |
-	//	InputArrowWithFillDiamond="InputArrowWothFillDiamond";
+	//	InputArrowWithFillDiamond='InputArrowWothFillDiamond';
 	public EdgeArrowsElements getEdgeArrowsAccess() {
-		return unknownRuleEdgeArrows;
+		return eEdgeArrows;
 	}
 	
 	public EnumRule getEdgeArrowsRule() {
@@ -7677,7 +7676,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	//	| dark_yellow | dark_purple | dark_orange | dark_chocolate | dark_gray | light_blue | light_red | light_green |
 	//	light_yellow | light_purple | light_orange | light_chocolate | light_gray;
 	public SystemColorsElements getSystemColorsAccess() {
-		return unknownRuleSystemColors;
+		return eSystemColors;
 	}
 	
 	public EnumRule getSystemColorsRule() {
@@ -7687,7 +7686,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	//enum ContainerLayout returns siriusDiagram::ContainerLayout:
 	//	FreeForm | List | HorizontalStack | VerticalStack;
 	public ContainerLayoutElements getContainerLayoutAccess() {
-		return unknownRuleContainerLayout;
+		return eContainerLayout;
 	}
 	
 	public EnumRule getContainerLayoutRule() {
@@ -7697,7 +7696,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	//enum SynchronizationMode returns vpdiagram::SynchronizationMode:
 	//	Synchronized="synchronized" | Unsynchronizable="unsynchronizable" | Not_Synchronized="not-synchronized";
 	public SynchronizationModeElements getSynchronizationModeAccess() {
-		return unknownRuleSynchronizationMode;
+		return eSynchronizationMode;
 	}
 	
 	public EnumRule getSynchronizationModeRule() {
@@ -7708,8 +7707,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	// * 							Common data
 	// * 
 	// ******************************************************************** /
-	//AbstractClass returns commondata::AbstractClass:
-	//	LocalClass2 | ExternalClass;
+	//AbstractClass commondata::AbstractClass:
+	//	LocalClass2 | ExternalClass
 	public AbstractClassElements getAbstractClassAccess() {
 		return pAbstractClass;
 	}
@@ -7718,8 +7717,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getAbstractClassAccess().getRule();
 	}
 
-	//LocalClass2 returns commondata::AbstractClass:
-	//	{commondata::LocalClass} class=[vpdesc::Class|FQN];
+	//LocalClass2 commondata::AbstractClass:
+	//	{commondata::LocalClass} class=[vpdesc::Class|FQN]
 	public LocalClass2Elements getLocalClass2Access() {
 		return pLocalClass2;
 	}
@@ -7728,8 +7727,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getLocalClass2Access().getRule();
 	}
 
-	//ExternalClass returns commondata::AbstractClass:
-	//	{commondata::ExternalClass} "external" class=[ecore::EClass|FQN];
+	//ExternalClass commondata::AbstractClass:
+	//	{commondata::ExternalClass} 'external' class=[ecore::EClass|FQN]
 	public ExternalClassElements getExternalClassAccess() {
 		return pExternalClass;
 	}
@@ -7738,8 +7737,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getExternalClassAccess().getRule();
 	}
 
-	//AbstractAssociation2 returns commondata::AbstractAssociation:
-	//	ExternalAssociation | LocalAssociation;
+	//AbstractAssociation2 commondata::AbstractAssociation:
+	//	ExternalAssociation | LocalAssociation
 	public AbstractAssociation2Elements getAbstractAssociation2Access() {
 		return pAbstractAssociation2;
 	}
@@ -7748,8 +7747,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getAbstractAssociation2Access().getRule();
 	}
 
-	//LocalAssociation returns commondata::AbstractAssociation:
-	//	{commondata::LocalAssociation} reference=[vpdesc::AbstractAssociation|FQN];
+	//LocalAssociation commondata::AbstractAssociation:
+	//	{commondata::LocalAssociation} reference=[vpdesc::AbstractAssociation|FQN]
 	public LocalAssociationElements getLocalAssociationAccess() {
 		return pLocalAssociation;
 	}
@@ -7758,8 +7757,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getLocalAssociationAccess().getRule();
 	}
 
-	//ExternalAssociation returns commondata::AbstractAssociation:
-	//	{commondata::ExternalAssociation} "external" reference=[ecore::EReference|FQN];
+	//ExternalAssociation commondata::AbstractAssociation:
+	//	{commondata::ExternalAssociation} 'external' reference=[ecore::EReference|FQN]
 	public ExternalAssociationElements getExternalAssociationAccess() {
 		return pExternalAssociation;
 	}
@@ -7768,8 +7767,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getExternalAssociationAccess().getRule();
 	}
 
-	//AbstractAttribute returns commondata::AbstractAttribute:
-	//	ExternalAttribute | LocalAttribute;
+	//AbstractAttribute commondata::AbstractAttribute:
+	//	ExternalAttribute | LocalAttribute
 	public AbstractAttributeElements getAbstractAttributeAccess() {
 		return pAbstractAttribute;
 	}
@@ -7778,8 +7777,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getAbstractAttributeAccess().getRule();
 	}
 
-	//LocalAttribute returns commondata::AbstractAttribute:
-	//	{commondata::LocalAttribute} attribute=[vpdesc::Attribute|FQN];
+	//LocalAttribute commondata::AbstractAttribute:
+	//	{commondata::LocalAttribute} attribute=[vpdesc::Attribute|FQN]
 	public LocalAttributeElements getLocalAttributeAccess() {
 		return pLocalAttribute;
 	}
@@ -7788,8 +7787,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getLocalAttributeAccess().getRule();
 	}
 
-	//ExternalAttribute returns commondata::AbstractAttribute:
-	//	{commondata::ExternalAttribute} "external" attribute=[ecore::EAttribute|FQN];
+	//ExternalAttribute commondata::AbstractAttribute:
+	//	{commondata::ExternalAttribute} 'external' attribute=[ecore::EAttribute|FQN]
 	public ExternalAttributeElements getExternalAttributeAccess() {
 		return pExternalAttribute;
 	}
@@ -7802,10 +7801,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	// * 							Expression
 	// * 
 	// ******************************************************************** /
-	//Expression returns expression::Expression:
-	//	{expression::Expression} //	(value = EString)?
-	// (expressionElements+=ExpressionElement ("+"
-	//	expressionElements+=ExpressionElement)*)?;
+	//Expression expression::Expression:
+	//	{expression::Expression} (expressionElements+=ExpressionElement ('+' expressionElements+=ExpressionElement)*)?
 	public ExpressionElements getExpressionAccess() {
 		return pExpression;
 	}
@@ -7814,8 +7811,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getExpressionAccess().getRule();
 	}
 
-	//AbstractComputableElement returns expression::AbstractComputableElement:
-	//	JavaElement | StringElement;
+	//AbstractComputableElement expression::AbstractComputableElement:
+	//	JavaElement | StringElement
 	public AbstractComputableElementElements getAbstractComputableElementAccess() {
 		return pAbstractComputableElement;
 	}
@@ -7824,8 +7821,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getAbstractComputableElementAccess().getRule();
 	}
 
-	//ExpressionElement returns expression::ExpressionElement:
-	//	ForeignExpressionElement | StringElement;
+	//ExpressionElement expression::ExpressionElement:
+	//	ForeignExpressionElement | StringElement
 	public ExpressionElementElements getExpressionElementAccess() {
 		return pExpressionElement;
 	}
@@ -7834,8 +7831,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getExpressionElementAccess().getRule();
 	}
 
-	//ForeignExpressionElement returns expression::ForeignExpressionElement:
-	//	JavaElement | DomainElement;
+	//ForeignExpressionElement expression::ForeignExpressionElement:
+	//	JavaElement | DomainElement
 	public ForeignExpressionElementElements getForeignExpressionElementAccess() {
 		return pForeignExpressionElement;
 	}
@@ -7844,8 +7841,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getForeignExpressionElementAccess().getRule();
 	}
 
-	//JavaElement returns expression::JavaElement:
-	//	{expression::JavaElement} "Java" method=FQN;
+	//JavaElement expression::JavaElement:
+	//	{expression::JavaElement} 'Java' method=FQN
 	public JavaElementElements getJavaElementAccess() {
 		return pJavaElement;
 	}
@@ -7854,8 +7851,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getJavaElementAccess().getRule();
 	}
 
-	//DomainElement returns expression::ForeignExpressionElement:
-	//	{expression::DomainElement} attribute=[vpdesc::Attribute|FQN];
+	//DomainElement expression::ForeignExpressionElement:
+	//	{expression::DomainElement} attribute=[vpdesc::Attribute|FQN]
 	public DomainElementElements getDomainElementAccess() {
 		return pDomainElement;
 	}
@@ -7864,8 +7861,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getDomainElementAccess().getRule();
 	}
 
-	//StringElement returns expression::StringElement:
-	//	{expression::StringElement} value=STRING;
+	//StringElement expression::StringElement:
+	//	{expression::StringElement} value=STRING
 	public StringElementElements getStringElementAccess() {
 		return pStringElement;
 	}
@@ -7874,7 +7871,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getStringElementAccess().getRule();
 	}
 
-	//EString returns ecore::EString:
+	//EString:
 	//	STRING | ID;
 	public CommonGrammarAccess.EStringElements getEStringAccess() {
 		return gaCommon.getEStringAccess();
@@ -7884,7 +7881,7 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getEStringAccess().getRule();
 	}
 
-	//FQN returns ecore::EString:
+	//FQN:
 	//	ID ("." => ID)*;
 	public CommonGrammarAccess.FQNElements getFQNAccess() {
 		return gaCommon.getFQNAccess();
@@ -7894,8 +7891,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getFQNAccess().getRule();
 	}
 
-	//EBoolean returns ecore::EBoolean:
-	//	"true" | "false";
+	//EBoolean ecore::EBoolean:
+	//	'true' | 'false'
 	public CommonGrammarAccess.EBooleanElements getEBooleanAccess() {
 		return gaCommon.getEBooleanAccess();
 	}
@@ -7904,8 +7901,8 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 		return getEBooleanAccess().getRule();
 	}
 
-	//EInt returns ecore::EInt:
-	//	INT;
+	//EInt ecore::EInt:
+	//	INT
 	public CommonGrammarAccess.EIntElements getEIntAccess() {
 		return gaCommon.getEIntAccess();
 	}
@@ -7915,45 +7912,44 @@ public class VpdiagramGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//terminal ID:
-	//	"^"? ("a".."z" | "A".."Z" | "_") ("a".."z" | "A".."Z" | "_" | "0".."9")*;
+	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
 	public TerminalRule getIDRule() {
-		return gaCommon.getIDRule();
+		return gaTerminals.getIDRule();
 	} 
 
 	//terminal INT returns ecore::EInt:
-	//	"0".."9"+;
+	//	'0'..'9'+;
 	public TerminalRule getINTRule() {
-		return gaCommon.getINTRule();
+		return gaTerminals.getINTRule();
 	} 
 
 	//terminal STRING:
-	//	"\"" ("\\" . / * 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' * / | !("\\" | "\""))* "\"" | "\'" ("\\" .
-	//	/ * 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' * / | !("\\" | "\'"))* "\'";
+	//	'"' ('\\' . | !('\\' | '"'))* '"' | "'" ('\\' . | !('\\' | "'"))* "'";
 	public TerminalRule getSTRINGRule() {
-		return gaCommon.getSTRINGRule();
+		return gaTerminals.getSTRINGRule();
 	} 
 
 	//terminal ML_COMMENT:
-	//	"/ *"->"* /";
+	//	'/ *'->'* /';
 	public TerminalRule getML_COMMENTRule() {
-		return gaCommon.getML_COMMENTRule();
+		return gaTerminals.getML_COMMENTRule();
 	} 
 
 	//terminal SL_COMMENT:
-	//	"//" !("\n" | "\r")* ("\r"? "\n")?;
+	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
 	public TerminalRule getSL_COMMENTRule() {
-		return gaCommon.getSL_COMMENTRule();
+		return gaTerminals.getSL_COMMENTRule();
 	} 
 
 	//terminal WS:
-	//	(" " | "\t" | "\r" | "\n")+;
+	//	' ' | '\t' | '\r' | '\n'+;
 	public TerminalRule getWSRule() {
-		return gaCommon.getWSRule();
+		return gaTerminals.getWSRule();
 	} 
 
 	//terminal ANY_OTHER:
 	//	.;
 	public TerminalRule getANY_OTHERRule() {
-		return gaCommon.getANY_OTHERRule();
+		return gaTerminals.getANY_OTHERRule();
 	} 
 }

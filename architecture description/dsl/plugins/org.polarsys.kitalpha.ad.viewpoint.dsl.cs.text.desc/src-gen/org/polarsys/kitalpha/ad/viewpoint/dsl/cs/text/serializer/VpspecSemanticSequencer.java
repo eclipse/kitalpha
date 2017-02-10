@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015 Thales Global Services S.A.S.
+ * Copyright (c) 2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -10,13 +10,18 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.serializer;
 
+import com.google.inject.Inject;
+import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.xtext.Action;
+import org.eclipse.xtext.Parameter;
+import org.eclipse.xtext.ParserRule;
+import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.VpspecGrammarAccess;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.VpspecPackage;
-
-import com.google.inject.Inject;
 
 @SuppressWarnings("all")
 public class VpspecSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -25,16 +30,25 @@ public class VpspecSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	private VpspecGrammarAccess grammarAccess;
 	
 	@Override
-	public void createSequence(EObject context, EObject semanticObject) {
-		if(semanticObject.eClass().getEPackage() == VpspecPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+	public void sequence(ISerializationContext context, EObject semanticObject) {
+		EPackage epackage = semanticObject.eClass().getEPackage();
+		ParserRule rule = context.getParserRule();
+		Action action = context.getAssignedAction();
+		Set<Parameter> parameters = context.getEnabledBooleanParameters();
+		if (epackage == VpspecPackage.eINSTANCE)
+			switch (semanticObject.eClass().getClassifierID()) {
 			case VpspecPackage.VIEWPOINT:
 				sequence_Viewpoint(context, (Viewpoint) semanticObject); 
 				return; 
 			}
-		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
+		if (errorAcceptor != null)
+			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
 	
 	/**
+	 * Contexts:
+	 *     Viewpoint returns Viewpoint
+	 *
 	 * Constraint:
 	 *     (
 	 *         shortName=ID? 
@@ -56,7 +70,9 @@ public class VpspecSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *         (type+='Configuration' VP_Aspects+=[Configuration|FQN])?
 	 *     )
 	 */
-	protected void sequence_Viewpoint(EObject context, Viewpoint semanticObject) {
+	protected void sequence_Viewpoint(ISerializationContext context, Viewpoint semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
+	
+	
 }

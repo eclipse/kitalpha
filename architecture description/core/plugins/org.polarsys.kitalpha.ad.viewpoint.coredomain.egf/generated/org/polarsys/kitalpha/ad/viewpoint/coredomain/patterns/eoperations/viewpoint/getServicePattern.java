@@ -1,4 +1,4 @@
-//Generated with EGF 1.2.0.v20140805-0858
+//Generated with EGF 1.4.1.v20161010-1704
 package org.polarsys.kitalpha.ad.viewpoint.coredomain.patterns.eoperations.viewpoint;
 
 import org.eclipse.egf.common.helper.*;
@@ -8,7 +8,8 @@ import org.eclipse.egf.model.pattern.*;
 import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 
-public class getServicePattern extends org.eclipse.egf.emf.pattern.model.call.Class.ClassimplementedGenOperationTODOoverride {
+public class getServicePattern
+		extends org.eclipse.egf.emf.pattern.model.call.Class.ClassimplementedGenOperationTODOoverride {
 	protected static String nl;
 
 	public static synchronized getServicePattern create(String lineSeparator) {
@@ -19,7 +20,13 @@ public class getServicePattern extends org.eclipse.egf.emf.pattern.model.call.Cl
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "\t\tif (getServiceSet() != null) {" + NL + "\t\t\tfor (Service service : getServiceSet().getNewServices()) {" + NL + "\t\t\t\tif (id.equals(service.getId()))" + NL + "\t\t\t\t\treturn service;" + NL + "\t\t\t}" + NL + "\t\t\tfor (Service service : getServiceSet().getHiddenServices()) {" + NL + "\t\t\t\tif (id.equals(service.getId()))" + NL + "\t\t\t\t\treturn null;" + NL + "\t\t\t}" + NL + "\t\t}" + NL + "\t\tfor (Viewpoint vp : getParents()) {" + NL + "\t\t\tService service = vp.getService(id);" + NL + "\t\t\tif (service != null)" + NL + "\t\t\t\treturn service;" + NL + "\t\t}" + NL + "\t\treturn null;";
+	protected final String TEXT_1 = "\t\tif (getServiceSet() != null) {" + NL
+			+ "\t\t\tfor (Service service : getServiceSet().getNewServices()) {" + NL
+			+ "\t\t\t\tif (id.equals(service.getId()))" + NL + "\t\t\t\t\treturn service;" + NL + "\t\t\t}" + NL
+			+ "\t\t\tfor (Service service : getServiceSet().getHiddenServices()) {" + NL
+			+ "\t\t\t\tif (id.equals(service.getId()))" + NL + "\t\t\t\t\treturn null;" + NL + "\t\t\t}" + NL + "\t\t}"
+			+ NL + "\t\tfor (Viewpoint vp : getParents()) {" + NL + "\t\t\tService service = vp.getService(id);" + NL
+			+ "\t\t\tif (service != null)" + NL + "\t\t\t\treturn service;" + NL + "\t\t}" + NL + "\t\treturn null;";
 	protected final String TEXT_2 = NL;
 	protected final String TEXT_3 = NL;
 
@@ -99,7 +106,8 @@ public class getServicePattern extends org.eclipse.egf.emf.pattern.model.call.Cl
 																this.positiveOperationOffsetCorrection = (java.lang.String) positiveOperationOffsetCorrectionParameter;
 
 																if (preCondition(ctx)) {
-																	ctx.setNode(new Node.Container(currentNode, getClass()));
+																	ctx.setNode(new Node.Container(currentNode,
+																			getClass()));
 																	orchestration(ctx);
 																}
 

@@ -116,7 +116,8 @@ public abstract class ComponentElementImpl extends ExtensibleElementImpl impleme
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SimplecomponentPackage.COMPONENT_ELEMENT__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, SimplecomponentPackage.COMPONENT_ELEMENT__NAME,
+					oldName, name));
 
 	}
 
@@ -142,7 +143,8 @@ public abstract class ComponentElementImpl extends ExtensibleElementImpl impleme
 		String oldDescription = description;
 		description = newDescription;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SimplecomponentPackage.COMPONENT_ELEMENT__DESCRIPTION, oldDescription, description));
+			eNotify(new ENotificationImpl(this, Notification.SET, SimplecomponentPackage.COMPONENT_ELEMENT__DESCRIPTION,
+					oldDescription, description));
 
 	}
 
@@ -171,22 +173,10 @@ public abstract class ComponentElementImpl extends ExtensibleElementImpl impleme
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case SimplecomponentPackage.COMPONENT_ELEMENT__NAME:
-			// begin-extension-code
-			if (newValue == null || newValue instanceof String) {
-				// end-extension-code
-				setName((String) newValue);
-				// begin-extension-code
-			}
-			// end-extension-code
+			setName((String) newValue);
 			return;
 		case SimplecomponentPackage.COMPONENT_ELEMENT__DESCRIPTION:
-			// begin-extension-code
-			if (newValue == null || newValue instanceof String) {
-				// end-extension-code
-				setDescription((String) newValue);
-				// begin-extension-code
-			}
-			// end-extension-code
+			setDescription((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);

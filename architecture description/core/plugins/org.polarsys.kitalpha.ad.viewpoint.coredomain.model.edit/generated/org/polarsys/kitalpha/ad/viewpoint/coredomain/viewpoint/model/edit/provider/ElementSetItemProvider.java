@@ -38,13 +38,7 @@ import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.ViewpointPa
  * @generated
  */
 public class ElementSetItemProvider
-	extends NameElementItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends NameElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -110,7 +104,7 @@ public class ElementSetItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {

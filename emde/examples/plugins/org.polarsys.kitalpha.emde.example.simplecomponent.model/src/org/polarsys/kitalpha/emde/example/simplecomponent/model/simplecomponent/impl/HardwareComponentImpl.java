@@ -77,7 +77,8 @@ public class HardwareComponentImpl extends AbstractComponentImpl implements Hard
 	public EList<AbstractComponent> getAbstractComponent() {
 
 		if (abstractComponent == null) {
-			abstractComponent = new EObjectContainmentEList<AbstractComponent>(AbstractComponent.class, this, SimplecomponentPackage.HARDWARE_COMPONENT__ABSTRACT_COMPONENT);
+			abstractComponent = new EObjectContainmentEList<AbstractComponent>(AbstractComponent.class, this,
+					SimplecomponentPackage.HARDWARE_COMPONENT__ABSTRACT_COMPONENT);
 		}
 		return abstractComponent;
 	}

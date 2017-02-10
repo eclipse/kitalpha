@@ -34,7 +34,8 @@ import org.polarsys.kitalpha.emde.model.edit.provider.ExtensibleElementItemProvi
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentElementItemProvider extends ExtensibleElementItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ComponentElementItemProvider extends ExtensibleElementItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -76,11 +77,14 @@ public class ComponentElementItemProvider extends ExtensibleElementItemProvider 
 		// begin-extension-code
 		itemPropertyDescriptors.add(createItemPropertyDescriptor
 		// end-extension-code
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_ComponentElement_name_feature"), //$NON-NLS-1$
-						getString("_UI_PropertyDescriptor_description", "_UI_ComponentElement_name_feature", "_UI_ComponentElement_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						SimplecomponentPackage.Literals.COMPONENT_ELEMENT__NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
-						// begin-extension-code
-						null));
+		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_ComponentElement_name_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_ComponentElement_name_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_ComponentElement_type"), //$NON-NLS-1$
+				SimplecomponentPackage.Literals.COMPONENT_ELEMENT__NAME, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
+				// begin-extension-code
+				null));
 		// end-extension-code
 	}
 
@@ -95,11 +99,14 @@ public class ComponentElementItemProvider extends ExtensibleElementItemProvider 
 		// begin-extension-code
 		itemPropertyDescriptors.add(createItemPropertyDescriptor
 		// end-extension-code
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_ComponentElement_description_feature"), //$NON-NLS-1$
-						getString("_UI_PropertyDescriptor_description", "_UI_ComponentElement_description_feature", "_UI_ComponentElement_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						SimplecomponentPackage.Literals.COMPONENT_ELEMENT__DESCRIPTION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
-						// begin-extension-code
-						null));
+		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_ComponentElement_description_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_ComponentElement_description_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_ComponentElement_type"), //$NON-NLS-1$
+				SimplecomponentPackage.Literals.COMPONENT_ELEMENT__DESCRIPTION, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
+				// begin-extension-code
+				null));
 		// end-extension-code
 	}
 

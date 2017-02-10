@@ -27,7 +27,8 @@ public interface SimplecomponentFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	SimplecomponentFactory eINSTANCE = org.polarsys.kitalpha.emde.example.simplecomponent.model.simplecomponent.impl.SimplecomponentFactoryImpl.init();
+	SimplecomponentFactory eINSTANCE = org.polarsys.kitalpha.emde.example.simplecomponent.model.simplecomponent.impl.SimplecomponentFactoryImpl
+			.init();
 
 	/**
 	 * Returns a new object of class '<em>Component Model</em>'.

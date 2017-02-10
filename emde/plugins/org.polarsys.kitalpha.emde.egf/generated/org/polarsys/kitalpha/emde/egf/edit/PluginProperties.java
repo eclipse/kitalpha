@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20150924-1035
+//Generated with EGF 1.4.1.v20161010-1704
 package org.polarsys.kitalpha.emde.egf.edit;
 
 import org.polarsys.kitalpha.emde.egf.utils.*;
@@ -32,11 +32,17 @@ public class PluginProperties extends org.eclipse.egf.emf.pattern.edit.PluginPro
 	protected final String TEXT_3 = " Edit" + NL + "providerName = www.polarsys.org" + NL;
 	protected final String TEXT_4 = NL + "_UI_CreateChild_text = {0}" + NL + "_UI_CreateChild_text2 = {1} ";
 	protected final String TEXT_5 = "| ";
-	protected final String TEXT_6 = "{0}" + NL + "_UI_CreateChild_text3 = {1}" + NL + "_UI_CreateChild_tooltip = Create New {0} Under {1} Feature" + NL + "_UI_CreateChild_description = Create a new child of type {0} for the {1} feature of the selected {2}." + NL + "_UI_CreateSibling_description = Create a new sibling of type {0} for the selected {2}, under the {1} feature of their parent." + NL;
+	protected final String TEXT_6 = "{0}" + NL + "_UI_CreateChild_text3 = {1}" + NL
+			+ "_UI_CreateChild_tooltip = Create New {0} Under {1} Feature" + NL
+			+ "_UI_CreateChild_description = Create a new child of type {0} for the {1} feature of the selected {2}."
+			+ NL
+			+ "_UI_CreateSibling_description = Create a new sibling of type {0} for the selected {2}, under the {1} feature of their parent."
+			+ NL;
 	protected final String TEXT_7 = NL + "_UI_PropertyDescriptor_description = The {0} of the {1}" + NL;
 	protected final String TEXT_8 = NL + "_UI_";
 	protected final String TEXT_9 = "_type = ";
-	protected final String TEXT_10 = NL + "_UI_Unknown_type = Object" + NL + "" + NL + "_UI_Unknown_datatype= Value" + NL;
+	protected final String TEXT_10 = NL + "_UI_Unknown_type = Object" + NL + "" + NL + "_UI_Unknown_datatype= Value"
+			+ NL;
 	protected final String TEXT_11 = NL + "_UI_";
 	protected final String TEXT_12 = "_";
 	protected final String TEXT_13 = "_feature = ";
@@ -141,7 +147,9 @@ public class PluginProperties extends org.eclipse.egf.emf.pattern.edit.PluginPro
 
 			final Map<String, Object> callParameters = new HashMap<String, Object>();
 			callParameters.put("argument", parameter);
-			CallHelper.executeWithParameterInjection("platform:/plugin/org.eclipse.egf.emf.pattern.base/egf/EMF_Pattern_Base.fcore#_FEoPwCwuEd-jc5T-XaRJlg", new ExecutionContext((InternalPatternContext) ctx), callParameters);
+			CallHelper.executeWithParameterInjection(
+					"platform:/plugin/org.eclipse.egf.emf.pattern.base/egf/EMF_Pattern_Base.fcore#_FEoPwCwuEd-jc5T-XaRJlg",
+					new ExecutionContext((InternalPatternContext) ctx), callParameters);
 			stringBuffer.setLength(0);
 		}
 

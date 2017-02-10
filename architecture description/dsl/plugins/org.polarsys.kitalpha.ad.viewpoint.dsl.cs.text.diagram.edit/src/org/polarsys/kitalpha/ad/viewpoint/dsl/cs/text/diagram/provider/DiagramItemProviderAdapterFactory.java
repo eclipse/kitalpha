@@ -108,25 +108,72 @@ public class DiagramItemProviderAdapterFactory extends DiagramAdapterFactory imp
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.Import} instances.
+	 * This keeps track of the one adapter used for all {@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.AbstractImport} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ImportItemProvider importItemProvider;
+	protected AbstractImportItemProvider abstractImportItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.Import}.
+	 * This creates an adapter for a {@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.AbstractImport}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Adapter createImportAdapter() {
-		if (importItemProvider == null) {
-			importItemProvider = new ImportItemProvider(this);
+	@Override
+	public Adapter createAbstractImportAdapter() {
+		if (abstractImportItemProvider == null) {
+			abstractImportItemProvider = new AbstractImportItemProvider(this);
 		}
 
-		return importItemProvider;
+		return abstractImportItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ImportNameSpace} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ImportNameSpaceItemProvider importNameSpaceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ImportNameSpace}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createImportNameSpaceAdapter() {
+		if (importNameSpaceItemProvider == null) {
+			importNameSpaceItemProvider = new ImportNameSpaceItemProvider(this);
+		}
+
+		return importNameSpaceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ImportGroup} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ImportGroupItemProvider importGroupItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ImportGroup}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createImportGroupAdapter() {
+		if (importGroupItemProvider == null) {
+			importGroupItemProvider = new ImportGroupItemProvider(this);
+		}
+
+		return importGroupItemProvider;
 	}
 
 	/**
@@ -229,7 +276,9 @@ public class DiagramItemProviderAdapterFactory extends DiagramAdapterFactory imp
 	 */
 	public void dispose() {
 		if (diagramsItemProvider != null) diagramsItemProvider.dispose();
-		if (importItemProvider != null) importItemProvider.dispose();
+		if (abstractImportItemProvider != null) abstractImportItemProvider.dispose();
+		if (importNameSpaceItemProvider != null) importNameSpaceItemProvider.dispose();
+		if (importGroupItemProvider != null) importGroupItemProvider.dispose();
 	}
 
 }

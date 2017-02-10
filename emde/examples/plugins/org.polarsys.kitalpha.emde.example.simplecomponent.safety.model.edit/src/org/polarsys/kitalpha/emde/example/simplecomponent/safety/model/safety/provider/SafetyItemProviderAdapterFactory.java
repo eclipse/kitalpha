@@ -38,10 +38,9 @@ import org.polarsys.kitalpha.emde.example.simplecomponent.safety.model.safety.Sa
 import org.polarsys.kitalpha.emde.example.simplecomponent.safety.model.safety.SafetyPackage;
 import org.polarsys.kitalpha.emde.example.simplecomponent.safety.model.safety.util.SafetyAdapterFactory;
 import org.polarsys.kitalpha.emde.extension.ModelExtensionHelper;
-import org.polarsys.kitalpha.emde.extension.ExtensionModelManager;
+import org.polarsys.kitalpha.emde.extension.edit.ChildCreationExtenderManager;
 import org.polarsys.kitalpha.emde.model.EmdePackage;
 import org.polarsys.kitalpha.emde.model.ExtensibleElement;
-import org.polarsys.kitalpha.emde.model.edit.provider.ChildCreationExtenderManager;
 import org.polarsys.kitalpha.emde.model.edit.provider.NewChildDescriptorHelper;
 import org.polarsys.kitalpha.emde.model.util.EmdeSwitch;
 
@@ -54,7 +53,8 @@ import org.polarsys.kitalpha.emde.model.util.EmdeSwitch;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SafetyItemProviderAdapterFactory extends SafetyAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
+public class SafetyItemProviderAdapterFactory extends SafetyAdapterFactory
+		implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -77,7 +77,8 @@ public class SafetyItemProviderAdapterFactory extends SafetyAdapterFactory imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(SimpleEditPlugin.INSTANCE, SafetyPackage.eNS_URI);
+	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(
+			SimpleEditPlugin.INSTANCE, SafetyPackage.eNS_URI);
 
 	/**
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
@@ -303,13 +304,17 @@ public class SafetyItemProviderAdapterFactory extends SafetyAdapterFactory imple
 			@Override
 			public Object caseExtensibleElement(ExtensibleElement object) {
 				// begin-extension-code
-				if (ModelExtensionHelper.getInstance(object).isExtensionModelDisabled(EcoreUtil.getRootContainer(object).eClass().getEPackage().getNsURI(), "http://www.polarsys.org/kitalpha/emde/example/simplecomponent/safety")) { //$NON-NLS-1$
+				if (ModelExtensionHelper.getInstance(object).isExtensionModelDisabled(
+						EcoreUtil.getRootContainer(object).eClass().getEPackage().getNsURI(),
+						"http://www.polarsys.org/kitalpha/emde/example/simplecomponent/safety")) { //$NON-NLS-1$
 					return null;
 				}
 				// end-extension-code
 				// begin-extension-code
 				{
-					CommandParameter commandParameter = createChildParameter(EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS, SafetyFactory.eINSTANCE.createSimpleVPSafety());
+					CommandParameter commandParameter = createChildParameter(
+							EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
+							SafetyFactory.eINSTANCE.createSimpleVPSafety());
 					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 						newChildDescriptors.add(commandParameter);
 					}

@@ -86,7 +86,9 @@ public class PerformancePackageImpl extends EPackageImpl implements PerformanceP
 			return (PerformancePackage) EPackage.Registry.INSTANCE.getEPackage(PerformancePackage.eNS_URI);
 
 		// Obtain or create and register package
-		PerformancePackageImpl thePerformancePackage = (PerformancePackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof PerformancePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new PerformancePackageImpl());
+		PerformancePackageImpl thePerformancePackage = (PerformancePackageImpl) (EPackage.Registry.INSTANCE
+				.get(eNS_URI) instanceof PerformancePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
+						: new PerformancePackageImpl());
 
 		isInited = true;
 
@@ -224,7 +226,8 @@ public class PerformancePackageImpl extends EPackageImpl implements PerformanceP
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		SimplecomponentPackage theSimplecomponentPackage = (SimplecomponentPackage) EPackage.Registry.INSTANCE.getEPackage(SimplecomponentPackage.eNS_URI);
+		SimplecomponentPackage theSimplecomponentPackage = (SimplecomponentPackage) EPackage.Registry.INSTANCE
+				.getEPackage(SimplecomponentPackage.eNS_URI);
 		EmdePackage theEmdePackage = (EmdePackage) EPackage.Registry.INSTANCE.getEPackage(EmdePackage.eNS_URI);
 
 		// Create type parameters
@@ -237,13 +240,22 @@ public class PerformancePackageImpl extends EPackageImpl implements PerformanceP
 		vpStatusEClass.getESuperTypes().add(theSimplecomponentPackage.getComponentElement());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(simpleVPPerformanceEClass, SimpleVPPerformance.class, "SimpleVPPerformance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getSimpleVPPerformance_Complexity(), ecorePackage.getEInt(), "complexity", null, 0, 1, SimpleVPPerformance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(getSimpleVPPerformance_Cost(), ecorePackage.getEInt(), "cost", null, 0, 1, SimpleVPPerformance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getSimpleVPPerformance_Status(), this.getVPStatus(), null, "status", null, 0, 1, SimpleVPPerformance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEClass(simpleVPPerformanceEClass, SimpleVPPerformance.class, "SimpleVPPerformance", !IS_ABSTRACT, //$NON-NLS-1$
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSimpleVPPerformance_Complexity(), ecorePackage.getEInt(), "complexity", null, 0, 1, //$NON-NLS-1$
+				SimpleVPPerformance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSimpleVPPerformance_Cost(), ecorePackage.getEInt(), "cost", null, 0, 1, //$NON-NLS-1$
+				SimpleVPPerformance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSimpleVPPerformance_Status(), this.getVPStatus(), null, "status", null, 0, 1, //$NON-NLS-1$
+				SimpleVPPerformance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(vpStatusEClass, VPStatus.class, "VPStatus", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getVPStatus_Overhead(), ecorePackage.getEBoolean(), "overhead", null, 0, 1, VPStatus.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEClass(vpStatusEClass, VPStatus.class, "VPStatus", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getVPStatus_Overhead(), ecorePackage.getEBoolean(), "overhead", null, 0, 1, VPStatus.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -262,12 +274,13 @@ public class PerformancePackageImpl extends EPackageImpl implements PerformanceP
 	 * @generated
 	 */
 	protected void createExtensionAnnotations() {
-		String source = "http://www.polarsys.org/kitalpha/emde/1.0.0/extension"; //$NON-NLS-1$		
-		addAnnotation(this, source, new String[] { "extensibleProviderFactory", "true", //$NON-NLS-1$ //$NON-NLS-2$
-				"childCreationExtenders", "true", //$NON-NLS-1$ //$NON-NLS-2$
-				"useUUIDs", "true", //$NON-NLS-1$ //$NON-NLS-2$
-				"useIDAttributes", "false" //$NON-NLS-1$ //$NON-NLS-2$
-		});
+		String source = "http://www.polarsys.org/kitalpha/emde/1.0.0/extension"; //$NON-NLS-1$	
+		addAnnotation(this, source,
+				new String[] { "extensibleProviderFactory", "true", //$NON-NLS-1$ //$NON-NLS-2$
+						"childCreationExtenders", "true", //$NON-NLS-1$ //$NON-NLS-2$
+						"useUUIDs", "true", //$NON-NLS-1$ //$NON-NLS-2$
+						"useIDAttributes", "false" //$NON-NLS-1$ //$NON-NLS-2$
+				});
 	}
 
 	/**
@@ -277,8 +290,9 @@ public class PerformancePackageImpl extends EPackageImpl implements PerformanceP
 	 * @generated
 	 */
 	protected void createConstraintAnnotations() {
-		String source = "http://www.polarsys.org/kitalpha/emde/1.0.0/constraint"; //$NON-NLS-1$			
-		addAnnotation(simpleVPPerformanceEClass, source, new String[] { "ExtendedElement", "http://www.polarsys.org/kitalpha/emde/example/simplecomponent#//AbstractComponent " //$NON-NLS-1$ //$NON-NLS-2$
+		String source = "http://www.polarsys.org/kitalpha/emde/1.0.0/constraint"; //$NON-NLS-1$	
+		addAnnotation(simpleVPPerformanceEClass, source, new String[] { "ExtendedElement", //$NON-NLS-1$
+				"http://www.polarsys.org/kitalpha/emde/example/simplecomponent#//AbstractComponent " //$NON-NLS-1$
 		});
 	}
 

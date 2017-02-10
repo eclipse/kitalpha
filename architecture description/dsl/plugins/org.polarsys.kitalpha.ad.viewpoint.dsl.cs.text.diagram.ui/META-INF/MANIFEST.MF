@@ -32,5 +32,6 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.antlr,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.template,
- org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.quickfix
+ org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.quickfix,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.antlr.internal
 Bundle-Activator: org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.internal.VpdiagramActivator

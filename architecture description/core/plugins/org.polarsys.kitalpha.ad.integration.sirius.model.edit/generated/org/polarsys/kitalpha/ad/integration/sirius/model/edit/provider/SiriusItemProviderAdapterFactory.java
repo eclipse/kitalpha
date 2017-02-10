@@ -307,11 +307,10 @@ public class SiriusItemProviderAdapterFactory extends SiriusAdapterFactory imple
 			@Override
 			public Object caseRepresentation(Representation object) {
 
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ViewpointPackage.Literals.REPRESENTATION__REPRESENTATIONS,
-				 SiriusFactory.eINSTANCE.createSiriusRepresentation()));
+				newChildDescriptors.add
+					(createChildParameter
+						(ViewpointPackage.Literals.REPRESENTATION__REPRESENTATIONS,
+						 SiriusFactory.eINSTANCE.createSiriusRepresentation()));
 
 
 
@@ -336,8 +335,8 @@ public class SiriusItemProviderAdapterFactory extends SiriusAdapterFactory imple
 		 */
 		public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
 			ArrayList<Object> result = new ArrayList<Object>();
-		   new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
-		   return result;
+			new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
+			return result;
 		}
 
 		/**

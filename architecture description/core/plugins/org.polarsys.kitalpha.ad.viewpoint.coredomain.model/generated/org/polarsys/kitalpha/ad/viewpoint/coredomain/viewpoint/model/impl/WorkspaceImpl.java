@@ -205,10 +205,11 @@ public class WorkspaceImpl extends EObjectImpl implements Workspace {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 
 	public RuleSet getRuleSet(Viewpoint vp) {
+
 		RuleSet result = null;
 		for (RuleSet set : getRuleSets()) {
 			Viewpoint target = set.getTarget();
@@ -219,6 +220,7 @@ public class WorkspaceImpl extends EObjectImpl implements Workspace {
 			}
 		}
 		return result;
+
 	}
 
 
@@ -227,10 +229,11 @@ public class WorkspaceImpl extends EObjectImpl implements Workspace {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 
 	public ServiceSet getServiceSet(Viewpoint vp) {
+
 		ServiceSet result = null;
 		for (ServiceSet set : getServiceSets()) {
 			Viewpoint target = set.getTarget();
@@ -241,6 +244,7 @@ public class WorkspaceImpl extends EObjectImpl implements Workspace {
 			}
 		}
 		return result;
+
 	}
 
 
@@ -249,10 +253,11 @@ public class WorkspaceImpl extends EObjectImpl implements Workspace {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 
 	public PropertySet getPropertySet(Viewpoint vp) {
+
 		PropertySet result = null;
 		for (PropertySet set : getPropertySets()) {
 			Viewpoint target = set.getTarget();
@@ -263,6 +268,7 @@ public class WorkspaceImpl extends EObjectImpl implements Workspace {
 			}
 		}
 		return result;
+
 	}
 
 

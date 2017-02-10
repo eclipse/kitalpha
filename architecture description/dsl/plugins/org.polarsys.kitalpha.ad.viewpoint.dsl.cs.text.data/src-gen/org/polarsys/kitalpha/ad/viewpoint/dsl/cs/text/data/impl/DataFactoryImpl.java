@@ -5,15 +5,12 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.AbstractImport;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.DataFactory;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.DataPackage;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.DataSpec;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.Import;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.ImportNamespace;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.ImportURI;
+
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.*;
 
 /**
  * <!-- begin-user-doc -->

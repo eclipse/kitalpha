@@ -38,7 +38,8 @@ import org.polarsys.kitalpha.emde.model.edit.provider.NewChildDescriptorHelper;
  * <!-- end-user-doc -->
  * @generated
  */
-public class VPStatusItemProvider extends ComponentElementItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class VPStatusItemProvider extends ComponentElementItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -79,11 +80,13 @@ public class VPStatusItemProvider extends ComponentElementItemProvider implement
 		// begin-extension-code
 		itemPropertyDescriptors.add(createItemPropertyDescriptor
 		// end-extension-code
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_VPStatus_overhead_feature"), //$NON-NLS-1$
-						getString("_UI_PropertyDescriptor_description", "_UI_VPStatus_overhead_feature", "_UI_VPStatus_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						PerformancePackage.Literals.VP_STATUS__OVERHEAD, true, false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null,
-						// begin-extension-code
-						null));
+		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_VPStatus_overhead_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_VPStatus_overhead_feature", "_UI_VPStatus_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				PerformancePackage.Literals.VP_STATUS__OVERHEAD, true, false, false,
+				ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null,
+				// begin-extension-code
+				null));
 		// end-extension-code
 	}
 
@@ -144,7 +147,9 @@ public class VPStatusItemProvider extends ComponentElementItemProvider implement
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 		// begin-extension-code
 		{
-			CommandParameter commandParameter = createChildParameter(EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS, PerformanceFactory.eINSTANCE.createSimpleVPPerformance());
+			CommandParameter commandParameter = createChildParameter(
+					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
+					PerformanceFactory.eINSTANCE.createSimpleVPPerformance());
 			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 				newChildDescriptors.add(commandParameter);
 			}

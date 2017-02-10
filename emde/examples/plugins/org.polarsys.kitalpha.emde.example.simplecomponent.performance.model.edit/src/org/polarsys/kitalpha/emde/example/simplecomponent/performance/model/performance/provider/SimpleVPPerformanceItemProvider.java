@@ -39,7 +39,8 @@ import org.polarsys.kitalpha.emde.model.edit.provider.NewChildDescriptorHelper;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SimpleVPPerformanceItemProvider extends ComponentElementItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class SimpleVPPerformanceItemProvider extends ComponentElementItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -81,11 +82,14 @@ public class SimpleVPPerformanceItemProvider extends ComponentElementItemProvide
 		// begin-extension-code
 		itemPropertyDescriptors.add(createItemPropertyDescriptor
 		// end-extension-code
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_SimpleVPPerformance_complexity_feature"), //$NON-NLS-1$
-						getString("_UI_PropertyDescriptor_description", "_UI_SimpleVPPerformance_complexity_feature", "_UI_SimpleVPPerformance_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						PerformancePackage.Literals.SIMPLE_VP_PERFORMANCE__COMPLEXITY, true, false, false, ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null,
-						// begin-extension-code
-						null));
+		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_SimpleVPPerformance_complexity_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_SimpleVPPerformance_complexity_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_SimpleVPPerformance_type"), //$NON-NLS-1$
+				PerformancePackage.Literals.SIMPLE_VP_PERFORMANCE__COMPLEXITY, true, false, false,
+				ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null,
+				// begin-extension-code
+				null));
 		// end-extension-code
 	}
 
@@ -100,11 +104,14 @@ public class SimpleVPPerformanceItemProvider extends ComponentElementItemProvide
 		// begin-extension-code
 		itemPropertyDescriptors.add(createItemPropertyDescriptor
 		// end-extension-code
-				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_SimpleVPPerformance_cost_feature"), //$NON-NLS-1$
-						getString("_UI_PropertyDescriptor_description", "_UI_SimpleVPPerformance_cost_feature", "_UI_SimpleVPPerformance_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						PerformancePackage.Literals.SIMPLE_VP_PERFORMANCE__COST, true, false, false, ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null,
-						// begin-extension-code
-						null));
+		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_SimpleVPPerformance_cost_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_SimpleVPPerformance_cost_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_SimpleVPPerformance_type"), //$NON-NLS-1$
+				PerformancePackage.Literals.SIMPLE_VP_PERFORMANCE__COST, true, false, false,
+				ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null,
+				// begin-extension-code
+				null));
 		// end-extension-code
 	}
 
@@ -199,7 +206,9 @@ public class SimpleVPPerformanceItemProvider extends ComponentElementItemProvide
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 		// begin-extension-code
 		{
-			CommandParameter commandParameter = createChildParameter(EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS, PerformanceFactory.eINSTANCE.createSimpleVPPerformance());
+			CommandParameter commandParameter = createChildParameter(
+					EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
+					PerformanceFactory.eINSTANCE.createSimpleVPPerformance());
 			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 				newChildDescriptors.add(commandParameter);
 			}
@@ -208,7 +217,9 @@ public class SimpleVPPerformanceItemProvider extends ComponentElementItemProvide
 
 		// begin-extension-code
 		{
-			CommandParameter commandParameter = createChildParameter(PerformancePackage.Literals.SIMPLE_VP_PERFORMANCE__STATUS, PerformanceFactory.eINSTANCE.createVPStatus());
+			CommandParameter commandParameter = createChildParameter(
+					PerformancePackage.Literals.SIMPLE_VP_PERFORMANCE__STATUS,
+					PerformanceFactory.eINSTANCE.createVPStatus());
 			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 				newChildDescriptors.add(commandParameter);
 			}

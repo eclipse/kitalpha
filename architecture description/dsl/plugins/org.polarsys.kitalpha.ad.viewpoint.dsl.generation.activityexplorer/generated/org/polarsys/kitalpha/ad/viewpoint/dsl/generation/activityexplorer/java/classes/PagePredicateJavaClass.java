@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20160112-1239
+//Generated with EGF 1.4.1.v20161010-1704
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.java.classes;
 
 import org.eclipse.egf.common.helper.*;
@@ -86,7 +86,7 @@ public class PagePredicateJavaClass extends
 
 		for (Object parameterParameter : parameterList) {
 
-			this.parameter = (org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Page) parameterParameter;
+			this.parameter = (org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Page) parameterParameter;
 
 			if (preCondition(ctx)) {
 				ctx.setNode(new Node.Container(currentNode, getClass()));
@@ -132,10 +132,10 @@ public class PagePredicateJavaClass extends
 		this.genFileExtensionPredicate = object;
 	}
 
-	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Page parameter = null;
+	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Page parameter = null;
 
 	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.Page object) {
+			org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Page object) {
 		this.parameter = object;
 	}
 

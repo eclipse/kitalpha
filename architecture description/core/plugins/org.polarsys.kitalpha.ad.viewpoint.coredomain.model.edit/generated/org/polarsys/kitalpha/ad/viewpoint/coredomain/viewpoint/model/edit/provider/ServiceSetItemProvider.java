@@ -138,11 +138,10 @@ public class ServiceSetItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-
 		if (object instanceof NameElement) {
 			NameElement elt = (NameElement) object;
 			String label = elt.getName();

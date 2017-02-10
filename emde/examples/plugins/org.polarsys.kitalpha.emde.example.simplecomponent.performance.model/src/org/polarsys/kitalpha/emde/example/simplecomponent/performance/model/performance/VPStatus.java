@@ -19,10 +19,10 @@ import org.polarsys.kitalpha.emde.example.simplecomponent.model.simplecomponent.
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.emde.example.simplecomponent.performance.model.performance.VPStatus#isOverhead <em>Overhead</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.emde.example.simplecomponent.performance.model.performance.PerformancePackage#getVPStatus()
  * @model
@@ -32,7 +32,7 @@ public interface VPStatus extends ComponentElement {
 
 	/**
 	 * Returns the value of the '<em><b>Overhead</b></em>' attribute.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Overhead</em>' attribute isn't clear,
@@ -50,7 +50,7 @@ public interface VPStatus extends ComponentElement {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.emde.example.simplecomponent.performance.model.performance.VPStatus#isOverhead <em>Overhead</em>}' attribute.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Overhead</em>' attribute.
