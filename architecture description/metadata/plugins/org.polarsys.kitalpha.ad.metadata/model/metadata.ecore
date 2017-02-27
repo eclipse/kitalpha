@@ -5,6 +5,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Metadata" eSuperTypes="#//MetadataElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="viewpointReferences" upperBound="-1"
         eType="#//ViewpointReference" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="additionalMetadata" upperBound="-1"
+        eType="#//Metadata"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ViewpointReference" eSuperTypes="#//MetadataElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="vpId" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

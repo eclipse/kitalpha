@@ -1,6 +1,6 @@
 /**
  * ******************************************************************************
- *  Copyright (c) 2016 Thales Global Services S.A.S.
+ *  Copyright (c) 2016-2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -23,6 +23,7 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -59,8 +60,33 @@ public class MetadataItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addAdditionalMetadataPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Additional Metadata feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAdditionalMetadataPropertyDescriptor(Object object) {
+
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Metadata_additionalMetadata_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Metadata_additionalMetadata_feature", "_UI_Metadata_type"),
+				 MetadataPackage.Literals.METADATA__ADDITIONAL_METADATA,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+
 	}
 
 	/**

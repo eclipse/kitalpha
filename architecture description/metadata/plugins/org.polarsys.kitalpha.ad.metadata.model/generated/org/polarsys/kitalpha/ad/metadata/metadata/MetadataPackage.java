@@ -1,6 +1,6 @@
 /**
  * ******************************************************************************
- *  Copyright (c) 2016 Thales Global Services S.A.S.
+ *  Copyright (c) 2016-2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -137,13 +137,22 @@ public interface MetadataPackage extends EPackage {
 	int METADATA__VIEWPOINT_REFERENCES = METADATA_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Additional Metadata</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METADATA__ADDITIONAL_METADATA = METADATA_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Metadata</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int METADATA_FEATURE_COUNT = METADATA_ELEMENT_FEATURE_COUNT + 1;
+	int METADATA_FEATURE_COUNT = METADATA_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Metadata</em>' class.
@@ -249,6 +258,17 @@ public interface MetadataPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getMetadata_ViewpointReferences();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.polarsys.kitalpha.ad.metadata.metadata.Metadata#getAdditionalMetadata <em>Additional Metadata</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Additional Metadata</em>'.
+	 * @see org.polarsys.kitalpha.ad.metadata.metadata.Metadata#getAdditionalMetadata()
+	 * @see #getMetadata()
+	 * @generated
+	 */
+	EReference getMetadata_AdditionalMetadata();
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.metadata.metadata.ViewpointReference <em>Viewpoint Reference</em>}'.
@@ -365,6 +385,14 @@ public interface MetadataPackage extends EPackage {
 		 * @generated
 		 */
 		EReference METADATA__VIEWPOINT_REFERENCES = eINSTANCE.getMetadata_ViewpointReferences();
+
+		/**
+		 * The meta object literal for the '<em><b>Additional Metadata</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference METADATA__ADDITIONAL_METADATA = eINSTANCE.getMetadata_AdditionalMetadata();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.metadata.metadata.impl.ViewpointReferenceImpl <em>Viewpoint Reference</em>}' class.
