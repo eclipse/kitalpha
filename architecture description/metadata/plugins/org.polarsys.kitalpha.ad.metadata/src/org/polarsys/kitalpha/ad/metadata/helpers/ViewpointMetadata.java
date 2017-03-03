@@ -210,7 +210,7 @@ public class ViewpointMetadata {
 
 	public URI getExpectedMetadataStorageURI() {
 		URI uri = context.getResources().get(0).getURI();
-		if (uri.isPlatform()) {
+		if (uri.isPlatformResource()) {
 			String path = uri.toPlatformString(true);
 			if (path.contains(".")) {
 				int index = path.lastIndexOf('.');
