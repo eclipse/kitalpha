@@ -20,7 +20,10 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.polarsys.kitalpha.emde.extension.ExtensibleModel;
 import org.polarsys.kitalpha.emde.extension.ModelExtensionDescriptor;
 import org.polarsys.kitalpha.emde.extension.ModelExtensionHelper;
+import org.polarsys.kitalpha.emde.extension.ModelExtensionListener;
 import org.polarsys.kitalpha.emde.extension.ModelExtensionManager;
+import org.polarsys.kitalpha.emde.model.EmdePackage;
+import org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.ComponentSamplePerformancePackage;
 
 import junit.framework.TestCase;
 
@@ -89,34 +92,55 @@ public class BasicTests extends TestCase {
 	}
 	
 	public void testManager7() throws Exception {
-		try {
-			ModelExtensionManager m1 = ModelExtensionHelper.getInstance(EcoreFactory.eINSTANCE.createEObject());
-			fail("expecting an exception");
-		} catch (IllegalArgumentException e ) {
-		}
+		ModelExtensionManager m1 = ModelExtensionHelper.getInstance(EcoreFactory.eINSTANCE.createEObject());
+		assertNotNull(m1);
 	}
 	public void testManager8() throws Exception {
-		try {
-			ModelExtensionManager m1 = ModelExtensionHelper.getInstance((EObject)null);
-			fail("expecting an exception");
-		} catch (IllegalArgumentException e ) {
-		}
+		ModelExtensionManager m1 = ModelExtensionHelper.getInstance((EObject)null);
+		assertNotNull(m1);
 	}
 	public void testManager9() throws Exception {
-		try {
-			EObject obj = EcoreFactory.eINSTANCE.createEObject();
-			Resource r = new ResourceImpl();
-			r.getContents().add(obj);
-			ModelExtensionManager m1 = ModelExtensionHelper.getInstance(r);
-			fail("expecting an exception");
-		} catch (IllegalArgumentException e ) {
-		}
+		EObject obj = EcoreFactory.eINSTANCE.createEObject();
+		Resource r = new ResourceImpl();
+		r.getContents().add(obj);
+		ModelExtensionManager m1 = ModelExtensionHelper.getInstance(r);
+		assertNotNull(m1);
 	}
 	public void testManager10() throws Exception {
-		try {
-			ModelExtensionManager m1 = ModelExtensionHelper.getInstance((ResourceSet)null);
-			fail("expecting an exception");
-		} catch (IllegalArgumentException e ) {
-		}
+		ModelExtensionManager m1 = ModelExtensionHelper.getInstance((ResourceSet)null);
+		assertNotNull(m1);
+	}
+	public void testManager11() throws Exception {
+		ModelExtensionManager m1 = ModelExtensionHelper.getInstance((ResourceSet)null);
+		assertNotNull(m1.getDelegates());
+		assertTrue(m1.getDelegates().isEmpty());
+	}
+	public void testManager12() throws Exception {
+		ModelExtensionManager m1 = ModelExtensionHelper.getInstance((ResourceSet)null);
+		ModelExtensionListener l = new ModelExtensionListener() {
+			
+			@Override
+			public void modelEnabled(String nsURI) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void modelDisabled(String nsURI) {
+				// TODO Auto-generated method stub
+				
+			}
+		};
+		m1.addListener(l);
+		m1.addListener(l);
+		m1.removeListener(l);
+	}
+	public void testManager13() throws Exception {
+		ModelExtensionManager m1 = ModelExtensionHelper.getInstance((ResourceSet)null);
+		assertTrue(m1.isExtensionModelDisabled(EcoreFactory.eINSTANCE.createEObject()));
+	}
+	public void testManager14() throws Exception {
+		ModelExtensionManager m1 = ModelExtensionHelper.getInstance((ResourceSet)null);
+		assertTrue(m1.isExtensionModelDisabled(EmdePackage.eNS_URI, ComponentSamplePerformancePackage.eNS_URI));
 	}
 }

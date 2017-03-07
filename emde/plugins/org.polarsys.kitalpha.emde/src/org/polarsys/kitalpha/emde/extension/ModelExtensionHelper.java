@@ -10,7 +10,9 @@
  *******************************************************************************/
 package org.polarsys.kitalpha.emde.extension;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.eclipse.core.runtime.CoreException;
@@ -30,19 +32,17 @@ import org.polarsys.kitalpha.emde.extension.utils.Log;
  */
 public class ModelExtensionHelper {
 
+	private static final ModelExtensionManager nullManager = new NullModelExtensionManager();
 	private static final Map<Object, ModelExtensionManager> instances = new HashMap<Object, ModelExtensionManager>();
 	/**
 	 * This is an helper method to retrieve the ModelExtensionManager instance associated to the resourceSet instance who owns the given resource instance.
 	 * 
 	 * @param ctx
 	 * @return a ModelExtensionManager instance.
-	 * @throws IllegalArgumentException if the parameter is not owned by a ResourceSet instance.
 	 */
 	public static ModelExtensionManager getInstance(Resource resource) {
 		if (resource == null)
-                {
-			throw new IllegalArgumentException();
-                }
+			return nullManager;
 		return getInstance(resource.getResourceSet());
 	}
 	
@@ -51,13 +51,10 @@ public class ModelExtensionHelper {
 	 * 
 	 * @param ctx
 	 * @return a ModelExtensionManager instance.
-	 * @throws IllegalArgumentException if the parameter is null.
 	 */
 	public static ModelExtensionManager getInstance(final ResourceSet ctx) {
 		if (ctx == null)
-                {
-			throw new IllegalArgumentException();
-                }
+			return nullManager;
 		ModelExtensionManager instance = instances.get(ctx);
 		if (instance == null) {
 			instances.put(ctx, instance = createInstance());
@@ -81,13 +78,10 @@ public class ModelExtensionHelper {
 	 * 
 	 * @param ctx
 	 * @return a ModelExtensionManager instance.
-	 * @throws IllegalArgumentException if the parameter is not owned by a ResourceSet instance.
 	 */
 	public static ModelExtensionManager getInstance(EObject ctx) {
 		if (ctx == null)
-                {
-			throw new IllegalArgumentException();
-                }
+			return nullManager;
 		return getInstance(ctx.eResource());
 	}
 
@@ -124,5 +118,58 @@ public class ModelExtensionHelper {
 
 	public static void removeOverallListener(ModelExtensionOverallListener l) {
 		DefaultModelExtensionManager.removeOverallListener(l);
+	}
+	
+	/**
+	 * This implementation is used when the context cannot be computed.
+	 * 
+	 * @author Thomas Guiu
+	 * 
+	 */
+	private static class NullModelExtensionManager implements ModelExtensionManager {
+
+		@Override
+		public boolean isExtensionModelDisabled(String extensibleModel, String extendedModel) {
+			return true;
+		}
+
+		@Override
+		public boolean canDisableExtensionModel(ExtendedModel extended) {
+			return false;
+		}
+
+		@Override
+		public boolean isExtensionModelDisabled(ExtendedModel extended) {
+			return true;
+		}
+
+		@Override
+		public boolean isExtensionModelDisabled(Object object) {
+			return true;
+		}
+
+		@Override
+		public boolean isExtensionModelDisabled(EObject eObject) {
+			return true;
+		}
+
+		@Override
+		public void setExtensionModelDisabled(ExtensibleModel extensibleModel, ExtendedModel extendedModel,
+				boolean disabled) {
+		}
+
+		@Override
+		public List<ExtensionManagerDelegate> getDelegates() {
+			return new ArrayList<>();
+		}
+
+		@Override
+		public void addListener(ModelExtensionListener l) {
+		}
+
+		@Override
+		public void removeListener(ModelExtensionListener l) {
+		}
+		
 	}
 }
