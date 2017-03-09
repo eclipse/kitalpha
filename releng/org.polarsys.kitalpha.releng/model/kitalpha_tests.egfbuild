@@ -108,7 +108,7 @@
     </steps>
     <steps xsi:type="buildcore:StepContainer" xmi:id="_Zvyo0AYwEea74KmXjv6MFA" name="sdk tests"/>
     <steps xsi:type="buildcore:StepContainer" xmi:id="_baiWMPK7Eea1kq5Op5EuVw" name="RCPTT Tests">
-      <steps xsi:type="buildstep:AntStep" xmi:id="_ecaLwPK7Eea1kq5Op5EuVw" name="Kitalpha RCPTT Tests" targetName="kitalpha_rcptt_tests" xml="&lt;target name=&quot;kitalpha_rcptt_tests&quot;>&#xD;&#xA;&#x9;&lt;ant antfile=&quot;../../../rcptt/kitalpha_rcptt_tests.xml&quot;/>&#xD;&#xA;&lt;/target>"/>
+      <steps xsi:type="buildstep:AntStep" xmi:id="_ecaLwPK7Eea1kq5Op5EuVw" name="Kitalpha RCPTT Tests" enabled="false" targetName="kitalpha_rcptt_tests" xml="&lt;target name=&quot;kitalpha_rcptt_tests&quot;>&#xD;&#xA;&#x9;&lt;ant antfile=&quot;../../../rcptt/kitalpha_rcptt_tests.xml&quot;/>&#xD;&#xA;&lt;/target>"/>
     </steps>
     <scms xsi:type="buildscm:GIT" xmi:id="_LbOo4fx8EeO7zY3f-pIrjg">
       <locations xmi:id="_L0O-wPx8EeO7zY3f-pIrjg" protocol="https://" url="www.polarsys.org/r/kitalpha/kitalpha" localPath="" username="" password=""/>
