@@ -17,6 +17,8 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointActivationException;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
+import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.Listener2;
+import org.polarsys.kitalpha.resourcereuse.model.Resource;
 
 import junit.framework.TestCase;
 
@@ -69,27 +71,79 @@ public class BasicTests extends TestCase {
 	}
 
 	public void testManager5() throws Exception {
-		try {
-			ViewpointManager m1 = ViewpointManager.getInstance(EcoreFactory.eINSTANCE.createEObject());
-			fail("expecting an exception");
-		} catch (IllegalArgumentException e) {
-		}
+		ViewpointManager m1 = ViewpointManager.getInstance(EcoreFactory.eINSTANCE.createEObject());
+		assertNotNull(m1);
 	}
 	
 	public void testManager6() throws Exception {
-		try {
-			ViewpointManager m1 = ViewpointManager.getInstance((EObject)null);
-			fail("expecting an exception");
-		} catch (IllegalArgumentException e) {
-		}
+		ViewpointManager m1 = ViewpointManager.getInstance((EObject)null);
+		assertNotNull(m1);
 	}
 	
 	public void testManager7() throws Exception {
-		try {
-			ViewpointManager m1 = ViewpointManager.getInstance((ResourceSet)null);
-			fail("expecting an exception");
-		} catch (IllegalArgumentException e) {
-		}
+		ViewpointManager m1 = ViewpointManager.getInstance((ResourceSet)null);
+		assertNotNull(m1);
 	}
+	
+	public void testManager8() throws Exception {
+		ViewpointManager m1 = ViewpointManager.getInstance(EcoreFactory.eINSTANCE.createEObject());
+		Listener2 listener = new Listener2() {
+			
+			@Override
+			public void handleUnReferencing(Resource vp) {
+				// TODO Auto-generated method stub
+			}
+			
+			@Override
+			public void handleReferencing(Resource vp) {
+				// TODO Auto-generated method stub
+			}
+			
+			@Override
+			public void handleInactivation(Resource vp) {
+				// TODO Auto-generated method stub
+			}
+			
+			@Override
+			public void handleActivation(Resource vp) {
+				// TODO Auto-generated method stub
+			}
+		};
+		m1.addListener(listener);
+		m1.addListener(listener);
+		m1.removeListener(listener);
+	}
+	
+	public void testManager9() throws Exception {
+		ViewpointManager m1 = ViewpointManager.getInstance((EObject)null);
+		m1.activate("org.polarsys.kitalpha.vp.componentsampleperformance");
+		m1.reference("test");
+		m1.reference("org.polarsys.kitalpha.vp.componentsampleperformance");
+		m1.unReference("org.polarsys.kitalpha.vp.componentsampleperformance");
+	}
+	
+	public void testManager10() throws Exception {
+		ViewpointManager m1 = ViewpointManager.getInstance((ResourceSet)null);
+		assertFalse(m1.hasMetadata());
+	}
+	
+	public void testManager11() throws Exception {
+		ViewpointManager m1 = ViewpointManager.getInstance((ResourceSet)null);
+		assertFalse(m1.isActive("org.polarsys.kitalpha.vp.componentsampleperformance"));
+		assertFalse(m1.isInactive("org.polarsys.kitalpha.vp.componentsampleperformance"));
+	}
+	
+	public void testManager12() throws Exception {
+		ViewpointManager m1 = ViewpointManager.getInstance((ResourceSet)null);
+		m1.isFiltered("org.polarsys.kitalpha.vp.componentsampleperformance");
+		m1.isUsed("test");
+	}
+	
+	public void testManager13() throws Exception {
+		ViewpointManager m1 = ViewpointManager.getInstance((ResourceSet)null);
+		m1.setActivationState("org.polarsys.kitalpha.vp.componentsampleperformance", true);
+		m1.setActivationState("org.polarsys.kitalpha.vp.componentsampleperformance", false);
+	}
+	
 
 }
