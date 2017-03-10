@@ -20,11 +20,11 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Operation#getParameters <em>Parameters</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Operation#getOperation_type <em>Operation type</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescPackage#getOperation()
  * @model

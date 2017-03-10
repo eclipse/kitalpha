@@ -16,11 +16,11 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.FileSystemResource#getPath <em>Path</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.FileSystemResource#isWorkspace <em>Workspace</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescPackage#getFileSystemResource()
  * @model

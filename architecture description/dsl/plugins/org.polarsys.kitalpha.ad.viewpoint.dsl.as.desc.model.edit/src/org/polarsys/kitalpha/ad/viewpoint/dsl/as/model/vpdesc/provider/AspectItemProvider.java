@@ -30,9 +30,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Aspect;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AspectItemProvider extends NamedElementItemProvider implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class AspectItemProvider extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

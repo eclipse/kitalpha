@@ -37,9 +37,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AnnotatableElementItemProvider extends NamedElementItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class AnnotatableElementItemProvider extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -143,11 +141,10 @@ public class AnnotatableElementItemProvider extends NamedElementItemProvider
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdescPackage.Literals.ANNOTATABLE_ELEMENT__OWNED_ANNOTATIONS,
-				 VpdescFactory.eINSTANCE.createAnnotation()));
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdescPackage.Literals.ANNOTATABLE_ELEMENT__OWNED_ANNOTATIONS,
+						 VpdescFactory.eINSTANCE.createAnnotation()));
 
 
 	}

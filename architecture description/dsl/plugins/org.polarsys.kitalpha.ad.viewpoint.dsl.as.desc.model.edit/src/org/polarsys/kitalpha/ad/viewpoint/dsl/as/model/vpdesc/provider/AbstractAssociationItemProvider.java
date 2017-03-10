@@ -37,9 +37,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescPackage;
  * @generated
  */
 public class AbstractAssociationItemProvider extends
-		AbstractFeatureItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider,
-		IItemLabelProvider, IItemPropertySource {
+		AbstractFeatureItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

@@ -21,12 +21,12 @@ import org.eclipse.emf.ecore.EPackage;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Data#getVP_Classes <em>VP Classes</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Data#getVP_Enumerations <em>VP Enumerations</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Data#getAdditionalExternalData <em>Additional External Data</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescPackage#getData()
  * @model

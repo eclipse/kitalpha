@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -20,7 +20,9 @@ import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
 import org.eclipse.xtext.scoping.impl.FilteringScope;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Enumeration;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.LocalClassAssociation;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.util.ProjectUtil;
 
 import com.google.common.base.Predicate;
@@ -89,6 +91,32 @@ public class DataScopeProvider extends AbstractDeclarativeScopeProvider {
 						return (d.getEObjectOrProxy() instanceof EDataType);
 					}
 				});
+	}
+
+	IScope scope_LocalClassAssociation_opposite(EObject context, EReference reference){
+		final EObject context2 = context;
+		return new FilteringScope(delegateGetScope(context, reference),
+				new Predicate<IEObjectDescription>() {
+			public boolean apply(IEObjectDescription d) {
+				EObject target = d.getEObjectOrProxy();
+				if (!(context2.equals(target)) && 
+						context2 instanceof LocalClassAssociation && 
+						target instanceof LocalClassAssociation){
+					LocalClassAssociation currentReference = (LocalClassAssociation)context2;
+					LocalClassAssociation oppositeReference = (LocalClassAssociation)target;
+					
+					Class referenceContainingClass = (Class) currentReference.eContainer();
+					Class referencedType = currentReference.getLocalTarget();
+					
+					Class oppositeContainingClass = (Class)oppositeReference.eContainer();
+					Class oppositeReferencedType = oppositeReference.getLocalTarget();
+					
+					return DataSpecificationHelper.isSupertype(oppositeContainingClass, referencedType) &&
+							DataSpecificationHelper.isSupertype(referenceContainingClass, oppositeReferencedType);
+				}
+				return false;
+			}
+		});
 	}
 
 	IScope scope_LocalClassAssociation_LocalTarget(EObject context,	EReference reference) {

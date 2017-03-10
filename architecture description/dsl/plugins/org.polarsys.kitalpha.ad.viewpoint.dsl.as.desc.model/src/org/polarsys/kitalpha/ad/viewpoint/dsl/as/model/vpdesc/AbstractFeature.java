@@ -18,6 +18,7 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractFeature#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractFeature#isChangeable <em>Changeable</em>}</li>
@@ -28,7 +29,6 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc;
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractFeature#isUnsettable <em>Unsettable</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractFeature#isVolatile <em>Volatile</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescPackage#getAbstractFeature()
  * @model abstract="true"

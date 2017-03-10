@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated on Wed Jul 09 15:21:12 CEST 2014 with EGF 1.2.0.v20140702-0648
+//Generated with EGF 1.4.1.v20161010-1511
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.common;
 
 import java.util.*;
@@ -55,8 +44,7 @@ public class AnnotationPattern {
 			}
 		}
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 	}
 
@@ -71,25 +59,21 @@ public class AnnotationPattern {
 			parameterValues.put("eElement", this.eElement);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
 
-	protected void method_processAnnotation(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_processAnnotation(final StringBuffer out, final PatternContext ctx) throws Exception {
 		if (vpElement.getOwned_annotations().size() > 0) {
 			for (Annotation iAnnotation : vpElement.getOwned_annotations()) {
 				String source = iAnnotation.getSource();
-				EAnnotation eAnnotation = EcoreFactory.eINSTANCE
-						.createEAnnotation();
+				EAnnotation eAnnotation = EcoreFactory.eINSTANCE.createEAnnotation();
 				eAnnotation.setSource(source);
 				if (iAnnotation.getOwned_details().size() > 0) {
 					for (Detail iDetail : iAnnotation.getOwned_details()) {
 						EStringToStringMapEntryImpl entry = (EStringToStringMapEntryImpl) EcoreFactory.eINSTANCE
-								.create(EcorePackage.eINSTANCE
-										.getEStringToStringMapEntry());
+								.create(EcorePackage.eINSTANCE.getEStringToStringMapEntry());
 						entry.setKey(iDetail.getKey());
 						if (iDetail.getValue() != null)
 							entry.setValue(iDetail.getValue());
@@ -101,8 +85,7 @@ public class AnnotationPattern {
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "processAnnotation",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "processAnnotation", out.toString());
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
@@ -111,8 +94,7 @@ public class AnnotationPattern {
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AnnotatableElement vpElement;
 
-	public void set_vpElement(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AnnotatableElement vpElement) {
+	public void set_vpElement(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AnnotatableElement vpElement) {
 		this.vpElement = vpElement;
 	}
 

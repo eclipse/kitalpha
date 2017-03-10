@@ -36,9 +36,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ShortNamedElementItemProvider extends NamedElementItemProvider
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ShortNamedElementItemProvider extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

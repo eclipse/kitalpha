@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated on Wed Jul 09 15:21:12 CEST 2014 with EGF 1.2.0.v20140702-0648
+//Generated with EGF 1.4.1.v20161010-1511
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.clazz;
 
 import java.util.*;
@@ -25,8 +14,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.util.ECoreResource
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.util.ENamedElementAnnotationHelper;
 
 public class ClassCreation
-		extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.abstracts.ClassAbstractPattern {
+		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.abstracts.ClassAbstractPattern {
 
 	public ClassCreation() {
 		//Here is the constructor
@@ -52,8 +40,7 @@ public class ClassCreation
 			}
 		}
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 	}
 
@@ -67,10 +54,9 @@ public class ClassCreation
 			parameters.put("vpElement", this.parameter);
 			parameters.put("eElement", this.generatedEClass);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper
-					.executeWithParameterInjection(
-							"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc/egf/vpdslECoreGenerator.fcore#_HKpWoL4sEeKDeKot98nSrA",
-							ctx_local, parameters);
+			CallHelper.executeWithParameterInjection(
+					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc/egf/vpdslECoreGenerator.fcore#_HKpWoL4sEeKDeKot98nSrA",
+					ctx_local, parameters);
 		}
 		ictx.setNode(currentNode);
 		if (ictx.useReporter()) {
@@ -78,14 +64,12 @@ public class ClassCreation
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
 
-	protected void method_createClass(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_createClass(final StringBuffer out, final PatternContext ctx) throws Exception {
 		/************************* EClass Creation ***********************************/
 		generatedEClass = EcoreFactory.eINSTANCE.createEClass();
 		generatedEClass.setName(vpsClassName);
@@ -93,20 +77,18 @@ public class ClassCreation
 
 		/************************* EClass Generic Annotation *************************/
 		/**
-		 if (parameter.getDescription() != null && parameter.getDescription().trim().length() != 0)
-		 ENamedElementAnnotationHelper.annotate(generatedEClass, 
-		 ENamedElementAnnotationHelper.KEY_DOCUMENTATION, 
-		 ENamedElementAnnotationHelper.ENTRY_DOCUMENTATION_KEY,
-		 parameter.getDescription(),
-		 true);
-		 **/
+		if (parameter.getDescription() != null && parameter.getDescription().trim().length() != 0)
+			ENamedElementAnnotationHelper.annotate(generatedEClass, 
+													ENamedElementAnnotationHelper.KEY_DOCUMENTATION, 
+													ENamedElementAnnotationHelper.ENTRY_DOCUMENTATION_KEY,
+													parameter.getDescription(),
+													true);
+		**/
 
-		ECoreResourceManager.INSTANCE.getEPackage().getEClassifiers()
-				.add(generatedEClass);
+		ECoreResourceManager.INSTANCE.getEPackage().getEClassifiers().add(generatedEClass);
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "createClass",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "createClass", out.toString());
 	}
 
 	protected org.eclipse.emf.ecore.EClass generatedEClass;

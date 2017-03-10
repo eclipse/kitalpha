@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated on Wed Jul 09 15:21:13 CEST 2014 with EGF 1.2.0.v20140702-0648
+//Generated with EGF 1.4.1.v20161010-1511
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.clazz.content;
 
 import java.util.*;
@@ -29,8 +18,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.ExternalSuperClass
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.LocalSuperClass;
 
 public class ClassSuperClass
-		extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.abstracts.ClassAbstractPattern {
+		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.abstracts.ClassAbstractPattern {
 
 	public ClassSuperClass() {
 		//Here is the constructor
@@ -56,8 +44,7 @@ public class ClassSuperClass
 			}
 		}
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 	}
 
@@ -72,42 +59,35 @@ public class ClassSuperClass
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
 
-	protected void method_linkToSuperClass(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_linkToSuperClass(final StringBuffer out, final PatternContext ctx) throws Exception {
 		EList<AbstractSuperClass> superClasses = parameter.getInheritences();
 
 		EList<EClass> superEClasses = new BasicEList<EClass>();
 
 		for (AbstractSuperClass abstractSuperClass : superClasses) {
 			if (abstractSuperClass instanceof ExternalSuperClass)
-				superEClasses.add(((ExternalSuperClass) abstractSuperClass)
-						.getSuperClass());
+				superEClasses.add(((ExternalSuperClass) abstractSuperClass).getSuperClass());
 
 			if (abstractSuperClass instanceof LocalSuperClass) {
-				Class clazz = ((LocalSuperClass) abstractSuperClass)
-						.getSuperClass();
+				Class clazz = ((LocalSuperClass) abstractSuperClass).getSuperClass();
 				String className = clazz.getName();
-				EClass eClass = (EClass) ECoreResourceManager.INSTANCE
-						.getEPackage().getEClassifier(className);
+				EClass eClass = (EClass) ECoreResourceManager.INSTANCE.getEPackage().getEClassifier(className);
 				superEClasses.add(eClass);
 			}
 		}
 
 		for (EClass eClass : superEClasses) {
-			EClass clazz = PlatformEClassesManager.INSTANCE
-					.getEClassesWithPlatformURI(eClass);
+			EClass clazz = PlatformEClassesManager.INSTANCE.getEClassesWithPlatformURI(eClass);
 			curEClass.getESuperTypes().add(clazz);
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "linkToSuperClass",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "linkToSuperClass", out.toString());
 	}
 
 	public Map<String, Object> getParameters() {

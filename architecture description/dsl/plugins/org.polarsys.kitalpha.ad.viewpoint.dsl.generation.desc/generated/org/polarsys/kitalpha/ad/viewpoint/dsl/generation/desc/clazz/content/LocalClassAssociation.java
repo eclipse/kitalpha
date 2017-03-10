@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated on Wed Jul 09 15:21:12 CEST 2014 with EGF 1.2.0.v20140702-0648
+//Generated with EGF 1.4.1.v20161010-1511
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.clazz.content;
 
 import java.util.*;
@@ -22,8 +11,7 @@ import org.eclipse.egf.common.helper.*;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.util.ECoreResourceManager;
 
 public class LocalClassAssociation
-		extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.abstracts.AbstractAssociationPattern {
+		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.abstracts.AbstractAssociationPattern {
 
 	public LocalClassAssociation() {
 		//Here is the constructor
@@ -49,8 +37,7 @@ public class LocalClassAssociation
 			}
 		}
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 	}
 
@@ -64,17 +51,14 @@ public class LocalClassAssociation
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
 
-	protected void method_setTargetEClass(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_setTargetEClass(final StringBuffer out, final PatternContext ctx) throws Exception {
 		/* Get the specified Target Class */
-		org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class vpsClazz = parameter
-				.getLocalTarget();
+		org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class vpsClazz = parameter.getLocalTarget();
 
 		targetEClass = null;
 
@@ -87,23 +71,20 @@ public class LocalClassAssociation
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setTargetEClass",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setTargetEClass", out.toString());
 	}
 
-	protected void method_setAbstractAssociationParameter(
-			final StringBuffer out, final PatternContext ctx) throws Exception {
+	protected void method_setAbstractAssociationParameter(final StringBuffer out, final PatternContext ctx)
+			throws Exception {
 		abstractAssociation = parameter;
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(),
-				"setAbstractAssociationParameter", out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setAbstractAssociationParameter", out.toString());
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.LocalClassAssociation parameter;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.LocalClassAssociation parameter) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.LocalClassAssociation parameter) {
 		this.parameter = parameter;
 	}
 

@@ -39,6 +39,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.impl.ClassImpl#getVP_Classes_Associations <em>VP Classes Associations</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.impl.ClassImpl#getVP_Class_Attributes <em>VP Class Attributes</em>}</li>
@@ -48,7 +49,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescPackage;
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.impl.ClassImpl#isAbstract <em>Abstract</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.impl.ClassImpl#getVP_Class_Operations <em>VP Class Operations</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

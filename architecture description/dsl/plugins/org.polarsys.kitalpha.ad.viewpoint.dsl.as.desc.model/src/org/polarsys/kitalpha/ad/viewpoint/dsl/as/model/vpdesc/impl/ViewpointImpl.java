@@ -36,6 +36,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.util.AspectsAdditi
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.impl.ViewpointImpl#getVP_Data <em>VP Data</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.impl.ViewpointImpl#getVP_Aspects <em>VP Aspects</em>}</li>
@@ -44,7 +45,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.util.AspectsAdditi
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.impl.ViewpointImpl#getUseViewpoint <em>Use Viewpoint</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.impl.ViewpointImpl#getViewpointResources <em>Viewpoint Resources</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

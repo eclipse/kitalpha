@@ -33,9 +33,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescPackage;
  * @generated
  */
 public class ExternalSuperClassItemProvider extends
-		AbstractSuperClassItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider,
-		IItemLabelProvider, IItemPropertySource {
+		AbstractSuperClassItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

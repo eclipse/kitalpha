@@ -189,11 +189,10 @@ public class AnnotationItemProvider extends ItemProviderAdapter implements
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdescPackage.Literals.ANNOTATION__OWNED_DETAILS,
-				 VpdescFactory.eINSTANCE.createDetail()));
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdescPackage.Literals.ANNOTATION__OWNED_DETAILS,
+						 VpdescFactory.eINSTANCE.createDetail()));
 
 
 	}

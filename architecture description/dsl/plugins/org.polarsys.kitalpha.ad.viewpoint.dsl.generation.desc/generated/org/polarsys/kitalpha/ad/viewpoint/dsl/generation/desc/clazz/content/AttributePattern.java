@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated on Wed Jul 09 15:21:12 CEST 2014 with EGF 1.2.0.v20140702-0648
+//Generated with EGF 1.4.1.v20161010-1511
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.clazz.content;
 
 import java.util.*;
@@ -31,8 +20,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.LocalAttributeType
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Value;
 
 public class AttributePattern
-		extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.abstracts.ClassAbstractContentElement {
+		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.abstracts.ClassAbstractContentElement {
 
 	public AttributePattern() {
 		//Here is the constructor
@@ -58,8 +46,7 @@ public class AttributePattern
 			}
 		}
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 	}
 
@@ -73,34 +60,27 @@ public class AttributePattern
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
 
-	protected void method_initContainingEClassName(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
-		eClassName = ((org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class) parameter
-				.eContainer()).getName();
+	protected void method_initContainingEClassName(final StringBuffer out, final PatternContext ctx) throws Exception {
+		eClassName = ((org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class) parameter.eContainer()).getName();
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(),
-				"initContainingEClassName", out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "initContainingEClassName", out.toString());
 	}
 
-	protected void method_setAnnotationParameters(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_setAnnotationParameters(final StringBuffer out, final PatternContext ctx) throws Exception {
 		annotatableElement = parameter;
 		ecoreElement = eAt;
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(),
-				"setAnnotationParameters", out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setAnnotationParameters", out.toString());
 	}
 
-	protected void method_createElement(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_createElement(final StringBuffer out, final PatternContext ctx) throws Exception {
 		// Attribute initialization
 		final String iAtName = parameter.getName();
 		eAt = EcoreFactory.eINSTANCE.createEAttribute();
@@ -139,11 +119,9 @@ public class AttributePattern
 		AbstractAttributeType abstractAttributeType = parameter.getOwned_type();
 		if (abstractAttributeType instanceof LocalAttributeType) {// Handle cases of local type : vpdesc.Enumeration
 			final LocalAttributeType localType = (LocalAttributeType) abstractAttributeType;
-			final org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Enumeration enumeration = localType
-					.getType();
+			final org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Enumeration enumeration = localType.getType();
 			final String enumerationName = enumeration.getName();
-			final EEnum eEnum = (EEnum) ECoreResourceManager.INSTANCE
-					.getEPackage().getEClassifier(enumerationName);
+			final EEnum eEnum = (EEnum) ECoreResourceManager.INSTANCE.getEPackage().getEClassifier(enumerationName);
 			eAt.setEType(eEnum);
 		} else {// Handle case of external type : a primitive type like EString, EInt, etc. or an EEnumerator
 			final ExternalAttributeType externalType = (ExternalAttributeType) abstractAttributeType;
@@ -153,23 +131,18 @@ public class AttributePattern
 				EEnum eEnum = EcoreFactory.eINSTANCE.createEEnum();
 				eEnum.setName(iAtName + "_Type");
 				for (Value iValue : parameter.getOwned_values()) {
-					EEnumLiteral eEnumLiteral = EcoreFactory.eINSTANCE
-							.createEEnumLiteral();
+					EEnumLiteral eEnumLiteral = EcoreFactory.eINSTANCE.createEEnumLiteral();
 					eEnumLiteral.setLiteral(iValue.getLiteral());
-					eEnumLiteral.setName(iValue.getName().replaceAll(
-							"[^a-zA-Z0-9]", "_"));
-					eEnumLiteral.setValue(parameter.getOwned_values().indexOf(
-							iValue));
+					eEnumLiteral.setName(iValue.getName().replaceAll("[^a-zA-Z0-9]", "_"));
+					eEnumLiteral.setValue(parameter.getOwned_values().indexOf(iValue));
 					eEnum.getELiterals().add(eEnumLiteral);
 				}
 
-				ECoreResourceManager.INSTANCE.getEPackage().getEClassifiers()
-						.add(eEnum);
+				ECoreResourceManager.INSTANCE.getEPackage().getEClassifiers().add(eEnum);
 				eAt.setEType(eEnum);
 			} else {
 				if (dataType instanceof EEnum) {
-					final EEnum ptEEnum = PlatformEClassesManager.INSTANCE
-							.getEEnumWithPlatformURI((EEnum) dataType);
+					final EEnum ptEEnum = PlatformEClassesManager.INSTANCE.getEEnumWithPlatformURI((EEnum) dataType);
 					eAt.setEType(ptEEnum);
 				} else {
 					eAt.setEType(dataType);
@@ -187,7 +160,7 @@ public class AttributePattern
 												parameter.getDescription(),
 												true);
 		}
-		 **/
+		**/
 
 		/******************************************
 		if (parameter.getOwned_annotations().size() > 0)
@@ -212,17 +185,15 @@ public class AttributePattern
 				eAt.getEAnnotations().add(eAnnotation);
 			}
 		}
-		 ******************************************/
+		******************************************/
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "createElement",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "createElement", out.toString());
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Attribute parameter;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Attribute parameter) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Attribute parameter) {
 		this.parameter = parameter;
 	}
 

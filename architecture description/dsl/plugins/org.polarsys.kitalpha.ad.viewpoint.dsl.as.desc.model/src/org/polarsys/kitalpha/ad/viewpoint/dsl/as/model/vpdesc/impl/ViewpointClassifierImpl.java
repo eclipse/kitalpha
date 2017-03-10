@@ -21,8 +21,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Viewpoint Classifier</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

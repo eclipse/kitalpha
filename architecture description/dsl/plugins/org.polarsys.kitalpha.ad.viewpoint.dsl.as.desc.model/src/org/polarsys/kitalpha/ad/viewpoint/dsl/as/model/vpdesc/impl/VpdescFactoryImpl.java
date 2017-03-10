@@ -60,7 +60,7 @@ public class VpdescFactoryImpl extends EFactoryImpl implements VpdescFactory {
 	 */
 	public static VpdescFactory init() {
 		try {
-			VpdescFactory theVpdescFactory = (VpdescFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdesc/1.0.0"); 
+			VpdescFactory theVpdescFactory = (VpdescFactory)EPackage.Registry.INSTANCE.getEFactory(VpdescPackage.eNS_URI);
 			if (theVpdescFactory != null) {
 				return theVpdescFactory;
 			}

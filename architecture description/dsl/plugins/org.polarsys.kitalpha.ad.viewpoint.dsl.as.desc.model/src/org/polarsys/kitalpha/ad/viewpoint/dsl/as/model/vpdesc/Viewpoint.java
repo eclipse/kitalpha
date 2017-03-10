@@ -20,6 +20,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint#getVP_Data <em>VP Data</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint#getVP_Aspects <em>VP Aspects</em>}</li>
@@ -28,7 +29,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint#getUseViewpoint <em>Use Viewpoint</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint#getViewpointResources <em>Viewpoint Resources</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescPackage#getViewpoint()
  * @model

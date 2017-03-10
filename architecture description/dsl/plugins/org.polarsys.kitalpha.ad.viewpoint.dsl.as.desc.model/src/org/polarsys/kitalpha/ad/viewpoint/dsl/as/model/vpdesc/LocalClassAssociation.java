@@ -19,10 +19,11 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.LocalClassAssociation#getLocalTarget <em>Local Target</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.LocalClassAssociation#getOpposite <em>Opposite</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescPackage#getLocalClassAssociation()
  * @model
@@ -60,5 +61,35 @@ public interface LocalClassAssociation extends AbstractAssociation {
 
 	void setLocalTarget(
 			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class value);
+
+	/**
+	 * Returns the value of the '<em><b>Opposite</b></em>' reference.
+
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Opposite</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Opposite</em>' reference.
+	 * @see #setOpposite(LocalClassAssociation)
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescPackage#getLocalClassAssociation_Opposite()
+	 * @model
+	 * @generated
+	 */
+
+	LocalClassAssociation getOpposite();
+
+	/**
+	 * Sets the value of the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.LocalClassAssociation#getOpposite <em>Opposite</em>}' reference.
+
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Opposite</em>' reference.
+	 * @see #getOpposite()
+	 * @generated
+	 */
+
+	void setOpposite(LocalClassAssociation value);
 
 } // LocalClassAssociation

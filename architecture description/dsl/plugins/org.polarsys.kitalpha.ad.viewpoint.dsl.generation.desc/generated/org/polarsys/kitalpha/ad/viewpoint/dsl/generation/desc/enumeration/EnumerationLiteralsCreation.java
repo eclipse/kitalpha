@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated on Wed Jul 09 15:21:12 CEST 2014 with EGF 1.2.0.v20140702-0648
+//Generated with EGF 1.4.1.v20161010-1511
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.enumeration;
 
 import java.util.*;
@@ -27,8 +16,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.util.ECoreResource
 import org.eclipse.emf.ecore.impl.EStringToStringMapEntryImpl;
 
 public class EnumerationLiteralsCreation
-		extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.common.AnyVPSpecElement {
+		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.common.AnyVPSpecElement {
 
 	public EnumerationLiteralsCreation() {
 		//Here is the constructor
@@ -54,8 +42,7 @@ public class EnumerationLiteralsCreation
 			}
 		}
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 	}
 
@@ -70,10 +57,9 @@ public class EnumerationLiteralsCreation
 			parameters.put("vpElement", this.parameter);
 			parameters.put("eElement", this.literal);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper
-					.executeWithParameterInjection(
-							"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc/egf/vpdslECoreGenerator.fcore#_HKpWoL4sEeKDeKot98nSrA",
-							ctx_local, parameters);
+			CallHelper.executeWithParameterInjection(
+					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc/egf/vpdslECoreGenerator.fcore#_HKpWoL4sEeKDeKot98nSrA",
+					ctx_local, parameters);
 		}
 		ictx.setNode(currentNode);
 		if (ictx.useReporter()) {
@@ -81,14 +67,12 @@ public class EnumerationLiteralsCreation
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
 
-	protected void method_cerateEnumerationLiterals(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_cerateEnumerationLiterals(final StringBuffer out, final PatternContext ctx) throws Exception {
 		// Create Enumeration Literal 
 		final String name = parameter.getName().replaceAll("[^a-zA-Z0-9]", "_");
 		final String s_literal = parameter.getLiteral();
@@ -99,28 +83,23 @@ public class EnumerationLiteralsCreation
 		eEnum.getELiterals().add(literal);
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(),
-				"cerateEnumerationLiterals", out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "cerateEnumerationLiterals", out.toString());
 	}
 
-	protected void method_initViewpointAndEcoreEnum(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_initViewpointAndEcoreEnum(final StringBuffer out, final PatternContext ctx) throws Exception {
 		/* Get the specified Target Class */
-		vpEnumeration = (org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Enumeration) parameter
-				.eContainer();
+		vpEnumeration = (org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Enumeration) parameter.eContainer();
 
 		/* Get the corresponding generated Target ECLass from the generated EPackage */
 		EPackage vpsPackage = ECoreResourceManager.INSTANCE.getEPackage();
 		for (EClassifier iEClassifier : vpsPackage.getEClassifiers()) {
-			if (iEClassifier instanceof EEnum
-					&& iEClassifier.getName().equals(vpEnumeration.getName())) {
+			if (iEClassifier instanceof EEnum && iEClassifier.getName().equals(vpEnumeration.getName())) {
 				eEnum = (EEnum) iEClassifier;
 			}
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(),
-				"initViewpointAndEcoreEnum", out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "initViewpointAndEcoreEnum", out.toString());
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
@@ -130,8 +109,7 @@ public class EnumerationLiteralsCreation
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Value parameter;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Value parameter) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Value parameter) {
 		this.parameter = parameter;
 	}
 
@@ -143,8 +121,7 @@ public class EnumerationLiteralsCreation
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Enumeration vpEnumeration;
 
-	public void set_vpEnumeration(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Enumeration vpEnumeration) {
+	public void set_vpEnumeration(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Enumeration vpEnumeration) {
 		this.vpEnumeration = vpEnumeration;
 	}
 

@@ -35,12 +35,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.impl.DataImpl#getVP_Classes <em>VP Classes</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.impl.DataImpl#getVP_Enumerations <em>VP Enumerations</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.impl.DataImpl#getAdditionalExternalData <em>Additional External Data</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

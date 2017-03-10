@@ -31,10 +31,10 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.impl.ViewpointResourcesImpl#getUseResource <em>Use Resource</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

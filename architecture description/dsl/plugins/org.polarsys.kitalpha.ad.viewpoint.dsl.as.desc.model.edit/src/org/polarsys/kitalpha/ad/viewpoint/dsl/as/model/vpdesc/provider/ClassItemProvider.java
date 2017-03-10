@@ -40,9 +40,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ClassItemProvider extends ViewpointClassifierItemProvider implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ClassItemProvider extends ViewpointClassifierItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

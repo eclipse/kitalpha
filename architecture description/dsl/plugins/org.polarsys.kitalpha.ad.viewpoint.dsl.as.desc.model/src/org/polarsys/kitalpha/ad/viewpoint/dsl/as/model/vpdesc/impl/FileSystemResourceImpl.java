@@ -22,11 +22,11 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.impl.FileSystemResourceImpl#getPath <em>Path</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.impl.FileSystemResourceImpl#isWorkspace <em>Workspace</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

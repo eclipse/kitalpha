@@ -25,6 +25,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.impl.AbstractFeatureImpl#getCardinality <em>Cardinality</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.impl.AbstractFeatureImpl#isChangeable <em>Changeable</em>}</li>
@@ -35,7 +36,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescPackage;
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.impl.AbstractFeatureImpl#isUnsettable <em>Unsettable</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.impl.AbstractFeatureImpl#isVolatile <em>Volatile</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

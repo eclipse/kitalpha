@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015 Thales Global Services S.A.S.
+ * Copyright (c) 2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -104,7 +104,7 @@ ruleDataSpec returns [EObject current=null]
        			$current, 
        			"imports",
         		lv_imports_1_0, 
-        		"Import");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.Import");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -122,7 +122,7 @@ ruleDataSpec returns [EObject current=null]
        			$current, 
        			"data",
         		lv_data_2_0, 
-        		"Data");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.Data");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -201,7 +201,7 @@ ruleImportNamespace returns [EObject current=null]
        			$current, 
        			"importedNamespace",
         		lv_importedNamespace_0_0, 
-        		"FQN");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.FQN");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -244,7 +244,7 @@ ruleImportURI returns [EObject current=null]
        			$current, 
        			"importURI",
         		lv_importURI_1_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -327,7 +327,7 @@ ruleData returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"FQN");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.FQN");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -349,7 +349,7 @@ ruleData returns [EObject current=null]
        			$current, 
        			"owned_annotations",
         		lv_owned_annotations_4_0, 
-        		"Annotation");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.Annotation");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -385,7 +385,7 @@ ruleData returns [EObject current=null]
        			$current, 
        			"description",
         		lv_description_7_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -415,7 +415,7 @@ ruleData returns [EObject current=null]
        			$current, 
        			"VP_Classes",
         		lv_VP_Classes_8_0, 
-        		"Class");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.Class");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -445,7 +445,7 @@ ruleData returns [EObject current=null]
        			$current, 
        			"VP_Enumerations",
         		lv_VP_Enumerations_9_0, 
-        		"Enumeration");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.Enumeration");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -512,7 +512,7 @@ ruleClass returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -538,7 +538,7 @@ ruleClass returns [EObject current=null]
        			$current, 
        			"description",
         		lv_description_5_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -561,7 +561,7 @@ ruleClass returns [EObject current=null]
        			$current, 
        			"icon",
         		lv_icon_7_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -620,7 +620,7 @@ ruleClass returns [EObject current=null]
        			$current, 
        			"Inheritences",
         		lv_Inheritences_13_0, 
-        		"AbstractSuperClass");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.AbstractSuperClass");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -642,7 +642,7 @@ ruleClass returns [EObject current=null]
        			$current, 
        			"Inheritences",
         		lv_Inheritences_15_0, 
-        		"AbstractSuperClass");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.AbstractSuperClass");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -664,7 +664,7 @@ ruleClass returns [EObject current=null]
        			$current, 
        			"abstract",
         		lv_abstract_17_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -682,7 +682,7 @@ ruleClass returns [EObject current=null]
        			$current, 
        			"owned_annotations",
         		lv_owned_annotations_18_0, 
-        		"Annotation");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.Annotation");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -704,7 +704,7 @@ ruleClass returns [EObject current=null]
        			$current, 
        			"VP_Class_Attributes",
         		lv_VP_Class_Attributes_20_0, 
-        		"Attribute");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.Attribute");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -726,7 +726,7 @@ ruleClass returns [EObject current=null]
        			$current, 
        			"VP_Classes_Associations",
         		lv_VP_Classes_Associations_22_0, 
-        		"AbstractAssociation");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.AbstractAssociation");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -748,7 +748,7 @@ ruleClass returns [EObject current=null]
        			$current, 
        			"VP_Class_Operations",
         		lv_VP_Class_Operations_24_0, 
-        		"Operation");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.Operation");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -802,7 +802,7 @@ ruleEnumeration returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"ID");
+        		"org.eclipse.xtext.common.Terminals.ID");
 	    }
 
 )
@@ -823,7 +823,7 @@ ruleEnumeration returns [EObject current=null]
        			$current, 
        			"owned_annotations",
         		lv_owned_annotations_4_0, 
-        		"Annotation");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.Annotation");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -841,7 +841,7 @@ ruleEnumeration returns [EObject current=null]
        			$current, 
        			"ownedValues",
         		lv_ownedValues_5_0, 
-        		"Value");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.Value");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -863,7 +863,7 @@ ruleEnumeration returns [EObject current=null]
        			$current, 
        			"ownedValues",
         		lv_ownedValues_7_0, 
-        		"Value");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.Value");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1082,7 +1082,7 @@ ruleLocalClassAssociation returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_1_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1104,7 +1104,7 @@ ruleLocalClassAssociation returns [EObject current=null]
        			$current, 
        			"description",
         		lv_description_3_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1126,7 +1126,7 @@ ruleLocalClassAssociation returns [EObject current=null]
        			$current, 
        			"type",
         		lv_type_5_0, 
-        		"Association_Types");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.Association_Types");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1144,7 +1144,7 @@ ruleLocalClassAssociation returns [EObject current=null]
        			$current, 
        			"cardinality",
         		lv_cardinality_6_0, 
-        		"Cardinalities");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.Cardinalities");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1178,24 +1178,21 @@ ruleLocalClassAssociation returns [EObject current=null]
 					{ 
 	 				  getUnorderedGroupHelper().select(grammarAccess.getLocalClassAssociationAccess().getUnorderedGroup_6(), 0);
 	 				}
-					({true}?=>(	otherlv_9='changeable:' 
+					({true}?=>(	otherlv_9='opposite:' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getLocalClassAssociationAccess().getChangeableKeyword_6_0_0());
+    	newLeafNode(otherlv_9, grammarAccess.getLocalClassAssociationAccess().getOppositeKeyword_6_0_0());
     }
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getLocalClassAssociationAccess().getChangeableEBooleanParserRuleCall_6_0_1_0()); 
-	    }
-		lv_changeable_10_0=ruleEBoolean		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getLocalClassAssociationRule());
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getLocalClassAssociationRule());
 	        }
-       		set(
-       			$current, 
-       			"changeable",
-        		lv_changeable_10_0, 
-        		"EBoolean");
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getLocalClassAssociationAccess().getOppositeLocalClassAssociationCrossReference_6_0_1_0()); 
+	    }
+		ruleFQN		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1212,24 +1209,24 @@ ruleLocalClassAssociation returns [EObject current=null]
 					{ 
 	 				  getUnorderedGroupHelper().select(grammarAccess.getLocalClassAssociationAccess().getUnorderedGroup_6(), 1);
 	 				}
-					({true}?=>(	otherlv_11='derived:' 
+					({true}?=>(	otherlv_11='changeable:' 
     {
-    	newLeafNode(otherlv_11, grammarAccess.getLocalClassAssociationAccess().getDerivedKeyword_6_1_0());
+    	newLeafNode(otherlv_11, grammarAccess.getLocalClassAssociationAccess().getChangeableKeyword_6_1_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getLocalClassAssociationAccess().getDerivedEBooleanParserRuleCall_6_1_1_0()); 
+	        newCompositeNode(grammarAccess.getLocalClassAssociationAccess().getChangeableEBooleanParserRuleCall_6_1_1_0()); 
 	    }
-		lv_derived_12_0=ruleEBoolean		{
+		lv_changeable_12_0=ruleEBoolean		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getLocalClassAssociationRule());
 	        }
        		set(
        			$current, 
-       			"derived",
-        		lv_derived_12_0, 
-        		"EBoolean");
+       			"changeable",
+        		lv_changeable_12_0, 
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1246,24 +1243,24 @@ ruleLocalClassAssociation returns [EObject current=null]
 					{ 
 	 				  getUnorderedGroupHelper().select(grammarAccess.getLocalClassAssociationAccess().getUnorderedGroup_6(), 2);
 	 				}
-					({true}?=>(	otherlv_13='ordered:' 
+					({true}?=>(	otherlv_13='derived:' 
     {
-    	newLeafNode(otherlv_13, grammarAccess.getLocalClassAssociationAccess().getOrderedKeyword_6_2_0());
+    	newLeafNode(otherlv_13, grammarAccess.getLocalClassAssociationAccess().getDerivedKeyword_6_2_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getLocalClassAssociationAccess().getOrderedEBooleanParserRuleCall_6_2_1_0()); 
+	        newCompositeNode(grammarAccess.getLocalClassAssociationAccess().getDerivedEBooleanParserRuleCall_6_2_1_0()); 
 	    }
-		lv_ordered_14_0=ruleEBoolean		{
+		lv_derived_14_0=ruleEBoolean		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getLocalClassAssociationRule());
 	        }
        		set(
        			$current, 
-       			"ordered",
-        		lv_ordered_14_0, 
-        		"EBoolean");
+       			"derived",
+        		lv_derived_14_0, 
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1280,24 +1277,24 @@ ruleLocalClassAssociation returns [EObject current=null]
 					{ 
 	 				  getUnorderedGroupHelper().select(grammarAccess.getLocalClassAssociationAccess().getUnorderedGroup_6(), 3);
 	 				}
-					({true}?=>(	otherlv_15='transient:' 
+					({true}?=>(	otherlv_15='ordered:' 
     {
-    	newLeafNode(otherlv_15, grammarAccess.getLocalClassAssociationAccess().getTransientKeyword_6_3_0());
+    	newLeafNode(otherlv_15, grammarAccess.getLocalClassAssociationAccess().getOrderedKeyword_6_3_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getLocalClassAssociationAccess().getTransientEBooleanParserRuleCall_6_3_1_0()); 
+	        newCompositeNode(grammarAccess.getLocalClassAssociationAccess().getOrderedEBooleanParserRuleCall_6_3_1_0()); 
 	    }
-		lv_transient_16_0=ruleEBoolean		{
+		lv_ordered_16_0=ruleEBoolean		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getLocalClassAssociationRule());
 	        }
        		set(
        			$current, 
-       			"transient",
-        		lv_transient_16_0, 
-        		"EBoolean");
+       			"ordered",
+        		lv_ordered_16_0, 
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1314,24 +1311,24 @@ ruleLocalClassAssociation returns [EObject current=null]
 					{ 
 	 				  getUnorderedGroupHelper().select(grammarAccess.getLocalClassAssociationAccess().getUnorderedGroup_6(), 4);
 	 				}
-					({true}?=>(	otherlv_17='unique:' 
+					({true}?=>(	otherlv_17='transient:' 
     {
-    	newLeafNode(otherlv_17, grammarAccess.getLocalClassAssociationAccess().getUniqueKeyword_6_4_0());
+    	newLeafNode(otherlv_17, grammarAccess.getLocalClassAssociationAccess().getTransientKeyword_6_4_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getLocalClassAssociationAccess().getUniqueEBooleanParserRuleCall_6_4_1_0()); 
+	        newCompositeNode(grammarAccess.getLocalClassAssociationAccess().getTransientEBooleanParserRuleCall_6_4_1_0()); 
 	    }
-		lv_unique_18_0=ruleEBoolean		{
+		lv_transient_18_0=ruleEBoolean		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getLocalClassAssociationRule());
 	        }
        		set(
        			$current, 
-       			"unique",
-        		lv_unique_18_0, 
-        		"EBoolean");
+       			"transient",
+        		lv_transient_18_0, 
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1348,24 +1345,24 @@ ruleLocalClassAssociation returns [EObject current=null]
 					{ 
 	 				  getUnorderedGroupHelper().select(grammarAccess.getLocalClassAssociationAccess().getUnorderedGroup_6(), 5);
 	 				}
-					({true}?=>(	otherlv_19='unsettable:' 
+					({true}?=>(	otherlv_19='unique:' 
     {
-    	newLeafNode(otherlv_19, grammarAccess.getLocalClassAssociationAccess().getUnsettableKeyword_6_5_0());
+    	newLeafNode(otherlv_19, grammarAccess.getLocalClassAssociationAccess().getUniqueKeyword_6_5_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getLocalClassAssociationAccess().getUnsettableEBooleanParserRuleCall_6_5_1_0()); 
+	        newCompositeNode(grammarAccess.getLocalClassAssociationAccess().getUniqueEBooleanParserRuleCall_6_5_1_0()); 
 	    }
-		lv_unsettable_20_0=ruleEBoolean		{
+		lv_unique_20_0=ruleEBoolean		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getLocalClassAssociationRule());
 	        }
        		set(
        			$current, 
-       			"unsettable",
-        		lv_unsettable_20_0, 
-        		"EBoolean");
+       			"unique",
+        		lv_unique_20_0, 
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1382,24 +1379,58 @@ ruleLocalClassAssociation returns [EObject current=null]
 					{ 
 	 				  getUnorderedGroupHelper().select(grammarAccess.getLocalClassAssociationAccess().getUnorderedGroup_6(), 6);
 	 				}
-					({true}?=>(	otherlv_21='volatile:' 
+					({true}?=>(	otherlv_21='unsettable:' 
     {
-    	newLeafNode(otherlv_21, grammarAccess.getLocalClassAssociationAccess().getVolatileKeyword_6_6_0());
+    	newLeafNode(otherlv_21, grammarAccess.getLocalClassAssociationAccess().getUnsettableKeyword_6_6_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getLocalClassAssociationAccess().getVolatileEBooleanParserRuleCall_6_6_1_0()); 
+	        newCompositeNode(grammarAccess.getLocalClassAssociationAccess().getUnsettableEBooleanParserRuleCall_6_6_1_0()); 
 	    }
-		lv_volatile_22_0=ruleEBoolean		{
+		lv_unsettable_22_0=ruleEBoolean		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getLocalClassAssociationRule());
+	        }
+       		set(
+       			$current, 
+       			"unsettable",
+        		lv_unsettable_22_0, 
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)))
+					{ 
+	 				  getUnorderedGroupHelper().returnFromSelection(grammarAccess.getLocalClassAssociationAccess().getUnorderedGroup_6());
+	 				}
+ 				)
+			)  |
+
+			( 
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getLocalClassAssociationAccess().getUnorderedGroup_6(), 7)}?=>(
+					{ 
+	 				  getUnorderedGroupHelper().select(grammarAccess.getLocalClassAssociationAccess().getUnorderedGroup_6(), 7);
+	 				}
+					({true}?=>(	otherlv_23='volatile:' 
+    {
+    	newLeafNode(otherlv_23, grammarAccess.getLocalClassAssociationAccess().getVolatileKeyword_6_7_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getLocalClassAssociationAccess().getVolatileEBooleanParserRuleCall_6_7_1_0()); 
+	    }
+		lv_volatile_24_0=ruleEBoolean		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getLocalClassAssociationRule());
 	        }
        		set(
        			$current, 
        			"volatile",
-        		lv_volatile_22_0, 
-        		"EBoolean");
+        		lv_volatile_24_0, 
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1423,15 +1454,15 @@ ruleLocalClassAssociation returns [EObject current=null]
 		{ 
 	        newCompositeNode(grammarAccess.getLocalClassAssociationAccess().getOwned_annotationsAnnotationParserRuleCall_7_0()); 
 	    }
-		lv_owned_annotations_23_0=ruleAnnotation		{
+		lv_owned_annotations_25_0=ruleAnnotation		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getLocalClassAssociationRule());
 	        }
        		add(
        			$current, 
        			"owned_annotations",
-        		lv_owned_annotations_23_0, 
-        		"Annotation");
+        		lv_owned_annotations_25_0, 
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.Annotation");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1476,7 +1507,7 @@ ruleExternalClassAssociation returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_1_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1498,7 +1529,7 @@ ruleExternalClassAssociation returns [EObject current=null]
        			$current, 
        			"description",
         		lv_description_3_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1520,7 +1551,7 @@ ruleExternalClassAssociation returns [EObject current=null]
        			$current, 
        			"type",
         		lv_type_5_0, 
-        		"Association_Types");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.Association_Types");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1538,7 +1569,7 @@ ruleExternalClassAssociation returns [EObject current=null]
        			$current, 
        			"cardinality",
         		lv_cardinality_6_0, 
-        		"Cardinalities");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.Cardinalities");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1593,7 +1624,7 @@ ruleExternalClassAssociation returns [EObject current=null]
        			$current, 
        			"changeable",
         		lv_changeable_11_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1627,7 +1658,7 @@ ruleExternalClassAssociation returns [EObject current=null]
        			$current, 
        			"derived",
         		lv_derived_13_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1661,7 +1692,7 @@ ruleExternalClassAssociation returns [EObject current=null]
        			$current, 
        			"ordered",
         		lv_ordered_15_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1695,7 +1726,7 @@ ruleExternalClassAssociation returns [EObject current=null]
        			$current, 
        			"transient",
         		lv_transient_17_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1729,7 +1760,7 @@ ruleExternalClassAssociation returns [EObject current=null]
        			$current, 
        			"unique",
         		lv_unique_19_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1763,7 +1794,7 @@ ruleExternalClassAssociation returns [EObject current=null]
        			$current, 
        			"unsettable",
         		lv_unsettable_21_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1797,7 +1828,7 @@ ruleExternalClassAssociation returns [EObject current=null]
        			$current, 
        			"volatile",
         		lv_volatile_23_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1829,7 +1860,7 @@ ruleExternalClassAssociation returns [EObject current=null]
        			$current, 
        			"owned_annotations",
         		lv_owned_annotations_24_0, 
-        		"Annotation");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.Annotation");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2006,7 +2037,7 @@ ruleAttribute returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_1_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2028,7 +2059,7 @@ ruleAttribute returns [EObject current=null]
        			$current, 
        			"description",
         		lv_description_3_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2050,7 +2081,7 @@ ruleAttribute returns [EObject current=null]
        			$current, 
        			"owned_type",
         		lv_owned_type_5_0, 
-        		"AbstractAttributeType");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.AbstractAttributeType");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2068,7 +2099,7 @@ ruleAttribute returns [EObject current=null]
        			$current, 
        			"cardinality",
         		lv_cardinality_6_0, 
-        		"Cardinalities");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.Cardinalities");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2104,7 +2135,7 @@ ruleAttribute returns [EObject current=null]
        			$current, 
        			"isId",
         		lv_isId_9_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2138,7 +2169,7 @@ ruleAttribute returns [EObject current=null]
        			$current, 
        			"changeable",
         		lv_changeable_11_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2172,7 +2203,7 @@ ruleAttribute returns [EObject current=null]
        			$current, 
        			"derived",
         		lv_derived_13_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2206,7 +2237,7 @@ ruleAttribute returns [EObject current=null]
        			$current, 
        			"ordered",
         		lv_ordered_15_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2240,7 +2271,7 @@ ruleAttribute returns [EObject current=null]
        			$current, 
        			"transient",
         		lv_transient_17_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2274,7 +2305,7 @@ ruleAttribute returns [EObject current=null]
        			$current, 
        			"unique",
         		lv_unique_19_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2308,7 +2339,7 @@ ruleAttribute returns [EObject current=null]
        			$current, 
        			"unsettable",
         		lv_unsettable_21_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2342,7 +2373,7 @@ ruleAttribute returns [EObject current=null]
        			$current, 
        			"volatile",
         		lv_volatile_23_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2382,7 +2413,7 @@ ruleAttribute returns [EObject current=null]
        			$current, 
        			"owned_values",
         		lv_owned_values_26_0, 
-        		"Value");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.Value");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2404,7 +2435,7 @@ ruleAttribute returns [EObject current=null]
        			$current, 
        			"owned_values",
         		lv_owned_values_28_0, 
-        		"Value");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.Value");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2426,7 +2457,7 @@ ruleAttribute returns [EObject current=null]
        			$current, 
        			"owned_annotations",
         		lv_owned_annotations_30_0, 
-        		"Annotation");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.Annotation");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2471,7 +2502,7 @@ ruleValue returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_1_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2493,7 +2524,7 @@ ruleValue returns [EObject current=null]
        			$current, 
        			"literal",
         		lv_literal_3_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2538,7 +2569,7 @@ ruleOperation returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_1_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2560,7 +2591,7 @@ ruleOperation returns [EObject current=null]
        			$current, 
        			"parameters",
         		lv_parameters_3_0, 
-        		"Parameter");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.Parameter");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2582,7 +2613,7 @@ ruleOperation returns [EObject current=null]
        			$current, 
        			"parameters",
         		lv_parameters_5_0, 
-        		"Parameter");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.Parameter");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2608,7 +2639,7 @@ ruleOperation returns [EObject current=null]
        			$current, 
        			"operation_type",
         		lv_operation_type_8_0, 
-        		"AbstractType");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.AbstractType");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2626,7 +2657,7 @@ ruleOperation returns [EObject current=null]
        			$current, 
        			"owned_annotations",
         		lv_owned_annotations_9_0, 
-        		"Annotation");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.Annotation");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2671,7 +2702,7 @@ ruleParameter returns [EObject current=null]
        			$current, 
        			"parameter_type",
         		lv_parameter_type_1_0, 
-        		"AbstractType");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.AbstractType");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2689,7 +2720,7 @@ ruleParameter returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2707,7 +2738,7 @@ ruleParameter returns [EObject current=null]
        			$current, 
        			"description",
         		lv_description_3_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2725,7 +2756,7 @@ ruleParameter returns [EObject current=null]
        			$current, 
        			"owned_annotations",
         		lv_owned_annotations_4_0, 
-        		"Annotation");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.Annotation");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2829,7 +2860,7 @@ ruleExternalType returns [EObject current=null]
        			$current, 
        			"cardinality",
         		lv_cardinality_3_0, 
-        		"Cardinalities");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.Cardinalities");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2889,7 +2920,7 @@ ruleLocalType returns [EObject current=null]
        			$current, 
        			"cardinality",
         		lv_cardinality_2_0, 
-        		"Cardinalities");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.Cardinalities");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2940,7 +2971,7 @@ ruleAnnotation returns [EObject current=null]
        			$current, 
        			"source",
         		lv_source_2_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2962,7 +2993,7 @@ ruleAnnotation returns [EObject current=null]
        			$current, 
        			"owned_details",
         		lv_owned_details_4_0, 
-        		"Detail");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.Detail");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3015,7 +3046,7 @@ ruleDetail returns [EObject current=null]
        			$current, 
        			"key",
         		lv_key_2_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3037,7 +3068,7 @@ ruleDetail returns [EObject current=null]
        			$current, 
        			"value",
         		lv_value_4_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 

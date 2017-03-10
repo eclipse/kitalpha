@@ -11,11 +11,16 @@
 
 package org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.provider;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -23,7 +28,11 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractSuperClass;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.LocalClassAssociation;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.LocalSuperClass;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescPackage;
 
 
@@ -34,9 +43,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescPackage;
  * @generated
  */
 public class LocalClassAssociationItemProvider extends
-		AbstractAssociationItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider,
-		IItemLabelProvider, IItemPropertySource {
+		AbstractAssociationItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -59,6 +66,7 @@ public class LocalClassAssociationItemProvider extends
 			super.getPropertyDescriptors(object);
 
 			addLocalTargetPropertyDescriptor(object);
+			addOppositePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -84,6 +92,82 @@ public class LocalClassAssociationItemProvider extends
 				 null,
 				 null,
 				 null));
+
+	}
+
+	/**
+	 * This adds a property descriptor for the Opposite feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addOppositePropertyDescriptor(Object object) {
+
+		itemPropertyDescriptors.add
+			(new ItemPropertyDescriptor(
+				((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_LocalClassAssociation_opposite_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LocalClassAssociation_opposite_feature", "_UI_LocalClassAssociation_type"),
+				 VpdescPackage.Literals.LOCAL_CLASS_ASSOCIATION__OPPOSITE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null){
+				
+				//Rewrited from EMF ERefernece addOppositePropertyDescriptor method
+				@Override
+				public Collection<?> getChoiceOfValues(Object object) {
+					
+					LocalClassAssociation reference = (LocalClassAssociation)object;
+					Class containingClass = (Class) reference.eContainer();
+					Class targetType = reference.getLocalTarget();
+					
+					if (containingClass == null || targetType == null){
+						return Collections.EMPTY_LIST;
+					}
+					 Collection<Object> result = new ArrayList<Object>(super.getChoiceOfValues(object));
+					 
+					 for (Iterator<Object> i = result.iterator(); i.hasNext(); ){
+						 LocalClassAssociation opposite = (LocalClassAssociation)i.next();
+						 
+						 if (opposite != null){
+							 if (reference == opposite){
+								 i.remove();
+							 } else {
+								 Class oppositeContainer = (Class) opposite.eContainer();
+								 Class oppositeTarget = opposite.getLocalTarget();
+								 if (oppositeContainer == null || oppositeTarget == null ||
+										 !isSupertype(oppositeContainer, targetType) || !isSupertype(containingClass, oppositeTarget)){
+									 i.remove();									 
+								 }
+							 }
+						 }
+					 }
+					
+					return result;
+				}
+				
+				private boolean isSupertype(Class c1, Class c2){
+					
+					if (c1 == c2){
+						return true;
+					}
+					
+					EList<AbstractSuperClass> inheritences = c2.getInheritences();
+
+					if (!inheritences.isEmpty()){
+						for (AbstractSuperClass c : inheritences) {
+							if (c instanceof LocalSuperClass){
+								return isSupertype(c1, ((LocalSuperClass) c).getSuperClass());
+							}
+						}
+					}
+					return false;
+				}
+			});
 
 	}
 

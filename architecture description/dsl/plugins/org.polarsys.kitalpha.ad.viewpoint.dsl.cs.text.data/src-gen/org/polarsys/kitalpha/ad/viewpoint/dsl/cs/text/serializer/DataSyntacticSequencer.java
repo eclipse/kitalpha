@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015 Thales Global Services S.A.S.
+ * Copyright (c) 2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -10,8 +10,8 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.serializer;
 
+import com.google.inject.Inject;
 import java.util.List;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
@@ -23,8 +23,6 @@ import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISyn
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.DataGrammarAccess;
-
-import com.google.inject.Inject;
 
 @SuppressWarnings("all")
 public class DataSyntacticSequencer extends AbstractSyntacticSequencer {
@@ -56,13 +54,13 @@ public class DataSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_Attribute___ValuesKeyword_6_0_LeftParenthesisKeyword_6_1_RightParenthesisKeyword_6_3__q.equals(syntax))
+			if (match_Attribute___ValuesKeyword_6_0_LeftParenthesisKeyword_6_1_RightParenthesisKeyword_6_3__q.equals(syntax))
 				emit_Attribute___ValuesKeyword_6_0_LeftParenthesisKeyword_6_1_RightParenthesisKeyword_6_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Class_AssociationsKeyword_11_0_q.equals(syntax))
+			else if (match_Class_AssociationsKeyword_11_0_q.equals(syntax))
 				emit_Class_AssociationsKeyword_11_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Class_AttributesKeyword_10_0_q.equals(syntax))
+			else if (match_Class_AttributesKeyword_10_0_q.equals(syntax))
 				emit_Class_AttributesKeyword_10_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Class_OperationsKeyword_12_0_q.equals(syntax))
+			else if (match_Class_OperationsKeyword_12_0_q.equals(syntax))
 				emit_Class_OperationsKeyword_12_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}

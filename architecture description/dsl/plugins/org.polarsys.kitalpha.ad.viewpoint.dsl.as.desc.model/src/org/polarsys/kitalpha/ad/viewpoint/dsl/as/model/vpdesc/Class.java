@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class#getVP_Classes_Associations <em>VP Classes Associations</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class#getVP_Class_Attributes <em>VP Class Attributes</em>}</li>
@@ -31,7 +32,6 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class#isAbstract <em>Abstract</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class#getVP_Class_Operations <em>VP Class Operations</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescPackage#getClass_()
  * @model

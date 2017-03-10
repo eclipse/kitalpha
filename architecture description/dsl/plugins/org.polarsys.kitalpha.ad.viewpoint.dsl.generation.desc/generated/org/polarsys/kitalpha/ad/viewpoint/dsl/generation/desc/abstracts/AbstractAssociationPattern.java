@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated on Wed Jul 09 15:21:12 CEST 2014 with EGF 1.2.0.v20140702-0648
+//Generated with EGF 1.4.1.v20161010-1511
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.abstracts;
 
 import java.util.*;
@@ -25,8 +14,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.util.ENamedElement
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.util.ECoreResourceManager;
 
 public class AbstractAssociationPattern
-		extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.abstracts.ClassAbstractContentElement {
+		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.abstracts.ClassAbstractContentElement {
 
 	public AbstractAssociationPattern() {
 		//Here is the constructor
@@ -43,8 +31,7 @@ public class AbstractAssociationPattern
 			orchestration((PatternContext) argument);
 
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 	}
 
@@ -59,36 +46,30 @@ public class AbstractAssociationPattern
 		return null;
 	}
 
-	protected void method_initContainingEClassName(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
-		eClassName = ((org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class) abstractAssociation
-				.eContainer()).getName();
+	protected void method_initContainingEClassName(final StringBuffer out, final PatternContext ctx) throws Exception {
+		eClassName = ((org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class) abstractAssociation.eContainer())
+				.getName();
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(),
-				"initContainingEClassName", out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "initContainingEClassName", out.toString());
 	}
 
-	protected void method_setAbstractAssociationParameter(
-			final StringBuffer out, final PatternContext ctx) throws Exception {
+	protected void method_setAbstractAssociationParameter(final StringBuffer out, final PatternContext ctx)
+			throws Exception {
 		//To be implemented by derided patterns 
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(),
-				"setAbstractAssociationParameter", out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setAbstractAssociationParameter", out.toString());
 	}
 
-	protected void method_setTargetEClass(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_setTargetEClass(final StringBuffer out, final PatternContext ctx) throws Exception {
 		//To be implemented by derided patterns 
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setTargetEClass",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setTargetEClass", out.toString());
 	}
 
-	protected void method_setAssociationBounds(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_setAssociationBounds(final StringBuffer out, final PatternContext ctx) throws Exception {
 		// Association cardinality
 
 		if (abstractAssociation.getCardinality() == Cardinalities.NOTHING_OR_MANY) {
@@ -106,12 +87,10 @@ public class AbstractAssociationPattern
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setAssociationBounds",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setAssociationBounds", out.toString());
 	}
 
-	protected void method_createElement(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_createElement(final StringBuffer out, final PatternContext ctx) throws Exception {
 		// Create the EReference
 
 		if (containingEClass != null && targetEClass != null) {
@@ -141,23 +120,20 @@ public class AbstractAssociationPattern
 														description,
 														true);
 			}
-			 **/
+			**/
 
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "createElement",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "createElement", out.toString());
 	}
 
-	protected void method_setAnnotationParameters(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_setAnnotationParameters(final StringBuffer out, final PatternContext ctx) throws Exception {
 		annotatableElement = abstractAssociation;
 		ecoreElement = ref;
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(),
-				"setAnnotationParameters", out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setAnnotationParameters", out.toString());
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractAssociation abstractAssociation;
@@ -169,15 +145,13 @@ public class AbstractAssociationPattern
 
 	protected java.lang.Integer associationLowerBound;
 
-	public void set_associationLowerBound(
-			java.lang.Integer associationLowerBound) {
+	public void set_associationLowerBound(java.lang.Integer associationLowerBound) {
 		this.associationLowerBound = associationLowerBound;
 	}
 
 	protected java.lang.Integer associationUpperBound;
 
-	public void set_associationUpperBound(
-			java.lang.Integer associationUpperBound) {
+	public void set_associationUpperBound(java.lang.Integer associationUpperBound) {
 		this.associationUpperBound = associationUpperBound;
 	}
 

@@ -27,10 +27,10 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.impl.ExternalClassAssociationImpl#getExternalTarget <em>External Target</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

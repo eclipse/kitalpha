@@ -6,11 +6,11 @@
   <fcore:FactoryComponent xmi:id="_VflTkI66EeGdJv40MVeUZQ" name="vpdslECoreGeneration">
     <contractContainer xmi:id="_chblsI66EeGdJv40MVeUZQ">
       <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_LZU_0I67EeGdJv40MVeUZQ"
-          name="vpdsl.model" invocationContracts="#_5J8pYp3QEeG-GeeUolvpHQ #_h-qLUn7BEeOLj8ldLiBqyA #_BYIgsJl-EeOtb7DKxmHeWg">
+          name="vpdsl.model" invocationContracts="#_5J8pYp3QEeG-GeeUolvpHQ #_h-qLUn7BEeOLj8ldLiBqyA #_BYIgsJl-EeOtb7DKxmHeWg #_38VJwgTlEeeSkMSAx8mTjw">
         <type xmi:type="domain:TypeDomain" xmi:id="_L1VmYI67EeGdJv40MVeUZQ"/>
       </contracts>
       <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_-3NWsI70EeGaBt8RXbnVpQ"
-          name="model.folder" invocationContracts="#_Wt4Q4I71EeGaBt8RXbnVpQ #_2VP3sJ3REeG-GeeUolvpHQ #_BZw4YJl-EeOtb7DKxmHeWg">
+          name="model.folder" invocationContracts="#_Wt4Q4I71EeGaBt8RXbnVpQ #_2VP3sJ3REeG-GeeUolvpHQ #_BZw4YJl-EeOtb7DKxmHeWg #_38VJxwTlEeeSkMSAx8mTjw">
         <type xmi:type="types:TypeString" xmi:id="__T-LMI70EeGaBt8RXbnVpQ"/>
       </contracts>
     </contractContainer>
@@ -405,6 +405,23 @@
                 called="#_dQsj4J8rEeGXfoQC7b9TYw"/>
           </elements>
         </libraries>
+        <libraries xmi:id="_tPY_kATdEeeSkMSAx8mTjw" name="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.clazz.content.postprocessing">
+          <elements xmi:id="_vu1dgATdEeeSkMSAx8mTjw" name="ProcessEOppositeAssociation"
+              superPattern="#_1gHooJ6kEeGBTNyLEq2oAQ" headerMethod="#_vu1dggTdEeeSkMSAx8mTjw"
+              conditionMethod="#_vu1dhATdEeeSkMSAx8mTjw" initMethod="#_vu1dgwTdEeeSkMSAx8mTjw"
+              footerMethod="#_vu1dhgTdEeeSkMSAx8mTjw">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_312A4ATdEeeSkMSAx8mTjw"
+                name="Java"/>
+            <methods xmi:id="_vu1dggTdEeeSkMSAx8mTjw" name="header" patternFilePath="templates/pattern._vu1dgATdEeeSkMSAx8mTjw/method._vu1dggTdEeeSkMSAx8mTjw.pt"/>
+            <methods xmi:id="_vu1dgwTdEeeSkMSAx8mTjw" name="init" patternFilePath="templates/pattern._vu1dgATdEeeSkMSAx8mTjw/method._vu1dgwTdEeeSkMSAx8mTjw.pt"/>
+            <methods xmi:id="_vu1dhATdEeeSkMSAx8mTjw" name="preCondition" patternFilePath="templates/pattern._vu1dgATdEeeSkMSAx8mTjw/method._vu1dhATdEeeSkMSAx8mTjw.pt"/>
+            <methods xmi:id="_vu1dhQTdEeeSkMSAx8mTjw" name="process" patternFilePath="templates/pattern._vu1dgATdEeeSkMSAx8mTjw/method._vu1dhQTdEeeSkMSAx8mTjw.pt"/>
+            <methods xmi:id="_vu1dhgTdEeeSkMSAx8mTjw" name="footer" patternFilePath="templates/pattern._vu1dgATdEeeSkMSAx8mTjw/method._vu1dhgTdEeeSkMSAx8mTjw.pt"/>
+            <parameters xmi:id="_Ex8NcATqEeeSkMSAx8mTjw" name="parameter" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdesc/1.0.0#//LocalClassAssociation"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_9Hqf0ATdEeeSkMSAx8mTjw"
+                called="#_vu1dhQTdEeeSkMSAx8mTjw"/>
+          </elements>
+        </libraries>
       </viewpoints>
     </viewpointContainer>
     <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_sCXQEI7SEeGbvKfttDHpfg">
@@ -413,7 +430,7 @@
       <invocations xmi:id="_h-qLUH7BEeOLj8ldLiBqyA" name="Load viewpoint data" invokedActivity="ftask:Task platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdescCommonDataLoad.fcore#_1L1eUPtNEeK-QL-B45qveg">
         <invocationContractContainer xmi:id="_h-qLUX7BEeOLj8ldLiBqyA">
           <invocationContracts xmi:id="_h-qLUn7BEeOLj8ldLiBqyA" factoryComponentContract="#_LZU_0I67EeGdJv40MVeUZQ"
-              invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdescCommonDataLoad.fcore#//@contractContainer/@contracts.0"/>
+              invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdescCommonDataLoad.fcore#_6m4KsPtNEeK-QL-B45qveg"/>
           <invocationContracts xmi:id="_h-qLVH7BEeOLj8ldLiBqyA" invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdescCommonDataLoad.fcore#//@contractContainer/@contracts.2"/>
           <invocationContracts xmi:id="_h-qLVn7BEeOLj8ldLiBqyA" targetInvocationContract="#_OCTq4I7UEeGbvKfttDHpfg #_gQZ_MqUgEeOWxfW4xf0FnQ"
               invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdescCommonDataLoad.fcore#//@contractContainer/@contracts.4"/>
@@ -466,6 +483,23 @@
                 elements="#_D_KG8IN9EeOrLd1N8v_fcw"/>
           </invocationContracts>
           <invocationContracts xmi:id="_2VP3sJ3REeG-GeeUolvpHQ" factoryComponentContract="#_-3NWsI70EeGaBt8RXbnVpQ"
+              invokedContract="#_sihW4JB_EeG0jOM0RGtE8Q"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_38VJwATlEeeSkMSAx8mTjw" name="Post-Processing of EReferences eOpposite"
+          invokedActivity="#_ottBcJB_EeG0jOM0RGtE8Q">
+        <invocationContractContainer xmi:id="_38VJwQTlEeeSkMSAx8mTjw">
+          <invocationContracts xmi:id="_38VJwgTlEeeSkMSAx8mTjw" factoryComponentContract="#_LZU_0I67EeGdJv40MVeUZQ"
+              invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Model_driven_pattern_strategy_task.fcore#_DgB2IP6fEd64XaYPo3s6sPg"/>
+          <invocationContracts xmi:id="_38VJwwTlEeeSkMSAx8mTjw" invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Model_driven_pattern_strategy_task.fcore#_L6JSwAHAEd-4faJMEplCjxw">
+            <type xmi:type="pattern:TypePatternExecutionReporter" xmi:id="_38VJxATlEeeSkMSAx8mTjw"
+                value="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.reporter.ECoreModelReporter"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_38VJxQTlEeeSkMSAx8mTjw" invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Model_driven_pattern_strategy_task.fcore#_nz1HkSCaEd-Sse0r9LJWbA">
+            <type xmi:type="pattern:TypePatternList" xmi:id="_38VJxgTlEeeSkMSAx8mTjw"
+                elements="#_tPY_kATdEeeSkMSAx8mTjw"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_38VJxwTlEeeSkMSAx8mTjw" factoryComponentContract="#_-3NWsI70EeGaBt8RXbnVpQ"
               invokedContract="#_sihW4JB_EeG0jOM0RGtE8Q"/>
         </invocationContractContainer>
       </invocations>
