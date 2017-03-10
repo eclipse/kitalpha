@@ -44,6 +44,7 @@ import org.polarsys.kitalpha.ad.common.AD_Log;
 import org.polarsys.kitalpha.ad.common.utils.URIHelper;
 import org.polarsys.kitalpha.ad.metadata.helpers.MetadataHelper;
 import org.polarsys.kitalpha.ad.metadata.helpers.ViewpointMetadata;
+import org.polarsys.kitalpha.ad.metadata.metadata.ViewpointReference;
 import org.polarsys.kitalpha.ad.services.Activator;
 import org.polarsys.kitalpha.ad.services.Messages;
 import org.polarsys.kitalpha.ad.services.ViewpointContextProvider;
@@ -183,11 +184,12 @@ public class ViewpointManager {
 		ViewpointMetadata viewpointMetadata = MetadataHelper.getViewpointMetadata(context);
 		if (!viewpointMetadata.hasMetadata()) {
 			URI uri = viewpointMetadata.getExpectedMetadataStorageURI();
-			error.add(new Status(IStatus.ERROR, Activator.getDefault().getBundle().getSymbolicName(), "Cannot find metadata resource: "+uri.toPlatformString(false)));
+			error.add(newErrorStatus("Cannot find metadata resource: "+uri.toPlatformString(false)));
 			return error;
 		}
 		Map<String, Version> availableViewpoints = computeAvailableViewpointVersions();
-		Map<String, Version> viewpointUsages = viewpointMetadata.getViewpointReferences();
+		Map<String, Version> viewpointUsages = new HashMap<String, Version>();  
+		collectViewpointUsages(viewpointUsages, viewpointMetadata, error);
 
 		for (Entry<String, Version> usage : viewpointUsages.entrySet()) {
 			IStatus res = useViewpoint(availableViewpoints, usage.getKey(), usage.getValue());
@@ -198,15 +200,35 @@ public class ViewpointManager {
 			return error;
 		return Status.OK_STATUS;
 	}
+
+	private static void collectViewpointUsages(Map<String, Version> collector, ViewpointMetadata viewpointMetadata, MultiStatus error) {
+		 for (ViewpointReference ref : viewpointMetadata.getAllViewpointReferences())
+		 {
+			 String vpId = ref.getVpId();
+			 Version existingVersion = collector.get(vpId);
+			 Version newVersion = ref.getVersion();
+			 if (areEquivalentTo(existingVersion, newVersion))
+				 collector.put(vpId, newVersion);
+			 else {
+				 error.add(newErrorStatus("The viewpoint '"+vpId+"' is needed in incompatible versions :"+existingVersion.toString()+" / "+newVersion.toString() ));
+			 }
+		 }
+	}
 	
 	public static IStatus checkViewpointCompliancy(ResourceSet context, String vpId) {
+		MultiStatus error = new MultiStatus(Activator.getDefault().getBundle().getSymbolicName(), 0, "Error with used viewpoints", null);
 		Map<String, Version> availableViewpoints = computeAvailableViewpointVersions();
 		ViewpointMetadata viewpointMetadata = MetadataHelper.getViewpointMetadata(context);
-		Map<String, Version> viewpointUsages = viewpointMetadata.getViewpointReferences();
+		Map<String, Version> viewpointUsages = new HashMap<String, Version>();  
+
+		collectViewpointUsages(viewpointUsages, viewpointMetadata, error);
+		
+		if (!error.isOK())
+			return error;
 		if (viewpointUsages.containsKey(vpId)) {
 			return useViewpoint(availableViewpoints, vpId, viewpointUsages.get(vpId));
 		}
-		return new Status(IStatus.ERROR, Activator.getDefault().getBundle().getSymbolicName(), "Not used viewpoint '" + vpId + "'");
+		return newErrorStatus( "Not used viewpoint '" + vpId + "'");
 	}
 	
 	private static Map<String, Version> computeAvailableViewpointVersions() {
@@ -240,14 +262,18 @@ public class ViewpointManager {
 	private static IStatus useViewpoint(Map<String, Version> availableViewpoints, String id, Version version) {
 		for (Entry<String, Version> res : availableViewpoints.entrySet()) {
 			if (res.getKey().equals(id)) {
-				if (version == null || areEquivalentTo(version, res.getValue()))
+				if (areEquivalentTo(version, res.getValue()))
 					return Status.OK_STATUS;
-				return new Status(IStatus.ERROR, Activator.getDefault().getBundle().getSymbolicName(), "Expecting version '" + version + "' for viewpoint '" + id + "' (current version: '" + res.getValue() + "')");
+				return newErrorStatus("Expecting version '" + version + "' for viewpoint '" + id + "' (current version: '" + res.getValue() + "')");
 			}
 		}
-		return new Status(IStatus.ERROR, Activator.getDefault().getBundle().getSymbolicName(), "Missing viewpoint '" + id + "'");
+		return newErrorStatus("Missing viewpoint '" + id + "'");
 	}
 
+	private static IStatus newErrorStatus(String msg) {
+		return new Status(IStatus.ERROR, Activator.getDefault().getBundle().getSymbolicName(), msg);
+	}
+	
 	private static boolean areEquivalentTo(Version v1, Version v2) {
 		if (v1 == null || v2 == null)
 			return true;

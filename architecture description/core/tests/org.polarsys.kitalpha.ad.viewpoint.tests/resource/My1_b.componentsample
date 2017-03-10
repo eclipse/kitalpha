@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ComponentSample:ComponentPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:ComponentSample="http://www.polarsys.org/kitalpha/ComponentSample/1.0.0">
+  <components xmi:type="ComponentSample:HardwareComponent" name="H1_b"/>
+</ComponentSample:ComponentPackage>
