@@ -1,0 +1,39 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _08tcQJCMEeaf3P1eYGh88w,_wswEAI-9EeaRJJ4zjpMAgQ,_EjWIwJEjEeaf3P1eYGh88w
+Element-Name: Activity Explorer Actions
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _2F-uUAKDEeeK9qjOp-YPLA
+Runtime-Version: 2.1.0.201606221726
+Save-Time: 3/6/17 5:36 PM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+with [get-view "Project Explorer" | get-tree] {
+    select "example/example.aird" | get-menu Open | click
+    select "example/example.aird" | get-menu "Open Activity Explorer" | click
+}
+with [get-editor example] {
+    get-tab-folder | get-tab-item "Component Sample Architecture" | click
+    get-section "Diagrams of Component Sample Architecture" | get-link "Create a new Diagram" | click
+}
+get-window "New ComponentSampleDiagram" | get-button OK | click
+get-button "Save All (M1+M2+S)" | click
+get-editor example | close
+get-editor "New ComponentSampleDiagram" | get-diagram -index 1 | get-edit-part -name "New ComponentSampleDiagram" 
+    | get-property type | equals Sirius | verify-true
+get-view "Project Explorer" | get-tree | select "example/example.aird" | get-menu "Open Activity Explorer" | click
+get-editor example | get-label "Process Map of example" | get-property caption | equals "Process Map of example" 
+    | verify-true
+get-editor "New ComponentSampleDiagram" | click
+get-editor "New ComponentSampleDiagram" | get-diagram -index 1 | get-edit-part -name "New ComponentSampleDiagram" 
+    | get-property type | equals Sirius | verify-true
+get-view "Project Explorer" | get-tree | select "example/example.aird" | get-menu "Go To Activity Explorer" | click
+get-editor example | get-label "Process Map of example" | get-property caption | equals "Process Map of example" 
+    | verify-true
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

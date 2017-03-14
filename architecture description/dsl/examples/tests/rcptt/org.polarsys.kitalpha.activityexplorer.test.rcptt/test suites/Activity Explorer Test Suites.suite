@@ -4,8 +4,8 @@ Element-Name: Activity Explorer Test Suites
 Element-Type: testsuite
 Element-Version: 2.0
 Id: _Dl0sYJEqEeaf3P1eYGh88w
-Runtime-Version: 2.0.2.201511100828
-Save-Time: 10/13/16 11:47 AM
+Runtime-Version: 2.1.0.201606221726
+Save-Time: 3/6/17 5:19 PM
 
 ------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8
 Content-Type: text/testcase
@@ -16,5 +16,6 @@ _ooIJIJEkEeaf3P1eYGh88w	// kind: 'test' name: 'Diagram Creation Many Sessions' p
 _tBw0gI8DEeaRJJ4zjpMAgQ	// kind: 'test' name: 'Activity Explorer Title - Ecore' path: '../test cases/Activity Explorer Title - Ecore.test'
 _Z8WtsJEjEeaf3P1eYGh88w	// kind: 'test' name: 'Component Sample Activity Explorer' path: '../test cases/Component Sample Activity Explorer.test'
 _-nlNkJElEeaf3P1eYGh88w	// kind: 'test' name: 'Restarting and Restauring session' path: '../test cases/Restarting and Restauring session.test'
+_2F-uUAKDEeeK9qjOp-YPLA	// kind: 'test' name: 'Go to Activity Explorer Action' path: '../test cases/Go to Activity Explorer Action.test'
 
 ------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8--

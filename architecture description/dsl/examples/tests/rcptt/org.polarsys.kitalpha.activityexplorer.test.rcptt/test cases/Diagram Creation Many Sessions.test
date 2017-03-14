@@ -6,8 +6,8 @@ Element-Type: testcase
 Element-Version: 3.0
 External-Reference: 
 Id: _ooIJIJEkEeaf3P1eYGh88w
-Runtime-Version: 2.0.2.201511100828
-Save-Time: 10/13/16 11:17 AM
+Runtime-Version: 2.1.0.201606221726
+Save-Time: 3/6/17 4:34 PM
 Testcase-Type: ecl
 
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
@@ -22,7 +22,6 @@ with [get-view "Project Explorer" | get-tree] {
 get-tab-folder -index 2 | get-property activePage | equals "Example I" | verify-true
 with [get-editor "Example I"] {
     get-tab-folder | get-tab-item "Component Sample Architecture" | click
-    get-section "Diagrams of Component Sample Architecture" | click
 }
 get-editor "Example I" | get-section "Diagrams Viewer" | get-tree | get-property itemCount | equals 0 | verify-true
 get-view "Project Explorer" | get-tree | select " example2/example.aird" | get-menu "Open Activity Explorer" | click
@@ -62,7 +61,6 @@ with [get-editor "Example I"] {
 get-tab-folder -index 2 | get-property activePage | equals "Example II" | verify-true
 with [get-editor "Example II"] {
     get-tab-folder | get-tab-item "Component Sample Architecture" | click
-    get-section "Diagrams of Component Sample Architecture" | click
 }
 get-editor "Example II" | get-section "Diagrams Viewer" | get-tree | get-property itemCount | equals 0 | verify-true
 get-editor "Example II" | get-section "Diagrams of Component Sample Architecture" | get-link "Create a new Diagram" 

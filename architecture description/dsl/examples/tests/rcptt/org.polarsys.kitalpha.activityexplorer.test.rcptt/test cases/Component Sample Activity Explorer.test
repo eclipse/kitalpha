@@ -6,8 +6,8 @@ Element-Type: testcase
 Element-Version: 3.0
 External-Reference: 
 Id: _Z8WtsJEjEeaf3P1eYGh88w
-Runtime-Version: 2.0.2.201511100828
-Save-Time: 10/13/16 11:07 AM
+Runtime-Version: 2.1.0.201606221726
+Save-Time: 3/6/17 4:31 PM
 Testcase-Type: ecl
 
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
@@ -20,7 +20,6 @@ with [get-view "Project Explorer" | get-tree] {
 }
 with [get-editor example] {
     get-link "" | click
-    get-section "Diagrams of Component Sample Architecture" | click
 }
 get-editor example | get-section "Diagrams of Component Sample Architecture" 
     | get-link "Set Name To Component Sample Model" | get-property "isEnabled()" | equals true | verify-true
@@ -34,7 +33,6 @@ with [get-window "Name of Component Sample Model"] {
 }
 get-tab-folder -index 2 | get-property activePage | equals "My Example Of Component Sample" | verify-true
 with [get-editor "My Example Of Component Sample" | get-section "Diagrams of Component Sample Architecture"] {
-    click
     get-link "Create a new Diagram" | click
 }
 get-editor "My Example Of Component Sample" | get-section "Diagrams Viewer" | get-tree | get-property itemCount 
