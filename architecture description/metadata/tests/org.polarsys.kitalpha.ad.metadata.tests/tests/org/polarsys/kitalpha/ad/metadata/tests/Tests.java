@@ -25,6 +25,10 @@ public class Tests {
 		suite.addTest(new TestSuite(BasicTests2.class));
 		suite.addTest(new TestSuite(ComponentSampleTests2.class));
 		suite.addTest(new TestSuite(ComponentSampleTests.class));
+		suite.addTest(new TestSuite(ModelTests1.class));
+		suite.addTest(new TestSuite(ModelTests2.class));
+		suite.addTest(new TestSuite(ModelTests3.class));
+		suite.addTest(new TestSuite(ModelTests4.class));
 		return suite;
 	}
 

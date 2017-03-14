@@ -27,10 +27,10 @@ public class ModelTests1 extends ModelTests {
 	}
 
 
-//	public void testManager2() throws Exception {
-//		assertFalse(m.isReferenced("org.polarsys.kitalpha.vp.componentsampleperformance"));
-//		assertTrue(m.isReferenced("org.polarsys.kitalpha.vp.componentsamplesafety"));  // referenced into linked afm
-//	}
+	public void testManager2() throws Exception {
+		assertFalse(m.isReferenced("org.polarsys.kitalpha.vp.componentsampleperformance"));
+		assertTrue(m.isReferenced("org.polarsys.kitalpha.vp.componentsamplesafety"));  // referenced into linked afm
+	}
 
 	public void testManager1() throws Exception {
 		assertTrue(m.hasMetadata());

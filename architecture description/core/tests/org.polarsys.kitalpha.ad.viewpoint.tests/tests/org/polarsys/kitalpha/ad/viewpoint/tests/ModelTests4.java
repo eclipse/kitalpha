@@ -27,9 +27,9 @@ public class ModelTests4 extends ModelTests {
 	}
 
 
-//	public void testManager4() throws Exception {
-//		assertTrue(m.isReferenced("org.polarsys.kitalpha.vp.componentsampleperformance"));
-//	}
+	public void testManager4() throws Exception {
+		assertTrue(m.isReferenced("org.polarsys.kitalpha.vp.componentsampleperformance"));
+	}
 
 
 	public void testManager6() throws Exception {

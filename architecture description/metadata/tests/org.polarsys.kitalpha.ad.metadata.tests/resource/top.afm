@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata:Metadata xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:metadata="http://www.polarsys.org/kitalpha/ad/metadata/1.0.0" id="top">
+  <viewpointReferences id="aaa" vpId="vp:top"/>
+  <additionalMetadata href="1.afm#1"/>
+  <additionalMetadata href="2.afm#2"/>
+  <additionalMetadata href="3.afm#3"/>
+</metadata:Metadata>

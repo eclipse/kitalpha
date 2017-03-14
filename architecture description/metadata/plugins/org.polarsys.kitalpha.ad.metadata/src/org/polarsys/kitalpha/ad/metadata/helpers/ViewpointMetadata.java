@@ -12,8 +12,10 @@ package org.polarsys.kitalpha.ad.metadata.helpers;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -50,25 +52,50 @@ public class ViewpointMetadata {
 		return getViewpointReferences();
 	}
 	
+	/**
+	 * Gather all ViewpointReference objects accessible from this object.
+	 * 
+	 * @return a list of ViewpointReference objects 
+	 */
 	public List<ViewpointReference> getAllViewpointReferences() {
 		List<ViewpointReference> result = new ArrayList<>();
 		
 		Metadata metadata = getMetadataStorage();
 
-		collectViewpointReferences(result, metadata);
+		for (Metadata meta : collectAdditionalMetadata(new ArrayList<Metadata>(), metadata)) {
+			result.addAll(meta.getViewpointReferences());
+		}
 
 		return result;
 	}
 	
-	private void collectViewpointReferences(List<ViewpointReference> result, Metadata metadata) {
+	private List<Metadata> collectAdditionalMetadata(List<Metadata> collector, Metadata metadata)
+	{
 		if (metadata != null)
 		{
-			result.addAll(metadata.getViewpointReferences());
-			for (Metadata child : metadata.getAdditionalMetadata())
-				collectViewpointReferences(result, child);
-		}		
-	}
+			// Breadth first search instead of depth first search: each node may hide its children.
 
+			Queue<Metadata> toVisit = new LinkedList<>();  
+			toVisit.add(metadata);
+			while (!toVisit.isEmpty())
+			{
+				Metadata poll = toVisit.poll();
+				if (poll == null)
+					return collector;
+				if (collector.contains(poll))
+					throw new IllegalStateException("A cycle has been detected");
+				collector.add(poll);
+				toVisit.addAll(poll.getAdditionalMetadata());
+			}
+		}	
+		return collector;
+	}
+	
+	/**
+	 * Handle only ViewpointReference objects owned by this object.
+	 * 
+	 * @return a map: vpid <-> version 
+	 */
 	public Map<String, Version> getViewpointReferences() {
 		Map<String, Version> id2version = new HashMap<String, Version>();
 		if (context.getResources().isEmpty())
@@ -84,16 +111,25 @@ public class ViewpointMetadata {
 		return id2version;
 	}
 
+	/**
+	 * Get the version currently in use of the given viewpoint. The method will look among all accessible Metadata objects. 
+	 * 
+	 * @param vpResource
+	 * @return a version or null if the viewpoint is not in use or has no version specified
+	 */
 	public Version getVersion(org.polarsys.kitalpha.resourcereuse.model.Resource vpResource) {
 		Metadata metadata = getMetadataStorage();
 		if (metadata == null)
 			throw new IllegalStateException("cannot find metadata resource");
 
-		for (ViewpointReference uv : new ArrayList<ViewpointReference>(metadata.getViewpointReferences())) {
-			if (vpResource.getId().equals(uv.getVpId())) {
-				return uv.getVersion();
+		for (Metadata meta : collectAdditionalMetadata(new ArrayList<Metadata>(), metadata)) {
+			for (ViewpointReference uv : new ArrayList<ViewpointReference>(meta.getViewpointReferences())) {
+				if (vpResource.getId().equals(uv.getVpId())) {
+					return uv.getVersion();
+				}
 			}
 		}
+
 		return null;
 	}
 
@@ -184,8 +220,8 @@ public class ViewpointMetadata {
 	
 	public boolean isReferenced(String id) {
 		Metadata metadata = getMetadataStorage();
-		if (metadata != null) {
-			for (ViewpointReference uv : metadata.getViewpointReferences()) {
+		for (Metadata meta : collectAdditionalMetadata(new ArrayList<Metadata>(), metadata)) {
+			for (ViewpointReference uv : meta.getViewpointReferences()) {
 				if (id.equals(uv.getVpId()))
 					return true;
 			}
@@ -203,8 +239,8 @@ public class ViewpointMetadata {
 	
 	public boolean isInactive(String id) {
 		Metadata metadata = getMetadataStorage();
-		if (metadata != null) {
-			for (ViewpointReference uv : metadata.getViewpointReferences()) {
+		for (Metadata meta : collectAdditionalMetadata(new ArrayList<Metadata>(), metadata)) {
+			for (ViewpointReference uv : meta.getViewpointReferences()) {
 				if (id.equals(uv.getVpId()))
 					return uv.isInactive();
 			}
