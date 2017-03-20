@@ -153,15 +153,17 @@ public class ViewpointReferenceItemProvider extends MetadataElementItemProvider 
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated Not
 	 */
 	@Override
 	public String getText(Object object) {
 
-		String label = ((ViewpointReference)object).getId();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ViewpointReference_type") :
-			getString("_UI_ViewpointReference_type") + " " + label;
+		String label = ((ViewpointReference)object).getVpId();
+		String id = ((ViewpointReference)object).getId();
+		if ( label == null || label.length() == 0)
+			return id == null ? "" : id;
+			
+		return getString("_UI_ViewpointReference_type") + ": " + label;
 
 	}
 	
