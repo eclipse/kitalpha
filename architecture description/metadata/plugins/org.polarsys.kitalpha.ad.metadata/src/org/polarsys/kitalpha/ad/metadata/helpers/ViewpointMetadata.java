@@ -260,6 +260,8 @@ public class ViewpointMetadata {
 	 * @return
 	 */
 	public Resource initMetadataStorage() {
+		if (hasMetadata())
+			return getMetadataStorage().eResource();
 		return initMetadataStorage(getExpectedMetadataStorageURI());
 
 	}

@@ -100,6 +100,9 @@ public class ModelTests1 extends ModelTests {
 	}
 	
 	public void testManager9() throws Exception {
+		for (org.eclipse.emf.ecore.resource.Resource r : set.getResources()) {
+			assertFalse(r.isModified());
+		}
 		
 	}
 	

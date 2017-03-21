@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016-2017 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -13,6 +13,7 @@ package org.polarsys.kitalpha.ad.metadata.tests;
 
 import java.util.Map;
 
+import org.eclipse.emf.ecore.resource.Resource;
 import org.osgi.framework.Version;
 import org.polarsys.kitalpha.resourcereuse.helper.ResourceReuse;
 
@@ -133,6 +134,15 @@ public class ComponentSampleTests extends ModelTests {
 		assertEquals(1, viewpointUsages.size());
 		version = viewpointUsages.get(resource.getId());
 		assertTrue(version.equals(new Version("2.0.0")));
+	}
+	
+	public void testHelper11() throws Exception {
+		for (Resource r : set.getResources()) {
+			if ("componentsample".equals(r.getURI().fileExtension()))
+				assertFalse(r.isModified());
+			else if ("afm".equals(r.getURI().fileExtension()))
+				assertTrue(r.isModified());
+		}
 	}
 
 }

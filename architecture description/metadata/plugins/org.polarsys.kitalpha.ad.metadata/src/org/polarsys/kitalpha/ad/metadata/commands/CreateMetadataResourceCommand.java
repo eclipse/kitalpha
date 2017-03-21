@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016-2017 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -13,6 +13,7 @@ package org.polarsys.kitalpha.ad.metadata.commands;
 import java.util.Collection;
 import java.util.Collections;
 
+import org.eclipse.emf.common.command.AbstractCommand;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -24,7 +25,7 @@ import org.polarsys.kitalpha.ad.metadata.metadata.MetadataFactory;
  * @author Thomas Guiu
  * 
  */
-public class CreateMetadataResourceCommand extends MetadataCommand {
+public class CreateMetadataResourceCommand extends MetadataCommand implements AbstractCommand.NonDirtying{
 
 	private URI uri;
 	private ResourceSet resourceSet;
