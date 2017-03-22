@@ -4,8 +4,8 @@ Element-Name: ad-core
 Element-Type: testsuite
 Element-Version: 2.0
 Id: _EHoNoNKAEea3N_BJ6PbD3w
-Runtime-Version: 2.0.2.201511100828
-Save-Time: 1/4/17 2:17 PM
+Runtime-Version: 2.1.0.201606221726
+Save-Time: 3/24/17 9:17 AM
 
 ------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8
 Content-Type: text/testcase
@@ -44,5 +44,11 @@ _HAL8kL3vEea1WotcWpS-kw	// kind: 'test' name: 'viewpointView_0007' path: 'viewpo
 _nVl1cb4iEea1WotcWpS-kw	// kind: 'test' name: 'viewpointView_0008' path: 'viewpointView/viewpointView_0008.test'
 _BgX4kb4pEea1WotcWpS-kw	// kind: 'test' name: 'viewpointView_0009' path: 'viewpointView/viewpointView_0009.test'
 _otD2Ub4wEea1WotcWpS-kw	// kind: 'test' name: 'viewpointView_0010' path: 'viewpointView/viewpointView_0010.test'
+_YbDEoBBnEeeIb6T5EKtzmg	// kind: 'test' name: 'viewpointManagerView_00012' path: 'viewpointManagerView/viewpointManagerView_00012.test'
+_TSmusBBoEeeIb6T5EKtzmg	// kind: 'test' name: 'viewpointManagerView_00013' path: 'viewpointManagerView/viewpointManagerView_00013.test'
+_N62UwNM8EeaNHYyDOA2Mcg	// kind: 'test' name: 'viewpointService_0003' path: 'viewpointService/viewpointService_0003.test'
+_sSfMINM9EeaNHYyDOA2Mcg	// kind: 'test' name: 'viewpointService_0004' path: 'viewpointService/viewpointService_0004.test'
+_1_ri0NNAEeaNHYyDOA2Mcg	// kind: 'test' name: 'viewpointService_0005' path: 'viewpointService/viewpointService_0005.test'
+_5bVKUNNAEeaNHYyDOA2Mcg	// kind: 'test' name: 'viewpointService_0006' path: 'viewpointService/viewpointService_0006.test'
 
 ------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8--

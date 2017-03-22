@@ -65,11 +65,6 @@ public class WorkspaceResourceChecker extends ModelCommand {
 			if (iResource != null && !iResource.isAccessible()){
 				throw new ModelCommandException(Messages.bind(Messages.RESOURCE_INACCESSIBLE, iResource.getName()));
 			}
-
-			if (iResource != null && iResource.getResourceAttributes().isReadOnly()){
-				throw new ModelCommandException(Messages.bind(Messages.RESOURCE_READONLY, iResource.getName()));
-			}
-			
 		}
 	}
 

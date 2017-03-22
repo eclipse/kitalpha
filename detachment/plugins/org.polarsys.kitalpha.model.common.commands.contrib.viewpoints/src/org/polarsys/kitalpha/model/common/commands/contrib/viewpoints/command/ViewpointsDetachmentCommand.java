@@ -98,6 +98,9 @@ public class ViewpointsDetachmentCommand extends ModelCommand {
 		Collection<EObject> eObjectToRemove = new HashSet<EObject>();
 		for (Resource resource : editingDomain.getResourceSet().getResources()) 
 		{
+			// don't care about readonly resource (it includes resources from the platform)
+			if (editingDomain.isReadOnly(resource))
+				continue;
 			if (!resource.getContents().isEmpty() && resource.getContents().get(0) instanceof Metadata)
 			{
 				Metadata root = (Metadata)resource.getContents().get(0);

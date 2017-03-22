@@ -4,8 +4,8 @@ Element-Name: DetachmentTestSuit
 Element-Type: testsuite
 Element-Version: 2.0
 Id: _GNAGQHXcEea2Ve0UEUBuKQ
-Runtime-Version: 2.0.2.201511100828
-Save-Time: 11/25/16 2:56 PM
+Runtime-Version: 2.1.0.201606221726
+Save-Time: 3/24/17 12:39 PM
 
 ------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8
 Content-Type: text/testcase
@@ -26,5 +26,9 @@ _pPR04HN5EeaIXORVNWg1aA	// kind: 'test' name: 'SessionOpenedResources' path: '..
 _1RZ8EHXAEea2Ve0UEUBuKQ	// kind: 'test' name: 'SessionOpenedViewpointsResources' path: '../test cases/SessionOpenedViewpointsResources.test'
 _HRvCULI4EeapGbjeeI_tcw	// kind: 'test' name: 'DetachmentWithViewpointInWorkspace' path: '../test cases/DetachmentWithViewpointInWorkspace.test'
 _6XbC8LDBEeaPxMtdcBu6Pg	// kind: 'test' name: 'SessionOpenedWithSiriusPreferencesDeactivated' path: '../test cases/SessionOpenedWithSiriusPreferencesDeactivated.test'
+_88lF4IVUEeaAeqHNRvXNqw	// kind: 'test' name: 'Detachment_00020' path: '../test cases/Detachment_00020/Detachment_00020.test'
+_lffSIA_1EeelGOkyatCORw	// kind: 'test' name: 'Detachment_00024' path: '../test cases/Detachment_00024/Detachment_00024.test'
+_5mvtIBBqEeeIb6T5EKtzmg	// kind: 'test' name: 'Detachment_00025' path: '../test cases/Detachment_00025/Detachment_00025.test'
+_zRTtsBBtEeeIb6T5EKtzmg	// kind: 'test' name: 'Detachment_00026' path: '../test cases/Detachment_00026/Detachment_00026.test'
 
 ------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8--

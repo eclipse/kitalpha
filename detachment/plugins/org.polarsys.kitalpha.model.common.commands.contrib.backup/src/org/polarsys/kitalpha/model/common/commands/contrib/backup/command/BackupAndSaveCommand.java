@@ -95,7 +95,7 @@ public class BackupAndSaveCommand extends ModelCommand {
 							if (resource2 != null){
 								backupResource(resource2, backupPath, subMonitor.newChild(1));
 								subMonitor.subTask(Messages.bind(Messages.SAVE_RESOURCE_MESSAGE, resource2.getURI()));
-								if (saveResources){
+								if (saveResources && resource2.isModified()){
 									resource2.save(null);
 								}
 								subMonitor.worked(1);
