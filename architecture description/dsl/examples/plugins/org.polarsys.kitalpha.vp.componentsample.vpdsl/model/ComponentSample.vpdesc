@@ -2,6 +2,11 @@
 <vpdesc:Viewpoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:commondata="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/commondata/1.0.0" xmlns:configuration="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/conf/1.0.0" xmlns:descAirdGenConf="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/DescAirdGenConf/1.0.0" xmlns:docGenConfiguration="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/DocGenConfiguration/1.0.0" xmlns:expression="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/expression/1.0.0" xmlns:viewpointactivityexplorer="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/viewpointactivityexplorer/1.0.0" xmlns:vpbuild="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpbuild/1.0.0" xmlns:vpconf="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpconf/1.0.0" xmlns:vpdesc="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdesc/1.0.0" xmlns:vpdiagram="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0" xmlns:vpservices="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpservices/1.0.0" name="ComponentSample" shortName="ComponentSample">
   <VP_Data name="ComponentSample.data">
     <VP_Classes name="ComponentElement" abstract="true">
+      <VP_Class_Attributes name="id" isId="true">
+        <owned_type xsi:type="vpdesc:ExternalAttributeType">
+          <type href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </owned_type>
+      </VP_Class_Attributes>
       <VP_Class_Attributes name="name">
         <owned_type xsi:type="vpdesc:ExternalAttributeType">
           <type href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -54,7 +59,7 @@
     <vpConfigurationElements xsi:type="vpconf:TargetApplication" type="EMF"/>
     <vpConfigurationElements xsi:type="vpconf:GenerationConfiguration" projectName="org.polarsys.kitalpha.vp.componentsample" nsuri="http://www.polarsys.org/kitalpha/ComponentSample/1.0.0"/>
     <vpConfigurationElements xsi:type="vpconf:ViewConfiguration"/>
-    <vpConfigurationElements xsi:type="vpconf:Release" viewpointVersion="1.1.0.qualifier" viewpointDescription="Component Sample Core Viewpoint">
+    <vpConfigurationElements xsi:type="vpconf:Release" viewpointVersion="1.1.1.qualifier" viewpointDescription="Component Sample Core Viewpoint">
       <requiredExecutionEnvironment>JavaSE-1.6</requiredExecutionEnvironment>
     </vpConfigurationElements>
     <vpConfigurationElements xsi:type="vpconf:Generation">
@@ -75,7 +80,7 @@
           <style>
             <node_Label>
               <value>
-                <expressionElements xsi:type="expression:DomainElement" attribute="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
+                <expressionElements xsi:type="expression:DomainElement" attribute="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.1"/>
               </value>
             </node_Label>
             <style xsi:type="vpdiagram:FlatStyle" backgroundColor="light_yellow" forgroundColor="light_yellow" borderColor="blue"/>
@@ -89,7 +94,7 @@
               <style>
                 <node_Label>
                   <value>
-                    <expressionElements xsi:type="expression:DomainElement" attribute="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
+                    <expressionElements xsi:type="expression:DomainElement" attribute="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.1"/>
                   </value>
                 </node_Label>
                 <style xsi:type="vpdiagram:FlatStyle" backgroundColor="light_orange" forgroundColor="dark_orange" borderColor="red"/>
@@ -103,7 +108,7 @@
                   <style>
                     <node_Label>
                       <value>
-                        <expressionElements xsi:type="expression:DomainElement" attribute="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
+                        <expressionElements xsi:type="expression:DomainElement" attribute="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.1"/>
                       </value>
                     </node_Label>
                     <style xsi:type="vpdiagram:FlatStyle" backgroundColor="white" forgroundColor="white"/>
@@ -118,7 +123,7 @@
                   <style label_position="node">
                     <node_Label>
                       <value>
-                        <expressionElements xsi:type="expression:DomainElement" attribute="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.0"/>
+                        <expressionElements xsi:type="expression:DomainElement" attribute="//@VP_Data/@VP_Classes.0/@VP_Class_Attributes.1"/>
                       </value>
                     </node_Label>
                     <style xsi:type="vpdiagram:BasicStyle" backgroundColor="light_blue"/>

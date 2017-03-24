@@ -172,7 +172,7 @@ public class ComponentSamplePackageImpl extends EPackageImpl implements Componen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getComponentElement_Name() {
+	public EAttribute getComponentElement_Id() {
 		return (EAttribute) componentElementEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -181,8 +181,17 @@ public class ComponentSamplePackageImpl extends EPackageImpl implements Componen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getComponentElement_Description() {
+	public EAttribute getComponentElement_Name() {
 		return (EAttribute) componentElementEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getComponentElement_Description() {
+		return (EAttribute) componentElementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -323,6 +332,7 @@ public class ComponentSamplePackageImpl extends EPackageImpl implements Componen
 
 		// Create classes and their features
 		componentElementEClass = createEClass(COMPONENT_ELEMENT);
+		createEAttribute(componentElementEClass, COMPONENT_ELEMENT__ID);
 		createEAttribute(componentElementEClass, COMPONENT_ELEMENT__NAME);
 		createEAttribute(componentElementEClass, COMPONENT_ELEMENT__DESCRIPTION);
 
@@ -390,6 +400,8 @@ public class ComponentSamplePackageImpl extends EPackageImpl implements Componen
 		// Initialize classes, features, and operations; add parameters
 		initEClass(componentElementEClass, ComponentElement.class, "ComponentElement", IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getComponentElement_Id(), ecorePackage.getEString(), "id", null, 0, 1, ComponentElement.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getComponentElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, //$NON-NLS-1$
 				ComponentElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);

@@ -18,13 +18,14 @@ import java.util.Map;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.uml2.uml.UMLPackage;
 import org.polarsys.kitalpha.cadence.core.api.IActivity;
 import org.polarsys.kitalpha.cadence.core.api.parameter.ActivityParameters;
 import org.polarsys.kitalpha.cadence.core.api.parameter.DeclaredParameter;
 import org.polarsys.kitalpha.cadence.core.api.parameter.ParameterError;
 import org.polarsys.kitalpha.transposer.TransposerCorePlugin;
 import org.polarsys.kitalpha.transposer.api.ITransposerWorkflow;
-import org.polarsys.kitalpha.transposer.m2m.componentsample.to.uml.constants.IConstants;
 import org.polarsys.kitalpha.transposer.rules.handler.rules.api.IContext;
 import org.polarsys.kitalpha.transposer.transformation.emf.resource.ResourceUtil;
 
@@ -40,6 +41,17 @@ public class FinalizeTransformation implements IActivity, ITransposerWorkflow
 	{
 	}
 
+	protected Resource getUMLResource(ResourceSet resourceSet){
+		if (resourceSet != null && !resourceSet.getResources().isEmpty()) {
+			for(Resource r : resourceSet.getResources()){
+				if (r.getURI() != null && r.getURI().fileExtension().equals(UMLPackage.eNAME)){
+					return r;
+				}
+			}
+		}
+		return null;
+	}
+
 	@Override
 	public IStatus run(ActivityParameters activityParams_p)
 	{
@@ -47,7 +59,8 @@ public class FinalizeTransformation implements IActivity, ITransposerWorkflow
 		IStatus status = Status.CANCEL_STATUS;
 		
 		IContext context = (IContext)activityParams_p.getParameter(TRANSPOSER_CONTEXT).getValue();
-		Resource resource = (Resource)context.get(IConstants.UML_RESOURCE);
+		ResourceSet resourceSet = (ResourceSet)context.get(ResourceUtil.TRANSPOSER_RESOURCE_SET);
+		Resource resource = getUMLResource(resourceSet);
 		
 		if (resource != null)
 		{

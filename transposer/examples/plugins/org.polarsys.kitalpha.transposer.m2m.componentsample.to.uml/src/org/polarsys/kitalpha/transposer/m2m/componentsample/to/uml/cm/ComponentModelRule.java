@@ -14,13 +14,17 @@ import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.UMLFactory;
-import org.polarsys.kitalpha.transposer.m2m.componentsample.to.uml.constants.IConstants;
+import org.eclipse.uml2.uml.UMLPackage;
 import org.polarsys.kitalpha.transposer.m2m.componentsample.to.uml.generic.AbstractGenericRule;
 import org.polarsys.kitalpha.transposer.rules.handler.rules.api.IContext;
 import org.polarsys.kitalpha.transposer.rules.handler.rules.api.IPremise;
+import org.polarsys.kitalpha.transposer.transformation.context.ContextHelper;
+import org.polarsys.kitalpha.transposer.transformation.emf.resource.ResourceUtil;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentModel;
 
 
@@ -33,6 +37,17 @@ public class ComponentModelRule extends AbstractGenericRule<ComponentModel> {
 	
 	public ComponentModelRule() {
 	}
+	
+	protected void attach(EObject element_p, IContext context_p) {
+	    ResourceSet rs = (ResourceSet) context_p.get(ResourceUtil.TRANSPOSER_RESOURCE_SET);
+	    if (rs != null && !rs.getResources().isEmpty()) {
+	    	for (Resource r : rs.getResources()) {
+	    		if (r.getURI() != null && r.getURI().fileExtension().equals(UMLPackage.eNAME)){
+	    			r.getContents().add(element_p);
+	    		}
+			}
+	    }
+	  }
 
 	@Override
 	public void apply(ComponentModel cm, IContext context)
@@ -50,12 +65,10 @@ public class ComponentModelRule extends AbstractGenericRule<ComponentModel> {
 		}
 
 		//put the model in Transposer context
-		context.put(cm, model);
+		ContextHelper.createMainTarget(context, cm, model);
 
-		//Allows to retrieve the UML model with String key
-		Resource resource = (Resource)context.get(IConstants.UML_RESOURCE);
 		//we add root element into the resource
-		resource.getContents().add(model);
+		attach(model, context);
 
 	}
 

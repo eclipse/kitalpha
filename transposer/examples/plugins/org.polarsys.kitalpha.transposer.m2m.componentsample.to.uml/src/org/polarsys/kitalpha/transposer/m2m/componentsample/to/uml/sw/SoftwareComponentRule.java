@@ -15,6 +15,7 @@ import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.polarsys.kitalpha.transposer.m2m.componentsample.to.uml.generic.AbstractGenericRule;
 import org.polarsys.kitalpha.transposer.rules.handler.rules.api.IContext;
+import org.polarsys.kitalpha.transposer.transformation.context.ContextHelper;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.SoftwareComponent;
 
 /**
@@ -38,19 +39,19 @@ public class SoftwareComponentRule extends AbstractGenericRule<SoftwareComponent
 		umlComponent.setName(sc.getName());
 
 		// get container of software component from Transposer context
-		Object container = context.get(sc.eContainer());
+		Object container = ContextHelper.getMainTarget(context, sc.eContainer());
 		
 		if (container instanceof org.eclipse.uml2.uml.Class){
 			org.eclipse.uml2.uml.Class umlClassContainer = (org.eclipse.uml2.uml.Class)container;
 			umlClassContainer.createNestedClassifier(umlComponent.getName(), umlComponent.eClass());
 			Component component = (Component) umlClassContainer.getNestedClassifier(umlComponent.getName());
-			context.put(sc, component);
+			ContextHelper.createMainTarget(context, sc, component);
 		}
 
 		if (container instanceof Package) {
 			Package umlContainer = (Package) container;
 			umlContainer.getPackagedElements().add(umlComponent);
-			context.put(sc, umlComponent);
+			ContextHelper.createMainTarget(context, sc, umlComponent);
 		}
 	}
 	

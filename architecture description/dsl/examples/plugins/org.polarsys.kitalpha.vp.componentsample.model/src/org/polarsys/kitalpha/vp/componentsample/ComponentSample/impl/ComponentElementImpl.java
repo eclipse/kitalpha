@@ -13,6 +13,7 @@ package org.polarsys.kitalpha.vp.componentsample.ComponentSample.impl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.polarsys.kitalpha.emde.model.impl.ExtensibleElementImpl;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentElement;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSamplePackage;
@@ -24,6 +25,7 @@ import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSampleP
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link org.polarsys.kitalpha.vp.componentsample.ComponentSample.impl.ComponentElementImpl#getId <em>Id</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.vp.componentsample.ComponentSample.impl.ComponentElementImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.vp.componentsample.ComponentSample.impl.ComponentElementImpl#getDescription <em>Description</em>}</li>
  * </ul>
@@ -32,6 +34,26 @@ import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSampleP
  * @generated
  */
 public abstract class ComponentElementImpl extends ExtensibleElementImpl implements ComponentElement {
+
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -76,12 +98,12 @@ public abstract class ComponentElementImpl extends ExtensibleElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected ComponentElementImpl() {
 
 		super();
-
+		setId(EcoreUtil.generateUUID());
 	}
 
 	/**
@@ -92,6 +114,33 @@ public abstract class ComponentElementImpl extends ExtensibleElementImpl impleme
 	@Override
 	protected EClass eStaticClass() {
 		return ComponentSamplePackage.Literals.COMPONENT_ELEMENT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+
+	public String getId() {
+
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+
+	public void setId(String newId) {
+
+		String oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ComponentSamplePackage.COMPONENT_ELEMENT__ID, oldId,
+					id));
+
 	}
 
 	/**
@@ -156,6 +205,8 @@ public abstract class ComponentElementImpl extends ExtensibleElementImpl impleme
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case ComponentSamplePackage.COMPONENT_ELEMENT__ID:
+			return getId();
 		case ComponentSamplePackage.COMPONENT_ELEMENT__NAME:
 			return getName();
 		case ComponentSamplePackage.COMPONENT_ELEMENT__DESCRIPTION:
@@ -172,6 +223,9 @@ public abstract class ComponentElementImpl extends ExtensibleElementImpl impleme
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+		case ComponentSamplePackage.COMPONENT_ELEMENT__ID:
+			setId((String) newValue);
+			return;
 		case ComponentSamplePackage.COMPONENT_ELEMENT__NAME:
 			setName((String) newValue);
 			return;
@@ -190,6 +244,9 @@ public abstract class ComponentElementImpl extends ExtensibleElementImpl impleme
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+		case ComponentSamplePackage.COMPONENT_ELEMENT__ID:
+			setId(ID_EDEFAULT);
+			return;
 		case ComponentSamplePackage.COMPONENT_ELEMENT__NAME:
 			setName(NAME_EDEFAULT);
 			return;
@@ -208,6 +265,8 @@ public abstract class ComponentElementImpl extends ExtensibleElementImpl impleme
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case ComponentSamplePackage.COMPONENT_ELEMENT__ID:
+			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		case ComponentSamplePackage.COMPONENT_ELEMENT__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case ComponentSamplePackage.COMPONENT_ELEMENT__DESCRIPTION:
@@ -227,7 +286,9 @@ public abstract class ComponentElementImpl extends ExtensibleElementImpl impleme
 			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: "); //$NON-NLS-1$
+		result.append(" (id: "); //$NON-NLS-1$
+		result.append(id);
+		result.append(", name: "); //$NON-NLS-1$
 		result.append(name);
 		result.append(", description: "); //$NON-NLS-1$
 		result.append(description);

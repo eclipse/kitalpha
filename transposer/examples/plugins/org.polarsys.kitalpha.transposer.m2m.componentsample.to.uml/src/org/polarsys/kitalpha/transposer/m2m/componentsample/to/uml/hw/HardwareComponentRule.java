@@ -15,6 +15,7 @@ import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.polarsys.kitalpha.transposer.m2m.componentsample.to.uml.generic.AbstractGenericRule;
 import org.polarsys.kitalpha.transposer.rules.handler.rules.api.IContext;
+import org.polarsys.kitalpha.transposer.transformation.context.ContextHelper;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.HardwareComponent;
 
 /**
@@ -34,20 +35,20 @@ public class HardwareComponentRule extends AbstractGenericRule<HardwareComponent
 		umlClass.setName(hc.getName());
 
 		// get container
-		Object container = context.get(hc.eContainer());
+		Object container = ContextHelper.getMainTarget(context, hc.eContainer());
 		
 		if (container instanceof Class){
 			Class umlContainer = (Class)container;
 			umlContainer.createNestedClassifier(umlClass.getName(), umlClass.eClass());
 			Class clazz = (Class) umlContainer.getNestedClassifier(umlClass.getName());
-			context.put(hc, clazz);
+			ContextHelper.createMainTarget(context, hc, clazz);
 		}
 
 		if (container instanceof Package) {
 			Package umlContainer = (Package) container;
 			umlContainer.getPackagedElements().add(umlClass);
 			// put the created package in Transposer context
-			context.put(hc, umlClass);
+			ContextHelper.createMainTarget(context, hc, umlClass);
 		}
 
 		

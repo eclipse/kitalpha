@@ -14,6 +14,7 @@ import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.polarsys.kitalpha.transposer.m2m.componentsample.to.uml.generic.AbstractGenericRule;
 import org.polarsys.kitalpha.transposer.rules.handler.rules.api.IContext;
+import org.polarsys.kitalpha.transposer.transformation.context.ContextHelper;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentPackage;
 
 public class ComponentPackageRule extends AbstractGenericRule<ComponentPackage> {
@@ -28,7 +29,7 @@ public class ComponentPackageRule extends AbstractGenericRule<ComponentPackage> 
 		umlPackage.setName(cp.getName());
 
 		// get container
-		Object container = context.get(cp.eContainer());
+		Object container = ContextHelper.getMainTarget(context, cp.eContainer());
 		
 		if (container instanceof Package) {
 			Package umlContainer = (Package) container;
@@ -36,7 +37,7 @@ public class ComponentPackageRule extends AbstractGenericRule<ComponentPackage> 
 		}
 		
 		// put the created package in Transposer context
-		context.put(cp, umlPackage);
+		ContextHelper.createMainTarget(context, cp, umlPackage);
 	}
 
 	@Override

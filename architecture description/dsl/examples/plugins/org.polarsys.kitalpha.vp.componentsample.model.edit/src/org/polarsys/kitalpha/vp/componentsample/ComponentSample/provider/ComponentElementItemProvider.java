@@ -57,6 +57,7 @@ public class ComponentElementItemProvider extends ExtensibleElementItemProvider 
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addIdPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 		}
@@ -64,6 +65,28 @@ public class ComponentElementItemProvider extends ExtensibleElementItemProvider 
 		checkChildCreationExtender(object);
 		// end-extension-code
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Id feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIdPropertyDescriptor(Object object) {
+
+		// begin-extension-code
+		itemPropertyDescriptors.add(createItemPropertyDescriptor
+		// end-extension-code
+		(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_ComponentElement_id_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_ComponentElement_id_feature", //$NON-NLS-1$//$NON-NLS-2$
+						"_UI_ComponentElement_type"), //$NON-NLS-1$
+				ComponentSamplePackage.Literals.COMPONENT_ELEMENT__ID, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
+				// begin-extension-code
+				null));
+		// end-extension-code
 	}
 
 	/**
@@ -147,6 +170,7 @@ public class ComponentElementItemProvider extends ExtensibleElementItemProvider 
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ComponentElement.class)) {
+		case ComponentSamplePackage.COMPONENT_ELEMENT__ID:
 		case ComponentSamplePackage.COMPONENT_ELEMENT__NAME:
 		case ComponentSamplePackage.COMPONENT_ELEMENT__DESCRIPTION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

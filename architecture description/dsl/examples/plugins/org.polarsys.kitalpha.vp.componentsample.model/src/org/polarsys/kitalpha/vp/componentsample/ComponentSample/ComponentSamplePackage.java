@@ -86,13 +86,22 @@ public interface ComponentSamplePackage extends EPackage {
 	int COMPONENT_ELEMENT__OWNED_EXTENSIONS = EmdePackage.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_ELEMENT__ID = EmdePackage.EXTENSIBLE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_ELEMENT__NAME = EmdePackage.EXTENSIBLE_ELEMENT_FEATURE_COUNT + 0;
+	int COMPONENT_ELEMENT__NAME = EmdePackage.EXTENSIBLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -101,7 +110,7 @@ public interface ComponentSamplePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_ELEMENT__DESCRIPTION = EmdePackage.EXTENSIBLE_ELEMENT_FEATURE_COUNT + 1;
+	int COMPONENT_ELEMENT__DESCRIPTION = EmdePackage.EXTENSIBLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Component Element</em>' class.
@@ -110,7 +119,7 @@ public interface ComponentSamplePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_ELEMENT_FEATURE_COUNT = EmdePackage.EXTENSIBLE_ELEMENT_FEATURE_COUNT + 2;
+	int COMPONENT_ELEMENT_FEATURE_COUNT = EmdePackage.EXTENSIBLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Component Element</em>' class.
@@ -139,6 +148,15 @@ public interface ComponentSamplePackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPONENT_MODEL__OWNED_EXTENSIONS = COMPONENT_ELEMENT__OWNED_EXTENSIONS;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_MODEL__ID = COMPONENT_ELEMENT__ID;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -205,6 +223,15 @@ public interface ComponentSamplePackage extends EPackage {
 	int PACKAGE__OWNED_EXTENSIONS = COMPONENT_ELEMENT__OWNED_EXTENSIONS;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE__ID = COMPONENT_ELEMENT__ID;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -258,6 +285,15 @@ public interface ComponentSamplePackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPONENT_PACKAGE__OWNED_EXTENSIONS = PACKAGE__OWNED_EXTENSIONS;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_PACKAGE__ID = PACKAGE__ID;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -322,6 +358,15 @@ public interface ComponentSamplePackage extends EPackage {
 	 * @ordered
 	 */
 	int ABSTRACT_COMPONENT__OWNED_EXTENSIONS = COMPONENT_ELEMENT__OWNED_EXTENSIONS;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_COMPONENT__ID = COMPONENT_ELEMENT__ID;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -397,6 +442,15 @@ public interface ComponentSamplePackage extends EPackage {
 	int SOFTWARE_COMPONENT__OWNED_EXTENSIONS = ABSTRACT_COMPONENT__OWNED_EXTENSIONS;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOFTWARE_COMPONENT__ID = ABSTRACT_COMPONENT__ID;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -468,6 +522,15 @@ public interface ComponentSamplePackage extends EPackage {
 	 * @ordered
 	 */
 	int HARDWARE_COMPONENT__OWNED_EXTENSIONS = ABSTRACT_COMPONENT__OWNED_EXTENSIONS;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HARDWARE_COMPONENT__ID = ABSTRACT_COMPONENT__ID;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -551,6 +614,17 @@ public interface ComponentSamplePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getComponentElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentElement#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentElement#getId()
+	 * @see #getComponentElement()
+	 * @generated
+	 */
+	EAttribute getComponentElement_Id();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentElement#getName <em>Name</em>}'.
@@ -730,6 +804,14 @@ public interface ComponentSamplePackage extends EPackage {
 		 * @generated
 		 */
 		EClass COMPONENT_ELEMENT = eINSTANCE.getComponentElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT_ELEMENT__ID = eINSTANCE.getComponentElement_Id();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
