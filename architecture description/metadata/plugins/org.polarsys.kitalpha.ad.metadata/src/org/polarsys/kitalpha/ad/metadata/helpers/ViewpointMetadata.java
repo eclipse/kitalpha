@@ -268,15 +268,7 @@ public class ViewpointMetadata {
 
 	public URI getExpectedMetadataStorageURI() {
 		URI uri = context.getResources().get(0).getURI();
-		if (uri.isPlatformResource()) {
-			String path = uri.toPlatformString(true);
-			if (path.contains(".")) {
-				int index = path.lastIndexOf('.');
-				path = path.substring(0, index) + "." + STORAGE_EXTENSION;
-			}
-			return URI.createPlatformResourceURI(path, true);
-		}
-		return uri.trimFileExtension().appendFileExtension(STORAGE_EXTENSION);
+		return MetadataHelper.getExpectedMetadataStorageURI(uri);
 	}
 
 	public boolean hasMetadata() {
