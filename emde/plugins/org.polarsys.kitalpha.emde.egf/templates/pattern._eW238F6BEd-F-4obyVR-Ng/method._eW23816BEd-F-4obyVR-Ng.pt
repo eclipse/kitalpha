@@ -152,83 +152,12 @@ public class <%=genPackage.getActionBarContributorClassName()%>
 <%if (genModel.useClassOverrideAnnotation()) {%>
 			@Override
 <%}%>      		      		
-			protected <%=genModel.getImportedName("org.eclipse.swt.widgets.Control")%> createDialogArea(<%=genModel.getImportedName("org.eclipse.swt.widgets.Composite")%> parent) {
-				Composite composite = (Composite)super.createDialogArea(parent);
-				Composite buttonComposite = (Composite)composite.getChildren()[0];
-				<%=genModel.getImportedName("org.eclipse.swt.widgets.Button")%> browseRegisteredPackagesButton = new Button(buttonComposite, <%=genModel.getImportedName("org.eclipse.swt.SWT")%>.PUSH);
-				browseRegisteredPackagesButton.setText(<%=genModel.getImportedName("org.eclipse.emf.ecore.presentation.EcoreEditorPlugin")%>.INSTANCE.getString("_UI_BrowseRegisteredPackages_label"));<%=genModel.getNonNLS()%>
-				prepareBrowseRegisteredPackagesButton(browseRegisteredPackagesButton);
-				{
-					<%=genModel.getImportedName("org.eclipse.swt.layout.FormData")%> data = new FormData();
-					Control [] children = buttonComposite.getChildren();
-					data.left = new <%=genModel.getImportedName("org.eclipse.swt.layout.FormAttachment")%>(0, 0);
-					data.right = new FormAttachment(children[0], -CONTROL_OFFSET);
-					browseRegisteredPackagesButton.setLayoutData(data);
-				}
-				return composite;
-			}
-			
-			/**
-	 		 * <!-- begin-user-doc -->
-	 		 * <!-- end-user-doc -->
-	 		 * @generated
-	 		 */
-			protected void prepareBrowseRegisteredPackagesButton(Button browseRegisteredPackagesButton) {
-				browseRegisteredPackagesButton.addSelectionListener(
-					new <%=genModel.getImportedName("org.eclipse.swt.events.SelectionAdapter")%>() {
-						/**
-	 		 			 * <!-- begin-user-doc -->
-	 		 			 * <!-- end-user-doc -->
-	 		 			 * @generated
-	 		 			 */										
-<%if (genModel.useClassOverrideAnnotation()) {%>
-						@Override
-<%}%>      		 
-						public void widgetSelected(<%=genModel.getImportedName("org.eclipse.swt.events.SelectionEvent")%> event) {
-							RegisteredPackageDialog registeredPackageDialog = new RegisteredPackageDialog(getShell());
-							registeredPackageDialog.open();
-							Object [] result = registeredPackageDialog.getResult();
-							if (result != null) {
-								<%=genModel.getImportedName("java.util.List")%><?> nsURIs = Arrays.asList(result);
-								<%=genModel.getImportedName("org.eclipse.emf.ecore.resource.ResourceSet")%> resourceSet = new <%=genModel.getImportedName("org.eclipse.emf.ecore.resource.impl.ResourceSetImpl")%>();
-								resourceSet.getURIConverter().getURIMap().putAll(EcorePlugin.computePlatformURIMap());
-								StringBuffer uris = new StringBuffer();
-								Map<String, URI> ePackageNsURItoGenModelLocationMap = EcorePlugin.getEPackageNsURIToGenModelLocationMap();
-								for (int i = 0, length = result.length; i < length; i++) {
-									URI location = ePackageNsURItoGenModelLocationMap.get(result[i]);
-									<%=genModel.getImportedName("org.eclipse.emf.ecore.resource.Resource")%> resource = resourceSet.getResource(location, true);
-									<%=genModel.getImportedName("org.eclipse.emf.ecore.util.EcoreUtil")%>.resolveAll(resource);
-								}
-								for (Resource resource : resourceSet.getResources()) {
-									for (<%=genModel.getImportedName("org.eclipse.emf.common.util.TreeIterator")%><?> j = 
-										new EcoreUtil.ContentTreeIterator<Object>(resource.getContents()) {
-											private static final long serialVersionUID = 1L;		
-											@Override
-											protected <%=genModel.getImportedName("java.util.Iterator")%><? extends <%=genModel.getImportedName("org.eclipse.emf.ecore.EObject")%>> getEObjectChildren(EObject eObject) {
-												return 
-													eObject instanceof <%=genModel.getImportedName("org.eclipse.emf.ecore.EPackage")%> ? 
-													((EPackage)eObject).getESubpackages().iterator() : 
-													<%=genModel.getImportedName("java.util.Collections")%>.<EObject>emptyList().iterator();
-											}
-										};
-										j.hasNext();) {
-											Object content = j.next();
-											if (content instanceof EPackage) {
-												EPackage ePackage = (EPackage)content;
-												if (nsURIs.contains(ePackage.getNsURI())) {
-													uris.append(resource.getURI());
-													uris.append("  ");
-													break;
-												}
-										}
-									}
-								}
-								uriField.setText((uriField.getText() + "  " + uris.toString()).trim());
-							}
-						}
-					}
-				);      
-			}
+			protected boolean processResource(Resource resource)
+		    {
+		    	<%=genModel.getImportedName("org.eclipse.emf.ecore.resource.ResourceSet")%> resourceSet = domain.getResourceSet();
+				<%=genModel.getImportedName("org.polarsys.kitalpha.ad.metadata.helpers.LibraryHelper")%>.add(resourceSet, resourceSet.getResources().get(0).getURI(), resource.getURI());
+		      return true;
+		    }
 		}
     
 		/**

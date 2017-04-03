@@ -74,6 +74,7 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
+import org.polarsys.kitalpha.ad.metadata.helpers.LibraryHelper;
 import org.polarsys.kitalpha.emde.ui.actions.EmdeViewerFilterAction;
 import org.polarsys.kitalpha.emde.ui.i18n.Messages;
 
@@ -156,86 +157,12 @@ public class ComponentSampleActionBarContributor extends EditingDomainActionBarC
 				super(parent, domain);
 			}
 
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			@Override
-			protected Control createDialogArea(Composite parent) {
-				Composite composite = (Composite) super.createDialogArea(parent);
-				Composite buttonComposite = (Composite) composite.getChildren()[0];
-				Button browseRegisteredPackagesButton = new Button(buttonComposite, SWT.PUSH);
-				browseRegisteredPackagesButton
-						.setText(EcoreEditorPlugin.INSTANCE.getString("_UI_BrowseRegisteredPackages_label")); //$NON-NLS-1$
-				prepareBrowseRegisteredPackagesButton(browseRegisteredPackagesButton);
-				{
-					FormData data = new FormData();
-					Control[] children = buttonComposite.getChildren();
-					data.left = new FormAttachment(0, 0);
-					data.right = new FormAttachment(children[0], -CONTROL_OFFSET);
-					browseRegisteredPackagesButton.setLayoutData(data);
-				}
-				return composite;
+			protected boolean processResource(Resource resource) {
+				ResourceSet resourceSet = domain.getResourceSet();
+				LibraryHelper.add(resourceSet, resourceSet.getResources().get(0).getURI(), resource.getURI());
+				return true;
 			}
 
-			/**
-			 * <!-- begin-user-doc -->
-			 * <!-- end-user-doc -->
-			 * @generated
-			 */
-			protected void prepareBrowseRegisteredPackagesButton(Button browseRegisteredPackagesButton) {
-				browseRegisteredPackagesButton.addSelectionListener(new SelectionAdapter() {
-					/**
-					 * <!-- begin-user-doc -->
-					 * <!-- end-user-doc -->
-					 * @generated
-					 */
-					@Override
-					public void widgetSelected(SelectionEvent event) {
-						RegisteredPackageDialog registeredPackageDialog = new RegisteredPackageDialog(getShell());
-						registeredPackageDialog.open();
-						Object[] result = registeredPackageDialog.getResult();
-						if (result != null) {
-							List<?> nsURIs = Arrays.asList(result);
-							ResourceSet resourceSet = new ResourceSetImpl();
-							resourceSet.getURIConverter().getURIMap().putAll(EcorePlugin.computePlatformURIMap());
-							StringBuffer uris = new StringBuffer();
-							Map<String, URI> ePackageNsURItoGenModelLocationMap = EcorePlugin
-									.getEPackageNsURIToGenModelLocationMap();
-							for (int i = 0, length = result.length; i < length; i++) {
-								URI location = ePackageNsURItoGenModelLocationMap.get(result[i]);
-								Resource resource = resourceSet.getResource(location, true);
-								EcoreUtil.resolveAll(resource);
-							}
-							for (Resource resource : resourceSet.getResources()) {
-								for (TreeIterator<?> j = new EcoreUtil.ContentTreeIterator<Object>(
-										resource.getContents()) {
-									private static final long serialVersionUID = 1L;
-
-									@Override
-									protected Iterator<? extends EObject> getEObjectChildren(EObject eObject) {
-										return eObject instanceof EPackage
-												? ((EPackage) eObject).getESubpackages().iterator()
-												: Collections.<EObject> emptyList().iterator();
-									}
-								};j.hasNext();) {
-									Object content = j.next();
-									if (content instanceof EPackage) {
-										EPackage ePackage = (EPackage) content;
-										if (nsURIs.contains(ePackage.getNsURI())) {
-											uris.append(resource.getURI());
-											uris.append("  ");
-											break;
-										}
-									}
-								}
-							}
-							uriField.setText((uriField.getText() + "  " + uris.toString()).trim());
-						}
-					}
-				});
-			}
 		}
 
 		/**

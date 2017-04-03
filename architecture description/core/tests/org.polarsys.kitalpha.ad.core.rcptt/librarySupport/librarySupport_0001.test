@@ -1,0 +1,62 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _ORb1YBkwEeevwe-eE7Qbvg,_WTN6gBkwEeevwe-eE7Qbvg
+Element-Name: librarySupport_0001
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _IgoUYBkwEeevwe-eE7Qbvg
+Runtime-Version: 2.1.0.201606221726
+Save-Time: 4/4/17 2:35 PM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+with [get-editor "A.componentsample" | get-tree] {
+    get-item "platform:\\/resource\\/A\\/A.componentsample" | click
+    select "platform:\\/resource\\/A\\/A.componentsample" | get-menu "Load Resource..." | click
+}
+with [get-window "Load Resource"] {
+    get-button "Browse Workspace..." | click
+    with [get-window "File Selection"] {
+        get-tree | select "A/B.componentsample"
+        get-button OK | click
+    }
+    get-button OK | click
+}
+get-editor "A.componentsample" | get-tree 
+    | select "platform:\\/resource\\/A\\/A.componentsample/A/[Component Package]/A"
+with [get-view Properties] {
+    click
+    with [get-tree] {
+        select Use | activate-cell-edit -column 1
+        get-button "..." | click
+    }
+}
+with [get-window "Use -- A"] {
+    get-table | select B
+    get-button Add | click
+    get-button OK | click
+}
+get-view Properties | get-tree | apply-cell-edit
+get-button "Save (M1+S)" | click
+get-editor "A.componentsample" | click
+get-view Properties | click
+get-editor "A.componentsample" | close
+get-view "Project Explorer" | get-tree | select "A/A.componentsample" | double-click
+get-view "Viewpoint Manager" | click
+with [get-view "Viewpoint Manager" | get-table] {
+    get-item "Component Sample Safety" | get-property caption | equals "Component Sample Safety" | verify-true
+    get-item "Component Sample Safety" | get-property selected | equals false | verify-true
+}
+get-editor "A.componentsample" | get-tree 
+    | get-item "platform:\\/resource\\/A\\/A.afm/Metadata _PD6yoBBmEeeuXe9hCjRYAw" | click
+get-view Properties | click
+with [get-view Properties | get-tree] {
+    get-item "Additional Metadata" | get-property "values['Property']" | equals "Additional Metadata" | verify-true
+    get-item "Additional Metadata" | get-property "values['Value']" | equals "Metadata _b666QRBmEeeuXe9hCjRYAw" 
+        | verify-true
+}
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--
