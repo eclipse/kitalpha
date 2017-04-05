@@ -9,6 +9,7 @@ Bundle-Activator: org.polarsys.kitalpha.emde.tests.Activator
 Require-Bundle: org.eclipse.core.runtime,
  org.junit,
  org.eclipse.emf.ecore,
- org.polarsys.kitalpha.emde
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+ org.polarsys.kitalpha.emde,
+ org.polarsys.kitalpha.vp.componentsampleperformance.model
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy

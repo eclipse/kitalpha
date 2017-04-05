@@ -70,6 +70,7 @@ public class ViewpointManager {
 	private static final int UNREFERENCE = 32;
 	private static final int ACTIVE = 64;
 	private static final int INACTIVE = 128;
+	private final static ViewpointManager nullManager = new NullViewpointManager();
 	private final static Map<ResourceSet, ViewpointManager> instances = new HashMap<ResourceSet, ViewpointManager>();
 	protected static ViewpointFinder VP_FINDER = new CachingFinder();
 
@@ -677,11 +678,10 @@ public class ViewpointManager {
 	 * 
 	 * @param ctx1
 	 * @return a ViewpointManager instance.
-	 * @throws InvalidContextException if the parameter is not owned by a ResourceSet instance.
 	 */
 	public static ViewpointManager getInstance(EObject ctx1) {
 		if (ctx1 == null || ctx1.eResource() == null)
-			throw new InvalidContextException();
+			return nullManager;
 		ResourceSet ctx = ctx1.eResource().getResourceSet();
 		return getInstance(ctx);
 	}
@@ -691,11 +691,10 @@ public class ViewpointManager {
 	 * 
 	 * @param ctx
 	 * @return a ViewpointManager instance.
-	 * @throws InvalidContextException if the parameter is null.
 	 */
 	public static ViewpointManager getInstance(final ResourceSet ctx) {
 		if (ctx == null)
-			throw new InvalidContextException();
+			return nullManager;
 		ViewpointManager instance = instances.get(ctx);
 		if (instance == null) {
 			instances.put(ctx, instance = createInstance());
@@ -823,7 +822,41 @@ public class ViewpointManager {
 				}
 			}
 		}
-
-		
 	}
+	
+	/**
+	 * This implementation is used when the context cannot be computed.
+	 * 
+	 * @author Thomas Guiu
+	 * 
+	 */
+	private static class NullViewpointManager extends ViewpointManager {
+
+		public NullViewpointManager() {
+			super();
+		}
+
+		public void unReference(String id) throws ViewpointActivationException {
+		}
+
+		public void reference(String id) throws ViewpointActivationException {
+		}
+
+		public boolean hasMetadata() {
+			return false;
+		}
+
+		public void setActivationState(String id, boolean active) throws ViewpointActivationException {
+		}
+
+		public boolean isInactive(String id) {
+			return false;
+		}
+
+		public boolean isReferenced(String id) {
+			return false;
+		}
+
+	}
+	
 }
