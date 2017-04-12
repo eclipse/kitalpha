@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2006, 2017 THALES GLOBAL SERVICES.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+
+  Contributors:
+       Thales - initial API and implementation
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<prerequisites>
+		<maven>3.3</maven>
+	</prerequisites>
+	
+	<name>Kitalpha Parent</name>
+	
+	<groupId>org.polarsys.kitalpha</groupId>
+	<artifactId>org.polarsys.kitalpha.releng.parent</artifactId>
+	<version>1.2.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	
+	<licenses>
+		<license>
+			<name>Eclipse Public License v1.0</name>
+			<comments>
+				All rights reserved. This program and the accompanying materials are made available
+				under the terms of the Eclipse Public License v1.0 which accompanies this distribution,
+				and is available at http://www.eclipse.org/legal/epl-v10.htm
+			</comments>
+		</license>
+	</licenses>
+	
+	<properties>
+		<tycho-version>1.0.0</tycho-version>
+		<tycho-extras-version>1.0.0</tycho-extras-version>
+		<platform-version-name>neon</platform-version-name>
+		<tycho.scmUrl>scm:git:https://git.polarsys.org/r/kitalpha/kitalpha</tycho.scmUrl>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<!-- To disable source package set sourcePhase to none -->
+		<!--    sourcePhase default value package -->
+		<!-- <sourcePhase>none</sourcePhase> -->
+		<sourcePhase>package</sourcePhase>
+		<testFiltreClass>**/*TestSuite.java</testFiltreClass>
+		<coverage.skip>false</coverage.skip>
+		<coverage.destFile>./target/jacoco.exec</coverage.destFile>
+		<sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
+		<!-- <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis> -->
+		<sonar.jacoco.release>0.7.4.201502262128</sonar.jacoco.release>
+		<sonar.jacoco.reportPath>${coverage.destFile}</sonar.jacoco.reportPath>
+		<rcptt-maven-version>2.1.0</rcptt-maven-version>
+	  	<target-platform-name>kitalpha</target-platform-name>
+	</properties>
+  <profiles>
+    <profile>
+      <id>full</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+	  	 <target-platform-name>kitalpha</target-platform-name>
+      </properties>
+      <modules>
+        <!-- module TP -->
+        <module>../../plugins/org.polarsys.kitalpha.releng.targets</module>
+        <!-- module Component Aggregator -->
+        <!-- module Core - Needed to build Capella -->
+        <module>../../plugins/org.polarsys.kitalpha.releng.aggregator.core</module>
+        <!-- module Runtime -->
+        <module>../../plugins/org.polarsys.kitalpha.releng.aggregator.runtime</module>
+        <!-- module SDK -->
+        <module>../../plugins/org.polarsys.kitalpha.releng.aggregator.sdk</module>
+        <!-- module Product -->
+        <module>../../plugins/org.polarsys.kitalpha.releng.aggregator.product</module>
+        <!-- module Examples -->
+        <module>../../plugins/org.polarsys.kitalpha.releng.aggregator.examples</module>
+        <!-- module Sample Component -->
+        <module>../../plugins/org.polarsys.kitalpha.releng.aggregator.samplecomponent</module>
+        <!-- module Junit tests -->
+        <module>../../plugins/org.polarsys.kitalpha.releng.aggregator.tests</module>
+      </modules>
+    </profile>
+    <profile>
+      <id>runtimeCore</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <properties>
+	  	 <target-platform-name>kitalpha</target-platform-name>
+      </properties>
+      <modules>
+        <!-- module TP -->
+        <module>../../plugins/org.polarsys.kitalpha.releng.targets</module>
+        <!-- module Component Aggregator -->
+        <!-- module Core - Needed to build Capella -->
+        <module>../../plugins/org.polarsys.kitalpha.releng.aggregator.core</module>
+    </modules>
+    </profile>
+    <profile>
+      <id>completRuntimeCore</id>
+      <!-- Be careful : For launch this profile you need : 
+      	1 - verify runtimeCore profile before in hudson machine
+           mvn clean verify -PruntimeCore
+      	2 - Publish runtimeCore update site in huston
+      		url used by this profile : http://download.polarsys.org/kitapha/updates/nightly/runtimecore/latest/
+        3 - and after verify this profile
+      		mvn clean verify -PcompletRuntimeCore
+       -->
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <properties>
+  			<target-platform-name>kitalphaWithRuntimeCore</target-platform-name>
+  	   </properties>
+      <modules>
+        <!-- module TP -->
+        <module>../../plugins/org.polarsys.kitalpha.releng.targets</module>
+        <!-- module Component Aggregator -->
+        <!-- module Runtime -->
+        <module>../../plugins/org.polarsys.kitalpha.releng.aggregator.runtime</module>
+        <!-- module SDK -->
+        <module>../../plugins/org.polarsys.kitalpha.releng.aggregator.sdk</module>
+        <!-- module Product -->
+        <module>../../plugins/org.polarsys.kitalpha.releng.aggregator.product</module>
+        <!-- module Examples -->
+        <module>../../plugins/org.polarsys.kitalpha.releng.aggregator.examples</module>
+        <!-- module Sample Component -->
+        <module>../../plugins/org.polarsys.kitalpha.releng.aggregator.samplecomponent</module>
+        <!-- module Junit tests -->
+        <module>../../plugins/org.polarsys.kitalpha.releng.aggregator.tests</module>
+    </modules>
+  </profile>
+ </profiles>
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<extensions>true</extensions>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-surefire-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<includes>
+						<include>${testFiltreClass}</include>
+					</includes>
+				</configuration>
+			</plugin>
+  			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<targetDefinitionIncludeSource>honor</targetDefinitionIncludeSource>
+					<!-- <pomDependencies>consider</pomDependencies>
+					<includePackedArtifacts>true</includePackedArtifacts>
+					<resolver>p2</resolver>
+					<dependency-resolution>
+						<optionalDependencies>ignore</optionalDependencies>
+					</dependency-resolution> -->
+					<target>
+						<artifact>
+							<groupId>org.polarsys.kitalpha</groupId>
+							<artifactId>kitalpha</artifactId>
+							<version>1.2.0-SNAPSHOT</version>
+							<classifier>../../../releng/plugins/org.polarsys.kitalpha.releng.targets/${target-platform-name}</classifier>
+						</artifact>
+					</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-source-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<archive>
+						<addMavenDescriptor>false</addMavenDescriptor>
+					</archive>
+				</configuration>
+				<executions>
+					<execution>
+						<id>plugin-source</id>
+						<phase>${sourcePhase}</phase>
+						<goals>
+							<goal>plugin-source</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-packaging-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<sourceReferences>
+						<generate>true</generate>
+					</sourceReferences>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.eclipse.tycho.extras</groupId>
+						<artifactId>tycho-sourceref-jgit</artifactId>
+						<version>${tycho-extras-version}</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho.extras</groupId>
+				<artifactId>tycho-source-feature-plugin</artifactId>
+				<version>${tycho-extras-version}</version>
+				<configuration>
+					<archive>
+						<addMavenDescriptor>false</addMavenDescriptor>
+					</archive>
+					<excludes>
+						<!-- Exlude all plugins without source -->
+						<plugin id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.commondata.fc"/>
+						<plugin id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.fc"/>
+						<plugin id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.services.fc"/>
+						<plugin id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.ui.fc"/>
+						<plugin id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization"/>
+						<plugin id="org.polarsys.kitalpha.composer.metamodel.allocation.base.ecore"/>
+						<plugin id="org.polarsys.kitalpha.composer.examples.basic.allocation.ecore"/>
+						<plugin id="org.polarsys.kitalpha.composer.examples.extended.ecorex.allocation"/>
+						<plugin id="org.polarsys.kitalpha.transposer.analyzer.ecore"/>
+						<plugin id="org.polarsys.kitalpha.transposer.rules.handler.ecore"/>
+						<plugin id="org.polarsys.kitalpha.transposer.transformation.emf.traces.ecore"/>
+						<plugin id="org.polarsys.kitalpha.vp.componentsampleframework.vpdsl"/>
+						<plugin id="org.polarsys.kitalpha.vp.componentsampleframework.model"/>
+						<plugin id="org.polarsys.kitalpha.vp.componentsamplequalityassessment.vpdsl"/>
+						<plugin id="org.polarsys.kitalpha.vp.componentsamplesafetypattern.af"/>
+						<plugin id="org.polarsys.kitalpha.vp.componentsamplesafetypattern.vpdsl"/>
+						<plugin id="org.polarsys.kitalpha.vp.componentsampleperformance.af"/>
+						<plugin id="org.polarsys.kitalpha.vp.componentsampleperformance.vpds"/>
+						<plugin id="org.polarsys.kitalpha.vp.componentsampleperformance.vpdsl"/>
+						<plugin id="org.polarsys.kitalpha.vp.componentsample.vpdsl"/>
+						<plugin id="org.polarsys.kitalpha.vp.componentsamplesafety.af"/>
+						<plugin id="org.polarsys.kitalpha.vp.componentsamplesafety.vpdsl"/>
+						<plugin id="org.polarsys.kitalpha.af.componentsamplearchitectureframework"/>
+					</excludes>
+				</configuration>
+				<executions>
+					<execution>
+						<id>source-feature</id>
+						<phase>${sourcePhase}</phase>
+						<goals>
+							<goal>source-feature</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- Enabling use of jacoco -->
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>${sonar.jacoco.release}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+						<configuration>
+							<skip>${coverage.skip}</skip>
+							<destFile>${sonar.jacoco.reportPath}</destFile>
+							<propertyName>failsafeArgline</propertyName>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>target-platform-configuration</artifactId>
+					<version>${tycho-version}</version>
+					<configuration>
+						<resolver>p2</resolver>
+						<pomDependencies>consider</pomDependencies>
+						<environments>
+							<environment>
+								<os>linux</os>
+								<ws>gtk</ws>
+								<arch>x86_64</arch>
+							</environment>
+							<environment>
+								<os>win32</os>
+								<ws>win32</ws>
+								<arch>x86_64</arch>
+							</environment>
+							<environment>
+								<os>macosx</os>
+								<ws>cocoa</ws>
+								<arch>x86_64</arch>
+							</environment>
+						</environments>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-compiler-plugin</artifactId>
+					<version>${tycho-version}</version>
+					<configuration>
+						<encoding>UTF-8</encoding>
+						<useProjectSettings>false</useProjectSettings>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>2.4.1</version>
+					<configuration>
+						<encoding>ISO-8859-1</encoding>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-antrun-plugin</artifactId>
+					<version>1.3</version>
+				</plugin>
+				<!-- Exclude pom.xml and pom.properties from generated archive (see http://maven.apache.org/shared/maven-archiver/)
+					-->
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-packaging-plugin</artifactId>
+					<version>${tycho-version}</version>
+					<configuration>
+						<archive>
+							<addMavenDescriptor>false</addMavenDescriptor>
+						</archive>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-p2-plugin</artifactId>
+					<version>${tycho-extras-version}</version>
+					<executions>
+						<execution>
+							<id>p2-metadata</id>
+							<goals>
+								<goal>p2-metadata</goal>
+							</goals>
+							<phase>package</phase>
+						</execution>
+					</executions>
+					<configuration>
+						<defaultP2Metadata>false</defaultP2Metadata>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.acceleo</groupId>
+					<artifactId>org.eclipse.acceleo.maven</artifactId>
+					<version>3.5.2</version>
+					<executions>
+						<execution>
+							<id>acceleo-compile</id>
+							<phase>compile</phase>
+							<goals>
+								<goal>acceleo-compile</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>rcptt-releases</id>
+			<name>RCPTT Maven repository</name>
+			<url>https://repo.eclipse.org/content/repositories/rcptt-releases/</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>rcptt-snapshots</id>
+			<name>RCPTT Maven Snapshots repository</name>
+			<snapshots>
+				<updatePolicy>always</updatePolicy>
+			</snapshots>
+			<url>https://repo.eclipse.org/content/repositories/rcptt-snapshots/</url>
+		</pluginRepository>
+	</pluginRepositories>
+</project>

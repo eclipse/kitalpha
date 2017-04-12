@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2006, 2017 THALES GLOBAL SERVICES.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+
+  Contributors:
+       Thales - initial API and implementation
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.polarsys.kitalpha</groupId>
+  <artifactId>org.polarsys.kitalpha.releng.aggregator.runtime</artifactId>
+  <version>1.2.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>Kitalpha Aggregator Module : Runtime</name>
+
+  <parent>
+    <groupId>org.polarsys.kitalpha</groupId>
+    <artifactId>org.polarsys.kitalpha.releng.parent</artifactId>
+    <version>1.2.0-SNAPSHOT</version>
+    <relativePath>../../../releng/plugins/org.polarsys.kitalpha.releng.parent</relativePath>
+  </parent>
+  
+  <licenses>
+    <license>
+      <name>Eclipse Public License v1.0</name>
+      <comments>
+      All rights reserved.
+
+      This program and the accompanying materials are made available under the
+      terms of the Eclipse Public License v1.0 which accompanies this
+      distribution, and is available at
+      http://www.eclipse.org/legal/epl-v10.htm
+    </comments>
+    </license>
+  </licenses>
+  
+  <modules>
+
+
+    <!-- features -->
+    <module>../../../accuracy/features/org.polarsys.kitalpha.accuracy.feature</module>
+    <module>../../../composer/features/org.polarsys.kitalpha.composer.feature</module>
+    
+    <module>../../../accuracy/plugins/org.polarsys.kitalpha.accuracy</module>
+    <module>../../../accuracy/plugins/org.polarsys.kitalpha.accuracy.ui</module>
+    <module>../../../composer/plugins/org.polarsys.kitalpha.composer.core</module>
+    <module>../../../composer/plugins/org.polarsys.kitalpha.composer.metamodel.allocation.base.ecore</module>
+    <module>../../../composer/plugins/org.polarsys.kitalpha.composer.metamodel.allocation.base.model</module>
+    <module>../../../composer/plugins/org.polarsys.kitalpha.composer.metamodel.allocation.base.model.edit</module>
+    <module>../../../composer/plugins/org.polarsys.kitalpha.composer.metamodel.allocation.base.model.editor</module>
+    <module>../../../composer/plugins/org.polarsys.kitalpha.composer.ui</module>
+    <module>../../../composer/plugins/org.polarsys.kitalpha.composer.ui.help</module>
+    
+    
+    <!-- plugins org.polarsys.kitalpha.model.attachment.feature -->
+    <module>../../../attachment/plugins/org.polarsys.kitalpha.model.attachment.ui</module>
+    
+    <!-- features -->
+    <module>../../../attachment/features/org.polarsys.kitalpha.model.attachment.feature</module>
+    
+    <!-- plugins org.polarsys.kitalpha.doc.gen.business.core.feature -->
+    <module>../../../Docgen/business/plugins/org.polarsys.kitalpha.doc.gen.business.core.ui</module>
+    <module>../../../Docgen/business/plugins/org.polarsys.kitalpha.doc.gen.business.core</module>
+    <module>../../../Docgen/business/plugins/org.polarsys.kitalpha.doc.gen.business.core.preference</module>
+    
+    <!-- features -->
+    <module>../../../Docgen/business/features/org.polarsys.kitalpha.doc.gen.business.core.feature</module>
+    
+     <!-- plugins org.polarsys.kitalpha.emde.explorer.contextual.feature -->
+    <module>../../../emde/integration/plugins/org.polarsys.kitalpha.emde.explorer.contextual</module>
+    
+    <!-- features -->
+    <module>../../../emde/integration/features/org.polarsys.kitalpha.emde.explorer.contextual.feature</module>
+     
+    <module>../../../resource reuse/plugins/org.polarsys.kitalpha.resourcereuse.emfscheme.utils</module>
+    <module>../../../resource reuse/plugins/org.polarsys.kitalpha.resourcereuse.emfscheme</module>
+    
+    <!-- features -->
+    <module>../../../resource reuse/features/org.polarsys.kitalpha.resourcereuse.emfscheme.feature</module>
+    
+    <!-- plugins org.polarsys.kitalpha.resourcereuse.emfscheme.ui.feature -->
+    <module>../../../resource reuse/plugins/org.polarsys.kitalpha.resourcereuse.emfscheme.ui</module>
+    <module>../../../resource reuse/plugins/org.polarsys.kitalpha.resourcereuse.emfscheme.dialog</module>
+    
+    <!-- features -->
+    <module>../../../resource reuse/features/org.polarsys.kitalpha.resourcereuse.emfscheme.ui.feature</module>
+    
+    <!-- plugins org.polarsys.kitalpha.model.common.ui.menu.feature-->
+    <module>../../../detachment/plugins/org.polarsys.kitalpha.model.common.ui.menu</module>
+    
+    <!-- features -->
+    <module>../../../detachment/features/org.polarsys.kitalpha.model.common.ui.menu.feature</module>
+    
+    <!-- update sites-->
+    <module>../../../releng/plugins/org.polarsys.kitalpha.releng.runtime.updatesite</module>
+    
+  </modules>
+</project>
+

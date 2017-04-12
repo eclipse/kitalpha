@@ -10,7 +10,8 @@ Require-Bundle: org.eclipse.ui,
  org.polarsys.kitalpha.transposer.core,
  org.polarsys.kitalpha.vp.componentsample.model,
  org.junit,
- org.polarsys.kitalpha.transposer.transformation.emf
+ org.polarsys.kitalpha.transposer.transformation.emf,
+ org.polarsys.kitalpha.transposer.m2m.uml.to.componentsample
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.transposer.junit.tests.acitivity,

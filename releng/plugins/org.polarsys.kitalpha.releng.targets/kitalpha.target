@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde?>
+<!-- generated with https://github.com/mbarbero/fr.obeo.releng.targetplatform -->
+<target name="kitapha" sequenceNumber="1504623791">
+  <locations>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.sdk.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.egit.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.equinox.executable.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.uml2.sdk.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.xtext.sdk.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.sdk.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.validation.ocl" version="0.0.0"/>
+      <unit id="org.eclipse.emf.query.ocl.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.query.ocl.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.query.sdk.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.query.doc.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.transaction.sdk.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.transaction.doc.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.gmf.sdk" version="0.0.0"/>
+      <unit id="org.eclipse.gmf.sdk.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.gmf.runtime.sdk.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.gmf.examples.runtime.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.gmf.examples.runtime.ui.pde.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.gmf.doc.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.gmf.runtime.notation.sdk.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.gef.sdk.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.ui.ide" version="0.0.0"/>
+      <unit id="org.eclipse.ui.workbench" version="0.0.0"/>
+      <unit id="lpg.runtime.java.source" version="0.0.0"/>
+      <unit id="org.eclipse.ocl.common.source" version="0.0.0"/>
+      <unit id="org.eclipse.ocl.ecore.source" version="0.0.0"/>
+      <unit id="org.eclipse.ocl.source" version="0.0.0"/>
+      <unit id="org.eclipse.xtend.source" version="0.0.0"/>
+      <unit id="org.eclipse.xpand.source" version="0.0.0"/>
+      <unit id="org.eclipse.emf.mwe.core.source" version="0.0.0"/>
+      <unit id="org.eclipse.xtend.typesystem.emf.source" version="0.0.0"/>
+      <unit id="org.eclipse.emf.mwe.utils.source" version="0.0.0"/>
+      <unit id="org.eclipse.emf.mwe2.runtime.source" version="0.0.0"/>
+      <unit id="org.eclipse.cvs.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.draw2d.sdk.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.draw2d.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.e4.rcp.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.ecf.core.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.ecf.core.source.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.ecf.core.ssl.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.ecf.core.ssl.source.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.ecf.filetransfer.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.ecf.filetransfer.httpclient4.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.ecf.filetransfer.httpclient4.source.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.ecf.filetransfer.httpclient4.ssl.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.ecf.filetransfer.httpclient4.ssl.source.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.ecf.filetransfer.source.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.ecf.filetransfer.ssl.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.ecf.filetransfer.ssl.source.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.codegen.ecore.source" version="0.0.0"/>
+      <unit id="org.eclipse.emf.codegen.ecore.ui.source" version="0.0.0"/>
+      <unit id="org.eclipse.emf.codegen.source" version="0.0.0"/>
+      <unit id="org.eclipse.emf.codegen.ui.source" version="0.0.0"/>
+      <unit id="org.eclipse.emf.common.source" version="0.0.0"/>
+      <unit id="org.eclipse.emf.common.ui.source" version="0.0.0"/>
+      <unit id="org.eclipse.emf.converter.source" version="0.0.0"/>
+      <unit id="org.eclipse.emf.databinding.edit.source" version="0.0.0"/>
+      <unit id="org.eclipse.emf.databinding.source" version="0.0.0"/>
+      <unit id="org.eclipse.emf.doc.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.ecore.edit.source" version="0.0.0"/>
+      <unit id="org.eclipse.emf.ecore.editor.source" version="0.0.0"/>
+      <unit id="org.eclipse.emf.ecore.source" version="0.0.0"/>
+      <unit id="org.eclipse.emf.edit.source" version="0.0.0"/>
+      <unit id="org.eclipse.emf.edit.ui.source" version="0.0.0"/>
+      <unit id="org.eclipse.emf.mapping.ecore.editor.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.mapping.ecore.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.mapping.source" version="0.0.0"/>
+      <unit id="org.eclipse.emf.mapping.ui.source" version="0.0.0"/>
+      <unit id="org.eclipse.emf.query.doc" version="0.0.0"/>
+      <unit id="org.eclipse.emf.query.ocl.source" version="0.0.0"/>
+      <unit id="org.eclipse.emf.query.source" version="0.0.0"/>
+      <unit id="org.eclipse.emf.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.transaction.doc" version="0.0.0"/>
+      <unit id="org.eclipse.emf.transaction.source" version="0.0.0"/>
+      <unit id="org.eclipse.emf.validation.doc" version="0.0.0"/>
+      <unit id="org.eclipse.emf.validation.ocl.source" version="0.0.0"/>
+      <unit id="org.eclipse.emf.validation.sdk.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.validation.source" version="0.0.0"/>
+      <unit id="org.eclipse.emf.workspace.doc" version="0.0.0"/>
+      <unit id="org.eclipse.emf.workspace.source" version="0.0.0"/>
+      <unit id="org.eclipse.equinox.p2.core.feature.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.equinox.p2.extras.feature.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.equinox.p2.rcp.feature.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.equinox.p2.user.ui.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.gef.source" version="0.0.0"/>
+      <unit id="org.eclipse.gmf.doc" version="0.0.0"/>
+      <unit id="org.eclipse.gmf.examples.runtime" version="0.0.0"/>
+      <unit id="org.eclipse.gmf.examples.runtime.ui.pde" version="0.0.0"/>
+      <unit id="org.eclipse.gmf.runtime.notation.sdk" version="0.0.0"/>
+      <unit id="org.eclipse.gmf.runtime.notation.source" version="0.0.0"/>
+      <unit id="org.eclipse.gmf.runtime.sdk" version="0.0.0"/>
+      <unit id="org.eclipse.gmf.runtime.thirdparty.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.gmf.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.gmf.tooling" version="0.0.0"/>
+      <unit id="org.eclipse.gmf.tooling.runtime.source" version="0.0.0"/>
+      <unit id="org.eclipse.gmf.tooling.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.help.source" version="0.0.0"/>
+      <unit id="org.eclipse.jdt.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.jgit" version="0.0.0"/>
+      <unit id="org.eclipse.ocl" version="0.0.0"/>
+      <unit id="org.eclipse.pde.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.platform.source" version="0.0.0"/>
+      <unit id="org.eclipse.rcp.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.uml2.codegen.ecore.ui.source" version="0.0.0"/>
+      <unit id="org.eclipse.uml2.common.edit.source" version="0.0.0"/>
+      <unit id="org.eclipse.uml2.common.source" version="0.0.0"/>
+      <unit id="org.eclipse.uml2.doc" version="0.0.0"/>
+      <unit id="org.eclipse.uml2.examples.source" version="0.0.0"/>
+      <unit id="org.eclipse.uml2.source" version="0.0.0"/>
+      <unit id="org.eclipse.uml2.uml.edit.source" version="0.0.0"/>
+      <unit id="org.eclipse.uml2.uml.source" version="0.0.0"/>
+      <unit id="org.eclipse.xsd.doc.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.xsd.ecore.converter.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.xsd.edit.source" version="0.0.0"/>
+      <unit id="org.eclipse.xsd.editor.source" version="0.0.0"/>
+      <unit id="org.eclipse.xsd.mapping.editor.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.xsd.mapping.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.xsd.sdk.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.xsd.source" version="0.0.0"/>
+      <unit id="org.eclipse.xtend.sdk.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.xtext.docs.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.xtext.examples.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.xtext.runtime.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.xtext.ui.source" version="0.0.0"/>
+      <unit id="org.eclipse.xtext.xbase.lib.source" version="0.0.0"/>
+      <unit id="org.eclipse.xtext.xbase.source" version="0.0.0"/>
+      <unit id="org.eclipse.xtext.xtext.ui.source" version="0.0.0"/>
+      <unit id="org.eclipse.acceleo.query.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.acceleo.annotations.source" version="0.0.0"/>
+      <repository id="neon-release" location="http://download.eclipse.org/releases/neon"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.emf.eef.sdk-feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.eef.codegen.ecore-feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.eef.edt-feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.eef.extended-feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.eef.runtime-feature.feature.group" version="0.0.0"/>
+      <repository id="EEF" location="http://download.eclipse.org/modeling/emft/eef/updates/milestones/1.5/S201501090502"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.acceleo.sdk.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.acceleo.doc" version="0.0.0"/>
+      <unit id="org.eclipse.acceleo.examples" version="0.0.0"/>
+      <unit id="org.eclipse.acceleo.source.feature.group" version="0.0.0"/>
+      <repository id="acceleo" location="http://download.eclipse.org/modeling/m2t/acceleo/updates/releases/3.4"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.sirius.doc.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.runtime.ide.eef.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.runtime.ide.ui.acceleo.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.runtime.ide.ui.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.runtime.ide.xtext.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.runtime.ocl.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.runtime.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.specifier.ide.ui.acceleo.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.specifier.ide.ui.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.runtime.acceleo.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.doc.feature.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.runtime.ide.eef.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.runtime.ide.ui.acceleo.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.runtime.ide.ui.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.runtime.ide.xtext.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.runtime.ocl.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.runtime.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.specifier.ide.ui.acceleo.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.specifier.ide.ui.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.runtime.acceleo.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.runtime.aql.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.sirius.runtime.aql.source.feature.group" version="0.0.0"/>
+      <repository id="Sirus" location="http://download.eclipse.org/sirius/updates/stable/5.1.0-S20170901-101720/neon"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.emf.diffmerge.sdk.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.diffmerge.sdk.feature.source.feature.group" version="0.0.0"/>
+      <repository id="EMF-DiffMerge" location="http://download.eclipse.org/diffmerge/releases/0.8.0/emf-diffmerge-site"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.emf.diffmerge.patterns.sdk.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.diffmerge.patterns.sdk.feature.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.source.feature.group" version="0.0.0"/>
+      <repository id="EDM-Patterns" location="http://download.eclipse.org/diffmerge/releases/0.8.0/edm-patterns-site"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.amalgam.explorer.activity.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.amalgam.explorer.activity.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.amalgam.explorer.contextual.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.amalgam.explorer.contextual.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.amalgam.explorer.contextual.sirius.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.amalgam.explorer.contextual.sirius.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.amalgam.explorer.contextual.core.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.amalgam.explorer.contextual.core.source.feature.group" version="0.0.0"/>
+      <repository id="amalgam" location="http://download.eclipse.org/modeling/amalgam/updates//nightly/1.9.0-N20170901-121250/capella"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.emf.ecoretools.sdk.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.ecoretools.design" version="0.0.0"/>
+      <unit id="org.eclipse.emf.ecoretools.explorer.contextual.feature.group" version="0.0.0"/>
+      <repository id="EcoreTools" location="http://download.eclipse.org/ecoretools/updates/nightly/3.2.1/neon"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.egf.sdk.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.egf.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.egf.common.source" version="0.0.0"/>
+      <unit id="org.eclipse.egf.common.ui.source" version="0.0.0"/>
+      <unit id="org.eclipse.egf.core.source" version="0.0.0"/>
+      <unit id="org.eclipse.egf.core.ui.source" version="0.0.0"/>
+      <unit id="org.eclipse.egf.doc.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.egf.model.edit.source" version="0.0.0"/>
+      <unit id="org.eclipse.egf.model.fprod.edit.source" version="0.0.0"/>
+      <unit id="org.eclipse.egf.model.fprod.source" version="0.0.0"/>
+      <unit id="org.eclipse.egf.model.ftask.edit.source" version="0.0.0"/>
+      <unit id="org.eclipse.egf.model.ftask.source" version="0.0.0"/>
+      <unit id="org.eclipse.egf.model.source" version="0.0.0"/>
+      <unit id="org.eclipse.egf.model.ui.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.egf.portfolio.emf.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.egf.portfolio.genchain.source" version="0.0.0"/>
+      <unit id="org.eclipse.egf.portfolio.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.egf.portfolio.task.ant.source" version="0.0.0"/>
+      <unit id="org.eclipse.egf.producer.source" version="0.0.0"/>
+      <unit id="org.eclipse.egf.producer.ui.source" version="0.0.0"/>
+      <repository id="EGFSdk" location="https://hudson.eclipse.org/egf/job/buckminster-egf-neon/lastSuccessfulBuild/artifact/result/publish/org.eclipse.egf.site/site.p2/"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.nebula.widgets.richtext.feature.feature.group" version="0.0.0"/>
+      <repository id="Nebula" location="http://download.eclipse.org/nebula/releases/1.2.0"/>
+    </location>
+  </locations>
+</target>

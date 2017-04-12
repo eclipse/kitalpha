@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="Kitalpha Product" uid="org.polarsys.kitalpha.releng.sdk.product" id="org.polarsys.kitalpha.product" application="org.polarsys.kitalpha.application" version="1.2.0.qualifier" useFeatures="true" includeLaunchers="true">
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
+      </vmArgsMac>
+   </launcherArgs>
+
+   <windowImages/>
+
+   <splash
+      location="org.polarsys.kitalpha.product" />
+   <launcher>
+      <solaris/>
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+   <vm>
+   </vm>
+
+   <license>
+        <text>
+   Eclipse Public License v1.0
+
+All rights reserved.
+
+This program and the accompanying materials are made available under the
+terms of the Eclipse Public License v1.0 which accompanies this
+distribution, and is available at
+http://www.eclipse.org/legal/epl-v10.htm
+         </text>
+   </license>
+
+   <plugins>
+   </plugins>
+
+   <features>
+      <feature id="org.polarsys.kitalpha.model.detachment.contrib.viewpoints.feature"/>
+      <feature id="org.polarsys.kitalpha.resourcereuse.ui.feature"/>
+      <feature id="org.polarsys.kitalpha.emde.explorer.contextual.feature"/>
+      <feature id="org.polarsys.kitalpha.patterns.feature"/>
+      <feature id="org.polarsys.kitalpha.composer.feature"/>
+      <feature id="org.polarsys.kitalpha.report.ui.feature"/>
+      <feature id="org.polarsys.kitalpha.resourcereuse.feature"/>
+      <feature id="org.polarsys.kitalpha.resourcereuse.emfscheme.feature"/>
+      <feature id="org.polarsys.kitalpha.report.feature"/>
+      <feature id="org.polarsys.kitalpha.cadence.feature"/>
+      <feature id="org.polarsys.kitalpha.ad.feature"/>
+      <feature id="org.polarsys.kitalpha.model.common.scrutiny.feature"/>
+      <feature id="org.polarsys.kitalpha.common.feature"/>
+      <feature id="org.polarsys.kitalpha.model.common.commands.feature"/>
+      <feature id="org.polarsys.kitalpha.model.detachment.feature"/>
+      <feature id="org.polarsys.kitalpha.ad.integration.sirius.feature"/>
+      <feature id="org.polarsys.kitalpha.doc.gen.business.core.feature"/>
+      <feature id="org.polarsys.kitalpha.model.common.share.feature"/>
+      <feature id="org.polarsys.kitalpha.ad.integration.emde.feature"/>
+      <feature id="org.polarsys.kitalpha.ad.integration.amalgam.feature"/>
+      <feature id="org.polarsys.kitalpha.model.attachment.feature"/>
+      <feature id="org.polarsys.kitalpha.emde.feature"/>
+      <feature id="org.polarsys.kitalpha.resourcereuse.emfscheme.ui.feature"/>
+      <feature id="org.polarsys.kitalpha.ad.metadata.feature"/>
+      <feature id="org.polarsys.kitalpha.ad.runtime.feature"/>
+      <feature id="org.polarsys.kitalpha.model.detachment.ui.feature"/>
+      <feature id="org.polarsys.kitalpha.transposer.feature"/>
+      <feature id="org.polarsys.kitalpha.emde.ui.feature"/>
+      <feature id="org.polarsys.kitalpha.accuracy.feature"/>
+      <feature id="org.polarsys.kitalpha.sdk.feature"/>
+      <feature id="org.polarsys.kitalpha.cadence.examples.feature"/>
+      <feature id="org.polarsys.kitalpha.product.feature"/>
+      <feature id="org.polarsys.kitalpha.ad.af.dsl.feature"/>
+      <feature id="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.feature"/>
+      <feature id="org.polarsys.kitalpha.transposer.examples.feature"/>
+      <feature id="org.polarsys.kitalpha.ad.af.dsl.as.feature"/>
+      <feature id="org.polarsys.kitalpha.emde.sdk.feature"/>
+      <feature id="org.polarsys.kitalpha.doc.gen.business.ecore.feature"/>
+      <feature id="org.polarsys.kitalpha.ad.af.dsl.generation.feature"/>
+      <feature id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.feature"/>
+      <feature id="org.polarsys.kitalpha.ad.sdk.feature"/>
+      <feature id="org.polarsys.kitalpha.vp.componentsample.example.installer.feature"/>
+      <feature id="org.polarsys.kitalpha.representation.feature"/>
+      <feature id="org.polarsys.kitalpha.composer.examples.feature"/>
+      <feature id="org.polarsys.kitalpha.representation.egf.feature"/>
+      <feature id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.feature"/>
+      <feature id="org.polarsys.kitalpha.representation.emde.feature"/>
+      <feature id="org.polarsys.kitalpha.ad.viewpoint.dsl.services.feature"/>
+      <feature id="org.polarsys.kitalpha.transposer.componentsample.installer.feature"/>
+      <feature id="org.polarsys.kitalpha.ad.ta.feature"/>
+      <feature id="org.polarsys.kitalpha.ad.af.dsl.servicies.feature"/>
+      <feature id="org.polarsys.kitalpha.ad.viewpoint.dsl.feature"/>
+      <feature id="org.polarsys.kitalpha.ad.af.dsl.cs.text.feature"/>
+      <feature id="org.polarsys.kitalpha.runtime.feature"/>
+      <feature id="org.polarsys.kitalpha.representation.ecore.feature"/>
+      <feature id="org.polarsys.kitalpha.composer.componentsample.installer.feature"/>
+      <feature id="org.polarsys.kitalpha.releng.eclipse.feature"/>
+      <feature id="org.polarsys.kitalpha.model.common.ui.menu.feature"/>
+      <feature id="org.polarsys.kitalpha.model.detachment.contrib.viewpoints.feature.source"/>
+      <feature id="org.polarsys.kitalpha.resourcereuse.ui.feature.source"/>
+      <feature id="org.polarsys.kitalpha.emde.explorer.contextual.feature.source"/>
+      <feature id="org.polarsys.kitalpha.patterns.feature.source"/>
+      <feature id="org.polarsys.kitalpha.composer.feature.source"/>
+      <feature id="org.polarsys.kitalpha.report.ui.feature.source"/>
+      <feature id="org.polarsys.kitalpha.resourcereuse.feature.source"/>
+      <feature id="org.polarsys.kitalpha.resourcereuse.emfscheme.feature.source"/>
+      <feature id="org.polarsys.kitalpha.report.feature.source"/>
+      <feature id="org.polarsys.kitalpha.cadence.feature.source"/>
+      <feature id="org.polarsys.kitalpha.ad.feature.source"/>
+      <feature id="org.polarsys.kitalpha.model.common.scrutiny.feature.source"/>
+      <feature id="org.polarsys.kitalpha.common.feature.source"/>
+      <feature id="org.polarsys.kitalpha.model.common.commands.feature.source"/>
+      <feature id="org.polarsys.kitalpha.model.detachment.feature.source"/>
+      <feature id="org.polarsys.kitalpha.ad.integration.sirius.feature.source"/>
+      <feature id="org.polarsys.kitalpha.doc.gen.business.core.feature.source"/>
+      <feature id="org.polarsys.kitalpha.model.common.share.feature.source"/>
+      <feature id="org.polarsys.kitalpha.ad.integration.emde.feature.source"/>
+      <feature id="org.polarsys.kitalpha.ad.integration.amalgam.feature.source"/>
+      <feature id="org.polarsys.kitalpha.model.attachment.feature.source"/>
+      <feature id="org.polarsys.kitalpha.emde.feature.source"/>
+      <feature id="org.polarsys.kitalpha.resourcereuse.emfscheme.ui.feature.source"/>
+      <feature id="org.polarsys.kitalpha.ad.metadata.feature.source"/>
+      <feature id="org.polarsys.kitalpha.ad.runtime.feature.source"/>
+      <feature id="org.polarsys.kitalpha.model.detachment.ui.feature.source"/>
+      <feature id="org.polarsys.kitalpha.transposer.feature.source"/>
+      <feature id="org.polarsys.kitalpha.emde.ui.feature.source"/>
+      <feature id="org.polarsys.kitalpha.accuracy.feature.source"/>
+      <feature id="org.polarsys.kitalpha.sdk.feature.source"/>
+      <feature id="org.polarsys.kitalpha.cadence.examples.feature.source"/>
+      <feature id="org.polarsys.kitalpha.product.feature.source"/>
+      <feature id="org.polarsys.kitalpha.ad.af.dsl.feature.source"/>
+      <feature id="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.feature.source"/>
+      <feature id="org.polarsys.kitalpha.transposer.examples.feature.source"/>
+      <feature id="org.polarsys.kitalpha.ad.af.dsl.as.feature.source"/>
+      <feature id="org.polarsys.kitalpha.emde.sdk.feature.source"/>
+      <feature id="org.polarsys.kitalpha.doc.gen.business.ecore.feature.source"/>
+      <feature id="org.polarsys.kitalpha.ad.af.dsl.generation.feature.source"/>
+      <feature id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.feature.source"/>
+      <feature id="org.polarsys.kitalpha.ad.sdk.feature.source"/>
+      <feature id="org.polarsys.kitalpha.vp.componentsample.example.installer.feature.source"/>
+      <feature id="org.polarsys.kitalpha.representation.feature.source"/>
+      <feature id="org.polarsys.kitalpha.composer.examples.feature.source"/>
+      <feature id="org.polarsys.kitalpha.representation.egf.feature.source"/>
+      <feature id="org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.feature.source"/>
+      <feature id="org.polarsys.kitalpha.representation.emde.feature.source"/>
+      <feature id="org.polarsys.kitalpha.ad.viewpoint.dsl.services.feature.source"/>
+      <feature id="org.polarsys.kitalpha.transposer.componentsample.installer.feature.source"/>
+      <feature id="org.polarsys.kitalpha.ad.ta.feature.source"/>
+      <feature id="org.polarsys.kitalpha.ad.af.dsl.servicies.feature.source"/>
+      <feature id="org.polarsys.kitalpha.ad.viewpoint.dsl.feature.source"/>
+      <feature id="org.polarsys.kitalpha.ad.af.dsl.cs.text.feature.source"/>
+      <feature id="org.polarsys.kitalpha.runtime.feature.source"/>
+      <feature id="org.polarsys.kitalpha.representation.ecore.feature.source"/>
+      <feature id="org.polarsys.kitalpha.composer.componentsample.installer.feature.source"/>
+      <feature id="org.polarsys.kitalpha.model.common.ui.menu.feature.source"/>
+      <feature id="org.polarsys.kitalpha.richtext.widget.feature"/>
+      <feature id="org.polarsys.kitalpha.richtext.widget.feature.source"/>
+      <feature id="org.polarsys.kitalpha.emde.genchain.feature"/>
+      <feature id="org.polarsys.kitalpha.emde.genchain.feature.source"/>
+   </features>
+
+   <configurations>
+      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
+   </configurations>
+
+   <preferencesInfo>
+      <targetfile overwrite="false"/>
+   </preferencesInfo>
+
+   <cssInfo>
+   </cssInfo>
+
+</product>

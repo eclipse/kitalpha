@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.polarsys.kitalpha.runtime.feature.source_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.runtime.feature.source" version="1.2.0.qualifier">
+      <category name="RuntimeCoreSource"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.runtime.feature_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.runtime.feature" version="1.2.0.qualifier">
+      <category name="RuntimeCore"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.accuracy.feature_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.accuracy.feature" version="1.2.0.qualifier">
+      <category name="RuntimeCore"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.accuracy.feature.source_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.accuracy.feature.source" version="1.2.0.qualifier">
+      <category name="RuntimeCoreSource"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.ad.runtime.feature_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.ad.runtime.feature" version="1.2.0.qualifier">
+      <category name="RuntimeCore"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.ad.runtime.feature.source_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.ad.runtime.feature.source" version="1.2.0.qualifier">
+      <category name="RuntimeCoreSource"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.cadence.feature_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.cadence.feature" version="1.2.0.qualifier">
+      <category name="RuntimeCore"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.cadence.feature.source_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.cadence.feature.source" version="1.2.0.qualifier">
+      <category name="RuntimeCoreSource"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.composer.feature_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.composer.feature" version="1.2.0.qualifier">
+      <category name="RuntimeCore"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.composer.feature.source_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.composer.feature.source" version="1.2.0.qualifier">
+      <category name="RuntimeCoreSource"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.doc.gen.business.core.feature_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.doc.gen.business.core.feature" version="1.2.0.qualifier">
+      <category name="RuntimeCore"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.doc.gen.business.core.feature.source_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.doc.gen.business.core.feature.source" version="1.2.0.qualifier">
+      <category name="RuntimeCoreSource"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.emde.explorer.contextual.feature_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.emde.explorer.contextual.feature" version="1.2.0.qualifier">
+      <category name="RuntimeCore"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.emde.explorer.contextual.feature.source_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.emde.explorer.contextual.feature.source" version="1.2.0.qualifier">
+      <category name="RuntimeCoreSource"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.emde.feature_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.emde.feature" version="1.2.0.qualifier">
+      <category name="RuntimeCore"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.emde.feature.source_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.emde.feature.source" version="1.2.0.qualifier">
+      <category name="RuntimeCoreSource"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.emde.ui.feature_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.emde.ui.feature" version="1.2.0.qualifier">
+      <category name="RuntimeCore"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.emde.ui.feature.source_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.emde.ui.feature.source" version="1.2.0.qualifier">
+      <category name="RuntimeCoreSource"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.model.attachment.feature_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.model.attachment.feature" version="1.2.0.qualifier">
+      <category name="RuntimeCore"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.model.attachment.feature.source_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.model.attachment.feature.source" version="1.2.0.qualifier">
+      <category name="RuntimeCoreSource"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.model.detachment.contrib.viewpoints.feature_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.model.detachment.contrib.viewpoints.feature" version="1.2.0.qualifier">
+      <category name="RuntimeCore"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.model.detachment.contrib.viewpoints.feature.source_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.model.detachment.contrib.viewpoints.feature.source" version="1.2.0.qualifier">
+      <category name="RuntimeCoreSource"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.patterns.feature_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.patterns.feature" version="1.2.0.qualifier">
+      <category name="RuntimeCore"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.patterns.feature.source_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.patterns.feature.source" version="1.2.0.qualifier">
+      <category name="RuntimeCoreSource"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.model.detachment.feature_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.model.detachment.feature" version="1.2.0.qualifier">
+      <category name="RuntimeCore"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.model.detachment.feature.source_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.model.detachment.feature.source" version="1.2.0.qualifier">
+      <category name="RuntimeCoreSource"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.report.feature_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.report.feature" version="1.2.0.qualifier">
+      <category name="RuntimeCore"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.report.feature.source_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.report.feature.source" version="1.2.0.qualifier">
+      <category name="RuntimeCoreSource"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.report.ui.feature_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.report.ui.feature" version="1.2.0.qualifier">
+      <category name="RuntimeCore"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.report.ui.feature.source_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.report.ui.feature.source" version="1.2.0.qualifier">
+      <category name="RuntimeCoreSource"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.resourcereuse.emfscheme.feature_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.resourcereuse.emfscheme.feature" version="1.2.0.qualifier">
+      <category name="RuntimeCore"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.resourcereuse.emfscheme.feature.source_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.resourcereuse.emfscheme.feature.source" version="1.2.0.qualifier">
+      <category name="RuntimeCoreSource"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.resourcereuse.ui.feature_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.resourcereuse.ui.feature" version="1.2.0.qualifier">
+      <category name="RuntimeCore"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.resourcereuse.ui.feature.source_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.resourcereuse.ui.feature.source" version="1.2.0.qualifier">
+      <category name="RuntimeCoreSource"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.resourcereuse.feature_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.resourcereuse.feature" version="1.2.0.qualifier">
+      <category name="RuntimeCore"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.resourcereuse.feature.source_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.resourcereuse.feature.source" version="1.2.0.qualifier">
+      <category name="RuntimeCoreSource"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.resourcereuse.emfscheme.ui.feature_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.resourcereuse.emfscheme.ui.feature" version="1.2.0.qualifier">
+      <category name="RuntimeCore"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.resourcereuse.emfscheme.ui.feature.source_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.resourcereuse.emfscheme.ui.feature.source" version="1.2.0.qualifier">
+      <category name="RuntimeCoreSource"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.transposer.feature_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.transposer.feature" version="1.2.0.qualifier">
+      <category name="RuntimeCore"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.transposer.feature.source_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.transposer.feature.source" version="1.2.0.qualifier">
+      <category name="RuntimeCoreSource"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.emde.genchain.feature_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.emde.genchain.feature" version="1.2.0.qualifier">
+      <category name="RuntimeCore"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.emde.genchain.feature.source_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.emde.genchain.feature.source" version="1.2.0.qualifier">
+      <category name="RuntimeCoreSource"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.common.feature_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.common.feature" version="1.2.0.qualifier">
+      <category name="RuntimeCore"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.common.feature.source_1.2.0.qualifier.jar" id="org.polarsys.kitalpha.common.feature.source" version="1.2.0.qualifier">
+      <category name="RuntimeCoreSource"/>
+   </feature>
+   <category-def name="RuntimeCore" label="Runtime Core"/>
+   <category-def name="RuntimeCoreSource" label="RuntimeCoreSource"/>
+</site>

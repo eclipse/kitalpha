@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2006, 2017 THALES GLOBAL SERVICES.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+
+  Contributors:
+       Thales - initial API and implementation
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+    http://maven.apache.org/maven-v4_0_0.xsd">
+	
+	<modelVersion>4.0.0</modelVersion>
+	
+	<groupId>org.polarsys.kitalpha</groupId>
+	<artifactId>org.polarsys.kitalpha.vp.componentsample.importer</artifactId>
+	<version>1.2.0-SNAPSHOT</version>
+	
+	<packaging>eclipse-plugin</packaging>
+	
+	<parent>
+		<groupId>org.polarsys.kitalpha</groupId>
+		<artifactId>org.polarsys.kitalpha.releng.parent</artifactId>
+		<version>1.2.0-SNAPSHOT</version>
+		<relativePath>../../../../../releng/plugins/org.polarsys.kitalpha.releng.parent</relativePath>
+	</parent>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<!-- Copy ziped component in zips -->
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.7</version>
+				<executions>
+					<execution>
+						<id>create-zip-files</id>
+						<phase>prepare-package</phase>
+						<configuration>
+							<target>
+								<echo>Zip and Copy component projects in zips</echo>
+								<delete dir="${basedir}/zips/**"/>
+								
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.af.componentsamplearchitectureframework" 
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.af.componentsamplearchitectureframework.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+								
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsample.activity.explorer" 
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsample.activity.explorer.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+								
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsample.af" 
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsample.af.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+								
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsample.contextual.explorer" 
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsample.contextual.explorer.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsample.design" 
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsample.design.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+								
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsampleframework.af" 
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsampleframework.af.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+									
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsampleframework.model.edit"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsampleframework.model.edit.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+									
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsampleframework.model"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsampleframework.model.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+								
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsampleframework.rules.analysis"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsampleframework.rules.analysis.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+								
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsampleframework.rules.computation"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsampleframework.rules.computation.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+								
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsampleframework.rules.generation"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsampleframework.rules.generation.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+								
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsampleframework.rules.transformation"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsampleframework.rules.transformation.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+								
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsampleframework.rules.validation"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsampleframework.rules.validation.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+								
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsampleframework.vpdsl"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsampleframework.vpdsl.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsampleframework"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsampleframework.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsample.model.editor"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsample.model.editor.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsample.model.edit"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsample.model.edit.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsample.model"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsample.model.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsampleperformance.activity.explorer"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsampleperformance.activity.explorer.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsampleperformance.af"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsampleperformance.af.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsampleperformance.contextual.explorer"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsampleperformance.contextual.explorer.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsampleperformance.design"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsampleperformance.design.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsampleperformance.model.edit"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsampleperformance.model.edit.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsampleperformance.model"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsampleperformance.model.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsampleperformance.rules.analysis"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsampleperformance.rules.analysis.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsampleperformance.rules.computation"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsampleperformance.rules.computation.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsampleperformance.rules.generation"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsampleperformance.rules.generation.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsampleperformance.rules.transformation"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsampleperformance.rules.transformation.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsampleperformance.rules.validation"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsampleperformance.rules.validation.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsampleperformance.vpdsl"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsampleperformance.vpdsl.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsampleperformance"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsampleperformance.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplequalityassessment.activity.explorer"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplequalityassessment.activity.explorer.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplequalityassessment.af"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplequalityassessment.af.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplequalityassessment.contextual.explorer"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplequalityassessment.contextual.explorer.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplequalityassessment.design"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplequalityassessment.design.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplequalityassessment.model.edit"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplequalityassessment.model.edit.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplequalityassessment.model"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplequalityassessment.model.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplequalityassessment.rules.analysis"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplequalityassessment.rules.analysis.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplequalityassessment.rules.computation"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplequalityassessment.rules.computation.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplequalityassessment.rules.generation"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplequalityassessment.rules.generation.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplequalityassessment.rules.transformation"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplequalityassessment.rules.transformation.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplequalityassessment.rules.validation"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplequalityassessment.rules.validation.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplequalityassessment.vpdsl"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplequalityassessment.vpdsl.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplequalityassessment"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplequalityassessment.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsample.rules.analysis"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsample.rules.analysis.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsample.rules.computation"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsample.rules.computation.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsample.rules.generation"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsample.rules.generation.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsample.rules.transformation"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsample.rules.transformation.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsample.rules.validation"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsample.rules.validation.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplesafety.activity.explorer"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplesafety.activity.explorer.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplesafety.af"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplesafety.af.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplesafety.contextual.explorer"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplesafety.contextual.explorer.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplesafety.design"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplesafety.design.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplesafety.model.edit"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplesafety.model.edit.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplesafety.model"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplesafety.model.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplesafetypattern.activity.explorer"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplesafetypattern.activity.explorer.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplesafetypattern.af"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplesafetypattern.af.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplesafetypattern.contextual.explorer"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplesafetypattern.contextual.explorer.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplesafetypattern.design"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplesafetypattern.design.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplesafetypattern.model.edit"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplesafetypattern.model.edit.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplesafetypattern.model"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplesafetypattern.model.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplesafetypattern.rules.analysis"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplesafetypattern.rules.analysis.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplesafetypattern.rules.computation"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplesafetypattern.rules.computation.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplesafetypattern.rules.generation"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplesafetypattern.rules.generation.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplesafetypattern.rules.transformation"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplesafetypattern.rules.transformation.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplesafetypattern.rules.validation"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplesafetypattern.rules.validation.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplesafetypattern.vpdsl"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplesafetypattern.vpdsl.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplesafetypattern"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplesafetypattern.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplesafety.rules.analysis"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplesafety.rules.analysis.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplesafety.rules.computation"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplesafety.rules.computation.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplesafety.rules.generation"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplesafety.rules.generation.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplesafety.rules.transformation"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplesafety.rules.transformation.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplesafety.rules.validation"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplesafety.rules.validation.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplesafety.vpdsl"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplesafety.vpdsl.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsamplesafety"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsamplesafety.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsample.vpdsl"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsample.vpdsl.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsample.wizard.project"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsample.wizard.project.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+								<copydir 	src="${basedir}/../org.polarsys.kitalpha.vp.componentsample"
+											dest="pluginFolder" />
+								<delete dir="pluginFolder/target"/>
+								<delete dir="pluginFolder/bin"/>
+								<zip destfile="${basedir}/zips/org.polarsys.kitalpha.vp.componentsample.zip" basedir="pluginFolder"/>
+								<delete dir="pluginFolder"/>
+
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

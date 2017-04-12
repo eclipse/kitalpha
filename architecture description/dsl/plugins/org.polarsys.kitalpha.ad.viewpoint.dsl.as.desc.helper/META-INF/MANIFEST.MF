@@ -15,7 +15,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.resources,
  org.polarsys.kitalpha.ad.viewpoint.coredomain.model,
  org.eclipse.jdt.launching,
- org.polarsys.kitalpha.emde.model
+ org.polarsys.kitalpha.emde.model,
+ org.eclipse.ui.ide
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper,
@@ -24,4 +25,3 @@ Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.desc,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.message,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.project
-Import-Package: org.eclipse.ui.actions

@@ -15,7 +15,7 @@ Contributors:
       version="0.1.0"
       provider-name="%providerName">
 
-   <description url="%descriptionURL">
+   <description>
       %description
    </description>
 

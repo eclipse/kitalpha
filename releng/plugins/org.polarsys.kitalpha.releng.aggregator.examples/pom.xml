@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2006, 2017 THALES GLOBAL SERVICES.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+
+  Contributors:
+       Thales - initial API and implementation
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.polarsys.kitalpha</groupId>
+  <artifactId>org.polarsys.kitalpha.releng.aggregator.examples</artifactId>
+  <version>1.2.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>Kitalpha Aggregator Module : Examples</name>
+
+  <parent>
+    <groupId>org.polarsys.kitalpha</groupId>
+    <artifactId>org.polarsys.kitalpha.releng.parent</artifactId>
+    <version>1.2.0-SNAPSHOT</version>
+    <relativePath>../../../releng/plugins/org.polarsys.kitalpha.releng.parent</relativePath>
+  </parent>
+  
+  <licenses>
+    <license>
+      <name>Eclipse Public License v1.0</name>
+      <comments>
+      All rights reserved.
+
+      This program and the accompanying materials are made available under the
+      terms of the Eclipse Public License v1.0 which accompanies this
+      distribution, and is available at
+      http://www.eclipse.org/legal/epl-v10.htm
+    </comments>
+    </license>
+  </licenses>
+  
+  <modules>
+       <!-- module Examples -->
+     <!-- plugins for base features :
+		* org.polarsys.kitalpha.cadence.examples.feature
+		* org.polarsys.kitalpha.composer.examples.feature
+		* org.polarsys.kitalpha.transposer.examples.feature
+		* org.polarsys.kitalpha.explorer.contextual.examples.ecore.feature
+	 -->
+    <module>../../../cadence/examples/plugins/org.polarsys.kitalpha.cadence.examples.basic.ecore.workflow</module>
+    <module>../../../cadence/examples/plugins/org.polarsys.kitalpha.cadence.examples</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.basic</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.basic.allocation.ecore.model</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.basic.allocation.ecore.model.edit</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.basic.allocation.ecore.model.editor</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.basic.ecore.gen.binding</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.basic.ecore.gen.refinery</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.basic.ecore.gen.strategy.consonant</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.basic.ecore.gen.strategy.vowel</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.basic.ecore.gen.strategy.compound</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.recursive</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.recursive.allocation.ecore</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.recursive.allocation.ecore.model</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.recursive.allocation.ecore.model.edit</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.recursive.allocation.ecore.model.editor</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.recursive.ecore.gen.generator</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.recursive.ecore.gen.binding</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.recursive.ecore.gen.strategy</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.recursive.ecore.gen.refinery</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.extended.ecorex.allocation</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.advanced.ecore.gen.binding</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.advanced.allocation.ecore.model</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.advanced.ecore.gen.strategy.onefile</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.advanced.allocation.ecore.model.edit</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.advanced.allocation.ecore</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.advanced</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.extended.ecorex.allocation.model.editor</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.extended.ecorex.allocation.model.edit</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.extended.ecorex.allocation.model</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.advanced.allocation.ecore.model.editor</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.extended.ecorex.gen.binding</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.advanced.ecore.gen.strategy.manyfile</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.advanced.ecore.gen.refinery</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.advanced.ecore.gen.generator</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.extended</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.recursive.ecore.gen.composergen</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.basic.ecore.gen.strategy</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.basic.allocation.ecore</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.basic.ecore.gen.generator</module>
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.extended.ecorex.gen.generator</module>     
+    <module>../../../transposer/examples/plugins/org.polarsys.kitalpha.transposer.examples.m2m.uml.to.ecore</module>
+    <module>../../../transposer/examples/plugins/org.polarsys.kitalpha.transposer.examples</module>
+    <module>../../../transposer/examples/plugins/org.polarsys.kitalpha.transposer.examples.m2m.uml.to.ecore.extended</module>    
+    
+     <!-- features for base features :
+		* org.polarsys.kitalpha.cadence.examples.feature
+		* org.polarsys.kitalpha.composer.examples.feature
+		* org.polarsys.kitalpha.transposer.examples.feature
+		* org.polarsys.kitalpha.explorer.contextual.examples.ecore.feature
+	 -->
+    <module>../../../cadence/examples/features/org.polarsys.kitalpha.cadence.examples.feature</module>
+    <module>../../../composer/examples/features/org.polarsys.kitalpha.composer.examples.feature</module>
+    <module>../../../transposer/examples/features/org.polarsys.kitalpha.transposer.examples.feature</module>
+    <module>../../../examples/contextual explorer/features/org.polarsys.kitalpha.explorer.contextual.examples.ecore.feature</module>
+
+    <!-- Update site -->
+    <module>../../../releng/plugins/org.polarsys.kitalpha.releng.examples.updatesite</module>
+  </modules>
+</project>
+

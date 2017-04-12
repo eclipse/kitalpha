@@ -15,7 +15,8 @@ Require-Bundle: org.eclipse.ui,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.model,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.conf.model,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper,
- org.polarsys.kitalpha.ad.viewpoint.dsl.generation.launcher
+ org.polarsys.kitalpha.ad.viewpoint.dsl.generation.launcher,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Vendor: %BundleVendor

@@ -22,14 +22,14 @@ Contributors:
       %copyright
    </copyright>
 
-   <license url="%licenseURL">
+   <license url="license.html">
       %license
    </license>
 
    <requires>
       <import feature="org.polarsys.kitalpha.ad.ui.feature" version="1.2.0.qualifier"/>
    </requires>
-   
+
    <plugin
          id="org.polarsys.kitalpha.ad.integration.amalgam"
          download-size="0"

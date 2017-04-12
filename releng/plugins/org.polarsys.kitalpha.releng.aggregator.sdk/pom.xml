@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2006, 2017 THALES GLOBAL SERVICES.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+
+  Contributors:
+       Thales - initial API and implementation
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.polarsys.kitalpha</groupId>
+  <artifactId>org.polarsys.kitalpha.releng.aggregator.sdk</artifactId>
+  <version>1.2.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>Kitalpha Aggregator Module : SDK</name>
+
+  <parent>
+    <groupId>org.polarsys.kitalpha</groupId>
+    <artifactId>org.polarsys.kitalpha.releng.parent</artifactId>
+    <version>1.2.0-SNAPSHOT</version>
+    <relativePath>../../../releng/plugins/org.polarsys.kitalpha.releng.parent</relativePath>
+  </parent>
+  
+  <licenses>
+    <license>
+      <name>Eclipse Public License v1.0</name>
+      <comments>
+      All rights reserved.
+
+      This program and the accompanying materials are made available under the
+      terms of the Eclipse Public License v1.0 which accompanies this
+      distribution, and is available at
+      http://www.eclipse.org/legal/epl-v10.htm
+    </comments>
+    </license>
+  </licenses>
+  
+  <modules>
+    <!-- plugins org.polarsys.kitalpha.ad.dsl.feature -->
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.build</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.af.dsl.as.desc.helper</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.af.dsl.services.preference</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.ui.model.edit</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.fc</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.ui.fc</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.ui.model</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.model</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.edit</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.build</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.af</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.lib</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.commondata.model.edit</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.ui.validation</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization.model</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.af.dsl.as.desc</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.services.model</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.af.dsl.as.desc.model</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.af.dsl.as.desc.model.edit</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.common.ui</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.commondata.fc</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.commondata.model</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.build.model.edit</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.services.model.edit</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.conf.model</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.model</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.af.dsl.services.cs.text.generators</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.provider</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.commondata</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.ui</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.common</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.fc</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.af.dsl.as.desc.model.editor</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.services.project</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf.ui</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.model.edit</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.ta</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helpers</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.model.edit</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization.model.edit</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.conf</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.ui</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.launcher</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.validation</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.build.model</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.rule</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.af.dsl.servicies.project</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.af.dsl.servicies.action</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.event</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.extension</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.services.reverse</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.fc</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.precondition</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.model.editor</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.validatation</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.af.integration</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.model</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.services</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization.validation</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.conf.fc</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.services.preference</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.model.edit</module>
+    <module>../../../Docgen/business/plugins/org.polarsys.kitalpha.doc.gen.business.ecore.genchain</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.conf.model.edit</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.af.dsl.generation.desc</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.services.validation</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.helper</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.ui</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.af.dsl.services.cs.text.wizards</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.ui</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.services.fc</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.preferences</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build.ui</module>
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.services.action</module>
+    
+    <!-- plugins org.polarsys.kitalpha.ad.sdk.feature -->
+    <module>../../../architecture description/dsl/features/org.polarsys.kitalpha.ad.viewpoint.dsl.services.feature</module>
+    <module>../../../architecture description/dsl/features/org.polarsys.kitalpha.ad.viewpoint.dsl.feature</module>
+    <module>../../../architecture description/dsl/features/org.polarsys.kitalpha.ad.af.dsl.feature</module>
+    <module>../../../architecture description/dsl/features/org.polarsys.kitalpha.ad.af.dsl.as.feature</module>
+    <module>../../../architecture description/dsl/features/org.polarsys.kitalpha.ad.af.dsl.servicies.feature</module>
+    <module>../../../architecture description/dsl/features/org.polarsys.kitalpha.ad.af.dsl.generation.feature</module>
+    <module>../../../architecture description/dsl/features/org.polarsys.kitalpha.ad.dsl.feature</module>
+    <module>../../../architecture description/dsl/features/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.feature</module>
+    <module>../../../architecture description/dsl/features/org.polarsys.kitalpha.ad.viewpoint.dsl.as.feature</module>
+    <module>../../../architecture description/dsl/features/org.polarsys.kitalpha.ad.af.dsl.cs.text.feature</module>
+    <module>../../../architecture description/dsl/features/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.feature</module>
+    <module>../../../architecture description/core/plugins/org.polarsys.kitalpha.ad.viewpoint.sdk</module>
+    
+    <!-- features -->
+    <module>../../../architecture description/core/features/org.polarsys.kitalpha.ad.sdk.feature</module>
+    
+    <!-- plugins org.polarsys.kitalpha.ad.ta.feature -->
+    <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.ta.emf</module>
+    
+    <!-- features -->
+    <module>../../../architecture description/dsl/features/org.polarsys.kitalpha.ad.ta.feature</module>
+
+
+    <!-- plugins org.polarsys.kitalpha.doc.gen.business.ecore.feature -->
+    <module>../../../Docgen/business/plugins/org.polarsys.kitalpha.doc.gen.business.ecore.genchain.edit</module>
+    <module>../../../Docgen/business/plugins/org.polarsys.kitalpha.doc.gen.business.ecore</module>
+    
+    <!-- features -->
+    <module>../../../Docgen/business/features/org.polarsys.kitalpha.doc.gen.business.ecore.feature</module>
+    
+    <!-- plugins org.polarsys.kitalpha.emde.sdk.feature -->
+    <module>../../../emde/plugins/org.polarsys.kitalpha.emde.portfolio.emf.egf</module>
+    
+    <!-- features -->
+    <module>../../../emde/features/org.polarsys.kitalpha.emde.sdk.feature</module>
+    
+    <!-- plugins  org.polarsys.kitalpha.representation.feature -->
+    <module>../../../diagrams/plugins/org.polarsys.kitalpha.egf.genchain.diagram</module>
+    <module>../../../diagrams/plugins/org.polarsys.kitalpha.ecore.diagram</module>
+    <module>../../../diagrams/plugins/org.polarsys.kitalpha.emde.diagram</module>
+    
+    <!-- features -->
+    <module>../../../diagrams/features/org.polarsys.kitalpha.representation.egf.feature</module>
+    <module>../../../diagrams/features/org.polarsys.kitalpha.representation.ecore.feature</module>
+    <module>../../../diagrams/features/org.polarsys.kitalpha.representation.feature</module>
+    <module>../../../diagrams/features/org.polarsys.kitalpha.representation.emde.feature</module>
+    
+    
+    <!-- update sites -->
+    <module>../../../releng/plugins/org.polarsys.kitalpha.releng.sdk.updatesite</module>
+        
+  </modules>
+</project>
+

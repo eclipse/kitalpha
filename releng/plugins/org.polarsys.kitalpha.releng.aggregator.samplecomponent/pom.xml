@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2006, 2017 THALES GLOBAL SERVICES.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+
+  Contributors:
+       Thales - initial API and implementation
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.polarsys.kitalpha</groupId>
+  <artifactId>org.polarsys.kitalpha.releng.aggregator.samplecomponent</artifactId>
+  <version>1.2.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>Kitalpha Aggregator Module : samplecomponent</name>
+
+  <parent>
+    <groupId>org.polarsys.kitalpha</groupId>
+    <artifactId>org.polarsys.kitalpha.releng.parent</artifactId>
+    <version>1.2.0-SNAPSHOT</version>
+    <relativePath>../../../releng/plugins/org.polarsys.kitalpha.releng.parent</relativePath>
+  </parent>
+  
+  <licenses>
+    <license>
+      <name>Eclipse Public License v1.0</name>
+      <comments>
+      All rights reserved.
+
+      This program and the accompanying materials are made available under the
+      terms of the Eclipse Public License v1.0 which accompanies this
+      distribution, and is available at
+      http://www.eclipse.org/legal/epl-v10.htm
+    </comments>
+    </license>
+  </licenses>
+  
+  <modules>
+     <!-- module ComponentSimple -->
+     <!-- plugins for base features :
+		* org.polarsys.kitalpha.vp.componentsamplesafetypattern.rules.feature
+		* org.polarsys.kitalpha.vp.componentsamplesafetypattern.representation.feature
+		* org.polarsys.kitalpha.vp.componentsamplesafetypattern.feature
+		* org.polarsys.kitalpha.vp.componentsamplesafetypattern.af.feature
+		* org.polarsys.kitalpha.vp.componentsamplesafety.rules.feature
+		* org.polarsys.kitalpha.vp.componentsamplesafety.representation.feature
+		* org.polarsys.kitalpha.vp.componentsamplesafety.feature
+		* org.polarsys.kitalpha.vp.componentsamplesafety.af.feature
+		* org.polarsys.kitalpha.vp.componentsamplequalityassessment.rules.feature
+		* org.polarsys.kitalpha.vp.componentsamplequalityassessment.representation.feature
+		* org.polarsys.kitalpha.vp.componentsamplequalityassessment.feature
+		* org.polarsys.kitalpha.vp.componentsamplequalityassessment.af.feature
+		* org.polarsys.kitalpha.vp.componentsampleperformance.rules.feature
+		* org.polarsys.kitalpha.vp.componentsampleperformance.representation.feature
+		* org.polarsys.kitalpha.vp.componentsampleperformance.feature
+		* org.polarsys.kitalpha.vp.componentsampleperformance.af.feature
+		* org.polarsys.kitalpha.vp.componentsampleframework.rules.feature
+		* org.polarsys.kitalpha.vp.componentsampleframework.feature
+		* org.polarsys.kitalpha.vp.componentsampleframework.af.feature
+		* org.polarsys.kitalpha.vp.componentsample.rules.feature
+		* org.polarsys.kitalpha.vp.componentsample.representation.feature
+		* org.polarsys.kitalpha.vp.componentsample.feature
+		* org.polarsys.kitalpha.vp.componentsample.example.feature
+		* org.polarsys.kitalpha.vp.componentsample.af.feature
+		* org.polarsys.kitalpha.af.componentsamplearchitectureframework.feature
+	 -->
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleperformance.rules.transformation</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.activity.explorer</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleperformance.rules.generation</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleperformance.model</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafety.af</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafetypattern.activity.explorer</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.rules.computation</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.rules.analysis</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.af.componentsamplearchitectureframework</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleperformance.vpdsl</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafetypattern.design</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleframework.af</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafety.rules.validation</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleframework.rules.computation</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplequalityassessment.activity.explorer</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.rules.transformation</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleframework.model</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafety.vpdsl</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.wizard.project</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafetypattern.rules.validation</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafetypattern.af</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplequalityassessment.af</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleframework.rules.validation</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafety.rules.transformation</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleframework.rules.transformation</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafetypattern.vpdsl</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafety.model.edit</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleperformance.rules.computation</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.vpdsl</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplequalityassessment.model</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleperformance.af</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleperformance</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafetypattern.contextual.explorer</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.rules.generation</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplequalityassessment.rules.validation</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplequalityassessment.vpdsl</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafety</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafetypattern.rules.computation</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplequalityassessment.rules.computation</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleframework.model.edit</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.af</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplequalityassessment.design</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleperformance.design</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleperformance.rules.validation</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafetypattern.rules.analysis</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplequalityassessment.model.edit</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafety.rules.computation</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.contextual.explorer</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafety.activity.explorer</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleperformance.contextual.explorer</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafety.rules.analysis</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleperformance.rules.analysis</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleframework.vpdsl</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafetypattern.model</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafetypattern.model.edit</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafety.design</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.model</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplequalityassessment</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplequalityassessment.contextual.explorer</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplequalityassessment.rules.generation</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.model.edit</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplequalityassessment.rules.analysis</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafety.rules.generation</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleperformance.activity.explorer</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafety.model</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafety.contextual.explorer</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafetypattern.rules.transformation</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplequalityassessment.rules.transformation</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.rules.validation</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleperformance.model.edit</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleframework</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleframework.rules.analysis</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.design</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.model.editor</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleframework.rules.generation</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafetypattern</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafetypattern.rules.generation</module>
+    
+     <!-- features for base features :
+		* org.polarsys.kitalpha.vp.componentsamplesafetypattern.rules.feature
+		* org.polarsys.kitalpha.vp.componentsamplesafetypattern.representation.feature
+		* org.polarsys.kitalpha.vp.componentsamplesafetypattern.feature
+		* org.polarsys.kitalpha.vp.componentsamplesafetypattern.af.feature
+		* org.polarsys.kitalpha.vp.componentsamplesafety.rules.feature
+		* org.polarsys.kitalpha.vp.componentsamplesafety.representation.feature
+		* org.polarsys.kitalpha.vp.componentsamplesafety.feature
+		* org.polarsys.kitalpha.vp.componentsamplesafety.af.feature
+		* org.polarsys.kitalpha.vp.componentsamplequalityassessment.rules.feature
+		* org.polarsys.kitalpha.vp.componentsamplequalityassessment.representation.feature
+		* org.polarsys.kitalpha.vp.componentsamplequalityassessment.feature
+		* org.polarsys.kitalpha.vp.componentsamplequalityassessment.af.feature
+		* org.polarsys.kitalpha.vp.componentsampleperformance.rules.feature
+		* org.polarsys.kitalpha.vp.componentsampleperformance.representation.feature
+		* org.polarsys.kitalpha.vp.componentsampleperformance.feature
+		* org.polarsys.kitalpha.vp.componentsampleperformance.af.feature
+		* org.polarsys.kitalpha.vp.componentsampleframework.rules.feature
+		* org.polarsys.kitalpha.vp.componentsampleframework.feature
+		* org.polarsys.kitalpha.vp.componentsampleframework.af.feature
+		* org.polarsys.kitalpha.vp.componentsample.rules.feature
+		* org.polarsys.kitalpha.vp.componentsample.representation.feature
+		* org.polarsys.kitalpha.vp.componentsample.feature
+		* org.polarsys.kitalpha.vp.componentsample.example.feature
+		* org.polarsys.kitalpha.vp.componentsample.af.feature
+		* org.polarsys.kitalpha.af.componentsamplearchitectureframework.feature
+	 -->
+    <module>../../../architecture description/dsl/examples/features/org.polarsys.kitalpha.vp.componentsamplesafety.feature</module>
+    <module>../../../architecture description/dsl/examples/features/org.polarsys.kitalpha.vp.componentsamplesafetypattern.feature</module>
+    <module>../../../architecture description/dsl/examples/features/org.polarsys.kitalpha.vp.componentsampleperformance.rules.feature</module>
+    <module>../../../architecture description/dsl/examples/features/org.polarsys.kitalpha.vp.componentsample.af.feature</module>
+    <module>../../../architecture description/dsl/examples/features/org.polarsys.kitalpha.vp.componentsampleperformance.representation.feature</module>
+    <module>../../../architecture description/dsl/examples/features/org.polarsys.kitalpha.vp.componentsampleframework.af.feature</module>
+    <module>../../../architecture description/dsl/examples/features/org.polarsys.kitalpha.vp.componentsamplequalityassessment.feature</module>
+    <module>../../../architecture description/dsl/examples/features/org.polarsys.kitalpha.vp.componentsampleframework.feature</module>
+    <module>../../../architecture description/dsl/examples/features/org.polarsys.kitalpha.vp.componentsamplesafety.rules.feature</module>
+    <module>../../../architecture description/dsl/examples/features/org.polarsys.kitalpha.vp.componentsample.feature</module>
+    <module>../../../architecture description/dsl/examples/features/org.polarsys.kitalpha.vp.componentsamplequalityassessment.af.feature</module>
+    <module>../../../architecture description/dsl/examples/features/org.polarsys.kitalpha.vp.componentsamplesafetypattern.representation.feature</module>
+    <module>../../../architecture description/dsl/examples/features/org.polarsys.kitalpha.vp.componentsamplequalityassessment.rules.feature</module>
+    <module>../../../architecture description/dsl/examples/features/org.polarsys.kitalpha.af.componentsamplearchitectureframework.feature</module>
+    <module>../../../architecture description/dsl/examples/features/org.polarsys.kitalpha.vp.componentsamplesafetypattern.af.feature</module>
+    <module>../../../architecture description/dsl/examples/features/org.polarsys.kitalpha.vp.componentsamplesafety.af.feature</module>
+    <module>../../../architecture description/dsl/examples/features/org.polarsys.kitalpha.vp.componentsample.representation.feature</module>
+    <module>../../../architecture description/dsl/examples/features/org.polarsys.kitalpha.vp.componentsampleperformance.af.feature</module>
+    <module>../../../architecture description/dsl/examples/features/org.polarsys.kitalpha.vp.componentsamplequalityassessment.representation.feature</module>
+    <module>../../../architecture description/dsl/examples/features/org.polarsys.kitalpha.vp.componentsample.rules.feature</module>
+    <module>../../../architecture description/dsl/examples/features/org.polarsys.kitalpha.vp.componentsamplesafety.representation.feature</module>
+    <module>../../../architecture description/dsl/examples/features/org.polarsys.kitalpha.vp.componentsamplesafetypattern.rules.feature</module>
+    <module>../../../architecture description/dsl/examples/features/org.polarsys.kitalpha.vp.componentsample.example.feature</module>
+    <module>../../../architecture description/dsl/examples/features/org.polarsys.kitalpha.vp.componentsampleframework.rules.feature</module>
+    <module>../../../architecture description/dsl/examples/features/org.polarsys.kitalpha.vp.componentsampleperformance.feature</module>
+         
+    <!-- module ComponentSimple -->
+     <!-- plugins for base features :
+		* org.polarsys.kitalpha.composer.componentsample.installer.feature
+		* org.polarsys.kitalpha.transposer.componentsample.installer.feature
+		* org.polarsys.kitalpha.vp.componentsample.example.installer.feature
+		* org.polarsys.kitalpha.vp.componentsample.example.feature
+	 -->
+    <module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.componentsample.importer</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.importer</module>
+    <module>../../../transposer/examples/plugins/org.polarsys.kitalpha.transposer.componentsample.importer</module>    
+    
+     <!-- features for base features :
+		* org.polarsys.kitalpha.composer.componentsample.installer.feature
+		* org.polarsys.kitalpha.transposer.componentsample.installer.feature
+		* org.polarsys.kitalpha.vp.componentsample.example.installer.feature
+		* org.polarsys.kitalpha.vp.componentsample.example.feature
+	 -->
+    <module>../../../architecture description/dsl/examples/features/org.polarsys.kitalpha.vp.componentsample.example.installer.feature</module>
+    <module>../../../transposer/examples/features/org.polarsys.kitalpha.transposer.componentsample.installer.feature</module>
+    <module>../../../composer/examples/features/org.polarsys.kitalpha.composer.componentsample.installer.feature</module>
+    
+        
+    <module>../../../emde/examples/plugins/org.polarsys.kitalpha.emde.example.simplecomponent.performance</module>
+    <module>../../../emde/examples/plugins/org.polarsys.kitalpha.emde.example.simplecomponent.performance.egf</module>
+    <module>../../../emde/examples/plugins/org.polarsys.kitalpha.emde.example.simplecomponent.performance.model</module>
+    <module>../../../emde/examples/plugins/org.polarsys.kitalpha.emde.example.simplecomponent.performance.model.edit</module>
+    <module>../../../emde/examples/plugins/org.polarsys.kitalpha.emde.example.simplecomponent.model</module>
+    <module>../../../emde/examples/plugins/org.polarsys.kitalpha.emde.example.simplecomponent.model.edit</module>
+    <module>../../../report/examples/plugins/org.polarsys.kitalpha.report.example.customization.egf</module>
+    <module>../../../transposer/examples/plugins/org.polarsys.kitalpha.transposer.m2m.uml.to.componentsample</module>
+    <!-- Update site -->
+    <module>../../../releng/plugins/org.polarsys.kitalpha.releng.samplecomponent.updatesite</module>
+
+  </modules>
+</project>
+

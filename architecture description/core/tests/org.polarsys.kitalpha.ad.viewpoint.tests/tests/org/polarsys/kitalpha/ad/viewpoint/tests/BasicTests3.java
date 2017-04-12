@@ -32,9 +32,9 @@ import junit.framework.TestCase;
 public class BasicTests3 extends TestCase {
 
 
-	public void testManager1() throws Exception {
-		assertEquals(6, ViewpointManager.getAvailableViewpointDescriptions().length);
-	}
+//	public void testManager1() throws Exception {
+//		assertEquals(6, ViewpointManager.getAvailableViewpointDescriptions().length);
+//	}
 	
 	public void testManager2() throws Exception {
 		assertTrue(ViewpointManager.canChangeState("org.polarsys.kitalpha.vp.componentsample"));
