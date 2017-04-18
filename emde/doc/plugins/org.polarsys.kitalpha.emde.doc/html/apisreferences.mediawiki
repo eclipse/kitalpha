@@ -1,0 +1,10 @@
+
+= <center>APIs References</center> =
+
+
+== Adding programmatically extensions to an extensible element ==
+
+Any extensible element has the reference <code>'''ownedExtensions'''</code>. It is defined in the ExtensibleElement EClass and inherited by all class declared as extensible.
+
+To add programmatically an extension to an extensible element, the reference <code>'''ownedExtensions'''</code> must be updated by adding the extension element to it.
+

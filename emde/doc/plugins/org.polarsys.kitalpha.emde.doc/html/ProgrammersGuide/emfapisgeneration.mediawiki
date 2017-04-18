@@ -1,0 +1,55 @@
+= <center> Generating extensible EMF APIs </center> =
+
+Once eMDE extensions defined in an Ecore model, the next step is to generate EMF APIs in order to start to use it. 
+
+Kitalpha provides a customized EMF generation that takes into account the added EAnnotations. That generation can be triggered from a generation chain. More information on generation chains can be found on the [https://www.eclipse.org/egf/ EGF] web page. <!--The sections bellow show how to (2) create a Generation Chain, (2) create an eMDE EMF APIs generation and (3) generate EPF APIs.-->
+
+
+== Content ==
+
+# [[#Creating a Generation Chain]]
+# [[#Adding the Kitalpha eMDE EMF Generation]]
+# [[#Lunching the generation]]
+
+== Creating a Generation Chain ==
+
+A generation chain can be created by the ''New wizard''. The first page of this wizard asks end-user for a file name and file location. The next page displays a list of available extension of the generation chain if an Ecore model was selected in the workspace (see picture bellow), or an empty list otherwise. In the last case, the add button ([[Image:../img/genchain_wizard_add_button.png|15px]])can be used to select an Ecore model from the workspace, the file system or the platform.  
+
+[[Image:../img/genchain_emde_emf_generation_wizardpage.png|thumb|500px]] 
+
+The picture above shows the different properties of the '''Kitalpha eMDE EMF Generation'''. End-users can customize them from the wizard or from the Generation Chain editor.
+
+The ''Finish'' allows to end the wizard and create a generation chain model in the location chosen in the first page of the wizard. The picture bellow shows the created generation chain.
+
+[[Image:../img/genchain_example.png|thumb|500px]] 
+
+== Adding the Kitalpha eMDE EMF Generation ==
+
+If a generation chain exists and one want to add '''Kitalpha eMDE EMF Generation''' to it, the tooling provided by the generation chain editor can be used. 
+
+The following picture show the contextual menu allowing to add extensions to a generation chain element. The surrounded menu item is the one used to create an '''Kitalpha eMDE EMF Generation'''.
+
+[[Image:../img/genchain_add_emde_emf_gen.png|thumb|500px]] 
+
+One the '''Kitalpha eMDE EMF Generation''' is added to the generation chain, its properties can be changed thanks to the Property View.
+
+----
+<blockquote>
+The ''Model Path'' property value should follow the following format: <nowiki>/</nowiki>''PLUGIN_NAME''<nowiki>/</nowiki>''PATH_TO_ECORE_MODEL''<nowiki>/</nowiki>''ECORE_MODEL_NAME''.ecore .
+</blockquote>
+----
+
+== Lunching the generation ==
+
+The generation chain can be run from two menus:
+
+# Contextual menu of the project explorer by right clicking on the generation chain file (see first picture below).
+# Contextual menu of the generation chain editor  by right clicking on the generation chain model element (see second picture below).
+
+[[Image:../img/genchain_run_explorer.png|thumb|500px]] 
+
+[[Image:../img/genchain_run_editor.png|thumb|500px]] 
+
+
+
+

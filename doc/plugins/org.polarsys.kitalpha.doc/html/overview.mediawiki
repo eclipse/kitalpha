@@ -1,0 +1,25 @@
+Kitalpha is built on a two-level architecture, which defines two categories of features. 
+
+=== Environment of development and execution of DSMs and MBSE Workbenches ===
+* Implementation of the [http://en.wikipedia.org/wiki/ISO/IEC_42010 '''ISO/IEC 42010 standard'''] for the description of system architecture.
+* An integrated and pure DSL environment for accurate, safe, and fast '''development of [http://en.wikipedia.org/wiki/Domain-specific_modeling DSMs]''' and '''viewpoints'''.
+<br>
+
+=== CTK (Core Technology Kit) ===
+The CTK provides Modeling Commonalities.
+* Modeling tools
+** Transformation
+*** '''Composer''': a component for model-to-code generation which differentiates the logic of generation and the logic of organization and persistence in files.
+*** '''Transposer''': a component for model transformation with the ability for instance to support incremental transformations and to develop model bridges.
+*** '''Pattern integration''': an integration of the Pattern technique provided by [https://wiki.eclipse.org/EMF_DiffMerge EMF Diff/Merge].
+** Validation
+*** '''Accuracy''': a component for model validation.
+** Exchange
+*** '''Model Detachment''': an extensible component to detach information from a model, such as viewpoints.
+*** '''Model Attachment''': an extensible component to attach model parts to a model (two or three ways).
+* Documentation
+** '''Business Doc Gen''': a framework for html documentation generation from a model. Kitalpha provides by a default an html export from an ecore model.
+* Basic tools
+** '''Resource Reuse''': a component to retrieve a resource from a version number while managing the workspace / target platform priority.
+** '''Reports''': an extensible component to report messages by filter (e.g., Debug, Info, Warning, Error) and by concerns (e.g., splitting reports by non-functional concerns).
+** '''eMDE''': a component to support model extensibility.
