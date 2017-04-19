@@ -34,13 +34,16 @@ public final class AttachmentMergeSelector implements IMergeSelector {
 	private Role computeMergeDirection(IDifference difference_p) {
 		if (difference_p instanceof EReferenceValuePresence) {
 			EReferenceValuePresence diff = (EReferenceValuePresence) difference_p;
-			if (diff.getValue().getReference() == null)
+/*
+ 			if (diff.getValue().getReference() == null)
+ 
 				return null;
 			if (toMerge(diff.getValue().getReference()))
 				return Role.TARGET;
 			// does the element have a reference to one of our objects ?
 			EList<EObject> eCrossReferences = diff.getValue().getReference().eCrossReferences();
 			return toMerge((EObject[]) eCrossReferences.toArray(new EObject[eCrossReferences.size()])) ? Role.TARGET : null;
+*/
 		}
 		if (difference_p instanceof EElementPresence) {
 			// les nouveaux elts

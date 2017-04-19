@@ -21,6 +21,7 @@
       <featureNames>org.eclipse.xsd.sdk</featureNames>
       <featureNames>org.eclipse.emf.validation.ocl</featureNames>
       <featureNames>org.eclipse.gmf.sdk</featureNames>
+      <featureNames>org.eclipse.team.svn</featureNames>
     </steps>
     <steps xsi:type="buildstep:InstallStep" xmi:id="_YL8A8P32EeSW086H-yDPeg" name="install sirius features" id="${TP_name}" profile="${TP_profile}" p2_os="${TP_os}" p2_ws="${TP_ws}" p2_arch="${TP_arch}">
       <updateSiteUrls>${sirius.repo.url}</updateSiteUrls>
@@ -50,12 +51,12 @@
     <steps xsi:type="buildstep:InstallStep" xmi:id="_JkGN0pKKEeSPapwxSH2ZqQ" name="install diffmerge" id="${TP_name}" profile="${TP_profile}">
       <updateSiteUrls>${diffmerge.repo.url}</updateSiteUrls>
       <updateSiteUrls>${diffmerge.patterns.repo.url}</updateSiteUrls>
-      <featureNames>org.eclipse.emf.diffmerge.sdk.source.feature</featureNames>
       <featureNames>org.eclipse.emf.diffmerge.sdk.feature</featureNames>
+      <featureNames>org.eclipse.emf.diffmerge.sdk.feature.source</featureNames>
       <featureNames>org.eclipse.emf.diffmerge.patterns.sdk.feature</featureNames>
-      <featureNames>org.eclipse.emf.diffmerge.patterns.sdk.source.feature</featureNames>
+      <featureNames>org.eclipse.emf.diffmerge.patterns.sdk.feature.source</featureNames>
       <featureNames>org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature</featureNames>
-      <featureNames>org.eclipse.emf.diffmerge.patterns.sirius.sdk.source.feature</featureNames>
+      <featureNames>org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.source</featureNames>
     </steps>
     <steps xsi:type="buildstep:InstallStep" xmi:id="_esU1ACO3EeWTOe3dES9kkg" name="install amalgam features" id="${TP_name}" profile="${TP_profile}" p2_os="${TP_os}" p2_ws="${TP_ws}" p2_arch="${TP_arch}">
       <updateSiteUrls>${amalgam.repo.url}</updateSiteUrls>
