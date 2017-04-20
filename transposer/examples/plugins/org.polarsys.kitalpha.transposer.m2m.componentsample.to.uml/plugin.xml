@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <!--
-Copyright (c) 2014 Thales Global Services S.A.S.
+Copyright (c) 2014, 2017 Thales Global Services S.A.S.
  All rights reserved. This program and the accompanying materials
  are made available under the terms of the Eclipse Public License v1.0
  which accompanies this distribution, and is available at
@@ -102,5 +102,34 @@ Contributors:
             class="org.polarsys.kitalpha.transposer.m2m.componentsample.to.uml.startup.SetupLanchConfiguration">
       </startup>
    </extension>
-
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+         <command
+               commandId="org.polarsys.kitalpha.transposer.m2m.componentsample.to.uml.transformation.command"
+               icon="icons/transposerLaunch.png"
+               label="Component Sample to UML"
+               style="push">
+            <visibleWhen
+                  checkEnabled="true">
+               <with
+                     variable="activePart">
+                  <instanceof
+                        value="org.eclipse.sirius.diagram.ui.tools.api.editor.DDiagramEditor">
+                  </instanceof>
+               </with>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+ <extension
+       point="org.eclipse.ui.commands">
+    <command
+          defaultHandler="org.polarsys.kitalpha.transposer.m2m.componentsample.to.uml.handler.ComponentSample2UMLHandler"
+          id="org.polarsys.kitalpha.transposer.m2m.componentsample.to.uml.transformation.command"
+          name="Component Sample To UML Command">
+    </command>
+ </extension>
 </plugin>

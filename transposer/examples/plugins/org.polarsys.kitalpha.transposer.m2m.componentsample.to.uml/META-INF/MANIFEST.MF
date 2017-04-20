@@ -11,6 +11,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.uml2.uml;visibility:=reexport,
  org.polarsys.kitalpha.transposer.transformation.emf;visibility:=reexport,
  org.polarsys.kitalpha.vp.componentsample.model;visibility:=reexport,
- org.eclipse.debug.core
+ org.eclipse.debug.core,
+ org.eclipse.sirius.diagram.ui,
+ org.eclipse.gmf.runtime.diagram.ui
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
