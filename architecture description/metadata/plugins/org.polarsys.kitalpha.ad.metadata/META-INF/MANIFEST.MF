@@ -11,7 +11,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.kitalpha.ad.metadata.model,
  org.polarsys.kitalpha.resourcereuse;visibility:=reexport,
  org.polarsys.kitalpha.ad.common,
- org.eclipse.emf.ecore.xmi
+ org.eclipse.emf.ecore.xmi,
+ org.polarsys.kitalpha.resourcereuse.emfscheme
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.ad.metadata,

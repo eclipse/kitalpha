@@ -44,7 +44,8 @@
             name="My test resource 44"
             version="V1"
             path="path://test.resourcereuse.resource44"
-            tags="toto">
+            tags="toto"
+            metadata="path://test.metadata">
       </resource>
    </extension>
    <extension

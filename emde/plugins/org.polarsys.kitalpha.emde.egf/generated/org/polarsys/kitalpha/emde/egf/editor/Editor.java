@@ -671,28 +671,25 @@ public class Editor extends org.eclipse.egf.emf.pattern.editor.Editor {
 	protected final String TEXT_195 = NL + "\t\tcontextMenu.setRemoveAllWhenShown(true);" + NL
 			+ "\t\tcontextMenu.addMenuListener(this);" + NL
 			+ "\t\tMenu menu= contextMenu.createContextMenu(viewer.getControl());" + NL
-			+ "\t\tviewer.getControl().setMenu(menu);";
-	protected final String TEXT_196 = NL
-			+ "\t\tgetSite().registerContextMenu(contextMenu, new UnwrappingSelectionProvider(viewer));";
-	protected final String TEXT_197 = NL + "\t\tgetSite().registerContextMenu(contextMenu, viewer);";
-	protected final String TEXT_198 = NL + NL + "\t\tint dndOperations = DND.DROP_COPY | DND.DROP_MOVE | DND.DROP_LINK;"
-			+ NL + "\t\tTransfer[] transfers = new Transfer[] { LocalTransfer.getInstance()";
-	protected final String TEXT_199 = ", LocalSelectionTransfer.getTransfer(), FileTransfer.getInstance()";
-	protected final String TEXT_200 = " };" + NL
+			+ "\t\tviewer.getControl().setMenu(menu);" + NL + "" + NL
+			+ "\t\tint dndOperations = DND.DROP_COPY | DND.DROP_MOVE | DND.DROP_LINK;" + NL
+			+ "\t\tTransfer[] transfers = new Transfer[] { LocalTransfer.getInstance()";
+	protected final String TEXT_196 = ", LocalSelectionTransfer.getTransfer(), FileTransfer.getInstance()";
+	protected final String TEXT_197 = " };" + NL
 			+ "\t\tviewer.addDragSupport(dndOperations, transfers, new ViewerDragAdapter(viewer));" + NL
 			+ "\t\tviewer.addDropSupport(dndOperations, transfers, new EditingDomainViewerDropAdapter(editingDomain, viewer));"
 			+ NL + "\t}" + NL + "" + NL + "\t/**" + NL
 			+ "\t * This is the method called to load a resource into the editing domain's resource set based on the editor's input."
 			+ NL + "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL
 			+ "\t */" + NL + "\tpublic void createModel()" + NL + "\t{";
-	protected final String TEXT_201 = NL
+	protected final String TEXT_198 = NL
 			+ "\t\tURI resourceURI = EditUIUtil.getURI(getEditorInput(), editingDomain.getResourceSet().getURIConverter());";
-	protected final String TEXT_202 = NL + "\t\tURI resourceURI = EditUIUtil.getURI(getEditorInput());";
-	protected final String TEXT_203 = NL + "\t\tURI resourceURI = URI.createURI(getEditorInput().getName());";
-	protected final String TEXT_204 = NL + "\t\t// Assumes that the input is a file object." + NL + "\t\t//" + NL
+	protected final String TEXT_199 = NL + "\t\tURI resourceURI = EditUIUtil.getURI(getEditorInput());";
+	protected final String TEXT_200 = NL + "\t\tURI resourceURI = URI.createURI(getEditorInput().getName());";
+	protected final String TEXT_201 = NL + "\t\t// Assumes that the input is a file object." + NL + "\t\t//" + NL
 			+ "\t\tIFileEditorInput modelFile = (IFileEditorInput)getEditorInput();" + NL
 			+ "\t\tURI resourceURI = URI.createPlatformResourceURI(modelFile.getFile().getFullPath().toString(), true);";
-	protected final String TEXT_205 = NL + "\t\tException exception = null;" + NL + "\t\tResource resource = null;" + NL
+	protected final String TEXT_202 = NL + "\t\tException exception = null;" + NL + "\t\tResource resource = null;" + NL
 			+ "\t\ttry" + NL + "\t\t{" + NL + "\t\t\t// Load the resource through the editing domain." + NL + "\t\t\t//"
 			+ NL + "\t\t\tresource = editingDomain.getResourceSet().getResource(resourceURI, true);" + NL + "\t\t}" + NL
 			+ "\t\tcatch (Exception e)" + NL + "\t\t{" + NL + "\t\t\texception = e;" + NL
@@ -702,7 +699,7 @@ public class Editor extends org.eclipse.egf.emf.pattern.editor.Editor {
 			+ "\t\t\tresourceToDiagnosticMap.put(resource,  analyzeResourceProblems(resource, exception));" + NL
 			+ "\t\t}" + NL + "\t\teditingDomain.getResourceSet().eAdapters().add(problemIndicationAdapter);" + NL
 			+ "\t\t";
-	protected final String TEXT_206 = ".getViewpointMetadata(editingDomain.getResourceSet()).initMetadataStorage();"
+	protected final String TEXT_203 = ".getViewpointMetadata(editingDomain.getResourceSet()).initMetadataStorage();"
 			+ NL + "\t}" + NL + "" + NL + "\t/**" + NL
 			+ "\t * Returns a diagnostic describing the errors and warnings listed in the resource" + NL
 			+ "\t * and the specified exception (if any)." + NL + "\t * <!-- begin-user-doc -->" + NL
@@ -712,36 +709,36 @@ public class Editor extends org.eclipse.egf.emf.pattern.editor.Editor {
 			+ "\t\tif (hasErrors || !resource.getWarnings().isEmpty())" + NL + "\t\t{" + NL
 			+ "\t\t\tBasicDiagnostic basicDiagnostic =" + NL + "\t\t\t\tnew BasicDiagnostic" + NL
 			+ "\t\t\t\t\t(hasErrors ? Diagnostic.ERROR : Diagnostic.WARNING," + NL + "\t\t\t\t\t \"";
-	protected final String TEXT_207 = "\",";
-	protected final String TEXT_208 = NL + "\t\t\t\t\t 0," + NL
+	protected final String TEXT_204 = "\",";
+	protected final String TEXT_205 = NL + "\t\t\t\t\t 0," + NL
 			+ "\t\t\t\t\t getString(\"_UI_CreateModelError_message\", resource.getURI()),";
-	protected final String TEXT_209 = NL
+	protected final String TEXT_206 = NL
 			+ "\t\t\t\t\t new Object [] { exception == null ? (Object)resource : exception });" + NL
 			+ "\t\t\tbasicDiagnostic.merge(EcoreUtil.computeDiagnostic(resource, true));" + NL
 			+ "\t\t\treturn basicDiagnostic;" + NL + "\t\t}" + NL + "\t\telse if (exception != null)" + NL + "\t\t{"
 			+ NL + "\t\t\treturn" + NL + "\t\t\t\tnew BasicDiagnostic" + NL + "\t\t\t\t\t(Diagnostic.ERROR," + NL
 			+ "\t\t\t\t\t \"";
-	protected final String TEXT_210 = "\",";
-	protected final String TEXT_211 = NL + "\t\t\t\t\t 0," + NL
+	protected final String TEXT_207 = "\",";
+	protected final String TEXT_208 = NL + "\t\t\t\t\t 0," + NL
 			+ "\t\t\t\t\t getString(\"_UI_CreateModelError_message\", resource.getURI()),";
-	protected final String TEXT_212 = NL + "\t\t\t\t\t new Object[] { exception });" + NL + "\t\t}" + NL + "\t\telse"
+	protected final String TEXT_209 = NL + "\t\t\t\t\t new Object[] { exception });" + NL + "\t\t}" + NL + "\t\telse"
 			+ NL + "\t\t{" + NL + "\t\t\treturn Diagnostic.OK_INSTANCE;" + NL + "\t\t}" + NL + "\t}" + NL + "" + NL
 			+ "\t/**" + NL + "\t * This is the method used by the framework to install your own controls." + NL
 			+ "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL
 			+ "\t */";
-	protected final String TEXT_213 = NL + "\t@Override";
-	protected final String TEXT_214 = NL + "\tpublic void createPages()" + NL + "\t{" + NL
+	protected final String TEXT_210 = NL + "\t@Override";
+	protected final String TEXT_211 = NL + "\tpublic void createPages()" + NL + "\t{" + NL
 			+ "\t\t// Creates the model from the editor input" + NL + "\t\t//" + NL + "\t\tcreateModel();" + NL + ""
 			+ NL + "\t\t// Only creates the other pages if there is something that can be edited" + NL + "\t\t//" + NL
 			+ "\t\tif (!getEditingDomain().getResourceSet().getResources().isEmpty())" + NL + "\t\t{" + NL
 			+ "\t\t\t// Create a page for the selection tree view." + NL + "\t\t\t//";
-	protected final String TEXT_215 = NL + "\t\t\t{" + NL + "\t\t\t\tViewerPane viewerPane =" + NL
+	protected final String TEXT_212 = NL + "\t\t\t{" + NL + "\t\t\t\tViewerPane viewerPane =" + NL
 			+ "\t\t\t\t\tnew ViewerPane(getSite().getPage(), ";
-	protected final String TEXT_216 = ".this)" + NL + "\t\t\t\t\t{";
-	protected final String TEXT_217 = NL + "\t\t\t\t\t\t@Override";
-	protected final String TEXT_218 = NL + "\t\t\t\t\t\tpublic Viewer createViewer(Composite composite)" + NL
+	protected final String TEXT_213 = ".this)" + NL + "\t\t\t\t\t{";
+	protected final String TEXT_214 = NL + "\t\t\t\t\t\t@Override";
+	protected final String TEXT_215 = NL + "\t\t\t\t\t\tpublic Viewer createViewer(Composite composite)" + NL
 			+ "\t\t\t\t\t\t{" + NL + "\t\t\t\t\t\t\tTree tree = new Tree(composite, SWT.MULTI);";
-	protected final String TEXT_219 = NL + "                            // begin-extension-code" + NL
+	protected final String TEXT_216 = NL + "                            // begin-extension-code" + NL
 			+ "                            TreeViewer newTreeViewer = new TreeViewer(tree) {" + NL
 			+ "                                @Override" + NL
 			+ "                                public void refresh() {" + NL
@@ -751,53 +748,53 @@ public class Editor extends org.eclipse.egf.emf.pattern.editor.Editor {
 			+ "                                }" + NL + "                            };" + NL
 			+ "                            return newTreeViewer;" + NL
 			+ "                            // end-extension-code";
-	protected final String TEXT_220 = NL + "                            return new TreeViewer(tree);";
-	protected final String TEXT_221 = NL + "\t\t\t\t\t\t}";
-	protected final String TEXT_222 = NL + "\t\t\t\t\t\t@Override";
-	protected final String TEXT_223 = NL + "\t\t\t\t\t\tpublic void requestActivation()" + NL + "\t\t\t\t\t\t{" + NL
+	protected final String TEXT_217 = NL + "                            return new TreeViewer(tree);";
+	protected final String TEXT_218 = NL + "\t\t\t\t\t\t}";
+	protected final String TEXT_219 = NL + "\t\t\t\t\t\t@Override";
+	protected final String TEXT_220 = NL + "\t\t\t\t\t\tpublic void requestActivation()" + NL + "\t\t\t\t\t\t{" + NL
 			+ "\t\t\t\t\t\t\tsuper.requestActivation();" + NL + "\t\t\t\t\t\t\tsetCurrentViewerPane(this);" + NL
 			+ "\t\t\t\t\t\t}" + NL + "\t\t\t\t\t};" + NL + "\t\t\t\tviewerPane.createControl(getContainer());" + NL + ""
 			+ NL + "\t\t\t\tselectionViewer = (TreeViewer)viewerPane.getViewer();";
-	protected final String TEXT_224 = NL + "                // begin-extension-code" + NL
+	protected final String TEXT_221 = NL + "                // begin-extension-code" + NL
 			+ "                viewers.add(selectionViewer);" + NL + "                // end-extension-code";
-	protected final String TEXT_225 = NL
+	protected final String TEXT_222 = NL
 			+ "\t\t\t\tselectionViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));" + NL + ""
 			+ NL + "\t\t\t\tselectionViewer.setLabelProvider(";
-	protected final String TEXT_226 = "new ";
-	protected final String TEXT_227 = "(";
-	protected final String TEXT_228 = "new ";
-	protected final String TEXT_229 = "(";
-	protected final String TEXT_230 = "new ";
-	protected final String TEXT_231 = "(adapterFactory";
-	protected final String TEXT_232 = ", selectionViewer";
-	protected final String TEXT_233 = ")";
-	protected final String TEXT_234 = ", new ";
-	protected final String TEXT_235 = "(editingDomain";
-	protected final String TEXT_236 = ".getResourceSet()";
-	protected final String TEXT_237 = ", selectionViewer";
-	protected final String TEXT_238 = ", ";
-	protected final String TEXT_239 = ".getPlugin().getDialogSettings()";
-	protected final String TEXT_240 = "))";
-	protected final String TEXT_241 = ")";
-	protected final String TEXT_242 = ");" + NL + "\t\t\t\tselectionViewer.setInput(editingDomain.getResourceSet());"
+	protected final String TEXT_223 = "new ";
+	protected final String TEXT_224 = "(";
+	protected final String TEXT_225 = "new ";
+	protected final String TEXT_226 = "(";
+	protected final String TEXT_227 = "new ";
+	protected final String TEXT_228 = "(adapterFactory";
+	protected final String TEXT_229 = ", selectionViewer";
+	protected final String TEXT_230 = ")";
+	protected final String TEXT_231 = ", new ";
+	protected final String TEXT_232 = "(editingDomain";
+	protected final String TEXT_233 = ".getResourceSet()";
+	protected final String TEXT_234 = ", selectionViewer";
+	protected final String TEXT_235 = ", ";
+	protected final String TEXT_236 = ".getPlugin().getDialogSettings()";
+	protected final String TEXT_237 = "))";
+	protected final String TEXT_238 = ")";
+	protected final String TEXT_239 = ");" + NL + "\t\t\t\tselectionViewer.setInput(editingDomain.getResourceSet());"
 			+ NL
 			+ "\t\t\t\tselectionViewer.setSelection(new StructuredSelection(editingDomain.getResourceSet().getResources().get(0)), true);"
 			+ NL + "\t\t\t\tviewerPane.setTitle(editingDomain.getResourceSet());" + NL + "" + NL
 			+ "\t\t\t\tnew AdapterFactoryTreeEditor(selectionViewer.getTree(), adapterFactory);";
-	protected final String TEXT_243 = NL + "\t\t\t\tnew ";
-	protected final String TEXT_244 = "(selectionViewer, new ";
-	protected final String TEXT_245 = ".EditingDomainLocationListener(editingDomain, selectionViewer));";
-	protected final String TEXT_246 = NL + NL + "\t\t\t\tcreateContextMenuFor(selectionViewer);" + NL
+	protected final String TEXT_240 = NL + "\t\t\t\tnew ";
+	protected final String TEXT_241 = "(selectionViewer, new ";
+	protected final String TEXT_242 = ".EditingDomainLocationListener(editingDomain, selectionViewer));";
+	protected final String TEXT_243 = NL + NL + "\t\t\t\tcreateContextMenuFor(selectionViewer);" + NL
 			+ "\t\t\t\tint pageIndex = addPage(viewerPane.getControl());" + NL
 			+ "\t\t\t\tsetPageText(pageIndex, getString(\"_UI_SelectionPage_label\"));";
-	protected final String TEXT_247 = NL + "\t\t\t}" + NL + "" + NL + "\t\t\t// Create a page for the parent tree view."
+	protected final String TEXT_244 = NL + "\t\t\t}" + NL + "" + NL + "\t\t\t// Create a page for the parent tree view."
 			+ NL + "\t\t\t//" + NL + "\t\t\t{" + NL + "\t\t\t\tViewerPane viewerPane =" + NL
 			+ "\t\t\t\t\tnew ViewerPane(getSite().getPage(), ";
-	protected final String TEXT_248 = ".this)" + NL + "\t\t\t\t\t{";
-	protected final String TEXT_249 = NL + "\t\t\t\t\t\t@Override";
-	protected final String TEXT_250 = NL + "\t\t\t\t\t\tpublic Viewer createViewer(Composite composite)" + NL
+	protected final String TEXT_245 = ".this)" + NL + "\t\t\t\t\t{";
+	protected final String TEXT_246 = NL + "\t\t\t\t\t\t@Override";
+	protected final String TEXT_247 = NL + "\t\t\t\t\t\tpublic Viewer createViewer(Composite composite)" + NL
 			+ "\t\t\t\t\t\t{" + NL + "\t\t\t\t\t\t\tTree tree = new Tree(composite, SWT.MULTI);";
-	protected final String TEXT_251 = NL + "                            // begin-extension-code" + NL
+	protected final String TEXT_248 = NL + "                            // begin-extension-code" + NL
 			+ "                            TreeViewer newTreeViewer = new TreeViewer(tree) {" + NL
 			+ "                                @Override" + NL
 			+ "                                public void refresh() {" + NL
@@ -808,36 +805,36 @@ public class Editor extends org.eclipse.egf.emf.pattern.editor.Editor {
 			+ "                                }" + NL + "                            };" + NL
 			+ "                            return newTreeViewer;" + NL
 			+ "                            // end-extension-code";
-	protected final String TEXT_252 = NL + "                            return new TreeViewer(tree);";
-	protected final String TEXT_253 = NL + "\t\t\t\t\t\t}";
-	protected final String TEXT_254 = NL + "\t\t\t\t\t\t@Override";
-	protected final String TEXT_255 = NL + "\t\t\t\t\t\tpublic void requestActivation()" + NL + "\t\t\t\t\t\t{" + NL
+	protected final String TEXT_249 = NL + "                            return new TreeViewer(tree);";
+	protected final String TEXT_250 = NL + "\t\t\t\t\t\t}";
+	protected final String TEXT_251 = NL + "\t\t\t\t\t\t@Override";
+	protected final String TEXT_252 = NL + "\t\t\t\t\t\tpublic void requestActivation()" + NL + "\t\t\t\t\t\t{" + NL
 			+ "\t\t\t\t\t\t\tsuper.requestActivation();" + NL + "\t\t\t\t\t\t\tsetCurrentViewerPane(this);" + NL
 			+ "\t\t\t\t\t\t}" + NL + "\t\t\t\t\t};" + NL + "\t\t\t\tviewerPane.createControl(getContainer());" + NL + ""
 			+ NL + "\t\t\t\tparentViewer = (TreeViewer)viewerPane.getViewer();";
-	protected final String TEXT_256 = NL + "                // begin-extension-code" + NL
+	protected final String TEXT_253 = NL + "                // begin-extension-code" + NL
 			+ "                viewers.add(parentViewer);" + NL + "                // end-extension-code";
-	protected final String TEXT_257 = NL + "\t\t\t\tparentViewer.setAutoExpandLevel(30);" + NL
+	protected final String TEXT_254 = NL + "\t\t\t\tparentViewer.setAutoExpandLevel(30);" + NL
 			+ "\t\t\t\tparentViewer.setContentProvider(new ReverseAdapterFactoryContentProvider(adapterFactory));" + NL
 			+ "\t\t\t\tparentViewer.setLabelProvider(";
-	protected final String TEXT_258 = "new ";
-	protected final String TEXT_259 = "(";
-	protected final String TEXT_260 = "new ";
-	protected final String TEXT_261 = "(adapterFactory";
-	protected final String TEXT_262 = ", parentViewer";
-	protected final String TEXT_263 = ")";
-	protected final String TEXT_264 = ")";
-	protected final String TEXT_265 = ");" + NL + "" + NL + "\t\t\t\tcreateContextMenuFor(parentViewer);" + NL
+	protected final String TEXT_255 = "new ";
+	protected final String TEXT_256 = "(";
+	protected final String TEXT_257 = "new ";
+	protected final String TEXT_258 = "(adapterFactory";
+	protected final String TEXT_259 = ", parentViewer";
+	protected final String TEXT_260 = ")";
+	protected final String TEXT_261 = ")";
+	protected final String TEXT_262 = ");" + NL + "" + NL + "\t\t\t\tcreateContextMenuFor(parentViewer);" + NL
 			+ "\t\t\t\tint pageIndex = addPage(viewerPane.getControl());" + NL
 			+ "\t\t\t\tsetPageText(pageIndex, getString(\"_UI_ParentPage_label\"));";
-	protected final String TEXT_266 = NL + "\t\t\t}" + NL + "" + NL + "\t\t\t// This is the page for the list viewer"
+	protected final String TEXT_263 = NL + "\t\t\t}" + NL + "" + NL + "\t\t\t// This is the page for the list viewer"
 			+ NL + "\t\t\t//" + NL + "\t\t\t{" + NL + "\t\t\t\tViewerPane viewerPane =" + NL
 			+ "\t\t\t\t\tnew ViewerPane(getSite().getPage(), ";
-	protected final String TEXT_267 = ".this)" + NL + "\t\t\t\t\t{";
-	protected final String TEXT_268 = NL + "\t\t\t\t\t\t@Override";
-	protected final String TEXT_269 = NL + "\t\t\t\t\t\tpublic Viewer createViewer(Composite composite)" + NL
+	protected final String TEXT_264 = ".this)" + NL + "\t\t\t\t\t{";
+	protected final String TEXT_265 = NL + "\t\t\t\t\t\t@Override";
+	protected final String TEXT_266 = NL + "\t\t\t\t\t\tpublic Viewer createViewer(Composite composite)" + NL
 			+ "\t\t\t\t\t\t{";
-	protected final String TEXT_270 = NL + "                            // begin-extension-code" + NL
+	protected final String TEXT_267 = NL + "                            // begin-extension-code" + NL
 			+ "                            ListViewer newListViewer = new ListViewer(composite) {" + NL
 			+ "                                @Override" + NL
 			+ "                                public void refresh() {" + NL
@@ -848,36 +845,36 @@ public class Editor extends org.eclipse.egf.emf.pattern.editor.Editor {
 			+ "                                }" + NL + "                            };" + NL
 			+ "                            return newListViewer;" + NL
 			+ "                            // end-extension-code";
-	protected final String TEXT_271 = NL + "                            return new ListViewer(composite);";
-	protected final String TEXT_272 = "\t\t\t\t\t\t\t" + NL + "\t\t\t\t\t\t}";
-	protected final String TEXT_273 = NL + "\t\t\t\t\t\t@Override";
-	protected final String TEXT_274 = NL + "\t\t\t\t\t\tpublic void requestActivation()" + NL + "\t\t\t\t\t\t{" + NL
+	protected final String TEXT_268 = NL + "                            return new ListViewer(composite);";
+	protected final String TEXT_269 = "\t\t\t\t\t\t\t" + NL + "\t\t\t\t\t\t}";
+	protected final String TEXT_270 = NL + "\t\t\t\t\t\t@Override";
+	protected final String TEXT_271 = NL + "\t\t\t\t\t\tpublic void requestActivation()" + NL + "\t\t\t\t\t\t{" + NL
 			+ "\t\t\t\t\t\t\tsuper.requestActivation();" + NL + "\t\t\t\t\t\t\tsetCurrentViewerPane(this);" + NL
 			+ "\t\t\t\t\t\t}" + NL + "\t\t\t\t\t};" + NL + "\t\t\t\tviewerPane.createControl(getContainer());" + NL
 			+ "\t\t\t\tlistViewer = (ListViewer)viewerPane.getViewer();";
-	protected final String TEXT_275 = NL + "                // begin-extension-code" + NL
+	protected final String TEXT_272 = NL + "                // begin-extension-code" + NL
 			+ "                viewers.add(listViewer);" + NL + "                // end-extension-code";
-	protected final String TEXT_276 = NL
+	protected final String TEXT_273 = NL
 			+ "\t\t\t\tlistViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));" + NL
 			+ "\t\t\t\tlistViewer.setLabelProvider(";
-	protected final String TEXT_277 = "new ";
-	protected final String TEXT_278 = "(";
-	protected final String TEXT_279 = "new ";
-	protected final String TEXT_280 = "(adapterFactory";
-	protected final String TEXT_281 = ", listViewer";
-	protected final String TEXT_282 = ")";
-	protected final String TEXT_283 = ")";
-	protected final String TEXT_284 = ");" + NL + "" + NL + "\t\t\t\tcreateContextMenuFor(listViewer);" + NL
+	protected final String TEXT_274 = "new ";
+	protected final String TEXT_275 = "(";
+	protected final String TEXT_276 = "new ";
+	protected final String TEXT_277 = "(adapterFactory";
+	protected final String TEXT_278 = ", listViewer";
+	protected final String TEXT_279 = ")";
+	protected final String TEXT_280 = ")";
+	protected final String TEXT_281 = ");" + NL + "" + NL + "\t\t\t\tcreateContextMenuFor(listViewer);" + NL
 			+ "\t\t\t\tint pageIndex = addPage(viewerPane.getControl());" + NL
 			+ "\t\t\t\tsetPageText(pageIndex, getString(\"_UI_ListPage_label\"));";
-	protected final String TEXT_285 = NL + "\t\t\t}" + NL + "" + NL + "\t\t\t// This is the page for the tree viewer"
+	protected final String TEXT_282 = NL + "\t\t\t}" + NL + "" + NL + "\t\t\t// This is the page for the tree viewer"
 			+ NL + "\t\t\t//" + NL + "\t\t\t{" + NL + "\t\t\t\tViewerPane viewerPane =" + NL
 			+ "\t\t\t\t\tnew ViewerPane(getSite().getPage(), ";
-	protected final String TEXT_286 = ".this)" + NL + "\t\t\t\t\t{";
-	protected final String TEXT_287 = NL + "\t\t\t\t\t\t@Override";
-	protected final String TEXT_288 = NL + "\t\t\t\t\t\tpublic Viewer createViewer(Composite composite)" + NL
+	protected final String TEXT_283 = ".this)" + NL + "\t\t\t\t\t{";
+	protected final String TEXT_284 = NL + "\t\t\t\t\t\t@Override";
+	protected final String TEXT_285 = NL + "\t\t\t\t\t\tpublic Viewer createViewer(Composite composite)" + NL
 			+ "\t\t\t\t\t\t{";
-	protected final String TEXT_289 = NL + "                            // begin-extension-code" + NL
+	protected final String TEXT_286 = NL + "                            // begin-extension-code" + NL
 			+ "                            TreeViewer newTreeViewer = new TreeViewer(composite) {" + NL
 			+ "                                @Override" + NL
 			+ "                                public void refresh() {" + NL
@@ -888,47 +885,47 @@ public class Editor extends org.eclipse.egf.emf.pattern.editor.Editor {
 			+ "                                }" + NL + "                            };" + NL
 			+ "                            return newTreeViewer;" + NL
 			+ "                            // end-extension-code";
-	protected final String TEXT_290 = NL + "                            return new TreeViewer(composite);";
-	protected final String TEXT_291 = NL + "\t\t\t\t\t\t}";
-	protected final String TEXT_292 = NL + "\t\t\t\t\t\t@Override";
-	protected final String TEXT_293 = NL + "\t\t\t\t\t\tpublic void requestActivation()" + NL + "\t\t\t\t\t\t{" + NL
+	protected final String TEXT_287 = NL + "                            return new TreeViewer(composite);";
+	protected final String TEXT_288 = NL + "\t\t\t\t\t\t}";
+	protected final String TEXT_289 = NL + "\t\t\t\t\t\t@Override";
+	protected final String TEXT_290 = NL + "\t\t\t\t\t\tpublic void requestActivation()" + NL + "\t\t\t\t\t\t{" + NL
 			+ "\t\t\t\t\t\t\tsuper.requestActivation();" + NL + "\t\t\t\t\t\t\tsetCurrentViewerPane(this);" + NL
 			+ "\t\t\t\t\t\t}" + NL + "\t\t\t\t\t};" + NL + "\t\t\t\tviewerPane.createControl(getContainer());" + NL
 			+ "\t\t\t\ttreeViewer = (TreeViewer)viewerPane.getViewer();";
-	protected final String TEXT_294 = NL + "                // begin-extension-code" + NL
+	protected final String TEXT_291 = NL + "                // begin-extension-code" + NL
 			+ "                viewers.add(treeViewer);" + NL + "                // end-extension-code";
-	protected final String TEXT_295 = NL
+	protected final String TEXT_292 = NL
 			+ "\t\t\t\ttreeViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));" + NL
 			+ "\t\t\t\ttreeViewer.setLabelProvider(";
-	protected final String TEXT_296 = "new ";
-	protected final String TEXT_297 = "(";
-	protected final String TEXT_298 = "new ";
-	protected final String TEXT_299 = "(";
-	protected final String TEXT_300 = "new ";
-	protected final String TEXT_301 = "(adapterFactory";
-	protected final String TEXT_302 = ", treeViewer";
-	protected final String TEXT_303 = ")";
-	protected final String TEXT_304 = ", new ";
-	protected final String TEXT_305 = "(editingDomain";
-	protected final String TEXT_306 = ".getResourceSet()";
-	protected final String TEXT_307 = ", treeViewer))";
-	protected final String TEXT_308 = ")";
-	protected final String TEXT_309 = ");" + NL + "" + NL
+	protected final String TEXT_293 = "new ";
+	protected final String TEXT_294 = "(";
+	protected final String TEXT_295 = "new ";
+	protected final String TEXT_296 = "(";
+	protected final String TEXT_297 = "new ";
+	protected final String TEXT_298 = "(adapterFactory";
+	protected final String TEXT_299 = ", treeViewer";
+	protected final String TEXT_300 = ")";
+	protected final String TEXT_301 = ", new ";
+	protected final String TEXT_302 = "(editingDomain";
+	protected final String TEXT_303 = ".getResourceSet()";
+	protected final String TEXT_304 = ", treeViewer))";
+	protected final String TEXT_305 = ")";
+	protected final String TEXT_306 = ");" + NL + "" + NL
 			+ "\t\t\t\tnew AdapterFactoryTreeEditor(treeViewer.getTree(), adapterFactory);";
-	protected final String TEXT_310 = NL + "\t\t\t\tnew ";
-	protected final String TEXT_311 = "(treeViewer, new ";
-	protected final String TEXT_312 = ".EditingDomainLocationListener(editingDomain, treeViewer));";
-	protected final String TEXT_313 = NL + NL + "\t\t\t\tcreateContextMenuFor(treeViewer);" + NL
+	protected final String TEXT_307 = NL + "\t\t\t\tnew ";
+	protected final String TEXT_308 = "(treeViewer, new ";
+	protected final String TEXT_309 = ".EditingDomainLocationListener(editingDomain, treeViewer));";
+	protected final String TEXT_310 = NL + NL + "\t\t\t\tcreateContextMenuFor(treeViewer);" + NL
 			+ "\t\t\t\tint pageIndex = addPage(viewerPane.getControl());" + NL
 			+ "\t\t\t\tsetPageText(pageIndex, getString(\"_UI_TreePage_label\"));";
-	protected final String TEXT_314 = NL + "\t\t\t}" + NL + "" + NL + "\t\t\t// This is the page for the table viewer."
+	protected final String TEXT_311 = NL + "\t\t\t}" + NL + "" + NL + "\t\t\t// This is the page for the table viewer."
 			+ NL + "\t\t\t//" + NL + "\t\t\t{" + NL + "\t\t\t\tViewerPane viewerPane =" + NL
 			+ "\t\t\t\t\tnew ViewerPane(getSite().getPage(), ";
-	protected final String TEXT_315 = ".this)" + NL + "\t\t\t\t\t{";
-	protected final String TEXT_316 = NL + "\t\t\t\t\t\t@Override";
-	protected final String TEXT_317 = NL + "\t\t\t\t\t\tpublic Viewer createViewer(Composite composite)" + NL
+	protected final String TEXT_312 = ".this)" + NL + "\t\t\t\t\t{";
+	protected final String TEXT_313 = NL + "\t\t\t\t\t\t@Override";
+	protected final String TEXT_314 = NL + "\t\t\t\t\t\tpublic Viewer createViewer(Composite composite)" + NL
 			+ "\t\t\t\t\t\t{";
-	protected final String TEXT_318 = NL + "                            // begin-extension-code" + NL
+	protected final String TEXT_315 = NL + "                            // begin-extension-code" + NL
 			+ "                            TableViewer newTableViewer = new TableViewer(composite) {" + NL
 			+ "                                @Override" + NL
 			+ "                                public void refresh() {" + NL
@@ -939,61 +936,61 @@ public class Editor extends org.eclipse.egf.emf.pattern.editor.Editor {
 			+ "                                }" + NL + "                            };" + NL
 			+ "                            return newTableViewer;" + NL
 			+ "                            // end-extension-code";
-	protected final String TEXT_319 = NL + "                            return new TableViewer(composite);";
-	protected final String TEXT_320 = NL + "\t\t\t\t\t\t}";
-	protected final String TEXT_321 = NL + "\t\t\t\t\t\t@Override";
-	protected final String TEXT_322 = NL + "\t\t\t\t\t\tpublic void requestActivation()" + NL + "\t\t\t\t\t\t{" + NL
+	protected final String TEXT_316 = NL + "                            return new TableViewer(composite);";
+	protected final String TEXT_317 = NL + "\t\t\t\t\t\t}";
+	protected final String TEXT_318 = NL + "\t\t\t\t\t\t@Override";
+	protected final String TEXT_319 = NL + "\t\t\t\t\t\tpublic void requestActivation()" + NL + "\t\t\t\t\t\t{" + NL
 			+ "\t\t\t\t\t\t\tsuper.requestActivation();" + NL + "\t\t\t\t\t\t\tsetCurrentViewerPane(this);" + NL
 			+ "\t\t\t\t\t\t}" + NL + "\t\t\t\t\t};" + NL + "\t\t\t\tviewerPane.createControl(getContainer());" + NL
 			+ "\t\t\t\ttableViewer = (TableViewer)viewerPane.getViewer();";
-	protected final String TEXT_323 = NL + "                // begin-extension-code" + NL
+	protected final String TEXT_320 = NL + "                // begin-extension-code" + NL
 			+ "                viewers.add(tableViewer);" + NL + "                // end-extension-code";
-	protected final String TEXT_324 = NL + NL + "\t\t\t\tTable table = tableViewer.getTable();" + NL
+	protected final String TEXT_321 = NL + NL + "\t\t\t\tTable table = tableViewer.getTable();" + NL
 			+ "\t\t\t\tTableLayout layout = new TableLayout();" + NL + "\t\t\t\ttable.setLayout(layout);" + NL
 			+ "\t\t\t\ttable.setHeaderVisible(true);" + NL + "\t\t\t\ttable.setLinesVisible(true);" + NL + "" + NL
 			+ "\t\t\t\tTableColumn objectColumn = new TableColumn(table, SWT.NONE);" + NL
 			+ "\t\t\t\tlayout.addColumnData(new ColumnWeightData(3, 100, true));" + NL
 			+ "\t\t\t\tobjectColumn.setText(getString(\"_UI_ObjectColumn_label\"));";
-	protected final String TEXT_325 = NL + "\t\t\t\tobjectColumn.setResizable(true);" + NL + "" + NL
+	protected final String TEXT_322 = NL + "\t\t\t\tobjectColumn.setResizable(true);" + NL + "" + NL
 			+ "\t\t\t\tTableColumn selfColumn = new TableColumn(table, SWT.NONE);" + NL
 			+ "\t\t\t\tlayout.addColumnData(new ColumnWeightData(2, 100, true));" + NL
 			+ "\t\t\t\tselfColumn.setText(getString(\"_UI_SelfColumn_label\"));";
-	protected final String TEXT_326 = NL + "\t\t\t\tselfColumn.setResizable(true);" + NL + "" + NL
+	protected final String TEXT_323 = NL + "\t\t\t\tselfColumn.setResizable(true);" + NL + "" + NL
 			+ "\t\t\t\ttableViewer.setColumnProperties(new String [] {\"a\", \"b\"});";
-	protected final String TEXT_327 = NL
+	protected final String TEXT_324 = NL
 			+ "\t\t\t\ttableViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));" + NL
 			+ "\t\t\t\ttableViewer.setLabelProvider(";
-	protected final String TEXT_328 = "new ";
-	protected final String TEXT_329 = "(";
-	protected final String TEXT_330 = "new ";
-	protected final String TEXT_331 = "(";
-	protected final String TEXT_332 = "new ";
-	protected final String TEXT_333 = "(adapterFactory";
-	protected final String TEXT_334 = ", tableViewer";
-	protected final String TEXT_335 = ")";
-	protected final String TEXT_336 = ", new ";
-	protected final String TEXT_337 = "(editingDomain";
-	protected final String TEXT_338 = ".getResourceSet()";
-	protected final String TEXT_339 = ", tableViewer";
-	protected final String TEXT_340 = ", ";
-	protected final String TEXT_341 = ".getPlugin().getDialogSettings()";
-	protected final String TEXT_342 = "))";
-	protected final String TEXT_343 = ")";
-	protected final String TEXT_344 = ");" + NL;
-	protected final String TEXT_345 = NL + "\t\t\t\tnew ";
-	protected final String TEXT_346 = "(tableViewer, new ";
-	protected final String TEXT_347 = ".EditingDomainLocationListener(editingDomain, tableViewer));" + NL;
-	protected final String TEXT_348 = NL + "\t\t\t\tcreateContextMenuFor(tableViewer);" + NL
+	protected final String TEXT_325 = "new ";
+	protected final String TEXT_326 = "(";
+	protected final String TEXT_327 = "new ";
+	protected final String TEXT_328 = "(";
+	protected final String TEXT_329 = "new ";
+	protected final String TEXT_330 = "(adapterFactory";
+	protected final String TEXT_331 = ", tableViewer";
+	protected final String TEXT_332 = ")";
+	protected final String TEXT_333 = ", new ";
+	protected final String TEXT_334 = "(editingDomain";
+	protected final String TEXT_335 = ".getResourceSet()";
+	protected final String TEXT_336 = ", tableViewer";
+	protected final String TEXT_337 = ", ";
+	protected final String TEXT_338 = ".getPlugin().getDialogSettings()";
+	protected final String TEXT_339 = "))";
+	protected final String TEXT_340 = ")";
+	protected final String TEXT_341 = ");" + NL;
+	protected final String TEXT_342 = NL + "\t\t\t\tnew ";
+	protected final String TEXT_343 = "(tableViewer, new ";
+	protected final String TEXT_344 = ".EditingDomainLocationListener(editingDomain, tableViewer));" + NL;
+	protected final String TEXT_345 = NL + "\t\t\t\tcreateContextMenuFor(tableViewer);" + NL
 			+ "\t\t\t\tint pageIndex = addPage(viewerPane.getControl());" + NL
 			+ "\t\t\t\tsetPageText(pageIndex, getString(\"_UI_TablePage_label\"));";
-	protected final String TEXT_349 = NL + "\t\t\t}" + NL + "" + NL
+	protected final String TEXT_346 = NL + "\t\t\t}" + NL + "" + NL
 			+ "\t\t\t// This is the page for the table tree viewer." + NL + "\t\t\t//" + NL + "\t\t\t{" + NL
 			+ "\t\t\t\tViewerPane viewerPane =" + NL + "\t\t\t\t\tnew ViewerPane(getSite().getPage(), ";
-	protected final String TEXT_350 = ".this)" + NL + "\t\t\t\t\t{";
-	protected final String TEXT_351 = NL + "\t\t\t\t\t\t@Override";
-	protected final String TEXT_352 = NL + "\t\t\t\t\t\tpublic Viewer createViewer(Composite composite)" + NL
+	protected final String TEXT_347 = ".this)" + NL + "\t\t\t\t\t{";
+	protected final String TEXT_348 = NL + "\t\t\t\t\t\t@Override";
+	protected final String TEXT_349 = NL + "\t\t\t\t\t\tpublic Viewer createViewer(Composite composite)" + NL
 			+ "\t\t\t\t\t\t{";
-	protected final String TEXT_353 = NL + "                            // begin-extension-code" + NL
+	protected final String TEXT_350 = NL + "                            // begin-extension-code" + NL
 			+ "                            TreeViewer newTreeViewer = new TreeViewer(composite) {" + NL
 			+ "                                @Override" + NL
 			+ "                                public void refresh() {" + NL
@@ -1004,52 +1001,52 @@ public class Editor extends org.eclipse.egf.emf.pattern.editor.Editor {
 			+ "                                }" + NL + "                            };" + NL
 			+ "                            return newTreeViewer;" + NL
 			+ "                            // end-extension-code";
-	protected final String TEXT_354 = NL + "                            return new TreeViewer(composite);";
-	protected final String TEXT_355 = NL + "\t\t\t\t\t\t}";
-	protected final String TEXT_356 = NL + "\t\t\t\t\t\t@Override";
-	protected final String TEXT_357 = NL + "\t\t\t\t\t\tpublic void requestActivation()" + NL + "\t\t\t\t\t\t{" + NL
+	protected final String TEXT_351 = NL + "                            return new TreeViewer(composite);";
+	protected final String TEXT_352 = NL + "\t\t\t\t\t\t}";
+	protected final String TEXT_353 = NL + "\t\t\t\t\t\t@Override";
+	protected final String TEXT_354 = NL + "\t\t\t\t\t\tpublic void requestActivation()" + NL + "\t\t\t\t\t\t{" + NL
 			+ "\t\t\t\t\t\t\tsuper.requestActivation();" + NL + "\t\t\t\t\t\t\tsetCurrentViewerPane(this);" + NL
 			+ "\t\t\t\t\t\t}" + NL + "\t\t\t\t\t};" + NL + "\t\t\t\tviewerPane.createControl(getContainer());" + NL + ""
 			+ NL + "\t\t\t\ttreeViewerWithColumns = (TreeViewer)viewerPane.getViewer();";
-	protected final String TEXT_358 = NL + "                // begin-extension-code" + NL
+	protected final String TEXT_355 = NL + "                // begin-extension-code" + NL
 			+ "                viewers.add(treeViewerWithColumns);" + NL + "                // end-extension-code";
-	protected final String TEXT_359 = NL + NL + "\t\t\t\tTree tree = treeViewerWithColumns.getTree();" + NL
+	protected final String TEXT_356 = NL + NL + "\t\t\t\tTree tree = treeViewerWithColumns.getTree();" + NL
 			+ "\t\t\t\ttree.setLayoutData(new FillLayout());" + NL + "\t\t\t\ttree.setHeaderVisible(true);" + NL
 			+ "\t\t\t\ttree.setLinesVisible(true);" + NL + "" + NL
 			+ "\t\t\t\tTreeColumn objectColumn = new TreeColumn(tree, SWT.NONE);" + NL
 			+ "\t\t\t\tobjectColumn.setText(getString(\"_UI_ObjectColumn_label\"));";
-	protected final String TEXT_360 = NL + "\t\t\t\tobjectColumn.setResizable(true);" + NL
+	protected final String TEXT_357 = NL + "\t\t\t\tobjectColumn.setResizable(true);" + NL
 			+ "\t\t\t\tobjectColumn.setWidth(250);" + NL + "" + NL
 			+ "\t\t\t\tTreeColumn selfColumn = new TreeColumn(tree, SWT.NONE);" + NL
 			+ "\t\t\t\tselfColumn.setText(getString(\"_UI_SelfColumn_label\"));";
-	protected final String TEXT_361 = NL + "\t\t\t\tselfColumn.setResizable(true);" + NL
+	protected final String TEXT_358 = NL + "\t\t\t\tselfColumn.setResizable(true);" + NL
 			+ "\t\t\t\tselfColumn.setWidth(200);" + NL + "" + NL
 			+ "\t\t\t\ttreeViewerWithColumns.setColumnProperties(new String [] {\"a\", \"b\"});";
-	protected final String TEXT_362 = NL
+	protected final String TEXT_359 = NL
 			+ "\t\t\t\ttreeViewerWithColumns.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));"
 			+ NL + "\t\t\t\ttreeViewerWithColumns.setLabelProvider(";
-	protected final String TEXT_363 = "new ";
-	protected final String TEXT_364 = "(";
-	protected final String TEXT_365 = "new ";
-	protected final String TEXT_366 = "(";
-	protected final String TEXT_367 = "new ";
-	protected final String TEXT_368 = "(adapterFactory";
-	protected final String TEXT_369 = ", treeViewerWithColumns";
-	protected final String TEXT_370 = ")";
-	protected final String TEXT_371 = ", new ";
-	protected final String TEXT_372 = "(editingDomain";
-	protected final String TEXT_373 = ".getResourceSet()";
-	protected final String TEXT_374 = ", treeViewerWithColumns";
-	protected final String TEXT_375 = ", ";
-	protected final String TEXT_376 = ".getPlugin().getDialogSettings()";
-	protected final String TEXT_377 = "))";
-	protected final String TEXT_378 = ")";
-	protected final String TEXT_379 = ");" + NL + "" + NL + "\t\t\t\tcreateContextMenuFor(treeViewerWithColumns);" + NL
+	protected final String TEXT_360 = "new ";
+	protected final String TEXT_361 = "(";
+	protected final String TEXT_362 = "new ";
+	protected final String TEXT_363 = "(";
+	protected final String TEXT_364 = "new ";
+	protected final String TEXT_365 = "(adapterFactory";
+	protected final String TEXT_366 = ", treeViewerWithColumns";
+	protected final String TEXT_367 = ")";
+	protected final String TEXT_368 = ", new ";
+	protected final String TEXT_369 = "(editingDomain";
+	protected final String TEXT_370 = ".getResourceSet()";
+	protected final String TEXT_371 = ", treeViewerWithColumns";
+	protected final String TEXT_372 = ", ";
+	protected final String TEXT_373 = ".getPlugin().getDialogSettings()";
+	protected final String TEXT_374 = "))";
+	protected final String TEXT_375 = ")";
+	protected final String TEXT_376 = ");" + NL + "" + NL + "\t\t\t\tcreateContextMenuFor(treeViewerWithColumns);" + NL
 			+ "\t\t\t\tint pageIndex = addPage(viewerPane.getControl());" + NL
 			+ "\t\t\t\tsetPageText(pageIndex, getString(\"_UI_TreeWithColumnsPage_label\"));";
-	protected final String TEXT_380 = NL + "\t\t\t}";
-	protected final String TEXT_381 = NL + "\t\t\tTree tree = new Tree(getContainer(), SWT.MULTI);";
-	protected final String TEXT_382 = NL + "            // begin-extension-code" + NL
+	protected final String TEXT_377 = NL + "\t\t\t}";
+	protected final String TEXT_378 = NL + "\t\t\tTree tree = new Tree(getContainer(), SWT.MULTI);";
+	protected final String TEXT_379 = NL + "            // begin-extension-code" + NL
 			+ "            selectionViewer = new TreeViewer(tree) {" + NL + "                @Override" + NL
 			+ "                public void refresh() {" + NL + "                    super.refresh();" + NL
 			+ "\t\t\t\t\tfor (PropertySheetPage propertySheetPage : propertySheetPages) {" + NL
@@ -1058,44 +1055,44 @@ public class Editor extends org.eclipse.egf.emf.pattern.editor.Editor {
 			+ "\t\t\t\t\t\t\t\tpropertySheetPage.refresh();" + NL + "\t\t\t\t\t}" + NL + "                }" + NL
 			+ "            };" + NL + "            viewers.add(selectionViewer);" + NL
 			+ "            // end-extension-code";
-	protected final String TEXT_383 = NL + "            selectionViewer = new TreeViewer(tree);";
-	protected final String TEXT_384 = "\t\t" + NL + "\t\t\tsetCurrentViewer(selectionViewer);" + NL + "" + NL
+	protected final String TEXT_380 = NL + "            selectionViewer = new TreeViewer(tree);";
+	protected final String TEXT_381 = "\t\t" + NL + "\t\t\tsetCurrentViewer(selectionViewer);" + NL + "" + NL
 			+ "\t\t\tselectionViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));" + NL
 			+ "\t\t\tselectionViewer.setLabelProvider(";
-	protected final String TEXT_385 = "new ";
-	protected final String TEXT_386 = "(";
-	protected final String TEXT_387 = "new ";
-	protected final String TEXT_388 = "(";
-	protected final String TEXT_389 = "new ";
-	protected final String TEXT_390 = "(adapterFactory";
-	protected final String TEXT_391 = ", selectionViewer";
-	protected final String TEXT_392 = ")";
-	protected final String TEXT_393 = ", new ";
-	protected final String TEXT_394 = "(editingDomain";
-	protected final String TEXT_395 = ".getResourceSet()";
-	protected final String TEXT_396 = ", selectionViewer";
-	protected final String TEXT_397 = ", ";
-	protected final String TEXT_398 = ".getPlugin().getDialogSettings()";
-	protected final String TEXT_399 = "))";
-	protected final String TEXT_400 = ")";
-	protected final String TEXT_401 = ");" + NL + "\t\t\tselectionViewer.setInput(editingDomain.getResourceSet());" + NL
+	protected final String TEXT_382 = "new ";
+	protected final String TEXT_383 = "(";
+	protected final String TEXT_384 = "new ";
+	protected final String TEXT_385 = "(";
+	protected final String TEXT_386 = "new ";
+	protected final String TEXT_387 = "(adapterFactory";
+	protected final String TEXT_388 = ", selectionViewer";
+	protected final String TEXT_389 = ")";
+	protected final String TEXT_390 = ", new ";
+	protected final String TEXT_391 = "(editingDomain";
+	protected final String TEXT_392 = ".getResourceSet()";
+	protected final String TEXT_393 = ", selectionViewer";
+	protected final String TEXT_394 = ", ";
+	protected final String TEXT_395 = ".getPlugin().getDialogSettings()";
+	protected final String TEXT_396 = "))";
+	protected final String TEXT_397 = ")";
+	protected final String TEXT_398 = ");" + NL + "\t\t\tselectionViewer.setInput(editingDomain.getResourceSet());" + NL
 			+ "\t\t\tselectionViewer.setSelection(new StructuredSelection(editingDomain.getResourceSet().getResources().get(0)), true);"
 			+ NL + "" + NL + "\t\t\tnew AdapterFactoryTreeEditor(selectionViewer.getTree(), adapterFactory);";
-	protected final String TEXT_402 = NL + "\t\t\tnew ";
-	protected final String TEXT_403 = "(selectionViewer, new ";
-	protected final String TEXT_404 = ".EditingDomainLocationListener(editingDomain, selectionViewer));";
-	protected final String TEXT_405 = NL + NL + "\t\t\tcreateContextMenuFor(selectionViewer);" + NL
+	protected final String TEXT_399 = NL + "\t\t\tnew ";
+	protected final String TEXT_400 = "(selectionViewer, new ";
+	protected final String TEXT_401 = ".EditingDomainLocationListener(editingDomain, selectionViewer));";
+	protected final String TEXT_402 = NL + NL + "\t\t\tcreateContextMenuFor(selectionViewer);" + NL
 			+ "\t\t\tint pageIndex = addPage(tree);" + NL
 			+ "\t\t\tsetPageText(pageIndex, getString(\"_UI_SelectionPage_label\"));";
-	protected final String TEXT_406 = NL + NL + "\t\t\tgetSite().getShell().getDisplay().asyncExec" + NL
+	protected final String TEXT_403 = NL + NL + "\t\t\tgetSite().getShell().getDisplay().asyncExec" + NL
 			+ "\t\t\t\t(new Runnable()" + NL + "\t\t\t\t {" + NL + "\t\t\t\t\t public void run()" + NL + "\t\t\t\t\t {"
 			+ NL + "\t\t\t\t\t\t setActivePage(0);" + NL + "\t\t\t\t\t }" + NL + "\t\t\t\t });" + NL + "\t\t}" + NL + ""
 			+ NL + "\t\t// Ensures that this editor will only display the page's tab" + NL
 			+ "\t\t// area if there are more than one page" + NL + "\t\t//" + NL
 			+ "\t\tgetContainer().addControlListener" + NL + "\t\t\t(new ControlAdapter()" + NL + "\t\t\t {" + NL
 			+ "\t\t\t\tboolean guard = false;";
-	protected final String TEXT_407 = NL + "\t\t\t\t@Override";
-	protected final String TEXT_408 = NL + "\t\t\t\tpublic void controlResized(ControlEvent event)" + NL + "\t\t\t\t{"
+	protected final String TEXT_404 = NL + "\t\t\t\t@Override";
+	protected final String TEXT_405 = NL + "\t\t\t\tpublic void controlResized(ControlEvent event)" + NL + "\t\t\t\t{"
 			+ NL + "\t\t\t\t\tif (!guard)" + NL + "\t\t\t\t\t{" + NL + "\t\t\t\t\t\tguard = true;" + NL
 			+ "\t\t\t\t\t\thideTabs();" + NL + "\t\t\t\t\t\tguard = false;" + NL + "\t\t\t\t\t}" + NL + "\t\t\t\t}" + NL
 			+ "\t\t\t });" + NL + "" + NL + "\t\tgetSite().getShell().getDisplay().asyncExec" + NL
@@ -1105,7 +1102,7 @@ public class Editor extends org.eclipse.egf.emf.pattern.editor.Editor {
 			+ "\t * this hides the single tab at the bottom." + NL + "\t * <!-- begin-user-doc -->" + NL
 			+ "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */" + NL + "\tprotected void hideTabs()"
 			+ NL + "\t{" + NL + "\t\tif (getPageCount() <= 1)" + NL + "\t\t{" + NL + "\t\t\tsetPageText(0, \"\");";
-	protected final String TEXT_409 = NL + "\t\t\tif (getContainer() instanceof CTabFolder)" + NL + "\t\t\t{" + NL
+	protected final String TEXT_406 = NL + "\t\t\tif (getContainer() instanceof CTabFolder)" + NL + "\t\t\t{" + NL
 			+ "\t\t\t\t((CTabFolder)getContainer()).setTabHeight(1);" + NL
 			+ "\t\t\t\tPoint point = getContainer().getSize();" + NL
 			+ "\t\t\t\tgetContainer().setSize(point.x, point.y + 6);" + NL + "\t\t\t}" + NL + "\t\t}" + NL + "\t}" + NL
@@ -1114,102 +1111,102 @@ public class Editor extends org.eclipse.egf.emf.pattern.editor.Editor {
 			+ "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */" + NL + "\tprotected void showTabs()"
 			+ NL + "\t{" + NL + "\t\tif (getPageCount() > 1)" + NL + "\t\t{" + NL
 			+ "\t\t\tsetPageText(0, getString(\"_UI_SelectionPage_label\"));";
-	protected final String TEXT_410 = NL + "\t\t\tif (getContainer() instanceof CTabFolder)" + NL + "\t\t\t{" + NL
+	protected final String TEXT_407 = NL + "\t\t\tif (getContainer() instanceof CTabFolder)" + NL + "\t\t\t{" + NL
 			+ "\t\t\t\t((CTabFolder)getContainer()).setTabHeight(SWT.DEFAULT);" + NL
 			+ "\t\t\t\tPoint point = getContainer().getSize();" + NL
 			+ "\t\t\t\tgetContainer().setSize(point.x, point.y - 6);" + NL + "\t\t\t}" + NL + "\t\t}" + NL + "\t}" + NL
 			+ "" + NL + "\t/**" + NL + "\t * This is used to track the active viewer." + NL
 			+ "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL
 			+ "\t */";
-	protected final String TEXT_411 = NL + "\t@Override";
-	protected final String TEXT_412 = NL + "\tprotected void pageChange(int pageIndex)" + NL + "\t{" + NL
+	protected final String TEXT_408 = NL + "\t@Override";
+	protected final String TEXT_409 = NL + "\tprotected void pageChange(int pageIndex)" + NL + "\t{" + NL
 			+ "\t\tsuper.pageChange(pageIndex);" + NL + "" + NL + "\t\tif (contentOutlinePage != null)" + NL + "\t\t{"
 			+ NL + "\t\t\thandleContentOutlineSelection(contentOutlinePage.getSelection());" + NL + "\t\t}" + NL + "\t}"
 			+ NL + "" + NL + "\t/**" + NL + "\t * This is how the framework determines which interfaces we implement."
 			+ NL + "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL
 			+ "\t */";
-	protected final String TEXT_413 = NL + "\t@SuppressWarnings(\"";
-	protected final String TEXT_414 = "rawtypes";
-	protected final String TEXT_415 = "unchecked";
-	protected final String TEXT_416 = "\")";
-	protected final String TEXT_417 = NL + "\t@Override";
-	protected final String TEXT_418 = NL + "\tpublic Object getAdapter(Class key)" + NL + "\t{" + NL
+	protected final String TEXT_410 = NL + "\t@SuppressWarnings(\"";
+	protected final String TEXT_411 = "rawtypes";
+	protected final String TEXT_412 = "unchecked";
+	protected final String TEXT_413 = "\")";
+	protected final String TEXT_414 = NL + "\t@Override";
+	protected final String TEXT_415 = NL + "\tpublic Object getAdapter(Class key)" + NL + "\t{" + NL
 			+ "\t\tif (key.equals(IContentOutlinePage.class))" + NL + "\t\t{" + NL
 			+ "\t\t\treturn showOutlineView() ? getContentOutlinePage() : null;" + NL + "\t\t}" + NL
 			+ "\t\telse if (key.equals(IPropertySheetPage.class))" + NL + "\t\t{" + NL
 			+ "\t\t\treturn getPropertySheetPage();" + NL + "\t\t}";
-	protected final String TEXT_419 = NL + "\t\telse if (key.equals(IGotoMarker.class))" + NL + "\t\t{" + NL
+	protected final String TEXT_416 = NL + "\t\telse if (key.equals(IGotoMarker.class))" + NL + "\t\t{" + NL
 			+ "\t\t\treturn this;" + NL + "\t\t}";
-	protected final String TEXT_420 = NL + "\t\telse" + NL + "\t\t{" + NL + "\t\t\treturn super.getAdapter(key);" + NL
+	protected final String TEXT_417 = NL + "\t\telse" + NL + "\t\t{" + NL + "\t\t\treturn super.getAdapter(key);" + NL
 			+ "\t\t}" + NL + "\t}" + NL + "" + NL + "\t/**" + NL
 			+ "\t * This accesses a cached version of the content outliner." + NL + "\t * <!-- begin-user-doc -->" + NL
 			+ "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */" + NL
 			+ "\tpublic IContentOutlinePage getContentOutlinePage()" + NL + "\t{" + NL
 			+ "\t\tif (contentOutlinePage == null)" + NL + "\t\t{" + NL + "\t\t\t// The content outline is just a tree."
 			+ NL + "\t\t\t//" + NL + "\t\t\tclass MyContentOutlinePage extends ContentOutlinePage" + NL + "\t\t\t{";
-	protected final String TEXT_421 = NL + "\t\t\t\t@Override";
-	protected final String TEXT_422 = NL + "\t\t\t\tpublic void createControl(Composite parent)" + NL + "\t\t\t\t{" + NL
+	protected final String TEXT_418 = NL + "\t\t\t\t@Override";
+	protected final String TEXT_419 = NL + "\t\t\t\tpublic void createControl(Composite parent)" + NL + "\t\t\t\t{" + NL
 			+ "\t\t\t\t\tsuper.createControl(parent);" + NL + "\t\t\t\t\tcontentOutlineViewer = getTreeViewer();" + NL
 			+ "\t\t\t\t\tcontentOutlineViewer.addSelectionChangedListener(this);\t\t\t\t\t";
-	protected final String TEXT_423 = NL + "                    // begin-extension-code" + NL
+	protected final String TEXT_420 = NL + "                    // begin-extension-code" + NL
 			+ "                    viewers.add(contentOutlineViewer);" + NL
 			+ "                    // end-extension-code" + NL + "\t\t\t\t\tfor (";
-	protected final String TEXT_424 = " resource : viewerFilterActions.keySet()) {" + NL + "\t\t\t\t\t\tfor (";
-	protected final String TEXT_425 = " filterAction : viewerFilterActions.get(resource)) {" + NL
+	protected final String TEXT_421 = " resource : viewerFilterActions.keySet()) {" + NL + "\t\t\t\t\t\tfor (";
+	protected final String TEXT_422 = " filterAction : viewerFilterActions.get(resource)) {" + NL
 			+ "\t\t\t\t\t\t\tfilterAction.addViewer(contentOutlineViewer);" + NL + "\t\t\t\t\t\t}" + NL
 			+ "\t\t\t\t\t}  ";
-	protected final String TEXT_426 = "\t\t\t\t\t\t\t\t\t\t" + NL + "" + NL + "\t\t\t\t\t// Set up the tree viewer."
+	protected final String TEXT_423 = "\t\t\t\t\t\t\t\t\t\t" + NL + "" + NL + "\t\t\t\t\t// Set up the tree viewer."
 			+ NL + "\t\t\t\t\t//" + NL
 			+ "\t\t\t\t\tcontentOutlineViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));"
 			+ NL + "\t\t\t\t\tcontentOutlineViewer.setLabelProvider(";
-	protected final String TEXT_427 = "new ";
-	protected final String TEXT_428 = "(";
-	protected final String TEXT_429 = "new ";
-	protected final String TEXT_430 = "(";
-	protected final String TEXT_431 = "new ";
-	protected final String TEXT_432 = "(adapterFactory";
-	protected final String TEXT_433 = ", contentOutlineViewer";
-	protected final String TEXT_434 = ")";
-	protected final String TEXT_435 = ", new ";
-	protected final String TEXT_436 = "(editingDomain";
-	protected final String TEXT_437 = ".getResourceSet()";
-	protected final String TEXT_438 = ", contentOutlineViewer";
-	protected final String TEXT_439 = ", ";
-	protected final String TEXT_440 = ".getPlugin().getDialogSettings()";
-	protected final String TEXT_441 = "))";
-	protected final String TEXT_442 = ")";
-	protected final String TEXT_443 = ");" + NL
+	protected final String TEXT_424 = "new ";
+	protected final String TEXT_425 = "(";
+	protected final String TEXT_426 = "new ";
+	protected final String TEXT_427 = "(";
+	protected final String TEXT_428 = "new ";
+	protected final String TEXT_429 = "(adapterFactory";
+	protected final String TEXT_430 = ", contentOutlineViewer";
+	protected final String TEXT_431 = ")";
+	protected final String TEXT_432 = ", new ";
+	protected final String TEXT_433 = "(editingDomain";
+	protected final String TEXT_434 = ".getResourceSet()";
+	protected final String TEXT_435 = ", contentOutlineViewer";
+	protected final String TEXT_436 = ", ";
+	protected final String TEXT_437 = ".getPlugin().getDialogSettings()";
+	protected final String TEXT_438 = "))";
+	protected final String TEXT_439 = ")";
+	protected final String TEXT_440 = ");" + NL
 			+ "\t\t\t\t\tcontentOutlineViewer.setInput(editingDomain.getResourceSet());" + NL;
-	protected final String TEXT_444 = NL + "\t\t\t\t\tnew ";
-	protected final String TEXT_445 = "(contentOutlineViewer, new ";
-	protected final String TEXT_446 = ".EditingDomainLocationListener(editingDomain, contentOutlineViewer));" + NL;
-	protected final String TEXT_447 = NL + "\t\t\t\t\t// Make sure our popups work." + NL + "\t\t\t\t\t//" + NL
+	protected final String TEXT_441 = NL + "\t\t\t\t\tnew ";
+	protected final String TEXT_442 = "(contentOutlineViewer, new ";
+	protected final String TEXT_443 = ".EditingDomainLocationListener(editingDomain, contentOutlineViewer));" + NL;
+	protected final String TEXT_444 = NL + "\t\t\t\t\t// Make sure our popups work." + NL + "\t\t\t\t\t//" + NL
 			+ "\t\t\t\t\tcreateContextMenuFor(contentOutlineViewer);" + NL + "" + NL
 			+ "\t\t\t\t\tif (!editingDomain.getResourceSet().getResources().isEmpty())" + NL + "\t\t\t\t\t{" + NL
 			+ "\t\t\t\t\t  // Select the root object in the view." + NL + "\t\t\t\t\t  //" + NL
 			+ "\t\t\t\t\t  contentOutlineViewer.setSelection(new StructuredSelection(editingDomain.getResourceSet().getResources().get(0)), true);"
 			+ NL + "\t\t\t\t\t}" + NL + "\t\t\t\t}" + NL;
-	protected final String TEXT_448 = NL + "\t\t\t\t@Override";
-	protected final String TEXT_449 = NL
+	protected final String TEXT_445 = NL + "\t\t\t\t@Override";
+	protected final String TEXT_446 = NL
 			+ "\t\t\t\tpublic void makeContributions(IMenuManager menuManager, IToolBarManager toolBarManager, IStatusLineManager statusLineManager)"
 			+ NL + "\t\t\t\t{" + NL
 			+ "\t\t\t\t\tsuper.makeContributions(menuManager, toolBarManager, statusLineManager);" + NL
 			+ "\t\t\t\t\tcontentOutlineStatusLineManager = statusLineManager;" + NL + "\t\t\t\t}" + NL;
-	protected final String TEXT_450 = NL + "\t\t\t\t@Override";
-	protected final String TEXT_451 = NL + "\t\t\t\tpublic void setActionBars(IActionBars actionBars)" + NL
+	protected final String TEXT_447 = NL + "\t\t\t\t@Override";
+	protected final String TEXT_448 = NL + "\t\t\t\tpublic void setActionBars(IActionBars actionBars)" + NL
 			+ "\t\t\t\t{" + NL + "\t\t\t\t\tsuper.setActionBars(actionBars);" + NL
 			+ "\t\t\t\t\tgetActionBarContributor().shareGlobalActions(this, actionBars);" + NL + "\t\t\t\t}" + NL
 			+ "\t\t\t\t";
-	protected final String TEXT_452 = NL + "\t\t\t\t@Override";
-	protected final String TEXT_453 = NL + "\t\t\t\tpublic void dispose() {";
-	protected final String TEXT_454 = NL + "                    // begin-extension-code             " + NL
+	protected final String TEXT_449 = NL + "\t\t\t\t@Override";
+	protected final String TEXT_450 = NL + "\t\t\t\tpublic void dispose() {";
+	protected final String TEXT_451 = NL + "                    // begin-extension-code             " + NL
 			+ "                    viewers.remove(contentOutlineViewer);                   " + NL
 			+ "                    // end-extension-code\t\t\t\t\t" + NL + "\t\t\t\t\tfor (";
-	protected final String TEXT_455 = " resource : viewerFilterActions.keySet()) {" + NL + "\t\t\t\t\t\tfor (";
-	protected final String TEXT_456 = " filterAction : viewerFilterActions.get(resource)) {" + NL
+	protected final String TEXT_452 = " resource : viewerFilterActions.keySet()) {" + NL + "\t\t\t\t\t\tfor (";
+	protected final String TEXT_453 = " filterAction : viewerFilterActions.get(resource)) {" + NL
 			+ "\t\t\t\t\t\t\tfilterAction.removeViewer(contentOutlineViewer);" + NL + "\t\t\t\t\t\t}" + NL
 			+ "\t\t\t\t\t}";
-	protected final String TEXT_457 = "\t\t\t\t\t" + NL + "\t\t\t\t\tsuper.dispose();" + NL + "\t\t\t\t}\t\t\t\t" + NL
+	protected final String TEXT_454 = "\t\t\t\t\t" + NL + "\t\t\t\t\tsuper.dispose();" + NL + "\t\t\t\t}\t\t\t\t" + NL
 			+ "\t\t\t}" + NL + "" + NL + "\t\t\tcontentOutlinePage = new MyContentOutlinePage();" + NL + "" + NL
 			+ "\t\t\t// Listen to selection so that we can handle it is a special way." + NL + "\t\t\t//" + NL
 			+ "\t\t\tcontentOutlinePage.addSelectionChangedListener" + NL + "\t\t\t\t(new ISelectionChangedListener()"
@@ -1221,17 +1218,17 @@ public class Editor extends org.eclipse.egf.emf.pattern.editor.Editor {
 			+ "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */"
 			+ NL + "\tpublic IPropertySheetPage getPropertySheetPage()" + NL + "\t{" + NL
 			+ "\t\tPropertySheetPage propertySheetPage =" + NL + "\t\t\tnew ExtendedPropertySheetPage(editingDomain";
-	protected final String TEXT_458 = ", ExtendedPropertySheetPage.Decoration.MANUAL";
-	protected final String TEXT_459 = ", ExtendedPropertySheetPage.Decoration.LIVE, ";
-	protected final String TEXT_460 = ".getPlugin().getDialogSettings()";
-	protected final String TEXT_461 = ")" + NL + "\t\t\t\t{";
-	protected final String TEXT_462 = NL + "\t\t\t\t\t@Override";
-	protected final String TEXT_463 = NL + "\t\t\t\t\tpublic void setSelectionToViewer(";
-	protected final String TEXT_464 = " selection)" + NL + "\t\t\t\t\t{" + NL + "\t\t\t\t\t\t";
-	protected final String TEXT_465 = ".this.setSelectionToViewer(selection);" + NL + "\t\t\t\t\t\t";
-	protected final String TEXT_466 = ".this.setFocus();" + NL + "\t\t\t\t\t}" + NL;
-	protected final String TEXT_467 = NL + "\t\t\t\t\t@Override";
-	protected final String TEXT_468 = NL + "\t\t\t\t\tpublic void setActionBars(IActionBars actionBars)" + NL
+	protected final String TEXT_455 = ", ExtendedPropertySheetPage.Decoration.MANUAL";
+	protected final String TEXT_456 = ", ExtendedPropertySheetPage.Decoration.LIVE, ";
+	protected final String TEXT_457 = ".getPlugin().getDialogSettings()";
+	protected final String TEXT_458 = ")" + NL + "\t\t\t\t{";
+	protected final String TEXT_459 = NL + "\t\t\t\t\t@Override";
+	protected final String TEXT_460 = NL + "\t\t\t\t\tpublic void setSelectionToViewer(";
+	protected final String TEXT_461 = " selection)" + NL + "\t\t\t\t\t{" + NL + "\t\t\t\t\t\t";
+	protected final String TEXT_462 = ".this.setSelectionToViewer(selection);" + NL + "\t\t\t\t\t\t";
+	protected final String TEXT_463 = ".this.setFocus();" + NL + "\t\t\t\t\t}" + NL;
+	protected final String TEXT_464 = NL + "\t\t\t\t\t@Override";
+	protected final String TEXT_465 = NL + "\t\t\t\t\tpublic void setActionBars(IActionBars actionBars)" + NL
 			+ "\t\t\t\t\t{" + NL + "\t\t\t\t\t\tsuper.setActionBars(actionBars);" + NL
 			+ "\t\t\t\t\t\tgetActionBarContributor().shareGlobalActions(this, actionBars);" + NL + "\t\t\t\t\t}" + NL
 			+ "\t\t\t\t};" + NL
@@ -1241,22 +1238,22 @@ public class Editor extends org.eclipse.egf.emf.pattern.editor.Editor {
 			+ "\t * This deals with how we want selection in the outliner to affect the other views." + NL
 			+ "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */"
 			+ NL + "\tpublic void handleContentOutlineSelection(ISelection selection)" + NL + "\t{";
-	protected final String TEXT_469 = NL
+	protected final String TEXT_466 = NL
 			+ "\t\tif (currentViewerPane != null && !selection.isEmpty() && selection instanceof IStructuredSelection)";
-	protected final String TEXT_470 = NL
+	protected final String TEXT_467 = NL
 			+ "\t\tif (selectionViewer != null && !selection.isEmpty() && selection instanceof IStructuredSelection)";
-	protected final String TEXT_471 = NL + "\t\t{" + NL + "\t\t\tIterator";
-	protected final String TEXT_472 = "<?>";
-	protected final String TEXT_473 = " selectedElements = ((IStructuredSelection)selection).iterator();" + NL
+	protected final String TEXT_468 = NL + "\t\t{" + NL + "\t\t\tIterator";
+	protected final String TEXT_469 = "<?>";
+	protected final String TEXT_470 = " selectedElements = ((IStructuredSelection)selection).iterator();" + NL
 			+ "\t\t\tif (selectedElements.hasNext())" + NL + "\t\t\t{" + NL
 			+ "\t\t\t\t// Get the first selected element." + NL + "\t\t\t\t//" + NL
 			+ "\t\t\t\tObject selectedElement = selectedElements.next();" + NL;
-	protected final String TEXT_474 = NL
+	protected final String TEXT_471 = NL
 			+ "\t\t\t\t// If it's the selection viewer, then we want it to select the same selection as this selection."
 			+ NL + "\t\t\t\t//" + NL + "\t\t\t\tif (currentViewerPane.getViewer() == selectionViewer)" + NL
 			+ "\t\t\t\t{" + NL + "\t\t\t\t\t";
-	protected final String TEXT_475 = " selectionList = new ";
-	protected final String TEXT_476 = "();" + NL + "\t\t\t\t\tselectionList.add(selectedElement);" + NL
+	protected final String TEXT_472 = " selectionList = new ";
+	protected final String TEXT_473 = "();" + NL + "\t\t\t\t\tselectionList.add(selectedElement);" + NL
 			+ "\t\t\t\t\twhile (selectedElements.hasNext())" + NL + "\t\t\t\t\t{" + NL
 			+ "\t\t\t\t\t\tselectionList.add(selectedElements.next());" + NL + "\t\t\t\t\t}" + NL + "" + NL
 			+ "\t\t\t\t\t// Set the selection to the widget." + NL + "\t\t\t\t\t//" + NL
@@ -1265,59 +1262,59 @@ public class Editor extends org.eclipse.egf.emf.pattern.editor.Editor {
 			+ NL + "\t\t\t\t\tif (currentViewerPane.getViewer().getInput() != selectedElement)" + NL + "\t\t\t\t\t{"
 			+ NL + "\t\t\t\t\t\tcurrentViewerPane.getViewer().setInput(selectedElement);" + NL
 			+ "\t\t\t\t\t\tcurrentViewerPane.setTitle(selectedElement);" + NL + "\t\t\t\t\t}" + NL + "\t\t\t\t}";
-	protected final String TEXT_477 = NL + "\t\t\t\t";
-	protected final String TEXT_478 = " selectionList = new ";
-	protected final String TEXT_479 = "();" + NL + "\t\t\t\tselectionList.add(selectedElement);" + NL
+	protected final String TEXT_474 = NL + "\t\t\t\t";
+	protected final String TEXT_475 = " selectionList = new ";
+	protected final String TEXT_476 = "();" + NL + "\t\t\t\tselectionList.add(selectedElement);" + NL
 			+ "\t\t\t\twhile (selectedElements.hasNext())" + NL + "\t\t\t\t{" + NL
 			+ "\t\t\t\t\tselectionList.add(selectedElements.next());" + NL + "\t\t\t\t}" + NL + "" + NL
 			+ "\t\t\t\t// Set the selection to the widget." + NL + "\t\t\t\t//" + NL
 			+ "\t\t\t\tselectionViewer.setSelection(new StructuredSelection(selectionList));";
-	protected final String TEXT_480 = NL + "\t\t\t}" + NL + "\t\t}" + NL + "\t}" + NL + "" + NL + "\t/**" + NL
+	protected final String TEXT_477 = NL + "\t\t\t}" + NL + "\t\t}" + NL + "\t}" + NL + "" + NL + "\t/**" + NL
 			+ "\t * This is for implementing {@link IEditorPart} and simply tests the command stack." + NL
 			+ "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL
 			+ "\t */";
-	protected final String TEXT_481 = NL + "\t@Override";
-	protected final String TEXT_482 = NL + "\tpublic boolean isDirty()" + NL + "\t{" + NL
+	protected final String TEXT_478 = NL + "\t@Override";
+	protected final String TEXT_479 = NL + "\tpublic boolean isDirty()" + NL + "\t{" + NL
 			+ "\t\treturn ((BasicCommandStack)editingDomain.getCommandStack()).isSaveNeeded();" + NL + "\t}" + NL + ""
 			+ NL + "\t/**" + NL + "\t * This is for implementing {@link IEditorPart} and simply saves the model file."
 			+ NL + "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL
 			+ "\t */";
-	protected final String TEXT_483 = NL + "\t@Override";
-	protected final String TEXT_484 = NL + "\tpublic void doSave(IProgressMonitor progressMonitor)" + NL + "\t{" + NL
+	protected final String TEXT_480 = NL + "\t@Override";
+	protected final String TEXT_481 = NL + "\tpublic void doSave(IProgressMonitor progressMonitor)" + NL + "\t{" + NL
 			+ "\t\t// Save only resources that have actually changed." + NL + "\t\t//" + NL + "\t\tfinal ";
-	protected final String TEXT_485 = " saveOptions = new ";
-	protected final String TEXT_486 = "();";
-	protected final String TEXT_487 = NL
+	protected final String TEXT_482 = " saveOptions = new ";
+	protected final String TEXT_483 = "();";
+	protected final String TEXT_484 = NL
 			+ "\t\tsaveOptions.put(Resource.OPTION_SAVE_ONLY_IF_CHANGED, Resource.OPTION_SAVE_ONLY_IF_CHANGED_MEMORY_BUFFER);";
-	protected final String TEXT_488 = NL
+	protected final String TEXT_485 = NL
 			+ "\t\tsaveOptions.put(Resource.OPTION_LINE_DELIMITER, Resource.OPTION_LINE_DELIMITER_UNSPECIFIED);";
-	protected final String TEXT_489 = NL + NL
+	protected final String TEXT_486 = NL + NL
 			+ "\t\t// Do the work within an operation because this is a long running activity that modifies the workbench."
 			+ NL + "\t\t//" + NL + "\t\t";
-	protected final String TEXT_490 = " operation =" + NL + "\t\t\tnew ";
-	protected final String TEXT_491 = "()" + NL + "\t\t\t{" + NL
+	protected final String TEXT_487 = " operation =" + NL + "\t\t\tnew ";
+	protected final String TEXT_488 = "()" + NL + "\t\t\t{" + NL
 			+ "\t\t\t\t// This is the method that gets invoked when the operation runs." + NL + "\t\t\t\t//";
-	protected final String TEXT_492 = NL + "\t\t\t\t@Override";
-	protected final String TEXT_493 = NL + "\t\t\t\tpublic void ";
-	protected final String TEXT_494 = "(IProgressMonitor monitor)" + NL + "\t\t\t\t{" + NL
+	protected final String TEXT_489 = NL + "\t\t\t\t@Override";
+	protected final String TEXT_490 = NL + "\t\t\t\tpublic void ";
+	protected final String TEXT_491 = "(IProgressMonitor monitor)" + NL + "\t\t\t\t{" + NL
 			+ "\t\t\t\t\t// Save the resources to the file system." + NL + "\t\t\t\t\t//" + NL
 			+ "\t\t\t\t\tboolean first = true;";
-	protected final String TEXT_495 = NL
+	protected final String TEXT_492 = NL
 			+ "\t\t\t\t\tfor (Resource resource : editingDomain.getResourceSet().getResources())";
-	protected final String TEXT_496 = NL
+	protected final String TEXT_493 = NL
 			+ "\t\t\t\t\tfor (Iterator i = editingDomain.getResourceSet().getResources().iterator(); i.hasNext(); )";
-	protected final String TEXT_497 = NL + "\t\t\t\t\t{";
-	protected final String TEXT_498 = NL + "\t\t\t\t\t\tResource resource = (Resource)i.next();";
-	protected final String TEXT_499 = NL
+	protected final String TEXT_494 = NL + "\t\t\t\t\t{";
+	protected final String TEXT_495 = NL + "\t\t\t\t\t\tResource resource = (Resource)i.next();";
+	protected final String TEXT_496 = NL
 			+ "\t\t\t\t\t\tif ((first || !resource.getContents().isEmpty() || isPersisted(resource)) && !editingDomain.isReadOnly(resource))"
 			+ NL + "\t\t\t\t\t\t{" + NL + "\t\t\t\t\t\t\ttry" + NL + "\t\t\t\t\t\t\t{";
-	protected final String TEXT_500 = NL + "\t\t\t\t\t\t\t\tlong timeStamp = resource.getTimeStamp();" + NL
+	protected final String TEXT_497 = NL + "\t\t\t\t\t\t\t\tlong timeStamp = resource.getTimeStamp();" + NL
 			+ "\t\t\t\t\t\t\t\tresource.save(saveOptions);" + NL
 			+ "\t\t\t\t\t\t\t\tif (resource.getTimeStamp() != timeStamp)" + NL + "\t\t\t\t\t\t\t\t{" + NL
 			+ "\t\t\t\t\t\t\t\t\tsavedResources.add(resource);" + NL + "\t\t\t\t\t\t\t\t}";
-	protected final String TEXT_501 = NL + "\t\t\t\t\t\t\t\tresource.save(saveOptions);" + NL
+	protected final String TEXT_498 = NL + "\t\t\t\t\t\t\t\tresource.save(saveOptions);" + NL
 			+ "\t\t\t\t\t\t\t\tsavedResources.add(resource);";
-	protected final String TEXT_502 = NL + "\t\t\t\t\t\t\t}" + NL + "\t\t\t\t\t\t\tcatch (Exception exception)" + NL
+	protected final String TEXT_499 = NL + "\t\t\t\t\t\t\t}" + NL + "\t\t\t\t\t\t\tcatch (Exception exception)" + NL
 			+ "\t\t\t\t\t\t\t{" + NL
 			+ "\t\t\t\t\t\t\t\tresourceToDiagnosticMap.put(resource, analyzeResourceProblems(resource, exception));"
 			+ NL + "\t\t\t\t\t\t\t}" + NL + "\t\t\t\t\t\t\tfirst = false;" + NL + "\t\t\t\t\t\t}" + NL + "\t\t\t\t\t}"
@@ -1329,7 +1326,7 @@ public class Editor extends org.eclipse.egf.emf.pattern.editor.Editor {
 			+ "\t\t\tfirePropertyChange(IEditorPart.PROP_DIRTY);" + NL + "\t\t}" + NL
 			+ "\t\tcatch (Exception exception)" + NL + "\t\t{" + NL + "\t\t\t// Something went wrong that shouldn't."
 			+ NL + "\t\t\t//" + NL + "\t\t\t";
-	protected final String TEXT_503 = ".INSTANCE.log(exception);" + NL + "\t\t}" + NL
+	protected final String TEXT_500 = ".INSTANCE.log(exception);" + NL + "\t\t}" + NL
 			+ "\t\tupdateProblemIndication = true;" + NL + "\t\tupdateProblemIndication();" + NL + "\t}" + NL + "" + NL
 			+ "\t/**" + NL
 			+ "\t * This returns whether something has been persisted to the URI of the specified resource." + NL
@@ -1344,59 +1341,59 @@ public class Editor extends org.eclipse.egf.emf.pattern.editor.Editor {
 			+ "\t/**" + NL + "\t * This always returns true because it is not currently supported." + NL
 			+ "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL
 			+ "\t */";
-	protected final String TEXT_504 = NL + "\t@Override";
-	protected final String TEXT_505 = NL + "\tpublic boolean isSaveAsAllowed()" + NL + "\t{" + NL + "\t\treturn true;"
+	protected final String TEXT_501 = NL + "\t@Override";
+	protected final String TEXT_502 = NL + "\tpublic boolean isSaveAsAllowed()" + NL + "\t{" + NL + "\t\treturn true;"
 			+ NL + "\t}" + NL + "" + NL + "\t/**" + NL + "\t * This also changes the editor's input." + NL
 			+ "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL
 			+ "\t */";
-	protected final String TEXT_506 = NL + "\t@Override";
-	protected final String TEXT_507 = NL + "\tpublic void doSaveAs()" + NL + "\t{";
-	protected final String TEXT_508 = NL + "\t\tnew ";
-	protected final String TEXT_509 = "(getSite().getShell(), null, SWT.NONE)" + NL + "\t\t\t{";
-	protected final String TEXT_510 = NL + "\t\t\t\t@Override";
-	protected final String TEXT_511 = NL + "\t\t\t\tprotected boolean isSave()" + NL + "\t\t\t\t{" + NL
+	protected final String TEXT_503 = NL + "\t@Override";
+	protected final String TEXT_504 = NL + "\tpublic void doSaveAs()" + NL + "\t{";
+	protected final String TEXT_505 = NL + "\t\tnew ";
+	protected final String TEXT_506 = "(getSite().getShell(), null, SWT.NONE)" + NL + "\t\t\t{";
+	protected final String TEXT_507 = NL + "\t\t\t\t@Override";
+	protected final String TEXT_508 = NL + "\t\t\t\tprotected boolean isSave()" + NL + "\t\t\t\t{" + NL
 			+ "\t\t\t\t\treturn true;" + NL + "\t\t\t\t}" + NL;
-	protected final String TEXT_512 = NL + "\t\t\t\t@Override";
-	protected final String TEXT_513 = NL + "\t\t\t\tprotected boolean processResources()" + NL + "\t\t\t\t{" + NL
+	protected final String TEXT_509 = NL + "\t\t\t\t@Override";
+	protected final String TEXT_510 = NL + "\t\t\t\tprotected boolean processResources()" + NL + "\t\t\t\t{" + NL
 			+ "\t\t\t\t\t";
-	protected final String TEXT_514 = " uris = getURIs();" + NL + "\t\t\t\t\tif (uris.size() > 0)" + NL + "\t\t\t\t\t{"
+	protected final String TEXT_511 = " uris = getURIs();" + NL + "\t\t\t\t\tif (uris.size() > 0)" + NL + "\t\t\t\t\t{"
 			+ NL + "\t\t\t\t\t\tURI uri = ";
-	protected final String TEXT_515 = "uris.get(0);" + NL + "\t\t\t\t\t\tdoSaveAs(uri, new ";
-	protected final String TEXT_516 = "(uri));" + NL + "\t\t\t\t\t\treturn true;" + NL + "\t\t\t\t\t}" + NL
+	protected final String TEXT_512 = "uris.get(0);" + NL + "\t\t\t\t\t\tdoSaveAs(uri, new ";
+	protected final String TEXT_513 = "(uri));" + NL + "\t\t\t\t\t\treturn true;" + NL + "\t\t\t\t\t}" + NL
 			+ "\t\t\t\t\telse" + NL + "\t\t\t\t\t{" + NL + "\t\t\t\t\t\treturn false;" + NL + "\t\t\t\t\t}" + NL
 			+ "\t\t\t\t}" + NL + "\t\t\t}.open();";
-	protected final String TEXT_517 = NL + "\t\tString[] filters = ";
-	protected final String TEXT_518 = "(String[])";
-	protected final String TEXT_519 = "FILE_EXTENSION_FILTERS.toArray(new String[FILE_EXTENSION_FILTERS.size()]);" + NL
+	protected final String TEXT_514 = NL + "\t\tString[] filters = ";
+	protected final String TEXT_515 = "(String[])";
+	protected final String TEXT_516 = "FILE_EXTENSION_FILTERS.toArray(new String[FILE_EXTENSION_FILTERS.size()]);" + NL
 			+ "\t\tString[] files = ";
-	protected final String TEXT_520 = ".openFilePathDialog(getSite().getShell(), ";
-	protected final String TEXT_521 = ".SAVE, filters);" + NL + "\t\tif (files.length > 0)" + NL + "\t\t{" + NL
+	protected final String TEXT_517 = ".openFilePathDialog(getSite().getShell(), ";
+	protected final String TEXT_518 = ".SAVE, filters);" + NL + "\t\tif (files.length > 0)" + NL + "\t\t{" + NL
 			+ "\t\t\tURI uri = URI.createFileURI(files[0]);" + NL + "\t\t\tdoSaveAs(uri, new ";
-	protected final String TEXT_522 = "(uri));" + NL + "\t\t}";
-	protected final String TEXT_523 = NL + "\t\tSaveAsDialog saveAsDialog = new SaveAsDialog(getSite().getShell());"
+	protected final String TEXT_519 = "(uri));" + NL + "\t\t}";
+	protected final String TEXT_520 = NL + "\t\tSaveAsDialog saveAsDialog = new SaveAsDialog(getSite().getShell());"
 			+ NL + "\t\tsaveAsDialog.open();" + NL + "\t\tIPath path = saveAsDialog.getResult();" + NL
 			+ "\t\tif (path != null)" + NL + "\t\t{" + NL
 			+ "\t\t\tIFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(path);" + NL
 			+ "\t\t\tif (file != null)" + NL + "\t\t\t{" + NL
 			+ "\t\t\t\tdoSaveAs(URI.createPlatformResourceURI(file.getFullPath().toString(), true), new FileEditorInput(file));"
 			+ NL + "\t\t\t}" + NL + "\t\t}";
-	protected final String TEXT_524 = NL + "\t}" + NL + "" + NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->" + NL
+	protected final String TEXT_521 = NL + "\t}" + NL + "" + NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->" + NL
 			+ "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */" + NL
 			+ "\tprotected void doSaveAs(URI uri, IEditorInput editorInput)" + NL + "\t{" + NL + "\t\t(";
-	protected final String TEXT_525 = "(Resource)";
-	protected final String TEXT_526 = "editingDomain.getResourceSet().getResources().get(0)).setURI(uri);" + NL
+	protected final String TEXT_522 = "(Resource)";
+	protected final String TEXT_523 = "editingDomain.getResourceSet().getResources().get(0)).setURI(uri);" + NL
 			+ "\t\tsetInputWithNotify(editorInput);" + NL + "\t\tsetPartName(editorInput.getName());" + NL
 			+ "\t\tIProgressMonitor progressMonitor =" + NL + "\t\t\tgetActionBars().getStatusLineManager() != null ?"
 			+ NL + "\t\t\t\tgetActionBars().getStatusLineManager().getProgressMonitor() :" + NL + "\t\t\t\tnew ";
-	protected final String TEXT_527 = "();" + NL + "\t\tdoSave(progressMonitor);" + NL + "\t}";
-	protected final String TEXT_528 = NL + NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->" + NL
+	protected final String TEXT_524 = "();" + NL + "\t\tdoSave(progressMonitor);" + NL + "\t}";
+	protected final String TEXT_525 = NL + NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->" + NL
 			+ "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */" + NL
 			+ "\tpublic void gotoMarker(IMarker marker)" + NL + "\t{";
-	protected final String TEXT_529 = NL + "\t\t";
-	protected final String TEXT_530 = " targetObjects = markerHelper.getTargetObjects(editingDomain, marker);" + NL
+	protected final String TEXT_526 = NL + "\t\t";
+	protected final String TEXT_527 = " targetObjects = markerHelper.getTargetObjects(editingDomain, marker);" + NL
 			+ "\t\tif (!targetObjects.isEmpty())" + NL + "\t\t{" + NL + "\t\t\tsetSelectionToViewer(targetObjects);"
 			+ NL + "\t\t}";
-	protected final String TEXT_531 = NL + "\t\ttry" + NL + "\t\t{" + NL
+	protected final String TEXT_528 = NL + "\t\ttry" + NL + "\t\t{" + NL
 			+ "\t\t\tif (marker.isSubtypeOf(EValidator.MARKER))" + NL + "\t\t\t{" + NL
 			+ "\t\t\t\tString uriAttribute = marker.getAttribute(EValidator.URI_ATTRIBUTE, null);" + NL
 			+ "\t\t\t\tif (uriAttribute != null)" + NL + "\t\t\t\t{" + NL
@@ -1406,27 +1403,27 @@ public class Editor extends org.eclipse.egf.emf.pattern.editor.Editor {
 			+ "\t\t\t\t\t  setSelectionToViewer(Collections.singleton(editingDomain.getWrapper(eObject)));" + NL
 			+ "\t\t\t\t\t}" + NL + "\t\t\t\t}" + NL + "\t\t\t}" + NL + "\t\t}" + NL
 			+ "\t\tcatch (CoreException exception)" + NL + "\t\t{" + NL + "\t\t\t";
-	protected final String TEXT_532 = ".INSTANCE.log(exception);" + NL + "\t\t}";
-	protected final String TEXT_533 = NL + "\t}";
-	protected final String TEXT_534 = NL + NL + "\t/**" + NL + "\t * This is called during startup." + NL
+	protected final String TEXT_529 = ".INSTANCE.log(exception);" + NL + "\t\t}";
+	protected final String TEXT_530 = NL + "\t}";
+	protected final String TEXT_531 = NL + NL + "\t/**" + NL + "\t * This is called during startup." + NL
 			+ "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL
 			+ "\t */";
-	protected final String TEXT_535 = NL + "\t@Override";
-	protected final String TEXT_536 = NL + "\tpublic void init(IEditorSite site, IEditorInput editorInput)" + NL + "\t{"
+	protected final String TEXT_532 = NL + "\t@Override";
+	protected final String TEXT_533 = NL + "\tpublic void init(IEditorSite site, IEditorInput editorInput)" + NL + "\t{"
 			+ NL + "\t\tsetSite(site);" + NL + "\t\tsetInputWithNotify(editorInput);" + NL
 			+ "\t\tsetPartName(editorInput.getName());" + NL + "\t\tsite.setSelectionProvider(this);" + NL
 			+ "\t\tsite.getPage().addPartListener(partListener);";
-	protected final String TEXT_537 = NL
+	protected final String TEXT_534 = NL
 			+ "\t\tResourcesPlugin.getWorkspace().addResourceChangeListener(resourceChangeListener, IResourceChangeEvent.POST_CHANGE);";
-	protected final String TEXT_538 = NL + "\t}" + NL + "" + NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->" + NL
+	protected final String TEXT_535 = NL + "\t}" + NL + "" + NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->" + NL
 			+ "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */";
-	protected final String TEXT_539 = NL + "\t@Override";
-	protected final String TEXT_540 = NL + "\tpublic void setFocus()" + NL + "\t{";
-	protected final String TEXT_541 = NL + "\t\tif (currentViewerPane != null)" + NL + "\t\t{" + NL
+	protected final String TEXT_536 = NL + "\t@Override";
+	protected final String TEXT_537 = NL + "\tpublic void setFocus()" + NL + "\t{";
+	protected final String TEXT_538 = NL + "\t\tif (currentViewerPane != null)" + NL + "\t\t{" + NL
 			+ "\t\t\tcurrentViewerPane.setFocus();" + NL + "\t\t}" + NL + "\t\telse" + NL + "\t\t{" + NL
 			+ "\t\t\tgetControl(getActivePage()).setFocus();" + NL + "\t\t}";
-	protected final String TEXT_542 = NL + "\t\tgetControl(getActivePage()).setFocus();";
-	protected final String TEXT_543 = NL + "\t}" + NL + "" + NL + "\t/**" + NL
+	protected final String TEXT_539 = NL + "\t\tgetControl(getActivePage()).setFocus();";
+	protected final String TEXT_540 = NL + "\t}" + NL + "" + NL + "\t/**" + NL
 			+ "\t * This implements {@link org.eclipse.jface.viewers.ISelectionProvider}." + NL
 			+ "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */"
 			+ NL + "\tpublic void addSelectionChangedListener(ISelectionChangedListener listener)" + NL + "\t{" + NL
@@ -1444,13 +1441,13 @@ public class Editor extends org.eclipse.egf.emf.pattern.editor.Editor {
 			+ "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */" + NL
 			+ "\tpublic void setSelection(ISelection selection)" + NL + "\t{" + NL + "\t\teditorSelection = selection;"
 			+ NL;
-	protected final String TEXT_544 = NL + "\t\tfor (ISelectionChangedListener listener : selectionChangedListeners)";
-	protected final String TEXT_545 = NL
+	protected final String TEXT_541 = NL + "\t\tfor (ISelectionChangedListener listener : selectionChangedListeners)";
+	protected final String TEXT_542 = NL
 			+ "\t\tfor (Iterator listeners = selectionChangedListeners.iterator(); listeners.hasNext(); )";
-	protected final String TEXT_546 = NL + "\t\t{";
-	protected final String TEXT_547 = NL
+	protected final String TEXT_543 = NL + "\t\t{";
+	protected final String TEXT_544 = NL
 			+ "\t\t\tISelectionChangedListener listener = (ISelectionChangedListener)listeners.next();";
-	protected final String TEXT_548 = NL
+	protected final String TEXT_545 = NL
 			+ "\t\t\tlistener.selectionChanged(new SelectionChangedEvent(this, selection));" + NL + "\t\t}" + NL
 			+ "\t\tsetStatusLineManager(selection);" + NL + "\t}" + NL + "" + NL + "\t/**" + NL
 			+ "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */"
@@ -1459,27 +1456,27 @@ public class Editor extends org.eclipse.egf.emf.pattern.editor.Editor {
 			+ NL + "\t\t\tcontentOutlineStatusLineManager : getActionBars().getStatusLineManager();" + NL + "" + NL
 			+ "\t\tif (statusLineManager != null)" + NL + "\t\t{" + NL
 			+ "\t\t\tif (selection instanceof IStructuredSelection)" + NL + "\t\t\t{" + NL + "\t\t\t\t";
-	protected final String TEXT_549 = " collection = ((IStructuredSelection)selection).toList();" + NL
+	protected final String TEXT_546 = " collection = ((IStructuredSelection)selection).toList();" + NL
 			+ "\t\t\t\tswitch (collection.size())" + NL + "\t\t\t\t{" + NL + "\t\t\t\t\tcase 0:" + NL + "\t\t\t\t\t{"
 			+ NL + "\t\t\t\t\t\tstatusLineManager.setMessage(getString(\"_UI_NoObjectSelected\"));";
-	protected final String TEXT_550 = NL + "\t\t\t\t\t\tbreak;" + NL + "\t\t\t\t\t}" + NL + "\t\t\t\t\tcase 1:" + NL
+	protected final String TEXT_547 = NL + "\t\t\t\t\t\tbreak;" + NL + "\t\t\t\t\t}" + NL + "\t\t\t\t\tcase 1:" + NL
 			+ "\t\t\t\t\t{" + NL
 			+ "\t\t\t\t\t\tString text = new AdapterFactoryItemDelegator(adapterFactory).getText(collection.iterator().next());"
 			+ NL + "\t\t\t\t\t\tstatusLineManager.setMessage(getString(\"_UI_SingleObjectSelected\", text));";
-	protected final String TEXT_551 = NL + "\t\t\t\t\t\tbreak;" + NL + "\t\t\t\t\t}" + NL + "\t\t\t\t\tdefault:" + NL
+	protected final String TEXT_548 = NL + "\t\t\t\t\t\tbreak;" + NL + "\t\t\t\t\t}" + NL + "\t\t\t\t\tdefault:" + NL
 			+ "\t\t\t\t\t{" + NL
 			+ "\t\t\t\t\t\tstatusLineManager.setMessage(getString(\"_UI_MultiObjectSelected\", Integer.toString(collection.size())));";
-	protected final String TEXT_552 = NL + "\t\t\t\t\t\tbreak;" + NL + "\t\t\t\t\t}" + NL + "\t\t\t\t}" + NL + "\t\t\t}"
+	protected final String TEXT_549 = NL + "\t\t\t\t\t\tbreak;" + NL + "\t\t\t\t\t}" + NL + "\t\t\t\t}" + NL + "\t\t\t}"
 			+ NL + "\t\t\telse" + NL + "\t\t\t{" + NL + "\t\t\t\tstatusLineManager.setMessage(\"\");";
-	protected final String TEXT_553 = NL + "\t\t\t}" + NL + "\t\t}" + NL + "\t}" + NL + "" + NL + "\t/**" + NL
+	protected final String TEXT_550 = NL + "\t\t\t}" + NL + "\t\t}" + NL + "\t}" + NL + "" + NL + "\t/**" + NL
 			+ "\t * This looks up a string in the plugin's plugin.properties file." + NL
 			+ "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */"
 			+ NL + "\tprivate static String getString(String key)" + NL + "\t{" + NL + "\t\treturn ";
-	protected final String TEXT_554 = ".INSTANCE.getString(key);" + NL + "\t}" + NL + "" + NL + "\t/**" + NL
+	protected final String TEXT_551 = ".INSTANCE.getString(key);" + NL + "\t}" + NL + "" + NL + "\t/**" + NL
 			+ "\t * This looks up a string in plugin.properties, making a substitution." + NL
 			+ "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */"
 			+ NL + "\tprivate static String getString(String key, Object s1)" + NL + "\t{" + NL + "\t\treturn ";
-	protected final String TEXT_555 = ".INSTANCE.getString(key, new Object [] { s1 });" + NL + "\t}" + NL + "" + NL
+	protected final String TEXT_552 = ".INSTANCE.getString(key, new Object [] { s1 });" + NL + "\t}" + NL + "" + NL
 			+ "\t/**" + NL
 			+ "\t * This implements {@link org.eclipse.jface.action.IMenuListener} to help fill the context menus with contributions from the Edit menu."
 			+ NL + "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL
@@ -1496,37 +1493,37 @@ public class Editor extends org.eclipse.egf.emf.pattern.editor.Editor {
 			+ NL + "\tpublic AdapterFactory getAdapterFactory()" + NL + "\t{" + NL + "\t\treturn adapterFactory;" + NL
 			+ "\t}" + NL + "" + NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->"
 			+ NL + "\t * @generated" + NL + "\t */";
-	protected final String TEXT_556 = NL + "\t@Override";
-	protected final String TEXT_557 = NL + "\tpublic void dispose()" + NL + "\t{" + NL
+	protected final String TEXT_553 = NL + "\t@Override";
+	protected final String TEXT_554 = NL + "\tpublic void dispose()" + NL + "\t{" + NL
 			+ "\t\tupdateProblemIndication = false;" + NL;
-	protected final String TEXT_558 = NL
+	protected final String TEXT_555 = NL
 			+ "\t\tResourcesPlugin.getWorkspace().removeResourceChangeListener(resourceChangeListener);" + NL;
-	protected final String TEXT_559 = NL + "\t\tgetSite().getPage().removePartListener(partListener);" + NL + "" + NL
+	protected final String TEXT_556 = NL + "\t\tgetSite().getPage().removePartListener(partListener);" + NL + "" + NL
 			+ "\t\tadapterFactory.dispose();\t\t";
-	protected final String TEXT_560 = NL + NL + "\t\t// Clean and dispose viewerFilterActions" + NL + "\t\tfor (";
-	protected final String TEXT_561 = " resource : viewerFilterActions.keySet()) {" + NL + "\t\t\tfor (";
-	protected final String TEXT_562 = " filterAction : viewerFilterActions.get(resource)) {" + NL
+	protected final String TEXT_557 = NL + NL + "\t\t// Clean and dispose viewerFilterActions" + NL + "\t\tfor (";
+	protected final String TEXT_558 = " resource : viewerFilterActions.keySet()) {" + NL + "\t\t\tfor (";
+	protected final String TEXT_559 = " filterAction : viewerFilterActions.get(resource)) {" + NL
 			+ "\t\t\t\tfilterAction.removePropertyChangeListener((";
-	protected final String TEXT_563 = ") getActionBarContributor());" + NL + "\t\t\t\tfilterAction.dispose();" + NL
+	protected final String TEXT_560 = ") getActionBarContributor());" + NL + "\t\t\t\tfilterAction.dispose();" + NL
 			+ "\t\t\t}" + NL + "\t\t}" + NL + "\t\t// Unregister this editor for ExtendedModel state" + NL + "\t\t//"
 			+ NL + "\t\t";
-	protected final String TEXT_564 = ".getInstance(getEditingDomain().getResourceSet()).removeListener(this);";
-	protected final String TEXT_565 = "\t\t" + NL + "" + NL
+	protected final String TEXT_561 = ".getInstance(getEditingDomain().getResourceSet()).removeListener(this);";
+	protected final String TEXT_562 = "\t\t" + NL + "" + NL
 			+ "\t\tif (getActionBarContributor().getActiveEditor() == this)" + NL + "\t\t{" + NL
 			+ "\t\t\tgetActionBarContributor().setActiveEditor(null);" + NL + "\t\t}" + NL;
-	protected final String TEXT_566 = NL + "\t\tfor (PropertySheetPage propertySheetPage : propertySheetPages)";
-	protected final String TEXT_567 = NL + "\t\tfor (Iterator i = propertySheetPages.iterator(); i.hasNext(); )";
-	protected final String TEXT_568 = NL + "\t\t{";
-	protected final String TEXT_569 = NL + "\t\t\tPropertySheetPage propertySheetPage = (PropertySheetPage)i.next();";
-	protected final String TEXT_570 = NL + "\t\t\tpropertySheetPage.dispose();" + NL + "\t\t}" + NL + "" + NL
+	protected final String TEXT_563 = NL + "\t\tfor (PropertySheetPage propertySheetPage : propertySheetPages)";
+	protected final String TEXT_564 = NL + "\t\tfor (Iterator i = propertySheetPages.iterator(); i.hasNext(); )";
+	protected final String TEXT_565 = NL + "\t\t{";
+	protected final String TEXT_566 = NL + "\t\t\tPropertySheetPage propertySheetPage = (PropertySheetPage)i.next();";
+	protected final String TEXT_567 = NL + "\t\t\tpropertySheetPage.dispose();" + NL + "\t\t}" + NL + "" + NL
 			+ "\t\tif (contentOutlinePage != null)" + NL + "\t\t{" + NL + "\t\t\tcontentOutlinePage.dispose();" + NL
 			+ "\t\t}" + NL + "" + NL + "\t\tsuper.dispose();" + NL + "\t}" + NL + "" + NL + "\t/**" + NL
 			+ "\t * Returns whether the outline view should be presented to the user." + NL
 			+ "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */"
 			+ NL + "\tprotected boolean showOutlineView()" + NL + "\t{" + NL + "\t\treturn ";
-	protected final String TEXT_571 = ";" + NL + "\t}" + NL + "}";
-	protected final String TEXT_572 = NL;
-	protected final String TEXT_573 = NL;
+	protected final String TEXT_568 = ";" + NL + "\t}" + NL + "}";
+	protected final String TEXT_569 = NL;
+	protected final String TEXT_570 = NL;
 
 	public Editor() {
 		//Here is the constructor
@@ -1562,8 +1559,8 @@ public class Editor extends org.eclipse.egf.emf.pattern.editor.Editor {
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_572);
-		stringBuffer.append(TEXT_573);
+		stringBuffer.append(TEXT_569);
+		stringBuffer.append(TEXT_570);
 		return stringBuffer.toString();
 	}
 
@@ -2108,27 +2105,27 @@ public class Editor extends org.eclipse.egf.emf.pattern.editor.Editor {
 		stringBuffer.append(TEXT_194);
 		stringBuffer.append(genModel.getNonNLS());
 		stringBuffer.append(TEXT_195);
-		if (genModel.getRuntimeVersion().getValue() >= GenRuntimeVersion.EMF23_VALUE) {
-			stringBuffer.append(TEXT_196);
-		} else {
-			stringBuffer.append(TEXT_197);
-		}
-		stringBuffer.append(TEXT_198);
 		if (genModel.getRuntimeVersion().getValue() >= GenRuntimeVersion.EMF29_VALUE) {
-			stringBuffer.append(TEXT_199);
+			stringBuffer.append(TEXT_196);
 		}
-		stringBuffer.append(TEXT_200);
+		stringBuffer.append(TEXT_197);
 		if (genModel.getRuntimeVersion().getValue() >= GenRuntimeVersion.EMF211_VALUE) {
-			stringBuffer.append(TEXT_201);
+			stringBuffer.append(TEXT_198);
 		} else if (genModel.getRuntimeVersion().getValue() >= GenRuntimeVersion.EMF23_VALUE) {
-			stringBuffer.append(TEXT_202);
+			stringBuffer.append(TEXT_199);
 		} else if (genModel.isRichClientPlatform()) {
-			stringBuffer.append(TEXT_203);
+			stringBuffer.append(TEXT_200);
 		} else {
-			stringBuffer.append(TEXT_204);
+			stringBuffer.append(TEXT_201);
 		}
-		stringBuffer.append(TEXT_205);
+		stringBuffer.append(TEXT_202);
 		stringBuffer.append(genModel.getImportedName("org.polarsys.kitalpha.ad.metadata.helpers.MetadataHelper"));
+		stringBuffer.append(TEXT_203);
+		stringBuffer.append(genPackage.getGenModel().getEditorPluginID());
+		stringBuffer.append(TEXT_204);
+		stringBuffer.append(genModel.getNonNLS());
+		stringBuffer.append(TEXT_205);
+		stringBuffer.append(genModel.getNonNLS());
 		stringBuffer.append(TEXT_206);
 		stringBuffer.append(genPackage.getGenModel().getEditorPluginID());
 		stringBuffer.append(TEXT_207);
@@ -2136,757 +2133,751 @@ public class Editor extends org.eclipse.egf.emf.pattern.editor.Editor {
 		stringBuffer.append(TEXT_208);
 		stringBuffer.append(genModel.getNonNLS());
 		stringBuffer.append(TEXT_209);
-		stringBuffer.append(genPackage.getGenModel().getEditorPluginID());
-		stringBuffer.append(TEXT_210);
-		stringBuffer.append(genModel.getNonNLS());
-		stringBuffer.append(TEXT_211);
-		stringBuffer.append(genModel.getNonNLS());
-		stringBuffer.append(TEXT_212);
 		if (genModel.useClassOverrideAnnotation()) {
-			stringBuffer.append(TEXT_213);
+			stringBuffer.append(TEXT_210);
 		}
-		stringBuffer.append(TEXT_214);
+		stringBuffer.append(TEXT_211);
 		if (genPackage.isMultipleEditorPages()) {
-			stringBuffer.append(TEXT_215);
+			stringBuffer.append(TEXT_212);
 			stringBuffer.append(genPackage.getEditorClassName());
-			stringBuffer.append(TEXT_216);
+			stringBuffer.append(TEXT_213);
 			if (genModel.useClassOverrideAnnotation()) {
+				stringBuffer.append(TEXT_214);
+			}
+			stringBuffer.append(TEXT_215);
+			if (genPackage.isExtensibleProviderFactory()) {
+				stringBuffer.append(TEXT_216);
+			} else {
 				stringBuffer.append(TEXT_217);
 			}
 			stringBuffer.append(TEXT_218);
-			if (genPackage.isExtensibleProviderFactory()) {
-				stringBuffer.append(TEXT_219);
-			} else {
-				stringBuffer.append(TEXT_220);
-			}
-			stringBuffer.append(TEXT_221);
 			if (genModel.useClassOverrideAnnotation()) {
-				stringBuffer.append(TEXT_222);
+				stringBuffer.append(TEXT_219);
 			}
-			stringBuffer.append(TEXT_223);
+			stringBuffer.append(TEXT_220);
 			if (genPackage.isExtensibleProviderFactory()) {
+				stringBuffer.append(TEXT_221);
+			}
+			stringBuffer.append(TEXT_222);
+			if (useStyledLabelProvider) {
+				stringBuffer.append(TEXT_223);
+				stringBuffer.append(_DelegatingAdapterFactoryLabelProvider);
 				stringBuffer.append(TEXT_224);
 			}
-			stringBuffer.append(TEXT_225);
-			if (useStyledLabelProvider) {
-				stringBuffer.append(TEXT_226);
-				stringBuffer.append(_DelegatingAdapterFactoryLabelProvider);
-				stringBuffer.append(TEXT_227);
-			}
 			if (genModel.getDecoration() != GenDecoration.NONE) {
-				stringBuffer.append(TEXT_228);
+				stringBuffer.append(TEXT_225);
 				stringBuffer.append(_DecoratingColumLabelProvider);
+				stringBuffer.append(TEXT_226);
+			}
+			stringBuffer.append(TEXT_227);
+			stringBuffer.append(_AdapterFactoryLabelProvider);
+			stringBuffer.append(TEXT_228);
+			if (useExtendedLabelProvider) {
 				stringBuffer.append(TEXT_229);
 			}
 			stringBuffer.append(TEXT_230);
-			stringBuffer.append(_AdapterFactoryLabelProvider);
-			stringBuffer.append(TEXT_231);
-			if (useExtendedLabelProvider) {
-				stringBuffer.append(TEXT_232);
-			}
-			stringBuffer.append(TEXT_233);
 			if (genModel.getDecoration() != GenDecoration.NONE) {
-				stringBuffer.append(TEXT_234);
+				stringBuffer.append(TEXT_231);
 				stringBuffer.append(_DiagnosticDecorator);
-				stringBuffer.append(TEXT_235);
+				stringBuffer.append(TEXT_232);
 				if (genModel.getDecoration() == GenDecoration.MANUAL) {
+					stringBuffer.append(TEXT_233);
+				}
+				stringBuffer.append(TEXT_234);
+				if (genModel.getDecoration() == GenDecoration.LIVE) {
+					stringBuffer.append(TEXT_235);
+					stringBuffer.append(genPackage.getImportedEditorPluginClassName());
 					stringBuffer.append(TEXT_236);
 				}
 				stringBuffer.append(TEXT_237);
-				if (genModel.getDecoration() == GenDecoration.LIVE) {
-					stringBuffer.append(TEXT_238);
-					stringBuffer.append(genPackage.getImportedEditorPluginClassName());
-					stringBuffer.append(TEXT_239);
-				}
-				stringBuffer.append(TEXT_240);
 			}
 			if (useStyledLabelProvider) {
-				stringBuffer.append(TEXT_241);
+				stringBuffer.append(TEXT_238);
 			}
-			stringBuffer.append(TEXT_242);
+			stringBuffer.append(TEXT_239);
 			if (genModel.getDecoration() != GenDecoration.NONE) {
-				stringBuffer.append(TEXT_243);
+				stringBuffer.append(TEXT_240);
 				stringBuffer.append(genModel.getImportedName(
 						"org.eclipse.emf.common.ui.viewer.ColumnViewerInformationControlToolTipSupport"));
-				stringBuffer.append(TEXT_244);
+				stringBuffer.append(TEXT_241);
 				stringBuffer.append(_DiagnosticDecorator);
-				stringBuffer.append(TEXT_245);
+				stringBuffer.append(TEXT_242);
 			}
-			stringBuffer.append(TEXT_246);
+			stringBuffer.append(TEXT_243);
 			stringBuffer.append(genModel.getNonNLS());
-			stringBuffer.append(TEXT_247);
+			stringBuffer.append(TEXT_244);
 			stringBuffer.append(genPackage.getEditorClassName());
-			stringBuffer.append(TEXT_248);
+			stringBuffer.append(TEXT_245);
 			if (genModel.useClassOverrideAnnotation()) {
+				stringBuffer.append(TEXT_246);
+			}
+			stringBuffer.append(TEXT_247);
+			if (genPackage.isExtensibleProviderFactory()) {
+				stringBuffer.append(TEXT_248);
+			} else {
 				stringBuffer.append(TEXT_249);
 			}
 			stringBuffer.append(TEXT_250);
-			if (genPackage.isExtensibleProviderFactory()) {
-				stringBuffer.append(TEXT_251);
-			} else {
-				stringBuffer.append(TEXT_252);
-			}
-			stringBuffer.append(TEXT_253);
 			if (genModel.useClassOverrideAnnotation()) {
-				stringBuffer.append(TEXT_254);
+				stringBuffer.append(TEXT_251);
 			}
-			stringBuffer.append(TEXT_255);
+			stringBuffer.append(TEXT_252);
 			if (genPackage.isExtensibleProviderFactory()) {
+				stringBuffer.append(TEXT_253);
+			}
+			stringBuffer.append(TEXT_254);
+			if (useStyledLabelProvider) {
+				stringBuffer.append(TEXT_255);
+				stringBuffer.append(_DelegatingAdapterFactoryLabelProvider);
 				stringBuffer.append(TEXT_256);
 			}
 			stringBuffer.append(TEXT_257);
-			if (useStyledLabelProvider) {
-				stringBuffer.append(TEXT_258);
-				stringBuffer.append(_DelegatingAdapterFactoryLabelProvider);
+			stringBuffer.append(_AdapterFactoryLabelProvider);
+			stringBuffer.append(TEXT_258);
+			if (useExtendedLabelProvider) {
 				stringBuffer.append(TEXT_259);
 			}
 			stringBuffer.append(TEXT_260);
-			stringBuffer.append(_AdapterFactoryLabelProvider);
-			stringBuffer.append(TEXT_261);
-			if (useExtendedLabelProvider) {
-				stringBuffer.append(TEXT_262);
-			}
-			stringBuffer.append(TEXT_263);
 			if (useStyledLabelProvider) {
-				stringBuffer.append(TEXT_264);
+				stringBuffer.append(TEXT_261);
 			}
-			stringBuffer.append(TEXT_265);
+			stringBuffer.append(TEXT_262);
 			stringBuffer.append(genModel.getNonNLS());
-			stringBuffer.append(TEXT_266);
+			stringBuffer.append(TEXT_263);
 			stringBuffer.append(genPackage.getEditorClassName());
-			stringBuffer.append(TEXT_267);
+			stringBuffer.append(TEXT_264);
 			if (genModel.useClassOverrideAnnotation()) {
+				stringBuffer.append(TEXT_265);
+			}
+			stringBuffer.append(TEXT_266);
+			if (genPackage.isExtensibleProviderFactory()) {
+				stringBuffer.append(TEXT_267);
+			} else {
 				stringBuffer.append(TEXT_268);
 			}
 			stringBuffer.append(TEXT_269);
-			if (genPackage.isExtensibleProviderFactory()) {
-				stringBuffer.append(TEXT_270);
-			} else {
-				stringBuffer.append(TEXT_271);
-			}
-			stringBuffer.append(TEXT_272);
 			if (genModel.useClassOverrideAnnotation()) {
-				stringBuffer.append(TEXT_273);
+				stringBuffer.append(TEXT_270);
 			}
-			stringBuffer.append(TEXT_274);
+			stringBuffer.append(TEXT_271);
 			if (genPackage.isExtensibleProviderFactory()) {
+				stringBuffer.append(TEXT_272);
+			}
+			stringBuffer.append(TEXT_273);
+			if (useStyledLabelProvider) {
+				stringBuffer.append(TEXT_274);
+				stringBuffer.append(_DelegatingAdapterFactoryLabelProvider);
 				stringBuffer.append(TEXT_275);
 			}
 			stringBuffer.append(TEXT_276);
-			if (useStyledLabelProvider) {
-				stringBuffer.append(TEXT_277);
-				stringBuffer.append(_DelegatingAdapterFactoryLabelProvider);
+			stringBuffer.append(_AdapterFactoryLabelProvider);
+			stringBuffer.append(TEXT_277);
+			if (useExtendedLabelProvider) {
 				stringBuffer.append(TEXT_278);
 			}
 			stringBuffer.append(TEXT_279);
-			stringBuffer.append(_AdapterFactoryLabelProvider);
-			stringBuffer.append(TEXT_280);
-			if (useExtendedLabelProvider) {
-				stringBuffer.append(TEXT_281);
-			}
-			stringBuffer.append(TEXT_282);
 			if (useStyledLabelProvider) {
-				stringBuffer.append(TEXT_283);
+				stringBuffer.append(TEXT_280);
 			}
-			stringBuffer.append(TEXT_284);
+			stringBuffer.append(TEXT_281);
 			stringBuffer.append(genModel.getNonNLS());
-			stringBuffer.append(TEXT_285);
+			stringBuffer.append(TEXT_282);
 			stringBuffer.append(genPackage.getEditorClassName());
-			stringBuffer.append(TEXT_286);
+			stringBuffer.append(TEXT_283);
 			if (genModel.useClassOverrideAnnotation()) {
+				stringBuffer.append(TEXT_284);
+			}
+			stringBuffer.append(TEXT_285);
+			if (genPackage.isExtensibleProviderFactory()) {
+				stringBuffer.append(TEXT_286);
+			} else {
 				stringBuffer.append(TEXT_287);
 			}
 			stringBuffer.append(TEXT_288);
-			if (genPackage.isExtensibleProviderFactory()) {
-				stringBuffer.append(TEXT_289);
-			} else {
-				stringBuffer.append(TEXT_290);
-			}
-			stringBuffer.append(TEXT_291);
 			if (genModel.useClassOverrideAnnotation()) {
-				stringBuffer.append(TEXT_292);
+				stringBuffer.append(TEXT_289);
 			}
-			stringBuffer.append(TEXT_293);
+			stringBuffer.append(TEXT_290);
 			if (genPackage.isExtensibleProviderFactory()) {
+				stringBuffer.append(TEXT_291);
+			}
+			stringBuffer.append(TEXT_292);
+			if (useStyledLabelProvider) {
+				stringBuffer.append(TEXT_293);
+				stringBuffer.append(_DelegatingAdapterFactoryLabelProvider);
 				stringBuffer.append(TEXT_294);
 			}
-			stringBuffer.append(TEXT_295);
-			if (useStyledLabelProvider) {
-				stringBuffer.append(TEXT_296);
-				stringBuffer.append(_DelegatingAdapterFactoryLabelProvider);
-				stringBuffer.append(TEXT_297);
-			}
 			if (genModel.getDecoration() != GenDecoration.NONE) {
-				stringBuffer.append(TEXT_298);
+				stringBuffer.append(TEXT_295);
 				stringBuffer.append(_DecoratingColumLabelProvider);
+				stringBuffer.append(TEXT_296);
+			}
+			stringBuffer.append(TEXT_297);
+			stringBuffer.append(_AdapterFactoryLabelProvider);
+			stringBuffer.append(TEXT_298);
+			if (useExtendedLabelProvider) {
 				stringBuffer.append(TEXT_299);
 			}
 			stringBuffer.append(TEXT_300);
-			stringBuffer.append(_AdapterFactoryLabelProvider);
-			stringBuffer.append(TEXT_301);
-			if (useExtendedLabelProvider) {
-				stringBuffer.append(TEXT_302);
-			}
-			stringBuffer.append(TEXT_303);
 			if (genModel.getDecoration() != GenDecoration.NONE) {
-				stringBuffer.append(TEXT_304);
+				stringBuffer.append(TEXT_301);
 				stringBuffer.append(_DiagnosticDecorator);
-				stringBuffer.append(TEXT_305);
+				stringBuffer.append(TEXT_302);
 				if (genModel.getDecoration() == GenDecoration.MANUAL) {
-					stringBuffer.append(TEXT_306);
+					stringBuffer.append(TEXT_303);
 				}
-				stringBuffer.append(TEXT_307);
+				stringBuffer.append(TEXT_304);
 			}
 			if (useStyledLabelProvider) {
-				stringBuffer.append(TEXT_308);
+				stringBuffer.append(TEXT_305);
 			}
-			stringBuffer.append(TEXT_309);
+			stringBuffer.append(TEXT_306);
 			if (genModel.getDecoration() != GenDecoration.NONE) {
-				stringBuffer.append(TEXT_310);
+				stringBuffer.append(TEXT_307);
 				stringBuffer.append(genModel.getImportedName(
 						"org.eclipse.emf.common.ui.viewer.ColumnViewerInformationControlToolTipSupport"));
-				stringBuffer.append(TEXT_311);
+				stringBuffer.append(TEXT_308);
 				stringBuffer.append(_DiagnosticDecorator);
-				stringBuffer.append(TEXT_312);
+				stringBuffer.append(TEXT_309);
 			}
-			stringBuffer.append(TEXT_313);
+			stringBuffer.append(TEXT_310);
 			stringBuffer.append(genModel.getNonNLS());
-			stringBuffer.append(TEXT_314);
+			stringBuffer.append(TEXT_311);
 			stringBuffer.append(genPackage.getEditorClassName());
-			stringBuffer.append(TEXT_315);
+			stringBuffer.append(TEXT_312);
 			if (genModel.useClassOverrideAnnotation()) {
+				stringBuffer.append(TEXT_313);
+			}
+			stringBuffer.append(TEXT_314);
+			if (genPackage.isExtensibleProviderFactory()) {
+				stringBuffer.append(TEXT_315);
+			} else {
 				stringBuffer.append(TEXT_316);
 			}
 			stringBuffer.append(TEXT_317);
-			if (genPackage.isExtensibleProviderFactory()) {
-				stringBuffer.append(TEXT_318);
-			} else {
-				stringBuffer.append(TEXT_319);
-			}
-			stringBuffer.append(TEXT_320);
 			if (genModel.useClassOverrideAnnotation()) {
-				stringBuffer.append(TEXT_321);
+				stringBuffer.append(TEXT_318);
 			}
-			stringBuffer.append(TEXT_322);
+			stringBuffer.append(TEXT_319);
 			if (genPackage.isExtensibleProviderFactory()) {
-				stringBuffer.append(TEXT_323);
+				stringBuffer.append(TEXT_320);
 			}
-			stringBuffer.append(TEXT_324);
+			stringBuffer.append(TEXT_321);
 			stringBuffer.append(genModel.getNonNLS());
-			stringBuffer.append(TEXT_325);
+			stringBuffer.append(TEXT_322);
 			stringBuffer.append(genModel.getNonNLS());
-			stringBuffer.append(TEXT_326);
+			stringBuffer.append(TEXT_323);
 			stringBuffer.append(genModel.getNonNLS());
 			stringBuffer.append(genModel.getNonNLS(2));
-			stringBuffer.append(TEXT_327);
+			stringBuffer.append(TEXT_324);
 			if (useStyledLabelProvider) {
-				stringBuffer.append(TEXT_328);
+				stringBuffer.append(TEXT_325);
 				stringBuffer.append(_DelegatingAdapterFactoryLabelProvider);
-				stringBuffer.append(TEXT_329);
+				stringBuffer.append(TEXT_326);
 			}
 			if (genModel.getDecoration() != GenDecoration.NONE) {
-				stringBuffer.append(TEXT_330);
+				stringBuffer.append(TEXT_327);
 				stringBuffer.append(_DecoratingColumLabelProvider);
+				stringBuffer.append(TEXT_328);
+			}
+			stringBuffer.append(TEXT_329);
+			stringBuffer.append(_AdapterFactoryLabelProvider);
+			stringBuffer.append(TEXT_330);
+			if (useExtendedLabelProvider) {
 				stringBuffer.append(TEXT_331);
 			}
 			stringBuffer.append(TEXT_332);
-			stringBuffer.append(_AdapterFactoryLabelProvider);
-			stringBuffer.append(TEXT_333);
-			if (useExtendedLabelProvider) {
-				stringBuffer.append(TEXT_334);
-			}
-			stringBuffer.append(TEXT_335);
 			if (genModel.getDecoration() != GenDecoration.NONE) {
-				stringBuffer.append(TEXT_336);
+				stringBuffer.append(TEXT_333);
 				stringBuffer.append(_DiagnosticDecorator);
-				stringBuffer.append(TEXT_337);
+				stringBuffer.append(TEXT_334);
 				if (genModel.getDecoration() == GenDecoration.MANUAL) {
+					stringBuffer.append(TEXT_335);
+				}
+				stringBuffer.append(TEXT_336);
+				if (genModel.getDecoration() == GenDecoration.LIVE) {
+					stringBuffer.append(TEXT_337);
+					stringBuffer.append(genPackage.getImportedEditorPluginClassName());
 					stringBuffer.append(TEXT_338);
 				}
 				stringBuffer.append(TEXT_339);
-				if (genModel.getDecoration() == GenDecoration.LIVE) {
-					stringBuffer.append(TEXT_340);
-					stringBuffer.append(genPackage.getImportedEditorPluginClassName());
-					stringBuffer.append(TEXT_341);
-				}
-				stringBuffer.append(TEXT_342);
 			}
 			if (useStyledLabelProvider) {
-				stringBuffer.append(TEXT_343);
+				stringBuffer.append(TEXT_340);
 			}
-			stringBuffer.append(TEXT_344);
+			stringBuffer.append(TEXT_341);
 			if (genModel.getDecoration() != GenDecoration.NONE) {
-				stringBuffer.append(TEXT_345);
+				stringBuffer.append(TEXT_342);
 				stringBuffer.append(genModel.getImportedName(
 						"org.eclipse.emf.common.ui.viewer.ColumnViewerInformationControlToolTipSupport"));
-				stringBuffer.append(TEXT_346);
+				stringBuffer.append(TEXT_343);
 				stringBuffer.append(_DiagnosticDecorator);
-				stringBuffer.append(TEXT_347);
+				stringBuffer.append(TEXT_344);
 			}
-			stringBuffer.append(TEXT_348);
+			stringBuffer.append(TEXT_345);
 			stringBuffer.append(genModel.getNonNLS());
-			stringBuffer.append(TEXT_349);
+			stringBuffer.append(TEXT_346);
 			stringBuffer.append(genPackage.getEditorClassName());
-			stringBuffer.append(TEXT_350);
+			stringBuffer.append(TEXT_347);
 			if (genModel.useClassOverrideAnnotation()) {
+				stringBuffer.append(TEXT_348);
+			}
+			stringBuffer.append(TEXT_349);
+			if (genPackage.isExtensibleProviderFactory()) {
+				stringBuffer.append(TEXT_350);
+			} else {
 				stringBuffer.append(TEXT_351);
 			}
 			stringBuffer.append(TEXT_352);
-			if (genPackage.isExtensibleProviderFactory()) {
-				stringBuffer.append(TEXT_353);
-			} else {
-				stringBuffer.append(TEXT_354);
-			}
-			stringBuffer.append(TEXT_355);
 			if (genModel.useClassOverrideAnnotation()) {
-				stringBuffer.append(TEXT_356);
+				stringBuffer.append(TEXT_353);
 			}
-			stringBuffer.append(TEXT_357);
+			stringBuffer.append(TEXT_354);
 			if (genPackage.isExtensibleProviderFactory()) {
-				stringBuffer.append(TEXT_358);
+				stringBuffer.append(TEXT_355);
 			}
-			stringBuffer.append(TEXT_359);
+			stringBuffer.append(TEXT_356);
 			stringBuffer.append(genModel.getNonNLS());
-			stringBuffer.append(TEXT_360);
+			stringBuffer.append(TEXT_357);
 			stringBuffer.append(genModel.getNonNLS());
-			stringBuffer.append(TEXT_361);
+			stringBuffer.append(TEXT_358);
 			stringBuffer.append(genModel.getNonNLS());
 			stringBuffer.append(genModel.getNonNLS(2));
-			stringBuffer.append(TEXT_362);
+			stringBuffer.append(TEXT_359);
 			if (useStyledLabelProvider) {
-				stringBuffer.append(TEXT_363);
+				stringBuffer.append(TEXT_360);
 				stringBuffer.append(_DelegatingAdapterFactoryLabelProvider);
-				stringBuffer.append(TEXT_364);
+				stringBuffer.append(TEXT_361);
 			}
 			if (genModel.getDecoration() != GenDecoration.NONE) {
-				stringBuffer.append(TEXT_365);
+				stringBuffer.append(TEXT_362);
 				stringBuffer.append(_DecoratingColumLabelProvider);
+				stringBuffer.append(TEXT_363);
+			}
+			stringBuffer.append(TEXT_364);
+			stringBuffer.append(_AdapterFactoryLabelProvider);
+			stringBuffer.append(TEXT_365);
+			if (useExtendedLabelProvider) {
 				stringBuffer.append(TEXT_366);
 			}
 			stringBuffer.append(TEXT_367);
-			stringBuffer.append(_AdapterFactoryLabelProvider);
-			stringBuffer.append(TEXT_368);
-			if (useExtendedLabelProvider) {
-				stringBuffer.append(TEXT_369);
-			}
-			stringBuffer.append(TEXT_370);
 			if (genModel.getDecoration() != GenDecoration.NONE) {
-				stringBuffer.append(TEXT_371);
+				stringBuffer.append(TEXT_368);
 				stringBuffer.append(_DiagnosticDecorator);
-				stringBuffer.append(TEXT_372);
+				stringBuffer.append(TEXT_369);
 				if (genModel.getDecoration() == GenDecoration.MANUAL) {
+					stringBuffer.append(TEXT_370);
+				}
+				stringBuffer.append(TEXT_371);
+				if (genModel.getDecoration() == GenDecoration.LIVE) {
+					stringBuffer.append(TEXT_372);
+					stringBuffer.append(genPackage.getImportedEditorPluginClassName());
 					stringBuffer.append(TEXT_373);
 				}
 				stringBuffer.append(TEXT_374);
-				if (genModel.getDecoration() == GenDecoration.LIVE) {
-					stringBuffer.append(TEXT_375);
-					stringBuffer.append(genPackage.getImportedEditorPluginClassName());
-					stringBuffer.append(TEXT_376);
-				}
-				stringBuffer.append(TEXT_377);
 			}
 			if (useStyledLabelProvider) {
-				stringBuffer.append(TEXT_378);
+				stringBuffer.append(TEXT_375);
 			}
-			stringBuffer.append(TEXT_379);
+			stringBuffer.append(TEXT_376);
 			stringBuffer.append(genModel.getNonNLS());
-			stringBuffer.append(TEXT_380);
+			stringBuffer.append(TEXT_377);
 		} else {
-			stringBuffer.append(TEXT_381);
+			stringBuffer.append(TEXT_378);
 			if (genPackage.isExtensibleProviderFactory()) {
-				stringBuffer.append(TEXT_382);
+				stringBuffer.append(TEXT_379);
 			} else {
+				stringBuffer.append(TEXT_380);
+			}
+			stringBuffer.append(TEXT_381);
+			if (useStyledLabelProvider) {
+				stringBuffer.append(TEXT_382);
+				stringBuffer.append(_DelegatingAdapterFactoryLabelProvider);
 				stringBuffer.append(TEXT_383);
 			}
-			stringBuffer.append(TEXT_384);
-			if (useStyledLabelProvider) {
-				stringBuffer.append(TEXT_385);
-				stringBuffer.append(_DelegatingAdapterFactoryLabelProvider);
-				stringBuffer.append(TEXT_386);
-			}
 			if (genModel.getDecoration() != GenDecoration.NONE) {
-				stringBuffer.append(TEXT_387);
+				stringBuffer.append(TEXT_384);
 				stringBuffer.append(_DecoratingColumLabelProvider);
+				stringBuffer.append(TEXT_385);
+			}
+			stringBuffer.append(TEXT_386);
+			stringBuffer.append(_AdapterFactoryLabelProvider);
+			stringBuffer.append(TEXT_387);
+			if (useExtendedLabelProvider) {
 				stringBuffer.append(TEXT_388);
 			}
 			stringBuffer.append(TEXT_389);
-			stringBuffer.append(_AdapterFactoryLabelProvider);
-			stringBuffer.append(TEXT_390);
-			if (useExtendedLabelProvider) {
-				stringBuffer.append(TEXT_391);
-			}
-			stringBuffer.append(TEXT_392);
 			if (genModel.getDecoration() != GenDecoration.NONE) {
-				stringBuffer.append(TEXT_393);
+				stringBuffer.append(TEXT_390);
 				stringBuffer.append(_DiagnosticDecorator);
-				stringBuffer.append(TEXT_394);
+				stringBuffer.append(TEXT_391);
 				if (genModel.getDecoration() == GenDecoration.MANUAL) {
+					stringBuffer.append(TEXT_392);
+				}
+				stringBuffer.append(TEXT_393);
+				if (genModel.getDecoration() == GenDecoration.LIVE) {
+					stringBuffer.append(TEXT_394);
+					stringBuffer.append(genPackage.getImportedEditorPluginClassName());
 					stringBuffer.append(TEXT_395);
 				}
 				stringBuffer.append(TEXT_396);
-				if (genModel.getDecoration() == GenDecoration.LIVE) {
-					stringBuffer.append(TEXT_397);
-					stringBuffer.append(genPackage.getImportedEditorPluginClassName());
-					stringBuffer.append(TEXT_398);
-				}
-				stringBuffer.append(TEXT_399);
 			}
 			if (useStyledLabelProvider) {
-				stringBuffer.append(TEXT_400);
+				stringBuffer.append(TEXT_397);
 			}
-			stringBuffer.append(TEXT_401);
+			stringBuffer.append(TEXT_398);
 			if (genModel.getDecoration() != GenDecoration.NONE) {
-				stringBuffer.append(TEXT_402);
+				stringBuffer.append(TEXT_399);
 				stringBuffer.append(genModel.getImportedName(
 						"org.eclipse.emf.common.ui.viewer.ColumnViewerInformationControlToolTipSupport"));
-				stringBuffer.append(TEXT_403);
+				stringBuffer.append(TEXT_400);
 				stringBuffer.append(_DiagnosticDecorator);
-				stringBuffer.append(TEXT_404);
+				stringBuffer.append(TEXT_401);
 			}
-			stringBuffer.append(TEXT_405);
+			stringBuffer.append(TEXT_402);
 			stringBuffer.append(genModel.getNonNLS());
 		}
+		stringBuffer.append(TEXT_403);
+		if (genModel.useClassOverrideAnnotation()) {
+			stringBuffer.append(TEXT_404);
+		}
+		stringBuffer.append(TEXT_405);
+		stringBuffer.append(genModel.getNonNLS());
 		stringBuffer.append(TEXT_406);
-		if (genModel.useClassOverrideAnnotation()) {
-			stringBuffer.append(TEXT_407);
-		}
-		stringBuffer.append(TEXT_408);
 		stringBuffer.append(genModel.getNonNLS());
+		stringBuffer.append(TEXT_407);
+		if (genModel.useClassOverrideAnnotation()) {
+			stringBuffer.append(TEXT_408);
+		}
 		stringBuffer.append(TEXT_409);
-		stringBuffer.append(genModel.getNonNLS());
-		stringBuffer.append(TEXT_410);
-		if (genModel.useClassOverrideAnnotation()) {
-			stringBuffer.append(TEXT_411);
-		}
-		stringBuffer.append(TEXT_412);
 		if (genModel.useGenerics()) {
-			stringBuffer.append(TEXT_413);
+			stringBuffer.append(TEXT_410);
 			if (genModel.getRuntimeVersion().getValue() >= GenRuntimeVersion.EMF26_VALUE) {
-				stringBuffer.append(TEXT_414);
+				stringBuffer.append(TEXT_411);
 			} else {
-				stringBuffer.append(TEXT_415);
+				stringBuffer.append(TEXT_412);
 			}
+			stringBuffer.append(TEXT_413);
+		}
+		if (genModel.useClassOverrideAnnotation()) {
+			stringBuffer.append(TEXT_414);
+		}
+		stringBuffer.append(TEXT_415);
+		if (!genModel.isRichClientPlatform()) {
 			stringBuffer.append(TEXT_416);
 		}
+		stringBuffer.append(TEXT_417);
 		if (genModel.useClassOverrideAnnotation()) {
-			stringBuffer.append(TEXT_417);
+			stringBuffer.append(TEXT_418);
 		}
-		stringBuffer.append(TEXT_418);
-		if (!genModel.isRichClientPlatform()) {
-			stringBuffer.append(TEXT_419);
-		}
-		stringBuffer.append(TEXT_420);
-		if (genModel.useClassOverrideAnnotation()) {
-			stringBuffer.append(TEXT_421);
-		}
-		stringBuffer.append(TEXT_422);
+		stringBuffer.append(TEXT_419);
 		if (genPackage.isExtensibleProviderFactory()) {
-			stringBuffer.append(TEXT_423);
+			stringBuffer.append(TEXT_420);
 			stringBuffer.append(genModel.getImportedName("org.eclipse.emf.ecore.resource.Resource"));
-			stringBuffer.append(TEXT_424);
+			stringBuffer.append(TEXT_421);
 			stringBuffer
 					.append(genModel.getImportedName("org.polarsys.kitalpha.emde.ui.actions.EmdeViewerFilterAction"));
+			stringBuffer.append(TEXT_422);
+		}
+		stringBuffer.append(TEXT_423);
+		if (useStyledLabelProvider) {
+			stringBuffer.append(TEXT_424);
+			stringBuffer.append(_DelegatingAdapterFactoryLabelProvider);
 			stringBuffer.append(TEXT_425);
 		}
-		stringBuffer.append(TEXT_426);
-		if (useStyledLabelProvider) {
-			stringBuffer.append(TEXT_427);
-			stringBuffer.append(_DelegatingAdapterFactoryLabelProvider);
-			stringBuffer.append(TEXT_428);
-		}
 		if (genModel.getDecoration() != GenDecoration.NONE) {
-			stringBuffer.append(TEXT_429);
+			stringBuffer.append(TEXT_426);
 			stringBuffer.append(_DecoratingColumLabelProvider);
+			stringBuffer.append(TEXT_427);
+		}
+		stringBuffer.append(TEXT_428);
+		stringBuffer.append(_AdapterFactoryLabelProvider);
+		stringBuffer.append(TEXT_429);
+		if (useExtendedLabelProvider) {
 			stringBuffer.append(TEXT_430);
 		}
 		stringBuffer.append(TEXT_431);
-		stringBuffer.append(_AdapterFactoryLabelProvider);
-		stringBuffer.append(TEXT_432);
-		if (useExtendedLabelProvider) {
-			stringBuffer.append(TEXT_433);
-		}
-		stringBuffer.append(TEXT_434);
 		if (genModel.getDecoration() != GenDecoration.NONE) {
-			stringBuffer.append(TEXT_435);
+			stringBuffer.append(TEXT_432);
 			stringBuffer.append(_DiagnosticDecorator);
-			stringBuffer.append(TEXT_436);
+			stringBuffer.append(TEXT_433);
 			if (genModel.getDecoration() == GenDecoration.MANUAL) {
+				stringBuffer.append(TEXT_434);
+			}
+			stringBuffer.append(TEXT_435);
+			if (genModel.getDecoration() == GenDecoration.LIVE) {
+				stringBuffer.append(TEXT_436);
+				stringBuffer.append(genPackage.getImportedEditorPluginClassName());
 				stringBuffer.append(TEXT_437);
 			}
 			stringBuffer.append(TEXT_438);
-			if (genModel.getDecoration() == GenDecoration.LIVE) {
-				stringBuffer.append(TEXT_439);
-				stringBuffer.append(genPackage.getImportedEditorPluginClassName());
-				stringBuffer.append(TEXT_440);
-			}
-			stringBuffer.append(TEXT_441);
 		}
 		if (useStyledLabelProvider) {
-			stringBuffer.append(TEXT_442);
+			stringBuffer.append(TEXT_439);
 		}
-		stringBuffer.append(TEXT_443);
+		stringBuffer.append(TEXT_440);
 		if (genModel.getDecoration() != GenDecoration.NONE) {
-			stringBuffer.append(TEXT_444);
+			stringBuffer.append(TEXT_441);
 			stringBuffer.append(genModel
 					.getImportedName("org.eclipse.emf.common.ui.viewer.ColumnViewerInformationControlToolTipSupport"));
-			stringBuffer.append(TEXT_445);
+			stringBuffer.append(TEXT_442);
 			stringBuffer.append(_DiagnosticDecorator);
-			stringBuffer.append(TEXT_446);
+			stringBuffer.append(TEXT_443);
 		}
-		stringBuffer.append(TEXT_447);
+		stringBuffer.append(TEXT_444);
 		if (genModel.useClassOverrideAnnotation()) {
-			stringBuffer.append(TEXT_448);
+			stringBuffer.append(TEXT_445);
 		}
-		stringBuffer.append(TEXT_449);
+		stringBuffer.append(TEXT_446);
 		if (genModel.useClassOverrideAnnotation()) {
-			stringBuffer.append(TEXT_450);
+			stringBuffer.append(TEXT_447);
 		}
-		stringBuffer.append(TEXT_451);
+		stringBuffer.append(TEXT_448);
 		if (genModel.useClassOverrideAnnotation()) {
-			stringBuffer.append(TEXT_452);
+			stringBuffer.append(TEXT_449);
 		}
-		stringBuffer.append(TEXT_453);
+		stringBuffer.append(TEXT_450);
 		if (genPackage.isExtensibleProviderFactory()) {
-			stringBuffer.append(TEXT_454);
+			stringBuffer.append(TEXT_451);
 			stringBuffer.append(genModel.getImportedName("org.eclipse.emf.ecore.resource.Resource"));
-			stringBuffer.append(TEXT_455);
+			stringBuffer.append(TEXT_452);
 			stringBuffer
 					.append(genModel.getImportedName("org.polarsys.kitalpha.emde.ui.actions.EmdeViewerFilterAction"));
-			stringBuffer.append(TEXT_456);
+			stringBuffer.append(TEXT_453);
 		}
-		stringBuffer.append(TEXT_457);
+		stringBuffer.append(TEXT_454);
 		if (genModel.getDecoration() == GenDecoration.MANUAL) {
-			stringBuffer.append(TEXT_458);
+			stringBuffer.append(TEXT_455);
 		} else if (genModel.getDecoration() == GenDecoration.LIVE) {
-			stringBuffer.append(TEXT_459);
+			stringBuffer.append(TEXT_456);
 			stringBuffer.append(genPackage.getImportedEditorPluginClassName());
-			stringBuffer.append(TEXT_460);
+			stringBuffer.append(TEXT_457);
 		}
-		stringBuffer.append(TEXT_461);
+		stringBuffer.append(TEXT_458);
 		if (genModel.useClassOverrideAnnotation()) {
-			stringBuffer.append(TEXT_462);
+			stringBuffer.append(TEXT_459);
 		}
-		stringBuffer.append(TEXT_463);
+		stringBuffer.append(TEXT_460);
 		stringBuffer.append(_ListOfAnything);
-		stringBuffer.append(TEXT_464);
+		stringBuffer.append(TEXT_461);
 		stringBuffer.append(genPackage.getEditorClassName());
-		stringBuffer.append(TEXT_465);
+		stringBuffer.append(TEXT_462);
 		stringBuffer.append(genPackage.getEditorClassName());
-		stringBuffer.append(TEXT_466);
+		stringBuffer.append(TEXT_463);
 		if (genModel.useClassOverrideAnnotation()) {
+			stringBuffer.append(TEXT_464);
+		}
+		stringBuffer.append(TEXT_465);
+		if (genPackage.isMultipleEditorPages()) {
+			stringBuffer.append(TEXT_466);
+		} else {
 			stringBuffer.append(TEXT_467);
 		}
 		stringBuffer.append(TEXT_468);
-		if (genPackage.isMultipleEditorPages()) {
-			stringBuffer.append(TEXT_469);
-		} else {
-			stringBuffer.append(TEXT_470);
-		}
-		stringBuffer.append(TEXT_471);
 		if (genModel.useGenerics()) {
-			stringBuffer.append(TEXT_472);
+			stringBuffer.append(TEXT_469);
 		}
-		stringBuffer.append(TEXT_473);
+		stringBuffer.append(TEXT_470);
 		if (genPackage.isMultipleEditorPages()) {
+			stringBuffer.append(TEXT_471);
+			stringBuffer.append(_ArrayListOfObject);
+			stringBuffer.append(TEXT_472);
+			stringBuffer.append(_ArrayListOfObject);
+			stringBuffer.append(TEXT_473);
+		} else {
 			stringBuffer.append(TEXT_474);
 			stringBuffer.append(_ArrayListOfObject);
 			stringBuffer.append(TEXT_475);
 			stringBuffer.append(_ArrayListOfObject);
 			stringBuffer.append(TEXT_476);
-		} else {
-			stringBuffer.append(TEXT_477);
-			stringBuffer.append(_ArrayListOfObject);
+		}
+		stringBuffer.append(TEXT_477);
+		if (genModel.useClassOverrideAnnotation()) {
 			stringBuffer.append(TEXT_478);
-			stringBuffer.append(_ArrayListOfObject);
-			stringBuffer.append(TEXT_479);
 		}
-		stringBuffer.append(TEXT_480);
+		stringBuffer.append(TEXT_479);
 		if (genModel.useClassOverrideAnnotation()) {
-			stringBuffer.append(TEXT_481);
+			stringBuffer.append(TEXT_480);
 		}
-		stringBuffer.append(TEXT_482);
-		if (genModel.useClassOverrideAnnotation()) {
-			stringBuffer.append(TEXT_483);
-		}
-		stringBuffer.append(TEXT_484);
+		stringBuffer.append(TEXT_481);
 		stringBuffer.append(_MapOfObjectToObject);
-		stringBuffer.append(TEXT_485);
+		stringBuffer.append(TEXT_482);
 		stringBuffer.append(_HashMapOfObjectToObject);
-		stringBuffer.append(TEXT_486);
+		stringBuffer.append(TEXT_483);
 		if (genModel.getRuntimeVersion().getValue() >= GenRuntimeVersion.EMF23_VALUE) {
-			stringBuffer.append(TEXT_487);
+			stringBuffer.append(TEXT_484);
 		}
 		if (genModel.getRuntimeVersion().getValue() >= GenRuntimeVersion.EMF29_VALUE) {
-			stringBuffer.append(TEXT_488);
+			stringBuffer.append(TEXT_485);
 		}
-		stringBuffer.append(TEXT_489);
+		stringBuffer.append(TEXT_486);
 		stringBuffer.append(importedOperationClassName);
-		stringBuffer.append(TEXT_490);
+		stringBuffer.append(TEXT_487);
 		stringBuffer.append(importedOperationClassName);
-		stringBuffer.append(TEXT_491);
+		stringBuffer.append(TEXT_488);
 		if (!genModel.isRichClientPlatform() && genModel.useClassOverrideAnnotation()) {
-			stringBuffer.append(TEXT_492);
+			stringBuffer.append(TEXT_489);
 		}
-		stringBuffer.append(TEXT_493);
+		stringBuffer.append(TEXT_490);
 		stringBuffer.append(operationMethodName);
-		stringBuffer.append(TEXT_494);
+		stringBuffer.append(TEXT_491);
 		if (genModel.useGenerics()) {
-			stringBuffer.append(TEXT_495);
+			stringBuffer.append(TEXT_492);
 		} else {
-			stringBuffer.append(TEXT_496);
+			stringBuffer.append(TEXT_493);
 		}
-		stringBuffer.append(TEXT_497);
+		stringBuffer.append(TEXT_494);
 		if (!genModel.useGenerics()) {
+			stringBuffer.append(TEXT_495);
+		}
+		stringBuffer.append(TEXT_496);
+		if (genModel.getRuntimeVersion().getValue() >= GenRuntimeVersion.EMF24_VALUE) {
+			stringBuffer.append(TEXT_497);
+		} else {
 			stringBuffer.append(TEXT_498);
 		}
 		stringBuffer.append(TEXT_499);
-		if (genModel.getRuntimeVersion().getValue() >= GenRuntimeVersion.EMF24_VALUE) {
-			stringBuffer.append(TEXT_500);
-		} else {
+		stringBuffer.append(genPackage.getImportedEditorPluginClassName());
+		stringBuffer.append(TEXT_500);
+		if (genModel.useClassOverrideAnnotation()) {
 			stringBuffer.append(TEXT_501);
 		}
 		stringBuffer.append(TEXT_502);
-		stringBuffer.append(genPackage.getImportedEditorPluginClassName());
-		stringBuffer.append(TEXT_503);
 		if (genModel.useClassOverrideAnnotation()) {
-			stringBuffer.append(TEXT_504);
+			stringBuffer.append(TEXT_503);
 		}
-		stringBuffer.append(TEXT_505);
-		if (genModel.useClassOverrideAnnotation()) {
-			stringBuffer.append(TEXT_506);
-		}
-		stringBuffer.append(TEXT_507);
+		stringBuffer.append(TEXT_504);
 		if (genModel.isRichClientPlatform()) {
 			if (genModel.isRichAjaxPlatform()) {
-				stringBuffer.append(TEXT_508);
+				stringBuffer.append(TEXT_505);
 				stringBuffer.append(genModel.getImportedName("org.eclipse.emf.common.ui.dialogs.ResourceDialog"));
-				stringBuffer.append(TEXT_509);
+				stringBuffer.append(TEXT_506);
 				if (genModel.useClassOverrideAnnotation()) {
-					stringBuffer.append(TEXT_510);
+					stringBuffer.append(TEXT_507);
 				}
-				stringBuffer.append(TEXT_511);
+				stringBuffer.append(TEXT_508);
 				if (genModel.useClassOverrideAnnotation()) {
-					stringBuffer.append(TEXT_512);
+					stringBuffer.append(TEXT_509);
 				}
-				stringBuffer.append(TEXT_513);
+				stringBuffer.append(TEXT_510);
 				stringBuffer.append("List" + (genModel.useGenerics() ? "<URI>" : ""));
-				stringBuffer.append(TEXT_514);
+				stringBuffer.append(TEXT_511);
 				stringBuffer.append(genModel.useGenerics() ? "" : "(URI)");
-				stringBuffer.append(TEXT_515);
+				stringBuffer.append(TEXT_512);
 				stringBuffer.append(genModel.getImportedName("org.eclipse.emf.common.ui.URIEditorInput"));
-				stringBuffer.append(TEXT_516);
+				stringBuffer.append(TEXT_513);
 			} else {
-				stringBuffer.append(TEXT_517);
+				stringBuffer.append(TEXT_514);
 				if (!genModel.useGenerics()) {
-					stringBuffer.append(TEXT_518);
+					stringBuffer.append(TEXT_515);
 				}
-				stringBuffer.append(TEXT_519);
+				stringBuffer.append(TEXT_516);
 				stringBuffer.append(genModel.getImportedName(genModel.getQualifiedEditorAdvisorClassName()));
-				stringBuffer.append(TEXT_520);
+				stringBuffer.append(TEXT_517);
 				stringBuffer.append(genModel.getImportedName("org.eclipse.swt.SWT"));
-				stringBuffer.append(TEXT_521);
+				stringBuffer.append(TEXT_518);
 				stringBuffer.append(genModel.getImportedName("org.eclipse.emf.common.ui.URIEditorInput"));
-				stringBuffer.append(TEXT_522);
+				stringBuffer.append(TEXT_519);
 			}
 		} else {
-			stringBuffer.append(TEXT_523);
+			stringBuffer.append(TEXT_520);
 		}
-		stringBuffer.append(TEXT_524);
+		stringBuffer.append(TEXT_521);
 		if (!genModel.useGenerics()) {
-			stringBuffer.append(TEXT_525);
+			stringBuffer.append(TEXT_522);
 		}
-		stringBuffer.append(TEXT_526);
+		stringBuffer.append(TEXT_523);
 		stringBuffer.append(genModel.getImportedName("org.eclipse.core.runtime.NullProgressMonitor"));
-		stringBuffer.append(TEXT_527);
+		stringBuffer.append(TEXT_524);
 		if (!genModel.isRichClientPlatform()) {
-			stringBuffer.append(TEXT_528);
+			stringBuffer.append(TEXT_525);
 			if (genModel.getRuntimeVersion().getValue() >= GenRuntimeVersion.EMF23_VALUE) {
-				stringBuffer.append(TEXT_529);
+				stringBuffer.append(TEXT_526);
 				stringBuffer.append(_ListOfAnything);
-				stringBuffer.append(TEXT_530);
+				stringBuffer.append(TEXT_527);
 			} else {
-				stringBuffer.append(TEXT_531);
+				stringBuffer.append(TEXT_528);
 				stringBuffer.append(genPackage.getImportedEditorPluginClassName());
-				stringBuffer.append(TEXT_532);
+				stringBuffer.append(TEXT_529);
 			}
-			stringBuffer.append(TEXT_533);
+			stringBuffer.append(TEXT_530);
 		}
-		stringBuffer.append(TEXT_534);
+		stringBuffer.append(TEXT_531);
 		if (genModel.useClassOverrideAnnotation()) {
-			stringBuffer.append(TEXT_535);
+			stringBuffer.append(TEXT_532);
 		}
-		stringBuffer.append(TEXT_536);
+		stringBuffer.append(TEXT_533);
 		if (!genModel.isRichClientPlatform()) {
-			stringBuffer.append(TEXT_537);
+			stringBuffer.append(TEXT_534);
 		}
-		stringBuffer.append(TEXT_538);
+		stringBuffer.append(TEXT_535);
 		if (genModel.useClassOverrideAnnotation()) {
+			stringBuffer.append(TEXT_536);
+		}
+		stringBuffer.append(TEXT_537);
+		if (genPackage.isMultipleEditorPages()) {
+			stringBuffer.append(TEXT_538);
+		} else {
 			stringBuffer.append(TEXT_539);
 		}
 		stringBuffer.append(TEXT_540);
-		if (genPackage.isMultipleEditorPages()) {
+		if (genModel.useGenerics()) {
 			stringBuffer.append(TEXT_541);
 		} else {
 			stringBuffer.append(TEXT_542);
 		}
 		stringBuffer.append(TEXT_543);
-		if (genModel.useGenerics()) {
-			stringBuffer.append(TEXT_544);
-		} else {
-			stringBuffer.append(TEXT_545);
-		}
-		stringBuffer.append(TEXT_546);
 		if (!genModel.useGenerics()) {
-			stringBuffer.append(TEXT_547);
+			stringBuffer.append(TEXT_544);
 		}
-		stringBuffer.append(TEXT_548);
+		stringBuffer.append(TEXT_545);
 		stringBuffer.append(_CollectionOfAnything);
+		stringBuffer.append(TEXT_546);
+		stringBuffer.append(genModel.getNonNLS());
+		stringBuffer.append(TEXT_547);
+		stringBuffer.append(genModel.getNonNLS());
+		stringBuffer.append(TEXT_548);
+		stringBuffer.append(genModel.getNonNLS());
 		stringBuffer.append(TEXT_549);
 		stringBuffer.append(genModel.getNonNLS());
 		stringBuffer.append(TEXT_550);
-		stringBuffer.append(genModel.getNonNLS());
+		stringBuffer.append(genPackage.getImportedEditorPluginClassName());
 		stringBuffer.append(TEXT_551);
-		stringBuffer.append(genModel.getNonNLS());
+		stringBuffer.append(genPackage.getImportedEditorPluginClassName());
 		stringBuffer.append(TEXT_552);
-		stringBuffer.append(genModel.getNonNLS());
-		stringBuffer.append(TEXT_553);
-		stringBuffer.append(genPackage.getImportedEditorPluginClassName());
-		stringBuffer.append(TEXT_554);
-		stringBuffer.append(genPackage.getImportedEditorPluginClassName());
-		stringBuffer.append(TEXT_555);
 		if (genModel.useClassOverrideAnnotation()) {
-			stringBuffer.append(TEXT_556);
+			stringBuffer.append(TEXT_553);
 		}
-		stringBuffer.append(TEXT_557);
+		stringBuffer.append(TEXT_554);
 		if (!genModel.isRichClientPlatform()) {
-			stringBuffer.append(TEXT_558);
+			stringBuffer.append(TEXT_555);
 		}
-		stringBuffer.append(TEXT_559);
+		stringBuffer.append(TEXT_556);
 		if (genPackage.isExtensibleProviderFactory()) {
-			stringBuffer.append(TEXT_560);
+			stringBuffer.append(TEXT_557);
 			stringBuffer.append(genModel.getImportedName("org.eclipse.emf.ecore.resource.Resource"));
-			stringBuffer.append(TEXT_561);
+			stringBuffer.append(TEXT_558);
 			stringBuffer
 					.append(genModel.getImportedName("org.polarsys.kitalpha.emde.ui.actions.EmdeViewerFilterAction"));
-			stringBuffer.append(TEXT_562);
+			stringBuffer.append(TEXT_559);
 			stringBuffer.append(genModel.getImportedName("org.eclipse.jface.util.IPropertyChangeListener"));
-			stringBuffer.append(TEXT_563);
+			stringBuffer.append(TEXT_560);
 			stringBuffer.append(genModel.getImportedName("org.polarsys.kitalpha.emde.extension.ModelExtensionHelper"));
+			stringBuffer.append(TEXT_561);
+		}
+		stringBuffer.append(TEXT_562);
+		if (genModel.useGenerics()) {
+			stringBuffer.append(TEXT_563);
+		} else {
 			stringBuffer.append(TEXT_564);
 		}
 		stringBuffer.append(TEXT_565);
-		if (genModel.useGenerics()) {
-			stringBuffer.append(TEXT_566);
-		} else {
-			stringBuffer.append(TEXT_567);
-		}
-		stringBuffer.append(TEXT_568);
 		if (!genModel.useGenerics()) {
-			stringBuffer.append(TEXT_569);
+			stringBuffer.append(TEXT_566);
 		}
-		stringBuffer.append(TEXT_570);
+		stringBuffer.append(TEXT_567);
 		stringBuffer.append(genPackage.isMultipleEditorPages());
-		stringBuffer.append(TEXT_571);
+		stringBuffer.append(TEXT_568);
 		genModel.emitSortedImports();
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "doGenerate", stringBuffer.toString());

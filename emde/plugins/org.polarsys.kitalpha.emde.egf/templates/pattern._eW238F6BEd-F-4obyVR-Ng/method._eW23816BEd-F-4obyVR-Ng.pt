@@ -54,6 +54,43 @@ public class <%=genPackage.getActionBarContributorClassName()%>
 	implements <%=genModel.getImportedName("org.eclipse.jface.viewers.ISelectionChangedListener")%><%if (genPackage.isExtensibleProviderFactory()) {%>, <%=genModel.getImportedName("org.eclipse.jface.util.IPropertyChangeListener")%><%}%>
 {
 
+	private final class SchemeLoadResourceAction extends Action {
+
+		public SchemeLoadResourceAction() {
+			super("Load Reusable Resource...");
+			<%=genModel.getImportedName("org.eclipse.emf.common.util.URI")%> uri = URI.createURI("platform:/plugin/org.polarsys.kitalpha.resourcereuse.emfscheme.ui/icons/searchView.gif");
+			setImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(uri));
+		}
+		
+<%if (genModel.useClassOverrideAnnotation()) {%>
+			@Override
+<%}%>
+		public void run() {
+			if (activeEditorPart instanceof IViewerProvider) {
+				Viewer viewer = ((IViewerProvider) activeEditorPart).getViewer();
+				if (viewer == null) 
+					return ;
+				<%=genModel.getImportedName("org.polarsys.kitalpha.resourcereuse.emfscheme.dialog.LoadingResourceReuseDialog")%> dialog = new LoadingResourceReuseDialog(activeEditor.getSite().getShell());
+				
+				EObject selection = currentResource.getContents().get(0);
+				dialog.setSelection(selection);
+				dialog.open();
+				
+				<%=genModel.getImportedName("org.polarsys.kitalpha.resourcereuse.emfscheme.utils.context.ModelReuseContext")%> context = ModelReuseContext.INSTANCE;
+				List<<%=genModel.getImportedName("org.polarsys.kitalpha.resourcereuse.model.SearchCriteria")%>> criterias = context.getCriterias();
+				for (SearchCriteria settedCriteria : criterias) {
+					java.util.List<URI> modelToLoad = <%=genModel.getImportedName("org.polarsys.kitalpha.resourcereuse.emfscheme.helpers.ModelReuseHelper")%>.findModelsURIAccordingToCriteria(settedCriteria);
+					<%=genModel.getImportedName("org.polarsys.kitalpha.resourcereuse.emfscheme.utils.services.ResourceSetLoaderServices")%>.loadResourceForCurrentRessourceSet(selection, modelToLoad);
+					modelToLoad = ModelReuseHelper.findMetadataURIAccordingToCriteria(settedCriteria);
+					ResourceSetLoaderServices.loadResourceForCurrentRessourceSet(selection, modelToLoad);
+					for (URI uri: modelToLoad)
+					{
+						<%=genModel.getImportedName("org.polarsys.kitalpha.ad.metadata.helpers.LibraryHelper")%>.add(currentResource.getResourceSet(), currentResource.getURI(), uri);
+					}
+				}
+			}
+		}
+	}
 	private final class RefreshViewerAction extends <%=genModel.getImportedName("org.eclipse.jface.action.Action")%> {
 		private RefreshViewerAction() {
 			super(<%=genPackage.getImportedEditorPluginClassName()%>.INSTANCE.getString("_UI_RefreshViewer_menu_item"));<%=genModel.getNonNLS()%>
@@ -251,6 +288,14 @@ public class <%=genPackage.getActionBarContributorClassName()%>
 	 * @generated
 	 */
 	protected <%=genModel.getImportedName("org.eclipse.jface.action.IAction")%> refreshViewerAction = new RefreshViewerAction();
+	
+	/**
+	 * This action load resource from resourcereuse/emfscheme
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected <%=genModel.getImportedName("org.eclipse.jface.action.IAction")%> schemeLoadResourceAction = new SchemeLoadResourceAction();
 	
 <%if (genModel.isCreationCommands()) {%>
 	/**
@@ -892,8 +937,7 @@ public class <%=genPackage.getActionBarContributorClassName()%>
 	{
 		menuManager.insertAfter("additions-end", new <%=genModel.getImportedName("org.eclipse.jface.action.Separator")%>("ui-actions"));<%=genModel.getNonNLS()%><%=genModel.getNonNLS(2)%>
 		menuManager.insertAfter("ui-actions", showPropertiesViewAction);<%=genModel.getNonNLS()%>
-
-		refreshViewerAction.setEnabled(refreshViewerAction.isEnabled());		
+		menuManager.insertBefore("additions-end", schemeLoadResourceAction);<%=genModel.getNonNLS()%>
 		menuManager.insertAfter("ui-actions", refreshViewerAction);<%=genModel.getNonNLS()%>
 
 		super.addGlobalActions(menuManager);

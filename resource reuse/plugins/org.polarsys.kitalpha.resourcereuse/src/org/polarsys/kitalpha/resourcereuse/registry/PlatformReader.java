@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,6 +41,7 @@ public class PlatformReader implements Constants {
 		res.setDescription(element.getAttribute("description"));
 		res.setVersion(element.getAttribute("version"));
 		res.setPath(element.getAttribute("path"));
+		res.setMetadataPath(element.getAttribute("metadata"));
 		String tags = element.getAttribute("tags");
 		if (tags != null) {
 			for (String tag : tags.split(","))

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,6 +23,19 @@ import junit.framework.TestCase;
  * 
  */
 public class ResourceTests extends TestCase {
+
+	public void testMetadata13() throws Exception {
+		Resource resource = ResourceReuse.createHelper().getResource("resource44.id");
+		assertNotNull(resource);
+		assertNotNull(resource.getMetadataPath());
+		assertEquals("path://test.metadata", resource.getMetadataPath());
+	}
+
+	public void testMetadata12() throws Exception {
+		Resource resource = ResourceReuse.createHelper().getResource("resource3.id");
+		assertNotNull(resource);
+		assertNull(resource.getMetadataPath());
+	}
 
 	public void testSearchConcern11() throws Exception {
 		SearchCriteria searchCriteria = new SearchCriteria();

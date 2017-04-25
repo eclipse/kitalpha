@@ -19,5 +19,9 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
  org.eclipse.emf.ecore.editor;visibility:=reexport,
  org.polarsys.kitalpha.emde.ui;visibility:=reexport,
- org.polarsys.kitalpha.ad.metadata;visibility:=reexport
+ org.polarsys.kitalpha.ad.metadata;visibility:=reexport,
+ org.eclipse.ui.workbench,
+ org.polarsys.kitalpha.resourcereuse.emfscheme.dialog,
+ org.polarsys.kitalpha.resourcereuse.emfscheme.utils,
+ org.polarsys.kitalpha.resourcereuse.emfscheme
 Bundle-ActivationPolicy: lazy

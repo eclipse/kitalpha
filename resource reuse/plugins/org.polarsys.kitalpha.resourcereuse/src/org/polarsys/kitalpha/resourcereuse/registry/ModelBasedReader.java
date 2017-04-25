@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -56,6 +56,9 @@ public abstract class ModelBasedReader implements Constants, ResourceReader {
 		attribute = element.getAttribute("path");
 		if (attribute != null)
 			res.setPath(attribute.getValue().trim());
+		attribute = element.getAttribute("metadata");
+		if (attribute != null)
+			res.setMetadataPath(attribute.getValue().trim());
 		attribute = element.getAttribute("tags");
 		if (attribute != null) {
 			String tags = attribute.getValue();

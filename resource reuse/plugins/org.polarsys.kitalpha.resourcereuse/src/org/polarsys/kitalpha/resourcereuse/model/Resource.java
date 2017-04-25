@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,6 +27,7 @@ public class Resource {
 	private String version;
 	private String domain;
 	private String path;
+	private String metadataPath;
 	private int weight = 0;
 	private final List<String> tags = new ArrayList<String>();
 
@@ -105,10 +106,18 @@ public class Resource {
 	public void setProviderLocation(Location providerLocation) {
 		this.providerLocation = providerLocation;
 	}
+	
+	public String getMetadataPath() {
+		return metadataPath;
+	}
+
+	public void setMetadataPath(String metadatPath) {
+		this.metadataPath = metadatPath;
+	}
 
 	@Override
 	public String toString() {
-		return "Resource [id=" + id + ", name=" + name + ", version=" + version + ", domain=" + domain + ", path=" + path + ", tags=" + Arrays.toString(tags.toArray()) + "]";
+		return "Resource [id=" + id + ", name=" + name + ", version=" + version + ", domain=" + domain + ", path=" + path + ", metadata=" + metadataPath + ", tags=" + Arrays.toString(tags.toArray()) + "]";
 	}
 
 }

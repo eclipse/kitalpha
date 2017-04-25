@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016, 2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -26,19 +26,52 @@ import org.polarsys.kitalpha.resourcereuse.model.SearchCriteria;
  */
 public class ModelReuseHelper {
 
-	private static final String MODELREUSE_SCHEME_PREFIX = "modelreuse:/"; //$NON-NLS-1$
+	private static final String METADATA_KEYWORD = "useMetadata"; //$NON-NLS-1$
+	private static final String TAGS_KEYWORD = "Tags"; //$NON-NLS-1$
 	
-	public static URI createModelReuseURI(Resource resource){
-		return createModelReuseURI(MODELREUSE_SCHEME_PREFIX, resource);
+	private static final String MODELREUSE_SCHEME_PREFIX = "modelreuse"; //$NON-NLS-1$
+	
+	public static URI createModelReuseURI(Resource resource, boolean manageMetadata){
+		 return createModelReuseURI(MODELREUSE_SCHEME_PREFIX, manageMetadata, resource);
+	}
+	public static URI[] createModelReuseURI(Resource resource){
+		return new URI[] {createModelReuseURI(MODELREUSE_SCHEME_PREFIX, false, resource), createModelReuseURI(MODELREUSE_SCHEME_PREFIX, true, resource)};
+	}
+	
+	/**
+	 * Return the metadata uri for the given uri.
+	 * @param uri must be a modelreuse uri
+	 * @return
+	 */
+	public static URI createMetatadaURI(URI uri) {
+		if (hasModelReuseScheme(uri))
+		{
+			if (uri.path().contains(METADATA_KEYWORD))
+				return uri;
+			int nb = uri.path().indexOf(TAGS_KEYWORD);
+			if (nb == -1)
+				return  URI.createURI(MODELREUSE_SCHEME_PREFIX +":/"+ uri.path()+" "+METADATA_KEYWORD);
+			return URI.createURI(MODELREUSE_SCHEME_PREFIX +":/"+ uri.path().substring(0, nb)+METADATA_KEYWORD+" "+uri.path().substring(nb));
+		}
+		return uri;
+	}
+	
+	public static boolean hasModelReuseScheme(URI uri) {
+		return uri.scheme().equals(MODELREUSE_SCHEME_PREFIX);
 	}
 
-	private static URI createModelReuseURI(String protocolName,
+	private static URI createModelReuseURI(String protocolName, boolean useMetadata,
 			Resource resource) {
-
+		if (useMetadata && resource.getMetadataPath() == null)
+			return null;
 		String elementID = resource.getId();
 		List<String> tags = resource.getTags();
 		String finalResult = "Id=" + elementID; //$NON-NLS-1$
 		int i = 0;
+
+		if (useMetadata && resource.getMetadataPath() != null) {
+			finalResult += " "+METADATA_KEYWORD; //$NON-NLS-1$
+		}
 
 		if (resource.getName() != null) {
 			finalResult += " Name=" + resource.getName(); //$NON-NLS-1$
@@ -51,7 +84,7 @@ public class ModelReuseHelper {
 		}
 
 		if (tags != null) {
-			finalResult += " Tags=["; //$NON-NLS-1$
+			finalResult += " "+TAGS_KEYWORD+"=["; //$NON-NLS-1$
 			for (String tag : tags) {
 				int size = tags.size();
 				// if we're at the last tag
@@ -64,10 +97,34 @@ public class ModelReuseHelper {
 			finalResult += "]"; //$NON-NLS-1$
 		}
 
-		URI result = URI.createURI(protocolName + finalResult);
+		URI result = URI.createURI(protocolName +":/"+ finalResult);
 
 		return result;
 	}
+	public static List<URI> findMetadataURIAccordingToCriteria(
+			SearchCriteria criteria) {
+
+		List<URI> foundModels = new ArrayList<URI>();
+
+		List<Resource> resourceSelected = findModelsAccordingToCriteria(criteria);
+
+		// Browse resources found
+		for (Resource resource : resourceSelected) {
+
+			URI modelResourceURI = null;
+
+			// Evaluating the new uri of the resource with the new protocol
+			// (This uri will be parsed with a new factory associated to the
+			// protocol to retrieve the resource)
+			modelResourceURI = createModelReuseURI(resource, true);
+
+			// The modelreuse uri is added to modelsToLoad
+			if (modelResourceURI != null)
+				foundModels.add(modelResourceURI);
+		}
+		return foundModels;
+	}
+
 
 	public static List<URI> findModelsURIAccordingToCriteria(
 			SearchCriteria criteria) {
@@ -84,12 +141,10 @@ public class ModelReuseHelper {
 			// Evaluating the new uri of the resource with the new protocol
 			// (This uri will be parsed with a new factory associated to the
 			// protocol to retrieve the resource)
-			modelResourceURI = createModelReuseURI(MODELREUSE_SCHEME_PREFIX,
-					resource);
+			modelResourceURI = createModelReuseURI(resource, false);
 
 			// The modelreuse uri is added to modelsToLoad
 			foundModels.add(modelResourceURI);
-
 		}
 		return foundModels;
 	}

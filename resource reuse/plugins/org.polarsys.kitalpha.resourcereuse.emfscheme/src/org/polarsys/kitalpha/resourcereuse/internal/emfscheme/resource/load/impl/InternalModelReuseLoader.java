@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016, 2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -191,18 +191,20 @@ public class InternalModelReuseLoader implements IModelReuseLoader {
 		
 		java.util.List<URI> modelResourcesURI = ModelReuseHelper.findModelsURIAccordingToCriteria(criteria);
 		
-		if (!modelResourcesURI.isEmpty()){
-			//Get the first uri
-			URI uri = modelResourcesURI.get(0);
-			return load(resourceSet, uri);
-		}
-		
 		int size = modelResourcesURI.size();
 		logger.warn(new Status(IStatus.WARNING, Activator.PLUGIN_ID, 
 				"The criteria matchs: " + size + " resources. " + 
 						((size == 0)?
 								"No resource will be loaded" : //Then statement
 								" The first one will be loaded [" + modelResourcesURI.get(0) + "]"))); //Else statement
+
+		if (!modelResourcesURI.isEmpty()){
+			//Get the first uri
+			//ICI load des metadata (pas sur ici)
+			URI uri = modelResourcesURI.get(0);
+			return load(resourceSet, uri);
+		}
+		
 		
 		return null;
 	}
@@ -218,7 +220,14 @@ public class InternalModelReuseLoader implements IModelReuseLoader {
 	}
 	
 	private Resource loadFromResourceReuse(ResourceSet resourceSet, org.polarsys.kitalpha.resourcereuse.model.Resource resourcereuse){
-		URI uri = ModelReuseHelper.createModelReuseURI(resourcereuse);
+		URI[] uris = ModelReuseHelper.createModelReuseURI(resourcereuse);
+		Resource resource = getResource(resourceSet, uris[0]);
+		if (uris[1] != null)
+			getResource(resourceSet, uris[1]);
+		return resource;
+	}
+
+	private Resource getResource(ResourceSet resourceSet, URI uri) {
 		Resource resource = resourceSet.getResource(uri, true);
 		resource.setURI(uri);
 		return resource;

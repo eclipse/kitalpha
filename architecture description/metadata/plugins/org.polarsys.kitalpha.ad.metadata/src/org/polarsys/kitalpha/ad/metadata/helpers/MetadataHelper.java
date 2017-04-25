@@ -20,6 +20,7 @@ import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.polarsys.kitalpha.resourcereuse.emfscheme.helpers.ModelReuseHelper;
 
 /**
  * @author Thomas Guiu
@@ -90,6 +91,7 @@ public class MetadataHelper {
 	 */
 
 	public static URI getExpectedMetadataStorageURI(URI uri) {
+		
 		if (uri.isPlatformResource()) {
 			String path = uri.toPlatformString(true);
 			if (path.contains(".")) {
@@ -97,6 +99,9 @@ public class MetadataHelper {
 				path = path.substring(0, index) + "." + ViewpointMetadata.STORAGE_EXTENSION;
 			}
 			return URI.createPlatformResourceURI(path, true);
+		}
+		if (ModelReuseHelper.hasModelReuseScheme(uri)) {
+			return ModelReuseHelper.createMetatadaURI(uri);
 		}
 		return uri.trimFileExtension().appendFileExtension(ViewpointMetadata.STORAGE_EXTENSION);
 	}

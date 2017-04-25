@@ -84,6 +84,13 @@
                </documentation>
             </annotation>
          </attribute>
+         <attribute name="metadata" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
          <attribute name="tags" type="string">
             <annotation>
                <documentation>

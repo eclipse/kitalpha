@@ -77,6 +77,11 @@ import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import org.polarsys.kitalpha.ad.metadata.helpers.LibraryHelper;
 import org.polarsys.kitalpha.emde.ui.actions.EmdeViewerFilterAction;
 import org.polarsys.kitalpha.emde.ui.i18n.Messages;
+import org.polarsys.kitalpha.resourcereuse.emfscheme.dialog.LoadingResourceReuseDialog;
+import org.polarsys.kitalpha.resourcereuse.emfscheme.helpers.ModelReuseHelper;
+import org.polarsys.kitalpha.resourcereuse.emfscheme.utils.context.ModelReuseContext;
+import org.polarsys.kitalpha.resourcereuse.emfscheme.utils.services.ResourceSetLoaderServices;
+import org.polarsys.kitalpha.resourcereuse.model.SearchCriteria;
 
 /**
  * This is the action bar contributor for the ComponentSample model editor.
@@ -87,6 +92,42 @@ import org.polarsys.kitalpha.emde.ui.i18n.Messages;
  */
 public class ComponentSampleActionBarContributor extends EditingDomainActionBarContributor
 		implements ISelectionChangedListener, IPropertyChangeListener {
+	private final class SchemeLoadResourceAction extends Action {
+
+		public SchemeLoadResourceAction() {
+			super("Load Reusable Resource...");
+			URI uri = URI.createURI(
+					"platform:/plugin/org.polarsys.kitalpha.resourcereuse.emfscheme.ui/icons/searchView.gif");
+			setImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(uri));
+		}
+
+		@Override
+		public void run() {
+			if (activeEditorPart instanceof IViewerProvider) {
+				Viewer viewer = ((IViewerProvider) activeEditorPart).getViewer();
+				if (viewer == null)
+					return;
+				LoadingResourceReuseDialog dialog = new LoadingResourceReuseDialog(activeEditor.getSite().getShell());
+
+				EObject selection = currentResource.getContents().get(0);
+				dialog.setSelection(selection);
+				dialog.open();
+
+				ModelReuseContext context = ModelReuseContext.INSTANCE;
+				List<SearchCriteria> criterias = context.getCriterias();
+				for (SearchCriteria settedCriteria : criterias) {
+					java.util.List<URI> modelToLoad = ModelReuseHelper.findModelsURIAccordingToCriteria(settedCriteria);
+					ResourceSetLoaderServices.loadResourceForCurrentRessourceSet(selection, modelToLoad);
+					modelToLoad = ModelReuseHelper.findMetadataURIAccordingToCriteria(settedCriteria);
+					ResourceSetLoaderServices.loadResourceForCurrentRessourceSet(selection, modelToLoad);
+					for (URI uri : modelToLoad) {
+						LibraryHelper.add(currentResource.getResourceSet(), currentResource.getURI(), uri);
+					}
+				}
+			}
+		}
+	}
+
 	private final class RefreshViewerAction extends Action {
 		private RefreshViewerAction() {
 			super(ComponentSampleEditorPlugin.INSTANCE.getString("_UI_RefreshViewer_menu_item")); //$NON-NLS-1$
@@ -231,6 +272,14 @@ public class ComponentSampleActionBarContributor extends EditingDomainActionBarC
 	 * @generated
 	 */
 	protected IAction refreshViewerAction = new RefreshViewerAction();
+
+	/**
+	 * This action load resource from resourcereuse/emfscheme
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected IAction schemeLoadResourceAction = new SchemeLoadResourceAction();
 
 	/**
 	 * This will contain one {@link org.eclipse.emf.edit.ui.action.CreateChildAction} corresponding to each descriptor
@@ -633,8 +682,7 @@ public class ComponentSampleActionBarContributor extends EditingDomainActionBarC
 	protected void addGlobalActions(IMenuManager menuManager) {
 		menuManager.insertAfter("additions-end", new Separator("ui-actions")); //$NON-NLS-1$ //$NON-NLS-2$
 		menuManager.insertAfter("ui-actions", showPropertiesViewAction); //$NON-NLS-1$
-
-		refreshViewerAction.setEnabled(refreshViewerAction.isEnabled());
+		menuManager.insertBefore("additions-end", schemeLoadResourceAction); //$NON-NLS-1$
 		menuManager.insertAfter("ui-actions", refreshViewerAction); //$NON-NLS-1$
 
 		super.addGlobalActions(menuManager);

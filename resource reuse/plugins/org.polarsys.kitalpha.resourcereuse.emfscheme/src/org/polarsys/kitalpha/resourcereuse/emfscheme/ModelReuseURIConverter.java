@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016, 2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -44,16 +44,17 @@ public class ModelReuseURIConverter extends ExtensibleURIConverterImpl {
 	static {
 		
 		// Here are patterns for my regex
-		final String IdPattern = "(Id=([A-Za-z0-9-.-[ \t]]*[A-Za-z0-9-.]))?"; //$NON-NLS-1$
+		final String IdPattern = "(Id=([\\w+\\.]+))?"; //$NON-NLS-1$
 		final String whitespacePattern = "[ \t]*"; //$NON-NLS-1$
 		final String namePattern = "(Name=([A-Za-z0-9-.-[ \t]]*[A-Za-z0-9-.]))?"; //$NON-NLS-1$
 		final String domainPattern = "(Domain=([A-Za-z0-9-.-[ \t]]*[A-Za-z0-9-.]))?"; //$NON-NLS-1$
 		final String versionPattern = "(Version=([A-Za-z0-9-.]*))?"; //$NON-NLS-1$
+		final String metadataPattern = "(useMetadata)?"; //$NON-NLS-1$
 		final String tagsPattern = "(Tags=\\[([A-Za-z0-9-.-[ \t]-;]*[A-Za-z0-9-.-[ \t]])?\\])?"; //$NON-NLS-1$
 
-		final String globalPattern = IdPattern + whitespacePattern + namePattern
+		final String globalPattern = IdPattern+ whitespacePattern + metadataPattern  + whitespacePattern + namePattern
 				+ whitespacePattern + domainPattern + whitespacePattern
-				+ versionPattern + whitespacePattern + tagsPattern;
+				+ versionPattern + whitespacePattern  + tagsPattern;
 		
 		pattern = Pattern.compile(globalPattern);
 	}
@@ -112,22 +113,25 @@ public class ModelReuseURIConverter extends ExtensibleURIConverterImpl {
 
 		criteria.setId(criteriaSpecifications.get(0));
 
-		if (criteriaSpecifications.get(1).isEmpty())
+		boolean useMetadata = !criteriaSpecifications.get(1).isEmpty();
+
+		if (criteriaSpecifications.get(2).isEmpty())
 			criteria.setName(null);
 		else
-			criteria.setName(criteriaSpecifications.get(1));
-
-		if (criteriaSpecifications.get(2).isEmpty()) {
-			criteria.setDomain(null);
-		} else
-			criteria.setDomain(criteriaSpecifications.get(2));
+			criteria.setName(criteriaSpecifications.get(2));
 
 		if (criteriaSpecifications.get(3).isEmpty()) {
+			criteria.setDomain(null);
+		} else
+			criteria.setDomain(criteriaSpecifications.get(3));
+
+		if (criteriaSpecifications.get(4).isEmpty()) {
 			criteria.setVersion(null);
 		} else
-			criteria.setVersion(criteriaSpecifications.get(3));
+			criteria.setVersion(criteriaSpecifications.get(4));
 
 		// I remove id,name,domain and version for fill in tags
+		criteriaSpecifications.remove(0);
 		criteriaSpecifications.remove(0);
 		criteriaSpecifications.remove(0);
 		criteriaSpecifications.remove(0);
@@ -164,7 +168,7 @@ public class ModelReuseURIConverter extends ExtensibleURIConverterImpl {
 			Location location = resourceFoundWithModelreuseProtocol
 					.getProviderLocation();
 			String pathString = "";
-			pathString = resourceFoundWithModelreuseProtocol.getPath();
+			pathString = useMetadata ? resourceFoundWithModelreuseProtocol.getMetadataPath() : resourceFoundWithModelreuseProtocol.getPath();
 			switch (location) {
 
 			case PLATFORM:
@@ -196,24 +200,32 @@ public class ModelReuseURIConverter extends ExtensibleURIConverterImpl {
 
 		Matcher m = getPattern().matcher(abstractURIString);
 
-		m.matches();
+		boolean matches = m.matches();//m.groupCount()
 
 		// i=2 =>id
-		String id = m.group(2);
+		String id = m.group(2); //m.group(3)
 		// i=3 et 4 => name
-		String name = m.group(4);
+		String name = m.group(5);
 		// i= 5 et 6 => domain
-		String domain = m.group(6);
+		String domain = m.group(7);
 		// i = 7 et 8 => version
-		String version = m.group(8);
-		// i = 9 et 10 => Tags
-		String tag = m.group(10);
+		String version = m.group(9);
+		// metadata
+		String useMetadata = m.group(3);
+		// i = 10 et 11 => Tags
+		String tag = m.group(11);
 
 		int i = -1;
 		// Here i fill my list of strings
 		if (id != null) {
 			i++;
 			criteriaSpecifications.add(i, id);
+		}
+		i++;
+		if (useMetadata != null) {
+			criteriaSpecifications.add("useMetadata");//$NON-NLS-1$
+		} else {
+			criteriaSpecifications.add(""); //$NON-NLS-1$
 		}
 
 		if (name != null) {
