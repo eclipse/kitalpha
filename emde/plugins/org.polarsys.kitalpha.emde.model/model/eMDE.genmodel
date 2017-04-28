@@ -9,16 +9,16 @@
     copyrightFields="false" editPluginID="org.polarsys.kitalpha.emde.model.edit" editorPluginID="org.polarsys.kitalpha.emde.model.editor"
     tableProviders="true" colorProviders="true" fontProviders="true" operationReflection="true"
     importOrganizing="true">
-  <foreignModel>platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore</foreignModel>
+  <foreignModel>../../org.polarsys.kitalpha.emde/model/eMDE.ecore</foreignModel>
   <genPackages prefix="Emde" basePackage="org.polarsys.kitalpha" resource="XMI" disposableProviderFactory="true"
       interfacePackageSuffix="model" metaDataPackageSuffix="model" classPackageSuffix="model.impl"
       utilityPackageSuffix="model.util" providerPackageSuffix="model.edit.provider"
       generateExampleClass="false" dataTypeConverters="true" multipleEditorPages="false"
-      extensibleProviderFactory="true" ecorePackage="platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#/">
-    <genClasses image="false" ecoreClass="platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//Element"/>
-    <genClasses image="false" ecoreClass="platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//ExtensibleElement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//ExtensibleElement/ownedExtensions"/>
+      extensibleProviderFactory="true" ecorePackage="../../org.polarsys.kitalpha.emde/model/eMDE.ecore#/">
+    <genClasses image="false" ecoreClass="../../org.polarsys.kitalpha.emde/model/eMDE.ecore#//Element"/>
+    <genClasses image="false" ecoreClass="../../org.polarsys.kitalpha.emde/model/eMDE.ecore#//ExtensibleElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.emde/model/eMDE.ecore#//ExtensibleElement/ownedExtensions"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//ElementExtension"/>
+    <genClasses image="false" ecoreClass="../../org.polarsys.kitalpha.emde/model/eMDE.ecore#//ElementExtension"/>
   </genPackages>
 </genmodel:GenModel>
