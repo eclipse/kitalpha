@@ -12,7 +12,7 @@ Contributors:
 <feature
       id="org.polarsys.kitalpha.accuracy.feature"
       label="Kitalpha Accuracy Feature"
-      version="1.1.0.qualifier">
+      version="1.2.0.qualifier">
 
    <description>
       %description

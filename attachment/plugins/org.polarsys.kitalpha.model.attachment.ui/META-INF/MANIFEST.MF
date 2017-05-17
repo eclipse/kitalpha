@@ -4,7 +4,7 @@ Bundle-Name: %pluginName
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-SymbolicName: org.polarsys.kitalpha.model.attachment.ui;singleton:=true
-Bundle-Version: 1.1.0.qualifier
+Bundle-Version: 1.2.0.qualifier
 Bundle-Activator: org.polarsys.kitalpha.model.attachment.ui.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.resources,

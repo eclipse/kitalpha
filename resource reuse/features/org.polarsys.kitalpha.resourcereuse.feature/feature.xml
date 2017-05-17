@@ -2,7 +2,7 @@
 <feature
       id="org.polarsys.kitalpha.resourcereuse.feature"
       label="Kitalpha Resource Reuse Feature"
-      version="1.1.0.qualifier"
+      version="1.2.0.qualifier"
       provider-name="%providerName">
 
    <description>

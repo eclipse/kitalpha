@@ -12,7 +12,7 @@ Contributors:
 <feature
       id="org.polarsys.kitalpha.model.common.ui.menu.feature"
       label="%MODEL_COMMON_KITALPHA_UI_FEATRE_NAME"
-      version="1.1.0.qualifier"
+      version="1.2.0.qualifier"
       provider-name="%providerName">
 
    <description>
