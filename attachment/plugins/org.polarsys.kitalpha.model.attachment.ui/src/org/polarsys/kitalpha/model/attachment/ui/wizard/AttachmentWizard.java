@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -93,8 +93,8 @@ public class AttachmentWizard extends Wizard {
 					Resource resource = domain.getResourceSet().getResource(uri, true);
 					EcoreUtil.resolveAll(resource);
 
-					getCommand("org.polarsys.kitalpha.model.common.commands.contrib.detachment.checkFileResourceAttributes").exec(resource, monitor);
-					getCommand("org.polarsys.kitalpha.model.actions.contrib.detachment.backupAndSave").exec(resource, monitor);
+					getCommand("org.polarsys.kitalpha.model.common.commands.contrib.detachment.checkFileResourceAttributes").exec(null, resource, monitor);
+					getCommand("org.polarsys.kitalpha.model.actions.contrib.detachment.backupAndSave").exec(null, resource, monitor);
 
 					domain.getCommandStack().execute(new MergeCommand((TransactionalEditingDomain) domain, method, viewpointPage.analysisResult.getSelectedUris(), conflicts, monitor));
 				} catch (Exception e) {

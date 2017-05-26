@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 THALES GLOBAL SERVICES.
+ * Copyright (c) 2016, 2017 THALES GLOBAL SERVICES.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,6 +36,7 @@ import org.polarsys.kitalpha.model.common.scrutiny.analyzer.ModelScrutinyExcepti
 import org.polarsys.kitalpha.model.common.scrutiny.analyzer.Scrutineer;
 import org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints.scrutinizes.UsedAFViewpoints;
 import org.polarsys.kitalpha.model.common.scrutiny.interfaces.IScrutinize;
+import org.polarsys.kitalpha.model.common.scrutiny.registry.ModelScrutinyRegistry;
 import org.polarsys.kitalpha.model.common.scrutiny.registry.ModelScrutinyRegistry.RegistryElement;
 import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.ViewpointTreeContainer;
 
@@ -50,7 +51,7 @@ public class ViewpointsDetachmentCommand extends ModelCommand {
 	}
 
 	@Override
-	public void exec(Resource resource, IProgressMonitor monitor) 
+	public void exec(ModelScrutinyRegistry analysis, Resource resource, IProgressMonitor monitor) 
 			throws ModelCommandException {
 		RegistryElement regElt;
 		try {
@@ -59,7 +60,7 @@ public class ViewpointsDetachmentCommand extends ModelCommand {
 			
 			SubMonitor subMonitor = SubMonitor.convert(monitor);
 			
-			regElt = Scrutineer.getRegistryElement(getModelAnalysisID());
+			regElt = analysis.getRegistryElement(getModelAnalysisID());
 			UsedAFViewpoints usedVpFinder = getUsedAFFinder(regElt);
 			
 			if (usedVpFinder != null){

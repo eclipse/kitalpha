@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -24,6 +24,7 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.ui.forms.IManagedForm;
 import org.eclipse.ui.forms.editor.FormEditor;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
+import org.polarsys.kitalpha.model.common.scrutiny.analyzer.ModelScrutinyException;
 import org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.feedback.Feedback;
 import org.polarsys.kitalpha.model.common.scrutiny.interfaces.IFeedback;
 import org.polarsys.kitalpha.model.common.scrutiny.interfaces.IFeedback.IFeedbackMessage;
@@ -76,11 +77,15 @@ public class UnknownReferencesPage extends AbstractDetachmentFormPage {
 		tableViewer.setContentProvider(contentProvider);
 		tableViewer.setLabelProvider(contentProvider);
 		
-		RegistryElement regElt = ModelScrutinyRegistry.INSTANCE.getRegistryElement(getFinderID());
-		IFeedback unknownReferences = collectUnknownReferences(regElt);
-		
-		
-		tableViewer.setInput(unknownReferences);
+		RegistryElement regElt;
+		try {
+			regElt = getScrutinyAnalysis().getRegistryElement(getFinderID());
+			IFeedback unknownReferences = collectUnknownReferences(regElt);
+			tableViewer.setInput(unknownReferences);
+		} catch (ModelScrutinyException e) {
+			tableViewer.setInput(null);
+			e.printStackTrace();
+		}
 		
 	}
 

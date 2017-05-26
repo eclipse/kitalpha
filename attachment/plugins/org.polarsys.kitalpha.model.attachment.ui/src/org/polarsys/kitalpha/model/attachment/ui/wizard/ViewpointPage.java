@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,6 +34,7 @@ import org.polarsys.kitalpha.model.attachment.ui.Messages;
 import org.polarsys.kitalpha.model.common.scrutiny.analyzer.ModelScrutinyException;
 import org.polarsys.kitalpha.model.common.scrutiny.analyzer.Scrutineer;
 import org.polarsys.kitalpha.model.common.scrutiny.interfaces.IScrutinize;
+import org.polarsys.kitalpha.model.common.scrutiny.registry.ModelScrutinyRegistry;
 import org.polarsys.kitalpha.model.common.scrutiny.registry.ModelScrutinyRegistry.RegistryElement;
 import org.polarsys.kitalpha.model.common.share.resource.loading.LoadResource;
 import org.polarsys.kitalpha.model.common.share.ui.utilities.ExtensionTreeViewer;
@@ -150,9 +151,9 @@ public class ViewpointPage extends AbstractWizardPage {
 
 	private RegistryElement getRegistry(IFile airdResource) throws ModelScrutinyException {
 		Resource resource = new LoadResource(airdResource).getResource();
-		Scrutineer.startScrutiny(resource);
+		ModelScrutinyRegistry analysis = Scrutineer.startScrutiny(resource);
 		// TODO et les autres points d'ext ?
-		RegistryElement registryElement = Scrutineer.getRegistryElement("org.polarsys.kitalpha.model.common.scrutiny.contrib.scrutiny.viewpoints");
+		RegistryElement registryElement = analysis.getRegistryElement("org.polarsys.kitalpha.model.common.scrutiny.contrib.scrutiny.viewpoints");
 		return registryElement;
 	}
 

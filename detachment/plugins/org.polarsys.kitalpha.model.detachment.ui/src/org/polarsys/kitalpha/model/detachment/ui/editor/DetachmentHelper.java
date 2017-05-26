@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016, 2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -22,6 +22,7 @@ import org.polarsys.kitalpha.model.common.precondition.exception.InvalidPrecondi
 import org.polarsys.kitalpha.model.common.precondition.runner.IPreconditionRunner;
 import org.polarsys.kitalpha.model.common.precondition.runner.PreconditionRunner;
 import org.polarsys.kitalpha.model.common.scrutiny.analyzer.Scrutineer;
+import org.polarsys.kitalpha.model.common.scrutiny.registry.ModelScrutinyRegistry;
 import org.polarsys.kitalpha.model.detachment.ui.constants.Constants;
 import org.polarsys.kitalpha.model.detachment.ui.internal.DetachmentResourceProviderUtil;
 
@@ -44,14 +45,14 @@ public class DetachmentHelper {
 		Resource resource = DetachmentResourceProviderUtil.getResource(airdIResource);
 
 		monitor.subTask("Scrutinizing : " + resource.getURI());
-		Scrutineer.startScrutiny(resource);
+		ModelScrutinyRegistry analysis = Scrutineer.startScrutiny(resource);
 		monitor.worked(1);
 		monitor.done();
 		IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
 		IEditorPart editor;
-		editor = IDE.openEditor(page, new DetachmentEditorInput(), Constants.EDITOR_ID);
-		if (editor != null && editor instanceof ModelDetachment){
-			ModelDetachment modelDetachmentEditor = (ModelDetachment) editor;
+		editor = IDE.openEditor(page, new DetachmentEditorInput(analysis), Constants.EDITOR_ID);
+		if (editor != null && editor instanceof ModelDetachmentEditor){
+			ModelDetachmentEditor modelDetachmentEditor = (ModelDetachmentEditor) editor;
 			modelDetachmentEditor.initAndLaunchDetachmentAction(resource);
 		}
 	}

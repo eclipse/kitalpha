@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -28,19 +28,19 @@ import org.polarsys.kitalpha.model.common.scrutiny.registry.ModelScrutinyRegistr
 @SuppressWarnings("rawtypes")
 public class ScrutinizeVisitor extends EObjectVisitor {
 	
-	private Map<String, RegistryElement> registry;
+	private final ModelScrutinyRegistry registry;
 	
 	public ScrutinizeVisitor(){
-		this.registry = ModelScrutinyRegistry.INSTANCE.initRegistry();
+		this.registry = new ModelScrutinyRegistry();
 	}
 
 	@Override
 	public void visited(Resource resource) {
 		if (registry != null){
-			Set<String> findersId = registry.keySet();
+			Set<String> findersId = registry.getRegistry().keySet();
 			
 			for (String id : findersId) {
-				Object regElt = registry.get(id);
+				Object regElt = registry.getRegistry().get(id);
 
 				RegistryElement registryElement = (RegistryElement)regElt;
 				Collection<IScrutinize> finders = registryElement.getFinders();
@@ -62,25 +62,28 @@ public class ScrutinizeVisitor extends EObjectVisitor {
 
 	@Override
 	public void visited(EObject eObject) {
-		if (registry != null){
-			Set<String> findersId = registry.keySet();
+		
+		for (String id : registry.getRegistry().keySet()) {
+			Object regElt = registry.getRegistry().get(id);
 			
-			for (String id : findersId) {
-				Object regElt = registry.get(id);
+			if (regElt instanceof RegistryElement){
+				RegistryElement registryElement = (RegistryElement)regElt;
+				Collection<IScrutinize> finders = registryElement.getFinders();
 				
-				if (regElt instanceof RegistryElement){
-					RegistryElement registryElement = (RegistryElement)regElt;
-					Collection<IScrutinize> finders = registryElement.getFinders();
-					
-					/*
-					 * FIXME: cf. Fixme in visited(Resource) method above
-					 */
-					for (IScrutinize iFinder : finders) {
-						//if (eObject.eResource() != null && !eObject.eResource().getURI().isPlatformPlugin())
-							iFinder.findIn(eObject);
-					}
+				/*
+				 * FIXME: cf. Fixme in visited(Resource) method above
+				 */
+				for (IScrutinize iFinder : finders) {
+					//if (eObject.eResource() != null && !eObject.eResource().getURI().isPlatformPlugin())
+						iFinder.findIn(eObject);
 				}
 			}
 		}
 	}
+
+	public ModelScrutinyRegistry getRegistry() {
+		return registry;
+	}
+	
+	
 }

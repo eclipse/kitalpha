@@ -6,8 +6,8 @@ Element-Type: testcase
 Element-Version: 3.0
 External-Reference: 
 Id: _pPR04HN5EeaIXORVNWg1aA
-Runtime-Version: 2.0.2.201511100828
-Save-Time: 11/22/16 5:34 PM
+Runtime-Version: 2.1.0.201606221726
+Save-Time: 6/7/17 3:44 PM
 Testcase-Type: ecl
 
 ------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
@@ -21,21 +21,8 @@ Content-Type: text/ecl
 Entry-Name: .content
 
 with [get-view "Project Explorer" | get-tree] {
-    select "org.polarsys.kitalpha.vp.componentsample.runtime.model/model/VideoOnDemand.aird" | get-menu Open | click
-    select "org.polarsys.kitalpha.vp.componentsample.runtime.model/model/VideoOnDemand.aird/VideoOnDemand.componentsample - \\[platform:\\/resource\\/org.polarsys.kitalpha.vp.componentsample.runtime.model\\/model\\/VideoOnDemand.componentsample\\]/Video On Demande/Video on demand Architecture" 
-        | double-click
+    select "org.polarsys.kitalpha.vp.componentsample.runtime.model/model/VideoOnDemand.aird" | get-menu "Model Detachment" | click
 }
-//get-menu "File/Save" | click
-
-get-editor "Video on demand Architecture" | get-diagram -index 1 | get-edit-part -name "Video on demand Architecture" 
-    | mouse-move 126 518 -height 523 -width 1165
-with [get-view "Project Explorer" | get-tree] {
-    select "org.polarsys.kitalpha.vp.componentsample.runtime.model/model/VideoOnDemand.aird"
-}
-wait -ms 1000
-get-view "Viewpoint Manager" | get-button "Show all viewpoints" | click
-get-view "Viewpoint Manager" | get-table | select "Component Sample Framework" | get-menu "Unreference" | click
-get-window "Unreference viewpoint Component Sample Framework" | get-button Yes | click
 get-editor "Detachment" | get-section "Known Resources" | get-table | get-property itemCount | equals 4 | verify-true
 with [get-editor "Detachment" | get-section "Known Resources" | get-table] {
     get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.componentsample.runtime.model\\/model\\/todetach.componentsample" 
@@ -69,7 +56,9 @@ with [get-editor "Video on demand Architecture" | get-diagram -index 1 | get-edi
     mouse-move 12 260 -height 523 -width 1165
     mouse-move 202 503 -height 523 -width 1165
 }
-get-view "Viewpoint Manager" | get-table | select "Component Sample Framework" | get-menu "Unreference" | click
-get-window "Unreference viewpoint Component Sample Framework" | get-button Yes | click
+with [get-view "Project Explorer" | get-tree] {
+    select "org.polarsys.kitalpha.vp.componentsample.runtime.model/model/VideoOnDemand.aird" | get-menu "Close" | click
+    select "org.polarsys.kitalpha.vp.componentsample.runtime.model/model/VideoOnDemand.aird" | get-menu "Model Detachment" | click
+}
 get-editor "Detachment" | get-section "Known Resources" | get-table | get-property itemCount | equals 3 | verify-true
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

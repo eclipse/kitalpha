@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -20,6 +20,7 @@ import org.polarsys.kitalpha.model.common.commands.action.ModelCommand;
 import org.polarsys.kitalpha.model.common.commands.exception.ModelCommandException;
 import org.polarsys.kitalpha.model.common.commands.registry.WorkflowType;
 import org.polarsys.kitalpha.model.common.commands.scheduling.ModelCommandStackBuilder;
+import org.polarsys.kitalpha.model.common.scrutiny.registry.ModelScrutinyRegistry;
 
 /**
  * @author Faycal Abka
@@ -29,7 +30,7 @@ public class ModelCommandRunner implements IModelCommandRunner {
 	private final ModelCommandStackBuilder actionsStack = new ModelCommandStackBuilder();
 
 	@Override
-	public void run(Resource resource, EnumSet<WorkflowType> workflows, IProgressMonitor monitor) throws ModelCommandException {
+	public void run(ModelScrutinyRegistry analysis, Resource resource, EnumSet<WorkflowType> workflows, IProgressMonitor monitor) throws ModelCommandException {
 		
 		
 		actionsStack.buildModelActionStack();
@@ -45,7 +46,7 @@ public class ModelCommandRunner implements IModelCommandRunner {
 			WorkflowType actionWorkflow = action.getWokflowType();
 			
 			if (workflows.contains(actionWorkflow))
-				action.exec(resource, subMonitor.newChild(100));
+				action.exec(analysis, resource, subMonitor.newChild(100));
 		}
 	}
 

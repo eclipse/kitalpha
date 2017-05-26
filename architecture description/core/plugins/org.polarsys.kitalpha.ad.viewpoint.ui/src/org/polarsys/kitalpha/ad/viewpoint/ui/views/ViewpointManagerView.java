@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016, 2017 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -12,6 +12,8 @@
 package org.polarsys.kitalpha.ad.viewpoint.ui.views;
 
 import java.io.UnsupportedEncodingException;
+import java.util.Collection;
+import java.util.EnumSet;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
@@ -76,7 +78,15 @@ import org.polarsys.kitalpha.ad.viewpoint.ui.AFImages;
 import org.polarsys.kitalpha.ad.viewpoint.ui.Activator;
 import org.polarsys.kitalpha.ad.viewpoint.ui.Messages;
 import org.polarsys.kitalpha.ad.viewpoint.ui.provider.AFContextProvider;
-import org.polarsys.kitalpha.model.detachment.ui.editor.DetachmentHelper;
+import org.polarsys.kitalpha.model.common.commands.registry.WorkflowType;
+import org.polarsys.kitalpha.model.common.commands.runner.IModelCommandRunner;
+import org.polarsys.kitalpha.model.common.commands.runner.ModelCommandRunner;
+import org.polarsys.kitalpha.model.common.scrutiny.analyzer.Scrutineer;
+import org.polarsys.kitalpha.model.common.scrutiny.interfaces.IScrutinize;
+import org.polarsys.kitalpha.model.common.scrutiny.registry.ModelScrutinyRegistry;
+import org.polarsys.kitalpha.model.common.scrutiny.registry.ModelScrutinyRegistry.RegistryElement;
+import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.IViewpointTreeDescription;
+import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.ViewpointTreeContainer;
 import org.polarsys.kitalpha.resourcereuse.model.Resource;
 
 /**
@@ -491,7 +501,8 @@ public class ViewpointManagerView extends ViewPart {
 					return;
 				Description res = (Description) ss.getFirstElement();
 				ViewpointManager vpMgr = ViewpointManager.getInstance(context);
-				if (!vpMgr.isReferenced(res.getId()))
+				String id = res.getId();
+				if (!vpMgr.isReferenced(id))
 					return;
 				Shell site = getSite().getShell();
 				try {
@@ -522,14 +533,41 @@ public class ViewpointManagerView extends ViewPart {
 						return;
 					// Launch detach editor
 					// if the detachement is successful then the viewpoint is no more in use
-					IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(airdResource.getURI().toPlatformString(true)));
-					DetachmentHelper.openEditor(file, new NullProgressMonitor());
+//					IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(airdResource.getURI().toPlatformString(true)));
+//					DetachmentHelper.openEditor(file, new NullProgressMonitor());
+					ModelScrutinyRegistry analysis = Scrutineer.startScrutiny(airdResource);
+					RegistryElement vpReg = analysis.getRegistryElement("org.polarsys.kitalpha.model.common.scrutiny.contrib.scrutiny.viewpoints"); //$NON-NLS-1$
+					Collection<IScrutinize> finders = vpReg.getFinders();
+					for (IScrutinize s : finders) {
+						ViewpointTreeContainer vps = (ViewpointTreeContainer) s.getAnalysisResult();
+						for (IViewpointTreeDescription root : vps.getRoots()) 
+							unselect(root, id);
+					}
+					
+					//Run Commands
+					IModelCommandRunner commandRunner = new ModelCommandRunner();
+					commandRunner.run(analysis, airdResource, EnumSet.of(WorkflowType.ALL, WorkflowType.DETACHMENT), new NullProgressMonitor());
 
 				} catch (Exception e) {
 					MessageDialog.openError(site, "Error", e.getMessage());
 					Activator.getDefault().logError(e);
 				}
 			}
+			private void unselect(IViewpointTreeDescription iViewpointTreeDescription, final String vpid) {
+				String viewpointId = iViewpointTreeDescription.getViewpointId();
+				if (vpid.equals(viewpointId)){
+					iViewpointTreeDescription.setAsCandidateToKeep(false);
+					iViewpointTreeDescription.updateCandidates(false);
+					return;
+				}
+				Collection<IViewpointTreeDescription> children = iViewpointTreeDescription.getChildren();
+				if (children != null && !children.isEmpty()){
+					for (IViewpointTreeDescription vpd : children) {
+						unselect(vpd, vpid);
+					}
+				}
+			}
+			
 		};
 		unReferenceAction.setText("Unreference");
 		unReferenceAction.setToolTipText("Unreference the viewpoint");

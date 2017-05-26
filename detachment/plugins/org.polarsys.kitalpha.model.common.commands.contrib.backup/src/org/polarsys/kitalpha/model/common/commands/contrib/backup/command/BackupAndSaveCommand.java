@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -35,6 +35,7 @@ import org.eclipse.sirius.business.api.session.SessionManager;
 import org.polarsys.kitalpha.model.common.commands.action.ModelCommand;
 import org.polarsys.kitalpha.model.common.commands.contrib.backup.Messages;
 import org.polarsys.kitalpha.model.common.commands.exception.ModelCommandException;
+import org.polarsys.kitalpha.model.common.scrutiny.registry.ModelScrutinyRegistry;
 
 /**
  * @author Faycal Abka
@@ -53,7 +54,7 @@ public class BackupAndSaveCommand extends ModelCommand {
 	}
 
 	@Override
-	public void exec(Resource resource, IProgressMonitor monitor) 
+	public void exec(ModelScrutinyRegistry analysis, Resource resource, IProgressMonitor monitor) 
 			throws ModelCommandException {
 
 		URI uri = resource.getURI();

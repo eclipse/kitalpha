@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -51,17 +51,18 @@ import org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.scr
 import org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.scrutinizes.InvalidLayer;
 import org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.scrutinizes.MissingEPackage;
 import org.polarsys.kitalpha.model.common.scrutiny.interfaces.IScrutinize;
+import org.polarsys.kitalpha.model.common.scrutiny.registry.ModelScrutinyRegistry;
 import org.polarsys.kitalpha.model.common.scrutiny.registry.ModelScrutinyRegistry.RegistryElement;
 
 /**
  * @author Faycal Abka
  */
-public class UnknownreferencesCleaner extends ModelCommand {
+public class UnknownreferencesCleanCommand extends ModelCommand {
 	
-	Logger LOGGER = Logger.getLogger(UnknownreferencesCleaner.class);
+	Logger LOGGER = Logger.getLogger(UnknownreferencesCleanCommand.class);
 
 	
-	public UnknownreferencesCleaner() {
+	public UnknownreferencesCleanCommand() {
 	}
 	
 	
@@ -88,7 +89,7 @@ public class UnknownreferencesCleaner extends ModelCommand {
 	
 
 	@Override
-	public void exec(Resource resource, IProgressMonitor monitor) 
+	public void exec(ModelScrutinyRegistry analysis, Resource resource, IProgressMonitor monitor) 
 			throws ModelCommandException {
 		
 		ECrossReferenceAdapter crossReferenceAdapter = installCrossReferencer(resource);
@@ -97,7 +98,7 @@ public class UnknownreferencesCleaner extends ModelCommand {
 		try {
 			
 			//TODO check if the getAnalysisID() return null.
-			RegistryElement regElt = Scrutineer.getRegistryElement(getModelAnalysisID());
+			RegistryElement regElt = analysis.getRegistryElement(getModelAnalysisID());
 
 			
 			monitor.beginTask(Messages.CLEAN_UNKNOWNREFERENCE_TASK, 1);

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -20,6 +20,7 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtension;
 import org.polarsys.kitalpha.model.common.scrutiny.Messages;
+import org.polarsys.kitalpha.model.common.scrutiny.analyzer.ModelScrutinyException;
 import org.polarsys.kitalpha.model.common.scrutiny.constants.Constants;
 import org.polarsys.kitalpha.model.common.scrutiny.interfaces.IScrutinize;
 
@@ -32,19 +33,15 @@ public class ModelScrutinyRegistry {
 	
 	private static Logger LOGGER = Logger.getLogger(ModelScrutinyRegistry.class);
 
-	private Map<String, RegistryElement> registry;
+	private final Map<String, RegistryElement> registry = new HashMap<String, RegistryElement>();
 	
-	public final static ModelScrutinyRegistry INSTANCE = new ModelScrutinyRegistry();   
 	
-	private ModelScrutinyRegistry(){
-		this.registry = new HashMap<String, RegistryElement>();
+	public ModelScrutinyRegistry(){
+		initRegistry();
 	}
 	
 	
-	public Map<String, RegistryElement> initRegistry(){
-		
-		//Dispose the registry
-		dispose();
+	private Map<String, RegistryElement> initRegistry(){
 		
 		//Read all extensions
 		IExtension [] extensions = RegistryHelper.getAllExtensionsFor(Constants.SCRUTINIZE_EXTENSION_POINT);
@@ -83,20 +80,18 @@ public class ModelScrutinyRegistry {
 	}
 	
 	
-	public RegistryElement getRegistryElement(String id){
+	public RegistryElement getRegistryElement(String id) throws ModelScrutinyException {
 		if (this.registry.containsKey(id))
 			return this.registry.get(id);
 		
-		RuntimeException re = new RuntimeException(Messages.NO_SUCH_REGISTRY_ELEMENT);
-		LOGGER.error(Messages.NO_SUCH_REGISTRY_ELEMENT, re);
-		throw re;
+	    String message = Messages.NO_SUCH_REGISTRY_ELEMENT;
+	    message = message + ": " + id;
+
+	    ModelScrutinyException e = new ModelScrutinyException(message);
+	    LOGGER.error(message, e);
+
+	    throw e;
 	}
-	
-	
-	private void dispose(){
-		registry.clear();
-	}
-	
 	
 	public static class RegistryElement {
 		
