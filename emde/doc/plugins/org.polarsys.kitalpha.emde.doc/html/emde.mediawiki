@@ -1,0 +1,17 @@
+
+= <center>eMDE (essential MDE) documentation</center> =
+
+'''eMDE''' is a framework allowing the extension of model by aggregations.
+
+<!--
+== Content ==
+
+# [[Concepts]]
+# Programmeurs gide
+## [[Modeling the models extensibility and extensions ]]
+## [[Generating extensible EMF APIs ]]
+# References
+## [[APIs References]]
+## [[Models References]]
+
+-->

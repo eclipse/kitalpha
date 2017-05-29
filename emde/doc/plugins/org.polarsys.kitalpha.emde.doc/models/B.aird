@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:filter="http://www.eclipse.org/sirius/diagram/description/filter/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/filter/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/filter http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis xmi:id="_m378YBPSEeeVirTiA_T8Lg" selectedViews="_nX7EABPSEeeVirTiA_T8Lg" version="11.1.0.201608251200">
+    <semanticResources>B.ecore</semanticResources>
+    <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
+    <semanticResources>platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore</semanticResources>
+    <semanticResources>A.ecore</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" xmi:id="_nX7EABPSEeeVirTiA_T8Lg">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_o876ABPSEeeVirTiA_T8Lg" name="bExtensibility Description" representation="_o876ARPSEeeVirTiA_T8Lg">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Extensibility%20Description']"/>
+        <target xmi:type="ecore:EPackage" href="B.ecore#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram xmi:id="_o876ARPSEeeVirTiA_T8Lg" name="bExtensibility Description">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_o876AhPSEeeVirTiA_T8Lg" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_o876AxPSEeeVirTiA_T8Lg"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_o876BRPSEeeVirTiA_T8Lg" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_o876BhPSEeeVirTiA_T8Lg" type="Sirius" element="_o876ARPSEeeVirTiA_T8Lg" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_BmhwoBYdEeeVirTiA_T8Lg" type="2003" element="_BjNW4BYdEeeVirTiA_T8Lg">
+          <children xmi:type="notation:Node" xmi:id="_BmiXsBYdEeeVirTiA_T8Lg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_BmrhoBYdEeeVirTiA_T8Lg" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_BmsIsBYdEeeVirTiA_T8Lg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_BmsIsRYdEeeVirTiA_T8Lg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_BmhwoRYdEeeVirTiA_T8Lg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BmhwohYdEeeVirTiA_T8Lg" x="348" y="258"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_3lMZIBYdEeeVirTiA_T8Lg" type="2003" element="_3k5eMBYdEeeVirTiA_T8Lg">
+          <children xmi:type="notation:Node" xmi:id="_3lMZIxYdEeeVirTiA_T8Lg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_3lMZJBYdEeeVirTiA_T8Lg" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_3lMZJRYdEeeVirTiA_T8Lg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_3lMZJhYdEeeVirTiA_T8Lg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_3lMZIRYdEeeVirTiA_T8Lg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3lMZIhYdEeeVirTiA_T8Lg" x="366" y="108" width="100" height="100"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_o876BxPSEeeVirTiA_T8Lg"/>
+        <edges xmi:type="notation:Edge" xmi:id="_3lQDgBYdEeeVirTiA_T8Lg" type="4001" element="_3lKj8BYdEeeVirTiA_T8Lg" source="_BmhwoBYdEeeVirTiA_T8Lg" target="_3lMZIBYdEeeVirTiA_T8Lg">
+          <children xmi:type="notation:Node" xmi:id="_3lQDhBYdEeeVirTiA_T8Lg" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3lQDhRYdEeeVirTiA_T8Lg" x="17" y="7"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_3lQDhhYdEeeVirTiA_T8Lg" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3lQDhxYdEeeVirTiA_T8Lg" x="6" y="-6"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_3lQDiBYdEeeVirTiA_T8Lg" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3lQDiRYdEeeVirTiA_T8Lg" x="6" y="-9"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_3lQDgRYdEeeVirTiA_T8Lg"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_3lQDghYdEeeVirTiA_T8Lg" fontName="Segoe UI"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_3lQDgxYdEeeVirTiA_T8Lg" points="[-5, -49, 0, 101]$[-5, -101, 0, 49]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3mGYEBYdEeeVirTiA_T8Lg" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_3mGYERYdEeeVirTiA_T8Lg" id="(0.5,0.5)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_BjNW4BYdEeeVirTiA_T8Lg" name="ComponentExtension" outgoingEdges="_3lKj8BYdEeeVirTiA_T8Lg" width="10" height="10">
+      <target xmi:type="ecore:EClass" href="B.ecore#//ComponentExtension"/>
+      <semanticElements xmi:type="ecore:EClass" href="B.ecore#//ComponentExtension"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_BjXH4BYdEeeVirTiA_T8Lg" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" backgroundColor="194,239,255" foregroundColor="255,255,255">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Extensibility%20Description']/@defaultLayer/@containerMappings[name='ED%20-%20Extensible%20Element']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Extensibility%20Description']/@defaultLayer/@containerMappings[name='ED%20-%20Extensible%20Element']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_3k5eMBYdEeeVirTiA_T8Lg" name="Component" incomingEdges="_3lKj8BYdEeeVirTiA_T8Lg" width="10" height="10">
+      <target xmi:type="ecore:EClass" href="A.ecore#//Component"/>
+      <semanticElements xmi:type="ecore:EClass" href="A.ecore#//Component"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_3k5eMRYdEeeVirTiA_T8Lg" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="GradientTopToBottom" backgroundColor="204,242,166" foregroundColor="255,255,255">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Extensibility%20Description']/@defaultLayer/@containerMappings[name='ED%20-%20Extended%20Model']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Extensibility%20Description']/@defaultLayer/@containerMappings[name='ED%20-%20Extended%20Model']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_3lKj8BYdEeeVirTiA_T8Lg" sourceNode="_BjNW4BYdEeeVirTiA_T8Lg" targetNode="_3k5eMBYdEeeVirTiA_T8Lg">
+      <target xmi:type="ecore:EStringToStringMapEntry" href="B.ecore#//ComponentExtension/%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2FconstraintMapping%/@details.0"/>
+      <semanticElements xmi:type="ecore:EStringToStringMapEntry" href="B.ecore#//ComponentExtension/%http:%2F%2Fwww.polarsys.org%2Fkitalpha%2Femde%2F1.0.0%2FconstraintMapping%/@details.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_3lKj8RYdEeeVirTiA_T8Lg" targetArrow="InputFillClosedArrow" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Extensibility%20Description']/@defaultLayer/@edgeMappings[name='ED%20-%20External%20Extension%20Link']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Extensibility%20Description']/@defaultLayer/@edgeMappings[name='ED%20-%20External%20Extension%20Link']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Extensibility%20Description']"/>
+    <activatedFilters xmi:type="filter:CompositeFilterDescription" href="platform:/plugin/org.polarsys.kitalpha.ad.integration.sirius/description/ad.odesign#//@ownedViewpoints[name='ad']/@ownedRepresentations[name='AD%20diagram']/@filters[name='ModelExtensionFilter']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_o876BBPSEeeVirTiA_T8Lg"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.polarsys.kitalpha.emde.diagram/description/extensibility.odesign#//@ownedViewpoints[name='Extensibility']/@ownedRepresentations[name='Extensibility%20Description']/@defaultLayer"/>
+    <target xmi:type="ecore:EPackage" href="B.ecore#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>

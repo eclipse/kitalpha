@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (c) 2017 Thales Global Services S.A.S.
+All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at
+http://www.eclipse.org/legal/epl-v10.html
+ 
+Contributors:
+  Thales Global Services S.A.S - initial API and implementation
+-->
+<toc label="EMDE" link_to="PLUGINS_ROOT/org.polarsys.kitalpha.doc/kitalpha.xml#KitalphaComponent" topic="html/emde.html">
+ 	<topic href="html/emde.html" label="EMDE">
+	<topic href="html/concepts.html" label="Concepts">
+   	</topic>
+    <topic label="Programmer&apos;s Guide">
+       <topic href="html/ProgrammersGuide/extensibillitymodeling.html" label="Modeling the models extensibility and extensions">
+       </topic>
+       <topic href="html/ProgrammersGuide/emfapisgeneration.html" label="Generating extensible EMF APIs">
+       </topic>
+    </topic>   	
+   	<topic label="References">
+      <topic href="html/apisreferences.html" label="APIs References">
+      </topic>
+      <topic href="html/modelsreference.html" label="Models Reference">
+      </topic>
+   	</topic>
+   </topic>
+   
+</toc>

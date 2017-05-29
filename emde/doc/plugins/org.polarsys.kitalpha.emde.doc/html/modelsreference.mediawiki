@@ -1,0 +1,38 @@
+
+= <center>Models References</center> =
+
+== Content ==
+
+# [[#eMDE meta-model]]
+# [[#EClasses descriptions]]
+# [[#Ecore information]]
+
+== eMDE meta-model ==
+
+eMDE provides the top-level meta-model shown bellow. It aims to define the data structure allowing extensible elements to host their extensions.
+
+[[Image:img/emde_metamodel.png|thumb|none|350px]]
+
+
+=== EClasses descriptions ===
+
+{| class="wikitable"
+|-
+|  '''Element''' || Top metaclass 
+|-
+|  '''ExtensibleElement''' || Metaclass providing the ability to dynamically aggregate new properties, named ElementExtension 
+|-
+|  '''ElementExtension''' || New property from a viewpoint metamodel which can also be extended
+|}
+
+
+=== Ecore information ===
+
+{| class="wikitable"
+|-
+|  '''Name''' || eMDE.ecore
+|-
+|  '''Location''' || org.polarsys.kitalpha.emde/model/
+|-
+|  '''Ns URI''' || <nowiki>http://www.polarsys.org/kitalpha/emde/1.0.0</nowiki>
+|}
