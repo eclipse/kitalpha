@@ -14,7 +14,11 @@ Contributors:
    <extension
          point="org.eclipse.help.toc">
       <toc
-            file="kitalpha.xml"
+            file="kitalpha-ctk.xml"
+            primary="true">
+      </toc>
+      <toc
+            file="kitalpha-aft.xml"
             primary="true">
       </toc>
    </extension>

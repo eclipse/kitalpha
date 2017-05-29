@@ -28,7 +28,7 @@
 			<fileset dir="${basedir}">
 				<include name="**/*.mediawiki"/>
 			</fileset>
-			<stylesheet url="PLUGINS_ROOT/org.polarsys.kitalpha.doc/doc/style/styles.css"/>
+			<stylesheet url="PLUGINS_ROOT/org.polarsys.kitalpha.doc/html/common/style/style.css"/>
 		</wikitext-to-html>
 	</target>
 </project>

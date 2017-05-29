@@ -9,7 +9,7 @@ http://www.eclipse.org/legal/epl-v10.html
 Contributors:
   Thales Global Services S.A.S - initial API and implementation
 -->
-<toc label="EMDE" link_to="PLUGINS_ROOT/org.polarsys.kitalpha.doc/kitalpha.xml#KitalphaComponent" topic="html/emde.html">
+<toc label="EMDE" link_to="PLUGINS_ROOT/org.polarsys.kitalpha.doc/kitalpha-ctk.xml#KitalphaComponent" topic="html/emde.html">
  	<topic href="html/emde.html" label="EMDE">
 	<topic href="html/concepts.html" label="Concepts">
    	</topic>
