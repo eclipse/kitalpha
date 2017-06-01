@@ -5,10 +5,10 @@
    <extension
          point="org.eclipse.egf.core.fcore">
       <fcore
-            id="model/AD AF.fcore">
+            id="model/AD AF Patterns.fcore">
       </fcore>
       <fcore
-            id="model/AD AF Patterns.fcore">
+            id="model/AD_AF.fcore">
       </fcore>
    </extension>
 

@@ -77,7 +77,9 @@ public class SafetyPackageImpl extends EPackageImpl implements SafetyPackage {
 			return (SafetyPackage) EPackage.Registry.INSTANCE.getEPackage(SafetyPackage.eNS_URI);
 
 		// Obtain or create and register package
-		SafetyPackageImpl theSafetyPackage = (SafetyPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof SafetyPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new SafetyPackageImpl());
+		SafetyPackageImpl theSafetyPackage = (SafetyPackageImpl) (EPackage.Registry.INSTANCE
+				.get(eNS_URI) instanceof SafetyPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
+						: new SafetyPackageImpl());
 
 		isInited = true;
 
@@ -184,7 +186,8 @@ public class SafetyPackageImpl extends EPackageImpl implements SafetyPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		SimplecomponentPackage theSimplecomponentPackage = (SimplecomponentPackage) EPackage.Registry.INSTANCE.getEPackage(SimplecomponentPackage.eNS_URI);
+		SimplecomponentPackage theSimplecomponentPackage = (SimplecomponentPackage) EPackage.Registry.INSTANCE
+				.getEPackage(SimplecomponentPackage.eNS_URI);
 		EmdePackage theEmdePackage = (EmdePackage) EPackage.Registry.INSTANCE.getEPackage(EmdePackage.eNS_URI);
 
 		// Create type parameters
@@ -196,9 +199,13 @@ public class SafetyPackageImpl extends EPackageImpl implements SafetyPackage {
 		simpleVPSafetyEClass.getESuperTypes().add(theEmdePackage.getElementExtension());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(simpleVPSafetyEClass, SimpleVPSafety.class, "SimpleVPSafety", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getSimpleVPSafety_Complexity(), ecorePackage.getEInt(), "complexity", null, 0, 1, SimpleVPSafety.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(getSimpleVPSafety_Cost(), ecorePackage.getEInt(), "cost", null, 0, 1, SimpleVPSafety.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEClass(simpleVPSafetyEClass, SimpleVPSafety.class, "SimpleVPSafety", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSimpleVPSafety_Complexity(), ecorePackage.getEInt(), "complexity", null, 0, 1, //$NON-NLS-1$
+				SimpleVPSafety.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSimpleVPSafety_Cost(), ecorePackage.getEInt(), "cost", null, 0, 1, SimpleVPSafety.class, //$NON-NLS-1$
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -217,12 +224,13 @@ public class SafetyPackageImpl extends EPackageImpl implements SafetyPackage {
 	 * @generated
 	 */
 	protected void createExtensionAnnotations() {
-		String source = "http://www.polarsys.org/kitalpha/emde/1.0.0/extension"; //$NON-NLS-1$		
-		addAnnotation(this, source, new String[] { "extensibleProviderFactory", "true", //$NON-NLS-1$ //$NON-NLS-2$
-				"childCreationExtenders", "true", //$NON-NLS-1$ //$NON-NLS-2$
-				"useUUIDs", "true", //$NON-NLS-1$ //$NON-NLS-2$
-				"useIDAttributes", "false" //$NON-NLS-1$ //$NON-NLS-2$
-		});
+		String source = "http://www.polarsys.org/kitalpha/emde/1.0.0/extension"; //$NON-NLS-1$	
+		addAnnotation(this, source,
+				new String[] { "extensibleProviderFactory", "true", //$NON-NLS-1$ //$NON-NLS-2$
+						"childCreationExtenders", "true", //$NON-NLS-1$ //$NON-NLS-2$
+						"useUUIDs", "true", //$NON-NLS-1$ //$NON-NLS-2$
+						"useIDAttributes", "false" //$NON-NLS-1$ //$NON-NLS-2$
+				});
 	}
 
 	/**
@@ -232,8 +240,9 @@ public class SafetyPackageImpl extends EPackageImpl implements SafetyPackage {
 	 * @generated
 	 */
 	protected void createConstraintAnnotations() {
-		String source = "http://www.polarsys.org/kitalpha/emde/1.0.0/constraint"; //$NON-NLS-1$			
-		addAnnotation(simpleVPSafetyEClass, source, new String[] { "ExtendedElement", "http://www.polarsys.org/kitalpha/emde/example/simplecomponent#//AbstractComponent " //$NON-NLS-1$ //$NON-NLS-2$
+		String source = "http://www.polarsys.org/kitalpha/emde/1.0.0/constraint"; //$NON-NLS-1$	
+		addAnnotation(simpleVPSafetyEClass, source, new String[] { "ExtendedElement", //$NON-NLS-1$
+				"http://www.polarsys.org/kitalpha/emde/example/simplecomponent#//AbstractComponent " //$NON-NLS-1$
 		});
 	}
 

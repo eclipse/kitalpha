@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20150924-1035
+//Generated with EGF 1.4.1.v20161010-1704
 package org.polarsys.kitalpha.emde.egf.edit.call.ItemProvider;
 
 import org.polarsys.kitalpha.emde.model.edit.provider.helpers.*;
@@ -16,10 +16,12 @@ import org.eclipse.egf.model.pattern.*;
 import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 
-public class ItemProvidernewChildDescriptorsReferenceDelegatedFeatureoverride extends org.eclipse.egf.emf.pattern.edit.call.ItemProvider.ItemProvidernewChildDescriptorsReferenceDelegatedFeatureoverride {
+public class ItemProvidernewChildDescriptorsReferenceDelegatedFeatureoverride extends
+		org.eclipse.egf.emf.pattern.edit.call.ItemProvider.ItemProvidernewChildDescriptorsReferenceDelegatedFeatureoverride {
 	protected static String nl;
 
-	public static synchronized ItemProvidernewChildDescriptorsReferenceDelegatedFeatureoverride create(String lineSeparator) {
+	public static synchronized ItemProvidernewChildDescriptorsReferenceDelegatedFeatureoverride create(
+			String lineSeparator) {
 		nl = lineSeparator;
 		ItemProvidernewChildDescriptorsReferenceDelegatedFeatureoverride result = new ItemProvidernewChildDescriptorsReferenceDelegatedFeatureoverride();
 		nl = null;
@@ -41,8 +43,11 @@ public class ItemProvidernewChildDescriptorsReferenceDelegatedFeatureoverride ex
 	protected final String TEXT_12 = ".create";
 	protected final String TEXT_13 = "()));";
 	protected final String TEXT_14 = NL + "                    if (";
-	protected final String TEXT_15 = ".isValidCommand(object, commandParameter)) {" + NL + "                        newChildDescriptors.add(commandParameter);      " + NL + "                    }" + NL + "                }" + NL + "                // end-extension-code";
-	protected final String TEXT_16 = NL + "                newChildDescriptors.add" + NL + "                    (createChildParameter" + NL + "                        (";
+	protected final String TEXT_15 = ".isValidCommand(object, commandParameter)) {" + NL
+			+ "                        newChildDescriptors.add(commandParameter);      " + NL + "                    }"
+			+ NL + "                }" + NL + "                // end-extension-code";
+	protected final String TEXT_16 = NL + "                newChildDescriptors.add" + NL
+			+ "                    (createChildParameter" + NL + "                        (";
 	protected final String TEXT_17 = ",";
 	protected final String TEXT_18 = NL + "                         ";
 	protected final String TEXT_19 = ".createEntry" + NL + "                            (";
@@ -194,7 +199,8 @@ public class ItemProvidernewChildDescriptorsReferenceDelegatedFeatureoverride ex
 				stringBuffer.append(TEXT_13);
 			}
 			stringBuffer.append(TEXT_14);
-			stringBuffer.append(genModel.getImportedName("org.polarsys.kitalpha.emde.model.edit.provider.NewChildDescriptorHelper"));
+			stringBuffer.append(genModel
+					.getImportedName("org.polarsys.kitalpha.emde.model.edit.provider.NewChildDescriptorHelper"));
 			stringBuffer.append(TEXT_15);
 		} else {
 			stringBuffer.append(TEXT_16);
@@ -236,7 +242,9 @@ public class ItemProvidernewChildDescriptorsReferenceDelegatedFeatureoverride ex
 			callParameters.put("genClass", genClass);
 			callParameters.put("genPackage", genPackage);
 			callParameters.put("genModel", genModel);
-			CallHelper.executeWithParameterInjection("platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_04NBAGJ-Ed-FqczH3ESmRw", new ExecutionContext((InternalPatternContext) ctx), callParameters);
+			CallHelper.executeWithParameterInjection(
+					"platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_04NBAGJ-Ed-FqczH3ESmRw",
+					new ExecutionContext((InternalPatternContext) ctx), callParameters);
 			stringBuffer.setLength(0);
 		}
 

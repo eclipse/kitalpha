@@ -18,5 +18,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.kitalpha.emde.model.edit;visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
  org.eclipse.emf.ecore.editor;visibility:=reexport,
- org.polarsys.kitalpha.emde.ui;visibility:=reexport
+ org.polarsys.kitalpha.emde.ui;visibility:=reexport,
+ org.polarsys.kitalpha.ad.metadata;visibility:=reexport
 Bundle-ActivationPolicy: lazy

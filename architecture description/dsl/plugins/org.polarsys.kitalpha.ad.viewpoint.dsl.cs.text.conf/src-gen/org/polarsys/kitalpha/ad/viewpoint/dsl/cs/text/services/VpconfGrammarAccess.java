@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -10,24 +10,17 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services;
 
+import com.google.inject.Singleton;
+import com.google.inject.Inject;
+
 import java.util.List;
 
-import org.eclipse.xtext.Action;
-import org.eclipse.xtext.Alternatives;
-import org.eclipse.xtext.Assignment;
-import org.eclipse.xtext.Grammar;
-import org.eclipse.xtext.GrammarUtil;
-import org.eclipse.xtext.Group;
-import org.eclipse.xtext.Keyword;
-import org.eclipse.xtext.ParserRule;
-import org.eclipse.xtext.RuleCall;
-import org.eclipse.xtext.TerminalRule;
-import org.eclipse.xtext.common.services.TerminalsGrammarAccess;
-import org.eclipse.xtext.service.AbstractElementFinder.AbstractGrammarElementFinder;
+import org.eclipse.xtext.*;
 import org.eclipse.xtext.service.GrammarProvider;
+import org.eclipse.xtext.service.AbstractElementFinder.*;
 
-import com.google.inject.Inject;
-import com.google.inject.Singleton;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.CommonGrammarAccess;
+import org.eclipse.xtext.common.services.TerminalsGrammarAccess;
 
 @Singleton
 public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
@@ -294,8 +287,8 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		//'('
 		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
 
-		//('Model' ':' model=EBoolean)? ('Edit' ':' edit=EBoolean)? ('Editor' ':' editor=EBoolean)? ('Test' ':' test=EBoolean)?
-		//('Javadoc' ':' javaDoc=EBoolean)? ('OverwriteEcore' ':' overwriteEcore=EBoolean)?
+		//(('Model' ':' model=EBoolean)? ('Edit' ':' edit=EBoolean)? ('Editor' ':' editor=EBoolean)? ('Test' ':' test=EBoolean)?
+		//('Javadoc' ':' javaDoc=EBoolean)? ('OverwriteEcore' ':' overwriteEcore=EBoolean)?)
 		public Group getGroup_3() { return cGroup_3; }
 
 		//('Model' ':' model=EBoolean)?
@@ -647,7 +640,7 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		//':'
 		public Keyword getColonKeyword_5_2() { return cColonKeyword_5_2; }
 
-		//requiredExecutionEnvironment+=STRING (',' requiredExecutionEnvironment+=STRING)*
+		//(requiredExecutionEnvironment+=STRING (',' requiredExecutionEnvironment+=STRING)*)
 		public Group getGroup_5_3() { return cGroup_5_3; }
 
 		//requiredExecutionEnvironment+=STRING
@@ -771,7 +764,7 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		//'.'
 		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
 
-		//INT ('.' INT ('.' Qualifier)?)?
+		//(INT ('.' INT ('.' Qualifier)?)?)
 		public Group getGroup_1_1() { return cGroup_1_1; }
 
 		//INT
@@ -816,7 +809,7 @@ public class VpconfGrammarAccess extends AbstractGrammarElementFinder {
 		//(INT | ID | '_') (INT | ID | '_' | '-')*
 		public Group getGroup() { return cGroup; }
 
-		//INT | ID | '_'
+		//(INT | ID | '_')
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
 		//INT

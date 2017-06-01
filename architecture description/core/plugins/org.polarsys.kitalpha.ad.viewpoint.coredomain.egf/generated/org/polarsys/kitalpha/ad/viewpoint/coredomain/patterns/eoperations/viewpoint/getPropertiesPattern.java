@@ -1,4 +1,4 @@
-//Generated with EGF 1.2.0.v20140805-0858
+//Generated with EGF 1.4.1.v20161010-1704
 package org.polarsys.kitalpha.ad.viewpoint.coredomain.patterns.eoperations.viewpoint;
 
 import org.eclipse.egf.common.helper.*;
@@ -8,7 +8,8 @@ import org.eclipse.egf.model.pattern.*;
 import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 
-public class getPropertiesPattern extends org.eclipse.egf.emf.pattern.model.call.Class.ClassimplementedGenOperationTODOoverride {
+public class getPropertiesPattern
+		extends org.eclipse.egf.emf.pattern.model.call.Class.ClassimplementedGenOperationTODOoverride {
 	protected static String nl;
 
 	public static synchronized getPropertiesPattern create(String lineSeparator) {
@@ -19,7 +20,10 @@ public class getPropertiesPattern extends org.eclipse.egf.emf.pattern.model.call
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "\t\tBasicEList<Property> props = new BasicEList<Property>();" + NL + "\t\tMap<String, Property> name2prop = new HashMap<String, Property>();" + NL + "\t\tcollectProperties(name2prop);" + NL + "\t\tprops.addAll(name2prop.values());" + NL + "\t\treturn props;";
+	protected final String TEXT_1 = "\t\tBasicEList<Property> props = new BasicEList<Property>();" + NL
+			+ "\t\tMap<String, Property> name2prop = new HashMap<String, Property>();" + NL
+			+ "\t\tcollectProperties(name2prop);" + NL + "\t\tprops.addAll(name2prop.values());" + NL
+			+ "\t\treturn props;";
 	protected final String TEXT_2 = NL;
 	protected final String TEXT_3 = NL;
 
@@ -99,7 +103,8 @@ public class getPropertiesPattern extends org.eclipse.egf.emf.pattern.model.call
 																this.positiveOperationOffsetCorrection = (java.lang.String) positiveOperationOffsetCorrectionParameter;
 
 																if (preCondition(ctx)) {
-																	ctx.setNode(new Node.Container(currentNode, getClass()));
+																	ctx.setNode(new Node.Container(currentNode,
+																			getClass()));
 																	orchestration(ctx);
 																}
 

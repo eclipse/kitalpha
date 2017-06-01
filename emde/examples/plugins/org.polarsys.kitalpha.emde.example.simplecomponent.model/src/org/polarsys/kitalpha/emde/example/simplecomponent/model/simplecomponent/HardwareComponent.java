@@ -19,10 +19,10 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.emde.example.simplecomponent.model.simplecomponent.HardwareComponent#getAbstractComponent <em>Abstract Component</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.emde.example.simplecomponent.model.simplecomponent.SimplecomponentPackage#getHardwareComponent()
  * @model
@@ -33,7 +33,7 @@ public interface HardwareComponent extends AbstractComponent {
 	/**
 	 * Returns the value of the '<em><b>Abstract Component</b></em>' containment reference list.
 	 * The list contents are of type {@link org.polarsys.kitalpha.emde.example.simplecomponent.model.simplecomponent.AbstractComponent}.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Abstract Component</em>' containment reference list isn't clear,

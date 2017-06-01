@@ -62,7 +62,8 @@ public interface SafetyPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	SafetyPackage eINSTANCE = org.polarsys.kitalpha.emde.example.simplecomponent.safety.model.safety.impl.SafetyPackageImpl.init();
+	SafetyPackage eINSTANCE = org.polarsys.kitalpha.emde.example.simplecomponent.safety.model.safety.impl.SafetyPackageImpl
+			.init();
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.emde.example.simplecomponent.safety.model.safety.impl.SimpleVPSafetyImpl <em>Simple VP Safety</em>}' class.

@@ -29,4 +29,31 @@ Contributors:
       </editor>
    </extension>
 
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated afdesc -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.polarsys.kitalpha.ad.af.dsl.as.model.afdesc.presentation.AfdescModelWizardID"
+            name="%_UI_AfdescModelWizard_label"
+            class="org.polarsys.kitalpha.ad.af.dsl.as.model.afdesc.presentation.AfdescModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/AfdescModelFile.gif">
+         <description>%_UI_AfdescModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated afdesc -->
+      <editor
+            id="org.polarsys.kitalpha.ad.af.dsl.as.model.afdesc.presentation.AfdescEditorID"
+            name="%_UI_AfdescEditor_label"
+            icon="icons/full/obj16/AfdescModelFile.gif"
+            extensions="afdesc"
+            class="org.polarsys.kitalpha.ad.af.dsl.as.model.afdesc.presentation.AfdescEditor"
+            contributorClass="org.polarsys.kitalpha.ad.af.dsl.as.model.afdesc.presentation.AfdescActionBarContributor">
+      </editor>
+   </extension>
 </plugin>

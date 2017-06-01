@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20150924-1035
+//Generated with EGF 1.4.1.v20161010-1704
 package org.polarsys.kitalpha.emde.egf.editor;
 
 import org.polarsys.kitalpha.emde.egf.utils.*;
@@ -34,10 +34,18 @@ public class PluginProperties extends org.eclipse.egf.emf.pattern.editor.PluginP
 	protected final String TEXT_5 = "_menu = &";
 	protected final String TEXT_6 = " Editor";
 	protected final String TEXT_7 = NL;
-	protected final String TEXT_8 = NL + "_UI_CreateChild_menu_item = &New Child" + NL + "_UI_CreateSibling_menu_item = N&ew Sibling" + NL;
-	protected final String TEXT_9 = NL + "_UI_ShowPropertiesView_menu_item = Show &Properties View" + NL + "_UI_RefreshViewer_menu_item = &Refresh" + NL + "" + NL + "_UI_SelectionPage_label = Selection";
-	protected final String TEXT_10 = NL + "_UI_ParentPage_label = Parent" + NL + "_UI_ListPage_label = List" + NL + "_UI_TreePage_label = Tree" + NL + "_UI_TablePage_label = Table" + NL + "_UI_TreeWithColumnsPage_label = Tree with Columns" + NL + "_UI_ObjectColumn_label = Object" + NL + "_UI_SelfColumn_label = Self";
-	protected final String TEXT_11 = NL + NL + "_UI_NoObjectSelected = Selected Nothing" + NL + "_UI_SingleObjectSelected = Selected Object: {0}" + NL + "_UI_MultiObjectSelected = Selected {0} Objects" + NL + "" + NL + "_UI_OpenEditorError_label = Open Editor" + NL + "" + NL + "_UI_CreateModelError_message = Problems encountered in file \"{0}\"" + NL;
+	protected final String TEXT_8 = NL + "_UI_CreateChild_menu_item = &New Child" + NL
+			+ "_UI_CreateSibling_menu_item = N&ew Sibling" + NL;
+	protected final String TEXT_9 = NL + "_UI_ShowPropertiesView_menu_item = Show &Properties View" + NL
+			+ "_UI_RefreshViewer_menu_item = &Refresh" + NL + "" + NL + "_UI_SelectionPage_label = Selection";
+	protected final String TEXT_10 = NL + "_UI_ParentPage_label = Parent" + NL + "_UI_ListPage_label = List" + NL
+			+ "_UI_TreePage_label = Tree" + NL + "_UI_TablePage_label = Table" + NL
+			+ "_UI_TreeWithColumnsPage_label = Tree with Columns" + NL + "_UI_ObjectColumn_label = Object" + NL
+			+ "_UI_SelfColumn_label = Self";
+	protected final String TEXT_11 = NL + NL + "_UI_NoObjectSelected = Selected Nothing" + NL
+			+ "_UI_SingleObjectSelected = Selected Object: {0}" + NL + "_UI_MultiObjectSelected = Selected {0} Objects"
+			+ NL + "" + NL + "_UI_OpenEditorError_label = Open Editor" + NL + "" + NL
+			+ "_UI_CreateModelError_message = Problems encountered in file \"{0}\"" + NL;
 	protected final String TEXT_12 = NL + "_UI_";
 	protected final String TEXT_13 = "_label = ";
 	protected final String TEXT_14 = " Model" + NL + "_UI_";
@@ -49,15 +57,31 @@ public class PluginProperties extends org.eclipse.egf.emf.pattern.editor.PluginP
 	protected final String TEXT_20 = "FilenameDefaultBase = My" + NL + "_UI_";
 	protected final String TEXT_21 = "FilenameExtensions = ";
 	protected final String TEXT_22 = NL;
-	protected final String TEXT_23 = NL + "_UI_Wizard_label = New" + NL + "" + NL + "_WARN_FilenameExtension = The file name must end in ''.{0}''" + NL + "_WARN_FilenameExtensions = The file name must have one of the following extensions: {0}" + NL + "" + NL + "_UI_ModelObject = &Model Object" + NL + "_UI_XMLEncoding = &XML Encoding" + NL + "_UI_XMLEncodingChoices = ";
-	protected final String TEXT_24 = NL + "_UI_Wizard_initial_object_description = Specify a file name and select a model object to create";
+	protected final String TEXT_23 = NL + "_UI_Wizard_label = New" + NL + "" + NL
+			+ "_WARN_FilenameExtension = The file name must end in ''.{0}''" + NL
+			+ "_WARN_FilenameExtensions = The file name must have one of the following extensions: {0}" + NL + "" + NL
+			+ "_UI_ModelObject = &Model Object" + NL + "_UI_XMLEncoding = &XML Encoding" + NL
+			+ "_UI_XMLEncodingChoices = ";
+	protected final String TEXT_24 = NL
+			+ "_UI_Wizard_initial_object_description = Specify a file name and select a model object to create";
 	protected final String TEXT_25 = NL + "_UI_Wizard_initial_object_description = Select a model object to create";
-	protected final String TEXT_26 = NL + NL + "_UI_FileConflict_label = File Conflict" + NL + "_WARN_FileConflict = There are unsaved changes that conflict with changes made outside the editor.  Do you wish to discard this editor's changes?" + NL;
+	protected final String TEXT_26 = NL + NL + "_UI_FileConflict_label = File Conflict" + NL
+			+ "_WARN_FileConflict = There are unsaved changes that conflict with changes made outside the editor.  Do you wish to discard this editor's changes?"
+			+ NL;
 	protected final String TEXT_27 = NL + "_UI_";
 	protected final String TEXT_28 = "_ActionSet_label = ";
 	protected final String TEXT_29 = " Action Set" + NL + "_UI_Perspective_label = ";
-	protected final String TEXT_30 = NL + NL + "_UI_Browse_label = &Browse..." + NL + "_UI_File_label = &File" + NL + "_UI_Question_title = Question" + NL + "_WARN_FileConflict = The file \"{0}\" already exists.  Do you want to replace the existing file?" + NL + "_UI_Error_title = Error" + NL + "_WARN_No_Editor = There is no editor registered for the file \"{0}\"." + NL + "" + NL + "_UI_Application_title = ";
-	protected final String TEXT_31 = " Application" + NL + "_UI_Menu_File_label = &File" + NL + "_UI_Menu_New_label = &New" + NL + "_UI_Menu_Open_label = &Open..." + NL + "_UI_Menu_Open_description = Opens a model object file" + NL + "_UI_Menu_OpenURI_label = &Open URI..." + NL + "_UI_Menu_OpenURI_description = Opens a model object loading it from a URI" + NL + "_UI_Menu_Edit_label = &Edit" + NL + "_UI_Menu_Window_label = &Window" + NL + "_UI_Menu_Help_label = &Help" + NL + "_UI_Menu_About_label = ";
+	protected final String TEXT_30 = NL + NL + "_UI_Browse_label = &Browse..." + NL + "_UI_File_label = &File" + NL
+			+ "_UI_Question_title = Question" + NL
+			+ "_WARN_FileConflict = The file \"{0}\" already exists.  Do you want to replace the existing file?" + NL
+			+ "_UI_Error_title = Error" + NL + "_WARN_No_Editor = There is no editor registered for the file \"{0}\"."
+			+ NL + "" + NL + "_UI_Application_title = ";
+	protected final String TEXT_31 = " Application" + NL + "_UI_Menu_File_label = &File" + NL
+			+ "_UI_Menu_New_label = &New" + NL + "_UI_Menu_Open_label = &Open..." + NL
+			+ "_UI_Menu_Open_description = Opens a model object file" + NL + "_UI_Menu_OpenURI_label = &Open URI..."
+			+ NL + "_UI_Menu_OpenURI_description = Opens a model object loading it from a URI" + NL
+			+ "_UI_Menu_Edit_label = &Edit" + NL + "_UI_Menu_Window_label = &Window" + NL
+			+ "_UI_Menu_Help_label = &Help" + NL + "_UI_Menu_About_label = ";
 	protected final String TEXT_32 = " &About..." + NL + "_UI_About_title = ";
 	protected final String TEXT_33 = " Application" + NL + "_UI_About_text = ";
 	protected final String TEXT_34 = " Application about box goes here." + NL;
@@ -157,7 +181,9 @@ public class PluginProperties extends org.eclipse.egf.emf.pattern.editor.PluginP
 
 			final Map<String, Object> callParameters = new HashMap<String, Object>();
 			callParameters.put("argument", parameter);
-			CallHelper.executeWithParameterInjection("platform:/plugin/org.eclipse.egf.emf.pattern.base/egf/EMF_Pattern_Base.fcore#_FEoPwCwuEd-jc5T-XaRJlg", new ExecutionContext((InternalPatternContext) ctx), callParameters);
+			CallHelper.executeWithParameterInjection(
+					"platform:/plugin/org.eclipse.egf.emf.pattern.base/egf/EMF_Pattern_Base.fcore#_FEoPwCwuEd-jc5T-XaRJlg",
+					new ExecutionContext((InternalPatternContext) ctx), callParameters);
 			stringBuffer.setLength(0);
 		}
 
@@ -205,7 +231,8 @@ public class PluginProperties extends org.eclipse.egf.emf.pattern.editor.PluginP
 			stringBuffer.append(TEXT_20);
 			stringBuffer.append(genPackage.getEditorClassName());
 			stringBuffer.append(TEXT_21);
-			stringBuffer.append(genPackage.isMultipleFileExtensions() ? genPackage.getFileExtensions() : genPackage.getFileExtension());
+			stringBuffer.append(genPackage.isMultipleFileExtensions() ? genPackage.getFileExtensions()
+					: genPackage.getFileExtension());
 			stringBuffer.append(TEXT_22);
 		}
 		stringBuffer.append(TEXT_23);

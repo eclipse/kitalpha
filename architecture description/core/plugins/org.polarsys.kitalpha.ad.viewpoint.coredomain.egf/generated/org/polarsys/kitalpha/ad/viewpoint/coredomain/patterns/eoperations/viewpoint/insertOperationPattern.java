@@ -1,4 +1,4 @@
-//Generated with EGF 1.2.0.v20140805-0858
+//Generated with EGF 1.4.1.v20161010-1704
 package org.polarsys.kitalpha.ad.viewpoint.coredomain.patterns.eoperations.viewpoint;
 
 import org.eclipse.egf.common.helper.*;
@@ -19,10 +19,32 @@ public class insertOperationPattern extends org.eclipse.egf.emf.pattern.model.ca
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = NL + NL + "\tprotected void collectProperties(Map<String, Property> name2prop) {" + NL + "\t\tfor (Viewpoint vp : getParents())" + NL + "\t\t\t((ViewpointImpl) vp).collectProperties(name2prop);" + NL + "\t\tif (getPropertySet() != null) {" + NL + "\t\t\tfor (Property prop : getPropertySet().getNewProperties())" + NL + "\t\t\t\tname2prop.put(prop.getName(), prop);" + NL + "\t\t\tfor (Property prop : getPropertySet().getHiddenProperties())" + NL + "\t\t\t\tname2prop.remove(prop.getName());" + NL + "\t\t}" + NL + "\t}" + NL + "\t" + NL + "\tprotected void collectRules(Map<String, Rule> rules) {" + NL + "\t\tfor (Viewpoint vp : getParents())" + NL + "\t\t\t((ViewpointImpl) vp).collectRules(rules);" + NL + "\t\tif (getRuleSet() != null) {" + NL
-			+ "\t\t\taddElements(rules, getRuleSet().getNewRules());" + NL + "\t\t\tremoveElements(rules, (getRuleSet().getHiddenRules()));" + NL + "\t\t}" + NL + "\t}" + NL + "\t" + NL + "\tprotected void collectServices(Map<String, Service> services) {" + NL + "\t\tfor (Viewpoint vp : getParents())" + NL + "\t\t\t((ViewpointImpl) vp).collectServices(services);" + NL + "\t\tif (getServiceSet() != null) {" + NL + "\t\t\taddElements(services, getServiceSet().getNewServices());" + NL + "\t\t\tremoveElements(services, getServiceSet().getHiddenServices());" + NL + "\t\t}" + NL + "\t}" + NL;
-	protected final String TEXT_2 = NL + NL + "\tprivate static void collectParents(Viewpoint vp, EList<Viewpoint> collecteur) {" + NL + "\t\tfor (Viewpoint parent : vp.getParents()) {" + NL + "\t\t\tcollectParents(parent, collecteur);" + NL + "\t\t\tcollecteur.add(parent);" + NL + "\t\t}" + NL + "\t}" + NL + "" + NL + "\tprotected <T extends NameElement> void addElements(Map<String, T> collector, EList<T> elts) {" + NL + "\t\tfor (T elt : elts) {" + NL + "\t\t\t// if (!collector.containsKey(elt.getId()))" + NL + "\t\t\tcollector.put(elt.getId(), elt);" + NL + "\t\t}" + NL + "\t}" + NL + "" + NL + "\tprotected <T extends NameElement> void removeElements(Map<String, T> collector, EList<T> elts) {" + NL + "\t\tfor (T elt : elts) {" + NL + "\t\t\tcollector.remove(elt.getId());" + NL
-			+ "\t\t}" + NL + "\t}" + NL + NL;
+	protected final String TEXT_1 = NL + NL + "\tprotected void collectProperties(Map<String, Property> name2prop) {"
+			+ NL + "\t\tfor (Viewpoint vp : getParents())" + NL
+			+ "\t\t\t((ViewpointImpl) vp).collectProperties(name2prop);" + NL + "\t\tif (getPropertySet() != null) {"
+			+ NL + "\t\t\tfor (Property prop : getPropertySet().getNewProperties())" + NL
+			+ "\t\t\t\tname2prop.put(prop.getName(), prop);" + NL
+			+ "\t\t\tfor (Property prop : getPropertySet().getHiddenProperties())" + NL
+			+ "\t\t\t\tname2prop.remove(prop.getName());" + NL + "\t\t}" + NL + "\t}" + NL + "\t" + NL
+			+ "\tprotected void collectRules(Map<String, Rule> rules) {" + NL + "\t\tfor (Viewpoint vp : getParents())"
+			+ NL + "\t\t\t((ViewpointImpl) vp).collectRules(rules);" + NL + "\t\tif (getRuleSet() != null) {" + NL
+			+ "\t\t\taddElements(rules, getRuleSet().getNewRules());" + NL
+			+ "\t\t\tremoveElements(rules, (getRuleSet().getHiddenRules()));" + NL + "\t\t}" + NL + "\t}" + NL + "\t"
+			+ NL + "\tprotected void collectServices(Map<String, Service> services) {" + NL
+			+ "\t\tfor (Viewpoint vp : getParents())" + NL + "\t\t\t((ViewpointImpl) vp).collectServices(services);"
+			+ NL + "\t\tif (getServiceSet() != null) {" + NL
+			+ "\t\t\taddElements(services, getServiceSet().getNewServices());" + NL
+			+ "\t\t\tremoveElements(services, getServiceSet().getHiddenServices());" + NL + "\t\t}" + NL + "\t}" + NL;
+	protected final String TEXT_2 = NL + NL
+			+ "\tprivate static void collectParents(Viewpoint vp, EList<Viewpoint> collecteur) {" + NL
+			+ "\t\tfor (Viewpoint parent : vp.getParents()) {" + NL + "\t\t\tcollectParents(parent, collecteur);" + NL
+			+ "\t\t\tcollecteur.add(parent);" + NL + "\t\t}" + NL + "\t}" + NL + "" + NL
+			+ "\tprotected <T extends NameElement> void addElements(Map<String, T> collector, EList<T> elts) {" + NL
+			+ "\t\tfor (T elt : elts) {" + NL + "\t\t\t// if (!collector.containsKey(elt.getId()))" + NL
+			+ "\t\t\tcollector.put(elt.getId(), elt);" + NL + "\t\t}" + NL + "\t}" + NL + "" + NL
+			+ "\tprotected <T extends NameElement> void removeElements(Map<String, T> collector, EList<T> elts) {" + NL
+			+ "\t\tfor (T elt : elts) {" + NL + "\t\t\tcollector.remove(elt.getId());" + NL + "\t\t}" + NL + "\t}" + NL
+			+ NL;
 	protected final String TEXT_3 = NL;
 	protected final String TEXT_4 = NL;
 
@@ -98,7 +120,8 @@ public class insertOperationPattern extends org.eclipse.egf.emf.pattern.model.ca
 															this.positiveOperationOffsetCorrection = (java.lang.String) positiveOperationOffsetCorrectionParameter;
 
 															if (preCondition(ctx)) {
-																ctx.setNode(new Node.Container(currentNode, getClass()));
+																ctx.setNode(
+																		new Node.Container(currentNode, getClass()));
 																orchestration(ctx);
 															}
 

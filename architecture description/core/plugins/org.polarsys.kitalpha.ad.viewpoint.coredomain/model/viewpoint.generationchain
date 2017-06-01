@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
-<generationChain:GenerationChain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:generationChain="http://www.eclipse.org/egf/1.0.0/generationChain" name="AD Viewpoint" factoryComponentName="org.polarsys.kitalpha.ad.viewpoint.coredomain.egf">
-  <elements xsi:type="generationChain:GenerationChain" name="AD Viewpoint">
+<generationChain:GenerationChain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:generationChain="http://www.eclipse.org/egf/1.0.0/generationChain" name="AD_Viewpoint" factoryComponentName="org.polarsys.kitalpha.ad.viewpoint.coredomain.egf">
+  <elements xsi:type="generationChain:GenerationChain" name="AD_Viewpoint">
     <elements xsi:type="generationChain:EmfGeneration" name="Emf Generation for AD Viewpoint" modelPath="/org.polarsys.kitalpha.ad.viewpoint.coredomain/model/viewpoint.ecore" generateModel="true" generateEdit="true" generateEditor="true" pluginName="org.polarsys.kitalpha.ad.viewpoint.coredomain.model" basePackage="org.polarsys.kitalpha.ad.viewpoint.coredomain"/>
   </elements>
 </generationChain:GenerationChain>

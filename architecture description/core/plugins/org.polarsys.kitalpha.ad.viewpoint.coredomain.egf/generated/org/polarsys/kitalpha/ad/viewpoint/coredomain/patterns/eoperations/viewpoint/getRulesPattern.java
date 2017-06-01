@@ -1,4 +1,4 @@
-//Generated with EGF 1.2.0.v20140805-0858
+//Generated with EGF 1.4.1.v20161010-1704
 package org.polarsys.kitalpha.ad.viewpoint.coredomain.patterns.eoperations.viewpoint;
 
 import org.eclipse.egf.common.helper.*;
@@ -8,7 +8,8 @@ import org.eclipse.egf.model.pattern.*;
 import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 
-public class getRulesPattern extends org.eclipse.egf.emf.pattern.model.call.Class.ClassimplementedGenOperationTODOoverride {
+public class getRulesPattern
+		extends org.eclipse.egf.emf.pattern.model.call.Class.ClassimplementedGenOperationTODOoverride {
 	protected static String nl;
 
 	public static synchronized getRulesPattern create(String lineSeparator) {
@@ -19,7 +20,9 @@ public class getRulesPattern extends org.eclipse.egf.emf.pattern.model.call.Clas
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = NL + "\t\tBasicEList<Rule> rules = new BasicEList<Rule>();" + NL + "\t\tMap<String, Rule> collector = new HashMap<String, Rule>();" + NL + "\t\tcollectRules(collector);" + NL + "\t\trules.addAll(collector.values());" + NL + "\t\treturn rules;";
+	protected final String TEXT_1 = NL + "\t\tBasicEList<Rule> rules = new BasicEList<Rule>();" + NL
+			+ "\t\tMap<String, Rule> collector = new HashMap<String, Rule>();" + NL + "\t\tcollectRules(collector);"
+			+ NL + "\t\trules.addAll(collector.values());" + NL + "\t\treturn rules;";
 	protected final String TEXT_2 = NL;
 	protected final String TEXT_3 = NL;
 
@@ -99,7 +102,8 @@ public class getRulesPattern extends org.eclipse.egf.emf.pattern.model.call.Clas
 																this.positiveOperationOffsetCorrection = (java.lang.String) positiveOperationOffsetCorrectionParameter;
 
 																if (preCondition(ctx)) {
-																	ctx.setNode(new Node.Container(currentNode, getClass()));
+																	ctx.setNode(new Node.Container(currentNode,
+																			getClass()));
 																	orchestration(ctx);
 																}
 

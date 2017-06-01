@@ -12,8 +12,8 @@
           <type xmi:type="pattern:TypePatternSubstitution" xmi:id="_4v_ER39UEeOLj8ldLiBqyA"/>
         </orchestrationParameters>
       </orchestrationParameterContainer>
-      <invocations xmi:id="_Go4SMJrqEeOcSvJ4kzzdFw" name="afdesc invocation" invokedActivity="#_4v_ESH9UEeOLj8ldLiBqyA">
-        <invocationContractContainer xmi:id="_Go4SMZrqEeOcSvJ4kzzdFw"/>
+      <invocations xmi:id="_I5hqAPdZEeaotadcoqApPA" name="afdesc invocation" invokedActivity="#_4v_ESH9UEeOLj8ldLiBqyA">
+        <invocationContractContainer xmi:id="_I5hqAfdZEeaotadcoqApPA"/>
       </invocations>
     </orchestration>
   </fcore:FactoryComponent>
@@ -27,8 +27,8 @@
           <type xmi:type="pattern:TypePatternSubstitution" xmi:id="_4v_ETn9UEeOLj8ldLiBqyA"/>
         </orchestrationParameters>
       </orchestrationParameterContainer>
-      <invocations xmi:id="_GpLNIJrqEeOcSvJ4kzzdFw" name="afdesc invocation" invokedActivity="#_4v_EUX9UEeOLj8ldLiBqyA">
-        <invocationContractContainer xmi:id="_GpLNIZrqEeOcSvJ4kzzdFw"/>
+      <invocations xmi:id="_I5hqAvdZEeaotadcoqApPA" name="afdesc invocation" invokedActivity="#_4v_EUX9UEeOLj8ldLiBqyA">
+        <invocationContractContainer xmi:id="_I5hqA_dZEeaotadcoqApPA"/>
       </invocations>
     </orchestration>
   </fcore:FactoryComponent>
@@ -42,37 +42,37 @@
     <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_4v_EVH9UEeOLj8ldLiBqyA">
       <orchestrationParameterContainer xmi:id="_4v_EVX9UEeOLj8ldLiBqyA">
         <orchestrationParameters xmi:id="_4v_EVn9UEeOLj8ldLiBqyA" name="generation extension"
-            invocationContracts="#_GpU-JJrqEeOcSvJ4kzzdFw #_GpU-KZrqEeOcSvJ4kzzdFw #_GpU-LprqEeOcSvJ4kzzdFw">
+            invocationContracts="#_I51MBPdZEeaotadcoqApPA #_I51MCfdZEeaotadcoqApPA #_I51MDvdZEeaotadcoqApPA">
           <type xmi:type="pattern:TypePatternSubstitution" xmi:id="_4v_EV39UEeOLj8ldLiBqyA"/>
         </orchestrationParameters>
       </orchestrationParameterContainer>
-      <invocations xmi:id="_GpU-IJrqEeOcSvJ4kzzdFw" name="EMF Model Pattern invocation"
+      <invocations xmi:id="_I51MAPdZEeaotadcoqApPA" name="EMF Model Pattern invocation"
           invokedActivity="fcore:FactoryComponent platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_Pcm9sDG0Ed-kc8dEZsdm2w">
-        <invocationContractContainer xmi:id="_GpU-IZrqEeOcSvJ4kzzdFw">
-          <invocationContracts xmi:id="_GpU-IprqEeOcSvJ4kzzdFw" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_Prg8ZTG0Ed-kc8dEZsdm2w">
-            <type xmi:type="domain:TypeDomain" xmi:id="_GpU-I5rqEeOcSvJ4kzzdFw" domain="#_4yEu8H9UEeOLj8ldLiBqyA"/>
+        <invocationContractContainer xmi:id="_I51MAfdZEeaotadcoqApPA">
+          <invocationContracts xmi:id="_I51MAvdZEeaotadcoqApPA" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_Prg8ZTG0Ed-kc8dEZsdm2w">
+            <type xmi:type="domain:TypeDomain" xmi:id="_I51MA_dZEeaotadcoqApPA" domain="#_4yEu8H9UEeOLj8ldLiBqyA"/>
           </invocationContracts>
-          <invocationContracts xmi:id="_GpU-JJrqEeOcSvJ4kzzdFw" orchestrationParameter="#_4v_EVn9UEeOLj8ldLiBqyA"
+          <invocationContracts xmi:id="_I51MBPdZEeaotadcoqApPA" orchestrationParameter="#_4v_EVn9UEeOLj8ldLiBqyA"
               invokedContract="fcore:FactoryComponentContract platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_OVsagFHVEd-dr9AWwNwIMQ"/>
         </invocationContractContainer>
       </invocations>
-      <invocations xmi:id="_GpU-JZrqEeOcSvJ4kzzdFw" name="EMF Edit Pattern invocation"
+      <invocations xmi:id="_I51MBfdZEeaotadcoqApPA" name="EMF Edit Pattern invocation"
           invokedActivity="fcore:FactoryComponent platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_PiIW4DG0Ed-kc8dEZsdm2w">
-        <invocationContractContainer xmi:id="_GpU-JprqEeOcSvJ4kzzdFw">
-          <invocationContracts xmi:id="_GpU-J5rqEeOcSvJ4kzzdFw" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_Prg8cDG0Ed-kc8dEZsdm2w">
-            <type xmi:type="domain:TypeDomain" xmi:id="_GpU-KJrqEeOcSvJ4kzzdFw" domain="#_4yEu8H9UEeOLj8ldLiBqyA"/>
+        <invocationContractContainer xmi:id="_I51MBvdZEeaotadcoqApPA">
+          <invocationContracts xmi:id="_I51MB_dZEeaotadcoqApPA" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_Prg8cDG0Ed-kc8dEZsdm2w">
+            <type xmi:type="domain:TypeDomain" xmi:id="_I51MCPdZEeaotadcoqApPA" domain="#_4yEu8H9UEeOLj8ldLiBqyA"/>
           </invocationContracts>
-          <invocationContracts xmi:id="_GpU-KZrqEeOcSvJ4kzzdFw" orchestrationParameter="#_4v_EVn9UEeOLj8ldLiBqyA"
+          <invocationContracts xmi:id="_I51MCfdZEeaotadcoqApPA" orchestrationParameter="#_4v_EVn9UEeOLj8ldLiBqyA"
               invokedContract="fcore:FactoryComponentContract platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_UCnhEFHVEd-dr9AWwNwIMQ"/>
         </invocationContractContainer>
       </invocations>
-      <invocations xmi:id="_GpU-KprqEeOcSvJ4kzzdFw" name="EMF Editor Pattern invocation"
+      <invocations xmi:id="_I51MCvdZEeaotadcoqApPA" name="EMF Editor Pattern invocation"
           invokedActivity="fcore:FactoryComponent platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_PkqGcDG0Ed-kc8dEZsdm2w">
-        <invocationContractContainer xmi:id="_GpU-K5rqEeOcSvJ4kzzdFw">
-          <invocationContracts xmi:id="_GpU-LJrqEeOcSvJ4kzzdFw" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_Prg8ezG0Ed-kc8dEZsdm2w">
-            <type xmi:type="domain:TypeDomain" xmi:id="_GpU-LZrqEeOcSvJ4kzzdFw" domain="#_4yEu8H9UEeOLj8ldLiBqyA"/>
+        <invocationContractContainer xmi:id="_I51MC_dZEeaotadcoqApPA">
+          <invocationContracts xmi:id="_I51MDPdZEeaotadcoqApPA" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_Prg8ezG0Ed-kc8dEZsdm2w">
+            <type xmi:type="domain:TypeDomain" xmi:id="_I51MDfdZEeaotadcoqApPA" domain="#_4yEu8H9UEeOLj8ldLiBqyA"/>
           </invocationContracts>
-          <invocationContracts xmi:id="_GpU-LprqEeOcSvJ4kzzdFw" orchestrationParameter="#_4v_EVn9UEeOLj8ldLiBqyA"
+          <invocationContracts xmi:id="_I51MDvdZEeaotadcoqApPA" orchestrationParameter="#_4v_EVn9UEeOLj8ldLiBqyA"
               invokedContract="fcore:FactoryComponentContract platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_Y3EukFHVEd-dr9AWwNwIMQ"/>
         </invocationContractContainer>
       </invocations>

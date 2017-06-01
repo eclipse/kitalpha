@@ -38,9 +38,9 @@ import org.polarsys.kitalpha.emde.example.simplecomponent.performance.model.perf
 import org.polarsys.kitalpha.emde.example.simplecomponent.performance.model.performance.PerformancePackage;
 import org.polarsys.kitalpha.emde.example.simplecomponent.performance.model.performance.util.PerformanceAdapterFactory;
 import org.polarsys.kitalpha.emde.extension.ModelExtensionHelper;
+import org.polarsys.kitalpha.emde.extension.edit.ChildCreationExtenderManager;
 import org.polarsys.kitalpha.emde.model.EmdePackage;
 import org.polarsys.kitalpha.emde.model.ExtensibleElement;
-import org.polarsys.kitalpha.emde.model.edit.provider.ChildCreationExtenderManager;
 import org.polarsys.kitalpha.emde.model.edit.provider.NewChildDescriptorHelper;
 import org.polarsys.kitalpha.emde.model.util.EmdeSwitch;
 
@@ -53,7 +53,8 @@ import org.polarsys.kitalpha.emde.model.util.EmdeSwitch;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PerformanceItemProviderAdapterFactory extends PerformanceAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
+public class PerformanceItemProviderAdapterFactory extends PerformanceAdapterFactory
+		implements ComposeableAdapterFactory, IChangeNotifier, IDisposable, IChildCreationExtender {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -76,7 +77,8 @@ public class PerformanceItemProviderAdapterFactory extends PerformanceAdapterFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(SimpleEditPlugin.INSTANCE, PerformancePackage.eNS_URI);
+	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(
+			SimpleEditPlugin.INSTANCE, PerformancePackage.eNS_URI);
 
 	/**
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
@@ -327,13 +329,17 @@ public class PerformanceItemProviderAdapterFactory extends PerformanceAdapterFac
 			@Override
 			public Object caseExtensibleElement(ExtensibleElement object) {
 				// begin-extension-code
-				if (ModelExtensionHelper.getInstance(object).isExtensionModelDisabled(EcoreUtil.getRootContainer(object).eClass().getEPackage().getNsURI(), "http://www.polarsys.org/kitalpha/emde/example/simplecomponent/performance")) { //$NON-NLS-1$
+				if (ModelExtensionHelper.getInstance(object).isExtensionModelDisabled(
+						EcoreUtil.getRootContainer(object).eClass().getEPackage().getNsURI(),
+						"http://www.polarsys.org/kitalpha/emde/example/simplecomponent/performance")) { //$NON-NLS-1$
 					return null;
 				}
 				// end-extension-code
 				// begin-extension-code
 				{
-					CommandParameter commandParameter = createChildParameter(EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS, PerformanceFactory.eINSTANCE.createSimpleVPPerformance());
+					CommandParameter commandParameter = createChildParameter(
+							EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
+							PerformanceFactory.eINSTANCE.createSimpleVPPerformance());
 					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 						newChildDescriptors.add(commandParameter);
 					}

@@ -116,7 +116,8 @@ public class SimpleVPSafetyImpl extends ComponentElementImpl implements SimpleVP
 		int oldComplexity = complexity;
 		complexity = newComplexity;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SafetyPackage.SIMPLE_VP_SAFETY__COMPLEXITY, oldComplexity, complexity));
+			eNotify(new ENotificationImpl(this, Notification.SET, SafetyPackage.SIMPLE_VP_SAFETY__COMPLEXITY,
+					oldComplexity, complexity));
 
 	}
 
@@ -171,22 +172,10 @@ public class SimpleVPSafetyImpl extends ComponentElementImpl implements SimpleVP
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case SafetyPackage.SIMPLE_VP_SAFETY__COMPLEXITY:
-			// begin-extension-code
-			if (newValue == null || newValue instanceof Integer) {
-				// end-extension-code
-				setComplexity((Integer) newValue);
-				// begin-extension-code
-			}
-			// end-extension-code
+			setComplexity((Integer) newValue);
 			return;
 		case SafetyPackage.SIMPLE_VP_SAFETY__COST:
-			// begin-extension-code
-			if (newValue == null || newValue instanceof Integer) {
-				// end-extension-code
-				setCost((Integer) newValue);
-				// begin-extension-code
-			}
-			// end-extension-code
+			setCost((Integer) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);

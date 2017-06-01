@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20150924-1035
+//Generated with EGF 1.4.1.v20161010-1704
 package org.polarsys.kitalpha.emde.egf.edit.call.ItemProvider;
 
 import org.polarsys.kitalpha.emde.egf.helper.*;
@@ -16,7 +16,8 @@ import org.eclipse.egf.model.pattern.*;
 import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 
-public class ItemProvidergetTextoverride extends org.eclipse.egf.emf.pattern.edit.call.ItemProvider.ItemProvidergetTextoverride {
+public class ItemProvidergetTextoverride
+		extends org.eclipse.egf.emf.pattern.edit.call.ItemProvider.ItemProvidergetTextoverride {
 	protected static String nl;
 
 	public static synchronized ItemProvidergetTextoverride create(String lineSeparator) {
@@ -68,7 +69,8 @@ public class ItemProvidergetTextoverride extends org.eclipse.egf.emf.pattern.edi
 	protected final String TEXT_39 = ")object).";
 	protected final String TEXT_40 = "();";
 	protected final String TEXT_41 = NL + "\t\tString label = labelValue == null ? null : labelValue.toString();";
-	protected final String TEXT_42 = NL + "\t\t// begin-extension-code" + NL + "\t\treturn label == null || label.length() == 0 ?" + NL + "\t\t\t\"[\" + getString(\"_UI_";
+	protected final String TEXT_42 = NL + "\t\t// begin-extension-code" + NL
+			+ "\t\treturn label == null || label.length() == 0 ?" + NL + "\t\t\t\"[\" + getString(\"_UI_";
 	protected final String TEXT_43 = "_type\") + \"]\" : label;";
 	protected final String TEXT_44 = NL + "\t\t// end-extension-code";
 	protected final String TEXT_45 = NL + "\t\t// begin-extension-code" + NL + "\t\treturn \"[\" + getString(\"_UI_";
@@ -174,7 +176,8 @@ public class ItemProvidergetTextoverride extends org.eclipse.egf.emf.pattern.edi
 				stringBuffer.append(TEXT_5);
 			}
 			stringBuffer.append(TEXT_6);
-			if (!genClass.getMapEntryKeyFeature().isPropertyMultiLine() && !genClass.getMapEntryValueFeature().isPropertyMultiLine()) {
+			if (!genClass.getMapEntryKeyFeature().isPropertyMultiLine()
+					&& !genClass.getMapEntryValueFeature().isPropertyMultiLine()) {
 				stringBuffer.append(TEXT_7);
 				stringBuffer.append(genClass.getSafeUncapName());
 				stringBuffer.append(TEXT_8);
@@ -210,7 +213,8 @@ public class ItemProvidergetTextoverride extends org.eclipse.egf.emf.pattern.edi
 			}
 		} else if (genClass.getLabelFeature() != null) {
 			GenFeature labelFeature = genClass.getLabelFeature();
-			if (labelFeature.isPrimitiveType() && !labelFeature.getGenClass().isDynamic() && !labelFeature.isSuppressedGetVisibility()) {
+			if (labelFeature.isPrimitiveType() && !labelFeature.getGenClass().isDynamic()
+					&& !labelFeature.isSuppressedGetVisibility()) {
 				stringBuffer.append(TEXT_19);
 				stringBuffer.append(genClass.getImportedInterfaceName());
 				stringBuffer.append(genClass.getInterfaceWildTypeArguments());
@@ -231,7 +235,8 @@ public class ItemProvidergetTextoverride extends org.eclipse.egf.emf.pattern.edi
 				stringBuffer.append(genModel.getNonNLS(3));
 				stringBuffer.append(TEXT_26);
 			} else {
-				if (labelFeature.isStringType() && !labelFeature.getGenClass().isDynamic() && !labelFeature.isSuppressedGetVisibility()) {
+				if (labelFeature.isStringType() && !labelFeature.getGenClass().isDynamic()
+						&& !labelFeature.isSuppressedGetVisibility()) {
 					if (labelFeature.isPropertyMultiLine()) {
 						stringBuffer.append(TEXT_27);
 						stringBuffer.append(genClass.getImportedInterfaceName());

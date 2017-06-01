@@ -1,60 +1,57 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.antlr.internal;
 
-import org.antlr.runtime.BaseRecognizer;
-import org.antlr.runtime.CharStream;
-import org.antlr.runtime.DFA;
-import org.antlr.runtime.EarlyExitException;
-import org.antlr.runtime.IntStream;
-import org.antlr.runtime.MismatchedSetException;
-import org.antlr.runtime.NoViableAltException;
-import org.antlr.runtime.RecognitionException;
-import org.antlr.runtime.RecognizerSharedState;
 // Hack: Use our own Lexer superclass by means of import. 
 // Currently there is no other way to specify the superclass for the lexer.
 import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.Lexer;
 
+
+import org.antlr.runtime.*;
+import java.util.Stack;
+import java.util.List;
+import java.util.ArrayList;
+
 @SuppressWarnings("all")
 public class InternalActivityexplorerLexer extends Lexer {
-    public static final int T__42=42;
-    public static final int T__40=40;
-    public static final int RULE_ID=5;
-    public static final int T__41=41;
-    public static final int T__29=29;
-    public static final int T__28=28;
-    public static final int T__27=27;
-    public static final int T__26=26;
-    public static final int T__25=25;
-    public static final int T__24=24;
-    public static final int T__23=23;
-    public static final int T__22=22;
-    public static final int RULE_ANY_OTHER=10;
-    public static final int T__21=21;
-    public static final int T__20=20;
+    public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
-    public static final int EOF=-1;
-    public static final int RULE_ML_COMMENT=7;
     public static final int T__19=19;
+    public static final int T__15=15;
+    public static final int T__37=37;
+    public static final int T__16=16;
+    public static final int T__38=38;
+    public static final int T__17=17;
+    public static final int T__39=39;
+    public static final int T__18=18;
+    public static final int T__11=11;
+    public static final int T__33=33;
+    public static final int T__12=12;
+    public static final int T__34=34;
+    public static final int T__13=13;
+    public static final int T__35=35;
+    public static final int T__14=14;
+    public static final int T__36=36;
+    public static final int EOF=-1;
     public static final int T__30=30;
     public static final int T__31=31;
     public static final int T__32=32;
-    public static final int RULE_STRING=6;
-    public static final int T__16=16;
-    public static final int T__33=33;
-    public static final int T__15=15;
-    public static final int T__34=34;
-    public static final int T__18=18;
-    public static final int T__35=35;
-    public static final int T__17=17;
-    public static final int T__36=36;
-    public static final int T__12=12;
-    public static final int T__37=37;
-    public static final int T__11=11;
-    public static final int T__38=38;
-    public static final int T__14=14;
-    public static final int T__39=39;
-    public static final int T__13=13;
-    public static final int RULE_INT=4;
+    public static final int RULE_ID=5;
     public static final int RULE_WS=9;
+    public static final int RULE_ANY_OTHER=10;
+    public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
+    public static final int RULE_INT=4;
+    public static final int T__29=29;
+    public static final int T__22=22;
+    public static final int RULE_ML_COMMENT=7;
+    public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__25=25;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__20=20;
+    public static final int T__42=42;
+    public static final int T__21=21;
 
     // delegates
     // delegators
@@ -67,15 +64,15 @@ public class InternalActivityexplorerLexer extends Lexer {
         super(input,state);
 
     }
-    public String getGrammarFileName() { return "../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g"; }
+    public String getGrammarFileName() { return "InternalActivityexplorer.g"; }
 
     // $ANTLR start "T__11"
     public final void mT__11() throws RecognitionException {
         try {
             int _type = T__11;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:11:7: ( 'true' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:11:9: 'true'
+            // InternalActivityexplorer.g:11:7: ( 'true' )
+            // InternalActivityexplorer.g:11:9: 'true'
             {
             match("true"); 
 
@@ -95,8 +92,8 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = T__12;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:12:7: ( 'false' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:12:9: 'false'
+            // InternalActivityexplorer.g:12:7: ( 'false' )
+            // InternalActivityexplorer.g:12:9: 'false'
             {
             match("false"); 
 
@@ -116,8 +113,8 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:13:7: ( 'activity-explorer' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:13:9: 'activity-explorer'
+            // InternalActivityexplorer.g:13:7: ( 'activity-explorer' )
+            // InternalActivityexplorer.g:13:9: 'activity-explorer'
             {
             match("activity-explorer"); 
 
@@ -137,8 +134,8 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:14:7: ( '{' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:14:9: '{'
+            // InternalActivityexplorer.g:14:7: ( '{' )
+            // InternalActivityexplorer.g:14:9: '{'
             {
             match('{'); 
 
@@ -157,8 +154,8 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:15:7: ( '}' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:15:9: '}'
+            // InternalActivityexplorer.g:15:7: ( '}' )
+            // InternalActivityexplorer.g:15:9: '}'
             {
             match('}'); 
 
@@ -177,8 +174,8 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:16:7: ( 'pages' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:16:9: 'pages'
+            // InternalActivityexplorer.g:16:7: ( 'pages' )
+            // InternalActivityexplorer.g:16:9: 'pages'
             {
             match("pages"); 
 
@@ -198,8 +195,8 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:17:7: ( 'page' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:17:9: 'page'
+            // InternalActivityexplorer.g:17:7: ( 'page' )
+            // InternalActivityexplorer.g:17:9: 'page'
             {
             match("page"); 
 
@@ -219,8 +216,8 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:18:7: ( 'index' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:18:9: 'index'
+            // InternalActivityexplorer.g:18:7: ( 'index' )
+            // InternalActivityexplorer.g:18:9: 'index'
             {
             match("index"); 
 
@@ -240,8 +237,8 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:19:7: ( 'description' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:19:9: 'description'
+            // InternalActivityexplorer.g:19:7: ( 'description' )
+            // InternalActivityexplorer.g:19:9: 'description'
             {
             match("description"); 
 
@@ -261,8 +258,8 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:20:7: ( 'file-extension' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:20:9: 'file-extension'
+            // InternalActivityexplorer.g:20:7: ( 'file-extension' )
+            // InternalActivityexplorer.g:20:9: 'file-extension'
             {
             match("file-extension"); 
 
@@ -282,8 +279,8 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:21:7: ( 'id' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:21:9: 'id'
+            // InternalActivityexplorer.g:21:7: ( 'id' )
+            // InternalActivityexplorer.g:21:9: 'id'
             {
             match("id"); 
 
@@ -303,8 +300,8 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:22:7: ( 'label' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:22:9: 'label'
+            // InternalActivityexplorer.g:22:7: ( 'label' )
+            // InternalActivityexplorer.g:22:9: 'label'
             {
             match("label"); 
 
@@ -324,8 +321,8 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:23:7: ( 'header' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:23:9: 'header'
+            // InternalActivityexplorer.g:23:7: ( 'header' )
+            // InternalActivityexplorer.g:23:9: 'header'
             {
             match("header"); 
 
@@ -345,8 +342,8 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:24:7: ( 'image-on' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:24:9: 'image-on'
+            // InternalActivityexplorer.g:24:7: ( 'image-on' )
+            // InternalActivityexplorer.g:24:9: 'image-on'
             {
             match("image-on"); 
 
@@ -366,8 +363,8 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:25:7: ( ':' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:25:9: ':'
+            // InternalActivityexplorer.g:25:7: ( ':' )
+            // InternalActivityexplorer.g:25:9: ':'
             {
             match(':'); 
 
@@ -386,8 +383,8 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:26:7: ( 'image-off' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:26:9: 'image-off'
+            // InternalActivityexplorer.g:26:7: ( 'image-off' )
+            // InternalActivityexplorer.g:26:9: 'image-off'
             {
             match("image-off"); 
 
@@ -407,8 +404,8 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:27:7: ( 'tab-name' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:27:9: 'tab-name'
+            // InternalActivityexplorer.g:27:7: ( 'tab-name' )
+            // InternalActivityexplorer.g:27:9: 'tab-name'
             {
             match("tab-name"); 
 
@@ -428,8 +425,8 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:28:7: ( 'predicated' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:28:9: 'predicated'
+            // InternalActivityexplorer.g:28:7: ( 'predicated' )
+            // InternalActivityexplorer.g:28:9: 'predicated'
             {
             match("predicated"); 
 
@@ -449,8 +446,8 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:29:7: ( 'show-viewer' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:29:9: 'show-viewer'
+            // InternalActivityexplorer.g:29:7: ( 'show-viewer' )
+            // InternalActivityexplorer.g:29:9: 'show-viewer'
             {
             match("show-viewer"); 
 
@@ -470,8 +467,8 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:30:7: ( 'sections' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:30:9: 'sections'
+            // InternalActivityexplorer.g:30:7: ( 'sections' )
+            // InternalActivityexplorer.g:30:9: 'sections'
             {
             match("sections"); 
 
@@ -491,8 +488,8 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:31:7: ( 'section' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:31:9: 'section'
+            // InternalActivityexplorer.g:31:7: ( 'section' )
+            // InternalActivityexplorer.g:31:9: 'section'
             {
             match("section"); 
 
@@ -512,8 +509,8 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:32:7: ( 'filtering' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:32:9: 'filtering'
+            // InternalActivityexplorer.g:32:7: ( 'filtering' )
+            // InternalActivityexplorer.g:32:9: 'filtering'
             {
             match("filtering"); 
 
@@ -533,8 +530,8 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:33:7: ( 'expanded' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:33:9: 'expanded'
+            // InternalActivityexplorer.g:33:7: ( 'expanded' )
+            // InternalActivityexplorer.g:33:9: 'expanded'
             {
             match("expanded"); 
 
@@ -554,8 +551,8 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:34:7: ( 'activities' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:34:9: 'activities'
+            // InternalActivityexplorer.g:34:7: ( 'activities' )
+            // InternalActivityexplorer.g:34:9: 'activities'
             {
             match("activities"); 
 
@@ -575,8 +572,8 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:35:7: ( 'activity' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:35:9: 'activity'
+            // InternalActivityexplorer.g:35:7: ( 'activity' )
+            // InternalActivityexplorer.g:35:9: 'activity'
             {
             match("activity"); 
 
@@ -596,8 +593,8 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:36:7: ( 'icon' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:36:9: 'icon'
+            // InternalActivityexplorer.g:36:7: ( 'icon' )
+            // InternalActivityexplorer.g:36:9: 'icon'
             {
             match("icon"); 
 
@@ -617,8 +614,8 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:37:7: ( 'page-extensions' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:37:9: 'page-extensions'
+            // InternalActivityexplorer.g:37:7: ( 'page-extensions' )
+            // InternalActivityexplorer.g:37:9: 'page-extensions'
             {
             match("page-extensions"); 
 
@@ -638,8 +635,8 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:38:7: ( 'extended-page' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:38:9: 'extended-page'
+            // InternalActivityexplorer.g:38:7: ( 'extended-page' )
+            // InternalActivityexplorer.g:38:9: 'extended-page'
             {
             match("extended-page"); 
 
@@ -659,8 +656,8 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:39:7: ( 'section-extensions' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:39:9: 'section-extensions'
+            // InternalActivityexplorer.g:39:7: ( 'section-extensions' )
+            // InternalActivityexplorer.g:39:9: 'section-extensions'
             {
             match("section-extensions"); 
 
@@ -680,8 +677,8 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = T__40;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:40:7: ( 'extended-section' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:40:9: 'extended-section'
+            // InternalActivityexplorer.g:40:7: ( 'extended-section' )
+            // InternalActivityexplorer.g:40:9: 'extended-section'
             {
             match("extended-section"); 
 
@@ -701,8 +698,8 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = T__41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:41:7: ( 'Overview' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:41:9: 'Overview'
+            // InternalActivityexplorer.g:41:7: ( 'Overview' )
+            // InternalActivityexplorer.g:41:9: 'Overview'
             {
             match("Overview"); 
 
@@ -722,8 +719,8 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = T__42;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:42:7: ( '.' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:42:9: '.'
+            // InternalActivityexplorer.g:42:7: ( '.' )
+            // InternalActivityexplorer.g:42:9: '.'
             {
             match('.'); 
 
@@ -742,10 +739,10 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5609:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5609:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalActivityexplorer.g:5609:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalActivityexplorer.g:5609:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5609:11: ( '^' )?
+            // InternalActivityexplorer.g:5609:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -754,7 +751,7 @@ public class InternalActivityexplorerLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5609:11: '^'
+                    // InternalActivityexplorer.g:5609:11: '^'
                     {
                     match('^'); 
 
@@ -772,7 +769,7 @@ public class InternalActivityexplorerLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5609:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalActivityexplorer.g:5609:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -785,7 +782,7 @@ public class InternalActivityexplorerLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:
+            	    // InternalActivityexplorer.g:
             	    {
             	    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
             	        input.consume();
@@ -821,10 +818,10 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5611:10: ( ( '0' .. '9' )+ )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5611:12: ( '0' .. '9' )+
+            // InternalActivityexplorer.g:5611:10: ( ( '0' .. '9' )+ )
+            // InternalActivityexplorer.g:5611:12: ( '0' .. '9' )+
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5611:12: ( '0' .. '9' )+
+            // InternalActivityexplorer.g:5611:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -838,7 +835,7 @@ public class InternalActivityexplorerLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5611:13: '0' .. '9'
+            	    // InternalActivityexplorer.g:5611:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -870,10 +867,10 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5613:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5613:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalActivityexplorer.g:5613:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalActivityexplorer.g:5613:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5613:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalActivityexplorer.g:5613:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -891,10 +888,10 @@ public class InternalActivityexplorerLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5613:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalActivityexplorer.g:5613:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5613:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalActivityexplorer.g:5613:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -910,7 +907,7 @@ public class InternalActivityexplorerLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5613:21: '\\\\' .
+                    	    // InternalActivityexplorer.g:5613:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -918,7 +915,7 @@ public class InternalActivityexplorerLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5613:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalActivityexplorer.g:5613:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -943,10 +940,10 @@ public class InternalActivityexplorerLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5613:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalActivityexplorer.g:5613:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5613:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalActivityexplorer.g:5613:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -962,7 +959,7 @@ public class InternalActivityexplorerLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5613:54: '\\\\' .
+                    	    // InternalActivityexplorer.g:5613:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -970,7 +967,7 @@ public class InternalActivityexplorerLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5613:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalActivityexplorer.g:5613:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1013,12 +1010,12 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5615:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5615:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalActivityexplorer.g:5615:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalActivityexplorer.g:5615:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5615:24: ( options {greedy=false; } : . )*
+            // InternalActivityexplorer.g:5615:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -1043,7 +1040,7 @@ public class InternalActivityexplorerLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5615:52: .
+            	    // InternalActivityexplorer.g:5615:52: .
             	    {
             	    matchAny(); 
 
@@ -1073,12 +1070,12 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5617:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5617:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalActivityexplorer.g:5617:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalActivityexplorer.g:5617:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5617:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalActivityexplorer.g:5617:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1091,7 +1088,7 @@ public class InternalActivityexplorerLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5617:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalActivityexplorer.g:5617:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1111,7 +1108,7 @@ public class InternalActivityexplorerLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5617:40: ( ( '\\r' )? '\\n' )?
+            // InternalActivityexplorer.g:5617:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1120,9 +1117,9 @@ public class InternalActivityexplorerLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5617:41: ( '\\r' )? '\\n'
+                    // InternalActivityexplorer.g:5617:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5617:41: ( '\\r' )?
+                    // InternalActivityexplorer.g:5617:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1131,7 +1128,7 @@ public class InternalActivityexplorerLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5617:41: '\\r'
+                            // InternalActivityexplorer.g:5617:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1163,10 +1160,10 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5619:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5619:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalActivityexplorer.g:5619:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalActivityexplorer.g:5619:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5619:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalActivityexplorer.g:5619:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1180,7 +1177,7 @@ public class InternalActivityexplorerLexer extends Lexer {
 
                 switch (alt11) {
             	case 1 :
-            	    // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:
+            	    // InternalActivityexplorer.g:
             	    {
             	    if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
             	        input.consume();
@@ -1220,8 +1217,8 @@ public class InternalActivityexplorerLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5621:16: ( . )
-            // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:5621:18: .
+            // InternalActivityexplorer.g:5621:16: ( . )
+            // InternalActivityexplorer.g:5621:18: .
             {
             matchAny(); 
 
@@ -1236,278 +1233,278 @@ public class InternalActivityexplorerLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        // InternalActivityexplorer.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
         int alt12=39;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:10: T__11
+                // InternalActivityexplorer.g:1:10: T__11
                 {
                 mT__11(); 
 
                 }
                 break;
             case 2 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:16: T__12
+                // InternalActivityexplorer.g:1:16: T__12
                 {
                 mT__12(); 
 
                 }
                 break;
             case 3 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:22: T__13
+                // InternalActivityexplorer.g:1:22: T__13
                 {
                 mT__13(); 
 
                 }
                 break;
             case 4 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:28: T__14
+                // InternalActivityexplorer.g:1:28: T__14
                 {
                 mT__14(); 
 
                 }
                 break;
             case 5 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:34: T__15
+                // InternalActivityexplorer.g:1:34: T__15
                 {
                 mT__15(); 
 
                 }
                 break;
             case 6 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:40: T__16
+                // InternalActivityexplorer.g:1:40: T__16
                 {
                 mT__16(); 
 
                 }
                 break;
             case 7 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:46: T__17
+                // InternalActivityexplorer.g:1:46: T__17
                 {
                 mT__17(); 
 
                 }
                 break;
             case 8 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:52: T__18
+                // InternalActivityexplorer.g:1:52: T__18
                 {
                 mT__18(); 
 
                 }
                 break;
             case 9 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:58: T__19
+                // InternalActivityexplorer.g:1:58: T__19
                 {
                 mT__19(); 
 
                 }
                 break;
             case 10 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:64: T__20
+                // InternalActivityexplorer.g:1:64: T__20
                 {
                 mT__20(); 
 
                 }
                 break;
             case 11 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:70: T__21
+                // InternalActivityexplorer.g:1:70: T__21
                 {
                 mT__21(); 
 
                 }
                 break;
             case 12 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:76: T__22
+                // InternalActivityexplorer.g:1:76: T__22
                 {
                 mT__22(); 
 
                 }
                 break;
             case 13 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:82: T__23
+                // InternalActivityexplorer.g:1:82: T__23
                 {
                 mT__23(); 
 
                 }
                 break;
             case 14 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:88: T__24
+                // InternalActivityexplorer.g:1:88: T__24
                 {
                 mT__24(); 
 
                 }
                 break;
             case 15 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:94: T__25
+                // InternalActivityexplorer.g:1:94: T__25
                 {
                 mT__25(); 
 
                 }
                 break;
             case 16 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:100: T__26
+                // InternalActivityexplorer.g:1:100: T__26
                 {
                 mT__26(); 
 
                 }
                 break;
             case 17 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:106: T__27
+                // InternalActivityexplorer.g:1:106: T__27
                 {
                 mT__27(); 
 
                 }
                 break;
             case 18 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:112: T__28
+                // InternalActivityexplorer.g:1:112: T__28
                 {
                 mT__28(); 
 
                 }
                 break;
             case 19 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:118: T__29
+                // InternalActivityexplorer.g:1:118: T__29
                 {
                 mT__29(); 
 
                 }
                 break;
             case 20 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:124: T__30
+                // InternalActivityexplorer.g:1:124: T__30
                 {
                 mT__30(); 
 
                 }
                 break;
             case 21 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:130: T__31
+                // InternalActivityexplorer.g:1:130: T__31
                 {
                 mT__31(); 
 
                 }
                 break;
             case 22 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:136: T__32
+                // InternalActivityexplorer.g:1:136: T__32
                 {
                 mT__32(); 
 
                 }
                 break;
             case 23 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:142: T__33
+                // InternalActivityexplorer.g:1:142: T__33
                 {
                 mT__33(); 
 
                 }
                 break;
             case 24 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:148: T__34
+                // InternalActivityexplorer.g:1:148: T__34
                 {
                 mT__34(); 
 
                 }
                 break;
             case 25 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:154: T__35
+                // InternalActivityexplorer.g:1:154: T__35
                 {
                 mT__35(); 
 
                 }
                 break;
             case 26 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:160: T__36
+                // InternalActivityexplorer.g:1:160: T__36
                 {
                 mT__36(); 
 
                 }
                 break;
             case 27 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:166: T__37
+                // InternalActivityexplorer.g:1:166: T__37
                 {
                 mT__37(); 
 
                 }
                 break;
             case 28 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:172: T__38
+                // InternalActivityexplorer.g:1:172: T__38
                 {
                 mT__38(); 
 
                 }
                 break;
             case 29 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:178: T__39
+                // InternalActivityexplorer.g:1:178: T__39
                 {
                 mT__39(); 
 
                 }
                 break;
             case 30 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:184: T__40
+                // InternalActivityexplorer.g:1:184: T__40
                 {
                 mT__40(); 
 
                 }
                 break;
             case 31 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:190: T__41
+                // InternalActivityexplorer.g:1:190: T__41
                 {
                 mT__41(); 
 
                 }
                 break;
             case 32 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:196: T__42
+                // InternalActivityexplorer.g:1:196: T__42
                 {
                 mT__42(); 
 
                 }
                 break;
             case 33 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:202: RULE_ID
+                // InternalActivityexplorer.g:1:202: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
             case 34 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:210: RULE_INT
+                // InternalActivityexplorer.g:1:210: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
             case 35 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:219: RULE_STRING
+                // InternalActivityexplorer.g:1:219: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
             case 36 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:231: RULE_ML_COMMENT
+                // InternalActivityexplorer.g:1:231: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
             case 37 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:247: RULE_SL_COMMENT
+                // InternalActivityexplorer.g:1:247: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
             case 38 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:263: RULE_WS
+                // InternalActivityexplorer.g:1:263: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
             case 39 :
-                // ../org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui/src-gen/org/polarsys/kitalpha/ad/viewpoint/dsl/cs/text/ui/contentassist/antlr/internal/InternalActivityexplorer.g:1:271: RULE_ANY_OTHER
+                // InternalActivityexplorer.g:1:271: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1521,62 +1518,19 @@ public class InternalActivityexplorerLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\3\32\2\uffff\5\32\1\uffff\3\32\1\uffff\1\27\2\uffff\3"+
-        "\27\2\uffff\2\32\1\uffff\3\32\2\uffff\3\32\1\74\5\32\1\uffff\4\32"+
-        "\6\uffff\10\32\1\uffff\12\32\1\132\1\uffff\4\32\1\141\3\32\1\145"+
-        "\10\32\1\uffff\1\156\1\uffff\2\32\1\161\2\uffff\1\32\1\163\1\32"+
-        "\1\uffff\1\32\1\166\1\32\1\uffff\4\32\1\uffff\2\32\1\uffff\1\32"+
-        "\2\uffff\1\32\1\uffff\1\u0081\7\32\1\uffff\1\32\1\uffff\1\u008f"+
-        "\4\32\1\u0095\2\32\2\uffff\1\32\1\u0099\2\uffff\1\u009a\1\32\1\u009c"+
-        "\1\u009d\2\uffff\3\32\5\uffff\1\u00a3\1\u00a4\1\32\4\uffff\1\u00a6"+
-        "\1\uffff";
+        "\1\uffff\3\32\2\uffff\5\32\1\uffff\3\32\1\uffff\1\27\2\uffff\3\27\2\uffff\2\32\1\uffff\3\32\2\uffff\3\32\1\74\5\32\1\uffff\4\32\6\uffff\10\32\1\uffff\12\32\1\132\1\uffff\4\32\1\141\3\32\1\145\10\32\1\uffff\1\156\1\uffff\2\32\1\161\2\uffff\1\32\1\163\1\32\1\uffff\1\32\1\166\1\32\1\uffff\4\32\1\uffff\2\32\1\uffff\1\32\2\uffff\1\32\1\uffff\1\u0081\7\32\1\uffff\1\32\1\uffff\1\u008f\4\32\1\u0095\2\32\2\uffff\1\32\1\u0099\2\uffff\1\u009a\1\32\1\u009c\1\u009d\2\uffff\3\32\5\uffff\1\u00a3\1\u00a4\1\32\4\uffff\1\u00a6\1\uffff";
     static final String DFA12_eofS =
         "\u00a7\uffff";
     static final String DFA12_minS =
-        "\1\0\2\141\1\143\2\uffff\1\141\1\143\1\145\1\141\1\145\1\uffff"+
-        "\1\145\1\170\1\166\1\uffff\1\101\2\uffff\2\0\1\52\2\uffff\1\165"+
-        "\1\142\1\uffff\2\154\1\164\2\uffff\1\147\1\145\1\144\1\60\1\141"+
-        "\1\157\1\163\1\142\1\141\1\uffff\1\157\1\143\1\160\1\145\6\uffff"+
-        "\1\145\1\55\1\163\1\145\1\151\1\145\1\144\1\145\1\uffff\1\147\1"+
-        "\156\1\143\1\145\1\144\1\167\1\164\1\141\1\145\1\162\1\60\1\uffff"+
-        "\1\145\1\55\1\145\1\166\1\55\1\151\1\170\1\145\1\60\1\162\1\154"+
-        "\1\145\1\55\1\151\2\156\1\166\1\uffff\1\60\1\uffff\1\162\1\151\1"+
-        "\60\2\uffff\1\143\1\60\1\55\1\uffff\1\151\1\60\1\162\1\uffff\1\157"+
-        "\2\144\1\151\1\uffff\1\151\1\164\1\uffff\1\141\1\uffff\1\157\1\160"+
-        "\1\uffff\1\60\1\156\3\145\1\156\1\151\1\164\1\146\1\164\1\uffff"+
-        "\1\55\2\144\1\167\1\147\1\55\2\145\2\uffff\1\151\1\60\2\uffff\1"+
-        "\60\1\55\2\60\2\uffff\1\163\1\144\1\157\2\uffff\1\160\2\uffff\2"+
-        "\60\1\156\4\uffff\1\60\1\uffff";
+        "\1\0\2\141\1\143\2\uffff\1\141\1\143\1\145\1\141\1\145\1\uffff\1\145\1\170\1\166\1\uffff\1\101\2\uffff\2\0\1\52\2\uffff\1\165\1\142\1\uffff\2\154\1\164\2\uffff\1\147\1\145\1\144\1\60\1\141\1\157\1\163\1\142\1\141\1\uffff\1\157\1\143\1\160\1\145\6\uffff\1\145\1\55\1\163\1\145\1\151\1\145\1\144\1\145\1\uffff\1\147\1\156\1\143\1\145\1\144\1\167\1\164\1\141\1\145\1\162\1\60\1\uffff\1\145\1\55\1\145\1\166\1\55\1\151\1\170\1\145\1\60\1\162\1\154\1\145\1\55\1\151\2\156\1\166\1\uffff\1\60\1\uffff\1\162\1\151\1\60\2\uffff\1\143\1\60\1\55\1\uffff\1\151\1\60\1\162\1\uffff\1\157\2\144\1\151\1\uffff\1\151\1\164\1\uffff\1\141\1\uffff\1\157\1\160\1\uffff\1\60\1\156\3\145\1\156\1\151\1\164\1\146\1\164\1\uffff\1\55\2\144\1\167\1\147\1\55\2\145\2\uffff\1\151\1\60\2\uffff\1\60\1\55\2\60\2\uffff\1\163\1\144\1\157\2\uffff\1\160\2\uffff\2\60\1\156\4\uffff\1\60\1\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\162\1\151\1\143\2\uffff\1\162\1\156\1\145\1\141\1\145"+
-        "\1\uffff\1\150\1\170\1\166\1\uffff\1\172\2\uffff\2\uffff\1\57\2"+
-        "\uffff\1\165\1\142\1\uffff\2\154\1\164\2\uffff\1\147\1\145\1\144"+
-        "\1\172\1\141\1\157\1\163\1\142\1\141\1\uffff\1\157\1\143\1\164\1"+
-        "\145\6\uffff\1\145\1\55\1\163\1\164\1\151\1\145\1\144\1\145\1\uffff"+
-        "\1\147\1\156\1\143\1\145\1\144\1\167\1\164\1\141\1\145\1\162\1\172"+
-        "\1\uffff\1\145\1\55\1\145\1\166\1\172\1\151\1\170\1\145\1\172\1"+
-        "\162\1\154\1\145\1\55\1\151\2\156\1\166\1\uffff\1\172\1\uffff\1"+
-        "\162\1\151\1\172\2\uffff\1\143\1\172\1\55\1\uffff\1\151\1\172\1"+
-        "\162\1\uffff\1\157\2\144\1\151\1\uffff\1\151\1\164\1\uffff\1\141"+
-        "\1\uffff\1\157\1\160\1\uffff\1\172\1\156\3\145\1\156\1\171\1\164"+
-        "\1\156\1\164\1\uffff\1\172\2\144\1\167\1\147\1\172\2\145\2\uffff"+
-        "\1\151\1\172\2\uffff\1\172\1\55\2\172\2\uffff\1\163\1\144\1\157"+
-        "\2\uffff\1\163\2\uffff\2\172\1\156\4\uffff\1\172\1\uffff";
+        "\1\uffff\1\162\1\151\1\143\2\uffff\1\162\1\156\1\145\1\141\1\145\1\uffff\1\150\1\170\1\166\1\uffff\1\172\2\uffff\2\uffff\1\57\2\uffff\1\165\1\142\1\uffff\2\154\1\164\2\uffff\1\147\1\145\1\144\1\172\1\141\1\157\1\163\1\142\1\141\1\uffff\1\157\1\143\1\164\1\145\6\uffff\1\145\1\55\1\163\1\164\1\151\1\145\1\144\1\145\1\uffff\1\147\1\156\1\143\1\145\1\144\1\167\1\164\1\141\1\145\1\162\1\172\1\uffff\1\145\1\55\1\145\1\166\1\172\1\151\1\170\1\145\1\172\1\162\1\154\1\145\1\55\1\151\2\156\1\166\1\uffff\1\172\1\uffff\1\162\1\151\1\172\2\uffff\1\143\1\172\1\55\1\uffff\1\151\1\172\1\162\1\uffff\1\157\2\144\1\151\1\uffff\1\151\1\164\1\uffff\1\141\1\uffff\1\157\1\160\1\uffff\1\172\1\156\3\145\1\156\1\171\1\164\1\156\1\164\1\uffff\1\172\2\144\1\167\1\147\1\172\2\145\2\uffff\1\151\1\172\2\uffff\1\172\1\55\2\172\2\uffff\1\163\1\144\1\157\2\uffff\1\163\2\uffff\2\172\1\156\4\uffff\1\172\1\uffff";
     static final String DFA12_acceptS =
-        "\4\uffff\1\4\1\5\5\uffff\1\17\3\uffff\1\40\1\uffff\1\41\1\42\3"+
-        "\uffff\1\46\1\47\2\uffff\1\41\3\uffff\1\4\1\5\11\uffff\1\17\4\uffff"+
-        "\1\40\1\42\1\43\1\44\1\45\1\46\10\uffff\1\13\13\uffff\1\21\21\uffff"+
-        "\1\1\1\uffff\1\12\3\uffff\1\33\1\7\3\uffff\1\32\3\uffff\1\23\4\uffff"+
-        "\1\2\2\uffff\1\6\1\uffff\1\10\2\uffff\1\14\12\uffff\1\15\10\uffff"+
-        "\1\16\1\20\2\uffff\1\35\1\25\4\uffff\1\3\1\31\3\uffff\1\24\1\27"+
-        "\1\uffff\1\37\1\26\3\uffff\1\34\1\36\1\30\1\22\1\uffff\1\11";
+        "\4\uffff\1\4\1\5\5\uffff\1\17\3\uffff\1\40\1\uffff\1\41\1\42\3\uffff\1\46\1\47\2\uffff\1\41\3\uffff\1\4\1\5\11\uffff\1\17\4\uffff\1\40\1\42\1\43\1\44\1\45\1\46\10\uffff\1\13\13\uffff\1\21\21\uffff\1\1\1\uffff\1\12\3\uffff\1\33\1\7\3\uffff\1\32\3\uffff\1\23\4\uffff\1\2\2\uffff\1\6\1\uffff\1\10\2\uffff\1\14\12\uffff\1\15\10\uffff\1\16\1\20\2\uffff\1\35\1\25\4\uffff\1\3\1\31\3\uffff\1\24\1\27\1\uffff\1\37\1\26\3\uffff\1\34\1\36\1\30\1\22\1\uffff\1\11";
     static final String DFA12_specialS =
         "\1\1\22\uffff\1\0\1\2\u0092\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\27\2\26\2\27\1\26\22\27\1\26\1\27\1\23\4\27\1\24\6\27\1"+
-            "\17\1\25\12\22\1\13\6\27\16\21\1\16\13\21\3\27\1\20\1\21\1\27"+
-            "\1\3\2\21\1\10\1\15\1\2\1\21\1\12\1\7\2\21\1\11\3\21\1\6\2\21"+
-            "\1\14\1\1\6\21\1\4\1\27\1\5\uff82\27",
+            "\11\27\2\26\2\27\1\26\22\27\1\26\1\27\1\23\4\27\1\24\6\27\1\17\1\25\12\22\1\13\6\27\16\21\1\16\13\21\3\27\1\20\1\21\1\27\1\3\2\21\1\10\1\15\1\2\1\21\1\12\1\7\2\21\1\11\3\21\1\6\2\21\1\14\1\1\6\21\1\4\1\27\1\5\uff82\27",
             "\1\31\20\uffff\1\30",
             "\1\33\7\uffff\1\34",
             "\1\35",
@@ -1653,8 +1607,7 @@ public class InternalActivityexplorerLexer extends Lexer {
             "\1\134",
             "\1\135",
             "\1\136",
-            "\1\140\2\uffff\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\22"+
-            "\32\1\137\7\32",
+            "\1\140\2\uffff\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\22\32\1\137\7\32",
             "\1\142",
             "\1\143",
             "\1\144",
@@ -1707,14 +1660,12 @@ public class InternalActivityexplorerLexer extends Lexer {
             "\1\u008b\7\uffff\1\u008a",
             "\1\u008c",
             "",
-            "\1\u008e\2\uffff\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff"+
-            "\22\32\1\u008d\7\32",
+            "\1\u008e\2\uffff\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\22\32\1\u008d\7\32",
             "\1\u0090",
             "\1\u0091",
             "\1\u0092",
             "\1\u0093",
-            "\1\u0094\2\uffff\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff"+
-            "\32\32",
+            "\1\u0094\2\uffff\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
             "\1\u0096",
             "\1\u0097",
             "",

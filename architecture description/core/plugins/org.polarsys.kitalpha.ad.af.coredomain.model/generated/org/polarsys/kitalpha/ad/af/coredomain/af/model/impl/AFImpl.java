@@ -32,10 +32,10 @@ import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.impl.NameEl
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.af.coredomain.af.model.impl.AFImpl#getViewpoints <em>Viewpoints</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -99,7 +99,7 @@ public class AFImpl extends NameElementImpl implements AF {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 
 	public Viewpoint getViewpoint(String id) {

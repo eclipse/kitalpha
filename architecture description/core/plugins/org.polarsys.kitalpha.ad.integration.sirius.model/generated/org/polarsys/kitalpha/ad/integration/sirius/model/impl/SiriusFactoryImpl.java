@@ -36,7 +36,7 @@ public class SiriusFactoryImpl extends EFactoryImpl implements SiriusFactory {
 	 */
 	public static SiriusFactory init() {
 		try {
-			SiriusFactory theSiriusFactory = (SiriusFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.polarsys.org/kitalpha/ad/sirius/1.0.0"); 
+			SiriusFactory theSiriusFactory = (SiriusFactory)EPackage.Registry.INSTANCE.getEFactory(SiriusPackage.eNS_URI);
 			if (theSiriusFactory != null) {
 				return theSiriusFactory;
 			}

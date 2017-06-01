@@ -79,7 +79,9 @@ public class SimplecomponentModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<String> FILE_EXTENSIONS = Collections.unmodifiableList(Arrays.asList(SimplecomponentEditorPlugin.INSTANCE.getString("_UI_SimplecomponentEditorFilenameExtensions").split("\\s*,\\s*"))); //$NON-NLS-1$ //$NON-NLS-2$
+	public static final List<String> FILE_EXTENSIONS = Collections
+			.unmodifiableList(Arrays.asList(SimplecomponentEditorPlugin.INSTANCE
+					.getString("_UI_SimplecomponentEditorFilenameExtensions").split("\\s*,\\s*"))); //$NON-NLS-1$ //$NON-NLS-2$
 
 	/**
 	 * A formatted list of supported file extensions, suitable for display.
@@ -87,7 +89,8 @@ public class SimplecomponentModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String FORMATTED_FILE_EXTENSIONS = SimplecomponentEditorPlugin.INSTANCE.getString("_UI_SimplecomponentEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", "); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+	public static final String FORMATTED_FILE_EXTENSIONS = SimplecomponentEditorPlugin.INSTANCE
+			.getString("_UI_SimplecomponentEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", "); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 
 	/**
 	 * This caches an instance of the model package.
@@ -155,7 +158,8 @@ public class SimplecomponentModelWizard extends Wizard implements INewWizard {
 		this.workbench = workbench;
 		this.selection = selection;
 		setWindowTitle(SimplecomponentEditorPlugin.INSTANCE.getString("_UI_Wizard_label")); //$NON-NLS-1$
-		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(SimplecomponentEditorPlugin.INSTANCE.getImage("full/wizban/NewSimplecomponent"))); //$NON-NLS-1$
+		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE
+				.getImageDescriptor(SimplecomponentEditorPlugin.INSTANCE.getImage("full/wizban/NewSimplecomponent"))); //$NON-NLS-1$
 	}
 
 	/**
@@ -187,7 +191,8 @@ public class SimplecomponentModelWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	protected EObject createInitialModel() {
-		EClass eClass = (EClass) simplecomponentPackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
+		EClass eClass = (EClass) simplecomponentPackage
+				.getEClassifier(initialObjectCreationPage.getInitialObjectName());
 		EObject rootObject = simplecomponentFactory.create(eClass);
 		return rootObject;
 	}
@@ -262,9 +267,12 @@ public class SimplecomponentModelWizard extends Wizard implements INewWizard {
 			// Open an editor on the new file.
 			//
 			try {
-				page.openEditor(new FileEditorInput(modelFile), workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());
+				page.openEditor(new FileEditorInput(modelFile),
+						workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());
 			} catch (PartInitException exception) {
-				MessageDialog.openError(workbenchWindow.getShell(), SimplecomponentEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage()); //$NON-NLS-1$
+				MessageDialog.openError(workbenchWindow.getShell(),
+						SimplecomponentEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), //$NON-NLS-1$
+						exception.getMessage());
 				return false;
 			}
 
@@ -304,7 +312,8 @@ public class SimplecomponentModelWizard extends Wizard implements INewWizard {
 				String extension = new Path(getFileName()).getFileExtension();
 				if (extension == null || !FILE_EXTENSIONS.contains(extension)) {
 					String key = FILE_EXTENSIONS.size() > 1 ? "_WARN_FilenameExtensions" : "_WARN_FilenameExtension"; //$NON-NLS-1$ //$NON-NLS-2$
-					setErrorMessage(SimplecomponentEditorPlugin.INSTANCE.getString(key, new Object[] { FORMATTED_FILE_EXTENSIONS }));
+					setErrorMessage(SimplecomponentEditorPlugin.INSTANCE.getString(key,
+							new Object[] { FORMATTED_FILE_EXTENSIONS }));
 					return false;
 				}
 				return true;
@@ -520,8 +529,9 @@ public class SimplecomponentModelWizard extends Wizard implements INewWizard {
 		protected Collection<String> getEncodings() {
 			if (encodings == null) {
 				encodings = new ArrayList<String>();
-				for (StringTokenizer stringTokenizer = new StringTokenizer(SimplecomponentEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens();) //$NON-NLS-1$
-				{
+				for (StringTokenizer stringTokenizer = new StringTokenizer(
+						SimplecomponentEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer //$NON-NLS-1$
+								.hasMoreTokens();) {
 					encodings.add(stringTokenizer.nextToken());
 				}
 			}
@@ -540,9 +550,13 @@ public class SimplecomponentModelWizard extends Wizard implements INewWizard {
 		// Create a page, set the title, and the initial model file name.
 		//
 		newFileCreationPage = new SimplecomponentModelWizardNewFileCreationPage("Whatever", selection); //$NON-NLS-1$
-		newFileCreationPage.setTitle(SimplecomponentEditorPlugin.INSTANCE.getString("_UI_SimplecomponentModelWizard_label")); //$NON-NLS-1$
-		newFileCreationPage.setDescription(SimplecomponentEditorPlugin.INSTANCE.getString("_UI_SimplecomponentModelWizard_description")); //$NON-NLS-1$
-		newFileCreationPage.setFileName(SimplecomponentEditorPlugin.INSTANCE.getString("_UI_SimplecomponentEditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0)); //$NON-NLS-1$ //$NON-NLS-2$
+		newFileCreationPage
+				.setTitle(SimplecomponentEditorPlugin.INSTANCE.getString("_UI_SimplecomponentModelWizard_label")); //$NON-NLS-1$
+		newFileCreationPage.setDescription(
+				SimplecomponentEditorPlugin.INSTANCE.getString("_UI_SimplecomponentModelWizard_description")); //$NON-NLS-1$
+		newFileCreationPage.setFileName(
+				SimplecomponentEditorPlugin.INSTANCE.getString("_UI_SimplecomponentEditorFilenameDefaultBase") + "." //$NON-NLS-1$//$NON-NLS-2$
+						+ FILE_EXTENSIONS.get(0));
 		addPage(newFileCreationPage);
 
 		// Try and get the resource selection to determine a current directory for the file dialog.
@@ -568,7 +582,8 @@ public class SimplecomponentModelWizard extends Wizard implements INewWizard {
 
 					// Make up a unique new name here.
 					//
-					String defaultModelBaseFilename = SimplecomponentEditorPlugin.INSTANCE.getString("_UI_SimplecomponentEditorFilenameDefaultBase"); //$NON-NLS-1$
+					String defaultModelBaseFilename = SimplecomponentEditorPlugin.INSTANCE
+							.getString("_UI_SimplecomponentEditorFilenameDefaultBase"); //$NON-NLS-1$
 					String defaultModelFilenameExtension = FILE_EXTENSIONS.get(0);
 					String modelFilename = defaultModelBaseFilename + "." + defaultModelFilenameExtension; //$NON-NLS-1$
 					for (int i = 1; ((IContainer) selectedResource).findMember(modelFilename) != null; ++i) {
@@ -579,8 +594,10 @@ public class SimplecomponentModelWizard extends Wizard implements INewWizard {
 			}
 		}
 		initialObjectCreationPage = new SimplecomponentModelWizardInitialObjectCreationPage("Whatever2"); //$NON-NLS-1$
-		initialObjectCreationPage.setTitle(SimplecomponentEditorPlugin.INSTANCE.getString("_UI_SimplecomponentModelWizard_label")); //$NON-NLS-1$
-		initialObjectCreationPage.setDescription(SimplecomponentEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description")); //$NON-NLS-1$
+		initialObjectCreationPage
+				.setTitle(SimplecomponentEditorPlugin.INSTANCE.getString("_UI_SimplecomponentModelWizard_label")); //$NON-NLS-1$
+		initialObjectCreationPage.setDescription(
+				SimplecomponentEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description")); //$NON-NLS-1$
 		addPage(initialObjectCreationPage);
 	}
 

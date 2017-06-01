@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20160112-1239
+//Generated with EGF 1.4.1.v20161010-1704
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.java.abstracts;
 
 import org.eclipse.egf.common.helper.*;
@@ -84,10 +84,10 @@ public class AbstractPredicatedElementJavaClass extends
 		return null;
 	}
 
-	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.PredicateElement predicatedElement = null;
+	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.PredicateElement predicatedElement = null;
 
 	public void set_predicatedElement(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.PredicateElement object) {
+			org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.PredicateElement object) {
 		this.predicatedElement = object;
 	}
 

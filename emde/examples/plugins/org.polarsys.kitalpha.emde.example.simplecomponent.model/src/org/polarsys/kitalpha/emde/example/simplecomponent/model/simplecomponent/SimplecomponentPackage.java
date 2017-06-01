@@ -63,7 +63,8 @@ public interface SimplecomponentPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	SimplecomponentPackage eINSTANCE = org.polarsys.kitalpha.emde.example.simplecomponent.model.simplecomponent.impl.SimplecomponentPackageImpl.init();
+	SimplecomponentPackage eINSTANCE = org.polarsys.kitalpha.emde.example.simplecomponent.model.simplecomponent.impl.SimplecomponentPackageImpl
+			.init();
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.emde.example.simplecomponent.model.simplecomponent.impl.ComponentElementImpl <em>Component Element</em>}' class.

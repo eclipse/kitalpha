@@ -36,7 +36,8 @@ public class PerformanceFactoryImpl extends EFactoryImpl implements PerformanceF
 	 */
 	public static PerformanceFactory init() {
 		try {
-			PerformanceFactory thePerformanceFactory = (PerformanceFactory) EPackage.Registry.INSTANCE.getEFactory("http://www.polarsys.org/kitalpha/emde/example/simplecomponent/performance"); //$NON-NLS-1$ 
+			PerformanceFactory thePerformanceFactory = (PerformanceFactory) EPackage.Registry.INSTANCE
+					.getEFactory(PerformancePackage.eNS_URI);
 			if (thePerformanceFactory != null) {
 				return thePerformanceFactory;
 			}

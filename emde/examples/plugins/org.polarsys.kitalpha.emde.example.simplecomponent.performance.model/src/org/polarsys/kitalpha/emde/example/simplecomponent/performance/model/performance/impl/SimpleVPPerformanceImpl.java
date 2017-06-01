@@ -130,7 +130,8 @@ public class SimpleVPPerformanceImpl extends ComponentElementImpl implements Sim
 		int oldComplexity = complexity;
 		complexity = newComplexity;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PerformancePackage.SIMPLE_VP_PERFORMANCE__COMPLEXITY, oldComplexity, complexity));
+			eNotify(new ENotificationImpl(this, Notification.SET, PerformancePackage.SIMPLE_VP_PERFORMANCE__COMPLEXITY,
+					oldComplexity, complexity));
 
 	}
 
@@ -156,7 +157,8 @@ public class SimpleVPPerformanceImpl extends ComponentElementImpl implements Sim
 		int oldCost = cost;
 		cost = newCost;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PerformancePackage.SIMPLE_VP_PERFORMANCE__COST, oldCost, cost));
+			eNotify(new ENotificationImpl(this, Notification.SET, PerformancePackage.SIMPLE_VP_PERFORMANCE__COST,
+					oldCost, cost));
 
 	}
 
@@ -182,7 +184,8 @@ public class SimpleVPPerformanceImpl extends ComponentElementImpl implements Sim
 		VPStatus oldStatus = status;
 		status = newStatus;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PerformancePackage.SIMPLE_VP_PERFORMANCE__STATUS, oldStatus, newStatus);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					PerformancePackage.SIMPLE_VP_PERFORMANCE__STATUS, oldStatus, newStatus);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -203,14 +206,17 @@ public class SimpleVPPerformanceImpl extends ComponentElementImpl implements Sim
 		if (newStatus != status) {
 			NotificationChain msgs = null;
 			if (status != null)
-				msgs = ((InternalEObject) status).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PerformancePackage.SIMPLE_VP_PERFORMANCE__STATUS, null, msgs);
+				msgs = ((InternalEObject) status).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - PerformancePackage.SIMPLE_VP_PERFORMANCE__STATUS, null, msgs);
 			if (newStatus != null)
-				msgs = ((InternalEObject) newStatus).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PerformancePackage.SIMPLE_VP_PERFORMANCE__STATUS, null, msgs);
+				msgs = ((InternalEObject) newStatus).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - PerformancePackage.SIMPLE_VP_PERFORMANCE__STATUS, null, msgs);
 			msgs = basicSetStatus(newStatus, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PerformancePackage.SIMPLE_VP_PERFORMANCE__STATUS, newStatus, newStatus));
+			eNotify(new ENotificationImpl(this, Notification.SET, PerformancePackage.SIMPLE_VP_PERFORMANCE__STATUS,
+					newStatus, newStatus));
 
 	}
 
@@ -255,31 +261,13 @@ public class SimpleVPPerformanceImpl extends ComponentElementImpl implements Sim
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case PerformancePackage.SIMPLE_VP_PERFORMANCE__COMPLEXITY:
-			// begin-extension-code
-			if (newValue == null || newValue instanceof Integer) {
-				// end-extension-code
-				setComplexity((Integer) newValue);
-				// begin-extension-code
-			}
-			// end-extension-code
+			setComplexity((Integer) newValue);
 			return;
 		case PerformancePackage.SIMPLE_VP_PERFORMANCE__COST:
-			// begin-extension-code
-			if (newValue == null || newValue instanceof Integer) {
-				// end-extension-code
-				setCost((Integer) newValue);
-				// begin-extension-code
-			}
-			// end-extension-code
+			setCost((Integer) newValue);
 			return;
 		case PerformancePackage.SIMPLE_VP_PERFORMANCE__STATUS:
-			// begin-extension-code
-			if (newValue == null || newValue instanceof VPStatus) {
-				// end-extension-code
-				setStatus((VPStatus) newValue);
-				// begin-extension-code
-			}
-			// end-extension-code
+			setStatus((VPStatus) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);

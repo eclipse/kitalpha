@@ -1,4 +1,4 @@
-//Generated with EGF 1.2.0.v20140805-0858
+//Generated with EGF 1.4.1.v20161010-1704
 package org.polarsys.kitalpha.ad.viewpoint.coredomain.patterns.eoperations.viewpoint;
 
 import org.eclipse.egf.common.helper.*;
@@ -8,7 +8,8 @@ import org.eclipse.egf.model.pattern.*;
 import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 
-public class getRulePattern extends org.eclipse.egf.emf.pattern.model.call.Class.ClassimplementedGenOperationTODOoverride {
+public class getRulePattern
+		extends org.eclipse.egf.emf.pattern.model.call.Class.ClassimplementedGenOperationTODOoverride {
 	protected static String nl;
 
 	public static synchronized getRulePattern create(String lineSeparator) {
@@ -19,7 +20,13 @@ public class getRulePattern extends org.eclipse.egf.emf.pattern.model.call.Class
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "\t\tif (getRuleSet() != null) {" + NL + "\t\t\t// find rule inside the set" + NL + "\t\t\tfor (Rule rule : getRuleSet().getNewRules()) {" + NL + "\t\t\t\tif (id.equals(rule.getId()))" + NL + "\t\t\t\t\treturn rule;" + NL + "\t\t\t}" + NL + "\t\t\t// if the rule is hidden return null" + NL + "\t\t\tfor (Rule rule : getRuleSet().getHiddenRules()) {" + NL + "\t\t\t\tif (id.equals(rule.getId()))" + NL + "\t\t\t\t\treturn null;" + NL + "\t\t\t}" + NL + "\t\t}" + NL + "\t\t// delegate to parents" + NL + "\t\tfor (Viewpoint vp : getParents()) {" + NL + "\t\t\tRule rule = vp.getRule(id);" + NL + "\t\t\tif (rule != null)" + NL + "\t\t\t\treturn rule;" + NL + "\t\t}" + NL + "\t\treturn null;";
+	protected final String TEXT_1 = "\t\tif (getRuleSet() != null) {" + NL + "\t\t\t// find rule inside the set" + NL
+			+ "\t\t\tfor (Rule rule : getRuleSet().getNewRules()) {" + NL + "\t\t\t\tif (id.equals(rule.getId()))" + NL
+			+ "\t\t\t\t\treturn rule;" + NL + "\t\t\t}" + NL + "\t\t\t// if the rule is hidden return null" + NL
+			+ "\t\t\tfor (Rule rule : getRuleSet().getHiddenRules()) {" + NL + "\t\t\t\tif (id.equals(rule.getId()))"
+			+ NL + "\t\t\t\t\treturn null;" + NL + "\t\t\t}" + NL + "\t\t}" + NL + "\t\t// delegate to parents" + NL
+			+ "\t\tfor (Viewpoint vp : getParents()) {" + NL + "\t\t\tRule rule = vp.getRule(id);" + NL
+			+ "\t\t\tif (rule != null)" + NL + "\t\t\t\treturn rule;" + NL + "\t\t}" + NL + "\t\treturn null;";
 	protected final String TEXT_2 = NL;
 	protected final String TEXT_3 = NL;
 
@@ -99,7 +106,8 @@ public class getRulePattern extends org.eclipse.egf.emf.pattern.model.call.Class
 																this.positiveOperationOffsetCorrection = (java.lang.String) positiveOperationOffsetCorrectionParameter;
 
 																if (preCondition(ctx)) {
-																	ctx.setNode(new Node.Container(currentNode, getClass()));
+																	ctx.setNode(new Node.Container(currentNode,
+																			getClass()));
 																	orchestration(ctx);
 																}
 

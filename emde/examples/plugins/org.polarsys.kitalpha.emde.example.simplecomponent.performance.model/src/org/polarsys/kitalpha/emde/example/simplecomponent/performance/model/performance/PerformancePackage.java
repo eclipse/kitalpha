@@ -63,7 +63,8 @@ public interface PerformancePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	PerformancePackage eINSTANCE = org.polarsys.kitalpha.emde.example.simplecomponent.performance.model.performance.impl.PerformancePackageImpl.init();
+	PerformancePackage eINSTANCE = org.polarsys.kitalpha.emde.example.simplecomponent.performance.model.performance.impl.PerformancePackageImpl
+			.init();
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.emde.example.simplecomponent.performance.model.performance.impl.SimpleVPPerformanceImpl <em>Simple VP Performance</em>}' class.

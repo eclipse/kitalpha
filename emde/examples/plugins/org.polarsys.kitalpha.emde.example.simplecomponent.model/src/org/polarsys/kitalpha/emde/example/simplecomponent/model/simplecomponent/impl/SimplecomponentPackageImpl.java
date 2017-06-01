@@ -109,7 +109,9 @@ public class SimplecomponentPackageImpl extends EPackageImpl implements Simpleco
 			return (SimplecomponentPackage) EPackage.Registry.INSTANCE.getEPackage(SimplecomponentPackage.eNS_URI);
 
 		// Obtain or create and register package
-		SimplecomponentPackageImpl theSimplecomponentPackage = (SimplecomponentPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof SimplecomponentPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new SimplecomponentPackageImpl());
+		SimplecomponentPackageImpl theSimplecomponentPackage = (SimplecomponentPackageImpl) (EPackage.Registry.INSTANCE
+				.get(eNS_URI) instanceof SimplecomponentPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
+						: new SimplecomponentPackageImpl());
 
 		isInited = true;
 
@@ -294,19 +296,32 @@ public class SimplecomponentPackageImpl extends EPackageImpl implements Simpleco
 		hardwareComponentEClass.getESuperTypes().add(this.getAbstractComponent());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(componentModelEClass, ComponentModel.class, "ComponentModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getComponentModel_AbstractComponent(), this.getAbstractComponent(), null, "abstractComponent", null, 0, -1, ComponentModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEClass(componentModelEClass, ComponentModel.class, "ComponentModel", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getComponentModel_AbstractComponent(), this.getAbstractComponent(), null, "abstractComponent", //$NON-NLS-1$
+				null, 0, -1, ComponentModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(componentElementEClass, ComponentElement.class, "ComponentElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getComponentElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, ComponentElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(getComponentElement_Description(), ecorePackage.getEString(), "description", null, 0, 1, ComponentElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEClass(componentElementEClass, ComponentElement.class, "ComponentElement", IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getComponentElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, //$NON-NLS-1$
+				ComponentElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentElement_Description(), ecorePackage.getEString(), "description", null, 0, 1, //$NON-NLS-1$
+				ComponentElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
-		initEClass(abstractComponentEClass, AbstractComponent.class, "AbstractComponent", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEClass(abstractComponentEClass, AbstractComponent.class, "AbstractComponent", IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(softwareComponentEClass, SoftwareComponent.class, "SoftwareComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEClass(softwareComponentEClass, SoftwareComponent.class, "SoftwareComponent", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(hardwareComponentEClass, HardwareComponent.class, "HardwareComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getHardwareComponent_AbstractComponent(), this.getAbstractComponent(), null, "abstractComponent", null, 0, -1, HardwareComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEClass(hardwareComponentEClass, HardwareComponent.class, "HardwareComponent", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getHardwareComponent_AbstractComponent(), this.getAbstractComponent(), null, "abstractComponent", //$NON-NLS-1$
+				null, 0, -1, HardwareComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -323,12 +338,13 @@ public class SimplecomponentPackageImpl extends EPackageImpl implements Simpleco
 	 * @generated
 	 */
 	protected void createExtensionAnnotations() {
-		String source = "http://www.polarsys.org/kitalpha/emde/1.0.0/extension"; //$NON-NLS-1$		
-		addAnnotation(this, source, new String[] { "extensibleProviderFactory", "true", //$NON-NLS-1$ //$NON-NLS-2$
-				"childCreationExtenders", "true", //$NON-NLS-1$ //$NON-NLS-2$
-				"useUUIDs", "true", //$NON-NLS-1$ //$NON-NLS-2$
-				"useIDAttributes", "false" //$NON-NLS-1$ //$NON-NLS-2$
-		});
+		String source = "http://www.polarsys.org/kitalpha/emde/1.0.0/extension"; //$NON-NLS-1$	
+		addAnnotation(this, source,
+				new String[] { "extensibleProviderFactory", "true", //$NON-NLS-1$ //$NON-NLS-2$
+						"childCreationExtenders", "true", //$NON-NLS-1$ //$NON-NLS-2$
+						"useUUIDs", "true", //$NON-NLS-1$ //$NON-NLS-2$
+						"useIDAttributes", "false" //$NON-NLS-1$ //$NON-NLS-2$
+				});
 	}
 
 } //SimplecomponentPackageImpl

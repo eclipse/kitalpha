@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015 Thales Global Services S.A.S.
+ * Copyright (c) 2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -108,7 +108,7 @@ ruleViewpoint returns [EObject current=null]
        			$current, 
        			"shortName",
         		lv_shortName_2_0, 
-        		"ID");
+        		"org.eclipse.xtext.common.Terminals.ID");
 	    }
 
 )
@@ -134,7 +134,7 @@ ruleViewpoint returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_5_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -155,7 +155,7 @@ ruleViewpoint returns [EObject current=null]
        			$current, 
        			"description",
         		lv_description_7_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -291,7 +291,7 @@ ruleViewpoint returns [EObject current=null]
        			$current, 
        			"useAnyEMFResource",
         		lv_useAnyEMFResource_21_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -313,7 +313,7 @@ ruleViewpoint returns [EObject current=null]
        			$current, 
        			"useAnyEMFResource",
         		lv_useAnyEMFResource_23_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -335,7 +335,7 @@ ruleViewpoint returns [EObject current=null]
        			$current, 
        			"useDiagramResource",
         		lv_useDiagramResource_25_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -357,7 +357,7 @@ ruleViewpoint returns [EObject current=null]
        			$current, 
        			"useDiagramResource",
         		lv_useDiagramResource_27_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -379,7 +379,7 @@ ruleViewpoint returns [EObject current=null]
        			$current, 
        			"useWorkspaceResource",
         		lv_useWorkspaceResource_29_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -401,7 +401,7 @@ ruleViewpoint returns [EObject current=null]
        			$current, 
        			"useWorkspaceResource",
         		lv_useWorkspaceResource_31_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -423,7 +423,7 @@ ruleViewpoint returns [EObject current=null]
        			$current, 
        			"useFSResource",
         		lv_useFSResource_33_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -445,7 +445,7 @@ ruleViewpoint returns [EObject current=null]
        			$current, 
        			"useFSResource",
         		lv_useFSResource_35_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 

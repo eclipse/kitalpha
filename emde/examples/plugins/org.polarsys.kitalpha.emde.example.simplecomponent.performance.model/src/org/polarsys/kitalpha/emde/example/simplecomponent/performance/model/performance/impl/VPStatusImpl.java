@@ -95,7 +95,8 @@ public class VPStatusImpl extends ComponentElementImpl implements VPStatus {
 		boolean oldOverhead = overhead;
 		overhead = newOverhead;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PerformancePackage.VP_STATUS__OVERHEAD, oldOverhead, overhead));
+			eNotify(new ENotificationImpl(this, Notification.SET, PerformancePackage.VP_STATUS__OVERHEAD, oldOverhead,
+					overhead));
 
 	}
 
@@ -122,13 +123,7 @@ public class VPStatusImpl extends ComponentElementImpl implements VPStatus {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case PerformancePackage.VP_STATUS__OVERHEAD:
-			// begin-extension-code
-			if (newValue == null || newValue instanceof Boolean) {
-				// end-extension-code
-				setOverhead((Boolean) newValue);
-				// begin-extension-code
-			}
-			// end-extension-code
+			setOverhead((Boolean) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);

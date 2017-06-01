@@ -20,8 +20,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.EventObject;
+import java.util.HashMap;
 import java.util.HashMap;
 import java.util.HashMap;
 import java.util.HashMap;
@@ -29,6 +32,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Map;
 import java.util.Map;
 import java.util.Map;
@@ -49,6 +53,7 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.command.BasicCommandStack;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CommandStack;
@@ -63,6 +68,7 @@ import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EValidator;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -91,6 +97,7 @@ import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 import org.polarsys.kitalpha.emde.example.simplecomponent.model.simplecomponent.provider.SimplecomponentItemProviderAdapterFactory;
 import org.polarsys.kitalpha.emde.example.simplecomponent.model.simplecomponent.provider.SimplecomponentItemProviderAdapterFactory;
 import org.polarsys.kitalpha.emde.example.simplecomponent.model.simplecomponent.provider.SimplecomponentItemProviderAdapterFactory;
+import org.polarsys.kitalpha.emde.example.simplecomponent.model.simplecomponent.provider.SimplecomponentItemProviderAdapterFactory;
 import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.IStatusLineManager;
@@ -105,6 +112,7 @@ import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.StructuredSelection;
@@ -130,6 +138,7 @@ import org.eclipse.ui.IPartListener;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
+import org.polarsys.kitalpha.ad.metadata.helpers.MetadataHelper;
 import org.eclipse.ui.dialogs.SaveAsDialog;
 import org.eclipse.ui.ide.IGotoMarker;
 import org.eclipse.ui.part.FileEditorInput;
@@ -157,7 +166,8 @@ import org.polarsys.kitalpha.emde.ui.actions.EmdeViewerFilterAction;
  * @implements ModelExtensionListener <!-- end-user-doc -->
  * @generated
  */
-public class SimplecomponentEditor extends MultiPageEditorPart implements IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker, ModelExtensionListener {
+public class SimplecomponentEditor extends MultiPageEditorPart implements IEditingDomainProvider, ISelectionProvider,
+		IMenuListener, IViewerProvider, IGotoMarker, ModelExtensionListener {
 	/**
 	 * This keeps track of the editing domain that is used to track all changes to the model.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -419,8 +429,10 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 
 					public boolean visit(IResourceDelta delta) {
 						if (delta.getResource().getType() == IResource.FILE) {
-							if (delta.getKind() == IResourceDelta.REMOVED || delta.getKind() == IResourceDelta.CHANGED && delta.getFlags() != IResourceDelta.MARKERS) {
-								Resource resource = resourceSet.getResource(URI.createPlatformResourceURI(delta.getFullPath().toString(), true), false);
+							if (delta.getKind() == IResourceDelta.REMOVED || delta.getKind() == IResourceDelta.CHANGED
+									&& delta.getFlags() != IResourceDelta.MARKERS) {
+								Resource resource = resourceSet.getResource(
+										URI.createPlatformResourceURI(delta.getFullPath().toString(), true), false);
 								if (resource != null) {
 									if (delta.getKind() == IResourceDelta.REMOVED) {
 										removedResources.add(resource);
@@ -549,7 +561,8 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 	 */
 	protected void updateProblemIndication() {
 		if (updateProblemIndication) {
-			BasicDiagnostic diagnostic = new BasicDiagnostic(Diagnostic.OK, "org.polarsys.kitalpha.emde.example.simplecomponent.model.editor", //$NON-NLS-1$
+			BasicDiagnostic diagnostic = new BasicDiagnostic(Diagnostic.OK,
+					"org.polarsys.kitalpha.emde.example.simplecomponent.model.editor", //$NON-NLS-1$
 					0, null, new Object[] { editingDomain.getResourceSet() });
 			for (Diagnostic childDiagnostic : resourceToDiagnosticMap.values()) {
 				if (childDiagnostic.getSeverity() != Diagnostic.OK) {
@@ -627,7 +640,8 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 
 		adapterFactory.addAdapterFactory(new SimplecomponentItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new EmdeItemProviderAdapterFactory());
-		for (AdapterFactory extendedAdapterFactory : ModelExtensionDescriptor.INSTANCE.getExtendedModelAdapterFactories(SimplecomponentItemProviderAdapterFactory.class.getName())) {
+		for (AdapterFactory extendedAdapterFactory : ModelExtensionDescriptor.INSTANCE
+				.getExtendedModelAdapterFactories(SimplecomponentItemProviderAdapterFactory.class.getName())) {
 			adapterFactory.addAdapterFactory(extendedAdapterFactory);
 		}
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
@@ -865,18 +879,19 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 		if (resource_p == null || resource_p.getContents().isEmpty()) {
 			return null;
 		}
-		// Cached extension actions
+		// Cached extension actions		
 		if (viewerFilterActions.get(resource_p) != null) {
 			return viewerFilterActions.get(resource_p);
 		}
 		// Create new extension actions
 		Collection<EmdeViewerFilterAction> extensionActions = new ArrayList<EmdeViewerFilterAction>();
 		String extensibleModelURI = resource_p.getContents().get(0).eClass().getEPackage().getNsURI();
-		ModelExtensionManager helper = ModelExtensionHelper.getInstance(resource_p.getContents().get(0));
+		ModelExtensionManager helper = ModelExtensionHelper.getInstance(resource_p);
 		ExtensibleModel extensibleModel = ModelExtensionDescriptor.INSTANCE.getExtensibleModel(extensibleModelURI);
 		if (extensibleModel != null) {
 			for (ExtendedModel extendedModel : extensibleModel.getAllExtendedModels()) {
-				EmdeViewerFilterAction filterAction = new EmdeViewerFilterAction(resource_p, extensibleModel, extendedModel) {
+				EmdeViewerFilterAction filterAction = new EmdeViewerFilterAction(resource_p, extensibleModel,
+						extendedModel) {
 					@Override
 					public void run() {
 						ISelection selection = getSelection();
@@ -888,7 +903,8 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 									if (getResource().getContents().isEmpty()) {
 										setSelectionToViewer((new StructuredSelection(getResource())).toList());
 									} else {
-										setSelectionToViewer((new StructuredSelection(getResource().getContents().get(0))).toList());
+										setSelectionToViewer(
+												(new StructuredSelection(getResource().getContents().get(0))).toList());
 									}
 								}
 							}
@@ -951,6 +967,7 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 			resourceToDiagnosticMap.put(resource, analyzeResourceProblems(resource, exception));
 		}
 		editingDomain.getResourceSet().eAdapters().add(problemIndicationAdapter);
+		MetadataHelper.getViewpointMetadata(editingDomain.getResourceSet()).initMetadataStorage();
 	}
 
 	/**
@@ -962,13 +979,15 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 	 */
 	public Diagnostic analyzeResourceProblems(Resource resource, Exception exception) {
 		if (!resource.getErrors().isEmpty() || !resource.getWarnings().isEmpty()) {
-			BasicDiagnostic basicDiagnostic = new BasicDiagnostic(Diagnostic.ERROR, "org.polarsys.kitalpha.emde.example.simplecomponent.model.editor", //$NON-NLS-1$
+			BasicDiagnostic basicDiagnostic = new BasicDiagnostic(Diagnostic.ERROR,
+					"org.polarsys.kitalpha.emde.example.simplecomponent.model.editor", //$NON-NLS-1$
 					0, getString("_UI_CreateModelError_message", resource.getURI()), //$NON-NLS-1$
 					new Object[] { exception == null ? (Object) resource : exception });
 			basicDiagnostic.merge(EcoreUtil.computeDiagnostic(resource, true));
 			return basicDiagnostic;
 		} else if (exception != null) {
-			return new BasicDiagnostic(Diagnostic.ERROR, "org.polarsys.kitalpha.emde.example.simplecomponent.model.editor", //$NON-NLS-1$
+			return new BasicDiagnostic(Diagnostic.ERROR,
+					"org.polarsys.kitalpha.emde.example.simplecomponent.model.editor", //$NON-NLS-1$
 					0, getString("_UI_CreateModelError_message", resource.getURI()), //$NON-NLS-1$
 					new Object[] { exception });
 		} else {
@@ -991,9 +1010,6 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 		//
 		if (!getEditingDomain().getResourceSet().getResources().isEmpty()) {
 			// Create a page for the selection tree view.
-			ModelExtensionHelper.getInstance((EObject) getEditingDomain().getResourceSet().getResources().get(0).getContents().get(0)).addListener(this);
-
-			// Create a page for the selection tree view.
 			//
 			Tree tree = new Tree(getContainer(), SWT.MULTI);
 			// begin-extension-code
@@ -1013,7 +1029,8 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 			selectionViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
 			selectionViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
 			selectionViewer.setInput(editingDomain.getResourceSet());
-			selectionViewer.setSelection(new StructuredSelection(editingDomain.getResourceSet().getResources().get(0)), true);
+			selectionViewer.setSelection(new StructuredSelection(editingDomain.getResourceSet().getResources().get(0)),
+					true);
 
 			new AdapterFactoryTreeEditor(selectionViewer.getTree(), adapterFactory);
 
@@ -1158,12 +1175,14 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 					if (!editingDomain.getResourceSet().getResources().isEmpty()) {
 						// Select the root object in the view.
 						//
-						contentOutlineViewer.setSelection(new StructuredSelection(editingDomain.getResourceSet().getResources().get(0)), true);
+						contentOutlineViewer.setSelection(
+								new StructuredSelection(editingDomain.getResourceSet().getResources().get(0)), true);
 					}
 				}
 
 				@Override
-				public void makeContributions(IMenuManager menuManager, IToolBarManager toolBarManager, IStatusLineManager statusLineManager) {
+				public void makeContributions(IMenuManager menuManager, IToolBarManager toolBarManager,
+						IStatusLineManager statusLineManager) {
 					super.makeContributions(menuManager, toolBarManager, statusLineManager);
 					contentOutlineStatusLineManager = statusLineManager;
 				}
@@ -1290,7 +1309,8 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 				//
 				boolean first = true;
 				for (Resource resource : editingDomain.getResourceSet().getResources()) {
-					if ((first || !resource.getContents().isEmpty() || isPersisted(resource)) && !editingDomain.isReadOnly(resource)) {
+					if ((first || !resource.getContents().isEmpty() || isPersisted(resource))
+							&& !editingDomain.isReadOnly(resource)) {
 						try {
 							long timeStamp = resource.getTimeStamp();
 							resource.save(saveOptions);
@@ -1384,7 +1404,8 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 		(editingDomain.getResourceSet().getResources().get(0)).setURI(uri);
 		setInputWithNotify(editorInput);
 		setPartName(editorInput.getName());
-		IProgressMonitor progressMonitor = getActionBars().getStatusLineManager() != null ? getActionBars().getStatusLineManager().getProgressMonitor() : new NullProgressMonitor();
+		IProgressMonitor progressMonitor = getActionBars().getStatusLineManager() != null
+				? getActionBars().getStatusLineManager().getProgressMonitor() : new NullProgressMonitor();
 		doSave(progressMonitor);
 	}
 
@@ -1422,7 +1443,8 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 		setPartName(editorInput.getName());
 		site.setSelectionProvider(this);
 		site.getPage().addPartListener(partListener);
-		ResourcesPlugin.getWorkspace().addResourceChangeListener(resourceChangeListener, IResourceChangeEvent.POST_CHANGE);
+		ResourcesPlugin.getWorkspace().addResourceChangeListener(resourceChangeListener,
+				IResourceChangeEvent.POST_CHANGE);
 	}
 
 	/**
@@ -1482,7 +1504,8 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 	 * @generated
 	 */
 	public void setStatusLineManager(ISelection selection) {
-		IStatusLineManager statusLineManager = currentViewer != null && currentViewer == contentOutlineViewer ? contentOutlineStatusLineManager : getActionBars().getStatusLineManager();
+		IStatusLineManager statusLineManager = currentViewer != null && currentViewer == contentOutlineViewer
+				? contentOutlineStatusLineManager : getActionBars().getStatusLineManager();
 
 		if (statusLineManager != null) {
 			if (selection instanceof IStructuredSelection) {
@@ -1498,7 +1521,8 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 					break;
 				}
 				default: {
-					statusLineManager.setMessage(getString("_UI_MultiObjectSelected", Integer.toString(collection.size()))); //$NON-NLS-1$
+					statusLineManager
+							.setMessage(getString("_UI_MultiObjectSelected", Integer.toString(collection.size()))); //$NON-NLS-1$
 					break;
 				}
 				}
@@ -1586,7 +1610,7 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 		}
 		// Unregister this editor for ExtendedModel state
 		//
-		ModelExtensionHelper.getInstance((EObject) getEditingDomain().getResourceSet().getResources().get(0).getContents().get(0)).removeListener(this);
+		ModelExtensionHelper.getInstance(getEditingDomain().getResourceSet()).removeListener(this);
 
 		if (getActionBarContributor().getActiveEditor() == this) {
 			getActionBarContributor().setActiveEditor(null);

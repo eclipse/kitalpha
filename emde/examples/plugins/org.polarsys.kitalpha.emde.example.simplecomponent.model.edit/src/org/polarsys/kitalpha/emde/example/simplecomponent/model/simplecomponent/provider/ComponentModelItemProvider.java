@@ -35,7 +35,8 @@ import org.polarsys.kitalpha.emde.model.edit.provider.NewChildDescriptorHelper;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentModelItemProvider extends ComponentElementItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ComponentModelItemProvider extends ComponentElementItemProvider implements IEditingDomainItemProvider,
+		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -151,7 +152,9 @@ public class ComponentModelItemProvider extends ComponentElementItemProvider imp
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 		// begin-extension-code
 		{
-			CommandParameter commandParameter = createChildParameter(SimplecomponentPackage.Literals.COMPONENT_MODEL__ABSTRACT_COMPONENT, SimplecomponentFactory.eINSTANCE.createSoftwareComponent());
+			CommandParameter commandParameter = createChildParameter(
+					SimplecomponentPackage.Literals.COMPONENT_MODEL__ABSTRACT_COMPONENT,
+					SimplecomponentFactory.eINSTANCE.createSoftwareComponent());
 			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 				newChildDescriptors.add(commandParameter);
 			}
@@ -160,7 +163,9 @@ public class ComponentModelItemProvider extends ComponentElementItemProvider imp
 
 		// begin-extension-code
 		{
-			CommandParameter commandParameter = createChildParameter(SimplecomponentPackage.Literals.COMPONENT_MODEL__ABSTRACT_COMPONENT, SimplecomponentFactory.eINSTANCE.createHardwareComponent());
+			CommandParameter commandParameter = createChildParameter(
+					SimplecomponentPackage.Literals.COMPONENT_MODEL__ABSTRACT_COMPONENT,
+					SimplecomponentFactory.eINSTANCE.createHardwareComponent());
 			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 				newChildDescriptors.add(commandParameter);
 			}

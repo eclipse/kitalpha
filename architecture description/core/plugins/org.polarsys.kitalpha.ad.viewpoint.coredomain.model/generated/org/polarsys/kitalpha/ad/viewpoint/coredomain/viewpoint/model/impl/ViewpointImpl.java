@@ -491,10 +491,11 @@ public class ViewpointImpl extends NameElementImpl implements Viewpoint {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 
 	public Property getProperty(String id) {
+
 		if (getPropertySet() != null) {
 			// find Property inside the set
 			for (Property prop : getPropertySet().getNewProperties()) {
@@ -514,27 +515,31 @@ public class ViewpointImpl extends NameElementImpl implements Viewpoint {
 				return prop;
 		}
 		return null;
+
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 
 	public EList<Property> getProperties() {
+
 		BasicEList<Property> props = new BasicEList<Property>();
 		Map<String, Property> name2prop = new HashMap<String, Property>();
 		collectProperties(name2prop);
 		props.addAll(name2prop.values());
 		return props;
+
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 
 	public Service getService(String id) {
+
 		if (getServiceSet() != null) {
 			for (Service service : getServiceSet().getNewServices()) {
 				if (id.equals(service.getId()))
@@ -551,27 +556,31 @@ public class ViewpointImpl extends NameElementImpl implements Viewpoint {
 				return service;
 		}
 		return null;
+
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 
 	public EList<Service> getServices() {
+
 		BasicEList<Service> services = new BasicEList<Service>();
 		Map<String, Service> collector = new HashMap<String, Service>();
 		collectServices(collector);
 		services.addAll(collector.values());
 		return services;
+
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 
 	public Rule getRule(String id) {
+
 		if (getRuleSet() != null) {
 			// find rule inside the set
 			for (Rule rule : getRuleSet().getNewRules()) {
@@ -591,11 +600,12 @@ public class ViewpointImpl extends NameElementImpl implements Viewpoint {
 				return rule;
 		}
 		return null;
+
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 
 	public EList<Rule> getRules() {
@@ -605,14 +615,16 @@ public class ViewpointImpl extends NameElementImpl implements Viewpoint {
 		collectRules(collector);
 		rules.addAll(collector.values());
 		return rules;
+
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 
 	public Property getPropertyByName(String name) {
+
 		if (getPropertySet() != null) {
 			// find Property inside the set
 			for (Property prop : getPropertySet().getNewProperties()) {
@@ -632,17 +644,20 @@ public class ViewpointImpl extends NameElementImpl implements Viewpoint {
 				return prop;
 		}
 		return null;
+
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 
 	public EList<Viewpoint> getAllParents() {
+
 		EList<Viewpoint> result = new BasicEList<Viewpoint>();
 		collectParents(this, result);
 		return result;
+
 	}
 
 	/**

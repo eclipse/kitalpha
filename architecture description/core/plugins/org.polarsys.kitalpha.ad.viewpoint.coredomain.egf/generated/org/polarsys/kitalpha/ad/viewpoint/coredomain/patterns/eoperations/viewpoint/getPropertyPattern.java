@@ -1,4 +1,4 @@
-//Generated with EGF 1.2.0.v20140805-0858
+//Generated with EGF 1.4.1.v20161010-1704
 package org.polarsys.kitalpha.ad.viewpoint.coredomain.patterns.eoperations.viewpoint;
 
 import org.eclipse.egf.common.helper.*;
@@ -8,7 +8,8 @@ import org.eclipse.egf.model.pattern.*;
 import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 
-public class getPropertyPattern extends org.eclipse.egf.emf.pattern.model.call.Class.ClassimplementedGenOperationTODOoverride {
+public class getPropertyPattern
+		extends org.eclipse.egf.emf.pattern.model.call.Class.ClassimplementedGenOperationTODOoverride {
 	protected static String nl;
 
 	public static synchronized getPropertyPattern create(String lineSeparator) {
@@ -19,7 +20,15 @@ public class getPropertyPattern extends org.eclipse.egf.emf.pattern.model.call.C
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "\t\tif (getPropertySet() != null) {" + NL + "\t\t\t// find Property inside the set" + NL + "\t\t\tfor (Property prop : getPropertySet().getNewProperties()) {" + NL + "\t\t\t\tif (id.equals(prop.getId()))" + NL + "\t\t\t\t\treturn prop;" + NL + "\t\t\t}" + NL + "\t\t\t// if the Property is hidden return null" + NL + "\t\t\tfor (Property prop : getPropertySet().getHiddenProperties()) {" + NL + "\t\t\t\tif (id.equals(prop.getId()))" + NL + "\t\t\t\t\treturn null;" + NL + "\t\t\t}" + NL + "\t\t}" + NL + "\t\t// delegate to parents" + NL + "\t\tfor (Viewpoint vp : getParents()) {" + NL + "\t\t\tProperty prop = vp.getProperty(id);" + NL + "\t\t\tif (prop != null)" + NL + "\t\t\t\treturn prop;" + NL + "\t\t}" + NL + "\t\treturn null;";
+	protected final String TEXT_1 = "\t\tif (getPropertySet() != null) {" + NL + "\t\t\t// find Property inside the set"
+			+ NL + "\t\t\tfor (Property prop : getPropertySet().getNewProperties()) {" + NL
+			+ "\t\t\t\tif (id.equals(prop.getId()))" + NL + "\t\t\t\t\treturn prop;" + NL + "\t\t\t}" + NL
+			+ "\t\t\t// if the Property is hidden return null" + NL
+			+ "\t\t\tfor (Property prop : getPropertySet().getHiddenProperties()) {" + NL
+			+ "\t\t\t\tif (id.equals(prop.getId()))" + NL + "\t\t\t\t\treturn null;" + NL + "\t\t\t}" + NL + "\t\t}"
+			+ NL + "\t\t// delegate to parents" + NL + "\t\tfor (Viewpoint vp : getParents()) {" + NL
+			+ "\t\t\tProperty prop = vp.getProperty(id);" + NL + "\t\t\tif (prop != null)" + NL + "\t\t\t\treturn prop;"
+			+ NL + "\t\t}" + NL + "\t\treturn null;";
 	protected final String TEXT_2 = NL;
 	protected final String TEXT_3 = NL;
 
@@ -99,7 +108,8 @@ public class getPropertyPattern extends org.eclipse.egf.emf.pattern.model.call.C
 																this.positiveOperationOffsetCorrection = (java.lang.String) positiveOperationOffsetCorrectionParameter;
 
 																if (preCondition(ctx)) {
-																	ctx.setNode(new Node.Container(currentNode, getClass()));
+																	ctx.setNode(new Node.Container(currentNode,
+																			getClass()));
 																	orchestration(ctx);
 																}
 

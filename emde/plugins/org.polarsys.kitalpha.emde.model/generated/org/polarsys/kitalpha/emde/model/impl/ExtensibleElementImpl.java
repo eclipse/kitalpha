@@ -79,7 +79,8 @@ public abstract class ExtensibleElementImpl extends ElementImpl implements Exten
 	public EList<ElementExtension> getOwnedExtensions() {
 
 		if (ownedExtensions == null) {
-			ownedExtensions = new EObjectContainmentEList<ElementExtension>(ElementExtension.class, this, EmdePackage.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS);
+			ownedExtensions = new EObjectContainmentEList<ElementExtension>(ElementExtension.class, this,
+					EmdePackage.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS);
 		}
 		return ownedExtensions;
 	}

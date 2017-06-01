@@ -27,7 +27,8 @@ public interface SafetyFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	SafetyFactory eINSTANCE = org.polarsys.kitalpha.emde.example.simplecomponent.safety.model.safety.impl.SafetyFactoryImpl.init();
+	SafetyFactory eINSTANCE = org.polarsys.kitalpha.emde.example.simplecomponent.safety.model.safety.impl.SafetyFactoryImpl
+			.init();
 
 	/**
 	 * Returns a new object of class '<em>Simple VP Safety</em>'.

@@ -36,7 +36,7 @@ public class AfFactoryImpl extends EFactoryImpl implements AfFactory {
 	 */
 	public static AfFactory init() {
 		try {
-			AfFactory theAfFactory = (AfFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.polarsys.org/kitalpha/ad/af/1.0.0"); 
+			AfFactory theAfFactory = (AfFactory)EPackage.Registry.INSTANCE.getEFactory(AfPackage.eNS_URI);
 			if (theAfFactory != null) {
 				return theAfFactory;
 			}

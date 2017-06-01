@@ -15,10 +15,12 @@ Contributors:
 
 <plugin>
 
+
    <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated ViewpointActivityExplorer -->
       <package
             uri="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/viewpointactivityexplorer/1.0.0"
-            class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.ViewpointActivityExplorerPackage"
+            class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.ViewpointActivityExplorerPackage"
             genModel="model/ViewpointActivityExplorer.genmodel"/>
    </extension>
 

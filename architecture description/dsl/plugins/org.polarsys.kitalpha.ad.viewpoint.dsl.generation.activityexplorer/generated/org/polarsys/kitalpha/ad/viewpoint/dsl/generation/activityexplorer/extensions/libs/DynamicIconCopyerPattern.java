@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20160112-1239
+//Generated with EGF 1.4.1.v20161010-1704
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.extensions.libs;
 
 import org.eclipse.egf.common.helper.*;
@@ -48,7 +48,7 @@ public class DynamicIconCopyerPattern {
 		for (Object dynamicIconElementParameter : dynamicIconElementList) {
 			for (Object activityExplorerProjectNameParameter : activityExplorerProjectNameList) {
 
-				this.dynamicIconElement = (org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.DynamicIcon) dynamicIconElementParameter;
+				this.dynamicIconElement = (org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.DynamicIcon) dynamicIconElementParameter;
 				this.activityExplorerProjectName = (java.lang.String) activityExplorerProjectNameParameter;
 
 				if (preCondition(ctx)) {
@@ -94,10 +94,10 @@ public class DynamicIconCopyerPattern {
 		return null;
 	}
 
-	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.DynamicIcon dynamicIconElement = null;
+	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.DynamicIcon dynamicIconElement = null;
 
 	public void set_dynamicIconElement(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.ViewpointActivityExplorer.DynamicIcon object) {
+			org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.DynamicIcon object) {
 		this.dynamicIconElement = object;
 	}
 

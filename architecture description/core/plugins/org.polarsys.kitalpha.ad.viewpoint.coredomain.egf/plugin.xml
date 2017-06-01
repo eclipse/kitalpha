@@ -5,10 +5,10 @@
    <extension
          point="org.eclipse.egf.core.fcore">
       <fcore
-            id="model/AD Viewpoint.fcore">
+            id="model/AD_Viewpoint_Patterns.fcore">
       </fcore>
       <fcore
-            id="model/AD_Viewpoint_Patterns.fcore">
+            id="model/AD_Viewpoint.fcore">
       </fcore>
    </extension>
 

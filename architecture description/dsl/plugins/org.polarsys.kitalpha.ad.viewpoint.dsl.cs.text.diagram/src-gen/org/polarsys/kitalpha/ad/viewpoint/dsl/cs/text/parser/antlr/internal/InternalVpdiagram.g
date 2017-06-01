@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -104,7 +104,7 @@ ruleDiagrams returns [EObject current=null]
        			$current, 
        			"imports",
         		lv_imports_1_0, 
-        		"AbstractImport");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.AbstractImport");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -122,7 +122,7 @@ ruleDiagrams returns [EObject current=null]
        			$current, 
        			"diagrams",
         		lv_diagrams_2_0, 
-        		"Aspect");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Aspect");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -205,7 +205,7 @@ ruleImportNameSpace returns [EObject current=null]
        			$current, 
        			"importedNamespace",
         		lv_importedNamespace_1_0, 
-        		"FQN");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.FQN");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -252,7 +252,7 @@ ruleImportGroup returns [EObject current=null]
        			$current, 
        			"importedGroup",
         		lv_importedGroup_2_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -331,7 +331,7 @@ ruleDiagramSet returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"FQN");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.FQN");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -353,7 +353,7 @@ ruleDiagramSet returns [EObject current=null]
        			$current, 
        			"diagrams",
         		lv_diagrams_4_0, 
-        		"DiagramRepresentation");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.DiagramRepresentation");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -681,7 +681,7 @@ ruleDiagram returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -707,7 +707,7 @@ ruleDiagram returns [EObject current=null]
        			$current, 
        			"description",
         		lv_description_5_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -724,7 +724,7 @@ ruleDiagram returns [EObject current=null]
        			$current, 
        			"the_domain",
         		lv_the_domain_6_0, 
-        		"DomainContainer");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.DomainContainer");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -742,7 +742,7 @@ ruleDiagram returns [EObject current=null]
        			$current, 
        			"the_MappingSet",
         		lv_the_MappingSet_7_0, 
-        		"MappingSet");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.MappingSet");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -760,7 +760,7 @@ ruleDiagram returns [EObject current=null]
        			$current, 
        			"the_ActionSet",
         		lv_the_ActionSet_8_0, 
-        		"ActionSet");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ActionSet");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -814,7 +814,7 @@ ruleDiagramExtension returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -854,7 +854,7 @@ ruleDiagramExtension returns [EObject current=null]
        			$current, 
        			"the_MappingSet",
         		lv_the_MappingSet_6_0, 
-        		"MappingSet");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.MappingSet");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -872,7 +872,7 @@ ruleDiagramExtension returns [EObject current=null]
        			$current, 
        			"the_ActionSet",
         		lv_the_ActionSet_7_0, 
-        		"ActionSet");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ActionSet");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -890,7 +890,7 @@ ruleDiagramExtension returns [EObject current=null]
        			$current, 
        			"ownedCustomizations",
         		lv_ownedCustomizations_8_0, 
-        		"Customizations");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Customizations");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -947,7 +947,7 @@ ruleMappingSet returns [EObject current=null]
        			$current, 
        			"diagram_Elements",
         		lv_diagram_Elements_3_0, 
-        		"DiagramChildren");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.DiagramChildren");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1004,7 +1004,7 @@ ruleEdgeDescription returns [EObject current=null]
        			$current, 
        			"condition",
         		lv_condition_3_0, 
-        		"Condition");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Condition");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1030,7 +1030,7 @@ ruleEdgeDescription returns [EObject current=null]
        			$current, 
        			"begin_Label",
         		lv_begin_Label_6_0, 
-        		"Label");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Label");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1060,7 +1060,7 @@ ruleEdgeDescription returns [EObject current=null]
        			$current, 
        			"center_label",
         		lv_center_label_10_0, 
-        		"Label");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Label");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1090,7 +1090,7 @@ ruleEdgeDescription returns [EObject current=null]
        			$current, 
        			"end_label",
         		lv_end_label_14_0, 
-        		"Label");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Label");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1112,7 +1112,7 @@ ruleEdgeDescription returns [EObject current=null]
        			$current, 
        			"style",
         		lv_style_16_0, 
-        		"EdgeStyle");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.EdgeStyle");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1165,7 +1165,7 @@ ruleCondition returns [EObject current=null]
        			$current, 
        			"expression",
         		lv_expression_2_0, 
-        		"ForeignExpressionElement");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ForeignExpressionElement");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1222,7 +1222,7 @@ ruleEdgeStyle returns [EObject current=null]
        			$current, 
        			"lineStyle",
         		lv_lineStyle_4_0, 
-        		"LineStyle");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.LineStyle");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1244,7 +1244,7 @@ ruleEdgeStyle returns [EObject current=null]
        			$current, 
        			"beginDecorator",
         		lv_beginDecorator_6_0, 
-        		"EdgeArrows");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.EdgeArrows");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1266,7 +1266,7 @@ ruleEdgeStyle returns [EObject current=null]
        			$current, 
        			"endDecorator",
         		lv_endDecorator_8_0, 
-        		"EdgeArrows");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.EdgeArrows");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1288,7 +1288,7 @@ ruleEdgeStyle returns [EObject current=null]
        			$current, 
        			"color",
         		lv_color_10_0, 
-        		"SystemColors");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.SystemColors");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1341,7 +1341,7 @@ ruleContainer returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1386,7 +1386,7 @@ ruleContainer returns [EObject current=null]
        			$current, 
        			"the_domain",
         		lv_the_domain_7_0, 
-        		"NodeDomainElement");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.NodeDomainElement");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1408,7 +1408,7 @@ ruleContainer returns [EObject current=null]
        			$current, 
        			"contentLayout",
         		lv_contentLayout_9_0, 
-        		"ContainerLayout");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ContainerLayout");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1426,7 +1426,7 @@ ruleContainer returns [EObject current=null]
        			$current, 
        			"synchronizationMode",
         		lv_synchronizationMode_10_0, 
-        		"SynchronizationMode");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.SynchronizationMode");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1444,7 +1444,7 @@ ruleContainer returns [EObject current=null]
        			$current, 
        			"style",
         		lv_style_11_0, 
-        		"ContainerDescription");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ContainerDescription");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1462,7 +1462,7 @@ ruleContainer returns [EObject current=null]
        			$current, 
        			"children",
         		lv_children_12_0, 
-        		"ContainerChildren");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ContainerChildren");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1557,7 +1557,7 @@ ruleContainerChildren returns [EObject current=null]
        			$current, 
        			"owned_nodes",
         		lv_owned_nodes_7_0, 
-        		"AbstractNode");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.AbstractNode");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1606,7 +1606,7 @@ ruleNodeDomainElement returns [EObject current=null]
        			$current, 
        			"domain_Class",
         		lv_domain_Class_1_0, 
-        		"AbstractClass");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.AbstractClass");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1633,7 +1633,7 @@ ruleNodeDomainElement returns [EObject current=null]
        			$current, 
        			"query",
         		lv_query_4_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -1655,7 +1655,7 @@ ruleNodeDomainElement returns [EObject current=null]
        			$current, 
        			"chlidren_list",
         		lv_chlidren_list_6_0, 
-        		"AbstractAssociation2");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.AbstractAssociation2");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1708,7 +1708,7 @@ ruleContainerDescription returns [EObject current=null]
        			$current, 
        			"condition",
         		lv_condition_3_0, 
-        		"Condition");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Condition");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1734,7 +1734,7 @@ ruleContainerDescription returns [EObject current=null]
        			$current, 
        			"node_Label",
         		lv_node_Label_6_0, 
-        		"Label");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Label");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1765,7 +1765,7 @@ ruleContainerDescription returns [EObject current=null]
        			$current, 
        			"style",
         		lv_style_10_0, 
-        		"AbstractContainerStyle");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.AbstractContainerStyle");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1830,7 +1830,7 @@ ruleBasicStyle returns [EObject current=null]
        			$current, 
        			"borderColor",
         		lv_borderColor_4_0, 
-        		"SystemColors");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.SystemColors");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1852,7 +1852,7 @@ ruleBasicStyle returns [EObject current=null]
        			$current, 
        			"backgroundColor",
         		lv_backgroundColor_6_0, 
-        		"SystemColors");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.SystemColors");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1874,7 +1874,7 @@ ruleBasicStyle returns [EObject current=null]
        			$current, 
        			"form",
         		lv_form_8_0, 
-        		"Node_Form");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Node_Form");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1935,7 +1935,7 @@ ruleHistogramStyle returns [EObject current=null]
        			$current, 
        			"borderColor",
         		lv_borderColor_4_0, 
-        		"SystemColors");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.SystemColors");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1953,7 +1953,7 @@ ruleHistogramStyle returns [EObject current=null]
        			$current, 
        			"sections",
         		lv_sections_5_0, 
-        		"HistogramSection");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.HistogramSection");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2014,7 +2014,7 @@ ruleHistogramSection returns [EObject current=null]
        			$current, 
        			"backgroundColor",
         		lv_backgroundColor_4_0, 
-        		"SystemColors");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.SystemColors");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2036,7 +2036,7 @@ ruleHistogramSection returns [EObject current=null]
        			$current, 
        			"forgroundColor",
         		lv_forgroundColor_6_0, 
-        		"SystemColors");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.SystemColors");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2058,7 +2058,7 @@ ruleHistogramSection returns [EObject current=null]
        			$current, 
        			"minValue",
         		lv_minValue_8_0, 
-        		"ForeignExpressionElement");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ForeignExpressionElement");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2080,7 +2080,7 @@ ruleHistogramSection returns [EObject current=null]
        			$current, 
        			"value",
         		lv_value_10_0, 
-        		"ForeignExpressionElement");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ForeignExpressionElement");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2102,7 +2102,7 @@ ruleHistogramSection returns [EObject current=null]
        			$current, 
        			"maxValue",
         		lv_maxValue_12_0, 
-        		"ForeignExpressionElement");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ForeignExpressionElement");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2163,7 +2163,7 @@ ruleImageStyle returns [EObject current=null]
        			$current, 
        			"borderColor",
         		lv_borderColor_4_0, 
-        		"SystemColors");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.SystemColors");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2186,7 +2186,7 @@ ruleImageStyle returns [EObject current=null]
        			$current, 
        			"imagePath",
         		lv_imagePath_6_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -2246,7 +2246,7 @@ ruleFlatStyle returns [EObject current=null]
        			$current, 
        			"borderColor",
         		lv_borderColor_4_0, 
-        		"SystemColors");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.SystemColors");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2268,7 +2268,7 @@ ruleFlatStyle returns [EObject current=null]
        			$current, 
        			"backgroundStyle",
         		lv_backgroundStyle_6_0, 
-        		"BackgroundStyle");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.BackgroundStyle");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2286,7 +2286,7 @@ ruleFlatStyle returns [EObject current=null]
        			$current, 
        			"backgroundColor",
         		lv_backgroundColor_7_0, 
-        		"SystemColors");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.SystemColors");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2308,7 +2308,7 @@ ruleFlatStyle returns [EObject current=null]
        			$current, 
        			"forgroundColor",
         		lv_forgroundColor_9_0, 
-        		"SystemColors");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.SystemColors");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2361,7 +2361,7 @@ ruleLabel returns [EObject current=null]
        			$current, 
        			"value",
         		lv_value_2_0, 
-        		"Expression");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Expression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2413,7 +2413,7 @@ ruleLabel returns [EObject current=null]
        			$current, 
        			"color",
         		lv_color_6_0, 
-        		"SystemColors");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.SystemColors");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2431,7 +2431,7 @@ ruleLabel returns [EObject current=null]
        			$current, 
        			"size",
         		lv_size_7_0, 
-        		"EInt");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EInt");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2480,7 +2480,7 @@ ruleNode returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2525,7 +2525,7 @@ ruleNode returns [EObject current=null]
        			$current, 
        			"the_domain",
         		lv_the_domain_7_0, 
-        		"NodeDomainElement");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.NodeDomainElement");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2543,7 +2543,7 @@ ruleNode returns [EObject current=null]
        			$current, 
        			"synchronizationMode",
         		lv_synchronizationMode_8_0, 
-        		"SynchronizationMode");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.SynchronizationMode");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2561,7 +2561,7 @@ ruleNode returns [EObject current=null]
        			$current, 
        			"style",
         		lv_style_9_0, 
-        		"NodeDescription");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.NodeDescription");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2579,7 +2579,7 @@ ruleNode returns [EObject current=null]
        			$current, 
        			"children",
         		lv_children_10_0, 
-        		"NodeChildren");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.NodeChildren");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2674,7 +2674,7 @@ ruleNodeChildren returns [EObject current=null]
        			$current, 
        			"owned_boderednodes",
         		lv_owned_boderednodes_7_0, 
-        		"BorderedNode");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.BorderedNode");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2727,7 +2727,7 @@ ruleBorderedNode returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2772,7 +2772,7 @@ ruleBorderedNode returns [EObject current=null]
        			$current, 
        			"the_domain",
         		lv_the_domain_7_0, 
-        		"NodeDomainElement");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.NodeDomainElement");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2790,7 +2790,7 @@ ruleBorderedNode returns [EObject current=null]
        			$current, 
        			"synchronizationMode",
         		lv_synchronizationMode_8_0, 
-        		"SynchronizationMode");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.SynchronizationMode");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2808,7 +2808,7 @@ ruleBorderedNode returns [EObject current=null]
        			$current, 
        			"style",
         		lv_style_9_0, 
-        		"NodeDescription");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.NodeDescription");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2865,7 +2865,7 @@ ruleNodeDescription returns [EObject current=null]
        			$current, 
        			"condition",
         		lv_condition_3_0, 
-        		"Condition");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Condition");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2891,7 +2891,7 @@ ruleNodeDescription returns [EObject current=null]
        			$current, 
        			"node_Label",
         		lv_node_Label_6_0, 
-        		"Label");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Label");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2913,7 +2913,7 @@ ruleNodeDescription returns [EObject current=null]
        			$current, 
        			"label_position",
         		lv_label_position_8_0, 
-        		"LabelPosition");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.LabelPosition");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2935,7 +2935,7 @@ ruleNodeDescription returns [EObject current=null]
        			$current, 
        			"label_alignement",
         		lv_label_alignement_10_0, 
-        		"LabelAlignment");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.LabelAlignment");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2965,7 +2965,7 @@ ruleNodeDescription returns [EObject current=null]
        			$current, 
        			"style",
         		lv_style_14_0, 
-        		"AbstractNodeStyle");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.AbstractNodeStyle");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3026,7 +3026,7 @@ ruleActionSet returns [EObject current=null]
        			$current, 
        			"actions",
         		lv_actions_3_0, 
-        		"Action");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Action");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3044,7 +3044,7 @@ ruleActionSet returns [EObject current=null]
        			$current, 
        			"openActions",
         		lv_openActions_4_0, 
-        		"OpenAction");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.OpenAction");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3097,7 +3097,7 @@ ruleOpenAction returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3123,7 +3123,7 @@ ruleOpenAction returns [EObject current=null]
        			$current, 
        			"precondition",
         		lv_precondition_5_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3146,7 +3146,7 @@ ruleOpenAction returns [EObject current=null]
        			$current, 
        			"label",
         		lv_label_7_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -3168,7 +3168,7 @@ ruleOpenAction returns [EObject current=null]
        			$current, 
        			"icon",
         		lv_icon_9_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -3280,7 +3280,7 @@ ruleCreate returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3306,7 +3306,7 @@ ruleCreate returns [EObject current=null]
        			$current, 
        			"precondition",
         		lv_precondition_5_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3329,7 +3329,7 @@ ruleCreate returns [EObject current=null]
        			$current, 
        			"label",
         		lv_label_7_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -3385,7 +3385,7 @@ ruleCreate returns [EObject current=null]
        			$current, 
        			"icon",
         		lv_icon_12_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -3437,7 +3437,7 @@ ruleDelete returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3463,7 +3463,7 @@ ruleDelete returns [EObject current=null]
        			$current, 
        			"precondition",
         		lv_precondition_5_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3486,7 +3486,7 @@ ruleDelete returns [EObject current=null]
        			$current, 
        			"label",
         		lv_label_7_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -3557,7 +3557,7 @@ ruleDrop returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3583,7 +3583,7 @@ ruleDrop returns [EObject current=null]
        			$current, 
        			"precondition",
         		lv_precondition_5_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3606,7 +3606,7 @@ ruleDrop returns [EObject current=null]
        			$current, 
        			"label",
         		lv_label_7_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -3677,7 +3677,7 @@ ruleReconnectEdge returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3703,7 +3703,7 @@ ruleReconnectEdge returns [EObject current=null]
        			$current, 
        			"precondition",
         		lv_precondition_5_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3726,7 +3726,7 @@ ruleReconnectEdge returns [EObject current=null]
        			$current, 
        			"label",
         		lv_label_7_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -3797,7 +3797,7 @@ ruleDomainContainer returns [EObject current=null]
        			$current, 
        			"the_domain",
         		lv_the_domain_2_0, 
-        		"AbstractClass");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.AbstractClass");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3846,7 +3846,7 @@ ruleEdge returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3872,7 +3872,7 @@ ruleEdge returns [EObject current=null]
        			$current, 
        			"the_domain",
         		lv_the_domain_5_0, 
-        		"EdgeDomainAssociation");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.EdgeDomainAssociation");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3895,7 +3895,7 @@ ruleEdge returns [EObject current=null]
        			$current, 
        			"the_domain",
         		lv_the_domain_7_0, 
-        		"EdgeDomainElement");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.EdgeDomainElement");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3913,7 +3913,7 @@ ruleEdge returns [EObject current=null]
        			$current, 
        			"synchronizationMode",
         		lv_synchronizationMode_8_0, 
-        		"SynchronizationMode");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.SynchronizationMode");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4007,7 +4007,7 @@ ruleEdge returns [EObject current=null]
        			$current, 
        			"e_description",
         		lv_e_description_17_0, 
-        		"EdgeDescription");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.EdgeDescription");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4060,7 +4060,7 @@ ruleEdgeImport returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4101,7 +4101,7 @@ ruleEdgeImport returns [EObject current=null]
        			$current, 
        			"synchronizationMode",
         		lv_synchronizationMode_6_0, 
-        		"SynchronizationMode");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.SynchronizationMode");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4119,7 +4119,7 @@ ruleEdgeImport returns [EObject current=null]
        			$current, 
        			"e_description",
         		lv_e_description_7_0, 
-        		"EdgeDescription");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.EdgeDescription");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4173,7 +4173,7 @@ ruleEdgeDomainAssociation returns [EObject current=null]
        			$current, 
        			"target_query",
         		lv_target_query_2_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -4191,7 +4191,7 @@ ruleEdgeDomainAssociation returns [EObject current=null]
        			$current, 
        			"target_Locator",
         		lv_target_Locator_3_0, 
-        		"AbstractAssociation2");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.AbstractAssociation2");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4236,7 +4236,7 @@ ruleEdgeDomainElement returns [EObject current=null]
        			$current, 
        			"the_Domain",
         		lv_the_Domain_1_0, 
-        		"AbstractClass");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.AbstractClass");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4259,7 +4259,7 @@ ruleEdgeDomainElement returns [EObject current=null]
        			$current, 
        			"target_query",
         		lv_target_query_3_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -4281,7 +4281,7 @@ ruleEdgeDomainElement returns [EObject current=null]
        			$current, 
        			"target_Locator",
         		lv_target_Locator_5_0, 
-        		"AbstractAssociation2");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.AbstractAssociation2");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4304,7 +4304,7 @@ ruleEdgeDomainElement returns [EObject current=null]
        			$current, 
        			"source_query",
         		lv_source_query_7_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )
@@ -4326,7 +4326,7 @@ ruleEdgeDomainElement returns [EObject current=null]
        			$current, 
        			"source_Locator",
         		lv_source_Locator_9_0, 
-        		"AbstractAssociation2");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.AbstractAssociation2");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4379,7 +4379,7 @@ ruleCustomizations returns [EObject current=null]
        			$current, 
        			"ownedCustomizationDescriptions",
         		lv_ownedCustomizationDescriptions_3_0, 
-        		"StyleCustomizationDescriptions");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.StyleCustomizationDescriptions");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4397,7 +4397,7 @@ ruleCustomizations returns [EObject current=null]
        			$current, 
        			"ownedCustomizationDescriptions",
         		lv_ownedCustomizationDescriptions_4_0, 
-        		"StyleCustomizationDescriptions");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.StyleCustomizationDescriptions");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4415,7 +4415,7 @@ ruleCustomizations returns [EObject current=null]
        			$current, 
        			"ownedCustomizationReuse",
         		lv_ownedCustomizationReuse_5_0, 
-        		"StyleCustomizationReuse");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.StyleCustomizationReuse");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4433,7 +4433,7 @@ ruleCustomizations returns [EObject current=null]
        			$current, 
        			"ownedCustomizationReuse",
         		lv_ownedCustomizationReuse_6_0, 
-        		"StyleCustomizationReuse");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.StyleCustomizationReuse");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4487,7 +4487,7 @@ ruleStyleCustomizationDescriptions returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"ID");
+        		"org.eclipse.xtext.common.Terminals.ID");
 	    }
 
 )
@@ -4512,7 +4512,7 @@ ruleStyleCustomizationDescriptions returns [EObject current=null]
        			$current, 
        			"precondtionExpression",
         		lv_precondtionExpression_5_0, 
-        		"CustomizationExpression");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.CustomizationExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4542,7 +4542,7 @@ ruleStyleCustomizationDescriptions returns [EObject current=null]
        			$current, 
        			"ownedCustomizations",
         		lv_ownedCustomizations_9_0, 
-        		"AbstractCustomization");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.AbstractCustomization");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4560,7 +4560,7 @@ ruleStyleCustomizationDescriptions returns [EObject current=null]
        			$current, 
        			"ownedCustomizations",
         		lv_ownedCustomizations_10_0, 
-        		"AbstractCustomization");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.AbstractCustomization");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4723,7 +4723,7 @@ ruleEdgeStyleCustomization returns [EObject current=null]
        			$current, 
        			"applyonAll",
         		lv_applyonAll_10_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4749,7 +4749,7 @@ ruleEdgeStyleCustomization returns [EObject current=null]
        			$current, 
        			"sourceArrow",
         		lv_sourceArrow_13_0, 
-        		"EdgeArrows");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.EdgeArrows");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4775,7 +4775,7 @@ ruleEdgeStyleCustomization returns [EObject current=null]
        			$current, 
        			"targetArrow",
         		lv_targetArrow_16_0, 
-        		"EdgeArrows");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.EdgeArrows");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4801,7 +4801,7 @@ ruleEdgeStyleCustomization returns [EObject current=null]
        			$current, 
        			"routingStyle",
         		lv_routingStyle_19_0, 
-        		"EdgeRouting");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.EdgeRouting");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4827,7 +4827,7 @@ ruleEdgeStyleCustomization returns [EObject current=null]
        			$current, 
        			"foldingStyle",
         		lv_foldingStyle_22_0, 
-        		"FoldingStyle");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.FoldingStyle");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -4992,7 +4992,7 @@ ruleEdgeStyleCustomization returns [EObject current=null]
        			$current, 
        			"lineStyle",
         		lv_lineStyle_44_0, 
-        		"LineStyle");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.LineStyle");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5018,7 +5018,7 @@ ruleEdgeStyleCustomization returns [EObject current=null]
        			$current, 
        			"sizeComputationExpression",
         		lv_sizeComputationExpression_47_0, 
-        		"CustomizationExpression");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.CustomizationExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5044,7 +5044,7 @@ ruleEdgeStyleCustomization returns [EObject current=null]
        			$current, 
        			"endCentering",
         		lv_endCentering_50_0, 
-        		"CenterStyle");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.CenterStyle");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5097,7 +5097,7 @@ ruleColorCustomization returns [EObject current=null]
        			$current, 
        			"colorUseCase",
         		lv_colorUseCase_2_0, 
-        		"ColorUseCase");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ColorUseCase");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5172,7 +5172,7 @@ ruleColorCustomization returns [EObject current=null]
        			$current, 
        			"color",
         		lv_color_10_0, 
-        		"SystemColors");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.SystemColors");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5271,7 +5271,7 @@ ruleLabelCustomization returns [EObject current=null]
        			$current, 
        			"applyonAll",
         		lv_applyonAll_10_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5289,7 +5289,7 @@ ruleLabelCustomization returns [EObject current=null]
        			$current, 
        			"ownedLabelAlignment",
         		lv_ownedLabelAlignment_11_0, 
-        		"LabelAlignementCustomization");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.LabelAlignementCustomization");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5315,7 +5315,7 @@ ruleLabelCustomization returns [EObject current=null]
        			$current, 
        			"size",
         		lv_size_14_0, 
-        		"EInt");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EInt");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5341,7 +5341,7 @@ ruleLabelCustomization returns [EObject current=null]
        			$current, 
        			"format",
         		lv_format_17_0, 
-        		"FontFormat");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.FontFormat");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5367,7 +5367,7 @@ ruleLabelCustomization returns [EObject current=null]
        			$current, 
        			"color",
         		lv_color_20_0, 
-        		"SystemColors");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.SystemColors");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5401,7 +5401,7 @@ ruleLabelCustomization returns [EObject current=null]
        			$current, 
        			"showIcon",
         		lv_showIcon_25_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5427,7 +5427,7 @@ ruleLabelCustomization returns [EObject current=null]
        			$current, 
        			"iconPath",
         		lv_iconPath_28_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5457,7 +5457,7 @@ ruleLabelCustomization returns [EObject current=null]
        			$current, 
        			"expression",
         		lv_expression_32_0, 
-        		"CustomizationExpression");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.CustomizationExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5514,7 +5514,7 @@ ruleLabelAlignementCustomization returns [EObject current=null]
        			$current, 
        			"alignment",
         		lv_alignment_3_0, 
-        		"LabelAlignment");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.LabelAlignment");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5653,7 +5653,7 @@ ruleContainerStyleCustomization returns [EObject current=null]
        			$current, 
        			"applyonAll",
         		lv_applyonAll_10_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5679,7 +5679,7 @@ ruleContainerStyleCustomization returns [EObject current=null]
        			$current, 
        			"arcWith",
         		lv_arcWith_13_0, 
-        		"EInt");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EInt");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5705,7 +5705,7 @@ ruleContainerStyleCustomization returns [EObject current=null]
        			$current, 
        			"arcHeight",
         		lv_arcHeight_16_0, 
-        		"EInt");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EInt");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5731,7 +5731,7 @@ ruleContainerStyleCustomization returns [EObject current=null]
        			$current, 
        			"roundedCorner",
         		lv_roundedCorner_19_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5757,7 +5757,7 @@ ruleContainerStyleCustomization returns [EObject current=null]
        			$current, 
        			"tooltipExpression",
         		lv_tooltipExpression_22_0, 
-        		"CustomizationExpression");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.CustomizationExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5783,7 +5783,7 @@ ruleContainerStyleCustomization returns [EObject current=null]
        			$current, 
        			"borderSizeComputationExpression",
         		lv_borderSizeComputationExpression_25_0, 
-        		"CustomizationExpression");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.CustomizationExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5801,7 +5801,7 @@ ruleContainerStyleCustomization returns [EObject current=null]
        			$current, 
        			"ownedSpecificContainerStyleCustomization",
         		lv_ownedSpecificContainerStyleCustomization_26_0, 
-        		"SpecificContainerStyleCustomization");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.SpecificContainerStyleCustomization");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5908,7 +5908,7 @@ ruleContainerWorkspaceImageCustomization returns [EObject current=null]
        			$current, 
        			"workspacePath",
         		lv_workspacePath_3_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5961,7 +5961,7 @@ ruleFlatContainerStyleCustomization returns [EObject current=null]
        			$current, 
        			"backgroundStyle",
         		lv_backgroundStyle_3_0, 
-        		"BackgroundStyle");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.BackgroundStyle");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6014,7 +6014,7 @@ ruleShapeContainerStyleCustomization returns [EObject current=null]
        			$current, 
        			"shape",
         		lv_shape_3_0, 
-        		"ContainerShape");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ContainerShape");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6113,7 +6113,7 @@ ruleNodeStyleCustomization returns [EObject current=null]
        			$current, 
        			"applyonAll",
         		lv_applyonAll_10_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6139,7 +6139,7 @@ ruleNodeStyleCustomization returns [EObject current=null]
        			$current, 
        			"labelPosition",
         		lv_labelPosition_13_0, 
-        		"LabelPosition");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.LabelPosition");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6165,7 +6165,7 @@ ruleNodeStyleCustomization returns [EObject current=null]
        			$current, 
        			"hideLabelByDefault",
         		lv_hideLabelByDefault_16_0, 
-        		"EBoolean");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6191,7 +6191,7 @@ ruleNodeStyleCustomization returns [EObject current=null]
        			$current, 
        			"resizeKind",
         		lv_resizeKind_19_0, 
-        		"ResizeKind");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ResizeKind");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6217,7 +6217,7 @@ ruleNodeStyleCustomization returns [EObject current=null]
        			$current, 
        			"tooltipExpression",
         		lv_tooltipExpression_22_0, 
-        		"CustomizationExpression");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.CustomizationExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6243,7 +6243,7 @@ ruleNodeStyleCustomization returns [EObject current=null]
        			$current, 
        			"borderSizeComputationExpression",
         		lv_borderSizeComputationExpression_25_0, 
-        		"CustomizationExpression");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.CustomizationExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6269,7 +6269,7 @@ ruleNodeStyleCustomization returns [EObject current=null]
        			$current, 
        			"sizeComputationExpression",
         		lv_sizeComputationExpression_28_0, 
-        		"CustomizationExpression");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.CustomizationExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6287,7 +6287,7 @@ ruleNodeStyleCustomization returns [EObject current=null]
        			$current, 
        			"ownedSpecificNodeStyleCustomization",
         		lv_ownedSpecificNodeStyleCustomization_29_0, 
-        		"SpecificNodeStyleCustomization");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.SpecificNodeStyleCustomization");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6434,7 +6434,7 @@ ruleBundledImageCustomization returns [EObject current=null]
        			$current, 
        			"shape",
         		lv_shape_3_0, 
-        		"BundledImageShape");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.BundledImageShape");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6499,7 +6499,7 @@ ruleLozengeCustomization returns [EObject current=null]
        			$current, 
        			"widthComputationExpression",
         		lv_widthComputationExpression_6_0, 
-        		"CustomizationExpression");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.CustomizationExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6525,7 +6525,7 @@ ruleLozengeCustomization returns [EObject current=null]
        			$current, 
        			"heightComputationExpression",
         		lv_heightComputationExpression_9_0, 
-        		"CustomizationExpression");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.CustomizationExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6582,7 +6582,7 @@ ruleGaugeCustomization returns [EObject current=null]
        			$current, 
        			"alignement",
         		lv_alignement_3_0, 
-        		"AlignmentKind");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.AlignmentKind");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6647,7 +6647,7 @@ ruleEllipseCustomization returns [EObject current=null]
        			$current, 
        			"horizontalDiameterComputationExpression",
         		lv_horizontalDiameterComputationExpression_6_0, 
-        		"CustomizationExpression");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.CustomizationExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6673,7 +6673,7 @@ ruleEllipseCustomization returns [EObject current=null]
        			$current, 
        			"verticalDiameterComputationExpression",
         		lv_verticalDiameterComputationExpression_9_0, 
-        		"CustomizationExpression");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.CustomizationExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6730,7 +6730,7 @@ ruleNodeWorkspaceImageCustomization returns [EObject current=null]
        			$current, 
        			"workspacePath",
         		lv_workspacePath_3_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6795,7 +6795,7 @@ ruleSquareCustomization returns [EObject current=null]
        			$current, 
        			"width",
         		lv_width_6_0, 
-        		"EInt");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EInt");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6821,7 +6821,7 @@ ruleSquareCustomization returns [EObject current=null]
        			$current, 
        			"height",
         		lv_height_9_0, 
-        		"EInt");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EInt");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -6878,7 +6878,7 @@ ruleDotCustomization returns [EObject current=null]
        			$current, 
        			"strokeSizeComputationExpression",
         		lv_strokeSizeComputationExpression_3_0, 
-        		"CustomizationExpression");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.CustomizationExpression");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -7018,7 +7018,7 @@ ruleCustomizationExpression returns [EObject current=null]
        			$current, 
        			"ownedExpressionElement",
         		lv_ownedExpressionElement_1_0, 
-        		"AbstractComputableElement");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.AbstractComputableElement");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -7409,7 +7409,7 @@ ruleExpression returns [EObject current=null]
        			$current, 
        			"expressionElements",
         		lv_expressionElements_1_0, 
-        		"ExpressionElement");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ExpressionElement");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -7431,7 +7431,7 @@ ruleExpression returns [EObject current=null]
        			$current, 
        			"expressionElements",
         		lv_expressionElements_3_0, 
-        		"ExpressionElement");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ExpressionElement");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -7600,7 +7600,7 @@ ruleJavaElement returns [EObject current=null]
        			$current, 
        			"method",
         		lv_method_2_0, 
-        		"FQN");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.FQN");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -7688,7 +7688,7 @@ ruleStringElement returns [EObject current=null]
        			$current, 
        			"value",
         		lv_value_1_0, 
-        		"STRING");
+        		"org.eclipse.xtext.common.Terminals.STRING");
 	    }
 
 )

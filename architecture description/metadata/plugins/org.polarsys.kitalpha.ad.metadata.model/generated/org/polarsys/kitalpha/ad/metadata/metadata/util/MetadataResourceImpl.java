@@ -17,7 +17,6 @@
 package org.polarsys.kitalpha.ad.metadata.metadata.util;
 
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 
 /**

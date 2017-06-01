@@ -20,11 +20,11 @@ import org.polarsys.kitalpha.emde.model.ElementExtension;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.emde.example.simplecomponent.safety.model.safety.SimpleVPSafety#getComplexity <em>Complexity</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.emde.example.simplecomponent.safety.model.safety.SimpleVPSafety#getCost <em>Cost</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.emde.example.simplecomponent.safety.model.safety.SafetyPackage#getSimpleVPSafety()
  * @model annotation="http://www.polarsys.org/kitalpha/emde/1.0.0/constraint ExtendedElement='http://www.polarsys.org/kitalpha/emde/example/simplecomponent#//AbstractComponent '"
@@ -34,7 +34,7 @@ public interface SimpleVPSafety extends ComponentElement, ElementExtension {
 
 	/**
 	 * Returns the value of the '<em><b>Complexity</b></em>' attribute.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Complexity</em>' attribute isn't clear,
@@ -52,7 +52,7 @@ public interface SimpleVPSafety extends ComponentElement, ElementExtension {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.emde.example.simplecomponent.safety.model.safety.SimpleVPSafety#getComplexity <em>Complexity</em>}' attribute.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Complexity</em>' attribute.
@@ -64,7 +64,7 @@ public interface SimpleVPSafety extends ComponentElement, ElementExtension {
 
 	/**
 	 * Returns the value of the '<em><b>Cost</b></em>' attribute.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Cost</em>' attribute isn't clear,
@@ -82,7 +82,7 @@ public interface SimpleVPSafety extends ComponentElement, ElementExtension {
 
 	/**
 	 * Sets the value of the '{@link org.polarsys.kitalpha.emde.example.simplecomponent.safety.model.safety.SimpleVPSafety#getCost <em>Cost</em>}' attribute.
-
+	
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Cost</em>' attribute.

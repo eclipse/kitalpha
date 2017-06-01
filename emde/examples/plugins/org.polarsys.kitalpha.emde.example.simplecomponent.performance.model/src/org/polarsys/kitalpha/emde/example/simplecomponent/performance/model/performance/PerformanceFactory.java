@@ -27,7 +27,8 @@ public interface PerformanceFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	PerformanceFactory eINSTANCE = org.polarsys.kitalpha.emde.example.simplecomponent.performance.model.performance.impl.PerformanceFactoryImpl.init();
+	PerformanceFactory eINSTANCE = org.polarsys.kitalpha.emde.example.simplecomponent.performance.model.performance.impl.PerformanceFactoryImpl
+			.init();
 
 	/**
 	 * Returns a new object of class '<em>Simple VP Performance</em>'.

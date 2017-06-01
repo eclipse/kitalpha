@@ -162,11 +162,24 @@ public class DiagramsItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
+				newChildDescriptors.add
+					(createChildParameter
+						(DiagramPackage.Literals.DIAGRAMS__IMPORTS,
+						 DiagramFactory.eINSTANCE.createAbstractImport()));
 
-		newChildDescriptors.add
-			(createChildParameter
-				(DiagramPackage.Literals.DIAGRAMS__IMPORTS,
-				 DiagramFactory.eINSTANCE.createImportNameSpace()));
+
+
+				newChildDescriptors.add
+					(createChildParameter
+						(DiagramPackage.Literals.DIAGRAMS__IMPORTS,
+						 DiagramFactory.eINSTANCE.createImportNameSpace()));
+
+
+
+				newChildDescriptors.add
+					(createChildParameter
+						(DiagramPackage.Literals.DIAGRAMS__IMPORTS,
+						 DiagramFactory.eINSTANCE.createImportGroup()));
 
 
 	}

@@ -23,10 +23,10 @@ import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.af.coredomain.af.model.AF#getViewpoints <em>Viewpoints</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.af.coredomain.af.model.AfPackage#getAF()
  * @model
