@@ -1,4 +1,4 @@
-//Generated with EGF 1.4.1.v20161010-1704
+//Generated with EGF 1.5.0.v20170223-0952
 package org.polarsys.kitalpha.emde.egf.model;
 
 import org.eclipse.egf.emf.pattern.base.*;
@@ -99,8 +99,6 @@ public class PluginProperties extends org.eclipse.egf.emf.pattern.model.PluginPr
 	protected void method_doGenerate(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		/**
-		 * <copyright>
-		 *
 		 * Copyright (c) 2002-2004 IBM Corporation and others.
 		 * All rights reserved.   This program and the accompanying materials
 		 * are made available under the terms of the Eclipse Public License v1.0
@@ -109,8 +107,6 @@ public class PluginProperties extends org.eclipse.egf.emf.pattern.model.PluginPr
 		 * 
 		 * Contributors: 
 		 *   IBM - Initial API and implementation
-		 *
-		 * </copyright>
 		 */
 
 		GenModel genModel = (GenModel) argument;

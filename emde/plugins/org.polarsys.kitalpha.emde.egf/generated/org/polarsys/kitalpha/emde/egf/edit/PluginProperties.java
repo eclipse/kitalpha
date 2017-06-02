@@ -1,4 +1,4 @@
-//Generated with EGF 1.4.1.v20161010-1704
+//Generated with EGF 1.5.0.v20170223-0952
 package org.polarsys.kitalpha.emde.egf.edit;
 
 import org.polarsys.kitalpha.emde.egf.utils.*;
@@ -29,7 +29,7 @@ public class PluginProperties extends org.eclipse.egf.emf.pattern.edit.PluginPro
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
 	protected final String TEXT_1 = "";
 	protected final String TEXT_2 = NL + NL + "pluginName = eMDE Extension for ";
-	protected final String TEXT_3 = " Edit" + NL + "providerName = www.polarsys.org" + NL;
+	protected final String TEXT_3 = " Edit" + NL + "providerName = www.polarsys.org";
 	protected final String TEXT_4 = NL + "_UI_CreateChild_text = {0}" + NL + "_UI_CreateChild_text2 = {1} ";
 	protected final String TEXT_5 = "| ";
 	protected final String TEXT_6 = "{0}" + NL + "_UI_CreateChild_text3 = {1}" + NL
@@ -121,8 +121,6 @@ public class PluginProperties extends org.eclipse.egf.emf.pattern.edit.PluginPro
 	protected void method_doGenerate(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		/**
-		 * <copyright>
-		 *
 		 * Copyright (c) 2002-2007 IBM Corporation and others.
 		 * All rights reserved.   This program and the accompanying materials
 		 * are made available under the terms of the Eclipse Public License v1.0
@@ -131,8 +129,6 @@ public class PluginProperties extends org.eclipse.egf.emf.pattern.edit.PluginPro
 		 * 
 		 * Contributors: 
 		 *   IBM - Initial API and implementation
-		 *
-		 * </copyright>
 		 */
 
 		GenModel genModel = (GenModel) argument;
@@ -156,62 +152,64 @@ public class PluginProperties extends org.eclipse.egf.emf.pattern.edit.PluginPro
 		stringBuffer.append(TEXT_2);
 		stringBuffer.append(genModel.getModelName());
 		stringBuffer.append(TEXT_3);
-		if (genModel.isCreationCommands()) {
-			stringBuffer.append(TEXT_4);
-			if (genModel.isCreationSubmenus()) {
-				stringBuffer.append(TEXT_5);
-			}
-			stringBuffer.append(TEXT_6);
-		}
-		stringBuffer.append(TEXT_7);
-		for (GenPackage genPackage : genModel.getAllGenAndUsedGenPackagesWithClassifiers()) {
-			if (genPackage.getGenModel() == genModel || !genPackage.getGenModel().hasEditSupport()) {
-				for (GenClass genClass : genPackage.getGenClasses()) {
-					stringBuffer.append(TEXT_8);
-					stringBuffer.append(genClass.getName());
-					stringBuffer.append(TEXT_9);
-					stringBuffer.append(genClass.getFormattedName());
+		if (genModel.getRuntimePlatform() != GenRuntimePlatform.GWT) {
+			if (genModel.isCreationCommands()) {
+				stringBuffer.append(TEXT_4);
+				if (genModel.isCreationSubmenus()) {
+					stringBuffer.append(TEXT_5);
 				}
+				stringBuffer.append(TEXT_6);
 			}
-		}
-		stringBuffer.append(TEXT_10);
-		for (GenFeature genFeature : genModel.getFilteredAllGenFeatures()) {
-			String description = genFeature.getPropertyDescription();
-			stringBuffer.append(TEXT_11);
-			stringBuffer.append(genFeature.getGenClass().getName());
-			stringBuffer.append(TEXT_12);
-			stringBuffer.append(genFeature.getName());
-			stringBuffer.append(TEXT_13);
-			stringBuffer.append(genFeature.getFormattedName());
-			if (description != null && description.length() > 0) {
-				stringBuffer.append(TEXT_14);
-				stringBuffer.append(genFeature.getGenClass().getName());
-				stringBuffer.append(TEXT_15);
-				stringBuffer.append(genFeature.getName());
-				stringBuffer.append(TEXT_16);
-				stringBuffer.append(description);
-			}
-		}
-		stringBuffer.append(TEXT_17);
-		for (GenPackage genPackage : genModel.getAllGenAndUsedGenPackagesWithClassifiers()) {
-			if (genPackage.getGenModel() == genModel || !genPackage.getGenModel().hasEditSupport()) {
-				for (GenEnum genEnum : genPackage.getGenEnums()) {
-					for (GenEnumLiteral genEnumLiteral : genEnum.getGenEnumLiterals()) {
-						stringBuffer.append(TEXT_18);
-						stringBuffer.append(genEnum.getName());
-						stringBuffer.append(TEXT_19);
-						stringBuffer.append(genEnumLiteral.getName());
-						stringBuffer.append(TEXT_20);
-						stringBuffer.append(genEnumLiteral.getLiteral());
+			stringBuffer.append(TEXT_7);
+			for (GenPackage genPackage : genModel.getAllGenAndUsedGenPackagesWithClassifiers()) {
+				if (genPackage.getGenModel() == genModel || !genPackage.getGenModel().hasEditSupport()) {
+					for (GenClass genClass : genPackage.getGenClasses()) {
+						stringBuffer.append(TEXT_8);
+						stringBuffer.append(genClass.getName());
+						stringBuffer.append(TEXT_9);
+						stringBuffer.append(genClass.getFormattedName());
 					}
 				}
 			}
-		}
-		for (String category : genModel.getPropertyCategories()) {
-			stringBuffer.append(TEXT_21);
-			stringBuffer.append(genModel.getPropertyCategoryKey(category));
-			stringBuffer.append(TEXT_22);
-			stringBuffer.append(category);
+			stringBuffer.append(TEXT_10);
+			for (GenFeature genFeature : genModel.getFilteredAllGenFeatures()) {
+				String description = genFeature.getPropertyDescription();
+				stringBuffer.append(TEXT_11);
+				stringBuffer.append(genFeature.getGenClass().getName());
+				stringBuffer.append(TEXT_12);
+				stringBuffer.append(genFeature.getName());
+				stringBuffer.append(TEXT_13);
+				stringBuffer.append(genFeature.getFormattedName());
+				if (description != null && description.length() > 0) {
+					stringBuffer.append(TEXT_14);
+					stringBuffer.append(genFeature.getGenClass().getName());
+					stringBuffer.append(TEXT_15);
+					stringBuffer.append(genFeature.getName());
+					stringBuffer.append(TEXT_16);
+					stringBuffer.append(description);
+				}
+			}
+			stringBuffer.append(TEXT_17);
+			for (GenPackage genPackage : genModel.getAllGenAndUsedGenPackagesWithClassifiers()) {
+				if (genPackage.getGenModel() == genModel || !genPackage.getGenModel().hasEditSupport()) {
+					for (GenEnum genEnum : genPackage.getGenEnums()) {
+						for (GenEnumLiteral genEnumLiteral : genEnum.getGenEnumLiterals()) {
+							stringBuffer.append(TEXT_18);
+							stringBuffer.append(genEnum.getName());
+							stringBuffer.append(TEXT_19);
+							stringBuffer.append(genEnumLiteral.getName());
+							stringBuffer.append(TEXT_20);
+							stringBuffer.append(genEnumLiteral.getLiteral());
+						}
+					}
+				}
+			}
+			for (String category : genModel.getPropertyCategories()) {
+				stringBuffer.append(TEXT_21);
+				stringBuffer.append(genModel.getPropertyCategoryKey(category));
+				stringBuffer.append(TEXT_22);
+				stringBuffer.append(category);
+			}
 		}
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "doGenerate", stringBuffer.toString());
