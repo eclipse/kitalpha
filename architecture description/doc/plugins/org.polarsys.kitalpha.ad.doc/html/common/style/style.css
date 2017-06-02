@@ -30,9 +30,9 @@ H1 {
 	/* TEXT-TRANSFORM: lowercase; */
 }
 
-H1:FIRST-LETTER {
+/* H1:FIRST-LETTER {
 	TEXT-TRANSFORM: capitalize;
-} 
+} */
 
 H2 {
 	PADDING-RIGHT: 2px;
@@ -44,7 +44,7 @@ H2 {
 	COLOR: #5DBFD4;
 	LINE-HEIGHT: normal;
 	PADDING-TOP: 2px;
-	/*TEXT-TRANSFORM: lowercase;*/
+	TEXT-TRANSFORM: lowercase;
 }
 
 H2:FIRST-LETTER {
@@ -61,7 +61,7 @@ H3 {
 	COLOR: #5491A0;
 	LINE-HEIGHT: normal;
 	PADDING-TOP: 2px;
-	/*TEXT-TRANSFORM: lowercase;*/
+	TEXT-TRANSFORM: lowercase;
 }
 
 H3:FIRST-LETTER {
@@ -69,16 +69,11 @@ H3:FIRST-LETTER {
 }
 
 TABLE {
-	border-width:1px;
- 	border-style:solid; 
- 	border-color:#b7d6f4;
-	border-collapse:collapse;
+	BORDER: 2px solid #00000;
 	FONT-STYLE: italic;
 	BACKGROUND-COLOR: #EBF4FA;
 }
 
 TABLE TD {
- 	border-width:1px;
- 	border-style:solid; 
- 	border-color:#b7d6f4;
-} 
+	BORDER: none;
+}

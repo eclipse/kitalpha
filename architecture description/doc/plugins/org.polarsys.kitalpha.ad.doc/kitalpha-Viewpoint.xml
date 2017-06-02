@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<toc label="Viewpoint Technology" link_to="PLUGINS_ROOT/org.polarsys.kitalpha.doc/kitalpha-aft.xml#AFTComponent">
+   <topic label="Viewpoint Technology">
+   <topic label="Concepts">
+   	   <topic href="html/concepts/vp-artefacts.html" label="Viewpoint artefacts">
+   </topic>
+   <topic href="html/concepts/vp-lifecycle.html" label="Viewpoint life cycle">
+   </topic>
+   <topic href="html/concepts/vp-specifics-properties.html" label="Viewpoints specifics properties">
+   </topic>
+   <topic href="html/concepts/targetapplication.html" label="Target Application">
+   </topic>
+   <topic href="html/concepts/vp-tooling.html" label="Viewpoint Tooling">
+   </topic>
+   </topic>
+   <topic label="Example">
+      <topic href="html/common/underconstruction.html" label="Component sample">
+      </topic>
+      <anchor id="ViewpointExamples"/>
+   </topic>
+   <topic label="User’s Guide">
+      <topic href="html/common/underconstruction.html" label="The Viewpoint Manager">
+      </topic>
+      <topic href="html/usersguide/viewpointview.html" label="The Viewpoint View">
+      </topic>
+      <topic href="html/common/underconstruction.html" label="The Viewpoint Services">
+      </topic>
+      <topic href="html/usersguide/gettingstartedwithvp.html" label="Getting started with Viewpoint using">
+      </topic>
+   </topic>
+   <topic label="Viewpoint Programmer&apos;s">
+      <topic label="Viewpoint DSL">
+         <topic href="html/common/underconstruction.html" label="Viewpoint DSL Project">
+         </topic>
+         <topic href="html/common/underconstruction.html" label="Reverse from Ecore Model">
+         </topic>
+         <topic label="Viewpoint DSL Editors">
+            <topic href="html/common/underconstruction.html" label="Commands">
+            </topic>
+            <topic label="Data editor">
+               <topic href="html/common/underconstruction.html" label="Overview">
+               </topic>
+               <topic href="html/common/underconstruction.html" label="Syntax">
+               </topic>
+               <topic href="html/common/underconstruction.html" label="Text templates">
+               </topic>
+               <topic href="html/common/underconstruction.html" label="Accelerations">
+               </topic>
+            </topic>
+            
+            <topic label="Configuration editor">
+               <topic href="html/common/underconstruction.html" label="Overview">
+               </topic>
+               <topic href="html/common/underconstruction.html" label="Syntax">
+               </topic>
+               <topic href="html/common/underconstruction.html" label="Text templates">
+               </topic>
+               <topic href="html/common/underconstruction.html" label="Accelerations">
+               </topic>
+            </topic>            
+            
+            <topic label="Diagram editor">
+               <topic href="html/common/underconstruction.html" label="Overview">
+               </topic>
+               <topic href="html/common/underconstruction.html" label="Syntax">
+               </topic>
+               <topic href="html/common/underconstruction.html" label="Text templates">
+               </topic>
+               <topic href="html/common/underconstruction.html" label="Accelerations">
+               </topic>
+            </topic>        
+            
+            <topic label="Activity Explorer editor">
+               <topic href="html/common/underconstruction.html" label="Overview">
+               </topic>
+               <topic href="html/common/underconstruction.html" label="Syntax">
+               </topic>
+               <topic href="html/common/underconstruction.html" label="Text templates">
+               </topic>
+               <topic href="html/common/underconstruction.html" label="Accelerations">
+               </topic>
+            </topic>                   
+            
+            <topic label="Releng editor">
+               <topic href="html/common/underconstruction.html" label="Overview">
+               </topic>
+               <topic href="html/common/underconstruction.html" label="Syntax">
+               </topic>
+               <topic href="html/common/underconstruction.html" label="Text templates">
+               </topic>
+               <topic href="html/common/underconstruction.html" label="Accelerations">
+               </topic>
+            </topic>            
+            
+            <topic label="UI editor">
+               <topic href="html/common/underconstruction.html" label="Overview">
+               </topic>
+               <topic href="html/common/underconstruction.html" label="Syntax">
+               </topic>
+               <topic href="html/common/underconstruction.html" label="Text templates">
+               </topic>
+               <topic href="html/common/underconstruction.html" label="Accelerations">
+               </topic>
+            </topic>
+            <anchor id="AspectEditor"/>           
+            
+         </topic>
+         <topic label="Viewpoint Generation">
+            <topic href="html/common/underconstruction.html" label="Overview">
+            </topic>
+                        <topic href="html/common/underconstruction.html" label="Data generation">
+            </topic>
+            
+            
+            <topic href="html/common/underconstruction.html" label="Diagram editor">
+            </topic>        
+            
+            <topic href="html/common/underconstruction.html" label="Activity Explorer editor">
+            </topic>                   
+            
+            <topic href="html/common/underconstruction.html" label="Releng editor">
+            </topic>            
+            
+            <topic href="html/common/underconstruction.html" label="UI editor">
+            </topic>
+            <topic href="html/common/underconstruction.html" label="Generation configuration">
+            </topic>
+         </topic>
+         <topic href="html/common/underconstruction.html" label="Viewpoint Packaging">
+         </topic>
+      </topic>
+      <topic label="Conditional Activation of Viewpoints">
+         <topic href="html/common/underconstruction.html" label="Overview">
+         </topic>
+         <topic href="html/common/underconstruction.html" label="Concepts">
+         </topic>
+         <topic href="html/common/underconstruction.html" label="Impact on the Viewpoint Referencing/Unreferencing">
+         </topic>
+         <topic href="html/common/underconstruction.html" label="Contributing with new conditions">
+         </topic>
+         <topic href="html/common/underconstruction.html" label="Example - Component Sample">
+         </topic>
+      </topic>
+      <topic href="html/common/underconstruction.html" label="Viewpoint Services and Rules">
+      </topic>
+      <topic href="html/common/underconstruction.html" label="Getting started with Viewpoint development">
+      </topic>
+   </topic>
+   <topic label="Viewpoint framework programmer’s guide">
+      <topic label="Extending Viewpoint DSL">
+         <topic href="html/vpframeworkprogrammersguide/newTA.html" label="Defining a new target application">
+         </topic>
+         <topic href="html/common/underconstruction.html" label="Viewpoint data extension">
+         </topic>
+         <topic href="html/common/underconstruction.html" label="Viewpoint text syntax extension">
+         </topic>
+         <topic href="html/common/underconstruction.html" label="Viewpoint generation extension">
+         </topic>
+         <topic href="html/common/underconstruction.html" label="Viewpoint EMF validation rules extension">
+         </topic>
+         <topic href="html/common/underconstruction.html" label="Viewpoint Concrete syntax extension">
+         </topic>
+         <topic href="html/common/underconstruction.html" label="Defining new Text templates">
+         </topic>
+      </topic>
+      <topic label="Viewpoint Runtime">
+         <topic href="html/common/underconstruction.html" label="Viewpoint Model/Project">
+         </topic>
+      </topic>
+   </topic>
+   <topic label="Reference">
+      <topic label="API">
+         <topic href="html/common/underconstruction.html" label="Java API">
+         </topic>
+         <topic href="html/common/underconstruction.html" label="Listeners">
+         </topic>
+      </topic>
+      <topic label="Models">
+         <topic href="html/common/underconstruction.html" label="a model">
+         </topic>
+      </topic>
+      <topic href="html/common/underconstruction.html" label="Extension Points">
+      </topic>
+      <topic label="User interface">
+         <topic href="html/common/underconstruction.html" label="Menus">
+         </topic>
+         <topic href="html/common/underconstruction.html" label="Wizards and Dialogs">
+         </topic>
+         <topic href="html/common/underconstruction.html" label="Text editors">
+         </topic>
+      </topic>
+   </topic>
+   </topic>
+</toc>

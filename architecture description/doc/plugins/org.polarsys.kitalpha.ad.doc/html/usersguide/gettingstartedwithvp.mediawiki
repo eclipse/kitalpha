@@ -1,0 +1,14 @@
+
+=  Getting started with Viewpoint  =
+
+
+== Install/Uninstall a viewpoint ==
+--
+
+== Start using a Viewpoint  ==
+''Ouvrir le project, ouvrir la vue, selectionner un element de modèle, referencer le pdv, etc. L’idée ici est de montrer comment le point de vue peut être utilisé par le end-user : l’ajour de donnée dans le modèle via le menu contextuel, l’utilisation des diagrammes, les properties view (Capella), etc.'' 
+
+== Stop using a Viewpoint ==
+
+* ''Exemple de Unreferencing''
+* ''Detach a Viewpoint : Indépendamment de la du unreference (par exemple quand le point de vue est désinstallé) ''
