@@ -73,7 +73,7 @@ TABLE {
  	border-style:solid; 
  	border-color:#b7d6f4;
 	border-collapse:collapse;
-	FONT-STYLE: italic;
+	
 	BACKGROUND-COLOR: #EBF4FA;
 }
 
@@ -82,3 +82,12 @@ TABLE TD {
  	border-style:solid; 
  	border-color:#b7d6f4;
 } 
+
+blockquote {
+  	FONT-STYLE: italic;
+	background: #EBF4FA;
+  	border-left: 5px solid #b7d6f4;
+ 	margin: 1.5em 10px;
+  	padding: 0.5em 10px;
+  	quotes: "\201C""\201D""\2018""\2019";
+}

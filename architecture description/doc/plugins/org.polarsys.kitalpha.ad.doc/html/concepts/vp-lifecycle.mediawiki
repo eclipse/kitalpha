@@ -5,7 +5,7 @@ Each viewpoint installed in a project respects a lifecycle according to the foll
 
 ==  State Machine ==
 
-[[File:img/KitalphaViewpointLifecycle.png|500px|]]
+[[image:../img/KitalphaViewpointLifecycle.png|500px]]
 
 '''Viewpoint lifecycle - States''' 
 
@@ -66,16 +66,16 @@ Each transition is implemented by an action represented as follows.
 |'''Icon'''
 |- 
 |''reference''
-|[[File:img/Kitalpha-ViewpointLifecycle-reference.gif]]
+|[[image:../img/Kitalpha-ViewpointLifecycle-reference.gif]]
 |- 
 |''unreference''
-|[[File:img/Kitalpha-ViewpointLifecycle-unreference.gif]]
+|[[image:../img/Kitalpha-ViewpointLifecycle-unreference.gif]]
 |- 
 |''activate''
-|[[File:img/Kitalpha-ViewpointLifecycle-activate.gif]]
+|[[image:../img/Kitalpha-ViewpointLifecycle-activate.gif]]
 |- 
 |''deactivate''
-|[[File:img/Kitalpha-ViewpointLifecycle-deactivate.gif]]
+|[[image:../img/Kitalpha-ViewpointLifecycle-deactivate.gif]]
 |}
 
 == Available services by states ==

@@ -1,0 +1,99 @@
+
+= The Viewpoint Manager =
+
+== Introduction ==
+
+The Viewpoint Manager enables to manage the state of viewpoints used by a project. Once a viewpoint is installed, in conformance to the Viewpoint Lifecycle, four actions are available in the viewpoint manager: reference, unreference, activate, deactivate.
+
+<blockquote>
+Note:  
+This management, introduced in Kitalpha 1.1.0, differs from the older versions of Kitalpha when the management of viewpoints was at the workspace level and the viewpoint actions were Start and Stop.
+</blockquote>
+
+
+== Management of viewpoint at the project level ==
+
+The state of viewpoint is individually managed by project. To know or change the state of a viewpoint for a project:
+* Click on a model element of the project (e.g., on an element of the project browser, on a diagram or diagram element)
+* Visualize the viewpoint state in the viewpoint manager
+
+
+== Open the Viewpoint Manager view ==
+
+* Menu sequence [Window]/[Show View]/[Other…]
+* In the "Kitalpha" section of the "Show View" window, select "Viewpoint Manager"
+* Click on "OK"
+
+
+== Reference ==
+
+After installation, the initial state of a viewpoint in the viewpoint manager is ''Unsed'' .
+
+[[Image:../img/KitalphaViewpointManagerUnused.png|thumb|450px]]
+
+=== Reference of viewpoint ===
+
+Referencing a viewpoint enables to use this viewpoint.
+* Right-click on a viewpoint in the list of the Viewpoint Manager
+* Select Reference
+
+[[Image:../img/KitalphaViewpointManagerReference.png|thumb|450px]]
+
+
+=== Show the details of a viewpoint ===
+
+* Right-click on a viewpoint of the Viewpoint Manager
+* Select the view proposed in the "Show in view" menu
+
+
+== Unreference ==
+
+=== Unreference of viewpoint ===
+
+Unreferencing a viewpoint enables to stop using a viewpoint.
+
+* Save the project
+* Right-click on a viewpoint in the list of the Viewpoint Manager
+* Select Unreference
+
+[[Image:../img/KitalphaViewpointManagerUnreference.png|thumb|450px]]
+
+
+=== Detachment of viewpoint data ===
+
+The action of unreferencing is not straightforward. This requires that all the viewpoint data must be removed from the project using this viewpoint by a detachment action.
+
+* The Model Detachment is automatically launched
+* Go to the "Viewpoints Tree Page"
+* Unselect the viewpoint
+* Click on "Launch Detachment
+
+[[Image:../img/KitalphaViewpointLifecycleUnferenceAndDetachment.png|thumb|450px]]
+
+
+== Deactivate ==
+
+The deactivation enables to deactivate all the representations of the viewpoint (e.g., in the model browser, diagrams) without unreferencing the viewpoint.
+
+* Right-click on a viewpoint in the list of the Viewpoint Manager
+* Select Deactivate
+
+[[Image:../img/KitalphaViewpointManagerDeactivate.png|thumb|450px]]
+
+
+== Activate ==
+
+The activation enables to activate all the representations of the viewpoint (e.g., in the model browser, diagrams) when the viewpoint was previsouly deactivated.
+
+* Right-click on a viewpoint in the list of the Viewpoint Manager
+* Select Activate
+
+[[Image:../img/KitalphaViewpointManagerActivate.png|thumb|450px]]
+
+
+== Option of Activation/Deactivation ==
+
+By default, the actions Activate / Deactivate are not available.
+The boolean "activable" in the Configuration section of the Viewpoint DSL enables to make available this option visible in the contextual menu of the viewpoint manager.
+
+

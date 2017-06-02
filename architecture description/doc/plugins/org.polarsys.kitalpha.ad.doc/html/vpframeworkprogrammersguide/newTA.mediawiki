@@ -3,7 +3,7 @@
 
 The three phases shown in the picture below describe how to create a new Target Application.
  
-[[Image:img/newTA-steps.png|thumb|700px]]
+[[Image:../img/newTA-steps.png|thumb|700px]]
 
 
 == Phase 1. Creating new Target Application ==

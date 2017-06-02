@@ -33,11 +33,9 @@ The following picture show the contextual menu allowing to add extensions to a g
 
 One the '''Kitalpha eMDE EMF Generation''' is added to the generation chain, its properties can be changed thanks to the Property View.
 
-----
 <blockquote>
 The ''Model Path'' property value should follow the following format: <nowiki>/</nowiki>''PLUGIN_NAME''<nowiki>/</nowiki>''PATH_TO_ECORE_MODEL''<nowiki>/</nowiki>''ECORE_MODEL_NAME''.ecore .
 </blockquote>
-----
 
 == Lunching the generation ==
 

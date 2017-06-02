@@ -19,7 +19,7 @@
       <anchor id="ViewpointExamples"/>
    </topic>
    <topic label="User’s Guide">
-      <topic href="html/common/underconstruction.html" label="The Viewpoint Manager">
+      <topic href="html/usersguide/viewpointmanager.html" label="The Viewpoint Manager">
       </topic>
       <topic href="html/usersguide/viewpointview.html" label="The Viewpoint View">
       </topic>
