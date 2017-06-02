@@ -98,12 +98,12 @@ public abstract class ComponentElementImpl extends ExtensibleElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	protected ComponentElementImpl() {
 
 		super();
-		setId(EcoreUtil.generateUUID());
+
 	}
 
 	/**
@@ -119,11 +119,13 @@ public abstract class ComponentElementImpl extends ExtensibleElementImpl impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 
 	public String getId() {
-
+		if (id == null) {
+			id = EcoreUtil.generateUUID();
+		}
 		return id;
 	}
 

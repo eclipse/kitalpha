@@ -157,6 +157,14 @@ public class ComponentSampleResourceImpl extends XMIResourceImpl {
 		getDefaultLoadOptions().put(XMLResource.OPTION_EXTENDED_META_DATA, Boolean.TRUE);
 	}
 
+	/**
+	 * @generated NOT
+	 */
+	@Override
+	protected boolean useUUIDs() {
+		return true;
+	}
+
 	@Override
 	protected void detachedHelper(EObject eObject) {
 		if (useIDs() && unloadingContents == null) {

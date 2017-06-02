@@ -187,7 +187,4 @@
     </ownedPages>
   </VP_Aspects>
   <parents href="../../org.polarsys.kitalpha.vp.componentsampleframework.vpdsl/model/ComponentSampleFramework.vpdesc#/"/>
-  <viewpointResources>
-    <useResource xsi:type="vpdesc:EMFResource" uri="platform:/resource/org.polarsys.kitalpha.vp.componentsample.design/description/ComponentSample.odesign"/>
-  </viewpointResources>
 </vpdesc:Viewpoint>
