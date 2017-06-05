@@ -1,4 +1,4 @@
-//Generated with EGF 1.4.1.v20161010-1704
+//Generated with EGF 1.5.0.v20170223-0952
 package org.polarsys.kitalpha.emde.egf.editor.call.Editor;
 
 import org.polarsys.kitalpha.emde.egf.utils.*;
