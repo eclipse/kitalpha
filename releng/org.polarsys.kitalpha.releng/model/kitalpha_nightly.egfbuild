@@ -17,12 +17,14 @@
     <properties xmi:id="_YrTv8FkjEeSo0vu-C-A3cw" key="diffmerge.patterns.repo.url" value="https://hudson.eclipse.org/diffmerge/job/emf-diffmerge-patterns-master/106/artifact/releng/org.eclipse.emf.diffmerge.patterns.update/target/repository/"/>
     <properties xmi:id="_tAs5kCO3EeWTOe3dES9kkg" key="amalgam.repo.url" value="${eclipse.download.prefix}/modeling/amalgam/updates/nightly/1.8.0-N20170307-051244/mars"/>
     <properties xmi:id="_8RvscN-NEeWnTY4Di0td3w" key="gmf.repo.url" value="${sirius.repo.url}"/>
+    <properties xmi:id="_Lj4wQEuUEeesIJAuSyFSRQ" key="repo.nebula.url" value="${eclipse.download.prefix}/nebula/releases/${nebula.version}"/>
   </propertyPackages>
   <propertyPackages xmi:id="_vtRuAI5EEeOQ8YcnVfa6Wg" name="versions">
     <properties xmi:id="_SowkIEhiEeOxuMV9a71i9w" key="eclipse_version" value="neon"/>
     <properties xmi:id="_poQyUHs5EeKM-JnMHzahcg" key="plugin.repo.version" value="latest"/>
     <properties xmi:id="_6aWv4IodEeGSbqNfjJWsgA" key="kitalpha_version" value="1.2.0"/>
     <properties xmi:id="_3c6QMI5lEeOQ8YcnVfa6Wg" key="guava.version" value="11.0.2.v201303041551"/>
+    <properties xmi:id="_Wy4YQEuUEeesIJAuSyFSRQ" key="nebula.version" value="1.2.0"/>
   </propertyPackages>
   <jobs xmi:id="_Htxz8PqoEeKFaurHIkYR0w" name="main">
     <properties xmi:id="_pAapkPq5EeKXG4Dej4PCUQ" key="main_version" value="trunk"/>
@@ -306,6 +308,17 @@
     </steps>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_x7ip5Z7uEeOjCb9D2yIVHQ" name="" component="_x7ip5J7uEeOjCb9D2yIVHQ"/>
     <steps xsi:type="buildstep:InstallStep" xmi:id="_x7ip5p7uEeOjCb9D2yIVHQ" name="transposer feature" id="TP_neon" profile="SDKProfile" resultSteps="_x7ip5Z7uEeOjCb9D2yIVHQ" installResultStepsSourceFeatures="true"/>
+  </jobs>
+  <jobs xmi:id="_kjj54EuUEeesIJAuSyFSRQ" name="rich_text">
+    <steps xsi:type="buildstep:BuildStep" xmi:id="_qofQwEuUEeesIJAuSyFSRQ">
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_tOV4sEuUEeesIJAuSyFSRQ" pattern="" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="richtext/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_xAMZsEuUEeesIJAuSyFSRQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="richtext/features"/>
+      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_26-9IEuUEeesIJAuSyFSRQ" path="${publish}/TP_neon"/>
+      <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_44wRYEuUEeesIJAuSyFSRQ" path="${publish}/TP_build"/>
+      <components xsi:type="buildstep:Feature" xmi:id="_9Nn_4EuUEeesIJAuSyFSRQ" id="org.polarsys.kitalpha.richtext.widget.feature"/>
+    </steps>
+    <steps xsi:type="buildstep:PublishStep" xmi:id="_ArWrAEuVEeesIJAuSyFSRQ" name="" description="" component="_9Nn_4EuUEeesIJAuSyFSRQ"/>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_FlLgsEuVEeesIJAuSyFSRQ" name="rich text for MDE feature" id="TP_neon" profile="SDKProfile" resultSteps="_ArWrAEuVEeesIJAuSyFSRQ"/>
   </jobs>
   <jobs xmi:id="_eJXnwQHGEeSWLIhgOb7dcQ" name="detach_attach">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_j6USsAHGEeSWLIhgOb7dcQ" name="detachment">

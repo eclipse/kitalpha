@@ -73,6 +73,10 @@
       <updateSiteUrls>${eclipse38.download.prefix}</updateSiteUrls>
       <featureNames>org.eclipse.emf.ecoretools.sdk</featureNames>
     </steps>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_vnOvkEt8EeesIJAuSyFSRQ" name="install nebula rich text" id="${TP_name}" profile="${TP_profile}">
+      <updateSiteUrls>${repo.nebula.url}</updateSiteUrls>
+      <featureNames>org.eclipse.nebula.widgets.richtext.feature</featureNames>
+    </steps>
   </steps>
   <steps xsi:type="buildstep:InstallStep" xmi:id="_dEjfMOREEeWlaf9xCVdmtw" name="install ecoretools2 for contextual explorer" id="${TP_name}" profile="${TP_profile}">
     <updateSiteUrls>${ecoretools2.repo.url}</updateSiteUrls>
