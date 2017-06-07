@@ -1545,9 +1545,10 @@ public class <%=genPackage.getEditorClassName()%>
                                 @Override
                                 public void refresh() {
                                     super.refresh();
-                                    if (propertySheetPage != null && !propertySheetPage.getControl().isDisposed()) {
-                                        propertySheetPage.refresh();
-                                    }
+									for (PropertySheetPage propertySheetPage : propertySheetPages) {
+										if (!propertySheetPage.getControl().isDisposed())
+											propertySheetPage.refresh();
+									}
                                 }
                             };
                             return newTreeViewer;
@@ -1599,9 +1600,10 @@ public class <%=genPackage.getEditorClassName()%>
                                 @Override
                                 public void refresh() {
                                     super.refresh();
-                                    if (propertySheetPage != null && !propertySheetPage.getControl().isDisposed()) {
-                                        propertySheetPage.refresh();
-                                    }
+									for (PropertySheetPage propertySheetPage : propertySheetPages) {
+										if (!propertySheetPage.getControl().isDisposed())
+											propertySheetPage.refresh();
+									}
                                 }
                             };
                             return newListViewer;
@@ -1651,9 +1653,10 @@ public class <%=genPackage.getEditorClassName()%>
                                 @Override
                                 public void refresh() {
                                     super.refresh();
-                                    if (propertySheetPage != null && !propertySheetPage.getControl().isDisposed()) {
-                                        propertySheetPage.refresh();
-                                    }
+									for (PropertySheetPage propertySheetPage : propertySheetPages) {
+										if (!propertySheetPage.getControl().isDisposed())
+											propertySheetPage.refresh();
+									}
                                 }
                             };
                             return newTreeViewer;
@@ -1708,9 +1711,10 @@ public class <%=genPackage.getEditorClassName()%>
                                 @Override
                                 public void refresh() {
                                     super.refresh();
-                                    if (propertySheetPage != null && !propertySheetPage.getControl().isDisposed()) {
-                                        propertySheetPage.refresh();
-                                    }
+									for (PropertySheetPage propertySheetPage : propertySheetPages) {
+										if (!propertySheetPage.getControl().isDisposed())
+											propertySheetPage.refresh();
+									}
                                 }
                             };
                             return newTableViewer;
@@ -1782,9 +1786,10 @@ public class <%=genPackage.getEditorClassName()%>
                                 @Override
                                 public void refresh() {
                                     super.refresh();
-                                    if (propertySheetPage != null && !propertySheetPage.getControl().isDisposed()) {
-                                        propertySheetPage.refresh();
-                                    }
+									for (PropertySheetPage propertySheetPage : propertySheetPages) {
+										if (!propertySheetPage.getControl().isDisposed())
+											propertySheetPage.refresh();
+									}
                                 }
                             };
                             return newTreeViewer;
@@ -1842,9 +1847,11 @@ public class <%=genPackage.getEditorClassName()%>
                 @Override
                 public void refresh() {
                     super.refresh();
-                    if (propertySheetPage != null && !propertySheetPage.getControl().isDisposed()) {
-                        propertySheetPage.refresh();
-                    }
+					for (PropertySheetPage propertySheetPage : propertySheetPages) {
+						if (!propertySheetPage.getControl().isDisposed())
+							if (!propertySheetPage.getControl().isDisposed())
+								propertySheetPage.refresh();
+					}
                 }
             };
             viewers.add(selectionViewer);
