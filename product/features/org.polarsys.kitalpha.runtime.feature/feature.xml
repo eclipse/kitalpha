@@ -57,6 +57,7 @@
       <import feature="org.polarsys.kitalpha.patterns.feature" version="1.2.0.qualifier"/>
       <import feature="org.polarsys.kitalpha.patterns.source.feature" version="1.2.0.qualifier"/>
       <import feature="org.polarsys.kitalpha.richtext.widget.feature" version="1.2.0.qualifier"/>
+      <import feature="org.polarsys.kitalpha.richtext.widget.source.feature" version="1.2.0.qualifier"/>
    </requires>
 
 </feature>
