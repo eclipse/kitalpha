@@ -802,10 +802,11 @@ public class Editor extends org.eclipse.egf.emf.pattern.editor.Editor {
 			+ "                                @Override" + NL
 			+ "                                public void refresh() {" + NL
 			+ "                                    super.refresh();" + NL
-			+ "                                    if (propertySheetPage != null && !propertySheetPage.getControl().isDisposed()) {"
-			+ NL + "                                        propertySheetPage.refresh();" + NL
-			+ "                                    }" + NL + "                                }" + NL
-			+ "                            };" + NL + "                            return newTreeViewer;" + NL
+			+ "\t\t\t\t\t\t\t\t\tfor (PropertySheetPage propertySheetPage : propertySheetPages) {" + NL
+			+ "\t\t\t\t\t\t\t\t\t\tif (!propertySheetPage.getControl().isDisposed())" + NL
+			+ "\t\t\t\t\t\t\t\t\t\t\tpropertySheetPage.refresh();" + NL + "\t\t\t\t\t\t\t\t\t}" + NL
+			+ "                                }" + NL + "                            };" + NL
+			+ "                            return newTreeViewer;" + NL
 			+ "                            // end-extension-code";
 	protected final String TEXT_252 = NL + "                            return new TreeViewer(tree);";
 	protected final String TEXT_253 = NL + "\t\t\t\t\t\t}";
@@ -841,10 +842,11 @@ public class Editor extends org.eclipse.egf.emf.pattern.editor.Editor {
 			+ "                                @Override" + NL
 			+ "                                public void refresh() {" + NL
 			+ "                                    super.refresh();" + NL
-			+ "                                    if (propertySheetPage != null && !propertySheetPage.getControl().isDisposed()) {"
-			+ NL + "                                        propertySheetPage.refresh();" + NL
-			+ "                                    }" + NL + "                                }" + NL
-			+ "                            };" + NL + "                            return newListViewer;" + NL
+			+ "\t\t\t\t\t\t\t\t\tfor (PropertySheetPage propertySheetPage : propertySheetPages) {" + NL
+			+ "\t\t\t\t\t\t\t\t\t\tif (!propertySheetPage.getControl().isDisposed())" + NL
+			+ "\t\t\t\t\t\t\t\t\t\t\tpropertySheetPage.refresh();" + NL + "\t\t\t\t\t\t\t\t\t}" + NL
+			+ "                                }" + NL + "                            };" + NL
+			+ "                            return newListViewer;" + NL
 			+ "                            // end-extension-code";
 	protected final String TEXT_271 = NL + "                            return new ListViewer(composite);";
 	protected final String TEXT_272 = "\t\t\t\t\t\t\t" + NL + "\t\t\t\t\t\t}";
@@ -880,10 +882,11 @@ public class Editor extends org.eclipse.egf.emf.pattern.editor.Editor {
 			+ "                                @Override" + NL
 			+ "                                public void refresh() {" + NL
 			+ "                                    super.refresh();" + NL
-			+ "                                    if (propertySheetPage != null && !propertySheetPage.getControl().isDisposed()) {"
-			+ NL + "                                        propertySheetPage.refresh();" + NL
-			+ "                                    }" + NL + "                                }" + NL
-			+ "                            };" + NL + "                            return newTreeViewer;" + NL
+			+ "\t\t\t\t\t\t\t\t\tfor (PropertySheetPage propertySheetPage : propertySheetPages) {" + NL
+			+ "\t\t\t\t\t\t\t\t\t\tif (!propertySheetPage.getControl().isDisposed())" + NL
+			+ "\t\t\t\t\t\t\t\t\t\t\tpropertySheetPage.refresh();" + NL + "\t\t\t\t\t\t\t\t\t}" + NL
+			+ "                                }" + NL + "                            };" + NL
+			+ "                            return newTreeViewer;" + NL
 			+ "                            // end-extension-code";
 	protected final String TEXT_290 = NL + "                            return new TreeViewer(composite);";
 	protected final String TEXT_291 = NL + "\t\t\t\t\t\t}";
@@ -930,10 +933,11 @@ public class Editor extends org.eclipse.egf.emf.pattern.editor.Editor {
 			+ "                                @Override" + NL
 			+ "                                public void refresh() {" + NL
 			+ "                                    super.refresh();" + NL
-			+ "                                    if (propertySheetPage != null && !propertySheetPage.getControl().isDisposed()) {"
-			+ NL + "                                        propertySheetPage.refresh();" + NL
-			+ "                                    }" + NL + "                                }" + NL
-			+ "                            };" + NL + "                            return newTableViewer;" + NL
+			+ "\t\t\t\t\t\t\t\t\tfor (PropertySheetPage propertySheetPage : propertySheetPages) {" + NL
+			+ "\t\t\t\t\t\t\t\t\t\tif (!propertySheetPage.getControl().isDisposed())" + NL
+			+ "\t\t\t\t\t\t\t\t\t\t\tpropertySheetPage.refresh();" + NL + "\t\t\t\t\t\t\t\t\t}" + NL
+			+ "                                }" + NL + "                            };" + NL
+			+ "                            return newTableViewer;" + NL
 			+ "                            // end-extension-code";
 	protected final String TEXT_319 = NL + "                            return new TableViewer(composite);";
 	protected final String TEXT_320 = NL + "\t\t\t\t\t\t}";
@@ -994,10 +998,11 @@ public class Editor extends org.eclipse.egf.emf.pattern.editor.Editor {
 			+ "                                @Override" + NL
 			+ "                                public void refresh() {" + NL
 			+ "                                    super.refresh();" + NL
-			+ "                                    if (propertySheetPage != null && !propertySheetPage.getControl().isDisposed()) {"
-			+ NL + "                                        propertySheetPage.refresh();" + NL
-			+ "                                    }" + NL + "                                }" + NL
-			+ "                            };" + NL + "                            return newTreeViewer;" + NL
+			+ "\t\t\t\t\t\t\t\t\tfor (PropertySheetPage propertySheetPage : propertySheetPages) {" + NL
+			+ "\t\t\t\t\t\t\t\t\t\tif (!propertySheetPage.getControl().isDisposed())" + NL
+			+ "\t\t\t\t\t\t\t\t\t\t\tpropertySheetPage.refresh();" + NL + "\t\t\t\t\t\t\t\t\t}" + NL
+			+ "                                }" + NL + "                            };" + NL
+			+ "                            return newTreeViewer;" + NL
 			+ "                            // end-extension-code";
 	protected final String TEXT_354 = NL + "                            return new TreeViewer(composite);";
 	protected final String TEXT_355 = NL + "\t\t\t\t\t\t}";
@@ -1047,9 +1052,11 @@ public class Editor extends org.eclipse.egf.emf.pattern.editor.Editor {
 	protected final String TEXT_382 = NL + "            // begin-extension-code" + NL
 			+ "            selectionViewer = new TreeViewer(tree) {" + NL + "                @Override" + NL
 			+ "                public void refresh() {" + NL + "                    super.refresh();" + NL
-			+ "                    if (propertySheetPage != null && !propertySheetPage.getControl().isDisposed()) {"
-			+ NL + "                        propertySheetPage.refresh();" + NL + "                    }" + NL
-			+ "                }" + NL + "            };" + NL + "            viewers.add(selectionViewer);" + NL
+			+ "\t\t\t\t\tfor (PropertySheetPage propertySheetPage : propertySheetPages) {" + NL
+			+ "\t\t\t\t\t\tif (!propertySheetPage.getControl().isDisposed())" + NL
+			+ "\t\t\t\t\t\t\tif (!propertySheetPage.getControl().isDisposed())" + NL
+			+ "\t\t\t\t\t\t\t\tpropertySheetPage.refresh();" + NL + "\t\t\t\t\t}" + NL + "                }" + NL
+			+ "            };" + NL + "            viewers.add(selectionViewer);" + NL
 			+ "            // end-extension-code";
 	protected final String TEXT_383 = NL + "            selectionViewer = new TreeViewer(tree);";
 	protected final String TEXT_384 = "\t\t" + NL + "\t\t\tsetCurrentViewer(selectionViewer);" + NL + "" + NL
