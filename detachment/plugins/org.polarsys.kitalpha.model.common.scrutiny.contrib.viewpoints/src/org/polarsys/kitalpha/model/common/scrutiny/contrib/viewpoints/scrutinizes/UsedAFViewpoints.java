@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016, 2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -36,6 +36,7 @@ import org.polarsys.kitalpha.model.common.scrutiny.analyzer.ModelScrutinyExcepti
 import org.polarsys.kitalpha.model.common.scrutiny.analyzer.Scrutineer;
 import org.polarsys.kitalpha.model.common.scrutiny.contrib.modelresources.scrutinize.ModelResourcesScrutinizer;
 import org.polarsys.kitalpha.model.common.scrutiny.interfaces.IScrutinize;
+import org.polarsys.kitalpha.model.common.scrutiny.registry.ModelScrutinyRegistry;
 import org.polarsys.kitalpha.model.common.scrutiny.registry.ModelScrutinyRegistry.RegistryElement;
 import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.ViewpointTreeContainer;
 import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.helpers.FinderAFViewpointHelper;
@@ -124,11 +125,11 @@ public class UsedAFViewpoints implements IScrutinize<ViewpointTreeContainer, Obj
 
   public static Set<org.polarsys.kitalpha.resourcereuse.model.Resource> lookUp(Collection<Resource> resources) {
     Set<org.polarsys.kitalpha.resourcereuse.model.Resource> result = new HashSet<org.polarsys.kitalpha.resourcereuse.model.Resource>();
-    Scrutineer.startScrutiny(resources);
+    ModelScrutinyRegistry analysis = Scrutineer.startScrutiny(resources);
 
     Set<String> nsUris = new HashSet<String>();
     Set<String> odesigns = new HashSet<String>();
-    collectData(nsUris, odesigns);
+    collectData(analysis, nsUris, odesigns);
 
     ResourceSet set = new ResourceSetImpl();
     try {
@@ -167,11 +168,10 @@ public class UsedAFViewpoints implements IScrutinize<ViewpointTreeContainer, Obj
     return result;
   }
 
-  private static void collectData(Set<String> nsUris, Set<String> odesigns) {
+  private static void collectData(ModelScrutinyRegistry analysis, Set<String> nsUris, Set<String> odesigns) {
     try {
       // look for odesign
-      RegistryElement element = Scrutineer
-          .getRegistryElement("org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownresources.scrutiny");
+      RegistryElement element = analysis.getRegistryElement("org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownresources.scrutiny");
       for (IScrutinize iFinder : element.getFinders()) {
         if (iFinder instanceof ModelResourcesScrutinizer) {
           ModelResourcesScrutinizer resources = (ModelResourcesScrutinizer) iFinder;
@@ -181,8 +181,7 @@ public class UsedAFViewpoints implements IScrutinize<ViewpointTreeContainer, Obj
           }
         }
       }
-      RegistryElement vpElement = Scrutineer
-          .getRegistryElement("org.polarsys.kitalpha.model.common.scrutiny.contrib.scrutiny.viewpoints");
+      RegistryElement vpElement = analysis.getRegistryElement("org.polarsys.kitalpha.model.common.scrutiny.contrib.scrutiny.viewpoints");
       for (IScrutinize iFinder : vpElement.getFinders()) {
         if (iFinder instanceof UsedAFViewpoints) {
           UsedAFViewpoints afFinder = (UsedAFViewpoints) iFinder;

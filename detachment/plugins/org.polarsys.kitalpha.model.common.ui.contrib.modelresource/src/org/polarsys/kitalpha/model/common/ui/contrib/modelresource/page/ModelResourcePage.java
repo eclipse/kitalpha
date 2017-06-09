@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -101,7 +101,7 @@ public class ModelResourcePage extends AbstractDetachmentFormPage {
 		
 		
 		try {
-			RegistryElement regElt = Scrutineer.getRegistryElement(getFinderID());
+			RegistryElement regElt = getScrutinyAnalysis().getRegistryElement(getFinderID());
 			
 			Iterator<IScrutinize> it = regElt.getFinders().iterator();
 			
@@ -136,7 +136,7 @@ public class ModelResourcePage extends AbstractDetachmentFormPage {
 				boolean isCandidate = !event.getChecked();
 				
 				try {
-					RegistryElement regElt = Scrutineer.getRegistryElement(getFinderID());
+					RegistryElement regElt = getScrutinyAnalysis().getRegistryElement(getFinderID());
 					
 					Iterator<IScrutinize> it = regElt.getFinders().iterator();
 					

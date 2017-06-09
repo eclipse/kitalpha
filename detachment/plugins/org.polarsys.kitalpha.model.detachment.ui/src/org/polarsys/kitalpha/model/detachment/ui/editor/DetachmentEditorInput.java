@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -18,6 +18,7 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IPersistableElement;
 import org.osgi.framework.Bundle;
+import org.polarsys.kitalpha.model.common.scrutiny.registry.ModelScrutinyRegistry;
 import org.polarsys.kitalpha.model.detachment.ui.Activator;
 import org.polarsys.kitalpha.model.detachment.ui.constants.Constants;
 
@@ -25,6 +26,16 @@ import org.polarsys.kitalpha.model.detachment.ui.constants.Constants;
  * @author Faycal Abka
  */
 public class DetachmentEditorInput implements IEditorInput {
+
+	private final ModelScrutinyRegistry analysis;
+
+	public DetachmentEditorInput(ModelScrutinyRegistry analysis) {
+		this.analysis = analysis;
+	}
+
+	public ModelScrutinyRegistry getAnalysis() {
+		return analysis;
+	}
 
 	@Override
 	public Object getAdapter(Class adapter) {

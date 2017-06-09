@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.polarsys.kitalpha.model.common.commands.action.ModelCommand;
 import org.polarsys.kitalpha.model.common.commands.contrib.resourcesChecker.Messages;
 import org.polarsys.kitalpha.model.common.commands.exception.ModelCommandException;
+import org.polarsys.kitalpha.model.common.scrutiny.registry.ModelScrutinyRegistry;
 
 /**
  * @author Faycal Abka
@@ -28,7 +29,7 @@ import org.polarsys.kitalpha.model.common.commands.exception.ModelCommandExcepti
 public class WorkspaceResourceChecker extends ModelCommand {
 
 	@Override
-	public void exec(Resource resource, IProgressMonitor monitor)
+	public void exec(ModelScrutinyRegistry analysis, Resource resource, IProgressMonitor monitor)
 			throws ModelCommandException {
 		
 		SubMonitor subMonitor = SubMonitor.convert(monitor);

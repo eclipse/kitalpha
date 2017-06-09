@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -16,13 +16,14 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.polarsys.kitalpha.model.common.commands.exception.ModelCommandException;
 import org.polarsys.kitalpha.model.common.commands.registry.WorkflowType;
+import org.polarsys.kitalpha.model.common.scrutiny.registry.ModelScrutinyRegistry;
 
 /**
  * @author Faycal Abka
  */
 public interface IModelCommandRunner {
 	
-	public void run(Resource resource, EnumSet<WorkflowType> workflows, IProgressMonitor monitor)
+	public void run(ModelScrutinyRegistry analysis, Resource resource, EnumSet<WorkflowType> workflows, IProgressMonitor monitor)
 			throws ModelCommandException;
 	
 }

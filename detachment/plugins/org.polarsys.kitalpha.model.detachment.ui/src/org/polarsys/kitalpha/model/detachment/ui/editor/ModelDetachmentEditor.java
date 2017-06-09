@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -53,15 +53,15 @@ import org.polarsys.kitalpha.model.detachment.ui.registry.ModelDetachmentPageReg
 /**
  * @author Faycal Abka
  */
-public class ModelDetachment extends SharedHeaderFormEditor {
+public class ModelDetachmentEditor extends SharedHeaderFormEditor {
 	
-	Logger LOGGER = Logger.getLogger(ModelDetachment.class);
+	Logger LOGGER = Logger.getLogger(ModelDetachmentEditor.class);
 
 	
 	private Action perfomDetachment;
-	private static ModelDetachment editor;
+	private static ModelDetachmentEditor editor;
 	
-	public ModelDetachment() {
+	public ModelDetachmentEditor() {
 		editor = this;
 	}
 	
@@ -94,7 +94,8 @@ public class ModelDetachment extends SharedHeaderFormEditor {
 											monitor.setCanceled(false);
 											EnumSet<WorkflowType> workflows = EnumSet.of(WorkflowType.ALL, WorkflowType.DETACHMENT);
 											
-											actionRunner.run(resource, workflows, monitor);
+											DetachmentEditorInput input = (DetachmentEditorInput)getEditorInput();
+											actionRunner.run(input.getAnalysis(), resource, workflows, monitor);
 											
 											Display.getDefault().syncExec(new Runnable() {
 												
