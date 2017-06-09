@@ -446,21 +446,7 @@ public interface <%=genClass.getInterfaceName()%><%=genClass.getTypeParameters()
     <%} else if (!isJDK50 && genFeature.isPrimitiveType()) {%>
 				set<%=genFeature.getAccessorName()%>(((<%=genFeature.getObjectType(genClass)%>)newValue).<%=genFeature.getPrimitiveValueFunction()%>());
     <%} else {%>
-        <%if (genFeature.getTypeGenDataType() == null || !genFeature.getTypeGenDataType().isObjectType() || !genFeature.getRawType().equals(genFeature.getType(genClass))) {%>
-<%if (!genFeature.getEcoreFeature().getEGenericType().getETypeArguments().isEmpty()) {%>
-				// begin-extension-code
-				if (newValue == null || newValue instanceof <%=genFeature.getRawImportedBoundType()%>) {
-				// end-extension-code
-<%}%>
-					set<%=genFeature.getAccessorName()%>((<%=genFeature.getObjectType(genClass)%>)newValue);
-<%if (!genFeature.getEcoreFeature().getEGenericType().getETypeArguments().isEmpty()) {%>
-				// begin-extension-code
-				}
-				// end-extension-code
-<%}%>
-        <%} else {%>
-          set<%=genFeature.getAccessorName()%>(newValue);
-        <%}%>
+				set<%=genFeature.getAccessorName()%>(<%if (genFeature.getTypeGenDataType() == null || !genFeature.getTypeGenDataType().isObjectType() || !genFeature.getRawType().equals(genFeature.getType(genClass))) {%>(<%=genFeature.getObjectType(genClass)%>)<%}%>newValue);
     <%}%>
 				return;
   <%}%>
