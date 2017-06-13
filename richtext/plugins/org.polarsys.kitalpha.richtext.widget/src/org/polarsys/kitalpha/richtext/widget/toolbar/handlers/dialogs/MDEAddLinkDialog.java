@@ -122,7 +122,7 @@ public class MDEAddLinkDialog extends MDEOkCancelDialog {
 		comboGridData.horizontalSpan = 2;
 		linkTypeCombo.setLayoutData(comboGridData);
 		
-		String[] itemsLinkList = (String[]) linkManager.getAllLinkLabels().toArray(new String[0]);
+		final String[] itemsLinkList = (String[]) linkManager.getAllLinkLabels().toArray(new String[0]);
 		
 		linkTypeCombo.setItems(itemsLinkList);
 		linkType = itemsLinkList[0];

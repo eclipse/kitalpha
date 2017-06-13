@@ -10,10 +10,13 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.richtext.widget.spi.impl;
 
-import java.io.IOException;
 import java.net.URL;
 
 import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.Platform;
+import org.osgi.framework.Bundle;
+import org.polarsys.kitalpha.richtext.widget.internal.Activator;
 
 /**
  * 
@@ -139,19 +142,35 @@ public final class MDERichTextConstants {
 	
     
     //URL CONSTANTS
-    public static final URL EDIT_ICON = 	MDERichTextConstants.class.getResource("../../../../../../../icons/edit.gif"); 		//$NON-NLS-1$
-    public static final URL CLEAR_ICON = MDERichTextConstants.class.getResource("../../../../../../../icons/clear.gif"); 		//$NON-NLS-1$
-    public static final URL ADD_LINK_ICON = MDERichTextConstants.class.getResource("../../../../../../../icons/add_link.gif"); 	//$NON-NLS-1$
-    public static final URL ADD_IMAGE_ICON = MDERichTextConstants.class.getResource("../../../../../../../icons/add_image.gif"); 	//$NON-NLS-1$
+    public static final URL EDIT_ICON = getURL(Activator.PLUGIN_ID, "icons/edit.gif"); 		//$NON-NLS-1$
+    public static final URL CLEAR_ICON = getURL(Activator.PLUGIN_ID, "icons/clear.gif"); 		//$NON-NLS-1$
+    public static final URL ADD_LINK_ICON = getURL(Activator.PLUGIN_ID, "icons/add_link.gif"); 	//$NON-NLS-1$
+    public static final URL ADD_IMAGE_ICON = getURL(Activator.PLUGIN_ID, "icons/add_image.gif"); 	//$NON-NLS-1$
 
     
 	private static String getDefaultCustomConfig() {
-		URL resource = MDERichTextConstants.class.getResource("../../../../../../../../resources/config.js"); //$NON-NLS-1$
-		try {
-			return FileLocator.toFileURL(resource).toString();
-		} catch (IOException e) {
-			//Do nothing
+		final String configPath = "resources/config.js";
+		URL url = getURL(Activator.PLUGIN_ID, configPath);
+		if (url != null){
+			return url.toString();
 		}
 		return null;
+	}
+	
+	/**
+	 * return the URL of path within the bundle
+	 * @param bundleId
+	 * @param path
+	 * @return
+	 */
+	private static URL getURL(String bundleId, String path){
+		Bundle bundle = Platform.getBundle(bundleId);
+		URL url = null;
+		if (bundle != null){
+			url = FileLocator.find(bundle, new Path(path), null);
+			return url;
+		}
+		
+		return url;
 	}
 }
