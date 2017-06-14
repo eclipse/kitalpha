@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015, 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2015, 2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -43,6 +43,7 @@ import org.eclipse.ui.actions.WorkspaceModifyOperation;
 import org.polarsys.kitalpha.ad.integration.sirius.listeners.SiriusHelper;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointActivationException;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
+import org.polarsys.kitalpha.ad.viewpoint.predicate.exceptions.EvaluationException;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentModel;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSampleFactory;
 import org.polarsys.kitalpha.vp.componentsample.wizard.project.Activator;
@@ -182,12 +183,18 @@ public class NewComponentsampleProject extends Wizard implements INewWizard {
 							viewpointManager.reference(COMPONENT_SAMPLE_ID);
 						}
 					} catch (ViewpointActivationException e) {
-						e.printStackTrace();
+						log("Can not reference viewpoint", COMPONENT_SAMPLE_ID, e);
+					} catch (EvaluationException e) {
+						log("Can not evaluate predicate for viewpoint", COMPONENT_SAMPLE_ID, e);
 					}
 				}
 			};
 			session.getTransactionalEditingDomain().getCommandStack().execute(ref);
 		}
 	}
-
+	
+	private void log(final String message, final String vpid, Throwable e) {
+		IStatus status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, message + ": " + vpid , e);
+		Activator.getDefault().getLog().log(status);
+	}
 }
