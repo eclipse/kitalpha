@@ -4,4 +4,35 @@
 	<extension-point id="org.polarsys.kitalpha.ad.services.tools.integration" name="Tools integration" schema="schema/tools.integration.exsd"/>
 	<extension-point id="org.polarsys.kitalpha.ad.services.viewpoint.manager" name="Viewpoint manager" schema="schema/viewpoint.manager.exsd"/>
 	
+	<extension
+       point="org.polarsys.kitalpha.ad.viewpoint.action.declaration">
+	    <Action
+	          ID="Reference.Viewpoint"
+	          class="org.polarsys.kitalpha.ad.services.internal.actions.EmptyTransitionAction">
+	       <Description>
+	          Reference Viewpoint Action. This action do nothing and used only as a tag in the viewpoint manager implementation
+	       </Description>
+	    </Action>
+	    <Action
+	          ID="Unreference.Viewpoint"
+	          class="org.polarsys.kitalpha.ad.services.internal.actions.EmptyTransitionAction">
+	       <Description>
+	          Unreference Viewpoint Action. This action do nothing and used only as a tag in the viewpoint manager implementation
+	       </Description>
+	    </Action>
+	    <Action
+	          ID="Activate.Viewpoint"
+	          class="org.polarsys.kitalpha.ad.services.internal.actions.EmptyTransitionAction">
+	       <Description>
+	          Activate Viewpoint Action. This action do nothing and used only as a tag in the viewpoint manager implementation
+	       </Description>
+	    </Action>
+	    <Action
+	          ID="Deactivate.Viewpoint"
+	          class="org.polarsys.kitalpha.ad.services.internal.actions.EmptyTransitionAction">
+	       <Description>
+	          Deactivate Viewpoint Action. This action do nothing and used only as a tag in the viewpoint manager implementation
+	       </Description>
+	    </Action>
+ 	</extension>
 </plugin>

@@ -65,6 +65,15 @@
             class="org.polarsys.kitalpha.ad.viewpoint.ui.provider.DefaultContextProvider">
       </ContextProvider>
    </extension>
-
+   <extension
+         point="org.polarsys.kitalpha.ad.viewpoint.action.declaration">
+      <Action
+            ID="Display.Viewpoint"
+            class="org.polarsys.kitalpha.ad.viewpoint.ui.internal.actions.EmptyDisplayAction">
+         <Description>
+            Display Viewpoint Action
+         </Description>
+      </Action>
+   </extension>
 
 </plugin>

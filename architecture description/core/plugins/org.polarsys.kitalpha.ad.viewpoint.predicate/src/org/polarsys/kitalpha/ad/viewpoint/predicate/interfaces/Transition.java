@@ -1,0 +1,65 @@
+/*******************************************************************************
+ * Copyright (c) 2017 Thales Global Services.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *  
+ * Contributors:
+ *   Thales - initial API and implementation
+ *******************************************************************************/
+package org.polarsys.kitalpha.ad.viewpoint.predicate.interfaces;
+
+import java.util.Map;
+
+/**
+ * Interface which specify the transition.
+ * A transition is declaration of three terms:
+ * <ol>
+ * 	<li>Viewpoint: represented by the ID of the viewpoint. mainly is the entity on which perform the transition</li>
+ * 	<li>Action: Define the behavior (what to do) to perform the Transition</li>
+ * 	<li>predicates: one or more predicate(s) which act as guard to the execution of the Action</li>
+ * </ol>
+ * 
+ * <b>NB: </b>If the transition specify more than one predicate, the <i>and</i> operator is applied between the predicates
+ * 
+ * @author Faycal Abka
+ *
+ */
+public interface Transition {
+	
+	/**
+	 * @return the ID of the viewpoint
+	 */
+	public String getViewpointID();
+	
+	/**
+	 * @return the ID of the Action which responsible to perform the transition
+	 */
+	public String getActionID();
+	
+	/**
+	 * @return the action which perform the transition
+	 */
+	public Action getAction();
+	
+	
+	/**
+	 * @return all predicate of this transition
+	 */
+	public Map<String, Predicate> getPredicates();
+	
+	/**
+	 * Association Predicate ID with diagnostic message
+	 * @return
+	 */
+	public Map<String, String> getDiagnosticMessages();
+	
+	/**
+	 * @param predicateID
+	 * @return diagnostic message of predicate
+	 */
+	public String getDiagnosticMessage(String predicateID);
+	
+
+}

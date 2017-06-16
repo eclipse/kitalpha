@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016-2017 Thales Global Services.
+ * Copyright (c) 2016, 2017 Thales Global Services.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,7 +46,12 @@ import org.polarsys.kitalpha.ad.metadata.helpers.MetadataHelper;
 import org.polarsys.kitalpha.ad.metadata.helpers.ViewpointMetadata;
 import org.polarsys.kitalpha.ad.services.Activator;
 import org.polarsys.kitalpha.ad.services.Messages;
+import org.polarsys.kitalpha.ad.services.ViewpointContextProvider;
+import org.polarsys.kitalpha.ad.services.helpers.ViewpointHelper;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint;
+import org.polarsys.kitalpha.ad.viewpoint.predicate.exceptions.EvaluationException;
+import org.polarsys.kitalpha.ad.viewpoint.predicate.factories.FactoryProvider;
+import org.polarsys.kitalpha.ad.viewpoint.predicate.interfaces.TransitionEngine;
 import org.polarsys.kitalpha.resourcereuse.helper.ResourceReuse;
 import org.polarsys.kitalpha.resourcereuse.model.Location;
 import org.polarsys.kitalpha.resourcereuse.model.Resource;
@@ -61,6 +66,10 @@ public class ViewpointManager {
 	private static final String VIEWPOINT_STATE_READ_ONLY = "stateReadOnly";
 	private static final String VIEWPOINT_STATE_HIDDEN = "stateHidden";
 	private static final String VIEWPOINT_STATE_MUTABLE_ACTIVATION = "stateMutableActivation";
+	
+	//Actions
+	private static final String VIEWPOINT_REFERENCE_ACTION = "Reference.Viewpoint";
+	private static final String VIEWPOINT_UNREFERENCE_ACTION = "Unreference.Viewpoint";
 	
 	private final static List<OverallListener> overallListeners = new ArrayList<OverallListener>();
 	private final static List<OverallListener2> overallListener2s = new ArrayList<OverallListener2>();
@@ -303,34 +312,42 @@ public class ViewpointManager {
 	}
 
 	/**
+	 * @throws EvaluationException 
 	 * @deprecated replaced by reference(String id)
 	 */
-	public void activate(String id) throws ViewpointActivationException {
+	public void activate(String id) throws ViewpointActivationException, EvaluationException {
 		reference(id);
 	}
 
 	/**
+	 * @throws EvaluationException 
 	 * @deprecated replaced by reference(String id)
 	 */
-	public void startUse(String id) throws ViewpointActivationException {
+	public void startUse(String id) throws ViewpointActivationException, EvaluationException {
 		reference(id);
 	}
 	
-	public void reference(String id) throws ViewpointActivationException {
-		Resource vpResource = getViewpoint(id);
-		if (vpResource == null)
-			throw new ViewpointActivationException(NLS.bind(Messages.Viewpoint_Manager_error_3, id));
-		if (isUsed(id))
-			throw new AlreadyInStateException(NLS.bind(Messages.Viewpoint_Manager_error_4, id));
+	public void reference(String id) throws ViewpointActivationException, EvaluationException {
+		TransitionEngine transitionEngine = FactoryProvider.getTransitionFactory().createTransitionEngine(id, VIEWPOINT_REFERENCE_ACTION, new ViewpointContextProvider(this));
+		if (transitionEngine.eval()){
+			Resource vpResource = getViewpoint(id);
+			if (vpResource == null)
+				throw new ViewpointActivationException(NLS.bind(Messages.Viewpoint_Manager_error_3, id));
+			if (isUsed(id))
+				throw new AlreadyInStateException(NLS.bind(Messages.Viewpoint_Manager_error_4, id));
 
-		ResourceSet set = new ResourceSetImpl();
-		try {
-			doReference(set, vpResource);
-		} finally {
-			for (org.eclipse.emf.ecore.resource.Resource r : set.getResources()) {
-				r.unload();
+			ResourceSet set = new ResourceSetImpl();
+			try {
+				doReference(set, vpResource);
+			} finally {
+				for (org.eclipse.emf.ecore.resource.Resource r : set.getResources()) {
+					r.unload();
+				}
+				set.getResources().clear();
 			}
-			set.getResources().clear();
+		} else {
+			String message = ViewpointHelper.buildDiagnosticMessage(transitionEngine, false, NLS.bind(Messages.Viewpoint_Manager_error_11, id));
+			throw new ViewpointActivationException(message);
 		}
 	}
 
@@ -404,9 +421,10 @@ public class ViewpointManager {
 	 * 
 	 * @param id
 	 * @throws ViewpointActivationException
+	 * @throws EvaluationException 
 	 * @deprecated replaced by stopUse(String id)
 	 */
-	public void desactivate(String id) throws ViewpointActivationException {
+	public void desactivate(String id) throws ViewpointActivationException, EvaluationException {
 		stopUse(id);
 	}
 
@@ -415,31 +433,39 @@ public class ViewpointManager {
 	 * 
 	 * @param id
 	 * @throws ViewpointActivationException
+	 * @throws EvaluationException 
 	 * @deprecated use unReference()
 	 * 
 	 */
-	public void stopUse(String id) throws ViewpointActivationException {
+	public void stopUse(String id) throws ViewpointActivationException, EvaluationException {
 		unReference(id);
 	}
 	
-	public void unReference(String id) throws ViewpointActivationException {
-		Resource vpResource = getViewpoint(id);
-		if (vpResource == null)
-			throw new ViewpointActivationException(NLS.bind(Messages.Viewpoint_Manager_error_3, id));
-		if (!isUsed(id))
-			throw new AlreadyInStateException(NLS.bind(Messages.Viewpoint_Manager_error_6, id));
-		for (Entry<String, List<String>> entry : dependencies.entrySet()) {
-			if (entry.getValue().contains(id))
-				throw new ViewpointActivationException(NLS.bind(Messages.Viewpoint_Manager_error_8, id, entry.getKey()));
+	public void unReference(String id) throws ViewpointActivationException, EvaluationException {
+		TransitionEngine transitionEngine = FactoryProvider.getTransitionFactory().createTransitionEngine(id, VIEWPOINT_UNREFERENCE_ACTION, new ViewpointContextProvider(this));
 
+		if (transitionEngine.eval()){
+			Resource vpResource = getViewpoint(id);
+			if (vpResource == null)
+				throw new ViewpointActivationException(NLS.bind(Messages.Viewpoint_Manager_error_3, id));
+			if (!isUsed(id))
+				throw new AlreadyInStateException(NLS.bind(Messages.Viewpoint_Manager_error_6, id));
+			for (Entry<String, List<String>> entry : dependencies.entrySet()) {
+				if (entry.getValue().contains(id))
+					throw new ViewpointActivationException(NLS.bind(Messages.Viewpoint_Manager_error_8, id, entry.getKey()));
+
+			}
+			dependencies.remove(id);
+			// notify listeners and then desactivate viewpoint. Maybe we need
+			// additional events such PRE_DEACTIVATED or POST_DEACTIVATED
+			String providerSymbolicName = vpResource.getProviderSymbolicName();
+			desactivateBundle(providerSymbolicName);
+			MetadataHelper.getViewpointMetadata(target).setUsage(vpResource, null, false);
+			fireEvent(vpResource, UNREFERENCE);
+		} else {
+			String message = ViewpointHelper.buildDiagnosticMessage(transitionEngine, false, NLS.bind(Messages.Viewpoint_Manager_error_10, id));
+			throw new ViewpointActivationException(message);
 		}
-		dependencies.remove(id);
-		// notify listeners and then desactivate viewpoint. Maybe we need
-		// additional events such PRE_DEACTIVATED or POST_DEACTIVATED
-		String providerSymbolicName = vpResource.getProviderSymbolicName();
-		desactivateBundle(providerSymbolicName);
-		MetadataHelper.getViewpointMetadata(target).setUsage(vpResource, null, false);
-		fireEvent(vpResource, UNREFERENCE);
 	}
 
 	public static void addOverallListener(OverallListener2 l) {

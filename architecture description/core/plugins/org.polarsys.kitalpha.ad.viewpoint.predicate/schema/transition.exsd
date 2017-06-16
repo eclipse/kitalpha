@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="org.polarsys.kitalpha.ad.viewpoint.predicate" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appinfo>
+         <meta.schema plugin="org.polarsys.kitalpha.ad.viewpoint.predicate" id="org.polarsys.kitalpha.ad.viewpoint.transition" name="Transition"/>
+      </appinfo>
+      <documentation>
+         Transition declaration
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appinfo>
+            <meta.element />
+         </appinfo>
+      </annotation>
+      <complexType>
+         <sequence>
+            <element ref="Transition" minOccurs="1" maxOccurs="unbounded"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="Transition">
+      <complexType>
+         <sequence>
+            <element ref="Description"/>
+            <element ref="Predicate" minOccurs="1" maxOccurs="unbounded"/>
+         </sequence>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  The name of transition. To be humain readable
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="viewpointID" type="string" use="required">
+            <annotation>
+               <documentation>
+                  Viewpoint ID on which this transition is applied
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="identifier" basedOn="org.polarsys.kitalpha.resourcereuse.resources/resource/@id"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="actionID" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The Action ID to Apply in this transition
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="identifier" basedOn="org.polarsys.kitalpha.ad.viewpoint.action.declaration/Action/@ID"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="Predicate">
+      <complexType>
+         <attribute name="predicateID" type="string" use="required">
+            <annotation>
+               <documentation>
+                  The predicate to reuse in the transition
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="identifier" basedOn="org.polarsys.kitalpha.ad.viewpoint.predicate.declaration/Predicate/@ID"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="Description" type="string">
+      <annotation>
+         <documentation>
+            Description of what the Transition is enteed to do
+         </documentation>
+      </annotation>
+   </element>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="since"/>
+      </appinfo>
+      <documentation>
+         [Enter the first release in which this extension point appears.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="examples"/>
+      </appinfo>
+      <documentation>
+         [Enter extension point usage example here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="apiinfo"/>
+      </appinfo>
+      <documentation>
+         [Enter API information here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="implementation"/>
+      </appinfo>
+      <documentation>
+         [Enter information about supplied implementation of this extension point.]
+      </documentation>
+   </annotation>
+
+
+</schema>

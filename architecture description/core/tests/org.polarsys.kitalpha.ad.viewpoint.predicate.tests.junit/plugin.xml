@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+
+<!--
+Copyright (c) 2017 Thales Global Services S.A.S.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+ Thales Global Services S.A.S - initial API and implementation
+-->
+
+
+<plugin>
+   <extension
+         point="org.polarsys.kitalpha.ad.viewpoint.predicate.declaration">
+      <Predicate
+            ID="org.polarsys.kitalpha.ad.viewpoint.predicate.tests.junit.check.manager.predicate"
+            class="org.polarsys.kitalpha.ad.viewpoint.predicate.tests.junit.testcases.contrib.ContribPredicate">
+         <Description>
+            Description body text
+         </Description>
+      </Predicate>
+   </extension>
+   <extension
+         point="org.polarsys.kitalpha.ad.viewpoint.action.declaration">
+      <Action
+            ID="org.polarsys.kitalpha.ad.viewpoint.predicate.tests.junit.check.manager.action"
+            class="org.polarsys.kitalpha.ad.viewpoint.predicate.tests.junit.testcases.contrib.ContribAction">
+         <Description>
+            Description body text
+         </Description>
+      </Action>
+   </extension>
+   <extension
+         point="org.polarsys.kitalpha.ad.viewpoint.transition">
+      <Transition
+            actionID="org.polarsys.kitalpha.ad.viewpoint.predicate.tests.junit.check.manager.action"
+            name="No Transformation"
+            viewpointID="No.id.for.viewpoint">
+         <Description>
+            Description body text
+         </Description>
+         <Predicate
+               predicateID="org.polarsys.kitalpha.ad.viewpoint.predicate.tests.junit.check.manager.predicate">
+         </Predicate>
+      </Transition>
+   </extension>
+
+</plugin>

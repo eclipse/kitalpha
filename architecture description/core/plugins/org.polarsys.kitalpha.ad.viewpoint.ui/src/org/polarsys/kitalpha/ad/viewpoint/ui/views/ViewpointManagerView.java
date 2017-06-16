@@ -12,8 +12,10 @@
 package org.polarsys.kitalpha.ad.viewpoint.ui.views;
 
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.EnumSet;
+import java.util.List;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
@@ -71,12 +73,18 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.ViewPart;
 import org.polarsys.kitalpha.ad.common.AD_Log;
+import org.polarsys.kitalpha.ad.services.helpers.ViewpointHelper;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointActivationException;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.Description;
+import org.polarsys.kitalpha.ad.viewpoint.predicate.exceptions.EvaluationException;
+import org.polarsys.kitalpha.ad.viewpoint.predicate.factories.FactoryProvider;
+import org.polarsys.kitalpha.ad.viewpoint.predicate.interfaces.ContextProvider;
+import org.polarsys.kitalpha.ad.viewpoint.predicate.interfaces.TransitionEngine;
 import org.polarsys.kitalpha.ad.viewpoint.ui.AFImages;
 import org.polarsys.kitalpha.ad.viewpoint.ui.Activator;
 import org.polarsys.kitalpha.ad.viewpoint.ui.Messages;
+import org.polarsys.kitalpha.ad.viewpoint.ui.internal.actions.ViewpointUIContextProvider;
 import org.polarsys.kitalpha.ad.viewpoint.ui.provider.AFContextProvider;
 import org.polarsys.kitalpha.model.common.commands.registry.WorkflowType;
 import org.polarsys.kitalpha.model.common.commands.runner.IModelCommandRunner;
@@ -94,6 +102,8 @@ import org.polarsys.kitalpha.resourcereuse.model.Resource;
  * 
  */
 public class ViewpointManagerView extends ViewPart {
+	
+	private static final String DISPLAY_VIEWPOINT_ACTION = "Display.Viewpoint"; //$NON-NLS-1$
 
 	private final class RefreshJob extends Job {
 		private RefreshJob() {
@@ -102,7 +112,7 @@ public class ViewpointManagerView extends ViewPart {
 
 		@Override
 		protected IStatus run(IProgressMonitor monitor) {
-			final Description[] availableViewpoints = ViewpointManager.getAvailableViewpointDescriptions();
+			final Description[] availableViewpoints = getFilteredViewpoints();
 			if (viewer != null && viewer.getControl() != null && !viewer.getControl().isDisposed())
 			{
 				getSite().getShell().getDisplay().asyncExec(new Runnable() {
@@ -114,6 +124,23 @@ public class ViewpointManagerView extends ViewPart {
 			}
 			return Status.OK_STATUS;
 		}
+	}
+	
+	private Description[] getFilteredViewpoints(){
+		Description[] viewpointDescriptions = ViewpointManager.getAvailableViewpointDescriptions();
+		List<Description> result = new ArrayList<ViewpointManager.Description>();
+		for (Description description : viewpointDescriptions) {
+			final ViewpointUIContextProvider displayContextProvider = (new ViewpointUIContextProvider(description.getId(), ViewpointManager.getInstance(context)));
+			TransitionEngine transitionEngine = FactoryProvider.getTransitionFactory().createTransitionEngine(description.getId(), DISPLAY_VIEWPOINT_ACTION, displayContextProvider);
+			try {
+				if (transitionEngine.eval()){
+					result.add(description);
+				}
+			} catch (EvaluationException e) {
+				AD_Log.getDefault().logWarning(e);
+			}
+		}
+		return result.toArray(new Description[result.size()]);
 	}
 
 	private final class HeaderSelectionListener extends SelectionListener2 {
@@ -486,6 +513,9 @@ public class ViewpointManagerView extends ViewPart {
 				} catch (ViewpointActivationException e) {
 					MessageDialog.openError(getSite().getShell(), "Error", e.getMessage());
 					AD_Log.getDefault().logError(e);
+				} catch (EvaluationException e) {
+					MessageDialog.openError(getSite().getShell(), "Error", e.getMessage());
+					AD_Log.getDefault().logError(e);
 				}
 			}
 		};
@@ -535,19 +565,27 @@ public class ViewpointManagerView extends ViewPart {
 					// if the detachement is successful then the viewpoint is no more in use
 //					IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(airdResource.getURI().toPlatformString(true)));
 //					DetachmentHelper.openEditor(file, new NullProgressMonitor());
-					ModelScrutinyRegistry analysis = Scrutineer.startScrutiny(airdResource);
-					RegistryElement vpReg = analysis.getRegistryElement("org.polarsys.kitalpha.model.common.scrutiny.contrib.scrutiny.viewpoints"); //$NON-NLS-1$
-					Collection<IScrutinize> finders = vpReg.getFinders();
-					for (IScrutinize s : finders) {
-						ViewpointTreeContainer vps = (ViewpointTreeContainer) s.getAnalysisResult();
-						for (IViewpointTreeDescription root : vps.getRoots()) 
-							unselect(root, id);
-					}
 					
-					//Run Commands
-					IModelCommandRunner commandRunner = new ModelCommandRunner();
-					commandRunner.run(analysis, airdResource, EnumSet.of(WorkflowType.ALL, WorkflowType.DETACHMENT), new NullProgressMonitor());
+					ContextProvider contextProvider = new ViewpointUIContextProvider(res.getId(), vpMgr);
+					TransitionEngine transitionEngine = FactoryProvider.getTransitionFactory().createTransitionEngine(res.getId(), "Unreference.Viewpoint", contextProvider); 
 
+					if (transitionEngine.eval()){
+						ModelScrutinyRegistry analysis = Scrutineer.startScrutiny(airdResource);
+						RegistryElement vpReg = analysis.getRegistryElement("org.polarsys.kitalpha.model.common.scrutiny.contrib.scrutiny.viewpoints"); //$NON-NLS-1$
+						Collection<IScrutinize> finders = vpReg.getFinders();
+						for (IScrutinize s : finders) {
+							ViewpointTreeContainer vps = (ViewpointTreeContainer) s.getAnalysisResult();
+							for (IViewpointTreeDescription root : vps.getRoots()) 
+								unselect(root, id);
+						}
+
+						//Run Commands
+						IModelCommandRunner commandRunner = new ModelCommandRunner();
+						commandRunner.run(analysis, airdResource, EnumSet.of(WorkflowType.ALL, WorkflowType.DETACHMENT), new NullProgressMonitor());
+					} else {
+						String message = ViewpointHelper.buildDiagnosticMessage(transitionEngine, false, "Cannot Unreference viewpoint: " + res.getId()); //$NON-NLS-1$
+						throw new ViewpointActivationException(message);
+					}
 				} catch (Exception e) {
 					MessageDialog.openError(site, "Error", e.getMessage());
 					Activator.getDefault().logError(e);
