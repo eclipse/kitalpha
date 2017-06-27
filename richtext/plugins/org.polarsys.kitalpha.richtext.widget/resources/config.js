@@ -10,9 +10,17 @@
  ******************************************************************************/
  
  /**
-  * Faycal Abka
+  * For more information about the option configuration, please visit: http://docs.ckeditor.com/#!/api/CKEDITOR.config
+  * 
+  * @author Faycal Abka
   */
  CKEDITOR.editorConfig = function(config) {
 	config.allowedContent = true; //Allow all content
-	config.disableNativeSpellChecker = false //Enable native spell checking (browser)
+	config.disableNativeSpellChecker = false; //Enable native spell checking (browser)
+	config.autoEmbed_widget = '';
+	config.entities = true;
+	config.fontSize_defaultLabel = '12';
+	config.font_defaultLabel = 'Arial';
+	config.linkShowAdvancedTab = false;
+	config.linkShowTargetTab = false;
 }

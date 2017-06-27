@@ -93,7 +93,7 @@ public class LinksManagerImpl implements LinkManager {
 			LinkTypeHandler handler = e.getValue();
 			String resolvedType = handler.resolveType(link);
 			if (resolvedType != null && resolvedType.equalsIgnoreCase(linkType)){
-				handler.openLink(linkType);
+				handler.openLink(link);
 				break;
 			}
 		}

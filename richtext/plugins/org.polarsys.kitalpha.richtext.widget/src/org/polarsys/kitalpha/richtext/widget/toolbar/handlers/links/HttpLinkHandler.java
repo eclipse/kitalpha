@@ -12,9 +12,11 @@ package org.polarsys.kitalpha.richtext.widget.toolbar.handlers.links;
 
 import java.net.URL;
 
+import org.eclipse.core.runtime.Status;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.browser.IWebBrowser;
 import org.eclipse.ui.browser.IWorkbenchBrowserSupport;
+import org.polarsys.kitalpha.richtext.widget.internal.Activator;
 import org.polarsys.kitalpha.richtext.widget.messages.Messages;
 import org.polarsys.kitalpha.richtext.widget.toolbar.handlers.utils.Tuple;
 
@@ -32,7 +34,7 @@ public class HttpLinkHandler extends AbstractLinkTypeHandler {
 
 	@Override
 	public String encode(String url, String displayText) {
-		return "<a href=\"" + customizeLink(url, null).getFirst() + "\">" + displayText + "</a>"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$;
+		return "<a href=\"" + customizeLink(url, null).getFirst() + "\">" + escapeDisplayedText(displayText) + "</a>"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$;
 	}
 
 	@Override
@@ -47,8 +49,14 @@ public class HttpLinkHandler extends AbstractLinkTypeHandler {
 			IWebBrowser browser = PlatformUI.getWorkbench().getBrowserSupport().createBrowser(style, null, link, link);
 			browser.openURL(new URL(link));
 		} catch (Exception e) {
-			//TODO log
+			Status status = new Status(Status.ERROR, Activator.PLUGIN_ID, "openLink(...)", e); //$NON-NLS-1$
+			Activator.getDefault().getLog().log(status);
 		}
+	}
+	
+	@Override
+	protected Tuple<String, String> customizeLink(String link, Object object) {
+		return super.customizeLink(LinkManager.URL + "://" + link, object);
 	}
 
 	@Override

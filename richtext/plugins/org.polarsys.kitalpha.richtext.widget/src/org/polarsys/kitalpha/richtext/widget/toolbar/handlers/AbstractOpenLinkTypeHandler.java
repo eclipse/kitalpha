@@ -14,11 +14,13 @@ import java.io.File;
 
 import org.eclipse.core.filesystem.EFS;
 import org.eclipse.core.filesystem.IFileStore;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.ui.IEditorRegistry;
 import org.eclipse.ui.IURIEditorInput;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.ide.FileStoreEditorInput;
+import org.polarsys.kitalpha.richtext.widget.internal.Activator;
 import org.polarsys.kitalpha.richtext.widget.toolbar.handlers.links.AbstractLinkTypeHandler;
 import org.polarsys.kitalpha.richtext.widget.toolbar.handlers.links.LinkTypeHandler;
 
@@ -40,7 +42,8 @@ public abstract class AbstractOpenLinkTypeHandler extends AbstractLinkTypeHandle
 			try {
 				page.openEditor(editorInput, IEditorRegistry.SYSTEM_EXTERNAL_EDITOR_ID);
 			} catch (Exception e) {
-				//TODO log
+				Status status = new Status(Status.ERROR, Activator.PLUGIN_ID, "openLink(...)", e); //$NON-NLS-1$
+				Activator.getDefault().getLog().log(status);
 			}
 		}
 	}

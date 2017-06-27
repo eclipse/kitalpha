@@ -104,13 +104,14 @@ public class MDEAddLinkDialog extends MDEOkCancelDialog {
 						linkType.equalsIgnoreCase(LinkManager.DIAGRAM_ELEMENT_LABEL)){
 					path = linkManager.getPath(linkType, richText.getElement());
 				}
-				String path2Object = path.getFirst();
-				String objectLabel = path.getSecond();
-				if (path != null && path2Object != null){
-					urlText.setText(path2Object);
+				if (path != null){
+					String path2Object = path.getFirst();
+					String objectLabel = path.getSecond();
+					if (path != null && path2Object != null){
+						urlText.setText(path2Object);
+					}
+					urlDisplayNameText.setText(objectLabel != null? objectLabel: "");
 				}
-				urlDisplayNameText.setText(objectLabel != null? objectLabel: "");
-				
 			}
 		});
 		browseButton.moveAbove(urlDisplayNameLabel);

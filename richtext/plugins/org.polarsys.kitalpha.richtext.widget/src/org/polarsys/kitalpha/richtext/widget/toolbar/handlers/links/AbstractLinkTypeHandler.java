@@ -10,6 +10,7 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.richtext.widget.toolbar.handlers.links;
 
+import org.apache.commons.lang.StringEscapeUtils;
 import org.eclipse.emf.ecore.EObject;
 import org.polarsys.kitalpha.richtext.widget.toolbar.handlers.utils.MDERichTextHelper;
 import org.polarsys.kitalpha.richtext.widget.toolbar.handlers.utils.Tuple;
@@ -26,6 +27,17 @@ public abstract class AbstractLinkTypeHandler implements LinkTypeHandler {
 			return new Tuple<String, String>(link, MDERichTextHelper.getName((EObject)object));
 		}
 		return new Tuple<String, String>(link, null);
+	}
+	
+	/**
+	 * Escape special charachers in String parameter to be displayed on the link<br/>
+	 * Default implementation escapes HTML entities. The client must override this methode to have
+	 * a custom behavior
+	 * @param toEscape String to escape
+	 * @return String contains escaped special characters
+	 */
+	protected String escapeDisplayedText(String toEscape){
+		return StringEscapeUtils.escapeHtml(toEscape);
 	}
 
 }

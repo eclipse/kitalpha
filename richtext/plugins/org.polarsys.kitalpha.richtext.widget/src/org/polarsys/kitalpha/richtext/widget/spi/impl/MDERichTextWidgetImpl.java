@@ -11,6 +11,8 @@
 package org.polarsys.kitalpha.richtext.widget.spi.impl;
 
 
+import java.util.Map;
+
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.ecore.EObject;
@@ -21,13 +23,19 @@ import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.jface.layout.GridDataFactory;
 import org.eclipse.nebula.widgets.richtext.RichTextEditor;
 import org.eclipse.nebula.widgets.richtext.toolbar.JavaCallbackListener;
+import org.eclipse.swt.browser.Browser;
+import org.eclipse.swt.browser.BrowserFunction;
 import org.eclipse.swt.browser.LocationListener;
+import org.eclipse.swt.browser.ProgressEvent;
+import org.eclipse.swt.browser.ProgressListener;
 import org.eclipse.swt.events.FocusListener;
 import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.widgets.Composite;
 import org.polarsys.kitalpha.richtext.widget.messages.Messages;
 import org.polarsys.kitalpha.richtext.widget.spi.MDERichTextConfiguration;
 import org.polarsys.kitalpha.richtext.widget.spi.MDERichTextWidget;
+import org.polarsys.kitalpha.richtext.widget.toolbar.handlers.links.LinksManagerImpl;
+import org.polarsys.kitalpha.richtext.widget.toolbar.handlers.utils.MDERichTextHelper;
 
 /**
  * Implementation of the MDE Rich Text Widget
@@ -37,12 +45,19 @@ import org.polarsys.kitalpha.richtext.widget.spi.MDERichTextWidget;
  */
 public class MDERichTextWidgetImpl implements MDERichTextWidget {
 	
+	private static final String SLASH_CHARACTER = "/"; //$NON-NLS-1$
+	private static final String FILE_PROTOCOL = "file://"; //$NON-NLS-1$
+	
 	private final MDERichTextConfiguration configuration;
 	private final RichTextEditor richText;
 	
 	private EObject owner;
 	private EStructuralFeature feature;
-
+	
+	private boolean editorLoaded = false;
+	
+	private String baseHrefPath = null;
+	
 	public MDERichTextWidgetImpl(Composite parent, MDERichTextConfiguration configuration, 
 			EObject owner, EStructuralFeature feature) {
 		this(parent, configuration);
@@ -57,6 +72,7 @@ public class MDERichTextWidgetImpl implements MDERichTextWidget {
 		this.configuration = configuration;
 		configuration.createToolbarForWidget();
 		this.richText = new RichTextEditor(parent, configuration.getConfiguration());
+		installBrowserListeners(configuration.getConfiguration().getBrowser());
 		GridDataFactory.fillDefaults().grab(true, true).applyTo(this.richText);
 		configuration.bind2Widget(this);
 	}
@@ -69,6 +85,7 @@ public class MDERichTextWidgetImpl implements MDERichTextWidget {
 		this.configuration = configuration;
 		configuration.createToolbarForWidget();
 		this.richText = new RichTextEditor(parent, configuration.getConfiguration(), style);
+		installBrowserListeners(configuration.getConfiguration().getBrowser());
 		GridDataFactory.fillDefaults().grab(true, true).applyTo(this.richText);
 		configuration.bind2Widget(this);
 	}
@@ -78,6 +95,113 @@ public class MDERichTextWidgetImpl implements MDERichTextWidget {
 		this(parent, configuration, style);
 		bind(owner, feature);
 	}
+	
+	@Override
+	public void setBaseHrefPath(String baseHref){
+		boolean forceEditorUpdate = false;
+		baseHref = getBaseHref(baseHref);
+		if (this.baseHrefPath == null 
+				|| this.baseHrefPath.isEmpty()){
+			this.baseHrefPath = baseHref;
+		}
+		forceEditorUpdate = setBaseHref(baseHref);
+
+		if (forceEditorUpdate){
+			updateEditor();
+		}
+	}
+
+
+	private boolean setBaseHref(String baseHref) {
+		boolean result = false;
+		Map<String, Object> conf = configuration.getConfiguration().getAllOptions();
+		if (conf.containsKey(MDERichTextConstants.BASE_HREF)){
+			Object oldValue = conf.get(MDERichTextConstants.BASE_HREF);
+			result = oldValue == null 
+					|| !oldValue.equals(this.baseHrefPath) 
+					|| !this.baseHrefPath.equals(baseHref);
+		}
+		configuration.setValue(MDERichTextConstants.BASE_HREF, baseHref);
+		this.baseHrefPath = baseHref; //update with latest path
+		return result;
+	}
+	
+	
+	
+	private String getBaseHref(String baseHref) {
+		Assert.isNotNull(baseHref);
+		if (!baseHref.endsWith(SLASH_CHARACTER)){
+			baseHref = baseHref + SLASH_CHARACTER;
+		}
+		baseHref = FILE_PROTOCOL + baseHref;
+		return baseHref;
+	}
+	
+	private void installBrowserListeners(Browser browser){
+		
+		browser.addProgressListener(new ProgressListener() {
+			
+			@Override
+			public void completed(ProgressEvent event) {
+				editorLoaded = true;
+				installKeytrokesHandlers();
+			}
+			
+			@Override
+			public void changed(ProgressEvent event) {
+			}
+		});
+	}
+	
+	private void installKeytrokesHandlers(){
+		installOpenLinkHandler();
+		installSaveHandler();
+	}
+
+	/**
+	 * Navigate with CTRL-Click on links
+	 */
+	private void installOpenLinkHandler() {
+		StringBuffer script = new StringBuffer();
+		
+		/*
+		 * Add ctrl-click listener when the editor is ready
+		 * 
+		 * CKEDITOR.on('instanceReady', function(event) {
+    	 * 		$('iframe').contents().click(function(e) {
+         *			if (typeof e.target.href != 'undefined' && e.ctrlKey == true) {
+         *   			openLink(e.target.href); //Callback to java
+         *			}
+    	 *		});
+		 *	});
+		 */
+		
+		script.append("CKEDITOR.on('instanceReady', function(event) {	")
+		.append("$('iframe').contents().click(function(e) {")
+		.append("if(typeof e.target.href != 'undefined' && e.ctrlKey == true) {	")
+		.append("openLink(e.target.href);")
+		.append("}});});");
+		
+		executeJavascript(script.toString());
+		
+		//TODO maybe install dispose or location listener to release this function?
+		new BrowserFunction(configuration.getConfiguration().getBrowser(), "openLink"){ //$NON-NLS-1$
+			public Object function(Object[] arguments) {
+				if (arguments != null && arguments.length > 0){
+					for (Object object : arguments) {
+						(new LinksManagerImpl()).openLink((String)object);
+					}
+				}
+				return null;
+			};
+		};
+	}
+	
+	//TODO implements
+	private void installSaveHandler(){
+		
+	}
+	
 	
 	@Override
 	public EObject getElement() {
@@ -91,46 +215,64 @@ public class MDERichTextWidgetImpl implements MDERichTextWidget {
 
 	@Override
 	public void bind(EObject owner, EStructuralFeature feature) {
-		
+
 		this.owner = owner;
 		this.feature = feature;
-		
+
+		setBaseHrefPath(MDERichTextHelper.getProjectPath(owner));
 		loadContent();
 	}
 
 	@Override
 	public void setVisible(boolean visible) {
-		this.setVisible(visible);
+		if (editorLoaded){
+			this.setVisible(visible);
+		}
 	}
 
 	@Override
 	public String getText() {
-		return richText.getText();
+		if (editorLoaded){
+			return richText.getText();
+		}
+		return ""; //$NON-NLS-1$
 	}
 
 	@Override
 	public void setText(String text) {
-		richText.setText(text);
+		if (text != null){
+			richText.setText(text);
+		}
 	}
 
 	@Override
 	public void insertText(String text) {
-		richText.insertText(text);
+		if (text != null && editorLoaded){
+			richText.insertText(text);
+		}
 	}
 
 	@Override
 	public void insertHTML(String html) {
-		richText.insertHTML(html);
+		if (html != null && editorLoaded){
+			richText.insertHTML(html);
+		}
 	}
 
 	@Override
 	public String getSelectedText() {
-		return richText.getSelectedText();
+		if (editorLoaded){
+			return richText.getSelectedText();
+		}
+		return ""; //$NON-NLS-1$
 	}
 
 	@Override
 	public String getSelectedHTML() {
-		return this.getSelectedHTML();
+		if (editorLoaded){
+			return this.getSelectedHTML();
+		}
+		return "";
 	}
 
 	@Override
@@ -145,23 +287,33 @@ public class MDERichTextWidgetImpl implements MDERichTextWidget {
 
 	@Override
 	public boolean isEditable() {
-		return richText.isEditable();
+		if (editorLoaded){
+			return richText.isEditable();
+		} 
+		return false;
 	}
 
 	@Override
 	public void setEditable(boolean editable) {
-		richText.setEditable(editable);
+		if (editorLoaded){
+			richText.setEditable(editable);
+		}
 	}
 
 	@Override
 	public void updateToolbar() {
-		richText.updateToolbar();
+		if (editorLoaded){
+			richText.updateToolbar();
+		}
 	}
 	
 	@Override
 	public boolean setItemState(String command, String state) {
-		StringBuffer updateStateScript = getCommand(command).append(".setState(").append(state).append(");");
-		return executeJavascript(updateStateScript.toString());
+		if (editorLoaded){
+			StringBuffer updateStateScript = getCommand(command).append(".setState(").append(state).append(");");
+			return executeJavascript(updateStateScript.toString());
+		}
+		return false;
 	}
 	
 	protected final StringBuffer getCommand(String command){
@@ -170,7 +322,9 @@ public class MDERichTextWidgetImpl implements MDERichTextWidget {
 
 	@Override
 	public void updateEditor() {
-		richText.updateEditor();
+		if (editorLoaded){
+			richText.updateEditor();
+		}
 	}
 	
 	/**
@@ -208,8 +362,13 @@ public class MDERichTextWidgetImpl implements MDERichTextWidget {
 		
 		areNotNull(getElement(), getFeature());
 		
-		String text = (String) getElement().eGet(getFeature());
-		setText(text);
+		Object text = getElement().eGet(getFeature());
+		String oldValue = getText();
+		
+		String value = (String)((text instanceof String)? text: ""); //$NON-NLS-1$
+		if (value != null && !value.equals(oldValue)){ 
+			setText(value);
+		}
 	}
 	
 	
