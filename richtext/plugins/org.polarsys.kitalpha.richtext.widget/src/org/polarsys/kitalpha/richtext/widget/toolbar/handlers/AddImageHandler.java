@@ -16,6 +16,9 @@ import org.polarsys.kitalpha.richtext.widget.spi.MDERichTextWidget;
 import org.polarsys.kitalpha.richtext.widget.toolbar.handlers.dialogs.MDEAddImageDialog;
 import org.polarsys.kitalpha.richtext.widget.toolbar.handlers.links.ImageManagerImpl;
 
+/**
+ * @author Faycal Abka
+ */
 public class AddImageHandler implements MDERichTextToolbarItemHandler {
 
 	@Override
