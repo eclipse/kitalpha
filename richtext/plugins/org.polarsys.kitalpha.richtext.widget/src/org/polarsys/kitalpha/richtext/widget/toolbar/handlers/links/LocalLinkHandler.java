@@ -30,7 +30,7 @@ public class LocalLinkHandler extends AbstractOpenLinkTypeHandler {
 
 	@Override
 	public String encode(String url, String displayText) {
-		return "<a href=\"local://" + url + "\">" + displayText + "</a>"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		return "<a href=\"local://" + url + "\">" + escapeDisplayedText(displayText) + "</a>"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 	}
 
 	@Override
@@ -38,7 +38,7 @@ public class LocalLinkHandler extends AbstractOpenLinkTypeHandler {
 		link = link.replaceFirst("local://", basePath); //$NON-NLS-1$
 		link = link.replace('/', '\\');
 		link = link.replace("%20", " "); //$NON-NLS-1$ //$NON-NLS-2$
-		return link;	
+		return link;
 	}
 
 	@Override

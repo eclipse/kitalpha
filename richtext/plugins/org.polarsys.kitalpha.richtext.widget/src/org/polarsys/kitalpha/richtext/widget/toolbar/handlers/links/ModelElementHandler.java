@@ -37,7 +37,7 @@ public class ModelElementHandler extends AbstractLinkTypeHandler {
 
 	@Override
 	public String encode(String url, String displayText) {
-		return "<a href=\"hlink://" + url + "\">" + displayText + "</a>"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		return "<a href=\"hlink://" + url + "\">" + escapeDisplayedText(displayText) + "</a>"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 	}
 
 	@Override

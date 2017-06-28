@@ -48,6 +48,16 @@ public class MDERichTextFactory {
 	
 	
 	/**
+	 * Create a factory with basepath to handle relative path
+	 * @param basePath
+	 */
+	public MDERichTextFactory(String basePath){
+		this();
+		setBaseHrefPath(basePath);
+	}
+	
+	
+	/**
 	 * Put a list of configurations here
 	 */
 	protected void initializeDefaultConfiguration() {
@@ -72,10 +82,7 @@ public class MDERichTextFactory {
 				MDERichTextConstants.SUPERSCRIPT);
 		configuration.initializeToolbarItem(MDERichTextConstants.COLORS_TOOLBAR);
 		configuration.initializeToolbarItem(MDERichTextConstants.PARAGRAPH_TOOLBAR, 
-				MDERichTextConstants.NUMBERED_LIST, MDERichTextConstants.BULLETED_LIST, 
-				MDERichTextConstants.INDENT, MDERichTextConstants.ITEM_SEPARATOR, 
-				MDERichTextConstants.JUSTIFY_LEFT, MDERichTextConstants.JUSTIFY_CENTER, 
-				MDERichTextConstants.JUSTIFY_RIGHT);
+				MDERichTextConstants.LIST_GROUP, MDERichTextConstants.INDENT_GROUP);
 		configuration.initializeToolbarItem(MDERichTextConstants.EDITING_TOOLBAR, MDERichTextConstants.FIND);
 		configuration.initializeToolbarItem(MDERichTextConstants.MDE_LINKS_TOOLBAR, MDERichTextConstants.MDE_ADDLINK);
 		configuration.initializeToolbarItem(MDERichTextConstants.MDE_LINKS_TOOLBAR, MDERichTextConstants.MDE_ADDIMAGE);
@@ -120,7 +127,7 @@ public class MDERichTextFactory {
 		configuration.initializeToolbarItem(MDERichTextConstants.STYLES_TOOLBAR);
 		configuration.initializeToolbarItem(MDERichTextConstants.CLIPBOARD_TOOLBAR);
 		configuration.initializeToolbarItem(MDERichTextConstants.PARAGRAPH_TOOLBAR, 
-				MDERichTextConstants.NUMBERED_LIST, MDERichTextConstants.BULLETED_LIST);
+				MDERichTextConstants.LIST_GROUP, MDERichTextConstants.INDENT_GROUP);
 		configuration.initializeToolbarItem(MDERichTextConstants.MDE_LINKS_TOOLBAR, MDERichTextConstants.MDE_ADDLINK);
 		
 		
@@ -285,6 +292,16 @@ public class MDERichTextFactory {
 	 */
 	public MDERichTextFactory setConfigurationFile(String path){
 		configuration.setValue(MDERichTextConstants.CUSTOM_CONFIG, path);
+		return this;
+	}
+	
+	public MDERichTextFactory setToolbarPosition(String position){
+		configuration.setToolbarPosition(position);
+		return this;
+	}
+	
+	public MDERichTextFactory setBaseHrefPath(String basePath){
+		configuration.setValue(MDERichTextConstants.BASE_HREF, basePath);
 		return this;
 	}
 	

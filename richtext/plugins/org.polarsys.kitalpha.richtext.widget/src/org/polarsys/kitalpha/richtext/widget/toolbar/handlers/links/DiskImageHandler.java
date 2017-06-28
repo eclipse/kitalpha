@@ -12,9 +12,11 @@ package org.polarsys.kitalpha.richtext.widget.toolbar.handlers.links;
 
 import java.io.File;
 
+import org.eclipse.core.runtime.Status;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.FileDialog;
+import org.polarsys.kitalpha.richtext.widget.internal.Activator;
 import org.polarsys.kitalpha.richtext.widget.toolbar.handlers.utils.Tuple;
 
 public class DiskImageHandler extends AbstractImageTypeHandler {
@@ -46,7 +48,8 @@ public class DiskImageHandler extends AbstractImageTypeHandler {
 			try {
 				url = file.toURL().toExternalForm();
 			} catch (Exception e) {
-				//TODO log
+				Status status = new Status(Status.ERROR, Activator.PLUGIN_ID, "getPath(...)", e); //$NON-NLS-1$
+				Activator.getDefault().getLog().log(status);
 			}
 		}
 		return new Tuple<String, String>(url, null);

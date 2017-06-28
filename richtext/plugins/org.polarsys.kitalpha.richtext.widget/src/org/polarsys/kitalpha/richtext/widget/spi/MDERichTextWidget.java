@@ -25,6 +25,15 @@ import org.eclipse.swt.events.ModifyListener;
  */
 public interface MDERichTextWidget {
 	
+	
+	/**
+	 * Set base href to the widget.
+	 * 
+	 * @param baseHref
+	 */
+	void setBaseHrefPath(String baseHref);
+	
+	
 	/**
 	 * @return The owner of the property where the content will be saved and loaded
 	 */

@@ -10,11 +10,13 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.richtext.widget.spi.impl;
 
+import java.io.IOException;
 import java.net.URL;
 
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.core.runtime.Status;
 import org.osgi.framework.Bundle;
 import org.polarsys.kitalpha.richtext.widget.internal.Activator;
 
@@ -25,17 +27,19 @@ import org.polarsys.kitalpha.richtext.widget.internal.Activator;
  */
 public final class MDERichTextConstants {
 	
+	
 	//Customization
 	public static final String TOOLBAR_COLOR = "uiColor"; 			//$NON-NLS-1$
-	public static final String TOOLBAR_POSITION = "toolbarPosition";//$NON-NLS-1$
+	public static final String TOOLBAR_POSITION = "toolbarLocation";//$NON-NLS-1$
 	public static final String TOOLBAR_POSITION_TOP = "top";		//$NON-NLS-1$
 	public static final String TOOLBAR_POSITION_BOTTOM = "bottom";	//$NON-NLS-1$
 	public static final String CUSTOM_CONFIG = "customConfig"; 		//$NON-NLS-1$
 	public static final String READ_ONLY_MODE = "readOnly";			//$NON-NLS-1$
 	public static final String PAST_FROM_MS_WORD_PROMPT_CLEANUP = "pasteFromWordPromptCleanup";	//$NON-NLS-1$
 	public static final String PAST_FROM_MS_WORD_CLEANER_FILE = "pasteFromWordCleanupFile"; //$NON-NLS-1$
+	public static final String BASE_HREF ="baseHref";				//$NON-NLS-1$
 	
-	public static final String DEFAUTL_CUSTOM_CONFIG = getDefaultCustomConfig();
+	public static final String DEFAUTL_CUSTOM_CONFIG = getDefaultCustomConfig("resources/config.js");	//$NON-NLS-1$
 	
 	public static final String ITEM_SEPARATOR = "-"; 				//$NON-NLS-1$
 	
@@ -96,6 +100,9 @@ public final class MDERichTextConstants {
     public static final String BULLETED_LIST = "BulletedList"; 		//$NON-NLS-1$
     public static final String OUT_INDENT = "Outdent"; 				//$NON-NLS-1$
     public static final String INDENT = "Indent"; 					//$NON-NLS-1$ 
+    public static final String INDENT_GROUP = "indent"; 			//$NON-NLS-1$
+    public static final String LIST_GROUP = "list"; 				//$NON-NLS-1$
+    public static final String ALIGN_GROUP = "align"; 				//$NON-NLS-1$
     public static final String BLOCK_QUOTE = "Blockquote"; 			//$NON-NLS-1$
     public static final String CREATE_DIV = "CreateDiv"; 			//$NON-NLS-1$
     public static final String JUSTIFY_LEFT = "JustifyLeft"; 		//$NON-NLS-1$
@@ -148,13 +155,25 @@ public final class MDERichTextConstants {
     public static final URL ADD_IMAGE_ICON = getURL(Activator.PLUGIN_ID, "icons/add_image.gif"); 	//$NON-NLS-1$
 
     
-	private static String getDefaultCustomConfig() {
-		final String configPath = "resources/config.js";
-		URL url = getURL(Activator.PLUGIN_ID, configPath);
+	private static String getDefaultCustomConfig(String configPath) {
+		return getFilePath(Activator.PLUGIN_ID, configPath);
+	}
+	
+	private static String getFilePath(URL url) {
 		if (url != null){
-			return url.toString();
+			try {
+				return FileLocator.toFileURL(url).toString();
+			} catch (IOException e) {
+				Status status = new Status(Status.ERROR, Activator.PLUGIN_ID, e.getMessage(), e);
+				Activator.getDefault().getLog().log(status);
+			}
 		}
 		return null;
+	}
+	
+	private static String getFilePath(String bundleId, String pathWithinBundle) {
+		URL url = getURL(bundleId, pathWithinBundle);
+		return getFilePath(url);
 	}
 	
 	/**
@@ -170,7 +189,6 @@ public final class MDERichTextConstants {
 			url = FileLocator.find(bundle, new Path(path), null);
 			return url;
 		}
-		
 		return url;
 	}
 }

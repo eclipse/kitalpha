@@ -12,9 +12,11 @@ package org.polarsys.kitalpha.richtext.widget.toolbar.handlers.links;
 
 import java.io.File;
 
+import org.eclipse.core.runtime.Status;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.FileDialog;
+import org.polarsys.kitalpha.richtext.widget.internal.Activator;
 import org.polarsys.kitalpha.richtext.widget.toolbar.handlers.AbstractOpenLinkTypeHandler;
 import org.polarsys.kitalpha.richtext.widget.toolbar.handlers.utils.Tuple;
 
@@ -32,7 +34,7 @@ public class FileLinkHandler extends AbstractOpenLinkTypeHandler {
 
 	@Override
 	public String encode(String url, String displayText) {
-		return "<a href=\"file:///" + customizeLink(url, null).getFirst() + "\">" + displayText + "</a>"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		return "<a href=\"file:///" + customizeLink(url, null).getFirst() + "\">" + escapeDisplayedText(displayText) + "</a>"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 	}
 
 	@Override
@@ -55,7 +57,8 @@ public class FileLinkHandler extends AbstractOpenLinkTypeHandler {
 					File file = new File(dialog.getFilterPath(), dialog.getFileName());
 					return customizeLink(file.getAbsolutePath(), object);
 				} catch (Exception e) {
-					//TODO logger.logError(e); 
+					Status status = new Status(Status.ERROR, Activator.PLUGIN_ID, "getPath(...)", e); //$NON-NLS-1$
+					Activator.getDefault().getLog().log(status);
 				}
 			}
 		}
