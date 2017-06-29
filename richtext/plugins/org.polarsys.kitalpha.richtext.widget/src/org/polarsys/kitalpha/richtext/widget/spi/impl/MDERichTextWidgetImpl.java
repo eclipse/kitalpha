@@ -104,7 +104,10 @@ public class MDERichTextWidgetImpl implements MDERichTextWidget {
 				|| this.baseHrefPath.isEmpty()){
 			this.baseHrefPath = baseHref;
 		}
-		forceEditorUpdate = setBaseHref(baseHref);
+		
+		if (baseHref != null){
+			forceEditorUpdate = setBaseHref(baseHref);
+		}
 
 		if (forceEditorUpdate){
 			updateEditor();
@@ -129,11 +132,13 @@ public class MDERichTextWidgetImpl implements MDERichTextWidget {
 	
 	
 	private String getBaseHref(String baseHref) {
-		Assert.isNotNull(baseHref);
-		if (!baseHref.endsWith(SLASH_CHARACTER)){
-			baseHref = baseHref + SLASH_CHARACTER;
+		//		Assert.isNotNull(baseHref);
+		if (baseHref != null){
+			if (!baseHref.endsWith(SLASH_CHARACTER)){
+				baseHref = baseHref + SLASH_CHARACTER;
+			}
+			baseHref = FILE_PROTOCOL + baseHref;
 		}
-		baseHref = FILE_PROTOCOL + baseHref;
 		return baseHref;
 	}
 	
@@ -199,7 +204,6 @@ public class MDERichTextWidgetImpl implements MDERichTextWidget {
 	
 	//TODO implements
 	private void installSaveHandler(){
-		
 	}
 	
 	
