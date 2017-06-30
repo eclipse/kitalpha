@@ -79,13 +79,13 @@ public class <%=genPackage.getActionBarContributorClassName()%>
 				<%=genModel.getImportedName("org.polarsys.kitalpha.resourcereuse.emfscheme.utils.context.ModelReuseContext")%> context = ModelReuseContext.INSTANCE;
 				List<<%=genModel.getImportedName("org.polarsys.kitalpha.resourcereuse.model.SearchCriteria")%>> criterias = context.getCriterias();
 				for (SearchCriteria settedCriteria : criterias) {
-					java.util.List<URI> modelToLoad = <%=genModel.getImportedName("org.polarsys.kitalpha.resourcereuse.emfscheme.helpers.ModelReuseHelper")%>.findModelsURIAccordingToCriteria(settedCriteria);
-					<%=genModel.getImportedName("org.polarsys.kitalpha.resourcereuse.emfscheme.utils.services.ResourceSetLoaderServices")%>.loadResourceForCurrentRessourceSet(selection, modelToLoad);
-					modelToLoad = ModelReuseHelper.findMetadataURIAccordingToCriteria(settedCriteria);
-					ResourceSetLoaderServices.loadResourceForCurrentRessourceSet(selection, modelToLoad);
-					for (URI uri: modelToLoad)
-					{
-						<%=genModel.getImportedName("org.polarsys.kitalpha.ad.metadata.helpers.LibraryHelper")%>.add(currentResource.getResourceSet(), currentResource.getURI(), uri);
+					URI modelToLoad = <%=genModel.getImportedName("org.polarsys.kitalpha.resourcereuse.emfscheme.helpers.ModelReuseHelper")%>.createModelReuseURI(settedCriteria);
+					try {
+						Resource res = <%=genModel.getImportedName("org.polarsys.kitalpha.resourcereuse.emfscheme.utils.services.ResourceSetLoaderServices")%>.loadResourceForCurrentResourceSet(selection, modelToLoad);
+						if (res != null)
+							LibraryHelper.add(currentResource.getResourceSet(), currentResource.getURI(), modelToLoad);
+					} catch (Exception e) {
+						ComponentSampleEditorPlugin.INSTANCE.log(e);
 					}
 				}
 			}

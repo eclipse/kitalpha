@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016, 2017 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,7 +41,7 @@ public class ModelReuseLoaderTestsKO {
 	private final static String ID_TEST_RESOURCE = "org.polarsys.kitalpha.resourcereuse.emfscheme.test.ju.test.doesnt.exist";
 	private final static String TEST_MODEL_NAME  = "Model Test Doesn't Exist";
 	
-	private final URI modelReuseURI = URI.createURI("modelreuse:/Id=org.polarsys.kitalpha.resourcereuse.emfscheme.test.ju.test.doesnt.exist Name=Model Test Tags=[]");
+	private final URI modelReuseURI = URI.createURI("modelreuse:/id=org.polarsys.kitalpha.resourcereuse.emfscheme.test.ju.test.doesnt.exist");
 	private final URI emfURI = URI.createURI("platform:/plugin/org.polarsys.kitalpha.resourcereuse.emfscheme.test.ju/models/Test.vpdesc");
 	private final URI emfURI2 = URI.createURI("platform:/plugin/org.polarsys.kitalpha.resourcereuse.emfscheme.test.ju/models/Test2.vpdesc");
 	
@@ -72,42 +72,36 @@ public class ModelReuseLoaderTestsKO {
 	//Test load(EObject, URI)
 	@Test(expected=RuntimeException.class)
 	public void loadEObjectURI() throws Exception {
-		expectedException.expect(RuntimeException.class);
 		loader.load(resourceSet, modelReuseURI);
 	}
 
 	//Test load(EObject, URI)
 	@Test(expected=RuntimeException.class)
 	public void loadEObjectStringURI() throws Exception {
-		expectedException.expect(RuntimeException.class);
 		loader.load(resourceSet, modelReuseURI);
 	}
 
 	//Test load(Resource, URI)
 	@Test(expected=RuntimeException.class)
 	public void loadResourceURI() throws Exception {
-		expectedException.expect(RuntimeException.class);
 		loader.load(resource, modelReuseURI);
 	}
 
 	//Test load(Resource, URI)
 	@Test(expected=RuntimeException.class)
 	public void loadResourceStringURI() throws Exception {
-		expectedException.expect(RuntimeException.class);
 		loader.load(resource, modelReuseURI.toString());
 	}
 	
 	//Test load(ResourceSet, URI)
 	@Test(expected=RuntimeException.class)
 	public void loadResourceSetURI() throws Exception {
-		expectedException.expect(RuntimeException.class);
 		loader.load(resourceSet, modelReuseURI);
 	}
 
 	//Test load(ResourceSet, URI)
 	@Test(expected=RuntimeException.class)
 	public void loadResourceSetStringURI() throws Exception {
-		expectedException.expect(RuntimeException.class);
 		Resource loadedResource = loader.load(resourceSet, modelReuseURI.toString());
 	}
 	
@@ -198,14 +192,12 @@ public class ModelReuseLoaderTestsKO {
 	//Test load(EObject, URIConverter, URI)
 	@Test(expected=RuntimeException.class)
 	public void loadEObjectURIWithURIConverter() throws Exception {
-		expectedException.expect(RuntimeException.class);
 		loader.load(resourceSet, modelReuseURIConverter, modelReuseURI);
 	}
 
 	//Test load(EObject, URIConverter, URI)
 	@Test(expected=RuntimeException.class)
 	public void loadEObjectStringURIURIConverter() {
-		expectedException.expect(RuntimeException.class);
 		//model reuse
 		loader.load(resourceSet, modelReuseURIConverter, modelReuseURI.toString());
 	}
@@ -213,28 +205,24 @@ public class ModelReuseLoaderTestsKO {
 	//Test load(Resource, URIConverter, URI)
 	@Test(expected=RuntimeException.class)
 	public void loadResourceURIURIConverter() throws Exception {
-		expectedException.expect(RuntimeException.class);
 		loader.load(resource, modelReuseURIConverter, modelReuseURI);
 	}
 
 	//Test load(Resource, URIConverter, URI)
 	@Test(expected=RuntimeException.class)
 	public void loadResourceStringURIURIConverter() throws Exception {
-		expectedException.expect(RuntimeException.class);
 		loader.load(resource, modelReuseURIConverter, modelReuseURI.toString());
 	}
 
 	//Test load(ResourceSet, URIConverter, URI)
 	@Test(expected=RuntimeException.class)
 	public void loadResourceSetURIURIConverter() throws Exception {
-		expectedException.expect(RuntimeException.class);
 		loader.load(resourceSet, modelReuseURIConverter, modelReuseURI);
 	}
 
 	//Test load(ResourceSet, URIConverter, URI)
 	@Test(expected=RuntimeException.class)
 	public void loadResourceSetStringURIURIConverter() throws Exception {
-		expectedException.expect(RuntimeException.class);
 		loader.load(resourceSet, modelReuseURIConverter, modelReuseURI.toString());
 	}
 
@@ -312,16 +300,11 @@ public class ModelReuseLoaderTestsKO {
 
 	@After
 	public void tearDown(){
-		Resource resource = resourceSet.getResource(emfURI, false);
-		if (resource != null && resource.isLoaded()){
+		for (Resource resource : resourceSet.getResources())
+		{
 			resource.unload();
 		}
-		
-		resource = resourceSet.getResource(modelReuseURI, false);
-		if (resource != null && resource.isLoaded()){
-			resource.unload();
-		}
-		
+		resourceSet.getResources().clear();
 		resourceSet = null;
 		resource = null;
 		loader = null;

@@ -31,11 +31,20 @@ public class ModelReuseHelper {
 	
 	private static final String MODELREUSE_SCHEME_PREFIX = "modelreuse"; //$NON-NLS-1$
 	
+
 	public static URI createModelReuseURI(Resource resource, boolean manageMetadata){
-		 return createModelReuseURI(MODELREUSE_SCHEME_PREFIX, manageMetadata, resource);
+		StringBuilder sb = new StringBuilder(50);
+		sb.append(MODELREUSE_SCHEME_PREFIX).append(":/");
+		sb.append("id=").append(URI.encodeSegment(resource.getId(), false));
+		if (manageMetadata)
+			sb.append("/").append(URI.encodeSegment(METADATA_KEYWORD, false));
+		return URI.createURI(sb.toString());
 	}
+
 	public static URI[] createModelReuseURI(Resource resource){
-		return new URI[] {createModelReuseURI(MODELREUSE_SCHEME_PREFIX, false, resource), createModelReuseURI(MODELREUSE_SCHEME_PREFIX, true, resource)};
+		if (resource.getMetadataPath() != null)
+			return new URI[] {createModelReuseURI(resource, false), createModelReuseURI(resource, true)};
+		return new URI[] {createModelReuseURI(resource, false)};
 	}
 	
 	/**
@@ -48,10 +57,7 @@ public class ModelReuseHelper {
 		{
 			if (uri.path().contains(METADATA_KEYWORD))
 				return uri;
-			int nb = uri.path().indexOf(TAGS_KEYWORD);
-			if (nb == -1)
-				return  URI.createURI(MODELREUSE_SCHEME_PREFIX +":/"+ uri.path()+" "+METADATA_KEYWORD);
-			return URI.createURI(MODELREUSE_SCHEME_PREFIX +":/"+ uri.path().substring(0, nb)+METADATA_KEYWORD+" "+uri.path().substring(nb));
+			return uri.appendSegment(METADATA_KEYWORD);
 		}
 		return uri;
 	}
@@ -60,72 +66,44 @@ public class ModelReuseHelper {
 		return uri.scheme().equals(MODELREUSE_SCHEME_PREFIX);
 	}
 
-	private static URI createModelReuseURI(String protocolName, boolean useMetadata,
-			Resource resource) {
-		if (useMetadata && resource.getMetadataPath() == null)
-			return null;
-		String elementID = resource.getId();
-		List<String> tags = resource.getTags();
-		String finalResult = "Id=" + elementID; //$NON-NLS-1$
-		int i = 0;
-
-		if (useMetadata && resource.getMetadataPath() != null) {
-			finalResult += " "+METADATA_KEYWORD; //$NON-NLS-1$
-		}
-
-		if (resource.getName() != null) {
-			finalResult += " Name=" + resource.getName(); //$NON-NLS-1$
-		}
-		if (resource.getDomain() != null) {
-			finalResult += " Domain=" + resource.getDomain(); //$NON-NLS-1$
-		}
-		if (resource.getVersion() != null) {
-			finalResult += " Version=" + resource.getVersion(); //$NON-NLS-1$
-		}
-
-		if (tags != null) {
-			finalResult += " "+TAGS_KEYWORD+"=["; //$NON-NLS-1$
-			for (String tag : tags) {
-				int size = tags.size();
-				// if we're at the last tag
-				i++;
-				if (i == size)
-					finalResult += tag;
-				else
-					finalResult += tag + ";"; //$NON-NLS-1$
+	public static URI createModelReuseURI(SearchCriteria criteria){
+		return createModelReuseURI(criteria, false);
+	}
+	
+	public static URI createModelReuseMetadataURI(SearchCriteria criteria){
+		return createModelReuseURI(criteria, true);
+	}
+	
+	private static URI createModelReuseURI(SearchCriteria criteria, boolean manageMetadata){
+		StringBuilder sb = new StringBuilder(200);
+		sb.append(MODELREUSE_SCHEME_PREFIX).append(":/");
+		
+		if (criteria.getId() != null && !criteria.getId().isEmpty())
+			sb.append("id=").append(URI.encodeSegment(criteria.getId(), false)).append('/');
+		if (criteria.getName() != null && !criteria.getName().isEmpty())
+			sb.append("name=").append(URI.encodeSegment(criteria.getName(), false)).append('/');
+		if (criteria.getDomain() != null && !criteria.getDomain().isEmpty())
+			sb.append("domain=").append(URI.encodeSegment(criteria.getDomain(), false)).append('/');
+		if (criteria.getVersion() != null && !criteria.getVersion().isEmpty())
+			sb.append("version=").append(URI.encodeSegment(criteria.getVersion(), false)).append('/');
+		if (criteria.getTags() != null && !criteria.getTags().isEmpty() )
+		{
+			sb.append("tags=");
+			for (String tag : criteria.getTags()) {
+				sb.append(URI.encodeSegment(tag, false)).append(',');
 			}
-			finalResult += "]"; //$NON-NLS-1$
+			sb.deleteCharAt(sb.length() - 1).append("/");
 		}
+		if (manageMetadata)
+			sb.append(URI.encodeSegment(METADATA_KEYWORD, false)).append("/");
 
-		URI result = URI.createURI(protocolName +":/"+ finalResult);
-
-		return result;
-	}
-	public static List<URI> findMetadataURIAccordingToCriteria(
-			SearchCriteria criteria) {
-
-		List<URI> foundModels = new ArrayList<URI>();
-
-		List<Resource> resourceSelected = findModelsAccordingToCriteria(criteria);
-
-		// Browse resources found
-		for (Resource resource : resourceSelected) {
-
-			URI modelResourceURI = null;
-
-			// Evaluating the new uri of the resource with the new protocol
-			// (This uri will be parsed with a new factory associated to the
-			// protocol to retrieve the resource)
-			modelResourceURI = createModelReuseURI(resource, true);
-
-			// The modelreuse uri is added to modelsToLoad
-			if (modelResourceURI != null)
-				foundModels.add(modelResourceURI);
-		}
-		return foundModels;
+		return URI.createURI(sb.toString());
 	}
 
 
+	/**
+	 * @deprecated use createModelReuseURI() instead
+	 */
 	public static List<URI> findModelsURIAccordingToCriteria(
 			SearchCriteria criteria) {
 
@@ -182,8 +160,8 @@ public class ModelReuseHelper {
 			// So it's not always true, and better not add them if it occurs
 			for (Resource resourceInResourceSelected : resourceSelected) {
 
-				if (resourceInResourceSelected.getName().equals(
-						resource.getName())) {
+				if (resourceInResourceSelected.getId().equals(
+						resource.getId())) {
 					resourceAlreadyFound = true;
 				}
 			}

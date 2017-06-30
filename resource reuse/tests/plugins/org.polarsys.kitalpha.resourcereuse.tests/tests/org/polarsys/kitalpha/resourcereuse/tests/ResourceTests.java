@@ -146,7 +146,7 @@ public class ResourceTests extends TestCase {
 
 	public void testSearchTag3() throws Exception {
 		SearchCriteria searchCriteria = new SearchCriteria();
-		searchCriteria.getTags().add("pipo");
+		searchCriteria.getTags().add("unused tag");
 		Resource[] resources = ResourceReuse.createHelper().getResources(searchCriteria);
 		assertNotNull(resources);
 		assertEquals(0, resources.length);

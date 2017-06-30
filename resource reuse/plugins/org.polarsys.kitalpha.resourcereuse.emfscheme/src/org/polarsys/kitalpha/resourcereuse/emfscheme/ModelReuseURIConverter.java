@@ -13,6 +13,7 @@ package org.polarsys.kitalpha.resourcereuse.emfscheme;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -34,31 +35,7 @@ import org.polarsys.kitalpha.resourcereuse.model.SearchCriteria;
 
 public class ModelReuseURIConverter extends ExtensibleURIConverterImpl {
 	
-	private static Map<URI, org.eclipse.emf.ecore.resource.Resource> cache = new HashMap<URI, org.eclipse.emf.ecore.resource.Resource>();
-	private static HashMap<URI, URI> logicalToPhysicalHashMapURI = new HashMap<URI, URI>();
-	
 	private static final Logger logger = Logger.getLogger(ModelReuseURIConverter.class);
-	
-	private final static Pattern pattern;
-
-	static {
-		
-		// Here are patterns for my regex
-		final String IdPattern = "(Id=([\\w+\\.]+))?"; //$NON-NLS-1$
-		final String whitespacePattern = "[ \t]*"; //$NON-NLS-1$
-		final String namePattern = "(Name=([A-Za-z0-9-.-[ \t]]*[A-Za-z0-9-.]))?"; //$NON-NLS-1$
-		final String domainPattern = "(Domain=([A-Za-z0-9-.-[ \t]]*[A-Za-z0-9-.]))?"; //$NON-NLS-1$
-		final String versionPattern = "(Version=([A-Za-z0-9-.]*))?"; //$NON-NLS-1$
-		final String metadataPattern = "(useMetadata)?"; //$NON-NLS-1$
-		final String tagsPattern = "(Tags=\\[([A-Za-z0-9-.-[ \t]-;]*[A-Za-z0-9-.-[ \t]])?\\])?"; //$NON-NLS-1$
-
-		final String globalPattern = IdPattern+ whitespacePattern + metadataPattern  + whitespacePattern + namePattern
-				+ whitespacePattern + domainPattern + whitespacePattern
-				+ versionPattern + whitespacePattern  + tagsPattern;
-		
-		pattern = Pattern.compile(globalPattern);
-	}
-
 	
 	public ModelReuseURIConverter() {
 		super();
@@ -86,185 +63,58 @@ public class ModelReuseURIConverter extends ExtensibleURIConverterImpl {
 		return super.normalize(uri);
 	}
 	
-	private URI translateReuseURIToPhysicalURI(URI uri) {
-		
-		// we check that the cache is valid
-		Set<URI> uris = cache.keySet();
-		for (URI currentURI : uris) {
-			org.eclipse.emf.ecore.resource.Resource currentResource = cache
-					.get(currentURI);
-			if (!currentResource.isLoaded())
-				cache.remove(currentURI);
-		}
-
-		// usage of the cache
-		if (cache.containsKey(uri)) {
-			return logicalToPhysicalHashMapURI.get(uri);
-		}
-
-		List<String> criteriaSpecifications = findCriteriaSpecifications(uri);
-
-		ResourceHelper resourceHelperPlatform = ResourceReuse
-				.createPlatformHelper();
-		ResourceHelper resourceHelperWorkspace = ResourceReuse
-				.createWorkspaceHelper();
-
+	private SearchCriteria extractCriteria(URI uri) {
 		SearchCriteria criteria = new SearchCriteria();
-
-		criteria.setId(criteriaSpecifications.get(0));
-
-		boolean useMetadata = !criteriaSpecifications.get(1).isEmpty();
-
-		if (criteriaSpecifications.get(2).isEmpty())
-			criteria.setName(null);
-		else
-			criteria.setName(criteriaSpecifications.get(2));
-
-		if (criteriaSpecifications.get(3).isEmpty()) {
-			criteria.setDomain(null);
-		} else
-			criteria.setDomain(criteriaSpecifications.get(3));
-
-		if (criteriaSpecifications.get(4).isEmpty()) {
-			criteria.setVersion(null);
-		} else
-			criteria.setVersion(criteriaSpecifications.get(4));
-
-		// I remove id,name,domain and version for fill in tags
-		criteriaSpecifications.remove(0);
-		criteriaSpecifications.remove(0);
-		criteriaSpecifications.remove(0);
-		criteriaSpecifications.remove(0);
-		criteriaSpecifications.remove(0);
-
-		if (!criteriaSpecifications.isEmpty()) {
-			for (String tag : criteriaSpecifications) {
-				criteria.getTags().add(tag);
-			}
-		}
-
-		// Here i clear my list
-		criteriaSpecifications.clear();
-
-		Resource resourceFoundWithModelreuseProtocol = null;
-		URI modelResourceURI = null;
-
-		Resource[] resourceSelectedWorkspace = resourceHelperWorkspace
-				.getResources(criteria);
-		Resource[] resourceSelectedPlatform = resourceHelperPlatform
-				.getResources(criteria);
-
-		Boolean resourceFound = false;
-		if (resourceSelectedWorkspace.length != 0) {
-			resourceFoundWithModelreuseProtocol = resourceSelectedWorkspace[0];
-			resourceFound = true;
-		} else if (resourceSelectedPlatform.length != 0) {
-			Resource resource = resourceSelectedPlatform[0];
-			resourceFoundWithModelreuseProtocol = resource;
-			resourceFound = true;
-		}
-
-		if (resourceFound) {
-			Location location = resourceFoundWithModelreuseProtocol
-					.getProviderLocation();
-			String pathString = "";
-			pathString = useMetadata ? resourceFoundWithModelreuseProtocol.getMetadataPath() : resourceFoundWithModelreuseProtocol.getPath();
-			switch (location) {
-
-			case PLATFORM:
-				modelResourceURI = URI.createPlatformPluginURI(pathString, true);
-				logicalToPhysicalHashMapURI.put(uri, modelResourceURI);
-				break;
-
-			case WORSPACE:
-				modelResourceURI = URI.createPlatformResourceURI(pathString, true);
-				logicalToPhysicalHashMapURI.put(uri, modelResourceURI);
-				break;
-			default:
-				break;
-			}
-		}
-		if (modelResourceURI != null)
-			return modelResourceURI;
 		
-		throw new RuntimeException("EMF Scheme: Could not translate a logical URI " + uri.toString() + " to physical URI.");
-	}
-	
-	private List<String> findCriteriaSpecifications(URI abstractURI) {
-
-		List<String> criteriaSpecifications = new ArrayList<String>();
-		String[] uriSegments = abstractURI.segments();
-
-		// Here i handle my regex to get criterias from my URI
-		String abstractURIString = uriSegments[0];
-
-		Matcher m = getPattern().matcher(abstractURIString);
-
-		boolean matches = m.matches();//m.groupCount()
-
-		// i=2 =>id
-		String id = m.group(2); //m.group(3)
-		// i=3 et 4 => name
-		String name = m.group(5);
-		// i= 5 et 6 => domain
-		String domain = m.group(7);
-		// i = 7 et 8 => version
-		String version = m.group(9);
-		// metadata
-		String useMetadata = m.group(3);
-		// i = 10 et 11 => Tags
-		String tag = m.group(11);
-
-		int i = -1;
-		// Here i fill my list of strings
-		if (id != null) {
-			i++;
-			criteriaSpecifications.add(i, id);
-		}
-		i++;
-		if (useMetadata != null) {
-			criteriaSpecifications.add("useMetadata");//$NON-NLS-1$
-		} else {
-			criteriaSpecifications.add(""); //$NON-NLS-1$
-		}
-
-		if (name != null) {
-			i++;
-			criteriaSpecifications.add(i, name);
-		} else {
-			i++;
-			criteriaSpecifications.add(i, ""); //$NON-NLS-1$
-		}
-		if (domain != null) {
-			i++;
-			criteriaSpecifications.add(i, domain);
-		} else {
-			i++;
-			criteriaSpecifications.add(i, ""); //$NON-NLS-1$
-		}
-		if (version != null) {
-			i++;
-			criteriaSpecifications.add(i, version);
-		} else {
-			i++;
-			criteriaSpecifications.add(i, ""); //$NON-NLS-1$
-		}
-
-		// Here i fill tags
-		if (tag != null) {
-			if (!tag.isEmpty()) {
-				String[] split = tag.split(";"); //$NON-NLS-1$
-				int length = split.length;
-				for (int j = 0; j < length; j++) {
-					criteriaSpecifications.add(split[j]);
-				}
+		for (String segment : uri.segments()) {
+			if (segment.startsWith("id="))
+				criteria.setId(segment.substring(3));
+			else if (segment.startsWith("name="))
+				criteria.setName(segment.substring(5));
+			else if (segment.startsWith("domain="))
+				criteria.setDomain(segment.substring(7));
+			else if (segment.startsWith("version="))
+				criteria.setVersion(segment.substring(7));
+			else if (segment.startsWith("tags=")) {
+				String tags = segment.substring(5);
+				criteria.getTags().addAll(Arrays.asList(tags.split(",")));
 			}
 		}
-		return criteriaSpecifications;
+		return criteria;
+	}
+	private URI translateReuseURIToPhysicalURI(URI uri) {
+		SearchCriteria criteria = extractCriteria(uri);
+		
+		Resource[] resources = ResourceReuse.createHelper().getResources(criteria);
+	
+		if (resources.length == 0)
+			throw new RuntimeException("The uri '"+uri.toString()+"' does not matche any resource");
+		if (resources.length > 1)
+			logger.error(new Status(IStatus.WARNING, Activator.PLUGIN_ID, "The uri '"+uri.toString()+"' matches several resources, using the first one."));
+		
+		Resource resource = resources[0];
+		Location location = resource.getProviderLocation();
+		
+		boolean useMetadata = useMetadata(uri);
+		String pathString = useMetadata ? resource.getMetadataPath() : resource.getPath();
+		
+		switch (location) {
+
+		case TARGET:
+		case PLATFORM:
+			return URI.createPlatformPluginURI(pathString, true);
+
+		case WORSPACE:
+			return URI.createPlatformResourceURI(pathString, true);
+		}
+		throw new IllegalStateException("Cannot find provider location for resource: "+resource);
 	}
 
-	private static Pattern getPattern() {
-		return pattern;
+	private boolean useMetadata(URI uri) {
+		for (String seg : uri.segments())
+			if ("useMetadata".equals(seg))
+				return true;
+		return false;
 	}
 	
 }

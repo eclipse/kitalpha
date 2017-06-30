@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016, 2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -14,6 +14,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.polarsys.kitalpha.resourcereuse.emfscheme.api.ModelReuseLoaderFactory;
 
 /**
@@ -33,7 +34,8 @@ public class ResourceSetLoaderServices {
 	 * @param modelToLoad
 	 *            : Models to load next to the current selection
 	 */
-	public static void loadResourceForCurrentRessourceSet(EObject selection,
+
+	public static void loadResourceForCurrentResourceSet(EObject selection,
 			List<URI> modelToLoad) {
 
 		for (URI uri : modelToLoad) {
@@ -46,7 +48,7 @@ public class ResourceSetLoaderServices {
 	 * @param selection
 	 * @param uri
 	 */
-	public static void loadResourceForCurrentResourceSet(EObject selection, URI uri){
-		ModelReuseLoaderFactory.createModelReuseLoader().load(selection, uri);
+	public static Resource loadResourceForCurrentResourceSet(EObject selection, URI uri){
+		return ModelReuseLoaderFactory.createModelReuseLoader().load(selection, uri);
 	}
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
  <!--
-Copyright (c) 2016 Thales Global Services S.A.S.
+Copyright (c) 2016, 2017 Thales Global Services S.A.S.
  All rights reserved. This program and the accompanying materials
  are made available under the terms of the Eclipse Public License v1.0
  which accompanies this distribution, and is available at
@@ -27,6 +27,23 @@ Contributors:
             id="org.polarsys.kitalpha.resourcereuse.emfscheme.test.ju.large.resource.corrupted"
             name="Large Corrupted Ecore Resource"
             path="/org.polarsys.kitalpha.resourcereuse.emfscheme.test.ju/models/exampleCorrupted.ecore">
+      </resource>
+      <resource
+            id="Test1.resource1"
+            name="MyTestResource 1"
+            path="/org.polarsys.kitalpha.resourcereuse.emfscheme.test.ju/models/test1.componentsample"
+            tags="pipo">
+      </resource>
+      <resource
+            id="Test2.resource2"
+            name="MyTestResource 2"
+            path="/org.polarsys.kitalpha.resourcereuse.emfscheme.test.ju/models/test2.componentsample"
+            tags="pipo, tata">
+      </resource>
+      <resource
+            id="my_model"
+            name="My Model"
+            path="/org.polarsys.kitalpha.resourcereuse.emfscheme.test.ju/models/myModel.ecore">
       </resource>
    </extension>
 

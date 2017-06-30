@@ -16,13 +16,17 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.EventObject;
+import java.util.HashMap;
 import java.util.HashMap;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Map;
 import java.util.Map;
 
@@ -39,6 +43,7 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.command.BasicCommandStack;
 import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.command.CommandStack;
@@ -51,6 +56,7 @@ import org.eclipse.emf.common.ui.viewer.IViewerProvider;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -78,6 +84,7 @@ import org.eclipse.emf.edit.ui.util.EditUIMarkerHelper;
 import org.eclipse.emf.edit.ui.util.EditUIUtil;
 import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.provider.ComponentSampleItemProviderAdapterFactory;
+import org.polarsys.kitalpha.vp.componentsample.ComponentSample.provider.ComponentSampleItemProviderAdapterFactory;
 import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.IStatusLineManager;
@@ -86,6 +93,7 @@ import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.Separator;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
+import org.eclipse.jface.util.LocalSelectionTransfer;
 import org.eclipse.jface.util.IPropertyChangeListener;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
@@ -94,12 +102,14 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.StructuredViewer;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CTabFolder;
 import org.eclipse.swt.dnd.DND;
+import org.eclipse.swt.dnd.FileTransfer;
 import org.eclipse.swt.dnd.Transfer;
 import org.eclipse.swt.events.ControlAdapter;
 import org.eclipse.swt.events.ControlEvent;
@@ -143,8 +153,7 @@ import org.polarsys.kitalpha.vp.componentsample.ComponentSample.provider.Compone
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentSampleEditor extends MultiPageEditorPart implements IEditingDomainProvider, ISelectionProvider,
-		IMenuListener, IViewerProvider, IGotoMarker, ModelExtensionListener {
+public class ComponentSampleEditor extends MultiPageEditorPart implements IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker, ModelExtensionListener {
 	/**
 	 * This keeps track of the editing domain that is used to track all changes to the model.
 	 * <!-- begin-user-doc -->
@@ -191,7 +200,7 @@ public class ComponentSampleEditor extends MultiPageEditorPart implements IEditi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PropertySheetPage propertySheetPage;
+	protected List<PropertySheetPage> propertySheetPages = new ArrayList<PropertySheetPage>();
 
 	/**
 	 * This is the viewer that shadows the selection in the content outline.
@@ -275,7 +284,7 @@ public class ComponentSampleEditor extends MultiPageEditorPart implements IEditi
 					setCurrentViewer(contentOutlineViewer);
 				}
 			} else if (p instanceof PropertySheet) {
-				if (((PropertySheet) p).getCurrentPage() == propertySheetPage) {
+				if (propertySheetPages.contains(((PropertySheet) p).getCurrentPage())) {
 					getActionBarContributor().setActiveEditor(ComponentSampleEditor.this);
 					handleActivate();
 				}
@@ -391,6 +400,14 @@ public class ComponentSampleEditor extends MultiPageEditorPart implements IEditi
 		@Override
 		protected void unsetTarget(Resource target) {
 			basicUnsetTarget(target);
+			resourceToDiagnosticMap.remove(target);
+			if (updateProblemIndication) {
+				getSite().getShell().getDisplay().asyncExec(new Runnable() {
+					public void run() {
+						updateProblemIndication();
+					}
+				});
+			}
 		}
 	};
 
@@ -411,10 +428,8 @@ public class ComponentSampleEditor extends MultiPageEditorPart implements IEditi
 
 					public boolean visit(IResourceDelta delta) {
 						if (delta.getResource().getType() == IResource.FILE) {
-							if (delta.getKind() == IResourceDelta.REMOVED || delta.getKind() == IResourceDelta.CHANGED
-									&& delta.getFlags() != IResourceDelta.MARKERS) {
-								Resource resource = resourceSet.getResource(
-										URI.createPlatformResourceURI(delta.getFullPath().toString(), true), false);
+							if (delta.getKind() == IResourceDelta.REMOVED || delta.getKind() == IResourceDelta.CHANGED && delta.getFlags() != IResourceDelta.MARKERS) {
+								Resource resource = resourceSet.getResource(URI.createPlatformResourceURI(delta.getFullPath().toString(), true), false);
 								if (resource != null) {
 									if (delta.getKind() == IResourceDelta.REMOVED) {
 										removedResources.add(resource);
@@ -423,6 +438,7 @@ public class ComponentSampleEditor extends MultiPageEditorPart implements IEditi
 									}
 								}
 							}
+							return false;
 						}
 
 						return true;
@@ -544,8 +560,7 @@ public class ComponentSampleEditor extends MultiPageEditorPart implements IEditi
 	 */
 	protected void updateProblemIndication() {
 		if (updateProblemIndication) {
-			BasicDiagnostic diagnostic = new BasicDiagnostic(Diagnostic.OK,
-					"org.polarsys.kitalpha.vp.componentsample.model.editor", //$NON-NLS-1$
+			BasicDiagnostic diagnostic = new BasicDiagnostic(Diagnostic.OK, "org.polarsys.kitalpha.vp.componentsample.model.editor", //$NON-NLS-1$
 					0, null, new Object[] { editingDomain.getResourceSet() });
 			for (Diagnostic childDiagnostic : resourceToDiagnosticMap.values()) {
 				if (childDiagnostic.getSeverity() != Diagnostic.OK) {
@@ -624,8 +639,7 @@ public class ComponentSampleEditor extends MultiPageEditorPart implements IEditi
 		adapterFactory.addAdapterFactory(new ComponentSampleItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new EmdeItemProviderAdapterFactory());
-		for (AdapterFactory extendedAdapterFactory : ModelExtensionDescriptor.INSTANCE
-				.getExtendedModelAdapterFactories(ComponentSampleItemProviderAdapterFactory.class.getName())) {
+		for (AdapterFactory extendedAdapterFactory : ModelExtensionDescriptor.INSTANCE.getExtendedModelAdapterFactories(ComponentSampleItemProviderAdapterFactory.class.getName())) {
 			adapterFactory.addAdapterFactory(extendedAdapterFactory);
 		}
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
@@ -650,8 +664,13 @@ public class ComponentSampleEditor extends MultiPageEditorPart implements IEditi
 						if (mostRecentCommand != null) {
 							setSelectionToViewer(mostRecentCommand.getAffectedObjects());
 						}
-						if (propertySheetPage != null && !propertySheetPage.getControl().isDisposed()) {
-							propertySheetPage.refresh();
+						for (Iterator<PropertySheetPage> i = propertySheetPages.iterator(); i.hasNext();) {
+							PropertySheetPage propertySheetPage = i.next();
+							if (propertySheetPage.getControl().isDisposed()) {
+								i.remove();
+							} else {
+								propertySheetPage.refresh();
+							}
 						}
 					}
 				});
@@ -882,8 +901,7 @@ public class ComponentSampleEditor extends MultiPageEditorPart implements IEditi
 		ExtensibleModel extensibleModel = ModelExtensionDescriptor.INSTANCE.getExtensibleModel(extensibleModelURI);
 		if (extensibleModel != null) {
 			for (ExtendedModel extendedModel : extensibleModel.getAllExtendedModels()) {
-				EmdeViewerFilterAction filterAction = new EmdeViewerFilterAction(resource_p, extensibleModel,
-						extendedModel) {
+				EmdeViewerFilterAction filterAction = new EmdeViewerFilterAction(resource_p, extensibleModel, extendedModel) {
 					@Override
 					public void run() {
 						ISelection selection = getSelection();
@@ -895,8 +913,7 @@ public class ComponentSampleEditor extends MultiPageEditorPart implements IEditi
 									if (getResource().getContents().isEmpty()) {
 										setSelectionToViewer((new StructuredSelection(getResource())).toList());
 									} else {
-										setSelectionToViewer(
-												(new StructuredSelection(getResource().getContents().get(0))).toList());
+										setSelectionToViewer((new StructuredSelection(getResource().getContents().get(0))).toList());
 									}
 								}
 							}
@@ -929,7 +946,7 @@ public class ComponentSampleEditor extends MultiPageEditorPart implements IEditi
 		viewer.getControl().setMenu(menu);
 
 		int dndOperations = DND.DROP_COPY | DND.DROP_MOVE | DND.DROP_LINK;
-		Transfer[] transfers = new Transfer[] { LocalTransfer.getInstance() };
+		Transfer[] transfers = new Transfer[] { LocalTransfer.getInstance(), LocalSelectionTransfer.getTransfer(), FileTransfer.getInstance() };
 		viewer.addDragSupport(dndOperations, transfers, new ViewerDragAdapter(viewer));
 		viewer.addDropSupport(dndOperations, transfers, new EditingDomainViewerDropAdapter(editingDomain, viewer));
 	}
@@ -941,7 +958,7 @@ public class ComponentSampleEditor extends MultiPageEditorPart implements IEditi
 	 * @generated
 	 */
 	public void createModel() {
-		URI resourceURI = EditUIUtil.getURI(getEditorInput());
+		URI resourceURI = EditUIUtil.getURI(getEditorInput(), editingDomain.getResourceSet().getURIConverter());
 		Exception exception = null;
 		Resource resource = null;
 		try {
@@ -969,9 +986,9 @@ public class ComponentSampleEditor extends MultiPageEditorPart implements IEditi
 	 * @generated
 	 */
 	public Diagnostic analyzeResourceProblems(Resource resource, Exception exception) {
-		if (!resource.getErrors().isEmpty() || !resource.getWarnings().isEmpty()) {
-			BasicDiagnostic basicDiagnostic = new BasicDiagnostic(Diagnostic.ERROR,
-					"org.polarsys.kitalpha.vp.componentsample.model.editor", //$NON-NLS-1$
+		boolean hasErrors = !resource.getErrors().isEmpty();
+		if (hasErrors || !resource.getWarnings().isEmpty()) {
+			BasicDiagnostic basicDiagnostic = new BasicDiagnostic(hasErrors ? Diagnostic.ERROR : Diagnostic.WARNING, "org.polarsys.kitalpha.vp.componentsample.model.editor", //$NON-NLS-1$
 					0, getString("_UI_CreateModelError_message", resource.getURI()), //$NON-NLS-1$
 					new Object[] { exception == null ? (Object) resource : exception });
 			basicDiagnostic.merge(EcoreUtil.computeDiagnostic(resource, true));
@@ -1008,8 +1025,10 @@ public class ComponentSampleEditor extends MultiPageEditorPart implements IEditi
 				@Override
 				public void refresh() {
 					super.refresh();
-					if (propertySheetPage != null && !propertySheetPage.getControl().isDisposed()) {
-						propertySheetPage.refresh();
+					for (PropertySheetPage propertySheetPage : propertySheetPages) {
+						if (!propertySheetPage.getControl().isDisposed())
+							if (!propertySheetPage.getControl().isDisposed())
+								propertySheetPage.refresh();
 					}
 				}
 			};
@@ -1020,8 +1039,7 @@ public class ComponentSampleEditor extends MultiPageEditorPart implements IEditi
 			selectionViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
 			selectionViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
 			selectionViewer.setInput(editingDomain.getResourceSet());
-			selectionViewer.setSelection(new StructuredSelection(editingDomain.getResourceSet().getResources().get(0)),
-					true);
+			selectionViewer.setSelection(new StructuredSelection(editingDomain.getResourceSet().getResources().get(0)), true);
 
 			new AdapterFactoryTreeEditor(selectionViewer.getTree(), adapterFactory);
 
@@ -1168,14 +1186,12 @@ public class ComponentSampleEditor extends MultiPageEditorPart implements IEditi
 					if (!editingDomain.getResourceSet().getResources().isEmpty()) {
 						// Select the root object in the view.
 						//
-						contentOutlineViewer.setSelection(
-								new StructuredSelection(editingDomain.getResourceSet().getResources().get(0)), true);
+						contentOutlineViewer.setSelection(new StructuredSelection(editingDomain.getResourceSet().getResources().get(0)), true);
 					}
 				}
 
 				@Override
-				public void makeContributions(IMenuManager menuManager, IToolBarManager toolBarManager,
-						IStatusLineManager statusLineManager) {
+				public void makeContributions(IMenuManager menuManager, IToolBarManager toolBarManager, IStatusLineManager statusLineManager) {
 					super.makeContributions(menuManager, toolBarManager, statusLineManager);
 					contentOutlineStatusLineManager = statusLineManager;
 				}
@@ -1223,22 +1239,21 @@ public class ComponentSampleEditor extends MultiPageEditorPart implements IEditi
 	 * @generated
 	 */
 	public IPropertySheetPage getPropertySheetPage() {
-		if (propertySheetPage == null) {
-			propertySheetPage = new ExtendedPropertySheetPage(editingDomain) {
-				@Override
-				public void setSelectionToViewer(List<?> selection) {
-					ComponentSampleEditor.this.setSelectionToViewer(selection);
-					ComponentSampleEditor.this.setFocus();
-				}
+		PropertySheetPage propertySheetPage = new ExtendedPropertySheetPage(editingDomain) {
+			@Override
+			public void setSelectionToViewer(List<?> selection) {
+				ComponentSampleEditor.this.setSelectionToViewer(selection);
+				ComponentSampleEditor.this.setFocus();
+			}
 
-				@Override
-				public void setActionBars(IActionBars actionBars) {
-					super.setActionBars(actionBars);
-					getActionBarContributor().shareGlobalActions(this, actionBars);
-				}
-			};
-			propertySheetPage.setPropertySourceProvider(new AdapterFactoryContentProvider(adapterFactory));
-		}
+			@Override
+			public void setActionBars(IActionBars actionBars) {
+				super.setActionBars(actionBars);
+				getActionBarContributor().shareGlobalActions(this, actionBars);
+			}
+		};
+		propertySheetPage.setPropertySourceProvider(new AdapterFactoryContentProvider(adapterFactory));
+		propertySheetPages.add(propertySheetPage);
 
 		return propertySheetPage;
 	}
@@ -1293,6 +1308,7 @@ public class ComponentSampleEditor extends MultiPageEditorPart implements IEditi
 		//
 		final Map<Object, Object> saveOptions = new HashMap<Object, Object>();
 		saveOptions.put(Resource.OPTION_SAVE_ONLY_IF_CHANGED, Resource.OPTION_SAVE_ONLY_IF_CHANGED_MEMORY_BUFFER);
+		saveOptions.put(Resource.OPTION_LINE_DELIMITER, Resource.OPTION_LINE_DELIMITER_UNSPECIFIED);
 
 		// Do the work within an operation because this is a long running activity that modifies the workbench.
 		//
@@ -1305,8 +1321,7 @@ public class ComponentSampleEditor extends MultiPageEditorPart implements IEditi
 				//
 				boolean first = true;
 				for (Resource resource : editingDomain.getResourceSet().getResources()) {
-					if ((first || !resource.getContents().isEmpty() || isPersisted(resource))
-							&& !editingDomain.isReadOnly(resource)) {
+					if ((first || !resource.getContents().isEmpty() || isPersisted(resource)) && !editingDomain.isReadOnly(resource)) {
 						try {
 							long timeStamp = resource.getTimeStamp();
 							resource.save(saveOptions);
@@ -1401,8 +1416,7 @@ public class ComponentSampleEditor extends MultiPageEditorPart implements IEditi
 		(editingDomain.getResourceSet().getResources().get(0)).setURI(uri);
 		setInputWithNotify(editorInput);
 		setPartName(editorInput.getName());
-		IProgressMonitor progressMonitor = getActionBars().getStatusLineManager() != null
-				? getActionBars().getStatusLineManager().getProgressMonitor() : new NullProgressMonitor();
+		IProgressMonitor progressMonitor = getActionBars().getStatusLineManager() != null ? getActionBars().getStatusLineManager().getProgressMonitor() : new NullProgressMonitor();
 		doSave(progressMonitor);
 	}
 
@@ -1412,19 +1426,9 @@ public class ComponentSampleEditor extends MultiPageEditorPart implements IEditi
 	 * @generated
 	 */
 	public void gotoMarker(IMarker marker) {
-		try {
-			if (marker.getType().equals(EValidator.MARKER)) {
-				String uriAttribute = marker.getAttribute(EValidator.URI_ATTRIBUTE, null);
-				if (uriAttribute != null) {
-					URI uri = URI.createURI(uriAttribute);
-					EObject eObject = editingDomain.getResourceSet().getEObject(uri, true);
-					if (eObject != null) {
-						setSelectionToViewer(Collections.singleton(editingDomain.getWrapper(eObject)));
-					}
-				}
-			}
-		} catch (CoreException exception) {
-			ComponentSampleEditorPlugin.INSTANCE.log(exception);
+		List<?> targetObjects = markerHelper.getTargetObjects(editingDomain, marker);
+		if (!targetObjects.isEmpty()) {
+			setSelectionToViewer(targetObjects);
 		}
 	}
 
@@ -1441,8 +1445,7 @@ public class ComponentSampleEditor extends MultiPageEditorPart implements IEditi
 		setPartName(editorInput.getName());
 		site.setSelectionProvider(this);
 		site.getPage().addPartListener(partListener);
-		ResourcesPlugin.getWorkspace().addResourceChangeListener(resourceChangeListener,
-				IResourceChangeEvent.POST_CHANGE);
+		ResourcesPlugin.getWorkspace().addResourceChangeListener(resourceChangeListener, IResourceChangeEvent.POST_CHANGE);
 	}
 
 	/**
@@ -1507,8 +1510,7 @@ public class ComponentSampleEditor extends MultiPageEditorPart implements IEditi
 	 * @generated
 	 */
 	public void setStatusLineManager(ISelection selection) {
-		IStatusLineManager statusLineManager = currentViewer != null && currentViewer == contentOutlineViewer
-				? contentOutlineStatusLineManager : getActionBars().getStatusLineManager();
+		IStatusLineManager statusLineManager = currentViewer != null && currentViewer == contentOutlineViewer ? contentOutlineStatusLineManager : getActionBars().getStatusLineManager();
 
 		if (statusLineManager != null) {
 			if (selection instanceof IStructuredSelection) {
@@ -1524,8 +1526,7 @@ public class ComponentSampleEditor extends MultiPageEditorPart implements IEditi
 					break;
 				}
 				default: {
-					statusLineManager
-							.setMessage(getString("_UI_MultiObjectSelected", Integer.toString(collection.size()))); //$NON-NLS-1$
+					statusLineManager.setMessage(getString("_UI_MultiObjectSelected", Integer.toString(collection.size()))); //$NON-NLS-1$
 					break;
 				}
 				}
@@ -1622,7 +1623,7 @@ public class ComponentSampleEditor extends MultiPageEditorPart implements IEditi
 			getActionBarContributor().setActiveEditor(null);
 		}
 
-		if (propertySheetPage != null) {
+		for (PropertySheetPage propertySheetPage : propertySheetPages) {
 			propertySheetPage.dispose();
 		}
 

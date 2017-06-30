@@ -10,6 +10,7 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.resourcereuse.emfscheme.ui;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.core.commands.AbstractHandler;
@@ -64,14 +65,15 @@ public class LoadResourceReuseHandler extends AbstractHandler {
 				final Session session = context.getSession();
 				List<SearchCriteria> criterias = context.getCriterias();
 				for (SearchCriteria settedCriteria : criterias) {
-					final java.util.List<URI> modelToLoad = ModelReuseHelper.findModelsURIAccordingToCriteria(settedCriteria);
-					modelToLoad.addAll(ModelReuseHelper.findMetadataURIAccordingToCriteria(settedCriteria));
+					final java.util.List<URI> modelToLoad = new ArrayList<URI>();
+					modelToLoad.add(ModelReuseHelper.createModelReuseURI(settedCriteria));
+					modelToLoad.add(ModelReuseHelper.createModelReuseMetadataURI(settedCriteria));
 					if (session != null) {
 							SiriusLoaderServices.loadModelsForSiriusSession(session, modelToLoad);
 					}
 					// else we work with the resource set
 					else {
-							ResourceSetLoaderServices.loadResourceForCurrentRessourceSet(eObject, modelToLoad);
+							ResourceSetLoaderServices.loadResourceForCurrentResourceSet(eObject, modelToLoad);
 					}
 				}
 			}

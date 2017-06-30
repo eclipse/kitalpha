@@ -187,26 +187,10 @@ public class InternalModelReuseLoader implements IModelReuseLoader {
 
 	@Override
 	public Resource load(ResourceSet resourceSet, URIConverter uriConverter, SearchCriteria criteria) {
-		setURIConverter(resourceSet, uriConverter);
 		
-		java.util.List<URI> modelResourcesURI = ModelReuseHelper.findModelsURIAccordingToCriteria(criteria);
+		URI modelResourcesURI = ModelReuseHelper.createModelReuseURI(criteria);
 		
-		int size = modelResourcesURI.size();
-		logger.warn(new Status(IStatus.WARNING, Activator.PLUGIN_ID, 
-				"The criteria matchs: " + size + " resources. " + 
-						((size == 0)?
-								"No resource will be loaded" : //Then statement
-								" The first one will be loaded [" + modelResourcesURI.get(0) + "]"))); //Else statement
-
-		if (!modelResourcesURI.isEmpty()){
-			//Get the first uri
-			//ICI load des metadata (pas sur ici)
-			URI uri = modelResourcesURI.get(0);
-			return load(resourceSet, uri);
-		}
-		
-		
-		return null;
+		return load(resourceSet, uriConverter, modelResourcesURI);
 	}
 	
 	/**
@@ -221,10 +205,14 @@ public class InternalModelReuseLoader implements IModelReuseLoader {
 	
 	private Resource loadFromResourceReuse(ResourceSet resourceSet, org.polarsys.kitalpha.resourcereuse.model.Resource resourcereuse){
 		URI[] uris = ModelReuseHelper.createModelReuseURI(resourcereuse);
-		Resource resource = getResource(resourceSet, uris[0]);
-		if (uris[1] != null)
-			getResource(resourceSet, uris[1]);
-		return resource;
+		Resource result = null;
+		for (URI uri : uris)
+		{
+			Resource r = getResource(resourceSet, uri);
+			if (result == null)
+				result = r;
+		}
+		return result;
 	}
 
 	private Resource getResource(ResourceSet resourceSet, URI uri) {

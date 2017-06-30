@@ -35,24 +35,20 @@ public class LibraryHelper {
         if (!mainMetadataRes.getContents().isEmpty())
         	mainMetadata = (Metadata)mainMetadataRes.getContents().get(0);
 
+        Resource libMetadataRes = null;
         try {
-	        Resource libMetadataRes = set.getResource(libMetadataURI, true);
+	        libMetadataRes = set.getResource(libMetadataURI, true);
 	        if (!libMetadataRes.getContents().isEmpty())
 	        	libMetadata = (Metadata)libMetadataRes.getContents().get(0);
 		} catch (Exception e) {
 			// clean proxy resource
-			Resource resource = set.getResource(libMetadataURI, false);
-			if (resource != null && resource.getContents().isEmpty()) {
-				resource.unload();
-				set.getResources().remove(resource);
+			if (libMetadataRes != null && libMetadataRes.getContents().isEmpty()) {
+				libMetadataRes.unload();
+				set.getResources().remove(libMetadataRes);
 			}
+			throw new NoMetadataException("Cannot find metadata from lib model", e);
 		}
         
-        if (mainMetadata == null)
-        	throw new IllegalStateException("Cannot find metadata from main model");
-        if (libMetadata == null)
-        	throw new IllegalStateException("Cannot find metadata from lib model");
-
         mainMetadata.getAdditionalMetadata().add(libMetadata);
 		
 	}
@@ -71,26 +67,31 @@ public class LibraryHelper {
         if (!mainMetadataRes.getContents().isEmpty())
         	mainMetadata = (Metadata)mainMetadataRes.getContents().get(0);
 
+        Resource libMetadataRes = null;
         try {
-	        Resource libMetadataRes = set.getResource(libMetadataURI, true);
+	        libMetadataRes = set.getResource(libMetadataURI, true);
 	        if (!libMetadataRes.getContents().isEmpty())
 	        	libMetadata = (Metadata)libMetadataRes.getContents().get(0);
 		} catch (Exception e) {
 			// clean proxy resource
-			Resource resource = set.getResource(libMetadataURI, false);
-			if (resource != null && resource.getContents().isEmpty()) {
-				resource.unload();
-				set.getResources().remove(resource);
+			if (libMetadataRes != null && libMetadataRes.getContents().isEmpty()) {
+				libMetadataRes.unload();
+				set.getResources().remove(libMetadataRes);
 			}
+			throw new NoMetadataException("Cannot find metadata from lib model", e);
 		}
         
-        if (mainMetadata == null)
-        	throw new IllegalStateException("Cannot find metadata from main model");
-        if (libMetadata == null)
-        	throw new IllegalStateException("Cannot find metadata from lib model");
-
         mainMetadata.getAdditionalMetadata().remove(libMetadata);
 		
 	}
 
+	public static class NoMetadataException extends RuntimeException {
+
+		private static final long serialVersionUID = 6289563783712353541L;
+
+		public NoMetadataException(String message, Throwable cause) {
+			super(message, cause);
+		}
+		
+	}
 }
