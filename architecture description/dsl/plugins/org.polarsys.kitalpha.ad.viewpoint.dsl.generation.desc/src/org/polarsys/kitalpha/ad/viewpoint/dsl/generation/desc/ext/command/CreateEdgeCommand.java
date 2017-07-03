@@ -96,7 +96,8 @@ public class CreateEdgeCommand extends RecordingCommand {
 		/* create the mapping to edge targets map */
 		DDiagramElementSynchronizer elementSynchronizer = diagramSynchronizer.getElementSynchronizer();
 		Map<DiagramElementMapping, Collection<EdgeTarget>> mappingsToEdgeTargets = elementSynchronizer.computeMappingsToEdgeTargets(_session.getSelectedViewpoints(false));
-		diagramSynchronizer.computeDecorations(mappingsToEdgeTargets, edgeToSemanticBasedDecoration, edgeToMappingBasedDecoration);
+//TODO fix me
+//		diagramSynchronizer.computeDecorations(mappingsToEdgeTargets, edgeToSemanticBasedDecoration, edgeToMappingBasedDecoration);
 		
 		final DiagramMappingsManager diagramMappingsManager = DiagramMappingsManagerRegistryImpl.INSTANCE.getDiagramMappingsManager(_session, _diagram);
 

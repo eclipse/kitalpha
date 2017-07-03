@@ -61,7 +61,7 @@ public class GenDocDiagramExportAction extends ExportAction {
 	public GenDocDiagramExportAction(Session session,
 			Collection<DRepresentation> dRepresentationsToExportAsImage,
 			IPath outputPath, ImageFileFormat imageFormat, boolean exportToHtml) {
-		super(session, dRepresentationsToExportAsImage, outputPath, imageFormat, exportToHtml);
+		super(session, dRepresentationsToExportAsImage, outputPath, imageFormat, exportToHtml, true);
 		this.exportToHtml = exportToHtml;
 		this.dRepresentationsToExportAsImage = dRepresentationsToExportAsImage;
 		this.imageFormat = imageFormat;
