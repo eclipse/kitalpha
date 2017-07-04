@@ -102,7 +102,7 @@ public class MDEAddLinkDialog extends MDEOkCancelDialog {
 					path = linkManager.getPath(linkType, basePath);
 				}
 				
-				if (linkType.equalsIgnoreCase(Constants.LOCAL_LABEL) || 
+				if (linkType.equalsIgnoreCase(Constants.FILE_LOCAL_LABEL) || 
 						linkType.equalsIgnoreCase(Constants.MODEL_ELEMENT_LABEL) ||
 						linkType.equalsIgnoreCase(Constants.DIAGRAM_ELEMENT_LABEL)){
 					path = linkManager.getPath(linkType, richText.getElement());
@@ -137,8 +137,8 @@ public class MDEAddLinkDialog extends MDEOkCancelDialog {
 			public void widgetSelected(SelectionEvent event) {
 				linkType = itemsLinkList[linkTypeCombo.getSelectionIndex()];
 				browseButton.setEnabled(!Constants.URL_LABEL.equals(linkType));
-				urlLabel.setEnabled(Constants.URL_LABEL.equals(linkType) || Constants.FILE_LABEL.equals(linkType) || Constants.LOCAL_LABEL.equals(linkType));
-				urlText.setEnabled(Constants.URL_LABEL.equals(linkType) ||  Constants.FILE_LABEL.equals(linkType) || Constants.LOCAL_LABEL.equals(linkType));
+				urlLabel.setEnabled(Constants.URL_LABEL.equals(linkType) || Constants.FILE_LABEL.equals(linkType) || Constants.FILE_LOCAL_LABEL.equals(linkType));
+				urlText.setEnabled(Constants.URL_LABEL.equals(linkType) ||  Constants.FILE_LABEL.equals(linkType) || Constants.FILE_LOCAL_LABEL.equals(linkType));
 				if (Constants.URL_LABEL.equals(linkType)) {
 					urlDisplayNameText.setText(richText.getSelectedText());
 				} else {

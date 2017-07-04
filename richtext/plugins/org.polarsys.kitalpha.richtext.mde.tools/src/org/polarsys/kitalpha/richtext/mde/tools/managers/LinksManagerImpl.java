@@ -42,7 +42,7 @@ public class LinksManagerImpl implements LinkManager {
 	protected void initializeDefaultLinks(){
 		addLinkType(Constants.URL, Constants.URL_LABEL, new HttpLinkHandler());
 		addLinkType(Constants.FILE, Constants.FILE_LABEL, new FileLinkHandler());
-		addLinkType(Constants.LOCAL, Constants.LOCAL_LABEL, new LocalLinkHandler());
+		addLinkType(Constants.LOCAL, Constants.FILE_LOCAL_LABEL, new LocalLinkHandler());
 		addLinkType(Constants.MODEL_ELEMENT, Constants.MODEL_ELEMENT_LABEL, new ModelElementHandler());
 		addLinkType(Constants.DIAGRAM_ELEMENT, Constants.DIAGRAM_ELEMENT_LABEL, new ModelDiagramLinkHandler());
 	}

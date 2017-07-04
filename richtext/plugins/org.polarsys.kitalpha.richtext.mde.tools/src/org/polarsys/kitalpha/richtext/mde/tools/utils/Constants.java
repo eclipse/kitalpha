@@ -32,6 +32,7 @@ public class Constants {
 
 	public static final String URL_LABEL = "URL"; //$NON-NLS-1$
 	public static final String FILE_LABEL = "File (absolute path)"; //$NON-NLS-1$
+	public static final String FILE_LOCAL_LABEL = "File (project relative path)"; //$NON-NLS-1$
 	public static final String MODEL_ELEMENT_LABEL = "Model Element"; //$NON-NLS-1$
 	public static final String DIAGRAM_ELEMENT_LABEL = "Diagram Element"; //$NON-NLS-1$
 
