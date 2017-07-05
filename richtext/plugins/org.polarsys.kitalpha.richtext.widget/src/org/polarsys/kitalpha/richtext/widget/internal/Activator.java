@@ -8,7 +8,7 @@
  * Contributors:
  *  Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
-package org.polarsys.kitalpha.richtext.widget;
+package org.polarsys.kitalpha.richtext.widget.internal;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;

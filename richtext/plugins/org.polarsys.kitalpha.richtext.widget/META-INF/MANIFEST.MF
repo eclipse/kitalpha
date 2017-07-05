@@ -3,13 +3,14 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: org.polarsys.kitalpha.richtext.widget
 Bundle-Version: 1.2.0.qualifier
-Bundle-Activator: org.polarsys.kitalpha.richtext.widget.Activator
+Bundle-Activator: org.polarsys.kitalpha.richtext.widget.internal.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.polarsys.kitalpha.richtext.nebula.widget;visibility:=reexport,
  org.polarsys.kitalpha.richtext.mde.tools;visibility:=reexport
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
-Export-Package: org.polarsys.kitalpha.richtext.widget.factory
+Export-Package: org.polarsys.kitalpha.richtext.widget,
+ org.polarsys.kitalpha.richtext.widget.factory
 Bundle-Vendor: %Bundle-Vendor
 Bundle-Localization: OSGI-INF/l10n/bundle

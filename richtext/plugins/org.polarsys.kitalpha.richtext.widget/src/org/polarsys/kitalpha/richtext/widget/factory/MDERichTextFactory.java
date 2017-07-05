@@ -19,9 +19,9 @@ import org.polarsys.kitalpha.richtext.mde.tools.misc.handlers.ClearContentHandle
 import org.polarsys.kitalpha.richtext.mde.tools.misc.handlers.EditableModeHandler;
 import org.polarsys.kitalpha.richtext.mde.tools.utils.Constants;
 import org.polarsys.kitalpha.richtext.nebula.widget.MDENebulaBasedRichTextWidget;
-import org.polarsys.kitalpha.richtext.nebula.widget.MDENebulaBasedRichTextWidgetImpl;
 import org.polarsys.kitalpha.richtext.nebula.widget.MDENebulaRichTextConfiguration;
 import org.polarsys.kitalpha.richtext.nebula.widget.MDERichTextConstants;
+import org.polarsys.kitalpha.richtext.widget.MDERichtextWidgetImpl;
 
 /**
  * Factory to create and configure MDE rich Text
@@ -67,7 +67,7 @@ public class MDERichTextFactory {
 				MDERichTextConstants.PASTE_FROM_WORD,
 				MDERichTextConstants.PASTE_TEXT);
 		
-		MDENebulaBasedRichTextWidget widget = new MDENebulaBasedRichTextWidgetImpl(parent, configuration);
+		MDERichtextWidgetImpl widget = new MDERichtextWidgetImpl(parent, configuration);
 		
 		addToolbarItems(widget);
 		
@@ -83,7 +83,7 @@ public class MDERichTextFactory {
 				MDERichTextConstants.PASTE_FROM_WORD,
 				MDERichTextConstants.PASTE_TEXT);
 		
-		MDENebulaBasedRichTextWidget widget = new MDENebulaBasedRichTextWidgetImpl(parent, configuration, style);
+		MDERichtextWidgetImpl widget = new MDERichtextWidgetImpl(parent, configuration, style);
 		
 		addToolbarItems(widget);
 		
@@ -101,7 +101,25 @@ public class MDERichTextFactory {
 				MDERichTextConstants.PASTE_FROM_WORD,
 				MDERichTextConstants.PASTE_TEXT);
 		
-		MDENebulaBasedRichTextWidget widget = new MDENebulaBasedRichTextWidgetImpl(parent, configuration);
+		MDERichtextWidgetImpl widget = new MDERichtextWidgetImpl(parent, configuration);
+		
+		addToolbarItems(widget);
+		
+		initEditorItemStates(widget);
+		
+		return widget;
+	}
+	
+	public MDERichTextWidget createMinimalRichTextWidget(Composite parent, int style){
+		initializeMDEMinimalToolbar();
+		
+		configuration.removeToolbarItems(MDERichTextConstants.LINK, 
+				MDERichTextConstants.ANCHOR, 
+				MDERichTextConstants.STRIKE,
+				MDERichTextConstants.PASTE_FROM_WORD,
+				MDERichTextConstants.PASTE_TEXT);
+		
+		MDERichtextWidgetImpl widget = new MDERichtextWidgetImpl(parent, configuration, style);
 		
 		addToolbarItems(widget);
 		

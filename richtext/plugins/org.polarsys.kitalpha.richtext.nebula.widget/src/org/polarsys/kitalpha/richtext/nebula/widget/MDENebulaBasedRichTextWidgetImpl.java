@@ -89,6 +89,7 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 				@Override
 				public void completed(ProgressEvent event) {
 					editorLoaded = true;
+					installListenersOnReadyInstance();
 				}
 				
 				@Override
@@ -96,6 +97,14 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 				}
 			});
 		}
+	}
+	
+	/**
+	 * Install listener on ready instance event fired by
+	 * ckEditor
+	 */
+	protected void installListenersOnReadyInstance(){
+		//Do nothing
 	}
 
 	@Override
