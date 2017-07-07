@@ -51,8 +51,14 @@
     <steps xsi:type="buildstep:InstallStep" xmi:id="_JkGN0pKKEeSPapwxSH2ZqQ" name="install diffmerge" id="${TP_name}" profile="${TP_profile}">
       <updateSiteUrls>${diffmerge.repo.url}</updateSiteUrls>
       <updateSiteUrls>${diffmerge.patterns.repo.url}</updateSiteUrls>
-      <featureNames>org.eclipse.emf.diffmerge.sdk.feature</featureNames>
-      <featureNames>org.eclipse.emf.diffmerge.sdk.feature.source</featureNames>
+      <featureNames>org.eclipse.emf.diffmerge.feature</featureNames>
+      <featureNames>org.eclipse.emf.diffmerge.feature.source</featureNames>
+      <featureNames>org.eclipse.emf.diffmerge.sirius.feature</featureNames>
+      <featureNames>org.eclipse.emf.diffmerge.sirius.feature.source</featureNames>
+      <featureNames>org.eclipse.emf.diffmerge.gmf.feature</featureNames>
+      <featureNames>org.eclipse.emf.diffmerge.gmf.feature.source</featureNames>
+      <featureNames>org.eclipse.emf.diffmerge.egit.feature</featureNames>
+      <featureNames>org.eclipse.emf.diffmerge.egit.feature.source</featureNames>
       <featureNames>org.eclipse.emf.diffmerge.patterns.sdk.feature</featureNames>
       <featureNames>org.eclipse.emf.diffmerge.patterns.sdk.feature.source</featureNames>
       <featureNames>org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature</featureNames>
