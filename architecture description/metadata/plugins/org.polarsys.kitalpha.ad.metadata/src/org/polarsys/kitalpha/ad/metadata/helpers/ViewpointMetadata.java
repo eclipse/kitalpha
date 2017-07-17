@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016-2017 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -12,6 +12,7 @@ package org.polarsys.kitalpha.ad.metadata.helpers;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
@@ -49,6 +50,25 @@ public class ViewpointMetadata {
 		return getViewpointReferences();
 	}
 	
+	public List<ViewpointReference> getAllViewpointReferences() {
+		List<ViewpointReference> result = new ArrayList<>();
+		
+		Metadata metadata = getMetadataStorage();
+
+		collectViewpointReferences(result, metadata);
+
+		return result;
+	}
+	
+	private void collectViewpointReferences(List<ViewpointReference> result, Metadata metadata) {
+		if (metadata != null)
+		{
+			result.addAll(metadata.getViewpointReferences());
+			for (Metadata child : metadata.getAdditionalMetadata())
+				collectViewpointReferences(result, child);
+		}		
+	}
+
 	public Map<String, Version> getViewpointReferences() {
 		Map<String, Version> id2version = new HashMap<String, Version>();
 		if (context.getResources().isEmpty())
