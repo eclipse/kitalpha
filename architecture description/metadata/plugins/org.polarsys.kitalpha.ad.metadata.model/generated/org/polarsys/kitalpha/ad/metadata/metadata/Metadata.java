@@ -1,6 +1,6 @@
 /**
  * ******************************************************************************
- *  Copyright (c) 2016 Thales Global Services S.A.S.
+ *  Copyright (c) 2016-2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -29,6 +29,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.metadata.metadata.Metadata#getViewpointReferences <em>Viewpoint References</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.metadata.metadata.Metadata#getAdditionalMetadata <em>Additional Metadata</em>}</li>
  * </ul>
  *
  * @see org.polarsys.kitalpha.ad.metadata.metadata.MetadataPackage#getMetadata()
@@ -59,6 +60,24 @@ public interface Metadata extends MetadataElement {
 	 */
 
 	EList<ViewpointReference> getViewpointReferences();
+
+	/**
+	 * Returns the value of the '<em><b>Additional Metadata</b></em>' reference list.
+	 * The list contents are of type {@link org.polarsys.kitalpha.ad.metadata.metadata.Metadata}.
+
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Additional Metadata</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Additional Metadata</em>' reference list.
+	 * @see org.polarsys.kitalpha.ad.metadata.metadata.MetadataPackage#getMetadata_AdditionalMetadata()
+	 * @model
+	 * @generated
+	 */
+
+	EList<Metadata> getAdditionalMetadata();
 
 
 

@@ -1,6 +1,6 @@
 /**
  * ******************************************************************************
- *  Copyright (c) 2016 Thales Global Services S.A.S.
+ *  Copyright (c) 2016-2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -25,6 +25,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.polarsys.kitalpha.ad.metadata.metadata.Metadata;
@@ -40,6 +41,7 @@ import org.polarsys.kitalpha.ad.metadata.metadata.ViewpointReference;
  * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.metadata.metadata.impl.MetadataImpl#getViewpointReferences <em>Viewpoint References</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.metadata.metadata.impl.MetadataImpl#getAdditionalMetadata <em>Additional Metadata</em>}</li>
  * </ul>
  *
  * @generated
@@ -55,6 +57,15 @@ public class MetadataImpl extends MetadataElementImpl implements Metadata {
 	 * @ordered
 	 */
 	protected EList<ViewpointReference> viewpointReferences;
+	/**
+	 * The cached value of the '{@link #getAdditionalMetadata() <em>Additional Metadata</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAdditionalMetadata()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Metadata> additionalMetadata;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -99,6 +110,20 @@ public class MetadataImpl extends MetadataElementImpl implements Metadata {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+
+	public EList<Metadata> getAdditionalMetadata() {
+
+		if (additionalMetadata == null) {
+			additionalMetadata = new EObjectResolvingEList<Metadata>(Metadata.class, this, MetadataPackage.METADATA__ADDITIONAL_METADATA);
+		}
+		return additionalMetadata;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -118,6 +143,8 @@ public class MetadataImpl extends MetadataElementImpl implements Metadata {
 		switch (featureID) {
 			case MetadataPackage.METADATA__VIEWPOINT_REFERENCES:
 				return getViewpointReferences();
+			case MetadataPackage.METADATA__ADDITIONAL_METADATA:
+				return getAdditionalMetadata();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -135,6 +162,10 @@ public class MetadataImpl extends MetadataElementImpl implements Metadata {
 				getViewpointReferences().clear();
 				getViewpointReferences().addAll((Collection<? extends ViewpointReference>)newValue);
 				return;
+			case MetadataPackage.METADATA__ADDITIONAL_METADATA:
+				getAdditionalMetadata().clear();
+				getAdditionalMetadata().addAll((Collection<? extends Metadata>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -150,6 +181,9 @@ public class MetadataImpl extends MetadataElementImpl implements Metadata {
 		switch (featureID) {
 			case MetadataPackage.METADATA__VIEWPOINT_REFERENCES:
 				getViewpointReferences().clear();
+				return;
+			case MetadataPackage.METADATA__ADDITIONAL_METADATA:
+				getAdditionalMetadata().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -167,6 +201,8 @@ public class MetadataImpl extends MetadataElementImpl implements Metadata {
 		switch (featureID) {
 			case MetadataPackage.METADATA__VIEWPOINT_REFERENCES:
 				return viewpointReferences != null && !viewpointReferences.isEmpty();
+			case MetadataPackage.METADATA__ADDITIONAL_METADATA:
+				return additionalMetadata != null && !additionalMetadata.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

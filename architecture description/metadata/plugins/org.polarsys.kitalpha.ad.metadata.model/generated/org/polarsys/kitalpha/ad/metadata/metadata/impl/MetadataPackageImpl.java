@@ -1,6 +1,6 @@
 /**
  * ******************************************************************************
- *  Copyright (c) 2016 Thales Global Services S.A.S.
+ *  Copyright (c) 2016-2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -150,6 +150,15 @@ public class MetadataPackageImpl extends EPackageImpl implements MetadataPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getMetadata_AdditionalMetadata() {
+		return (EReference)metadataEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getViewpointReference() {
 		return viewpointReferenceEClass;
 	}
@@ -238,6 +247,7 @@ public class MetadataPackageImpl extends EPackageImpl implements MetadataPackage
 		// Create classes and their features
 		metadataEClass = createEClass(METADATA);
 		createEReference(metadataEClass, METADATA__VIEWPOINT_REFERENCES);
+		createEReference(metadataEClass, METADATA__ADDITIONAL_METADATA);
 
 		viewpointReferenceEClass = createEClass(VIEWPOINT_REFERENCE);
 		createEAttribute(viewpointReferenceEClass, VIEWPOINT_REFERENCE__VP_ID);
@@ -285,6 +295,7 @@ public class MetadataPackageImpl extends EPackageImpl implements MetadataPackage
 		// Initialize classes, features, and operations; add parameters
 		initEClass(metadataEClass, Metadata.class, "Metadata", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMetadata_ViewpointReferences(), this.getViewpointReference(), null, "viewpointReferences", null, 0, -1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMetadata_AdditionalMetadata(), this.getMetadata(), null, "additionalMetadata", null, 0, -1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(viewpointReferenceEClass, ViewpointReference.class, "ViewpointReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getViewpointReference_VpId(), ecorePackage.getEString(), "vpId", null, 1, 1, ViewpointReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
