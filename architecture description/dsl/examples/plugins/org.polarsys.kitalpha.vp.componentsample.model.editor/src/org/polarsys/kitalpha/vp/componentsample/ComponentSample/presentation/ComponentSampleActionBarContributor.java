@@ -13,33 +13,37 @@ package org.polarsys.kitalpha.vp.componentsample.ComponentSample.presentation;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.ui.action.ViewerFilterAction;
+
 import org.eclipse.emf.common.ui.viewer.IViewerProvider;
-import org.eclipse.emf.common.util.TreeIterator;
+
 import org.eclipse.emf.common.util.URI;
+
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
 import org.eclipse.emf.ecore.presentation.EcoreEditorPlugin;
+
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
+
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
+
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.domain.IEditingDomainProvider;
+
 import org.eclipse.emf.edit.ui.action.ControlAction;
 import org.eclipse.emf.edit.ui.action.CreateChildAction;
 import org.eclipse.emf.edit.ui.action.CreateSiblingAction;
 import org.eclipse.emf.edit.ui.action.EditingDomainActionBarContributor;
 import org.eclipse.emf.edit.ui.action.LoadResourceAction;
 import org.eclipse.emf.edit.ui.action.ValidateAction;
+
 import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
+
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.ActionContributionItem;
 import org.eclipse.jface.action.IAction;
@@ -51,8 +55,10 @@ import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.Separator;
 import org.eclipse.jface.action.SubContributionItem;
+
 import org.eclipse.jface.util.IPropertyChangeListener;
 import org.eclipse.jface.util.PropertyChangeEvent;
+
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.ISelectionProvider;
@@ -60,28 +66,32 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.Viewer;
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.SelectionAdapter;
-import org.eclipse.swt.events.SelectionEvent;
+
+import org.eclipse.jface.window.Window;
+
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.swt.layout.FormAttachment;
-import org.eclipse.swt.layout.FormData;
-import org.eclipse.swt.widgets.Button;
-import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Control;
+
 import org.eclipse.swt.widgets.Shell;
+
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
+
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
+
 import org.polarsys.kitalpha.ad.metadata.helpers.LibraryHelper;
+
 import org.polarsys.kitalpha.emde.ui.actions.EmdeViewerFilterAction;
+
 import org.polarsys.kitalpha.emde.ui.i18n.Messages;
-import org.polarsys.kitalpha.resourcereuse.emfscheme.dialog.LoadingResourceReuseDialog;
+
 import org.polarsys.kitalpha.resourcereuse.emfscheme.helpers.ModelReuseHelper;
-import org.polarsys.kitalpha.resourcereuse.emfscheme.utils.context.ModelReuseContext;
+
 import org.polarsys.kitalpha.resourcereuse.emfscheme.utils.services.ResourceSetLoaderServices;
+
 import org.polarsys.kitalpha.resourcereuse.model.SearchCriteria;
+
+import org.polarsys.kitalpha.resourcereuse.ui.dialog.ResourceReuseSelectionDialog;
 
 /**
  * This is the action bar contributor for the ComponentSample model editor.
@@ -90,12 +100,15 @@ import org.polarsys.kitalpha.resourcereuse.model.SearchCriteria;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentSampleActionBarContributor extends EditingDomainActionBarContributor implements ISelectionChangedListener, IPropertyChangeListener {
+public class ComponentSampleActionBarContributor extends EditingDomainActionBarContributor
+		implements ISelectionChangedListener, IPropertyChangeListener {
+
 	private final class SchemeLoadResourceAction extends Action {
 
 		public SchemeLoadResourceAction() {
 			super("Load Reusable Resource...");
-			URI uri = URI.createURI("platform:/plugin/org.polarsys.kitalpha.resourcereuse.emfscheme.ui/icons/searchView.gif");
+			URI uri = URI.createURI(
+					"platform:/plugin/org.polarsys.kitalpha.resourcereuse.emfscheme.ui/icons/searchView.gif");
 			setImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(uri));
 		}
 
@@ -105,18 +118,16 @@ public class ComponentSampleActionBarContributor extends EditingDomainActionBarC
 				Viewer viewer = ((IViewerProvider) activeEditorPart).getViewer();
 				if (viewer == null)
 					return;
-				LoadingResourceReuseDialog dialog = new LoadingResourceReuseDialog(activeEditor.getSite().getShell());
+				ResourceReuseSelectionDialog dialog = new ResourceReuseSelectionDialog(
+						activeEditor.getSite().getShell());
 
-				EObject selection = currentResource.getContents().get(0);
-				dialog.setSelection(selection);
-				dialog.open();
-
-				ModelReuseContext context = ModelReuseContext.INSTANCE;
-				List<SearchCriteria> criterias = context.getCriterias();
-				for (SearchCriteria settedCriteria : criterias) {
-					URI modelToLoad = ModelReuseHelper.createModelReuseURI(settedCriteria);
+				if (dialog.open() == Window.OK) {
+					EObject selection = currentResource.getContents().get(0);
+					SearchCriteria criteria = dialog.getCriteria();
+					URI modelToLoad = ModelReuseHelper.createModelReuseURI(criteria);
 					try {
-						Resource res = ResourceSetLoaderServices.loadResourceForCurrentResourceSet(selection, modelToLoad);
+						Resource res = ResourceSetLoaderServices.loadResourceForCurrentResourceSet(selection,
+								modelToLoad);
 						if (res != null)
 							LibraryHelper.add(currentResource.getResourceSet(), currentResource.getURI(), modelToLoad);
 					} catch (Exception e) {
@@ -177,7 +188,8 @@ public class ComponentSampleActionBarContributor extends EditingDomainActionBarC
 		 */
 		@Override
 		public void run() {
-			ExtendedLoadResourceDialog loadResourceDialog = new ExtendedLoadResourceDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), domain);
+			ExtendedLoadResourceDialog loadResourceDialog = new ExtendedLoadResourceDialog(
+					PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), domain);
 			loadResourceDialog.open();
 		}
 
@@ -196,12 +208,17 @@ public class ComponentSampleActionBarContributor extends EditingDomainActionBarC
 				super(parent, domain);
 			}
 
+			/**
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 * @generated
+			 */
+			@Override
 			protected boolean processResource(Resource resource) {
 				ResourceSet resourceSet = domain.getResourceSet();
 				LibraryHelper.add(resourceSet, resourceSet.getResources().get(0).getURI(), resource.getURI());
 				return true;
 			}
-
 		}
 
 		/**
@@ -219,14 +236,17 @@ public class ComponentSampleActionBarContributor extends EditingDomainActionBarC
 				super(parent, new LabelProvider() {
 					@Override
 					public Image getImage(Object element) {
-						return ExtendedImageRegistry.getInstance().getImage(EcoreEditPlugin.INSTANCE.getImage("full/obj16/EPackage")); //$NON-NLS-1$
+						return ExtendedImageRegistry.getInstance()
+								.getImage(EcoreEditPlugin.INSTANCE.getImage("full/obj16/EPackage")); //$NON-NLS-1$
 					}
 				});
 				setMultipleSelection(true);
 				setMessage(EcoreEditorPlugin.INSTANCE.getString("_UI_SelectRegisteredPackageURI")); //$NON-NLS-1$
 				setFilter("*");
-				Map<String, URI> ePackageNsURItoGenModelLocationMap = EcorePlugin.getEPackageNsURIToGenModelLocationMap();
-				Object[] result = ePackageNsURItoGenModelLocationMap.keySet().toArray(new Object[ePackageNsURItoGenModelLocationMap.size()]);
+				Map<String, URI> ePackageNsURItoGenModelLocationMap = EcorePlugin
+						.getEPackageNsURIToGenModelLocationMap();
+				Object[] result = ePackageNsURItoGenModelLocationMap.keySet()
+						.toArray(new Object[ePackageNsURItoGenModelLocationMap.size()]);
 				Arrays.sort(result);
 				setElements(result);
 				setTitle(EcoreEditorPlugin.INSTANCE.getString("_UI_PackageSelection_label")); //$NON-NLS-1$
@@ -384,7 +404,9 @@ public class ComponentSampleActionBarContributor extends EditingDomainActionBarC
 	public void contributeToMenu(IMenuManager menuManager) {
 		super.contributeToMenu(menuManager);
 
-		IMenuManager submenuManager = new MenuManager(ComponentSampleEditorPlugin.INSTANCE.getString("_UI_ComponentSampleEditor_menu"), "org.polarsys.kitalpha.vp.componentsample.ComponentSampleMenuID"); //$NON-NLS-1$ //$NON-NLS-2$
+		IMenuManager submenuManager = new MenuManager(
+				ComponentSampleEditorPlugin.INSTANCE.getString("_UI_ComponentSampleEditor_menu"), //$NON-NLS-1$
+				"org.polarsys.kitalpha.vp.componentsample.ComponentSampleMenuID"); //$NON-NLS-1$
 		menuManager.insertAfter("additions", submenuManager); //$NON-NLS-1$
 		submenuManager.add(new Separator("settings")); //$NON-NLS-1$
 		submenuManager.add(new Separator("actions")); //$NON-NLS-1$
@@ -398,12 +420,14 @@ public class ComponentSampleActionBarContributor extends EditingDomainActionBarC
 
 		// Prepare for CreateChild item addition or removal.
 		//
-		createChildMenuManager = new MenuManager(ComponentSampleEditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item")); //$NON-NLS-1$
+		createChildMenuManager = new MenuManager(
+				ComponentSampleEditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item")); //$NON-NLS-1$
 		submenuManager.insertBefore("additions", createChildMenuManager); //$NON-NLS-1$
 
 		// Prepare for CreateSibling item addition or removal.
 		//
-		createSiblingMenuManager = new MenuManager(ComponentSampleEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item")); //$NON-NLS-1$
+		createSiblingMenuManager = new MenuManager(
+				ComponentSampleEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item")); //$NON-NLS-1$
 		submenuManager.insertBefore("additions", createSiblingMenuManager); //$NON-NLS-1$
 
 		// Force an update because Eclipse hides empty menus now.
@@ -517,7 +541,8 @@ public class ComponentSampleActionBarContributor extends EditingDomainActionBarC
 
 		// Populate EmdeViewerFilterActions if necessary
 		if (currentResourceEmdeViewerFilterActions == null) {
-			currentResourceEmdeViewerFilterActions = ((ComponentSampleEditor) activeEditorPart).getEmdeViewerFilterActions(currentResource);
+			currentResourceEmdeViewerFilterActions = ((ComponentSampleEditor) activeEditorPart)
+					.getEmdeViewerFilterActions(currentResource);
 			if (extensionViewerFilterMenuManager != null) {
 				populateManager(extensionViewerFilterMenuManager, currentResourceEmdeViewerFilterActions, null);
 				extensionViewerFilterMenuManager.update(true);
@@ -594,7 +619,8 @@ public class ComponentSampleActionBarContributor extends EditingDomainActionBarC
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void populateManager(IContributionManager manager, Collection<? extends IAction> actions, String contributionID) {
+	protected void populateManager(IContributionManager manager, Collection<? extends IAction> actions,
+			String contributionID) {
 		if (actions != null) {
 			for (IAction action : actions) {
 				if (contributionID != null) {

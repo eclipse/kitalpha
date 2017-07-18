@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -11,7 +11,6 @@
 package org.polarsys.kitalpha.resourcereuse.ui.dialog;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.jface.dialogs.Dialog;
@@ -99,9 +98,9 @@ public class ResourceSearchDialog extends Dialog {
 		group.setLayout(layout);
 		group.setLayoutData(new GridData(GridData.FILL_BOTH));
 
-		userConcerns.addAll(toStringValueList(criteria.getUserInConcerns()));
-		usedConcerns.addAll(toStringValueList(criteria.getUsedInConcerns()));
-		involvedInConcerns.addAll(toStringValueList(criteria.getConcerns()));
+		userConcerns.addAll(StringValue.toStringValueList(criteria.getUserInConcerns()));
+		usedConcerns.addAll(StringValue.toStringValueList(criteria.getUsedInConcerns()));
+		involvedInConcerns.addAll(StringValue.toStringValueList(criteria.getConcerns()));
 		createTableComposite(group, userConcerns, "concern", Messages.Concern_userTable_Label, Messages.Concern_Field__AddButton_Label, Messages.Concern_Field__DeleteButton_Label);
 		createTableComposite(group, usedConcerns, "concern", Messages.Concern_usedTable_Label, Messages.Concern_Field__AddButton_Label, Messages.Concern_Field__DeleteButton_Label);
 		createTableComposite(group, involvedInConcerns, "concern", Messages.Concern_bothTable_Label, Messages.Concern_Field__AddButton_Label, Messages.Concern_Field__DeleteButton_Label);
@@ -157,7 +156,7 @@ public class ResourceSearchDialog extends Dialog {
 		domainText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		domainText.setText(toString(criteria.getDomain()));
 
-		tags.addAll(toStringValueList(criteria.getTags()));
+		tags.addAll(StringValue.toStringValueList(criteria.getTags()));
 		createTableComposite(composite, tags, "newTag", Messages.tags_Field_Label + ':', Messages.tags_Field__AddButton_Label, Messages.tags_Field__DeleteButton_Label);
 	}
 
@@ -277,47 +276,19 @@ public class ResourceSearchDialog extends Dialog {
 		criteria.setDomain(domainText.getText());
 
 		criteria.getTags().clear();
-		criteria.getTags().addAll(toStringList(tags));
+		criteria.getTags().addAll(StringValue.toStringList(tags));
 		criteria.getConcerns().clear();
-		criteria.getConcerns().addAll(toStringList(involvedInConcerns));
+		criteria.getConcerns().addAll(StringValue.toStringList(involvedInConcerns));
 		criteria.getUsedInConcerns().clear();
-		criteria.getUsedInConcerns().addAll(toStringList(usedConcerns));
+		criteria.getUsedInConcerns().addAll(StringValue.toStringList(usedConcerns));
 		criteria.getUserInConcerns().clear();
-		criteria.getUserInConcerns().addAll(toStringList(userConcerns));
+		criteria.getUserInConcerns().addAll(StringValue.toStringList(userConcerns));
 
 		super.okPressed();
 
 	}
 
-	private Collection<String> toStringList(List<StringValue> list) {
-		List<String> result = new ArrayList<String>();
-		for (StringValue value : list)
-			result.add(value.value);
-		return result;
-	}
-
 	private String toString(String value) {
 		return value == null ? "" : value;
-	}
-
-	private List<StringValue> toStringValueList(List<String> tags) {
-		List<StringValue> result = new ArrayList<StringValue>();
-		for (String value : tags)
-			result.add(new StringValue(value));
-		return result;
-	}
-
-	private static class StringValue {
-		private String value;
-		
-		public StringValue(String string) {
-			value = string;
-		}
-
-		@Override
-		public String toString() {
-			return value;
-		}
-
 	}
 }
