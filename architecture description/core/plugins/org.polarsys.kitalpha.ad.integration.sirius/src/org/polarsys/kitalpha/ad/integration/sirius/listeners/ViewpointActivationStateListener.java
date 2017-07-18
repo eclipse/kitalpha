@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016, 2017 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,7 +29,9 @@ import org.polarsys.kitalpha.ad.integration.sirius.SiriusViewpointManager;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
 
 /**
- * By default the project creation wizard will enable all available Sirius Viewpoints.
+ * This listener ensures that sirius viewpoints are in sync with kitalpah viewpoints.
+ * 
+ * For example: the project creation wizard will enable all available Sirius Viewpoints so a synchronization is needed.
  *
  * @author Thomas Guiu
  *
@@ -66,7 +68,7 @@ public class ViewpointActivationStateListener extends Stub {
   @Override
   public void notify(Session updated, int notification) {
     super.notify(updated, notification);
-    if (updated != null && SessionListener.OPENED == notification) {
+    if (updated != null && (SessionListener.OPENED == notification || SessionListener.SEMANTIC_CHANGE == notification)) {
       handleOpenSession(updated);
     }
   }
