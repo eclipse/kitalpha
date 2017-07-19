@@ -205,7 +205,7 @@
     <steps xsi:type="buildstep:PublishStep" xmi:id="_3JfTMC9VEeOlq-9ObYy--w" component="_yRm-QC9VEeOlq-9ObYy--w"/>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_6lDLYGO2EeaSW9czCvON2g" component="_3Q56EGO2EeaSW9czCvON2g"/>
     <steps xsi:type="buildstep:PublishStep" xmi:id="_9A90MGO2EeaSW9czCvON2g" component="_3Q56EWO2EeaSW9czCvON2g"/>
-    <steps xsi:type="buildstep:InstallStep" xmi:id="_zUUpMI5wEeORY9jpJq94Og" name="resourcereuse feature" id="TP" profile="SDKProfile" resultSteps="_3JfTMC9VEeOlq-9ObYy--w _5zqacC9VEeOlq-9ObYy--w" installResultStepsSourceFeatures="true"/>
+    <steps xsi:type="buildstep:InstallStep" xmi:id="_zUUpMI5wEeORY9jpJq94Og" name="resourcereuse feature" id="TP" profile="SDKProfile" resultSteps="_3JfTMC9VEeOlq-9ObYy--w _5zqacC9VEeOlq-9ObYy--w _6lDLYGO2EeaSW9czCvON2g _9A90MGO2EeaSW9czCvON2g" installResultStepsSourceFeatures="true"/>
   </jobs>
   <jobs xmi:id="_cOYZ4J7uEeOjCb9D2yIVHQ" name="cadence">
     <steps xsi:type="buildstep:BuildStep" xmi:id="_fnRBQJ7uEeOjCb9D2yIVHQ" name="cadence">
