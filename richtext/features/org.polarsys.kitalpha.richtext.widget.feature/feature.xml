@@ -39,13 +39,6 @@ Contributors:
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.kitalpha.richtext.common"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.polarsys.kitalpha.richtext.mde.tools"
          download-size="0"
          install-size="0"
@@ -54,6 +47,13 @@ Contributors:
 
    <plugin
          id="org.polarsys.kitalpha.richtext.nebula.widget"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.polarsys.kitalpha.richtext.common"
          download-size="0"
          install-size="0"
          version="0.0.0"
