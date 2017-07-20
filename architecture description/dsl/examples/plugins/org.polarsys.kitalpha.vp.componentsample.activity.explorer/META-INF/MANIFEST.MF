@@ -19,7 +19,8 @@ Require-Bundle: org.eclipse.ui.workbench,
  org.polarsys.kitalpha.model.common.scrutiny,
  org.polarsys.kitalpha.model.common.share,
  org.polarsys.kitalpha.model.common.commands,
- org.polarsys.kitalpha.ad.metadata
+ org.polarsys.kitalpha.ad.metadata,
+ org.polarsys.kitalpha.richtext.widget
 Export-Package: org.polarsys.kitalpha.vp.componentsample.activity.explorer,
  org.polarsys.kitalpha.vp.componentsample.activity.explorer.activity,
  org.polarsys.kitalpha.vp.componentsample.activity.explorer.page,

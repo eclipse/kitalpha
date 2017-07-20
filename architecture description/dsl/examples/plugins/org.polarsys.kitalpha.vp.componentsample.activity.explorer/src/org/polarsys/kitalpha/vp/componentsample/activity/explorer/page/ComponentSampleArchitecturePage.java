@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
  *   All rights reserved. This program and the accompanying materials
  *   are made available under the terms of the Eclipse Public License v1.0
  *   which accompanies this distribution, and is available at
@@ -16,7 +16,7 @@ import org.polarsys.kitalpha.ad.integration.amalgam.pages.ADActivityExplorerPage
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.Listener2;
 import org.polarsys.kitalpha.resourcereuse.model.Resource;
 
-public class ComponentSampleArchitecturePage extends ADActivityExplorerPage implements Listener2{
+public class ComponentSampleArchitecturePage extends ADActivityExplorerPage implements Listener2 {
 
 	protected String getViewpointID() {
 		return "org.polarsys.kitalpha.vp.componentsample"; //$NON-NLS-1$
@@ -24,22 +24,22 @@ public class ComponentSampleArchitecturePage extends ADActivityExplorerPage impl
 
 	@Override
 	public void handleReferencing(Resource vp) {
-		
+
 	}
 
 	@Override
 	public void handleUnReferencing(Resource vp) {
-		
+
 	}
 
 	@Override
 	public void handleActivation(Resource vp) {
-		
+
 	}
 
 	@Override
 	public void handleInactivation(Resource vp) {
-		
+
 	}
 
 }
