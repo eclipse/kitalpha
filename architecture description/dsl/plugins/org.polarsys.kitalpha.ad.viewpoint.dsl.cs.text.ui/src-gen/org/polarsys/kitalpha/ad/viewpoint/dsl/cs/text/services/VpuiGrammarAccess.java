@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015 Thales Global Services S.A.S.
+ * Copyright (c) 2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -10,33 +10,24 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services;
 
+import com.google.inject.Singleton;
+import com.google.inject.Inject;
+
 import java.util.List;
 
-import org.eclipse.xtext.Action;
-import org.eclipse.xtext.Alternatives;
-import org.eclipse.xtext.Assignment;
-import org.eclipse.xtext.CrossReference;
-import org.eclipse.xtext.EnumLiteralDeclaration;
-import org.eclipse.xtext.EnumRule;
-import org.eclipse.xtext.Grammar;
-import org.eclipse.xtext.GrammarUtil;
-import org.eclipse.xtext.Group;
-import org.eclipse.xtext.Keyword;
-import org.eclipse.xtext.ParserRule;
-import org.eclipse.xtext.RuleCall;
-import org.eclipse.xtext.TerminalRule;
-import org.eclipse.xtext.service.AbstractElementFinder.AbstractGrammarElementFinder;
+import org.eclipse.xtext.*;
 import org.eclipse.xtext.service.GrammarProvider;
+import org.eclipse.xtext.service.AbstractElementFinder.*;
 
-import com.google.inject.Inject;
-import com.google.inject.Singleton;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.CommonGrammarAccess;
+import org.eclipse.xtext.common.services.TerminalsGrammarAccess;
 
 @Singleton
 public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
 	public class UserInterfaceElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "UserInterface");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpui.UserInterface");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cUserInterfaceAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cImportsAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -68,20 +59,20 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class ImportElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Import");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpui.Import");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cImportKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cImportedNamespaceAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cImportedNamespaceFQNParserRuleCall_1_0 = (RuleCall)cImportedNamespaceAssignment_1.eContents().get(0);
 		
 		//Import:
-		//	"import" importedNamespace=FQN;
+		//	'import' importedNamespace=FQN;
 		@Override public ParserRule getRule() { return rule; }
 
-		//"import" importedNamespace=FQN
+		//'import' importedNamespace=FQN
 		public Group getGroup() { return cGroup; }
 
-		//"import"
+		//'import'
 		public Keyword getImportKeyword_0() { return cImportKeyword_0; }
 
 		//importedNamespace=FQN
@@ -92,11 +83,11 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class AspectElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Aspect");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpui.Aspect");
 		private final RuleCall cUIDescriptionParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		//Aspect returns vpdesc::Aspect:
-		//	UIDescription;
+		//Aspect vpdesc::Aspect:
+		//	UIDescription
 		@Override public ParserRule getRule() { return rule; }
 
 		//UIDescription
@@ -104,7 +95,7 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class UIDescriptionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "UIDescription");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpui.UIDescription");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cUIDescriptionAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cUIDescriptionKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -119,17 +110,17 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 		// * 							vpui
 		// * 
 		// ******************************************************************** /
-		//UIDescription returns vpdesc::Aspect:
-		//	{vpui::UIDescription} "UIDescription" name=FQN "{" => UIs+=UI* "}";
+		//UIDescription vpdesc::Aspect:
+		//	{vpui::UIDescription} 'UIDescription' name=FQN '{' => UIs+=UI* '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpui::UIDescription} "UIDescription" name=FQN "{" => UIs+=UI* "}"
+		//{vpui::UIDescription} 'UIDescription' name=FQN '{' => UIs+=UI* '}'
 		public Group getGroup() { return cGroup; }
 
 		//{vpui::UIDescription}
 		public Action getUIDescriptionAction_0() { return cUIDescriptionAction_0; }
 
-		//"UIDescription"
+		//'UIDescription'
 		public Keyword getUIDescriptionKeyword_1() { return cUIDescriptionKeyword_1; }
 
 		//name=FQN
@@ -138,7 +129,7 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getNameFQNParserRuleCall_2_0() { return cNameFQNParserRuleCall_2_0; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
 		//=> UIs+=UI*
@@ -147,19 +138,19 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 		//UI
 		public RuleCall getUIsUIParserRuleCall_4_0() { return cUIsUIParserRuleCall_4_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 
 	public class DisplayableElementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DisplayableElement");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpui.DisplayableElement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cUIContainerParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cUIParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cUIFieldParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
-		//DisplayableElement returns vpui::DisplayableElement:
-		//	UIContainer | UI | UIField;
+		//DisplayableElement vpui::DisplayableElement:
+		//	UIContainer | UI | UIField
 		@Override public ParserRule getRule() { return rule; }
 
 		//UIContainer | UI | UIField
@@ -176,7 +167,7 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class UIElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "UI");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpui.UI");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cUIAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cUIKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -193,18 +184,17 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cUI_ContainersUIContainerParserRuleCall_6_0 = (RuleCall)cUI_ContainersAssignment_6.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
-		//UI returns vpui::UI:
-		//	{vpui::UI} "UI" name=EString? UI_DataSource=DataSource? "{" ("label:" label=EString)? UI_Containers+=UIContainer*
-		//	"}";
+		//UI vpui::UI:
+		//	{vpui::UI} 'UI' name=EString? UI_DataSource=DataSource? '{' ('label:' label=EString)? UI_Containers+=UIContainer* '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpui::UI} "UI" name=EString? UI_DataSource=DataSource? "{" ("label:" label=EString)? UI_Containers+=UIContainer* "}"
+		//{vpui::UI} 'UI' name=EString? UI_DataSource=DataSource? '{' ('label:' label=EString)? UI_Containers+=UIContainer* '}'
 		public Group getGroup() { return cGroup; }
 
 		//{vpui::UI}
 		public Action getUIAction_0() { return cUIAction_0; }
 
-		//"UI"
+		//'UI'
 		public Keyword getUIKeyword_1() { return cUIKeyword_1; }
 
 		//name=EString?
@@ -219,13 +209,13 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 		//DataSource
 		public RuleCall getUI_DataSourceDataSourceParserRuleCall_3_0() { return cUI_DataSourceDataSourceParserRuleCall_3_0; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
 
-		//("label:" label=EString)?
+		//('label:' label=EString)?
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"label:"
+		//'label:'
 		public Keyword getLabelKeyword_5_0() { return cLabelKeyword_5_0; }
 
 		//label=EString
@@ -240,12 +230,12 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 		//UIContainer
 		public RuleCall getUI_ContainersUIContainerParserRuleCall_6_0() { return cUI_ContainersUIContainerParserRuleCall_6_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 
 	public class UIContainerElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "UIContainer");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpui.UIContainer");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cUIContainerAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cContainerKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -272,19 +262,19 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSubContainersUIContainerParserRuleCall_7_1_0 = (RuleCall)cSubContainersAssignment_7_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
-		//UIContainer returns vpui::UIContainer:
-		//	{vpui::UIContainer} "Container" name=EString? "{" ("label:" label=EString)? ("description:" description=EString)?
-		//	(UI_fields+=UIField UI_fields+=UIField*)? (subContainers+=UIContainer subContainers+=UIContainer*)? "}";
+		//UIContainer vpui::UIContainer:
+		//	{vpui::UIContainer} 'Container' name=EString? '{' ('label:' label=EString)? ('description:' description=EString)?
+		//	(UI_fields+=UIField UI_fields+=UIField*)? (subContainers+=UIContainer subContainers+=UIContainer*)? '}'
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpui::UIContainer} "Container" name=EString? "{" ("label:" label=EString)? ("description:" description=EString)?
-		//(UI_fields+=UIField UI_fields+=UIField*)? (subContainers+=UIContainer subContainers+=UIContainer*)? "}"
+		//{vpui::UIContainer} 'Container' name=EString? '{' ('label:' label=EString)? ('description:' description=EString)?
+		//(UI_fields+=UIField UI_fields+=UIField*)? (subContainers+=UIContainer subContainers+=UIContainer*)? '}'
 		public Group getGroup() { return cGroup; }
 
 		//{vpui::UIContainer}
 		public Action getUIContainerAction_0() { return cUIContainerAction_0; }
 
-		//"Container"
+		//'Container'
 		public Keyword getContainerKeyword_1() { return cContainerKeyword_1; }
 
 		//name=EString?
@@ -293,13 +283,13 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
 
-		//"{"
+		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
-		//("label:" label=EString)?
+		//('label:' label=EString)?
 		public Group getGroup_4() { return cGroup_4; }
 
-		//"label:"
+		//'label:'
 		public Keyword getLabelKeyword_4_0() { return cLabelKeyword_4_0; }
 
 		//label=EString
@@ -308,10 +298,10 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getLabelEStringParserRuleCall_4_1_0() { return cLabelEStringParserRuleCall_4_1_0; }
 
-		//("description:" description=EString)?
+		//('description:' description=EString)?
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"description:"
+		//'description:'
 		public Keyword getDescriptionKeyword_5_0() { return cDescriptionKeyword_5_0; }
 
 		//description=EString
@@ -350,16 +340,16 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 		//UIContainer
 		public RuleCall getSubContainersUIContainerParserRuleCall_7_1_0() { return cSubContainersUIContainerParserRuleCall_7_1_0; }
 
-		//"}"
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 	}
 
 	public class DataSourceElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DataSource");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpui.DataSource");
 		private final RuleCall cLocalClassParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		//DataSource returns vpui::DataSource:
-		//	LocalClass;
+		//DataSource vpui::DataSource:
+		//	LocalClass
 		@Override public ParserRule getRule() { return rule; }
 
 		//LocalClass
@@ -367,7 +357,7 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class LocalClassElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LocalClass");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpui.LocalClass");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cLocalClassAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cForKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -375,17 +365,17 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cUI_For_LocalClassClassCrossReference_2_0 = (CrossReference)cUI_For_LocalClassAssignment_2.eContents().get(0);
 		private final RuleCall cUI_For_LocalClassClassFQNParserRuleCall_2_0_1 = (RuleCall)cUI_For_LocalClassClassCrossReference_2_0.eContents().get(1);
 		
-		//LocalClass returns vpui::DataSource:
-		//	{vpui::LocalClass} "for" UI_For_LocalClass=[vpdesc::Class|FQN];
+		//LocalClass vpui::DataSource:
+		//	{vpui::LocalClass} 'for' UI_For_LocalClass=[vpdesc::Class|FQN]
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpui::LocalClass} "for" UI_For_LocalClass=[vpdesc::Class|FQN]
+		//{vpui::LocalClass} 'for' UI_For_LocalClass=[vpdesc::Class|FQN]
 		public Group getGroup() { return cGroup; }
 
 		//{vpui::LocalClass}
 		public Action getLocalClassAction_0() { return cLocalClassAction_0; }
 
-		//"for"
+		//'for'
 		public Keyword getForKeyword_1() { return cForKeyword_1; }
 
 		//UI_For_LocalClass=[vpdesc::Class|FQN]
@@ -399,7 +389,7 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class UIFieldElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "UIField");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpui.UIField");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cUIFieldAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cFieldKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -422,19 +412,19 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cMappingAssignment_7 = (Assignment)cGroup.eContents().get(7);
 		private final RuleCall cMappingFieldMappingParserRuleCall_7_0 = (RuleCall)cMappingAssignment_7.eContents().get(0);
 		
-		//UIField returns vpui::UIField:
-		//	{vpui::UIField} "Field" name=EString ("label:" label=EString)? ("description:" description=EString ",")? ("type"
-		//	type=UI_Field_Type)? "," Mapping=FieldMapping;
+		//UIField vpui::UIField:
+		//	{vpui::UIField} 'Field' name=EString ('label:' label=EString)? ('description:' description=EString ',')? ('type'
+		//	type=UI_Field_Type)? ',' Mapping=FieldMapping
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpui::UIField} "Field" name=EString ("label:" label=EString)? ("description:" description=EString ",")? ("type"
-		//type=UI_Field_Type)? "," Mapping=FieldMapping
+		//{vpui::UIField} 'Field' name=EString ('label:' label=EString)? ('description:' description=EString ',')? ('type'
+		//type=UI_Field_Type)? ',' Mapping=FieldMapping
 		public Group getGroup() { return cGroup; }
 
 		//{vpui::UIField}
 		public Action getUIFieldAction_0() { return cUIFieldAction_0; }
 
-		//"Field"
+		//'Field'
 		public Keyword getFieldKeyword_1() { return cFieldKeyword_1; }
 
 		//name=EString
@@ -443,10 +433,10 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
 
-		//("label:" label=EString)?
+		//('label:' label=EString)?
 		public Group getGroup_3() { return cGroup_3; }
 
-		//"label:"
+		//'label:'
 		public Keyword getLabelKeyword_3_0() { return cLabelKeyword_3_0; }
 
 		//label=EString
@@ -455,10 +445,10 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getLabelEStringParserRuleCall_3_1_0() { return cLabelEStringParserRuleCall_3_1_0; }
 
-		//("description:" description=EString ",")?
+		//('description:' description=EString ',')?
 		public Group getGroup_4() { return cGroup_4; }
 
-		//"description:"
+		//'description:'
 		public Keyword getDescriptionKeyword_4_0() { return cDescriptionKeyword_4_0; }
 
 		//description=EString
@@ -467,13 +457,13 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getDescriptionEStringParserRuleCall_4_1_0() { return cDescriptionEStringParserRuleCall_4_1_0; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_4_2() { return cCommaKeyword_4_2; }
 
-		//("type" type=UI_Field_Type)?
+		//('type' type=UI_Field_Type)?
 		public Group getGroup_5() { return cGroup_5; }
 
-		//"type"
+		//'type'
 		public Keyword getTypeKeyword_5_0() { return cTypeKeyword_5_0; }
 
 		//type=UI_Field_Type
@@ -482,7 +472,7 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 		//UI_Field_Type
 		public RuleCall getTypeUI_Field_TypeEnumRuleCall_5_1_0() { return cTypeUI_Field_TypeEnumRuleCall_5_1_0; }
 
-		//","
+		//','
 		public Keyword getCommaKeyword_6() { return cCommaKeyword_6; }
 
 		//Mapping=FieldMapping
@@ -493,7 +483,7 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class FieldMappingElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "FieldMapping");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpui.FieldMapping");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cFieldMappingAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cMappedToKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -501,17 +491,17 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cUI_Field_Mapped_ToAbstractFeatureCrossReference_2_0 = (CrossReference)cUI_Field_Mapped_ToAssignment_2.eContents().get(0);
 		private final RuleCall cUI_Field_Mapped_ToAbstractFeatureFQNParserRuleCall_2_0_1 = (RuleCall)cUI_Field_Mapped_ToAbstractFeatureCrossReference_2_0.eContents().get(1);
 		
-		//FieldMapping returns vpui::FieldMapping:
-		//	{vpui::FieldMapping} "mapped-to" UI_Field_Mapped_To=[vpdesc::AbstractFeature|FQN]?;
+		//FieldMapping vpui::FieldMapping:
+		//	{vpui::FieldMapping} 'mapped-to' UI_Field_Mapped_To=[vpdesc::AbstractFeature|FQN]?
 		@Override public ParserRule getRule() { return rule; }
 
-		//{vpui::FieldMapping} "mapped-to" UI_Field_Mapped_To=[vpdesc::AbstractFeature|FQN]?
+		//{vpui::FieldMapping} 'mapped-to' UI_Field_Mapped_To=[vpdesc::AbstractFeature|FQN]?
 		public Group getGroup() { return cGroup; }
 
 		//{vpui::FieldMapping}
 		public Action getFieldMappingAction_0() { return cFieldMappingAction_0; }
 
-		//"mapped-to"
+		//'mapped-to'
 		public Keyword getMappedToKeyword_1() { return cMappedToKeyword_1; }
 
 		//UI_Field_Mapped_To=[vpdesc::AbstractFeature|FQN]?
@@ -526,7 +516,7 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
 	public class UI_Field_TypeElements extends AbstractEnumRuleElementFinder {
-		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "UI_Field_Type");
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpui.UI_Field_Type");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final EnumLiteralDeclaration cTextEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
 		private final Keyword cTextTextKeyword_0_0 = (Keyword)cTextEnumLiteralDeclaration_0.eContents().get(0);
@@ -540,51 +530,57 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSimpleChoiceListSimpleChoiceListKeyword_4_0 = (Keyword)cSimpleChoiceListEnumLiteralDeclaration_4.eContents().get(0);
 		private final EnumLiteralDeclaration cMultipleChoiceListEnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
 		private final Keyword cMultipleChoiceListMultipleChoiceListKeyword_5_0 = (Keyword)cMultipleChoiceListEnumLiteralDeclaration_5.eContents().get(0);
+		private final EnumLiteralDeclaration cRichtextEnumLiteralDeclaration_6 = (EnumLiteralDeclaration)cAlternatives.eContents().get(6);
+		private final Keyword cRichtextRichtextKeyword_6_0 = (Keyword)cRichtextEnumLiteralDeclaration_6.eContents().get(0);
 		
-		////added ()? to get correct parsing until this step, fix later by validation rule
-		// enum UI_Field_Type returns
-		//vpui::UI_Field_Type:
-		//	text | textarea | checkbox | radiobox | simpleChoiceList | multipleChoiceList;
+		//enum UI_Field_Type returns vpui::UI_Field_Type:
+		//	text | textarea | checkbox | radiobox | simpleChoiceList | multipleChoiceList | richtext;
 		public EnumRule getRule() { return rule; }
 
-		//text | textarea | checkbox | radiobox | simpleChoiceList | multipleChoiceList
+		//text | textarea | checkbox | radiobox | simpleChoiceList | multipleChoiceList | richtext
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//text
 		public EnumLiteralDeclaration getTextEnumLiteralDeclaration_0() { return cTextEnumLiteralDeclaration_0; }
 
-		//"text"
+		//'text'
 		public Keyword getTextTextKeyword_0_0() { return cTextTextKeyword_0_0; }
 
 		//textarea
 		public EnumLiteralDeclaration getTextareaEnumLiteralDeclaration_1() { return cTextareaEnumLiteralDeclaration_1; }
 
-		//"textarea"
+		//'textarea'
 		public Keyword getTextareaTextareaKeyword_1_0() { return cTextareaTextareaKeyword_1_0; }
 
 		//checkbox
 		public EnumLiteralDeclaration getCheckboxEnumLiteralDeclaration_2() { return cCheckboxEnumLiteralDeclaration_2; }
 
-		//"checkbox"
+		//'checkbox'
 		public Keyword getCheckboxCheckboxKeyword_2_0() { return cCheckboxCheckboxKeyword_2_0; }
 
 		//radiobox
 		public EnumLiteralDeclaration getRadioboxEnumLiteralDeclaration_3() { return cRadioboxEnumLiteralDeclaration_3; }
 
-		//"radiobox"
+		//'radiobox'
 		public Keyword getRadioboxRadioboxKeyword_3_0() { return cRadioboxRadioboxKeyword_3_0; }
 
 		//simpleChoiceList
 		public EnumLiteralDeclaration getSimpleChoiceListEnumLiteralDeclaration_4() { return cSimpleChoiceListEnumLiteralDeclaration_4; }
 
-		//"simpleChoiceList"
+		//'simpleChoiceList'
 		public Keyword getSimpleChoiceListSimpleChoiceListKeyword_4_0() { return cSimpleChoiceListSimpleChoiceListKeyword_4_0; }
 
 		//multipleChoiceList
 		public EnumLiteralDeclaration getMultipleChoiceListEnumLiteralDeclaration_5() { return cMultipleChoiceListEnumLiteralDeclaration_5; }
 
-		//"multipleChoiceList"
+		//'multipleChoiceList'
 		public Keyword getMultipleChoiceListMultipleChoiceListKeyword_5_0() { return cMultipleChoiceListMultipleChoiceListKeyword_5_0; }
+
+		//richtext
+		public EnumLiteralDeclaration getRichtextEnumLiteralDeclaration_6() { return cRichtextEnumLiteralDeclaration_6; }
+
+		//'richtext'
+		public Keyword getRichtextRichtextKeyword_6_0() { return cRichtextRichtextKeyword_6_0; }
 	}
 	
 	private final UserInterfaceElements pUserInterface;
@@ -598,17 +594,21 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 	private final LocalClassElements pLocalClass;
 	private final UIFieldElements pUIField;
 	private final FieldMappingElements pFieldMapping;
-	private final UI_Field_TypeElements unknownRuleUI_Field_Type;
+	private final UI_Field_TypeElements eUI_Field_Type;
 	
 	private final Grammar grammar;
 
 	private final CommonGrammarAccess gaCommon;
 
+	private final TerminalsGrammarAccess gaTerminals;
+
 	@Inject
 	public VpuiGrammarAccess(GrammarProvider grammarProvider,
-		CommonGrammarAccess gaCommon) {
+		CommonGrammarAccess gaCommon,
+		TerminalsGrammarAccess gaTerminals) {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaCommon = gaCommon;
+		this.gaTerminals = gaTerminals;
 		this.pUserInterface = new UserInterfaceElements();
 		this.pImport = new ImportElements();
 		this.pAspect = new AspectElements();
@@ -620,7 +620,7 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 		this.pLocalClass = new LocalClassElements();
 		this.pUIField = new UIFieldElements();
 		this.pFieldMapping = new FieldMappingElements();
-		this.unknownRuleUI_Field_Type = new UI_Field_TypeElements();
+		this.eUI_Field_Type = new UI_Field_TypeElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -649,6 +649,10 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 		return gaCommon;
 	}
 
+	public TerminalsGrammarAccess getTerminalsGrammarAccess() {
+		return gaTerminals;
+	}
+
 	
 	//UserInterface:
 	//	{UserInterface} imports+=Import* uiDescription=Aspect;
@@ -661,7 +665,7 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Import:
-	//	"import" importedNamespace=FQN;
+	//	'import' importedNamespace=FQN;
 	public ImportElements getImportAccess() {
 		return pImport;
 	}
@@ -670,8 +674,8 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 		return getImportAccess().getRule();
 	}
 
-	//Aspect returns vpdesc::Aspect:
-	//	UIDescription;
+	//Aspect vpdesc::Aspect:
+	//	UIDescription
 	public AspectElements getAspectAccess() {
 		return pAspect;
 	}
@@ -684,8 +688,8 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 	// * 							vpui
 	// * 
 	// ******************************************************************** /
-	//UIDescription returns vpdesc::Aspect:
-	//	{vpui::UIDescription} "UIDescription" name=FQN "{" => UIs+=UI* "}";
+	//UIDescription vpdesc::Aspect:
+	//	{vpui::UIDescription} 'UIDescription' name=FQN '{' => UIs+=UI* '}'
 	public UIDescriptionElements getUIDescriptionAccess() {
 		return pUIDescription;
 	}
@@ -694,8 +698,8 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 		return getUIDescriptionAccess().getRule();
 	}
 
-	//DisplayableElement returns vpui::DisplayableElement:
-	//	UIContainer | UI | UIField;
+	//DisplayableElement vpui::DisplayableElement:
+	//	UIContainer | UI | UIField
 	public DisplayableElementElements getDisplayableElementAccess() {
 		return pDisplayableElement;
 	}
@@ -704,9 +708,8 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 		return getDisplayableElementAccess().getRule();
 	}
 
-	//UI returns vpui::UI:
-	//	{vpui::UI} "UI" name=EString? UI_DataSource=DataSource? "{" ("label:" label=EString)? UI_Containers+=UIContainer*
-	//	"}";
+	//UI vpui::UI:
+	//	{vpui::UI} 'UI' name=EString? UI_DataSource=DataSource? '{' ('label:' label=EString)? UI_Containers+=UIContainer* '}'
 	public UIElements getUIAccess() {
 		return pUI;
 	}
@@ -715,9 +718,9 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 		return getUIAccess().getRule();
 	}
 
-	//UIContainer returns vpui::UIContainer:
-	//	{vpui::UIContainer} "Container" name=EString? "{" ("label:" label=EString)? ("description:" description=EString)?
-	//	(UI_fields+=UIField UI_fields+=UIField*)? (subContainers+=UIContainer subContainers+=UIContainer*)? "}";
+	//UIContainer vpui::UIContainer:
+	//	{vpui::UIContainer} 'Container' name=EString? '{' ('label:' label=EString)? ('description:' description=EString)?
+	//	(UI_fields+=UIField UI_fields+=UIField*)? (subContainers+=UIContainer subContainers+=UIContainer*)? '}'
 	public UIContainerElements getUIContainerAccess() {
 		return pUIContainer;
 	}
@@ -726,8 +729,8 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 		return getUIContainerAccess().getRule();
 	}
 
-	//DataSource returns vpui::DataSource:
-	//	LocalClass;
+	//DataSource vpui::DataSource:
+	//	LocalClass
 	public DataSourceElements getDataSourceAccess() {
 		return pDataSource;
 	}
@@ -736,8 +739,8 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 		return getDataSourceAccess().getRule();
 	}
 
-	//LocalClass returns vpui::DataSource:
-	//	{vpui::LocalClass} "for" UI_For_LocalClass=[vpdesc::Class|FQN];
+	//LocalClass vpui::DataSource:
+	//	{vpui::LocalClass} 'for' UI_For_LocalClass=[vpdesc::Class|FQN]
 	public LocalClassElements getLocalClassAccess() {
 		return pLocalClass;
 	}
@@ -746,9 +749,9 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 		return getLocalClassAccess().getRule();
 	}
 
-	//UIField returns vpui::UIField:
-	//	{vpui::UIField} "Field" name=EString ("label:" label=EString)? ("description:" description=EString ",")? ("type"
-	//	type=UI_Field_Type)? "," Mapping=FieldMapping;
+	//UIField vpui::UIField:
+	//	{vpui::UIField} 'Field' name=EString ('label:' label=EString)? ('description:' description=EString ',')? ('type'
+	//	type=UI_Field_Type)? ',' Mapping=FieldMapping
 	public UIFieldElements getUIFieldAccess() {
 		return pUIField;
 	}
@@ -757,8 +760,8 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 		return getUIFieldAccess().getRule();
 	}
 
-	//FieldMapping returns vpui::FieldMapping:
-	//	{vpui::FieldMapping} "mapped-to" UI_Field_Mapped_To=[vpdesc::AbstractFeature|FQN]?;
+	//FieldMapping vpui::FieldMapping:
+	//	{vpui::FieldMapping} 'mapped-to' UI_Field_Mapped_To=[vpdesc::AbstractFeature|FQN]?
 	public FieldMappingElements getFieldMappingAccess() {
 		return pFieldMapping;
 	}
@@ -767,19 +770,17 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 		return getFieldMappingAccess().getRule();
 	}
 
-	////added ()? to get correct parsing until this step, fix later by validation rule
-	// enum UI_Field_Type returns
-	//vpui::UI_Field_Type:
-	//	text | textarea | checkbox | radiobox | simpleChoiceList | multipleChoiceList;
+	//enum UI_Field_Type returns vpui::UI_Field_Type:
+	//	text | textarea | checkbox | radiobox | simpleChoiceList | multipleChoiceList | richtext;
 	public UI_Field_TypeElements getUI_Field_TypeAccess() {
-		return unknownRuleUI_Field_Type;
+		return eUI_Field_Type;
 	}
 	
 	public EnumRule getUI_Field_TypeRule() {
 		return getUI_Field_TypeAccess().getRule();
 	}
 
-	//EString returns ecore::EString:
+	//EString:
 	//	STRING | ID;
 	public CommonGrammarAccess.EStringElements getEStringAccess() {
 		return gaCommon.getEStringAccess();
@@ -789,7 +790,7 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 		return getEStringAccess().getRule();
 	}
 
-	//FQN returns ecore::EString:
+	//FQN:
 	//	ID ("." => ID)*;
 	public CommonGrammarAccess.FQNElements getFQNAccess() {
 		return gaCommon.getFQNAccess();
@@ -799,8 +800,8 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 		return getFQNAccess().getRule();
 	}
 
-	//EBoolean returns ecore::EBoolean:
-	//	"true" | "false";
+	//EBoolean ecore::EBoolean:
+	//	'true' | 'false'
 	public CommonGrammarAccess.EBooleanElements getEBooleanAccess() {
 		return gaCommon.getEBooleanAccess();
 	}
@@ -809,8 +810,8 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 		return getEBooleanAccess().getRule();
 	}
 
-	//EInt returns ecore::EInt:
-	//	INT;
+	//EInt ecore::EInt:
+	//	INT
 	public CommonGrammarAccess.EIntElements getEIntAccess() {
 		return gaCommon.getEIntAccess();
 	}
@@ -820,45 +821,44 @@ public class VpuiGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//terminal ID:
-	//	"^"? ("a".."z" | "A".."Z" | "_") ("a".."z" | "A".."Z" | "_" | "0".."9")*;
+	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
 	public TerminalRule getIDRule() {
-		return gaCommon.getIDRule();
+		return gaTerminals.getIDRule();
 	} 
 
 	//terminal INT returns ecore::EInt:
-	//	"0".."9"+;
+	//	'0'..'9'+;
 	public TerminalRule getINTRule() {
-		return gaCommon.getINTRule();
+		return gaTerminals.getINTRule();
 	} 
 
 	//terminal STRING:
-	//	"\"" ("\\" . / * 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' * / | !("\\" | "\""))* "\"" | "\'" ("\\" .
-	//	/ * 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' * / | !("\\" | "\'"))* "\'";
+	//	'"' ('\\' . | !('\\' | '"'))* '"' | "'" ('\\' . | !('\\' | "'"))* "'";
 	public TerminalRule getSTRINGRule() {
-		return gaCommon.getSTRINGRule();
+		return gaTerminals.getSTRINGRule();
 	} 
 
 	//terminal ML_COMMENT:
-	//	"/ *"->"* /";
+	//	'/ *'->'* /';
 	public TerminalRule getML_COMMENTRule() {
-		return gaCommon.getML_COMMENTRule();
+		return gaTerminals.getML_COMMENTRule();
 	} 
 
 	//terminal SL_COMMENT:
-	//	"//" !("\n" | "\r")* ("\r"? "\n")?;
+	//	'//' !('\n' | '\r')* ('\r'? '\n')?;
 	public TerminalRule getSL_COMMENTRule() {
-		return gaCommon.getSL_COMMENTRule();
+		return gaTerminals.getSL_COMMENTRule();
 	} 
 
 	//terminal WS:
-	//	(" " | "\t" | "\r" | "\n")+;
+	//	' ' | '\t' | '\r' | '\n'+;
 	public TerminalRule getWSRule() {
-		return gaCommon.getWSRule();
+		return gaTerminals.getWSRule();
 	} 
 
 	//terminal ANY_OTHER:
 	//	.;
 	public TerminalRule getANY_OTHERRule() {
-		return gaCommon.getANY_OTHERRule();
+		return gaTerminals.getANY_OTHERRule();
 	} 
 }

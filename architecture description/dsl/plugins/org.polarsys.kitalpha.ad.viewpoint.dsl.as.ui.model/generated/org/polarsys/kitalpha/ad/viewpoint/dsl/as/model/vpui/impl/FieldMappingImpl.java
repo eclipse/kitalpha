@@ -31,10 +31,10 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.VpuiPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.impl.FieldMappingImpl#getUI_Field_Mapped_To <em>UI Field Mapped To</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

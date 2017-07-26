@@ -3,9 +3,12 @@
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.Import;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.UiPackage;
 

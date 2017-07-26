@@ -85,7 +85,15 @@ public enum UI_Field_Type implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	MULTIPLE_CHOICE_LIST(5, "multipleChoiceList", "multipleChoiceList"); //$NON-NLS-1$ //$NON-NLS-2$
+	MULTIPLE_CHOICE_LIST(5, "multipleChoiceList", "multipleChoiceList"), /**
+	 * The '<em><b>Richtext</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #RICHTEXT_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	RICHTEXT(6, "richtext", "richtext"); //$NON-NLS-1$ //$NON-NLS-2$
 
 	/**
 	 * The '<em><b>Text</b></em>' literal value.
@@ -178,6 +186,21 @@ public enum UI_Field_Type implements Enumerator {
 	public static final int MULTIPLE_CHOICE_LIST_VALUE = 5;
 
 	/**
+	 * The '<em><b>Richtext</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Richtext</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #RICHTEXT
+	 * @model name="richtext"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int RICHTEXT_VALUE = 6;
+
+	/**
 	 * An array of all the '<em><b>UI Field Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -190,6 +213,7 @@ public enum UI_Field_Type implements Enumerator {
 			RADIOBOX,
 			SIMPLE_CHOICE_LIST,
 			MULTIPLE_CHOICE_LIST,
+			RICHTEXT,
 		};
 
 	/**
@@ -204,6 +228,8 @@ public enum UI_Field_Type implements Enumerator {
 	 * Returns the '<em><b>UI Field Type</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param literal the literal.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static UI_Field_Type get(String literal) {
@@ -220,6 +246,8 @@ public enum UI_Field_Type implements Enumerator {
 	 * Returns the '<em><b>UI Field Type</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param name the name.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static UI_Field_Type getByName(String name) {
@@ -236,6 +264,8 @@ public enum UI_Field_Type implements Enumerator {
 	 * Returns the '<em><b>UI Field Type</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param value the integer value.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static UI_Field_Type get(int value) {
@@ -246,6 +276,7 @@ public enum UI_Field_Type implements Enumerator {
 			case RADIOBOX_VALUE: return RADIOBOX;
 			case SIMPLE_CHOICE_LIST_VALUE: return SIMPLE_CHOICE_LIST;
 			case MULTIPLE_CHOICE_LIST_VALUE: return MULTIPLE_CHOICE_LIST;
+			case RICHTEXT_VALUE: return RICHTEXT;
 		}
 		return null;
 	}

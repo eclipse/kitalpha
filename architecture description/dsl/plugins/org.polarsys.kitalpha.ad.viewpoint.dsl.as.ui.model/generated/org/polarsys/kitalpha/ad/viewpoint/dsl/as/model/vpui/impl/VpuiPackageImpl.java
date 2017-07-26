@@ -471,6 +471,7 @@ public class VpuiPackageImpl extends EPackageImpl implements VpuiPackage {
 		addEEnumLiteral(uI_Field_TypeEEnum, UI_Field_Type.RADIOBOX);
 		addEEnumLiteral(uI_Field_TypeEEnum, UI_Field_Type.SIMPLE_CHOICE_LIST);
 		addEEnumLiteral(uI_Field_TypeEEnum, UI_Field_Type.MULTIPLE_CHOICE_LIST);
+		addEEnumLiteral(uI_Field_TypeEEnum, UI_Field_Type.RICHTEXT);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -386,11 +386,10 @@ public class VpuiItemProviderAdapterFactory extends VpuiAdapterFactory
 			@Override
 			public Object caseViewpoint(Viewpoint object) {
 
-
-		newChildDescriptors.add
-			(createChildParameter
-				(VpdescPackage.Literals.VIEWPOINT__VP_ASPECTS,
-				 VpuiFactory.eINSTANCE.createUIDescription()));
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdescPackage.Literals.VIEWPOINT__VP_ASPECTS,
+						 VpuiFactory.eINSTANCE.createUIDescription()));
 
 
 
@@ -417,8 +416,8 @@ public class VpuiItemProviderAdapterFactory extends VpuiAdapterFactory
 		public Collection<Object> getNewChildDescriptors(Object object,
 				EditingDomain editingDomain) {
 			ArrayList<Object> result = new ArrayList<Object>();
-		   new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
-		   return result;
+			new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
+			return result;
 		}
 
 		/**

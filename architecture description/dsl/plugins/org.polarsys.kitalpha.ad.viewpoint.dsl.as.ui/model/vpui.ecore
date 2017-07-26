@@ -21,6 +21,7 @@
     <eLiterals name="radiobox" value="3"/>
     <eLiterals name="simpleChoiceList" value="4" literal="simpleChoiceList"/>
     <eLiterals name="multipleChoiceList" value="5" literal="multipleChoiceList"/>
+    <eLiterals name="richtext" value="6" literal="richtext"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UIField" eSuperTypes="#//DisplayableElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Mapping" lowerBound="1"

@@ -36,9 +36,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.VpuiPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class UIDescriptionItemProvider extends AspectItemProvider implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider,
-		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class UIDescriptionItemProvider extends AspectItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -154,11 +152,10 @@ public class UIDescriptionItemProvider extends AspectItemProvider implements
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-
-		newChildDescriptors.add
-			(createChildParameter
-				(VpuiPackage.Literals.UI_DESCRIPTION__UIS,
-				 VpuiFactory.eINSTANCE.createUI()));
+				newChildDescriptors.add
+					(createChildParameter
+						(VpuiPackage.Literals.UI_DESCRIPTION__UIS,
+						 VpuiFactory.eINSTANCE.createUI()));
 
 
 	}

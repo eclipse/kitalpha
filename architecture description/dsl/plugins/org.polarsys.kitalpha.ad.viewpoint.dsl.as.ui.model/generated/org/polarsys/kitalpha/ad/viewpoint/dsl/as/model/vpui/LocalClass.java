@@ -18,10 +18,10 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.LocalClass#getUI_For_LocalClass <em>UI For Local Class</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.VpuiPackage#getLocalClass()
  * @model

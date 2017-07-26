@@ -20,10 +20,10 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.NamedElement;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.DisplayableElement#getLabel <em>Label</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.VpuiPackage#getDisplayableElement()
  * @model abstract="true"
