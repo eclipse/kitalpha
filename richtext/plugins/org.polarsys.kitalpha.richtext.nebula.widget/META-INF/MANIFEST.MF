@@ -6,7 +6,7 @@ Bundle-Version: 1.2.0.qualifier
 Bundle-Activator: org.polarsys.kitalpha.richtext.nebula.widget.internal.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- org.eclipse.kitalpha.richtext.common;visibility:=reexport,
+ org.polarsys.kitalpha.richtext.common;visibility:=reexport,
  org.eclipse.nebula.widgets.richtext;visibility:=reexport
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
