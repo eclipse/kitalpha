@@ -10,7 +10,6 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.resourcereuse.emfscheme.ui;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.core.commands.AbstractHandler;
@@ -23,14 +22,15 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.window.Window;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.ui.handlers.HandlerUtil;
-import org.polarsys.kitalpha.resourcereuse.emfscheme.dialog.LoadingResourceReuseDialog;
 import org.polarsys.kitalpha.resourcereuse.emfscheme.helpers.ModelReuseHelper;
 import org.polarsys.kitalpha.resourcereuse.emfscheme.utils.context.ModelReuseContext;
 import org.polarsys.kitalpha.resourcereuse.emfscheme.utils.services.ResourceSetLoaderServices;
 import org.polarsys.kitalpha.resourcereuse.emfscheme.utils.services.SiriusLoaderServices;
 import org.polarsys.kitalpha.resourcereuse.model.SearchCriteria;
+import org.polarsys.kitalpha.resourcereuse.ui.dialog.ResourceReuseSelectionDialog;
 
 /**
  * 
@@ -43,40 +43,29 @@ public class LoadResourceReuseHandler extends AbstractHandler {
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		ModelReuseContext context = ModelReuseContext.INSTANCE;
 		ISelection selection = HandlerUtil.getCurrentSelection(event);
-		if (selection instanceof IStructuredSelection){
-			IStructuredSelection structuredSelection = (IStructuredSelection)selection;
+		if (selection instanceof IStructuredSelection) {
+			IStructuredSelection structuredSelection = (IStructuredSelection) selection;
 			Object firstElement = structuredSelection.getFirstElement();
-			
-			if (firstElement instanceof GraphicalEditPart){
-				firstElement = ((GraphicalEditPart)firstElement).resolveSemanticElement();
+
+			if (firstElement instanceof GraphicalEditPart) {
+				firstElement = ((GraphicalEditPart) firstElement).resolveSemanticElement();
 			}
-			if (firstElement instanceof Resource){
-				EList<EObject> contents = ((Resource)firstElement).getContents();
-				if (!contents.isEmpty()){
+			if (firstElement instanceof Resource) {
+				EList<EObject> contents = ((Resource) firstElement).getContents();
+				if (!contents.isEmpty()) {
 					firstElement = contents.get(0);
 				}
 			}
-			if (firstElement instanceof EObject){
-				LoadingResourceReuseDialog dialog = new LoadingResourceReuseDialog(HandlerUtil.getActiveShell(event));
-				EObject eObject = (EObject)firstElement;
-				dialog.setSelection(eObject);
-				dialog.open();
-				
+			if (firstElement instanceof EObject) {
+				ResourceReuseSelectionDialog dialog = new ResourceReuseSelectionDialog(HandlerUtil.getActiveShell(event));
+				if (dialog.open() == Window.OK) {
+				EObject eObject = (EObject) firstElement;
 				final Session session = context.getSession();
-				List<SearchCriteria> criterias = context.getCriterias();
-				for (SearchCriteria settedCriteria : criterias) {
-					final java.util.List<URI> modelToLoad = new ArrayList<URI>();
-					modelToLoad.add(ModelReuseHelper.createModelReuseURI(settedCriteria));
-					modelToLoad.add(ModelReuseHelper.createModelReuseMetadataURI(settedCriteria));
-					if (session != null) {
-							SiriusLoaderServices.loadModelsForSiriusSession(session, modelToLoad);
-					}
-					// else we work with the resource set
-					else {
+				SearchCriteria criteria = dialog.getCriteria();
+					final URI modelToLoad = ModelReuseHelper.createModelReuseURI(criteria);
 							ResourceSetLoaderServices.loadResourceForCurrentResourceSet(eObject, modelToLoad);
+						}
 					}
-				}
-			}
 		}
 		return null;
 	}

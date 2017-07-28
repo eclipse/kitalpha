@@ -70,16 +70,12 @@ public class <%=genPackage.getActionBarContributorClassName()%>
 				Viewer viewer = ((IViewerProvider) activeEditorPart).getViewer();
 				if (viewer == null) 
 					return ;
-				<%=genModel.getImportedName("org.polarsys.kitalpha.resourcereuse.emfscheme.dialog.LoadingResourceReuseDialog")%> dialog = new LoadingResourceReuseDialog(activeEditor.getSite().getShell());
+				<%=genModel.getImportedName("org.polarsys.kitalpha.resourcereuse.ui.dialog.ResourceReuseSelectionDialog")%> dialog = new ResourceReuseSelectionDialog(activeEditor.getSite().getShell());
 				
-				EObject selection = currentResource.getContents().get(0);
-				dialog.setSelection(selection);
-				dialog.open();
-				
-				<%=genModel.getImportedName("org.polarsys.kitalpha.resourcereuse.emfscheme.utils.context.ModelReuseContext")%> context = ModelReuseContext.INSTANCE;
-				List<<%=genModel.getImportedName("org.polarsys.kitalpha.resourcereuse.model.SearchCriteria")%>> criterias = context.getCriterias();
-				for (SearchCriteria settedCriteria : criterias) {
-					URI modelToLoad = <%=genModel.getImportedName("org.polarsys.kitalpha.resourcereuse.emfscheme.helpers.ModelReuseHelper")%>.createModelReuseURI(settedCriteria);
+				if (dialog.open() == <%=genModel.getImportedName("org.eclipse.jface.window.Window")%>.OK) {
+					EObject selection = currentResource.getContents().get(0);
+					<%=genModel.getImportedName("org.polarsys.kitalpha.resourcereuse.model.SearchCriteria")%> criteria = dialog.getCriteria();
+					URI modelToLoad = <%=genModel.getImportedName("org.polarsys.kitalpha.resourcereuse.emfscheme.helpers.ModelReuseHelper")%>.createModelReuseURI(criteria);
 					try {
 						Resource res = <%=genModel.getImportedName("org.polarsys.kitalpha.resourcereuse.emfscheme.utils.services.ResourceSetLoaderServices")%>.loadResourceForCurrentResourceSet(selection, modelToLoad);
 						if (res != null)
@@ -219,7 +215,7 @@ public class <%=genPackage.getActionBarContributorClassName()%>
 					}
 				);        
 				setMultipleSelection(true);
-				setMessage(EcoreEditorPlugin.INSTANCE.getString("_UI_SelectRegisteredPackageURI"));<%=genModel.getNonNLS()%>
+				setMessage(<%=genModel.getImportedName("org.eclipse.emf.ecore.presentation.EcoreEditorPlugin")%>.INSTANCE.getString("_UI_SelectRegisteredPackageURI"));<%=genModel.getNonNLS()%>
 				setFilter("*");
 				<%=genModel.getImportedName("java.util.Map")%><String, <%=genModel.getImportedName("org.eclipse.emf.common.util.URI")%>> ePackageNsURItoGenModelLocationMap = <%=genModel.getImportedName("org.eclipse.emf.ecore.plugin.EcorePlugin")%>.getEPackageNsURIToGenModelLocationMap();
 				Object [] result = ePackageNsURItoGenModelLocationMap.keySet().toArray(new Object[ePackageNsURItoGenModelLocationMap.size()]);

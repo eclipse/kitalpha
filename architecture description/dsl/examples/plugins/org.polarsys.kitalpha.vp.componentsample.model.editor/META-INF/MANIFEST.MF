@@ -2,12 +2,12 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.polarsys.kitalpha.vp.componentsample.model.editor;singleton:=true
-Bundle-Version: 1.2.0.qualifier
+Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: org.polarsys.kitalpha.vp.componentsample.ComponentSample.presentation.ComponentSampleEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: org.polarsys.kitalpha.vp.componentsample.ComponentSample.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
@@ -15,13 +15,12 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.emf.edit.ui;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport,
- org.polarsys.kitalpha.emde.model.edit;visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
+ org.polarsys.kitalpha.emde.model.edit;visibility:=reexport,
  org.eclipse.emf.ecore.editor;visibility:=reexport,
  org.polarsys.kitalpha.emde.ui;visibility:=reexport,
  org.polarsys.kitalpha.ad.metadata;visibility:=reexport,
- org.eclipse.ui.workbench,
- org.polarsys.kitalpha.resourcereuse.emfscheme.dialog,
- org.polarsys.kitalpha.resourcereuse.emfscheme.utils,
- org.polarsys.kitalpha.resourcereuse.emfscheme
+ org.polarsys.kitalpha.resourcereuse.ui;visibility:=reexport,
+ org.polarsys.kitalpha.resourcereuse.emfscheme.utils;visibility:=reexport,
+ org.polarsys.kitalpha.resourcereuse.emfscheme;visibility:=reexport
 Bundle-ActivationPolicy: lazy
