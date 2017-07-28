@@ -12,6 +12,7 @@
 'mapped-to'=23
 'multipleChoiceList'=30
 'radiobox'=28
+'richtext'=31
 'simpleChoiceList'=29
 'text'=25
 'textarea'=26
@@ -45,3 +46,4 @@ T__27=27
 T__28=28
 T__29=29
 T__30=30
+T__31=31

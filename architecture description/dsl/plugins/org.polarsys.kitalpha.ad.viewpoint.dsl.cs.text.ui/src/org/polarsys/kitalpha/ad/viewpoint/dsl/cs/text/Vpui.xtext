@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -11,6 +11,7 @@
  /**
  * 
  * @author Amine Lajmi
+ * @author Faycal Abka
  *
  */
 grammar org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpui with org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common
@@ -96,4 +97,5 @@ enum UI_Field_Type returns vpui::UI_Field_Type:
 	checkbox='checkbox' | 
 	radiobox='radiobox' | 
 	simpleChoiceList='simpleChoiceList' | 
-	multipleChoiceList='multipleChoiceList';
+	multipleChoiceList='multipleChoiceList'|
+	richtext = 'richtext';

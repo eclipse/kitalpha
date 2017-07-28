@@ -37,7 +37,7 @@ public class VpuiFactoryImpl extends EFactoryImpl implements VpuiFactory {
 	 */
 	public static VpuiFactory init() {
 		try {
-			VpuiFactory theVpuiFactory = (VpuiFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpui/1.0.0"); 
+			VpuiFactory theVpuiFactory = (VpuiFactory)EPackage.Registry.INSTANCE.getEFactory(VpuiPackage.eNS_URI);
 			if (theVpuiFactory != null) {
 				return theVpuiFactory;
 			}

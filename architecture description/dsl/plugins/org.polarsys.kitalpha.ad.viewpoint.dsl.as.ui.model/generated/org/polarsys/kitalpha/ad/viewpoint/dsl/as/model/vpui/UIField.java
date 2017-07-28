@@ -18,11 +18,11 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.UIField#getMapping <em>Mapping</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.UIField#getType <em>Type</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.VpuiPackage#getUIField()
  * @model

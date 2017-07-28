@@ -27,10 +27,10 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.VpuiPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.impl.LocalClassImpl#getUI_For_LocalClass <em>UI For Local Class</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

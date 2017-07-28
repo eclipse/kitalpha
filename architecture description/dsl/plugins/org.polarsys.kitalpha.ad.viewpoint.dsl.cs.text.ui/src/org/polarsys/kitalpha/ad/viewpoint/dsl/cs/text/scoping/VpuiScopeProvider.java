@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014-2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -103,36 +103,33 @@ public class VpuiScopeProvider extends AbstractDeclarativeScopeProvider {
 				new Predicate<IEObjectDescription>() {
 					public boolean apply(IEObjectDescription d) {
 						if (d.getEObjectOrProxy() instanceof AbstractFeature && ProjectUtil.areInSameProject(context2, d.getEObjectOrProxy())) {
-							if (lastFieldType == null)
+							if (lastFieldType == null){
 								return false;
-							if (lastFieldType.equals(UI_Field_Type.TEXT
-									.getName()))
+							}
+							if (lastFieldType.equals(UI_Field_Type.TEXT.getName())){
 								return handleText(d, mapped, clazz);
-							if (lastFieldType.equals(UI_Field_Type.TEXTAREA
-									.getName()))
+							}
+							if (lastFieldType.equals(UI_Field_Type.TEXTAREA.getName()) || lastFieldType.equals(UI_Field_Type.RICHTEXT.getName())){
 								return hanldeTextArea(d, mapped, clazz);
-							if (lastFieldType.equals(UI_Field_Type.CHECKBOX
-									.getName()))
+							}
+							if (lastFieldType.equals(UI_Field_Type.CHECKBOX.getName())){
 								return handleCheckBox(d, mapped, clazz);
-							if (lastFieldType.equals(UI_Field_Type.RADIOBOX
-									.getName()))
+							}
+							if (lastFieldType.equals(UI_Field_Type.RADIOBOX.getName())){
 								return handleRadiobox(d, mapped, clazz);
-							if (lastFieldType
-									.equals(UI_Field_Type.SIMPLE_CHOICE_LIST
-											.getName()))
+							}
+							if (lastFieldType.equals(UI_Field_Type.SIMPLE_CHOICE_LIST.getName())){
 								return handleSimpleChoiceList(d, mapped, clazz);
-							if (lastFieldType
-									.equals(UI_Field_Type.MULTIPLE_CHOICE_LIST
-											.getName()))
-								return handleMultipleChoiceList(d, mapped,
-										clazz);
+							}
+							if (lastFieldType.equals(UI_Field_Type.MULTIPLE_CHOICE_LIST.getName())){
+								return handleMultipleChoiceList(d, mapped, clazz);
+							}
 							return false;
 						}
 						return false;
 					}
 					
 				});
-		
 	}
 
 	/**

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015 Thales Global Services S.A.S.
+ * Copyright (c) 2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -104,7 +104,7 @@ ruleUserInterface returns [EObject current=null]
        			$current, 
        			"imports",
         		lv_imports_1_0, 
-        		"Import");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpui.Import");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -122,7 +122,7 @@ ruleUserInterface returns [EObject current=null]
        			$current, 
        			"uiDescription",
         		lv_uiDescription_2_0, 
-        		"Aspect");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpui.Aspect");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -165,7 +165,7 @@ ruleImport returns [EObject current=null]
        			$current, 
        			"importedNamespace",
         		lv_importedNamespace_1_0, 
-        		"FQN");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.FQN");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -244,7 +244,7 @@ ruleUIDescription returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"FQN");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.FQN");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -270,7 +270,7 @@ ruleUI
        			$current, 
        			"UIs",
         		lv_UIs_4_0, 
-        		"UI");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpui.UI");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -325,7 +325,7 @@ ruleUI returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -343,7 +343,7 @@ ruleUI returns [EObject current=null]
        			$current, 
        			"UI_DataSource",
         		lv_UI_DataSource_3_0, 
-        		"DataSource");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpui.DataSource");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -369,7 +369,7 @@ ruleUI returns [EObject current=null]
        			$current, 
        			"label",
         		lv_label_6_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -387,7 +387,7 @@ ruleUI returns [EObject current=null]
        			$current, 
        			"UI_Containers",
         		lv_UI_Containers_7_0, 
-        		"UIContainer");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpui.UIContainer");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -440,7 +440,7 @@ ruleUIContainer returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -466,7 +466,7 @@ ruleUIContainer returns [EObject current=null]
        			$current, 
        			"label",
         		lv_label_5_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -488,7 +488,7 @@ ruleUIContainer returns [EObject current=null]
        			$current, 
        			"description",
         		lv_description_7_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -506,7 +506,7 @@ ruleUIContainer returns [EObject current=null]
        			$current, 
        			"UI_fields",
         		lv_UI_fields_8_0, 
-        		"UIField");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpui.UIField");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -524,7 +524,7 @@ ruleUIContainer returns [EObject current=null]
        			$current, 
        			"UI_fields",
         		lv_UI_fields_9_0, 
-        		"UIField");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpui.UIField");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -542,7 +542,7 @@ ruleUIContainer returns [EObject current=null]
        			$current, 
        			"subContainers",
         		lv_subContainers_10_0, 
-        		"UIContainer");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpui.UIContainer");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -560,7 +560,7 @@ ruleUIContainer returns [EObject current=null]
        			$current, 
        			"subContainers",
         		lv_subContainers_11_0, 
-        		"UIContainer");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpui.UIContainer");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -689,7 +689,7 @@ ruleUIField returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -711,7 +711,7 @@ ruleUIField returns [EObject current=null]
        			$current, 
        			"label",
         		lv_label_4_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -733,7 +733,7 @@ ruleUIField returns [EObject current=null]
        			$current, 
        			"description",
         		lv_description_6_0, 
-        		"EString");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -759,7 +759,7 @@ ruleUIField returns [EObject current=null]
        			$current, 
        			"type",
         		lv_type_9_0, 
-        		"UI_Field_Type");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpui.UI_Field_Type");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -781,7 +781,7 @@ ruleUIField returns [EObject current=null]
        			$current, 
        			"Mapping",
         		lv_Mapping_11_0, 
-        		"FieldMapping");
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpui.FieldMapping");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -958,6 +958,12 @@ ruleUI_Field_Type returns [Enumerator current=null]
 	{
         $current = grammarAccess.getUI_Field_TypeAccess().getMultipleChoiceListEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
         newLeafNode(enumLiteral_5, grammarAccess.getUI_Field_TypeAccess().getMultipleChoiceListEnumLiteralDeclaration_5()); 
+    }
+)
+    |(	enumLiteral_6='richtext' 
+	{
+        $current = grammarAccess.getUI_Field_TypeAccess().getRichtextEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_6, grammarAccess.getUI_Field_TypeAccess().getRichtextEnumLiteralDeclaration_6()); 
     }
 ));
 

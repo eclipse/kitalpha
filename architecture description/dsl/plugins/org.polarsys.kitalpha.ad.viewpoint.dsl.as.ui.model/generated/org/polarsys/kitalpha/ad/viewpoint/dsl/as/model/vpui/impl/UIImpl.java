@@ -37,11 +37,11 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.VpuiPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.impl.UIImpl#getUI_Containers <em>UI Containers</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.impl.UIImpl#getUI_DataSource <em>UI Data Source</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
