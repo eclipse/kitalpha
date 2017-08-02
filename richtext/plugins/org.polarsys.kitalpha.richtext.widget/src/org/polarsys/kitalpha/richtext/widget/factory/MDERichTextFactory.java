@@ -10,18 +10,24 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.richtext.widget.factory;
 
+import java.io.IOException;
+
 import org.eclipse.core.runtime.Assert;
-import org.eclipse.kitalpha.richtext.common.intf.MDERichTextWidget;
+import org.eclipse.core.runtime.FileLocator;
+import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
+import org.polarsys.kitalpha.richtext.common.util.MDERichTextHelper;
+import org.eclipse.nebula.widgets.richtext.RichTextEditorConfiguration;
 import org.eclipse.swt.widgets.Composite;
 import org.polarsys.kitalpha.richtext.mde.tools.images.handlers.AddImageHandler;
 import org.polarsys.kitalpha.richtext.mde.tools.links.handlers.AddLinkHandler;
 import org.polarsys.kitalpha.richtext.mde.tools.misc.handlers.ClearContentHandler;
-import org.polarsys.kitalpha.richtext.mde.tools.misc.handlers.EditableModeHandler;
 import org.polarsys.kitalpha.richtext.mde.tools.utils.Constants;
 import org.polarsys.kitalpha.richtext.nebula.widget.MDENebulaBasedRichTextWidget;
 import org.polarsys.kitalpha.richtext.nebula.widget.MDENebulaRichTextConfiguration;
 import org.polarsys.kitalpha.richtext.nebula.widget.MDERichTextConstants;
 import org.polarsys.kitalpha.richtext.widget.MDERichtextWidgetImpl;
+import org.polarsys.kitalpha.richtext.widget.editor.tools.OpenInEditorHandler;
+import org.polarsys.kitalpha.richtext.widget.internal.Activator;
 
 /**
  * Factory to create and configure MDE rich Text
@@ -56,10 +62,21 @@ public class MDERichTextFactory {
 		configuration.setOption(MDERichTextConstants.READ_ONLY_MODE, false);
 		configuration.setOption(MDERichTextConstants.PAST_FROM_MS_WORD_PROMPT_CLEANUP, false);
 	}
+
+	public MDERichTextWidget createEditorRichTextWidget(Composite parent){
+		initializeMDEDefaultToolbar(false);
+
+		MDERichtextWidgetImpl widget = new MDERichtextWidgetImpl(parent, configuration);
+
+		addEditorToolbarItems(widget);
+
+		return widget;
+
+	}
 	
 	
 	public MDERichTextWidget createDefaultRichTextWidget(Composite parent){
-		initializeMDEDefaultToolbar();
+		initializeMDEDefaultToolbar(true);
 		
 		configuration.removeToolbarItems(MDERichTextConstants.LINK, 
 				MDERichTextConstants.ANCHOR, 
@@ -75,7 +92,7 @@ public class MDERichTextFactory {
 	}
 	
 	public MDERichTextWidget createDefaultRichTextWidget(Composite parent, int style){
-		initializeMDEDefaultToolbar();
+		initializeMDEDefaultToolbar(true);
 		
 		configuration.removeToolbarItems(MDERichTextConstants.LINK, 
 				MDERichTextConstants.ANCHOR, 
@@ -128,20 +145,56 @@ public class MDERichTextFactory {
 		return widget;
 	}
 
-
-	protected void addToolbarItems(MDENebulaBasedRichTextWidget widget) {
-		widget.addToolbarItem(widget, MDERichTextConstants.MDE_EDITABLE, 
-				MDERichTextConstants.MDE_EDITABLE, MDERichTextConstants.MDE_EDITABLE, 
-				MDERichTextConstants.MDE_ENABLE_EDITING_TOOLBAR, Constants.EDIT_ICON, new EditableModeHandler());
+	/**
+	 * Don't add open in editor tool
+	 * @param widget
+	 */
+	protected void addEditorToolbarItems(MDENebulaBasedRichTextWidget widget) {
+		/* Not need */
+//		widget.addToolbarItem(widget, MDERichTextConstants.MDE_EDITABLE, 
+//				MDERichTextConstants.MDE_EDITABLE, MDERichTextConstants.MDE_EDITABLE, 
+//				MDERichTextConstants.MDE_ENABLE_EDITING_TOOLBAR, Constants.EDIT_ICON, new EditableModeHandler());
 		widget.addToolbarItem(widget, MDERichTextConstants.MDE_CLEAN, 
 				MDERichTextConstants.MDE_CLEAN, MDERichTextConstants.MDE_CLEAN, 
 				MDERichTextConstants.MDE_CLEAN_TOOLBAR, Constants.CLEAR_ICON, new ClearContentHandler());
+		
 		widget.addToolbarItem(widget, MDERichTextConstants.MDE_ADDLINK, 
 				MDERichTextConstants.MDE_ADDLINK, "Link", MDERichTextConstants.MDE_LINKS_TOOLBAR, 
 				Constants.ADD_LINK_ICON, new AddLinkHandler());
+		
 		widget.addToolbarItem(widget, MDERichTextConstants.MDE_ADDIMAGE, 
 				MDERichTextConstants.MDE_ADDIMAGE, "Add Image", MDERichTextConstants.MDE_LINKS_TOOLBAR, 
 				Constants.ADD_IMAGE_ICON, new AddImageHandler());
+	}
+
+	protected void addToolbarItems(MDENebulaBasedRichTextWidget widget) {
+		/* Not need */
+//		widget.addToolbarItem(widget, MDERichTextConstants.MDE_EDITABLE, 
+//				MDERichTextConstants.MDE_EDITABLE, MDERichTextConstants.MDE_EDITABLE, 
+//				MDERichTextConstants.MDE_ENABLE_EDITING_TOOLBAR, Constants.EDIT_ICON, new EditableModeHandler());
+		
+		try {
+			widget.addToolbarItem(widget, MDERichTextConstants.MDE_OPEN_EDITOR, MDERichTextConstants.MDE_OPEN_EDITOR, "Open in Editor", //$NON-NLS-1$ 
+					MDERichTextConstants.MDE_ENABLE_EDITING_TOOLBAR, 
+					FileLocator.toFileURL(MDERichTextHelper.getURL(Activator.PLUGIN_ID, "icons/openInEditor.gif")), //$NON-NLS-1$
+					new OpenInEditorHandler());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		widget.addToolbarItem(widget, MDERichTextConstants.MDE_CLEAN, 
+				MDERichTextConstants.MDE_CLEAN, MDERichTextConstants.MDE_CLEAN, 
+				MDERichTextConstants.MDE_CLEAN_TOOLBAR, Constants.CLEAR_ICON, new ClearContentHandler());
+		
+		widget.addToolbarItem(widget, MDERichTextConstants.MDE_ADDLINK, 
+				MDERichTextConstants.MDE_ADDLINK, "Link", MDERichTextConstants.MDE_LINKS_TOOLBAR, 
+				Constants.ADD_LINK_ICON, new AddLinkHandler());
+		
+		widget.addToolbarItem(widget, MDERichTextConstants.MDE_ADDIMAGE, 
+				MDERichTextConstants.MDE_ADDIMAGE, "Add Image", MDERichTextConstants.MDE_LINKS_TOOLBAR, 
+				Constants.ADD_IMAGE_ICON, new AddImageHandler());
+		
 	}
 
 
@@ -149,8 +202,13 @@ public class MDERichTextFactory {
 	 * Initialize default toolbar items
 	 * @return this factory
 	 */
-	protected MDERichTextFactory initializeMDEDefaultToolbar() {
-		configuration.initializeToolbarItem(MDERichTextConstants.MDE_ENABLE_EDITING_TOOLBAR, MDERichTextConstants.MDE_EDITABLE);
+	protected MDERichTextFactory initializeMDEDefaultToolbar(boolean addOpenInEditor) {
+		/* Not need */
+//		configuration.initializeToolbarItem(MDERichTextConstants.MDE_ENABLE_EDITING_TOOLBAR, MDERichTextConstants.MDE_EDITABLE);
+		
+		if (addOpenInEditor){
+			configuration.initializeToolbarItem(MDERichTextConstants.MDE_ENABLE_EDITING_TOOLBAR, MDERichTextConstants.MDE_OPEN_EDITOR);
+		}
 		configuration.initializeToolbarItem(MDERichTextConstants.STYLES_TOOLBAR);
 		configuration.initializeToolbarItem(MDERichTextConstants.CLIPBOARD_TOOLBAR);
 		configuration.initializeToolbarItem(MDERichTextConstants.MDE_CLEAN_TOOLBAR, MDERichTextConstants.MDE_CLEAN);
@@ -178,14 +236,13 @@ public class MDERichTextFactory {
 	
 
 	protected MDERichTextFactory initializeMDEMinimalToolbar(){
-		
-		configuration.initializeToolbarItem(MDERichTextConstants.MDE_ENABLE_EDITING_TOOLBAR, MDERichTextConstants.MDE_EDITABLE);
+		/* Not need */
+//		configuration.initializeToolbarItem(MDERichTextConstants.MDE_ENABLE_EDITING_TOOLBAR, MDERichTextConstants.MDE_EDITABLE);
+		configuration.initializeToolbarItem(MDERichTextConstants.MDE_ENABLE_EDITING_TOOLBAR, MDERichTextConstants.MDE_OPEN_EDITOR);
 		configuration.initializeToolbarItem(MDERichTextConstants.STYLES_TOOLBAR);
-		configuration.initializeToolbarItem(MDERichTextConstants.CLIPBOARD_TOOLBAR);
-		configuration.initializeToolbarItem(MDERichTextConstants.PARAGRAPH_TOOLBAR, 
-				MDERichTextConstants.LIST_GROUP, MDERichTextConstants.INDENT_GROUP);
+		configuration.initializeToolbarItem(MDERichTextConstants.BASIC_STYLES, 
+				MDERichTextConstants.LIST_GROUP);
 		configuration.initializeToolbarItem(MDERichTextConstants.MDE_LINKS_TOOLBAR, MDERichTextConstants.MDE_ADDLINK);
-		
 		
 		return this;
 	}
@@ -237,6 +294,10 @@ public class MDERichTextFactory {
 	public MDERichTextFactory setBaseHrefPath(String basePath){
 		configuration.setOption(MDERichTextConstants.BASE_HREF, basePath);
 		return this;
+	}
+	
+	public RichTextEditorConfiguration getConfiguration(){
+		return configuration;
 	}
 	
 }

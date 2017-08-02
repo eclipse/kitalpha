@@ -100,5 +100,17 @@ public class MDERichTextToolsHelper {
 		return null;
 	}
 	
+	public static EObject getEObject(EditingDomain ed, String fragment){
+		
+		for (Resource resource : ed.getResourceSet().getResources()) {
+			EObject eObject = resource.getEObject(fragment);
+			if (eObject != null){
+				return eObject;
+			}
+		}
+		return null;
+		
+	}
+	
 	
 }

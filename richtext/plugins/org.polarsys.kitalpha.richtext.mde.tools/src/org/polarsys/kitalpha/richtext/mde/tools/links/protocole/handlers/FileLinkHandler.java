@@ -10,15 +10,7 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.richtext.mde.tools.links.protocole.handlers;
 
-import java.io.File;
-
-import org.eclipse.core.runtime.Status;
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.FileDialog;
-import org.polarsys.kitalpha.richtext.mde.tools.internal.Activator;
-import org.polarsys.kitalpha.richtext.mde.tools.links.handlers.AbstractOpenLinkTypeHandler;
-import org.polarsys.kitalpha.richtext.mde.tools.managers.Tuple;
+import org.polarsys.kitalpha.richtext.mde.tools.managers.AbstractLinkTypeHandler;
 import org.polarsys.kitalpha.richtext.mde.tools.utils.Constants;
 
 /**
@@ -26,7 +18,7 @@ import org.polarsys.kitalpha.richtext.mde.tools.utils.Constants;
  * @author Faycal Abka
  *
  */
-public class FileLinkHandler extends AbstractOpenLinkTypeHandler {
+public class FileLinkHandler extends AbstractLinkTypeHandler {
 
 	@Override
 	public String resolveType(String link) {
@@ -35,7 +27,7 @@ public class FileLinkHandler extends AbstractOpenLinkTypeHandler {
 
 	@Override
 	public String encode(String url, String displayText) {
-		return "<a href=\"file:///" + customizeLink(url, null).getFirst() + "\">" + escapeDisplayedText(displayText) + "</a>"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		return "<a href=\"file:///" + customizeLink(url, null).getFirst().replace("\\", "\\\\") + "\">" + escapeDisplayedText(displayText).replace("\\", "\\\\") + "</a>"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 	}
 
 	@Override
@@ -44,25 +36,5 @@ public class FileLinkHandler extends AbstractOpenLinkTypeHandler {
 		link = link.replace('/', '\\');
 		link = link.replace("%20", " "); //$NON-NLS-1$ //$NON-NLS-2$
 		return link;
-	}
-
-	@Override
-	public Tuple<String, String> getURI(Object object) {
-		if (object instanceof String){
-			String basePath = (String)object;
-			FileDialog dialog = new FileDialog(Display.getCurrent().getActiveShell(), SWT.OPEN);
-			dialog.setFilterPath(basePath);
-			String attachFile = dialog.open();
-			if (attachFile != null && attachFile.length() > 0) {
-				try {
-					File file = new File(dialog.getFilterPath(), dialog.getFileName());
-					return customizeLink(file.getAbsolutePath(), object);
-				} catch (Exception e) {
-					Status status = new Status(Status.ERROR, Activator.PLUGIN_ID, "getPath(...)", e); //$NON-NLS-1$
-					Activator.getDefault().getLog().log(status);
-				}
-			}
-		}
-		return null;
 	}
 }

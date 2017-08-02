@@ -12,8 +12,8 @@ package org.polarsys.kitalpha.richtext.mde.tools.dialogs;
 
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.layout.GridDataFactory;
-import org.eclipse.kitalpha.richtext.common.intf.MDERichTextWidget;
-import org.eclipse.kitalpha.richtext.common.util.MDERichTextHelper;
+import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
+import org.polarsys.kitalpha.richtext.common.util.MDERichTextHelper;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
@@ -202,6 +202,7 @@ public class MDEAddLinkDialog extends MDEOkCancelDialog {
 
 		urlText.setText(""); //$NON-NLS-1$
 		super.okPressed();
+		richText.forceFocus();
 	}
 
 }

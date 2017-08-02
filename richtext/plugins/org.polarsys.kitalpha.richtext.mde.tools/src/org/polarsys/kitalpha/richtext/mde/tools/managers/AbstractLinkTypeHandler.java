@@ -13,6 +13,8 @@ package org.polarsys.kitalpha.richtext.mde.tools.managers;
 
 import org.apache.commons.lang.StringEscapeUtils;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.edit.domain.EditingDomain;
+import org.polarsys.kitalpha.richtext.mde.tools.internal.extension.ExtensionManager;
 import org.polarsys.kitalpha.richtext.mde.tools.utils.MDERichTextToolsHelper;
 
 /**
@@ -38,6 +40,22 @@ public abstract class AbstractLinkTypeHandler implements LinkTypeHandler {
 	 */
 	protected String escapeDisplayedText(String toEscape){
 		return StringEscapeUtils.escapeHtml(toEscape);
+	}
+	
+	@Override
+	public void openLink(String link, final String basePath) {
+		OpenStrategy strategy = ExtensionManager.getStrategy(resolveType(link));
+		if (strategy != null) {
+			strategy.doOpen(decode(link, basePath));
+		}
+	}
+	
+	public Tuple<String, String> getURI(Object object, String type){
+		LinkChooserStrategy chooseStrategy = ExtensionManager.getLinkChooserStrategy(type);
+		if (chooseStrategy != null){
+			return chooseStrategy.getURI(object);
+		}
+		return null;
 	}
 
 }

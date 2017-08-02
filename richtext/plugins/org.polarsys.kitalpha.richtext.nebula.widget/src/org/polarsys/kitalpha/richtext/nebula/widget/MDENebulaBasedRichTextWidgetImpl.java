@@ -14,8 +14,8 @@ import java.net.URL;
 import java.util.Map;
 
 import org.eclipse.jface.layout.GridDataFactory;
-import org.eclipse.kitalpha.richtext.common.impl.BrowserBasedMDERichTextWidgetImpl;
-import org.eclipse.kitalpha.richtext.common.intf.MDERichTextWidget;
+import org.polarsys.kitalpha.richtext.common.impl.BrowserBasedMDERichTextWidgetImpl;
+import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
 import org.eclipse.nebula.widgets.richtext.RichTextEditor;
 import org.eclipse.nebula.widgets.richtext.RichTextEditorConfiguration;
 import org.eclipse.swt.browser.Browser;
@@ -40,7 +40,7 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 	private final RichTextEditor editor;
 	private final RichTextEditorConfiguration configuration;
 	
-	private boolean editorLoaded = false;
+	private boolean editorReady = false;
 	
 	private String baseHrefPath = null;
 
@@ -88,7 +88,7 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 				
 				@Override
 				public void completed(ProgressEvent event) {
-					editorLoaded = true;
+					editorReady = true;
 					installListenersOnReadyInstance();
 				}
 				
@@ -130,6 +130,20 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 		}
 	}
 	
+	
+	@Override
+	public boolean isDirty() {
+		if (isReady()){
+			return super.isDirty();
+		}
+		return false;
+	}
+	
+	@Override
+	public boolean isReady() {
+		return editorReady;
+	}
+	
 	private String getBaseHref(String baseHref) {
 		if (baseHref != null){
 			if (!baseHref.endsWith(SLASH_CHARACTER)){
@@ -156,14 +170,14 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 
 	@Override
 	public void setVisible(boolean visible) {
-		if (editorLoaded){
+		if (isReady()){
 			this.setVisible(visible);
 		}
 	}
 
 	@Override
 	public String getText() {
-		if (editorLoaded){
+		if (isReady()){
 			return editor.getText();
 		}
 		return ""; //$NON-NLS-1$
@@ -179,7 +193,7 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 
 	@Override
 	public void insertText(String text) {
-		if (text != null && editorLoaded){
+		if (text != null && isReady()){
 			text = escapeSingleQuote(text);
 			editor.insertText(text);
 		}
@@ -187,7 +201,7 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 
 	@Override
 	public void insertRawText(String html) {
-		if (html != null && editorLoaded){
+		if (html != null && isReady()){
 			html = escapeSingleQuote(html);
 			editor.insertHTML(html);
 		}
@@ -195,7 +209,7 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 
 	@Override
 	public String getSelectedText() {
-		if (editorLoaded){
+		if (isReady()){
 			return editor.getSelectedText();
 		}
 		return ""; //$NON-NLS-1$
@@ -203,7 +217,7 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 
 	@Override
 	public String getSelectedRawText() {
-		if (editorLoaded){
+		if (isReady()){
 			return editor.getSelectedHTML();
 		}
 		return "";
@@ -211,7 +225,7 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 
 	@Override
 	public boolean isEditable() {
-		if (editorLoaded){
+		if (isReady()){
 			return editor.isEditable();
 		} 
 		return false;
@@ -219,21 +233,21 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 
 	@Override
 	public void setEditable(boolean editable) {
-		if (editorLoaded){
+		if (isReady()){
 			editor.setEditable(editable);
 		}
 	}
 
 	@Override
 	public void updateToolbar() {
-		if (editorLoaded){
+		if (isReady()){
 			editor.updateToolbar();
 		}
 	}
 
 	@Override
 	public boolean setToolbarItemState(String command, String state) {
-		if (editorLoaded){
+		if (isReady()){
 			StringBuffer updateStateScript = getCommand(command).append(".setState(").append(state).append(");"); //$NON-NLS-1$ //$NON-NLS-2$
 			return executeScript(updateStateScript.toString());
 		}
@@ -246,7 +260,7 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 
 	@Override
 	public void updateEditor() {
-		if (editorLoaded){
+		if (isReady()){
 			editor.updateEditor();
 		}
 	}
@@ -310,4 +324,5 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 			URL iconPath) {
 		addToolbarItem(name, command, label, toolbar, iconPath, null);
 	}
+
 }

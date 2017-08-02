@@ -13,7 +13,6 @@ package org.polarsys.kitalpha.richtext.nebula.widget;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -55,10 +54,7 @@ public class MDENebulaRichTextConfiguration extends RichTextEditorConfiguration 
 	private String buildToolbarConfiguration(){
 		toolbarGroup.setLength(0); //reset
 
-		Iterator<Entry<String, List<String>>> it = allItems.entrySet().iterator();
-		while (it.hasNext()) {
-			Entry<String, List<String>> e = it.next();
-
+		for(Entry<String, List<String>> e: allItems.entrySet()){
 			String group = e.getKey();
 			List<String> groupItems = e.getValue();
 
@@ -74,11 +70,9 @@ public class MDENebulaRichTextConfiguration extends RichTextEditorConfiguration 
 				}
 				toolbarGroup.append("]"); //$NON-NLS-1$
 			}
-			toolbarGroup.append("}"); //$NON-NLS-1$
-			if (it.hasNext()) {
-				toolbarGroup.append(","); //$NON-NLS-1$
-			}
+			toolbarGroup.append("},"); //$NON-NLS-1$
 		}
+
 		return toolbarGroup.toString();
 	}
 

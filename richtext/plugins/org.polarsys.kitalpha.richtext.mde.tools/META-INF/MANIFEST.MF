@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %Bundle-Name
-Bundle-SymbolicName: org.polarsys.kitalpha.richtext.mde.tools
+Bundle-SymbolicName: org.polarsys.kitalpha.richtext.mde.tools;singleton:=true
 Bundle-Version: 1.2.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Require-Bundle: org.polarsys.kitalpha.richtext.nebula.widget,
@@ -13,7 +13,8 @@ Require-Bundle: org.polarsys.kitalpha.richtext.nebula.widget,
  org.eclipse.ui.workbench,
  org.eclipse.ui.ide,
  org.eclipse.core.resources,
- org.eclipse.sirius
+ org.eclipse.emf.ecore.xmi,
+ org.eclipse.ui.navigator
 Export-Package: org.polarsys.kitalpha.richtext.mde.tools.dialogs,
  org.polarsys.kitalpha.richtext.mde.tools.images.handlers,
  org.polarsys.kitalpha.richtext.mde.tools.links.handlers,
@@ -21,6 +22,7 @@ Export-Package: org.polarsys.kitalpha.richtext.mde.tools.dialogs,
  org.polarsys.kitalpha.richtext.mde.tools.managers,
  org.polarsys.kitalpha.richtext.mde.tools.messages,
  org.polarsys.kitalpha.richtext.mde.tools.misc.handlers,
+ org.polarsys.kitalpha.richtext.mde.tools.selection,
  org.polarsys.kitalpha.richtext.mde.tools.utils
 Bundle-Vendor: %Bundle-Vendor
 Bundle-Localization: OSGI-INF/l10n/bundle

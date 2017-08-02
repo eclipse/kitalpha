@@ -11,19 +11,10 @@
 package org.polarsys.kitalpha.richtext.mde.tools.links.protocole.handlers;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.xmi.XMLResource;
-import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
-import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
-import org.eclipse.jface.window.Window;
-import org.eclipse.swt.widgets.Display;
-import org.polarsys.kitalpha.richtext.mde.tools.dialogs.FilteredElementTreeSelectionDialog;
+import org.polarsys.kitalpha.richtext.mde.tools.internal.extension.ExtensionManager;
+import org.polarsys.kitalpha.richtext.mde.tools.links.handlers.OpenModelElementStrategy;
 import org.polarsys.kitalpha.richtext.mde.tools.managers.AbstractLinkTypeHandler;
-import org.polarsys.kitalpha.richtext.mde.tools.managers.Tuple;
-import org.polarsys.kitalpha.richtext.mde.tools.messages.Messages;
 import org.polarsys.kitalpha.richtext.mde.tools.utils.Constants;
-import org.polarsys.kitalpha.richtext.mde.tools.utils.MDERichTextToolsHelper;
 
 /**
  * 
@@ -48,70 +39,11 @@ public class ModelElementHandler extends AbstractLinkTypeHandler {
 		link = link.replaceAll("/", ""); //$NON-NLS-1$ //$NON-NLS-2$
 		return link;
 	}
-
-	@Override
-	public void openLink(String link) {
-		//Do nothing
-	}
-
-
-	@Override
-	public Tuple<String, String> getURI(Object object) {
-		Tuple<String, String> path = null;
-		if (object instanceof EObject){
-			EObject modelElement = (EObject)object;
-			AdapterFactoryLabelProvider labelProvider = MDERichTextToolsHelper.getLabelProvider(modelElement);
-			AdapterFactoryContentProvider contentProvider = MDERichTextToolsHelper.getContentProvider(modelElement);
-			if (labelProvider != null && contentProvider != null){ 
-				FilteredElementTreeSelectionDialog dialog = new FilteredElementTreeSelectionDialog(
-						Display.getCurrent().getActiveShell(), labelProvider, contentProvider);
-				dialog.setTitle(Messages.RichTextWidget_Dialog_Title_Model_Element_Selection);
-				dialog.setMessage(Messages.RichTextWidget_Dialog_Title_Selection_Model_Element);
-
-				EObject root = EcoreUtil.getRootContainer(modelElement);
-				dialog.setInput(root.eResource());
-				if (Window.OK == dialog.open()) {
-					Object result = dialog.getFirstResult();
-					if (result instanceof EObject) {
-						String link = EcoreUtil.getURI((EObject)object).toString();
-						path = customizeLink(link, result);
-					}
-				}
-			}
-		}
-		return path;
-	}
 	
-	/**
-	 * Customization of EMF URI
-	 * The algorithm:
-	 * <ul>
-	 * 	<li>If object is an EObject and contained in XML Resource then try to retrieve the ID of the object</li>
-	 * 	<li>If the XML ID of the object is null, then try to get the fragment</li>
-	 * 	<li>If the fragment of element is null, return the link passed as argument (the link in EMF context, is String representing the URI with fragment)</li>
-	 *</ul>
-	 */
-	@Override
-	protected Tuple<String, String> customizeLink(String link, Object object) {
-		String result = null;
-		String label = null;
-		if (object instanceof EObject) {
-			EObject eObject = (EObject)object;
-			label = MDERichTextToolsHelper.getName(eObject);
-			Resource eResource = eObject.eResource();
-			if (eResource instanceof XMLResource){
-				result = ((XMLResource) eResource).getID(eObject);
-			}
-			if (result == null){
-				result = EcoreUtil.getURI(eObject).fragment();
-				if (result != null){
-					return new Tuple<String, String>(result, label);
-				}
-			}
+	public void openLink(EObject eObject, String link, final String basePath) {
+		OpenModelElementStrategy strategy = ExtensionManager.getModelElementStrategy(resolveType(link));
+		if (strategy != null) {
+			strategy.doOpen(eObject, decode(link, basePath));
 		}
-		if (result == null){
-			result = link;
-		}
-		return new Tuple<String, String>(result, label);
 	}
 }

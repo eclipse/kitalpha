@@ -10,7 +10,7 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.richtext.nebula.widget.toolbar;
 
-import org.eclipse.kitalpha.richtext.common.intf.MDERichTextWidget;
+import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
 
 /**
  * Define service of handler to manager click on toolbar item

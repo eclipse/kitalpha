@@ -13,6 +13,7 @@ package org.polarsys.kitalpha.richtext.mde.tools.images.handlers;
 import java.io.File;
 
 import org.eclipse.core.runtime.Status;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.FileDialog;
@@ -33,12 +34,12 @@ public class DiskImageHandler extends AbstractImageTypeHandler {
 	}
 
 	@Override
-	public void openLink(String link) {
+	public void openLink(String link, final String basePath) {
 		//Do nothing
 	}
 
 	@Override
-	public Tuple<String, String> getURI(Object object) {
+	public Tuple<String, String> getURI(Object object, String type) {
 		String url = null;
 		FileDialog dialog = new FileDialog(Display.getCurrent().getActiveShell(), SWT.OPEN);
 		dialog.setFilterExtensions(allowedExtensions); 
@@ -54,7 +55,4 @@ public class DiskImageHandler extends AbstractImageTypeHandler {
 		}
 		return new Tuple<String, String>(url, null);
 	}
-
-
-
 }

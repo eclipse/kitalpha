@@ -12,8 +12,8 @@ package org.polarsys.kitalpha.richtext.nebula.widget;
 
 import java.net.URL;
 
-import org.eclipse.kitalpha.richtext.common.intf.BrowserBasedMDERichTextWidget;
-import org.eclipse.kitalpha.richtext.common.intf.MDERichTextWidget;
+import org.polarsys.kitalpha.richtext.common.intf.BrowserBasedMDERichTextWidget;
+import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
 import org.polarsys.kitalpha.richtext.nebula.widget.toolbar.MDERichTextToolbarItemHandler;
 
 /**

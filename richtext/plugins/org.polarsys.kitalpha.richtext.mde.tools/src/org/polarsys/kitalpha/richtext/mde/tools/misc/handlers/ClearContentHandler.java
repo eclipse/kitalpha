@@ -12,7 +12,7 @@ package org.polarsys.kitalpha.richtext.mde.tools.misc.handlers;
 
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.MessageDialog;
-import org.eclipse.kitalpha.richtext.common.intf.MDERichTextWidget;
+import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
 import org.polarsys.kitalpha.richtext.mde.tools.messages.Messages;

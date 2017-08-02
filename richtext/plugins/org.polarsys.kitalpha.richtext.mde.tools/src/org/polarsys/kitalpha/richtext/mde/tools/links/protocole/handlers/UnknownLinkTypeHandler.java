@@ -10,6 +10,7 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.richtext.mde.tools.links.protocole.handlers;
 
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.polarsys.kitalpha.richtext.mde.tools.managers.AbstractLinkTypeHandler;
 import org.polarsys.kitalpha.richtext.mde.tools.managers.Tuple;
 import org.polarsys.kitalpha.richtext.mde.tools.messages.Messages;
@@ -38,12 +39,12 @@ public class UnknownLinkTypeHandler extends AbstractLinkTypeHandler {
 	}
 	
 	@Override
-	public void openLink(String link) {
+	public void openLink(String link, final String basePath) {
 		throw new UnsupportedOperationException(Messages.bind(Messages.RichTextWidget_Exception_Error_Unknown_openlink,link));
 	}
 
 	@Override
-	public Tuple<String, String> getURI(Object object) {
+	public Tuple<String, String> getURI(Object object, String type) {
 		throw new UnsupportedOperationException(Messages.RichTextWidget_Exception_Error_Unknown_getPath);
 	}
 }

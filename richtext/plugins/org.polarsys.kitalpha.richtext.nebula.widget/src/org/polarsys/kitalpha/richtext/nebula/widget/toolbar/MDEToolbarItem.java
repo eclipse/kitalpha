@@ -12,7 +12,7 @@ package org.polarsys.kitalpha.richtext.nebula.widget.toolbar;
 
 import java.net.URL;
 
-import org.eclipse.kitalpha.richtext.common.intf.MDERichTextWidget;
+import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
 import org.eclipse.nebula.widgets.richtext.toolbar.ToolbarButton;
 
 /**

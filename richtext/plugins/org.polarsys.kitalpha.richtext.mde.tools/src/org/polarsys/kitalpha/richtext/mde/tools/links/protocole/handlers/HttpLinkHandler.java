@@ -10,13 +10,6 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.richtext.mde.tools.links.protocole.handlers;
 
-import java.net.URL;
-
-import org.eclipse.core.runtime.Status;
-import org.eclipse.ui.PlatformUI;
-import org.eclipse.ui.browser.IWebBrowser;
-import org.eclipse.ui.browser.IWorkbenchBrowserSupport;
-import org.polarsys.kitalpha.richtext.mde.tools.internal.Activator;
 import org.polarsys.kitalpha.richtext.mde.tools.managers.AbstractLinkTypeHandler;
 import org.polarsys.kitalpha.richtext.mde.tools.managers.Tuple;
 import org.polarsys.kitalpha.richtext.mde.tools.messages.Messages;
@@ -44,17 +37,6 @@ public class HttpLinkHandler extends AbstractLinkTypeHandler {
 		return link;
 	}
 
-	@Override
-	public void openLink(String link) {
-		try {
-			int style = IWorkbenchBrowserSupport.AS_EDITOR | IWorkbenchBrowserSupport.LOCATION_BAR | IWorkbenchBrowserSupport.STATUS;
-			IWebBrowser browser = PlatformUI.getWorkbench().getBrowserSupport().createBrowser(style, null, link, link);
-			browser.openURL(new URL(link));
-		} catch (Exception e) {
-			Status status = new Status(Status.ERROR, Activator.PLUGIN_ID, "openLink(...)", e); //$NON-NLS-1$
-			Activator.getDefault().getLog().log(status);
-		}
-	}
 	
 	@Override
 	protected Tuple<String, String> customizeLink(String link, Object object) {
@@ -62,7 +44,7 @@ public class HttpLinkHandler extends AbstractLinkTypeHandler {
 	}
 
 	@Override
-	public Tuple<String, String> getURI(Object object) {
+	public Tuple<String, String> getURI(Object object, String type) {
 		throw new UnsupportedOperationException(Messages.RichTextWidget_Exception_URL_Error_Computation);
 	}
 

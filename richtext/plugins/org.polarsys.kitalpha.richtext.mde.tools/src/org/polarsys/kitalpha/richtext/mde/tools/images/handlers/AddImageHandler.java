@@ -10,7 +10,7 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.richtext.mde.tools.images.handlers;
 
-import org.eclipse.kitalpha.richtext.common.intf.MDERichTextWidget;
+import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
 import org.eclipse.swt.widgets.Display;
 import org.polarsys.kitalpha.richtext.mde.tools.dialogs.MDEAddImageDialog;
 import org.polarsys.kitalpha.richtext.mde.tools.managers.ImageManagerImpl;
@@ -23,8 +23,7 @@ public class AddImageHandler implements MDERichTextToolbarItemHandler {
 
 	@Override
 	public void execute(MDERichTextWidget richText) {
-		
-		MDEAddImageDialog dialog = new MDEAddImageDialog(Display.getCurrent().getActiveShell(), richText, new ImageManagerImpl());
+		MDEAddImageDialog dialog = new MDEAddImageDialog(Display.getCurrent().getActiveShell(), richText, new ImageManagerImpl(richText));
 		dialog.open();
 	}
 

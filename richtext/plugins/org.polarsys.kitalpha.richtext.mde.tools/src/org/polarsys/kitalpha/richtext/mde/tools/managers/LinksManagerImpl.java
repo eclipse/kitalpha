@@ -16,12 +16,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
+import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
+import org.polarsys.kitalpha.richtext.common.util.MDERichTextHelper;
+import org.polarsys.kitalpha.richtext.mde.tools.internal.extension.ExtensionManager;
 import org.polarsys.kitalpha.richtext.mde.tools.links.protocole.handlers.FileLinkHandler;
 import org.polarsys.kitalpha.richtext.mde.tools.links.protocole.handlers.HttpLinkHandler;
 import org.polarsys.kitalpha.richtext.mde.tools.links.protocole.handlers.LocalLinkHandler;
-import org.polarsys.kitalpha.richtext.mde.tools.links.protocole.handlers.ModelDiagramLinkHandler;
 import org.polarsys.kitalpha.richtext.mde.tools.links.protocole.handlers.ModelElementHandler;
 import org.polarsys.kitalpha.richtext.mde.tools.utils.Constants;
+import org.polarsys.kitalpha.richtext.mde.tools.utils.MDERichTextToolsHelper;
 
 /**
  * 
@@ -33,18 +37,23 @@ public class LinksManagerImpl implements LinkManager {
 	private final Map<String, String> linkType2LinkLabel;
 	private final Map<String, LinkTypeHandler> linkType2Linkhandler;
 	
-	public LinksManagerImpl() {
+	private MDERichTextWidget widget;
+	
+	public LinksManagerImpl(MDERichTextWidget widget) {
 		this.linkType2LinkLabel = new LinkedHashMap<>();
 		this.linkType2Linkhandler = new LinkedHashMap<>();
 		initializeDefaultLinks();
+		this.widget = widget;
 	}
 	
 	protected void initializeDefaultLinks(){
 		addLinkType(Constants.URL, Constants.URL_LABEL, new HttpLinkHandler());
 		addLinkType(Constants.FILE, Constants.FILE_LABEL, new FileLinkHandler());
 		addLinkType(Constants.LOCAL, Constants.FILE_LOCAL_LABEL, new LocalLinkHandler());
-		addLinkType(Constants.MODEL_ELEMENT, Constants.MODEL_ELEMENT_LABEL, new ModelElementHandler());
-		addLinkType(Constants.DIAGRAM_ELEMENT, Constants.DIAGRAM_ELEMENT_LABEL, new ModelDiagramLinkHandler());
+		
+		ModelElementHandler modelElementHandler = new ModelElementHandler();
+		addLinkType(Constants.MODEL_ELEMENT, Constants.MODEL_ELEMENT_LABEL, modelElementHandler);
+		addLinkType(Constants.DIAGRAM_ELEMENT, Constants.DIAGRAM_ELEMENT_LABEL, modelElementHandler);
 	}
 
 	@Override
@@ -76,7 +85,7 @@ public class LinksManagerImpl implements LinkManager {
 		return null;
 	}
 
-	private LinkTypeHandler getHandler(String type) {
+	protected LinkTypeHandler getHandler(String type) {
 		String realType = resolveType(type);
 		LinkTypeHandler handler = this.linkType2Linkhandler.get(realType);
 		return handler;
@@ -98,17 +107,28 @@ public class LinksManagerImpl implements LinkManager {
 			LinkTypeHandler handler = e.getValue();
 			String resolvedType = handler.resolveType(link);
 			if (resolvedType != null && resolvedType.equalsIgnoreCase(linkType)){
-				handler.openLink(link);
-				break;
+				if (widget != null){
+					String basePath = MDERichTextHelper.getProjectPath(widget.getElement());
+					if (handler instanceof ModelElementHandler){
+						((ModelElementHandler)handler).openLink(widget.getElement(), link, basePath);
+					} else {
+						handler.openLink(link, basePath);
+					}
+					break;
+				}
 			}
 		}
 	}
 	
 	@Override
 	public Tuple<String, String> getPath(String type, Object object) {
-		LinkTypeHandler handler = getHandler(type);
-		if (handler != null){
-			return handler.getURI(object);
+		return getURI(object, resolveType(type));
+	}
+	
+	private Tuple<String, String> getURI(Object object, String type){
+		LinkChooserStrategy chooseStrategy = ExtensionManager.getLinkChooserStrategy(type);
+		if (chooseStrategy != null){
+			return chooseStrategy.getURI(object);
 		}
 		return null;
 	}

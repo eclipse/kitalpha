@@ -23,7 +23,7 @@ public interface LinkTypeHandler {
 
 	String decode(final String link, final String basePath);
 	
-	void openLink(String link);
+	void openLink(String link, final String basePath);
 	
-	Tuple<String, String> getURI(Object object);
+	Tuple<String, String> getURI(Object object, String type);
 }

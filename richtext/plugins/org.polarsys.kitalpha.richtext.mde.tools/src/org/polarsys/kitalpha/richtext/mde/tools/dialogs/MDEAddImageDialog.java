@@ -12,7 +12,7 @@ package org.polarsys.kitalpha.richtext.mde.tools.dialogs;
 
 import java.util.List;
 
-import org.eclipse.kitalpha.richtext.common.intf.MDERichTextWidget;
+import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
@@ -105,9 +105,11 @@ public class MDEAddImageDialog extends MDEOkCancelDialog {
 			@Override
 			public void widgetSelected(SelectionEvent event) {
 				Tuple<String, String> path = linkManager.getPath(linkType, richText.getElement());
-				String first = path.getFirst();
-				if (first != null){
-					urlText.setText(first);
+				if (path != null){
+					String first = path.getFirst();
+					if (first != null){
+						urlText.setText(first);
+					}
 				}
 			}
 		});
@@ -121,6 +123,7 @@ public class MDEAddImageDialog extends MDEOkCancelDialog {
 		String image = linkManager.encode(linkType, text, null);
 		richText.insertRawText(image);
 		super.okPressed();
+		richText.forceFocus();
 	}
 
 	@Override

@@ -12,7 +12,7 @@ package org.polarsys.kitalpha.richtext.mde.tools.utils;
 
 import java.net.URL;
 
-import org.eclipse.kitalpha.richtext.common.util.MDERichTextHelper;
+import org.polarsys.kitalpha.richtext.common.util.MDERichTextHelper;
 import org.polarsys.kitalpha.richtext.mde.tools.internal.Activator;
 
 /**

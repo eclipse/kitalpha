@@ -10,6 +10,7 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.richtext.mde.tools.managers;
 
+import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
 import org.polarsys.kitalpha.richtext.mde.tools.images.handlers.DiskImageHandler;
 import org.polarsys.kitalpha.richtext.mde.tools.images.handlers.LocalImageHandler;
 import org.polarsys.kitalpha.richtext.mde.tools.utils.Constants;
@@ -22,10 +23,25 @@ import org.polarsys.kitalpha.richtext.mde.tools.utils.Constants;
 public class ImageManagerImpl extends LinksManagerImpl {
 
 	
+	public ImageManagerImpl(MDERichTextWidget widget) {
+		super(widget);
+	}
+
+
 	@Override
-	protected final void initializeDefaultLinks() {
+	protected void initializeDefaultLinks() {
 		addLinkType(Constants.LOCAL_LABEL, Constants.LOCAL_LABEL, new LocalImageHandler());
 		addLinkType(Constants.DISK_LABEL, Constants.DISK_LABEL, new DiskImageHandler());
+	}
+	
+	
+	@Override
+	public Tuple<String, String> getPath(String type, Object object) {
+		LinkTypeHandler handler = getHandler(type);
+		if (handler != null){
+			return handler.getURI(object, type);
+		}
+		return null;
 	}
 
 }

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (c) 2017 Thales Global Services S.A.S.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+Contributors:
+ Thales Global Services S.A.S - initial API and implementation
+-->
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="org.polarsys.kitalpha.richtext.mde.tools.link.openStrategy" name="openStrategy" schema="schema/openStrategy.exsd"/>
+   <extension-point id="org.polarsys.kitalpha.richtext.mde.tools.link.openModelStrategy" name="openModelStrategy" schema="schema/openModelStrategy.exsd"/>
+   <extension
+         point="org.polarsys.kitalpha.richtext.mde.tools.link.openStrategy">
+      <strategy
+            scheme="http"
+            openLinkStrategy="org.polarsys.kitalpha.richtext.mde.tools.links.protocole.handlers.HttpOpenStrategy">
+      </strategy>
+      <strategy
+            linkChooserStrategy="org.polarsys.kitalpha.richtext.mde.tools.links.protocole.handlers.FileChooserStrategy"
+            openLinkStrategy="org.polarsys.kitalpha.richtext.mde.tools.links.protocole.handlers.FileOpenStrategy"
+            scheme="file">
+      </strategy>
+      <strategy
+            linkChooserStrategy="org.polarsys.kitalpha.richtext.mde.tools.links.protocole.handlers.ModelElementLinkChooserStrategy"
+            scheme="modelElement">
+      </strategy>
+      <strategy
+            linkChooserStrategy="org.polarsys.kitalpha.richtext.mde.tools.links.protocole.handlers.LocalFileChooserStrategy"
+            openLinkStrategy="org.polarsys.kitalpha.richtext.mde.tools.links.protocole.handlers.FileOpenStrategy"
+            scheme="local">
+      </strategy>
+      <strategy
+            explorerId="org.eclipse.ui.navigator.ProjectExplorer"
+            scheme="http">
+      </strategy>
+   </extension>
+</plugin>

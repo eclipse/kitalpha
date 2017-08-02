@@ -13,10 +13,11 @@ package org.polarsys.kitalpha.richtext.mde.tools.images.handlers;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.jface.window.Window;
-import org.eclipse.kitalpha.richtext.common.util.MDERichTextHelper;
+import org.polarsys.kitalpha.richtext.common.util.MDERichTextHelper;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.dialogs.ElementTreeSelectionDialog;
 import org.eclipse.ui.model.BaseWorkbenchContentProvider;
@@ -37,12 +38,12 @@ public class LocalImageHandler extends AbstractImageTypeHandler {
 	}
 
 	@Override
-	public void openLink(String link) {
+	public void openLink(String link, final String basePath) {
 		
 	}
 
 	@Override
-	public Tuple<String, String> getURI(Object object) {
+	public Tuple<String, String> getURI(Object object, String type) {
 		String path = null;
 		
 		if (object instanceof EObject){

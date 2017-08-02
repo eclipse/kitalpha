@@ -55,6 +55,8 @@ public final class MDERichTextConstants {
 	public static final String MDE_CLEAN_TOOLBAR = "clean"; 		//$NON-NLS-1$
 	public static final String MDE_CLEAN = "Clean"; 				//$NON-NLS-1$
 	
+	public static final String MDE_OPEN_EDITOR = "openEditor";		//$NON-NLS-1$
+	
 	
 	//****************** CKEditor Items and toolbar ******************//
 	 //Document

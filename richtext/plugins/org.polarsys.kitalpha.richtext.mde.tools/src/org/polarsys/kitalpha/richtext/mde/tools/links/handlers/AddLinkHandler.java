@@ -10,8 +10,8 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.richtext.mde.tools.links.handlers;
 
-import org.eclipse.kitalpha.richtext.common.intf.MDERichTextWidget;
 import org.eclipse.swt.widgets.Display;
+import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
 import org.polarsys.kitalpha.richtext.mde.tools.dialogs.MDEAddLinkDialog;
 import org.polarsys.kitalpha.richtext.mde.tools.managers.LinksManagerImpl;
 import org.polarsys.kitalpha.richtext.nebula.widget.toolbar.MDERichTextToolbarItemHandler;
@@ -25,7 +25,7 @@ public class AddLinkHandler implements MDERichTextToolbarItemHandler {
 
 	@Override
 	public void execute(MDERichTextWidget richText) {
-		MDEAddLinkDialog dialog = new MDEAddLinkDialog(Display.getCurrent().getActiveShell(), richText, new LinksManagerImpl());
+		MDEAddLinkDialog dialog = new MDEAddLinkDialog(Display.getCurrent().getActiveShell(), richText, new LinksManagerImpl(richText));
 		dialog.open();
 	}
 
