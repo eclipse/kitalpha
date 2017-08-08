@@ -12,7 +12,6 @@
 package org.polarsys.kitalpha.model.common.scrutiny.visitor;
 
 import java.util.Collection;
-import java.util.Map;
 import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;

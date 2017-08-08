@@ -41,6 +41,9 @@ import org.polarsys.kitalpha.model.common.scrutiny.registry.ModelScrutinyRegistr
 import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.ViewpointTreeContainer;
 import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.helpers.FinderAFViewpointHelper;
 import org.polarsys.kitalpha.model.common.share.ui.utilities.vp.tree.helpers.ViewpointsSearcherHelper;
+import org.polarsys.kitalpha.resourcereuse.helper.ResourceHelper;
+import org.polarsys.kitalpha.resourcereuse.helper.ResourceNotFoundException;
+import org.polarsys.kitalpha.resourcereuse.helper.ResourceReuse;
 
 /**
  * @author Faycal Abka
@@ -50,6 +53,7 @@ public class UsedAFViewpoints implements IScrutinize<ViewpointTreeContainer, Obj
   private Set<String> usedNsURI = new HashSet<String>();
   private Set<String> usedViewpoints = new HashSet<String>();
   private ViewpointTreeContainer container;
+  private final ResourceHelper resourceReuseHelper = ResourceReuse.createHelper();
 
   public UsedAFViewpoints() {
   }
@@ -65,12 +69,17 @@ public class UsedAFViewpoints implements IScrutinize<ViewpointTreeContainer, Obj
 
   @Override
   public void findIn(Resource resource) {
-    if (!resource.getContents().isEmpty() && resource.getContents().get(0) instanceof Metadata) {
-      Metadata root = (Metadata) resource.getContents().get(0);
-      for (ViewpointReference uv : root.getViewpointReferences()) {
-        usedViewpoints.add(uv.getVpId());
-      }
-    }
+	  if (!resource.getContents().isEmpty() && resource.getContents().get(0) instanceof Metadata) {
+		  Metadata root = (Metadata) resource.getContents().get(0);
+		  for (ViewpointReference uv : root.getViewpointReferences()) {
+			  try {
+				  resourceReuseHelper.getResource(uv.getId()); //Check if the viewpoint is installed
+				  usedViewpoints.add(uv.getVpId()); //This means that the viewpoint is installed.
+			  } catch (ResourceNotFoundException e){
+				  //Do nothing. Skip a not installed viewpoint
+			  }
+		  }
+	  }
   }
 
   @Override

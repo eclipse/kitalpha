@@ -10,6 +10,7 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.model.common.commands.contrib.viewpoint.representation.command;
 
+import java.io.IOException;
 import java.util.Collection;
 
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -24,7 +25,6 @@ import org.polarsys.kitalpha.model.common.commands.action.ModelCommand;
 import org.polarsys.kitalpha.model.common.commands.contrib.viewpoint.representation.Activator;
 import org.polarsys.kitalpha.model.common.commands.exception.ModelCommandException;
 import org.polarsys.kitalpha.model.common.scrutiny.analyzer.ModelScrutinyException;
-import org.polarsys.kitalpha.model.common.scrutiny.analyzer.Scrutineer;
 import org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints.scrutinizes.UsedAFViewpoints;
 import org.polarsys.kitalpha.model.common.scrutiny.interfaces.IScrutinize;
 import org.polarsys.kitalpha.model.common.scrutiny.registry.ModelScrutinyRegistry;
@@ -43,14 +43,16 @@ public class HandleViewpointRepresentationCommand extends ModelCommand {
 			return;
 		
 		SubMonitor subMonitor = SubMonitor.convert(monitor);
-		
+
 		Session session = SessionManager.INSTANCE.getExistingSession(resource.getURI());
 		if (session == null){
+			saveResources(resource);
 			session = SessionManager.INSTANCE.getSession(resource.getURI(), subMonitor);
 		}
 		
-		if (!session.isOpen())
+		if (!session.isOpen()){
 			session.open(subMonitor);
+		}
 
 		RegistryElement regElt;
 		try {
@@ -65,6 +67,18 @@ public class HandleViewpointRepresentationCommand extends ModelCommand {
 			}
 		} catch (ModelScrutinyException e) {
 			Activator.getDefault().getLog().log(new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage(), e));
+		}
+	}
+
+	private void saveResources(Resource resource) {
+		for(Resource r: resource.getResourceSet().getResources()){
+			try {
+				if (r.getURI() != null && r.getURI().isPlatformResource()){
+					r.save(null);
+				}
+			} catch (IOException e) {
+				Activator.getDefault().getLog().log(new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage(), e));
+			}
 		}
 	}
 	

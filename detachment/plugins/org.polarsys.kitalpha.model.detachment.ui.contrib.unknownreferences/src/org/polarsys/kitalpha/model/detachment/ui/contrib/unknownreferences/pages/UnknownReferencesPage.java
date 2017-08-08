@@ -29,7 +29,6 @@ import org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.fee
 import org.polarsys.kitalpha.model.common.scrutiny.interfaces.IFeedback;
 import org.polarsys.kitalpha.model.common.scrutiny.interfaces.IFeedback.IFeedbackMessage;
 import org.polarsys.kitalpha.model.common.scrutiny.interfaces.IScrutinize;
-import org.polarsys.kitalpha.model.common.scrutiny.registry.ModelScrutinyRegistry;
 import org.polarsys.kitalpha.model.common.scrutiny.registry.ModelScrutinyRegistry.RegistryElement;
 import org.polarsys.kitalpha.model.detachment.ui.contrib.unknownreferences.Messages;
 import org.polarsys.kitalpha.model.detachment.ui.contrib.unknownreferences.providers.UnknownReferenceContentProvider;

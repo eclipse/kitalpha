@@ -54,8 +54,13 @@ public class ModelScrutinyRegistry {
 						String name 	= config.getAttribute(Constants.GROUP_NAME);
 						IConfigurationElement[] classes = config.getChildren(Constants.SCRUTINIZE_CLASS);
 						
-						RegistryElement re = new RegistryElement(id, name);
-						registry.put(id, re);
+						RegistryElement re = null;
+						if (registry.containsKey(id)){
+							re = registry.get(id);
+						} else {
+							re = new RegistryElement(id, name);
+							registry.put(id, re);
+						}
 						
 						if (classes != null && classes.length > 0){
 							for (IConfigurationElement finderClass : classes) {

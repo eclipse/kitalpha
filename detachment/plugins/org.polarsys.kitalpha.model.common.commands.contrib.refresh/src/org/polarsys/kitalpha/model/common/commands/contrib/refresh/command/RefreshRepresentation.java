@@ -53,6 +53,7 @@ public class RefreshRepresentation extends ModelCommand {
 		
 		SubMonitor subMonitor = SubMonitor.convert(monitor);
 		
+		
 		Session session = SessionManager.INSTANCE.getExistingSession(resource.getURI());
 		if (session == null){
 			session = SessionManager.INSTANCE.getSession(resource.getURI(), subMonitor);
@@ -74,8 +75,9 @@ public class RefreshRepresentation extends ModelCommand {
 		
 		compoundCommand.append(refreshDRepresentations);
 		
-		if (compoundCommand.canExecute())
+		if (compoundCommand.canExecute()){
 			domain.getCommandStack().execute(compoundCommand);
+		}
 
 		subMonitor.subTask(Messages.SAVE_SIRIUS_SESSION);
 		session.save(subMonitor);
@@ -92,6 +94,13 @@ public class RefreshRepresentation extends ModelCommand {
 			if (representation instanceof DSemanticDiagram){
 				DSemanticDiagram diagram = (DSemanticDiagram)representation;
 				Diagram gmfDiagram = SiriusGMFHelper.getGmfDiagram(diagram);
+				
+				org.eclipse.sirius.diagram.ui.business.internal.command.RefreshDiagramOnOpeningCommand refreshOnOpening;
+				refreshOnOpening = new org.eclipse.sirius.diagram.ui.business.internal.command.RefreshDiagramOnOpeningCommand(ed, diagram);
+				
+				compoundCommand.append(refreshOnOpening);
+				compoundCommand.setLabel(refreshOnOpening.getLabel());
+
 				CanonicalSynchronizer cs = CanonicalSynchronizerFactory.INSTANCE.createCanonicalSynchronizer(gmfDiagram);
 				SynchronizeGMFModelCommand refreshDSemanticDiagram = new SynchronizeGMFModelCommand(ed, cs);
 				compoundCommand.append(refreshDSemanticDiagram);

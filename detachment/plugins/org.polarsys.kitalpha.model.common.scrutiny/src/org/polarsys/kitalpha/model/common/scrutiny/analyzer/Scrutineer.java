@@ -11,13 +11,10 @@
 package org.polarsys.kitalpha.model.common.scrutiny.analyzer;
 
 import java.util.Collection;
-import java.util.Set;
 
 import org.apache.log4j.Logger;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.polarsys.kitalpha.model.common.scrutiny.Messages;
 import org.polarsys.kitalpha.model.common.scrutiny.registry.ModelScrutinyRegistry;
-import org.polarsys.kitalpha.model.common.scrutiny.registry.ModelScrutinyRegistry.RegistryElement;
 import org.polarsys.kitalpha.model.common.scrutiny.visitor.ScrutinizeVisitor;
 
 /**
