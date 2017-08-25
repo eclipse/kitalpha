@@ -10,9 +10,10 @@ Contributors:
   Thales Global Services S.A.S - initial API and implementation
 -->
 <feature
-      id="org.polarsys.kitalpha.doc.feature"
-      label="Feature"
-      version="1.2.0.qualifier">
+      id="org.polarsys.kitalpha.richtext.widget.doc.feature"
+      label="%featureName"
+      version="1.2.0.qualifier"
+      provider-name="%providerName">
 
    <description>
       %description
@@ -26,18 +27,11 @@ Contributors:
       %license
    </license>
 
-   <includes
-         id="org.polarsys.kitalpha.emde.doc.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="org.polarsys.kitalpha.richtext.widget.doc.feature"
-         version="0.0.0"/>
-
    <plugin
-         id="org.polarsys.kitalpha.doc"
+         id="org.polarsys.kitalpha.richtext.widget.doc"
          download-size="0"
          install-size="0"
-         version="0.0.0"/>
+         version="0.0.0"
+         unpack="false"/>
 
 </feature>

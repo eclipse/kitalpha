@@ -91,3 +91,13 @@ blockquote {
   	padding: 0.5em 10px;
   	quotes: "\201C""\201D""\2018""\2019";
 }
+
+pre {
+	background: #EEEEFF;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #AAAAFF;
+	FONT-FAMILY: Courier New;
+	FONT-SIZE: 13px;
+	COLOR: #394F48;
+}
