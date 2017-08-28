@@ -48,14 +48,19 @@ public class ProjectSelectionListener implements ISelectionListener {
 			IResource res = (IResource) firstElement;
 			IProject project = res.getProject();
 			projectSelected(project);
+			return ;
 		}
 		if (firstElement instanceof IAdaptable) {
 			IAdaptable adaptable = (IAdaptable) firstElement;
 			IResource res = (IResource) adaptable.getAdapter(IResource.class);
-			if (res == null)
+			if (res != null) {
+				IProject project = res.getProject();
+				projectSelected(project);
 				return;
-			IProject project = res.getProject();
-			projectSelected(project);
+			}
+			EObject obj = (EObject) adaptable.getAdapter(EObject.class);
+			if (obj != null) 
+				firstElement = obj;
 		}
 		if (firstElement instanceof EObject) {
 			EObject eobj = (EObject) firstElement;
