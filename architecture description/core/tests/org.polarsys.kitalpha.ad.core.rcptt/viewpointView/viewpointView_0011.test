@@ -1,0 +1,149 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _fRyjcL3oEea1WotcWpS-kw,_hjYLkL3oEea1WotcWpS-kw
+Element-Name: viewpointView_0011
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _kq2msI4ZEee9n44XJE3dRQ
+Runtime-Version: 2.1.0.201606221726
+Save-Time: 8/31/17 9:02 AM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+with [get-view "Model Explorer" | get-tree] {
+    select "b/b.aird" | double-click
+    select "b/b.aird/b.componentsample - [platform:\\/resource\\/b\\/b.componentsample]/b"
+}
+get-view "Viewpoint Manager" | get-label "Project b" | get-property caption | equals "Project b" | verify-true
+get-view "Viewpoint Manager" | get-table | select "Component Sample" | get-menu "Show view/Component Sample" | click
+
+get-view "Model Explorer" | get-tree 
+    | select "b/b.aird"
+
+with [get-view "Component Sample"] {
+    get-tab-folder | get-tab-item "Business rules" | click
+    get-button "Reference an existing rule" | click
+}
+with [get-view "Component Sample" | get-table] {
+    get-property itemCount | equals 6 | verify-true
+//    get-item "org.polarsys.kitalpha.vp.componentsample.rule" | get-property index | equals 5 | verify-true
+    get-item "org.polarsys.kitalpha.vp.componentsample.rule" | get-property "values['Implementation']" | equals "" 
+        | verify-true
+    get-item "org.polarsys.kitalpha.vp.componentsample.rule" | get-property "values['Description']" | equals "" 
+        | verify-true
+    get-item "org.polarsys.kitalpha.vp.componentsample.rule" | get-property "values['Type']" | equals "-1" | verify-true
+    get-item "org.polarsys.kitalpha.vp.componentsample.rule" | get-property "values['Id']" 
+        | equals "org.polarsys.kitalpha.vp.componentsample.rule" | verify-true
+}
+get-view "Component Sample" | get-table | get-item "org.polarsys.kitalpha.vp.componentsample.rule" 
+    | get-property "image.path" | equals "org.polarsys.kitalpha.ad.viewpoint.ui/icons/empty.gif" | verify-true
+with [get-view "Component Sample" | get-table] {
+    select "org.polarsys.kitalpha.vp.componentsample.rule" | activate-cell-edit
+    get-combo | select "ComponentSampleFramework.RuleOne"
+    apply-cell-edit -deactivate
+}
+with [get-view "Component Sample" | get-table] {
+    get-property itemCount | equals 5 | verify-true
+    get-item "ComponentSampleFramework.RuleOne" | get-property "image.path" 
+        | equals "org.polarsys.kitalpha.ad.viewpoint.ui/icons/overriding.gif" | verify-true
+    get-item "ComponentSampleFramework.RuleOne" | get-property "values['Implementation']" | equals "" | verify-true
+    get-item "ComponentSampleFramework.RuleOne" | get-property "values['Description']" | equals "" | verify-true
+    get-item "ComponentSampleFramework.RuleOne" | get-property "values['Type']" | equals "-1" | verify-true
+    get-item "ComponentSampleFramework.RuleOne" | get-property "values['Id']" 
+        | equals "ComponentSampleFramework.RuleOne" | verify-true
+}
+with [get-view "Component Sample" | get-button Delete] {
+    get-property enablement | equals true | verify-true
+    get-property tooltip | equals Delete | verify-true
+}
+get-view "Component Sample" | get-button Delete | click
+get-view "Component Sample" | get-table | get-item "ComponentSampleFramework.RuleOne" | get-property "image.path" 
+    | equals "org.polarsys.kitalpha.ad.viewpoint.ui/icons/parent.gif" | verify-true
+with [get-view "Component Sample"] {
+    get-tab-folder | get-tab-item Configuration | click
+    get-button "Add a new property" | click
+    with [get-table] {
+        select "org.polarsys.kitalpha.vp.componentsample.property" | activate-cell-edit -column 2
+        with [get-editbox] {
+            set-text a
+            key-type Enter
+        }
+        apply-cell-edit -deactivate
+    }
+}
+get-view "Model Explorer" | get-tree | select "org.polarsys.kitalpha.viewpoint.myviewpointproject1"
+with [get-view "Component Sample"] {
+    get-button "Add a new property" | click
+    with [get-table] {
+        select "org.polarsys.kitalpha.vp.componentsample.property" | activate-cell-edit -column 2
+        with [get-editbox] {
+            set-text b
+            key-type Enter
+        }
+        apply-cell-edit -deactivate
+    }
+}
+get-view "Model Explorer" | get-tree | select "org.polarsys.kitalpha.viewpoint.myviewpointproject2"
+get-view "Component Sample" | get-table | get-property itemCount | equals 1 | verify-true
+get-view "Model Explorer" | get-tree 
+    | select "b/b.aird/b.componentsample - [platform:\\/resource\\/b\\/b.componentsample]/b"
+with [get-view "Component Sample" | get-table] {
+    get-property itemCount | equals 2 | verify-true
+    get-item "org.polarsys.kitalpha.vp.componentsample.property" | get-property "values['Value']" | equals a 
+        | verify-true
+    get-item "org.polarsys.kitalpha.vp.componentsample.property" | get-property "values['Name']" 
+        | equals "org.polarsys.kitalpha.vp.componentsample.property" | verify-true
+}
+get-view "Model Explorer" | get-tree | select "org.polarsys.kitalpha.viewpoint.myviewpointproject1"
+with [get-view "Component Sample" | get-table] {
+    get-item "org.polarsys.kitalpha.vp.componentsample.property" | get-property "values['Value']" | equals b 
+        | verify-true
+    get-item "org.polarsys.kitalpha.vp.componentsample.property" | get-property "values['Name']" 
+        | equals "org.polarsys.kitalpha.vp.componentsample.property" | verify-true
+}
+get-view "Model Explorer" | get-tree 
+    | select "b/b.aird/b.componentsample - [platform:\\/resource\\/b\\/b.componentsample]/b" 
+    | get-menu "New Representation/new ComponentSampleDiagram" | click
+get-window "New ComponentSampleDiagram" | get-button OK | click
+with [get-editor "new ComponentSampleDiagram" | get-diagram -index 1 | get-edit-part 
+    -name "new ComponentSampleDiagram"] {
+    mouse-move 314 233 button1 -height 537 -width 1247
+    mouse-press 314 233 button1 -height 537 -width 1247
+    mouse-release 314 233 button1 524288 -height 537 -width 1247
+    mouse-hover 314 233 -height 537 -width 1247
+    mouse-move 306 230 -height 537 -width 1247
+    mouse-hover 306 230 -height 537 -width 1247
+    mouse-move 5 82 -height 537 -width 1247
+}
+with [get-view "Component Sample" | get-table] {
+    get-item "org.polarsys.kitalpha.vp.componentsample.property" | get-property "values['Value']" | equals a 
+        | verify-true
+    get-item "org.polarsys.kitalpha.vp.componentsample.property" | get-property "values['Name']" 
+        | equals "org.polarsys.kitalpha.vp.componentsample.property" | verify-true
+}
+get-view "Model Explorer" | get-tree | select "org.polarsys.kitalpha.viewpoint.myviewpointproject1"
+with [get-view "Component Sample" | get-table] {
+    get-item "org.polarsys.kitalpha.vp.componentsample.property" | get-property "values['Value']" | equals b 
+        | verify-true
+    get-item "org.polarsys.kitalpha.vp.componentsample.property" | get-property "values['Name']" 
+        | equals "org.polarsys.kitalpha.vp.componentsample.property" | verify-true
+}
+with [get-editor "new ComponentSampleDiagram" | get-diagram -index 1 | get-edit-part 
+    -name "new ComponentSampleDiagram"] {
+    mouse-move 343 203 button1 -height 537 -width 1247
+    mouse-press 343 203 button1 -height 537 -width 1247
+    mouse-release 343 203 button1 524288 -height 537 -width 1247
+    mouse-hover 343 203 -height 537 -width 1247
+    mouse-move 30 105 -height 537 -width 1247
+}
+with [get-view "Component Sample" | get-table] {
+    get-item "org.polarsys.kitalpha.vp.componentsample.property" | get-property "values['Value']" | equals a 
+        | verify-true
+    get-item "org.polarsys.kitalpha.vp.componentsample.property" | get-property "values['Name']" 
+        | equals "org.polarsys.kitalpha.vp.componentsample.property" | verify-true
+}
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--
