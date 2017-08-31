@@ -35,6 +35,10 @@ Contributors:
          id="org.polarsys.kitalpha.richtext.widget.doc.feature"
          version="0.0.0"/>
 
+   <includes
+         id="org.polarsys.kitalpha.ad.doc.feature"
+         version="0.0.0"/>
+
    <plugin
          id="org.polarsys.kitalpha.doc"
          download-size="0"

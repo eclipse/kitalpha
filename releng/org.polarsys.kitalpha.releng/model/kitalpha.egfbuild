@@ -189,6 +189,8 @@
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_a9jzcIvTEeePDfBS51T8BQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="emde/doc/plugins"/>
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_tPC4sIvREeePDfBS51T8BQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="richtext/doc/features"/>
       <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_wfqU4IvREeePDfBS51T8BQ" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="richtext/doc/plugins"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_fISGcI5PEeeVRqnUr6hwug" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/doc/features"/>
+      <buildLocations xsi:type="buildscm:GITBuildLocation" xmi:id="_1_BNoI5PEeeVRqnUr6hwug" gitLocation="_L0O-wPx8EeO7zY3f-pIrjg" folderName="architecture description/doc/plugins"/>
       <buildLocations xsi:type="buildstep:TargetPlatformBuildLocation" xmi:id="_lVrz8IvKEeePDfBS51T8BQ" path="${publish}/TP"/>
       <components xsi:type="buildstep:Feature" xmi:id="_r4kSIIvKEeePDfBS51T8BQ" id="org.polarsys.kitalpha.doc.feature"/>
     </steps>

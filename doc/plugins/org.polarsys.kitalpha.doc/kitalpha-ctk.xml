@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<toc label="Kitalpha - Core Technology Kit" topic="html/common/kitalpha.html">
+<toc label="Kitalpha - Core Technology Kit Guide" topic="html/common/kitalpha.html">
  	<topic href="html/ctk/overview.html" label="Overview">
    </topic>
    <anchor id="KitalphaComponent"/>
