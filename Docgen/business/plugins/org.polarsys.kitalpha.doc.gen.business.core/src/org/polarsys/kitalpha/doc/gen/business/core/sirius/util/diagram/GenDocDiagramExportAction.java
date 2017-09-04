@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2007, 2009 THALES GLOBAL SERVICES.
+ * Copyright (c) 2007, 2017 THALES GLOBAL SERVICES.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -11,6 +11,8 @@
 
 package org.polarsys.kitalpha.doc.gen.business.core.sirius.util.diagram;
 
+import java.io.File;
+import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -19,16 +21,23 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.SubProgressMonitor;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditDomain;
+import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.jface.dialogs.MessageDialog;
-import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Shell;
-
+import org.eclipse.sirius.business.api.session.CustomDataConstants;
+import org.eclipse.sirius.business.api.session.Session;
+import org.eclipse.sirius.common.tools.api.resource.ImageFileFormat ;
 import org.eclipse.sirius.common.tools.api.util.EclipseUtil;
 import org.eclipse.sirius.common.tools.api.util.FileUtil;
-import org.eclipse.sirius.viewpoint.DRepresentation;
-import org.eclipse.sirius.viewpoint.SiriusPlugin;
-import org.eclipse.sirius.business.api.session.Session;
+import org.eclipse.sirius.diagram.business.api.refresh.CanonicalSynchronizer;
+import org.eclipse.sirius.diagram.business.api.refresh.CanonicalSynchronizerFactory;
+import org.eclipse.sirius.diagram.ui.provider.Messages;
+import org.eclipse.sirius.diagram.ui.tools.internal.decoration.SiriusDecoratorProvider;
 import org.eclipse.sirius.ui.business.api.dialect.DialectUIManager;
 import org.eclipse.sirius.ui.business.api.dialect.ExportFormat;
 import org.eclipse.sirius.ui.business.api.dialect.ExportFormat.ExportDocumentFormat;
@@ -38,8 +47,12 @@ import org.eclipse.sirius.ui.tools.api.actions.export.IAroundExport;
 import org.eclipse.sirius.ui.tools.api.actions.export.IBeforeExport;
 import org.eclipse.sirius.ui.tools.api.actions.export.IExportRepresentationsAsImagesExtension;
 import org.eclipse.sirius.ui.tools.api.actions.export.SizeTooLargeException;
-import org.eclipse.sirius.common.tools.api.resource.ImageFileFormat ;
-import org.eclipse.core.runtime.Status;
+import org.eclipse.sirius.viewpoint.DRepresentation;
+import org.eclipse.sirius.viewpoint.SiriusPlugin;
+import org.eclipse.swt.SWTException;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+import org.polarsys.kitalpha.doc.gen.business.core.internal.GenDocDiagramEditPartService;
 
 /**
  * Reworked code from {@link ExportAction}. 
@@ -128,7 +141,7 @@ public class GenDocDiagramExportAction extends ExportAction {
                     }
                     if (DialectUIManager.INSTANCE.canHandle(representation)) {
                         try {
-                            DialectUIManager.INSTANCE.export(representation, session, filePath, exportFormat, new SubProgressMonitor(monitor, 7));
+                        	export(representation, session, filePath, exportFormat, new SubProgressMonitor(monitor, 7));
                         } catch (CoreException exception) {
                             if (exception instanceof SizeTooLargeException) {
                                 errorDuringExport = true;
@@ -172,8 +185,113 @@ public class GenDocDiagramExportAction extends ExportAction {
             iAfterExport.afterExportAction();
         }
     }
+    
+    /*
+     * Reworked from DiagramDialectUIServices
+     */
+    private void export(DRepresentation representation, Session session, IPath path, ExportFormat format, IProgressMonitor monitor) throws SizeTooLargeException {
+    	final boolean exportToHtml = format.getDocumentFormat().equals(ExportDocumentFormat.HTML);
+        final String imageFileExtension = format.getImageFormat().getName();
+        final IPath correctPath = getRealPath(path, exportToHtml);
 
-    private IPath getFilePath(final IPath destinationFolder, final String providedFilename, final String extension) {
+        final Shell shell = new Shell();
+        try {
+
+            final Collection<EObject> data = session.getServices().getCustomData(CustomDataConstants.GMF_DIAGRAMS, representation);
+            for (final EObject dataElement : data) {
+                if (dataElement instanceof Diagram) {
+                    final Diagram diagram = (Diagram) dataElement;
+                    CanonicalSynchronizer canonicalSynchronizer = CanonicalSynchronizerFactory.INSTANCE.createCanonicalSynchronizer(diagram);
+                    canonicalSynchronizer.storeViewsToArrange(false);
+                    canonicalSynchronizer.synchronize();
+
+                    final GenDocDiagramEditPartService tool = new GenDocDiagramEditPartService();
+                    tool.setAutoScalingEnabled(false);
+                    
+                    
+                    if (exportToHtml) {
+                        tool.exportToHtml();
+                    }
+
+                    boolean isActivateSiriusDecorationPrevious = SiriusDecoratorProvider.isActivateSiriusDecoration();
+                    SiriusDecoratorProvider.setActivateSiriusDecoration(true);
+                    
+                    final DiagramEditPart diagramEditPart = tool.createDiagramEditPart(diagram, shell, PreferencesHint.USE_DEFAULTS);
+                    org.eclipse.gmf.runtime.diagram.ui.image.ImageFileFormat resolveImageFormat = org.eclipse.gmf.runtime.diagram.ui.image.ImageFileFormat.resolveImageFormat(imageFileExtension);
+                    
+                    //TODO use this option to use Sirius auto scalling of exporting
+                    //diagram. This option affects clickable zones
+                    //boolean autoScalling = tool.isTooBig(diagramEditPart, resolveImageFormat);
+                    tool.setAutoScalingEnabled(false);
+                    
+                    try {
+
+                        /* refresh to avoid blank images */
+                        diagramEditPart.getRoot().refresh();
+
+                        /* validate to have all nodes in the right position */
+                        diagramEditPart.getFigure().validate();
+                        /*
+                         * In the case of connection on EditParts created during first Refresh they will not appear
+                         * until we refresh a second time Example of such cases are exchanges on DFI (mch)
+                         */
+                        diagramEditPart.getRoot().refresh();
+                        /*
+                         * flush the viewer to have all connections and ports
+                         */
+                        diagramEditPart.getRoot().getViewer().flush();
+
+                        /* do the effective export */
+						tool.copyToImage(diagramEditPart, correctPath, resolveImageFormat, monitor);
+
+                        // We finally ensure that the image has been created
+                        if (!new File(correctPath.toOSString()).exists()) {
+                            throw new CoreException(new Status(IStatus.ERROR, SiriusPlugin.ID, MessageFormat.format(Messages.DiagramDialectUIServices_exportedDiagramImageCreationError, correctPath)));
+                        }
+                    } catch (final CoreException exception) {
+                        if (exception instanceof SizeTooLargeException) {
+                            throw (SizeTooLargeException) exception;
+                        } else if (exception.getStatus() != null && exception.getStatus().getException() instanceof SWTException) {
+                            /* Case that can occurs on Windows. */
+                            throw new SizeTooLargeException(new Status(IStatus.ERROR, SiriusPlugin.ID, representation.getName()));
+                        }
+                        SiriusPlugin.getDefault().error(MessageFormat.format(Messages.DiagramDialectUIServices_exportedDiagramImageCreationError, correctPath), exception);
+                    } catch (final ArrayIndexOutOfBoundsException e) {
+                        throw new SizeTooLargeException(new Status(IStatus.ERROR, SiriusPlugin.ID, representation.getName()));
+                    } finally {
+                        SiriusDecoratorProvider.setActivateSiriusDecoration(isActivateSiriusDecorationPrevious);
+
+                        diagramEditPart.deactivate();
+                        // Memory leak : also disposing the
+                        // DiagramGraphicalViewer associated to this
+                        // DiagramEditPart
+                        diagramEditPart.getViewer().flush();
+                        diagramEditPart.getViewer().getEditDomain().getCommandStack().flush();
+                        diagramEditPart.getViewer().getControl().dispose();
+                        ((DiagramEditDomain) diagramEditPart.getViewer().getEditDomain()).removeViewer(diagramEditPart.getViewer());
+                    }
+                }
+            }
+
+        } finally {
+        	Display.getCurrent().asyncExec(new Runnable() {
+                @Override
+                public void run() {
+                    shell.dispose();
+                }
+            });
+        }
+	}
+    
+    private IPath getRealPath(final IPath path, final boolean exportToHtml) {
+        if (exportToHtml) {
+            return path.removeFileExtension().addFileExtension("html"); //$NON-NLS-1$
+        } else {
+            return path;
+        }
+    }
+
+	private IPath getFilePath(final IPath destinationFolder, final String providedFilename, final String extension) {
 
         String filename = null;
 
@@ -200,6 +318,4 @@ public class GenDocDiagramExportAction extends ExportAction {
             return util.getValidFilename();
         }
     }
-
-
 }
