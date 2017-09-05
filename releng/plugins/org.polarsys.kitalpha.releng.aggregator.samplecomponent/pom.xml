@@ -79,6 +79,7 @@
     <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafetypattern.activity.explorer</module>
     <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.rules.computation</module>
     <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.rules.analysis</module>
+    <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.ui</module>
     <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.af.componentsamplearchitectureframework</module>
     <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleperformance.vpdsl</module>
     <module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafetypattern.design</module>
