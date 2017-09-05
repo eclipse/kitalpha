@@ -89,6 +89,11 @@
     <module>../../../transposer/plugins/org.polarsys.kitalpha.transposer.transformation.emf.traces</module>
     <module>../../../architecture description/core/plugins/org.polarsys.kitalpha.ad.viewpoint.predicate</module>
     <module>../../../richtext/plugins/org.polarsys.kitalpha.richtext.widget</module>
+    <module>../../../richtext/plugins/org.polarsys.kitalpha.richtext.common</module>
+    <module>../../../richtext/plugins/org.polarsys.kitalpha.richtext.mde.tools</module>
+    <module>../../../richtext/plugins/org.polarsys.kitalpha.richtext.mde.tools.sirius</module>
+    <module>../../../richtext/plugins/org.polarsys.kitalpha.richtext.nebula.widget</module>
+    
     <!-- plugins org.polarsys.kitalpha.common.feature -->
     <module>../../../common/plugins/org.polarsys.kitalpha.common.ui</module>
     <module>../../../common/plugins/org.polarsys.kitalpha.examples.generic.wizard</module>
