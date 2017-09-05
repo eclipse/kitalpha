@@ -140,7 +140,8 @@ location EEF "http://download.eclipse.org/modeling/emft/eef/updates/milestones/1
 	org.eclipse.emf.eef.runtime-feature.feature.group lazy
 }
 
-location acceleo "http://download.eclipse.org/modeling/m2t/acceleo/updates/releases/3.4" {
+location acceleo "http://download.eclipse.org/acceleo/updates/releases/3.7/R201705121344/" {
+	// Old: http://download.eclipse.org/modeling/m2t/acceleo/updates/releases/3.4
 	org.eclipse.acceleo.sdk.feature.group lazy
 	org.eclipse.acceleo.doc lazy
 	org.eclipse.acceleo.examples lazy

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/mbarbero/fr.obeo.releng.targetplatform -->
-<target name="kitapha" sequenceNumber="1504623791">
+<target name="kitapha" sequenceNumber="1504626471">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.sdk.feature.group" version="0.0.0"/>
@@ -148,7 +148,7 @@
       <unit id="org.eclipse.acceleo.doc" version="0.0.0"/>
       <unit id="org.eclipse.acceleo.examples" version="0.0.0"/>
       <unit id="org.eclipse.acceleo.source.feature.group" version="0.0.0"/>
-      <repository id="acceleo" location="http://download.eclipse.org/modeling/m2t/acceleo/updates/releases/3.4"/>
+      <repository id="acceleo" location="http://download.eclipse.org/acceleo/updates/releases/3.7/R201705121344/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.sirius.doc.feature.feature.group" version="0.0.0"/>
