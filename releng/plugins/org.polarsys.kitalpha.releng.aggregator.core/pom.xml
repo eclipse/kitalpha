@@ -130,6 +130,7 @@
     <module>../../../detachment/plugins/org.polarsys.kitalpha.model.common.commands.contrib.resourcesChecker</module>
     <module>../../../detachment/plugins/org.polarsys.kitalpha.model.common.commands.contrib.unknownreferences</module>
     <module>../../../detachment/plugins/org.polarsys.kitalpha.model.common.commands.contrib.modelresources</module>
+    <module>../../../detachment/plugins/org.polarsys.kitalpha.model.common.contrib.unknownreference.metadata</module>
     <module>../../../detachment/plugins/org.polarsys.kitalpha.model.detachment.ui.contrib.unknownreferences</module>
     <module>../../../detachment/plugins/org.polarsys.kitalpha.model.detachment.ui.contrib.viewpoints</module>
     <module>../../../detachment/plugins/org.polarsys.kitalpha.model.common.ui.contrib.modelresource</module>
