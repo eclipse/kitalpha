@@ -81,7 +81,7 @@ public class <%=genPackage.getActionBarContributorClassName()%>
 						if (res != null)
 							LibraryHelper.add(currentResource.getResourceSet(), currentResource.getURI(), modelToLoad);
 					} catch (Exception e) {
-						ComponentSampleEditorPlugin.INSTANCE.log(e);
+						<%=genPackage.getImportedEditorPluginClassName()%>.INSTANCE.log(e);
 					}
 				}
 			}
