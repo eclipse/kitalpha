@@ -159,8 +159,6 @@ http://www.eclipse.org/legal/epl-v10.htm
       <feature id="org.polarsys.kitalpha.model.common.ui.menu.feature.source"/>
       <feature id="org.polarsys.kitalpha.richtext.widget.feature"/>
       <feature id="org.polarsys.kitalpha.richtext.widget.feature.source"/>
-      <feature id="org.polarsys.kitalpha.richtext.mde.tools.sirius.feature"/>
-      <feature id="org.polarsys.kitalpha.richtext.mde.tools.sirius.feature.source"/>
       <feature id="org.polarsys.kitalpha.emde.genchain.feature"/>
       <feature id="org.polarsys.kitalpha.emde.genchain.feature.source"/>
    </features>
