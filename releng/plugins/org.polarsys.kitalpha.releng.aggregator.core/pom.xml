@@ -139,6 +139,7 @@
     <!-- Feature  -->
     <module>../../../common/features/org.polarsys.kitalpha.common.feature</module>
     <module>../../../releng/features/org.polarsys.kitalpha.releng.runtime.core.feature</module>
+    <module>../../../richtext/features/org.polarsys.kitalpha.richtext.mde.tools.sirius.feature</module>
     <module>../../../richtext/features/org.polarsys.kitalpha.richtext.widget.feature</module>
     <module>../../../emde/features/org.polarsys.kitalpha.emde.genchain.feature</module>
     <module>../../../architecture description/core/features/org.polarsys.kitalpha.ad.feature</module>
