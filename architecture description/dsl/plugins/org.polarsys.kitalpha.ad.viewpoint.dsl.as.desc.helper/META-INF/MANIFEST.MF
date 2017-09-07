@@ -23,5 +23,6 @@ Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.acceleration,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.configuration,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.desc,
+ org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.desc.data,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.message,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.project

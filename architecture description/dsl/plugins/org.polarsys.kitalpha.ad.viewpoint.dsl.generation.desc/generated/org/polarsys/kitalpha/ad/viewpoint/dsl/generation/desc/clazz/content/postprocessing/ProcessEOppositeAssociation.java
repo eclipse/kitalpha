@@ -1,5 +1,5 @@
 //Generated with EGF 1.5.0.v20170706-0846
-package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.clazz.content;
+package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.clazz.content.postprocessing;
 
 import java.util.*;
 import org.eclipse.emf.ecore.*;
@@ -7,13 +7,15 @@ import org.eclipse.egf.model.pattern.*;
 import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 import org.eclipse.egf.common.helper.*;
-
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.util.EPackageHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.util.ECoreResourceManager;
 
-public class LocalClassAssociation
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.abstracts.AbstractAssociationPattern {
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.LocalClassAssociation;
 
-	public LocalClassAssociation() {
+public class ProcessEOppositeAssociation
+		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.common.AnyVPSpecElement {
+
+	public ProcessEOppositeAssociation() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
 	}
@@ -44,7 +46,7 @@ public class LocalClassAssociation
 	public String orchestration(PatternContext ctx) throws Exception {
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		Node.Container currentNode = ictx.getNode();
-		super.orchestration(new SuperOrchestrationContext(ictx));
+		method_process(new StringBuffer(), ictx);
 		ictx.setNode(currentNode);
 		if (ictx.useReporter()) {
 			Map<String, Object> parameterValues = new HashMap<String, Object>();
@@ -56,30 +58,41 @@ public class LocalClassAssociation
 		return null;
 	}
 
-	protected void method_setTargetEClass(final StringBuffer out, final PatternContext ctx) throws Exception {
-		/* Get the specified Target Class */
-		org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class vpsClazz = parameter.getLocalTarget();
+	protected void method_process(final StringBuffer out, final PatternContext ctx) throws Exception {
+		EPackageHelper helper = new EPackageHelper(ECoreResourceManager.INSTANCE.getEPackage());
 
-		targetEClass = null;
+		LocalClassAssociation opposite = parameter.getOpposite();
+		if (opposite != null) {
+			//
+			//Current reference
+			EObject eContainer = parameter.eContainer();
+			String vpClassName = ((org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class) eContainer).getName();
+			EReference eReference = helper.getEReference(vpClassName, parameter.getName());
 
-		/* Get the corresponding generated Target ECLass from the generated EPackage */
-		EPackage vpsPackage = ECoreResourceManager.INSTANCE.getEPackage();
-		for (EClassifier iEClassifier : vpsPackage.getEClassifiers()) {
-			if (iEClassifier.getName().equals(vpsClazz.getName())) {
-				targetEClass = (EClass) iEClassifier;
+			if (eReference == null) {
+				throw new RuntimeException(
+						"Could not find a reference (" + parameter.getName() + " to compute its eOpposite"); //$NON-NLS-1$
 			}
+
+			//eOppoiste reference
+			EObject oppositeVpClass = opposite.eContainer();
+			String oppositeReferenceName = opposite.getName();
+			String oppositeVpClassName = ((org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class) oppositeVpClass)
+					.getName();
+			EReference eOpposite = helper.getEReference(oppositeVpClassName, oppositeReferenceName);
+
+			if (eReference == null) {
+				throw new RuntimeException("Could not find eOpposite of reference: " + parameter.getName()); //$NON-NLS-1$
+			}
+
+			//Set references as eOpposite each other
+			eReference.setEOpposite(eOpposite);
+
+			eOpposite.setEOpposite(eReference);
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setTargetEClass", out.toString());
-	}
-
-	protected void method_setAbstractAssociationParameter(final StringBuffer out, final PatternContext ctx)
-			throws Exception {
-		abstractAssociation = parameter;
-
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setAbstractAssociationParameter", out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "process", out.toString());
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.LocalClassAssociation parameter;

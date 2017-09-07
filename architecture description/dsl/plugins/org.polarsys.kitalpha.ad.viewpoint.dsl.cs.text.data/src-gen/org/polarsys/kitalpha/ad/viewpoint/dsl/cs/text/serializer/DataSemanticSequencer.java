@@ -417,6 +417,7 @@ public class DataSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         cardinality=Cardinalities 
 	 *         LocalTarget=[Class|FQN] 
 	 *         (
+	 *             opposite=[LocalClassAssociation|FQN] | 
 	 *             changeable=EBoolean | 
 	 *             derived=EBoolean | 
 	 *             ordered=EBoolean | 

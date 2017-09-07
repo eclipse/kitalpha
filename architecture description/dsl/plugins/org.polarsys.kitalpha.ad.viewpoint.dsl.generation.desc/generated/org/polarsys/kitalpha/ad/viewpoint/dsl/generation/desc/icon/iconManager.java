@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated on Wed Jul 09 15:21:12 CEST 2014 with EGF 1.2.0.v20140702-0648
+//Generated with EGF 1.5.0.v20170706-0846
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.icon;
 
 import java.util.*;
@@ -55,8 +44,7 @@ public class iconManager {
 			}
 		}
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 	}
 
@@ -75,14 +63,12 @@ public class iconManager {
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
 
-	protected void method_setVpdslProject(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_setVpdslProject(final StringBuffer out, final PatternContext ctx) throws Exception {
 		URI uri = parameter.eResource().getURI();
 
 		if (uri == null)
@@ -90,63 +76,49 @@ public class iconManager {
 
 		String vpdslProjectName = uri.segment(1);
 
-		vpdslProject = ResourcesPlugin.getWorkspace().getRoot()
-				.getProject(vpdslProjectName);
+		vpdslProject = ResourcesPlugin.getWorkspace().getRoot().getProject(vpdslProjectName);
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setVpdslProject",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setVpdslProject", out.toString());
 	}
 
-	protected void method_setEditProject(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
-		GenmodelProviderImpl genmodelProvider = ViewpointResourceProviderRegistry
-				.getInstance().getGenmodelProvider();
+	protected void method_setEditProject(final StringBuffer out, final PatternContext ctx) throws Exception {
+		GenmodelProviderImpl genmodelProvider = ViewpointResourceProviderRegistry.getInstance().getGenmodelProvider();
 
 		if (genmodelProvider != null) {
 			String editProjectName = genmodelProvider.getEditPluginName();
-			editProject = ResourcesPlugin.getWorkspace().getRoot()
-					.getProject(editProjectName);
+			editProject = ResourcesPlugin.getWorkspace().getRoot().getProject(editProjectName);
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setEditProject",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setEditProject", out.toString());
 	}
 
-	protected void method_setIconName(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_setIconName(final StringBuffer out, final PatternContext ctx) throws Exception {
 		iconName = parameter.getIcon();
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setIconName",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setIconName", out.toString());
 	}
 
-	protected void method_CopyIconToEdit(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_CopyIconToEdit(final StringBuffer out, final PatternContext ctx) throws Exception {
 		if (editProject != null && editProject.exists()) {
 			WorkspaceModifyOperation wo = new WorkspaceModifyOperation() {
 				@Override
 				protected void execute(IProgressMonitor monitor)
-						throws CoreException, InvocationTargetException,
-						InterruptedException {
+						throws CoreException, InvocationTargetException, InterruptedException {
 
 					IFolder vpIconFolder = vpdslProject.getFolder("icons");
 
 					IFile vpIconFile = vpIconFolder.getFile(iconName);
 
 					if (vpIconFile.exists()) {
-						IFile editIconFile = editProject.getFile(editIconFolder
-								+ "/" + editIconName + ".gif");
+						IFile editIconFile = editProject.getFile(editIconFolder + "/" + editIconName + ".gif");
 
 						if (editIconFile.exists())
-							editIconFile.setContents(vpIconFile.getContents(),
-									IFile.REPLACE, null);
+							editIconFile.setContents(vpIconFile.getContents(), IFile.REPLACE, null);
 					} else {
-						ViewpointDslLogger
-								.doLogWarning("Unable to find the icon : "
-										+ iconName);
+						ViewpointDslLogger.doLogWarning("Unable to find the icon : " + iconName);
 					}
 				}
 			};
@@ -155,54 +127,46 @@ public class iconManager {
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "CopyIconToEdit",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "CopyIconToEdit", out.toString());
 	}
 
-	protected void method_setEditIconName(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_setEditIconName(final StringBuffer out, final PatternContext ctx) throws Exception {
 		/*
-		 The newIconName depends on the nature of the currentObject
+		The newIconName depends on the nature of the currentObject
 		 If currentObject is a Class then
-		 newIconName = Class.getName()
-		
+		 	newIconName = Class.getName()
+		 
 		 If currentObject is a AbstractAssociation then 
-		 "Create" + parentClass.getName() + "_" + AbstractFeature.getName() + "_" + (Local/ExternalTarget).getName() + ".gif";
+		 	 "Create" + parentClass.getName() + "_" + AbstractFeature.getName() + "_" + (Local/ExternalTarget).getName() + ".gif";
 		 */
 
 		editIconName = parameter.getName();
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setEditIconName",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setEditIconName", out.toString());
 	}
 
-	protected void method_setEditIconFolder(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_setEditIconFolder(final StringBuffer out, final PatternContext ctx) throws Exception {
 		editIconFolder = "icons/full/obj16";
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setEditIconFolder",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setEditIconFolder", out.toString());
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
-		return GenerateIconPrecondition.generateIcon()
-				&& parameter.getIcon() != null
+		return GenerateIconPrecondition.generateIcon() && parameter.getIcon() != null
 				&& parameter.getIcon().trim().length() > 0;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class parameter;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class parameter) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class parameter) {
 		this.parameter = parameter;
 	}
 
 	protected org.eclipse.core.resources.IProject vpdslProject;
 
-	public void set_vpdslProject(
-			org.eclipse.core.resources.IProject vpdslProject) {
+	public void set_vpdslProject(org.eclipse.core.resources.IProject vpdslProject) {
 		this.vpdslProject = vpdslProject;
 	}
 

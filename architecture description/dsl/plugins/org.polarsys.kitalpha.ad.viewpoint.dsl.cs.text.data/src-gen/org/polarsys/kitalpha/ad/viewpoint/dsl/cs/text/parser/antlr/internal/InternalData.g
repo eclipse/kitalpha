@@ -1178,24 +1178,21 @@ ruleLocalClassAssociation returns [EObject current=null]
 					{ 
 	 				  getUnorderedGroupHelper().select(grammarAccess.getLocalClassAssociationAccess().getUnorderedGroup_6(), 0);
 	 				}
-					({true}?=>(	otherlv_9='changeable:' 
+					({true}?=>(	otherlv_9='opposite:' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getLocalClassAssociationAccess().getChangeableKeyword_6_0_0());
+    	newLeafNode(otherlv_9, grammarAccess.getLocalClassAssociationAccess().getOppositeKeyword_6_0_0());
     }
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getLocalClassAssociationAccess().getChangeableEBooleanParserRuleCall_6_0_1_0()); 
-	    }
-		lv_changeable_10_0=ruleEBoolean		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getLocalClassAssociationRule());
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getLocalClassAssociationRule());
 	        }
-       		set(
-       			$current, 
-       			"changeable",
-        		lv_changeable_10_0, 
-        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getLocalClassAssociationAccess().getOppositeLocalClassAssociationCrossReference_6_0_1_0()); 
+	    }
+		ruleFQN		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1212,23 +1209,23 @@ ruleLocalClassAssociation returns [EObject current=null]
 					{ 
 	 				  getUnorderedGroupHelper().select(grammarAccess.getLocalClassAssociationAccess().getUnorderedGroup_6(), 1);
 	 				}
-					({true}?=>(	otherlv_11='derived:' 
+					({true}?=>(	otherlv_11='changeable:' 
     {
-    	newLeafNode(otherlv_11, grammarAccess.getLocalClassAssociationAccess().getDerivedKeyword_6_1_0());
+    	newLeafNode(otherlv_11, grammarAccess.getLocalClassAssociationAccess().getChangeableKeyword_6_1_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getLocalClassAssociationAccess().getDerivedEBooleanParserRuleCall_6_1_1_0()); 
+	        newCompositeNode(grammarAccess.getLocalClassAssociationAccess().getChangeableEBooleanParserRuleCall_6_1_1_0()); 
 	    }
-		lv_derived_12_0=ruleEBoolean		{
+		lv_changeable_12_0=ruleEBoolean		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getLocalClassAssociationRule());
 	        }
        		set(
        			$current, 
-       			"derived",
-        		lv_derived_12_0, 
+       			"changeable",
+        		lv_changeable_12_0, 
         		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -1246,23 +1243,23 @@ ruleLocalClassAssociation returns [EObject current=null]
 					{ 
 	 				  getUnorderedGroupHelper().select(grammarAccess.getLocalClassAssociationAccess().getUnorderedGroup_6(), 2);
 	 				}
-					({true}?=>(	otherlv_13='ordered:' 
+					({true}?=>(	otherlv_13='derived:' 
     {
-    	newLeafNode(otherlv_13, grammarAccess.getLocalClassAssociationAccess().getOrderedKeyword_6_2_0());
+    	newLeafNode(otherlv_13, grammarAccess.getLocalClassAssociationAccess().getDerivedKeyword_6_2_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getLocalClassAssociationAccess().getOrderedEBooleanParserRuleCall_6_2_1_0()); 
+	        newCompositeNode(grammarAccess.getLocalClassAssociationAccess().getDerivedEBooleanParserRuleCall_6_2_1_0()); 
 	    }
-		lv_ordered_14_0=ruleEBoolean		{
+		lv_derived_14_0=ruleEBoolean		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getLocalClassAssociationRule());
 	        }
        		set(
        			$current, 
-       			"ordered",
-        		lv_ordered_14_0, 
+       			"derived",
+        		lv_derived_14_0, 
         		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -1280,23 +1277,23 @@ ruleLocalClassAssociation returns [EObject current=null]
 					{ 
 	 				  getUnorderedGroupHelper().select(grammarAccess.getLocalClassAssociationAccess().getUnorderedGroup_6(), 3);
 	 				}
-					({true}?=>(	otherlv_15='transient:' 
+					({true}?=>(	otherlv_15='ordered:' 
     {
-    	newLeafNode(otherlv_15, grammarAccess.getLocalClassAssociationAccess().getTransientKeyword_6_3_0());
+    	newLeafNode(otherlv_15, grammarAccess.getLocalClassAssociationAccess().getOrderedKeyword_6_3_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getLocalClassAssociationAccess().getTransientEBooleanParserRuleCall_6_3_1_0()); 
+	        newCompositeNode(grammarAccess.getLocalClassAssociationAccess().getOrderedEBooleanParserRuleCall_6_3_1_0()); 
 	    }
-		lv_transient_16_0=ruleEBoolean		{
+		lv_ordered_16_0=ruleEBoolean		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getLocalClassAssociationRule());
 	        }
        		set(
        			$current, 
-       			"transient",
-        		lv_transient_16_0, 
+       			"ordered",
+        		lv_ordered_16_0, 
         		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -1314,23 +1311,23 @@ ruleLocalClassAssociation returns [EObject current=null]
 					{ 
 	 				  getUnorderedGroupHelper().select(grammarAccess.getLocalClassAssociationAccess().getUnorderedGroup_6(), 4);
 	 				}
-					({true}?=>(	otherlv_17='unique:' 
+					({true}?=>(	otherlv_17='transient:' 
     {
-    	newLeafNode(otherlv_17, grammarAccess.getLocalClassAssociationAccess().getUniqueKeyword_6_4_0());
+    	newLeafNode(otherlv_17, grammarAccess.getLocalClassAssociationAccess().getTransientKeyword_6_4_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getLocalClassAssociationAccess().getUniqueEBooleanParserRuleCall_6_4_1_0()); 
+	        newCompositeNode(grammarAccess.getLocalClassAssociationAccess().getTransientEBooleanParserRuleCall_6_4_1_0()); 
 	    }
-		lv_unique_18_0=ruleEBoolean		{
+		lv_transient_18_0=ruleEBoolean		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getLocalClassAssociationRule());
 	        }
        		set(
        			$current, 
-       			"unique",
-        		lv_unique_18_0, 
+       			"transient",
+        		lv_transient_18_0, 
         		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -1348,23 +1345,23 @@ ruleLocalClassAssociation returns [EObject current=null]
 					{ 
 	 				  getUnorderedGroupHelper().select(grammarAccess.getLocalClassAssociationAccess().getUnorderedGroup_6(), 5);
 	 				}
-					({true}?=>(	otherlv_19='unsettable:' 
+					({true}?=>(	otherlv_19='unique:' 
     {
-    	newLeafNode(otherlv_19, grammarAccess.getLocalClassAssociationAccess().getUnsettableKeyword_6_5_0());
+    	newLeafNode(otherlv_19, grammarAccess.getLocalClassAssociationAccess().getUniqueKeyword_6_5_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getLocalClassAssociationAccess().getUnsettableEBooleanParserRuleCall_6_5_1_0()); 
+	        newCompositeNode(grammarAccess.getLocalClassAssociationAccess().getUniqueEBooleanParserRuleCall_6_5_1_0()); 
 	    }
-		lv_unsettable_20_0=ruleEBoolean		{
+		lv_unique_20_0=ruleEBoolean		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getLocalClassAssociationRule());
 	        }
        		set(
        			$current, 
-       			"unsettable",
-        		lv_unsettable_20_0, 
+       			"unique",
+        		lv_unique_20_0, 
         		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -1382,23 +1379,57 @@ ruleLocalClassAssociation returns [EObject current=null]
 					{ 
 	 				  getUnorderedGroupHelper().select(grammarAccess.getLocalClassAssociationAccess().getUnorderedGroup_6(), 6);
 	 				}
-					({true}?=>(	otherlv_21='volatile:' 
+					({true}?=>(	otherlv_21='unsettable:' 
     {
-    	newLeafNode(otherlv_21, grammarAccess.getLocalClassAssociationAccess().getVolatileKeyword_6_6_0());
+    	newLeafNode(otherlv_21, grammarAccess.getLocalClassAssociationAccess().getUnsettableKeyword_6_6_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getLocalClassAssociationAccess().getVolatileEBooleanParserRuleCall_6_6_1_0()); 
+	        newCompositeNode(grammarAccess.getLocalClassAssociationAccess().getUnsettableEBooleanParserRuleCall_6_6_1_0()); 
 	    }
-		lv_volatile_22_0=ruleEBoolean		{
+		lv_unsettable_22_0=ruleEBoolean		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getLocalClassAssociationRule());
+	        }
+       		set(
+       			$current, 
+       			"unsettable",
+        		lv_unsettable_22_0, 
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)))
+					{ 
+	 				  getUnorderedGroupHelper().returnFromSelection(grammarAccess.getLocalClassAssociationAccess().getUnorderedGroup_6());
+	 				}
+ 				)
+			)  |
+
+			( 
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getLocalClassAssociationAccess().getUnorderedGroup_6(), 7)}?=>(
+					{ 
+	 				  getUnorderedGroupHelper().select(grammarAccess.getLocalClassAssociationAccess().getUnorderedGroup_6(), 7);
+	 				}
+					({true}?=>(	otherlv_23='volatile:' 
+    {
+    	newLeafNode(otherlv_23, grammarAccess.getLocalClassAssociationAccess().getVolatileKeyword_6_7_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getLocalClassAssociationAccess().getVolatileEBooleanParserRuleCall_6_7_1_0()); 
+	    }
+		lv_volatile_24_0=ruleEBoolean		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getLocalClassAssociationRule());
 	        }
        		set(
        			$current, 
        			"volatile",
-        		lv_volatile_22_0, 
+        		lv_volatile_24_0, 
         		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EBoolean");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -1423,14 +1454,14 @@ ruleLocalClassAssociation returns [EObject current=null]
 		{ 
 	        newCompositeNode(grammarAccess.getLocalClassAssociationAccess().getOwned_annotationsAnnotationParserRuleCall_7_0()); 
 	    }
-		lv_owned_annotations_23_0=ruleAnnotation		{
+		lv_owned_annotations_25_0=ruleAnnotation		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getLocalClassAssociationRule());
 	        }
        		add(
        			$current, 
        			"owned_annotations",
-        		lv_owned_annotations_23_0, 
+        		lv_owned_annotations_25_0, 
         		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Data.Annotation");
 	        afterParserOrEnumRuleCall();
 	    }

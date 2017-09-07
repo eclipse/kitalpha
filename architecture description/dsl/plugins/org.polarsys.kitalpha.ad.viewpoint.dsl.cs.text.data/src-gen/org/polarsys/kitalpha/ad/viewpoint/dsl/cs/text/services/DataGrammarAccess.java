@@ -657,49 +657,55 @@ public class DataGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cLocalTargetClassFQNParserRuleCall_5_0_1 = (RuleCall)cLocalTargetClassCrossReference_5_0.eContents().get(1);
 		private final UnorderedGroup cUnorderedGroup_6 = (UnorderedGroup)cGroup.eContents().get(6);
 		private final Group cGroup_6_0 = (Group)cUnorderedGroup_6.eContents().get(0);
-		private final Keyword cChangeableKeyword_6_0_0 = (Keyword)cGroup_6_0.eContents().get(0);
-		private final Assignment cChangeableAssignment_6_0_1 = (Assignment)cGroup_6_0.eContents().get(1);
-		private final RuleCall cChangeableEBooleanParserRuleCall_6_0_1_0 = (RuleCall)cChangeableAssignment_6_0_1.eContents().get(0);
+		private final Keyword cOppositeKeyword_6_0_0 = (Keyword)cGroup_6_0.eContents().get(0);
+		private final Assignment cOppositeAssignment_6_0_1 = (Assignment)cGroup_6_0.eContents().get(1);
+		private final CrossReference cOppositeLocalClassAssociationCrossReference_6_0_1_0 = (CrossReference)cOppositeAssignment_6_0_1.eContents().get(0);
+		private final RuleCall cOppositeLocalClassAssociationFQNParserRuleCall_6_0_1_0_1 = (RuleCall)cOppositeLocalClassAssociationCrossReference_6_0_1_0.eContents().get(1);
 		private final Group cGroup_6_1 = (Group)cUnorderedGroup_6.eContents().get(1);
-		private final Keyword cDerivedKeyword_6_1_0 = (Keyword)cGroup_6_1.eContents().get(0);
-		private final Assignment cDerivedAssignment_6_1_1 = (Assignment)cGroup_6_1.eContents().get(1);
-		private final RuleCall cDerivedEBooleanParserRuleCall_6_1_1_0 = (RuleCall)cDerivedAssignment_6_1_1.eContents().get(0);
+		private final Keyword cChangeableKeyword_6_1_0 = (Keyword)cGroup_6_1.eContents().get(0);
+		private final Assignment cChangeableAssignment_6_1_1 = (Assignment)cGroup_6_1.eContents().get(1);
+		private final RuleCall cChangeableEBooleanParserRuleCall_6_1_1_0 = (RuleCall)cChangeableAssignment_6_1_1.eContents().get(0);
 		private final Group cGroup_6_2 = (Group)cUnorderedGroup_6.eContents().get(2);
-		private final Keyword cOrderedKeyword_6_2_0 = (Keyword)cGroup_6_2.eContents().get(0);
-		private final Assignment cOrderedAssignment_6_2_1 = (Assignment)cGroup_6_2.eContents().get(1);
-		private final RuleCall cOrderedEBooleanParserRuleCall_6_2_1_0 = (RuleCall)cOrderedAssignment_6_2_1.eContents().get(0);
+		private final Keyword cDerivedKeyword_6_2_0 = (Keyword)cGroup_6_2.eContents().get(0);
+		private final Assignment cDerivedAssignment_6_2_1 = (Assignment)cGroup_6_2.eContents().get(1);
+		private final RuleCall cDerivedEBooleanParserRuleCall_6_2_1_0 = (RuleCall)cDerivedAssignment_6_2_1.eContents().get(0);
 		private final Group cGroup_6_3 = (Group)cUnorderedGroup_6.eContents().get(3);
-		private final Keyword cTransientKeyword_6_3_0 = (Keyword)cGroup_6_3.eContents().get(0);
-		private final Assignment cTransientAssignment_6_3_1 = (Assignment)cGroup_6_3.eContents().get(1);
-		private final RuleCall cTransientEBooleanParserRuleCall_6_3_1_0 = (RuleCall)cTransientAssignment_6_3_1.eContents().get(0);
+		private final Keyword cOrderedKeyword_6_3_0 = (Keyword)cGroup_6_3.eContents().get(0);
+		private final Assignment cOrderedAssignment_6_3_1 = (Assignment)cGroup_6_3.eContents().get(1);
+		private final RuleCall cOrderedEBooleanParserRuleCall_6_3_1_0 = (RuleCall)cOrderedAssignment_6_3_1.eContents().get(0);
 		private final Group cGroup_6_4 = (Group)cUnorderedGroup_6.eContents().get(4);
-		private final Keyword cUniqueKeyword_6_4_0 = (Keyword)cGroup_6_4.eContents().get(0);
-		private final Assignment cUniqueAssignment_6_4_1 = (Assignment)cGroup_6_4.eContents().get(1);
-		private final RuleCall cUniqueEBooleanParserRuleCall_6_4_1_0 = (RuleCall)cUniqueAssignment_6_4_1.eContents().get(0);
+		private final Keyword cTransientKeyword_6_4_0 = (Keyword)cGroup_6_4.eContents().get(0);
+		private final Assignment cTransientAssignment_6_4_1 = (Assignment)cGroup_6_4.eContents().get(1);
+		private final RuleCall cTransientEBooleanParserRuleCall_6_4_1_0 = (RuleCall)cTransientAssignment_6_4_1.eContents().get(0);
 		private final Group cGroup_6_5 = (Group)cUnorderedGroup_6.eContents().get(5);
-		private final Keyword cUnsettableKeyword_6_5_0 = (Keyword)cGroup_6_5.eContents().get(0);
-		private final Assignment cUnsettableAssignment_6_5_1 = (Assignment)cGroup_6_5.eContents().get(1);
-		private final RuleCall cUnsettableEBooleanParserRuleCall_6_5_1_0 = (RuleCall)cUnsettableAssignment_6_5_1.eContents().get(0);
+		private final Keyword cUniqueKeyword_6_5_0 = (Keyword)cGroup_6_5.eContents().get(0);
+		private final Assignment cUniqueAssignment_6_5_1 = (Assignment)cGroup_6_5.eContents().get(1);
+		private final RuleCall cUniqueEBooleanParserRuleCall_6_5_1_0 = (RuleCall)cUniqueAssignment_6_5_1.eContents().get(0);
 		private final Group cGroup_6_6 = (Group)cUnorderedGroup_6.eContents().get(6);
-		private final Keyword cVolatileKeyword_6_6_0 = (Keyword)cGroup_6_6.eContents().get(0);
-		private final Assignment cVolatileAssignment_6_6_1 = (Assignment)cGroup_6_6.eContents().get(1);
-		private final RuleCall cVolatileEBooleanParserRuleCall_6_6_1_0 = (RuleCall)cVolatileAssignment_6_6_1.eContents().get(0);
+		private final Keyword cUnsettableKeyword_6_6_0 = (Keyword)cGroup_6_6.eContents().get(0);
+		private final Assignment cUnsettableAssignment_6_6_1 = (Assignment)cGroup_6_6.eContents().get(1);
+		private final RuleCall cUnsettableEBooleanParserRuleCall_6_6_1_0 = (RuleCall)cUnsettableAssignment_6_6_1.eContents().get(0);
+		private final Group cGroup_6_7 = (Group)cUnorderedGroup_6.eContents().get(7);
+		private final Keyword cVolatileKeyword_6_7_0 = (Keyword)cGroup_6_7.eContents().get(0);
+		private final Assignment cVolatileAssignment_6_7_1 = (Assignment)cGroup_6_7.eContents().get(1);
+		private final RuleCall cVolatileEBooleanParserRuleCall_6_7_1_0 = (RuleCall)cVolatileAssignment_6_7_1.eContents().get(0);
 		private final Assignment cOwned_annotationsAssignment_7 = (Assignment)cGroup.eContents().get(7);
 		private final RuleCall cOwned_annotationsAnnotationParserRuleCall_7_0 = (RuleCall)cOwned_annotationsAssignment_7.eContents().get(0);
 		
 		//LocalClassAssociation vpdesc::AbstractAssociation:
 		//	{vpdesc::LocalClassAssociation} name=EString ('description' description=EString ',')? type=Association_Types
-		//	cardinality=Cardinalities LocalTarget=[vpdesc::Class|FQN] (('changeable:' changeable=EBoolean)? & ('derived:'
+		//	cardinality=Cardinalities LocalTarget=[vpdesc::Class|FQN] (('opposite:'
+		//	opposite=[vpdesc::LocalClassAssociation|FQN])? & ('changeable:' changeable=EBoolean)? & ('derived:'
 		//	derived=EBoolean)? & ('ordered:' ordered=EBoolean)? & ('transient:' transient=EBoolean)? & ('unique:'
 		//	unique=EBoolean)? & ('unsettable:' unsettable=EBoolean)? & ('volatile:' volatile=EBoolean)?)
 		//	owned_annotations+=Annotation*
 		@Override public ParserRule getRule() { return rule; }
 
 		//{vpdesc::LocalClassAssociation} name=EString ('description' description=EString ',')? type=Association_Types
-		//cardinality=Cardinalities LocalTarget=[vpdesc::Class|FQN] (('changeable:' changeable=EBoolean)? & ('derived:'
-		//derived=EBoolean)? & ('ordered:' ordered=EBoolean)? & ('transient:' transient=EBoolean)? & ('unique:'
-		//unique=EBoolean)? & ('unsettable:' unsettable=EBoolean)? & ('volatile:' volatile=EBoolean)?)
-		//owned_annotations+=Annotation*
+		//cardinality=Cardinalities LocalTarget=[vpdesc::Class|FQN] (('opposite:' opposite=[vpdesc::LocalClassAssociation|FQN])?
+		//& ('changeable:' changeable=EBoolean)? & ('derived:' derived=EBoolean)? & ('ordered:' ordered=EBoolean)? &
+		//('transient:' transient=EBoolean)? & ('unique:' unique=EBoolean)? & ('unsettable:' unsettable=EBoolean)? &
+		//('volatile:' volatile=EBoolean)?) owned_annotations+=Annotation*
 		public Group getGroup() { return cGroup; }
 
 		//{vpdesc::LocalClassAssociation}
@@ -747,94 +753,109 @@ public class DataGrammarAccess extends AbstractGrammarElementFinder {
 		//FQN
 		public RuleCall getLocalTargetClassFQNParserRuleCall_5_0_1() { return cLocalTargetClassFQNParserRuleCall_5_0_1; }
 
-		//(('changeable:' changeable=EBoolean)? & ('derived:' derived=EBoolean)? & ('ordered:' ordered=EBoolean)? & ('transient:'
-		//transient=EBoolean)? & ('unique:' unique=EBoolean)? & ('unsettable:' unsettable=EBoolean)? & ('volatile:'
-		//volatile=EBoolean)?)
+		//(('opposite:' opposite=[vpdesc::LocalClassAssociation|FQN])? & ('changeable:' changeable=EBoolean)? & ('derived:'
+		//derived=EBoolean)? & ('ordered:' ordered=EBoolean)? & ('transient:' transient=EBoolean)? & ('unique:'
+		//unique=EBoolean)? & ('unsettable:' unsettable=EBoolean)? & ('volatile:' volatile=EBoolean)?)
 		public UnorderedGroup getUnorderedGroup_6() { return cUnorderedGroup_6; }
 
-		//('changeable:' changeable=EBoolean)?
+		//('opposite:' opposite=[vpdesc::LocalClassAssociation|FQN])?
 		public Group getGroup_6_0() { return cGroup_6_0; }
 
-		//'changeable:'
-		public Keyword getChangeableKeyword_6_0_0() { return cChangeableKeyword_6_0_0; }
+		//'opposite:'
+		public Keyword getOppositeKeyword_6_0_0() { return cOppositeKeyword_6_0_0; }
 
-		//changeable=EBoolean
-		public Assignment getChangeableAssignment_6_0_1() { return cChangeableAssignment_6_0_1; }
+		//opposite=[vpdesc::LocalClassAssociation|FQN]
+		public Assignment getOppositeAssignment_6_0_1() { return cOppositeAssignment_6_0_1; }
 
-		//EBoolean
-		public RuleCall getChangeableEBooleanParserRuleCall_6_0_1_0() { return cChangeableEBooleanParserRuleCall_6_0_1_0; }
+		//[vpdesc::LocalClassAssociation|FQN]
+		public CrossReference getOppositeLocalClassAssociationCrossReference_6_0_1_0() { return cOppositeLocalClassAssociationCrossReference_6_0_1_0; }
 
-		//('derived:' derived=EBoolean)?
+		//FQN
+		public RuleCall getOppositeLocalClassAssociationFQNParserRuleCall_6_0_1_0_1() { return cOppositeLocalClassAssociationFQNParserRuleCall_6_0_1_0_1; }
+
+		//('changeable:' changeable=EBoolean)?
 		public Group getGroup_6_1() { return cGroup_6_1; }
 
-		//'derived:'
-		public Keyword getDerivedKeyword_6_1_0() { return cDerivedKeyword_6_1_0; }
+		//'changeable:'
+		public Keyword getChangeableKeyword_6_1_0() { return cChangeableKeyword_6_1_0; }
 
-		//derived=EBoolean
-		public Assignment getDerivedAssignment_6_1_1() { return cDerivedAssignment_6_1_1; }
+		//changeable=EBoolean
+		public Assignment getChangeableAssignment_6_1_1() { return cChangeableAssignment_6_1_1; }
 
 		//EBoolean
-		public RuleCall getDerivedEBooleanParserRuleCall_6_1_1_0() { return cDerivedEBooleanParserRuleCall_6_1_1_0; }
+		public RuleCall getChangeableEBooleanParserRuleCall_6_1_1_0() { return cChangeableEBooleanParserRuleCall_6_1_1_0; }
 
-		//('ordered:' ordered=EBoolean)?
+		//('derived:' derived=EBoolean)?
 		public Group getGroup_6_2() { return cGroup_6_2; }
 
-		//'ordered:'
-		public Keyword getOrderedKeyword_6_2_0() { return cOrderedKeyword_6_2_0; }
+		//'derived:'
+		public Keyword getDerivedKeyword_6_2_0() { return cDerivedKeyword_6_2_0; }
 
-		//ordered=EBoolean
-		public Assignment getOrderedAssignment_6_2_1() { return cOrderedAssignment_6_2_1; }
+		//derived=EBoolean
+		public Assignment getDerivedAssignment_6_2_1() { return cDerivedAssignment_6_2_1; }
 
 		//EBoolean
-		public RuleCall getOrderedEBooleanParserRuleCall_6_2_1_0() { return cOrderedEBooleanParserRuleCall_6_2_1_0; }
+		public RuleCall getDerivedEBooleanParserRuleCall_6_2_1_0() { return cDerivedEBooleanParserRuleCall_6_2_1_0; }
 
-		//('transient:' transient=EBoolean)?
+		//('ordered:' ordered=EBoolean)?
 		public Group getGroup_6_3() { return cGroup_6_3; }
 
-		//'transient:'
-		public Keyword getTransientKeyword_6_3_0() { return cTransientKeyword_6_3_0; }
+		//'ordered:'
+		public Keyword getOrderedKeyword_6_3_0() { return cOrderedKeyword_6_3_0; }
 
-		//transient=EBoolean
-		public Assignment getTransientAssignment_6_3_1() { return cTransientAssignment_6_3_1; }
+		//ordered=EBoolean
+		public Assignment getOrderedAssignment_6_3_1() { return cOrderedAssignment_6_3_1; }
 
 		//EBoolean
-		public RuleCall getTransientEBooleanParserRuleCall_6_3_1_0() { return cTransientEBooleanParserRuleCall_6_3_1_0; }
+		public RuleCall getOrderedEBooleanParserRuleCall_6_3_1_0() { return cOrderedEBooleanParserRuleCall_6_3_1_0; }
 
-		//('unique:' unique=EBoolean)?
+		//('transient:' transient=EBoolean)?
 		public Group getGroup_6_4() { return cGroup_6_4; }
 
-		//'unique:'
-		public Keyword getUniqueKeyword_6_4_0() { return cUniqueKeyword_6_4_0; }
+		//'transient:'
+		public Keyword getTransientKeyword_6_4_0() { return cTransientKeyword_6_4_0; }
 
-		//unique=EBoolean
-		public Assignment getUniqueAssignment_6_4_1() { return cUniqueAssignment_6_4_1; }
+		//transient=EBoolean
+		public Assignment getTransientAssignment_6_4_1() { return cTransientAssignment_6_4_1; }
 
 		//EBoolean
-		public RuleCall getUniqueEBooleanParserRuleCall_6_4_1_0() { return cUniqueEBooleanParserRuleCall_6_4_1_0; }
+		public RuleCall getTransientEBooleanParserRuleCall_6_4_1_0() { return cTransientEBooleanParserRuleCall_6_4_1_0; }
 
-		//('unsettable:' unsettable=EBoolean)?
+		//('unique:' unique=EBoolean)?
 		public Group getGroup_6_5() { return cGroup_6_5; }
 
-		//'unsettable:'
-		public Keyword getUnsettableKeyword_6_5_0() { return cUnsettableKeyword_6_5_0; }
+		//'unique:'
+		public Keyword getUniqueKeyword_6_5_0() { return cUniqueKeyword_6_5_0; }
 
-		//unsettable=EBoolean
-		public Assignment getUnsettableAssignment_6_5_1() { return cUnsettableAssignment_6_5_1; }
+		//unique=EBoolean
+		public Assignment getUniqueAssignment_6_5_1() { return cUniqueAssignment_6_5_1; }
 
 		//EBoolean
-		public RuleCall getUnsettableEBooleanParserRuleCall_6_5_1_0() { return cUnsettableEBooleanParserRuleCall_6_5_1_0; }
+		public RuleCall getUniqueEBooleanParserRuleCall_6_5_1_0() { return cUniqueEBooleanParserRuleCall_6_5_1_0; }
 
-		//('volatile:' volatile=EBoolean)?
+		//('unsettable:' unsettable=EBoolean)?
 		public Group getGroup_6_6() { return cGroup_6_6; }
 
-		//'volatile:'
-		public Keyword getVolatileKeyword_6_6_0() { return cVolatileKeyword_6_6_0; }
+		//'unsettable:'
+		public Keyword getUnsettableKeyword_6_6_0() { return cUnsettableKeyword_6_6_0; }
 
-		//volatile=EBoolean
-		public Assignment getVolatileAssignment_6_6_1() { return cVolatileAssignment_6_6_1; }
+		//unsettable=EBoolean
+		public Assignment getUnsettableAssignment_6_6_1() { return cUnsettableAssignment_6_6_1; }
 
 		//EBoolean
-		public RuleCall getVolatileEBooleanParserRuleCall_6_6_1_0() { return cVolatileEBooleanParserRuleCall_6_6_1_0; }
+		public RuleCall getUnsettableEBooleanParserRuleCall_6_6_1_0() { return cUnsettableEBooleanParserRuleCall_6_6_1_0; }
+
+		//('volatile:' volatile=EBoolean)?
+		public Group getGroup_6_7() { return cGroup_6_7; }
+
+		//'volatile:'
+		public Keyword getVolatileKeyword_6_7_0() { return cVolatileKeyword_6_7_0; }
+
+		//volatile=EBoolean
+		public Assignment getVolatileAssignment_6_7_1() { return cVolatileAssignment_6_7_1; }
+
+		//EBoolean
+		public RuleCall getVolatileEBooleanParserRuleCall_6_7_1_0() { return cVolatileEBooleanParserRuleCall_6_7_1_0; }
 
 		//owned_annotations+=Annotation*
 		public Assignment getOwned_annotationsAssignment_7() { return cOwned_annotationsAssignment_7; }
@@ -2098,7 +2119,8 @@ public class DataGrammarAccess extends AbstractGrammarElementFinder {
 
 	//LocalClassAssociation vpdesc::AbstractAssociation:
 	//	{vpdesc::LocalClassAssociation} name=EString ('description' description=EString ',')? type=Association_Types
-	//	cardinality=Cardinalities LocalTarget=[vpdesc::Class|FQN] (('changeable:' changeable=EBoolean)? & ('derived:'
+	//	cardinality=Cardinalities LocalTarget=[vpdesc::Class|FQN] (('opposite:'
+	//	opposite=[vpdesc::LocalClassAssociation|FQN])? & ('changeable:' changeable=EBoolean)? & ('derived:'
 	//	derived=EBoolean)? & ('ordered:' ordered=EBoolean)? & ('transient:' transient=EBoolean)? & ('unique:'
 	//	unique=EBoolean)? & ('unsettable:' unsettable=EBoolean)? & ('volatile:' volatile=EBoolean)?)
 	//	owned_annotations+=Annotation*

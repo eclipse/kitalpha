@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated on Wed Jul 09 15:21:12 CEST 2014 with EGF 1.2.0.v20140702-0648
+//Generated with EGF 1.5.0.v20170706-0846
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.clazz.content;
 
 import java.util.*;
@@ -28,8 +17,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.configuration.VpDsl
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractSuperClass;
 
 public class ClassInheritenceFromDefaultClasses
-		extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.abstracts.ClassAbstractPattern {
+		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.abstracts.ClassAbstractPattern {
 
 	public ClassInheritenceFromDefaultClasses() {
 		//Here is the constructor
@@ -55,8 +43,7 @@ public class ClassInheritenceFromDefaultClasses
 			}
 		}
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 	}
 
@@ -71,14 +58,12 @@ public class ClassInheritenceFromDefaultClasses
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
 
-	protected void method_addInheritence(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_addInheritence(final StringBuffer out, final PatternContext ctx) throws Exception {
 		EList<AbstractSuperClass> superClasses = parameter.getInheritences();
 
 		//EList<EClass> superEClasses = new BasicEList<EClass>();
@@ -90,11 +75,9 @@ public class ClassInheritenceFromDefaultClasses
 
 		if (superClasses.size() == 0) {
 			String taName = VpDslConfigurationHelper
-					.getTargetApplication(VpdslDescriptionModelManager.INSTANCE
-							.getVpDescriptionElement());
+					.getTargetApplication(VpdslDescriptionModelManager.INSTANCE.getVpDescriptionElement());
 			if (taName != null && taName.trim().length() > 0) {
-				ITargetApplication ta = TargetApplicationExtensionManager
-						.getTargetApplicationClass(taName);
+				ITargetApplication ta = TargetApplicationExtensionManager.getTargetApplicationClass(taName);
 				if (ta != null) {
 					List<EClass> clazz = ta.getBasicSemanticElement();
 					if (clazz != null && clazz.size() > 0)
@@ -104,8 +87,7 @@ public class ClassInheritenceFromDefaultClasses
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "addInheritence",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "addInheritence", out.toString());
 	}
 
 	public Map<String, Object> getParameters() {
