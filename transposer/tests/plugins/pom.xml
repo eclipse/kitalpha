@@ -10,8 +10,8 @@
     <packaging>pom</packaging>
 
   <parent>
-    <groupId>org.polarsys.kitalpha</groupId>
-    <artifactId>org.polarsys.kitalpha.releng.parent</artifactId>
+    <groupId>org.polarsys</groupId>
+    <artifactId>org.polarsys.kitalpha</artifactId>
     <version>1.2.0-SNAPSHOT</version>
     <relativePath>../../releng/plugins/org.polarsys.kitalpha.releng.parent</relativePath>
   </parent>

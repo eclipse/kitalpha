@@ -20,8 +20,8 @@
 	
 	<name>Kitalpha Parent</name>
 	
-	<groupId>org.polarsys.kitalpha</groupId>
-	<artifactId>org.polarsys.kitalpha.releng.parent</artifactId>
+	<groupId>org.polarsys</groupId>
+	<artifactId>org.polarsys.kitalpha</artifactId>
 	<version>1.2.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	
@@ -176,7 +176,7 @@
 					</dependency-resolution> -->
 					<target>
 						<artifact>
-							<groupId>org.polarsys.kitalpha</groupId>
+							<groupId>org.polarsys</groupId>
 							<artifactId>kitalpha</artifactId>
 							<version>1.2.0-SNAPSHOT</version>
 							<classifier>../../../releng/plugins/org.polarsys.kitalpha.releng.targets/${target-platform-name}</classifier>
