@@ -1,0 +1,19 @@
+package PACKAGE;
+
+import java.util.*;
+import org.eclipse.egf.model.pattern.*;
+import org.eclipse.egf.pattern.execution.*;
+import org.eclipse.egf.pattern.query.*;
+
+import org.eclipse.sirius.viewpoint.description.DescriptionFactory;
+import org.eclipse.sirius.viewpoint.description.SemanticBasedDecoration;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.commondata.AbstractClass;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.SemanticBasedDecorator;
+
+public class CLASS {
+
+	public CLASS() {
+		//Here is the constructor
+	}
+
+

@@ -17,6 +17,7 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
@@ -28,11 +29,13 @@ public class VpdiagramSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected VpdiagramGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_Label_PoliceKeyword_2_0_q;
+	protected AbstractElementAlias match_MappingBased___MappingsKeyword_9_0_0_ColonKeyword_9_0_1__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (VpdiagramGrammarAccess) access;
 		match_Label_PoliceKeyword_2_0_q = new TokenAlias(false, true, grammarAccess.getLabelAccess().getPoliceKeyword_2_0());
+		match_MappingBased___MappingsKeyword_9_0_0_ColonKeyword_9_0_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getMappingBasedAccess().getMappingsKeyword_9_0_0()), new TokenAlias(false, false, grammarAccess.getMappingBasedAccess().getColonKeyword_9_0_1()));
 	}
 	
 	@Override
@@ -49,6 +52,8 @@ public class VpdiagramSyntacticSequencer extends AbstractSyntacticSequencer {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
 			if (match_Label_PoliceKeyword_2_0_q.equals(syntax))
 				emit_Label_PoliceKeyword_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_MappingBased___MappingsKeyword_9_0_0_ColonKeyword_9_0_1__q.equals(syntax))
+				emit_MappingBased___MappingsKeyword_9_0_0_ColonKeyword_9_0_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -61,6 +66,22 @@ public class VpdiagramSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     value=Expression (ambiguity) (rule end)
 	 */
 	protected void emit_Label_PoliceKeyword_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ('mappings' ':')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     direction=DecorationDistributionDirection (ambiguity) '}' (rule end)
+	 *     icon=STRING (ambiguity) '}' (rule end)
+	 *     name=EString '{' (ambiguity) '}' (rule end)
+	 *     position=Position (ambiguity) '}' (rule end)
+	 *     precondition=ExpressionElement (ambiguity) '}' (rule end)
+	 *     tooltip=ExpressionElement (ambiguity) '}' (rule end)
+	 */
+	protected void emit_MappingBased___MappingsKeyword_9_0_0_ColonKeyword_9_0_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

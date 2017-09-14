@@ -123,13 +123,22 @@ public interface VpdiagramPackage extends EPackage {
 	int DIAGRAM_REPRESENTATION__THE_ACTION_SET = VpdescPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>The Decorator Set</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGRAM_REPRESENTATION__THE_DECORATOR_SET = VpdescPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Diagram Representation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM_REPRESENTATION_FEATURE_COUNT = VpdescPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int DIAGRAM_REPRESENTATION_FEATURE_COUNT = VpdescPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.DiagramImpl <em>Diagram</em>}' class.
@@ -185,6 +194,15 @@ public interface VpdiagramPackage extends EPackage {
 	 * @ordered
 	 */
 	int DIAGRAM__THE_ACTION_SET = DIAGRAM_REPRESENTATION__THE_ACTION_SET;
+
+	/**
+	 * The feature id for the '<em><b>The Decorator Set</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGRAM__THE_DECORATOR_SET = DIAGRAM_REPRESENTATION__THE_DECORATOR_SET;
 
 	/**
 	 * The feature id for the '<em><b>The domain</b></em>' containment reference.
@@ -258,6 +276,15 @@ public interface VpdiagramPackage extends EPackage {
 	 * @ordered
 	 */
 	int DIAGRAM_EXTENSION__THE_ACTION_SET = DIAGRAM_REPRESENTATION__THE_ACTION_SET;
+
+	/**
+	 * The feature id for the '<em><b>The Decorator Set</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGRAM_EXTENSION__THE_DECORATOR_SET = DIAGRAM_REPRESENTATION__THE_DECORATOR_SET;
 
 	/**
 	 * The feature id for the '<em><b>Extented diagram</b></em>' reference.
@@ -352,6 +379,425 @@ public interface VpdiagramPackage extends EPackage {
 	int MAPPING_SET_FEATURE_COUNT = 1;
 
 	/**
+	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.DecoratorSetImpl <em>Decorator Set</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.DecoratorSetImpl
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getDecoratorSet()
+	 * @generated
+	 */
+	int DECORATOR_SET = 5;
+
+	/**
+	 * The feature id for the '<em><b>Decorators</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DECORATOR_SET__DECORATORS = 0;
+
+	/**
+	 * The number of structural features of the '<em>Decorator Set</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DECORATOR_SET_FEATURE_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.AbstractDecoratorImpl <em>Abstract Decorator</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.AbstractDecoratorImpl
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getAbstractDecorator()
+	 * @generated
+	 */
+	int ABSTRACT_DECORATOR = 6;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_DECORATOR__ID = VpdescPackage.NAMED_ELEMENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_DECORATOR__NAME = VpdescPackage.NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_DECORATOR__DESCRIPTION = VpdescPackage.NAMED_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Position</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_DECORATOR__POSITION = VpdescPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Direction</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_DECORATOR__DIRECTION = VpdescPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_DECORATOR__ICON = VpdescPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Precondition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_DECORATOR__PRECONDITION = VpdescPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Tooltip</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_DECORATOR__TOOLTIP = VpdescPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of structural features of the '<em>Abstract Decorator</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_DECORATOR_FEATURE_COUNT = VpdescPackage.NAMED_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.BasicDecoratorImpl <em>Basic Decorator</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.BasicDecoratorImpl
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getBasicDecorator()
+	 * @generated
+	 */
+	int BASIC_DECORATOR = 7;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BASIC_DECORATOR__ID = ABSTRACT_DECORATOR__ID;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BASIC_DECORATOR__NAME = ABSTRACT_DECORATOR__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BASIC_DECORATOR__DESCRIPTION = ABSTRACT_DECORATOR__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Position</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BASIC_DECORATOR__POSITION = ABSTRACT_DECORATOR__POSITION;
+
+	/**
+	 * The feature id for the '<em><b>Direction</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BASIC_DECORATOR__DIRECTION = ABSTRACT_DECORATOR__DIRECTION;
+
+	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BASIC_DECORATOR__ICON = ABSTRACT_DECORATOR__ICON;
+
+	/**
+	 * The feature id for the '<em><b>Precondition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BASIC_DECORATOR__PRECONDITION = ABSTRACT_DECORATOR__PRECONDITION;
+
+	/**
+	 * The feature id for the '<em><b>Tooltip</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BASIC_DECORATOR__TOOLTIP = ABSTRACT_DECORATOR__TOOLTIP;
+
+	/**
+	 * The number of structural features of the '<em>Basic Decorator</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BASIC_DECORATOR_FEATURE_COUNT = ABSTRACT_DECORATOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.MappingBasedDecoratorImpl <em>Mapping Based Decorator</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.MappingBasedDecoratorImpl
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getMappingBasedDecorator()
+	 * @generated
+	 */
+	int MAPPING_BASED_DECORATOR = 8;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING_BASED_DECORATOR__ID = ABSTRACT_DECORATOR__ID;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING_BASED_DECORATOR__NAME = ABSTRACT_DECORATOR__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING_BASED_DECORATOR__DESCRIPTION = ABSTRACT_DECORATOR__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Position</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING_BASED_DECORATOR__POSITION = ABSTRACT_DECORATOR__POSITION;
+
+	/**
+	 * The feature id for the '<em><b>Direction</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING_BASED_DECORATOR__DIRECTION = ABSTRACT_DECORATOR__DIRECTION;
+
+	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING_BASED_DECORATOR__ICON = ABSTRACT_DECORATOR__ICON;
+
+	/**
+	 * The feature id for the '<em><b>Precondition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING_BASED_DECORATOR__PRECONDITION = ABSTRACT_DECORATOR__PRECONDITION;
+
+	/**
+	 * The feature id for the '<em><b>Tooltip</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING_BASED_DECORATOR__TOOLTIP = ABSTRACT_DECORATOR__TOOLTIP;
+
+	/**
+	 * The feature id for the '<em><b>External Mappings</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING_BASED_DECORATOR__EXTERNAL_MAPPINGS = ABSTRACT_DECORATOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Internal Mappings</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING_BASED_DECORATOR__INTERNAL_MAPPINGS = ABSTRACT_DECORATOR_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Mapping Based Decorator</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING_BASED_DECORATOR_FEATURE_COUNT = ABSTRACT_DECORATOR_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.SemanticBasedDecoratorImpl <em>Semantic Based Decorator</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.SemanticBasedDecoratorImpl
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getSemanticBasedDecorator()
+	 * @generated
+	 */
+	int SEMANTIC_BASED_DECORATOR = 9;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMANTIC_BASED_DECORATOR__ID = ABSTRACT_DECORATOR__ID;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMANTIC_BASED_DECORATOR__NAME = ABSTRACT_DECORATOR__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMANTIC_BASED_DECORATOR__DESCRIPTION = ABSTRACT_DECORATOR__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Position</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMANTIC_BASED_DECORATOR__POSITION = ABSTRACT_DECORATOR__POSITION;
+
+	/**
+	 * The feature id for the '<em><b>Direction</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMANTIC_BASED_DECORATOR__DIRECTION = ABSTRACT_DECORATOR__DIRECTION;
+
+	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMANTIC_BASED_DECORATOR__ICON = ABSTRACT_DECORATOR__ICON;
+
+	/**
+	 * The feature id for the '<em><b>Precondition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMANTIC_BASED_DECORATOR__PRECONDITION = ABSTRACT_DECORATOR__PRECONDITION;
+
+	/**
+	 * The feature id for the '<em><b>Tooltip</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMANTIC_BASED_DECORATOR__TOOLTIP = ABSTRACT_DECORATOR__TOOLTIP;
+
+	/**
+	 * The feature id for the '<em><b>Domain</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMANTIC_BASED_DECORATOR__DOMAIN = ABSTRACT_DECORATOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Semantic Based Decorator</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMANTIC_BASED_DECORATOR_FEATURE_COUNT = ABSTRACT_DECORATOR_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.ActionImpl <em>Action</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -359,7 +805,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getAction()
 	 * @generated
 	 */
-	int ACTION = 5;
+	int ACTION = 10;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -432,7 +878,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getDiagramElement()
 	 * @generated
 	 */
-	int DIAGRAM_ELEMENT = 29;
+	int DIAGRAM_ELEMENT = 34;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -487,7 +933,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getDiagramChildren()
 	 * @generated
 	 */
-	int DIAGRAM_CHILDREN = 8;
+	int DIAGRAM_CHILDREN = 13;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -542,7 +988,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getNode()
 	 * @generated
 	 */
-	int NODE = 6;
+	int NODE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -633,7 +1079,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getAbstractEdge()
 	 * @generated
 	 */
-	int ABSTRACT_EDGE = 31;
+	int ABSTRACT_EDGE = 36;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -697,7 +1143,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getEdge()
 	 * @generated
 	 */
-	int EDGE = 7;
+	int EDGE = 12;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -788,7 +1234,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getCreate()
 	 * @generated
 	 */
-	int CREATE = 9;
+	int CREATE = 14;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -879,7 +1325,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getDelete()
 	 * @generated
 	 */
-	int DELETE = 10;
+	int DELETE = 15;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -952,7 +1398,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getOpenAction()
 	 * @generated
 	 */
-	int OPEN_ACTION = 11;
+	int OPEN_ACTION = 16;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1025,7 +1471,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getReconnectEdge()
 	 * @generated
 	 */
-	int RECONNECT_EDGE = 12;
+	int RECONNECT_EDGE = 17;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1098,7 +1544,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getDrop()
 	 * @generated
 	 */
-	int DROP = 13;
+	int DROP = 18;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1171,7 +1617,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getLabel()
 	 * @generated
 	 */
-	int LABEL = 14;
+	int LABEL = 19;
 
 	/**
 	 * The feature id for the '<em><b>Size</b></em>' attribute.
@@ -1235,7 +1681,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getEdgeImport()
 	 * @generated
 	 */
-	int EDGE_IMPORT = 15;
+	int EDGE_IMPORT = 20;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1308,7 +1754,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getEdgeDescription()
 	 * @generated
 	 */
-	int EDGE_DESCRIPTION = 16;
+	int EDGE_DESCRIPTION = 21;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' containment reference.
@@ -1372,7 +1818,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getAbstractDescription()
 	 * @generated
 	 */
-	int ABSTRACT_DESCRIPTION = 30;
+	int ABSTRACT_DESCRIPTION = 35;
 
 	/**
 	 * The feature id for the '<em><b>Node Label</b></em>' containment reference.
@@ -1409,7 +1855,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getNodeDescription()
 	 * @generated
 	 */
-	int NODE_DESCRIPTION = 17;
+	int NODE_DESCRIPTION = 22;
 
 	/**
 	 * The feature id for the '<em><b>Node Label</b></em>' containment reference.
@@ -1473,7 +1919,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getEdgeStyle()
 	 * @generated
 	 */
-	int EDGE_STYLE = 18;
+	int EDGE_STYLE = 23;
 
 	/**
 	 * The feature id for the '<em><b>Line Style</b></em>' attribute.
@@ -1528,7 +1974,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getAbstractNodeStyle()
 	 * @generated
 	 */
-	int ABSTRACT_NODE_STYLE = 21;
+	int ABSTRACT_NODE_STYLE = 26;
 
 	/**
 	 * The feature id for the '<em><b>Border Color</b></em>' attribute.
@@ -1556,7 +2002,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getBasicStyle()
 	 * @generated
 	 */
-	int BASIC_STYLE = 19;
+	int BASIC_STYLE = 24;
 
 	/**
 	 * The feature id for the '<em><b>Border Color</b></em>' attribute.
@@ -1602,7 +2048,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getEdgeDomainAssociation()
 	 * @generated
 	 */
-	int EDGE_DOMAIN_ASSOCIATION = 34;
+	int EDGE_DOMAIN_ASSOCIATION = 39;
 
 	/**
 	 * The feature id for the '<em><b>Target Locator</b></em>' containment reference.
@@ -1639,7 +2085,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getEdgeDomainElement()
 	 * @generated
 	 */
-	int EDGE_DOMAIN_ELEMENT = 20;
+	int EDGE_DOMAIN_ELEMENT = 25;
 
 	/**
 	 * The feature id for the '<em><b>Target Locator</b></em>' containment reference.
@@ -1703,7 +2149,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getImageStyle()
 	 * @generated
 	 */
-	int IMAGE_STYLE = 22;
+	int IMAGE_STYLE = 27;
 
 	/**
 	 * The feature id for the '<em><b>Border Color</b></em>' attribute.
@@ -1740,7 +2186,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getHistogramStyle()
 	 * @generated
 	 */
-	int HISTOGRAM_STYLE = 23;
+	int HISTOGRAM_STYLE = 28;
 
 	/**
 	 * The feature id for the '<em><b>Border Color</b></em>' attribute.
@@ -1777,7 +2223,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getHistogramSection()
 	 * @generated
 	 */
-	int HISTOGRAM_SECTION = 24;
+	int HISTOGRAM_SECTION = 29;
 
 	/**
 	 * The feature id for the '<em><b>Min Value</b></em>' containment reference.
@@ -1841,7 +2287,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getContainer()
 	 * @generated
 	 */
-	int CONTAINER = 25;
+	int CONTAINER = 30;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1941,7 +2387,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getContainerDescription()
 	 * @generated
 	 */
-	int CONTAINER_DESCRIPTION = 26;
+	int CONTAINER_DESCRIPTION = 31;
 
 	/**
 	 * The feature id for the '<em><b>Node Label</b></em>' containment reference.
@@ -1987,7 +2433,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getAbstractContainerStyle()
 	 * @generated
 	 */
-	int ABSTRACT_CONTAINER_STYLE = 35;
+	int ABSTRACT_CONTAINER_STYLE = 40;
 
 	/**
 	 * The number of structural features of the '<em>Abstract Container Style</em>' class.
@@ -2006,7 +2452,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getFlatStyle()
 	 * @generated
 	 */
-	int FLAT_STYLE = 27;
+	int FLAT_STYLE = 32;
 
 	/**
 	 * The feature id for the '<em><b>Background Color</b></em>' attribute.
@@ -2061,7 +2507,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getAbstractNode()
 	 * @generated
 	 */
-	int ABSTRACT_NODE = 37;
+	int ABSTRACT_NODE = 42;
 
 	/**
 	 * The feature id for the '<em><b>The domain</b></em>' containment reference.
@@ -2089,7 +2535,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getBorderedNode()
 	 * @generated
 	 */
-	int BORDERED_NODE = 28;
+	int BORDERED_NODE = 33;
 
 	/**
 	 * The feature id for the '<em><b>The domain</b></em>' containment reference.
@@ -2171,7 +2617,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getCondition()
 	 * @generated
 	 */
-	int CONDITION = 32;
+	int CONDITION = 37;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -2199,7 +2645,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getNodeDomainElement()
 	 * @generated
 	 */
-	int NODE_DOMAIN_ELEMENT = 33;
+	int NODE_DOMAIN_ELEMENT = 38;
 
 	/**
 	 * The feature id for the '<em><b>Domain Class</b></em>' containment reference.
@@ -2245,7 +2691,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getContainerChildren()
 	 * @generated
 	 */
-	int CONTAINER_CHILDREN = 36;
+	int CONTAINER_CHILDREN = 41;
 
 	/**
 	 * The feature id for the '<em><b>Owned nodes</b></em>' containment reference list.
@@ -2282,7 +2728,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getNodeChildren()
 	 * @generated
 	 */
-	int NODE_CHILDREN = 38;
+	int NODE_CHILDREN = 43;
 
 	/**
 	 * The feature id for the '<em><b>Owned boderednodes</b></em>' containment reference list.
@@ -2319,7 +2765,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getDomainContainer()
 	 * @generated
 	 */
-	int DOMAIN_CONTAINER = 39;
+	int DOMAIN_CONTAINER = 44;
 
 	/**
 	 * The feature id for the '<em><b>The domain</b></em>' containment reference.
@@ -2347,7 +2793,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getDiagramSet()
 	 * @generated
 	 */
-	int DIAGRAM_SET = 40;
+	int DIAGRAM_SET = 45;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -2420,7 +2866,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getNode_Form()
 	 * @generated
 	 */
-	int NODE_FORM = 41;
+	int NODE_FORM = 46;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.SynchronizationMode <em>Synchronization Mode</em>}' enum.
@@ -2430,7 +2876,7 @@ public interface VpdiagramPackage extends EPackage {
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getSynchronizationMode()
 	 * @generated
 	 */
-	int SYNCHRONIZATION_MODE = 42;
+	int SYNCHRONIZATION_MODE = 47;
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramRepresentation <em>Diagram Representation</em>}'.
@@ -2463,6 +2909,17 @@ public interface VpdiagramPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDiagramRepresentation_The_ActionSet();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramRepresentation#getThe_DecoratorSet <em>The Decorator Set</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>The Decorator Set</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramRepresentation#getThe_DecoratorSet()
+	 * @see #getDiagramRepresentation()
+	 * @generated
+	 */
+	EReference getDiagramRepresentation_The_DecoratorSet();
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Diagram <em>Diagram</em>}'.
@@ -2569,6 +3026,155 @@ public interface VpdiagramPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getMappingSet_Diagram_Elements();
+
+	/**
+	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DecoratorSet <em>Decorator Set</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Decorator Set</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DecoratorSet
+	 * @generated
+	 */
+	EClass getDecoratorSet();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DecoratorSet#getDecorators <em>Decorators</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Decorators</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DecoratorSet#getDecorators()
+	 * @see #getDecoratorSet()
+	 * @generated
+	 */
+	EReference getDecoratorSet_Decorators();
+
+	/**
+	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.AbstractDecorator <em>Abstract Decorator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Abstract Decorator</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.AbstractDecorator
+	 * @generated
+	 */
+	EClass getAbstractDecorator();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.AbstractDecorator#getPosition <em>Position</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Position</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.AbstractDecorator#getPosition()
+	 * @see #getAbstractDecorator()
+	 * @generated
+	 */
+	EAttribute getAbstractDecorator_Position();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.AbstractDecorator#getDirection <em>Direction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Direction</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.AbstractDecorator#getDirection()
+	 * @see #getAbstractDecorator()
+	 * @generated
+	 */
+	EAttribute getAbstractDecorator_Direction();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.AbstractDecorator#getIcon <em>Icon</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Icon</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.AbstractDecorator#getIcon()
+	 * @see #getAbstractDecorator()
+	 * @generated
+	 */
+	EAttribute getAbstractDecorator_Icon();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.AbstractDecorator#getPrecondition <em>Precondition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Precondition</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.AbstractDecorator#getPrecondition()
+	 * @see #getAbstractDecorator()
+	 * @generated
+	 */
+	EReference getAbstractDecorator_Precondition();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.AbstractDecorator#getTooltip <em>Tooltip</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Tooltip</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.AbstractDecorator#getTooltip()
+	 * @see #getAbstractDecorator()
+	 * @generated
+	 */
+	EReference getAbstractDecorator_Tooltip();
+
+	/**
+	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.BasicDecorator <em>Basic Decorator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Basic Decorator</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.BasicDecorator
+	 * @generated
+	 */
+	EClass getBasicDecorator();
+
+	/**
+	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.MappingBasedDecorator <em>Mapping Based Decorator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Mapping Based Decorator</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.MappingBasedDecorator
+	 * @generated
+	 */
+	EClass getMappingBasedDecorator();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.MappingBasedDecorator#getExternalMappings <em>External Mappings</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>External Mappings</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.MappingBasedDecorator#getExternalMappings()
+	 * @see #getMappingBasedDecorator()
+	 * @generated
+	 */
+	EReference getMappingBasedDecorator_ExternalMappings();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.MappingBasedDecorator#getInternalMappings <em>Internal Mappings</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Internal Mappings</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.MappingBasedDecorator#getInternalMappings()
+	 * @see #getMappingBasedDecorator()
+	 * @generated
+	 */
+	EReference getMappingBasedDecorator_InternalMappings();
+
+	/**
+	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.SemanticBasedDecorator <em>Semantic Based Decorator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Semantic Based Decorator</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.SemanticBasedDecorator
+	 * @generated
+	 */
+	EClass getSemanticBasedDecorator();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.SemanticBasedDecorator#getDomain <em>Domain</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Domain</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.SemanticBasedDecorator#getDomain()
+	 * @see #getSemanticBasedDecorator()
+	 * @generated
+	 */
+	EReference getSemanticBasedDecorator_Domain();
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Action <em>Action</em>}'.
@@ -3824,6 +4430,14 @@ public interface VpdiagramPackage extends EPackage {
 		EReference DIAGRAM_REPRESENTATION__THE_ACTION_SET = eINSTANCE.getDiagramRepresentation_The_ActionSet();
 
 		/**
+		 * The meta object literal for the '<em><b>The Decorator Set</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DIAGRAM_REPRESENTATION__THE_DECORATOR_SET = eINSTANCE.getDiagramRepresentation_The_DecoratorSet();
+
+		/**
 		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.DiagramImpl <em>Diagram</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3910,6 +4524,128 @@ public interface VpdiagramPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MAPPING_SET__DIAGRAM_ELEMENTS = eINSTANCE.getMappingSet_Diagram_Elements();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.DecoratorSetImpl <em>Decorator Set</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.DecoratorSetImpl
+		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getDecoratorSet()
+		 * @generated
+		 */
+		EClass DECORATOR_SET = eINSTANCE.getDecoratorSet();
+
+		/**
+		 * The meta object literal for the '<em><b>Decorators</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DECORATOR_SET__DECORATORS = eINSTANCE.getDecoratorSet_Decorators();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.AbstractDecoratorImpl <em>Abstract Decorator</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.AbstractDecoratorImpl
+		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getAbstractDecorator()
+		 * @generated
+		 */
+		EClass ABSTRACT_DECORATOR = eINSTANCE.getAbstractDecorator();
+
+		/**
+		 * The meta object literal for the '<em><b>Position</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ABSTRACT_DECORATOR__POSITION = eINSTANCE.getAbstractDecorator_Position();
+
+		/**
+		 * The meta object literal for the '<em><b>Direction</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ABSTRACT_DECORATOR__DIRECTION = eINSTANCE.getAbstractDecorator_Direction();
+
+		/**
+		 * The meta object literal for the '<em><b>Icon</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ABSTRACT_DECORATOR__ICON = eINSTANCE.getAbstractDecorator_Icon();
+
+		/**
+		 * The meta object literal for the '<em><b>Precondition</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ABSTRACT_DECORATOR__PRECONDITION = eINSTANCE.getAbstractDecorator_Precondition();
+
+		/**
+		 * The meta object literal for the '<em><b>Tooltip</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ABSTRACT_DECORATOR__TOOLTIP = eINSTANCE.getAbstractDecorator_Tooltip();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.BasicDecoratorImpl <em>Basic Decorator</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.BasicDecoratorImpl
+		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getBasicDecorator()
+		 * @generated
+		 */
+		EClass BASIC_DECORATOR = eINSTANCE.getBasicDecorator();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.MappingBasedDecoratorImpl <em>Mapping Based Decorator</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.MappingBasedDecoratorImpl
+		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getMappingBasedDecorator()
+		 * @generated
+		 */
+		EClass MAPPING_BASED_DECORATOR = eINSTANCE.getMappingBasedDecorator();
+
+		/**
+		 * The meta object literal for the '<em><b>External Mappings</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MAPPING_BASED_DECORATOR__EXTERNAL_MAPPINGS = eINSTANCE.getMappingBasedDecorator_ExternalMappings();
+
+		/**
+		 * The meta object literal for the '<em><b>Internal Mappings</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MAPPING_BASED_DECORATOR__INTERNAL_MAPPINGS = eINSTANCE.getMappingBasedDecorator_InternalMappings();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.SemanticBasedDecoratorImpl <em>Semantic Based Decorator</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.SemanticBasedDecoratorImpl
+		 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.VpdiagramPackageImpl#getSemanticBasedDecorator()
+		 * @generated
+		 */
+		EClass SEMANTIC_BASED_DECORATOR = eINSTANCE.getSemanticBasedDecorator();
+
+		/**
+		 * The meta object literal for the '<em><b>Domain</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SEMANTIC_BASED_DECORATOR__DOMAIN = eINSTANCE.getSemanticBasedDecorator_Domain();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.ActionImpl <em>Action</em>}' class.

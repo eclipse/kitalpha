@@ -25,18 +25,21 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.commondata.CommondataPack
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.ExpressionPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.AbstractContainerStyle;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.AbstractDecorator;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.AbstractDescription;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.AbstractEdge;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.AbstractNode;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.AbstractNodeStyle;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Action;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.ActionSet;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.BasicDecorator;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.BasicStyle;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.BorderedNode;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Condition;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.ContainerChildren;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.ContainerDescription;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Create;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DecoratorSet;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Delete;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Diagram;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramChildren;
@@ -57,6 +60,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.HistogramSectio
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.HistogramStyle;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.ImageStyle;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Label;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.MappingBasedDecorator;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.MappingSet;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Node;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeChildren;
@@ -65,6 +69,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeDomainEleme
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Node_Form;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.OpenAction;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.ReconnectEdge;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.SemanticBasedDecorator;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.SynchronizationMode;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramFactory;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage;
@@ -116,6 +121,41 @@ public class VpdiagramPackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	private EClass mappingSetEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass decoratorSetEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass abstractDecoratorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass basicDecoratorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass mappingBasedDecoratorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass semanticBasedDecoratorEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -486,6 +526,15 @@ public class VpdiagramPackageImpl extends EPackageImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getDiagramRepresentation_The_DecoratorSet() {
+		return (EReference)diagramRepresentationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDiagram() {
 		return diagramEClass;
 	}
@@ -569,6 +618,132 @@ public class VpdiagramPackageImpl extends EPackageImpl implements
 	 */
 	public EReference getMappingSet_Diagram_Elements() {
 		return (EReference)mappingSetEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDecoratorSet() {
+		return decoratorSetEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDecoratorSet_Decorators() {
+		return (EReference)decoratorSetEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAbstractDecorator() {
+		return abstractDecoratorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAbstractDecorator_Position() {
+		return (EAttribute)abstractDecoratorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAbstractDecorator_Direction() {
+		return (EAttribute)abstractDecoratorEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAbstractDecorator_Icon() {
+		return (EAttribute)abstractDecoratorEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAbstractDecorator_Precondition() {
+		return (EReference)abstractDecoratorEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAbstractDecorator_Tooltip() {
+		return (EReference)abstractDecoratorEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBasicDecorator() {
+		return basicDecoratorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMappingBasedDecorator() {
+		return mappingBasedDecoratorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMappingBasedDecorator_ExternalMappings() {
+		return (EReference)mappingBasedDecoratorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMappingBasedDecorator_InternalMappings() {
+		return (EReference)mappingBasedDecoratorEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSemanticBasedDecorator() {
+		return semanticBasedDecoratorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSemanticBasedDecorator_Domain() {
+		return (EReference)semanticBasedDecoratorEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1619,6 +1794,7 @@ public class VpdiagramPackageImpl extends EPackageImpl implements
 		diagramRepresentationEClass = createEClass(DIAGRAM_REPRESENTATION);
 		createEReference(diagramRepresentationEClass, DIAGRAM_REPRESENTATION__THE_MAPPING_SET);
 		createEReference(diagramRepresentationEClass, DIAGRAM_REPRESENTATION__THE_ACTION_SET);
+		createEReference(diagramRepresentationEClass, DIAGRAM_REPRESENTATION__THE_DECORATOR_SET);
 
 		diagramEClass = createEClass(DIAGRAM);
 		createEReference(diagramEClass, DIAGRAM__THE_DOMAIN);
@@ -1633,6 +1809,25 @@ public class VpdiagramPackageImpl extends EPackageImpl implements
 
 		mappingSetEClass = createEClass(MAPPING_SET);
 		createEReference(mappingSetEClass, MAPPING_SET__DIAGRAM_ELEMENTS);
+
+		decoratorSetEClass = createEClass(DECORATOR_SET);
+		createEReference(decoratorSetEClass, DECORATOR_SET__DECORATORS);
+
+		abstractDecoratorEClass = createEClass(ABSTRACT_DECORATOR);
+		createEAttribute(abstractDecoratorEClass, ABSTRACT_DECORATOR__POSITION);
+		createEAttribute(abstractDecoratorEClass, ABSTRACT_DECORATOR__DIRECTION);
+		createEAttribute(abstractDecoratorEClass, ABSTRACT_DECORATOR__ICON);
+		createEReference(abstractDecoratorEClass, ABSTRACT_DECORATOR__PRECONDITION);
+		createEReference(abstractDecoratorEClass, ABSTRACT_DECORATOR__TOOLTIP);
+
+		basicDecoratorEClass = createEClass(BASIC_DECORATOR);
+
+		mappingBasedDecoratorEClass = createEClass(MAPPING_BASED_DECORATOR);
+		createEReference(mappingBasedDecoratorEClass, MAPPING_BASED_DECORATOR__EXTERNAL_MAPPINGS);
+		createEReference(mappingBasedDecoratorEClass, MAPPING_BASED_DECORATOR__INTERNAL_MAPPINGS);
+
+		semanticBasedDecoratorEClass = createEClass(SEMANTIC_BASED_DECORATOR);
+		createEReference(semanticBasedDecoratorEClass, SEMANTIC_BASED_DECORATOR__DOMAIN);
 
 		actionEClass = createEClass(ACTION);
 		createEReference(actionEClass, ACTION__TOOL_FOR);
@@ -1814,12 +2009,12 @@ public class VpdiagramPackageImpl extends EPackageImpl implements
 		VpdescPackage theVpdescPackage = (VpdescPackage)EPackage.Registry.INSTANCE.getEPackage(VpdescPackage.eNS_URI);
 		DescriptionPackage theDescriptionPackage = (DescriptionPackage)EPackage.Registry.INSTANCE.getEPackage(DescriptionPackage.eNS_URI);
 		VpstylecustomizationPackage theVpstylecustomizationPackage = (VpstylecustomizationPackage)EPackage.Registry.INSTANCE.getEPackage(VpstylecustomizationPackage.eNS_URI);
+		org.eclipse.sirius.viewpoint.description.DescriptionPackage theDescriptionPackage_1 = (org.eclipse.sirius.viewpoint.description.DescriptionPackage)EPackage.Registry.INSTANCE.getEPackage(org.eclipse.sirius.viewpoint.description.DescriptionPackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		ExpressionPackage theExpressionPackage = (ExpressionPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI);
-		org.eclipse.sirius.viewpoint.description.DescriptionPackage theDescriptionPackage_1 = (org.eclipse.sirius.viewpoint.description.DescriptionPackage)EPackage.Registry.INSTANCE.getEPackage(org.eclipse.sirius.viewpoint.description.DescriptionPackage.eNS_URI);
+		CommondataPackage theCommondataPackage = (CommondataPackage)EPackage.Registry.INSTANCE.getEPackage(CommondataPackage.eNS_URI);
 		DiagramPackage theDiagramPackage = (DiagramPackage)EPackage.Registry.INSTANCE.getEPackage(DiagramPackage.eNS_URI);
 		ViewpointPackage theViewpointPackage = (ViewpointPackage)EPackage.Registry.INSTANCE.getEPackage(ViewpointPackage.eNS_URI);
-		CommondataPackage theCommondataPackage = (CommondataPackage)EPackage.Registry.INSTANCE.getEPackage(CommondataPackage.eNS_URI);
 
 		// Add subpackages
 		getESubpackages().add(theConfigurationPackage);
@@ -1832,6 +2027,10 @@ public class VpdiagramPackageImpl extends EPackageImpl implements
 		diagramRepresentationEClass.getESuperTypes().add(theVpdescPackage.getNamedElement());
 		diagramEClass.getESuperTypes().add(this.getDiagramRepresentation());
 		diagramExtensionEClass.getESuperTypes().add(this.getDiagramRepresentation());
+		abstractDecoratorEClass.getESuperTypes().add(theVpdescPackage.getNamedElement());
+		basicDecoratorEClass.getESuperTypes().add(this.getAbstractDecorator());
+		mappingBasedDecoratorEClass.getESuperTypes().add(this.getAbstractDecorator());
+		semanticBasedDecoratorEClass.getESuperTypes().add(this.getAbstractDecorator());
 		actionEClass.getESuperTypes().add(theVpdescPackage.getNamedElement());
 		nodeEClass.getESuperTypes().add(this.getDiagramChildren());
 		nodeEClass.getESuperTypes().add(this.getAbstractNode());
@@ -1863,6 +2062,7 @@ public class VpdiagramPackageImpl extends EPackageImpl implements
 		initEClass(diagramRepresentationEClass, DiagramRepresentation.class, "DiagramRepresentation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDiagramRepresentation_The_MappingSet(), this.getMappingSet(), null, "the_MappingSet", null, 0, 1, DiagramRepresentation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDiagramRepresentation_The_ActionSet(), this.getActionSet(), null, "the_ActionSet", null, 0, 1, DiagramRepresentation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDiagramRepresentation_The_DecoratorSet(), this.getDecoratorSet(), null, "the_DecoratorSet", null, 0, 1, DiagramRepresentation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(diagramEClass, Diagram.class, "Diagram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDiagram_The_domain(), this.getDomainContainer(), null, "the_domain", null, 1, 1, Diagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1877,6 +2077,25 @@ public class VpdiagramPackageImpl extends EPackageImpl implements
 
 		initEClass(mappingSetEClass, MappingSet.class, "MappingSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMappingSet_Diagram_Elements(), this.getDiagramChildren(), null, "diagram_Elements", null, 0, -1, MappingSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(decoratorSetEClass, DecoratorSet.class, "DecoratorSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDecoratorSet_Decorators(), this.getAbstractDecorator(), null, "decorators", null, 0, -1, DecoratorSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(abstractDecoratorEClass, AbstractDecorator.class, "AbstractDecorator", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAbstractDecorator_Position(), theDescriptionPackage_1.getPosition(), "position", null, 0, 1, AbstractDecorator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractDecorator_Direction(), theDescriptionPackage_1.getDecorationDistributionDirection(), "direction", null, 0, 1, AbstractDecorator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractDecorator_Icon(), theEcorePackage.getEString(), "icon", null, 0, 1, AbstractDecorator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbstractDecorator_Precondition(), theExpressionPackage.getExpressionElement(), null, "precondition", null, 0, 1, AbstractDecorator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAbstractDecorator_Tooltip(), theExpressionPackage.getExpressionElement(), null, "tooltip", null, 0, 1, AbstractDecorator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(basicDecoratorEClass, BasicDecorator.class, "BasicDecorator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(mappingBasedDecoratorEClass, MappingBasedDecorator.class, "MappingBasedDecorator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMappingBasedDecorator_ExternalMappings(), theDescriptionPackage.getDiagramElementMapping(), null, "externalMappings", null, 0, -1, MappingBasedDecorator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMappingBasedDecorator_InternalMappings(), this.getDiagramElement(), null, "internalMappings", null, 0, -1, MappingBasedDecorator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(semanticBasedDecoratorEClass, SemanticBasedDecorator.class, "SemanticBasedDecorator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSemanticBasedDecorator_Domain(), theCommondataPackage.getAbstractClass(), null, "domain", null, 0, 1, SemanticBasedDecorator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actionEClass, Action.class, "Action", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAction_Tool_For(), this.getDiagramElement(), null, "tool_For", null, 1, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

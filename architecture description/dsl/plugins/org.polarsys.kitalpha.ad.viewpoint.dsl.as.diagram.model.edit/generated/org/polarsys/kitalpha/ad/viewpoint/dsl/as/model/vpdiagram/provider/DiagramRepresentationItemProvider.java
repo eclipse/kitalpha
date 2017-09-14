@@ -72,6 +72,7 @@ public class DiagramRepresentationItemProvider extends NamedElementItemProvider 
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(VpdiagramPackage.Literals.DIAGRAM_REPRESENTATION__THE_MAPPING_SET);
 			childrenFeatures.add(VpdiagramPackage.Literals.DIAGRAM_REPRESENTATION__THE_ACTION_SET);
+			childrenFeatures.add(VpdiagramPackage.Literals.DIAGRAM_REPRESENTATION__THE_DECORATOR_SET);
 		}
 		return childrenFeatures;
 	}
@@ -119,6 +120,7 @@ public class DiagramRepresentationItemProvider extends NamedElementItemProvider 
 		switch (notification.getFeatureID(DiagramRepresentation.class)) {
 			case VpdiagramPackage.DIAGRAM_REPRESENTATION__THE_MAPPING_SET:
 			case VpdiagramPackage.DIAGRAM_REPRESENTATION__THE_ACTION_SET:
+			case VpdiagramPackage.DIAGRAM_REPRESENTATION__THE_DECORATOR_SET:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -148,6 +150,13 @@ public class DiagramRepresentationItemProvider extends NamedElementItemProvider 
 					(createChildParameter
 						(VpdiagramPackage.Literals.DIAGRAM_REPRESENTATION__THE_ACTION_SET,
 						 VpdiagramFactory.eINSTANCE.createActionSet()));
+
+
+
+				newChildDescriptors.add
+					(createChildParameter
+						(VpdiagramPackage.Literals.DIAGRAM_REPRESENTATION__THE_DECORATOR_SET,
+						 VpdiagramFactory.eINSTANCE.createDecoratorSet()));
 
 
 	}

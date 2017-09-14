@@ -1,0 +1,1 @@
+siriusDecorator = DescriptionFactory.eINSTANCE.createGenericDecorationDescription();

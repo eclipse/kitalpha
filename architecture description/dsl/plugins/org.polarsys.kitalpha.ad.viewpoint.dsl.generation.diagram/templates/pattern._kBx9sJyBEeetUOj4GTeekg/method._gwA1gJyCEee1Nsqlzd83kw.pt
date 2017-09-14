@@ -1,0 +1,9 @@
+EObject vpParent = parameter.eContainer();
+EObject currentParent = GenerationUtil.getDoremiElement(vpParent);
+
+DecorationDescriptionsSet decoratorSet = (DecorationDescriptionsSet) decoratorSetElement;
+
+if (currentParent instanceof Layer) {
+	Layer owner = (Layer) currentParent;
+	owner.setDecorationDescriptionsSet(decoratorSet);
+}

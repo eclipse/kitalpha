@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.model/generated"
-    editDirectory="/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.model.edit/generated"
-    editorDirectory="/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.model.editor/generated"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.model/src"
     modelPluginID="org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.model" modelName="Vpdiagram"
-    testsDirectory="/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.model.tests/generated"
-    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
-    editPluginID="org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.model.edit" usedGenPackages="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.commondata.model/model/commondata.genmodel#//commondata platform:/plugin/org.eclipse.sirius.diagram/model/diagram.genmodel#//diagram platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.model/model/expression.genmodel#//expression platform:/plugin/org.eclipse.sirius/model/viewpoint.genmodel#//viewpoint platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.conf.model/model/vpconf.genmodel#//vpconf ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.model/model/vpdesc.genmodel#//vpdesc ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization.model/models/vpstylecustomization.genmodel#//vpstylecustomization">
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" usedGenPackages="platform:/plugin/org.eclipse.sirius.diagram/model/diagram.genmodel#//diagram platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.conf.model/model/vpconf.genmodel#//vpconf platform:/plugin/org.eclipse.sirius/model/viewpoint.genmodel#//viewpoint platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.model/model/vpdesc.genmodel#//vpdesc platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    operationReflection="true" importOrganizing="true">
   <foreignModel>../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore</foreignModel>
   <genPackages prefix="Vpdiagram" basePackage="org.polarsys.kitalpha.ad.viewpoint.dsl.as.model"
-      disposableProviderFactory="true" childCreationExtenders="true" ecorePackage="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore#/">
+      disposableProviderFactory="true" ecorePackage="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore#//Node_Form">
       <genEnumLiterals ecoreEnumLiteral="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore#//Node_Form/Square"/>
       <genEnumLiterals ecoreEnumLiteral="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore#//Node_Form/Lozenge"/>
@@ -29,6 +27,7 @@
     <genClasses image="false" ecoreClass="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore#//DiagramRepresentation">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore#//DiagramRepresentation/the_MappingSet"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore#//DiagramRepresentation/the_ActionSet"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore#//DiagramRepresentation/the_DecoratorSet"/>
     </genClasses>
     <genClasses ecoreClass="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore#//Diagram">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore#//Diagram/the_domain"/>
@@ -43,6 +42,24 @@
     </genClasses>
     <genClasses ecoreClass="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore#//MappingSet">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore#//MappingSet/diagram_Elements"/>
+    </genClasses>
+    <genClasses ecoreClass="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore#//DecoratorSet">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore#//DecoratorSet/decorators"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore#//AbstractDecorator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore#//AbstractDecorator/position"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore#//AbstractDecorator/direction"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore#//AbstractDecorator/icon"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore#//AbstractDecorator/precondition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore#//AbstractDecorator/tooltip"/>
+    </genClasses>
+    <genClasses ecoreClass="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore#//BasicDecorator"/>
+    <genClasses ecoreClass="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore#//MappingBasedDecorator">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore#//MappingBasedDecorator/externalMappings"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore#//MappingBasedDecorator/internalMappings"/>
+    </genClasses>
+    <genClasses ecoreClass="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore#//SemanticBasedDecorator">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore#//SemanticBasedDecorator/domain"/>
     </genClasses>
     <genClasses image="false" ecoreClass="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore#//Action">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore#//Action/tool_For"/>
@@ -186,8 +203,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore#//DiagramSet/additionalExternalGroup"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore#//DiagramSet/additionalExternalData"/>
     </genClasses>
-    <nestedGenPackages prefix="Configuration" basePackage="org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram"
-        disposableProviderFactory="true" childCreationExtenders="true" ecorePackage="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore#//configuration">
+    <nestedGenPackages prefix="Configuration" disposableProviderFactory="true" ecorePackage="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore#//configuration">
       <genClasses ecoreClass="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore#//configuration/DiagramGenerationConfiguration">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore#//configuration/DiagramGenerationConfiguration/overwriteVSM"/>
       </genClasses>

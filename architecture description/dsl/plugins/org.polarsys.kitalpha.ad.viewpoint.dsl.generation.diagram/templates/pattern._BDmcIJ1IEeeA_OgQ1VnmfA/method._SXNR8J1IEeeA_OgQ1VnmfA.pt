@@ -1,0 +1,11 @@
+if (vpdslDecorator != null && siriusDecorator != null)
+{
+	EObject dslvpParent = vpdslDecorator.eContainer();  
+	EObject doremiParent = GenerationUtil.getDoremiElement(dslvpParent);
+
+	if (doremiParent instanceof DecorationDescriptionsSet)
+	{
+		DecorationDescriptionsSet toolSection = (DecorationDescriptionsSet)doremiParent;
+		toolSection.getDecorationDescriptions().add((DecorationDescription)siriusDecorator);
+	}
+}

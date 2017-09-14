@@ -34,6 +34,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.Expres
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.JavaElement;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.StringElement;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.ActionSet;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.BasicDecorator;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.BasicStyle;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.BorderedNode;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Condition;
@@ -41,6 +42,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Container;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.ContainerChildren;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.ContainerDescription;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Create;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DecoratorSet;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Delete;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Diagram;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramExtension;
@@ -58,6 +60,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.HistogramSectio
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.HistogramStyle;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.ImageStyle;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Label;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.MappingBasedDecorator;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.MappingSet;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Node;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeChildren;
@@ -65,6 +68,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeDescription
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeDomainElement;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.OpenAction;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.ReconnectEdge;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.SemanticBasedDecorator;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.BundledImageCustomization;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.ColorCustomization;
@@ -158,6 +162,9 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 			case VpdiagramPackage.ACTION_SET:
 				sequence_ActionSet(context, (ActionSet) semanticObject); 
 				return; 
+			case VpdiagramPackage.BASIC_DECORATOR:
+				sequence_Basic(context, (BasicDecorator) semanticObject); 
+				return; 
 			case VpdiagramPackage.BASIC_STYLE:
 				sequence_BasicStyle(context, (BasicStyle) semanticObject); 
 				return; 
@@ -178,6 +185,9 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 				return; 
 			case VpdiagramPackage.CREATE:
 				sequence_Create(context, (Create) semanticObject); 
+				return; 
+			case VpdiagramPackage.DECORATOR_SET:
+				sequence_DecoratorSet(context, (DecoratorSet) semanticObject); 
 				return; 
 			case VpdiagramPackage.DELETE:
 				sequence_Delete(context, (Delete) semanticObject); 
@@ -230,6 +240,9 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 			case VpdiagramPackage.LABEL:
 				sequence_Label(context, (Label) semanticObject); 
 				return; 
+			case VpdiagramPackage.MAPPING_BASED_DECORATOR:
+				sequence_MappingBased(context, (MappingBasedDecorator) semanticObject); 
+				return; 
 			case VpdiagramPackage.MAPPING_SET:
 				sequence_MappingSet(context, (MappingSet) semanticObject); 
 				return; 
@@ -250,6 +263,9 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 				return; 
 			case VpdiagramPackage.RECONNECT_EDGE:
 				sequence_ReconnectEdge(context, (ReconnectEdge) semanticObject); 
+				return; 
+			case VpdiagramPackage.SEMANTIC_BASED_DECORATOR:
+				sequence_SemanticBased(context, (SemanticBasedDecorator) semanticObject); 
 				return; 
 			}
 		else if (epackage == VpstylecustomizationPackage.eINSTANCE)
@@ -340,6 +356,26 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     (borderColor=SystemColors? backgroundColor=SystemColors? form=Node_Form?)
 	 */
 	protected void sequence_BasicStyle(ISerializationContext context, BasicStyle semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Decorator returns BasicDecorator
+	 *     Basic returns BasicDecorator
+	 *
+	 * Constraint:
+	 *     (
+	 *         name=EString 
+	 *         position=Position? 
+	 *         direction=DecorationDistributionDirection? 
+	 *         icon=STRING? 
+	 *         precondition=ExpressionElement? 
+	 *         tooltip=ExpressionElement?
+	 *     )
+	 */
+	protected void sequence_Basic(ISerializationContext context, BasicDecorator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -553,6 +589,18 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Contexts:
+	 *     DecoratorSet returns DecoratorSet
+	 *
+	 * Constraint:
+	 *     decorators+=Decorator*
+	 */
+	protected void sequence_DecoratorSet(ISerializationContext context, DecoratorSet semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Action returns Delete
 	 *     Delete returns Delete
 	 *
@@ -570,7 +618,14 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     DiagramExtension returns DiagramExtension
 	 *
 	 * Constraint:
-	 *     (name=STRING extented_diagram=[DiagramDescription|FQN]? the_MappingSet=MappingSet? the_ActionSet=ActionSet? ownedCustomizations=Customizations?)
+	 *     (
+	 *         name=STRING 
+	 *         extented_diagram=[DiagramDescription|FQN]? 
+	 *         the_MappingSet=MappingSet? 
+	 *         the_ActionSet=ActionSet? 
+	 *         the_DecoratorSet=DecoratorSet? 
+	 *         ownedCustomizations=Customizations?
+	 *     )
 	 */
 	protected void sequence_DiagramExtension(ISerializationContext context, DiagramExtension semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -596,7 +651,14 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Diagram returns Diagram
 	 *
 	 * Constraint:
-	 *     (name=STRING description=STRING? the_domain=DomainContainer the_MappingSet=MappingSet? the_ActionSet=ActionSet?)
+	 *     (
+	 *         name=STRING 
+	 *         description=STRING? 
+	 *         the_domain=DomainContainer 
+	 *         the_MappingSet=MappingSet? 
+	 *         the_ActionSet=ActionSet? 
+	 *         the_DecoratorSet=DecoratorSet?
+	 *     )
 	 */
 	protected void sequence_Diagram(ISerializationContext context, Diagram semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1183,6 +1245,30 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Contexts:
+	 *     Decorator returns MappingBasedDecorator
+	 *     MappingBased returns MappingBasedDecorator
+	 *
+	 * Constraint:
+	 *     (
+	 *         name=EString 
+	 *         position=Position? 
+	 *         direction=DecorationDistributionDirection? 
+	 *         icon=STRING? 
+	 *         precondition=ExpressionElement? 
+	 *         tooltip=ExpressionElement? 
+	 *         (
+	 *             (externalMappings+=[DiagramElementMapping|STRING] externalMappings+=[DiagramElementMapping|STRING]* internalMappings+=[DiagramElement|STRING]*) | 
+	 *             (internalMappings+=[DiagramElement|STRING]? internalMappings+=[DiagramElement|STRING]*)
+	 *         )
+	 *     )
+	 */
+	protected void sequence_MappingBased(ISerializationContext context, MappingBasedDecorator semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     MappingSet returns MappingSet
 	 *
 	 * Constraint:
@@ -1316,6 +1402,27 @@ public class VpdiagramSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     (name=EString precondition=EString? label=STRING? tool_For=[DiagramElement|FQN])
 	 */
 	protected void sequence_ReconnectEdge(ISerializationContext context, ReconnectEdge semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Decorator returns SemanticBasedDecorator
+	 *     SemanticBased returns SemanticBasedDecorator
+	 *
+	 * Constraint:
+	 *     (
+	 *         name=EString 
+	 *         position=Position? 
+	 *         direction=DecorationDistributionDirection? 
+	 *         icon=STRING? 
+	 *         precondition=ExpressionElement? 
+	 *         tooltip=ExpressionElement? 
+	 *         domain=AbstractClass?
+	 *     )
+	 */
+	protected void sequence_SemanticBased(ISerializationContext context, SemanticBasedDecorator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

@@ -1,0 +1,21 @@
+siriusDecorator.setName(vpdslDecorator.getName());
+siriusDecorator.setPosition(vpdslDecorator.getPosition());
+siriusDecorator.setDistributionDirection(vpdslDecorator.getDirection());
+
+if (vpdslDecorator.getIcon() != null && vpdslDecorator.getIcon().trim().length() > 0) {
+	String icon_path = IconPathHelper.computeDslIconPath(vpdslDecorator.getIcon(), vpdslDecorator);
+	if (icon_path != null && icon_path.trim().length() > 0) {
+		siriusDecorator.setImageExpression(icon_path);
+	}
+	IconPathHelper.copyIconFile(vpdslDecorator.getIcon(), vpdslDecorator);
+}
+
+ExpressionElement precondition = vpdslDecorator.getPrecondition();
+if (precondition instanceof StringElement) {
+	siriusDecorator.setPreconditionExpression(((StringElement) precondition).getValue());
+}
+
+ExpressionElement tooltip = vpdslDecorator.getTooltip();
+if (tooltip instanceof StringElement) {
+	siriusDecorator.setTooltipExpression(((StringElement) tooltip).getValue());
+}

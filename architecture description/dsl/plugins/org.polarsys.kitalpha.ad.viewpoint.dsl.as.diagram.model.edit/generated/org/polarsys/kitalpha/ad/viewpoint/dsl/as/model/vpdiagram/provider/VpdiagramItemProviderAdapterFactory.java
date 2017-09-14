@@ -183,6 +183,98 @@ public class VpdiagramItemProviderAdapterFactory extends
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DecoratorSet} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DecoratorSetItemProvider decoratorSetItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DecoratorSet}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDecoratorSetAdapter() {
+		if (decoratorSetItemProvider == null) {
+			decoratorSetItemProvider = new DecoratorSetItemProvider(this);
+		}
+
+		return decoratorSetItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.BasicDecorator} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BasicDecoratorItemProvider basicDecoratorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.BasicDecorator}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBasicDecoratorAdapter() {
+		if (basicDecoratorItemProvider == null) {
+			basicDecoratorItemProvider = new BasicDecoratorItemProvider(this);
+		}
+
+		return basicDecoratorItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.MappingBasedDecorator} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MappingBasedDecoratorItemProvider mappingBasedDecoratorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.MappingBasedDecorator}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMappingBasedDecoratorAdapter() {
+		if (mappingBasedDecoratorItemProvider == null) {
+			mappingBasedDecoratorItemProvider = new MappingBasedDecoratorItemProvider(this);
+		}
+
+		return mappingBasedDecoratorItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.SemanticBasedDecorator} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SemanticBasedDecoratorItemProvider semanticBasedDecoratorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.SemanticBasedDecorator}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSemanticBasedDecoratorAdapter() {
+		if (semanticBasedDecoratorItemProvider == null) {
+			semanticBasedDecoratorItemProvider = new SemanticBasedDecoratorItemProvider(this);
+		}
+
+		return semanticBasedDecoratorItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Node} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -930,6 +1022,10 @@ public class VpdiagramItemProviderAdapterFactory extends
 		if (diagramExtensionItemProvider != null) diagramExtensionItemProvider.dispose();
 		if (actionSetItemProvider != null) actionSetItemProvider.dispose();
 		if (mappingSetItemProvider != null) mappingSetItemProvider.dispose();
+		if (decoratorSetItemProvider != null) decoratorSetItemProvider.dispose();
+		if (basicDecoratorItemProvider != null) basicDecoratorItemProvider.dispose();
+		if (mappingBasedDecoratorItemProvider != null) mappingBasedDecoratorItemProvider.dispose();
+		if (semanticBasedDecoratorItemProvider != null) semanticBasedDecoratorItemProvider.dispose();
 		if (nodeItemProvider != null) nodeItemProvider.dispose();
 		if (edgeItemProvider != null) edgeItemProvider.dispose();
 		if (createItemProvider != null) createItemProvider.dispose();
