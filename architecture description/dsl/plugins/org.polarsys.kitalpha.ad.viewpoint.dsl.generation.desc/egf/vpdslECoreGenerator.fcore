@@ -6,7 +6,7 @@
   <fcore:FactoryComponent xmi:id="_VflTkI66EeGdJv40MVeUZQ" name="vpdslECoreGeneration">
     <contractContainer xmi:id="_chblsI66EeGdJv40MVeUZQ">
       <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_LZU_0I67EeGdJv40MVeUZQ"
-          name="vpdsl.model" invocationContracts="#_5J8pYp3QEeG-GeeUolvpHQ #_h-qLUn7BEeOLj8ldLiBqyA #_BYIgsJl-EeOtb7DKxmHeWg">
+          name="vpdsl.model" invocationContracts="#_5J8pYp3QEeG-GeeUolvpHQ #_h-qLUn7BEeOLj8ldLiBqyA #_BYIgsJl-EeOtb7DKxmHeWg #_MhD0wJPCEeeykcgJOBM6aQ">
         <type xmi:type="domain:TypeDomain" xmi:id="_L1VmYI67EeGdJv40MVeUZQ"/>
       </contracts>
       <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_-3NWsI70EeGaBt8RXbnVpQ"
@@ -405,6 +405,23 @@
                 called="#_dQsj4J8rEeGXfoQC7b9TYw"/>
           </elements>
         </libraries>
+        <libraries xmi:id="_cvY7AJO2EeeykcgJOBM6aQ" name="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.clazz.content.postprocessing">
+          <elements xmi:id="_gV680JO2EeeykcgJOBM6aQ" name="ProcessEOppositeAssociation"
+              superPattern="#_1gHooJ6kEeGBTNyLEq2oAQ" headerMethod="#_gV680pO2EeeykcgJOBM6aQ"
+              conditionMethod="#_gV681JO2EeeykcgJOBM6aQ" initMethod="#_gV6805O2EeeykcgJOBM6aQ"
+              footerMethod="#_gV681pO2EeeykcgJOBM6aQ">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_L__JAJO3EeeykcgJOBM6aQ"
+                name="Java"/>
+            <methods xmi:id="_gV680pO2EeeykcgJOBM6aQ" name="header" patternFilePath="templates/pattern._gV680JO2EeeykcgJOBM6aQ/method._gV680pO2EeeykcgJOBM6aQ.pt"/>
+            <methods xmi:id="_gV6805O2EeeykcgJOBM6aQ" name="init" patternFilePath="templates/pattern._gV680JO2EeeykcgJOBM6aQ/method._gV6805O2EeeykcgJOBM6aQ.pt"/>
+            <methods xmi:id="_gV681JO2EeeykcgJOBM6aQ" name="preCondition" patternFilePath="templates/pattern._gV680JO2EeeykcgJOBM6aQ/method._gV681JO2EeeykcgJOBM6aQ.pt"/>
+            <methods xmi:id="_gV681ZO2EeeykcgJOBM6aQ" name="process" patternFilePath="templates/pattern._gV680JO2EeeykcgJOBM6aQ/method._gV681ZO2EeeykcgJOBM6aQ.pt"/>
+            <methods xmi:id="_gV681pO2EeeykcgJOBM6aQ" name="footer" patternFilePath="templates/pattern._gV680JO2EeeykcgJOBM6aQ/method._gV681pO2EeeykcgJOBM6aQ.pt"/>
+            <parameters xmi:id="_ikOncJO2EeeykcgJOBM6aQ" name="parameter" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdesc/1.0.0#//LocalClassAssociation"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_F-x0gJO3EeeykcgJOBM6aQ"
+                called="#_gV681ZO2EeeykcgJOBM6aQ"/>
+          </elements>
+        </libraries>
       </viewpoints>
     </viewpointContainer>
     <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_sCXQEI7SEeGbvKfttDHpfg">
@@ -467,6 +484,22 @@
           </invocationContracts>
           <invocationContracts xmi:id="_2VP3sJ3REeG-GeeUolvpHQ" factoryComponentContract="#_-3NWsI70EeGaBt8RXbnVpQ"
               invokedContract="#_sihW4JB_EeG0jOM0RGtE8Q"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_Gwb58JPCEeeykcgJOBM6aQ" name="Post-Processing of EReferences eOpposite"
+          invokedActivity="#_ottBcJB_EeG0jOM0RGtE8Q">
+        <invocationContractContainer xmi:id="_LrjwIJPCEeeykcgJOBM6aQ">
+          <invocationContracts xmi:id="_MhD0wJPCEeeykcgJOBM6aQ" factoryComponentContract="#_LZU_0I67EeGdJv40MVeUZQ"
+              invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Model_driven_pattern_strategy_task.fcore#_DgB2IP6fEd64XaYPo3s6sPg"/>
+          <invocationContracts xmi:id="_QV5YUJPCEeeykcgJOBM6aQ" invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Model_driven_pattern_strategy_task.fcore#_L6JSwAHAEd-4faJMEplCjxw">
+            <type xmi:type="pattern:TypePatternExecutionReporter" xmi:id="_UXF84JPCEeeykcgJOBM6aQ"
+                value="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.reporter.ECoreModelReporter"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_jopbYJPCEeeykcgJOBM6aQ" invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Model_driven_pattern_strategy_task.fcore#_nz1HkSCaEd-Sse0r9LJWbA">
+            <type xmi:type="pattern:TypePatternList" xmi:id="_lrom0JPCEeeykcgJOBM6aQ"
+                elements="#_cvY7AJO2EeeykcgJOBM6aQ"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_q0glIJPCEeeykcgJOBM6aQ" invokedContract="#_sihW4JB_EeG0jOM0RGtE8Q"/>
         </invocationContractContainer>
       </invocations>
     </orchestration>

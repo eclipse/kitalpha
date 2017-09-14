@@ -675,6 +675,15 @@ public class VpdescPackageImpl extends EPackageImpl implements VpdescPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getLocalClassAssociation_Opposite() {
+		return (EReference)localClassAssociationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getExternalClassAssociation() {
 		return externalClassAssociationEClass;
 	}
@@ -1252,6 +1261,7 @@ public class VpdescPackageImpl extends EPackageImpl implements VpdescPackage {
 
 		localClassAssociationEClass = createEClass(LOCAL_CLASS_ASSOCIATION);
 		createEReference(localClassAssociationEClass, LOCAL_CLASS_ASSOCIATION__LOCAL_TARGET);
+		createEReference(localClassAssociationEClass, LOCAL_CLASS_ASSOCIATION__OPPOSITE);
 
 		externalClassAssociationEClass = createEClass(EXTERNAL_CLASS_ASSOCIATION);
 		createEReference(externalClassAssociationEClass, EXTERNAL_CLASS_ASSOCIATION__EXTERNAL_TARGET);
@@ -1436,6 +1446,7 @@ public class VpdescPackageImpl extends EPackageImpl implements VpdescPackage {
 
 		initEClass(localClassAssociationEClass, LocalClassAssociation.class, "LocalClassAssociation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLocalClassAssociation_LocalTarget(), this.getClass_(), null, "LocalTarget", null, 1, 1, LocalClassAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLocalClassAssociation_Opposite(), this.getLocalClassAssociation(), null, "opposite", null, 0, 1, LocalClassAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(externalClassAssociationEClass, ExternalClassAssociation.class, "ExternalClassAssociation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getExternalClassAssociation_ExternalTarget(), theEcorePackage.getEClass(), null, "ExternalTarget", null, 1, 1, ExternalClassAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -1213,13 +1213,22 @@ public interface VpdescPackage extends EPackage {
 	int LOCAL_CLASS_ASSOCIATION__LOCAL_TARGET = ABSTRACT_ASSOCIATION_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Opposite</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCAL_CLASS_ASSOCIATION__OPPOSITE = ABSTRACT_ASSOCIATION_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Local Class Association</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOCAL_CLASS_ASSOCIATION_FEATURE_COUNT = ABSTRACT_ASSOCIATION_FEATURE_COUNT + 1;
+	int LOCAL_CLASS_ASSOCIATION_FEATURE_COUNT = ABSTRACT_ASSOCIATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.impl.ExternalClassAssociationImpl <em>External Class Association</em>}' class.
@@ -2444,6 +2453,17 @@ public interface VpdescPackage extends EPackage {
 	EReference getLocalClassAssociation_LocalTarget();
 
 	/**
+	 * Returns the meta object for the reference '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.LocalClassAssociation#getOpposite <em>Opposite</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Opposite</em>'.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.LocalClassAssociation#getOpposite()
+	 * @see #getLocalClassAssociation()
+	 * @generated
+	 */
+	EReference getLocalClassAssociation_Opposite();
+
+	/**
 	 * Returns the meta object for class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.ExternalClassAssociation <em>External Class Association</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3347,6 +3367,14 @@ public interface VpdescPackage extends EPackage {
 		 * @generated
 		 */
 		EReference LOCAL_CLASS_ASSOCIATION__LOCAL_TARGET = eINSTANCE.getLocalClassAssociation_LocalTarget();
+
+		/**
+		 * The meta object literal for the '<em><b>Opposite</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LOCAL_CLASS_ASSOCIATION__OPPOSITE = eINSTANCE.getLocalClassAssociation_Opposite();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.impl.ExternalClassAssociationImpl <em>External Class Association</em>}' class.

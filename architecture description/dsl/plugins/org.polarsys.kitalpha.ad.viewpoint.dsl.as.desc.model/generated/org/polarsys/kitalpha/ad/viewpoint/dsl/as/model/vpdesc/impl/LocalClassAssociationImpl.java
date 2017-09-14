@@ -30,6 +30,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.VpdescPackage;
  * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.impl.LocalClassAssociationImpl#getLocalTarget <em>Local Target</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.impl.LocalClassAssociationImpl#getOpposite <em>Opposite</em>}</li>
  * </ul>
  *
  * @generated
@@ -46,6 +47,16 @@ public class LocalClassAssociationImpl extends AbstractAssociationImpl
 	 * @ordered
 	 */
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class localTarget;
+
+	/**
+	 * The cached value of the '{@link #getOpposite() <em>Opposite</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOpposite()
+	 * @generated
+	 * @ordered
+	 */
+	protected LocalClassAssociation opposite;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -119,12 +130,60 @@ public class LocalClassAssociationImpl extends AbstractAssociationImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+
+	public LocalClassAssociation getOpposite() {
+
+		if (opposite != null && opposite.eIsProxy()) {
+			InternalEObject oldOpposite = (InternalEObject)opposite;
+			opposite = (LocalClassAssociation)eResolveProxy(oldOpposite);
+			if (opposite != oldOpposite) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VpdescPackage.LOCAL_CLASS_ASSOCIATION__OPPOSITE, oldOpposite, opposite));
+			}
+		}
+		return opposite;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+
+	public LocalClassAssociation basicGetOpposite() {
+
+		return opposite;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+
+	public void setOpposite(LocalClassAssociation newOpposite) {
+
+		LocalClassAssociation oldOpposite = opposite;
+		opposite = newOpposite;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VpdescPackage.LOCAL_CLASS_ASSOCIATION__OPPOSITE, oldOpposite, opposite));
+
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case VpdescPackage.LOCAL_CLASS_ASSOCIATION__LOCAL_TARGET:
 				if (resolve) return getLocalTarget();
 				return basicGetLocalTarget();
+			case VpdescPackage.LOCAL_CLASS_ASSOCIATION__OPPOSITE:
+				if (resolve) return getOpposite();
+				return basicGetOpposite();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -139,6 +198,9 @@ public class LocalClassAssociationImpl extends AbstractAssociationImpl
 		switch (featureID) {
 			case VpdescPackage.LOCAL_CLASS_ASSOCIATION__LOCAL_TARGET:
 				setLocalTarget((org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class)newValue);
+				return;
+			case VpdescPackage.LOCAL_CLASS_ASSOCIATION__OPPOSITE:
+				setOpposite((LocalClassAssociation)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -155,6 +217,9 @@ public class LocalClassAssociationImpl extends AbstractAssociationImpl
 			case VpdescPackage.LOCAL_CLASS_ASSOCIATION__LOCAL_TARGET:
 				setLocalTarget((org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class)null);
 				return;
+			case VpdescPackage.LOCAL_CLASS_ASSOCIATION__OPPOSITE:
+				setOpposite((LocalClassAssociation)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -169,6 +234,8 @@ public class LocalClassAssociationImpl extends AbstractAssociationImpl
 		switch (featureID) {
 			case VpdescPackage.LOCAL_CLASS_ASSOCIATION__LOCAL_TARGET:
 				return localTarget != null;
+			case VpdescPackage.LOCAL_CLASS_ASSOCIATION__OPPOSITE:
+				return opposite != null;
 		}
 		return super.eIsSet(featureID);
 	}

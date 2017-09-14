@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright (c) 2014 Thales Global Services S.A.S.
+Copyright (c) 2014, 2017 Thales Global Services S.A.S.
 All rights reserved. This program and the accompanying materials
 are made available under the terms of the Eclipse Public License v1.0
 which accompanies this distribution, and is available at
@@ -192,6 +192,19 @@ Contributors:
                   {0}
                </message>
             </constraint>
+              <constraint
+                    class="org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.association.ConsistentOppositeAssociationValidation"
+                    id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.opposite.association"
+                    isEnabledByDefault="true"
+                    lang="Java"
+                    mode="Batch"
+                    name="eOpposite Association"
+                    severity="ERROR"
+                    statusCode="11">
+                 <message>
+                    {0}
+                 </message>
+              </constraint>
          </constraints>
       </constraintProvider>
    </extension>

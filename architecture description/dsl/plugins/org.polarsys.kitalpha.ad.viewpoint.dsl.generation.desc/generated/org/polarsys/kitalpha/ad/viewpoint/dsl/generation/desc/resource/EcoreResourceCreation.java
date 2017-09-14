@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated on Wed Jul 09 15:21:12 CEST 2014 with EGF 1.2.0.v20140702-0648
+//Generated with EGF 1.5.0.v20170706-0846
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.resource;
 
 import java.util.*;
@@ -34,8 +23,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.desc.CoreModelHelpe
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common.adapter.IContractProvider;
 
 public class EcoreResourceCreation
-		extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.common.AnyVPSpecElement {
+		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.common.AnyVPSpecElement {
 
 	public EcoreResourceCreation() {
 		//Here is the constructor
@@ -61,8 +49,7 @@ public class EcoreResourceCreation
 			}
 		}
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 	}
 
@@ -78,10 +65,9 @@ public class EcoreResourceCreation
 			parameters.put("vpElement", this.parameter);
 			parameters.put("eElement", this.gEPackage);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper
-					.executeWithParameterInjection(
-							"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc/egf/vpdslECoreGenerator.fcore#_HKpWoL4sEeKDeKot98nSrA",
-							ctx_local, parameters);
+			CallHelper.executeWithParameterInjection(
+					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc/egf/vpdslECoreGenerator.fcore#_HKpWoL4sEeKDeKot98nSrA",
+					ctx_local, parameters);
 		}
 		ictx.setNode(currentNode);
 		if (ictx.useReporter()) {
@@ -89,27 +75,22 @@ public class EcoreResourceCreation
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
 
-	protected void method_initResourceInformations(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_initResourceInformations(final StringBuffer out, final PatternContext ctx) throws Exception {
 		nsUri = VpDslConfigurationHelper.getNsURI(parameter);
 		shortName = CoreModelHelper.getViewpointShortName(parameter);
 		modelFolder = (String) ctx.getValue(IContractProvider.MODEL_FOLDER);
-		rootProjectName = VpDslConfigurationHelper
-				.getRootProjectName(parameter);
+		rootProjectName = VpDslConfigurationHelper.getRootProjectName(parameter);
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(),
-				"initResourceInformations", out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "initResourceInformations", out.toString());
 	}
 
-	protected void method_generateResource(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_generateResource(final StringBuffer out, final PatternContext ctx) throws Exception {
 		// EPackage creation
 		gEPackage = EcoreFactory.eINSTANCE.createEPackage();
 		gEPackage.setName(shortName);
@@ -118,8 +99,8 @@ public class EcoreResourceCreation
 
 		// Resource creation
 		ResourceSet resourceSet = new ResourceSetImpl();
-		URI uri = URI.createPlatformResourceURI(rootProjectName + "/"
-				+ modelFolder + "/" + shortName + ".ecore", false);
+		URI uri = URI.createPlatformResourceURI(rootProjectName + "/" + modelFolder + "/" + shortName + ".ecore",
+				false);
 		Resource resource = resourceSet.createResource(uri);
 		resource.getContents().add(gEPackage);
 		resource.save(Collections.EMPTY_MAP);
@@ -128,26 +109,21 @@ public class EcoreResourceCreation
 		//ECoreResourceManager.INSTANCE.loadECoreResource(new ECoreFileInformation(rootProjectName, "models", shortName));
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "generateResource",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "generateResource", out.toString());
 	}
 
-	protected void method_loadEcoreResource(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_loadEcoreResource(final StringBuffer out, final PatternContext ctx) throws Exception {
 		// Loading resource
 		ECoreResourceManager.INSTANCE
-				.loadECoreResource(new ECoreFileInformation(rootProjectName,
-						modelFolder, shortName));
+				.loadECoreResource(new ECoreFileInformation(rootProjectName, modelFolder, shortName));
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "loadEcoreResource",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "loadEcoreResource", out.toString());
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Data parameter;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Data parameter) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Data parameter) {
 		this.parameter = parameter;
 	}
 

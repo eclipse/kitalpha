@@ -71,6 +71,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="LocalClassAssociation" eSuperTypes="#//AbstractAssociation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="LocalTarget" lowerBound="1"
         eType="#//Class"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="opposite" eType="#//LocalClassAssociation"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExternalClassAssociation" eSuperTypes="#//AbstractAssociation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ExternalTarget" lowerBound="1"

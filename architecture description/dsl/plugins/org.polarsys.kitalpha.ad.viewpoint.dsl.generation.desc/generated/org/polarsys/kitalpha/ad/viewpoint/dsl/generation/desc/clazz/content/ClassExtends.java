@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated on Wed Jul 09 15:21:12 CEST 2014 with EGF 1.2.0.v20140702-0648
+//Generated with EGF 1.5.0.v20170706-0846
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.clazz.content;
 
 import java.util.*;
@@ -32,8 +21,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.desc.CoreModelHelpe
 import org.polarsys.kitalpha.emde.model.impl.EmdePackageImpl;
 
 public class ClassExtends
-		extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.abstracts.ClassAbstractPattern {
+		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.abstracts.ClassAbstractPattern {
 
 	public ClassExtends() {
 		//Here is the constructor
@@ -59,8 +47,7 @@ public class ClassExtends
 			}
 		}
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 	}
 
@@ -77,19 +64,16 @@ public class ClassExtends
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
 
-	protected void method_getTargetClasses(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_getTargetClasses(final StringBuffer out, final PatternContext ctx) throws Exception {
 		//targetClasses = parameter.getExtends();
 
 		for (EClass clazz : parameter.getExtends()) {
-			EClass plateformClazz = PlatformEClassesManager.INSTANCE
-					.getEClassesWithPlatformURI(clazz);
+			EClass plateformClazz = PlatformEClassesManager.INSTANCE.getEClassesWithPlatformURI(clazz);
 			if (plateformClazz != null) {
 				if (targetClasses == null)
 					targetClasses = new BasicEList<EObject>();
@@ -99,12 +83,10 @@ public class ClassExtends
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "getTargetClasses",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "getTargetClasses", out.toString());
 	}
 
-	protected void method_AnnotateCurEClass(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_AnnotateCurEClass(final StringBuffer out, final PatternContext ctx) throws Exception {
 		if (targetClasses == null)
 			return;
 
@@ -112,10 +94,8 @@ public class ClassExtends
 			return;
 
 		// Creation of the EAnnotation object 
-		EAnnotation anotExtendedElement = EcoreFactory.eINSTANCE
-				.createEAnnotation();
-		anotExtendedElement
-				.setSource(Constant.EXTENDTED_ELEMENT_ANNOTATION_SOURCE);
+		EAnnotation anotExtendedElement = EcoreFactory.eINSTANCE.createEAnnotation();
+		anotExtendedElement.setSource(Constant.EXTENDTED_ELEMENT_ANNOTATION_SOURCE);
 		EAnnotation anotMapping = EcoreFactory.eINSTANCE.createEAnnotation();
 		anotMapping.setSource(Constant.MAPPING_ANNOTATION_SOURCE);
 
@@ -125,8 +105,7 @@ public class ClassExtends
 		for (Object iClazz : targetClasses) {
 			EClass clazz = (EClass) iClazz;
 			String clazzName = clazz.getName();
-			strExtendedElement = strExtendedElement + " "
-					+ clazz.getEPackage().getNsURI() + Constant.URI_SEPARATOR
+			strExtendedElement = strExtendedElement + " " + clazz.getEPackage().getNsURI() + Constant.URI_SEPARATOR
 					+ clazzName;
 			strMapping = strMapping + " " + EcoreUtil.getURI(clazz).toString();
 		}
@@ -148,24 +127,21 @@ public class ClassExtends
 		curEClass.getEAnnotations().add(anotExtendedElement);
 		curEClass.getEAnnotations().add(anotMapping);
 
-		curEClass.getESuperTypes().add(
-				EMDEElementProvider.INSTANCE.getElementExtension());
+		curEClass.getESuperTypes().add(EMDEElementProvider.INSTANCE.getElementExtension());
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "AnnotateCurEClass",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "AnnotateCurEClass", out.toString());
 	}
 
-	protected void method_checkIfTargetClassesAreExtensible(
-			final StringBuffer out, final PatternContext ctx) throws Exception {
+	protected void method_checkIfTargetClassesAreExtensible(final StringBuffer out, final PatternContext ctx)
+			throws Exception {
 		if (targetClasses != null && targetClasses.size() > 0) {
 			for (Object iClazz : targetClasses) {
 				EClass clazz = (EClass) iClazz;
 				boolean throwEception = true;
 
 				for (EClass itClass : clazz.getEAllSuperTypes()) {
-					if (itClass.getEPackage().getNsURI()
-							.equals(EmdePackageImpl.eINSTANCE.getNsURI())
+					if (itClass.getEPackage().getNsURI().equals(EmdePackageImpl.eINSTANCE.getNsURI())
 							&& itClass.getClassifierID() == EmdePackageImpl.EXTENSIBLE_ELEMENT) {
 						throwEception = false;
 						break;
@@ -173,23 +149,19 @@ public class ClassExtends
 				}
 
 				if (throwEception) {
-					String shortName = CoreModelHelper
-							.getViewpointShortName(parameter);
-					throw new NotExtensibleEClassException(parameter, clazz,
-							shortName);
+					String shortName = CoreModelHelper.getViewpointShortName(parameter);
+					throw new NotExtensibleEClassException(parameter, clazz, shortName);
 				}
 			}
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(),
-				"checkIfTargetClassesAreExtensible", out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "checkIfTargetClassesAreExtensible", out.toString());
 	}
 
 	protected org.eclipse.emf.common.util.EList targetClasses;
 
-	public void set_targetClasses(
-			org.eclipse.emf.common.util.EList targetClasses) {
+	public void set_targetClasses(org.eclipse.emf.common.util.EList targetClasses) {
 		this.targetClasses = targetClasses;
 	}
 

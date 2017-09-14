@@ -1,0 +1,29 @@
+EPackageHelper helper = new EPackageHelper(ECoreResourceManager.INSTANCE.getEPackage());
+
+LocalClassAssociation opposite = parameter.getOpposite();
+if (opposite != null) {
+   //
+	//Current reference
+	EObject eContainer = parameter.eContainer();
+	String vpClassName = ((org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class) eContainer).getName();
+	EReference eReference = helper.getEReference(vpClassName, parameter.getName());
+	
+	if (eReference == null){
+		throw new RuntimeException("Could not find a reference (" + parameter.getName() + " to compute its eOpposite"); //$NON-NLS-1$
+	}
+	
+	//eOppoiste reference
+	EObject oppositeVpClass = opposite.eContainer();
+	String oppositeReferenceName = opposite.getName();
+	String oppositeVpClassName = ((org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class)oppositeVpClass).getName();
+	EReference eOpposite = helper.getEReference(oppositeVpClassName, oppositeReferenceName);
+	
+	if (eOpposite == null){
+		throw new RuntimeException("Could not find eOpposite of reference: " + parameter.getName()); //$NON-NLS-1$
+	}
+	
+	//Set references as eOpposite each other
+	eReference.setEOpposite(eOpposite);
+	
+	eOpposite.setEOpposite(eReference);
+}

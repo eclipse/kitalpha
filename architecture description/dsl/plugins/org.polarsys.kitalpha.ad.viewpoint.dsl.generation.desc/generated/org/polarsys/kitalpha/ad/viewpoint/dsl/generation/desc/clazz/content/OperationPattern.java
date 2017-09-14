@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated on Wed Jul 09 15:21:12 CEST 2014 with EGF 1.2.0.v20140702-0648
+//Generated with EGF 1.5.0.v20170706-0846
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.clazz.content;
 
 import java.util.*;
@@ -33,8 +22,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.ViewpointClassifier;
 
 public class OperationPattern
-		extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.abstracts.ClassAbstractContentElement {
+		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.abstracts.ClassAbstractContentElement {
 
 	public OperationPattern() {
 		//Here is the constructor
@@ -60,8 +48,7 @@ public class OperationPattern
 			}
 		}
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 	}
 
@@ -80,35 +67,29 @@ public class OperationPattern
 			parameterValues.put("operation", this.operation);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
 
-	protected void method_initContainingEClassName(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_initContainingEClassName(final StringBuffer out, final PatternContext ctx) throws Exception {
 		Class containerClass = (Class) operation.eContainer();
 
 		eClassName = containerClass.getName();
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(),
-				"initContainingEClassName", out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "initContainingEClassName", out.toString());
 	}
 
-	protected void method_createElement(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_createElement(final StringBuffer out, final PatternContext ctx) throws Exception {
 		eOperation = EcoreFactory.eINSTANCE.createEOperation();
 		eOperation.setName(operation.getName());
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "createElement",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "createElement", out.toString());
 	}
 
-	protected void method_setOperationType(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_setOperationType(final StringBuffer out, final PatternContext ctx) throws Exception {
 		// get the specified type in vp desc model
 		AbstractType opType = operation.getOperation_type();
 
@@ -118,13 +99,11 @@ public class OperationPattern
 			// Case of local type, then look for the EClass generated from the Local Type (vpspec.Class) 
 			if (opType instanceof LocalType) {
 				final LocalType localType = (LocalType) opType;
-				final ViewpointClassifier viewpointClassifier = localType
-						.getType();
+				final ViewpointClassifier viewpointClassifier = localType.getType();
 
 				/* Get the corresponding generated Target ECLass from the generated EPackage */
 				for (EClassifier iEClassifier : vpsPackage.getEClassifiers()) {
-					if (iEClassifier.getName().equals(
-							viewpointClassifier.getName()))
+					if (iEClassifier.getName().equals(viewpointClassifier.getName()))
 						opertionEClassifierType = iEClassifier;
 				}
 			}
@@ -139,12 +118,10 @@ public class OperationPattern
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setOperationType",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setOperationType", out.toString());
 	}
 
-	protected void method_setOperationCardinalities(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_setOperationCardinalities(final StringBuffer out, final PatternContext ctx) throws Exception {
 		AbstractType opType = operation.getOperation_type();
 
 		if (opType != null) {
@@ -170,12 +147,10 @@ public class OperationPattern
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(),
-				"setOperationCardinalities", out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setOperationCardinalities", out.toString());
 	}
 
-	protected void method_setOperationParameters(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_setOperationParameters(final StringBuffer out, final PatternContext ctx) throws Exception {
 		for (Parameter iParameter : operation.getParameters()) {
 			EParameter parameter = EcoreFactory.eINSTANCE.createEParameter();
 			parameter.setName(iParameter.getName());
@@ -190,14 +165,11 @@ public class OperationPattern
 				// Case of local type, then look for the EClass generated from the Local Type (vpspec.Class) 
 				if (pAbstractType instanceof LocalType) {
 					final LocalType localType = (LocalType) pAbstractType;
-					final ViewpointClassifier viewpointClassifier = localType
-							.getType();
+					final ViewpointClassifier viewpointClassifier = localType.getType();
 
 					/* Get the corresponding generated Target ECLass from the generated EPackage */
-					for (EClassifier iEClassifier : vpsPackage
-							.getEClassifiers()) {
-						if (iEClassifier.getName().equals(
-								viewpointClassifier.getName()))
+					for (EClassifier iEClassifier : vpsPackage.getEClassifiers()) {
+						if (iEClassifier.getName().equals(viewpointClassifier.getName()))
 							parameterType = iEClassifier;
 					}
 				}
@@ -240,14 +212,12 @@ public class OperationPattern
 			if (iParameter.getOwned_annotations().size() > 0) {
 				for (Annotation iAnnotation : iParameter.getOwned_annotations()) {
 					String source = iAnnotation.getSource();
-					EAnnotation eAnnotation = EcoreFactory.eINSTANCE
-							.createEAnnotation();
+					EAnnotation eAnnotation = EcoreFactory.eINSTANCE.createEAnnotation();
 					eAnnotation.setSource(source);
 					if (iAnnotation.getOwned_details().size() > 0) {
 						for (Detail iDetail : iAnnotation.getOwned_details()) {
 							EStringToStringMapEntryImpl entry = (EStringToStringMapEntryImpl) EcoreFactory.eINSTANCE
-									.create(EcorePackage.eINSTANCE
-											.getEStringToStringMapEntry());
+									.create(EcorePackage.eINSTANCE.getEStringToStringMapEntry());
 							entry.setKey(iDetail.getKey());
 							if (iDetail.getValue() != null)
 								entry.setValue(iDetail.getValue());
@@ -261,42 +231,34 @@ public class OperationPattern
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setOperationParameters",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setOperationParameters", out.toString());
 	}
 
-	protected void method_addEOperationToEClass(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_addEOperationToEClass(final StringBuffer out, final PatternContext ctx) throws Exception {
 		containingEClass.getEOperations().add(eOperation);
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "addEOperationToEClass",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "addEOperationToEClass", out.toString());
 	}
 
-	protected void method_setAnnotationParameters(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_setAnnotationParameters(final StringBuffer out, final PatternContext ctx) throws Exception {
 		annotatableElement = operation;
 		ecoreElement = eOperation;
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(),
-				"setAnnotationParameters", out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setAnnotationParameters", out.toString());
 	}
 
-	protected void method_getGeneratedEPackage(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_getGeneratedEPackage(final StringBuffer out, final PatternContext ctx) throws Exception {
 		vpsPackage = ECoreResourceManager.INSTANCE.getEPackage();
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "getGeneratedEPackage",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "getGeneratedEPackage", out.toString());
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Operation operation;
 
-	public void set_operation(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Operation operation) {
+	public void set_operation(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Operation operation) {
 		this.operation = operation;
 	}
 
