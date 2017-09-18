@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>customitems</title><link type="text/css" rel="stylesheet" href="PLUGINS_ROOT/org.polarsys.kitalpha.doc/html/common/style/style.css"/></head><body><h1 id="Custom_Items">Custom Items</h1><p>Throw a simple use case, this page describes how to add custom items (i.e., tools) to the toolbar.</p><h2 id="Use_case">Use case</h2><p>The use case is intend to create a MDE Rich Text with one toolbar group which contains two items. The first item encode the selected characters with Base64 encoder, and the second decode the selected characters</p><h2 id="Implementation">Implementation</h2><p>The first step is to declare the toolbar group with its two items encode64 and decode64 in the configuration of the editor</p><pre>	MDENebulaRichTextConfiguration configuration = new MDENebulaRichTextConfiguration();
+	configuration.initializeToolbarItem("EncodeToolbarGroup", "encode64", "decode64");
+</pre><ul><li>EncodeToolbarGroup is the group</li><li>encode64 is the item which <b>encode</b> the selected text</li><li>decode64 is the item which <b>decode</b> the selected text</li></ul><p>The second step is to add the buttons and their handlers to the widget.</p><p>This is Nebula specific feature which is an inheritance from CKEditor. Then, The widget must be casted to <i>org.polarsys.kitalpha.richtext.nebula.widget.MDENebulaBasedRichTextWidget</i> which provides the right services to do that.</p><p>Once the widget is casted, <i>org.polarsys.kitalpha.richtext.nebula.widget.MDENebulaBasedRichTextWidget#addToolbarItem(String name, String command, String label, String toolbar, URL iconPath, MDERichTextToolbarItemHandler handler)</i> service is used.</p><ul><li>name: refers to the name of the button</li><li>command: refers to the name of the command which be called at receiving click-event</li><li>label: refers to the tooltip of the item</li><li>toolbar: refers to the toolbar group where the item will be appear</li><li>URL: refers to the path of the icon of the item.</li><li>handler: refers to the callback of the command at receiving click-event. This will call the execute(MDERichTextWidget) method. The parameter of the service is the instance of the widget where the event was triggered</li></ul><p><i>NB: Refers to API References for more information about MDERichTextHelper and how to retrieve URL of icon in Eclipse</i></p><p>For encoding here how to add the Encode item to the toolbar</p><pre>	...
+	((MDENebulaBasedRichTextWidget)richtextWidget).addToolbarItem("encode64", "encode64", "Encode64", "EncodeToolbarGroup", MDERichTextHelper.getURL("org.eclipse.emf.diffmerge.ui", "icons/full/lock_closed.gif"), new MDERichTextToolbarItemHandler() {
+			@Override
+			public void execute(MDERichTextWidget richText) {
+				String selectedText = richText.getSelectedText();
+				if (selectedText != null &amp;&amp; !selectedText.isEmpty()){
+					byte[] encoded = Base64.getEncoder().encode(selectedText.getBytes());
+					String s = new String(encoded);
+					richText.insertText(s);
+				}
+			}
+	});
+	...
+</pre><p>And for Decode item:</p><pre>	...
+	(MDENebulaBasedRichTextWidget)richtextWidget).addToolbarItem("decode64", "decode64", "Decode64", "EncodeToolbarGroup", MDERichTextHelper.getURL("org.eclipse.emf.diffmerge.ui", "icons/full/lock_open.gif"), new MDERichTextToolbarItemHandler() {
+			@Override
+			public void execute(MDERichTextWidget richText) {
+				String selectedText = richText.getSelectedText();
+				if (selectedText != null &amp;&amp; !selectedText.isEmpty()){
+					byte[] decoded = Base64.getDecoder().decode(selectedText.getBytes());
+					String s = new String(decoded);
+					richText.insertText(s);
+				}
+			}
+		});
+		...
+</pre><p>The result before encoding:</p><p><img width="600" title="Before Encoding" alt="Before Encoding" border="0" src="../../img/richtext_encode_text.png"/></p><p>The result after enoding:</p><p><img width="600" title="After Encoding" alt="After Encoding" border="0" src="../../img/richtext_encoded_text.png"/></p><p>the result after decoding:</p><p><img width="600" title="After Encoding" alt="After Encoding" border="0" src="../../img/richtext_decoded_text.png"/></p><p><i>NB: Base64 class is available in Java 1.8</i></p></body></html>

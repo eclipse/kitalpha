@@ -12,11 +12,12 @@ Contributors:
 <?eclipse version="3.4"?>
 <plugin>
    <extension-point id="org.polarsys.kitalpha.richtext.widget.propertySheetPageDelegate" name="propertySheetPageDelegate" schema="schema/propertySheetPageDelegate.exsd"/>
+   <extension-point id="org.polarsys.kitalpha.richtext.widget.saveResourceCallback" name="saveResourceCallback" schema="schema/saveResourceCallback.exsd"/>
 	<extension
 	         point="org.eclipse.ui.editors">
 	      <editor
              class="org.polarsys.kitalpha.richtext.widget.editor.MDERichTextEditor"
-             default="false"
+             default="true"
              icon="icons/openInEditor.gif"
              id="org.polarsys.kitalpha.richtext.widget.editor"
              matchingStrategy="org.polarsys.kitalpha.richtext.widget.editor.MDERichTextEditorMatchingStrategy"

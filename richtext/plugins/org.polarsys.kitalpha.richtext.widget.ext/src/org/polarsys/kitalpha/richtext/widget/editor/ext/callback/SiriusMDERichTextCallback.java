@@ -1,0 +1,47 @@
+/*******************************************************************************
+ * Copyright (c) 2017 Thales Global Services S.A.S.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
+package org.polarsys.kitalpha.richtext.widget.editor.ext.callback;
+
+import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.sirius.business.api.session.Session;
+import org.eclipse.sirius.business.api.session.SessionManager;
+import org.eclipse.sirius.business.api.session.SessionStatus;
+import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
+import org.polarsys.kitalpha.richtext.widget.editor.intf.MDERichTextEditorCallback;
+
+/**
+ * 
+ * @author Faycal Abka
+ *
+ */
+public class SiriusMDERichTextCallback implements MDERichTextEditorCallback {
+
+	@Override
+	public void saveWorkspaceResource(MDERichTextWidget widget) {
+		EObject element = widget.getElement();
+		Session session = SessionManager.INSTANCE.getSession(element);
+		if (session != null) {
+			session.save(new NullProgressMonitor());
+		}
+	}
+
+	@Override
+	public boolean isWorkspaceResourceDirty(MDERichTextWidget widget) {
+		EObject element = widget.getElement();
+		Session session = SessionManager.INSTANCE.getSession(element);
+		if (session != null) {
+			return SessionStatus.DIRTY.equals(session.getStatus());
+		}
+		return false;
+	}
+
+}

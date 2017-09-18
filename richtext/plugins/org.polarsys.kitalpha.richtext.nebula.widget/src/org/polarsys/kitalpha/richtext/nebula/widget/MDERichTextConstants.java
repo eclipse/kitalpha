@@ -156,11 +156,10 @@ public final class MDERichTextConstants {
 	
 	private static String getFilePath(URL url) {
 		if (url != null){
-			try {
-				return FileLocator.toFileURL(url).toString();
-			} catch (IOException e) {
-				Status status = new Status(Status.ERROR, Activator.PLUGIN_ID, e.getMessage(), e);
-				Activator.getDefault().getLog().log(status);
+			URL fileURL = getFileURL(url);
+			
+			if (fileURL != null){
+				return fileURL.toString();
 			}
 		}
 		return null;
@@ -185,5 +184,15 @@ public final class MDERichTextConstants {
 			return url;
 		}
 		return url;
+	}
+	
+	public static URL getFileURL(URL url){
+		try {
+			return FileLocator.toFileURL(url);
+		} catch (IOException e) {
+			Status status = new Status(Status.ERROR, Activator.PLUGIN_ID, e.getMessage(), e);
+			Activator.getDefault().getLog().log(status);
+		}
+		return null;
 	}
 }

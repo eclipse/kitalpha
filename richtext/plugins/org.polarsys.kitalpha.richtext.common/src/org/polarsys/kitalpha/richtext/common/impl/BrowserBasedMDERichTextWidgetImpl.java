@@ -11,9 +11,9 @@
 package org.polarsys.kitalpha.richtext.common.impl;
 
 import org.eclipse.core.runtime.Assert;
-import org.polarsys.kitalpha.richtext.common.intf.BrowserBasedMDERichTextWidget;
 import org.eclipse.swt.browser.LocationListener;
 import org.eclipse.swt.widgets.Composite;
+import org.polarsys.kitalpha.richtext.common.intf.BrowserBasedMDERichTextWidget;
 
 /**
  * 

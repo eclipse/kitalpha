@@ -13,10 +13,10 @@ package org.polarsys.kitalpha.richtext.widget.editor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.jface.resource.ImageDescriptor;
-import org.polarsys.kitalpha.richtext.common.intf.SaveStrategy;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IPersistableElement;
-import org.polarsys.kitalpha.richtext.mde.tools.utils.MDERichTextToolsHelper;
+import org.polarsys.kitalpha.richtext.common.intf.SaveStrategy;
+import org.polarsys.kitalpha.richtext.widget.tools.utils.MDERichTextToolsHelper;
 
 /**
  * 

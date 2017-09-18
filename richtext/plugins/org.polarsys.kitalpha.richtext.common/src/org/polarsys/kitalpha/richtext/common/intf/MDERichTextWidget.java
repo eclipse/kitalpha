@@ -10,6 +10,9 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.richtext.common.intf;
 
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.swt.events.FocusListener;
@@ -21,7 +24,7 @@ import org.eclipse.swt.events.ModifyListener;
  * @author Faycal Abka
  *
  */
-public interface MDERichTextWidget {
+public interface MDERichTextWidget extends PropertyChangeListener {
 	
 	
 	/**
@@ -195,6 +198,18 @@ public interface MDERichTextWidget {
 	 * @param listener to remove
 	 */
 	void removeModifyListener(ModifyListener listener);
+	
+	/**
+	 * Add property change listener
+	 * @param listener
+	 */
+	void addPropertyChangeListener(PropertyChangeListener listener);
+	
+	/**
+	 * Fire property Change Event to all listeners
+	 * @param event
+	 */
+	void firePropertyChangeEvent(PropertyChangeEvent event);
 	
 	
 	/**

@@ -1,0 +1,138 @@
+
+= Component Sample =
+
+In order to describe how to use MDE Rich Text widget, the official example ''Component Sample'' of Kitalpha is used. The example is available under the GIT repository of Kitalpha or by importing the example in the workspace via the Kitalpha Example.
+
+This full implementation of the integration of the MDE Rich Text is available in the example. Another use case alos provided in the example is the contribution to the Activity Explorer by ''Documentation'' page which embed an instance of the MDE Rich Text Widget.
+
+
+== Use case ==
+
+The meta-model of component sample is:
+
+[[File:../../img/ComponentSampleEntities.png|frameless|800px]]
+
+The aim of the exercise is to fill the description feature with the Rich Text using the MDE Rich Text Widget
+
+
+=== Implementation : Let's go ===
+
+
+# Create a new plugin which will hold the implementation (in Component Sample is the ''org.polarsys.kitalpha.vp.componentsample.ui''
+# In the Manifest of the plugin add to Require-Bundle the dependency to ''org.polarsys.kitalpha.richtext.widget'' and ''org.eclipse.ui.views.properties.tabbed''
+# In ''Extensions'' Tab of the plugin editor, add a contribution to ''org.eclipse.ui.views.properties.tabbed.propertyTabs''
+# Fill ''ContributorID'' field with the ''org.eclipse.ui.navigator.ProjectExplorer'' value (This value activate the tab when an object is selected in the ''Project Explorer'')
+# Add under ''PropertyTabs'' a ''property tab'' and fill fields with these values
+## label = Description
+## category = resource
+## id = org.polarsys.kitalpha.vp.componentsample.ui.propertytab.description
+## afterTab = default
+# After that, add contribution to ''org.eclipse.ui.views.properties.tabbed.propertySections'' extension point
+# Fill contributionId field with ''org.eclipse.ui.navigator.ProjectExplorer'' value
+# Add ''PropertySection'' child and fill the fields with these values
+## tab = org.polarsys.kitalpha.vp.componentsample.ui.propertytab.description
+## id = org.polarsys.kitalpha.vp.componentsample.ui.propertysection.description
+## class = The fully qualified name of the implementation class of the section which extends ''org.eclipse.ui.views.properties.tabbed.AbstractPropertySection'' class
+## filter = The fully qualified name of the implementation which implements ''org.eclipse.jface.viewers.IFilter'' interface
+
+
+==== Class and filter implementation ====
+
+The steps above is only for contributing with a new Tab to property tab. This section intends to show how to display and configure the MDE Rich Text Widget in this Tab
+
+
+===== Component Sample Description =====
+
+''NB: The code source here are commented with #{number} pattern. The pattern indicates the step.''
+
+* Declares and create a Rich Text widget
+
+Create object attribute:
+
+<source lang="Java" enclose="none">
+
+public class ComponentSampleDescription extends AbstractSection {
+
+	/**
+	 * #0: declaration of the widget
+	 */
+	private MDERichtextWidget richtextWidget; //Widget declaration
+		
+	//...
+}
+</source>
+
+
+Override ''org.polarsys.kitalpha.vp.componentsample.ui.ComponentSampleDescription#createControls(Composite, TabbedPropertySheetPage)'' method and put the implementation:
+
+<source lang="Java" enclose="none">
+
+super.createControls(parent, aTabbedPropertySheetPage);
+parent.setLayout(new GridLayout(1, true));
+parent.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+
+/**
+ * #1: Create a factory
+ * #2: Create a minimal Rich Text Widget
+ */
+richtextWidget = (new MDERichTextFactory()).createMinimalRichTextWidget(parent);
+
+/**
+ * #3: Set strategy of saving in the model.
+ */
+richtextWidget.setSaveStrategy(new SaveStrategy() {
+	@Override
+	public void save(String editorText, EObject owner, EStructuralFeature feature) {
+		TransactionalEditingDomain ted = TransactionUtil.getEditingDomain(owner);
+		Command set = SetCommand.create(ted, owner, feature, editorText);
+		CommandStack stack = ted.getCommandStack();
+		stack.execute(set);
+	}
+});
+</source>
+
+* Binding the widget
+Once the widget is created. Know, it must be binded to the current selection and description feature.
+Override ''org.polarsys.kitalpha.vp.componentsample.ui.ComponentSampleDescription#setInput(IWorkbenchPart, ISelection)'' method and enter the following source
+
+<source lang="Java" enclose="none">
+super.setInput(part, selection);
+
+EObject owner = null;
+
+//Find the real object behind the selection
+if (selection instanceof TreeSelection) {
+	owner = (EObject) ((TreeSelection) selection).getFirstElement();
+}
+
+/**
+ * #4: Bind the widget with the owner of description feature
+ */
+richtextWidget.bind(owner, ComponentSamplePackage.Literals.COMPONENT_ELEMENT__DESCRIPTION);
+</source>
+
+By this way, every changing of selection to Component Sample element, we rebind the the widget to the right element.
+
+===== Component Sample Filter =====
+
+The aim of the filter is to restrect the activation of the tab to Component element.
+
+Implements ''org.polarsys.kitalpha.vp.componentsample.ui.filters.ComponentSampleDescriptionFilter#select(Object)'' method which check if the object is a ComponentElement one.
+
+<source lang="Java" enclose="none">
+public boolean select(Object toTest) {
+	return toTest instanceof ComponentElement;
+}
+</source>
+
+==== Result ====
+
+[[File:../../img/richtext_property_view_contribution.png|Contributing to property tab which embed MDE Rich Text Widget|frameless|800px]]
+
+==== Summary ====
+
+To summary, the steps to use MDE Rich Text Widget are:
+
+# Create a widget instance (using for example a provided factory as shown)
+# Set a strategy to save the content in the model
+# Bind the widget with model element and a feature

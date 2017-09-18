@@ -28,9 +28,8 @@ Contributors:
    </license>
 
    <includes
-         id="org.polarsys.kitalpha.richtext.mde.tools.sirius.feature"
-         version="0.0.0"
-         optional="true"/>
+         id="org.polarsys.kitalpha.richtext.widget.ext.feature"
+         version="0.0.0"/>
 
    <requires>
       <import plugin="org.eclipse.nebula.widgets.richtext"/>
@@ -38,13 +37,6 @@ Contributors:
 
    <plugin
          id="org.polarsys.kitalpha.richtext.widget"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.polarsys.kitalpha.richtext.mde.tools"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -59,6 +51,13 @@ Contributors:
 
    <plugin
          id="org.polarsys.kitalpha.richtext.common"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.polarsys.kitalpha.richtext.widget.tools"
          download-size="0"
          install-size="0"
          version="0.0.0"
