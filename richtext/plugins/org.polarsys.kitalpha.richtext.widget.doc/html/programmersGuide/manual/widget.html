@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>widget</title><link type="text/css" rel="stylesheet" href="PLUGINS_ROOT/org.polarsys.kitalpha.doc/html/common/style/style.css"/></head><body><h1 id="MDE_Rich_Text_Widget">MDE Rich Text Widget</h1><p>MDE Rich Text is designed to be easy for integration. With a few source code lines the widget is ready to use.</p><p>The following sections illustrate diffrents steps to follow to use the widget.</p><h2 id="Steps">Steps</h2><p>Here the main steps to follow to use the widget.</p><p><img title="Steps to use MDE Rich Text Widget" alt="Steps to use MDE Rich Text Widget" border="0" src="../../img/richtext_process.png"/></p><p>Notice all the steps are not mandatory. Only step 2 and step 4 are mandatory.
+MDE Rich Text Widget provides a factory with a pre-initialized widgets for Model Driven Engineering and adapted to be use on Eclipse workbench.</p><h2 id="Widget_structure_and_services">Widget structure and services</h2><p>The implementation of the widget is <i>org.polarsys.kitalpha.richtext.widget.MDERichtextWidgetImpl</i> which implements org.polarsys.kitalpha.common.intf.MDERichTextWidget interface. The following table shows the structure and the services which each level of the widget provides</p><table><tr><th>Widget</th><th>Parent</th><th>Description</th></tr><tr><td>MDERichtextWidgetImpl</td><td>MDENebulaBasedRichTextWidgetImpl</td><td>Install listeners on Nebula widget for saving the content in model element and navigation menu to for opening links</td></tr><tr><td>MDENebulaBasedRichTextWidgetImpl</td><td>BrowserBasedMDERichTextWidgetImpl</td><td>Instantiates and communicates with Nebula Rich Text Editor.</td></tr><tr><td>AbstractMDERichTextWidget</td><td>MDERichTextWidget (Interface)</td><td>Implements generic services for the widget</td></tr></table><h4 id="Services">Services</h4><p>The most notable services provided by the widget are:</p><ul><li>Get the feature and model element where the content will be stored</li><li>Bind the widget to a model element and the feature where to store the content</li><li>Retrieve the text in the widget</li><li>Insert text in the widget</li><li>Retrieve the selected text in the widget</li><li>Dirty service to check if the content in the model is not equal to widget text</li><li>Access to the readystate of the editor (if the ready state is set to true, that means the CKEditor is loaded and ready to use and interact with it)</li><li>Set a strategy to save. The default implementation do the setting by calling the reflective API</li><li>Save the content of the widget in the model</li><li>Load the content of the model element into the widget</li></ul><h2 id="Guidelines">Guidelines</h2><p>This section shows guidelines to use the widget.</p><h3 id="Default_Nebula_configuration">Default Nebula configuration</h3><p>The MDE Rich Text Widget offer a various way to instantiate it. It defines many constructors. The constructors without widget configuration as parameter, simply reuse the default configuration of Nebula Rich Text Editor. The snippet and capture below, shows the widget with a default configuration</p><pre class="source-Java">	...
+	MDERichTextWidget richtextWidget = new MDERichtextWidgetImpl(parent);
+	...
+</pre><p><img width="600" alt="Default Nebula Rich Text Editor Configuration" border="0" src="../../img/richtext_default_nebula_config.png"/></p><p>Notice on the capture, the image is not displayed, as shown in next capture, even they are on the same model element</p><p><img width="600" alt="Add group of items to the toolbar" border="0" src="../../img/richtext_config_style_toolbar.png"/></p><p>The reason is the functionalities provided by the default configuration of CKEditor. By default, adding an item the toolbar activates the capacity to handle its functionality and generate the output (text stored in the model). Nebula default configuration does not activate the capacity of adding images (i.e., generate &lt;img .../&gt; tag). In MDE Rich Text, all content is allowed by default. That is why, even if we remove add images item from the toolbar, they still displayed.</p><h3 id="Custom_Configuration">Custom Configuration</h3><pre class="source-Java">	final MDENebulaRichTextConfiguration configuration;
+	
+	configuration.initializeToolbarItem(MDERichTextConstants.CLIPBOARD_TOOLBAR);
+	configurationc.initializeToolbarItem(MDERichTextConstants.BASIC_STYLES);
+	richtextWidget = new MDERichtextWidgetImpl(parent, configuration);
+</pre><p>Leads to this result</p><p><img width="600" alt="Custom configuration" border="0" src="../../img/richtext_clipboard_basicstyles.png"/></p><h3 id="Save_Strategy">Save Strategy</h3><p>Once a widget is created, it could be customized to specify the way to store its content in the model.</p><p>All save strategy must implement: org.polarsys.kitalpha.richtext.common.intf.SaveStrategy interface</p><p>A defautl implementation of save strategy it's look likes:</p><pre class="source-Java">	private final SaveStrategy DEFAULT_SAVE_STRATEGY = new SaveStrategy() {
+		@Override
+		public void save(String editorText, EObject objectOwner, EStructuralFeature objectFeature) {
+			objectOwner.eSet(objectFeature, editorText);
+		}
+	};
+</pre><p>For instance, if the model lives in a Transactional Editing Domain, every modification of the model must be executed against this Editing Domain. Then, The default strategy is not adapted to do the work and it must be replaced by the right operation</p><p>Replacement of the strategy is done by calling setSaveStrategy(SaveStrategy) service on the widget.</p><pre class="source-Java">	...
+	MDERichTextWidget richtextWidget = getRichtextWidget();
+	
+	richtextWidget.setSaveStrategy(new SaveStrategy() {
+		@Override
+		public void save(String editorText, EObject objectOwner, EStructuralFeature objectFeature) {
+			//Custom save strategy
+			doCustomSave(editorText, objectOwner, objectFeature);
+		}
+	});
+	...
+</pre><h3 id="Widget_Binding">Widget Binding</h3><p>The last thing to do is bind the widget to model element by calling bind(EObject, EStructuralFeature) service.</p><pre class="source-Java">	...
+	richtextWidget.bind(getEObjectOwner(), getEStructuralFeatureOfEObjectOwner());
+	...
+</pre><p>The bind service requires that its arguments must not be null, otherwise, it will throw immediately an exception.</p><h3 id="MDE_Rich_Text_Widget_Factory">MDE Rich Text Widget Factory</h3><p>MDE Rich Text Widget provides a factory which allows to create a turnkey widget to avoid a boring work on the configuration in Step 1.</p><p>Here a snippet from Kitalpha Component Sample example embeded in page of Activity Explorer</p><pre class="source-Java">	...
+	MDERichTextFactory factory = new MDERichTextFactory();
+	richtextWidget = factory.setToolbarColor("#EEEEFF").createDefaultRichTextWidget(parent);
+	...
+</pre><p><img title="MDE Rich Text Widget In Activity Explorer" alt="MDE Rich Text Widget In Activity Explorer" border="0" src="../../img/richtext_aep.png"/></p><h5 id="Provided_configuration">Provided configuration</h5><ul><li>Default Rich Text Widget: provides a widget with a toolbar adapted to be displayed on <b>Eclipse editor area</b> with Open in Editor item</li><li>Editor Rich Text Widget: provides a widget with a toolbar adapted to be displayed on <b>Eclipse editor area</b> without Open in Editor item</li><li>Minimal Rich Text Widget: provides a widget with a toolbar adapted to be displayed on <b>Eclipse view area</b> with Open in Editor item</li></ul><h3 id="MDE_Rich_Text_Editor">MDE Rich Text Editor</h3><p>MDE Rich Text Wiget is also embded in an Eclipse editor. This editor can be opened with widget configuration provided by the MDE Rich Text Widget Factory by clicking on the dedicated item on the toolbar (<img title="Open In Editor" alt="Open In Editor" border="0" src="../../img/openInEditor.gif"/>).</p><p>For reusing the editor in other context, it is straightforward:</p><pre class="source-Java">	IWorkbenchPage activePage = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
+	MDERichTextEditorInput input = new MDERichTextEditorInput(getEObjectOwner(), getEObjectEStructuralFeature(), getSaveStrategy());
+	try {
+		activePage.openEditor(input, "org.polarsys.kitalpha.richtext.widget.editor");
+	} catch (PartInitException e) {
+		handleException(e);
+	}
+</pre><p>The needed information are:</p><ul><li>The editor input: <i>org.polarsys.kitalpha.richtext.widget.editor.MDERichTextEditorInput</i>. The editor input need to be binded with model element and a save strategy</li><li>The editor Id : <i>org.polarsys.kitalpha.richtext.widget.editor</i></li></ul><h4 id="Property_Sheet_Page_Delegate">Property Sheet Page Delegate</h4><p>To do the integration with a specific property Sheet Page, use <i>org.polarsys.kitalpha.richtext.widget.propertySheetPageDelegate</i> extension point which requires a contributorId and implementation of <i>org.polarsys.kitalpha.richtext.widget.propertysheet.MDERichTextPropertySheetProvider</i> interface.</p><p>Here an example to contribute to this extension point to a project explorer contributorId:</p><pre>	&lt;extension
+		point="org.polarsys.kitalpha.richtext.widget.propertySheetPageDelegate"&gt;
+		&lt;propertySheetDelegate
+            	contributorId="org.eclipse.ui.navigator.ProjectExplorer"
+           	delegateProvider="org.polarsys.kitalpha.ui.MyMDERichTextPropertySheetProvider"&gt;
+		&lt;/propertySheetDelegate&gt;
+	&lt;/extension&gt;
+</pre><p>The implementation of MyMDERichTextPropertySheetProvider:</p><pre>	public class MyMDERichTextPropertySheetProvider implements MDERichTextPropertySheetProvider {
+
+		public MyMDERichTextPropertySheetProvider() {
+		}
+
+		@Override
+		public TabbedPropertySheetPage getTabbedPropertySheetPageDelegate(MDERichTextEditor contributor) {
+			return new TabbedPropertySheetPage(contributor);
+		}
+	}
+</pre></body></html>

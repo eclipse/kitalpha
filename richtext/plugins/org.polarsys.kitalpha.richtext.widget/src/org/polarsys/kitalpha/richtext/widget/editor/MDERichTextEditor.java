@@ -11,15 +11,18 @@
 package org.polarsys.kitalpha.richtext.widget.editor;
 
 
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Platform;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.StructuredSelection;
-import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
-import org.eclipse.swt.events.ModifyEvent;
-import org.eclipse.swt.events.ModifyListener;
+import org.eclipse.swt.browser.BrowserFunction;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IEditorInput;
@@ -27,13 +30,18 @@ import org.eclipse.ui.IEditorSite;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchListener;
 import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.IWorkbenchPartConstants;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.EditorPart;
 import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
+import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
+import org.polarsys.kitalpha.richtext.nebula.widget.MDENebulaBasedRichTextWidget;
+import org.polarsys.kitalpha.richtext.widget.editor.intf.MDERichTextEditorCallback;
 import org.polarsys.kitalpha.richtext.widget.factory.MDERichTextFactory;
+import org.polarsys.kitalpha.richtext.widget.internal.Activator;
 import org.polarsys.kitalpha.richtext.widget.internal.extension.MDERichTextExtensionManager;
 
 /**
@@ -43,6 +51,10 @@ import org.polarsys.kitalpha.richtext.widget.internal.extension.MDERichTextExten
  */
 public class MDERichTextEditor extends EditorPart implements ITabbedPropertySheetPageContributor {
 	
+	private static final String SAVE_CALLBACK_EXTENSION_ID = "org.polarsys.kitalpha.richtext.widget.saveResourceCallback"; //$NON-NLS-1$
+
+	private static final String SAVE_CALLBACK_CLASS_ATTR = "class"; //$NON-NLS-1$
+
 	private MDERichTextWidget widget;
 	
 	private final MDERichTextExtensionManager propertySheetExtensionManager = new MDERichTextExtensionManager(this);
@@ -70,8 +82,11 @@ public class MDERichTextEditor extends EditorPart implements ITabbedPropertyShee
 	@Override
 	public void doSave(IProgressMonitor monitor) {
 		widget.saveContent();
+		doSaveCallback(widget);
 		firePropertyChange(PROP_DIRTY);
+		firePropertyChange(PROP_TITLE);
 	}
+	
 
 	@Override
 	public void doSaveAs() {
@@ -117,6 +132,10 @@ public class MDERichTextEditor extends EditorPart implements ITabbedPropertyShee
 	
 	@Override
 	public boolean isDirty() {
+		boolean resourceState = doCheckWorkspaceResourceStatus(widget);
+		if (resourceState) {
+			return widget.isDirty();
+		}
 		return widget.isDirty();
 	}
 
@@ -135,15 +154,14 @@ public class MDERichTextEditor extends EditorPart implements ITabbedPropertyShee
 		this.widget.setSaveStrategy(input.getSaveStrategy());
 		widget.bind(input.getElement(), input.getFeature());
 		
-		widget.addModifyListener(new ModifyListener() {
-			@Override
-			public void modifyText(ModifyEvent e) {
-				firePropertyChange(PROP_DIRTY);
-			}
-		});
+		new BrowserFunction(((MDENebulaBasedRichTextWidget)widget).getBrowser(), "firePropertyChangeEvent"){ //$NON-NLS-1$
+			public Object function(Object[] arguments) {
+				firePropertyChange(IWorkbenchPartConstants.PROP_DIRTY);
+				return null;
+			};
+		};
 	}
 	
-
 	@Override
 	public void setFocus() {
 		widget.setFocus();
@@ -183,5 +201,41 @@ public class MDERichTextEditor extends EditorPart implements ITabbedPropertyShee
 			return getPropertySheetPage();
 		}
 		return super.getAdapter(adapter_p);
+	}
+	
+	private void doSaveCallback(MDERichTextWidget widget) {
+		IConfigurationElement[] contributions = Platform.getExtensionRegistry().getConfigurationElementsFor(SAVE_CALLBACK_EXTENSION_ID);
+		
+		if (contributions != null && contributions.length > 0) {
+			for (IConfigurationElement c : contributions) {
+				try {
+					MDERichTextEditorCallback callback = (MDERichTextEditorCallback) c.createExecutableExtension(SAVE_CALLBACK_CLASS_ATTR);
+					callback.saveWorkspaceResource(widget);
+				} catch (CoreException e) {
+					Status status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage(), e);
+					Activator.getDefault().getLog().log(status);
+				}
+			}
+		}
+	}
+	
+	private boolean doCheckWorkspaceResourceStatus(MDERichTextWidget widget) {
+		boolean result = true;
+		
+		IConfigurationElement[] contributions = Platform.getExtensionRegistry().getConfigurationElementsFor(SAVE_CALLBACK_EXTENSION_ID);
+
+		if (contributions != null && contributions.length > 0) {
+			for (IConfigurationElement c : contributions) {
+				try {
+					MDERichTextEditorCallback callback = (MDERichTextEditorCallback) c.createExecutableExtension(SAVE_CALLBACK_CLASS_ATTR);
+					result &= callback.isWorkspaceResourceDirty(widget);
+				} catch (CoreException e) {
+					Status status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage(), e);
+					Activator.getDefault().getLog().log(status);
+				}
+			}
+		}
+		
+		return result;
 	}
 }

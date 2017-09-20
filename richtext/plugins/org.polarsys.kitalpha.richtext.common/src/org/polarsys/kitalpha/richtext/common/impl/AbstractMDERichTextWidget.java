@@ -10,14 +10,17 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.richtext.common.impl;
 
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.swt.widgets.Composite;
 import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
 import org.polarsys.kitalpha.richtext.common.intf.SaveStrategy;
 import org.polarsys.kitalpha.richtext.common.messages.Messages;
 import org.polarsys.kitalpha.richtext.common.util.MDERichTextHelper;
-import org.eclipse.swt.widgets.Composite;
 
 /**
  * 
@@ -25,6 +28,8 @@ import org.eclipse.swt.widgets.Composite;
  *
  */
 public abstract class AbstractMDERichTextWidget implements MDERichTextWidget {
+	
+	private final static MDERichTextPropertyChangeListenerSupport listenersSupports = new MDERichTextPropertyChangeListenerSupport();
 	
 	private EObject owner;
 	private EStructuralFeature feature;
@@ -93,6 +98,7 @@ public abstract class AbstractMDERichTextWidget implements MDERichTextWidget {
 		}
 	}
 	
+
 	@Override
 	public final void setSaveStrategy(SaveStrategy strategy) {
 		Assert.isLegal(strategy != null, Messages.RichTextWidget_Common_NullableStrategy_Error);
@@ -105,7 +111,7 @@ public abstract class AbstractMDERichTextWidget implements MDERichTextWidget {
 		EStructuralFeature feature = getFeature();
 		String storedText = (String) owner.eGet(feature);
 		String text = getText();
-		return !text.equals(storedText) || (storedText == null && "".equals(text));
+		return !text.equals(storedText) || (storedText == null && !"".equals(text));
 	}
 	
 	public SaveStrategy getSaveStrategy(){
@@ -126,4 +132,39 @@ public abstract class AbstractMDERichTextWidget implements MDERichTextWidget {
 			}
 		}
 	}
+	
+	@Override
+	public void propertyChange(PropertyChangeEvent evt) {
+		MDERichTextWidget source = (MDERichTextWidget) evt.getSource();
+		if (source != this && source.getElement().equals(getElement()) && source.getFeature().equals(getFeature())) {
+			String newValue = (String) evt.getNewValue();
+			String currentText = getText();
+			if (!currentText.equals(newValue)) {
+				setText(newValue);
+			}
+		}
+	}
+	
+	@Override
+	public void addPropertyChangeListener(PropertyChangeListener listener) {
+		listenersSupports.addPropertyChangeListener(listener);
+	}
+	
+	@Override
+	public void dispose() {
+		PropertyChangeListener[] propertyChangeListeners = listenersSupports.getPropertyChangeListeners();
+		if (propertyChangeListeners != null && propertyChangeListeners.length > 0) {
+			for (PropertyChangeListener propertyChangeListener : propertyChangeListeners) {
+				listenersSupports.removePropertyChangeListener(propertyChangeListener);
+			}
+		}
+	}
+	
+	@Override
+	public void firePropertyChangeEvent(PropertyChangeEvent event) {
+		if (event.getSource() == this) {
+			listenersSupports.fire(event);
+		}
+	}
+	
 }

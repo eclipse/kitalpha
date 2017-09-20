@@ -6,13 +6,16 @@ Bundle-Version: 1.2.0.qualifier
 Bundle-Activator: org.polarsys.kitalpha.richtext.widget.internal.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- org.polarsys.kitalpha.richtext.nebula.widget,
- org.polarsys.kitalpha.richtext.mde.tools,
- org.eclipse.ui.views.properties.tabbed
+ org.polarsys.kitalpha.richtext.common,
+ org.polarsys.kitalpha.richtext.widget.tools,
+ org.polarsys.kitalpha.richtext.nebula.widget;visibility:=reexport,
+ org.eclipse.ui.views.properties.tabbed,
+ org.polarsys.kitalpha.richtext.widget.tools
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.richtext.widget,
  org.polarsys.kitalpha.richtext.widget.editor,
+ org.polarsys.kitalpha.richtext.widget.editor.intf,
  org.polarsys.kitalpha.richtext.widget.factory,
  org.polarsys.kitalpha.richtext.widget.propertysheet
 Bundle-Vendor: %Bundle-Vendor

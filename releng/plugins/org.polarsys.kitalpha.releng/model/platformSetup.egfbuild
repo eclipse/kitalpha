@@ -22,7 +22,6 @@
       <featureNames>org.eclipse.xsd.sdk</featureNames>
       <featureNames>org.eclipse.emf.validation.ocl</featureNames>
       <featureNames>org.eclipse.gmf.sdk</featureNames>
-      <featureNames>org.eclipse.team.svn</featureNames>
     </steps>
     <steps xsi:type="buildstep:InstallStep" xmi:id="_YL8A8P32EeSW086H-yDPeg" name="install sirius features" id="${TP_name}" profile="${TP_profile}" p2_os="${TP_os}" p2_ws="${TP_ws}" p2_arch="${TP_arch}">
       <updateSiteUrls>${sirius.repo.url}</updateSiteUrls>

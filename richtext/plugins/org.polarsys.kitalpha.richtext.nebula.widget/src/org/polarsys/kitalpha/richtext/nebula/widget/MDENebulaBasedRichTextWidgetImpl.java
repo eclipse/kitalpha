@@ -14,8 +14,6 @@ import java.net.URL;
 import java.util.Map;
 
 import org.eclipse.jface.layout.GridDataFactory;
-import org.polarsys.kitalpha.richtext.common.impl.BrowserBasedMDERichTextWidgetImpl;
-import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
 import org.eclipse.nebula.widgets.richtext.RichTextEditor;
 import org.eclipse.nebula.widgets.richtext.RichTextEditorConfiguration;
 import org.eclipse.swt.browser.Browser;
@@ -24,6 +22,8 @@ import org.eclipse.swt.browser.ProgressListener;
 import org.eclipse.swt.events.FocusListener;
 import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.widgets.Composite;
+import org.polarsys.kitalpha.richtext.common.impl.BrowserBasedMDERichTextWidgetImpl;
+import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
 import org.polarsys.kitalpha.richtext.nebula.widget.toolbar.MDERichTextToolbarItemHandler;
 import org.polarsys.kitalpha.richtext.nebula.widget.toolbar.MDEToolbarItem;
 
@@ -50,6 +50,8 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 		this.configuration = editor.getEditorConfiguration();
 		GridDataFactory.fillDefaults().grab(true, true).applyTo(this.editor);
 		
+		addPropertyChangeListener(this);
+		
 		installListeners();
 	}
 	
@@ -60,6 +62,8 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 		this.editor = new RichTextEditor(parent, configuration); //default configuration
 		GridDataFactory.fillDefaults().grab(true, true).applyTo(this.editor);
 		
+		addPropertyChangeListener(this);
+		
 		installListeners();
 	}
 	
@@ -68,6 +72,8 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 		this.editor = new RichTextEditor(parent, style); //default configuration
 		this.configuration = editor.getEditorConfiguration();
 		GridDataFactory.fillDefaults().grab(true, true).applyTo(this.editor);
+		
+		addPropertyChangeListener(this);
 		
 		installListeners();
 	}
@@ -78,6 +84,8 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 		((MDENebulaRichTextConfiguration)this.configuration).createToolbar();
 		this.editor = new RichTextEditor(parent, style); //default configuration
 		GridDataFactory.fillDefaults().grab(true, true).applyTo(this.editor);
+		
+		addPropertyChangeListener(this);
 		
 		installListeners();
 	}
