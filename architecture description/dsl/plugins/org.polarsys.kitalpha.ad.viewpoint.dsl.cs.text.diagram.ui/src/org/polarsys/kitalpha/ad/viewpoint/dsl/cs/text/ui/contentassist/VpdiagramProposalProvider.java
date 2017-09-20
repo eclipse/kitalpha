@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -299,5 +299,23 @@ public class VpdiagramProposalProvider extends AbstractVpdiagramProposalProvider
 		final StringBuffer tmp = new StringBuffer();
 		tmp.append("\"").append(uri).append("\"");
 		return tmp.toString();
+	}
+	
+	@Override
+	public void completeBasic_Icon(EObject model, Assignment assignment, ContentAssistContext context,
+			ICompletionProposalAcceptor acceptor) {
+		complete_iconPath(model, assignment, context, acceptor);
+	}
+	
+	@Override
+	public void completeMappingBased_Icon(EObject model, Assignment assignment, ContentAssistContext context,
+			ICompletionProposalAcceptor acceptor) {
+		complete_iconPath(model, assignment, context, acceptor);
+	}
+	
+	@Override
+	public void completeSemanticBased_Icon(EObject model, Assignment assignment, ContentAssistContext context,
+			ICompletionProposalAcceptor acceptor) {
+		complete_iconPath(model, assignment, context, acceptor);
 	}
 }

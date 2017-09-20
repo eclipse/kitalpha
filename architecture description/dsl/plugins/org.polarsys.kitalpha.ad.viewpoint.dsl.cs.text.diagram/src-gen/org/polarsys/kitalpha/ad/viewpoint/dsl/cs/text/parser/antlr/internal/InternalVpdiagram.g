@@ -765,9 +765,27 @@ ruleDiagram returns [EObject current=null]
 	    }
 
 )
-)?	otherlv_9='}' 
+)?(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getDiagramAccess().getThe_DecoratorSetDecoratorSetParserRuleCall_8_0()); 
+	    }
+		lv_the_DecoratorSet_9_0=ruleDecoratorSet		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getDiagramRule());
+	        }
+       		set(
+       			$current, 
+       			"the_DecoratorSet",
+        		lv_the_DecoratorSet_9_0, 
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.DecoratorSet");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)?	otherlv_10='}' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getDiagramAccess().getRightCurlyBracketKeyword_8());
+    	newLeafNode(otherlv_10, grammarAccess.getDiagramAccess().getRightCurlyBracketKeyword_9());
     }
 )
 ;
@@ -880,24 +898,42 @@ ruleDiagramExtension returns [EObject current=null]
 )?(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDiagramExtensionAccess().getOwnedCustomizationsCustomizationsParserRuleCall_7_0()); 
+	        newCompositeNode(grammarAccess.getDiagramExtensionAccess().getThe_DecoratorSetDecoratorSetParserRuleCall_7_0()); 
 	    }
-		lv_ownedCustomizations_8_0=ruleCustomizations		{
+		lv_the_DecoratorSet_8_0=ruleDecoratorSet		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getDiagramExtensionRule());
+	        }
+       		set(
+       			$current, 
+       			"the_DecoratorSet",
+        		lv_the_DecoratorSet_8_0, 
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.DecoratorSet");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)?(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getDiagramExtensionAccess().getOwnedCustomizationsCustomizationsParserRuleCall_8_0()); 
+	    }
+		lv_ownedCustomizations_9_0=ruleCustomizations		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getDiagramExtensionRule());
 	        }
        		set(
        			$current, 
        			"ownedCustomizations",
-        		lv_ownedCustomizations_8_0, 
+        		lv_ownedCustomizations_9_0, 
         		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Customizations");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)?	otherlv_9='}' 
+)?	otherlv_10='}' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getDiagramExtensionAccess().getRightCurlyBracketKeyword_8());
+    	newLeafNode(otherlv_10, grammarAccess.getDiagramExtensionAccess().getRightCurlyBracketKeyword_9());
     }
 )
 ;
@@ -2977,6 +3013,734 @@ ruleNodeDescription returns [EObject current=null]
 )?	otherlv_16='}' 
     {
     	newLeafNode(otherlv_16, grammarAccess.getNodeDescriptionAccess().getRightCurlyBracketKeyword_6());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleDecoratorSet
+entryRuleDecoratorSet returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getDecoratorSetRule()); }
+	 iv_ruleDecoratorSet=ruleDecoratorSet 
+	 { $current=$iv_ruleDecoratorSet.current; } 
+	 EOF 
+;
+
+// Rule DecoratorSet
+ruleDecoratorSet returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getDecoratorSetAccess().getDecoratorSetAction_0(),
+            $current);
+    }
+)	otherlv_1='Decorators' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getDecoratorSetAccess().getDecoratorsKeyword_1());
+    }
+	otherlv_2='{' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getDecoratorSetAccess().getLeftCurlyBracketKeyword_2());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getDecoratorSetAccess().getDecoratorsDecoratorParserRuleCall_3_0()); 
+	    }
+		lv_decorators_3_0=ruleDecorator		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getDecoratorSetRule());
+	        }
+       		add(
+       			$current, 
+       			"decorators",
+        		lv_decorators_3_0, 
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Decorator");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)*	otherlv_4='}' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getDecoratorSetAccess().getRightCurlyBracketKeyword_4());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleDecorator
+entryRuleDecorator returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getDecoratorRule()); }
+	 iv_ruleDecorator=ruleDecorator 
+	 { $current=$iv_ruleDecorator.current; } 
+	 EOF 
+;
+
+// Rule Decorator
+ruleDecorator returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+    { 
+        newCompositeNode(grammarAccess.getDecoratorAccess().getBasicParserRuleCall_0()); 
+    }
+    this_Basic_0=ruleBasic
+    { 
+        $current = $this_Basic_0.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getDecoratorAccess().getMappingBasedParserRuleCall_1()); 
+    }
+    this_MappingBased_1=ruleMappingBased
+    { 
+        $current = $this_MappingBased_1.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getDecoratorAccess().getSemanticBasedParserRuleCall_2()); 
+    }
+    this_SemanticBased_2=ruleSemanticBased
+    { 
+        $current = $this_SemanticBased_2.current; 
+        afterParserOrEnumRuleCall();
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleBasic
+entryRuleBasic returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getBasicRule()); }
+	 iv_ruleBasic=ruleBasic 
+	 { $current=$iv_ruleBasic.current; } 
+	 EOF 
+;
+
+// Rule Basic
+ruleBasic returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getBasicAccess().getBasicDecoratorAction_0(),
+            $current);
+    }
+)	otherlv_1='Basic' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getBasicAccess().getBasicKeyword_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getBasicAccess().getNameEStringParserRuleCall_2_0()); 
+	    }
+		lv_name_2_0=ruleEString		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getBasicRule());
+	        }
+       		set(
+       			$current, 
+       			"name",
+        		lv_name_2_0, 
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_3='{' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getBasicAccess().getLeftCurlyBracketKeyword_3());
+    }
+(	otherlv_4='position:' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getBasicAccess().getPositionKeyword_4_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getBasicAccess().getPositionPositionEnumRuleCall_4_1_0()); 
+	    }
+		lv_position_5_0=rulePosition		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getBasicRule());
+	        }
+       		set(
+       			$current, 
+       			"position",
+        		lv_position_5_0, 
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Position");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?(	otherlv_6='direction:' 
+    {
+    	newLeafNode(otherlv_6, grammarAccess.getBasicAccess().getDirectionKeyword_5_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getBasicAccess().getDirectionDecorationDistributionDirectionEnumRuleCall_5_1_0()); 
+	    }
+		lv_direction_7_0=ruleDecorationDistributionDirection		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getBasicRule());
+	        }
+       		set(
+       			$current, 
+       			"direction",
+        		lv_direction_7_0, 
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.DecorationDistributionDirection");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?(	otherlv_8='icon:' 
+    {
+    	newLeafNode(otherlv_8, grammarAccess.getBasicAccess().getIconKeyword_6_0());
+    }
+(
+(
+		lv_icon_9_0=RULE_STRING
+		{
+			newLeafNode(lv_icon_9_0, grammarAccess.getBasicAccess().getIconSTRINGTerminalRuleCall_6_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getBasicRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"icon",
+        		lv_icon_9_0, 
+        		"org.eclipse.xtext.common.Terminals.STRING");
+	    }
+
+)
+))?(	otherlv_10='precondition:' 
+    {
+    	newLeafNode(otherlv_10, grammarAccess.getBasicAccess().getPreconditionKeyword_7_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getBasicAccess().getPreconditionExpressionElementParserRuleCall_7_1_0()); 
+	    }
+		lv_precondition_11_0=ruleExpressionElement		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getBasicRule());
+	        }
+       		set(
+       			$current, 
+       			"precondition",
+        		lv_precondition_11_0, 
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ExpressionElement");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?(	otherlv_12='tooltip:' 
+    {
+    	newLeafNode(otherlv_12, grammarAccess.getBasicAccess().getTooltipKeyword_8_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getBasicAccess().getTooltipExpressionElementParserRuleCall_8_1_0()); 
+	    }
+		lv_tooltip_13_0=ruleExpressionElement		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getBasicRule());
+	        }
+       		set(
+       			$current, 
+       			"tooltip",
+        		lv_tooltip_13_0, 
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ExpressionElement");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?	otherlv_14='}' 
+    {
+    	newLeafNode(otherlv_14, grammarAccess.getBasicAccess().getRightCurlyBracketKeyword_9());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleMappingBased
+entryRuleMappingBased returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getMappingBasedRule()); }
+	 iv_ruleMappingBased=ruleMappingBased 
+	 { $current=$iv_ruleMappingBased.current; } 
+	 EOF 
+;
+
+// Rule MappingBased
+ruleMappingBased returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getMappingBasedAccess().getMappingBasedDecoratorAction_0(),
+            $current);
+    }
+)	otherlv_1='MappingBased' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getMappingBasedAccess().getMappingBasedKeyword_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getMappingBasedAccess().getNameEStringParserRuleCall_2_0()); 
+	    }
+		lv_name_2_0=ruleEString		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getMappingBasedRule());
+	        }
+       		set(
+       			$current, 
+       			"name",
+        		lv_name_2_0, 
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_3='{' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getMappingBasedAccess().getLeftCurlyBracketKeyword_3());
+    }
+(	otherlv_4='position:' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getMappingBasedAccess().getPositionKeyword_4_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getMappingBasedAccess().getPositionPositionEnumRuleCall_4_1_0()); 
+	    }
+		lv_position_5_0=rulePosition		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getMappingBasedRule());
+	        }
+       		set(
+       			$current, 
+       			"position",
+        		lv_position_5_0, 
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Position");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?(	otherlv_6='direction:' 
+    {
+    	newLeafNode(otherlv_6, grammarAccess.getMappingBasedAccess().getDirectionKeyword_5_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getMappingBasedAccess().getDirectionDecorationDistributionDirectionEnumRuleCall_5_1_0()); 
+	    }
+		lv_direction_7_0=ruleDecorationDistributionDirection		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getMappingBasedRule());
+	        }
+       		set(
+       			$current, 
+       			"direction",
+        		lv_direction_7_0, 
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.DecorationDistributionDirection");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?(	otherlv_8='icon:' 
+    {
+    	newLeafNode(otherlv_8, grammarAccess.getMappingBasedAccess().getIconKeyword_6_0());
+    }
+(
+(
+		lv_icon_9_0=RULE_STRING
+		{
+			newLeafNode(lv_icon_9_0, grammarAccess.getMappingBasedAccess().getIconSTRINGTerminalRuleCall_6_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getMappingBasedRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"icon",
+        		lv_icon_9_0, 
+        		"org.eclipse.xtext.common.Terminals.STRING");
+	    }
+
+)
+))?(	otherlv_10='precondition:' 
+    {
+    	newLeafNode(otherlv_10, grammarAccess.getMappingBasedAccess().getPreconditionKeyword_7_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getMappingBasedAccess().getPreconditionExpressionElementParserRuleCall_7_1_0()); 
+	    }
+		lv_precondition_11_0=ruleExpressionElement		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getMappingBasedRule());
+	        }
+       		set(
+       			$current, 
+       			"precondition",
+        		lv_precondition_11_0, 
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ExpressionElement");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?(	otherlv_12='tooltip:' 
+    {
+    	newLeafNode(otherlv_12, grammarAccess.getMappingBasedAccess().getTooltipKeyword_8_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getMappingBasedAccess().getTooltipExpressionElementParserRuleCall_8_1_0()); 
+	    }
+		lv_tooltip_13_0=ruleExpressionElement		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getMappingBasedRule());
+	        }
+       		set(
+       			$current, 
+       			"tooltip",
+        		lv_tooltip_13_0, 
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ExpressionElement");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?((	otherlv_14='mappings' 
+    {
+    	newLeafNode(otherlv_14, grammarAccess.getMappingBasedAccess().getMappingsKeyword_9_0_0());
+    }
+	otherlv_15=':' 
+    {
+    	newLeafNode(otherlv_15, grammarAccess.getMappingBasedAccess().getColonKeyword_9_0_1());
+    }
+(	otherlv_16='external' 
+    {
+    	newLeafNode(otherlv_16, grammarAccess.getMappingBasedAccess().getExternalKeyword_9_0_2_0());
+    }
+	otherlv_17='{' 
+    {
+    	newLeafNode(otherlv_17, grammarAccess.getMappingBasedAccess().getLeftCurlyBracketKeyword_9_0_2_1());
+    }
+((
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getMappingBasedRule());
+	        }
+        }
+	otherlv_18=RULE_STRING
+	{
+		newLeafNode(otherlv_18, grammarAccess.getMappingBasedAccess().getExternalMappingsDiagramElementMappingCrossReference_9_0_2_2_0_0()); 
+	}
+
+)
+)(	otherlv_19=',' 
+    {
+    	newLeafNode(otherlv_19, grammarAccess.getMappingBasedAccess().getCommaKeyword_9_0_2_2_1_0());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getMappingBasedRule());
+	        }
+        }
+	otherlv_20=RULE_STRING
+	{
+		newLeafNode(otherlv_20, grammarAccess.getMappingBasedAccess().getExternalMappingsDiagramElementMappingCrossReference_9_0_2_2_1_1_0()); 
+	}
+
+)
+))*)	otherlv_21='}' 
+    {
+    	newLeafNode(otherlv_21, grammarAccess.getMappingBasedAccess().getRightCurlyBracketKeyword_9_0_2_3());
+    }
+(	otherlv_22=',' 
+    {
+    	newLeafNode(otherlv_22, grammarAccess.getMappingBasedAccess().getCommaKeyword_9_0_2_4_0());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getMappingBasedRule());
+	        }
+        }
+	otherlv_23=RULE_STRING
+	{
+		newLeafNode(otherlv_23, grammarAccess.getMappingBasedAccess().getInternalMappingsDiagramElementCrossReference_9_0_2_4_1_0()); 
+	}
+
+)
+))*)?)
+    |((
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getMappingBasedRule());
+	        }
+        }
+	otherlv_24=RULE_STRING
+	{
+		newLeafNode(otherlv_24, grammarAccess.getMappingBasedAccess().getInternalMappingsDiagramElementCrossReference_9_1_0_0()); 
+	}
+
+)
+)?(	otherlv_25=',' 
+    {
+    	newLeafNode(otherlv_25, grammarAccess.getMappingBasedAccess().getCommaKeyword_9_1_1_0());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getMappingBasedRule());
+	        }
+        }
+	otherlv_26=RULE_STRING
+	{
+		newLeafNode(otherlv_26, grammarAccess.getMappingBasedAccess().getInternalMappingsDiagramElementCrossReference_9_1_1_1_0()); 
+	}
+
+)
+))*))	otherlv_27='}' 
+    {
+    	newLeafNode(otherlv_27, grammarAccess.getMappingBasedAccess().getRightCurlyBracketKeyword_10());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleSemanticBased
+entryRuleSemanticBased returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getSemanticBasedRule()); }
+	 iv_ruleSemanticBased=ruleSemanticBased 
+	 { $current=$iv_ruleSemanticBased.current; } 
+	 EOF 
+;
+
+// Rule SemanticBased
+ruleSemanticBased returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getSemanticBasedAccess().getSemanticBasedDecoratorAction_0(),
+            $current);
+    }
+)	otherlv_1='SemanticBased' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getSemanticBasedAccess().getSemanticBasedKeyword_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getSemanticBasedAccess().getNameEStringParserRuleCall_2_0()); 
+	    }
+		lv_name_2_0=ruleEString		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getSemanticBasedRule());
+	        }
+       		set(
+       			$current, 
+       			"name",
+        		lv_name_2_0, 
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Common.EString");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_3='{' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getSemanticBasedAccess().getLeftCurlyBracketKeyword_3());
+    }
+(	otherlv_4='position:' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getSemanticBasedAccess().getPositionKeyword_4_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getSemanticBasedAccess().getPositionPositionEnumRuleCall_4_1_0()); 
+	    }
+		lv_position_5_0=rulePosition		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getSemanticBasedRule());
+	        }
+       		set(
+       			$current, 
+       			"position",
+        		lv_position_5_0, 
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.Position");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?(	otherlv_6='direction:' 
+    {
+    	newLeafNode(otherlv_6, grammarAccess.getSemanticBasedAccess().getDirectionKeyword_5_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getSemanticBasedAccess().getDirectionDecorationDistributionDirectionEnumRuleCall_5_1_0()); 
+	    }
+		lv_direction_7_0=ruleDecorationDistributionDirection		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getSemanticBasedRule());
+	        }
+       		set(
+       			$current, 
+       			"direction",
+        		lv_direction_7_0, 
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.DecorationDistributionDirection");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?(	otherlv_8='icon:' 
+    {
+    	newLeafNode(otherlv_8, grammarAccess.getSemanticBasedAccess().getIconKeyword_6_0());
+    }
+(
+(
+		lv_icon_9_0=RULE_STRING
+		{
+			newLeafNode(lv_icon_9_0, grammarAccess.getSemanticBasedAccess().getIconSTRINGTerminalRuleCall_6_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getSemanticBasedRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"icon",
+        		lv_icon_9_0, 
+        		"org.eclipse.xtext.common.Terminals.STRING");
+	    }
+
+)
+))?(	otherlv_10='precondition:' 
+    {
+    	newLeafNode(otherlv_10, grammarAccess.getSemanticBasedAccess().getPreconditionKeyword_7_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getSemanticBasedAccess().getPreconditionExpressionElementParserRuleCall_7_1_0()); 
+	    }
+		lv_precondition_11_0=ruleExpressionElement		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getSemanticBasedRule());
+	        }
+       		set(
+       			$current, 
+       			"precondition",
+        		lv_precondition_11_0, 
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ExpressionElement");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?(	otherlv_12='tooltip:' 
+    {
+    	newLeafNode(otherlv_12, grammarAccess.getSemanticBasedAccess().getTooltipKeyword_8_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getSemanticBasedAccess().getTooltipExpressionElementParserRuleCall_8_1_0()); 
+	    }
+		lv_tooltip_13_0=ruleExpressionElement		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getSemanticBasedRule());
+	        }
+       		set(
+       			$current, 
+       			"tooltip",
+        		lv_tooltip_13_0, 
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.ExpressionElement");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?(	otherlv_14='domain:' 
+    {
+    	newLeafNode(otherlv_14, grammarAccess.getSemanticBasedAccess().getDomainKeyword_9_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getSemanticBasedAccess().getDomainAbstractClassParserRuleCall_9_1_0()); 
+	    }
+		lv_domain_15_0=ruleAbstractClass		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getSemanticBasedRule());
+	        }
+       		set(
+       			$current, 
+       			"domain",
+        		lv_domain_15_0, 
+        		"org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Vpdiagram.AbstractClass");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?	otherlv_16='}' 
+    {
+    	newLeafNode(otherlv_16, grammarAccess.getSemanticBasedAccess().getRightCurlyBracketKeyword_10());
     }
 )
 ;
@@ -7835,6 +8599,86 @@ ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
     ;
 
 
+
+
+
+// Rule Position
+rulePosition returns [Enumerator current=null] 
+    @init { enterRule(); }
+    @after { leaveRule(); }:
+((	enumLiteral_0='center' 
+	{
+        $current = grammarAccess.getPositionAccess().getCENTEREnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getPositionAccess().getCENTEREnumLiteralDeclaration_0()); 
+    }
+)
+    |(	enumLiteral_1='east' 
+	{
+        $current = grammarAccess.getPositionAccess().getEASTEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getPositionAccess().getEASTEnumLiteralDeclaration_1()); 
+    }
+)
+    |(	enumLiteral_2='north' 
+	{
+        $current = grammarAccess.getPositionAccess().getNORTHEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_2, grammarAccess.getPositionAccess().getNORTHEnumLiteralDeclaration_2()); 
+    }
+)
+    |(	enumLiteral_3='north_east' 
+	{
+        $current = grammarAccess.getPositionAccess().getNORTH_EASTEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_3, grammarAccess.getPositionAccess().getNORTH_EASTEnumLiteralDeclaration_3()); 
+    }
+)
+    |(	enumLiteral_4='north_west' 
+	{
+        $current = grammarAccess.getPositionAccess().getNORTH_WESTEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_4, grammarAccess.getPositionAccess().getNORTH_WESTEnumLiteralDeclaration_4()); 
+    }
+)
+    |(	enumLiteral_5='south' 
+	{
+        $current = grammarAccess.getPositionAccess().getSOUTHEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_5, grammarAccess.getPositionAccess().getSOUTHEnumLiteralDeclaration_5()); 
+    }
+)
+    |(	enumLiteral_6='south_east' 
+	{
+        $current = grammarAccess.getPositionAccess().getSOUTH_EASTEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_6, grammarAccess.getPositionAccess().getSOUTH_EASTEnumLiteralDeclaration_6()); 
+    }
+)
+    |(	enumLiteral_7='south_west' 
+	{
+        $current = grammarAccess.getPositionAccess().getSOUTH_WESTEnumLiteralDeclaration_7().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_7, grammarAccess.getPositionAccess().getSOUTH_WESTEnumLiteralDeclaration_7()); 
+    }
+)
+    |(	enumLiteral_8='west' 
+	{
+        $current = grammarAccess.getPositionAccess().getWESTEnumLiteralDeclaration_8().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_8, grammarAccess.getPositionAccess().getWESTEnumLiteralDeclaration_8()); 
+    }
+));
+
+
+
+// Rule DecorationDistributionDirection
+ruleDecorationDistributionDirection returns [Enumerator current=null] 
+    @init { enterRule(); }
+    @after { leaveRule(); }:
+((	enumLiteral_0='horizontal' 
+	{
+        $current = grammarAccess.getDecorationDistributionDirectionAccess().getHORIZONTALEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getDecorationDistributionDirectionAccess().getHORIZONTALEnumLiteralDeclaration_0()); 
+    }
+)
+    |(	enumLiteral_1='vertical' 
+	{
+        $current = grammarAccess.getDecorationDistributionDirectionAccess().getVERTICALEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getDecorationDistributionDirectionAccess().getVERTICALEnumLiteralDeclaration_1()); 
+    }
+));
 
 
 

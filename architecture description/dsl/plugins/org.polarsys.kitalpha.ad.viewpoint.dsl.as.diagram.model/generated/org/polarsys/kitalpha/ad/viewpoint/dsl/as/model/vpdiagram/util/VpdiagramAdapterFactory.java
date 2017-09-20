@@ -138,6 +138,26 @@ public class VpdiagramAdapterFactory extends AdapterFactoryImpl {
 				return createMappingSetAdapter();
 			}
 			@Override
+			public Adapter caseDecoratorSet(DecoratorSet object) {
+				return createDecoratorSetAdapter();
+			}
+			@Override
+			public Adapter caseAbstractDecorator(AbstractDecorator object) {
+				return createAbstractDecoratorAdapter();
+			}
+			@Override
+			public Adapter caseBasicDecorator(BasicDecorator object) {
+				return createBasicDecoratorAdapter();
+			}
+			@Override
+			public Adapter caseMappingBasedDecorator(MappingBasedDecorator object) {
+				return createMappingBasedDecoratorAdapter();
+			}
+			@Override
+			public Adapter caseSemanticBasedDecorator(SemanticBasedDecorator object) {
+				return createSemanticBasedDecoratorAdapter();
+			}
+			@Override
 			public Adapter caseAction(Action object) {
 				return createActionAdapter();
 			}
@@ -379,6 +399,76 @@ public class VpdiagramAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createMappingSetAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DecoratorSet <em>Decorator Set</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DecoratorSet
+	 * @generated
+	 */
+	public Adapter createDecoratorSetAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.AbstractDecorator <em>Abstract Decorator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.AbstractDecorator
+	 * @generated
+	 */
+	public Adapter createAbstractDecoratorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.BasicDecorator <em>Basic Decorator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.BasicDecorator
+	 * @generated
+	 */
+	public Adapter createBasicDecoratorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.MappingBasedDecorator <em>Mapping Based Decorator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.MappingBasedDecorator
+	 * @generated
+	 */
+	public Adapter createMappingBasedDecoratorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.SemanticBasedDecorator <em>Semantic Based Decorator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.SemanticBasedDecorator
+	 * @generated
+	 */
+	public Adapter createSemanticBasedDecoratorAdapter() {
 		return null;
 	}
 

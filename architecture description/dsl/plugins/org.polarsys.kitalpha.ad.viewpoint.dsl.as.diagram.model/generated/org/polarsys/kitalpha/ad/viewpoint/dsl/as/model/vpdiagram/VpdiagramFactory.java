@@ -67,6 +67,42 @@ public interface VpdiagramFactory extends EFactory {
 	MappingSet createMappingSet();
 
 	/**
+	 * Returns a new object of class '<em>Decorator Set</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Decorator Set</em>'.
+	 * @generated
+	 */
+	DecoratorSet createDecoratorSet();
+
+	/**
+	 * Returns a new object of class '<em>Basic Decorator</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Basic Decorator</em>'.
+	 * @generated
+	 */
+	BasicDecorator createBasicDecorator();
+
+	/**
+	 * Returns a new object of class '<em>Mapping Based Decorator</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Mapping Based Decorator</em>'.
+	 * @generated
+	 */
+	MappingBasedDecorator createMappingBasedDecorator();
+
+	/**
+	 * Returns a new object of class '<em>Semantic Based Decorator</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Semantic Based Decorator</em>'.
+	 * @generated
+	 */
+	SemanticBasedDecorator createSemanticBasedDecorator();
+
+	/**
 	 * Returns a new object of class '<em>Node</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.impl.NamedElementImpl;
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.ActionSet;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DecoratorSet;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramRepresentation;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.MappingSet;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackage;
@@ -36,6 +37,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.VpdiagramPackag
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.DiagramRepresentationImpl#getThe_MappingSet <em>The Mapping Set</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.DiagramRepresentationImpl#getThe_ActionSet <em>The Action Set</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.impl.DiagramRepresentationImpl#getThe_DecoratorSet <em>The Decorator Set</em>}</li>
  * </ul>
  *
  * @generated
@@ -62,6 +64,16 @@ public abstract class DiagramRepresentationImpl extends NamedElementImpl
 	 * @ordered
 	 */
 	protected ActionSet the_ActionSet;
+
+	/**
+	 * The cached value of the '{@link #getThe_DecoratorSet() <em>The Decorator Set</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getThe_DecoratorSet()
+	 * @generated
+	 * @ordered
+	 */
+	protected DecoratorSet the_DecoratorSet;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -193,6 +205,57 @@ public abstract class DiagramRepresentationImpl extends NamedElementImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+
+	public DecoratorSet getThe_DecoratorSet() {
+
+		return the_DecoratorSet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+
+	public NotificationChain basicSetThe_DecoratorSet(DecoratorSet newThe_DecoratorSet, NotificationChain msgs) {
+
+		DecoratorSet oldThe_DecoratorSet = the_DecoratorSet;
+		the_DecoratorSet = newThe_DecoratorSet;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VpdiagramPackage.DIAGRAM_REPRESENTATION__THE_DECORATOR_SET, oldThe_DecoratorSet, newThe_DecoratorSet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+
+	public void setThe_DecoratorSet(DecoratorSet newThe_DecoratorSet) {
+
+		if (newThe_DecoratorSet != the_DecoratorSet) {
+			NotificationChain msgs = null;
+			if (the_DecoratorSet != null)
+				msgs = ((InternalEObject)the_DecoratorSet).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - VpdiagramPackage.DIAGRAM_REPRESENTATION__THE_DECORATOR_SET, null, msgs);
+			if (newThe_DecoratorSet != null)
+				msgs = ((InternalEObject)newThe_DecoratorSet).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - VpdiagramPackage.DIAGRAM_REPRESENTATION__THE_DECORATOR_SET, null, msgs);
+			msgs = basicSetThe_DecoratorSet(newThe_DecoratorSet, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VpdiagramPackage.DIAGRAM_REPRESENTATION__THE_DECORATOR_SET, newThe_DecoratorSet, newThe_DecoratorSet));
+
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
@@ -201,6 +264,8 @@ public abstract class DiagramRepresentationImpl extends NamedElementImpl
 				return basicSetThe_MappingSet(null, msgs);
 			case VpdiagramPackage.DIAGRAM_REPRESENTATION__THE_ACTION_SET:
 				return basicSetThe_ActionSet(null, msgs);
+			case VpdiagramPackage.DIAGRAM_REPRESENTATION__THE_DECORATOR_SET:
+				return basicSetThe_DecoratorSet(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -217,6 +282,8 @@ public abstract class DiagramRepresentationImpl extends NamedElementImpl
 				return getThe_MappingSet();
 			case VpdiagramPackage.DIAGRAM_REPRESENTATION__THE_ACTION_SET:
 				return getThe_ActionSet();
+			case VpdiagramPackage.DIAGRAM_REPRESENTATION__THE_DECORATOR_SET:
+				return getThe_DecoratorSet();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -234,6 +301,9 @@ public abstract class DiagramRepresentationImpl extends NamedElementImpl
 				return;
 			case VpdiagramPackage.DIAGRAM_REPRESENTATION__THE_ACTION_SET:
 				setThe_ActionSet((ActionSet)newValue);
+				return;
+			case VpdiagramPackage.DIAGRAM_REPRESENTATION__THE_DECORATOR_SET:
+				setThe_DecoratorSet((DecoratorSet)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -253,6 +323,9 @@ public abstract class DiagramRepresentationImpl extends NamedElementImpl
 			case VpdiagramPackage.DIAGRAM_REPRESENTATION__THE_ACTION_SET:
 				setThe_ActionSet((ActionSet)null);
 				return;
+			case VpdiagramPackage.DIAGRAM_REPRESENTATION__THE_DECORATOR_SET:
+				setThe_DecoratorSet((DecoratorSet)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -269,6 +342,8 @@ public abstract class DiagramRepresentationImpl extends NamedElementImpl
 				return the_MappingSet != null;
 			case VpdiagramPackage.DIAGRAM_REPRESENTATION__THE_ACTION_SET:
 				return the_ActionSet != null;
+			case VpdiagramPackage.DIAGRAM_REPRESENTATION__THE_DECORATOR_SET:
+				return the_DecoratorSet != null;
 		}
 		return super.eIsSet(featureID);
 	}

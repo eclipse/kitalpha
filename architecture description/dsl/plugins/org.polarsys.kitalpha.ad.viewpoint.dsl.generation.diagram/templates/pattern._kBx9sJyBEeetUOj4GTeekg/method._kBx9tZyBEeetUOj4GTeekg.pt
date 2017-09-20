@@ -1,0 +1,2 @@
+DecorationDescriptionsSet decoratorSet = DescriptionFactory.eINSTANCE.createDecorationDescriptionsSet();
+decoratorSetElement = decoratorSet;

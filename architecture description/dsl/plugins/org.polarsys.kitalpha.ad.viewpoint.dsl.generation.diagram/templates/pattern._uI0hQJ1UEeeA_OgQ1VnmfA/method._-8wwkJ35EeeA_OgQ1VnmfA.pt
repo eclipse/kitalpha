@@ -1,0 +1,4 @@
+EList<DiagramElementMapping> externalMappings = ((MappingBasedDecorator) vpdslDecorator).getExternalMappings();
+((MappingBasedDecoration) siriusDecorator).getMappings().addAll(externalMappings);
+
+EList<DiagramElement> internalMappings = ((MappingBasedDecorator) vpdslDecorator).getInternalMappings();

@@ -71,6 +71,10 @@ public class VpdiagramFactoryImpl extends EFactoryImpl implements
 			case VpdiagramPackage.DIAGRAM_EXTENSION: return createDiagramExtension();
 			case VpdiagramPackage.ACTION_SET: return createActionSet();
 			case VpdiagramPackage.MAPPING_SET: return createMappingSet();
+			case VpdiagramPackage.DECORATOR_SET: return createDecoratorSet();
+			case VpdiagramPackage.BASIC_DECORATOR: return createBasicDecorator();
+			case VpdiagramPackage.MAPPING_BASED_DECORATOR: return createMappingBasedDecorator();
+			case VpdiagramPackage.SEMANTIC_BASED_DECORATOR: return createSemanticBasedDecorator();
 			case VpdiagramPackage.NODE: return createNode();
 			case VpdiagramPackage.EDGE: return createEdge();
 			case VpdiagramPackage.CREATE: return createCreate();
@@ -176,6 +180,46 @@ public class VpdiagramFactoryImpl extends EFactoryImpl implements
 	public MappingSet createMappingSet() {
 		MappingSetImpl mappingSet = new MappingSetImpl();
 		return mappingSet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DecoratorSet createDecoratorSet() {
+		DecoratorSetImpl decoratorSet = new DecoratorSetImpl();
+		return decoratorSet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BasicDecorator createBasicDecorator() {
+		BasicDecoratorImpl basicDecorator = new BasicDecoratorImpl();
+		return basicDecorator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MappingBasedDecorator createMappingBasedDecorator() {
+		MappingBasedDecoratorImpl mappingBasedDecorator = new MappingBasedDecoratorImpl();
+		return mappingBasedDecorator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SemanticBasedDecorator createSemanticBasedDecorator() {
+		SemanticBasedDecoratorImpl semanticBasedDecorator = new SemanticBasedDecoratorImpl();
+		return semanticBasedDecorator;
 	}
 
 	/**

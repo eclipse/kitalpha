@@ -1,0 +1,5 @@
+AbstractClass domain = ((SemanticBasedDecorator) vpdslDecorator).getDomain();
+if (domain != null) {
+	String domainclass = domain.getEPackageName() + "." + domain.getName();
+	((SemanticBasedDecoration) siriusDecorator).setDomainClass(domainclass);
+}

@@ -156,6 +156,47 @@ public class VpdiagramSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case VpdiagramPackage.DECORATOR_SET: {
+				DecoratorSet decoratorSet = (DecoratorSet)theEObject;
+				T result = caseDecoratorSet(decoratorSet);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case VpdiagramPackage.ABSTRACT_DECORATOR: {
+				AbstractDecorator abstractDecorator = (AbstractDecorator)theEObject;
+				T result = caseAbstractDecorator(abstractDecorator);
+				if (result == null) result = caseNamedElement(abstractDecorator);
+				if (result == null) result = caseViewpointElement(abstractDecorator);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case VpdiagramPackage.BASIC_DECORATOR: {
+				BasicDecorator basicDecorator = (BasicDecorator)theEObject;
+				T result = caseBasicDecorator(basicDecorator);
+				if (result == null) result = caseAbstractDecorator(basicDecorator);
+				if (result == null) result = caseNamedElement(basicDecorator);
+				if (result == null) result = caseViewpointElement(basicDecorator);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case VpdiagramPackage.MAPPING_BASED_DECORATOR: {
+				MappingBasedDecorator mappingBasedDecorator = (MappingBasedDecorator)theEObject;
+				T result = caseMappingBasedDecorator(mappingBasedDecorator);
+				if (result == null) result = caseAbstractDecorator(mappingBasedDecorator);
+				if (result == null) result = caseNamedElement(mappingBasedDecorator);
+				if (result == null) result = caseViewpointElement(mappingBasedDecorator);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case VpdiagramPackage.SEMANTIC_BASED_DECORATOR: {
+				SemanticBasedDecorator semanticBasedDecorator = (SemanticBasedDecorator)theEObject;
+				T result = caseSemanticBasedDecorator(semanticBasedDecorator);
+				if (result == null) result = caseAbstractDecorator(semanticBasedDecorator);
+				if (result == null) result = caseNamedElement(semanticBasedDecorator);
+				if (result == null) result = caseViewpointElement(semanticBasedDecorator);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case VpdiagramPackage.ACTION: {
 				Action action = (Action)theEObject;
 				T result = caseAction(action);
@@ -508,6 +549,81 @@ public class VpdiagramSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseMappingSet(MappingSet object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Decorator Set</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Decorator Set</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDecoratorSet(DecoratorSet object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Decorator</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Decorator</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbstractDecorator(AbstractDecorator object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Basic Decorator</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Basic Decorator</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBasicDecorator(BasicDecorator object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Mapping Based Decorator</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Mapping Based Decorator</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMappingBasedDecorator(MappingBasedDecorator object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Semantic Based Decorator</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Semantic Based Decorator</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSemanticBasedDecorator(SemanticBasedDecorator object) {
 		return null;
 	}
 

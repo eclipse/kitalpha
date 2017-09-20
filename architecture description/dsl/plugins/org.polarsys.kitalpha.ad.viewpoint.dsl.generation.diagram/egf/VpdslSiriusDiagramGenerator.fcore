@@ -15,7 +15,7 @@
         <type xmi:type="types:TypeString" xmi:id="_CTrBE1wKEeKooNX-rGQuxA"/>
       </contracts>
       <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_CTrBFFwKEeKooNX-rGQuxA"
-          name="vpdesc.model" invocationContracts="#_f2W24l7_EeKhJJsyCdn4KA #_GP9mw2rMEeK9Z8JXsm6Xcw #_koiyI6rIEeOZeaz3SaU3zA #_alBh8qrMEeOZeaz3SaU3zA #_8ZcTUgBuEeSVFeZ-2badYw #_UfNWsAwmEeSrwrl3LesBIA #_l0xiEQwrEeSj2eRa73Bl4w #_uSJdYAwzEeSj2eRa73Bl4w #_FgL54mXoEeWYaMtt1GGGww">
+          name="vpdesc.model" invocationContracts="#_f2W24l7_EeKhJJsyCdn4KA #_GP9mw2rMEeK9Z8JXsm6Xcw #_koiyI6rIEeOZeaz3SaU3zA #_alBh8qrMEeOZeaz3SaU3zA #_8ZcTUgBuEeSVFeZ-2badYw #_UfNWsAwmEeSrwrl3LesBIA #_l0xiEQwrEeSj2eRa73Bl4w #_uSJdYAwzEeSj2eRa73Bl4w #_FgL54mXoEeWYaMtt1GGGww #_7FcoAp0NEeeA_OgQ1VnmfA">
         <type xmi:type="domain:TypeDomain" xmi:id="_CTrBFVwKEeKooNX-rGQuxA"/>
       </contracts>
       <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_H4wOYOwcEeW0Hf5pn0JwLg"
@@ -2146,6 +2146,108 @@
             <orchestration xmi:type="pattern:SuperCall" xmi:id="_HV5Vl2gdEeWYaMtt1GGGww"/>
           </elements>
         </libraries>
+        <libraries xmi:id="_zOIokJyAEeetUOj4GTeekg" name="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.decorators">
+          <elements xmi:id="_kBx9sJyBEeetUOj4GTeekg" name="Decorators" superPattern="#_7uPPUGyKEeKZOKJHxkRgdw"
+              headerMethod="#_kBx9spyBEeetUOj4GTeekg" conditionMethod="#_kBx9tJyBEeetUOj4GTeekg"
+              initMethod="#_kBx9s5yBEeetUOj4GTeekg" footerMethod="#_kBx9tpyBEeetUOj4GTeekg">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_kBx9sZyBEeetUOj4GTeekg"
+                name="Java"/>
+            <methods xmi:id="_kBx9spyBEeetUOj4GTeekg" name="header" patternFilePath="templates/pattern._kBx9sJyBEeetUOj4GTeekg/method._kBx9spyBEeetUOj4GTeekg.pt"/>
+            <methods xmi:id="_kBx9s5yBEeetUOj4GTeekg" name="init" patternFilePath="templates/pattern._kBx9sJyBEeetUOj4GTeekg/method._kBx9s5yBEeetUOj4GTeekg.pt"/>
+            <methods xmi:id="_kBx9tJyBEeetUOj4GTeekg" name="preCondition" patternFilePath="templates/pattern._kBx9sJyBEeetUOj4GTeekg/method._kBx9tJyBEeetUOj4GTeekg.pt"/>
+            <methods xmi:id="_kBx9tZyBEeetUOj4GTeekg" name="createDoremiElement" patternFilePath="templates/pattern._kBx9sJyBEeetUOj4GTeekg/method._kBx9tZyBEeetUOj4GTeekg.pt"/>
+            <methods xmi:id="_kBx9tpyBEeetUOj4GTeekg" name="footer" patternFilePath="templates/pattern._kBx9sJyBEeetUOj4GTeekg/method._kBx9tpyBEeetUOj4GTeekg.pt"/>
+            <methods xmi:id="_gwA1gJyCEee1Nsqlzd83kw" name="addElementToODesign" patternFilePath="templates/pattern._kBx9sJyBEeetUOj4GTeekg/method._gwA1gJyCEee1Nsqlzd83kw.pt"/>
+            <methods xmi:id="_gMZLEJyCEee1Nsqlzd83kw" name="setParentMapping" patternFilePath="templates/pattern._kBx9sJyBEeetUOj4GTeekg/method._gMZLEJyCEee1Nsqlzd83kw.pt"/>
+            <parameters xmi:id="_puQ_YJyBEeetUOj4GTeekg" name="parameter" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0#//DecoratorSet"/>
+            <variables xmi:id="_g7CZwJyCEee1Nsqlzd83kw" name="decoratorSetElement"
+                type="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_kBx9t5yBEeetUOj4GTeekg"/>
+          </elements>
+          <elements xmi:id="_Tl-_8J1NEeeybIDW2iCmgA" name="BasicDecoratorPattern"
+              superPattern="#_BDmcIJ1IEeeA_OgQ1VnmfA" headerMethod="#_Tl-_8p1NEeeybIDW2iCmgA"
+              conditionMethod="#_Tl-_9J1NEeeybIDW2iCmgA" initMethod="#_Tl-_851NEeeybIDW2iCmgA"
+              footerMethod="#_Tl-_9p1NEeeybIDW2iCmgA">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_Tl-_8Z1NEeeybIDW2iCmgA"
+                name="Java"/>
+            <methods xmi:id="_Tl-_8p1NEeeybIDW2iCmgA" name="header" patternFilePath="templates/pattern._Tl-_8J1NEeeybIDW2iCmgA/method._Tl-_8p1NEeeybIDW2iCmgA.pt"/>
+            <methods xmi:id="_Tl-_851NEeeybIDW2iCmgA" name="init" patternFilePath="templates/pattern._Tl-_8J1NEeeybIDW2iCmgA/method._Tl-_851NEeeybIDW2iCmgA.pt"/>
+            <methods xmi:id="_Tl-_9J1NEeeybIDW2iCmgA" name="preCondition" patternFilePath="templates/pattern._Tl-_8J1NEeeybIDW2iCmgA/method._Tl-_9J1NEeeybIDW2iCmgA.pt"/>
+            <methods xmi:id="_Tl-_9Z1NEeeybIDW2iCmgA" name="createSiriusDecorator"
+                patternFilePath="templates/pattern._Tl-_8J1NEeeybIDW2iCmgA/method._Tl-_9Z1NEeeybIDW2iCmgA.pt"/>
+            <methods xmi:id="_Tl-_9p1NEeeybIDW2iCmgA" name="footer" patternFilePath="templates/pattern._Tl-_8J1NEeeybIDW2iCmgA/method._Tl-_9p1NEeeybIDW2iCmgA.pt"/>
+            <methods xmi:id="_kCnKcJ1NEeeybIDW2iCmgA" name="initializeVariable" patternFilePath="templates/pattern._Tl-_8J1NEeeybIDW2iCmgA/method._kCnKcJ1NEeeybIDW2iCmgA.pt"/>
+            <parameters xmi:id="_cfqWYJ1NEeeybIDW2iCmgA" name="parameter" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0#//BasicDecorator"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_Tl-_951NEeeybIDW2iCmgA"/>
+          </elements>
+          <elements xmi:id="_bE16AJ1UEeeA_OgQ1VnmfA" name="SemanticBasedDecoratorPattern"
+              superPattern="#_BDmcIJ1IEeeA_OgQ1VnmfA" headerMethod="#_bE16Ap1UEeeA_OgQ1VnmfA"
+              conditionMethod="#_bE16BJ1UEeeA_OgQ1VnmfA" initMethod="#_bE16A51UEeeA_OgQ1VnmfA"
+              footerMethod="#_bE16Bp1UEeeA_OgQ1VnmfA">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_bE16AZ1UEeeA_OgQ1VnmfA"
+                name="Java"/>
+            <methods xmi:id="_bE16Ap1UEeeA_OgQ1VnmfA" name="header" patternFilePath="templates/pattern._bE16AJ1UEeeA_OgQ1VnmfA/method._bE16Ap1UEeeA_OgQ1VnmfA.pt"/>
+            <methods xmi:id="_bE16A51UEeeA_OgQ1VnmfA" name="init" patternFilePath="templates/pattern._bE16AJ1UEeeA_OgQ1VnmfA/method._bE16A51UEeeA_OgQ1VnmfA.pt"/>
+            <methods xmi:id="_bE16BJ1UEeeA_OgQ1VnmfA" name="preCondition" patternFilePath="templates/pattern._bE16AJ1UEeeA_OgQ1VnmfA/method._bE16BJ1UEeeA_OgQ1VnmfA.pt"/>
+            <methods xmi:id="_bE16BZ1UEeeA_OgQ1VnmfA" name="createSiriusDecorator"
+                patternFilePath="templates/pattern._bE16AJ1UEeeA_OgQ1VnmfA/method._bE16BZ1UEeeA_OgQ1VnmfA.pt"/>
+            <methods xmi:id="_bE16Bp1UEeeA_OgQ1VnmfA" name="footer" patternFilePath="templates/pattern._bE16AJ1UEeeA_OgQ1VnmfA/method._bE16Bp1UEeeA_OgQ1VnmfA.pt"/>
+            <methods xmi:id="_97-JkJ1XEeemi8QSRDpLCg" name="initializeVariable" patternFilePath="templates/pattern._bE16AJ1UEeeA_OgQ1VnmfA/method._97-JkJ1XEeemi8QSRDpLCg.pt"/>
+            <methods xmi:id="_DZcmAJ30EeeA_OgQ1VnmfA" name="setDomain" patternFilePath="templates/pattern._bE16AJ1UEeeA_OgQ1VnmfA/method._DZcmAJ30EeeA_OgQ1VnmfA.pt"/>
+            <parameters xmi:id="_g1_48J1XEeeA_OgQ1VnmfA" name="parameter" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0#//SemanticBasedDecorator"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_bE16B51UEeeA_OgQ1VnmfA"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_Epw-YJ30EeeA_OgQ1VnmfA"
+                called="#_DZcmAJ30EeeA_OgQ1VnmfA"/>
+          </elements>
+          <elements xmi:id="_uI0hQJ1UEeeA_OgQ1VnmfA" name="MappingBasedDecoratorPattern"
+              superPattern="#_BDmcIJ1IEeeA_OgQ1VnmfA" headerMethod="#_uI0hQp1UEeeA_OgQ1VnmfA"
+              conditionMethod="#_uI0hRJ1UEeeA_OgQ1VnmfA" initMethod="#_uI0hQ51UEeeA_OgQ1VnmfA"
+              footerMethod="#_uI0hRp1UEeeA_OgQ1VnmfA">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_uI0hQZ1UEeeA_OgQ1VnmfA"
+                name="Java"/>
+            <methods xmi:id="_uI0hQp1UEeeA_OgQ1VnmfA" name="header" patternFilePath="templates/pattern._uI0hQJ1UEeeA_OgQ1VnmfA/method._uI0hQp1UEeeA_OgQ1VnmfA.pt"/>
+            <methods xmi:id="_uI0hQ51UEeeA_OgQ1VnmfA" name="init" patternFilePath="templates/pattern._uI0hQJ1UEeeA_OgQ1VnmfA/method._uI0hQ51UEeeA_OgQ1VnmfA.pt"/>
+            <methods xmi:id="_uI0hRJ1UEeeA_OgQ1VnmfA" name="preCondition" patternFilePath="templates/pattern._uI0hQJ1UEeeA_OgQ1VnmfA/method._uI0hRJ1UEeeA_OgQ1VnmfA.pt"/>
+            <methods xmi:id="_uI0hRZ1UEeeA_OgQ1VnmfA" name="createSiriusDecorator"
+                patternFilePath="templates/pattern._uI0hQJ1UEeeA_OgQ1VnmfA/method._uI0hRZ1UEeeA_OgQ1VnmfA.pt"/>
+            <methods xmi:id="_uI0hRp1UEeeA_OgQ1VnmfA" name="footer" patternFilePath="templates/pattern._uI0hQJ1UEeeA_OgQ1VnmfA/method._uI0hRp1UEeeA_OgQ1VnmfA.pt"/>
+            <methods xmi:id="_AThPwJ1YEeemi8QSRDpLCg" name="initializeVariable" patternFilePath="templates/pattern._uI0hQJ1UEeeA_OgQ1VnmfA/method._AThPwJ1YEeemi8QSRDpLCg.pt"/>
+            <methods xmi:id="_-8wwkJ35EeeA_OgQ1VnmfA" name="setMappings" patternFilePath="templates/pattern._uI0hQJ1UEeeA_OgQ1VnmfA/method._-8wwkJ35EeeA_OgQ1VnmfA.pt"/>
+            <parameters xmi:id="_jZLAUJ1XEeeA_OgQ1VnmfA" name="parameter" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0#//MappingBasedDecorator"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_uI0hR51UEeeA_OgQ1VnmfA"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="__1-3kJ35EeeA_OgQ1VnmfA"
+                called="#_-8wwkJ35EeeA_OgQ1VnmfA"/>
+          </elements>
+        </libraries>
+        <libraries xmi:id="_Fi8hoJ0OEeeA_OgQ1VnmfA" name="org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.decorators.common">
+          <elements xmi:id="_BDmcIJ1IEeeA_OgQ1VnmfA" name="AbstractDecorator" superPattern="#_Bys74AkTEeS0Ta9jP3S46g"
+              headerMethod="#_BDmcIp1IEeeA_OgQ1VnmfA" conditionMethod="#_BDmcJJ1IEeeA_OgQ1VnmfA"
+              initMethod="#_BDmcI51IEeeA_OgQ1VnmfA" footerMethod="#_BDmcJp1IEeeA_OgQ1VnmfA">
+            <nature xmi:type="javapattern:JavaNature" xmi:id="_BDmcIZ1IEeeA_OgQ1VnmfA"
+                name="Java"/>
+            <methods xmi:id="_BDmcIp1IEeeA_OgQ1VnmfA" name="header" patternFilePath="templates/pattern._BDmcIJ1IEeeA_OgQ1VnmfA/method._BDmcIp1IEeeA_OgQ1VnmfA.pt"/>
+            <methods xmi:id="_BDmcI51IEeeA_OgQ1VnmfA" name="init" patternFilePath="templates/pattern._BDmcIJ1IEeeA_OgQ1VnmfA/method._BDmcI51IEeeA_OgQ1VnmfA.pt"/>
+            <methods xmi:id="_BDmcJJ1IEeeA_OgQ1VnmfA" name="preCondition" patternFilePath="templates/pattern._BDmcIJ1IEeeA_OgQ1VnmfA/method._BDmcJJ1IEeeA_OgQ1VnmfA.pt"/>
+            <methods xmi:id="_BDmcJZ1IEeeA_OgQ1VnmfA" name="createSiriusDecorator"
+                patternFilePath="templates/pattern._BDmcIJ1IEeeA_OgQ1VnmfA/method._BDmcJZ1IEeeA_OgQ1VnmfA.pt"/>
+            <methods xmi:id="_BDmcJp1IEeeA_OgQ1VnmfA" name="footer" patternFilePath="templates/pattern._BDmcIJ1IEeeA_OgQ1VnmfA/method._BDmcJp1IEeeA_OgQ1VnmfA.pt"/>
+            <methods xmi:id="_SXNR8J1IEeeA_OgQ1VnmfA" name="addDecorator2DecoratorSet"
+                patternFilePath="templates/pattern._BDmcIJ1IEeeA_OgQ1VnmfA/method._SXNR8J1IEeeA_OgQ1VnmfA.pt"/>
+            <methods xmi:id="_TmfIgJ1IEeeA_OgQ1VnmfA" name="setCommonData" patternFilePath="templates/pattern._BDmcIJ1IEeeA_OgQ1VnmfA/method._TmfIgJ1IEeeA_OgQ1VnmfA.pt"/>
+            <methods xmi:id="_BBeYYJ1MEeeybIDW2iCmgA" name="initializeVariable" patternFilePath="templates/pattern._BDmcIJ1IEeeA_OgQ1VnmfA/method._BBeYYJ1MEeeybIDW2iCmgA.pt"/>
+            <variables xmi:id="_Ad1VQJ1LEeeA_OgQ1VnmfA" name="vpdslDecorator" type="http://www.polarsys.org/kitalpha/ad/viewpoint/dsl/as/vpdiagram/1.0.0#//AbstractDecorator"/>
+            <variables xmi:id="_kID9EJ1LEeeybIDW2iCmgA" name="siriusDecorator" type="http://www.eclipse.org/sirius/1.1.0#//description/DecorationDescription"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_BDmcJ51IEeeA_OgQ1VnmfA"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_VKU50J1IEeeA_OgQ1VnmfA"
+                called="#_BDmcJZ1IEeeA_OgQ1VnmfA"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_B3kS4J1MEeeybIDW2iCmgA"
+                called="#_BBeYYJ1MEeeybIDW2iCmgA"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_YPUU0J1IEeeA_OgQ1VnmfA"
+                called="#_SXNR8J1IEeeA_OgQ1VnmfA"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_Y16awJ1IEeeA_OgQ1VnmfA"
+                called="#_TmfIgJ1IEeeA_OgQ1VnmfA"/>
+          </elements>
+        </libraries>
       </viewpoints>
     </viewpointContainer>
     <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_4oFskFwJEeKooNX-rGQuxA">
@@ -2157,7 +2259,7 @@
           <invocationContracts xmi:id="_7Z6ig15PEeKooNX-rGQuxA" invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core/models/vpdslGeneratorsUtilTasks.fcore#_s4CIJOq5EeGh0fmNAy-1lA">
             <type xmi:type="types:TypeString" xmi:id="_CCSksF5QEeKooNX-rGQuxA" value="design"/>
           </invocationContracts>
-          <invocationContracts xmi:id="_qSzEMYgKEeKptpKqu9A0BQ" targetInvocationContract="#_8TCdsl5hEeKooNX-rGQuxA #_7u_F4GrMEeK9Z8JXsm6Xcw #_GP9mwmrMEeK9Z8JXsm6Xcw #_F4EAcnqsEeKZnLNBJ96SOA #_JdfF8ogIEeKa19qygOxIRg #_koiyJqrIEeOZeaz3SaU3zA #_alBh9arMEeOZeaz3SaU3zA #_HBy3k7W8EeOFXuRjYTUk8g #_FgL55WXoEeWYaMtt1GGGww"
+          <invocationContracts xmi:id="_qSzEMYgKEeKptpKqu9A0BQ" targetInvocationContract="#_8TCdsl5hEeKooNX-rGQuxA #_7u_F4GrMEeK9Z8JXsm6Xcw #_GP9mwmrMEeK9Z8JXsm6Xcw #_F4EAcnqsEeKZnLNBJ96SOA #_JdfF8ogIEeKa19qygOxIRg #_koiyJqrIEeOZeaz3SaU3zA #_alBh9arMEeOZeaz3SaU3zA #_HBy3k7W8EeOFXuRjYTUk8g #_FgL55WXoEeWYaMtt1GGGww #_7FcoBZ0NEeeA_OgQ1VnmfA"
               invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core/models/vpdslGeneratorsUtilTasks.fcore#_s4CIJuq5EeGh0fmNAy-1lA"/>
         </invocationContractContainer>
       </invocations>
@@ -2246,6 +2348,19 @@
                 elements="#_aQkb8GxZEeKZOKJHxkRgdw"/>
           </invocationContracts>
           <invocationContracts xmi:id="_alBh9arMEeOZeaz3SaU3zA" sourceInvocationContract="#_qSzEMYgKEeKptpKqu9A0BQ"
+              invokedContract="#_9mQFkGo0EeK9Z8JXsm6Xcw"/>
+        </invocationContractContainer>
+      </invocations>
+      <invocations xmi:id="_7FcoAJ0NEeeA_OgQ1VnmfA" name="Generate doremi Decorators"
+          invokedActivity="#_3At8AGo0EeK9Z8JXsm6Xcw">
+        <invocationContractContainer xmi:id="_7FcoAZ0NEeeA_OgQ1VnmfA">
+          <invocationContracts xmi:id="_7FcoAp0NEeeA_OgQ1VnmfA" factoryComponentContract="#_CTrBFFwKEeKooNX-rGQuxA"
+              invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Model_driven_pattern_strategy_task.fcore#_DgB2IP6fEd64XaYPo3s6sPg"/>
+          <invocationContracts xmi:id="_7FcoA50NEeeA_OgQ1VnmfA" invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Model_driven_pattern_strategy_task.fcore#_nz1HkSCaEd-Sse0r9LJWbA">
+            <type xmi:type="pattern:TypePatternList" xmi:id="_7FcoBJ0NEeeA_OgQ1VnmfA"
+                elements="#_zOIokJyAEeetUOj4GTeekg"/>
+          </invocationContracts>
+          <invocationContracts xmi:id="_7FcoBZ0NEeeA_OgQ1VnmfA" sourceInvocationContract="#_qSzEMYgKEeKptpKqu9A0BQ"
               invokedContract="#_9mQFkGo0EeK9Z8JXsm6Xcw"/>
         </invocationContractContainer>
       </invocations>

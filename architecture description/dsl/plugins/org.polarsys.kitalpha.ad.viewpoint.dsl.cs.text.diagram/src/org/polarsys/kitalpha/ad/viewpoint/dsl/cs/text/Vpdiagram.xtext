@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014-2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -110,6 +110,7 @@ Diagram returns vpdiagram::DiagramRepresentation:
 		(the_domain = DomainContainer)
 		(the_MappingSet = MappingSet)?
 		(the_ActionSet = ActionSet)?
+		(the_DecoratorSet = DecoratorSet)?
 	'}'
 ;
 	
@@ -120,6 +121,7 @@ DiagramExtension returns vpdiagram::DiagramRepresentation:
 		('extended-diagram:' extented_diagram=[siriusDiagramDescription::DiagramDescription| FQN])?
 		(the_MappingSet = MappingSet)?
 		(the_ActionSet = ActionSet)?
+		(the_DecoratorSet = DecoratorSet)?
 		(ownedCustomizations=Customizations)?
 	'}'
 ;
@@ -281,7 +283,80 @@ NodeDescription returns vpdiagram::NodeDescription:
 		('Style' '{' style=AbstractNodeStyle '}')? 
 	'}'	
 ;
-	
+
+DecoratorSet returns vpdiagram::DecoratorSet:
+	{vpdiagram::DecoratorSet}
+	'Decorators' 
+	'{'
+		(decorators+=Decorator)*
+	'}'
+;
+
+Decorator returns vpdiagram::AbstractDecorator:
+	Basic | MappingBased | SemanticBased
+;
+
+Basic returns vpdiagram::BasicDecorator:
+	{vpdiagram::BasicDecorator}
+	'Basic' name=EString
+	'{'
+		('position:' position=Position)?
+		('direction:' direction=DecorationDistributionDirection)?
+		('icon:' icon=STRING)?
+		('precondition:' precondition=ExpressionElement)?
+		('tooltip:' tooltip=ExpressionElement)?
+	'}'
+;
+
+MappingBased returns vpdiagram::MappingBasedDecorator:
+	{vpdiagram::MappingBasedDecorator}
+	'MappingBased' name=EString
+	'{'
+		('position:' position=Position)?
+		('direction:' direction=DecorationDistributionDirection)?
+		('icon:' icon=STRING)?
+		('precondition:' precondition=ExpressionElement)?
+		('tooltip:' tooltip=ExpressionElement)?
+		('mappings' ':' ('external' '{' (externalMappings+=[siriusDiagramDescription::DiagramElementMapping | STRING] (','
+			externalMappings+=[siriusDiagramDescription::DiagramElementMapping | STRING])*) '}'
+			(',' (internalMappings+=[vpdiagram::DiagramElement | STRING]))*)?
+			|
+			(internalMappings+=[vpdiagram::DiagramElement | STRING])?
+			(',' internalMappings+=[vpdiagram::DiagramElement | STRING])*
+		)
+	'}'
+;
+
+SemanticBased returns vpdiagram::SemanticBasedDecorator:
+	{vpdiagram::SemanticBasedDecorator}
+	'SemanticBased' name=EString
+	'{'
+		('position:' position=Position)?
+		('direction:' direction=DecorationDistributionDirection)?
+		('icon:' icon=STRING)?
+		('precondition:' precondition=ExpressionElement)?
+		('tooltip:' tooltip=ExpressionElement)?
+		('domain:' domain=AbstractClass)?
+	'}'
+;
+
+enum Position returns siriusDescription::Position:
+	CENTER = 'center'			|
+	EAST = 'east'				|
+	NORTH = 'north'				|
+	NORTH_EAST = 'north_east'	|
+	NORTH_WEST = 'north_west'	|
+	SOUTH = 'south'				|
+	SOUTH_EAST = 'south_east'	|
+	SOUTH_WEST = 'south_west'	|
+	WEST = 'west'
+;
+
+enum DecorationDistributionDirection returns siriusDescription::DecorationDistributionDirection:
+	HORIZONTAL = 'horizontal' |
+	VERTICAL = 'vertical'
+;
+
 ActionSet returns vpdiagram::ActionSet:
 	{vpdiagram::ActionSet}
 	'Actions' 
