@@ -46,8 +46,9 @@ public class ListenerInstaller {
 		 * CKEDITOR.on('instanceReady', function(e) {
     	 *		CKEDITOR.instances.editor.addCommand("openLink", {
          *			exec: function(editor) {
-         *   			if (typeof editor.getSelection().getStartElement().is('a')) {
-         *       			openLinks(editor.getSelection().getStartElement().getAttribute('href'));
+         *				var linkTag = editor.getSelection().getStartElement().getAscendant('a', true);
+         *   			if (linkTag != null && linkTag.is('a')){
+         *       			openLinks(linkTag.getAttribute('href'));
          *   			}
          *			}
     	 *		});
@@ -57,7 +58,10 @@ public class ListenerInstaller {
     	 *		};
     	 *		CKEDITOR.instances.editor.contextMenu.addListener(function(element, selection) {
          *			return {
-         *   			openLink: CKEDITOR.TRISTATE_ON
+         *				var linkTag = element.getAscendant('a', true);
+         *				if (linkTag != null && linkTag.is('a')){return {
+         *   				openLink: CKEDITOR.TRISTATE_ON;
+         *   			}
          *			};
     	 *		});
     	 *		CKEDITOR.instances.editor.addMenuItems({
@@ -74,15 +78,17 @@ public class ListenerInstaller {
 		scriptAddMenu.append("CKEDITOR.on( 'instanceReady', function(e) {");
 		scriptAddMenu.append("CKEDITOR.instances.editor.addCommand(\"openLink\", {");
 		scriptAddMenu.append("exec : function( editor ) {");
-		scriptAddMenu.append("          if (typeof editor.getSelection().getStartElement().is('a')){ openLinks(editor.getSelection().getStartElement().getAttribute('href'));}");
+		scriptAddMenu.append("			var linkTag = editor.getSelection().getStartElement().getAscendant('a', true);");
+		scriptAddMenu.append("          if (linkTag != null && linkTag.is('a')){ openLinks(linkTag.getAttribute('href'));}");
 		scriptAddMenu.append("    }});");
 		scriptAddMenu.append("	var openLink = {");
 		scriptAddMenu.append("   label : 'Open Link',");
 		scriptAddMenu.append("   command : 'openLink'");
 		scriptAddMenu.append("	};");
 		scriptAddMenu.append("	CKEDITOR.instances.editor.contextMenu.addListener( function( element, selection ) {");
-		scriptAddMenu.append("	   if (element.is('a')){return { ");
-		scriptAddMenu.append("     openLink : CKEDITOR.TRISTATE_ON ");
+		scriptAddMenu.append("	   var linkTag = element.getAscendant('a', true);");
+		scriptAddMenu.append("	   if (linkTag != null && linkTag.is('a')){return { ");
+		scriptAddMenu.append("     	openLink : CKEDITOR.TRISTATE_ON ");
 		scriptAddMenu.append("   };}");
 		scriptAddMenu.append("	});");
 		scriptAddMenu.append("	CKEDITOR.instances.editor.addMenuItems({");
