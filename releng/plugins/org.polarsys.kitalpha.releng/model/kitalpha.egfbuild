@@ -537,8 +537,8 @@
         <properties xmi:id="_NAn1eJWzEeSPapwxSH2ZqQ" key="platformPath" value="${publish}/${TP_name}"/>
         <properties xmi:id="_NAn1eZWzEeSPapwxSH2ZqQ" key="version" value="${mdk_version}"/>
         <properties xmi:id="_NAn1epWzEeSPapwxSH2ZqQ" key="buildId" value="${timestamp}"/>
-        <properties xmi:id="_NAn1e5WzEeSPapwxSH2ZqQ" key="product" value="org.polarsys.kitalpha.product"/>
-        <properties xmi:id="_NAn1fJWzEeSPapwxSH2ZqQ" key="application" value="org.polarsys.kitalpha.application"/>
+        <properties xmi:id="_NAn1e5WzEeSPapwxSH2ZqQ" key="product" value="org.polarsys.kitalpha.product.kitalpha"/>
+        <properties xmi:id="_NAn1fJWzEeSPapwxSH2ZqQ" key="application" value="org.polarsys.kitalpha.product.application"/>
         <egfActivities xmi:id="_NAn1fZWzEeSPapwxSH2ZqQ" uri="platform:/plugin/org.polarsys.kitalpha.releng/egf/customPlatform.fcore#_iQtBQK1QEeCY7YPdntiIaQ"/>
       </steps>
       <steps xsi:type="buildfile:ZipStep" xmi:id="_NAn1fpWzEeSPapwxSH2ZqQ" name="zip neon results" baseDir="${publish}/${TP_name}" destinationFilePath="${publish}/kitalpha_${kitalpha_version}-${timestamp}-${TP_os}-${TP_ws}-${TP_arch}-${eclipse_version}.zip"/>
@@ -577,8 +577,8 @@
         <properties xmi:id="_caEruJWzEeSPapwxSH2ZqQ" key="platformPath" value="${publish}/${TP_name}"/>
         <properties xmi:id="_caEruZWzEeSPapwxSH2ZqQ" key="version" value="${mdk_version}"/>
         <properties xmi:id="_caErupWzEeSPapwxSH2ZqQ" key="buildId" value="${timestamp}"/>
-        <properties xmi:id="_caEru5WzEeSPapwxSH2ZqQ" key="product" value="org.polarsys.kitalpha.product"/>
-        <properties xmi:id="_caErvJWzEeSPapwxSH2ZqQ" key="application" value="org.polarsys.kitalpha.application"/>
+        <properties xmi:id="_caEru5WzEeSPapwxSH2ZqQ" key="product" value="org.polarsys.kitalpha.product.kitalpha"/>
+        <properties xmi:id="_caErvJWzEeSPapwxSH2ZqQ" key="application" value="org.polarsys.kitalpha.product.application"/>
         <egfActivities xmi:id="_caErvZWzEeSPapwxSH2ZqQ" uri="platform:/plugin/org.polarsys.kitalpha.releng/egf/customPlatform.fcore#_iQtBQK1QEeCY7YPdntiIaQ"/>
       </steps>
       <steps xsi:type="buildfile:TarStep" xmi:id="_jSFz4NExEeSTbrZQrXnDzg" name="tar neon results" description="" destfile="${publish}/kitalpha_${kitalpha_version}-${timestamp}-${TP_os}-${TP_ws}-${TP_arch}-${eclipse_version}.tar.gz" baseDir="${publish}/${TP_name}" compression="gzip"/>
@@ -597,8 +597,8 @@
         <properties xmi:id="_e0YK-JWzEeSPapwxSH2ZqQ" key="platformPath" value="${publish}/${TP_name}"/>
         <properties xmi:id="_e0YK-ZWzEeSPapwxSH2ZqQ" key="version" value="${mdk_version}"/>
         <properties xmi:id="_e0YK-pWzEeSPapwxSH2ZqQ" key="buildId" value="${timestamp}"/>
-        <properties xmi:id="_e0YK-5WzEeSPapwxSH2ZqQ" key="product" value="org.polarsys.kitalpha.product"/>
-        <properties xmi:id="_e0YK_JWzEeSPapwxSH2ZqQ" key="application" value="org.polarsys.kitalpha.application"/>
+        <properties xmi:id="_e0YK-5WzEeSPapwxSH2ZqQ" key="product" value="org.polarsys.kitalpha.product.kitalpha"/>
+        <properties xmi:id="_e0YK_JWzEeSPapwxSH2ZqQ" key="application" value="org.polarsys.kitalpha.product.application"/>
         <egfActivities xmi:id="_e0YK_ZWzEeSPapwxSH2ZqQ" uri="platform:/plugin/org.polarsys.kitalpha.releng/egf/customPlatform.fcore#_iQtBQK1QEeCY7YPdntiIaQ"/>
       </steps>
       <steps xsi:type="buildstep:AntStep" xmi:id="_Nu2DsMgDEeSUVaUqISCvPA" enabled="false" targetName="fixPermission" xml="&lt;target name=&quot;fixPermission&quot;>&#xD;&#xA;&#x9;&lt;chmod file=&quot;${publish}/${TP_name}/Eclipse.app/Contents/MacOS/eclipse&quot; perm=&quot;700&quot; verbose=&quot;true&quot;/>&#xD;&#xA;&lt;/target>"/>
