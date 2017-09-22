@@ -130,7 +130,7 @@ public class <%=genClass.getProviderClassName()%>
 			add<%=genFeature.getCapName()%>PropertyDescriptor(object);
 <%}%>
 		}
-<%if ((ExtensionHelper.hasExtensibleProviderFactory(genModel) || ExtensionHelper.hasChildCreationExtenders(genModel)) && genClass.getProviderBaseClassName() != null) {%>
+<%if (genClass.getProviderBaseClassName() != null && EMDEHelper.isExtensibleElement(genClass.getEcoreClass()) && (ExtensionHelper.hasExtensibleProviderFactory(genModel) || ExtensionHelper.hasChildCreationExtenders(genModel))) {%>
 		// begin-extension-code
 		checkChildCreationExtender(object);
 		// end-extension-code

@@ -1,4 +1,4 @@
-//Generated with EGF 1.5.0.v20170223-0952
+//Generated with EGF 1.5.0.v20170706-0846
 package org.polarsys.kitalpha.emde.egf.edit;
 
 import org.polarsys.kitalpha.emde.egf.helper.*;
@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.*;
 import org.eclipse.egf.model.pattern.*;
 import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
+import org.polarsys.kitalpha.emde.model.edit.provider.helpers.EMDEHelper;
 
 public class ItemProvider extends org.eclipse.egf.emf.pattern.edit.ItemProvider {
 	protected static String nl;
@@ -462,9 +463,9 @@ public class ItemProvider extends org.eclipse.egf.emf.pattern.edit.ItemProvider 
 			stringBuffer.append(TEXT_51);
 		}
 		stringBuffer.append(TEXT_52);
-		if ((ExtensionHelper.hasExtensibleProviderFactory(genModel)
-				|| ExtensionHelper.hasChildCreationExtenders(genModel))
-				&& genClass.getProviderBaseClassName() != null) {
+		if (genClass.getProviderBaseClassName() != null && EMDEHelper.isExtensibleElement(genClass.getEcoreClass())
+				&& (ExtensionHelper.hasExtensibleProviderFactory(genModel)
+						|| ExtensionHelper.hasChildCreationExtenders(genModel))) {
 			stringBuffer.append(TEXT_53);
 		}
 		stringBuffer.append(TEXT_54);
