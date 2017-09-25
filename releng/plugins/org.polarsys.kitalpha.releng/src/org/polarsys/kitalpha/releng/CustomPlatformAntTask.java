@@ -1,6 +1,13 @@
-/**
- * 
- */
+/*******************************************************************************
+ * Copyright (c) 2017 Thales Global Services S.A.S.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *  
+ * Contributors:
+ *   Thales Global Services S.A.S - initial API and implementation
+ *******************************************************************************/
 package org.polarsys.kitalpha.releng;
 
 import java.io.File;
@@ -62,12 +69,13 @@ public class CustomPlatformAntTask extends AbstractTask {
 			if (line.startsWith("eclipse.product"))
 				list.set(list.indexOf(line), "eclipse.product=" + product);
 			if (line.startsWith("osgi.splashPath"))
-				list.set(list.indexOf(line), "osgi.splashPath=platform\\:/base/plugins/" + product);
+				list.set(list.indexOf(line), "osgi.splashPath=platform\\:/base/plugins/" + getProductPluginID());
 			if (line.startsWith("eclipse.application"))
 				list.set(list.indexOf(line), "eclipse.application=" + application);
 		}
 		writeFile(file, list);
 	}
+
 
 	private void modifyEclipseInis() throws IOException {
 		File folder = new File(platformPath);
@@ -83,7 +91,7 @@ public class CustomPlatformAntTask extends AbstractTask {
 					if (line.startsWith("-Xms") || line.startsWith("-Xmx"))
 						list.remove(line);
 					if (line.equals("org.eclipse.platform"))
-						list.set(list.indexOf(line), product);
+						list.set(list.indexOf(line), getProductPluginID());
 				}
 
 //				list.add("-Dosgi.requiredJavaVersion=1.5");
@@ -95,5 +103,9 @@ public class CustomPlatformAntTask extends AbstractTask {
 				writeFile(file, list);
 			}
 		}
+	}
+	
+	private String getProductPluginID() {
+		return product.substring(0, product.lastIndexOf("."));
 	}
 }
