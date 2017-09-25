@@ -77,7 +77,7 @@ Contributors:
             id="org.polarsys.kitalpha.product.splashHandler">
       </splashHandler>
       <splashHandlerProductBinding
-            productId="org.polarsys.kitalpha.product"
+            productId="org.polarsys.kitalpha.product.kitalpha"
             splashId="org.polarsys.kitalpha.product.splashHandler">
       </splashHandlerProductBinding>
    </extension>
