@@ -18,7 +18,7 @@
      Set to ${eclipse.home}/plugins and run the build.xml with the following option checked 
 	 RunAs/ExternalToolsConfiguration/JRE/RunInTheSameJREThanWorkspace
 	-->
-	<property name="wikitext.standalone" value="${eclipse.home}/plugins"/>
+	<property name="wikitext.standalone" value="${eclipse.home}/plugins/"/>
 	
 	<path id="wikitext.classpath">
         <fileset dir="${wikitext.standalone}">
@@ -26,7 +26,7 @@
 		</fileset>
 	</path>
         
-	<taskdef classpathref="wikitext.classpath" resource="org/eclipse/mylyn/wikitext/core/ant/tasks.properties" />
+	<taskdef classpathref="wikitext.classpath" resource="org/eclipse/mylyn/wikitext/ant/tasks.properties" />
 
 	<target name="generate-html" description="Generate HTML from textile source">
 		<wikitext-to-html markupLanguage="MediaWiki">

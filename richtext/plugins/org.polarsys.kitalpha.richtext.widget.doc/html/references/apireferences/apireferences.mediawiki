@@ -7,7 +7,7 @@
 Two helpers are provided:
 
 * org.polarsys.kitalpha.richtext.common.util.MDERichTextHelper: contains methods that allow to retrieve project from an EObject, project path and the URL of resource in a bundle.
-* org.polarsys.kitalpha.richtext.mde.tools.utils.MDERichTextToolsHelper: contains utilities to work with model such as getting the Editing Domain of the model, a content and label providers...
+* org.polarsys.kitalpha.richtext.widget.tools.utils.MDERichTextToolsHelper: contains utilities to work with model such as getting the Editing Domain of the model, a content and label providers...
 
 
 == MDE Rich Text Tools ==
@@ -20,10 +20,8 @@ Contains implementation of two tools
 
 === Extension points ===
 
-''NB: These extension points are not the final release''
+''org.polarsys.kitalpha.richtext.widget.tools.linkHandler'' allows to contribute to link handler. A link handler manages how to encode, decode and navigate with links of a certain protocol.
+Only one contribtion is allowed, otherwise, the behavior is not deterministic.
 
-
-''org.polarsys.kitalpha.richtext.mde.tools.link.openModelStrategy'' allows to contribute to "Open Link" which allow to navigate to model or diagram element.
-The contributor must implements ''org.polarsys.kitalpha.richtext.mde.tools.links.handlers.OpenModelElementStrategy''
-
-''org.polarsys.kitalpha.richtext.mde.tools.link.openStrategy'': TODO
+''org.polarsys.kitalpha.richtext.widget.tools.ext.openLinkStrategy'' allows to contribute with a strategy to navigate to a target of link which are model element.
+Only one contribtion is allowed, otherwise, the behavior is not deterministic.   

@@ -10,11 +10,8 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.richtext.widget.tools.utils;
 
-import java.io.IOException;
 import java.net.URL;
 
-import org.eclipse.core.runtime.FileLocator;
-import org.eclipse.core.runtime.Status;
 import org.polarsys.kitalpha.richtext.common.util.MDERichTextHelper;
 import org.polarsys.kitalpha.richtext.widget.tools.internal.Activator;
 
@@ -43,18 +40,9 @@ public class Constants {
 	public static final String LOCAL_LABEL = "Image (project relative path)"; //$NON-NLS-1$
 	
 	 //URL CONSTANTS
-    public static final URL EDIT_ICON = getFileURL(MDERichTextHelper.getURL(Activator.PLUGIN_ID, "icons/edit.gif")); 		//$NON-NLS-1$
-    public static final URL CLEAR_ICON = getFileURL(MDERichTextHelper.getURL(Activator.PLUGIN_ID, "icons/clear.gif")); 		//$NON-NLS-1$
-    public static final URL ADD_LINK_ICON = getFileURL(MDERichTextHelper.getURL(Activator.PLUGIN_ID, "icons/add_link.gif")); 	//$NON-NLS-1$
-    public static final URL ADD_IMAGE_ICON = getFileURL(MDERichTextHelper.getURL(Activator.PLUGIN_ID, "icons/add_image.gif")); 	//$NON-NLS-1$
+    public static final URL EDIT_ICON = MDERichTextHelper.getURL(Activator.PLUGIN_ID, "icons/edit.gif"); 		//$NON-NLS-1$
+    public static final URL CLEAR_ICON = MDERichTextHelper.getURL(Activator.PLUGIN_ID, "icons/clear.gif"); 		//$NON-NLS-1$
+    public static final URL ADD_LINK_ICON = MDERichTextHelper.getURL(Activator.PLUGIN_ID, "icons/add_link.gif"); 	//$NON-NLS-1$
+    public static final URL ADD_IMAGE_ICON = MDERichTextHelper.getURL(Activator.PLUGIN_ID, "icons/add_image.gif"); 	//$NON-NLS-1$
 
-    public static URL getFileURL(URL url){
-		try {
-			return FileLocator.toFileURL(url);
-		} catch (IOException e) {
-			Status status = new Status(Status.ERROR, Activator.PLUGIN_ID, e.getMessage(), e);
-			Activator.getDefault().getLog().log(status);
-		}
-		return null;
-	}
 }
