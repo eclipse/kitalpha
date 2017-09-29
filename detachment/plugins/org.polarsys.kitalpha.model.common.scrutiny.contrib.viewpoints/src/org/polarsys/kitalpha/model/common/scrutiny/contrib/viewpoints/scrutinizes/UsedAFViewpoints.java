@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016, 2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -124,7 +124,17 @@ public class UsedAFViewpoints implements IScrutinize<ViewpointTreeContainer, Obj
 
   public static Set<org.polarsys.kitalpha.resourcereuse.model.Resource> lookUp(Collection<Resource> resources) {
     Set<org.polarsys.kitalpha.resourcereuse.model.Resource> result = new HashSet<org.polarsys.kitalpha.resourcereuse.model.Resource>();
-    Scrutineer.startScrutiny(resources);
+    
+    /*
+     * Fix Concurrent Exception on the original list.
+     * Start scrutiny discovers all reachable resource from the list of the resource
+     * in the resource set (i.e., this causes the the modification of the list of the resource
+     * while we iterate over).
+     */
+    Collection<Resource> resourcesCopyList = new ArrayList<Resource>();
+    resourcesCopyList.addAll(resources);
+    
+    Scrutineer.startScrutiny(resourcesCopyList);
 
     Set<String> nsUris = new HashSet<String>();
     Set<String> odesigns = new HashSet<String>();
