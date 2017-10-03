@@ -99,7 +99,7 @@ public class ResourceReuseSelectionDialog extends TitleAreaDialog {
 		}
 		
 		matchingResourceViewer.setInput(resources);
-		matchingResourceLabel.setText("Matching resources ("+resources.length+"):");
+		matchingResourceLabel.setText("Matching resources ("+(resources == null? 0:resources.length)+"):");
 	}
 
 	@Override

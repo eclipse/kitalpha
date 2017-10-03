@@ -15,20 +15,22 @@ import java.util.List;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.window.Window;
 import org.eclipse.sirius.business.api.session.Session;
+import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.polarsys.kitalpha.resourcereuse.emfscheme.helpers.ModelReuseHelper;
 import org.polarsys.kitalpha.resourcereuse.emfscheme.utils.context.ModelReuseContext;
 import org.polarsys.kitalpha.resourcereuse.emfscheme.utils.services.ResourceSetLoaderServices;
-import org.polarsys.kitalpha.resourcereuse.emfscheme.utils.services.SiriusLoaderServices;
 import org.polarsys.kitalpha.resourcereuse.model.SearchCriteria;
 import org.polarsys.kitalpha.resourcereuse.ui.dialog.ResourceReuseSelectionDialog;
 
@@ -41,7 +43,6 @@ public class LoadResourceReuseHandler extends AbstractHandler {
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		ModelReuseContext context = ModelReuseContext.INSTANCE;
 		ISelection selection = HandlerUtil.getCurrentSelection(event);
 		if (selection instanceof IStructuredSelection) {
 			IStructuredSelection structuredSelection = (IStructuredSelection) selection;
@@ -60,12 +61,24 @@ public class LoadResourceReuseHandler extends AbstractHandler {
 				ResourceReuseSelectionDialog dialog = new ResourceReuseSelectionDialog(HandlerUtil.getActiveShell(event));
 				if (dialog.open() == Window.OK) {
 				EObject eObject = (EObject) firstElement;
-				final Session session = context.getSession();
+				final Session session = SessionManager.INSTANCE.getExistingSession(eObject.eResource().getURI());
 				SearchCriteria criteria = dialog.getCriteria();
-					final URI modelToLoad = ModelReuseHelper.createModelReuseURI(criteria);
-							ResourceSetLoaderServices.loadResourceForCurrentResourceSet(eObject, modelToLoad);
+				final URI modelToLoad = ModelReuseHelper.createModelReuseURI(criteria);
+				ResourceSetLoaderServices.loadResourceForCurrentResourceSet(eObject, modelToLoad);
+				if (session != null) {
+					RecordingCommand command = new RecordingCommand(session.getTransactionalEditingDomain()) {
+
+						@Override
+						protected void doExecute() {
+							session.addSemanticResource(modelToLoad, new NullProgressMonitor());
 						}
-					}
+					};
+					session.getTransactionalEditingDomain().getCommandStack().execute(command);
+
+				}
+			}
+		}
+			
 		}
 		return null;
 	}
