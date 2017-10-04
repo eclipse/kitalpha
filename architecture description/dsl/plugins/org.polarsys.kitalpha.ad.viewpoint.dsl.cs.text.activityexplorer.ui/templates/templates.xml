@@ -84,8 +84,8 @@
 		image-on : "${PageImagePathOn}"&#13;
 		image-off : "${PageImagePathOff}"&#13;
 	}&#13;
-	tab name  "${tabName}"&#13;
-	show viewer : true&#13;
+	tab-name  "${tabName}"&#13;
+	show-viewer : true&#13;
 	sections {&#13;
 		section ${sectionName} {&#13;
 			description "&lt;p&gt;description&lt;/p&gt;"&#13;
