@@ -45,7 +45,7 @@ if (javaServiceData != null) {
 	javaServiceData.addMethod(javaMethodData);
 
 	If d_if = ToolFactory.eINSTANCE.createIf();
-	String pElementView = "(" + VSMVariable.element.getInnerVariable() + ")";
+	String pElementView = "(" + VSMVariable.elementView.getInnerVariable() + ")";
 	d_if.setConditionExpression(SiriusExpressionHelper.getExpressoin(n_method_name +  pElementView , ExpressionInterpreter.Service));
 	gotoElement.getSubModelOperations().add(d_if);
 }

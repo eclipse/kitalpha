@@ -1,4 +1,4 @@
-//Generated with EGF 1.4.0.v20160519-0641
+//Generated with EGF 1.5.0.v20170111-0853
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools;
 
 import java.util.*;
@@ -116,7 +116,7 @@ public class OpenActionPattern
 			javaServiceData.addMethod(javaMethodData);
 
 			If d_if = ToolFactory.eINSTANCE.createIf();
-			String pElementView = "(" + VSMVariable.element.getInnerVariable() + ")";
+			String pElementView = "(" + VSMVariable.elementView.getInnerVariable() + ")";
 			d_if.setConditionExpression(
 					SiriusExpressionHelper.getExpressoin(n_method_name + pElementView, ExpressionInterpreter.Service));
 			gotoElement.getSubModelOperations().add(d_if);
