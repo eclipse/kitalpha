@@ -33,7 +33,6 @@ Once the widget is casted, ''org.polarsys.kitalpha.richtext.nebula.widget.MDENeb
 * URL: refers to the path of the icon of the item.
 * handler: refers to the callback of the command at receiving click-event. This will call the execute(MDERichTextWidget) method. The parameter of the service is the instance of the widget where the event was triggered
 
-''NB: Refers to API References for more information about MDERichTextHelper and how to retrieve URL of icon in Eclipse''
 
 For encoding here how to add the Encode item to the toolbar
 

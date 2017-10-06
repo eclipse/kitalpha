@@ -19,7 +19,7 @@ The aim of the exercise is to fill the description feature with the Rich Text us
 
 
 # Create a new plugin which will hold the implementation (in Component Sample is the ''org.polarsys.kitalpha.vp.componentsample.ui''
-# In the Manifest of the plugin add to Require-Bundle the dependency to ''org.polarsys.kitalpha.richtext.widget'' and ''org.eclipse.ui.views.properties.tabbed''
+# In the Manifest of the plugin add to Require-Bundle the dependency to ''org.polarsys.kitalpha.richtext.common'', ''org.polarsys.kitalpha.richtext.widget'' and ''org.eclipse.ui.views.properties.tabbed''
 # In ''Extensions'' Tab of the plugin editor, add a contribution to ''org.eclipse.ui.views.properties.tabbed.propertyTabs''
 # Fill ''ContributorID'' field with the ''org.eclipse.ui.navigator.ProjectExplorer'' value (This value activate the tab when an object is selected in the ''Project Explorer'')
 # Add under ''PropertyTabs'' a ''property tab'' and fill fields with these values
