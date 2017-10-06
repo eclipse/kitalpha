@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -22,6 +22,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resource.VpdiagramResource
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.scoping.VpdiagramContainerManager;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.scoping.VpdiagramGlobalScopeProvider;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.serializer.ScopeDiagramSerializer;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.CommonValueConverter;
 
 
 /**
@@ -59,5 +60,10 @@ public class VpdiagramRuntimeModule extends org.polarsys.kitalpha.ad.viewpoint.d
 	
 	public Class<? extends org.eclipse.xtext.serializer.sequencer.ITransientValueService> bindSequencerTransientValueService() {
 		return SequencerDiagramTransientValue.class;
+	}
+	
+	@Override
+	public Class<? extends org.eclipse.xtext.conversion.IValueConverterService> bindIValueConverterService() {
+		return CommonValueConverter.class;
 	}
 }
