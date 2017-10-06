@@ -8,16 +8,12 @@ This section detailled the interactions between the clients of the MDE Rich Text
 The picture denote a workbench which uses the MDE Rich Text Widget on it's model. Kitalpha adapts Nebula Rich Text editor in context of Model Driven Engineering.
 
 
-= MDE Rich Text: Physical Architecture =
+= MDE Rich Text: Plugins =
 
-The picture at the end of the document illustrates the MDE Rich Text Widget as it is implemented in Kitapha.
 
-* '''richtext.Common''': Contains services and abstract implementation that the widget must provide
-* '''richtext.nebula.widget''': contains specific Nebula Widget adaptations. This component is responsible to instantiate the Nebula Rich Text Editor
-* '''richtext.widget''': The implementation of widget and provides an Eclipse editor which embed the Widget, extension point to use a specifique property sheet page, a factory which provides a set of configurations of the the widget and install listeners to ''Open Link' menu and saving on focus lost event.
-* '''richtext.mde.tools''': Contains implementation of specific tools for the MDE. Mainly, Add Link and Add image tools. Also, it provides extension points for strategies that handle the link navigation for specific workbench
-* '''richtext.mde.tools.sirius''': Contains the contributions which allows navigation to diagrams
-
-''Warning: The extension points provided in the component richtext.mde.tools are not clearly defined. It is recommanded to use them carefully (or not use them) and they will be reworked in the future''
-
-[[File:../../img/richtext_physical_archtecture.png|frameless|1300px]]
+* '''org.polarsys.kitalpha.richtext.common''': Contains services and abstract implementation that the widget must provide
+* '''org.polarsys.kitalpha.richtext.nebula.widget''': contains specific Nebula Widget adaptations. This component is responsible to instantiate the Nebula Rich Text Editor
+* '''org.polarsys.kitalpha.richtext.widget''': The implementation of widget and provides an Eclipse editor which embed the Widget, extension point to use a specifique property sheet page, a factory which provides a set of configurations of the the widget and install listeners to ''Open Link' menu and saving on focus lost event.
+* '''org.polarsys.kitalpha.richtext.tools''': Contains implementation of specific tools for the MDE. Mainly, Add Link and Add image tools. Also, it provides extension point which handle link types
+* '''org.polarsys.kitalpha.richtext.widget.ext''': Contains the contributions which allows management of links
+* '''org.polarsys.kitalpha.richtext.widget.tools.strategies''': Contains the contributions which allows the navigration from link to its target, mainly, to model element.

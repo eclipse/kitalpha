@@ -56,7 +56,7 @@ Commonly used Tools (also, called items):
 |-
 |[[File:../img/richtext_links.png|Links]]
 |'''Links'''
-| Allows to add links. See the [[#links_management|Link management]] section for more information
+| Allows to add links and pictures. See the [[#links_management|Link management]] section for more information
 |}
 
 === Text area ===

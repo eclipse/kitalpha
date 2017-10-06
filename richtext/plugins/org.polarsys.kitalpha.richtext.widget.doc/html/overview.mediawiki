@@ -1,6 +1,0 @@
-= Overview =
-
-MDE Rich Text Widget is a '''WYIWYG''' widget which allows edition of formatted text (bold, italic, colored...) on model elements such as description, summary features... (string features). The content is translated to XHTML format before saving in the model element.
-The MDE Rich Text Widget provides tools to manage a differents links types (http, file with relative or absolute path, images...)
-
-The MDE Rich Text Widget is based on [[ https://www.eclipse.org/nebula/widgets/richtext/richtext.php | Nebula Rich Text Widget]] which in turn, is based on [[https://ckeditor.com/ | CKEditor]]. This a last one offers functionnalities of extensibilities and customizations that the MDE Rich Text inherites.
