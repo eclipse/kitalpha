@@ -4,8 +4,8 @@ Element-Name: ViewpointTestSuit
 Element-Type: testsuite
 Element-Version: 2.0
 Id: _g18_kHi1EeaI368ba7nlrQ
-Runtime-Version: 2.0.2.201511100828
-Save-Time: 11/9/16 4:10 PM
+Runtime-Version: 2.2.0.201706152316
+Save-Time: 10/9/17 3:05 PM
 
 ------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8
 Content-Type: text/testcase
@@ -23,5 +23,6 @@ _z-mU0Jm5Eeau1tOlZGduxg	// kind: 'test' name: 'DiagramExtensionEdgeGeneration' p
 _GpsJcKaIEeap-ORrGyGQRg	// kind: 'test' name: 'Viewpoint Activity Explorer Specification' path: '../test cases/Viewpoint Activity Explorer Specification.test'
 _JdRukKaMEeap-ORrGyGQRg	// kind: 'test' name: 'Viewpoint Build Specification' path: '../test cases/Viewpoint Build Specification.test'
 _sCHLcHi0EeaI368ba7nlrQ	// kind: 'test' name: 'menuKitalpha' path: '../test cases/menuKitalpha.test'
+_NELx4KzaEeeugqJ5eBR0lA	// kind: 'test' name: 'Viewpoint Packaging With Version' path: '../test cases/Viewpoint Packaging With Version.test'
 
 ------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8--
