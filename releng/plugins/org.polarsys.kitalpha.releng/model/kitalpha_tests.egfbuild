@@ -102,7 +102,7 @@
       </steps>
       <steps xsi:type="buildstep:TestStep" xmi:id="_hNI1wOCBEeWAfLzfCqvfTA" name="Resource Reuse" launchConfigurationPath="org.polarsys.kitalpha.resourcereuse.tests/Resource_Reuse_Tests.launch"/>
       <steps xsi:type="buildstep:TestStep" xmi:id="_P8E-oGRMEeanzKiDzJB_vQ" name="Resource Reuse - Emf Scheme" launchConfigurationPath="org.polarsys.kitalpha.resourcereuse.emfscheme.test.ju/EMFSchemeTestSuite.launch"/>
-      <steps xsi:type="buildstep:TestStep" xmi:id="_nNjtAAVVEeaiMI0G7SovBw" name="emde" launchConfigurationPath="org.polarsys.kitalpha.emde.tests/eMDE_Tests.launch"/>
+      <steps xsi:type="buildstep:TestStep" xmi:id="_nNjtAAVVEeaiMI0G7SovBw" name="emde" launchConfigurationPath="org.polarsys.kitalpha.emde.tests/eMDE_EmdeTestSuite.launch"/>
       <steps xsi:type="buildstep:TestStep" xmi:id="_h1uxQIb9EeahvvnP6QGVxQ" name="ad" launchConfigurationPath="org.polarsys.kitalpha.ad.viewpoint.tests/Viewpoint_Tests.launch"/>
       <steps xsi:type="buildstep:TestStep" xmi:id="_inzHYIb9EeahvvnP6QGVxQ" name="metadata" launchConfigurationPath="org.polarsys.kitalpha.ad.metadata.tests/Metadata_Tests.launch"/>
     </steps>

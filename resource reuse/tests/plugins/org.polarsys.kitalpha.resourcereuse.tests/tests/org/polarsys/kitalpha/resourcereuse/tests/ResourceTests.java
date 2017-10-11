@@ -10,34 +10,42 @@
  *******************************************************************************/
 package org.polarsys.kitalpha.resourcereuse.tests;
 
-import org.polarsys.kitalpha.resourcereuse.helper.ResourceReuse;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.fail;
+
+import org.junit.Test;
 import org.polarsys.kitalpha.resourcereuse.helper.ResourceNotFoundException;
+import org.polarsys.kitalpha.resourcereuse.helper.ResourceReuse;
 import org.polarsys.kitalpha.resourcereuse.model.Resource;
 import org.polarsys.kitalpha.resourcereuse.model.SearchCriteria;
 
-import junit.framework.TestCase;
 
 
 /**
  * @author Thomas Guiu
  * 
  */
-public class ResourceTests extends TestCase {
+public class ResourceTests {
 
-	public void testMetadata13() throws Exception {
+	@Test
+	public void checkMetadata13() throws Exception {
 		Resource resource = ResourceReuse.createHelper().getResource("resource44.id");
 		assertNotNull(resource);
 		assertNotNull(resource.getMetadataPath());
 		assertEquals("path://test.metadata", resource.getMetadataPath());
 	}
 
-	public void testMetadata12() throws Exception {
+	@Test
+	public void checkMetadata12() throws Exception {
 		Resource resource = ResourceReuse.createHelper().getResource("resource3.id");
 		assertNotNull(resource);
 		assertNull(resource.getMetadataPath());
 	}
 
-	public void testSearchConcern11() throws Exception {
+	@Test
+	public void checkSearchConcern11() throws Exception {
 		SearchCriteria searchCriteria = new SearchCriteria();
 		searchCriteria.getUsedInConcerns().add("concern2");
 		searchCriteria.getConcerns().add("concern1");
@@ -46,7 +54,8 @@ public class ResourceTests extends TestCase {
 		assertEquals(1, resources.length);
 	}
 
-	public void testSearchConcern10() throws Exception {
+	@Test
+	public void checkSearchConcern10() throws Exception {
 		SearchCriteria searchCriteria = new SearchCriteria();
 		searchCriteria.getUserInConcerns().add("concern2");
 		searchCriteria.getConcerns().add("concern1");
@@ -55,7 +64,8 @@ public class ResourceTests extends TestCase {
 		assertEquals(0, resources.length);
 	}
 
-	public void testSearchConcern9() throws Exception {
+	@Test
+	public void checkSearchConcern9() throws Exception {
 		SearchCriteria searchCriteria = new SearchCriteria();
 		searchCriteria.getUserInConcerns().add("concern2");
 		searchCriteria.getConcerns().add("concern2");
@@ -65,7 +75,8 @@ public class ResourceTests extends TestCase {
 		assertEquals(1, resources.length);
 	}
 
-	public void testSearchConcern8() throws Exception {
+	@Test
+	public void checkSearchConcern8() throws Exception {
 		SearchCriteria searchCriteria = new SearchCriteria();
 		searchCriteria.getConcerns().add("concern2");
 		searchCriteria.setName(".*1");
@@ -74,7 +85,8 @@ public class ResourceTests extends TestCase {
 		assertEquals(1, resources.length);
 	}
 
-	public void testSearchConcern7() throws Exception {
+	@Test
+	public void checkSearchConcern7() throws Exception {
 		SearchCriteria searchCriteria = new SearchCriteria();
 		searchCriteria.getConcerns().add("concern1");
 		searchCriteria.setName(".*1");
@@ -83,7 +95,8 @@ public class ResourceTests extends TestCase {
 		assertEquals(0, resources.length);
 	}
 
-	public void testSearchConcern6() throws Exception {
+	@Test
+	public void checkSearchConcern6() throws Exception {
 		SearchCriteria searchCriteria = new SearchCriteria();
 		searchCriteria.getConcerns().add("concern1");
 		searchCriteria.getConcerns().add("concern2");
@@ -92,7 +105,8 @@ public class ResourceTests extends TestCase {
 		assertEquals(1, resources.length);
 	}
 
-	public void testSearchConcern5() throws Exception {
+	@Test
+	public void checkSearchConcern5() throws Exception {
 		SearchCriteria searchCriteria = new SearchCriteria();
 		searchCriteria.getConcerns().add("concern2");
 		Resource[] resources = ResourceReuse.createHelper().getResources(searchCriteria);
@@ -100,7 +114,8 @@ public class ResourceTests extends TestCase {
 		assertEquals(3, resources.length);
 	}
 
-	public void testSearchConcern4() throws Exception {
+	@Test
+	public void checkSearchConcern4() throws Exception {
 		SearchCriteria searchCriteria = new SearchCriteria();
 		searchCriteria.getUserInConcerns().add("concern2");
 		searchCriteria.setName(".*1");
@@ -109,7 +124,8 @@ public class ResourceTests extends TestCase {
 		assertEquals(1, resources.length);
 	}
 
-	public void testSearchConcern3() throws Exception {
+	@Test
+	public void checkSearchConcern3() throws Exception {
 		SearchCriteria searchCriteria = new SearchCriteria();
 		searchCriteria.getUsedInConcerns().add("concern1");
 		searchCriteria.setName(".*1");
@@ -118,7 +134,8 @@ public class ResourceTests extends TestCase {
 		assertEquals(0, resources.length);
 	}
 
-	public void testSearchConcern2() throws Exception {
+	@Test
+	public void checkSearchConcern2() throws Exception {
 		SearchCriteria searchCriteria = new SearchCriteria();
 		searchCriteria.getUsedInConcerns().add("concern1");
 		searchCriteria.getUsedInConcerns().add("concern2");
@@ -127,7 +144,8 @@ public class ResourceTests extends TestCase {
 		assertEquals(1, resources.length);
 	}
 
-	public void testSearchConcern1() throws Exception {
+	@Test
+	public void checkSearchConcern1() throws Exception {
 		SearchCriteria searchCriteria = new SearchCriteria();
 		searchCriteria.getUserInConcerns().add("concern2");
 		Resource[] resources = ResourceReuse.createHelper().getResources(searchCriteria);
@@ -135,7 +153,8 @@ public class ResourceTests extends TestCase {
 		assertEquals(1, resources.length);
 	}
 
-	public void testSearchTagAndName() throws Exception {
+	@Test
+	public void checkSearchTagAndName() throws Exception {
 		SearchCriteria searchCriteria = new SearchCriteria();
 		searchCriteria.getTags().add("toto");
 		searchCriteria.setName(".*44");
@@ -144,7 +163,8 @@ public class ResourceTests extends TestCase {
 		assertEquals(1, resources.length);
 	}
 
-	public void testSearchTag3() throws Exception {
+	@Test
+	public void checkSearchTag3() throws Exception {
 		SearchCriteria searchCriteria = new SearchCriteria();
 		searchCriteria.getTags().add("unused tag");
 		Resource[] resources = ResourceReuse.createHelper().getResources(searchCriteria);
@@ -152,7 +172,8 @@ public class ResourceTests extends TestCase {
 		assertEquals(0, resources.length);
 	}
 
-	public void testSearchTag2() throws Exception {
+	@Test
+	public void checkSearchTag2() throws Exception {
 		SearchCriteria searchCriteria = new SearchCriteria();
 		searchCriteria.getTags().add("titi");
 		searchCriteria.getTags().add("toto");
@@ -162,7 +183,8 @@ public class ResourceTests extends TestCase {
 		assertEquals(2, resources.length);
 	}
 
-	public void testSearchTag1() throws Exception {
+	@Test
+	public void checkSearchTag1() throws Exception {
 		SearchCriteria searchCriteria = new SearchCriteria();
 		searchCriteria.getTags().add("titi");
 		Resource[] resources = ResourceReuse.createHelper().getResources(searchCriteria);
@@ -170,7 +192,8 @@ public class ResourceTests extends TestCase {
 		assertEquals(3, resources.length);
 	}
 
-	public void testSearchVersionAndId() throws Exception {
+	@Test
+	public void checkSearchVersionAndId() throws Exception {
 		SearchCriteria searchCriteria = new SearchCriteria();
 		searchCriteria.setVersion("V1");
 		searchCriteria.setId("resource4.id");
@@ -179,7 +202,8 @@ public class ResourceTests extends TestCase {
 		assertEquals(1, resources.length);
 	}
 
-	public void testSearchVersion() throws Exception {
+	@Test
+	public void checkSearchVersion() throws Exception {
 		SearchCriteria searchCriteria = new SearchCriteria();
 		searchCriteria.setVersion("V1");
 		Resource[] resources = ResourceReuse.createHelper().getResources(searchCriteria);
@@ -187,7 +211,8 @@ public class ResourceTests extends TestCase {
 		assertEquals(2, resources.length);
 	}
 
-	public void testSearchDomain2() throws Exception {
+	@Test
+	public void checkSearchDomain2() throws Exception {
 		SearchCriteria searchCriteria = new SearchCriteria();
 		searchCriteria.setDomain("re-test");
 		Resource[] resources = ResourceReuse.createHelper().getResources(searchCriteria);
@@ -195,7 +220,8 @@ public class ResourceTests extends TestCase {
 		assertEquals(1, resources.length);
 	}
 
-	public void testSearchDomain1() throws Exception {
+	@Test
+	public void checkSearchDomain1() throws Exception {
 		SearchCriteria searchCriteria = new SearchCriteria();
 		searchCriteria.setDomain("test");
 		Resource[] resources = ResourceReuse.createHelper().getResources(searchCriteria);
@@ -203,7 +229,8 @@ public class ResourceTests extends TestCase {
 		assertEquals(3, resources.length);
 	}
 
-	public void testSearchId1() throws Exception {
+	@Test
+	public void checkSearchId1() throws Exception {
 		SearchCriteria searchCriteria = new SearchCriteria();
 		searchCriteria.setId("resource.*");
 		Resource[] resources = ResourceReuse.createHelper().getResources(searchCriteria);
@@ -211,7 +238,8 @@ public class ResourceTests extends TestCase {
 		assertEquals(6, resources.length);
 	}
 
-	public void testSearchId2() throws Exception {
+	@Test
+	public void checkSearchId2() throws Exception {
 		SearchCriteria searchCriteria = new SearchCriteria();
 		searchCriteria.setId("resource3.*");
 		Resource[] resources = ResourceReuse.createHelper().getResources(searchCriteria);
@@ -219,7 +247,8 @@ public class ResourceTests extends TestCase {
 		assertEquals(1, resources.length);
 	}
 
-	public void testSearchId3() throws Exception {
+	@Test
+	public void checkSearchId3() throws Exception {
 		SearchCriteria searchCriteria = new SearchCriteria();
 		searchCriteria.setId("resource3.id");
 		Resource[] resources = ResourceReuse.createHelper().getResources(searchCriteria);
@@ -227,7 +256,8 @@ public class ResourceTests extends TestCase {
 		assertEquals(1, resources.length);
 	}
 
-	public void testSearchId4() throws Exception {
+	@Test
+	public void checkSearchId4() throws Exception {
 		SearchCriteria searchCriteria = new SearchCriteria();
 		searchCriteria.setId("resource5.id");
 		Resource[] resources = ResourceReuse.createHelper().getResources(searchCriteria);
@@ -236,7 +266,8 @@ public class ResourceTests extends TestCase {
 		assertNull(resources[0].getName());
 	}
 
-	public void testSearchEmptyCriteria() throws Exception {
+	@Test
+	public void checkSearchEmptyCriteria() throws Exception {
 		try {
 			SearchCriteria searchCriteria = new SearchCriteria();
 			ResourceReuse.createHelper().getResources(searchCriteria);
@@ -245,7 +276,8 @@ public class ResourceTests extends TestCase {
 		}
 	}
 
-	public void testSearchNullCriteria() throws Exception {
+	@Test
+	public void checkSearchNullCriteria() throws Exception {
 		try {
 			ResourceReuse.createHelper().getResources(null);
 			fail("IllegalArgumentException was expected");
@@ -253,7 +285,8 @@ public class ResourceTests extends TestCase {
 		}
 	}
 
-	public void testIdLookup4() throws Exception {
+	@Test
+	public void checkIdLookup4() throws Exception {
 		try {
 			Resource resource = ResourceReuse.createHelper().getResource("resource2.id");
 			assertNotNull(resource);
@@ -263,7 +296,8 @@ public class ResourceTests extends TestCase {
 		}
 	}
 
-	public void testIdLookup3() throws Exception {
+	@Test
+	public void checkIdLookup3() throws Exception {
 		try {
 			ResourceReuse.createHelper().getResource("id");
 			fail("ResourceNotFoundException was expected");
@@ -271,7 +305,8 @@ public class ResourceTests extends TestCase {
 		}
 	}
 
-	public void testIdLookup2() throws Exception {
+	@Test
+	public void checkIdLookup2() throws Exception {
 		try {
 			ResourceReuse.createHelper().getResource("");
 			fail("IllegalArgumentException was expected");
@@ -279,7 +314,8 @@ public class ResourceTests extends TestCase {
 		}
 	}
 
-	public void testIdLookup1() throws Exception {
+	@Test
+	public void checkIdLookup1() throws Exception {
 		try {
 			ResourceReuse.createHelper().getResource(null);
 			fail("IllegalArgumentException was expected");
