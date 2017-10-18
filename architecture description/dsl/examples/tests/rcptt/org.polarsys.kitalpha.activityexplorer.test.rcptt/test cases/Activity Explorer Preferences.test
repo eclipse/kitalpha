@@ -6,8 +6,8 @@ Element-Type: testcase
 Element-Version: 3.0
 External-Reference: 
 Id: _eLCbQJCMEeaf3P1eYGh88w
-Runtime-Version: 2.1.0.201606221726
-Save-Time: 3/6/17 4:25 PM
+Runtime-Version: 2.2.0.201706152316
+Save-Time: 10/18/17 6:21 PM
 Testcase-Type: ecl
 
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
@@ -29,7 +29,7 @@ with [get-window Preferences] {
     get-button OK | click
 }
 get-editor example | get-control Any -after [get-label "Process Map of example"] -index 1 
-    | get-property "getChildren().length" | equals 2 | verify-true
+    | get-property "getChildren().length" | equals 0 | verify-true
 get-preferences-menu | click
 with [get-window Preferences] {
     with [get-tree -after [get-label "Select element:"]] {
