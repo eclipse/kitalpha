@@ -6,8 +6,8 @@ Element-Type: testcase
 Element-Version: 3.0
 External-Reference: 
 Id: _06n6UISTEeafkJlIMWFvDg
-Runtime-Version: 2.1.0.201606221726
-Save-Time: 7/3/17 3:59 PM
+Runtime-Version: 2.2.0.201706152316
+Save-Time: 10/18/17 3:03 PM
 Testcase-Type: ecl
 
 ------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
@@ -20,171 +20,176 @@ EMFSCHEME_00001
 Content-Type: text/ecl
 Entry-Name: .content
 
-get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.operations.vpdsl/model/operations.vpdesc" 
-    | double-click
-get-editor "operations.vpdesc" | get-tree 
-    | select "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc" 
-    | get-menu "Load Reusable Resource..." | click
-get-window "Load ResourceReuse content..." | get-group "Results..." | get-table | get-item ast | click
-get-window "Load ResourceReuse content..." | get-button OK | click
-get-editor "operations.vpdesc" | get-tree 
-    | get-item "modelreuse:\\/id=org.polarsys.kitalpha.vp.ast.vpdsl.description\\/name=ast\\/domain=vpdsl\\/tags=vpdesc" 
-    | get-property caption 
-    | equals "modelreuse:/id=org.polarsys.kitalpha.vp.ast.vpdsl.description/name=ast/domain=vpdsl/tags=vpdesc" 
-    | verify-true
-with [get-editor "operations.vpdesc" | get-tree] {
-    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/\\[Data\\] operations.data" 
-        | click
-    select "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/[Data] operations.data" 
-        | get-menu "New Child/Class" | click
-}
-with [get-view Properties | get-tree] {
-    select Name | activate-cell-edit -column 1
-    with [get-editbox] {
-        set-text Addition
-        key-type Enter
-    }
-    apply-cell-edit
-    select Extends | activate-cell-edit -column 1
-    get-button "..." | click
-}
-get-window "Extends -- Class Addition" | get-button Cancel | click
-get-view Properties | get-tree | apply-cell-edit -deactivate
-with [get-editor "operations.vpdesc" | get-tree] {
-    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/\\[Data\\] operations.data/Class Addition" 
-        | click
-    select "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/[Data] operations.data/Class Addition" 
-        | get-menu "New Child/Local Class Association" | click
-    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/\\[Data\\] operations.data/Class Addition" 
-        | click
-    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/\\[Data\\] operations.data/Class Addition/Local Class Association" 
-        | click
-    key-type Del
-    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/\\[Data\\] operations.data/Class Addition" 
-        | click
-    select "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/[Data] operations.data/Class Addition" 
-        | get-menu "New Child/Local Super Class" | click
-}
-with [get-view Properties | get-tree] {
-    select "Super Class" | activate-cell-edit -column 1
-    get-combo | select "Class Node"
-    apply-cell-edit
-}
-with [get-view Properties | get-tree] {
-    get-item "Super Class" | get-property caption | equals "Super Class" | verify-true
-    get-item "Super Class" | get-property "values['Property']" | equals "Super Class" | verify-true
-    get-item "Super Class" | get-property "values['Value']" | equals "Class Node" | verify-true
-}
-with [get-editor "operations.vpdesc" | get-tree] {
-    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/\\[Data\\] operations.data" 
-        | click
-    select "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/[Data] operations.data" 
-        | get-menu "New Child/Class" | click
-}
-with [get-view Properties | get-tree] {
-    select Name | activate-cell-edit -column 1
-    with [get-editbox] {
-        set-text Integer
-        key-type Enter
-    }
-    apply-cell-edit
-}
-with [get-editor "operations.vpdesc" | get-tree] {
-    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/\\[Data\\] operations.data/Class Integer" 
-        | click
-    select "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/[Data] operations.data/Class Integer" 
-        | get-menu "New Child/Local Super Class" | click
-}
-with [get-view Properties | get-tree] {
-    select "Super Class" | activate-cell-edit -column 1
-    get-combo | select "Class Leaf"
-    apply-cell-edit
-    key-type Enter
-}
-with [get-editor "operations.vpdesc" | get-tree] {
-    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/\\[Data\\] operations.data" 
-        | click
-    select "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/[Data] operations.data" 
-        | get-menu "New Child/Class" | click
-}
-with [get-view Properties | get-tree] {
-    select Name | activate-cell-edit -column 1
-    with [get-editbox] {
-        set-text IntegerValue
-        key-type Enter
-    }
-    apply-cell-edit
-}
-with [get-editor "operations.vpdesc" | get-tree] {
-    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/\\[Data\\] operations.data/Class IntegerValue" 
-        | click
-    select "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/[Data] operations.data/Class IntegerValue" 
-        | get-menu "New Child/Local Super Class" | click
-}
-with [get-view Properties | get-tree] {
-    select "Super Class" | activate-cell-edit -column 1
-    get-combo | select "Class AbstractValue"
-    apply-cell-edit
-}
-get-button "Save All (M1+M2+S)" | click
-with [get-view Properties | get-tree] {
-    get-item "Super Class" | get-property caption | equals "Super Class" | verify-true
-    get-item "Super Class" | get-property "values['Property']" | equals "Super Class" | verify-true
-    get-item "Super Class" | get-property "values['Value']" | equals "Class AbstractValue" | verify-true
-}
-get-editor "operations.vpdesc" | get-tree 
-    | get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/\\[Data\\] operations.data/Class Integer/Local Super Class" 
-    | click
-with [get-view Properties | get-tree] {
-    get-item "Super Class" | get-property caption | equals "Super Class" | verify-true
-    get-item "Super Class" | get-property "values['Property']" | equals "Super Class" | verify-true
-    get-item "Super Class" | get-property "values['Value']" | equals "Class Leaf" | verify-true
-}
+/****************
+ * TODO Rework with a new IHM of resourcereuse.
+ ****************/
 
 
-with [get-editor "operations.vpdesc" | get-tree] {
-    key-type "M1+s"
-    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/\\[Data\\] operations.data/Class IntegerValue" 
-        | click
-    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations" 
-        | click
-    select "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations" 
-        | get-menu Validate | click
-}
-get-window "Validation Information" | get-label "Validation completed successfully" | get-property caption 
-    | equals "Validation completed successfully" | verify-true
-get-window "Validation Information" | get-button OK | click
-get-editor "operations.vpdesc" | close
-get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.operations.vpdsl/model/operations.vpdesc" 
-    | double-click
-get-editor "operations.vpdesc" | get-tree | get-property itemCount | equals 1 | verify-true
-with [get-editor "operations.vpdesc" | get-tree] {
-    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc" | click
-    select "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc" 
-        | get-menu Validate | click
-}
-get-window "Validation Information" | get-button OK | click
-get-editor "operations.vpdesc" | get-tree | get-property itemCount | equals 2 | verify-true
-get-editor "operations.vpdesc" | get-tree 
-    | get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/\\[Data\\] operations.data/Class Addition/Local Super Class" 
-    | click
-with [get-view Properties | get-tree] {
-    get-item "Super Class" | get-property "values['Property']" | equals "Super Class" | verify-true
-    get-item "Super Class" | get-property "values['Value']" | equals "Class Node" | verify-true
-}
-get-editor "operations.vpdesc" | get-tree 
-    | get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/\\[Data\\] operations.data/Class Integer/Local Super Class" 
-    | click
-with [get-view Properties | get-tree] {
-    get-item "Super Class" | get-property "values['Property']" | equals "Super Class" | verify-true
-    get-item "Super Class" | get-property "values['Value']" | equals "Class Leaf" | verify-true
-}
-get-editor "operations.vpdesc" | get-tree 
-    | get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/\\[Data\\] operations.data/Class IntegerValue/Local Super Class" 
-    | click
-with [get-view Properties | get-tree] {
-    get-item "Super Class" | get-property "values['Property']" | equals "Super Class" | verify-true
-    get-item "Super Class" | get-property "values['Value']" | equals "Class AbstractValue" | verify-true
-}
+//get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.operations.vpdsl/model/operations.vpdesc" 
+//    | double-click
+//get-editor "operations.vpdesc" | get-tree 
+//    | select "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc" 
+//    | get-menu "Load Reusable Resource..." | click
+//get-window "Select resource" | get-group "Results..." | get-table | get-item ast | click
+//get-window "Load ResourceReuse content..." | get-button OK | click
+//get-editor "operations.vpdesc" | get-tree 
+//    | get-item "modelreuse:\\/id=org.polarsys.kitalpha.vp.ast.vpdsl.description\\/name=ast\\/domain=vpdsl\\/tags=vpdesc" 
+//    | get-property caption 
+//    | equals "modelreuse:/id=org.polarsys.kitalpha.vp.ast.vpdsl.description/name=ast/domain=vpdsl/tags=vpdesc" 
+//    | verify-true
+//with [get-editor "operations.vpdesc" | get-tree] {
+//    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/\\[Data\\] operations.data" 
+//        | click
+//    select "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/[Data] operations.data" 
+//        | get-menu "New Child/Class" | click
+//}
+//with [get-view Properties | get-tree] {
+//    select Name | activate-cell-edit -column 1
+//    with [get-editbox] {
+//        set-text Addition
+//        key-type Enter
+//    }
+//    apply-cell-edit
+//    select Extends | activate-cell-edit -column 1
+//    get-button "..." | click
+//}
+//get-window "Extends -- Class Addition" | get-button Cancel | click
+//get-view Properties | get-tree | apply-cell-edit -deactivate
+//with [get-editor "operations.vpdesc" | get-tree] {
+//    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/\\[Data\\] operations.data/Class Addition" 
+//        | click
+//    select "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/[Data] operations.data/Class Addition" 
+//        | get-menu "New Child/Local Class Association" | click
+//    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/\\[Data\\] operations.data/Class Addition" 
+//        | click
+//    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/\\[Data\\] operations.data/Class Addition/Local Class Association" 
+//        | click
+//    key-type Del
+//    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/\\[Data\\] operations.data/Class Addition" 
+//        | click
+//    select "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/[Data] operations.data/Class Addition" 
+//        | get-menu "New Child/Local Super Class" | click
+//}
+//with [get-view Properties | get-tree] {
+//    select "Super Class" | activate-cell-edit -column 1
+//    get-combo | select "Class Node"
+//    apply-cell-edit
+//}
+//with [get-view Properties | get-tree] {
+//    get-item "Super Class" | get-property caption | equals "Super Class" | verify-true
+//    get-item "Super Class" | get-property "values['Property']" | equals "Super Class" | verify-true
+//    get-item "Super Class" | get-property "values['Value']" | equals "Class Node" | verify-true
+//}
+//with [get-editor "operations.vpdesc" | get-tree] {
+//    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/\\[Data\\] operations.data" 
+//        | click
+//    select "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/[Data] operations.data" 
+//        | get-menu "New Child/Class" | click
+//}
+//with [get-view Properties | get-tree] {
+//    select Name | activate-cell-edit -column 1
+//    with [get-editbox] {
+//        set-text Integer
+//        key-type Enter
+//    }
+//    apply-cell-edit
+//}
+//with [get-editor "operations.vpdesc" | get-tree] {
+//    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/\\[Data\\] operations.data/Class Integer" 
+//        | click
+//    select "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/[Data] operations.data/Class Integer" 
+//        | get-menu "New Child/Local Super Class" | click
+//}
+//with [get-view Properties | get-tree] {
+//    select "Super Class" | activate-cell-edit -column 1
+//    get-combo | select "Class Leaf"
+//    apply-cell-edit
+//    key-type Enter
+//}
+//with [get-editor "operations.vpdesc" | get-tree] {
+//    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/\\[Data\\] operations.data" 
+//        | click
+//    select "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/[Data] operations.data" 
+//        | get-menu "New Child/Class" | click
+//}
+//with [get-view Properties | get-tree] {
+//    select Name | activate-cell-edit -column 1
+//    with [get-editbox] {
+//        set-text IntegerValue
+//        key-type Enter
+//    }
+//    apply-cell-edit
+//}
+//with [get-editor "operations.vpdesc" | get-tree] {
+//    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/\\[Data\\] operations.data/Class IntegerValue" 
+//        | click
+//    select "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/[Data] operations.data/Class IntegerValue" 
+//        | get-menu "New Child/Local Super Class" | click
+//}
+//with [get-view Properties | get-tree] {
+//    select "Super Class" | activate-cell-edit -column 1
+//    get-combo | select "Class AbstractValue"
+//    apply-cell-edit
+//}
+//get-button "Save All (M1+M2+S)" | click
+//with [get-view Properties | get-tree] {
+//    get-item "Super Class" | get-property caption | equals "Super Class" | verify-true
+//    get-item "Super Class" | get-property "values['Property']" | equals "Super Class" | verify-true
+//    get-item "Super Class" | get-property "values['Value']" | equals "Class AbstractValue" | verify-true
+//}
+//get-editor "operations.vpdesc" | get-tree 
+//    | get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/\\[Data\\] operations.data/Class Integer/Local Super Class" 
+//    | click
+//with [get-view Properties | get-tree] {
+//    get-item "Super Class" | get-property caption | equals "Super Class" | verify-true
+//    get-item "Super Class" | get-property "values['Property']" | equals "Super Class" | verify-true
+//    get-item "Super Class" | get-property "values['Value']" | equals "Class Leaf" | verify-true
+//}
+//
+//
+//with [get-editor "operations.vpdesc" | get-tree] {
+//    key-type "M1+s"
+//    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/\\[Data\\] operations.data/Class IntegerValue" 
+//        | click
+//    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations" 
+//        | click
+//    select "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations" 
+//        | get-menu Validate | click
+//}
+//get-window "Validation Information" | get-label "Validation completed successfully" | get-property caption 
+//    | equals "Validation completed successfully" | verify-true
+//get-window "Validation Information" | get-button OK | click
+//get-editor "operations.vpdesc" | close
+//get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.operations.vpdsl/model/operations.vpdesc" 
+//    | double-click
+//get-editor "operations.vpdesc" | get-tree | get-property itemCount | equals 1 | verify-true
+//with [get-editor "operations.vpdesc" | get-tree] {
+//    get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc" | click
+//    select "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc" 
+//        | get-menu Validate | click
+//}
+//get-window "Validation Information" | get-button OK | click
+//get-editor "operations.vpdesc" | get-tree | get-property itemCount | equals 2 | verify-true
+//get-editor "operations.vpdesc" | get-tree 
+//    | get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/\\[Data\\] operations.data/Class Addition/Local Super Class" 
+//    | click
+//with [get-view Properties | get-tree] {
+//    get-item "Super Class" | get-property "values['Property']" | equals "Super Class" | verify-true
+//    get-item "Super Class" | get-property "values['Value']" | equals "Class Node" | verify-true
+//}
+//get-editor "operations.vpdesc" | get-tree 
+//    | get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/\\[Data\\] operations.data/Class Integer/Local Super Class" 
+//    | click
+//with [get-view Properties | get-tree] {
+//    get-item "Super Class" | get-property "values['Property']" | equals "Super Class" | verify-true
+//    get-item "Super Class" | get-property "values['Value']" | equals "Class Leaf" | verify-true
+//}
+//get-editor "operations.vpdesc" | get-tree 
+//    | get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.operations.vpdsl\\/model\\/operations.vpdesc/Viewpoint operations/\\[Data\\] operations.data/Class IntegerValue/Local Super Class" 
+//    | click
+//with [get-view Properties | get-tree] {
+//    get-item "Super Class" | get-property "values['Property']" | equals "Super Class" | verify-true
+//    get-item "Super Class" | get-property "values['Value']" | equals "Class AbstractValue" | verify-true
+//}
 
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

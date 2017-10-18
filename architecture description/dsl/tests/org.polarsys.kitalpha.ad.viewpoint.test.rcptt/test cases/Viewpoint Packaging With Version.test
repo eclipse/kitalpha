@@ -7,7 +7,7 @@ Element-Version: 3.0
 External-Reference: 
 Id: _NELx4KzaEeeugqJ5eBR0lA
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 10/9/17 3:01 PM
+Save-Time: 10/18/17 12:27 PM
 Testcase-Type: ecl
 
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
@@ -18,7 +18,12 @@ Entry-Name: .content
 get-view "Project Explorer" | get-tree | get-menu -path "New/Other..." | click
 with [get-window New] {
     get-editbox -after [get-label "Wizards:"] | set-text dsl
-    get-tree | select "Kitalpha/Viewpoint DSL project" | double-click
+    try {
+    	get-tree | select "Kitalpha/Viewpoint DSL project" | double-click
+    }
+    -catch {
+    	get-tree | select "Kitalpha/Architecture description/Viewpoint DSL project" | double-click
+    }
 }
 with [get-window "New Viewpoint DSL Project"] {
     get-editbox -after [get-label "Viewpoint short name :"] | set-text test

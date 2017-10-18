@@ -6,8 +6,8 @@ Element-Type: testcase
 Element-Version: 3.0
 External-Reference: 
 Id: _5mvtIBBqEeeIb6T5EKtzmg
-Runtime-Version: 2.1.0.201606221726
-Save-Time: 3/24/17 9:41 AM
+Runtime-Version: 2.2.0.201706152316
+Save-Time: 10/18/17 2:07 PM
 Testcase-Type: ecl
 
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
@@ -28,11 +28,14 @@ with [get-editor -index 0 | get-section "Known Resources" | get-table] {
 get-editor -index 0 | get-tab-folder | get-tab-item "Viewpoints Tree Page" | click
 
 get-editor -index 0 | get-section "Viewpoints Hierarchy" | get-tree 
-    | get-item "Component Sample Framework/Component Sample/Component Sample Safety" | uncheck
+    | get-item "Component Sample/Component Sample Safety" | uncheck
 get-editor -index 0 | get-button "Perform Detachment" | click
 get-window Information | get-button Yes | click
 get-window "Detachment..." | get-button OK | click
 get-view "Project Explorer" | get-tree | select "A/A.componentsample" | double-click
+get-editor "A.componentsample" | get-tree | select "platform:\\/resource\\/A\\/A.componentsample" | get-menu 
+    -path Validate | click
+get-window "Validation Information" | get-button OK | click
 with [get-editor "A.componentsample" | get-tree] {
     get-item "platform:\\/resource\\/A\\/A.componentsample/A/\\[Component Package\\]/A" | get-property childCount 
         | equals 1 | verify-true

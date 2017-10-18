@@ -6,8 +6,8 @@ Element-Type: testcase
 Element-Version: 3.0
 External-Reference: 
 Id: _jVpq4ISXEeafkJlIMWFvDg
-Runtime-Version: 2.1.0.201606221726
-Save-Time: 7/3/17 3:51 PM
+Runtime-Version: 2.2.0.201706152316
+Save-Time: 10/18/17 2:58 PM
 Testcase-Type: ecl
 
 ------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
@@ -37,8 +37,9 @@ with [get-editor "reuse class diagram" | get-diagram -index 1] {
     }
     get-menu "Load Reusable Resource..." | click
 }
-with [get-window "Load ResourceReuse content..."] {
-    get-group "Results..." | get-table | get-item Reusable | click
+with [get-window "Select resource"] {
+	get-group Criteria | get-editbox -after [get-label "Id:"] | set-text "reusable.ecore.resource.id"
+    get-table -after [get-label "Matching resources (1):"] | select Reusable
     get-button OK | click
 }
 get-view Properties | get-property-tab Model | click
@@ -51,14 +52,14 @@ with [get-window "Select eSuperTypes"] {
         get-tab-item "Model Resource" | click
         get-tab-item "All Resources" | click
     }
-    get-tree | select "modelreuse:\\/id=reusable.ecore.resource.id\\/name=Reusable\\/domain=e\\/"
+    get-tree | select "modelreuse:\\/id=reusable.ecore.resource.id\\/"
 }
 
 get-window "Select eSuperTypes" | get-tree | get-property itemCount | equals 1 | verify-true
 
 with [get-window "Select eSuperTypes"] {
     get-tree 
-        | select "modelreuse:\\/id=reusable.ecore.resource.id\\/name=Reusable\\/domain=e\\//reusable/ReusableClass"
+        | select "modelreuse:\\/id=reusable.ecore.resource.id\\//reusable/ReusableClass"
     get-button OK | click
 }
 get-editor "reuse class diagram" | get-diagram -index 1 | get-edit-part -name "reuse class diagram" | mouse-move 51 499 
@@ -76,4 +77,29 @@ with [get-view "Model Explorer" | get-tree] {
     select "reuse.ecore/model/reuse.aird" | get-menu Close | click
 }
 
+//with [get-view "Model Explorer" | get-tree] {
+//    select "reuse.ecore/model/reuse.aird" | double-click
+//    select "reuse.ecore/model/\\*reuse.aird/reuse.ecore - \\[platform:\\/resource\\/reuse.ecore\\/model\\/reuse.ecore\\]/reuse/reuse class diagram" 
+//        | double-click
+//}
+//with [get-editor "reuse class diagram" | get-diagram -index 1] {
+//    with [get-edit-part -name "reuse class diagram"] {
+//        mouse-move 183 180 button3 -height 347 -width 598
+//        mouse-press 183 180 button3 -height 347 -width 598
+//        mouse-release 183 180 button3 2097152 -height 347 -width 598
+//    }
+//    get-menu -path "Load Reusable Resource..." | click
+//}
+//with [get-window "Select resource"] {
+//    get-group Criteria | get-editbox -after [get-label "Id:"] | set-text ".*"
+//    get-table -after [get-label "Matching resources (46):"] | select Reusable
+//    get-button OK | click
+//}
+//get-button "Save (M1+S)" | click
+//close
+//get-window "Confirm Exit" | get-button Cancel | click
+//with [get-editor "reuse class diagram" | get-diagram -index 1 | get-edit-part -name "reuse class diagram"] {
+//    mouse-move 406 261 -height 347 -width 598
+//    mouse-move 1 20 -height 347 -width 598
+//}
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--
