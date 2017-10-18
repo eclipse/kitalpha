@@ -53,6 +53,7 @@ import org.eclipse.swt.SWTException;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.polarsys.kitalpha.doc.gen.business.core.internal.GenDocDiagramEditPartService;
+import org.polarsys.kitalpha.doc.gen.business.core.util.DocGenHtmlUtil;
 
 /**
  * Reworked code from {@link ExportAction}. 
@@ -123,7 +124,8 @@ public class GenDocDiagramExportAction extends ExportAction {
                     // Check that the file name is informed
                     // Put extension to lowerCase.
                     if (outputPath.toFile().isDirectory()) {
-                        filePath = getFilePath(outputPath, representation.getName(), imageFileExtension);
+                    	String representationName = DocGenHtmlUtil.getValidFileName(representation.getName());
+                        filePath = getFilePath(outputPath, representationName, imageFileExtension);
                     } else {
                         if (outputPath.getFileExtension() != null) {
                             String imageFileExtensionLowerCase = outputPath.getFileExtension().toLowerCase();

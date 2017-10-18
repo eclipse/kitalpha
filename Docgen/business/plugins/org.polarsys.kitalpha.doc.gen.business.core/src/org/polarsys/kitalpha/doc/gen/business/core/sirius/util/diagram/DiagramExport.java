@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,8 +28,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.swt.widgets.Display;
 import org.polarsys.kitalpha.doc.gen.business.core.Activator;
-
-
+import org.polarsys.kitalpha.doc.gen.business.core.util.DocGenHtmlUtil;
 import org.eclipse.sirius.common.tools.api.util.FileUtil;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.viewpoint.DRepresentation;
@@ -120,10 +119,11 @@ public class DiagramExport {
 	private IFile getGeneratedDiagram() {
 		
 		// Compute diagram exported picture name
-		FileUtil obeoDSLFileUtil = new FileUtil(diagram.getName());
+		String representaionName = DocGenHtmlUtil.getValidFileName(diagram.getName());
+		FileUtil obeoDSLFileUtil = new FileUtil(representaionName);
 		String expectedFileName;
 		if (obeoDSLFileUtil.isValid()){
-			expectedFileName = diagram.getName() + "." + JPG.toLowerCase();
+			expectedFileName = representaionName + "." + JPG.toLowerCase();
 		}else{
 			expectedFileName = obeoDSLFileUtil.getValidFilename() + "." + JPG.toLowerCase();
 		}
