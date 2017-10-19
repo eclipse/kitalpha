@@ -125,7 +125,7 @@ public class ModelExtensionHelper {
 
 		@Override
 		public boolean isExtensionModelDisabled(String extensibleModel, String extendedModel) {
-			return true;
+			return false;
 		}
 
 		@Override
@@ -135,17 +135,17 @@ public class ModelExtensionHelper {
 
 		@Override
 		public boolean isExtensionModelDisabled(ExtendedModel extended) {
-			return true;
+			return false;
 		}
 
 		@Override
 		public boolean isExtensionModelDisabled(Object object) {
-			return true;
+			return false;
 		}
 
 		@Override
 		public boolean isExtensionModelDisabled(EObject eObject) {
-			return true;
+			return false;
 		}
 
 		@Override
