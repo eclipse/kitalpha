@@ -11,8 +11,10 @@
 package org.polarsys.kitalpha.emde.extension;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.SortedSet;
@@ -79,7 +81,7 @@ public class ExtensibleModel extends Model<ExtensibleModel> {
 	/**
 	 * Obtains all my extended models.
 	 * 
-	 * @return an unmodifiable set of the {@link ExtendedModel}s that are my extended models, sorted by {@link #getName name}. May be an empty set
+	 * @return an unmodifiable set of the {@link ExtendedModel}s that are my extended models. May be an empty set
 	 */
 	public SortedSet<ExtendedModel> getAllExtendedModels() {
 		TreeSet<ExtendedModel> extended = new TreeSet<ExtendedModel>(extendedModels.values());
@@ -88,6 +90,12 @@ public class ExtensibleModel extends Model<ExtensibleModel> {
 			getInheritedExtendedModels();
 		}
 		extended.addAll(inheritedExtendedModels.values());
+        for(ExtendedModel model : new HashSet<>(extended)){
+            ExtensibleModel ex = ModelExtensionDescriptor.INSTANCE.getExtensibleModel(model.getURIFactory().getNsURI());
+            Collection<ExtendedModel> extendedModels = ex.getExtendedModels();
+            extended.addAll(extendedModels);
+     }
+
 		return Collections.unmodifiableSortedSet(extended);
 	}
 
