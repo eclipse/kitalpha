@@ -7,7 +7,7 @@
     <properties xmi:id="_YK42sAVjEeaiMI0G7SovBw" key="example.url" value="https://hudson.polarsys.org/kitalpha/job/Kitalpha-v1.1.x/lastSuccessfulBuild/artifact/result/publish/org.polarsys.kitalpha.vp.componentsample.example.feature/site.p2"/>
   </propertyPackages>
   <propertyPackages xmi:id="_vtRuAI5EEeOQ8YcnVfa6Wg" name="versions">
-    <properties xmi:id="_6aWv4IodEeGSbqNfjJWsgA" key="kitalpha_version" value="1.1.3"/>
+    <properties xmi:id="_6aWv4IodEeGSbqNfjJWsgA" key="kitalpha_version" value="1.1.4"/>
   </propertyPackages>
   <propertyPackages xmi:id="_bkGKYOX3EeWn8_iL6inCSQ" name="rcptt">
     <properties xmi:id="_hujFAOX4EeWn8_iL6inCSQ" key="aut-path" value="${publish}/TP"/>
