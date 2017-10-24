@@ -139,10 +139,10 @@ public class BasicTests extends TestCase {
 	}
 	public void testManager13() throws Exception {
 		ModelExtensionManager m1 = ModelExtensionHelper.getInstance((ResourceSet)null);
-		assertTrue(m1.isExtensionModelDisabled(EcoreFactory.eINSTANCE.createEObject()));
+		assertFalse(m1.isExtensionModelDisabled(EcoreFactory.eINSTANCE.createEObject()));
 	}
 	public void testManager14() throws Exception {
 		ModelExtensionManager m1 = ModelExtensionHelper.getInstance((ResourceSet)null);
-		assertTrue(m1.isExtensionModelDisabled(EmdePackage.eNS_URI, ComponentSamplePerformancePackage.eNS_URI));
+		assertFalse(m1.isExtensionModelDisabled(EmdePackage.eNS_URI, ComponentSamplePerformancePackage.eNS_URI));
 	}
 }
