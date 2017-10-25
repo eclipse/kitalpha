@@ -97,9 +97,11 @@ Contributors:
          version="0.0.0"
          unpack="false"/>
 
-	<plugin
+   <plugin
          id="org.polarsys.kitalpha.ad.viewpoint.predicate"
          download-size="0"
          install-size="0"
-         version="0.0.0"/>
+         version="0.0.0"
+         unpack="false"/>
+
 </feature>
