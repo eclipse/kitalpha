@@ -42,6 +42,7 @@ public class LibraryHelper {
 	        	libMetadata = (Metadata)libMetadataRes.getContents().get(0);
 		} catch (Exception e) {
 			// clean proxy resource
+			libMetadataRes = set.getResource(libMetadataURI, false);
 			if (libMetadataRes != null && libMetadataRes.getContents().isEmpty()) {
 				libMetadataRes.unload();
 				set.getResources().remove(libMetadataRes);
@@ -74,6 +75,7 @@ public class LibraryHelper {
 	        	libMetadata = (Metadata)libMetadataRes.getContents().get(0);
 		} catch (Exception e) {
 			// clean proxy resource
+			libMetadataRes = set.getResource(libMetadataURI, false);
 			if (libMetadataRes != null && libMetadataRes.getContents().isEmpty()) {
 				libMetadataRes.unload();
 				set.getResources().remove(libMetadataRes);
