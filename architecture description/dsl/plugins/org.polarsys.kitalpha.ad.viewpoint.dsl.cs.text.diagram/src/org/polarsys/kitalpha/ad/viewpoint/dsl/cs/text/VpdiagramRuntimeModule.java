@@ -62,8 +62,13 @@ public class VpdiagramRuntimeModule extends org.polarsys.kitalpha.ad.viewpoint.d
 		return SequencerDiagramTransientValue.class;
 	}
 	
-	@Override
-	public Class<? extends org.eclipse.xtext.conversion.IValueConverterService> bindIValueConverterService() {
-		return CommonValueConverter.class;
-	}
+	/*
+	 * Revert following https://bugs.polarsys.org/show_bug.cgi?id=1774.
+	 * 
+	 * It will be resoved in the next releases
+	 */
+//	@Override
+//	public Class<? extends org.eclipse.xtext.conversion.IValueConverterService> bindIValueConverterService() {
+//		return CommonValueConverter.class;
+//	}
 }
