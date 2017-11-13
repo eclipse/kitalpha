@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/mbarbero/fr.obeo.releng.targetplatform -->
-<target name="kitapha" sequenceNumber="1504626471">
+<target name="kitapha" sequenceNumber="1510580713">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.sdk.feature.group" version="0.0.0"/>
@@ -173,19 +173,19 @@
       <unit id="org.eclipse.sirius.runtime.acceleo.source.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.sirius.runtime.aql.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.sirius.runtime.aql.source.feature.group" version="0.0.0"/>
-      <repository id="Sirus" location="http://download.eclipse.org/sirius/updates/stable/5.1.0-S20170901-101720/neon"/>
+      <repository id="Sirus" location="http://download.eclipse.org/sirius/updates/milestones/5.1.0rc4/neon"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.emf.diffmerge.sdk.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.diffmerge.sdk.feature.source.feature.group" version="0.0.0"/>
-      <repository id="EMF-DiffMerge" location="http://download.eclipse.org/diffmerge/releases/0.8.0/emf-diffmerge-site"/>
+      <repository id="EMF-DiffMerge" location="http://download.eclipse.org/diffmerge/releases/0.9.0/emf-diffmerge-site"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.emf.diffmerge.patterns.sdk.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.diffmerge.patterns.sdk.feature.source.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.source.feature.group" version="0.0.0"/>
-      <repository id="EDM-Patterns" location="http://download.eclipse.org/diffmerge/releases/0.8.0/edm-patterns-site"/>
+      <repository id="EDM-Patterns" location="http://download.eclipse.org/diffmerge/releases/0.9.0/edm-patterns-site"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.amalgam.explorer.activity.feature.group" version="0.0.0"/>
@@ -196,13 +196,13 @@
       <unit id="org.eclipse.amalgam.explorer.contextual.sirius.source.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.amalgam.explorer.contextual.core.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.amalgam.explorer.contextual.core.source.feature.group" version="0.0.0"/>
-      <repository id="amalgam" location="http://download.eclipse.org/modeling/amalgam/updates//nightly/1.9.0-N20170901-121250/capella"/>
+      <repository id="amalgam" location="http://download.eclipse.org/modeling/amalgam/updates/milestones/1.9.0RC1/capella"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.emf.ecoretools.sdk.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.ecoretools.design" version="0.0.0"/>
       <unit id="org.eclipse.emf.ecoretools.explorer.contextual.feature.group" version="0.0.0"/>
-      <repository id="EcoreTools" location="http://download.eclipse.org/ecoretools/updates/nightly/3.2.1/neon"/>
+      <repository id="EcoreTools" location="http://download.eclipse.org/ecoretools/updates/releases/3.2.1/neon/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.egf.sdk.feature.group" version="0.0.0"/>
@@ -229,7 +229,7 @@
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.nebula.widgets.richtext.feature.feature.group" version="0.0.0"/>
-      <repository id="Nebula" location="http://download.eclipse.org/nebula/releases/1.2.0"/>
+      <repository id="Nebula" location="http://download.eclipse.org/nebula/releases/1.2.0/"/>
     </location>
   </locations>
 </target>

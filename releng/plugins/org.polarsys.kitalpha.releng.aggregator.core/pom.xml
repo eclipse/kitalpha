@@ -88,10 +88,14 @@
     <module>../../../cadence/plugins/org.polarsys.kitalpha.cadence.core</module>
     <module>../../../transposer/plugins/org.polarsys.kitalpha.transposer.transformation.emf.traces</module>
     <module>../../../architecture description/core/plugins/org.polarsys.kitalpha.ad.viewpoint.predicate</module>
+    <module>../../../emde/doc/plugins/org.polarsys.kitalpha.emde.doc</module>
+    
+    <!--  plugins for richtext -->
     <module>../../../richtext/plugins/org.polarsys.kitalpha.richtext.widget</module>
     <module>../../../richtext/plugins/org.polarsys.kitalpha.richtext.common</module>
-    <module>../../../richtext/plugins/org.polarsys.kitalpha.richtext.mde.tools</module>
-    <module>../../../richtext/plugins/org.polarsys.kitalpha.richtext.mde.tools.sirius</module>
+    <module>../../../richtext/plugins/org.polarsys.kitalpha.richtext.widget.ext</module>
+    <module>../../../richtext/plugins/org.polarsys.kitalpha.richtext.widget.tools</module>
+    <module>../../../richtext/plugins/org.polarsys.kitalpha.richtext.widget.tools.ext.strategies</module>
     <module>../../../richtext/plugins/org.polarsys.kitalpha.richtext.nebula.widget</module>
     
     <!-- plugins org.polarsys.kitalpha.common.feature -->
@@ -135,11 +139,17 @@
     <module>../../../detachment/plugins/org.polarsys.kitalpha.model.detachment.ui.contrib.viewpoints</module>
     <module>../../../detachment/plugins/org.polarsys.kitalpha.model.common.ui.contrib.modelresource</module>
     <module>../../../patterns/plugins/org.polarsys.kitalpha.patterns.emde.gen.edit</module>
-
+    
+    <!-- Doc plugins -->
+	<module>../../../doc/plugins/org.polarsys.kitalpha.doc</module>
+	<module>../../../architecture description/doc/plugins/org.polarsys.kitalpha.ad.doc</module>
+	<module>../../../richtext/doc/plugins/org.polarsys.kitalpha.richtext.widget.doc</module>
+	
     <!-- Feature  -->
     <module>../../../common/features/org.polarsys.kitalpha.common.feature</module>
     <module>../../../releng/features/org.polarsys.kitalpha.releng.runtime.core.feature</module>
-    <module>../../../richtext/features/org.polarsys.kitalpha.richtext.mde.tools.sirius.feature</module>
+    <module>../../../richtext/features/org.polarsys.kitalpha.richtext.widget.tools.ext.feature</module>
+    <module>../../../richtext/features/org.polarsys.kitalpha.richtext.widget.ext.feature</module>
     <module>../../../richtext/features/org.polarsys.kitalpha.richtext.widget.feature</module>
     <module>../../../emde/features/org.polarsys.kitalpha.emde.genchain.feature</module>
     <module>../../../architecture description/core/features/org.polarsys.kitalpha.ad.feature</module>
@@ -155,6 +165,11 @@
     <module>../../../architecture description/core/features/org.polarsys.kitalpha.ad.integration.amalgam.feature</module>
     <module>../../../cadence/features/org.polarsys.kitalpha.cadence.feature</module>
     <module>../../../transposer/features/org.polarsys.kitalpha.transposer.feature</module>
+    <module>../../../doc/features/org.polarsys.kitalpha.doc.feature</module>
+	<module>../../../architecture description/doc/features/org.polarsys.kitalpha.ad.doc.feature</module>
+	<module>../../../richtext/doc/features/org.polarsys.kitalpha.richtext.widget.doc.feature</module>
+	<module>../../../emde/doc/features/org.polarsys.kitalpha.emde.doc.feature</module>
+	
     <!-- plugins org.polarsys.kitalpha.model.detachment.contrib.viewpoints.feature-->
     <module>../../../detachment/plugins/org.polarsys.kitalpha.model.common.commands.contrib.viewpoint.representation</module>
     <module>../../../detachment/plugins/org.polarsys.kitalpha.model.common.commands.contrib.viewpoints</module>
