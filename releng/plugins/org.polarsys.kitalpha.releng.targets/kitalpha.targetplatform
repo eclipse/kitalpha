@@ -148,7 +148,7 @@ location acceleo "http://download.eclipse.org/acceleo/updates/releases/3.7/R2017
 	org.eclipse.acceleo.source.feature.group lazy
 }
 
-location Sirus "http://download.eclipse.org/sirius/updates/milestones/5.1.0rc4/neon" {
+location Sirus "http://download.eclipse.org/sirius/updates/releases/5.1.0/neon" {
 	org.eclipse.sirius.doc.feature.feature.group lazy
 	org.eclipse.sirius.runtime.ide.eef.feature.group lazy
 	org.eclipse.sirius.runtime.ide.ui.acceleo.feature.group lazy

@@ -18,7 +18,7 @@
 		<maven>3.3</maven>
 	</prerequisites>
 	
-	<name>Kitalpha Parent</name>
+	<name>Kitalpha</name>
 	
 	<groupId>org.polarsys</groupId>
 	<artifactId>org.polarsys.kitalpha</artifactId>
@@ -62,6 +62,7 @@
 		<sonar.jacoco.reportPath>${coverage.destFile}</sonar.jacoco.reportPath>
 		<rcptt-maven-version>2.1.0</rcptt-maven-version>
 	  	<target-platform-name>kitalpha</target-platform-name>
+
 	</properties>
   <profiles>
     <profile>
@@ -160,6 +161,12 @@
 					<includes>
 						<include>${testFiltreClass}</include>
 					</includes>
+					<dependencies>
+						<dependency>
+							<type>p2-installable-unit</type>
+							<artifactId>org.polarsys.kitalpha.af.componentsamplearchitectureframework.feature.group</artifactId>
+						</dependency>
+					</dependencies>
 				</configuration>
 			</plugin>
   			<plugin>
@@ -168,12 +175,19 @@
 				<version>${tycho-version}</version>
 				<configuration>
 					<targetDefinitionIncludeSource>honor</targetDefinitionIncludeSource>
-					<!-- <pomDependencies>consider</pomDependencies>
+					<!--<pomDependencies>consider</pomDependencies>
 					<includePackedArtifacts>true</includePackedArtifacts>
 					<resolver>p2</resolver>
 					<dependency-resolution>
 						<optionalDependencies>ignore</optionalDependencies>
-					</dependency-resolution> -->
+						 <extraRequirements> 
+            				<requirement>
+               					<type>eclipse-feature</type>
+               					<id>org.polarsys.kitalpha.af.componentsamplearchitectureframework.feature</id>
+               					<versionRange>0.0.0</versionRange>
+            				</requirement>
+         				</extraRequirements>
+					</dependency-resolution>-->
 					<target>
 						<artifact>
 							<groupId>org.polarsys</groupId>
@@ -253,6 +267,9 @@
 						<plugin id="org.polarsys.kitalpha.vp.componentsamplesafety.af"/>
 						<plugin id="org.polarsys.kitalpha.vp.componentsamplesafety.vpdsl"/>
 						<plugin id="org.polarsys.kitalpha.af.componentsamplearchitectureframework"/>
+						<plugin id="org.polarsys.kitalpha.ad.doc"/>
+						<plugin id="org.polarsys.kitalpha.emde.doc"/>
+						<plugin id="org.polarsys.kitalpha.richtext.widget.doc"/>
 					</excludes>
 				</configuration>
 				<executions>

@@ -44,16 +44,16 @@
   
   <modules>    
     <!-- plugins Test -->
-    <module>../../../detachment/tests/junit/org.polarsys.kitalpha.detachment.tests.ju</module>
+    <!--<module>../../../detachment/tests/junit/org.polarsys.kitalpha.detachment.tests.ju</module>
     <module>../../../resource reuse/tests/plugins/org.polarsys.kitalpha.resourcereuse.tests</module>
     <module>../../../resource reuse/tests/plugins/org.polarsys.kitalpha.resourcereuse.emfscheme.test.ju</module>
     <module>../../../emde/tests/org.polarsys.kitalpha.emde.tests</module>
     <module>../../../architecture description/metadata/tests/org.polarsys.kitalpha.ad.metadata.tests</module>
     <module>../../../architecture description/core/tests/org.polarsys.kitalpha.ad.viewpoint.tests</module>
-    <module>../../../transposer/tests/plugins/junits/org.polarsys.kitalpha.transposer.junit.tests</module>
+    <module>../../../transposer/tests/plugins/junits/org.polarsys.kitalpha.transposer.junit.tests</module>-->
     
 	<!-- Test RCPTT -->
-	<module>../../../architecture description/dsl/examples/tests/rcptt/org.polarsys.kitalpha.activityexplorer.test.rcptt</module>
+	<!--<module>../../../architecture description/dsl/examples/tests/rcptt/org.polarsys.kitalpha.activityexplorer.test.rcptt</module>
     <module>../../../architecture description/core/tests/org.polarsys.kitalpha.ad.core.rcptt</module>
 	<module>../../../resource reuse/tests/plugins/org.polarsys.kitalpha.resourcereuse.emfscheme.test.rcptt</module>
 	<module>../../../Docgen/business/tests/rcptt/org.polarsys.kitalpha.doc.gen.test.rcptt</module>
@@ -61,7 +61,7 @@
     <module>../../../detachment/tests/rcptt/org.polarsys.kitalpha.detachment.tests.rcptt</module>
     <module>../../../architecture description/dsl/tests/org.polarsys.kitalpha.ad.viewpoint.test.rcptt</module>
 	<module>../../../architecture description/core/tests/plugins/org.polarsys.kitalpha.ad.rcptt</module>
-	<module>../../../common/tests/org.polarsys.kitalpha.common.rcptt</module>
+	<module>../../../common/tests/org.polarsys.kitalpha.common.rcptt</module>-->
    </modules>
 </project>
 
