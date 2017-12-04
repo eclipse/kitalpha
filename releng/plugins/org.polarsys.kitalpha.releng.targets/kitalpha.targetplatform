@@ -174,8 +174,14 @@ location Sirus "http://download.eclipse.org/sirius/updates/releases/5.1.0/neon" 
 }
 
 location EMF-DiffMerge "http://download.eclipse.org/diffmerge/releases/0.9.0/emf-diffmerge-site" {
-	org.eclipse.emf.diffmerge.sdk.feature.feature.group lazy
-	org.eclipse.emf.diffmerge.sdk.feature.source.feature.group lazy
+	org.eclipse.emf.diffmerge.feature.feature.group lazy
+	org.eclipse.emf.diffmerge.feature.source.feature.group lazy
+	org.eclipse.emf.diffmerge.sirius.feature.feature.group lazy
+	org.eclipse.emf.diffmerge.sirius.feature.source.feature.group lazy
+	org.eclipse.emf.diffmerge.gmf.feature.feature.group lazy
+	org.eclipse.emf.diffmerge.gmf.feature.source.feature.group lazy
+	org.eclipse.emf.diffmerge.egit.feature.feature.group lazy
+	org.eclipse.emf.diffmerge.egit.feature.source.feature.group lazy
 }
 
 
