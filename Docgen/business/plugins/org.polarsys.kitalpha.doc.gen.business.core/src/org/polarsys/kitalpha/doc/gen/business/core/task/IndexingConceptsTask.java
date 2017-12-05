@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,9 +15,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -29,15 +31,23 @@ import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.egf.core.producer.InvocationException;
 import org.eclipse.egf.ftask.producer.context.ITaskProductionContext;
 import org.eclipse.egf.ftask.producer.invocation.ITaskProduction;
+import org.polarsys.kitalpha.doc.gen.business.core.Activator;
 import org.polarsys.kitalpha.doc.gen.business.core.util.DocGenHtmlUtil;
 import org.polarsys.kitalpha.doc.gen.business.core.util.EscapeChars;
 
 
 public class IndexingConceptsTask implements ITaskProduction {
+
+	private static final String LOG_PROPERTY = "org.polarsys.kitalpha.doc.gen.business.core.task.IndexingConceptsTask.log";
+	private static final boolean doTrace = isLogFeatureSetted();
+	private static final Logger logger = Logger.getLogger(IndexingConceptsTask.class.getName());
+	private static final String INDEXING_PREF = "[INDEXING] ";
 
 	private Map<String, List<String>> conceptsToPageTitle = new HashMap<String, List<String>>();
 
@@ -48,6 +58,22 @@ public class IndexingConceptsTask implements ITaskProduction {
 	private Map<String, List<String>> conceptsToPageTable = new HashMap<String, List<String>>();
 
 	private Map<String, String> fileNameToTitle = new HashMap<String, String>();
+
+
+	//Regexp patterns
+	private static final Pattern pTable = Pattern.compile("<table>(.*?)</table>"); 	//table
+	private static final Pattern pTitle = Pattern.compile(".*<title>(.*)</title>.*"); 	//title
+	private static final Pattern pHeaderOne = Pattern.compile("<h1>(.*)</h1>"); 			//title head <h1>
+	private static final Pattern pParagraphe = Pattern.compile("<p>(.*?)</p>"); 	//paragraph
+	private static final Pattern pListStartEnd = Pattern.compile("((<ul.*?>)|(</ul>))", Pattern.DOTALL);	//indexed list
+
+	//Matchers
+	private static Matcher mTable = pTable.matcher(""); //for table
+	private static Matcher mTitle = pTitle.matcher(""); //for title
+	private static Matcher mPHeaderOne = pHeaderOne.matcher(""); //for title head h1
+	private static Matcher mParagraphe = pParagraphe.matcher(""); //for paragraph
+	private static Matcher mListStartEnd = pListStartEnd.matcher(""); //for lists
+
 
 	private static final String HEADER = "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>"
 			+ "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\""
@@ -69,14 +95,13 @@ public class IndexingConceptsTask implements ITaskProduction {
 			IProgressMonitor monitor) throws InvocationException {
 
 	}
-	
+
 	public boolean isFileAModelHtmlPage(String fileName){
-		return !(fileName.equals("footer.html") || 
-				 fileName.equals("header.html") ||
-				 fileName.equals("index.html") ||
-				 fileName.equals("searchIndex.html") ||
-				 fileName.equals("sidebar.html"));
-//		return false;
+		return !(fileName.equals("footer.html") || 			//$NON-NLS-1$
+				fileName.equals("header.html") || 			//$NON-NLS-1$
+				fileName.equals("index.html") ||			//$NON-NLS-1$
+				fileName.equals("searchIndex.html") ||		//$NON-NLS-1$
+				fileName.equals("sidebar.html"));			//$NON-NLS-1$
 	}
 
 	@SuppressWarnings("unchecked")
@@ -87,7 +112,13 @@ public class IndexingConceptsTask implements ITaskProduction {
 		String projectName = productionContext.getInputValue("projectName", String.class);
 		String outputFolder = productionContext.getInputValue("outputFolder", String.class);
 		List<String> concepts = productionContext.getInputValue("concepts", List.class);
-		
+
+		if (doTrace) {
+			logger.info(INDEXING_PREF + "Start indexing at: " + Calendar.getInstance().get(Calendar.MINUTE));
+			logger.info(INDEXING_PREF + "Project: " + projectName);
+			logger.info(INDEXING_PREF + "Output folder: " + outputFolder);
+		}
+
 		// Treat all files available in the output Folder
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 		IProject project = root.getProject(projectName);
@@ -101,54 +132,69 @@ public class IndexingConceptsTask implements ITaskProduction {
 					IFile file = (IFile) currentResource;
 					if (file.getName().endsWith(".html") &&	isFileAModelHtmlPage(file.getName())) 
 					{
-						// if (!pageToTile.containsKey(file.getName())) {
+						if (doTrace) {
+							logger.info(INDEXING_PREF + "Starting indexing page: " + file.getName());
+						}
+
 						indexPage(concepts, file);
-						// }
+
+						if (doTrace) {
+							logger.info(INDEXING_PREF + "Ending indexing page: " + file.getName());
+						}
 					}
 				}
 			}
-			
+
 			concepts = removeConceptsWithEmptyPages(concepts);
-			
+
 			productionContext.setOutputValue("concepts.with.pages", concepts);
-			
+
+			if (doTrace) {
+				logger.info(INDEXING_PREF + "Starting generating index pages");
+			}
+
 			generatingConceptsPages(projectName, outputFolder, concepts);
 
+			if (doTrace) {
+				logger.info(INDEXING_PREF + "End generating index pages");
+			}
+
 		} catch (CoreException e) {
-			e.printStackTrace();
+			Status status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage(), e);
+			Activator.getDefault().getLog().log(status);
 		}
 	}
-	
+
 	/**
 	 * [BZE] this method keep only concepts with search index page containing some links
 	 */
 	public List<String> removeConceptsWithEmptyPages(List<String> concepts){
-	List<String> conceptsToRemove = new ArrayList<String>();
+		List<String> conceptsToRemove = new ArrayList<String>();
 		for (String currentConcept : concepts) 
 		{
 			boolean noPage = true;
 			final List<String> inPages = conceptsToPageTitle.get(currentConcept);
 			noPage = inPages == null || (inPages != null && inPages.isEmpty()); 
-			
+
 			boolean noPageParagraph = true;
 			final List<String> inPageParagraph = conceptsToPageParagraph.get(currentConcept);
 			noPageParagraph = inPageParagraph == null || (inPageParagraph != null && inPageParagraph.isEmpty());
-			
+
 			boolean noPageList = true;
 			final List<String> inList = conceptsToPageList.get(currentConcept);
 			noPageList = inList == null || (inList != null && inList.isEmpty()); 
-			
+
 			boolean noPageTable = true;
 			final List<String> inTable = conceptsToPageTable.get(currentConcept);
 			noPageTable = inTable == null || (inTable != null && inTable.isEmpty()); 
-			
+
 			if (noPage && noPageParagraph && noPageList && noPageTable)
 				conceptsToRemove.add(currentConcept);
 		}
-		
+
 		if (conceptsToRemove.isEmpty() == false)
 			concepts.removeAll(conceptsToRemove);
-		
+
 		return concepts;
 	}
 
@@ -226,7 +272,7 @@ public class IndexingConceptsTask implements ITaskProduction {
 				buffer.append("</ul>");
 			}
 			buffer.append(FOOTER);
-			
+
 			DocGenHtmlUtil.writeFilePatternContent(i+"_"+DocGenHtmlUtil.getValidFileName(currentConcept),
 					projectName, outputFolder + "/concepts", buffer.toString());
 
@@ -249,36 +295,44 @@ public class IndexingConceptsTask implements ITaskProduction {
 		}
 		return buffer.toString();
 	}
-	
+
 	private void indexPage(List<String> concepts, IFile file)
 			throws CoreException {
 		String fileName = file.getName();
 
 		String pageContent = getPageContent(file);
 		// Page title
-		Pattern pTitle = Pattern.compile(".*<title>(.*)</title>.*");
-		Matcher mTitle = pTitle.matcher(pageContent);
+		mTitle = mTitle.reset(pageContent);
 		if (mTitle.matches()) {
-			fileNameToTitle.put(fileName, mTitle.group(1));
+			String title = mTitle.group(1);
+			fileNameToTitle.put(fileName, title);
+
+			if (doTrace) {
+				logger.info(INDEXING_PREF + "Title index: " + title + " in file: " + fileName);
+			}
 		}
 
 		// index H1
-		Pattern pH1 = Pattern.compile(".*<h1>(.*)</h1>.*");
-		Matcher m = pH1.matcher(pageContent);
-		if (m.matches()) 
+		mPHeaderOne = mPHeaderOne.reset(pageContent);
+		if (mPHeaderOne.matches()) 
 		{
 			for (String currentConcept : concepts) 
 			{
-				String title = m.group(1);
+				String title = mPHeaderOne.group(1);
 				String currentConcept_html = EscapeChars.forHTML(currentConcept);
-				if (title.contains(currentConcept_html))
+				if (title.contains(currentConcept_html)) {
 					indexTitle(fileName, currentConcept);
+				}
 			}
 		}
-		
+
 		// index paragraph
-		Pattern pParagraphe = Pattern.compile(".*<p>(.*?)</p>.*");
-		Matcher mParagraphe = pParagraphe.matcher(pageContent);
+
+		if (doTrace) {
+			logger.info(INDEXING_PREF + "Starting indexing paragraphs of file: " + fileName);
+		}
+
+		mParagraphe = mParagraphe.reset(pageContent);
 		while (mParagraphe.find()) {
 			for (String currentConcept : concepts) {
 				for (int i = 1; i <= mParagraphe.groupCount(); i++) {
@@ -291,56 +345,76 @@ public class IndexingConceptsTask implements ITaskProduction {
 				}
 			}
 		}
-		// Index lists
-        final Pattern pListStartEnd = Pattern.compile("((<ul.*?>)|(</ul>))", Pattern.DOTALL);
-        final Matcher mListStartEnd = pListStartEnd.matcher(pageContent);
-        int level = 0;
-        int listStartIndex = -1;
-        while (mListStartEnd.find()) 
-        {
-        	if (mListStartEnd.group(2) != null) 
-        	{
-        		// A list start
-        		level += 1;
-        		if (level == 1) 
-        		{
-        			listStartIndex = mListStartEnd.start(2);
-        		}
-        	} 
-        	else 
-        	{
-        		// A list end
-        		level -= 1;
-        		if (level == 0) {
-        			final int listEndIndex = mListStartEnd.end(3);
-        			final String listText = pageContent.substring(listStartIndex, listEndIndex);
-        			for (final String currentConcept : concepts) 
-        			{
-        				String currentConcept_html = EscapeChars.forHTML(currentConcept);
-        				if (listText.contains(currentConcept_html)) 
-        				{
-        					indexList(fileName, currentConcept);
-        				}
-        			}
-        		}
-        	}
-        }
 
-		// Index tables
-		Pattern pTable = Pattern.compile(".*<table>(.*?)</table>.*");
-		Matcher mTable = pTable.matcher(pageContent);
-		while (mTable.find()) {
-			for (String currentConcept : concepts) {
-				for (int i = 1; i <= mTable.groupCount(); i++) {
-					String listGroup = mTable.group(i);
-					String currentConcept_html = EscapeChars.forHTML(currentConcept);
-					if (listGroup.contains(currentConcept_html)) {
-						indexTable(fileName, currentConcept);
+		if (doTrace) {
+			logger.info(INDEXING_PREF + "End indexing paragraphs of file: " + fileName);
+		}
+
+		if (doTrace) {
+			logger.info(INDEXING_PREF + "Start indexing Lists of file: " + fileName);
+		}
+
+		// Index lists
+		mListStartEnd = mListStartEnd.reset(pageContent);
+		int level = 0;
+		int listStartIndex = -1;
+		while (mListStartEnd.find())
+		{
+			if (mListStartEnd.groupCount() > 1 && mListStartEnd.group(2) != null) 
+			{
+				// A list start
+				level += 1;
+				if (level == 1) 
+				{
+					listStartIndex = mListStartEnd.start(2);
+				}
+			} 
+			else 
+			{
+				// A list end
+				level -= 1;
+				if (level == 0) {
+					final int listEndIndex = mListStartEnd.end(3);
+					final String listText = pageContent.substring(listStartIndex, listEndIndex);
+					for (final String currentConcept : concepts) 
+					{
+						String currentConcept_html = EscapeChars.forHTML(currentConcept);
+						if (listText.contains(currentConcept_html)) 
+						{
+							indexList(fileName, currentConcept);
+						}
 					}
 				}
 			}
 		}
 
+		if (doTrace) {
+			logger.info(INDEXING_PREF + "End indexing Lists of file: " + fileName);
+		}
+
+		if (doTrace) {
+			logger.info(INDEXING_PREF + "Start indexing Table of file: " + fileName);
+		}
+
+		// Index tables
+		mTable = mTable.reset(pageContent);
+		while (mTable.find()) 
+		{
+			for (String currentConcept : concepts) {
+				String currentConcept_html = EscapeChars.forHTML(currentConcept);
+				for (int i = 1; i <= mTable.groupCount(); i++) {
+					String listGroup = mTable.group(i);
+					if (listGroup.contains(currentConcept_html)) {
+						indexTable(fileName, currentConcept);
+						break;
+					}
+				}
+			}
+		}
+
+		if (doTrace) {
+			logger.info(INDEXING_PREF + "End indexing Table of file: " + fileName);
+		}
 	}
 
 	private void indexList(String fileName, String currentConcept) {
@@ -353,6 +427,9 @@ public class IndexingConceptsTask implements ITaskProduction {
 			conceptsToPageList.put(currentConcept, localList);
 		}
 
+		if (doTrace) {
+			logger.info(INDEXING_PREF + "Concept: " + currentConcept + " is indexed in file: " + fileName);
+		}
 	}
 
 	private void indexParagraph(String fileName, String currentConcept) {
@@ -363,6 +440,10 @@ public class IndexingConceptsTask implements ITaskProduction {
 			List<String> localList = new ArrayList<String>();
 			localList.add(fileName);
 			conceptsToPageParagraph.put(currentConcept, localList);
+		}
+
+		if (doTrace) {
+			logger.info(INDEXING_PREF + "Concept: " + currentConcept + " is indexed in file: " + fileName);
 		}
 	}
 
@@ -376,7 +457,9 @@ public class IndexingConceptsTask implements ITaskProduction {
 			localList.add(fileName);
 			conceptsToPageTitle.put(currentConcept, localList);
 		}
-
+		if (doTrace) {
+			logger.info(INDEXING_PREF + "Concept: " + currentConcept + " is indexed in file: " + fileName);
+		}
 	}
 
 	private void indexTable(String fileName, String currentConcept) {
@@ -389,12 +472,19 @@ public class IndexingConceptsTask implements ITaskProduction {
 			localList.add(fileName);
 			conceptsToPageTable.put(currentConcept, localList);
 		}
-
+		if (doTrace) {
+			logger.info(INDEXING_PREF + "Concept: " + currentConcept + " is indexed in file: " + fileName);
+		}
 	}
 
 	public void postExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
 
+	}
+
+	private static boolean isLogFeatureSetted(){
+		String property = System.getProperty(LOG_PROPERTY);
+		return property != null && property.equals("true"); //$NON-NLS-1$
 	}
 
 }
