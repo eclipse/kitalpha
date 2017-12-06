@@ -259,14 +259,6 @@
          version="0.0.0"/>
 
    <includes
-         id="org.eclipse.emf.diffmerge.sdk.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="org.eclipse.emf.diffmerge.sdk.feature.source"
-         version="0.0.0"/>
-
-   <includes
          id="org.eclipse.emf.doc"
          version="0.0.0"/>
 
@@ -688,6 +680,38 @@
 
    <includes
          id="org.eclipse.nebula.widgets.richtext.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.emf.diffmerge.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.emf.diffmerge.feature.source"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.emf.diffmerge.sirius.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.emf.diffmerge.sirius.feature.source"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.emf.diffmerge.gmf.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.emf.diffmerge.gmf.feature.source"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.emf.diffmerge.egit.feature"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.emf.diffmerge.egit.feature.source"
          version="0.0.0"/>
 
    <plugin

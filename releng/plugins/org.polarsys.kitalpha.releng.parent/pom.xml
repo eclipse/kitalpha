@@ -64,6 +64,7 @@
 	  	<target-platform-name>kitalpha</target-platform-name>
 	  	
 	  	<sonar.exclusions>**/generated/**,**/src-gen/**</sonar.exclusions>
+	  	<sonar.test.exclusions>**/tests/**,**/test/**,**/rcptt/**</sonar.test.exclusions>
 
 	</properties>
   <profiles>
