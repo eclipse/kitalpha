@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+
+
+<plugin>
+
+   
+<!--@generated-->
+  <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated A -->
+      <wizard category="org.polarsys.kitalpha.wizard.category/org.polarsys.kitalpha.mdeCoreTechnology.wizard.category" class="A.A.presentation.AModelWizard" icon="icons/full/obj16/AModelFile.gif" id="A.A.presentation.AModelWizardID" name="%_UI_AModelWizard_label">
+         <description>%_UI_AModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   
+<!--@generated-->
+  <extension point="org.eclipse.ui.editors">
+      <!-- @generated A -->
+      <editor class="A.A.presentation.AEditor" contributorClass="A.A.presentation.AActionBarContributor" extensions="a" icon="icons/full/obj16/AModelFile.gif" id="A.A.presentation.AEditorID" name="%_UI_AEditor_label">
+      </editor>
+   </extension>
+
+</plugin>

@@ -1,37 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  Copyright (c) 2006, 2017 THALES GLOBAL SERVICES.
-  All rights reserved. This program and the accompanying materials
-  are made available under the terms of the Eclipse Public License v1.0
-  which accompanies this distribution, and is available at
-  http://www.eclipse.org/legal/epl-v10.html
+<!-- Copyright (c) 2006, 2017 THALES GLOBAL SERVICES. All rights reserved. 
+	This program and the accompanying materials are made available under the 
+	terms of the Eclipse Public License v1.0 which accompanies this distribution, 
+	and is available at http://www.eclipse.org/legal/epl-v10.html Contributors: 
+	Thales - initial API and implementation -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  Contributors:
-       Thales - initial API and implementation
--->
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+	<groupId>org.polarsys</groupId>
+	<artifactId>org.polarsys.kitalpha.releng.aggregator.tests</artifactId>
+	<version>1.2.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
 
-  <groupId>org.polarsys</groupId>
-  <artifactId>org.polarsys.kitalpha.releng.aggregator.tests</artifactId>
-  <version>1.2.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
+	<name>Kitalpha Aggregator Module : Junit Tests</name>
 
-  <name>Kitalpha Aggregator Module : Junit Tests</name>
+	<parent>
+		<groupId>org.polarsys</groupId>
+		<artifactId>org.polarsys.kitalpha</artifactId>
+		<version>1.2.0-SNAPSHOT</version>
+		<relativePath>../../../releng/plugins/org.polarsys.kitalpha.releng.parent</relativePath>
+	</parent>
 
-  <parent>
-    <groupId>org.polarsys</groupId>
-    <artifactId>org.polarsys.kitalpha</artifactId>
-    <version>1.2.0-SNAPSHOT</version>
-    <relativePath>../../../releng/plugins/org.polarsys.kitalpha.releng.parent</relativePath>
-  </parent>
-  
-  <licenses>
-    <license>
-      <name>Eclipse Public License v1.0</name>
-      <comments>
+	<licenses>
+		<license>
+			<name>Eclipse Public License v1.0</name>
+			<comments>
       All rights reserved.
 
       This program and the accompanying materials are made available under the
@@ -39,30 +33,66 @@
       distribution, and is available at
       http://www.eclipse.org/legal/epl-v10.htm
     </comments>
-    </license>
-  </licenses>
-  
-  <modules>    
-    <!-- plugins Test -->
-    <module>../../../detachment/tests/junit/org.polarsys.kitalpha.detachment.tests.ju</module>
-    <module>../../../resource reuse/tests/plugins/org.polarsys.kitalpha.resourcereuse.tests</module>
-    <module>../../../resource reuse/tests/plugins/org.polarsys.kitalpha.resourcereuse.emfscheme.test.ju</module>
-    <module>../../../emde/tests/org.polarsys.kitalpha.emde.tests</module>
-    <module>../../../architecture description/metadata/tests/org.polarsys.kitalpha.ad.metadata.tests</module>
-    <module>../../../architecture description/core/tests/org.polarsys.kitalpha.ad.viewpoint.tests</module>
-    <module>../../../transposer/tests/plugins/junits/org.polarsys.kitalpha.transposer.junit.tests</module>
-    <module>../../../architecture description/core/tests/org.polarsys.kitalpha.ad.viewpoint.predicate.tests.junit</module>
-    
-	<!-- Test RCPTT -->
-	<module>../../../architecture description/dsl/examples/tests/rcptt/org.polarsys.kitalpha.activityexplorer.test.rcptt</module>
-    <module>../../../architecture description/core/tests/org.polarsys.kitalpha.ad.core.rcptt</module>
-	<module>../../../resource reuse/tests/plugins/org.polarsys.kitalpha.resourcereuse.emfscheme.test.rcptt</module>
-	<module>../../../Docgen/business/tests/rcptt/org.polarsys.kitalpha.doc.gen.test.rcptt</module>
-	<module>../../../Docgen/business/tests/rcptt/org.polarsys.kitalpha.doc.gen.business.ecore.test.rcptt</module>
-    <module>../../../detachment/tests/rcptt/org.polarsys.kitalpha.detachment.tests.rcptt</module>
-    <module>../../../architecture description/dsl/tests/org.polarsys.kitalpha.ad.viewpoint.test.rcptt</module>
-	<module>../../../architecture description/core/tests/plugins/org.polarsys.kitalpha.ad.rcptt</module>
-	<module>../../../common/tests/org.polarsys.kitalpha.common.rcptt</module>
-   </modules>
+		</license>
+	</licenses>
+
+	<modules>
+		<!-- plugins Test -->
+		<module>../../../detachment/tests/junit/org.polarsys.kitalpha.detachment.tests.ju</module>
+		<module>../../../resource reuse/tests/plugins/org.polarsys.kitalpha.resourcereuse.tests</module>
+		<module>../../../resource reuse/tests/plugins/org.polarsys.kitalpha.resourcereuse.emfscheme.test.ju</module>
+		<module>../../../emde/tests/org.polarsys.kitalpha.emde.tests</module>
+		<module>../../../architecture description/metadata/tests/org.polarsys.kitalpha.ad.metadata.tests</module>
+		<module>../../../architecture description/core/tests/org.polarsys.kitalpha.ad.viewpoint.tests</module>
+		<module>../../../transposer/tests/plugins/junits/org.polarsys.kitalpha.transposer.junit.tests</module>
+		<module>../../../architecture description/core/tests/org.polarsys.kitalpha.ad.viewpoint.predicate.tests.junit</module>
+		<module>../../../architecture description/core/tests/org.polarsys.kitalpha.ad.integration.emde.tests.junit</module>
+
+		<!-- ******************** SECTION: START OF EXTRA-PLUGINS USEFUL FOR JUNIT ******************** -->
+		<!-- JUnit plugins dependencies -->
+		<!-- This list all plugins used by the JUnit to perform tests -->
+		<!-- Please at adding dependencies for JUnit, follow the format below: -->
+		<!-- 
+			Plugins used by: 
+				1- JUnit plugin A 
+				2- Junit plugin B 
+				3- ...
+			list of your modules betwee <module>...</module>
+		-->
+
+		<!-- 
+			Plugins used by: 
+				1- ../../../architecture description/core/tests/org.polarsys.kitalpha.ad.integration.emde.tests.junit
+		-->
+		<module>../../../architecture description/core/tests/usecase1/A</module>
+		<module>../../../architecture description/core/tests/usecase1/a.a</module>
+		<module>../../../architecture description/core/tests/usecase1/a.a.edit</module>
+		<module>../../../architecture description/core/tests/usecase1/a.a.editor</module>
+		<module>../../../architecture description/core/tests/usecase1/B</module>
+		<module>../../../architecture description/core/tests/usecase1/b.b</module>
+		<module>../../../architecture description/core/tests/usecase1/b.b.edit</module>
+		<module>../../../architecture description/core/tests/usecase1/org.polarsys.kitalpha.viewpoint.a</module>
+		<module>../../../architecture description/core/tests/usecase1/org.polarsys.kitalpha.viewpoint.b</module>
+
+		<!-- 
+			Plugins used by: 
+			1. ... 
+		-->
+		<!-- Here the plugins between <module>plugin A</module> -->
+
+
+		<!-- ******************** SECTION END OF EXTRA-PLUGINS USEFUL FOR JUNIT ******************** -->
+
+		<!-- Test RCPTT -->
+		<module>../../../architecture description/dsl/examples/tests/rcptt/org.polarsys.kitalpha.activityexplorer.test.rcptt</module>
+		<module>../../../architecture description/core/tests/org.polarsys.kitalpha.ad.core.rcptt</module>
+		<module>../../../resource reuse/tests/plugins/org.polarsys.kitalpha.resourcereuse.emfscheme.test.rcptt</module>
+		<module>../../../Docgen/business/tests/rcptt/org.polarsys.kitalpha.doc.gen.test.rcptt</module>
+		<module>../../../Docgen/business/tests/rcptt/org.polarsys.kitalpha.doc.gen.business.ecore.test.rcptt</module>
+		<module>../../../detachment/tests/rcptt/org.polarsys.kitalpha.detachment.tests.rcptt</module>
+		<module>../../../architecture description/dsl/tests/org.polarsys.kitalpha.ad.viewpoint.test.rcptt</module>
+		<module>../../../architecture description/core/tests/plugins/org.polarsys.kitalpha.ad.rcptt</module>
+		<module>../../../common/tests/org.polarsys.kitalpha.common.rcptt</module>
+	</modules>
 </project>
 
