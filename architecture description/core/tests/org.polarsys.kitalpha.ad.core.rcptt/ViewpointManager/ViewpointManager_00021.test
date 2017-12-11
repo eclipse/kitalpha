@@ -7,7 +7,7 @@ Element-Version: 3.0
 External-Reference: 
 Id: _QxyXoJCLEeaUTYIf91BKLA
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 10/18/17 11:37 AM
+Save-Time: 12/12/17 10:24 AM
 Testcase-Type: ecl
 
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
@@ -24,7 +24,7 @@ get-view "Project Explorer" | get-tree | select "a/a.afm" | double-click
 with [get-editor "a.afm" | get-tree] {
     get-item "platform:\\/resource\\/a\\/a.afm/Metadata _zzOBcJCIEeaWteUsmnsJfQ" | get-property caption 
         | equals "Metadata _zzOBcJCIEeaWteUsmnsJfQ" | verify-true
-    get-item "platform:\\/resource\\/a\\/a.afm/Metadata _zzOBcJCIEeaWteUsmnsJfQ" | get-property childCount | equals 3
+    get-item "platform:\\/resource\\/a\\/a.afm/Metadata _zzOBcJCIEeaWteUsmnsJfQ" | get-property childCount | equals 2
         | verify-true
 }
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--
