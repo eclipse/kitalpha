@@ -152,7 +152,7 @@
         <activeByDefault>false</activeByDefault>
       </activation>
       <properties>
-  			<target-platform-name>kitalphaWithRuntimeCore</target-platform-name>
+  			<target-platform-name>kitalpha</target-platform-name>
   	   </properties>
       <modules>
         <!-- module TP -->
