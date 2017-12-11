@@ -146,6 +146,29 @@
         <module>../../plugins/org.polarsys.kitalpha.releng.aggregator.tests</module>
     </modules>
   </profile>
+  <profile>
+      <id>KitalphaSonar</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <properties>
+  			<target-platform-name>kitalphaWithRuntimeCore</target-platform-name>
+  	   </properties>
+      <modules>
+        <!-- module TP -->
+        <module>../../plugins/org.polarsys.kitalpha.releng.targets</module>
+        <!-- module Runtime -->
+        <module>../../plugins/org.polarsys.kitalpha.releng.aggregator.runtime</module>
+        <!-- module SDK -->
+        <module>../../plugins/org.polarsys.kitalpha.releng.aggregator.sdk</module>
+        <!-- module Product -->
+        <module>../../plugins/org.polarsys.kitalpha.releng.aggregator.product</module>
+        <!-- module Examples -->
+        <module>../../plugins/org.polarsys.kitalpha.releng.aggregator.examples</module>
+        <!-- module Sample Component -->
+        <module>../../plugins/org.polarsys.kitalpha.releng.aggregator.samplecomponent</module>
+    </modules>
+  </profile>
  </profiles>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
