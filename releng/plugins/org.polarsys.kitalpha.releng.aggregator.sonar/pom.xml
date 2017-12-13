@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2006, 2017 THALES GLOBAL SERVICES.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+
+  Contributors:
+       Thales - initial API and implementation
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.polarsys</groupId>
+  <artifactId>org.polarsys.kitalpha.releng.aggregator.sonar</artifactId>
+  <version>1.2.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>Kitalpha Aggregator Module : Sonar</name>
+
+  <parent>
+    <groupId>org.polarsys</groupId>
+    <artifactId>org.polarsys.kitalpha</artifactId>
+    <version>1.2.0-SNAPSHOT</version>
+    <relativePath>../../../releng/plugins/org.polarsys.kitalpha.releng.parent</relativePath>
+  </parent>
+  
+  <licenses>
+    <license>
+      <name>Eclipse Public License v1.0</name>
+      <comments>
+      All rights reserved.
+
+      This program and the accompanying materials are made available under the
+      terms of the Eclipse Public License v1.0 which accompanies this
+      distribution, and is available at
+      http://www.eclipse.org/legal/epl-v10.htm
+    </comments>
+    </license>
+  </licenses>
+  
+  <modules>
+    <!-- accuracy -->
+	<module>../../../accuracy/plugins/org.polarsys.kitalpha.accuracy</module>
+	<module>../../../accuracy/plugins/org.polarsys.kitalpha.accuracy.ui</module>
+	
+	<!-- architecture description core -->
+	<module>../../../architecture description/core/plugins/org.polarsys.kitalpha.ad.af.coredomain</module>
+	<module>../../../architecture description/core/plugins/org.polarsys.kitalpha.ad.af.coredomain.egf</module>
+	<module>../../../architecture description/core/plugins/org.polarsys.kitalpha.ad.af.coredomain.model</module>
+	<module>../../../architecture description/core/plugins/org.polarsys.kitalpha.ad.af.coredomain.model.edit</module>
+	<module>../../../architecture description/core/plugins/org.polarsys.kitalpha.ad.af.coredomain.model.editor</module>
+	<module>../../../architecture description/core/plugins/org.polarsys.kitalpha.ad.common</module>
+	<module>../../../architecture description/core/plugins/org.polarsys.kitalpha.ad.integration.amalgam</module>
+	<module>../../../architecture description/core/plugins/org.polarsys.kitalpha.ad.integration.emde</module>
+	<module>../../../architecture description/core/plugins/org.polarsys.kitalpha.ad.integration.sirius</module>
+	<module>../../../architecture description/core/plugins/org.polarsys.kitalpha.ad.integration.sirius.egf</module>
+	<module>../../../architecture description/core/plugins/org.polarsys.kitalpha.ad.integration.sirius.model</module>
+	<module>../../../architecture description/core/plugins/org.polarsys.kitalpha.ad.integration.sirius.model.edit</module>
+	<module>../../../architecture description/core/plugins/org.polarsys.kitalpha.ad.services</module>
+	<module>../../../architecture description/core/plugins/org.polarsys.kitalpha.ad.viewpoint</module>
+	<module>../../../architecture description/core/plugins/org.polarsys.kitalpha.ad.viewpoint.coredomain</module>
+	<module>../../../architecture description/core/plugins/org.polarsys.kitalpha.ad.viewpoint.coredomain.egf</module>
+	<module>../../../architecture description/core/plugins/org.polarsys.kitalpha.ad.viewpoint.coredomain.model</module>
+	<module>../../../architecture description/core/plugins/org.polarsys.kitalpha.ad.viewpoint.coredomain.model.edit</module>
+	<module>../../../architecture description/core/plugins/org.polarsys.kitalpha.ad.viewpoint.coredomain.model.editor</module>
+	<module>../../../architecture description/core/plugins/org.polarsys.kitalpha.ad.viewpoint.emfvalidation</module>
+	<module>../../../architecture description/core/plugins/org.polarsys.kitalpha.ad.viewpoint.predicate</module>
+	<module>../../../architecture description/core/plugins/org.polarsys.kitalpha.ad.viewpoint.sdk</module>
+	<module>../../../architecture description/core/plugins/org.polarsys.kitalpha.ad.viewpoint.ui</module>
+	
+	<!-- component sample example -->
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.af.componentsamplearchitectureframework</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.af.componentsamplearchitectureframework.afdsl</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.doc.generation</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.activity.explorer</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.af</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.contextual.explorer</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.design</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.doc</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.fc</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleframework</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleframework.af</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleframework.contextual.explorer</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleframework.doc</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleframework.fc</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleframework.model</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleframework.model.edit</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleframework.releng</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleframework.rules.analysis</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleframework.rules.computation</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleframework.rules.generation</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleframework.rules.transformation</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleframework.rules.validation</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleframework.vpdsl</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.importer</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.model</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.model.edit</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.model.editor</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleperformance</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleperformance.activity.explorer</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleperformance.af</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleperformance.contextual.explorer</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleperformance.design</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleperformance.doc</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleperformance.fc</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleperformance.model</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleperformance.model.edit</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleperformance.rules.analysis</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleperformance.rules.computation</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleperformance.rules.generation</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleperformance.rules.transformation</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleperformance.rules.validation</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsampleperformance.vpdsl</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplequalityassessment</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplequalityassessment.activity.explorer</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplequalityassessment.af</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplequalityassessment.contextual.explorer</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplequalityassessment.design</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplequalityassessment.doc</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplequalityassessment.fc</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplequalityassessment.model</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplequalityassessment.model.edit</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplequalityassessment.rules.analysis</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplequalityassessment.rules.computation</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplequalityassessment.rules.generation</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplequalityassessment.rules.transformation</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplequalityassessment.rules.validation</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplequalityassessment.vpdsl</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.releng</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.rules.analysis</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.rules.computation</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.rules.generation</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.rules.transformation</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.rules.validation</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.runtime.model</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafety</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafety.activity.explorer</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafety.af</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafety.contextual.explorer</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafety.design</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafety.doc</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafety.fc</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafety.model</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafety.model.edit</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafetypattern</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafetypattern.activity.explorer</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafetypattern.af</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafetypattern.contextual.explorer</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafetypattern.design</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafetypattern.doc</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafetypattern.fc</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafetypattern.model</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafetypattern.model.edit</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafetypattern.rules.analysis</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafetypattern.rules.computation</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafetypattern.rules.generation</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafetypattern.rules.transformation</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafetypattern.rules.validation</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafetypattern.vpdsl</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafety.rules.analysis</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafety.rules.computation</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafety.rules.generation</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafety.rules.transformation</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafety.rules.validation</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsamplesafety.vpdsl</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.ui</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.vpdsl</module>
+	<module>../../../architecture description/dsl/examples/plugins/org.polarsys.kitalpha.vp.componentsample.wizard.project</module>
+	
+	<!-- viewpoint dsl -->
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.af.dsl.as.desc</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.af.dsl.as.desc.fc</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.af.dsl.as.desc.helper</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.af.dsl.as.desc.model</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.af.dsl.as.desc.model.edit</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.af.dsl.as.desc.model.editor</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.af.dsl.cs.text.afdesc.ui</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.af.dsl.generation.desc</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.af.dsl.services.cs.text.generators</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.af.dsl.services.cs.text.wizards</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.af.dsl.services.preference</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.af.dsl.servicies.action</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.af.dsl.servicies.project</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.ta</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.ta.emf</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.helper</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.edit</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.validatation</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.build</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.build.fc</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.build.fc.feature</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.build.model</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.build.model.edit</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.commondata</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.commondata.fc</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.commondata.model</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.commondata.model.edit</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.conf</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.conf.fc</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.conf.model</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.conf.model.edit</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.fc</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.model</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.model.edit</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.model.editor</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.fc</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.model</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.model.edit</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.fc</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.model</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.model.edit</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization.model</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization.model.edit</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization.validation</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.validation</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.services</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.services.fc</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.services.model</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.services.model.edit</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.services.validation</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.ui</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.ui.fc</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.ui.model</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.ui.model.edit</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.as.ui.validation</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.build.ui</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.common</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.common.ui</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.conf.ui</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.lib</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.data.ui</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc.ui</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.diagram.ui</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helpers</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.services.ui</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.ui</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.af</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.af.integration</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.build</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.doc</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.event</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.extension</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.launcher</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.precondition</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.provider</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.rule</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.services.action</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.preferences</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.services.preference</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.services.project</module>
+	<module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.viewpoint.dsl.services.reverse</module>
+	
+	<!-- viewpoint metadata -->
+	<module>../../../architecture description/metadata/plugins/org.polarsys.kitalpha.ad.metadata</module>
+	<module>../../../architecture description/metadata/plugins/org.polarsys.kitalpha.ad.metadata.egf</module>
+	<module>../../../architecture description/metadata/plugins/org.polarsys.kitalpha.ad.metadata.model</module>
+	<module>../../../architecture description/metadata/plugins/org.polarsys.kitalpha.ad.metadata.model.edit</module>
+	<module>../../../architecture description/metadata/plugins/org.polarsys.kitalpha.ad.metadata.model.editor</module>
+	
+	<!-- attachment -->
+	<module>../../../attachment/plugins/org.polarsys.kitalpha.model.attachment.ui</module>
+	
+	<!-- cadence -->
+	<module>../../../cadence/plugins/org.polarsys.kitalpha.cadence.core</module>
+	<module>../../../cadence/plugins/org.polarsys.kitalpha.cadence.ui</module>
+	
+	<!-- common -->
+	<module>../../../common/plugins/org.polarsys.kitalpha.common.ui</module>
+	<module>../../../common/plugins/org.polarsys.kitalpha.examples.generic.wizard</module>
+	
+	<!-- composer -->
+	<module>../../../composer/plugins/org.polarsys.kitalpha.composer.core</module>
+	<module>../../../composer/plugins/org.polarsys.kitalpha.composer.metamodel.allocation.base.ecore</module>
+	<module>../../../composer/plugins/org.polarsys.kitalpha.composer.metamodel.allocation.base.fcore</module>
+	<module>../../../composer/plugins/org.polarsys.kitalpha.composer.metamodel.allocation.base.generation.chain</module>
+	<module>../../../composer/plugins/org.polarsys.kitalpha.composer.metamodel.allocation.base.model</module>
+	<module>../../../composer/plugins/org.polarsys.kitalpha.composer.metamodel.allocation.base.model.edit</module>
+	<module>../../../composer/plugins/org.polarsys.kitalpha.composer.metamodel.allocation.base.model.editor</module>
+	<module>../../../composer/plugins/org.polarsys.kitalpha.composer.ui</module>
+	<module>../../../composer/plugins/org.polarsys.kitalpha.composer.ui.help</module>
+	
+	<!-- composer examples -->
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.componentsample.importer</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.advanced</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.advanced.allocation.ecore</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.advanced.allocation.ecore.model</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.advanced.allocation.ecore.model.edit</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.advanced.allocation.ecore.model.editor</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.advanced.ecore.gen.binding</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.advanced.ecore.gen.generator</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.advanced.ecore.gen.refinery</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.advanced.ecore.gen.strategy.manyfile</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.advanced.ecore.gen.strategy.onefile</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.basic</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.basic.allocation.ecore</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.basic.allocation.ecore.model</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.basic.allocation.ecore.model.edit</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.basic.allocation.ecore.model.editor</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.basic.ecore.gen.binding</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.basic.ecore.gen.generator</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.basic.ecore.gen.refinery</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.basic.ecore.gen.strategy</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.basic.ecore.gen.strategy.compound</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.basic.ecore.gen.strategy.consonant</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.basic.ecore.gen.strategy.vowel</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.extended</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.extended.ecorex.allocation</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.extended.ecorex.allocation.model</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.extended.ecorex.allocation.model.edit</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.extended.ecorex.allocation.model.editor</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.extended.ecorex.gen.binding</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.extended.ecorex.gen.generator</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.recursive</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.recursive.allocation.ecore</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.recursive.allocation.ecore.model</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.recursive.allocation.ecore.model.edit</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.recursive.allocation.ecore.model.editor</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.recursive.ecore.gen.binding</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.recursive.ecore.gen.composergen</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.recursive.ecore.gen.generator</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.recursive.ecore.gen.refinery</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.examples.recursive.ecore.gen.strategy</module>
+	<module>../../../composer/examples/plugins/org.polarsys.kitalpha.composer.m2t.componentsample.to.html</module>
+	
+	<!-- detachment -->
+	<module>../../../detachment/plugins/org.polarsys.kitalpha.model.common.commands</module>
+	<module>../../../detachment/plugins/org.polarsys.kitalpha.model.common.commands.contrib.backup</module>
+	<module>../../../detachment/plugins/org.polarsys.kitalpha.model.common.commands.contrib.modelresources</module>
+	<module>../../../detachment/plugins/org.polarsys.kitalpha.model.common.commands.contrib.refresh</module>
+	<module>../../../detachment/plugins/org.polarsys.kitalpha.model.common.commands.contrib.resourcesChecker</module>
+	<module>../../../detachment/plugins/org.polarsys.kitalpha.model.common.commands.contrib.unknownreferences</module>
+	<module>../../../detachment/plugins/org.polarsys.kitalpha.model.common.commands.contrib.viewpoint.representation</module>
+	<module>../../../detachment/plugins/org.polarsys.kitalpha.model.common.commands.contrib.viewpoints</module>
+	<module>../../../detachment/plugins/org.polarsys.kitalpha.model.common.contrib.unknownreference.metadata</module>
+	<module>../../../detachment/plugins/org.polarsys.kitalpha.model.common.precondition</module>
+	<module>../../../detachment/plugins/org.polarsys.kitalpha.model.common.scrutiny</module>
+	<module>../../../detachment/plugins/org.polarsys.kitalpha.model.common.scrutiny.contrib.modelresources</module>
+	<module>../../../detachment/plugins/org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences</module>
+	<module>../../../detachment/plugins/org.polarsys.kitalpha.model.common.scrutiny.contrib.viewpoints</module>
+	<module>../../../detachment/plugins/org.polarsys.kitalpha.model.common.share</module>
+	<module>../../../detachment/plugins/org.polarsys.kitalpha.model.common.ui.contrib.modelresource</module>
+	<module>../../../detachment/plugins/org.polarsys.kitalpha.model.common.ui.menu</module>
+	<module>../../../detachment/plugins/org.polarsys.kitalpha.model.detachment.ui</module>
+	<module>../../../detachment/plugins/org.polarsys.kitalpha.model.detachment.ui.contrib.unknownreferences</module>
+	<module>../../../detachment/plugins/org.polarsys.kitalpha.model.detachment.ui.contrib.viewpoints</module>
+	
+	<!-- diagrams -->
+	<module>../../../diagrams/plugins/org.polarsys.kitalpha.ecore.diagram</module>
+	<module>../../../diagrams/plugins/org.polarsys.kitalpha.egf.genchain.diagram</module>
+	<module>../../../diagrams/plugins/org.polarsys.kitalpha.emde.diagram</module>
+	
+	<!-- docgen -->
+	<module>../../../Docgen/business/plugins/org.polarsys.kitalpha.doc.gen.business.core</module>
+	<module>../../../Docgen/business/plugins/org.polarsys.kitalpha.doc.gen.business.core.preference</module>
+	<module>../../../Docgen/business/plugins/org.polarsys.kitalpha.doc.gen.business.core.ui</module>
+	<module>../../../Docgen/business/plugins/org.polarsys.kitalpha.doc.gen.business.ecore</module>
+	<module>../../../Docgen/business/plugins/org.polarsys.kitalpha.doc.gen.business.ecore.genchain</module>
+	<module>../../../Docgen/business/plugins/org.polarsys.kitalpha.doc.gen.business.ecore.genchain.edit</module>
+	
+	<!-- emde -->
+	<module>../../../emde/plugins/org.polarsys.kitalpha.emde</module>
+	<module>../../../emde/plugins/org.polarsys.kitalpha.emde.egf</module>
+	<module>../../../emde/plugins/org.polarsys.kitalpha.emde.genchain</module>
+	<module>../../../emde/plugins/org.polarsys.kitalpha.emde.genchain.model</module>
+	<module>../../../emde/plugins/org.polarsys.kitalpha.emde.genchain.model.edit</module>
+	<module>../../../emde/plugins/org.polarsys.kitalpha.emde.model</module>
+	<module>../../../emde/plugins/org.polarsys.kitalpha.emde.model.edit</module>
+	<module>../../../emde/plugins/org.polarsys.kitalpha.emde.portfolio.emf.egf</module>
+	<module>../../../emde/plugins/org.polarsys.kitalpha.emde.ui</module>
+	<module>../../../emde/plugins/org.polarsys.kitalpha.emde.xmi</module>
+	
+	<!-- emde integration -->
+	<module>../../../emde/integration/plugins/org.polarsys.kitalpha.emde.explorer.contextual</module>
+	
+	<!-- emde examples -->
+	<module>../../../emde/examples/plugins/org.polarsys.kitalpha.emde.example.simplecomponent</module>
+	<module>../../../emde/examples/plugins/org.polarsys.kitalpha.emde.example.simplecomponent.egf</module>
+	<module>../../../emde/examples/plugins/org.polarsys.kitalpha.emde.example.simplecomponent.model</module>
+	<module>../../../emde/examples/plugins/org.polarsys.kitalpha.emde.example.simplecomponent.model.edit</module>
+	<module>../../../emde/examples/plugins/org.polarsys.kitalpha.emde.example.simplecomponent.model.editor</module>
+	<module>../../../emde/examples/plugins/org.polarsys.kitalpha.emde.example.simplecomponent.performance</module>
+	<module>../../../emde/examples/plugins/org.polarsys.kitalpha.emde.example.simplecomponent.performance.egf</module>
+	<module>../../../emde/examples/plugins/org.polarsys.kitalpha.emde.example.simplecomponent.performance.model</module>
+	<module>../../../emde/examples/plugins/org.polarsys.kitalpha.emde.example.simplecomponent.performance.model.edit</module>
+	<module>../../../emde/examples/plugins/org.polarsys.kitalpha.emde.example.simplecomponent.safety</module>
+	<module>../../../emde/examples/plugins/org.polarsys.kitalpha.emde.example.simplecomponent.safety.egf</module>
+	<module>../../../emde/examples/plugins/org.polarsys.kitalpha.emde.example.simplecomponent.safety.model</module>
+	<module>../../../emde/examples/plugins/org.polarsys.kitalpha.emde.example.simplecomponent.safety.model.edit</module>
+	
+	<!-- patterns -->
+	<module>../../../patterns/plugins/org.polarsys.kitalpha.patterns.emde</module>
+	<module>../../../patterns/plugins/org.polarsys.kitalpha.patterns.emde.gen</module>
+	<module>../../../patterns/plugins/org.polarsys.kitalpha.patterns.emde.gen.edit</module>
+	
+	<!-- product -->
+	<module>../../../product/plugins/org.polarsys.kitalpha.product</module>
+	
+	<!-- report -->
+	<module>../../../report/plugins/org.polarsys.kitalpha.report</module>
+	<module>../../../report/plugins/org.polarsys.kitalpha.report.model</module>
+	<module>../../../report/plugins/org.polarsys.kitalpha.report.model.edit</module>
+	<module>../../../report/plugins/org.polarsys.kitalpha.report.ui</module>
+	
+	<!-- report examples -->
+	<module>../../../report/examples/plugins/org.polarsys.kitalpha.report.example.customization</module>
+	<module>../../../report/examples/plugins/org.polarsys.kitalpha.report.example.customization.egf</module>
+	<module>../../../report/examples/plugins/org.polarsys.kitalpha.report.example.customization.model</module>
+	<module>../../../report/examples/plugins/org.polarsys.kitalpha.report.example.customization.model.edit</module>
+	
+	<!-- resource reuse -->
+	<module>../../../resource reuse/plugins/org.polarsys.kitalpha.resourcereuse</module>
+	<module>../../../resource reuse/plugins/org.polarsys.kitalpha.resourcereuse.emfscheme</module>
+	<module>../../../resource reuse/plugins/org.polarsys.kitalpha.resourcereuse.emfscheme.dialog</module>
+	<module>../../../resource reuse/plugins/org.polarsys.kitalpha.resourcereuse.emfscheme.ui</module>
+	<module>../../../resource reuse/plugins/org.polarsys.kitalpha.resourcereuse.emfscheme.utils</module>
+	<module>../../../resource reuse/plugins/org.polarsys.kitalpha.resourcereuse.ui</module>
+	
+	<!-- richtext -->
+	<module>../../../richtext/plugins/org.polarsys.kitalpha.richtext.common</module>
+	<module>../../../richtext/plugins/org.polarsys.kitalpha.richtext.nebula.widget</module>
+	<module>../../../richtext/plugins/org.polarsys.kitalpha.richtext.widget</module>
+	<module>../../../richtext/plugins/org.polarsys.kitalpha.richtext.widget.ext</module>
+	<module>../../../richtext/plugins/org.polarsys.kitalpha.richtext.widget.tools</module>
+	<module>../../../richtext/plugins/org.polarsys.kitalpha.richtext.widget.tools.ext.strategies</module>
+	
+	<!-- transposer -->
+	<module>../../../transposer/plugins/org.polarsys.kitalpha.transposer.analyzer</module>
+	<module>../../../transposer/plugins/org.polarsys.kitalpha.transposer.analyzer.ecore</module>
+	<module>../../../transposer/plugins/org.polarsys.kitalpha.transposer.analyzer.fcore</module>
+	<module>../../../transposer/plugins/org.polarsys.kitalpha.transposer.analyzer.generation.chain</module>
+	<module>../../../transposer/plugins/org.polarsys.kitalpha.transposer.analyzer.graph.edit</module>
+	<module>../../../transposer/plugins/org.polarsys.kitalpha.transposer.analyzer.graph.editor</module>
+	<module>../../../transposer/plugins/org.polarsys.kitalpha.transposer.core</module>
+	<module>../../../transposer/plugins/org.polarsys.kitalpha.transposer.emf.toolbox</module>
+	<module>../../../transposer/plugins/org.polarsys.kitalpha.transposer.rules.handler</module>
+	<module>../../../transposer/plugins/org.polarsys.kitalpha.transposer.rules.handler.ecore</module>
+	<module>../../../transposer/plugins/org.polarsys.kitalpha.transposer.rules.handler.fcore</module>
+	<module>../../../transposer/plugins/org.polarsys.kitalpha.transposer.rules.handler.generation.chain</module>
+	<module>../../../transposer/plugins/org.polarsys.kitalpha.transposer.rules.handler.mapping.edit</module>
+	<module>../../../transposer/plugins/org.polarsys.kitalpha.transposer.rules.handler.mapping.editor</module>
+	<module>../../../transposer/plugins/org.polarsys.kitalpha.transposer.scheduler</module>
+	<module>../../../transposer/plugins/org.polarsys.kitalpha.transposer.transformation</module>
+	<module>../../../transposer/plugins/org.polarsys.kitalpha.transposer.transformation.emf</module>
+	<module>../../../transposer/plugins/org.polarsys.kitalpha.transposer.transformation.emf.traces</module>
+	<module>../../../transposer/plugins/org.polarsys.kitalpha.transposer.transformation.emf.traces.ecore</module>
+	<module>../../../transposer/plugins/org.polarsys.kitalpha.transposer.transformation.emf.traces.edit</module>
+	<module>../../../transposer/plugins/org.polarsys.kitalpha.transposer.transformation.emf.traces.editor</module>
+	<module>../../../transposer/plugins/org.polarsys.kitalpha.transposer.transformation.emf.traces.fcore</module>
+	<module>../../../transposer/plugins/org.polarsys.kitalpha.transposer.transformation.emf.traces.generation.chain</module>
+	<module>../../../transposer/plugins/org.polarsys.kitalpha.transposer.ui</module>
+	
+	<!-- transposer examples -->
+	<module>../../../transposer/examples/plugins/org.polarsys.kitalpha.transposer.componentsample.importer</module>
+	<module>../../../transposer/examples/plugins/org.polarsys.kitalpha.transposer.examples</module>
+	<module>../../../transposer/examples/plugins/org.polarsys.kitalpha.transposer.examples.m2m.uml.to.ecore</module>
+	<module>../../../transposer/examples/plugins/org.polarsys.kitalpha.transposer.examples.m2m.uml.to.ecore.extended</module>
+	<module>../../../transposer/examples/plugins/org.polarsys.kitalpha.transposer.m2m.componentsample.to.uml</module>
+	<module>../../../transposer/examples/plugins/org.polarsys.kitalpha.transposer.m2m.simplecomponent.ecore</module>
+	<module>../../../transposer/examples/plugins/org.polarsys.kitalpha.transposer.m2m.uml.to.componentsample</module>
+  </modules>
+</project>
+

@@ -156,19 +156,7 @@
   	   </properties>
       <modules>
       	<!-- module core -->
-      	<module>../../plugins/org.polarsys.kitalpha.releng.aggregator.core</module>
-        <!-- module TP -->
-        <module>../../plugins/org.polarsys.kitalpha.releng.targets</module>
-        <!-- module Runtime -->
-        <module>../../plugins/org.polarsys.kitalpha.releng.aggregator.runtime</module>
-        <!-- module SDK -->
-        <module>../../plugins/org.polarsys.kitalpha.releng.aggregator.sdk</module>
-        <!-- module Product -->
-        <module>../../plugins/org.polarsys.kitalpha.releng.aggregator.product</module>
-        <!-- module Examples -->
-        <module>../../plugins/org.polarsys.kitalpha.releng.aggregator.examples</module>
-        <!-- module Sample Component -->
-        <module>../../plugins/org.polarsys.kitalpha.releng.aggregator.samplecomponent</module>
+      	<module>../../plugins/org.polarsys.kitalpha.releng.aggregator.sonar</module>
     </modules>
   </profile>
  </profiles>
