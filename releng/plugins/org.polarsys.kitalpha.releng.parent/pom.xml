@@ -57,7 +57,7 @@
 		<sonar.java.source>8</sonar.java.source>
 		
 		<sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
-		<!-- <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis> -->
+		<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
 		<sonar.jacoco.release>0.7.4.201502262128</sonar.jacoco.release>
 		<sonar.jacoco.reportPath>${coverage.destFile}</sonar.jacoco.reportPath>
 		<rcptt-maven-version>2.1.0</rcptt-maven-version>
