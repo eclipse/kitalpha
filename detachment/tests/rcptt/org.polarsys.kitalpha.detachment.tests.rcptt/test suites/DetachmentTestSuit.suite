@@ -5,7 +5,7 @@ Element-Type: testsuite
 Element-Version: 2.0
 Id: _GNAGQHXcEea2Ve0UEUBuKQ
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 12/1/17 4:57 PM
+Save-Time: 12/13/17 10:48 AM
 
 ------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8
 Content-Type: text/testcase
@@ -29,5 +29,8 @@ _6XbC8LDBEeaPxMtdcBu6Pg	// kind: 'test' name: 'SessionOpenedWithSiriusPreference
 _lffSIA_1EeelGOkyatCORw	// kind: 'test' name: 'Detachment_00024' path: '../test cases/Detachment_00024/Detachment_00024.test'
 _5mvtIBBqEeeIb6T5EKtzmg	// kind: 'test' name: 'Detachment_00025' path: '../test cases/Detachment_00025/Detachment_00025.test'
 _PnQQ0H2hEee2APpZQTlB7g	// kind: 'test' name: 'UnknownReferenceWithoutRefreshSiriusDiagramPreference' path: '../test cases/UnknownReferenceWithoutRefreshSiriusDiagramPreference.test'
+_MfI_wHw1Eee2APpZQTlB7g	// kind: 'test' name: 'UnkownReferencesWithSiriusReferencesDeactivated' path: '../test cases/UnkownReferencesWithSiriusReferencesDeactivated.test'
+_IYDRMN_jEeeSMpjLLwI5Jw	// kind: 'test' name: 'UnreferenceNotUsedViewpoint' path: '../test cases/UnreferenceNotUsedViewpoint.test'
+_52_XUN_pEeeSMpjLLwI5Jw	// kind: 'test' name: 'DetachReferencedNotUsedViewpoints' path: '../test cases/DetachReferencedNotUsedViewpoints.test'
 
 ------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8--
