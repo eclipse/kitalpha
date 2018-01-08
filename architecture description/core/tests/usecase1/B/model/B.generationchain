@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<generationChain:GenerationChain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:genchainExtension="http://www.polarsys.org/kitalpha/emde/genchain/1.0.0" xmlns:generationChain="http://www.eclipse.org/egf/1.0.0/generationChain" name="B" factoryComponentName="org.eclipse.egf.chain.b">
+  <elements xsi:type="generationChain:GenerationChain" name="B">
+    <elements xsi:type="genchainExtension:EmdeGeneration" name="Kitalpha eMDE Emf Generation for B" modelPath="/B/model/B.ecore" generateModel="true" generateEdit="true" pluginName="b.b" basePackage="B"/>
+  </elements>
+</generationChain:GenerationChain>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	<extension
+	     point="org.eclipse.ui.views">
+	  <view
+	        name="My A Viewpoint"
+	        icon="icons/view.gif"
+	        category="org.polarsys.kitalpha.view.additional.category"
+	        class="org.polarsys.kitalpha.ad.viewpoint.ui.views.ViewpointView"
+	        id="org.polarsys.kitalpha.viewpoint.a.view"
+	        resourceId="org.polarsys.kitalpha.viewpoint.a"/>
+	</extension>
+	<extension
+	     point="org.polarsys.kitalpha.resourcereuse.resources">
+	  <resource
+	        domain="AF"
+	        id="org.polarsys.kitalpha.viewpoint.a"
+	        tags="vp"
+	        name="My A Viewpoint"
+	        path="/org.polarsys.kitalpha.viewpoint.a/model/myaviewpoint.vp#_th0tkN6NEeeie40PdFSWJA"/>
+	</extension>
+	<extension
+	     point="org.eclipse.ui.propertiesView">
+	        <excludeSources
+	           id="org.polarsys.kitalpha.viewpoint.a.view">
+	        </excludeSources>
+	</extension>
+</plugin>
+

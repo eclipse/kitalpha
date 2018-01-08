@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016, 2017 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,12 +15,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.polarsys.kitalpha.ad.common.AD_Log;
 import org.polarsys.kitalpha.ad.common.utils.URIHelper;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.Listener2;
@@ -36,6 +34,75 @@ import org.polarsys.kitalpha.emde.extension.preferences.PreferenceModelExtension
  */
 public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 
+	private final class StateManager implements Listener2 {
+		private final ResourceSet set = new ResourceSetImpl();
+
+		@Override
+		public void handleReferencing(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
+			sendEvent(vp, true);
+		}
+
+		@Override
+		public void handleUnReferencing(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
+			sendEvent(vp, false);
+		}
+
+		@Override
+		public void handleActivation(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
+			sendEvent(vp, true);
+		}
+
+		@Override
+		public void handleInactivation(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
+			sendEvent(vp, false);
+		}
+
+		private void sendEvent(org.polarsys.kitalpha.resourcereuse.model.Resource res, boolean enable) {
+			URI uri = URIHelper.createURI(res);
+			Viewpoint vp = (Viewpoint) set.getEObject(uri, true);
+			if (vp == null || vp.eIsProxy()) {
+				return;
+			}
+			if (vp.getMetamodel() != null) {
+				for (EPackage pack : vp.getMetamodel().getModels()) {
+					String nsURI = pack.getNsURI();
+					extension2state.put(nsURI, extension2state.containsKey(nsURI) ? (extension2state.get(nsURI) || enable) :enable);
+					managedByAF2state.put(nsURI, Boolean.TRUE);
+					fireExtensionEvent(nsURI, enable);
+				}
+			}
+			for (Resource r : set.getResources()) {
+				r.unload();
+			}
+			set.getResources().clear();
+		}
+	}
+
+	// quick solution clear all data
+	private final class ReloadListener implements Listener2 {
+		@Override
+		public void handleReferencing(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
+			// nothing to do
+		}
+
+		@Override
+		public void handleUnReferencing(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
+			extension2state.clear();
+			managedByAF2state.clear();
+			ModelExtensionDescriptor.INSTANCE.loadExtensibleModels();
+		}
+
+		@Override
+		public void handleActivation(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
+			// nothing to do
+		}
+
+		@Override
+		public void handleInactivation(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
+			// nothing to do
+		}
+	}
+
 	public AFModelExtensionManager() {
 		super();
 	}
@@ -44,72 +111,8 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 	public void setTarget(ResourceSet target) {
 		super.setTarget(target);
 		ViewpointManager mgr = ViewpointManager.getInstance(getTarget());
-		mgr.addListener(new Listener2() {
-
-			private final ResourceSet set = new ResourceSetImpl();
-
-			@Override
-			public void handleReferencing(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
-				sendEvent(vp, true);
-			}
-
-			@Override
-			public void handleUnReferencing(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
-				sendEvent(vp, false);
-			}
-
-			@Override
-			public void handleActivation(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
-				sendEvent(vp, true);
-			}
-
-			@Override
-			public void handleInactivation(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
-				sendEvent(vp, false);
-			}
-
-			private void sendEvent(org.polarsys.kitalpha.resourcereuse.model.Resource res, boolean enable) {
-				URI uri = URIHelper.createURI(res);
-				Viewpoint vp = (Viewpoint) set.getEObject(uri, true);
-				if (vp == null || vp.eIsProxy())
-					return;
-				if (vp.getMetamodel() != null) {
-					for (EPackage pack : vp.getMetamodel().getModels()) {
-						extension2state.put(pack.getNsURI(), enable);
-						managedByAF2state.put(pack.getNsURI(), Boolean.TRUE);
-						fireExtensionEvent(pack.getNsURI(), enable);
-					}
-				}
-				for (Resource r : set.getResources()) {
-					r.unload();
-				}
-				set.getResources().clear();
-			}
-
-		});
-
-		// TODO: quick solution clear all data
-		mgr.addListener(new Listener2() {
-
-			@Override
-			public void handleReferencing(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
-			}
-
-			@Override
-			public void handleUnReferencing(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
-				extension2state.clear();
-				managedByAF2state.clear();
-				ModelExtensionDescriptor.INSTANCE.loadExtensibleModels();
-			}
-
-			@Override
-			public void handleActivation(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
-			}
-
-			@Override
-			public void handleInactivation(org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
-			}
-		});
+		mgr.addListener(new StateManager());
+		mgr.addListener(new ReloadListener());
 	}
 
 	private final Map<String, Boolean> extension2state = new HashMap<String, Boolean>();
@@ -117,56 +120,47 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 
 	@Override
 	public boolean canDisableExtensionModel(ExtendedModel extended) {
-		if (getTarget() == null)
-			throw new UnsupportedOperationException();
-		String nsURI = extended.getName();
-		if (managedByAF2state.containsKey(nsURI))
-			return !managedByAF2state.get(nsURI);
-		ResourceSet set = new ResourceSetImpl();
-		try {
-			for (org.polarsys.kitalpha.resourcereuse.model.Resource res : ViewpointManager.getAvailableViewpoints()) {
-				try {
-					URI uri = URIHelper.createURI(res);
-					Viewpoint vp = (Viewpoint) set.getEObject(uri, true);
-					if (vp.getMetamodel() != null) {
-						for (EPackage pack : vp.getMetamodel().getModels()) {
-							// if the model is owned by a VP we must tell yes or
-							// no.
-							// In other case let the super implementation answer
-							if (pack.getNsURI() != null && pack.getNsURI().equals(nsURI)) {
-								managedByAF2state.put(nsURI, Boolean.TRUE);
-								return false;
-							}
-						}
-					}
-				} catch (Exception e) {
-					handleBrokenViewpoint(res, e);
-				}
-			}
-		} finally {
-			for (Resource r : set.getResources()) {
-				r.unload();
-			}
-			set.getResources().clear();
+		if (getTarget() == null) {
+			throw new IllegalStateException();
 		}
-		boolean result = super.canDisableExtensionModel(extended);
+		String nsURI = extended.getName();
+		if (managedByAF2state.containsKey(nsURI)) {
+			return !managedByAF2state.get(nsURI);
+		}
+		computeManagedByAFFlag();
+		if (managedByAF2state.containsKey(nsURI)) {
+			return !managedByAF2state.get(nsURI);
+		}
 		managedByAF2state.put(nsURI, Boolean.FALSE);
-		return result;
+		return super.canDisableExtensionModel(extended);
 	}
 
 	/*
-	 * TODO we're loading all VP models at any calls ... What is the cost ?
+	 * we're loading all VP models at any calls ... What is the cost ?
 	 * Tested on model with 14 000 logical components, we need to cache result
 	 * of computations
 	 */
+	@Override
 	public boolean isExtensionModelDisabled(ExtendedModel extended) {
-		if (getTarget() == null)
-			throw new UnsupportedOperationException();
+		if (getTarget() == null) {
+			throw new IllegalStateException();
+		}
 
 		String nsURI = extended.getName();
 		if (extension2state.containsKey(nsURI)) {
 			return !extension2state.get(nsURI);
 		}
+		computeExtensionFlag();
+		if (extension2state.containsKey(nsURI)) {
+			return !extension2state.get(nsURI);
+		}
+
+		boolean extensionModelDisabled = super.isExtensionModelDisabled(extended);
+		extension2state.put(nsURI, !extensionModelDisabled);
+		return extensionModelDisabled;
+	}
+
+	private void computeManagedByAFFlag() {
 		ResourceSet set = new ResourceSetImpl();
 		try {
 			for (org.polarsys.kitalpha.resourcereuse.model.Resource res : ViewpointManager.getAvailableViewpoints()) {
@@ -178,13 +172,8 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 							// if the model is owned by a VP we must tell yes or
 							// no.
 							// In other case let the super implementation answer
-							if (pack.getNsURI() != null && pack.getNsURI().equals(nsURI)) {
-								ViewpointManager instance = ViewpointManager.getInstance(getTarget());
-								boolean used = instance.isUsed(res.getId());
-								boolean filtered = instance.isFiltered(res.getId());
-								boolean active = used && !filtered;
-								extension2state.put(nsURI, active);
-								return !active;
+							if (pack.getNsURI() != null ) {
+								managedByAF2state.put(pack.getNsURI(), Boolean.TRUE);
 							}
 						}
 					}
@@ -198,9 +187,48 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 			}
 			set.getResources().clear();
 		}
-		boolean extensionModelDisabled = super.isExtensionModelDisabled(extended);
-		extension2state.put(nsURI, !extensionModelDisabled);
-		return extensionModelDisabled;
+	}
+
+
+	private void computeExtensionFlag() {
+		ResourceSet set = new ResourceSetImpl();
+		try {
+			for (org.polarsys.kitalpha.resourcereuse.model.Resource res : ViewpointManager.getAvailableViewpoints()) {
+				try {
+					URI uri = URIHelper.createURI(res);
+					Viewpoint vp = (Viewpoint) set.getEObject(uri, true);
+					if (vp.getMetamodel() != null) {
+						computeExtensionFlag(vp);
+					}
+				} catch (Exception e) {
+					handleBrokenViewpoint(res, e);
+				}
+			}
+		} finally {
+			for (Resource r : set.getResources()) {
+				r.unload();
+			}
+			set.getResources().clear();
+		}
+	}
+
+	private void computeExtensionFlag(Viewpoint vp) {
+		for (EPackage pack : vp.getMetamodel().getModels()) {
+			// if the model is owned by a VP we must tell yes or
+			// no.
+			// In other case let the super implementation answer
+			String nsURI2 = pack.getNsURI();
+			if (nsURI2 != null ) {
+				ViewpointManager instance = ViewpointManager.getInstance(getTarget());
+				boolean used = instance.isUsed(vp.getVpid());
+				boolean filtered = instance.isFiltered(vp.getVpid());
+				boolean active = used && !filtered;
+				if (extension2state.containsKey(nsURI2))
+					active =active || extension2state.get(nsURI2);
+				extension2state.put(nsURI2, active);
+				
+			}
+		}
 	}
 
 	protected void handleBrokenViewpoint(org.polarsys.kitalpha.resourcereuse.model.Resource res, Exception e) {

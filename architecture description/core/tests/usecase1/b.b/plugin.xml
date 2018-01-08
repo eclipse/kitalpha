@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+
+
+<plugin>
+
+   
+<!--@generated-->
+  <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated B -->
+      <package class="B.B.BPackage" genModel="model/B.genmodel" uri="bbb"/>
+   </extension>
+
+   
+<!--@generated-->
+  <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated B -->
+      <parser class="B.B.util.BResourceFactoryImpl" type="b"/>
+   </extension>
+
+</plugin>
