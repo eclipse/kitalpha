@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -10,12 +10,7 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.richtext.widget.factory;
 
-import java.io.IOException;
-
 import org.eclipse.core.runtime.Assert;
-import org.eclipse.core.runtime.FileLocator;
-import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.nebula.widgets.richtext.RichTextEditorConfiguration;
 import org.eclipse.swt.widgets.Composite;
 import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
@@ -36,6 +31,7 @@ import org.polarsys.kitalpha.richtext.widget.tools.utils.Constants;
  * Factory to create and configure MDE rich Text
  * 
  * @author Faycal Abka
+ * @author Minh Tu TON THAT
  *
  */
 public class MDERichTextFactory {
@@ -173,15 +169,10 @@ public class MDERichTextFactory {
 
 	protected void addToolbarItems(MDENebulaBasedRichTextWidget widget) {
 		
-		try {
-			widget.addToolbarItem(widget, MDERichTextConstants.MDE_OPEN_EDITOR, MDERichTextConstants.MDE_OPEN_EDITOR, "Open in Editor", //$NON-NLS-1$ 
-					MDERichTextConstants.MDE_ENABLE_EDITING_TOOLBAR,
-					FileLocator.toFileURL(MDERichTextHelper.getURL(Activator.PLUGIN_ID, "icons/openInEditor.gif")), //$NON-NLS-1$
-					new OpenInEditorHandler());
-		} catch (IOException e) {
-			Status status = new Status(IStatus.WARNING, Activator.PLUGIN_ID, e.getMessage(), e);
-			Activator.getDefault().getLog().log(status);
-		}
+		widget.addToolbarItem(widget, MDERichTextConstants.MDE_OPEN_EDITOR, MDERichTextConstants.MDE_OPEN_EDITOR, "Open in Editor", //$NON-NLS-1$ 
+				MDERichTextConstants.MDE_ENABLE_EDITING_TOOLBAR,
+				MDERichTextHelper.getURL(Activator.PLUGIN_ID, "icons/openInEditor.gif"), //$NON-NLS-1$
+				new OpenInEditorHandler());
 		
 		addEditorToolbarItems(widget);
 	}
