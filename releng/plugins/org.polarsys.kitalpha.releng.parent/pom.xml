@@ -15,7 +15,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	
 	<prerequisites>
-		<maven>3.3</maven>
+		<maven>3.0</maven>
 	</prerequisites>
 	
 	<name>Kitalpha</name>
