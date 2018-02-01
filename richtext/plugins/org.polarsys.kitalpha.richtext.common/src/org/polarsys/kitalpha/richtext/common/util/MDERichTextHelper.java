@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -10,6 +10,9 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.richtext.common.util;
 
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 
 import org.eclipse.core.resources.IFile;
@@ -17,14 +20,17 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.osgi.framework.Bundle;
+import org.polarsys.kitalpha.richtext.common.internal.Activator;
 
 /**
  * 
  * @author Faycal Abka
+ * @author Minh Tu TON THAT
  *
  */
 public class MDERichTextHelper {
@@ -68,11 +74,21 @@ public class MDERichTextHelper {
 	 */
 	public static URL getURL(String bundleId, String path){
 		Bundle bundle = Platform.getBundle(bundleId);
-		URL url = null;
+		URL escapedURL = null;
 		if (bundle != null){
-			url = FileLocator.find(bundle, new Path(path), null);
-			return url;
+			URL url = FileLocator.find(bundle, new Path(path), null);
+			try {
+				URL resolvedUrl = FileLocator.toFileURL(url);
+				URI uri = new URI(resolvedUrl.getProtocol(), resolvedUrl.getPath(), null);
+				escapedURL = uri.toURL();
+			} catch (IOException e) {
+				Status status = new Status(Status.ERROR, Activator.PLUGIN_ID, e.getMessage(), e);
+				Activator.getDefault().getLog().log(status);
+			} catch (URISyntaxException e) {
+				Status status = new Status(Status.ERROR, Activator.PLUGIN_ID, e.getMessage(), e);
+				Activator.getDefault().getLog().log(status);
+			}
 		}
-		return url;
+		return escapedURL;
 	}
 }
