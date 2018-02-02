@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -25,6 +25,7 @@ import org.polarsys.kitalpha.richtext.common.util.MDERichTextHelper;
 /**
  * 
  * @author Faycal Abka
+ * @author Minh Tu Ton That
  *
  */
 public abstract class AbstractMDERichTextWidget implements MDERichTextWidget {
@@ -35,6 +36,7 @@ public abstract class AbstractMDERichTextWidget implements MDERichTextWidget {
 	private EStructuralFeature feature;
 	
 	private SaveStrategy saveStrategy;
+	public static final String WIDGET_SAVED_PROP = "widgetSaved";
 	
 	private final SaveStrategy DEFAULT_SAVE_STRATEGY = new SaveStrategy() {
 		@Override
@@ -95,6 +97,8 @@ public abstract class AbstractMDERichTextWidget implements MDERichTextWidget {
 		String text = getText();
 		if (text != null){
 			getSaveStrategy().save(text, getElement(), getFeature());
+			//Notifies listeners that the save has been done
+			firePropertyChangeEvent(new PropertyChangeEvent(this, WIDGET_SAVED_PROP, null, null));
 		}
 	}
 	
