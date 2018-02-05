@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.jface.window.Window;
+import org.eclipse.sirius.diagram.DSemanticDiagram;
 import org.eclipse.swt.widgets.Display;
 import org.polarsys.kitalpha.richtext.widget.tools.dialogs.FilteredElementTreeSelectionDialog;
 import org.polarsys.kitalpha.richtext.widget.tools.intf.LinkHandler;
@@ -50,7 +51,16 @@ public class ModelElementLinkHandler extends AbstractModelOpenLink implements Li
 				dialog.setTitle(Messages.RichTextWidget_Dialog_Title_Model_Element_Selection);
 				dialog.setMessage(Messages.RichTextWidget_Dialog_Title_Selection_Model_Element);
 
-				EObject root = EcoreUtil.getRootContainer(modelElement);
+				EObject root;
+				// To find the root container, if the selected element is a diagram, use its target instead
+				// otherwise the dialog box will browse the AirdResource.
+				if (modelElement instanceof DSemanticDiagram) {
+					DSemanticDiagram diagram = (DSemanticDiagram) modelElement;
+					root = EcoreUtil.getRootContainer(diagram.getTarget());
+	            } else {
+	            	root = EcoreUtil.getRootContainer(modelElement);
+	            }
+
 				dialog.setInput(root.eResource());
 				if (Window.OK == dialog.open()) {
 					Object result = dialog.getFirstResult();
