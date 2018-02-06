@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -21,27 +21,64 @@ import org.polarsys.kitalpha.richtext.widget.tools.manager.LinkManagerImpl;
 /**
  * 
  * @author Faycal Abka
+ * @author Minh Tu Ton That
  *
  */
 public class ListenerInstaller {
-	
+
 	public void installOpenLinkListener(final MDENebulaBasedRichTextWidget widget) {
 
-		new BrowserFunction(widget.getBrowser(), "openLinks"){ //$NON-NLS-1$
+		new BrowserFunction(widget.getBrowser(), "openLinks") { //$NON-NLS-1$
 			public Object function(Object[] arguments) {
-				if (arguments != null && arguments.length > 0){
+				if (arguments != null && arguments.length > 0) {
 					for (Object object : arguments) {
-						(new LinkManagerImpl(widget)).openLink((String)object);
+						(new LinkManagerImpl(widget)).openLink((String) object);
 					}
 				}
 				return null;
 			};
 		};
-		
+
 		StringBuffer scriptAddMenu = new StringBuffer();
-		
+
 		/*
 		 * Script to be executed
+		 * 
+		 * CKEDITOR.on( 'currentInstance', function(e) {
+		 * 	var isCTRL = false;
+		 * 	CKEDITOR.currentInstance.document.on( 'keydown', function(event)
+		 * 	{
+		 * 		if(event.data.$.keyCode == 17)
+		 * 		isCTRL=true;
+		 * 	});
+		 * 
+		 * 	CKEDITOR.currentInstance.document.on( 'keyup', function(event)
+		 * 	{
+		 * 		if(event.data.$.keyCode == 17)
+		 * 		isCTRL=false;
+		 * 	});
+		 * 
+		 * 	CKEDITOR.currentInstance.document.on('click', function(ev)
+		 * 	{
+		 * 		var element = CKEDITOR.plugins.link.getSelectedLink( CKEDITOR.currentInstance ) || ev.data.element;
+		 * 		if (element!=undefined &&  element.is( 'a' ) ) {
+		 * 			if(isCTRL)
+		 * 			{
+		 * 				openLinks(element.getAttribute('href'));
+		 * 				isCTRL=false;
+		 * 			}
+		 * 		}
+		 * 	});
+		 * 
+		 * 	CKEDITOR.currentInstance.on('doubleclick', function(ev)
+		 * 	{
+		 * 		var element = CKEDITOR.plugins.link.getSelectedLink( CKEDITOR.currentInstance ) || ev.data.element;
+		 * 		if (element!=undefined &&  element.is( 'a' ) ) {
+		 * 			ev.stop();
+		 * 			openLinks(element.getAttribute('href'));
+		 * 		}
+		 * 	}, null, null, 1);
+		 * });
 		 * 
 		 * CKEDITOR.on('instanceReady', function(e) {
     	 *		CKEDITOR.instances.editor.addCommand("openLink", {
@@ -74,8 +111,47 @@ public class ListenerInstaller {
     	 *		});
 		 *	});
 		 */
-
+		
+		// Detect CTRL keydown and keyup event to open links
+		scriptAddMenu.append("CKEDITOR.on( 'currentInstance', function(e) {");
+		scriptAddMenu.append("	var isCTRL = false;");
+		scriptAddMenu.append("	CKEDITOR.currentInstance.document.on( 'keydown', function(event)");
+		scriptAddMenu.append("	{");
+		scriptAddMenu.append("		if(event.data.$.keyCode == 17)");
+		scriptAddMenu.append("		isCTRL=true;");
+		scriptAddMenu.append("	});");
+		
+		scriptAddMenu.append("	CKEDITOR.currentInstance.document.on( 'keyup', function(event)");
+		scriptAddMenu.append("	{");
+		scriptAddMenu.append("		if(event.data.$.keyCode == 17)");
+		scriptAddMenu.append("		isCTRL=false;");
+		scriptAddMenu.append("	});");
+		
+		scriptAddMenu.append("	CKEDITOR.currentInstance.document.on('click', function(event)");
+		scriptAddMenu.append("	{");
+		scriptAddMenu.append("		var element = CKEDITOR.plugins.link.getSelectedLink( CKEDITOR.currentInstance ) || event.data.element;");
+		scriptAddMenu.append("		if (element!=undefined &&  element.is( 'a' ) ) {");
+		scriptAddMenu.append("			if(isCTRL)");
+		scriptAddMenu.append("			{");
+		scriptAddMenu.append("				openLinks(element.getAttribute('href'));");
+		scriptAddMenu.append("				isCTRL=false;");
+		scriptAddMenu.append("			}");
+		scriptAddMenu.append("		}");
+		scriptAddMenu.append("	});");
+		
+		// Override the default double click event of CKEDITOR to open links
+		scriptAddMenu.append("	CKEDITOR.currentInstance.on('doubleclick', function(event)");
+		scriptAddMenu.append("	{");
+		scriptAddMenu.append("		var element = CKEDITOR.plugins.link.getSelectedLink( CKEDITOR.currentInstance ) || event.data.element;");
+		scriptAddMenu.append("		if (element!=undefined &&  element.is( 'a' ) ) {");
+		scriptAddMenu.append("			event.stop();");
+		scriptAddMenu.append("			openLinks(element.getAttribute('href'));");
+		scriptAddMenu.append("		}");
+		scriptAddMenu.append("	}, null, null, 1);");
+		scriptAddMenu.append("});");
+		
 		scriptAddMenu.append("CKEDITOR.on( 'instanceReady', function(e) {");
+			
 		scriptAddMenu.append("CKEDITOR.instances.editor.addCommand(\"openLink\", {");
 		scriptAddMenu.append("exec : function( editor ) {");
 		scriptAddMenu.append("			var linkTag = editor.getSelection().getStartElement().getAscendant('a', true);");
@@ -99,28 +175,24 @@ public class ListenerInstaller {
 		scriptAddMenu.append("	      order : 1");
 		scriptAddMenu.append("	   }});");
 		scriptAddMenu.append("});");
-		
-		if (!widget.executeScript(scriptAddMenu.toString())){
+
+		if (!widget.executeScript(scriptAddMenu.toString())) {
 			Activator.getDefault().getLog().log(new Status(IStatus.WARNING, Activator.PLUGIN_ID, "Rich text widget cannot install the open link command")); //$NON-NLS-1$
 		}
 	}
 
+	public void installSaveListener(final MDENebulaBasedRichTextWidget widget) {
 
-	
-	
-	public void installSaveListener(final MDENebulaBasedRichTextWidget widget){
-		
 		/**
 		 * Callback which save the content at focus out event
 		 */
-		new BrowserFunction(widget.getBrowser(), "saveContent"){ //$NON-NLS-1$
+		new BrowserFunction(widget.getBrowser(), "saveContent") { //$NON-NLS-1$
 			public Object function(Object[] arguments) {
 				widget.saveContent();
 				return null;
 			};
 		};
-		
-		
+
 		/*
 		 * Script:
 		 * 
@@ -128,35 +200,33 @@ public class ListenerInstaller {
          * 		saveContent();
 		 * });
 		 */
-		
-		
+
 		StringBuffer script = new StringBuffer();
-		
+
 		script.append("CKEDITOR.instances.editor.on('blur', function () {");
 		script.append("saveContent();");
 		script.append("});");
-		
-		if (!widget.executeScript(script.toString())){
+
+		if (!widget.executeScript(script.toString())) {
 			Activator.getDefault().getLog().log(new Status(IStatus.WARNING, Activator.PLUGIN_ID, "Rich text widget cannot install the save handler")); //$NON-NLS-1$
 		}
 	}
-	
-	
+
 	public void installChangeNotificationHandlerListener(final MDENebulaBasedRichTextWidget widget) {
-		
+
 		/**
-		 * Fire change content notification to all widgets  
+		 * Fire change content notification to all widgets
 		 */
-		new BrowserFunction(widget.getBrowser(), "changeHandler"){ //$NON-NLS-1$
+		new BrowserFunction(widget.getBrowser(), "changeHandler") { //$NON-NLS-1$
 			public Object function(Object[] arguments) {
 				if (arguments != null && arguments.length > 0) {
 					PropertyChangeEvent event = new PropertyChangeEvent(widget, "widgetContent", null, (String)arguments[0]);
- 					widget.firePropertyChangeEvent(event);
+					widget.firePropertyChangeEvent(event);
 				}
 				return null;
 			};
 		};
-		
+
 		/*
 		 * Script:
 		 * 
@@ -166,16 +236,15 @@ public class ListenerInstaller {
 		 * });
 		 */
 		StringBuffer script = new StringBuffer();
-		
+
 		script.append("CKEDITOR.instances.editor.on('blur', function () {");
 		script.append("changeHandler(CKEDITOR.instances.editor.getData());");
 		script.append("});");
-		
-		if (!widget.executeScript(script.toString())){
+
+		if (!widget.executeScript(script.toString())) {
 			Activator.getDefault().getLog().log(new Status(IStatus.WARNING, Activator.PLUGIN_ID, "Rich text widget cannot install the notification handler")); //$NON-NLS-1$
 		}
 	}
-	
 
 	public void installChangeContentListener(final MDENebulaBasedRichTextWidget widget) {
 
@@ -188,7 +257,7 @@ public class ListenerInstaller {
 		script.append("firePropertyChangeEvent();");
 		script.append("});");
 
-		if (!widget.executeScript(script.toString())){
+		if (!widget.executeScript(script.toString())) {
 			Activator.getDefault().getLog().log(new Status(IStatus.WARNING, Activator.PLUGIN_ID, "Rich text widget cannot install firePropertyChangeEvent handler")); //$NON-NLS-1$
 		};
 	}
