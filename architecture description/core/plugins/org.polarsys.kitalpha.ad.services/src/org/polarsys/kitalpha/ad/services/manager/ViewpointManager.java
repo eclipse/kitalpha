@@ -34,6 +34,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.domain.IEditingDomainProvider;
 import org.eclipse.emf.transaction.util.TransactionUtil;
@@ -72,20 +73,20 @@ public class ViewpointManager {
 	private static final String VIEWPOINT_REFERENCE_ACTION = "Reference.Viewpoint";
 	private static final String VIEWPOINT_UNREFERENCE_ACTION = "Unreference.Viewpoint";
 	
-	private final static List<OverallListener> overallListeners = new ArrayList<OverallListener>();
-	private final static List<OverallListener2> overallListener2s = new ArrayList<OverallListener2>();
-	private final List<Listener> listeners = new ArrayList<Listener>();
-	private final List<Listener2> listener2s = new ArrayList<Listener2>();
+	private static final List<OverallListener> overallListeners = new ArrayList<>();
+	private static final List<OverallListener2> overallListener2s = new ArrayList<>();
+	private final List<Listener> listeners = new ArrayList<>();
+	private final List<Listener2> listener2s = new ArrayList<>();
 	private static final int REFERENCE = 16;
 	private static final int UNREFERENCE = 32;
 	private static final int ACTIVE = 64;
 	private static final int INACTIVE = 128;
-	private final static ViewpointManager nullManager = new NullViewpointManager();
-	private final static Map<ResourceSet, ViewpointManager> instances = new HashMap<ResourceSet, ViewpointManager>();
+	private static final ViewpointManager nullManager = new NullViewpointManager();
+	private static final Map<ResourceSet, ViewpointManager> instances = new HashMap<>();
 	protected static ViewpointFinder VP_FINDER = new CachingFinder();
 
-	private final Map<String, List<String>> dependencies = new HashMap<String, List<String>>();
-	private final Set<String> managed = new HashSet<String>();
+	private final Map<String, List<String>> dependencies = new HashMap<>();
+	private final Set<String> managed = new HashSet<>();
 	private ResourceSet target;
 
 	public static boolean canChangeState(String id) {
@@ -128,7 +129,7 @@ public class ViewpointManager {
 
 	public static Description[] getAvailableViewpointDescriptions() {
 		ResourceSet set = new ResourceSetImpl();
-		List<Description> result = new ArrayList<ViewpointManager.Description>();
+		List<Description> result = new ArrayList<>();
 		try {
 			for (Resource resource : getAvailableViewpoints()) {
 				try {
@@ -188,7 +189,7 @@ public class ViewpointManager {
 			return error;
 		}
 		Map<String, Version> availableViewpoints = computeAvailableViewpointVersions();
-		Map<String, Version> viewpointUsages = new HashMap<String, Version>();  
+		Map<String, Version> viewpointUsages = new HashMap<>();  
 		collectViewpointUsages(viewpointUsages, viewpointMetadata, error);
 
 		for (Entry<String, Version> usage : viewpointUsages.entrySet()) {
@@ -219,7 +220,7 @@ public class ViewpointManager {
 		MultiStatus error = new MultiStatus(Activator.getDefault().getBundle().getSymbolicName(), 0, "Error with used viewpoints", null);
 		Map<String, Version> availableViewpoints = computeAvailableViewpointVersions();
 		ViewpointMetadata viewpointMetadata = MetadataHelper.getViewpointMetadata(context);
-		Map<String, Version> viewpointUsages = new HashMap<String, Version>();  
+		Map<String, Version> viewpointUsages = new HashMap<>();  
 
 		collectViewpointUsages(viewpointUsages, viewpointMetadata, error);
 		
@@ -232,7 +233,7 @@ public class ViewpointManager {
 	}
 	
 	private static Map<String, Version> computeAvailableViewpointVersions() {
-		Map<String, Version> availableViewpoints = new HashMap<String, Version>();
+		Map<String, Version> availableViewpoints = new HashMap<>();
 		ResourceSet set = new ResourceSetImpl();
 		Resource resource = null;
 		try {
@@ -285,7 +286,7 @@ public class ViewpointManager {
 	}
 
 	/**
-	 * @deprecated replaced by isUsed(String id) and isFiltered(String id)
+	 * @Deprecated replaced by isUsed(String id) and isFiltered(String id)
 	 */
 	public boolean isActive(String id) {
 		return isUsed(id) && !isFiltered(id);
@@ -293,7 +294,7 @@ public class ViewpointManager {
 
 	
 	/**
-	 * @deprecated replaced by isReferenced(String id)
+	 * @Deprecated replaced by isReferenced(String id)
 	 */
 	public boolean isUsed(String id) {
 		return isReferenced(id);
@@ -304,7 +305,7 @@ public class ViewpointManager {
 	}
 
 	/**
-	 * @deprecated replaced by isInactive(String id)
+	 * @Deprecated replaced by isInactive(String id)
 	 */
 	public boolean isFiltered(String id) {
 		return isInactive(id);
@@ -315,7 +316,7 @@ public class ViewpointManager {
 	}
 
 	/**
-	 * @deprecated replaced by setActivationState(String id)
+	 * @Deprecated replaced by setActivationState(String id)
 	 */
 	public void filter(String id, boolean state) throws ViewpointActivationException {
 		setActivationState(id, !state);
@@ -339,7 +340,7 @@ public class ViewpointManager {
 
 	/**
 	 * @throws EvaluationException 
-	 * @deprecated replaced by reference(String id)
+	 * @Deprecated replaced by reference(String id)
 	 */
 	public void activate(String id) throws ViewpointActivationException, EvaluationException {
 		reference(id);
@@ -347,7 +348,7 @@ public class ViewpointManager {
 
 	/**
 	 * @throws EvaluationException 
-	 * @deprecated replaced by reference(String id)
+	 * @Deprecated replaced by reference(String id)
 	 */
 	public void startUse(String id) throws ViewpointActivationException, EvaluationException {
 		reference(id);
@@ -389,7 +390,8 @@ public class ViewpointManager {
 		EditingDomain editingDomain = TransactionUtil.getEditingDomain(target);
 		if (editingDomain == null && target instanceof IEditingDomainProvider)
 			editingDomain = ((IEditingDomainProvider) target).getEditingDomain();
-
+		if (editingDomain == null)
+			throw new IllegalStateException("Cannot find editingDomain");
 		editingDomain.getCommandStack().execute(command);
 	}
 
@@ -398,13 +400,17 @@ public class ViewpointManager {
 		URI uri = URIHelper.createURI(vpResource);
 		Viewpoint vp = (Viewpoint) set.getEObject(uri, true);
 		List<String> vpDependencies = dependencies.get(vpResource.getId());
-		if (vpDependencies == null)
-			dependencies.put(vpResource.getId(), vpDependencies = new ArrayList<String>());
+		if (vpDependencies == null) {
+			vpDependencies = new ArrayList<>();
+			dependencies.put(vpResource.getId(), vpDependencies);
+		}
 		vpDependencies.clear();
-		List<Viewpoint> dependencies = new ArrayList<Viewpoint>(10);
-		dependencies.addAll(vp.getDependencies());
-		dependencies.addAll(vp.getParents());
-		for (Viewpoint dep : dependencies) {
+		List<Viewpoint> dependenciesTmp = new ArrayList<>(10);
+		dependenciesTmp.addAll(vp.getDependencies());
+		dependenciesTmp.addAll(vp.getParents());
+		for (Viewpoint dep : dependenciesTmp) {
+			if (dep.eIsProxy())
+				throw new ViewpointActivationException("Unresolved viewpoint: "+EcoreUtil.getURI(dep));
 			String id = dep.getId();
 			vpDependencies.add(id);
 			if (!isReferenced(id))
@@ -439,7 +445,7 @@ public class ViewpointManager {
 	}
 
 	protected void desactivateBundle(String id) throws ViewpointActivationException {
-
+		// let subclasses provide some action
 	}
 
 	/**
@@ -448,7 +454,7 @@ public class ViewpointManager {
 	 * @param id
 	 * @throws ViewpointActivationException
 	 * @throws EvaluationException 
-	 * @deprecated replaced by stopUse(String id)
+	 * @Deprecated replaced by stopUse(String id)
 	 */
 	public void desactivate(String id) throws ViewpointActivationException, EvaluationException {
 		stopUse(id);
@@ -460,7 +466,7 @@ public class ViewpointManager {
 	 * @param id
 	 * @throws ViewpointActivationException
 	 * @throws EvaluationException 
-	 * @deprecated use unReference()
+	 * @Deprecated use unReference()
 	 * 
 	 */
 	public void stopUse(String id) throws ViewpointActivationException, EvaluationException {
@@ -550,6 +556,8 @@ public class ViewpointManager {
 				case ACTIVE:
 					l.hasBeenDisplayed(vpResource);
 					break;
+				default:
+					AD_Log.getDefault().logError("Unexpected event kind: "+event);
 				}
 			}catch (Exception e) {
 				AD_Log.getDefault().logError(Messages.Viewpoint_Manager_error_9, e);				
@@ -570,6 +578,8 @@ public class ViewpointManager {
 				case INACTIVE:
 					l.handleInactivation(vpResource);
 					break;
+				default:
+					AD_Log.getDefault().logError("Unexpected event kind: "+event);
 				}
 			}catch (Exception e) {
 				AD_Log.getDefault().logError(Messages.Viewpoint_Manager_error_9, e);				
@@ -590,6 +600,8 @@ public class ViewpointManager {
 				case ACTIVE:
 					l.hasBeenDisplayed(target, vpResource);
 					break;
+				default:
+					AD_Log.getDefault().logError("Unexpected event kind: "+event);
 				}
 			}catch (Exception e) {
 				AD_Log.getDefault().logError(Messages.Viewpoint_Manager_error_9, e);				
@@ -611,6 +623,8 @@ public class ViewpointManager {
 				case INACTIVE:
 					l.handleInactivation(target, vpResource);
 					break;
+				default:
+					AD_Log.getDefault().logError("Unexpected event kind: "+event);
 				}
 			}catch (Exception e) {
 				AD_Log.getDefault().logError(Messages.Viewpoint_Manager_error_9, e);				
@@ -635,6 +649,7 @@ public class ViewpointManager {
 			fireEvent(vpResource, visible ? ACTIVE : INACTIVE);
 		}
 
+		@Override
 		public void undo() {
 			MetadataHelper.getViewpointMetadata(target).setActivationSate(vpResource.getId(), !visible);
 			fireEvent(vpResource, !visible ? ACTIVE : INACTIVE);
@@ -645,6 +660,7 @@ public class ViewpointManager {
 			execute();
 		}
 
+		@Override
 		protected boolean prepare() {
 			return true;
 		}
@@ -682,6 +698,7 @@ public class ViewpointManager {
 			execute();
 		}
 
+		@Override
 		protected boolean prepare() {
 			return true;
 		}
@@ -749,7 +766,8 @@ public class ViewpointManager {
 			return nullManager;
 		ViewpointManager instance = instances.get(ctx);
 		if (instance == null) {
-			instances.put(ctx, instance = createInstance());
+			instance = createInstance();
+			instances.put(ctx, instance);
 			ctx.eAdapters().add(new AdapterImpl() {
 
 				@Override
@@ -811,9 +829,9 @@ public class ViewpointManager {
 
 	}
 
-	public static abstract class ViewpointFinder {
+	public abstract static class ViewpointFinder {
 		
-		private final Set<String> discarded = new HashSet<String>();
+		private final Set<String> discarded = new HashSet<>();
 		
 		public Resource[] getAvailableViewpoints() {
 			SearchCriteria searchCriteria = new SearchCriteria();
@@ -822,7 +840,7 @@ public class ViewpointManager {
 			Resource[] resources = ResourceReuse.createHelper().getResources(searchCriteria);
 			if (discarded.isEmpty())
 				return resources;
-			List<Resource> result = new ArrayList<Resource>(resources.length);
+			List<Resource> result = new ArrayList<>(resources.length);
 			for (Resource res : resources) {
 				if (!discarded.contains(res.getId()))
 					result.add(res);
@@ -853,19 +871,21 @@ public class ViewpointManager {
 
 		private Resource[] availableViewpoints;
 		
+		@Override
 		public Resource[] getAvailableViewpoints() {
 			if (availableViewpoints == null)
 				availableViewpoints = super.getAvailableViewpoints();
 			return availableViewpoints;
 		}
 		
+		@Override
 		protected void pinError(String id) {
 			super.pinError(id);
 			if (availableViewpoints != null)
 			{
 				for (Resource r : availableViewpoints) {
 					if (id.equals(r.getId())) {
-						List<Resource> result = new ArrayList<Resource>();
+						List<Resource> result = new ArrayList<>();
 						result.addAll(Arrays.asList(availableViewpoints));
 						result.remove(r);
 						availableViewpoints = result.toArray(new Resource[result.size()]);
@@ -890,23 +910,32 @@ public class ViewpointManager {
 			super();
 		}
 
+		@Override
 		public void unReference(String id) throws ViewpointActivationException {
+			// this implementation is expected to do nothing
 		}
 
+		@Override
 		public void reference(String id) throws ViewpointActivationException {
+			// this implementation is expected to do nothing
 		}
 
+		@Override
 		public boolean hasMetadata() {
 			return false;
 		}
 
+		@Override
 		public void setActivationState(String id, boolean active) throws ViewpointActivationException {
+			// this implementation is expected to do nothing
 		}
 
+		@Override
 		public boolean isInactive(String id) {
 			return false;
 		}
 
+		@Override
 		public boolean isReferenced(String id) {
 			return false;
 		}
