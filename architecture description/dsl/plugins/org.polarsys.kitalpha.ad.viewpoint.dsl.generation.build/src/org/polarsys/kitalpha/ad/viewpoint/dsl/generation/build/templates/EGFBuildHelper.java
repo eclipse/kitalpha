@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -15,6 +15,8 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
 import org.eclipse.egf.portfolio.eclipse.build.buildcore.BuildcoreFactory;
 import org.eclipse.egf.portfolio.eclipse.build.buildcore.Chain;
@@ -424,15 +426,15 @@ public class EGFBuildHelper {
 		SVNGenerationLocation svnGenerationLocation = BuildscmFactory.eINSTANCE.createSVNGenerationLocation();
 
 		if (generationLocation != null){
-			for(String key: generationLocation.keySet()){
-
-				svnGenerationLocation.setFolderName(key);
+			Set<Entry<String, String>> entrySet = generationLocation.entrySet();
+			for (Entry<String, String> entry : entrySet) {
+				svnGenerationLocation.setFolderName(entry.getKey());
 				SVNLocation svnLocation = BuildscmFactory.eINSTANCE.createSVNLocation();
 
-				String url = generationLocation.get(key);
+				String url = generationLocation.get(entry.getKey());
 				if (url != null){
 
-					svnLocation.setUrl(generationLocation.get(key));
+					svnLocation.setUrl(generationLocation.get(entry.getKey()));
 					svnLocation.setLocalPath(lvpsShortName + "_releng");
 
 				} else {
@@ -475,8 +477,10 @@ public class EGFBuildHelper {
 	private static void setHudsonUsers(HudsonDeployment deployment,
 			Map<String, String> users) {
 		if (users != null) {
-			for (String login : users.keySet()) {
+			Set<Entry<String, String>> entrySet = users.entrySet();
+			for (Entry<String, String> entry : entrySet) {
 				User user = BuilddeployFactory.eINSTANCE.createUser();
+				String login = entry.getKey();
 				user.setLogin(login);
 				String permission = users.get(login);
 
@@ -500,7 +504,9 @@ public class EGFBuildHelper {
 			Map<String, String> properties) {
 
 		if (properties != null) {
-			for (String key : properties.keySet()) {
+			Set<Entry<String, String>> entrySet = properties.entrySet();
+			for (Entry<String, String> entry : entrySet) {
+				String key = entry.getKey();
 				if (key.equals("antName")) {
 					String tmp = properties.get(key);
 					if (tmp != null && !tmp.equals("")) {
@@ -549,5 +555,4 @@ public class EGFBuildHelper {
 			}
 		}
 	}
-
 }

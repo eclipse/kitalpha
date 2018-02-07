@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -13,6 +13,7 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.services.project.wizards;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 import org.eclipse.core.resources.IProject;
@@ -190,9 +191,10 @@ public class NewDSLVpProjectSecondPage extends WizardPage {
 		
 		if (availableCreator != null && availableCreator.size() != 0)
 		{
-			Set<String> idSet = availableCreator.keySet();
-			for (String id : idSet)
-				lAvailableCreators.add(availableCreator.get(id));
+			Set<Entry<String, String>> entrySet = availableCreator.entrySet();
+			for (Entry<String, String> entry : entrySet) {
+				lAvailableCreators.add(entry.getValue());
+			}
 		}
 		
 		// Create the Button composite
@@ -237,10 +239,9 @@ public class NewDSLVpProjectSecondPage extends WizardPage {
 		
 		if (selectedCreator != null && selectedCreator.size() != 0)
 		{
-			Set<String> idSet = selectedCreator.keySet();
-			for (String id : idSet)
-			{
-				lSelectedCreators.add(selectedCreator.get(id));
+			Set<Entry<String, String>> entrySet = selectedCreator.entrySet();
+			for (Entry<String, String> entry : entrySet) {
+				lSelectedCreators.add(entry.getValue());
 				((NewDSLVpProjectWizard)getWizard()).setSelectedConcreteSyntaxCreators(selectedCreator);
 			}
 		}

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,6 +17,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
@@ -66,6 +67,11 @@ public class ExtensibleModel extends Model<ExtensibleModel> {
 	@Override
 	public boolean equals(Object other_p) {
 		return (other_p instanceof ExtensibleModel) && ((ExtensibleModel) other_p).getPath().equals(getPath());
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(this, getPath());
 	}
 
 	/**

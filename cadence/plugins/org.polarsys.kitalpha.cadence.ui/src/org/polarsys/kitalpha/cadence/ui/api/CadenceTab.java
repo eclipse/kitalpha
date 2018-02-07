@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -12,6 +12,8 @@ package org.polarsys.kitalpha.cadence.ui.api;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
@@ -122,7 +124,7 @@ public class CadenceTab extends AbstractLaunchConfigurationTab {
 			String order = CadenceRegistry.getOrderNumber(elt);
 			if(order == null)
 				order = "1000" + elt.hashCode(); ////$NON-NLS-1$
-			l.put(new Integer(order)+ elt.hashCode(),elt);
+			l.put(Integer.valueOf(order) + elt.hashCode(),elt);
 		}
 	
 		
@@ -159,19 +161,24 @@ public class CadenceTab extends AbstractLaunchConfigurationTab {
 	}
 
 	private void setParameters(Map<String, String> restore) {
-		for (String wkElt : restore.keySet()) {
-			CadenceItem widget = g.get(wkElt);
-			String acs = restore.get(wkElt);
-			widget.setParameters(acs);
+		Set<Entry<String, String>> entrySet = restore.entrySet();
+		for (Entry<String, String> entry : entrySet) {
+			CadenceItem widget = g.get(entry.getKey());
+			String activityParams = entry.getValue();
+			widget.setParameters(activityParams);
 		}
 	}
 
 	private Map<String, String> getParameters() {
 		Map<String, String> save1 = new HashMap<String, String>();
-		for (String wkElt : g.keySet()) {
-			String parameters = g.get(wkElt).getParameters();
-			save1.put(wkElt, parameters);
+		
+		Set<Entry<String, CadenceItem>> entrySet = g.entrySet();
+		for (Entry<String, CadenceItem> entry : entrySet) {
+			String key = entry.getKey();
+			String parameters = g.get(key).getParameters();
+			save1.put(key, parameters);
 		}
+		
 		return save1;
 	}
 

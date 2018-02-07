@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,7 +39,9 @@ public class UniqueUIContainerNameInSection implements IAdditionalConstraint {
 		UIContainer current = (UIContainer) data;
 		
 		if (current.getName() == null)
+		{
 			return ValidationStatus.Ok;
+		}
 		
 		// Get the UIContainer used to generate the Section
 		UIContainer section = getSection(current);
@@ -50,8 +52,8 @@ public class UniqueUIContainerNameInSection implements IAdditionalConstraint {
 		for (UIContainer uiContainer : parent.getSubContainers()) 
 		{
 			String name = uiContainer.getName();
-			if (referenceObject != uiContainer &&
-					referenceObject.getName().toLowerCase().equals(name.toLowerCase()))
+			if (referenceObject != null && !referenceObject.equals(uiContainer) &&
+					referenceObject.getName().equalsIgnoreCase(name.toLowerCase()))
 			{
 				duplicatedName = name;
 				return true;
@@ -60,8 +62,10 @@ public class UniqueUIContainerNameInSection implements IAdditionalConstraint {
 			boolean error = false;
 
 			error = duplicateContainersName(uiContainer, referenceObject);
-			if (error)
+			if (error) 
+			{
 				return true;
+			}
 		}
 
 		return false;
@@ -69,7 +73,7 @@ public class UniqueUIContainerNameInSection implements IAdditionalConstraint {
 
 	private UIContainer getSection(UIContainer uiField){
 		UIContainer result = (UIContainer) uiField.eContainer();
-		while (result instanceof UIContainer && ! (result.eContainer() instanceof UI))
+		while (!(result.eContainer() instanceof UI))
 			result = (UIContainer) result.eContainer();
 		
 		return result;
