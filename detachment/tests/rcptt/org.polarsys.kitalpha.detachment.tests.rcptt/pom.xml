@@ -37,7 +37,7 @@
 				<extensions>true</extensions>
 				<configuration>
 					<runner>
-						<version>2.1.0-SNAPSHOT</version>
+						<version>${rcptt-maven-version}</version>
 					</runner>
 					<aut>
 						<explicit>
