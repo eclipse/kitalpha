@@ -6,7 +6,7 @@ Element-Type: testcase
 Element-Version: 3.0
 External-Reference: https://bugs.polarsys.org/show_bug.cgi?id=1305
 Id: _HRvCULI4EeapGbjeeI_tcw
-Runtime-Version: 2.2.0.201706152316
+Runtime-Version: 2.1.0.201606221726
 Save-Time: 12/12/17 2:22 PM
 Testcase-Type: ecl
 
