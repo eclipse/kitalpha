@@ -19,7 +19,9 @@ import org.eclipse.nebula.widgets.richtext.RichTextEditorConfiguration;
 import org.eclipse.swt.browser.Browser;
 import org.eclipse.swt.browser.ProgressEvent;
 import org.eclipse.swt.browser.ProgressListener;
+import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.FocusListener;
+import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.widgets.Composite;
 import org.polarsys.kitalpha.richtext.common.impl.BrowserBasedMDERichTextWidgetImpl;
@@ -112,7 +114,15 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 	 * ckEditor
 	 */
 	protected void installListenersOnReadyInstance(){
-		//Do nothing
+	    final MDENebulaBasedRichTextWidget widget = this;
+	    this.addModifyListener(new ModifyListener() {
+          
+          @Override
+          public void modifyText(ModifyEvent e) {
+            widget.saveContent();
+          }
+        });
+	    
 	}
 
 	@Override
