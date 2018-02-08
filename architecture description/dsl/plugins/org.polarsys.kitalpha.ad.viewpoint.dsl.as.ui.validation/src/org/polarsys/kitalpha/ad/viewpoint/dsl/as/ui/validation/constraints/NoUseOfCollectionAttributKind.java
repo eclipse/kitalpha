@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,7 +34,7 @@ public class NoUseOfCollectionAttributKind implements IAdditionalConstraint {
 		FieldMapping fieldMapping = (FieldMapping) object;
 		AbstractFeature abstractFeature = fieldMapping.getUI_Field_Mapped_To();
 		
-		if (abstractFeature != null && abstractFeature instanceof Attribute)
+		if (abstractFeature instanceof Attribute)
 		{
 			Attribute attribute = (Attribute) abstractFeature;
 			Cardinalities cardinalities = attribute.getCardinality();
@@ -61,13 +61,17 @@ public class NoUseOfCollectionAttributKind implements IAdditionalConstraint {
 			FieldMapping fieldMapping = (FieldMapping) object;
 			Attribute attribute = (Attribute) fieldMapping.getUI_Field_Mapped_To();
 			String attributeName = attribute.getName();
-			if (attributeName == null || ( attributeName!= null && attributeName.length() == 0))
+			if (attributeName == null || (attributeName.length() == 0)) 
+			{
 				attributeName = Messages.Validation_VpSpec_Attribute_NoName;
+			}
 
 			Class clazz = (Class)attribute.eContainer();
 			String clazzName = clazz.getName();
-			if (clazzName == null || ( clazzName!= null && clazzName.length() == 0))
+			if (clazzName == null || (clazzName.length() == 0)) 
+			{
 				clazzName = Messages.Validation_VpSpec_Class_NoName;
+			}
 			
 			return Messages.bind(Messages.Validation_UIField_Attribute_CollectionKind, clazzName, attributeName);
 		}

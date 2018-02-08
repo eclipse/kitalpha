@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -427,21 +427,21 @@ public class PDEUtility {
 		// Rewrite string version of required bundles
 		if (available_dependecies.size() > 0 && updateBundles)
 		{
-			String newRequiredBundles = "";
+			StringBuffer newRequiredBundles = new StringBuffer(""); //$NON-NLS-1$
 			if (available_dependecies.size() == 1)
 			{
-				newRequiredBundles = available_dependecies.get(0);
+				newRequiredBundles.append(available_dependecies.get(0));
 			}
 			else
 			{
-				newRequiredBundles = available_dependecies.get(0)+",";
+				newRequiredBundles.append(available_dependecies.get(0)).append(",");
 				for (int i = 1; i < available_dependecies.size()-1; i++) 
 				{
-					newRequiredBundles = newRequiredBundles +"\n " + available_dependecies.get(i) +",";
+					newRequiredBundles.append(newRequiredBundles).append("\n ").append(available_dependecies.get(i)).append(",");
 				}
-				newRequiredBundles = newRequiredBundles +"\n " + available_dependecies.get(available_dependecies.size()-1); 
+				newRequiredBundles.append(newRequiredBundles).append("\n ").append(available_dependecies.get(available_dependecies.size()-1)); 
 			}
-			return newRequiredBundles;
+			return newRequiredBundles.toString();
 		}
 		return available_requiredBundles;
 	}
@@ -509,21 +509,21 @@ public class PDEUtility {
 		
 		if (available_dependecies.size() > 0 && updateBundles)
 		{
-			String newRequiredBundles = "";
+			StringBuffer newRequiredBundles = new StringBuffer("");
 			if (available_dependecies.size() == 1)
 			{
-				newRequiredBundles = available_dependecies.get(0);
+				newRequiredBundles.append(available_dependecies.get(0));
 			}
 			else
 			{
-				newRequiredBundles = available_dependecies.get(0)+",";
+				newRequiredBundles.append(available_dependecies.get(0)).append(",");
 				for (int i = 1; i < available_dependecies.size()-1; i++) 
 				{
-					newRequiredBundles = newRequiredBundles +"\n " + available_dependecies.get(i) +",";
+					newRequiredBundles.append(newRequiredBundles).append("\n ").append(available_dependecies.get(i)).append(",");
 				}
-				newRequiredBundles = newRequiredBundles +"\n " + available_dependecies.get(available_dependecies.size()-1); 
+				newRequiredBundles.append(newRequiredBundles).append("\n ").append(available_dependecies.get(available_dependecies.size()-1)); 
 			}
-			return newRequiredBundles;
+			return newRequiredBundles.toString();
 		}
 		return available_requiredBundles;
 	}
@@ -590,17 +590,18 @@ public class PDEUtility {
 			
 			if (exportPackages_new_l.size() > 0)
 			{
-				String exportPackages_new_s = " " + exportPackages_new_l.get(0);
+				StringBuffer exportPackages_new_s = new StringBuffer(" ");
+				exportPackages_new_s.append(exportPackages_new_l.get(0));
 				if (exportPackages_new_l.size() > 1)
 				{
 					for (int i = 1; i < exportPackages_new_l.size(); i++) 
 					{
-						exportPackages_new_s += ", \n";
-						exportPackages_new_s += " " + exportPackages_new_l.get(i);
+						exportPackages_new_s.append(", \n");
+						exportPackages_new_s.append(" ").append(exportPackages_new_l.get(i));
 					}
 				}
 				
-				return exportPackages_new_s;
+				return exportPackages_new_s.toString();
 			}
 		}
 		return exportedJavaPackage;

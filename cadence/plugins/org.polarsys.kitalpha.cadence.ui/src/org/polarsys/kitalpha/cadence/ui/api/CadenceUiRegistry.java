@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -11,6 +11,8 @@
 package org.polarsys.kitalpha.cadence.ui.api;
 
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
 import org.eclipse.core.runtime.ILog;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -57,9 +59,10 @@ public class CadenceUiRegistry {
       // Add business parameters to the map
       for (String activityID : workflowParameters.getActivitiesID()) { // key == activities_id
         ActivityParameters activityparameters = workflowParameters.getActivityParameters(activityID);
-        for (String parameterID : params.keySet()) {
-          activityparameters.addParameter(params.get(parameterID));
-        }
+        Set<Entry<String, GenericParameter<?>>> entrySet = params.entrySet();
+        for (Entry<String, GenericParameter<?>> entry : entrySet) {
+			activityparameters.addParameter(entry.getValue());
+		}
       }
       CadenceLauncher.cadence(workflow_id, workflowElement_id, workflowParameters, monitor_p);
     } catch (Exception e) {

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,14 +39,11 @@ public class UIDataSourceAndMappingConsistency implements IAdditionalConstraint 
 	public ValidationStatus validationRules(Object data) {
 		EObject parent = ((EObject)data).eContainer();
 
-		while (! (parent instanceof UI))
-		{
-			parent = parent.eContainer();
-		}
+		parent = getUIAncestor(parent);
 
 		Class clazz = null; 
 
-		if (parent instanceof UI)
+		if (parent != null)
 		{
 			UI ui = (UI) parent;
 			EObject ds = ui.getUI_DataSource();
@@ -72,16 +69,32 @@ public class UIDataSourceAndMappingConsistency implements IAdditionalConstraint 
 			
 			AbstractFeature abstractFeature = fMapping.getUI_Field_Mapped_To();
 
-			for (AbstractFeature iAbstractFeature : clazz.getVP_Class_Attributes()) 
+			for (AbstractFeature iAbstractFeature : clazz.getVP_Class_Attributes())
+			{
 				if (iAbstractFeature.equals(abstractFeature))
+				{
 					return ValidationStatus.Ok;
+				}
+			}
 
 			for (AbstractFeature iAbstractFeature : clazz.getVP_Classes_Associations()) 
+			{
 				if (iAbstractFeature.equals(abstractFeature))
+				{
 					return ValidationStatus.Ok;
+				}
+			}
 		}	
 
 		return ValidationStatus.Error;
+	}
+
+	private EObject getUIAncestor(EObject parent) {
+		while (! (parent instanceof UI))
+		{
+			parent = parent.eContainer();
+		}
+		return parent;
 	}
 
 	public String getMessage(ValidationStatus status, Object object) {

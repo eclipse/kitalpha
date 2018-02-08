@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,6 +9,8 @@
  *   Thales Global Services S.A.S - initial API and implementation
  *******************************************************************************/
 package org.polarsys.kitalpha.emde.extension;
+
+import java.util.Objects;
 
 import org.eclipse.core.runtime.Assert;
 import org.polarsys.kitalpha.emde.extension.registry.URIFactory;
@@ -48,6 +50,11 @@ public class ExtendedModel extends Model<ExtendedModel> {
 	@Override
 	public boolean equals(Object other_p) {
 		return (other_p instanceof ExtendedModel) && ((ExtendedModel) other_p).getPath().equals(getPath());
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(this, getPath());
 	}
 
 	/**

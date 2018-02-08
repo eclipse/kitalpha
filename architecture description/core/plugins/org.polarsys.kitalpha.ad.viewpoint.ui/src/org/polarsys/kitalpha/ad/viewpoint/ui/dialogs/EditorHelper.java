@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -11,6 +11,7 @@
 
 package org.polarsys.kitalpha.ad.viewpoint.ui.dialogs;
 
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Collections;
 import java.util.Iterator;
@@ -46,6 +47,8 @@ import org.osgi.framework.Bundle;
 import org.polarsys.kitalpha.ad.common.AD_Log;
 
 public class EditorHelper {
+	
+	private static final URI ROOT_URI = URI.createURI("//#"); //$NON-NLS-1$
 
 	public static void setSelectionToViewer(IEditorPart part, List<EObject> eObjects) {
 		// Do we have something to process
@@ -53,25 +56,16 @@ public class EditorHelper {
 			return;
 		}
 		// Select
-		try {
-			Class<?>[] types = new Class[] { Class.forName("java.util.Collection") }; //$NON-NLS-1$              
-			Method method = part.getClass().getMethod("setSelectionToViewer", types); //$NON-NLS-1$
-			if (method != null) {
-				Object[] params = new Object[] { eObjects };
-				method.invoke(part, params);
-			}
-		} catch (Throwable t) {
-			AD_Log.getDefault().logError(t);
-		}
+		invokeSetSelectionToViewer(part, new Object[] { eObjects }); //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	public static void setSelectionToViewer(IEditorPart part, URI uri) {
 		// Do we have something to process
-		if (uri == null || uri.hasFragment() == false) {
+		if (uri == null || !uri.hasFragment()) {
 			return;
 		}
 		// Whether or not could we have an EditingDomain
-		if (part == null || part instanceof IEditingDomainProvider == false) {
+		if (!(part instanceof IEditingDomainProvider)) {
 			return;
 		}
 		EditingDomain editingDomain = ((IEditingDomainProvider) part).getEditingDomain();
@@ -81,15 +75,26 @@ public class EditorHelper {
 			return;
 		}
 		// Select
+		invokeSetSelectionToViewer(part, new Object[] { Collections.singletonList(eObject) }); //$NON-NLS-1$ //$NON-NLS-2$
+	}
+	
+	private static void invokeSetSelectionToViewer(IEditorPart part, Object[] params) {
+		invokeMethod(part, "java.util.Collection", "setSelectionToViewer", params); //$NON-NLS-1$ //$NON-NLS-2$
+	}
+	
+	private static void invokeMethod(IEditorPart part, String className, String methodName, Object[] params) {
 		try {
-			Class<?>[] types = new Class[] { Class.forName("java.util.Collection") }; //$NON-NLS-1$              
-			Method method = part.getClass().getMethod("setSelectionToViewer", types); //$NON-NLS-1$
+			Class<?>[] types = new Class[] { Class.forName(className) }; //$NON-NLS-1$              
+			Method method = part.getClass().getMethod(methodName, types); //$NON-NLS-1$
 			if (method != null) {
-				Object[] params = new Object[] { Collections.singletonList(eObject) };
 				method.invoke(part, params);
 			}
-		} catch (Throwable t) {
-			// Nothing to do
+		} catch (IllegalAccessException 	| 
+				IllegalArgumentException 	| 
+				InvocationTargetException	|
+				ClassNotFoundException		|
+				NoSuchMethodException t) {
+			AD_Log.getDefault().logError(t);
 		}
 	}
 
@@ -118,7 +123,7 @@ public class EditorHelper {
 				if (editorPart != null) {
 					setSelectionToViewer(editorPart, entry.getValue());
 				}
-			} catch (Throwable t) {
+			} catch (PartInitException t) {
 				AD_Log.getDefault().logError(t);
 			}
 		}
@@ -135,7 +140,7 @@ public class EditorHelper {
 	}
 
 	public static IEditorInput getEditorInput(URI uri) {
-		if (uri == null || uri.isEmpty() || "//#".equals(uri)) { //$NON-NLS-1$
+		if (uri == null || uri.isEmpty() || ROOT_URI.equals(uri)) { 
 			return null;
 		}
 		if (uri.isPlatformResource()) {
