@@ -34,7 +34,7 @@ import org.polarsys.kitalpha.doc.gen.business.core.messages.Messages;
  */
 public class GenerationGlobalScope {
 	/** Singleton property **/
-	private static GenerationGlobalScope INSTANCE;
+	private static GenerationGlobalScope instance;
 	
 	/** A copy of the original {@link Resource}. This resource is doesn't contains out of scope 
 	 *  model element if {@link #referencesStrategy} is equals to {@link ScopeReferencesStrategy#DONT_EXPORT} **/
@@ -64,10 +64,10 @@ public class GenerationGlobalScope {
 	 * Singleton getter.
 	 */
 	public static GenerationGlobalScope getInstance(){
-		if (INSTANCE == null)
-			INSTANCE = new GenerationGlobalScope();
+		if (instance == null)
+			instance = new GenerationGlobalScope();
 		
-		return INSTANCE;
+		return instance;
 	}
 	
 	/**
@@ -85,23 +85,20 @@ public class GenerationGlobalScope {
 
 		if (this.referencesStrategy.equals(ScopeReferencesStrategy.DONT_EXPORT))
 		{
-			if (this.domain != null)
+			if (this.domain != null && this.scopedResource != null)
 			{
-				if (this.scopedResource != null)
-				{
-					this.domain.getCommandStack().execute(new RecordingCommand(domain) {
-						@Override
-						protected void doExecute() {
-							scopedResource.unload();
-						}
-					});
+				this.domain.getCommandStack().execute(new RecordingCommand(domain) {
+					@Override
+					protected void doExecute() {
+						scopedResource.unload();
+					}
+				});
 
-					cleanCopiedData();
+				cleanCopiedData();
 
-					this.domain = null;
-					this.scopedResource = null;
-					this.doComputeScopedResource = true;
-				}
+				this.domain = null;
+				this.scopedResource = null;
+				this.doComputeScopedResource = true;
 			}
 			this.referencesStrategy = ScopeReferencesStrategy.EXPORT;
 		}
@@ -220,11 +217,11 @@ public class GenerationGlobalScope {
 	 * @throws ScopeException this exception is thrown if an out of scope model element can't be 
 	 * deleted from the resource
 	 */
-	protected final Resource computeScopedResource() throws ScopeException{
+	protected final Resource computeScopedResource() {
 		if (this.referencesStrategy.equals(ScopeReferencesStrategy.DONT_EXPORT))
 		{
-			final EObject copy_ModelRootElement = this.scopedResource.getContents().get(0);
-			final EList<EObject> objectOutOfScope = getObjectOutOfScope(copy_ModelRootElement);
+			final EObject copyModelRootElement = this.scopedResource.getContents().get(0);
+			final EList<EObject> objectOutOfScope = getObjectOutOfScope(copyModelRootElement);
 			for (final EObject eObject : objectOutOfScope) 
 			{
 				this.domain.getCommandStack().execute(new RecordingCommand(domain) {
@@ -247,10 +244,9 @@ public class GenerationGlobalScope {
 	 * @return The copied resource
 	 */
 	protected final Resource copyResource(final EObject anySourceModelElement){
-		this.domain = (TransactionalEditingDomainImpl) TransactionUtil.getEditingDomain(anySourceModelElement);
+		this.domain = TransactionUtil.getEditingDomain(anySourceModelElement);
 		if (this.domain != null)
 		{
-//			final Resource resource = domain.createResource("platform:/resource/dumy/resource.melodymodeller");
 			final Resource resource = domain.createResource(anySourceModelElement.eResource().getURI().toString());
 			this.domain.getResourceSet().getResources().add(resource);
 			this.copier = new EcoreUtil.Copier();
@@ -259,9 +255,9 @@ public class GenerationGlobalScope {
 				protected void doExecute() {
 					resource.getContents().clear();
 					final EObject rootContainer = EcoreUtil.getRootContainer(anySourceModelElement);
-					final EObject copy_ModelRootElement = copier.copy(rootContainer);
+					final EObject copyModelRootElement = copier.copy(rootContainer);
 					copier.copyReferences();
-					resource.getContents().add(copy_ModelRootElement);
+					resource.getContents().add(copyModelRootElement);
 				}
 			});
 			return resource;
@@ -270,9 +266,9 @@ public class GenerationGlobalScope {
 		{
 			final Resource resource = new ResourceImpl();
 			final EObject rootContainer = EcoreUtil.getRootContainer(anySourceModelElement);
-			final EObject copy_ModelRootElement = copier.copy(rootContainer);
+			final EObject copyModelRootElement = copier.copy(rootContainer);
 			copier.copyReferences();
-			resource.getContents().add(copy_ModelRootElement);
+			resource.getContents().add(copyModelRootElement);
 			return resource;
 		}
 	}
@@ -287,7 +283,7 @@ public class GenerationGlobalScope {
 		final TreeIterator<EObject> eAllContents = modelRootElement.eAllContents();
 		while (eAllContents.hasNext()) 
 		{
-			final EObject eObject = (EObject) eAllContents.next();
+			final EObject eObject = eAllContents.next();
 			if (! GenerationGlobalScope.getInstance().inScope(eObject, true))
 				result.add(eObject);
 		}
@@ -313,7 +309,7 @@ public class GenerationGlobalScope {
 		
 		// Compute Scope for the current element and add it to the global scope
 		List<EObject> scope = ScopeCompute.computeScope(modelElement, this.elementStrategy);
-		if (scope.isEmpty() == false)
+		if (! scope.isEmpty())
 			addToGenerationScope(scope);
 
 		scopeStatus = ScopeStatus.LIMITED;
@@ -322,7 +318,7 @@ public class GenerationGlobalScope {
 	/**
 	 * Scope Setter.
 	 * @param scope the scope
-	 * TODO: Check if an element is already in scope or not.
+	 *  *Check if an element is already in scope or not.*
 	 */
 	private void addToGenerationScope(List<EObject> scope){
 		if (scope != null )
@@ -357,7 +353,7 @@ public class GenerationGlobalScope {
 		if (scopeStatus.equals(ScopeStatus.NOT_LIMITED))
 			return true;
 		
-		if (false == generationScope.isEmpty())
+		if (! generationScope.isEmpty())
 		{
 			final boolean exists = generationScope.contains(eObject);
 			if (exists)

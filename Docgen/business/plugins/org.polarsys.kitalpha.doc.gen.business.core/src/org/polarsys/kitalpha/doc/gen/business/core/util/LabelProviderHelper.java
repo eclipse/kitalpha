@@ -30,14 +30,20 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.ImageData;
 import org.eclipse.swt.graphics.ImageLoader;
+import org.polarsys.kitalpha.doc.gen.business.core.Activator;
 
 public class LabelProviderHelper {
 	private static final String PNG = "png";
 	private static final String GIF = "gif";
 	private static final String ICON_FOLDER_NAME = "icon";
 	private static final NullProgressMonitor MONITOR = new NullProgressMonitor();
-//	private static GenDocExtendedImageRegistry IMAGE_REGISTRY;
 
+	/**
+	 * Hidden consctructor
+	 */
+	private LabelProviderHelper(){
+	}
+	
 	public static void initImageRegistry() {
 		GenDocExtendedImageRegistry.getInstance();
 	}
@@ -55,15 +61,12 @@ public class LabelProviderHelper {
 						.getText(eObject);
 		}
 		return result;
-		// return eObject.eResource().getURIFragment(eObject);
 	}
 
 	private static Object getIItemLabelProvider(EObject eObject) {
 		ComposedAdapterFactory adapterFactory = new ComposedAdapterFactory(
 				ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
-		final Object eObjectLabelProvider = adapterFactory.adapt(eObject,
-				IItemLabelProvider.class);
-		return eObjectLabelProvider;
+		return adapterFactory.adapt(eObject, IItemLabelProvider.class);
 	}
 
 	public static Object getImage(EObject eObject) {
@@ -72,18 +75,16 @@ public class LabelProviderHelper {
 			return ((IItemLabelProvider) eObjectLabelProvider)
 					.getImage(eObject);
 		return null;
-		// return EObjectLabelProviderHelper.getImage(eObject);
 	}
 
 	public static String getImageFileName(EObject eObject, String projectName,
 			String folderName) {
 		final Object imageObject = getImage(eObject);
 		final Image image = getImageFromObject(imageObject);
-		// final Image image = getImage(eObject);
 		final String simpleFileName = getImageName(imageObject);
 		final IFolder iconFolder = getIconFolder(projectName, folderName);
 		IFile iconFile = iconFolder.getFile(simpleFileName);
-		if (iconFile.exists() == false) {
+		if (! iconFile.exists()) {
 			String withoutFileExtension = iconFile.getLocation().toString()
 					.replace(iconFile.getLocation().getFileExtension(), "");
 
@@ -114,7 +115,7 @@ public class LabelProviderHelper {
 		try {
 			return GenDocExtendedImageRegistry.getInstance().getImage(object);
 		} catch (Exception e) {
-			e.printStackTrace();
+			Activator.logWarning(e.getMessage(), e);
 			return null;
 		}
 	}
@@ -134,7 +135,7 @@ public class LabelProviderHelper {
 					loader.save(fileName, SWT.IMAGE_GIF);
 				}
 			} catch (Exception e) {
-				e.printStackTrace();
+				Activator.logWarning(e.getMessage(), e);
 			}
 			return ResourcesPlugin.getWorkspace().getRoot().getFileForLocation(
 					new Path(fileName));
@@ -149,12 +150,12 @@ public class LabelProviderHelper {
 		final IPath iconPath = parent.getFullPath().append(ICON_FOLDER_NAME);
 		final IFolder iconFolder = ResourcesPlugin.getWorkspace().getRoot()
 				.getFolder(iconPath);
-		if (iconFolder == null || iconFolder.exists() == false) {
+		if (iconFolder == null || ! iconFolder.exists()) {
 			try {
 				FileHelper.createContainers(MONITOR, iconFolder);
 				iconFolder.create(true, true, MONITOR);
 			} catch (CoreException e) {
-				e.printStackTrace();
+				Activator.logWarning(e.getMessage(), e);
 			}
 		}
 		return iconFolder;

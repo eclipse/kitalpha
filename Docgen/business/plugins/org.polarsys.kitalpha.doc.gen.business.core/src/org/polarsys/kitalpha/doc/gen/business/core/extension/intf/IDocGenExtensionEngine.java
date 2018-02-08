@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016-2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -66,28 +66,13 @@ public interface IDocGenExtensionEngine {
 	public void apply(String topic, PatternContext ctx, Map<String, Object> params);
 	
 	
-	/**
-	 * TODO
-	 */
 	public void execute(String patternURI, PatternContext ctx, Map<String, Object> params, StringBuffer stringBuffer);
 	
-	/**
-	 * TODO
-	 */
 	public void execute(Pattern pattern, PatternContext ctx, Map<String, Object> params, StringBuffer stringBuffer);
 	
-	/**
-	 * TODO
-	 */
 	public void execute(Collection<Pattern> patterns, PatternContext ctx, Map<String, Object> params, StringBuffer stringBuffer);
 	
-	/**
-	 * TODO
-	 */
 	public void execute(PatternContext ctx, Map<String, Object> params, StringBuffer stringBuffer);
 	
-	/**
-	 * TODO
-	 */
 	public void apply(String topic, PatternContext ctx, Map<String, Object> params, StringBuffer stringBuffer);
 }

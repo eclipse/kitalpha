@@ -21,20 +21,17 @@ public class RemoveCollectedConceptForSearchIndex implements ITaskProduction {
 
 	public void preExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
-		// TODO Auto-generated method stub
-
+		// No need for this step
 	}
 
 	public void doExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
-		// TODO Auto-generated method stub
 		IndexerService.INSTANCE.getElements().clear();
 	}
 
 	public void postExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
-		// TODO Auto-generated method stub
-
+		// No need for this step
 	}
 
 }

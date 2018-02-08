@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016-2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,7 +38,7 @@ import org.polarsys.kitalpha.doc.gen.business.core.extension.point.manager.IDocG
  */
 public final class DocGenExtensionManager implements IDocGenExtension {
 	
-	private static IDocGenExtension INSTANCE;
+	private static IDocGenExtension instance;
 	private static Collection<IDocGenExtensionElement> contributionsRegistry;
 	
 	//Handle these maps/Collections for performance issues
@@ -49,12 +49,12 @@ public final class DocGenExtensionManager implements IDocGenExtension {
 	
 	
 	public static synchronized IDocGenExtension getInstance(){
-		if (INSTANCE == null){
+		if (instance == null){
 			DocGenContentExtensionManager manager = DocGenContentExtensionFactory.newDocGenContentExtensionManager();
 			contributionsRegistry = manager.getDocGenExtensions();
-			INSTANCE = new DocGenExtensionManager();
+			instance = new DocGenExtensionManager();
 		}
-		return INSTANCE;
+		return instance;
 	}
 
 	@Override

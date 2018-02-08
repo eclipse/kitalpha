@@ -45,28 +45,34 @@ public class EObjectLabelProviderHelper {
 	private static final String METACLASS_DISPLAY_SUFFIX = "] "; //$NON-NLS-1$
 
 	/**
+	 * Hidden constructor
+	 */
+	private EObjectLabelProviderHelper() {
+	}
+	
+	/**
 	 * Get the label for given object based on generated item provider.
 	 * 
-	 * @param object_p
+	 * @param object
 	 * @return<code>null</code> if one of parameters is <code>null</code> or if
 	 *                          no label is found.
 	 */
-	public static String getText(EObject object_p) {
+	public static String getText(EObject object) {
 		String label = EMPTY_STRING;
 		// Precondition.
-		if (null == object_p) {
+		if (null == object) {
 			return label;
 		}
 		AdapterFactoryEditingDomain editingDomain = (AdapterFactoryEditingDomain) AdapterFactoryEditingDomain
-				.getEditingDomainFor(object_p);
+				.getEditingDomainFor(object);
 		// Precondition.
 		if (null == editingDomain) {
 			return label;
 		}
 		IItemLabelProvider provider = (IItemLabelProvider) editingDomain
-				.getAdapterFactory().adapt(object_p, IItemLabelProvider.class);
+				.getAdapterFactory().adapt(object, IItemLabelProvider.class);
 		if (null != provider) {
-			label = provider.getText(object_p);
+			label = provider.getText(object);
 		}
 		return label;
 	}
@@ -74,26 +80,26 @@ public class EObjectLabelProviderHelper {
 	/**
 	 * Get the image for given object based on generated item provider.
 	 * 
-	 * @param object_p
+	 * @param object
 	 * @return<code>null</code> if one of parameters is <code>null</code> or if
 	 *                          no image is found.
 	 */
-	public static Image getImage(EObject object_p) {
+	public static Image getImage(EObject object) {
 		Object image = null;
 		// Precondition.
-		if (null == object_p) {
+		if (null == object) {
 			return null;
 		}
 		AdapterFactoryEditingDomain editingDomain = (AdapterFactoryEditingDomain) AdapterFactoryEditingDomain
-				.getEditingDomainFor(object_p);
+				.getEditingDomainFor(object);
 		// Precondition.
 		if (null == editingDomain) {
 			return null;
 		}
 		IItemLabelProvider provider = (IItemLabelProvider) editingDomain
-				.getAdapterFactory().adapt(object_p, IItemLabelProvider.class);
+				.getAdapterFactory().adapt(object, IItemLabelProvider.class);
 		if (null != provider) {
-			image = provider.getImage(object_p);
+			image = provider.getImage(object);
 		}
 		return (null != image) ? getImageFromObject(image) : null;
 	}
@@ -101,33 +107,32 @@ public class EObjectLabelProviderHelper {
 	/**
 	 * Get Image from a object representation of it.
 	 * 
-	 * @param image_p
+	 * @param image
 	 * @return <code>null</code> if image creation fails.
 	 */
-	public static Image getImageFromObject(Object image_p) {
-		return ExtendedImageRegistry.getInstance().getImage(image_p);
+	public static Image getImageFromObject(Object image) {
+		return ExtendedImageRegistry.getInstance().getImage(image);
 	}
 
 	/**
 	 * Get the metaclass label (emitted by EMF Edit generation) for given
 	 * object.
 	 * 
-	 * @param object_p
-	 * @param addBrackets_p
+	 * @param object
+	 * @param addBrackets
 	 *            if <code>true</code> the returned label is surrounded by
 	 *            brackets.
 	 * @return <code>null</code> if one of parameters is <code>null</code> or if
 	 *         no label is found.
 	 */
-	public static String getMetaclassLabel(EObject object_p,
-			boolean addBrackets_p) {
+	public static String getMetaclassLabel(EObject object, boolean addBrackets) {
 		String label = null;
 		// Precondition.
-		if (null == object_p) {
+		if (null == object) {
 			return label;
 		}
 		AdapterFactoryEditingDomain editingDomain = (AdapterFactoryEditingDomain) AdapterFactoryEditingDomain
-				.getEditingDomainFor(object_p);
+				.getEditingDomainFor(object);
 		// Precondition.
 		if (null == editingDomain) {
 			return label;
@@ -136,12 +141,12 @@ public class EObjectLabelProviderHelper {
 		// generated ItemProviderAdapterFactory that do not support this type.
 		// So, we adapt to IItemLabelProvider and then we cast...
 		IItemLabelProvider provider = (IItemLabelProvider) editingDomain
-				.getAdapterFactory().adapt(object_p, IItemLabelProvider.class);
+				.getAdapterFactory().adapt(object, IItemLabelProvider.class);
 		if (provider instanceof ItemProviderAdapter) {
-			label = getMetaclassLabel(object_p.eClass(),
+			label = getMetaclassLabel(object.eClass(),
 					(ItemProviderAdapter) provider);
 		}
-		if (addBrackets_p) {
+		if (addBrackets) {
 			label = METACLASS_DISPLAY_PREFIX + label + METACLASS_DISPLAY_SUFFIX;
 		}
 		return label;
@@ -152,22 +157,21 @@ public class EObjectLabelProviderHelper {
 	 * according given editing domain.
 	 * 
 	 * @param object_p
-	 * @param provider_p
+	 * @param provider
 	 * @return <code>null</code> if one of parameters is <code>null</code> or if
 	 *         no label is found.
 	 */
-	public static String getMetaclassLabel(EClass class_p,
-			ItemProviderAdapter provider_p) {
+	public static String getMetaclassLabel(EClass eClass, ItemProviderAdapter provider) {
 		String label = null;
 		// Preconditions.
-		if ((null == class_p) || (null == provider_p)) {
+		if ((null == eClass) || (null == provider)) {
 			return label;
 		}
 		try {
-			label = provider_p.getString(GENERATED_KEY_PREFIX
-					+ class_p.getName() + METACLASS_GENERATED_KEY_SUFFIX);
+			label = provider.getString(GENERATED_KEY_PREFIX
+					+ eClass.getName() + METACLASS_GENERATED_KEY_SUFFIX);
 		} catch (MissingResourceException e) {
-			label = "<<MissingResourceException>> [" + class_p.getName() + "]"; //$NON-NLS-1$ //$NON-NLS-2$
+			label = "<<MissingResourceException>> [" + eClass.getName() + "]"; //$NON-NLS-1$ //$NON-NLS-2$
 		}
 		return label;
 	}
@@ -177,20 +181,19 @@ public class EObjectLabelProviderHelper {
 	 * according given editing domain.
 	 * 
 	 * @param object_p
-	 * @param provider_p
+	 * @param provider
 	 * @return <code>null</code> if one of parameters is <code>null</code> or if
 	 *         no label is found.
 	 */
-	public static String getFeatureLabel(EStructuralFeature feature_p,
-			ItemProviderAdapter provider_p) {
+	public static String getFeatureLabel(EStructuralFeature feature, ItemProviderAdapter provider) {
 		String label = null;
 		// Preconditions.
-		if ((null == feature_p) || (null == provider_p)) {
+		if ((null == feature) || (null == provider)) {
 			return label;
 		}
-		String featureKey = feature_p.getEContainingClass().getName()
-				+ UNDERSCORE_CHARACTER + feature_p.getName();
-		label = provider_p.getString(GENERATED_KEY_PREFIX + featureKey
+		String featureKey = feature.getEContainingClass().getName()
+				+ UNDERSCORE_CHARACTER + feature.getName();
+		label = provider.getString(GENERATED_KEY_PREFIX + featureKey
 				+ FEATURE_GENERATED_KEY_SUFFIX);
 		return label;
 	}

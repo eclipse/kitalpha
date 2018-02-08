@@ -64,13 +64,11 @@ public final class DocGenExtensionEngine implements IDocGenExtensionEngine {
 
 	@Override
 	public void execute(String patternURI, PatternContext ctx, Map<String, Object> params, StringBuffer stringBuffer) {
-		{
-			InternalPatternContext ictx = (InternalPatternContext) ctx;
-			new Node.DataLeaf(ictx.getNode(), getClass(), null, stringBuffer.toString());
-			stringBuffer.setLength(0);
-			CallHelper.executeWithParameterInjection(patternURI, new ExecutionContext((InternalPatternContext) ctx), params);
-			stringBuffer.setLength(0);
-		}
+		InternalPatternContext ictx = (InternalPatternContext) ctx;
+		new Node.DataLeaf(ictx.getNode(), getClass(), null, stringBuffer.toString());
+		stringBuffer.setLength(0);
+		CallHelper.executeWithParameterInjection(patternURI, new ExecutionContext((InternalPatternContext) ctx), params);
+		stringBuffer.setLength(0);
 	}
 
 	@Override

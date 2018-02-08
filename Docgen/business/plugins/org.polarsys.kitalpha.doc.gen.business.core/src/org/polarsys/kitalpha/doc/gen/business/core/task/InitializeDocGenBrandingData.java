@@ -33,8 +33,8 @@ public class InitializeDocGenBrandingData implements ITaskProduction {
 	@Override
 	public void doExecute(ITaskProductionContext productionContext, IProgressMonitor monitor) throws InvocationException {
 		String copyright = getCopyright(productionContext);
-		String logo_path = getLogoPath(productionContext);
-		String logo_alt = getLogoAlt(productionContext);
+		String logoPath = getLogoPath(productionContext);
+		String logoAlt = getLogoAlt(productionContext);
 		DocumentationBrandingData documentationBrandingData = DocumentationBrandingData.getInstance();
 		// Remove branding data initialized by previous generation 
 		documentationBrandingData.removeAllData();
@@ -43,11 +43,11 @@ public class InitializeDocGenBrandingData implements ITaskProduction {
 		if (copyright != null)
 			documentationBrandingData.addData(COPYRIGHT_KEY, copyright);
 		
-		if (logo_path != null && logo_path.isEmpty() == false)
-			documentationBrandingData.addData(LOGO_PATH_KEY, logo_path);
+		if (logoPath != null && ! logoPath.isEmpty())
+			documentationBrandingData.addData(LOGO_PATH_KEY, logoPath);
 		
-		if (logo_alt != null && logo_alt.isEmpty() == false)
-			documentationBrandingData.addData(LOGO_ALT_KEY, logo_alt);
+		if (logoAlt != null && ! logoAlt.isEmpty())
+			documentationBrandingData.addData(LOGO_ALT_KEY, logoAlt);
 	}
 
 	protected String getLogoAlt(ITaskProductionContext productionContext) throws InvocationException {
@@ -64,10 +64,12 @@ public class InitializeDocGenBrandingData implements ITaskProduction {
 
 	@Override
 	public void preExecute(ITaskProductionContext productionContext, IProgressMonitor monitor) throws InvocationException {
+		// No need fot this step
 	}
 	
 	@Override
 	public void postExecute(ITaskProductionContext productionContext, IProgressMonitor monitor) throws InvocationException {
+		// No need fot this step
 	}
 
 }

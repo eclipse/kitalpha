@@ -21,7 +21,6 @@ public class CloseSiriusTask extends AbstrackSiriusTaskAction {
 	@Override
 	public void doTask(URI uri) {
 		DiagramSessionHelper.cleanSession();
-//		DiagramExport.closeSessions();
 		CoordinatesCalculator.COORDINATES_MAP.clear();
 		LabelProviderHelper.disposeImageRegistry();
 	}

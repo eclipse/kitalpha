@@ -18,7 +18,6 @@ import org.eclipse.egf.model.pattern.Pattern;
 import org.eclipse.egf.model.pattern.PatternException;
 import org.eclipse.egf.model.pattern.PatternParameter;
 import org.eclipse.egf.pattern.l10n.EGFPatternMessages;
-//import org.eclipse.egf.pattern.strategy.domaindriven.SubClassEmfModelVisitor;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -32,7 +31,6 @@ import org.polarsys.kitalpha.doc.gen.business.core.services.IndexerService;
 
 
 public class DocgenCommonSubClassEmfModelVisitor extends SubClassEmfModelVisitorWithScoping {
-//		SubClassEmfModelVisitor {
 
 	private List<Pattern> originePatterns;
 
@@ -53,7 +51,10 @@ public class DocgenCommonSubClassEmfModelVisitor extends SubClassEmfModelVisitor
 		String type = patternParameter.getType();
 		List<Pattern> patterns = type2patterns.get(type);
 		if (patterns == null)
-			type2patterns.put(type, patterns = new ArrayList<Pattern>());
+		{
+			patterns = new ArrayList<Pattern>();
+			type2patterns.put(type, patterns);
+		}
 		
 		patterns.add(p);
 	}
@@ -88,8 +89,8 @@ public class DocgenCommonSubClassEmfModelVisitor extends SubClassEmfModelVisitor
 	}
 
 	private void indexElement(Object model) {
-		ArrayList<IConceptsHelper> conceptsHelperList = ExtensionService.INSTANCE.getConceptsHelpersList();
-		if (conceptsHelperList != null && conceptsHelperList.size() > 0)
+		List<IConceptsHelper> conceptsHelperList = ExtensionService.INSTANCE.getConceptsHelpersList();
+		if (conceptsHelperList != null && ! conceptsHelperList.isEmpty())
 		{
 			for (IConceptsHelper iConceptsHelper : conceptsHelperList) 
 			{

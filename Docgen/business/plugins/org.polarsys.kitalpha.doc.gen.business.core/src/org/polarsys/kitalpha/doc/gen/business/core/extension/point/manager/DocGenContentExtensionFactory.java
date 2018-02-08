@@ -18,6 +18,11 @@ package org.polarsys.kitalpha.doc.gen.business.core.extension.point.manager;
 public class DocGenContentExtensionFactory {
 	
 	/**
+	 * Hidden constrcutor
+	 */
+	private DocGenContentExtensionFactory() {
+	}
+	/**
 	 * @return a new Content Extension Manager
 	 */
 	public static DocGenContentExtensionManager newDocGenContentExtensionManager(){

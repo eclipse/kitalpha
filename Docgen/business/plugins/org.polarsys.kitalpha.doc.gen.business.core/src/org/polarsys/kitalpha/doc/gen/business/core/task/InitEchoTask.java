@@ -21,8 +21,7 @@ public class InitEchoTask implements ITaskProduction {
 
 	public void preExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
-		// TODO Auto-generated method stub
-
+		// No need fot this step
 	}
 
 	public void doExecute(ITaskProductionContext productionContext, IProgressMonitor monitor) throws InvocationException {
@@ -33,8 +32,7 @@ public class InitEchoTask implements ITaskProduction {
 
 	public void postExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
-		// TODO Auto-generated method stub
-
+		// No need fot this step
 	}
 
 }

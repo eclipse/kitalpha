@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014-2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,6 +34,7 @@ import org.eclipse.egf.core.producer.InvocationException;
 import org.eclipse.egf.ftask.producer.context.ITaskProductionContext;
 import org.eclipse.egf.ftask.producer.invocation.ITaskProduction;
 import org.eclipse.emf.common.util.URI;
+import org.polarsys.kitalpha.doc.gen.business.core.Activator;
 
 public class UnzipTask implements ITaskProduction {
 	private static final String TEMP_ZIP = "temp.zip";
@@ -50,7 +51,7 @@ public class UnzipTask implements ITaskProduction {
 			URL url = new URL(uri.toString());
 			InputStream input = url.openConnection().getInputStream();
 			IPath outputFolderPath = new Path(projectName).append(outputFolder);
-			IContainer folder = (IContainer) ResourcesPlugin.getWorkspace().getRoot()
+			IContainer folder = ResourcesPlugin.getWorkspace().getRoot()
 					.getFolder(outputFolderPath).getParent();
 			Path tempZipPath = new Path(TEMP_ZIP);
 			IFile file = folder.getFile(tempZipPath);
@@ -62,23 +63,23 @@ public class UnzipTask implements ITaskProduction {
 			file.delete(true, monitor);
 			folder.refreshLocal(IResource.DEPTH_INFINITE, monitor);
 		} catch (MalformedURLException e) {
-			e.printStackTrace();
+			Activator.logError(e.getMessage(), e);
 		} catch (IOException e) {
-			e.printStackTrace();
+			Activator.logError(e.getMessage(), e);
 		} catch (CoreException e) {
-			e.printStackTrace();
+			Activator.logError(e.getMessage(), e);
 		}
 
 	}
 
 	public void postExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
-
+		// No need for this step
 	}
 
 	public void preExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
-
+		// No need for this step
 	}
 
 	private static void unzipZipResource(ZipFile zipFile, String destination) {
@@ -109,7 +110,7 @@ public class UnzipTask implements ITaskProduction {
 			}
 			zipFile.close();
 		} catch (Exception ioe) {
-			ioe.printStackTrace();
+			Activator.logError(ioe.getMessage(), ioe);
 		}
 	}
 

@@ -25,8 +25,7 @@ public class CleanScopeDataTask implements ITaskProduction {
 	@Override
 	public void preExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
-		// TODO Auto-generated method stub
-
+		// No need for this step
 	}
 
 	@Override
@@ -39,8 +38,7 @@ public class CleanScopeDataTask implements ITaskProduction {
 	@Override
 	public void postExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
-		// TODO Auto-generated method stub
-
+		// No need for this step
 	}
 
 }

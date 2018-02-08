@@ -27,6 +27,7 @@ import org.polarsys.kitalpha.doc.gen.business.core.util.MonitorServices;
 public class DocGenHtmlReporter implements PatternExecutionReporter {
 
     public void executionFinished(String output, PatternContext context) {
+    	// No need for this step
     }
 
     public void loopFinished(String output, String outputWithCallBack, PatternContext context, Map<String, Object> parameterValues) {
@@ -38,11 +39,6 @@ public class DocGenHtmlReporter implements PatternExecutionReporter {
         MonitorServices.workSubMonitor("Generating html pages");
         fileName = DocGenHtmlUtil.getValidFileName (fileName);
         DocGenHtmlUtil.writeFilePatternContent(fileName, projectName, outputFolder, output);
-        
-        //TODO useless since 0.6 EGF Version (no more buffer).
-//        if(context instanceof ExecutionContext) {
-//        	((ExecutionContext)context).getExecutionBuffer().setLength(0);
-//        }
     }
 
 }

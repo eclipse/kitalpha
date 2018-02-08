@@ -14,16 +14,16 @@ import org.eclipse.core.runtime.Status;
 import org.eclipse.egf.domain.Activator;
 
 public class EchoManager {
-	private static final String Generation_msg = "The generation of "; //$NON-NLS-N$
-	private static final String Start_msg = " is started"; //$NON-NLS-N$
-	private static final String SuccesMessage_msg = " successfully finished"; //$NON-NLS-N$
-	private static final String WarningMessage_msg = " is finished with warning"; //$NON-NLS-N$
+	private static final String GENERATION_MSG = "The generation of "; //$NON-NLS-N$
+	private static final String START_MSG = " is started"; //$NON-NLS-N$
+	private static final String SUCCES_MESSAGE_MSG = " successfully finished"; //$NON-NLS-N$
+	private static final String WARNING_MESSAGE_MSG = " is finished with warning"; //$NON-NLS-N$
 	
-	private static final String Cote_msg = "\""; //$NON-NLS-N$
+	private static final String COTE_MSG = "\""; //$NON-NLS-N$
 	
 	protected boolean active = false;
 	
-	public static EchoManager INSTANCE = new EchoManager();
+	public static final EchoManager INSTANCE = new EchoManager();
 	
 	public void setActive(boolean state){
 		this.active = state;
@@ -34,12 +34,12 @@ public class EchoManager {
 	}
 	
 	public void echoBengin(String generationName){
-		String message = Generation_msg + Cote_msg + generationName + Cote_msg + Start_msg;
+		String message = GENERATION_MSG + COTE_MSG + generationName + COTE_MSG + START_MSG;
 		echo(message, true);
 	}
 	
 	public void echoEnd(String generationName, boolean success){
-		String message = Generation_msg + Cote_msg + generationName + Cote_msg + (success ? SuccesMessage_msg : WarningMessage_msg);
+		String message = GENERATION_MSG + COTE_MSG + generationName + COTE_MSG + (success ? SUCCES_MESSAGE_MSG : WARNING_MESSAGE_MSG);
 		echo(message, success);
 	}
 

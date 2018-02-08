@@ -22,7 +22,7 @@ public class CollectConceptsTask implements ITaskProduction {
 
 	public void preExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
-
+		// No need fot this step
 	}
 
 	public void doExecute(ITaskProductionContext productionContext,
@@ -35,7 +35,7 @@ public class CollectConceptsTask implements ITaskProduction {
 
 	public void postExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
-
+		// No need fot this step
 	}
 
 }

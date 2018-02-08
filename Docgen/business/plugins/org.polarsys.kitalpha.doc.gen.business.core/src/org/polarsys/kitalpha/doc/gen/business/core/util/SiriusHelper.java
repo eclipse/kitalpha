@@ -26,6 +26,12 @@ import org.eclipse.sirius.business.api.session.Session;
  * @author Zendagui Boubekeur
  */
 public class SiriusHelper {
+
+	/**
+	 * Hidden constructor
+	 */
+	private SiriusHelper(){
+	}
 	
 	/**
 	 * <p>
@@ -60,7 +66,7 @@ public class SiriusHelper {
 			// This issue must be resolved in Sirius.
 			for (DRepresentation dRepresentation : representations) 
 			{
-				if (result.contains(dRepresentation) == false)
+				if (! result.contains(dRepresentation))
 					result.add(dRepresentation);
 			}
 		}
