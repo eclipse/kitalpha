@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -116,7 +116,6 @@ public abstract class GenericConstraintFactory {
 		for (String categoryName : constraintCategories) {
 			Category currentCategory = CategoryManager.getInstance()
 					.getCategory(categoryName);
-			// currentCategory.setName(categoryName);
 			associateConstaintToCategory(currentConstraintDescriptor,
 					currentCategory);
 		}
@@ -247,8 +246,7 @@ public abstract class GenericConstraintFactory {
 	 * @return the code of the given invariant of the given requirement.
 	 */
 	public String getCode(final String requirementId, final String invariantId) {
-		String codeStr = getString(createKey(requirementId, invariantId, CODE));
-		return codeStr;
+		return getString(createKey(requirementId, invariantId, CODE));
 	}
 
 	/**
@@ -305,8 +303,9 @@ public abstract class GenericConstraintFactory {
 	protected List<String> getMandatoryRequirements() {
 		List<String> result = new ArrayList<String>();
 		
-		if (!containsKey(MANDATORY_REQUIREMENT))
+		if (!containsKey(MANDATORY_REQUIREMENT)) {
 			return result;
+		}
 		
 		String mandatoryRequirements = getString(MANDATORY_REQUIREMENT);
 		if (mandatoryRequirements != null) {
@@ -332,8 +331,9 @@ public abstract class GenericConstraintFactory {
 		Enumeration<String> keys = configurationFileResourceBundle.getKeys();
 		while (keys.hasMoreElements()) {
 			String key = keys.nextElement();
-			if (mandatoryRequirement != null && mandatoryRequirement.equals(key))
+			if (mandatoryRequirement != null && mandatoryRequirement.equals(key)) {
 				return true;
+			}
 		}
 		return false;
 	}

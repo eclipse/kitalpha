@@ -64,12 +64,13 @@ public class EValidatorAdapter extends EObjectValidator {
     
     if (context != null) {
       // this is O(NlogN) but there's no helping it
-      while (eObject != null) {
-        if (context.containsKey(eObject)) {
+      EObject eObjectTmp = eObject;
+      while (eObjectTmp != null) {
+        if (context.containsKey(eObjectTmp)) {
           result = true;
-          eObject = null;
+          eObjectTmp = null;
         } else {
-          eObject = eObject.eContainer();
+          eObjectTmp = eObjectTmp.eContainer();
         }
       }
     }
@@ -95,7 +96,6 @@ public class EValidatorAdapter extends EObjectValidator {
   @Override
   public boolean validate(EClass eClass, EObject eObject, DiagnosticChain diagnostics, Map<Object, Object> context) {
 
-    // BH DBG System.out.println("Evalidator: Enter validate..");
     // first, do whatever the basic EcoreValidator does
     super.validate(eClass, eObject, diagnostics, context);
 
@@ -109,7 +109,6 @@ public class EValidatorAdapter extends EObjectValidator {
       // externally). If there is no context map, then we can't
       // help it
       if (!hasProcessed(eObject, context)) {
-        // BH DBG System.out.println("Evalidator: batchValidator.validate");
         IBatchValidator batchValidator = (IBatchValidator) ModelValidationService.getInstance().newValidator(EvaluationMode.BATCH);
         batchValidator.setIncludeLiveConstraints(true);
         batchValidator.setTraversalStrategy(new ITraversalStrategy.Recursive());

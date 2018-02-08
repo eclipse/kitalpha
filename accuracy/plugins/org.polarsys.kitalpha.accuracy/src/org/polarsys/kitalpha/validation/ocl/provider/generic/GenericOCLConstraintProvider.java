@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -16,7 +16,6 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.emf.validation.service.AbstractConstraintDescriptor;
 import org.eclipse.ocl.ecore.OCL;
-
 import org.polarsys.kitalpha.validation.ocl.provider.generic.util.OCLConstraint;
 import org.polarsys.kitalpha.validation.ocl.provider.generic.util.OCLConstraintDescriptor;
 import org.polarsys.kitalpha.validation.provider.generic.GenericConstraintFactory;
@@ -30,7 +29,6 @@ import org.polarsys.kitalpha.validation.provider.generic.GenericConstraintProvid
  */
 public abstract class GenericOCLConstraintProvider extends GenericConstraintProvider {
 
-    @SuppressWarnings("unchecked")
     private void addConstraintToGlobalConstraintCollection(OCLConstraintDescriptor currentConstraintDescriptor) {
         OCLConstraint cst = new OCLConstraint(currentConstraintDescriptor, OCL.newInstance());
         this.getConstraints().add(cst);
@@ -50,6 +48,13 @@ public abstract class GenericOCLConstraintProvider extends GenericConstraintProv
         // getDeclaringExtension().getUniqueIdentifier() is the extension id
         // field
         // in plugin.xml
+        
+        /*
+         * FIXME: To resolve a dead stores issue, we must know why this call is done here and stored
+         * in the local variable constraintProviderID without using it further.
+         * If it is necessary, the snippet is shared between this class and GenericJavaConstraintProvider.
+         * These classes inherite from the same class, then, we can put this snippet in the super class
+         */
         String constraintProviderID = config.getDeclaringExtension().getUniqueIdentifier();
 
         if (constraintProviderID == null) {

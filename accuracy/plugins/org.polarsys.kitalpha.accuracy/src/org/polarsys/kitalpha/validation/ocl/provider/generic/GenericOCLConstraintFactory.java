@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -20,7 +20,9 @@ import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
 import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.validation.model.Category;
 import org.eclipse.emf.validation.model.CategoryManager;
 import org.eclipse.emf.validation.model.ConstraintSeverity;
@@ -31,7 +33,6 @@ import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
 import org.eclipse.ocl.utilities.UMLReflection;
 import org.osgi.framework.Bundle;
-
 import org.polarsys.kitalpha.validation.AccuracyPlugin;
 import org.polarsys.kitalpha.validation.ocl.provider.generic.util.OCLConstraintDescriptor;
 import org.polarsys.kitalpha.validation.ocl.provider.generic.util.ValidationInfo;
@@ -40,32 +41,32 @@ import org.polarsys.kitalpha.validation.provider.generic.GenericConstraintFactor
 /**
  * This class creates OCL Constraints from description file.
  * 
- * @author THALESGROUP
+ * @author Guillaume Gebhart
  */
 public class GenericOCLConstraintFactory extends GenericConstraintFactory {
 
 	/** Common category for all created constraints. */
-	private Category _commonCategory;
+	private Category commonCategory;
 
 	/** Mandatory category for all mandatory constraints. */
 	private Category mandatoryCategory;
 
 	/** The name of the common category for all constraints. */
-	private String _commonCategoryName;
+	private String commonCategoryName;
 
-	private ResourceBundle _configurationFileResourceBundle;
+	private ResourceBundle configurationFileResourceBundle;
 
 	/** The plugin that provides OCL Constraints. */
-	private Bundle _contributorPluginBundle;
+	private Bundle contributorPluginBundle;
 
 	/** The folder that contains OCL files. */
-	private String _constraintsFolder;
+	private String constraintsFolder;
 
 	/** The Constraints provider. */
-	private GenericOCLConstraintProvider _provider;
+	private GenericOCLConstraintProvider provider;
 
 	/** The created constraints. */
-	private List<OCLConstraintDescriptor> _createdConstraints = new LinkedList<OCLConstraintDescriptor>();
+	private List<OCLConstraintDescriptor> createdConstraints = new LinkedList<OCLConstraintDescriptor>();
 
 	/**
 	 * Creates a constraint factory for the given provider.
@@ -75,21 +76,21 @@ public class GenericOCLConstraintFactory extends GenericConstraintFactory {
 	 */
 	public GenericOCLConstraintFactory(GenericOCLConstraintProvider provider) {
 		super(provider);
-		_configurationFileResourceBundle = provider
+		configurationFileResourceBundle = provider
 				.getConfigurationFileResourceBundle();
-		_contributorPluginBundle = provider.getContributorBundle();
-		_constraintsFolder = getConstraintsFolder();
-		_commonCategoryName = getCommonConstraintCategory();
+		contributorPluginBundle = provider.getContributorBundle();
+		constraintsFolder = getConstraintsFolder();
+		commonCategoryName = getCommonConstraintCategory();
 
-		_commonCategory = CategoryManager.getInstance().getCategory(
-				_commonCategoryName);
-		this._provider = provider;
+		commonCategory = CategoryManager.getInstance().getCategory(
+				commonCategoryName);
+		this.provider = provider;
 	}
 
 	private Category getMandatoryCategory() {
 		if (mandatoryCategory == null) {
 			mandatoryCategory = CategoryManager.getInstance().getCategory(
-					_commonCategoryName + "/mandatory");
+					commonCategoryName + "/mandatory");
 			mandatoryCategory.setMandatory(true);
 		}
 		return mandatoryCategory;
@@ -120,7 +121,7 @@ public class GenericOCLConstraintFactory extends GenericConstraintFactory {
 				constraintSeverity);
 		OCLConstraintDescriptor currentConstraintDescriptor = new OCLConstraintDescriptor(
 				requirementId, invariantId, constraintNamespace, invariant,
-				oclFileName, constraintCode, myinfo);
+				constraintCode, myinfo);
 		return currentConstraintDescriptor;
 	}
 
@@ -130,12 +131,12 @@ public class GenericOCLConstraintFactory extends GenericConstraintFactory {
 	 * @return the created OCL constraints descriptors.
 	 */
 	public List<AbstractConstraintDescriptor> createConstraints() {
-		this._createdConstraints.clear();
+		this.createdConstraints.clear();
 		List<String> constraintFilesNames = getConstraintFilesNames();
 		List<String> mandatoryRequirements = getMandatoryRequirements();
 		for (String currentConstraintFileName : constraintFilesNames) {
 			// we get the path of the ocl constraint (ocl file)
-			String path = _constraintsFolder + currentConstraintFileName
+			String path = constraintsFolder + currentConstraintFileName
 					+ ".ocl"; //$NON-NLS-1$
 
 			if ((path != null) && (path.length() > 0)) {
@@ -143,7 +144,7 @@ public class GenericOCLConstraintFactory extends GenericConstraintFactory {
 			}
 		}
 		return new ArrayList<AbstractConstraintDescriptor>(
-				this._createdConstraints);
+				this.createdConstraints);
 	}
 
 	/**
@@ -164,7 +165,7 @@ public class GenericOCLConstraintFactory extends GenericConstraintFactory {
 
 		// we parse/load constraints from the file
 		List<Constraint> localFileConstraints = loadConstraintsFromFile(path,
-				_contributorPluginBundle);
+				contributorPluginBundle);
 
 		// for each constraint, we set it up with message, description
 		// categories
@@ -174,7 +175,7 @@ public class GenericOCLConstraintFactory extends GenericConstraintFactory {
 				String invariantName = constraint.getName();
 				OCLConstraintDescriptor currentConstraintDescriptor = createConstraintDescriptor(
 						oclFileName, invariantName, constraint, oclFileName,
-						_contributorPluginBundle.getSymbolicName());
+						contributorPluginBundle.getSymbolicName());
 
 				// fetch categories to which this invariant is associated
 				List<String> constraintCategories = getConstraintCategories(
@@ -182,7 +183,7 @@ public class GenericOCLConstraintFactory extends GenericConstraintFactory {
 
 				// add invariant to main category
 				associateConstaintToCategory(currentConstraintDescriptor,
-						_commonCategory);
+						commonCategory);
 
 				// add invariant to categories specified in the properties
 				// file
@@ -195,7 +196,7 @@ public class GenericOCLConstraintFactory extends GenericConstraintFactory {
 				}
 
 				//
-				this._createdConstraints.add(currentConstraintDescriptor);
+				this.createdConstraints.add(currentConstraintDescriptor);
 			}
 		}
 	}
@@ -218,8 +219,9 @@ public class GenericOCLConstraintFactory extends GenericConstraintFactory {
 			}
 			return constraintFilesNamesList;
 		}
-
-		System.out.println("[WARNING] No constraint file names were specified");
+		
+		AccuracyPlugin.getDefault().getLog().log(new Status(IStatus.WARNING, AccuracyPlugin.PLUGIN_ID, "[WARNING] No constraint file names were specified")); //$NON-NLS-1$
+		
 		return constraintFilesNamesList;
 	}
 
@@ -230,7 +232,7 @@ public class GenericOCLConstraintFactory extends GenericConstraintFactory {
 
 	private String getString(String key) {
 		try {
-			return _configurationFileResourceBundle.getString(key);
+			return configurationFileResourceBundle.getString(key);
 		} catch (MissingResourceException e) {
 			return null;
 		}
@@ -245,7 +247,7 @@ public class GenericOCLConstraintFactory extends GenericConstraintFactory {
 			Bundle bundle) {
 		ArrayList<Constraint> constraints = new ArrayList<Constraint>();
 
-		URL url = _provider.getUrlFromPath(oclFilePath);
+		URL url = provider.getUrlFromPath(oclFilePath);
 
 		// URL url = bundle.getEntry(oclFilePath);
 		if (null != url) {
