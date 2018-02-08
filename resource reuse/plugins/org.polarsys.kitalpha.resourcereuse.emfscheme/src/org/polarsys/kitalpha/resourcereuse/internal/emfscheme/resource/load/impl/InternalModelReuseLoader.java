@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016, 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2016, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -10,9 +10,6 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.resourcereuse.internal.emfscheme.resource.load.impl;
 
-import org.apache.log4j.Logger;
-import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -21,7 +18,6 @@ import org.eclipse.emf.ecore.resource.URIConverter;
 import org.polarsys.kitalpha.resourcereuse.emfscheme.ModelReuseURIConverter;
 import org.polarsys.kitalpha.resourcereuse.emfscheme.api.IModelReuseLoader;
 import org.polarsys.kitalpha.resourcereuse.emfscheme.helpers.ModelReuseHelper;
-import org.polarsys.kitalpha.resourcereuse.internal.emfscheme.Activator;
 import org.polarsys.kitalpha.resourcereuse.model.SearchCriteria;
 
 /**
@@ -31,7 +27,6 @@ import org.polarsys.kitalpha.resourcereuse.model.SearchCriteria;
  */
 public class InternalModelReuseLoader implements IModelReuseLoader {
 	
-	private static final Logger logger = Logger.getLogger(IModelReuseLoader.class);
 
 	@Override
 	public Resource load(EObject eObject, URI uri) {

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -77,7 +77,7 @@ public class LoadingResourceReuseDialog extends Dialog {
 	Text domainText;
 	Text versionText;
 	String uriText;
-	private final java.util.List<StringValue> tags = new ArrayList<StringValue>();
+	private final java.util.List<StringValue> tags = new ArrayList<>();
 
 	private boolean okEnabled = false;
 
@@ -295,15 +295,6 @@ public class LoadingResourceReuseDialog extends Dialog {
 	}
 
 	/**
-	 * Override of Dialog's cancelPressed() method. Retrieving of resource set
-	 * and load of founded resource in it
-	 */
-	@Override
-	protected void cancelPressed() {
-		super.cancelPressed();
-	}
-
-	/**
 	 * Creation of filter group used for retrieve and refresh resources in the
 	 * result group using criterias.
 	 * 
@@ -441,21 +432,21 @@ public class LoadingResourceReuseDialog extends Dialog {
 				
 				TableItem tableItem = (TableItem) element;
 				StringValue tag = (StringValue) tableItem.getData();
-				tag.value = value.toString();
+				tag.setValue(value.toString());
 				// if my criteria doesn't contain this value
-				if (!criteria.getTags().contains(tag.value)) {
+				if (!criteria.getTags().contains(tag.getValue())) {
 					// i test if my criteria's tags fits with one or more model(s)
 					if(addButtonPressed){
-						criteria.getTags().add(tag.value);
+						criteria.getTags().add(tag.getValue());
 						addButtonPressed = false;
 					}
 					// else i'm on the case that i'm modifying an existing tag
 					else{
 						criteria.getTags().remove(tableItem.getText());
-						criteria.getTags().add(tag.value);
+						criteria.getTags().add(tag.getValue());
 					}
 					boolean currentTagFitWithModels = GeneralServices
-							.checkIfCurrentTagFitsWithModels(tag.value,
+							.checkIfCurrentTagFitsWithModels(tag.getValue(),
 									getParentShell());
 					if (currentTagFitWithModels) {
 						//i refresh
@@ -466,7 +457,7 @@ public class LoadingResourceReuseDialog extends Dialog {
 					else {
 						// i remove this tag
 						data.clear();
-						criteria.getTags().remove(tag.value);
+						criteria.getTags().remove(tag.getValue());
 						List<StringValue> stringValueList = GeneralServices
 								.toStringValueList(criteria.getTags());
 						data.addAll(stringValueList);
@@ -486,8 +477,8 @@ public class LoadingResourceReuseDialog extends Dialog {
 				}
 				// current tag already exists (only if i click on add button)
 				else if (addButtonPressed){
-					GeneralServices.constructDialogForExistingTag(tag.value, getParentShell());
-					criteria.getTags().add(tag.value);
+					GeneralServices.constructDialogForExistingTag(tag.getValue(), getParentShell());
+					criteria.getTags().add(tag.getValue());
 					addButtonPressed = false;
 					GeneralServices.refreshResultsAccordingToCriteria(criteria, resultsTable, getParentShell());
 				}
@@ -497,7 +488,7 @@ public class LoadingResourceReuseDialog extends Dialog {
 			@Override
 			public Object getValue(Object element, String property) {
 				StringValue tag = (StringValue) element;
-				return tag.value;
+				return tag.getValue();
 			}
 
 			@Override
@@ -534,6 +525,7 @@ public class LoadingResourceReuseDialog extends Dialog {
 
 			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
+				// unused
 			}
 		});
 
@@ -549,9 +541,9 @@ public class LoadingResourceReuseDialog extends Dialog {
 		deleteButton.addSelectionListener(new SelectionListener() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				IStructuredSelection selection = (IStructuredSelection) viewer
+				IStructuredSelection currentSelection = (IStructuredSelection) viewer
 						.getSelection();
-				Object[] array = selection.toArray();
+				Object[] array = currentSelection.toArray();
 				for (Object obj : array) {
 					data.remove(obj);
 					String tagsToRemove = obj.toString();

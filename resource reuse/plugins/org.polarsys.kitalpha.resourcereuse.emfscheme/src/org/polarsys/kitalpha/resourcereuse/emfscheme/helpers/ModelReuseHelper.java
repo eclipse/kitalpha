@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016, 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2016, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -27,8 +27,6 @@ import org.polarsys.kitalpha.resourcereuse.model.SearchCriteria;
 public class ModelReuseHelper {
 
 	private static final String METADATA_KEYWORD = "useMetadata"; //$NON-NLS-1$
-	private static final String TAGS_KEYWORD = "Tags"; //$NON-NLS-1$
-	
 	private static final String MODELREUSE_SCHEME_PREFIX = "modelreuse"; //$NON-NLS-1$
 	
 
@@ -107,7 +105,7 @@ public class ModelReuseHelper {
 	public static List<URI> findModelsURIAccordingToCriteria(
 			SearchCriteria criteria) {
 
-		List<URI> foundModels = new ArrayList<URI>();
+		List<URI> foundModels = new ArrayList<>();
 
 		List<Resource> resourceSelected = findModelsAccordingToCriteria(criteria);
 
@@ -140,7 +138,7 @@ public class ModelReuseHelper {
 		// all introspections model containers' extension are tagged
 		// IntrospectionModel
 
-		List<Resource> resourceSelected = new ArrayList<Resource>();
+		List<Resource> resourceSelected = new ArrayList<>();
 
 		Resource[] resourceSelectedWorkspace = resourceHelperWorkspace
 				.getResources(criteria);
@@ -169,6 +167,10 @@ public class ModelReuseHelper {
 				resourceSelected.add(resource);
 		}
 		return resourceSelected;
+	}
+
+	private ModelReuseHelper() {
+		super();
 	}
 
 }
