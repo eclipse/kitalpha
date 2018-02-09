@@ -10,8 +10,6 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.resourcereuse.emfscheme.ui;
 
-import java.util.List;
-
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
@@ -29,7 +27,6 @@ import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.polarsys.kitalpha.resourcereuse.emfscheme.helpers.ModelReuseHelper;
-import org.polarsys.kitalpha.resourcereuse.emfscheme.utils.context.ModelReuseContext;
 import org.polarsys.kitalpha.resourcereuse.emfscheme.utils.services.ResourceSetLoaderServices;
 import org.polarsys.kitalpha.resourcereuse.model.SearchCriteria;
 import org.polarsys.kitalpha.resourcereuse.ui.dialog.ResourceReuseSelectionDialog;

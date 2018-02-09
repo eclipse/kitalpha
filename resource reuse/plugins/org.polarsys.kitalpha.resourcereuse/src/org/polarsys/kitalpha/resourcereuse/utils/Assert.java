@@ -45,4 +45,9 @@ public class Assert {
 		}
 		return false;
 	}
+
+	private Assert() {
+		super();
+	}
+	
 }

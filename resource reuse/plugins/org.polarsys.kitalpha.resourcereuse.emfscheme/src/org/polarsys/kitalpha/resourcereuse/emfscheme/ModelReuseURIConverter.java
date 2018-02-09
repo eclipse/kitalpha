@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016, 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2016, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -12,21 +12,13 @@ package org.polarsys.kitalpha.resourcereuse.emfscheme;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.impl.ExtensibleURIConverterImpl;
-import org.polarsys.kitalpha.resourcereuse.helper.ResourceHelper;
 import org.polarsys.kitalpha.resourcereuse.helper.ResourceReuse;
 import org.polarsys.kitalpha.resourcereuse.internal.emfscheme.Activator;
 import org.polarsys.kitalpha.resourcereuse.model.Location;
@@ -88,7 +80,7 @@ public class ModelReuseURIConverter extends ExtensibleURIConverterImpl {
 		Resource[] resources = ResourceReuse.createHelper().getResources(criteria);
 	
 		if (resources.length == 0)
-			throw new RuntimeException("The uri '"+uri.toString()+"' does not matche any resource");
+			throw new IllegalStateException("The uri '"+uri.toString()+"' does not matche any resource");
 		if (resources.length > 1)
 			logger.error(new Status(IStatus.WARNING, Activator.PLUGIN_ID, "The uri '"+uri.toString()+"' matches several resources, using the first one."));
 		

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ import org.polarsys.kitalpha.resourcereuse.model.SearchCriteria;
  */
 public class GeneralServices {
 	// model reuse icon path
-	private final static String iconPath = "obj16/searchView.gif";
+	private static final String ICON_PATH = "obj16/searchView.gif";
 
 	/**
 	 * Method used for refresh result Table contents
@@ -51,12 +51,11 @@ public class GeneralServices {
 				.findModelsAccordingToCriteria(criteria);
 		// creation of new items in result Table
 		// if i have resources that fit with setted criteria
-		if (modelsToLoad.size() >= 1) {
+		if (!modelsToLoad.isEmpty()) {
 			for (Resource resource : modelsToLoad) {
 				TableItem resourceItem = new TableItem(resultsTable, SWT.NONE);
 				resourceItem
 						.setData(constructFullCriteriaFromResource(resource));
-				// resourceItem.setData(criteria);
 
 				if (resource.getVersion() != null && resource.getName() != null)
 					resourceItem.setText(resource.getName() + " v"
@@ -133,28 +132,41 @@ public class GeneralServices {
 	 * @return The icon of the resource
 	 */
 	public static Image getParentImage() {
-		Image image = org.polarsys.kitalpha.resourcereuse.ui.Activator.getDefault().getImage(iconPath);
-		return image;
+		return org.polarsys.kitalpha.resourcereuse.ui.Activator.getDefault().getImage(ICON_PATH);
 	}
 
 	public static java.util.List<StringValue> toStringValueList(
 			java.util.List<String> tags) {
-		java.util.List<StringValue> result = new ArrayList<StringValue>();
+		java.util.List<StringValue> result = new ArrayList<>();
 		for (String value : tags)
 			result.add(new StringValue(value));
 		return result;
 	}
 
 	public static class StringValue {
-		public StringValue(String string) {
-			value = string;
-		}
+		private String value;
 
-		public String value;
+		public StringValue(String string) {
+			setValue(string);
+		}
 
 		@Override
 		public String toString() {
+			return getValue();
+		}
+
+		public String getValue() {
 			return value;
 		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
 	}
+
+	private GeneralServices() {
+		super();
+		
+	}
+	
 }
