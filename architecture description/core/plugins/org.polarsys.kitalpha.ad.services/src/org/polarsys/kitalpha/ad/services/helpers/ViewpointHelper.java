@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ public class ViewpointHelper {
 	 * @return the diagnostic message
 	 */
 	public static String buildDiagnosticMessage(TransitionEngine e, boolean predicateValue, String title){
-		StringBuffer buf = new StringBuffer(title);
+		StringBuilder buf = new StringBuilder(title);
 		buf.append("\n"); //$NON-NLS-1$
 		Map<String, String> diagnosticMessages = e.getDiagnosticMessages(predicateValue);
 
@@ -43,4 +43,9 @@ public class ViewpointHelper {
 		return buf.toString();
 	}
 
+	private ViewpointHelper() {
+		super();
+	}
+
+	
 }
