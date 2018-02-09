@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -18,6 +18,7 @@ import org.polarsys.kitalpha.richtext.widget.tools.internal.Activator;
 /**
  * 
  * @author Faycal Abka
+ * @author Minh Tu Ton That
  *
  */
 public class Constants {
@@ -44,5 +45,6 @@ public class Constants {
     public static final URL CLEAR_ICON = MDERichTextHelper.getURL(Activator.PLUGIN_ID, "icons/clear.gif"); 		//$NON-NLS-1$
     public static final URL ADD_LINK_ICON = MDERichTextHelper.getURL(Activator.PLUGIN_ID, "icons/add_link.gif"); 	//$NON-NLS-1$
     public static final URL ADD_IMAGE_ICON = MDERichTextHelper.getURL(Activator.PLUGIN_ID, "icons/add_image.gif"); 	//$NON-NLS-1$
+	public static final URL SAVE_IMAGE_ICON = MDERichTextHelper.getURL(Activator.PLUGIN_ID, "icons/save_image.gif"); 	//$NON-NLS-1$
 
 }

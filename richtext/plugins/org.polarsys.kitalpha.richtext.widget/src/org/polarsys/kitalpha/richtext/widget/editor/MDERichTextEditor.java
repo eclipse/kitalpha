@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -10,6 +10,9 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.richtext.widget.editor;
 
+
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
@@ -37,6 +40,7 @@ import org.eclipse.ui.part.EditorPart;
 import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
+import org.polarsys.kitalpha.richtext.common.impl.AbstractMDERichTextWidget;
 import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
 import org.polarsys.kitalpha.richtext.nebula.widget.MDENebulaBasedRichTextWidget;
 import org.polarsys.kitalpha.richtext.widget.editor.intf.MDERichTextEditorCallback;
@@ -47,9 +51,10 @@ import org.polarsys.kitalpha.richtext.widget.internal.extension.MDERichTextExten
 /**
  * 
  * @author Faycal Abka
+ * @author Minh Tu Ton That
  *
  */
-public class MDERichTextEditor extends EditorPart implements ITabbedPropertySheetPageContributor {
+public class MDERichTextEditor extends EditorPart implements ITabbedPropertySheetPageContributor, PropertyChangeListener {
 	
 	private static final String SAVE_CALLBACK_EXTENSION_ID = "org.polarsys.kitalpha.richtext.widget.saveResourceCallback"; //$NON-NLS-1$
 
@@ -148,7 +153,7 @@ public class MDERichTextEditor extends EditorPart implements ITabbedPropertyShee
 	public void createPartControl(Composite parent) {
 		parent.setLayout(new GridLayout());
 		this.widget = (new MDERichTextFactory()).createEditorRichTextWidget(parent);
-		
+		this.widget.addPropertyChangeListener(this);
 		
 		MDERichTextEditorInput input = (MDERichTextEditorInput) getEditorInput();
 		this.widget.setSaveStrategy(input.getSaveStrategy());
@@ -237,5 +242,15 @@ public class MDERichTextEditor extends EditorPart implements ITabbedPropertyShee
 		}
 		
 		return result;
+	}
+
+
+	@Override
+	public void propertyChange(PropertyChangeEvent evt) {
+		MDERichTextWidget source = (MDERichTextWidget) evt.getSource();
+		if (this.widget == source && evt.getPropertyName().equals(AbstractMDERichTextWidget.WIDGET_SAVED_PROP)) {
+			firePropertyChange(PROP_DIRTY);
+			firePropertyChange(PROP_TITLE);
+		}
 	}
 }
