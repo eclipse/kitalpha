@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -102,7 +102,10 @@ public class MDEAddLinkDialog extends MDEOkCancelDialog {
 				if (path != null){
 					String path2Object = path.getFirst();
 					String objectLabel = path.getSecond();
-					if (path != null && path2Object != null){
+					if (path2Object != null){
+            if (Constants.FILE_LABEL.equals(linkType)) {
+              path2Object = path2Object.replace("\\", "/");
+            }
 						urlText.setText(path2Object);
 					}
 					urlDisplayNameText.setText(objectLabel != null? objectLabel: "");
@@ -118,7 +121,7 @@ public class MDEAddLinkDialog extends MDEOkCancelDialog {
 		comboGridData.horizontalSpan = 2;
 		linkTypeCombo.setLayoutData(comboGridData);
 		
-		final String[] itemsLinkList = (String[]) linkManager.getAllLinkLabels().toArray(new String[0]);
+		final String[] itemsLinkList = linkManager.getAllLinkLabels().toArray(new String[0]);
 		
 		linkTypeCombo.setItems(itemsLinkList);
 		linkType = itemsLinkList[0];
