@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014-2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -66,12 +66,9 @@ import org.eclipse.sirius.diagram.impl.DEdgeImpl;
 import org.eclipse.sirius.diagram.ui.edit.api.part.AbstractDiagramEdgeEditPart.ViewEdgeFigure;
 import org.eclipse.sirius.diagram.ui.tools.api.part.DiagramEditPartService;
 import org.eclipse.sirius.viewpoint.description.AnnotationEntry;
-import org.eclipse.sirius.viewpoint.description.RepresentationElementMapping;
-import org.eclipse.sirius.diagram.sequence.business.internal.metamodel.SequenceDDiagramSpec;
-import org.eclipse.sirius.diagram.sequence.business.internal.metamodel.description.ExecutionMappingSpec;
-import org.eclipse.sirius.diagram.sequence.description.ExecutionMapping;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
+import org.polarsys.kitalpha.doc.gen.business.core.Activator;
 import org.polarsys.kitalpha.doc.gen.business.core.scope.GenerationGlobalScope;
 import org.polarsys.kitalpha.doc.gen.business.core.scope.ScopeStatus;
 import org.polarsys.kitalpha.doc.gen.business.core.util.IDiagramHelper;
@@ -82,7 +79,7 @@ import org.polarsys.kitalpha.doc.gen.business.core.util.IDiagramHelper;
  */
 public class CoordinatesCalculator {
 	private static final String JPG = "JPG";
-	private final ImageReader READER = (ImageReader) ImageIO.getImageReadersBySuffix(JPG).next();
+	private final ImageReader reader = (ImageReader) ImageIO.getImageReadersBySuffix(JPG).next();
 	public static final Map<String, Map<Rectangle, EObject>> COORDINATES_MAP = new HashMap<String, Map<Rectangle, EObject>>();
 	private IFile imageFile;
 	private DDiagram diagram;
@@ -170,8 +167,10 @@ public class CoordinatesCalculator {
 		if (COORDINATES_MAP.containsKey(diagramId)) 
 		{
 			final Map<Rectangle, EObject> map = COORDINATES_MAP.get(diagramId);
-			if (map.isEmpty() == false)
+			if (! map.isEmpty())
+			{
 				result.putAll(map);
+			}
 		}
 		else
 		{
@@ -180,11 +179,11 @@ public class CoordinatesCalculator {
 					try {
 						result.putAll(getResultMap());
 
-						if (result.isEmpty() == false)
+						if (! result.isEmpty())
 							COORDINATES_MAP.put(diagramId, result);
 						
 					} catch (Exception e) {
-						e.printStackTrace();
+						Activator.logWarning(e.getMessage());
 					}
 				}
 			});
@@ -276,7 +275,7 @@ public class CoordinatesCalculator {
 				final boolean acceptView = acceptView(view);
 				
 				// Handle children of the current view.
-				if (false == view instanceof Edge) 
+				if (! (view instanceof Edge)) 
 				{
 					@SuppressWarnings("rawtypes")
 					final EList children = view.getChildren();
@@ -347,7 +346,7 @@ public class CoordinatesCalculator {
 			// Handle Edges
 			for (Object object : gmfDiagram.getEdges()) 
 			{
-				if (false == edgeHasCenterLabel((View) object, registry))
+				if (! edgeHasCenterLabel((View) object, registry))
 					continue; 
 				
 				if (object instanceof View)
@@ -432,16 +431,16 @@ public class CoordinatesCalculator {
 				String fullPath = imageFile.getLocation().toString();
 				ImageInputStream imageInputStream = ImageIO
 						.createImageInputStream(new File(fullPath));
-				READER.setInput(imageInputStream);
-				if (READER.getInput() != null) 
+				reader.setInput(imageInputStream);
+				if (reader.getInput() != null) 
 				{
-					Dimension size = new Dimension(READER.getWidth(0), READER.getHeight(0));
+					Dimension size = new Dimension(reader.getWidth(0), reader.getHeight(0));
 					imageInputStream.close();
 					return size;
 				}
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			Activator.logWarning(e.getMessage());
 		}
 		return null;
 	}
@@ -497,14 +496,6 @@ public class CoordinatesCalculator {
 		return false;
 	}
 	
-//	private boolean isDirectDiagramChild(View node) {
-//		if (children.contains(node)) {
-//			return true;
-//		} else {
-//			return getParentList(node).isEmpty();
-//		}
-//	}
-
 	private EObject getSemanticElement(DDiagramElement element) {
 		return helper.getSemanticElement(element);
 	}
@@ -529,7 +520,6 @@ public class CoordinatesCalculator {
 		{
 			EObject childObject = nodeMap.get(node);
 			keyList.add(childObject);
-//			Rectangle childRectangle = map.get(childObject);
 			Rectangle childRectangle = getRectangle(map, childObject);
 			translateContainedRectangle(map, node, childRectangle);
 		}
@@ -538,8 +528,6 @@ public class CoordinatesCalculator {
 		{
 			result.put(getRectangle(map, key), key);
 		}
-		// keyList = keys;
-		// KEYS_MAP.put(diagram, keyList);
 		return result;
 	}
 	
@@ -567,12 +555,10 @@ public class CoordinatesCalculator {
 			Set<EObject> parentList = getParentList(node);
 			for (EObject parentObject : parentList) 
 			{
-//				Rectangle parentRectangle = map.get(parentObject);
 				Rectangle parentRectangle = getRectangle(map, parentObject);
 				Point topLeft = parentRectangle.getTopLeft();
 				// Translation
 				childRectangle.performTranslate(topLeft.x + 5, topLeft.y + 6);
-				// map.put(childObject, childRectangle);
 			}
 		}
 	}
@@ -624,12 +610,7 @@ public class CoordinatesCalculator {
 	 *            the diagram to synchronize.
 	 */
 	@Deprecated
-	private void synchronizeDiagram(final Diagram diagram,
-			final TransactionalEditingDomain domain) {
-		// ViewpointGMFDiagramSynchronizer.synchronizeViewpointDiagram(diagram,
-		// domain);
-		// CanonicalSynchronizer canonicalSynchronizer =
-		// CanonicalSynchronizerFactory.INSTANCE.createCanonicalSynchronizer(diagram);
-		// canonicalSynchronizer.synchronize();
+	private void synchronizeDiagram(final Diagram diagram, final TransactionalEditingDomain domain) {
+		// Do nothing. To remove in the next version
 	}
 }

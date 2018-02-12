@@ -23,6 +23,12 @@ import org.polarsys.kitalpha.doc.gen.business.core.messages.Messages;
  * @author Boubekeur Zendagui
  */
 public class ScopeCompute {
+	
+	/**
+	 * Hidden constrcutor
+	 */
+	private ScopeCompute(){
+	}
 
 	public static List<EObject> computeScope(EObject modelElement, ScopeElementStrategy strategy) throws ScopeException{
 		List<EObject> result = new ArrayList<EObject>();
@@ -56,7 +62,7 @@ public class ScopeCompute {
 		if (addParents)
 		{
 			List<EObject> parentsOf = getParentsOf(modelElement);
-			if (parentsOf.isEmpty() == false)
+			if (! parentsOf.isEmpty())
 				result.addAll(parentsOf);
 		}
 		
@@ -66,13 +72,13 @@ public class ScopeCompute {
 		if (addChildren)
 		{
 			List<EObject> childrenOf = getChildrenOf(modelElement);
-			if (childrenOf.isEmpty() == false)
+			if (! childrenOf.isEmpty())
 				result.addAll(childrenOf);
 		}
 		
 		// Always add model root element if it was not added yet.
 		EObject rootContainer = EcoreUtil.getRootContainer(modelElement);
-		if (false == result.contains(rootContainer))
+		if (! result.contains(rootContainer))
 		{
 			result.add(rootContainer);
 		}
@@ -91,7 +97,7 @@ public class ScopeCompute {
 		TreeIterator<EObject> eAllContents = modelElement.eAllContents();
 		while (eAllContents.hasNext()) 
 		{
-			EObject eObject = (EObject) eAllContents.next();
+			EObject eObject = eAllContents.next();
 			result.add(eObject);
 		}
 		

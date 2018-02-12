@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,7 +42,7 @@ import org.eclipse.sirius.common.tools.api.resource.ImageFileFormat ;
  */
 public class DiagramExport {
 	private static final String JPG = "JPG";
-	private final NullProgressMonitor NULL_PROGRESS_MONITOR = new NullProgressMonitor();
+	private final NullProgressMonitor nullProgressMonitor = new NullProgressMonitor();
 	private IPath outputPath;
 	private DDiagram diagram;
 	private Session session;
@@ -63,9 +63,9 @@ public class DiagramExport {
 		if (null != project && project.exists())
 		{
 			try {
-				project.refreshLocal(IProject.DEPTH_INFINITE, NULL_PROGRESS_MONITOR);
+				project.refreshLocal(IProject.DEPTH_INFINITE, nullProgressMonitor);
 			} catch (CoreException e) {
-				e.printStackTrace();
+				Activator.logWarning(e.getMessage());
 			}
 		}
 	}
@@ -73,14 +73,14 @@ public class DiagramExport {
 	
 	private void initDiagramExport(IPath outputPath, DDiagram diagram, Session session) {
 		IFolder folder = ResourcesPlugin.getWorkspace().getRoot().getFolder(outputPath);
-		if (folder != null && !folder.exists()) {
+		if (folder != null && ! folder.exists()) {
 			try {
-				folder.create(true, true, NULL_PROGRESS_MONITOR);
+				folder.create(true, true, nullProgressMonitor);
 			} catch (CoreException e) {
-				e.printStackTrace();
+				Activator.logError("can't create forlder " + folder.getName());
 			}
 		}
-		this.outputPath = folder.getLocation();
+		this.outputPath = folder != null ? folder.getLocation() : null;
 		this.diagram = diagram;
 		this.session = session;
 	}
@@ -98,11 +98,11 @@ public class DiagramExport {
 				public void run() {
 					final ExportAction exportAction = new GenDocDiagramExportAction(session, getRepresentationsToExportAsImage(), outputPath, ImageFileFormat.JPG,false);
 					try {
-						exportAction.run(NULL_PROGRESS_MONITOR);
+						exportAction.run(nullProgressMonitor);
 					} catch (InterruptedException e) {
-						Activator.getDefault().getLog().log(new Status(IStatus.ERROR, Activator.PLUGIN_ID,"An error occured during export action", e));
+						Activator.logError("An error occured during export action", e);
 					} catch (Exception e) {
-						Activator.getDefault().getLog().log(new Status(IStatus.ERROR, Activator.PLUGIN_ID,"An error occured during export action", e));
+						Activator.logError("An error occured during export action", e);
 					}
 				}
 			});
@@ -110,8 +110,10 @@ public class DiagramExport {
 			result.add(getGeneratedDiagram());
 		}
 		
-		if (result.size() > 0) 
+		if (! result.isEmpty())
+		{
 			return result.get(0);
+		}
 		
 		return null;
 	}

@@ -52,6 +52,7 @@ import org.eclipse.draw2d.text.TextFlow;
  */
 public final class EscapeChars {
 
+	private static final String AND_CHARACTER = "&amp;";
 	/**
 	 * Escape characters for text appearing in HTML markup.
 	 * 
@@ -219,7 +220,7 @@ public final class EscapeChars {
 			} else if (character == '>') {
 				result.append("&gt;");
 			} else if (character == '&') {
-				result.append("&amp;");
+				result.append(AND_CHARACTER);
 			} else if (character == '\"') {
 				result.append("&quot;");
 			} else if (character == '\t') {
@@ -294,17 +295,6 @@ public final class EscapeChars {
 		if (value != null) {
 			// Translating characters into the html form. Examples: new line ->
 			// <br>, "!" -> "&#33;", etc.
-			// value = value.replaceAll("&", "&amp;");
-			// value = value.replaceAll(" ", "&nbsp;");
-			// value = value.replaceAll("<", "&lt;");
-			// value = value.replaceAll(">", "&gt;");
-			// value = value.replaceAll("\"", "&quot;");
-			// value = value.replaceAll("\r\n", "<br/>");
-			// value = value.replaceAll("\r", "<br/>");
-			// value = value.replaceAll("\n", "<br/>");
-			// value = value.replaceAll("'", "&#39;");
-
-			// value = value.replaceAll("’", "&#39;");
 			value = value.replaceAll("«", "&laquo;");
 			value = value.replaceAll("»", "&raquo;");
 			value = value.replaceAll("“", "&ldquo;");
@@ -358,7 +348,7 @@ public final class EscapeChars {
 	 * appear in the URL, since it requires a little extra work.
 	 */
 	public static String forHrefAmpersand(String aURL) {
-		return aURL.replace("&", "&amp;");
+		return aURL.replace("&", AND_CHARACTER);
 	}
 
 	/**
@@ -438,7 +428,7 @@ public final class EscapeChars {
 			} else if (character == '\'') {
 				result.append("&#039;");
 			} else if (character == '&') {
-				result.append("&amp;");
+				result.append(AND_CHARACTER);
 			} else {
 				// the char is not a special one
 				// add it to the result as is

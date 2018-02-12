@@ -1,7 +1,5 @@
 /**
- * <copyright>
- * 
- * Copyright (c) 2010 Thales Corporate Services S.A.S.
+ * Copyright (c) 2010-2018 Thales Corporate Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,8 +7,6 @@
  * 
  * Contributors:
  * Thales Corporate Services S.A.S - initial API and implementation
- * 
- * </copyright>
  */
 
 package org.polarsys.kitalpha.doc.gen.business.core.util;
@@ -34,6 +30,7 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.egf.model.domain.EMFDomain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.polarsys.kitalpha.doc.gen.business.core.Activator;
 
 /**
  * @author Benoit Langlois
@@ -42,16 +39,14 @@ import org.eclipse.emf.ecore.EObject;
 
 public class DocGenHtmlUtil {
 
+	/**
+	 * Hidden constructor
+	 */
+	private DocGenHtmlUtil(){
+	}
+	
 	private static final String UNKNOWN_ELEMENT = "unknown"; //$NON-NLS-1$
 
-	// @Deprecated
-	// public static String getModelName(URI uri) {
-	// String fileExtension = uri.fileExtension();
-	// String lastSegment = uri.lastSegment();
-	// int index = lastSegment.indexOf(fileExtension);
-	// String modelName = lastSegment.substring(0, index - 1);
-	// return getValidFileName(modelName);
-	// }
 	public static String getModelName(EMFDomain domain) {
 		EList<Object> content = domain.getContent();
 		if (!content.isEmpty() && content.get(0) instanceof EObject) {
@@ -100,7 +95,6 @@ public class DocGenHtmlUtil {
 		IPath path = new Path(""); //$NON-NLS-1$
 		
 // 		removing split on "." character (prod00102010) 
-//		for (String member : outputFolder.split("\\.|/|\\\\")) { //$NON-NLS-1$
 		for (String member : outputFolder.split("/|\\\\")) { //$NON-NLS-1$
 			path = path.append(member);
 			IFolder folder = project.getFolder(path);
@@ -137,7 +131,7 @@ public class DocGenHtmlUtil {
 			else
 				file.create(outputContent, true, null);
 		} catch (CoreException e) {
-			e.printStackTrace();
+			Activator.logError(e.getMessage(), e);
 		}
 	}
 
@@ -167,15 +161,16 @@ public class DocGenHtmlUtil {
 					while ((n = reader.read(buffer)) != -1) {
 						writer.write(buffer, 0, n);
 					}
-				} finally {
-				}
+				} catch (Exception e) {
+					Activator.logError(e.getMessage(), e);
+				} 
 				return writer.toString();
 			}
 
 		} catch (CoreException e) {
-			e.printStackTrace();
+			Activator.logError(e.getMessage(), e);
 		}
-		return new String();
+		return "";
 
 	}
 
@@ -188,18 +183,16 @@ public class DocGenHtmlUtil {
 	 * @return String
 	 */
 
-	public static String readSidebarFileContent(String projectName,
-			String outputFolder) {
-
+	public static String readSidebarFileContent(String projectName, String outputFolder) {
 		try {
 			return DocGenHtmlUtil.readFileContent(
 					DocGenHtmlConstants.SIDEBAR_FILENAME, projectName,
 					outputFolder);
 		} catch (IOException e) {
-			e.printStackTrace();
+			Activator.logError(e.getMessage(), e);
 		}
 
-		return new String();
+		return "";
 	}
 
 	/**

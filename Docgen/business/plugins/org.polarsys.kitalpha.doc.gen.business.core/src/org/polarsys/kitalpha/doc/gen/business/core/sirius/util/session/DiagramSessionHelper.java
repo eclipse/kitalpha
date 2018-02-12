@@ -33,6 +33,12 @@ public class DiagramSessionHelper {
 	private static URI airdUri;
 
 	private static Session session;
+	
+	/**
+	 * Hidden constrcutor
+	 */
+	private DiagramSessionHelper() {
+	}
 
 	public static Session initSession() {
 		if ((session == null || !session.isOpen()) && airdUri != null) {

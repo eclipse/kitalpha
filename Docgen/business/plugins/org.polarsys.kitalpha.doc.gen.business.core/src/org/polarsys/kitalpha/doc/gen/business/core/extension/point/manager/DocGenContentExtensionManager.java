@@ -63,14 +63,13 @@ public class DocGenContentExtensionManager {
 					String topics = elt.getAttribute(DOCGEN_TOPIC);
 					String[] topicTokens = getTopicTokens(topics);
 					IConfigurationElement[] children = elt.getChildren(DOCGEN_CONTENT_EXTENSION_FCORES);
-					String _priority = elt.getAttribute(DOCGEN_PRIORITY);
+					String sPriority = elt.getAttribute(DOCGEN_PRIORITY);
 					Integer priority = Integer.valueOf(-1);
 					
 					try {
-						priority = Integer.valueOf(_priority);
+						priority = Integer.valueOf(sPriority);
 					} catch (NumberFormatException e){
-						Activator.getDefault().getLog().log(
-								new Status(IStatus.WARNING, Activator.PLUGIN_ID, "Priority must be an Integer for " + topics.replace("|", ",") + ". The default (-1) priority is set to this contribution"));
+						Activator.logWarning("Priority must be an Integer for " + topics.replace("|", ",") + ". The default (-1) priority is set to this contribution");
 					}
 					
 					for (IConfigurationElement _elt : children) {
@@ -125,7 +124,9 @@ public class DocGenContentExtensionManager {
 		return result.toArray(new String[0]);
 	}
 
-	//TODO find where to call it!
+	/*
+	 * Find where to call it!!
+	 */
 	public void dispose(){
 		if (egfResourceSet != null){
 			EList<Resource> resources = egfResourceSet.getResources();

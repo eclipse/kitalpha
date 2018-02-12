@@ -162,7 +162,7 @@ public class GenDocDiagramExportAction extends ExportAction {
             } finally {
                 if (errorDuringExport) {
                     // Construct message for dialog and error in error log.
-                    StringBuffer messageExceptionForDialog = new StringBuffer();
+                    StringBuilder messageExceptionForDialog = new StringBuilder();
                     messageExceptionForDialog.append("One or more representations could not be exported because they are too large: ");
                     for (Throwable thr : messageException) {
                         messageExceptionForDialog.append("\n");
@@ -221,9 +221,6 @@ public class GenDocDiagramExportAction extends ExportAction {
                     final DiagramEditPart diagramEditPart = tool.createDiagramEditPart(diagram, shell, PreferencesHint.USE_DEFAULTS);
                     org.eclipse.gmf.runtime.diagram.ui.image.ImageFileFormat resolveImageFormat = org.eclipse.gmf.runtime.diagram.ui.image.ImageFileFormat.resolveImageFormat(imageFileExtension);
                     
-                    //TODO use this option to use Sirius auto scalling of exporting
-                    //diagram. This option affects clickable zones
-                    //boolean autoScalling = tool.isTooBig(diagramEditPart, resolveImageFormat);
                     tool.setAutoScalingEnabled(false);
                     
                     try {

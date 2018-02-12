@@ -17,7 +17,7 @@ import java.util.List;
 
 public class IndexerService {
 
-	public static IndexerService INSTANCE = new IndexerService();
+	public static final IndexerService INSTANCE = new IndexerService();
 	private List<String> elementsToIndex = new ArrayList<String>();
 
 	private IndexerService() {
@@ -36,7 +36,7 @@ public class IndexerService {
 	public boolean checkConceptExistence(String concept){
 		for (String iConcept : elementsToIndex) 
 		{
-			if (iConcept.toUpperCase().equals(concept.toUpperCase()))
+			if (iConcept.equalsIgnoreCase(concept))
 				return true;
 		}
 		return false;

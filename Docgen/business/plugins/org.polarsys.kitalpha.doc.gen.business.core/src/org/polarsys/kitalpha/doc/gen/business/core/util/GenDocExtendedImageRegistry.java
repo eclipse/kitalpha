@@ -11,14 +11,10 @@
 package org.polarsys.kitalpha.doc.gen.business.core.util;
 
 import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
-import org.eclipse.swt.widgets.Display;
 
 public class GenDocExtendedImageRegistry extends ExtendedImageRegistry {
 
 	private static GenDocExtendedImageRegistry INSTANCE = new GenDocExtendedImageRegistry();
-
-	public GenDocExtendedImageRegistry() {
-	}
 
 	public static GenDocExtendedImageRegistry getInstance() {
 		return INSTANCE;
@@ -26,10 +22,5 @@ public class GenDocExtendedImageRegistry extends ExtendedImageRegistry {
 
 	public void dispose() {
 		table.clear();
-	}
-	
-	@Override
-	protected void hookDisplayDispose(Display display) {
-		
 	}
 }

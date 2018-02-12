@@ -40,6 +40,7 @@ public class DocGenHtmlReporterIndex implements PatternExecutionReporter {
 
 	public void loopFinished(String output, String outputWithCallBack,
 			PatternContext context, Map<String, Object> parameterValues) {
+		// no need for this step
 	}
 
 }

@@ -23,6 +23,12 @@ public class MonitorServices {
 	private static int initTotalWork = 0;
 	private static int currentCount = 0;
 
+	/**
+	 * Hidden constructor
+	 */
+	private MonitorServices(){
+	}
+	
 	public static void initMonitor(IProgressMonitor parent) {
 		monitor = parent;
 	}
@@ -39,9 +45,8 @@ public class MonitorServices {
 	}
 
 	public static void workSubMonitor(String taskName) {
-		// if ((currentCount < initTotalWork) || initTotalWork == 0) {
 		currentCount++;
-		StringBuffer buffer = new StringBuffer();
+		StringBuilder buffer = new StringBuilder();
 		buffer.append(taskName);
 		buffer.append(" - ");
 		buffer.append(currentCount);
@@ -56,7 +61,6 @@ public class MonitorServices {
 
 		}
 		monitor.subTask(buffer.toString());
-		// }
 	}
 
 	public static void addTotalCount(int i) {

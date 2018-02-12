@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014-2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -13,19 +13,21 @@ package org.polarsys.kitalpha.doc.gen.business.core.branding;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.polarsys.kitalpha.doc.gen.business.core.Activator;
+
 /**
  * @author Boubekeur Zendagui
  */
 public class DocumentationBrandingData {
-	private static DocumentationBrandingData INSTANCE;
+	private static DocumentationBrandingData instance;
 	
 	private Map<String, Object> data = new HashMap<String, Object>();
 	
 	public static DocumentationBrandingData getInstance() {
-		if (INSTANCE == null)
-			INSTANCE = new DocumentationBrandingData();
+		if (instance == null)
+			instance = new DocumentationBrandingData();
 		
-		return INSTANCE;
+		return instance;
 	}
 	
 	/**
@@ -41,7 +43,7 @@ public class DocumentationBrandingData {
 	 * @return the data value
 	 * @throws IllegalArgumentException : in the case of a non available data
 	 */
-	public Object getData(String key) throws IllegalArgumentException{
+	public Object getData(String key) {
 		final Object object = data.get(key);
 		if (object != null)
 			return object;
@@ -50,7 +52,7 @@ public class DocumentationBrandingData {
 			if (DocumentationBrandingDefaultData.isThereDefautData(key))
 				return DocumentationBrandingDefaultData.getDefaultData(key);
 		}
-		// TODO: Put a warning in the error log.
+		Activator.logError("There is no such branding data");
 		throw new IllegalArgumentException("There is no such branding data");
 	}
 	

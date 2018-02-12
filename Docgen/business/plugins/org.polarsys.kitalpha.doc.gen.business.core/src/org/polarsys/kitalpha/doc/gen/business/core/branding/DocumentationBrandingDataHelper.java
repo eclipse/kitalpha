@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014-2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,6 +38,12 @@ import org.polarsys.kitalpha.doc.gen.business.core.branding.DocumentationBrandin
 public class DocumentationBrandingDataHelper {
 
 	/**
+	 * Hidden constructor
+	 */
+	private DocumentationBrandingDataHelper() {
+	}
+	
+	/**
 	 * 
 	 * @param projectName
 	 * @param outputFolder
@@ -45,9 +51,8 @@ public class DocumentationBrandingDataHelper {
 	 */
 	public static void copyLogoFile(String projectName, String outputFolder, String logoPath){
 		final IFolder imgFolder = getImgFolder(projectName, outputFolder);
-		if (imgFolder.exists())
+		if (imgFolder != null && imgFolder.exists())
 		{
-//			logoPath = logoPath.toLowerCase();
 			InputStream sourceFileIputStr = null;
 			try {
 				sourceFileIputStr = getIconInputStream(logoPath);
@@ -59,7 +64,7 @@ public class DocumentationBrandingDataHelper {
 			{
 				IFile destinationFile = imgFolder.getFile("logo.gif");
 				try {
-					if (destinationFile.exists() == false)
+					if (! destinationFile.exists())
 						destinationFile.create(sourceFileIputStr, true, null);
 					else
 						destinationFile.setContents(sourceFileIputStr, IFile.REPLACE, null);
@@ -67,10 +72,6 @@ public class DocumentationBrandingDataHelper {
 					e.printStackTrace();
 				}
 			}
-//			else
-//			{
-//				throw new RuntimeException("Unable to get icon : " + logoPath);
-//			}
 		}
 	}
 	
@@ -133,7 +134,7 @@ public class DocumentationBrandingDataHelper {
 	 * @throws FileNotFoundException
 	 * @throws DocumentationBrandingDataException
 	 */
-	private static InputStream getLocalFileInputStream(String logoPath) throws URISyntaxException, FileNotFoundException, DocumentationBrandingDataException{
+	private static InputStream getLocalFileInputStream(String logoPath) throws URISyntaxException, FileNotFoundException{
 		URI uri = URIUtil.fromString(logoPath).normalize();
 		// Add file scheme if it not exists
 		if (! logoPath.startsWith("file:"))
@@ -141,8 +142,7 @@ public class DocumentationBrandingDataHelper {
 
 		// handle the file
 		final File file = URIUtil.toFile(uri);
-		FileInputStream fis = new FileInputStream(file);
-		return fis;
+		return new FileInputStream(file);
 	}
 	
 	/**
@@ -185,7 +185,7 @@ public class DocumentationBrandingDataHelper {
 			if (folder.exists())
 			{
 				imgFolder = folder.getFolder("img");
-				if (imgFolder.exists() == false)
+				if (! imgFolder.exists())
 				{
 					try {
 						imgFolder.create(true, false, new NullProgressMonitor());
