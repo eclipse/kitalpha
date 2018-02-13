@@ -45,31 +45,6 @@ public class ListenerInstaller {
 		 * Script to be executed
 		 * 
 		 * CKEDITOR.on( 'currentInstance', function(e) {
-		 * 	var isCTRL = false;
-		 * 	CKEDITOR.currentInstance.document.on( 'keydown', function(event)
-		 * 	{
-		 * 		if(event.data.$.keyCode == 17)
-		 * 		isCTRL=true;
-		 * 	});
-		 * 
-		 * 	CKEDITOR.currentInstance.document.on( 'keyup', function(event)
-		 * 	{
-		 * 		if(event.data.$.keyCode == 17)
-		 * 		isCTRL=false;
-		 * 	});
-		 * 
-		 * 	CKEDITOR.currentInstance.document.on('click', function(ev)
-		 * 	{
-		 * 		var element = CKEDITOR.plugins.link.getSelectedLink( CKEDITOR.currentInstance ) || ev.data.element;
-		 * 		if (element!=undefined &&  element.is( 'a' ) ) {
-		 * 			if(isCTRL)
-		 * 			{
-		 * 				openLinks(element.getAttribute('href'));
-		 * 				isCTRL=false;
-		 * 			}
-		 * 		}
-		 * 	});
-		 * 
 		 * 	CKEDITOR.currentInstance.on('doubleclick', function(ev)
 		 * 	{
 		 * 		var element = CKEDITOR.plugins.link.getSelectedLink( CKEDITOR.currentInstance ) || ev.data.element;
@@ -112,33 +87,7 @@ public class ListenerInstaller {
 		 *	});
 		 */
 		
-		// Detect CTRL keydown and keyup event to open links
 		scriptAddMenu.append("CKEDITOR.on( 'currentInstance', function(e) {");
-		scriptAddMenu.append("	var isCTRL = false;");
-		scriptAddMenu.append("	CKEDITOR.currentInstance.document.on( 'keydown', function(event)");
-		scriptAddMenu.append("	{");
-		scriptAddMenu.append("		if(event.data.$.keyCode == 17)");
-		scriptAddMenu.append("		isCTRL=true;");
-		scriptAddMenu.append("	});");
-		
-		scriptAddMenu.append("	CKEDITOR.currentInstance.document.on( 'keyup', function(event)");
-		scriptAddMenu.append("	{");
-		scriptAddMenu.append("		if(event.data.$.keyCode == 17)");
-		scriptAddMenu.append("		isCTRL=false;");
-		scriptAddMenu.append("	});");
-		
-		scriptAddMenu.append("	CKEDITOR.currentInstance.document.on('click', function(event)");
-		scriptAddMenu.append("	{");
-		scriptAddMenu.append("		var element = CKEDITOR.plugins.link.getSelectedLink( CKEDITOR.currentInstance ) || event.data.element;");
-		scriptAddMenu.append("		if (element!=undefined &&  element.is( 'a' ) ) {");
-		scriptAddMenu.append("			if(isCTRL)");
-		scriptAddMenu.append("			{");
-		scriptAddMenu.append("				openLinks(element.getAttribute('href'));");
-		scriptAddMenu.append("				isCTRL=false;");
-		scriptAddMenu.append("			}");
-		scriptAddMenu.append("		}");
-		scriptAddMenu.append("	});");
-		
 		// Override the default double click event of CKEDITOR to open links
 		scriptAddMenu.append("	CKEDITOR.currentInstance.on('doubleclick', function(event)");
 		scriptAddMenu.append("	{");
