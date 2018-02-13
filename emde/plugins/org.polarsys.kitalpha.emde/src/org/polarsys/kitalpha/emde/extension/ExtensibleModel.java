@@ -71,7 +71,7 @@ public class ExtensibleModel extends Model<ExtensibleModel> {
 	
 	@Override
 	public int hashCode() {
-		return Objects.hash(this, getPath());
+		return Objects.hashCode(getPath());
 	}
 
 	/**

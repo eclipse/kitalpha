@@ -54,7 +54,7 @@ public class ExtendedModel extends Model<ExtendedModel> {
 	
 	@Override
 	public int hashCode() {
-		return Objects.hash(this, getPath());
+		return Objects.hashCode(getPath());
 	}
 
 	/**
