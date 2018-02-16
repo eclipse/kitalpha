@@ -20,7 +20,7 @@ import org.eclipse.ocl.EnvironmentFactory;
 import org.eclipse.ocl.Query;
 import org.eclipse.ocl.ecore.Constraint;
 import org.eclipse.ocl.ecore.OCL;
-
+import org.polarsys.kitalpha.validation.AccuracyPlugin;
 import org.polarsys.kitalpha.validation.util.LabelUtil;
 
 /**
@@ -31,28 +31,28 @@ public class OCLConstraint extends
 		AbstractOCLModelConstraint<EClassifier, Constraint, EClass, EObject> {
 	
 	/** the ocl to bind. */
-	private OCL _ocl;
+	private OCL ocl;
 	
 	/** the constraint descriptor. */
-	private OCLConstraintDescriptor _descriptor;
+	private OCLConstraintDescriptor descriptor;
 
 	public OCLConstraint(OCLConstraintDescriptor desc, OCL ocl) {
 		super(desc);
 
-		this._ocl = ocl;
-		this._descriptor = desc;
+		this.ocl = ocl;
+		this.descriptor = desc;
 	}
 
 	// override this method to indicate that we are doing new-style OCL
 	@Override
 	protected EnvironmentFactory<?, EClassifier, ?, ?, ?, ?, ?, ?, ?, Constraint, EClass, EObject> createOCLEnvironmentFactory() {
-		return _ocl.getEnvironment().getFactory();
+		return ocl.getEnvironment().getFactory();
 	}
 
 	@Override
 	public Query<EClassifier, EClass, EObject> getConstraintCondition(
 			EObject target) {
-		return _ocl.createQuery(_descriptor.getConstraint());
+		return ocl.createQuery(descriptor.getConstraint());
 	}
 
 	@SuppressWarnings("nls")
@@ -67,9 +67,8 @@ public class OCLConstraint extends
 								.getTarget()) });
 			}
 		} catch (Exception e) {
-			System.out.println("Rule evaluation failed : "
-					+ getDescriptor().getName());
-			e.printStackTrace();
+			AccuracyPlugin.getDefault().error("Rule evaluation failed : "
+					+ getDescriptor().getName(), e);
 		}
 		return status;
 	}

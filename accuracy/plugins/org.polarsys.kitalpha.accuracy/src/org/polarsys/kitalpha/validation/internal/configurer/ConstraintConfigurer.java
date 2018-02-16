@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -34,7 +34,7 @@ import org.polarsys.kitalpha.validation.util.TypeUtils;
 /**
  * Default implementation of {@link IConstraintConfigurer}.
  * 
- * @author THALESGROUP
+ * @author Guillaume Gebhart
  */
 public class ConstraintConfigurer implements IConstraintConfigurer {
 
@@ -84,9 +84,9 @@ public class ConstraintConfigurer implements IConstraintConfigurer {
 		for (String ruleId : splittedRules) {
 			Set<IAccuracyConstraintDescriptor> descriptors = this
 					.getRequirementIdToConstraints().get(ruleId);
-			if (descriptors != null)
+			if (descriptors != null) {
 				result.addAll(descriptors);
-			else {
+			} else {
 				throw new ConfigurerException(
 						"No constraints found for rule id: " + ruleId);
 			}
@@ -98,9 +98,10 @@ public class ConstraintConfigurer implements IConstraintConfigurer {
 	private void deactivateCategory(Category category) {
 		for (IConstraintDescriptor constraintDescriptor : TypeUtils.cast(
 				category.getConstraints(), IConstraintDescriptor.class)) {
-			if (!isMandatory(constraintDescriptor))
+			if (!isMandatory(constraintDescriptor)) {
 				EMFModelValidationPreferences.setConstraintDisabled(
 						constraintDescriptor.getId(), true);
+			}
 		}
 
 		for (Category cat : TypeUtils.cast(category.getChildren(),

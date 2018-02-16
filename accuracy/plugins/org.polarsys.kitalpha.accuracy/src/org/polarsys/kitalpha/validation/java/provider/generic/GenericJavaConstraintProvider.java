@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -15,7 +15,6 @@ import java.util.List;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.emf.validation.service.AbstractConstraintDescriptor;
-
 import org.polarsys.kitalpha.validation.provider.generic.GenericConstraintFactory;
 import org.polarsys.kitalpha.validation.provider.generic.GenericConstraintProvider;
 import org.polarsys.kitalpha.validation.provider.generic.GenericConstraintProviderService;
@@ -27,7 +26,6 @@ import org.polarsys.kitalpha.validation.provider.generic.GenericConstraintProvid
  */
 public abstract class GenericJavaConstraintProvider extends GenericConstraintProvider {
 
-    @SuppressWarnings("unchecked")
     private void addConstraintToGlobalConstraintCollection(JavaConstraintDescriptor currentConstraintDescriptor) {
         this.getConstraints().add(currentConstraintDescriptor.getJavaConstraint());
     }
@@ -46,6 +44,13 @@ public abstract class GenericJavaConstraintProvider extends GenericConstraintPro
         // getDeclaringExtension().getUniqueIdentifier() is the extension id
         // field
         // in plugin.xml
+        
+        /*
+         * FIXME: To resolve a dead stores issue, we must know why this call is done here and stored
+         * in the local variable constraintProviderID without using it further.
+         * If it is necessary, the snippet is shared between this class and GenericJavaConstraintProvider.
+         * These classes inherite from the same class, then, we can put this snippet in the super class
+         */
         String constraintProviderID = config.getDeclaringExtension().getUniqueIdentifier();
 
         if (constraintProviderID == null) {

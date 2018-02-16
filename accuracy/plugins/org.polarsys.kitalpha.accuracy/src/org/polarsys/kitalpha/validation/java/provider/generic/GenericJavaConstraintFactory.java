@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -117,7 +117,6 @@ public class GenericJavaConstraintFactory extends GenericConstraintFactory {
 		try {
 			IJavaConstraint<?> executableInstance = (IJavaConstraint<?>) javaConstraint
 					.createExecutableExtension(JavaConstraintExtension.JAVA_CONSTRAINT_CLASS);
-			// String name = executableInstance.getClass().getSimpleName();
 			String requirementId = javaConstraint.getAttribute(REQUIREMENT_ID);
 			String invariantId = javaConstraint.getAttribute(INVARIANT_ID);
 

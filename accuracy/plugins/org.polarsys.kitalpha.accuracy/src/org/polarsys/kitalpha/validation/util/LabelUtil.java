@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -19,12 +19,16 @@ import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 
 /**
- * @author THALESGROUP
+ * @author Guillaume Gebhart
  */
 public class LabelUtil {
 
 	private static final String[] LABEL_FEATURE_CANDIDATES = { "name",
 			"identifier" };
+	
+	private LabelUtil() {
+		//prevent instantiation
+	}
 
 	/**
 	 * Returns a label for the given object.
@@ -40,15 +44,17 @@ public class LabelUtil {
 				.getEditingDomainFor(eObject);
 		AdapterFactory adapterFactory = new ComposedAdapterFactory(
 				ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
-		if (editingDomain instanceof AdapterFactoryEditingDomain)
+		if (editingDomain instanceof AdapterFactoryEditingDomain) {
 			adapterFactory = ((AdapterFactoryEditingDomain) editingDomain)
 					.getAdapterFactory();
+		}
 
 		IItemLabelProvider itemLabelProvider = (IItemLabelProvider) adapterFactory
 				.adapt(eObject, IItemLabelProvider.class);
 		String text = getGenericLabel(eObject);
-		if (itemLabelProvider != null)
+		if (itemLabelProvider != null) {
 			text = itemLabelProvider.getText(eObject);
+		}
 		return text;
 	}
 

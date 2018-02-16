@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -29,21 +29,41 @@ public class OCLConstraintDescriptor extends
 	private final String name;
 	private final ConstraintSeverity severity;
 
+	/**
+	 * Depricated constructor, use 
+	 * OCLConstraintDescriptor(String requirementId, String invariantId, String namespace, 
+	 * 							Constraint constraint, int code, ValidationInfo validationInfo).
+	 * 
+	 * The constraintFileName is not used
+	 * 
+	 * @param requirementId
+	 * @param invariantId
+	 * @param namespace
+	 * @param constraint
+	 * @param constraintFileName
+	 * @param code
+	 * @param validationInfo
+	 */
+	@Deprecated
 	public OCLConstraintDescriptor(String requirementId, String invariantId,
-			String namespace_p, Constraint constraint_p,
-			String constraintFileName, int code_p, ValidationInfo validationInfo) {
-		super(namespace_p, requirementId, invariantId);
-		this.constraint = constraint_p;
+			String namespace, Constraint constraint,
+			String constraintFileName, int code, ValidationInfo validationInfo) {
+		super(namespace, requirementId, invariantId);
+		this.constraint = constraint;
 
-		// String name = constraintFileName+"/"+constraint.getName();
-		String name_temp = constraint_p.getName();
+		String name_temp = constraint.getName();
 		if (name_temp == null) {
-			name_temp = Long.toHexString(System.identityHashCode(constraint_p));
+			name_temp = Long.toHexString(System.identityHashCode(constraint));
 		}
 		this.name = name_temp;
-		this.code = code_p;
+		this.code = code;
 		this.errorMessage = validationInfo.getMessage();
 		this.severity = validationInfo.getSeverity();
+	}
+	
+	public OCLConstraintDescriptor(String requirementId, String invariantId,
+			String namespace, Constraint constraint, int code, ValidationInfo validationInfo) {
+		this(namespace, requirementId, invariantId, constraint, null, code, validationInfo);
 	}
 
 	public String getBody() {
@@ -55,11 +75,13 @@ public class OCLConstraintDescriptor extends
 	}
 
 	public String getDescription() {
-		// return getBody();
+		/*
+		 * return the body message
+		 */
 		return getMessagePattern();
 	}
 
-	public EvaluationMode getEvaluationMode() {
+	public EvaluationMode<?> getEvaluationMode() {
 		return EvaluationMode.BATCH;
 	}
 
