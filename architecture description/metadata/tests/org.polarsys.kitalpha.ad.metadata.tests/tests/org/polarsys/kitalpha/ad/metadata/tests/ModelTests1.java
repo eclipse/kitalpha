@@ -63,7 +63,7 @@ public class ModelTests1 extends ModelTests {
     public void testManager5() throws Exception {
         ResourceHelper rr = ResourceReuse.createHelper();
         Resource safetyVPResource = rr.getResource("org.polarsys.kitalpha.vp.componentsamplesafety");
-        String newVersion = "1.2.0";
+        String newVersion = "1.42.42";
         Version v = helper.getVersion(safetyVPResource);
         assertEquals("1.1.0.qualifier", v.toString());
         helper.updateVersion(safetyVPResource, new Version(newVersion));
