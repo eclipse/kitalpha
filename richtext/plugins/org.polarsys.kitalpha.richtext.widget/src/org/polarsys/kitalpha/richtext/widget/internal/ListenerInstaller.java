@@ -87,17 +87,15 @@ public class ListenerInstaller {
 		 *	});
 		 */
 		
-		scriptAddMenu.append("CKEDITOR.on( 'currentInstance', function(e) {");
 		// Override the default double click event of CKEDITOR to open links
-		scriptAddMenu.append("	CKEDITOR.currentInstance.on('doubleclick', function(event)");
-		scriptAddMenu.append("	{");
-		scriptAddMenu.append("		var element = CKEDITOR.plugins.link.getSelectedLink( CKEDITOR.currentInstance ) || event.data.element;");
-		scriptAddMenu.append("		if (element!=undefined &&  element.is( 'a' ) ) {");
-		scriptAddMenu.append("			event.stop();");
-		scriptAddMenu.append("			openLinks(element.getAttribute('href'));");
-		scriptAddMenu.append("		}");
-		scriptAddMenu.append("	}, null, null, 1);");
-		scriptAddMenu.append("});");
+    scriptAddMenu.append("  CKEDITOR.instances.editor.on('doubleclick', function(event)");
+    scriptAddMenu.append("  {");
+    scriptAddMenu.append("    var element = CKEDITOR.plugins.link.getSelectedLink( CKEDITOR.currentInstance ) || event.data.element;");
+    scriptAddMenu.append("    if (element!=undefined &&  element.is( 'a' ) ) {");
+    scriptAddMenu.append("      event.stop();");
+    scriptAddMenu.append("      openLinks(element.getAttribute('href'));");
+    scriptAddMenu.append("    }");
+    scriptAddMenu.append("  }, null, null, 1);");
 		
 		scriptAddMenu.append("CKEDITOR.on( 'instanceReady', function(e) {");
 			
