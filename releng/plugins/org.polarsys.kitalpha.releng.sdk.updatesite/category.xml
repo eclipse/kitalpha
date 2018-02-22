@@ -213,6 +213,12 @@
    <feature url="features/org.polarsys.kitalpha.model.common.ui.menu.feature.source_1.2.1.qualifier.jar" id="org.polarsys.kitalpha.model.common.ui.menu.feature.source" version="1.2.1.qualifier">
       <category name="SdkSource"/>
    </feature>
+   <feature url="features/org.polarsys.kitalpha.doc.feature_1.2.1.qualifier.jar" id="org.polarsys.kitalpha.doc.feature" version="1.2.1.qualifier">
+      <category name="Sdk"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.doc.feature.source_1.2.1.qualifier.jar" id="org.polarsys.kitalpha.doc.feature" version="1.2.1.qualifier">
+      <category name="SdkSource"/>
+   </feature>
    <category-def name="Sdk" label="Sdk"/>
    <category-def name="SdkSource" label="SdkSource"/>
 </site>
