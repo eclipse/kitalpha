@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,6 +25,7 @@ import org.polarsys.kitalpha.ad.viewpoint.integration.services.ServiceRunner;
  */
 public class UIServiceRunner extends ServiceRunner {
 
+	@Override
 	public boolean run(Service action, ModelManager vpMgr, List<Object> selection) {
 		String msg = doRun(action, vpMgr, selection);
 		if (msg != null)

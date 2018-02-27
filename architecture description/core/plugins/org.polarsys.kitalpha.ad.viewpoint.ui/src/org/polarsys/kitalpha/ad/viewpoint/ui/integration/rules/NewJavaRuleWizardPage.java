@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,11 +24,7 @@ import org.polarsys.kitalpha.ad.viewpoint.ui.dialogs.NewElementWizardPage;
  */
 public class NewJavaRuleWizardPage extends NewElementWizardPage {
 
-	private final static String PAGE_NAME = "NewClassWizardPage"; //$NON-NLS-1$
-
-	private final static String SETTINGS_CREATEMAIN = "create_main"; //$NON-NLS-1$
-	private final static String SETTINGS_CREATECONSTR = "create_constructor"; //$NON-NLS-1$
-	private final static String SETTINGS_CREATEUNIMPLEMENTED = "create_unimplemented"; //$NON-NLS-1$
+	private static final String PAGE_NAME = "NewClassWizardPage"; //$NON-NLS-1$
 
 	/**
 	 * Creates a new <code>NewClassWizardPage</code>
@@ -39,6 +35,7 @@ public class NewJavaRuleWizardPage extends NewElementWizardPage {
 		setDescription(Messages.NewJavaRuleWizardPage_description);
 	}
 
+	@Override
 	public String getElementLabel() {
 		return Messages.JavaRuleWizard_rule_label;
 	}

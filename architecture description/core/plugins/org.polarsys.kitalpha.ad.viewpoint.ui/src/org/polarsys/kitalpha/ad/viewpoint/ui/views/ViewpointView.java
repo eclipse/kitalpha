@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016-2017 Thales Global Services S.A.S.
+ * Copyright (c) 2016, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -12,7 +12,6 @@
 package org.polarsys.kitalpha.ad.viewpoint.ui.views;
 
 import java.util.ArrayList;
-import java.util.EventObject;
 import java.util.HashMap;
 import java.util.List;
 
@@ -27,11 +26,9 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.emf.common.command.BasicCommandStack;
-import org.eclipse.emf.common.command.CommandStackListener;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -82,14 +79,12 @@ public class ViewpointView extends ViewPart implements ISelectionProvider {
 	private Viewpoint viewpoint;
 	private org.polarsys.kitalpha.resourcereuse.model.Resource viewpointResource;
 	private ModelManager modelManager;
-	private final List<Tab> tabs = new ArrayList<Tab>();
+	private final List<Tab> tabs = new ArrayList<>();
 	private ModelLoader loader;
 	private ProjectSelectionListener projectListener;
 	private AFSelectionProvider selectionProvider;
 
 	private PropertySheetPage propertySheetPage;
-	private ComposedAdapterFactory adapterFactory;
-	private AdapterFactoryEditingDomain editingDomain;
 	private String resourceId;
 	private OverallListener viewpointListener;
 	private FormToolkit toolkit;
@@ -103,7 +98,6 @@ public class ViewpointView extends ViewPart implements ISelectionProvider {
 
 			viewpointListener = new HiddingListener(site);
 			ViewpointManager.addOverallListener(viewpointListener);
-			// }
 		} catch (Exception e) {
 			throw new PartInitException(e.getMessage(), e);
 		}
@@ -135,8 +129,6 @@ public class ViewpointView extends ViewPart implements ISelectionProvider {
 
 		Display display = parent.getDisplay();
 		toolkit = new FormToolkit(display);
-		// form = toolkit.createScrolledForm(parent);
-		// form.getBody().setLayout(new GridLayout());
 		Composite composite = toolkit.createComposite(parent);
 		composite.setLayout(new GridLayout());
 
@@ -153,9 +145,10 @@ public class ViewpointView extends ViewPart implements ISelectionProvider {
 	 * Passing the focus request to the viewer's control.
 	 */
 	public void setFocus() {
-		// viewer.getControl().setFocus();
+		// Nothing to do
 	}
 
+	@Override
 	public void setInitializationData(IConfigurationElement cfig, String propertyName, Object data) {
 		super.setInitializationData(cfig, propertyName, data);
 		resourceId = cfig.getAttribute("resourceId");
@@ -225,7 +218,7 @@ public class ViewpointView extends ViewPart implements ISelectionProvider {
 	protected void initializeEditingDomain() {
 		// Create an adapter factory that yields item providers.
 		//
-		adapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
+		ComposedAdapterFactory adapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new AfItemProviderAdapterFactory());
@@ -240,18 +233,15 @@ public class ViewpointView extends ViewPart implements ISelectionProvider {
 		// Add a listener to set the most recent command's affected objects to
 		// be the selection of the viewer with focus.
 		//
-		commandStack.addCommandStackListener(new CommandStackListener() {
-			public void commandStackChanged(final EventObject event) {
+		commandStack.addCommandStackListener(event -> {
 				if (propertySheetPage != null && !propertySheetPage.getControl().isDisposed()) {
 					propertySheetPage.refresh();
 				}
-			}
-		});
+			});
 
 		// Create the editing domain with a special command stack.
 		//
-		// adapterFactory.addListener(this);
-		editingDomain = new AdapterFactoryEditingDomain(adapterFactory, commandStack, new HashMap<Resource, Boolean>());
+		AdapterFactoryEditingDomain editingDomain = new AdapterFactoryEditingDomain(adapterFactory, commandStack, new HashMap<Resource, Boolean>());
 		propertySheetPage = new ExtendedPropertySheetPage(editingDomain);
 		propertySheetPage.setPropertySourceProvider(new org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider(adapterFactory));
 	}
@@ -265,23 +255,22 @@ public class ViewpointView extends ViewPart implements ISelectionProvider {
 
 		public void hasBeenDeactivated(Object ctx, org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
 			if (resourceId != null && resourceId.equals(vp.getId())) {
-				getSite().getShell().getDisplay().asyncExec(new Runnable() {
-					public void run() {
-						site.getPage().hideView(ViewpointView.this);
-					}
-				});
+				getSite().getShell().getDisplay().asyncExec( () -> site.getPage().hideView(ViewpointView.this));
 			}
 		}
 
 		public void hasBeenActivated(Object ctx, org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
+			//nothing to do
 		}
 
 		@Override
 		public void hasBeenFiltered(Object ctx, org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
+			//nothing to do
 		}
 
 		@Override
 		public void hasBeenDisplayed(Object ctx, org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
+			//nothing to do
 		}
 	}
 
@@ -306,12 +295,7 @@ public class ViewpointView extends ViewPart implements ISelectionProvider {
 						AD_Log.getDefault().logError(e);
 					}
 					loadModel();
-					getSite().getShell().getDisplay().asyncExec(new Runnable() {
-
-						public void run() {
-							init();
-						}
-					});
+					getSite().getShell().getDisplay().asyncExec( () -> init());
 					return Status.OK_STATUS;
 				}
 			};
@@ -397,7 +381,7 @@ public class ViewpointView extends ViewPart implements ISelectionProvider {
 		}
 	}
 
-	public ISelection getSelection() { // TODO Auto-generated method stub
+	public ISelection getSelection() { 
 		return null;
 	}
 
@@ -419,7 +403,6 @@ public class ViewpointView extends ViewPart implements ISelectionProvider {
 		}
 	}
 
-	// TODO revoir impl
 	public void setSelection(ISelection selection) {
 		for (Tab tab : tabs) {
 			ISelectionProvider prov = tab.getSelectionProvider();

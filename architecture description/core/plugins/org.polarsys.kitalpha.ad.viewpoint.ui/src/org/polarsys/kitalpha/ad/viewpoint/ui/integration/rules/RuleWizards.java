@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,12 +26,6 @@ import org.polarsys.kitalpha.ad.common.AD_Log;
  */
 public class RuleWizards {
 
-	static {
-		// addProvider(new JavaRuleProvider());
-		// addProvider(new EmfValidationRuleProvider());
-		// addProvider(new AccuracyRuleProvider());
-	}
-
 	public static String[] getAvailableTypes() {
 		String[] types = getProviders().keySet().toArray(new String[getProviders().size()]);
 		Arrays.sort(types);
@@ -44,7 +38,7 @@ public class RuleWizards {
 	}
 
 	public static Map<String, RuleProviderWizard> getProviders() {
-		Map<String, RuleProviderWizard> providers = new HashMap<String, RuleProviderWizard>();
+		Map<String, RuleProviderWizard> providers = new HashMap<>();
 		IConfigurationElement[] configurationElements = Platform.getExtensionRegistry().getConfigurationElementsFor("org.polarsys.kitalpha.ad.viewpoint.ui.rule.wizard.providers");
 		for (IConfigurationElement elt : configurationElements) {
 			try {
@@ -56,6 +50,10 @@ public class RuleWizards {
 		}
 
 		return providers;
+	}
+
+	private RuleWizards() {
+		super();
 	}
 
 }

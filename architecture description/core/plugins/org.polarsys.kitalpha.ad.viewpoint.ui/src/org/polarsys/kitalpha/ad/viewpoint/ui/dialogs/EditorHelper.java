@@ -52,7 +52,7 @@ public class EditorHelper {
 
 	public static void setSelectionToViewer(IEditorPart part, List<EObject> eObjects) {
 		// Do we have something to process
-		if (eObjects == null || eObjects.size() == 0) {
+		if (eObjects == null || eObjects.isEmpty()) {
 			return;
 		}
 		// Select
@@ -243,7 +243,7 @@ public class EditorHelper {
 							URI editorInputURI = EditorHelper.getURI(editorInput);
 							if (editorInputURI != null && editorInputURI.equals(uriToCheck)) {
 								IEditorPart part = reference.getEditor(true);
-								if (editorId != null && editorId.equals(part.getEditorSite().getId()) == false) {
+								if (editorId != null && !editorId.equals(part.getEditorSite().getId()) ) {
 									continue;
 								}
 								if (activate) {
@@ -276,6 +276,10 @@ public class EditorHelper {
 			}
 		}
 		return result;
+	}
+
+	private EditorHelper() {
+		super();
 	}
 
 	public static class EclipseUtil {
@@ -340,10 +344,9 @@ public class EditorHelper {
 					}
 				}
 			}
-			if (URI_EDITOR_INPUT_CLASS != null) {
-				if (editorInput instanceof IURIEditorInput) {
-					return URI.createURI(((IURIEditorInput) editorInput).getURI().toString()).trimFragment();
-				}
+			if (URI_EDITOR_INPUT_CLASS != null && editorInput instanceof IURIEditorInput) {
+				return URI.createURI(((IURIEditorInput) editorInput).getURI().toString()).trimFragment();
+				
 			}
 			return null;
 		}
@@ -357,6 +360,10 @@ public class EditorHelper {
 
 		public static IURIEditorInput createFileEditorInput(IFile file) {
 			return new FileEditorInput(file);
+		}
+
+		private EclipseUtil() {
+			super();
 		}
 
 	}

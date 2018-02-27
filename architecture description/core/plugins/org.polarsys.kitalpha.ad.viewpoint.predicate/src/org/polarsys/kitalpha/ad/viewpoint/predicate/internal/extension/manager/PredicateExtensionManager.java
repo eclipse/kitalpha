@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017 Thales Global Services.
+ * Copyright (c) 2017, 2018 Thales Global Services.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,9 +30,9 @@ import org.polarsys.kitalpha.ad.viewpoint.predicate.internal.Activator;
  */
 public class PredicateExtensionManager extends AbstractExtensionManager {
 	
-	private final static PredicateExtensionManager INSTANCE = new PredicateExtensionManager();
+	private static final PredicateExtensionManager INSTANCE = new PredicateExtensionManager();
 	
-	public synchronized static PredicateExtensionManager getInstance(){
+	public static synchronized PredicateExtensionManager getInstance(){
 		return INSTANCE;
 	}
 	

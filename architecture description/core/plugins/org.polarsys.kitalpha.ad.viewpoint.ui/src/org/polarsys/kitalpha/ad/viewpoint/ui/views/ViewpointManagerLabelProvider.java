@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services.
+ * Copyright (c) 2016, 2018 Thales Global Services.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -11,7 +11,6 @@
 
 package org.polarsys.kitalpha.ad.viewpoint.ui.views;
 
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.jface.viewers.ITableLabelProvider;
 import org.eclipse.jface.viewers.LabelProvider;
@@ -21,7 +20,6 @@ import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.Description;
 import org.polarsys.kitalpha.ad.viewpoint.ui.AFImages;
 import org.polarsys.kitalpha.ad.viewpoint.ui.Activator;
-import org.polarsys.kitalpha.resourcereuse.model.Resource;
 
 /**
  * @author Thomas Guiu
@@ -56,8 +54,9 @@ public class ViewpointManagerLabelProvider extends LabelProvider implements ITab
 		case 1:
 			Version version = vp.getVersion();
 			return version == null ? "no version" : version.toString();
+		default:
+			return "";
 		}
-		return "";
 	}
 
 	public void setContext(ResourceSet context) {

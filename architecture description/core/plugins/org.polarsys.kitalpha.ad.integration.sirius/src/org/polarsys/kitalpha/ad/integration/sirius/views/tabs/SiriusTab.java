@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,9 +14,6 @@ package org.polarsys.kitalpha.ad.integration.sirius.views.tabs;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IWorkspaceRoot;
-import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -63,19 +60,68 @@ import org.polarsys.kitalpha.ad.viewpoint.ui.views.tabs.ResourceTableSorter;
  * 
  */
 public class SiriusTab extends AbstractTab {
+	private final class AddButtonListener extends SelectionListener2 {
+		@Override
+		public void doWidgetSelected(SelectionEvent e) {
+			IRepresentationHandler representationHandler = modelManager.getRepresentationHandler();
+
+			ModelFileDialog dialog = new ModelFileDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), viewpoint, "*.odesign");
+			if (dialog.open() == Window.OK) {
+				ResourceSet resourceSet = viewpoint.eResource().getResourceSet();
+				List<RepresentationElement> representations = new ArrayList<RepresentationElement>();
+				for (URI euri : dialog.getResult()) {
+					Resource resource = resourceSet.getResource(euri, true);
+					for (EObject eobj : resource.getContents()) {
+						if (eobj instanceof Group) {
+							SiriusRepresentation representation = SiriusFactory.eINSTANCE.createSiriusRepresentation();
+							representation.setOdesign((Group) eobj);
+							representations.add(representation);
+						}
+					}
+				}
+				representationHandler.addRepresentations(representations);
+			}
+		}
+	}
+
+	private final class HeaderListener extends SelectionListener2 {
+		private final Table table;
+
+		private HeaderListener(Table table) {
+			this.table = table;
+		}
+
+		public void doWidgetSelected(SelectionEvent e) {
+			TableColumn currentSortColumn = table.getSortColumn();
+			TableColumn newSortColumn = (TableColumn) e.getSource();
+			if (currentSortColumn.equals(newSortColumn)) {
+				int sortDirection = table.getSortDirection();
+				table.setSortDirection(sortDirection == SWT.UP ? SWT.DOWN : SWT.UP);
+			} else {
+				table.setSortColumn(newSortColumn);
+				table.setSortDirection(SWT.DOWN);
+			}
+			odesignViewer.refresh();
+		}
+	}
+
 	private static final String NAME_COLUMN = "name";
 
 	private TableViewer odesignViewer;
-	private Button addBtn, deleteBtn, viewBtn;
+	private Button addBtn;
+	private Button deleteBtn;
+	private Button viewBtn;
 
 	public SiriusTab() {
 		super(new SiriusLabelProvider());
 	}
 
+	@Override
 	public ISelectionProvider getSelectionProvider() {
 		return odesignViewer;
 	}
 
+	@Override
 	public void createTab(FormToolkit toolkit, CTabFolder folder) {
 		final Composite composite = createTab(toolkit, folder, "Sirius models", IntegrationEditPlugin.INSTANCE.getImage("full/obj16/SiriusRepresentation"));
 		GridLayout clayout = new GridLayout();
@@ -86,24 +132,9 @@ public class SiriusTab extends AbstractTab {
 		final Table table = odesignViewer.getTable();
 		TableLayout layout = new TableLayout();
 		table.setLayout(layout);
-		// Table ruleTable = toolkit.createTable(composite, SWT.SINGLE);
 		table.setHeaderVisible(true);
 		table.setLayoutData(new GridData(GridData.FILL_BOTH));
-		SelectionListener headerListener = new SelectionListener2() {
-
-			public void doWidgetSelected(SelectionEvent e) {
-				TableColumn currentSortColumn = table.getSortColumn();
-				TableColumn newSortColumn = (TableColumn) e.getSource();
-				if (currentSortColumn.equals(newSortColumn)) {
-					int sortDirection = table.getSortDirection();
-					table.setSortDirection(sortDirection == SWT.UP ? SWT.DOWN : SWT.UP);
-				} else {
-					table.setSortColumn(newSortColumn);
-					table.setSortDirection(SWT.DOWN);
-				}
-				odesignViewer.refresh();
-			}
-		};
+		SelectionListener headerListener = new HeaderListener(table);
 
 		TableViewerColumn nameColumn = new TableViewerColumn(odesignViewer, SWT.NONE);
 		layout.addColumnData(new ColumnWeightData(3, 90, true));
@@ -133,34 +164,7 @@ public class SiriusTab extends AbstractTab {
 		btnBar.setLayout(new GridLayout());
 		addBtn = toolkit.createButton(btnBar, "", SWT.PUSH);
 		addBtn.setImage(Activator.getDefault().getImage(AFImages.ADD));
-		addBtn.addSelectionListener(new SelectionListener2() {
-
-			@Override
-			public void doWidgetSelected(SelectionEvent e) {
-				IRepresentationHandler representationHandler = modelManager.getRepresentationHandler();
-				URI uri = viewpoint.eResource().getURI();
-				String segment = uri.segment(1);
-				IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
-				IProject project = root.getProject(segment);
-
-				ModelFileDialog dialog = new ModelFileDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), viewpoint, "*.odesign");
-				if (dialog.open() == Window.OK) {
-					ResourceSet resourceSet = viewpoint.eResource().getResourceSet();
-					List<RepresentationElement> representations = new ArrayList<RepresentationElement>();
-					for (URI euri : dialog.getResult()) {
-						Resource resource = resourceSet.getResource(euri, true);
-						for (EObject eobj : resource.getContents()) {
-							if (eobj instanceof Group) {
-								SiriusRepresentation representation = SiriusFactory.eINSTANCE.createSiriusRepresentation();
-								representation.setOdesign((Group) eobj);
-								representations.add(representation);
-							}
-						}
-					}
-					representationHandler.addRepresentations(representations);
-				}
-			}
-		});
+		addBtn.addSelectionListener(new AddButtonListener());
 
 		deleteBtn = toolkit.createButton(btnBar, "", SWT.PUSH);
 		deleteBtn.setImage(Activator.getDefault().getImage(AFImages.DELETE));
@@ -204,7 +208,6 @@ public class SiriusTab extends AbstractTab {
 				updateButtons((IStructuredSelection) event.getSelection());
 			}
 		});
-		// site.setSelectionProvider(configViewer);
 	}
 
 	public void init() {
@@ -214,6 +217,7 @@ public class SiriusTab extends AbstractTab {
 		workspaceHasChanged();
 	}
 
+	@Override
 	public void workspaceHasChanged() {
 		super.workspaceHasChanged();
 		odesignViewer.refresh();

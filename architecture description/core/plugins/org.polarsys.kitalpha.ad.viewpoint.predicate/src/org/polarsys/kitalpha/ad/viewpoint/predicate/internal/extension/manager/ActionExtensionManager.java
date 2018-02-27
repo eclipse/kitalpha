@@ -30,9 +30,9 @@ import org.polarsys.kitalpha.ad.viewpoint.predicate.internal.Activator;
  */
 public class ActionExtensionManager extends AbstractExtensionManager {
 	
-	private final static ActionExtensionManager INSTANCE = new ActionExtensionManager();
+	private static final ActionExtensionManager INSTANCE = new ActionExtensionManager();
 	
-	public synchronized static ActionExtensionManager getInstance(){
+	public static synchronized ActionExtensionManager getInstance(){
 		return INSTANCE;
 	}
 	

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -11,33 +11,21 @@
 
 package org.polarsys.kitalpha.ad.viewpoint.ui.dialogs;
 
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.regex.Pattern;
 
-import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
-import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.TitleAreaDialog;
-import org.eclipse.jface.viewers.DoubleClickEvent;
-import org.eclipse.jface.viewers.IDoubleClickListener;
-import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.ListViewer;
-import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerSorter;
 import org.eclipse.osgi.service.resolver.BundleDescription;
@@ -45,17 +33,12 @@ import org.eclipse.osgi.service.resolver.BundleSpecification;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.pde.core.plugin.IPluginModelBase;
 import org.eclipse.pde.core.plugin.PluginRegistry;
-import org.eclipse.search.core.text.TextSearchEngine;
-import org.eclipse.search.core.text.TextSearchRequestor;
-import org.eclipse.search.core.text.TextSearchScope;
-import org.eclipse.search.ui.text.FileTextSearchScope;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
-import org.osgi.framework.Bundle;
 import org.polarsys.kitalpha.ad.common.AD_Log;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.model.edit.helpers.ModelHelper;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint;
@@ -68,7 +51,7 @@ import org.polarsys.kitalpha.ad.viewpoint.ui.Messages;
 public class ModelFileDialog extends TitleAreaDialog {
 
 	private ListViewer viewer;
-	private final List<URI> result = new ArrayList<URI>();
+	private final List<URI> result = new ArrayList<>();
 
 	private final String filePattern;
 	private Viewpoint viewpoint;
@@ -79,6 +62,7 @@ public class ModelFileDialog extends TitleAreaDialog {
 		this.filePattern = filePattern;
 	}
 
+	@Override
 	protected Control createDialogArea(Composite parent) {
 		// top level composite
 		Composite parentComposite = (Composite) super.createDialogArea(parent);
@@ -102,59 +86,6 @@ public class ModelFileDialog extends TitleAreaDialog {
 		viewer.setInput(ModelHelper.getCandidateURIs(viewpoint, filePattern));
 	}
 
-	private void collectFileInPlatform(List<Bundle> pBundles, List<URI> fileUris) {
-		for (Bundle bundle : pBundles) {
-			Enumeration e = bundle.findEntries(".", filePattern, true);
-			while (e != null && e.hasMoreElements()) {
-				URL url = (URL) e.nextElement();
-				String path = url.getPath();
-				URI uri = URI.createPlatformPluginURI(bundle.getSymbolicName() + path.substring(2), true);
-				fileUris.add(uri);
-			}
-		}
-	}
-
-	private void collectFileInWorkspace(List<IProject> wsProjects, final List<URI> fileUris) {
-		String[] fileNamePattern = new String[] { filePattern };
-		TextSearchScope fScope = FileTextSearchScope.newSearchScope(wsProjects.toArray(new IResource[wsProjects.size()]), fileNamePattern, true);
-
-		TextSearchRequestor requestor = new TextSearchRequestor() {
-			@Override
-			public boolean acceptFile(IFile file) throws CoreException {
-				URI uri = URI.createPlatformResourceURI(file.getFullPath().toPortableString(), true);
-				fileUris.add(uri);
-				return super.acceptFile(file);
-			}
-		};
-		Pattern searchPattern = Pattern.compile("");
-		TextSearchEngine.create().search(fScope, requestor, searchPattern, null);
-	}
-
-	private void collectBundles(IPluginModelBase model, List<IProject> wsProjects, List<Bundle> pBundles, Set<String> visited) {
-		String symbolicName = model.getBundleDescription().getSymbolicName();
-		IResource underlyingResource = model.getUnderlyingResource();
-		if (underlyingResource != null)
-			wsProjects.add(underlyingResource.getProject());
-		else {
-			Bundle bundle = Platform.getBundle(symbolicName);
-			pBundles.add(bundle);
-		}
-
-		visited.add(symbolicName);
-
-		BundleDescription description = model.getBundleDescription();
-		for (BundleSpecification req : description.getRequiredBundles()) {
-			if (req.getSupplier() == null) {
-				AD_Log.getDefault().logWarning(NLS.bind(Messages.LoadModelDialog_error2, req.hashCode()));
-				continue;
-			}
-			IPluginModelBase reqModel = PluginRegistry.findModel(req.getSupplier().getSupplier());
-			symbolicName = reqModel.getBundleDescription().getSymbolicName();
-			if (!visited.contains(symbolicName))
-				collectBundles(reqModel, wsProjects, pBundles, visited);
-		}
-
-	}
 
 	public void collectDependenciesInWorkspace(IPluginModelBase model, Set<String> wsModels, List<IResource> collector) {
 		IResource underlyingResource = model.getUnderlyingResource();
@@ -176,33 +107,28 @@ public class ModelFileDialog extends TitleAreaDialog {
 	}
 
 	public Set<String> computeWorkspaceModels() {
-		Set<String> result = new HashSet<String>();
+		Set<String> res = new HashSet<>();
 		for (IPluginModelBase model : PluginRegistry.getWorkspaceModels())
-			result.add(model.getBundleDescription().getSymbolicName());
-		return result;
+			res.add(model.getBundleDescription().getSymbolicName());
+		return res;
 	}
 
 	private void createWidgets(Composite parent) {
 		viewer = new ListViewer(parent);
 		viewer.getList().setLayoutData(new GridData(GridData.FILL_BOTH));
-		viewer.addSelectionChangedListener(new ISelectionChangedListener() {
-
-			public void selectionChanged(SelectionChangedEvent event) {
-				getButton(IDialogConstants.OK_ID).setEnabled(!event.getSelection().isEmpty());
-			}
-		});
+		viewer.addSelectionChangedListener( event -> getButton(IDialogConstants.OK_ID).setEnabled(!event.getSelection().isEmpty()));
 		viewer.setSorter(new ViewerSorter());
-		viewer.addDoubleClickListener(new IDoubleClickListener() {
-			public void doubleClick(DoubleClickEvent event) {
-				okPressed();
-			}
-		});
+		viewer.addDoubleClickListener(event -> okPressed());
 		viewer.setContentProvider(new IStructuredContentProvider() {
 
+			@Override
 			public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
+				//Nothing to do
 			}
 
+			@Override
 			public void dispose() {
+				//Nothing to do
 			}
 
 			public Object[] getElements(Object inputElement) {
@@ -215,6 +141,7 @@ public class ModelFileDialog extends TitleAreaDialog {
 		viewer.setLabelProvider(new LabelProvider());
 	}
 
+	@Override
 	protected void createButtonsForButtonBar(Composite parent) {
 		// create OK and Cancel buttons by default
 		createButton(parent, IDialogConstants.OK_ID, Messages.Dialog_Add_label, true).setEnabled(false);

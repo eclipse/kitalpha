@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,7 +17,6 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.jdt.internal.ui.dialogs.StatusInfo;
 import org.eclipse.jdt.internal.ui.dialogs.TextFieldNavigationHandler;
 import org.eclipse.jdt.internal.ui.wizards.dialogfields.DialogField;
-import org.eclipse.jdt.internal.ui.wizards.dialogfields.IDialogFieldListener;
 import org.eclipse.jdt.internal.ui.wizards.dialogfields.LayoutUtil;
 import org.eclipse.jdt.internal.ui.wizards.dialogfields.StringDialogField;
 import org.eclipse.jface.dialogs.Dialog;
@@ -34,13 +33,9 @@ import org.polarsys.kitalpha.ad.viewpoint.ui.dialogs.NewElementWizardPage;
  */
 public class NewServiceWizardPage extends NewElementWizardPage {
 
-	private final static String PAGE_NAME = "NewClassWizardPage"; //$NON-NLS-1$
+	private static final String PAGE_NAME = "NewClassWizardPage"; //$NON-NLS-1$
 
-	private final static String SETTINGS_CREATEMAIN = "create_main"; //$NON-NLS-1$
-	private final static String SETTINGS_CREATECONSTR = "create_constructor"; //$NON-NLS-1$
-	private final static String SETTINGS_CREATEUNIMPLEMENTED = "create_unimplemented"; //$NON-NLS-1$
-
-	protected final static String SERVICE_TYPE = "service.type";
+	protected static final String SERVICE_TYPE = "service.type";
 
 	protected StringDialogField fServiceTypeDialogField;
 	protected IStatus fServiceTypeStatus = new StatusInfo();
@@ -53,12 +48,7 @@ public class NewServiceWizardPage extends NewElementWizardPage {
 		setTitle(Messages.NewServiceWizardPage_title);
 		setDescription(Messages.NewServiceWizardPage_description);
 		fServiceTypeDialogField = new StringDialogField();
-		fServiceTypeDialogField.setDialogFieldListener(new IDialogFieldListener() {
-
-			public void dialogFieldChanged(DialogField field) {
-				handleFieldChanged(SERVICE_TYPE);
-			}
-		});
+		fServiceTypeDialogField.setDialogFieldListener(field -> handleFieldChanged(SERVICE_TYPE));
 		fServiceTypeDialogField.setLabelText(Messages.ServiceWizard_type_label);
 
 	}
@@ -73,6 +63,7 @@ public class NewServiceWizardPage extends NewElementWizardPage {
 
 	// -------- Initialization ---------
 
+	@Override
 	public String getElementLabel() {
 		return Messages.ServiceWizard_name_label;
 	}
@@ -81,11 +72,13 @@ public class NewServiceWizardPage extends NewElementWizardPage {
 		return fServiceTypeDialogField.getText();
 	}
 
+	@Override
 	protected void collectStatus(List<IStatus> allStatus) {
 		super.collectStatus(allStatus);
 		allStatus.add(fServiceTypeStatus);
 	}
 
+	@Override
 	protected void handleFieldChanged(String fieldName) {
 		super.handleFieldChanged(fieldName);
 		if (fieldName == SERVICE_TYPE) {

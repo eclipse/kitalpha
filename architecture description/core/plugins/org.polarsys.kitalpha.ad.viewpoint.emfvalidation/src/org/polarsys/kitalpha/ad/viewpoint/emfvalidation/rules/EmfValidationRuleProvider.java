@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2009-2010 Thales Corporate Services S.A.S.
+ * Copyright (c) 2009-2018 Thales Corporate Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,9 +18,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
@@ -54,7 +52,6 @@ public class EmfValidationRuleProvider implements RuleProvider {
 		List<ElementDescriptor> result = new ArrayList<ElementDescriptor>();
 		ModelValidationService.getInstance().loadXmlConstraintDeclarations();
 		Collection<IConstraintDescriptor> allDescriptors = ConstraintRegistry.getInstance().getAllDescriptors();
-		IConfigurationElement[] configurationElements = Platform.getExtensionRegistry().getConfigurationElementsFor(EXTENSION_POINT_ID);
 
 		for (IConstraintDescriptor desc : allDescriptors) {
 			String name = desc.getName();
@@ -107,8 +104,6 @@ public class EmfValidationRuleProvider implements RuleProvider {
 		BasicDiagnostic diagnostic = createDiagnostic(rule);
 		IConstraintDescriptor descriptor = getConstraintDescriptor(rule);
 		if (descriptor == null) {
-			// IStatus validate = new Status(IStatus.WARNING,
-			// Activator.PLUGIN_ID, "Cannot find rule: " + rule.getRuleId());
 			diagnostic.add(new BasicDiagnostic(Diagnostic.WARNING, Activator.getSymbolicName(), 0, "Cannot find rule: " + rule.getImplementation(), null));
 		} else {
 			final IModelConstraint newConstraint = ConstraintFactory.getInstance().newConstraint(descriptor);
@@ -118,23 +113,16 @@ public class EmfValidationRuleProvider implements RuleProvider {
 				if (target instanceof EObject)
 					ctx3.setTarget((EObject) target);
 				IStatus validate = newConstraint.validate(ctx3);
-				// result.add(validate);
 				diagnostic.add(new BasicDiagnostic(validate.getSeverity(), validate.getPlugin(), validate.getCode(), validate.getMessage(), null));
 			}
-
-			// String title = "Validation Problems";
-			// String message = "Problems encountered during validation";
 		}
-		// DiagnosticDialog.open(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(),
-		// title, message, diagnostic);
 		Activator.getDefault().getLog().log(BasicDiagnostic.toIStatus(diagnostic));
 
 	}
 
 	private BasicDiagnostic createDiagnostic(Rule rule) {
 		String name = "Diagnostic of " + rule.getImplementation() + " element";
-		BasicDiagnostic diagnostic = new BasicDiagnostic(Activator.getSymbolicName(), 0, name, null);
-		return diagnostic;
+		return new BasicDiagnostic(Activator.getSymbolicName(), 0, name, null);
 	}
 
 	private IConstraintDescriptor getConstraintDescriptor(Rule rule) {
@@ -142,10 +130,7 @@ public class EmfValidationRuleProvider implements RuleProvider {
 		ModelValidationService.getInstance().loadXmlConstraintDeclarations();
 
 		ConstraintRegistry instance = ConstraintRegistry.getInstance();
-		// MultiStatus result = new MultiStatus(Activator.PLUGIN_ID, 0,
-		// "Validation result", null);
-		IConstraintDescriptor descriptor = instance.getDescriptor(rule.getImplementation());
-		return descriptor;
+		return instance.getDescriptor(rule.getImplementation());
 	}
 
 	public boolean hasProvider(Bundle bundle) {

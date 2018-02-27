@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 THALES GLOBAL SERVICES.
+ * Copyright (c) 2016, 2018 THALES GLOBAL SERVICES.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,14 +44,17 @@ public class RegisterMetadataListener  extends Stub {
 
 		@Override
 		public void handleUnReferencing(Resource vp) {
+			//nothing to do
 		}
 
 		@Override
 		public void handleActivation(Resource vp) {
+			//nothing to do
 		}
 
 		@Override
 		public void handleInactivation(Resource vp) {
+			//nothing to do		
 		}
 
 		@Override
@@ -61,9 +64,7 @@ public class RegisterMetadataListener  extends Stub {
 
 		@Override
 		public boolean equals(Object obj) {
-			if (obj instanceof MyListener && session.equals(((MyListener)obj).session))
-				return true;
-			return false;
+			return obj instanceof MyListener && session.equals(((MyListener)obj).session);
 		}
 
 	}
@@ -82,6 +83,7 @@ public class RegisterMetadataListener  extends Stub {
 	}
 
 	protected void handleOpenSession(final Session session) {
+		//nothing to do
 	}
 
 	protected void registerMetadataResource(final Session session) {

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2009-2010 Thales Corporate Services S.A.S.
+ * Copyright (c) 2009, 2018 Thales Corporate Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,7 +31,6 @@ import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
-import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Text;
@@ -47,12 +46,12 @@ import org.polarsys.kitalpha.ad.viewpoint.ui.dialogs.NewElementWizardPage;
  */
 public class NewEmfRuleWizardPage extends NewElementWizardPage {
 
-	protected final static String DESCRIPTION = "description";
-	protected final static String MESSAGE = "message";
-	protected final static String PACKAGES = "packages";
-	protected final static String TARGETS = "targets";
+	protected static final String DESCRIPTION = "description";
+	protected static final String MESSAGE = "message";
+	protected static final String PACKAGES = "packages";
+	protected static final String TARGETS = "targets";
 
-	private final static String PAGE_NAME = "NewClassWizardPage"; //$NON-NLS-1$
+	private static final String PAGE_NAME = "NewClassWizardPage"; //$NON-NLS-1$
 
 	protected StringDialogField fMessageDialogField;
 	protected IStatus fMessageStatus = Status.OK_STATUS;
@@ -110,6 +109,7 @@ public class NewEmfRuleWizardPage extends NewElementWizardPage {
 
 	}
 
+	@Override
 	public String getElementLabel() {
 		return Messages.JavaRuleWizard_rule_label;
 	}
@@ -145,7 +145,7 @@ public class NewEmfRuleWizardPage extends NewElementWizardPage {
 
 		createContainerControls(composite, nColumns);
 		createPackageControls(composite, nColumns);
-		// createEnclosingTypeControls(composite, nColumns);
+
 		createTypeNameControls(composite, nColumns);
 		setSuperClass("org.eclipse.emf.validation.AbstractModelConstraint", false);
 
@@ -160,6 +160,7 @@ public class NewEmfRuleWizardPage extends NewElementWizardPage {
 		Dialog.applyDialogFont(composite);
 	}
 
+	@Override
 	protected void collectStatus(List<IStatus> allStatus) {
 		fElementNameStatus = elementNameChanged();
 		fMessageStatus = messageChanged();
@@ -171,6 +172,7 @@ public class NewEmfRuleWizardPage extends NewElementWizardPage {
 		allStatus.add(fPackageStatus);
 	}
 
+	@Override
 	protected void handleFieldChanged(String fieldName) {
 		super.handleFieldChanged(fieldName);
 		if (fieldName == MESSAGE) {
@@ -211,7 +213,6 @@ public class NewEmfRuleWizardPage extends NewElementWizardPage {
 		fMessageDialogField.doFillIntoGrid(composite, nColumns - 1);
 		DialogField.createEmptySpace(composite);
 		Text text = fMessageDialogField.getTextControl(null);
-		GridData gd = new GridData();
 		LayoutUtil.setWidthHint(text, getMaxFieldWidth());
 		LayoutUtil.setHeightHint(text, convertHeightInCharsToPixels(2));
 		TextFieldNavigationHandler.install(text);
@@ -247,6 +248,7 @@ public class NewEmfRuleWizardPage extends NewElementWizardPage {
 	private class TypeFieldsAdapter implements IStringButtonAdapter, IDialogFieldListener, IListAdapter, SelectionListener {
 		// -------- IStringButtonAdapter
 		public void changeControlPressed(DialogField field) {
+			//nothing to do
 		}
 
 		// -------- IListAdapter
@@ -261,35 +263,37 @@ public class NewEmfRuleWizardPage extends NewElementWizardPage {
 						handleFieldChanged(PACKAGES);
 					}
 				}
-			} else if (field == fTargetDialogField) {
-				if (index == 0) {
-					List elements = fPackageDialogField.getElements();
-					EPackage[] packages = (EPackage[]) elements.toArray(new EPackage[elements.size()]);
-					TargetsDialog dialog = new TargetsDialog(getShell(), packages);
-					if (dialog.open() == Window.OK) {
-						for (EClassifier result : dialog.getResults()) {
-							fTargetDialogField.addElement(result);
-						}
-						handleFieldChanged(TARGETS);
+			} else if (field == fTargetDialogField && index == 0) {
+				List elements = fPackageDialogField.getElements();
+				EPackage[] packages = (EPackage[]) elements.toArray(new EPackage[elements.size()]);
+				TargetsDialog dialog = new TargetsDialog(getShell(), packages);
+				if (dialog.open() == Window.OK) {
+					for (EClassifier result : dialog.getResults()) {
+						fTargetDialogField.addElement(result);
 					}
+					handleFieldChanged(TARGETS);
 				}
 			}
 		}
 
 		public void selectionChanged(ListDialogField field) {
+			//nothing to do
 		}
 
-		// -------- IDialogFieldListener
 		public void dialogFieldChanged(DialogField field) {
+			//nothing to do
 		}
 
 		public void doubleClicked(ListDialogField field) {
+			//nothing to do
 		}
 
 		public void widgetSelected(SelectionEvent e) {
+			//nothing to do
 		}
 
 		public void widgetDefaultSelected(SelectionEvent e) {
+			//nothing to do
 		}
 	}
 

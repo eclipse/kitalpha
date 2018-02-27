@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -147,10 +147,10 @@ public class ViewpointsSelectionAction implements IObjectActionDelegate {
 
 	// toutes les methodes qui suivent viennent de melody (et devraient plutot
 	// être dispo dans Sirius)
-	protected static Session getSessionFromSelection(IStructuredSelection selection_p) {
+	protected static Session getSessionFromSelection(IStructuredSelection selection) {
 		// Gets the FIRST selected session from current selection.for
 
-		for (Object object : selection_p.toArray()) {
+		for (Object object : selection.toArray()) {
 			if (object instanceof Session) {
 				return (Session) object;
 			} else if (object instanceof IFile) {
@@ -160,28 +160,26 @@ public class ViewpointsSelectionAction implements IObjectActionDelegate {
 		return null;
 	}
 
-	public static Session getSessionForDiagramFile(IFile diagramResourceFile_p) {
+	public static Session getSessionForDiagramFile(IFile diagramResourceFile) {
 		// Iterate over active sessions to search the ones that semantic
 		// resources are contained by the project.
 		for (Session session : SessionManager.INSTANCE.getSessions()) {
-			if (session instanceof DAnalysisSession) {
-				if (isAnalysisFileInvolvedIn((DAnalysisSession) session, diagramResourceFile_p)) {
+			if (session instanceof DAnalysisSession && isAnalysisFileInvolvedIn((DAnalysisSession) session, diagramResourceFile)) {
 					return session;
-				}
 			}
 		}
 		return null;
 	}
 
-	public static boolean isAnalysisFileInvolvedIn(DAnalysisSession session_p, IFile analysisFile_p) {
+	public static boolean isAnalysisFileInvolvedIn(DAnalysisSession session, IFile analysisFile) {
 		try {
 			// Precondition.
-			if ((null == session_p) || (null == analysisFile_p)) {
+			if ((null == session) || (null == analysisFile)) {
 				return false;
 			}
 			// Get all resources involved in the session.
-			for (Resource resource : getAllAirdResources(session_p)) {
-				if (analysisFile_p.equals(WorkspaceSynchronizer.getFile(resource))) {
+			for (Resource resource : getAllAirdResources(session)) {
+				if (analysisFile.equals(WorkspaceSynchronizer.getFile(resource))) {
 					return true;
 				}
 			}
@@ -191,9 +189,9 @@ public class ViewpointsSelectionAction implements IObjectActionDelegate {
 		return false;
 	}
 
-	public static Collection<Resource> getAllAirdResources(Session session_p) {
-		Collection<Resource> allAnalysisResources = new HashSet<Resource>(session_p.getReferencedSessionResources());
-		allAnalysisResources.add(session_p.getSessionResource());
+	public static Collection<Resource> getAllAirdResources(Session session) {
+		Collection<Resource> allAnalysisResources = new HashSet<Resource>(session.getReferencedSessionResources());
+		allAnalysisResources.add(session.getSessionResource());
 		return allAnalysisResources;
 	}
 }

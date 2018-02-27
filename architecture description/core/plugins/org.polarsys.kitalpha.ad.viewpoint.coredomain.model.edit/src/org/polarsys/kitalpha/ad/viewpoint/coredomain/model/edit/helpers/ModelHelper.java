@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,12 +27,10 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.osgi.service.resolver.BundleDescription;
 import org.eclipse.osgi.service.resolver.BundleSpecification;
-import org.eclipse.osgi.util.NLS;
 import org.eclipse.pde.core.plugin.IPluginModelBase;
 import org.eclipse.pde.core.plugin.PluginRegistry;
 import org.eclipse.search.core.text.TextSearchEngine;
@@ -55,7 +53,7 @@ public class ModelHelper  {
 
 	public static <S> Collection<S> getCandidates(EObject target, Class<S> candidate, String filePattern) {
 		ResourceSet resourceSet = target.eResource().getResourceSet();
-		List<S> result = new ArrayList<S>();
+		List<S> result = new ArrayList<>();
 		for (URI uri : getCandidateURIs(target, filePattern))
 		{
 			Resource resource = resourceSet.getResource(uri, true);
@@ -73,11 +71,11 @@ public class ModelHelper  {
 		IPluginModelBase model = PluginRegistry.findModel(project);
 		if (model == null) {
 			AD_Log.getDefault().logError("Cannot find plugin related to project "+project);
-			return Collections.EMPTY_LIST;
+			return Collections.emptyList();
 		}
-		List<URI> ecoreUris = new ArrayList<URI>();
-		final List<IProject> wsProjects = new ArrayList<IProject>();
-		final List<Bundle> pBundles = new ArrayList<Bundle>();
+		List<URI> ecoreUris = new ArrayList<>();
+		final List<IProject> wsProjects = new ArrayList<>();
+		final List<Bundle> pBundles = new ArrayList<>();
 
 		helper.collectBundles(model, wsProjects, pBundles, new HashSet<String>(300));
 

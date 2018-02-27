@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -102,8 +102,9 @@ public class ViewpointsTableLabelProvider extends ColumnLabelProvider {
 			}
 			image = SiriusEditPlugin.getPlugin().getImage(SiriusEditPlugin.getPlugin().getItemImageDescriptor(vp));
 			return getEnhancedImage(image, vp);
+		default:
+			return null;
 		}
-		return null;
 	}
 
 	/**
@@ -157,14 +158,6 @@ public class ViewpointsTableLabelProvider extends ColumnLabelProvider {
 	@Override
 	public Color getBackground(Object element) {
 		return super.getBackground(element);
-	}
-
-	@Override
-	public Font getFont(Object element) {
-		//
-		// return Display.getDefault().getSystemColor(SWT.COLOR_GRAY);
-		// TODO Auto-generated method stub
-		return super.getFont(element);
 	}
 
 	@Override

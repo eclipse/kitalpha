@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,7 +43,7 @@ public class ViewHelper {
 	}
 
 	public static List<ViewElement> getViewIds(Resource resource) {
-		List<ViewElement> viewIds = new ArrayList<ViewElement>();
+		List<ViewElement> viewIds = new ArrayList<>();
 		String providerSymbolicName = resource.getProviderSymbolicName();
 		IPluginModelBase bundle = PluginRegistry.findModel(providerSymbolicName);
 		if (bundle == null)
@@ -69,6 +69,10 @@ public class ViewHelper {
 		}
 		return viewIds;
 
+	}
+
+	private ViewHelper() {
+		super();
 	}
 
 }

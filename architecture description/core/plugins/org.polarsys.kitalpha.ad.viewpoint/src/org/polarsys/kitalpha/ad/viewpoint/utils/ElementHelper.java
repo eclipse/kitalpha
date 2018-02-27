@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,7 +17,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.NameElement;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.tools.model.ViewpointElement;
 import org.polarsys.kitalpha.ad.viewpoint.handlers.IElementHandler;
 
@@ -49,7 +48,7 @@ public class ElementHelper {
 	public static List<String> getNamesFromParents(IElementHandler handler) {
 		Set<String> set = new HashSet<String>();
 		for (ViewpointElement elt : handler.getElementsFromParents()) {
-			String name = ((NameElement) elt).getName();
+			String name = elt.getName();
 			if (name != null)
 				set.add(name);
 
@@ -66,7 +65,7 @@ public class ElementHelper {
 	public static List<String> getNames(IElementHandler handler) {
 		Set<String> set = new HashSet<String>();
 		for (ViewpointElement elt : handler.getElements()) {
-			String name = ((NameElement) elt).getName();
+			String name = elt.getName();
 			if (name != null)
 				set.add(name);
 
@@ -77,7 +76,7 @@ public class ElementHelper {
 	public static List<String> getIds(IElementHandler handler) {
 		Set<String> set = new HashSet<String>();
 		for (ViewpointElement elt : handler.getElements()) {
-			String id = ((NameElement) elt).getId();
+			String id = elt.getId();
 			if (id != null)
 				set.add(id);
 		}
@@ -87,10 +86,15 @@ public class ElementHelper {
 	public static List<String> getIdsFromParents(IElementHandler handler) {
 		Set<String> set = new HashSet<String>();
 		for (ViewpointElement elt : handler.getElementsFromParents()) {
-			String id = ((NameElement) elt).getId();
+			String id = elt.getId();
 			if (id != null)
 				set.add(id);
 		}
 		return getAsSortedList(set);
 	}
+
+	private ElementHelper() {
+		super();
+	}
+	
 }

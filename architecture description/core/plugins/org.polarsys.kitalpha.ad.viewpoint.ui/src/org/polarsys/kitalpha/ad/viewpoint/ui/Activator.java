@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,31 +23,13 @@ public class Activator extends AFUIActivator {
 	// The shared instance
 	private static Activator plugin;
 
-	/**
-	 * The constructor
-	 */
-	public Activator() {
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext
-	 * )
-	 */
+	@Override
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		plugin = this;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.BundleContext
-	 * )
-	 */
+	@Override
 	public void stop(BundleContext context) throws Exception {
 		plugin = null;
 		super.stop(context);
@@ -81,7 +63,6 @@ public class Activator extends AFUIActivator {
 		IDialogSettings settings = new DialogSettings("root");
 		IPath stateLocation = Platform.getStateLocation(Activator.getDefault().getBundle());
 		stateLocation = stateLocation.append(DIALOG_SETTINGS_FILE);
-		// return getDefaultDialogSettings();
 		try {
 			settings.load(stateLocation.toOSString());
 		} catch (IOException e) {
@@ -93,9 +74,8 @@ public class Activator extends AFUIActivator {
 
 	private static IDialogSettings getDefaultWizardSettings() {
 		IDialogSettings settings = new DialogSettings("root");
-		IDialogSettings wizardSettings = settings.addNewSection(RULE_PROVIDER_WIZARD_SECTION);
-		wizardSettings = settings.addNewSection(SERVICE_PROVIDER_WIZARD_SECTION);
-		return settings;
+		settings.addNewSection(RULE_PROVIDER_WIZARD_SECTION);
+		return settings.addNewSection(SERVICE_PROVIDER_WIZARD_SECTION);
 	}
 
 	public static final String DIALOG_SETTINGS_FILE = "dialogSettings.xml";

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -12,47 +12,28 @@
 package org.polarsys.kitalpha.ad.viewpoint.ui.dialogs;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
-import org.eclipse.core.resources.IProject;
-import org.eclipse.core.runtime.Path;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.TitleAreaDialog;
-import org.eclipse.jface.viewers.DoubleClickEvent;
-import org.eclipse.jface.viewers.IDoubleClickListener;
-import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.ListViewer;
-import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerSorter;
-import org.eclipse.osgi.service.resolver.BundleDescription;
-import org.eclipse.osgi.service.resolver.BundleSpecification;
-import org.eclipse.osgi.util.NLS;
-import org.eclipse.pde.core.plugin.IPluginModelBase;
-import org.eclipse.pde.core.plugin.PluginRegistry;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
-import org.polarsys.kitalpha.ad.common.AD_Log;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.model.edit.helpers.ParentHelper;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint;
 import org.polarsys.kitalpha.ad.viewpoint.ui.Messages;
-import org.polarsys.kitalpha.resourcereuse.helper.ResourceReuse;
 import org.polarsys.kitalpha.resourcereuse.model.Resource;
-import org.polarsys.kitalpha.resourcereuse.model.SearchCriteria;
 
 /**
  * @author Thomas Guiu
@@ -61,7 +42,7 @@ import org.polarsys.kitalpha.resourcereuse.model.SearchCriteria;
 public class LoadViewpointModelDialog extends TitleAreaDialog {
 
 	private ListViewer viewer;
-	private List<Resource> result = new ArrayList<Resource>();
+	private List<Resource> result = new ArrayList<>();
 	private Viewpoint viewpoint;
 
 	public LoadViewpointModelDialog(Shell shell, Viewpoint viewpoint) {
@@ -70,6 +51,7 @@ public class LoadViewpointModelDialog extends TitleAreaDialog {
 
 	}
 
+	@Override
 	protected Control createDialogArea(Composite parent) {
 		// top level composite
 		Composite parentComposite = (Composite) super.createDialogArea(parent);
@@ -97,24 +79,19 @@ public class LoadViewpointModelDialog extends TitleAreaDialog {
 	private void createWidgets(Composite parent) {
 		viewer = new ListViewer(parent);
 		viewer.getList().setLayoutData(new GridData(GridData.FILL_BOTH));
-		viewer.addSelectionChangedListener(new ISelectionChangedListener() {
-
-			public void selectionChanged(SelectionChangedEvent event) {
-				getButton(IDialogConstants.OK_ID).setEnabled(!event.getSelection().isEmpty());
-			}
-		});
+		viewer.addSelectionChangedListener(event -> getButton(IDialogConstants.OK_ID).setEnabled(!event.getSelection().isEmpty()));
 		viewer.setSorter(new ViewerSorter());
-		viewer.addDoubleClickListener(new IDoubleClickListener() {
-			public void doubleClick(DoubleClickEvent event) {
-				okPressed();
-			}
-		});
+		viewer.addDoubleClickListener(event -> okPressed());
 		viewer.setContentProvider(new IStructuredContentProvider() {
 
+			@Override
 			public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
+				//nothing to do
 			}
 
+			@Override
 			public void dispose() {
+				//nothing to do
 			}
 
 			public Object[] getElements(Object inputElement) {
@@ -136,6 +113,7 @@ public class LoadViewpointModelDialog extends TitleAreaDialog {
 		});
 	}
 
+	@Override
 	protected void createButtonsForButtonBar(Composite parent) {
 		// create OK and Cancel buttons by default
 		createButton(parent, IDialogConstants.OK_ID, Messages.Dialog_Add_label, true).setEnabled(false);
