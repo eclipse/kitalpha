@@ -219,6 +219,21 @@
    <feature url="features/org.polarsys.kitalpha.doc.feature.source_1.2.1.qualifier.jar" id="org.polarsys.kitalpha.doc.feature" version="1.2.1.qualifier">
       <category name="SdkSource"/>
    </feature>
+   <feature url="features/org.polarsys.kitalpha.ad.ui.feature_1.2.1.qualifier.jar" id="org.polarsys.kitalpha.ad.ui.feature" version="1.2.1.qualifier">
+      <category name="Sdk"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.ad.ui.feature_1.2.1.qualifier.jar" id="org.polarsys.kitalpha.ad.ui.feature" version="1.2.1.qualifier">
+      <category name="SdkSource"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.richtext.widget.doc.feature_1.2.1.qualifier.jar" id="org.polarsys.kitalpha.richtext.widget.doc.feature" version="1.2.1.qualifier">
+      <category name="Sdk"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.richtext.widget.feature_1.2.1.qualifier.jar" id="org.polarsys.kitalpha.richtext.widget.feature" version="1.2.1.qualifier">
+      <category name="Sdk"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.richtext.widget.ext.feature_1.2.1.qualifier.jar" id="org.polarsys.kitalpha.richtext.widget.ext.feature" version="1.2.1.qualifier">
+      <category name="Sdk"/>
+   </feature>
    <category-def name="Sdk" label="Sdk"/>
    <category-def name="SdkSource" label="SdkSource"/>
 </site>

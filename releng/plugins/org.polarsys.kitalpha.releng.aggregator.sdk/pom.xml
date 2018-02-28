@@ -203,10 +203,8 @@
     <module>../../../diagrams/features/org.polarsys.kitalpha.representation.feature</module>
     <module>../../../diagrams/features/org.polarsys.kitalpha.representation.emde.feature</module>
     
-    
     <!-- update sites -->
     <module>../../../releng/plugins/org.polarsys.kitalpha.releng.sdk.updatesite</module>
-        
   </modules>
 </project>
 

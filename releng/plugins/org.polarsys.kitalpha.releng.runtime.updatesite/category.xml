@@ -132,6 +132,15 @@
    <feature url="features/org.polarsys.kitalpha.common.feature.source_1.2.1.qualifier.jar" id="org.polarsys.kitalpha.common.feature.source" version="1.2.1.qualifier">
       <category name="RuntimeCoreSource"/>
    </feature>
+   <feature url="features/org.polarsys.kitalpha.richtext.widget.ext.feature_1.2.1.qualifier.jar" id="org.polarsys.kitalpha.richtext.widget.ext.feature" version="1.2.1.qualifier">
+      <category name="RuntimeCore"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.richtext.widget.doc.feature_1.2.1.qualifier.jar" id="org.polarsys.kitalpha.richtext.widget.doc.feature" version="1.2.1.qualifier">
+      <category name="RuntimeCore"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.richtext.widget.feature_1.2.1.qualifier.jar" id="org.polarsys.kitalpha.richtext.widget.feature" version="1.2.1.qualifier">
+      <category name="RuntimeCore"/>
+   </feature>
    <category-def name="RuntimeCore" label="Runtime Core"/>
    <category-def name="RuntimeCoreSource" label="RuntimeCoreSource"/>
 </site>
