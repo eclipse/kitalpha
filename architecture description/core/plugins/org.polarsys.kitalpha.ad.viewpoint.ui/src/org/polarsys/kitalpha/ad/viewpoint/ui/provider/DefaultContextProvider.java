@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,9 +25,6 @@ import org.eclipse.ui.IWorkbenchPart;
  */
 public class DefaultContextProvider implements AFContextProvider {
 
-	/* (non-Javadoc)
-	 * @see org.polarsys.kitalpha.ad.viewpoint.ui.provider.AFContextProvider#computeContext(org.eclipse.ui.IWorkbenchPart, org.eclipse.jface.viewers.ISelection)
-	 */
 	@Override
 	public ResourceSet computeContext(IWorkbenchPart part, ISelection selection) {
 		if (part instanceof IEditingDomainProvider) {
@@ -36,7 +33,7 @@ public class DefaultContextProvider implements AFContextProvider {
 			if (editingDomain != null)
 				return editingDomain.getResourceSet();
 		}
-			EditingDomain obj = (EditingDomain) part.getAdapter(EditingDomain.class);
+			EditingDomain obj = part.getAdapter(EditingDomain.class);
 			if (obj != null) {
 				return obj.getResourceSet();
 		}

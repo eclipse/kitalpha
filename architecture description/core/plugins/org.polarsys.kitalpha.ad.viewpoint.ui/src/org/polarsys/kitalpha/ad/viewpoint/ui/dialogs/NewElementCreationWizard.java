@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,7 +35,7 @@ import org.polarsys.kitalpha.ad.viewpoint.ui.Activator;
 
 public abstract class NewElementCreationWizard extends NewElementWizard {
 
-	protected List<String> requiredDependencies = new ArrayList<String>();
+	protected List<String> requiredDependencies = new ArrayList<>();
 	protected NewElementWizardPage fPage;
 
 	public NewElementCreationWizard() {
@@ -71,15 +71,12 @@ public abstract class NewElementCreationWizard extends NewElementWizard {
 		addRequiredDependencies(model);
 		manageManifestFile(model);
 		model.save();
-		getShell().getDisplay().asyncExec(new Runnable() {
-
-			public void run() {
+		getShell().getDisplay().asyncExec(() -> {
 				try {
 					postFinishPage(monitor);
 				} catch (Exception e) {
 					Activator.getDefault().logError(e);
 				}
-			}
 		});
 	}
 
@@ -115,7 +112,7 @@ public abstract class NewElementCreationWizard extends NewElementWizard {
 		IPluginBase base = model.getPluginBase();
 
 		// 1 - Add required dependencies
-		List<String> requiredDependenciesCopy = new ArrayList<String>(requiredDependencies);
+		List<String> requiredDependenciesCopy = new ArrayList<>(requiredDependencies);
 		if (base.getImports() != null) {
 			for (IPluginImport plugin : base.getImports()) {
 				requiredDependenciesCopy.remove(plugin.getId());
@@ -132,6 +129,7 @@ public abstract class NewElementCreationWizard extends NewElementWizard {
 
 	protected abstract void manageManifestFile(IPluginModelBase model) throws CoreException;
 
+	@Override
 	public boolean performFinish() {
 		warnAboutTypeCommentDeprecation();
 		boolean res = super.performFinish();

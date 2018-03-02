@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017 Thales Global Services.
+ * Copyright (c) 2017, 2018 Thales Global Services.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -51,7 +51,7 @@ public class TransitionEngineImpl implements TransitionEngine {
 	/**
 	 * Function which perform logic <code>and</code> operator between two boolean value
 	 */
-	private final BinaryOperator<Boolean> and = (left, right) -> left && right;
+	private static final BinaryOperator<Boolean> and = (left, right) -> left && right;
 	
 	/**
 	 * Constructor
@@ -61,7 +61,7 @@ public class TransitionEngineImpl implements TransitionEngine {
 	public TransitionEngineImpl(final Transition transition, final ContextProvider context) {
 		this.transition = transition;
 		this.context = context.getContext();
-		this.predicatesStates = new HashMap<String, Boolean>();
+		this.predicatesStates = new HashMap<>();
 	}
 
 	@Override
@@ -75,7 +75,7 @@ public class TransitionEngineImpl implements TransitionEngine {
 			initializeStates();
 			Collection<Boolean> evalPredicates = predicatesStates.values();
 			return evalPredicates.stream().reduce(true, and);
-		} catch (Throwable cause){
+		} catch (Exception cause){
 			throw new EvaluationException("An exception is thown while the evaluation of the predicates. See the exception stack for more information", cause);
 		}
 	}
@@ -89,7 +89,7 @@ public class TransitionEngineImpl implements TransitionEngine {
 				action.run(context);
 			}
 			return result;
-		} catch (Throwable cause){
+		} catch (Exception cause){
 			throw new EvaluationException("An exception is thown while the execution of the action: " + getTransition().getActionID() + ". See the exception stack for more information", cause);
 		}
 	}

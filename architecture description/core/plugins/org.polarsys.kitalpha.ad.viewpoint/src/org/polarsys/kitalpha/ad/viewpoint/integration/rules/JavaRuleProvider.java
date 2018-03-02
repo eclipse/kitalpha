@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,13 +34,14 @@ import org.polarsys.kitalpha.ad.viewpoint.utils.ModelAccessor;
 public class JavaRuleProvider implements RuleProvider {
 	private static final String EXTENSION_POINT_ID = "org.polarsys.kitalpha.ad.viewpoint.javarules";
 	public static final String ID = "Java";
+	private static final String CLASS = "class";
 
 	private JavaRule getRule(String id) {
 		IConfigurationElement[] configurationElements = Platform.getExtensionRegistry().getConfigurationElementsFor(EXTENSION_POINT_ID);
 		for (IConfigurationElement elt : configurationElements) {
 			try {
-				if (id.equals(elt.getAttribute("class")))
-					return (JavaRule) elt.createExecutableExtension("class");
+				if (id.equals(elt.getAttribute(CLASS)))
+					return (JavaRule) elt.createExecutableExtension(CLASS);
 			} catch (CoreException e) {
 				AD_Log.getDefault().logError("Cannot create rule", e);
 			}
@@ -55,7 +56,7 @@ public class JavaRuleProvider implements RuleProvider {
 		IConfigurationElement[] configurationElements = Platform.getExtensionRegistry().getConfigurationElementsFor(EXTENSION_POINT_ID);
 		for (IConfigurationElement elt : configurationElements) {
 			String name = elt.getAttribute("name");
-			String implementation = elt.getAttribute("class");
+			String implementation = elt.getAttribute(CLASS);
 			if (name == null || implementation == null) {
 				AD_Log.getDefault().logWarning("This javaRule contains null values (name:" + name + " class:" + implementation + ")");
 				continue;

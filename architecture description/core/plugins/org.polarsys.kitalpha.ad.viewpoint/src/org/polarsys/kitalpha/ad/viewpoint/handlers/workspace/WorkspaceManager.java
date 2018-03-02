@@ -100,11 +100,6 @@ public class WorkspaceManager extends ResourceManager {
 	}
 
 	@Override
-	public void dispose() {
-		// super.dispose();
-		// disposeWorkspace();
-	}
-
 	public boolean isReadOnly() {
 		return super.isReadOnly() || workspace == null;
 	}
@@ -121,7 +116,7 @@ public class WorkspaceManager extends ResourceManager {
 			return;
 		try {
 			Resource resource = workspace.eResource();
-			resource.save(Collections.EMPTY_MAP);
+			resource.save(Collections.emptyMap());
 		} catch (IOException e) {
 			AD_Log.getDefault().logError(e);
 		}
@@ -139,7 +134,7 @@ public class WorkspaceManager extends ResourceManager {
 		}
 
 		protected ResourceManager getWorkspaceManager() {
-			return (ResourceManager) getResourceManager();
+			return getResourceManager();
 		}
 
 		public boolean isRemovable(ViewpointElement element) {

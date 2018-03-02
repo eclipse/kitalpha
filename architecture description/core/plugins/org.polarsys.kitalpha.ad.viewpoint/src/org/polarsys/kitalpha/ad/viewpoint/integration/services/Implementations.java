@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,15 +34,16 @@ import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Service;
 public class Implementations {
 
 	private static final String EXTENSION_POINT_ID = "org.polarsys.kitalpha.ad.viewpoint.implementation.services";
+	private static final String LABEL = "label";
 
 	public static String toString(List<Rule> rules) {
-		String str = "";
+		StringBuilder str = new StringBuilder();
 		for (Rule rule : rules) {
 			if (str.length() != 0)
-				str += ", ";
-			str += rule.getId();
+				str.append(", ");
+			str.append(rule.getId());
 		}
-		return str;
+		return str.toString();
 	}
 
 	public static boolean hasProvider(Bundle bundle) {
@@ -61,7 +62,7 @@ public class Implementations {
 		Set<String> types = new HashSet<String>();
 		IConfigurationElement[] configurationElements = Platform.getExtensionRegistry().getConfigurationElementsFor(EXTENSION_POINT_ID);
 		for (IConfigurationElement elt : configurationElements) {
-			types.add(elt.getAttribute("label"));
+			types.add(elt.getAttribute(LABEL));
 		}
 		String[] array = types.toArray(new String[types.size()]);
 		Arrays.sort(array);
@@ -75,17 +76,15 @@ public class Implementations {
 		IConfigurationElement[] configurationElements = Platform.getExtensionRegistry().getConfigurationElementsFor(EXTENSION_POINT_ID);
 		for (IConfigurationElement elt : configurationElements) {
 			if (elt.getAttribute("type").equals(type))
-				return elt.getAttribute("label");
+				return elt.getAttribute(LABEL);
 		}
-		// Activator.getDefault().logError("Cannot find label for service type='"
-		// + type + "'");
 		return "Missing - May be not loaded yet";
 	}
 
 	public static String getType(String label) {
 		IConfigurationElement[] configurationElements = Platform.getExtensionRegistry().getConfigurationElementsFor(EXTENSION_POINT_ID);
 		for (IConfigurationElement elt : configurationElements) {
-			if (elt.getAttribute("label").equals(label))
+			if (elt.getAttribute(LABEL).equals(label))
 				return elt.getAttribute("type");
 		}
 		AD_Log.getDefault().logError("Cannot find type for service label='" + label + "'");
@@ -105,13 +104,16 @@ public class Implementations {
 		return null;
 	}
 
+	private Implementations() {
+		super();
+	}
+
 	public static class LoadingException extends Exception {
 
 		private static final long serialVersionUID = 1L;
 
 		public LoadingException(Throwable cause) {
 			super(cause);
-			// TODO Auto-generated constructor stub
 		}
 
 	}

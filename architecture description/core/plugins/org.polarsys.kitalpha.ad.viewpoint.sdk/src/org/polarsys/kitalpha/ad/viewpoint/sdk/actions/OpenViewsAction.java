@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,7 +47,6 @@ public class OpenViewsAction implements IMenuCreator, IObjectActionDelegate {
 	private Shell shell;
 	private IProject project;
 	private IWorkbenchPage activePage;
-	private IWorkbenchPartSite site;
 	private List<String> viewIds = new ArrayList<String>();
 	private SelectionListener listener = new SelectionListener() {
 
@@ -66,7 +65,7 @@ public class OpenViewsAction implements IMenuCreator, IObjectActionDelegate {
 		}
 
 		public void widgetDefaultSelected(SelectionEvent e) {
-
+			//Nothing to do
 		}
 	};
 
@@ -81,7 +80,7 @@ public class OpenViewsAction implements IMenuCreator, IObjectActionDelegate {
 	 * @see IObjectActionDelegate#setActivePart(IAction, IWorkbenchPart)
 	 */
 	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
-		site = targetPart.getSite();
+		IWorkbenchPartSite site = targetPart.getSite();
 		activePage = site.getWorkbenchWindow().getActivePage();
 
 		shell = site.getShell();
@@ -110,14 +109,6 @@ public class OpenViewsAction implements IMenuCreator, IObjectActionDelegate {
 		MessageDialog.openWarning(shell, "Warning", "Install the bundle first!");
 
 	}
-
-	// private boolean areViewsOpen() {
-	// for (String id : viewIds) {
-	// if (activePage.findView(id) == null)
-	// return false;
-	// }
-	// return true;
-	// }
 
 	/**
 	 * @see IActionDelegate#selectionChanged(IAction, ISelection)
@@ -166,12 +157,10 @@ public class OpenViewsAction implements IMenuCreator, IObjectActionDelegate {
 	}
 
 	public void dispose() {
-		// TODO Auto-generated method stub
-
+		//nothing to do
 	}
 
 	public Menu getMenu(Control parent) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -52,13 +52,13 @@ public class ProjectSelectionListener implements ISelectionListener {
 		}
 		if (firstElement instanceof IAdaptable) {
 			IAdaptable adaptable = (IAdaptable) firstElement;
-			IResource res = (IResource) adaptable.getAdapter(IResource.class);
+			IResource res = adaptable.getAdapter(IResource.class);
 			if (res != null) {
 				IProject project = res.getProject();
 				projectSelected(project);
 				return;
 			}
-			EObject obj = (EObject) adaptable.getAdapter(EObject.class);
+			EObject obj = adaptable.getAdapter(EObject.class);
 			if (obj != null) 
 				firstElement = obj;
 		}

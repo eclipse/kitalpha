@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -59,25 +59,25 @@ import org.polarsys.kitalpha.ad.viewpoint.sdk.Messages;
  * 
  */
 public class BundleManager {
-	private final Set<String> allManagedBundles = new HashSet<String>();
-	private final Map<String, Set<String>> bundle2dependencies = new HashMap<String, Set<String>>();
-	private final Map<String, Set<String>> bundle2users = new HashMap<String, Set<String>>();
+	private final Set<String> allManagedBundles = new HashSet<>();
+	private final Map<String, Set<String>> bundle2dependencies = new HashMap<>();
+	private final Map<String, Set<String>> bundle2users = new HashMap<>();
 
 	public void unLoad(String symbolicName) throws BundleException {
 		if (bundle2users.containsKey(symbolicName) && !bundle2users.get(symbolicName).isEmpty()) {
 
-			String string = Messages.ManageBundle_error_title6;
+			StringBuilder string = new StringBuilder();
+			string.append(Messages.ManageBundle_error_title6);
 			for (String user : bundle2users.get(symbolicName)) {
-				string += (user + "\n");
+				string.append(user).append("\n");
 			}
-			throw new IllegalStateException(string);
+			throw new IllegalStateException(string.toString());
 		}
 		Bundle bundle = Platform.getBundle(symbolicName);
 		remove(bundle);
 	}
 
 	protected void remove(Bundle bundle) throws BundleException {
-		// allManagedBundles.remove(bundle.getSymbolicName());
 		bundle.stop(Bundle.STOP_TRANSIENT);
 		// clean usages link, this bundle doesn't use anyone now.
 		for (Set<String> users : bundle2users.values()) {
@@ -95,7 +95,6 @@ public class BundleManager {
 			}
 			bundle2dependencies.remove(bundle.getSymbolicName());
 		}
-		// bundle.uninstall();
 	}
 
 	public void load(String symbolicName) throws BundleException, CoreException, InterruptedException, IOException {
@@ -104,12 +103,12 @@ public class BundleManager {
 
 		BundleRegistryListener listener = new BundleRegistryListener(symbolicName);
 		RegistryFactory.getRegistry().addListener(listener);
-		Set<Bundle> collector = new HashSet<Bundle>();
+		Set<Bundle> collector = new HashSet<>();
 		try {
 			IPluginModelBase model = PluginRegistry.findModel(symbolicName);
 			load(model.getBundleDescription(), collector);
 
-			Bundle installBundle = findBundle(symbolicName);
+			findBundle(symbolicName);
 			// refresh loaded bundle
 			BundleContext context = Activator.getContext();
 			Bundle systemBundle = context.getBundle(0);
@@ -118,8 +117,6 @@ public class BundleManager {
 			frameworkWiring.refreshBundles(collector);
 
 			listener.waitForEventDispatch();
-		} catch (InterruptedException e) {
-
 		} finally {
 			RegistryFactory.getRegistry().removeListener(listener);
 		}
@@ -150,9 +147,8 @@ public class BundleManager {
 		}
 	}
 
-	protected Bundle findBundle(String symbolicName) throws UnsupportedEncodingException, MalformedURLException, BundleException, CoreException, IOException {
+	protected Bundle findBundle(String symbolicName) throws BundleException, CoreException, IOException {
 		IPluginModelBase model = PluginRegistry.findModel(symbolicName); 
-		//System.out.println();
 		if (model instanceof ExternalPluginModel) {
 			Bundle bundle = Platform.getBundle(symbolicName);
 			if (bundle != null)
@@ -170,25 +166,25 @@ public class BundleManager {
 		if (allManagedBundles.contains(dependency) && allManagedBundles.contains(user)) {
 			Set<String> dependencies = bundle2dependencies.get(user);
 			if (dependencies == null) {
-				dependencies = new HashSet<String>();
+				dependencies = new HashSet<>();
 				bundle2dependencies.put(user, dependencies);
 			}
 			dependencies.add(dependency);
 			Set<String> users = bundle2users.get(dependency);
 			if (users == null) {
-				users = new HashSet<String>();
+				users = new HashSet<>();
 				bundle2users.put(dependency, users);
 			}
 			users.add(user);
 		}
 	}
 
-	private Bundle installBundle2(IProject project) throws UnsupportedEncodingException, MalformedURLException, BundleException, CoreException, IOException {
+	private Bundle installBundle2(IProject project) throws BundleException, CoreException, IOException {
 		ByteArrayOutputStream array = new ByteArrayOutputStream();
 		ZipOutputStream out = new ZipOutputStream(array);
 		IJavaProject jProject = JavaCore.create(project);
 		List<String> outputFolders = getStringOutputFolders(jProject);
-		Set<String> names = new HashSet<String>();
+		Set<String> names = new HashSet<>();
 		addContent(new File(project.getLocation().toPortableString()), "", "", outputFolders, out, names);
 		out.close();
 		array.flush();
@@ -215,16 +211,18 @@ public class BundleManager {
 					subzipPath = zipPath;
 				addContent(f, subPath, subzipPath, outputFolders, out, names);
 			} else if (!names.contains(subzipPath)) {
-				BufferedInputStream origin = new BufferedInputStream(new FileInputStream(f));
-				ZipEntry entry = new ZipEntry(subzipPath);
-				names.add(subzipPath);
-				out.putNextEntry(entry);
-				int count;
-				while ((count = origin.read(data, 0, BUFFER)) != -1) {
-					out.write(data, 0, count);
+				try (BufferedInputStream origin = new BufferedInputStream(new FileInputStream(f))) {
+					ZipEntry entry = new ZipEntry(subzipPath);
+					names.add(subzipPath);
+					out.putNextEntry(entry);
+					int count;
+					while ((count = origin.read(data, 0, BUFFER)) != -1) {
+						out.write(data, 0, count);
+					}
+					out.closeEntry();
+				} catch (Exception e) {
+					throw new IOException(e);
 				}
-				out.closeEntry();
-				origin.close();
 			}
 
 		}
@@ -232,8 +230,7 @@ public class BundleManager {
 
 	private Bundle installBundle(URI uri) throws UnsupportedEncodingException, MalformedURLException, BundleException {
 		String location = getLocation(uri);
-		Bundle installBundle = Activator.getContext().installBundle(location);
-		return installBundle;
+		return  Activator.getContext().installBundle(location);
 	}
 
 	private String getLocation(IProject project) throws UnsupportedEncodingException, MalformedURLException {
@@ -253,8 +250,8 @@ public class BundleManager {
 	}
 
 	private static List<String> getStringOutputFolders(IJavaProject project) throws CoreException {
-		List<String> outputFoldersAsString = new ArrayList<String>();
-		if (project.exists() == false) {
+		List<String> outputFoldersAsString = new ArrayList<>();
+		if (!project.exists()) {
 			return outputFoldersAsString;
 		}
 		List<IFolder> outputFolders = getOutputFolders(project);
@@ -265,8 +262,8 @@ public class BundleManager {
 	}
 
 	private static List<IFolder> getOutputFolders(IJavaProject project) throws CoreException {
-		List<IFolder> folders = new ArrayList<IFolder>();
-		if (project == null || project.exists() == false) {
+		List<IFolder> folders = new ArrayList<>();
+		if (project == null || !project.exists()) {
 			return folders;
 		}
 		// Default Output Location

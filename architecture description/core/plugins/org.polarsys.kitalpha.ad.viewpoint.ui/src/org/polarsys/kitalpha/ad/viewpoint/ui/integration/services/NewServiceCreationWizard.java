@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,7 +17,6 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.jdt.internal.ui.JavaPluginImages;
 import org.eclipse.jface.dialogs.IDialogSettings;
-import org.eclipse.pde.core.plugin.IPluginBase;
 import org.eclipse.pde.core.plugin.IPluginElement;
 import org.eclipse.pde.core.plugin.IPluginExtension;
 import org.eclipse.pde.core.plugin.IPluginModelBase;
@@ -45,6 +44,7 @@ public class NewServiceCreationWizard extends NewElementCreationWizard {
 		fPage = new NewServiceWizardPage();
 	}
 
+	@Override
 	protected void postFinishPage(final IProgressMonitor monitor) throws InterruptedException, CoreException {
 		super.postFinishPage(monitor);
 		String id = ElementHelper.computeNewId(handler, getElementName().toLowerCase().replaceAll("\\s", "\\."));
@@ -54,9 +54,7 @@ public class NewServiceCreationWizard extends NewElementCreationWizard {
 	@Override
 	protected void manageManifestFile(IPluginModelBase model) throws CoreException {
 		IPluginModelFactory factory = model.getPluginFactory();
-		IPluginBase base = model.getPluginBase();
 
-		// 2 - Add extension point declaration
 		IPluginExtension extension = factory.createExtension();
 		extension.setPoint("org.polarsys.kitalpha.ad.viewpoint.implementation.services");
 		model.getExtensions().add(extension);

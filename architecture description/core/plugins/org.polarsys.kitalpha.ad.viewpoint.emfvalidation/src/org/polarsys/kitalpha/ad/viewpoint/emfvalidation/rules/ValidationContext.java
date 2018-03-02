@@ -99,12 +99,10 @@ public class ValidationContext implements IValidationContext {
 	}
 
 	public EStructuralFeature getFeature() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	public Object getFeatureNewValue() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -121,13 +119,11 @@ public class ValidationContext implements IValidationContext {
 	}
 
 	public void skipCurrentConstraintFor(EObject eObject) {
-		// TODO Auto-generated method stub
-
+		//nothing to do
 	}
 
 	public void skipCurrentConstraintForAll(Collection<?> eObjects) {
-		// TODO Auto-generated method stub
-
+		//nothing to do
 	}
 
 	public void setTarget(EObject target) {

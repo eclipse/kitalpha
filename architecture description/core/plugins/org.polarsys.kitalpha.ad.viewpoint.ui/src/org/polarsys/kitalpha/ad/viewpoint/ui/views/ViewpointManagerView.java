@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016, 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2016, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,7 +17,6 @@ import java.util.Collection;
 import java.util.EnumSet;
 import java.util.List;
 
-import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceChangeEvent;
@@ -27,27 +26,21 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IAction;
-import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.Separator;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ColumnWeightData;
-import org.eclipse.jface.viewers.DoubleClickEvent;
-import org.eclipse.jface.viewers.IDoubleClickListener;
 import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ITableLabelProvider;
-import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.TableLayout;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.TableViewerColumn;
@@ -66,10 +59,7 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.ISelectionListener;
-import org.eclipse.ui.IViewSite;
 import org.eclipse.ui.IWorkbenchPart;
-import org.eclipse.ui.IWorkbenchPartSite;
-import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.ViewPart;
 import org.polarsys.kitalpha.ad.common.AD_Log;
@@ -103,7 +93,59 @@ import org.polarsys.kitalpha.resourcereuse.model.Resource;
  */
 public class ViewpointManagerView extends ViewPart {
 	
+	private static final String ERROR_LABEL = "Error";
 	private static final String DISPLAY_VIEWPOINT_ACTION = "Display.Viewpoint"; //$NON-NLS-1$
+
+	private final class SelectionListener implements ISelectionListener {
+		private final Label textLabel;
+		private final Label imgLabel;
+
+		private SelectionListener(Label textLabel, Label imgLabel) {
+			this.textLabel = textLabel;
+			this.imgLabel = imgLabel;
+		}
+
+		@Override
+		public void selectionChanged(IWorkbenchPart part, ISelection selection) {
+			context = analyseChange(part, selection);
+
+			if (!textLabel.isDisposed() && !imgLabel.isDisposed()) {
+				imgLabel.setImage(context == null ? Activator.getDefault().getImage(AFImages.WARNING) : null);
+				textLabel.setText(computeLabel());
+			}
+			if (viewer != null && !viewer.getControl().isDisposed()) {
+				updateActions(null);
+				labelProvider.setContext(context);
+				viewer.refresh();
+			}
+		}
+
+		private String computeLabel() {
+			if (context == null)
+				return Messages.ViewpointManagerView_default_label;
+			if (context.getResources().isEmpty())
+				return "";
+			String segment = context.getResources().get(0).getURI().segment(1);
+			try {
+				segment = java.net.URLDecoder.decode(segment, "UTF-8");
+			} catch (UnsupportedEncodingException e) {
+				AD_Log.getDefault().logWarning(e);
+			}
+			return "Project " + segment;
+		}
+
+		private ResourceSet analyseChange(IWorkbenchPart part, ISelection selection) {
+
+			for (AFContextProvider prov : AFContextProvider.INSTANCE.getProviders())
+			{
+				ResourceSet computeContext = prov.computeContext(part, selection);
+				if (computeContext != null)
+					return computeContext;
+			}
+			return null;
+		}
+	}
+
 
 	private final class RefreshJob extends Job {
 		private RefreshJob() {
@@ -115,33 +157,32 @@ public class ViewpointManagerView extends ViewPart {
 			final Description[] availableViewpoints = getFilteredViewpoints();
 			if (viewer != null && viewer.getControl() != null && !viewer.getControl().isDisposed())
 			{
-				getSite().getShell().getDisplay().asyncExec(new Runnable() {
-					public void run() {
+				getSite().getShell().getDisplay().asyncExec(() -> {
 						viewer.setInput(availableViewpoints);
 						updateActions(null);
-					}
-				});
+					});
 			}
 			return Status.OK_STATUS;
 		}
+		
+		private Description[] getFilteredViewpoints(){
+			Description[] viewpointDescriptions = ViewpointManager.getAvailableViewpointDescriptions();
+			List<Description> result = new ArrayList<>();
+			for (Description description : viewpointDescriptions) {
+				final ViewpointUIContextProvider displayContextProvider = (new ViewpointUIContextProvider(description.getId(), ViewpointManager.getInstance(context)));
+				TransitionEngine transitionEngine = FactoryProvider.getTransitionFactory().createTransitionEngine(description.getId(), DISPLAY_VIEWPOINT_ACTION, displayContextProvider);
+				try {
+					if (transitionEngine.eval()){
+						result.add(description);
+					}
+				} catch (EvaluationException e) {
+					AD_Log.getDefault().logWarning(e);
+				}
+			}
+			return result.toArray(new Description[result.size()]);
+		}
 	}
 	
-	private Description[] getFilteredViewpoints(){
-		Description[] viewpointDescriptions = ViewpointManager.getAvailableViewpointDescriptions();
-		List<Description> result = new ArrayList<ViewpointManager.Description>();
-		for (Description description : viewpointDescriptions) {
-			final ViewpointUIContextProvider displayContextProvider = (new ViewpointUIContextProvider(description.getId(), ViewpointManager.getInstance(context)));
-			TransitionEngine transitionEngine = FactoryProvider.getTransitionFactory().createTransitionEngine(description.getId(), DISPLAY_VIEWPOINT_ACTION, displayContextProvider);
-			try {
-				if (transitionEngine.eval()){
-					result.add(description);
-				}
-			} catch (EvaluationException e) {
-				AD_Log.getDefault().logWarning(e);
-			}
-		}
-		return result.toArray(new Description[result.size()]);
-	}
 
 	private final class HeaderSelectionListener extends SelectionListener2 {
 		private final TableViewerSorter comparator;
@@ -152,6 +193,7 @@ public class ViewpointManagerView extends ViewPart {
 			this.columnIndex = columnIndex;
 		}
 
+		@Override
 		public void widgetSelected(SelectionEvent e) {
 			int lastSortColumn = comparator.getSortColumn();
 			boolean lastAscending = comparator.isAscending();
@@ -172,9 +214,9 @@ public class ViewpointManagerView extends ViewPart {
 
 		@Override
 		public int compare(Viewer viewer, Object e1, Object e2) {
-			ITableLabelProvider labelProvider = (ITableLabelProvider) ((TableViewer) viewer).getLabelProvider();
-			String name1 = labelProvider.getColumnText(e1, sortColumn);
-			String name2 = labelProvider.getColumnText(e2, sortColumn);
+			ITableLabelProvider prov = (ITableLabelProvider) ((TableViewer) viewer).getLabelProvider();
+			String name1 = prov.getColumnText(e1, sortColumn);
+			String name2 = prov.getColumnText(e2, sortColumn);
 			if (ascending)
 				return getComparator().compare(name1, name2);
 			return getComparator().compare(name2, name1);
@@ -226,9 +268,8 @@ public class ViewpointManagerView extends ViewPart {
 			init();
 		}
 	};
-	private final IResourceChangeListener wsListener = new IResourceChangeListener() {
+	private final IResourceChangeListener wsListener = event ->  {
 
-		public void resourceChanged(IResourceChangeEvent event) {
 			IResourceDelta delta = event.getDelta();
 			IResource resource = event.getResource();
 			int type = event.getType();
@@ -243,8 +284,8 @@ public class ViewpointManagerView extends ViewPart {
 					}
 				}
 			}
-		}
-	};
+		};
+		
 	private final ViewpointManagerLabelProvider labelProvider = new ViewpointManagerLabelProvider();
 
 	@Override
@@ -270,55 +311,7 @@ public class ViewpointManagerView extends ViewPart {
 		init();
 		ViewpointManager.addOverallListener(vpListener);
 		ResourcesPlugin.getWorkspace().addResourceChangeListener(wsListener);
-		PlatformUI.getWorkbench().getActiveWorkbenchWindow().getSelectionService().addSelectionListener(new ISelectionListener() {
-
-			@Override
-			public void selectionChanged(IWorkbenchPart part, ISelection selection) {
-				context = analyseChange(part, selection);
-
-				if (!textLabel.isDisposed() && !imgLabel.isDisposed()) {
-					imgLabel.setImage(context == null ? Activator.getDefault().getImage(AFImages.WARNING) : null);
-					textLabel.setText(computeLabel());
-				}
-				if (viewer != null && !viewer.getControl().isDisposed()) {
-					updateActions(null);
-					labelProvider.setContext(context);
-					viewer.refresh();
-				}
-			}
-
-			private String computeLabel() {
-				if (context == null)
-					return Messages.ViewpointManagerView_default_label;
-				if (context.getResources().isEmpty())
-					return "";
-				String segment = context.getResources().get(0).getURI().segment(1);
-				try {
-					segment = java.net.URLDecoder.decode(segment, "UTF-8");
-				} catch (UnsupportedEncodingException e) {
-					AD_Log.getDefault().logWarning(e);
-				}
-				return "Project " + segment;
-			}
-
-			private ResourceSet analyseChange(IWorkbenchPart part, ISelection selection) {
-
-				for (AFContextProvider prov : AFContextProvider.INSTANCE.getProviders())
-				{
-					ResourceSet computeContext = prov.computeContext(part, selection);
-					if (computeContext != null)
-						return computeContext;
-				}
-				return null;
-			}
-
-		});
-	}
-
-	@Override
-	protected void setPartName(String partName) {
-		// TODO Auto-generated method stub
-		super.setPartName(partName);
+		PlatformUI.getWorkbench().getActiveWorkbenchWindow().getSelectionService().addSelectionListener(new SelectionListener(textLabel, imgLabel));
 	}
 
 	public void createViewer(final Composite parent) {
@@ -376,12 +369,7 @@ public class ViewpointManagerView extends ViewPart {
 		hookDoubleClickAction();
 		contributeToActionBars();
 		
-		viewer.addSelectionChangedListener(new ISelectionChangedListener() {
-
-			public void selectionChanged(SelectionChangedEvent event) {
-				updateActions((IStructuredSelection) event.getSelection());
-			}
-		});
+		viewer.addSelectionChangedListener(event ->  updateActions((IStructuredSelection) event.getSelection()));
 
 		viewer.addFilter(new ViewerFilter() {
 
@@ -404,21 +392,13 @@ public class ViewpointManagerView extends ViewPart {
 	}
 
 	private void hookDoubleClickAction() {
-		viewer.addDoubleClickListener(new IDoubleClickListener() {
-			public void doubleClick(DoubleClickEvent event) {
-				openViewAction.run();
-			}
-		});
+		viewer.addDoubleClickListener(event -> openViewAction.run());
 	}
 
 	private void hookContextMenu() {
 		MenuManager menuMgr = new MenuManager("#PopupMenu");
 		menuMgr.setRemoveAllWhenShown(true);
-		menuMgr.addMenuListener(new IMenuListener() {
-			public void menuAboutToShow(IMenuManager manager) {
-				ViewpointManagerView.this.fillContextMenu(manager);
-			}
-		});
+		menuMgr.addMenuListener(manager -> ViewpointManagerView.this.fillContextMenu(manager));
 		Menu menu = menuMgr.createContextMenu(viewer.getControl());
 		viewer.getControl().setMenu(menu);
 	}
@@ -490,6 +470,7 @@ public class ViewpointManagerView extends ViewPart {
 
 	private void makeActions() {
 		showHiddenViewpointAction = new Action("", IAction.AS_CHECK_BOX) {
+			@Override
 			public void run() {
 				viewer.refresh();
 			}
@@ -499,6 +480,7 @@ public class ViewpointManagerView extends ViewPart {
 		showHiddenViewpointAction.setImageDescriptor(Activator.getDefault().getImageDescriptor(AFImages.DISPLAY_ALL));
 
 		referenceAction = new Action() {
+			@Override
 			public void run() {
 				IStructuredSelection ss = (IStructuredSelection) viewer.getSelection();
 				int size = ss.size();
@@ -510,11 +492,8 @@ public class ViewpointManagerView extends ViewPart {
 					return;
 				try {
 					vpMgr.reference(res.getId());
-				} catch (ViewpointActivationException e) {
-					MessageDialog.openError(getSite().getShell(), "Error", e.getMessage());
-					AD_Log.getDefault().logError(e);
-				} catch (EvaluationException e) {
-					MessageDialog.openError(getSite().getShell(), "Error", e.getMessage());
+				} catch (ViewpointActivationException | EvaluationException e) {
+					MessageDialog.openError(getSite().getShell(), ERROR_LABEL, e.getMessage());
 					AD_Log.getDefault().logError(e);
 				}
 			}
@@ -524,6 +503,7 @@ public class ViewpointManagerView extends ViewPart {
 		referenceAction.setImageDescriptor(Activator.getDefault().getImageDescriptor(AFImages.REFERENCE));
 
 		unReferenceAction = new Action() {
+			@Override
 			public void run() {
 				IStructuredSelection ss = (IStructuredSelection) viewer.getSelection();
 				int size = ss.size();
@@ -563,8 +543,6 @@ public class ViewpointManagerView extends ViewPart {
 						return;
 					// Launch detach editor
 					// if the detachement is successful then the viewpoint is no more in use
-//					IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(airdResource.getURI().toPlatformString(true)));
-//					DetachmentHelper.openEditor(file, new NullProgressMonitor());
 					
 					ContextProvider contextProvider = new ViewpointUIContextProvider(res.getId(), vpMgr);
 					TransitionEngine transitionEngine = FactoryProvider.getTransitionFactory().createTransitionEngine(res.getId(), "Unreference.Viewpoint", contextProvider); 
@@ -587,7 +565,7 @@ public class ViewpointManagerView extends ViewPart {
 						throw new ViewpointActivationException(message);
 					}
 				} catch (Exception e) {
-					MessageDialog.openError(site, "Error", e.getMessage());
+					MessageDialog.openError(site, ERROR_LABEL, e.getMessage());
 					Activator.getDefault().logError(e);
 				}
 			}
@@ -612,6 +590,7 @@ public class ViewpointManagerView extends ViewPart {
 		unReferenceAction.setImageDescriptor(Activator.getDefault().getImageDescriptor(AFImages.UNREFERENCE));
 
 		activateAction = new MyAction() {
+			@Override
 			public void run() {
 				IStructuredSelection ss = (IStructuredSelection) viewer.getSelection();
 				int size = ss.size();
@@ -624,7 +603,7 @@ public class ViewpointManagerView extends ViewPart {
 				try {
 					vpMgr.setActivationState(res.getId(), true);
 				} catch (ViewpointActivationException e) {
-					MessageDialog.openError(getSite().getShell(), "Error", e.getMessage());
+					MessageDialog.openError(getSite().getShell(), ERROR_LABEL, e.getMessage());
 					Activator.getDefault().logError(e);
 				}
 			}
@@ -634,6 +613,7 @@ public class ViewpointManagerView extends ViewPart {
 		activateAction.setImageDescriptor(Activator.getDefault().getImageDescriptor(AFImages.ACTIVATE));
 
 		desacticateAction = new MyAction() {
+			@Override
 			public void run() {
 				IStructuredSelection ss = (IStructuredSelection) viewer.getSelection();
 				int size = ss.size();
@@ -646,7 +626,7 @@ public class ViewpointManagerView extends ViewPart {
 				try {
 					vpMgr.setActivationState(res.getId(), false);
 				} catch (ViewpointActivationException e) {
-					MessageDialog.openError(getSite().getShell(), "Error", e.getMessage());
+					MessageDialog.openError(getSite().getShell(), ERROR_LABEL, e.getMessage());
 					Activator.getDefault().logError(e);
 				}
 			}
@@ -656,6 +636,7 @@ public class ViewpointManagerView extends ViewPart {
 		desacticateAction.setImageDescriptor(Activator.getDefault().getImageDescriptor(AFImages.DEACTIVATE));
 
 		refreshAction = new Action() {
+			@Override
 			public void run() {
 				init();
 			}

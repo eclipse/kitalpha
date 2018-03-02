@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,10 +19,15 @@ import org.polarsys.kitalpha.report.utils.ReportFactory;
 public class AD_Log {
 
 	public static final ReportFactory RUNTIME = new ReportFactory("AF runtime");
-	public static final String[] IDS = new String[] { RUNTIME.getListId() };
+	protected static final String[] IDS = new String[] { RUNTIME.getListId() };
 
 	public static ReportFactory getDefault() {
 		return RUNTIME;
+	}
+
+	private AD_Log() {
+		super();
+		
 	}
 
 }

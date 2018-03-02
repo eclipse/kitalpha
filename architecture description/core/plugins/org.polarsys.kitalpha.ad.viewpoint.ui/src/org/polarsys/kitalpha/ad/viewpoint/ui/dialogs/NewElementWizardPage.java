@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,7 +34,6 @@ import org.eclipse.jdt.internal.ui.wizards.NewWizardMessages;
 import org.eclipse.jdt.internal.ui.wizards.TypedElementSelectionValidator;
 import org.eclipse.jdt.internal.ui.wizards.TypedViewerFilter;
 import org.eclipse.jdt.internal.ui.wizards.dialogfields.DialogField;
-import org.eclipse.jdt.internal.ui.wizards.dialogfields.IDialogFieldListener;
 import org.eclipse.jdt.internal.ui.wizards.dialogfields.LayoutUtil;
 import org.eclipse.jdt.internal.ui.wizards.dialogfields.StringDialogField;
 import org.eclipse.jdt.ui.JavaElementComparator;
@@ -57,7 +56,31 @@ import org.polarsys.kitalpha.ad.viewpoint.ui.Messages;
 
 public abstract class NewElementWizardPage extends NewTypeWizardPage {
 
-	protected final static String ELEMENT_NAME = "element.name";
+	private final class LocalTypedElementSelectionValidator extends TypedElementSelectionValidator {
+		private LocalTypedElementSelectionValidator(Class<?>[] acceptedTypes, boolean allowMultipleSelection) {
+			super(acceptedTypes, allowMultipleSelection);
+		}
+
+		@Override
+		public boolean isSelectedValid(Object element) {
+			try {
+				if (element instanceof IJavaProject) {
+					IJavaProject jproject = (IJavaProject) element;
+					IPath path = jproject.getProject().getFullPath();
+					return (jproject.findPackageFragmentRoot(path) != null);
+				} else if (element instanceof IPackageFragmentRoot) {
+					return (((IPackageFragmentRoot) element).getKind() == IPackageFragmentRoot.K_SOURCE);
+				}
+				return true;
+			} catch (JavaModelException e) {
+				AD_Log.getDefault().logWarning(e); // just log, no UI in
+													// validation
+			}
+			return false;
+		}
+	}
+
+	protected static final String ELEMENT_NAME = "element.name";
 
 	protected StringDialogField fElementNameDialogField;
 	protected IStatus fElementNameStatus;
@@ -65,12 +88,7 @@ public abstract class NewElementWizardPage extends NewTypeWizardPage {
 	public NewElementWizardPage(boolean isClass, String pageName) {
 		super(isClass, pageName);
 		fElementNameDialogField = new StringDialogField();
-		fElementNameDialogField.setDialogFieldListener(new IDialogFieldListener() {
-
-			public void dialogFieldChanged(DialogField field) {
-				handleFieldChanged(ELEMENT_NAME);
-			}
-		});
+		fElementNameDialogField.setDialogFieldListener(field -> handleFieldChanged(ELEMENT_NAME));
 		fElementNameDialogField.setLabelText(getElementLabel());
 
 	}
@@ -87,10 +105,12 @@ public abstract class NewElementWizardPage extends NewTypeWizardPage {
 		return fElementNameDialogField.getText();
 	}
 
+	@Override
 	protected void setFocus() {
 		fElementNameDialogField.setFocus();
 	}
 
+	@Override
 	protected String getTypeNameLabel() {
 		return Messages.JavaRuleWizard_type_label;
 	}
@@ -99,6 +119,7 @@ public abstract class NewElementWizardPage extends NewTypeWizardPage {
 		return Messages.JavaRuleWizard_rule_label;
 	}
 
+	@Override
 	protected void createTypeMembers(IType type, ImportsManager imports, IProgressMonitor monitor) throws CoreException {
 		createInheritedMethods(type, false, true, imports, new SubProgressMonitor(monitor, 1));
 
@@ -109,7 +130,7 @@ public abstract class NewElementWizardPage extends NewTypeWizardPage {
 
 	protected void doStatusUpdate() {
 		// status of all used components
-		List<IStatus> allStatus = new ArrayList<IStatus>();
+		List<IStatus> allStatus = new ArrayList<>();
 
 		collectStatus(allStatus);
 
@@ -128,6 +149,7 @@ public abstract class NewElementWizardPage extends NewTypeWizardPage {
 		allStatus.add(fElementNameStatus);
 	}
 
+	@Override
 	protected void handleFieldChanged(String fieldName) {
 		super.handleFieldChanged(fieldName);
 		if (fieldName == ELEMENT_NAME) {
@@ -144,6 +166,7 @@ public abstract class NewElementWizardPage extends NewTypeWizardPage {
 		return status;
 	}
 
+	@Override
 	public void setVisible(boolean visible) {
 		super.setVisible(visible);
 		if (visible) {
@@ -192,30 +215,15 @@ public abstract class NewElementWizardPage extends NewTypeWizardPage {
 
 	}
 
+	@Override
 	protected IPackageFragmentRoot chooseContainer() {
 		IJavaElement initElement = getPackageFragmentRoot();
 		Class[] acceptedClasses = new Class[] { IPackageFragmentRoot.class, IJavaProject.class };
-		TypedElementSelectionValidator validator = new TypedElementSelectionValidator(acceptedClasses, false) {
-			public boolean isSelectedValid(Object element) {
-				try {
-					if (element instanceof IJavaProject) {
-						IJavaProject jproject = (IJavaProject) element;
-						IPath path = jproject.getProject().getFullPath();
-						return (jproject.findPackageFragmentRoot(path) != null);
-					} else if (element instanceof IPackageFragmentRoot) {
-						return (((IPackageFragmentRoot) element).getKind() == IPackageFragmentRoot.K_SOURCE);
-					}
-					return true;
-				} catch (JavaModelException e) {
-					AD_Log.getDefault().logWarning(e); // just log, no UI in
-														// validation
-				}
-				return false;
-			}
-		};
+		TypedElementSelectionValidator validator = new LocalTypedElementSelectionValidator(acceptedClasses, false);
 
 		acceptedClasses = new Class[] { IJavaModel.class, IPackageFragmentRoot.class, IJavaProject.class };
 		ViewerFilter filter = new TypedViewerFilter(acceptedClasses) {
+			@Override
 			public boolean select(Viewer viewer, Object parent, Object element) {
 				if (element instanceof IJavaProject) {
 					IJavaProject jproj = (IJavaProject) element;

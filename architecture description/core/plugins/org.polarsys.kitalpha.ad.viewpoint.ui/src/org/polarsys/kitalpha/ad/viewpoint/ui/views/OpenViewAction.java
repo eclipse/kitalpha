@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,7 +38,7 @@ import org.polarsys.kitalpha.resourcereuse.model.Resource;
  */
 final class OpenViewAction extends Action implements IMenuCreator {
 	private Resource resource;
-	private List<ViewElement> viewIds = new ArrayList<ViewElement>();
+	private List<ViewElement> viewIds = new ArrayList<>();
 
 	private SelectionListener listener = new SelectionAdapter() {
 
@@ -89,7 +89,7 @@ final class OpenViewAction extends Action implements IMenuCreator {
 	}
 
 	public void dispose() {
-		// TODO Auto-generated method stub
+		//nothing to do
 	}
 
 	private void fillMenu(Menu menu) {
@@ -112,6 +112,7 @@ final class OpenViewAction extends Action implements IMenuCreator {
 			}
 
 			public void menuHidden(MenuEvent e) {
+				//nothing to do
 			}
 		});
 
@@ -127,6 +128,7 @@ final class OpenViewAction extends Action implements IMenuCreator {
 			}
 
 			public void menuHidden(MenuEvent e) {
+				//nothing to do
 			}
 		});
 
