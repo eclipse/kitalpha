@@ -67,6 +67,15 @@ public abstract class AbstractMDERichTextWidget implements MDERichTextWidget {
 
 	@Override
 	public void bind(EObject owner, EStructuralFeature feature) {
+	  // https://bugs.polarsys.org/show_bug.cgi?id=1952
+	  // Before changing the owner and the feature of this widget 
+	  // to a new EObject element and a new structure
+	  // must save the content of the current element and the current feature
+	  // if they are not NULL
+	  if (this.owner != null && this.feature != null && this.owner != owner) {
+      saveContent();
+    }
+	  
 		this.owner = owner;
 		this.feature = feature;
 		
