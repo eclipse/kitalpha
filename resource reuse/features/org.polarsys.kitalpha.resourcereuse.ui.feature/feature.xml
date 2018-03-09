@@ -2,7 +2,7 @@
 <feature
       id="org.polarsys.kitalpha.resourcereuse.ui.feature"
       label="Kitalpha Resource Reuse UI Feature"
-      version="1.1.4.qualifier"
+      version="1.1.5.qualifier"
       provider-name="%providerName">
 
    <description>
@@ -18,8 +18,8 @@
    </license>
 
    <requires>
-      <import feature="org.polarsys.kitalpha.resourcereuse.feature" version="1.1.4.qualifier"/>
-      <import feature="org.polarsys.kitalpha.common.feature" version="1.1.4.qualifier"/>
+      <import feature="org.polarsys.kitalpha.resourcereuse.feature" version="1.1.5.qualifier"/>
+      <import feature="org.polarsys.kitalpha.common.feature" version="1.1.5.qualifier"/>
    </requires>
 
    <plugin

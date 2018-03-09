@@ -12,7 +12,7 @@ Contributors:
 <feature
       id="org.polarsys.kitalpha.ad.af.dsl.as.feature"
       label="Architecture framework dsl abstract description feature"
-      version="1.1.4.qualifier"
+      version="1.1.5.qualifier"
       provider-name="%providerName">
 
    <description url="http://www.example.com/description">
