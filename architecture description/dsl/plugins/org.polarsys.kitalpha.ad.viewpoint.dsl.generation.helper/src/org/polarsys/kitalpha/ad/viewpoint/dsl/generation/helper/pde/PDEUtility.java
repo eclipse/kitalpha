@@ -21,7 +21,9 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IPackageFragment;
@@ -39,6 +41,7 @@ import org.eclipse.pde.internal.ui.util.ModelModification;
 import org.eclipse.pde.internal.ui.util.PDEModelUtility;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 import org.osgi.framework.Constants;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper.Activator;
 
 /**
  * @author Boubekeur Zendagui
@@ -437,9 +440,9 @@ public class PDEUtility {
 				newRequiredBundles.append(available_dependecies.get(0)).append(",");
 				for (int i = 1; i < available_dependecies.size()-1; i++) 
 				{
-					newRequiredBundles.append(newRequiredBundles).append("\n ").append(available_dependecies.get(i)).append(",");
+					newRequiredBundles.append("\n ").append(available_dependecies.get(i)).append(",");
 				}
-				newRequiredBundles.append(newRequiredBundles).append("\n ").append(available_dependecies.get(available_dependecies.size()-1)); 
+				newRequiredBundles.append("\n ").append(available_dependecies.get(available_dependecies.size()-1)); 
 			}
 			return newRequiredBundles.toString();
 		}
@@ -519,9 +522,9 @@ public class PDEUtility {
 				newRequiredBundles.append(available_dependecies.get(0)).append(",");
 				for (int i = 1; i < available_dependecies.size()-1; i++) 
 				{
-					newRequiredBundles.append(newRequiredBundles).append("\n ").append(available_dependecies.get(i)).append(",");
+					newRequiredBundles.append("\n ").append(available_dependecies.get(i)).append(",");
 				}
-				newRequiredBundles.append(newRequiredBundles).append("\n ").append(available_dependecies.get(available_dependecies.size()-1)); 
+				newRequiredBundles.append("\n ").append(available_dependecies.get(available_dependecies.size()-1)); 
 			}
 			return newRequiredBundles.toString();
 		}
@@ -617,7 +620,7 @@ public class PDEUtility {
 			javaProject.setRawClasspath(javaProject.readRawClasspath(), javaProject.readOutputLocation(), Null_Progress_Monitor);
 			project.refreshLocal(IResource.DEPTH_INFINITE, Null_Progress_Monitor);
 		} catch (CoreException e) {
-			e.printStackTrace();
+			Activator.getDefault().getLog().log(new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage(), e));
 		}
 	}
 }
