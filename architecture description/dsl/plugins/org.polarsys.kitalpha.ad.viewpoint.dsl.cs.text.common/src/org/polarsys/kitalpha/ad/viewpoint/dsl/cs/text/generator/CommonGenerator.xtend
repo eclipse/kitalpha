@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -115,7 +115,6 @@ abstract class CommonGenerator implements IViewpointSynchronizer {
 					{
 						var EStructuralFeature importGroupAttr = imp.eClass.getEStructuralFeature("importedGroup");
 						var String importValue = imp.eGet(importGroupAttr).toString;				
-						importValue = importValue.substring(1, importValue.length-1);
 						
 						var resourceSet = new ResourceSetImpl();
 						var targetDiagram = target.VP_Aspects.findFirst(d | d instanceof DiagramSet);
