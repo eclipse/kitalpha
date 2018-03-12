@@ -233,7 +233,7 @@ abstract class CommonGenerator implements IViewpointSynchronizer {
 				}	
 			}
 		}
-	}
+	} 
 	
 	override doGenerate(Resource input, IFileSystemAccess fsa) {
 	}
