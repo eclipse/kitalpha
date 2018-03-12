@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -157,6 +157,10 @@ public abstract class CommonGenerator implements IViewpointSynchronizer {
               EStructuralFeature importGroupAttr = _eClass_3.getEStructuralFeature("importedGroup");
               Object _eGet_1 = imp_1.eGet(importGroupAttr);
               String importValue_1 = _eGet_1.toString();
+              int _length = importValue_1.length();
+              int _minus = (_length - 1);
+              String _substring = importValue_1.substring(1, _minus);
+              importValue_1 = _substring;
               ResourceSetImpl resourceSet = new ResourceSetImpl();
               EList<Aspect> _vP_Aspects_4 = target.getVP_Aspects();
               final Function1<Aspect, Boolean> _function_2 = (Aspect d) -> {
