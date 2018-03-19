@@ -39,7 +39,7 @@
 	<properties>
 		<tycho-version>1.0.0</tycho-version>
 		<tycho-extras-version>1.0.0</tycho-extras-version>
-		<platform-version-name>neon</platform-version-name>
+		<platform-version-name>oxygen</platform-version-name>
 		
 		<tycho.scmUrl>scm:git:https://git.polarsys.org/r/kitalpha/kitalpha</tycho.scmUrl>
 		
