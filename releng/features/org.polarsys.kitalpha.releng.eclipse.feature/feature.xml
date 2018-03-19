@@ -45,6 +45,10 @@
          version="0.0.0"/>
 
    <includes
+         id="org.eclipse.emf.diffmerge.coevolution.sdk.feature"
+         version="0.0.0"/>
+
+   <includes
          id="org.eclipse.amalgam.explorer.contextual.source"
          version="0.0.0"/>
 
