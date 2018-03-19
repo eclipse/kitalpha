@@ -309,22 +309,6 @@
          version="0.0.0"/>
 
    <includes
-         id="org.eclipse.emf.query"
-         version="0.0.0"/>
-
-   <includes
-         id="org.eclipse.emf.query.doc"
-         version="0.0.0"/>
-
-   <includes
-         id="org.eclipse.emf.query.ocl"
-         version="0.0.0"/>
-
-   <includes
-         id="org.eclipse.emf.query.sdk"
-         version="0.0.0"/>
-
-   <includes
          id="org.eclipse.emf.sdk"
          version="0.0.0"/>
 

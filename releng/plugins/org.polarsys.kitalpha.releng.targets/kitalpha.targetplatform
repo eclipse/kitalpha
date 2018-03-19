@@ -8,10 +8,6 @@ location neon-release "http://download.eclipse.org/releases/oxygen" {
 	org.eclipse.xtext.sdk.feature.group lazy
 	org.eclipse.emf.sdk.feature.group lazy
 	org.eclipse.emf.validation.ocl lazy
-	org.eclipse.emf.query.ocl.feature.group lazy
-	org.eclipse.emf.query.ocl.source.feature.group lazy
-	org.eclipse.emf.query.sdk.feature.group lazy
-	org.eclipse.emf.query.doc.feature.group lazy
 	org.eclipse.emf.transaction.sdk.feature.group lazy
 	org.eclipse.emf.transaction.doc.feature.group lazy
 	org.eclipse.gmf.runtime.sdk.feature.group lazy
