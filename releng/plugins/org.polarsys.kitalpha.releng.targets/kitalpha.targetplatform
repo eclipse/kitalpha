@@ -207,6 +207,6 @@ location EGFSdk "https://hudson.eclipse.org/egf/job/buckminster-egf-oxygen/lastS
 	org.eclipse.egf.producer.ui.source lazy
 }
 
-location Nebula "http://download.eclipse.org/nebula/releases/1.2.0/" {
+location Nebula "http://download.eclipse.org/nebula/releases/1.4.0/" {
 	org.eclipse.nebula.widgets.richtext.feature.feature.group lazy
 }
