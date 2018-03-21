@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,6 +40,10 @@ public class GenRuntimeVersionHelper {
 			genmodelVersion = GenRuntimeVersion.get("2.10");
 		if (version.getQualifier().startsWith("2_11"))
 			genmodelVersion = GenRuntimeVersion.get("2.11");
+		if (version.getQualifier().startsWith("2_12"))
+			genmodelVersion = GenRuntimeVersion.get("2.12");
+		if (version.getQualifier().startsWith("2_13"))
+			genmodelVersion = GenRuntimeVersion.get("2.13");
 		if (genmodelVersion == null)
 			throw new IllegalStateException("unexpected version for org.eclipse.egf.emf.pattern bundle: " + version);
 
