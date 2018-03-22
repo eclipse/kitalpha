@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-Version: 1.2.1.qualifier
+Bundle-Version: 1.3.0.qualifier
 Bundle-SymbolicName: org.polarsys.kitalpha.ad.integration.emde.tests.junit;singleton:=true
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

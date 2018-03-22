@@ -17,13 +17,13 @@
 	<name>Kitalpha Product</name>
 	<groupId>org.polarsys</groupId>
 	<artifactId>org.polarsys.kitalpha.releng.sdk.product</artifactId>
-	<version>1.2.1-SNAPSHOT</version>
+	<version>1.3.0-SNAPSHOT</version>
 	<packaging>eclipse-repository</packaging>
 	
 	<parent>
 		<groupId>org.polarsys</groupId>
 		<artifactId>org.polarsys.kitalpha</artifactId>
-		<version>1.2.1-SNAPSHOT</version>
+		<version>1.3.0-SNAPSHOT</version>
 		<relativePath>../../../releng/plugins/org.polarsys.kitalpha.releng.parent</relativePath>
 	</parent>
 	<build>
@@ -67,7 +67,7 @@
 							<target>
 								<echo>Create dropin folders in porducts</echo>
 								<mkdir dir="${basedir}/target/products/org.polarsys.kitalpha.releng.sdk.product/linux/gtk/x86_64/dropins"/>
-								<mkdir dir="${basedir}/target/products/org.polarsys.kitalpha.releng.sdk.product/win32/win32/x86_64/dropins"/>
+								<mkdir dir="${basedir}/target/products/org.polarsys.kitalpha.releng.sdk.product/linux/gtk/x86_64/dropins"/>
 								<mkdir dir="${basedir}/target/products/org.polarsys.kitalpha.releng.sdk.product/macosx/cocoa/x86_64/Eclipse.app/Contents/Eclipse/dropins"/>
 							</target>
 						</configuration>
