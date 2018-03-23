@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2014 THALES GLOBAL SERVICES.
+ * Copyright (c) 2006, 2018 THALES GLOBAL SERVICES.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,7 +20,7 @@ import org.osgi.framework.BundleContext;
 public class EmdePatternSupportPlugin extends Plugin {
 
 	/** The shared instance */
-	private static EmdePatternSupportPlugin __plugin;
+	private static EmdePatternSupportPlugin plugin;
 	
 	
 	/**
@@ -34,7 +34,7 @@ public class EmdePatternSupportPlugin extends Plugin {
    * Return the shared instance of the activator
    */
   public static EmdePatternSupportPlugin getDefault() {
-    return __plugin;
+    return plugin;
   }
   
   /**
@@ -50,7 +50,7 @@ public class EmdePatternSupportPlugin extends Plugin {
   @Override
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
-		__plugin = this;
+		plugin = this;
 	}
   
 	/**
@@ -58,7 +58,7 @@ public class EmdePatternSupportPlugin extends Plugin {
 	 */
 	@Override
 	public void stop(BundleContext context) throws Exception {
-		__plugin = null;
+		plugin = null;
 		super.stop(context);
 	}
 	
