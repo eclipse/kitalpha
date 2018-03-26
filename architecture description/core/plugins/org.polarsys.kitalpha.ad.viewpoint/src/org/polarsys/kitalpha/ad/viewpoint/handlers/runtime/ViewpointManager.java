@@ -47,8 +47,9 @@ public class ViewpointManager extends ResourceManager {
 	}
 
 	public void saveModel() {
-		if (isReadOnly())
+		if (isReadOnly()){
 			return;
+		}
 		IProject project = ProjectUtils.getContainingProject(viewpoint);
 		if (project != null && project.isOpen()) {
 			try {
@@ -68,8 +69,9 @@ public class ViewpointManager extends ResourceManager {
 		}
 
 		public boolean isRemovable(ViewpointElement element) {
-			if (getResourceManager().isReadOnly())
+			if (getResourceManager().isReadOnly()){
 				return false;
+			}
 			ViewpointElementSet set = ((ViewpointElementSet) element.eContainer());
 			return set.eContainer() == getViewpoint();
 		}

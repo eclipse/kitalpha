@@ -46,8 +46,9 @@ public class ViewHelper {
 		List<ViewElement> viewIds = new ArrayList<>();
 		String providerSymbolicName = resource.getProviderSymbolicName();
 		IPluginModelBase bundle = PluginRegistry.findModel(providerSymbolicName);
-		if (bundle == null)
+		if (bundle == null){
 			return viewIds; // occurs when a workspace vp is closed while active
+		}
 		for (IPluginExtension extension : bundle.getExtensions().getExtensions()) {
 			if ("org.eclipse.ui.views".equals(extension.getPoint())) {
 				for (IPluginObject children : extension.getChildren()) {

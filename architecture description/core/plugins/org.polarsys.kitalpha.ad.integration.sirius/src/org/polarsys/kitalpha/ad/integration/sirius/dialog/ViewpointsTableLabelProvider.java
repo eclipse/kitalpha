@@ -80,8 +80,9 @@ public class ViewpointsTableLabelProvider extends ColumnLabelProvider {
 	 */
 	@Override
 	public Image getImage(final Object element) {
-		if (!(element instanceof Viewpoint))
+		if (!(element instanceof Viewpoint)){
 			return null;
+		}
 		Image image = null;
 		final Viewpoint vp = (Viewpoint) element;
 
@@ -171,8 +172,9 @@ public class ViewpointsTableLabelProvider extends ColumnLabelProvider {
 			FontRegistry fontRegistry = JFaceResources.getFontRegistry();
 			Font italic = fontRegistry.getItalic(name);
 			cell.setFont(italic);
-		} else
+		} else {
 			cell.setFont(null);
+		}
 	}
 
 	@Override

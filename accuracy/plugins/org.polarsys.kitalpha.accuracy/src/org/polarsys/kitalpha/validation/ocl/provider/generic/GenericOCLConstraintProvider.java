@@ -64,8 +64,9 @@ public abstract class GenericOCLConstraintProvider extends GenericConstraintProv
         GenericConstraintProviderService.getInstance().registerProvider(this);
         final List<? extends AbstractConstraintDescriptor> descriptors = GenericConstraintProviderService.getInstance().getDescriptors(this);
         for (final AbstractConstraintDescriptor descriptor : descriptors) {
-            if (descriptor instanceof OCLConstraintDescriptor)
+            if (descriptor instanceof OCLConstraintDescriptor) {
                 addConstraintToGlobalConstraintCollection((OCLConstraintDescriptor) descriptor);
+            }
         }
     }
 

@@ -34,16 +34,18 @@ public class SiriusContextProvider implements AFContextProvider {
 	 */
 	@Override
 	public ResourceSet computeContext(IWorkbenchPart part, ISelection selection) {
-		if (selection.isEmpty())
+		if (selection.isEmpty()){
 			return null;
+		}
 		if (selection instanceof IStructuredSelection) {
 			Object[] selected = ((IStructuredSelection) selection).toArray();
 			if (selected[0] instanceof IFile) {
 				IFile file = (IFile) selected[0];
 				URI uri = URI.createPlatformResourceURI(file.getFullPath().toString(), true);
 				Session existingSession = SessionManager.INSTANCE.getExistingSession(uri);
-				if (existingSession != null)
+				if (existingSession != null) {
 					return existingSession.getTransactionalEditingDomain().getResourceSet();
+				}
 			}
 		}
 		return null;

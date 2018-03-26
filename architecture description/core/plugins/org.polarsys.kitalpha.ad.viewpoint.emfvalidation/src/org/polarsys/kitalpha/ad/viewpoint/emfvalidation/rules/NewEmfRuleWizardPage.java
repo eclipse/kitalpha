@@ -188,16 +188,18 @@ public class NewEmfRuleWizardPage extends NewElementWizardPage {
 	protected IStatus messageChanged() {
 		StatusInfo status = new StatusInfo();
 		String text = fMessageDialogField.getText();
-		if (text == null || "".equals(text))
+		if (text == null || "".equals(text)){
 			status.setError(Messages.NewCreationWizardPage_error3);
+		}
 		return status;
 	}
 
 	protected IStatus packagesChanged() {
 		StatusInfo status = new StatusInfo();
 		List elements = fPackageDialogField.getElements();
-		if (elements == null || elements.isEmpty())
+		if (elements == null || elements.isEmpty()){
 			status.setError(Messages.NewCreationWizardPage_error4);
+		}
 		return status;
 	}
 

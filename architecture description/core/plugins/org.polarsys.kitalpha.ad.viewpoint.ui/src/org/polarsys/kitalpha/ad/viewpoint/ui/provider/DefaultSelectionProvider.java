@@ -38,17 +38,20 @@ public class DefaultSelectionProvider implements AFSelectionProvider {
 		super();
 		ISelectionService selectionService = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getSelectionService();
 		listener = (part, selection) -> {
-			if (part instanceof ViewpointView)
-					return;
-				selectedObjects.clear();
+			if (part instanceof ViewpointView){
+				return;
+			}
+			selectedObjects.clear();
 
-				if (selection instanceof IStructuredSelection) {
-					for (Object obj : ((IStructuredSelection) selection).toArray())
-						selectedObjects.add(obj);
+			if (selection instanceof IStructuredSelection) {
+				for (Object obj : ((IStructuredSelection) selection).toArray()) {
+					selectedObjects.add(obj);
 				}
-				for (ISelectionListener l : listeners)
-					l.selectionChanged(part, selection);
-			};
+			}
+			for (ISelectionListener l : listeners){
+				l.selectionChanged(part, selection);
+			}
+		};
 		selectionService.addSelectionListener(listener);
 
 		// update object state accordingly to the platform state
@@ -62,8 +65,9 @@ public class DefaultSelectionProvider implements AFSelectionProvider {
 	public List<Object> getSelection() {
 		List<Object> result = new ArrayList<>();
 		for (Object obj : selectedObjects) {
-			if (obj instanceof EObject)
+			if (obj instanceof EObject){
 				result.add(obj);
+			}
 		}
 		return result;
 	}

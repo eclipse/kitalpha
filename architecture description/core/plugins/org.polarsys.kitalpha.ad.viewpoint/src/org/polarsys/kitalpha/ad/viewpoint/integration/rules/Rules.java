@@ -30,27 +30,33 @@ public class Rules {
 	private static final String EXTENSION_POINT_ID = "org.polarsys.kitalpha.ad.viewpoint.rule.providers";
 
 	public static String getProviderName(Rule rule) {
-		if (rule.getImplementation() == null || "".equals(rule.getImplementation()))
+		if (rule.getImplementation() == null || "".equals(rule.getImplementation())){
 			return null;
+		}
 		RuleProvider provider = getProvider(rule.getType());
-		if (provider == null)
+		if (provider == null){
 			return null;
+		}
 		for (ElementDescriptor elt : provider.getAvailableImplementations()) {
-			if (elt.implementation.equals(rule.getImplementation()))
+			if (elt.implementation.equals(rule.getImplementation())){
 				return elt.provider;
+			}
 		}
 		return "Cannot find the provider plugin";
 	}
 
 	public static String getName(Rule rule) {
-		if (rule.getImplementation() == null || "".equals(rule.getImplementation()))
+		if (rule.getImplementation() == null || "".equals(rule.getImplementation())){
 			return null;
+		}
 		RuleProvider provider = getProvider(rule.getType());
-		if (provider == null)
+		if (provider == null){
 			return null;
+		}
 		for (ElementDescriptor elt : provider.getAvailableImplementations()) {
-			if (elt.implementation.equals(rule.getImplementation()))
+			if (elt.implementation.equals(rule.getImplementation())){
 				return elt.name;
+			}
 		}
 		return "Missing - May be not loaded yet";
 	}
@@ -62,8 +68,9 @@ public class Rules {
 	}
 
 	public static ElementDescriptor[] getAvailableImplementations(String type) {
-		if (type == null)
+		if (type == null){
 			return new ElementDescriptor[0];
+		}
 		RuleProvider ruleProvider = getProviders().get(type);
 		if (ruleProvider != null) {
 			return ruleProvider.getAvailableImplementations();

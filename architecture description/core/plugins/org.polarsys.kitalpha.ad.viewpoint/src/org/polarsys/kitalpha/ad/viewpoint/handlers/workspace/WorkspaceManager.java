@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -50,14 +50,16 @@ public class WorkspaceManager extends ResourceManager {
 	}
 
 	public Object getRootModel() {
-		if (isReadOnly())
+		if (isReadOnly()){
 			return null;
+		}
 		return workspace;
 	}
 
 	public void projectSelected(IProject project) {
-		if (project != null && project.equals(currentProject) && currentProjectIsOpen == project.isOpen())
+		if (project != null && project.equals(currentProject) && currentProjectIsOpen == project.isOpen()){
 			return;
+		}
 		currentProject = project;
 		disposeWorkspace();
 		currentProjectIsOpen = currentProject != null && currentProject.isOpen();
@@ -72,8 +74,9 @@ public class WorkspaceManager extends ResourceManager {
 		URI uri = URIFix.createPlatformResourceURI(currentProject.getName() + '/' + USER_AF_FILE, false);
 		if (userFile.exists()) {
 			EList<EObject> contents = set.getResource(uri, true).getContents();
-			if (!contents.isEmpty())
+			if (!contents.isEmpty()){
 				workspace = (Workspace) contents.get(0);
+			}
 		}
 		if (workspace == null) {
 			// create workspace
@@ -106,14 +109,16 @@ public class WorkspaceManager extends ResourceManager {
 
 	@Override
 	public long getModelTimeStamp() {
-		if (workspace == null || workspace.eResource() == null)
+		if (workspace == null || workspace.eResource() == null){
 			return -1; // being reloaded
+		}
 		return workspace.eResource().getTimeStamp();
 	}
 
 	public void saveModel() {
-		if (isReadOnly())
+		if (isReadOnly()){
 			return;
+		}
 		try {
 			Resource resource = workspace.eResource();
 			resource.save(Collections.emptyMap());
@@ -138,8 +143,9 @@ public class WorkspaceManager extends ResourceManager {
 		}
 
 		public boolean isRemovable(ViewpointElement element) {
-			if (getResourceManager().isReadOnly())
+			if (getResourceManager().isReadOnly()){
 				return false;
+			}
 			return EcoreUtil.getRootContainer(element) instanceof Workspace;
 		}
 
@@ -149,12 +155,16 @@ public class WorkspaceManager extends ResourceManager {
 			for (ViewpointElement elt : initial) {
 				name2elt.put(getIdentifier(elt), elt);
 			}
-			if (toRemove != null)
-				for (ViewpointElement elt : toRemove)
+			if (toRemove != null){
+				for (ViewpointElement elt : toRemove){
 					name2elt.remove(getIdentifier(elt));
-			if (toAdd != null)
-				for (ViewpointElement elt : toAdd)
+				}
+			}
+			if (toAdd != null){
+				for (ViewpointElement elt : toAdd){
 					name2elt.put(getIdentifier(elt), elt);
+				}
+			}
 
 			return new ArrayList<ViewpointElement>(name2elt.values());
 

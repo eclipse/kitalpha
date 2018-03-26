@@ -85,12 +85,14 @@ public class ParentHelper extends AbstractHelper {
 	}
 	
 	private Collection<Resource> filter(Resource[] resources, Set<String> bundleScope) {
-		if (bundleScope == null)
+		if (bundleScope == null){
 			return Arrays.asList(resources);
+		}
 		HashMap<String, Resource> res = new HashMap<>();
 		for (Resource resource : resources) {
-			if (!res.containsKey(resource.getPath()) && bundleScope.contains(resource.getProviderSymbolicName()) && !resource.getPath().contains(pathToExclude))
+			if (!res.containsKey(resource.getPath()) && bundleScope.contains(resource.getProviderSymbolicName()) && !resource.getPath().contains(pathToExclude)){
 				res.put(resource.getPath(), resource);
+			}
 		}
 		return res.values();
 	}

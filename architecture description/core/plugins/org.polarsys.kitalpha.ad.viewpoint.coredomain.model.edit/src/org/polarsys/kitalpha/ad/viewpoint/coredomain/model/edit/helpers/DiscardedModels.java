@@ -44,9 +44,11 @@ public class DiscardedModels {
 	
 	public static boolean isFiltered(URI uri) {
 		String uriString = uri.toString();
-		for (String path : models)
-			if (uriString.endsWith(path))
+		for (String path : models){
+			if (uriString.endsWith(path)){
 				return true;
+			}
+		}
 		return false;
 	}
 

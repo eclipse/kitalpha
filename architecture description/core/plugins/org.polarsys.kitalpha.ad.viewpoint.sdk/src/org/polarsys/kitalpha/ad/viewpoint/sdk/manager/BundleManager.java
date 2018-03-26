@@ -89,8 +89,9 @@ public class BundleManager {
 				Set<String> users = bundle2users.get(dependency);
 				if (users == null || users.isEmpty()) {
 					Bundle bundle2 = Platform.getBundle(dependency);
-					if (bundle2 != null) // in some case the bundle may have been uninstalled
+					if (bundle2 != null) {// in some case the bundle may have been uninstalled
 						remove(bundle2);
+					}
 				}
 			}
 			bundle2dependencies.remove(bundle.getSymbolicName());
@@ -151,8 +152,9 @@ public class BundleManager {
 		IPluginModelBase model = PluginRegistry.findModel(symbolicName); 
 		if (model instanceof ExternalPluginModel) {
 			Bundle bundle = Platform.getBundle(symbolicName);
-			if (bundle != null)
+			if (bundle != null){
 				return bundle;
+			}
 			ExternalPluginModel extModel = (ExternalPluginModel) model;
 			return installBundle(new File(extModel.getInstallLocation()).toURI());
 		}
@@ -191,8 +193,9 @@ public class BundleManager {
 		array.close();
 		String location = "ID->" + getLocation(project);
 		Bundle bundle = Activator.getContext().getBundle(location);
-		if (bundle == null)
+		if (bundle == null){
 			return Activator.getContext().installBundle(location, new ByteArrayInputStream(array.toByteArray()));
+		}
 		bundle.update(new ByteArrayInputStream(array.toByteArray()));
 		return bundle;
 
@@ -207,8 +210,9 @@ public class BundleManager {
 			String subPath = path.equals("") ? sd : path + "/" + sd;
 			String subzipPath = zipPath.equals("") ? sd : zipPath + "/" + sd;
 			if (f.isDirectory()) {
-				if (outputFolders.contains(sd))
+				if (outputFolders.contains(sd)){
 					subzipPath = zipPath;
+				}
 				addContent(f, subPath, subzipPath, outputFolders, out, names);
 			} else if (!names.contains(subzipPath)) {
 				try (BufferedInputStream origin = new BufferedInputStream(new FileInputStream(f))) {

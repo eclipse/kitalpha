@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,14 +28,17 @@ import org.polarsys.kitalpha.ad.viewpoint.ui.views.tabs.AFLabelProvider;
 public class SiriusLabelProvider extends AFLabelProvider {
 
 	public String getColumnText(Object element, int columnIndex) {
-		if (!(element instanceof SiriusRepresentation))
+		if (!(element instanceof SiriusRepresentation)){
 			return "";
+		}
 		SiriusRepresentation prop = (SiriusRepresentation) element;
 		Group odesign = prop.getOdesign();
-		if (odesign == null)
+		if (odesign == null){
 			return "";
-		if (odesign.eIsProxy())
+		}
+		if (odesign.eIsProxy()){
 			return "File cannot be loaded: " + ((InternalEObject) odesign).eProxyURI();
+		}
 		return "[" + odesign.getName() + "] " + (odesign.eResource() == null ? "" : odesign.eResource().getURI().toString());
 	}
 
@@ -44,8 +47,9 @@ public class SiriusLabelProvider extends AFLabelProvider {
 		if (element instanceof SiriusRepresentation) {
 			SiriusRepresentation prop = (SiriusRepresentation) element;
 			Group odesign = prop.getOdesign();
-			if (odesign != null && odesign.eIsProxy())
+			if (odesign != null && odesign.eIsProxy()) {
 				return Activator.getDefault().getImage(AFImages.ERROR_STATE);
+			}
 
 		}
 		return super.getColumnImage(element, columnIndex);

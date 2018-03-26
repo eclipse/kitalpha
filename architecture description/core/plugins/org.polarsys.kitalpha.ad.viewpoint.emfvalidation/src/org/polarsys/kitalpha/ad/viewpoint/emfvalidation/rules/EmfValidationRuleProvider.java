@@ -77,8 +77,9 @@ public class EmfValidationRuleProvider implements RuleProvider {
 	}
 
 	public boolean canExecute(Rule rule, ModelAccessor properties, Object[] selection) {
-		if (!checkSelection(selection))
+		if (!checkSelection(selection)){
 			return false;
+		}
 		BasicDiagnostic diagnostic = createDiagnostic(rule);
 		IConstraintDescriptor descriptor = getConstraintDescriptor(rule);
 		if (descriptor == null) {
@@ -91,11 +92,13 @@ public class EmfValidationRuleProvider implements RuleProvider {
 
 	protected boolean checkSelection(Object[] selection) {
 		for (Object obj : selection) {
-			if (obj instanceof IAdaptable)
+			if (obj instanceof IAdaptable){
 				obj = ((IAdaptable) obj).getAdapter(EObject.class);
+			}
 
-			if (!(obj instanceof EObject))
+			if (!(obj instanceof EObject)){
 				return false;
+			}
 		}
 		return true;
 	}
@@ -110,8 +113,9 @@ public class EmfValidationRuleProvider implements RuleProvider {
 			for (Object target : selection) {
 				ValidationContext ctx3 = new ValidationContext();
 				ctx3.setConstraint(newConstraint);
-				if (target instanceof EObject)
+				if (target instanceof EObject){
 					ctx3.setTarget((EObject) target);
+				}
 				IStatus validate = newConstraint.validate(ctx3);
 				diagnostic.add(new BasicDiagnostic(validate.getSeverity(), validate.getPlugin(), validate.getCode(), validate.getMessage(), null));
 			}
@@ -135,11 +139,13 @@ public class EmfValidationRuleProvider implements RuleProvider {
 
 	public boolean hasProvider(Bundle bundle) {
 		IPluginModelBase model = PDECore.getDefault().getModelManager().findModel(bundle.getSymbolicName());
-		if (model == null)
+		if (model == null){
 			return false; // occurs when a workspace vp is closed while active
+		}
 		for (IPluginExtension extension : model.getExtensions().getExtensions()) {
-			if (EXTENSION_POINT_ID.equals(extension.getPoint()))
+			if (EXTENSION_POINT_ID.equals(extension.getPoint())){
 				return true;
+			}
 		}
 		return false;
 	}

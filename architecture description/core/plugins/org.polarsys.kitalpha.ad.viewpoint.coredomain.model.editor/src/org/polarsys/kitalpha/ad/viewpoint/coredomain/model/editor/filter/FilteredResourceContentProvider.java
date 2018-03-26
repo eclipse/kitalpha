@@ -32,8 +32,9 @@ public class FilteredResourceContentProvider implements IStructuredItemContentPr
 		{
 			ArrayList<Resource> result = new ArrayList<>();
 			for (Resource r : ((ResourceSet)object).getResources()) {
-				if (!DiscardedModels.isFiltered(r.getURI()))
+				if (!DiscardedModels.isFiltered(r.getURI())){
 					result.add(r);
+				}
 			}
 			return result;
 		}

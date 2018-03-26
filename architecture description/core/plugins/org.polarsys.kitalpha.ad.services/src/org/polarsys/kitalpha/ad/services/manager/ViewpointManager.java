@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016, 2017 Thales Global Services.
+ * Copyright (c) 2016, 2018 Thales Global Services.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -113,8 +113,9 @@ public class ViewpointManager {
 
 	public static Resource getViewpoint(String id) {
 		for (Resource res : getAvailableViewpoints()) {
-			if (id.equals(res.getId()))
+			if (id.equals(res.getId())){
 				return res;
+			}
 		}
 		return null;
 	}
@@ -194,23 +195,24 @@ public class ViewpointManager {
 
 		for (Entry<String, Version> usage : viewpointUsages.entrySet()) {
 			IStatus res = useViewpoint(availableViewpoints, usage.getKey(), usage.getValue());
-			if (!res.isOK())
+			if (!res.isOK()){
 				error.add(res);
+			}
 		}
-		if (!error.isOK())
+		if (!error.isOK()){
 			return error;
+		}
 		return Status.OK_STATUS;
 	}
 
 	private static void collectViewpointUsages(Map<String, Version> collector, ViewpointMetadata viewpointMetadata, MultiStatus error) {
-		 for (ViewpointReference ref : viewpointMetadata.getAllViewpointReferences())
-		 {
+		 for (ViewpointReference ref : viewpointMetadata.getAllViewpointReferences()){
 			 String vpId = ref.getVpId();
 			 Version existingVersion = collector.get(vpId);
 			 Version newVersion = ref.getVersion();
-			 if (areEquivalentTo(existingVersion, newVersion))
+			 if (areEquivalentTo(existingVersion, newVersion)){
 				 collector.put(vpId, newVersion);
-			 else {
+			 } else {
 				 error.add(newErrorStatus("The viewpoint '"+vpId+"' is needed in incompatible versions :"+existingVersion.toString()+" / "+newVersion.toString() ));
 			 }
 		 }
@@ -224,8 +226,9 @@ public class ViewpointManager {
 
 		collectViewpointUsages(viewpointUsages, viewpointMetadata, error);
 		
-		if (!error.isOK())
+		if (!error.isOK()){
 			return error;
+		}
 		if (viewpointUsages.containsKey(vpId)) {
 			return useViewpoint(availableViewpoints, vpId, viewpointUsages.get(vpId));
 		}
@@ -263,8 +266,9 @@ public class ViewpointManager {
 	private static IStatus useViewpoint(Map<String, Version> availableViewpoints, String id, Version version) {
 		for (Entry<String, Version> res : availableViewpoints.entrySet()) {
 			if (res.getKey().equals(id)) {
-				if (areEquivalentTo(version, res.getValue()))
+				if (areEquivalentTo(version, res.getValue())){
 					return Status.OK_STATUS;
+				}
 				return newErrorStatus("Expecting version '" + version + "' for viewpoint '" + id + "' (current version: '" + res.getValue() + "')");
 			}
 		}
@@ -276,8 +280,9 @@ public class ViewpointManager {
 	}
 	
 	private static boolean areEquivalentTo(Version v1, Version v2) {
-		if (v1 == null || v2 == null)
+		if (v1 == null || v2 == null){
 			return true;
+		}
 		return v1.getMajor() == v2.getMajor() && v1.getMinor() == v2.getMinor();
 	}
 
@@ -324,10 +329,12 @@ public class ViewpointManager {
 	
 	public void setActivationState(String id, boolean active) throws ViewpointActivationException {
 		Resource vpResource = getViewpoint(id);
-		if (vpResource == null)
+		if (vpResource == null){
 			throw new ViewpointActivationException(NLS.bind(Messages.Viewpoint_Manager_error_3, id));
-		if (!isReferenced(id))
+		}
+		if (!isReferenced(id)){
 			throw new AlreadyInStateException(NLS.bind(Messages.Viewpoint_Manager_error_4, id));
+		}
 
 		ChangeViewpointVisibilityCommand command = new ChangeViewpointVisibilityCommand(vpResource, active);
 		executeCommand(command);
@@ -358,10 +365,12 @@ public class ViewpointManager {
 		TransitionEngine transitionEngine = FactoryProvider.getTransitionFactory().createTransitionEngine(id, VIEWPOINT_REFERENCE_ACTION, new ViewpointContextProvider(this));
 		if (transitionEngine.eval()){
 			Resource vpResource = getViewpoint(id);
-			if (vpResource == null)
+			if (vpResource == null){
 				throw new ViewpointActivationException(NLS.bind(Messages.Viewpoint_Manager_error_3, id));
-			if (isUsed(id))
+			}
+			if (isUsed(id)){
 				throw new AlreadyInStateException(NLS.bind(Messages.Viewpoint_Manager_error_4, id));
+			}
 
 			ResourceSet set = new ResourceSetImpl();
 			try {
@@ -388,10 +397,12 @@ public class ViewpointManager {
 
 	private void executeCommand(Command command) {
 		EditingDomain editingDomain = TransactionUtil.getEditingDomain(target);
-		if (editingDomain == null && target instanceof IEditingDomainProvider)
+		if (editingDomain == null && target instanceof IEditingDomainProvider){
 			editingDomain = ((IEditingDomainProvider) target).getEditingDomain();
-		if (editingDomain == null)
+		}
+		if (editingDomain == null){
 			throw new IllegalStateException("Cannot find editingDomain");
+		}
 		editingDomain.getCommandStack().execute(command);
 	}
 
@@ -409,12 +420,14 @@ public class ViewpointManager {
 		dependenciesTmp.addAll(vp.getDependencies());
 		dependenciesTmp.addAll(vp.getParents());
 		for (Viewpoint dep : dependenciesTmp) {
-			if (dep.eIsProxy())
+			if (dep.eIsProxy()){
 				throw new ViewpointActivationException("Unresolved viewpoint: "+EcoreUtil.getURI(dep));
+			}
 			String id = dep.getId();
 			vpDependencies.add(id);
-			if (!isReferenced(id))
+			if (!isReferenced(id)){
 				doReference(set, getViewpoint(id));
+			}
 		}
 
 	}
@@ -426,8 +439,9 @@ public class ViewpointManager {
 			activateBundle(providerSymbolicName);
 			bundle = Platform.getBundle(providerSymbolicName);
 		}
-		if (bundle == null)
+		if (bundle == null){
 			throw new ViewpointActivationException(NLS.bind(Messages.Viewpoint_Manager_error_7, providerSymbolicName));
+		}
 
 		try {
 			bundle.start(Bundle.START_TRANSIENT);
@@ -440,8 +454,9 @@ public class ViewpointManager {
 
 	protected void activateBundle(String id) throws ViewpointActivationException {
 		// This implementation does not intend to add or update any bundle
-		if (Platform.getBundle(id) == null)
+		if (Platform.getBundle(id) == null){
 			throw new ViewpointActivationException(Messages.Viewpoint_Manager_error_5);
+		}
 	}
 
 	protected void desactivateBundle(String id) throws ViewpointActivationException {
@@ -478,14 +493,16 @@ public class ViewpointManager {
 
 		if (transitionEngine.eval()){
 			Resource vpResource = getViewpoint(id);
-			if (vpResource == null)
+			if (vpResource == null){
 				throw new ViewpointActivationException(NLS.bind(Messages.Viewpoint_Manager_error_3, id));
-			if (!isUsed(id))
+			}
+			if (!isUsed(id)){
 				throw new AlreadyInStateException(NLS.bind(Messages.Viewpoint_Manager_error_6, id));
+			}
 			for (Entry<String, List<String>> entry : dependencies.entrySet()) {
-				if (entry.getValue().contains(id))
+				if (entry.getValue().contains(id)){
 					throw new ViewpointActivationException(NLS.bind(Messages.Viewpoint_Manager_error_8, id, entry.getKey()));
-
+				}
 			}
 			dependencies.remove(id);
 			// notify listeners and then desactivate viewpoint. Maybe we need
@@ -501,8 +518,9 @@ public class ViewpointManager {
 	}
 
 	public static void addOverallListener(OverallListener2 l) {
-		if (overallListener2s.contains(l))
+		if (overallListener2s.contains(l)){
 			return;
+		}
 		overallListener2s.add(l);
 	}
 	
@@ -511,8 +529,9 @@ public class ViewpointManager {
 	}
 	
 	public static void addOverallListener(OverallListener l) {
-		if (overallListeners.contains(l))
+		if (overallListeners.contains(l)){
 			return;
+		}
 		overallListeners.add(l);
 	}
 
@@ -521,8 +540,9 @@ public class ViewpointManager {
 	}
 
 	public void addListener(Listener l) {
-		if (listeners.contains(l))
+		if (listeners.contains(l)){
 			return;
+		}
 		listeners.add(l);
 	}
 
@@ -531,8 +551,9 @@ public class ViewpointManager {
 	}
 
 	public void addListener(Listener2 l) {
-		if (listener2s.contains(l))
+		if (listener2s.contains(l)){
 			return;
+		}
 		listener2s.add(l);
 	}
 
@@ -681,8 +702,9 @@ public class ViewpointManager {
 		public void execute() {
 			Version readVersion = readVersion(set, vpResource);
 			MetadataHelper.getViewpointMetadata(target).reference(vpResource, readVersion);
-			if (Location.WORSPACE.equals(vpResource.getProviderLocation()))
+			if (Location.WORSPACE.equals(vpResource.getProviderLocation())){
 				managed.add(vpResource.getProviderSymbolicName());
+			}
 			fireEvent(vpResource, REFERENCE);
 
 		}
@@ -749,8 +771,9 @@ public class ViewpointManager {
 	 * @return a ViewpointManager instance.
 	 */
 	public static ViewpointManager getInstance(EObject ctx1) {
-		if (ctx1 == null || ctx1.eResource() == null)
+		if (ctx1 == null || ctx1.eResource() == null){
 			return nullManager;
+		}
 		ResourceSet ctx = ctx1.eResource().getResourceSet();
 		return getInstance(ctx);
 	}
@@ -762,8 +785,9 @@ public class ViewpointManager {
 	 * @return a ViewpointManager instance.
 	 */
 	public static ViewpointManager getInstance(final ResourceSet ctx) {
-		if (ctx == null)
+		if (ctx == null){
 			return nullManager;
+		}
 		ViewpointManager instance = instances.get(ctx);
 		if (instance == null) {
 			instance = createInstance();
@@ -772,8 +796,9 @@ public class ViewpointManager {
 
 				@Override
 				public void notifyChanged(Notification msg) {
-					if (msg.getEventType() == Notification.REMOVE && ctx.getResources().isEmpty())
+					if (msg.getEventType() == Notification.REMOVE && ctx.getResources().isEmpty()){
 						instances.remove(ctx);
+					}
 				}
 
 			});
@@ -786,10 +811,11 @@ public class ViewpointManager {
 		ViewpointManager instance = null;
 		try {
 			IConfigurationElement[] elts = Platform.getExtensionRegistry().getConfigurationElementsFor("org.polarsys.kitalpha.ad.services.viewpoint.manager");
-			if (elts == null || elts.length == 0) 
+			if (elts == null || elts.length == 0) {
 				instance = new ViewpointManager();
-			else
+			} else {
 				instance = (ViewpointManager) elts[0].createExecutableExtension("class");
+			}
 		} catch (CoreException e) {
 			AD_Log.getDefault().logError(Messages.Viewpoint_Manager_error_2, e);
 			instance = new ViewpointManager();
@@ -838,12 +864,14 @@ public class ViewpointManager {
 			searchCriteria.setDomain("AF");
 			searchCriteria.getTags().add("vp");
 			Resource[] resources = ResourceReuse.createHelper().getResources(searchCriteria);
-			if (discarded.isEmpty())
+			if (discarded.isEmpty()){
 				return resources;
+			}
 			List<Resource> result = new ArrayList<>(resources.length);
 			for (Resource res : resources) {
-				if (!discarded.contains(res.getId()))
+				if (!discarded.contains(res.getId())){
 					result.add(res);
+				}
 			}
 			return result.toArray(new Resource[result.size()]);
 		}
@@ -873,16 +901,16 @@ public class ViewpointManager {
 		
 		@Override
 		public Resource[] getAvailableViewpoints() {
-			if (availableViewpoints == null)
+			if (availableViewpoints == null){
 				availableViewpoints = super.getAvailableViewpoints();
+			}
 			return availableViewpoints;
 		}
 		
 		@Override
 		protected void pinError(String id) {
 			super.pinError(id);
-			if (availableViewpoints != null)
-			{
+			if (availableViewpoints != null){
 				for (Resource r : availableViewpoints) {
 					if (id.equals(r.getId())) {
 						List<Resource> result = new ArrayList<>();

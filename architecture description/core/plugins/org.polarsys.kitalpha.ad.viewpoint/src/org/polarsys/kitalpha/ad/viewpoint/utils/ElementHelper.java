@@ -49,9 +49,9 @@ public class ElementHelper {
 		Set<String> set = new HashSet<String>();
 		for (ViewpointElement elt : handler.getElementsFromParents()) {
 			String name = elt.getName();
-			if (name != null)
+			if (name != null){
 				set.add(name);
-
+			}
 		}
 		return getAsSortedList(set);
 	}
@@ -66,9 +66,9 @@ public class ElementHelper {
 		Set<String> set = new HashSet<String>();
 		for (ViewpointElement elt : handler.getElements()) {
 			String name = elt.getName();
-			if (name != null)
+			if (name != null){
 				set.add(name);
-
+			}
 		}
 		return getAsSortedList(set);
 	}
@@ -77,8 +77,9 @@ public class ElementHelper {
 		Set<String> set = new HashSet<String>();
 		for (ViewpointElement elt : handler.getElements()) {
 			String id = elt.getId();
-			if (id != null)
+			if (id != null){
 				set.add(id);
+			}
 		}
 		return getAsSortedList(set);
 	}
@@ -87,8 +88,9 @@ public class ElementHelper {
 		Set<String> set = new HashSet<String>();
 		for (ViewpointElement elt : handler.getElementsFromParents()) {
 			String id = elt.getId();
-			if (id != null)
+			if (id != null){
 				set.add(id);
+			}
 		}
 		return getAsSortedList(set);
 	}

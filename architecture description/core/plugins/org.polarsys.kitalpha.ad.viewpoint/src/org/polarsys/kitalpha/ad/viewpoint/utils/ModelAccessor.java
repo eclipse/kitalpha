@@ -33,8 +33,9 @@ public class ModelAccessor {
 
 	public Rule resolveRule(String id) {
 		for (ViewpointElement elt : modelManager.getRuleHandler().getElements()) {
-			if (id.equals(elt.getId()))
+			if (id.equals(elt.getId())){
 				return (Rule) elt;
+			}
 		}
 		return null;
 	}

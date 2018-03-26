@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,8 +32,9 @@ public class ViewpointMiscHandler extends ViewpointManager.ElementHandler implem
 	}
 
 	public void removeMetamodels(List<EPackage> packages) {
-		if (getResourceManager().isReadOnly())
+		if (getResourceManager().isReadOnly()){
 			throw new IllegalStateException();
+		}
 
 		EList<EPackage> models = getViewpoint().getMetamodel().getModels();
 		models.removeAll(packages);
@@ -41,8 +42,9 @@ public class ViewpointMiscHandler extends ViewpointManager.ElementHandler implem
 	}
 
 	public void addMetamodels(List<EPackage> packages) {
-		if (getResourceManager().isReadOnly())
+		if (getResourceManager().isReadOnly()){
 			throw new IllegalStateException();
+		}
 
 		getViewpoint().getMetamodel().getModels().addAll(packages);
 		saveModel();
@@ -57,17 +59,21 @@ public class ViewpointMiscHandler extends ViewpointManager.ElementHandler implem
 	}
 
 	public void removeParents(List<Viewpoint> vps) {
-		if (getResourceManager().isReadOnly())
+		if (getResourceManager().isReadOnly()){
 			throw new IllegalStateException();
-		if (getViewpoint().getParents().removeAll(vps))
+		}
+		if (getViewpoint().getParents().removeAll(vps)){
 			saveModel();
+		}
 	}
 
 	public void addParents(List<Viewpoint> vps) {
-		if (getResourceManager().isReadOnly())
+		if (getResourceManager().isReadOnly()){
 			throw new IllegalStateException();
-		if (getViewpoint().getParents().addAll(vps))
+		}
+		if (getViewpoint().getParents().addAll(vps)){
 			saveModel();
+		}
 	}
 
 	public boolean isAbstract() {
@@ -75,11 +81,13 @@ public class ViewpointMiscHandler extends ViewpointManager.ElementHandler implem
 	}
 
 	public void setAbstract(boolean value) {
-		if (getResourceManager().isReadOnly())
+		if (getResourceManager().isReadOnly()){
 			throw new IllegalStateException();
+		}
 
-		if (value == isAbstract())
+		if (value == isAbstract()){
 			return;
+		}
 
 		getViewpoint().setAbstract(value);
 		saveModel();
@@ -90,13 +98,16 @@ public class ViewpointMiscHandler extends ViewpointManager.ElementHandler implem
 	}
 
 	public void setName(String txt) {
-		if (getResourceManager().isReadOnly())
+		if (getResourceManager().isReadOnly()){
 			throw new IllegalStateException();
+		}
 
-		if ("".equals(txt) && getName() == null)
+		if ("".equals(txt) && getName() == null){
 			return;
-		if (txt.equals(getName()))
+		}
+		if (txt.equals(getName())){
 			return;
+		}
 		getViewpoint().setName(txt);
 		saveModel();
 	}
@@ -106,13 +117,15 @@ public class ViewpointMiscHandler extends ViewpointManager.ElementHandler implem
 	}
 
 	public void setDescription(String txt) {
-		if (getResourceManager().isReadOnly())
+		if (getResourceManager().isReadOnly()){
 			throw new IllegalStateException();
-
-		if ("".equals(txt) && getDescription() == null)
+		}
+		if ("".equals(txt) && getDescription() == null){
 			return;
-		if (txt.equals(getDescription()))
+		}
+		if (txt.equals(getDescription())){
 			return;
+		}
 		getViewpoint().setDescription(txt);
 		saveModel();
 	}
@@ -120,21 +133,25 @@ public class ViewpointMiscHandler extends ViewpointManager.ElementHandler implem
 	@Override
 	public String getVersion() {
 		Version version = getViewpoint().getVersion();
-		if (version == null)
+		if (version == null){
 			return null;
+		}
 		return version.toString();
 	}
 
 	@Override
 	public void setVersion(String txt) {
-		if (getResourceManager().isReadOnly())
+		if (getResourceManager().isReadOnly()){
 			throw new IllegalStateException();
+		}
 
 		String versionStr = getVersion();
-		if ("".equals(txt) && versionStr == null)
+		if ("".equals(txt) && versionStr == null){
 			return;
-		if (txt.equals(versionStr))
+		}
+		if (txt.equals(versionStr)){
 			return;
+		}
 		getViewpoint().setVersion(new Version(txt));
 		saveModel();
 	}

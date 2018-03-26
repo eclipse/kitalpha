@@ -65,8 +65,9 @@ public class ViewEnhancer extends Stub {
 			}
 			for (DView v : ownedViews) {
 				// / migration in Sirius may produce a null value
-				if (v.getViewpoint() == null || v.getViewpoint().eResource() == null)
+				if (v.getViewpoint() == null || v.getViewpoint().eResource() == null) {
 					continue;
+				}
 				for (RepresentationDescription representation : v.getViewpoint().getOwnedRepresentations()) {
 					if (representation instanceof DiagramDescription) {
 						DiagramDescription spec = (DiagramDescription) representation;
@@ -106,16 +107,18 @@ public class ViewEnhancer extends Stub {
 
 		private boolean needFilter(DiagramDescription spec) {
 			for (FilterDescription desc : spec.getFilters()) {
-				if (FILTER_NAME.equals(desc.getName()))
+				if (FILTER_NAME.equals(desc.getName())){
 					return false;
+				}
 			}
 			return true;
 		}
 
 		private void addJavaExtension(DView view) {
 			for (JavaExtension javaExt : view.getViewpoint().getOwnedJavaExtensions()) {
-				if (SERVICE_CLASSNAME.equals(javaExt.getQualifiedClassName()))
+				if (SERVICE_CLASSNAME.equals(javaExt.getQualifiedClassName())){
 					return;
+				}
 			}
 			JavaExtension javaExt = DescriptionFactory.eINSTANCE.createJavaExtension();
 			javaExt.setQualifiedClassName(SERVICE_CLASSNAME);

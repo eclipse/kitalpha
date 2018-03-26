@@ -121,10 +121,12 @@ public class ViewpointManagerView extends ViewPart {
 		}
 
 		private String computeLabel() {
-			if (context == null)
+			if (context == null){
 				return Messages.ViewpointManagerView_default_label;
-			if (context.getResources().isEmpty())
+			}
+			if (context.getResources().isEmpty()){
 				return "";
+			}
 			String segment = context.getResources().get(0).getURI().segment(1);
 			try {
 				segment = java.net.URLDecoder.decode(segment, "UTF-8");
@@ -135,12 +137,12 @@ public class ViewpointManagerView extends ViewPart {
 		}
 
 		private ResourceSet analyseChange(IWorkbenchPart part, ISelection selection) {
-
 			for (AFContextProvider prov : AFContextProvider.INSTANCE.getProviders())
 			{
 				ResourceSet computeContext = prov.computeContext(part, selection);
-				if (computeContext != null)
+				if (computeContext != null){
 					return computeContext;
+				}
 			}
 			return null;
 		}
@@ -217,8 +219,9 @@ public class ViewpointManagerView extends ViewPart {
 			ITableLabelProvider prov = (ITableLabelProvider) ((TableViewer) viewer).getLabelProvider();
 			String name1 = prov.getColumnText(e1, sortColumn);
 			String name2 = prov.getColumnText(e2, sortColumn);
-			if (ascending)
+			if (ascending){
 				return getComparator().compare(name1, name2);
+			}
 			return getComparator().compare(name2, name1);
 		}
 
@@ -273,9 +276,9 @@ public class ViewpointManagerView extends ViewPart {
 			IResourceDelta delta = event.getDelta();
 			IResource resource = event.getResource();
 			int type = event.getType();
-			if ((type == IResourceChangeEvent.PRE_DELETE || type == IResourceChangeEvent.PRE_CLOSE) && resource instanceof IProject)
+			if ((type == IResourceChangeEvent.PRE_DELETE || type == IResourceChangeEvent.PRE_CLOSE) && resource instanceof IProject){
 				delayedInit();
-			else if (type == IResourceChangeEvent.POST_CHANGE) {
+			} else if (type == IResourceChangeEvent.POST_CHANGE) {
 				for (IResourceDelta childDelta : delta.getAffectedChildren()) {
 					resource = childDelta.getResource();
 					if (resource instanceof IProject) {
@@ -375,8 +378,9 @@ public class ViewpointManagerView extends ViewPart {
 
 			@Override
 			public boolean select(Viewer viewer, Object parentElement, Object element) {
-				if (((Description) element).shloudBeHidden())
+				if (((Description) element).shloudBeHidden()){
 					return showHiddenViewpointAction.isChecked();
+				}
 				return true;
 			}
 		});
@@ -387,7 +391,6 @@ public class ViewpointManagerView extends ViewPart {
 	}
 
 	private void init() {
-
 		new RefreshJob().schedule();
 	}
 
@@ -461,8 +464,9 @@ public class ViewpointManagerView extends ViewPart {
 		if (context != null) 
 		{
 			for (org.eclipse.emf.ecore.resource.Resource re : context.getResources()) {
-				if ("cdo".equals(re.getURI().scheme()))
+				if ("cdo".equals(re.getURI().scheme())){
 					return true;
+				}
 			}
 		}
 		return false;
@@ -484,12 +488,14 @@ public class ViewpointManagerView extends ViewPart {
 			public void run() {
 				IStructuredSelection ss = (IStructuredSelection) viewer.getSelection();
 				int size = ss.size();
-				if (size != 1 || context == null)
+				if (size != 1 || context == null){
 					return;
+				}
 				final Description res = (Description) ss.getFirstElement();
 				ViewpointManager vpMgr = ViewpointManager.getInstance(context);
-				if (vpMgr.isReferenced(res.getId()))
+				if (vpMgr.isReferenced(res.getId())){
 					return;
+				}
 				try {
 					vpMgr.reference(res.getId());
 				} catch (ViewpointActivationException | EvaluationException e) {
@@ -507,13 +513,15 @@ public class ViewpointManagerView extends ViewPart {
 			public void run() {
 				IStructuredSelection ss = (IStructuredSelection) viewer.getSelection();
 				int size = ss.size();
-				if (size != 1 || context == null)
+				if (size != 1 || context == null){
 					return;
+				}
 				Description res = (Description) ss.getFirstElement();
 				ViewpointManager vpMgr = ViewpointManager.getInstance(context);
 				String id = res.getId();
-				if (!vpMgr.isReferenced(id))
+				if (!vpMgr.isReferenced(id)){
 					return;
+				}
 				Shell site = getSite().getShell();
 				try {
 					boolean dirty = false;
@@ -533,14 +541,14 @@ public class ViewpointManagerView extends ViewPart {
 						MessageDialog.openInformation(site, title, "You must save the model before unreferencing the viewpoint.");
 						return ;
 					}
-					if (airdResource == null)
-					{
+					if (airdResource == null){
 						MessageDialog.openError(site, title, "Cannot locate resource to work on.");
 						return ;
 					}
 					
-					if (!MessageDialog.openQuestion(site, title, "Viewpoint Detachment is required. Proceed ?"))
+					if (!MessageDialog.openQuestion(site, title, "Viewpoint Detachment is required. Proceed ?")){
 						return;
+					}
 					// Launch detach editor
 					// if the detachement is successful then the viewpoint is no more in use
 					
@@ -553,8 +561,9 @@ public class ViewpointManagerView extends ViewPart {
 						Collection<IScrutinize> finders = vpReg.getFinders();
 						for (IScrutinize s : finders) {
 							ViewpointTreeContainer vps = (ViewpointTreeContainer) s.getAnalysisResult();
-							for (IViewpointTreeDescription root : vps.getRoots()) 
+							for (IViewpointTreeDescription root : vps.getRoots()) {
 								unselect(root, id);
+							}
 						}
 
 						//Run Commands
@@ -594,12 +603,14 @@ public class ViewpointManagerView extends ViewPart {
 			public void run() {
 				IStructuredSelection ss = (IStructuredSelection) viewer.getSelection();
 				int size = ss.size();
-				if (size != 1 || context == null)
+				if (size != 1 || context == null){
 					return;
+				}
 				Description res = (Description) ss.getFirstElement();
 				ViewpointManager vpMgr = ViewpointManager.getInstance(context);
-				if (!vpMgr.isReferenced(res.getId()))
+				if (!vpMgr.isReferenced(res.getId())){
 					return;
+				}
 				try {
 					vpMgr.setActivationState(res.getId(), true);
 				} catch (ViewpointActivationException e) {
@@ -617,12 +628,14 @@ public class ViewpointManagerView extends ViewPart {
 			public void run() {
 				IStructuredSelection ss = (IStructuredSelection) viewer.getSelection();
 				int size = ss.size();
-				if (size != 1 || context == null)
+				if (size != 1 || context == null){
 					return;
+				}
 				Description res = (Description) ss.getFirstElement();
 				ViewpointManager vpMgr = ViewpointManager.getInstance(context);
-				if (!vpMgr.isReferenced(res.getId()))
+				if (!vpMgr.isReferenced(res.getId())){
 					return;
+				}
 				try {
 					vpMgr.setActivationState(res.getId(), false);
 				} catch (ViewpointActivationException e) {

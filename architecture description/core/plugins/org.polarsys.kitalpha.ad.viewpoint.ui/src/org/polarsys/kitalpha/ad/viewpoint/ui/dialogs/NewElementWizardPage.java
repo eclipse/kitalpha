@@ -161,8 +161,9 @@ public abstract class NewElementWizardPage extends NewTypeWizardPage {
 	protected IStatus elementNameChanged() {
 		StatusInfo status = new StatusInfo();
 		String text = fElementNameDialogField.getText();
-		if (text == null || "".equals(text))
+		if (text == null || "".equals(text)){
 			status.setError(Messages.NewCreationWizardPage_error1);
+		}
 		return status;
 	}
 
@@ -204,8 +205,9 @@ public abstract class NewElementWizardPage extends NewTypeWizardPage {
 							if (pack != null) {
 
 								IPackageFragment packg = root2.getPackageFragment(pack);
-								if (packg != null && packg.exists())
+								if (packg != null && packg.exists()){
 									setPackageFragment(packg, true);
+								}
 							}
 						}
 					}

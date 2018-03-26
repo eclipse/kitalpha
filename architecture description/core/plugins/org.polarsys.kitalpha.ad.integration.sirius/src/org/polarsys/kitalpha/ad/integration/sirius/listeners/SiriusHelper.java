@@ -38,16 +38,18 @@ public class SiriusHelper {
 		for (Resource r : set.getResources())
 		{
 			Session session = SessionManager.INSTANCE.getSession(r);
-			if (session != null)
+			if (session != null){
 				return session;
+			}
 		}
 		return null;
 	}
 
 	public static Set<Viewpoint> getViewpoints(org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint vp) {
 		Set<Viewpoint> result = new HashSet<Viewpoint>();
-		if (vp.getRepresentation() == null)
+		if (vp.getRepresentation() == null){
 			return EMPTY_SET;
+		}
 		for (RepresentationElement elt : vp.getRepresentation().getRepresentations()) {
 			if (elt instanceof SiriusRepresentation) {
 				SiriusRepresentation siriusElt = (SiriusRepresentation) elt;

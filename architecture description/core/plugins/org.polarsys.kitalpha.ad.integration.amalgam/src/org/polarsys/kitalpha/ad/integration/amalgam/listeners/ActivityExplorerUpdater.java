@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -48,8 +48,9 @@ public class ActivityExplorerUpdater implements OverallListener {
 			@Override
 			public void run() {
 				IWorkbenchPage activePage = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-				if (activePage == null)
+				if (activePage == null) {
 					return;
+				}
 				for (IEditorReference ref : activePage.getEditorReferences()) {
 					IEditorPart editor = ref.getEditor(false);
 					if (editor != null && editor instanceof ActivityExplorerEditor) {

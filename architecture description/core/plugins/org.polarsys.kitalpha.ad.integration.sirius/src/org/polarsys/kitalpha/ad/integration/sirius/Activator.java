@@ -57,21 +57,24 @@ public class Activator extends AFUIActivator {
 
 
 		ViewpointManager.addOverallListener(listener);
-		for (SessionManagerListener l : sessionListeners)
+		for (SessionManagerListener l : sessionListeners){
 			SessionManager.INSTANCE.addSessionsListener(l);
-		for (ModelExtensionOverallListener l : listeners)
+		}
+		for (ModelExtensionOverallListener l : listeners){
 			ModelExtensionHelper.addOverallListener(l);
-
+		}
 	}
 
 	@Override
 	public void stop(BundleContext context) throws Exception {
 		plugin = null;
-		for (SessionManagerListener l : sessionListeners)
+		for (SessionManagerListener l : sessionListeners){
 			SessionManager.INSTANCE.removeSessionsListener(l);
+		}
 		ViewpointManager.removeOverallListener(listener);
-		for (ModelExtensionOverallListener l : listeners)
+		for (ModelExtensionOverallListener l : listeners){
 			ModelExtensionHelper.removeOverallListener(l);
+		}
 
 		if (viewpoints != null) {
 			for (final Viewpoint viewpoint : viewpoints) {

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,8 +46,9 @@ public class SiriusViewpointManager {
 		
 		for (Viewpoint vp : new ArrayList<Viewpoint>(selectedViewpoints))
 		{
-			if (toDesactivate.contains(vp.getName()))
+			if (toDesactivate.contains(vp.getName())){
 				selectedViewpoints.remove(vp);
+			}
 		}
 	}
 	
@@ -80,12 +81,14 @@ public class SiriusViewpointManager {
 					for (org.eclipse.sirius.viewpoint.description.Viewpoint dvp : SiriusHelper.getViewpoints(vp)) {
 						siriusVps.add(dvp.getName());
 					}
-					if (siriusVps.isEmpty())
+					if (siriusVps.isEmpty()){
 						continue;
-					if (mgr.isUsed(res.getId()) && !mgr.isFiltered(res.getId()))
+					}
+					if (mgr.isUsed(res.getId()) && !mgr.isFiltered(res.getId())){
 						toActivate.addAll(siriusVps);
-					else
+					} else {
 						toDesactivate.addAll(siriusVps);
+					}
 				} catch (Exception e) {
 					// we got a screw up model file, we don't care
 				}
@@ -124,8 +127,9 @@ public class SiriusViewpointManager {
 			managedSiriusViewpoints.add(Activator.AF_DESIGN);
 			for (Resource r : set.getResources()) {
 				String key = getKey(r);
-				if (key != null)
+				if (key != null){
 					managedSiriusViewpoints.add(key);
+				}
 				r.unload();
 			}
 			set.getResources().clear();
@@ -141,10 +145,12 @@ public class SiriusViewpointManager {
 	private String getKey(URI uri) {
 		if ("odesign".equals(uri.fileExtension())) {
 			String devicePath = uri.devicePath();
-			if (uri.isPlatformPlugin())
+			if (uri.isPlatformPlugin()){
 				return devicePath.substring("/plugin".length());
-			if (uri.isPlatformResource())
+			}
+			if (uri.isPlatformResource()){
 				return devicePath.substring("/resource".length());
+			}
 			return devicePath;
 		}
 		return null;

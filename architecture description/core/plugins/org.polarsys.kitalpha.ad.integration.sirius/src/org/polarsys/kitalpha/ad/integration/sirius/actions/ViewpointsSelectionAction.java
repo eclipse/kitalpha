@@ -82,7 +82,7 @@ public class ViewpointsSelectionAction implements IObjectActionDelegate {
 		ViewpointSelectionDialog dialog = new ViewpointSelectionDialog(shell, viewpointsMap);
 		if (dialog.open() == Window.OK) {
 			final Map<Viewpoint, Boolean> changes = dialog.getChanges();
-			if (!changes.isEmpty())
+			if (!changes.isEmpty()){
 				session.getTransactionalEditingDomain().getCommandStack().execute(new RecordingCommand(session.getTransactionalEditingDomain()) {
 
 					@Override
@@ -90,14 +90,16 @@ public class ViewpointsSelectionAction implements IObjectActionDelegate {
 						ViewpointSelectionCallback viewpointSelectionCallback = new ViewpointSelectionCallback();
 						NullProgressMonitor monitor = new NullProgressMonitor();
 						for (Entry<Viewpoint, Boolean> entry : changes.entrySet()) {
-							if (entry.getValue())
+							if (entry.getValue()){
 								viewpointSelectionCallback.selectViewpoint(entry.getKey(), session, monitor);
-							else
+							}
+							else{
 								viewpointSelectionCallback.deselectViewpoint(entry.getKey(), session, monitor);
+							}
 						}
 					}
 				});
-
+			}
 		}
 	}
 
@@ -109,8 +111,9 @@ public class ViewpointsSelectionAction implements IObjectActionDelegate {
 		for (final Resource resource : session.getSemanticResources()) {
 			if (resource != null && resource.getURI() != null) {
 				final String currentFileExtension = resource.getURI().fileExtension();
-				if (currentFileExtension != null)
+				if (currentFileExtension != null){
 					allViewpoints.addAll(ViewpointSelection.getViewpoints(currentFileExtension));
+				}
 
 			}
 		}
@@ -137,8 +140,9 @@ public class ViewpointsSelectionAction implements IObjectActionDelegate {
 		if (selection instanceof IStructuredSelection) {
 			sselect = (IStructuredSelection) selection;
 		}
-		if (sselect == null || sselect.isEmpty())
+		if (sselect == null || sselect.isEmpty()){
 			action.setEnabled(false);
+		}
 		else {
 			Session session = getSessionFromSelection(sselect);
 			action.setEnabled(session != null && session.isOpen());

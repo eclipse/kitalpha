@@ -45,8 +45,9 @@ public class ConfigurationHandler extends WorkspaceManager.ElementHandler implem
 	}
 
 	public void createProperty(String name) {
-		if (getWorkspace() == null)
+		if (getWorkspace() == null){
 			throw new IllegalStateException("no workspace available");
+		}
 		PropertySet set = getCurrentPropertySet();
 		Property prop = ViewpointFactory.eINSTANCE.createProperty();
 		prop.setName(name);
@@ -58,8 +59,9 @@ public class ConfigurationHandler extends WorkspaceManager.ElementHandler implem
 
 	public void removeProperties(List<Property> properties) {
 		for (Property prop : properties) {
-			if (!isRemovable(prop))
+			if (!isRemovable(prop)){
 				continue;
+			}
 			PropertySet set = (PropertySet) prop.eContainer();
 			set.getNewProperties().remove(prop);
 		}
@@ -68,8 +70,9 @@ public class ConfigurationHandler extends WorkspaceManager.ElementHandler implem
 
 	private PropertySet getCurrentPropertySet() {
 		PropertySet set = getWorkspace().getPropertySet(getViewpoint());
-		if (set == null)
+		if (set == null){
 			set = createPropertySet();
+		}
 		return set;
 	}
 

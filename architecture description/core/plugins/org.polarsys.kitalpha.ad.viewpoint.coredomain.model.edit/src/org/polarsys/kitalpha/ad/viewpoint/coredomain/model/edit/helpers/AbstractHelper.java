@@ -42,8 +42,9 @@ public class AbstractHelper {
 	
 		BundleDescription description = model.getBundleDescription();
 		String symbolicName = description.getSymbolicName();
-		if (bundleScope.contains(symbolicName))
+		if (bundleScope.contains(symbolicName)){
 			return;
+		}
 	
 		bundleScope.add(symbolicName);
 		for (BundleSpecification req : description.getRequiredBundles()) {

@@ -60,8 +60,9 @@ public abstract class GenericJavaConstraintProvider extends GenericConstraintPro
         GenericConstraintProviderService.getInstance().registerProvider(this);
         final List<? extends AbstractConstraintDescriptor> descriptors = GenericConstraintProviderService.getInstance().getDescriptors(this);
         for (final AbstractConstraintDescriptor descriptor : descriptors) {
-            if (descriptor instanceof JavaConstraintDescriptor)
+            if (descriptor instanceof JavaConstraintDescriptor) {
                 addConstraintToGlobalConstraintCollection((JavaConstraintDescriptor) descriptor);
+            }
         }
     }
 

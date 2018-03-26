@@ -86,12 +86,15 @@ public class ModelManager {
 	}
 
 	public boolean isRemovable(ViewpointElement element) {
-		if (element instanceof Property)
+		if (element instanceof Property){
 			return getConfigurationHandler().isRemovable(element);
-		if (element instanceof Rule)
+		}
+		if (element instanceof Rule){
 			return getRuleHandler().isRemovable(element);
-		if (element instanceof Service)
+		}
+		if (element instanceof Service){
 			return getServiceHandler().isRemovable(element);
+		}
 		throw new IllegalStateException();
 	}
 

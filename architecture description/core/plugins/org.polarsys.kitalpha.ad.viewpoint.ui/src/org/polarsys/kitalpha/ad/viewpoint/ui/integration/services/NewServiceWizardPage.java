@@ -91,8 +91,9 @@ public class NewServiceWizardPage extends NewElementWizardPage {
 	protected IStatus serviceTypeChanged() {
 		StatusInfo status = new StatusInfo();
 		String text = fServiceTypeDialogField.getText();
-		if (text == null || "".equals(text))
+		if (text == null || "".equals(text)){
 			status.setError(Messages.NewCreationWizardPage_error2);
+		}
 		return status;
 	}
 

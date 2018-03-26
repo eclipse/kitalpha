@@ -89,8 +89,9 @@ public class ModelFileDialog extends TitleAreaDialog {
 
 	public void collectDependenciesInWorkspace(IPluginModelBase model, Set<String> wsModels, List<IResource> collector) {
 		IResource underlyingResource = model.getUnderlyingResource();
-		if (underlyingResource != null)
+		if (underlyingResource != null){
 			collector.add(underlyingResource.getProject());
+		}
 
 		BundleDescription description = model.getBundleDescription();
 		for (BundleSpecification req : description.getRequiredBundles()) {
@@ -108,8 +109,9 @@ public class ModelFileDialog extends TitleAreaDialog {
 
 	public Set<String> computeWorkspaceModels() {
 		Set<String> res = new HashSet<>();
-		for (IPluginModelBase model : PluginRegistry.getWorkspaceModels())
+		for (IPluginModelBase model : PluginRegistry.getWorkspaceModels()){
 			res.add(model.getBundleDescription().getSymbolicName());
+		}
 		return res;
 	}
 

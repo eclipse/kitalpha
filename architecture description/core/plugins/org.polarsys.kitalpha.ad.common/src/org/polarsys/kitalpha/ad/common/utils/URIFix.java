@@ -31,10 +31,12 @@ public class URIFix {
 
 	private static URI createURI(String prefix, String path) {
 		String uri = prefix;
-		if (path.startsWith("/"))
+		if (path.startsWith("/")) {
 			uri += path.substring(1);
-		else
+		}
+		else {
 			uri += path;
+		}
 		return URI.createURI(uri);
 	}
 

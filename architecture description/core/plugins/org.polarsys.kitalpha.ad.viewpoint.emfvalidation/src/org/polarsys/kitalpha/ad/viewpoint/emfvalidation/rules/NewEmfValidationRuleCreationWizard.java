@@ -91,8 +91,9 @@ public class NewEmfValidationRuleCreationWizard extends NewRuleCreationWizard {
 	public IPluginElement createElement(IPluginModelFactory factory, IPluginObject parent, String name) throws CoreException {
 		IPluginElement elt = factory.createElement(parent);
 		elt.setName(name);
-		if (parent instanceof IPluginParent)
+		if (parent instanceof IPluginParent){
 			((IPluginParent) parent).add(elt);
+		}
 		return elt;
 	}
 

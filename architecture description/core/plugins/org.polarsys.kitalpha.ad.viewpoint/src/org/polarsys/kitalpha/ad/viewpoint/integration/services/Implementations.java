@@ -39,8 +39,9 @@ public class Implementations {
 	public static String toString(List<Rule> rules) {
 		StringBuilder str = new StringBuilder();
 		for (Rule rule : rules) {
-			if (str.length() != 0)
+			if (str.length() != 0){
 				str.append(", ");
+			}
 			str.append(rule.getId());
 		}
 		return str.toString();
@@ -48,14 +49,15 @@ public class Implementations {
 
 	public static boolean hasProvider(Bundle bundle) {
 		IPluginModelBase model = PDECore.getDefault().getModelManager().findModel(bundle.getSymbolicName());
-		if (model == null)
+		if (model == null){
 			return false; // occurs when a workspace vp is closed while active
+		}
 		for (IPluginExtension extension : model.getExtensions().getExtensions()) {
-			if (EXTENSION_POINT_ID.equals(extension.getPoint()))
+			if (EXTENSION_POINT_ID.equals(extension.getPoint())){
 				return true;
+			}
 		}
 		return false;
-
 	}
 
 	public static String[] getAvailableActionLabels() {
@@ -71,12 +73,14 @@ public class Implementations {
 	}
 
 	public static String getLabel(String type) {
-		if (type == null)
+		if (type == null){
 			return "";
+		}
 		IConfigurationElement[] configurationElements = Platform.getExtensionRegistry().getConfigurationElementsFor(EXTENSION_POINT_ID);
 		for (IConfigurationElement elt : configurationElements) {
-			if (elt.getAttribute("type").equals(type))
+			if (elt.getAttribute("type").equals(type)){
 				return elt.getAttribute(LABEL);
+			}
 		}
 		return "Missing - May be not loaded yet";
 	}
@@ -84,8 +88,9 @@ public class Implementations {
 	public static String getType(String label) {
 		IConfigurationElement[] configurationElements = Platform.getExtensionRegistry().getConfigurationElementsFor(EXTENSION_POINT_ID);
 		for (IConfigurationElement elt : configurationElements) {
-			if (elt.getAttribute(LABEL).equals(label))
+			if (elt.getAttribute(LABEL).equals(label)){
 				return elt.getAttribute("type");
+			}
 		}
 		AD_Log.getDefault().logError("Cannot find type for service label='" + label + "'");
 		return "Unknown";
@@ -93,13 +98,15 @@ public class Implementations {
 
 	public static ServiceImplementation getInstance(Service service) throws CoreException {
 		String type = service.getType();
-		if (type == null || "".equals(type))
+		if (type == null || "".equals(type)){
 			throw new NullPointerException("No type for service " + service.getId());
+		}
 		IConfigurationElement[] configurationElements = Platform.getExtensionRegistry().getConfigurationElementsFor(EXTENSION_POINT_ID);
 		for (IConfigurationElement elt : configurationElements) {
 			String typeAttribute = elt.getAttribute("type");
-			if (type.equals(typeAttribute))
+			if (type.equals(typeAttribute)){
 				return (ServiceImplementation) elt.createExecutableExtension("class");
+			}
 		}
 		return null;
 	}

@@ -406,8 +406,9 @@ public class ViewpointView extends ViewPart implements ISelectionProvider {
 	public void setSelection(ISelection selection) {
 		for (Tab tab : tabs) {
 			ISelectionProvider prov = tab.getSelectionProvider();
-			if (prov == null)
+			if (prov == null){
 				continue;
+			}
 			prov.setSelection(selection);
 		}
 	}

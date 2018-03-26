@@ -28,8 +28,9 @@ public class UIServiceRunner extends ServiceRunner {
 	@Override
 	public boolean run(Service action, ModelManager vpMgr, List<Object> selection) {
 		String msg = doRun(action, vpMgr, selection);
-		if (msg != null)
+		if (msg != null){
 			MessageDialog.openError(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), "Error with service", msg);
+		}
 		return msg == null;
 	}
 	

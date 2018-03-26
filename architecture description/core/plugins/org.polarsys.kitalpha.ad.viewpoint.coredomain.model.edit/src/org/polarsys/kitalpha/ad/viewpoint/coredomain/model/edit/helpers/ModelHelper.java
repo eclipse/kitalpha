@@ -58,8 +58,9 @@ public class ModelHelper  {
 		{
 			Resource resource = resourceSet.getResource(uri, true);
 			for (EObject eobj : resource.getContents()) {
-				if (candidate.isAssignableFrom(eobj.getClass()))
+				if (candidate.isAssignableFrom(eobj.getClass())){
 					result.add((S) eobj);
+				}
 			}
 
 		}
@@ -84,8 +85,9 @@ public class ModelHelper  {
 		
 		for (URI uri : ecoreUris.toArray(new URI[ecoreUris.size()]))
 		{
-			if (DiscardedModels.isFiltered(uri))
+			if (DiscardedModels.isFiltered(uri)){
 				ecoreUris.remove(uri);
+			}
 		}
 
 		return ecoreUris;
@@ -94,9 +96,9 @@ public class ModelHelper  {
 	private void collectBundles(IPluginModelBase model, List<IProject> wsProjects, List<Bundle> pBundles, Set<String> visited) {
 		String symbolicName = model.getBundleDescription().getSymbolicName();
 		IResource underlyingResource = model.getUnderlyingResource();
-		if (underlyingResource != null)
+		if (underlyingResource != null){
 			wsProjects.add(underlyingResource.getProject());
-		else {
+		} else {
 			Bundle bundle = Platform.getBundle(symbolicName);
 			pBundles.add(bundle);
 		}
@@ -111,8 +113,9 @@ public class ModelHelper  {
 			}
 			IPluginModelBase reqModel = PluginRegistry.findModel(req.getSupplier().getSupplier());
 			symbolicName = reqModel.getBundleDescription().getSymbolicName();
-			if (!visited.contains(symbolicName))
+			if (!visited.contains(symbolicName)){
 				collectBundles(reqModel, wsProjects, pBundles, visited);
+			}
 		}
 
 	}

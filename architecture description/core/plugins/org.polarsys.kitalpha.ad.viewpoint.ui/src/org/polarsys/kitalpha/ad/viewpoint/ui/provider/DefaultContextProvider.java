@@ -30,18 +30,18 @@ public class DefaultContextProvider implements AFContextProvider {
 		if (part instanceof IEditingDomainProvider) {
 			IEditingDomainProvider prov = (IEditingDomainProvider) part;
 			EditingDomain editingDomain = prov.getEditingDomain();
-			if (editingDomain != null)
+			if (editingDomain != null){
 				return editingDomain.getResourceSet();
+			}
 		}
-			EditingDomain obj = part.getAdapter(EditingDomain.class);
-			if (obj != null) {
-				return obj.getResourceSet();
+		EditingDomain obj = part.getAdapter(EditingDomain.class);
+		if (obj != null) {
+			return obj.getResourceSet();
 		}
 		return analyseSelection(selection);
 	}
 	
 	private ResourceSet analyseSelection(ISelection selection) {
-
 		if (selection.isEmpty())
 			return null;
 		if (selection instanceof TreeSelection) {
@@ -49,8 +49,9 @@ public class DefaultContextProvider implements AFContextProvider {
 			if (selected[0] instanceof EObject)
 			{
 				org.eclipse.emf.ecore.resource.Resource eResource = ((EObject) selected[0]).eResource();
-				if (eResource != null)
+				if (eResource != null){
 					return eResource.getResourceSet();
+				}
 			}
 		}
 		return null;

@@ -63,8 +63,9 @@ public class ViewpointConfigurationHandler extends ViewpointManager.ElementHandl
 
 	public void removeProperties(List<Property> properties) {
 		for (Property prop : properties) {
-			if (!isRemovable(prop))
+			if (!isRemovable(prop)){
 				continue;
+			}
 			PropertySet set = (PropertySet) prop.eContainer();
 			set.getNewProperties().remove(prop);
 		}

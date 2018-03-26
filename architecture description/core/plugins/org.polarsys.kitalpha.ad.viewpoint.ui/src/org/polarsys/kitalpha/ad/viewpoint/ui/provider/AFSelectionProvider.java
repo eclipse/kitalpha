@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014-2017 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,12 +39,13 @@ public interface AFSelectionProvider {
 			IConfigurationElement[] configurationElements = Platform.getExtensionRegistry().getConfigurationElementsFor(ID);
 			for (IConfigurationElement elt : configurationElements) {
 				String idAttr = elt.getAttribute("id");
-				if (id.equals(idAttr))
+				if (id.equals(idAttr)){
 					try {
 						return (AFSelectionProvider) elt.createExecutableExtension("class");
 					} catch (CoreException e) {
 						AD_Log.getDefault().logError(e);
 					}
+				}
 			}
 			return null;
 		}

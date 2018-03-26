@@ -35,16 +35,18 @@ public class Activator extends AFUIActivator {
 		super.start(context);
 		plugin = this;
 
-		for (OverallListener l : listeners)
+		for (OverallListener l : listeners) {
 			ViewpointManager.addOverallListener(l);
+		}
 	}
 
 	@Override
 	public void stop(BundleContext context) throws Exception {
 		plugin = null;
 		super.stop(context);
-		for (OverallListener l : listeners)
+		for (OverallListener l : listeners) {
 			ViewpointManager.removeOverallListener(l);
+		}
 	}
 
 	public static Activator getDefault() {

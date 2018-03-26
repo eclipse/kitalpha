@@ -40,8 +40,9 @@ public class JavaRuleProvider implements RuleProvider {
 		IConfigurationElement[] configurationElements = Platform.getExtensionRegistry().getConfigurationElementsFor(EXTENSION_POINT_ID);
 		for (IConfigurationElement elt : configurationElements) {
 			try {
-				if (id.equals(elt.getAttribute(CLASS)))
+				if (id.equals(elt.getAttribute(CLASS))){
 					return (JavaRule) elt.createExecutableExtension(CLASS);
+				}
 			} catch (CoreException e) {
 				AD_Log.getDefault().logError("Cannot create rule", e);
 			}
@@ -78,17 +79,18 @@ public class JavaRuleProvider implements RuleProvider {
 
 	public void execute(Rule rule, ModelAccessor properties, Object[] selection) {
 		JavaRule jRule = getRule(rule.getImplementation());
-		if (jRule == null)
+		if (jRule == null){
 			AD_Log.getDefault().logWarning("Cannot find rule: " + rule.getImplementation());
-		else
+		} else {
 			jRule.run(properties, selection);
-
+		}
 	}
 
 	public boolean canExecute(Rule rule, ModelAccessor properties, Object[] selection) {
 		String getImplementation = rule.getImplementation();
-		if (getImplementation == null)
+		if (getImplementation == null){
 			return false;
+		}
 		JavaRule jRule = getRule(getImplementation);
 		if (jRule == null) {
 			AD_Log.getDefault().logWarning("Cannot find rule: " + getImplementation);
@@ -100,11 +102,13 @@ public class JavaRuleProvider implements RuleProvider {
 
 	public boolean hasProvider(Bundle bundle) {
 		IPluginModelBase model = PDECore.getDefault().getModelManager().findModel(bundle.getSymbolicName());
-		if (model == null)
+		if (model == null){
 			return false;// occurs when a workspace vp is closed while active
+		}
 		for (IPluginExtension extension : model.getExtensions().getExtensions()) {
-			if (EXTENSION_POINT_ID.equals(extension.getPoint()))
+			if (EXTENSION_POINT_ID.equals(extension.getPoint())){
 				return true;
+			}
 		}
 		return false;
 	}

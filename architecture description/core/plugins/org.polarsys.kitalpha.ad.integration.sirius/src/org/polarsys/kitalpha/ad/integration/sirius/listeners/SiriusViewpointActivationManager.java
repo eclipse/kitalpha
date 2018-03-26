@@ -54,22 +54,25 @@ public final class SiriusViewpointActivationManager implements OverallListener {
 	private void updateActiveViewpoint(Object ctx, URI vpURI, boolean activate) {
 		ViewpointSelectionCallback callback = new ViewpointSelectionCallback();
 		Session session = SiriusHelper.getSession((ResourceSet) ctx);
-		if (session == null)
+		if (session == null){
 			return ;
+		}
 		final TransactionalEditingDomain domain = session.getTransactionalEditingDomain();
 		org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint vp = (org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint) domain.getResourceSet().getEObject(vpURI, true);
 		Viewpoint genericVp = (Viewpoint) domain.getResourceSet().getEObject(Activator.GENERIC_VP_URI, true);
 
 		Set<Viewpoint> viewpoints = SiriusHelper.getViewpoints(vp);
-		if (viewpoints.isEmpty())
+		if (viewpoints.isEmpty()){
 			return;
+		}
 		Set<Viewpoint> newSelectedViewpoints = new HashSet<Viewpoint>();
 		Set<Viewpoint> newDeselectedViewpoints = SiriusHelper.EMPTY_SET;
 		newSelectedViewpoints.add(genericVp);
-		if (activate)
+		if (activate){
 			newSelectedViewpoints.addAll(viewpoints);
-		else
+		} else {
 			newDeselectedViewpoints = viewpoints;
+		}
 		final RecordingCommand command = new ChangeViewpointSelectionCommand(session, callback, newSelectedViewpoints, newDeselectedViewpoints, new NullProgressMonitor());
 		execute(domain, command);
 

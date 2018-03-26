@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,15 +40,17 @@ public class RuleHandler extends WorkspaceManager.ElementHandler implements IRul
 		RuleSet ruleSet = ViewpointFactory.eINSTANCE.createRuleSet();
 		ruleSet.setTarget(getViewpoint());
 		ruleSet.setVpid(EcoreUtil.generateUUID());
-		if (getWorkspace() != null)
+		if (getWorkspace() != null){
 			getWorkspace().getRuleSets().add(ruleSet);
+		}
 		return ruleSet;
 	}
 
 	public void removeRules(List<Rule> rules) {
 		for (Rule rule : rules) {
-			if (!isRemovable(rule))
+			if (!isRemovable(rule)){
 				continue;
+			}
 			// we need to remove reference in services too
 			EcoreUtil.delete(rule);
 		}
@@ -60,8 +62,9 @@ public class RuleHandler extends WorkspaceManager.ElementHandler implements IRul
 	}
 
 	public void createRule(String id, String type, String implementation) {
-		if (getWorkspace() == null)
+		if (getWorkspace() == null){
 			throw new IllegalStateException("no workspace available");
+		}
 		RuleSet set = getCurrentRuleSet();
 		Rule rule = ViewpointFactory.eINSTANCE.createRule();
 		rule.setId(id);
@@ -73,11 +76,13 @@ public class RuleHandler extends WorkspaceManager.ElementHandler implements IRul
 	}
 
 	private RuleSet getCurrentRuleSet() {
-		if (getWorkspace() == null)
+		if (getWorkspace() == null){
 			return createRuleSet();
+		}
 		RuleSet set = getWorkspace().getRuleSet(getViewpoint());
-		if (set == null)
+		if (set == null){
 			set = createRuleSet();
+		}
 		return set;
 	}
 

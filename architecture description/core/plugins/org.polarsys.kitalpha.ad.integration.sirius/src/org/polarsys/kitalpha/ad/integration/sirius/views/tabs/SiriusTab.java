@@ -212,8 +212,9 @@ public class SiriusTab extends AbstractTab {
 
 	public void init() {
 		IRepresentationHandler representationHandler = modelManager.getRepresentationHandler();
-		if (representationHandler != null)
+		if (representationHandler != null){
 			odesignViewer.setInput(representationHandler);
+		}
 		workspaceHasChanged();
 	}
 
@@ -231,8 +232,9 @@ public class SiriusTab extends AbstractTab {
 		if (selection.size() == 1) {
 			SiriusRepresentation representation = (SiriusRepresentation) selection.getFirstElement();
 			viewBtn.setEnabled(representation.getOdesign() != null && !representation.getOdesign().eIsProxy());
-		} else
+		} else {
 			viewBtn.setEnabled(false);
+		}
 	}
 
 }

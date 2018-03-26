@@ -42,8 +42,9 @@ public abstract class ResourceManager {
 	}
 
 	protected void fireEvent() {
-		for (ModelListener list : listeners)
+		for (ModelListener list : listeners){
 			list.workspaceHasChanged();
+		}
 	}
 
 	public static ResourceSet getResourceSet() {

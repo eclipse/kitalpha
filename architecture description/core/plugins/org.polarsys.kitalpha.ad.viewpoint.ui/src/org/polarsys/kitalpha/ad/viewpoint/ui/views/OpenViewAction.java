@@ -76,16 +76,19 @@ final class OpenViewAction extends Action implements IMenuCreator {
 	 * @param resource
 	 */
 	public void setResource(final Resource resource) {
-		if (this.resource == resource)
+		if (this.resource == resource){
 			return;
+		}
 		this.resource = resource;
 		setEnabled(resource != null && resource.getProviderLocation() != Location.WORSPACE);
 		viewIds.clear();
-		if (resource == null)
+		if (resource == null){
 			return;
+		}
 		viewIds = ViewHelper.getViewIds(resource);
-		if (viewIds.isEmpty())
+		if (viewIds.isEmpty()){
 			setEnabled(false);
+		}
 	}
 
 	public void dispose() {
@@ -93,8 +96,9 @@ final class OpenViewAction extends Action implements IMenuCreator {
 	}
 
 	private void fillMenu(Menu menu) {
-		for (MenuItem mi : menu.getItems())
+		for (MenuItem mi : menu.getItems()){
 			mi.dispose();
+		}
 		for (ViewElement view : viewIds) {
 			MenuItem mi = new MenuItem(menu, SWT.PUSH);
 			mi.setText(view.getName());

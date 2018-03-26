@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,8 +47,9 @@ public class ServiceHandler extends WorkspaceManager.ElementHandler implements I
 
 	public void removeServices(List<Service> services) {
 		for (Service service : services) {
-			if (!isRemovable(service))
+			if (!isRemovable(service)){
 				continue;
+			}
 			ServiceSet set = (ServiceSet) service.eContainer();
 			set.getNewServices().remove(service);
 		}
@@ -56,8 +57,9 @@ public class ServiceHandler extends WorkspaceManager.ElementHandler implements I
 	}
 
 	public void createService(String id, String name, String type, List<Rule> rules) {
-		if (getWorkspace() == null)
+		if (getWorkspace() == null){
 			throw new IllegalStateException("no workspace available");
+		}
 		ServiceSet set = getCurrentServiceSet();
 		Service service = ViewpointFactory.eINSTANCE.createService();
 		set.getNewServices().add(service);
@@ -71,8 +73,9 @@ public class ServiceHandler extends WorkspaceManager.ElementHandler implements I
 
 	private ServiceSet getCurrentServiceSet() {
 		ServiceSet set = getWorkspace().getServiceSet(getViewpoint());
-		if (set == null)
+		if (set == null){
 			set = createServiceSet();
+		}
 		return set;
 	}
 

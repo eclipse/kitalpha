@@ -39,16 +39,18 @@ public class ExtensionRefreshExtension implements IRefreshExtension {
 		if (!contains(diagram.getActivatedFilters(), filterDesc))
 		{
 			diagram.getActivatedFilters().add(filterDesc);
-			if (diagram.getCurrentConcern() != null)
+			if (diagram.getCurrentConcern() != null){
 				diagram.getCurrentConcern().getFilters().add(filterDesc);
+			}
 		}
 	}
 
 	private boolean contains(EList<FilterDescription> activatedFilters, CompositeFilterDescription filterDesc) {
 		for (FilterDescription desc : activatedFilters) {
 			// name is the id of the element ...
-			if (desc.getName().equals(filterDesc.getName()))
+			if (desc.getName().equals(filterDesc.getName())){
 				return true;
+			}
 		}
 		return false;
 	}

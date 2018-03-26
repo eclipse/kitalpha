@@ -169,8 +169,9 @@ public class ViewpointSelectionDialog extends TitleAreaDialog {
 	public Map<Viewpoint, Boolean> getChanges() {
 		Map<Viewpoint, Boolean> result = new HashMap<Viewpoint, Boolean>();
 		for (Entry<Viewpoint, Boolean> entry : viewpointsMap.entrySet()) {
-			if (entry.getValue() != originalViewpointsMap.get(entry.getKey()))
+			if (entry.getValue() != originalViewpointsMap.get(entry.getKey())){
 				result.put(entry.getKey(), viewpointsMap.get(entry.getKey()));
+			}
 		}
 		return result;
 	}

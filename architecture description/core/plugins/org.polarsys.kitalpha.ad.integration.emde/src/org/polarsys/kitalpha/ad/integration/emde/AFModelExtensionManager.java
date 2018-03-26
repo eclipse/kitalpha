@@ -223,8 +223,9 @@ public class AFModelExtensionManager extends PreferenceModelExtensionManager {
 				boolean used = instance.isUsed(vp.getId());
 				boolean filtered = instance.isFiltered(vp.getId());
 				boolean active = used && !filtered;
-				if (extension2state.containsKey(nsURI2))
+				if (extension2state.containsKey(nsURI2)){
 					active =active || extension2state.get(nsURI2);
+				}
 				extension2state.put(nsURI2, active);
 				
 			}

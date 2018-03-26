@@ -37,8 +37,9 @@ public class SiriusSelectionProvider extends DefaultSelectionProvider {
 					}
 				}
 			}
-			if (obj instanceof EObject)
+			if (obj instanceof EObject){
 				result.add(obj);
+			}
 		}
 		return result;
 

@@ -39,10 +39,10 @@ public class WorkspaceViewpointManager extends ViewpointManager {
 
 	@Override
 	protected void desactivateBundle(String id) throws ViewpointActivationException {
-		if (!BundleManager.INSTANCE.isManaged(id))
+		if (!BundleManager.INSTANCE.isManaged(id)){
 			return;
+		}
 		try {
-
 			BundleManager.INSTANCE.unLoad(id);
 		} catch (IllegalStateException e) {
 			// we don't care

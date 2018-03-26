@@ -30,11 +30,13 @@ public class ViewpointManagerLabelProvider extends LabelProvider implements ITab
 	private ResourceSet context;
 
 	public Image getColumnImage(Object element, int columnIndex) {
-		if (columnIndex != 0)
+		if (columnIndex != 0){
 			return null;
+		}
 		Description vp = (Description) element;
-		if (context != null && ViewpointManager.getInstance(context).isUsed(vp.getId()))
+		if (context != null && ViewpointManager.getInstance(context).isUsed(vp.getId())){
 			return Activator.getDefault().getImage(AFImages.RUNNING_VP);
+		}
 		return Activator.getDefault().getImage(AFImages.VP);
 	}
 
@@ -44,8 +46,9 @@ public class ViewpointManagerLabelProvider extends LabelProvider implements ITab
 		case 0:
 			return vp.getLabel();
 		case 2:
-			if (context == null)
+			if (context == null){
 				return "N/A";
+			}
 			ViewpointManager instance = ViewpointManager.getInstance(context);
 			if (instance.isReferenced(vp.getId())) {
 				return instance.isInactive(vp.getId())? "Inactive" : "Active";

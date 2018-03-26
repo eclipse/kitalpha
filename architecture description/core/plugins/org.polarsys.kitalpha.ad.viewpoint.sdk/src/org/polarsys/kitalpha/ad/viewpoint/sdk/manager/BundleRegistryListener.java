@@ -47,10 +47,10 @@ public class BundleRegistryListener implements IRegistryEventListener {
 	@Override
 	public void added(IExtension[] extensions) {
 		for (IExtension ext : extensions) {
-			if (contributor.equals(ext.getContributor().getName()))
+			if (contributor.equals(ext.getContributor().getName())){
 				waiting = false;
+			}
 		}
-
 	}
 
 	public void waitForEventDispatch() throws InterruptedException {
@@ -58,8 +58,9 @@ public class BundleRegistryListener implements IRegistryEventListener {
 		while (waiting && timeout-- > 0) {
 			Thread.sleep(100);
 		}
-		if (timeout == 0)
+		if (timeout == 0){
 			AD_Log.RUNTIME.logWarning("Some bundles (related to " + contributor + ") may not be fully loaded.");
+		}
 
 	}
 

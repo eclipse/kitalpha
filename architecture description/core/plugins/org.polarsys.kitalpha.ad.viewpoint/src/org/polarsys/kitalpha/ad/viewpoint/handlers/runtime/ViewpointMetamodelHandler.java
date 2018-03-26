@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,24 +32,28 @@ public class ViewpointMetamodelHandler extends ViewpointManager.ElementHandler i
 	}
 
 	public void removeMetamodels(List<EPackage> packages) {
-		if (getResourceManager().isReadOnly())
+		if (getResourceManager().isReadOnly()) {
 			throw new IllegalStateException();
+		}
 
 		Metamodel metamodel = getMetamodel();
-		if (metamodel == null)
+		if (metamodel == null) {
 			return;
+		}
 		EList<EPackage> models = metamodel.getModels();
 		models.removeAll(packages);
 		saveModel();
 	}
 
 	public void addMetamodels(List<EPackage> packages) {
-		if (getResourceManager().isReadOnly())
+		if (getResourceManager().isReadOnly()){
 			throw new IllegalStateException();
+		}
 
 		Metamodel metamodel = getMetamodel();
-		if (metamodel == null)
+		if (metamodel == null) {
 			return;
+		}
 		metamodel.getModels().addAll(packages);
 		saveModel();
 	}

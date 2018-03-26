@@ -59,8 +59,9 @@ public class OpenViewsAction implements IMenuCreator, IObjectActionDelegate {
 					MessageDialog.openError(shell, Messages.ManageBundle_error_title3, Messages.ManageBundle_error_message);
 					AD_Log.getDefault().logError(Messages.ManageBundle_error_title3, e);
 				}
-			} else
+			} else {
 				MessageDialog.openWarning(shell, "Warning", "Install the bundle first!");
+			}
 
 		}
 
@@ -98,8 +99,9 @@ public class OpenViewsAction implements IMenuCreator, IObjectActionDelegate {
 				return;
 			}
 			try {
-				for (String id : viewIds)
+				for (String id : viewIds){
 					activePage.showView(id);
+				}
 			} catch (Exception e) {
 				MessageDialog.openError(shell, Messages.ManageBundle_error_title3, Messages.ManageBundle_error_message);
 				AD_Log.getDefault().logError(Messages.ManageBundle_error_title3, e);
@@ -118,11 +120,11 @@ public class OpenViewsAction implements IMenuCreator, IObjectActionDelegate {
 		if (selection instanceof IStructuredSelection) {
 			IStructuredSelection sselect = (IStructuredSelection) selection;
 			if (sselect.size() == 1) {
-				if (sselect.getFirstElement() instanceof IProject)
-
+				if (sselect.getFirstElement() instanceof IProject) {
 					project = (IProject) sselect.getFirstElement();
-				else if (sselect.getFirstElement() instanceof IJavaProject)
+				} else if (sselect.getFirstElement() instanceof IJavaProject){
 					project = ((IJavaProject) sselect.getFirstElement()).getProject();
+				}
 			}
 		}
 		IPluginModelBase findModel = PluginRegistry.findModel(project);
@@ -133,10 +135,11 @@ public class OpenViewsAction implements IMenuCreator, IObjectActionDelegate {
 				return;
 			}
 		}
-		if (project == null || BundleManager.INSTANCE.isManaged(project))
+		if (project == null || BundleManager.INSTANCE.isManaged(project)){
 			action.setText("Open viewpoint view");
-		else
+		} else {
 			action.setText("[Not loaded] Open viewpoint view");
+		}
 		action.setEnabled(project != null && project.isAccessible() && PDE.hasPluginNature(project) && BundleManager.INSTANCE.isManaged(project));
 	}
 

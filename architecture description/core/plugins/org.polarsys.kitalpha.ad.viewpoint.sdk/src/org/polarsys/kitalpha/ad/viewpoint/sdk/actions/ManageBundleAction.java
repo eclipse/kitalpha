@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -77,11 +77,11 @@ public class ManageBundleAction implements IObjectActionDelegate {
 		if (selection instanceof IStructuredSelection) {
 			IStructuredSelection sselect = (IStructuredSelection) selection;
 			if (sselect.size() == 1) {
-				if (sselect.getFirstElement() instanceof IProject)
-
+				if (sselect.getFirstElement() instanceof IProject){
 					project = (IProject) sselect.getFirstElement();
-				else if (sselect.getFirstElement() instanceof IJavaProject)
+				} else if (sselect.getFirstElement() instanceof IJavaProject) {
 					project = ((IJavaProject) sselect.getFirstElement()).getProject();
+				}
 			}
 		}
 		action.setEnabled(project != null && project.isAccessible() && PDE.hasPluginNature(project));

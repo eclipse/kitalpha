@@ -30,17 +30,21 @@ import org.polarsys.kitalpha.ad.viewpoint.handlers.workspace.WorkspaceManager;
 public class ProjectSelectionListener implements ISelectionListener {
 
 	public void selectionChanged(IWorkbenchPart part, ISelection selection) {
-		if (!(selection instanceof IStructuredSelection))
+		if (!(selection instanceof IStructuredSelection)){
 			return;
+		}
 		IStructuredSelection sselection = (IStructuredSelection) selection;
-		if (sselection.size() > 1)
+		if (sselection.size() > 1){
 			return;
-		if (part instanceof ViewpointView)
+		}
+		if (part instanceof ViewpointView){
 			return;
-		if (sselection.isEmpty())
+		}
+		if (sselection.isEmpty()){
 			projectSelected(null);
-		else
+		} else {
 			analyseElement(sselection.getFirstElement());
+		}
 	}
 
 	private void analyseElement(Object firstElement) {
@@ -59,8 +63,9 @@ public class ProjectSelectionListener implements ISelectionListener {
 				return;
 			}
 			EObject obj = adaptable.getAdapter(EObject.class);
-			if (obj != null) 
+			if (obj != null) {
 				firstElement = obj;
+			}
 		}
 		if (firstElement instanceof EObject) {
 			EObject eobj = (EObject) firstElement;
