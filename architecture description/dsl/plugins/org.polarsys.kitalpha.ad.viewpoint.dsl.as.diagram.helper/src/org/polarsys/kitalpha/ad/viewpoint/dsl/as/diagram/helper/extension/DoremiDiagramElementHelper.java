@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -154,7 +154,6 @@ public class DoremiDiagramElementHelper {
 				for (ContainerMapping containerMapping2 : subResult) 
 					if (! result.contains(containerMapping2))
 						result.add(containerMapping2);
-//				result.addAll(subResult);
 		}
 		
 		return result;
@@ -179,7 +178,6 @@ public class DoremiDiagramElementHelper {
 					for (NodeMapping nodeMapping : borderedNodes) 
 						if (! result.contains(nodeMapping))
 							result.add(nodeMapping);
-//					result.addAll(borderedNodes);
 			}
 			
 			for (ContainerMapping iContainerMapping : iDiagram.getAllContainerMappings()) 
@@ -212,7 +210,6 @@ public class DoremiDiagramElementHelper {
 				for (NodeMapping nodeMapping : nodeBorderedNodes) 
 					if (! result.contains(nodeMapping))
 						result.add(nodeMapping);
-//				result.addAll(nodeBorderedNodes);
 		}
 		
 		// The current container bordered nodes
@@ -228,8 +225,6 @@ public class DoremiDiagramElementHelper {
 				for (NodeMapping nodeMapping : subContainerSubNodes) 
 					if (! result.contains(nodeMapping))
 						result.add(nodeMapping);
-//				result.addAll(subContainerSubNodes);
-				
 		}
 		
 		return result;

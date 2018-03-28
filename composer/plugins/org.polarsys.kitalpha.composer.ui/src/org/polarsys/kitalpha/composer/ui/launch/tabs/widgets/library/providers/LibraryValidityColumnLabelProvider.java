@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -84,9 +84,6 @@ public class LibraryValidityColumnLabelProvider implements ITableLabelProvider {
 	    String description = null;
 	    LibraryItem item = ((LibraryItem)elt);
 		Object element = item.getItem();
-//	    if (element instanceof Map.Entry) {
-//	      Map.Entry entry = (Map.Entry) element;
-
 	      if (element instanceof Resource) {
 	        Resource res = (Resource) element;
 	        description = res.getDescription() == null ? "Library "
@@ -95,13 +92,11 @@ public class LibraryValidityColumnLabelProvider implements ITableLabelProvider {
 	      } else {
 	        description = element.toString();
 	      }
-	   // }
 	    return description;
 	  }
 
 
 	public Image getColumnImage(Object element, int columnIndex) {
-		// TODO Auto-generated method stub
 		return getImage(element);
 	}
 

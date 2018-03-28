@@ -54,15 +54,12 @@ public class SplitButton extends Button {
 				// draw the split line and arrow
 
 				Rectangle rect = getBounds();
-				// System.out.println("Rect width " + rect.width + " event width " + e.width);
-				// System.out.println("Rect height " + rect.height + " event height " + e.height);
 				Color oldForeground = e.gc.getForeground();
 				Color oldBackground = e.gc.getBackground();
 				x1 = e.x + rect.width - 20;
 				y1 = e.y;
 				x2 = e.x + rect.width;
 				y2 = e.y + rect.height;
-				// e.gc.setClipping(e.x, e.y, e.width, e.height);
 				int dx = -e.gc.getClipping().x;
 				int dy = -e.gc.getClipping().y;
 
@@ -83,7 +80,6 @@ public class SplitButton extends Button {
 				e.gc.setForeground(oldForeground);
 				e.gc.setBackground(oldBackground);
 
-				// e.gc.drawImage(ARROW_DOWN, e.x + e.width-15, e.y + e.height/2-2);
 			}
 		});
 		super.addListener(SWT.MouseDown, new Listener() {

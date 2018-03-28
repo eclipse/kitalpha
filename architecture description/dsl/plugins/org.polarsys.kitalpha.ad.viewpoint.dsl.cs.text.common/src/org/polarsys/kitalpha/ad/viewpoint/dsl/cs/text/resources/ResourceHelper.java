@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -603,7 +603,6 @@ public class ResourceHelper {
 		final Resource resource = loadResource(uri, resourceSet);
 		final EObject modelRoot = resource.getContents().get(0);
 		if (modelRoot!=null) {
-			//			EcoreUtil.resolveAll(modelRoot);
 			return Lists.newArrayList(modelRoot);
 		}
 		return Collections.emptyList();
@@ -625,7 +624,6 @@ public class ResourceHelper {
 				return targetRoot;
 			}
 		}
-		//	throw new RuntimeException (Messages.ResourceHelper_TargetModelNotFound);
 		return null;
 	}
 
@@ -843,8 +841,6 @@ public class ResourceHelper {
 		if (!dataResource.getContents().isEmpty()) {
 			final EObject dataRoot = dataResource.getContents().get(0);
 			ResourceHelper.loadExternalLibrary(dataResource);
-			//			loadExternalLibrary(resourceSet);
-			//			EcoreUtil2.resolveAll(dataRoot);
 			return dataRoot.eContents();
 		}
 		return Collections.emptyList();
@@ -879,8 +875,6 @@ public class ResourceHelper {
 		if (!dataResource.getContents().isEmpty()) {
 			final EObject dataRoot = dataResource.getContents().get(0);
 			ResourceHelper.loadExternalLibrary(dataResource);
-			//			loadExternalLibrary(resourceSet);
-			//			EcoreUtil2.resolveAll(dataRoot);
 			final IFile file = getFileFromURI(dataResourceURI);
 			if (isValid(dataRoot)){
 				setProperty(ResourcesPropertysConstants.syncQualifiedName, file, "true");
@@ -936,7 +930,6 @@ public class ResourceHelper {
 		if (!dataResource.getContents().isEmpty()) {
 			final EObject dataRoot = dataResource.getContents().get(0);
 			ResourceHelper.loadExternalLibrary(dataResource);
-			//			loadExternalLibrary(resourceSet);
 			loadExternalLibrary(importUri, resourceSet);
 			EcoreUtil2.resolveAll(dataRoot);
 			return dataRoot.eContents();

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,9 +37,6 @@ public class ReverseFirstPage extends NewDSLVpProjectPage {
 	private Button flatten_CB;
 	private Button prefix_ePackageName_RB;
 	private Button sufix_ePackageName_RB;
-	
-//	private Button prefix_integer_RB;
-//	private Button sufix_integer_RB;
 	
 	private Button separator_CB;
 
@@ -93,14 +90,6 @@ public class ReverseFirstPage extends NewDSLVpProjectPage {
 			sufix_ePackageName_RB.setText("Sufix by EPackage name");
 			sufix_ePackageName_RB.addSelectionListener(new ReverseOptionsSelectionListener());
 
-			// TODO: activate after implementation of this strategy
-			//		prefix_integer_RB = new Button(flatten_G, SWT.RADIO);
-			//		prefix_integer_RB.setText("Prefix by Incremental value");
-			//		prefix_integer_RB.addSelectionListener(new ReverseOptionsSelectionListener());
-			//		sufix_integer_RB = new Button(flatten_G, SWT.RADIO);
-			//		sufix_integer_RB.setText("Sufix by Incremental value");
-			//		sufix_integer_RB.addSelectionListener(new ReverseOptionsSelectionListener());
-
 			// Custon separator widgets
 			separator_CB = new Button(flatten_G, SWT.CHECK);
 			separator_CB.setSelection(false);
@@ -117,9 +106,6 @@ public class ReverseFirstPage extends NewDSLVpProjectPage {
 		flatten_G.setEnabled(flatten_CB.getSelection());
 		prefix_ePackageName_RB.setEnabled(flatten_CB.getSelection());
 		sufix_ePackageName_RB.setEnabled(flatten_CB.getSelection());
-		// TODO: activate after implementation of this strategy
-//		prefix_integer_RB.setEnabled(flatten_CB.getSelection());
-//		sufix_integer_RB.setEnabled(flatten_CB.getSelection());
 		separator_CB.setEnabled(flatten_CB.getSelection());
 	}
 
@@ -160,18 +146,12 @@ public class ReverseFirstPage extends NewDSLVpProjectPage {
 			flatten_G.setEnabled(flatten_CB.getSelection());
 			prefix_ePackageName_RB.setEnabled(flatten_CB.getSelection());
 			sufix_ePackageName_RB.setEnabled(flatten_CB.getSelection());
-			// TODO: activate after implementation of this strategy
-//			prefix_integer_RB.setEnabled(flatten_CB.getSelection());
-//			sufix_integer_RB.setEnabled(flatten_CB.getSelection());
 			separator_CB.setEnabled(flatten_CB.getSelection());
 
 			if (! flatten_CB.getSelection())
 			{
 				prefix_ePackageName_RB.setSelection(false);
 				sufix_ePackageName_RB.setSelection(false);
-				// TODO: activate after implementation of this strategy
-//				prefix_integer_RB.setSelection(false);
-//				sufix_integer_RB.setSelection(false);
 				separator_CB.setSelection(false);
 			}
 			else
@@ -203,16 +183,6 @@ public class ReverseFirstPage extends NewDSLVpProjectPage {
 			{
 				stategy = ConflictingNameResloveStrategy.SufixByEPackageName;
 			}
-			// TODO: activate after implementation of this strategy
-//			if (button.equals(prefix_integer_RB)&& prefix_integer_RB.getSelection())
-//			{
-//				stategy = ConflictingNameResloveStrategy.PrefixByIncrementalValue;
-//			}
-//			if (button.equals(sufix_integer_RB)&& sufix_integer_RB.getSelection())
-//			{
-//				stategy = ConflictingNameResloveStrategy.SufixByIncrementalValue;
-//			}
-			
 			_WIZARD.setConflictingNameResloveStrategy(stategy);
 		}
 	}

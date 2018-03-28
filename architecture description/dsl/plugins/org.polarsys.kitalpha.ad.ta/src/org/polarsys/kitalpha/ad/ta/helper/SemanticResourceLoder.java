@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -48,12 +48,6 @@ public class SemanticResourceLoder {
 	@Deprecated
 	private static void loadSemanticPlatformResources(String taName, ResourceSet set){
 		List<URI> uriList = null;
-//		try {
-//			uriList = TargetApplicationExtensionManager.getSemanticResourcesPlatformUris(taName);
-//		} catch (CoreException e) {
-//			e.printStackTrace();
-//		}
-		
 		for (URI uri : uriList) 
 		{
 			Resource resource = set.getResource(uri, true);
@@ -63,21 +57,5 @@ public class SemanticResourceLoder {
 
 	}
 	
-	/**
-	 * This method check if the EPackage is registered in the EMF registry
-	 * @param ePackage The {@link EPackage} to check
-	 * @param nsUriList a list of RegEx representing the NsUri list declared by the target application
-	 * @return
-	 */
-//	private static boolean checkNsUri(String nsUri, List<String> nsUriList){
-//		for (String regex : nsUriList) 
-//		{
-//			final Pattern pattern = Pattern.compile(regex);
-//			final Matcher matcher = pattern.matcher(nsUri);
-//			if (matcher.find())
-//				return true;
-//		}
-//		return false;
-//	}
 	
 }

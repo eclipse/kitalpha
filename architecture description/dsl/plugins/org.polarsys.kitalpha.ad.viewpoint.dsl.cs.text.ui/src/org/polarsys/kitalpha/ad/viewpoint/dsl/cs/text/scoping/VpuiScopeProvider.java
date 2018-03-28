@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -41,22 +41,6 @@ import com.google.common.base.Predicate;
  * 
  */
 public class VpuiScopeProvider extends AbstractDeclarativeScopeProvider {
-
-//	@Override
-//	public IScope getScope(EObject context, EReference reference) {
-//		if (reference.equals(VpuiPackage.eINSTANCE
-//				.getFieldMapping_UI_Field_Mapped_To())) {
-//			
-//			final EObject context2 = context;
-//			return new FilteringScope(super.getScope(context, reference),
-//					new Predicate<IEObjectDescription>() {
-//						public boolean apply(IEObjectDescription d) {
-//							return (d.getEObjectOrProxy() instanceof AbstractFeature && ProjectUtil.areInSameProject(context2, d.getEObjectOrProxy()));
-//						}
-//					});
-//		}
-//		return super.getScope(context, reference);
-//	}
 
 	IScope scope_LocalClass_UI_For_LocalClass(EObject context,
 			EReference reference) {

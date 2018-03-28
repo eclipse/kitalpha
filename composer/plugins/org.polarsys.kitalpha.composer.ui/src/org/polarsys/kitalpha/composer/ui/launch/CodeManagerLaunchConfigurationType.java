@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -61,8 +61,6 @@ import org.polarsys.kitalpha.composer.ui.validators.ManagerValidator;
 public class CodeManagerLaunchConfigurationType implements
 		ILaunchConfigurationDelegate, ICodeManagerWorkflowConstants {
 
-	/*private static final String COMPOSER_LINK_PROJECT = ".composer";
-	private static final String LINKED_FOLDER_NAME = "link";*/
 	private static final String DEBUG_MODE = "debug";
 
 	private IStrategy strategy = null;
@@ -339,54 +337,5 @@ public class CodeManagerLaunchConfigurationType implements
 
 		return parametersMap;
 	}
-// TODO: DUPLICATION
-	/*private IPath getPath(Object object) throws CoreException {
-		String projectPath = "";
-		if (object instanceof IResource) {
-			IResource res = (IResource) object;
-			projectPath = res.getProject().getFullPath().toString();
-		}
-		if (object instanceof EObject) {
-			EObject eObject = (EObject) object;
-			projectPath = "/" + eObject.eResource().getURI().segment(1);
-		}
-		return pathGeneration == null ? new Path(projectPath + GENERATED_FOLDER)
-				: computeIPath(pathGeneration);
-	}
-
-	private IPath computeIPath(String path) throws CoreException {
-		//TODO: AJOUTER LE CALCUL DE LA VARIABLE (JUSTE UN APPEL)
-		IPath pathObject = new Path(pathGeneration);
-		IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(
-				pathObject.segment(0));
-		if (!project.exists()) {
-			project = getComposerProject();
-			IFolder folder = createLinkedFolder(project, path);
-			pathObject = folder.getFullPath();
-		}
-		return pathObject;
-	}
-
-	private IFolder createLinkedFolder(IProject project, String targetPath)
-			throws CoreException {
-		IFolder folder = project.getFolder(LINKED_FOLDER_NAME);
-		if (folder.exists()) {
-			folder.delete(true, new NullProgressMonitor());
-		}
-		folder.createLink(new Path(targetPath), 0, new NullProgressMonitor());
-		return folder;
-	}
-
-	private IProject getComposerProject() throws CoreException {
-		IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(
-				COMPOSER_LINK_PROJECT);
-		if (!project.exists()) {
-			project.create(new NullProgressMonitor());
-		}
-		if (!project.isOpen()) {
-			project.open(new NullProgressMonitor());
-		}
-		return project;
-	}*/
 
 }

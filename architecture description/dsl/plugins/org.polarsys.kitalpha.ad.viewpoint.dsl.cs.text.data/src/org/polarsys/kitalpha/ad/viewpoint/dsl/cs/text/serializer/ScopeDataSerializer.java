@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -48,10 +48,7 @@ public class ScopeDataSerializer extends CrossReferenceSerializer {
 		Resource resource = target.eResource();
 		
 		if (resource != null){
-//			URI importURI = resource.getURI();
-			//EPackage loadedEPackage = ExternalDataHelper.loadEPackage(importURI.toString(), semanticObject.eResource().getResourceSet());
-
-			if (descriptionManager != null){// && loadedEPackage != null) {
+			if (descriptionManager != null){
 				IResourceDescription resourceDescription = descriptionManager
 						.getResourceDescription(resource);
 				if (resourceDescription != null)

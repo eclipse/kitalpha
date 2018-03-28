@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -45,7 +45,6 @@ public class WorkspaceResourceChecker extends ModelCommand {
 				checkAttributes(resource2, subMonitor.newChild(1));
 			}
 		}
-		//throw new ModelCommandException(Messages.bind(Messages.NO_RESOURCESET_ASSOCiATED_TO_RESOURCE, resource.getURI()));
 	}
 
 	private void checkAttributes(Resource resource2, IProgressMonitor monitor) 

@@ -100,20 +100,13 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 			
 	private Iterable<IEObjectDescription> getTaIEObjectDescription(Resource eResource,Iterable<IEObjectDescription> exportedObjects, EClass type){
 		ResourceSet resourceSet = eResource.getResourceSet();
-//		if (computedPlatformEObjectDescriptions.containsKey(type))
-//		{
-//			return computedPlatformEObjectDescriptions.get(type);
-//		}
-//		else
-//		{
-			Iterable<IEObjectDescription> externalObjectDescriptions = getExternalObjectDescriptions(eResource, exportedObjects);
-			externalObjectDescriptions = Iterables.concat(externalObjectDescriptions, getDoremiDiagramDescriptions(eResource, type));
-			externalObjectDescriptions = Iterables.concat(externalObjectDescriptions, getDoremiEdgeMappings(eResource, type));
-			externalObjectDescriptions = Iterables.concat(externalObjectDescriptions, getDoremiNodeMappings(eResource, type));
-			externalObjectDescriptions = Iterables.concat(externalObjectDescriptions, getDoremiContainerMappings(eResource, type));
-			computedPlatformEObjectDescriptions.put(type, externalObjectDescriptions);
-			return externalObjectDescriptions;
-//		}
+		Iterable<IEObjectDescription> externalObjectDescriptions = getExternalObjectDescriptions(eResource, exportedObjects);
+		externalObjectDescriptions = Iterables.concat(externalObjectDescriptions, getDoremiDiagramDescriptions(eResource, type));
+		externalObjectDescriptions = Iterables.concat(externalObjectDescriptions, getDoremiEdgeMappings(eResource, type));
+		externalObjectDescriptions = Iterables.concat(externalObjectDescriptions, getDoremiNodeMappings(eResource, type));
+		externalObjectDescriptions = Iterables.concat(externalObjectDescriptions, getDoremiContainerMappings(eResource, type));
+		computedPlatformEObjectDescriptions.put(type, externalObjectDescriptions);
+		return externalObjectDescriptions;
 	}
 	
 
@@ -145,8 +138,6 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 					if (root!=null) {	
 						importDiagrams = DoremiDiagramElementHelper.getAvailableDoremiDiagramFor(root);
 						for (DiagramDescription description : importDiagrams) {
-//							EcoreUtil2.resolveAll(description);
-							
 							String simpleName = VpdiagramNamingHelper.normalizeIdentifier(description.getName());
 							IEObjectDescription desc = EObjectDescription.create(simpleName, description, null);
 							doremiExportedObjects.add(desc);
@@ -196,8 +187,6 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 					if (root!=null) {
 						availableDoremiDiagramFor = DoremiDiagramElementHelper.getAvailableNodeMappingsFor(root);
 						for (NodeMapping description : availableDoremiDiagramFor) {
-//							EcoreUtil2.resolveAll(description);
-							
 							String simpleName = VpdiagramNamingHelper.normalizeIdentifier(description.getName());
 							IEObjectDescription desc = EObjectDescription.create(simpleName, description, null);
 							doremiExportedObjects.add(desc);
@@ -222,7 +211,6 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 					if (root!=null) {
 						availableDoremiDiagramFor = DoremiDiagramElementHelper.getAvailableContainerMappingsFor(root);
 						for (ContainerMapping description : availableDoremiDiagramFor) {
-//							EcoreUtil2.resolveAll(description);
 							
 							String simpleName = VpdiagramNamingHelper.normalizeIdentifier(description.getName());
 							IEObjectDescription desc = EObjectDescription.create(simpleName, description, null);
@@ -267,22 +255,6 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 		}
 		return exportedObjects;
 		
-//		Map<String, URI> fPackagesInScope = ExternalDataHelper.getPackagesInScopeURIs();
-//		for (Map.Entry<String, URI> entry : fPackagesInScope.entrySet()) {
-//			QualifiedName packageNsURI = QualifiedName.create(entry.getKey());
-//			URI nsURI = URI.createURI(packageNsURI.toString());
-//			EPackage ecoreModel = resourceSet.getPackageRegistry().getEPackage(nsURI.toString());
-//			if (ecoreModel !=null){
-//				EPackage loadedEPackage = loadEPackage(nsURI.toString(), resourceSet);
-//				if (descriptionManager!=null && loadedEPackage!=null &&	loadedEPackage.eResource()!=null) {
-//					Resource packageResource = loadedEPackage.eResource();
-////					EcoreUtil2.resolveAll(packageResource);
-//					IResourceDescription resourceDescription =	descriptionManager.getResourceDescription(packageResource);
-//					exportedObjects = Iterables.concat(exportedObjects, resourceDescription.getExportedObjects());
-//				}
-//			}
-//		}
-//		return exportedObjects;
 	}
 	
 	private EPackage loadEPackage(String resourceOrNsURI, ResourceSet resourceSet) {
@@ -499,7 +471,6 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 				if (packageResource == null)	
 					return exportedObjects;	
 
-//				EcoreUtil2.resolveAll(packageResource);	
 				IResourceDescription resourceDescription =        descriptionManager
 						.getResourceDescription(packageResource);	
 				exportedObjects = Iterables.concat(exportedObjects, resourceDescription.getExportedObjects());	

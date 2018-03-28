@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,10 +24,6 @@ import org.eclipse.emf.ecore.impl.EStringToStringMapEntryImpl;
 
 public class ENamedElementAnnotationHelper {
 	
-//	public static final String KEY_DOCUMENTATION = "http://www.polarsys.org/kitalpha/ecore/documentation";
-	
-//	public static final String ENTRY_DOCUMENTATION_KEY = "description";
-	
 	public static void annotate(ENamedElement namedElement, 
 									String source, 
 									String key, 
@@ -40,12 +36,8 @@ public class ENamedElementAnnotationHelper {
 		}
 
 		for (int i = 0; i < existingannotations.size(); i++) {
-//			EAnnotation annot = existingannotations.get(i); 
 			if (existingannotations.get(i).getSource().trim().equals(source)){
-//				if (annot.getDetails().keySet().contains(key))
 				if (replace){
-//					annot.getDetails().remove(annot.getDetails().indexOfKey(key));
-//					annot.getDetails().put(key, value);
 					namedElement.getEAnnotations().remove(i);
 				}
 			}

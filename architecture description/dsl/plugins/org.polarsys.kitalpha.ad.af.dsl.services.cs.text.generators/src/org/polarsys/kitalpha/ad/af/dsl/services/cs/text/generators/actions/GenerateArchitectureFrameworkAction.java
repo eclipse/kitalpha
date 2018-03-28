@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -27,7 +27,6 @@ import org.eclipse.ui.actions.BaseSelectionListenerAction;
 import org.polarsys.kitalpha.ad.af.dsl.as.servicies.action.popup.GenerateArchitectureFramework;
 import org.polarsys.kitalpha.ad.af.dsl.services.cs.text.generators.messages.Messages;
 
-//import org.polarsys.kitalpha.ad.af.dsl.servicies.action.popup.GenerateArchitectureFramework;
 
 /**
  * 

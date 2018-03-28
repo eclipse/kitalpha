@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -27,8 +27,6 @@ import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CTabFolder;
 import org.eclipse.swt.custom.CTabItem;
-import org.eclipse.swt.events.PaintEvent;
-import org.eclipse.swt.events.PaintListener;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.GridData;
@@ -37,7 +35,6 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.ui.dialogs.ListSelectionDialog;
-
 import org.polarsys.kitalpha.cadence.core.api.CadenceRegistry;
 import org.polarsys.kitalpha.cadence.core.api.IActivity;
 import org.polarsys.kitalpha.cadence.core.api.parameter.ActivityParameters;
@@ -114,7 +111,6 @@ public class CadenceItem {
     ActivitiesWidget widget1 = new ActivitiesWidget(composite);
     ParameterWidget widget2 = new ParameterWidget(composite);
     initTable(widget2, workflow_id, workflowElt_id);
-    ///initTable(widget1, workflow_id, workflowElt_id);
 		final IConfigurationElement[] activities = CadenceRegistry
 				.getActivitiesConfigList(workflow_id, workflowElt_id);
     attachListeners(widget1,widget2, activities);
@@ -162,56 +158,10 @@ public class CadenceItem {
 			dialog.setContainer((IActivity)elementSelected(IACTIVITY));
 			dialog.setInput(_params.getActivityParameters(_activityId));
 			}
-			
 			dialog.open();
-        	
-        	//
-        	
-        	
-        	
       }
         	
       }	
-        	
-        	
-        	
-        	
-        	// Map<String, String> map = getMapFromParametersTable();
-
-          
-          
-          
-          /*
-          
-          
-					Map<String, ParameterError<?>> result = activitySelected
-							.validateParameters(CadenceHelper
-									.constructMapFromString(map,
-											activitySelected));
-          // if parameters is NOK
-
-          if (result != null && !result.isEmpty()) {
-						String parameterString = CadenceValidator
-								.getParameterErrorsTrace(result);
-						MessageDialog
-								.openError(
-										PlatformUI.getWorkbench()
-												.getActiveWorkbenchWindow()
-												.getShell(),
-										"Cadence", "Problems encountered during validation :\n" //$NON-NLS-1$ //$NON-NLS-2$
-                                                                                                                + parameterString);
-
-          } else {
-						MessageDialog
-								.openInformation(
-										PlatformUI.getWorkbench()
-												.getActiveWorkbenchWindow()
-												.getShell(),
-										"Code Manager", "Validation completed successfully"); //$NON-NLS-1$ //$NON-NLS-2$
-          }
-        }
-      }
-*/
     });
   }
 
@@ -315,7 +265,6 @@ public class CadenceItem {
 				_params
 						.removeActivityParameters((String) elementSelected(IDENTIFIER));
         viewer.setInput(_temporyList);
-        //tableViewer.setInput(null);
         tab.update();
         viewer.refresh();
 
@@ -354,18 +303,6 @@ public class CadenceItem {
       }
     });
   }
-
-  /*private Map<String, String> getMapFromParametersTable() {
-
-    Map<String, String> params = new HashMap<String, String>();
-    TableItem[] items = tableViewer.getTable().getItems();
-
-    for (TableItem item : items) {
-      params.put(item.getText(0), item.getText(1));
-    }
-    return params;
-
-  }*/
 
   public String getParameters() {
     String value = ""; //$NON-NLS-1$

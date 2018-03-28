@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,14 +26,12 @@ import org.eclipse.debug.core.ILaunchConfigurationType;
 import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.debug.core.ILaunchManager;
 import org.eclipse.jface.wizard.Wizard;
-
 import org.polarsys.kitalpha.cadence.core.api.parameter.ActivityParameters;
 import org.polarsys.kitalpha.cadence.core.api.parameter.GenericParameter;
 import org.polarsys.kitalpha.cadence.core.api.parameter.WorkflowActivityParameter;
 import org.polarsys.kitalpha.cadence.ui.api.launch.ICadenceLaunchConfigurationConstants;
 import org.polarsys.kitalpha.composer.api.CodeManagerCadenceLaunchConfiguration;
 import org.polarsys.kitalpha.composer.api.configuration.CodeManagerConfiguration;
-import org.polarsys.kitalpha.composer.api.path.ComposerPathUtils;
 import org.polarsys.kitalpha.composer.api.profiles.ComposerProfile;
 import org.polarsys.kitalpha.composer.extension.points.CodeManagerExtensions;
 import org.polarsys.kitalpha.composer.ui.Activator;
@@ -96,9 +94,6 @@ public class GenericLaunchConfigurationWizard extends Wizard {
 	public boolean performFinish() {
 		try {
 			
-			// recompute path.
-			//ComposerPathUtils.recomputePath(configuration);
-
 			ILaunchConfiguration workingCopy = createLaunchConfiguration(GenericConfigurationWizardPage.getConfigNameName());
 			convertCodeManagerLaunchConfiguration((ILaunchConfigurationWorkingCopy)workingCopy,configuration);
 		} catch (Exception e) {

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -75,45 +75,16 @@ public class DataGlobalScopeProvider extends DefaultGlobalScopeProvider {
 
 	private static Iterable<IEObjectDescription> taObjects = null;
 	
-//	@Deprecated
-//	private Iterable<IEObjectDescription> getTAObject(ResourceSet resourceSet,Iterable<IEObjectDescription> exportedObjects){
-//		if (taObjects == null || 
-//				(taObjects.iterator() != null) && !taObjects.iterator().hasNext())
-//		{
-//			taObjects = getExternalObjectDescriptions(resourceSet, exportedObjects);
-//		}
-//		
-//		return taObjects;
-//	}
-	
 	private Multimap<QualifiedName, IEObjectDescription> multiMapDesc = null;
 	
 	protected IScope createDataContainerScope(Resource eResource, IScope parent, IContainer container, Predicate<IEObjectDescription> filter, EClass type, boolean ignoreCase) {
 		Iterable<IEObjectDescription> exportedObjects = Collections.emptyList();		
-//		exportedObjects = getTAObject(resourceSet, exportedObjects);
 		exportedObjects = getExternalObjectDescriptions(eResource, exportedObjects);
 		exportedObjects = getExternalImportObjectDescription(eResource, exportedObjects);
 		
-//		calculateTAScope(parent, resourceSet, exportedObjects, ignoreCase);
-//		return computeScope(parent, eResource, exportedObjects, ignoreCase);
 		return MultimapBasedScope.createScope(parent, exportedObjects, ignoreCase);	
 	}
 
-	//To be reworked
-//	@Deprecated
-//	private void calculateTAScope(IScope parent, ResourceSet resourceSet,Iterable<IEObjectDescription> exportedObjects, boolean ignoreCase){
-//		if (multiMapDesc == null || multiMapDesc.isEmpty()){
-//			
-//			for(IEObjectDescription description: getExternalObjectDescriptions(resourceSet, exportedObjects)) {
-//				if (multiMapDesc == null)
-//					multiMapDesc = LinkedHashMultimap.create(5,2);
-//				if (ignoreCase)
-//					multiMapDesc.put(description.getName().toLowerCase(), description);
-//				else
-//					multiMapDesc.put(description.getName(), description);
-//			}
-//		}
-//	}
 	
 	private IScope computeScope(IScope parent, Resource r, Iterable<IEObjectDescription> exportedObjects, boolean ignoreCase){
 		Multimap<QualifiedName, IEObjectDescription> map = LinkedHashMultimap.create(5,2);

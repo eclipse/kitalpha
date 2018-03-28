@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -59,23 +59,9 @@ public class DetachmentHelper {
 		{
 			ResourceSet rs = new ResourceSetImpl();
 			URI genmodelURI = EcorePlugin.getEPackageNsURIToGenModelLocationMap().get(uri.toString());
-			if (genmodelURI != null)
-			{
-				if (genmodelURI.isPlatformPlugin())
-				{
-					r = rs.createResource(genmodelURI);
-					loadedResources.put(uri, r);
-//					try {
-//						if (!r.isLoaded())
-//						{
-//							r.load(null);
-//							loadedResources.put(uri, r);
-//						}
-//					} 
-//					catch (IOException e) {
-//					}
-				}
-				
+			if (genmodelURI != null && genmodelURI.isPlatformPlugin()) 	{
+				r = rs.createResource(genmodelURI);
+				loadedResources.put(uri, r);
 			}
 		}
 		

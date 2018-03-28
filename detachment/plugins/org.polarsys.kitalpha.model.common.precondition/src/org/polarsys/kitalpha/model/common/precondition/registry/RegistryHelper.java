@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -33,10 +33,9 @@ public class RegistryHelper {
 		IExtensionPoint extension = regisry.getExtensionPoint(extensionPoint);
 
 		if (extension == null){
-			//TODO decomment
-			//RuntimeException e = new RuntimeException(Messages.MODEL_COMMAND_EXTENSION_CANT_GET);
-			//LOGGER.error(Messages.MODEL_COMMAND_EXTENSION_CANT_GET, e);
-			//throw e;
+			RuntimeException e = new RuntimeException("MODEL_COMMAND_EXTENSION_CANT_GET");
+			LOGGER.error("MODEL_COMMAND_EXTENSION_CANT_GET", e);
+			throw e;
 		}
 
 		IExtension extensions[] = extension.getExtensions();

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -57,12 +57,6 @@ public class UniqueUIFieldNameInSection implements IAdditionalConstraint {
 		if (current.getName() == null)
 			return ValidationStatus.Ok;
 		
-		// Get the UIContainer used to generate the Section
-//		UIContainer section = getSection(current);
-		
-		// Check of there is duplicated names and return the result
-//		return duplicateFieldsName(section, current) ? ValidationStatus.Error : ValidationStatus.Ok;
-		
 		final List<UIContainer> allAvailableSections = getAllAvailableSections(current);
 		for (UIContainer uiContainer : allAvailableSections) 
 		{
@@ -113,21 +107,6 @@ public class UniqueUIFieldNameInSection implements IAdditionalConstraint {
 		
 		return false;
 	}
-	
-//	/**
-//	 * Get the UI Container that will be used to generate a Section in the UI Tab
-//	 * @param uiField the concerned {@link UIField}
-//	 * @return the {@link UIContainer} used to generate a Section
-//	 */
-//	private UIContainer getSection(UIField uiField){
-//		UIContainer result = (UIContainer) uiField.eContainer();
-//		while (result instanceof UIContainer && ! (result.eContainer() instanceof UI))
-//		{
-//			result = (UIContainer) result.eContainer();
-//		}
-//		
-//		return result;
-//	}
 	
 	/**
 	 * Get the UI Container that will be used to generate a Section in the UI Tab

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,20 +47,6 @@ import com.google.common.collect.UnmodifiableIterator;
 
 public class EcoreService {
 	
-//	public int getNodeWith(EObject context){
-//		if (context instanceof EClass)
-//		{
-//			return ((EClass) context).getEAttributes().isEmpty() ? 10 : -1;
-//		}
-//		
-//		if (context instanceof EEnum)
-//		{
-//			return ((EEnum) context).getELiterals().isEmpty() ? 10 : -1;
-//		}
-//		
-//		return -1;
-//	}
-
 	public EcoreService() {
 		super();
 	}
@@ -271,7 +257,6 @@ public class EcoreService {
 	
 	public Collection<EOperation> findAllEOperation(EClass eClass) {
 		List<EOperation> local = new ArrayList<EOperation>(eClass.getEAllOperations());
-//		local.removeAll(eClass.getEAttributes());
 		Collections.sort(local, new MyEOperationComparator());
 		return local;
 	}
@@ -488,7 +473,6 @@ public class EcoreService {
 	 */
 	public Collection<EAttribute> findAllEAtribute(EClass eClass) {
 		List<EAttribute> local = new ArrayList<EAttribute>(eClass.getEAllAttributes());
-//		local.removeAll(eClass.getEAttributes());
 		Collections.sort(local, new MyEAttributeComparator());
 		return local;
 	}
@@ -560,14 +544,6 @@ public class EcoreService {
 		else 
 			return false;
 	}
-	
-//	public boolean hasNotDisplayedSuperType(EAttribute eAttribute, DSemanticDecorator container, DSemanticDiagram diagram) {
-//		EObject target = container.getTarget();
-//		Collection<EObject> nodeList = diagram.getNodes();
-//		
-//	
-//		return hasNotDisplayedSuperType(eAttribute.getEContainingClass(), container, nodeList);
-//	}
 	
 	/**
 	 * Return the most abstract displayed descendants of the given EClass object

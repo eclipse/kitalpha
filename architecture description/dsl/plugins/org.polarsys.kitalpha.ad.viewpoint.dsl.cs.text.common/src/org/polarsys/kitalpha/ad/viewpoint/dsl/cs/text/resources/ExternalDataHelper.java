@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -99,7 +99,6 @@ public class ExternalDataHelper {
 
 	private static Map<String, URI> lookupPackagesInScopeURis()  throws CoreException {
 		packagesInScopeURIs= Collections.synchronizedMap(new LinkedHashMap<String, URI>());
-		//		packagesInScopeURIsTarget = Collections.synchronizedMap(new LinkedHashMap<String, Map<String, URI>>());
 		metamodelLoaders = getAvailableMetamodelLoaders();
 		for (final String loader: metamodelLoaders.keySet()) {
 			final List<Pattern> patternList = metamodelLoaders.get(loader);
@@ -212,7 +211,6 @@ public class ExternalDataHelper {
 				final EPackage ecoreModel = DataWorkspaceEPackage.INSTANCE.getEPackage(uri.toString());
 
 				if (ecoreModel != null){
-					//					EcoreUtil.resolveAll(ecoreModel);
 					resourceSet.getResources().add(ecoreModel.eResource());
 					return ecoreModel;
 				}

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -55,10 +55,6 @@ public class EdgesUniqueNoConditionalRepresentationRules implements IAdditionalC
 		{
 			return Messages.bind(Messages.Validation_Representation_Condition_Unique_WithoutName, elementType);
 		}
-//		String message = " can have one and only one representation without condition";
-//		return (edgeName != null && edgeName.trim().length() > 0  
-//				? edgeName + " " + elementType + message 
-//				: "A "+ elementType + message);
 	}
 
 }

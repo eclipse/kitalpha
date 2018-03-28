@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,7 +44,6 @@ public abstract class AbstractProjectUpdateTask implements ITaskProduction {
 
 	@Override
 	public final void doExecute(ITaskProductionContext productionContext, IProgressMonitor monitor) throws InvocationException {
-//		Assert.isNotNull(projectID, "Project ID Contract should have a value"); //$NON-NLS-1$
 		if (projectID == null)
 			return ;
 		
@@ -52,11 +51,6 @@ public abstract class AbstractProjectUpdateTask implements ITaskProduction {
 		if (project.exists())
 		{
 			updateProject(project, productionContext, monitor);
-		}
-		else
-		{
-			// TODO: should log an error but not throws an exception because it will block the steps after
-			//throw new InvocationException("Project " + projectID + " doesn't exists");
 		}
 	}
 	

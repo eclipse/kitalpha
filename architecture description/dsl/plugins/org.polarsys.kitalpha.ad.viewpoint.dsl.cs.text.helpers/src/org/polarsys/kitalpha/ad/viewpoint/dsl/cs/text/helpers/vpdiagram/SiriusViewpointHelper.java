@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -53,16 +53,6 @@ public class SiriusViewpointHelper {
 	 * @return
 	 */
 	public static Viewpoint getRootviewpoint(Resource resource){
-		// Original Code
-//		TreeIterator<EObject> it = resource.getAllContents();
-//		while (it.hasNext()){
-//			EObject next = it.next();
-//			
-//			if (next instanceof Viewpoint)
-//				return (Viewpoint)next;
-//		}
-		
-		// [BZE] New implementation
 		final EList<EObject> contents = resource.getContents();
 		if (contents != null && ! contents.isEmpty())
 		{
@@ -97,7 +87,6 @@ public class SiriusViewpointHelper {
 		if (v != null)
 			return Collections.unmodifiableList(v.getOwnedRepresentations());
 		else 
-//			throw new RuntimeException("Couldn't find the import of the resource: " + resource.getURI());
 			return null;
 	}
 	
@@ -287,15 +276,6 @@ public class SiriusViewpointHelper {
 		return result;
 	}
 
-	//FIXME duplacate code (see comment below)
-//	public static List<NodeMapping> getBorderedNode(NodeMapping node) {
-//		List<NodeMapping> result = new BasicEList<NodeMapping>();
-//		for (NodeMapping borderedNodeMapping : node.getBorderedNodeMappings())
-//			if (! result.contains(borderedNodeMapping))
-//				result.add(borderedNodeMapping);	
-//		return result;
-//	}
-	
 	public static  List<NodeMapping> getBorderedNodes(NodeMapping node){
 		List<NodeMapping> result = new BasicEList<NodeMapping>();
 		for (NodeMapping borderedNodeMapping : node.getBorderedNodeMappings())

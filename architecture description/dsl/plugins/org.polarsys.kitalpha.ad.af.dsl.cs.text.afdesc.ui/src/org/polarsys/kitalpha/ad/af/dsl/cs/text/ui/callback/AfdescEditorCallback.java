@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -82,11 +82,6 @@ public class AfdescEditorCallback extends NatureAddingEditorCallback {
 		if (this.currentEditor != editor)
 			throw new IllegalStateException(Messages.AfdescEditorCallback_MultipleInstancesError);
 		
-		/**
-		 * FIXME This commented due to migration to mars. Ensure that the
-		 * modification work finely at the end of migration on initializrDirtyStateSupport(currentEditor)
-		 */
-//		editorSupport.initializeDirtyStateSupport(this);
 		editorSupport.initializeDirtyStateSupport(currentEditor);
 		IResource resource = editor.getResource();
 		if (resource!=null && !toggleNature.hasNature(resource.getProject()) && resource.getProject().isAccessible() && !resource.getProject().isHidden()) {
@@ -98,11 +93,6 @@ public class AfdescEditorCallback extends NatureAddingEditorCallback {
 	public void beforeDispose(XtextEditor editor) {
 		if (this.currentEditor != editor)
 			throw new IllegalStateException(Messages.AfdescEditorCallback_MultipleInstancesError);
-		/**
-		 * FIXME This commented due to migration to mars. Ensure that the
-		 * modification work finely at the end of migration on removeDirtyStateSupport(currentEditor)
-		 */
-//		editorSupport.removeDirtyStateSupport(this);
 		editorSupport.removeDirtyStateSupport(currentEditor);
 		this.currentEditor = null;
 	}
@@ -111,22 +101,12 @@ public class AfdescEditorCallback extends NatureAddingEditorCallback {
 	public boolean onValidateEditorInputState(XtextEditor editor) {
 		if (this.currentEditor != editor)
 			throw new IllegalStateException(Messages.AfdescEditorCallback_MultipleInstancesError);
-		/**
-		 * FIXME This commented due to migration to mars. Ensure that the
-		 * modification work finely at the end of migration on isEditingPossible(currentEditor)
-		 */
-//		return editorSupport.isEditingPossible(this);
 		return editorSupport.isEditingPossible(currentEditor);
 	}
 
 	@Override
 	public void beforeSetInput(XtextEditor editor) {
 		if (this.currentEditor != null) {
-			/**
-			 * FIXME This commented due to migration to mars. Ensure that the
-			 * modification work finely at the end of migration on removeDirtyStateSupport(currentEditor)
-			 */
-//			editorSupport.removeDirtyStateSupport(this);
 			editorSupport.removeDirtyStateSupport(currentEditor);
 		}
 	}
@@ -136,11 +116,6 @@ public class AfdescEditorCallback extends NatureAddingEditorCallback {
 		if (this.currentEditor != null) {
 			if (this.currentEditor != editor)
 				throw new IllegalStateException(Messages.AfdescEditorCallback_MultipleInstancesError);
-			/**
-			 * FIXME This commented due to migration to mars. Ensure that the
-			 * modification work finely at the end of migration on initializrDirtyStateSupport(currentEditor)
-			 */
-//			editorSupport.initializeDirtyStateSupport(this);
 			editorSupport.initializeDirtyStateSupport(currentEditor);
 		} else {
 			this.currentEditor = editor;
@@ -222,11 +197,6 @@ public class AfdescEditorCallback extends NatureAddingEditorCallback {
 		} else {
 			synchronizing = false;
 		}
-		/**
-		 * FIXME This commented due to migration to mars. Ensure that the
-		 * modification work finely at the end of migration on markEditorClean(currentEditor)
-		 */
-//		editorSupport.markEditorClean(this);
 		editorSupport.markEditorClean(currentEditor);
 	}
 	

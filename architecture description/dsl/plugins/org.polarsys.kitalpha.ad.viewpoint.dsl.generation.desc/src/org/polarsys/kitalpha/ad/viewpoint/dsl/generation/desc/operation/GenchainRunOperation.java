@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -49,7 +49,6 @@ public class GenchainRunOperation extends AbstractGenerationOperation implements
 	
 	public GenchainRunOperation(String projectName, String ecoreModelName, String modelsFolder) {
 		super(projectName, ecoreModelName, modelsFolder);
-//		GenerationEventManager.getInstance().addGenerationListener(new ViewpointGenerationListener4Feature());
 		GenerationEventManager.getInstance().addGenerationListener(this);
 	}
 	
@@ -106,7 +105,6 @@ public class GenchainRunOperation extends AbstractGenerationOperation implements
 				createFcore(generationChain, fcoreOutputPath, _monitor);
 				setupGeneratedProject(fcoreProjectName, fcoreRelativePath);
 				set = runFcore(fcoreOutputPath);
-//				generateFeaturePlugin(set, generationChain, _monitor);
 			} catch (CoreException e) {
 				e.printStackTrace();
 			}

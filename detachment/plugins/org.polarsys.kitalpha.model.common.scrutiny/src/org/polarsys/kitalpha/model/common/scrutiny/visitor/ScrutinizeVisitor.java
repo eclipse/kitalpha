@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -52,8 +52,7 @@ public class ScrutinizeVisitor extends EObjectVisitor {
 					 * This is done, because the detachment find some unknown references
 					 * in capella ide caused by malformed odesigns
 					 */
-					//if (!resource.getURI().isPlatformPlugin())
-						iFinder.findIn(resource);
+					iFinder.findIn(resource);
 				}
 			}
 		}
@@ -73,8 +72,7 @@ public class ScrutinizeVisitor extends EObjectVisitor {
 				 * FIXME: cf. Fixme in visited(Resource) method above
 				 */
 				for (IScrutinize iFinder : finders) {
-					//if (eObject.eResource() != null && !eObject.eResource().getURI().isPlatformPlugin())
-						iFinder.findIn(eObject);
+					iFinder.findIn(eObject);
 				}
 			}
 		}

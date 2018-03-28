@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -212,7 +212,7 @@ public class VpdiagramScopeHelper {
 							return handleExternalLocalAssociation(d, localDomain_class.getClass_(), eClass);
 						}
 						
-						return d.getEObjectOrProxy() instanceof ElementExtension; // d.getEObjectOrProxy() instanceof EReference;
+						return d.getEObjectOrProxy() instanceof ElementExtension; 
 					}
 
 					if (container_domain_class instanceof LocalClass){
@@ -226,8 +226,7 @@ public class VpdiagramScopeHelper {
 						}
 
 						if (domain_class instanceof ExternalClass){
-//							ExternalClass externalDomainClass = (ExternalClass)domain_class;
-							return d.getEObjectOrProxy() instanceof ElementExtension; // d.getEObjectOrProxy() instanceof EReference;// && ProjectUtil.areInSameProject(context, d.getEObjectOrProxy()); //handleLocalExternalAssociations(d, externalDomainClass, containerLocalDomain_class);
+							return d.getEObjectOrProxy() instanceof ElementExtension; 
 						}
 					}
 				}

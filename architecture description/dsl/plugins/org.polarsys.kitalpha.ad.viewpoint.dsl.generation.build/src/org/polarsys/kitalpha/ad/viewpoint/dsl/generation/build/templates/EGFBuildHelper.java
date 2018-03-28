@@ -106,17 +106,6 @@ public class EGFBuildHelper {
 		
 		SCM scm = null;
 		
-		//create repository Location
-//		if (protocol.contains("svn")){ //$NON-NLS-1$
-//			scm = BuildscmFactory.eINSTANCE.createSVN();
-//		} else {
-//			//It is git
-//			scm = BuildscmFactory.eINSTANCE.createGIT();
-//		}
-//		
-//		mainJob.setScms(scm);
-		
-		
 		//create hudson deployment
 		if (conf.iscanManageCronTriggers() || conf.iscanManageGenerationLocation() || conf.iscanManageHudsonProperties()
 				|| conf.iscanManageSCMTriggers() ||  conf.iscanManageUsers()){
@@ -408,9 +397,6 @@ public class EGFBuildHelper {
 
 					gitLocation.setProtocol(GITProtocol.HTTP);
 
-//				if (scm instanceof GIT)
-//					((GIT)scm).getLocations();
-				
 				gitGenerationLocation.setGitLocation(gitLocation);
 
 				break;

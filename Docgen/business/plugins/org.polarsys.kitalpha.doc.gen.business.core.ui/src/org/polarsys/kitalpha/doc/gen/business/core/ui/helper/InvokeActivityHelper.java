@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -91,12 +91,6 @@ public class InvokeActivityHelper {
 				try {
 					ps.busyCursorWhile(new IRunnableWithProgress() {
 						public void run(IProgressMonitor monitor) {
-							// ... do some long running task
-
-							// Job job = new
-							// Job(Messages.InvokeActivityHelper_HTML_Documentation_Generation)
-							// {
-							// protected IStatus run(IProgressMonitor monitor) {
 							try {
 								MonitorServices.initMonitor(monitor);
 								activityManager.invoke(monitor);
@@ -104,20 +98,12 @@ public class InvokeActivityHelper {
 								MonitorServices.dispose();
 							} catch (Exception e) {
 								EGFPatternPlugin.getDefault().logError(e);
-								// return Status.CANCEL_STATUS;
 							}
-							// return Status.OK_STATUS;
-							// }
-							// };
-							// job.setUser(true);
-							// job.schedule();
 						}
 					});
 				} catch (InvocationTargetException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
@@ -134,7 +120,6 @@ public class InvokeActivityHelper {
 		final IActivityManager activityManager = producer
 				.createActivityManager(activity);
 		activityManager.initializeContext();
-//		IWorkbench wb = PlatformUI.getWorkbench();
 
 		try {
 			MonitorServices.initMonitor(monitor);
@@ -180,8 +165,6 @@ public class InvokeActivityHelper {
 	public static Activity getActivity(URI activityURI) {
 		EditingDomain editingDomain = getEditingDomain();
 		ResourceSet rs = editingDomain.getResourceSet();
-		// Update : do I need to do this
-		// rs.setURIConverter(EGFCorePlugin.getPlatformURIConverter());
 		return (Activity) rs.getEObject(activityURI, true);
 	}
 

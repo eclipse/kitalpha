@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2013 IBM Corporation.
+ * Copyright (c) 2013, 2018 IBM Corporation.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -196,29 +196,6 @@ public abstract class AbstractExampleWizard extends Wizard
 						parentFile.mkdirs();
 					}
 
-					// TODO Figure out why it was necessary to try to convert the encoding in the zip file
-					/*Path path = new Path(file.getPath());
-					if (path.getFileExtension().equals("java")) { //$NON-NLS-1$
-						InputStreamReader is = null;
-						OutputStreamWriter os = null;
-
-						try {
-							is = new InputStreamReader(zipFileStream, "ISO-8859-1"); //$NON-NLS-1$
-							os = new OutputStreamWriter(new FileOutputStream(file),
-								ResourcesPlugin.getEncoding());
-							char[] buffer = new char[102400];
-							while (true) {
-								int len = is.read(buffer);
-								if (zipFileStream.available() == 0)
-									break;
-								os.write(buffer, 0, len);
-							}
-						} finally {
-							if (null != os) {
-								os.close();
-							}
-						}
-					} else {*/
 						OutputStream os = null;
 
 						try {
@@ -237,7 +214,6 @@ public abstract class AbstractExampleWizard extends Wizard
 								os.close();
 							}
 						}
-					//}
 				}
 				
 				zipFileStream.closeEntry();

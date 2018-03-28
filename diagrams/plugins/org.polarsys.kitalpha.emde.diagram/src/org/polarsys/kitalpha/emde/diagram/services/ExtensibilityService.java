@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -245,8 +245,6 @@ public class ExtensibilityService {
 		{
 			Collection<EObject> result = new UniqueEList<EObject>();
 			StringTokenizer stringTokenizer = new StringTokenizer(entry.getValue());
-			// Resource resource = entry.eResource();
-			// URI uriResource = resource.getURI();
 			if (editingDomain == null)
 				editingDomain = EditingDomainFactoryService.INSTANCE.getEditingDomainFactory().createEditingDomain();
 			ResourceSet resourceSet = editingDomain.getResourceSet();
@@ -298,14 +296,8 @@ public class ExtensibilityService {
 							ReadOnlyResourceManager.handler(diagramEditPart, entry.eResource(), object.eResource());
 						}
 					} catch (Exception e) {
-						//FIXME mhelleboid : fail on G4 version, maybe also on G2/G3 ones
 						e.printStackTrace();
 					}
-				} else {
-					// String componentName = uri.fragment().replace("//", "");
-					// EClass eClass = EcoreFactory.eINSTANCE.createEClass();
-					// eClass.setName(componentName);
-					// result.add(eClass);
 				}
 			}
 			return result;

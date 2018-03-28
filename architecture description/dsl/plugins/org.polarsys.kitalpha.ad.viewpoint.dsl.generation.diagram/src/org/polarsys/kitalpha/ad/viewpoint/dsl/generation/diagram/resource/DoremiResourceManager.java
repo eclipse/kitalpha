@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014-2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -142,7 +142,6 @@ public class DoremiResourceManager {
 			for (String extension : taExtensions) 
 			{
 				builder.append(" ").append(extension);
-//				result += " " + extension;
 			}
 			result = result + builder.toString();
 		}
@@ -167,7 +166,6 @@ public class DoremiResourceManager {
 	 * @return a {@link String} value containing additional model files extensions
 	 */
 	private static String computeOtherFileExtensions(){
-//		String result = "";
 		StringBuilder builder = new StringBuilder();
 		org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint viewpoint = ViewpointResourceProviderRegistry.getInstance().getViewpoint();
 		final EList<Aspect> vpAspects = viewpoint.getVP_Aspects();
@@ -185,7 +183,6 @@ public class DoremiResourceManager {
 						final EObject eContainer = extentedDiagram.eContainer();
 						if (eContainer instanceof Viewpoint)
 						{
-//							result += " " + ((Viewpoint) eContainer).getModelFileExtension();
 							builder.append(" ").append(((Viewpoint) eContainer).getModelFileExtension());
 						}
 					}
@@ -211,7 +208,6 @@ public class DoremiResourceManager {
 		for (String string : uniqExtensions) 
 		{
 			builder.append(string).append(" ");
-//			uniqExt+= string + " ";
 		}
 		
 		return uniqExt;

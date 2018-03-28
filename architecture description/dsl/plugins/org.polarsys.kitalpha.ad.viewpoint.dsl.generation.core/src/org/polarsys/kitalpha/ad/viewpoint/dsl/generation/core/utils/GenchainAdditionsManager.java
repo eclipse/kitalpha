@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -98,27 +98,4 @@ public class GenchainAdditionsManager {
 		}
 	}
 
-//************************************************************************************	
-//  !!!!!!!!!!!!!!!!!!!!!!!!!!! Never used methods !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//************************************************************************************	
-//	public List<String> getWSPluginsNames(){
-//		 List<String> plugList = new ArrayList<String>();
-//        for (IPluginModelBase iPluginModelBase : PluginRegistry.getWorkspaceModels()) 
-//		  {
-//            plugList.add(iPluginModelBase.getBundleDescription().getSymbolicName());
-//        }
-//        
-//		return plugList;
-//	}
-//
-//	public List<String> getWSFeaturesNames(){
-//		List<String> featList = new ArrayList<String>();
-//        for (IFeatureModel iFeatureModel : 
-//				PDECore.getDefault().getFeatureModelManager().getWorkspaceModels()) 
-//		  {
-//            featList.add(iFeatureModel.getFeature().getId());
-//        }
-//		return featList;
-//	} 
-	
 }

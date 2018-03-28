@@ -1,9 +1,14 @@
-/**
- * <copyright>
- * </copyright>
+/*******************************************************************************
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
  *
- * $Id$
- */
+ * Contributors:
+ *    Thales Global Services S.A.S - initial API and implementation
+ *******************************************************************************/
+
 package ecoreadvancedalloc.presentation;
 
 
@@ -463,8 +468,6 @@ public class EcoreadvancedallocEditor
 		new IResourceChangeListener() {
 			public void resourceChanged(IResourceChangeEvent event) {
 				// Only listening to these.
-				// if (event.getType() == IResourceDelta.POST_CHANGE)
-				{
 					IResourceDelta delta = event.getDelta();
 					try {
 						class ResourceDeltaVisitor implements IResourceDeltaVisitor {
@@ -531,7 +534,6 @@ public class EcoreadvancedallocEditor
 					catch (CoreException exception) {
 						EcoreadvancedallocEditorPlugin.INSTANCE.log(exception);
 					}
-				}
 			}
 		};
 

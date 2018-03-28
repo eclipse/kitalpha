@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -49,7 +49,6 @@ import org.eclipse.ui.PlatformUI;
 public class ResourceHelper {
 	private static final String SUFFIX = ",\\";
 	private static final String BUILD_PROPERTIES = "build.properties";
-	// private static final Path SRC_PATH = new Path("src");
 	private static final NullProgressMonitor NULL_PROGRESS_MONITOR = new NullProgressMonitor();
 	private static final String SLASH = "/";
 	private static final String PREFIX = "source.. =";
@@ -110,9 +109,6 @@ public class ResourceHelper {
 		Object context = (null == shell) ? IWorkspace.VALIDATE_PROMPT : shell;
 		// Check given files.
 		result = ResourcesPlugin.getWorkspace().validateEdit(files, context);
-//		if (!result.isOK()) {
-//			System.out.println(result.getMessage());
-//		}
 		return result;
 
 	}
@@ -235,7 +231,6 @@ public class ResourceHelper {
 			modelFolder.create(true, true, null);
 			createManifest(metaFolder, project.getName());
 			createBuildProperties(project);
-			// generateActivator(project);
 		} else {
 			setupJava(project, false);
 		}
@@ -289,8 +284,6 @@ public class ResourceHelper {
 		contents.append("Bundle-Version: 1.0.0.qualifier\n");
 		contents.append("Bundle-RequiredExecutionEnvironment: JavaSE-1.6\n");
 		contents.append("Bundle-Vendor: Polarsys\n");
-		// contents.append("Bundle-Activator: "
-		// + metaFolder.getProject().getName() + ".Activator");
 		contents.append("\n");
 		manifest.create(
 				new ByteArrayInputStream(contents.toString().getBytes()),

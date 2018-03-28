@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -344,8 +344,6 @@ public final class CodeManagerLauncher implements ICodeManagerWorkflowConstants 
 				.put(Resource.Factory.Registry.DEFAULT_EXTENSION,
 						new XMIResourceFactoryImpl());
 
-		// TODO remove code.
-		// String modelpath = business_model.getURI().lastSegment();
 		String modelname = business_model.getURI().toPlatformString(true);
 		// Get the URI of the model file.
 		URI fileURI = URI.createPlatformResourceURI(modelname.replaceAll(

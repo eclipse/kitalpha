@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -13,7 +13,6 @@ package org.polarsys.kitalpha.ad.af.dsl.services.cs.text.wizards.impl;
 
 import java.util.regex.Pattern;
 
-import org.eclipse.core.runtime.IPath;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
@@ -43,15 +42,7 @@ public class AfdslFileCreationPage extends WizardNewFileCreationPage {
 		if (fileName.length() > 0 && fileMatches) {
 			String shortName = fileName.substring(0, fileName.indexOf("."));
 			AfdslFileSecondPage secondPage = ((AfdslFileWizard) getWizard()).getSecondPage();
-//			AfdslFileThirdPage thirdPage = ((AfdslFileWizard) getWizard()).getThirdPage();
 			secondPage.setShortName(shortName);
-//			AfdslFileCreationPage firstPage = ((AfdslFileWizard) getWizard()).getFirstPage();
-//			IPath containerFullPath = firstPage.getContainerFullPath();
-//			String[] segments = containerFullPath.segments();
-//			String projectName = segments[0];
-//			String rootProjectName = projectName.substring(0, projectName.lastIndexOf("."));
-//			thirdPage.setRootProjectName(rootProjectName);
-//			thirdPage.setProjectName(projectName);
 		}
 		setPageComplete(validatePage());
 	}

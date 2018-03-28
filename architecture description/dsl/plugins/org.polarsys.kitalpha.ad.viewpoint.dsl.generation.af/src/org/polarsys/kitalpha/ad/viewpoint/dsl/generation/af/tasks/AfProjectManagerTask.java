@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -48,7 +48,6 @@ public class AfProjectManagerTask implements ITaskProduction {
 			// Register the created project in the output list contract.
 			// This is done in order to add the project in the AF feature.
 			ArrayList<String> prjList = new ArrayList<String>();
-//			IProject afProject = AfProjectManager.INSTANCE.getProject(); 
 			prjList.add(afProject.getName());
 			productionContext.setOutputValue(AfConstants.CONTRACT_PROJECT_LIST, prjList);
 			

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -75,8 +75,6 @@ public class ReverseUtil {
 			EPackage ePackage = EPackageRegistryImpl.INSTANCE.getEPackage(nsUri);
 			if (ePackage != null)
 				result.add(ePackage);
-//			else
-//				throw new RuntimeException("There is no EPackage with nsuri = " + nsUri);
 		}
 		return result;
 	}
@@ -127,8 +125,6 @@ public class ReverseUtil {
 	public static boolean isGeneratedInheritance(Class vpClass, EClass superClass, Resource resource) {
 		// Check if the EClass in an EMDE EClass
 		if (EcoreElementsUtil.areEClassesTheSame(superClass, EmdePackage.eINSTANCE.getElementExtension(), resource))
-//		if (superClass.getEPackage().getNsURI().equals(EmdePackage.eINSTANCE.getNsURI()) 
-//				&& superClass.getClassifierID() == EmdePackage.ELEMENT_EXTENSION)
 			return true;
 		
 		// check if the EClass is a default semantic EClass of the target application 

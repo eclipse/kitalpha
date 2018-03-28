@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -65,9 +65,6 @@ public class generateEditToolsIconsTask extends TaskProductionAdapter {
 		GenPackage genPackage =  genmodelProvider.getGenPackage();
 
 		String dslvpProjectName = viewpoint.eResource().getURI().segment(1);
-
-		//		GenPackage genPackage = GenModelUtility.INSTANCE.genPackage;
-		//		GenModel genModel = GenModelUtility.INSTANCE.genModel;
 
 		// This is an adapted java code of the method doGenerate defined in the Pattern CreateChildIconForGenClass (plug-in : org.eclipse.egf.emf.pattern.edit)
 		for (GenClass genClass : genPackage.getGenClasses())

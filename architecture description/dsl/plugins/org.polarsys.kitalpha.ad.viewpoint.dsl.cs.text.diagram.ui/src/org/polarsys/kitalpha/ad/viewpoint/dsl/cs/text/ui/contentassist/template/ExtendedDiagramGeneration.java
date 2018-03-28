@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -49,7 +49,6 @@ public class ExtendedDiagramGeneration implements IGenerationStrategy {
 		createContainer_import(appendable, vpClass, diagramTextAcceleration);
 		if (diagramTextAcceleration.isRootNodesEmpty()){
 			//Create node
-			//createNode_import(appendable, vpClass, diagramTextAcceleration);
 			createNode(appendable, vpClass, diagramTextAcceleration);
 		}
 		diagramTextAcceleration.generateNodesText();
@@ -84,7 +83,6 @@ public class ExtendedDiagramGeneration implements IGenerationStrategy {
 	private void createNode(final TreeAppendable appendable, final Class domainContext, final DiagramTextAcceleration acceleration){
 		appendable.append("Node ").append(domainContext.getName()).append("{");
 		appendable.increaseIndentation().newLine();
-		//		appendable.append("import: ").append("${importNode:CrossReference('Node.imports')}").append(" //import a node");
 		appendable.newLine();
 		appendable.append("domain-context: ").append(qualifiedNameProvider.apply(domainContext).toString());
 		appendable.newLine();
@@ -103,7 +101,6 @@ public class ExtendedDiagramGeneration implements IGenerationStrategy {
 	private void createContainer(final TreeAppendable appendable, final Class domainContext, final DiagramTextAcceleration acceleration){
 		appendable.append("Container ").append(domainContext.getName()).append("{");
 		appendable.increaseIndentation().newLine();
-		//		appendable.append("import: ").append("${importContainer:CrossReference('Container.imports')}").append(" //import a container");
 		appendable.newLine();
 		appendable.append("domain-context: ").append(qualifiedNameProvider.apply(domainContext).toString());
 		appendable.newLine();

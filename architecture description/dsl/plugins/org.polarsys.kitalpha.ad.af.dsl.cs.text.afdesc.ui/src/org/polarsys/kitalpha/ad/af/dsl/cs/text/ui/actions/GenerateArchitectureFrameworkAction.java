@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -20,7 +20,6 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 
 import com.google.inject.Inject;
-//import org.polarsys.kitalpha.ad.af.dsl.servicies.action.popup.GenerateArchitectureFramework;
 
 /**
  * 
@@ -34,18 +33,14 @@ public class GenerateArchitectureFrameworkAction implements IEditorActionDelegat
 	
 	ISelection currentSelection;
 
-	//GenerateArchitectureFramework delegate;
-	
 	public GenerateArchitectureFrameworkAction() {
 		super();
-		//delegate = new GenerateArchitectureFramework();	
 	}
 		
 	public void selectionChanged(IAction action, ISelection selection) {
 		if (currentEditor != null && currentEditor instanceof XtextEditor) {
 			IFile file = (IFile) currentEditor.getEditorInput().getAdapter(IFile.class);
 			currentSelection = new StructuredSelection(file);
-			//delegate.selectionChanged(action, currentSelection);
 		}
 	}
 
@@ -54,10 +49,8 @@ public class GenerateArchitectureFrameworkAction implements IEditorActionDelegat
 			if (currentEditor instanceof XtextEditor) {
 				IFile file = (IFile) currentEditor.getEditorInput().getAdapter(IFile.class);
 				currentSelection = new StructuredSelection(file);
-				//delegate.selectionChanged(action, currentSelection);
 			}	
 		}
-		//delegate.run(action);
 	}
 
 	public void setActiveEditor(IAction action, IEditorPart targetEditor) {

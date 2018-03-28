@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -155,9 +155,6 @@ public class ReferenceUtil {
 		target.getParents().clear();
 		EList<org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint> parents = viewpoint.getParents();
 		for (org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint x : parents) {
-			//					URI uri = EcoreUtil.getURI(x);
-			//					URI alterEgo = uri.trimFileExtension().trimFileExtension().appendFileExtension(FileExtension.VPDESC_EXTENSION);
-			//					EObject eObject = resourceSet.getEObject(alterEgo, true);
 			target.getParents().add(computeModelViewpoint(x, resourceSet));
 		}
 
@@ -178,18 +175,6 @@ public class ReferenceUtil {
 		}
 		
 		target.setViewpointResources(null);
-		
-//		//Use anyEMF
-//		initModelEMFUsedResources(viewpoint.getUseAnyEMFResource(), target);
-//		
-//		//Use diagram
-//		initModelUsedDiagram(viewpoint.getUseDiagramResource(), target);
-//		
-//		//Use workspace
-//		initUsedWorkspaceResource(viewpoint.getUseWorkspaceResource(), target);
-//		
-//		//Use fileSystem
-//		initUseFileSystemResource(viewpoint.getUseFSResource(), target);
 		
 		setViewpointUsedResource(viewpoint, target);
 		
@@ -333,7 +318,6 @@ public class ReferenceUtil {
 			target.setViewpointResources(vr);
 		}
 		
-		//clearEMFResources(vr);
 		for (String uri : useAnyEMFResource) {
 			if (uri != null && !uri.isEmpty())
 				initModelEMFUsedResources(uri.trim(), target);

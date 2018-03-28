@@ -32,7 +32,6 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
-
 import org.polarsys.kitalpha.cadence.core.api.CadenceRegistry;
 import org.polarsys.kitalpha.cadence.core.api.parameter.GenericParameter;
 import org.polarsys.kitalpha.cadence.ui.Activator;
@@ -89,7 +88,6 @@ public class CadenceTab extends AbstractLaunchConfigurationTab {
 		tabFolder.setLayoutData(gd);
 		
 		
-		
 		workflowElements = sort(workflowElements);
 		
 		for (int i = workflowElements.length - 1; i > -1; i--) {
@@ -105,12 +103,6 @@ public class CadenceTab extends AbstractLaunchConfigurationTab {
 		}
 		
 		tabFolder.setSelection(0);
-		
-		
-		
-		
-		
-		
 	}
 
 	/**
@@ -132,7 +124,6 @@ public class CadenceTab extends AbstractLaunchConfigurationTab {
 	}
 
 	protected void initialize() {
-		// TODO Auto-generated method stub
 
 	}
 
@@ -155,7 +146,6 @@ public class CadenceTab extends AbstractLaunchConfigurationTab {
 					new HashMap<String, String>());
 			setParameters(map);
 		} catch (CoreException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -225,28 +215,5 @@ public class CadenceTab extends AbstractLaunchConfigurationTab {
 		description.setLayoutData(gd);
 
 	}
-
-	/*private class CadenceExpandListener implements ExpandListener {
-
-		*//**
-		 * Default Constructor
-		 *//*
-		public CadenceExpandListener() {
-			// default
-		}
-
-		public void itemCollapsed(ExpandEvent e) {
-			description.clearSelection();
-			description.setVisible(false);
-		}
-
-		public void itemExpanded(ExpandEvent e) {
-			ExpandItem item = (ExpandItem) e.item;
-			String message = ((CadenceItem) item.getData()).getDescription();
-			description.setText(message);
-			description.setVisible(true);
-		}
-
-	}*/
 
 }

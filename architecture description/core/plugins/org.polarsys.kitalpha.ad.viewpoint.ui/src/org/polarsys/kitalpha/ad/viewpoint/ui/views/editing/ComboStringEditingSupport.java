@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -62,12 +62,6 @@ public class ComboStringEditingSupport extends AbstractStringEditingSupport {
 			CCombo combo = (CCombo) cellEditor.getControl();
 			String text = combo.getText();
 			super.doSetValue(element, text);
-			// List<String> items = new ArrayList<String>();
-			// items.addAll(Arrays.asList(cellEditor.getItems()));
-			// items.add(text);
-			// String[] array = items.toArray(new String[items.size()]);
-			// Arrays.sort(array);
-			// setItems(array);
 		}
 	}
 

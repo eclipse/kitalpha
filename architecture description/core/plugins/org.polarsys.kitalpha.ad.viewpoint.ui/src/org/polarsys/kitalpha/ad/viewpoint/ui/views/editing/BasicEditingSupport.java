@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,7 +25,6 @@ public abstract class BasicEditingSupport extends EditingSupport {
 
 	@Override
 	protected boolean canEdit(Object element) {
-		// return !readOnly;
 		if (modelManager == null)
 			return false;
 		return !modelManager.getResourceManager().isReadOnly() && modelManager.isRemovable((ViewpointElement) element);
@@ -42,7 +41,6 @@ public abstract class BasicEditingSupport extends EditingSupport {
 		if (oldValue != null && oldValue.equals(value))
 			return;
 		doSetValue(element, value);
-		// getViewer().update(element, null);
 		getModelManager().getResourceManager().saveModel();
 	}
 

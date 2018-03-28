@@ -66,12 +66,6 @@ public class NewDSLVpProjectSecondPage extends WizardPage {
 	@Override
 	public void setVisible(boolean visible) 
 	{
-//		if (! visible)
-//		{
-//			vpRootProjectNameText.setText(""); //$NON-NLS-1$
-//			vpDescriptionProjectNameText.setText(""); //$NON-NLS-1$
-//			return;
-//		}
 		
 		super.setVisible(visible);
 		boolean dataChanged = false;

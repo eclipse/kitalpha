@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -246,17 +246,9 @@ public class VpDiagramHelper {
 				}
 			}
 			
-			//EList<EClass> superTypes = eClass.getEAllSuperTypes();
-			
 		} catch (ExecutionException e) {
 			e.printStackTrace();
 		}
-//		EList<EClass> superTypes = eClass.getEAllSuperTypes();
-//		
-//		result.addAll(superTypes);
-//		for (EClass eClass2 : superTypes) {
-//			collectHierarchyTypes(eClass2, result);
-//		}
 	}
 
 	
@@ -737,10 +729,6 @@ public class VpDiagramHelper {
 			return EcoreUtil.equals(diagramDescription, diagDesc);
 		}
 
-		//DiagramExtension diagramExtension = (DiagramExtension)eObject;
-		//DiagramDescription diagDesc = diagramExtension.getExtented_diagram();
-		//EList<ContainerMapping> mappings = diagDesc.getAllContainerMappings();
-		//return mappings.contains(eObjectOrProxy);
 	}
 
 
@@ -754,11 +742,6 @@ public class VpDiagramHelper {
 			DiagramDescription diagramDescription = getDiagramDescription((NodeMapping) eObjectOrProxy);
 			return EcoreUtil.equals(diagramDescription, diagDesc);
 		}
-		//DiagramExtension diagramExtension = (DiagramExtension)eObject;
-		//DiagramDescription diagDesc = diagramExtension.getExtented_diagram();
-		//EList<NodeMapping> nodes = diagDesc.getAllNodeMappings();
-		//
-		//return nodes.contains(eObjectOrProxy);
 	}
 
 

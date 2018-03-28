@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -229,8 +229,6 @@ public class HTMLDocumentationGenerationWizardPage extends WizardPage {
 		if (selection != null && selection.isEmpty() == false
 				&& selection instanceof IStructuredSelection) {
 			IStructuredSelection ssel = (IStructuredSelection) selection;
-			// if (ssel.size() > 1)
-			// return;
 			Object obj = ssel.getFirstElement();
 			
 			if (obj instanceof EObject)
@@ -273,7 +271,6 @@ public class HTMLDocumentationGenerationWizardPage extends WizardPage {
 			
 		}
 
-		// modelURIText.setText("new_file.mpe");
 	}
 
 	private void modelSelection() {
@@ -282,9 +279,6 @@ public class HTMLDocumentationGenerationWizardPage extends WizardPage {
 		if (dialog.open() == LoadResourceDialog.OK) {
 			String uriText = dialog.getURIText();
 			if (uriText != null) {
-				// List<URI> urIs = dialog.getURIs();
-				// urIs.addAll(this.modelURIList);
-				// this.modelURIList = urIs;
 				modelURIText.setText(uriText);
 			}
 		}
@@ -363,8 +357,4 @@ public class HTMLDocumentationGenerationWizardPage extends WizardPage {
 				return "";
 		}
 	}
-
-	// public List<URI> getModelURIList() {
-	// return modelURIList;
-	// }
 }

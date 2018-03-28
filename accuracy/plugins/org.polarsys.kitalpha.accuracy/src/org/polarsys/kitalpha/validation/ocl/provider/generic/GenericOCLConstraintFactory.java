@@ -249,7 +249,6 @@ public class GenericOCLConstraintFactory extends GenericConstraintFactory {
 
 		URL url = provider.getUrlFromPath(oclFilePath);
 
-		// URL url = bundle.getEntry(oclFilePath);
 		if (null != url) {
 			try {
 				InputStream input = url.openStream();

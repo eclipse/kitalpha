@@ -144,7 +144,6 @@ public class AFIntegrationManager {
 				if (list != null && ! list.isEmpty())
 				{
 					PDEUtility.updateRequiredBundles(af_project, list, null);
-//					PDEUtility.updateExportNoInternalPackage(af_project, null);
 				}
 			}
 		}

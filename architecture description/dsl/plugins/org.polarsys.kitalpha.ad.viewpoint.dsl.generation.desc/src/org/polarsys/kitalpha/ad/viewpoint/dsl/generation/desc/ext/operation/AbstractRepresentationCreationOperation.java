@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -279,7 +279,6 @@ public abstract class AbstractRepresentationCreationOperation extends WorkspaceM
 			session.save(monitor);
 			
 			// CLose session
-//			session.close(monitor);
 		}
 	}
 	
@@ -588,7 +587,7 @@ public abstract class AbstractRepresentationCreationOperation extends WorkspaceM
 	private Session createRepresentationFile(IProgressMonitor monitor){
 		monitor.subTask("create the representation model..."); //$NON-NLS-1$ 
 		/** Get the project containing the model**/
-		IProject project = this.representationProject; /*getRepresentationProject();*/
+		IProject project = this.representationProject; 
 		
 		/** Create the aird file and create a Session **/
 		Session session = SessionManager.INSTANCE.getSession(representationFileURI, new NullProgressMonitor());
@@ -643,10 +642,6 @@ public abstract class AbstractRepresentationCreationOperation extends WorkspaceM
 			}
 		}
 		
-//		if (modelingProject.some() == false && session != null)
-//		{
-//			convertToModelingProject(project);
-//		}
 		return session;
 	}
 	
@@ -803,23 +798,5 @@ public abstract class AbstractRepresentationCreationOperation extends WorkspaceM
 		
 		return project;
 	}
-	
-//	private static IProject convertToModelingProject(IProject project){
-//		try {
-//			if (project.hasNature(ModelingProject.NATURE_ID) == false)
-//			{
-//				IProjectDescription description = project.getDescription();
-//				String[] natures = description.getNatureIds();
-//				String[] newNatures = new String[natures.length + 1];
-//				System.arraycopy(natures, 0, newNatures, 0, natures.length);
-//				newNatures[natures.length] = ModelingProject.NATURE_ID;
-//				description.setNatureIds(newNatures);
-//				project.setDescription(description, null);
-//			}
-//		} catch (CoreException e) {
-//			e.printStackTrace();
-//		}
-//		return project;
-//	}
 	
 }

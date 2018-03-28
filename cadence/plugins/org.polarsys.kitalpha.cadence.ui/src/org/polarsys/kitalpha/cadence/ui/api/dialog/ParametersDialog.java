@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -46,24 +46,23 @@ import org.eclipse.ui.dialogs.SelectionDialog;
 public class ParametersDialog extends SelectionDialog {
 	
 
-	   private TableViewerColumn values;
-	    private Object container;
-	    private final IParameterManager manager;
-	    private Text descriptionArea, validityArea;
-	    
-	    
+    private TableViewerColumn values;
+    private Object container;
+    private final IParameterManager manager;
+    private Text descriptionArea, validityArea;
+    
+    
 
-		private TableViewer tableViewer;
-	
-	    
-	    private int widthInChars = 100;
-	   
-	    private int vwidthInChars = 10;
+	private TableViewer tableViewer;
 
-	    private int heightInChars = 50;
-	
-	//ITableEditingListener listener;
-	    EditingSupport edit;
+    
+    private int widthInChars = 100;
+   
+    private int vwidthInChars = 10;
+
+    private int heightInChars = 50;
+
+    EditingSupport edit;
 	private IStructuredContentProvider contentProvider;
 
 	private CellLabelProvider parameterLabelProvider;

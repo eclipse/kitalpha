@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -80,7 +80,6 @@ public class ExtractRepresentationSilentCommand {
 	}
 
 	public boolean execute() {
-//		closeRepresentations(representations);
 		final IRunnableWithProgress op = new DiagramFileCreationOperation();
 		boolean errorCatch = false;
 		errorCatch = createAIRDFile(op, errorCatch);
@@ -122,7 +121,6 @@ public class ExtractRepresentationSilentCommand {
 			 op.run(new NullProgressMonitor());
 		 } catch (final InterruptedException e) {
 			 errorCatch = true;
-			 // return false;
 		 } catch (final InvocationTargetException e) {
 			 Activator.getDefault().getLog().log(new Status(IStatus.ERROR, Activator.PLUGIN_ID,"Error creating aird session data", e.getTargetException())); //$NON-NLS-1$
 			 errorCatch = true;

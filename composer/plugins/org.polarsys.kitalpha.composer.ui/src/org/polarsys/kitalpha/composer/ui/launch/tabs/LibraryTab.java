@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,9 +9,6 @@
  *    Thales Global Services S.A.S - initial API and implementation
  *******************************************************************************/
 
-/**
- * 
- */
 package org.polarsys.kitalpha.composer.ui.launch.tabs;
 
 import org.eclipse.debug.core.ILaunchConfiguration;
@@ -85,10 +82,8 @@ public class LibraryTab extends AbstractLaunchConfigurationTab{
 	}
 
 	public void performApply(ILaunchConfigurationWorkingCopy configuration) {
-		//if(save){
-			libraryWidget.performApply(configuration);
-			missinglibraryWidget.performApply(configuration);		
-		//}
+		libraryWidget.performApply(configuration);
+		missinglibraryWidget.performApply(configuration);		
 	}
 
 	public void setDefaults(ILaunchConfigurationWorkingCopy configuration) {

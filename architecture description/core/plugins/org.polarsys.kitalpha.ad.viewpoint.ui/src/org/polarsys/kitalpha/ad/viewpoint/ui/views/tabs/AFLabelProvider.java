@@ -38,8 +38,6 @@ public abstract class AFLabelProvider extends LabelProvider implements ITableLab
 	public Image getColumnImage(Object element, int columnIndex) {
 		if (columnIndex == 0 && element instanceof ViewpointElement) {
 			ViewpointElement elt = (ViewpointElement) element;
-			// if (elt.getId() == null)
-			// return null;
 			ElementSet set = (ElementSet) elt.eContainer();
 			Viewpoint target = set.getTarget();
 			if (target == null) {

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014-2015 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -188,18 +188,6 @@ public class JavaElementHelper {
 		{
 			jeRootContainer = eObject;
 		}
-		
-//		switch (eClass.getClassifierID()) 
-//		{
-//			case VpdiagramPackage.HISTOGRAM_SECTION:
-//			case ExpressionPackage.EXPRESSION:
-//				jeRootContainer = eObject.eContainer().eContainer().eContainer();
-//				break;
-//				
-//			case VpdiagramPackage.CONDITION:
-//				jeRootContainer = eObject.eContainer().eContainer();
-//				break;
-//		}
 		return jeRootContainer;
 	}
 	

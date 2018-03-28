@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014-2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -87,7 +87,6 @@ public class GenerateDiagramsService{
 	// Ecore resource
 	private Resource resource;
 	private IPath path;
-//	private TransactionalEditingDomain editing_domain ;
 	private TransactionalEditingDomain editing_domain ;/*= EditingDomainService.getInstance().getEditingDomainProvider().getEditingDomain();*/
 	private Collection<Viewpoint> viewpoints = null;
 
@@ -185,14 +184,12 @@ public class GenerateDiagramsService{
 			localSession.save(_monitor);
 			if (! sessionWasOpen)
 			{
-//				unloadSessionResources(localSession);
 				localSession.close(_monitor);
 			}
 			
 			command.dispose();
 			createdRepresentations.clear();
 			stack.flush();
-//			return airdUri;
 			return fragmentUri;
 		} 
 		catch (Exception e) 
@@ -284,8 +281,6 @@ public class GenerateDiagramsService{
 	 * @return all representation targets.
 	 */
 	private Collection<DSemanticDiagram> getRepresentation(Resource airdResource) {
-//		Collection<DSemanticDiagram> result = new UniqueEList<DSemanticDiagram>();
-
 		EObject airdResourceRoot = airdResource.getContents().get(0);
 		if (airdResourceRoot instanceof DAnalysis) 
 		{
@@ -537,7 +532,6 @@ public class GenerateDiagramsService{
 	 */
 	private class AirdGenerationRecordingCommand extends RecordingCommand{
 		
-//		private TransactionalEditingDomain _editindDomain;
 		private Session _session;
 		private boolean _newAird;
 		private Collection<Resource> _semanticResources;
@@ -551,7 +545,6 @@ public class GenerateDiagramsService{
 											  Collection<Resource> semanticResources,
 											  IProgressMonitor monitor) {
 			super(editindDomain, "Diragms generation");
-//			_editindDomain = editindDomain;
 			_session = session;
 			_newAird = newAird;
 			_semanticResources = semanticResources;
@@ -573,12 +566,6 @@ public class GenerateDiagramsService{
 		public void dispose() {
 			_session = null;
 			_semanticResources.clear();
-			/*
-			 * FIXME manage clear of this list properly. 
-			 * Commented to avoid ConccurrentModificationException
-			 */
-//			_createdRepresentations.clear();
-//			_createdRepresentationDescriptors.clear();
 			_monitor = null;
 			super.dispose();
 		}
@@ -771,7 +758,6 @@ public class GenerateDiagramsService{
 		
 		private void refreshNewDiagram(final Session session, Collection<DRepresentation> representations) {
 			CompoundCommand compoundCommand = new CompoundCommand();
-//			Collection<DRepresentation> representations = DialectManager.INSTANCE.getAllRepresentations(session);
 
 			RefreshRepresentationsCommand refreshRepresentationsCommand = new RefreshRepresentationsCommand(editing_domain, _monitor, representations);
 			compoundCommand.append(refreshRepresentationsCommand);
@@ -785,7 +771,6 @@ public class GenerateDiagramsService{
 		
 		private void refreshNewDiagramDescriptors(final Session session, Collection<DRepresentationDescriptor> repDescriptors) {
 			CompoundCommand compoundCommand = new CompoundCommand();
-//			Collection<DRepresentation> representations = DialectManager.INSTANCE.getAllRepresentations(session);
 			
 			Collection<DRepresentation> representations = new ArrayList<DRepresentation>();
 			for (DRepresentationDescriptor descriptor : repDescriptors) 

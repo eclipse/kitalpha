@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -60,57 +60,4 @@ public class VpspecJavaValidator extends AbstractVpspecJavaValidator {
 			}	
 		}
 	}
-	
-	//TODO Fix the problem with reverse: uris are reversed as nsuri 
-//	@Check
-//	public void checkUsedModelExisting(org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint vp){
-//		EList<String> useAnyEMFResource = vp.getUseAnyEMFResource();
-//		
-//		for (String model : useAnyEMFResource) {
-//			if (!isModelExist(model)){
-//				error(Messages.bind(Messages.VpspecJavaValidator_NotExistingModel, model), VpspecPackage.Literals.VIEWPOINT__USE_ANY_EMF_RESOURCE, useAnyEMFResource.indexOf(model));
-//			}
-//		}
-//	}
-//	
-//	@Check
-//	public void checkUsedDiagramExisting(org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint vp){
-//		EList<String> usedDiagram = vp.getUseDiagramResource();
-//		
-//		for (String model : usedDiagram) {
-//			if (!isModelExist(model)){
-//				error(Messages.bind(Messages.VpspecJavaValidator_NotExistingDiagramModel, model), VpspecPackage.Literals.VIEWPOINT__USE_DIAGRAM_RESOURCE, usedDiagram.indexOf(model));
-//			}
-//		}
-//	}
-//
-//	private boolean isModelExist(String model) {
-//		model = trimQuotes(model);
-//		URI uri = URI.createURI(model);
-//		
-//		if (!uri.isPlatform())
-//			return false;
-//		
-//		if (uri.isPlatformResource()){
-//			String filePath = getFilePath(model);
-//			IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(filePath));
-//			return file.exists();
-//		}
-//		
-//		return uri.isPlatformPlugin();
-//	}
-//
-//	private static String RESOURCE_SEGMENT = "resource/";
-//	private static int SIZE = RESOURCE_SEGMENT.length();
-//	
-//	private String getFilePath(String model) {
-//		int index = model.indexOf("resource/");
-//		index += SIZE;
-//		
-//		return model.substring(index);
-//	}
-//
-//	private String trimQuotes(String model) {
-//		return model.replace("\"", "").trim();
-//	}
 }

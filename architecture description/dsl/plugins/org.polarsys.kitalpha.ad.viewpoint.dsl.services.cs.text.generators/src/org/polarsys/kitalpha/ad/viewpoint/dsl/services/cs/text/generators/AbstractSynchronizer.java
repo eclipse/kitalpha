@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -327,7 +327,6 @@ public abstract class AbstractSynchronizer implements IViewpointBackwardSynchron
 		List<URI> uris = ResourceHelper.getSecondaryResourceURIsByExtension(FileExtension.DATA_EXTENSION, projectName);
 		if (uris.isEmpty()) {
 			Resource resource = ResourceHelper.createResource(GeneratorsUtil.computeURI(inputObject, FileExtension.DATA_EXTENSION, null), resourceSet);
-//			ResourceHelper.loadExternalLibrary(resourceSet);
 			ResourceHelper.loadExternalLibrary(resource);
 			PluginUtil.addModelReuseExtension(projectName, inputObject, resource.getURI());
 			return resource;

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,14 +27,6 @@ import org.eclipse.jface.text.IDocument;
 import org.eclipse.text.edits.MalformedTreeException;
 import org.eclipse.text.edits.TextEdit;
 
-//import java.util.regex.Pattern;
-//import org.eclipse.jdt.core.ICompilationUnit;
-//import org.eclipse.jdt.core.IJavaElement;
-//import org.eclipse.jdt.core.JavaCore;
-//import org.eclipse.jdt.core.compiler.IProblem;
-//import org.eclipse.jdt.core.dom.AST;
-//import org.eclipse.jdt.core.dom.ASTParser;
-//import org.eclipse.jdt.core.dom.CompilationUnit;
 
 /**
  * @author Boubekeur Zendagui
@@ -200,61 +192,10 @@ public class JDTUtility {
 	 * @return
 	 */
 	public static String organizeImport(IFile javaFile, String javaCode){
-		// If the java file is not serialized yet then save it in order to parse it by AST parser 
-//		if (! javaFile.exists())
-//			JDTUtility.writeJavaContent(javaFile, javaCode);
-//		
-//		final ASTParser parser = ASTParser.newParser(AST.JLS3);
-//		parser.setResolveBindings(true);
-//		final IJavaElement element = JavaCore.create(javaFile);
-//		parser.setSource((ICompilationUnit)element);
-//		final CompilationUnit cUnit=(CompilationUnit) parser.createAST(new NullProgressMonitor());	
-//		for (IProblem problem : cUnit.getProblems()) 
-//		{
-//		    if(problem.getID() == IProblem.UnusedImport) 
-//		    {
-//		    	final String unusedImport = problem.getArguments()[0];
-//		    	final String javaImportRegEx = "import([\\s])*"+unusedImport+"([\\s])*;([\\s])*";
-//		    	final Pattern p = Pattern.compile(javaImportRegEx.trim());
-//		    	javaCode = p.matcher(javaCode).replaceAll("");
-//		    }
-//		}
-		
 		return javaCode;
 	}
 	
 	public static void organizeImport(final IFile javaCode){
-//		ICompilationUnit unit = JavaCore.createCompilationUnitFrom(javaCode);
-//		OrganizeImportsAction fOrganizeImports= new OrganizeImportsAction(...);
-//		fOrganizeImports.run(unit);
-		
-//		OR 
-		
-//		final ICommandService cmdService = (ICommandService)PlatformUI.getWorkbench().getService(ICommandService.class);
-//
-//		if (cmdService != null) {
-//	        final Command organize_cmd = cmdService.getCommand(IJavaEditorActionDefinitionIds.ORGANIZE_IMPORTS);
-//	        organize_cmd.setHandler(new AbstractHandler(){
-//				public Object execute(ExecutionEvent event)
-//						throws ExecutionException {
-//					return super.equals(event);
-//				}
-//	        	@Override
-//	        	public boolean isEnabled() {
-//	        		return true;
-//	        	}
-//	        });
-//	        final ExecutionEvent execEvt = new ExecutionEvent(organize_cmd, Collections.EMPTY_MAP, javaCode, null);
-//	        Display.getDefault().asyncExec(new Runnable() {
-//	            public void run() {
-//	                try {
-//	                    organize_cmd.executeWithChecks(execEvt);
-//	                } catch (Exception e) {
-//	                	System.out.println(e.getMessage());
-//	                }
-//	            }
-//	        });
-//	    }
 	}
 	
 }
