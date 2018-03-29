@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -37,11 +37,13 @@ public class MDERichtextWidgetImpl extends MDENebulaBasedRichTextWidgetImpl {
 		super(parent, configuration);
 	}
 
+	@Override
 	protected void installListenersOnReadyInstance() {
 		ListenerInstaller installer = new ListenerInstaller();
 		
 		super.installListenersOnReadyInstance();
 		
+		installer.installOnBeforePasteListener(this);
 		installer.installOpenLinkListener(this);
 		installer.installSaveListener(this);
 		installer.installChangeNotificationHandlerListener(this);

@@ -38,6 +38,7 @@ public final class MDERichTextConstants {
 	public static final String READ_ONLY_MODE = "readOnly";			//$NON-NLS-1$
 	public static final String PAST_FROM_MS_WORD_PROMPT_CLEANUP = "pasteFromWordPromptCleanup";	//$NON-NLS-1$
 	public static final String PAST_FROM_MS_WORD_CLEANER_FILE = "pasteFromWordCleanupFile"; //$NON-NLS-1$
+	public static final String FORCE_PASTE_AS_PLAIN_TEXT = "forcePasteAsPlainText"; //$NON-NLS-1$
 	public static final String BASE_HREF ="baseHref";				//$NON-NLS-1$
 	
 	public static final String DEFAUTL_CUSTOM_CONFIG = getDefaultCustomConfig("resources/config.js");	//$NON-NLS-1$

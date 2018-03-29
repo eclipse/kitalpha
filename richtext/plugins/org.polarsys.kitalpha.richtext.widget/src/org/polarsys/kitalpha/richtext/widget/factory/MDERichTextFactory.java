@@ -60,7 +60,7 @@ public class MDERichTextFactory {
 	 */
 	protected void initializeDefaultConfiguration() {
 		configuration.setOption(MDERichTextConstants.READ_ONLY_MODE, false);
-		configuration.setOption(MDERichTextConstants.PAST_FROM_MS_WORD_PROMPT_CLEANUP, false);
+		configuration.setOption(MDERichTextConstants.PAST_FROM_MS_WORD_PROMPT_CLEANUP, true);
 	}
 
 	public MDERichTextWidget createEditorRichTextWidget(Composite parent){
@@ -145,8 +145,7 @@ public class MDERichTextFactory {
 		configuration.removeToolbarItems(MDERichTextConstants.LINK, 
 				MDERichTextConstants.ANCHOR, 
 				MDERichTextConstants.STRIKE,
-				MDERichTextConstants.PASTE_FROM_WORD,
-				MDERichTextConstants.PASTE_TEXT);
+				MDERichTextConstants.PASTE_FROM_WORD);
 	}
 
 	/**
@@ -219,6 +218,7 @@ public class MDERichTextFactory {
 		configuration.initializeToolbarItem(MDERichTextConstants.MDE_ENABLE_EDITING_TOOLBAR, MDERichTextConstants.MDE_OPEN_EDITOR);
 		configuration.initializeToolbarItem(MDERichTextConstants.MDE_SAVE_TOOLBAR, MDERichTextConstants.MDE_SAVE);
 		configuration.initializeToolbarItem(MDERichTextConstants.STYLES_TOOLBAR);
+		configuration.initializeToolbarItem(MDERichTextConstants.CLIPBOARD_TOOLBAR);
 		configuration.initializeToolbarItem(MDERichTextConstants.BASIC_STYLES, 
 				MDERichTextConstants.LIST_GROUP);
 		configuration.initializeToolbarItem(MDERichTextConstants.MDE_LINKS_TOOLBAR, MDERichTextConstants.MDE_ADDLINK);

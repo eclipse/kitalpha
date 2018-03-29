@@ -25,10 +25,34 @@ import org.polarsys.kitalpha.richtext.widget.tools.manager.LinkManagerImpl;
  *
  */
 public class ListenerInstaller {
+  
+  // The text you want to paste seems to be copied from Non-XHTML source. Do you want to clean it before pasting?\nIt's not recommended to cancel the clean to avoid Non-XHTML description.\n
+  public void installOnBeforePasteListener(final MDENebulaBasedRichTextWidget widget) {
+    
+    new BrowserFunction(widget.getBrowser(), "getConfirmCleanupMsg") { //$NON-NLS-1$
+      @Override
+      public Object function(Object[] arguments) {
+        return "Press OK to clean the Non-XHTML before pasting.\n\n"
+            + "Press Cancel to paste text as it is (not recommended) or better use toolbar action \"Paste as plain text\"";
+      }
+    };
+
+   
+    StringBuilder script = new StringBuilder();
+    script.append("CKEDITOR.instances.editor.on('beforePaste', function (event) {");
+    script.append("editor = CKEDITOR.instances.editor;");
+    script.append("editor.lang.pastefromword.confirmCleanup = getConfirmCleanupMsg();");
+    script.append("});");
+  
+    if (!widget.executeScript(script.toString())) {
+      Activator.getDefault().getLog().log(new Status(IStatus.WARNING, Activator.PLUGIN_ID, "Rich text widget can not execute on before paste command!")); //$NON-NLS-1$
+    }
+  }
 
 	public void installOpenLinkListener(final MDENebulaBasedRichTextWidget widget) {
 
 		new BrowserFunction(widget.getBrowser(), "openLinks") { //$NON-NLS-1$
+		  @Override
 			public Object function(Object[] arguments) {
 				if (arguments != null && arguments.length > 0) {
 					for (Object object : arguments) {
@@ -36,10 +60,10 @@ public class ListenerInstaller {
 					}
 				}
 				return null;
-			};
+			}
 		};
 
-		StringBuffer scriptAddMenu = new StringBuffer();
+		StringBuilder scriptAddMenu = new StringBuilder();
 
 		/*
 		 * Script to be executed
@@ -134,21 +158,22 @@ public class ListenerInstaller {
 		 * Callback which save the content at focus out event
 		 */
 		new BrowserFunction(widget.getBrowser(), "saveContent") { //$NON-NLS-1$
+		  @Override
 			public Object function(Object[] arguments) {
 				widget.saveContent();
 				return null;
-			};
+			}
 		};
 
 		/*
 		 * Script:
 		 * 
 		 * CKEDITOR.instances.editor.on('blur', function() {
-         * 		saveContent();
+     * 		saveContent();
 		 * });
 		 */
 
-		StringBuffer script = new StringBuffer();
+		StringBuilder script = new StringBuilder();
 
 		script.append("CKEDITOR.instances.editor.on('blur', function () {");
 		script.append("saveContent();");
@@ -165,13 +190,14 @@ public class ListenerInstaller {
 		 * Fire change content notification to all widgets
 		 */
 		new BrowserFunction(widget.getBrowser(), "changeHandler") { //$NON-NLS-1$
+		  @Override
 			public Object function(Object[] arguments) {
 				if (arguments != null && arguments.length > 0) {
 					PropertyChangeEvent event = new PropertyChangeEvent(widget, "widgetContent", null, (String)arguments[0]);
 					widget.firePropertyChangeEvent(event);
 				}
 				return null;
-			};
+			}
 		};
 
 		/*
@@ -182,7 +208,7 @@ public class ListenerInstaller {
          * 		changeHandler(data);
 		 * });
 		 */
-		StringBuffer script = new StringBuffer();
+		StringBuilder script = new StringBuilder();
 
 		script.append("CKEDITOR.instances.editor.on('blur', function () {");
 		script.append("changeHandler(CKEDITOR.instances.editor.getData());");
@@ -195,7 +221,7 @@ public class ListenerInstaller {
 
 	public void installChangeContentListener(final MDENebulaBasedRichTextWidget widget) {
 
-		StringBuffer script = new StringBuffer();
+	  StringBuilder script = new StringBuilder();
 
 		/**
 		 * Notice that firePropertyChangeEvent() javascript function is defined MDERichTextEditor.
@@ -206,6 +232,6 @@ public class ListenerInstaller {
 
 		if (!widget.executeScript(script.toString())) {
 			Activator.getDefault().getLog().log(new Status(IStatus.WARNING, Activator.PLUGIN_ID, "Rich text widget cannot install firePropertyChangeEvent handler")); //$NON-NLS-1$
-		};
+		}
 	}
 }
