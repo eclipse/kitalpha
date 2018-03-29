@@ -109,12 +109,14 @@ public class PDEUtility {
 											final List<String> files,
 											final IProgressMonitor monitor){
 		if (project == null)
+		{
 			return;
+		}
 
 		synchronized (bundleLock) {
 			IFile build = project.getFile(ICoreConstants.BUILD_FILENAME_DESCRIPTOR);
 			
-			if (build.exists() == false)
+			if (!build.exists())
 			{
 				try {
 					build.create(new ByteArrayInputStream("".getBytes()), true, monitor);
@@ -126,8 +128,10 @@ public class PDEUtility {
 			PDEModelUtility.modifyModel(new ModelModification(build) {
 				@Override
 				protected void modifyModel(IBaseModel model, IProgressMonitor innerMonitor) throws CoreException {
-					if (model instanceof IBuildModel == false) 
+					if (!(model instanceof IBuildModel)) 
+					{
 						return;
+					}
 					
 					IBuildModel buildModel = (IBuildModel) model;
 					IBuild build = buildModel.getBuild();
@@ -145,8 +149,10 @@ public class PDEUtility {
 						for (String folder : folders) 
 						{
 							folder += "/";
-							if (binInclude.contains(folder) == false)
+							if (!binInclude.contains(folder))
+							{
 								binInclude.addToken(folder);
+							}
 						}
 					}
 					
@@ -154,8 +160,10 @@ public class PDEUtility {
 					{
 						for (String file : files) 
 						{
-							if (binInclude.contains(file) == false)
+							if (!binInclude.contains(file))
+							{
 								binInclude.addToken(file);
+							}
 						}
 					}
 				}
@@ -169,15 +177,19 @@ public class PDEUtility {
 	
 	public static void setActivator(IProject project, final String activatorClassFQN, IProgressMonitor monitor){
 		if (project == null)
+		{
 			return;
+		}
 		
 		synchronized (bundleLock) {
 			IFile	manifest = project.getFile(ICoreConstants.BUNDLE_FILENAME_DESCRIPTOR);
 			PDEModelUtility.modifyModel(new ModelModification(manifest) {
 				@Override
 				protected void modifyModel(IBaseModel model, IProgressMonitor innerMonitor) throws CoreException {
-					if (model instanceof IBundlePluginModelBase == false) 
+					if (!(model instanceof IBundlePluginModelBase))
+					{
 						return;
+					}
 
 					IBundlePluginModelBase bundleModel = (IBundlePluginModelBase) model;
 					IBundle bundle = bundleModel.getBundleModel().getBundle();
@@ -280,15 +292,19 @@ public class PDEUtility {
 								final boolean exportNoInternalPackages,
 								final IProgressMonitor monitor){
 		if (project == null)
+		{
 			return;
+		}
 		
 		synchronized (bundleLock) {
 			IFile	manifest = project.getFile(ICoreConstants.BUNDLE_FILENAME_DESCRIPTOR);
 			PDEModelUtility.modifyModel(new ModelModification(manifest) {
 				@Override
 				protected void modifyModel(IBaseModel model, IProgressMonitor innerMonitor) throws CoreException {
-					if (model instanceof IBundlePluginModelBase == false) 
+					if (!(model instanceof IBundlePluginModelBase))
+					{
 						return;
+					}
 
 					IBundlePluginModelBase bundleModel = (IBundlePluginModelBase) model;
 					IBundle bundle = bundleModel.getBundleModel().getBundle();
@@ -333,15 +349,19 @@ public class PDEUtility {
 											 final boolean exportedPackagesToRemove,
 											 final IProgressMonitor monitor){
 		if (project == null)
+		{
 			return;
+		}
 
 		synchronized (bundleLock) {
 			IFile	manifest = project.getFile(ICoreConstants.BUNDLE_FILENAME_DESCRIPTOR);
 			PDEModelUtility.modifyModel(new ModelModification(manifest) {
 				@Override
 				protected void modifyModel(IBaseModel model, IProgressMonitor innerMonitor) throws CoreException {
-					if (model instanceof IBundlePluginModelBase == false) 
+					if (!(model instanceof IBundlePluginModelBase))
+					{
 						return;
+					}
 
 					IBundlePluginModelBase bundleModel = (IBundlePluginModelBase) model;
 					IBundle bundle = bundleModel.getBundleModel().getBundle();

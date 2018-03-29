@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014-2018 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -159,8 +159,10 @@ public class CoordinatesCalculator {
 	 * @return the map containing object's coordinates
 	 */
 	public Map<Rectangle, EObject> getPositionMap() {
-		if (diagram == null || imageFile == null || imageFile.exists() == false)
+		if (diagram == null || imageFile == null || !imageFile.exists())
+		{
 			return Collections.emptyMap();
+		}
 		
 		final Map<Rectangle, EObject> result = new LinkedHashMap<Rectangle, EObject>();
 		final String diagramId = EcoreUtil.getURI(diagram).fragment();
@@ -502,7 +504,7 @@ public class CoordinatesCalculator {
 
 
 	// Faire une translation pour les objects contenus
-	// Cette translation est due au fait que les coordonnées des objects
+	// Cette translation est due au fait que les coordonnï¿½es des objects
 	// contenus sont relatifs aux conteneurs.
 	@Deprecated
 	private Map<Rectangle, EObject> proceed(Map<Rectangle, EObject> resultMap, Map<View, EObject> nodeMap) {

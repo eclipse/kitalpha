@@ -45,7 +45,7 @@ public class GenerationPluginActivatorTask  implements ITaskProduction{
 		if (project.exists())
 		{
 			IFolder folder = project.getFolder("src");
-			if (false == folder.exists())
+			if (!folder.exists())
 			{
 				try {
 					folder.create(true, true, null);
@@ -58,7 +58,7 @@ public class GenerationPluginActivatorTask  implements ITaskProduction{
 			IJavaProject javaProject = JavaCore.create(project);
 			IPackageFragmentRoot srcFolder = javaProject.getPackageFragmentRoot(folder);
 			final IPackageFragment packageFragment = srcFolder.getPackageFragment(pluginID);
-			if ( false == packageFragment.exists())
+			if (!packageFragment.exists())
 			{
 				try {
 					srcFolder.createPackageFragment(pluginID, true, monitor);
@@ -68,7 +68,7 @@ public class GenerationPluginActivatorTask  implements ITaskProduction{
 			}
 			// Third: check if a Java class named Activator.java exists in this package. if no, create it.
 			ICompilationUnit activatorClass = packageFragment.getCompilationUnit("Activator.java");
-			if (false == activatorClass.exists())
+			if (!activatorClass.exists())
 			{
 				try {
 					activatorClass = packageFragment.createCompilationUnit("Activator.java", activatorClassContent(pluginID), true, monitor);

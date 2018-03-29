@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015, 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2015, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -56,9 +56,9 @@ public class ActivityExplorerItemUniqueIDConstraint implements IAdditionalConstr
 	
 	protected ViewpointActivityExplorer getViewpointActivityExplorer(ActivityExplorerItem item){
 		EObject itemCcontainer = item.eContainer();
-		if (false == itemCcontainer instanceof ViewpointActivityExplorer)
+		if (!(itemCcontainer instanceof ViewpointActivityExplorer))
 		{
-			while (null != itemCcontainer && false == itemCcontainer instanceof ViewpointActivityExplorer) 
+			while (null != itemCcontainer && !(itemCcontainer instanceof ViewpointActivityExplorer)) 
 			{
 				itemCcontainer = itemCcontainer.eContainer();
 			}
@@ -139,8 +139,10 @@ public class ActivityExplorerItemUniqueIDConstraint implements IAdditionalConstr
 		for (Page page : pages) 
 		{
 			final List<Section> pageSections = page.getOwnedSections();
-			if (false == pageSections.isEmpty())
+			if (!pageSections.isEmpty())
+			{
 				result.addAll(pageSections);
+			}
 		}
 		
 		return result;
@@ -158,8 +160,10 @@ public class ActivityExplorerItemUniqueIDConstraint implements IAdditionalConstr
 		for (Section section : sections) 
 		{
 			final List<Activity> sectionActivities = section.getOwnedActivities();
-			if (false == sectionActivities.isEmpty())
+			if (!sectionActivities.isEmpty())
+			{
 				result.addAll(sectionActivities);
+			}
 		}
 		
 		return result;

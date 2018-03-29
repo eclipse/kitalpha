@@ -151,8 +151,10 @@ public class EcoreService {
 		for (EClass eClass : result) 
 		{
 			final EList<EClass> eAllSuperTypes = eClass.getEAllSuperTypes();
-			if (eAllSuperTypes.isEmpty() == false)
+			if (!eAllSuperTypes.isEmpty())
+			{
 				toAdd.addAll(eAllSuperTypes);
+			}
 
 			if (eClass.eIsProxy())
 			{
@@ -164,7 +166,7 @@ public class EcoreService {
 			
 			final EPackage eClassPackage = eClass.getEPackage();
 			final EList<EClassifier> eClassifiers = eClassPackage.getEClassifiers();
-			if (eClassifiers.isEmpty() == false)
+			if (!eClassifiers.isEmpty())
 			{
 				final Iterator<EClass> filter = Iterators.filter(eClassifiers.iterator(), EClass.class);
 				toAdd.addAll(Lists.newArrayList(filter));
@@ -451,7 +453,7 @@ public class EcoreService {
 		StringBuilder s = new StringBuilder();
 		s.append(eReference.getName());
 		EObject source = eReference.eContainer();
-		if (source instanceof EClass && nodeList.contains(source) == false) 
+		if (source instanceof EClass && !nodeList.contains(source)) 
 		{
 			s.append(" : ");
 			s.append(((EClass) source).getName());

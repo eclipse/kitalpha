@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -345,7 +345,7 @@ public class NewDSLVpProjectWizard extends Wizard implements INewWizard {
 		final IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(vpDescriptionProjectName);
 		final IFile pluginXml = project.getFile("plugin.xml");
 		
-		if (pluginXml.exists() == false)
+		if (!pluginXml.exists())
 		{
 			createPluginXml(extension, monitor);
 		}
@@ -355,8 +355,8 @@ public class NewDSLVpProjectWizard extends Wizard implements INewWizard {
 		while (scanner.hasNextLine())
 		{
 			String line = scanner.nextLine();
-			if (line.equals("</plugin>") == true ||
-					line.contains("</plugin>") == true)
+			if (line.equals("</plugin>") ||
+					line.contains("</plugin>"))
 			{
 				break;
 			}

@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *  Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.internal;
 
 import java.lang.reflect.InvocationTargetException;
@@ -33,13 +43,17 @@ public class IconsFileHelper {
 		
 		// Check existence of source project
 		final IProject sourceProject = workspaceRoot.getProject(sourceProjectName);
-		if (false == sourceProject.exists())
+		if (!sourceProject.exists())
+		{
 			throw new RuntimeException("Project " + sourceProjectName + "doesn't exists");
+		}
 		
 		// Check existence of target project
 		final IProject targetProject = workspaceRoot.getProject(targetProjectName);
-		if (false == targetProject.exists())
+		if (!targetProject.exists())
+		{
 			throw new RuntimeException("Project " + targetProjectName + "doesn't exists");
+		}
 		
 		WorkspaceModifyOperation wo = new WorkspaceModifyOperation() {
 			@Override
@@ -49,8 +63,10 @@ public class IconsFileHelper {
 				if (vpIconFile.exists())
 				{
 					final IFolder targetFolder = targetProject.getFolder(ICONS_FOLDER_NAME);
-					if (false == targetFolder.exists())
+					if (!targetFolder.exists())
+					{
 						targetFolder.create(true, true, NPM);
+					}
 					
 					IFile targetIconFile = targetFolder.getFile(iconName);
 		

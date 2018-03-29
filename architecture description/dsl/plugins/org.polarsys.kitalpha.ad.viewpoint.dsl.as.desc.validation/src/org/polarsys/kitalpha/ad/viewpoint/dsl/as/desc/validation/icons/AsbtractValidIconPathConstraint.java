@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015 Thales Global Services S.A.S.
+ * Copyright (c) 2015, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,15 +42,17 @@ public abstract class AsbtractValidIconPathConstraint implements IAdditionalCons
 	@Override
 	public ValidationStatus validationRules(Object data) {
 		String iconPath = getIconPath((EObject)data);
-		if (iconPath != null && false == iconPath.isEmpty())
+		if (iconPath != null && !iconPath.isEmpty())
 		{
 			// Check if the icon file exists in the Icons folder
 			// First 1. get the icons folder
 			final String vpdslProjectName = ((EObject)data).eResource().getURI().segment(1);
 			final IProject vpdslProject = ResourcesPlugin.getWorkspace().getRoot().getProject(vpdslProjectName);
 			IFolder folder = vpdslProject.getFolder(iconsFolderName);
-			if (folder.exists() == false)
+			if (!folder.exists())
+			{
 				return ValidationStatus.Error;
+			}
 
 			final IFile file = folder.getFile(iconPath);
 			if (file.exists())

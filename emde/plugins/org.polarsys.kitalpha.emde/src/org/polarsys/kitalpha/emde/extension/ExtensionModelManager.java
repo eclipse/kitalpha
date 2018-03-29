@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015 Thales Global Services S.A.S.
+ * Copyright (c) 2015, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,7 +40,7 @@ public class ExtensionModelManager {
 		if ((anyTypes == null) || anyTypes.isEmpty()) {
 			return null;
 		}
-		if (reference_p.getEType() instanceof EClass == false) {
+		if (!(reference_p.getEType() instanceof EClass)) {
 			return null;
 		}
 		EClass eClass = (EClass) EMFHelper.solveAgainstStaticPackage(reference_p.getEType());
@@ -57,7 +57,7 @@ public class ExtensionModelManager {
 	}
 
 	public static AnyType getAnyType(EObject eObject_p, EReference reference_p) {
-		if ((eObject_p == null) || (eObject_p.eResource() == null) || (eObject_p.eResource() instanceof XMLResource == false) || (reference_p == null)) {
+		if ((eObject_p == null) || (eObject_p.eResource() == null) || !(eObject_p.eResource() instanceof XMLResource) || (reference_p == null)) {
 			return null;
 		}
 		XMLResource resource = (XMLResource) eObject_p.eResource();
@@ -65,7 +65,7 @@ public class ExtensionModelManager {
 		if ((anyTypes == null) || anyTypes.isEmpty()) {
 			return null;
 		}
-		if (reference_p.getEType() instanceof EClass == false) {
+		if (!(reference_p.getEType() instanceof EClass)) {
 			return null;
 		}
 		EClass eClass = (EClass) EMFHelper.solveAgainstStaticPackage(reference_p.getEType());
@@ -87,7 +87,7 @@ public class ExtensionModelManager {
 		}
 		// Mixed analysis
 		//
-		if ((value_p.getMixed() != null) && (value_p.getMixed().isEmpty() == false)) {
+		if ((value_p.getMixed() != null) && !value_p.getMixed().isEmpty()) {
 			for (FeatureMap.Entry mixedEntry : value_p.getMixed()) {
 				// Do we need to analyse attributes at the next step ?
 				//

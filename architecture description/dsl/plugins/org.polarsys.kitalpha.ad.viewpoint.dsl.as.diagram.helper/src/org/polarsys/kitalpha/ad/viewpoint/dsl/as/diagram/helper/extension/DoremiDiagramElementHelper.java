@@ -51,8 +51,14 @@ public class DoremiDiagramElementHelper {
 		final List<DiagramDescription> taDiagram = getTargetApplicationDoremiDiagramFor(anyModelElement);
 		final List<DiagramDescription> importedDiagram = getImportedDoremiDiagramFor(anyModelElement);
 		
-		if (taDiagram.isEmpty() == false) result.addAll(taDiagram);
-		if (importedDiagram.isEmpty() == false) result.addAll(importedDiagram);
+		if (!taDiagram.isEmpty())
+		{
+			result.addAll(taDiagram);
+		}
+		if (!importedDiagram.isEmpty())
+		{
+			result.addAll(importedDiagram);
+		}
 		
 		return result;
 	}
@@ -103,7 +109,7 @@ public class DoremiDiagramElementHelper {
 				for (Group group : groups) 
 				{
 					List<DiagramDescription> diagrams = getDiagrams(group);
-					if (diagrams.isEmpty() == false)
+					if (!diagrams.isEmpty())
 					{
 						result.addAll(diagrams);
 					}

@@ -570,8 +570,10 @@ public class ExtensibilityService {
 						for (DDiagramElement element : diagram.getOwnedDiagramElements()) 
 						{
 							EObject target = element.getTarget();
-							if (target instanceof EClass && objectList.contains(target) == false) 
+							if (target instanceof EClass && !objectList.contains(target))
+							{
 								resourceList.add(target.eResource());
+							}
 						}
 					}
 				}

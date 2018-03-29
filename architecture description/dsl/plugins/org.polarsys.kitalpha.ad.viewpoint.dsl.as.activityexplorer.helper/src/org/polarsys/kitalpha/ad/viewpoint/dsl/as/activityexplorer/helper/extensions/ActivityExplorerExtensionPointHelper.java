@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015 Thales Global Services S.A.S.
+ * Copyright (c) 2015, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -37,7 +37,7 @@ public class ActivityExplorerExtensionPointHelper {
 			for (IConfigurationElement iConfigurationElement : config) 
 			{
 				final String id = iConfigurationElement.getAttribute(ATT_ID);
-				if (null != id && false == id.isEmpty())
+				if (null != id && !id.isEmpty())
 				{
 					result.add(id);
 				}
@@ -58,8 +58,10 @@ public class ActivityExplorerExtensionPointHelper {
 			for (IConfigurationElement iConfigurationElement : configSections) 
 			{
 				final String id = iConfigurationElement.getAttribute(ATT_ID);
-				if (null != id && false == id.isEmpty())
+				if (null != id && !id.isEmpty())
+				{
 					result.add(id);
+				}
 			}
 		}
 		
@@ -73,8 +75,10 @@ public class ActivityExplorerExtensionPointHelper {
 				for (IConfigurationElement sConfigurationElement : children) 
 				{
 					final String id = sConfigurationElement.getAttribute(ATT_ID);
-					if (null != id && false == id.isEmpty())
+					if (null != id && !id.isEmpty())
+					{
 						result.add(id);
+					}
 				}
 			}
 		}

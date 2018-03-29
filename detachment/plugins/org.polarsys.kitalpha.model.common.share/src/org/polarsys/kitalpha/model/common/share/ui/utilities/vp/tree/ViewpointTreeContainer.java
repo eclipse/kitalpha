@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -41,8 +41,9 @@ public class ViewpointTreeContainer {
 	 * @return
 	 */
 	public ViewpointTreeContainer add(IViewpointTreeDescription vp) {
-		if (vp.hasParents() == false)
+		if (!vp.hasParents()) {
 			getRoots().add(vp);
+		}
 		return this;
 	}
 

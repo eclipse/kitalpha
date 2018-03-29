@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -106,7 +106,7 @@ public class XMLExtensionSaveImpl extends XMLSaveImpl {
 		if (value == null) {
 			return (EObject) helper.getValue(o, f);
 		}
-		if (processed.contains(value) == false) {
+		if (!processed.contains(value)) {
 			processed.add(value);
 		}
 		return value;
@@ -118,7 +118,7 @@ public class XMLExtensionSaveImpl extends XMLSaveImpl {
 			// Store as processed
 			for (Iterator<? extends EObject> i = values.iterator(); i.hasNext();) {
 				EObject value = i.next();
-				if (processed.contains(value) == false) {
+				if (!processed.contains(value)) {
 					processed.add(value);
 				}
 			}
@@ -241,7 +241,7 @@ public class XMLExtensionSaveImpl extends XMLSaveImpl {
 
 	@Override
 	protected void saveElement(InternalEObject o, EStructuralFeature f) {
-		if (processed.contains(o) == false) {
+		if (!processed.contains(o)) {
 			processed.add(o);
 			if ((o.eDirectResource() != null || o.eIsProxy())) {
 				saveHref(o, f);

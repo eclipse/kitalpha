@@ -719,8 +719,10 @@ public class VpDiagramHelper {
 
 
 	public static boolean isValidContainerMapping(EObject eObjectOrProxy, EObject eObject, EReference reference2) {
-		if (false == eObjectOrProxy instanceof ContainerMapping)
+		if (!(eObjectOrProxy instanceof ContainerMapping))
+		{
 			return false;
+		}
 		else
 		{
 			DiagramExtension diagramExtension = (DiagramExtension)eObject;
@@ -733,8 +735,10 @@ public class VpDiagramHelper {
 
 
 	public static boolean isValidNode(EObject eObjectOrProxy, EObject eObject, EReference reference2) {
-		if (false == eObjectOrProxy instanceof NodeMapping)
+		if (!(eObjectOrProxy instanceof NodeMapping))
+		{
 			return false;
+		}
 		else
 		{
 			DiagramExtension diagramExtension = (DiagramExtension)eObject;

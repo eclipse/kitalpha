@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015 Thales Global Services S.A.S.
+ * Copyright (c) 2015, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,8 +46,10 @@ public class ColorCustomizationAppliedOnCompliancy implements IAdditionalConstra
 		for (EObject eObject : appliedOn) 
 		{
 			boolean acceptColor = ColorsUseCasesHelper.acceptColor(colorCustomization, eObject);
-			if (acceptColor == false)
+			if (!acceptColor) 
+			{
 				return ValidationStatus.Error;
+			}
 		}
 		return ValidationStatus.Ok;
 	}
@@ -66,12 +68,12 @@ public class ColorCustomizationAppliedOnCompliancy implements IAdditionalConstra
 			EList<EObject> appliedOn = colorCustomization.getAppliedOn();
 			for (EObject eObject : appliedOn) 
 			{
-				if (false == ColorsUseCasesHelper.acceptColor(colorCustomization, eObject) &&
-					false == wrongSelectedElements.contains(eObject.eClass()))
+				if (!ColorsUseCasesHelper.acceptColor(colorCustomization, eObject) &&
+					!wrongSelectedElements.contains(eObject.eClass()))
 					wrongSelectedElements.add(eObject.eClass());
 			}
 			
-			if (wrongSelectedElements.isEmpty() == false)
+			if (!wrongSelectedElements.isEmpty())
 			{
 				ColorUseCase colorUseCase = colorCustomization.getColorUseCase();
 				String property = colorUseCase.equals(ColorUseCase.COLOR) ? colorUseCase.toString() : colorUseCase.toString() + " Color"; 

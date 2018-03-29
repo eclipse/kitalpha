@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015, 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2015, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -40,11 +40,15 @@ public class ActivityUniqueNameConstraint implements IAdditionalConstraint {
 		Activity activity = (Activity) data;
 		
 		EObject eContainer = activity.eContainer().eContainer();
-		if (false == eContainer instanceof ViewpointActivityExplorer)
+		if (!(eContainer instanceof ViewpointActivityExplorer))
+		{
 			eContainer = eContainer.eContainer();
+		}
 		
-		if (false == eContainer instanceof ViewpointActivityExplorer)
+		if (!(eContainer instanceof ViewpointActivityExplorer)) 
+		{
 			throw new RuntimeException(Messages.Validation_Runtime_CantLocateViewpointActivityExplorer);
+		}
 		
 		final ViewpointActivityExplorer activityExplorer = (ViewpointActivityExplorer) eContainer;
 		final EList<Activity> allActivities = activityExplorer.getAllActivities();
@@ -53,7 +57,7 @@ public class ActivityUniqueNameConstraint implements IAdditionalConstraint {
 		for (Activity iAactivity : allActivities) 
 		{
 			final String jActivityName = iAactivity.getName();
-			if (false == iAactivity.equals(activity) && activityName.equals(jActivityName))
+			if (!iAactivity.equals(activity) && activityName.equals(jActivityName))
 			{
 				duplicatedName = activityName;
 				return ValidationStatus.Error;

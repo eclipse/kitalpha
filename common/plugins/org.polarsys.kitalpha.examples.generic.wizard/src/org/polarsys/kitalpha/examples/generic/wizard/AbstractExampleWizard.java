@@ -186,13 +186,13 @@ public abstract class AbstractExampleWizard extends Wizard
 				//  created the destination project for this zip.
 				File file = new File(project.getLocation().toString(), zipEntry.getName().replaceFirst("^"+regexedProjectName+"/", ""));   //$NON-NLS-1$//$NON-NLS-2$//$NON-NLS-3$
 
-				if (false == zipEntry.isDirectory()) {
+				if (!zipEntry.isDirectory()) {
 
 					/*
 					 * Copy files (and make sure parent directory exist)
 					 */
 					File parentFile = file.getParentFile();
-					if (null != parentFile && false == parentFile.exists()) {
+					if (null != parentFile && !parentFile.exists()) {
 						parentFile.mkdirs();
 					}
 

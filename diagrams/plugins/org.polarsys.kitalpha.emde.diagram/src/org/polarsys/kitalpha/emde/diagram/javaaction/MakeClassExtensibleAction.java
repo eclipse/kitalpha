@@ -77,7 +77,7 @@ public class MakeClassExtensibleAction extends AbstractEmdeExternalJavaAction {
 								toBeRemoved = sp;
 							}
 						}
-						if (toBeRemoved != null	&& eClass.getESuperTypes().remove(toBeRemoved) == false) 
+						if (toBeRemoved != null	&& !eClass.getESuperTypes().remove(toBeRemoved)) 
 						{
 							MessageDialog.openError(SHELL, TITLE, MESSAGE);
 						}
