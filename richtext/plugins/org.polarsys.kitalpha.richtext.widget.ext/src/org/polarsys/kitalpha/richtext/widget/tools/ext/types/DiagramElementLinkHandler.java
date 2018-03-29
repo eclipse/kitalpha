@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -43,6 +43,7 @@ import org.polarsys.kitalpha.richtext.widget.tools.utils.Tuple;
 /**
  * 
  * @author Faycal Abka
+ * @author Minh Tu Ton That
  *
  */
 public class DiagramElementLinkHandler extends ModelElementLinkHandler implements LinkHandler {
@@ -143,4 +144,13 @@ public class DiagramElementLinkHandler extends ModelElementLinkHandler implement
 		return path;
 	}
 
+	@Override
+	protected Tuple<String, String> getTuple(String link, Object object) {
+	  // To create links to DRepresentations, use their UID if possible 
+    if (object instanceof DRepresentation) {
+      String label = MDERichTextToolsHelper.getName((EObject) object);
+      return new Tuple<>(((DRepresentation) object).getUid(), label);
+    }
+	  return super.getTuple(link, object);
+	}
 }
