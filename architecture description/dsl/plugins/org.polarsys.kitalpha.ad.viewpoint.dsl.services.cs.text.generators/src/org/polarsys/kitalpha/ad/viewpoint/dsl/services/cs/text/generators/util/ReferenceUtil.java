@@ -375,7 +375,7 @@ public class ReferenceUtil {
 					EObject eObject_copy = copier.get(eObject);
 					if (eObject_copy!=null) {
 						URI uri_copy = EcoreUtil.getURI(eObject_copy);			
-						if (uri_copy.isPlatform()==false) {
+						if (!uri_copy.isPlatform()) {
 							URI correctURI = null;
 							if (eObject.eClass().getEPackage().getNsURI().equals(MetamodelIDs.VPSERVICES)) {
 								//services references rules

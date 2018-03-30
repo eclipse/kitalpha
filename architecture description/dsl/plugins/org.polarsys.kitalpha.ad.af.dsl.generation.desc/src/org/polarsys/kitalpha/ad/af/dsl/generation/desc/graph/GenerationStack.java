@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -54,7 +54,7 @@ public class GenerationStack {
 			node = (_stack.isEmpty() ? null : _stack.pop());
 		}
 		
-		while (fifoList.isEmpty() == false) 
+		while (!fifoList.isEmpty()) 
 		{
 			GenerationNode node2 = fifoList.defiler();
 			_stack.push(node2);
@@ -67,7 +67,7 @@ public class GenerationStack {
 		
 		Stack<GenerationNode> sClone = (Stack<GenerationNode>)_stack.clone();
 		System.out.println("Generation Stack - Begin");
-		while (sClone.isEmpty() == false)
+		while (!sClone.isEmpty())
 		{
 			String name = sClone.pop().getName();
 			System.out.println(" " + name);
@@ -92,7 +92,7 @@ public class GenerationStack {
 	}
 	
 	public GenerationNode getNextNode(){
-		return _stack.isEmpty() == false ? _stack.pop() : null;
+		return !_stack.isEmpty()? _stack.pop() : null;
 	}
 	
 	/**
@@ -105,15 +105,19 @@ public class GenerationStack {
 	 * @param graph
 	 */
 	private void computeStack(GenerationGraph graph){
-		if (graph.isEmpty() == false)
+		if (!graph.isEmpty())
 		{
 			Vector<GenerationNode> leafs = graph.getLeafs();
 			for (GenerationNode node : leafs) 
-				if (_stack.contains(node) == false)
+				if (!_stack.contains(node))
+				{
 					_stack.push(node);
+				}
 
 			for (GenerationNode node : leafs)
+			{
 				graph.remove(node);
+			}
 
 			computeStack(graph);
 		}

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials are made 
  * available under the terms of the Eclipse Public License v1.0 which accompanies
  * this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
@@ -56,8 +56,10 @@ public class BundleModelModification extends ModelModification{
 	
 	@Override
 	protected void modifyModel(IBaseModel model, IProgressMonitor innerMonitor) throws CoreException {
-		if (model instanceof IBundlePluginModelBase == false) 
+		if (!(model instanceof IBundlePluginModelBase)) 
+		{
 			return;
+		}
 
 		IBundlePluginModelBase bundleModel = (IBundlePluginModelBase) model;
 		IBundle bundle = bundleModel.getBundleModel().getBundle();

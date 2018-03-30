@@ -155,7 +155,7 @@ public final class EdgeStyleImportMerger {
 			   viewpointLabel.eIsSet(VpdiagramPackage.eINSTANCE.getLabel_Italic())))
 		{
 			EList<FontFormat> originalLabelFormat = originalLabel. getLabelFormat();
-			if (null != originalLabelFormat && false == originalLabelFormat.isEmpty())
+			if (null != originalLabelFormat && !originalLabelFormat.isEmpty())
 			{
 				result.getLabelFormat().clear();
 				result.getLabelFormat().addAll(originalLabelFormat);

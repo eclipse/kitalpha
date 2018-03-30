@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,7 +25,6 @@ import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.polarsys.kitalpha.emde.extension.ModelExtensionHelper;
-import org.polarsys.kitalpha.emde.extension.ModelExtensionManager;
 
 public class ExtensionItemProviderAdapter extends ItemProviderAdapter {
 
@@ -62,20 +61,20 @@ public class ExtensionItemProviderAdapter extends ItemProviderAdapter {
 		Object[] objects = result.toArray();
 		for (Object innerObject : objects) {
 			// We only deal with CommandParameter
-			if (innerObject instanceof CommandParameter == false) {
+			if (!(innerObject instanceof CommandParameter)) {
 				continue;
 			}
 			CommandParameter parameter = (CommandParameter) innerObject;
 			// We only deal with reference
-			if (parameter.feature instanceof EReference == false) {
+			if (!(parameter.feature instanceof EReference)) {
 				continue;
 			}
 			// Value should be an EObject
-			if (parameter.value instanceof EObject == false) {
+			if (!(parameter.value instanceof EObject)) {
 				continue;
 			}
 			// Do not process already removed commands
-			if (result.contains(innerObject) == false) {
+			if (!result.contains(innerObject)) {
 				continue;
 			}
 			for (Iterator<?> iterator = result.iterator(); iterator.hasNext();) {
@@ -85,16 +84,16 @@ public class ExtensionItemProviderAdapter extends ItemProviderAdapter {
 					continue;
 				}
 				// We only deal with CommandParameter
-				if (innerInnerObject instanceof CommandParameter == false) {
+				if (!(innerInnerObject instanceof CommandParameter)) {
 					continue;
 				}
 				CommandParameter innerParameter = (CommandParameter) innerInnerObject;
 				// We only deal with reference
-				if (innerParameter.feature instanceof EReference == false) {
+				if (!(innerParameter.feature instanceof EReference)) {
 					continue;
 				}
 				// Value should be an EObject
-				if (innerParameter.value instanceof EObject == false) {
+				if (!(innerParameter.value instanceof EObject)) {
 					continue;
 				}
 				// check whether or not command parameter are duplicated

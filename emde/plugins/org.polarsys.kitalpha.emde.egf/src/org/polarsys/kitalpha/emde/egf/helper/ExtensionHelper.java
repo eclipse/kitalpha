@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -198,7 +198,7 @@ public class ExtensionHelper {
 		List<GenPackage> allUsedGenPackagesWithClassifiers = genModel.getAllUsedGenPackagesWithClassifiers();
 		// Retrieve annotated GenPackages, filter them if necessary
 		for (GenPackage processedGenPackage : getUsedGenPackages(genPackage)) {
-			if (processedGenPackage.hasClassifiers() && (allUsedGenPackagesWithClassifiers.contains(processedGenPackage) == false)) {
+			if (processedGenPackage.hasClassifiers() && !allUsedGenPackagesWithClassifiers.contains(processedGenPackage)) {
 				EcoreUtil.resolveAll(processedGenPackage);
 				genModel.getUsedGenPackages().add(processedGenPackage);
 			}
@@ -250,7 +250,7 @@ public class ExtensionHelper {
 			}
 			try {
 				EObject eObject = resourceSet.getEObject(uri, true);
-				if (eObject instanceof GenPackage && (genPackages.contains(eObject) == false)) {
+				if (eObject instanceof GenPackage && !genPackages.contains(eObject)) {
 					GenPackage processedGenPackage = (GenPackage) eObject;
 					processedGenPackage.getGenModel().setImportManager(genPackage.getGenModel().getImportManager());
 					genPackages.add(processedGenPackage);

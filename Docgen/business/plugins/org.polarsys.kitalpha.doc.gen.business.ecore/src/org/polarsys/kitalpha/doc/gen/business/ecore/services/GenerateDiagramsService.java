@@ -312,7 +312,7 @@ public class GenerateDiagramsService{
 			for (DAnalysis dAnalysis : referencedDAnalysis) 
 			{
 				final Collection<DSemanticDiagram> representation = getRepresentation(dAnalysis);
-				if (representation.isEmpty() == false)
+				if (!representation.isEmpty())
 				{
 					result.addAll(representation);
 				}
@@ -643,7 +643,7 @@ public class GenerateDiagramsService{
 				for (EPackage ePackage : eSubpackages) 
 				{
 					List<EClass> eClasses = getEClasses(ePackage);
-					if (eClasses.isEmpty() == false)
+					if (!eClasses.isEmpty())
 					{
 						result.addAll(eClasses);
 					}

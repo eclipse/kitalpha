@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,16 +27,16 @@ import org.polarsys.kitalpha.emde.model.edit.provider.helpers.EMDEHelper;
 public class NewChildDescriptorHelper {
 	public static boolean isValidCommand(Object owner, CommandParameter parameter) {
 		// We only deal with reference
-		if (parameter.feature instanceof EReference == false) {
+		if (!(parameter.feature instanceof EReference)) {
 			return true;
 		}
 		// Value should be an EObject
-		if (parameter.value instanceof EObject == false) {
+		if (!(parameter.value instanceof EObject)) {
 			return true;
 		}
 		EClass value = (EClass) EMFHelper.solveAgainstStaticPackage(((EObject) parameter.value).eClass());
 		// Value should be an Extension
-		if (EMDEHelper.isSuperTypeOf(value, EmdePackage.Literals.ELEMENT_EXTENSION) == false) {
+		if (!EMDEHelper.isSuperTypeOf(value, EmdePackage.Literals.ELEMENT_EXTENSION)) {
 			return true;
 		}
 		// Owner should be an EObject

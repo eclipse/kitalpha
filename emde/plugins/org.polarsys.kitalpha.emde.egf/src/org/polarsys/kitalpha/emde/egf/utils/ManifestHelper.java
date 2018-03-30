@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -184,7 +184,7 @@ public abstract class ManifestHelper {
 			additions.addAll(genModel.getEditPluginVariables());
 			additions.add("org.polarsys.kitalpha.emde"); //$NON-NLS-1$
 			for (GenPackage genPackage : genModel.getGenPackages()) {
-				if (genPackage.isChildCreationExtenders() == false) {
+				if (!genPackage.isChildCreationExtenders()) {
 					continue;
 				}
 				for (String detail : ExtensionAnnotationsHelper.getUsedGenPackages(genPackage.getEcorePackage())) {

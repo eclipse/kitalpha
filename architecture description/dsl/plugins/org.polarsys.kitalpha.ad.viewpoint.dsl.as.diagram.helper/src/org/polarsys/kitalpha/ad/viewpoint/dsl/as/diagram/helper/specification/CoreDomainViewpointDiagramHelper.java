@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,12 +38,12 @@ public class CoreDomainViewpointDiagramHelper extends CoreDomainViewpointHelper 
 	public static List<Group> getViewpointAccessibleSiriusGroup(Viewpoint viewpoint){ 
 		List<Group> result = new ArrayList<Group>();
 		EList<Viewpoint> useViewpoint = viewpoint.getUseViewpoint();
-		if (useViewpoint.isEmpty() == false)
+		if (!useViewpoint.isEmpty())
 		{
 			for (Viewpoint iUsedViewpoint : useViewpoint) 
 			{
 				List<Group> viewpointSiriusGroup = getViewpointSiriusGroup(iUsedViewpoint);
-				if (viewpointSiriusGroup.isEmpty() == false)
+				if (!viewpointSiriusGroup.isEmpty())
 				{
 					result.addAll(viewpointSiriusGroup);
 				}
@@ -67,7 +67,7 @@ public class CoreDomainViewpointDiagramHelper extends CoreDomainViewpointHelper 
 			Representation representation = coreDomainViewpoint.getRepresentation();
 			if (representation != null)
 			{
-				if (representation.getRepresentations().isEmpty() == false)
+				if (!representation.getRepresentations().isEmpty())
 				{
 					for (RepresentationElement rElement : representation.getRepresentations()) 
 					{

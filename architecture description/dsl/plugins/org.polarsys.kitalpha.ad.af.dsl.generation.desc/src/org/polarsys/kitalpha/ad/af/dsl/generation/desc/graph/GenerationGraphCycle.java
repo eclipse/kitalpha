@@ -36,7 +36,7 @@ public class GenerationGraphCycle {
 	 * @return True if cycles are detected, False else.
 	 */
 	public boolean exist(){
-		return cycles.isEmpty() == false;
+		return !cycles.isEmpty();
 	}
 	
 	public int count(){
@@ -83,12 +83,14 @@ public class GenerationGraphCycle {
 				for (GenerationNode gnode : cycle) 
 					vector.add(gnode);
 				
-				if (isDetected(vector) == false)
+				if (!isDetected(vector))
+				{
 					cycles.add(vector);
+				}
 			}
 			else
 			{
-				if (visited.contains(neighbor) == false)
+				if (!visited.contains(neighbor))
 				{
 					cycle.push(neighbor);
 					analyse(neighbor);
@@ -114,7 +116,7 @@ public class GenerationGraphCycle {
 				boolean gap = false;
 				for (int j = 0; j < cycle.size(); j++) 
 				{
-					if (cycle.get(j).equals(current_cycle.get((index + j) % current_cycle.size())) == false)
+					if (!cycle.get(j).equals(current_cycle.get((index + j) % current_cycle.size())))
 					{
 						gap = true;
 						break;
@@ -146,7 +148,7 @@ public class GenerationGraphCycle {
 	 */
 	public String cyclesToString(){
 		String result = "";
-		if (cycles.isEmpty() == false)
+		if (!cycles.isEmpty())
 		{
 			for (int i = 0; i < cycles.size(); i++) 
 			{

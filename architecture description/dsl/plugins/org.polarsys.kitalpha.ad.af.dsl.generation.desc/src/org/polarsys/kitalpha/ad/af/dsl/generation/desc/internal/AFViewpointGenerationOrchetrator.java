@@ -66,7 +66,7 @@ public class AFViewpointGenerationOrchetrator{
 	 * <code>_viewpointToGenerate<code> list.
 	 */
 	public void orchestrateVPGeneration(String afModelStringURI, IProgressMonitor monitor){
-		if (generationGraph.isEmpty() == false)
+		if (!generationGraph.isEmpty())
 		{
 			// Check if there is cycles
 			GenerationGraphCycle cycleDetect = new GenerationGraphCycle(generationGraph);

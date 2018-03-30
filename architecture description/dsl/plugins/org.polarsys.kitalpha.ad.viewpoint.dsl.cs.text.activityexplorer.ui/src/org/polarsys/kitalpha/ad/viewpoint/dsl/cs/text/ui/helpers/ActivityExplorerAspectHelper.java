@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -53,7 +53,7 @@ public class ActivityExplorerAspectHelper {
 
 		for (final Viewpoint viewpoint : viewpoints) {
 			final List<String> viewpointPagesIDs = getViewpointPagesIDs(viewpoint);
-			if (viewpointPagesIDs.isEmpty() == false) {
+			if (!viewpointPagesIDs.isEmpty()) {
 				result.addAll(viewpointPagesIDs);
 			}
 		}
@@ -97,7 +97,7 @@ public class ActivityExplorerAspectHelper {
 		for (final Viewpoint viewpoint : viewpoints)
 		{
 			final List<String> vewpointSectionsIDs = getViewpointSectionsIDs(viewpoint);
-			if (vewpointSectionsIDs.isEmpty() == false) {
+			if (!vewpointSectionsIDs.isEmpty()) {
 				result.addAll(vewpointSectionsIDs);
 			}
 		}
@@ -142,7 +142,7 @@ public class ActivityExplorerAspectHelper {
 
 	public static ViewpointActivityExplorer getAExAspect(final Viewpoint viewpoint){
 		final EList<Aspect> vp_Aspects = viewpoint.getVP_Aspects();
-		if (vp_Aspects.isEmpty() == false)
+		if (!vp_Aspects.isEmpty())
 		{
 			for (final Aspect aspect : vp_Aspects)
 			{
@@ -199,7 +199,7 @@ public class ActivityExplorerAspectHelper {
 		if (config.length != 0){
 			for (final IConfigurationElement iConfigurationElement : config) {
 				final String _id = iConfigurationElement.getAttribute(ATT_ID);
-				if ((null != _id) && (false == _id.isEmpty()) && _id.equals(id)){
+				if ((null != _id) && (!_id.isEmpty()) && _id.equals(id)){
 					return getConfigurationName(iConfigurationElement, PAGE_TYPE);
 				}
 			}

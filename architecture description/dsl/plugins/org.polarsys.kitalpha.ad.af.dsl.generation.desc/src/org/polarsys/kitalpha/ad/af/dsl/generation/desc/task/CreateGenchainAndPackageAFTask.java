@@ -138,7 +138,7 @@ public class CreateGenchainAndPackageAFTask extends GenerationAdapter implements
 				
 				String pluginName = getPluginName();
 				final IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(pluginName);
-				if (project.exists() == false)
+				if (!project.exists())
 				{
 					project.create(monitor);
 					project.refreshLocal(2, monitor);

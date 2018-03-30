@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -60,12 +60,16 @@ public class GenerationGraph {
 		for (GenerationEdge edge : getOwnedEdges()) 
 		{
 			if (edge.getSourceNode().equals(node))
-				if (concernedEdges.contains(edge) == false)
+				if (!concernedEdges.contains(edge))
+				{
 					concernedEdges.add(edge);
+				}
 		
 			if (edge.getTargetNode().equals(node))
-				if (concernedEdges.contains(edge) == false)
+				if (!concernedEdges.contains(edge))
+				{
 					concernedEdges.add(edge);
+				}
 		}
 		
 		// Remove concerned Edges
@@ -139,8 +143,10 @@ public class GenerationGraph {
 		for (GenerationEdge edge : getOwnedEdges()) 
 		{
 			GenerationNode node = edge.getTargetNode();
-			if (targetedNodes.contains(node) == false)
+			if (!targetedNodes.contains(node))
+			{
 				targetedNodes.add(node);
+			}
 		}
 		for (GenerationNode node : targetedNodes) 
 		{
@@ -154,8 +160,10 @@ public class GenerationGraph {
 				}
 			}
 			
-			if (isLeaf && (result.contains(node) == false))
+			if (isLeaf && !result.contains(node)) 
+			{
 				result.add(node);
+			}
 		}
 		return result;
 	}
@@ -190,7 +198,7 @@ public class GenerationGraph {
 	}
 	
 	private void includeViewpointToGraph(Viewpoint viewpoint){
-		if (PlatformViewpointHelper.isAFViewpointAvailable(viewpoint) == false)
+		if (!PlatformViewpointHelper.isAFViewpointAvailable(viewpoint))
 		{
 			GenerationNode node = getGenerationNode(viewpoint);
 			if (node == null)

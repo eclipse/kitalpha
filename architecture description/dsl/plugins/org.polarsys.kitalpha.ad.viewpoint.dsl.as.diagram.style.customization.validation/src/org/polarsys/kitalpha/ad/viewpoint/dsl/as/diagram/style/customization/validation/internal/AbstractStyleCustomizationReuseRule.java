@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015 Thales Global Services S.A.S.
+ * Copyright (c) 2015, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -49,7 +49,7 @@ public abstract class AbstractStyleCustomizationReuseRule implements IAdditional
 	@Override
 	public ValidationStatus validationRules(Object data) {
 		final EList<? extends EObject> listTocheck = getListTocheck((StyleCustomizationReuse)data);
-		return listTocheck != null && listTocheck.isEmpty() == false ? ValidationStatus.Ok : ValidationStatus.Error;
+		return listTocheck != null && !listTocheck.isEmpty()? ValidationStatus.Ok : ValidationStatus.Error;
 	}
 
 	/*
@@ -62,7 +62,7 @@ public abstract class AbstractStyleCustomizationReuseRule implements IAdditional
 		final StyleCustomizationReuse reuse = (StyleCustomizationReuse) object;
 		final String name = reuse.getName();
 		String message = "style customization "; 
-		message = name != null && name.isEmpty() == false ? "The " + message + name + " ": "A "+  message;
+		message = name != null && !name.isEmpty()? "The " + message + name + " ": "A "+  message;
 		message += "sould have at least one element in the list " + listName; 
 		return message;
 	}

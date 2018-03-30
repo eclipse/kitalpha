@@ -131,7 +131,7 @@ public class ExtensibleModel extends Model<ExtensibleModel> {
 					if (eClassifier instanceof EClass) {
 						for (EClass superTypeEClass : ((EClass) eClassifier).getEAllSuperTypes()) {
 							String currentNamespace = superTypeEClass.getEPackage().getNsURI();
-							if (currentNamespace.equals(getName()) == false && inheritedNamespaces.contains(currentNamespace) == false) {
+							if (!currentNamespace.equals(getName()) && !inheritedNamespaces.contains(currentNamespace)) {
 								inheritedNamespaces.add(currentNamespace);
 							}
 						}
@@ -140,7 +140,7 @@ public class ExtensibleModel extends Model<ExtensibleModel> {
 				// Process Inherited namespaces
 				for (String inheritedNamespace : inheritedNamespaces) {
 					ExtensibleModel inheritedExtensibleModel = ModelExtensionDescriptor.INSTANCE.getExtensibleModel(inheritedNamespace);
-					if (inheritedExtensibleModel != null && inheritedExtensibleModels.contains(inheritedExtensibleModel) == false) {
+					if (!(inheritedExtensibleModel != null && inheritedExtensibleModels.contains(inheritedExtensibleModel))) {
 						inheritedExtensibleModels.add(inheritedExtensibleModel);
 					}
 				}
@@ -159,7 +159,7 @@ public class ExtensibleModel extends Model<ExtensibleModel> {
 			inheritedExtendedModels = new HashMap<String, ExtendedModel>();
 			for (ExtensibleModel extensibleModel : getInheritedExtensibleModels()) {
 				for (ExtendedModel extendedModel : extensibleModel.getExtendedModels()) {
-					if (inheritedExtendedModels.containsKey(extendedModel.getName()) == false) {
+					if (!(inheritedExtendedModels.containsKey(extendedModel.getName()))) {
 						inheritedExtendedModels.put(extendedModel.getName(), extendedModel);
 					}
 				}

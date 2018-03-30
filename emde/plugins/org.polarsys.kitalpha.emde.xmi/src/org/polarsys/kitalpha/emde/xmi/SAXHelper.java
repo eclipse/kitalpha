@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,7 +38,7 @@ public class SAXHelper {
 		}
 		List<String> processed = new ArrayList<String>();
 		Map<EObject, AnyType> anyTypes = resource.getEObjectToExtensionMap();
-		if (anyTypes != null && anyTypes.isEmpty() == false) {
+		if (anyTypes != null && !anyTypes.isEmpty()) {
 			for (EObject key : anyTypes.keySet()) {
 				AnyType type = anyTypes.get(key);
 				@SuppressWarnings("unchecked")
@@ -53,7 +53,7 @@ public class SAXHelper {
 						// to the current resource.
 						// we mimic the default validate behavior
 						//
-						if (innerType.eIsProxy() == false && processed.contains(resource.getID(innerType)) == false) {
+						if (innerType.eIsProxy() == false && !processed.contains(resource.getID(innerType))) {
 							processed.add(resource.getID(innerType));
 							resource.getWarnings().add(new UnknownEObject(resource, innerType, locator.get(resource.getID(innerType))));
 						}
@@ -71,7 +71,7 @@ public class SAXHelper {
 							if (reference == null) {
 								continue;
 							}
-							if (reference.eIsProxy() == false && reference.getEOpposite() == null) {
+							if (!reference.eIsProxy() && reference.getEOpposite() == null) {
 								resource.getWarnings().add(new UnknownEObjectFeature(resource, key, reference, innerType, locator.get(resource.getID(key))));
 							}
 						} else {
@@ -98,9 +98,9 @@ public class SAXHelper {
 											//
 											String proxyId = id.substring(index + 1);
 											EObject value = ((XMLResourceImpl) resource).getIDToEObjectMap().get(proxyId);
-											if (value != null && value instanceof AnyType == false) {
+											if (value != null && !(value instanceof AnyType)) {
 												for (EReference referenceValue : value.eClass().getEAllReferences()) {
-													if (EcoreUtil.equals(reference.getEType(), referenceValue.getEType()) && processed.contains(proxyId) == false) {
+													if (EcoreUtil.equals(reference.getEType(), referenceValue.getEType()) && !processed.contains(proxyId)) {
 														processed.add(proxyId);
 														resource.getWarnings().add(new UnknownEObjectFeature(resource, value, referenceValue, innerType, locator.get(resource.getID(value))));
 													}
@@ -114,9 +114,9 @@ public class SAXHelper {
 									// Non Proxy ID analysis
 									//
 									EObject value = ((XMLResourceImpl) resource).getIDToEObjectMap().get(id);
-									if (value != null && value instanceof AnyType == false) {
+									if (value != null && !(value instanceof AnyType)) {
 										for (EReference referenceValue : value.eClass().getEAllReferences()) {
-											if (EcoreUtil.equals(reference.getEType(), referenceValue.getEType()) && processed.contains(id) == false) {
+											if (EcoreUtil.equals(reference.getEType(), referenceValue.getEType()) && !processed.contains(id)) {
 												processed.add(id);
 												resource.getWarnings().add(new UnknownEObjectFeature(resource, value, referenceValue, innerType, locator.get(resource.getID(value))));
 											}

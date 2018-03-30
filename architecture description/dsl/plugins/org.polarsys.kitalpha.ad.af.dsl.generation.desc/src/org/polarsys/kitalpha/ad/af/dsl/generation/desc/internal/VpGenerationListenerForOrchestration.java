@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -83,8 +83,10 @@ class VpGenerationListenerForOrchestration extends GenerationAdapter{
 	}
 	
 	public void addViewpointToLink(Viewpoint viewpoint){
-		if (_viewpointToLink.contains(viewpoint) == false)
+		if (!_viewpointToLink.contains(viewpoint))
+		{
 			_viewpointToLink.add(viewpoint);
+		}
 	}
 	
 	/**
@@ -96,7 +98,7 @@ class VpGenerationListenerForOrchestration extends GenerationAdapter{
 		
 		if (event instanceof ViewpointGenerationEndEvent)
 		{
-			if (_listenerIsActive && _viewpointToGenerate != null && _viewpointToGenerate.isEmpty() == false )
+			if (_listenerIsActive && _viewpointToGenerate != null && !_viewpointToGenerate.isEmpty())
 			{
 				generateViewpoint();
 			}
@@ -147,7 +149,7 @@ class VpGenerationListenerForOrchestration extends GenerationAdapter{
 		URI uri = URI.createPlatformResourceURI(_afModelStringURI, false);
 		org.eclipse.emf.ecore.resource.Resource resource = resourceSet.getResource(uri, true);
 
-		if (resource.isLoaded() == false)
+		if (!resource.isLoaded())
 		{
 			try {
 				resource.load(Collections.EMPTY_MAP);

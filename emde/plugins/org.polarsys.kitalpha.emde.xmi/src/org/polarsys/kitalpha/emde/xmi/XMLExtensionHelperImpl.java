@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,7 +38,7 @@ public class XMLExtensionHelperImpl extends XMLHelperImpl {
 
 	@Override
 	protected URI handleDanglingHREF(EObject object) {
-		if (XMLResource.OPTION_PROCESS_DANGLING_HREF_DISCARD.equals(processDanglingHREF) == false) {
+		if (!XMLResource.OPTION_PROCESS_DANGLING_HREF_DISCARD.equals(processDanglingHREF)) {
 			DanglingHREFException exception = new DanglingHREFException("The object '" + object + "' is not contained in a resource.", //$NON-NLS-1$ //$NON-NLS-2$ 
 					resource == null || resource.getURI() == null ? "unknown" : resource.getURI().toString(), //$NON-NLS-1$
 					handler != null && handler.getLineNumber() != -1 ? handler.getLineNumber() : 0, handler != null && handler.getColumnNumber() != -1 ? handler.getColumnNumber() : 0);

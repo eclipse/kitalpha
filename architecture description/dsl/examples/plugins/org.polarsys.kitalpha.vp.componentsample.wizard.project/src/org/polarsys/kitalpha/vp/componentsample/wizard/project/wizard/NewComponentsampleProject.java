@@ -138,7 +138,7 @@ public class NewComponentsampleProject extends Wizard implements INewWizard {
 
 							getContainer().run(false, false, addModelSession);
 							
-							if (session != null && session.isOpen() == false){
+							if (session != null && !session.isOpen()){
 								session.save(new NullProgressMonitor());
 								session.open(monitor);
 							}

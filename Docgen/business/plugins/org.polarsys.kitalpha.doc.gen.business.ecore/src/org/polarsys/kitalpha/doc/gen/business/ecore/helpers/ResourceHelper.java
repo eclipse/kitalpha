@@ -59,7 +59,7 @@ public class ResourceHelper {
 	public static boolean checkResource(String path) {
 		final String projectName = getProjectName(path);
 		final IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(projectName);
-		if (project.exists() == false) 
+		if (!project.exists()) 
 		{
 			PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
 				public void run() {
@@ -74,7 +74,7 @@ public class ResourceHelper {
 		final String outputPath = getOutputPath(projectName, path);
 		if (outputPath.length() > 0) {
 			final IFolder folder = project.getFolder(new Path(outputPath));
-			if (folder.exists() == false) {
+			if (!folder.exists()) {
 				PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
 					public void run() {
 						try {
@@ -158,7 +158,7 @@ public class ResourceHelper {
 		StringBuilder builder = new StringBuilder();
 		for (String s : outputDirectoryPath.split(SLASH)) {
 			if (s != null && s.length() > 0) {
-				if (s.equals(projectName) == false) {
+				if (!s.equals(projectName)) {
 					builder.append(SLASH);
 					builder.append(s);
 				}
@@ -180,7 +180,7 @@ public class ResourceHelper {
 	private static void createFolder(IFolder folder, IProgressMonitor monitor)
 			throws Exception {
 		Stack<IFolder> folderStack = getStack(folder);
-		while (folderStack.isEmpty() == false) {
+		while (!folderStack.isEmpty()) {
 			IFolder newFolder = folderStack.pop();
 			newFolder.create(true, true, monitor);
 		}
@@ -188,7 +188,7 @@ public class ResourceHelper {
 
 	private static Stack<IFolder> getStack(IFolder folder) {
 		Stack<IFolder> stack = new Stack<IFolder>();
-		if (folder != null && folder.exists() == false) {
+		if (folder != null && !folder.exists()) {
 			stack.push(folder);
 			IContainer parent = folder.getParent();
 			if (parent instanceof IFolder) {
@@ -202,7 +202,7 @@ public class ResourceHelper {
 	public static IProject createProject(String name) {
 		IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(
 				name);
-		if (project.exists() == false) {
+		if (!project.exists()) {
 			try {
 				return createProject(project, true);
 			} catch (JavaModelException e) {
@@ -306,7 +306,7 @@ public class ResourceHelper {
 	public static void addNewSourceFolder(IProject project,
 			IFolder sourceFolder, IProgressMonitor monitor)
 			throws CoreException, IOException {
-		if (sourceFolder.exists() == false) {
+		if (!sourceFolder.exists()) {
 			sourceFolder.create(true, true, monitor);
 		}
 
@@ -335,7 +335,7 @@ public class ResourceHelper {
 		while (line != null) {
 			builder.append(line);
 			if (line.startsWith(PREFIX)) {
-				if (line.endsWith(SUFFIX) == false) {
+				if (!line.endsWith(SUFFIX)) {
 					builder.append(SUFFIX);
 					builder.append(NEW_LINE);
 					builder.append(sourceFolder.getName());

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -111,7 +111,7 @@ public abstract class HTMLDocumentationGenerationWizard extends Wizard
 		{
 			TreeSelection treeSelection = (TreeSelection) selection_p;
 			final Object firstSelection = treeSelection.getFirstElement();
-			if (false == firstSelection instanceof IFile)
+			if (!(firstSelection instanceof IFile))
 			{
 				// Initialize the generation scope.
 				final Object[] array = treeSelection.toArray();
@@ -143,7 +143,7 @@ public abstract class HTMLDocumentationGenerationWizard extends Wizard
 		GenerationGlobalScope.getInstance().setReferencesStrategy(referencesStrategy);
 		
 		// Initialize scope.
-		if (selectedModelElements != null && false == selectedModelElements.isEmpty())
+		if (selectedModelElements != null && !selectedModelElements.isEmpty())
 		{
 			for (EObject eObject : selectedModelElements) 
 			{

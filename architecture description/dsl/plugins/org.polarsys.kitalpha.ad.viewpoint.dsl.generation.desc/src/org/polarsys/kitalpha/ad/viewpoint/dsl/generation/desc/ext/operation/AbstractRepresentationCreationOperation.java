@@ -55,15 +55,15 @@ import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DSemanticDiagram;
 import org.eclipse.sirius.diagram.DragAndDropTarget;
 import org.eclipse.sirius.diagram.business.api.query.EdgeMappingQuery;
+import org.eclipse.sirius.diagram.business.api.refresh.CanonicalSynchronizer;
+import org.eclipse.sirius.diagram.business.api.refresh.CanonicalSynchronizerFactory;
+import org.eclipse.sirius.diagram.business.api.refresh.DiagramCreationUtil;
 import org.eclipse.sirius.diagram.description.AbstractNodeMapping;
 import org.eclipse.sirius.diagram.description.ContainerMapping;
 import org.eclipse.sirius.diagram.description.DiagramDescription;
 import org.eclipse.sirius.diagram.description.EdgeMapping;
 import org.eclipse.sirius.diagram.description.NodeMapping;
-import org.eclipse.sirius.diagram.business.api.refresh.CanonicalSynchronizer;
-import org.eclipse.sirius.diagram.business.api.refresh.CanonicalSynchronizerFactory;
 import org.eclipse.sirius.diagram.ui.internal.refresh.SynchronizeGMFModelCommand;
-import org.eclipse.sirius.diagram.business.api.refresh.DiagramCreationUtil;
 import org.eclipse.sirius.ecore.extender.business.api.accessor.ModelAccessor;
 import org.eclipse.sirius.ext.base.Option;
 import org.eclipse.sirius.table.metamodel.table.DTable;
@@ -157,7 +157,7 @@ public abstract class AbstractRepresentationCreationOperation extends WorkspaceM
 	 * @param viewpointName 
 	 * 				the name of a plug-in
 	 * @param representations 
-	 * 				à {@link List} of representation description names to create
+	 * 				ï¿½ {@link List} of representation description names to create
 	 */
 	public AbstractRepresentationCreationOperation(URI modelURI, String fileName, String viewpointPluginID, String viewpointName, List<String> representations) {
 		super();
@@ -241,8 +241,10 @@ public abstract class AbstractRepresentationCreationOperation extends WorkspaceM
 	
 	@Override
 	protected void execute(IProgressMonitor monitor) throws CoreException, InvocationTargetException, InterruptedException {
-		if (canGenerate() == false)
+		if (!canGenerate())
+		{
 			return ;
+		}
 		
 		/** Step 1: create representation file and get the session **/
 		Session session = createRepresentationFile(monitor);
@@ -256,7 +258,7 @@ public abstract class AbstractRepresentationCreationOperation extends WorkspaceM
 			List<DRepresentation> newAndCreatedRepresentations = createRepresentations(session, monitor);
 						
 			// Create diagram content
-			if (newAndCreatedRepresentations.isEmpty() == false)
+			if (!newAndCreatedRepresentations.isEmpty())
 			{
 				for (DRepresentation dRepresentation : newAndCreatedRepresentations) 
 				{
@@ -546,10 +548,10 @@ public abstract class AbstractRepresentationCreationOperation extends WorkspaceM
 					} catch (IllegalArgumentException e) {
 					}
 					
-					if (children != null && children.isEmpty() == false)
+					if (children != null && !children.isEmpty())
 					{
 						List layoutNodes = LayoutService.getInstance().getLayoutNodes(diagramEP, associatedGMFDiagram_f.getChildren());
-						if (layoutNodes.isEmpty() == false) 
+						if (!layoutNodes.isEmpty()) 
 						{
 							Runnable layoutRun = LayoutService.getInstance().layoutLayoutNodes(layoutNodes, false, layoutHint);
 							layoutRun.run();

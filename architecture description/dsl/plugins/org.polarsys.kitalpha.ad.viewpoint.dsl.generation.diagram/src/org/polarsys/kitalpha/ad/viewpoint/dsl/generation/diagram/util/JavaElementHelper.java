@@ -223,7 +223,7 @@ public class JavaElementHelper {
 			if (jeRootContainer instanceof CustomizationExpression)
 			{
 				EObject aParent = jeRootContainer.eContainer();
-				while (aParent instanceof StyleCustomizationDescriptions == false)
+				while (!(aParent instanceof StyleCustomizationDescriptions))
 				{
 					aParent = aParent.eContainer();
 				}

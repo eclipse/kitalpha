@@ -66,14 +66,14 @@ public class DocGenGenerationConfiguration implements IGenerationElementInnerCon
 		boolean result = false;
 		Configuration vpConf = VpDslConfigurationHelper.getViewpointConfiguration(anyModelElement);
 		EList<ConfigurationElement> vpConfigurationElements = vpConf.getVpConfigurationElements();
-		if (vpConfigurationElements != null && vpConfigurationElements.isEmpty() == false)
+		if (vpConfigurationElements != null && !vpConfigurationElements.isEmpty())
 		{
 			for (ConfigurationElement configurationElement : vpConfigurationElements) 
 			{
 				if (configurationElement instanceof Generation)
 				{
 					EList<ExtensionGeneratrionConfiguration> ownedExtGenConf = ((Generation) configurationElement).getOwnedExtensionGenConf();
-					if (ownedExtGenConf != null && ownedExtGenConf.isEmpty() == false)
+					if (ownedExtGenConf != null && !ownedExtGenConf.isEmpty())
 					{
 						for (ExtensionGeneratrionConfiguration extGenConf : ownedExtGenConf) 
 						{
