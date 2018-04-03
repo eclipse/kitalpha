@@ -150,11 +150,8 @@ public class NewDSLVpProjectSecondPage extends WizardPage {
 	}
 	
 	protected boolean isDefaultRepresentation(String represnetationManagerID){
-		if (DefaultWizardSelection.isDefault(represnetationManagerID, 
-				DefaultWizardSelection.RepresentationDefaultSelection))
-			return true;
-		else
-			return false;
+		return (DefaultWizardSelection.isDefault(represnetationManagerID, 
+				DefaultWizardSelection.RepresentationDefaultSelection));
 	}
 	
 	private Composite createConcretSyntaxWidgets(Composite parent) {

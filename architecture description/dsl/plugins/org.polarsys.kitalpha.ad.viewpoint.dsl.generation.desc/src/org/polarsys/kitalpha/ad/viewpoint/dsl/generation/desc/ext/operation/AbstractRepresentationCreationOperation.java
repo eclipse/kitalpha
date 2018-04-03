@@ -683,10 +683,7 @@ public abstract class AbstractRepresentationCreationOperation extends WorkspaceM
 	}
 	
 	private boolean isFqnFileName(String fileName){
-		if (fileName != null && !fileName.isEmpty() && fileName.contains("/"))
-			return true;
-		else
-			return false;
+		return (fileName != null && !fileName.isEmpty() && fileName.contains("/"));
 	}
 	
 	/**
