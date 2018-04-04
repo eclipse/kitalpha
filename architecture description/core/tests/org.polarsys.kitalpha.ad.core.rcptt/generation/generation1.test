@@ -1,0 +1,40 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _Bk7W4DP-EeiC_oZ3w1IZ8w,_EdZ_4DP-EeiC_oZ3w1IZ8w
+Element-Name: generation1
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _8S9uADP9EeiC_oZ3w1IZ8w
+Runtime-Version: 2.1.0.201606221726
+Save-Time: 4/3/18 2:05 PM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+with [get-view "Project Explorer" | get-tree] {
+    select "org.polarsys.capella.viewpoint.eee/model/eee.generationchain" | get-menu "Run Generation Chain" | click
+    wait 6000
+    select "org.polarsys.capella.viewpoint.model.eee.edit/plugin.xml" | double-click
+}
+get-editor "org.polarsys.capella.viewpoint.model.eee.edit" | get-tab-folder | get-tab-item "plugin.xml" | click
+get-editor "org.polarsys.capella.viewpoint.model.eee.edit" | get-text-viewer | get-property text 
+    | equals "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+    + "<?eclipse version=\"3.0\"?>\n\n\n\n"
+    + "<plugin>\n\n"
+    + "   \n"
+    + "<!--@generated-->\n"
+    + "  <extension point=\"org.eclipse.emf.edit.itemProviderAdapterFactories\">\n"
+    + "      <!-- @generated eee -->\n"
+    + "      <factory class=\"org.polarsys.capella.viewpoint.model.eee.provider.EeeItemProviderAdapterFactory\" supportedTypes=\"org.eclipse.emf.edit.provider.IEditingDomainItemProvider                org.eclipse.emf.edit.provider.IStructuredItemContentProvider                org.eclipse.emf.edit.provider.ITreeItemContentProvider                org.eclipse.emf.edit.provider.IItemLabelProvider                org.eclipse.emf.edit.provider.IItemPropertySource\" uri=\"http://eee/1.0.0\"/>\n"
+    + "   </extension>\n\n"
+    + "   \n"
+    + "<!--@generated-->\n"
+    + "  <extension point=\"org.eclipse.emf.edit.childCreationExtenders\">\n"
+    + "      <!-- @generated eee -->\n"
+    + "      <extender class=\"org.polarsys.capella.viewpoint.model.eee.provider.EeeItemProviderAdapterFactory$EmdeChildCreationExtender\" uri=\"http://www.polarsys.org/kitalpha/emde/1.0.0\"/>\n"
+    + "   </extension>\n\n"
+    + "</plugin>" | verify-true
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--
