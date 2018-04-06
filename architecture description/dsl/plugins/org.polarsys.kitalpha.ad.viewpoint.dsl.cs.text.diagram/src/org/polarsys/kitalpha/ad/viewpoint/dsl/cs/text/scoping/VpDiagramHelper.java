@@ -660,15 +660,20 @@ public class VpDiagramHelper {
 	public static boolean areEqualWithHerarchy(Class target,
 			Class localVpdescClass) {
 		
-		if (localVpdescClass == null) return false;
-		if (target.eClass() == localVpdescClass.eClass()) return true;
+		if (localVpdescClass == null) {
+			return false;
+		}
+		if (target.eClass() == localVpdescClass.eClass()) {
+			return true;
+		}
 		
 		boolean areEqual = false;
 		
 		EList<AbstractSuperClass> superClasses = localVpdescClass.getInheritences();
 		
-		if (superClasses.isEmpty())
+		if (superClasses.isEmpty()) {
 			return false;
+		}
 		
 		for (AbstractSuperClass abstractSuperClass : superClasses) {
 			if (abstractSuperClass instanceof LocalSuperClass){
@@ -676,8 +681,9 @@ public class VpDiagramHelper {
 				
 				areEqual |= (clazz.eClass() == target.eClass());
 				
-				if (areEqual) return areEqual;
-				
+				if (areEqual) {
+					return areEqual;
+				}
 				
 				return areEqualWithHerarchy(target, clazz);
 			}

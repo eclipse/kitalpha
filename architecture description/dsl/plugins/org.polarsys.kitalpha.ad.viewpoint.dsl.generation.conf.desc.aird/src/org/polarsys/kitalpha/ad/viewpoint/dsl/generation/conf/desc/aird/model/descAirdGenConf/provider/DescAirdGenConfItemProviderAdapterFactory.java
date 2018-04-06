@@ -201,7 +201,9 @@ public class DescAirdGenConfItemProviderAdapterFactory extends DescAirdGenConfAd
 	 * @generated
 	 */
 	public void dispose() {
-		if (airdGenerationConfigurationItemProvider != null) airdGenerationConfigurationItemProvider.dispose();
+		if (airdGenerationConfigurationItemProvider != null) {
+			airdGenerationConfigurationItemProvider.dispose();
+		}
 	}
 
 	/**

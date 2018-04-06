@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,12 +45,24 @@ public enum RequiredExecutionEnvironment{
 	 * @return corresponding Execution Environment value 
 	 */
 	public static RequiredExecutionEnvironment getExecutionEnvironment(String ee){
-		if (ee != null && ee.equals("J2SE-1.2")) return J1_2;
-		if (ee != null && ee.equals("J2SE-1.3")) return J1_3;
-		if (ee != null && ee.equals("J2SE-1.4")) return J1_4;
-		if (ee != null && ee.equals("J2SE-1.5")) return J1_5;
-		if (ee != null && ee.equals("JavaSE-1.6")) return J1_6;
-		if (ee != null && ee.equals("JavaSE-1.7")) return J1_7;
+		if (ee != null && ee.equals("J2SE-1.2")) {
+			return J1_2;
+		}
+		if (ee != null && ee.equals("J2SE-1.3")) {
+			return J1_3;
+		}
+		if (ee != null && ee.equals("J2SE-1.4")) {
+			return J1_4;
+		}
+		if (ee != null && ee.equals("J2SE-1.5")) {
+			return J1_5;
+		}
+		if (ee != null && ee.equals("JavaSE-1.6")) {
+			return J1_6;
+		}
+		if (ee != null && ee.equals("JavaSE-1.7")) {
+			return J1_7;
+		}
 		return null;
 	}
 }

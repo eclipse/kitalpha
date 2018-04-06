@@ -78,8 +78,12 @@ public class ExtensionTreeViewer extends ContainerCheckedTreeViewer {
 	}
 
 	private void updateCheckChildrenItems(TreeItem[] items) {
-		if (items == null) return;
-		if (items.length == 0) return;
+		if (items == null) {
+			return;
+		}
+		if (items.length == 0) {
+			return;
+		}
 		
 		for (TreeItem treeItem : items) {
 			IViewpointTreeDescription vpd = (IViewpointTreeDescription) treeItem.getData();

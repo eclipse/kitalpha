@@ -173,7 +173,9 @@ public class DocumentationGenerationConfigurationImpl extends ExtensionGeneratri
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (ecoreToHtml: ");

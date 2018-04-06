@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -175,10 +175,14 @@ public class ViewpointTreeDescription implements IViewpointTreeDescription {
 	private void collectAllParent(IViewpointTreeDescription vpd,
 			Collection<IViewpointTreeDescription> allParents, ViewpointTreeDescription checkedVpd) {
 		
-		if (vpd == null || allParents == null) return;
+		if (vpd == null || allParents == null) {
+			return;
+		}
 		
 		for (IViewpointTreeDescription vpd_parent : vpd.getParents()) {
-			if (vpd_parent == checkedVpd) continue;
+			if (vpd_parent == checkedVpd) {
+				continue;
+			}
 			allParents.add(vpd_parent);
 			collectAllParent(vpd_parent, allParents, checkedVpd);
 		}
@@ -199,10 +203,14 @@ public class ViewpointTreeDescription implements IViewpointTreeDescription {
 	private void collectAllChildren(IViewpointTreeDescription vpd,
 			Collection<IViewpointTreeDescription> allChildren, ViewpointTreeDescription checkedVpd) {
 		
-		if (vpd == null || allChildren == null) return;
+		if (vpd == null || allChildren == null) {
+			return;
+		}
 		
 		for (IViewpointTreeDescription vpd_child : vpd.getChildren()) {
-			if (vpd_child == checkedVpd) continue;
+			if (vpd_child == checkedVpd) {
+				continue;
+			}
 			allChildren.add(vpd_child);
 			collectAllChildren(vpd_child, allChildren, checkedVpd);
 		}

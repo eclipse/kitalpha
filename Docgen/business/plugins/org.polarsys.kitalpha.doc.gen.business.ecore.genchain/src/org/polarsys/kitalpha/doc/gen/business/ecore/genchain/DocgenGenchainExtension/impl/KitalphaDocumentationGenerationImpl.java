@@ -78,7 +78,11 @@ public class KitalphaDocumentationGenerationImpl extends DocumentationGeneration
 		brandingData = newBrandingData;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DocgenGenchainExtensionPackage.KITALPHA_DOCUMENTATION_GENERATION__BRANDING_DATA, oldBrandingData, newBrandingData);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null) {
+				msgs = notification;
+			}else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -91,15 +95,20 @@ public class KitalphaDocumentationGenerationImpl extends DocumentationGeneration
 	public void setBrandingData(KitalphaDocumentationGenerationBranding newBrandingData) {
 		if (newBrandingData != brandingData) {
 			NotificationChain msgs = null;
-			if (brandingData != null)
+			if (brandingData != null){
 				msgs = ((InternalEObject)brandingData).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DocgenGenchainExtensionPackage.KITALPHA_DOCUMENTATION_GENERATION__BRANDING_DATA, null, msgs);
-			if (newBrandingData != null)
+			}
+			if (newBrandingData != null){
 				msgs = ((InternalEObject)newBrandingData).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DocgenGenchainExtensionPackage.KITALPHA_DOCUMENTATION_GENERATION__BRANDING_DATA, null, msgs);
+			}
 			msgs = basicSetBrandingData(newBrandingData, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
 		}
-		else if (eNotificationRequired())
+		else if (eNotificationRequired()){
 			eNotify(new ENotificationImpl(this, Notification.SET, DocgenGenchainExtensionPackage.KITALPHA_DOCUMENTATION_GENERATION__BRANDING_DATA, newBrandingData, newBrandingData));
+		}
 	}
 
 	/**

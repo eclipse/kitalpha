@@ -72,7 +72,9 @@ public class DocGenConfigurationPackageImpl extends EPackageImpl implements DocG
 	 * @generated
 	 */
 	public static DocGenConfigurationPackage init() {
-		if (isInited) return (DocGenConfigurationPackage)EPackage.Registry.INSTANCE.getEPackage(DocGenConfigurationPackage.eNS_URI);
+		if (isInited) {
+			return (DocGenConfigurationPackage)EPackage.Registry.INSTANCE.getEPackage(DocGenConfigurationPackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
 		DocGenConfigurationPackageImpl theDocGenConfigurationPackage = (DocGenConfigurationPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof DocGenConfigurationPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new DocGenConfigurationPackageImpl());
@@ -139,7 +141,9 @@ public class DocGenConfigurationPackageImpl extends EPackageImpl implements DocG
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated) {
+			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -162,7 +166,10 @@ public class DocGenConfigurationPackageImpl extends EPackageImpl implements DocG
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized) {
+			return;
+		}
+		
 		isInitialized = true;
 
 		// Initialize package

@@ -68,7 +68,9 @@ public class VpuiScopeProvider extends AbstractDeclarativeScopeProvider {
 		}
 		// get the parent UI container
 		UI parent = getUI(context);
-		if (parent == null) return IScope.NULLSCOPE;
+		if (parent == null) { 
+			return IScope.NULLSCOPE;
+		}
 		DataSource ui_DataSource = parent.getUI_DataSource();
 		org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class mappedClass = null;
 		boolean isMapped = false;

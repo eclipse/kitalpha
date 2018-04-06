@@ -247,45 +247,60 @@ public class VpspecProposalProvider extends AbstractVpspecProposalProvider {
 	
 	private boolean checkAlreadyImportedDiagramURI(EObject model, String uri)
 	{
-		if (!(model instanceof Viewpoint))
+		if (!(model instanceof Viewpoint)){
 			return false;
+		}
 		
 		Viewpoint vp = (Viewpoint)model;
 		
 		List<String> dep = vp.getUseDiagramResource();
 		
-		if (!uri.startsWith("\"")) uri = "\"" + uri;
-		if (!uri.endsWith("\"")) uri = uri + "\"";
+		if (!uri.startsWith("\"")) {
+			uri = "\"" + uri;
+		}
+		if (!uri.endsWith("\"")) {
+			uri = uri + "\"";
+		}
 		
 		return dep.contains(uri);
 	}
 	
 	private boolean checkAlreadyImportedWSURI(EObject model, String uri)
 	{
-		if (!(model instanceof Viewpoint))
+		if (!(model instanceof Viewpoint)) {
 			return false;
+		}
 		
 		Viewpoint vp = (Viewpoint)model;
 		
 		List<String> dep = vp.getUseWorkspaceResource();
 		
-		if (!uri.startsWith("\"")) uri = "\"" + uri;
-		if (!uri.endsWith("\"")) uri = uri + "\"";
+		if (!uri.startsWith("\"")) {
+			uri = "\"" + uri;
+		}
+		if (!uri.endsWith("\"")) {
+			uri = uri + "\"";
+		}
 		
 		return dep.contains(uri);
 	}
 	
 	private boolean checkAlreadyImportedEMFURI(EObject model, String uri)
 	{
-		if (!(model instanceof Viewpoint))
+		if (!(model instanceof Viewpoint)) {
 			return false;
+		}
 		
 		Viewpoint vp = (Viewpoint)model;
 		
 		List<String> dep = vp.getUseAnyEMFResource();
 		
-		if (!uri.startsWith("\"")) uri = "\"" + uri;
-		if (!uri.endsWith("\"")) uri = uri + "\"";
+		if (!uri.startsWith("\"")) {
+			uri = "\"" + uri;
+		}
+		if (!uri.endsWith("\"")){
+			uri = uri + "\"";
+		}
 		
 		return dep.contains(uri);
 	}

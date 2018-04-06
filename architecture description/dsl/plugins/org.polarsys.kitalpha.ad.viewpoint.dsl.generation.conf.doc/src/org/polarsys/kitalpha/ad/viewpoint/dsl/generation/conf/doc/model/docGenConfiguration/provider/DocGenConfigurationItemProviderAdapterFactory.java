@@ -215,7 +215,9 @@ public class DocGenConfigurationItemProviderAdapterFactory extends DocGenConfigu
 	 * @generated
 	 */
 	public void dispose() {
-		if (documentationGenerationConfigurationItemProvider != null) documentationGenerationConfigurationItemProvider.dispose();
+		if (documentationGenerationConfigurationItemProvider != null) {
+			documentationGenerationConfigurationItemProvider.dispose();
+		}
 	}
 
 	/**

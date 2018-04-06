@@ -231,10 +231,18 @@ public abstract class AbstractRepresentationCreationOperation extends WorkspaceM
 	 * @return True if all data are not null and not empty
 	 */
 	private boolean canGenerate(){
-		if (_modelURI == null ) return false;
-		if (_viewpointName == null || _viewpointName.isEmpty() ) return false;
-		if (_viewpointPluginID == null || _viewpointPluginID.isEmpty() ) return false;
-		if (_representationsNames == null || _representationsNames.isEmpty() ) return false;
+		if (_modelURI == null ) {
+			return false;
+		}
+		if (_viewpointName == null || _viewpointName.isEmpty() ) {
+			return false;
+		}
+		if (_viewpointPluginID == null || _viewpointPluginID.isEmpty() ) {
+			return false;
+		}
+		if (_representationsNames == null || _representationsNames.isEmpty() ) {
+			return false;
+		}
 		
 		return true;
 	}

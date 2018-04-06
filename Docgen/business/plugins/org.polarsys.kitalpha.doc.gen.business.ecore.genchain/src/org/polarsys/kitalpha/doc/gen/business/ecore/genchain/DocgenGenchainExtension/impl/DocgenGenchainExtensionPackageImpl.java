@@ -76,7 +76,9 @@ public class DocgenGenchainExtensionPackageImpl extends EPackageImpl implements 
 	 * @generated
 	 */
 	public static DocgenGenchainExtensionPackage init() {
-		if (isInited) return (DocgenGenchainExtensionPackage)EPackage.Registry.INSTANCE.getEPackage(DocgenGenchainExtensionPackage.eNS_URI);
+		if (isInited) {
+			return (DocgenGenchainExtensionPackage)EPackage.Registry.INSTANCE.getEPackage(DocgenGenchainExtensionPackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
 		DocgenGenchainExtensionPackageImpl theDocgenGenchainExtensionPackage = (DocgenGenchainExtensionPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof DocgenGenchainExtensionPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new DocgenGenchainExtensionPackageImpl());
@@ -179,7 +181,9 @@ public class DocgenGenchainExtensionPackageImpl extends EPackageImpl implements 
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated) {
+			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -207,7 +211,9 @@ public class DocgenGenchainExtensionPackageImpl extends EPackageImpl implements 
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized) {
+			return;
+		}
 		isInitialized = true;
 
 		// Initialize package

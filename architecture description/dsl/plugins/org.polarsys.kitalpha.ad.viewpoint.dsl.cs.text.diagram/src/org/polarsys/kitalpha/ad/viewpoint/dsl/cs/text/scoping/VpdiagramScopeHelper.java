@@ -289,11 +289,15 @@ public class VpdiagramScopeHelper {
 			Collection<org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractAssociation> associations,
 			Class clazz) {
 		
-		if (clazz == null) return;
+		if (clazz == null) {
+			return;
+		}
 		
 		EList<AbstractSuperClass> superTypes = clazz.getInheritences();
 		
-		if (superTypes.isEmpty()) return;
+		if (superTypes.isEmpty()) {
+			return;
+		}
 
 		for (AbstractSuperClass abstractSuperClass : superTypes) {
 			if (!visited.contains(abstractSuperClass)){
