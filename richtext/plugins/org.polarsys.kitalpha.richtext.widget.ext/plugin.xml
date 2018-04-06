@@ -49,5 +49,11 @@ Contributors:
             class="org.polarsys.kitalpha.richtext.widget.editor.ext.callback.SiriusMDERichTextCallback">
       </callback>
    </extension>
+   <extension
+         point="org.eclipse.sirius.sessionManagerListener">
+      <listener
+            class="org.polarsys.kitalpha.richtext.widget.editor.ext.session.manager.CloseEditionSessionManagerListener">
+      </listener>
+   </extension>
 
 </plugin>

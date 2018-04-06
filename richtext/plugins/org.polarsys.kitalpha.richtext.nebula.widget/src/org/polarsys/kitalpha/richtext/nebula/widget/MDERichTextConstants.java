@@ -154,6 +154,9 @@ public final class MDERichTextConstants {
 	public static final String STATE_ON  = "CKEDITOR.TRISTATE_ON";			//$NON-NLS-1$
 	public static final String STATE_DISABLE  = "CKEDITOR.TRISTATE_DISABLE";	//$NON-NLS-1$
 	
+	
+	public static final String RICHTEXT_EDITOR_ID = "org.polarsys.kitalpha.richtext.widget.editor"; //$NON-NLS-1$
+	
     
 	private static String getDefaultCustomConfig(String configPath) {
 		return getFilePath(Activator.PLUGIN_ID, configPath);
@@ -200,4 +203,5 @@ public final class MDERichTextConstants {
 		}
 		return null;
 	}
+	
 }

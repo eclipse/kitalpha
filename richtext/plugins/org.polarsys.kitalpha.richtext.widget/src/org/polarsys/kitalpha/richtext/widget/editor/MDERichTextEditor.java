@@ -14,6 +14,12 @@ package org.polarsys.kitalpha.richtext.widget.editor;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.IResourceChangeEvent;
+import org.eclipse.core.resources.IResourceChangeListener;
+import org.eclipse.core.resources.IResourceDelta;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -21,6 +27,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.ISelectionProvider;
@@ -28,6 +35,7 @@ import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.swt.browser.BrowserFunction;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorSite;
 import org.eclipse.ui.IWorkbench;
@@ -42,10 +50,12 @@ import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributo
 import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 import org.polarsys.kitalpha.richtext.common.impl.AbstractMDERichTextWidget;
 import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
+import org.polarsys.kitalpha.richtext.common.util.MDERichTextHelper;
 import org.polarsys.kitalpha.richtext.nebula.widget.MDENebulaBasedRichTextWidget;
 import org.polarsys.kitalpha.richtext.widget.editor.intf.MDERichTextEditorCallback;
 import org.polarsys.kitalpha.richtext.widget.factory.MDERichTextFactory;
 import org.polarsys.kitalpha.richtext.widget.internal.Activator;
+import org.polarsys.kitalpha.richtext.widget.internal.CloseEditorAdapter;
 import org.polarsys.kitalpha.richtext.widget.internal.extension.MDERichTextExtensionManager;
 
 /**
@@ -77,10 +87,63 @@ public class MDERichTextEditor extends EditorPart implements ITabbedPropertyShee
 		public void postShutdown(IWorkbench workbench) {
 			//Do nothing
 		}
+	}; 
+
+	private final IResourceChangeListener resourceChangeListener = new IResourceChangeListener() {
+		
+		@Override
+		public void resourceChanged(IResourceChangeEvent event) {
+			IResourceDelta delta = event.getDelta();
+			
+			if (delta != null) {
+				processDelta(delta);
+			}
+		}
 	};
 	
 	public MDERichTextEditor() {
 		PlatformUI.getWorkbench().addWorkbenchListener(closeListener);
+		ResourcesPlugin.getWorkspace().addResourceChangeListener(resourceChangeListener);
+	}
+
+
+	private void processDelta(IResourceDelta delta) {
+		IResourceDelta[] affectedChildren = delta.getAffectedChildren(IResourceDelta.REMOVED);
+
+		IEditorInput editorInput = getEditorInput();
+		MDERichTextEditorInput input = (MDERichTextEditorInput)editorInput;
+		EObject element = input.getElement();
+		Resource eResource = element.eResource();
+		
+		if (eResource != null) {
+			IFile file = MDERichTextHelper.getFile(element);
+			String fileString = file.getFullPath().toString();
+			processResourceDelta(affectedChildren, fileString);
+		} else {
+			Status status = new Status(IStatus.WARNING, Activator.PLUGIN_ID, "Could nof find the resource of the editor: " + editorInput.getName());
+			Activator.getDefault().getLog().log(status);
+		}
+	}
+
+
+	private void processResourceDelta(IResourceDelta[] affectedChildren, String deletedFilePath) {
+		for (IResourceDelta delta : affectedChildren) {
+			IResource resource = delta.getResource();
+			
+			if (resource instanceof IFile) {
+				String path = resource.getFullPath().toString();
+				
+				if (deletedFilePath.equals(path)) {
+					closeEditor();
+				}
+			} else {
+				processResourceDelta(delta.getAffectedChildren(IResourceDelta.REMOVED), deletedFilePath);
+			}
+		}
+	}
+
+	private void closeEditor() {
+		Display.getDefault().asyncExec(() -> getSite().getPage().closeEditor(MDERichTextEditor.this, false));
 	}
 
 
@@ -95,7 +158,7 @@ public class MDERichTextEditor extends EditorPart implements ITabbedPropertyShee
 
 	@Override
 	public void doSaveAs() {
-		
+		//The editor cannot be save as
 	}
 
 	@Override
@@ -103,10 +166,11 @@ public class MDERichTextEditor extends EditorPart implements ITabbedPropertyShee
 		setSite(site);
 		setInput(input);
 		setMDERichTextEditorPartName();
+		initAdapter(input);
 		getEditorSite().setSelectionProvider(new ISelectionProvider() {
 
 			@Override
-			public void addSelectionChangedListener(ISelectionChangedListener listener_p) {
+			public void addSelectionChangedListener(ISelectionChangedListener listener) {
 				// do nothing
 			}
 
@@ -117,17 +181,27 @@ public class MDERichTextEditor extends EditorPart implements ITabbedPropertyShee
 			}
 
 			@Override
-			public void removeSelectionChangedListener(ISelectionChangedListener listener_p) {
+			public void removeSelectionChangedListener(ISelectionChangedListener listener) {
 				// do nothing
 			}
 
 			@Override
-			public void setSelection(ISelection selection_p) {
+			public void setSelection(ISelection selection) {
 				// do nothing
 			}
 		});
 	}
 
+
+	private void initAdapter(IEditorInput input) {
+		MDERichTextEditorInput richTextInput = (MDERichTextEditorInput)input;
+		EObject element = richTextInput.getElement();
+		
+		Resource eResource = element.eResource();
+		if (eResource != null) {
+			eResource.eAdapters().add(CloseEditorAdapter.closeEditorAdapter);
+		}
+	}
 
 	private void setMDERichTextEditorPartName() {
 		String title = getEditorInput().getName();
@@ -160,10 +234,11 @@ public class MDERichTextEditor extends EditorPart implements ITabbedPropertyShee
 		widget.bind(input.getElement(), input.getFeature());
 		
 		new BrowserFunction(((MDENebulaBasedRichTextWidget)widget).getBrowser(), "firePropertyChangeEvent"){ //$NON-NLS-1$
+			@Override
 			public Object function(Object[] arguments) {
 				firePropertyChange(IWorkbenchPartConstants.PROP_DIRTY);
 				return null;
-			};
+			}
 		};
 	}
 	
@@ -182,7 +257,9 @@ public class MDERichTextEditor extends EditorPart implements ITabbedPropertyShee
 		super.dispose();
 		
 		widget.dispose();
+		
 		PlatformUI.getWorkbench().removeWorkbenchListener(closeListener);
+		ResourcesPlugin.getWorkspace().removeResourceChangeListener(resourceChangeListener);
 	}
 
 
@@ -201,11 +278,11 @@ public class MDERichTextEditor extends EditorPart implements ITabbedPropertyShee
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
-	public Object getAdapter(Class adapter_p) {
-		if (IPropertySheetPage.class.equals(adapter_p)) {
+	public Object getAdapter(Class adapter) {
+		if (IPropertySheetPage.class.equals(adapter)) {
 			return getPropertySheetPage();
 		}
-		return super.getAdapter(adapter_p);
+		return super.getAdapter(adapter);
 	}
 	
 	private void doSaveCallback(MDERichTextWidget widget) {

@@ -10,7 +10,7 @@ Require-Bundle: org.eclipse.ui,
  org.polarsys.kitalpha.richtext.widget.tools,
  org.polarsys.kitalpha.richtext.nebula.widget;visibility:=reexport,
  org.eclipse.ui.views.properties.tabbed,
- org.polarsys.kitalpha.richtext.widget.tools
+ org.eclipse.core.resources
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.richtext.widget,

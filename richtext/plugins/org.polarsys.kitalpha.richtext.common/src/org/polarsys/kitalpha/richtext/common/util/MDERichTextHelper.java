@@ -22,7 +22,6 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.osgi.framework.Bundle;
 import org.polarsys.kitalpha.richtext.common.internal.Activator;
@@ -45,15 +44,21 @@ public class MDERichTextHelper {
 	 */
 	public static IProject getProject(EObject eObject) {
 		IProject result = null;
-		Resource resource;
-		if ((null == eObject) || ((resource = eObject.eResource()) == null)) {
-			return result;
+		if (null == eObject) {
+			return null;
 		}
-		IFile res = WorkspaceSynchronizer.getFile(resource);
+		IFile res = getFile(eObject);
 		if (res != null) {
 			result = res.getProject();
 		}
 		return result;
+	}
+	
+	public static IFile getFile(EObject eObject) {
+		if (eObject == null || eObject.eResource() == null) {
+			return null;
+		}
+		return WorkspaceSynchronizer.getFile(eObject.eResource());
 	}
 	
 	/**
