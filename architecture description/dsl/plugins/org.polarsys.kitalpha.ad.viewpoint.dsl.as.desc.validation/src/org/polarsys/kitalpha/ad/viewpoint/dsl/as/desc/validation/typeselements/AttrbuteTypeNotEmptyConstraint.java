@@ -34,11 +34,13 @@ public class AttrbuteTypeNotEmptyConstraint extends AbstractTypedElementConstrai
 	@Override
 	protected boolean isValidData(EObject context, Object data) {
 		Object type = null;
-		if (data instanceof ExternalAttributeType)
+		if (data instanceof ExternalAttributeType) {
 			type = ((ExternalAttributeType)data).getType();
+		}
 		
-		if (data instanceof LocalAttributeType)
+		if (data instanceof LocalAttributeType) {
 			type = ((LocalAttributeType)data).getType();
+		}
 		
 		return data != null && type != null;
 	}

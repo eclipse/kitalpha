@@ -47,8 +47,9 @@ public class PageAndSectionExtendedElementValidNoEmptyID implements IAdditionalC
 		
 		if (null != extendedID)
 		{
-			if (extendedID.trim().isEmpty())
+			if (extendedID.trim().isEmpty()) {
 				return ValidationStatus.Error;
+			}
 		}
 		else
 		{

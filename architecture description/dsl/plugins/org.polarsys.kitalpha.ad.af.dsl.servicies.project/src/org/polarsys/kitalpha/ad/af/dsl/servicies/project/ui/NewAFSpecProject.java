@@ -120,8 +120,9 @@ public class NewAFSpecProject extends Wizard implements INewWizard {
 	public void addPages() {
 		super.addPages();
 		addFirstPage();
-		if (ConcreteSyntaxResourceCreationManager.isThereAFConcreteSyntaxResourceCreators())
+		if (ConcreteSyntaxResourceCreationManager.isThereAFConcreteSyntaxResourceCreators()) {
 			addSecondPage();
+		}
 	}
 	
 	protected void addFirstPage(){
@@ -163,8 +164,9 @@ public class NewAFSpecProject extends Wizard implements INewWizard {
 		{
 			Viewpoints viewpoints = AfdescFactory.eINSTANCE.createViewpoints();
 			af.setAf_viewpoints(viewpoints);
-			for (Viewpoint viewpoint : selectedViewpoint) 
+			for (Viewpoint viewpoint : selectedViewpoint) {
 				viewpoints.getOwned_viewpoints().add(viewpoint);
+			}
 		}
 		
 		/**
@@ -231,10 +233,12 @@ public class NewAFSpecProject extends Wizard implements INewWizard {
 				protected void execute(IProgressMonitor monitor) throws CoreException,
 				InvocationTargetException, InterruptedException {
 					IFile pluginXml = project.getFile("plugin.xml");
-					if (pluginXml.exists())
+					if (pluginXml.exists()) {
 						pluginXml.setContents(fileInputStream, true, false, null);
-					else
+					}
+					else {
 						pluginXml.create(fileInputStream, true, null);
+					}
 
 					project.refreshLocal(IResource.DEPTH_INFINITE, monitor);
 				}

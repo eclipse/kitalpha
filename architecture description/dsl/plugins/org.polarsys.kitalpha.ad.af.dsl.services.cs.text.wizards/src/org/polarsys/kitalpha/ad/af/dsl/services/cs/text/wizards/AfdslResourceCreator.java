@@ -86,8 +86,9 @@ public class AfdslResourceCreator implements IAFConcreteSyntaxResourceCreator {
 		IFile file = getWorkspaceRoot().getFile(new Path(resourceURI.toPlatformString(true)));
 		try {
 			refreshWorkspace();
-			if (file.exists())
+			if (file.exists()) {
 				IDE.openEditor(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage(), file);
+			}
 			return true;
 		} catch (PartInitException e) {
 			e.printStackTrace();
@@ -111,8 +112,9 @@ public class AfdslResourceCreator implements IAFConcreteSyntaxResourceCreator {
 		doCreateResource();
 		try {
 			refreshWorkspace();
-			if (file.exists())
+			if (file.exists()) {
 				IDE.openEditor(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage(), file);
+			}
 			return true;
 		} catch (PartInitException e) {
 			e.printStackTrace();
@@ -189,8 +191,9 @@ public class AfdslResourceCreator implements IAFConcreteSyntaxResourceCreator {
 			String body = "		";
 			for (int i=0; i<viewpoints.size(); i++) {
 				body = body + viewpoints.get(i).getName();
-				if (i<(viewpoints.size()-1))
+				if (i<(viewpoints.size()-1)) {
 					body = body + ", ";
+				}
 			}
 			
 			String footer =

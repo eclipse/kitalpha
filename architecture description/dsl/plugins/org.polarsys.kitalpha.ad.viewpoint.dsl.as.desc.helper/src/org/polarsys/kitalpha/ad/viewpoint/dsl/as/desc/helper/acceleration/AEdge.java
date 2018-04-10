@@ -40,13 +40,11 @@ public class AEdge {
 	 * @return True is the {@link ANode} is added to list, False otherwise
 	 */
 	public boolean addSourceNode(ANode node){
-		if (isNodeAvailableIn(node, this._sourceNodes))
+		if (isNodeAvailableIn(node, this._sourceNodes)) {
 			return false;
-		else
-		{
-			_sourceNodes.add(node);
-			return true;
 		}
+		_sourceNodes.add(node);
+		return true;
 	}
 	
 	/**
@@ -55,13 +53,11 @@ public class AEdge {
 	 * @return True is the {@link ANode} is added to list, False otherwise
 	 */
 	public boolean addTargetNode(ANode node){
-		if (isNodeAvailableIn(node, this._targetNodes))
+		if (isNodeAvailableIn(node, this._targetNodes)) {
 			return false;
-		else
-		{
-			_targetNodes.add(node);
-			return true;
 		}
+		_targetNodes.add(node);
+		return true;
 	}
 	
 	/**

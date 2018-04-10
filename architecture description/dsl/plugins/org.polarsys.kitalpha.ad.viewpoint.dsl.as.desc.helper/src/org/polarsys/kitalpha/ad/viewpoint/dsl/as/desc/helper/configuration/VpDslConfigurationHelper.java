@@ -69,16 +69,20 @@ public class VpDslConfigurationHelper {
 	 */
 	public static Configuration getViewpointConfiguration(Object object){
 		Viewpoint viewpoint;
-		if (object instanceof Viewpoint)
+		if (object instanceof Viewpoint) {
 			viewpoint = (Viewpoint) object;
-		else
+		}
+		else {
 			viewpoint = CoreModelHelper.getDSLViewpoint(object);
+		}
 		
 		if (viewpoint != null)
 		{
-			for (Aspect aspect : viewpoint.getVP_Aspects()) 
-			if (aspect instanceof Configuration)
-				return (Configuration) aspect;
+			for (Aspect aspect : viewpoint.getVP_Aspects()) {
+				if (aspect instanceof Configuration) {
+					return (Configuration) aspect;
+				}
+			}
 		}
 		
 		return null;

@@ -21,13 +21,14 @@ public class NamesValidityChecker{
 	
 	public static boolean isValid(String name, boolean pojectName){
 		// If the name contains a space --> error
-		if (name.contains(" "))
+		if (name.contains(" ")) {
 			return false;
-		
+	    }
 		// Remove "." characters if name is a project name
 		String nameCopy = name;
-		if (pojectName)
+		if (pojectName) {
 			nameCopy = name.replace(".", "");
+		}
 		
 		// Check name content
 		return Pattern.matches("^([A-Za-z0-9_]+$)", nameCopy);

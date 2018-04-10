@@ -108,12 +108,12 @@ public class GenerationStack {
 		if (!graph.isEmpty())
 		{
 			Vector<GenerationNode> leafs = graph.getLeafs();
-			for (GenerationNode node : leafs) 
+			for (GenerationNode node : leafs) {
 				if (!_stack.contains(node))
 				{
 					_stack.push(node);
 				}
-
+			}
 			for (GenerationNode node : leafs)
 			{
 				graph.remove(node);

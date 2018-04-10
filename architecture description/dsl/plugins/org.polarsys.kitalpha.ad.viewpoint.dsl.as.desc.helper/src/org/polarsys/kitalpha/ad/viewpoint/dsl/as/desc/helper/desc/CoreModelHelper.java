@@ -34,8 +34,9 @@ public class CoreModelHelper {
 			EObject rootObject = EcoreUtil.getRootContainer(eObject);
 			
 			// First check the root object type. If it is a Viewpoint then return it
-			if (rootObject instanceof Viewpoint)
+			if (rootObject instanceof Viewpoint) {
 				result = (Viewpoint) rootObject;
+			}
 			else
 			{
 				// In this case, we handle a Fragmented resource
@@ -54,14 +55,16 @@ public class CoreModelHelper {
 	public static String getViewpointShortName(Object object){
 		Viewpoint vp;
 		
-		if (object instanceof Viewpoint)
+		if (object instanceof Viewpoint) {
 			vp = (Viewpoint) object;
-		else
+		}
+		else {
 			vp = getDSLViewpoint(object);
+		}
 		
-		if (vp != null)
+		if (vp != null) {
 			return vp.getShortName();
-		else
-			return null;
+		}
+		return null;
 	}
 }

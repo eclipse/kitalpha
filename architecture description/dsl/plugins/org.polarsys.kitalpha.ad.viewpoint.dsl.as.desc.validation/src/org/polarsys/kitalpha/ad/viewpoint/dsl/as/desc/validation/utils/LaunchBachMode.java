@@ -48,8 +48,9 @@ public class LaunchBachMode {
 		validator.setIncludeLiveConstraints(true);
 		IStatus status = validator.validate(eObject);
 		ClientContextSelector.isRunning = false;
-		if (status.isOK())
+		if (status.isOK()) {
 			return Status.OK_STATUS;
+		}
 		
 		return status;
 	}

@@ -50,9 +50,13 @@ public class AfdescResourceHelper {
 		private static URI createURI(String prefix, String path) {
 			String uri = prefix;
 			if (path.startsWith("/"))
+			{
 				uri += path.substring(1);
+			}
 			else
+			{
 				uri += path;
+			}
 			return URI.createURI(uri);
 		}
 

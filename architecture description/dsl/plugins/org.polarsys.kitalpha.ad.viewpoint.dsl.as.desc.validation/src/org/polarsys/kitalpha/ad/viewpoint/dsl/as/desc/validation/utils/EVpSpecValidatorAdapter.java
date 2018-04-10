@@ -51,14 +51,11 @@ public class EVpSpecValidatorAdapter extends EObjectValidator {
 	public boolean validate(EClass eClass, EObject eObject, DiagnosticChain diagnostics, Map context) {
 		super.validate(eClass, eObject, diagnostics, context);
 		IStatus status = Status.OK_STATUS;
-		if (diagnostics != null) 
+		if (diagnostics != null && !hasProcessed(eObject, context)) 
 		{
-			if (!hasProcessed(eObject, context)) 
-			{
-				status = batchValidator.validate( eObject, new NullProgressMonitor());
-				processed(eObject, context, status);
-				appendDiagnostics(status, diagnostics);
-			}
+			status = batchValidator.validate( eObject, new NullProgressMonitor());
+			processed(eObject, context, status);
+			appendDiagnostics(status, diagnostics);
 		}
 
 		return status.isOK();
@@ -67,8 +64,9 @@ public class EVpSpecValidatorAdapter extends EObjectValidator {
 	@SuppressWarnings("unchecked")
 	private void processed(EObject eObject, Map context, IStatus status) {
 
-		if (context != null) 
+		if (context != null) {
 			context.put(eObject, status);
+		}
 	}
 
 	private boolean hasProcessed(EObject eObject, Map context) {
@@ -83,8 +81,9 @@ public class EVpSpecValidatorAdapter extends EObjectValidator {
 					result = true;
 					eObject = null;
 				} 
-				else 
+				else {
 					eObject = eObject.eContainer();
+				}
 			}
 		}
 
@@ -95,8 +94,9 @@ public class EVpSpecValidatorAdapter extends EObjectValidator {
 		if (status.isMultiStatus()) 
 		{
 			IStatus[] children = status.getChildren();
-			for (int i = 0; i < children.length; i++)
+			for (int i = 0; i < children.length; i++) {
 				appendDiagnostics(children[i], diagnostics);
+			}
 		} 
 		else 
 		{

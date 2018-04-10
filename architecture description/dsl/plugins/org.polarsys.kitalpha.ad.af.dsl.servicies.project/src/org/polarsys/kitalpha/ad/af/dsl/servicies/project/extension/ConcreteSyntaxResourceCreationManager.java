@@ -65,8 +65,9 @@ public class ConcreteSyntaxResourceCreationManager {
 			e.printStackTrace();
 		}
 		
-		if (creator == null)
+		if (creator == null) {
 			throw new Exception("Creator ID can't be null");
+		}
 		
 		creator.createConcreteSyntaxResource(vpShortName, vpRootProjectName, vpDescriptionProjectName, selectedViewpoint);
 	}
@@ -85,8 +86,9 @@ public class ConcreteSyntaxResourceCreationManager {
 			e.printStackTrace();
 		}
 
-		if (creator == null)
+		if (creator == null) {
 			throw new Exception("");
+		}
 
 		return creator.createPluginXmlContribution(vpShortName, vpRootProjectName, vpDescriptionProjectName);
 	}
@@ -108,8 +110,9 @@ public class ConcreteSyntaxResourceCreationManager {
 				if (iConfigurationElement.getName().toLowerCase().equals(_ConcreteSyntaxResourceCreator_ConfElement.toLowerCase()))
 				{
 					String id = iConfigurationElement.getAttribute(_ConcreteSyntaxResourceCreator_ID);
-					if (id.equals(creatorID))
+					if (id.equals(creatorID)) {
 						return (IAFConcreteSyntaxResourceCreator) iConfigurationElement.createExecutableExtension(_ConcreteSyntaxResourceCreator_Class);
+					}
 				}
 			}
 		}

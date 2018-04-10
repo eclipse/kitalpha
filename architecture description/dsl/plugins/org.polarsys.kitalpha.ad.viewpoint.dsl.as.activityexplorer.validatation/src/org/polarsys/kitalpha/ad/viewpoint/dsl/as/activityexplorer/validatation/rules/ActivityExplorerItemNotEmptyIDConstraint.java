@@ -32,11 +32,13 @@ public class ActivityExplorerItemNotEmptyIDConstraint implements IAdditionalCons
 		
 		String itemID = item.getActivityExplorerItemID();
 		
-		if (null == itemID)
+		if (null == itemID) {
 			return ValidationStatus.Error;
+		}
 		
-		if (itemID.trim().isEmpty())
+		if (itemID.trim().isEmpty()) {
 			return ValidationStatus.Error;
+		}
 		
 		return ValidationStatus.Ok;
 	}
@@ -46,10 +48,12 @@ public class ActivityExplorerItemNotEmptyIDConstraint implements IAdditionalCons
 		final ActivityExplorerItem item = (ActivityExplorerItem) object;
 		final String eClassName = item.eClass().getName();
 		final String name = item.getName();
-		if (null == name || (null != name && name.trim().isEmpty()))
+		if (null == name || (null != name && name.trim().isEmpty())) {
 			return Messages.bind(Messages.Validation_ActivityExplorerItem_NoNamed_NotEmpty_ID, eClassName);
-		else
+		}
+		else {
 			return Messages.bind(Messages.Validation_ActivityExplorerItem_Named_NotEmpty_ID, eClassName, name);
+		}
 	}
 
 }

@@ -162,8 +162,9 @@ public class SiriusViewpointManager {
 	}
 
 	protected Set<String> getManagedDoremiViewpoints() {
-		if (managedSiriusViewpoints.isEmpty())
+		if (managedSiriusViewpoints.isEmpty()) {
 			load();
+		}
 		return managedSiriusViewpoints;
 	}
 

@@ -79,8 +79,9 @@ public abstract class VpDescAbstractModelConstraint extends AbstractModelConstra
 				if (extensionObjectInScope)
 				{
 					List<String> brothers = getBrothersSet(eObj, ctx.getCurrentConstraintId());
-					if (brothers != null && brothers.size() > 0)
+					if (brothers != null && brothers.size() > 0) {
 						brothersEStucturalFeature = brothers;
+					}
 				}
 
 				Object dataToCheck = null;
@@ -96,21 +97,25 @@ public abstract class VpDescAbstractModelConstraint extends AbstractModelConstra
 							Object currentData = eObj.eContainer().eGet(feature);
 							if (currentData != null)
 							{
-								if (currentData instanceof EList<?>)
+								if (currentData instanceof EList<?>) {
 									dataToCheckList.addAll((EList<EObject>)currentData);
+								}
 
-								if (currentData instanceof EObject)
+								if (currentData instanceof EObject) {
 									dataToCheckList.add((EObject)currentData);
+								} 
 							}
 						}
 					}
 					dataToCheck = dataToCheckList;
 				} 
-				else
+				else {
 					dataToCheck = eObj.eGet(eObj.eClass().getEStructuralFeature(eStructuralFeatureName));
+				}
 
-				if (! isValidData(eObj, dataToCheck))
+				if (! isValidData(eObj, dataToCheck)) {
 					return ctx.createFailureStatus(new Object[] {getMessageToDisplay(eObj)});
+				}
 			}
 		}
 		
@@ -120,8 +125,9 @@ public abstract class VpDescAbstractModelConstraint extends AbstractModelConstra
 	private List<String> getBrothersSet(EObject object, String currentConstraintID){
 		List<ICoreConstraintContribution> list = VPElementValidatorsManager.getValidatorFor(currentConstraintID);
 		
-		if (list == null || list.size() == 0)
+		if (list == null || list.size() == 0) {
 			return null;
+		}
 		
 		ArrayList<String> additionalSRF = new ArrayList<String>();
 
@@ -130,8 +136,9 @@ public abstract class VpDescAbstractModelConstraint extends AbstractModelConstra
 			if (vpElementValidator.isObjectInScope(object))
 			{
 				List<String> additional = vpElementValidator.brothersEStructuralFeatures();
-				if (additional != null && additional.size() > 0)
+				if (additional != null && additional.size() > 0) {
 					additionalSRF.addAll(additional);
+				}
 			}
 		}
 		
@@ -142,13 +149,15 @@ public abstract class VpDescAbstractModelConstraint extends AbstractModelConstra
 	protected boolean isObjectInExtensionsScope(EObject object, String currentConstraintID){
 		List<ICoreConstraintContribution> list = VPElementValidatorsManager.getValidatorFor(currentConstraintID);
 		
-		if (list == null || list.size() == 0)
+		if (list == null || list.size() == 0) {
 			return false;
+		}
 		
 		for (ICoreConstraintContribution vpElementValidator : list) 
 		{
-			if (vpElementValidator.isObjectInScope(object))
+			if (vpElementValidator.isObjectInScope(object)) {
 				return true;
+			}
 		}
 		
 		return false;

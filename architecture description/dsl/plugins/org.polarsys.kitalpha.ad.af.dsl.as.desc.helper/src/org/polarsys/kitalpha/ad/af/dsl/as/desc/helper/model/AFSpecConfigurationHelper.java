@@ -56,7 +56,9 @@ public class AFSpecConfigurationHelper {
 		for (ConfigurationElement configurationElement : configuration.getOwned_element())
 		{
 			if (configurationElement instanceof GenerationConfiguration)
+			{
 				return (GenerationConfiguration) configurationElement;
+			}
 		}
 		return null;
 	}

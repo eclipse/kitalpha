@@ -39,10 +39,10 @@ public class IconOffFileExistsConstraint extends AsbtractValidIconPathConstraint
 	 */
 	@Override
 	public String getMessage(ValidationStatus status, Object object) {
-		if (object instanceof Activity)
+		if (object instanceof Activity) {
 			return Messages.bind(Messages.Validation_Icon_IconExistence_IconOff, getIconPath((EObject)object));
-		else
-			return Messages.bind(Messages.Validation_Icon_IconOnExistence_IconOff, getIconPath((EObject)object));
+		}
+		return Messages.bind(Messages.Validation_Icon_IconOnExistence_IconOff, getIconPath((EObject)object));
 	}
 
 	/*

@@ -66,11 +66,13 @@ public class UniqueValueConstraint extends VpDescAbstractModelConstraint {
 			brothersEStucturalFeature.add("VP_Enumerations");
 		}
 		
-		if (eObject instanceof Parameter)
+		if (eObject instanceof Parameter) {
 			brothersEStucturalFeature.add("parameters");
+		}
 		
-		if (eObject instanceof Value)
+		if (eObject instanceof Value) {
 			brothersEStucturalFeature.add("ownedValues");
+		}
 		
 		if (eObject instanceof Attribute || eObject instanceof AbstractAssociation || eObject instanceof Operation)
 		{
@@ -134,8 +136,9 @@ public class UniqueValueConstraint extends VpDescAbstractModelConstraint {
 			List<?> list = (List<?>) data;
 			for (Object object : list) 
 			{
-				if (object instanceof ViewpointElement)
+				if (object instanceof ViewpointElement) {
 					result.add((ViewpointElement) object);
+				}
 			}
 		}
 		
@@ -201,13 +204,11 @@ public class UniqueValueConstraint extends VpDescAbstractModelConstraint {
 					final Parameter fParameter = fixedOperationParameters.get(i);
 					final AbstractType fParameterType = fParameter.getParameter_type();
 					if (cParameterType.getConcretType().equals(fParameterType.getConcretType()) 
-							&& cParameterType.getCardinality().isMultiple() == fParameterType.getCardinality().isMultiple()	)
+							&& cParameterType.getCardinality().isMultiple() == fParameterType.getCardinality().isMultiple()	) {
 						continue;
-					else
-					{
-						sameSignature = false;
-						break;
 					}
+					sameSignature = false;
+					break;
 				}
 
 				// Condition 2: Same SIGNATURE

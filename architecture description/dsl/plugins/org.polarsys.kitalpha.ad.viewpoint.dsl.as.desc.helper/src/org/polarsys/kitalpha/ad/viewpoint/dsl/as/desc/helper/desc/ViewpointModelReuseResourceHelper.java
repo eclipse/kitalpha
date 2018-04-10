@@ -54,8 +54,9 @@ public class ViewpointModelReuseResourceHelper {
 			{
 				URI uri = getResourceURI(resource_vpdsl);
 				EObject eObject = getResourceRootObject(uri, resourceSet);
-				if (eObject != null && eObject instanceof Viewpoint)
+				if (eObject != null && eObject instanceof Viewpoint) {
 					result.add((Viewpoint)eObject);
+				}
 			}
 		}
 		return result;
@@ -108,8 +109,9 @@ public class ViewpointModelReuseResourceHelper {
 	 */
 	protected static Resource[] getResources(String id_s, String domain_s, String tag_s) {
 		SearchCriteria searchCriteria = new SearchCriteria();
-		if (id_s != null && id_s.trim().length() > 0)
+		if (id_s != null && id_s.trim().length() > 0) {
 			searchCriteria.setId(id_s);
+		}
 		
 		searchCriteria.setDomain(domain_s);
 		searchCriteria.getTags().add(tag_s);
@@ -126,8 +128,9 @@ public class ViewpointModelReuseResourceHelper {
 		EObject result = null;
 		
 		// Ensure that the resource set is not null
-		if (resourceSet == null)
+		if (resourceSet == null) {
 			resourceSet = new ResourceSetImpl();
+		}
 		
 		if (uri != null)
 		{
@@ -137,8 +140,9 @@ public class ViewpointModelReuseResourceHelper {
 				org.eclipse.emf.ecore.resource.Resource e_resource = 
 					resourceSet.getResource(uri, true);
 
-				if (e_resource != null && e_resource.getContents() != null && e_resource.getContents().size() > 0)
+				if (e_resource != null && e_resource.getContents() != null && e_resource.getContents().size() > 0) {
 					result = e_resource.getContents().get(0);
+				}
 			}
 			else
 			{

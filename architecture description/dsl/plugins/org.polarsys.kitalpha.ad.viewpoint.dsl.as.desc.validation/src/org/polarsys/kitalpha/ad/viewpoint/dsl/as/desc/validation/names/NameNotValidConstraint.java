@@ -26,10 +26,10 @@ public class NameNotValidConstraint extends NameNotEmptyConstraint {
 	@Override
 	protected boolean isValidData(EObject context, Object data){
 		String name = (String) data;
-		if (super.isValidData(context, name))
+		if (super.isValidData(context, name)) {
 			return p.matcher(name).matches();
-		else
-			return true; /* Return true to not fire the Not Valid Name constraint a second time */
+		}
+		return true; /* Return true to not fire the Not Valid Name constraint a second time */
 	}
 	@Override
 	protected String getMessageToDisplay(EObject eObject) {

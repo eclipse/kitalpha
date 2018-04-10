@@ -91,8 +91,9 @@ public class AFSpecProjectWizardFirstPage extends AbstractAFSpecProjectWizardPag
 		_afShortNameText.addModifyListener(new ModifyListener() {
 			public void modifyText(ModifyEvent e) {
 				boolean valid = vpDataChanged(_afShortNameText.getText(), "Architecture framework short name must be valid:", false);
-				if (valid)
+				if (valid) {
 					((NewAFSpecProject)getWizard()).setAfShortName(_afShortNameText.getText());
+				}
 			}
 		});
 		((NewAFSpecProject)getWizard()).setAfShortName(_afShortNameText.getText());
@@ -130,8 +131,9 @@ public class AFSpecProjectWizardFirstPage extends AbstractAFSpecProjectWizardPag
 		lAvailableViewpoints.addMouseListener(new ListMouseListener());
 		if (availableViewpoint != null && availableViewpoint.size() != 0)
 		{
-			for (Viewpoint viewpoint : availableViewpoint) 
+			for (Viewpoint viewpoint : availableViewpoint) {
 				lAvailableViewpoints.add(viewpoint.getShortName());
+			}
 		}
 		
 		// Create the Button composite
@@ -306,14 +308,16 @@ public class AFSpecProjectWizardFirstPage extends AbstractAFSpecProjectWizardPag
 			lAvailableViewpoints.removeAll();
 			if (availableViewpoint != null && availableViewpoint.size() != 0)
 			{
-				for (Viewpoint viewpoint : availableViewpoint) 
+				for (Viewpoint viewpoint : availableViewpoint) { 
 					lAvailableViewpoints.add(viewpoint.getShortName());
+				}
 			}
 
 			lSelectedViewpoints.removeAll();
 			if (availableViewpoint != null && selectedViewpoint.size() != 0){
-				for (Viewpoint viewpoint : selectedViewpoint) 
+				for (Viewpoint viewpoint : selectedViewpoint) {
 					lSelectedViewpoints.add(viewpoint.getShortName());
+				}
 			}
 
 			bAdd.setEnabled(lAvailableViewpoints.getSelectionIndex() != -1 &&  availableViewpoint.size() != 0);

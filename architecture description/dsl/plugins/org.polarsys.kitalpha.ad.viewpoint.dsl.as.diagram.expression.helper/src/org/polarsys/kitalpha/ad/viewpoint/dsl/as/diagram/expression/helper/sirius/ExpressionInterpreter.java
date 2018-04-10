@@ -24,20 +24,18 @@ public enum ExpressionInterpreter implements IExpressionFormat{
 	 */
 	@Override
 	public String format(String expression) {
-		if (isFormated(expression))
+		if (isFormated(expression)) {
 			return expression;
-		else
-		{
-			switch (this) {
-			case Feature:
-				return getExpression_I_Feature(expression);
-			case Service:
-				return getExpression_I_Service(expression);
-			case Variable:
-				return getExpression_I_Var(expression);
-			}
-			throw new RuntimeException("Expression Interpreter not supported");
 		}
+		switch (this) {
+		case Feature:
+			return getExpression_I_Feature(expression);
+		case Service:
+			return getExpression_I_Service(expression);
+		case Variable:
+			return getExpression_I_Var(expression);
+		}
+		throw new RuntimeException("Expression Interpreter not supported");
 	}
 
 	
@@ -73,8 +71,9 @@ public enum ExpressionInterpreter implements IExpressionFormat{
 	private static String getExpression_I_Service(String expression){
 		// If the used Expression language is Query Legacy and if service has variable, 
 		// 		remove $ character if they exist before each variable name
-		if (SiriusExpressionHelper.getCurrentExpressionKind().equals(ExpressionKind.QueryLegacy))
+		if (SiriusExpressionHelper.getCurrentExpressionKind().equals(ExpressionKind.QueryLegacy)) {
 			expression = expression.replaceAll("\\$", "");
+		}
 		
 		return "service:" + expression;
 	}
@@ -94,8 +93,9 @@ public enum ExpressionInterpreter implements IExpressionFormat{
 	 * @return
 	 */
 	private boolean containsPrefix (int prefixLenght, String expression){
-		if (expression.length() < prefixLenght)
+		if (expression.length() < prefixLenght) {
 			return false;
+		}
 		String firstCharacters = expression.substring(0, prefixLenght);
 		switch (this) {
 		case Feature:
@@ -113,8 +113,9 @@ public enum ExpressionInterpreter implements IExpressionFormat{
 		if (expression.length() > 4)
 		{
 			firstCharacters = expression.substring(0, 4);
-			if (firstCharacters.equals(Variable.name().toLowerCase()+":"))
+			if (firstCharacters.equals(Variable.name().toLowerCase()+":")) {
 				return true;
+			}
 		}
 		else
 		{
@@ -122,8 +123,9 @@ public enum ExpressionInterpreter implements IExpressionFormat{
 			{
 				firstCharacters = expression.substring(0, 8);
 				if (firstCharacters.equals(Feature.name().toLowerCase()+":") || 
-						firstCharacters.equals(Service.name().toLowerCase()+":"))
+						firstCharacters.equals(Service.name().toLowerCase()+":")) {
 					return true;
+				}
 			}
 		}
 

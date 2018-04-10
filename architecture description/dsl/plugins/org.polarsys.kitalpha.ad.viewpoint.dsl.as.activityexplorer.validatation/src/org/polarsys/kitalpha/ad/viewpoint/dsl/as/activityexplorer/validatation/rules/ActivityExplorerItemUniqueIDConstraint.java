@@ -42,8 +42,9 @@ public class ActivityExplorerItemUniqueIDConstraint implements IAdditionalConstr
 		ViewpointActivityExplorer viewpointActivityExplorer = getViewpointActivityExplorer(item);
 		List<String> ids = getAllActivityExplorerIdsExceptItem(viewpointActivityExplorer, item);
 		String id = item.getActivityExplorerItemID();
-		if (ids.contains(id))
+		if (ids.contains(id)) {
 			return ValidationStatus.Error;
+		}
 		
 		return ValidationStatus.Ok;
 	}
@@ -64,10 +65,10 @@ public class ActivityExplorerItemUniqueIDConstraint implements IAdditionalConstr
 			}
 		}
 		
-		if (null != itemCcontainer)
+		if (null != itemCcontainer) {
 			return (ViewpointActivityExplorer) itemCcontainer;
-		else
-			throw new RuntimeException(Messages.Validation_Runtime_CantLocateViewpointActivityExplorer);
+		}
+		throw new RuntimeException(Messages.Validation_Runtime_CantLocateViewpointActivityExplorer);
 	}
 	
 	protected List<String> getAllActivityExplorerIdsExceptItem(ViewpointActivityExplorer viewpointActivityExplorer, ActivityExplorerItem item) {
@@ -75,26 +76,30 @@ public class ActivityExplorerItemUniqueIDConstraint implements IAdditionalConstr
 
 		// First Handle All available Pages.
 		List<Page> pages = getAllPages(viewpointActivityExplorer);
-		if (pages.contains(item))
+		if (pages.contains(item)) {
 			pages.remove(item);
+		}
 		
 		for (Page page : pages) 
 		{
 			final String id = page.getActivityExplorerItemID();
-			if (id != null && id.trim().length() > 0)
+			if (id != null && id.trim().length() > 0) {
 				ids.add(id);
+			}
 		}
 
 		// Second: Handle All available Sections.
 		List<Section> sections = getAllSections(viewpointActivityExplorer);
-		if (sections.contains(item))
+		if (sections.contains(item)) {
 			sections.remove(item);
+		}
 		
 		for (Section section : sections) 
 		{
 			final String id = section.getActivityExplorerItemID();
-			if (id != null && id.trim().length() > 0)
+			if (id != null && id.trim().length() > 0) {
 				ids.add(id);
+			}
 		}
 		
 		// Third: Handle All available Sections.
@@ -105,8 +110,9 @@ public class ActivityExplorerItemUniqueIDConstraint implements IAdditionalConstr
 		for (Activity activity : activities) 
 		{
 			String id = activity.getActivityExplorerItemID();
-			if (id != null && id.trim().length() > 0)
+			if (id != null && id.trim().length() > 0) {
 				ids.add(id);
+			}
 		}
 		
 		return ids;
@@ -122,8 +128,9 @@ public class ActivityExplorerItemUniqueIDConstraint implements IAdditionalConstr
 		List<AbstractPage> abstractPages = viewpointActivityExplorer.getOwnedPages();
 		for (AbstractPage abstractPage : abstractPages) 
 		{
-			if (abstractPage instanceof Page)
+			if (abstractPage instanceof Page) {
 				result.add((Page)abstractPage);
+			}
 		}
 		return result;
 	}

@@ -32,10 +32,10 @@ public class OperationTypeNotEmptyConstraint extends OperationParameterTypeNotEm
 
 	@Override
 	protected String getElementName(EObject eObject) {
-		if (isObjectInScope(eObject))
+		if (isObjectInScope(eObject)) {
 			return "Type";
-		else
-			return super.getElementName(eObject);
+		}
+		return super.getElementName(eObject);
 	}
 
 }

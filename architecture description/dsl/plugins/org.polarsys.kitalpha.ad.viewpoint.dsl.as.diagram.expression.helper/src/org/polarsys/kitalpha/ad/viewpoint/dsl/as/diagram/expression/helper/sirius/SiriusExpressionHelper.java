@@ -160,8 +160,9 @@ public class SiriusExpressionHelper {
 	 * @return a formated string 
 	 */
 	public static String formatString(String string){
-		if (ExpressionInterpreter.isInterpreterExpression(string))
+		if (ExpressionInterpreter.isInterpreterExpression(string)) {
 			return string;
+		}
 		
 		switch (getCurrentExpressionKind()) {
 		case QueryLegacy:
@@ -184,10 +185,10 @@ public class SiriusExpressionHelper {
 	 * the only known prefix is '$' 
 	 */
 	private static String getVariableWithoutPrefix(String variableName){
-		if (variableHasPrefix(variableName))
+		if (variableHasPrefix(variableName)) {
 			return variableName.substring(1, variableName.length());
-		else
-			return variableName;
+		}
+		return variableName;
 	}
 	
 	/**

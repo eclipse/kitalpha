@@ -46,8 +46,9 @@ public class NameNotEmptyConstraint extends VpDescAbstractModelConstraint{
 	}
 	
 	protected boolean getDisplayContainerInformations(Object object) {
-		if (object instanceof Attribute || object instanceof AbstractAssociation)
+		if (object instanceof Attribute || object instanceof AbstractAssociation) {
 			return true;
+		}
 		
 		return false;
 	}
@@ -60,18 +61,16 @@ public class NameNotEmptyConstraint extends VpDescAbstractModelConstraint{
 
 	@Override
 	protected String getMessageToDisplay(EObject eObject) {
-		if (! getDisplayContainerInformations(eObject))
+		if (! getDisplayContainerInformations(eObject)) {
 			return Messages.bind(Messages.Validation_Name_Empty_OnlyElement, eObject.eClass().getName());
-		else
-		{
-			Object[] bindins = {
-								eObject.eContainer().eClass().getName(), 
-								getElementName(eObject.eContainer()), 
-								eObject.eClass().getName()
-							   };
-			
-			String message = Messages.bind(Messages.Validation_Name_Empty_WithParent, bindins);
-			return message;
 		}
+		Object[] bindins = {
+							eObject.eContainer().eClass().getName(), 
+							getElementName(eObject.eContainer()), 
+							eObject.eClass().getName()
+						   };
+		
+		String message = Messages.bind(Messages.Validation_Name_Empty_WithParent, bindins);
+		return message;
 	}
 }

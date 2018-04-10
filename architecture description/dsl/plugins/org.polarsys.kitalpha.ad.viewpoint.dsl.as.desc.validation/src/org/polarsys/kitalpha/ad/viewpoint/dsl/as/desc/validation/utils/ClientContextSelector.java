@@ -30,18 +30,19 @@ public class ClientContextSelector implements IClientSelector {
 	 * @see org.eclipse.emf.validation.model.IClientSelector#selects(java.lang.Object)
 	 */
 	public boolean selects(Object arg0) {
-		if (arg0 == null || (arg0 != null && !(arg0 instanceof EObject)))
+		if (arg0 == null || (arg0 != null && !(arg0 instanceof EObject))) {
 			return false;
+		}
 		
 		EObject eObject = (EObject)arg0;
 		Resource eResource = eObject.eResource();
 		if (eResource != null)
 		{// Check if the root element of the resource is a Viewpoint object
 			EList<EObject> resourceContent = eResource.getContents();
-			if (resourceContent != null && resourceContent.size() > 0)
+			if (resourceContent != null && resourceContent.size() > 0) {
 				return resourceContent.get(0) instanceof Viewpoint;
-			else
-				return false;
+			}
+			return false;
 		}
 		else
 		{// Try to get the root container object.

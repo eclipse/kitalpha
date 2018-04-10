@@ -90,10 +90,12 @@ public class CreateAFModelTask implements ITaskProduction {
 						org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint viewpoint_af = 
 							PlatformViewpointHelper.getAFViewpoint(viewpointID, resourceSet);
 
-						if (viewpoint_af != null)
+						if (viewpoint_af != null) {
 							af.getViewpoints().add(viewpoint_af);
-						else
+						}
+						else {
 							notGeneratedViewpoints.add(viewpoint);
+						}
 					}
 				}
 			}

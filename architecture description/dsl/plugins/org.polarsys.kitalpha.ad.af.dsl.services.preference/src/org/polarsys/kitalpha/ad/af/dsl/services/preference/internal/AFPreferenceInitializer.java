@@ -29,8 +29,9 @@ public class AFPreferenceInitializer extends AbstractPreferenceInitializer {
 	@Override
 	public void initializeDefaultPreferences() {
 		String customizedValue = AFRootProjectNamePreferencesHelper.getCustomizedValue();
-		if (customizedValue == null || (customizedValue != null && customizedValue.trim().length() == 0))
+		if (customizedValue == null || (customizedValue != null && customizedValue.trim().length() == 0)) {
 			AFRootProjectNamePreferencesHelper.restorDefautValues();
+		}
 	}
 
 }

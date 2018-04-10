@@ -85,11 +85,15 @@ public class AfdescGlobalScopeProvider extends DefaultGlobalScopeProvider{
     private Resource loadResource(URI uri, ResourceSet resourceSet) {
 		try {
 			if ("http".equalsIgnoreCase(uri.scheme()))
+			{
 				return null;
+			}
 			if (uri.fragment() == null) {
 				Resource resource = resourceSet.getResource(uri, true);
 				if (resource.getContents().isEmpty())
+				{
 					return null;
+				}
 				return resource;
 			}
 			EObject result = resourceSet.getEObject(uri, true);

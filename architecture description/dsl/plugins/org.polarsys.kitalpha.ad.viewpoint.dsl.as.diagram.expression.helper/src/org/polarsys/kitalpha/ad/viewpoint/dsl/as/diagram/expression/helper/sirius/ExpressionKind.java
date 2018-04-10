@@ -24,20 +24,18 @@ public enum ExpressionKind implements IExpressionFormat{
 	 */
 	@Override
 	public String format(String expression){
-		if (isFormated(expression))
+		if (isFormated(expression)) {
 			return expression;
-		else
-		{
-			switch (this) {
-			case QueryLegacy:
-				return getExpression_QueryLegacy(expression);
-			case Acceleo_3_x:
-				return getExpression_Acceleo_3(expression);
-			case Ocl:
-				return getExpression_Ocl(expression);
-			}
-			throw new RuntimeException("Expression kind not supported");
 		}
+		switch (this) {
+		case QueryLegacy:
+			return getExpression_QueryLegacy(expression);
+		case Acceleo_3_x:
+			return getExpression_Acceleo_3(expression);
+		case Ocl:
+			return getExpression_Ocl(expression);
+		}
+		throw new RuntimeException("Expression kind not supported");
 	}
 	
 	/**
@@ -95,14 +93,17 @@ public enum ExpressionKind implements IExpressionFormat{
 	 * @return corresponding {@link ExpressionKind}
 	 */
 	public static ExpressionKind getExpressionKind(String expressionKind){
-		if (expressionKind.equals(ExpressionKind.QueryLegacy.toString())) 
+		if (expressionKind.equals(ExpressionKind.QueryLegacy.toString())) { 
 			return QueryLegacy;
+		}
 		
-		if (expressionKind.equals(ExpressionKind.Acceleo_3_x.toString())) 
+		if (expressionKind.equals(ExpressionKind.Acceleo_3_x.toString())) {
 			return Acceleo_3_x;
+		}
 		
-		if (expressionKind.equals(ExpressionKind.Ocl.toString())) 
+		if (expressionKind.equals(ExpressionKind.Ocl.toString())) {
 			return Ocl;
+		}
 		
 		throw new RuntimeException();
 	}
@@ -116,10 +117,11 @@ public enum ExpressionKind implements IExpressionFormat{
 	 */
 	private String getExpression_QueryLegacy(String expression){
 		// If True, this means that the expression is composite and doesn't need to be formated
-		if (expression.contains("<%") && expression.contains("%>"))
+		if (expression.contains("<%") && expression.contains("%>")) {
 			return expression; 
-		else // the expression is not composite and not formated, then format it
-			return "<%" + expression + "%>";
+		}
+		// the expression is not composite and not formated, then format it
+		return "<%" + expression + "%>";
 	}
 	
 	/**
@@ -155,8 +157,9 @@ public enum ExpressionKind implements IExpressionFormat{
 		boolean result = false;
 		boolean checkExpressionEnd = false;
 
-		if (expression == null || (expression != null && expression.length() < beginPrefixLenght))
+		if (expression == null || (expression != null && expression.length() < beginPrefixLenght)) {
 			return false;
+		}
 		
 		// Check begin of expression
 		String beginDelimiter = expression.substring(0, beginPrefixLenght);

@@ -74,8 +74,9 @@ public class GenerateArchitectureFramework implements IObjectActionDelegate {
 		if (obj instanceof IResource) 
 		{
 			IFile vpSpecFile = null;
-			if (obj instanceof IFile)
+			if (obj instanceof IFile) {
 				vpSpecFile = (IFile) obj;
+			}
 			
 			return URI.createPlatformResourceURI(vpSpecFile.getFullPath().toString(), true);
 		}

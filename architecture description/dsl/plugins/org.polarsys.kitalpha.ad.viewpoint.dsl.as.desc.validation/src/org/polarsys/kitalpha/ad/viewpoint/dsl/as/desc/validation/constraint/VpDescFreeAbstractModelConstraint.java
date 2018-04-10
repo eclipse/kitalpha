@@ -58,13 +58,15 @@ public class VpDescFreeAbstractModelConstraint extends AbstractModelConstraint {
 		List<IAdditionalConstraint> list = VPElementValidatorsManager.getFreeValidatorFor(currentConstraintID);
 		List<IAdditionalConstraint> result = new ArrayList<IAdditionalConstraint>();
 		
-		if (list == null || list.size() == 0)
+		if (list == null || list.size() == 0) {
 			return result;
+		}
 		
 		for (IAdditionalConstraint vpElementFreeValidator : list) 
 		{
-			if (vpElementFreeValidator.isObjectInScope(object))
+			if (vpElementFreeValidator.isObjectInScope(object)) {
 				result.add(vpElementFreeValidator);
+			}
 		}
 			
 		return result;

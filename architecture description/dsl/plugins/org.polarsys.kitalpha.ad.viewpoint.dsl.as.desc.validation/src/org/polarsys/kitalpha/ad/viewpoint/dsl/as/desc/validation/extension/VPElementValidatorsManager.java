@@ -61,8 +61,9 @@ public class VPElementValidatorsManager {
 				{
 					String constraint = iConfigurationElement.getAttribute(ATTRIBUTE__CONSTRAINT);
 					constraint = PLUGIN_ID+"."+constraint;
-					if (registeredValidators.get(constraint) == null)
+					if (registeredValidators.get(constraint) == null) {
 						registeredValidators.put(constraint, new ArrayList<ICoreConstraintContribution>());
+					}
 					
 					ICoreConstraintContribution vpElementValidator = 
 							(ICoreConstraintContribution)iConfigurationElement.createExecutableExtension(ATTRIBUTE__CLASS);
@@ -74,8 +75,9 @@ public class VPElementValidatorsManager {
 	}
 	
 	public static List<ICoreConstraintContribution> getValidatorFor(String constraintProviderID){
-		if (! registeredValidators.isEmpty())
+		if (! registeredValidators.isEmpty()) {
 			return registeredValidators.get(constraintProviderID);
+		}
 		
 		return null;
 	}
@@ -93,8 +95,9 @@ public class VPElementValidatorsManager {
 				{
 					String constraint = iConfigurationElement.getAttribute(ATTRIBUTE__CONSTRAINT);
 					constraint = PLUGIN_ID+"."+constraint;
-					if (registeredFreeValidators.get(constraint) == null)
+					if (registeredFreeValidators.get(constraint) == null) {
 						registeredFreeValidators.put(constraint, new ArrayList<IAdditionalConstraint>());
+					}
 					
 					IAdditionalConstraint vpElementValidator = 
 							(IAdditionalConstraint)iConfigurationElement.createExecutableExtension(ATTRIBUTE__CLASS);
@@ -106,8 +109,9 @@ public class VPElementValidatorsManager {
 	}
 	
 	public static List<IAdditionalConstraint> getFreeValidatorFor(String constraintProviderID){
-		if (! registeredFreeValidators.isEmpty())
+		if (! registeredFreeValidators.isEmpty()) {
 			return registeredFreeValidators.get(constraintProviderID);
+		}
 	
 		return null;
 	}

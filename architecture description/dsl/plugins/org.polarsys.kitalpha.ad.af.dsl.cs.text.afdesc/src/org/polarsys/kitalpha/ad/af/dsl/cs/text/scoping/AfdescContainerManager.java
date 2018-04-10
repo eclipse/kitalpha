@@ -43,12 +43,16 @@ public class AfdescContainerManager extends StateBasedContainerManager {
 	
 	protected List<IContainer> getVisibleContainers(List<String> handles, IResourceDescriptions resourceDescriptions) {
 		if (handles.isEmpty())
+		{
 			return Collections.emptyList();
+		}
 		List<IContainer> result = Lists.newArrayListWithExpectedSize(handles.size() + 1);	
 		for(String handle: handles) {
 			IContainer container = createContainer(handle, resourceDescriptions);
 			if (!container.isEmpty() || result.isEmpty())
+			{
 				result.add(container);
+			}
 		}	
 		String rootHandle = internalGetContainerHandle(description, resourceDescriptions);
 		IContainer container = createAedslContainer(rootHandle, resourceDescriptions);

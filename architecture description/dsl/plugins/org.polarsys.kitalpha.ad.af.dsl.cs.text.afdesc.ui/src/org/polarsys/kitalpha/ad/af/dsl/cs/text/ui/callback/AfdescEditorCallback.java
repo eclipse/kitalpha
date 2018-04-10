@@ -79,9 +79,9 @@ public class AfdescEditorCallback extends NatureAddingEditorCallback {
 	
 	@Override
 	public void afterCreatePartControl(XtextEditor editor) {
-		if (this.currentEditor != editor)
+		if (this.currentEditor != editor) {
 			throw new IllegalStateException(Messages.AfdescEditorCallback_MultipleInstancesError);
-		
+		}
 		editorSupport.initializeDirtyStateSupport(currentEditor);
 		IResource resource = editor.getResource();
 		if (resource!=null && !toggleNature.hasNature(resource.getProject()) && resource.getProject().isAccessible() && !resource.getProject().isHidden()) {
@@ -92,7 +92,9 @@ public class AfdescEditorCallback extends NatureAddingEditorCallback {
 	@Override
 	public void beforeDispose(XtextEditor editor) {
 		if (this.currentEditor != editor)
+		{
 			throw new IllegalStateException(Messages.AfdescEditorCallback_MultipleInstancesError);
+		}
 		editorSupport.removeDirtyStateSupport(currentEditor);
 		this.currentEditor = null;
 	}
@@ -100,7 +102,9 @@ public class AfdescEditorCallback extends NatureAddingEditorCallback {
 	@Override
 	public boolean onValidateEditorInputState(XtextEditor editor) {
 		if (this.currentEditor != editor)
+		{
 			throw new IllegalStateException(Messages.AfdescEditorCallback_MultipleInstancesError);
+		}
 		return editorSupport.isEditingPossible(currentEditor);
 	}
 
@@ -115,7 +119,9 @@ public class AfdescEditorCallback extends NatureAddingEditorCallback {
 	public void afterSetInput(XtextEditor editor) {
 		if (this.currentEditor != null) {
 			if (this.currentEditor != editor)
+			{
 				throw new IllegalStateException(Messages.AfdescEditorCallback_MultipleInstancesError);
+			}
 			editorSupport.initializeDirtyStateSupport(currentEditor);
 		} else {
 			this.currentEditor = editor;
@@ -174,14 +180,18 @@ public class AfdescEditorCallback extends NatureAddingEditorCallback {
 		ISourceViewer sourceViewer = currentEditor.getInternalSourceViewer();
 		StyledText widget = sourceViewer.getTextWidget();
 		if (widget != null)
+		{
 			widget.removeVerifyListener(listener);
+		}
 	}
 
 	
 	@Override
 	public void afterSave(XtextEditor editor) {
 		if (this.currentEditor != editor)
+		{
 			throw new IllegalStateException(Messages.AfdescEditorCallback_MultipleInstancesError);
+		}
 		if (!synchronizing) {
 			final XtextEditor current = editor;
 			Runnable runnable = new Runnable() {		
@@ -193,7 +203,9 @@ public class AfdescEditorCallback extends NatureAddingEditorCallback {
 				}
 			};
 			if (runnable != null)
+			{
 				update(runnable);
+			}
 		} else {
 			synchronizing = false;
 		}
@@ -208,7 +220,9 @@ public class AfdescEditorCallback extends NatureAddingEditorCallback {
 	protected boolean validate(List<EObject> inputObjects) {
 		for (EObject current: inputObjects) {
 			if (!validate(current))
+			{
 				return false;
+			}
 		}
 		return true;
 	}

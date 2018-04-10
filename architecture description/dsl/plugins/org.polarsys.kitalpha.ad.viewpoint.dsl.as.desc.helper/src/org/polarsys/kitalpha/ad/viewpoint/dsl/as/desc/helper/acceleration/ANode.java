@@ -118,8 +118,9 @@ public class ANode {
 	 * @param node the new node 
 	 */
 	public void addReuse(ANode node){
-		if (! reused.contains(node))
+		if (! reused.contains(node)) {
 			reused.add(node);
+		}
 	}
 	
 	/**
@@ -153,8 +154,9 @@ public class ANode {
 	 * @return True if the node contains children
 	 */
 	public boolean isContainer(){
-		if (!children.isEmpty() || ! reused.isEmpty())
+		if (!children.isEmpty() || ! reused.isEmpty()) {
 			return true;
+		}
 		
 		return false;
 	}

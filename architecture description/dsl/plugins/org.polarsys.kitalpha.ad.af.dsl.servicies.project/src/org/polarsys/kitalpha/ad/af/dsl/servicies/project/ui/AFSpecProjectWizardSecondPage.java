@@ -136,8 +136,9 @@ public class AFSpecProjectWizardSecondPage extends AbstractAFSpecProjectWizardPa
 		_afSpecificationProjectName.addModifyListener(new ModifyListener() {
 			public void modifyText(ModifyEvent e) {
 				boolean valid = vpDataChanged(_afSpecificationProjectName.getText(), "Architecture framework description project name must be valid:", true);
-				if (valid)
+				if (valid) {
 					((NewAFSpecProject)getWizard()).setAfSpecificationProjectName(_afSpecificationProjectName.getText());
+				}
 			}
 		});
 		vpDataChanged(_afSpecificationProjectName.getText(), null, true);
@@ -373,15 +374,17 @@ public class AFSpecProjectWizardSecondPage extends AbstractAFSpecProjectWizardPa
 			lAvailableCreators.removeAll();
 			if (availableCreator != null && availableCreator.size() != 0){
 				Set<String> idSet = availableCreator.keySet();
-				for (String id : idSet) 
+				for (String id : idSet) {
 					lAvailableCreators.add(availableCreator.get(id));
+				}
 			}
 
 			lSelectedCreators.removeAll();
 			if (availableCreator != null && selectedCreator.size() != 0){
 				Set<String> idSet = selectedCreator.keySet();
-				for (String id : idSet) 
+				for (String id : idSet) {
 					lSelectedCreators.add(selectedCreator.get(id));
+				}
 			}
 
 			bAdd.setEnabled(lAvailableCreators.getSelectionIndex() != -1 &&  availableCreator.size() != 0);

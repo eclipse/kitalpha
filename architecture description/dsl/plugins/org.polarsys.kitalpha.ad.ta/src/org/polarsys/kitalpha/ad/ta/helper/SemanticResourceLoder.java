@@ -51,8 +51,9 @@ public class SemanticResourceLoder {
 		for (URI uri : uriList) 
 		{
 			Resource resource = set.getResource(uri, true);
-			if (null != resource)
+			if (null != resource) {
 				set.getResources().add(resource);
+			}
 		}
 
 	}

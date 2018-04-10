@@ -85,8 +85,9 @@ public class ADataAnalyserHelper {
 		{
 			for (Attribute attribute : localAttributes) 
 			{
-				if (attribute.getName().equals(nameAttributeName))
+				if (attribute.getName().equals(nameAttributeName)) {
 					return true;
+				}
 			}
 		}
 		
@@ -101,16 +102,18 @@ public class ADataAnalyserHelper {
 					if (superClass != null)
 					{
 						boolean hasNameAttribute = hasNameAttribute(superClass);
-						if (hasNameAttribute)
+						if (hasNameAttribute) {
 							return true;
+						}
 					}
 				}
 				if (abstractSuperClass instanceof ExternalSuperClass)
 				{
 					EClass superClass = ((ExternalSuperClass) abstractSuperClass).getSuperClass();
 					EStructuralFeature nameAttribute = superClass.eClass().getEStructuralFeature(nameAttributeName);
-					if (nameAttribute != null)
+					if (nameAttribute != null) {
 						return true;
+					}
 				}
 			}
 		}
@@ -161,8 +164,9 @@ public class ADataAnalyserHelper {
 			for (Class iClass : vp_Classes) 
 			{
 				boolean superType = isSuperType(type, iClass);
-				if (superType)
+				if (superType) {
 					result.add(iClass);
+				}
 			}
 		}
 		
@@ -178,20 +182,18 @@ public class ADataAnalyserHelper {
 	 */
 	public static boolean isSuperType(Class type, Class clazz){
 		EList<AbstractSuperClass> inheritences = clazz.getInheritences();
-		if (inheritences.isEmpty())
+		if (inheritences.isEmpty()) {
 			return false;
-		else
+		}
+		for (AbstractSuperClass abstractSuperClass : inheritences) 
 		{
-			for (AbstractSuperClass abstractSuperClass : inheritences) 
+			if (abstractSuperClass instanceof LocalSuperClass)
 			{
-				if (abstractSuperClass instanceof LocalSuperClass)
-				{
-					Class superClass = ((LocalSuperClass) abstractSuperClass).getSuperClass();
-					if (superClass.getName().equals(type.getName()))
-						return true;
-					else
-						return isSuperType(type, superClass);
+				Class superClass = ((LocalSuperClass) abstractSuperClass).getSuperClass();
+				if (superClass.getName().equals(type.getName())) {
+					return true;
 				}
+				return isSuperType(type, superClass);
 			}
 		}
 		return false;

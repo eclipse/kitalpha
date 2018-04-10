@@ -93,8 +93,9 @@ public class CoreDomainViewpointHelper extends ViewpointModelReuseResourceHelper
 			Resource resource_af = resource_af_list[0];
 			URI uri = getResourceURI(resource_af);
 			EObject eObject = getResourceRootObject(uri, resourceSet_e);
-			if (eObject != null && eObject instanceof org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint)
+			if (eObject != null && eObject instanceof org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint) {
 				result = (org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint) eObject;
+			}
 		}
 		return result;
 	}

@@ -93,9 +93,9 @@ class VpGenerationListenerForOrchestration extends GenerationAdapter{
 	 * {@inheritDoc}
 	 */
 	public void generationEnd(AbstractGenerationEvent event) {
-		if (_monitor.isCanceled()) 
+		if (_monitor.isCanceled()) {
 			throw new OperationCanceledException();
-		
+		}
 		if (event instanceof ViewpointGenerationEndEvent)
 		{
 			if (_listenerIsActive && _viewpointToGenerate != null && !_viewpointToGenerate.isEmpty())
@@ -160,9 +160,9 @@ class VpGenerationListenerForOrchestration extends GenerationAdapter{
 		
 		EList<EObject> content = resource.getContents();
 		AF af = null;
-		if (content != null && content.size() > 0)
+		if (content != null && content.size() > 0) {
 			af = (AF) content.get(0);
-		
+		}
 		
 		// Link all viewpoint of _viewpointToGenerate
 		if (af != null)

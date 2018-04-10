@@ -50,9 +50,9 @@ public class AFViewpointGenerationOrchetrator{
 	 * @return the number of the viewpoint to generate
 	 */
 	public int getNumberOfViewpointToGenerate(){
-		if (generationGraph != null && generationGraph.getOwnedNodes().size() > 0)
+		if (generationGraph != null && generationGraph.getOwnedNodes().size() > 0) {
 			return generationGraph.getOwnedNodes().size();
-		
+		}
 		return -1;
 	}
 	

@@ -128,8 +128,9 @@ public class ADataAnalyser {
 							createEdge(abstractAssociation, sourceClass, iClass);
 						}
 					}
-					else
+					else {
 						createEdge(abstractAssociation, sourceClass, targetClass);
+					}
 				}
 			}
 		}
@@ -146,19 +147,21 @@ public class ADataAnalyser {
 		if ((sourceNode != null && ! sourceNode.isEmpty()) && (targetNodes != null && ! targetNodes.isEmpty()))
 		{
 			AEdge edge = getEdgeFor(association, true);
-			if (! allEdges.contains(edge))
+			if (! allEdges.contains(edge)) {
 				allEdges.add(edge);
+			}
 			
-			for (ANode aNode : sourceNode) 
+			for (ANode aNode : sourceNode) { 
 				edge.addSourceNode(aNode);
+			}
 
-			for (ANode aNode : targetNodes) 
+			for (ANode aNode : targetNodes) { 
 				edge.addTargetNode(aNode);
+			}
 
 			return edge;
 		}
-		else
-			return null;
+		return null;
 	}
 
 	
@@ -216,8 +219,9 @@ public class ADataAnalyser {
 							createChildNode(parent, localAssociation, iClass);
 						}
 					}
-					else
+					else {
 						createChildNode(parent, localAssociation, targetClass);
+					}
 				}
 			}
 		}
@@ -289,8 +293,9 @@ public class ADataAnalyser {
 	private AEdge getEdgeFor(AbstractAssociation containingRef, boolean forceEdge){
 		for (AEdge iEdge : allEdges) 
 		{
-			if (iEdge.getTargetReference().equals(containingRef))
+			if (iEdge.getTargetReference().equals(containingRef)) {
 				return iEdge;
+			}
 		}
 		
 		return forceEdge ? new AEdge(containingRef) : null;
@@ -308,8 +313,9 @@ public class ADataAnalyser {
 			if (abstractAssociation instanceof LocalClassAssociation)
 			{
 				LocalClassAssociation localAssociation = (LocalClassAssociation) abstractAssociation;
-				if (localAssociation.getType().equals(Association_Types.CONTAINMENT))
+				if (localAssociation.getType().equals(Association_Types.CONTAINMENT)) {
 					return true;
+				}
 			}
 		}
 		return false;

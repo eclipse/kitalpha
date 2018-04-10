@@ -117,8 +117,9 @@ public class ActivityExplorerAspectHelper {
 		EList<AbstractPage> ownedPages = aExAspect.getOwnedPages();
 		for (AbstractPage abstractPage : ownedPages) 
 		{
-			if (abstractPage instanceof Page || includePageExtensions)
+			if (abstractPage instanceof Page || includePageExtensions) {
 				pages.add(abstractPage);
+			}
 		}
 		return pages;
 	}
@@ -138,8 +139,9 @@ public class ActivityExplorerAspectHelper {
 			{
 				for (Aspect aspect : vp_Aspects) 
 				{
-					if (aspect instanceof ViewpointActivityExplorer)
+					if (aspect instanceof ViewpointActivityExplorer) {
 						return (ViewpointActivityExplorer) aspect;
+					}
 				}
 			}
 		}

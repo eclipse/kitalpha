@@ -80,12 +80,13 @@ public class CreateGenchainAndPackageAFTask extends GenerationAdapter implements
 	 */
 	@Override
 	public void generationEnd(AbstractGenerationEvent event) {
-		if (waitFor == -1)
+		if (waitFor == -1) {
 			return;
+		}
 		
-		if (event instanceof ViewpointGenerationEndEvent)
+		if (event instanceof ViewpointGenerationEndEvent) {
 			waitFor --;
-		
+		}
 		if (waitFor == 0 && packageAF)
 		{
 			try {

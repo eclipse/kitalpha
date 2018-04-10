@@ -80,9 +80,9 @@ public class GenerationGraphCycle {
 			if (neighbor.equals(currentRoot))
 			{
 				Vector<GenerationNode> vector = new Vector<GenerationNode>();
-				for (GenerationNode gnode : cycle) 
+				for (GenerationNode gnode : cycle) {
 					vector.add(gnode);
-				
+				}
 				if (!isDetected(vector))
 				{
 					cycles.add(vector);
@@ -123,7 +123,9 @@ public class GenerationGraphCycle {
 					}
 				}
 				if (! gap)
+				{
 					return true;
+				}
 			}
 		}
 		return false;
@@ -137,8 +139,9 @@ public class GenerationGraphCycle {
 		{
 			Vector<GenerationNode> currentCycle = cycles.get(i);
 			for (GenerationNode noeud : currentCycle) 
+			{
 				System.out.print(" " + noeud.getName());
-
+			}
 			System.out.println();
 		}
 	}
@@ -156,9 +159,9 @@ public class GenerationGraphCycle {
 				result += "\t [";
 				for (int j = 0; j < currentCycle.size(); j++) 
 				{
-					if (j != 0)
+					if (j != 0) {
 						result += " --> ";
-					
+					}
 					GenerationNode noeud = currentCycle.get(j);
 					result += noeud.getName();
 				}

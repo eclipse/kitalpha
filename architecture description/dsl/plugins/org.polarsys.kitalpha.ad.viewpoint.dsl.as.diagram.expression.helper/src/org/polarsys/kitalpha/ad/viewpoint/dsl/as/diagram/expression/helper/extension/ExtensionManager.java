@@ -63,13 +63,14 @@ public class ExtensionManager {
 	 * @return No null list containing all declared target application extensions
 	 */
 	public static ExpressionKind getDiagramExpressionLanguageFilters(EObject anyModelElement){
-		if (targetApplicationLanguageRegistry.isEmpty())
+		if (targetApplicationLanguageRegistry.isEmpty()) {
 			initRegistry();
+		}
 		
 		String modelTargetApplication = VpDslConfigurationHelper.getTargetApplication(anyModelElement);
-		if (targetApplicationLanguageRegistry.containsKey(modelTargetApplication))
+		if (targetApplicationLanguageRegistry.containsKey(modelTargetApplication)) {
 			return targetApplicationLanguageRegistry.get(modelTargetApplication);
-		else
-			return ExpressionKind.Acceleo_3_x;
+		}
+		return ExpressionKind.Acceleo_3_x;
 	}
 }

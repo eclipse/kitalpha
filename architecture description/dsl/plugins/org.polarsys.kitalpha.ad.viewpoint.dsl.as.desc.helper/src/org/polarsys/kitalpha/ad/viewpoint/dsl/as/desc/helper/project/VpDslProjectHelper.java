@@ -48,10 +48,10 @@ public class VpDslProjectHelper {
 		URI uri = getContainingResourceURI(eObject);
 		String project_name = uri.segment(1);
 		IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(project_name);
-		if (project.exists())
+		if (project.exists()) {
 			return project;
-		else
-			return null;
+		}
+		return null;
 	}
 	
 	/**
@@ -67,8 +67,9 @@ public class VpDslProjectHelper {
 					throws CoreException, InvocationTargetException, InterruptedException {
 		IProject vpDslProject = getVpDslProject(eObject);
 		
-		if (! vpDslProject.exists())
+		if (! vpDslProject.exists()) {
 			return null;
+		}
 		
 		final IFolder icon_folder = vpDslProject.getFolder(IViewpointDescriptionConstants.VP_DESC__ICONS_FOLDER_NAME);
 		
@@ -97,8 +98,9 @@ public class VpDslProjectHelper {
 			throw new IllegalArgumentException(no_resource);
 		
 		URI uri = resource.getURI();
-		if (uri == null)
+		if (uri == null) {
 			throw new IllegalArgumentException(resource_not_serialized);
+		}
 		
 		return uri;
 	}
