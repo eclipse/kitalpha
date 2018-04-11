@@ -12,14 +12,16 @@ package org.polarsys.kitalpha.richtext.widget.internal;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.util.EContentAdapter;
+import org.eclipse.emf.transaction.ResourceSetChangeEvent;
+import org.eclipse.emf.transaction.ResourceSetListener;
+import org.eclipse.emf.transaction.ResourceSetListenerImpl;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IEditorReference;
 import org.eclipse.ui.IWorkbenchPage;
@@ -34,52 +36,59 @@ import org.polarsys.kitalpha.richtext.widget.editor.MDERichTextEditorInput;
  * @author Faycal Abka
  *
  */
-
-public class CloseEditorAdapter extends EContentAdapter {
-
-	public static final Adapter closeEditorAdapter = new CloseEditorAdapter();
-
-	private CloseEditorAdapter() {
+public class CloseEditorResourceSetListener extends ResourceSetListenerImpl implements ResourceSetListener{
+	
+	public CloseEditorResourceSetListener() {
 	}
-
+	
 	@Override
-	public void notifyChanged(Notification notification) {
-
-		IWorkbenchWindow activeWorkbenchWindow = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
+	public void resourceSetChanged(ResourceSetChangeEvent event) {
+		super.resourceSetChanged(event);
 		
-		if (activeWorkbenchWindow != null) {
-			IWorkbenchPage activePage = activeWorkbenchWindow.getActivePage();
-
-			IEditorReference[] openedEditors = getRichtextEditorReferences(activePage);
-
-			if (openedEditors.length > 0) {
-				int eventType = notification.getEventType();
-
-				switch (eventType) {
-				case Notification.REMOVE:
-				case Notification.REMOVE_MANY:
-					Object oldValue = notification.getOldValue();
-					if (oldValue instanceof EObject) {
-						EObject eOldValue = (EObject) oldValue;
-
-						List<IEditorReference> editors = getEditorsToClose(openedEditors, eOldValue);
-
-						for (IEditorReference references : editors) {
-							close(references, activePage);
-						}
-
-						if (getRichtextEditorReferences(activePage).length == 0) {
-							eOldValue.eResource().eAdapters().remove(this);
+		//keep only remove nofications
+		List<Notification> notifications = event.getNotifications().stream().
+				filter(e -> e.getEventType() == Notification.REMOVE_MANY || e.getEventType() == Notification.REMOVE).collect(Collectors.toList());
+		
+		for (Notification notification : notifications) {
+			switch (notification.getEventType()) {
+			case Notification.REMOVE_MANY:
+			case Notification.REMOVE:
+				IWorkbenchWindow activeWorkbenchWindow = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
+				if (activeWorkbenchWindow != null) {
+					IWorkbenchPage activePage = activeWorkbenchWindow.getActivePage();
+					if (activePage != null) {
+						IEditorReference[] openedEditors = getRichtextEditorReferences(activePage);
+						if (openedEditors.length > 0) {
+							handleNotification(notification, activePage, openedEditors);
 						}
 					}
-					break;
-				default:
-					break;
 				}
+				break;
+			default:
+				break;
 			}
 		}
 	}
 
+	private void handleNotification(Notification notification, IWorkbenchPage activePage, IEditorReference[] openedEditors) {
+		Object oldValue = notification.getOldValue();
+		if (oldValue instanceof EObject) {
+			EObject eOldValue = (EObject) oldValue;
+
+			List<IEditorReference> editors = getEditorsToClose(openedEditors, eOldValue);
+
+			for (IEditorReference references : editors) {
+				close(references, activePage);
+			}
+		}
+	}
+	
+	@Override
+	public boolean isPostcommitOnly() {
+		return true;
+	}
+	
+	
 	private List<IEditorReference> getEditorsToClose(IEditorReference[] openedEditors, EObject eOldValue) {
 		List<IEditorReference> editors = new ArrayList<>();
 
@@ -114,7 +123,7 @@ public class CloseEditorAdapter extends EContentAdapter {
 				MDERichTextEditorInput input = (MDERichTextEditorInput) ref.getEditorInput();
 				EObject element = input.getElement();
 
-				if (element.equals(eObject)) {
+				if (element.equals(eObject) && eObject.eResource() == null) {
 					return  ref;
 				}
 			}
@@ -139,5 +148,6 @@ public class CloseEditorAdapter extends EContentAdapter {
 
 		return result.toArray(new IEditorReference[result.size()]);
 	}
+	
 
 }
