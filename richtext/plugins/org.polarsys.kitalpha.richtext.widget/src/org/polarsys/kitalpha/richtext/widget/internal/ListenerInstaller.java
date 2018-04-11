@@ -37,15 +37,26 @@ public class ListenerInstaller {
       }
     };
 
-   
     StringBuilder script = new StringBuilder();
-    script.append("CKEDITOR.instances.editor.on('beforePaste', function (event) {");
     script.append("editor = CKEDITOR.instances.editor;");
+    script.append("editor.on('beforePaste', function (event) {");
     script.append("editor.lang.pastefromword.confirmCleanup = getConfirmCleanupMsg();");
+    script.append("});");
+    
+    // Set pasteFromWordPromptCleanup to false to prevent the confirm dialog from appearing on paste as plain text
+    // command
+    script.append("editor.on('beforeCommandExec', function (cmd) {");
+    script.append("if(cmd.data.name == 'pastetext'){");
+    script.append("editor.config.pasteFromWordPromptCleanup = false;");
+    script.append("}});");
+    
+    // Set the pasteFromWordPromptCleanup to true
+    script.append("editor.on('afterPaste', function (event) {");
+    script.append("editor.config.pasteFromWordPromptCleanup = true;");
     script.append("});");
   
     if (!widget.executeScript(script.toString())) {
-      Activator.getDefault().getLog().log(new Status(IStatus.WARNING, Activator.PLUGIN_ID, "Rich text widget can not execute on before paste command!")); //$NON-NLS-1$
+      Activator.getDefault().getLog().log(new Status(IStatus.WARNING, Activator.PLUGIN_ID, "Rich text widget can not install beforePaste/afterPaste/beforeCommandExec listeners!")); //$NON-NLS-1$
     }
   }
 
