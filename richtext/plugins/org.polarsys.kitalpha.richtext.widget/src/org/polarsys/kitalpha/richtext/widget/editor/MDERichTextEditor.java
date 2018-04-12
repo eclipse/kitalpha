@@ -253,6 +253,7 @@ public class MDERichTextEditor extends EditorPart implements ITabbedPropertyShee
 	@Override
 	public void setFocus() {
 		widget.setFocus();
+		widget.loadContent();
 	}
 	
 	@Override
@@ -364,6 +365,7 @@ public class MDERichTextEditor extends EditorPart implements ITabbedPropertyShee
 		
 		return result;
 	}
+	
 
 
 	@Override
