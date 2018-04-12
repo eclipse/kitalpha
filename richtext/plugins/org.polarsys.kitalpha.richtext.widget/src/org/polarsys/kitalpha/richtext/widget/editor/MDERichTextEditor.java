@@ -13,6 +13,7 @@ package org.polarsys.kitalpha.richtext.widget.editor;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.util.Arrays;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
@@ -28,6 +29,8 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.ISelectionProvider;
@@ -37,6 +40,7 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IEditorInput;
+import org.eclipse.ui.IEditorReference;
 import org.eclipse.ui.IEditorSite;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchListener;
@@ -52,10 +56,11 @@ import org.polarsys.kitalpha.richtext.common.impl.AbstractMDERichTextWidget;
 import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
 import org.polarsys.kitalpha.richtext.common.util.MDERichTextHelper;
 import org.polarsys.kitalpha.richtext.nebula.widget.MDENebulaBasedRichTextWidget;
+import org.polarsys.kitalpha.richtext.nebula.widget.MDERichTextConstants;
 import org.polarsys.kitalpha.richtext.widget.editor.intf.MDERichTextEditorCallback;
 import org.polarsys.kitalpha.richtext.widget.factory.MDERichTextFactory;
 import org.polarsys.kitalpha.richtext.widget.internal.Activator;
-import org.polarsys.kitalpha.richtext.widget.internal.CloseEditorAdapter;
+import org.polarsys.kitalpha.richtext.widget.internal.CloseEditorResourceSetListener;
 import org.polarsys.kitalpha.richtext.widget.internal.extension.MDERichTextExtensionManager;
 
 /**
@@ -70,6 +75,8 @@ public class MDERichTextEditor extends EditorPart implements ITabbedPropertyShee
 
 	private static final String SAVE_CALLBACK_CLASS_ATTR = "class"; //$NON-NLS-1$
 
+	private static final CloseEditorResourceSetListener closeEditorResourceSetListener = new CloseEditorResourceSetListener();
+	
 	private MDERichTextWidget widget;
 	
 	private final MDERichTextExtensionManager propertySheetExtensionManager = new MDERichTextExtensionManager(this);
@@ -166,7 +173,7 @@ public class MDERichTextEditor extends EditorPart implements ITabbedPropertyShee
 		setSite(site);
 		setInput(input);
 		setMDERichTextEditorPartName();
-		initAdapter(input);
+		registerResourceSetListener(input);
 		getEditorSite().setSelectionProvider(new ISelectionProvider() {
 
 			@Override
@@ -193,13 +200,14 @@ public class MDERichTextEditor extends EditorPart implements ITabbedPropertyShee
 	}
 
 
-	private void initAdapter(IEditorInput input) {
+	private void registerResourceSetListener(IEditorInput input) {
 		MDERichTextEditorInput richTextInput = (MDERichTextEditorInput)input;
 		EObject element = richTextInput.getElement();
 		
-		Resource eResource = element.eResource();
-		if (eResource != null) {
-			eResource.eAdapters().add(CloseEditorAdapter.closeEditorAdapter);
+		TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(element);
+		
+		if (editingDomain != null) {
+			editingDomain.addResourceSetListener(closeEditorResourceSetListener);
 		}
 	}
 
@@ -255,11 +263,47 @@ public class MDERichTextEditor extends EditorPart implements ITabbedPropertyShee
 		}
 		
 		super.dispose();
-		
+		unregisterResourceSetListener();
 		widget.dispose();
 		
 		PlatformUI.getWorkbench().removeWorkbenchListener(closeListener);
 		ResourcesPlugin.getWorkspace().removeResourceChangeListener(resourceChangeListener);
+	}
+
+
+	private void unregisterResourceSetListener() {
+		
+		boolean disposeResourceSetListener = true;
+		
+		EObject element = widget.getElement();
+		TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(element);
+		
+		IWorkbenchPage page = getSite().getPage();
+		
+		/*
+		 * Handle removing listener peer editing domain
+		 */
+		long nbOpenedEditors = Arrays.stream(page.getEditorReferences())
+				.filter(e -> MDERichTextConstants.RICHTEXT_EDITOR_ID.equals(e.getId()) && isInSameEditingDomain(editingDomain, e))
+				.count();
+		
+		disposeResourceSetListener = nbOpenedEditors == 0;
+		if (editingDomain != null && disposeResourceSetListener) {
+			editingDomain.removeResourceSetListener(closeEditorResourceSetListener);
+		}
+	}
+
+
+	private boolean isInSameEditingDomain(TransactionalEditingDomain editingDomain, IEditorReference eReference) {
+		try {
+			MDERichTextEditorInput editorInput = (MDERichTextEditorInput) eReference.getEditorInput();
+			TransactionalEditingDomain ed = TransactionUtil.getEditingDomain(editorInput.getElement());
+			return ed == editingDomain;
+		} catch (PartInitException e) {
+			Status status = new Status(IStatus.WARNING, Activator.PLUGIN_ID, "Cannot Retrieve The Editor Input", e);
+			Activator.getDefault().getLog().log(status);
+		}
+		return false;
 	}
 
 
