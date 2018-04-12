@@ -10,18 +10,18 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.richtext.widget.internal;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.transaction.NotificationFilter;
 import org.eclipse.emf.transaction.ResourceSetChangeEvent;
 import org.eclipse.emf.transaction.ResourceSetListener;
 import org.eclipse.emf.transaction.ResourceSetListenerImpl;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IEditorReference;
 import org.eclipse.ui.IWorkbenchPage;
@@ -45,70 +45,30 @@ public class CloseEditorResourceSetListener extends ResourceSetListenerImpl impl
 	public void resourceSetChanged(ResourceSetChangeEvent event) {
 		super.resourceSetChanged(event);
 		
-		//keep only remove nofications
-		List<Notification> notifications = event.getNotifications().stream().
-				filter(e -> e.getEventType() == Notification.REMOVE_MANY || e.getEventType() == Notification.REMOVE).collect(Collectors.toList());
+		List<Notification> notifications = event.getNotifications();
 		
-		for (Notification notification : notifications) {
-			switch (notification.getEventType()) {
-			case Notification.REMOVE_MANY:
-			case Notification.REMOVE:
-				IWorkbenchWindow activeWorkbenchWindow = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
-				if (activeWorkbenchWindow != null) {
-					IWorkbenchPage activePage = activeWorkbenchWindow.getActivePage();
-					if (activePage != null) {
-						IEditorReference[] openedEditors = getRichtextEditorReferences(activePage);
-						if (openedEditors.length > 0) {
-							handleNotification(notification, activePage, openedEditors);
-						}
-					}
+		if (!notifications.isEmpty()) {
+			IWorkbenchWindow activeWorkbenchWindow = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
+			if (activeWorkbenchWindow != null) {
+				IWorkbenchPage activePage = activeWorkbenchWindow.getActivePage();
+				if (activePage != null) {
+					handleClosingEditors(activePage, event.getEditingDomain());
 				}
-				break;
-			default:
-				break;
-			}
-		}
-	}
-
-	private void handleNotification(Notification notification, IWorkbenchPage activePage, IEditorReference[] openedEditors) {
-		Object oldValue = notification.getOldValue();
-		if (oldValue instanceof EObject) {
-			EObject eOldValue = (EObject) oldValue;
-
-			List<IEditorReference> editors = getEditorsToClose(openedEditors, eOldValue);
-
-			for (IEditorReference references : editors) {
-				close(references, activePage);
 			}
 		}
 	}
 	
 	@Override
+	public NotificationFilter getFilter() {
+		return NotificationFilter.createEventTypeFilter(Notification.REMOVE)
+				.or(NotificationFilter.createEventTypeFilter(Notification.REMOVE_MANY));
+	}
+
+
+	@Override
 	public boolean isPostcommitOnly() {
 		return true;
 	}
-	
-	
-	private List<IEditorReference> getEditorsToClose(IEditorReference[] openedEditors, EObject eOldValue) {
-		List<IEditorReference> editors = new ArrayList<>();
-
-		IEditorReference ref = getEditorReferenceFor(eOldValue, openedEditors);
-		if (ref != null) {
-			editors.add(ref);
-		}
-
-		TreeIterator<EObject> it = eOldValue.eAllContents();
-
-		while (it.hasNext()) {
-			EObject next = it.next();
-			ref = getEditorReferenceFor(next, openedEditors);
-			if (ref != null) {
-				editors.add(ref);
-			}
-		}
-		return editors;
-	}
-
 
 	private void close(IEditorReference ref, IWorkbenchPage activePage) {
 		if (ref != null) {
@@ -117,37 +77,30 @@ public class CloseEditorResourceSetListener extends ResourceSetListenerImpl impl
 	}
 
 
-	private IEditorReference getEditorReferenceFor(final EObject eObject, IEditorReference[] editorReferences) {
-		try {
-			for (IEditorReference ref : editorReferences) {
-				MDERichTextEditorInput input = (MDERichTextEditorInput) ref.getEditorInput();
-				EObject element = input.getElement();
-
-				if (element.equals(eObject) && eObject.eResource() == null) {
-					return  ref;
-				}
-			}
-		} catch (PartInitException e) {
-			Activator.getDefault().getLog().log(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Cannot find richtext editor", e));
-		}
-
-		return null;
-	}
-
-	private IEditorReference[] getRichtextEditorReferences(IWorkbenchPage activePage) {
-		List<IEditorReference> result = new ArrayList<>();
+	private void handleClosingEditors(IWorkbenchPage activePage, TransactionalEditingDomain editingDomain) {
 
 		IEditorReference[] editorReferences = activePage.getEditorReferences();
 
 		for (IEditorReference ref : editorReferences) {
 			String editorIdentifier = ref.getId();
-			if (MDERichTextConstants.RICHTEXT_EDITOR_ID.equals(editorIdentifier)) { //$NON-NLS-1$
-				result.add(ref);
+			if (MDERichTextConstants.RICHTEXT_EDITOR_ID.equals(editorIdentifier)) {
+				MDERichTextEditorInput editorInput;
+				try {
+					editorInput = (MDERichTextEditorInput) ref.getEditorInput();
+					EObject element = editorInput.getElement();
+					TransactionalEditingDomain eltEditingDomain = TransactionUtil.getEditingDomain(element);
+					/*
+					 * If the editing domain of element is null or we are in the same editing domain and the resource of the element
+					 * is null => Close the editor
+					 */
+					if ((eltEditingDomain == null || eltEditingDomain == editingDomain) && element.eResource() == null) {
+						close(ref, activePage);
+					}
+				} catch (PartInitException e) {
+					Status status = new Status(IStatus.WARNING, Activator.PLUGIN_ID, e.getMessage(), e);
+					Activator.getDefault().getLog().log(status);
+				}
 			}
 		}
-
-		return result.toArray(new IEditorReference[result.size()]);
 	}
-	
-
 }
