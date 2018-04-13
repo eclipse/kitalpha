@@ -60,7 +60,7 @@ import org.polarsys.kitalpha.richtext.nebula.widget.MDERichTextConstants;
 import org.polarsys.kitalpha.richtext.widget.editor.intf.MDERichTextEditorCallback;
 import org.polarsys.kitalpha.richtext.widget.factory.MDERichTextFactory;
 import org.polarsys.kitalpha.richtext.widget.internal.Activator;
-import org.polarsys.kitalpha.richtext.widget.internal.CloseEditorResourceSetListener;
+import org.polarsys.kitalpha.richtext.widget.internal.RichtextEditorResourceSetListener;
 import org.polarsys.kitalpha.richtext.widget.internal.extension.MDERichTextExtensionManager;
 
 /**
@@ -75,7 +75,7 @@ public class MDERichTextEditor extends EditorPart implements ITabbedPropertyShee
 
 	private static final String SAVE_CALLBACK_CLASS_ATTR = "class"; //$NON-NLS-1$
 
-	private static final CloseEditorResourceSetListener closeEditorResourceSetListener = new CloseEditorResourceSetListener();
+	private static final RichtextEditorResourceSetListener closeEditorResourceSetListener = new RichtextEditorResourceSetListener();
 	
 	private MDERichTextWidget widget;
 	
@@ -211,7 +211,7 @@ public class MDERichTextEditor extends EditorPart implements ITabbedPropertyShee
 		}
 	}
 
-	private void setMDERichTextEditorPartName() {
+	public void setMDERichTextEditorPartName() {
 		String title = getEditorInput().getName();
 		setPartName(title);
 	}
