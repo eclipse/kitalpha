@@ -18,6 +18,7 @@ import java.net.URL;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
@@ -68,7 +69,13 @@ public class MDERichTextHelper {
 	 */
 	public static String getProjectPath(EObject eObject){
 		IProject project = getProject(eObject);
-		return project != null? project.getLocation().toPortableString() : null;
+		if (project != null) {
+			IPath path = project.getLocation();
+			if (path != null) {
+				return path.toPortableString();
+			}
+		}
+		return null;
 	}
 	
 	/**
