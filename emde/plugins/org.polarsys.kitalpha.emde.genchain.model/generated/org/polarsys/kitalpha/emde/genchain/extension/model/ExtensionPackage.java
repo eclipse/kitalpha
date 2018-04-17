@@ -10,8 +10,10 @@
  *******************************************************************************/
 package org.polarsys.kitalpha.emde.genchain.extension.model;
 
+import org.eclipse.egf.portfolio.genchain.cdo.cdoExtension.CdoExtensionPackage;
 import org.eclipse.egf.portfolio.genchain.generationChain.GenerationChainPackage;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -174,6 +176,71 @@ public interface ExtensionPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link org.polarsys.kitalpha.emde.genchain.extension.model.impl.EmdeCdoGenerationImpl <em>Emde Cdo Generation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.kitalpha.emde.genchain.extension.model.impl.EmdeCdoGenerationImpl
+	 * @see org.polarsys.kitalpha.emde.genchain.extension.model.impl.ExtensionPackageImpl#getEmdeCdoGeneration()
+	 * @generated
+	 */
+	int EMDE_CDO_GENERATION = 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMDE_CDO_GENERATION__NAME = CdoExtensionPackage.CDO_GENERATION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Container</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMDE_CDO_GENERATION__CONTAINER = CdoExtensionPackage.CDO_GENERATION__CONTAINER;
+
+	/**
+	 * The feature id for the '<em><b>Model Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMDE_CDO_GENERATION__MODEL_PATH = CdoExtensionPackage.CDO_GENERATION__MODEL_PATH;
+
+	/**
+	 * The feature id for the '<em><b>Cdo Suffix</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMDE_CDO_GENERATION__CDO_SUFFIX = CdoExtensionPackage.CDO_GENERATION__CDO_SUFFIX;
+
+	/**
+	 * The feature id for the '<em><b>Feature Delegation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMDE_CDO_GENERATION__FEATURE_DELEGATION = CdoExtensionPackage.CDO_GENERATION__FEATURE_DELEGATION;
+
+	/**
+	 * The number of structural features of the '<em>Emde Cdo Generation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMDE_CDO_GENERATION_FEATURE_COUNT = CdoExtensionPackage.CDO_GENERATION_FEATURE_COUNT + 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.polarsys.kitalpha.emde.genchain.extension.model.EmdeGeneration <em>Emde Generation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -182,6 +249,16 @@ public interface ExtensionPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getEmdeGeneration();
+
+	/**
+	 * Returns the meta object for class '{@link org.polarsys.kitalpha.emde.genchain.extension.model.EmdeCdoGeneration <em>Emde Cdo Generation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Emde Cdo Generation</em>'.
+	 * @see org.polarsys.kitalpha.emde.genchain.extension.model.EmdeCdoGeneration
+	 * @generated
+	 */
+	EClass getEmdeCdoGeneration();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -214,6 +291,15 @@ public interface ExtensionPackage extends EPackage {
 		 * @generated
 		 */
 		EClass EMDE_GENERATION = eINSTANCE.getEmdeGeneration();
+		/**
+		 * The meta object literal for the '{@link org.polarsys.kitalpha.emde.genchain.extension.model.impl.EmdeCdoGenerationImpl <em>Emde Cdo Generation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.kitalpha.emde.genchain.extension.model.impl.EmdeCdoGenerationImpl
+		 * @see org.polarsys.kitalpha.emde.genchain.extension.model.impl.ExtensionPackageImpl#getEmdeCdoGeneration()
+		 * @generated
+		 */
+		EClass EMDE_CDO_GENERATION = eINSTANCE.getEmdeCdoGeneration();
 
 	}
 

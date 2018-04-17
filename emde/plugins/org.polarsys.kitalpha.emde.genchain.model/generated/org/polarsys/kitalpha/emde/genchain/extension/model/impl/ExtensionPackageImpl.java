@@ -10,13 +10,16 @@
  *******************************************************************************/
 package org.polarsys.kitalpha.emde.genchain.extension.model.impl;
 
+import org.eclipse.egf.portfolio.genchain.cdo.cdoExtension.CdoExtensionPackage;
 import org.eclipse.egf.portfolio.genchain.generationChain.GenerationChainPackage;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.polarsys.kitalpha.emde.genchain.extension.model.EmdeCdoGeneration;
 import org.polarsys.kitalpha.emde.genchain.extension.model.EmdeGeneration;
 import org.polarsys.kitalpha.emde.genchain.extension.model.ExtensionFactory;
 import org.polarsys.kitalpha.emde.genchain.extension.model.ExtensionPackage;
@@ -34,6 +37,13 @@ public class ExtensionPackageImpl extends EPackageImpl implements ExtensionPacka
 	 * @generated
 	 */
 	private EClass emdeGenerationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass emdeCdoGenerationEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -82,7 +92,7 @@ public class ExtensionPackageImpl extends EPackageImpl implements ExtensionPacka
 		isInited = true;
 
 		// Initialize simple dependencies
-		GenerationChainPackage.eINSTANCE.eClass();
+		CdoExtensionPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theExtensionPackage.createPackageContents();
@@ -106,6 +116,15 @@ public class ExtensionPackageImpl extends EPackageImpl implements ExtensionPacka
 	 */
 	public EClass getEmdeGeneration() {
 		return emdeGenerationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEmdeCdoGeneration() {
+		return emdeCdoGenerationEClass;
 	}
 
 	/**
@@ -137,6 +156,8 @@ public class ExtensionPackageImpl extends EPackageImpl implements ExtensionPacka
 
 		// Create classes and their features
 		emdeGenerationEClass = createEClass(EMDE_GENERATION);
+
+		emdeCdoGenerationEClass = createEClass(EMDE_CDO_GENERATION);
 	}
 
 	/**
@@ -164,6 +185,7 @@ public class ExtensionPackageImpl extends EPackageImpl implements ExtensionPacka
 
 		// Obtain other dependent packages
 		GenerationChainPackage theGenerationChainPackage = (GenerationChainPackage)EPackage.Registry.INSTANCE.getEPackage(GenerationChainPackage.eNS_URI);
+		CdoExtensionPackage theCdoExtensionPackage = (CdoExtensionPackage)EPackage.Registry.INSTANCE.getEPackage(CdoExtensionPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -171,9 +193,12 @@ public class ExtensionPackageImpl extends EPackageImpl implements ExtensionPacka
 
 		// Add supertypes to classes
 		emdeGenerationEClass.getESuperTypes().add(theGenerationChainPackage.getEmfGeneration());
+		emdeCdoGenerationEClass.getESuperTypes().add(theCdoExtensionPackage.getCdoGeneration());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(emdeGenerationEClass, EmdeGeneration.class, "EmdeGeneration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(emdeCdoGenerationEClass, EmdeCdoGeneration.class, "EmdeCdoGeneration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -12,7 +12,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.egf.portfolio.genchain,
  org.eclipse.egf.portfolio.genchain.tools,
  org.eclipse.search,
- org.polarsys.kitalpha.emde.genchain.model
+ org.polarsys.kitalpha.emde.genchain.model,
+ org.eclipse.egf.portfolio.genchain.cdo
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.polarsys.kitalpha.emde.genchain.extension,

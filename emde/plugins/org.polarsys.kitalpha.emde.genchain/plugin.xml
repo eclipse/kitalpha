@@ -3,6 +3,7 @@
 <plugin>
  	<extension point="org.eclipse.egf.portfolio.genchain.elements">
     	<helper id="emde.emf.generation" class="org.polarsys.kitalpha.emde.genchain.EmdeGenerationExtension"/>
+    	<helper id="emde.cdo.generation" class="org.polarsys.kitalpha.emde.genchain.EmdeCdoGenerationExtension"/>
     </extension>
 
    <extension

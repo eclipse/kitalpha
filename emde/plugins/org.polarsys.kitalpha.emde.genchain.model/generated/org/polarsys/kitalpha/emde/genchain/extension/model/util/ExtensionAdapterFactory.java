@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.polarsys.kitalpha.emde.genchain.extension.model.util;
 
+import org.eclipse.egf.portfolio.genchain.cdo.cdoExtension.CdoGeneration;
 import org.eclipse.egf.portfolio.genchain.generationChain.EcoreElement;
 import org.eclipse.egf.portfolio.genchain.generationChain.EmfGeneration;
 import org.eclipse.egf.portfolio.genchain.generationChain.GenerationElement;
@@ -85,6 +86,10 @@ public class ExtensionAdapterFactory extends AdapterFactoryImpl {
 				return createEmdeGenerationAdapter();
 			}
 			@Override
+			public Adapter caseEmdeCdoGeneration(EmdeCdoGeneration object) {
+				return createEmdeCdoGenerationAdapter();
+			}
+			@Override
 			public Adapter caseGenerationElement(GenerationElement object) {
 				return createGenerationElementAdapter();
 			}
@@ -99,6 +104,10 @@ public class ExtensionAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseEmfGeneration(EmfGeneration object) {
 				return createEmfGenerationAdapter();
+			}
+			@Override
+			public Adapter caseCdoGeneration(CdoGeneration object) {
+				return createCdoGenerationAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -131,6 +140,20 @@ public class ExtensionAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEmdeGenerationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.kitalpha.emde.genchain.extension.model.EmdeCdoGeneration <em>Emde Cdo Generation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.kitalpha.emde.genchain.extension.model.EmdeCdoGeneration
+	 * @generated
+	 */
+	public Adapter createEmdeCdoGenerationAdapter() {
 		return null;
 	}
 
@@ -187,6 +210,20 @@ public class ExtensionAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEmfGenerationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.egf.portfolio.genchain.cdo.cdoExtension.CdoGeneration <em>Cdo Generation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.egf.portfolio.genchain.cdo.cdoExtension.CdoGeneration
+	 * @generated
+	 */
+	public Adapter createCdoGenerationAdapter() {
 		return null;
 	}
 

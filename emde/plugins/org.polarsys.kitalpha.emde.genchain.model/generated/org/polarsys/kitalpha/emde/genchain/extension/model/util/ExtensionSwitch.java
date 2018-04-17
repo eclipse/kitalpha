@@ -12,6 +12,7 @@ package org.polarsys.kitalpha.emde.genchain.extension.model.util;
 
 import java.util.List;
 
+import org.eclipse.egf.portfolio.genchain.cdo.cdoExtension.CdoGeneration;
 import org.eclipse.egf.portfolio.genchain.generationChain.EcoreElement;
 import org.eclipse.egf.portfolio.genchain.generationChain.EmfGeneration;
 import org.eclipse.egf.portfolio.genchain.generationChain.GenerationElement;
@@ -20,6 +21,8 @@ import org.eclipse.egf.portfolio.genchain.generationChain.PluginProvider;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.util.Switch;
 import org.polarsys.kitalpha.emde.genchain.extension.model.*;
 
 /**
@@ -35,7 +38,7 @@ import org.polarsys.kitalpha.emde.genchain.extension.model.*;
  * @see org.polarsys.kitalpha.emde.genchain.extension.model.ExtensionPackage
  * @generated
  */
-public class ExtensionSwitch<T> {
+public class ExtensionSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -57,14 +60,16 @@ public class ExtensionSwitch<T> {
 	}
 
 	/**
-	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
+	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the first non-null result returned by a <code>caseXXX</code> call.
+	 * @param ePackage the package in question.
+	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
-	public T doSwitch(EObject theEObject) {
-		return doSwitch(theEObject.eClass(), theEObject);
+	@Override
+	protected boolean isSwitchFor(EPackage ePackage) {
+		return ePackage == modelPackage;
 	}
 
 	/**
@@ -74,26 +79,7 @@ public class ExtensionSwitch<T> {
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
-	protected T doSwitch(EClass theEClass, EObject theEObject) {
-		if (theEClass.eContainer() == modelPackage) {
-			return doSwitch(theEClass.getClassifierID(), theEObject);
-		}
-		else {
-			List<EClass> eSuperTypes = theEClass.getESuperTypes();
-			return
-				eSuperTypes.isEmpty() ?
-					defaultCase(theEObject) :
-					doSwitch(eSuperTypes.get(0), theEObject);
-		}
-	}
-
-	/**
-	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the first non-null result returned by a <code>caseXXX</code> call.
-	 * @generated
-	 */
+	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
 			case ExtensionPackage.EMDE_GENERATION: {
@@ -103,6 +89,16 @@ public class ExtensionSwitch<T> {
 				if (result == null) result = caseEcoreElement(emdeGeneration);
 				if (result == null) result = casePluginProvider(emdeGeneration);
 				if (result == null) result = caseGenerationElement(emdeGeneration);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ExtensionPackage.EMDE_CDO_GENERATION: {
+				EmdeCdoGeneration emdeCdoGeneration = (EmdeCdoGeneration)theEObject;
+				T result = caseEmdeCdoGeneration(emdeCdoGeneration);
+				if (result == null) result = caseCdoGeneration(emdeCdoGeneration);
+				if (result == null) result = caseEcoreElement(emdeCdoGeneration);
+				if (result == null) result = casePluginProvider(emdeCdoGeneration);
+				if (result == null) result = caseGenerationElement(emdeCdoGeneration);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -122,6 +118,21 @@ public class ExtensionSwitch<T> {
 	 * @generated
 	 */
 	public T caseEmdeGeneration(EmdeGeneration object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Emde Cdo Generation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Emde Cdo Generation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEmdeCdoGeneration(EmdeCdoGeneration object) {
 		return null;
 	}
 
@@ -186,6 +197,21 @@ public class ExtensionSwitch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Cdo Generation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Cdo Generation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCdoGeneration(CdoGeneration object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -196,6 +222,7 @@ public class ExtensionSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
 	 */
+	@Override
 	public T defaultCase(EObject object) {
 		return null;
 	}

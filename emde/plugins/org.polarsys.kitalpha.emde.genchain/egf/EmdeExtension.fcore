@@ -47,6 +47,22 @@
           <orchestration xmi:type="pattern:MethodCall" xmi:id="_mhJTEMI9Ed-9MM7ZmqaWEg"
               called="#_j1j2kMI9Ed-9MM7ZmqaWEg"/>
         </elements>
+        <elements xmi:id="_FOy4sD8DEei6SZWv3x0qPg" name="EmdeCdoGenerationPattern"
+            headerMethod="#_FOy4sj8DEei6SZWv3x0qPg" conditionMethod="#_FOy4tD8DEei6SZWv3x0qPg"
+            initMethod="#_FOy4sz8DEei6SZWv3x0qPg" footerMethod="#_FOy4tj8DEei6SZWv3x0qPg">
+          <nature xmi:type="javapattern:JavaNature" xmi:id="_FOy4sT8DEei6SZWv3x0qPg"
+              name="Java"/>
+          <methods xmi:id="_FOy4sj8DEei6SZWv3x0qPg" name="header" patternFilePath="templates/pattern._FOy4sD8DEei6SZWv3x0qPg/method._FOy4sj8DEei6SZWv3x0qPg.pt"/>
+          <methods xmi:id="_FOy4sz8DEei6SZWv3x0qPg" name="init" patternFilePath="templates/pattern._FOy4sD8DEei6SZWv3x0qPg/method._FOy4sz8DEei6SZWv3x0qPg.pt"/>
+          <methods xmi:id="_FOy4tD8DEei6SZWv3x0qPg" name="preCondition" patternFilePath="templates/pattern._FOy4sD8DEei6SZWv3x0qPg/method._FOy4tD8DEei6SZWv3x0qPg.pt"/>
+          <methods xmi:id="_FOy4tj8DEei6SZWv3x0qPg" name="footer" patternFilePath="templates/pattern._FOy4sD8DEei6SZWv3x0qPg/method._FOy4tj8DEei6SZWv3x0qPg.pt"/>
+          <methods xmi:id="_VAFKsD8EEei6SZWv3x0qPg" name="body" patternFilePath="templates/pattern._FOy4sD8DEei6SZWv3x0qPg/method._VAFKsD8EEei6SZWv3x0qPg.pt"/>
+          <parameters xmi:id="_aSopcD8EEei6SZWv3x0qPg" name="parameter" type="http://www.polarsys.org/kitalpha/emde/genchain/1.0.0#//EmdeCdoGeneration"/>
+          <variables xmi:id="_VwhJID8EEei6SZWv3x0qPg" name="activity" type="java.lang.String"/>
+          <orchestration xmi:type="pattern:SuperCall" xmi:id="_FOy4tz8DEei6SZWv3x0qPg"/>
+          <orchestration xmi:type="pattern:MethodCall" xmi:id="_VYhf4D8EEei6SZWv3x0qPg"
+              called="#_VAFKsD8EEei6SZWv3x0qPg"/>
+        </elements>
       </libraries>
     </viewpoints>
   </viewpointContainer>

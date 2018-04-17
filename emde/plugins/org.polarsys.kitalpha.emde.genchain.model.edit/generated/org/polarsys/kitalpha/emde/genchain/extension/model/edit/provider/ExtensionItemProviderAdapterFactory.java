@@ -123,6 +123,29 @@ public class ExtensionItemProviderAdapterFactory extends ExtensionAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.polarsys.kitalpha.emde.genchain.extension.model.EmdeCdoGeneration} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EmdeCdoGenerationItemProvider emdeCdoGenerationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.polarsys.kitalpha.emde.genchain.extension.model.EmdeCdoGeneration}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEmdeCdoGenerationAdapter() {
+		if (emdeCdoGenerationItemProvider == null) {
+			emdeCdoGenerationItemProvider = new EmdeCdoGenerationItemProvider(this);
+		}
+
+		return emdeCdoGenerationItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -249,6 +272,7 @@ public class ExtensionItemProviderAdapterFactory extends ExtensionAdapterFactory
 	 */
 	public void dispose() {
 		if (emdeGenerationItemProvider != null) emdeGenerationItemProvider.dispose();
+		if (emdeCdoGenerationItemProvider != null) emdeCdoGenerationItemProvider.dispose();
 	}
 
 	/**
@@ -303,6 +327,11 @@ public class ExtensionItemProviderAdapterFactory extends ExtensionAdapterFactory
 						(GenerationChainPackage.Literals.GENERATION_CHAIN__ELEMENTS,
 						 ExtensionFactory.eINSTANCE.createEmdeGeneration()));
 
+				newChildDescriptors.add
+					(createChildParameter
+						(GenerationChainPackage.Literals.GENERATION_CHAIN__ELEMENTS,
+						 ExtensionFactory.eINSTANCE.createEmdeCdoGeneration()));
+
 				return null;
 			}
  
@@ -324,8 +353,8 @@ public class ExtensionItemProviderAdapterFactory extends ExtensionAdapterFactory
 		 */
 		public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
 			ArrayList<Object> result = new ArrayList<Object>();
-		   new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
-		   return result;
+			new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
+			return result;
 		}
 
 		/**

@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.polarsys.kitalpha.emde.genchain.model/generated"
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/org.polarsys.kitalpha.emde.genchain.model/generated"
     editDirectory="/org.polarsys.kitalpha.emde.genchain.model.edit/generated" editorDirectory="/org.polarsys.kitalpha.emde.genchain.model.editor/generated"
     modelPluginID="org.polarsys.kitalpha.emde.genchain.model" modelName="Emde_Extension"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
     editPluginID="org.polarsys.kitalpha.emde.genchain.model.edit" editorPluginID="org.polarsys.kitalpha.emde.genchain.model.editor"
-    usedGenPackages="platform:/plugin/org.eclipse.egf.portfolio.genchain/model/generationChain.genmodel#//generationChain">
-  <foreignModel>platform:/plugin/org.polarsys.kitalpha.emde.genchain/model/eMDE_Extension.ecore</foreignModel>
+    usedGenPackages="platform:/plugin/org.eclipse.egf.portfolio.genchain.cdo/model/cdoExtension.genmodel#//cdoExtension platform:/plugin/org.eclipse.egf.portfolio.genchain/model/generationChain.genmodel#//generationChain">
+  <foreignModel>../../org.polarsys.kitalpha.emde.genchain/model/eMDE_Extension.ecore</foreignModel>
   <genPackages prefix="Extension" basePackage="org.polarsys.kitalpha.emde.genchain"
       disposableProviderFactory="true" interfacePackageSuffix="model" metaDataPackageSuffix="model"
       classPackageSuffix="model.impl" utilityPackageSuffix="model.util" providerPackageSuffix="model.edit.provider"
       presentationPackageSuffix="model.editor.presentation" extensibleProviderFactory="true"
-      childCreationExtenders="true" ecorePackage="platform:/plugin/org.polarsys.kitalpha.emde.genchain/model/eMDE_Extension.ecore#/">
-    <genClasses ecoreClass="platform:/plugin/org.polarsys.kitalpha.emde.genchain/model/eMDE_Extension.ecore#//EmdeGeneration"/>
+      childCreationExtenders="true" ecorePackage="../../org.polarsys.kitalpha.emde.genchain/model/eMDE_Extension.ecore#/">
+    <genClasses ecoreClass="../../org.polarsys.kitalpha.emde.genchain/model/eMDE_Extension.ecore#//EmdeGeneration"/>
+    <genClasses ecoreClass="../../org.polarsys.kitalpha.emde.genchain/model/eMDE_Extension.ecore#//EmdeCdoGeneration"/>
   </genPackages>
 </genmodel:GenModel>

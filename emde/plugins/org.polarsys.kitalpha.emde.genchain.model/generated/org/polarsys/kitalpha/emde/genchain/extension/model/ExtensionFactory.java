@@ -39,6 +39,15 @@ public interface ExtensionFactory extends EFactory {
 	EmdeGeneration createEmdeGeneration();
 
 	/**
+	 * Returns a new object of class '<em>Emde Cdo Generation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Emde Cdo Generation</em>'.
+	 * @generated
+	 */
+	EmdeCdoGeneration createEmdeCdoGeneration();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

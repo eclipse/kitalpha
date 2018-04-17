@@ -35,7 +35,7 @@ public class ExtensionFactoryImpl extends EFactoryImpl implements ExtensionFacto
 	 */
 	public static ExtensionFactory init() {
 		try {
-			ExtensionFactory theExtensionFactory = (ExtensionFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.polarsys.org/kitalpha/emde/genchain/1.0.0"); 
+			ExtensionFactory theExtensionFactory = (ExtensionFactory)EPackage.Registry.INSTANCE.getEFactory(ExtensionPackage.eNS_URI);
 			if (theExtensionFactory != null) {
 				return theExtensionFactory;
 			}
@@ -65,6 +65,7 @@ public class ExtensionFactoryImpl extends EFactoryImpl implements ExtensionFacto
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case ExtensionPackage.EMDE_GENERATION: return createEmdeGeneration();
+			case ExtensionPackage.EMDE_CDO_GENERATION: return createEmdeCdoGeneration();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -78,6 +79,16 @@ public class ExtensionFactoryImpl extends EFactoryImpl implements ExtensionFacto
 	public EmdeGeneration createEmdeGeneration() {
 		EmdeGenerationImpl emdeGeneration = new EmdeGenerationImpl();
 		return emdeGeneration;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EmdeCdoGeneration createEmdeCdoGeneration() {
+		EmdeCdoGenerationImpl emdeCdoGeneration = new EmdeCdoGenerationImpl();
+		return emdeCdoGeneration;
 	}
 
 	/**
