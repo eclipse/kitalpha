@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -13,9 +13,12 @@ package org.polarsys.kitalpha.richtext.widget.editor.ext.callback;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sirius.business.api.session.Session;
+import org.eclipse.sirius.business.api.session.SessionListener;
 import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.business.api.session.SessionStatus;
+import org.eclipse.swt.widgets.Display;
 import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
+import org.polarsys.kitalpha.richtext.nebula.widget.MDENebulaBasedRichTextWidget;
 import org.polarsys.kitalpha.richtext.widget.editor.intf.MDERichTextEditorCallback;
 
 /**
@@ -44,4 +47,20 @@ public class SiriusMDERichTextCallback implements MDERichTextEditorCallback {
 		return false;
 	}
 
+	@Override
+	public void registerWorkspaceResourceSaveListener(MDERichTextWidget widget) {
+		EObject element = widget.getElement();
+		Session session = SessionManager.INSTANCE.getSession(element);
+		if (session != null) {
+			session.addListener(new SessionListener() {
+				@Override
+				public void notify(int changeKind) {
+					if (changeKind == SessionListener.SYNC && widget instanceof MDENebulaBasedRichTextWidget) {
+						Display.getDefault()
+								.asyncExec(() -> ((MDENebulaBasedRichTextWidget) widget).setDirtyStateUpdated(false));
+					}
+				}
+			});
+		}
+	}
 }
