@@ -14,6 +14,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.polarsys.kitalpha.richtext.nebula.widget.MDENebulaBasedRichTextWidgetImpl;
 import org.polarsys.kitalpha.richtext.nebula.widget.MDENebulaRichTextConfiguration;
 import org.polarsys.kitalpha.richtext.widget.internal.ListenerInstaller;
+
 /**
  * 
  * @author Faycal Abka
@@ -40,12 +41,15 @@ public class MDERichtextWidgetImpl extends MDENebulaBasedRichTextWidgetImpl {
 	@Override
 	protected void installListenersOnReadyInstance() {
 		ListenerInstaller installer = new ListenerInstaller();
-		
+
 		super.installListenersOnReadyInstance();
-		
+
 		installer.installOnBeforePasteListener(this);
 		installer.installOpenLinkListener(this);
-		installer.installSaveListener(this);
 		installer.installChangeNotificationHandlerListener(this);
+		installer.installChangeContentListener(this);
+		installer.installSaveListener(this);
+		installer.installFocusEventListener(this);
+		installer.installWorkspaceResourceSaveListener(this);
 	}
 }
