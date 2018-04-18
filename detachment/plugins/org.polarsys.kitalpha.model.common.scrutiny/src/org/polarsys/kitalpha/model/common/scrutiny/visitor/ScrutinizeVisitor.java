@@ -60,20 +60,17 @@ public class ScrutinizeVisitor extends EObjectVisitor {
 
 	@Override
 	public void visited(EObject eObject) {
-		
+
 		for (String id : registry.getRegistry().keySet()) {
-			Object regElt = registry.getRegistry().get(id);
-			
-			if (regElt instanceof RegistryElement){
-				RegistryElement registryElement = (RegistryElement)regElt;
-				Collection<IScrutinize> finders = registryElement.getFinders();
-				
-				/*
-				 * FIXME: cf. Fixme in visited(Resource) method above
-				 */
-				for (IScrutinize iFinder : finders) {
-					iFinder.findIn(eObject);
-				}
+			RegistryElement registryElement = registry.getRegistry().get(id);
+
+			Collection<IScrutinize> finders = registryElement.getFinders();
+
+			/*
+			 * FIXME: cf. Fixme in visited(Resource) method above
+			 */
+			for (IScrutinize iFinder : finders) {
+				iFinder.findIn(eObject);
 			}
 		}
 	}

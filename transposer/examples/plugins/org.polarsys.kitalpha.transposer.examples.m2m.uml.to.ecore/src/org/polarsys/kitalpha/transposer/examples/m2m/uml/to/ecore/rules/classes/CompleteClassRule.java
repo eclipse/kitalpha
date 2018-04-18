@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -13,7 +13,6 @@
 package org.polarsys.kitalpha.transposer.examples.m2m.uml.to.ecore.rules.classes;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -22,12 +21,11 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Property;
-
+import org.polarsys.kitalpha.transposer.examples.m2m.uml.to.ecore.rules.generic.AbstractGenericRule;
+import org.polarsys.kitalpha.transposer.examples.m2m.uml.to.ecore.util.ValueHelper;
 import org.polarsys.kitalpha.transposer.rules.handler.rules.api.IContext;
 import org.polarsys.kitalpha.transposer.rules.handler.rules.api.IPremise;
 import org.polarsys.kitalpha.transposer.transformation.context.ContextHelper;
-import org.polarsys.kitalpha.transposer.examples.m2m.uml.to.ecore.rules.generic.AbstractGenericRule;
-import org.polarsys.kitalpha.transposer.examples.m2m.uml.to.ecore.util.ValueHelper;
 
 /**
  * Class rule
@@ -44,7 +42,7 @@ public class CompleteClassRule extends AbstractGenericRule<Class> {
 	 *      org.polarsys.kitalpha.transposer.rules.handler.rules.api.IContext)
 	 */
 	@Override
-	protected Object create(Class element_p, IContext context_p)
+	protected Object create(Class element, IContext context)
 			throws Exception {
 
 		// create the ECore EClass
@@ -52,17 +50,17 @@ public class CompleteClassRule extends AbstractGenericRule<Class> {
 		
 		// updates its structural attributes
 		//set its name
-		eClass.setName(element_p.getName());
+		eClass.setName(element.getName());
 		
 		//set isAbstract Attribute
-		eClass.setAbstract(element_p.isAbstract());
+		eClass.setAbstract(element.isAbstract());
 
 		// Creates its EAttributes
-		for (Property property : element_p.getAllAttributes())
-			createAttributes(eClass, property, context_p);
+		for (Property property : element.getAllAttributes())
+			createAttributes(eClass, property, context);
 
 		// set containment
-		setContainment(element_p, eClass, context_p);
+		setContainment(element, eClass, context);
 
 		return eClass;
 	}
@@ -70,53 +68,53 @@ public class CompleteClassRule extends AbstractGenericRule<Class> {
 	/**
 	 * Set the containment reference
 	 * 
-	 * @param element_p :
+	 * @param element :
 	 *            UML Class
 	 * 
-	 * @param eClass_p :
+	 * @param eClass :
 	 *            ECore EClass
 	 * 
-	 * @param context_p :
+	 * @param context :
 	 *            current context
 	 */
-	protected void setContainment(Class element_p, EClass eClass_p,
-			IContext context_p) {
+	protected void setContainment(Class element, EClass eClass,
+			IContext context) {
 		
 		//get its container transformed
-		Object container_obj = ContextHelper.getMainTarget(context_p, element_p
+		Object containerObj = ContextHelper.getMainTarget(context, element
 				.eContainer());
 		
-		EPackage container = (EPackage)container_obj;
+		EPackage container = (EPackage)containerObj;
 		
 		//add the new EClass in its container(EPackage)
-		container.getEClassifiers().add(eClass_p);
+		container.getEClassifiers().add(eClass);
 		
 	}
 
 	/**
 	 * Creates and sets EClass attributes
 	 * 
-	 * @param class_p :
+	 * @param clazz :
 	 *            ECore Object
-	 * @param property_p :
+	 * @param property :
 	 *            UML property
-	 * @param context_p :
+	 * @param context :
 	 *            current context
 	 */
-	protected void createAttributes(EClass class_p, Property property_p,
-			IContext context_p) {
+	protected void createAttributes(EClass clazz, Property property,
+			IContext context) {
 		
 		//create a new EAttribute
 		EAttribute att = EcoreFactory.eINSTANCE.createEAttribute();
 		
 		//set its name
-		att.setName(property_p.getName());
+		att.setName(property.getName());
 		
 		//set its EType
-		ValueHelper.setType(att, property_p, context_p);
+		ValueHelper.setType(att, property, context);
 		
 		//add the new EAttribute in the EClass
-		class_p.getEStructuralFeatures().add(att);
+		clazz.getEStructuralFeatures().add(att);
 
 	}
 
@@ -128,10 +126,10 @@ public class CompleteClassRule extends AbstractGenericRule<Class> {
 	 *      org.polarsys.kitalpha.transposer.rules.handler.rules.api.IContext)
 	 */
 	@Override
-	protected void update(Object object_p, Class element_p, IContext context_p)
+	protected void update(Object object, Class element, IContext context)
 			throws Exception {
 
-			EClass eClass = (EClass)object_p;
+			EClass eClass = (EClass)object;
 			
 			//Update ESuperType Reference
 			
@@ -139,13 +137,13 @@ public class CompleteClassRule extends AbstractGenericRule<Class> {
 			eClass.getESuperTypes().clear();
 			
 			//get eSuper UML Class
-			List<Class> esupers = element_p.getSuperClasses();
+			List<Class> esupers = element.getSuperClasses();
 			
 			for (Object esuper : esupers){
 				
 				if (esuper != null) {
 					//get the ECORE equivalent to the UML Class
-					Object ecoreEquiv = ContextHelper.getMainTarget(context_p, esuper);
+					Object ecoreEquiv = ContextHelper.getMainTarget(context, esuper);
 					
 					if(ecoreEquiv !=null)
 						
@@ -162,26 +160,25 @@ public class CompleteClassRule extends AbstractGenericRule<Class> {
 	 * 
 	 * @see org.polarsys.kitalpha.transposer.rules.handler.rules.api.IRule#getPremises(java.lang.Object)
 	 */
-	public List<IPremise> getPremises(Class element_p) {
-	 List<IPremise> premises = new ArrayList<IPremise>();
-	 IPremise premise = null;
-	 
+	public List<IPremise> getPremises(Class element) {
+		List<IPremise> premises = new ArrayList<IPremise>();
+		IPremise premise = null;
+
 		// its container have to created before itself
-		Object value = element_p.getOwner();
+		Object value = element.getOwner();
 		if(null != value){
 			premise = createContainmentPremise(value);
 			premises.add(premise);
 		}
-		
-		//super classes have to created before itself
-		value = element_p.getSuperClasses();
 
-		if (value instanceof List) {
-			List<Object> objects = Arrays.asList(value);
-			for (Object v : objects)
-				premise = createPrecedencePremise(v, "esuper"); //$NON-NLS-1$
-				premises.add(premise);
+		//super classes have to created before itself
+		List<Class> objects = element.getSuperClasses();
+
+		for (Object v : objects) {
+			premise = createPrecedencePremise(v, "esuper"); //$NON-NLS-1$
+			premises.add(premise);
 		}
+		
 		return premises;
 	}
 }

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,10 +40,10 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.extension.data.Launcher
 
 public class ExtensionSelectionMainPage extends WizardPage {
 
-	private List<LauncherExtension> availableExtensions_;
-	private Table availableExtensionsTable_;
-	private Text extensionsDescriptionText_;
-	private Button selectlAllButton_;
+	private List<LauncherExtension> availableExtensions;
+	private Table availableExtensionsTable;
+	private Text extensionsDescriptionText;
+	private Button selectlAllButton;
 	
 	/**
 	 * Page default constructor. 
@@ -52,7 +52,7 @@ public class ExtensionSelectionMainPage extends WizardPage {
 	 */
 	protected ExtensionSelectionMainPage(List<LauncherExtension> availableExtensions) {
 		super(Messages.ExtensionSelection_MainPage_Name, Messages.ExtensionSelection_MainPage_Title, null);
-		this.availableExtensions_ = availableExtensions;
+		this.availableExtensions = availableExtensions;
 	}
 
 	public void createControl(Composite parent) {
@@ -64,7 +64,7 @@ public class ExtensionSelectionMainPage extends WizardPage {
 	}
 	
 	private void createTopCompositeControls(Composite parent){
-		if (availableExtensions_.size() > 0) 
+		if (!availableExtensions.isEmpty()) 
 		{
 			createExtensionTable(parent);
 			populateExtensionsInTabe();
@@ -102,51 +102,50 @@ public class ExtensionSelectionMainPage extends WizardPage {
 		availableExtensionsLabel.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		availableExtensionsLabel.setEnabled(true);
 		
-		availableExtensionsTable_ = new Table(extensionListComposite, SWT.CHECK | SWT.BORDER | SWT.FULL_SELECTION | SWT.V_SCROLL);
-		availableExtensionsTable_.setLinesVisible (true);
-		availableExtensionsTable_.setHeaderVisible (true);
-		availableExtensionsTable_.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 2, 1));
-		availableExtensionsTable_.setEnabled(true);
-		availableExtensionsTable_.addListener(SWT.Selection, new Listener() {
+		availableExtensionsTable = new Table(extensionListComposite, SWT.CHECK | SWT.BORDER | SWT.FULL_SELECTION | SWT.V_SCROLL);
+		availableExtensionsTable.setLinesVisible (true);
+		availableExtensionsTable.setHeaderVisible (true);
+		availableExtensionsTable.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 2, 1));
+		availableExtensionsTable.setEnabled(true);
+		availableExtensionsTable.addListener(SWT.Selection, new Listener() {
 			public void handleEvent(Event e) {
-				if (availableExtensionsTable_.getSelectionCount() > 0)
+				if (availableExtensionsTable.getSelectionCount() > 0)
 				{
-					TableItem selection = availableExtensionsTable_.getSelection()[0];
+					TableItem selection = availableExtensionsTable.getSelection()[0];
 					Object object = selection.getData();
 					if (object != null)
 					{
 						LauncherExtension launcherExtension = (LauncherExtension) object;
 						// Display Extension description in the description area
 						String desc = launcherExtension.extensionDescriptionAttributeValue;
-						if (desc != null && extensionsDescriptionText_ != null)
-							extensionsDescriptionText_.setText(desc);
+						if (desc != null && extensionsDescriptionText != null)
+							extensionsDescriptionText.setText(desc);
 					}
 				}
 				
 				if (e.detail == SWT.CHECK)
 				{
 					Widget widget = e.item;
-					if (widget instanceof TableItem)
-					{
-						TableItem tableItem = (TableItem)widget;
-						availableExtensionsTable_.setSelection(tableItem);
-						synchronizeTableItemWithExtension(tableItem);
-					}
+
+					TableItem tableItem = (TableItem)widget;
+					availableExtensionsTable.setSelection(tableItem);
+					synchronizeTableItemWithExtension(tableItem);
 				}
 			}
 		});
 
-		selectlAllButton_ = new Button(extensionListComposite, SWT.CHECK);
-		selectlAllButton_.setText("Unselect all");
-		selectlAllButton_.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-		selectlAllButton_.setSelection(true);
-		selectlAllButton_.addSelectionListener(new SelectionListener() {
+		selectlAllButton = new Button(extensionListComposite, SWT.CHECK);
+		selectlAllButton.setText("Unselect all");
+		selectlAllButton.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+		selectlAllButton.setSelection(true);
+		selectlAllButton.addSelectionListener(new SelectionListener() {
 			public void widgetSelected(SelectionEvent e) {
-				final boolean checkState = selectlAllButton_.getSelection();
+				final boolean checkState = selectlAllButton.getSelection();
 				changeExtensionState(checkState);
 			}
 			
 			public void widgetDefaultSelected(SelectionEvent e) {
+				// Do nothing
 			}
 		});
 		
@@ -161,12 +160,12 @@ public class ExtensionSelectionMainPage extends WizardPage {
 	 * @param tableItems
 	 */
 	private void changeExtensionState(boolean state){
-		if (selectlAllButton_.getSelection())
-			selectlAllButton_.setText("Unselect all"); 
+		if (selectlAllButton.getSelection())
+			selectlAllButton.setText("Unselect all"); 
 		else
-			selectlAllButton_.setText("Select all");
+			selectlAllButton.setText("Select all");
 		
-		TableItem[] tableItems = availableExtensionsTable_.getItems();
+		TableItem[] tableItems = availableExtensionsTable.getItems();
 		for (TableItem tableItem : tableItems) 
 		{
 			tableItem.setChecked(state);
@@ -185,7 +184,7 @@ public class ExtensionSelectionMainPage extends WizardPage {
 		{
 			LauncherExtension launcherExtension = (LauncherExtension) data;
 			
-			for (LauncherExtension iLauncherExtension : availableExtensions_) 
+			for (LauncherExtension iLauncherExtension : availableExtensions) 
 			{
 				if (iLauncherExtension.equals(launcherExtension) && 
 						(iLauncherExtension.isActive() != tableItem.getChecked()))
@@ -204,7 +203,7 @@ public class ExtensionSelectionMainPage extends WizardPage {
 	 */
 	private void populateExtensionsInTabe(){
 		boolean generateCategoryColumn = false;
-		for (LauncherExtension iLauncherExtension : availableExtensions_) 
+		for (LauncherExtension iLauncherExtension : availableExtensions) 
 		{
 			if (iLauncherExtension.extensionCategoryAttributeValue.trim().length() > 0)
 			{
@@ -220,14 +219,16 @@ public class ExtensionSelectionMainPage extends WizardPage {
 		
 		for (int i = 0; i < columncount; i++) 
 		{
-			TableColumn column = new TableColumn(availableExtensionsTable_, SWT.NONE, i);
+			TableColumn column = new TableColumn(availableExtensionsTable, SWT.NONE, i);
 			column.setText(titles[i]);
 			column.setMoveable(i == 0 ? false : true);
-			column.setWidth(i == 0 ? 20 : (i == 1 ? 190: 140));
+			
+			int alterWidth = i == 1 ? 190: 140;
+			column.setWidth(i == 0 ? 20 : alterWidth);
 		}
 		
 		// Create table lines
-		for (LauncherExtension taguableExtension : availableExtensions_) 
+		for (LauncherExtension taguableExtension : availableExtensions) 
 		{
 			addOneExtensionInTable(taguableExtension);
 		}
@@ -238,7 +239,7 @@ public class ExtensionSelectionMainPage extends WizardPage {
 	 * @param extension
 	 */
 	private void addOneExtensionInTable(LauncherExtension extension){
-		TableItem item = new TableItem (availableExtensionsTable_, SWT.NONE);
+		TableItem item = new TableItem (availableExtensionsTable, SWT.NONE);
 		item.setData(extension);
 		item.setText (1, extension.extensionNameAttributeValue);
 		item.setText (2, extension.extensionCategoryAttributeValue);
@@ -254,7 +255,7 @@ public class ExtensionSelectionMainPage extends WizardPage {
 	private void createDescriptionWidgets(Composite parent) {
 		boolean createWidgets = false;
 		// Loop over extension and check if there is description 
-		for (LauncherExtension iLauncherExtension : availableExtensions_) 
+		for (LauncherExtension iLauncherExtension : availableExtensions) 
 			if (iLauncherExtension.extensionDescriptionAttributeValue.trim().length() > 0)
 			{
 				createWidgets = true;
@@ -273,18 +274,18 @@ public class ExtensionSelectionMainPage extends WizardPage {
 			extensionsDescriptionLabel.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 			extensionsDescriptionLabel.setEnabled(true);
 
-			extensionsDescriptionText_ = new Text(descriptionComposite, SWT.MULTI | SWT.BORDER | SWT.WRAP | SWT.V_SCROLL);
-			extensionsDescriptionText_.setEditable(false);
+			extensionsDescriptionText = new Text(descriptionComposite, SWT.MULTI | SWT.BORDER | SWT.WRAP | SWT.V_SCROLL);
+			extensionsDescriptionText.setEditable(false);
 			GridData gd = new GridData(GridData.FILL_BOTH);
-			extensionsDescriptionText_.setLayoutData(gd);
-			extensionsDescriptionText_.setEnabled(true);
+			extensionsDescriptionText.setLayoutData(gd);
+			extensionsDescriptionText.setEnabled(true);
 		}
 	}
 
 	public List<LauncherExtension> getAvailableExtensions() {
-		if (availableExtensions_ != null)
+		if (availableExtensions != null)
 		{
-			return availableExtensions_;
+			return availableExtensions;
 		}
 		else
 		{

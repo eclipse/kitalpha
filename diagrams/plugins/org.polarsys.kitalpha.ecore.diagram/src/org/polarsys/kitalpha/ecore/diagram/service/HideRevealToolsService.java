@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,27 +45,24 @@ public class HideRevealToolsService {
 	}
 	
 	public Collection<EObject> computeAllIReferences(EPackage element, DSemanticDiagram diagram, boolean visible) {
-		Collection<EObject> result = new HashSet<EObject>();
+		Collection<EObject> result = new HashSet<>();
 		final EList<DDiagramElementContainer> containers = diagram.getContainers();
 		for (DDiagramElementContainer dDiagramElementContainer : containers) 
 		{
-			if (dDiagramElementContainer instanceof EdgeTarget)
+			final EList<DEdge> outgoingEdges = dDiagramElementContainer.getOutgoingEdges();
+			for (DEdge dEdge : outgoingEdges) 
 			{
-				final EList<DEdge> outgoingEdges = dDiagramElementContainer.getOutgoingEdges();
-				for (DEdge dEdge : outgoingEdges) 
-				{
-					if (dEdge.isVisible() == visible)
-						result.add(dEdge);
-				}
-				final EList<DEdge> incomingEdges = dDiagramElementContainer.getIncomingEdges();
-				for (DEdge dEdge : incomingEdges) 
-				{
-					if (dEdge.isVisible() == visible)
-						result.add(dEdge);
-				}
+				if (dEdge.isVisible() == visible)
+					result.add(dEdge);
+			}
+			final EList<DEdge> incomingEdges = dDiagramElementContainer.getIncomingEdges();
+			for (DEdge dEdge : incomingEdges) 
+			{
+				if (dEdge.isVisible() == visible)
+					result.add(dEdge);
 			}
 		}
-		
+
 		return result;
 	}
 	

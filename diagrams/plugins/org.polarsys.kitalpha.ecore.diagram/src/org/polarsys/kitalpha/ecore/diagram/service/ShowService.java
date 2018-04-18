@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -49,7 +49,7 @@ public class ShowService {
 		if (eObject instanceof EClass) 
 		{
 			EClass root = (EClass) eObject;
-			Collection<EObject> result = new UniqueEList<EObject>();
+			Collection<EObject> result = new UniqueEList<>();
 			for (EObject o : root.eCrossReferences()) 
 			{
 				if (o instanceof EReference) 
@@ -66,7 +66,7 @@ public class ShowService {
 			Session session = SessionManager.INSTANCE.getSession(root);
 			ECrossReferenceAdapter eCrossReferenceAdapter = session.getSemanticCrossReferencer();
 			Collection<Setting> list = eCrossReferenceAdapter.getInverseReferences(root, true);
-			if (list != null && list.size() > 0) 
+			if (list != null && !list.isEmpty()) 
 			{
 				for (Setting s : list) 
 				{
@@ -85,10 +85,9 @@ public class ShowService {
 			
 			for (EObject current : displayedNodes)
 			{
-				if (current != null)
+				if (current != null && current instanceof EReference)
 				{
-					if (current instanceof EReference)
-						result.remove(current);
+					result.remove(current);
 				}
 			}
 			
@@ -109,7 +108,7 @@ public class ShowService {
 	 */
 	public Collection<EObject> showReferencesRoot(EObject eObject, Collection<EObject> displayedNodes) {
 		Collection<EObject> listTemp = showReferences(eObject, displayedNodes);
-		Collection<EObject> toReturn = new UniqueEList<EObject>();
+		Collection<EObject> toReturn = new UniqueEList<>();
 		for (EObject current : listTemp) 
 		{
 			if (current instanceof EReference)
@@ -163,12 +162,38 @@ public class ShowService {
 	}
 	
 	public Collection<EClass> showRelation(EClass eObject, Collection<EClass> displayedNodes) {
-		if (eObject instanceof EClass) 
+		Collection<EClass> result = new UniqueEList<>();
+		EClass root = eObject;
+
+		for (EObject o : root.eCrossReferences()) 
 		{
-			EClass root = (EClass) eObject;
-			Collection<EClass> result = new UniqueEList<EClass>();
-			for (EObject o : root.eCrossReferences()) 
+			if (o instanceof EClass) 
 			{
+				result.add((EClass) o);
+			} 
+			else 
+			{
+				if (o instanceof EReference) 
+				{
+					EClassifier owner = ((EReference) o).getEType();
+					if (owner instanceof EClass) 
+					{
+						result.add((EClass) owner);
+					}
+				}
+			}
+		}
+
+		result.addAll(root.getEAllSuperTypes());
+
+		Session session = SessionManager.INSTANCE.getSession(root);
+		ECrossReferenceAdapter eCrossReferenceAdapter = session.getSemanticCrossReferencer();
+		Collection<Setting> list = eCrossReferenceAdapter.getInverseReferences(root, true);
+		if (list != null && !list.isEmpty()) 
+		{
+			for (Setting s : list) 
+			{
+				EObject o = s.getEObject();
 				if (o instanceof EClass) 
 				{
 					result.add((EClass) o);
@@ -177,53 +202,22 @@ public class ShowService {
 				{
 					if (o instanceof EReference) 
 					{
-						EClassifier owner = ((EReference) o).getEType();
-						if (owner instanceof EClass) 
+						EClass e = (EClass) o.eContainer();
+						if (e != null) 
 						{
-							result.add((EClass) owner);
+							result.add(e);
+							result.addAll(getAllDescendants(e));
 						}
 					}
 				}
 			}
-
-			result.addAll(root.getEAllSuperTypes());
-
-			Session session = SessionManager.INSTANCE.getSession(root);
-			ECrossReferenceAdapter eCrossReferenceAdapter = session.getSemanticCrossReferencer();
-			Collection<Setting> list = eCrossReferenceAdapter.getInverseReferences(root, true);
-			if (list != null && list.size() > 0) 
-			{
-				for (Setting s : list) 
-				{
-					EObject o = s.getEObject();
-					if (o instanceof EClass) 
-					{
-						result.add((EClass) o);
-					} 
-					else 
-					{
-						if (o instanceof EReference) 
-						{
-							EClass e = (EClass) o.eContainer();
-							if (e != null) 
-							{
-								result.add(e);
-								result.addAll(getAllDescendants(e));
-							}
-						}
-					}
-				}
-			}
-
-			result.addAll(getAllDescendants(root));
-
-			result.removeAll(displayedNodes);
-			return result;
-		} 
-		else 
-		{
-			return Collections.emptyList();
 		}
+
+		result.addAll(getAllDescendants(root));
+
+		result.removeAll(displayedNodes);
+
+		return result;
 
 	}
 	
@@ -239,9 +233,9 @@ public class ShowService {
 		Session session = SessionManager.INSTANCE.getSession(root);
 		ECrossReferenceAdapter eCrossReferenceAdapter = session.getSemanticCrossReferencer();
 		Collection<EClass> local = getDirectDescendants(root, eCrossReferenceAdapter);
-		if (local.size() > 0) 
+		if (!local.isEmpty()) 
 		{
-			List<EClass> result = new UniqueEList<EClass>();
+			List<EClass> result = new UniqueEList<>();
 			result.addAll(local);
 			for (EClass e : local) 
 			{
@@ -257,9 +251,9 @@ public class ShowService {
 	
 	public Collection<EClass> getDirectDescendants(EClass eClass, ECrossReferenceAdapter eCrossReferenceAdapter) {
 		Collection<Setting> list = eCrossReferenceAdapter.getInverseReferences(eClass, true);
-		if (list != null && list.size() > 0) 
+		if (list != null && !list.isEmpty()) 
 		{
-			List<EClass> result = new UniqueEList<EClass>();
+			List<EClass> result = new UniqueEList<>();
 			for (Setting s : list) 
 			{
 				if (EcorePackage.Literals.ECLASS__ESUPER_TYPES.equals(s.getEStructuralFeature())) {
@@ -284,7 +278,7 @@ public class ShowService {
 	private Collection<EClass> getdisplayedEClasses(DNodeList selectedClassNode){
 		final DDiagram parentDiagram = selectedClassNode.getParentDiagram();
 		final EList<DDiagramElementContainer> containers = parentDiagram.getContainers();
-		final Collection<EClass> displayedEClasses = new HashSet<EClass>();
+		final Collection<EClass> displayedEClasses = new HashSet<>();
 		for (DDiagramElementContainer container : containers) 
 		{
 			if (container.getTarget() instanceof EClass)

@@ -38,18 +38,16 @@ public class GenerateArchitectureFrameworkAction implements IEditorActionDelegat
 	}
 		
 	public void selectionChanged(IAction action, ISelection selection) {
-		if (currentEditor != null && currentEditor instanceof XtextEditor) {
-			IFile file = (IFile) currentEditor.getEditorInput().getAdapter(IFile.class);
+		if (currentEditor != null) {
+			IFile file = currentEditor.getEditorInput().getAdapter(IFile.class);
 			currentSelection = new StructuredSelection(file);
 		}
 	}
 
 	public void run(IAction action) {
 		if (currentEditor != null) {
-			if (currentEditor instanceof XtextEditor) {
-				IFile file = (IFile) currentEditor.getEditorInput().getAdapter(IFile.class);
-				currentSelection = new StructuredSelection(file);
-			}	
+			IFile file = currentEditor.getEditorInput().getAdapter(IFile.class);
+			currentSelection = new StructuredSelection(file);
 		}
 	}
 
