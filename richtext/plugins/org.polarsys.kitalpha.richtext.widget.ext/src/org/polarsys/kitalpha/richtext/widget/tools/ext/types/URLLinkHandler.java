@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -34,7 +34,7 @@ public class URLLinkHandler implements LinkHandler {
 	
 	@Override
 	public boolean canHandleLink(String link) {
-		return link != null && link.contains("http:"); //$NON-NLS-1$
+		return link != null && (link.contains("http:") || link.contains("https:")); //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	@Override
@@ -56,7 +56,24 @@ public class URLLinkHandler implements LinkHandler {
 
 	@Override
 	public String encode(String url, String urlDisplayName) {
-		return "<a href=\"" + Constants.URL + "://" + url + "\">" + StringEscapeUtils.escapeHtml(urlDisplayName) + "</a>"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$;
+		
+		if (!isLinkUsesScheme(url, Constants.URL_SECURE) && !isLinkUsesScheme(url, Constants.URL)) {
+			//Default protocol is http
+			url = Constants.URL + "://" + url; //$NON-NLS-1$
+		}
+		
+		//Default protocol is http://
+		return "<a href=\"" + url + "\">" + StringEscapeUtils.escapeHtml(urlDisplayName) + "</a>"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+	}
+	
+	/**
+	 * Check if the link uses the scheme
+	 * @param link
+	 * @param scheme
+	 * @return true if link start with scheme, false otherwise
+	 */
+	private boolean isLinkUsesScheme(String link, String scheme) {
+		return link.toLowerCase().startsWith(scheme);
 	}
 
 	@Override
