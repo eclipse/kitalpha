@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
+import org.polarsys.kitalpha.doc.gen.business.core.internal.GenDocDiagramEditPartService;
 import org.polarsys.kitalpha.doc.gen.business.core.preference.helper.DocgenDiagramPreferencesHelper;
 import org.polarsys.kitalpha.doc.gen.business.core.sirius.util.session.DiagramSessionHelper;
 
@@ -71,5 +73,22 @@ public class SiriusHelper {
 			}
 		}
 		return result;
+	}
+	
+	/**
+     * Activate or deactivate the autoscaling
+     * @param tool
+     * @param diagramEditPart
+     * @return scale factor
+     */
+	public static double initAutoScaling(final GenDocDiagramEditPartService tool, final DiagramEditPart diagramEditPart) {
+		tool.setAutoScalingEnabled(true);
+		tool.getExportResolutionFactor(diagramEditPart); //Hack to initialize the scaling factor before get it
+		double scalingFactor = tool.getScalingFactor();
+		if (scalingFactor >= 1) {
+			tool.setAutoScalingEnabled(false);
+		}
+		
+		return scalingFactor;
 	}
 }

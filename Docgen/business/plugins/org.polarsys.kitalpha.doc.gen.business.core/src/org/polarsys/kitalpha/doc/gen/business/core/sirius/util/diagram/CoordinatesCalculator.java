@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014-2018 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,6 +34,7 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
+import org.eclipse.draw2d.geometry.Translatable;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
@@ -64,27 +65,36 @@ import org.eclipse.sirius.diagram.DNode;
 import org.eclipse.sirius.diagram.DSemanticDiagram;
 import org.eclipse.sirius.diagram.impl.DEdgeImpl;
 import org.eclipse.sirius.diagram.ui.edit.api.part.AbstractDiagramEdgeEditPart.ViewEdgeFigure;
-import org.eclipse.sirius.diagram.ui.tools.api.part.DiagramEditPartService;
 import org.eclipse.sirius.viewpoint.description.AnnotationEntry;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
 import org.polarsys.kitalpha.doc.gen.business.core.Activator;
+import org.polarsys.kitalpha.doc.gen.business.core.internal.GenDocDiagramEditPartService;
 import org.polarsys.kitalpha.doc.gen.business.core.scope.GenerationGlobalScope;
 import org.polarsys.kitalpha.doc.gen.business.core.scope.ScopeStatus;
 import org.polarsys.kitalpha.doc.gen.business.core.util.IDiagramHelper;
+import org.polarsys.kitalpha.doc.gen.business.core.util.SiriusHelper;
 
 /**
- * @author S0021936
+ * @author Boubekeur Zendagui
+ * @author Faycal Abka
  * 
  */
 public class CoordinatesCalculator {
-	private static final String JPG = "JPG";
-	private final ImageReader reader = (ImageReader) ImageIO.getImageReadersBySuffix(JPG).next();
+	
 	public static final Map<String, Map<Rectangle, EObject>> COORDINATES_MAP = new HashMap<String, Map<Rectangle, EObject>>();
+
+	private static final String JPG = "JPG";
+	
+	private final ImageReader reader = ImageIO.getImageReadersBySuffix(JPG).next();
+	private final GenDocDiagramEditPartService tool = new GenDocDiagramEditPartService();
+	
 	private IFile imageFile;
 	private DDiagram diagram;
 	private IDiagramHelper helper;
 	private Session session;
+	
+	private double scalingFactor = 1.0d; //Default scaling value
 	
 	private static IProgressMonitor progressMonitor = new NullProgressMonitor();
 
@@ -154,15 +164,20 @@ public class CoordinatesCalculator {
 		}
 
 	}
+	
+	public double getScalingFactor() {
+		return scalingFactor;
+	}
 
 	/**
 	 * @return the map containing object's coordinates
 	 */
 	public Map<Rectangle, EObject> getPositionMap() {
-		if (diagram == null || imageFile == null || imageFile.exists() == false)
+		if (diagram == null || imageFile == null || !imageFile.exists()) {
 			return Collections.emptyMap();
+		}
 		
-		final Map<Rectangle, EObject> result = new LinkedHashMap<Rectangle, EObject>();
+		final Map<Rectangle, EObject> result = new LinkedHashMap<>();
 		final String diagramId = EcoreUtil.getURI(diagram).fragment();
 		if (COORDINATES_MAP.containsKey(diagramId)) 
 		{
@@ -201,7 +216,7 @@ public class CoordinatesCalculator {
 	private Map<Rectangle, EObject> removeObjectOutOfScope(Map<Rectangle, EObject> postitions){
 		if (GenerationGlobalScope.getInstance().getScopeStatus().equals(ScopeStatus.LIMITED))
 		{
-			final Map<Rectangle, EObject> result = new LinkedHashMap<Rectangle, EObject>();
+			final Map<Rectangle, EObject> result = new LinkedHashMap<>();
 			for (Entry<Rectangle, EObject> entry : postitions.entrySet()) 
 			{
 				final EObject key = entry.getValue();
@@ -239,7 +254,7 @@ public class CoordinatesCalculator {
 
 	
 	public Map<Rectangle, EObject> getRectanglesMap(View view, Map<?, ?> registry, int deltaX, int deltaY) {
-		Map<Rectangle, EObject> result = new LinkedHashMap<Rectangle, EObject>();
+		Map<Rectangle, EObject> result = new LinkedHashMap<>();
 		
 		GraphicalEditPart gep = (GraphicalEditPart) registry.get(view);
 		if (gep != null) 
@@ -266,11 +281,13 @@ public class CoordinatesCalculator {
 					bounds = new Rectangle(originalBound);
 				}
 				
+				scale(bounds);
+				
 				// Translate parent before handling children
-				if (bounds != null)
+				if (bounds != null) 
+				{
 					bounds.performTranslate(deltaX, deltaY);
-				else
-					throw new RuntimeException();
+				}
 				
 				final boolean acceptView = acceptView(view);
 				
@@ -313,7 +330,6 @@ public class CoordinatesCalculator {
 			}
 			Shell shell = new Shell();
 
-			final DiagramEditPartService tool = new DiagramEditPartService();
 			DiagramEditPart diagramEP = tool.createDiagramEditPart(gmfDiagram,
 					shell, PreferencesHint.USE_DEFAULTS);
 			/* refresh to avoid blank images */
@@ -327,33 +343,45 @@ public class CoordinatesCalculator {
 			 * Example of such cases are exchanges on DFI (mch)
 			 */
 			diagramEP.getRoot().refresh();
+			
 			/*
 			 * flush the viewer to have all connections and ports
 			 */
 			EditPartViewer viewer = diagramEP.getViewer();
+			
 			viewer.flush();
 			Map<?, ?> registry = viewer.getEditPartRegistry();
-//			
+
 			Dimension imageSize = getImageSize();
 			int width = imageSize.width;
 			int height = imageSize.height;
+			
 			Rectangle imageBounds = DiagramImageUtils.calculateImageRectangle(diagramEP.getPrimaryEditParts(), 10, new Dimension(10, 10));
+			
+			scalingFactor = SiriusHelper.initAutoScaling(tool, diagramEP);
+			
+			scale(imageBounds);
+			
 			int deltaX = imageBounds.getTopRight().x - width;
 			int deltaY = imageBounds.getBottomLeft().y - height;
 			
-			Map<Rectangle, EObject> resultat = new LinkedHashMap<Rectangle, EObject>();
+			Map<Rectangle, EObject> resultat = new LinkedHashMap<>();
 			
 			// Handle Edges
 			for (Object object : gmfDiagram.getEdges()) 
 			{
-				if (! edgeHasCenterLabel((View) object, registry))
+				if (! edgeHasCenterLabel((View) object, registry)) 
+				{
 					continue; 
+				}
 				
 				if (object instanceof View)
 				{
 					final Map<Rectangle, EObject> rectanglesMap = getRectanglesMap((View) object, registry, -deltaX, -deltaY);
 					if (! rectanglesMap.isEmpty())
+					{
 						resultat.putAll(rectanglesMap);
+					}
 				}
 			}
 			
@@ -364,7 +392,9 @@ public class CoordinatesCalculator {
 				{
 					final Map<Rectangle, EObject> rectanglesMap = getRectanglesMap((View) object, registry, -deltaX, -deltaY);
 					if (! rectanglesMap.isEmpty())
+					{
 						resultat.putAll(rectanglesMap);
+					}
 				}
 			}
 			
@@ -372,6 +402,18 @@ public class CoordinatesCalculator {
 			return resultat;
 		}
 		return Collections.emptyMap();
+	}
+
+	
+	/**
+	 * Scale the translatable is the factor is less than 1
+	 * @param t to scale
+	 */
+	private void scale(Translatable t) {
+		double factor = getScalingFactor();
+		if (factor < 1.0d && t != null) {
+			t.performScale(factor);
+		}
 	}
 	
 	/**
@@ -409,7 +451,9 @@ public class CoordinatesCalculator {
 		commandStack.flush();
 		
 		if (diagramEP.getViewer().getControl() != null)
+		{
 			diagramEP.getViewer().getControl().dispose();
+		}
 		
 		((DiagramEditDomain) diagramEP.getViewer().getEditDomain()).removeViewer(diagramEP.getViewer());
 
@@ -442,7 +486,7 @@ public class CoordinatesCalculator {
 		} catch (Exception e) {
 			Activator.logWarning(e.getMessage());
 		}
-		return null;
+		return new Dimension(-1, -1);
 	}
 
 	private Diagram getDiagram() {
@@ -502,7 +546,7 @@ public class CoordinatesCalculator {
 
 
 	// Faire une translation pour les objects contenus
-	// Cette translation est due au fait que les coordonnées des objects
+	// Cette translation est due au fait que les coordonnÃ©es des objects
 	// contenus sont relatifs aux conteneurs.
 	@Deprecated
 	private Map<Rectangle, EObject> proceed(Map<Rectangle, EObject> resultMap, Map<View, EObject> nodeMap) {

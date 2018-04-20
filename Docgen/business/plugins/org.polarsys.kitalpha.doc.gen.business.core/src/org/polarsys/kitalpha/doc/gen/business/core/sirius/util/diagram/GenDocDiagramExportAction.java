@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2007, 2017 THALES GLOBAL SERVICES.
+ * Copyright (c) 2007, 2018 THALES GLOBAL SERVICES.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,7 +22,7 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.core.runtime.SubProgressMonitor;
+import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
@@ -54,6 +54,7 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.polarsys.kitalpha.doc.gen.business.core.internal.GenDocDiagramEditPartService;
 import org.polarsys.kitalpha.doc.gen.business.core.util.DocGenHtmlUtil;
+import org.polarsys.kitalpha.doc.gen.business.core.util.SiriusHelper;
 
 /**
  * Reworked code from {@link ExportAction}. 
@@ -143,7 +144,7 @@ public class GenDocDiagramExportAction extends ExportAction {
                     }
                     if (DialectUIManager.INSTANCE.canHandle(representation)) {
                         try {
-                        	export(representation, session, filePath, exportFormat, new SubProgressMonitor(monitor, 7));
+                        	export(representation, session, filePath, exportFormat, SubMonitor.convert(monitor, 7));
                         } catch (CoreException exception) {
                             if (exception instanceof SizeTooLargeException) {
                                 errorDuringExport = true;
@@ -208,22 +209,23 @@ public class GenDocDiagramExportAction extends ExportAction {
                     canonicalSynchronizer.synchronize();
 
                     final GenDocDiagramEditPartService tool = new GenDocDiagramEditPartService();
-                    tool.setAutoScalingEnabled(false);
-                    
                     
                     if (exportToHtml) {
                         tool.exportToHtml();
                     }
 
+                    
+                    
                     boolean isActivateSiriusDecorationPrevious = SiriusDecoratorProvider.isActivateSiriusDecoration();
                     SiriusDecoratorProvider.setActivateSiriusDecoration(true);
                     
                     final DiagramEditPart diagramEditPart = tool.createDiagramEditPart(diagram, shell, PreferencesHint.USE_DEFAULTS);
                     org.eclipse.gmf.runtime.diagram.ui.image.ImageFileFormat resolveImageFormat = org.eclipse.gmf.runtime.diagram.ui.image.ImageFileFormat.resolveImageFormat(imageFileExtension);
                     
-                    tool.setAutoScalingEnabled(false);
-                    
+                    SiriusHelper.initAutoScaling(tool, diagramEditPart);
+
                     try {
+                    	
 
                         /* refresh to avoid blank images */
                         diagramEditPart.getRoot().refresh();
@@ -239,6 +241,7 @@ public class GenDocDiagramExportAction extends ExportAction {
                          * flush the viewer to have all connections and ports
                          */
                         diagramEditPart.getRoot().getViewer().flush();
+                        
 
                         /* do the effective export */
 						tool.copyToImage(diagramEditPart, correctPath, resolveImageFormat, monitor);
@@ -281,7 +284,7 @@ public class GenDocDiagramExportAction extends ExportAction {
             });
         }
 	}
-    
+
     private IPath getRealPath(final IPath path, final boolean exportToHtml) {
         if (exportToHtml) {
             return path.removeFileExtension().addFileExtension("html"); //$NON-NLS-1$
