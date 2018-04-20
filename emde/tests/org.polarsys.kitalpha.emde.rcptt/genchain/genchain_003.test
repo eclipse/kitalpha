@@ -1,0 +1,56 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _O5gIYERyEeis75fBw2dugQ,_e-MekERzEeis75fBw2dugQ
+Element-Name: genchain_003
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _3fLroER0Eeis75fBw2dugQ
+Runtime-Version: 2.1.0.201606221726
+Save-Time: 4/23/18 9:26 AM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+with [get-view "Project Explorer" | get-tree] {
+    select "library/model/My.generationchain" | get-menu "Create Generation Chain Fcore" | click
+    wait 10000
+    select "library.library/model/library.genmodel" | get-menu "Open With/EMF Generator" | click
+}
+get-editor "library.genmodel" | get-tree | get-item "Library/Library" | click
+get-editor "library.genmodel" | get-tree | get-item "Library/Library" | get-property caption | equals Library 
+    | verify-true
+get-view "Project Explorer" | get-tree | select "org.eclipse.egf.chain.my/model/My.fcore" 
+    | get-menu "Open With/EGF Fcore Editor" | click
+with [get-editor "My.fcore" | get-tree] {
+    get-item "My Launcher \\[Factory Component\\]" | get-property caption | equals "My Launcher [Factory Component]" 
+        | verify-true
+    get-item "My Launcher \\[Factory Component\\]" | get-property index | equals 0 | verify-true
+    get-item "My \\[Factory Component\\]" | get-property caption | equals "My [Factory Component]" | verify-true
+    get-item "My \\[Factory Component\\]" | get-property index | equals 1 | verify-true
+    get-item "library \\[Factory Component\\]" | get-property index | equals 2 | verify-true
+}
+with [get-editor "My.fcore" | get-tree] {
+    get-item "library \\[Factory Component\\]/\\[Production Plan\\]/emf.gen.model.common invocation \\[Production Plan Invocation\\] -> emf.gen.model.common \\[Factory Component\\]" 
+        | get-property index | equals 1 | verify-true
+    get-item "library \\[Factory Component\\]/\\[Production Plan\\]/emf.gen.edit.common invocation \\[Production Plan Invocation\\] -> emf.gen.edit.common \\[Factory Component\\]" 
+        | get-property index | equals 2 | verify-true
+    get-item "library \\[Factory Component\\]/\\[Production Plan\\]/MDE EMF Extension Model CDO invocation \\[Production Plan Invocation\\] -> MDE EMF Extension Model CDO \\[Factory Component\\]" 
+        | get-property index | equals 3 | verify-true
+    get-item "library \\[Factory Component\\]/\\[Production Plan\\]/EcoreDocGenLauncher invocation \\[Production Plan Invocation\\] -> EcoreDocGenLauncher \\[Task Java\\]" 
+        | get-property index | equals 4 | verify-true
+}
+get-view "Project Explorer" | get-tree | select "library/model/My.generationchain"
+get-view "Project Explorer" | get-tree | select "library.library/model/library.genmodel" 
+    | select "library.library/model/library.genmodel" | select "library.library/model/library.genmodel" 
+    | select "library.library/model/library.genmodel" | get-menu "Open With/EMF Generator" | click
+with [get-editor "library.genmodel" | get-tree] {
+    select "Library/Library"
+    get-item "Library/Library" | click
+}
+get-view "Project Explorer" | get-tree | select "org.eclipse.egf.chain.my/model/My.fcore" 
+    | select "org.eclipse.egf.chain.my/model/My.fcore" | select "org.eclipse.egf.chain.my/model/My.fcore" 
+    | get-menu "Open With/EGF Fcore Editor" | click
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

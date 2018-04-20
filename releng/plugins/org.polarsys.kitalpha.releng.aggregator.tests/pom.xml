@@ -93,6 +93,7 @@
 		<module>../../../architecture description/dsl/tests/org.polarsys.kitalpha.ad.viewpoint.test.rcptt</module>
 		<module>../../../architecture description/core/tests/plugins/org.polarsys.kitalpha.ad.rcptt</module>
 		<module>../../../common/tests/org.polarsys.kitalpha.common.rcptt</module>
+		<module>../../../emde/tests/org.polarsys.kitalpha.emde.rcptt</module>
 	</modules>
 </project>
 

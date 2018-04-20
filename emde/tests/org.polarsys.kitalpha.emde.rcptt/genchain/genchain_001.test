@@ -1,0 +1,52 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _nXYMgERyEeis75fBw2dugQ,_O5gIYERyEeis75fBw2dugQ
+Element-Name: genchain_001
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _KU2RcERyEeis75fBw2dugQ
+Runtime-Version: 2.1.0.201606221726
+Save-Time: 4/20/18 10:17 AM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-view "Project Explorer" | get-tree | select "library/model/library.ecore" | get-menu "New/Other..." | click
+with [get-window New] {
+    get-editbox -after [get-label "Wizards:"] | set-text generation
+    get-tree | select "EGF/GenerationChain Model"
+    get-button "Next >" | click
+}
+get-window -class WizardDialog | get-button "Next >" | click
+with [get-window -class WizardDialog | get-tree] {
+    get-item library | get-property "getItems().length" | equals 6 | verify-true
+    get-item library | get-property "getItems().TreeItem[0].getText()" | equals "CDO Emf Generation" | verify-true
+    get-item library | get-property "getItems().TreeItem[0].getChecked()" | equals false | verify-true
+    get-item library | get-property "getItems().TreeItem[1].getText()" | equals "Emf Documentation" | verify-true
+    get-item library | get-property "getItems().TreeItem[1].getChecked()" | equals false | verify-true
+    get-item library | get-property "getItems().TreeItem[2].getText()" | equals "Emf Generation" | verify-true
+    get-item library | get-property "getItems().TreeItem[2].getChecked()" | equals false | verify-true
+    get-item library | get-property "getItems().TreeItem[3].getText()" | equals "Kitalpha CDO Emf Generation" 
+        | verify-true
+    get-item library | get-property "getItems().TreeItem[3].getChecked()" | equals true | verify-true
+    get-item library | get-property "getItems().TreeItem[4].getText()" | equals "Kitalpha eMDE Emf Generation" 
+        | verify-true
+    get-item library | get-property "getItems().TreeItem[4].getChecked()" | equals true | verify-true
+    get-item library | get-property "getItems().TreeItem[5].getText()" | equals "Kitalpha Emf Documentation" 
+        | verify-true
+    get-item library | get-property "getItems().TreeItem[5].getChecked()" | equals true | verify-true
+}
+get-window -class WizardDialog | get-button Finish | click
+with [get-editor "My.generationchain" | get-tree] {
+    get-item "platform:\\/resource\\/library\\/model\\/My.generationchain/My \\[Generation Chain\\]/library \\[Generation Chain\\]/Emde Generation Kitalpha eMDE Emf Generation for library" 
+        | get-property "getText()" | equals "Emde Generation Kitalpha eMDE Emf Generation for library" | verify-true
+    get-item "platform:\\/resource\\/library\\/model\\/My.generationchain/My \\[Generation Chain\\]/library \\[Generation Chain\\]/Emde Cdo Generation Kitalpha CDO Emf Generation for library" 
+        | get-property "getText()" | equals "Emde Cdo Generation Kitalpha CDO Emf Generation for library" | verify-true
+    get-item "platform:\\/resource\\/library\\/model\\/My.generationchain/My \\[Generation Chain\\]/library \\[Generation Chain\\]/Kitalpha Documentation Generation Kitalpha Emf Documentation for library" 
+        | get-property "getText()" | equals "Kitalpha Documentation Generation Kitalpha Emf Documentation for library" 
+        | verify-true
+}
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--
