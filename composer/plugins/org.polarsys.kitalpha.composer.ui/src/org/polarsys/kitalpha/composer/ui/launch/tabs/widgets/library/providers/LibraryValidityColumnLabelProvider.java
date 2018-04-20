@@ -17,7 +17,6 @@ import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.jface.viewers.ITableLabelProvider;
 import org.eclipse.swt.graphics.Image;
-
 import org.polarsys.kitalpha.resourcereuse.model.Resource;
 
 
@@ -67,33 +66,19 @@ public class LibraryValidityColumnLabelProvider implements ITableLabelProvider {
 
 
 	public String getText(Object elt) {
-		String text = "";
 		LibraryItem item = ((LibraryItem)elt);
-		Object element = item.getItem();
-		if(element instanceof Resource){
-		Resource res = (Resource) element;
-		text = res.getName();
-		}else{
-			text = element.toString();
-		}
-			return text;
+		Resource res = item.getItem();
+		return res.getName();
 
 	}
 
 	public String getToolTipText(Object elt) {
-	    String description = null;
-	    LibraryItem item = ((LibraryItem)elt);
-		Object element = item.getItem();
-	      if (element instanceof Resource) {
-	        Resource res = (Resource) element;
-	        description = res.getDescription() == null ? "Library "
-					+ res.getName()
-					: res.getDescription();
-	      } else {
-	        description = element.toString();
-	      }
-	    return description;
-	  }
+		LibraryItem item = ((LibraryItem)elt);
+		Resource res = item.getItem();
+		return res.getDescription() == null ? "Library "
+				+ res.getName()
+				: res.getDescription();
+	}
 
 
 	public Image getColumnImage(Object element, int columnIndex) {
@@ -108,25 +93,24 @@ public class LibraryValidityColumnLabelProvider implements ITableLabelProvider {
 
 
 	public void addListener(ILabelProviderListener listener) {
-		// TODO Auto-generated method stub
+		// Do nothing
 		
 	}
 
 
 	public void dispose() {
-		// TODO Auto-generated method stub
+		// Do nothing
 		
 	}
 
 
 	public boolean isLabelProperty(Object element, String property) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 
 	public void removeListener(ILabelProviderListener listener) {
-		// TODO Auto-generated method stub
+		// Do nothing
 		
 	}
 	

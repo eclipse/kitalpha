@@ -42,10 +42,10 @@ public class JavaElementHelper {
 		EObject context = javaElement.eContainer();
 		final EClass eClass = context.eClass();
 		
-		if (eClass.equals(ExpressionPackage.eINSTANCE.getExpression()))
+		if (eClass.equals(ExpressionPackage.eINSTANCE.getExpression()) && 
+				context.eContainer().eClass().getClassifierID() == VpdiagramPackage.LABEL)
 		{
-			if (context.eContainer().eClass().getClassifierID() == VpdiagramPackage.LABEL)
-				return JavaMethodReturnType.String;
+			return JavaMethodReturnType.String;
 		}
 		
 		if (eClass.equals(VpdiagramPackage.eINSTANCE.getHistogramSection()))
@@ -228,10 +228,10 @@ public class JavaElementHelper {
 					aParent = aParent.eContainer();
 				}
 				
-				if (aParent instanceof StyleCustomizationDescriptions)
-					return ((StyleCustomizationDescriptions)aParent).getName() + "StyleCustomization";
-				else
-					return "StyleCustomization";
+				/*
+				 * The loop above, never break until a parent is not StyleCustomizationDescriptions
+				 */
+				return ((StyleCustomizationDescriptions)aParent).getName() + "StyleCustomization";
 			}
 		}
 		

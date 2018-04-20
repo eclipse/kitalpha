@@ -20,7 +20,9 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.StringTokenizer;
 
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
@@ -58,6 +60,7 @@ import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.eclipse.sirius.viewpoint.DView;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
+import org.polarsys.kitalpha.emde.diagram.Activator;
 import org.polarsys.kitalpha.emde.model.EmdePackage;
 
 public class ExtensibilityService {
@@ -77,7 +80,7 @@ public class ExtensibilityService {
 	public static final String EXTENDED_ELEMENT = "ExtendedElement";
 	public static final String MAPPING = "Mapping";
 	public static final String SOURCE2 = EmdePackage.eNS_URI + "/constraint";
-	public static final String SOURCE3 = SOURCE2 + "Mapping";
+	public static final String SOURCE3 = SOURCE2 + MAPPING;
 	private static final String EXTENDS_MODEL_LABEL = "Extends Model";
 	private static final String EXTENSIBLE_MODEL_LABEL = "Extensible Model";
 	public static final String USE_UUIDS_LABEL = "Use UUIDs";
@@ -115,7 +118,7 @@ public class ExtensibilityService {
 		EAnnotation annotation = ePackage.getEAnnotation(NEW_SOURCE);
 		if (annotation != null /*&& ePackage.getEAnnotation(OLD_SOURCE) != null*/) 
 		{
-			Collection<Object> result = new ArrayList<Object>();
+			Collection<Object> result = new ArrayList<>();
 
 			for (EObject eObject : annotation.eContents()) 
 			{
@@ -130,7 +133,7 @@ public class ExtensibilityService {
 			}
 
 			// ///////////
-			if (result.size() == 0) {
+			if (!result.isEmpty()) {
 				init(annotation);
 				return getEntry(ePackage);
 			} else {
@@ -218,7 +221,7 @@ public class ExtensibilityService {
 		if (ePackage.getEAnnotation(NEW_SOURCE) == null) 
 			init(ePackage);
 		
-		Collection<EObject> result = new UniqueEList<EObject>();
+		Collection<EObject> result = new UniqueEList<>();
 		for (EClassifier eClassifier : ePackage.getEClassifiers()) 
 		{
 			result.addAll(getExtendedModel(eClassifier));
@@ -243,7 +246,7 @@ public class ExtensibilityService {
 	public static Collection<EObject> getExtendedModel(EStringToStringMapEntryImpl entry) {
 		if (entry.getKey().equals(MAPPING)) 
 		{
-			Collection<EObject> result = new UniqueEList<EObject>();
+			Collection<EObject> result = new UniqueEList<>();
 			StringTokenizer stringTokenizer = new StringTokenizer(entry.getValue());
 			if (editingDomain == null)
 				editingDomain = EditingDomainFactoryService.INSTANCE.getEditingDomainFactory().createEditingDomain();
@@ -275,7 +278,7 @@ public class ExtensibilityService {
 					boolean addResource = true;
 					for (Resource resource : semanticResources) 
 					{
-						if (resource.getURI().toString().toLowerCase().equals(object.eResource().getURI().toString().toLowerCase()))
+						if (resource.getURI().toString().equalsIgnoreCase(object.eResource().getURI().toString()))
 						{
 							addResource = false;
 							break;
@@ -296,7 +299,8 @@ public class ExtensibilityService {
 							ReadOnlyResourceManager.handler(diagramEditPart, entry.eResource(), object.eResource());
 						}
 					} catch (Exception e) {
-						e.printStackTrace();
+						Status status = new Status(IStatus.ERROR, Activator.PLUGIN_ID,e.getMessage(), e);
+						Activator.getDefault().getLog().log(status);
 					}
 				}
 			}
@@ -313,18 +317,22 @@ public class ExtensibilityService {
 		List<URI> uriList = null;
 		try {
 			List<URI> selectionList = loadResourceDialog.getURIs();
-			uriList = new ArrayList<URI>(selectionList);
+			uriList = new ArrayList<>(selectionList);
 		} catch (RuntimeException e) {
+			//Ignore
 		}
+		
 		loadResourceDialog = null;
 
-		if (uriList != null && uriList.size() > 0) 
+		if (uriList != null && !uriList.isEmpty()) 
 		{
-			Collection<EObject> selectionList = new UniqueEList<EObject>();
+			Collection<EObject> selectionList = new UniqueEList<>();
 			for (URI uri : uriList) 
 			{
 				if (editingDomain == null)
+				{
 					editingDomain = EditingDomainFactoryService.INSTANCE.getEditingDomainFactory().createEditingDomain();
+				}
 				
 				Resource r = editingDomain.getResourceSet().getResource(uri, true);
 				try {
@@ -356,7 +364,7 @@ public class ExtensibilityService {
 		{
 			if (receiver instanceof EPackage) 
 			{
-				Collection<EObject> input = new UniqueEList<EObject>();
+				Collection<EObject> input = new UniqueEList<>();
 				EPackage ePackage = (EPackage) receiver;
 				for (EClassifier eClassifier : ePackage.getEClassifiers()) 
 				{
@@ -368,7 +376,7 @@ public class ExtensibilityService {
 					}
 				}
 
-				if (input.size() > 0)
+				if (!input.isEmpty())
 				{
 					ElementListSelectionDialog dialog = new ElementListSelectionDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), new AdapterFactoryLabelProvider(new EcoreItemProviderAdapterFactory()));
 					dialog.setElements(input.toArray());
@@ -385,7 +393,7 @@ public class ExtensibilityService {
 
 	public Collection<EClass> openDialog3(EClass receiver) {
 		final Object[] selectedElement = openDialog2((EObject) receiver);
-		final Collection<EClass> selectedEClasses = new HashSet<EClass>(); 
+		final Collection<EClass> selectedEClasses = new HashSet<>(); 
 		for (Object object : selectedElement) 
 		{
 			selectedEClasses.add((EClass) object);
@@ -396,7 +404,7 @@ public class ExtensibilityService {
 	
 	public Object[] openDialog2(EObject receiver) {
 		Collection<EObject> list = openDialog(receiver);
-		if (list != null && list.size() > 0) 
+		if (list != null && !list.isEmpty()) 
 		{
 			ElementListSelectionDialog dialog = new ElementListSelectionDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), new AdapterFactoryLabelProvider(new EcoreItemProviderAdapterFactory()));
 			dialog.setElements(list.toArray());
@@ -410,7 +418,7 @@ public class ExtensibilityService {
 	}
 
 	public Object[] getExtensionElement(EPackage ePackage) {
-		List<EClass> result = new UniqueEList<EClass>();
+		List<EClass> result = new UniqueEList<>();
 		for (EClassifier eClassifier : ePackage.getEClassifiers()) 
 		{
 			if (eClassifier instanceof EClass) 
@@ -431,7 +439,7 @@ public class ExtensibilityService {
 	}
 	
 	public Collection<EObject> getSelectionCandidate(EObject eObject, DSemanticDiagram diagram) {
-		final List<EClass> eClasses = new ArrayList<EClass>();
+		final List<EClass> eClasses = new ArrayList<>();
 		EPackage ePackage = null;
 		if (eObject instanceof EPackage)
 			ePackage = (EPackage) eObject;
@@ -443,15 +451,19 @@ public class ExtensibilityService {
 		final EList<EClassifier> eClassifiers = ePackage.getEClassifiers();
 		for (EClassifier eClassifier : eClassifiers) 
 		{
-			if (eClassifier instanceof EClassifier )
+                  	if (eClassifier instanceof EClass) 
+                        {
 				eClasses.add((EClass) eClassifier);
+                        }
 		}
 		
-		Collection<DDiagramElement> dElement = new HashSet<DDiagramElement>();
+		Collection<DDiagramElement> dElement = new HashSet<>();
 		for (DDiagramElement dDiagramElement : diagram.getOwnedDiagramElements()) 
 		{
 			if (dDiagramElement instanceof DNodeList)
+                        {
 				dElement.add(dDiagramElement);
+                        }
 		}
 		
 		return getSelectionCandidate(eClasses, dElement);
@@ -465,7 +477,7 @@ public class ExtensibilityService {
 	 */
 	public Collection<EObject> getSelectionCandidate(Collection<EClass> candidateList, Collection<DDiagramElement> displayedList) {
 		Collection<EObject> result = new UniqueEList<EObject>(candidateList);
-		if (displayedList != null && displayedList.size() > 0) 
+		if (displayedList != null && !displayedList.isEmpty()) 
 		{
 			for (DDiagramElement element : displayedList) 
 			{
@@ -485,9 +497,10 @@ public class ExtensibilityService {
 		Resource resource = superType.eResource();
 		URI uri = resource.getURI();
 
-		if (emdeURI == null)
+		if (emdeURI == null) {
 			emdeURI = convert(uri, EmdePackage.eNS_URI);
-
+		}
+		
 		URI objectURI = EcoreUtil.getURI(superType);
 
 		String newURI = objectURI.toString().replace(uri.toString(), emdeURI.toString());
@@ -553,12 +566,12 @@ public class ExtensibilityService {
 	}
 
 	public static void clean(EObject view, Collection<EObject> objectList) {
-		if (objectList.size() > 0) 
+		if (!objectList.isEmpty()) 
 		{
 			DView container = getContainer(view);
 			if (container != null) 
 			{
-				List<Resource> resourceList = new UniqueEList<Resource>();
+				List<Resource> resourceList = new UniqueEList<>();
 				
 				final EList<DRepresentationDescriptor> ownedRepresentationDescs = container.getOwnedRepresentationDescriptors();
 				for (DRepresentationDescriptor dRepresentationDesc : ownedRepresentationDescs) 
@@ -578,14 +591,14 @@ public class ExtensibilityService {
 					}
 				}
 
-				List<Resource> potentialToBeDeletedList = new UniqueEList<Resource>();
+				List<Resource> potentialToBeDeletedList = new UniqueEList<>();
 				for (EObject eObject : objectList) 
 				{
 					potentialToBeDeletedList.add(eObject.eResource());
 				}
 				
 				potentialToBeDeletedList.removeAll(resourceList);
-				if (potentialToBeDeletedList.size() > 0) 
+				if (!potentialToBeDeletedList.isEmpty()) 
 				{
 					Session session = SessionManager.INSTANCE.getSession(potentialToBeDeletedList.get(0));
 					for (Resource resource : potentialToBeDeletedList) 
@@ -594,7 +607,7 @@ public class ExtensibilityService {
 						{
 							session.removeSemanticResource(resource, NPM, false);
 						}catch (Exception e){
-							
+							//Ignore all exceptions
 						}
 					}
 				}
@@ -635,10 +648,11 @@ public class ExtensibilityService {
 		{
 			for (EClass eClass : ((EClass) receiver).getEAllSuperTypes()) 
 			{
-				if (EcoreUtil.equals(eClass, MODEL_ELEMENT_ECLASS)) 
-					return "true";
+				if (EcoreUtil.equals(eClass, MODEL_ELEMENT_ECLASS)) {
+					return TRUE;
+				}
 			}
-			return "false";
+			return FALSE;
 		}
 		return null;
 	}
