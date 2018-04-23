@@ -148,7 +148,7 @@ location acceleo "http://download.eclipse.org/acceleo/updates/releases/3.7/R2017
 	org.eclipse.acceleo.source.feature.group lazy
 }
 
-location Sirus "http://download.eclipse.org/sirius/updates/milestones/5.1.1rc4/neon/" {
+location Sirus "http://download.eclipse.org/sirius/updates/stable/5.1.2-S20180420-110312/neon/" {
 	org.eclipse.sirius.doc.feature.feature.group lazy
 	org.eclipse.sirius.runtime.ide.eef.feature.group lazy
 	org.eclipse.sirius.runtime.ide.ui.acceleo.feature.group lazy
@@ -193,7 +193,7 @@ location EDM-Patterns "http://download.eclipse.org/diffmerge/releases/0.9.0/edm-
 
 }
 
-location amalgam "http://download.eclipse.org/modeling/amalgam/updates/milestones/1.9.0RC1/capella" {
+location amalgam "http://download.eclipse.org/modeling/amalgam/updates/stable/1.9.0-S20180423/capella/" {
 	org.eclipse.amalgam.explorer.activity.feature.group lazy
 	org.eclipse.amalgam.explorer.activity.source.feature.group lazy
 	org.eclipse.amalgam.explorer.contextual.feature.group lazy
@@ -210,7 +210,7 @@ location EcoreTools "http://download.eclipse.org/ecoretools/updates/releases/3.2
 	org.eclipse.emf.ecoretools.explorer.contextual.feature.group lazy
 }
 
-location EGFSdk "https://hudson.eclipse.org/egf/job/buckminster-egf-neon/lastSuccessfulBuild/artifact/result/publish/org.eclipse.egf.site/site.p2/" {
+location EGFSdk "http://download.eclipse.org/egf/updates/1.5.1/neon/" {
 	org.eclipse.egf.sdk.feature.group lazy
 	org.eclipse.egf.feature.group lazy
 	org.eclipse.egf.common.source lazy
