@@ -124,7 +124,10 @@ public abstract class AbstractMDERichTextWidget implements MDERichTextWidget {
 		EStructuralFeature feature = getFeature();
 		String storedText = (String) owner.eGet(feature);
 		String text = getText();
-		return !text.equals(storedText) || (storedText == null && !"".equals(text));
+		if (storedText == null) {
+			return !"".equals(text);
+		}
+		return !storedText.equals(text);
 	}
 	
 	public SaveStrategy getSaveStrategy(){
@@ -146,17 +149,18 @@ public abstract class AbstractMDERichTextWidget implements MDERichTextWidget {
 		}
 	}
 	
-	@Override
-	public void propertyChange(PropertyChangeEvent evt) {
-		MDERichTextWidget source = (MDERichTextWidget) evt.getSource();
-		if (source != this && source.getElement().equals(getElement()) && source.getFeature().equals(getFeature())) {
-			String newValue = (String) evt.getNewValue();
-			String currentText = getText();
-			if (!currentText.equals(newValue)) {
-				setText(newValue);
-			}
-		}
-	}
+  @Override
+  public void propertyChange(PropertyChangeEvent evt) {
+    MDERichTextWidget source = (MDERichTextWidget) evt.getSource();
+    if (source != this && source.getElement() != null && source.getFeature() != null
+        && source.getElement().equals(getElement()) && source.getFeature().equals(getFeature())) {
+      String newValue = (String) evt.getNewValue();
+      String currentText = getText();
+      if (!currentText.equals(newValue)) {
+        setText(newValue);
+      }
+    }
+  }
 	
 	@Override
 	public void addPropertyChangeListener(PropertyChangeListener listener) {
@@ -165,6 +169,9 @@ public abstract class AbstractMDERichTextWidget implements MDERichTextWidget {
 	
 	@Override
 	public void dispose() {
+    // The save should be done here in case of the widget being disposed since the focus lost event is not fired
+    saveContent();
+    
 		PropertyChangeListener[] propertyChangeListeners = listenersSupports.getPropertyChangeListeners();
 		if (propertyChangeListeners != null && propertyChangeListeners.length > 0) {
 			for (PropertyChangeListener propertyChangeListener : propertyChangeListeners) {

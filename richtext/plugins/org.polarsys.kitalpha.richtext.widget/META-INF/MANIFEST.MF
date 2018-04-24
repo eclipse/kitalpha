@@ -18,6 +18,7 @@ Export-Package: org.polarsys.kitalpha.richtext.widget,
  org.polarsys.kitalpha.richtext.widget.editor,
  org.polarsys.kitalpha.richtext.widget.editor.intf,
  org.polarsys.kitalpha.richtext.widget.factory,
+ org.polarsys.kitalpha.richtext.widget.helper,
  org.polarsys.kitalpha.richtext.widget.propertysheet
 Bundle-Vendor: %Bundle-Vendor
 Bundle-Localization: OSGI-INF/l10n/bundle

@@ -373,4 +373,9 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 	  // Do not take the focus on editor startup
 	  configuration.setOption("startupFocus", false);
 	}
+	
+  @Override
+  public boolean isEditorDisposed() {
+    return editor.isDisposed();
+  }
 }

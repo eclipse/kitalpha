@@ -35,5 +35,7 @@ public interface MDENebulaBasedRichTextWidget extends BrowserBasedMDERichTextWid
 	public void setDirtyStateUpdated(boolean dirtyStateUpdated);
 
 	public boolean isDirtyStateUpdated();
+	
+	public boolean isEditorDisposed();
 
 }

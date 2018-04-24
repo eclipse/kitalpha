@@ -10,9 +10,17 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.richtext.widget.factory;
 
+import org.eclipse.core.commands.Command;
+import org.eclipse.core.commands.ExecutionEvent;
+import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.commands.IExecutionListener;
+import org.eclipse.core.commands.NotHandledException;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.nebula.widgets.richtext.RichTextEditorConfiguration;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.ui.IWorkbenchCommandConstants;
+import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.commands.ICommandService;
 import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
 import org.polarsys.kitalpha.richtext.common.util.MDERichTextHelper;
 import org.polarsys.kitalpha.richtext.nebula.widget.MDENebulaBasedRichTextWidget;
@@ -118,7 +126,41 @@ public class MDERichTextFactory {
 		
 		removeUselessItemFromToolbar();
 		
-		MDERichtextWidgetImpl widget = new MDERichtextWidgetImpl(parent, configuration);
+    MDERichtextWidgetImpl widget = new MDERichtextWidgetImpl(parent, configuration) {
+      @Override
+      protected void installListeners() {
+        super.installListeners();
+
+        // Since minimal rich text widget does not contribute a Saveable, it needs to listen to Save event itself
+        ICommandService commandSvc = PlatformUI.getWorkbench().getAdapter(ICommandService.class);
+        Command saveCommand = commandSvc.getCommand(IWorkbenchCommandConstants.FILE_SAVE);
+        saveCommand.addExecutionListener(new IExecutionListener() {
+          @Override
+          public void preExecute(final String commandId, final ExecutionEvent event) {
+            if (!isEditorDisposed() && hasFocus()) {
+              saveContent();
+            }
+          }
+
+          @Override
+          public void postExecuteSuccess(final String commandId, final Object returnValue) {
+            if (!isEditorDisposed() && hasFocus()) {
+              setDirtyStateUpdated(false);
+            }
+          }
+
+          @Override
+          public void postExecuteFailure(final String commandId, final ExecutionException exception) {
+            // Do nothing
+          }
+
+          @Override
+          public void notHandled(final String commandId, final NotHandledException exception) {
+            // Do nothing
+          }
+        });
+      }
+    };
 		
 		addToolbarItems(widget);
 		

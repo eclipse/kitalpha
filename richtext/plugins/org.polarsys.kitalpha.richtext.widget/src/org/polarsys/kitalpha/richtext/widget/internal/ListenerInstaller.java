@@ -227,7 +227,7 @@ public class ListenerInstaller {
 		new BrowserFunction(widget.getBrowser(), "firePropertyChangeEvent") { //$NON-NLS-1$
 			@Override
 			public Object function(Object[] arguments) {
-				if (!widget.isDirtyStateUpdated()) {
+				if (!widget.isDirtyStateUpdated() && widget.isDirty()) {
 					// As a performance improvement, the saveContent is only
 					// called only if the dirty state of the widget is not
 					// updated
