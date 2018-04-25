@@ -571,16 +571,16 @@ public class VpDiagramHelper {
 	
 	/**
 	 * Return all local references of containerLocalDomain_class
-	 * @param containerLocalDomain_class
+	 * @param containerLocalDomainClass
 	 * @return all local references of containerLocalDomain_class
 	 */
 	public static Collection<EReference> getLocalEReferences(
-			LocalClass containerLocalDomain_class) {
+			LocalClass containerLocalDomainClass) {
 		
 		
-		Collection<EReference> currentEReferences = getCurrentEReferences(containerLocalDomain_class.getClass_());
+		Collection<EReference> currentEReferences = getCurrentEReferences(containerLocalDomainClass.getClass_());
 		
-		EList<AbstractSuperClass> superClasses = containerLocalDomain_class.getClass_().getInheritences();
+		EList<AbstractSuperClass> superClasses = containerLocalDomainClass.getClass_().getInheritences();
 		
 		for (AbstractSuperClass abstractSuperClass : superClasses) {
 			if (abstractSuperClass instanceof ExternalSuperClass){

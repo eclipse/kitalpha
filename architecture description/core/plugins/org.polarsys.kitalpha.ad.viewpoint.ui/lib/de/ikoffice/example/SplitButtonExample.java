@@ -32,11 +32,11 @@ public class SplitButtonExample {
 		shell.setSize(300, 300);
 		shell.setLayout(new FormLayout());
 		SplitButton btnShutDown = new SplitButton(shell, SWT.NONE);
-		final FormData fd_btnShutDown = new FormData();
-		fd_btnShutDown.right = new FormAttachment(0, 170);
-		fd_btnShutDown.top = new FormAttachment(0, 50);
-		fd_btnShutDown.left = new FormAttachment(0, 25);
-		btnShutDown.setLayoutData(fd_btnShutDown);
+		final FormData fdBtnShutDown = new FormData();
+		fdBtnShutDown.right = new FormAttachment(0, 170);
+		fdBtnShutDown.top = new FormAttachment(0, 50);
+		fdBtnShutDown.left = new FormAttachment(0, 25);
+		btnShutDown.setLayoutData(fdBtnShutDown);
 		btnShutDown.setText("Shut Down");
 		menuCreator(btnShutDown.getMenu());
 		btnShutDown.addSplitButtonSelectionListener(new SplitButtonSelectionListener() {

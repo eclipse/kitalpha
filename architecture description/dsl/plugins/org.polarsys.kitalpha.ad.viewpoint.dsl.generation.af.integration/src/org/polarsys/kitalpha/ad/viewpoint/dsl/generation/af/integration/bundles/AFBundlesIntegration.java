@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -51,12 +51,12 @@ public class AFBundlesIntegration {
 	
 	/**
 	 * This methods allows to add a bundle id to the list of required bundle.
-	 * @param bundle_id
+	 * @param bundleid
 	 * @throws AFIntegrationException
 	 */
-	public void registerBundle(String bundle_id) {
-		if (! this.bundles.contains(bundle_id))
-			this.bundles.add(bundle_id);
+	public void registerBundle(String bundleid) {
+		if (! this.bundles.contains(bundleid))
+			this.bundles.add(bundleid);
 	}
 	
 	/**
@@ -66,7 +66,7 @@ public class AFBundlesIntegration {
 	 * @throws AFIntegrationException
 	 */
 	public void registerBundle(EObject eObject) throws AFIntegrationException{
-		String bundle_id = null;
+		String bundleid = null;
 		URI uri = null;
 		// Get the resource of the eObject
 		EObject rootContainer = EcoreUtil.getRootContainer(eObject, true);
@@ -77,12 +77,12 @@ public class AFBundlesIntegration {
 		
 		// get the bundle ID from the Resource URI
 		if (uri != null)
-			bundle_id = uri.segment(1);
+			bundleid = uri.segment(1);
 		else
 			throw new AFIntegrationException(AFIntegrationException.Bundle);
 
-		if (bundle_id != null )
-			registerBundle(bundle_id);
+		if (bundleid != null )
+			registerBundle(bundleid);
 		else
 			throw new AFIntegrationException(AFIntegrationException.Bundle);
 	}

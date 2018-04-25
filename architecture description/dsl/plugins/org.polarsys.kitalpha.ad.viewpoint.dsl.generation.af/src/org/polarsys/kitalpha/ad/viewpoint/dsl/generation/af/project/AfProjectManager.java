@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -79,8 +79,8 @@ public class AfProjectManager {
 		return _project;
 	}
 
-	public void setProject(IProject _project) {
-		this._project = _project;
+	public void setProject(IProject project) {
+		this._project = project;
 	}
 	
 	public void registerJavaRule(String id, String clazz){
@@ -137,8 +137,8 @@ public class AfProjectManager {
 			if (resource.getId().equals(viewpointID) && 
 					resource.getProviderLocation().equals(Location.WORSPACE))
 			{
-				String Plugin_ID = resource.getPath().substring(0, resource.getPath().indexOf("#"));
-				String resourcePath = "platform:/resource" + Plugin_ID;
+				String pluginID = resource.getPath().substring(0, resource.getPath().indexOf("#"));
+				String resourcePath = "platform:/resource" + pluginID;
 				
 				ResourceSet set = new ResourceSetImpl();
 				URI uri = URI.createURI(resourcePath, false);

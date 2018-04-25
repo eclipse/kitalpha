@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -111,27 +111,27 @@ public class NodeStyleImportMerger extends LabelStyleImportMerger{
 		int classifierID = originalStyle.eClass().getClassifierID();
 		switch (classifierID) {
 			case StylePackage.GAUGE_COMPOSITE_STYLE_DESCRIPTION :
-				final GaugeCompositeStyleDescription gauge_originalStyle = (GaugeCompositeStyleDescription)originalStyle;
-				((GaugeCompositeStyleDescription) result).setAlignment(gauge_originalStyle.getAlignment());
+				final GaugeCompositeStyleDescription gaugeOriginalStyle = (GaugeCompositeStyleDescription)originalStyle;
+				((GaugeCompositeStyleDescription) result).setAlignment(gaugeOriginalStyle.getAlignment());
 				
 			case StylePackage.ELLIPSE_NODE_DESCRIPTION :
-				final EllipseNodeDescription ellipse_originalStyle = (EllipseNodeDescription)originalStyle;
-				((EllipseNodeDescription)result).setHorizontalDiameterComputationExpression(ellipse_originalStyle.getHorizontalDiameterComputationExpression());
-				((EllipseNodeDescription)result).setVerticalDiameterComputationExpression(ellipse_originalStyle.getVerticalDiameterComputationExpression());
+				final EllipseNodeDescription ellipseOriginalStyle = (EllipseNodeDescription)originalStyle;
+				((EllipseNodeDescription)result).setHorizontalDiameterComputationExpression(ellipseOriginalStyle.getHorizontalDiameterComputationExpression());
+				((EllipseNodeDescription)result).setVerticalDiameterComputationExpression(ellipseOriginalStyle.getVerticalDiameterComputationExpression());
 			
 			case StylePackage.SQUARE_DESCRIPTION :
-				final SquareDescription square_originalStyle = (SquareDescription)originalStyle;
-				((SquareDescription)result).setWidth(square_originalStyle.getWidth());
-				((SquareDescription)result).setHeight(square_originalStyle.getHeight());
+				final SquareDescription squareOriginalStyle = (SquareDescription)originalStyle;
+				((SquareDescription)result).setWidth(squareOriginalStyle.getWidth());
+				((SquareDescription)result).setHeight(squareOriginalStyle.getHeight());
 			
 			case StylePackage.LOZENGE_NODE_DESCRIPTION :
-				final LozengeNodeDescription lozenge_originalStyle = (LozengeNodeDescription)originalStyle;
-				((LozengeNodeDescription)result).setWidthComputationExpression(lozenge_originalStyle.getWidthComputationExpression());
-				((LozengeNodeDescription)result).setHeightComputationExpression(lozenge_originalStyle.getHeightComputationExpression());
+				final LozengeNodeDescription lozengeOriginalStyle = (LozengeNodeDescription)originalStyle;
+				((LozengeNodeDescription)result).setWidthComputationExpression(lozengeOriginalStyle.getWidthComputationExpression());
+				((LozengeNodeDescription)result).setHeightComputationExpression(lozengeOriginalStyle.getHeightComputationExpression());
 				
 			case StylePackage.DOT_DESCRIPTION :
-				final DotDescription dot_originalStyle = (DotDescription)originalStyle;
-				((DotDescription) result).setStrokeSizeComputationExpression(dot_originalStyle.getStrokeSizeComputationExpression());
+				final DotDescription dotOriginalStyle = (DotDescription)originalStyle;
+				((DotDescription) result).setStrokeSizeComputationExpression(dotOriginalStyle.getStrokeSizeComputationExpression());
 				
 			case StylePackage.BUNDLED_IMAGE_DESCRIPTION :
 				// Nothing to do for this kind of style

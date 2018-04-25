@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -40,8 +40,8 @@ public class CreateRelengPluginTask implements ITaskProduction {
 
 	public void doExecute(ITaskProductionContext productionContext,	IProgressMonitor monitor) throws InvocationException {
 		
-		List<Repository> mapped_repositories = new ArrayList<Repository>();
-		String target_location = null;
+		List<Repository> mappedrepositories = new ArrayList<Repository>();
+		String targetlocation = null;
 		
 		List<String> sourceFolders	= null;
 		List<String> cronTrigger 	= null;
@@ -59,12 +59,12 @@ public class CreateRelengPluginTask implements ITaskProduction {
 		EMFDomain model = productionContext.getInputValue(GeneratorConstants.LVPS_MODEL, EMFDomain.class);
 		if (!model.getContent().isEmpty()) {
 			Viewpoint viewpoint = (Viewpoint) model.getContent().get(0);
-			EList<Aspect> vp_Aspects = viewpoint.getVP_Aspects();
-			for (Aspect aspect: vp_Aspects) {
+			EList<Aspect> vpAspects = viewpoint.getVP_Aspects();
+			for (Aspect aspect: vpAspects) {
 				if (aspect instanceof Build) {
 					Build build = (Build) aspect;
-					mapped_repositories = build.getMapped_repositories();
-					target_location = build.getTarget_platform();
+					mappedrepositories = build.getMapped_repositories();
+					targetlocation = build.getTarget_platform();
 					
 					//FIXME: build.getMapped_repositories().get(0) => use 1 to 1 relation or take all repos??
 					
@@ -81,13 +81,13 @@ public class CreateRelengPluginTask implements ITaskProduction {
 					break;
 				}
 			}	
-			if (!mapped_repositories.isEmpty()) {
+			if (!mappedrepositories.isEmpty()) {
 				String projectId = rootProjectName + "." + "releng" ;
 				JavaUtil.createJavaProject(projectId, executionEnvironment, monitor);
 				JavaUtil.convertJavaProjectToPlugin(projectId, monitor);
-				productionContext.setOutputValue(GeneratorConstants.TARGET_LOCATION, target_location);
-				productionContext.setOutputValue(GeneratorConstants.REPOSITORY_LOCATION, mapped_repositories.get(0).getLocation());
-				productionContext.setOutputValue(GeneratorConstants.REPOSITORY_PROTOCOL, mapped_repositories.get(0).getProtocol().getName());
+				productionContext.setOutputValue(GeneratorConstants.TARGET_LOCATION, targetlocation);
+				productionContext.setOutputValue(GeneratorConstants.REPOSITORY_LOCATION, mappedrepositories.get(0).getLocation());
+				productionContext.setOutputValue(GeneratorConstants.REPOSITORY_PROTOCOL, mappedrepositories.get(0).getProtocol().getName());
 				
 				productionContext.setOutputValue(GeneratorConstants.SOURCE_FOLDERS, sourceFolders);
 				productionContext.setOutputValue(GeneratorConstants.CRON_TRIGGERS, cronTrigger);

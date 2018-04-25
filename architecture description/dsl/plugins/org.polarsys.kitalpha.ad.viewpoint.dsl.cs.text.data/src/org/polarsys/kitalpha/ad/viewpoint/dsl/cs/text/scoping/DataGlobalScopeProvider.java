@@ -88,8 +88,8 @@ public class DataGlobalScopeProvider extends DefaultGlobalScopeProvider {
 	
 	private IScope computeScope(IScope parent, Resource r, Iterable<IEObjectDescription> exportedObjects, boolean ignoreCase){
 		Multimap<QualifiedName, IEObjectDescription> map = LinkedHashMultimap.create(5,2);
-		Iterable<IEObjectDescription> __exportedObjects = Collections.emptyList();
-		for(IEObjectDescription description: getExternalImportObjectDescription(r, __exportedObjects)) {
+		Iterable<IEObjectDescription> exportedObjectsIterator = Collections.emptyList();
+		for(IEObjectDescription description: getExternalImportObjectDescription(r, exportedObjectsIterator)) {
 			if (map == null)
 				map = LinkedHashMultimap.create(5,2);
 			if (ignoreCase)

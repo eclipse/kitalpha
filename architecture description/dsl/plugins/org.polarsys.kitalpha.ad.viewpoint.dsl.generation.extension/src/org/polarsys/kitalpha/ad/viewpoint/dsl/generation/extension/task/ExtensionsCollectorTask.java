@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,25 +31,25 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.extension.data.Launcher
 public class ExtensionsCollectorTask implements ITaskProduction {
 
 	public void doExecute(ITaskProductionContext productionContext, IProgressMonitor monitor) throws InvocationException {
-		String extensionPointID_Value = productionContext.getInputValue(IContractNames.extensionPointID, String.class);
-		String configurationElementName_Value = productionContext.getInputValue(IContractNames.configurationElementName, String.class);
-		String extensionFCoreAttributeName_Value = productionContext.getInputValue(IContractNames.extensionFCoreAttributeName, String.class);
+		String extensionPointIDValue = productionContext.getInputValue(IContractNames.extensionPointID, String.class);
+		String configurationElementNameValue = productionContext.getInputValue(IContractNames.configurationElementName, String.class);
+		String extensionFCoreAttributeNameValue = productionContext.getInputValue(IContractNames.extensionFCoreAttributeName, String.class);
 		
-		if (extensionPointID_Value == null)
+		if (extensionPointIDValue == null)
 			throw new IllegalArgumentException(Messages.Contract_ExtensionPointId);
-		if (configurationElementName_Value == null)
+		if (configurationElementNameValue == null)
 			throw new IllegalArgumentException(Messages.Contract_ExtensionConfigurationElementName);
-		if (extensionFCoreAttributeName_Value == null)
+		if (extensionFCoreAttributeNameValue == null)
 			throw new IllegalArgumentException(Messages.Contract_ExtensionFcoreAttributeName);
 		
 		
 		// get all defined extensions
-		List<IExtension> availableExtensions = getAvailavleExtension(extensionPointID_Value);
+		List<IExtension> availableExtensions = getAvailavleExtension(extensionPointIDValue);
 
 		// TaguableExtension list construction
 		List<LauncherExtension> extensions = new ArrayList<LauncherExtension>();
 		for (IExtension iExtension : availableExtensions)
-			extensions.add(new LauncherExtension(iExtension, configurationElementName_Value, extensionFCoreAttributeName_Value));
+			extensions.add(new LauncherExtension(iExtension, configurationElementNameValue, extensionFCoreAttributeNameValue));
 
 		productionContext.setOutputValue(IContractNames.extensionPointContributions, extensions);
 	}

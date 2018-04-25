@@ -124,10 +124,10 @@ public class PlatformEClassesManager {
 	}
 	
 	
-	public void NsURIToPlatformResource(URI NsURI){
-		URI genmodelURI = EcorePlugin.getEPackageNsURIToGenModelLocationMap().get(NsURI.toString());
-		ResourceSet rs = new ResourceSetImpl();
-		Resource r = rs.createResource(genmodelURI);
+	public void NsURIToPlatformResource(URI nsURI){
+		URI genmodelURI = EcorePlugin.getEPackageNsURIToGenModelLocationMap().get(nsURI.toString());
+		ResourceSet set = new ResourceSetImpl();
+		Resource r = set.createResource(genmodelURI);
 		try {
 			r.load(null);
 		} catch (IOException e) {
@@ -141,7 +141,7 @@ public class PlatformEClassesManager {
 			if (NsUriToResource.containsKey(packNsURI))
 				break;
 		
-			Resource platResource = rs.createResource(platformUri);
+			Resource platResource = set.createResource(platformUri);
 			try {
 				platResource.load(null);
 			} catch (IOException e) {

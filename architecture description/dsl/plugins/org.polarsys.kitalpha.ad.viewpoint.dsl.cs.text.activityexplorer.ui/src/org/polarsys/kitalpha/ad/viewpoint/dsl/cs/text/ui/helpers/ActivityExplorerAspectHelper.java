@@ -141,10 +141,10 @@ public class ActivityExplorerAspectHelper {
 
 
 	public static ViewpointActivityExplorer getAExAspect(final Viewpoint viewpoint){
-		final EList<Aspect> vp_Aspects = viewpoint.getVP_Aspects();
-		if (!vp_Aspects.isEmpty())
+		final EList<Aspect> vpAspects = viewpoint.getVP_Aspects();
+		if (!vpAspects.isEmpty())
 		{
-			for (final Aspect aspect : vp_Aspects)
+			for (final Aspect aspect : vpAspects)
 			{
 				if (aspect instanceof ViewpointActivityExplorer) {
 					return (ViewpointActivityExplorer) aspect;
@@ -198,8 +198,8 @@ public class ActivityExplorerAspectHelper {
 
 		if (config.length != 0){
 			for (final IConfigurationElement iConfigurationElement : config) {
-				final String _id = iConfigurationElement.getAttribute(ATT_ID);
-				if ((null != _id) && (!_id.isEmpty()) && _id.equals(id)){
+				final String attrId = iConfigurationElement.getAttribute(ATT_ID);
+				if ((null != attrId) && (!attrId.isEmpty()) && attrId.equals(id)){
 					return getConfigurationName(iConfigurationElement, PAGE_TYPE);
 				}
 			}
@@ -261,9 +261,9 @@ public class ActivityExplorerAspectHelper {
 		IConfigurationElement[] config = getExtensionsFor(PROVIDER_SECTIONS_EXT);
 		if (config.length != 0){
 			for (final IConfigurationElement iConfigurationElement : config) {
-				final String _id = iConfigurationElement.getAttribute(ATT_ID);
+				final String id = iConfigurationElement.getAttribute(ATT_ID);
 
-				if ((_id != null) && !_id.isEmpty() && _id.equals(extendedSectionId)){
+				if ((id != null) && !id.isEmpty() && id.equals(extendedSectionId)){
 					return getConfigurationName(iConfigurationElement, SECTION_TYPE);
 				}
 			}

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials are made 
  * available under the terms of the Eclipse Public License v1.0 which accompanies
  * this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
@@ -121,15 +121,15 @@ public class ContextualExplorerCategoriesHelper {
 		if (! project.exists())
 			throw new ContextualExplorerCategoriesException();
 		
-		IFolder src_folder = project.getFolder("src");
-		if (! src_folder.exists())
+		IFolder srcfolder = project.getFolder("src");
+		if (! srcfolder.exists())
 			throw new ContextualExplorerCategoriesException();
 		
-		IFolder currentParentFolder = src_folder;
-		String[] FQNSegments = javaClassFQN.split("\\.");
-		for (int i = 0; i < FQNSegments.length - 1; i++) 
+		IFolder currentParentFolder = srcfolder;
+		String[] fqnSegments = javaClassFQN.split("\\.");
+		for (int i = 0; i < fqnSegments.length - 1; i++) 
 		{
-			String segment = FQNSegments[i].toLowerCase();
+			String segment = fqnSegments[i].toLowerCase();
 			IFolder subFolder = currentParentFolder.getFolder(segment);
 			if (! subFolder.exists())
 				throw new ContextualExplorerCategoriesException();
@@ -137,7 +137,7 @@ public class ContextualExplorerCategoriesHelper {
 				currentParentFolder = subFolder;
 		}
 		
-		String fileName = FQNSegments[FQNSegments.length - 1] + ".java";
+		String fileName = fqnSegments[fqnSegments.length - 1] + ".java";
 		IFile queryJavaClass = currentParentFolder.getFile(fileName);
 		if (! queryJavaClass.exists())
 			throw new ContextualExplorerCategoriesException();

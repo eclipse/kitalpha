@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -60,17 +60,18 @@ import com.google.inject.Inject;
  */
 public class VpconfProposalProvider extends AbstractVpconfProposalProvider {
 	
-	private final static String SPACE = " ";
-	private final static String QUOTES = "\""; 
+	private static final String SPACE = " ";
+	private static final String QUOTES = "\""; 
 	
-	private final static Image image;
+	private static final Image image;
+	
+	static final String JDT_PLUGIN_ID = "org.eclipse.jdt.ui";
+	static final String LIB_ICON_PATH = "icons/full/obj16/library_obj.png";
 	
 	static {
-		final String JDT_PLUGIN_ID = "org.eclipse.jdt.ui";
-		final String LIB_ICON_PATH = "icons/full/obj16/library_obj.png";
 	
-		final Bundle JDT_BUNDLE = Platform.getBundle(JDT_PLUGIN_ID);
-		final URL url = FileLocator.find(JDT_BUNDLE, new Path(LIB_ICON_PATH), Collections.<String, String> emptyMap());
+		final Bundle jdtBundle = Platform.getBundle(JDT_PLUGIN_ID);
+		final URL url = FileLocator.find(jdtBundle, new Path(LIB_ICON_PATH), Collections.<String, String> emptyMap());
 		
 		image = ImageDescriptor.createFromURL(url).createImage();
 	}

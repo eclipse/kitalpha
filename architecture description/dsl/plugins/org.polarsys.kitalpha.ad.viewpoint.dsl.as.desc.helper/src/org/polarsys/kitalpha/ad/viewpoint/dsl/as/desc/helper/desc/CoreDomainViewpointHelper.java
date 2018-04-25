@@ -80,19 +80,19 @@ public class CoreDomainViewpointHelper extends ViewpointModelReuseResourceHelper
 	
 	/**
 	 * 
-	 * @param resource_id
-	 * @param resourceSet_e accept null
+	 * @param resourceId
+	 * @param resourceSet accept null
 	 * @return a Core domain Viewpoint 
 	 */
-	public static org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint getCoreDomainViewpoint(String resource_id, ResourceSet resourceSet_e){
+	public static org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint getCoreDomainViewpoint(String resourceId, ResourceSet resourceSet){
 		org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint result = null;
-		Resource[] resource_af_list = getResources(resource_id, AF_MODELREUSE_DOMAIN_, AF_MODELREUSE_TAG_);
+		Resource[] resourceAfList = getResources(resourceId, AF_MODELREUSE_DOMAIN_, AF_MODELREUSE_TAG_);
 		
-		if (resource_af_list != null && resource_af_list.length > 0)
+		if (resourceAfList != null && resourceAfList.length > 0)
 		{
-			Resource resource_af = resource_af_list[0];
-			URI uri = getResourceURI(resource_af);
-			EObject eObject = getResourceRootObject(uri, resourceSet_e);
+			Resource resourceAf = resourceAfList[0];
+			URI uri = getResourceURI(resourceAf);
+			EObject eObject = getResourceRootObject(uri, resourceSet);
 			if (eObject != null && eObject instanceof org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint) {
 				result = (org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint) eObject;
 			}

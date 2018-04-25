@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -65,8 +65,8 @@ public class ActivityexplorerLabelProvider extends DefaultEObjectLabelProvider {
 	private String findPageNameInCurrent(final PageExtension element, final String extendedPageId){
 		final EObject container = EcoreUtil.getRootContainer(element);
 		if (container instanceof ViewpointActivityExplorer){
-			final ViewpointActivityExplorer _vae = (ViewpointActivityExplorer)container;
-			final EList<AbstractPage> ownedPages = _vae.getOwnedPages();
+			final ViewpointActivityExplorer vae = (ViewpointActivityExplorer)container;
+			final EList<AbstractPage> ownedPages = vae.getOwnedPages();
 
 			for (final AbstractPage _p : ownedPages) {
 				if ((_p instanceof Page) && ((Page)_p).getActivityExplorerItemID().equals(extendedPageId)){
@@ -106,8 +106,8 @@ public class ActivityexplorerLabelProvider extends DefaultEObjectLabelProvider {
 	private String findSectionNameInCurrent(final SectionExtension element, final String extendedSectionId) {
 		final EObject container = EcoreUtil.getRootContainer(element);
 		if (container instanceof ViewpointActivityExplorer){
-			final ViewpointActivityExplorer _vae = (ViewpointActivityExplorer)container;
-			final EList<AbstractPage> ownedPages = _vae.getOwnedPages();
+			final ViewpointActivityExplorer vae = (ViewpointActivityExplorer)container;
+			final EList<AbstractPage> ownedPages = vae.getOwnedPages();
 
 			for (final AbstractPage _p : ownedPages) {
 				final EList<Section> ownedSections = _p.getOwnedSections();

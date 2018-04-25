@@ -39,11 +39,11 @@ public class AFViewpointGenerationOrchetrator{
 	
 	/**
 	 * Default constructor
-	 * @param af_description The associated {@link ArchitectureFramework}
+	 * @param afDescription The associated {@link ArchitectureFramework}
 	 */
-	public AFViewpointGenerationOrchetrator(ArchitectureFramework af_description) {
-		afDescription = af_description;
-		generationGraph = new GenerationGraph(af_description);
+	public AFViewpointGenerationOrchetrator(ArchitectureFramework afDescription) {
+		this.afDescription = afDescription;
+		generationGraph = new GenerationGraph(afDescription);
 	}
 	
 	/**

@@ -92,13 +92,13 @@ public class CadenceTab extends AbstractLaunchConfigurationTab {
 		
 		for (int i = workflowElements.length - 1; i > -1; i--) {
 			IConfigurationElement elt = workflowElements[i];
-			String wk_element_id = CadenceRegistry.getIdentifier(elt);
-			String wk_element_name = CadenceRegistry.getName(elt);
+			String wkelementId = CadenceRegistry.getIdentifier(elt);
+			String wkelementName = CadenceRegistry.getName(elt);
 			
-			String wk_element_description = CadenceRegistry.getDescription(elt);
+			String wkelementDescription = CadenceRegistry.getDescription(elt);
 			CadenceItem widget = new CadenceItem(tabFolder, elt, workflow,
-					wk_element_id, wk_element_name, wk_element_description, this);
-			g.put(wk_element_id, widget);
+					wkelementId, wkelementName, wkelementDescription, this);
+			g.put(wkelementId, widget);
 			
 		}
 		

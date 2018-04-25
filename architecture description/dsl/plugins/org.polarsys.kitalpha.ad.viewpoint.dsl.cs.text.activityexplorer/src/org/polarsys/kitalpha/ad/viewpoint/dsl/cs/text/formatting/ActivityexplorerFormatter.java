@@ -70,8 +70,8 @@ public class ActivityexplorerFormatter extends AbstractDeclarativeFormatter {
             c.setLinewrap().before(a);
         }
         
-        List<Keyword> _activities = f.findKeywords("activity");
-        for (Keyword a : _activities) {
+        activities = f.findKeywords("activity");
+        for (Keyword a : activities) {
             c.setLinewrap().before(a);
         }
         

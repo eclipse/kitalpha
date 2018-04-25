@@ -70,10 +70,10 @@ public class ReverseDSLVPProjectWizard extends NewDSLVpProjectWizard {
 		URI uri = ReverseUtil.getDomainURI((IStructuredSelection) this.selection);
 		ResourceSet rs = new TargetPlatformResourceSet();
 		Resource r = rs.getResource(uri, true);
-		EList<EObject> ecore_content = r.getContents();
-		if (ecore_content != null && ecore_content.size() > 0)
+		EList<EObject> ecoreContent = r.getContents();
+		if (ecoreContent != null && ecoreContent.size() > 0)
 		{
-			ePackage = (EPackage) ecore_content.get(0);
+			ePackage = (EPackage) ecoreContent.get(0);
 			vpNsURI = ePackage.getNsURI();
 			super.setGenerateNsUri(false);
 		}

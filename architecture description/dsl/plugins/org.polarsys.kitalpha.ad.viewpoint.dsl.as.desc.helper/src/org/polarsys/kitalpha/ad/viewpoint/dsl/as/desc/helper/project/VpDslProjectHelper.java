@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,8 +46,8 @@ public class VpDslProjectHelper {
 	 */
 	public static IProject getVpDslProject(EObject eObject){
 		URI uri = getContainingResourceURI(eObject);
-		String project_name = uri.segment(1);
-		IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(project_name);
+		String projectName = uri.segment(1);
+		IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(projectName);
 		if (project.exists()) {
 			return project;
 		}
@@ -71,20 +71,20 @@ public class VpDslProjectHelper {
 			return null;
 		}
 		
-		final IFolder icon_folder = vpDslProject.getFolder(IViewpointDescriptionConstants.VP_DESC__ICONS_FOLDER_NAME);
+		final IFolder iconFolder = vpDslProject.getFolder(IViewpointDescriptionConstants.VP_DESC__ICONS_FOLDER_NAME);
 		
-		if (! icon_folder.exists() && force)
+		if (! iconFolder.exists() && force)
 		{
 			WorkspaceModifyOperation operation = new WorkspaceModifyOperation() {
 				@Override
 				protected void execute(IProgressMonitor monitor) throws CoreException, InvocationTargetException,
 																		InterruptedException {
-					icon_folder.create(true, true, null_progress_monitor);
+					iconFolder.create(true, true, null_progress_monitor);
 				}
 			};
 			operation.run(null_progress_monitor);
 		}
-		return icon_folder;
+		return iconFolder;
 	}
 	
 	/**

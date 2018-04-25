@@ -40,8 +40,8 @@ public class GenerationStack {
 		_stack.clear();
 		_vpStack.clear();
 		
-		GenerationGraph c_graph = graph.clone();
-		computeStack(c_graph);
+		GenerationGraph cgraph = graph.clone();
+		computeStack(cgraph);
 		reorderStack();
 	}
 	

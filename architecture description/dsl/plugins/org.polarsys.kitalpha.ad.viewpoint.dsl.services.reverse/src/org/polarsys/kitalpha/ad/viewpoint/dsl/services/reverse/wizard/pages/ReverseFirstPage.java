@@ -62,9 +62,9 @@ public class ReverseFirstPage extends NewDSLVpProjectPage {
 			option_G = new Group(mainComposite, SWT.NONE);
 			option_G.setText("Options");
 
-			GridData twoColumns_GD = new GridData(GridData.FILL_HORIZONTAL);
-			twoColumns_GD.horizontalSpan = 2;
-			option_G.setLayoutData(twoColumns_GD);
+			GridData twoColumnsGD = new GridData(GridData.FILL_HORIZONTAL);
+			twoColumnsGD.horizontalSpan = 2;
+			option_G.setLayoutData(twoColumnsGD);
 			option_G.setLayout(new GridLayout());
 
 			// Flatten check box
@@ -163,10 +163,10 @@ public class ReverseFirstPage extends NewDSLVpProjectPage {
 		}
 		
 		private void flatten_CB_Selected_DATA(){
-			final boolean flatten_IS_ON = flatten_CB.getSelection();
-			_WIZARD.setFlattenEPackages(flatten_IS_ON);
+			final boolean flattenIsOn = flatten_CB.getSelection();
+			_WIZARD.setFlattenEPackages(flattenIsOn);
 			_WIZARD.setAddSeparator(separator_CB.getSelection());
-			if (! flatten_IS_ON)
+			if (! flattenIsOn)
 			{
 				_WIZARD.setConflictingNameResloveStrategy(ConflictingNameResloveStrategy.None);
 			}

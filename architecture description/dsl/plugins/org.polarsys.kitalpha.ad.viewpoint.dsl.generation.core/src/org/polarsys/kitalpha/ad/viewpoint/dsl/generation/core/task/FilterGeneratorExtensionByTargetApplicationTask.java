@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,8 +44,8 @@ public class FilterGeneratorExtensionByTargetApplicationTask extends TaskProduct
 			IProgressMonitor monitor) throws InvocationException {
 		
 		List<LauncherExtension> holdedExtensionPointContributions = new ArrayList<LauncherExtension>();
-		List<LauncherExtension> extensionPointContributions_Value = productionContext.getInputValue(collectedExtensionPointContributions, List.class);
-		if (extensionPointContributions_Value == null)
+		List<LauncherExtension> extensionPointContributionsValue = productionContext.getInputValue(collectedExtensionPointContributions, List.class);
+		if (extensionPointContributionsValue == null)
 			throw new IllegalArgumentException("Mondatory contract Collected.extension.point.contributions has no value.");
 		
 		EMFDomain domainModel = productionContext.getInputValue(VPDESC_MODEL, EMFDomain.class);
@@ -53,11 +53,11 @@ public class FilterGeneratorExtensionByTargetApplicationTask extends TaskProduct
 		
 		if (targetApplication == null || (targetApplication != null && targetApplication.trim().length() == 0))
 		{
-			holdedExtensionPointContributions.addAll(extensionPointContributions_Value);
+			holdedExtensionPointContributions.addAll(extensionPointContributionsValue);
 		}
 		else
 		{
-			for (LauncherExtension launcherExtension : extensionPointContributions_Value) 
+			for (LauncherExtension launcherExtension : extensionPointContributionsValue) 
 			{
 				boolean noFilter = true;
 				for (IConfigurationElement iConfigurationElement : launcherExtension.iExtension.getConfigurationElements())

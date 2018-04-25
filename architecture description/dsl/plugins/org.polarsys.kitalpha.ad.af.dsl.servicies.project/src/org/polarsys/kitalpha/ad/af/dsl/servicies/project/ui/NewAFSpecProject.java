@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -180,8 +180,8 @@ public class NewAFSpecProject extends Wizard implements INewWizard {
 		
 		// Save model in a new resource
 		ResourceSet resourceSet = new ResourceSetImpl();
-		String uri_s = "/"+project.getName()+"/model/"+afShortName.toLowerCase()+".afdesc";
-		URI uri = URI.createPlatformResourceURI(uri_s, false);
+		String uris = "/"+project.getName()+"/model/"+afShortName.toLowerCase()+".afdesc";
+		URI uri = URI.createPlatformResourceURI(uris, false);
 		Resource resource = resourceSet.createResource(uri);
 		resource.getContents().add(af);
 		

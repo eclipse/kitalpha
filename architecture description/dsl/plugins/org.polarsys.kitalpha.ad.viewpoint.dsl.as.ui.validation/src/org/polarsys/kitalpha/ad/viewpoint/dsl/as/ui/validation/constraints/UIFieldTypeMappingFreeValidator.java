@@ -158,14 +158,14 @@ public class UIFieldTypeMappingFreeValidator implements IAdditionalConstraint {
 			switch (cardinalities) {
 			case NOTHING_OR_MANY:
 			case ONE_OR_MANY:
-				final String NOTHING_OR_MANY = Cardinalities.NOTHING_OR_MANY.getLiteral();
-				final String ONE_OR_MANY = Cardinalities.ONE_OR_MANY.getLiteral();
-				return mainMessage + Messages.bind(Messages.Validation_UIField_Association_Cardinalities, NOTHING_OR_MANY, ONE_OR_MANY);
+				final String nothingOrMany = Cardinalities.NOTHING_OR_MANY.getLiteral();
+				final String oneOrMany = Cardinalities.ONE_OR_MANY.getLiteral();
+				return mainMessage + Messages.bind(Messages.Validation_UIField_Association_Cardinalities, nothingOrMany, oneOrMany);
 			case NOTHING_OR_ONE:
 			case ONLY_ONE:
-				final String NOTHING_OR_ONE = Cardinalities.NOTHING_OR_ONE.getLiteral();
-				final String ONLY_ONE = Cardinalities.ONLY_ONE.getLiteral() ;
-				return mainMessage + Messages.bind(Messages.Validation_UIField_Association_Cardinalities, NOTHING_OR_ONE, ONLY_ONE);
+				final String nothingOrOne = Cardinalities.NOTHING_OR_ONE.getLiteral();
+				final String onlyOne = Cardinalities.ONLY_ONE.getLiteral() ;
+				return mainMessage + Messages.bind(Messages.Validation_UIField_Association_Cardinalities, nothingOrOne, onlyOne);
 			}
 		}
 

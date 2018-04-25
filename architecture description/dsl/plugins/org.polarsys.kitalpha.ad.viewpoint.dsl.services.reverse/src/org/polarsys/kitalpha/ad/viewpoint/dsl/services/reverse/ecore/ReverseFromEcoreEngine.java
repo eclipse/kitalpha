@@ -385,9 +385,9 @@ public class ReverseFromEcoreEngine {
 	private boolean isLocalEType(ENamedElement eAttribute, EClassifier eClassifier){
 		if (eClassifier instanceof EEnum)
 		{
-			EObject enum_root_container = EcoreUtil.getRootContainer(eClassifier, true);
-			EObject eAttribute_root_container = EcoreUtil.getRootContainer(eAttribute, true);
-			return eAttribute_root_container.equals(enum_root_container);
+			EObject enumRootContainer = EcoreUtil.getRootContainer(eClassifier, true);
+			EObject eAttributeRootContainer = EcoreUtil.getRootContainer(eAttribute, true);
+			return eAttributeRootContainer.equals(enumRootContainer);
 		}
 		
 		return false;
@@ -456,18 +456,18 @@ public class ReverseFromEcoreEngine {
 			Cardinalities cardinalities = transformCardnalities(lowerCase, upperCase);
 			genAttribute.setCardinality(cardinalities);
 			// set the attribute type
-			EDataType attribute_dataType = eAttribute.getEAttributeType();
-			if (isLocalEType(eAttribute, attribute_dataType))
+			EDataType attributeDataType = eAttribute.getEAttributeType();
+			if (isLocalEType(eAttribute, attributeDataType))
 			{
 				/**
 				 * In this case, the EAttribute type is an EEnum defined in the same ecore,
 				 * so we have to generate the EEnum and set it as the Attribute type
 				 */
-				if (attribute_dataType instanceof EEnum)
+				if (attributeDataType instanceof EEnum)
 				{
-					Enumeration enumeration = reverseEnumerationsMapping_.get((EEnum)attribute_dataType);
+					Enumeration enumeration = reverseEnumerationsMapping_.get((EEnum)attributeDataType);
 					if (enumeration == null)
-						throw new RuntimeException("Enumeration " + ((EEnum)attribute_dataType).getName() + " was not imported correctely");
+						throw new RuntimeException("Enumeration " + ((EEnum)attributeDataType).getName() + " was not imported correctely");
 					
 					LocalAttributeType localtype = VpdescFactory.eINSTANCE.createLocalAttributeType();
 					localtype.setType(enumeration);
@@ -480,15 +480,15 @@ public class ReverseFromEcoreEngine {
 				 * In this case, the attribute type is an external element, so we have to 
 				 * create an external attribute type
 				 */
-				if (attribute_dataType instanceof EEnum)
-					attribute_dataType = EcoreElementsUtil.transformEEnumToNsUriEEnum((EEnum)attribute_dataType);
+				if (attributeDataType instanceof EEnum)
+					attributeDataType = EcoreElementsUtil.transformEEnumToNsUriEEnum((EEnum)attributeDataType);
 				else
-					attribute_dataType = EcoreElementsUtil.transformEDataTypeToNsUriEDataType((EDataType)attribute_dataType);
+					attributeDataType = EcoreElementsUtil.transformEDataTypeToNsUriEDataType((EDataType)attributeDataType);
 				
 				ExternalAttributeType type = VpdescFactory.eINSTANCE.createExternalAttributeType();
-				type.setType(attribute_dataType);
+				type.setType(attributeDataType);
 				genAttribute.setOwned_type(type);
-				reverseAdditionalExternalData(attribute_dataType.getEPackage());
+				reverseAdditionalExternalData(attributeDataType.getEPackage());
 			}
 			
 			monitorProgress(eClass.getName() + " : " + attributeName);
@@ -579,8 +579,8 @@ public class ReverseFromEcoreEngine {
 		
 		if (eClassifier instanceof EClass)
 		{
-			EClass eOperation_EClassType = (EClass) eClassifier;
-			Class vpClassType = reverseClassesMapping_.get(eOperation_EClassType);
+			EClass eOperationEClassType = (EClass) eClassifier;
+			Class vpClassType = reverseClassesMapping_.get(eOperationEClassType);
 			if (vpClassType != null)
 			{// Case of local EClass, then use the generated vp Class
 				operationType = VpdescFactory.eINSTANCE.createLocalType();
@@ -590,7 +590,7 @@ public class ReverseFromEcoreEngine {
 			else
 			{// Case of external EClass, then use it
 				operationType = VpdescFactory.eINSTANCE.createExternalType();
-				EClass externalEClass = EcoreElementsUtil.transformEClassToNsUriEClass(eOperation_EClassType);
+				EClass externalEClass = EcoreElementsUtil.transformEClassToNsUriEClass(eOperationEClassType);
 				((ExternalType)operationType).setType(externalEClass);
 				
 				// reverse external EPackage as additionalExternalData
@@ -601,8 +601,8 @@ public class ReverseFromEcoreEngine {
 		{
 			if (eClassifier instanceof EEnum)
 			{// Case of local EEnum, then use the generated one
-				EEnum eOperation_eEnumType = (EEnum)eClassifier;
-				Enumeration enumeration = reverseEnumerationsMapping_.get(eOperation_eEnumType);
+				EEnum eOperationEEnumType = (EEnum)eClassifier;
+				Enumeration enumeration = reverseEnumerationsMapping_.get(eOperationEEnumType);
 				if (enumeration != null)
 				{// Case of local EEnum, then use the generated Enumeration
 					operationType = VpdescFactory.eINSTANCE.createLocalType();
@@ -611,10 +611,10 @@ public class ReverseFromEcoreEngine {
 				else
 				{// Case of external EEnum, then use it
 					operationType = VpdescFactory.eINSTANCE.createExternalType();
-					((ExternalType)operationType).setType(eOperation_eEnumType);
+					((ExternalType)operationType).setType(eOperationEEnumType);
 					
 					// reverse external EPackage as additionalExternalData
-					reverseAdditionalExternalData(eOperation_eEnumType.getEPackage());
+					reverseAdditionalExternalData(eOperationEEnumType.getEPackage());
 				}
 			}
 			else
@@ -794,7 +794,7 @@ public class ReverseFromEcoreEngine {
 		{
 			// Check if the EMFResource a already added to ViewpointResources
 			boolean addResource = true;
-			final String uri_s = uri.toString();
+			final String uris = uri.toString();
 			final EList<AbstractResource> usedResources = viewpointResources.getUseResource();
 			if (usedResources != null && ! usedResources.isEmpty())
 			{
@@ -803,7 +803,7 @@ public class ReverseFromEcoreEngine {
 					if (abstractResource instanceof EMFResource)
 					{
 						final String emfResourceUri = ((EMFResource) abstractResource).getUri();
-						if (emfResourceUri.equals(uri_s))
+						if (emfResourceUri.equals(uris))
 						{
 							addResource = false;
 							break;
@@ -816,7 +816,7 @@ public class ReverseFromEcoreEngine {
 			if (addResource)
 			{
 				EMFResource emfResource = VpdescFactory.eINSTANCE.createEMFResource();
-				emfResource.setUri(uri_s);
+				emfResource.setUri(uris);
 				this.viewpoint.getViewpointResources().getUseResource().add(emfResource);
 			}
 		}

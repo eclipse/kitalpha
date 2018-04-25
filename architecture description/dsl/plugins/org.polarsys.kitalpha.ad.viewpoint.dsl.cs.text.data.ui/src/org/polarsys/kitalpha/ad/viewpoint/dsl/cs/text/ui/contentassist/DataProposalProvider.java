@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -53,6 +53,9 @@ import com.google.inject.Inject;
  * 
  */
 public class DataProposalProvider extends AbstractDataProposalProvider {
+
+	private static final String EMF_PLUGIN_ID = "org.eclipse.emf.ecore.edit";
+	private static final String SCHEMAT_PATH = "icons/full/obj16/EPackage.gif";
 
 	@Inject
 	DataGrammarAccess grammar;
@@ -148,8 +151,6 @@ public class DataProposalProvider extends AbstractDataProposalProvider {
 			Assignment assignment, ContentAssistContext context,
 			ICompletionProposalAcceptor acceptor) {
 
-		final String EMF_PLUGIN_ID = "org.eclipse.emf.ecore.edit";
-		final String SCHEMAT_PATH = "icons/full/obj16/EPackage.gif";
 
 		final Bundle bundle = Platform.getBundle(EMF_PLUGIN_ID);
 		final URL url = FileLocator.find(bundle, new Path(SCHEMAT_PATH),

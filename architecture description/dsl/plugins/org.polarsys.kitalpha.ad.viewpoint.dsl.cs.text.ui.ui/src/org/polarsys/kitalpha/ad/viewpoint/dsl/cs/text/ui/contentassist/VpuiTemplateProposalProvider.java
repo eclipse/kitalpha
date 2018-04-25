@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -104,8 +104,8 @@ public class VpuiTemplateProposalProvider extends CommonTemplateProposalProvider
 					if (root instanceof Data) {
 						Data data = (Data) root;
 						TreeAppendable appendable = new TreeAppendable(current, INDENTATION, LINE_SEPARATOR);				
-						EList<Class> vp_Classes = data.getVP_Classes();
-						for(Class candidate : vp_Classes) {
+						EList<Class> vpClasses = data.getVP_Classes();
+						for(Class candidate : vpClasses) {
 							generateUIForCurrentClass(candidate, viewpoint, data.getName(), appendable);
 						}
 						//update template content
@@ -193,8 +193,8 @@ public class VpuiTemplateProposalProvider extends CommonTemplateProposalProvider
 			appendable.append("label: \"").append(toLabel(containingClass.getName())).append(" Associations").append("\"");
 			
 			//Associations
-			EList<AbstractAssociation> vp_Classes_Associations = containingClass.getVP_Classes_Associations();
-			for (AbstractAssociation abs : vp_Classes_Associations){
+			EList<AbstractAssociation> vpClassesAssociations = containingClass.getVP_Classes_Associations();
+			for (AbstractAssociation abs : vpClassesAssociations){
 				String cardinality = abs.getCardinality().getName();
 				if (cardinality.equals("One_Or_Many") || cardinality.equals("Nothing_Or_Many")){
 					appendable.newLine().append("Field ").append(abs.getName()).append("Association").append(" label: \"").append(toLabel(abs.getName())).append("\" type ").

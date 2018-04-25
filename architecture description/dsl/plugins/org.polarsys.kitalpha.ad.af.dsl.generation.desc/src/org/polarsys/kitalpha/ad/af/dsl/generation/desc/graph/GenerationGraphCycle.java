@@ -108,15 +108,15 @@ public class GenerationGraphCycle {
 	private boolean isDetected(Vector<GenerationNode> cycle){
 		for (int i = 0; i < cycles.size();  i++) 
 		{
-			Vector<GenerationNode> current_cycle = cycles.get(i);
-			if (current_cycle.size() == cycle.size()
-					&& current_cycle.contains(cycle.get(0)))
+			Vector<GenerationNode> currentCycle = cycles.get(i);
+			if (currentCycle.size() == cycle.size()
+					&& currentCycle.contains(cycle.get(0)))
 			{
-				int index = current_cycle.indexOf(cycle.get(0));
+				int index = currentCycle.indexOf(cycle.get(0));
 				boolean gap = false;
 				for (int j = 0; j < cycle.size(); j++) 
 				{
-					if (!cycle.get(j).equals(current_cycle.get((index + j) % current_cycle.size())))
+					if (!cycle.get(j).equals(currentCycle.get((index + j) % currentCycle.size())))
 					{
 						gap = true;
 						break;

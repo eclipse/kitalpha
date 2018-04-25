@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -52,6 +52,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.Styl
 public class VpdiagramProposalProvider extends AbstractVpdiagramProposalProvider {
 
 	private static final ArrayList<String> KEYWORDS_STYLE = new ArrayList<String>();
+
+	private static final String SIRIUS_PLUGIN_ID = "org.eclipse.sirius.editor";
+	private static final String SIRIUS_GIF_PATH = "icons/full/obj16/Sirius.gif";
+	private static final String EMF_PLUGIN_ID = "org.eclipse.emf.ecore.edit";
+	private static final String EMF_GIF_PATH = "icons/full/obj16/EPackage.gif";
+
 
 	static {
 		KEYWORDS_STYLE.add("over-all-edges");
@@ -245,22 +251,17 @@ public class VpdiagramProposalProvider extends AbstractVpdiagramProposalProvider
 			final Assignment assignment, final ContentAssistContext context,
 			final ICompletionProposalAcceptor acceptor) {
 
-		final String SIRIUS_PLUGIN_ID = "org.eclipse.sirius.editor";
-		final String SIRIUS_GIF_PATH = "icons/full/obj16/Sirius.gif";
 
-		final String EMF_PLUGIN_ID = "org.eclipse.emf.ecore.edit";
-		final String EMF_GIF_PATH = "icons/full/obj16/EPackage.gif";
-
-		final Bundle bundle_sirius = Platform.getBundle(SIRIUS_PLUGIN_ID);
-		final URL url_sirius = FileLocator.find(bundle_sirius, new Path(SIRIUS_GIF_PATH),
+		final Bundle bundlesirius = Platform.getBundle(SIRIUS_PLUGIN_ID);
+		final URL urlsirius = FileLocator.find(bundlesirius, new Path(SIRIUS_GIF_PATH),
 				null);
 
-		final Bundle bundle_emf = Platform.getBundle(EMF_PLUGIN_ID);
-		final URL url_emf = FileLocator.find(bundle_emf, new Path(EMF_GIF_PATH),
+		final Bundle bundleemf = Platform.getBundle(EMF_PLUGIN_ID);
+		final URL urlemf = FileLocator.find(bundleemf, new Path(EMF_GIF_PATH),
 				null);
 
-		final Image image_sirius = ImageDescriptor.createFromURL(url_sirius).createImage();
-		final Image image_emf = ImageDescriptor.createFromURL(url_emf).createImage();
+		final Image imagesirius = ImageDescriptor.createFromURL(urlsirius).createImage();
+		final Image imageemf = ImageDescriptor.createFromURL(urlemf).createImage();
 
 
 		final DiagramUseLinks imports = UseLinksContentassistHelper.getViewpointRepresentation(model);
@@ -285,10 +286,10 @@ public class VpdiagramProposalProvider extends AbstractVpdiagramProposalProvider
 			final Collection<String> modelValues = imports.get(UseLinksContentassistHelper.MODEL_KEY);
 			if ((modelValues != null) && modelValues.contains(uri)){
 				acceptor.accept(createCompletionProposal(createProposal(uri),
-						styledUri, image_emf, context));
+						styledUri, imageemf, context));
 			} else {
 				acceptor.accept(createCompletionProposal(createProposal(uri),
-						styledUri, image_sirius, context));
+						styledUri, imagesirius, context));
 			}
 		}
 

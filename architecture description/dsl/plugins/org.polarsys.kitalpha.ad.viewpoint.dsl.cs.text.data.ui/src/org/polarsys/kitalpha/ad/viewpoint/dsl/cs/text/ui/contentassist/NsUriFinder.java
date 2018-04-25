@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -95,9 +95,9 @@ public class NsUriFinder {
 			String vpProjectName = ResourceHelper.getProjectName(viewpoint);	
 
 			//FIXME: get this id form configuation aspect 	
-			String resource_id = vpProjectName.substring(0, vpProjectName.lastIndexOf("."));	
+			String resourceid = vpProjectName.substring(0, vpProjectName.lastIndexOf("."));	
 
-			org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint coreDomainViewpoint = CoreDomainViewpointHelper.getCoreDomainViewpoint(resource_id, null);
+			org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint coreDomainViewpoint = CoreDomainViewpointHelper.getCoreDomainViewpoint(resourceid, null);
 			
 			if (coreDomainViewpoint == null){	
 				throw new RuntimeException("Could not find the viewpoint resource for the project: " + vpProjectName);
@@ -117,17 +117,17 @@ public class NsUriFinder {
 				String nsuri = ePackage.getNsURI();
 				
 				URI uri = URI.createURI(nsuri);
-				URI p_uri = URIConverterHelper.getPlatformURI(uri);
+				URI puri = URIConverterHelper.getPlatformURI(uri);
 				
-				if (p_uri != null && !p_uri.isEmpty()){
-					platformsUri.add(p_uri.toString());
+				if (puri != null && !puri.isEmpty()){
+					platformsUri.add(puri.toString());
 				} else {
 					Resource ePackageResource = ePackage.eResource();
 					if (ePackageResource != null){
-						URI resource_uri = ePackageResource.getURI();
+						URI resourceuri = ePackageResource.getURI();
 						
-						if (resource_uri != null && !resource_uri.isEmpty())
-							platformsUri.add(resource_uri.toString());
+						if (resourceuri != null && !resourceuri.isEmpty())
+							platformsUri.add(resourceuri.toString());
 					} else {
 						platformsUri.add(nsuri);
 					}

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -68,25 +68,25 @@ public class LauncherExtension {
 
 	/**
 	 * Default constructor. 
-	 * @param _iExtension : The extension as defined in the plug-in
+	 * @param iExtension : The extension as defined in the plug-in
 	 * 
-	 * @param _ConfigurationElementName : the name of the configuration element 
+	 * @param configurationElementName : the name of the configuration element 
 	 * 		  as defined in the extension point. This information allows to read
 	 * 		  the extension _iExtension in order to look for the attribute containing
 	 * 		  the FCore Path.
 	 * 
-	 * @param _ExtensionFCoreAttributeName : The name of the attribute as defined 
+	 * @param extensionFCoreAttributeName : The name of the attribute as defined 
 	 * 		  in the extension point. This information allows to localize the 
 	 * 		  attribute containing the FCore Path. 
 	 */
-	public LauncherExtension(IExtension _iExtension, 
-			String _ConfigurationElementName,
-			String _ExtensionFCoreAttributeName)
+	public LauncherExtension(IExtension iExtension, 
+			String configurationElementName,
+			String extensionFCoreAttributeName)
 	{
-		iExtension = _iExtension;
+		this.iExtension = iExtension;
 		active_ = true;
-		configurationElementName_ = _ConfigurationElementName;
-		extensionFCoreAttributeName_ = _ExtensionFCoreAttributeName;
+		configurationElementName_ = configurationElementName;
+		extensionFCoreAttributeName_ = extensionFCoreAttributeName;
 
 		setPropertiesValues();
 	}
@@ -95,23 +95,23 @@ public class LauncherExtension {
 	 * This method allows to set extension informations that allow to compute 
 	 * data to display in the selection UI.
 	 * 
-	 * @param _ExtensionNameAttributeName : The name of the Name attribute as 
+	 * @param extensionNameAttributeName : The name of the Name attribute as 
 	 * 		  defined in the extension point
 	 * 
-	 * @param _ExtensionCategoryAttributeName : The name of the Category attribute  
+	 * @param extensionCategoryAttributeName : The name of the Category attribute  
 	 * 		  as defined in the extension point
 	 * 
-	 * @param _ExtensionDescriptionAttributeName : The name of the Description   
+	 * @param extensionDescriptionAttributeName : The name of the Description   
 	 * 		  attribute as defined in the extension point
 	 */
 
-	public void setDiplayableData(String _ExtensionNameAttributeName,
-			String _ExtensionCategoryAttributeName,
-			String _ExtensionDescriptionAttributeName)
+	public void setDiplayableData(String extensionNameAttributeName,
+			String extensionCategoryAttributeName,
+			String extensionDescriptionAttributeName)
 	{
-		extensionNameAttributeName_ = _ExtensionNameAttributeName;
-		extensionCategoryAttributeName_ = _ExtensionCategoryAttributeName;
-		extensionDescriptionAttributeName_ = _ExtensionDescriptionAttributeName;
+		extensionNameAttributeName_ = extensionNameAttributeName;
+		extensionCategoryAttributeName_ = extensionCategoryAttributeName;
+		extensionDescriptionAttributeName_ = extensionDescriptionAttributeName;
 
 		for (IConfigurationElement iConfigurationElement : iExtension.getConfigurationElements()) 
 		{
@@ -150,31 +150,31 @@ public class LauncherExtension {
 
 	/**
 	 * 
-	 * @param _iExtension
-	 * @param _ConfigurationElementName
-	 * @param _ExtensionFCoreAttributeName
-	 * @param _ExtensionNameAttributeName
-	 * @param _ExtensionCategoryAttributeName
-	 * @param _ExtensionDescriptionAttributeName
+	 * @param iExtension
+	 * @param configurationElementName
+	 * @param extensionFCoreAttributeName
+	 * @param extensionNameAttributeName
+	 * @param extensionCategoryAttributeName
+	 * @param extensionDescriptionAttributeName
 	 * @param dispalyable
 	 */
 	@Deprecated
-	public LauncherExtension(IExtension _iExtension, 
-			String _ConfigurationElementName,
-			String _ExtensionFCoreAttributeName,
-			String _ExtensionNameAttributeName,
-			String _ExtensionCategoryAttributeName,
-			String _ExtensionDescriptionAttributeName,
+	public LauncherExtension(IExtension iExtension, 
+			String configurationElementName,
+			String extensionFCoreAttributeName,
+			String extensionNameAttributeName,
+			String extensionCategoryAttributeName,
+			String extensionDescriptionAttributeName,
 			boolean dispalyable)
 	{
-		iExtension = _iExtension;
+		this.iExtension = iExtension;
 		active_ = true;
-		configurationElementName_ = _ConfigurationElementName;
-		extensionFCoreAttributeName_ = _ExtensionFCoreAttributeName;
+		configurationElementName_ = configurationElementName;
+		extensionFCoreAttributeName_ = extensionFCoreAttributeName;
 
-		extensionNameAttributeName_ = _ExtensionNameAttributeName;
-		extensionCategoryAttributeName_ = _ExtensionCategoryAttributeName;
-		extensionDescriptionAttributeName_ = _ExtensionDescriptionAttributeName;
+		extensionNameAttributeName_ = extensionNameAttributeName;
+		extensionCategoryAttributeName_ = extensionCategoryAttributeName;
+		extensionDescriptionAttributeName_ = extensionDescriptionAttributeName;
 
 		isExtensionDisplayable = dispalyable;
 

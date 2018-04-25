@@ -56,16 +56,16 @@ public class ContainerChildrenRepresentationContraint implements IAdditionalCons
 			return ValidationStatus.Ok;
 		
 		EList<AbstractNode> allNodes = new BasicEList<AbstractNode>();
-		final EList<AbstractNode> owned_nodes = children.getOwned_nodes();
-		if (owned_nodes.isEmpty())
+		final EList<AbstractNode> ownedNodes = children.getOwned_nodes();
+		if (ownedNodes.isEmpty())
 		{
-			allNodes.addAll(owned_nodes);
+			allNodes.addAll(ownedNodes);
 		}
 		
-		final EList<AbstractNode> reused_nodes = children.getReused_nodes();
-		if (!reused_nodes.isEmpty())
+		final EList<AbstractNode> reusedNodes = children.getReused_nodes();
+		if (!reusedNodes.isEmpty())
 		{
-			allNodes.addAll(reused_nodes);
+			allNodes.addAll(reusedNodes);
 		}
 		
 		for (AbstractNode abstractNode : allNodes) 

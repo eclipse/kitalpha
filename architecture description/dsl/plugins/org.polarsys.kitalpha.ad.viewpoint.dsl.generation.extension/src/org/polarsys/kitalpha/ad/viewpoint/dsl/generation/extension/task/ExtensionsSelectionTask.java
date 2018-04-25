@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,34 +38,34 @@ public class ExtensionsSelectionTask implements ITaskProduction {
 	@SuppressWarnings("unchecked")
 	public void doExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
-		Boolean userSelection_Value = productionContext.getInputValue(IContractNames.userSelection, Boolean.class);
+		Boolean userSelectionValue = productionContext.getInputValue(IContractNames.userSelection, Boolean.class);
 		
-		List<LauncherExtension> collectedExtensionPointContributions_Value = 
+		List<LauncherExtension> collectedExtensionPointContributionsValue = 
 			productionContext.getInputValue(IContractNames.collectedExtensionPointContributions, List.class);
 		
 		List<LauncherExtension> selectedExtensions = new ArrayList<LauncherExtension>(); 
 		
-		if (userSelection_Value != null && userSelection_Value)
+		if (userSelectionValue != null && userSelectionValue)
 		{
-			String extensionNameAttributeName_Value = 
+			String extensionNameAttributeNameValue = 
 				productionContext.getInputValue(IContractNames.extensionNameAttributeName, String.class);
-			String extensionCategoryAttributeName_Value = 
+			String extensionCategoryAttributeNameValue = 
 				productionContext.getInputValue(IContractNames.extensionCategoryAttributeName, String.class);
-			String extensionDescriptionAttributeName_Value = 
+			String extensionDescriptionAttributeNameValue = 
 				productionContext.getInputValue(IContractNames.extensionDescriptionAttributeName, String.class);
 
 			// Set for each extension the information about data to Display in the Selection UI
-			for (LauncherExtension launcherExtension : collectedExtensionPointContributions_Value)
+			for (LauncherExtension launcherExtension : collectedExtensionPointContributionsValue)
 			{
-				launcherExtension.setDiplayableData(extensionNameAttributeName_Value, 
-													extensionCategoryAttributeName_Value, 
-													extensionDescriptionAttributeName_Value);
+				launcherExtension.setDiplayableData(extensionNameAttributeNameValue, 
+													extensionCategoryAttributeNameValue, 
+													extensionDescriptionAttributeNameValue);
 			}
 
 			// Display Selection UI
-			final ExtensionSelectionWizard wizard = new ExtensionSelectionWizard(collectedExtensionPointContributions_Value);
+			final ExtensionSelectionWizard wizard = new ExtensionSelectionWizard(collectedExtensionPointContributionsValue);
 			// Final link of the monitor to use in the run() method.
-			final IProgressMonitor monitor_l = monitor;
+			final IProgressMonitor monitorLocal = monitor;
 			
 			PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
 				public void run() {
@@ -73,14 +73,14 @@ public class ExtensionsSelectionTask implements ITaskProduction {
 					dialog.open();
 					switch (dialog.getReturnCode()) {
 						case Window.CANCEL:
-							monitor_l.setCanceled(true);
+							monitorLocal.setCanceled(true);
 						break;
 					}
 				}
 			});
 
 			// Keep only extensions selected by user  
-			for (LauncherExtension iLauncherExtension : collectedExtensionPointContributions_Value) 
+			for (LauncherExtension iLauncherExtension : collectedExtensionPointContributionsValue) 
 			{
 				if (iLauncherExtension.isActive())
 					selectedExtensions.add(iLauncherExtension);
@@ -88,7 +88,7 @@ public class ExtensionsSelectionTask implements ITaskProduction {
 		}
 		else
 		{
-			selectedExtensions.addAll(collectedExtensionPointContributions_Value);
+			selectedExtensions.addAll(collectedExtensionPointContributionsValue);
 		}
 
 		// Return in the output contract the selected extensions  

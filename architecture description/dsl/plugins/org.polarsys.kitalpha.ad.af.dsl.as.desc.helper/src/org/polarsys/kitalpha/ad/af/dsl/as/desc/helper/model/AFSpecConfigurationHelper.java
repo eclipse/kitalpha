@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,32 +27,32 @@ public class AFSpecConfigurationHelper {
 
 	/**
 	 * 
-	 * @param af_element any AF Desc model element
+	 * @param afElement any AF Desc model element
 	 * @return 
 	 */
-	public static String getAFProjectName(NamedElement af_element){
-		GenerationConfiguration generationConfiguration = getAFGenerationConfiguration(af_element);
+	public static String getAFProjectName(NamedElement afElement){
+		GenerationConfiguration generationConfiguration = getAFGenerationConfiguration(afElement);
 		return generationConfiguration.getRootProjectName();
 	}
 	
 	/**
 	 * This method return the AF Configuration element
-	 * @param af_element any AF Desc model element
+	 * @param afElement any AF Desc model element
 	 * @return The {@link Configuration} element of the ArchitectureFramework 
 	 * element containing the af_element 
 	 */
-	public static Configuration getAFConfiguration(NamedElement af_element){
-		ArchitectureFramework af = (ArchitectureFramework) EcoreUtil.getRootContainer(af_element);
+	public static Configuration getAFConfiguration(NamedElement afElement){
+		ArchitectureFramework af = (ArchitectureFramework) EcoreUtil.getRootContainer(afElement);
 		return af.getOwned_configuration();
 	}
 	
 	/**
 	 * 
-	 * @param af_element any AF Desc model element
+	 * @param afElement any AF Desc model element
 	 * @return
 	 */
-	public static GenerationConfiguration getAFGenerationConfiguration(NamedElement af_element){
-		Configuration configuration = getAFConfiguration(af_element);
+	public static GenerationConfiguration getAFGenerationConfiguration(NamedElement afElement){
+		Configuration configuration = getAFConfiguration(afElement);
 		for (ConfigurationElement configurationElement : configuration.getOwned_element())
 		{
 			if (configurationElement instanceof GenerationConfiguration)

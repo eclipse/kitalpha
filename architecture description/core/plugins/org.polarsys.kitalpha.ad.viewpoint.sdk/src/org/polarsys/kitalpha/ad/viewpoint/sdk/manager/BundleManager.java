@@ -202,8 +202,8 @@ public class BundleManager {
 	}
 
 	private void addContent(File folder, String path, String zipPath, List<String> outputFolders, ZipOutputStream out, Set<String> names) throws IOException {
-		int BUFFER = 1024;
-		byte data[] = new byte[BUFFER];
+		int buffer = 1024;
+		byte data[] = new byte[buffer];
 		String subdirList[] = folder.list();
 		for (String sd : subdirList) {
 			File f = new File(folder, sd);
@@ -220,7 +220,7 @@ public class BundleManager {
 					names.add(subzipPath);
 					out.putNextEntry(entry);
 					int count;
-					while ((count = origin.read(data, 0, BUFFER)) != -1) {
+					while ((count = origin.read(data, 0, buffer)) != -1) {
 						out.write(data, 0, count);
 					}
 					out.closeEntry();

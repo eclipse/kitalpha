@@ -169,8 +169,8 @@ class VpGenerationListenerForOrchestration extends GenerationAdapter{
 		{
 			for (Viewpoint viewpoint : _viewpointToLink) 
 			{
-				org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint af_viewpoint = getAFViewpoint(viewpoint);
-				af.getViewpoints().add(af_viewpoint);
+				org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint afviewpoint = getAFViewpoint(viewpoint);
+				af.getViewpoints().add(afviewpoint);
 			}
 		}
 		

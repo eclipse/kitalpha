@@ -73,6 +73,13 @@ import com.google.inject.Inject;
  */
 public class VpspecProposalProvider extends AbstractVpspecProposalProvider {
 	
+	private static final String SIRIUS_PLUGIN_ID = "org.eclipse.sirius.editor";
+	private static final String IMG_PATH = "icons/full/obj16/Sirius.gif";
+	private static final String PLUGIN_ID = "org.eclipse.ui";
+	private static final String IMG_FOLDER_PATH = "icons/full/obj16/fldr_obj.gif";
+	private static final String EMF_PLUGIN_ID = "org.eclipse.emf.ecore.edit";
+	private static final String SCHEMAT_PATH = "icons/full/obj16/EPackage.gif";
+
 	@Inject
 	IGrammarAccess grammar;
 	
@@ -97,8 +104,8 @@ public class VpspecProposalProvider extends AbstractVpspecProposalProvider {
 				EObject root = NodeModelUtils.findActualSemanticObjectFor(rootNode);
 				if (root !=null && root instanceof Viewpoint) {
 					//Collect all the already defined aspects
-					EList<Aspect> vp_Aspects = ((Viewpoint) root).getVP_Aspects();
-					for (Aspect candidate: vp_Aspects){
+					EList<Aspect> vpAspects = ((Viewpoint) root).getVP_Aspects();
+					for (Aspect candidate: vpAspects){
 						if (candidate instanceof UIDescription && proposal.getDisplayString().matches(access.getViewpointAccess().getTypeUIKeyword_14_0_0().getValue())){
 							return;
 						}
@@ -116,8 +123,8 @@ public class VpspecProposalProvider extends AbstractVpspecProposalProvider {
 						}
 					}
 					//Check if Data is already defined
-					Data vp_Data = ((Viewpoint) root).getVP_Data();
-					if (vp_Data != null && proposal.getDisplayString().matches(access.getViewpointAccess().getDataKeyword_13_0().getValue())) {
+					Data vpData = ((Viewpoint) root).getVP_Data();
+					if (vpData != null && proposal.getDisplayString().matches(access.getViewpointAccess().getDataKeyword_13_0().getValue())) {
 						return;
 					}
 				}			
@@ -322,10 +329,8 @@ public class VpspecProposalProvider extends AbstractVpspecProposalProvider {
 	@Override
 	public void completeViewpoint_UseDiagramResource(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		
-		final String PLUGIN_ID = "org.eclipse.sirius.editor";
-		final String IMG_PATH = "icons/full/obj16/Sirius.gif";
 
-		final Bundle bundle = Platform.getBundle(PLUGIN_ID);
+		final Bundle bundle = Platform.getBundle(SIRIUS_PLUGIN_ID);
 		final URL url = FileLocator.find(bundle, new Path(IMG_PATH),
 				Collections.EMPTY_MAP);
 
@@ -352,21 +357,19 @@ public class VpspecProposalProvider extends AbstractVpspecProposalProvider {
 	@Override
 	public void completeViewpoint_UseWorkspaceResource(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		
-		final String PLUGIN_ID = "org.eclipse.ui";
-		final String IMG_FOLDER_PATH = "icons/full/obj16/fldr_obj.gif";
 		
 		//decomment if want use all workspace resources
 //		final String IMG_FILE_PATH ="icons/full/obj16/file_obj.gif";
 
 		final Bundle bundle = Platform.getBundle(PLUGIN_ID);
-		final URL fldr_url = FileLocator.find(bundle, new Path(IMG_FOLDER_PATH),
+		final URL fldrUrl = FileLocator.find(bundle, new Path(IMG_FOLDER_PATH),
 				Collections.EMPTY_MAP);
 		
 		//decomment if want use all workspace resources
 //		final URL file_url = FileLocator.find(bundle, new Path(IMG_FILE_PATH),
 //				Collections.EMPTY_MAP);
 
-		Image fldr_image = ImageDescriptor.createFromURL(fldr_url).createImage();
+		Image fldrImage = ImageDescriptor.createFromURL(fldrUrl).createImage();
 		
 		//decomment if want use all workspace resources
 //		Image file_image = ImageDescriptor.createFromURL(file_url).createImage();
@@ -383,7 +386,7 @@ public class VpspecProposalProvider extends AbstractVpspecProposalProvider {
 			{
 				acceptor.accept(createCompletionProposal(
 						"\"" + path + "\"", new StyledString(path),
-						fldr_image, context));
+						fldrImage, context));
 			}
 		}
 	}
@@ -391,8 +394,6 @@ public class VpspecProposalProvider extends AbstractVpspecProposalProvider {
 	
 	@Override
 	public void completeViewpoint_UseAnyEMFResource(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		final String EMF_PLUGIN_ID = "org.eclipse.emf.ecore.edit";
-		final String SCHEMAT_PATH = "icons/full/obj16/EPackage.gif";
 
 		final Bundle bundle = Platform.getBundle(EMF_PLUGIN_ID);
 		final URL url = FileLocator.find(bundle, new Path(SCHEMAT_PATH),

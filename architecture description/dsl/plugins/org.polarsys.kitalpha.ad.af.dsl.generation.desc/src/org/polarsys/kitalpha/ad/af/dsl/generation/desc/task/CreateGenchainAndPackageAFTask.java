@@ -208,8 +208,8 @@ public class CreateGenchainAndPackageAFTask extends GenerationAdapter implements
 		if (rootDomainElement != null && rootDomainElement instanceof ArchitectureFramework)
 		{
 			ArchitectureFramework af = (ArchitectureFramework) rootDomainElement;
-			Viewpoints af_viewpoints = af.getAf_viewpoints();
-			for (Viewpoint viewpoint : af_viewpoints.getOwned_viewpoints()) 
+			Viewpoints afviewpoints = af.getAf_viewpoints();
+			for (Viewpoint viewpoint : afviewpoints.getOwned_viewpoints()) 
 			{
 				String rootProjectName = VpDslConfigurationHelper.getRootProjectName(viewpoint);
 				featureAddition.getAdditions().add(rootProjectName + ".feature");

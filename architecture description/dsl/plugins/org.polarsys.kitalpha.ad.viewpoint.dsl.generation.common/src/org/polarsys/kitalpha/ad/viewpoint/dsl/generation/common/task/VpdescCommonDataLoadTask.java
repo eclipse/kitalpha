@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,11 +30,11 @@ public class VpdescCommonDataLoadTask extends TaskProductionAdapter {
 
 	public void doExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
-		EMFDomain vpdesc_domain = productionContext.getInputValue(VPDESC_MODEL, EMFDomain.class);
-		EList<Object> vpdesc_c = vpdesc_domain.getContent();
-		if (vpdesc_c != null && vpdesc_c.size() > 0)
+		EMFDomain vpdescDomain = productionContext.getInputValue(VPDESC_MODEL, EMFDomain.class);
+		EList<Object> vpdesc = vpdescDomain.getContent();
+		if (vpdesc != null && vpdesc.size() > 0)
 		{
-			Viewpoint viewpoint = (Viewpoint) vpdesc_c.get(0);
+			Viewpoint viewpoint = (Viewpoint) vpdesc.get(0);
 			productionContext.setOutputValue(NAME, viewpoint.getName());
 			productionContext.setOutputValue(SHORT_NAME, viewpoint.getShortName());
 			productionContext.setOutputValue(DISPLAYABLE_SHORT_NAME, getDisplayableShortName(viewpoint.getShortName()));

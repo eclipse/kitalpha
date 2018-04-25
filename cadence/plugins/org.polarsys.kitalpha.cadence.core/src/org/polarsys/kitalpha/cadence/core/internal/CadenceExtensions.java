@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -147,20 +147,20 @@ public final class CadenceExtensions {
 
   }
 
-  public static int getSize(String workflow_id, String workflowElement_id) {
-    return getWorkflowElementParameters(getWorkflowElement(workflow_id, workflowElement_id)).length;
+  public static int getSize(String workflowid, String workflowElementid) {
+    return getWorkflowElementParameters(getWorkflowElement(workflowid, workflowElementid)).length;
   }
 
-  public static boolean isMultiple(String workflow_id, String workflowElement_id) {
+  public static boolean isMultiple(String workflowid, String workflowElementid) {
 
-    IConfigurationElement element = getWorkflowElement(workflow_id, workflowElement_id);
+    IConfigurationElement element = getWorkflowElement(workflowid, workflowElementid);
     String isMultiple = element.getAttribute(ATT_MULTIPLE_CONTRIBUTIONS);
     return Boolean.parseBoolean(isMultiple);
   }
   
-  public static String getOrder(String workflow_id, String workflowElement_id) {
+  public static String getOrder(String workflowid, String workflowElementid) {
 
-	    IConfigurationElement element = getWorkflowElement(workflow_id, workflowElement_id);
+	    IConfigurationElement element = getWorkflowElement(workflowid, workflowElementid);
 	    String order = element.getAttribute(ATT_ORDER_NUMBER);
 	    return order;
 	  }

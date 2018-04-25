@@ -45,9 +45,9 @@ public class CheckCyclesAction extends BaseSelectionListenerAction implements IO
 
 	public void run(IAction action) {
 		URI uri = getDomainURI(this.selection);
-		ArchitectureFramework af_description = getAFSpecification(uri);
+		ArchitectureFramework afdescription = getAFSpecification(uri);
 		
-		GenerationGraph generationGraph = new GenerationGraph(af_description);
+		GenerationGraph generationGraph = new GenerationGraph(afdescription);
 		if (!generationGraph.isEmpty())
 		{
 			// Check if there is cycles

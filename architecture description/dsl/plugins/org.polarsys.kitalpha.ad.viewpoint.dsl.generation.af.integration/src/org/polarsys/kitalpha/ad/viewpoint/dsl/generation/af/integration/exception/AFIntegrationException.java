@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,34 +37,34 @@ public class AFIntegrationException extends Exception {
 	
 	private int _component_id = Unknown;
 	
-	public AFIntegrationException(int component_id, String main_msg, StackTraceElement[] orginalStack) {
-		super(main_msg != null && getComponentName(component_id).trim().length() > 0 
-				? main_msg + getComponentName(component_id) 
-				: getComponentName(component_id));
+	public AFIntegrationException(int componentid, String mainMsg, StackTraceElement[] orginalStack) {
+		super(mainMsg != null && getComponentName(componentid).trim().length() > 0 
+				? mainMsg + getComponentName(componentid) 
+				: getComponentName(componentid));
 
-		_component_id = component_id;
+		_component_id = componentid;
 		if (orginalStack != null && orginalStack.length > 0)
 			this.setStackTrace(orginalStack);
 	}
 	
-	public AFIntegrationException(int component_id, String main_msg) {
-		new AFIntegrationException(component_id, main_msg, EmptyStack);
+	public AFIntegrationException(int componentid, String main_msg) {
+		new AFIntegrationException(componentid, main_msg, EmptyStack);
 	}
 	
-	public AFIntegrationException(int component_id, StackTraceElement[] orginalStack) {
-		new AFIntegrationException(component_id, null, orginalStack);
+	public AFIntegrationException(int componentId, StackTraceElement[] orginalStack) {
+		new AFIntegrationException(componentId, null, orginalStack);
 	}
 
-	public AFIntegrationException(int component_id) {
-		new AFIntegrationException(component_id, null, EmptyStack);
+	public AFIntegrationException(int componentid) {
+		new AFIntegrationException(componentid, null, EmptyStack);
 	}
 	
 	public int getComponentID(){
 		return _component_id;
 	}
 	
-	private static String getComponentName(int component_id){
-		switch (component_id) {
+	private static String getComponentName(int componentid){
+		switch (componentid) {
 		case EPackage:
 			return "EPackage";
 		case Representation:

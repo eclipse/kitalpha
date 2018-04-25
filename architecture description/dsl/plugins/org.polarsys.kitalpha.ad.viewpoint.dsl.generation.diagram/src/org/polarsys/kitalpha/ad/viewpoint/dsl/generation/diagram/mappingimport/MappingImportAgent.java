@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014-2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -253,12 +253,12 @@ public class MappingImportAgent {
 			
 			if (originalMapping instanceof NodeMapping)
 			{
-				NodeMapping node_originalMapping = (NodeMapping)originalMapping;
+				NodeMapping nodeOriginalMapping = (NodeMapping)originalMapping;
 				// create a new Node Mapping Import
 				NodeMappingImport nodeMappingImport= DescriptionFactory.eINSTANCE.createNodeMappingImport();
 				mappingImport = nodeMappingImport;
 				// Define the mapping link between the original mapping and the new imported mapping
-				nodeMappingImport.setImportedMapping(node_originalMapping);
+				nodeMappingImport.setImportedMapping(nodeOriginalMapping);
 			}
 			
 			if (mappingImport != null)
@@ -358,8 +358,8 @@ public class MappingImportAgent {
 				reuseBorderedNode(reusingNode, dataToReuse);
 				if (reusingNode instanceof ContainerMapping)
 				{
-					ContainerMapping reusing_container = (ContainerMapping)reusingNode;
-					reuseNode(reusing_container, dataToReuse);
+					ContainerMapping reusingContainer = (ContainerMapping)reusingNode;
+					reuseNode(reusingContainer, dataToReuse);
 				}
 			}
 			else // Reuse of a container
@@ -367,8 +367,8 @@ public class MappingImportAgent {
 				if (nodeToReuse instanceof ContainerMapping &&
 						reusingNode instanceof ContainerMapping)
 				{
-					ContainerMapping reusing_container = (ContainerMapping)reusingNode;
-					reuseContainer(reusing_container, dataToReuse);
+					ContainerMapping reusingContainer = (ContainerMapping)reusingNode;
+					reuseContainer(reusingContainer, dataToReuse);
 				}
 			}
 		}
@@ -524,9 +524,9 @@ public class MappingImportAgent {
 		{
 			if (!(data.getOriginalMapping().eContainer() instanceof Layer))
 			{
-				AbstractNodeMapping parent_original_mapping = (AbstractNodeMapping)data.getOriginalMapping().eContainer();
-				MappingImportData parent_data = new MappingImportData(parent_original_mapping);
-				return lookForMappingInRegisteredMapping(parent_data);
+				AbstractNodeMapping parentOriginalMapping = (AbstractNodeMapping)data.getOriginalMapping().eContainer();
+				MappingImportData parentData = new MappingImportData(parentOriginalMapping);
+				return lookForMappingInRegisteredMapping(parentData);
 			}
 			else
 			{

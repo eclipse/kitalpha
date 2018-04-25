@@ -93,13 +93,13 @@ public class GenerationGraph {
 			{
 				for (Viewpoint parent : parents) 
 				{
-					GenerationNode target_node = getNode(parent);
-					if (target_node != null)
+					GenerationNode targetNode = getNode(parent);
+					if (targetNode != null)
 					{
 						GenerationEdge edge = new GenerationEdge();
 						edge.setKind(ViewpointLinkKind.PARENT);
 						edge.setSourceNode(node);
-						edge.setTargetNode(target_node);
+						edge.setTargetNode(targetNode);
 						_owned_GenerationEdges.add(edge);
 					}
 				}
@@ -110,13 +110,13 @@ public class GenerationGraph {
 			{
 				for (Viewpoint dependencie : dependencies) 
 				{
-					GenerationNode target_node = getNode(dependencie);
-					if (target_node != null)
+					GenerationNode targetNode = getNode(dependencie);
+					if (targetNode != null)
 					{
 						GenerationEdge edge = new GenerationEdge();
 						edge.setKind(ViewpointLinkKind.DEPENDECIES);
 						edge.setSourceNode(node);
-						edge.setTargetNode(target_node);
+						edge.setTargetNode(targetNode);
 						_owned_GenerationEdges.add(edge);
 					}
 				}

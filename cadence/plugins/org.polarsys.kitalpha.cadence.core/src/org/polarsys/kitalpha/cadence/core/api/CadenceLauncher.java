@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -37,20 +37,20 @@ public final class CadenceLauncher {
 
   private static Map<String, ParameterError<?>> wrongParams = null;
 
-  public static IStatus cadence(final String workflow_id, final String workflowElement_id, final WorkflowActivityParameter workflowActivityParameters)
+  public static IStatus cadence(final String workflowId, final String workflowElementId, final WorkflowActivityParameter workflowActivityParameters)
       throws Exception {
-    return cadence(workflow_id, workflowElement_id, workflowActivityParameters, null);
+    return cadence(workflowId, workflowElementId, workflowActivityParameters, null);
 
   }
 
-  public static IStatus cadence(final String workflow_id, final String workflowElement_id, final WorkflowActivityParameter workflowActivityParameters,
-      final IProgressMonitor monitor_p) throws Exception {
+  public static IStatus cadence(final String workflowId, final String workflowElementId, final WorkflowActivityParameter workflowActivityParameters,
+      final IProgressMonitor monitor) throws Exception {
 
     MultiStatus result = new MultiStatus(Activator.PLUGIN_ID, 0, "Cadence activities", null);
 
     final Set<String> activitiesID;
     final int candidateSize;
-    final boolean isMultiple = CadenceExtensions.isMultiple(workflow_id, workflowElement_id);
+    final boolean isMultiple = CadenceExtensions.isMultiple(workflowId, workflowElementId);
     
     
     if (workflowActivityParameters != null) {
@@ -61,54 +61,54 @@ public final class CadenceLauncher {
       candidateSize = 0;
     }
 
-    if (monitor_p != null) {
-      IConfigurationElement workflow = CadenceExtensions.getWorkflow(workflow_id); // get worlkflow element
-      IConfigurationElement workflowElement = CadenceExtensions.getWorkflowElement(workflow_id, workflowElement_id); // get worlkflow element
+    if (monitor != null) {
+      IConfigurationElement workflow = CadenceExtensions.getWorkflow(workflowId); // get worlkflow element
+      IConfigurationElement workflowElement = CadenceExtensions.getWorkflowElement(workflowId, workflowElementId); // get worlkflow element
 
       String workflowName = workflow.getAttribute(CadenceExtensions.ATT_NAME);
       String workflowElementName = workflowElement.getAttribute(CadenceExtensions.ATT_NAME);
 
-      monitor_p.beginTask("Cadence " + workflowName + " : " + workflowElementName, candidateSize); //$NON-NLS-1$ //$NON-NLS-2$
+      monitor.beginTask("Cadence " + workflowName + " : " + workflowElementName, candidateSize); //$NON-NLS-1$ //$NON-NLS-2$
     }
 
     if ((candidateSize <= 1) || ((candidateSize > 1) && isMultiple)) {
 
       for (String activityID : activitiesID) {
         ActivityParameters activityParameters = workflowActivityParameters.getActivityParameters(activityID);
-        IStatus status = cadence(workflow_id, workflowElement_id, activityID, activityParameters, monitor_p);
+        IStatus status = cadence(workflowId, workflowElementId, activityID, activityParameters, monitor);
         if (status == null) {
           Activator.getDefault().getLog().log(new Status(IStatus.WARNING, Activator.PLUGIN_ID, "Activity : "+activityID+" has returned a null status."));
         } else
           result.add(status);
-        if (monitor_p != null) {
-          monitor_p.worked(1);
+        if (monitor != null) {
+          monitor.worked(1);
         }
       }
     } else {
-      throw new Exception("the workflowElement " + workflowElement_id + " is not multiple."); //$NON-NLS-1$ //$NON-NLS-2$
+      throw new Exception("the workflowElement " + workflowElementId + " is not multiple."); //$NON-NLS-1$ //$NON-NLS-2$
     }
 
-    if (monitor_p != null) {
-      monitor_p.subTask(""); //$NON-NLS-1$
+    if (monitor != null) {
+      monitor.subTask(""); //$NON-NLS-1$
     }
     return result;
   }
 
-  public static IStatus cadence(final String workflow_id, final String workflowElement_id, final String activityElement_id,
+  public static IStatus cadence(final String workflowId, final String workflowElementId, final String activityElementId,
       final ActivityParameters activityParameters) {
 
-    return cadence(workflow_id, workflowElement_id, activityElement_id, activityParameters, null);
+    return cadence(workflowId, workflowElementId, activityElementId, activityParameters, null);
   }
 
-  public static IStatus cadence(final String workflow_id, final String workflowElement_id, final String activityElement_id,
-      final ActivityParameters activityParameters, IProgressMonitor monitor_p) {
+  public static IStatus cadence(final String workflowId, final String workflowElementId, final String activityElementId,
+      final ActivityParameters activityParameters, IProgressMonitor monitor) {
 
-    IConfigurationElement workflowElement = CadenceExtensions.getWorkflowElement(workflow_id, workflowElement_id); // get worlkflow element
-    IConfigurationElement activityElement = CadenceExtensions.getActivityConfigElement(activityElement_id);// get activity candidate
+    IConfigurationElement workflowElement = CadenceExtensions.getWorkflowElement(workflowId, workflowElementId); // get worlkflow element
+    IConfigurationElement activityElement = CadenceExtensions.getActivityConfigElement(activityElementId);// get activity candidate
 
-    if (monitor_p != null) {
+    if (monitor != null) {
       String activityName = activityElement.getAttribute(CadenceExtensions.ATT_NAME);
-      monitor_p.subTask(activityName);
+      monitor.subTask(activityName);
     }
 
     IStatus status = cadence(workflowElement, activityElement, activityParameters); // if is good candidate run it

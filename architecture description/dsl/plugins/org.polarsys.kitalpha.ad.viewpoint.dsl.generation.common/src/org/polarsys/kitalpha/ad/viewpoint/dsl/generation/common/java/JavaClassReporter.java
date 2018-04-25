@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,58 +35,58 @@ public class JavaClassReporter implements PatternExecutionReporter {
 	protected String collectedOutput = "";  //$NON-NLS-1$
 	
 	public final void executionFinished(String output, PatternContext context) {
-		Integer _saveTime 	 = (Integer)context.getValue("savetime"); //$NON-NLS-1$
-		if (_saveTime == null || ! whenExecutionFinished.equals(_saveTime))
+		Integer saveTime 	 = (Integer)context.getValue("savetime"); //$NON-NLS-1$
+		if (saveTime == null || ! whenExecutionFinished.equals(saveTime))
 			return;
 		
 		// Get parameters values
-		String  _projectName = (String)context.getValue("projectname"); //$NON-NLS-1$
-		String  _packageName = (String)context.getValue("packagename"); //$NON-NLS-1$
-		String  _className 	 = (String)context.getValue("classname"); //$NON-NLS-1$
+		String  projectName = (String)context.getValue("projectname"); //$NON-NLS-1$
+		String  packageName = (String)context.getValue("packagename"); //$NON-NLS-1$
+		String  className 	 = (String)context.getValue("classname"); //$NON-NLS-1$
 		
 		// check if parameters have values
-		if (_projectName == null || _projectName.trim().length() == 0)
+		if (projectName == null || projectName.trim().length() == 0)
 			throw new IllegalArgumentException(Messages.JavaReporter_Parameters_NameNotNull_Project);
-		if (_packageName == null || _packageName.trim().length() == 0)
+		if (packageName == null || packageName.trim().length() == 0)
 			throw new IllegalArgumentException(Messages.JavaReporter_Parameters_NameNotNull_Package);
-		if (_className == null || _className.trim().length() == 0)
+		if (className == null || className.trim().length() == 0)
 			throw new IllegalArgumentException(Messages.JavaReporter_Parameters_NameNotNull_Class);
 		
 		// save java class
 		if (collectedOutput != null && collectedOutput.trim().length() != 0){
-			IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(_projectName);
-			IFolder folder = JDTUtility.createOrGetPackageFolders(project, _packageName);
-			IFile file = folder.getFile(_className+".java"); //$NON-NLS-1$
+			IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(projectName);
+			IFolder folder = JDTUtility.createOrGetPackageFolders(project, packageName);
+			IFile file = folder.getFile(className+".java"); //$NON-NLS-1$
 			JDTUtility.writeJavaContent(file, output);
 		}
 	}
 
 	public void loopFinished(String output, String outputWithCallBack,
 			PatternContext context, Map<String, Object> parameterValues) {
-		Integer _saveTime 	 = (Integer)context.getValue("savetime"); //$NON-NLS-1$
-		if (_saveTime == null || ! whenLoopFinished.equals(_saveTime)){
+		Integer saveTime 	 = (Integer)context.getValue("savetime"); //$NON-NLS-1$
+		if (saveTime == null || ! whenLoopFinished.equals(saveTime)){
 				collectedOutput = collectedOutput + output;
 				return;
 		}
 		
 		// Get parameters values
-		String  _projectName = (String)context.getValue("projectname"); //$NON-NLS-1$
-		String  _packageName = (String)context.getValue("packagename"); //$NON-NLS-1$
-		String  _className 	 = (String)context.getValue("classname"); //$NON-NLS-1$
+		String  projectName = (String)context.getValue("projectname"); //$NON-NLS-1$
+		String  packageName = (String)context.getValue("packagename"); //$NON-NLS-1$
+		String  className 	 = (String)context.getValue("classname"); //$NON-NLS-1$
 		
 		// check if parameters have values
-		if (_projectName == null || _projectName.trim().length() == 0)
+		if (projectName == null || projectName.trim().length() == 0)
 			throw new IllegalArgumentException(Messages.JavaReporter_Parameters_NameNotNull_Project);
-		if (_packageName == null || _packageName.trim().length() == 0)
+		if (packageName == null || packageName.trim().length() == 0)
 			throw new IllegalArgumentException(Messages.JavaReporter_Parameters_NameNotNull_Package);
-		if (_className == null || _className.trim().length() == 0)
+		if (className == null || className.trim().length() == 0)
 			throw new IllegalArgumentException(Messages.JavaReporter_Parameters_NameNotNull_Class);
 		
 		// save java class
-		if (whenLoopFinished.equals(_saveTime)){
-			IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(_projectName);
-			IFolder folder = JDTUtility.createOrGetPackageFolders(project, _packageName);
-			IFile file = folder.getFile(_className+".java"); //$NON-NLS-1$
+		if (whenLoopFinished.equals(saveTime)){
+			IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(projectName);
+			IFolder folder = JDTUtility.createOrGetPackageFolders(project, packageName);
+			IFile file = folder.getFile(className+".java"); //$NON-NLS-1$
 			
 			String mergedcode = output;
 			

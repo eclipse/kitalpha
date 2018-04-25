@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -57,9 +57,9 @@ public class GenerationchainProviderImpl extends AbstractCoreResourceProvider{
 					if (iSubGenerationElement instanceof EmfGeneration )
 					{
 						EmfGeneration emfGeneration = (EmfGeneration) iSubGenerationElement;
-						final String gen_modelPath = emfGeneration.getModelPath().trim();
-						final String reg_modelPath = getGeneratedEcorePath().trim();
-						if (gen_modelPath.equals(reg_modelPath))
+						final String genModelPath = emfGeneration.getModelPath().trim();
+						final String regModelPath = getGeneratedEcorePath().trim();
+						if (genModelPath.equals(regModelPath))
 						{
 							modelpluginName = emfGeneration.getPluginName();
 							break;

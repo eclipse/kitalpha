@@ -37,18 +37,18 @@ public class NodesUniqueNoConditionalRepresentationRules implements IAdditionalC
 		EStructuralFeature feature = eONode.eClass().getEStructuralFeature("style");
 		if (feature != null)
 		{
-			Object o_style = eONode.eGet(feature);
-			if (o_style != null && o_style instanceof EList<?>)
+			Object ostyle = eONode.eGet(feature);
+			if (ostyle != null && ostyle instanceof EList<?>)
 			{
 				@SuppressWarnings("unchecked")
-				EList<AbstractDescription> e_Styles =  (EList<AbstractDescription>) o_style;
-				int conditional_representation_count = 0;
-				for (AbstractDescription abstractDescription : e_Styles) 
+				EList<AbstractDescription> eStyles =  (EList<AbstractDescription>) ostyle;
+				int conditionalRepresentationCount = 0;
+				for (AbstractDescription abstractDescription : eStyles) 
 				{
 					if (abstractDescription.getCondition() == null)
-						conditional_representation_count ++;
+						conditionalRepresentationCount ++;
 					
-					if (conditional_representation_count > 1)
+					if (conditionalRepresentationCount > 1)
 						return ValidationStatus.Error;
 				}
 			}

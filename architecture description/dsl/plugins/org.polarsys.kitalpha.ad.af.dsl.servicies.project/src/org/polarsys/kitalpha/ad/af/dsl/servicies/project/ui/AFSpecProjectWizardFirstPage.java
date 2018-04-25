@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -66,12 +66,12 @@ public class AFSpecProjectWizardFirstPage extends AbstractAFSpecProjectWizardPag
 	}
 	
 	public void createControl(Composite parent) {
-		Composite c_parent = new Composite(parent, SWT.NONE);
-		c_parent.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-		c_parent.setLayout(new GridLayout(1, false));
-		setControl(c_parent);
-		createTextWidgets(c_parent);
-		createConcretViewpointsWidgets(c_parent);
+		Composite cparent = new Composite(parent, SWT.NONE);
+		cparent.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+		cparent.setLayout(new GridLayout(1, false));
+		setControl(cparent);
+		createTextWidgets(cparent);
+		createConcretViewpointsWidgets(cparent);
 	}
 
 	/**
@@ -103,8 +103,8 @@ public class AFSpecProjectWizardFirstPage extends AbstractAFSpecProjectWizardPag
 
 	private Composite createConcretViewpointsWidgets(Composite parent) {
 		availableViewpoint = ViewpointModelReuseResourceHelper.getAvailableVpdslViewpoints(null);
-		java.util.List<Viewpoint> availableViewpoint_t  = new ArrayList<Viewpoint>();
-		availableViewpoint_t.addAll(availableViewpoint);
+		java.util.List<Viewpoint> availableViewpointTmp  = new ArrayList<Viewpoint>();
+		availableViewpointTmp.addAll(availableViewpoint);
 
 		if ((availableViewpoint == null || availableViewpoint.size() == 0) &&  
 				(selectedViewpoint == null || selectedViewpoint.size() == 0)){

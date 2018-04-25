@@ -72,43 +72,43 @@ public class VpdiagramScopeHelper {
 			EObject ndeContainer = nde.eContainer();
 			if (ndeContainer instanceof Container || ndeContainer instanceof Node || ndeContainer instanceof BorderedNode){
 
-				AbstractClass domain_class = VpDiagramHelper.getDomain_class(nde); 
-				AbstractClass container_domain_class = VpDiagramHelper.getDomainContainerOfContainerOfElement(nde);
+				AbstractClass domainClass = VpDiagramHelper.getDomain_class(nde); 
+				AbstractClass containerDomainClass = VpDiagramHelper.getDomainContainerOfContainerOfElement(nde);
 
-				if (domain_class == null){
+				if (domainClass == null){
 					return d.getEObjectOrProxy() instanceof EReference;
 				}
 
-				if (container_domain_class == null){
+				if (containerDomainClass == null){
 					//With import
 					EClass eClass = VpDiagramHelper.getDomainContainerOfContainerOfElementExternal(nde);
 
-					if (domain_class instanceof ExternalClass){
-						ExternalClass externalDomain_class = (ExternalClass)domain_class;
-						return handleExternalExternalAssociation(d, externalDomain_class.getClass_(), eClass);
+					if (domainClass instanceof ExternalClass){
+						ExternalClass externalDomainClass = (ExternalClass)domainClass;
+						return handleExternalExternalAssociation(d, externalDomainClass.getClass_(), eClass);
 					}
 
-					if (domain_class instanceof LocalClass){
-						LocalClass localDomain_class = (LocalClass)domain_class;
-						return handleExternalLocalAssociation(d, localDomain_class.getClass_(), eClass);
+					if (domainClass instanceof LocalClass){
+						LocalClass localDomainClass = (LocalClass)domainClass;
+						return handleExternalLocalAssociation(d, localDomainClass.getClass_(), eClass);
 					}
 
 					return d.getEObjectOrProxy() instanceof EReference;
 				}
 
-				if (container_domain_class instanceof ExternalClass){
+				if (containerDomainClass instanceof ExternalClass){
 
-					ExternalClass externalContainer_domain_class = (ExternalClass)container_domain_class;
+					ExternalClass externalContainerDomainClass = (ExternalClass)containerDomainClass;
 
-					if (domain_class instanceof ExternalClass){
-						ExternalClass externalDomain_class = (ExternalClass)domain_class;
+					if (domainClass instanceof ExternalClass){
+						ExternalClass externalDomainClass = (ExternalClass)domainClass;
 
-						return handleExternalExternalAssociation(d, externalDomain_class, externalContainer_domain_class);
+						return handleExternalExternalAssociation(d, externalDomainClass, externalContainerDomainClass);
 					}
 
-					if (domain_class instanceof LocalClass){
-						LocalClass localDomain_class = (LocalClass)domain_class;
-						return handExternalLocalAssociation(d, localDomain_class, externalContainer_domain_class);
+					if (domainClass instanceof LocalClass){
+						LocalClass localDomainClass = (LocalClass)domainClass;
+						return handExternalLocalAssociation(d, localDomainClass, externalContainerDomainClass);
 					}
 				}
 			}
@@ -118,19 +118,19 @@ public class VpdiagramScopeHelper {
 	
 
 	private static boolean handExternalLocalAssociation(IEObjectDescription d,
-			LocalClass localDomain_class,
-			ExternalClass externalContainer_domain_class) {
+			LocalClass localDomainClass,
+			ExternalClass externalContainerDomainClass) {
 		
-		return handleExternalLocalAssociation(d, localDomain_class.getClass_(), externalContainer_domain_class.getClass_());
+		return handleExternalLocalAssociation(d, localDomainClass.getClass_(), externalContainerDomainClass.getClass_());
 	}
 
 
 	private static boolean handleExternalLocalAssociation(
 			IEObjectDescription d, Class localClass, EClass externalEClass) {
-		Collection<EClass> SuperEClasses = VpDiagramHelper.getExternalSuperClassEClasses(localClass);
+		Collection<EClass> superEClasses = VpDiagramHelper.getExternalSuperClassEClasses(localClass);
 		
 		boolean result = false;
-		for (EClass eClass : SuperEClasses) {
+		for (EClass eClass : superEClasses) {
 			result |= handleExternalExternalAssociation(d, eClass, externalEClass);
 		}
 		
@@ -140,22 +140,22 @@ public class VpdiagramScopeHelper {
 
 	private static boolean handleExternalExternalAssociation(
 			IEObjectDescription ieod, 
-			ExternalClass externalDomain_class,
-			ExternalClass externalContainer_domain_class) {
+			ExternalClass externalDomainClass,
+			ExternalClass externalContainerDomainClass) {
 		
-		return handleExternalExternalAssociation(ieod, externalDomain_class.getClass_(), externalContainer_domain_class.getClass_());
+		return handleExternalExternalAssociation(ieod, externalDomainClass.getClass_(), externalContainerDomainClass.getClass_());
 	}
 
 
-	private static boolean handleExternalExternalAssociation(IEObjectDescription ieod, EClass domain_eClass,
-			EClass container_eClass) {
+	private static boolean handleExternalExternalAssociation(IEObjectDescription ieod, EClass domainEClass,
+			EClass containerEClass) {
 		
-		if (domain_eClass == null || container_eClass == null)
+		if (domainEClass == null || containerEClass == null)
 			return false; 
 		
 		
-		EList<EReference> allReferencesContainerDomain = container_eClass.getEAllReferences();
-		EList<EReference> filtredReferences = VpDiagramHelper.filterReferenceWithType(allReferencesContainerDomain, domain_eClass);
+		EList<EReference> allReferencesContainerDomain = containerEClass.getEAllReferences();
+		EList<EReference> filtredReferences = VpDiagramHelper.filterReferenceWithType(allReferencesContainerDomain, domainEClass);
 		EList<EClass> typeRefClasses = new UniqueEList<EClass>();
 		EList<String> refTypeNames = new UniqueEList<String>();
 		
@@ -192,40 +192,40 @@ public class VpdiagramScopeHelper {
 				
 				EObject ndeContainer = nde.eContainer();
 				if (ndeContainer instanceof Container || ndeContainer instanceof Node || ndeContainer instanceof BorderedNode){
-					AbstractClass domain_class = VpDiagramHelper.getDomain_class(nde);
-					AbstractClass container_domain_class = VpDiagramHelper.getDomainContainerOfContainerOfElement(nde);
+					AbstractClass domainClass = VpDiagramHelper.getDomain_class(nde);
+					AbstractClass containerDomainClass = VpDiagramHelper.getDomainContainerOfContainerOfElement(nde);
 
-					if (domain_class == null)
+					if (domainClass == null)
 						return  d.getEObjectOrProxy() instanceof AbstractAssociation;
 
-					if (container_domain_class == null){
+					if (containerDomainClass == null){
 						//With import
 						EClass eClass = VpDiagramHelper.getDomainContainerOfContainerOfElementExternal(nde);
 						
-						if (domain_class instanceof ExternalClass){
-							ExternalClass externalDomain_class = (ExternalClass)domain_class;
-							return handleExternalExternalAssociation(d, externalDomain_class.getClass_(), eClass);
+						if (domainClass instanceof ExternalClass){
+							ExternalClass externalDomainClass = (ExternalClass)domainClass;
+							return handleExternalExternalAssociation(d, externalDomainClass.getClass_(), eClass);
 						}
 						
-						if (domain_class instanceof LocalClass){
-							LocalClass localDomain_class = (LocalClass)domain_class;
-							return handleExternalLocalAssociation(d, localDomain_class.getClass_(), eClass);
+						if (domainClass instanceof LocalClass){
+							LocalClass localDomainClass = (LocalClass)domainClass;
+							return handleExternalLocalAssociation(d, localDomainClass.getClass_(), eClass);
 						}
 						
 						return d.getEObjectOrProxy() instanceof ElementExtension; 
 					}
 
-					if (container_domain_class instanceof LocalClass){
-						LocalClass containerLocalDomain_class = (LocalClass)container_domain_class;
+					if (containerDomainClass instanceof LocalClass){
+						LocalClass containerLocalDomainClass = (LocalClass)containerDomainClass;
 
-						if (domain_class instanceof LocalClass){
-							LocalClass localDomain_class = (LocalClass)domain_class;
+						if (domainClass instanceof LocalClass){
+							LocalClass localDomainClass = (LocalClass)domainClass;
 
-							return handleLocalLocalAssociation(d, localDomain_class, containerLocalDomain_class) 
+							return handleLocalLocalAssociation(d, localDomainClass, containerLocalDomainClass) 
 									&& ProjectUtil.areInSameProject(context, d.getEObjectOrProxy());
 						}
 
-						if (domain_class instanceof ExternalClass){
+						if (domainClass instanceof ExternalClass){
 							return d.getEObjectOrProxy() instanceof ElementExtension; 
 						}
 					}
@@ -242,9 +242,9 @@ public class VpdiagramScopeHelper {
 	 */
 
 	private static boolean handleLocalLocalAssociation(IEObjectDescription d,
-			LocalClass localDomain_class, LocalClass containerLocalDomain_class) {
+			LocalClass localDomainClass, LocalClass containerLocalDomainClass) {
 		
-		return  handleLocalLocalAssociation(d, localDomain_class.getClass_(), containerLocalDomain_class.getClass_());
+		return  handleLocalLocalAssociation(d, localDomainClass.getClass_(), containerLocalDomainClass.getClass_());
 	}
 
 	private static boolean handleLocalLocalAssociation(IEObjectDescription d,

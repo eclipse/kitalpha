@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -55,19 +55,19 @@ public class EdgeDomain implements IAdditionalConstraint {
 
 		if (domain instanceof EdgeDomainElement)
 		{
-			EdgeDomainElement e_domain = (EdgeDomainElement) domain;
+			EdgeDomainElement edomain = (EdgeDomainElement) domain;
 			
-			if (e_domain.getThe_Domain() == null)
+			if (edomain.getThe_Domain() == null)
 				return ValidationStatus.getErrorStatusWithRuleFlag(Flag_NullDomainClass);
 			
-			if (e_domain.getSource_Locator() == null && 
-					(e_domain.getSource_query() == null || (
-							e_domain.getSource_query() != null && 
-							e_domain.getSource_query().trim().length() == 0)))
+			if (edomain.getSource_Locator() == null && 
+					(edomain.getSource_query() == null || (
+							edomain.getSource_query() != null && 
+							edomain.getSource_query().trim().length() == 0)))
 				return ValidationStatus.getErrorStatusWithRuleFlag(Flag_NeitherQueryAndSourceLocator);
 
-			if (e_domain.getSource_Locator() != null && 
-					(e_domain.getSource_query() != null && e_domain.getSource_query().trim().length() > 0))
+			if (edomain.getSource_Locator() != null && 
+					(edomain.getSource_query() != null && edomain.getSource_query().trim().length() > 0))
 				return ValidationStatus.getErrorStatusWithRuleFlag(Flag_BothQueryAndSourceLocator);
 		}
 		

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -37,7 +37,7 @@ public interface IActivity {
 	 *            the parameters of the strategy
 	 * @return the allocation instantiated by this strategy
 	 */
-	public IStatus run(ActivityParameters activityParams_p);
+	public IStatus run(ActivityParameters activityParams);
 
 	/**
 	 * 
@@ -48,10 +48,10 @@ public interface IActivity {
 	/**
 	 * Method that allows to validate the values of the strategy parameters.
 	 * 
-	 * @param valuedParameters_p :
+	 * @param valuedParameters :
 	 *            the new values of the parameters
 	 * @return the parameters that aren't valid
 	 */
 	public Map<String, ParameterError<?>> validateParameters(
-			ActivityParameters valuedParameters_p);
+			ActivityParameters valuedParameters);
 }

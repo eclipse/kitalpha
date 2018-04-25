@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,9 +44,9 @@ public class ViewpointResourceProviderException extends Exception {
 	 * 
 	 * @param viewpoint
 	 */
-	public ViewpointResourceProviderException(int ID) {
+	public ViewpointResourceProviderException(int id) {
 		super();
-		id_ = ID;
+		id_ = id;
 	}
 	
 	public boolean isCritical() {

@@ -71,12 +71,12 @@ public class VpuiScopeProvider extends AbstractDeclarativeScopeProvider {
 		if (parent == null) { 
 			return IScope.NULLSCOPE;
 		}
-		DataSource ui_DataSource = parent.getUI_DataSource();
+		DataSource uiDataSource = parent.getUI_DataSource();
 		org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class mappedClass = null;
 		boolean isMapped = false;
-		if (ui_DataSource != null && ui_DataSource instanceof LocalClass) {
+		if (uiDataSource != null && uiDataSource instanceof LocalClass) {
 			// current UI is mapped to a Class
-			LocalClass lcl = (LocalClass) ui_DataSource;
+			LocalClass lcl = (LocalClass) uiDataSource;
 			mappedClass = lcl.getUI_For_LocalClass();
 			isMapped = true;
 		}

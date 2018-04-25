@@ -30,13 +30,13 @@ public class EdgesUniqueNoConditionalRepresentationRules implements IAdditionalC
 
 	public ValidationStatus validationRules(Object data) {
 		AbstractEdge aEdge= (AbstractEdge) data;
-		int contional_representation_count = 0;
+		int contionalRepresentationCount = 0;
 		for (EdgeDescription iEdgeDescription : aEdge.getE_description()) 
 		{
 			if (iEdgeDescription.getCondition() == null)
-				contional_representation_count ++;
+				contionalRepresentationCount ++;
 			
-			if (contional_representation_count > 1)
+			if (contionalRepresentationCount > 1)
 				return ValidationStatus.Error;
 		}
 		return ValidationStatus.Ok;

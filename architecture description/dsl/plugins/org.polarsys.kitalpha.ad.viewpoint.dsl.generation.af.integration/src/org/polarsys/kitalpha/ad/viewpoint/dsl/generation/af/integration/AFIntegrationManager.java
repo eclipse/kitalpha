@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -88,16 +88,16 @@ public class AFIntegrationManager {
 	 * 
 	 * Patch Manifest does'nt need to stop the AF Viewpoint. 
 	 * 
-	 * @param model_uri : The platform URI of the .vp model. URI is like: 
+	 * @param modeluri : The platform URI of the .vp model. URI is like: 
 	 * 					  "platforme:/resource/PluginId/folders/model.vp" 
 	 * @throws AFIntegrationException
 	 */
-	public void patchManifest(String model_uri) throws AFIntegrationException{
-		URI uri = URI.createURI(model_uri);
+	public void patchManifest(String modeluri) throws AFIntegrationException{
+		URI uri = URI.createURI(modeluri);
 		if (uri != null && uri.segments().length > 2)
 		{
-			String bundle_ID = uri.segment(1);
-			doPatchManifest(bundle_ID);
+			String bundleID = uri.segment(1);
+			doPatchManifest(bundleID);
 		}
 		else
 			throw new AFIntegrationException(AFIntegrationException.Patch_Manifest);
@@ -119,8 +119,8 @@ public class AFIntegrationManager {
 		EObject root = EcoreUtil.getRootContainer(viewpoint, true);
 		if (root != null)
 		{
-			String bundle_ID = root.eResource().getURI().segment(1);
-			doPatchManifest(bundle_ID);
+			String bundleID = root.eResource().getURI().segment(1);
+			doPatchManifest(bundleID);
 		}
 		else
 			throw new AFIntegrationException(AFIntegrationException.Patch_Manifest);
@@ -129,21 +129,21 @@ public class AFIntegrationManager {
 	
 	/**
 	 * Fire the Manifest Patching
-	 * @param bundle_ID
+	 * @param bundleID
 	 * @throws AFIntegrationException
 	 */
-	private void doPatchManifest(String bundle_ID) throws AFIntegrationException{
-		IProject af_project = null;
-		if (bundle_ID != null && bundle_ID.trim().length() > 0)
+	private void doPatchManifest(String bundleID) throws AFIntegrationException{
+		IProject afproject = null;
+		if (bundleID != null && bundleID.trim().length() > 0)
 		{
-			af_project = ResourcesPlugin.getWorkspace().getRoot().getProject(bundle_ID);
+			afproject = ResourcesPlugin.getWorkspace().getRoot().getProject(bundleID);
 			
-			if (af_project.exists())
+			if (afproject.exists())
 			{
 				List<String> list = AFBundlesIntegration.getInstance().getRequiredBundles();
 				if (list != null && ! list.isEmpty())
 				{
-					PDEUtility.updateRequiredBundles(af_project, list, null);
+					PDEUtility.updateRequiredBundles(afproject, list, null);
 				}
 			}
 		}
@@ -161,11 +161,11 @@ public class AFIntegrationManager {
 	 * Patch Model need to stop the AF Viewpoint it it is running. In this case, the AF Viewpoint 
 	 * is started after the model patching finished  
 	 *  
-	 * @param model_uri
+	 * @param modeluri
 	 * @throws AFIntegrationException
 	 */
-	public void patchModel(String model_uri) throws AFIntegrationException {
-		URI uri = URI.createURI(model_uri);
+	public void patchModel(String modeluri) throws AFIntegrationException {
+		URI uri = URI.createURI(modeluri);
 		ResourceSet rs = new ResourceSetImpl();
 		Resource r = null;
 		
@@ -218,8 +218,8 @@ public class AFIntegrationManager {
 		}
 		
 		/** Add registered ePackages to the Meta model list **/
-		List<EPackage> epackage_list = AFEcoreIntegration.getInstance().getEPackageToRegister();
-		for (EPackage ePackage : epackage_list) 
+		List<EPackage> epackagelist = AFEcoreIntegration.getInstance().getEPackageToRegister();
+		for (EPackage ePackage : epackagelist) 
 		{
 			if (! isEPackageRegistered(metaModel, ePackage))
 			{
@@ -250,8 +250,8 @@ public class AFIntegrationManager {
 		}
 		
 		/** Add registered Sirius Group to the representation list **/
-		List<Group> representation_list = AFRepresentationIntegration.getInstance().getRepresentationToRegister();
-		for (Group group : representation_list) 
+		List<Group> representationlist = AFRepresentationIntegration.getInstance().getRepresentationToRegister();
+		for (Group group : representationlist) 
 		{
 			if (!isRepresentationRegistered(representation, group))
 			{

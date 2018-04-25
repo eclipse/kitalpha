@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,13 +27,13 @@ public class EcoreProviderImpl extends AbstractCoreResourceProvider{
 	 * @throws ViewpointResourceException
 	 */
 	public EPackage getEPackage() throws ViewpointResourceException{
-		EPackage ePackage_ = null;
+		EPackage ePackage = null;
 
 		EObject rootElement = getRootElement();
 		if (rootElement != null)
-			ePackage_ = (EPackage) rootElement;
+			ePackage = (EPackage) rootElement;
 
-		return ePackage_;
+		return ePackage;
 	}
 	
 }

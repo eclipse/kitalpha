@@ -51,11 +51,11 @@ public class OCLConstraintDescriptor extends
 		super(namespace, requirementId, invariantId);
 		this.constraint = constraint;
 
-		String name_temp = constraint.getName();
-		if (name_temp == null) {
-			name_temp = Long.toHexString(System.identityHashCode(constraint));
+		String nameTemp = constraint.getName();
+		if (nameTemp == null) {
+			nameTemp = Long.toHexString(System.identityHashCode(constraint));
 		}
-		this.name = name_temp;
+		this.name = nameTemp;
 		this.code = code;
 		this.errorMessage = validationInfo.getMessage();
 		this.severity = validationInfo.getSeverity();

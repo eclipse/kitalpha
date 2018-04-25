@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -116,9 +116,9 @@ public class UseLinksContentassistHelper {
 			final String vpProjectName = ResourceHelper.getProjectName(viewpoint);
 
 			//FIXME: get this id form configuation aspect
-			final String resource_id = vpProjectName.substring(0, vpProjectName.lastIndexOf("."));
+			final String resourceid = vpProjectName.substring(0, vpProjectName.lastIndexOf("."));
 
-			final org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint coreDomainViewpoint = CoreDomainViewpointHelper.getCoreDomainViewpoint(resource_id, null);
+			final org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint coreDomainViewpoint = CoreDomainViewpointHelper.getCoreDomainViewpoint(resourceid, null);
 
 			if (coreDomainViewpoint == null){
 				throw new RuntimeException("Could not find the viewpoint resource for the project: " + vpProjectName);
@@ -136,17 +136,17 @@ public class UseLinksContentassistHelper {
 		for (final EPackage ePackage : packages) {
 			final String nsuri = ePackage.getNsURI();
 			final URI uri = URI.createURI(nsuri);
-			final URI p_uri = URIConverterHelper.getPlatformURI(uri);
+			final URI puri = URIConverterHelper.getPlatformURI(uri);
 
-			if ((p_uri != null) && !p_uri.isEmpty()) {
-				imports.put(MODEL_KEY, p_uri.toString());
+			if ((puri != null) && !puri.isEmpty()) {
+				imports.put(MODEL_KEY, puri.toString());
 			} else {
 				final Resource ePackageResource = ePackage.eResource();
 				if (ePackageResource != null){
-					final URI resource_uri = ePackageResource.getURI();
+					final URI resourceuri = ePackageResource.getURI();
 
-					if ((resource_uri != null) && !resource_uri.isEmpty()) {
-						imports.put(MODEL_KEY, resource_uri.toString());
+					if ((resourceuri != null) && !resourceuri.isEmpty()) {
+						imports.put(MODEL_KEY, resourceuri.toString());
 					}
 				} else {
 					imports.put(MODEL_KEY, nsuri);
@@ -158,14 +158,14 @@ public class UseLinksContentassistHelper {
 			if (representationElement instanceof SiriusRepresentation){
 				final Group group = ((SiriusRepresentation)representationElement).getOdesign();
 				if (group.eResource().getURI().isPlatformResource()){
-					final String ptf_uri = ResourceHelper.URIFix.createPlatformResourceURI(group.eResource().getURI().toPlatformString(true), true).toString();
-					imports.put(DIAGRAM_KEY, ptf_uri);
+					final String ptfuri = ResourceHelper.URIFix.createPlatformResourceURI(group.eResource().getURI().toPlatformString(true), true).toString();
+					imports.put(DIAGRAM_KEY, ptfuri);
 				}
 
 				if (group.eResource().getURI().isPlatformPlugin()){
-					final String plg_uri = ResourceHelper.URIFix.createPlatformPluginURI(group.eResource
+					final String plguri = ResourceHelper.URIFix.createPlatformPluginURI(group.eResource
 							().getURI().toPlatformString(true), true).toString();
-					imports.put(DIAGRAM_KEY, plg_uri);
+					imports.put(DIAGRAM_KEY, plguri);
 				}
 			}
 		}

@@ -36,26 +36,26 @@ public class CadenceUiRegistry {
   /**
    * 
    * @param configuration : current launch configuration
-   * @param workflow_id : id of the workflow
-   * @param workflowElement_id : id of the workflow element
+   * @param workflowid : id of the workflow
+   * @param workflowElementid : id of the workflow element
    * @param params : Map of workflow Parameters
    */
-  public static void launch(ILaunchConfiguration configuration, String workflow_id, String workflowElement_id, Map<String, GenericParameter<?>> params) {
-    launch(configuration, workflow_id, workflowElement_id, params, null);
+  public static void launch(ILaunchConfiguration configuration, String workflowid, String workflowElementid, Map<String, GenericParameter<?>> params) {
+    launch(configuration, workflowid, workflowElementid, params, null);
   }
 
   /**
    * 
    * @param configuration : current launch configuration
-   * @param workflow_id : id of the workflow
-   * @param workflowElement_id : id of the workflow element
+   * @param workflowid : id of the workflow
+   * @param workflowElementid : id of the workflow element
    * @param params : Map of workflow Parameters
    */
-  public static void launch(ILaunchConfiguration configuration, String workflow_id, String workflowElement_id, Map<String, GenericParameter<?>> params,
-      IProgressMonitor monitor_p) {
+  public static void launch(ILaunchConfiguration configuration, String workflowid, String workflowElementid, Map<String, GenericParameter<?>> params,
+      IProgressMonitor monitor) {
     try {
       // Extract activities and optional parameters from launch configuration
-      final WorkflowActivityParameter workflowParameters = getActivities(configuration, workflow_id, workflowElement_id);
+      final WorkflowActivityParameter workflowParameters = getActivities(configuration, workflowid, workflowElementid);
       // Add business parameters to the map
       for (String activityID : workflowParameters.getActivitiesID()) { // key == activities_id
         ActivityParameters activityparameters = workflowParameters.getActivityParameters(activityID);
@@ -64,7 +64,7 @@ public class CadenceUiRegistry {
 			activityparameters.addParameter(entry.getValue());
 		}
       }
-      CadenceLauncher.cadence(workflow_id, workflowElement_id, workflowParameters, monitor_p);
+      CadenceLauncher.cadence(workflowid, workflowElementid, workflowParameters, monitor);
     } catch (Exception e) {
       ILog log = Activator.getDefault().getLog();
       log.log(new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage()));
@@ -74,14 +74,14 @@ public class CadenceUiRegistry {
   /**
    * 
    * @param configuration : current launch configuration
-   * @param workflow_id : id of the workflow
-   * @param workflowElement_id : id of the workflow element
+   * @param workflowid : id of the workflow
+   * @param workflowElementid : id of the workflow element
    * @param params : Map of workflow Parameters
    * @return the Map of the activities and their parameters for the workflow element specified
    * 
    */
-  public static WorkflowActivityParameter getActivities(ILaunchConfiguration configuration, String workflow_id, String workflowElement_id) {
-    final WorkflowActivityParameter res = CadenceHelper.getActivitiesFromLauchConfiguration(configuration, workflowElement_id);
+  public static WorkflowActivityParameter getActivities(ILaunchConfiguration configuration, String workflowid, String workflowElementid) {
+    final WorkflowActivityParameter res = CadenceHelper.getActivitiesFromLauchConfiguration(configuration, workflowElementid);
     return res;
   }
 }

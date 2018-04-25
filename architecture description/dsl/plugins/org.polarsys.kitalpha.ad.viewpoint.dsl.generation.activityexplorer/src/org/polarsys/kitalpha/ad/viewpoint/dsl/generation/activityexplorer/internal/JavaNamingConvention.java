@@ -69,8 +69,8 @@ public class JavaNamingConvention {
 		if (null == context)
 			throw new IllegalArgumentException("[VPDSL - Java Class Naming Convention] JavaClassUseContext is mandatory");
 		
-		final String s_context = context.toString();
-		String javaPackageName = (null != basePackage && !basePackage.isEmpty() ? basePackage + "." + s_context : s_context);
+		final String scontext = context.toString();
+		String javaPackageName = (null != basePackage && !basePackage.isEmpty() ? basePackage + "." + scontext : scontext);
 		javaPackageName = JDTUtility.getValidPackageName(javaPackageName);
 		
 		return javaPackageName;

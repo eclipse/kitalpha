@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,16 +27,16 @@ public class GenerationEdge {
 	
 	private ViewpointLinkKind _kind = ViewpointLinkKind.DEPENDECIES;
 	
-	public void setSourceNode(GenerationNode _sourceNode) {
-		this._sourceNode = _sourceNode;
+	public void setSourceNode(GenerationNode sourceNode) {
+		this._sourceNode = sourceNode;
 	}
 	
 	public GenerationNode getTargetNode() {
 		return _targetNode;
 	}
 	
-	public void setTargetNode(GenerationNode _targetNode) {
-		this._targetNode = _targetNode;
+	public void setTargetNode(GenerationNode targetNode) {
+		this._targetNode = targetNode;
 	}
 	
 	public GenerationNode getSourceNode() {
@@ -47,7 +47,7 @@ public class GenerationEdge {
 		return _kind;
 	}
 	
-	public void setKind(ViewpointLinkKind _kind) {
-		this._kind = _kind;
+	public void setKind(ViewpointLinkKind kind) {
+		this._kind = kind;
 	}
 }

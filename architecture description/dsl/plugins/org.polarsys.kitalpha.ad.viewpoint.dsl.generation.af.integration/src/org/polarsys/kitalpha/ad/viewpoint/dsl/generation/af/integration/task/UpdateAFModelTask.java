@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,14 +24,14 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.af.integration.exceptio
 
 public class UpdateAFModelTask implements ITaskProduction {
 	
-	protected static final String modelUri_Contract = "af.model.platform.uri"; // NON-NLS-N$ 
+	protected static final String MODEL_URI_CONTRACT = "af.model.platform.uri"; // NON-NLS-N$ 
 
 	public void doExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
 		
-		String model_uri = productionContext.getInputValue(modelUri_Contract, String.class);
+		String modeluri = productionContext.getInputValue(MODEL_URI_CONTRACT, String.class);
 		try {
-			AFIntegrationManager.getInstance().patchModel(model_uri);
+			AFIntegrationManager.getInstance().patchModel(modeluri);
 		} catch (AFIntegrationException e) {
 			e.printStackTrace();
 		}

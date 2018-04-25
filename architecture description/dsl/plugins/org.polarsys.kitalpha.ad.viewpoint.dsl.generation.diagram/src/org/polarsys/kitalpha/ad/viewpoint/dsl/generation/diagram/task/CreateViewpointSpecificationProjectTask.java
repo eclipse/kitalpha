@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -74,7 +74,7 @@ public class CreateViewpointSpecificationProjectTask implements ITaskProduction 
 			return;
 		
 		final String modelName = productionContext.getInputValue("model.name", String.class);
-		final String modelName_withextension = modelName+ "."+ ViewpointSpecificationProject.VIEWPOINT_MODEL_EXTENSION;
+		final String modelNameWithextension = modelName+ "."+ ViewpointSpecificationProject.VIEWPOINT_MODEL_EXTENSION;
 		final String designProjectName = productionContext.getInputValue("design.project.name", String.class);
 		final String rootProjectName = productionContext.getInputValue("root.project.name", String.class);
 		final IProgressMonitor fmonitor = monitor;
@@ -87,7 +87,7 @@ public class CreateViewpointSpecificationProjectTask implements ITaskProduction 
 						boolean initialization = false;
 						if (! project.exists())
 						{
-							ViewpointSpecificationProject.createNewViewpointSpecificationProject(designProjectName, modelName_withextension);
+							ViewpointSpecificationProject.createNewViewpointSpecificationProject(designProjectName, modelNameWithextension);
 							initialization = true;
 						}
 						
@@ -98,16 +98,16 @@ public class CreateViewpointSpecificationProjectTask implements ITaskProduction 
 							description.create(IFolder.DEPTH_INFINITE, true, null);
 						}
 
-						IFile odesign_file = description.getFile(modelName_withextension);
-						if (odesign_file.exists())
+						IFile odesignfile = description.getFile(modelNameWithextension);
+						if (odesignfile.exists())
 						{
 							if (! initialization)
 							{
-								copyOdesignFile(odesign_file, monitor);
+								copyOdesignFile(odesignfile, monitor);
 							}
 							
 							try {
-								clearODesignModelContent(odesign_file, monitor);
+								clearODesignModelContent(odesignfile, monitor);
 								// Remove the Java service
 								if (initialization)
 								{
@@ -190,12 +190,12 @@ public class CreateViewpointSpecificationProjectTask implements ITaskProduction 
 		}
 	}
 	
-	private void clearODesignModelContent(IFile odesign_file, IProgressMonitor monitor) throws IOException{
+	private void clearODesignModelContent(IFile odesignfile, IProgressMonitor monitor) throws IOException{
 		
 		AdapterFactoryEditingDomain domain = 
 		      new AdapterFactoryEditingDomain(new DescriptionAdapterFactory(), new BasicCommandStack());
 		
-		Resource resource = domain.createResource(odesign_file.getFullPath().toString());
+		Resource resource = domain.createResource(odesignfile.getFullPath().toString());
 		resource.load(Collections.EMPTY_MAP);
 		EList<EObject> content = resource.getContents();
 		if (content!= null && content.size() > 0)
@@ -226,20 +226,20 @@ public class CreateViewpointSpecificationProjectTask implements ITaskProduction 
 	
 	/**
 	 * @param project
-	 * @param odesign_file
+	 * @param odesignfile
 	 * @param monitor
 	 * @throws CoreException
 	 */
-	private void copyOdesignFile(IFile odesign_file, IProgressMonitor monitor) throws CoreException {
+	private void copyOdesignFile(IFile odesignfile, IProgressMonitor monitor) throws CoreException {
 		// Check if description_old folder existence
-		IProject project = odesign_file.getProject();
+		IProject project = odesignfile.getProject();
 		IFolder oldDescription = project.getFolder("description_old");
 		if (! oldDescription.exists())
 			oldDescription.create(true, true, monitor);
 
 		// Create the copy file name 
-		String fileExt = odesign_file.getFileExtension();
-		IPath copyPath = odesign_file.getFullPath();
+		String fileExt = odesignfile.getFileExtension();
+		IPath copyPath = odesignfile.getFullPath();
 		copyPath = copyPath.removeFileExtension();
 		Calendar cal = Calendar.getInstance();
 		DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd_HHmmssSSS");
@@ -247,7 +247,7 @@ public class CreateViewpointSpecificationProjectTask implements ITaskProduction 
 
 		// Create the odesign file copy
 		IFile copyFile = oldDescription.getFile(fileName);
-		odesign_file.copy(copyFile.getFullPath(), 2, monitor);
+		odesignfile.copy(copyFile.getFullPath(), 2, monitor);
 	}
 	
 	public void postExecute(ITaskProductionContext productionContext,

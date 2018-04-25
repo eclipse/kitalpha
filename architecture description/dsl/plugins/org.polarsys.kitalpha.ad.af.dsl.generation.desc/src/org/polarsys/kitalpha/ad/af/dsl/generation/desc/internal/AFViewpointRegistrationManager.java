@@ -59,8 +59,8 @@ public class AFViewpointRegistrationManager {
 			afModelName += Constants.AF_MODELS_EXTENSION;
 		}
 		
-		String uri_s = "/"+afBundleID+"/"+afModelFolder+"/"+afModelName;
-		registerNewGeneratedViewpoint(uri_s, viewpoints);
+		String uris = "/"+afBundleID+"/"+afModelFolder+"/"+afModelName;
+		registerNewGeneratedViewpoint(uris, viewpoints);
 	}
 	
 	public static void registerNewGeneratedViewpoint(String afResourceStringUri, Viewpoint viewpoint)
@@ -96,10 +96,10 @@ public class AFViewpointRegistrationManager {
 				
 				for (Viewpoint viewpoint : viewpoints) 
 				{
-					EObject af_viewpoint = getAFViewpoint(viewpoint, resource.getResourceSet());
-					if (af_viewpoint != null)
+					EObject afViewpoint = getAFViewpoint(viewpoint, resource.getResourceSet());
+					if (afViewpoint != null)
 					{
-						Command  addCommand = AddCommand.create(editingDomain, af, AfPackage.eINSTANCE.getAF_Viewpoints() , af_viewpoint);
+						Command  addCommand = AddCommand.create(editingDomain, af, AfPackage.eINSTANCE.getAF_Viewpoints() , afViewpoint);
 						allAddCommands.append(addCommand);
 					}
 					else

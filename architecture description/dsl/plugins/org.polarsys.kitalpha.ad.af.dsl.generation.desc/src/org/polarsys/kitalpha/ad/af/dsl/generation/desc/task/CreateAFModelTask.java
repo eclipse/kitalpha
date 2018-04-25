@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -59,8 +59,8 @@ public class CreateAFModelTask implements ITaskProduction {
 		
 		List<Viewpoint> notGeneratedViewpoints = new ArrayList<Viewpoint>();
 		
-		String uri_s = "/"+projectId+"/"+Constants.MODELS_FOLDER+"/"+shortName+ Constants.AF_MODELS_EXTENSION;
-		URI uri = URI.createPlatformResourceURI(uri_s, false);
+		String uris = "/"+projectId+"/"+Constants.MODELS_FOLDER+"/"+shortName+ Constants.AF_MODELS_EXTENSION;
+		URI uri = URI.createPlatformResourceURI(uris, false);
 		
 		ResourceSet resourceSet = new ResourceSetImpl();
 		Resource resource = resourceSet.createResource(uri);
@@ -71,27 +71,27 @@ public class CreateAFModelTask implements ITaskProduction {
 			EObject eObject = (EObject) content.get(0);
 			if (eObject instanceof ArchitectureFramework)
 			{
-				ArchitectureFramework af_d = (ArchitectureFramework) eObject;
+				ArchitectureFramework afd = (ArchitectureFramework) eObject;
 				AF af = AfFactory.eINSTANCE.createAF();
-				af.setName(af_d.getName());
-				af.setDescription(af_d.getDescription());
+				af.setName(afd.getName());
+				af.setDescription(afd.getDescription());
 				af.setId(EcoreUtil.generateUUID());
-				String projectName = AFSpecConfigurationHelper.getAFProjectName(af_d);
+				String projectName = AFSpecConfigurationHelper.getAFProjectName(afd);
 				af.setVpid(projectName);
 				resource.getContents().add(af);
 				
-				Viewpoints vps = af_d.getAf_viewpoints();
+				Viewpoints vps = afd.getAf_viewpoints();
 				if (vps != null)
 				{
 					for (Viewpoint viewpoint : vps.getOwned_viewpoints()) 
 					{
 						// model update
 						String viewpointID = VpDslConfigurationHelper.getRootProjectName(viewpoint);
-						org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint viewpoint_af = 
+						org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint viewpointaf = 
 							PlatformViewpointHelper.getAFViewpoint(viewpointID, resourceSet);
 
-						if (viewpoint_af != null) {
-							af.getViewpoints().add(viewpoint_af);
+						if (viewpointaf != null) {
+							af.getViewpoints().add(viewpointaf);
 						}
 						else {
 							notGeneratedViewpoints.add(viewpoint);
@@ -109,7 +109,7 @@ public class CreateAFModelTask implements ITaskProduction {
 		}
 		
 		productionContext.setOutputValue(Constants.CONTRACT_NOT_GENERATED_VP, notGeneratedViewpoints);
-		productionContext.setOutputValue(Constants.CONTRACT_MODEL_STRING_URI, uri_s);
+		productionContext.setOutputValue(Constants.CONTRACT_MODEL_STRING_URI, uris);
 		
 	}
 

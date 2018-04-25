@@ -124,10 +124,10 @@ public class UniqueUIFieldNameInSection implements IAdditionalConstraint {
 		UIDescription uiDescription = (UIDescription) current;
 		for (UI ui : uiDescription.getUIs()) 
 		{
-			final EList<UIContainer> ui_Containers = ui.getUI_Containers();
-			if (! ui_Containers.isEmpty())
+			final EList<UIContainer> uiContainers = ui.getUI_Containers();
+			if (! uiContainers.isEmpty())
 			{
-				result.addAll(ui_Containers);
+				result.addAll(uiContainers);
 			}
 		}
 		

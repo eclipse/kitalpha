@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -65,19 +65,19 @@ public class FactoryComponentsLauncherTask implements ITaskProduction {
 	@SuppressWarnings("unchecked")
 	public void doExecute(ITaskProductionContext productionContext,
 								IProgressMonitor monitor) throws InvocationException {
-		List<URI> factoryComponentsList_Value = productionContext.getInputValue(IContractNames.factoryComponentsList, ArrayList.class);
-		Map<String, Object> factoryComponentConstracts_Value = productionContext.getInputValue(IContractNames.factoryComponentConstracts, Map.class);
+		List<URI> factoryComponentsListValue = productionContext.getInputValue(IContractNames.factoryComponentsList, ArrayList.class);
+		Map<String, Object> factoryComponentConstractsValue = productionContext.getInputValue(IContractNames.factoryComponentConstracts, Map.class);
 		
-		if (factoryComponentsList_Value == null)
+		if (factoryComponentsListValue == null)
 			throw new IllegalArgumentException(Messages.Contract_Empty_FactoryComponentsList);
 		
-		for (URI uri : factoryComponentsList_Value) 
+		for (URI uri : factoryComponentsListValue) 
 		{
 			Activity extensionLauncher = InvocationHelper.getActivity(uri);
 			if (extensionLauncher instanceof FactoryComponent)
 			{
 				FactoryComponent factoryComponent = (FactoryComponent) extensionLauncher;
-				setContractsValues(factoryComponent, factoryComponentConstracts_Value);
+				setContractsValues(factoryComponent, factoryComponentConstractsValue);
 				new GenerationBeginEvent(factoryComponent).fire();
 				InvocationHelper.validateAndInvoke(factoryComponent, monitor);
 				new GenerationEndEvent(factoryComponent).fire();

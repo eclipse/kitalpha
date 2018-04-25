@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -152,9 +152,9 @@ public class AFSpecProjectWizardSecondPage extends AbstractAFSpecProjectWizardPa
 		// get the available list of concrete Syntax Creators to add them in the list
 		try {
 			availableCreator = getAvailableConcreteSyntaxesHandlers();
-			Map<String, String> availableCreator_t  = new HashMap<String, String>();
-			availableCreator_t.putAll(availableCreator);
-			for (Map.Entry<String, String> map : availableCreator_t.entrySet()) {
+			Map<String, String> availableCreatorTmp  = new HashMap<String, String>();
+			availableCreatorTmp.putAll(availableCreator);
+			for (Map.Entry<String, String> map : availableCreatorTmp.entrySet()) {
 				String creatorID = map.getKey();
 				if (DefaultWizardSelection.isDefault(creatorID, DefaultWizardSelection.RepresentationDefaultSelection)){
 					availableCreator.remove(map.getKey());
@@ -163,7 +163,6 @@ public class AFSpecProjectWizardSecondPage extends AbstractAFSpecProjectWizardPa
 			}
 			
 		} catch (CoreException e) {
-//			e.printStackTrace();
 		}
 		
 		if ((availableCreator == null || availableCreator.size() == 0) &&  

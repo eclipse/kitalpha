@@ -525,16 +525,16 @@ public abstract class AbstractRepresentationCreationOperation extends WorkspaceM
 			domain.getCommandStack().execute(gmfNotationModelSynchronizationCmd);
 		}
 		
-		final Diagram associatedGMFDiagram_f = associatedGMFDiagram;
+		final Diagram associatedGMFDiagramFinal = associatedGMFDiagram;
 		Display.getDefault().syncExec(new Runnable() {
 			@SuppressWarnings({ "rawtypes", "unchecked" })
 			public void run() {
 				Shell shell = new Shell(Display.getDefault());
 				try {
-					DiagramEditPart diagramEP = org.eclipse.sirius.diagram.ui.tools.internal.part.OffscreenEditPartFactory.getInstance().createDiagramEditPart(associatedGMFDiagram_f, shell);
+					DiagramEditPart diagramEP = org.eclipse.sirius.diagram.ui.tools.internal.part.OffscreenEditPartFactory.getInstance().createDiagramEditPart(associatedGMFDiagramFinal, shell);
 					
 					/** Register Nodes Edit Part in diagram viewpoint Registry **/
-					final ListIterator listIterator = associatedGMFDiagram_f.getChildren().listIterator();
+					final ListIterator listIterator = associatedGMFDiagramFinal.getChildren().listIterator();
 					while (listIterator.hasNext())
 					{
 						final Object next = listIterator.next();
@@ -552,13 +552,13 @@ public abstract class AbstractRepresentationCreationOperation extends WorkspaceM
 					/** Process layout **/
 					EList children =  null;
 					try {
-						children =  associatedGMFDiagram_f.getChildren();
+						children =  associatedGMFDiagramFinal.getChildren();
 					} catch (IllegalArgumentException e) {
 					}
 					
 					if (children != null && !children.isEmpty())
 					{
-						List layoutNodes = LayoutService.getInstance().getLayoutNodes(diagramEP, associatedGMFDiagram_f.getChildren());
+						List layoutNodes = LayoutService.getInstance().getLayoutNodes(diagramEP, associatedGMFDiagramFinal.getChildren());
 						if (!layoutNodes.isEmpty()) 
 						{
 							Runnable layoutRun = LayoutService.getInstance().layoutLayoutNodes(layoutNodes, false, layoutHint);
@@ -765,14 +765,14 @@ public abstract class AbstractRepresentationCreationOperation extends WorkspaceM
 
 		// Get/create the project from/into the workspace
 		IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(projectName);
-		NullProgressMonitor NPM = new NullProgressMonitor();
+		NullProgressMonitor monitor = new NullProgressMonitor();
 		
 		try {
 			if (! project.exists())
 			{
-				project.create(NPM);
+				project.create(monitor);
 			}
-			project.open(NPM);
+			project.open(monitor);
 		} catch (CoreException e) {
 			throw new RuntimeException("Project with name : " + projectName + " can't be localized", e);
 		}
@@ -795,7 +795,7 @@ public abstract class AbstractRepresentationCreationOperation extends WorkspaceM
 				if (! currentFolder.exists())
 				{ // Create the folder if it is was not created yet.
 					try {
-						currentFolder.create(true, true, NPM);
+						currentFolder.create(true, true, monitor);
 					} catch (CoreException e) {
 						throw new RuntimeException("Can't create folder : " + currentFolder , e);
 					}

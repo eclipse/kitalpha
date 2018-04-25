@@ -55,12 +55,12 @@ public class GenerateArchitectureFramework implements IObjectActionDelegate {
 		execute(vpGeneratorLauncher, uri, firePackaging(action.getId()));
 	}
 
-	private void execute(Activity dslVPGEneratorLauncher, URI uri, boolean do_packaging){
+	private void execute(Activity dslVPGEneratorLauncher, URI uri, boolean doPackaging){
 		if (dslVPGEneratorLauncher instanceof FactoryComponent) 
 		{
 			final FactoryComponent factoryComponent = (FactoryComponent) dslVPGEneratorLauncher;
 			ContractHelper.setDomain(factoryComponent, "model", uri);
-			ContractHelper.setBooleanContract(factoryComponent, "package.af", do_packaging); //$NON-NLS-1$
+			ContractHelper.setBooleanContract(factoryComponent, "package.af", doPackaging); //$NON-NLS-1$
 			InvokeActivityHelper.validateAndInvoke(factoryComponent, "Architecture Framework generation");
 		}
 	}

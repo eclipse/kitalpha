@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,10 +46,10 @@ public class ConcreteSyntaxResourceInitializeManager {
 					String id = iConfigurationElement.getAttribute(ConcreteSyntaxResourceInitialize_ID);
 					if (id.equals(creatorID))
 					{
-						String default_ = iConfigurationElement.getAttribute(ConcreteSyntaxResourceInitialize_Default);
-						if (default_ != null && default_.trim().length() > 0)
+						String defaultValue = iConfigurationElement.getAttribute(ConcreteSyntaxResourceInitialize_Default);
+						if (defaultValue != null && defaultValue.trim().length() > 0)
 						{
-							return Boolean.valueOf(default_);
+							return Boolean.valueOf(defaultValue);
 						}
 					}
 				}
@@ -64,7 +64,7 @@ public class ConcreteSyntaxResourceInitializeManager {
 													String vpTargetPlatform,
 													String vpRootProjectName,
 													String vpDescriptionProjectName,
-													String NsURI) throws CantInitializeConcreteSyntaxResource {
+													String nsURI) throws CantInitializeConcreteSyntaxResource {
 		IConcreteSyntaxResourceInitialize initializer = null;
 		try 
 		{

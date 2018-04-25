@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,10 +47,10 @@ public class ViewpointModelReuseResourceHelper {
 	public static List<Viewpoint> getAvailableVpdslViewpoints(ResourceSet resourceSet){
 		List<Viewpoint> result = new ArrayList<Viewpoint>();
 		// Ask model reuse for all viewpoint dsl resources
-		Resource[] _resource_vpdsl_list = getResources(null, VPDSL_MODELREUSE_DOMAIN_, VPDSL_MODELREUSE_TAG_);
-		if (_resource_vpdsl_list.length > 0)
+		Resource[] resourceVpdslList = getResources(null, VPDSL_MODELREUSE_DOMAIN_, VPDSL_MODELREUSE_TAG_);
+		if (resourceVpdslList.length > 0)
 		{
-			for (Resource resource_vpdsl : _resource_vpdsl_list) 
+			for (Resource resource_vpdsl : resourceVpdslList) 
 			{
 				URI uri = getResourceURI(resource_vpdsl);
 				EObject eObject = getResourceRootObject(uri, resourceSet);
@@ -64,13 +64,13 @@ public class ViewpointModelReuseResourceHelper {
 	
 	public static List<Viewpoint> getAllViewpointExceptCurrent(Viewpoint currentViewpoint){
 		// Gather all available VpDsl viewpoint in the platform 
-		List<Viewpoint> available_viewpoint = getAvailableVpdslViewpoints(null);
+		List<Viewpoint> availableViewpoint = getAvailableVpdslViewpoints(null);
 
 		// Look for the current one and remove it.
 		boolean checkName = currentViewpoint.getName() != null && currentViewpoint.getName().length() > 0;
 		boolean checkShortName = currentViewpoint.getShortName() != null && currentViewpoint.getShortName().length() > 0;
 		Viewpoint viewpointToRemove = null;
-		for (Viewpoint iViewpoint : available_viewpoint) 
+		for (Viewpoint iViewpoint : availableViewpoint) 
 		{
 			boolean equals = true;
 			boolean iCheckName = iViewpoint.getName() != null && iViewpoint.getName().length() > 0;
@@ -94,27 +94,27 @@ public class ViewpointModelReuseResourceHelper {
 
 		if (viewpointToRemove != null) 
 		{
-			available_viewpoint.remove(viewpointToRemove);
+			availableViewpoint.remove(viewpointToRemove);
 		}
 
-		return available_viewpoint;
+		return availableViewpoint;
 	}
 	
 	/**
 	 * Look for declared VpDsl resource by Model reuse extension point
-	 * @param id_s model reuse resource ID 
-	 * @param domain_s model reuse resource domain
-	 * @param tag_s model reuse resource tag
+	 * @param id model reuse resource ID 
+	 * @param domain model reuse resource domain
+	 * @param tag model reuse resource tag
 	 * @return an array of found {@link Resource}
 	 */
-	protected static Resource[] getResources(String id_s, String domain_s, String tag_s) {
+	protected static Resource[] getResources(String id, String domain, String tag) {
 		SearchCriteria searchCriteria = new SearchCriteria();
-		if (id_s != null && id_s.trim().length() > 0) {
-			searchCriteria.setId(id_s);
+		if (id != null && id.trim().length() > 0) {
+			searchCriteria.setId(id);
 		}
 		
-		searchCriteria.setDomain(domain_s);
-		searchCriteria.getTags().add(tag_s);
+		searchCriteria.setDomain(domain);
+		searchCriteria.getTags().add(tag);
 		return ResourceReuse.createHelper().getResources(searchCriteria);
 	}
 	
@@ -137,11 +137,11 @@ public class ViewpointModelReuseResourceHelper {
 			if (uri.fragment() == null)
 			{
 				// In this case, the result is the root object of the resource
-				org.eclipse.emf.ecore.resource.Resource e_resource = 
+				org.eclipse.emf.ecore.resource.Resource resource = 
 					resourceSet.getResource(uri, true);
 
-				if (e_resource != null && e_resource.getContents() != null && e_resource.getContents().size() > 0) {
-					result = e_resource.getContents().get(0);
+				if (resource != null && resource.getContents() != null && resource.getContents().size() > 0) {
+					result = resource.getContents().get(0);
 				}
 			}
 			else
@@ -154,10 +154,10 @@ public class ViewpointModelReuseResourceHelper {
 		return result;
 	}
 	
-	protected static URI getResourceURI(Resource resource_af){
-		Location resourceLocation = resource_af.getProviderLocation();
+	protected static URI getResourceURI(Resource resourceAf){
+		Location resourceLocation = resourceAf.getProviderLocation();
 		URI uri = null;
-		String resourcePath = resource_af.getPath();
+		String resourcePath = resourceAf.getPath();
 		switch (resourceLocation) 
 		{
 			case WORSPACE:

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014-2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -302,8 +302,8 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 			if (resource.getURI().isPlatformResource() && holdInPoject(resource.getURI(), projectName)){			
 				EcoreUtil2.resolveLazyCrossReferences(resource, CancelIndicator.NullImpl);
 				
-				boolean _tmp = handleXtextResourceErrors(resource);
-				isResourceClean = isResourceClean && _tmp;
+				boolean tmp = handleXtextResourceErrors(resource);
+				isResourceClean = isResourceClean && tmp;
 				
 				if (!isResourceClean){
 					isResourceClean &= handleEMFValidationErrors(resource);

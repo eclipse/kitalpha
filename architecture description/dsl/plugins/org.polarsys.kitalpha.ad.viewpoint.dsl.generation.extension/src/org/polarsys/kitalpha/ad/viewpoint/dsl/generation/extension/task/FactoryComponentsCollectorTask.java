@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,15 +33,15 @@ public class FactoryComponentsCollectorTask implements ITaskProduction {
 	public void doExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
 		// Get the vales of the Input Contracts
-		List<LauncherExtension> extensionPointContributions_Value = productionContext.getInputValue(IContractNames.extensionPointContributions, List.class);
+		List<LauncherExtension> extensionPointContributionsValue = productionContext.getInputValue(IContractNames.extensionPointContributions, List.class);
 		
-		if (extensionPointContributions_Value == null)
+		if (extensionPointContributionsValue == null)
 			throw new IllegalArgumentException(Messages.Contract_ExtensionPointContributions);
 		
 		List<URI> collectedFactoryComponents = new ArrayList<URI>();
 		
-		if (extensionPointContributions_Value.size() > 0){
-			for (LauncherExtension taguableExtension : extensionPointContributions_Value) 
+		if (extensionPointContributionsValue.size() > 0){
+			for (LauncherExtension taguableExtension : extensionPointContributionsValue) 
 			{
 				String fCoreURI =  taguableExtension.extensionFCoreAttributeValue;
 

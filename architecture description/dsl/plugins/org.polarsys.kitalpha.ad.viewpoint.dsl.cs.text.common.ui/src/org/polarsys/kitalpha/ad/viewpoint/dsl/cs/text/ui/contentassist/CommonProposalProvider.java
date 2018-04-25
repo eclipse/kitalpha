@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -86,14 +86,14 @@ public class CommonProposalProvider extends AbstractCommonProposalProvider {
     	IProject project = ProjectUtil.getEclipseProjectOf(model);
 		List<IResource> resources = ProjectUtil.getFolderResources(project, "icons", IResource.FILE, false);
 		IFolder iconFolder = ProjectUtil.getFolderInProject(project, "icons");
-		IPath f_relativePath = iconFolder.getProjectRelativePath();
+		IPath iconRelativePath = iconFolder.getProjectRelativePath();
 		
 		for (IResource iResource : resources) {
 			IPath path = iResource.getLocation();
 			if (path != null){
 				try {
-					IPath p_relativePath = iResource.getProjectRelativePath();
-					IPath relativePath = p_relativePath.makeRelativeTo(f_relativePath);
+					IPath projectRelativePath = iResource.getProjectRelativePath();
+					IPath relativePath = projectRelativePath.makeRelativeTo(iconRelativePath);
 					ICompletionProposal proposal = createCompletionProposal("\"" + relativePath.toString() + "\"", relativePath.toString(), getImage(path), context);
 					acceptor.accept(proposal);
 				} catch (SWTException e) {

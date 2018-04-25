@@ -85,14 +85,14 @@ public class NewDSLVpProjectSecondPage extends WizardPage {
 		}
 		
 		
-		String _vpRootProjectName = ((NewDSLVpProjectWizard)getWizard()).getVpRootProjectName(); 
-		String _vpDescriptionProjectName = ((NewDSLVpProjectWizard)getWizard()).getVpDescriptionProjectName();
+		String vpRootProjectName = ((NewDSLVpProjectWizard)getWizard()).getVpRootProjectName(); 
+		String vpDescriptionProjectName = ((NewDSLVpProjectWizard)getWizard()).getVpDescriptionProjectName();
 		
 		if (vpRootProjectNameText.getText().length()==0 || dataChanged)
-			vpRootProjectNameText.setText(_vpRootProjectName.toLowerCase());
+			vpRootProjectNameText.setText(vpRootProjectName.toLowerCase());
 		
 		if (vpDescriptionProjectNameText.getText().length()==0 || dataChanged)
-			vpDescriptionProjectNameText.setText(_vpDescriptionProjectName.toLowerCase());
+			vpDescriptionProjectNameText.setText(vpDescriptionProjectName.toLowerCase());
 	}
 	
 	public NewDSLVpProjectSecondPage(ISelection selection){
@@ -104,21 +104,21 @@ public class NewDSLVpProjectSecondPage extends WizardPage {
 	}
 	
 	public void createControl(Composite parent) {
-		Composite c_parent = new Composite(parent, SWT.NONE);
-		c_parent.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-		c_parent.setLayout(new GridLayout(1, false));
+		Composite cparent = new Composite(parent, SWT.NONE);
+		cparent.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+		cparent.setLayout(new GridLayout(1, false));
 		
 		// Compute the list of default concrete Syntax Creators
 		computeDefaultSelectedCreator();
 		
 		// Concrete Syntax Resources Creators Widgets creation
-		createConcretSyntaxWidgets(c_parent);
+		createConcretSyntaxWidgets(cparent);
 		
 		// Projects Widgets creation
-		createProjectsWidgets(c_parent);
+		createProjectsWidgets(cparent);
 		
 		// Set wizard controls
-		setControl(c_parent);
+		setControl(cparent);
 		
 		//update error/warning status
 	    vpDataChanged();
@@ -132,9 +132,9 @@ public class NewDSLVpProjectSecondPage extends WizardPage {
 	private void computeDefaultSelectedCreator(){
 		try {
 			availableCreator = getAvailableConcreteSyntaxesHandlers();
-			Map<String, String> availableCreator_t = new HashMap<String, String>();
-			availableCreator_t.putAll(availableCreator);
-			for (Map.Entry<String, String> map : availableCreator_t.entrySet()) 
+			Map<String, String> availableCreatorMap = new HashMap<String, String>();
+			availableCreatorMap.putAll(availableCreator);
+			for (Map.Entry<String, String> map : availableCreatorMap.entrySet()) 
 			{
 				String creatorID = map.getKey();
 				if (isDefaultRepresentation(creatorID))

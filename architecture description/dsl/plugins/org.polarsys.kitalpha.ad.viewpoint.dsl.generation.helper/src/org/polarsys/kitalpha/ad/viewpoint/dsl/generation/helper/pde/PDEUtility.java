@@ -312,8 +312,8 @@ public class PDEUtility {
 					// update required bundles
 					if (requiredBundlesToAdd != null && requiredBundlesToAdd.size() > 0)
 					{
-						String available_requiredBundles = bundle.getHeader(Constants.REQUIRE_BUNDLE);
-						String newRequiredBundles = mergeRequiredBundles(available_requiredBundles, requiredBundlesToAdd);
+						String availableRequiredBundles = bundle.getHeader(Constants.REQUIRE_BUNDLE);
+						String newRequiredBundles = mergeRequiredBundles(availableRequiredBundles, requiredBundlesToAdd);
 						bundle.setHeader(Constants.REQUIRE_BUNDLE, newRequiredBundles);
 					}
 
@@ -328,8 +328,8 @@ public class PDEUtility {
 					{
 						final List<String> allJavaPackages = getJavaPackages(project, exportNoInternalPackages);
 						String exportedPackage = bundle.getHeader(Constants.EXPORT_PACKAGE);
-						String newPackageExportList_s = mergeExportPackage(exportedPackage, allJavaPackages);
-						bundle.setHeader(Constants.EXPORT_PACKAGE,newPackageExportList_s);
+						String newPackageExportListS = mergeExportPackage(exportedPackage, allJavaPackages);
+						bundle.setHeader(Constants.EXPORT_PACKAGE,newPackageExportListS);
 						bundle.setHeader(Constants.BUNDLE_MANIFESTVERSION, "2");
 					}
 				}
@@ -369,8 +369,8 @@ public class PDEUtility {
 					// update required bundles
 					if (requiredBundlesToRemove != null && requiredBundlesToRemove.size() > 0)
 					{
-						String available_requiredBundles = bundle.getHeader(Constants.REQUIRE_BUNDLE);
-						String newRequiredBundles = mergeRequiredBundles2(available_requiredBundles, requiredBundlesToRemove);
+						String availablerequiredBundles = bundle.getHeader(Constants.REQUIRE_BUNDLE);
+						String newRequiredBundles = mergeRequiredBundles2(availablerequiredBundles, requiredBundlesToRemove);
 						if (newRequiredBundles != null)
 							bundle.setHeader(Constants.REQUIRE_BUNDLE, newRequiredBundles);
 					}
@@ -388,29 +388,29 @@ public class PDEUtility {
 	
 	/**
 	 * Remove bundle from required bundles
-	 * @param available_requiredBundles
+	 * @param availableRequiredBundles
 	 * @param requiredBundlesToRemove
 	 * @return
 	 */
-	private static String mergeRequiredBundles2(String available_requiredBundles, final List<String> requiredBundlesToRemove) {
+	private static String mergeRequiredBundles2(String availableRequiredBundles, final List<String> requiredBundlesToRemove) {
 		boolean updateBundles = false;
-		List<String> available_dependecies = new ArrayList<String>();
+		List<String> availableDependecies = new ArrayList<String>();
 		
 		// There is some required Bundles
-		if (available_requiredBundles != null && available_requiredBundles.trim().length() > 0)
+		if (availableRequiredBundles != null && availableRequiredBundles.trim().length() > 0)
 		{
 			// If there more then one dependency
-			if (available_requiredBundles.indexOf(",") != -1)
+			if (availableRequiredBundles.indexOf(",") != -1)
 			{
-				String[] list = available_requiredBundles.split(",");
+				String[] list = availableRequiredBundles.split(",");
 				for (String current : list)
 				{
-					available_dependecies.add(current) ;
+					availableDependecies.add(current) ;
 				}
 			}
 			else
 			{
-				available_dependecies.add(available_requiredBundles);
+				availableDependecies.add(availableRequiredBundles);
 			}
 
 			
@@ -418,7 +418,7 @@ public class PDEUtility {
 			for (String bundleToAdd : requiredBundlesToRemove) 
 			{
 				boolean removeBundle = false;
-				for (String availableBundle : available_dependecies) 
+				for (String availableBundle : availableDependecies) 
 				{
 					String plugName = availableBundle;
 					
@@ -436,7 +436,7 @@ public class PDEUtility {
 				
 				if (removeBundle)
 				{
-					available_dependecies.remove(bundleToAdd);
+					availableDependecies.remove(bundleToAdd);
 					updateBundles = true;
 				}
 			}
@@ -448,59 +448,59 @@ public class PDEUtility {
 
 		
 		// Rewrite string version of required bundles
-		if (available_dependecies.size() > 0 && updateBundles)
+		if (availableDependecies.size() > 0 && updateBundles)
 		{
 			StringBuffer newRequiredBundles = new StringBuffer(""); //$NON-NLS-1$
-			if (available_dependecies.size() == 1)
+			if (availableDependecies.size() == 1)
 			{
-				newRequiredBundles.append(available_dependecies.get(0));
+				newRequiredBundles.append(availableDependecies.get(0));
 			}
 			else
 			{
-				newRequiredBundles.append(available_dependecies.get(0)).append(",");
-				for (int i = 1; i < available_dependecies.size()-1; i++) 
+				newRequiredBundles.append(availableDependecies.get(0)).append(",");
+				for (int i = 1; i < availableDependecies.size()-1; i++) 
 				{
-					newRequiredBundles.append("\n ").append(available_dependecies.get(i)).append(",");
+					newRequiredBundles.append("\n ").append(availableDependecies.get(i)).append(",");
 				}
-				newRequiredBundles.append("\n ").append(available_dependecies.get(available_dependecies.size()-1)); 
+				newRequiredBundles.append("\n ").append(availableDependecies.get(availableDependecies.size()-1)); 
 			}
 			return newRequiredBundles.toString();
 		}
-		return available_requiredBundles;
+		return availableRequiredBundles;
 	}
 
 	/**
 	 * 
-	 * @param available_requiredBundles
+	 * @param availableRequiredBundles
 	 * @param requiredBundlesToAdd
 	 * @return
 	 */
-	private static String mergeRequiredBundles(String available_requiredBundles, 
+	private static String mergeRequiredBundles(String availableRequiredBundles, 
 			final List<String> requiredBundlesToAdd) {
 		boolean updateBundles = false;
-		List<String> available_dependecies = new ArrayList<String>();
+		List<String> availableDependecies = new ArrayList<String>();
 		
 		// There is some required Bundles
-		if (available_requiredBundles != null && available_requiredBundles.trim().length() > 0)
+		if (availableRequiredBundles != null && availableRequiredBundles.trim().length() > 0)
 		{
 			// If there more then one dependency
-			if (available_requiredBundles.indexOf(",") != -1)
+			if (availableRequiredBundles.indexOf(",") != -1)
 			{
-				String[] list = available_requiredBundles.split(",");
+				String[] list = availableRequiredBundles.split(",");
 				for (String current : list)
 				{
-					available_dependecies.add(current) ;
+					availableDependecies.add(current) ;
 				}
 			}
 			else
 			{
-				available_dependecies.add(available_requiredBundles);
+				availableDependecies.add(availableRequiredBundles);
 			}
 
 			for (String bundleToAdd : requiredBundlesToAdd) 
 			{
 				boolean addBundle = true;
-				for (String availableBundle : available_dependecies) 
+				for (String availableBundle : availableDependecies) 
 				{
 					String plugName = availableBundle;
 					
@@ -518,37 +518,37 @@ public class PDEUtility {
 				
 				if (addBundle)
 				{
-					available_dependecies.add(bundleToAdd);
+					availableDependecies.add(bundleToAdd);
 					updateBundles = true;
 				}
 			}
 		}
 		else // there no required bundles in the Manifest, so add all requiredBundlesToAdd
 		{
-			available_dependecies.addAll(requiredBundlesToAdd);
+			availableDependecies.addAll(requiredBundlesToAdd);
 			updateBundles = true;
 		}
 
 		
-		if (available_dependecies.size() > 0 && updateBundles)
+		if (availableDependecies.size() > 0 && updateBundles)
 		{
 			StringBuffer newRequiredBundles = new StringBuffer("");
-			if (available_dependecies.size() == 1)
+			if (availableDependecies.size() == 1)
 			{
-				newRequiredBundles.append(available_dependecies.get(0));
+				newRequiredBundles.append(availableDependecies.get(0));
 			}
 			else
 			{
-				newRequiredBundles.append(available_dependecies.get(0)).append(",");
-				for (int i = 1; i < available_dependecies.size()-1; i++) 
+				newRequiredBundles.append(availableDependecies.get(0)).append(",");
+				for (int i = 1; i < availableDependecies.size()-1; i++) 
 				{
-					newRequiredBundles.append("\n ").append(available_dependecies.get(i)).append(",");
+					newRequiredBundles.append("\n ").append(availableDependecies.get(i)).append(",");
 				}
-				newRequiredBundles.append("\n ").append(available_dependecies.get(available_dependecies.size()-1)); 
+				newRequiredBundles.append("\n ").append(availableDependecies.get(availableDependecies.size()-1)); 
 			}
 			return newRequiredBundles.toString();
 		}
-		return available_requiredBundles;
+		return availableRequiredBundles;
 	}
 	
 	/**
@@ -594,37 +594,37 @@ public class PDEUtility {
 	throws JavaModelException{
 		if (newPackagesToExport != null && newPackagesToExport.size() > 0)
 		{
-			List<String> exportPackages_new_l = new ArrayList<String>();
+			List<String> exportPackagesNewL = new ArrayList<String>();
 			if (exportedJavaPackage != null && exportedJavaPackage.trim().length() > 0)
 			{
-				String[] exportPackages_existing_t = exportedJavaPackage.split(",");
+				String[] exportPackagesExistingT = exportedJavaPackage.split(",");
 
-				for (String iExportPackage : exportPackages_existing_t) 
+				for (String iExportPackage : exportPackagesExistingT) 
 				{
-					exportPackages_new_l.add(iExportPackage);
+					exportPackagesNewL.add(iExportPackage);
 				}
 			}
 			
 			for (String iExportPackage : newPackagesToExport) 
 			{
-				if (! exportPackages_new_l.contains(iExportPackage))
-					exportPackages_new_l.add(iExportPackage);
+				if (! exportPackagesNewL.contains(iExportPackage))
+					exportPackagesNewL.add(iExportPackage);
 			}
 			
-			if (exportPackages_new_l.size() > 0)
+			if (exportPackagesNewL.size() > 0)
 			{
-				StringBuffer exportPackages_new_s = new StringBuffer(" ");
-				exportPackages_new_s.append(exportPackages_new_l.get(0));
-				if (exportPackages_new_l.size() > 1)
+				StringBuffer exportPackagesNewS = new StringBuffer(" ");
+				exportPackagesNewS.append(exportPackagesNewL.get(0));
+				if (exportPackagesNewL.size() > 1)
 				{
-					for (int i = 1; i < exportPackages_new_l.size(); i++) 
+					for (int i = 1; i < exportPackagesNewL.size(); i++) 
 					{
-						exportPackages_new_s.append(", \n");
-						exportPackages_new_s.append(" ").append(exportPackages_new_l.get(i));
+						exportPackagesNewS.append(", \n");
+						exportPackagesNewS.append(" ").append(exportPackagesNewL.get(i));
 					}
 				}
 				
-				return exportPackages_new_s.toString();
+				return exportPackagesNewS.toString();
 			}
 		}
 		return exportedJavaPackage;

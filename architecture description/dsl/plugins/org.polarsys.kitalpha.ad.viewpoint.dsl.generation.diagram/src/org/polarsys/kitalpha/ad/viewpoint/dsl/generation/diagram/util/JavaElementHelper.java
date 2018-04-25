@@ -94,12 +94,12 @@ public class JavaElementHelper {
 	 */
 	public static JavaMethodData createJavaMethod(JavaElement javaElement){
 		// Create a Java method Data object containing the Name and the Return type of the Java method
-		final String method_name = getMethodName(javaElement);
+		final String methodname = getMethodName(javaElement);
 		final JavaMethodReturnType returnType = computeExpectedMethodReturnType(javaElement);
 		JavaMethodData javaMethodData = null;
 		if (returnType != JavaMethodReturnType.Unknown) 
 		{
-			javaMethodData = new JavaMethodData(method_name, returnType);
+			javaMethodData = new JavaMethodData(methodname, returnType);
 			
 			// Initializing the Java method parameters
 			/*** Adding Parameters to the JavaMethod
@@ -146,12 +146,12 @@ public class JavaElementHelper {
 	 * @return Java method name
 	 */
 	private static String getMethodName(JavaElement javaElement){
-		String method_name = javaElement.getMethod();
-		String twoLastChars = method_name.substring(method_name.length() - 2, method_name.length());
+		String methodname = javaElement.getMethod();
+		String twoLastChars = methodname.substring(methodname.length() - 2, methodname.length());
 		if (twoLastChars.equals("()"))
-			method_name = method_name.substring(0, method_name.length() - 2);
+			methodname = methodname.substring(0, methodname.length() - 2);
 		
-		return method_name;
+		return methodname;
 	}
 	
 	public static String addDefaultParameterToJavaMethod(String javaMethod, String parameters){

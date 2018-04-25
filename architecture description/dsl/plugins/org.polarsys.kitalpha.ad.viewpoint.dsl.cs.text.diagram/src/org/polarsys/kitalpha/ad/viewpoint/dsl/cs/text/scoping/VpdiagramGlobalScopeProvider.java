@@ -337,9 +337,9 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 
 		Collection<IEObjectDescription> exportImportedObjects = new ArrayList<IEObjectDescription>();	
 
-		URI p_uri = createURI(tmpUri);	
+		URI puri = createURI(tmpUri);	
 
-		Resource odesignResources = resource.getResourceSet().getResource(p_uri, true);	
+		Resource odesignResources = resource.getResourceSet().getResource(puri, true);	
 
 		if (descriptionManager != null && odesignResources != null) {	
 
@@ -476,8 +476,8 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 				exportedObjects = Iterables.concat(exportedObjects, resourceDescription.getExportedObjects());	
 			}	
 		} else {	
-			URI p_uri = createURI(uri);	
-			Resource modelResource = resource.getResourceSet().getResource(p_uri, true);	
+			URI puri = createURI(uri);	
+			Resource modelResource = resource.getResourceSet().getResource(puri, true);	
 
 			if (modelResource == null)	
 				return exportedObjects;	

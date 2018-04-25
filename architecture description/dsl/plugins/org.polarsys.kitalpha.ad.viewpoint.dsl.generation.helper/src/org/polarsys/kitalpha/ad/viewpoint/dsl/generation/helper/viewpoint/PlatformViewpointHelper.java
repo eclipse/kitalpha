@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,42 +30,42 @@ public class PlatformViewpointHelper extends ViewpointModelReuseResourceHelper{
 	/**
 	 *
 	 */
-	private static final String AF_MODELREUSE_DOMAIN_ = "AF";
-	private static final String AF_MODELREUSE_TAG_ = "vp";
+	private static final String AF_MODELREUSE_DOMAIN = "AF";
+	private static final String AF_MODELREUSE_TAG = "vp";
 	
 	
 	public static boolean isAFViewpointAvailable(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint viewpoint){
 		String viewpointID = VpDslConfigurationHelper.getRootProjectName(viewpoint);
-		Viewpoint viewpoint_af = getAFViewpoint(viewpointID, new ResourceSetImpl());
+		Viewpoint viewpointaf = getAFViewpoint(viewpointID, new ResourceSetImpl());
 		
-		return viewpoint_af != null;
+		return viewpointaf != null;
 	}
 	
 	
-	public static boolean isAFViewpointAvailable(String resource_id){
-		Resource[] resource_af_list = getResources(resource_id, AF_MODELREUSE_DOMAIN_, AF_MODELREUSE_TAG_);
+	public static boolean isAFViewpointAvailable(String resourceid){
+		Resource[] resourceaflist = getResources(resourceid, AF_MODELREUSE_DOMAIN, AF_MODELREUSE_TAG);
 		
-		if (resource_af_list != null && resource_af_list.length == 1)
+		if (resourceaflist != null && resourceaflist.length == 1)
 			return true;
 		
-		if (resource_af_list != null && resource_af_list.length > 0)
+		if (resourceaflist != null && resourceaflist.length > 0)
 		{
-			String message = Messages.bind(Messages.Viewpoint_ID_Not_Unique, resource_id);
+			String message = Messages.bind(Messages.Viewpoint_ID_Not_Unique, resourceid);
 			throw new RuntimeException(message);
 		}
 		
 		return false;
 	}
 	
-	public static Viewpoint getAFViewpoint(String resource_id, ResourceSet resourceSet_e){
+	public static Viewpoint getAFViewpoint(String resourceid, ResourceSet resourceSet){
 		Viewpoint result = null;
-		Resource[] resource_af_list = getResources(resource_id, AF_MODELREUSE_DOMAIN_, AF_MODELREUSE_TAG_);
+		Resource[] resourceaflist = getResources(resourceid, AF_MODELREUSE_DOMAIN, AF_MODELREUSE_TAG);
 		
-		if (resource_af_list != null && resource_af_list.length > 0)
+		if (resourceaflist != null && resourceaflist.length > 0)
 		{
-			Resource resource_af = resource_af_list[0];
-			URI uri = getResourceURI(resource_af);
-			EObject eObject = getResourceRootObject(uri, resourceSet_e);
+			Resource resourceaf = resourceaflist[0];
+			URI uri = getResourceURI(resourceaf);
+			EObject eObject = getResourceRootObject(uri, resourceSet);
 			if (eObject != null && eObject instanceof Viewpoint)
 				result = (Viewpoint) eObject;
 		}

@@ -134,10 +134,10 @@ public class ActivityExplorerAspectHelper {
 		if (rootContainer instanceof Viewpoint)
 		{
 			Viewpoint viewpoint = (Viewpoint) rootContainer;
-			EList<Aspect> vp_Aspects = viewpoint.getVP_Aspects();
-			if (!vp_Aspects.isEmpty())
+			EList<Aspect> vpAspects = viewpoint.getVP_Aspects();
+			if (!vpAspects.isEmpty())
 			{
-				for (Aspect aspect : vp_Aspects) 
+				for (Aspect aspect : vpAspects) 
 				{
 					if (aspect instanceof ViewpointActivityExplorer) {
 						return (ViewpointActivityExplorer) aspect;

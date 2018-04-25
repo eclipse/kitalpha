@@ -86,7 +86,7 @@ public class EGFBuildHelper {
 	}
 	
 	
-	public static Job createMainJob(String installStep_id, String protocol, String rootProjectName, String lvpsShortName, String repositoryLocation, BuildDataConfigContainer<String> conf){
+	public static Job createMainJob(String installStepId, String protocol, String rootProjectName, String lvpsShortName, String repositoryLocation, BuildDataConfigContainer<String> conf){
 		Job mainJob = BuildcoreFactory.eINSTANCE.createJob();
 		
 		//set the name
@@ -247,16 +247,16 @@ public class EGFBuildHelper {
 	 */
 	public static SVNLocation createSVNLocation(String url, String protocol) {
 
-		SVNLocation svn_location = BuildscmFactory.eINSTANCE.createSVNLocation();
+		SVNLocation svnlocation = BuildscmFactory.eINSTANCE.createSVNLocation();
 		if (protocol.equals(PROTOCOL_SVN))
-			svn_location.setProtocol(SVNProtocol.SVN);
+			svnlocation.setProtocol(SVNProtocol.SVN);
 		if (protocol.equals(PROTOCOL_SSH))
-			svn_location.setProtocol(SVNProtocol.SVNSSH);
-		svn_location.setLocalPath(url); //Local path
+			svnlocation.setProtocol(SVNProtocol.SVNSSH);
+		svnlocation.setLocalPath(url); //Local path
 		
-		svn_location.setUrl("${" + GeneratorConstants.REPOSITORY_LOCATION + "}");
+		svnlocation.setUrl("${" + GeneratorConstants.REPOSITORY_LOCATION + "}");
 
-		return svn_location;
+		return svnlocation;
 	}
 
 

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,9 +29,9 @@ public class UpdateAFRequiredBundlesTask implements ITaskProduction {
 	public void doExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
 		
-		String model_uri = productionContext.getInputValue(modelUri_Contract, String.class);
+		String modeluri = productionContext.getInputValue(modelUri_Contract, String.class);
 		try {
-			AFIntegrationManager.getInstance().patchManifest(model_uri);
+			AFIntegrationManager.getInstance().patchManifest(modeluri);
 		} catch (AFIntegrationException e) {
 			e.printStackTrace();
 		}

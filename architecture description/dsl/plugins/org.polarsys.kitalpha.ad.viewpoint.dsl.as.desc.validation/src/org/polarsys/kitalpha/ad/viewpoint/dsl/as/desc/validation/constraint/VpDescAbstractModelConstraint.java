@@ -183,8 +183,8 @@ public abstract class VpDescAbstractModelConstraint extends AbstractModelConstra
 	
 	protected String getElementShortName(EObject eObject) {
 		String result = Messages.bind(Messages.Validation_NoName, eObject.eClass().getName());
-		String short_name = ((ShortNamedElement)eObject).getShortName();
-		return (isNotEmpty(short_name) ? short_name : result ) ;
+		String shortName = ((ShortNamedElement)eObject).getShortName();
+		return (isNotEmpty(shortName) ? shortName : result ) ;
 	}
 	
 	protected boolean isNotEmpty(String data){

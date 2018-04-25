@@ -372,20 +372,20 @@ public class ReferenceUtil {
 					URI proxyURI = ((org.eclipse.emf.ecore.InternalEObject) eObject).eProxyURI();
 					throw new RuntimeException(Messages.ViewpointDSLActions_BackwardSynchronizer_UnresolvedProxy + proxyURI);
 				} else {	
-					EObject eObject_copy = copier.get(eObject);
-					if (eObject_copy!=null) {
-						URI uri_copy = EcoreUtil.getURI(eObject_copy);			
-						if (!uri_copy.isPlatform()) {
+					EObject eObjectcopy = copier.get(eObject);
+					if (eObjectcopy!=null) {
+						URI uricopy = EcoreUtil.getURI(eObjectcopy);			
+						if (!uricopy.isPlatform()) {
 							URI correctURI = null;
 							if (eObject.eClass().getEPackage().getNsURI().equals(MetamodelIDs.VPSERVICES)) {
 								//services references rules
-								correctURI = GeneratorsUtil.computeURI(inputObject, FileExtension.SERVICES_EXTENSION, uri_copy.toString().replaceFirst("//", "//@services.1"));
+								correctURI = GeneratorsUtil.computeURI(inputObject, FileExtension.SERVICES_EXTENSION, uricopy.toString().replaceFirst("//", "//@services.1"));
 							} else {
 								//the rest references data
-								correctURI = GeneratorsUtil.computeURI(inputObject, FileExtension.DATA_EXTENSION, uri_copy.toString());
+								correctURI = GeneratorsUtil.computeURI(inputObject, FileExtension.DATA_EXTENSION, uricopy.toString());
 							}
 							
-							((org.eclipse.emf.ecore.InternalEObject) eObject_copy).eSetProxyURI(correctURI);
+							((org.eclipse.emf.ecore.InternalEObject) eObjectcopy).eSetProxyURI(correctURI);
 						}					
 					}					
 				}	

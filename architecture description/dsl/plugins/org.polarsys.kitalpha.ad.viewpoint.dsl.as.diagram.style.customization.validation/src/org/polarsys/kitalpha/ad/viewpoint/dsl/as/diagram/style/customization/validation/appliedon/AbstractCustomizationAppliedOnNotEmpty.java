@@ -47,12 +47,12 @@ public class AbstractCustomizationAppliedOnNotEmpty implements IAdditionalConstr
 		final EStructuralFeature appliedOnESF = eData.eClass().getEStructuralFeature("appliedOn");
 		if (appliedOnESF != null)
 		{
-			Object appliedOn_e = eData.eGet(appliedOnESF);
-			if (appliedOn_e instanceof EList<?>)
+			Object appliedOn = eData.eGet(appliedOnESF);
+			if (appliedOn instanceof EList<?>)
 			{
 				@SuppressWarnings("unchecked")
-				EList<EObject> appliedOn_l = (EList<EObject>) appliedOn_e;
-				if (eData.isApplyonAll() == ! appliedOn_l.isEmpty())
+				EList<EObject> appliedOnList = (EList<EObject>) appliedOn;
+				if (eData.isApplyonAll() == ! appliedOnList.isEmpty())
 					return ValidationStatus.Error;
 			}
 		}

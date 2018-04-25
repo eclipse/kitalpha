@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -32,18 +32,18 @@ public class CadenceRegistry {
 
 
 	
-	 public static IConfigurationElement[] getAllWorkflowElement(String workflow_id) {
-		 return CadenceExtensions.getAllWorkflowElement(workflow_id);
+	 public static IConfigurationElement[] getAllWorkflowElement(String workflowId) {
+		 return CadenceExtensions.getAllWorkflowElement(workflowId);
 		
 	 }
 	 
-	 public static IConfigurationElement[] getWorkflowElementParameters(String workflow_id,String workflow_element_id) {
-		IConfigurationElement config = CadenceExtensions.getWorkflowElement(workflow_id, workflow_element_id);
+	 public static IConfigurationElement[] getWorkflowElementParameters(String workflowId,String workflowElementId) {
+		IConfigurationElement config = CadenceExtensions.getWorkflowElement(workflowId, workflowElementId);
 		 return CadenceExtensions.getWorkflowElementParameters(config);
 	 }
 	 
-	 public static IConfigurationElement[] getActivitiesConfigList(String workflow_id, String workflow_element_id) {
-		 return CadenceExtensions.getActivitiesForWorkflowElement(workflow_id, workflow_element_id);
+	 public static IConfigurationElement[] getActivitiesConfigList(String workflowId, String workflowElementId) {
+		 return CadenceExtensions.getActivitiesForWorkflowElement(workflowId, workflowElementId);
 		
 	 }
 	 
