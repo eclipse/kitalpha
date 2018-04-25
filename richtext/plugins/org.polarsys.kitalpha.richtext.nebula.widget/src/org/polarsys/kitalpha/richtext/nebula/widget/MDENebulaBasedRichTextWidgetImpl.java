@@ -64,6 +64,8 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 		installListeners();
 
 		dirtyStateUpdated = false;
+		
+		customizeRichTextConfiguration(this.configuration);
 	}
 
 	public MDENebulaBasedRichTextWidgetImpl(Composite parent, MDENebulaRichTextConfiguration configuration) {
@@ -77,6 +79,10 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 		addPropertyChangeListener(this);
 
 		installListeners();
+		
+    dirtyStateUpdated = false;
+    
+    customizeRichTextConfiguration(this.configuration);
 	}
 
 	public MDENebulaBasedRichTextWidgetImpl(Composite parent, int style) {
@@ -89,6 +95,10 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 		addPropertyChangeListener(this);
 
 		installListeners();
+		
+    dirtyStateUpdated = false;
+    
+    customizeRichTextConfiguration(this.configuration);
 	}
 
 	public MDENebulaBasedRichTextWidgetImpl(Composite parent, MDENebulaRichTextConfiguration configuration, int style) {
@@ -102,6 +112,10 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 		addPropertyChangeListener(this);
 
 		installListeners();
+		
+    dirtyStateUpdated = false;
+    
+    customizeRichTextConfiguration(this.configuration);
 	}
 
 	public void setDirtyStateUpdated(boolean dirtyStateUpdated) {
@@ -355,4 +369,8 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 		addToolbarItem(name, command, label, toolbar, iconPath, null);
 	}
 
+	protected void customizeRichTextConfiguration(RichTextEditorConfiguration configuration) {
+	  // Do not take the focus on editor startup
+	  configuration.setOption("startupFocus", false);
+	}
 }

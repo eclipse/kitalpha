@@ -72,7 +72,7 @@ public abstract class AbstractMDERichTextWidget implements MDERichTextWidget {
 	  // to a new EObject element and a new structure
 	  // must save the content of the current element and the current feature
 	  // if they are not NULL
-	  if (this.owner != null && this.feature != null && this.owner != owner) {
+	  if (this.owner != null && this.feature != null && this.owner != owner && hasFocus()) {
       saveContent();
     }
 	  
