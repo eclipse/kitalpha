@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -10,8 +10,6 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.model.common.commands.contrib.unknownreferences.command;
 
-import java.util.Collection;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map.Entry;
 
@@ -201,9 +199,16 @@ public class UnknownreferencesCleaner extends ModelCommand {
 					for (AnyType anyType : missingEPackage.getAnalysisResult().getAnyTypes()) {
 						//TODO should use our own crossReferenceAdapter
 						if (ed != null){
-							Command delete = DeleteCommand.create(ed, anyType);
-							if (delete.canExecute()){
-								ed.getCommandStack().execute(delete);
+							final AnyType t = anyType;
+							RecordingCommand cmd = new RecordingCommand(ed) {
+								@Override
+								protected void doExecute() {
+									EcoreUtil.remove(t);									
+								}
+							};
+							
+							if (cmd.canExecute()){
+								ed.getCommandStack().execute(cmd);
 							}
 						} else {
 							EcoreUtil.delete(anyType, true);
@@ -242,14 +247,25 @@ public class UnknownreferencesCleaner extends ModelCommand {
 		monitor.done();
 	}
 	
-	private void clean(TransactionalEditingDomain ed, EObject key, EReference r) {
-		Object value = key.eGet(r);
+	private void clean(final TransactionalEditingDomain ed, final EObject key, final EReference r) {
+		final Object value = key.eGet(r);
 		try {
 			if (ed != null){
-				Collection<Object> values = new HashSet<Object>();
-				values.add(value);
-				RemoveCommand.create(ed, key, r, values);
+				RecordingCommand cmd = new RecordingCommand(ed) {
+
+					@Override
+					protected void doExecute() {
+						key.eUnset(r);
+						EcoreUtil.delete((EObject) value);
+					}
+				};
+
+				if (cmd.canExecute()) {
+					ed.getCommandStack().execute(cmd);
+				}
+
 			} else {
+				key.eUnset(r);
 				EcoreUtil.remove(key, r, value);
 			}
 		} catch (Exception e){
