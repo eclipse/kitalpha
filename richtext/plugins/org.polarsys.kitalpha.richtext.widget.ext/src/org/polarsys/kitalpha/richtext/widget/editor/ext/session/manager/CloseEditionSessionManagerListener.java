@@ -25,6 +25,7 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.polarsys.kitalpha.richtext.nebula.widget.MDERichTextConstants;
+import org.polarsys.kitalpha.richtext.widget.editor.MDERichTextEditor;
 import org.polarsys.kitalpha.richtext.widget.editor.MDERichTextEditorInput;
 import org.polarsys.kitalpha.richtext.widget.tools.ext.internal.Activator;
 
@@ -86,8 +87,10 @@ public class CloseEditionSessionManagerListener extends SessionManagerListener.S
 				EObject element = ((MDERichTextEditorInput)editorInput).getElement();
 				Session sessionOfElt = SessionManager.INSTANCE.getSession(element);
 				
-				if (session != null && session.equals(sessionOfElt)) {
-					Display.getDefault().asyncExec(() -> activePage.closeEditor(ref.getEditor(false), false));
+				if (session != null && session.equals(sessionOfElt) || sessionOfElt == null) {
+					MDERichTextEditor editor = (MDERichTextEditor) ref.getEditor(false);
+					editor.switchDeactivateState();
+					Display.getDefault().asyncExec(() -> {activePage.closeEditor(editor, false); });
 				}
 			}
 		}

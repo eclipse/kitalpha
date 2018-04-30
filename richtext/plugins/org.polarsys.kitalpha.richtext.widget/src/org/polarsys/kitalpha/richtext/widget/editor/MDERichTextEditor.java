@@ -76,7 +76,9 @@ public class MDERichTextEditor extends EditorPart
 	private static final RichtextEditorResourceSetListener closeEditorResourceSetListener = new RichtextEditorResourceSetListener();
 
 	private MDERichTextWidget widget;
-
+	
+	private boolean activateState = false;
+	
 	private final MDERichTextExtensionManager propertySheetExtensionManager = new MDERichTextExtensionManager(this);
 	private TabbedPropertySheetPage propertySheetPage;
 	private final IWorkbenchListener closeListener = new IWorkbenchListener() {
@@ -147,15 +149,18 @@ public class MDERichTextEditor extends EditorPart
 	}
 
 	private void closeEditor() {
+		this.switchDeactivateState();
 		Display.getDefault().asyncExec(() -> getSite().getPage().closeEditor(MDERichTextEditor.this, false));
 	}
 
 	@Override
 	public void doSave(IProgressMonitor monitor) {
-		widget.saveContent();
-		doSaveCallback(widget);
-		firePropertyChange(PROP_DIRTY);
-		firePropertyChange(PROP_TITLE);
+		if (!isDeactivate()) {
+			widget.saveContent();
+			doSaveCallback(widget);
+			firePropertyChange(PROP_DIRTY);
+			firePropertyChange(PROP_TITLE);
+		}
 	}
 
 	@Override
@@ -212,7 +217,10 @@ public class MDERichTextEditor extends EditorPart
 
 	@Override
 	public boolean isDirty() {
-		return doCheckWorkspaceResourceStatus(widget) || widget.isDirty();
+		if (!isDeactivate()) {
+			return doCheckWorkspaceResourceStatus(widget) || widget.isDirty();
+		}
+		return false;
 	}
 
 	@Override
@@ -233,8 +241,10 @@ public class MDERichTextEditor extends EditorPart
 
 	@Override
 	public void setFocus() {
-		widget.setFocus();
-		widget.loadContent();
+		if (!isDeactivate()) {
+			widget.setFocus();
+			widget.loadContent();
+		}
 	}
 
 	@Override
@@ -306,6 +316,30 @@ public class MDERichTextEditor extends EditorPart
 			return getPropertySheetPage();
 		}
 		return super.getAdapter(adapter);
+	}
+	
+	/**
+	 * Switch the activation state of the editor.
+	 * 
+	 * Activate state means the normal state of the editor.
+	 * Deactivate state means that:
+	 * 
+	 * <ol>
+	 * 		<li>Calling doSave() do nothing</li>
+	 * 		<li>Calling isDirty() always return false</li>
+	 * 		<li>Caling setFocus() do nothing</li>
+	 * </ol>
+	 * 
+	 */
+	public void switchDeactivateState() {
+		activateState = !activateState;
+	}
+	
+	/**
+	 * @return true if the editor is in deactivated state, otherwise false.
+	 */
+	public boolean isDeactivate() {
+		return activateState;
 	}
 
 	private void doSaveCallback(MDERichTextWidget widget) {
