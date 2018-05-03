@@ -230,7 +230,7 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 	@Override
 	public void setText(String text) {
 		if (text != null) {
-			text = escapeSingleQuote(text);
+			text = escapeSpecialCharacters(text);
 			editor.setText(text);
 		}
 	}
@@ -238,7 +238,7 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 	@Override
 	public void insertText(String text) {
 		if (text != null && isReady()) {
-			text = escapeSingleQuote(text);
+			text = escapeSpecialCharacters(text);
 			editor.insertText(text);
 		}
 	}
@@ -246,7 +246,7 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 	@Override
 	public void insertRawText(String html) {
 		if (html != null && isReady()) {
-			html = escapeSingleQuote(html);
+			html = escapeSpecialCharacters(html);
 			editor.insertHTML(html);
 		}
 	}

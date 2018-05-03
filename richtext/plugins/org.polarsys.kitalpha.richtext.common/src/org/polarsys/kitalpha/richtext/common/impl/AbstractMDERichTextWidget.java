@@ -134,10 +134,19 @@ public abstract class AbstractMDERichTextWidget implements MDERichTextWidget {
 		return this.saveStrategy;
 	}
 	
-	protected String escapeSingleQuote(String value) {
-		value = value.replace("'", "&#39;"); //$NON-NLS-1$ //$NON-NLS-2$
-		return value;
-	}
+  /**
+   * 
+   * Escape special characters in the HTML code displayed by the editor.
+   * 
+   * @param value
+   * @return
+   */
+  protected String escapeSpecialCharacters(String value) {
+    value = value.replace("'", "&#39;"); //$NON-NLS-1$ //$NON-NLS-2$
+    // If there is backslash in the HTML code, we do not want the editor to translate it as an escape character.
+    value = value.replace("\\", "&#92;"); //$NON-NLS-1$ //$NON-NLS-2$
+    return value;
+  }
 	
 	protected final void areNotNull(Object... objects) {
 		if (objects != null){
