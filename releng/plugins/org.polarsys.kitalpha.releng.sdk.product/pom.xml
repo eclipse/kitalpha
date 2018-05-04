@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Copyright (c) 2006, 2017 THALES GLOBAL SERVICES.
+  Copyright (c) 2006, 2018 THALES GLOBAL SERVICES.
   All rights reserved. This program and the accompanying materials
   are made available under the terms of the Eclipse Public License v1.0
   which accompanies this distribution, and is available at
@@ -65,8 +65,8 @@
 						<phase>prepare-package</phase>
 						<configuration>
 							<target>
-								<echo>Create dropin folders in porducts</echo>
-								<mkdir dir="${basedir}/target/products/org.polarsys.kitalpha.releng.sdk.product/linux/gtk/x86_64/dropins"/>
+								<echo>Create dropin folders in products</echo>
+								<mkdir dir="${basedir}/target/products/org.polarsys.kitalpha.releng.sdk.product/win32/win32/x86_64/dropins"/>
 								<mkdir dir="${basedir}/target/products/org.polarsys.kitalpha.releng.sdk.product/linux/gtk/x86_64/dropins"/>
 								<mkdir dir="${basedir}/target/products/org.polarsys.kitalpha.releng.sdk.product/macosx/cocoa/x86_64/Eclipse.app/Contents/Eclipse/dropins"/>
 							</target>

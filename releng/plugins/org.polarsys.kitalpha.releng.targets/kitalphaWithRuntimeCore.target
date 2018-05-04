@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/mbarbero/fr.obeo.releng.targetplatform -->
-<target name="kitalphaWithRuntimeCore" sequenceNumber="1521545061">
+<target name="kitalphaWithRuntimeCore" sequenceNumber="1525433623">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.sdk.feature.group" version="0.0.0"/>
@@ -185,27 +185,9 @@
       <repository id="EcoreTools" location="http://download.eclipse.org/ecoretools/updates/milestones/3.3.0RC4/oxygen/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.egf.sdk.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.egf.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.egf.common.source" version="0.0.0"/>
-      <unit id="org.eclipse.egf.common.ui.source" version="0.0.0"/>
-      <unit id="org.eclipse.egf.core.source" version="0.0.0"/>
-      <unit id="org.eclipse.egf.core.ui.source" version="0.0.0"/>
-      <unit id="org.eclipse.egf.doc.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.egf.model.edit.source" version="0.0.0"/>
-      <unit id="org.eclipse.egf.model.fprod.edit.source" version="0.0.0"/>
-      <unit id="org.eclipse.egf.model.fprod.source" version="0.0.0"/>
-      <unit id="org.eclipse.egf.model.ftask.edit.source" version="0.0.0"/>
-      <unit id="org.eclipse.egf.model.ftask.source" version="0.0.0"/>
-      <unit id="org.eclipse.egf.model.source" version="0.0.0"/>
-      <unit id="org.eclipse.egf.model.ui.source.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.egf.portfolio.emf.source.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.egf.portfolio.genchain.source" version="0.0.0"/>
-      <unit id="org.eclipse.egf.portfolio.source.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.egf.portfolio.task.ant.source" version="0.0.0"/>
-      <unit id="org.eclipse.egf.producer.source" version="0.0.0"/>
-      <unit id="org.eclipse.egf.producer.ui.source" version="0.0.0"/>
-      <repository id="EGFSdk" location="https://hudson.eclipse.org/egf/job/buckminster-egf-oxygen/lastSuccessfulBuild/artifact/result/publish/org.eclipse.egf.site/site.p2/"/>
+      <unit id="org.eclipse.egf.sdk.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.egf.sdk.feature.source.feature.group" version="0.0.0"/>
+      <repository id="EGFSdk" location="https://ci.eclipse.org/egf/job/tycho-egf-oxygen/lastSuccessfulBuild/artifact/releng/org.eclipse.egf.core.updatesite/target/repository/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.nebula.widgets.richtext.feature.feature.group" version="0.0.0"/>

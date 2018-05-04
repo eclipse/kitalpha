@@ -28,7 +28,7 @@
    </license>
 
    <requires>
-      <import feature="org.eclipse.egf.portfolio.genchain"/>
+      <import feature="org.eclipse.egf.portfolio.genchain.feature"/>
    </requires>
 
    <plugin

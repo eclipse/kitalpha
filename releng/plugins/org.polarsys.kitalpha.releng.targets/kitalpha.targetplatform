@@ -184,27 +184,9 @@ location EcoreTools "http://download.eclipse.org/ecoretools/updates/milestones/3
 	org.eclipse.emf.ecoretools.explorer.contextual.feature.group lazy
 }
 
-location EGFSdk "https://hudson.eclipse.org/egf/job/buckminster-egf-oxygen/lastSuccessfulBuild/artifact/result/publish/org.eclipse.egf.site/site.p2/" {
-	org.eclipse.egf.sdk.feature.group lazy
-	org.eclipse.egf.feature.group lazy
-	org.eclipse.egf.common.source lazy
-	org.eclipse.egf.common.ui.source lazy
-	org.eclipse.egf.core.source lazy
-	org.eclipse.egf.core.ui.source lazy
-	org.eclipse.egf.doc.feature.group lazy
-	org.eclipse.egf.model.edit.source lazy
-	org.eclipse.egf.model.fprod.edit.source lazy
-	org.eclipse.egf.model.fprod.source lazy
-	org.eclipse.egf.model.ftask.edit.source lazy
-	org.eclipse.egf.model.ftask.source lazy
-	org.eclipse.egf.model.source lazy
-	org.eclipse.egf.model.ui.source.feature.group lazy
-	org.eclipse.egf.portfolio.emf.source.feature.group lazy
-	org.eclipse.egf.portfolio.genchain.source lazy
-	org.eclipse.egf.portfolio.source.feature.group lazy
-	org.eclipse.egf.portfolio.task.ant.source lazy
-	org.eclipse.egf.producer.source lazy
-	org.eclipse.egf.producer.ui.source lazy
+location EGFSdk "https://ci.eclipse.org/egf/job/tycho-egf-oxygen/lastSuccessfulBuild/artifact/releng/org.eclipse.egf.core.updatesite/target/repository/" {
+	org.eclipse.egf.sdk.feature.feature.group lazy
+	org.eclipse.egf.sdk.feature.source.feature.group lazy
 }
 
 location Nebula "http://download.eclipse.org/nebula/releases/1.4.0/" {
