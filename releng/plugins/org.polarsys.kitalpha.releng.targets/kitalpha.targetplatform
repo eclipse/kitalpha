@@ -1,6 +1,6 @@
 target "kitapha" with source, requirements
 
-location neon-release "http://download.eclipse.org/releases/neon" {
+location neon-release "http://download.eclipse.org/releases/oxygen" {
 	org.eclipse.sdk.feature.group lazy
 	org.eclipse.egit.feature.group lazy
 	org.eclipse.equinox.executable.feature.group lazy
@@ -8,18 +8,11 @@ location neon-release "http://download.eclipse.org/releases/neon" {
 	org.eclipse.xtext.sdk.feature.group lazy
 	org.eclipse.emf.sdk.feature.group lazy
 	org.eclipse.emf.validation.ocl lazy
-	org.eclipse.emf.query.ocl.feature.group lazy
-	org.eclipse.emf.query.ocl.source.feature.group lazy
-	org.eclipse.emf.query.sdk.feature.group lazy
-	org.eclipse.emf.query.doc.feature.group lazy
 	org.eclipse.emf.transaction.sdk.feature.group lazy
 	org.eclipse.emf.transaction.doc.feature.group lazy
-	org.eclipse.gmf.sdk lazy
-	org.eclipse.gmf.sdk.feature.group lazy
 	org.eclipse.gmf.runtime.sdk.feature.group lazy
 	org.eclipse.gmf.examples.runtime.feature.group lazy
 	org.eclipse.gmf.examples.runtime.ui.pde.feature.group lazy
-	org.eclipse.gmf.doc.feature.group lazy
 	org.eclipse.gmf.runtime.notation.sdk.feature.group lazy
 	org.eclipse.gef.sdk.feature.group lazy
 	org.eclipse.ui.ide lazy
@@ -39,17 +32,11 @@ location neon-release "http://download.eclipse.org/releases/neon" {
 	org.eclipse.draw2d.source.feature.group lazy
 	org.eclipse.e4.rcp.source.feature.group lazy
 	org.eclipse.ecf.core.feature.feature.group lazy
-	org.eclipse.ecf.core.source.feature.feature.group lazy
 	org.eclipse.ecf.core.ssl.feature.feature.group lazy
-	org.eclipse.ecf.core.ssl.source.feature.feature.group lazy
 	org.eclipse.ecf.filetransfer.feature.feature.group lazy
 	org.eclipse.ecf.filetransfer.httpclient4.feature.feature.group lazy
-	org.eclipse.ecf.filetransfer.httpclient4.source.feature.feature.group lazy
 	org.eclipse.ecf.filetransfer.httpclient4.ssl.feature.feature.group lazy
-	org.eclipse.ecf.filetransfer.httpclient4.ssl.source.feature.feature.group lazy
-	org.eclipse.ecf.filetransfer.source.feature.feature.group lazy
 	org.eclipse.ecf.filetransfer.ssl.feature.feature.group lazy
-	org.eclipse.ecf.filetransfer.ssl.source.feature.feature.group lazy
 	org.eclipse.emf.codegen.ecore.source lazy
 	org.eclipse.emf.codegen.ecore.ui.source lazy
 	org.eclipse.emf.codegen.source lazy
@@ -86,7 +73,6 @@ location neon-release "http://download.eclipse.org/releases/neon" {
 	org.eclipse.equinox.p2.rcp.feature.source.feature.group lazy
 	org.eclipse.equinox.p2.user.ui.source.feature.group lazy
 	org.eclipse.gef.source lazy
-	org.eclipse.gmf.doc lazy
 	org.eclipse.gmf.examples.runtime lazy
 	org.eclipse.gmf.examples.runtime.ui.pde lazy
 	org.eclipse.gmf.runtime.notation.sdk lazy
@@ -94,13 +80,10 @@ location neon-release "http://download.eclipse.org/releases/neon" {
 	org.eclipse.gmf.runtime.sdk lazy
 	org.eclipse.gmf.runtime.thirdparty.source.feature.group lazy
 	org.eclipse.gmf.source.feature.group lazy
-	org.eclipse.gmf.tooling lazy
-	org.eclipse.gmf.tooling.runtime.source lazy
-	org.eclipse.gmf.tooling.source.feature.group lazy
 	org.eclipse.help.source lazy
 	org.eclipse.jdt.source.feature.group lazy
 	org.eclipse.jgit lazy
-	org.eclipse.ocl lazy
+	org.eclipse.ocl.all.feature.group lazy
 	org.eclipse.pde.source.feature.group lazy
 	org.eclipse.platform.source lazy
 	org.eclipse.rcp.source.feature.group lazy
@@ -122,33 +105,20 @@ location neon-release "http://download.eclipse.org/releases/neon" {
 	org.eclipse.xsd.source lazy
 	org.eclipse.xtend.sdk.feature.group lazy
 	org.eclipse.xtext.docs.feature.group lazy
-	org.eclipse.xtext.examples.source.feature.group lazy
-	org.eclipse.xtext.runtime.source.feature.group lazy
 	org.eclipse.xtext.ui.source lazy
 	org.eclipse.xtext.xbase.lib.source lazy
 	org.eclipse.xtext.xbase.source lazy
 	org.eclipse.xtext.xtext.ui.source lazy
 	org.eclipse.acceleo.query.source.feature.group lazy
 	org.eclipse.acceleo.annotations.source lazy
-}
-
-location EEF "http://download.eclipse.org/modeling/emft/eef/updates/milestones/1.5/S201501090502" {
-	org.eclipse.emf.eef.sdk-feature.feature.group lazy
-	org.eclipse.emf.eef.codegen.ecore-feature.feature.group lazy
-	org.eclipse.emf.eef.edt-feature.feature.group lazy
-	org.eclipse.emf.eef.extended-feature.feature.group lazy
-	org.eclipse.emf.eef.runtime-feature.feature.group lazy
-}
-
-location acceleo "http://download.eclipse.org/acceleo/updates/releases/3.7/R201705121344/" {
-	// Old: http://download.eclipse.org/modeling/m2t/acceleo/updates/releases/3.4
-	org.eclipse.acceleo.sdk.feature.group lazy
+	org.eclipse.acceleo.feature.group lazy
 	org.eclipse.acceleo.doc lazy
-	org.eclipse.acceleo.examples lazy
 	org.eclipse.acceleo.source.feature.group lazy
+	org.eclipse.emf.eef.sdk-feature.feature.group lazy
 }
 
-location Sirus "http://download.eclipse.org/sirius/updates/milestones/5.1.1rc4/neon/" {
+
+location Sirus "http://download.eclipse.org/sirius/updates/releases/5.1.1/oxygen" {
 	org.eclipse.sirius.doc.feature.feature.group lazy
 	org.eclipse.sirius.runtime.ide.eef.feature.group lazy
 	org.eclipse.sirius.runtime.ide.ui.acceleo.feature.group lazy
@@ -204,13 +174,17 @@ location amalgam "http://download.eclipse.org/modeling/amalgam/updates/milestone
 	org.eclipse.amalgam.explorer.contextual.core.source.feature.group lazy
 }
 
-location EcoreTools "http://download.eclipse.org/ecoretools/updates/releases/3.2.1/neon/" {
+location coevolution "http://download.eclipse.org/diffmerge/releases/0.9.0/edm-coevolution-site/" {
+	 org.eclipse.emf.diffmerge.coevolution.sdk.feature.feature.group
+}
+
+location EcoreTools "http://download.eclipse.org/ecoretools/updates/milestones/3.3.0RC4/oxygen/" {
 	org.eclipse.emf.ecoretools.sdk.feature.group lazy
 	org.eclipse.emf.ecoretools.design lazy
 	org.eclipse.emf.ecoretools.explorer.contextual.feature.group lazy
 }
 
-location EGFSdk "https://hudson.eclipse.org/egf/job/buckminster-egf-neon/lastSuccessfulBuild/artifact/result/publish/org.eclipse.egf.site/site.p2/" {
+location EGFSdk "https://hudson.eclipse.org/egf/job/buckminster-egf-oxygen/lastSuccessfulBuild/artifact/result/publish/org.eclipse.egf.site/site.p2/" {
 	org.eclipse.egf.sdk.feature.group lazy
 	org.eclipse.egf.feature.group lazy
 	org.eclipse.egf.common.source lazy
@@ -233,6 +207,6 @@ location EGFSdk "https://hudson.eclipse.org/egf/job/buckminster-egf-neon/lastSuc
 	org.eclipse.egf.producer.ui.source lazy
 }
 
-location Nebula "http://download.eclipse.org/nebula/releases/1.2.0/" {
+location Nebula "http://download.eclipse.org/nebula/releases/1.4.0/" {
 	org.eclipse.nebula.widgets.richtext.feature.feature.group lazy
 }

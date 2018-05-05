@@ -12,7 +12,7 @@
 <feature
       id="org.polarsys.kitalpha.emde.sdk.feature"
       label="Kitalpha eMDE SDK Feature"
-      version="1.2.1.qualifier"
+      version="1.3.0.qualifier"
       provider-name="%providerName">
 
    <description>
