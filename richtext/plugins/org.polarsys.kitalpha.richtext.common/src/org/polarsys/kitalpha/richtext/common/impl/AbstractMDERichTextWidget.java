@@ -165,7 +165,7 @@ public abstract class AbstractMDERichTextWidget implements MDERichTextWidget {
         && source.getElement().equals(getElement()) && source.getFeature().equals(getFeature())) {
       String newValue = (String) evt.getNewValue();
       String currentText = getText();
-      if (!currentText.equals(newValue)) {
+      if (currentText != null && !currentText.equals(newValue)) {
         setText(newValue);
       }
     }

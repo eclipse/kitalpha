@@ -378,4 +378,14 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
   public boolean isEditorDisposed() {
     return editor.isDisposed();
   }
+  
+  @Override
+  public void setParent(Composite parent) {
+    editor.setParent(parent);
+  }
+  
+  @Override
+  public Composite getParent() {
+    return editor.getParent();
+  }
 }
