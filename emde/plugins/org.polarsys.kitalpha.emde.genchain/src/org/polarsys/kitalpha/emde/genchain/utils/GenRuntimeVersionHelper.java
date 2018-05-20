@@ -22,31 +22,10 @@ import org.osgi.framework.Version;
  */
 public class GenRuntimeVersionHelper {
 	public static GenRuntimeVersion getVersion(Version version) {
-		GenRuntimeVersion genmodelVersion = null;
-
-		if (version.getQualifier().startsWith("2_3"))
-			genmodelVersion = GenRuntimeVersion.get("2.3");
-		if (version.getQualifier().startsWith("2_5"))
-			genmodelVersion = GenRuntimeVersion.get("2.5");
-		if (version.getQualifier().startsWith("2_6"))
-			genmodelVersion = GenRuntimeVersion.get("2.6");
-		if (version.getQualifier().startsWith("2_7"))
-			genmodelVersion = GenRuntimeVersion.get("2.7");
-		if (version.getQualifier().startsWith("2_8"))
-			genmodelVersion = GenRuntimeVersion.get("2.8");
-		if (version.getQualifier().startsWith("2_9"))
-			genmodelVersion = GenRuntimeVersion.get("2.9");
-		if (version.getQualifier().startsWith("2_10"))
-			genmodelVersion = GenRuntimeVersion.get("2.10");
-		if (version.getQualifier().startsWith("2_11"))
-			genmodelVersion = GenRuntimeVersion.get("2.11");
-		if (version.getQualifier().startsWith("2_12"))
-			genmodelVersion = GenRuntimeVersion.get("2.12");
-		if (version.getQualifier().startsWith("2_13"))
-			genmodelVersion = GenRuntimeVersion.get("2.13");
+		String versionStr =version.getMajor()+"."+version.getMinor(); 
+		GenRuntimeVersion genmodelVersion = GenRuntimeVersion.get(versionStr);
 		if (genmodelVersion == null)
-			throw new IllegalStateException("unexpected version for org.eclipse.egf.emf.pattern bundle: " + version);
-
+			throw new IllegalStateException("unexpected version for org.eclipse.emf.codegen bundle: " + version);
 		return genmodelVersion;
 	}
 }

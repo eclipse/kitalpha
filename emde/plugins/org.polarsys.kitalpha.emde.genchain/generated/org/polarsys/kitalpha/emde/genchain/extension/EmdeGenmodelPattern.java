@@ -1,4 +1,4 @@
-//Generated with EGF 1.4.1.v20161010-1704
+//Generated with EGF 1.5.0.v20180411-1448
 package org.polarsys.kitalpha.emde.genchain.extension;
 
 import java.util.HashMap;
@@ -162,7 +162,7 @@ public class EmdeGenmodelPattern {
 
 		// EMDE Extension Genmodel
 		genModel.setNonNLSMarkers(true);
-		Bundle bundle = Platform.getBundle("org.eclipse.egf.emf.pattern");
+		Bundle bundle = Platform.getBundle("org.eclipse.emf.codegen");
 		genModel.setRuntimeVersion(GenRuntimeVersionHelper.getVersion(bundle.getVersion()));
 		genModel.setRootExtendsClass("org.eclipse.emf.ecore.impl.EObjectImpl");
 		genModel.setCodeFormatting(true);
