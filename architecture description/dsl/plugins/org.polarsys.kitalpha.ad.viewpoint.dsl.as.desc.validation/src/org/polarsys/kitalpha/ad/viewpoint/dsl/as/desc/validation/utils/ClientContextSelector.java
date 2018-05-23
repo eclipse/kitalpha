@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ public class ClientContextSelector implements IClientSelector {
 	 * @see org.eclipse.emf.validation.model.IClientSelector#selects(java.lang.Object)
 	 */
 	public boolean selects(Object arg0) {
-		if (arg0 == null || (arg0 != null && !(arg0 instanceof EObject))) {
+		if (arg0 == null || !(arg0 instanceof EObject)) {
 			return false;
 		}
 		
@@ -39,7 +39,7 @@ public class ClientContextSelector implements IClientSelector {
 		if (eResource != null)
 		{// Check if the root element of the resource is a Viewpoint object
 			EList<EObject> resourceContent = eResource.getContents();
-			if (resourceContent != null && resourceContent.size() > 0) {
+			if (resourceContent != null && !resourceContent.isEmpty()) {
 				return resourceContent.get(0) instanceof Viewpoint;
 			}
 			return false;

@@ -123,14 +123,11 @@ public final class EdgeStyleImportMerger {
 		*/
 		if (originalLabel == null)
 			return generatedLabel;
-		else
-		{
-			if (generatedLabel == null)
-				return EcoreUtil.copy(originalLabel);
-		}
+		if (generatedLabel == null)
+			return EcoreUtil.copy(originalLabel);
 		
 		/** If both label are equal, so return the generated one */
-		if (originalLabel.equals(generatedLabel) || (viewpointLabel == null && generatedLabel != null))
+		if (originalLabel.equals(generatedLabel) || viewpointLabel == null)
 			return generatedLabel;
 		
 		/** If we are here, this means that the both labels exist, so let do merge ;) */

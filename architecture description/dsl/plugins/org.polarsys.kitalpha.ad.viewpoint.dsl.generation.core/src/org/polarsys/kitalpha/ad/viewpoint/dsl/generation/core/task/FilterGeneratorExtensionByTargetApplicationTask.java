@@ -40,6 +40,7 @@ public class FilterGeneratorExtensionByTargetApplicationTask extends TaskProduct
 	public static final String filteredExtensionPointContributions = "filtered.extension.point.contributions";
 	
 	@SuppressWarnings("unchecked")
+	@Override
 	public void doExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
 		
@@ -51,7 +52,7 @@ public class FilterGeneratorExtensionByTargetApplicationTask extends TaskProduct
 		EMFDomain domainModel = productionContext.getInputValue(VPDESC_MODEL, EMFDomain.class);
 		String targetApplication = getTargetApplication(domainModel);
 		
-		if (targetApplication == null || (targetApplication != null && targetApplication.trim().length() == 0))
+		if (targetApplication == null || targetApplication.trim().length() == 0)
 		{
 			holdedExtensionPointContributions.addAll(extensionPointContributionsValue);
 		}

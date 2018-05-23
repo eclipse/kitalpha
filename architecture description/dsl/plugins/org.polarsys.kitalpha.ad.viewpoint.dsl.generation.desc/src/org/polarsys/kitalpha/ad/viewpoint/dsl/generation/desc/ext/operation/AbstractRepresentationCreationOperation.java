@@ -99,7 +99,7 @@ public abstract class AbstractRepresentationCreationOperation extends WorkspaceM
 	protected List<EObject> semanticElemens = new ArrayList<EObject>();
 	
 	/** Sirius representation files extension **/
-	private final static String _AIRD_FILE_EXTENSION = "aird";
+	private static final String AIRD_FILE_EXTENSION = "aird";
 	
 	/** Viewpoint and diagrams names **/
 	private String _viewpointPluginID = "";
@@ -700,19 +700,16 @@ public abstract class AbstractRepresentationCreationOperation extends WorkspaceM
 	 * @return a valid representation file name
 	 */
 	private String getRepresentationFileName(String fileName){
-		if (fileName == null || (fileName != null && fileName.trim().length() <1 ))
+		if (fileName == null || fileName.trim().length() <1 )
 		{
 			URI modelUriWithoutFileExtension = this._modelURI.trimFileExtension();
 			if (modelUriWithoutFileExtension != null && modelUriWithoutFileExtension.segmentCount() > 1)
 			{
 				String modelName = modelUriWithoutFileExtension.lastSegment();
-				modelName += "." +_AIRD_FILE_EXTENSION;
+				modelName += "." +AIRD_FILE_EXTENSION;
 				return modelName;
 			}
-			else
-			{
-				throw new RuntimeException("Model file URI is not valid");
-			}
+			throw new IllegalStateException("Model file URI is not valid");
 		}
 		else
 		{
@@ -721,11 +718,9 @@ public abstract class AbstractRepresentationCreationOperation extends WorkspaceM
 			{
 				String[] segments = fileName.split("/");
 				String lastSegment = segments[segments.length - 1];
-				if (lastSegment.contains(_AIRD_FILE_EXTENSION))
+				if (lastSegment.contains(AIRD_FILE_EXTENSION))
 					return lastSegment;
-				else
-					return lastSegment + "." +_AIRD_FILE_EXTENSION;
-					
+				return lastSegment + "." +AIRD_FILE_EXTENSION;
 			}
 		}
 		return fileName;

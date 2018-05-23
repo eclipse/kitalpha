@@ -79,14 +79,10 @@ public class DetachmentHelper {
 			EList<EObject> genContents = r.getContents();;
 			if (genContents != null && ! genContents.isEmpty())
 			{
-				if (genContents != null && !genContents.isEmpty())
+				EList<GenPackage> genmodels = ((GenModel)genContents.get(0)).getGenPackages();
+				for(GenPackage genPackage: genmodels)
 				{
-					EList<GenPackage> genmodels = ((GenModel)genContents.get(0)).getGenPackages();
-					for(GenPackage genPackage: genmodels)
-					{
-						URI platformURI = genPackage.getEcorePackage().eResource().getURI();
-						return platformURI;
-					}
+					return genPackage.getEcorePackage().eResource().getURI();
 				}
 			}
 		}
@@ -138,14 +134,8 @@ public class DetachmentHelper {
 			return modelEltParser.getMelodyModellers();
 			
 			
-		} catch (ParserConfigurationException e) {
-			e.printStackTrace();
-		} catch (SAXException e) {
-			e.printStackTrace();
-		} catch (CoreException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
+		} catch (ParserConfigurationException | SAXException | CoreException | IOException e) {
+			_LOGGER.error(e);
 		}
 		
 		return result;
@@ -153,7 +143,7 @@ public class DetachmentHelper {
 	
 	
 	private static String getRelativePath(URI uri) {
-		StringBuffer buf = new StringBuffer();
+		StringBuilder buf = new StringBuilder();
 		String[] segments = uri.segments();
 		
 		if (segments.length > 1){
@@ -171,11 +161,12 @@ public class DetachmentHelper {
 		
 		Collection<String> melodyModellers;
 		
+		@Override
 		public void startDocument() throws SAXException{
 			melodyModellers = new HashSet<String>();
 		}
 		
-		
+		@Override
 		public void startElement(String namespaceURI, String name, String qname, Attributes attr)
 				throws SAXException {
 			
@@ -191,7 +182,7 @@ public class DetachmentHelper {
 			}
 		}
 
-		
+		@Override
 		public void endDocument() throws SAXException {
 		}
 
@@ -234,7 +225,7 @@ public class DetachmentHelper {
 		for (Resource resource2 : resources) {
 			String resourceName = resource2.getURI().lastSegment();
 			
-			if (refrencedModels.contains(resourceName)){
+			if (refrencedModels != null && refrencedModels.contains(resourceName)){
 				refrencedResources.add(resource2);
 			}
 		}

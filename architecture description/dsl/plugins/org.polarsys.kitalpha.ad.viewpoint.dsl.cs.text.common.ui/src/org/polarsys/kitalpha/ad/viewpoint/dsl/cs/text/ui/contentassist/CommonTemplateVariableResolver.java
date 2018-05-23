@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014-2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -49,16 +49,15 @@ public class CommonTemplateVariableResolver extends AbstractTemplateVariableReso
 			super(FILE_NAME, FILE_NAME_DESCRIPTION);
 		}
 
+		@Override
 		protected String resolve(TemplateContext context) {
 			XtextTemplateContext castedContext = (XtextTemplateContext) context;
 			XtextDocument document =(XtextDocument)  castedContext.getDocument();
 			URI resourceURI = document.getResourceURI();
 			if (resourceURI != null){
-				String lastSegment = resourceURI.trimFileExtension().lastSegment();
-				return lastSegment;
-			} else {
-				return FILE_NAME;
+				return resourceURI.trimFileExtension().lastSegment();
 			}
+			return FILE_NAME;
 		}
 	}
 	
@@ -68,17 +67,16 @@ public class CommonTemplateVariableResolver extends AbstractTemplateVariableReso
 			super(SHORT_NAME, SHORT_NAME_DESCRIPTION);
 		}
 		
+		@Override
 		protected String resolve(TemplateContext context) {		
 			XtextTemplateContext castedContext = (XtextTemplateContext) context;
 			XtextDocument document =(XtextDocument)  castedContext.getDocument();
 			URI uri = document.getResourceURI();
 			if (uri != null){
-				String lastSegment = uri != null? uri.trimFileExtension().lastSegment(): null;
-				String shortName = lastSegment != null? lastSegment.substring(0, lastSegment.indexOf('.')): null;
-				return shortName;
-			} else {
-				return SHORT_NAME;
+				String lastSegment = uri.trimFileExtension().lastSegment();
+				return lastSegment != null? lastSegment.substring(0, lastSegment.indexOf('.')): null;
 			}
+			return SHORT_NAME;
 		}
 	}
 
@@ -88,6 +86,7 @@ public class CommonTemplateVariableResolver extends AbstractTemplateVariableReso
 			super(VIEWPOINT_NAME, VIEWPOINT_NAME_DESCRIPTION);
 		}
 		
+		@Override
 		protected String resolve(TemplateContext context) {
 			XtextTemplateContext castedContext = (XtextTemplateContext) context;
 			XtextDocument document =(XtextDocument)  castedContext.getDocument();
@@ -95,11 +94,9 @@ public class CommonTemplateVariableResolver extends AbstractTemplateVariableReso
 			String fullyProjectName = resourceURI.segment(1);
 
 			if (fullyProjectName != null && !fullyProjectName.isEmpty()){
-				String projectName = fullyProjectName.substring(0, fullyProjectName.lastIndexOf('.')); //trim vpdsl
-				return projectName;
-			} else {
-				return VIEWPOINT_NAME;
+				return fullyProjectName.substring(0, fullyProjectName.lastIndexOf('.')); //trim vpdsl
 			}
+			return VIEWPOINT_NAME;
 		}
 	}
 	

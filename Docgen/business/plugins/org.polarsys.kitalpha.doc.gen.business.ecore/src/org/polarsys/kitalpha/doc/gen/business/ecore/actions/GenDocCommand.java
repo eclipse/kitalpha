@@ -148,10 +148,6 @@ public class GenDocCommand {
 			{
 				EGFPatternPlugin.getDefault().logError(e);
 			}
-			finally
-			{
-				
-			}
 		}
 		
 		if (session != null && session.isOpen())
@@ -164,7 +160,7 @@ public class GenDocCommand {
 	}
 	
 	private void cleanFiles() {
-		if (resource.getContents() == null || (resource.getContents() != null && resource.getContents().size() <= 0))
+		if (resource.getContents() == null || (resource.getContents() != null && resource.getContents().isEmpty()))
 			return;
 		
 		String modelName = DocGenHtmlUtil.getModelName(resource.getContents().get(0));
@@ -175,9 +171,9 @@ public class GenDocCommand {
 			if (folder != null && folder.exists()) 
 			{
 				IResource[] members = folder.members();
-				for (IResource resource : members) 
+				for (IResource res : members) 
 				{
-					resource.delete(true, progressMonitor);
+					res.delete(true, progressMonitor);
 				}
 			}
 		} 
@@ -224,7 +220,7 @@ public class GenDocCommand {
 	private void setPatternsubstitutionContract(FactoryComponent factoryComponent,
 			String contractName, TypePatternSubstitution value){
 		
-		if (value == null || (null != value && value.getSubstitutions().size() <= 0))
+		if (value == null || value.getSubstitutions().isEmpty())
 			return;
 		
 		Contract invokedContract = factoryComponent.getContract(contractName);
@@ -252,7 +248,7 @@ public class GenDocCommand {
 		{
 			Contract invokedContract = factoryComponent.getContract(contractName);
 			if (invokedContract == null)
-				throw new RuntimeException("[GenDocCommand] The contract " +contractName+ " doesn't exists");
+				throw new IllegalStateException("[GenDocCommand] The contract " +contractName+ " doesn't exists");
 		}
 		
 		if (mandatory)
@@ -260,7 +256,7 @@ public class GenDocCommand {
 			if (value != null)
 				setContract(factoryComponent, contractName, value);
 			else
-				throw new RuntimeException("[GenDocCommand] The contract " + contractName + " is mandatory but the value is null");
+				throw new IllegalStateException("[GenDocCommand] The contract " + contractName + " is mandatory but the value is null");
 		}
 		else
 		{

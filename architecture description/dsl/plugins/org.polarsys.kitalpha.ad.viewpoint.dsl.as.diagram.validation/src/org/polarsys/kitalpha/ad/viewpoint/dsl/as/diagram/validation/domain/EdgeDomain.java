@@ -55,19 +55,19 @@ public class EdgeDomain implements IAdditionalConstraint {
 
 		if (domain instanceof EdgeDomainElement)
 		{
-			EdgeDomainElement edomain = (EdgeDomainElement) domain;
+			EdgeDomainElement eDomain = (EdgeDomainElement) domain;
 			
-			if (edomain.getThe_Domain() == null)
+			if (eDomain.getThe_Domain() == null)
 				return ValidationStatus.getErrorStatusWithRuleFlag(Flag_NullDomainClass);
 			
-			if (edomain.getSource_Locator() == null && 
-					(edomain.getSource_query() == null || (
-							edomain.getSource_query() != null && 
-							edomain.getSource_query().trim().length() == 0)))
+			if (eDomain.getSource_Locator() == null && 
+					(eDomain.getSource_query() == null || (
+							eDomain.getSource_query() != null && 
+							eDomain.getSource_query().trim().length() == 0)))
 				return ValidationStatus.getErrorStatusWithRuleFlag(Flag_NeitherQueryAndSourceLocator);
 
-			if (edomain.getSource_Locator() != null && 
-					(edomain.getSource_query() != null && edomain.getSource_query().trim().length() > 0))
+			if (eDomain.getSource_Locator() != null && 
+					(eDomain.getSource_query() != null && eDomain.getSource_query().trim().length() > 0))
 				return ValidationStatus.getErrorStatusWithRuleFlag(Flag_BothQueryAndSourceLocator);
 		}
 		
@@ -77,10 +77,10 @@ public class EdgeDomain implements IAdditionalConstraint {
 	public String getMessage(ValidationStatus status, Object object) {
 		String edgeName = ((DiagramElement) object).getName();
 
-		if (edgeName == null || (edgeName != null && edgeName.trim().length() == 0))
+		if (edgeName == null || edgeName.trim().length() == 0)
 			edgeName = "Edge ";
 		
-		int flag = Integer.valueOf(status.getRuleFlag().toString());
+		int flag = Integer.parseInt(status.getRuleFlag().toString());
 		
 		switch (flag) {
 			case Flag_NullDomain:
@@ -95,8 +95,9 @@ public class EdgeDomain implements IAdditionalConstraint {
 				return Messages.bind(Messages.Validation_Domain_Edge_NeitherQueryOrSourceLocator, edgeName);
 			case Flag_NeitherQueryAndTargetLocator:
 				return Messages.bind(Messages.Validation_Domain_Edge_NeitherQueryOrTargetLocator, edgeName);
+			default:	
+				return Messages.Validation_NoMessage;
 		}
-		return Messages.Validation_NoMessage;
 	}
 
 }

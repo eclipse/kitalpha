@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,9 +38,9 @@ public class Logger implements IActivity{
   public static final String POST = "post"; //$NON-NLS-1$
   private static final String POST_DESCRIPTION = "user message displayed in the console"; //$NON-NLS-1$
   
-  private final static GregorianCalendar calendar = new java.util.GregorianCalendar(); 
-  private final static SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss"); //$NON-NLS-1$
-  private final List<DeclaredParameter> parameters = new ArrayList<DeclaredParameter>();
+  private static final GregorianCalendar calendar = new java.util.GregorianCalendar(); 
+  private static final SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss"); //$NON-NLS-1$
+  private final List<DeclaredParameter> parameters = new ArrayList<>();
   
   static{
     if(calendar.getTime()==null)
@@ -50,11 +50,11 @@ public class Logger implements IActivity{
   /**
    * @see org.polarsys.kitalpha.cadence.core.api.IActivity#run(java.util.Map)
    */
-  public IStatus run(ActivityParameters activityParams_p) {
+  public IStatus run(ActivityParameters activityParams) {
     
    
     //get user message
-    final String post = (String)activityParams_p.getParameter(POST).getValue();
+    final String post = (String)activityParams.getParameter(POST).getValue();
     //display user post
     System.out.println("Logger => "+ format.format(calendar.getTime()) +" "+ post); //$NON-NLS-1$ //$NON-NLS-2$
     
@@ -64,7 +64,7 @@ public class Logger implements IActivity{
   /**
    * @see org.polarsys.kitalpha.cadence.core.api.IActivity#validateParameters(org.polarsys.kitalpha.cadence.core.api.parameter.ActivityParameters)
    */
-  public Map<String, ParameterError<?>> validateParameters(ActivityParameters valuedParameters_p) {
+  public Map<String, ParameterError<?>> validateParameters(ActivityParameters valuedParameters) {
     return null;
   }
 

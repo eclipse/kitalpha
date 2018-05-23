@@ -174,13 +174,13 @@ public class ViewpointDslPreferencesPage extends FieldEditorPreferencePage imple
 		
 		// Root project name default value
 		String rpnPrefValue = store.getString(ViewpointDslPreferenceConstant.VP_ROOT_PROJECT_NAME__VALUE);
-		if (rpnPrefValue == null || (rpnPrefValue != null && rpnPrefValue.trim().length() == 0))
+		if (rpnPrefValue == null || rpnPrefValue.trim().length() == 0)
 			 store.setDefault(ViewpointDslPreferenceConstant.VP_ROOT_PROJECT_NAME__VALUE, 
 					 ViewpointDslPreferenceConstant.VP_ROOT_PROJECT_NAME__DEFAULT_VALUE);
 		
 		// Default TA default value
 		String defaultTAPrefValue = store.getString(ViewpointDslPreferenceConstant.VP_TA__DEFAULT);
-		if (defaultTAPrefValue == null || (defaultTAPrefValue != null && defaultTAPrefValue.trim().length() == 0))
+		if (defaultTAPrefValue == null || defaultTAPrefValue.trim().length() == 0)
 			 store.setDefault(ViewpointDslPreferenceConstant.VP_TA__DEFAULT, 
 					 ViewpointDslPreferenceConstant.VP_TA__DEFAULT__DEFAULT_VALUE);
 	}

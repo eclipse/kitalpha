@@ -83,7 +83,7 @@ public class SynchronizerAction extends BaseSelectionListenerAction implements I
 	public void run(IAction action) {
 		IStructuredSelection structuredSelection = (IStructuredSelection)selection;
 		Object obj = structuredSelection.getFirstElement();
-		IFile file = (IFile) Platform.getAdapterManager().getAdapter(obj, IFile.class);	
+		IFile file = Platform.getAdapterManager().getAdapter(obj, IFile.class);	
 		doSynchronize(file);
 	}
 	
@@ -105,12 +105,12 @@ public class SynchronizerAction extends BaseSelectionListenerAction implements I
 					EObject synchronizedObject = generator.synchronize(inputObjects, viewpoint);
 					if (synchronizedObject !=null) {
 						try {
-							final Map<Object, Object> saveOptions = new HashMap<Object, Object>();
+							final Map<Object, Object> saveOptions = new HashMap<>();
 							saveOptions.put(Resource.OPTION_SAVE_ONLY_IF_CHANGED, Resource.OPTION_SAVE_ONLY_IF_CHANGED_MEMORY_BUFFER);
 							synchronizedObject.eResource().save(saveOptions);
 							result = true;
 						} catch (IOException e) {
-							e.printStackTrace();
+							Activator.getDefault().getLog().log(new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage(), e));
 						}		
 					}
 				}
@@ -131,8 +131,6 @@ public class SynchronizerAction extends BaseSelectionListenerAction implements I
 		if (!exists || uri==null) {
 			org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint viewpoint = (org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint) ResourceHelper.loadPrimaryResource(projectName, resourceSet).get(0);
 			String shortName = viewpoint.getShortName().replaceAll("\"", "");
-			if (shortName ==null)
-				return null;
 			uri = ResourceHelper.computeURI(projectName, shortName, FileExtension.VPDESC_EXTENSION);
 			Resource resource = resourceSet.createResource(uri);
 			Viewpoint target = VpdescFactory.eINSTANCE.createViewpoint();
@@ -156,13 +154,10 @@ public class SynchronizerAction extends BaseSelectionListenerAction implements I
 	}
 	
 	private boolean validate(EObject object) {
-		List<Diagnostic> diagnostics = new ArrayList<Diagnostic>();
+		List<Diagnostic> diagnostics = new ArrayList<>();
 		IConcreteSyntaxValidator concreteSyntaxValidator = ((XtextResource)object.eResource()).getConcreteSyntaxValidator();
 		concreteSyntaxValidator.validateRecursive(object, new IConcreteSyntaxValidator.DiagnosticListAcceptor(diagnostics), new HashMap<Object, Object>());
-		if (!diagnostics.isEmpty()) {
-			return false;
-		}
-		return true;
+		return diagnostics.isEmpty();
 	}
 	
 	protected List<EObject> loadInputModels(IFile file, ResourceSet resourceSet) {

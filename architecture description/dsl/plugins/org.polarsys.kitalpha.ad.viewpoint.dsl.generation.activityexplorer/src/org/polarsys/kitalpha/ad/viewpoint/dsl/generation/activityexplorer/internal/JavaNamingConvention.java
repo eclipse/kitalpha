@@ -110,7 +110,7 @@ public class JavaNamingConvention {
 			throw new IllegalArgumentException("[VPDSL - Java Class Naming Convention] Null element are not accepted");
 		
 		final String name = element.getName();
-		if (null == name || (null != name && name.isEmpty()))
+		if (null == name || name.isEmpty())
 			throw new IllegalArgumentException("[VPDSL - Java Class Naming Convention] No named element are not accepted");
 		
 		String javaClassName = name + context.toString();

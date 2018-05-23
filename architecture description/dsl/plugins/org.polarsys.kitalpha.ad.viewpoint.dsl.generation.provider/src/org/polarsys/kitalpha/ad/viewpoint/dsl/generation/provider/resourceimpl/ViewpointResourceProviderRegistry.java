@@ -206,8 +206,7 @@ public class ViewpointResourceProviderRegistry {
 					genchainProvider_.setHandler(this);
 					return true;
 				}
-				else
-					return false;
+				return false;
 			}
 			
 		} catch (ViewpointResourceException e) {

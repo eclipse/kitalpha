@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,19 +37,19 @@ public class UpdateBuildPropertiesTask extends AbstractPdeHelperTask {
 	@Override
 	public void doExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
-		 String pluginID = (String)productionContext.getInputValue(PLUGIN_ID_CONTRACT, String.class);
-		 if (pluginID == null || (pluginID != null && pluginID.trim().length() < 1))
+		 String pluginID = productionContext.getInputValue(PLUGIN_ID_CONTRACT, String.class);
+		 if (pluginID == null || pluginID.trim().length() < 1)
 			 throw new InvalidParameterException(Messages.bind(Messages.Pde_Helper__Contract_Value_Required, PLUGIN_ID_CONTRACT));
 		 
-		 String entryName = (String)productionContext.getInputValue(ENTRY_NAME_CONTRACT, String.class);
-		 if (entryName == null || (entryName != null && entryName.trim().length() < 1))
+		 String entryName = productionContext.getInputValue(ENTRY_NAME_CONTRACT, String.class);
+		 if (entryName == null || entryName.trim().length() < 1)
 			 throw new InvalidParameterException(Messages.bind(Messages.Pde_Helper__Contract_Value_Required, ENTRY_NAME_CONTRACT));
 		 
-		 Boolean isFolder = (Boolean)productionContext.getInputValue(IS_FOLDER_CONTRACT, Boolean.class);
+		 Boolean isFolder = productionContext.getInputValue(IS_FOLDER_CONTRACT, Boolean.class);
 		 if (isFolder == null)
 			 isFolder = false;
 		 
-		 Boolean silent = (Boolean)productionContext.getInputValue(SILENT_CONTRACT, Boolean.class);
+		 Boolean silent = productionContext.getInputValue(SILENT_CONTRACT, Boolean.class);
 		 if (silent == null)
 			 silent = true;
 		 

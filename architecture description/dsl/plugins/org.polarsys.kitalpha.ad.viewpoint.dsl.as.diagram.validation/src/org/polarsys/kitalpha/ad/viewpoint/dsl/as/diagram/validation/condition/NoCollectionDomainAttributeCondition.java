@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,10 +26,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Condition;
  */
 
 public class NoCollectionDomainAttributeCondition implements IAdditionalConstraint {
-
-	public NoCollectionDomainAttributeCondition() {
-		// TODO Auto-generated constructor stub
-	}
 
 	public boolean isObjectInScope(Object object) {
 		return object instanceof Condition;
@@ -60,13 +56,13 @@ public class NoCollectionDomainAttributeCondition implements IAdditionalConstrai
 			DomainElement domainElement = (DomainElement) condition.getExpression();
 			Attribute attribute = domainElement.getAttribute();
 			String attributeName = attribute.getName();
-			if (attributeName == null || ( attributeName!= null && attributeName.length() == 0))
+			if (attributeName == null || attributeName.length() == 0)
 			{
 				attributeName = Messages.Validation_VpSpec_Attribute_NoName;
 			}
 			Class clazz = (Class)attribute.eContainer();
 			String clazzName = clazz.getName();
-			if (clazzName == null || ( clazzName!= null && clazzName.length() == 0))
+			if (clazzName == null || clazzName.length() == 0)
 			{
 				clazzName = Messages.Validation_VpSpec_Class_NoName;
 			}

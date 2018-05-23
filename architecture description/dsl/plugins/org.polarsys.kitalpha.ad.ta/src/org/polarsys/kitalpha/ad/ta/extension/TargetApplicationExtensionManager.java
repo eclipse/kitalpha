@@ -122,14 +122,13 @@ public class TargetApplicationExtensionManager {
 	public static IConfigurationElement getTargetApplicationExtension(String targetApplicationName){
 		// Search in the platform the corresponding extension point 
 		
-		if (null == targetApplicationName || 
-				(null != targetApplicationName && targetApplicationName.trim().length() == 0))
+		if (null == targetApplicationName || targetApplicationName.trim().length() == 0)
 		{
 			throw new IllegalArgumentException(Messages.Target_Application__NameNotValid);
 		}
 		
 		// If we are here, that means that targetApplicationName parameter value is correct
-		if (null != targetApplicationName && targetApplicationName.trim().length() > 0)
+		if (targetApplicationName.trim().length() > 0)
 		{
 			IConfigurationElement[] config =Platform.getExtensionRegistry().getConfigurationElementsFor(
 					TargetApplicationConstants.TARGET_APP_EXTENSION_ID);

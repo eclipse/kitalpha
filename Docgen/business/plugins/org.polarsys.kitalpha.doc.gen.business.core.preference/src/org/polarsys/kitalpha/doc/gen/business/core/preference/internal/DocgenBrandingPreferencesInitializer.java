@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,19 +27,19 @@ public class DocgenBrandingPreferencesInitializer extends AbstractPreferenceInit
 	@Override
 	public void initializeDefaultPreferences() {
 		String copyright = DocgenBrandingPreferencesHelper.getCopyright();
-		if (copyright == null || (copyright != null && copyright.trim().length() == 0))
+		if (copyright == null || copyright.trim().length() == 0)
 		{
 			DocgenBrandingPreferencesHelper.restorDefautCopyrightDefaultValues();
 		}
 		
 		String imagePath = DocgenBrandingPreferencesHelper.getLogoPath();
-		if (imagePath == null || (imagePath != null && imagePath.trim().length() == 0))
+		if (imagePath == null || imagePath.trim().length() == 0)
 		{
 			DocgenBrandingPreferencesHelper.restorDefautImagePathDefaultValues();
 		}
 		
 		String imageAltText = DocgenBrandingPreferencesHelper.getLogoAlternateText();
-		if (imageAltText == null || (imageAltText != null && imageAltText.trim().length() == 0))
+		if (imageAltText == null || imageAltText.trim().length() == 0)
 		{
 			DocgenBrandingPreferencesHelper.restorDefautImageAlternateTextDefaultValues();
 		}

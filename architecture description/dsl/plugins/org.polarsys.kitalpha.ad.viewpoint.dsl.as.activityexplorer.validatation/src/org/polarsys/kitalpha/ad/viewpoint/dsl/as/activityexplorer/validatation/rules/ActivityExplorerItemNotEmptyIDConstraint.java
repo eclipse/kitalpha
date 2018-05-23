@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015, 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2015, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -48,12 +48,10 @@ public class ActivityExplorerItemNotEmptyIDConstraint implements IAdditionalCons
 		final ActivityExplorerItem item = (ActivityExplorerItem) object;
 		final String eClassName = item.eClass().getName();
 		final String name = item.getName();
-		if (null == name || (null != name && name.trim().isEmpty())) {
+		if (null == name || name.trim().isEmpty()) {
 			return Messages.bind(Messages.Validation_ActivityExplorerItem_NoNamed_NotEmpty_ID, eClassName);
 		}
-		else {
-			return Messages.bind(Messages.Validation_ActivityExplorerItem_Named_NotEmpty_ID, eClassName, name);
-		}
+		return Messages.bind(Messages.Validation_ActivityExplorerItem_Named_NotEmpty_ID, eClassName, name);
 	}
 
 }

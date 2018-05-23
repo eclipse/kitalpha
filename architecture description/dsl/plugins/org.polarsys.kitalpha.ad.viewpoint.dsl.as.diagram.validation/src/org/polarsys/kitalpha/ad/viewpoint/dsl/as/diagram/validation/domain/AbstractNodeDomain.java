@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -63,10 +63,10 @@ public class AbstractNodeDomain implements IAdditionalConstraint {
 	public String getMessage(ValidationStatus status, Object object) {
 		String nodeName = ((DiagramElement) object).getName();
 
-		if (nodeName == null || (nodeName != null && nodeName.trim().length() == 0))
+		if (nodeName == null || nodeName.trim().length() == 0)
 			nodeName = "a "+ ((EObject)object).eClass().getName(); //$NON-NLS-1$
 		
-		int flag = Integer.valueOf(status.getRuleFlag().toString());
+		int flag = Integer.parseInt(status.getRuleFlag().toString());
 		switch (flag) {
 			case Flag_NullDomain:
 				return Messages.bind(Messages.Validation_Domain_NullDomain , nodeName);
@@ -79,8 +79,11 @@ public class AbstractNodeDomain implements IAdditionalConstraint {
 			
 			case Flag_BothQueryAndAssociation:
 				return Messages.bind(Messages.Validation_Domain_Node_BothQueryAndAssociation , nodeName);
+			
+			default:
+				return Messages.Validation_NoMessage;
 		}
 
-		return Messages.Validation_NoMessage;
+		
 	}
 }

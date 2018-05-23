@@ -29,13 +29,13 @@ public enum ExpressionKind implements IExpressionFormat{
 		}
 		switch (this) {
 		case QueryLegacy:
-			return getExpression_QueryLegacy(expression);
+			return getExpressionQueryLegacy(expression);
 		case Acceleo_3_x:
-			return getExpression_Acceleo_3(expression);
+			return getExpressionAcceleo3(expression);
 		case Ocl:
-			return getExpression_Ocl(expression);
+			return getExpressionOcl(expression);
 		}
-		throw new RuntimeException("Expression kind not supported");
+		throw new IllegalStateException("Expression kind not supported");
 	}
 	
 	/**
@@ -51,7 +51,7 @@ public enum ExpressionKind implements IExpressionFormat{
 		case Ocl:
 			throw new OCLExpressionNotSupported();
 		}
-		throw new RuntimeException("Expression kind not supported");
+		throw new IllegalStateException("Expression kind not supported");
 	}
 	
 	/**
@@ -84,7 +84,7 @@ public enum ExpressionKind implements IExpressionFormat{
 		case Ocl:
 			return "Ocl";
 		}
-		throw new RuntimeException();
+		throw new IllegalStateException();
 	}
 	
 	/**
@@ -105,7 +105,7 @@ public enum ExpressionKind implements IExpressionFormat{
 			return Ocl;
 		}
 		
-		throw new RuntimeException();
+		throw new IllegalStateException();
 	}
 	
 	/**
@@ -115,7 +115,7 @@ public enum ExpressionKind implements IExpressionFormat{
 	 * @param expression to transform to Acceleo 2 expression. 
 	 * @return a valid Acceleo 2 expression to use in VSM
 	 */
-	private String getExpression_QueryLegacy(String expression){
+	private String getExpressionQueryLegacy(String expression){
 		// If True, this means that the expression is composite and doesn't need to be formated
 		if (expression.contains("<%") && expression.contains("%>")) {
 			return expression; 
@@ -131,7 +131,7 @@ public enum ExpressionKind implements IExpressionFormat{
 	 * @param expression to transform to Acceleo 3 expression
 	 * @return a valid Acceleo 3 expression to use in VSM
 	 */
-	private String getExpression_Acceleo_3(String expression){
+	private String getExpressionAcceleo3(String expression){
 		return "[" + expression + "/]";
 	}
 	
@@ -142,7 +142,7 @@ public enum ExpressionKind implements IExpressionFormat{
 	 * @param expression to transform to OCL expression
 	 * @return a valid OCL expression to use in VSM
 	 */
-	private String getExpression_Ocl(String expression){
+	private String getExpressionOcl(String expression){
 		throw new OCLExpressionNotSupported();
 	}
 	
@@ -157,7 +157,7 @@ public enum ExpressionKind implements IExpressionFormat{
 		boolean result = false;
 		boolean checkExpressionEnd = false;
 
-		if (expression == null || (expression != null && expression.length() < beginPrefixLenght)) {
+		if (expression == null || expression.length() < beginPrefixLenght) {
 			return false;
 		}
 		

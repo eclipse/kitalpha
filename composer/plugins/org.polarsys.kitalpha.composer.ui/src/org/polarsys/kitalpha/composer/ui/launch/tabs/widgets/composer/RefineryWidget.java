@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -62,8 +62,8 @@ public class RefineryWidget extends AbstractComposerWidget {
 	private Collection<Parameter> parameters;
 	private ParametersDialog dialog;
 	
-	public RefineryWidget(ComposerTab tab_p){
-		tab = tab_p;
+	public RefineryWidget(ComposerTab tab){
+		this.tab = tab;
 	}
 	
 	/* (non-Javadoc)
@@ -91,10 +91,7 @@ public class RefineryWidget extends AbstractComposerWidget {
 		if (this.selectedRefineryElement != selectedElement) {
 			this.selectedRefineryElement = selectedElement;
 			if (this.selectedRefineryElement != null) {
-				if (selectedRefineryElement != null) {
-					parameters = safeGetParameters(selectedRefineryElement);
-					
-				}
+				parameters = safeGetParameters(selectedRefineryElement);
 			}
 			tab.updateLaunchConfigurationDialog();
 		}
@@ -102,10 +99,10 @@ public class RefineryWidget extends AbstractComposerWidget {
 	}
 
 	
-public Viewer createWidget(Composite parent_p, String name_p, String comboxText_p, boolean button){
+public Viewer createWidget(Composite parentP, String nameP, String comboxTextP, boolean button){
 		
-		Group group = new Group(parent_p, SWT.NONE);
-		group.setText(name_p);
+		Group group = new Group(parentP, SWT.NONE);
+		group.setText(nameP);
 		group.setLayout(new GridLayout(2, true));
 		GridData gd = new GridData();
 		gd.horizontalAlignment = GridData.FILL;
@@ -120,9 +117,9 @@ public Viewer createWidget(Composite parent_p, String name_p, String comboxText_
 		cw.createEmptyLabel(false);
 		}else{
 		   edit = cw.createButton(group, "Edit Details...", "configure the parameters");
-			GridData gd_button = new GridData();
-			gd_button.horizontalAlignment = SWT.RIGHT;
-			edit.setLayoutData(gd_button);
+			GridData gdButton = new GridData();
+			gdButton.horizontalAlignment = SWT.RIGHT;
+			edit.setLayoutData(gdButton);
 			
 		}
 		//should display the description of the object
@@ -139,6 +136,7 @@ private void attachListeners() {
 	
 	edit.addSelectionListener(new SelectionAdapter() {
 		 
+		@Override
 		public void widgetSelected(SelectionEvent e){
 
 			ITableEditingListener listener = new ITableEditingListener() {
@@ -154,8 +152,8 @@ private void attachListeners() {
 			
 			dialog.create();
 			
-			TableEditingSupport edit = new TableEditingSupport(dialog.getViewer(), listener);
-			dialog.setEditingSupport(edit);
+			TableEditingSupport tableEdit = new TableEditingSupport(dialog.getViewer(), listener);
+			dialog.setEditingSupport(tableEdit);
 			
 			if(parameters!= null){
 			dialog.setContainer(selectedRefineryElement);
@@ -168,8 +166,8 @@ private void attachListeners() {
 	
 }
 
-public void setNsUri(String nsUri_p){
-	cw.setNsUri(nsUri_p);
+public void setNsUri(String nsUri){
+	cw.setNsUri(nsUri);
 }
 
 public final Viewer getViewer() {

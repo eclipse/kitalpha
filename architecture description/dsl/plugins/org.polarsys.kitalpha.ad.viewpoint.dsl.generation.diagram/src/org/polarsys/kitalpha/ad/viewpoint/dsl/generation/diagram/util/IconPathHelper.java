@@ -49,7 +49,7 @@ public class IconPathHelper {
 	 */
 	public static String computeDslIconPath(String iconName, NamedElement vpElement){
 		// Checking the icon name value
-		if (iconName == null || (iconName != null && iconName.trim().length() == 0))
+		if (iconName == null || iconName.trim().length() == 0)
 		{
 			throw new IllegalArgumentException(NO_ICON_NAME);
 		}
@@ -153,7 +153,7 @@ public class IconPathHelper {
 	 * @return icon file extension or empty string
 	 */
 	private static String getIconFileExtension(String iconName){
-		int pointIndex = iconName.lastIndexOf(".");
+		int pointIndex = iconName.lastIndexOf('.');
 		String iconExt = "";
 		if (pointIndex != -1)
 			iconExt = iconName.substring(pointIndex + 1);

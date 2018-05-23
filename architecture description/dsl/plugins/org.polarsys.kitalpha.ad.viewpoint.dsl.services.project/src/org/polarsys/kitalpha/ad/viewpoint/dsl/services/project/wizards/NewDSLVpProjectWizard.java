@@ -58,11 +58,11 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.services.project.utils.VPDescModel
 
 public class NewDSLVpProjectWizard extends Wizard implements INewWizard {
 
-	private final StringBuffer PLUGIN_XML_HEADER = 
-							new StringBuffer().append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n")
+	private final StringBuilder PLUGIN_XML_HEADER = 
+							new StringBuilder().append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n")
 											  .append("<?eclipse version=\"3.4\"?>\n")
 										 	  .append("<plugin>\n");
-	private final StringBuffer PLUGIN_XML_FOOTER = new StringBuffer().append("</plugin>\n");
+	private final StringBuilder PLUGIN_XML_FOOTER = new StringBuilder().append("</plugin>\n");
 	
 	/** Target application root project name **/
 	protected String taRootProjectName;
@@ -302,7 +302,7 @@ public class NewDSLVpProjectWizard extends Wizard implements INewWizard {
 								? vpNsURI
 								: taRootNsURI + vpShortName));
 		
-		if (generateNsURI || (vpNsURI == null || (vpNsURI != null && vpNsURI.trim().length() == 0 )))
+		if (generateNsURI || (vpNsURI == null || vpNsURI.trim().length() == 0 ))
 			vpNsURI = nsuri;
 		
 		genCof.setNsuri(nsuri);
