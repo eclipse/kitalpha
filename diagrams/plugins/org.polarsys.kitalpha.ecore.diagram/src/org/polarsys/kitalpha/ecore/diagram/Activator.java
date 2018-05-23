@@ -29,7 +29,7 @@ public class Activator extends AbstractUIPlugin {
     // The shared instance
     private static Activator plugin;
 
-    private static Set<Viewpoint> viewpoints; 
+    private static final Set<Viewpoint> viewpoints = new HashSet<Viewpoint>(); 
 
     /**
      * The constructor
@@ -45,7 +45,7 @@ public class Activator extends AbstractUIPlugin {
     public void start(BundleContext context) throws Exception {
       super.start(context);
 	  plugin = this;
-	  viewpoints = new HashSet<Viewpoint>();
+	  viewpoints.clear(); ;
 	  viewpoints.addAll(ViewpointRegistry.getInstance().registerFromPlugin(PLUGIN_ID + "/description/EcoreToolsExtra.odesign")); 
 	  viewpoints.addAll(ViewpointRegistry.getInstance().registerFromPlugin(PLUGIN_ID + "/description/documentation.odesign"));
     }
@@ -56,15 +56,12 @@ public class Activator extends AbstractUIPlugin {
      * @see org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.BundleContext)
      */
     public void stop(BundleContext context) throws Exception {
-	plugin = null;
-	if (viewpoints != null) {
+    	plugin = null;
 	    for (final Viewpoint viewpoint: viewpoints) {
 		ViewpointRegistry.getInstance().disposeFromPlugin(viewpoint);
 	    }
 	    viewpoints.clear();
-	    viewpoints = null; 
-	}
-	super.stop(context);
+	    super.stop(context);
     }
 
     /**

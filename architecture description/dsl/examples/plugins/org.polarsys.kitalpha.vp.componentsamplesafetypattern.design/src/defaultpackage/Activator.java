@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -29,41 +29,23 @@ public class Activator extends AbstractUIPlugin {
     // The shared instance
     private static Activator plugin;
 
-    private static Set<Viewpoint> viewpoints; 
+    private static final Set<Viewpoint> viewpoints = new HashSet<Viewpoint>(); 
 
-    /**
-     * The constructor
-     */
-    public Activator() {
-    }
-
-    /*
-     * (non-Javadoc)
-     * 
-     * @see org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext)
-     */
     public void start(BundleContext context) throws Exception {
-      super.start(context);
-	  plugin = this;
-	  viewpoints = new HashSet<Viewpoint>();
-	  viewpoints.addAll(ViewpointRegistry.getInstance().registerFromPlugin(PLUGIN_ID + "/description/ComponentSampleSafetyPattern.odesign")); 
+		super.start(context);
+		plugin = this;
+		viewpoints.clear();
+		viewpoints.addAll(ViewpointRegistry.getInstance()
+				.registerFromPlugin(PLUGIN_ID + "/description/ComponentSampleSafetyPattern.odesign"));
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.BundleContext)
-     */
     public void stop(BundleContext context) throws Exception {
-	plugin = null;
-	if (viewpoints != null) {
+    	plugin = null;
 	    for (final Viewpoint viewpoint: viewpoints) {
-		ViewpointRegistry.getInstance().disposeFromPlugin(viewpoint);
+	    	ViewpointRegistry.getInstance().disposeFromPlugin(viewpoint);
 	    }
 	    viewpoints.clear();
-	    viewpoints = null; 
-	}
-	super.stop(context);
+	    super.stop(context);
     }
 
     /**
@@ -72,6 +54,6 @@ public class Activator extends AbstractUIPlugin {
      * @return the shared instance
      */
     public static Activator getDefault() {
-	return plugin;
+    	return plugin;
     }
 }

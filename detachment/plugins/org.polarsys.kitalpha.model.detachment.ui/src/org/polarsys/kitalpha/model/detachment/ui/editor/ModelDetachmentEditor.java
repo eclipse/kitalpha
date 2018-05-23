@@ -55,15 +55,11 @@ import org.polarsys.kitalpha.model.detachment.ui.registry.ModelDetachmentPageReg
  */
 public class ModelDetachmentEditor extends SharedHeaderFormEditor {
 	
-	Logger LOGGER = Logger.getLogger(ModelDetachmentEditor.class);
+	private static final Logger LOGGER = Logger.getLogger(ModelDetachmentEditor.class);
 
+	private static final String IMG_PATH = "icons/run_detach.png";	//$NON-NLS-1$
 	
 	private Action perfomDetachment;
-	private static ModelDetachmentEditor editor;
-	
-	public ModelDetachmentEditor() {
-		editor = this;
-	}
 	
 	public void initAndLaunchDetachmentAction(final Resource resource){
 
@@ -102,7 +98,7 @@ public class ModelDetachmentEditor extends SharedHeaderFormEditor {
 												@Override
 												public void run() {
 													MessageDialog.openConfirm(shell, Messages.CONFIRM_DIALOG_TITLE, Messages.FINISH_DETACHMENT_MESSAGE);
-													getEditorSite().getPage().closeEditor(editor, false);
+													getEditorSite().getPage().closeEditor(ModelDetachmentEditor.this, false);
 												}
 											});
 											
@@ -122,16 +118,12 @@ public class ModelDetachmentEditor extends SharedHeaderFormEditor {
 											});
 											
 											
-											e.printStackTrace();
+											LOGGER.error(e.getMessage(), e);
 										}
 								}
 							});
 							
-						} catch (InvocationTargetException e) {
-							e.printStackTrace();
-							LOGGER.error(e.getMessage(), e);
-						} catch (InterruptedException e) {
-							e.printStackTrace();
+						} catch (InvocationTargetException | InterruptedException e) {
 							LOGGER.error(e.getMessage(), e);
 						}
 						
@@ -142,7 +134,7 @@ public class ModelDetachmentEditor extends SharedHeaderFormEditor {
 			perfomDetachment.setToolTipText(Messages.PERFORM_DETACHMENT);
 			perfomDetachment.setText(Messages.PERFORM_DETACHMENT);
 			
-			String IMG_PATH = "icons/run_detach.png";	//$NON-NLS-1$
+			
 			Bundle currentBundle = Activator.getDefault().getBundle();
 			URL url = FileLocator.find(currentBundle, new Path(IMG_PATH), null);
 			
@@ -171,7 +163,7 @@ public class ModelDetachmentEditor extends SharedHeaderFormEditor {
 		
 		Set<AbstractDetachmentFormPage> pageRegistry = ModelDetachmentPageRegistry.INSTANCE.initRegistry(this);
 		//Sort pages
-		List<AbstractDetachmentFormPage> sortedPages = new ArrayList<AbstractDetachmentFormPage>(pageRegistry);
+		List<AbstractDetachmentFormPage> sortedPages = new ArrayList<>(pageRegistry);
 		Collections.sort(sortedPages, new Comparator<AbstractDetachmentFormPage>() {
 
 			@Override

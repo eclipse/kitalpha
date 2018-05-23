@@ -21,7 +21,6 @@ import org.eclipse.sirius.viewpoint.description.Viewpoint;
 import org.osgi.framework.BundleContext;
 import org.polarsys.kitalpha.ad.common.utils.URIFix;
 import org.polarsys.kitalpha.ad.integration.sirius.listeners.DiagramUpdater;
-import org.polarsys.kitalpha.ad.integration.sirius.listeners.MetadataResourceListener;
 import org.polarsys.kitalpha.ad.integration.sirius.listeners.RegisterMetadataListener;
 import org.polarsys.kitalpha.ad.integration.sirius.listeners.SiriusViewpointActivationManager;
 import org.polarsys.kitalpha.ad.integration.sirius.listeners.ViewpointActivationStateListener;
@@ -46,13 +45,13 @@ public class Activator extends AFUIActivator {
 	private final ModelExtensionOverallListener[] listeners = { new DiagramUpdater() };
 
 	private static Activator plugin;
-	private static Set<Viewpoint> viewpoints;
+	private static final Set<Viewpoint> viewpoints = new HashSet<Viewpoint>();
 
 	@Override
 	public void start(BundleContext context) throws Exception {
 		plugin = this;
 		super.start(context);
-		viewpoints = new HashSet<Viewpoint>();
+		viewpoints.clear();
 		viewpoints.addAll(ViewpointRegistry.getInstance().registerFromPlugin(AF_DESIGN));
 
 
@@ -76,13 +75,10 @@ public class Activator extends AFUIActivator {
 			ModelExtensionHelper.removeOverallListener(l);
 		}
 
-		if (viewpoints != null) {
-			for (final Viewpoint viewpoint : viewpoints) {
-				ViewpointRegistry.getInstance().disposeFromPlugin(viewpoint);
-			}
-			viewpoints.clear();
-			viewpoints = null;
+		for (final Viewpoint viewpoint : viewpoints) {
+			ViewpointRegistry.getInstance().disposeFromPlugin(viewpoint);
 		}
+		viewpoints.clear();
 
 		super.stop(context);
 	}
