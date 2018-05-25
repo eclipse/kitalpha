@@ -63,7 +63,7 @@ public class OCLConstraintDescriptor extends
 	
 	public OCLConstraintDescriptor(String requirementId, String invariantId,
 			String namespace, Constraint constraint, int code, ValidationInfo validationInfo) {
-		this(namespace, requirementId, invariantId, constraint, null, code, validationInfo);
+		this(requirementId, invariantId, namespace, constraint, null, code, validationInfo);
 	}
 
 	public String getBody() {
