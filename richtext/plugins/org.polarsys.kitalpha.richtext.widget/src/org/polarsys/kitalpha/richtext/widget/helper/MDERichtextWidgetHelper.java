@@ -11,6 +11,7 @@
 
 package org.polarsys.kitalpha.richtext.widget.helper;
 
+import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -24,10 +25,13 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
+import org.polarsys.kitalpha.richtext.nebula.widget.MDENebulaRichTextConfiguration;
 import org.polarsys.kitalpha.richtext.nebula.widget.MDERichTextConstants;
+import org.polarsys.kitalpha.richtext.widget.MDERichtextWidgetEditorImpl;
 import org.polarsys.kitalpha.richtext.widget.editor.MDERichTextEditor;
 import org.polarsys.kitalpha.richtext.widget.editor.MDERichTextEditorInput;
 import org.polarsys.kitalpha.richtext.widget.editor.intf.EditorInputFeatureContribution;
@@ -36,10 +40,12 @@ import org.polarsys.kitalpha.richtext.widget.internal.Activator;
 public class MDERichtextWidgetHelper {
 
 	public static final String INPUT_FEATURE_CONTRIBUTION_EXTENSION_ID = "org.polarsys.kitalpha.richtext.widget.editorInputFeatureContribution";
-	public static final String INPUT_FEATURE_CONTRIBUTION_CLASS_ATTR = "class";
+	public static final String EDITOR_WIDGET_CONTRIBUTION_EXTENSION_ID = "org.polarsys.kitalpha.richtext.widget.editorWidgetContribution";
+	public static final String CONTRIBUTION_CLASS_ATTR = "class";
 
 	private static MDERichtextWidgetHelper instance;
 	private List<EditorInputFeatureContribution> inputFeatureContributions;
+	private MDERichtextWidgetEditorImpl contributedEditorWidget;
 
 	private MDERichtextWidgetHelper() {
 		// Do nothing
@@ -87,7 +93,7 @@ public class MDERichtextWidgetHelper {
 				for (IConfigurationElement c : contributions) {
 					try {
 						EditorInputFeatureContribution contribution = (EditorInputFeatureContribution) c
-								.createExecutableExtension(INPUT_FEATURE_CONTRIBUTION_CLASS_ATTR);
+								.createExecutableExtension(CONTRIBUTION_CLASS_ATTR);
 						inputFeatureContributions.add(contribution);
 					} catch (CoreException e) {
 						Status status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage(), e);
@@ -97,5 +103,30 @@ public class MDERichtextWidgetHelper {
 			}
 		}
 		return inputFeatureContributions;
+	}
+	
+	public MDERichtextWidgetEditorImpl getEditorWidgetContribution(Composite parent,
+			MDENebulaRichTextConfiguration configuration) {
+		if (contributedEditorWidget == null) {
+			IConfigurationElement[] contributions = Platform.getExtensionRegistry()
+					.getConfigurationElementsFor(EDITOR_WIDGET_CONTRIBUTION_EXTENSION_ID);
+
+			if (contributions != null && contributions.length > 0) {
+				for (IConfigurationElement c : contributions) {
+					try {
+						String contributorAttribute = c.getAttribute(CONTRIBUTION_CLASS_ATTR);
+						String contributorName = c.getDeclaringExtension().getContributor().getName();
+						Class<?> javaClass = Platform.getBundle(contributorName).loadClass(contributorAttribute);
+						Constructor<?> constructor = javaClass.getDeclaredConstructor(Composite.class,
+								MDENebulaRichTextConfiguration.class);
+						return (MDERichtextWidgetEditorImpl) constructor.newInstance(parent, configuration);
+					} catch (Exception e) {
+						Status status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage(), e);
+						Activator.getDefault().getLog().log(status);
+					}
+				}
+			}
+		}
+		return contributedEditorWidget;
 	}
 }

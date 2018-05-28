@@ -29,6 +29,7 @@ import org.polarsys.kitalpha.richtext.nebula.widget.MDERichTextConstants;
 import org.polarsys.kitalpha.richtext.widget.MDERichtextWidgetEditorImpl;
 import org.polarsys.kitalpha.richtext.widget.MDERichtextWidgetImpl;
 import org.polarsys.kitalpha.richtext.widget.editor.tools.OpenInEditorHandler;
+import org.polarsys.kitalpha.richtext.widget.helper.MDERichtextWidgetHelper;
 import org.polarsys.kitalpha.richtext.widget.internal.Activator;
 import org.polarsys.kitalpha.richtext.widget.tools.handlers.AddImageHandler;
 import org.polarsys.kitalpha.richtext.widget.tools.handlers.AddLinkHandler;
@@ -73,8 +74,10 @@ public class MDERichTextFactory {
 
 	public MDERichTextWidget createEditorRichTextWidget(Composite parent){
 		initializeMDEDefaultToolbar(false);
-
-		MDERichtextWidgetEditorImpl widget = new MDERichtextWidgetEditorImpl(parent, configuration);
+		MDERichtextWidgetEditorImpl widget = MDERichtextWidgetHelper.getInstance().getEditorWidgetContribution(parent, configuration); 
+		
+		if (widget == null)
+		  widget = new MDERichtextWidgetEditorImpl(parent, configuration);
 
 		addEditorToolbarItems(widget);
 
