@@ -193,7 +193,7 @@ location EDM-Patterns "http://download.eclipse.org/diffmerge/releases/0.9.0/edm-
 
 }
 
-location amalgam "http://download.eclipse.org/modeling/amalgam/updates/stable/1.9.0-S20180522/capella/" {
+location amalgam "http://download.eclipse.org/modeling/amalgam/updates/stable/1.9.0-S20180528/capella/" {
 	org.eclipse.amalgam.explorer.activity.feature.group lazy
 	org.eclipse.amalgam.explorer.activity.source.feature.group lazy
 	org.eclipse.amalgam.explorer.contextual.feature.group lazy
