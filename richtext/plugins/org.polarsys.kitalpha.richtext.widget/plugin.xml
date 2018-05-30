@@ -14,6 +14,7 @@ Contributors:
    <extension-point id="org.polarsys.kitalpha.richtext.widget.propertySheetPageDelegate" name="propertySheetPageDelegate" schema="schema/propertySheetPageDelegate.exsd"/>
    <extension-point id="org.polarsys.kitalpha.richtext.widget.saveResourceCallback" name="saveResourceCallback" schema="schema/saveResourceCallback.exsd"/>
    <extension-point id="org.polarsys.kitalpha.richtext.widget.editorInputFeatureContribution" name="editorInputFeatureContribution" schema="schema/editorInputFeatureContribution.exsd"/>
+   <extension-point id="org.polarsys.kitalpha.richtext.widget.editorWidgetContribution" name="editorWidgetContribution" schema="schema/editorWidgetContribution.exsd"/>
 	<extension
 	         point="org.eclipse.ui.editors">
 	      <editor
