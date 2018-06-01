@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/mbarbero/fr.obeo.releng.targetplatform -->
-<target name="kitapha" sequenceNumber="1525433614">
+<target name="kitapha" sequenceNumber="1527838975">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.sdk.feature.group" version="0.0.0"/>
@@ -143,7 +143,7 @@
       <unit id="org.eclipse.sirius.runtime.acceleo.source.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.sirius.runtime.aql.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.sirius.runtime.aql.source.feature.group" version="0.0.0"/>
-      <repository id="Sirus" location="http://download.eclipse.org/sirius/updates/releases/5.1.1/oxygen"/>
+      <repository id="Sirus" location="http://download.eclipse.org/sirius/updates/stable/6.0.0-S20180404-103514/oxygen/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.emf.diffmerge.feature.feature.group" version="0.0.0"/>
