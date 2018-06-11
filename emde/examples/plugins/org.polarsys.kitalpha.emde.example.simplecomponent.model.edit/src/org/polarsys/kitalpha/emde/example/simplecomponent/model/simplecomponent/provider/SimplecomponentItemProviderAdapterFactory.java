@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -168,6 +168,7 @@ public class SimplecomponentItemProviderAdapterFactory extends SimplecomponentAd
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -178,6 +179,7 @@ public class SimplecomponentItemProviderAdapterFactory extends SimplecomponentAd
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
@@ -234,6 +236,7 @@ public class SimplecomponentItemProviderAdapterFactory extends SimplecomponentAd
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Collection<?> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
 		return childCreationExtenderManager.getNewChildDescriptors(object, editingDomain);
 	}
@@ -243,6 +246,7 @@ public class SimplecomponentItemProviderAdapterFactory extends SimplecomponentAd
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ResourceLocator getResourceLocator() {
 		return childCreationExtenderManager;
 	}
@@ -253,6 +257,7 @@ public class SimplecomponentItemProviderAdapterFactory extends SimplecomponentAd
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -263,6 +268,7 @@ public class SimplecomponentItemProviderAdapterFactory extends SimplecomponentAd
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
@@ -273,6 +279,7 @@ public class SimplecomponentItemProviderAdapterFactory extends SimplecomponentAd
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
@@ -287,13 +294,17 @@ public class SimplecomponentItemProviderAdapterFactory extends SimplecomponentAd
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void dispose() {
-		if (componentModelItemProvider != null)
+		if (componentModelItemProvider != null) {
 			componentModelItemProvider.dispose();
-		if (softwareComponentItemProvider != null)
+		}
+		if (softwareComponentItemProvider != null) {
 			softwareComponentItemProvider.dispose();
-		if (hardwareComponentItemProvider != null)
+		}
+		if (hardwareComponentItemProvider != null) {
 			hardwareComponentItemProvider.dispose();
+		}
 	}
 
 }

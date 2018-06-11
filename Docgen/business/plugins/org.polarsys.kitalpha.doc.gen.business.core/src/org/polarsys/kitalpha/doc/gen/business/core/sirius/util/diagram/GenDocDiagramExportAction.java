@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2007, 2017 THALES GLOBAL SERVICES.
+ * Copyright (c) 2007, 2018 THALES GLOBAL SERVICES.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -87,7 +87,8 @@ public class GenDocDiagramExportAction extends ExportAction {
 	 * (non-Javadoc)
 	 * @see org.eclipse.sirius.ui.tools.api.actions.export.ExportAction#createImageFiles(org.eclipse.core.runtime.IProgressMonitor)
 	 */
-    protected void createImageFiles(final IProgressMonitor monitor) {
+    @Override
+	protected void createImageFiles(final IProgressMonitor monitor) {
 
         final List<IBeforeExport> beforeContributors = EclipseUtil.getExtensionPlugins(IBeforeExport.class, IExportRepresentationsAsImagesExtension.ID,
                 IExportRepresentationsAsImagesExtension.CLASS_ATTRIBUTE);

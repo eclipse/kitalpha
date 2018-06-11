@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -58,7 +58,8 @@ public class TraceLoader implements IActivity, ITransposerWorkflow {
   /**
    * @see org.polarsys.kitalpha.cadence.core.api.IActivity#getParameters()
    */
-  public Collection<DeclaredParameter> getParameters() {
+  @Override
+public Collection<DeclaredParameter> getParameters() {
     Collection<DeclaredParameter> declaredParameter = new ArrayList<DeclaredParameter>();
     declaredParameter.add(_traceModelPath);
     return declaredParameter;
@@ -67,7 +68,8 @@ public class TraceLoader implements IActivity, ITransposerWorkflow {
   /**
    * @see org.polarsys.kitalpha.cadence.core.api.IActivity#run(org.polarsys.kitalpha.cadence.core.api.parameter.ActivityParameters)
    */
-  public IStatus run(ActivityParameters activityParams_p) {
+  @Override
+public IStatus run(ActivityParameters activityParams_p) {
     String traceModelPath = null;
     TraceRepository tracesRepo = null;
     IStatus status = Status.OK_STATUS;
@@ -75,16 +77,19 @@ public class TraceLoader implements IActivity, ITransposerWorkflow {
     IContext context = (IContext) activityParams_p.getParameter(TRANSPOSER_CONTEXT).getValue();
     Object tracePath = activityParams_p.getParameter(TRANSPOSER_TRACE_MODEL).getValue();
     
-    if (context == null)
-    	return new Status(IStatus.ERROR, TransposerEMFPlugin.PLUGIN_ID, "Context in not initialized in the Transposer Workflow");
+    if (context == null) {
+		return new Status(IStatus.ERROR, TransposerEMFPlugin.PLUGIN_ID, "Context in not initialized in the Transposer Workflow");
+	}
     
-    if(tracePath == null || tracePath.equals(""))
-    	return new Status(IStatus.ERROR, TransposerEMFPlugin.PLUGIN_ID, "Trace Model Path is not defined, please check the parameter of this activity");
+    if(tracePath == null || tracePath.equals("")) {
+		return new Status(IStatus.ERROR, TransposerEMFPlugin.PLUGIN_ID, "Trace Model Path is not defined, please check the parameter of this activity");
+	}
     
     
     
-    if (tracePath instanceof String)
-      traceModelPath = (String) tracePath;
+    if (tracePath instanceof String) {
+		traceModelPath = (String) tracePath;
+	}
 
     // an other activity could put another trace path
     if (context.exists(TRANSPOSER_TRACE_MODEL)) {
@@ -97,8 +102,9 @@ public class TraceLoader implements IActivity, ITransposerWorkflow {
     // Extract resource set from context
     if (null != context.get(ResourceUtil.TRANSPOSER_RESOURCE_SET)) {
       Object set = context.get(ResourceUtil.TRANSPOSER_RESOURCE_SET);
-      if (set instanceof ResourceSet)
-        rs = (ResourceSet) set;
+      if (set instanceof ResourceSet) {
+		rs = (ResourceSet) set;
+	}
     } else {
       rs = new ResourceSetImpl();
       context.put(ResourceUtil.TRANSPOSER_RESOURCE_SET, rs);
@@ -142,11 +148,13 @@ public class TraceLoader implements IActivity, ITransposerWorkflow {
         EObject source = null;
         EObject target = null;
 
-        if (!trace.getSource().eIsProxy())
-          source = trace.getSource();
+        if (!trace.getSource().eIsProxy()) {
+			source = trace.getSource();
+		}
 
-        if (!trace.getTarget().eIsProxy())
-          target = trace.getTarget();
+        if (!trace.getTarget().eIsProxy()) {
+			target = trace.getTarget();
+		}
 
         helper.addTraceWithRole(source, target, trace.getRole());
       }
@@ -179,7 +187,8 @@ public class TraceLoader implements IActivity, ITransposerWorkflow {
   /**
    * @see org.polarsys.kitalpha.cadence.core.api.IActivity#validateParameters(org.polarsys.kitalpha.cadence.core.api.parameter.ActivityParameters)
    */
-  public Map<String, ParameterError<?>> validateParameters(ActivityParameters valuedParameters_p) {
+  @Override
+public Map<String, ParameterError<?>> validateParameters(ActivityParameters valuedParameters_p) {
     // TODO Auto-generated method stub
     return null;
   }

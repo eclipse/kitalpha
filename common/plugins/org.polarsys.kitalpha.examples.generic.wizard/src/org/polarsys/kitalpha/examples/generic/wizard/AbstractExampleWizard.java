@@ -111,6 +111,7 @@ public abstract class AbstractExampleWizard extends Wizard
 		}
 	}
 
+	@Override
 	public boolean performFinish() {
 		final Collection projectDescriptors = getProjectDescriptors();
 		
@@ -120,6 +121,7 @@ public abstract class AbstractExampleWizard extends Wizard
 					throws InvocationTargetException, InterruptedException {
 					
 					WorkspaceModifyOperation op = new WorkspaceModifyOperation() {
+						@Override
 						protected void execute(IProgressMonitor m)
 						
 							throws CoreException, InvocationTargetException, InterruptedException {

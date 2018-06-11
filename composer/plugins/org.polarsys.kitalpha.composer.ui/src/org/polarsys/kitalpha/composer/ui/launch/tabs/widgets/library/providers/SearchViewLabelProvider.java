@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,6 +27,7 @@ import org.polarsys.kitalpha.resourcereuse.model.Resource;
  * 
  */
 class SearchViewLabelProvider extends LabelProvider implements ITableLabelProvider {
+	@Override
 	public String getColumnText(Object obj, int index) {
 		
 		LibraryItem item = ((LibraryItem)obj);
@@ -54,10 +55,12 @@ class SearchViewLabelProvider extends LabelProvider implements ITableLabelProvid
 		return value == null ? "" : value;
 	}
 
+	@Override
 	public Image getColumnImage(Object obj, int index) {
 		return getImage(obj);
 	}
 
+	@Override
 	public Image getImage(Object obj) {
 		return PlatformUI.getWorkbench().getSharedImages().getImage(ISharedImages.IMG_OBJ_ELEMENT);
 	}

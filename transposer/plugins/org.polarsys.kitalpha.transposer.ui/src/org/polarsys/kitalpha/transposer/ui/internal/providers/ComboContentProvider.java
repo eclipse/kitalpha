@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,6 +26,7 @@ import org.polarsys.kitalpha.transposer.rules.handler.rules.contribution.Contrib
 
 public class ComboContentProvider implements IStructuredContentProvider{
 
+	@Override
 	public Object[] getElements(Object inputElement) {
 		
 		if (inputElement instanceof ContributedPurpose[]) {
@@ -40,11 +41,13 @@ public class ComboContentProvider implements IStructuredContentProvider{
 	}
 		
 
+	@Override
 	public void dispose() {
 		// TODO Auto-generated method stub
 		
 	}
 
+	@Override
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
 		// TODO Auto-generated method stub
 		

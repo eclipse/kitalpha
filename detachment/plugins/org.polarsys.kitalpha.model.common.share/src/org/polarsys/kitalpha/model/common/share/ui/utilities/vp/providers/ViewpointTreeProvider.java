@@ -33,8 +33,9 @@ public class ViewpointTreeProvider implements ITreeContentProvider  {
 	@Override
 	public Object[] getElements(Object inputElement) {
 		
-		if (inputElement instanceof ViewpointTreeContainer)
+		if (inputElement instanceof ViewpointTreeContainer) {
 			return ((ViewpointTreeContainer)inputElement).getRoots().toArray();
+		}
 		return getChildren(inputElement);
 	}
 
@@ -58,8 +59,9 @@ public class ViewpointTreeProvider implements ITreeContentProvider  {
 
 	@Override
 	public boolean hasChildren(Object element) {
-		if (element instanceof IViewpointTreeDescription)
+		if (element instanceof IViewpointTreeDescription) {
 			return ((IViewpointTreeDescription)element).hasChildren();
+		}
 		return false;
 	}
 

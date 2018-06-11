@@ -19,7 +19,8 @@ import org.polarsys.kitalpha.cadence.core.api.parameter.GenericParameter;
  */
 public class ColumnParametersLabelProvider extends ColumnLabelProvider {
 
-  public String getText(Object element) {
+  @Override
+public String getText(Object element) {
 
     if (element instanceof GenericParameter) {
       return ((GenericParameter) element).getName();
@@ -28,7 +29,8 @@ public class ColumnParametersLabelProvider extends ColumnLabelProvider {
     return null;
   }
 
-  public String getToolTipText(Object element) {
+  @Override
+public String getToolTipText(Object element) {
     String description = null;
 
       if (element instanceof GenericParameter) {

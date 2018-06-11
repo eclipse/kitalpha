@@ -133,11 +133,13 @@ public class CadenceItem {
 
     detail.addSelectionListener(new SelectionAdapter() {
 
-      public void widgetSelected(SelectionEvent e) {
+      @Override
+	public void widgetSelected(SelectionEvent e) {
         IActivity activitySelected = (IActivity) elementSelected(IACTIVITY);
         if (activitySelected != null) {
 
         	ITableEditingListener listener = new ITableEditingListener() {
+				@Override
 				public void parameterValueChanged() {
 					tab.update();
 				}
@@ -184,13 +186,15 @@ public class CadenceItem {
   private void attachViewerListener(final ParameterWidget widget) {
 
     viewer.addSelectionChangedListener(new ISelectionChangedListener() {
-      public void selectionChanged(SelectionChangedEvent event) {
+      @Override
+	public void selectionChanged(SelectionChangedEvent event) {
 
 				StructuredSelection selection = (StructuredSelection) event
 						.getSelection();
 
-	if (selection.isEmpty())		
+	if (selection.isEmpty()) {
 		widget.setDescription("");
+	}
 				
 	Object object = selection.getFirstElement();
         if (object != null) {
@@ -206,7 +210,8 @@ public class CadenceItem {
     });
 
     viewer.addSelectionChangedListener(new ISelectionChangedListener() {
-      public void selectionChanged(SelectionChangedEvent event) {
+      @Override
+	public void selectionChanged(SelectionChangedEvent event) {
         _activityId = (String) elementSelected(IDENTIFIER);
        
       }
@@ -243,8 +248,9 @@ public class CadenceItem {
         // selection
         int index = _temporyList.indexOf(insert); // remove the
         // selection
-        if (index > 0)
-          index--;
+        if (index > 0) {
+			index--;
+		}
         _temporyList.remove(insert);
         _temporyList.add(index, insert);
         viewer.setInput(_temporyList);
@@ -361,8 +367,9 @@ public class CadenceItem {
       for (String string_p : paramTab) {
         String[] tab = string_p.split(Pattern.quote(PARAMETER_SEPARATOR), 2);
 
-        if (tab.length < 1)
-          continue;
+        if (tab.length < 1) {
+			continue;
+		}
 
         String actId = tab[0];
         ActivityParameters map = new ActivityParameters();
@@ -372,8 +379,9 @@ public class CadenceItem {
             String[] t = k.split(Pattern.quote("=")); //$NON-NLS-1$
             String key = t[0];
             String value = ""; //$NON-NLS-1$
-            if (t.length == 2)
-              value = t[1];
+            if (t.length == 2) {
+				value = t[1];
+			}
 						map.addParameter(new GenericParameter<String>(key,
 								value, "")); //$NON-NLS-1$
           }
@@ -405,8 +413,9 @@ public class CadenceItem {
       String actId = CadenceRegistry.getIdentifier(conf);
       boolean isMultiple = CadenceRegistry.isMultiple(conf);
       // TODO : add a test on the allowMultipleSelection parameter
-      if (!"".equals(actId) && actId != null && selectedActivities.contains(actId) && !isMultiple) //$NON-NLS-1$
-        availableActivities.remove(conf);
+      if (!"".equals(actId) && actId != null && selectedActivities.contains(actId) && !isMultiple) {
+		availableActivities.remove(conf);
+	}
     }
 
 		CadenceListSelectionDialog dialog = new CadenceListSelectionDialog(tab

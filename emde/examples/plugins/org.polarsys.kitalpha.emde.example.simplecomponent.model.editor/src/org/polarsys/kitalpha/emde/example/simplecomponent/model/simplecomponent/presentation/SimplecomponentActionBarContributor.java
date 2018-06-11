@@ -405,6 +405,7 @@ public class SimplecomponentActionBarContributor extends EditingDomainActionBarC
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void propertyChange(PropertyChangeEvent event) {
 		if (event.getSource() instanceof ViewerFilterAction) {
 			// Fake a selection changed event to update the menus.
@@ -466,6 +467,7 @@ public class SimplecomponentActionBarContributor extends EditingDomainActionBarC
 		// Force an update because Eclipse hides empty menus now.
 		//
 		submenuManager.addMenuListener(new IMenuListener() {
+			@Override
 			public void menuAboutToShow(IMenuManager menuManager) {
 				menuManager.updateAll(true);
 			}
@@ -537,6 +539,7 @@ public class SimplecomponentActionBarContributor extends EditingDomainActionBarC
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void selectionChanged(SelectionChangedEvent event) {
 		// Current Selection
 		ISelection selection = event.getSelection();

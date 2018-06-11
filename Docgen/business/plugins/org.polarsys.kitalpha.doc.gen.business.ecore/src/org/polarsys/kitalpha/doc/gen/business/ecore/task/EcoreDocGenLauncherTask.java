@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 - 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,6 +45,7 @@ public class EcoreDocGenLauncherTask implements ITaskProduction {
 	private String logoPath;
 	private String logoAlt;
 	
+	@Override
 	public void preExecute(ITaskProductionContext productionContext, IProgressMonitor monitor) throws InvocationException {
 		ecoreFilePath = productionContext.getInputValue("ecoreFilePath", String.class);
 		outputDirectoryPath = productionContext.getInputValue("outputDirectoryPath", String.class);
@@ -55,6 +56,7 @@ public class EcoreDocGenLauncherTask implements ITaskProduction {
 		logoAlt = productionContext.getInputValue(GenDocCommand.LOGO_ALT_CONTRACT_NAME, String.class);
 	}
 
+	@Override
 	public void doExecute(ITaskProductionContext productionContext,	IProgressMonitor monitor) throws InvocationException {
 		final IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 		final URI ecoreURI = (root.getFile(new Path(ecoreFilePath)).exists() ? 
@@ -74,6 +76,7 @@ public class EcoreDocGenLauncherTask implements ITaskProduction {
 		command.execute(monitor);
 	}
 
+	@Override
 	public void postExecute(ITaskProductionContext productionContext, IProgressMonitor monitor) throws InvocationException {
 		
 	}

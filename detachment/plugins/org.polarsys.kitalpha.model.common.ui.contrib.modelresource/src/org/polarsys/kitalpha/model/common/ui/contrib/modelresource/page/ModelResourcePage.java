@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -256,11 +256,13 @@ public class ModelResourcePage extends AbstractDetachmentFormPage {
 	        String name1 = getLabel(viewer, e1);
 	        String name2 = getLabel(viewer, e2);
 	        
-	        if (name1.startsWith("platform:/resource") && name2.startsWith("platform:/plugin"))
-	        	return 0;
+	        if (name1.startsWith("platform:/resource") && name2.startsWith("platform:/plugin")) {
+				return 0;
+			}
 	        
-	        if (name1.startsWith("platform:/plugin") && name2.startsWith("platform:/resource"))
-	        	return 1;
+	        if (name1.startsWith("platform:/plugin") && name2.startsWith("platform:/resource")) {
+				return 1;
+			}
 
 	        return -1;
 	    }

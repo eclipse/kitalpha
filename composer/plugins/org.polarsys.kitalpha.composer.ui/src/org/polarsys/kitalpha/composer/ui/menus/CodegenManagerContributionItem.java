@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -82,10 +82,11 @@ public class CodegenManagerContributionItem extends CompoundContributionItem {
 	protected IContributionItem[] getContributionItems() {
 		List<IContributionItem> items = getPopupMenu();
 		enabled = !items.isEmpty();
-		if (!enabled)
+		if (!enabled) {
 			setVisible(false);
-		else
+		} else {
 			setVisible(true);
+		}
 		return items.toArray(new IContributionItem[items.size()]);
 	}
 
@@ -160,8 +161,9 @@ public class CodegenManagerContributionItem extends CompoundContributionItem {
 			} else if (o instanceof EObject) {
 				EObject object = (EObject) o;
 				businessUris.add(object.eClass().getEPackage().getNsURI());
-				for (EClass eClass : object.eClass().getEAllSuperTypes())
+				for (EClass eClass : object.eClass().getEAllSuperTypes()) {
 					businessUris.add(eClass.getEPackage().getNsURI());
+				}
 			}
 
 			for (String businessUri : businessUris) {
@@ -171,8 +173,9 @@ public class CodegenManagerContributionItem extends CompoundContributionItem {
 		}
 
 		List<IAction> result = new ArrayList<IAction>();
-		for (ComposerProfile profile : profiles)
+		for (ComposerProfile profile : profiles) {
 			result.add(new LaunchFromProfileAction(profile, adaptedSelection));
+		}
 		return result;
 	}
 
@@ -219,24 +222,28 @@ public class CodegenManagerContributionItem extends CompoundContributionItem {
 			IStructuredSelection structuredSelection = (IStructuredSelection) selection;
 			for (Object o : structuredSelection.toArray()) {
 				Object adaptedObject = adaptObject(o);
-				if (adaptedObject != null)
+				if (adaptedObject != null) {
 					result.add(adaptedObject);
+				}
 			}
 		}
 		return result;
 	}
 
 	private Object adaptObject(Object o) {
-		if (o instanceof IFile)
+		if (o instanceof IFile) {
 			return o;
-		if (o instanceof EObject)
+		}
+		if (o instanceof EObject) {
 			return o;
+		}
 		return null;
 	}
 
 	private static final class ComposerProfileComparator implements
 			Comparator<ComposerProfile> {
 
+		@Override
 		public int compare(ComposerProfile arg0, ComposerProfile arg1) {
 			return arg0.getName().compareTo(arg1.getName());
 		}

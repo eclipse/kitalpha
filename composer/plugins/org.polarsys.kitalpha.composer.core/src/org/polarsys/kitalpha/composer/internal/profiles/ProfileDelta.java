@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,6 +40,7 @@ public class ProfileDelta implements IProfileDelta {
 	/* (non-Javadoc)
 	 * @see org.polarsys.kitalpha.composer.internal.profiles.IProfileDelta#getKind()
 	 */
+	@Override
 	public int getKind() {
 		return kind;
 	}
@@ -47,6 +48,7 @@ public class ProfileDelta implements IProfileDelta {
 	/* (non-Javadoc)
 	 * @see org.polarsys.kitalpha.composer.internal.profiles.IProfileDelta#getAffectedProfile()
 	 */
+	@Override
 	public ComposerProfile getAffectedProfile() {
 		return affectedProfile;
 	}

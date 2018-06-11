@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,10 +32,12 @@ public class ValidationPropertyTester extends PropertyTester {
 	public boolean test(Object receiver, String property, Object[] args, Object expectedValue) {
 		for (Object obj : (Collection<?>)receiver)
 		{
-			if (!(obj instanceof EPackage))
+			if (!(obj instanceof EPackage)) {
 				return false;
-			if (hasEmdeFeatures((EPackage)obj ))
+			}
+			if (hasEmdeFeatures((EPackage)obj )) {
 				return true;
+			}
 		}	
 		return false;
 	}
@@ -54,8 +56,9 @@ public class ValidationPropertyTester extends PropertyTester {
 
 	public static boolean hasEmdeFeatures(EPackage ecorePackage) {
 		for (EClassifier classifier : ecorePackage.getEClassifiers()) {
-			if (classifier instanceof EClass && hasEmdeFeatures((EClass) classifier))
+			if (classifier instanceof EClass && hasEmdeFeatures((EClass) classifier)) {
 				return true;
+			}
 		}
 		return false;
 	}

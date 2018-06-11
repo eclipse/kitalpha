@@ -47,13 +47,20 @@ public class ExtensionContentTypePatternExecutionReporter extends ContentTypePat
 		String encoding = (String) context.getValue("encoding"); //$NON-NLS-1$
 
 		if (targetPathName == null)
+		 {
 			throw new IllegalStateException("Variable targetPath must be set."); //$NON-NLS-1$
+		}
 		if (overwrite == null)
+		 {
 			throw new IllegalStateException("Variable overwrite must be set."); //$NON-NLS-1$
+		}
 		if (encoding == null)
+		 {
 			throw new IllegalStateException("Variable encoding must be set."); //$NON-NLS-1$
+		}
 
 		new CodegenGeneratorAdapter(genModel) {
+			@Override
 			protected String mergePluginXML(String generated, String oldContents, String newContents) {
 				return newContents;
 			}

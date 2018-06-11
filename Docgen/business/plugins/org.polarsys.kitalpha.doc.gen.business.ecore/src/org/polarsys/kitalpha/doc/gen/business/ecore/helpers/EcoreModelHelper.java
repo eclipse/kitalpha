@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,8 +24,9 @@ public class EcoreModelHelper {
 		EAnnotation annotation = modelElement.getEAnnotation(EANNOTATION_SRC);
 		if (annotation != null) {
 			String description = annotation.getDetails().get("description");
-			if (description != null && ! description.toUpperCase().equals("null".toUpperCase()))
+			if (description != null && ! description.toUpperCase().equals("null".toUpperCase())) {
 				descriptionValue = description;
+			}
 		}
 		descriptionValue = descriptionValue.replaceAll("\n", "<br />");
 		return descriptionValue;
@@ -78,8 +79,9 @@ public class EcoreModelHelper {
 		String modelName = "";
 		if (element.eResource() != null) {
 			EObject root = element.eResource().getContents().get(0);
-			if (root instanceof EPackage)
+			if (root instanceof EPackage) {
 				modelName = ((EPackage) root).getName();
+			}
 		}
 		StringBuffer buffer = new StringBuffer();
 		buffer.append("<a href=\"");
@@ -88,10 +90,11 @@ public class EcoreModelHelper {
 		}
 		buffer.append(EcoreFileNameService.INSTANCE.getFileName(element));
 		buffer.append(".html\">");
-		if (content != null)
+		if (content != null) {
 			buffer.append(content);
-		else
+		} else {
 			buffer.append(element.getName());
+		}
 		buffer.append("</a>");
 		return buffer.toString();
 	}

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -70,6 +70,7 @@ public class GenericConfigurationWizardPage extends WizardPage {
 	 * 
 	 * @see org.eclipse.jface.dialogs.IDialogPage#createControl(org.eclipse.swt.widgets.Composite)
 	 */
+	@Override
 	public void createControl(Composite parent) {
 		Composite composite = new Composite(parent, SWT.NONE);
 		GridData compositeData = new GridData(GridData.FILL_BOTH);
@@ -154,12 +155,14 @@ public class GenericConfigurationWizardPage extends WizardPage {
 				SWT.BORDER);
 		gridData.minimumWidth = 200;
 		destinationFolderText.setLayoutData(gridData);
-		if (configuration.getDestinationFolder() != null)
+		if (configuration.getDestinationFolder() != null) {
 			destinationFolderText.setText(configuration.getDestinationFolder()
 					.toString());
+		}
 		destinationFolderText.setEditable(true);
 		destinationFolderText.addModifyListener(new ModifyListener() {
 			
+			@Override
 			public void modifyText(ModifyEvent e) {
 				 Text text = (Text) e.widget;    
 				configuration.setDestinationFolder(new Path(text.getText()));
@@ -209,6 +212,7 @@ public class GenericConfigurationWizardPage extends WizardPage {
 			this.key = key;
 		}
 
+		@Override
 		public void modifyText(ModifyEvent e) {
 			this.map.get(key).setValue(text.getText());
 		}

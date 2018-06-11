@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,11 +19,13 @@ import org.polarsys.kitalpha.doc.gen.business.core.helper.IConceptsHelper;
 
 public class EcoreGenConceptsHelper implements IConceptsHelper {
 
+	@Override
 	public boolean accept(Object modelElement) {
 		return ((modelElement instanceof EClass)
 				|| (modelElement instanceof EPackage) || (modelElement instanceof EDataType));
 	}
 
+	@Override
 	public String getConceptLabel(Object modelElement) {
 		if (modelElement instanceof ENamedElement) {
 			return ((ENamedElement) modelElement).getName();

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2016 THALES GLOBAL SERVICES.
+ * Copyright (c) 2006, 2018 THALES GLOBAL SERVICES.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,14 +40,17 @@ public class InitializeDocGenBrandingData implements ITaskProduction {
 		documentationBrandingData.removeAllData();
 		
 		// Initialize Branding data for the current generation
-		if (copyright != null)
+		if (copyright != null) {
 			documentationBrandingData.addData(COPYRIGHT_KEY, copyright);
+		}
 		
-		if (logoPath != null && ! logoPath.isEmpty())
+		if (logoPath != null && ! logoPath.isEmpty()) {
 			documentationBrandingData.addData(LOGO_PATH_KEY, logoPath);
+		}
 		
-		if (logoAlt != null && ! logoAlt.isEmpty())
+		if (logoAlt != null && ! logoAlt.isEmpty()) {
 			documentationBrandingData.addData(LOGO_ALT_KEY, logoAlt);
+		}
 	}
 
 	protected String getLogoAlt(ITaskProductionContext productionContext) throws InvocationException {

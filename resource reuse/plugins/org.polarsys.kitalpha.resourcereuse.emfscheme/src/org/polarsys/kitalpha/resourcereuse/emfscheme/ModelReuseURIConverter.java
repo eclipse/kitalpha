@@ -59,15 +59,15 @@ public class ModelReuseURIConverter extends ExtensibleURIConverterImpl {
 		SearchCriteria criteria = new SearchCriteria();
 		
 		for (String segment : uri.segments()) {
-			if (segment.startsWith("id="))
+			if (segment.startsWith("id=")) {
 				criteria.setId(segment.substring(3));
-			else if (segment.startsWith("name="))
+			} else if (segment.startsWith("name=")) {
 				criteria.setName(segment.substring(5));
-			else if (segment.startsWith("domain="))
+			} else if (segment.startsWith("domain=")) {
 				criteria.setDomain(segment.substring(7));
-			else if (segment.startsWith("version="))
+			} else if (segment.startsWith("version=")) {
 				criteria.setVersion(segment.substring(7));
-			else if (segment.startsWith("tags=")) {
+			} else if (segment.startsWith("tags=")) {
 				String tags = segment.substring(5);
 				criteria.getTags().addAll(Arrays.asList(tags.split(",")));
 			}
@@ -79,10 +79,12 @@ public class ModelReuseURIConverter extends ExtensibleURIConverterImpl {
 		
 		Resource[] resources = ResourceReuse.createHelper().getResources(criteria);
 	
-		if (resources.length == 0)
+		if (resources.length == 0) {
 			throw new IllegalStateException("The uri '"+uri.toString()+"' does not matche any resource");
-		if (resources.length > 1)
+		}
+		if (resources.length > 1) {
 			logger.error(new Status(IStatus.WARNING, Activator.PLUGIN_ID, "The uri '"+uri.toString()+"' matches several resources, using the first one."));
+		}
 		
 		Resource resource = resources[0];
 		Location location = resource.getProviderLocation();
@@ -103,9 +105,11 @@ public class ModelReuseURIConverter extends ExtensibleURIConverterImpl {
 	}
 
 	private boolean useMetadata(URI uri) {
-		for (String seg : uri.segments())
-			if ("useMetadata".equals(seg))
+		for (String seg : uri.segments()) {
+			if ("useMetadata".equals(seg)) {
 				return true;
+			}
+		}
 		return false;
 	}
 	

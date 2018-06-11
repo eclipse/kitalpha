@@ -24,8 +24,9 @@ public class GenRuntimeVersionHelper {
 	public static GenRuntimeVersion getVersion(Version version) {
 		String versionStr =version.getMajor()+"."+version.getMinor(); 
 		GenRuntimeVersion genmodelVersion = GenRuntimeVersion.get(versionStr);
-		if (genmodelVersion == null)
+		if (genmodelVersion == null) {
 			throw new IllegalStateException("unexpected version for org.eclipse.emf.codegen bundle: " + version);
+		}
 		return genmodelVersion;
 	}
 }

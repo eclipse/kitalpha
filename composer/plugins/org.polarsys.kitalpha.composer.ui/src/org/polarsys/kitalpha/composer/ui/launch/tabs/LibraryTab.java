@@ -37,6 +37,7 @@ public class LibraryTab extends AbstractLaunchConfigurationTab{
 	private final MissingLibraryWidget missinglibraryWidget = new MissingLibraryWidget(this);
 	private boolean save = true;
 	
+	@Override
 	public void createControl(Composite parent) {
 		Composite comp = new Composite(parent, SWT.NONE);
 		GridLayout topLayout = new GridLayout();
@@ -58,15 +59,18 @@ public class LibraryTab extends AbstractLaunchConfigurationTab{
 	}
 
 	
+	@Override
 	public void activated(ILaunchConfigurationWorkingCopy workingCopy) {
 		
 	}
 
+	@Override
 	public String getName() {
 		// TODO Auto-generated method stub
 		return TAB_NAME;
 	}
 
+	@Override
 	public Image getImage() {
 		String img = "icons/libraries.png"; //$NON-NLS-1$
 		ImageDescriptor descriptor =  Activator.imageDescriptorFromPlugin(Activator.PLUGIN_ID, img);
@@ -74,6 +78,7 @@ public class LibraryTab extends AbstractLaunchConfigurationTab{
 		
 	}
 	
+	@Override
 	public void initializeFrom(ILaunchConfiguration configuration) {
 		libraryWidget.initializeFrom(configuration);
 		missinglibraryWidget.initializeFrom(configuration);
@@ -81,20 +86,24 @@ public class LibraryTab extends AbstractLaunchConfigurationTab{
 		
 	}
 
+	@Override
 	public void performApply(ILaunchConfigurationWorkingCopy configuration) {
 		libraryWidget.performApply(configuration);
 		missinglibraryWidget.performApply(configuration);		
 	}
 
+	@Override
 	public void setDefaults(ILaunchConfigurationWorkingCopy configuration) {
 	}
 	
 	
+	@Override
 	public Shell getShell(){
 		return super.getShell();
 	}
 
 	
+	@Override
 	public void updateLaunchConfigurationDialog(){
 		super.updateLaunchConfigurationDialog();
 	}

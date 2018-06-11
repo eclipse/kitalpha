@@ -47,8 +47,9 @@ public class DocumentationService {
 			if (documentation.isEmpty())
 			{
 				EAnnotation eAnnotation = receiver.getEAnnotation(DOCUMENTATION_SOURCE);
-				if (eAnnotation == null) 
+				if (eAnnotation == null) {
 					eAnnotation = creatDocumentationEAnnotation(receiver);
+				}
 
 				createEntry(eAnnotation, DESCRIPTION);
 				createEntry(eAnnotation, USAGE_GUIDELINE);
@@ -67,24 +68,29 @@ public class DocumentationService {
 			if (eAnnotation != null )
 			{
 				Object descriptionEntry = getEntry(eAnnotation, DESCRIPTION);
-				if (descriptionEntry != null)
+				if (descriptionEntry != null) {
 					result.add(descriptionEntry);
+				}
 
 				Object usageGuidEntry = getEntry(eAnnotation, USAGE_GUIDELINE);
-				if (usageGuidEntry != null)
+				if (usageGuidEntry != null) {
 					result.add(usageGuidEntry);
+				}
 
 				Object usageLevelEntry = getEntry(eAnnotation, USED_IN_LEVELS);
-				if (usageLevelEntry != null)
+				if (usageLevelEntry != null) {
 					result.add(usageLevelEntry);
+				}
 
 				Object usageExampleEntry = getEntry(eAnnotation, USAGE_EXAMPLES);
-				if (usageExampleEntry != null)
+				if (usageExampleEntry != null) {
 					result.add(usageExampleEntry);
+				}
 
 				Object contraintsEntry = getEntry(eAnnotation, CONSTRAINTS);
-				if (contraintsEntry != null)
+				if (contraintsEntry != null) {
 					result.add(contraintsEntry);
+				}
 			}
 			return result;
 		} 
@@ -97,10 +103,11 @@ public class DocumentationService {
 	private static boolean accept(EModelElement receiver) {
 		if (receiver instanceof EClassifier
 				|| receiver instanceof EPackage
-				|| receiver instanceof ETypedElement) 
+				|| receiver instanceof ETypedElement) {
 			return true;
-		else
+		} else {
 			return false;
+		}
 	}
 
 	private EAnnotation creatDocumentationEAnnotation(final EModelElement receiver) {
@@ -138,8 +145,9 @@ public class DocumentationService {
 	private Object getEntry(final EAnnotation eAnnotation, String key) {
 		for (Entry<String, String> entry : eAnnotation.getDetails()) 
 		{
-			if (key.equals(entry.getKey())) 
+			if (key.equals(entry.getKey())) {
 				return entry;
+			}
 		}
 
 		return null;

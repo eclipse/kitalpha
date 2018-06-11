@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,8 +37,9 @@ public class ContributedPurposeSpec extends ContributedPurposeImpl {
    */
   @Override
   public Mapping getMostGenericMapping() {
-    if (_mostGenericMapping == null)
-      computeMostGenericMapping();
+    if (_mostGenericMapping == null) {
+		computeMostGenericMapping();
+	}
 
     return _mostGenericMapping;
   }
@@ -71,8 +72,9 @@ public class ContributedPurposeSpec extends ContributedPurposeImpl {
 
     for (Mapping mapping : getMappings()) {
       IStatus result = mapping.validate();
-      if (result.getSeverity() != IStatus.INFO)
-        severity = result.getSeverity();
+      if (result.getSeverity() != IStatus.INFO) {
+		severity = result.getSeverity();
+	}
     }
 
     if (severity == IStatus.WARNING) {
@@ -106,6 +108,7 @@ public class ContributedPurposeSpec extends ContributedPurposeImpl {
 	public boolean isPrivate() {
 		Collection<Mapping> mappings = Collections2.filter(getMappings(), new Predicate<Mapping>() {
 
+			@Override
 			public boolean apply(Mapping mapping) {
 				return !mapping.isPrivate();
 			}

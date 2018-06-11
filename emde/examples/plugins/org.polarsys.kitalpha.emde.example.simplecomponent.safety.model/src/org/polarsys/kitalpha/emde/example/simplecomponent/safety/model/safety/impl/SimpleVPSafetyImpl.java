@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -100,6 +100,7 @@ public class SimpleVPSafetyImpl extends ComponentElementImpl implements SimpleVP
 	 * @generated
 	 */
 
+	@Override
 	public int getComplexity() {
 
 		return complexity;
@@ -111,13 +112,15 @@ public class SimpleVPSafetyImpl extends ComponentElementImpl implements SimpleVP
 	 * @generated
 	 */
 
+	@Override
 	public void setComplexity(int newComplexity) {
 
 		int oldComplexity = complexity;
 		complexity = newComplexity;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, SafetyPackage.SIMPLE_VP_SAFETY__COMPLEXITY,
 					oldComplexity, complexity));
+		}
 
 	}
 
@@ -127,6 +130,7 @@ public class SimpleVPSafetyImpl extends ComponentElementImpl implements SimpleVP
 	 * @generated
 	 */
 
+	@Override
 	public int getCost() {
 
 		return cost;
@@ -138,12 +142,14 @@ public class SimpleVPSafetyImpl extends ComponentElementImpl implements SimpleVP
 	 * @generated
 	 */
 
+	@Override
 	public void setCost(int newCost) {
 
 		int oldCost = cost;
 		cost = newCost;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, SafetyPackage.SIMPLE_VP_SAFETY__COST, oldCost, cost));
+		}
 
 	}
 
@@ -222,8 +228,9 @@ public class SimpleVPSafetyImpl extends ComponentElementImpl implements SimpleVP
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (complexity: "); //$NON-NLS-1$

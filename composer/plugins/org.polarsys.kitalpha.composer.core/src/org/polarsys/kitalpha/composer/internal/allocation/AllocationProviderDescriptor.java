@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -49,9 +49,11 @@ public class AllocationProviderDescriptor implements
 	 * 
 	 * @see org.polarsys.kitalpha.composer.internal.IAllocationProviderDescriptor#getAllocationProvider()
 	 */
+	@Override
 	public IAllocationProvider getAllocationProvider() {
-		if (provider == null && valid)
+		if (provider == null && valid) {
 			provider = createAllocationProvider();
+		}
 		return provider;
 	}
 
@@ -60,6 +62,7 @@ public class AllocationProviderDescriptor implements
 	 * 
 	 * @see org.polarsys.kitalpha.composer.internal.IAllocationProviderDescriptor#getAllocationProviderClassName()
 	 */
+	@Override
 	public String getAllocationProviderClassName() {
 		return configurationElement
 				.getAttribute(IAllocationProviderConstants.PROVIDER_CLASS_ATTRIBUTE);
@@ -70,6 +73,7 @@ public class AllocationProviderDescriptor implements
 	 * 
 	 * @see org.polarsys.kitalpha.composer.internal.IAllocationProviderDescriptor#getPriority()
 	 */
+	@Override
 	public AllocationProviderPriority getPriority() {
 		return priority;
 	}
@@ -85,6 +89,7 @@ public class AllocationProviderDescriptor implements
 		return null;
 	}
 
+	@Override
 	public boolean provides(Root rootAllocation, EObject unknownElement) {
 		return this.getAllocationProvider() != null
 				&& this.getAllocationProvider().provides(rootAllocation,

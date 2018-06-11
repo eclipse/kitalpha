@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -116,8 +116,9 @@ public class ViewpointRelationshipHelper {
 		nsUri = eClass.getEPackage().getNsURI();
 
 		
-		if (!dependencies.keySet().contains(nsUri) && ePackageIsIn(nsUri, allViewpointEpackages))
+		if (!dependencies.keySet().contains(nsUri) && ePackageIsIn(nsUri, allViewpointEpackages)) {
 			dependencies.put(nsUri, new HashSet<String>());
+		}
 		
 		EList<EClass> superTypes = eClass.getESuperTypes();
 		if(superTypes != null && !superTypes.isEmpty()){
@@ -125,8 +126,9 @@ public class ViewpointRelationshipHelper {
 				EPackage ePackage = type.getEPackage();
 				String nsUri2 = ePackage != null? ePackage.getNsURI(): null;
 
-				if (nsUri2 != null && !nsUri.equals(nsUri2) && ePackageIsIn(nsUri2, allViewpointEpackages))
+				if (nsUri2 != null && !nsUri.equals(nsUri2) && ePackageIsIn(nsUri2, allViewpointEpackages)) {
 					dependencies.get(nsUri).add(nsUri2);
+				}
 			}						
 		}
 		
@@ -134,13 +136,15 @@ public class ViewpointRelationshipHelper {
 		EList<EAttribute> attributes = eClass.getEAllAttributes();
 		if(attributes != null && !attributes.isEmpty()){
 			for(EAttribute attr: attributes){
-				if(attr.isDerived() || attr.isVolatile() || attr.isTransient())
+				if(attr.isDerived() || attr.isVolatile() || attr.isTransient()) {
 					continue;
+				}
 				EClassifier type = attr.getEType();
 
 				String nsUri2 = type.getEPackage().getNsURI();
-				if (!nsUri.equals(nsUri2) && ePackageIsIn(nsUri2, allViewpointEpackages))
+				if (!nsUri.equals(nsUri2) && ePackageIsIn(nsUri2, allViewpointEpackages)) {
 					dependencies.get(nsUri).add(nsUri2);
+				}
 			}
 		}
 		
@@ -149,16 +153,18 @@ public class ViewpointRelationshipHelper {
 		EList<EReference> refs = eClass.getEAllReferences();
 		if(refs != null && !refs.isEmpty()){
 			for(EReference ref: refs){
-				if(ref.isDerived() || ref.isVolatile() || ref.isTransient())
+				if(ref.isDerived() || ref.isVolatile() || ref.isTransient()) {
 					continue;
+				}
 
 				EClassifier type = ref.getEType();
 
 				EPackage ePackage = type.getEPackage();
 				String nsUri2 = ePackage != null? ePackage.getNsURI():null;
 
-				if (nsUri2 != null && !nsUri.equals(nsUri2) && ePackageIsIn(nsUri2, allViewpointEpackages))
+				if (nsUri2 != null && !nsUri.equals(nsUri2) && ePackageIsIn(nsUri2, allViewpointEpackages)) {
 					dependencies.get(nsUri).add(nsUri2);
+				}
 			}
 		}
 
@@ -170,8 +176,9 @@ public class ViewpointRelationshipHelper {
 				for(String key: details.keySet()){
 
 					String value = details.get(key);					
-					if (!nsUri.equals(value) && ePackageIsIn(value, allViewpointEpackages))
+					if (!nsUri.equals(value) && ePackageIsIn(value, allViewpointEpackages)) {
 						dependencies.get(nsUri).add(value);
+					}
 				}
 			}
 		}
@@ -186,8 +193,9 @@ public class ViewpointRelationshipHelper {
 			for (EPackage ePackage : eList) {
 				String nsUri = ePackage.getNsURI();
 				
-				if (nsUri != null && nsUri.equals(nsUri2))
+				if (nsUri != null && nsUri.equals(nsUri2)) {
 					return true;
+				}
 			}
 		}
 		return false;

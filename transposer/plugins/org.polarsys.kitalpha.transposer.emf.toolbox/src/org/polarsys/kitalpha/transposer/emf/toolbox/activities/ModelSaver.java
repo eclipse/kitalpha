@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,7 +43,8 @@ public class ModelSaver implements IActivity, ITransposerWorkflow, IGenericDangl
   /**
    * @see org.polarsys.kitalpha.cadence.core.api.IActivity#run(java.util.Map)
    */
-  public IStatus run(ActivityParameters activityParams_p) {
+  @Override
+public IStatus run(ActivityParameters activityParams_p) {
 	IStatus status = Status.OK_STATUS;
 	  
     IContext context = (IContext) activityParams_p.getParameter(TRANSPOSER_CONTEXT).getValue();
@@ -72,14 +73,16 @@ public class ModelSaver implements IActivity, ITransposerWorkflow, IGenericDangl
   /**
    * @see org.polarsys.kitalpha.cadence.core.api.IActivity#validateParameters(org.polarsys.kitalpha.cadence.core.api.parameter.ActivityParameters)
    */
-  public Map<String, ParameterError<?>> validateParameters(ActivityParameters valuedParameters_p) {
+  @Override
+public Map<String, ParameterError<?>> validateParameters(ActivityParameters valuedParameters_p) {
     return null;
   }
 
   /**
    * @see org.polarsys.kitalpha.cadence.core.api.IActivity#getParameters()
    */
-  public Collection<DeclaredParameter> getParameters() {
+  @Override
+public Collection<DeclaredParameter> getParameters() {
     return null;
   }
 

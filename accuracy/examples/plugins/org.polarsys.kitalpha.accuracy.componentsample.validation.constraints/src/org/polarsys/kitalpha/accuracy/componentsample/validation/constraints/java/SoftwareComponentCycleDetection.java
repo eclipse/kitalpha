@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -16,9 +16,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.polarsys.kitalpha.validation.java.provider.generic.IJavaConstraint;
-import org.polarsys.kitalpha.vp.componentsample.ComponentSample.AbstractComponent;
-import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentModel;
-import org.polarsys.kitalpha.vp.componentsample.ComponentSample.SoftwareComponent;
 
 /**
  * 
@@ -69,7 +66,9 @@ public class SoftwareComponentCycleDetection implements IJavaConstraint<Componen
 				for (AbstractComponent abstractComponent : tmp) {
 					if (abstractComponent instanceof SoftwareComponent){
 						if (tmp.contains(sc))
+						 {
 							return false; //cycle detected
+						}
 						
 						return detectSCCycle(sc, abstractComponent);
 					}
@@ -81,8 +80,9 @@ public class SoftwareComponentCycleDetection implements IJavaConstraint<Componen
 	private boolean detectSCCycle(SoftwareComponent sc,
 			AbstractComponent abstractComponent) {
 		
-		if (abstractComponent.getUse().contains(sc))
+		if (abstractComponent.getUse().contains(sc)) {
 			return false;
+		}
 		
 		EList<AbstractComponent> usedCps = abstractComponent.getUse();
 		
@@ -91,8 +91,9 @@ public class SoftwareComponentCycleDetection implements IJavaConstraint<Componen
 			cycle &= detectSCCycle(sc, abstractComponent2);
 		}
 		
-		if (!cycle)
+		if (!cycle) {
 			return cycle;
+		}
 		
 		return cycle;
 	}
@@ -105,8 +106,9 @@ public class SoftwareComponentCycleDetection implements IJavaConstraint<Componen
 			Collection<AbstractComponent> tmp3 = abstractComponent.getUse();
 			
 			if (abstractComponent instanceof SoftwareComponent){
-				if (tmp3.contains(sc))
+				if (tmp3.contains(sc)) {
 					return false;
+				}
 
 				searchCycleOf((SoftwareComponent) abstractComponent, tmp3);
 			}

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -74,6 +74,7 @@ public class ComposerProfileRegistry implements IComposerProfileRegistry {
 	 * 
 	 * @see org.polarsys.kitalpha.composer.internal.profiles.IComposerProfileRegistry#register(org.polarsys.kitalpha.composer.api.profiles.ComposerProfile)
 	 */
+	@Override
 	public void register(ComposerProfile profile) {
 		Set<ComposerProfile> profiles = this.registeredProfiles.get(profile
 				.getAllocationBinding());
@@ -94,6 +95,7 @@ public class ComposerProfileRegistry implements IComposerProfileRegistry {
 	 * 
 	 * @see org.polarsys.kitalpha.composer.internal.profiles.IComposerProfileRegistry#unregister(org.polarsys.kitalpha.composer.api.profiles.ComposerProfile)
 	 */
+	@Override
 	public void unregister(ComposerProfile profile) {
 		Set<ComposerProfile> profiles = this.registeredProfiles.get(profile
 				.getAllocationBinding());
@@ -113,6 +115,7 @@ public class ComposerProfileRegistry implements IComposerProfileRegistry {
 	 * 
 	 * @see org.polarsys.kitalpha.composer.internal.profiles.IComposerProfileRegistry#getAllRegisteredProfiles()
 	 */
+	@Override
 	public Set<ComposerProfile> getAllRegisteredProfiles() {
 		Set<ComposerProfile> result = new HashSet<ComposerProfile>();
 		for (Set<ComposerProfile> profiles : this.registeredProfiles.values()) {
@@ -126,10 +129,12 @@ public class ComposerProfileRegistry implements IComposerProfileRegistry {
 	 * 
 	 * @see org.polarsys.kitalpha.composer.internal.profiles.IComposerProfileRegistry#getById(java.lang.String)
 	 */
+	@Override
 	public ComposerProfile getById(String id) {
 		for (ComposerProfile composerProfile : getAllRegisteredProfiles()) {
-			if (composerProfile.getId().equals(id))
+			if (composerProfile.getId().equals(id)) {
 				return composerProfile;
+			}
 		}
 		return null;
 	}
@@ -139,11 +144,13 @@ public class ComposerProfileRegistry implements IComposerProfileRegistry {
 	 * 
 	 * @see org.polarsys.kitalpha.composer.internal.profiles.IComposerProfileRegistry#getByAllocationNsURI(java.lang.String)
 	 */
+	@Override
 	public Set<ComposerProfile> getByAllocationNsURI(String allocationNsURI) {
 		Set<ComposerProfile> result = this.registeredProfiles
 				.get(allocationNsURI);
-		if (result == null)
+		if (result == null) {
 			return Collections.<ComposerProfile> emptySet();
+		}
 
 		return Collections.unmodifiableSet(result);
 	}
@@ -153,6 +160,7 @@ public class ComposerProfileRegistry implements IComposerProfileRegistry {
 	 * 
 	 * @see org.polarsys.kitalpha.composer.internal.profiles.IComposerProfileRegistry#getBySemanticNsURI(java.lang.String)
 	 */
+	@Override
 	public Set<ComposerProfile> getBySemanticNsURI(String semanticNsURI) {
 		//
 		// All corresponding allocations namespace uris.
@@ -376,6 +384,7 @@ public class ComposerProfileRegistry implements IComposerProfileRegistry {
 	private class ComposerProfileRegistryListener implements
 			IRegistryChangeListener {
 
+		@Override
 		public void registryChanged(IRegistryChangeEvent event) {
 			for (IExtensionDelta delta : event.getExtensionDeltas(
 					Activator.PLUGIN_ID, IProfileConstants.POINT_ID)) {
@@ -409,6 +418,7 @@ public class ComposerProfileRegistry implements IComposerProfileRegistry {
 	 * 
 	 * @see org.polarsys.kitalpha.composer.api.profiles.IComposerProfileRegistry#addRegistryChangeListener(org.polarsys.kitalpha.composer.api.profiles.IProfileRegistryChangeListener)
 	 */
+	@Override
 	public void addRegistryChangeListener(
 			IProfileRegistryChangeListener listener) {
 		this.listeners.add(listener);
@@ -419,6 +429,7 @@ public class ComposerProfileRegistry implements IComposerProfileRegistry {
 	 * 
 	 * @see org.polarsys.kitalpha.composer.api.profiles.IComposerProfileRegistry#removeRegistryChangeListener(org.polarsys.kitalpha.composer.api.profiles.IProfileRegistryChangeListener)
 	 */
+	@Override
 	public void removeRegistryChangeListener(
 			IProfileRegistryChangeListener listener) {
 		this.listeners.remove(listener);
@@ -428,8 +439,9 @@ public class ComposerProfileRegistry implements IComposerProfileRegistry {
 		if (enableNotification) {
 			ProfileRegistryChangeEvent event = new ProfileRegistryChangeEvent(
 					this, deltas);
-			for (IProfileRegistryChangeListener listener : this.listeners)
+			for (IProfileRegistryChangeListener listener : this.listeners) {
 				listener.registryChanged(event);
+			}
 		}
 	}
 }

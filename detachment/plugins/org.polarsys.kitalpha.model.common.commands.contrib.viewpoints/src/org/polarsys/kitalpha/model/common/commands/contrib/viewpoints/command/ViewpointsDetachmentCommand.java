@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016, 2017 THALES GLOBAL SERVICES.
+ * Copyright (c) 2016, 2018 THALES GLOBAL SERVICES.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -98,15 +98,17 @@ public class ViewpointsDetachmentCommand extends ModelCommand {
 		for (Resource resource : editingDomain.getResourceSet().getResources()) 
 		{
 			// don't care about readonly resource (it includes resources from the platform)
-			if (editingDomain.isReadOnly(resource))
+			if (editingDomain.isReadOnly(resource)) {
 				continue;
+			}
 			if (!resource.getContents().isEmpty() && resource.getContents().get(0) instanceof Metadata)
 			{
 				Metadata root = (Metadata)resource.getContents().get(0);
 				for (ViewpointReference uv : root.getViewpointReferences())
 				{
-					if (unSelectedViewpoint.contains(uv.getVpId()))
+					if (unSelectedViewpoint.contains(uv.getVpId())) {
 						eObjectToRemove.add(uv);
+					}
 				}
 			}
 
@@ -143,8 +145,9 @@ public class ViewpointsDetachmentCommand extends ModelCommand {
 				Metadata root = (Metadata)resource.getContents().get(0);
 				for (ViewpointReference uv : root.getViewpointReferences())
 				{
-					if (unSelectedViewpoint.contains(uv.getVpId()))
+					if (unSelectedViewpoint.contains(uv.getVpId())) {
 						eObjectToRemove.add(uv);
+					}
 				}
 			}
 

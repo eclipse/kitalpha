@@ -21,9 +21,7 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
-import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.swt.widgets.Display;
@@ -95,6 +93,7 @@ public class DiagramExport {
 		if (airdURI != null) 
 		{
 			Display.getDefault().syncExec(new Runnable() {
+				@Override
 				public void run() {
 					final ExportAction exportAction = new GenDocDiagramExportAction(session, getRepresentationsToExportAsImage(), outputPath, ImageFileFormat.JPG,false);
 					try {
@@ -140,9 +139,9 @@ public class DiagramExport {
 		}
 		
 		IFile iFile = folder.getFile(expectedFileName);
-		if (iFile.exists())
+		if (iFile.exists()) {
 			return iFile;
-		else
+		} else
 		{
 			// May be we deal with linked resources
 			
@@ -151,8 +150,9 @@ public class DiagramExport {
 			IFile iLinkedFile = ResourcesPlugin.getWorkspace().getRoot().findFilesForLocation(filePath)[0];
 			
 			// 2- If the file is found, the return it.
-			if (null != iLinkedFile && iLinkedFile.exists())
+			if (null != iLinkedFile && iLinkedFile.exists()) {
 				return iLinkedFile;
+			}
 		}
 		
 		return null;

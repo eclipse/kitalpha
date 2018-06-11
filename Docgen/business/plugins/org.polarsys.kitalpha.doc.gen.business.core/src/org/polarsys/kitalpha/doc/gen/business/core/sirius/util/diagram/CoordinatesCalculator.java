@@ -103,10 +103,11 @@ public class CoordinatesCalculator {
 			this.diagram = diagram;
 		}
 		this.helper = filter;
-		if (session != null)
+		if (session != null) {
 			this.session = session;
-		else
+		} else {
 			this.session = getSessionFromDiagram(diagram);
+		}
 	}
 
 	/**
@@ -129,8 +130,9 @@ public class CoordinatesCalculator {
 	}
 
 	private Session getSessionFromDiagram(DDiagram diagram) {
-		if (diagram instanceof DSemanticDiagram)
+		if (diagram instanceof DSemanticDiagram) {
 			return SessionManager.INSTANCE.getSession(((DSemanticDiagram) diagram).getTarget());
+		}
 		return null;
 	}
 
@@ -138,6 +140,7 @@ public class CoordinatesCalculator {
 
 	private static class MyComparator implements Comparator<EObject> {
 
+		@Override
 		public int compare(EObject a, EObject b) {
 			EObject aContainer = a.eContainer();
 			EObject bContainer = b.eContainer();
@@ -177,12 +180,14 @@ public class CoordinatesCalculator {
 		else
 		{
 			PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
+				@Override
 				public void run() {
 					try {
 						result.putAll(getResultMap());
 
-						if (! result.isEmpty())
+						if (! result.isEmpty()) {
 							COORDINATES_MAP.put(diagramId, result);
+						}
 						
 					} catch (Exception e) {
 						Activator.logWarning(e.getMessage());
@@ -208,8 +213,9 @@ public class CoordinatesCalculator {
 			{
 				final EObject key = entry.getValue();
 				final boolean isInScope = GenerationGlobalScope.getInstance().isCopyInScope(key);
-				if (isInScope)
+				if (isInScope) {
 					result.put(entry.getKey(), entry.getValue());
+				}
 			}
 			return result;
 		}
@@ -269,10 +275,11 @@ public class CoordinatesCalculator {
 				}
 				
 				// Translate parent before handling children
-				if (bounds != null)
+				if (bounds != null) {
 					bounds.performTranslate(deltaX, deltaY);
-				else
+				} else {
 					throw new RuntimeException();
+				}
 				
 				final boolean acceptView = acceptView(view);
 				
@@ -288,8 +295,9 @@ public class CoordinatesCalculator {
 							int newDeltaX = acceptView && ! isBorderedNode((View)object) ? bounds.x + 5 : deltaX;
 							int newDeltaY = acceptView && ! isBorderedNode((View)object) ? bounds.y + 6 : deltaY;
 							final Map<Rectangle, EObject> rectanglesMap = getRectanglesMap((View) object, registry, newDeltaX  , newDeltaY  );
-							if (! rectanglesMap.isEmpty())
+							if (! rectanglesMap.isEmpty()) {
 								result.putAll(rectanglesMap);
+							}
 						}
 					}
 				}
@@ -348,14 +356,16 @@ public class CoordinatesCalculator {
 			// Handle Edges
 			for (Object object : gmfDiagram.getEdges()) 
 			{
-				if (! edgeHasCenterLabel((View) object, registry))
-					continue; 
+				if (! edgeHasCenterLabel((View) object, registry)) {
+					continue;
+				} 
 				
 				if (object instanceof View)
 				{
 					final Map<Rectangle, EObject> rectanglesMap = getRectanglesMap((View) object, registry, -deltaX, -deltaY);
-					if (! rectanglesMap.isEmpty())
+					if (! rectanglesMap.isEmpty()) {
 						resultat.putAll(rectanglesMap);
+					}
 				}
 			}
 			
@@ -365,8 +375,9 @@ public class CoordinatesCalculator {
 				if (object instanceof View)
 				{
 					final Map<Rectangle, EObject> rectanglesMap = getRectanglesMap((View) object, registry, -deltaX, -deltaY);
-					if (! rectanglesMap.isEmpty())
+					if (! rectanglesMap.isEmpty()) {
 						resultat.putAll(rectanglesMap);
+					}
 				}
 			}
 			
@@ -388,9 +399,9 @@ public class CoordinatesCalculator {
 		{
 			final String name = ((DEdgeImpl) element).getName();
 			return name != null && name.trim().length() > 0;
-		}
-		else
+		} else {
 			return false;
+		}
 	}
 	
 	/**
@@ -410,8 +421,9 @@ public class CoordinatesCalculator {
 		CommandStack commandStack = diagramEP.getViewer().getEditDomain().getCommandStack();
 		commandStack.flush();
 		
-		if (diagramEP.getViewer().getControl() != null)
+		if (diagramEP.getViewer().getControl() != null) {
 			diagramEP.getViewer().getControl().dispose();
+		}
 		
 		((DiagramEditDomain) diagramEP.getViewer().getEditDomain()).removeViewer(diagramEP.getViewer());
 
@@ -454,8 +466,9 @@ public class CoordinatesCalculator {
 			if (annotationEntry.getSource().equals("GMF_DIAGRAMS")) 
 			{
 				EObject data = annotationEntry.getData();
-				if (data instanceof Diagram)
+				if (data instanceof Diagram) {
 					return (Diagram) data;
+				}
 			}
 		}
 		// try to find out gmf diagram by an other way (if annotation
@@ -543,8 +556,9 @@ public class CoordinatesCalculator {
 	private Rectangle getRectangle(Map<Rectangle, EObject> map, EObject modelElement){
 		for (Map.Entry<Rectangle, EObject> entry : map.entrySet()) 
 		{
-			if (entry.getValue().equals(modelElement))
+			if (entry.getValue().equals(modelElement)) {
 				return entry.getKey();
+			}
 		}
 		
 		throw new RuntimeException("Can't get rectable form model element: " + modelElement.toString());

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014-2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -140,10 +140,11 @@ public class DocgenBrandingPreferencesPage extends AbstractDocgenPreferencePage 
 	@Override
 	public void setValid(boolean b) {
 		Boolean useDefaultLogo = useDefaultLogoValue.getBooleanValue();
-		if (useDefaultLogo)
+		if (useDefaultLogo) {
 			super.setValid(true);
-		else
+		} else {
 			super.setValid(b);
+		}
 	}
 	
 	/*
@@ -157,12 +158,14 @@ public class DocgenBrandingPreferencesPage extends AbstractDocgenPreferencePage 
 		{
 			logoPathField.setEnabled(! useDefaultLogoValue.getBooleanValue(), imgPathGroup);
 			logoAltField.setEnabled(! useDefaultLogoValue.getBooleanValue(), logoGroup);
-			if (useDefaultLogoValue.getBooleanValue())
+			if (useDefaultLogoValue.getBooleanValue()) {
 				logoPathField.loadDefault();
+			}
 			
 			// logoAltField default value
-			if (useDefaultLogoValue.getBooleanValue())
+			if (useDefaultLogoValue.getBooleanValue()) {
 				logoAltField.loadDefault();
+			}
 		
 			checkState();
 		}
@@ -182,9 +185,9 @@ public class DocgenBrandingPreferencesPage extends AbstractDocgenPreferencePage 
 		{
 			result = new Group(parent, SWT.NONE);
 			((Group)result).setText(text);
-		}
-		else
+		} else {
 			result = new Composite(parent, SWT.NONE);
+		}
 			
 		GridData gd = new GridData(GridData.FILL_HORIZONTAL);
 		gd.horizontalSpan = 2;
@@ -225,11 +228,13 @@ public class DocgenBrandingPreferencesPage extends AbstractDocgenPreferencePage 
 		// logoPathField default value
 		logoPathField.setEmptyStringAllowed(useDefaultLogo);
 		logoPathField.setEnabled(! useDefaultLogo, imgPathGroup);
-		if (! useDefaultLogo)
+		if (! useDefaultLogo) {
 			store.setDefault(DocgenPreferenceConstant.DOCGEN_BRANDING_LOGO_PATH, DocgenPreferenceConstant.DOCGEN_BRANDING_LOGO_PATH_DEFAULT_VALUE);
+		}
 		// logoAltField default value
 		logoAltField.setEnabled(! useDefaultLogo, logoGroup);
-		if (! useDefaultLogo)
+		if (! useDefaultLogo) {
 			store.setDefault(DocgenPreferenceConstant.DOCGEN_BRANDING_LOGO_ALT, DocgenPreferenceConstant.DOCGEN_BRANDING_LOGO_ALT_DEFAULT_VALUE);
+		}
 	}
 }

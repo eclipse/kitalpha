@@ -29,6 +29,7 @@ public class DeleteExtendedElementAction extends AbstractEmdeExternalJavaAction 
 	private static final String LINK = "link";
 	private static final String VIEW = "view";
 
+	@Override
 	public void execute(Collection<? extends EObject> selections, Map<String, Object> parameters) {
 		final EStringToStringMapEntryImpl entry = (EStringToStringMapEntryImpl) parameters.get(ENTRY);
 		DEdge link = (DEdge) parameters.get(LINK);

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -67,6 +67,7 @@ public class EmdePreferencePage extends PreferencePage implements IWorkbenchPref
 		return bar;
 	}
 
+	@Override
 	public void createControl(Composite parent) {
 		super.createControl(parent);
 		updateButtons();
@@ -91,8 +92,9 @@ public class EmdePreferencePage extends PreferencePage implements IWorkbenchPref
 
 	@Override
 	protected void performDefaults() {
-		if (!isDirty)
+		if (!isDirty) {
 			return;
+		}
 		loadData();
 		setDirty(false);
 	}
@@ -109,8 +111,9 @@ public class EmdePreferencePage extends PreferencePage implements IWorkbenchPref
 
 	protected void setDirty(boolean dirty) {
 
-		if (isDirty == dirty)
+		if (isDirty == dirty) {
 			return;
+		}
 		isDirty = dirty;
 		updateButtons();
 	}

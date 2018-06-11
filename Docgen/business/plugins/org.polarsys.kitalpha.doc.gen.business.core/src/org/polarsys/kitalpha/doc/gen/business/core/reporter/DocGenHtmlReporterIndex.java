@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,6 +25,7 @@ import org.polarsys.kitalpha.doc.gen.business.core.util.DocGenHtmlUtil;
 
 public class DocGenHtmlReporterIndex implements PatternExecutionReporter {
 
+	@Override
 	public void executionFinished(String output, PatternContext context) {
 
 		String projectName = (String) context
@@ -38,6 +39,7 @@ public class DocGenHtmlReporterIndex implements PatternExecutionReporter {
 
 	}
 
+	@Override
 	public void loopFinished(String output, String outputWithCallBack,
 			PatternContext context, Map<String, Object> parameterValues) {
 		// no need for this step

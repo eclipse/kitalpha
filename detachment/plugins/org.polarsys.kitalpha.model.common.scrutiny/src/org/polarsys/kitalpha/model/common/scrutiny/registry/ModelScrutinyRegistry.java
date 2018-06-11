@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -86,8 +86,9 @@ public class ModelScrutinyRegistry {
 	
 	
 	public RegistryElement getRegistryElement(String id) throws ModelScrutinyException {
-		if (this.registry.containsKey(id))
+		if (this.registry.containsKey(id)) {
 			return this.registry.get(id);
+		}
 		
 	    String message = Messages.NO_SUCH_REGISTRY_ELEMENT;
 	    message = message + ": " + id;

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -114,8 +114,9 @@ public class GenericScheduler extends AbstractCycleWiseScheduler {
 
 		if (_monitor != null) {
 			_monitor.subTask("Visiting vertex " + currentVertex.getName()); //$NON-NLS-1$
-			if (_monitorSize != 0)
+			if (_monitorSize != 0) {
 				_monitor.worked(1 / _monitorSize);
+			}
 		}
 
 		List<Edge<?>> currentVertexEdges = currentVertex.getOutgoingEdges();
@@ -127,10 +128,11 @@ public class GenericScheduler extends AbstractCycleWiseScheduler {
 				int index = indexOfVertexInPath(_browsedPath, nextVertex);
 				if ((index > -1) || (nextVertex == currentVertex)) {
 					LinkedList<Edge<?>> currentCycle = new LinkedList<Edge<?>>();
-					if (index > -1)
+					if (index > -1) {
 						for (int i = index; i < _browsedPath.size(); i++) {
 							currentCycle.add(_browsedPath.get(i));
 						}
+					}
 					currentCycle.add(currentEdge);
 
 					// the cycle is stored
@@ -149,8 +151,9 @@ public class GenericScheduler extends AbstractCycleWiseScheduler {
 		setVisited(currentVertex);
 		// and once a node is completely visited (it and its descendants), the
 		// search backtrack of 1
-		if (_browsedPath.size() > 0)
+		if (_browsedPath.size() > 0) {
 			_browsedPath.remove(_browsedPath.size() - 1);
+		}
 	}
 
 	/**
@@ -187,8 +190,9 @@ public class GenericScheduler extends AbstractCycleWiseScheduler {
 		List<Vertex<?>> summits = new ArrayList<Vertex<?>>();
 
 		for (Vertex<?> vertex : _model.getVertices()) {
-			if (vertex.isHotSpot())
+			if (vertex.isHotSpot()) {
 				summits.add(vertex);
+			}
 		}
 		return summits;
 	}
@@ -298,8 +302,9 @@ public class GenericScheduler extends AbstractCycleWiseScheduler {
 	private int indexOfVertexInPath(List<Edge<?>> path, Vertex<?> vertex) {
 		int i = 0;
 		for (Edge<?> edge : path) {
-			if ((edge.getSource() == vertex))// || (edge.getTarget() == vertex))
+			if ((edge.getSource() == vertex)) {
 				return i;
+			}
 			i++;
 		}
 		return -1;
@@ -317,6 +322,7 @@ public class GenericScheduler extends AbstractCycleWiseScheduler {
 		_scheduleResult = new LinkedList<ITransposerTask<Vertex<?>>>();
 	}
 
+	@Override
 	public void dispose() {
 		_visited = null;
 		_notVisited = null;

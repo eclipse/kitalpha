@@ -49,6 +49,7 @@ public class ConstraintConfigurer implements IConstraintConfigurer {
 	 * 
 	 * @see org.polarsys.kitalpha.validation.configurer.IConstraintConfigurer#configure(java.util.Properties)
 	 */
+	@Override
 	public void configure(Properties properties) throws ConfigurerException {
 		//
 		// First of all, deactivate all constraints from the given category.

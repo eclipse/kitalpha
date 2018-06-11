@@ -128,11 +128,12 @@ public class LoadingResourceReuseDialog extends Dialog {
 		idText.addKeyListener(new KeyListener() {
 			@Override
 			public void keyReleased(KeyEvent e) {
-				if (idText.getCharCount() != 0)
+				if (idText.getCharCount() != 0) {
 					criteria.setId(idText.getText(0, idText.getCharCount())
 							+ ".*");
-				else
+				} else {
 					criteria.setId(".*");
+				}
 				GeneralServices.refreshResultsAccordingToCriteria(criteria,
 						resultsTable, getParentShell());
 			}
@@ -156,12 +157,13 @@ public class LoadingResourceReuseDialog extends Dialog {
 				 * criteria will be set to Ecli.* and it's ok for retrieve the
 				 * resource named EclipseModel (.* regex is implemented)
 				 */
-				if (nameText.getCharCount() != 0)
+				if (nameText.getCharCount() != 0) {
 					criteria.setName(nameText.getText(0,
 							nameText.getCharCount())
 							+ ".*");
-				else
+				} else {
 					criteria.setName("");
+				}
 				GeneralServices.refreshResultsAccordingToCriteria(criteria,
 						resultsTable, getParentShell());
 			}
@@ -176,12 +178,13 @@ public class LoadingResourceReuseDialog extends Dialog {
 		domainText.addKeyListener(new KeyListener() {
 			@Override
 			public void keyReleased(KeyEvent e) {
-				if (domainText.getCharCount() != 0)
+				if (domainText.getCharCount() != 0) {
 					criteria.setDomain(domainText.getText(0,
 							domainText.getCharCount())
 							+ ".*");
-				else
+				} else {
 					criteria.setDomain("");
+				}
 				GeneralServices.refreshResultsAccordingToCriteria(criteria,
 						resultsTable, getParentShell());
 			}
@@ -196,11 +199,12 @@ public class LoadingResourceReuseDialog extends Dialog {
 		versionText.addKeyListener(new KeyListener() {
 			@Override
 			public void keyReleased(KeyEvent e) {
-				if (versionText.getCharCount() != 0)
+				if (versionText.getCharCount() != 0) {
 					criteria.setVersion(versionText.getText(0,
 							versionText.getCharCount()));
-				else
+				} else {
 					criteria.setVersion("");
+				}
 				GeneralServices.refreshResultsAccordingToCriteria(criteria,
 						resultsTable, getParentShell());
 			}
@@ -217,8 +221,9 @@ public class LoadingResourceReuseDialog extends Dialog {
 				TableItem[] resultSelection = resultsTable.getSelection();
 				if (resultSelection.length >= 1) {
 					updateOKState(true);
-				} else
+				} else {
 					updateOKState(false);
+				}
 			}
 			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
@@ -463,11 +468,10 @@ public class LoadingResourceReuseDialog extends Dialog {
 						data.addAll(stringValueList);
 						// if it's not the last tag i reload search criteria
 						// with existing tags
-						if (!data.isEmpty())
+						if (!data.isEmpty()) {
 							GeneralServices.refreshResultsAccordingToCriteria(
 									criteria, resultsTable, getParentShell());
-						// else, i refresh the complete lists of models
-						else {
+						} else {
 							SearchCriteria temp = new SearchCriteria();
 							temp.setId(".*");
 							GeneralServices.refreshResultsAccordingToCriteria(

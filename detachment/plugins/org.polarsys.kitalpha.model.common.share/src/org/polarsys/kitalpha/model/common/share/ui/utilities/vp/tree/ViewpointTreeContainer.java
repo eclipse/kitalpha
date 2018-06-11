@@ -89,8 +89,9 @@ public class ViewpointTreeContainer {
 	}
 
 	public void collectUriChildrenToRemove(Collection<IViewpointTreeDescription> children, Collection<String> uriToRemove) {
-		if (children.isEmpty())
+		if (children.isEmpty()) {
 			return;
+		}
 
 		for (IViewpointTreeDescription child : children) {
 			if (!child.isCandidateToKeep()) {
@@ -101,8 +102,9 @@ public class ViewpointTreeContainer {
 	}
 
 	protected void collectViewpointChildrenToRemove(Collection<IViewpointTreeDescription> children, Collection<String> viewpointToRemove) {
-		if (children.isEmpty())
+		if (children.isEmpty()) {
 			return;
+		}
 
 		for (IViewpointTreeDescription child : children) {
 			if (!child.isCandidateToKeep()) {
@@ -125,8 +127,9 @@ public class ViewpointTreeContainer {
 
 	private void getAllNsUrisOfChildren(Collection<IViewpointTreeDescription> children, Collection<String> nsuris) {
 
-		if (children.isEmpty())
+		if (children.isEmpty()) {
 			return;
+		}
 
 		for (IViewpointTreeDescription child : children) {
 			nsuris.addAll(child.getViewpointNsUri());

@@ -86,7 +86,8 @@ public class ParametersDialog extends SelectionDialog {
 		
 	}
 
-	 protected Control createDialogArea(Composite container) {
+	 @Override
+	protected Control createDialogArea(Composite container) {
 		 Composite  parent = (Composite)super.createDialogArea(container);
 		 
 		 GridData gd = new GridData(GridData.FILL_BOTH);
@@ -227,6 +228,7 @@ public ParameterTableSelectionChangedListener(
 	this.text = text;
 }
 
+@Override
 public void selectionChanged(SelectionChangedEvent event) {
 	ISelection selection = viewer.getSelection();
 	if (selection instanceof IStructuredSelection) {

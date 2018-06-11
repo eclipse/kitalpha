@@ -154,8 +154,9 @@ public class EClassService {
 		/** Handle EClass outgoing references **/
 		for (EReference eReference : eAllReferences) 
 		{
-			if (eReference.isContainment() == containment)
+			if (eReference.isContainment() == containment) {
 				result.add((EClass) eReference.getEType());
+			}
 		}
 		
 		/** Handle EClass incoming containment references **/
@@ -164,8 +165,9 @@ public class EClassService {
 		{
 			if (eReference instanceof EReference && eReference.eContainer() != root)
 			{
-				if (((EReference)eReference).isContainment() == containment)
+				if (((EReference)eReference).isContainment() == containment) {
 					result.add((EClass) eReference.eContainer());
+				}
 			}
 		}
 		

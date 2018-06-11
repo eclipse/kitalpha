@@ -83,8 +83,9 @@ public class ExtractRepresentationSilentCommand {
 		final IRunnableWithProgress op = new DiagramFileCreationOperation();
 		boolean errorCatch = false;
 		errorCatch = createAIRDFile(op, errorCatch);
-		if (errorCatch) 
+		if (errorCatch) {
 			return false;
+		}
 
 		final DAnalysis slaveAnalysis = prepareNewAnalysis();
 		moveRepresentations(slaveAnalysis);
@@ -96,7 +97,8 @@ public class ExtractRepresentationSilentCommand {
 	 */
 	 private void moveRepresentations(final DAnalysis slaveAnalysis) {
 		 final IRunnableWithProgress moveReps = new IRunnableWithProgress() {
-			 public void run(final IProgressMonitor mon) {
+			 @Override
+			public void run(final IProgressMonitor mon) {
 				 domain.getCommandStack().execute(new MoveRepresentationCommand(session, slaveAnalysis, representationDescriptors));
 			 }
 		 };

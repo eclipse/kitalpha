@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014-2017 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,8 +41,9 @@ public class ModelExtensionHelper {
 	 * @return a ModelExtensionManager instance.
 	 */
 	public static ModelExtensionManager getInstance(Resource resource) {
-		if (resource == null)
+		if (resource == null) {
 			return nullManager;
+		}
 		return getInstance(resource.getResourceSet());
 	}
 	
@@ -53,8 +54,9 @@ public class ModelExtensionHelper {
 	 * @return a ModelExtensionManager instance.
 	 */
 	public static ModelExtensionManager getInstance(final ResourceSet ctx) {
-		if (ctx == null)
+		if (ctx == null) {
 			return nullManager;
+		}
 		ModelExtensionManager instance = instances.get(ctx);
 		if (instance == null) {
 			instances.put(ctx, instance = createInstance());
@@ -63,8 +65,9 @@ public class ModelExtensionHelper {
 				
 				@Override
 				public void notifyChanged(Notification msg) {
-					if (msg.getEventType() == Notification.REMOVE && ctx.getResources().isEmpty())
+					if (msg.getEventType() == Notification.REMOVE && ctx.getResources().isEmpty()) {
 						instances.remove(ctx);
+					}
 				}
 				
 			});
@@ -80,8 +83,9 @@ public class ModelExtensionHelper {
 	 * @return a ModelExtensionManager instance.
 	 */
 	public static ModelExtensionManager getInstance(EObject ctx) {
-		if (ctx == null)
+		if (ctx == null) {
 			return nullManager;
+		}
 		return getInstance(ctx.eResource());
 	}
 
@@ -89,12 +93,15 @@ public class ModelExtensionHelper {
 
 		try {
 			IConfigurationElement[] elts = Platform.getExtensionRegistry().getConfigurationElementsFor("org.polarsys.kitalpha.emde.extension.model.manager");
-			if (elts.length == 0)
+			if (elts.length == 0) {
 				return new PreferenceModelExtensionManager();
-			if (elts.length == 1)
+			}
+			if (elts.length == 1) {
 				return configure((ModelExtensionManager) elts[0].createExecutableExtension("class"));
-			if (elts.length > 1)
+			}
+			if (elts.length > 1) {
 				Log.getDefault().logWarning("Got " + elts.length + " implementations for PE 'org.polarsys.kitalpha.emde.extension.model.manager'");
+			}
 			return configure((ModelExtensionManager) elts[0].createExecutableExtension("class"));
 		} catch (CoreException e) {
 			Log.getDefault().logError(e);

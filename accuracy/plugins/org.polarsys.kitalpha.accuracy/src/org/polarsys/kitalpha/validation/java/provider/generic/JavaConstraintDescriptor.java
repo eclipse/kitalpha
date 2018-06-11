@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -85,6 +85,7 @@ public class JavaConstraintDescriptor extends
 	 * 
 	 * @see org.eclipse.emf.validation.service.IConstraintDescriptor#getBody()
 	 */
+	@Override
 	public String getBody() {
 		return null;
 	}
@@ -94,6 +95,7 @@ public class JavaConstraintDescriptor extends
 	 * 
 	 * @see org.eclipse.emf.validation.service.IConstraintDescriptor#getDescription()
 	 */
+	@Override
 	public String getDescription() {
 		return this.description;
 	}
@@ -103,6 +105,7 @@ public class JavaConstraintDescriptor extends
 	 * 
 	 * @see org.eclipse.emf.validation.service.IConstraintDescriptor#getEvaluationMode()
 	 */
+	@Override
 	public EvaluationMode getEvaluationMode() {
 		return EvaluationMode.BATCH;
 	}
@@ -112,6 +115,7 @@ public class JavaConstraintDescriptor extends
 	 * 
 	 * @see org.eclipse.emf.validation.service.IConstraintDescriptor#getMessagePattern()
 	 */
+	@Override
 	public String getMessagePattern() {
 		return this.errorMessage;
 	}
@@ -121,6 +125,7 @@ public class JavaConstraintDescriptor extends
 	 * 
 	 * @see org.eclipse.emf.validation.service.IConstraintDescriptor#getName()
 	 */
+	@Override
 	public String getName() {
 		return this.name;
 	}
@@ -130,6 +135,7 @@ public class JavaConstraintDescriptor extends
 	 * 
 	 * @see org.eclipse.emf.validation.service.IConstraintDescriptor#getSeverity()
 	 */
+	@Override
 	public ConstraintSeverity getSeverity() {
 		return this.severity;
 	}
@@ -139,6 +145,7 @@ public class JavaConstraintDescriptor extends
 	 * 
 	 * @see org.eclipse.emf.validation.service.IConstraintDescriptor#getStatusCode()
 	 */
+	@Override
 	public int getStatusCode() {
 		return this.code;
 	}
@@ -148,6 +155,7 @@ public class JavaConstraintDescriptor extends
 	 * 
 	 * @see org.eclipse.emf.validation.service.IConstraintDescriptor#targetsEvent(org.eclipse.emf.common.notify.Notification)
 	 */
+	@Override
 	public boolean targetsEvent(Notification arg0) {
 		return false;
 	}
@@ -157,6 +165,7 @@ public class JavaConstraintDescriptor extends
 	 * 
 	 * @see org.eclipse.emf.validation.service.IConstraintDescriptor#targetsTypeOf(org.eclipse.emf.ecore.EObject)
 	 */
+	@Override
 	public boolean targetsTypeOf(EObject arg0) {
 		return getIJavaConstraint().getTargetType().isInstance(arg0);
 	}

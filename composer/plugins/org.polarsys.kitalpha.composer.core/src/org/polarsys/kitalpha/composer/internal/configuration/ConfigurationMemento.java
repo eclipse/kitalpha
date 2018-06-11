@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -51,6 +51,7 @@ public class ConfigurationMemento implements IConfigurationMemento {
 	 * 
 	 * @see org.polarsys.kitalpha.composer.internal.configuration.IConfigurationMemento#restore(org.polarsys.kitalpha.composer.api.configuration.CodeManagerConfiguration)
 	 */
+	@Override
 	public void restore(CodeManagerConfiguration configuration)
 			throws CoreException {
 		String configurationKey = configuration.getStrategy().getClass()
@@ -67,6 +68,7 @@ public class ConfigurationMemento implements IConfigurationMemento {
 	 * @see org.polarsys.kitalpha.composer.internal.configuration.IConfigurationMemento#restore(org.polarsys.kitalpha.composer.api.configuration.CodeManagerConfiguration,
 	 *      java.lang.String)
 	 */
+	@Override
 	public void restore(CodeManagerConfiguration configuration,
 			String configurationKey) throws CoreException {
 		ICodeManagerInput input = configuration.getInput();
@@ -75,8 +77,9 @@ public class ConfigurationMemento implements IConfigurationMemento {
 			// retrieve for one resource !
 			Set<Resource> resources = new HashSet<Resource>();
 			for (EObject root : input.getRootsInputs()) {
-				if (root.eResource() != null)
+				if (root.eResource() != null) {
 					resources.add(root.eResource());
+				}
 			}
 			for (Resource resource : resources) {
 				IFile iFile = getFile(resource);
@@ -92,8 +95,9 @@ public class ConfigurationMemento implements IConfigurationMemento {
 					if (iFile != null) {
 						boolean isRestored = restore(configuration,
 								configurationKey, iFile, eObject);
-						if (isRestored)
+						if (isRestored) {
 							break;
+						}
 					}
 				}
 			}
@@ -110,11 +114,13 @@ public class ConfigurationMemento implements IConfigurationMemento {
 			String uriFragment = current.eResource().getURIFragment(current);
 			isRestored = restore(configuration, resource, configurationKey
 					+ IDENTIFIER_SEPARATOR + uriFragment);
-			if (!isRestored)
+			if (!isRestored) {
 				current = current.eContainer();
+			}
 		}
-		if (!isRestored)
+		if (!isRestored) {
 			isRestored = restore(configuration, resource, configurationKey);
+		}
 
 		return isRestored;
 	}
@@ -124,6 +130,7 @@ public class ConfigurationMemento implements IConfigurationMemento {
 	 * 
 	 * @see org.polarsys.kitalpha.composer.internal.configuration.IConfigurationMemento#save(org.polarsys.kitalpha.composer.api.configuration.CodeManagerConfiguration)
 	 */
+	@Override
 	public void save(CodeManagerConfiguration configuration)
 			throws CoreException {
 		String configurationKey = configuration.getStrategy().getClass()
@@ -140,19 +147,22 @@ public class ConfigurationMemento implements IConfigurationMemento {
 	 * @see org.polarsys.kitalpha.composer.internal.configuration.IConfigurationMemento#save(org.polarsys.kitalpha.composer.api.configuration.CodeManagerConfiguration,
 	 *      java.lang.String)
 	 */
+	@Override
 	public void save(CodeManagerConfiguration configuration,
 			String configurationKey) throws CoreException {
 		ICodeManagerInput input = configuration.getInput();
 		if (!input.isMultipleObjectsInput()) {
 			Set<Resource> resources = new HashSet<Resource>();
 			for (EObject root : input.getRootsInputs()) {
-				if (root.eResource() != null)
+				if (root.eResource() != null) {
 					resources.add(root.eResource());
+				}
 			}
 			for (Resource resource : resources) {
 				IFile iFile = getFile(resource);
-				if (iFile != null)
+				if (iFile != null) {
 					save(configuration, iFile, configurationKey);
+				}
 			}
 		} else {
 			for (EObject eObject : input.getListInput()) {
@@ -160,9 +170,10 @@ public class ConfigurationMemento implements IConfigurationMemento {
 					String uriFragment = eObject.eResource().getURIFragment(
 							eObject);
 					IFile iFile = getFile(eObject.eResource());
-					if (iFile != null)
+					if (iFile != null) {
 						save(configuration, iFile, configurationKey
 								+ IDENTIFIER_SEPARATOR + uriFragment);
+					}
 				}
 			}
 		}

@@ -71,6 +71,7 @@ public class CodeManagerApplication implements IApplication {
 	 * 
 	 * @see org.eclipse.equinox.app.IApplication#start(org.eclipse.equinox.app.IApplicationContext)
 	 */
+	@Override
 	public Object start(IApplicationContext context) throws Exception {
 
 		// get args
@@ -98,10 +99,12 @@ public class CodeManagerApplication implements IApplication {
 
 		project = root.getProject("External Files"); //$NON-NLS-1$
 
-		if (!project.exists())
+		if (!project.exists()) {
 			project.create(null);
-		if (!project.isOpen())
+		}
+		if (!project.isOpen()) {
 			project.open(null);
+		}
 
 		
 		
@@ -154,8 +157,10 @@ public class CodeManagerApplication implements IApplication {
 		Map<String, Parameter> strategyParams = strategy.getParameters();
 		
 		if (strategyParams != null && !strategyParams.isEmpty())
+		 {
 			strategyParams = setParameters(properties_p, strategyParams,
 					"strategy"); //$NON-NLS-1$
+		}
 
 		final String refineryId = properties_p
 				.getProperty(IStandaloneConstants.REFINERY_ID);
@@ -169,8 +174,10 @@ public class CodeManagerApplication implements IApplication {
 		Map<String, Parameter> refineryParams = refinery.getParameters();
 
 		if (refineryParams != null && !refineryParams.isEmpty())
+		 {
 			refineryParams = setParameters(properties_p, refineryParams,
 					"refinery"); //$NON-NLS-1$
+		}
 
 		final String generatorId = properties_p
 				.getProperty(IStandaloneConstants.GENERATOR_ID);
@@ -185,8 +192,10 @@ public class CodeManagerApplication implements IApplication {
 		System.out.println("Retrieve parameters of the generator");
 		
 		if (generatorParams != null && !generatorParams.isEmpty())
+		 {
 			generatorParams = setParameters(properties_p, generatorParams,
 					"generator"); //$NON-NLS-1$
+		}
 		
 		//Libraries
 		
@@ -296,10 +305,11 @@ public class CodeManagerApplication implements IApplication {
 				wkparameter.addActivity(activityId);
 				IActivity activity = CadenceRegistry
 						.getIActivityClassFromId(activityId);
-				if (activity != null)
+				if (activity != null) {
 					wkparameter = setParameters(properties_p, activityId,
 							activity.getParameters(), wkparameter, name + "." //$NON-NLS-1$
 									+ activityId);
+				}
 
 			}
 
@@ -378,8 +388,9 @@ public class CodeManagerApplication implements IApplication {
 			final String file_key = key_prefix_p + "." + key; //$NON-NLS-1$
 			String value = properties_p.getProperty(file_key);
 			Parameter p = params_p.get(key);
-			if(value!=null)
+			if(value!=null) {
 				p.setValue(value);
+			}
 		}
 
 		return params_p;
@@ -390,6 +401,7 @@ public class CodeManagerApplication implements IApplication {
 	 * 
 	 * @see org.eclipse.equinox.app.IApplication#stop()
 	 */
+	@Override
 	public void stop() {
 		try {
 			project.delete(true, new NullProgressMonitor());

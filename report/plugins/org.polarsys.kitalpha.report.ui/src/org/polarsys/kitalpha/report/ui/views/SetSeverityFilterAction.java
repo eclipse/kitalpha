@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,8 +37,9 @@ public class SetSeverityFilterAction extends MenuCreatorAction {
 		Severity threshold = computeSeverityThreshold();
 		for (Severity elt : ReportRegistry.INSTANCE.getSeverities()) {
 			ChooseSeverityAction action = new ChooseSeverityAction(elt);
-			if (elt == threshold)
+			if (elt == threshold) {
 				action.setChecked(true);
+			}
 			addActionToMenu(menu, action);
 		}
 	}
@@ -46,12 +47,14 @@ public class SetSeverityFilterAction extends MenuCreatorAction {
 	private Severity computeSeverityThreshold() {
 		Severity lowerOne = null;
 		for (Severity elt : ReportRegistry.INSTANCE.getSeverities()) {
-			if (elt.getCode() == view.getSeverityThreshold())
+			if (elt.getCode() == view.getSeverityThreshold()) {
 				return elt;
-			if (elt.getCode() > view.getSeverityThreshold())
+			}
+			if (elt.getCode() > view.getSeverityThreshold()) {
 				lowerOne = elt;
-			else
+			} else {
 				return lowerOne;
+			}
 		}
 		return null;
 	}

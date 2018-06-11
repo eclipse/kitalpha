@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -59,7 +59,8 @@ public class GenericRulesHandler implements IRulesHandler {
   /**
    * 
    */
-  @SuppressWarnings( { "unchecked", "nls" })
+  @Override
+@SuppressWarnings( { "unchecked", "nls" })
   public void dispose() {
     if (_context != null) {
       _context.reset();
@@ -75,7 +76,8 @@ public class GenericRulesHandler implements IRulesHandler {
   /**
    * @param defaultContext_p
    */
-  @SuppressWarnings("unused")
+  @Override
+@SuppressWarnings("unused")
   public void setContext(IContext defaultContext_p) {
     _context = defaultContext_p;
   }
@@ -91,7 +93,8 @@ public class GenericRulesHandler implements IRulesHandler {
    * @throws ComputePremisesException
    * @throws NonExistingPurposeException
    */
-  public List<IPremise> getPremises(Object object_p) throws ComputePremisesException {
+  @Override
+public List<IPremise> getPremises(Object object_p) throws ComputePremisesException {
     MappingPossibility applicablePossibility = null;
 
     try {
@@ -112,30 +115,35 @@ public class GenericRulesHandler implements IRulesHandler {
    * @param mappingId_p_p
    * @see org.polarsys.kitalpha.transposer.rules.handler.api.IRulesHandler#init(java.lang.String)
    */
-  public void init(String purpose_p, String mappingId_p) throws NonExistingPurposeException {
+  @Override
+public void init(String purpose_p, String mappingId_p) throws NonExistingPurposeException {
     this._runtimePurpose = GenericPurposeRegistry.getInstance().getRegisteredPurpose(purpose_p, mappingId_p);
-    if (_runtimePurpose != null && _runtimePurpose.getMapping() != null)
-      this._context = _runtimePurpose.getMapping().getContext();
+    if (_runtimePurpose != null && _runtimePurpose.getMapping() != null) {
+		this._context = _runtimePurpose.getMapping().getContext();
+	}
   }
 
   /**
    * @see org.polarsys.kitalpha.transposer.rules.handler.api.IRulesHandler#getDomainHelper()
    */
-  public IDomainHelper getDomainHelper() {
+  @Override
+public IDomainHelper getDomainHelper() {
     return this._runtimePurpose.getMapping().getDomainHelper();
   }
 
   /**
    * @see org.polarsys.kitalpha.transposer.rules.handler.api.IRulesHandler#getPurpose()
    */
-  public String getPurpose() {
+  @Override
+public String getPurpose() {
     return this._runtimePurpose.getName();
   }
 
   /**
    * @see org.polarsys.kitalpha.transposer.rules.handler.api.IRulesHandler#apply(java.lang.Object, boolean)
    */
-  public boolean apply(Object object_p, boolean complete_p, IProgressMonitor monitor_p) throws RuleExecutionException {
+  @Override
+public boolean apply(Object object_p, boolean complete_p, IProgressMonitor monitor_p) throws RuleExecutionException {
     MappingPossibility applicablePossibility = null;
 
     try {
@@ -144,11 +152,13 @@ public class GenericRulesHandler implements IRulesHandler {
       throw new RuleExecutionException(e.getMessage(), e);
     }
 
-    if (applicablePossibility == null)
-      return false;
+    if (applicablePossibility == null) {
+		return false;
+	}
 
-    if (applicablePossibility.getContext() != null)
-      applicablePossibility.updateContext(object_p, this._context);
+    if (applicablePossibility.getContext() != null) {
+		applicablePossibility.updateContext(object_p, this._context);
+	}
 
     if (monitor_p != null) {
       monitor_p.subTask(applicablePossibility.getName() + " (" + (complete_p ? "complete" : "incomplete") + ") " + object_p.getClass().getSimpleName()); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
@@ -161,7 +171,8 @@ public class GenericRulesHandler implements IRulesHandler {
   /**
    * @see org.polarsys.kitalpha.transposer.rules.handler.api.IRulesHandler#getApplicablePossibility(java.lang.Object)
    */
-  public MappingPossibility getApplicablePossibility(Object object_p) throws MappingPossibilityResolutionException {
+  @Override
+public MappingPossibility getApplicablePossibility(Object object_p) throws MappingPossibilityResolutionException {
     MappingPossibility applicablePossibility = null;
 
     if (_knownObjects.containsKey(object_p)) {
@@ -171,10 +182,11 @@ public class GenericRulesHandler implements IRulesHandler {
     } else {
       applicablePossibility = this._runtimePurpose.getMapping().resolveApplicablePossibility(object_p, _runtimePurpose.getMapping().getDomainHelper());
 
-      if (applicablePossibility != null)
-        _knownObjects.put(object_p, applicablePossibility);
-      else
-        _knownObjectsWithoutApplicablePossibitity.add(object_p);
+      if (applicablePossibility != null) {
+		_knownObjects.put(object_p, applicablePossibility);
+	} else {
+		_knownObjectsWithoutApplicablePossibitity.add(object_p);
+	}
 
       return applicablePossibility;
     }
@@ -184,14 +196,16 @@ public class GenericRulesHandler implements IRulesHandler {
   /**
    * @see org.polarsys.kitalpha.transposer.rules.handler.api.IRulesHandler#validatePurpose()
    */
-  public void validatePurpose() {
+  @Override
+public void validatePurpose() {
     this._runtimePurpose.validate();
   }
 
   /**
    * @see org.polarsys.kitalpha.transposer.rules.handler.api.IRulesHandler#getContext()
    */
-  public IContext getContext() {
+  @Override
+public IContext getContext() {
     return _context;
   }
 }

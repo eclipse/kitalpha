@@ -64,8 +64,9 @@ public final class CadenceExtensions {
 
     for (IConfigurationElement elt : configElements) {
       if (elt.getAttribute(ATT_ACTIVITY__WORKFLOW).equals(workflow_id)
-          && elt.getAttribute(ATT_ACTIVITY__WORKFLOW_ELEMENT).equals(workflowElt_id))
-        activities.add(elt);
+          && elt.getAttribute(ATT_ACTIVITY__WORKFLOW_ELEMENT).equals(workflowElt_id)) {
+		activities.add(elt);
+	}
     }
     return activities.toArray(new IConfigurationElement[] {});
   }
@@ -76,8 +77,9 @@ public final class CadenceExtensions {
     IConfigurationElement[] configElements = getAllActivityDeclaration();
     if (configElements != null) {
       for (IConfigurationElement elt : configElements) {
-        if (elt.getAttribute(ATT_IDENTIFIER).equals(identifier))
-          configuration = elt;
+        if (elt.getAttribute(ATT_IDENTIFIER).equals(identifier)) {
+			configuration = elt;
+		}
       }
     }
 
@@ -102,8 +104,9 @@ public final class CadenceExtensions {
     if (configElements != null) {
 
       for (IConfigurationElement elt : configElements) {
-        if (elt.getAttribute(ATT_IDENTIFIER).equals(identifier))
-          configuration = elt;
+        if (elt.getAttribute(ATT_IDENTIFIER).equals(identifier)) {
+			configuration = elt;
+		}
       }
     }
     return configuration;
@@ -115,8 +118,9 @@ public final class CadenceExtensions {
     if (configElements != null) {
 
       for (IConfigurationElement elt : configElements) {
-        if (elt.getAttribute(ATT_IDENTIFIER).equals(identifier))
-          configuration = elt;
+        if (elt.getAttribute(ATT_IDENTIFIER).equals(identifier)) {
+			configuration = elt;
+		}
       }
     }
 

@@ -217,6 +217,7 @@ public class ViewpointTreeDescription implements IViewpointTreeDescription {
 		
 	}
 	
+	@Override
 	public void updateCandidates(boolean toKeep){
 		
 		Collection<IViewpointTreeDescription> allChildren = getAllChildren();

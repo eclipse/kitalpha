@@ -34,8 +34,9 @@ public class TargetPlatformReader extends ModelBasedReader {
 		String installDir = new File(Platform.getInstallLocation().getURL().getFile()).toString();
 		for (IPluginModelBase base : externalModels) {
 			String installLocation = base.getInstallLocation();
-			if (!installLocation.contains(installDir))
+			if (!installLocation.contains(installDir)) {
 				result.add(base);
+			}
 		}
 		return result.toArray(new IPluginModelBase[result.size()]);
 	}

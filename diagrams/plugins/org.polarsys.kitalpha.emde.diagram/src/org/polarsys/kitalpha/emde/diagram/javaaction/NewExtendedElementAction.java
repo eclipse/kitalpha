@@ -39,6 +39,7 @@ public class NewExtendedElementAction extends AbstractEmdeExternalJavaAction {
 
 	private static final String SELECTION_LIST = "selectionList";
 
+	@Override
 	@SuppressWarnings("unchecked")
 	public void execute(Collection<? extends EObject> selections, Map<String, Object> parameters) {
 		Object owner = parameters.get(OWNER);
@@ -65,8 +66,9 @@ public class NewExtendedElementAction extends AbstractEmdeExternalJavaAction {
 				Collection<?> list = (Collection<?>) owner;
 				for (Object o : list) 
 				{
-					if (o instanceof EClass) 
+					if (o instanceof EClass) {
 						doWork((EClass) o, selectionList);
+					}
 				}
 			}
 		}
@@ -76,9 +78,11 @@ public class NewExtendedElementAction extends AbstractEmdeExternalJavaAction {
 	private static class Helper {
 		public static boolean isExtensible(EClass eclass) {
 			EClass extensibleElement = EmdePackage.eINSTANCE.getExtensibleElement();
-			for (EClass clazz : eclass.getEAllSuperTypes())
-				if (clazz.getName().equals(extensibleElement.getName()))
+			for (EClass clazz : eclass.getEAllSuperTypes()) {
+				if (clazz.getName().equals(extensibleElement.getName())) {
 					return true;
+				}
+			}
 			return false;
 		}
 	}

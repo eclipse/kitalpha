@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -100,6 +100,7 @@ public abstract class ComponentElementImpl extends ExtensibleElementImpl impleme
 	 * @generated
 	 */
 
+	@Override
 	public String getName() {
 
 		return name;
@@ -111,13 +112,15 @@ public abstract class ComponentElementImpl extends ExtensibleElementImpl impleme
 	 * @generated
 	 */
 
+	@Override
 	public void setName(String newName) {
 
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, SimplecomponentPackage.COMPONENT_ELEMENT__NAME,
 					oldName, name));
+		}
 
 	}
 
@@ -127,6 +130,7 @@ public abstract class ComponentElementImpl extends ExtensibleElementImpl impleme
 	 * @generated
 	 */
 
+	@Override
 	public String getDescription() {
 
 		return description;
@@ -138,13 +142,15 @@ public abstract class ComponentElementImpl extends ExtensibleElementImpl impleme
 	 * @generated
 	 */
 
+	@Override
 	public void setDescription(String newDescription) {
 
 		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, SimplecomponentPackage.COMPONENT_ELEMENT__DESCRIPTION,
 					oldDescription, description));
+		}
 
 	}
 
@@ -223,8 +229,9 @@ public abstract class ComponentElementImpl extends ExtensibleElementImpl impleme
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: "); //$NON-NLS-1$

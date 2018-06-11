@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -114,6 +114,7 @@ public class SimpleVPPerformanceImpl extends ComponentElementImpl implements Sim
 	 * @generated
 	 */
 
+	@Override
 	public int getComplexity() {
 
 		return complexity;
@@ -125,13 +126,15 @@ public class SimpleVPPerformanceImpl extends ComponentElementImpl implements Sim
 	 * @generated
 	 */
 
+	@Override
 	public void setComplexity(int newComplexity) {
 
 		int oldComplexity = complexity;
 		complexity = newComplexity;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, PerformancePackage.SIMPLE_VP_PERFORMANCE__COMPLEXITY,
 					oldComplexity, complexity));
+		}
 
 	}
 
@@ -141,6 +144,7 @@ public class SimpleVPPerformanceImpl extends ComponentElementImpl implements Sim
 	 * @generated
 	 */
 
+	@Override
 	public int getCost() {
 
 		return cost;
@@ -152,13 +156,15 @@ public class SimpleVPPerformanceImpl extends ComponentElementImpl implements Sim
 	 * @generated
 	 */
 
+	@Override
 	public void setCost(int newCost) {
 
 		int oldCost = cost;
 		cost = newCost;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, PerformancePackage.SIMPLE_VP_PERFORMANCE__COST,
 					oldCost, cost));
+		}
 
 	}
 
@@ -168,6 +174,7 @@ public class SimpleVPPerformanceImpl extends ComponentElementImpl implements Sim
 	 * @generated
 	 */
 
+	@Override
 	public VPStatus getStatus() {
 
 		return status;
@@ -186,10 +193,11 @@ public class SimpleVPPerformanceImpl extends ComponentElementImpl implements Sim
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
 					PerformancePackage.SIMPLE_VP_PERFORMANCE__STATUS, oldStatus, newStatus);
-			if (msgs == null)
+			if (msgs == null) {
 				msgs = notification;
-			else
+			} else {
 				msgs.add(notification);
+			}
 		}
 
 		return msgs;
@@ -201,22 +209,27 @@ public class SimpleVPPerformanceImpl extends ComponentElementImpl implements Sim
 	 * @generated
 	 */
 
+	@Override
 	public void setStatus(VPStatus newStatus) {
 
 		if (newStatus != status) {
 			NotificationChain msgs = null;
-			if (status != null)
+			if (status != null) {
 				msgs = ((InternalEObject) status).eInverseRemove(this,
 						EOPPOSITE_FEATURE_BASE - PerformancePackage.SIMPLE_VP_PERFORMANCE__STATUS, null, msgs);
-			if (newStatus != null)
+			}
+			if (newStatus != null) {
 				msgs = ((InternalEObject) newStatus).eInverseAdd(this,
 						EOPPOSITE_FEATURE_BASE - PerformancePackage.SIMPLE_VP_PERFORMANCE__STATUS, null, msgs);
+			}
 			msgs = basicSetStatus(newStatus, msgs);
-			if (msgs != null)
+			if (msgs != null) {
 				msgs.dispatch();
-		} else if (eNotificationRequired())
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, PerformancePackage.SIMPLE_VP_PERFORMANCE__STATUS,
 					newStatus, newStatus));
+		}
 
 	}
 
@@ -319,8 +332,9 @@ public class SimpleVPPerformanceImpl extends ComponentElementImpl implements Sim
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (complexity: "); //$NON-NLS-1$

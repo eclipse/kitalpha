@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,6 +36,7 @@ public class EmdeGenerationExtension extends DefaultEmfGenerationExtension {
 
 	private static final List<String> CONFLICT_LIST = Arrays.asList(new String[] { "basic.emf.generation" });
 
+	@Override
 	public List<String> getConflictingExtensions() {
 		return CONFLICT_LIST;
 	}
@@ -45,6 +46,7 @@ public class EmdeGenerationExtension extends DefaultEmfGenerationExtension {
 		return "Kitalpha eMDE Emf Generation";
 	}
 
+	@Override
 	protected void computeDefaultProperties(Map<String, String> context) {
 		super.computeDefaultProperties(context);
 		String project = context.get(CONTEXT_CURRENT_PROJECT_NAME);

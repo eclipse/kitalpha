@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -31,11 +31,13 @@ public class Feedback implements IFeedback {
 
 	private Set<IFeedbackMessage> messages = new HashSet<IFeedback.IFeedbackMessage>();
 
+	@Override
 	public void addFeedbackMessage(IFeedbackMessage feedbackMessage) {
 		messages.add(feedbackMessage);
 	}
 	
 	
+	@Override
 	public Collection<IFeedbackMessage> getFeedbackMessages() {
 		return messages ;
 	}
@@ -70,10 +72,12 @@ public class Feedback implements IFeedback {
 			this.message = message;
 		}
 
+		@Override
 		public FeedbackLevel getLevel() {
 			return level;
 		}
 
+		@Override
 		public String getMessage() {
 			return message;
 		}
@@ -90,20 +94,26 @@ public class Feedback implements IFeedback {
 
 		@Override
 		public boolean equals(Object obj) {
-			if (this == obj)
+			if (this == obj) {
 				return true;
-			if (obj == null)
+			}
+			if (obj == null) {
 				return false;
-			if (getClass() != obj.getClass())
+			}
+			if (getClass() != obj.getClass()) {
 				return false;
+			}
 			FeedbackMessage other = (FeedbackMessage) obj;
-			if (level != other.level)
+			if (level != other.level) {
 				return false;
+			}
 			if (message == null) {
-				if (other.message != null)
+				if (other.message != null) {
 					return false;
-			} else if (!message.equals(other.message))
+				}
+			} else if (!message.equals(other.message)) {
 				return false;
+			}
 			return true;
 		}
 	}

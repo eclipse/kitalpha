@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -52,6 +52,7 @@ public abstract class RegistryProvider implements IRegistryChangeListener {
 	private final String extensionPointID;
 
 	private static final Comparator<IExtension> comparer = new Comparator<IExtension>() {
+		@Override
 		public int compare(IExtension i1, IExtension i2) {
 			String s1 = i1.getNamespaceIdentifier();
 			String s2 = i2.getNamespaceIdentifier();
@@ -103,6 +104,7 @@ public abstract class RegistryProvider implements IRegistryChangeListener {
 	/**
 	 * @see org.eclipse.core.runtime.IRegistryChangeListener#registryChanged(org.eclipse.core.runtime.IRegistryChangeEvent)
 	 */
+	@Override
 	public void registryChanged(IRegistryChangeEvent event) {
 		if (!Platform.isRunning()) {
 			return;

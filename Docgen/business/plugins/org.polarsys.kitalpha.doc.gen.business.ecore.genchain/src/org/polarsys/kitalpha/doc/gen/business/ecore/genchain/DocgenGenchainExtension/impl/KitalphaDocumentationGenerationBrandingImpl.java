@@ -1,5 +1,13 @@
-/**
- */
+/*******************************************************************************
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *  
+ * Contributors:
+ *   Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
 package org.polarsys.kitalpha.doc.gen.business.ecore.genchain.DocgenGenchainExtension.impl;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -112,6 +120,7 @@ public class KitalphaDocumentationGenerationBrandingImpl extends EObjectImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getCopyright() {
 		return copyright;
 	}
@@ -121,11 +130,13 @@ public class KitalphaDocumentationGenerationBrandingImpl extends EObjectImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCopyright(String newCopyright) {
 		String oldCopyright = copyright;
 		copyright = newCopyright;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DocgenGenchainExtensionPackage.KITALPHA_DOCUMENTATION_GENERATION_BRANDING__COPYRIGHT, oldCopyright, copyright));
+		}
 	}
 
 	/**
@@ -133,6 +144,7 @@ public class KitalphaDocumentationGenerationBrandingImpl extends EObjectImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getLogoPath() {
 		return logoPath;
 	}
@@ -142,11 +154,13 @@ public class KitalphaDocumentationGenerationBrandingImpl extends EObjectImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLogoPath(String newLogoPath) {
 		String oldLogoPath = logoPath;
 		logoPath = newLogoPath;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DocgenGenchainExtensionPackage.KITALPHA_DOCUMENTATION_GENERATION_BRANDING__LOGO_PATH, oldLogoPath, logoPath));
+		}
 	}
 
 	/**
@@ -154,6 +168,7 @@ public class KitalphaDocumentationGenerationBrandingImpl extends EObjectImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getLogoAlt() {
 		return logoAlt;
 	}
@@ -163,11 +178,13 @@ public class KitalphaDocumentationGenerationBrandingImpl extends EObjectImpl imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLogoAlt(String newLogoAlt) {
 		String oldLogoAlt = logoAlt;
 		logoAlt = newLogoAlt;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DocgenGenchainExtensionPackage.KITALPHA_DOCUMENTATION_GENERATION_BRANDING__LOGO_ALT, oldLogoAlt, logoAlt));
+		}
 	}
 
 	/**

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,6 +40,7 @@ public class NewElementWizard extends Wizard implements ExtensionProperties {
 		this.generationChain = chain;
 	}
 
+	@Override
 	public void addPages() {
 
 		ecorePage = new KitalphaEcoreModelPage("ecore", generationChain, model);//$NON-NLS-1$
@@ -71,8 +72,9 @@ public class NewElementWizard extends Wizard implements ExtensionProperties {
 
 	protected void addNewChilds() {
 		Set<Node> checkedElements = ecorePage.getCheckedElements();
-		for (Node container : model.getChildren())
+		for (Node container : model.getChildren()) {
 			GenerationChainFactory.INSTANCE.createExtension(generationChain, container, checkedElements);
+		}
 	}
 
 	static String getModelName(String modelPath) {

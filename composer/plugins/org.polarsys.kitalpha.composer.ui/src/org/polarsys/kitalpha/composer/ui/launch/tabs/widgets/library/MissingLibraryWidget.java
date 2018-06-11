@@ -63,12 +63,14 @@ public class MissingLibraryWidget {
 	private void attachListeners() {
 		radio1.addSelectionListener(new SelectionAdapter() {
 			
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				MissingLibraryWidget.this.path.setEnabled(radio1.getSelection());
 				tab.update();
 			}
 		});
 		radio2.addSelectionListener(new SelectionAdapter() {
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				MissingLibraryWidget.this.path.setText("");	 ////$NON-NLS-1$
 				tab.update();
@@ -77,6 +79,7 @@ public class MissingLibraryWidget {
 		
 		path.addModifyListener(new ModifyListener() {
 			
+			@Override
 			public void modifyText(ModifyEvent e) {
 				tab.update();
 			}

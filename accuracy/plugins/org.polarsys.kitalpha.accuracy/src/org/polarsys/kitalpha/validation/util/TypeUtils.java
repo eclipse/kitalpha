@@ -38,6 +38,7 @@ public class TypeUtils {
 			this.type = type;
 		}
 
+		@Override
 		public Iterator<T> iterator() {
 			return new CastedIterator<T>(delegate.iterator(), type);
 		}
@@ -56,6 +57,7 @@ public class TypeUtils {
 			this.type = type;
 		}
 
+		@Override
 		public boolean hasNext() {
 			if (goNext) {
 				current = internalNext();
@@ -64,6 +66,7 @@ public class TypeUtils {
 			return current != null;
 		}
 
+		@Override
 		public T next() {
 			if (hasNext()) {
 				goNext = true;
@@ -72,6 +75,7 @@ public class TypeUtils {
 			throw new NoSuchElementException();
 		}
 
+		@Override
 		public void remove() {
 			delegate.remove();
 		}

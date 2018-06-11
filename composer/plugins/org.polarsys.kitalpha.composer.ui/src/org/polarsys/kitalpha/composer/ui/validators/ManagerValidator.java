@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -58,8 +58,9 @@ public class ManagerValidator {
 				if (members[index] instanceof IFile) {
 					IFile file = (IFile) members[index];
 					Resource resource = isValidIFile(file);
-					if (resource != null)
+					if (resource != null) {
 						resourceSet.getResource(resource.getURI(), true);
+					}
 				}
 			}
 
@@ -79,15 +80,17 @@ public class ManagerValidator {
 					.getFullPath().toString(), true), true);
 			EObject root = model.getContents().get(0);
 			boolean ok = isOk(configuration, root);
-			if (ok)
+			if (ok) {
 				return model;
+			}
 		}
 		return null;
 	}
 
 	public EObject isValidEObject(final EObject eObject) {
-		if (isOk(configuration, eObject))
+		if (isOk(configuration, eObject)) {
 			return eObject;
+		}
 		return null;
 	}
 
@@ -141,9 +144,10 @@ public class ManagerValidator {
 					.getBindingConfigElement(generationName);
 			if (element != null) {
 				children = element.getChildren();
-				for (int index = 0; index < children.length; index++)
+				for (int index = 0; index < children.length; index++) {
 					businessUri.add(children[index]
 							.getAttribute(CodeManagerExtensions.ATT_URI));
+				}
 			}
 
 		} catch (CoreException e) {
@@ -159,8 +163,9 @@ public class ManagerValidator {
 		List<String> businessUriList = getChildrenBusinessUriExtensionList(configuration);
 		for (String businessUri : businessUriList) {
 			ok = businessUri.equals(modelUri);
-			if (ok)
+			if (ok) {
 				break;
+			}
 		}
 
 		return ok;

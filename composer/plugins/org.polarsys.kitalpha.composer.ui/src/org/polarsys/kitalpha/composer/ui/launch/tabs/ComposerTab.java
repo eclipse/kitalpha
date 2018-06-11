@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,6 +46,7 @@ public class ComposerTab extends AbstractLaunchConfigurationTab{
 	private final GeneratorWidget generatorWidget = new GeneratorWidget(this);
 	
 	
+	@Override
 	public void createControl(Composite parent) {
 		Composite comp = new Composite(parent, SWT.NONE);
 		GridLayout topLayout = new GridLayout();
@@ -69,6 +70,7 @@ public class ComposerTab extends AbstractLaunchConfigurationTab{
 	}
 
 	
+	@Override
 	public void activated(ILaunchConfigurationWorkingCopy workingCopy) {
 		try {
 			setGlobalNsUri(workingCopy
@@ -80,11 +82,13 @@ public class ComposerTab extends AbstractLaunchConfigurationTab{
 		}
 	}
 
+	@Override
 	public String getName() {
 		// TODO Auto-generated method stub
 		return TAB_NAME;
 	}
 	
+	@Override
 	public Image getImage() {
 		String img = "icons/composer.png";
 		ImageDescriptor descriptor =  Activator.imageDescriptorFromPlugin(Activator.PLUGIN_ID, img);
@@ -92,6 +96,7 @@ public class ComposerTab extends AbstractLaunchConfigurationTab{
 		
 	}
 
+	@Override
 	public void initializeFrom(ILaunchConfiguration configuration) {
 		typeWidget.initializeFrom(configuration);
 		strategyWidget.initializeFrom(configuration);
@@ -100,6 +105,7 @@ public class ComposerTab extends AbstractLaunchConfigurationTab{
 		
 	}
 
+	@Override
 	public void performApply(ILaunchConfigurationWorkingCopy configuration) {
 		typeWidget.performApply(configuration);
 		strategyWidget.performApply(configuration);
@@ -109,6 +115,7 @@ public class ComposerTab extends AbstractLaunchConfigurationTab{
 		
 	}
 
+	@Override
 	public void setDefaults(ILaunchConfigurationWorkingCopy configuration) {
 		// TODO Auto-generated method stub
 		
@@ -116,15 +123,18 @@ public class ComposerTab extends AbstractLaunchConfigurationTab{
 	
 		
 	
+	@Override
 	public Shell getShell(){
 		return super.getShell();
 	}
 
+	@Override
 	public void updateLaunchConfigurationDialog(){
 		super.updateLaunchConfigurationDialog();
 	}
 	
 
+	@Override
 	public boolean isDirty(){
 		return super.isDirty();
 	}

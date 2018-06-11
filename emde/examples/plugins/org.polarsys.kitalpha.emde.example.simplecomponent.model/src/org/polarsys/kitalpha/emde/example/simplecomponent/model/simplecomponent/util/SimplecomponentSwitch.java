@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -93,68 +93,89 @@ public class SimplecomponentSwitch<T> {
 		case SimplecomponentPackage.COMPONENT_MODEL: {
 			ComponentModel componentModel = (ComponentModel) theEObject;
 			T result = caseComponentModel(componentModel);
-			if (result == null)
+			if (result == null) {
 				result = caseComponentElement(componentModel);
-			if (result == null)
+			}
+			if (result == null) {
 				result = caseExtensibleElement(componentModel);
-			if (result == null)
+			}
+			if (result == null) {
 				result = caseElement(componentModel);
-			if (result == null)
+			}
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
 		case SimplecomponentPackage.COMPONENT_ELEMENT: {
 			ComponentElement componentElement = (ComponentElement) theEObject;
 			T result = caseComponentElement(componentElement);
-			if (result == null)
+			if (result == null) {
 				result = caseExtensibleElement(componentElement);
-			if (result == null)
+			}
+			if (result == null) {
 				result = caseElement(componentElement);
-			if (result == null)
+			}
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
 		case SimplecomponentPackage.ABSTRACT_COMPONENT: {
 			AbstractComponent abstractComponent = (AbstractComponent) theEObject;
 			T result = caseAbstractComponent(abstractComponent);
-			if (result == null)
+			if (result == null) {
 				result = caseComponentElement(abstractComponent);
-			if (result == null)
+			}
+			if (result == null) {
 				result = caseExtensibleElement(abstractComponent);
-			if (result == null)
+			}
+			if (result == null) {
 				result = caseElement(abstractComponent);
-			if (result == null)
+			}
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
 		case SimplecomponentPackage.SOFTWARE_COMPONENT: {
 			SoftwareComponent softwareComponent = (SoftwareComponent) theEObject;
 			T result = caseSoftwareComponent(softwareComponent);
-			if (result == null)
+			if (result == null) {
 				result = caseAbstractComponent(softwareComponent);
-			if (result == null)
+			}
+			if (result == null) {
 				result = caseComponentElement(softwareComponent);
-			if (result == null)
+			}
+			if (result == null) {
 				result = caseExtensibleElement(softwareComponent);
-			if (result == null)
+			}
+			if (result == null) {
 				result = caseElement(softwareComponent);
-			if (result == null)
+			}
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
 		case SimplecomponentPackage.HARDWARE_COMPONENT: {
 			HardwareComponent hardwareComponent = (HardwareComponent) theEObject;
 			T result = caseHardwareComponent(hardwareComponent);
-			if (result == null)
+			if (result == null) {
 				result = caseAbstractComponent(hardwareComponent);
-			if (result == null)
+			}
+			if (result == null) {
 				result = caseComponentElement(hardwareComponent);
-			if (result == null)
+			}
+			if (result == null) {
 				result = caseExtensibleElement(hardwareComponent);
-			if (result == null)
+			}
+			if (result == null) {
 				result = caseElement(hardwareComponent);
-			if (result == null)
+			}
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
 		default:

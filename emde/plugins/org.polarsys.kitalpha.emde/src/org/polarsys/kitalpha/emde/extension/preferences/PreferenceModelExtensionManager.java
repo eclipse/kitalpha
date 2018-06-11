@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,6 +31,7 @@ public class PreferenceModelExtensionManager extends DefaultModelExtensionManage
 
 	private static final String MODEL_DISABLED_PREFERENCE = "model.disabled_";
 
+	@Override
 	public void setExtensionModelDisabled(ExtensibleModel extensibleModel, ExtendedModel extendedModel, boolean disabled) {
 		if (isExtensionModelDisabled(extendedModel) != disabled) {
 			IEclipsePreferences prefs = getPreferencesRoot();
@@ -40,6 +41,7 @@ public class PreferenceModelExtensionManager extends DefaultModelExtensionManage
 		}
 	}
 
+	@Override
 	public boolean isExtensionModelDisabled(ExtendedModel extendedModel) {
 		return getPreferencesRoot().getBoolean(computeKey(extendedModel), false);
 	}

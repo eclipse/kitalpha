@@ -95,6 +95,7 @@ private Button fs_b;
 	/* (non-Javadoc)
 	 * @see org.polarsys.kitalpha.composer.ui.launch.tabs.IComposerComponent#createContents(org.eclipse.swt.widgets.Composite)
 	 */
+	@Override
 	public void createContents(Composite parent) {
 		createWidget(parent, "Generator","Select the generator", true);
 		createGenerationPathWidget(parent, "Generation path");
@@ -105,6 +106,7 @@ private Button fs_b;
 	/* (non-Javadoc)
 	 * @see org.polarsys.kitalpha.composer.ui.launch.tabs.IComposerComponent#initialize()
 	 */
+	@Override
 	public void initialize() {
 		IConfigurationElement[] generators = CodeManagerExtensions
 		.getAllGeneratorExtensions();
@@ -115,6 +117,7 @@ private Button fs_b;
 	/* (non-Javadoc)
 	 * @see org.polarsys.kitalpha.composer.ui.launch.tabs.IComposerComponent#updateSelection(org.eclipse.core.runtime.IConfigurationElement)
 	 */
+	@Override
 	public void updateSelection(IConfigurationElement selectedElement) {
 		if (this.selectedGeneratorElement != selectedElement) {
 			this.selectedGeneratorElement = selectedElement;
@@ -201,9 +204,11 @@ private void attachListeners() {
 			this));
 	edit.addSelectionListener(new SelectionAdapter() {
 		 
+		@Override
 		public void widgetSelected(SelectionEvent e){
 
 			ITableEditingListener listener = new ITableEditingListener() {
+				@Override
 				public void parameterValueChanged() {
 					tab.update();
 				}
@@ -232,6 +237,7 @@ private void attachListeners() {
 
 private void attachModifyListener(final Text text_p){
 	text.addModifyListener(new ModifyListener() {
+		@Override
 		public void modifyText(ModifyEvent e) {
 			tab.update();
 		}
@@ -240,6 +246,7 @@ private void attachModifyListener(final Text text_p){
 
 private void attachBrowseWorkspaceListener(Button button_p, final Text text_p) {
 	button_p.addSelectionListener(new SelectionAdapter() {
+		@Override
 		public void widgetSelected(SelectionEvent e) {
 			handleBrowseWorkspace(text_p);
 			 tab.updateLaunchConfigurationDialog();
@@ -249,6 +256,7 @@ private void attachBrowseWorkspaceListener(Button button_p, final Text text_p) {
 
 private void attachBrowseFileSystem(Button button_p,final Text text_p) {
 	button_p.addSelectionListener(new SelectionAdapter() {
+		@Override
 		public void widgetSelected(SelectionEvent e) {
 			handleBrowseFileSystem(text_p);
 			 tab.updateLaunchConfigurationDialog();
@@ -282,6 +290,7 @@ public void setNsUri(String nsUri_p){
 }
 /**Allows to get the elements*/
 
+@Override
 public final Viewer getViewer() {
 	return viewer;
 }
@@ -380,6 +389,7 @@ private ToolBar createHelpImageButton(Composite parent, Image image) {
 	final Cursor cursor = new Cursor(parent.getDisplay(), SWT.CURSOR_HAND);
 	toolBar.setCursor(cursor);
 	toolBar.addDisposeListener(new DisposeListener() {
+		@Override
 		public void widgetDisposed(DisposeEvent e) {
 			cursor.dispose();
 		}
@@ -388,7 +398,8 @@ private ToolBar createHelpImageButton(Composite parent, Image image) {
 	item.setImage(image);
 	item.setToolTipText(JFaceResources.getString("helpToolTip")); //$NON-NLS-1$
 	item.addSelectionListener(new SelectionAdapter() {
-        public void widgetSelected(SelectionEvent e) {
+        @Override
+		public void widgetSelected(SelectionEvent e) {
 			helpPressed();
         }
     });

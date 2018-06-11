@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -70,7 +70,8 @@ public class FilteredElementTreeSelectionDialog extends ElementTreeSelectionDial
 	  /**
 	   * @see org.eclipse.swt.events.ModifyListener#modifyText(org.eclipse.swt.events.ModifyEvent)
 	   */
-	  public void modifyText(ModifyEvent e) {
+	  @Override
+	public void modifyText(ModifyEvent e) {
 	    viewerFilter.setPattern(filterTextField.getText());
 	    getTreeViewer().refresh();
 	  }

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,7 +15,6 @@ import java.util.List;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.polarsys.kitalpha.emde.example.simplecomponent.model.simplecomponent.ComponentElement;
-import org.polarsys.kitalpha.emde.example.simplecomponent.performance.model.performance.*;
 import org.polarsys.kitalpha.emde.example.simplecomponent.performance.model.performance.PerformancePackage;
 import org.polarsys.kitalpha.emde.example.simplecomponent.performance.model.performance.SimpleVPPerformance;
 import org.polarsys.kitalpha.emde.example.simplecomponent.performance.model.performance.VPStatus;
@@ -96,29 +95,38 @@ public class PerformanceSwitch<T> {
 		case PerformancePackage.SIMPLE_VP_PERFORMANCE: {
 			SimpleVPPerformance simpleVPPerformance = (SimpleVPPerformance) theEObject;
 			T result = caseSimpleVPPerformance(simpleVPPerformance);
-			if (result == null)
+			if (result == null) {
 				result = caseComponentElement(simpleVPPerformance);
-			if (result == null)
+			}
+			if (result == null) {
 				result = caseElementExtension(simpleVPPerformance);
-			if (result == null)
+			}
+			if (result == null) {
 				result = caseExtensibleElement(simpleVPPerformance);
-			if (result == null)
+			}
+			if (result == null) {
 				result = caseElement(simpleVPPerformance);
-			if (result == null)
+			}
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
 		case PerformancePackage.VP_STATUS: {
 			VPStatus vpStatus = (VPStatus) theEObject;
 			T result = caseVPStatus(vpStatus);
-			if (result == null)
+			if (result == null) {
 				result = caseComponentElement(vpStatus);
-			if (result == null)
+			}
+			if (result == null) {
 				result = caseExtensibleElement(vpStatus);
-			if (result == null)
+			}
+			if (result == null) {
 				result = caseElement(vpStatus);
-			if (result == null)
+			}
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
 		default:

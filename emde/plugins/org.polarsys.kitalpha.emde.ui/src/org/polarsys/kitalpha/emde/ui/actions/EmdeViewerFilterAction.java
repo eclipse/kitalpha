@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -71,12 +71,14 @@ public class EmdeViewerFilterAction extends ViewerFilterAction {
 		}
 		if (object instanceof IWrapperItemProvider) {
 			IWrapperItemProvider provider = (IWrapperItemProvider) object;
-			if (provider.getValue() instanceof EStructuralFeatureImpl.ContainmentUpdatingFeatureMapEntry)
+			if (provider.getValue() instanceof EStructuralFeatureImpl.ContainmentUpdatingFeatureMapEntry) {
 				eObject = (EObject) ((EStructuralFeatureImpl.ContainmentUpdatingFeatureMapEntry) provider.getValue()).getValue();
+			}
 
 		}
-		if (eObject == null)
+		if (eObject == null) {
 			return false;
+		}
 		return eObject.eResource().equals(getResource()) && getExtendedModel().getEPackage().getNsURI().equals(eObject.eClass().getEPackage().getNsURI());
 	}
 
@@ -85,6 +87,7 @@ public class EmdeViewerFilterAction extends ViewerFilterAction {
 		return !isFromExtension(element) || isChecked();
 	}
 
+	@Override
 	public void runWithEvent(Event event) {
 		ModelExtensionHelper.getInstance(resource).setExtensionModelDisabled(getExtensibleModel(), getExtendedModel(), !isChecked());
 		refreshViewers();

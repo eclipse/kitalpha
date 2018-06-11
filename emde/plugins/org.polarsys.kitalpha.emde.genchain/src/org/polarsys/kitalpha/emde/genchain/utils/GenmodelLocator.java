@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,13 +17,10 @@ import java.util.regex.Pattern;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
-import org.eclipse.core.runtime.Path;
-import org.eclipse.egf.common.helper.ObjectHolder;
 import org.eclipse.egf.core.domain.TargetPlatformResourceSet;
 import org.eclipse.emf.codegen.ecore.genmodel.GenModel;
 import org.eclipse.emf.codegen.ecore.genmodel.GenPackage;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -50,18 +47,21 @@ public class GenmodelLocator {
 				GenModel genmodel = (GenModel)resourceSet.getEObject(uri, true);
 				for (GenPackage p : genmodel.getGenPackages())
 				{
-					if (!p.getEcorePackage().equals(ePackage))
+					if (!p.getEcorePackage().equals(ePackage)) {
 						continue;
-					if (genmodel.getRootExtendsInterface().contains("org.eclipse.emf.cdo"))
+					}
+					if (genmodel.getRootExtendsInterface().contains("org.eclipse.emf.cdo")) {
 						continue;
+					}
 					return candidat;
 				}
 			}
 			
 			return null;
 		} finally {
-			for (Resource r : resourceSet.getResources())
+			for (Resource r : resourceSet.getResources()) {
 				r.unload();
+			}
 		}
 	}
 	

@@ -88,6 +88,7 @@ public class ChildCreationExtenderManager extends org.eclipse.emf.edit.provider.
 	 * @return the list of new child descriptors accumulated from each of the
 	 *         child creation extenders.
 	 */
+	@Override
 	public List<?> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
 		List<Object> result = new ArrayList<Object>();
 		for (IChildCreationExtender inheritedChildCreationExtender : getInheritedChildCreationExtenders()) {

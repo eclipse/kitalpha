@@ -61,6 +61,7 @@ public class JavaConstraint<T extends EObject> extends ModelConstraint {
 	 * 
 	 * @see org.eclipse.emf.validation.AbstractModelConstraint#validate(org.eclipse.emf.validation.IValidationContext)
 	 */
+	@Override
 	public IStatus validate(IValidationContext ctx) {
 		EObject target = ctx.getTarget();
 

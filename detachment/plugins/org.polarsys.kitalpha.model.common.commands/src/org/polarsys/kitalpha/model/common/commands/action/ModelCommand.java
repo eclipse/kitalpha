@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -35,10 +35,12 @@ public abstract class ModelCommand implements IModelCommand {
 		return this.modelAnalysisID;
 	}
 	
+	@Override
 	public void SetWorkflow(WorkflowType workflow){
 		this.workflow = workflow;
 	}
 	
+	@Override
 	public WorkflowType getWokflowType(){
 		return this.workflow;
 	}

@@ -36,17 +36,20 @@ public class TableEditingSupport extends EditingSupport {
     editor = new TextCellEditor((Composite) viewer.getControl());
   }
 
-  protected boolean canEdit(Object element) {
+  @Override
+protected boolean canEdit(Object element) {
 
     return true;
   }
 
-  protected CellEditor getCellEditor(Object element) {
+  @Override
+protected CellEditor getCellEditor(Object element) {
 
     return editor;
   }
 
-  protected Object getValue(Object element) {
+  @Override
+protected Object getValue(Object element) {
     if (element instanceof GenericParameter) {
       GenericParameter p = (GenericParameter) element;
 

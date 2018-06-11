@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -74,23 +74,30 @@ public class TransformationKey {
    */
   @Override
   public boolean equals(Object obj) {
-    if (this == obj)
-      return true;
-    if (obj == null)
-      return false;
-    if (getClass() != obj.getClass())
-      return false;
+    if (this == obj) {
+		return true;
+	}
+    if (obj == null) {
+		return false;
+	}
+    if (getClass() != obj.getClass()) {
+		return false;
+	}
     final TransformationKey other = (TransformationKey) obj;
     if (_role == null) {
-      if (other._role != null)
-        return false;
-    } else if (!_role.equals(other._role))
-      return false;
+      if (other._role != null) {
+		return false;
+	}
+    } else if (!_role.equals(other._role)) {
+		return false;
+	}
     if (_sourceObject == null) {
-      if (other._sourceObject != null)
-        return false;
-    } else if (!_sourceObject.equals(other._sourceObject))
-      return false;
+      if (other._sourceObject != null) {
+		return false;
+	}
+    } else if (!_sourceObject.equals(other._sourceObject)) {
+		return false;
+	}
     return true;
   }
 

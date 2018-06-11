@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,8 +39,9 @@ public class DocgenCommonSubClassEmfModelVisitor extends SubClassEmfModelVisitor
 		for (Pattern p : patterns) 
 		{
 			EList<PatternParameter> parameters = p.getAllParameters();
-			if (parameters.size() != 1)
+			if (parameters.size() != 1) {
 				throw new PatternException(NLS.bind(EGFPatternMessages.strategy_error4, p.getName()));
+			}
 			
 			registerPattern(p, parameters.get(0));
 		}
@@ -72,15 +73,17 @@ public class DocgenCommonSubClassEmfModelVisitor extends SubClassEmfModelVisitor
 			{
 				String fullName = EcoreUtil.getURI(superType).toString();
 				List<Pattern> patterns = type2patterns.get(fullName);
-				if (patterns != null)
+				if (patterns != null) {
 					list.addAll(patterns);
+				}
 			}
 
 			List<Pattern> result = new ArrayList<Pattern>();
 			for (Pattern pattern : originePatterns) 
 			{
-				if (list.contains(pattern)) 
+				if (list.contains(pattern)) {
 					result.add(pattern);
+				}
 			}
 			return result;
 		}
@@ -97,8 +100,9 @@ public class DocgenCommonSubClassEmfModelVisitor extends SubClassEmfModelVisitor
 				if (iConceptsHelper.accept(model))
 				{
 					String conceptLabel = iConceptsHelper.getConceptLabel(model);
-					if (!IndexerService.INSTANCE.checkConceptExistence(conceptLabel)) 
+					if (!IndexerService.INSTANCE.checkConceptExistence(conceptLabel)) {
 						IndexerService.INSTANCE.getElements().add(conceptLabel);
+					}
 
 					break;
 				}

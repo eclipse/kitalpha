@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -68,8 +68,9 @@ public class TraceHelper {
     ArrayList<Trace> outgoingTraces = new ArrayList<Trace>();
 
     for (Trace trace : traces) {
-      if (trace.getSource() != null && trace.getSource().equals(source))
-        outgoingTraces.add(trace);
+      if (trace.getSource() != null && trace.getSource().equals(source)) {
+		outgoingTraces.add(trace);
+	}
     }
     return outgoingTraces;
   }
@@ -84,9 +85,11 @@ public class TraceHelper {
     ArrayList<Trace> matchingTraces = new ArrayList<Trace>();
 
     for (Trace trace : traces) {
-      if (trace.getSource() != null && trace.getSource().equals(source_p))
-        if (trace.getRole() != null && trace.getRole().equals(string_p))
-          matchingTraces.add(trace);
+      if (trace.getSource() != null && trace.getSource().equals(source_p)) {
+		if (trace.getRole() != null && trace.getRole().equals(string_p)) {
+			matchingTraces.add(trace);
+		}
+	}
     }
     return matchingTraces;
   }
@@ -95,8 +98,9 @@ public class TraceHelper {
     ArrayList<Trace> incomingTraces = new ArrayList<Trace>();
 
     for (Trace trace : traces) {
-      if (trace.getTarget() != null && trace.getTarget().equals(target))
-        incomingTraces.add(trace);
+      if (trace.getTarget() != null && trace.getTarget().equals(target)) {
+		incomingTraces.add(trace);
+	}
     }
     return incomingTraces;
   }
@@ -109,9 +113,11 @@ public class TraceHelper {
    */
   public Trace getOutgoingTraceWithRole(Object source_p, String string_p) {
     for (Trace trace : traces) {
-      if (trace.getSource() != null && trace.getSource().equals(source_p))
-        if (trace.getRole() != null && trace.getRole().equals(string_p))
-          return trace;
+      if (trace.getSource() != null && trace.getSource().equals(source_p)) {
+		if (trace.getRole() != null && trace.getRole().equals(string_p)) {
+			return trace;
+		}
+	}
     }
     return null;
   }
@@ -120,9 +126,11 @@ public class TraceHelper {
     ArrayList<Trace> matchingTraces = new ArrayList<Trace>();
 
     for (Trace trace : traces) {
-      if (trace.getTarget() != null && trace.getTarget().equals(target_p))
-        if (trace.getRole() != null && trace.getRole().equals(string_p))
-          matchingTraces.add(trace);
+      if (trace.getTarget() != null && trace.getTarget().equals(target_p)) {
+		if (trace.getRole() != null && trace.getRole().equals(string_p)) {
+			matchingTraces.add(trace);
+		}
+	}
     }
     return matchingTraces;
   }
@@ -130,9 +138,11 @@ public class TraceHelper {
   public Trace getIncomingTraceWithRole(Object target_p, String string_p) {
 
     for (Trace trace : traces) {
-      if (trace.getTarget() != null && trace.getTarget().equals(target_p))
-        if (trace.getRole() != null && trace.getRole().equals(string_p))
-          return trace;
+      if (trace.getTarget() != null && trace.getTarget().equals(target_p)) {
+		if (trace.getRole() != null && trace.getRole().equals(string_p)) {
+			return trace;
+		}
+	}
     }
     return null;
   }
@@ -169,8 +179,9 @@ public class TraceHelper {
   public void removeOutGoingTraces(Object object_p, String role) {
     List<Trace> outgoing = getOutgoingTraces(object_p);
     for (Trace trace : outgoing) {
-      if (trace.getRole().equals(role))
-        removeTrace(trace);
+      if (trace.getRole().equals(role)) {
+		removeTrace(trace);
+	}
     }
   }
 

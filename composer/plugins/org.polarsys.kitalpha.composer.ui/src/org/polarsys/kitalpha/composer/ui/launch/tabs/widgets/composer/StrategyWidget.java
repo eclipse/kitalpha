@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -60,12 +60,14 @@ public class StrategyWidget extends AbstractComposerWidget {
 	}
 	
 	
+	@Override
 	public void createContents(Composite parent) {
 		createWidget(parent, "Strategy", "Select the strategy",true);
 		attachListeners();
 		initialize();
 	}
 
+	@Override
 	public void initialize() {
 		IConfigurationElement[] strategyType = CodeManagerExtensions
 		.getAllStrategiesExtensions();
@@ -73,6 +75,7 @@ public class StrategyWidget extends AbstractComposerWidget {
 
 	}
 
+	@Override
 	public void updateSelection(IConfigurationElement selectedElement) {
 		if (this.selectedStrategyElement != selectedElement) {
 			this.selectedStrategyElement = selectedElement;
@@ -82,6 +85,7 @@ public class StrategyWidget extends AbstractComposerWidget {
 	}
 
 		
+	@Override
 	protected void setDescription(String str_p) {
 		super.setDescription(str_p);
 		tab.updateLaunchConfigurationDialog();
@@ -120,9 +124,11 @@ private void attachListeners() {
 	
 	edit.addSelectionListener(new SelectionAdapter() {
 		 
+		@Override
 		public void widgetSelected(SelectionEvent e){
 
 			ITableEditingListener listener = new ITableEditingListener() {
+				@Override
 				public void parameterValueChanged() {
 					tab.update();
 				}
@@ -148,6 +154,7 @@ private void attachListeners() {
 	});
 }
 
+@Override
 public final Viewer getViewer() {
 	return viewer;
 }

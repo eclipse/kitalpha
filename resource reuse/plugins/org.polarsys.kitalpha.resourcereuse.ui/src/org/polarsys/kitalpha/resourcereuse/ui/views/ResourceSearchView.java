@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014-2018 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -119,8 +119,9 @@ public class ResourceSearchView extends ViewPart {
 				Integer column = (Integer) viewer2.getTable().getSortColumn().getData();
 				String name1 = lprov.getColumnText(e1, column == null ? 0 : column.intValue());
 				String name2 = lprov.getColumnText(e2, column == null ? 0 : column.intValue());
-				if (viewer2.getTable().getSortDirection() == SWT.UP)
+				if (viewer2.getTable().getSortDirection() == SWT.UP) {
 					return getComparator().compare(name1, name2);
+				}
 				return getComparator().compare(name2, name1);
 			}
 

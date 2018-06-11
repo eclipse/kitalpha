@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -16,7 +16,6 @@ import org.polarsys.kitalpha.accuracy.componentsample.validation.constraints.pro
 import org.polarsys.kitalpha.accuracy.componentsample.validation.constraints.providers.OCLConstraintsProvider;
 import org.polarsys.kitalpha.validation.ocl.provider.generic.EValidatorAdapter;
 import org.polarsys.kitalpha.validation.provider.generic.GenericConstraintProviderService;
-import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSamplePackage;
 
 /**
  * 

@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *  
+ * Contributors:
+ *   Thales Global Services S.A.S - initial API and implementation
+ *******************************************************************************/
 package org.polarsys.kitalpha.common.ui.preference;
 
 import org.eclipse.jface.dialogs.MessageDialog;
@@ -56,8 +66,9 @@ public abstract class AbstractPreferencePage extends PreferencePage {
 
 	@Override
 	protected void performDefaults() {
-		if (!isDirty)
+		if (!isDirty) {
 			return;
+		}
 		loadData();
 		setDirty(false);
 	}
@@ -70,8 +81,9 @@ public abstract class AbstractPreferencePage extends PreferencePage {
 
 	protected void setDirty(boolean dirty) {
 
-		if (isDirty == dirty)
+		if (isDirty == dirty) {
 			return;
+		}
 		isDirty = dirty;
 		updateButtons();
 	}
@@ -93,6 +105,7 @@ public abstract class AbstractPreferencePage extends PreferencePage {
 		return bar;
 	}
 
+	@Override
 	public void createControl(Composite parent) {
 		super.createControl(parent);
 		updateButtons();

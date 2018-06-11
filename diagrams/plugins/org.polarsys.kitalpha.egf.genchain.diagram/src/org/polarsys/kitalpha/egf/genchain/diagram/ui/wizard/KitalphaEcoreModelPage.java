@@ -27,6 +27,7 @@ public class KitalphaEcoreModelPage extends EcoreModelPage {
 		currentProject = chain.eResource().getURI().segment(1);
 	}
 
+	@Override
 	protected Node addEcore(String modelPath) {
 		return addEcore(modelPath, currentProject);
 	}

@@ -57,13 +57,14 @@ public class GeneralServices {
 				resourceItem
 						.setData(constructFullCriteriaFromResource(resource));
 
-				if (resource.getVersion() != null && resource.getName() != null)
+				if (resource.getVersion() != null && resource.getName() != null) {
 					resourceItem.setText(resource.getName() + " v"
 							+ resource.getVersion());
-				else if (resource.getName() != null)
+				} else if (resource.getName() != null) {
 					resourceItem.setText(resource.getName());
-				else
+				} else {
 					resourceItem.setText(resource.getId());
+				}
 				resourceItem.setImage(getParentImage());
 			}
 		}
@@ -110,14 +111,18 @@ public class GeneralServices {
 			Resource resource) {
 		SearchCriteria criteria = new SearchCriteria();
 		criteria.setId(resource.getId());
-		if (resource.getName() != null)
+		if (resource.getName() != null) {
 			criteria.setName(resource.getName());
-		if (resource.getDomain() != null)
+		}
+		if (resource.getDomain() != null) {
 			criteria.setDomain(resource.getDomain());
-		if (resource.getVersion() != null)
+		}
+		if (resource.getVersion() != null) {
 			criteria.setVersion(resource.getVersion());
-		if (!resource.getTags().isEmpty())
+		}
+		if (!resource.getTags().isEmpty()) {
 			criteria.getTags().addAll(resource.getTags());
+		}
 
 		return criteria;
 	}
@@ -138,8 +143,9 @@ public class GeneralServices {
 	public static java.util.List<StringValue> toStringValueList(
 			java.util.List<String> tags) {
 		java.util.List<StringValue> result = new ArrayList<>();
-		for (String value : tags)
+		for (String value : tags) {
 			result.add(new StringValue(value));
+		}
 		return result;
 	}
 

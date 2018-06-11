@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2013 THALES GLOBAL SERVICES.
+ * Copyright (c) 2013, 2018 THALES GLOBAL SERVICES.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,6 +33,7 @@ public class KitalphaSplashHandler extends BasicSplashHandler {
 	/**
 	 * Copied from EclipseSplashHandler
 	 */
+	@Override
 	public void init(Shell splash) {
 		super.init(splash);
 		String progressRectString = null;
@@ -78,12 +79,14 @@ public class KitalphaSplashHandler extends BasicSplashHandler {
 		final Point buildIdPoint = new Point(240, 205);
 		getContent().addPaintListener(new PaintListener() {
 
+			@Override
 			public void paintControl(PaintEvent e) {
 				e.gc.setForeground(getForeground());
 
 				FontData[] fontData = e.gc.getFont().getFontData();
-				for (int i = 0; i < fontData.length; ++i)
+				for (int i = 0; i < fontData.length; ++i) {
 					fontData[i].setHeight(12);
+				}
 				final Font newFont = new Font(e.display, fontData);
 				e.gc.setFont(newFont);
 

@@ -87,9 +87,11 @@ public class InvokeActivityHelper {
 		final IProgressService ps = wb.getProgressService();
 
 		Display.getDefault().syncExec(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					ps.busyCursorWhile(new IRunnableWithProgress() {
+						@Override
 						public void run(IProgressMonitor monitor) {
 							try {
 								MonitorServices.initMonitor(monitor);
@@ -145,6 +147,7 @@ public class InvokeActivityHelper {
 
 		Job job = new Job(
 				Messages.InvokeActivityHelper_HTML_Documentation_Generation) {
+			@Override
 			protected IStatus run(IProgressMonitor monitor) {
 				try {
 					MonitorServices.initMonitor(monitor);

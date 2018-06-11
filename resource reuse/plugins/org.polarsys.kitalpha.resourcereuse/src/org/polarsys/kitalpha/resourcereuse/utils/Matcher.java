@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -58,70 +58,88 @@ public class Matcher {
 	}
 
 	private Pattern createPattern(String regex) {
-		if (regex == null || "".equals(regex))
+		if (regex == null || "".equals(regex)) {
 			return null;
+		}
 		return Pattern.compile(regex);
 	}
 
 	public boolean matchUserConcerns(Set<String> concerns) {
-		if (concerns == null)
+		if (concerns == null) {
 			return this.userInConcerns.isEmpty();
+		}
 		for (String concern : this.userInConcerns) {
-			if (!concerns.contains(concern))
+			if (!concerns.contains(concern)) {
 				return false;
+			}
 		}
 		return true;
 	}
 
 	public boolean matchUsedConcerns(Set<String> concerns) {
-		if (concerns == null)
+		if (concerns == null) {
 			return this.usedInConcerns.isEmpty();
+		}
 		for (String concern : this.usedInConcerns) {
-			if (!concerns.contains(concern))
+			if (!concerns.contains(concern)) {
 				return false;
+			}
 		}
 		return true;
 	}
 
 	public boolean internalMatchUsedConcerns(List<String> criteria, Set<String> concerns) {
-		if (concerns == null)
+		if (concerns == null) {
 			return criteria.isEmpty();
+		}
 		for (String concern : criteria) {
-			if (!concerns.contains(concern))
+			if (!concerns.contains(concern)) {
 				return false;
+			}
 		}
 		return true;
 	}
 
 	public boolean matchConcerns(Set<String> usedConcerns, Set<String> userConcerns) {
-		if (!internalMatchUsedConcerns(this.userInConcerns, userConcerns))
+		if (!internalMatchUsedConcerns(this.userInConcerns, userConcerns)) {
 			return false;
-		if (!internalMatchUsedConcerns(this.usedInConcerns, usedConcerns))
+		}
+		if (!internalMatchUsedConcerns(this.usedInConcerns, usedConcerns)) {
 			return false;
-		if (concerns.isEmpty())
+		}
+		if (concerns.isEmpty()) {
 			return true;
+		}
 		Set<String> all = new HashSet<String>();
-		if (userConcerns != null)
+		if (userConcerns != null) {
 			all.addAll(userConcerns);
-		if (usedConcerns != null)
+		}
+		if (usedConcerns != null) {
 			all.addAll(usedConcerns);
+		}
 		return internalMatchUsedConcerns(this.concerns, all);
 	}
 
 	public boolean matchResource(Resource res) {
-		if (isAlreadyMatched(res))
+		if (isAlreadyMatched(res)) {
 			return false;
-		if (idPattern != null && !idPattern.matcher(res.getId()).matches())
+		}
+		if (idPattern != null && !idPattern.matcher(res.getId()).matches()) {
 			return false;
-		if (namePattern != null && (res.getName() == null || !namePattern.matcher(res.getName()).matches()))
+		}
+		if (namePattern != null && (res.getName() == null || !namePattern.matcher(res.getName()).matches())) {
 			return false;
-		if (domainPattern != null && (res.getDomain() == null || !domainPattern.matcher(res.getDomain()).matches()))
+		}
+		if (domainPattern != null && (res.getDomain() == null || !domainPattern.matcher(res.getDomain()).matches())) {
 			return false;
-		if (version != null && !"".equals(version) && (res.getVersion() == null || !res.getVersion().equals(version)))
+		}
+		if (version != null && !"".equals(version) && (res.getVersion() == null || !res.getVersion().equals(version))) {
 			return false;
+		}
 		for (String tag : tags) {
-			if (!res.getTags().contains(tag))
+			if (!res.getTags().contains(tag)) {
 				return false;
+			}
 		}
 		matchedIds.add(res.getId());
 		return true;

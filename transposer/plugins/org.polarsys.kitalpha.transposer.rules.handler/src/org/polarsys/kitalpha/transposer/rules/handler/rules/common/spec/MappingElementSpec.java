@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,8 +43,9 @@ public class MappingElementSpec extends MappingElementImpl {
   public EList<MappingPossibility> getAllPossibilities() {
     EList<MappingPossibility> allPossibilities = new BasicEList<MappingPossibility>();
     allPossibilities.addAll(getOwnedPossibilities());
-    if (isReuseSuperPossibilities() && getExtendedMappingElement() != null)
-      allPossibilities.addAll(getExtendedMappingElement().getAllPossibilities());
+    if (isReuseSuperPossibilities() && getExtendedMappingElement() != null) {
+		allPossibilities.addAll(getExtendedMappingElement().getAllPossibilities());
+	}
     return allPossibilities;
   }
 
@@ -54,13 +55,15 @@ public class MappingElementSpec extends MappingElementImpl {
   @Override
   public MappingPossibility getApplicablePossibility(Object object_p) {
     for (MappingPossibility mappingPossibility : getOwnedPossibilities()) {
-      if (mappingPossibility.isApplicableOn(object_p))
-        return mappingPossibility;
+      if (mappingPossibility.isApplicableOn(object_p)) {
+		return mappingPossibility;
+	}
     }
 
     if (getDefaultPossibility() != null) {
-      if (getDefaultPossibility().isApplicableOn(object_p))
-      return getDefaultPossibility();
+      if (getDefaultPossibility().isApplicableOn(object_p)) {
+		return getDefaultPossibility();
+	}
     }
 
     return null;

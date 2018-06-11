@@ -177,49 +177,59 @@ public class ExtensibilityService {
 
 	private void addNewEntry(EAnnotation eAnnotation, String key) {
 		EStringToStringMapEntryImpl entry = createNewEntry(key);
-		if (key.equals(USE_ID_ATTRIBUTES)) 
+		if (key.equals(USE_ID_ATTRIBUTES)) {
 			entry.setValue(FALSE);
-		else 
+		} else {
 			entry.setValue(TRUE);
+		}
 
 		eAnnotation.getDetails().add(entry);
 	}
 
 	private boolean isQualified(String key) {
-		if (key.equals(USE_UUIDS)) 
+		if (key.equals(USE_UUIDS)) {
 			return true;
+		}
 		
-		if (key.equals(USE_ID_ATTRIBUTES)) 
+		if (key.equals(USE_ID_ATTRIBUTES)) {
 			return true;
+		}
 		
-		if (key.equals(EXTENSIBLE_PROVIDER_FACTORY)) 
+		if (key.equals(EXTENSIBLE_PROVIDER_FACTORY)) {
 			return true;
+		}
 		
-		if (key.equals(CHILD_CREATION_EXTENDERS)) 
+		if (key.equals(CHILD_CREATION_EXTENDERS)) {
 			return true;
+		}
 		
 		return false;
 	}
 
 	public String getEntryLabel(String key) {
-		if (key.equals(USE_UUIDS)) 
+		if (key.equals(USE_UUIDS)) {
 			return USE_UUIDS_LABEL;
+		}
 		
-		if (key.equals(USE_ID_ATTRIBUTES)) 
+		if (key.equals(USE_ID_ATTRIBUTES)) {
 			return USE_ID_ATTRIBUTES_LABEL;
+		}
 		
-		if (key.equals(EXTENSIBLE_PROVIDER_FACTORY)) 
+		if (key.equals(EXTENSIBLE_PROVIDER_FACTORY)) {
 			return EXTENSIBLE_MODEL_LABEL;
+		}
 		
-		if (key.equals(CHILD_CREATION_EXTENDERS)) 
+		if (key.equals(CHILD_CREATION_EXTENDERS)) {
 			return EXTENDS_MODEL_LABEL;
+		}
 		
 		return "";
 	}
 
 	public Collection<EObject> getExtendedModel(EPackage ePackage) {
-		if (ePackage.getEAnnotation(NEW_SOURCE) == null) 
+		if (ePackage.getEAnnotation(NEW_SOURCE) == null) {
 			init(ePackage);
+		}
 		
 		Collection<EObject> result = new UniqueEList<>();
 		for (EClassifier eClassifier : ePackage.getEClassifiers()) 
@@ -235,8 +245,9 @@ public class ExtensibilityService {
 		{
 			for (Entry<String, String> entry : annotation.getDetails()) 
 			{
-				if (entry instanceof EStringToStringMapEntryImpl) 
+				if (entry instanceof EStringToStringMapEntryImpl) {
 					return getExtendedModel((EStringToStringMapEntryImpl) entry);
+				}
 				
 			}
 		}
@@ -248,8 +259,9 @@ public class ExtensibilityService {
 		{
 			Collection<EObject> result = new UniqueEList<>();
 			StringTokenizer stringTokenizer = new StringTokenizer(entry.getValue());
-			if (editingDomain == null)
+			if (editingDomain == null) {
 				editingDomain = EditingDomainFactoryService.INSTANCE.getEditingDomainFactory().createEditingDomain();
+			}
 			ResourceSet resourceSet = editingDomain.getResourceSet();
 
 			while (stringTokenizer.hasMoreTokens()) 
@@ -341,8 +353,9 @@ public class ExtensibilityService {
 					{
 						for (EObject eObject : ePackage.eContents()) 
 						{
-							if (eObject instanceof EClass) 
+							if (eObject instanceof EClass) {
 								selectionList.add(eObject);
+							}
 						}
 					}
 				} catch (Exception e) {
@@ -371,8 +384,9 @@ public class ExtensibilityService {
 					if (eClassifier instanceof EClass) 
 					{
 						EClass eClass = (EClass) eClassifier;
-						if (isExtensibleModelElement(eClass))
+						if (isExtensibleModelElement(eClass)) {
 							input.add(eClass);
+						}
 					}
 				}
 
@@ -383,8 +397,9 @@ public class ExtensibilityService {
 					dialog.setMultipleSelection(true);
 					dialog.setTitle(SELECTION_DIALOG);
 					dialog.setMessage(SELECT + EXTENSION_MODEL);
-					if (dialog.open() == Window.OK) 
+					if (dialog.open() == Window.OK) {
 						return dialog.getResult();
+					}
 				}
 			}
 		}
@@ -411,8 +426,9 @@ public class ExtensibilityService {
 			dialog.setMultipleSelection(true);
 			dialog.setTitle(SELECTION_DIALOG);
 			dialog.setMessage(SELECT + MODEL_TO_BE_EXTENDED);
-			if (dialog.open() == Window.OK) 
+			if (dialog.open() == Window.OK) {
 				return dialog.getResult();
+			}
 		}
 		return Collections.emptyList().toArray();
 	}
@@ -424,8 +440,9 @@ public class ExtensibilityService {
 			if (eClassifier instanceof EClass) 
 			{
 				EClass eClass = (EClass) eClassifier;
-				if (isExtensibleModelElement(eClass)) 
+				if (isExtensibleModelElement(eClass)) {
 					result.add(eClass);
+				}
 			}
 		}
 		ElementListSelectionDialog dialog = new ElementListSelectionDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), new AdapterFactoryLabelProvider(new EcoreItemProviderAdapterFactory()));
@@ -441,9 +458,9 @@ public class ExtensibilityService {
 	public Collection<EObject> getSelectionCandidate(EObject eObject, DSemanticDiagram diagram) {
 		final List<EClass> eClasses = new ArrayList<>();
 		EPackage ePackage = null;
-		if (eObject instanceof EPackage)
+		if (eObject instanceof EPackage) {
 			ePackage = (EPackage) eObject;
-		else
+		} else
 		{
 			ePackage = (EPackage) diagram.getTarget();
 		}
@@ -504,8 +521,9 @@ public class ExtensibilityService {
 		URI objectURI = EcoreUtil.getURI(superType);
 
 		String newURI = objectURI.toString().replace(uri.toString(), emdeURI.toString());
-		if (editingDomain == null)
+		if (editingDomain == null) {
 			editingDomain = EditingDomainFactoryService.INSTANCE.getEditingDomainFactory().createEditingDomain();
+		}
 		ResourceSet resourceSet = editingDomain.getResourceSet();
 
 		EObject object = resourceSet.getEObject(URI.createURI(newURI), true);
@@ -620,10 +638,11 @@ public class ExtensibilityService {
 		EObject container = view.eContainer();
 		if (container != null) 
 		{
-			if (container instanceof DView) 
+			if (container instanceof DView) {
 				return (DView) container;
-			else 
+			} else {
 				return getContainer(container);
+			}
 		}
 		return null;
 	}
@@ -631,8 +650,9 @@ public class ExtensibilityService {
 	public static EStringToStringMapEntryImpl getEntry(EAnnotation annotation, String key) {
 		for (Entry<String, String> entry : annotation.getDetails()) 
 		{
-			if (key.equals(entry.getKey())) 
+			if (key.equals(entry.getKey())) {
 				return (EStringToStringMapEntryImpl) entry;
+			}
 		}
 		
 		EStringToStringMapEntryImpl newEntry = ExtensibilityService.createNewEntry(key);
@@ -641,8 +661,9 @@ public class ExtensibilityService {
 	}
 
 	public String getValue(EObject receiver) {
-		if (receiver instanceof EStringToStringMapEntryImpl) 
+		if (receiver instanceof EStringToStringMapEntryImpl) {
 			return ((EStringToStringMapEntryImpl) receiver).getValue();
+		}
 
 		if (receiver instanceof EClass) 
 		{

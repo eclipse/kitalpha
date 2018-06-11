@@ -105,6 +105,7 @@ public class GenerateDiagramsService{
 		this.path = path;
 		Display.getDefault().syncExec(new Runnable() 
 		{
+			@Override
 			public void run() {
 				shell = new Shell(Display.getDefault());
 			}
@@ -114,6 +115,7 @@ public class GenerateDiagramsService{
 	public void dispose() {
 		Display.getDefault().syncExec(new Runnable() 
 		{
+			@Override
 			public void run() {
 				if (diagramEP != null){
 					diagramEP.getViewer().getControl().dispose();
@@ -127,8 +129,9 @@ public class GenerateDiagramsService{
 	}
 	
 	public URI generateAIRD(IProgressMonitor monitor) {
-		if (null != monitor && _monitor != monitor)
+		if (null != monitor && _monitor != monitor) {
 			_monitor = monitor;
+		}
 		
 		try {
 			// Prepare semantic resources
@@ -149,7 +152,8 @@ public class GenerateDiagramsService{
 			final DocgenEcoreSessionSavePolicy savingPolicy = new DocgenEcoreSessionSavePolicy(localSession);
 			localSession.setSavingPolicy(savingPolicy);
 			localSession.setReloadingPolicy(new ReloadingPolicy() {
-                public List<Action> getActions(Session session, Resource resource, ResourceStatus newStatus) {
+                @Override
+				public List<Action> getActions(Session session, Resource resource, ResourceStatus newStatus) {
                     return Collections.emptyList();
                 }
             });
@@ -226,6 +230,7 @@ public class GenerateDiagramsService{
 		_monitor.beginTask("Applying layout on representations ", 1);
 		Display.getDefault().syncExec(new Runnable() 
 		{
+			@Override
 			public void run() {
 				for (DRepresentation dRepresentation : createdRepresentations) 
 				{
@@ -266,8 +271,9 @@ public class GenerateDiagramsService{
 		for (DSemanticDiagram representation : getRepresentation(airdResource)) 
 		{
 			EObject target = ((DSemanticDiagram) representation).getTarget();
-			if (newObject.contains(EcoreUtil.getURI(target))) 
+			if (newObject.contains(EcoreUtil.getURI(target))) {
 				result.add((DSemanticDiagram) representation);
+			}
 		}
 		return result;
 
@@ -302,8 +308,9 @@ public class GenerateDiagramsService{
 				for (DRepresentationDescriptor representationDesc : view.getOwnedRepresentationDescriptors()) 
 				{
 					DRepresentation representation = representationDesc.getRepresentation();
-					if (representation instanceof DSemanticDecorator) 
+					if (representation instanceof DSemanticDecorator) {
 						result.add((DSemanticDiagram) representation);
+					}
 				}
 			}
 			
@@ -341,8 +348,9 @@ public class GenerateDiagramsService{
 			{
 				EObject data = annotationEntry.getData();
 				
-				if (data instanceof Diagram)
+				if (data instanceof Diagram) {
 					return (Diagram) data;
+				}
 			}
 		}
 		
@@ -384,8 +392,9 @@ public class GenerateDiagramsService{
 			}
 			else 
 			{
-				if (ecoreResource == null) 
+				if (ecoreResource == null) {
 					ecoreResource = editing_domain.getResourceSet().getResource(resource.getURI(), true);
+				}
 			}
 			
 			Collection<URI> semanticElements = new ArrayList<URI>();
@@ -393,8 +402,9 @@ public class GenerateDiagramsService{
 			while (iterator.hasNext()) 
 			{
 				EObject current = iterator.next();
-				if (isSupport(current)) 
+				if (isSupport(current)) {
 					semanticElements.add(EcoreUtil.getURI(current));
+				}
 			}
 			
 			Resource sessionResource = editing_domain.getResourceSet().getResource(airdUri, true);
@@ -515,8 +525,9 @@ public class GenerateDiagramsService{
 		{
 			for (Resource resource : currentSession.getSemanticResources()) 
 			{
-				if (resource.getURI().equals(sessionUri)) 
+				if (resource.getURI().equals(sessionUri)) {
 					return resource;
+				}
 			}
 		}
 		return null;
@@ -581,8 +592,9 @@ public class GenerateDiagramsService{
 			ViewpointSelectionCallback callback = new ViewpointSelectionCallback();
 			for (Viewpoint viewpoint : viewpoints) 
 			{
-				if (! _session.getSelectedViewpoints(false).contains(viewpoint))
+				if (! _session.getSelectedViewpoints(false).contains(viewpoint)) {
 					callback.selectViewpoint(viewpoint, _session, _monitor);
+				}
 			}
 
 			// Create aird contents and/or refresh them
@@ -591,8 +603,9 @@ public class GenerateDiagramsService{
 				for (Viewpoint viewpoint : viewpoints) 
 				{
 					EObject root = getElementFromSessionResource(_session, resource.getURI());
-					if (root == null)
+					if (root == null) {
 						root = resource.getContents().get(0);
+					}
 					
 					List<EClass> eClasses = getEClasses(root);
 					for (EClass eClass : eClasses) 
@@ -620,8 +633,9 @@ public class GenerateDiagramsService{
 			else 
 			{
 				Collection<DRepresentation> newRepresentation = refreshExistedDiagram(_session);
-				if (newRepresentation.size() > 0)
+				if (newRepresentation.size() > 0) {
 					_createdRepresentations.addAll(newRepresentation);
+				}
 				
 				// FIXME: haldle _createdRepresentationDescriptors list
 			}
@@ -635,8 +649,9 @@ public class GenerateDiagramsService{
 				EList<EClassifier> eClassifiers = ((EPackage) root).getEClassifiers();
 				for (EClassifier eClassifier : eClassifiers) 
 				{
-					if (eClassifier instanceof EClass)
+					if (eClassifier instanceof EClass) {
 						result.add((EClass)eClassifier);
+					}
 				}
 				
 				EList<EPackage> eSubpackages = ((EPackage) root).getESubpackages();
@@ -663,8 +678,9 @@ public class GenerateDiagramsService{
 			EObject root = null;
 			for (Resource currentResource : localSession.getSemanticResources()) 
 			{
-				if (currentResource.getURI().equals(resourceURI)) 
+				if (currentResource.getURI().equals(resourceURI)) {
 					root = currentResource.getContents().get(0);
+				}
 			}
 			return root;
 		}
@@ -685,8 +701,9 @@ public class GenerateDiagramsService{
 				DRepresentation nRepresentation = 
 						DialectManager.INSTANCE.createRepresentation(name, semanticObject, description, session, new NullProgressMonitor());
 				DRepresentationDescriptor represnetationDescriptor = getRepresentationDescriptor(session, nRepresentation);
-				if (null != represnetationDescriptor)
+				if (null != represnetationDescriptor) {
 					result.add(represnetationDescriptor);
+				}
 			}
 			return result;
 		}
@@ -695,8 +712,9 @@ public class GenerateDiagramsService{
 			Collection<DRepresentationDescriptor> repDescriptors = DialectManager.INSTANCE.getAllRepresentationDescriptors(session);
 			for (DRepresentationDescriptor dRepresentationDescriptor : repDescriptors) 
 			{
-				if (dRepresentationDescriptor.getRepresentation().equals(representation))
+				if (dRepresentationDescriptor.getRepresentation().equals(representation)) {
 					return dRepresentationDescriptor;
+				}
 			}
 			
 //			Collection<DView> ownedViews = session.getOwnedViews();
@@ -733,8 +751,9 @@ public class GenerateDiagramsService{
 								String stepIndex = " (" + (list4TaskStep.indexOf(object) * 5) + "/" + ( list4TaskStep.size() * 5) + ")";
 								_monitor.beginTask("Diagram generation for : " + ((ENamedElement) object).getName() + stepIndex, 1);
 								DRepresentation representation = DialectManager.INSTANCE.createRepresentation(name, object, representationDescription, session, new NullProgressMonitor());
-								if (null != representation)
+								if (null != representation) {
 									result.add(representation);
+								}
 							}
 							catch (Exception e){
 								e.printStackTrace();
@@ -764,8 +783,9 @@ public class GenerateDiagramsService{
 			editing_domain.getCommandStack().execute(compoundCommand);
 			for (DRepresentation currentDRepresentation :  representations) 
 			{
-				if (currentDRepresentation instanceof DDiagram) 
+				if (currentDRepresentation instanceof DDiagram) {
 					refreshNewDSemanticDiagram(currentDRepresentation, session);
+				}
 			}
 		}
 		
@@ -787,8 +807,9 @@ public class GenerateDiagramsService{
 			editing_domain.getCommandStack().execute(compoundCommand);
 			for (DRepresentation currentDRepresentation :  representations) 
 			{
-				if (currentDRepresentation instanceof DDiagram) 
+				if (currentDRepresentation instanceof DDiagram) {
 					refreshNewDSemanticDiagram(currentDRepresentation, session);
+				}
 			}
 		}
 		
@@ -802,8 +823,9 @@ public class GenerateDiagramsService{
 			editing_domain.getCommandStack().execute(compoundCommand);
 			for (DRepresentation currentDRepresentation :  representations) 
 			{
-				if (currentDRepresentation instanceof DDiagram) 
+				if (currentDRepresentation instanceof DDiagram) {
 					refreshNewDSemanticDiagram(currentDRepresentation, session);
+				}
 			}
 		}
 		
@@ -812,12 +834,14 @@ public class GenerateDiagramsService{
 			for (DSemanticDiagram diag : getRepresentation(localSession.getSessionResource())) 
 			{
 				EObject target = diag.getTarget();
-				if (isSupport(target)) 
+				if (isSupport(target)) {
 					oldList.add(target);
+				}
 			}
 			EObject root = getElementFromSessionResource(localSession, resource.getURI());
-			if (root == null)
+			if (root == null) {
 				root = resource.getContents().get(0);
+			}
 			
 			
 			final List<EClass> eClasses = getEClasses(root);
@@ -836,8 +860,9 @@ public class GenerateDiagramsService{
 		private void refreshNewDSemanticDiagram(DRepresentation representation, Session session) {
 			DialectManager.INSTANCE.refresh(representation, new NullProgressMonitor());
 			Diagram gmfDiag = getDiagram(representation, session.getSessionResource());
-			if (gmfDiag == null) 
+			if (gmfDiag == null) {
 				gmfDiag = ViewService.createDiagram(representation, VIEWPOINT, getPreferencesHint());
+			}
 			
 			CanonicalSynchronizer canonicalSynchronizer = CanonicalSynchronizerFactory.INSTANCE.createCanonicalSynchronizer(gmfDiag);
 			Command synchronizeGMFModel = new SynchronizeGMFModelCommand(editing_domain, canonicalSynchronizer);

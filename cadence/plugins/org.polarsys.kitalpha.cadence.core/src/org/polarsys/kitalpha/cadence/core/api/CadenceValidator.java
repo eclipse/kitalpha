@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -38,7 +38,9 @@ public class CadenceValidator {
 		String result ="bad value for: "; //$NON-NLS-1$
 		Set<String> keys = parametersMap.keySet();
 		for(String key : keys)
+		 {
 			result+= key+ "->"+parametersMap.get(key).getReason()+","; //$NON-NLS-1$ //$NON-NLS-2$
+		}
 		
 		int end = result.lastIndexOf(","); //$NON-NLS-1$
 		return result.substring(0,end);

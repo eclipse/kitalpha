@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -100,14 +100,16 @@ public final class TransposerLaunchConfigurationHelper {
           break;
         }
       }
-      if (mappingToEnable)
-        enabledMapping.add(mapping);
+      if (mappingToEnable) {
+		enabledMapping.add(mapping);
+	}
     }
     
     // handle enabled mappings
     for (Mapping mapping : enabledMapping) {
-      if (launchConfigurations.containsKey(mapping))
-        enabledConfigurations.addAll(launchConfigurations.get(mapping));
+      if (launchConfigurations.containsKey(mapping)) {
+		enabledConfigurations.addAll(launchConfigurations.get(mapping));
+	}
     }  
 
     return enabledConfigurations.toArray(new ILaunchConfiguration[launchConfigurations.size()]);

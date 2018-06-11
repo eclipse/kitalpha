@@ -1,5 +1,13 @@
-/**
- */
+/*******************************************************************************
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *  
+ * Contributors:
+ *   Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
 package org.polarsys.kitalpha.doc.gen.business.ecore.genchain.DocgenGenchainExtension.impl;
 
 import org.eclipse.egf.portfolio.genchain.generationChain.impl.DocumentationGenerationImpl;
@@ -64,6 +72,7 @@ public class KitalphaDocumentationGenerationImpl extends DocumentationGeneration
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public KitalphaDocumentationGenerationBranding getBrandingData() {
 		return brandingData;
 	}
@@ -92,6 +101,7 @@ public class KitalphaDocumentationGenerationImpl extends DocumentationGeneration
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBrandingData(KitalphaDocumentationGenerationBranding newBrandingData) {
 		if (newBrandingData != brandingData) {
 			NotificationChain msgs = null;

@@ -1,10 +1,19 @@
+/*******************************************************************************
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *  
+ * Contributors:
+ *   Thales Global Services S.A.S - initial API and implementation
+ *******************************************************************************/
 package org.polarsys.kitalpha.emde.ui.actions;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.IHandler;
-import org.eclipse.core.expressions.IEvaluationContext;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.common.ui.dialogs.DiagnosticDialog;
 import org.eclipse.emf.common.util.BasicDiagnostic;
@@ -26,10 +35,11 @@ public class ValidateExtensionHandler extends AbstractHandler implements IHandle
 			BasicDiagnostic diagnostic = ExtensionValidationHelper.visit(ss.toList());
 			displayResult(diagnostic);
 			String fullMessage = toString(new StringBuilder(), diagnostic).toString();
-			if (diagnostic.getSeverity() == Diagnostic.ERROR)
+			if (diagnostic.getSeverity() == Diagnostic.ERROR) {
 				Log.getDefault().logError(fullMessage);
-			else if (diagnostic.getSeverity() == Diagnostic.WARNING)
+			} else if (diagnostic.getSeverity() == Diagnostic.WARNING) {
 				Log.getDefault().logError(fullMessage);
+			}
 			Log.getDefault().logInfo(fullMessage);
 		} catch (CoreException e) {
 			Log.getDefault().logError(e);
@@ -57,10 +67,11 @@ public class ValidateExtensionHandler extends AbstractHandler implements IHandle
 
 	private void displayResult(Diagnostic diagnostic) {
 		String title = "Validation Result";
-		if (diagnostic.getSeverity() == Diagnostic.ERROR)
+		if (diagnostic.getSeverity() == Diagnostic.ERROR) {
 			DiagnosticDialog.openProblem(PlatformUI.getWorkbench().getDisplay().getActiveShell(), title, "The extension declaration contains some errors", diagnostic);
-		else
+		} else {
 			MessageDialog.openInformation(PlatformUI.getWorkbench().getDisplay().getActiveShell(), title, "The extension declaration contains no errors");
+		}
 
 	}
 

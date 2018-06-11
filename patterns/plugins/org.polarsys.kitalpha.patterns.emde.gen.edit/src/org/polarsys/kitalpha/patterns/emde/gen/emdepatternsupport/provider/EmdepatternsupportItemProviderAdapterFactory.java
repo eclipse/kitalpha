@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2014 THALES GLOBAL SERVICES.
+ * Copyright (c) 2006, 2018 THALES GLOBAL SERVICES.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -106,7 +106,8 @@ public class EmdepatternsupportItemProviderAdapterFactory extends Emdepatternsup
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public ComposeableAdapterFactory getRootAdapterFactory() {
+  @Override
+public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
 
@@ -116,7 +117,8 @@ public class EmdepatternsupportItemProviderAdapterFactory extends Emdepatternsup
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
+  @Override
+public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
 
@@ -164,7 +166,8 @@ public class EmdepatternsupportItemProviderAdapterFactory extends Emdepatternsup
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void addListener(INotifyChangedListener notifyChangedListener) {
+  @Override
+public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
 
@@ -174,7 +177,8 @@ public class EmdepatternsupportItemProviderAdapterFactory extends Emdepatternsup
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void removeListener(INotifyChangedListener notifyChangedListener) {
+  @Override
+public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
 
@@ -184,7 +188,8 @@ public class EmdepatternsupportItemProviderAdapterFactory extends Emdepatternsup
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void fireNotifyChanged(Notification notification) {
+  @Override
+public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
 		if (parentAdapterFactory != null) {
@@ -198,8 +203,11 @@ public class EmdepatternsupportItemProviderAdapterFactory extends Emdepatternsup
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void dispose() {
-		if (emdePatternInstanceSetItemProvider != null) emdePatternInstanceSetItemProvider.dispose();
+  @Override
+public void dispose() {
+		if (emdePatternInstanceSetItemProvider != null) {
+			emdePatternInstanceSetItemProvider.dispose();
+		}
 	}
 
 }

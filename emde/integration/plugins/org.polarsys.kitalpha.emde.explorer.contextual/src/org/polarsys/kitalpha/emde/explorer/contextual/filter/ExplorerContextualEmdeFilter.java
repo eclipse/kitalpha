@@ -1,5 +1,5 @@
 /******************************************************************************
- * Copyright (c) 2015 THALES GLOBAL SERVICES.
+ * Copyright (c) 2015, 2018 THALES GLOBAL SERVICES.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -13,7 +13,6 @@ package org.polarsys.kitalpha.emde.explorer.contextual.filter;
 import org.eclipse.amalgam.explorer.contextual.core.filter.ICandidateElementFilter;
 import org.eclipse.emf.ecore.EObject;
 import org.polarsys.kitalpha.emde.extension.ModelExtensionHelper;
-import org.polarsys.kitalpha.emde.extension.ModelExtensionManager;
 
 /**
  * This class implements a filter that accept Emde Element if their ecore model is active.

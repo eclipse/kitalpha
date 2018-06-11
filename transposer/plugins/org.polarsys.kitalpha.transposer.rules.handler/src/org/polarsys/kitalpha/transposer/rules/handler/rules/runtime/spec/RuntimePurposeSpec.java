@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -55,8 +55,9 @@ public class RuntimePurposeSpec extends RuntimePurposeImpl {
     String message = "Runtime purpose " + getName() + " is valid, check the error log for information."; //$NON-NLS-1$ //$NON-NLS-2$
 
     IStatus result = this.getMapping().validate();
-    if (result.getSeverity() != IStatus.INFO)
-      severity = result.getSeverity();
+    if (result.getSeverity() != IStatus.INFO) {
+		severity = result.getSeverity();
+	}
 
     if (severity == IStatus.WARNING) {
       message = "WARNING ! Runtime purpose " + getName() + " validates with warnings, check the error log for information."; //$NON-NLS-1$ //$NON-NLS-2$

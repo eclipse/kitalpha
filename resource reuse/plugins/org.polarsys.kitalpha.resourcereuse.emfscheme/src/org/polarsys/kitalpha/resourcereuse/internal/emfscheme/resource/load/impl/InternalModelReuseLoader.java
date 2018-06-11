@@ -194,8 +194,9 @@ public class InternalModelReuseLoader implements IModelReuseLoader {
 	 * @param uriConverter
 	 */
 	private void setURIConverter(ResourceSet resourceSet, URIConverter uriConverter){
-		if (uriConverter != null)
+		if (uriConverter != null) {
 			resourceSet.setURIConverter(uriConverter);
+		}
 	}
 	
 	private Resource loadFromResourceReuse(ResourceSet resourceSet, org.polarsys.kitalpha.resourcereuse.model.Resource resourcereuse){
@@ -204,8 +205,9 @@ public class InternalModelReuseLoader implements IModelReuseLoader {
 		for (URI uri : uris)
 		{
 			Resource r = getResource(resourceSet, uri);
-			if (result == null)
+			if (result == null) {
 				result = r;
+			}
 		}
 		return result;
 	}

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -73,8 +73,9 @@ public class SafetyPackageImpl extends EPackageImpl implements SafetyPackage {
 	 * @generated
 	 */
 	public static SafetyPackage init() {
-		if (isInited)
+		if (isInited) {
 			return (SafetyPackage) EPackage.Registry.INSTANCE.getEPackage(SafetyPackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
 		SafetyPackageImpl theSafetyPackage = (SafetyPackageImpl) (EPackage.Registry.INSTANCE
@@ -105,6 +106,7 @@ public class SafetyPackageImpl extends EPackageImpl implements SafetyPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSimpleVPSafety() {
 		return simpleVPSafetyEClass;
 	}
@@ -114,6 +116,7 @@ public class SafetyPackageImpl extends EPackageImpl implements SafetyPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSimpleVPSafety_Complexity() {
 		return (EAttribute) simpleVPSafetyEClass.getEStructuralFeatures().get(0);
 	}
@@ -123,6 +126,7 @@ public class SafetyPackageImpl extends EPackageImpl implements SafetyPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSimpleVPSafety_Cost() {
 		return (EAttribute) simpleVPSafetyEClass.getEStructuralFeatures().get(1);
 	}
@@ -132,6 +136,7 @@ public class SafetyPackageImpl extends EPackageImpl implements SafetyPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SafetyFactory getSafetyFactory() {
 		return (SafetyFactory) getEFactoryInstance();
 	}
@@ -151,8 +156,9 @@ public class SafetyPackageImpl extends EPackageImpl implements SafetyPackage {
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated)
+		if (isCreated) {
 			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -176,8 +182,9 @@ public class SafetyPackageImpl extends EPackageImpl implements SafetyPackage {
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized)
+		if (isInitialized) {
 			return;
+		}
 		isInitialized = true;
 
 		// Initialize package

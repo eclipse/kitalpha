@@ -81,34 +81,40 @@ public class LibraryValidityColumnLabelProvider implements ITableLabelProvider {
 	}
 
 
+	@Override
 	public Image getColumnImage(Object element, int columnIndex) {
 		return getImage(element);
 	}
 
 
+	@Override
 	public String getColumnText(Object element, int columnIndex) {
 		
 		return getText(element);
 	}
 
 
+	@Override
 	public void addListener(ILabelProviderListener listener) {
 		// Do nothing
 		
 	}
 
 
+	@Override
 	public void dispose() {
 		// Do nothing
 		
 	}
 
 
+	@Override
 	public boolean isLabelProperty(Object element, String property) {
 		return false;
 	}
 
 
+	@Override
 	public void removeListener(ILabelProviderListener listener) {
 		// Do nothing
 		

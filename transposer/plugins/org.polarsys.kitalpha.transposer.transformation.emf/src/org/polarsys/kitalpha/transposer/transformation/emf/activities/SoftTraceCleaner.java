@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -52,23 +52,27 @@ public class SoftTraceCleaner implements IActivity, ITransposerWorkflow {
   /**
    * @see org.polarsys.kitalpha.cadence.core.api.IActivity#getParameters()
    */
-  public Collection<DeclaredParameter> getParameters() {
+  @Override
+public Collection<DeclaredParameter> getParameters() {
     return null;
   }
 
   /**
    * @see org.polarsys.kitalpha.cadence.core.api.IActivity#run(org.polarsys.kitalpha.cadence.core.api.parameter.ActivityParameters)
    */
-  public IStatus run(ActivityParameters activityParams_p) {
+  @Override
+public IStatus run(ActivityParameters activityParams_p) {
     IContext context = (IContext) activityParams_p.getParameter(TRANSPOSER_CONTEXT).getValue();
     _transformableElements = (Set<?>) activityParams_p.getParameter(TRANSPOSER_TRANSPOSABLE_OBJECTS).getValue();
 
     
-    if (context == null)
-    	return new Status(IStatus.ERROR, TransposerEMFPlugin.PLUGIN_ID, "Context in not initialized in the Transposer Workflow");
+    if (context == null) {
+		return new Status(IStatus.ERROR, TransposerEMFPlugin.PLUGIN_ID, "Context in not initialized in the Transposer Workflow");
+	}
     
-    if (context instanceof GenericTransformationContext)
-      _traceHelper = ((GenericTransformationContext) context).getTraceHelper();
+    if (context instanceof GenericTransformationContext) {
+		_traceHelper = ((GenericTransformationContext) context).getTraceHelper();
+	}
 
     // find a resource set
     ResourceSet rs = null;
@@ -93,8 +97,9 @@ public class SoftTraceCleaner implements IActivity, ITransposerWorkflow {
       }
     }
 
-    if (_cleanedElements.size() != 0)
-      logInfoCleanMessage();
+    if (_cleanedElements.size() != 0) {
+		logInfoCleanMessage();
+	}
 
     return Status.OK_STATUS;
   }
@@ -116,7 +121,8 @@ public class SoftTraceCleaner implements IActivity, ITransposerWorkflow {
   /**
    * @see org.polarsys.kitalpha.cadence.core.api.IActivity#validateParameters(org.polarsys.kitalpha.cadence.core.api.parameter.ActivityParameters)
    */
-  public Map<String, ParameterError<?>> validateParameters(ActivityParameters valuedParameters_p) {
+  @Override
+public Map<String, ParameterError<?>> validateParameters(ActivityParameters valuedParameters_p) {
     return null;
   }
 

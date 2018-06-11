@@ -84,8 +84,9 @@ public abstract class ManifestHelper {
 	}
 
 	public void updateFile(IProgressMonitor monitor) {
-		if (!isEnabled())
+		if (!isEnabled()) {
 			return;
+		}
 		PDEModelUtility.modifyModel(new ModelModification(manifestFile) {
 
 			@Override
@@ -248,7 +249,9 @@ public abstract class ManifestHelper {
 				((BundleActivatorHeader) header).setClassName(activator);
 			} else {
 				if (bundle.getHeader(Constants.BUNDLE_ACTIVATOR) == null && activator == null)
+				 {
 					return; // setHeader throws an unexpected NPE in this case
+				}
 				bundle.setHeader(Constants.BUNDLE_ACTIVATOR, activator);
 			}
 		}

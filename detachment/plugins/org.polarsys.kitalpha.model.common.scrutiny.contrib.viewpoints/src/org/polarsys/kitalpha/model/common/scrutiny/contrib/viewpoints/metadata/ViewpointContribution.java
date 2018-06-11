@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,7 +28,8 @@ public class ViewpointContribution extends Contribution {
   public ViewpointContribution() {
   }
 
-  public void update(ResourceSet context) {
+  @Override
+public void update(ResourceSet context) {
     Set<org.polarsys.kitalpha.resourcereuse.model.Resource> lookForViewpoints = UsedAFViewpoints
         .lookUp(context.getResources());
     for (org.polarsys.kitalpha.resourcereuse.model.Resource res : lookForViewpoints) {

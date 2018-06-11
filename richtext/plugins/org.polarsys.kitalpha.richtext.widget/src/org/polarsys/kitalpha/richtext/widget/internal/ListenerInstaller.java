@@ -29,6 +29,7 @@ public class ListenerInstaller {
 	public void installOpenLinkListener(final MDENebulaBasedRichTextWidget widget) {
 
 		new BrowserFunction(widget.getBrowser(), "openLinks") { //$NON-NLS-1$
+			@Override
 			public Object function(Object[] arguments) {
 				if (arguments != null && arguments.length > 0) {
 					for (Object object : arguments) {
@@ -134,6 +135,7 @@ public class ListenerInstaller {
 		 * Callback which save the content at focus out event
 		 */
 		new BrowserFunction(widget.getBrowser(), "saveContent") { //$NON-NLS-1$
+			@Override
 			public Object function(Object[] arguments) {
 				widget.saveContent();
 				return null;
@@ -165,6 +167,7 @@ public class ListenerInstaller {
 		 * Fire change content notification to all widgets
 		 */
 		new BrowserFunction(widget.getBrowser(), "changeHandler") { //$NON-NLS-1$
+			@Override
 			public Object function(Object[] arguments) {
 				if (arguments != null && arguments.length > 0) {
 					PropertyChangeEvent event = new PropertyChangeEvent(widget, "widgetContent", null, (String)arguments[0]);

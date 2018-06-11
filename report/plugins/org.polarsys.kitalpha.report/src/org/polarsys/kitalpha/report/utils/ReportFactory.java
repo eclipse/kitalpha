@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,10 +32,11 @@ public class ReportFactory extends AbstractReportFactory {
 
 	public LogEntry log(IStatus status) {
 		Severity sev = SeverityFactory.INSTANCE.createInfo();
-		if (status.getSeverity() == IStatus.ERROR)
+		if (status.getSeverity() == IStatus.ERROR) {
 			sev = SeverityFactory.INSTANCE.createError();
-		else if (status.getSeverity() == IStatus.WARNING)
+		} else if (status.getSeverity() == IStatus.WARNING) {
 			sev = SeverityFactory.INSTANCE.createWarning();
+		}
 		return log(sev, toString(status.getMessage(), status.getException()), null);
 	}
 

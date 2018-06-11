@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2014 THALES GLOBAL SERVICES.
+ * Copyright (c) 2006, 2018 THALES GLOBAL SERVICES.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -102,7 +102,8 @@ public class EmdePatternInstanceSetImpl extends ElementExtensionImpl implements 
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public String getId() {
+  @Override
+public String getId() {
 		return id;
 	}
 
@@ -111,11 +112,13 @@ public class EmdePatternInstanceSetImpl extends ElementExtensionImpl implements 
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setId(String newId) {
+  @Override
+public void setId(String newId) {
 		String oldId = id;
 		id = newId;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, EmdepatternsupportPackage.EMDE_PATTERN_INSTANCE_SET__ID, oldId, id));
+		}
 	}
 
   /**
@@ -123,7 +126,8 @@ public class EmdePatternInstanceSetImpl extends ElementExtensionImpl implements 
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EList<CommonPatternInstance> getOwnedInstances() {
+  @Override
+public EList<CommonPatternInstance> getOwnedInstances() {
 		if (ownedInstances == null) {
 			ownedInstances = new EObjectContainmentEList<CommonPatternInstance>(CommonPatternInstance.class, this, EmdepatternsupportPackage.EMDE_PATTERN_INSTANCE_SET__OWNED_INSTANCES);
 		}
@@ -285,7 +289,9 @@ public class EmdePatternInstanceSetImpl extends ElementExtensionImpl implements 
 	 */
   @Override
   public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (id: "); //$NON-NLS-1$

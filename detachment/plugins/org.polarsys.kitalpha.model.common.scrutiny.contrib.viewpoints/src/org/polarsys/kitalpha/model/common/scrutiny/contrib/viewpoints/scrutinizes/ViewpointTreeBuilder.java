@@ -111,8 +111,9 @@ public class ViewpointTreeBuilder {
 
 		// remove resource with readonly state
 		for (Resource r : usedViewpointResources.toArray(new Resource[usedViewpointResources.size()])) {
-			if (!ViewpointManager.canChangeState(r))
+			if (!ViewpointManager.canChangeState(r)) {
 				usedViewpointResources.remove(r);
+			}
 		}
 
 		return usedViewpointResources;
@@ -135,7 +136,9 @@ public class ViewpointTreeBuilder {
 					for (EPackage ePackage : ePackages) {
 						String nsURI = ePackage.getNsURI();
 						if (nsURI == null)
+						 {
 							continue; // model has not been resolved successfully
+						}
 						vpd.getViewpointNsUri().add(nsURI);
 					}
 				}
@@ -187,8 +190,9 @@ public class ViewpointTreeBuilder {
 	 */
 	private void computeViewpointTreeDescriptionAggregations(IViewpointTreeDescription vpd,
 			Collection<IViewpointTreeDescription> vpd_set, Viewpoint eVpRoot) {
-		if (vpd_set == null || eVpRoot == null)
+		if (vpd_set == null || eVpRoot == null) {
 			return;
+		}
 
 		EList<Viewpoint> dependencies = eVpRoot.getDependencies();
 
@@ -204,7 +208,9 @@ public class ViewpointTreeBuilder {
 
 						String nsuri = ePackage.getNsURI();
 						if (nsuri == null)
+						 {
 							continue; //model has not been resolved successfully
+						}
 						Collection<IViewpointTreeDescription> vpdDependencies = searchViewpointTreeDescriptions(nsuri,
 								vpd_set);
 
@@ -230,8 +236,9 @@ public class ViewpointTreeBuilder {
 	private void computeViewpointTreeDescriptionParents(IViewpointTreeDescription vpd,
 			Collection<IViewpointTreeDescription> vpd_set, Map<String, Collection<String>> relationships,
 			Viewpoint eVpRoot) {
-		if (vpd_set == null || eVpRoot == null)
+		if (vpd_set == null || eVpRoot == null) {
 			return;
+		}
 
 		EList<Viewpoint> parents = eVpRoot.getParents();
 
@@ -245,7 +252,9 @@ public class ViewpointTreeBuilder {
 						String nsUri = ePackage.getNsURI();
  
 						if (nsUri == null)
+						 {
 							continue ; // model has not been resolved successfully
+						}
 						Collection<IViewpointTreeDescription> vpd_parents = searchViewpointTreeDescriptions(nsUri,
 								vpd_set);
 
@@ -266,8 +275,9 @@ public class ViewpointTreeBuilder {
 
 		for (String nsUri : vpd_nsuri) {
 			Collection<String> uses = relationships.get(nsUri);
-			if (uses == null)
+			if (uses == null) {
 				continue;
+			}
 
 			for (String used_nsUri : uses) {
 				Collection<IViewpointTreeDescription> used_vpd = searchViewpointTreeDescriptions(used_nsUri, vpd_set);
@@ -284,8 +294,9 @@ public class ViewpointTreeBuilder {
 	private void initVpdContainerRoots(Collection<IViewpointTreeDescription> vpd_set) {
 
 		for (IViewpointTreeDescription vpd : vpd_set) {
-			if (vpd.getParents().isEmpty())
+			if (vpd.getParents().isEmpty()) {
 				treeContainer.getRoots().add(vpd);
+			}
 		}
 	}
 

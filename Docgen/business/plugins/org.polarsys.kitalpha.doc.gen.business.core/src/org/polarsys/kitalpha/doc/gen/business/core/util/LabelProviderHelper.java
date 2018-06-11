@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -56,9 +56,10 @@ public class LabelProviderHelper {
 		String result = EObjectLabelProviderHelper.getText(eObject);
 		if (result.equals(EObjectLabelProviderHelper.EMPTY_STRING)) {
 			final Object eObjectLabelProvider = getIItemLabelProvider(eObject);
-			if (eObjectLabelProvider instanceof IItemLabelProvider)
+			if (eObjectLabelProvider instanceof IItemLabelProvider) {
 				result = ((IItemLabelProvider) eObjectLabelProvider)
 						.getText(eObject);
+			}
 		}
 		return result;
 	}
@@ -71,9 +72,10 @@ public class LabelProviderHelper {
 
 	public static Object getImage(EObject eObject) {
 		final Object eObjectLabelProvider = getIItemLabelProvider(eObject);
-		if (eObjectLabelProvider instanceof IItemLabelProvider)
+		if (eObjectLabelProvider instanceof IItemLabelProvider) {
 			return ((IItemLabelProvider) eObjectLabelProvider)
 					.getImage(eObject);
+		}
 		return null;
 	}
 

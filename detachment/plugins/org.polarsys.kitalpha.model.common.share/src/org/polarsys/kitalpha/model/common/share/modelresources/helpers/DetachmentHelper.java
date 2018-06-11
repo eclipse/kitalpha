@@ -68,8 +68,9 @@ public class DetachmentHelper {
 		if (r != null)
 		{
 			try {
-				if (!r.isLoaded())
+				if (!r.isLoaded()) {
 					r.load(null);
+				}
 			} 
 			catch (IOException e) {
 				_LOGGER.error("Unable to load resource " + uri, e);

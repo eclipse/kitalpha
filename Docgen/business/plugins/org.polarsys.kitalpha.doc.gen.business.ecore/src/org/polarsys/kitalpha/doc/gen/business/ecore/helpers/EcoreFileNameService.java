@@ -26,6 +26,7 @@ public class EcoreFileNameService implements IFileNameService {
 
 	}
 
+	@Override
 	public String getFileName(EObject eObject) {
 		if (eObject instanceof EClassifier) {
 			return eObject.eClass().getName() + "_"

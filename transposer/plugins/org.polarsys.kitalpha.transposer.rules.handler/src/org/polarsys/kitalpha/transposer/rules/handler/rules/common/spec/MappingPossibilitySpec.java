@@ -35,10 +35,12 @@ public class MappingPossibilitySpec extends MappingPossibilityImpl {
   @Override
   public boolean checkRules(IDomainHelper domainHelper_p) throws RuleDefinitionException {
     boolean checked = false;
-    if (getCompleteRule() != null)
-      checked = checkCompleteRule(domainHelper_p);
-    if (getIncompleteRule() != null)
-      checked = checked && checkIncompleteRule(domainHelper_p);
+    if (getCompleteRule() != null) {
+		checked = checkCompleteRule(domainHelper_p);
+	}
+    if (getIncompleteRule() != null) {
+		checked = checked && checkIncompleteRule(domainHelper_p);
+	}
     return checked;
   }
 
@@ -67,8 +69,9 @@ public class MappingPossibilitySpec extends MappingPossibilityImpl {
     List<Class<?>> parameters = GenericReflectionUtils.getGenericInterfaceTypeArguments(IRule.class, rule_p.getClass());
     Class<?> domainClass = null;
 
-    if (eContainer() instanceof MappingElement)
-      domainClass = ((MappingElement) eContainer()).getDomainMetaClass();
+    if (eContainer() instanceof MappingElement) {
+		domainClass = ((MappingElement) eContainer()).getDomainMetaClass();
+	}
 
     if (domainClass != null && parameters != null && parameters.size() > 0) {
       for (Class<?> parameter : parameters) {
@@ -84,8 +87,9 @@ public class MappingPossibilitySpec extends MappingPossibilityImpl {
    */
   @Override
   public void updateContext(Object object_p, IContext context_p) {
-    if (this.getContext() == null)
-      return;
+    if (this.getContext() == null) {
+		return;
+	}
 
     // handle specific treatment for this element
     context_p.setUpForModelElement(object_p);
@@ -105,8 +109,10 @@ public class MappingPossibilitySpec extends MappingPossibilityImpl {
       applyCompleteRule(object_p, context_p);
     } else if (getIncompleteRule() != null) {
       applyIncompleteRule(object_p, context_p);
-    } else
-      throw new RuleExecutionException(this.getName() + " should have an incomplete rule"); //$NON-NLS-1$
+    }
+	else {
+		throw new RuleExecutionException(this.getName() + " should have an incomplete rule"); //$NON-NLS-1$
+	}
 
   }
 

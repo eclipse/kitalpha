@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,14 +38,16 @@ public class EmfDomainHelper implements IDomainHelper {
   /**
    * @see org.polarsys.kitalpha.transposer.rules.handler.rules.api.IDomainHelper#getAllDomainMetaclasses()
    */
-  public Collection<Class<?>> getAllDomainMetaclasses() {
+  @Override
+public Collection<Class<?>> getAllDomainMetaclasses() {
     Set<Class<?>> classes = new LinkedHashSet<Class<?>>();
     Set<EClass> allEClasses = getAllEClasses();
 
     for (EClass eClass : allEClasses) {
       Class<?> instanceClass = eClass.getInstanceClass();
-      if (instanceClass != null)
-        classes.add(instanceClass);
+      if (instanceClass != null) {
+		classes.add(instanceClass);
+	}
     }
     return classes;
   }
@@ -69,12 +71,14 @@ public class EmfDomainHelper implements IDomainHelper {
   private void addEClasses(EPackage package_p, Set<EClass> accumulator_p) {
 
     for (EClassifier eClassifier : package_p.getEClassifiers()) {
-      if (eClassifier instanceof EClass)
-        accumulator_p.add((EClass) eClassifier);
+      if (eClassifier instanceof EClass) {
+		accumulator_p.add((EClass) eClassifier);
+	}
     }
 
-    for (EPackage eSubPackage : package_p.getESubpackages())
-      addEClasses(eSubPackage, accumulator_p);
+    for (EPackage eSubPackage : package_p.getESubpackages()) {
+		addEClasses(eSubPackage, accumulator_p);
+	}
   }
 
   /**
@@ -89,7 +93,8 @@ public class EmfDomainHelper implements IDomainHelper {
   /**
    * @see org.polarsys.kitalpha.transposer.rules.handler.rules.api.IDomainHelper#getAnalysisSources(java.util.Collection)
    */
-  public Collection<Object> getAnalysisSources(Collection<?> selection_p) {
+  @Override
+public Collection<Object> getAnalysisSources(Collection<?> selection_p) {
     Collection<Object> eObjectsToAnalyse = new ArrayList<Object>();
 
     for (Object obj : selection_p) {
@@ -103,7 +108,8 @@ public class EmfDomainHelper implements IDomainHelper {
   /**
    * @see org.polarsys.kitalpha.transposer.rules.handler.rules.api.IDomainHelper#getDomainMetaclass(java.lang.String)
    */
-  public Class<?> getDomainMetaclass(String name_p) {
+  @Override
+public Class<?> getDomainMetaclass(String name_p) {
     try {
       return Class.forName(name_p);
     } catch (ClassNotFoundException e) {
@@ -115,15 +121,19 @@ public class EmfDomainHelper implements IDomainHelper {
   /**
    * @see org.polarsys.kitalpha.transposer.rules.handler.rules.api.IDomainHelper#getDomainMetaclass(java.lang.Object)
    */
-  public Class<?> getDomainMetaclass(Object object_p) {
-    if (object_p instanceof EObject)
-      return ((EObject) object_p).eClass().getInstanceClass();
+  @Override
+public Class<?> getDomainMetaclass(Object object_p) {
+    if (object_p instanceof EObject) {
+		return ((EObject) object_p).eClass().getInstanceClass();
+	}
     return null;
   }
 
-  public String getName(Object modelElement_p) {
-    if (modelElement_p instanceof ENamedElement)
-      return ((ENamedElement) modelElement_p).getName();
+  @Override
+public String getName(Object modelElement_p) {
+    if (modelElement_p instanceof ENamedElement) {
+		return ((ENamedElement) modelElement_p).getName();
+	}
 
     return ""; //$NON-NLS-1$
   }
@@ -131,14 +141,16 @@ public class EmfDomainHelper implements IDomainHelper {
   /**
    * @see org.polarsys.kitalpha.transposer.rules.handler.rules.api.IDomainHelper#isDomainFor(java.lang.Object)
    */
-  public boolean isDomainFor(Object object_p) {
+  @Override
+public boolean isDomainFor(Object object_p) {
     return object_p instanceof EObject;
   }
 
   /**
    * @see org.polarsys.kitalpha.transposer.rules.handler.rules.api.IDomainHelper#isHotSpot(java.lang.Object)
    */
-  public boolean isHotSpot(Object object_p) {
+  @Override
+public boolean isHotSpot(Object object_p) {
     return object_p instanceof EClass;
   }
 }

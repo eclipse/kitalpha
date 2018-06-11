@@ -367,8 +367,9 @@ public final class CodeManagerLauncher implements ICodeManagerWorkflowConstants 
 			Map<String, ParameterError> parametersMap) {
 		String result = "bad value for: ";
 		Set<String> keys = parametersMap.keySet();
-		for (String key : keys)
+		for (String key : keys) {
 			result += key + "->" + parametersMap.get(key).getReason() + ",";
+		}
 
 		int end = result.lastIndexOf(",");
 		return result.substring(0, end);
@@ -485,10 +486,11 @@ public final class CodeManagerLauncher implements ICodeManagerWorkflowConstants 
 
 			//
 			// Save allocation model if necessary
-			if (allocRoot != null && configuration.isSaveAllocationModel())
+			if (allocRoot != null && configuration.isSaveAllocationModel()) {
 				saveAllocationModel(selectedObjects.iterator().next()
 						.eResource(), allocRoot, configuration
 						.getDestinationFolder());
+			}
 
 		} catch (Exception e) {
 			ILog log = Activator.getDefault().getLog();
@@ -504,8 +506,9 @@ public final class CodeManagerLauncher implements ICodeManagerWorkflowConstants 
 	private static IStatus launchFromEObjectsList(
 			CodeManagerConfiguration configuration, SubMonitor subMonitor) {
 		List<EObject> selectedObjects = configuration.getInput().getListInput();
-		if (selectedObjects.isEmpty())
+		if (selectedObjects.isEmpty()) {
 			return Status.OK_STATUS;
+		}
 
 		try {
 			//
@@ -567,10 +570,11 @@ public final class CodeManagerLauncher implements ICodeManagerWorkflowConstants 
 
 			//
 			// Save allocation model if necessary
-			if (allocRoot != null && configuration.isSaveAllocationModel())
+			if (allocRoot != null && configuration.isSaveAllocationModel()) {
 				saveAllocationModel(selectedObjects.iterator().next()
 						.eResource(), allocRoot, configuration
 						.getDestinationFolder());
+			}
 
 		} catch (Exception e) {
 			ILog log = Activator.getDefault().getLog();
@@ -715,8 +719,9 @@ public final class CodeManagerLauncher implements ICodeManagerWorkflowConstants 
 
 		if (objects != null && strategy != null) {
 			EObject root = null;
-			if (!objects.isEmpty())
+			if (!objects.isEmpty()) {
 				root = EcoreUtil.getRootContainer(objects.iterator().next());
+			}
 			if (strategyParameters != null) {
 				wrongParams = strategy.validateParameters(strategyParameters);
 				if (wrongParams != null && !wrongParams.isEmpty()) {
@@ -803,8 +808,9 @@ public final class CodeManagerLauncher implements ICodeManagerWorkflowConstants 
 			if (generator instanceof IGeneratorWithProgress) {
 				((IGeneratorWithProgress) generator).generateCode(allocRoot_p,
 						generatorParams_p, path_f, monitor);
-			} else
+			} else {
 				generator.generateCode(allocRoot_p, generatorParams_p, path_f);
+			}
 		}
 
 	}

@@ -52,14 +52,16 @@ public class HideRevealToolsService {
 			final EList<DEdge> outgoingEdges = dDiagramElementContainer.getOutgoingEdges();
 			for (DEdge dEdge : outgoingEdges) 
 			{
-				if (dEdge.isVisible() == visible)
+				if (dEdge.isVisible() == visible) {
 					result.add(dEdge);
+				}
 			}
 			final EList<DEdge> incomingEdges = dDiagramElementContainer.getIncomingEdges();
 			for (DEdge dEdge : incomingEdges) 
 			{
-				if (dEdge.isVisible() == visible)
+				if (dEdge.isVisible() == visible) {
 					result.add(dEdge);
+				}
 			}
 		}
 
@@ -68,8 +70,9 @@ public class HideRevealToolsService {
 	
 	public boolean toolsShowHidePrecondition(EObject eObject, EObject containerView){
 		// Case 1 : user select a Focus EClass node or one of its children
-		if (eObject instanceof EStructuralFeature || eObject instanceof EClass || eObject instanceof EOperation)
+		if (eObject instanceof EStructuralFeature || eObject instanceof EClass || eObject instanceof EOperation) {
 			return true;
+		}
 		
 		// Case 2 : user select the diagram
 		if (eObject instanceof EPackage)
@@ -277,10 +280,11 @@ public class HideRevealToolsService {
 		{
 			if (currentEObject instanceof EReference) 
 			{
-				if (view instanceof DDiagram)
+				if (view instanceof DDiagram) {
 					collectionToReturn.add(currentEObject.eContainer());
-				else
+				} else {
 					collectionToReturn.add(currentEObject);
+				}
 			}
 		}
 		return collectionToReturn;
@@ -303,8 +307,9 @@ public class HideRevealToolsService {
 		} 
 		else
 		{
-			if (view instanceof DDiagram) 
+			if (view instanceof DDiagram) {
 				collection.addAll(((DDiagram) view).getEdges());
+			}
 		}
 		return collection;
 	}

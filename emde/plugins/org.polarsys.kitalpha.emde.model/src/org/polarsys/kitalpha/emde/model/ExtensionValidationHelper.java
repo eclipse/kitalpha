@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -49,8 +49,9 @@ public class ExtensionValidationHelper {
 		Set<IFile> files = new HashSet<IFile>();
 		// List ecore file from the workspace
 		for (IProject proj : ResourcesPlugin.getWorkspace().getRoot().getProjects()) {
-			if (proj.isAccessible())
+			if (proj.isAccessible()) {
 				visit(proj, files);
+			}
 		}
 
 		// Load ecore files
@@ -64,8 +65,9 @@ public class ExtensionValidationHelper {
 
 	public void validateSuperTypes(BasicDiagnostic diagnostic, EClass eclass) {
 		EAnnotation annotation1 = eclass.getEAnnotation(ExtensionAnnotationsHelper.CONSTRAINT_NS_URI);
-		if (annotation1 == null)
+		if (annotation1 == null) {
 			return;
+		}
 
 		EClass elementExtension = EmdePackage.eINSTANCE.getElementExtension();
 		String nsURI = elementExtension.getEPackage().getNsURI();
@@ -86,19 +88,22 @@ public class ExtensionValidationHelper {
 				diagnostic.add(new BasicDiagnostic(Diagnostic.ERROR, "EClass " + eclass.getName(), 0, "Missing annotation details '" + ExtensionAnnotationsHelper.EXTENDED_ELEMENT + "'", new Object[] { eclass }));
 				return;
 			}
-			for (String val : value.trim().split("\\s"))
+			for (String val : value.trim().split("\\s")) {
 				doValidateConstraintValue(eclass, val, diagnostic);
+			}
 		}
 
 	}
 
 	private void doValidateConstraintValue(EClass eclass, String value, BasicDiagnostic diagnostic) {
-		if (value == null || "".equals(value))
+		if (value == null || "".equals(value)) {
 			return;
+		}
 		URI uri = URI.createURI(value);
 		String fragment = uri.fragment();
-		if (fragment.startsWith("//"))
+		if (fragment.startsWith("//")) {
 			fragment = fragment.substring(2);
+		}
 		uri = uri.trimFragment();
 		EPackage ePackage = REGISTRY.getEPackage(uri.toString());
 		if (ePackage == null) {
@@ -119,14 +124,16 @@ public class ExtensionValidationHelper {
 
 	private void visit(IContainer container, Set<IFile> files) throws CoreException {
 		for (IResource res : container.members()) {
-			if (!res.isAccessible())
+			if (!res.isAccessible()) {
 				continue;
-			if (res.getType() == IResource.FOLDER)
+			}
+			if (res.getType() == IResource.FOLDER) {
 				visit((IContainer) res, files);
-			else if (res.getType() == IResource.FILE) {
+			} else if (res.getType() == IResource.FILE) {
 				IFile file = (IFile) res;
-				if ("ecore".equals(file.getFileExtension()))
+				if ("ecore".equals(file.getFileExtension())) {
 					files.add(file);
+				}
 			}
 		}
 	}
@@ -145,14 +152,16 @@ public class ExtensionValidationHelper {
 
 			@Override
 			public String caseEPackage(EPackage object) {
-				for (EClassifier cls : object.getEClassifiers())
+				for (EClassifier cls : object.getEClassifiers()) {
 					doSwitch(cls);
+				}
 				return "";
 			}
 		};
 		for (Object obj : objects) {
-			if (obj instanceof EObject)
+			if (obj instanceof EObject) {
 				_switch.doSwitch((EObject) obj);
+			}
 		}
 		return diagnostic;
 	}

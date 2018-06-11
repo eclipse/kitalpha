@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -66,8 +66,9 @@ public class RulesHandlerException extends Exception {
 
       trace = _ruleException.getStackTrace();
       for (StackTraceElement stackTraceElement : trace) {
-        if (stackTraceElement.getClassName().equals(GenericRulesHandler.class.getName()))
-          return sb.toString();
+        if (stackTraceElement.getClassName().equals(GenericRulesHandler.class.getName())) {
+			return sb.toString();
+		}
 
         sb.append("\nat " + stackTraceElement.toString()); //$NON-NLS-1$
       }
@@ -79,8 +80,9 @@ public class RulesHandlerException extends Exception {
 
       trace = _ruleExecutionException.getStackTrace();
       for (StackTraceElement stackTraceElement : trace) {
-        if (stackTraceElement.getClassName().equals(GenericRulesHandler.class.getName()))
-          return sb.toString();
+        if (stackTraceElement.getClassName().equals(GenericRulesHandler.class.getName())) {
+			return sb.toString();
+		}
 
         sb.append("\nat " + stackTraceElement.toString()); //$NON-NLS-1$
       }
@@ -93,8 +95,9 @@ public class RulesHandlerException extends Exception {
       trace = _ruleResolutionException.getStackTrace();
       for (StackTraceElement stackTraceElement : trace) {
 
-        if (stackTraceElement.getClassName().equals(GenericRulesHandler.class.getName()))
-          return sb.toString();
+        if (stackTraceElement.getClassName().equals(GenericRulesHandler.class.getName())) {
+			return sb.toString();
+		}
 
         sb.append("\nat " + stackTraceElement.toString()); //$NON-NLS-1$
       }

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,11 +26,13 @@ import org.polarsys.kitalpha.doc.gen.business.core.util.MonitorServices;
 
 public class DocGenHtmlReporter implements PatternExecutionReporter {
 
-    public void executionFinished(String output, PatternContext context) {
+    @Override
+	public void executionFinished(String output, PatternContext context) {
     	// No need for this step
     }
 
-    public void loopFinished(String output, String outputWithCallBack, PatternContext context, Map<String, Object> parameterValues) {
+    @Override
+	public void loopFinished(String output, String outputWithCallBack, PatternContext context, Map<String, Object> parameterValues) {
 
         // Get Task parameters
         String projectName = (String) context.getValue(DocGenHtmlConstants.PROJECT_NAME_CONTRACT);

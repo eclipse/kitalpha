@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -131,8 +131,9 @@ public class ReportsView extends ViewPart implements Observer {
 		viewer.getTree().setLinesVisible(true);
 		viewer.getTree().setHeaderVisible(true);
 
-		for (String id : ReportsUI.getDisplayedColumns())
+		for (String id : ReportsUI.getDisplayedColumns()) {
 			createColumn(id);
+		}
 
 		viewer.addFilter(new ViewerFilter() {
 
@@ -165,8 +166,9 @@ public class ReportsView extends ViewPart implements Observer {
 				if (ss.size() == 1) {
 					LogEntry entry = (LogEntry) ss.getFirstElement();
 					detailText.setText(entry.getMessage() == null ? "" : entry.getMessage());
-				} else
+				} else {
 					detailText.setText("");
+				}
 				deleteReportAction.setEnabled(!event.getSelection().isEmpty());
 			}
 		});
@@ -201,8 +203,9 @@ public class ReportsView extends ViewPart implements Observer {
 
 	public void setSeverityThreshold(int severityThreshold) {
 		this.severityThreshold = severityThreshold;
-		if (viewer != null && !viewer.getTree().isDisposed())
+		if (viewer != null && !viewer.getTree().isDisposed()) {
 			refreshView();
+		}
 	}
 
 	@Override
@@ -249,10 +252,11 @@ public class ReportsView extends ViewPart implements Observer {
 			public void widgetSelected(SelectionEvent e) {
 				TreeColumn selectedColumn = (TreeColumn) e.widget;
 				int sortDirection = viewer.getTree().getSortDirection();
-				if (selectedColumn.equals(viewer.getTree().getSortColumn()))
+				if (selectedColumn.equals(viewer.getTree().getSortColumn())) {
 					viewer.getTree().setSortDirection(sortDirection == SWT.UP ? SWT.DOWN : SWT.UP);
-				else
+				} else {
 					viewer.getTree().setSortColumn(selectedColumn);
+				}
 				viewer.refresh();
 			}
 
@@ -270,8 +274,9 @@ public class ReportsView extends ViewPart implements Observer {
 	public List<LogEntry> getDisplayedReports() {
 		final Object[] filteredChildren = viewer.getFilteredChildren(viewer.getInput());
 		List<LogEntry> result = new ArrayList<LogEntry>();
-		for (Object obj : filteredChildren)
+		for (Object obj : filteredChildren) {
 			result.add((LogEntry) obj);
+		}
 		return result;
 	}
 
@@ -293,10 +298,11 @@ public class ReportsView extends ViewPart implements Observer {
 	public void update(Observable o, Object arg) {
 		if (arg instanceof String) {
 			String id = (String) arg;
-			if (ReportsUI.getColumnDescription(id) == null)
+			if (ReportsUI.getColumnDescription(id) == null) {
 				deleteColumn(id);
-			else if (ReportsUI.getDisplayedColumns().contains(id) && !columns.containsKey(id))
+			} else if (ReportsUI.getDisplayedColumns().contains(id) && !columns.containsKey(id)) {
 				createColumn(id);
+			}
 		}
 		viewer.refresh();
 	}

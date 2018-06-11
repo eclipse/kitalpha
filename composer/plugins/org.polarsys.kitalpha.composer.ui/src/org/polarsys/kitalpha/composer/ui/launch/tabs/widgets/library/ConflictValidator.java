@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -162,8 +162,9 @@ public class ConflictValidator {
 			}
 		}
 		
-		if (item.isValid())
+		if (item.isValid()) {
 			item.clearErrorsMsg();
+		}
 	}
 
 	private void searchConflictElements(LibraryItem item1, LibraryItem item2) {
@@ -187,7 +188,7 @@ public class ConflictValidator {
 					EObject eObj2 = it2.next();
 					if (eObj2 instanceof Type) {
 						EObject ref2 = ((Type) eObj2).getReferencedElement();
-						if (ref2.equals(ref1))
+						if (ref2.equals(ref1)) {
 							item2
 									.addErrorsMsg(reuse1,"Library :"
 											+ reuse2.getName()
@@ -199,6 +200,7 @@ public class ConflictValidator {
 													.getName())
 											+ " in the library "
 											+ reuse1.getName());
+						}
 					}
 				}
 			}
@@ -210,8 +212,9 @@ public class ConflictValidator {
 
 	private List<org.eclipse.emf.ecore.resource.Resource> loadResources(
 			List<Resource> resources_p, boolean clear) {
-		if (clear)
+		if (clear) {
 			set.getResources().clear();
+		}
 
 		for (Resource res : resources_p) {
 			loadResource(res, set);

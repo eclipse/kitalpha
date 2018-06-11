@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -105,8 +105,9 @@ public class SimplecomponentPackageImpl extends EPackageImpl implements Simpleco
 	 * @generated
 	 */
 	public static SimplecomponentPackage init() {
-		if (isInited)
+		if (isInited) {
 			return (SimplecomponentPackage) EPackage.Registry.INSTANCE.getEPackage(SimplecomponentPackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
 		SimplecomponentPackageImpl theSimplecomponentPackage = (SimplecomponentPackageImpl) (EPackage.Registry.INSTANCE
@@ -137,6 +138,7 @@ public class SimplecomponentPackageImpl extends EPackageImpl implements Simpleco
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getComponentModel() {
 		return componentModelEClass;
 	}
@@ -146,6 +148,7 @@ public class SimplecomponentPackageImpl extends EPackageImpl implements Simpleco
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getComponentModel_AbstractComponent() {
 		return (EReference) componentModelEClass.getEStructuralFeatures().get(0);
 	}
@@ -155,6 +158,7 @@ public class SimplecomponentPackageImpl extends EPackageImpl implements Simpleco
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getComponentElement() {
 		return componentElementEClass;
 	}
@@ -164,6 +168,7 @@ public class SimplecomponentPackageImpl extends EPackageImpl implements Simpleco
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getComponentElement_Name() {
 		return (EAttribute) componentElementEClass.getEStructuralFeatures().get(0);
 	}
@@ -173,6 +178,7 @@ public class SimplecomponentPackageImpl extends EPackageImpl implements Simpleco
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getComponentElement_Description() {
 		return (EAttribute) componentElementEClass.getEStructuralFeatures().get(1);
 	}
@@ -182,6 +188,7 @@ public class SimplecomponentPackageImpl extends EPackageImpl implements Simpleco
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAbstractComponent() {
 		return abstractComponentEClass;
 	}
@@ -191,6 +198,7 @@ public class SimplecomponentPackageImpl extends EPackageImpl implements Simpleco
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSoftwareComponent() {
 		return softwareComponentEClass;
 	}
@@ -200,6 +208,7 @@ public class SimplecomponentPackageImpl extends EPackageImpl implements Simpleco
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getHardwareComponent() {
 		return hardwareComponentEClass;
 	}
@@ -209,6 +218,7 @@ public class SimplecomponentPackageImpl extends EPackageImpl implements Simpleco
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getHardwareComponent_AbstractComponent() {
 		return (EReference) hardwareComponentEClass.getEStructuralFeatures().get(0);
 	}
@@ -218,6 +228,7 @@ public class SimplecomponentPackageImpl extends EPackageImpl implements Simpleco
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SimplecomponentFactory getSimplecomponentFactory() {
 		return (SimplecomponentFactory) getEFactoryInstance();
 	}
@@ -237,8 +248,9 @@ public class SimplecomponentPackageImpl extends EPackageImpl implements Simpleco
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated)
+		if (isCreated) {
 			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -272,8 +284,9 @@ public class SimplecomponentPackageImpl extends EPackageImpl implements Simpleco
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized)
+		if (isInitialized) {
 			return;
+		}
 		isInitialized = true;
 
 		// Initialize package

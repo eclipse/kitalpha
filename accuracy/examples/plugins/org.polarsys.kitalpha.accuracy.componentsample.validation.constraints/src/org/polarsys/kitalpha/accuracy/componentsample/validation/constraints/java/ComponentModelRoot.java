@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -13,7 +13,6 @@ package org.polarsys.kitalpha.accuracy.componentsample.validation.constraints.ja
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.polarsys.kitalpha.validation.java.provider.generic.IJavaConstraint;
-import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentModel;
 
 /**
  * 
@@ -28,8 +27,9 @@ public class ComponentModelRoot implements IJavaConstraint<EObject> {
 	@Override
 	public boolean isValid(EObject object) {
 		EObject root = EcoreUtil.getRootContainer(object);
-		if (object == root)
+		if (object == root) {
 			return true;
+		}
 		return root instanceof ComponentModel;
 	}
 

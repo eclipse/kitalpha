@@ -127,6 +127,7 @@ public abstract class AbstractMDERichTextWidget implements MDERichTextWidget {
 		return !text.equals(storedText) || (storedText == null && !"".equals(text));
 	}
 	
+	@Override
 	public SaveStrategy getSaveStrategy(){
 		return this.saveStrategy;
 	}

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,7 +41,9 @@ public class EcoreIdentifierUtil {
       return getLiteralIdentifier((EEnumLiteral) element_p);
     }
     if (element_p == null)
-      return ""; //$NON-NLS-1$ 
+	 {
+		return ""; //$NON-NLS-1$ 
+	}
 
     return element_p.getName();
   }
@@ -52,7 +54,9 @@ public class EcoreIdentifierUtil {
    */
   private static String getFeatureIdentifier(EStructuralFeature feature_p) {
     if (feature_p == null)
-      return ""; //$NON-NLS-1$
+	 {
+		return ""; //$NON-NLS-1$
+	}
     return getEClassifierIdentifier(feature_p.getEContainingClass()) + SEP + feature_p.getName();
   }
 
@@ -62,7 +66,9 @@ public class EcoreIdentifierUtil {
    */
   private static String getLiteralIdentifier(EEnumLiteral lit_p) {
     if (lit_p == null)
-      return ""; //$NON-NLS-1$
+	 {
+		return ""; //$NON-NLS-1$
+	}
     return getEClassifierIdentifier(lit_p.getEEnum()) + SEP + lit_p.getName();
   }
 
@@ -72,7 +78,9 @@ public class EcoreIdentifierUtil {
    */
   private static String getEClassifierIdentifier(EClassifier classifier_p) {
     if (classifier_p == null)
-      return ""; //$NON-NLS-1$
+	 {
+		return ""; //$NON-NLS-1$
+	}
     return getEPackageIdentifier(classifier_p.getEPackage()) + SEP + classifier_p.getName();
   }
 
@@ -81,10 +89,11 @@ public class EcoreIdentifierUtil {
    * @return
    */
   private static String getEPackageIdentifier(EPackage package_p) {
-    if (package_p == null)
-      return ""; //$NON-NLS-1$
-    else if (package_p.getESuperPackage() != null)
-      return getEPackageIdentifier(package_p.getESuperPackage()) + SEP + package_p.getName();
+    if (package_p == null) {
+		return ""; //$NON-NLS-1$
+	} else if (package_p.getESuperPackage() != null) {
+		return getEPackageIdentifier(package_p.getESuperPackage()) + SEP + package_p.getName();
+	}
     return package_p.getName();
   }
 }

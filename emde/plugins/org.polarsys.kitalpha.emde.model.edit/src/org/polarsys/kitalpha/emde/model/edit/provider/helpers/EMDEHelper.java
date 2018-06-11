@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -280,8 +280,9 @@ public final class EMDEHelper {
 	}
 
 	private static void clear(ResourceSet set) {
-		for (Resource r : set.getResources())
+		for (Resource r : set.getResources()) {
 			r.unload();
+		}
 		set.getResources().clear();
 	}
 

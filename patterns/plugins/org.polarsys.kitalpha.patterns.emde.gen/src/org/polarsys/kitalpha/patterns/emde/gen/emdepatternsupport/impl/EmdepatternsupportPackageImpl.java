@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2014 THALES GLOBAL SERVICES.
+ * Copyright (c) 2006, 2018 THALES GLOBAL SERVICES.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -72,7 +72,9 @@ public class EmdepatternsupportPackageImpl extends EPackageImpl implements Emdep
 	 * @generated
 	 */
   public static EmdepatternsupportPackage init() {
-		if (isInited) return (EmdepatternsupportPackage)EPackage.Registry.INSTANCE.getEPackage(EmdepatternsupportPackage.eNS_URI);
+		if (isInited) {
+			return (EmdepatternsupportPackage)EPackage.Registry.INSTANCE.getEPackage(EmdepatternsupportPackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
 		EmdepatternsupportPackageImpl theEmdepatternsupportPackage = (EmdepatternsupportPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof EmdepatternsupportPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new EmdepatternsupportPackageImpl());
@@ -103,7 +105,8 @@ public class EmdepatternsupportPackageImpl extends EPackageImpl implements Emdep
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EClass getEmdePatternInstanceSet() {
+  @Override
+public EClass getEmdePatternInstanceSet() {
 		return emdePatternInstanceSetEClass;
 	}
 
@@ -112,7 +115,8 @@ public class EmdepatternsupportPackageImpl extends EPackageImpl implements Emdep
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EmdepatternsupportFactory getEmdepatternsupportFactory() {
+  @Override
+public EmdepatternsupportFactory getEmdepatternsupportFactory() {
 		return (EmdepatternsupportFactory)getEFactoryInstance();
 	}
 
@@ -131,7 +135,9 @@ public class EmdepatternsupportPackageImpl extends EPackageImpl implements Emdep
 	 * @generated
 	 */
   public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated) {
+			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -153,7 +159,9 @@ public class EmdepatternsupportPackageImpl extends EPackageImpl implements Emdep
 	 * @generated
 	 */
   public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized) {
+			return;
+		}
 		isInitialized = true;
 
 		// Initialize package

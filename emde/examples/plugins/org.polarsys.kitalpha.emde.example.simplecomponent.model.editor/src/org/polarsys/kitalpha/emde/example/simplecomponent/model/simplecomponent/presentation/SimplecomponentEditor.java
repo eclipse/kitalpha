@@ -14,30 +14,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.EventObject;
-import java.util.HashMap;
-import java.util.HashMap;
-import java.util.HashMap;
-import java.util.HashMap;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map;
-import java.util.Map;
-import java.util.Map;
-import java.util.Map;
-
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.resources.IResource;
@@ -49,10 +32,6 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.command.BasicCommandStack;
 import org.eclipse.emf.common.command.Command;
@@ -68,10 +47,6 @@ import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EValidator;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EContentAdapter;
@@ -95,9 +70,6 @@ import org.eclipse.emf.edit.ui.util.EditUIMarkerHelper;
 import org.eclipse.emf.edit.ui.util.EditUIUtil;
 import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 import org.polarsys.kitalpha.emde.example.simplecomponent.model.simplecomponent.provider.SimplecomponentItemProviderAdapterFactory;
-import org.polarsys.kitalpha.emde.example.simplecomponent.model.simplecomponent.provider.SimplecomponentItemProviderAdapterFactory;
-import org.polarsys.kitalpha.emde.example.simplecomponent.model.simplecomponent.provider.SimplecomponentItemProviderAdapterFactory;
-import org.polarsys.kitalpha.emde.example.simplecomponent.model.simplecomponent.provider.SimplecomponentItemProviderAdapterFactory;
 import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.IStatusLineManager;
@@ -112,10 +84,6 @@ import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
-import org.eclipse.jface.viewers.StructuredSelection;
-import org.eclipse.jface.viewers.StructuredSelection;
-import org.eclipse.jface.viewers.StructuredSelection;
-import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.StructuredViewer;
 import org.eclipse.jface.viewers.TreeViewer;
@@ -149,7 +117,6 @@ import org.eclipse.ui.views.contentoutline.IContentOutlinePage;
 import org.eclipse.ui.views.properties.IPropertySheetPage;
 import org.eclipse.ui.views.properties.PropertySheet;
 import org.eclipse.ui.views.properties.PropertySheetPage;
-import org.polarsys.kitalpha.emde.example.simplecomponent.model.simplecomponent.provider.SimplecomponentItemProviderAdapterFactory;
 import org.polarsys.kitalpha.emde.extension.ExtendedModel;
 import org.polarsys.kitalpha.emde.extension.ExtensibleModel;
 import org.polarsys.kitalpha.emde.extension.ModelExtensionDescriptor;
@@ -286,6 +253,7 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 	 * @generated
 	 */
 	protected IPartListener partListener = new IPartListener() {
+		@Override
 		public void partActivated(IWorkbenchPart p) {
 			if (p instanceof ContentOutline) {
 				if (((ContentOutline) p).getCurrentPage() == contentOutlinePage) {
@@ -303,18 +271,22 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 			}
 		}
 
+		@Override
 		public void partBroughtToTop(IWorkbenchPart p) {
 			// Ignore.
 		}
 
+		@Override
 		public void partClosed(IWorkbenchPart p) {
 			// Ignore.
 		}
 
+		@Override
 		public void partDeactivated(IWorkbenchPart p) {
 			// Ignore.
 		}
 
+		@Override
 		public void partOpened(IWorkbenchPart p) {
 			// Ignore.
 		}
@@ -372,6 +344,7 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 				switch (notification.getFeatureID(Resource.class)) {
 				case Resource.RESOURCE__IS_LOADED:
 					getSite().getShell().getDisplay().asyncExec(new Runnable() {
+						@Override
 						public void run() {
 							getEmdeViewerFilterActions((Resource) notification.getNotifier());
 						}
@@ -388,6 +361,7 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 
 					if (updateProblemIndication) {
 						getSite().getShell().getDisplay().asyncExec(new Runnable() {
+							@Override
 							public void run() {
 								updateProblemIndication();
 							}
@@ -419,6 +393,7 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 	 * @generated
 	 */
 	protected IResourceChangeListener resourceChangeListener = new IResourceChangeListener() {
+		@Override
 		public void resourceChanged(IResourceChangeEvent event) {
 			IResourceDelta delta = event.getDelta();
 			try {
@@ -427,6 +402,7 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 					protected Collection<Resource> changedResources = new ArrayList<Resource>();
 					protected Collection<Resource> removedResources = new ArrayList<Resource>();
 
+					@Override
 					public boolean visit(IResourceDelta delta) {
 						if (delta.getResource().getType() == IResource.FILE) {
 							if (delta.getKind() == IResourceDelta.REMOVED || delta.getKind() == IResourceDelta.CHANGED
@@ -460,6 +436,7 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 
 				if (!visitor.getRemovedResources().isEmpty()) {
 					getSite().getShell().getDisplay().asyncExec(new Runnable() {
+						@Override
 						public void run() {
 							removedResources.addAll(visitor.getRemovedResources());
 							if (!isDirty()) {
@@ -471,6 +448,7 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 
 				if (!visitor.getChangedResources().isEmpty()) {
 					getSite().getShell().getDisplay().asyncExec(new Runnable() {
+						@Override
 						public void run() {
 							changedResources.addAll(visitor.getChangedResources());
 							if (getSite().getPage().getActiveEditor() == SimplecomponentEditor.this) {
@@ -655,8 +633,10 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 		// Add a listener to set the most recent command's affected objects to be the selection of the viewer with focus.
 		//
 		commandStack.addCommandStackListener(new CommandStackListener() {
+			@Override
 			public void commandStackChanged(final EventObject event) {
 				getContainer().getDisplay().asyncExec(new Runnable() {
+					@Override
 					public void run() {
 						firePropertyChange(IEditorPart.PROP_DIRTY);
 
@@ -705,6 +685,7 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 		//
 		if (theSelection != null && !theSelection.isEmpty()) {
 			Runnable runnable = new Runnable() {
+				@Override
 				public void run() {
 					// Try to select the items in the current content viewer of the editor.
 					//
@@ -724,6 +705,7 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EditingDomain getEditingDomain() {
 		return editingDomain;
 	}
@@ -798,6 +780,7 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 				selectionChangedListener = new ISelectionChangedListener() {
 					// This just notifies those things that are affected by the section.
 					//
+					@Override
 					public void selectionChanged(SelectionChangedEvent selectionChangedEvent) {
 						setSelection(selectionChangedEvent.getSelection());
 					}
@@ -831,6 +814,7 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Viewer getViewer() {
 		return currentViewer;
 	}
@@ -848,11 +832,13 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 	/**
 	 * @generated
 	 */
+	@Override
 	public void modelEnabled(String nsURI) {
 		for (Collection<EmdeViewerFilterAction> actionList : viewerFilterActions.values()) {
 			for (EmdeViewerFilterAction action : actionList) {
-				if (action.getExtendedModel().getName().equals(nsURI))
+				if (action.getExtendedModel().getName().equals(nsURI)) {
 					action.setChecked(true);
+				}
 			}
 		}
 
@@ -861,11 +847,13 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 	/**
 	 * @generated
 	 */
+	@Override
 	public void modelDisabled(String nsURI) {
 		for (Collection<EmdeViewerFilterAction> actionList : viewerFilterActions.values()) {
 			for (EmdeViewerFilterAction action : actionList) {
-				if (action.getExtendedModel().getName().equals(nsURI))
+				if (action.getExtendedModel().getName().equals(nsURI)) {
 					action.setChecked(false);
+				}
 			}
 		}
 	}
@@ -1039,6 +1027,7 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 			setPageText(pageIndex, getString("_UI_SelectionPage_label")); //$NON-NLS-1$
 
 			getSite().getShell().getDisplay().asyncExec(new Runnable() {
+				@Override
 				public void run() {
 					setActivePage(0);
 				}
@@ -1062,6 +1051,7 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 		});
 
 		getSite().getShell().getDisplay().asyncExec(new Runnable() {
+			@Override
 			public void run() {
 				updateProblemIndication();
 			}
@@ -1214,6 +1204,7 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 			contentOutlinePage.addSelectionChangedListener(new ISelectionChangedListener() {
 				// This ensures that we handle selections correctly.
 				//
+				@Override
 				public void selectionChanged(SelectionChangedEvent event) {
 					handleContentOutlineSelection(event.getSelection());
 				}
@@ -1413,6 +1404,7 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void gotoMarker(IMarker marker) {
 		try {
 			if (marker.getType().equals(EValidator.MARKER)) {
@@ -1461,6 +1453,7 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void addSelectionChangedListener(ISelectionChangedListener listener) {
 		selectionChangedListeners.add(listener);
 	}
@@ -1470,6 +1463,7 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void removeSelectionChangedListener(ISelectionChangedListener listener) {
 		selectionChangedListeners.remove(listener);
 	}
@@ -1480,6 +1474,7 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 	 * end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISelection getSelection() {
 		return editorSelection;
 	}
@@ -1490,6 +1485,7 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSelection(ISelection selection) {
 		editorSelection = selection;
 
@@ -1559,6 +1555,7 @@ public class SimplecomponentEditor extends MultiPageEditorPart implements IEditi
 	 * 
 	 * @generated
 	 */
+	@Override
 	public void menuAboutToShow(IMenuManager menuManager) {
 		((IMenuListener) getEditorSite().getActionBarContributor()).menuAboutToShow(menuManager);
 	}

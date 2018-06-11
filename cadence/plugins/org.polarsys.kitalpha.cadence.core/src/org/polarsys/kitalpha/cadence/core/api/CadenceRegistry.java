@@ -60,8 +60,9 @@ public class CadenceRegistry {
 	 public static String getDescription(IConfigurationElement element){
 		IConfigurationElement[] children =  element.getChildren(CadenceExtensions.ATT_DESCRIPTION);
 		String res = ""; //$NON-NLS-1$
-		if(children != null)
+		if(children != null) {
 			res = children[0].getValue();
+		}
 		return res;
 	 }
 	 

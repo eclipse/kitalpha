@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016, 2018 Thales Global Services S.A.S.
  *   All rights reserved. This program and the accompanying materials
  *   are made available under the terms of the Eclipse Public License v1.0
  *   which accompanies this distribution, and is available at
@@ -117,8 +117,9 @@ public class SiriusViewpointRepresentationHandler {
 	 * Append commands to delete all DView from the architecture Descriptioin viewpoints
 	 */
 	private void deleteDViews(){
-		if (usedSiriusViewpoints == null)
+		if (usedSiriusViewpoints == null) {
 			return ;
+		}
 		Collection<DView> ownedViews = session.getOwnedViews();
 		for (org.eclipse.sirius.viewpoint.description.Viewpoint viewpoint : usedSiriusViewpoints) {
 			for (final DView dView : ownedViews) {
@@ -449,8 +450,9 @@ public class SiriusViewpointRepresentationHandler {
 			}
 		}
 		cleanCommand.dispose();
-		if (usedSiriusViewpoints != null)
+		if (usedSiriusViewpoints != null) {
 			usedSiriusViewpoints.clear();
+		}
 	}
 	
 	/**

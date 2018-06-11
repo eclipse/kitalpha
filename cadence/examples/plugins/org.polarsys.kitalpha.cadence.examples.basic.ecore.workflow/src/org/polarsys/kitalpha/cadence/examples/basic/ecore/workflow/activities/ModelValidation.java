@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -51,13 +51,16 @@ public class ModelValidation implements IActivity {
 			int nbInfo = 0;
 
 			for (Diagnostic d : diagnostic.getChildren()) {
-				if (d.getSeverity() == Diagnostic.ERROR)
+				if (d.getSeverity() == Diagnostic.ERROR) {
 					nbError++;
-				if (d.getSeverity() == Diagnostic.WARNING)
+				}
+				if (d.getSeverity() == Diagnostic.WARNING) {
 					nbWarning++;
+				}
 
-				if (d.getSeverity() == Diagnostic.INFO)
+				if (d.getSeverity() == Diagnostic.INFO) {
 					nbInfo++;
+				}
 			}
 			String message = "ERROR in the semantic model : " + nbError
 					+ " errors and " + nbWarning + " warnings or " + nbInfo

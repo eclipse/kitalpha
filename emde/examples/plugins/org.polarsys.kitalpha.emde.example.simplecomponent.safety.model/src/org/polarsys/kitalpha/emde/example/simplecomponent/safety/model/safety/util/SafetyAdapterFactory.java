@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,7 +15,6 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.polarsys.kitalpha.emde.example.simplecomponent.model.simplecomponent.ComponentElement;
-import org.polarsys.kitalpha.emde.example.simplecomponent.safety.model.safety.*;
 import org.polarsys.kitalpha.emde.example.simplecomponent.safety.model.safety.SafetyPackage;
 import org.polarsys.kitalpha.emde.example.simplecomponent.safety.model.safety.SimpleVPSafety;
 import org.polarsys.kitalpha.emde.model.Element;

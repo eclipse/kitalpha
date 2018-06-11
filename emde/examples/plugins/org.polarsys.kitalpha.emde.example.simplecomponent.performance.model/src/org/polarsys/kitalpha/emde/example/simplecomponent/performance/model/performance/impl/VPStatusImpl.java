@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -79,6 +79,7 @@ public class VPStatusImpl extends ComponentElementImpl implements VPStatus {
 	 * @generated
 	 */
 
+	@Override
 	public boolean isOverhead() {
 
 		return overhead;
@@ -90,13 +91,15 @@ public class VPStatusImpl extends ComponentElementImpl implements VPStatus {
 	 * @generated
 	 */
 
+	@Override
 	public void setOverhead(boolean newOverhead) {
 
 		boolean oldOverhead = overhead;
 		overhead = newOverhead;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, PerformancePackage.VP_STATUS__OVERHEAD, oldOverhead,
 					overhead));
+		}
 
 	}
 
@@ -165,8 +168,9 @@ public class VPStatusImpl extends ComponentElementImpl implements VPStatus {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (overhead: "); //$NON-NLS-1$

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -86,8 +86,9 @@ public class ResourceReuseSelectionDialog extends TitleAreaDialog {
 		criteria.setVersion(versionText.getText());
 		criteria.setDomain(domainText.getText());
 		criteria.getTags().clear();
-		for (StringValue sv : tags)
+		for (StringValue sv : tags) {
 			criteria.getTags().add(sv.value);
+		}
 		
 		Resource[] resources = null;
 		setErrorMessage(null);
@@ -166,8 +167,9 @@ public class ResourceReuseSelectionDialog extends TitleAreaDialog {
 		matchingResourceViewer.setLabelProvider(new LabelProvider() {
 			@Override
 			public String getText(Object element) {
-				if (element instanceof Resource)
+				if (element instanceof Resource) {
 					return ((Resource)element).getName();
+				}
 				return super.getText(element);
 			}
 		});
@@ -336,8 +338,9 @@ public class ResourceReuseSelectionDialog extends TitleAreaDialog {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				IStructuredSelection selection = (IStructuredSelection) viewer.getSelection();
-				for (Object obj : selection.toArray())
+				for (Object obj : selection.toArray()) {
 					data.remove(obj);
+				}
 				viewer.refresh();
 				deleteButton.setEnabled(false);
 			}

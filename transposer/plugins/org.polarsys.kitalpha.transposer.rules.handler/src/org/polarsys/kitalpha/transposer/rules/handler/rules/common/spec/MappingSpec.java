@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -103,8 +103,9 @@ public class MappingSpec extends MappingImpl {
     List<MappingElement> availableMappingElements = Collections.<MappingElement> emptyList();
     Class<?> objectClass = domainHelper_p.getDomainMetaclass(object_p);
 
-    if (objectClass != null)
-      availableMappingElements = resolveAllAvailableMappingElements(objectClass);
+    if (objectClass != null) {
+		availableMappingElements = resolveAllAvailableMappingElements(objectClass);
+	}
 
     if (availableMappingElements.size() == 0) {
       // There is no MappingElement that can handle this object in this Mapping
@@ -152,8 +153,9 @@ public class MappingSpec extends MappingImpl {
       throw new MappingPossibilityResolutionException(e);
     }
 
-    if (mappingElement == null)
-      return null;
+    if (mappingElement == null) {
+		return null;
+	}
 
     return mappingElement.getApplicablePossibility(object_p);
 
@@ -165,8 +167,9 @@ public class MappingSpec extends MappingImpl {
   @Override
   public MappingElement getOwnedMappingElement(Class<?> domainClass_p) {
     MappingElement result = null;
-    if (domainClassToMappingElement.containsKey(domainClass_p))
-      result = domainClassToMappingElement.get(domainClass_p);
+    if (domainClassToMappingElement.containsKey(domainClass_p)) {
+		result = domainClassToMappingElement.get(domainClass_p);
+	}
 
     for (MappingElement mappingElement : getAllOwnedMappingElements()) {
       if (domainClass_p.equals(mappingElement.getDomainMetaClass())) {
@@ -204,8 +207,9 @@ public class MappingSpec extends MappingImpl {
       completeDescription.append(extendedPurpose.getName());
       completeDescription.append(IDescriptionBuilderContants.NEW_LINE);
       completeDescription.append(IDescriptionBuilderContants.EXTENDS_MAPPING);
-    } else
-      completeDescription.append(IDescriptionBuilderContants.EXTENDS);
+    } else {
+		completeDescription.append(IDescriptionBuilderContants.EXTENDS);
+	}
 
     completeDescription.append(this.getExtendedMapping().getCompleteDescription());
 
@@ -220,12 +224,14 @@ public class MappingSpec extends MappingImpl {
     IPurpose purpose = getPurpose();
     EList<Mapping> mappingHierarchyForPurpose = new BasicEList<Mapping>();
 
-    if (purpose == null)
-      return mappingHierarchyForPurpose;
+    if (purpose == null) {
+		return mappingHierarchyForPurpose;
+	}
 
     for (Mapping child : getExtenders()) {
-      if (purpose.equals(child.getPurpose()))
-        mappingHierarchyForPurpose.add(child);
+      if (purpose.equals(child.getPurpose())) {
+		mappingHierarchyForPurpose.add(child);
+	}
     }
     return mappingHierarchyForPurpose;
   }

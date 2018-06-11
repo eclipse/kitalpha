@@ -111,8 +111,9 @@ public class ShowService {
 		Collection<EObject> toReturn = new UniqueEList<>();
 		for (EObject current : listTemp) 
 		{
-			if (current instanceof EReference)
+			if (current instanceof EReference) {
 				toReturn.add(current.eContainer());
+			}
 		}
 		return toReturn;
 	}

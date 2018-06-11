@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,15 +33,17 @@ class StringValue {
 
 	public static List<StringValue> toStringValueList(List<String> tags) {
 		List<StringValue> result = new ArrayList<StringValue>();
-		for (String value : tags)
+		for (String value : tags) {
 			result.add(new StringValue(value));
+		}
 		return result;
 	}
 
 	public static Collection<String> toStringList(List<StringValue> list) {
 		List<String> result = new ArrayList<String>();
-		for (StringValue value : list)
+		for (StringValue value : list) {
 			result.add(value.value);
+		}
 		return result;
 	}
 

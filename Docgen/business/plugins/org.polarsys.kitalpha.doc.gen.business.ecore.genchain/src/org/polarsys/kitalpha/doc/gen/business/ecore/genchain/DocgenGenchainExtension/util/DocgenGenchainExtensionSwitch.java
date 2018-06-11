@@ -1,5 +1,13 @@
-/**
- */
+/*******************************************************************************
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *  
+ * Contributors:
+ *   Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
 package org.polarsys.kitalpha.doc.gen.business.ecore.genchain.DocgenGenchainExtension.util;
 
 import org.eclipse.egf.portfolio.genchain.generationChain.DocumentationGeneration;
@@ -74,17 +82,29 @@ public class DocgenGenchainExtensionSwitch<T> extends Switch<T> {
 			case DocgenGenchainExtensionPackage.KITALPHA_DOCUMENTATION_GENERATION: {
 				KitalphaDocumentationGeneration kitalphaDocumentationGeneration = (KitalphaDocumentationGeneration)theEObject;
 				T result = caseKitalphaDocumentationGeneration(kitalphaDocumentationGeneration);
-				if (result == null) result = caseDocumentationGeneration(kitalphaDocumentationGeneration);
-				if (result == null) result = caseEcoreElement(kitalphaDocumentationGeneration);
-				if (result == null) result = casePluginProvider(kitalphaDocumentationGeneration);
-				if (result == null) result = caseGenerationElement(kitalphaDocumentationGeneration);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseDocumentationGeneration(kitalphaDocumentationGeneration);
+				}
+				if (result == null) {
+					result = caseEcoreElement(kitalphaDocumentationGeneration);
+				}
+				if (result == null) {
+					result = casePluginProvider(kitalphaDocumentationGeneration);
+				}
+				if (result == null) {
+					result = caseGenerationElement(kitalphaDocumentationGeneration);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			case DocgenGenchainExtensionPackage.KITALPHA_DOCUMENTATION_GENERATION_BRANDING: {
 				KitalphaDocumentationGenerationBranding kitalphaDocumentationGenerationBranding = (KitalphaDocumentationGenerationBranding)theEObject;
 				T result = caseKitalphaDocumentationGenerationBranding(kitalphaDocumentationGenerationBranding);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			default: return defaultCase(theEObject);

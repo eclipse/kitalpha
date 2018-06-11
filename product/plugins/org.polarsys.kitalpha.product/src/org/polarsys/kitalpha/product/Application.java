@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2013 THALES GLOBAL SERVICES.
+ * Copyright (c) 2013, 2018 THALES GLOBAL SERVICES.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -110,6 +110,7 @@ public class Application implements IApplication, IExecutableExtension {
 	 * 
 	 * @see org.eclipse.equinox.app.IApplication#start(org.eclipse.equinox.app. IApplicationContext context)
 	 */
+	@Override
 	public Object start(IApplicationContext appContext) throws Exception {
 		Display display = createDisplay();
 		// processor must be created before we start event loop
@@ -166,8 +167,9 @@ public class Application implements IApplication, IExecutableExtension {
 				display.dispose();
 			}
 			Location instanceLoc = Platform.getInstanceLocation();
-			if (instanceLoc != null)
+			if (instanceLoc != null) {
 				instanceLoc.release();
+			}
 		}
 	}
 
@@ -185,6 +187,7 @@ public class Application implements IApplication, IExecutableExtension {
 	 * 
 	 * @see org.eclipse.core.runtime.IExecutableExtension#setInitializationData(org .eclipse.core.runtime.IConfigurationElement, java.lang.String, java.lang.Object)
 	 */
+	@Override
 	public void setInitializationData(IConfigurationElement config, String propertyName, Object data) {
 		// There is nothing to do for IDEApplication
 	}
@@ -280,8 +283,9 @@ public class Application implements IApplication, IExecutableExtension {
 	@SuppressWarnings("rawtypes")
 	private static boolean isDevLaunchMode(Map args) {
 		// see org.eclipse.pde.internal.core.PluginPathFinder.isDevLaunchMode()
-		if (Boolean.getBoolean("eclipse.pde.launch")) //$NON-NLS-1$
+		if (Boolean.getBoolean("eclipse.pde.launch")) {
 			return true;
+		}
 		return args.containsKey("-pdelaunch"); //$NON-NLS-1$
 	}
 
@@ -539,15 +543,19 @@ public class Application implements IApplication, IExecutableExtension {
 	 * 
 	 * @see org.eclipse.equinox.app.IApplication#stop()
 	 */
+	@Override
 	public void stop() {
 		final IWorkbench workbench = PlatformUI.getWorkbench();
-		if (workbench == null)
+		if (workbench == null) {
 			return;
+		}
 		final Display display = workbench.getDisplay();
 		display.syncExec(new Runnable() {
+			@Override
 			public void run() {
-				if (!display.isDisposed())
+				if (!display.isDisposed()) {
 					workbench.close();
+				}
 			}
 		});
 	}

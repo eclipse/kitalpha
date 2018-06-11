@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -58,8 +58,9 @@ public class ReportContentProvider implements ITreeContentProvider {
 	public Object[] getElements(Object inputElement) {
 		if (inputElement == ReportRegistry.INSTANCE) {
 			List<LogEntry> result = new ArrayList<LogEntry>();
-			for (ReportList list : ReportsUI.getDisplayedLists())
+			for (ReportList list : ReportsUI.getDisplayedLists()) {
 				result.addAll(list.getReports());
+			}
 			return result.toArray();
 		}
 		return ArrayContentProvider.getInstance().getElements(inputElement);
@@ -72,8 +73,9 @@ public class ReportContentProvider implements ITreeContentProvider {
 	 */
 	@Override
 	public Object[] getChildren(Object parentElement) {
-		if (parentElement instanceof LogEntry)
+		if (parentElement instanceof LogEntry) {
 			return ((LogEntry) parentElement).getDetails().toArray();
+		}
 		return new Object[0];
 	}
 

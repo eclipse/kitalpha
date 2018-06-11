@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -61,8 +61,9 @@ public class ResourceSearchDialog extends Dialog {
 	public ResourceSearchDialog(Shell parentShell, SearchCriteria criteria) {
 		super(parentShell);
 		this.criteria = criteria;
-		if (criteria == null)
+		if (criteria == null) {
 			throw new NullPointerException();
+		}
 		setShellStyle(getShellStyle() | SWT.MAX | SWT.RESIZE);
 	}
 
@@ -239,8 +240,9 @@ public class ResourceSearchDialog extends Dialog {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				IStructuredSelection selection = (IStructuredSelection) viewer.getSelection();
-				for (Object obj : selection.toArray())
+				for (Object obj : selection.toArray()) {
 					data.remove(obj);
+				}
 				viewer.refresh();
 				deleteButton.setEnabled(false);
 			}

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2014 THALES GLOBAL SERVICES.
+ * Copyright (c) 2006, 2018 THALES GLOBAL SERVICES.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.util.Switch;
 import org.polarsys.kitalpha.emde.model.Element;
 import org.polarsys.kitalpha.emde.model.ElementExtension;
 import org.polarsys.kitalpha.emde.model.ExtensibleElement;
-import org.polarsys.kitalpha.patterns.emde.gen.emdepatternsupport.*;
 import org.polarsys.kitalpha.patterns.emde.gen.emdepatternsupport.EmdePatternInstanceSet;
 import org.polarsys.kitalpha.patterns.emde.gen.emdepatternsupport.EmdepatternsupportPackage;
 
@@ -84,14 +83,30 @@ public class EmdepatternsupportSwitch<T> extends Switch<T> {
 			case EmdepatternsupportPackage.EMDE_PATTERN_INSTANCE_SET: {
 				EmdePatternInstanceSet emdePatternInstanceSet = (EmdePatternInstanceSet)theEObject;
 				T result = caseEmdePatternInstanceSet(emdePatternInstanceSet);
-				if (result == null) result = caseElementExtension(emdePatternInstanceSet);
-				if (result == null) result = caseCommonPatternInstanceSet(emdePatternInstanceSet);
-				if (result == null) result = caseExtensibleElement(emdePatternInstanceSet);
-				if (result == null) result = caseAbstractIdentifiedElement(emdePatternInstanceSet);
-				if (result == null) result = caseIPatternInstanceMarker(emdePatternInstanceSet);
-				if (result == null) result = caseElement(emdePatternInstanceSet);
-				if (result == null) result = caseIIdentifiedElement(emdePatternInstanceSet);
-				if (result == null) result = defaultCase(theEObject);
+				if (result == null) {
+					result = caseElementExtension(emdePatternInstanceSet);
+				}
+				if (result == null) {
+					result = caseCommonPatternInstanceSet(emdePatternInstanceSet);
+				}
+				if (result == null) {
+					result = caseExtensibleElement(emdePatternInstanceSet);
+				}
+				if (result == null) {
+					result = caseAbstractIdentifiedElement(emdePatternInstanceSet);
+				}
+				if (result == null) {
+					result = caseIPatternInstanceMarker(emdePatternInstanceSet);
+				}
+				if (result == null) {
+					result = caseElement(emdePatternInstanceSet);
+				}
+				if (result == null) {
+					result = caseIIdentifiedElement(emdePatternInstanceSet);
+				}
+				if (result == null) {
+					result = defaultCase(theEObject);
+				}
 				return result;
 			}
 			default: return defaultCase(theEObject);

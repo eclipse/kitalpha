@@ -52,14 +52,16 @@ public class ModelBasedRegistry extends ResourceRegistry {
 		if (set != null && !set.isEmpty()) {
 			for (Entry<String, Set<String>> entry : user2concern.entrySet()) {
 				for (String concern : entry.getValue()) {
-					if (set.contains(concern))
+					if (set.contains(concern)) {
 						entry.getValue().remove(concern);
+					}
 				}
 			}
 			for (Entry<String, Set<String>> entry : used2concern.entrySet()) {
 				for (String concern : entry.getValue()) {
-					if (set.contains(concern))
+					if (set.contains(concern)) {
 						entry.getValue().remove(concern);
+					}
 				}
 			}
 			set.clear();
@@ -89,8 +91,9 @@ public class ModelBasedRegistry extends ResourceRegistry {
 	@Override
 	public void dispose() {
 		super.dispose();
-		if (reader != null && reader instanceof Disposable)
+		if (reader != null && reader instanceof Disposable) {
 			((Disposable) reader).dispose();
+		}
 		bundle2resource.clear();
 		bundle2resource.clear();
 	}

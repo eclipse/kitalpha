@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,34 +36,43 @@ public abstract class ModelBasedReader implements Constants, ResourceReader {
 		res.setProviderSymbolicName(symbolicName);
 		res.setProviderLocation(getLocation());
 		IPluginAttribute attribute = element.getAttribute("id");
-		if (attribute != null)
+		if (attribute != null) {
 			res.setId(attribute.getValue().trim());
+		}
 		attribute = element.getAttribute("name");
-		if (attribute != null)
+		if (attribute != null) {
 			res.setName(attribute.getValue().trim());
+		}
 		attribute = element.getAttribute("weight");
-		if (attribute != null)
+		if (attribute != null) {
 			res.setWeight(Integer.parseInt(attribute.getValue()));
+		}
 		attribute = element.getAttribute("domain");
-		if (attribute != null)
+		if (attribute != null) {
 			res.setDomain(attribute.getValue().trim());
+		}
 		attribute = element.getAttribute("description");
-		if (attribute != null)
+		if (attribute != null) {
 			res.setDescription(attribute.getValue().trim());
+		}
 		attribute = element.getAttribute("version");
-		if (attribute != null)
+		if (attribute != null) {
 			res.setVersion(attribute.getValue().trim());
+		}
 		attribute = element.getAttribute("path");
-		if (attribute != null)
+		if (attribute != null) {
 			res.setPath(attribute.getValue().trim());
+		}
 		attribute = element.getAttribute("metadata");
-		if (attribute != null)
+		if (attribute != null) {
 			res.setMetadataPath(attribute.getValue().trim());
+		}
 		attribute = element.getAttribute("tags");
 		if (attribute != null) {
 			String tags = attribute.getValue();
-			for (String tag : tags.split(","))
+			for (String tag : tags.split(",")) {
 				res.getTags().add(tag.trim());
+			}
 		}
 		return res;
 	}
@@ -95,6 +104,7 @@ public abstract class ModelBasedReader implements Constants, ResourceReader {
 		}
 	}
 
+	@Override
 	public ResourceRegistry readResources(ResourceRegistry parent) {
 		registry = new ModelBasedRegistry(parent, this);
 		for (IPluginModelBase model : getModels()) {

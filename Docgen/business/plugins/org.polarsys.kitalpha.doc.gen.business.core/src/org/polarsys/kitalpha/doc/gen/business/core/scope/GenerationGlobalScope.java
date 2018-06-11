@@ -25,7 +25,6 @@ import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.emf.transaction.impl.TransactionalEditingDomainImpl;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.polarsys.kitalpha.doc.gen.business.core.messages.Messages;
 
@@ -64,8 +63,9 @@ public class GenerationGlobalScope {
 	 * Singleton getter.
 	 */
 	public static GenerationGlobalScope getInstance(){
-		if (instance == null)
+		if (instance == null) {
 			instance = new GenerationGlobalScope();
+		}
 		
 		return instance;
 	}
@@ -111,8 +111,9 @@ public class GenerationGlobalScope {
 		if (this.domain != null)
 		{
 			final ResourceSet resourceSet = this.domain.getResourceSet();
-			if (resourceSet != null && this.scopedResource != null)
+			if (resourceSet != null && this.scopedResource != null) {
 				resourceSet.getResources().remove(this.scopedResource);
+			}
 		}
 	}
 	
@@ -164,8 +165,9 @@ public class GenerationGlobalScope {
 					for (Entry<EObject, EObject> entry : this.copier.entrySet()) 
 					{
 						final EObject value = entry.getValue();
-						if (value != null && value.equals(modelElement))
+						if (value != null && value.equals(modelElement)) {
 							return entry.getKey();
+						}
 					}
 				}
 			}
@@ -180,8 +182,9 @@ public class GenerationGlobalScope {
 	 * @return True if the copy of the original model element is in scope. False otherwise.
 	 */
 	public final boolean isCopyInScope(EObject modelElement){
-		if (scopeStatus.equals(ScopeStatus.NOT_LIMITED))
+		if (scopeStatus.equals(ScopeStatus.NOT_LIMITED)) {
 			return true;
+		}
 		
 		if (this.copier != null)
 		{
@@ -201,11 +204,13 @@ public class GenerationGlobalScope {
 	 * @throws ScopeException
 	 */
 	public final Resource getScopedResource() throws ScopeException{
-		if (this.referencesStrategy.equals(ScopeReferencesStrategy.EXPORT))
+		if (this.referencesStrategy.equals(ScopeReferencesStrategy.EXPORT)) {
 			throw new ScopeException(Messages.Scope_No_Resource_For_Export_References_Strategy);
+		}
 		
-		if (this.scopedResource == null || this.doComputeScopedResource)
+		if (this.scopedResource == null || this.doComputeScopedResource) {
 			this.scopedResource = computeScopedResource();
+		}
 		
 		return this.scopedResource;
 	}
@@ -284,8 +289,9 @@ public class GenerationGlobalScope {
 		while (eAllContents.hasNext()) 
 		{
 			final EObject eObject = eAllContents.next();
-			if (! GenerationGlobalScope.getInstance().inScope(eObject, true))
+			if (! GenerationGlobalScope.getInstance().inScope(eObject, true)) {
 				result.add(eObject);
+			}
 		}
 		
 		return result;
@@ -300,8 +306,9 @@ public class GenerationGlobalScope {
 		if (this.referencesStrategy.equals(ScopeReferencesStrategy.DONT_EXPORT))
 		{
 			// Create a copy of the original resource if it not exists yet. 
-			if (this.scopedResource == null)
+			if (this.scopedResource == null) {
 				this.scopedResource = copyResource(modelElement);
+			}
 			
 			// Replace the model element from the original resource by the created copy.
 			modelElement = this.copier.get(modelElement);
@@ -309,8 +316,9 @@ public class GenerationGlobalScope {
 		
 		// Compute Scope for the current element and add it to the global scope
 		List<EObject> scope = ScopeCompute.computeScope(modelElement, this.elementStrategy);
-		if (! scope.isEmpty())
+		if (! scope.isEmpty()) {
 			addToGenerationScope(scope);
+		}
 
 		scopeStatus = ScopeStatus.LIMITED;
 	}
@@ -352,15 +360,16 @@ public class GenerationGlobalScope {
 	 * </ul>
 	 */
 	public boolean inScope(EObject eObject, boolean forceEqualCheck){
-		if (scopeStatus.equals(ScopeStatus.NOT_LIMITED))
+		if (scopeStatus.equals(ScopeStatus.NOT_LIMITED)) {
 			return true;
+		}
 		
 		if (! generationScope.isEmpty())
 		{
 			final boolean exists = generationScope.contains(eObject);
-			if (exists)
+			if (exists) {
 				return true;
-			else
+			} else
 			{
 				if (forceEqualCheck)
 				{
@@ -368,8 +377,9 @@ public class GenerationGlobalScope {
 					for (EObject iEObject : generationScope) 
 					{
 						final boolean equals = EcoreUtil.equals(eObject, iEObject);
-						if (equals)
+						if (equals) {
 							return true;
+						}
 					}
 				}
 			}

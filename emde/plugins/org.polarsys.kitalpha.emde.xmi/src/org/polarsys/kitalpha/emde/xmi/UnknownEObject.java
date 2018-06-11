@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,14 +47,17 @@ public class UnknownEObject implements Resource.Diagnostic {
 		this(resource, anyType, new SAXLocator(0, 0));
 	}
 
+	@Override
 	public int getColumn() {
 		return locator.getColumnNumber();
 	}
 
+	@Override
 	public int getLine() {
 		return locator.getLineNumber();
 	}
 
+	@Override
 	public String getLocation() {
 		return getResource().getURI().toString();
 	}
@@ -63,6 +66,7 @@ public class UnknownEObject implements Resource.Diagnostic {
 		return locator;
 	}
 
+	@Override
 	public String getMessage() {
 		String result = message;
 		if (locator.getLineNumber() != 0) {

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -55,28 +55,32 @@ public class PrecedencePremise<T> extends EObjectImpl implements IPremise, Doubl
   /**
    * @see org.polarsys.kitalpha.transposer.rules.handler.util.Doublet#getFirstElement()
    */
-  public T getFirstElement() {
+  @Override
+public T getFirstElement() {
     return _firstElement;
   }
 
   /**
    * @see org.polarsys.kitalpha.transposer.rules.handler.util.Doublet#getSecondElement()
    */
-  public String getSecondElement() {
+  @Override
+public String getSecondElement() {
     return _secondElement;
   }
 
   /**
    * @see org.polarsys.kitalpha.transposer.rules.handler.util.Doublet#setFirstElement(java.lang.Object)
    */
-  public void setFirstElement(T firstElement_p) {
+  @Override
+public void setFirstElement(T firstElement_p) {
     _firstElement = firstElement_p;
   }
 
   /**
    * @see org.polarsys.kitalpha.transposer.rules.handler.util.Doublet#setSecondElement(java.lang.Object)
    */
-  public void setSecondElement(String secondElement_p) {
+  @Override
+public void setSecondElement(String secondElement_p) {
     _secondElement = secondElement_p;
   }
 

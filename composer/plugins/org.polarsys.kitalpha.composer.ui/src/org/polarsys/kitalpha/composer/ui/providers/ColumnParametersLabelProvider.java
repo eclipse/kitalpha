@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,6 +29,7 @@ public class ColumnParametersLabelProvider extends ColumnLabelProvider {
 	 * 
 	 * @see org.eclipse.jface.viewers.ColumnLabelProvider#getText(java.lang.Object)
 	 */
+	@Override
 	public String getText(Object element) {
 		if (element instanceof Parameter) {
 			Parameter entry = (Parameter) element;
@@ -49,6 +50,7 @@ public class ColumnParametersLabelProvider extends ColumnLabelProvider {
 	 * 
 	 * @see org.eclipse.jface.viewers.CellLabelProvider#getToolTipText(java.lang.Object)
 	 */
+	@Override
 	public String getToolTipText(Object element) {
 		if (element instanceof Parameter) {
 			return ((Parameter) element).getDescription();

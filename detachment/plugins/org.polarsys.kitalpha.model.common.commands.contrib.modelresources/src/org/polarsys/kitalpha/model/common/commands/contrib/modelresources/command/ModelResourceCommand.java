@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -288,8 +288,9 @@ public class ModelResourceCommand extends ModelCommand {
 		EList<EObject> contents = resource.getContents();
 		
 		for (EObject eObject : contents) {
-			if (eObject instanceof DAnalysis)
+			if (eObject instanceof DAnalysis) {
 				return (DAnalysis)eObject;
+			}
 		}
 		
 		return null;
@@ -337,8 +338,9 @@ public class ModelResourceCommand extends ModelCommand {
 		EList<Adapter> adapters = eObject.eAdapters();
 
 		for (Adapter adapter : adapters) {
-			if (adapter instanceof ECrossReferenceAdapter)
+			if (adapter instanceof ECrossReferenceAdapter) {
 				return (ECrossReferenceAdapter)adapter;
+			}
 		}
 
 		return installCrossReferencer(eObject);

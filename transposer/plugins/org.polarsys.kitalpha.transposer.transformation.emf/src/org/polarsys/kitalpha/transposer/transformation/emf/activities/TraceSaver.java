@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,19 +46,22 @@ public class TraceSaver implements IActivity, ITransposerWorkflow {
   /**
    * @see org.polarsys.kitalpha.cadence.core.api.IActivity#getParameters()
    */
-  public Collection<DeclaredParameter> getParameters() {
+  @Override
+public Collection<DeclaredParameter> getParameters() {
     return null;
   }
 
   /**
    * @see org.polarsys.kitalpha.cadence.core.api.IActivity#run(org.polarsys.kitalpha.cadence.core.api.parameter.ActivityParameters)
    */
-  public IStatus run(ActivityParameters activityParams_p) {
+  @Override
+public IStatus run(ActivityParameters activityParams_p) {
     IContext context = (IContext) activityParams_p.getParameter(TRANSPOSER_CONTEXT).getValue();
     TraceRepository tracesRepo = null;
 
-    if (context == null)
-    	return new Status(IStatus.ERROR, TransposerEMFPlugin.PLUGIN_ID, "Context in not initialized in the Transposer Workflow");
+    if (context == null) {
+		return new Status(IStatus.ERROR, TransposerEMFPlugin.PLUGIN_ID, "Context in not initialized in the Transposer Workflow");
+	}
     
     if (context.exists(TraceLoader.TRANSPOSER_TRACE_REPOSITORY)) {
       tracesRepo = (TraceRepository) context.get(TraceLoader.TRANSPOSER_TRACE_REPOSITORY);
@@ -69,8 +72,9 @@ public class TraceSaver implements IActivity, ITransposerWorkflow {
       handleTraces(tracesRepo, (GenericTransformationContext) context);
     }
 
-    if (tracesRepo != null)
-      saveTraceModel(tracesRepo, context);
+    if (tracesRepo != null) {
+		saveTraceModel(tracesRepo, context);
+	}
 
     return Status.OK_STATUS;
   }
@@ -85,14 +89,17 @@ public class TraceSaver implements IActivity, ITransposerWorkflow {
     if (helper != null) {
       for (org.polarsys.kitalpha.transposer.transformation.trace.Trace agnosticTrace : helper.getTraces()) {
         Trace emfTrace = TracesFactory.eINSTANCE.createTrace();
-        if (isHandled(agnosticTrace.getSource()))
-          emfTrace.setSource((EObject) agnosticTrace.getSource());
-        if (isHandled(agnosticTrace.getTarget()))
-          emfTrace.setTarget((EObject) agnosticTrace.getTarget());
+        if (isHandled(agnosticTrace.getSource())) {
+			emfTrace.setSource((EObject) agnosticTrace.getSource());
+		}
+        if (isHandled(agnosticTrace.getTarget())) {
+			emfTrace.setTarget((EObject) agnosticTrace.getTarget());
+		}
         emfTrace.setRole(agnosticTrace.getRole());
 
-        if (emfTrace.getSource() != null && emfTrace.getTarget() != null && emfTrace.getRole() != null)
-          rep_p.getTraces().add(emfTrace);
+        if (emfTrace.getSource() != null && emfTrace.getTarget() != null && emfTrace.getRole() != null) {
+			rep_p.getTraces().add(emfTrace);
+		}
       }
     }
   }
@@ -116,8 +123,9 @@ public class TraceSaver implements IActivity, ITransposerWorkflow {
     // Extract resource set from context
     if (null != context_p.get(ResourceUtil.TRANSPOSER_RESOURCE_SET)) {
       Object set = context_p.get(ResourceUtil.TRANSPOSER_RESOURCE_SET);
-      if (set instanceof ResourceSet)
-        rs = (ResourceSet) set;
+      if (set instanceof ResourceSet) {
+		rs = (ResourceSet) set;
+	}
     } else {
       rs = new ResourceSetImpl();
       context_p.put(ResourceUtil.TRANSPOSER_RESOURCE_SET, rs);
@@ -131,7 +139,8 @@ public class TraceSaver implements IActivity, ITransposerWorkflow {
   /**
    * @see org.polarsys.kitalpha.cadence.core.api.IActivity#validateParameters(org.polarsys.kitalpha.cadence.core.api.parameter.ActivityParameters)
    */
-  public Map<String, ParameterError<?>> validateParameters(ActivityParameters valuedParameters_p) {
+  @Override
+public Map<String, ParameterError<?>> validateParameters(ActivityParameters valuedParameters_p) {
     return null;
   }
 

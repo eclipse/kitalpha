@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -51,6 +51,7 @@ public class GeneratorTypeWidget extends AbstractComposerWidget {
 	/* (non-Javadoc)
 	 * @see org.polarsys.kitalpha.composer.ui.launch.tabs.IComposerComponent#createContents(org.eclipse.swt.widgets.Composite)
 	 */
+	@Override
 	public void createContents(Composite parent) {
 		 createWidget(parent, "Generation Type", "Choose the generation Type",false);
 		 attachListeners();
@@ -67,6 +68,7 @@ public class GeneratorTypeWidget extends AbstractComposerWidget {
 	/* (non-Javadoc)
 	 * @see org.polarsys.kitalpha.composer.ui.launch.tabs.IComposerComponent#initialize()
 	 */
+	@Override
 	public void initialize() {
 		IConfigurationElement[] binding = CodeManagerExtensions
 		.getAllBindingExtensions();
@@ -77,6 +79,7 @@ public class GeneratorTypeWidget extends AbstractComposerWidget {
 	/* (non-Javadoc)
 	 * @see org.polarsys.kitalpha.composer.ui.launch.tabs.IComposerComponent#updateSelection(org.eclipse.core.runtime.IConfigurationElement)
 	 */
+	@Override
 	public void updateSelection(IConfigurationElement selectedElement) {
 		if (selectedElement != this.selectedAllocationBinding) {
 			selectedAllocationBinding = selectedElement;
@@ -115,6 +118,7 @@ public Viewer createWidget(Composite parent_p, String name_p, String comboxText_
 		return viewer;
 	}
 
+@Override
 public final Viewer getViewer() {
 	return viewer;
 }

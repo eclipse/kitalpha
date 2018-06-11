@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -187,6 +187,7 @@ public class HTMLDocumentationBrandingWizardPage extends WizardPage {
 		logoPathText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		logoPathText.setEnabled(false);
 		logoPathText.addModifyListener(new ModifyListener() {
+			@Override
 			public void modifyText(ModifyEvent e) {
 				dialogChanged();
 			}
@@ -195,6 +196,7 @@ public class HTMLDocumentationBrandingWizardPage extends WizardPage {
 		Button button = new Button(container, SWT.PUSH);
 		button.setText(Messages.HTMLDocumentationGenerationWizardPage_browse_text);
 		button.addSelectionListener(new SelectionAdapter() {
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				imageSelection();
 			}

@@ -66,6 +66,7 @@ public class OCLConstraintDescriptor extends
 		this(namespace, requirementId, invariantId, constraint, null, code, validationInfo);
 	}
 
+	@Override
 	public String getBody() {
 		return constraint.getSpecification().getBodyExpression().toString();
 	}
@@ -74,6 +75,7 @@ public class OCLConstraintDescriptor extends
 		return constraint;
 	}
 
+	@Override
 	public String getDescription() {
 		/*
 		 * return the body message
@@ -81,30 +83,37 @@ public class OCLConstraintDescriptor extends
 		return getMessagePattern();
 	}
 
+	@Override
 	public EvaluationMode<?> getEvaluationMode() {
 		return EvaluationMode.BATCH;
 	}
 
+	@Override
 	public String getMessagePattern() {
 		return this.errorMessage;
 	}
 
+	@Override
 	public String getName() {
 		return name;
 	}
 
+	@Override
 	public ConstraintSeverity getSeverity() {
 		return severity;
 	}
 
+	@Override
 	public int getStatusCode() {
 		return code;
 	}
 
+	@Override
 	public boolean targetsEvent(Notification notification) {
 		return false;
 	}
 
+	@Override
 	public boolean targetsTypeOf(EObject eObject) {
 		return constraint.getSpecification().getContextVariable().getType()
 				.isInstance(eObject);

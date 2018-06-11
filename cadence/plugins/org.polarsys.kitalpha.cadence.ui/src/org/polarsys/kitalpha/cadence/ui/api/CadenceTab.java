@@ -59,6 +59,7 @@ public class CadenceTab extends AbstractLaunchConfigurationTab {
 		workflowElements = CadenceRegistry.getAllWorkflowElement(workflow);
 	}
 
+	@Override
 	public void createControl(Composite parent) {
 
 		Composite comp = new Composite(parent, SWT.NONE);
@@ -115,7 +116,9 @@ public class CadenceTab extends AbstractLaunchConfigurationTab {
 		for(IConfigurationElement elt : workflowElements){
 			String order = CadenceRegistry.getOrderNumber(elt);
 			if(order == null)
+			 {
 				order = "1000" + elt.hashCode(); ////$NON-NLS-1$
+			}
 			l.put(Integer.valueOf(order) + elt.hashCode(),elt);
 		}
 	
@@ -127,10 +130,12 @@ public class CadenceTab extends AbstractLaunchConfigurationTab {
 
 	}
 
+	@Override
 	public String getName() {
 		return "Cadence"; //$NON-NLS-1$
 	}
 
+	@Override
 	public Image getImage() {
 		String img = "icons/cadence.png";//$NON-NLS-1$
 		ImageDescriptor descriptor =  Activator.imageDescriptorFromPlugin(Activator.PLUGIN_ID, img);
@@ -138,6 +143,7 @@ public class CadenceTab extends AbstractLaunchConfigurationTab {
 		
 	}
 	
+	@Override
 	@SuppressWarnings("unchecked")
 	public void initializeFrom(ILaunchConfiguration configuration) {
 		try {
@@ -172,12 +178,14 @@ public class CadenceTab extends AbstractLaunchConfigurationTab {
 		return save1;
 	}
 
+	@Override
 	public void performApply(ILaunchConfigurationWorkingCopy configuration) {
 		configuration.setAttribute(
 				ICadenceLaunchConfigurationConstants.PARAMETERS_ACTIVITIES,
 				getParameters());
 	}
 
+	@Override
 	public void setDefaults(ILaunchConfigurationWorkingCopy configuration) {
 		configuration.setContainer(null);
 	}
@@ -191,6 +199,7 @@ public class CadenceTab extends AbstractLaunchConfigurationTab {
 		description.setText(message);
 	}
 	
+	@Override
 	public Shell getShell(){
 		return super.getShell();
 	}

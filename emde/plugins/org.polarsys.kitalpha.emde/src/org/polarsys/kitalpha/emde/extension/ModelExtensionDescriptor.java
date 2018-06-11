@@ -54,8 +54,9 @@ public class ModelExtensionDescriptor {
 		//
 		for (Map.Entry<String, URIFactory> entry : ItemProviderAdapterFactoriesRegistryProvider.getItemProviderAdapterFactories().entrySet()) {
 			try {
-				if (discardedModels.contains(entry.getKey()))
+				if (discardedModels.contains(entry.getKey())) {
 					continue;
+				}
 				// Process extensible model
 				//
 				ExtensibleModel extensibleModel = new ExtensibleModel(entry.getKey(), entry.getValue());
@@ -78,17 +79,20 @@ public class ModelExtensionDescriptor {
 					} catch (Exception e1) {
 						System.out.println();
 					}
-					if (extender == null)
+					if (extender == null) {
 						continue;
+					}
 					String factory = null;
 					try {
-						if (extender.getClass().getDeclaringClass() != null)
+						if (extender.getClass().getDeclaringClass() != null) {
 							factory = extender.getClass().getDeclaringClass().getName();
+						}
 					} catch (NoClassDefFoundError e) {
 						String name = extender.getClass().getName();
 						int indexOf = name.indexOf("$");
-						if (indexOf != -1)
+						if (indexOf != -1) {
 							factory = name.substring(0, indexOf);
+						}
 					}
 					if (factory != null) {
 

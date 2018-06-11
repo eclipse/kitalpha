@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,11 +35,13 @@ public abstract class AbstractCycleWiseScheduler implements IScheduler {
 	/**
 	 * @return the collection of backtracks
 	 */
+	@Override
 	public abstract Set<Edge<?>> getBackTracks();
 
 	/**
 	 * @return the model
 	 */
+	@Override
 	public Graph getModel() {
 		return _model;
 	}
@@ -47,8 +49,10 @@ public abstract class AbstractCycleWiseScheduler implements IScheduler {
 	/**
 	 * @return the collection of elements not visited
 	 */
+	@Override
 	public abstract Set<Vertex<?>> getNotVisited();
 
+	@Override
 	public abstract List<ITransposerTask<Vertex<?>>> getScheduleResult();
 
 	/**
@@ -58,6 +62,7 @@ public abstract class AbstractCycleWiseScheduler implements IScheduler {
 		return _TopologicalSorter;
 	}
 
+	@Override
 	public abstract Set<Vertex<?>> getVisited();
 
 	/**
@@ -66,6 +71,7 @@ public abstract class AbstractCycleWiseScheduler implements IScheduler {
 	 * ignored).
 	 */
 
+	@Override
 	public abstract void schedule(Comparator<Vertex<?>> comparator_p,
 			IProgressMonitor monitor_p);
 
@@ -73,6 +79,7 @@ public abstract class AbstractCycleWiseScheduler implements IScheduler {
 	 * @param model_p
 	 *            the model to set
 	 */
+	@Override
 	public void setModel(Graph model_p) {
 		_model = model_p;
 	}

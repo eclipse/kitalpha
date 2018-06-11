@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -58,15 +58,18 @@ public class EmdeEcoreImporterHelper extends EcoreImporterHelper {
 		};
 		Pattern searchPattern = Pattern.compile("");
 		TextSearchEngine.create().search(fScope, collector, searchPattern, null);
-		if (genModelFile.object == null)
+		if (genModelFile.object == null) {
 			throw new IllegalStateException("Cannot find genmodel for model " + ecorePath);
+		}
 		URI uri = URI.createPlatformResourceURI(genModelFile.object.getFullPath().toString(), false);
 		Resource resource = resourceSet.getResource(uri, true);
 		if (resource != null && !resource.getContents().isEmpty()) {
-			for (EObject obj : resource.getContents())
+			for (EObject obj : resource.getContents()) {
 				genModel.getUsedGenPackages().addAll(((GenModel) obj).getGenPackages());
-		} else
+			}
+		} else {
 			super.handleMissingGenmodel(resourceSet, genModel, ecorePath);
+		}
 	}
 
 }

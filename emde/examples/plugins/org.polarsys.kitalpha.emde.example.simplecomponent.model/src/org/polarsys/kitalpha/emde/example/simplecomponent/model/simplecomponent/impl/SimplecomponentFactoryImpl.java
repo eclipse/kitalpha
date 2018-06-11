@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.polarsys.kitalpha.emde.example.simplecomponent.model.simplecomponent.*;
 import org.polarsys.kitalpha.emde.example.simplecomponent.model.simplecomponent.ComponentModel;
 import org.polarsys.kitalpha.emde.example.simplecomponent.model.simplecomponent.HardwareComponent;
 import org.polarsys.kitalpha.emde.example.simplecomponent.model.simplecomponent.SimplecomponentFactory;
@@ -82,6 +81,7 @@ public class SimplecomponentFactoryImpl extends EFactoryImpl implements Simpleco
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComponentModel createComponentModel() {
 		ComponentModelImpl componentModel = new ComponentModelImpl();
 		return componentModel;
@@ -92,6 +92,7 @@ public class SimplecomponentFactoryImpl extends EFactoryImpl implements Simpleco
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SoftwareComponent createSoftwareComponent() {
 		SoftwareComponentImpl softwareComponent = new SoftwareComponentImpl();
 		return softwareComponent;
@@ -102,6 +103,7 @@ public class SimplecomponentFactoryImpl extends EFactoryImpl implements Simpleco
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public HardwareComponent createHardwareComponent() {
 		HardwareComponentImpl hardwareComponent = new HardwareComponentImpl();
 		return hardwareComponent;
@@ -112,6 +114,7 @@ public class SimplecomponentFactoryImpl extends EFactoryImpl implements Simpleco
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SimplecomponentPackage getSimplecomponentPackage() {
 		return (SimplecomponentPackage) getEPackage();
 	}

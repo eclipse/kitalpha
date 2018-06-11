@@ -1,5 +1,13 @@
-/**
- */
+/*******************************************************************************
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *  
+ * Contributors:
+ *   Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
 package org.polarsys.kitalpha.doc.gen.business.ecore.genchain.DocgenGenchainExtension.impl;
 
 import org.eclipse.egf.portfolio.genchain.generationChain.GenerationChainPackage;
@@ -108,6 +116,7 @@ public class DocgenGenchainExtensionPackageImpl extends EPackageImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getKitalphaDocumentationGeneration() {
 		return kitalphaDocumentationGenerationEClass;
 	}
@@ -117,6 +126,7 @@ public class DocgenGenchainExtensionPackageImpl extends EPackageImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getKitalphaDocumentationGeneration_BrandingData() {
 		return (EReference)kitalphaDocumentationGenerationEClass.getEStructuralFeatures().get(0);
 	}
@@ -126,6 +136,7 @@ public class DocgenGenchainExtensionPackageImpl extends EPackageImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getKitalphaDocumentationGenerationBranding() {
 		return kitalphaDocumentationGenerationBrandingEClass;
 	}
@@ -135,6 +146,7 @@ public class DocgenGenchainExtensionPackageImpl extends EPackageImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getKitalphaDocumentationGenerationBranding_Copyright() {
 		return (EAttribute)kitalphaDocumentationGenerationBrandingEClass.getEStructuralFeatures().get(0);
 	}
@@ -144,6 +156,7 @@ public class DocgenGenchainExtensionPackageImpl extends EPackageImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getKitalphaDocumentationGenerationBranding_LogoPath() {
 		return (EAttribute)kitalphaDocumentationGenerationBrandingEClass.getEStructuralFeatures().get(1);
 	}
@@ -153,6 +166,7 @@ public class DocgenGenchainExtensionPackageImpl extends EPackageImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getKitalphaDocumentationGenerationBranding_LogoAlt() {
 		return (EAttribute)kitalphaDocumentationGenerationBrandingEClass.getEStructuralFeatures().get(2);
 	}
@@ -162,6 +176,7 @@ public class DocgenGenchainExtensionPackageImpl extends EPackageImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DocgenGenchainExtensionFactory getDocgenGenchainExtensionFactory() {
 		return (DocgenGenchainExtensionFactory)getEFactoryInstance();
 	}

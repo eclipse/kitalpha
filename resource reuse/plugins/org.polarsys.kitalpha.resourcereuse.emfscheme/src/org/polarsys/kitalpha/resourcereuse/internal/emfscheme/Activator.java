@@ -23,10 +23,12 @@ public class Activator implements BundleActivator {
 	public static final String PLUGIN_ID = "org.polarsys.kitalpha.resourcereuse.emfscheme";
 	private static Activator plugin;
 
+	@Override
 	public void start(BundleContext bundleContext) throws Exception {
 		plugin = this;
 	}
 
+	@Override
 	public void stop(BundleContext bundleContext) throws Exception {
 		plugin = null;
 	}

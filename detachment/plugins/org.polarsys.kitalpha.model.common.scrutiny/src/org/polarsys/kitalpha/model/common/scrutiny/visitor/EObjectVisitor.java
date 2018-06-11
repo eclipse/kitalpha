@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -27,15 +27,18 @@ public abstract class EObjectVisitor {
 	Set<EObject> visitedEObjects = new HashSet<EObject>();
 
 	public void accept(Resource resource) {
-		if (resource == null)
+		if (resource == null) {
 			return;
+		}
 
-		if (visitedResources.contains(resource))
+		if (visitedResources.contains(resource)) {
 			return;
+		}
 		visitedResources.add(resource);
 
-		if (!visit(resource))
+		if (!visit(resource)) {
 			return;
+		}
 
 		for (Iterator<EObject> i = resource.getAllContents(); i.hasNext();) {
 			EObject eObject = i.next();
@@ -55,15 +58,18 @@ public abstract class EObjectVisitor {
 	}
 
 	protected void internalAccept(EObject eObject) {
-		if (eObject == null)
+		if (eObject == null) {
 			return;
+		}
 
-		if (visitedEObjects.contains(eObject))
+		if (visitedEObjects.contains(eObject)) {
 			return;
+		}
 		visitedEObjects.add(eObject);
 
-		if (!visit(eObject))
+		if (!visit(eObject)) {
 			return;
+		}
 
 		accept(eObject.eResource());
 

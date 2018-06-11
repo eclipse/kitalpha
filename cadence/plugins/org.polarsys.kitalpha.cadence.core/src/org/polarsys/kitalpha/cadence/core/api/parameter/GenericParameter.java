@@ -35,10 +35,11 @@ public class GenericParameter<T> {
 	  this.value =  value;
 	  this.description = description;
 	  
-	  if(value != null)
-		  this.parameterType = (Class<T>)value.getClass();
-	  else 
-		  this.parameterType = (Class<T>)Void.class;
+	  if(value != null) {
+		this.parameterType = (Class<T>)value.getClass();
+	} else {
+		this.parameterType = (Class<T>)Void.class;
+	}
 		
 	}
 	

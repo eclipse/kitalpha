@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,28 +32,32 @@ public abstract class AbstractTransposerTask<TaskContent> implements ITransposer
   /**
    * @return the taskContent
    */
-  public TaskContent getTaskContent() {
+  @Override
+public TaskContent getTaskContent() {
     return _taskContent;
   }
 
   /**
    * @return the isCompletelyTransposable
    */
-  public boolean isCompletelyTransposable() {
+  @Override
+public boolean isCompletelyTransposable() {
     return _isCompletelyTransposable;
   }
 
   /**
    * @param isCompletelyTransposable_p the isCompletelyTransposable to set
    */
-  public void setCompletelyTransposable(boolean isCompletelyTransposable_p) {
+  @Override
+public void setCompletelyTransposable(boolean isCompletelyTransposable_p) {
     _isCompletelyTransposable = isCompletelyTransposable_p;
   }
 
   /**
    * @param taskContent_p the taskContent to set
    */
-  public void setTaskContent(TaskContent taskContent_p) {
+  @Override
+public void setTaskContent(TaskContent taskContent_p) {
     _taskContent = taskContent_p;
   }
 }

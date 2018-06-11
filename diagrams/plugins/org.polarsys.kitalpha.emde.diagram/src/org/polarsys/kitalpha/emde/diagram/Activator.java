@@ -41,7 +41,8 @@ public class Activator extends AbstractUIPlugin {
      * 
      * @see org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext)
      */
-    public void start(BundleContext context) throws Exception {
+    @Override
+	public void start(BundleContext context) throws Exception {
       super.start(context);
 	  plugin = this;
 	  viewpoints.clear();
@@ -53,7 +54,8 @@ public class Activator extends AbstractUIPlugin {
      * 
      * @see org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.BundleContext)
      */
-    public void stop(BundleContext context) throws Exception {
+    @Override
+	public void stop(BundleContext context) throws Exception {
     	plugin = null;
 	    for (final Viewpoint viewpoint: viewpoints) {
 		ViewpointRegistry.getInstance().disposeFromPlugin(viewpoint);

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2010-2018 Thales Corporate Services S.A.S.
+ * Copyright (c) 2010, 2018 Thales Corporate Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -58,8 +58,9 @@ public class DocGenHtmlUtil {
 	public static String getModelName(EObject element) {
 		if (element.eContainer() == null) {
 			return LabelProviderHelper.getText(element);
-		} else
+		} else {
 			return getModelName(element.eContainer());
+		}
 	}
 
 	/**
@@ -70,8 +71,9 @@ public class DocGenHtmlUtil {
 	 */
 	public static String getValidFileName(String fileName) {
 
-		if (fileName == null || (fileName.trim().length() == 0))
+		if (fileName == null || (fileName.trim().length() == 0)) {
 			return UNKNOWN_ELEMENT;
+		}
 
 		fileName = fileName.replaceAll("[^a-zA-Z 0-9 _]","");
 		return fileName;
@@ -98,8 +100,9 @@ public class DocGenHtmlUtil {
 		for (String member : outputFolder.split("/|\\\\")) { //$NON-NLS-1$
 			path = path.append(member);
 			IFolder folder = project.getFolder(path);
-			if (!folder.exists())
+			if (!folder.exists()) {
 				folder.create(true, true, null);
+			}
 		}
 
 		path = path.append(fileName);
@@ -126,10 +129,11 @@ public class DocGenHtmlUtil {
 		try {
 			IFile file = DocGenHtmlUtil.getFile(fileName, projectName,
 					outputFolder);
-			if (file.exists())
+			if (file.exists()) {
 				file.setContents(outputContent, true, false, null);
-			else
+			} else {
 				file.create(outputContent, true, null);
+			}
 		} catch (CoreException e) {
 			Activator.logError(e.getMessage(), e);
 		}
@@ -203,8 +207,9 @@ public class DocGenHtmlUtil {
 	 */
 	public static String displayValidString(String value) {
 
-		if (value == null)
+		if (value == null) {
 			return DocGenHtmlConstants.EMPTY_STRING;
+		}
 
 		return value;
 	}

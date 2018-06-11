@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -66,7 +66,8 @@ public class EdgeSpec<ContentClass> extends EdgeImpl<ContentClass> {
   @Override
   public void update(Vertex<?> sourceVertex, Vertex<?> targetVertex, ContentClass edgeContent, String edgeName, boolean isCriticalEdge) {
     update(sourceVertex, targetVertex, edgeName, isCriticalEdge);
-    if (edgeContent instanceof EObject)
-      setContent(edgeContent);
+    if (edgeContent instanceof EObject) {
+		setContent(edgeContent);
+	}
   }
 } // EdgeSpec

@@ -71,9 +71,9 @@ public class EcoreService {
 					DNodeList nodeList = ((DNodeList)arg0);
 					final EObject target = nodeList.getTarget();
 					return target != null && target instanceof EClass;
-				}
-				else
+				} else {
 					return false;
+				}
 			}
 		};
 		
@@ -134,8 +134,9 @@ public class EcoreService {
 			final EList<EOperation> eAllOperations = curentEClass.getEAllOperations();
 			for (EOperation eOperation : eAllOperations) 
 			{
-				if (eOperation.getEType() instanceof EClass )
+				if (eOperation.getEType() instanceof EClass ) {
 					result.add((EClass) eOperation.getEType());
+				}
 			}
 		}
 		
@@ -207,9 +208,9 @@ public class EcoreService {
 					DNodeList nodeList = ((DNodeList)arg0);
 					final EObject target = nodeList.getTarget();
 					return target != null && target instanceof EEnum;
-				}
-				else
+				} else {
 					return false;
+				}
 			}
 		};
 		
@@ -237,8 +238,9 @@ public class EcoreService {
 			while (references.hasNext()) 
 			{
 				EReference eReference = (EReference) references.next();
-				if ( eReference.getEType() != null)
-				result.add((EClass) eReference.getEType());
+				if ( eReference.getEType() != null) {
+					result.add((EClass) eReference.getEType());
+				}
 			}
 			
 			// Handle EOperation types. 
@@ -248,8 +250,9 @@ public class EcoreService {
 			{
 				for(EOperation eOperation : eAllOperations)
 				{
-					if (eOperation.getEType() != null && eOperation.getEType() instanceof EClass)
+					if (eOperation.getEType() != null && eOperation.getEType() instanceof EClass) {
 						result.add((EClass)eOperation.getEType());
+					}
 				}
 			}
 		
@@ -287,10 +290,11 @@ public class EcoreService {
 				EClass firstSP = subClass.getESuperTypes().get(0);
 				if (firstSP != null) 
 				{
-					if (firstSP.equals(parentClass)) 
+					if (firstSP.equals(parentClass)) {
 						return true;
-					else 
+					} else {
 						return isImplemented(firstSP, parentClass);
+					}
 				} 
 				else 
 				{
@@ -323,8 +327,9 @@ public class EcoreService {
 			List<EClass> result = new UniqueEList<EClass>();
 			for (EClass sp : source.getEAllSuperTypes()) 
 			{
-				if (sp.getEAllSuperTypes().contains(destination))
+				if (sp.getEAllSuperTypes().contains(destination)) {
 					result.add(sp);
+				}
 			}
 			return result;
 		} 
@@ -362,10 +367,11 @@ public class EcoreService {
 			superTypes.retainAll(eClassList);
 
 			// Return the result(s)
-			if (superTypes.size() <= 1) 
+			if (superTypes.size() <= 1) {
 				return superTypes;
-			else 
+			} else {
 				return nearestSuperTypes(superTypes);
+			}
 		} 
 		else 
 		{
@@ -384,8 +390,9 @@ public class EcoreService {
 		List<EClass> result = new UniqueEList<EClass>();
 		for (EClass c : local) 
 		{
-			if (myComparator.compare(first, c) == 0) 
+			if (myComparator.compare(first, c) == 0) {
 				result.add(c);
+			}
 		}
 
 		if (result.size() > 0) 
@@ -395,8 +402,9 @@ public class EcoreService {
 			{
 				for (EClass y : result) 
 				{
-					if (myComparator.compare(x, y) < 0)
+					if (myComparator.compare(x, y) < 0) {
 						local.add(y);
+					}
 				}
 			}
 			result.removeAll(local);
@@ -487,6 +495,7 @@ public class EcoreService {
 			Comparator<EAttribute> {
 		public static MyEClassComparator myEClassComparator = new MyEClassComparator();
 
+		@Override
 		public int compare(EAttribute o1, EAttribute o2) {
 			return myEClassComparator.compare((EClass) o1.eContainer(), (EClass) o2.eContainer());
 		}
@@ -501,6 +510,7 @@ public class EcoreService {
 			Comparator<EOperation> {
 		public static MyEClassComparator myEClassComparator = new MyEClassComparator();
 
+		@Override
 		public int compare(EOperation o1, EOperation o2) {
 			return myEClassComparator.compare((EClass) o1.eContainer(), (EClass) o2.eContainer());
 		}
@@ -513,12 +523,15 @@ public class EcoreService {
 	 */
 	public static class MyEClassComparator implements Comparator<EClass> {
 
+		@Override
 		public int compare(EClass o1, EClass o2) {
-			if (o1.getEAllSuperTypes().contains(o2))
+			if (o1.getEAllSuperTypes().contains(o2)) {
 				return -1;
+			}
 			
-			if (o2.getEAllSuperTypes().contains(o1))
+			if (o2.getEAllSuperTypes().contains(o1)) {
 				return 1;
+			}
 			
 			return 0;
 		}
@@ -541,10 +554,11 @@ public class EcoreService {
 	 */
 
 	public boolean hasNotDisplayedSuperType(EClass eClass, EObject parent, Collection<EObject> nodeList) {
-		if (eClass != null) 
+		if (eClass != null) {
 			return mostAbstractObject(eClass, nodeList).contains(parent);
-		else 
+		} else {
 			return false;
+		}
 	}
 	
 	/**
@@ -582,12 +596,14 @@ public class EcoreService {
 		List<EClass> potentialList = new UniqueEList<EClass>();
 		for (EClass node : eClassList) 
 		{
-			if (node.getEAllSuperTypes().contains(root))
+			if (node.getEAllSuperTypes().contains(root)) {
 				potentialList.add(node);
+			}
 		}
 		// If there is only one or none potential node
-		if (potentialList.size() < 2) 
+		if (potentialList.size() < 2) {
 			return potentialList;
+		}
 		
 		// If there is more than one potential node
 		Session session = SessionManager.INSTANCE.getSession(root);
@@ -612,10 +628,11 @@ public class EcoreService {
 		Collection<EClass> rest = new UniqueEList<EClass>();
 		for (EClass c : collection) 
 		{
-			if (potentialList.contains(c)) 
+			if (potentialList.contains(c)) {
 				result.add(c);
-			else 
+			} else {
 				rest.add(c);
+			}
 		}
 		
 		if (rest.size() == 0 && result.size() > 0) 
@@ -672,8 +689,9 @@ public class EcoreService {
 		List<EClass> result = new UniqueEList<EClass>();
 		for (EObject o : collection) 
 		{
-			if (o instanceof EClass)
+			if (o instanceof EClass) {
 				result.add((EClass) o);
+			}
 		}
 		return result;
 	}

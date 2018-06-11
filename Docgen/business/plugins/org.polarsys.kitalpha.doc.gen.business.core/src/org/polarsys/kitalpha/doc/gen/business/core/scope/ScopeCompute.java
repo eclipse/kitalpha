@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015 Thales Global Services S.A.S.
+ * Copyright (c) 2015, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,8 +33,9 @@ public class ScopeCompute {
 	public static List<EObject> computeScope(EObject modelElement, ScopeElementStrategy strategy) throws ScopeException{
 		List<EObject> result = new ArrayList<EObject>();
 		
-		if (modelElement == null)
+		if (modelElement == null) {
 			throw new ScopeException(Messages.Scope_Cant_Compute_On_Null_Object);
+		}
 		
 		boolean addParents = false;
 		boolean addChildren = false;
@@ -62,18 +63,21 @@ public class ScopeCompute {
 		if (addParents)
 		{
 			List<EObject> parentsOf = getParentsOf(modelElement);
-			if (! parentsOf.isEmpty())
+			if (! parentsOf.isEmpty()) {
 				result.addAll(parentsOf);
+			}
 		}
 		
-		if (addCurrent)
+		if (addCurrent) {
 			result.add(modelElement);
+		}
 		
 		if (addChildren)
 		{
 			List<EObject> childrenOf = getChildrenOf(modelElement);
-			if (! childrenOf.isEmpty())
+			if (! childrenOf.isEmpty()) {
 				result.addAll(childrenOf);
+			}
 		}
 		
 		// Always add model root element if it was not added yet.

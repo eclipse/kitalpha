@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -82,8 +82,9 @@ public class PerformancePackageImpl extends EPackageImpl implements PerformanceP
 	 * @generated
 	 */
 	public static PerformancePackage init() {
-		if (isInited)
+		if (isInited) {
 			return (PerformancePackage) EPackage.Registry.INSTANCE.getEPackage(PerformancePackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
 		PerformancePackageImpl thePerformancePackage = (PerformancePackageImpl) (EPackage.Registry.INSTANCE
@@ -114,6 +115,7 @@ public class PerformancePackageImpl extends EPackageImpl implements PerformanceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSimpleVPPerformance() {
 		return simpleVPPerformanceEClass;
 	}
@@ -123,6 +125,7 @@ public class PerformancePackageImpl extends EPackageImpl implements PerformanceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSimpleVPPerformance_Complexity() {
 		return (EAttribute) simpleVPPerformanceEClass.getEStructuralFeatures().get(0);
 	}
@@ -132,6 +135,7 @@ public class PerformancePackageImpl extends EPackageImpl implements PerformanceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSimpleVPPerformance_Cost() {
 		return (EAttribute) simpleVPPerformanceEClass.getEStructuralFeatures().get(1);
 	}
@@ -141,6 +145,7 @@ public class PerformancePackageImpl extends EPackageImpl implements PerformanceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSimpleVPPerformance_Status() {
 		return (EReference) simpleVPPerformanceEClass.getEStructuralFeatures().get(2);
 	}
@@ -150,6 +155,7 @@ public class PerformancePackageImpl extends EPackageImpl implements PerformanceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getVPStatus() {
 		return vpStatusEClass;
 	}
@@ -159,6 +165,7 @@ public class PerformancePackageImpl extends EPackageImpl implements PerformanceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getVPStatus_Overhead() {
 		return (EAttribute) vpStatusEClass.getEStructuralFeatures().get(0);
 	}
@@ -168,6 +175,7 @@ public class PerformancePackageImpl extends EPackageImpl implements PerformanceP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public PerformanceFactory getPerformanceFactory() {
 		return (PerformanceFactory) getEFactoryInstance();
 	}
@@ -187,8 +195,9 @@ public class PerformancePackageImpl extends EPackageImpl implements PerformanceP
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated)
+		if (isCreated) {
 			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -216,8 +225,9 @@ public class PerformancePackageImpl extends EPackageImpl implements PerformanceP
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized)
+		if (isInitialized) {
 			return;
+		}
 		isInitialized = true;
 
 		// Initialize package

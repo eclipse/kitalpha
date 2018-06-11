@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,6 +32,7 @@ import org.polarsys.kitalpha.emde.model.ExtensionValidationHelper;
  */
 public class ValidateExtensionAction extends AbstractEmdeExternalJavaAction {
 
+	@Override
 	public void execute(Collection<? extends EObject> arg0, Map<String, Object> arg1) {
 		try {
 			@SuppressWarnings({ "unchecked", "rawtypes" })
@@ -46,10 +47,11 @@ public class ValidateExtensionAction extends AbstractEmdeExternalJavaAction {
 	
 	public static void displayResult(Diagnostic diagnostic) {
 		String title = "Validation Result";
-		if (diagnostic.getSeverity() == Diagnostic.ERROR)
+		if (diagnostic.getSeverity() == Diagnostic.ERROR) {
 			DiagnosticDialog.openProblem(PlatformUI.getWorkbench().getDisplay().getActiveShell(), title, "The extension declaration contains some errors", diagnostic);
-		else
+		} else {
 			MessageDialog.openInformation(PlatformUI.getWorkbench().getDisplay().getActiveShell(), title, "The extension declaration contains no errors");
+		}
 
 	}
 

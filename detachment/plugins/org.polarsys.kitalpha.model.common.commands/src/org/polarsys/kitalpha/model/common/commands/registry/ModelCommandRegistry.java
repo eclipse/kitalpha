@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -60,8 +60,9 @@ public class ModelCommandRegistry {
 								Object action = config.createExecutableExtension(Constants.COMMAND_CLASS);
 								ModelCommand modelAction = (ModelCommand)action;
 
-								if (finderId != null && !finderId.isEmpty())
+								if (finderId != null && !finderId.isEmpty()) {
 									modelAction.setModelAnalysisID(finderId);
+								}
 								
 								modelAction.SetWorkflow(WorkflowType.getWorkflowEnumItemFromString(workflow));
 
@@ -107,8 +108,9 @@ public class ModelCommandRegistry {
 		@Override
 		public int compareTo(RegistryActionElement arg0) {
 			
-			if (getPriority() - arg0.getPriority() < 0)
+			if (getPriority() - arg0.getPriority() < 0) {
 				return 1;
+			}
 			
 			return 0;
 		}	

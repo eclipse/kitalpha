@@ -26,6 +26,7 @@ import org.polarsys.kitalpha.resourcereuse.helper.Disposable;
  */
 public class LiveWorkspaceReader extends WorkspaceReader implements Disposable, IExtensionDeltaListener, IPluginModelListener {
 
+	@Override
 	public void extensionsChanged(IExtensionDeltaEvent event) {
 		for (IPluginModelBase base : event.getChangedModels()) {
 			handleExtensions(base.getExtensions());
@@ -40,11 +41,13 @@ public class LiveWorkspaceReader extends WorkspaceReader implements Disposable, 
 		return readResources;
 	}
 
+	@Override
 	public void dispose() {
 		PDECore.getDefault().getModelManager().removeExtensionDeltaListener(this);
 		PDECore.getDefault().getModelManager().removePluginModelListener(this);
 	}
 
+	@Override
 	public void modelsChanged(PluginModelDelta delta) {
 		for (ModelEntry entry : delta.getAddedEntries()) {
 			for (IPluginModelBase base : entry.getWorkspaceModels()) {

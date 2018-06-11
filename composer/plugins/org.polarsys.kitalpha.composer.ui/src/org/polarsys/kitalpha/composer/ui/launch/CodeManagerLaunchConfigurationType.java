@@ -213,11 +213,13 @@ public class CodeManagerLaunchConfigurationType implements
 		return cadenceConfig;
 	}
 
+	@Override
 	public void launch(ILaunchConfiguration configuration, String mode,
 			ILaunch launch, IProgressMonitor monitor) throws CoreException {
 		// get selections
 		Display.getDefault().syncExec(new Runnable() {
 
+			@Override
 			public void run() {
 				selections = PlatformUI.getWorkbench()
 						.getActiveWorkbenchWindow().getActivePage()
@@ -246,9 +248,10 @@ public class CodeManagerLaunchConfigurationType implements
 			strategy = (IStrategy) element
 					.createExecutableExtension(CodeManagerExtensions.ATT_CLASS);
 			Map<String, Parameter> params = strategy.getParameters();
-			if (params != null)
+			if (params != null) {
 				strategyParameters = this.constructParametersMapFromString(
 						stringMap, params);
+			}
 		}
 
 	}
@@ -269,9 +272,10 @@ public class CodeManagerLaunchConfigurationType implements
 			refinery = (IRefinery) element
 					.createExecutableExtension(CodeManagerExtensions.ATT_CLASS);
 			Map<String, Parameter> params = refinery.getParameters();
-			if (params != null)
+			if (params != null) {
 				refineryParameters = this.constructParametersMapFromString(
 						stringMap, params);
+			}
 		}
 	}
 	
@@ -313,9 +317,10 @@ public class CodeManagerLaunchConfigurationType implements
 							ICodeManagerLaunchConfigurationConstants.CODEGEN_FOLDER,
 							"");
 			Map<String, Parameter> params = generator.getParameters();
-			if (params != null)
+			if (params != null) {
 				generatorParameters = this.constructParametersMapFromString(
 						stringMap, params);
+			}
 		}
 
 	}

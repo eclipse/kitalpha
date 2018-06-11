@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -112,7 +112,7 @@ public class BackupAndSaveCommand extends ModelCommand {
 						subMonitor.worked(1);
 					}
 				}
-				if (project != null)
+				if (project != null) {
 					try {
 						subMonitor.subTask(Messages.bind(Messages.REFRESH_PROJECT_MESSAGE, plugin_id));
 						project.refreshLocal(IResource.DEPTH_INFINITE, subMonitor);
@@ -121,6 +121,7 @@ public class BackupAndSaveCommand extends ModelCommand {
 						e.printStackTrace();
 						LOGGER.error(e.getMessage(), e);
 					}
+				}
 				subMonitor.done();
 			}
 		} catch (UnsupportedEncodingException e1) {

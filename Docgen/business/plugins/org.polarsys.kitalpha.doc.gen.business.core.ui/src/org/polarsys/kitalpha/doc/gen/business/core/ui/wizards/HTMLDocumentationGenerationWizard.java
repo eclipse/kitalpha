@@ -96,6 +96,7 @@ public abstract class HTMLDocumentationGenerationWizard extends Wizard
 	 * Adding the page to the wizard.
 	 */
 
+	@Override
 	public void addPages() {
 		page = new HTMLDocumentationGenerationWizardPage(selection);
 		page.setLauncherUris(getLaunchersURI());
@@ -160,6 +161,7 @@ public abstract class HTMLDocumentationGenerationWizard extends Wizard
 	 * This method is called when 'Finish' button is pressed in the wizard. We
 	 * will create an operation and run it using wizard as execution context.
 	 */
+	@Override
 	public boolean performFinish() {
 		brandingPage.askUserForUpdatingBrandingDataPreferences();
 		
@@ -336,6 +338,7 @@ public abstract class HTMLDocumentationGenerationWizard extends Wizard
 	 * 
 	 * @see IWorkbenchWizard#init(IWorkbench, IStructuredSelection)
 	 */
+	@Override
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.selection = selection;
 	}

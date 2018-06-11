@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -69,21 +69,24 @@ public class GenericTransposer implements ITransposer, ITransposerWorkflow {
   /**
    * @see org.polarsys.kitalpha.transposer.api.ITransposer#getAnalyzer()
    */
-  public IAnalyzer getAnalyzer() {
+  @Override
+public IAnalyzer getAnalyzer() {
     return _analyzer;
   }
 
   /**
    * @see org.polarsys.kitalpha.transposer.api.ITransposer#getRulesHandler()
    */
-  public IRulesHandler getRulesHandler() {
+  @Override
+public IRulesHandler getRulesHandler() {
     return _rulesHandler;
   }
 
   /**
    * @see org.polarsys.kitalpha.transposer.api.ITransposer#getScheduler()
    */
-  public IScheduler getScheduler() {
+  @Override
+public IScheduler getScheduler() {
     return _scheduler;
   }
 
@@ -96,7 +99,8 @@ public class GenericTransposer implements ITransposer, ITransposerWorkflow {
   /**
    * @see org.polarsys.kitalpha.transposer.api.ITransposer#transpose(java.util.Collection)
    */
-  public void transpose(Collection<Object> selection_p, Comparator<Vertex<?>> comparator_p, IProgressMonitor monitor_p) {
+  @Override
+public void transpose(Collection<Object> selection_p, Comparator<Vertex<?>> comparator_p, IProgressMonitor monitor_p) {
 	    transpose(selection_p, null,comparator_p, monitor_p);
 	  }
   
@@ -104,7 +108,8 @@ public class GenericTransposer implements ITransposer, ITransposerWorkflow {
   /**
    * @see org.polarsys.kitalpha.transposer.api.ITransposer#transpose(java.util.Collection)
    */
-  public void transpose(Collection<Object> selection_p, TransposerConfiguration configuration_p, Comparator<Vertex<?>> comparator_p,IProgressMonitor monitor_p) {
+  @Override
+public void transpose(Collection<Object> selection_p, TransposerConfiguration configuration_p, Comparator<Vertex<?>> comparator_p,IProgressMonitor monitor_p) {
     try {
       Collection<Object> analysisSources = new ArrayList<Object>();
 
@@ -117,8 +122,9 @@ public class GenericTransposer implements ITransposer, ITransposerWorkflow {
       // Default sources : selection, cleaned by the domain helper.
       if (analysisSources == null || analysisSources.isEmpty()) {
         Collection<Object> sources = _rulesHandler.getDomainHelper().getAnalysisSources(selection_p);
-        if (sources != null && !sources.isEmpty())
-          analysisSources.addAll(sources);
+        if (sources != null && !sources.isEmpty()) {
+			analysisSources.addAll(sources);
+		}
       }
 
       // Create graph
@@ -170,8 +176,9 @@ public class GenericTransposer implements ITransposer, ITransposerWorkflow {
 
       checkCancel(monitor_p);
       
-      if (monitor_p != null)
-        monitor_p.done();
+      if (monitor_p != null) {
+		monitor_p.done();
+	}
 
     } catch (OperationCanceledException e) {
       TransposerCorePlugin.getDefault().logInfo(TransposerCorePlugin.PLUGIN_ID, "Transposer execution canceled.", e); //$NON-NLS-1$
@@ -184,8 +191,9 @@ public class GenericTransposer implements ITransposer, ITransposerWorkflow {
    * @param monitor_p
    */
   private void checkCancel(IProgressMonitor monitor_p) throws OperationCanceledException {
-    if (monitor_p.isCanceled())
-      throw new OperationCanceledException();
+    if (monitor_p.isCanceled()) {
+		throw new OperationCanceledException();
+	}
 
   }
 
@@ -195,8 +203,9 @@ public class GenericTransposer implements ITransposer, ITransposerWorkflow {
    */
   private void callPreAnalysisActivities(Collection<Object> selection_p, Collection<Object> analysisSources_p, TransposerConfiguration configuration_p,
       IProgressMonitor monitor_p) {
-    if (configuration_p == null)
-      return;
+    if (configuration_p == null) {
+		return;
+	}
     
     
     _cadenceParameters.addParameter(new GenericParameter<Collection<Object>>(TRANSPOSER_INITIAL_SELECTION, selection_p,
@@ -228,14 +237,16 @@ public class GenericTransposer implements ITransposer, ITransposerWorkflow {
    * @param preAnalysisActivities_p
    */
   private void complementActivitiesParameters(WorkflowActivityParameter activities_p) {
-    if (activities_p == null)
-      return;
+    if (activities_p == null) {
+		return;
+	}
 
     // Add business parameters to the map
     for (String key : activities_p.getActivitiesID()) { // key == activities_id
       if (_cadenceParameters != null && !_cadenceParameters.getParameters().isEmpty()) {
-        for (GenericParameter<?> p : _cadenceParameters.getParameters())
-          activities_p.addParameter(key, p);
+        for (GenericParameter<?> p : _cadenceParameters.getParameters()) {
+			activities_p.addParameter(key, p);
+		}
       }
     }
 
@@ -248,8 +259,9 @@ public class GenericTransposer implements ITransposer, ITransposerWorkflow {
    * @param configuration_p
    */
   private void callPreSchedulingActivities(Graph graph_p, TransposerConfiguration configuration_p, IProgressMonitor monitor_p) {
-    if (configuration_p == null)
-      return;
+    if (configuration_p == null) {
+		return;
+	}
     _cadenceParameters.addParameter(new GenericParameter<Graph>(TRANSPOSER_ANALYSIS_GRAPH, graph_p, "Computed analysis graph")); //$NON-NLS-1$
 
     complementActivitiesParameters(configuration_p.getPreSchedulingActivities());
@@ -273,8 +285,9 @@ public class GenericTransposer implements ITransposer, ITransposerWorkflow {
       IProgressMonitor monitor_p) {
 	  
 	  
-    if (configuration_p == null)
-      return;
+    if (configuration_p == null) {
+		return;
+	}
 
     _cadenceParameters.addParameter(new GenericParameter<Collection<ITransposerTask<Vertex<?>>>>(TRANSPOSER_SORTED_TASKS, sortedTasks_p,
                                                                                                  "Computed and sorted tasks list")); //$NON-NLS-1$
@@ -300,8 +313,9 @@ public class GenericTransposer implements ITransposer, ITransposerWorkflow {
    * @param configuration_p
    */
   private void callPostExecutionActivities(TransposerConfiguration configuration_p, IProgressMonitor monitor_p) {
-    if (configuration_p == null)
-      return;
+    if (configuration_p == null) {
+		return;
+	}
 
     complementActivitiesParameters(configuration_p.getPostExecutionActivities());
     IStatus cadenceStatus = null;
@@ -330,8 +344,9 @@ public class GenericTransposer implements ITransposer, ITransposerWorkflow {
     try {
       _rulesHandler = getRulesHandler(purpose_p, mappingId_p);
       
-      if (_rulesHandler.getContext() == null)
-	        _rulesHandler.setContext(new GenericContext());
+      if (_rulesHandler.getContext() == null) {
+		_rulesHandler.setContext(new GenericContext());
+	}
       
       initContext();
       
@@ -366,15 +381,19 @@ public class GenericTransposer implements ITransposer, ITransposerWorkflow {
     initScheduler();
   }
 
-  public void dispose() {
-    if (getAnalyzer() != null)
-      getAnalyzer().dispose();
+  @Override
+public void dispose() {
+    if (getAnalyzer() != null) {
+		getAnalyzer().dispose();
+	}
 
-    if (getScheduler() != null)
-      getScheduler().dispose();
+    if (getScheduler() != null) {
+		getScheduler().dispose();
+	}
 
-    if (getRulesHandler() != null)
-      getRulesHandler().dispose();
+    if (getRulesHandler() != null) {
+		getRulesHandler().dispose();
+	}
 
     this._context = null;
     this._analyzer = null;

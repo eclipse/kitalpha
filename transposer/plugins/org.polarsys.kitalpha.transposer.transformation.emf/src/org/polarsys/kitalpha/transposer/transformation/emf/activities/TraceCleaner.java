@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -62,24 +62,28 @@ public class TraceCleaner implements IActivity, ITransposerWorkflow {
   /**
    * @see org.polarsys.kitalpha.cadence.core.api.IActivity#getParameters()
    */
-  public Collection<DeclaredParameter> getParameters() {
+  @Override
+public Collection<DeclaredParameter> getParameters() {
     return null;
   }
 
   /**
    * @see org.polarsys.kitalpha.cadence.core.api.IActivity#run(org.polarsys.kitalpha.cadence.core.api.parameter.ActivityParameters)
    */
-  public IStatus run(ActivityParameters activityParams_p) {
+  @Override
+public IStatus run(ActivityParameters activityParams_p) {
     IContext context = (IContext) activityParams_p.getParameter(TRANSPOSER_CONTEXT).getValue();
     _transformableElements = (Set<?>) activityParams_p.getParameter(TRANSPOSER_TRANSPOSABLE_OBJECTS).getValue();
 
     
-    if (context == null)
-    	return new Status(IStatus.ERROR, TransposerEMFPlugin.PLUGIN_ID, "Context in not initialized in the Transposer Workflow");
+    if (context == null) {
+		return new Status(IStatus.ERROR, TransposerEMFPlugin.PLUGIN_ID, "Context in not initialized in the Transposer Workflow");
+	}
     
     
-    if (context instanceof GenericTransformationContext)
-      _traceHelper = ((GenericTransformationContext) context).getTraceHelper();
+    if (context instanceof GenericTransformationContext) {
+		_traceHelper = ((GenericTransformationContext) context).getTraceHelper();
+	}
 
     if (context.exists(TRANSFORMATION_FIRST_METACLASSES)) {
       _firstMetaClasses = (Set<EClass>) context.get(TRANSFORMATION_FIRST_METACLASSES);
@@ -105,20 +109,23 @@ public class TraceCleaner implements IActivity, ITransposerWorkflow {
       if (entryPoint instanceof Collection) {
         for (Object obj : (Collection) entryPoint) {
           if (obj instanceof EObject) {
-            if (rs == null)
-//              EcoreUtil.resolveAll((EObject) obj);
-            clean((EObject) obj);
+            if (rs == null) {
+				//              EcoreUtil.resolveAll((EObject) obj);
+				clean((EObject) obj);
+			}
           }
         }
       } else if (entryPoint instanceof EObject) {
-        if (rs == null)
-//          EcoreUtil.resolveAll((EObject) entryPoint);
-        clean((EObject) entryPoint);
+        if (rs == null) {
+			//          EcoreUtil.resolveAll((EObject) entryPoint);
+			clean((EObject) entryPoint);
+		}
       }
     }
     
-    if (_cleanedElements.size() != 0)
-      logInfoCleanMessage();
+    if (_cleanedElements.size() != 0) {
+		logInfoCleanMessage();
+	}
 
     return Status.OK_STATUS;
   }
@@ -140,7 +147,8 @@ public class TraceCleaner implements IActivity, ITransposerWorkflow {
   /**
    * @see org.polarsys.kitalpha.cadence.core.api.IActivity#validateParameters(org.polarsys.kitalpha.cadence.core.api.parameter.ActivityParameters)
    */
-  public Map<String, ParameterError<?>> validateParameters(ActivityParameters valuedParameters_p) {
+  @Override
+public Map<String, ParameterError<?>> validateParameters(ActivityParameters valuedParameters_p) {
     // TODO Auto-generated method stub
     return null;
   }
@@ -202,8 +210,9 @@ public class TraceCleaner implements IActivity, ITransposerWorkflow {
    * @return
    */
   private boolean hasToBeRemoved(EObject eObject_p) {
-    if (!_firstMetaClasses.contains(eObject_p.eClass()))
-      return false;
+    if (!_firstMetaClasses.contains(eObject_p.eClass())) {
+		return false;
+	}
 
     if (isOrphan(eObject_p)) {
       return true;

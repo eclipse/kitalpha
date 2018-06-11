@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -67,18 +67,22 @@ public class GenericAnalyzer implements IAnalyzer {
   /**
    * @see org.polarsys.kitalpha.transposer.analyzer.api.IAnalyzer#analyse(java.util.Collection)
    */
-  public Graph analyze(Collection<?> analysisSource_p, Collection<?> selection_p, IProgressMonitor monitor_p) throws AnalysisException {
+  @Override
+public Graph analyze(Collection<?> analysisSource_p, Collection<?> selection_p, IProgressMonitor monitor_p) throws AnalysisException {
 
     if (monitor_p != null)
-      monitor_p.beginTask("Transposer Analysis", analysisSource_p.size()); //$NON-NLS-1$
+	 {
+		monitor_p.beginTask("Transposer Analysis", analysisSource_p.size()); //$NON-NLS-1$
+	}
 
     for (Object source : analysisSource_p) {
       try {
         if (_rulesHandler.getApplicablePossibility(source) != null) {
           createVertexForType(source, monitor_p);
           createSubGraphForType(source, monitor_p);
-          if (monitor_p != null)
-            monitor_p.worked(1);
+          if (monitor_p != null) {
+			monitor_p.worked(1);
+		}
         }
       } catch (ComputePremisesException e) {
         throw new AnalysisException(e);
@@ -97,7 +101,9 @@ public class GenericAnalyzer implements IAnalyzer {
     // }
 
     if (monitor_p != null)
-      monitor_p.subTask(""); //$NON-NLS-1$
+	 {
+		monitor_p.subTask(""); //$NON-NLS-1$
+	}
 
     return _modelGraph;
 
@@ -109,8 +115,9 @@ public class GenericAnalyzer implements IAnalyzer {
    * @param currentType_p the given ModelElement
    */
   private <T> void createVertexForType(T currentType_p, IProgressMonitor monitor_p) {
-    if (graphHasAlreadyVertex(currentType_p))
-      return;
+    if (graphHasAlreadyVertex(currentType_p)) {
+		return;
+	}
 
     if (monitor_p != null) {
       monitor_p.subTask("Creating vertex for " + currentType_p.getClass().getSimpleName()); //$NON-NLS-1$
@@ -118,8 +125,9 @@ public class GenericAnalyzer implements IAnalyzer {
     }
 
     String name = _rulesHandler.getDomainHelper().getName(currentType_p);
-    if (name == null || "".equals(name)) //$NON-NLS-1$
-      name = currentType_p.getClass().getName();
+    if (name == null || "".equals(name)) {
+		name = currentType_p.getClass().getName();
+	}
 
     boolean isHotSpot = _rulesHandler.getDomainHelper().isHotSpot(currentType_p);
 
@@ -148,8 +156,9 @@ public class GenericAnalyzer implements IAnalyzer {
 
     needed = _rulesHandler.getPremises(currentType_p);
 
-    if (needed == null)
-      return;
+    if (needed == null) {
+		return;
+	}
 
     if (monitor_p != null) {
       monitor_p.subTask("Creating subgraph for " + currentType_p.getClass().getSimpleName()); //$NON-NLS-1$
@@ -188,21 +197,21 @@ public class GenericAnalyzer implements IAnalyzer {
         // -if there is already an edge for the current dependency !
         // -if the current edge is critical (eg: containment case)
         Edge<?> edge = currentVertex.getOutgoingEdgeTo(dependingVertex);
-        if ((edge != null) && (!edge.isCritical()) && (isCriticalDependency))
-          edge.setCritical(true);
-
-        // if the current edge doesn't exist we create it
-        else if (edge == null) {
+        if ((edge != null) && (!edge.isCritical()) && (isCriticalDependency)) {
+			edge.setCritical(true);
+		} else if (edge == null) {
           _modelGraph.addAdjacent(currentVertex, dependingVertex, dependingObjectDescription, isCriticalDependency);
         }
 
-        if (createdVertex)
-          createSubGraphForType(dependingObject, monitor_p);
+        if (createdVertex) {
+			createSubGraphForType(dependingObject, monitor_p);
+		}
       }
     }
   }
 
-  public void dispose() {
+  @Override
+public void dispose() {
     this._graphHashMap.clear();
     this._graphHashMap = null;
     this._modelGraph = null;

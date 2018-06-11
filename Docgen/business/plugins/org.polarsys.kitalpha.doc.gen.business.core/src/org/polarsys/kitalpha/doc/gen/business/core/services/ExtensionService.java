@@ -50,8 +50,9 @@ public class ExtensionService {
 					if (providerObject instanceof IConceptsHelper) 
 					{
 						IConceptsHelper iConceptsHelper = (IConceptsHelper) providerObject;
-						if (iConceptsHelper.accept(object))
+						if (iConceptsHelper.accept(object)) {
 							return iConceptsHelper;
+						}
 					}
 				} catch (CoreException e) {
 					Activator.logWarning(e.getMessage());

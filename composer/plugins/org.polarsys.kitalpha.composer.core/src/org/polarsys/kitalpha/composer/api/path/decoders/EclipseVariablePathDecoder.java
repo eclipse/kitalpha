@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2015 Thales Global Services.
+ * Copyright (c) 2015, 2018 Thales Global Services.
  * All rights reserved.
  */
 package org.polarsys.kitalpha.composer.api.path.decoders;
@@ -20,6 +20,7 @@ public class EclipseVariablePathDecoder implements IVariableDecoder{
 	 * @param path : path to evaluate
 	 * @return {@link String}
 	 */
+	@Override
 	public String decodePath(String path, Object object) {
 
 		String result = ""; //$NON-NLS-1$

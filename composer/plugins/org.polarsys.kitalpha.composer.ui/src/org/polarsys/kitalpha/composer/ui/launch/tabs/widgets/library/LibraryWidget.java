@@ -78,6 +78,7 @@ public class LibraryWidget {
 	private void attachListeners() {
 		((CheckboxTableViewer)viewer).addCheckStateListener(new ICheckStateListener() {
 			
+			@Override
 			public void checkStateChanged(CheckStateChangedEvent event) {
 				
 				LibraryItem r = (LibraryItem)event.getElement();
@@ -110,10 +111,11 @@ public class LibraryWidget {
 	private String updateMessages() {
 		String msg = "";
 		validation.setText(msg);
-		for(LibraryItem i : (LibraryItem[])viewer.getInput())
+		for(LibraryItem i : (LibraryItem[])viewer.getInput()) {
 			for(String s : i.getErrorsMsg()){
 				msg = msg + s + "\n";
 			}
+		}
 		msg = msg == ""? "OK" : msg;
 		validation.setText(msg);
 		return msg;
@@ -126,8 +128,9 @@ public class LibraryWidget {
 		checkedList = new ArrayList<LibraryItem>();
 		Resource[] res = LibraryReuseHelper.INSTANCE.getLibraries();
 		LibraryItem[] items = new LibraryItem[res.length];
-		for(int i =0; i<res.length;i++)
+		for(int i =0; i<res.length;i++) {
 			items[i] = new LibraryItem(res[i],true);
+		}
 		viewer.setInput(items);
 		
 	}
@@ -165,6 +168,7 @@ private Viewer createTable(final Composite container) {
     tableViewer.setUseHashlookup(true);
 	tableViewer.addSelectionChangedListener(new ISelectionChangedListener() {
 			
+			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
 				ISelection selection = viewer.getSelection();
 				
@@ -232,8 +236,9 @@ private List<String> convertCheckedListToString() {
 
 private List<Resource> getModelResourceList(List<LibraryItem> list_p) {
 	List<Resource> result = new ArrayList<Resource>();
-	for(LibraryItem i : list_p)
+	for(LibraryItem i : list_p) {
 		result.add(i.getItem());
+	}
 	return result;
 }
 
@@ -278,8 +283,9 @@ private List<LibraryItem> getLibraryItemFromResource(List<Resource> resources) {
 	for(LibraryItem i : items){
 		Resource r = i.getItem();
 		for(Resource res : resources){
-			if(r.getId().equals(res.getId()))
+			if(r.getId().equals(res.getId())) {
 				list.add(i);
+			}
 		}
 	}
 	return list;

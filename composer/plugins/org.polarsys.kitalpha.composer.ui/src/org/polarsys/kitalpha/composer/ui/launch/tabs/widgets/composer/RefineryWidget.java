@@ -69,6 +69,7 @@ public class RefineryWidget extends AbstractComposerWidget {
 	/* (non-Javadoc)
 	 * @see org.polarsys.kitalpha.composer.ui.launch.tabs.IComposerComponent#createContents(org.eclipse.swt.widgets.Composite)
 	 */
+	@Override
 	public void createContents(Composite parent) {
 		createWidget(parent, "Refinery", "Select the refinery",true);
 		 attachListeners();
@@ -78,6 +79,7 @@ public class RefineryWidget extends AbstractComposerWidget {
 	/* (non-Javadoc)
 	 * @see org.polarsys.kitalpha.composer.ui.launch.tabs.IComposerComponent#initialize()
 	 */
+	@Override
 	public void initialize() {
 		IConfigurationElement[] refineryType = CodeManagerExtensions
 		.getAllRefineryExtensions();
@@ -87,6 +89,7 @@ public class RefineryWidget extends AbstractComposerWidget {
 	/* (non-Javadoc)
 	 * @see org.polarsys.kitalpha.composer.ui.launch.tabs.IComposerComponent#updateSelection(org.eclipse.core.runtime.IConfigurationElement)
 	 */
+	@Override
 	public void updateSelection(IConfigurationElement selectedElement) {
 		if (this.selectedRefineryElement != selectedElement) {
 			this.selectedRefineryElement = selectedElement;
@@ -140,6 +143,7 @@ private void attachListeners() {
 		public void widgetSelected(SelectionEvent e){
 
 			ITableEditingListener listener = new ITableEditingListener() {
+				@Override
 				public void parameterValueChanged() {
 					tab.update();
 				}
@@ -170,6 +174,7 @@ public void setNsUri(String nsUri){
 	cw.setNsUri(nsUri);
 }
 
+@Override
 public final Viewer getViewer() {
 	return viewer;
 }

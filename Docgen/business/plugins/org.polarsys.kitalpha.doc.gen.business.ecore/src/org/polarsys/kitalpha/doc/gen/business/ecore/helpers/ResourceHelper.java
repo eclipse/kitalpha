@@ -62,6 +62,7 @@ public class ResourceHelper {
 		if (!project.exists()) 
 		{
 			PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
+				@Override
 				public void run() {
 					try {
 						createProject(project, true);
@@ -76,6 +77,7 @@ public class ResourceHelper {
 			final IFolder folder = project.getFolder(new Path(outputPath));
 			if (!folder.exists()) {
 				PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
+					@Override
 					public void run() {
 						try {
 							createFolder(folder, NULL_PROGRESS_MONITOR);

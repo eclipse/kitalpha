@@ -40,8 +40,9 @@ public class RegistryHelper {
 
 		IExtension extensions[] = extension.getExtensions();
 
-		if (extensions.length == 0)
+		if (extensions.length == 0) {
 			return null;
+		}
 		return extensions;
 	}
 }

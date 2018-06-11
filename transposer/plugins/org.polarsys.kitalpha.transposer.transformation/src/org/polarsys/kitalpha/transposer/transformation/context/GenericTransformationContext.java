@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -61,8 +61,9 @@ public class GenericTransformationContext extends GenericContext {
     if (object_p instanceof TransformationKey) {
       TransformationKey key = (TransformationKey) object_p;
       Trace trace = getTraceHelper().getOutgoingTraceWithRole(key.getSourceObject(), key.getRole());
-      if (trace != null)
-        return trace.getTarget();
+      if (trace != null) {
+		return trace.getTarget();
+	}
       return null;
     }
     return super.get(object_p);

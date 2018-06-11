@@ -21,10 +21,12 @@ import org.osgi.framework.BundleContext;
  */
 public class Activator implements BundleActivator {
 
+	@Override
 	public void start(BundleContext bundleContext) throws Exception {
 		//nothing to do
 	}
 
+	@Override
 	public void stop(BundleContext bundleContext) throws Exception {
 		//nothing to do
 	}

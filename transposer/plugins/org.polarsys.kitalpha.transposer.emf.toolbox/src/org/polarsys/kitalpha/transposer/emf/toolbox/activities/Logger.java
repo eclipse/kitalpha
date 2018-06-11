@@ -43,14 +43,16 @@ public class Logger implements IActivity{
   private final List<DeclaredParameter> parameters = new ArrayList<>();
   
   static{
-    if(calendar.getTime()==null)
-      calendar.setTime(new Date());
+    if(calendar.getTime()==null) {
+		calendar.setTime(new Date());
+	}
   }
   
   /**
    * @see org.polarsys.kitalpha.cadence.core.api.IActivity#run(java.util.Map)
    */
-  public IStatus run(ActivityParameters activityParams) {
+  @Override
+public IStatus run(ActivityParameters activityParams) {
     
    
     //get user message
@@ -64,14 +66,16 @@ public class Logger implements IActivity{
   /**
    * @see org.polarsys.kitalpha.cadence.core.api.IActivity#validateParameters(org.polarsys.kitalpha.cadence.core.api.parameter.ActivityParameters)
    */
-  public Map<String, ParameterError<?>> validateParameters(ActivityParameters valuedParameters) {
+  @Override
+public Map<String, ParameterError<?>> validateParameters(ActivityParameters valuedParameters) {
     return null;
   }
 
   /**
    * @see org.polarsys.kitalpha.cadence.core.api.IActivity#getParameters()
    */
-  public Collection<DeclaredParameter> getParameters() {
+  @Override
+public Collection<DeclaredParameter> getParameters() {
    parameters.add(new DeclaredParameter(POST,"",POST_DESCRIPTION)); //$NON-NLS-1$
    return parameters;
   }

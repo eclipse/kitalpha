@@ -36,6 +36,7 @@ import org.polarsys.kitalpha.egf.genchain.diagram.ui.dialog.ReorderDialog;
 public class ReorderAction extends AbstractExternalJavaAction  {
 	private final static String ID = "id";//$NON-NLS-1$
 
+	@Override
 	public void execute(Collection<? extends EObject> selections, Map<String, Object> parameters) {
 		Object o = selections.iterator().next();
 		if (o instanceof DSemanticDecorator)

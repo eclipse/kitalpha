@@ -28,10 +28,12 @@ public class AnnotationSetValueAction extends AbstractEmdeExternalJavaAction {
 	private final static String OBJECT = "object";
 	private final static String INPUT = "input";
 
+	@Override
 	public boolean canExecute(Collection<? extends EObject> selections) {
 		return true;
 	}
 
+	@Override
 	public void execute(Collection<? extends EObject> selections,
 			Map<String, Object> parameters) {
 		Object object = parameters.get(OBJECT);

@@ -49,6 +49,7 @@ public class CadenceConfigurationWizardPage extends GenericConfigurationWizardPa
 		super(pageName, title, titleImage);
 	}
 
+	@Override
 	public void setConfiguration(CodeManagerConfiguration configuration) {
 		this.configuration = configuration;
 		this.cadenceConfig = configuration.getCodeManagerCadenceLaunchConfiguration();
@@ -59,6 +60,7 @@ public class CadenceConfigurationWizardPage extends GenericConfigurationWizardPa
 	 * 
 	 * @see org.eclipse.jface.dialogs.IDialogPage#createControl(org.eclipse.swt.widgets.Composite)
 	 */
+	@Override
 	public void createControl(Composite parent) {
 		Composite composite = new Composite(parent, SWT.NONE);
 		GridData compositeData = new GridData(GridData.FILL_BOTH);
@@ -143,6 +145,7 @@ public class CadenceConfigurationWizardPage extends GenericConfigurationWizardPa
 			this.key = key;
 		}
 
+		@Override
 		public void modifyText(ModifyEvent e) {
 			this.parameter.setValue(text.getText());
 		}

@@ -78,8 +78,9 @@ public final class CadenceLauncher {
         IStatus status = cadence(workflowId, workflowElementId, activityID, activityParameters, monitor);
         if (status == null) {
           Activator.getDefault().getLog().log(new Status(IStatus.WARNING, Activator.PLUGIN_ID, "Activity : "+activityID+" has returned a null status."));
-        } else
-          result.add(status);
+        } else {
+			result.add(status);
+		}
         if (monitor != null) {
           monitor.worked(1);
         }
@@ -159,11 +160,15 @@ public final class CadenceLauncher {
     if (activityParameters != null) {
       IConfigurationElement[] params = CadenceExtensions.getWorkflowElementParameters(workflowElement);
       if (activityParameters.getParameters().size() < params.length)
-        throw new Exception("activity doesn't define parameters enough"); //$NON-NLS-1$
+	 {
+		throw new Exception("activity doesn't define parameters enough"); //$NON-NLS-1$
+	}
       for (IConfigurationElement p : params) {
         String name = p.getAttribute(CadenceExtensions.ATT_NAME);
         if (!activityParameters.getParametersID().contains(name))
-          throw new Exception("The org.polarsys.kitalpha.cadence.core.api.parameter " + name + " doesn't exist."); //$NON-NLS-1$ //$NON-NLS-2$
+		 {
+			throw new Exception("The org.polarsys.kitalpha.cadence.core.api.parameter " + name + " doesn't exist."); //$NON-NLS-1$ //$NON-NLS-2$
+		}
       }
     }
 

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014-2018 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -64,10 +64,11 @@ public class DocumentationBrandingDataHelper {
 			{
 				IFile destinationFile = imgFolder.getFile("logo.gif");
 				try {
-					if (! destinationFile.exists())
+					if (! destinationFile.exists()) {
 						destinationFile.create(sourceFileIputStr, true, null);
-					else
+					} else {
 						destinationFile.setContents(sourceFileIputStr, IFile.REPLACE, null);
+					}
 				} catch (CoreException e) {
 					e.printStackTrace();
 				}
@@ -137,8 +138,9 @@ public class DocumentationBrandingDataHelper {
 	private static InputStream getLocalFileInputStream(String logoPath) throws URISyntaxException, FileNotFoundException{
 		URI uri = URIUtil.fromString(logoPath).normalize();
 		// Add file scheme if it not exists
-		if (! logoPath.startsWith("file:"))
+		if (! logoPath.startsWith("file:")) {
 			uri = URIUtil.fromString("file://"+logoPath).normalize();
+		}
 
 		// handle the file
 		final File file = URIUtil.toFile(uri);

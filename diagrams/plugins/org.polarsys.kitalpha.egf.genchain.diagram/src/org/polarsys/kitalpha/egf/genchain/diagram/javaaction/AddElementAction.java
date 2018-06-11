@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,6 +28,7 @@ import org.polarsys.kitalpha.egf.genchain.diagram.ui.wizard.NewElementWizard;
 public class AddElementAction extends AbstractExternalJavaAction{
 	private final static String CONTAINER = "container";//$NON-NLS-1$
 
+	@Override
 	public void execute(Collection<? extends EObject> selections, Map<String, Object> parameters) {
 		final Object o = parameters.get(CONTAINER);
 		if (o instanceof GenerationChain) 

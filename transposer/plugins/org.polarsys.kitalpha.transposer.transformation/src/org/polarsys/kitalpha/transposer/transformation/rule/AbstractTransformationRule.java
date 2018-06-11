@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,7 +28,8 @@ public abstract class AbstractTransformationRule<T> implements IRule<T> {
   /**
    * @see org.polarsys.kitalpha.transposer.rules.handler.rules.api.IRule#getName()
    */
-  public String getName() {
+  @Override
+public String getName() {
     return this.getClass().getSimpleName();
   }
 
@@ -57,7 +58,8 @@ public abstract class AbstractTransformationRule<T> implements IRule<T> {
     return premise;
   }
 
-  public void apply(T element_p, IContext context_p) throws Exception {
+  @Override
+public void apply(T element_p, IContext context_p) throws Exception {
     boolean existingMainTarget = false;
     TransformationKey mainTargetKey = new TransformationKey(element_p, ContextHelper.MAIN_ROLE);
     Object createdObject = null;
@@ -65,14 +67,16 @@ public abstract class AbstractTransformationRule<T> implements IRule<T> {
     existingMainTarget = context_p.exists(mainTargetKey);
     if (!existingMainTarget) {
       createdObject = create(element_p, context_p);
-      if (createdObject != null)
-        ContextHelper.createMainTarget(context_p, element_p, createdObject);
+      if (createdObject != null) {
+		ContextHelper.createMainTarget(context_p, element_p, createdObject);
+	}
     } else {
       createdObject = context_p.get(mainTargetKey);
     }
 
-    if (createdObject != null)
-      update(createdObject, element_p, context_p);
+    if (createdObject != null) {
+		update(createdObject, element_p, context_p);
+	}
   }
 
   /**

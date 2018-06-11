@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -68,8 +68,9 @@ public class TransposerContributionItem extends CompoundContributionItem {
     allConfigs.addAll(getLaunchConfigurations(adaptedSelection));
 
     for (ILaunchConfiguration launchConfig : allConfigs) {
-      if (launchConfig != null && launchConfig.getName() != "" && launchConfig.getName() != null) //$NON-NLS-1$
-        result.add(new ActionContributionItem(new LaunchTransposerAction(launchConfig)));
+      if (launchConfig != null && launchConfig.getName() != "" && launchConfig.getName() != null) {
+		result.add(new ActionContributionItem(new LaunchTransposerAction(launchConfig)));
+	}
     }
 
     return result;

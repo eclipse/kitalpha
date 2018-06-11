@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.polarsys.kitalpha.emde.example.simplecomponent.performance.model.performance.*;
 import org.polarsys.kitalpha.emde.example.simplecomponent.performance.model.performance.PerformanceFactory;
 import org.polarsys.kitalpha.emde.example.simplecomponent.performance.model.performance.PerformancePackage;
 import org.polarsys.kitalpha.emde.example.simplecomponent.performance.model.performance.SimpleVPPerformance;
@@ -79,6 +78,7 @@ public class PerformanceFactoryImpl extends EFactoryImpl implements PerformanceF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SimpleVPPerformance createSimpleVPPerformance() {
 		SimpleVPPerformanceImpl simpleVPPerformance = new SimpleVPPerformanceImpl();
 		return simpleVPPerformance;
@@ -89,6 +89,7 @@ public class PerformanceFactoryImpl extends EFactoryImpl implements PerformanceF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public VPStatus createVPStatus() {
 		VPStatusImpl vpStatus = new VPStatusImpl();
 		return vpStatus;
@@ -99,6 +100,7 @@ public class PerformanceFactoryImpl extends EFactoryImpl implements PerformanceF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public PerformancePackage getPerformancePackage() {
 		return (PerformancePackage) getEPackage();
 	}

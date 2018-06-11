@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -73,8 +73,9 @@ public class ReportRegistry {
 	}
 
 	public void addListener(Listener listener) {
-		if (listener != null && !listeners.contains(listener))
+		if (listener != null && !listeners.contains(listener)) {
 			listeners.add(listener);
+		}
 	}
 
 	public void removeListener(Listener listener) {
@@ -83,18 +84,21 @@ public class ReportRegistry {
 
 
 	private void fireAdded(ReportList list) {
-		for (Listener l : listeners)
+		for (Listener l : listeners) {
 			l.reportListAdded(list);
+		}
 	}
 
 	private void fireUpdated(ReportList list) {
-		for (Listener l : listeners)
+		for (Listener l : listeners) {
 			l.reportListUpdated(list);
+		}
 	}
 
 	private void fireRemoved(ReportList list) {
-		for (Listener l : listeners)
+		for (Listener l : listeners) {
 			l.reportListRemoved(list);
+		}
 	}
 
 

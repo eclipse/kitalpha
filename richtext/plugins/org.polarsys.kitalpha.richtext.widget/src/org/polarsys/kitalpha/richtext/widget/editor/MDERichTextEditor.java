@@ -160,6 +160,7 @@ public class MDERichTextEditor extends EditorPart implements ITabbedPropertyShee
 		widget.bind(input.getElement(), input.getFeature());
 		
 		new BrowserFunction(((MDENebulaBasedRichTextWidget)widget).getBrowser(), "firePropertyChangeEvent"){ //$NON-NLS-1$
+			@Override
 			public Object function(Object[] arguments) {
 				firePropertyChange(IWorkbenchPartConstants.PROP_DIRTY);
 				return null;

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -79,10 +79,11 @@ public class VertexSpec<ContentClass> extends VertexImpl<ContentClass> {
    */
   @Override
   public Edge<?> getEdgeTo(Vertex<?> neighbour_p) {
-    if (hasForIncomingAdjacent(neighbour_p))
-      return getIncomingEdgeFrom(neighbour_p);
-    else if (hasForOutgoingAdjacent(neighbour_p))
-      return getOutgoingEdgeTo(neighbour_p);
+    if (hasForIncomingAdjacent(neighbour_p)) {
+		return getIncomingEdgeFrom(neighbour_p);
+	} else if (hasForOutgoingAdjacent(neighbour_p)) {
+		return getOutgoingEdgeTo(neighbour_p);
+	}
     return null;
   }
 
@@ -93,8 +94,9 @@ public class VertexSpec<ContentClass> extends VertexImpl<ContentClass> {
   @Override
   public Edge<?> getOutgoingEdgeTo(Vertex<?> neighbour_p) {
     for (Edge<?> edge : getOutgoingEdges()) {
-      if (edge.getTarget() == neighbour_p)
-        return edge;
+      if (edge.getTarget() == neighbour_p) {
+		return edge;
+	}
     }
     return null;
   }
@@ -106,8 +108,9 @@ public class VertexSpec<ContentClass> extends VertexImpl<ContentClass> {
   @Override
   public Edge<?> getIncomingEdgeFrom(Vertex<?> neighbour_p) {
     for (Edge<?> edge : getIncomingEdges()) {
-      if (edge.getSource() == neighbour_p)
-        return edge;
+      if (edge.getSource() == neighbour_p) {
+		return edge;
+	}
     }
     return null;
   }

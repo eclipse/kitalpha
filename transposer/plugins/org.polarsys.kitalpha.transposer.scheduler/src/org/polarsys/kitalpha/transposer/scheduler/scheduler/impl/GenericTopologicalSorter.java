@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -78,8 +78,9 @@ public class GenericTopologicalSorter extends AbstractTopologicalSorter {
 		for (Vertex<?> currentType : toSort) {
 			if (isIndependantInTypeSet(currentType, toSort)) {
 				independants.add(currentType);
-				if (monitor_p != null)
+				if (monitor_p != null) {
 					monitor_p.worked(1 / _model.size());
+				}
 			}
 		}
 
@@ -157,14 +158,16 @@ public class GenericTopologicalSorter extends AbstractTopologicalSorter {
 			edgesCopy.addAll(edges);
 
 			edgesCopy.retainAll(_backtracks);
-			if (edgesCopy.size() == 0) // aucun backtrack
+			if (edgesCopy.size() == 0) {
 				task.setCompletelyTransposable(true);
-			else
+			} else {
 				definitiveTasks.add(new TransposerTaskForVertex(task
 						.getTaskContent(), true));
+			}
 
-			if (monitor_p != null)
+			if (monitor_p != null) {
 				monitor_p.worked(1 / sorted.size());
+			}
 		}
 		return definitiveTasks;
 	}
@@ -190,9 +193,9 @@ public class GenericTopologicalSorter extends AbstractTopologicalSorter {
 		while (independant && iterator.hasNext()) {
 			Edge<?> currentedge = iterator.next();
 
-			if (_backtracks.contains(currentedge))
+			if (_backtracks.contains(currentedge)) {
 				independant = true;
-			else {
+			} else {
 				Vertex<?> currentType = currentedge.getTarget();
 				independant = (independant && !toSort.contains(currentType));
 			}
@@ -235,8 +238,9 @@ public class GenericTopologicalSorter extends AbstractTopologicalSorter {
 		Set<Vertex<?>> dependants = new LinkedHashSet<Vertex<?>>();
 		Set<Vertex<?>> independants;
 
-		if (toSort.size() == 0)
+		if (toSort.size() == 0) {
 			return sorted;
+		}
 
 		independants = findIndependantsInTypeSet(toSort, comparator_p,
 				monitor_p);
@@ -275,7 +279,9 @@ public class GenericTopologicalSorter extends AbstractTopologicalSorter {
 								e.isCritical());
 
 						if (_backtracks.contains(e))
+						 {
 							e2.setName("backtrack"); //$NON-NLS-1$
+						}
 					}
 				}
 			}
@@ -291,8 +297,9 @@ public class GenericTopologicalSorter extends AbstractTopologicalSorter {
 			throw new CycleException();
 		}
 		for (Vertex<?> currentToSort : toSort) {
-			if (!independants.contains(currentToSort))
+			if (!independants.contains(currentToSort)) {
 				dependants.add(currentToSort);
+			}
 		}
 
 		sorted.addAll(independants);

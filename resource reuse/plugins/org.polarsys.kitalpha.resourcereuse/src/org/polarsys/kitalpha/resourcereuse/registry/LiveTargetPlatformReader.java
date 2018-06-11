@@ -31,10 +31,12 @@ public class LiveTargetPlatformReader extends TargetPlatformReader implements Di
 		return readResources;
 	}
 
+	@Override
 	public void dispose() {
 		PDECore.getDefault().getModelManager().removePluginModelListener(this);
 	}
 
+	@Override
 	public void modelsChanged(PluginModelDelta delta) {
 		for (ModelEntry entry : delta.getRemovedEntries()) {
 			registry.clear(entry.getId());

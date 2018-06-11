@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2015 Thales Global Services.
+ * Copyright (c) 2015, 2018 Thales Global Services.
  * All rights reserved.
  */
 package org.polarsys.kitalpha.composer.api.path.decoders;
@@ -19,6 +19,7 @@ public class ComposerVariablePathDecoder implements IVariableDecoder{
 	 * @param object
 	 * @return {@link String}
 	 */
+	@Override
 	public String decodePath(final String path, final Object object){
 		String value = "";
 		

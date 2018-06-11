@@ -52,6 +52,7 @@ public abstract class AbstractAccuracyConstraintDescriptor extends
 	 * 
 	 * @see org.polarsys.kitalpha.validation.provider.generic.IAccuracyConstraintDescriptor#getInvariantId()
 	 */
+	@Override
 	public final String getInvariantId() {
 		return this.invariantId;
 	}
@@ -61,6 +62,7 @@ public abstract class AbstractAccuracyConstraintDescriptor extends
 	 * 
 	 * @see org.polarsys.kitalpha.validation.provider.generic.IAccuracyConstraintDescriptor#getRequirementId()
 	 */
+	@Override
 	public final String getRequirementId() {
 		return this.requirementId;
 	}
@@ -70,6 +72,7 @@ public abstract class AbstractAccuracyConstraintDescriptor extends
 	 * 
 	 * @see org.eclipse.emf.validation.service.IConstraintDescriptor#getId()
 	 */
+	@Override
 	public final String getId() {
 		return this.id;
 	}
@@ -79,6 +82,7 @@ public abstract class AbstractAccuracyConstraintDescriptor extends
 	 * 
 	 * @see org.eclipse.emf.validation.service.IConstraintDescriptor#getPluginId()
 	 */
+	@Override
 	public final String getPluginId() {
 		return this.pluginId;
 	}

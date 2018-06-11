@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,6 +33,7 @@ public abstract class AbstractDDiagramElementAction extends AbstractFocusExterna
 	
 	protected abstract Collection<DEdge> filter(Collection<DEdge> collection);
 
+	@Override
 	protected void run(Collection<? extends EObject> context, Map<String, Object> parameters) {
 		Collection<DEdge> dCollection = getElement(parameters);
 
@@ -50,8 +51,9 @@ public abstract class AbstractDDiagramElementAction extends AbstractFocusExterna
 			//FIXME: check this collection initialization
 			for (Object object : Arrays.asList(dialog.getResult())) 
 			{
-				if (object instanceof EObject)
+				if (object instanceof EObject) {
 					selectedElements.add((EObject)object);
+				}
 			}
 			RecordingCommand command = getCommand((TransactionalEditingDomain) editingDomain, selectedElements);
 			editingDomain.getCommandStack().execute(command);

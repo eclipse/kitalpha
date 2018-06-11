@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -64,8 +64,9 @@ public final class GenericPurposeRegistry extends PurposeRegistryImpl {
   @Override
   public RuntimePurpose getRegisteredPurpose(String purpose_p, String mappingId_p) {
     for (RuntimePurpose purpose : getRegisteredPurposes()) {
-      if (purpose_p != null && purpose_p.equals(purpose.getName()) && mappingId_p != null && mappingId_p.equals(purpose.getId()))
-        return purpose;
+      if (purpose_p != null && purpose_p.equals(purpose.getName()) && mappingId_p != null && mappingId_p.equals(purpose.getId())) {
+		return purpose;
+	}
     }
     return registerPurpose(purpose_p, mappingId_p);
   }
@@ -80,8 +81,9 @@ public final class GenericPurposeRegistry extends PurposeRegistryImpl {
 
     if (purpose != null && mappingId_p != null) {
       for (Mapping mapping : purpose.getMappings()) {
-        if (mappingId_p.equals(mapping.getId()))
-          result = mapping;
+        if (mappingId_p.equals(mapping.getId())) {
+			result = mapping;
+		}
       }
     }
 
@@ -94,8 +96,9 @@ public final class GenericPurposeRegistry extends PurposeRegistryImpl {
   @Override
   public ContributedPurpose getContributedPurpose(String purpose_p) {
     for (ContributedPurpose purpose : getContributedPurposes()) {
-      if (purpose_p != null && purpose_p.equals(purpose.getName()))
-        return purpose;
+      if (purpose_p != null && purpose_p.equals(purpose.getName())) {
+		return purpose;
+	}
     }
     return null;
   }
@@ -109,8 +112,9 @@ public final class GenericPurposeRegistry extends PurposeRegistryImpl {
     String message = "Registered purpose are valid, check the error log for information."; //$NON-NLS-1$
     for (RuntimePurpose runtimePurpose : getRegisteredPurposes()) {
       IStatus result = runtimePurpose.validate();
-      if (result.getSeverity() != IStatus.INFO)
-        severity = result.getSeverity();
+      if (result.getSeverity() != IStatus.INFO) {
+		severity = result.getSeverity();
+	}
     }
 
     if (severity == IStatus.WARNING) {
@@ -134,8 +138,9 @@ public final class GenericPurposeRegistry extends PurposeRegistryImpl {
 
     for (ContributedPurpose contributedPurpose : getContributedPurposes()) {
       IStatus result = contributedPurpose.validate();
-      if (result.getSeverity() != IStatus.INFO)
-        severity = result.getSeverity();
+      if (result.getSeverity() != IStatus.INFO) {
+		severity = result.getSeverity();
+	}
     }
 
     if (severity == IStatus.WARNING) {
@@ -186,7 +191,9 @@ public final class GenericPurposeRegistry extends PurposeRegistryImpl {
     }
 
     if (selectedPurpose == null)
-      throw new NullPointerException("The purpose to register is not in contributed ones : " + purpose_p); //$NON-NLS-1$
+	 {
+		throw new NullPointerException("The purpose to register is not in contributed ones : " + purpose_p); //$NON-NLS-1$
+	}
 
     for (Mapping contributedMapping : selectedPurpose.getMappings()) {
       if (mappingId_p.equals(contributedMapping.getId())) {
@@ -195,7 +202,9 @@ public final class GenericPurposeRegistry extends PurposeRegistryImpl {
     }
 
     if (selectedMapping == null)
-      throw new NullPointerException("The mapping to register is not in contributed ones : " + purpose_p + "::" + mappingId_p); //$NON-NLS-1$ //$NON-NLS-2$
+	 {
+		throw new NullPointerException("The mapping to register is not in contributed ones : " + purpose_p + "::" + mappingId_p); //$NON-NLS-1$ //$NON-NLS-2$
+	}
 
     RuntimePurpose runtimePurpose = RuntimeFactory.eINSTANCE.createRuntimePurpose();
     runtimePurpose.setName(selectedPurpose.getName());
@@ -253,11 +262,13 @@ public final class GenericPurposeRegistry extends PurposeRegistryImpl {
       runtimeElement.setName(contributedElement.getName());
       runtimeElement.setDomainMetaClass(contributedElement.getDomainMetaClass());
 
-      if (!contributedElement.getOwnedPossibilities().isEmpty())
-        runtimeElement.getOwnedPossibilities().addAll(EcoreUtil.copyAll(contributedElement.getAllPossibilities()));
+      if (!contributedElement.getOwnedPossibilities().isEmpty()) {
+		runtimeElement.getOwnedPossibilities().addAll(EcoreUtil.copyAll(contributedElement.getAllPossibilities()));
+	}
 
-      if (contributedElement.getDefaultPossibility() != null)
-        runtimeElement.setOwnedDefaultPossibility((MappingPossibility) EcoreUtil.copy(contributedElement.getDefaultPossibility()));
+      if (contributedElement.getDefaultPossibility() != null) {
+		runtimeElement.setOwnedDefaultPossibility((MappingPossibility) EcoreUtil.copy(contributedElement.getDefaultPossibility()));
+	}
 
       runtimeMappingElements.put(runtimeElement.getDomainMetaClass(), runtimeElement);
     }

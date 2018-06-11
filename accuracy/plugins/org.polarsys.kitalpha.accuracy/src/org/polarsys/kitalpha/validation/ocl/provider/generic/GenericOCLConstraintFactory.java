@@ -130,6 +130,7 @@ public class GenericOCLConstraintFactory extends GenericConstraintFactory {
 	 * 
 	 * @return the created OCL constraints descriptors.
 	 */
+	@Override
 	public List<AbstractConstraintDescriptor> createConstraints() {
 		this.createdConstraints.clear();
 		List<String> constraintFilesNames = getConstraintFilesNames();

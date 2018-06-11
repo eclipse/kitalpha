@@ -40,8 +40,9 @@ public class EcoreActionsServices {
 			for (EObject eObject : newObjectList) 
 			{
 				final Resource eResource = eObject.eResource();
-				if (! session.getSemanticResources().contains(eResource))
+				if (! session.getSemanticResources().contains(eResource)) {
 					session.addSemanticResource(eResource.getURI(), new NullProgressMonitor());
+				}
 			}
 			return true;
 		}

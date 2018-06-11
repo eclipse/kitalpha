@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -145,8 +145,9 @@ public final class RuleMappingExtensionService implements IRuleMappingExtensionC
     List<Mapping> roots = new ArrayList<Mapping>();
     for (ContributedPurpose purpose : _contributedPurposes.values()) {
       Mapping mostGenericMappingInPurpose = purpose.getMostGenericMapping();
-      if (mostGenericMappingInPurpose.getExtendedMapping() == null)
-        roots.add(mostGenericMappingInPurpose);
+      if (mostGenericMappingInPurpose.getExtendedMapping() == null) {
+		roots.add(mostGenericMappingInPurpose);
+	}
     }
 
     for (Mapping rootMapping : roots) {
@@ -164,8 +165,9 @@ public final class RuleMappingExtensionService implements IRuleMappingExtensionC
   private void handleMappingElementHierarchy(Mapping mapping_p, HashMap<Class<?>, MappingElement> hashMap_p) {
 
     for (MappingElement element : mapping_p.getAllOwnedMappingElements()) {
-      if (hashMap_p.containsKey(element.getDomainMetaClass()))
-        element.setExtendedMappingElement(hashMap_p.get(element.getDomainMetaClass()));
+      if (hashMap_p.containsKey(element.getDomainMetaClass())) {
+		element.setExtendedMappingElement(hashMap_p.get(element.getDomainMetaClass()));
+	}
       hashMap_p.put(element.getDomainMetaClass(), element);
     }
 
@@ -195,8 +197,9 @@ public final class RuleMappingExtensionService implements IRuleMappingExtensionC
   private String getExtendedMappingID(IExtension extension) {
     IConfigurationElement[] elements = extension.getConfigurationElements();
     IConfigurationElement mappingConfigurationElement = elements[0];
-    if (!mappingConfigurationElement.getName().equals(MAPPING_TAG_ENGINE))
-      return null;
+    if (!mappingConfigurationElement.getName().equals(MAPPING_TAG_ENGINE)) {
+		return null;
+	}
     return mappingConfigurationElement.getAttribute(EXTENDED_MAPPING_EXTENSION_ID);
   }
 

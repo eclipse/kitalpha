@@ -68,17 +68,20 @@ public abstract class ResourceRegistry implements ResourceHelper {
 
 	}
 
+	@Override
 	public Resource getResource(String id) throws ResourceNotFoundException {
 		Assert.notNullnotEmpty(id);
 		Resource resource = id2resource.get(id);
 		if (resource == null) {
-			if (parent == null)
+			if (parent == null) {
 				throw new ResourceNotFoundException(Messages.bind(Messages.ResourceId_Not_Found, id));
+			}
 			return parent.getResource(id);
 		}
 		return resource;
 	}
 
+	@Override
 	public Resource[] getResources(SearchCriteria criteria) {
 		Assert.usable(criteria);
 		List<Resource> result = new ArrayList<Resource>();
@@ -86,6 +89,7 @@ public abstract class ResourceRegistry implements ResourceHelper {
 		applyCriteria(result, matcher);
 		Collections.sort(result, new Comparator<Resource>() {
 
+			@Override
 			public int compare(Resource o1, Resource o2) {
 				return o2.getWeight() - o1.getWeight();
 			}
@@ -102,13 +106,16 @@ public abstract class ResourceRegistry implements ResourceHelper {
 				result.add(resource);
 			}
 		}
-		if (parent != null)
+		if (parent != null) {
 			parent.applyCriteria(result, matcher);
+		}
 	}
 
+	@Override
 	public void dispose() {
-		if (parent != null)
+		if (parent != null) {
 			parent.dispose();
+		}
 		id2resource.clear();
 		used2concern.clear();
 		user2concern.clear();

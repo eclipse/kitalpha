@@ -138,8 +138,9 @@ public class GenDocCommand {
 			setContract(factoryComponent, LOGO_PATH_CONTRACT_NAME, logoPath, false);
 			
 			setDomain(factoryComponent, resource.getURI());
-			if (null != patternSubstitutions)
+			if (null != patternSubstitutions) {
 				setPatternsubstitutionContract(factoryComponent, "pattern.substitutions", patternSubstitutions);
+			}
 			try 
 			{
 				InvokeActivityHelper.invoke(factoryComponent, progressMonitor);
@@ -160,8 +161,9 @@ public class GenDocCommand {
 	}
 	
 	private void cleanFiles() {
-		if (resource.getContents() == null || (resource.getContents() != null && resource.getContents().isEmpty()))
+		if (resource.getContents() == null || (resource.getContents() != null && resource.getContents().isEmpty())) {
 			return;
+		}
 		
 		String modelName = DocGenHtmlUtil.getModelName(resource.getContents().get(0));
 		IPath modelPath = path.append(modelName);
@@ -188,6 +190,7 @@ public class GenDocCommand {
 		{
 			Display.getDefault().syncExec(new Runnable() 
 			{
+				@Override
 				public void run() {
 					generateDiagramService.layout(airdUri);
 				}
@@ -220,8 +223,9 @@ public class GenDocCommand {
 	private void setPatternsubstitutionContract(FactoryComponent factoryComponent,
 			String contractName, TypePatternSubstitution value){
 		
-		if (value == null || value.getSubstitutions().isEmpty())
+		if (value == null || value.getSubstitutions().isEmpty()) {
 			return;
+		}
 		
 		Contract invokedContract = factoryComponent.getContract(contractName);
 		Type type = invokedContract.getType();
@@ -247,16 +251,18 @@ public class GenDocCommand {
 		if (contractName != null && ! contractName.isEmpty())
 		{
 			Contract invokedContract = factoryComponent.getContract(contractName);
-			if (invokedContract == null)
+			if (invokedContract == null) {
 				throw new IllegalStateException("[GenDocCommand] The contract " +contractName+ " doesn't exists");
+			}
 		}
 		
 		if (mandatory)
 		{
-			if (value != null)
+			if (value != null) {
 				setContract(factoryComponent, contractName, value);
-			else
+			} else {
 				throw new IllegalStateException("[GenDocCommand] The contract " + contractName + " is mandatory but the value is null");
+			}
 		}
 		else
 		{

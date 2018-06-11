@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -59,9 +59,10 @@ public final class ComposerPathUtils {
 				.toString();
 		if (input.isMultipleObjectsInput()) {
 			List<EObject> inputs = input.getListInput();
-			if (!inputs.isEmpty())
+			if (!inputs.isEmpty()) {
 				configuration.setDestinationFolder(getPath(inputs.get(0),
 						actualPathString));
+			}
 		} else {
 			if (!input.getRootsInputs().isEmpty()) {
 				configuration.setDestinationFolder(getPath(input
@@ -134,8 +135,9 @@ public final class ComposerPathUtils {
 		
 		File javaFile = new File(targetPath);
 		
-		if(!javaFile.exists())
-				javaFile.mkdirs();
+		if(!javaFile.exists()) {
+			javaFile.mkdirs();
+		}
 			
 			
 		folder.createLink(new Path(targetPath), 0, new NullProgressMonitor());

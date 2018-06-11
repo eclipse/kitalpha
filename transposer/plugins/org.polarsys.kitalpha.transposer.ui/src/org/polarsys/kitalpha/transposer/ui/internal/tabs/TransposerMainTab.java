@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -80,11 +80,13 @@ public class TransposerMainTab extends AbstractLaunchConfigurationTab {
   private ContributedPurpose _selectedPurpose = null;
   private Mapping _selectedMapping = null;
 
-  public String getName() {
+  @Override
+public String getName() {
     return TAB_NAME;
   }
 
-  public void createControl(Composite parent) {
+  @Override
+public void createControl(Composite parent) {
 
     Composite comp = new Composite(parent, SWT.NONE);
     setControl(comp);
@@ -152,7 +154,8 @@ public class TransposerMainTab extends AbstractLaunchConfigurationTab {
     _mappingTreeViewer.getTree().setLinesVisible(false);
 
     _mappingTreeViewer.addSelectionChangedListener(new ISelectionChangedListener() {
-      public void selectionChanged(SelectionChangedEvent event_p) {
+      @Override
+	public void selectionChanged(SelectionChangedEvent event_p) {
         updateSelectedMapping();
         updateLaunchConfigurationDialog();
       }
@@ -240,19 +243,22 @@ public class TransposerMainTab extends AbstractLaunchConfigurationTab {
     List<ContributedPurpose> purposes = GenericPurposeRegistry.getInstance().getContributedPurposes();
     Iterable<ContributedPurpose> filteredPurposes = Iterables.filter(purposes, new Predicate<ContributedPurpose>() {
 
+		@Override
 		public boolean apply(ContributedPurpose purpose) {
 		
 			return !purpose.isPrivate();
 		}
 	});
-    if (filteredPurposes != null && !Iterables.isEmpty(filteredPurposes))
-      _purposeComboViewer.setInput(Iterables.toArray(filteredPurposes, ContributedPurpose.class));
+    if (filteredPurposes != null && !Iterables.isEmpty(filteredPurposes)) {
+		_purposeComboViewer.setInput(Iterables.toArray(filteredPurposes, ContributedPurpose.class));
+	}
   }
 
   /**
    * @see org.eclipse.debug.ui.ILaunchConfigurationTab#initializeFrom(org.eclipse.debug.core.ILaunchConfiguration)
    */
-  public void initializeFrom(ILaunchConfiguration configuration_p) {
+  @Override
+public void initializeFrom(ILaunchConfiguration configuration_p) {
     updatePurposeFromConfig(configuration_p);
     updateMappingFromConfig(configuration_p);
   }
@@ -268,8 +274,9 @@ public class TransposerMainTab extends AbstractLaunchConfigurationTab {
       TransposerCorePlugin.getDefault().logError(TransposerUiPlugin.PLUGIN_ID, e.getMessage(), e);
     }
 
-    if (purposeName != null && !"".equals(purposeName)) //$NON-NLS-1$
-      _selectedPurpose = GenericPurposeRegistry.getInstance().getContributedPurpose(purposeName);
+    if (purposeName != null && !"".equals(purposeName)) {
+		_selectedPurpose = GenericPurposeRegistry.getInstance().getContributedPurpose(purposeName);
+	}
 
     if (_selectedPurpose != null) {
       _purposeComboViewer.setSelection(new StructuredSelection(_selectedPurpose));
@@ -311,18 +318,21 @@ public class TransposerMainTab extends AbstractLaunchConfigurationTab {
   /**
    * @see org.eclipse.debug.ui.ILaunchConfigurationTab#performApply(org.eclipse.debug.core.ILaunchConfigurationWorkingCopy)
    */
-  public void performApply(ILaunchConfigurationWorkingCopy configuration_p) {
+  @Override
+public void performApply(ILaunchConfigurationWorkingCopy configuration_p) {
     if (_selectedPurpose != null) {
       configuration_p.setAttribute(ITransposerLaunchConfigurationConstants.PURPOSE_NAME, _selectedPurpose.getName());
-      if (_selectedMapping != null)
-        configuration_p.setAttribute(ITransposerLaunchConfigurationConstants.MAPPING_ID, _selectedMapping.getId());
+      if (_selectedMapping != null) {
+		configuration_p.setAttribute(ITransposerLaunchConfigurationConstants.MAPPING_ID, _selectedMapping.getId());
+	}
     }
   }
 
   /**
    * @see org.eclipse.debug.ui.ILaunchConfigurationTab#setDefaults(org.eclipse.debug.core.ILaunchConfigurationWorkingCopy)
    */
-  public void setDefaults(ILaunchConfigurationWorkingCopy configuration_p) {
+  @Override
+public void setDefaults(ILaunchConfigurationWorkingCopy configuration_p) {
     // TODO Auto-generated method stub
 
   }

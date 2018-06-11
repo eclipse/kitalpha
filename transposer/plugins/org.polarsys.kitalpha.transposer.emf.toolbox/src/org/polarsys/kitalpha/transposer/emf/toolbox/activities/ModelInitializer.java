@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -54,7 +54,8 @@ public class ModelInitializer implements IActivity, ITransposerWorkflow , IGener
   /**
    * @see org.polarsys.kitalpha.cadence.core.api.IActivity#run(java.util.Map)
    */
-  @SuppressWarnings({ "unchecked", "cast" })
+  @Override
+@SuppressWarnings({ "unchecked", "cast" })
   public IStatus run(ActivityParameters activityParams_p) {
      
 	  
@@ -115,7 +116,8 @@ public class ModelInitializer implements IActivity, ITransposerWorkflow , IGener
   /**
    * @see org.polarsys.kitalpha.cadence.core.api.IActivity#getParameters()
    */
-  public Collection<DeclaredParameter> getParameters() {
+  @Override
+public Collection<DeclaredParameter> getParameters() {
     Collection<DeclaredParameter> params = new ArrayList<DeclaredParameter>();
     DeclaredParameter param = new DeclaredParameter(NSURI, "", NSURI_DESCRIPTION); //$NON-NLS-1$
     params.add(param);
@@ -128,7 +130,8 @@ public class ModelInitializer implements IActivity, ITransposerWorkflow , IGener
   /**
    * @see org.polarsys.kitalpha.cadence.core.api.IActivity#validateParameters(org.polarsys.kitalpha.cadence.core.api.parameter.ActivityParameters)
    */
-  public Map<String, ParameterError<?>> validateParameters(ActivityParameters valuedParameters_p) {
+  @Override
+public Map<String, ParameterError<?>> validateParameters(ActivityParameters valuedParameters_p) {
     Map<String, ParameterError<?>> errors = new HashMap<String, ParameterError<?>>();
     
     boolean isValid = false;

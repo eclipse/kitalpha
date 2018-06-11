@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2014 THALES GLOBAL SERVICES.
+ * Copyright (c) 2006, 2018 THALES GLOBAL SERVICES.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.polarsys.kitalpha.patterns.emde.gen.emdepatternsupport.*;
 import org.polarsys.kitalpha.patterns.emde.gen.emdepatternsupport.EmdePatternInstanceSet;
 import org.polarsys.kitalpha.patterns.emde.gen.emdepatternsupport.EmdepatternsupportFactory;
 import org.polarsys.kitalpha.patterns.emde.gen.emdepatternsupport.EmdepatternsupportPackage;
@@ -75,7 +74,8 @@ public class EmdepatternsupportFactoryImpl extends EFactoryImpl implements Emdep
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EmdePatternInstanceSet createEmdePatternInstanceSet() {
+  @Override
+public EmdePatternInstanceSet createEmdePatternInstanceSet() {
 		EmdePatternInstanceSetImpl emdePatternInstanceSet = new EmdePatternInstanceSetImpl();
 		return emdePatternInstanceSet;
 	}
@@ -85,7 +85,8 @@ public class EmdepatternsupportFactoryImpl extends EFactoryImpl implements Emdep
    * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EmdepatternsupportPackage getEmdepatternsupportPackage() {
+  @Override
+public EmdepatternsupportPackage getEmdepatternsupportPackage() {
 		return (EmdepatternsupportPackage)getEPackage();
 	}
 

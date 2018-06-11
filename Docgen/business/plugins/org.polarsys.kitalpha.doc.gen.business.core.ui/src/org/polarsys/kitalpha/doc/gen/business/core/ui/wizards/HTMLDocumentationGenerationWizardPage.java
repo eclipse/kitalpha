@@ -112,6 +112,7 @@ public class HTMLDocumentationGenerationWizardPage extends WizardPage {
 	/**
 	 * @see IDialogPage#createControl(Composite)
 	 */
+	@Override
 	public void createControl(Composite parent) {
 		Composite container = new Composite(parent, SWT.NULL);
 		GridLayout layout = new GridLayout();
@@ -126,6 +127,7 @@ public class HTMLDocumentationGenerationWizardPage extends WizardPage {
 		gd = new GridData(GridData.FILL_HORIZONTAL);
 		modelURIText.setLayoutData(gd);
 		modelURIText.addModifyListener(new ModifyListener() {
+			@Override
 			public void modifyText(ModifyEvent e) {
 				dialogChanged();
 			}
@@ -134,6 +136,7 @@ public class HTMLDocumentationGenerationWizardPage extends WizardPage {
 		Button button = new Button(container, SWT.PUSH);
 		button.setText(BROWSE_TEXT);
 		button.addSelectionListener(new SelectionAdapter() {
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				modelSelection();
 			}
@@ -147,6 +150,7 @@ public class HTMLDocumentationGenerationWizardPage extends WizardPage {
 
 		containerText.setLayoutData(gd);
 		containerText.addModifyListener(new ModifyListener() {
+			@Override
 			public void modifyText(ModifyEvent e) {
 				dialogChanged();
 			}
@@ -155,6 +159,7 @@ public class HTMLDocumentationGenerationWizardPage extends WizardPage {
 		button = new Button(container, SWT.PUSH);
 		button.setText(BROWSE_TEXT);
 		button.addSelectionListener(new SelectionAdapter() {
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				outputFolderSelection();
 			}
@@ -179,8 +184,9 @@ public class HTMLDocumentationGenerationWizardPage extends WizardPage {
 			combo.select(0);
 		}
 		
-		if (isScopedGeneration())
+		if (isScopedGeneration()) {
 			createScopeOptionsWidgets(container);
+		}
 		
 		initialize();
 		dialogChanged();
@@ -249,10 +255,11 @@ public class HTMLDocumentationGenerationWizardPage extends WizardPage {
 				if (obj instanceof IResource) 
 				{
 					IContainer container;
-					if (obj instanceof IContainer)
+					if (obj instanceof IContainer) {
 						container = (IContainer) obj;
-					else
+					} else {
 						container = ((IResource) obj).getParent();
+					}
 
 					containerText.setText(container.getFullPath().toString());
 				}
@@ -351,10 +358,11 @@ public class HTMLDocumentationGenerationWizardPage extends WizardPage {
 			return combo.getText();
 		} else {
 			Iterator<String> iterator = launcherUris.keySet().iterator();
-			if (iterator.hasNext())
+			if (iterator.hasNext()) {
 				return iterator.next();
-			else
+			} else {
 				return "";
+			}
 		}
 	}
 }

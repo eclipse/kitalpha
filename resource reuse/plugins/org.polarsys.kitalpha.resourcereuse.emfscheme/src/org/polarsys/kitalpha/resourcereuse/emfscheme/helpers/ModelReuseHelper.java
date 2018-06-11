@@ -34,14 +34,16 @@ public class ModelReuseHelper {
 		StringBuilder sb = new StringBuilder(50);
 		sb.append(MODELREUSE_SCHEME_PREFIX).append(":/");
 		sb.append("id=").append(URI.encodeSegment(resource.getId(), false));
-		if (manageMetadata)
+		if (manageMetadata) {
 			sb.append("/").append(URI.encodeSegment(METADATA_KEYWORD, false));
+		}
 		return URI.createURI(sb.toString());
 	}
 
 	public static URI[] createModelReuseURI(Resource resource){
-		if (resource.getMetadataPath() != null)
+		if (resource.getMetadataPath() != null) {
 			return new URI[] {createModelReuseURI(resource, false), createModelReuseURI(resource, true)};
+		}
 		return new URI[] {createModelReuseURI(resource, false)};
 	}
 	
@@ -53,8 +55,9 @@ public class ModelReuseHelper {
 	public static URI createMetatadaURI(URI uri) {
 		if (hasModelReuseScheme(uri))
 		{
-			if (uri.path().contains(METADATA_KEYWORD))
+			if (uri.path().contains(METADATA_KEYWORD)) {
 				return uri;
+			}
 			return uri.appendSegment(METADATA_KEYWORD);
 		}
 		return uri;
@@ -76,14 +79,18 @@ public class ModelReuseHelper {
 		StringBuilder sb = new StringBuilder(200);
 		sb.append(MODELREUSE_SCHEME_PREFIX).append(":/");
 		
-		if (criteria.getId() != null && !criteria.getId().isEmpty())
+		if (criteria.getId() != null && !criteria.getId().isEmpty()) {
 			sb.append("id=").append(URI.encodeSegment(criteria.getId(), false)).append('/');
-		if (criteria.getName() != null && !criteria.getName().isEmpty())
+		}
+		if (criteria.getName() != null && !criteria.getName().isEmpty()) {
 			sb.append("name=").append(URI.encodeSegment(criteria.getName(), false)).append('/');
-		if (criteria.getDomain() != null && !criteria.getDomain().isEmpty())
+		}
+		if (criteria.getDomain() != null && !criteria.getDomain().isEmpty()) {
 			sb.append("domain=").append(URI.encodeSegment(criteria.getDomain(), false)).append('/');
-		if (criteria.getVersion() != null && !criteria.getVersion().isEmpty())
+		}
+		if (criteria.getVersion() != null && !criteria.getVersion().isEmpty()) {
 			sb.append("version=").append(URI.encodeSegment(criteria.getVersion(), false)).append('/');
+		}
 		if (criteria.getTags() != null && !criteria.getTags().isEmpty() )
 		{
 			sb.append("tags=");
@@ -92,8 +99,9 @@ public class ModelReuseHelper {
 			}
 			sb.deleteCharAt(sb.length() - 1).append("/");
 		}
-		if (manageMetadata)
+		if (manageMetadata) {
 			sb.append(URI.encodeSegment(METADATA_KEYWORD, false)).append("/");
+		}
 
 		return URI.createURI(sb.toString());
 	}
@@ -102,6 +110,7 @@ public class ModelReuseHelper {
 	/**
 	 * @deprecated use createModelReuseURI() instead
 	 */
+	@Deprecated
 	public static List<URI> findModelsURIAccordingToCriteria(
 			SearchCriteria criteria) {
 
@@ -163,8 +172,9 @@ public class ModelReuseHelper {
 					resourceAlreadyFound = true;
 				}
 			}
-			if (!resourceAlreadyFound)
+			if (!resourceAlreadyFound) {
 				resourceSelected.add(resource);
+			}
 		}
 		return resourceSelected;
 	}

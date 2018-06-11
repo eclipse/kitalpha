@@ -1,6 +1,13 @@
 /*******************************************************************************
- * Copyright (c) Thales Corporate Services S.A.S, 2009.
- *******************************************************************************/
+ * Copyright (c) 2009, 2018 Thales Global Services S.A.S.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *  
+ * Contributors:
+ *   Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
 package org.polarsys.kitalpha.doc.gen.business.ecore.helpers;
 
 import java.util.ArrayList;
@@ -96,8 +103,9 @@ public class AIRDDiagramGeneratorHelper {
 			if (dialog.open() == Window.OK) 
 			{
 				Object[] selection = dialog.getResult();
-				for (Object object : selection)
+				for (Object object : selection) {
 					DialectManager.INSTANCE.initRepresentations(viewpoint, (EObject) object, monitor);
+				}
 			}
 			shell.dispose();
 		} 

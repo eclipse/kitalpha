@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,31 +39,36 @@ public abstract class AbstractContext implements IContext {
   /**
    * @see org.polarsys.kitalpha.ccm.rules.handler.common.interfaces.IContext#exists(java.lang.String)
    */
-  public boolean exists(Object object_p) {
+  @Override
+public boolean exists(Object object_p) {
     return (_repository.containsKey(object_p));
   }
 
   /**
    * @see org.polarsys.kitalpha.ccm.rules.handler.common.interfaces.IContext#get(java.lang.String)
    */
-  public Object get(Object object_p) {
+  @Override
+public Object get(Object object_p) {
     return _repository.get(object_p);
   }
 
-  @SuppressWarnings("nls")
+  @Override
+@SuppressWarnings("nls")
   abstract public String getName();
 
   /**
    * @see org.polarsys.kitalpha.ccm.rules.handler.common.interfaces.IContext#getKeys()
    */
-  public EList<Object> getKeys() {
+  @Override
+public EList<Object> getKeys() {
     return new BasicEList<Object>(_repository.keySet());
   }
 
   /**
    * @see org.polarsys.kitalpha.ccm.rules.handler.common.interfaces.IContext#init(org.polarsys.kitalpha.ccm.rules.handler.common.interfaces.IContext)
    */
-  public void initWith(IContext context_p) {
+  @Override
+public void initWith(IContext context_p) {
     reset();
     updateWith(context_p);
   }
@@ -71,7 +76,8 @@ public abstract class AbstractContext implements IContext {
   /**
    * @see org.polarsys.kitalpha.ccm.rules.handler.common.interfaces.IContext#init(org.polarsys.kitalpha.ccm.rules.handler.common.interfaces.IContext)
    */
-  public void updateWith(IContext context_p) {
+  @Override
+public void updateWith(IContext context_p) {
     if (context_p == null) {
       return;
     }
@@ -85,18 +91,21 @@ public abstract class AbstractContext implements IContext {
   /**
    * @see org.polarsys.kitalpha.ccm.rules.handler.common.interfaces.IContext#put(java.lang.String, java.lang.Object)
    */
-  public void put(Object object_p, Object value_p) {
+  @Override
+public void put(Object object_p, Object value_p) {
     _repository.put(object_p, value_p);
   }
 
   /**
    * @see org.polarsys.kitalpha.ccm.rules.handler.common.interfaces.IContext#reset()
    */
-  public void reset() {
+  @Override
+public void reset() {
     _repository.clear();
   }
 
-  public abstract void setUpForModelElement(Object object_p);
+  @Override
+public abstract void setUpForModelElement(Object object_p);
 
   /**
    * @see java.lang.Object#toString()

@@ -56,8 +56,9 @@ public class EmdePatternSupport extends DefaultPatternSupport {
     Iterator<? super ElementExtension> it = storageCollection.iterator();
     while (it.hasNext() && result == null) {
       Object current = it.next();
-      if (current instanceof EmdePatternInstanceSet)
-        result = (EmdePatternInstanceSet)current;
+      if (current instanceof EmdePatternInstanceSet) {
+		result = (EmdePatternInstanceSet)current;
+	}
     }
     if (result == null && createIfAbsent) {
       IModelEnvironment env = CorePatternsPlugin.getDefault().getModelEnvironment();
@@ -82,10 +83,12 @@ public class EmdePatternSupport extends DefaultPatternSupport {
    * 
    * @see org.eclipse.emf.diffmerge.patterns.core.api.ext.IPatternSupport#getModelResource(org.eclipse.emf.diffmerge.patterns.core.api.IPatternInstanceMarker)
    */
-  public Resource getModelResource(IPatternInstanceMarker instancesEncoder) {
+  @Override
+public Resource getModelResource(IPatternInstanceMarker instancesEncoder) {
     EObject root = EcoreUtil.getRootContainer((EObject)instancesEncoder);
-    if(root != null)
-      return root.eResource();
+    if(root != null) {
+		return root.eResource();
+	}
     return null;
   }
 
@@ -93,11 +96,13 @@ public class EmdePatternSupport extends DefaultPatternSupport {
    * 
    * @see org.eclipse.emf.diffmerge.patterns.core.api.ext.IPatternSupport#getPatternInstanceEncodingModel(org.eclipse.emf.ecore.EObject)
    */
-  public IPatternInstanceMarker getPatternInstanceEncodingModel(
+  @Override
+public IPatternInstanceMarker getPatternInstanceEncodingModel(
       EObject context) {
     EObject root = EcoreUtil.getRootContainer(context);
-    if(root != null)
-      return getPatternInstanceEncodingModel(root.eResource());
+    if(root != null) {
+		return getPatternInstanceEncodingModel(root.eResource());
+	}
     return null;
   }
 
@@ -105,11 +110,13 @@ public class EmdePatternSupport extends DefaultPatternSupport {
    * 
    * @see org.eclipse.emf.diffmerge.patterns.core.api.ext.IPatternSupport#getPatternInstanceEncodingModel(org.eclipse.emf.ecore.resource.Resource)
    */
-  public IPatternInstanceMarker getPatternInstanceEncodingModel(
+  @Override
+public IPatternInstanceMarker getPatternInstanceEncodingModel(
       Resource context) {
     for(EObject obj: context.getContents()){
-      if(obj instanceof EmdePatternInstanceSet)
-        return (IPatternInstanceMarker) obj;
+      if(obj instanceof EmdePatternInstanceSet) {
+		return (IPatternInstanceMarker) obj;
+	}
     }
     return null;
   }

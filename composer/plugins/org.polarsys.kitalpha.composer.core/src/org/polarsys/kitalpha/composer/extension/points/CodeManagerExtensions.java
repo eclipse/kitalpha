@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -121,8 +121,9 @@ public final class CodeManagerExtensions {
 		if (configElements != null) {
 
 			for (IConfigurationElement elt : configElements) {
-				if (elt.getAttribute(ATT_NAME).equals(name))
+				if (elt.getAttribute(ATT_NAME).equals(name)) {
 					configuration = elt;
+				}
 			}
 		}
 		return configuration;
@@ -144,8 +145,9 @@ public final class CodeManagerExtensions {
 		IConfigurationElement[] configElements = getExtensionElt(ALLOCATION_REFINERIES_ID);
 		if (configElements != null) {
 			for (IConfigurationElement elt : configElements) {
-				if (elt.getAttribute(ATT_NAME).equals(name))
+				if (elt.getAttribute(ATT_NAME).equals(name)) {
 					configuration = elt;
+				}
 			}
 		}
 
@@ -167,8 +169,9 @@ public final class CodeManagerExtensions {
 		IConfigurationElement[] configElements = getExtensionElt(ALLOCATION_COTS_ID);
 		if (configElements != null) {
 			for (IConfigurationElement elt : configElements) {
-				if (elt.getAttribute(ATT_NAME).equals(name))
+				if (elt.getAttribute(ATT_NAME).equals(name)) {
 					configuration = elt;
+				}
 			}
 		}
 
@@ -190,8 +193,9 @@ public final class CodeManagerExtensions {
 		IConfigurationElement[] configElements = getExtensionElt(ALLOCATION_BINDINGS_ID);
 		if (configElements != null) {
 			for (IConfigurationElement elt : configElements) {
-				if (elt.getAttribute(ATT_NAME).equals(name))
+				if (elt.getAttribute(ATT_NAME).equals(name)) {
 					configuration = elt;
+				}
 			}
 		}
 
@@ -215,8 +219,9 @@ public final class CodeManagerExtensions {
 		if (configElements != null) {
 
 			for (IConfigurationElement elt : configElements) {
-				if (elt.getAttribute(ATT_ID).equals(id))
+				if (elt.getAttribute(ATT_ID).equals(id)) {
 					configuration = elt;
+				}
 			}
 		}
 		return configuration;
@@ -238,8 +243,9 @@ public final class CodeManagerExtensions {
 		IConfigurationElement[] configElements = getExtensionElt(ALLOCATION_REFINERIES_ID);
 		if (configElements != null) {
 			for (IConfigurationElement elt : configElements) {
-				if (elt.getAttribute(ATT_ID).equals(id))
+				if (elt.getAttribute(ATT_ID).equals(id)) {
 					configuration = elt;
+				}
 			}
 		}
 
@@ -262,8 +268,9 @@ public final class CodeManagerExtensions {
 		IConfigurationElement[] configElements = getExtensionElt(ALLOCATION_COTS_ID);
 		if (configElements != null) {
 			for (IConfigurationElement elt : configElements) {
-				if (elt.getAttribute(ATT_ID).equals(id))
+				if (elt.getAttribute(ATT_ID).equals(id)) {
 					configuration = elt;
+				}
 			}
 		}
 
@@ -285,8 +292,9 @@ public final class CodeManagerExtensions {
 		IConfigurationElement[] configElements = getExtensionElt(ALLOCATION_BINDINGS_ID);
 		if (configElements != null) {
 			for (IConfigurationElement elt : configElements) {
-				if (elt.getAttribute(ATT_ID).equals(id))
+				if (elt.getAttribute(ATT_ID).equals(id)) {
 					configuration = elt;
+				}
 			}
 		}
 

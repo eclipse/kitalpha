@@ -92,6 +92,7 @@ public class IndexingConceptsTask implements ITaskProduction {
 			+ "</head><body><div id=\"content\">";
 	private static final String FOOTER = "</div></body></html>";
 
+	@Override
 	public void preExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
 
@@ -113,6 +114,7 @@ public class IndexingConceptsTask implements ITaskProduction {
 				fileName.equals("sidebar.html");		//$NON-NLS-1$
 	}
 
+	@Override
 	@SuppressWarnings("unchecked")
 	public void doExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
@@ -221,8 +223,9 @@ public class IndexingConceptsTask implements ITaskProduction {
 			final List<String> inTable = conceptsToPageTable.get(currentConcept);
 			noPageTable = inTable == null || inTable.isEmpty(); 
 
-			if (noPage && noPageParagraph && noPageList && noPageTable)
+			if (noPage && noPageParagraph && noPageList && noPageTable) {
 				conceptsToRemove.add(currentConcept);
+			}
 		}
 	}
 
@@ -541,6 +544,7 @@ public class IndexingConceptsTask implements ITaskProduction {
 		}
 	}
 
+	@Override
 	public void postExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
 

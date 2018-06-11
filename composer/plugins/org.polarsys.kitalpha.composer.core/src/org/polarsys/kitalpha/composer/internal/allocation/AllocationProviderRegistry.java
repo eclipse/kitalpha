@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,15 +47,18 @@ public class AllocationProviderRegistry implements IAllocationProviderRegistry {
 	 * 
 	 * @see org.polarsys.kitalpha.composer.internal.IAllocationProviderRegistry#register(org.polarsys.kitalpha.composer.internal.AllocationProviderDescriptor)
 	 */
+	@Override
 	public void register(IAllocationProviderDescriptor descriptor) {
 		this.providers.add(descriptor);
 	}
 
+	@Override
 	public IAllocationProvider getBestProvider(Root rootAllocation,
 			EObject unknownElement) {
 		for (IAllocationProviderDescriptor descriptor : this.providers) {
-			if (descriptor.provides(rootAllocation, unknownElement))
+			if (descriptor.provides(rootAllocation, unknownElement)) {
 				return descriptor.getAllocationProvider();
+			}
 		}
 		return null;
 	}
@@ -65,6 +68,7 @@ public class AllocationProviderRegistry implements IAllocationProviderRegistry {
 	 * 
 	 * @see org.polarsys.kitalpha.composer.internal.IAllocationProviderRegistry#unregister(org.polarsys.kitalpha.composer.internal.AllocationProviderDescriptor)
 	 */
+	@Override
 	public void unregister(IAllocationProviderDescriptor descriptor) {
 		this.providers.remove(descriptor);
 	}
@@ -108,6 +112,7 @@ public class AllocationProviderRegistry implements IAllocationProviderRegistry {
 	private static class AllocationProviderDescriptorComparator implements
 			Comparator<IAllocationProviderDescriptor> {
 
+		@Override
 		public int compare(IAllocationProviderDescriptor o1,
 				IAllocationProviderDescriptor o2) {
 			if (o1.getPriority() == o2.getPriority()) {
