@@ -79,12 +79,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.services.reverse.utils.ReverseUtil
 public class ReverseFromEcoreEngine {
 	// This map must be moved to a singleton object to manage reverse based on more then one ecore model
 	private static final EPackage.Registry REGISTRY = new EPackageRegistryImpl(EPackage.Registry.INSTANCE);
-	private static final String eMDE_ANNOTATION_1 = "http://www.polarsys.org/kitalpha/emde/1.0.0/constraint";
-	private static final String eMDE_ANNOTATION_2 ="http://www.polarsys.org/kitalpha/emde/1.0.0/constraintMapping";
+	private static final String EMDE_ANNOTATION_1 = "http://www.polarsys.org/kitalpha/emde/1.0.0/constraint";
+	private static final String EMDE_ANNOTATION_2 ="http://www.polarsys.org/kitalpha/emde/1.0.0/constraintMapping";
 	
-	private Map<EClass, Class> reverseClassesMapping_ = new HashMap<EClass, Class>();
-	private Map<EEnum, Enumeration> reverseEnumerationsMapping_ = new HashMap<EEnum, Enumeration>();
-	private Map<EModelElement, AnnotatableElement> annotationElementMapping_ = new HashMap<EModelElement, AnnotatableElement>();
+	private Map<EClass, Class> reverseClassesMapping_ = new HashMap<>();
+	private Map<EEnum, Enumeration> reverseEnumerationsMapping_ = new HashMap<>();
+	private Map<EModelElement, AnnotatableElement> annotationElementMapping_ = new HashMap<>();
 
 	private boolean flattenEPackages;
 	private boolean addSeperator;
@@ -95,9 +95,9 @@ public class ReverseFromEcoreEngine {
 	private Viewpoint viewpoint;
 	private IProgressMonitor monitor;
 	
-	private List<EPackage> targetApplicationEPackages = new ArrayList<EPackage>();
-	private final String ECORE_NSURI_PATTERN = "http://www.eclipse.org/emf/\\d{4}/Ecore";
-	private final String EMDE_NSURI_PATTERN = "http://www.polarsys.org/kitalpha/emde/(\\d+(\\.\\d+(\\.\\d+)))";
+	private final List<EPackage> targetApplicationEPackages = new ArrayList<>();
+	private static final String ECORE_NSURI_PATTERN = "http://www.eclipse.org/emf/\\d{4}/Ecore";
+	private static final String EMDE_NSURI_PATTERN = "http://www.polarsys.org/kitalpha/emde/(\\d+(\\.\\d+(\\.\\d+)))";
 	
 	private List<EClassifier> eClassifiersToReverse;
 	
@@ -154,7 +154,7 @@ public class ReverseFromEcoreEngine {
 	
 	private void initEClassifiersToReverse(EPackage ePackage){
 		if (eClassifiersToReverse == null)
-			eClassifiersToReverse = new UniqueEList<EClassifier>();
+			eClassifiersToReverse = new UniqueEList<>();
 		else
 			eClassifiersToReverse.clear();
 		
@@ -179,7 +179,7 @@ public class ReverseFromEcoreEngine {
 					// Check if there is a EClassifier having the same name as the current EClassifier
 					for (EClassifier eClassifier2 : eClassifiersToReverse) 
 					{
-						if (eClassifier.getName().toUpperCase().equals(eClassifier2.getName().toUpperCase()))
+						if (eClassifier.getName().equalsIgnoreCase(eClassifier2.getName()))
 						{// This means that there is an EClassifier having the same name
 							String newEClassifierName = getNewEClassifierName(eClassifier);
 							eClassifier.setName(newEClassifierName);
@@ -336,7 +336,7 @@ public class ReverseFromEcoreEngine {
 	 * Reverse Step 4: Save resource
 	 */
 	private void saveResource() throws IOException{
-		viewpoint.eResource().save(Collections.EMPTY_MAP);
+		viewpoint.eResource().save(Collections.emptyMap());
 	}
 	
 	/**
@@ -345,7 +345,7 @@ public class ReverseFromEcoreEngine {
 	 * @param vpClass
 	 */
 	private void reverseeMDEExtension(EClass eClass, Class vpClass){
-		EAnnotation annotation = eClass.getEAnnotation(eMDE_ANNOTATION_1);
+		EAnnotation annotation = eClass.getEAnnotation(EMDE_ANNOTATION_1);
 		if (annotation != null) 
 		{
 			String value = annotation.getDetails().get("ExtendedElement");
@@ -428,8 +428,8 @@ public class ReverseFromEcoreEngine {
 	}
 	
 	private boolean isEMDEAnnotation(EAnnotation eAnnotation){
-		return eAnnotation.getSource().equals(eMDE_ANNOTATION_1) ||
-					eAnnotation.getSource().equals(eMDE_ANNOTATION_2);
+		return eAnnotation.getSource().equals(EMDE_ANNOTATION_1) ||
+					eAnnotation.getSource().equals(EMDE_ANNOTATION_2);
 	}
 	
 	/**
@@ -467,7 +467,7 @@ public class ReverseFromEcoreEngine {
 				{
 					Enumeration enumeration = reverseEnumerationsMapping_.get((EEnum)attributeDataType);
 					if (enumeration == null)
-						throw new RuntimeException("Enumeration " + ((EEnum)attributeDataType).getName() + " was not imported correctely");
+						throw new IllegalStateException("Enumeration " + ((EEnum)attributeDataType).getName() + " was not imported correctely");
 					
 					LocalAttributeType localtype = VpdescFactory.eINSTANCE.createLocalAttributeType();
 					localtype.setType(enumeration);
@@ -860,7 +860,7 @@ public class ReverseFromEcoreEngine {
 		else
 		{
 			EList<EPackage> eSubpackages = rootEPackage.getESubpackages();
-			if (eSubpackages != null && eSubpackages.size() > 0 )
+			if (eSubpackages != null && !eSubpackages.isEmpty() )
 			{
 				if (eSubpackages.contains(wantedEPackage))
 					return true;
@@ -893,7 +893,7 @@ public class ReverseFromEcoreEngine {
 		if (stringNsUris != null)
 		{
 			ePackages = ReverseUtil.getEPackagesByNsUri(stringNsUris);
-			if (ePackages != null && ePackages.size() > 0)
+			if (ePackages != null && !ePackages.isEmpty())
 				targetApplicationEPackages.addAll(ePackages);
 		}
 		// Second, load regex NsUris
@@ -904,12 +904,9 @@ public class ReverseFromEcoreEngine {
 		// Add Ecore and EMDE NsUris patterns. We use pattern to handle different versions of this EPackages
 		regexNsUris.add(ECORE_NSURI_PATTERN);
 		regexNsUris.add(EMDE_NSURI_PATTERN);
-		if (regexNsUris != null)
-		{
-			ePackages = ReverseUtil.getEPackagesByNsUriRegex(regexNsUris);
-			if (ePackages != null && ePackages.size() > 0)
-				targetApplicationEPackages.addAll(ePackages);
-		}
+		ePackages = ReverseUtil.getEPackagesByNsUriRegex(regexNsUris);
+		if (ePackages != null && !ePackages.isEmpty())
+			targetApplicationEPackages.addAll(ePackages);
 	}
 	
 	/**
@@ -949,9 +946,9 @@ public class ReverseFromEcoreEngine {
 				result += eClass.getESuperTypes().size();
 				result += eClass.getEOperations().size();
 				result += eClass.getEAnnotations().size();
-				if (eClass.getEAnnotation(eMDE_ANNOTATION_1) != null)
+				if (eClass.getEAnnotation(EMDE_ANNOTATION_1) != null)
 					result --;
-				if (eClass.getEAnnotation(eMDE_ANNOTATION_2) != null)
+				if (eClass.getEAnnotation(EMDE_ANNOTATION_2) != null)
 					result --;
 			}
 		}

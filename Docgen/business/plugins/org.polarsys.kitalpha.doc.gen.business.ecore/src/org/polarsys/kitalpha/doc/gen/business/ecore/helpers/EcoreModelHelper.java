@@ -24,7 +24,7 @@ public class EcoreModelHelper {
 		EAnnotation annotation = modelElement.getEAnnotation(EANNOTATION_SRC);
 		if (annotation != null) {
 			String description = annotation.getDetails().get("description");
-			if (description != null && ! description.toUpperCase().equals("null".toUpperCase())) {
+			if (description != null && ! description.equalsIgnoreCase("null")) {
 				descriptionValue = description;
 			}
 		}
@@ -60,7 +60,7 @@ public class EcoreModelHelper {
 					keyValue = "<img src=\"" + keyValue
 							+ "\" alt=\"example\" />";
 				}
-				StringBuffer buffer = new StringBuffer();
+				StringBuilder buffer = new StringBuilder();
 				buffer.append("<p><strong>" + key.substring(0, 1).toUpperCase()
 						+ key.substring(1) + ":</strong><br />");
 				buffer.append(keyValue);
@@ -83,7 +83,7 @@ public class EcoreModelHelper {
 				modelName = ((EPackage) root).getName();
 			}
 		}
-		StringBuffer buffer = new StringBuffer();
+		StringBuilder buffer = new StringBuilder();
 		buffer.append("<a href=\"");
 		if (modelName != "") {
 			buffer.append("../" + modelName + "/");

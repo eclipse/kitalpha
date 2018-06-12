@@ -59,7 +59,7 @@ public class EraseEMFPluginsAction extends BaseSelectionListenerAction
 			// Get the generated EMF Plugins IDs from the genmodel model.
 			List<String> list = getEMFPluginsProjects(modelsProject, shortName);
 			// Erase generated EMF plugins 
-			EraseProjects(list);
+			eraseProjects(list);
 		} catch (CoreException e) {
 		}
 	}
@@ -89,7 +89,7 @@ public class EraseEMFPluginsAction extends BaseSelectionListenerAction
 		return result;
 	}
 	
-	private void EraseProjects(List<String> projectNamesList) throws CoreException{
+	private void eraseProjects(List<String> projectNamesList) throws CoreException{
 		if (projectNamesList != null)
 			for (String projectName : projectNamesList) {
 				IProject projet = ResourcesPlugin.getWorkspace().getRoot().getProject(projectName);
@@ -124,11 +124,11 @@ public class EraseEMFPluginsAction extends BaseSelectionListenerAction
 
 		for (GenerationElement iGenerationElement : generationchain.getElements()) {
 			if (iGenerationElement instanceof GenerationChain 
-					&& iGenerationElement.getName().toLowerCase().equals(shortName.toLowerCase())){
+					&& iGenerationElement.getName().equalsIgnoreCase(shortName)){
 				GenerationChain subGenerationChain = (GenerationChain) iGenerationElement;
 				for (GenerationElement iSubGenerationElement : subGenerationChain.getElements()) 
 					if (iSubGenerationElement instanceof EmfGeneration 
-							&& iGenerationElement.getName().toLowerCase().equals(shortName.toLowerCase())){
+							&& iGenerationElement.getName().equalsIgnoreCase(shortName)){
 						EmfGeneration emfGeneration = (EmfGeneration) iSubGenerationElement;
 						result = emfGeneration.getPluginName();
 						r.unload();
@@ -153,6 +153,7 @@ public class EraseEMFPluginsAction extends BaseSelectionListenerAction
 	}
 
 	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
+		//Nothing to do
 	}
 
 }

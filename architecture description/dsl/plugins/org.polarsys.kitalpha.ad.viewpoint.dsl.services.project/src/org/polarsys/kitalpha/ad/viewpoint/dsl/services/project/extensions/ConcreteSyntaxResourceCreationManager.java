@@ -119,7 +119,7 @@ public class ConcreteSyntaxResourceCreationManager {
 		{
 			for (IConfigurationElement iConfigurationElement : config) 
 			{
-				if (iConfigurationElement.getName().toLowerCase().equals(_ConcreteSyntaxResourceCreator_ConfElement.toLowerCase()))
+				if (iConfigurationElement.getName().equalsIgnoreCase(_ConcreteSyntaxResourceCreator_ConfElement))
 				{
 					String id = iConfigurationElement.getAttribute(_ConcreteSyntaxResourceCreator_ID);
 					if (id.equals(creatorID))
@@ -146,7 +146,7 @@ public class ConcreteSyntaxResourceCreationManager {
 		{
 			for (IConfigurationElement iConfigurationElement : config) 
 			{
-				if (iConfigurationElement.getName().toLowerCase().equals(_ConcreteSyntaxResourceCreator_ConfElement.toLowerCase()))
+				if (iConfigurationElement.getName().equalsIgnoreCase(_ConcreteSyntaxResourceCreator_ConfElement))
 				{
 					String id = iConfigurationElement.getAttribute(_ConcreteSyntaxResourceCreator_ID);
 					if (id.equals(creatorID))
@@ -181,8 +181,8 @@ public class ConcreteSyntaxResourceCreationManager {
 		{
 			for (IConfigurationElement iConfigurationElement : config) 
 			{
-				if (iConfigurationElement.getName().toLowerCase().
-						equals(_ConcreteSyntaxResourceCreator_ConfElement.toLowerCase()))
+				if (iConfigurationElement.getName().
+						equalsIgnoreCase(_ConcreteSyntaxResourceCreator_ConfElement))
 				{
 					String id = iConfigurationElement.getAttribute(_ConcreteSyntaxResourceCreator_ID);
 					String label = iConfigurationElement.getAttribute(_ConcreteSyntaxResourceCreator_Label);

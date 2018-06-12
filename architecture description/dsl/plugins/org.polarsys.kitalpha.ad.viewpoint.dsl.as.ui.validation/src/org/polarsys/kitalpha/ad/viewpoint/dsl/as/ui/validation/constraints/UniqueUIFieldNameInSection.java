@@ -83,7 +83,7 @@ public class UniqueUIFieldNameInSection implements IAdditionalConstraint {
 			if (uiField != referenceObject && 
 					referencedName != null && 
 					curName != null &&
-					curName.toLowerCase().equals(referencedName.toLowerCase()))
+					curName.equalsIgnoreCase(referencedName))
 			{
 				duplicatedName = curName;
 				return true;
@@ -94,7 +94,7 @@ public class UniqueUIFieldNameInSection implements IAdditionalConstraint {
 		
 		for (UIContainer uiContainer : parent.getSubContainers()) 
 		{
-			if (uiContainer.getName().toLowerCase().equals(referenceObject.getName().toLowerCase()))
+			if (uiContainer.getName().equalsIgnoreCase(referenceObject.getName()))
 			{
 				duplicatedName = referenceObject.getName();
 				return true;

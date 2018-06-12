@@ -41,7 +41,7 @@ public class ConcreteSyntaxResourceInitializeManager {
 		{
 			for (IConfigurationElement iConfigurationElement : config) 
 			{
-				if (iConfigurationElement.getName().toLowerCase().equals(ConcreteSyntaxResourceInitialize_ConfElement.toLowerCase()))
+				if (iConfigurationElement.getName().equalsIgnoreCase(ConcreteSyntaxResourceInitialize_ConfElement))
 				{
 					String id = iConfigurationElement.getAttribute(ConcreteSyntaxResourceInitialize_ID);
 					if (id.equals(creatorID))
@@ -108,7 +108,7 @@ public class ConcreteSyntaxResourceInitializeManager {
 		{
 			for (IConfigurationElement iConfigurationElement : config) 
 			{
-				if (iConfigurationElement.getName().toLowerCase().equals(ConcreteSyntaxResourceInitialize_ConfElement.toLowerCase()))
+				if (iConfigurationElement.getName().equalsIgnoreCase(ConcreteSyntaxResourceInitialize_ConfElement))
 				{
 					String id = iConfigurationElement.getAttribute(ConcreteSyntaxResourceInitialize_ID);
 					if (id.equals(creatorID))
@@ -123,14 +123,14 @@ public class ConcreteSyntaxResourceInitializeManager {
 		IConfigurationElement[] config =Platform.getExtensionRegistry().
 		getConfigurationElementsFor(ConcreteSyntaxResourceInitialize_ExtensionPoint);
 
-		Map<String, String> result = new HashMap<String, String>();
+		Map<String, String> result = new HashMap<>();
 
 		if (config.length != 0)
 		{
 			for (IConfigurationElement iConfigurationElement : config) 
 			{
-				if (iConfigurationElement.getName().toLowerCase().
-						equals(ConcreteSyntaxResourceInitialize_ConfElement.toLowerCase()))
+				if (iConfigurationElement.getName().
+						equalsIgnoreCase(ConcreteSyntaxResourceInitialize_ConfElement))
 				{
 					String id = iConfigurationElement.getAttribute(ConcreteSyntaxResourceInitialize_ID);
 					String label = iConfigurationElement.getAttribute(ConcreteSyntaxResourceInitialize_Label);

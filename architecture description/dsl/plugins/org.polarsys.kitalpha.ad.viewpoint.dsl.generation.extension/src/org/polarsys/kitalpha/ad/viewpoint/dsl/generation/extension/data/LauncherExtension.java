@@ -115,7 +115,7 @@ public class LauncherExtension {
 
 		for (IConfigurationElement iConfigurationElement : iExtension.getConfigurationElements()) 
 		{
-			if (iConfigurationElement.getName().toLowerCase().equals(configurationElementName_))
+			if (iConfigurationElement.getName().equalsIgnoreCase(configurationElementName_))
 			{
 				if (extensionNameAttributeName_ != null && extensionNameAttributeName_.length() > 0)
 				{
@@ -185,7 +185,7 @@ public class LauncherExtension {
 	{
 		for (IConfigurationElement iConfigurationElement : iExtension.getConfigurationElements()) 
 		{
-			if (iConfigurationElement.getName().toLowerCase().equals(configurationElementName_))
+			if (iConfigurationElement.getName().equalsIgnoreCase(configurationElementName_))
 			{
 				if (extensionFCoreAttributeName_ != null && extensionFCoreAttributeName_.length() > 0)
 				{
@@ -232,7 +232,7 @@ public class LauncherExtension {
 		String message = Messages.bind(Messages.Launcher_Extension_Attribut_NotExist, configurationElementName_, AttributeName);
 
 		for (String name : iConfigurationElement.getAttributeNames()) 
-			if (name.toLowerCase().equals(AttributeName.toLowerCase()))
+			if (name.equalsIgnoreCase(AttributeName))
 			{
 				found = true;
 				break;

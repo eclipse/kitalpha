@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -28,20 +28,25 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helpers.vpconf.Configurati
  */
 public class ExtensionManager {
 	
-	private final static String diagram_filter_extension_point = "org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper.diagramfilter"; //$NON-NLS-N$
+	private static final String diagram_filter_extension_point = "org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper.diagramfilter"; //$NON-NLS-N$
 
 	public static List<String> getDiagramFilters(EObject eObject){			
 		// Load available extension for a given TargetApplication
 		String modelTargetApplication = ConfigurationHelper.getTargetApplication(eObject);
 		IConfigurationElement[] config =Platform.getExtensionRegistry().getConfigurationElementsFor(diagram_filter_extension_point);	
-		List<String> result = new ArrayList<String>();
+		List<String> result = new ArrayList<>();
 		if (config.length != 0)
 			for (IConfigurationElement iConfigurationElement : config) 
 				if (iConfigurationElement.getName().equals("Filter")) {
 					String tApplication = iConfigurationElement.getAttribute("TargetApplication");
-					if (tApplication.trim().toLowerCase().equals(modelTargetApplication.trim().toLowerCase()))
+					if (tApplication.trim().equalsIgnoreCase(modelTargetApplication.trim()))
 						result.add(iConfigurationElement.getAttribute("ModelFileExtension"));
 				}	
 		return result;
 	}
+
+	private ExtensionManager() {
+		super();
+	}
+	
 }

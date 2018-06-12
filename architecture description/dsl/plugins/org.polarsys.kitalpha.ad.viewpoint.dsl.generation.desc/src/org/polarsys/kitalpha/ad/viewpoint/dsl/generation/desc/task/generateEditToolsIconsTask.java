@@ -44,13 +44,14 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.provider.resourceimpl.V
 
 public class generateEditToolsIconsTask extends TaskProductionAdapter {
 
-	private static final String LVPS_ICONS_FOLDER_ = "icons";
+	private static final String LVPS_ICONS_FOLDER = "icons";
 
+	@Override
 	public void doExecute(ITaskProductionContext productionContext, IProgressMonitor monitor) throws InvocationException {
 		EMFDomain model = productionContext.getInputValue(VPDESC_MODEL, EMFDomain.class);
 		Viewpoint vp = (Viewpoint) model.getContent().get(0);
 		try {
-			generateToolsIcon(vp, LVPS_ICONS_FOLDER_);
+			generateToolsIcon(vp, LVPS_ICONS_FOLDER);
 		} catch (ViewpointResourceException e) {
 			throw new InvocationException(e);
 		}
@@ -76,7 +77,7 @@ public class generateEditToolsIconsTask extends TaskProductionAdapter {
 						if (iconSrcPath != null && iconSrcPath.trim().length() > 0)
 						{
 							String srcIconPath = "/"+dslvpProjectName +"/"+dslvpIconFolder +"/"+ iconSrcPath;
-							CopyImageFromTo(srcIconPath, genClass.getCreateChildIconFileName(feature,childClass));
+							copyImageFromTo(srcIconPath, genClass.getCreateChildIconFileName(feature,childClass));
 						}
 					}
 
@@ -109,7 +110,7 @@ public class generateEditToolsIconsTask extends TaskProductionAdapter {
 								if (iconSrcPath != null && iconSrcPath.trim().length() > 0)
 								{
 									String srcIconPath = "/"+dslvpProjectName +"/"+dslvpIconFolder +"/"+ iconSrcPath;
-									CopyImageFromTo(srcIconPath, genClass.getCreateChildIconFileName(genModel,feature,childClass));
+									copyImageFromTo(srcIconPath, genClass.getCreateChildIconFileName(genModel,feature,childClass));
 								}
 							}
 					}
@@ -117,7 +118,7 @@ public class generateEditToolsIconsTask extends TaskProductionAdapter {
 		}
 	}
 
-	private void CopyImageFromTo(String srcPath, String destPath){
+	private void copyImageFromTo(String srcPath, String destPath){
 		IPath sourcePath = new Path(srcPath);
 		IFile sourceFile = ResourcesPlugin.getWorkspace().getRoot().getFile(sourcePath);
 
@@ -146,7 +147,7 @@ public class generateEditToolsIconsTask extends TaskProductionAdapter {
 				for (Class iClass : classList)
 				{
 					String ecoreClassName = childClass.getEcoreClass().getName();
-					if (iClass.getName().toLowerCase().equals(ecoreClassName.toLowerCase()))
+					if (iClass.getName().equalsIgnoreCase(ecoreClassName))
 						return iClass.getIcon();
 
 				}

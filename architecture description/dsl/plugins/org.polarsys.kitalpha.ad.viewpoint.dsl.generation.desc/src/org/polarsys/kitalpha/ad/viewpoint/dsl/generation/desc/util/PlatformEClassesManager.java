@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
 public class PlatformEClassesManager {
 	
-	public static PlatformEClassesManager INSTANCE = new PlatformEClassesManager();
+	public static final PlatformEClassesManager INSTANCE = new PlatformEClassesManager();
 	
 	protected ResourceSet rs = new ResourceSetImpl();
 	
@@ -55,17 +55,16 @@ public class PlatformEClassesManager {
 		EPackage platfpormEPackage = (EPackage)resource.getContents().get(0);
 		EPackage referencedEPackage = eenum.getEPackage();
 		
-		if (platfpormEPackage.getName().toLowerCase().equals(referencedEPackage.getName().toLowerCase()))
+		if (platfpormEPackage.getName().equalsIgnoreCase(referencedEPackage.getName()))
 		{
 			return (EEnum) platfpormEPackage.getEClassifier(eenum.getName());
 		}else
 		{
 			for (EPackage iEPackage : platfpormEPackage.getESubpackages()) 
 			{
-				if (iEPackage.getName().toLowerCase().equals(referencedEPackage.getName().toLowerCase()))
+				if (iEPackage.getName().equalsIgnoreCase(referencedEPackage.getName()))
 				{
-					EEnum eEnum = (EEnum) iEPackage.getEClassifier(eenum.getName());
-					return eEnum;
+					return (EEnum) iEPackage.getEClassifier(eenum.getName());
 				}
 			}
 		}
@@ -89,17 +88,16 @@ public class PlatformEClassesManager {
 		EPackage platfpormEPackage = (EPackage)resource.getContents().get(0);
 		EPackage referencedEPackage = clazz.getEPackage();
 		
-		if (platfpormEPackage.getName().toLowerCase().equals(referencedEPackage.getName().toLowerCase()))
+		if (platfpormEPackage.getName().equalsIgnoreCase(referencedEPackage.getName()))
 		{
 			return (EClass) platfpormEPackage.getEClassifier(clazz.getName());
 		}else
 		{
 			for (EPackage iEPackage : platfpormEPackage.getESubpackages()) 
 			{
-				if (iEPackage.getName().toLowerCase().equals(referencedEPackage.getName().toLowerCase()))
+				if (iEPackage.getName().equalsIgnoreCase(referencedEPackage.getName()))
 				{
-					EClass eClass = (EClass) iEPackage.getEClassifier(clazz.getName());
-					return eClass;
+					return (EClass) iEPackage.getEClassifier(clazz.getName());
 				}
 			}
 		}

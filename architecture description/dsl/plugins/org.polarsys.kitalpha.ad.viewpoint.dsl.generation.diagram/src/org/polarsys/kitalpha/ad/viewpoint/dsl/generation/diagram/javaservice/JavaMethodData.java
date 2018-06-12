@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -56,7 +56,7 @@ public class JavaMethodData{
 		boolean exist = false;
 		for (MethodParameterData iMethodParameterData : methodParameter) 
 		{
-			if (iMethodParameterData.getName().toLowerCase().equals(name.toLowerCase())){
+			if (iMethodParameterData.getName().equalsIgnoreCase(name)){
 				exist = true;
 				break;
 			}
@@ -89,7 +89,7 @@ public class JavaMethodData{
 	}
 
 	public boolean equals(String name, JavaMethodReturnType returnType) {
-		return this.name.toLowerCase().equals(name)
+		return this.name.equalsIgnoreCase(name)
 					&& this.returnType.equals(returnType);
 	}
 	
@@ -115,14 +115,14 @@ public class JavaMethodData{
 			JavaMethodReturnType foreignReturnType = foreignJavaMethodData.getReturnType();
 			
 			// Check if the two methods shares the same name and return type
-			if (this.name.toLowerCase().equals(foreignName.toLowerCase()) &&
+			if (this.name.equalsIgnoreCase(foreignName.toLowerCase()) &&
 				isSignatureEquals(foreignJavaMethodData) &&
 				this.returnType.equals(foreignReturnType))
 			{
 				return true;
 			}
 			
-			if (this.name.toLowerCase().equals(foreignName) &&
+			if (this.name.equalsIgnoreCase(foreignName) &&
 				isSignatureEquals(foreignJavaMethodData) &&
 				! this.returnType.equals(foreignReturnType))
 			{

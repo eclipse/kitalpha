@@ -56,7 +56,7 @@ public class ExternalDataHelper {
 	private static Map<String, URI> packagesInScopeURIs;
 
 	//<target, scope>
-	private final static Map<String, Map<String, URI>> packagesInScopeURIsTarget = Collections.synchronizedMap(new LinkedHashMap<String, Map<String, URI>>());
+	private static final Map<String, Map<String, URI>> packagesInScopeURIsTarget = Collections.synchronizedMap(new LinkedHashMap<String, Map<String, URI>>());
 
 	private ExternalDataHelper() {}
 
@@ -134,12 +134,12 @@ public class ExternalDataHelper {
 	}
 
 	public static Map<String, List<Pattern>> lookupMetamodelLoaders() throws CoreException {
-		metamodelLoaders = new HashMap<String, List<Pattern>>();
-		metamodelLoadersTarget = new HashMap<String, List<Pattern>>();
+		metamodelLoaders = new HashMap<>();
+		metamodelLoadersTarget = new HashMap<>();
 		final IConfigurationElement[] config = Platform.getExtensionRegistry().getConfigurationElementsFor(MetamodelLoader_ExtensionPoint);
 		if (config.length != 0) {
 			for (final IConfigurationElement iConfigElement : config){
-				if (iConfigElement.getName().toLowerCase().equals(MetamodelLoader_configElement.toLowerCase())) {
+				if (iConfigElement.getName().equalsIgnoreCase(MetamodelLoader_configElement)) {
 					//Get the loader
 					final String loaderId = iConfigElement.getAttribute(MetamodelLoader_id);
 					final String target = iConfigElement.getAttribute(TargetApplication);
@@ -151,7 +151,7 @@ public class ExternalDataHelper {
 					final IConfigurationElement[] patterns = iConfigElement.getChildren();
 					//Get the patterns
 					for (final IConfigurationElement candidate : patterns){
-						if (candidate.getName().toLowerCase().equals(NamespacePattern_configElement.toLowerCase())) {
+						if (candidate.getName().equalsIgnoreCase(NamespacePattern_configElement)) {
 							final String value = candidate.getAttribute(NamespacePattern_value);
 							final Pattern namespacePattern = Pattern.compile(value);
 							availablePatterns.add(namespacePattern);
@@ -196,8 +196,7 @@ public class ExternalDataHelper {
 	}
 
 	public static Map<String, URI> getPackagesFromRegistry() {
-		final Map<String, URI> ePackageNsURItoGenModelLocationMap = EcorePlugin.getEPackageNsURIToGenModelLocationMap(false);
-		return ePackageNsURItoGenModelLocationMap;
+		return EcorePlugin.getEPackageNsURIToGenModelLocationMap(false);
 	}
 
 	public static EPackage loadEPackage(final String resourceOrNsURI, final ResourceSet resourceSet) {
@@ -220,11 +219,9 @@ public class ExternalDataHelper {
 				if (resource.getContents().isEmpty()) {
 					return null;
 				}
-				final EPackage result = (EPackage) resource.getContents().get(0);
-				return result;
+				return (EPackage) resource.getContents().get(0);
 			}
-			final EPackage result = (EPackage) resourceSet.getEObject(uri, true);
-			return result;
+			return (EPackage) resourceSet.getEObject(uri, true);
 		} catch (final RuntimeException ex) {
 			if (uri.isPlatformResource()) {
 				final String platformString = uri.toPlatformString(true);

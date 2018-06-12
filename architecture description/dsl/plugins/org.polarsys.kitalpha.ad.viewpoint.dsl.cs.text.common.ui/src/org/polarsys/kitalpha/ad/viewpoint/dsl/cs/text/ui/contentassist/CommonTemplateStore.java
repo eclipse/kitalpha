@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014-2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -102,11 +102,11 @@ public class CommonTemplateStore extends TemplateStore {
 	}
 	
 	public Map<Bundle, String> lookupTemplateStores() {
-		Map<Bundle, String>  templateStores = new HashMap<Bundle, String>();
+		Map<Bundle, String>  templateStores = new HashMap<>();
 		IConfigurationElement[] config = Platform.getExtensionRegistry().getConfigurationElementsFor(TEMPLATEPROVIDER_EXTENSIONPOINT);
 		if (config.length != 0) {
 			for (IConfigurationElement iConfigElement : config){
-				if (iConfigElement.getName().toLowerCase().equals(TEMPLATEPROVIDER_CONFIGELEMENT.toLowerCase())) {
+				if (iConfigElement.getName().equalsIgnoreCase(TEMPLATEPROVIDER_CONFIGELEMENT)) {
 					//Get the contributing bundle
 					Bundle bundle = Platform.getBundle(iConfigElement.getContributor().getName());
 					//Map the contributing bundle to template file path
