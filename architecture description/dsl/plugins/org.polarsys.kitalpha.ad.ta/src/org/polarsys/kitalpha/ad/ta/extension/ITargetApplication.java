@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,15 +27,15 @@ public interface ITargetApplication {
 	 * @return Return an instance of a {@link ITargetApplication} 
 	 * that host target application informations
 	 */
-	public ITargetApplication getInstance();
+	ITargetApplication getInstance();
 	
 	/**
 	 * @return return a list of {@link EClass} 
 	 */
-	public List<EClass> getBasicSemanticElement();
+	List<EClass> getBasicSemanticElement();
 	
 	/**
 	 * @return return a list of {@link ExtensionHelper} related to the target application
 	 */
-	public List<ExtensionHelper> getGenerationExtensionHelpers();
+	List<ExtensionHelper> getGenerationExtensionHelpers();
 }

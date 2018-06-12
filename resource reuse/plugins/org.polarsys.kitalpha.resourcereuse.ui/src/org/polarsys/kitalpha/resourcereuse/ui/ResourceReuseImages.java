@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,9 +15,9 @@ package org.polarsys.kitalpha.resourcereuse.ui;
  */
 public interface ResourceReuseImages {
 
-	public static final String IMG_ADD_OBJ = "obj16/add.gif"; //$NON-NLS-1$
-	public static final String IMG_DELETE_OBJ = "obj16/delete.gif"; //$NON-NLS-1$
-	public static final String IMG_REFRESH_OBJ = "obj16/refresh.png"; //$NON-NLS-1$
-	public static final String IMG_SEARCH_OBJ = "obj16/find.gif"; //$NON-NLS-1$
+	String IMG_ADD_OBJ = "obj16/add.gif"; //$NON-NLS-1$
+	String IMG_DELETE_OBJ = "obj16/delete.gif"; //$NON-NLS-1$
+	String IMG_REFRESH_OBJ = "obj16/refresh.png"; //$NON-NLS-1$
+	String IMG_SEARCH_OBJ = "obj16/find.gif"; //$NON-NLS-1$
 
 }

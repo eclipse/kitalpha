@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,7 +35,7 @@ public interface IRefinery extends ParameterizedComposerElement {
 	 *            the parameters of the refinery
 	 * @return the allocation model filled in completely.
 	 */
-	public Root refineModelElements(final Root allocRoot_p,
-			final Map<String, Parameter> refineryParams_p);
+	Root refineModelElements(final Root allocRoot,
+			final Map<String, Parameter> refineryParams);
 
 }

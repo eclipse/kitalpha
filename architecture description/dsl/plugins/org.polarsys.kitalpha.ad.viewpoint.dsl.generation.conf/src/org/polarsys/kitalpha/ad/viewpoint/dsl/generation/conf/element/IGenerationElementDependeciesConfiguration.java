@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,7 +40,7 @@ public interface IGenerationElementDependeciesConfiguration extends IGenerationE
 	 * Allows to define dependencies between the current {@link GenerationElement} and other one.
 	 * @return a set of {@link GenerationElement} that result is mandatory
 	 */
-	public List<GenerationElement> getDependecies();
+	List<GenerationElement> getDependecies();
 	
 	/**
 	 * Allows to check if the resources required to the current {@link GenerationElement} 
@@ -48,5 +48,5 @@ public interface IGenerationElementDependeciesConfiguration extends IGenerationE
 	 * 
 	 * @return <code>True</code> if all required resources are available in the workspace 
 	 */
-	public boolean preConditions();
+	boolean preConditions();
 }

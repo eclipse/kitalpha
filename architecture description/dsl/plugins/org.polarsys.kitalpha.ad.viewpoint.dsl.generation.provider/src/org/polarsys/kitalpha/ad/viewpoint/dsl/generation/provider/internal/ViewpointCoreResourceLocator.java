@@ -39,7 +39,7 @@ public final class ViewpointCoreResourceLocator {
 	 * @return A  {@link ResourceFileInformation} object containing information about the ECore resource
 	 * @throws ViewpointResourceException
 	 */
-	public static final ResourceFileInformation getECoreFileInformation(Viewpoint viewpoint) 
+	public static ResourceFileInformation getECoreFileInformation(Viewpoint viewpoint) 
 	throws ViewpointResourceException{
 		ResourceFileInformation ecoreInformation = null;
 		String projectName = VpDslConfigurationHelper.getRootProjectName(viewpoint);
@@ -56,7 +56,7 @@ public final class ViewpointCoreResourceLocator {
 	 * @return
 	 * @throws ViewpointResourceException
 	 */
-	public static final ResourceFileInformation getGenchainFileInformation(Viewpoint viewpoint) 
+	public static ResourceFileInformation getGenchainFileInformation(Viewpoint viewpoint) 
 	throws ViewpointResourceException{
 		ResourceFileInformation genchainInformation = null;
 		String projectName = VpDslConfigurationHelper.getRootProjectName(viewpoint);
@@ -73,7 +73,7 @@ public final class ViewpointCoreResourceLocator {
 	 * @return
 	 * @throws ViewpointResourceException
 	 */
-	public static final ResourceFileInformation getGenmodelFileInformation(Viewpoint viewpoint) throws ViewpointResourceException{
+	public static ResourceFileInformation getGenmodelFileInformation(Viewpoint viewpoint) throws ViewpointResourceException{
 		ResourceFileInformation genmodelInformation = null;
 		
 		String projectName = "";
@@ -88,7 +88,7 @@ public final class ViewpointCoreResourceLocator {
 		return genmodelInformation;
 	}
 	
-	public static final boolean checkResourceFileExistence(ResourceFileInformation information){
+	public static boolean checkResourceFileExistence(ResourceFileInformation information){
 		if (information == null)
 			return false;
 		

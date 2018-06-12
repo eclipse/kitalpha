@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -22,14 +22,14 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.output.Tr
  */
 public interface IGenerationStrategy {
 
-	static final String SEPARATOR = ".";
-	static final String LINE_SEPARATOR = "\n";
-	static final String INDENTATION = "	";
+	String SEPARATOR = ".";
+	String LINE_SEPARATOR = "\n";
+	String INDENTATION = "	";
 
 	/**
 	 * Algorithm of generation
 	 * @param vpClass
 	 * @param TreeAppendable
 	 */
-	public TreeAppendable generateDiagram(Class vpClass);
+	TreeAppendable generateDiagram(Class vpClass);
 }

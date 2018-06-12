@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,13 +39,13 @@ public interface IAnalyzer {
 	 * @return Graph model
 	 * @throws AnalysisException
 	 */
-	public Graph analyze(Collection<?> analysisSources_p,
-			Collection<?> selection, IProgressMonitor monitor_p)
+	Graph analyze(Collection<?> analysisSources,
+			Collection<?> selection, IProgressMonitor monitor)
 			throws AnalysisException;
 
 	/**
 	 * Disposes analyzer object.
 	 */
-	public void dispose();
+	void dispose();
 
 }

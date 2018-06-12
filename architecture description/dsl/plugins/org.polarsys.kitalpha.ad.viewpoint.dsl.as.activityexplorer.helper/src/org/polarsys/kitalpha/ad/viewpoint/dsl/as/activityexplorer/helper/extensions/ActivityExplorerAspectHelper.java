@@ -153,7 +153,7 @@ public class ActivityExplorerAspectHelper {
 	 * @return Return the list of used {@link Viewpoint} by the viewpoint containing the anyModelElement object
 	 * @throws SelfContainedAspectException 
 	 */
-	private static final List<Viewpoint> getUsedViewpoints(EObject anyModelElement) throws SelfContainedAspectException{
+	private static List<Viewpoint> getUsedViewpoints(EObject anyModelElement) throws SelfContainedAspectException{
 		List<Viewpoint> result = new ArrayList<Viewpoint>();
 		EObject rootContainer = EcoreUtil.getRootContainer(anyModelElement);
 		if (rootContainer instanceof Viewpoint)

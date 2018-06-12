@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,7 +31,7 @@ public interface IGenerationElementConfiguration {
 	 * This allows to associate a configuration to a {@link GenerationElement} class
 	 * @return the {@link GenerationElement} class associated with configuration
 	 */
-	public Class<? extends GenerationElement> getElementClass();
+	Class<? extends GenerationElement> getElementClass();
 	
 	/**
 	 * This allows to check if the element is relevant or not. The relevance of a GenerationElement 
@@ -42,5 +42,5 @@ public interface IGenerationElementConfiguration {
 	 * 
 	 * @return True if the element is relevant, false else.
 	 */
-	public boolean isRelevant(GenerationChain generationchain, GenerationElement element);
+	boolean isRelevant(GenerationChain generationchain, GenerationElement element);
 }

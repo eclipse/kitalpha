@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2015 Thales Global Services.
+ * Copyright (c) 2015, 2018 Thales Global Services.
  * All rights reserved.
  */
 package org.polarsys.kitalpha.composer.api.path.decoders;
@@ -10,6 +10,6 @@ package org.polarsys.kitalpha.composer.api.path.decoders;
  */
 public interface IVariableDecoder {
 
-	public String decodePath(final String path, final Object object);
+	String decodePath(final String path, final Object object);
 	
 }

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017 Thales Global Services.
+ * Copyright (c) 2017, 2018 Thales Global Services.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,35 +31,35 @@ public interface Transition {
 	/**
 	 * @return the ID of the viewpoint
 	 */
-	public String getViewpointID();
+	String getViewpointID();
 	
 	/**
 	 * @return the ID of the Action which responsible to perform the transition
 	 */
-	public String getActionID();
+	String getActionID();
 	
 	/**
 	 * @return the action which perform the transition
 	 */
-	public Action getAction();
+	Action getAction();
 	
 	
 	/**
 	 * @return all predicate of this transition
 	 */
-	public Map<String, Predicate> getPredicates();
+	Map<String, Predicate> getPredicates();
 	
 	/**
 	 * Association Predicate ID with diagnostic message
 	 * @return
 	 */
-	public Map<String, String> getDiagnosticMessages();
+	Map<String, String> getDiagnosticMessages();
 	
 	/**
 	 * @param predicateID
 	 * @return diagnostic message of predicate
 	 */
-	public String getDiagnosticMessage(String predicateID);
+	String getDiagnosticMessage(String predicateID);
 	
 
 }

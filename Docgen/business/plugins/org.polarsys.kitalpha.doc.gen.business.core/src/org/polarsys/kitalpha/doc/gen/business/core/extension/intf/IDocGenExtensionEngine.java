@@ -30,7 +30,7 @@ public interface IDocGenExtensionEngine {
 	 * @param ctx context of the pattern to execute
 	 * @param params parameters of the pattern to execute
 	 */
-	public void execute(String patternURI, PatternContext ctx, Map<String, Object> params);
+	void execute(String patternURI, PatternContext ctx, Map<String, Object> params);
 	
 	/**
 	 * Execute the pattern {@code pattern} with {@code ctx} context and
@@ -39,7 +39,7 @@ public interface IDocGenExtensionEngine {
 	 * @param ctx ctx context of the pattern to execute
 	 * @param params parameters of the pattern to execute
 	 */
-	public void execute(Pattern pattern, PatternContext ctx, Map<String, Object> params);
+	void execute(Pattern pattern, PatternContext ctx, Map<String, Object> params);
 	
 	/**
 	 * Execute all patterns in {@code patterns} with {@code ctx} context and
@@ -48,14 +48,14 @@ public interface IDocGenExtensionEngine {
 	 * @param ctx ctx context of the pattern to execute
 	 * @param params parameters of the pattern to execute
 	 */
-	public void execute(Collection<Pattern> patterns, PatternContext ctx, Map<String, Object> params);
+	void execute(Collection<Pattern> patterns, PatternContext ctx, Map<String, Object> params);
 	
 	/**
 	 * Execute all contribued patterns with {@code ctx} context and {@code params} parameters
 	 * @param ctx context of the pattern to execute
 	 * @param params parameters of the pattern to execute
 	 */
-	public void execute(PatternContext ctx, Map<String, Object> params);
+	void execute(PatternContext ctx, Map<String, Object> params);
 	
 	/**
 	 * Apply (i.e. execute) all contributed patterns in the topic with  {@code ctx} context and {@code params} parameters
@@ -63,16 +63,16 @@ public interface IDocGenExtensionEngine {
 	 * @param ctx context of the pattern to execute
 	 * @param params parameters of the pattern to execute
 	 */
-	public void apply(String topic, PatternContext ctx, Map<String, Object> params);
+	void apply(String topic, PatternContext ctx, Map<String, Object> params);
 	
 	
-	public void execute(String patternURI, PatternContext ctx, Map<String, Object> params, StringBuffer stringBuffer);
+	void execute(String patternURI, PatternContext ctx, Map<String, Object> params, StringBuffer stringBuffer);
 	
-	public void execute(Pattern pattern, PatternContext ctx, Map<String, Object> params, StringBuffer stringBuffer);
+	void execute(Pattern pattern, PatternContext ctx, Map<String, Object> params, StringBuffer stringBuffer);
 	
-	public void execute(Collection<Pattern> patterns, PatternContext ctx, Map<String, Object> params, StringBuffer stringBuffer);
+	void execute(Collection<Pattern> patterns, PatternContext ctx, Map<String, Object> params, StringBuffer stringBuffer);
 	
-	public void execute(PatternContext ctx, Map<String, Object> params, StringBuffer stringBuffer);
+	void execute(PatternContext ctx, Map<String, Object> params, StringBuffer stringBuffer);
 	
-	public void apply(String topic, PatternContext ctx, Map<String, Object> params, StringBuffer stringBuffer);
+	void apply(String topic, PatternContext ctx, Map<String, Object> params, StringBuffer stringBuffer);
 }

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -16,11 +16,11 @@ package org.polarsys.kitalpha.model.common.scrutiny.constants;
 public interface Constants {
 	
 	//Finder Extension point
-	public static final String SCRUTINIZE_EXTENSION_POINT = "org.polarsys.kitalpha.model.common.scrutiny.scrutinize";
-	public static final String SCRUTINIZE_ANALYSIS = "scrutiny";
-	public static final String GROUP_ID = "id";
-	public static final String GROUP_NAME = "name";
-	public static final String SCRUTINIZE_CLASS = "class";
-	public static final String SCRUTINIZE_JAVA_CLASS = "scrutinize";
+	String SCRUTINIZE_EXTENSION_POINT = "org.polarsys.kitalpha.model.common.scrutiny.scrutinize";
+	String SCRUTINIZE_ANALYSIS = "scrutiny";
+	String GROUP_ID = "id";
+	String GROUP_NAME = "name";
+	String SCRUTINIZE_CLASS = "class";
+	String SCRUTINIZE_JAVA_CLASS = "scrutinize";
 	
 }

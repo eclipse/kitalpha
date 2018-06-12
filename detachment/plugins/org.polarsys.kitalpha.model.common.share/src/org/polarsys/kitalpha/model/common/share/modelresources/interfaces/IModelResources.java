@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -23,45 +23,45 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface IModelResources {
 	
-	public Map<URI, IModelResource> getModelResources();
+	Map<URI, IModelResource> getModelResources();
 	
 	/**
 	 * Filter the resources by their state
 	 * @param state
 	 * @return a new list of filtred resources
 	 */
-	public List<IModelResource> filterModelResourcesWithState(ModelResourceState state);
+	List<IModelResource> filterModelResourcesWithState(ModelResourceState state);
 	
 	/**
 	 * 
 	 * @return all URI of the resources
 	 */
-	public List<URI> getAllModelResourceURI();
+	List<URI> getAllModelResourceURI();
 	
 	/**
 	 * 
 	 * @return all model resources
 	 */
-	public List<IModelResource> getAllModelResources();
+	List<IModelResource> getAllModelResources();
 	
 	/**
 	 * 
 	 * @param state
 	 * @return all URI of resources with state
 	 */
-	public List<URI> getModelResourceURIWithState(ModelResourceState state);
+	List<URI> getModelResourceURIWithState(ModelResourceState state);
 	
 	/**
 	 * 
 	 * @return all EObjects
 	 */
-	public List<EObject> getAllResourcesEObjects();
+	List<EObject> getAllResourcesEObjects();
 	
-	public void addResource(URI uri, IModelResource modelResource);
+	void addResource(URI uri, IModelResource modelResource);
 	
 	//FIXME: throw exception when uri is not found
-	public IModelResource getModelResource(URI uri);
+	IModelResource getModelResource(URI uri);
 	
 	
-	public List<IModelResource> getAllDeletionCandidates();
+	List<IModelResource> getAllDeletionCandidates();
 }

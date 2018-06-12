@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017 Thales Global Services.
+ * Copyright (c) 2017, 2018 Thales Global Services.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,26 +32,26 @@ public interface TransitionEngine {
 	/**
 	 * @return the Transition associated the this engine
 	 */
-	public Transition getTransition();
+	Transition getTransition();
 	
 	/**
 	 * Evaluate the predicates of the transition
 	 * @return true if all predicate are evaluated to true, otherwise false
 	 * @throws EvaluationException if in the evaluation time fails with exception cause 
 	 */
-	public boolean eval() throws EvaluationException;
+	boolean eval() throws EvaluationException;
 	
 	/**
 	 * Execute the Action (i.e., the transition)
 	 * @return the boolean value returned in the evaluation time of predicates (i.e., eval() method)
 	 * @throws EvaluationException if in the execution time fails with exception cause
 	 */
-	public boolean run() throws EvaluationException;
+	boolean run() throws EvaluationException;
 	
 	/**
 	 * get Diagnostic messages attached to predicate which are evaluated to predicateValue
 	 * @param predicateValue
 	 * @return A map which contains the id of the predicate and the diagnostic message
 	 */
-	public Map<String, String> getDiagnosticMessages(boolean predicateValue);
+	Map<String, String> getDiagnosticMessages(boolean predicateValue);
 }

@@ -21,6 +21,6 @@ public interface IViewpointGenerationPrecondition {
 	 * @param viewpoint the {@link Viewpoint} under generation
 	 * @return True if the precondition is validated, False otherwise.
 	 */
-	public boolean canGenerate(Viewpoint viewpoint);
+	boolean canGenerate(Viewpoint viewpoint);
 	
 }

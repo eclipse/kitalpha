@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,31 +26,31 @@ public interface IViewpointResourceProvider {
 	/**
 	 * @return The ViewpointProvidersRegistry that hold this Resource Provider
 	 */
-	public ViewpointResourceProviderRegistry getHandler();
+	ViewpointResourceProviderRegistry getHandler();
 	
 	/** 
 	 * @return file informations ({@link ResourceFileInformation})
 	 */
-	public ResourceFileInformation getResourceFileInformations();
+	ResourceFileInformation getResourceFileInformations();
 	
 	/** 
 	 * set file informations ({@link ResourceFileInformation})
 	 */
-	public void setResourceFileInformations(ResourceFileInformation resourceFileInformation) throws ViewpointResourceException;
+	void setResourceFileInformations(ResourceFileInformation resourceFileInformation) throws ViewpointResourceException;
 	
 	/** 
 	 * @return the EMF ({@link Resource})
 	 */
-	public Resource getResource() throws ViewpointResourceException;
+	Resource getResource() throws ViewpointResourceException;
 	
 	/**
 	 * @return the root element of the resource
 	 * @throws ViewpointResourceException if the resource content is empty
 	 */
-	public EObject getRootElement()	throws ViewpointResourceException;
+	EObject getRootElement()	throws ViewpointResourceException;
 	
 	/**
 	 * Refresh the resource.
 	 */
-	public void refresh();
+	void refresh();
 }

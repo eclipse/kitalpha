@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,12 +22,12 @@ public interface IExpressionFormat {
 	 * @param expression the expression to check
 	 * @return a valid expression to use in Viewpoint Specification Model
 	 */
-	public String format(String expression);
+	String format(String expression);
 	
 	/**
 	 * Check if the expression is well formated
 	 * @param expression the expression to check
 	 * @return True if the expression is well formated, false else;
 	 */
-	public boolean isFormated(String expression);
+	boolean isFormated(String expression);
 }

@@ -114,7 +114,7 @@ public abstract class AbstractPreferencePage extends PreferencePage {
 	public final class DirtyManagerSelectionListener implements SelectionListener {
 
 		protected void doWidgetSelected(SelectionEvent e) {
-
+			//nothing to do
 		}
 
 		@Override

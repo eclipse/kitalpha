@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,51 +30,51 @@ public interface ITransposer {
 	/**
 	 * Allows to launch Transposer.
 	 * 
-	 * @param selection_p
+	 * @param selection
 	 *            the current selection
-	 * @param monitor_p
+	 * @param monitor
 	 *            ProgressMonitor
 	 */
-	public void transpose(Collection<Object> selection_p, Comparator<Vertex<?>> comparator_p,
-			IProgressMonitor monitor_p);
+	void transpose(Collection<Object> selection, Comparator<Vertex<?>> comparator,
+			IProgressMonitor monitor);
 
 	/**
 	 * Allows to launch Transposer with a particular TransposerConfiguration
 	 * object.
 	 * 
-	 * @param selection_p
+	 * @param selection
 	 *            the current selection
-	 * @param configuration_p
+	 * @param configuration
 	 *            the current TransposerConfiguration
-	 * @param monitor_p
+	 * @param monitor
 	 *            ProgressMonitor
 	 */
-	public void transpose(Collection<Object> selection_p,
-			TransposerConfiguration configuration_p, Comparator<Vertex<?>> comparator_p,IProgressMonitor monitor_p);
+	void transpose(Collection<Object> selection,
+			TransposerConfiguration configuration, Comparator<Vertex<?>> comparator,IProgressMonitor monitor);
 
 	/**
 	 * Returns the analyzer object used.
 	 * 
 	 * @return IAnalyser
 	 */
-	public IAnalyzer getAnalyzer();
+	IAnalyzer getAnalyzer();
 
 	/**
 	 * Returns the rule handler object used.
 	 * 
 	 * @return IRuleHandler
 	 */
-	public IRulesHandler getRulesHandler();
+	IRulesHandler getRulesHandler();
 
 	/**
 	 * Returns the scheduler object used.
 	 * 
 	 * @return IScheduler
 	 */
-	public IScheduler getScheduler();
+	IScheduler getScheduler();
 
 	/**
 	 * Dispose the Transposer object.
 	 */
-	public void dispose();
+	void dispose();
 }

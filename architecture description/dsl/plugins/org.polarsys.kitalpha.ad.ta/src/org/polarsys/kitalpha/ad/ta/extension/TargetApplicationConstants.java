@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,33 +17,33 @@ package org.polarsys.kitalpha.ad.ta.extension;
 
 public interface TargetApplicationConstants {
 	/** Target application extension point id **/
-	public static final String TARGET_APP_EXTENSION_ID = "org.polarsys.kitalpha.ad.ta.definition"; //$NON-NLS-1$
+	String TARGET_APP_EXTENSION_ID = "org.polarsys.kitalpha.ad.ta.definition"; //$NON-NLS-1$
 	
 	/** Target application extension point configuration element name **/
-	public static final String TARGET_APP_CONFIGURATION_ELEMENT_NAME = "definition"; //$NON-NLS-1$
+	String TARGET_APP_CONFIGURATION_ELEMENT_NAME = "definition"; //$NON-NLS-1$
 	
 	/** Target application extension point name attribute **/
-	public static final String TARGET_APP_ATTRIBUTE_NAME = "name"; //$NON-NLS-1$
+	String TARGET_APP_ATTRIBUTE_NAME = "name"; //$NON-NLS-1$
 	
 	/** Target application extension point class attribute **/
-	public static final String TARGET_APP_ATTRIBUTE_CLASS = "class"; //$NON-NLS-1$
+	String TARGET_APP_ATTRIBUTE_CLASS = "class"; //$NON-NLS-1$
 	
 	/** Target application extension point root project name attribute **/
-	public static final String TARGET_APP_ATTRIBUTE_ROOT_PROJECT_NAME = "RootProjectName"; //$NON-NLS-1$
+	String TARGET_APP_ATTRIBUTE_ROOT_PROJECT_NAME = "RootProjectName"; //$NON-NLS-1$
 	
 	/** Target application extension point root nsuri attribute **/
-	public static final String TARGET_APP_ATTRIBUTE_ROOT_NSURI = "RootNsURI"; //$NON-NLS-1$
+	String TARGET_APP_ATTRIBUTE_ROOT_NSURI = "RootNsURI"; //$NON-NLS-1$
 	
 	/** Target application extension point description attribute **/
-	public static final String TARGET_APP_ATTRIBUTE_DESCRIPTION = "description"; //$NON-NLS-1$
+	String TARGET_APP_ATTRIBUTE_DESCRIPTION = "description"; //$NON-NLS-1$
 	
 	
 	/** Target application meta-model configuration element name **/
-	public static final String TARGET_APP_META_MODEL_CONFIGURATION_ELEMENT_NAME = "metaModel"; //$NON-NLS-1$
+	String TARGET_APP_META_MODEL_CONFIGURATION_ELEMENT_NAME = "metaModel"; //$NON-NLS-1$
 	
 	/** Target application extension point nsuri attribute name **/
-	public static final String TARGET_APP_META_MODEL_ATTRIBUTE_NSURI = "nsuri"; //$NON-NLS-1$
+	String TARGET_APP_META_MODEL_ATTRIBUTE_NSURI = "nsuri"; //$NON-NLS-1$
 	
 	/** Target application extension point nsuri attribute name **/
-	public static final String TARGET_APP_META_MODEL_ATTRIBUTE_NSURI_TYEP = "type"; //$NON-NLS-1$
+	String TARGET_APP_META_MODEL_ATTRIBUTE_NSURI_TYEP = "type"; //$NON-NLS-1$
 }

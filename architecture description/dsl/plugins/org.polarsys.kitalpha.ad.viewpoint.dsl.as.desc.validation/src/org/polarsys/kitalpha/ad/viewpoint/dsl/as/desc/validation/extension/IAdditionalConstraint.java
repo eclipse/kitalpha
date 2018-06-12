@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,14 +26,14 @@ public interface IAdditionalConstraint {
 	 * @param object The model element under validation
 	 * @return True if the object must be checked by the rule, False else.
 	 */
-	public boolean isObjectInScope(Object object);
+	boolean isObjectInScope(Object object);
 	
 	/**
 	 * Java implementation of the Rule
 	 * @param data the model element under validation
 	 * @return a {@link ValidationStatus}
 	 */
-	public ValidationStatus validationRules(Object data);
+	ValidationStatus validationRules(Object data);
 	
 	/**
 	 * 
@@ -41,5 +41,5 @@ public interface IAdditionalConstraint {
 	 * @param object the model element under validation
 	 * @return The message to display to user if the validation rule failed
 	 */
-	public String getMessage(ValidationStatus status, Object object);
+	String getMessage(ValidationStatus status, Object object);
 }

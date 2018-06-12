@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ public interface IModelReuseLoader {
 	 * @param uri of the content to load
 	 * @return the loaded resource or <code>null</code> if <code>eObject == null or eObeject.eResource() == null or eObject.eResource().getResourceSet() == null</code>
 	 */
-	public Resource load(EObject eObject, URI uri);
+	Resource load(EObject eObject, URI uri);
 
 	/**
 	 * Load the content (resource) of the uri in the resourceSet which contains the resource of the eObject
@@ -38,7 +38,7 @@ public interface IModelReuseLoader {
 	 * @param uri of the content to load
 	 * @return the loaded resource or <code>null</code> if <code>eObject == null or eObeject.eResource() == null or eObject.eResource().getResourceSet() == null</code>
 	 */
-	public Resource load(EObject eObject, String uri);
+	Resource load(EObject eObject, String uri);
 
 	/**
 	 * Load the content (resource) of the uri in the resourceSet which contains the resource
@@ -46,7 +46,7 @@ public interface IModelReuseLoader {
 	 * @param uri of the content to load
 	 * @return the loaded resource or <code>null</code> if <code>resource == null or resource().getResourceSet() == null</code>
 	 */
-	public Resource load(Resource resource, URI uri);
+	Resource load(Resource resource, URI uri);
 
 	/**
 	 * Load the content (resource) of the uri in the resourceSet which contains the resource
@@ -54,7 +54,7 @@ public interface IModelReuseLoader {
 	 * @param uri of the content to load
 	 * @return the loaded resource or <code>null</code> if <code>resource == null or resource().getResourceSet() == null</code>
 	 */
-	public Resource load(Resource resource, String uri);
+	Resource load(Resource resource, String uri);
 
 	/**
 	 * Load the content (resource) of the uri in the resourceSet
@@ -62,7 +62,7 @@ public interface IModelReuseLoader {
 	 * @param uri of the content to load
 	 * @return the loaded resource or <code>null</code> if <code>resourceSet == null</code>
 	 */
-	public Resource load(ResourceSet resourceSet, URI uri);
+	Resource load(ResourceSet resourceSet, URI uri);
 
 	/**
 	 * Load the content (resource) of the uri in the resourceSet
@@ -70,7 +70,7 @@ public interface IModelReuseLoader {
 	 * @param uri of the content to load
 	 * @return the loaded resource or <code>null</code> if <code>resourceSet == null</code>
 	 */
-	public Resource load(ResourceSet resourceSet, String uri);
+	Resource load(ResourceSet resourceSet, String uri);
 
 	/**
 	 * load the content (resource) indexed by the resourcereuse type
@@ -78,7 +78,7 @@ public interface IModelReuseLoader {
 	 * @param resourcereuse of the content to load
 	 * @return the loaded resource or <code>null</code> if <code>eObject == null or eObeject.eResource() == null or eObject.eResource().getResourceSet() == null</code>
 	 */
-	public Resource load(EObject eObject, org.polarsys.kitalpha.resourcereuse.model.Resource resourcereuse);
+	Resource load(EObject eObject, org.polarsys.kitalpha.resourcereuse.model.Resource resourcereuse);
 	
 	/**
 	 * load the content (resource) indexed by the resourcereuse type
@@ -86,7 +86,7 @@ public interface IModelReuseLoader {
 	 * @param resourcereuse of the content to load
 	 * @return the loaded resource or <code>null</code> if <code>resource == null or resource.getResourceSet() == null</code>
 	 */
-	public Resource load(Resource resource, org.polarsys.kitalpha.resourcereuse.model.Resource resourcereuse);
+	Resource load(Resource resource, org.polarsys.kitalpha.resourcereuse.model.Resource resourcereuse);
 
 	/**
 	 * Load the content (resource) indexed by the resourcereuse type
@@ -94,7 +94,7 @@ public interface IModelReuseLoader {
 	 * @param resourcereuse of the content to load
 	 * @return the loaded resource or <code>null</code> if <code>resourceSet() == null</code>
 	 */
-	public Resource load(ResourceSet resourceSet, org.polarsys.kitalpha.resourcereuse.model.Resource resourcereuse);
+	Resource load(ResourceSet resourceSet, org.polarsys.kitalpha.resourcereuse.model.Resource resourcereuse);
 
 	/**
 	 * Load the first content found by resourcereuse attributes
@@ -107,7 +107,7 @@ public interface IModelReuseLoader {
 	 * @param tags of the content to load
 	 * @return the loaded resource or <code>null</code> if <code>eObject == null or eObeject.eResource() == null or eObject.eResource().getResourceSet() == null</code>
 	 */
-	public Resource load(EObject eObject, String id, String name, String version, String domain, String weight, String... tags);
+	Resource load(EObject eObject, String id, String name, String version, String domain, String weight, String... tags);
 
 	/**
 	 * Load the first content (resource) indexed by the resourcereuse attributes
@@ -120,7 +120,7 @@ public interface IModelReuseLoader {
 	 * @param tags of the content to load
 	 * @return the loaded resource or <code>null</code> if <code>resource == null or resource.getResourceSet() == null</code>
 	 */
-	public Resource load(Resource resource, String id, String name, String version, String domain, String weight, String... tags);
+	Resource load(Resource resource, String id, String name, String version, String domain, String weight, String... tags);
 
 	/**
 	 * Load the first content (resource) indexed by the resourcereuse attributes 
@@ -133,7 +133,7 @@ public interface IModelReuseLoader {
 	 * @param tags of the content to load
 	 * @return the loaded resource or <code>null</code> if <code>resourceSet == null</code>
 	 */
-	public Resource load(ResourceSet resourceSet, String id, String name, String version, String domain, String weight, String... tags);
+	Resource load(ResourceSet resourceSet, String id, String name, String version, String domain, String weight, String... tags);
 
 	/**
 	 * Load the first content (resource) indexed by the criteria
@@ -141,7 +141,7 @@ public interface IModelReuseLoader {
 	 * @param criteria to find the first content to load
 	 * @return the loaded resource or <code>null</code> if <code>eObject == null or eObeject.eResource() == null or eObject.eResource().getResourceSet() == null</code>
 	 */
-	public Resource load(EObject eObject, SearchCriteria criteria);
+	Resource load(EObject eObject, SearchCriteria criteria);
 
 	/**
 	 * Load the first content (resource) indexed by the criteria
@@ -149,7 +149,7 @@ public interface IModelReuseLoader {
 	 * @param criteria to find the first content to load
 	 * @return the loaded resource or <code>null</code> if <code>resource == null or resource.getResourceSet() == null</code>
 	 */
-	public Resource load(Resource resource, SearchCriteria criteria);
+	Resource load(Resource resource, SearchCriteria criteria);
 
 	/**
 	 * Load the first content (resource) indexed by the criteria
@@ -157,7 +157,7 @@ public interface IModelReuseLoader {
 	 * @param criteria to find the first content to load
 	 * @return the loaded resource or <code>null</code> if <code>resourceSet == null</code>
 	 */
-	public Resource load(ResourceSet resourceSet, SearchCriteria criteria);
+	Resource load(ResourceSet resourceSet, SearchCriteria criteria);
 
 	/**
 	 * Load the content (resource) of the uri in the resourceSet which contains the resource of the eObject
@@ -166,7 +166,7 @@ public interface IModelReuseLoader {
 	 * @param uri of the content to load
 	 * @return the loaded resource or <code>null</code> if <code>eObject == null or eObeject.eResource() == null or eObject.eResource().getResourceSet() == null</code>
 	 */
-	public Resource load(EObject eObject, URIConverter uriConverter, URI uri);
+	Resource load(EObject eObject, URIConverter uriConverter, URI uri);
 
 	/**
 	 * Load the content (resource) of the uri in the resourceSet which contains the resource of the eObject
@@ -175,7 +175,7 @@ public interface IModelReuseLoader {
 	 * @param uri of the content to load
 	 * @return the loaded resource or <code>null</code> if <code>eObject == null or eObeject.eResource() == null or eObject.eResource().getResourceSet() == null</code>
 	 */
-	public Resource load(EObject eObject, URIConverter uriConverter, String uri);
+	Resource load(EObject eObject, URIConverter uriConverter, String uri);
 
 	/**
 	 * Load the content (resource) of the uri in the resourceSet which contains the resource
@@ -184,7 +184,7 @@ public interface IModelReuseLoader {
 	 * @param uri of the content to load
 	 * @return the loaded resource or <code>null</code> if <code>resource == null or resource().getResourceSet() == null</code>
 	 */
-	public Resource load(Resource resource, URIConverter uriConverter, URI uri);
+	Resource load(Resource resource, URIConverter uriConverter, URI uri);
 
 	/**
 	 * Load the content (resource) of the uri in the resourceSet which contains the resource
@@ -193,7 +193,7 @@ public interface IModelReuseLoader {
 	 * @param uri of the content to load
 	 * @return the loaded resource or <code>null</code> if <code>resource == null or resource().getResourceSet() == null</code>
 	 */
-	public Resource load(Resource resource, URIConverter uriConverter, String uri);
+	Resource load(Resource resource, URIConverter uriConverter, String uri);
 
 	/**
 	 * Load the content (resource) of the uri in the resourceSet
@@ -202,7 +202,7 @@ public interface IModelReuseLoader {
 	 * @param uri of the content to load
 	 * @return the loaded resource or <code>null</code> if <code>resourceSet == null</code>
 	 */
-	public Resource load(ResourceSet resourceSet, URIConverter uriConverter, URI uri);
+	Resource load(ResourceSet resourceSet, URIConverter uriConverter, URI uri);
 
 	/**
 	 * Load the content (resource) of the uri in the resourceSet
@@ -210,7 +210,7 @@ public interface IModelReuseLoader {
 	 * @param uri of the content to load
 	 * @return the loaded resource or <code>null</code> if <code>resourceSet == null</code>
 	 */
-	public Resource load(ResourceSet resourceSet, URIConverter uriConverter, String uri);
+	Resource load(ResourceSet resourceSet, URIConverter uriConverter, String uri);
 
 	/**
 	 * load the content (resource) indexed by the resourcereuse type
@@ -219,7 +219,7 @@ public interface IModelReuseLoader {
 	 * @param resourcereuse of the content to load
 	 * @return the loaded resource or <code>null</code> if <code>eObject == null or eObeject.eResource() == null or eObject.eResource().getResourceSet() == null</code>
 	 */
-	public Resource load(EObject eObject, URIConverter uriConverter, org.polarsys.kitalpha.resourcereuse.model.Resource resourcereuse);
+	Resource load(EObject eObject, URIConverter uriConverter, org.polarsys.kitalpha.resourcereuse.model.Resource resourcereuse);
 
 	/**
 	 * load the content (resource) indexed by the resourcereuse type
@@ -228,7 +228,7 @@ public interface IModelReuseLoader {
 	 * @param resourcereuse of the content to load
 	 * @return the loaded resource or <code>null</code> if <code>resource == null or resource.getResourceSet() == null</code>
 	 */
-	public Resource load(Resource resource, URIConverter uriConverter, org.polarsys.kitalpha.resourcereuse.model.Resource resourcereuse);
+	Resource load(Resource resource, URIConverter uriConverter, org.polarsys.kitalpha.resourcereuse.model.Resource resourcereuse);
 
 	/**
 	 * Load the content (resource) indexed by the resourcereuse type
@@ -237,7 +237,7 @@ public interface IModelReuseLoader {
 	 * @param resourcereuse of the content to load
 	 * @return the loaded resource or <code>null</code> if <code>resourceSet() == null</code>
 	 */
-	public Resource load(ResourceSet resourceSet, URIConverter uriConverter, org.polarsys.kitalpha.resourcereuse.model.Resource resourcereuse);
+	Resource load(ResourceSet resourceSet, URIConverter uriConverter, org.polarsys.kitalpha.resourcereuse.model.Resource resourcereuse);
 
 	/**
 	 * Load the first content found by resourcereuse attributes
@@ -251,7 +251,7 @@ public interface IModelReuseLoader {
 	 * @param tags of the content to load
 	 * @return the loaded resource or <code>null</code> if <code>eObject == null or eObeject.eResource() == null or eObject.eResource().getResourceSet() == null</code>
 	 */
-	public Resource load(EObject eObject, URIConverter uriConverter, String id, String name, String version, String domain, String weight, String... tags);
+	Resource load(EObject eObject, URIConverter uriConverter, String id, String name, String version, String domain, String weight, String... tags);
 
 	/**
 	 * Load the first content (resource) indexed by the resourcereuse attributes
@@ -265,7 +265,7 @@ public interface IModelReuseLoader {
 	 * @param tags of the content to load
 	 * @return the loaded resource or <code>null</code> if <code>resource == null or resource.getResourceSet() == null</code>
 	 */
-	public Resource load(Resource resource, URIConverter uriConverter, String id, String name, String version, String domain, String weight, String... tags);
+	Resource load(Resource resource, URIConverter uriConverter, String id, String name, String version, String domain, String weight, String... tags);
 
 	/**
 	 * Load the first content (resource) indexed by the resourcereuse attributes 
@@ -279,7 +279,7 @@ public interface IModelReuseLoader {
 	 * @param tags of the content to load
 	 * @return the loaded resource or <code>null</code> if <code>resourceSet == null</code>
 	 */
-	public Resource load(ResourceSet resourceSet, URIConverter uriConverter, String id, String name, String version, String domain, String weight, String... tags);
+	Resource load(ResourceSet resourceSet, URIConverter uriConverter, String id, String name, String version, String domain, String weight, String... tags);
 
 	/**
 	 * Load the first content (resource) indexed by the criteria
@@ -288,7 +288,7 @@ public interface IModelReuseLoader {
 	 * @param criteria to find the first content to load
 	 * @return the loaded resource or <code>null</code> if <code>eObject == null or eObeject.eResource() == null or eObject.eResource().getResourceSet() == null</code>
 	 */
-	public Resource load(EObject eObject, URIConverter uriConverter, SearchCriteria criteria);
+	Resource load(EObject eObject, URIConverter uriConverter, SearchCriteria criteria);
 
 	/**
 	 * Load the first content (resource) indexed by the criteria
@@ -297,7 +297,7 @@ public interface IModelReuseLoader {
 	 * @param criteria to find the first content to load
 	 * @return the loaded resource or <code>null</code> if <code>resource == null or resource.getResourceSet() == null</code>
 	 */
-	public Resource load(Resource resource, URIConverter uriConverter, SearchCriteria criteria);
+	Resource load(Resource resource, URIConverter uriConverter, SearchCriteria criteria);
 
 	/**
 	 * Load the first content (resource) indexed by the criteria
@@ -306,6 +306,6 @@ public interface IModelReuseLoader {
 	 * @param criteria to find the first content to load
 	 * @return the loaded resource or <code>null</code> if <code>resourceSet == null</code>
 	 */
-	public Resource load(ResourceSet resourceSet, URIConverter uriConverter, SearchCriteria criteria);
+	Resource load(ResourceSet resourceSet, URIConverter uriConverter, SearchCriteria criteria);
 
 }

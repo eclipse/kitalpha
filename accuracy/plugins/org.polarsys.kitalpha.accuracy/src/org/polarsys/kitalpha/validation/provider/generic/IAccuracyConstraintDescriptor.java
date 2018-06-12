@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -24,13 +24,13 @@ public interface IAccuracyConstraintDescriptor extends IConstraintDescriptor {
 	 * 
 	 * @return the ID of the requirement of the constraint.
 	 */
-	public String getRequirementId();
+	String getRequirementId();
 
 	/**
 	 * Returns the ID of the invariant of the constraint.
 	 * 
 	 * @return the ID of the invariant of the constraint.
 	 */
-	public String getInvariantId();
+	String getInvariantId();
 
 }

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -23,109 +23,109 @@ public interface IViewpointTreeDescription {
 	/**
 	 * Returns the name of the viewpoint (id)
 	 */
-	public String getViewpointName();
+	String getViewpointName();
 	
 	/**
 	 * Returns true if the viewpoint will be kept in the model.
 	 * Otherwise, it returns false;
 	 * @return
 	 */
-	public boolean isCandidateToKeep();
+	boolean isCandidateToKeep();
 	
 	
 	/**
 	 * 
 	 * @param toKeep true if the viewpoint will be kept, or false otherwise
 	 */
-	public void setAsCandidateToKeep(boolean toKeep);
+	void setAsCandidateToKeep(boolean toKeep);
 	
 	/**
 	 * Returns VPID of the viewpoint
 	 */
-	public String getViewpointId();
+	String getViewpointId();
 	
 	/**
 	 * Returns the list of its children
 	 */
 	
-	public Collection<IViewpointTreeDescription> getChildren();
+	Collection<IViewpointTreeDescription> getChildren();
 	
 	/**
 	 * @return the NSURI of the current Viewpoint description
 	 */
-	public Collection<String> getViewpointNsUri();
+	Collection<String> getViewpointNsUri();
 	
 	/**
 	 * add an NSURI to current viewpoint description
 	 * @param nsuri
 	 */
-	public void addViewpointNsUri(String nsuri);
+	void addViewpointNsUri(String nsuri);
 	
 	/**
 	 * Add collection of NSURI
 	 * @param nsuri
 	 */
-	public void addAllViewpointNsUri(Collection<String> nsuri);
+	void addAllViewpointNsUri(Collection<String> nsuri);
 	
 	
 	/**
 	 * Returns the list of its parents
 	 */
-	public Collection<IViewpointTreeDescription> getParents();
+	Collection<IViewpointTreeDescription> getParents();
 	
 	/**
 	 * Returns the list of its dependencies
 	 */
-	public Collection<IViewpointTreeDescription> getDependencies();
+	Collection<IViewpointTreeDescription> getDependencies();
 	
 	
 	/**
 	 * @return viewpoints description with imports
 	 */
-	public Collection<IViewpointTreeDescription> getUsedViewpoints();
+	Collection<IViewpointTreeDescription> getUsedViewpoints();
 	
 	/**
 	 * Add a new used viewpoint description
 	 * @param usedVpd
 	 */
-	public void addUsedViewpoint(IViewpointTreeDescription usedVpd);
+	void addUsedViewpoint(IViewpointTreeDescription usedVpd);
 	
 	/**
 	 * Returns the path to the EMF root EObject of the viewpoint
 	 * with the fragment of the viewpoint
 	 */
-	public String getRootEObject();
+	String getRootEObject();
 	
 	/**
 	 * Add a child to the list of children
 	 */
-	public void addChild(IViewpointTreeDescription child);
+	void addChild(IViewpointTreeDescription child);
 	
 	/**
 	 * Add a parent to the list of parents
 	 */
-	public void addParent(IViewpointTreeDescription parent);
+	void addParent(IViewpointTreeDescription parent);
 	
 	/**
 	 * Add a dependecy to list of dependecies
 	 */
-	public void addDependency(IViewpointTreeDescription dependency);
+	void addDependency(IViewpointTreeDescription dependency);
 	
 	/**
 	 * checks if the viewpoint has children
 	 */
-	public boolean hasChildren();
+	boolean hasChildren();
 	
 	/**
 	 * Checks if the viewpoint has dependencies 
 	 */
-	public boolean hasDependencies();
+	boolean hasDependencies();
 	
 	/**
 	 * Checks if the viewpoint has parents
 	 */
-	public boolean hasParents();
+	boolean hasParents();
 	
 	
-	public void updateCandidates(boolean toKeep);
+	void updateCandidates(boolean toKeep);
 }

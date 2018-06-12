@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017 Thales Global Services.
+ * Copyright (c) 2017, 2018 Thales Global Services.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,7 +32,7 @@ public interface TransitionFactory {
 	 * @param action to perform the transition
 	 * @return new Transition without predicates (i.e., the transition will be executed)
 	 */
-	public Transition createTransition(String viewpointID, String actionID, Action action);
+	Transition createTransition(String viewpointID, String actionID, Action action);
 	
 	/**
 	 * Create a new transition with a predefined action and predicates
@@ -42,7 +42,7 @@ public interface TransitionFactory {
 	 * @param predicates the predicates to evaluate before the execution of the action
 	 * @return new Transition
 	 */
-	public Transition createTransition(String viewpointID, String actionID, Action action, Map<String, Predicate> predicates);
+	Transition createTransition(String viewpointID, String actionID, Action action, Map<String, Predicate> predicates);
 	
 	/**
 	 * Create a new transition with a predefined action and predicates with diagnostic messages
@@ -53,7 +53,7 @@ public interface TransitionFactory {
 	 * @param diagnosticMessages diagnostic messages
 	 * @return
 	 */
-	public Transition createTransition(String viewpointID, String actionID, Action action, Map<String, Predicate> predicates, Map<String, String> diagnosticMessages);
+	Transition createTransition(String viewpointID, String actionID, Action action, Map<String, Predicate> predicates, Map<String, String> diagnosticMessages);
 	
 	/**
 	 * Create an engine to execute a transition in a context
@@ -61,7 +61,7 @@ public interface TransitionFactory {
 	 * @param context of the transition
 	 * @return a new engine to execute the transition
 	 */
-	public TransitionEngine createTransitionEngine(Transition transition, ContextProvider context); 
+	TransitionEngine createTransitionEngine(Transition transition, ContextProvider context); 
 	
 	/*
 	 ********************** Create a Transitions from external sources *****************************
@@ -74,7 +74,7 @@ public interface TransitionFactory {
 	 * @param actionID
 	 * @return a new Transaction or an default transition with a NOP action
 	 */
-	public Transition createTransition(String viewpointID, String actionID);
+	Transition createTransition(String viewpointID, String actionID);
 	
 	/**
 	 * Create a new engine which contains a transition from external source with a specific context
@@ -85,6 +85,6 @@ public interface TransitionFactory {
 	 * @return the engine associated to transition. If the transition doesn't exist from external source, a default
 	 * transition with NOP action is linked to the engine
 	 */
-	public TransitionEngine createTransitionEngine(String viewpointID, String actionID, ContextProvider context);
+	TransitionEngine createTransitionEngine(String viewpointID, String actionID, ContextProvider context);
 
 }

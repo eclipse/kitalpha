@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,18 +17,18 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.extension.constant;
 
 public interface IContractNames {
 	// Input contracts
-	public static final String extensionPointID = "extension.point.id";
-	public static final String configurationElementName = "extension.configuration.element.name";
-	public static final String extensionFCoreAttributeName = "extension.fcore.attribute.name";
-	public static final String factoryComponentConstracts = "factory.component.constracts"; //$NON-NLS-1$
-	public static final String collectedExtensionPointContributions = "collected.extension.point.contributions";
-	public static final String extensionCategoryAttributeName = "extension.category.attribute.name";
-	public static final String extensionNameAttributeName = "extension.name.attribute.name";
-	public static final String extensionDescriptionAttributeName = "extension.description.attribute.name";
-	public static final String userSelection = "user.selection";
+	String extensionPointID = "extension.point.id";
+	String configurationElementName = "extension.configuration.element.name";
+	String extensionFCoreAttributeName = "extension.fcore.attribute.name";
+	String factoryComponentConstracts = "factory.component.constracts"; //$NON-NLS-1$
+	String collectedExtensionPointContributions = "collected.extension.point.contributions";
+	String extensionCategoryAttributeName = "extension.category.attribute.name";
+	String extensionNameAttributeName = "extension.name.attribute.name";
+	String extensionDescriptionAttributeName = "extension.description.attribute.name";
+	String userSelection = "user.selection";
 	
 	// Output contracts
-	public static final String extensionPointContributions = "extension.point.contributions";
-	public static final String factoryComponentsList = "factory.components.list";
-	public static final String selectedExtensionPointContributions = "selected.extension.point.contributions";
+	String extensionPointContributions = "extension.point.contributions";
+	String factoryComponentsList = "factory.components.list";
+	String selectedExtensionPointContributions = "selected.extension.point.contributions";
 }

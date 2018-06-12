@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,7 +24,7 @@ public interface IAFConcreteSyntaxResourceCreator {
 	/*
 	 * This method allows to create a resource. 
 	 */
-	public boolean createConcreteSyntaxResource(String shortName, 
+	boolean createConcreteSyntaxResource(String shortName, 
 												String rootProjectName,
 												String dslProjectName,
 												List<Viewpoint> selectedViewpoint);
@@ -32,7 +32,7 @@ public interface IAFConcreteSyntaxResourceCreator {
 	/*
 	 * This method allows to create an extension to add in plugin.xml. 
 	 */
-	public StringBuffer createPluginXmlContribution(String shortName, 
+	StringBuffer createPluginXmlContribution(String shortName, 
 											   		String rootProjectName,
 											   		String dslProjectName);
 }

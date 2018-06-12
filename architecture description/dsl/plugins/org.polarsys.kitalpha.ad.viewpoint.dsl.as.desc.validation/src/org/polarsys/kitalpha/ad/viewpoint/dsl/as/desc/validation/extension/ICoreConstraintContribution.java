@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,12 +27,12 @@ public interface ICoreConstraintContribution {
 	 * @param object The model element under validation
 	 * @return True if the object must be checked by the rule, False else.
 	 */
-	public boolean isObjectInScope(Object object);
+	boolean isObjectInScope(Object object);
 	
 	/**
 	 * This method is used to define a validation context. So an object can be checked 
 	 * by taking into account other object.
 	 * @return à {@link List} containing EStructural features names
 	 */
-	public List<String> brothersEStructuralFeatures();
+	List<String> brothersEStructuralFeatures();
 }

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -19,10 +19,10 @@ import java.util.Map;
  */
 public interface IParameterManager {
 
-	public String getName(Object o);
+	String getName(Object o);
 	
-	public String getDescription(Object o);
+	String getDescription(Object o);
 	
-	public String validParameter(Object parameter_p, Object container_p, Map<String,String> parameters_p);
+	String validParameter(Object parameter_p, Object container_p, Map<String,String> parameters_p);
 	
 }

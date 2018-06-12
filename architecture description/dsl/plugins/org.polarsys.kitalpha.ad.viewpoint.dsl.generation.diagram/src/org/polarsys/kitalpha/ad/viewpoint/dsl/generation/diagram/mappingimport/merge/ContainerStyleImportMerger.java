@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -86,7 +86,7 @@ public class ContainerStyleImportMerger extends LabelStyleImportMerger {
 	 * @param viewpointContainerDescription
 	 * @return
 	 */
-	private static final ContainerStyleDescription generatedWorkspaceImageData(WorkspaceImageDescription originalStyle, 
+	private static ContainerStyleDescription generatedWorkspaceImageData(WorkspaceImageDescription originalStyle, 
 																			   WorkspaceImageDescription generatedStyle,
 																			   ImageStyle viewpointContainerDescription){
 		WorkspaceImageDescription result = generatedStyle;
@@ -107,7 +107,7 @@ public class ContainerStyleImportMerger extends LabelStyleImportMerger {
 	 * @param viewpointContainerDescription
 	 * @return
 	 */
-	private static final ContainerStyleDescription generatedFlatstyleData(FlatContainerStyleDescription originalStyle, 
+	private static ContainerStyleDescription generatedFlatstyleData(FlatContainerStyleDescription originalStyle, 
 																   FlatContainerStyleDescription generatedStyle,
 																   FlatStyle viewpointContainerDescription){
 		FlatContainerStyleDescription result = generatedStyle;
@@ -159,7 +159,7 @@ public class ContainerStyleImportMerger extends LabelStyleImportMerger {
 	 * @param generatedStyle
 	 * @return
 	 */
-	private static final ContainerStyleDescription noGeneratedFlatstyleData(FlatContainerStyleDescription originalStyle, 
+	private static ContainerStyleDescription noGeneratedFlatstyleData(FlatContainerStyleDescription originalStyle, 
 																			FlatContainerStyleDescription generatedStyle){
 		FlatContainerStyleDescription result = generatedStyle;
 		result.setWidthComputationExpression(generatedStyle.getWidthComputationExpression());
@@ -173,7 +173,7 @@ public class ContainerStyleImportMerger extends LabelStyleImportMerger {
 	 * @param generatedStyle
 	 * @return
 	 */
-	private static final ContainerStyleDescription noGeneratedWorkspaceImageData(WorkspaceImageDescription originalStyle, 
+	private static ContainerStyleDescription noGeneratedWorkspaceImageData(WorkspaceImageDescription originalStyle, 
 																				 WorkspaceImageDescription generatedStyle){
 		WorkspaceImageDescription result = generatedStyle;
 		result.setSizeComputationExpression(generatedStyle.getSizeComputationExpression());

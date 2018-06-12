@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -16,12 +16,12 @@ package org.polarsys.kitalpha.model.common.commands.constants;
 public interface Constants {
 	
 	//Action Extension point
-	public static final String COMMAND_EXTENSION_POINT = "org.polarsys.kitalpha.model.common.commands.definition";
-	public static final String COMMAND = "command";
-	public static final String COMMAND_ID = "id";
-	public static final String COMMAND_CLASS = "class";
-	public static final String COMMAND_SCRUTINIZE_ID = "scrutinizeId";
-	public static final String PRIORITY_ATTR = "priority";	
-	public static final String WORKFLOW_ATTR = "workflow";
+	String COMMAND_EXTENSION_POINT = "org.polarsys.kitalpha.model.common.commands.definition";
+	String COMMAND = "command";
+	String COMMAND_ID = "id";
+	String COMMAND_CLASS = "class";
+	String COMMAND_SCRUTINIZE_ID = "scrutinizeId";
+	String PRIORITY_ATTR = "priority";	
+	String WORKFLOW_ATTR = "workflow";
 	
 }

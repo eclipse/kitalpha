@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,28 +29,28 @@ public interface IDocGenExtension {
 	/**
 	 * @return a Collection of all contributed patterns
 	 */
-	public Collection<Pattern> getAllPatterns();
+	Collection<Pattern> getAllPatterns();
 	
 	/**
 	 * @return a map of all patterns classified by periority
 	 */
-	public Map<Integer, Collection<Pattern>> getAllPatternsWithPriorities();
+	Map<Integer, Collection<Pattern>> getAllPatternsWithPriorities();
 	
 	/**
 	 * @return a map of all patterns with classified by their contribution topic
 	 */
-	public Map<String, Collection<Pattern>> getAllPatternsWithTopics();
+	Map<String, Collection<Pattern>> getAllPatternsWithTopics();
 	
 	/**
 	 * @param priority
 	 * @return a Collection of all patterns with {@code priority} or {@literal null}
 	 */
-	public Collection<Pattern> getPatternsWithPriority(Integer priority);
+	Collection<Pattern> getPatternsWithPriority(Integer priority);
 	
 	/**
 	 * @param topic
 	 * @return a Collection of all patterns with {@code topic} or {@literal null}
 	 */
-	public Collection<Pattern> getPatternsWithTopic(String topic);
+	Collection<Pattern> getPatternsWithTopic(String topic);
 
 }

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,7 +29,7 @@ public interface IConcreteSyntaxResourceInitialize {
 	 * @param vpDslProjectName The VpDsl project containing.
 	 * @return True if the initialization is done with success, else False
 	 */
-	public boolean initializeConcreteSyntaxResource(URI vpDescResourceURI, String vpDslProjectName);
+	boolean initializeConcreteSyntaxResource(URI vpDescResourceURI, String vpDslProjectName);
 	
 	/**
 	 * This method allows to create extensions to add in plugin.xml. 
@@ -47,6 +47,6 @@ public interface IConcreteSyntaxResourceInitialize {
 	 * 		  description (vpDesc model)
 	 * @return A StringBuffer containing the extension definition
 	 */
-	public StringBuffer createPluginXmlContribution(URI vpDescResourceURI, String vpDslProjectName);
+	StringBuffer createPluginXmlContribution(URI vpDescResourceURI, String vpDslProjectName);
 	
 }

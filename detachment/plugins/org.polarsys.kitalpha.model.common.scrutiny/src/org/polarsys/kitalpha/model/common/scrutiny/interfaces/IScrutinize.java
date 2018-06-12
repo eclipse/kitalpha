@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -23,9 +23,9 @@ import org.eclipse.emf.ecore.resource.Resource;
 
 public interface IScrutinize<T, K> {
 	
-	public void findIn(EObject eObject);
+	void findIn(EObject eObject);
 	
-	public void findIn(Resource resource);
+	void findIn(Resource resource);
 	
 	/**
 	 * This method returns the structure of the srutinizer resource result to the UI and Commands.
@@ -34,7 +34,7 @@ public interface IScrutinize<T, K> {
 	 * @return T which is the type containing the result
 	 * of the analysis
 	 */
-	public T getAnalysisResult();
+	T getAnalysisResult();
 	
 	/**
 	 * return a feedback about the analysis - for instance, to the user (
@@ -49,5 +49,5 @@ public interface IScrutinize<T, K> {
 	 * 
 	 * @return the type containing the feedback
 	 */
-	public K getFeedbackAnalysisMessages();
+	K getFeedbackAnalysisMessages();
 }

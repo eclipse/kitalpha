@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,7 +26,7 @@ public interface ParameterizedComposerElement {
 	 * 
 	 * @return the parameters of this generator.
 	 */
-	public abstract Map<String, Parameter> getParameters();
+	Map<String, Parameter> getParameters();
 
 	/**
 	 * Method that allows to validate the values of the generator parameters.
@@ -35,7 +35,7 @@ public interface ParameterizedComposerElement {
 	 *            the new values of the parameters
 	 * @return the parameters that aren't valid
 	 */
-	public abstract Map<String, ParameterError> validateParameters(
-			Map<String, Parameter> valuedParameters_p);
+	Map<String, ParameterError> validateParameters(
+			Map<String, Parameter> valuedParameters);
 
 }

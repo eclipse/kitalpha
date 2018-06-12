@@ -37,13 +37,13 @@ public interface IActivity {
 	 *            the parameters of the strategy
 	 * @return the allocation instantiated by this strategy
 	 */
-	public IStatus run(ActivityParameters activityParams);
+	IStatus run(ActivityParameters activityParams);
 
 	/**
 	 * 
 	 * @return
 	 */
-	public Collection<DeclaredParameter> getParameters();
+	Collection<DeclaredParameter> getParameters();
 
 	/**
 	 * Method that allows to validate the values of the strategy parameters.
@@ -52,6 +52,6 @@ public interface IActivity {
 	 *            the new values of the parameters
 	 * @return the parameters that aren't valid
 	 */
-	public Map<String, ParameterError<?>> validateParameters(
+	Map<String, ParameterError<?>> validateParameters(
 			ActivityParameters valuedParameters);
 }

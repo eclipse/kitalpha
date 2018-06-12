@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,8 +36,8 @@ public interface IGeneratorWithProgress extends IGenerator {
 	 * @param progressMonitor
 	 *            to notify the progression of the generation.
 	 */
-	public void generateCode(final Root allocRoot_p,
-			final Map<String, Parameter> generatorParams_p,
-			final IPath target_f, IProgressMonitor progressMonitor);
+	void generateCode(final Root allocRoot,
+			final Map<String, Parameter> generatorParams,
+			final IPath target, IProgressMonitor progressMonitor);
 
 }

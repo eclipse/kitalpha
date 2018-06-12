@@ -53,6 +53,6 @@ public interface AFSelectionProvider {
 	}
 
 	String ID = "org.polarsys.kitalpha.ad.viewpoint.ui.provider.selection";
-	public String DEFAULT_PROVIDER_ID = "org.polarsys.capella.core.af.integration.provider.CapellaSelectionProvider";
-	public String DEFAULT_PROVIDER_ID2 = "org.polarsys.kitalpha.ad.integration.sirius.providers.SiriusSelectionProvider";
+	String DEFAULT_PROVIDER_ID = "org.polarsys.capella.core.af.integration.provider.CapellaSelectionProvider";
+	String DEFAULT_PROVIDER_ID2 = "org.polarsys.kitalpha.ad.integration.sirius.providers.SiriusSelectionProvider";
 }

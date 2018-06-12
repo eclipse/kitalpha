@@ -125,7 +125,7 @@ public class UnzipTask implements ITaskProduction {
 		return true;
 	}
 
-	private static final void copyInputStream(InputStream in, OutputStream out)
+	private static void copyInputStream(InputStream in, OutputStream out)
 			throws IOException {
 
 		int read = in.read();
