@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -21,10 +21,12 @@ import org.polarsys.kitalpha.ad.af.dsl.cs.text.scoping.AfdescGlobalScopeProvider
  */
 public class AfdescRuntimeModule extends org.polarsys.kitalpha.ad.af.dsl.cs.text.AbstractAfdescRuntimeModule {
 
+	@Override
 	public Class<? extends org.eclipse.xtext.resource.IContainer.Manager> bindIContainer$Manager() {
 		return AfdescContainerManager.class;
 	}
 	
+	@Override
 	public Class<? extends org.eclipse.xtext.scoping.IGlobalScopeProvider> bindIGlobalScopeProvider() {
 		return AfdescGlobalScopeProvider.class;
 	}

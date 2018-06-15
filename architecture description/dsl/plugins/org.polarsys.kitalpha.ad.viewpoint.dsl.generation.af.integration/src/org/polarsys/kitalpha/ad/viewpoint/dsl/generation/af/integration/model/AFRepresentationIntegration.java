@@ -35,8 +35,9 @@ public class AFRepresentationIntegration {
 	}
 	
 	public static AFRepresentationIntegration getInstance(){
-		if (INSTANCE == null)
+		if (INSTANCE == null) {
 			INSTANCE = new AFRepresentationIntegration();
+		}
 		
 		return INSTANCE;
 	}
@@ -58,8 +59,8 @@ public class AFRepresentationIntegration {
 			dRepresentationToRegister.add(group);
 			
 			AFBundlesIntegration.getInstance().registerBundle(group);
-		}
-		else
+		} else {
 			throw new AFIntegrationException(AFIntegrationException.EPackage, AFIntegrationException.component_Existing_MSG);
+		}
 	}
 }

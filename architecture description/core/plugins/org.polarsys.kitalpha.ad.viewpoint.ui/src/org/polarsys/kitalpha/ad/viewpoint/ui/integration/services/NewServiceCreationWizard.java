@@ -68,6 +68,7 @@ public class NewServiceCreationWizard extends NewElementCreationWizard {
 
 	}
 
+	@Override
 	protected IDialogSettings getDialogSettingSection() {
 		return getDialogSettings().getSection(Activator.SERVICE_PROVIDER_WIZARD_SECTION);
 	}

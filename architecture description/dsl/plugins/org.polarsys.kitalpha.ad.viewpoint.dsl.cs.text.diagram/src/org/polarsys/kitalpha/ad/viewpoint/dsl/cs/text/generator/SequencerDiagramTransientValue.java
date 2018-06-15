@@ -1,5 +1,5 @@
 /*******************************************************************************	
- * Copyright (c) 2014 Thales Global Services S.A.S.	
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.	
  * All rights reserved. This program and the accompanying materials	
  * are made available under the terms of the Eclipse Public License v1.0	
  * which accompanies this distribution, and is available at	
@@ -29,8 +29,9 @@ public class SequencerDiagramTransientValue extends TransientValueService {
 	public ListTransient isListTransient(EObject semanticObject, EStructuralFeature feature) {
 		if (semanticObject instanceof DiagramSet && (
 				check_id(VpdiagramPackage.DIAGRAM_SET__ADDITIONAL_EXTERNAL_DATA, feature)
-				|| check_id(VpdiagramPackage.DIAGRAM_SET__ADDITIONAL_EXTERNAL_GROUP, feature)))
+				|| check_id(VpdiagramPackage.DIAGRAM_SET__ADDITIONAL_EXTERNAL_GROUP, feature))) {
 			return ListTransient.YES;
+		}
 		
 		return super.isListTransient(semanticObject, feature);
 	}

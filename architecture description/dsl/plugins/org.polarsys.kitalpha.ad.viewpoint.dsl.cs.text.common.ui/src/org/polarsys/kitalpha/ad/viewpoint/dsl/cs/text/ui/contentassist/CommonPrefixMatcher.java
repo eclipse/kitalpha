@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -58,26 +58,30 @@ public class CommonPrefixMatcher extends FQNPrefixMatcher {
 	
 	@Override
 	public boolean isCandidateMatchingPrefix(String name, String prefix) {
-		if (isCandidateMatchingPrefix2(name, prefix))
+		if (isCandidateMatchingPrefix2(name, prefix)) {
 			return true;
+		}
 		if (name.indexOf(delimiter) >= 0) { // assume a fqn if delimiter is present
 			if (prefix.indexOf(delimiter) < 0) { 
 				// prefix is without a dot - either namespace or last segment
 				// namespace was checked prior by delegate
 				String lastSegment = lastSegmentFinder.getLastSegment(name, delimiter);
-				if (lastSegment != null && delegate.isCandidateMatchingPrefix(lastSegment, prefix))
+				if (lastSegment != null && delegate.isCandidateMatchingPrefix(lastSegment, prefix)) {
 					return true;
+				}
 			} else {
 				List<String> splitPrefix = Strings.split(prefix, '.');
-				if (splitPrefix.isEmpty())
+				if (splitPrefix.isEmpty()) {
 					return false;
+				}
 				List<String> splitName = Strings.split(name, '.');
 				if (splitName.size() < splitPrefix.size()) {
 					return false;
 				}
 				for(int i = 0; i < splitPrefix.size() ; i++) {
-					if (!delegate.isCandidateMatchingPrefix(splitName.get(i), splitPrefix.get(i)))
+					if (!delegate.isCandidateMatchingPrefix(splitName.get(i), splitPrefix.get(i))) {
 						return false;
+					}
 				}
 				return true;
 			}

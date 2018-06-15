@@ -106,10 +106,11 @@ public class JDTUtility {
 		ByteArrayInputStream outputContent = new ByteArrayInputStream(formatedOutput.getBytes());
 		try 
 		{
-			if (javaFile.exists())
+			if (javaFile.exists()) {
 				javaFile.setContents(outputContent, true, false, null);
-			else
+			} else {
 				javaFile.create(outputContent, true, null);
+			}
 
 			javaFile.refreshLocal(IFile.DEPTH_ONE, new NullProgressMonitor());
 		} 
@@ -159,8 +160,9 @@ public class JDTUtility {
 		}
 		
 		Path packageFolderPath = new Path(packageName.replace('.', '/'));
-		if (src.getFolder(packageFolderPath).exists())
+		if (src.getFolder(packageFolderPath).exists()) {
 			return src.getFolder(packageFolderPath);
+		}
 		
 		IFolder parent = src;
 		for (int i = 0; i < packageFolderPath.segmentCount(); i++) 

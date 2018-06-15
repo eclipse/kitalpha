@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -59,6 +59,7 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 		final EObject context2 = context;
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d) {
 						return (d.getEObjectOrProxy() instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class 
 								&& ProjectUtil.areInSameProject(context2, d.getEObjectOrProxy()));
@@ -69,6 +70,7 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 	IScope scope_ExternalClass_class(EObject context, EReference reference) {
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d) {
 						return (d.getEObjectOrProxy() instanceof EClass);
 					}
@@ -80,6 +82,7 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 		final EObject context2 = context;
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d) {
 						return (d.getEObjectOrProxy() instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class
 								&& ProjectUtil.areInSameProject(context2, d.getEObjectOrProxy()));
@@ -92,6 +95,7 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 		final EObject context2 = context;
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d) {
 						return (d.getEObjectOrProxy() instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.LocalClassAssociation
 								&& ProjectUtil.areInSameProject(context2, d.getEObjectOrProxy()));
@@ -105,6 +109,7 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 		final EObject context2 = context;
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d) {
 						return VpdiagramScopeHelper.selectExternalAssociation(context2, d);
 					}
@@ -119,6 +124,7 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 		
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d) {
 						 return VpdiagramScopeHelper.selectLocalAssociation(context2, d);
 					}
@@ -130,6 +136,7 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 		final EObject context2 = context;
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d) {
 						return (d.getEObjectOrProxy() instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Attribute 
 								&& ProjectUtil.areInSameProject(context2, d.getEObjectOrProxy()));
@@ -140,6 +147,7 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 	IScope scope_DiagramExtension_extented_diagram(EObject context, EReference reference) {
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d) {
 						return (d.getEObjectOrProxy() instanceof DiagramDescription);
 					}
@@ -151,6 +159,7 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 		final EObject context2 = context;
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d) {
 						return (d.getEObjectOrProxy() instanceof DiagramElement && ProjectUtil.areInSameProject(context2, d.getEObjectOrProxy()));
 					}
@@ -162,6 +171,7 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 		final EObject context2 = context;
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d) {
 						return (d.getEObjectOrProxy() instanceof DiagramElement && ProjectUtil.areInSameProject(context2, d.getEObjectOrProxy()));
 					}
@@ -175,12 +185,14 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 		
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d) {
 						
 						EObject diagramExtension = VpDiagramHelper.getDiagramContainerInstanceType(context2, VpdiagramPackage.eINSTANCE.getDiagramExtension());
 						
-						if (diagramExtension != null)
+						if (diagramExtension != null) {
 							return VpDiagramHelper.isValidEdge(d.getEObjectOrProxy(), diagramExtension, reference2);
+						}
 						
 						return (d.getEObjectOrProxy() instanceof EdgeMapping);
 					}
@@ -194,12 +206,14 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 		
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d) {
 						
 						EObject diagramExtension = VpDiagramHelper.getDiagramContainerInstanceType(context2, VpdiagramPackage.eINSTANCE.getDiagramExtension());
 						
-						if (diagramExtension != null)
+						if (diagramExtension != null) {
 							return VpDiagramHelper.isValidNode(d.getEObjectOrProxy(), diagramExtension, reference2);
+						}
 						
 						return (d.getEObjectOrProxy() instanceof NodeMapping);
 					}
@@ -213,12 +227,14 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 		
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d) {
 						
 						EObject diagramExtension = VpDiagramHelper.getDiagramContainerInstanceType(context2, VpdiagramPackage.eINSTANCE.getDiagramExtension());
 						
-						if (diagramExtension != null)
+						if (diagramExtension != null) {
 							return VpDiagramHelper.isValidNode(d.getEObjectOrProxy(), diagramExtension, reference2);
+						}
 						
 						return (d.getEObjectOrProxy() instanceof NodeMapping);
 					}
@@ -232,11 +248,13 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 		
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d) {
 						EObject diagramExtension = VpDiagramHelper.getDiagramContainerInstanceType(context2, VpdiagramPackage.eINSTANCE.getDiagramExtension());
 						
-						if (diagramExtension != null)
+						if (diagramExtension != null) {
 							return VpDiagramHelper.isValidContainerMapping(d.getEObjectOrProxy(), diagramExtension, reference2);
+						}
 						
 						return (d.getEObjectOrProxy() instanceof ContainerMapping);
 					}
@@ -248,6 +266,7 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 		final EObject context2 = context;
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d) {
 						return (d.getEObjectOrProxy() instanceof DiagramElement && ProjectUtil.areInSameProject(context2, d.getEObjectOrProxy()));
 					}
@@ -259,6 +278,7 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 		final EObject context2 = context;
 		return new FilteringScope(delegateGetScope(context, reference), 
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d){
 						return (d.getEObjectOrProxy() instanceof AbstractNode && ProjectUtil.areInSameProject(context2, d.getEObjectOrProxy()));
 					}
@@ -271,6 +291,7 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 		final EObject context2 = context;
 		return new FilteringScope(delegateGetScope(context, reference), 
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d){
 						return (d.getEObjectOrProxy() instanceof BorderedNode && ProjectUtil.areInSameProject(context2, d.getEObjectOrProxy()));
 					}
@@ -280,6 +301,7 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 	IScope scope_EdgeStyleCustomization_appliedOn(EObject context, EReference reference){
 		return new FilteringScope(delegateGetScope(context, reference), 
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d){
 						return d.getEObjectOrProxy() instanceof EdgeStyleDescription || 
 								d.getEObjectOrProxy() instanceof ConditionalEdgeStyleDescription;
@@ -290,6 +312,7 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 	IScope scope_EdgeStyleCustomization_centeredSourceMappings(EObject context, EReference reference){
 		return new FilteringScope(delegateGetScope(context, reference), 
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d){
 						return d.getEObjectOrProxy() instanceof DiagramElementMapping;
 					}
@@ -299,6 +322,7 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 	IScope scope_EdgeStyleCustomization_centeredTargetMappings(EObject context, EReference reference){
 		return new FilteringScope(delegateGetScope(context, reference), 
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d){
 						return d.getEObjectOrProxy() instanceof DiagramElementMapping;
 					}
@@ -308,6 +332,7 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 	IScope scope_EdgeStyleCustomization_beginLabelStyleDescription(EObject context, EReference reference){
 		return new FilteringScope(delegateGetScope(context, reference), 
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d){
 						return d.getEObjectOrProxy() instanceof BeginLabelStyleDescription;
 					}
@@ -317,6 +342,7 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 	IScope scope_EdgeStyleCustomization_centerLabelStyleDescription(EObject context, EReference reference){
 		return new FilteringScope(delegateGetScope(context, reference), 
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d){
 						return d.getEObjectOrProxy() instanceof CenterLabelStyleDescription;
 					}
@@ -326,6 +352,7 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 	IScope scope_EdgeStyleCustomization_endLabelStyleDescription(EObject context, EReference reference){
 		return new FilteringScope(delegateGetScope(context, reference), 
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d){
 						return d.getEObjectOrProxy() instanceof EndLabelStyleDescription;
 					}
@@ -336,6 +363,7 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 		final EObject context2 = context;
 		return new FilteringScope(delegateGetScope(context, reference), 
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d){
 						if (context2 instanceof ColorCustomization){
 							EObject candidate = d.getEObjectOrProxy();
@@ -349,6 +377,7 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 	IScope scope_LabelCustomization_appliedOn(EObject context, EReference reference){
 		return new FilteringScope(delegateGetScope(context, reference), 
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d){
 						return d.getEObjectOrProxy() instanceof BasicLabelStyleDescription;
 					}
@@ -358,6 +387,7 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 	IScope scope_LabelCustomization_color(EObject context, EReference reference){
 		return new FilteringScope(delegateGetScope(context, reference), 
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d){
 						return d.getEObjectOrProxy() instanceof ColorDescription;
 					}
@@ -368,6 +398,7 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 	IScope scope_ColorCustomization_color(EObject context, EReference reference){
 		return new FilteringScope(delegateGetScope(context, reference), 
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d){
 						return d.getEObjectOrProxy() instanceof ColorDescription;
 					}
@@ -378,6 +409,7 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 	IScope scope_ContainerStyleCustomization_appliedOn(EObject context, EReference reference){
 		return new FilteringScope(delegateGetScope(context, reference), 
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d){
 						return d.getEObjectOrProxy() instanceof ContainerStyleDescription;
 					}
@@ -387,6 +419,7 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 	IScope scope_NodeStyleCustomization_appliedOn(EObject context, EReference reference){
 		return new FilteringScope(delegateGetScope(context, reference), 
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d){
 						return d.getEObjectOrProxy() instanceof NodeStyleDescription;
 					}
@@ -396,6 +429,7 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 	IScope scope_MappingBasedDecorator_externalMappings(EObject context, EReference reference){
 		return new FilteringScope(delegateGetScope(context, reference), 
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d){
 						return d.getEObjectOrProxy() instanceof DiagramElementMapping;
 					}
@@ -405,6 +439,7 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 	IScope scope_MappingBasedDecorator_internalMappings(EObject context, EReference reference){
 		return new FilteringScope(delegateGetScope(context, reference), 
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d){
 						return d.getEObjectOrProxy() instanceof DiagramElement;
 					}
@@ -414,6 +449,7 @@ public class VpdiagramScopeProvider extends AbstractDeclarativeScopeProvider {
 	IScope scope_SemanticBasedDecorator_domain(EObject context, EReference reference){
 		return new FilteringScope(delegateGetScope(context, reference), 
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d){
 						return d.getEObjectOrProxy() instanceof EClass;
 					}

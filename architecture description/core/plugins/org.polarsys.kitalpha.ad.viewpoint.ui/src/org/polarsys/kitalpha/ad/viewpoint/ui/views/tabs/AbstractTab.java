@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -63,22 +63,28 @@ public abstract class AbstractTab implements Tab, ModelListener, AFImages {
 		this.site = site;
 	}
 
+	@Override
 	public ISelectionProvider getSelectionProvider() {
 		return null;
 	}
 
+	@Override
 	public void setModelManager(Viewpoint vp, ModelManager modelManager) {
-		if (this.modelManager != null)
+		if (this.modelManager != null) {
 			this.modelManager.removeListener(this);
-		if (modelManager != null)
+		}
+		if (modelManager != null) {
 			modelManager.addListener(this);
+		}
 		this.modelManager = modelManager;
 		this.viewpoint = vp;
-		for (BasicEditingSupport bes : editingSupports)
+		for (BasicEditingSupport bes : editingSupports) {
 			bes.setModelManager(modelManager);
+		}
 		configureLabelProvider();
 	}
 
+	@Override
 	public void setSelectionProvider(AFSelectionProvider selectionProvider) {
 		this.selectionProvider = selectionProvider;
 
@@ -105,10 +111,12 @@ public abstract class AbstractTab implements Tab, ModelListener, AFImages {
 		return composite;
 	}
 
+	@Override
 	public void dispose() {
 		setModelManager(viewpoint, null);
-		if (item != null && !item.isDisposed())
+		if (item != null && !item.isDisposed()) {
 			item.dispose();
+		}
 	}
 
 	protected BasicEditingSupport register(BasicEditingSupport support) {
@@ -116,6 +124,7 @@ public abstract class AbstractTab implements Tab, ModelListener, AFImages {
 		return support;
 	}
 
+	@Override
 	public void workspaceHasChanged() {
 		configureLabelProvider();
 	}
@@ -125,10 +134,12 @@ public abstract class AbstractTab implements Tab, ModelListener, AFImages {
 		labelProvider.setReference(viewpoint, ref);
 	}
 
+	@Override
 	public void setDesignOnly(boolean b) {
 		designOnly = b;
 	}
 
+	@Override
 	public boolean isDesignOnly() {
 		return designOnly;
 	}
@@ -143,6 +154,7 @@ public abstract class AbstractTab implements Tab, ModelListener, AFImages {
 
 		}
 
+		@Override
 		public final void focusLost(FocusEvent e) {
 			displayError(null);
 			try {
@@ -152,6 +164,7 @@ public abstract class AbstractTab implements Tab, ModelListener, AFImages {
 			}
 		}
 
+		@Override
 		public void focusGained(FocusEvent e) {
 
 		}
@@ -159,10 +172,12 @@ public abstract class AbstractTab implements Tab, ModelListener, AFImages {
 
 	protected abstract class SelectionListener2 implements SelectionListener {
 
+		@Override
 		public final void widgetDefaultSelected(SelectionEvent e) {
 
 		}
 
+		@Override
 		public final void widgetSelected(SelectionEvent e) {
 			displayError(null);
 			try {

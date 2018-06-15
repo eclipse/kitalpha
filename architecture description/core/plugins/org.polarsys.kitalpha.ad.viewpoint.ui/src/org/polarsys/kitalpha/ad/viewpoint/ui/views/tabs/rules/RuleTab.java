@@ -95,9 +95,11 @@ public class RuleTab extends AbstractTab {
 			protected IStatus run(IProgressMonitor monitor) {
 				if (site != null) {
 					site.getShell().getDisplay().asyncExec(new Runnable() {
+						@Override
 						public void run() {
-							if (ruleViewer != null && ruleViewer.getTable() != null && !ruleViewer.getTable().isDisposed())
+							if (ruleViewer != null && ruleViewer.getTable() != null && !ruleViewer.getTable().isDisposed()) {
 								ruleViewer.refresh(true);
+							}
 						}
 					});
 				}
@@ -105,6 +107,7 @@ public class RuleTab extends AbstractTab {
 			}
 		};
 
+		@Override
 		public void bundleChanged(final BundleEvent event) {
 			for (RuleProvider prov : Rules.getProviders().values()) {
 				if (prov.hasProvider(event.getBundle())) {
@@ -121,10 +124,12 @@ public class RuleTab extends AbstractTab {
 		super(new RuleLabelProvider());
 	}
 
+	@Override
 	public ISelectionProvider getSelectionProvider() {
 		return ruleViewer;
 	}
 
+	@Override
 	public void createTab(FormToolkit toolkit, CTabFolder folder) {
 		Composite composite = createTab(toolkit, folder, Messages.RuleTab_title, ViewpointEditPlugin.INSTANCE.getImage("full/obj16/Rule"));
 		GridLayout clayout = new GridLayout();
@@ -137,6 +142,7 @@ public class RuleTab extends AbstractTab {
 		createRuleItem = new MenuItem(menu, SWT.PUSH);
 		createRuleItem.setText(Messages.RuleTab_create_service_label);
 		createRuleItem.addSelectionListener(new SelectionListener2() {
+			@Override
 			public void doWidgetSelected(SelectionEvent e) {
 				IStructuredSelection selection = (IStructuredSelection) ruleViewer.getSelection();
 				List<Rule> rules = new ArrayList<Rule>();
@@ -156,6 +162,7 @@ public class RuleTab extends AbstractTab {
 		table.setLayoutData(new GridData(GridData.FILL_BOTH));
 		SelectionListener headerListener = new SelectionListener2() {
 
+			@Override
 			public void doWidgetSelected(SelectionEvent e) {
 				TableColumn currentSortColumn = table.getSortColumn();
 				TableColumn newSortColumn = (TableColumn) e.getSource();
@@ -244,6 +251,7 @@ public class RuleTab extends AbstractTab {
 			final String type = wz;
 			wItem.addSelectionListener(new SelectionListener2() {
 
+				@Override
 				public void doWidgetSelected(SelectionEvent e) {
 					IProject containingProject = ProjectUtils.getContainingProject(viewpoint);
 					RuleProviderWizard provider = RuleWizards.getProvider(type);
@@ -285,6 +293,7 @@ public class RuleTab extends AbstractTab {
 		});
 		ruleViewer.addSelectionChangedListener(new ISelectionChangedListener() {
 
+			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
 				for (Object obj : ((IStructuredSelection) event.getSelection()).toArray()) {
 					if (!modelManager.getRuleHandler().isRemovable((Rule) obj)) {
@@ -297,6 +306,7 @@ public class RuleTab extends AbstractTab {
 		});
 		ruleViewer.addSelectionChangedListener(new ISelectionChangedListener() {
 
+			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
 				boolean isEmpty = event.getSelection().isEmpty();
 				boolean readOnly = getModelManager().getResourceManager().isReadOnly();
@@ -307,6 +317,7 @@ public class RuleTab extends AbstractTab {
 		Activator.getDefault().getBundle().getBundleContext().addBundleListener(bundleListener);
 	}
 
+	@Override
 	public void init() {
 		ruleViewer.setInput(modelManager.getRuleHandler());
 		workspaceHasChanged();
@@ -315,11 +326,13 @@ public class RuleTab extends AbstractTab {
 
 	public List<Object> getItems() {
 		List<Object> result = new ArrayList<Object>();
-		for (TableItem item : ruleViewer.getTable().getItems())
+		for (TableItem item : ruleViewer.getTable().getItems()) {
 			result.add(item.getData());
+		}
 		return result;
 	}
 
+	@Override
 	public void workspaceHasChanged() {
 		super.workspaceHasChanged();
 

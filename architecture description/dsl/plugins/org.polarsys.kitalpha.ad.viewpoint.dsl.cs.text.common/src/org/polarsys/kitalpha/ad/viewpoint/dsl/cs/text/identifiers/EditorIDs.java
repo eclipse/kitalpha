@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -30,22 +30,30 @@ public class EditorIDs {
 	public static final String ACTIVITY_EXPLORER_ID = "org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.Activityexplorer";
 	
 	public static String getEditorID(String fileExtension) {
-		if (fileExtension.equals(FileExtension.BUILD_EXTENSION))
+		if (fileExtension.equals(FileExtension.BUILD_EXTENSION)) {
 			return BUILD_EDITOR_ID;
-		if (fileExtension.equals(FileExtension.SPECIFICATION_EXTENSION))
+		}
+		if (fileExtension.equals(FileExtension.SPECIFICATION_EXTENSION)) {
 			return VPSPEC_EDITOR_ID;
-		if (fileExtension.equals(FileExtension.DATA_EXTENSION))
+		}
+		if (fileExtension.equals(FileExtension.DATA_EXTENSION)) {
 			return DATA_EDITOR_ID;
-		if (fileExtension.equals(FileExtension.CONFIGURATION_EXTENSION))
+		}
+		if (fileExtension.equals(FileExtension.CONFIGURATION_EXTENSION)) {
 			return CONFIG_EDITOR_ID;
-		if (fileExtension.equals(FileExtension.DIAGRAM_EXTENSION))
+		}
+		if (fileExtension.equals(FileExtension.DIAGRAM_EXTENSION)) {
 			return DIAGRAM_EDITOR_ID;
-		if (fileExtension.equals(FileExtension.SERVICES_EXTENSION))
+		}
+		if (fileExtension.equals(FileExtension.SERVICES_EXTENSION)) {
 			return SERVICES_EDITOR_ID;
-		if (fileExtension.equals(FileExtension.UI_EXTENSION))
+		}
+		if (fileExtension.equals(FileExtension.UI_EXTENSION)) {
 			return UI_EDITOR_ID;
-		if (fileExtension.equals(FileExtension.ACTIVITYEXPLORER_EXTENSION))
+		}
+		if (fileExtension.equals(FileExtension.ACTIVITYEXPLORER_EXTENSION)) {
 			return ACTIVITY_EXPLORER_ID;
+		}
 		
 		return null;
 	}

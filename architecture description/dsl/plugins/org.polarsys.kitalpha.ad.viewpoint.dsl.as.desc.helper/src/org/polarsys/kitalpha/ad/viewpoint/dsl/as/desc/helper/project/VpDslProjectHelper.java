@@ -22,7 +22,6 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.message.Messages;
 
@@ -94,8 +93,9 @@ public class VpDslProjectHelper {
 	 */
 	public static URI getContainingResourceURI(EObject eObject){
 		Resource resource = eObject.eResource();
-		if (resource == null)
+		if (resource == null) {
 			throw new IllegalArgumentException(no_resource);
+		}
 		
 		URI uri = resource.getURI();
 		if (uri == null) {

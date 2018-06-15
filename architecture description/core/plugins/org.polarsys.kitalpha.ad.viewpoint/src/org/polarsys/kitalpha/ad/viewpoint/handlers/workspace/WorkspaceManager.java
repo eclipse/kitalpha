@@ -49,6 +49,7 @@ public class WorkspaceManager extends ResourceManager {
 	private WorkspaceManager() {
 	}
 
+	@Override
 	public Object getRootModel() {
 		if (isReadOnly()){
 			return null;
@@ -115,6 +116,7 @@ public class WorkspaceManager extends ResourceManager {
 		return workspace.eResource().getTimeStamp();
 	}
 
+	@Override
 	public void saveModel() {
 		if (isReadOnly()){
 			return;
@@ -142,6 +144,7 @@ public class WorkspaceManager extends ResourceManager {
 			return getResourceManager();
 		}
 
+		@Override
 		public boolean isRemovable(ViewpointElement element) {
 			if (getResourceManager().isReadOnly()){
 				return false;

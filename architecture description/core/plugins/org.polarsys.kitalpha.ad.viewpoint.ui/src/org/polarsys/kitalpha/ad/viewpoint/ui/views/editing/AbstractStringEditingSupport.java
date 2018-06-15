@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -48,8 +48,9 @@ public abstract class AbstractStringEditingSupport extends BasicEditingSupport {
 
 	@Override
 	protected boolean canEdit(Object element) {
-		if (setter == null || getter == null)
+		if (setter == null || getter == null) {
 			return false;
+		}
 		return super.canEdit(element);
 	}
 

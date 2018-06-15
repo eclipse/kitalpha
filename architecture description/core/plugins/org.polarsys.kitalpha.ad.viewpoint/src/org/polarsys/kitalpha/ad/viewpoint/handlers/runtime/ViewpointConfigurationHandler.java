@@ -35,12 +35,14 @@ public class ViewpointConfigurationHandler extends ViewpointManager.ElementHandl
 		super(viewpoint, mgr);
 	}
 
+	@Override
 	public List<ViewpointElement> getElements() {
 		List<ViewpointElement> services = new ArrayList<ViewpointElement>();
 		services.addAll(getViewpoint().getProperties());
 		return services;
 	}
 
+	@Override
 	public void createProperty(String name) {
 		PropertySet set = getCurrentPropertySet();
 		Property prop = ViewpointFactory.eINSTANCE.createProperty();
@@ -61,6 +63,7 @@ public class ViewpointConfigurationHandler extends ViewpointManager.ElementHandl
 		return getViewpoint().getPropertySet();
 	}
 
+	@Override
 	public void removeProperties(List<Property> properties) {
 		for (Property prop : properties) {
 			if (!isRemovable(prop)){
@@ -72,6 +75,7 @@ public class ViewpointConfigurationHandler extends ViewpointManager.ElementHandl
 		saveModel();
 	}
 
+	@Override
 	public List<ViewpointElement> getElementsFromParents() {
 		Map<String, ViewpointElement> name2prop = new HashMap<String, ViewpointElement>();
 		for (Viewpoint vp : getViewpoint().getAllParents()) {

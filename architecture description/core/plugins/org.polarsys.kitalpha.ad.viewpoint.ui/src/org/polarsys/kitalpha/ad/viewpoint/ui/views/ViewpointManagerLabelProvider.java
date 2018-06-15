@@ -29,6 +29,7 @@ public class ViewpointManagerLabelProvider extends LabelProvider implements ITab
 
 	private ResourceSet context;
 
+	@Override
 	public Image getColumnImage(Object element, int columnIndex) {
 		if (columnIndex != 0){
 			return null;
@@ -40,6 +41,7 @@ public class ViewpointManagerLabelProvider extends LabelProvider implements ITab
 		return Activator.getDefault().getImage(AFImages.VP);
 	}
 
+	@Override
 	public String getColumnText(Object element, int columnIndex) {
 		Description vp = (Description) element;
 		switch (columnIndex) {

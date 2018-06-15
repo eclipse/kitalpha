@@ -29,10 +29,12 @@ import org.polarsys.kitalpha.emde.extension.ModelExtensionOverallListener;
  */
 public class DiagramUpdater implements ModelExtensionOverallListener {
 
+	@Override
 	public void modelEnabled(Object ctx, String nsURI) {
 		refresh();
 	}
 
+	@Override
 	public void modelDisabled(Object ctx, String nsURI) {
 		refresh();
 	}

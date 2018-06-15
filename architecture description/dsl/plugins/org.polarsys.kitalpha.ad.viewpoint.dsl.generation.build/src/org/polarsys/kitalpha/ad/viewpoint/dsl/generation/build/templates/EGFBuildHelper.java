@@ -248,10 +248,12 @@ public class EGFBuildHelper {
 	public static SVNLocation createSVNLocation(String url, String protocol) {
 
 		SVNLocation svnlocation = BuildscmFactory.eINSTANCE.createSVNLocation();
-		if (protocol.equals(PROTOCOL_SVN))
+		if (protocol.equals(PROTOCOL_SVN)) {
 			svnlocation.setProtocol(SVNProtocol.SVN);
-		if (protocol.equals(PROTOCOL_SSH))
+		}
+		if (protocol.equals(PROTOCOL_SSH)) {
 			svnlocation.setProtocol(SVNProtocol.SVNSSH);
+		}
 		svnlocation.setLocalPath(url); //Local path
 		
 		svnlocation.setUrl("${" + GeneratorConstants.REPOSITORY_LOCATION + "}");
@@ -304,23 +306,28 @@ public class EGFBuildHelper {
 		HudsonDeployment hudsonDeployment = BuilddeployFactory.eINSTANCE
 				.createHudsonDeployment();
 
-		if (conf.iscanManageHudsonProperties())
+		if (conf.iscanManageHudsonProperties()) {
 			setHudsonProperties(hudsonDeployment,
 					conf.getMap(GeneratorConstants.HUDSON_PROPERTIES));
+		}
 
-		if (conf.iscanManageUsers())
+		if (conf.iscanManageUsers()) {
 			setHudsonUsers(hudsonDeployment, conf.getMap(GeneratorConstants.USERS));
+		}
 
-		if (conf.iscanManageGenerationLocation())
+		if (conf.iscanManageGenerationLocation()) {
 			setHudsonGenerationLocation(hudsonDeployment,
 					conf.getMap(GeneratorConstants.GENERATION_LOCATION), scm, lvpsShortName, protocol, rootProjectName, repositoryLocation);
+		}
 
-		if (conf.iscanManageCronTriggers())
+		if (conf.iscanManageCronTriggers()) {
 			setHudsonCronTriggers(hudsonDeployment,
 					conf.getList(GeneratorConstants.CRON_TRIGGERS));
-		if (conf.iscanManageSCMTriggers())
+		}
+		if (conf.iscanManageSCMTriggers()) {
 			setHudsonSCMTriggers(hudsonDeployment,
 					conf.getList(GeneratorConstants.SCM_TRIGGERS));
+		}
 
 		return hudsonDeployment;
 	}
@@ -362,10 +369,11 @@ public class EGFBuildHelper {
 	private static void setHudsonGenerationLocation(
 			HudsonDeployment hudsonDeployment, Map<String, String> generationLocation, SCM scm, String lvpsShortName, String protocol, String rootProjectName, String repositoryLocation) {
 
-		if (protocol.contains("svn"))
+		if (protocol.contains("svn")) {
 			generateSVNLocation(hudsonDeployment, generationLocation, scm, lvpsShortName, protocol, rootProjectName, repositoryLocation);
-		else
+		} else {
 			generateGitLocation(hudsonDeployment, generationLocation, scm, lvpsShortName, protocol, rootProjectName, repositoryLocation);
+		}
 			
 
 	}
@@ -388,10 +396,11 @@ public class EGFBuildHelper {
 					gitLocation.setLocalPath(lvpsShortName + "_releng");
 
 				} else {
-					if (repositoryLocation.endsWith("/"))
+					if (repositoryLocation.endsWith("/")) {
 						url = repositoryLocation + rootProjectName + "." + lvpsShortName + ".releng";
-					else
+					} else {
 						url = repositoryLocation + "/" + rootProjectName + "." + lvpsShortName + ".releng";
+					}
 					gitLocation.setUrl(url);
 				}
 
@@ -424,20 +433,24 @@ public class EGFBuildHelper {
 					svnLocation.setLocalPath(lvpsShortName + "_releng");
 
 				} else {
-					if (repositoryLocation.endsWith("/"))
+					if (repositoryLocation.endsWith("/")) {
 						url = repositoryLocation + rootProjectName + "." + lvpsShortName + ".releng";
-					else
+					} else {
 						url = repositoryLocation + "/" + rootProjectName + "." + lvpsShortName + ".releng";
+					}
 					svnLocation.setUrl(url);
 				}
 
-				if (protocol.equals(PROTOCOL_SVN))
+				if (protocol.equals(PROTOCOL_SVN)) {
 					svnLocation.setProtocol(SVNProtocol.SVN);
-				if (protocol.equals(PROTOCOL_SSH))
+				}
+				if (protocol.equals(PROTOCOL_SSH)) {
 					svnLocation.setProtocol(SVNProtocol.SVNSSH);
+				}
 
-				if (scm instanceof SVN)
+				if (scm instanceof SVN) {
 					((SVN)scm).getLocations().add(svnLocation);
+				}
 				
 				svnGenerationLocation.setSvnLocation(svnLocation);
 

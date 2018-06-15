@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -52,21 +52,26 @@ public class ServicesQualifiedNameProvider extends	DefaultDeclarativeQualifiedNa
 	
 	private Function<EObject, String> resolver = SimpleAttributeResolver.newResolver(String.class, "name");
 	
+	@Override
 	protected Function<EObject, String> getResolver() {
 		return resolver;
 	}
 
+	@Override
 	public QualifiedName getFullyQualifiedName(final EObject obj) {
 		return cache.get(Tuples.pair(obj, "fqn"), obj.eResource(), new Provider<QualifiedName>(){
 
+			@Override
 			public QualifiedName get() {
 				EObject temp = obj;
 				QualifiedName qualifiedNameFromDispatcher = qualifiedName.invoke(temp);
-				if (qualifiedNameFromDispatcher!=null)
+				if (qualifiedNameFromDispatcher!=null) {
 					return qualifiedNameFromDispatcher;
+				}
 				String name = getResolver().apply(temp);
-				if (Strings.isEmpty(name))
+				if (Strings.isEmpty(name)) {
 					return null;
+				}
 				QualifiedName qualifiedNameFromConverter = converter.toQualifiedName(name);
 				while (temp.eContainer() != null) {
 					temp = temp.eContainer();

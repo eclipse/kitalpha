@@ -79,8 +79,9 @@ public class VpspecTemplateProposalProvider extends CommonTemplateProposalProvid
 				}
 			}		
 			for (Template template : templates) {
-				if (!acceptor.canAcceptMoreTemplates())
+				if (!acceptor.canAcceptMoreTemplates()) {
 					return;
+				}
 				if (validate(template, templateContext)) {	
 					TemplateProposal proposal = createProposal(template, templateContext, context, getImage(template), getRelevance(template));
 					//get current semantic model
@@ -149,8 +150,9 @@ public class VpspecTemplateProposalProvider extends CommonTemplateProposalProvid
 		if (templateIdentifier.equals(TemplateIDs.NEW_UI_TEMPLATE)) {
 			return true;
 		}
-		if (templateIdentifier.equals(TemplateIDs.NEW_ACTIVITY_EXPLORER_TEMPLATE))
+		if (templateIdentifier.equals(TemplateIDs.NEW_ACTIVITY_EXPLORER_TEMPLATE)) {
 			return true;
+		}
 		return false;
 	}
 

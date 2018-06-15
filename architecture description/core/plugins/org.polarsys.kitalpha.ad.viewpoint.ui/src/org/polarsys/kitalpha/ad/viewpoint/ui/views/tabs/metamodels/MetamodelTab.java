@@ -68,10 +68,12 @@ public class MetamodelTab extends AbstractTab {
 		super(new MetamodelLabelProvider());
 	}
 
+	@Override
 	public ISelectionProvider getSelectionProvider() {
 		return metamodelViewer;
 	}
 
+	@Override
 	public void createTab(FormToolkit toolkit, CTabFolder folder) {
 		final Composite composite = createTab(toolkit, folder, Messages.MetamodelTab_title, ViewpointEditPlugin.INSTANCE.getImage("full/obj16/Metamodel"));
 		GridLayout clayout = new GridLayout();
@@ -86,6 +88,7 @@ public class MetamodelTab extends AbstractTab {
 		table.setLayoutData(new GridData(GridData.FILL_BOTH));
 		SelectionListener headerListener = new SelectionListener2() {
 
+			@Override
 			public void doWidgetSelected(SelectionEvent e) {
 				TableColumn currentSortColumn = table.getSortColumn();
 				TableColumn newSortColumn = (TableColumn) e.getSource();
@@ -140,8 +143,9 @@ public class MetamodelTab extends AbstractTab {
 					for (URI euri : dialog.getResult()) {
 						Resource resource = resourceSet.getResource(euri, true);
 						for (EObject eobj : resource.getContents()) {
-							if (eobj instanceof EPackage)
+							if (eobj instanceof EPackage) {
 								packages.add((EPackage) eobj);
+							}
 						}
 					}
 					metamodelHandler.addMetamodels(packages);
@@ -188,19 +192,23 @@ public class MetamodelTab extends AbstractTab {
 
 		metamodelViewer.addSelectionChangedListener(new ISelectionChangedListener() {
 
+			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
 				updateButtons((IStructuredSelection) event.getSelection());
 			}
 		});
 	}
 
+	@Override
 	public void init() {
 		IMetamodelHandler metamodelHandler = modelManager.getMetamodelHandler();
-		if (metamodelHandler != null)
+		if (metamodelHandler != null) {
 			metamodelViewer.setInput(metamodelHandler);
+		}
 		workspaceHasChanged();
 	}
 
+	@Override
 	public void workspaceHasChanged() {
 		super.workspaceHasChanged();
 		metamodelViewer.refresh();

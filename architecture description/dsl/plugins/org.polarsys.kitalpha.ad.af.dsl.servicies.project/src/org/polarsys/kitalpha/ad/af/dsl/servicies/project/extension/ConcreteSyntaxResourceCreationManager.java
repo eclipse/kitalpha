@@ -18,7 +18,6 @@ import java.util.Map;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
-import org.polarsys.kitalpha.ad.af.dsl.servicies.project.extension.IAFConcreteSyntaxResourceCreator;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint;
 
 /**

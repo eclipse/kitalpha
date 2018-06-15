@@ -37,6 +37,7 @@ public abstract class NewRuleCreationWizard extends NewElementCreationWizard {
 
 	protected abstract String getType();
 
+	@Override
 	protected IDialogSettings getDialogSettingSection() {
 		return getDialogSettings().getSection(Activator.RULE_PROVIDER_WIZARD_SECTION);
 	}

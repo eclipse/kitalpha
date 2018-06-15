@@ -65,6 +65,7 @@ public class AFSpecProjectWizardFirstPage extends AbstractAFSpecProjectWizardPag
 		return selectedViewpoint;
 	}
 	
+	@Override
 	public void createControl(Composite parent) {
 		Composite cparent = new Composite(parent, SWT.NONE);
 		cparent.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
@@ -89,6 +90,7 @@ public class AFSpecProjectWizardFirstPage extends AbstractAFSpecProjectWizardPag
 		_afShortNameText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		_afShortNameText.setFocus();
 		_afShortNameText.addModifyListener(new ModifyListener() {
+			@Override
 			public void modifyText(ModifyEvent e) {
 				boolean valid = vpDataChanged(_afShortNameText.getText(), "Architecture framework short name must be valid:", false);
 				if (valid) {
@@ -187,11 +189,13 @@ public class AFSpecProjectWizardFirstPage extends AbstractAFSpecProjectWizardPag
 	
 	class ListSelectionListener implements SelectionListener{
 
+		@Override
 		public void widgetSelected(SelectionEvent e) {
 			bAdd.setEnabled(lAvailableViewpoints.getSelectionIndex() != -1);
 			bRemove.setEnabled(lSelectedViewpoints.getSelectionIndex() != -1);
 		}
 
+		@Override
 		public void widgetDefaultSelected(SelectionEvent e) {
 		}
 	}
@@ -200,6 +204,7 @@ public class AFSpecProjectWizardFirstPage extends AbstractAFSpecProjectWizardPag
 	
 	class ListMouseListener implements MouseListener{
 
+		@Override
 		public void mouseDoubleClick(MouseEvent e) {
 			
 			ListenerUtilities lUtil = new ListenerUtilities();
@@ -225,9 +230,11 @@ public class AFSpecProjectWizardFirstPage extends AbstractAFSpecProjectWizardPag
 			lUtil.updateUI();
 		}
 
+		@Override
 		public void mouseDown(MouseEvent e) {
 		}
 
+		@Override
 		public void mouseUp(MouseEvent e) {
 		}
 		
@@ -236,6 +243,7 @@ public class AFSpecProjectWizardFirstPage extends AbstractAFSpecProjectWizardPag
 	/************************* Button listeners *********************************/
 	
 	class ButtonMouseListener implements MouseListener{
+		@Override
 		public void mouseUp(MouseEvent e) {
 			Button b = (Button)e.getSource();
 			
@@ -294,9 +302,11 @@ public class AFSpecProjectWizardFirstPage extends AbstractAFSpecProjectWizardPag
 		
 		
 		
+		@Override
 		public void mouseDoubleClick(MouseEvent e) {
 		}
 
+		@Override
 		public void mouseDown(MouseEvent e) {
 		}
 	}

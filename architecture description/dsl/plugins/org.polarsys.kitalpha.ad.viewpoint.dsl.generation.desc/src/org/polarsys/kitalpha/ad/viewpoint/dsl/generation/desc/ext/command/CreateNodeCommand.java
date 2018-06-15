@@ -1,7 +1,5 @@
-/**
- * <copyright>
- * 
- * Copyright (c) 2014 Thales Global Services S.A.S.
+/*******************************************************************************
+ * Copyright (c) 2015, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,10 +7,7 @@
  *  
  * Contributors:
  *   Thales Global Services S.A.S - initial API and implementation
- *   
- * </copyright>
- */
-
+ ******************************************************************************/
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.ext.command;
 
 import java.util.ArrayList;
@@ -117,8 +112,9 @@ public class CreateNodeCommand extends RecordingCommand {
 		EList<AbstractNodeMapping> childrenNodeMapping = new BasicEList<AbstractNodeMapping>();
 		for (DiagramElementMapping iDiagramElementMapping : nodeMapping.getAllMappings())
 		{
-			if (iDiagramElementMapping instanceof AbstractNodeMapping)
+			if (iDiagramElementMapping instanceof AbstractNodeMapping) {
 				childrenNodeMapping.add((AbstractNodeMapping) iDiagramElementMapping);
+			}
 		}
 		
 		for (AbstractNodeMapping childNodeMapping : childrenNodeMapping) 
@@ -132,8 +128,9 @@ public class CreateNodeCommand extends RecordingCommand {
 
 			for (EObject childSemantic : candidatesSemanticChildren) 
 			{
-				if (modelAccessor.eInstanceOf(childSemantic, childNodeMapping.getDomainClass()))
+				if (modelAccessor.eInstanceOf(childSemantic, childNodeMapping.getDomainClass())) {
 					createNodeAndItChildrenNodes(childSemantic, childNodeMapping, (DragAndDropTarget) parentNode);
+				}
 			}
 		}
 	}

@@ -17,8 +17,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.validation.message.Mess
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.DomainElement;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.ForeignExpressionElement;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Attribute;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Cardinalities;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Condition;
 
 /**
@@ -27,10 +27,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Condition;
 
 public class NoCollectionDomainAttributeCondition implements IAdditionalConstraint {
 
+	@Override
 	public boolean isObjectInScope(Object object) {
 		return object instanceof Condition;
 	}
 
+	@Override
 	public ValidationStatus validationRules(Object data) {
 		Condition condition = (Condition) data;
 		ForeignExpressionElement foreignExpressionElement = condition.getExpression();
@@ -42,13 +44,15 @@ public class NoCollectionDomainAttributeCondition implements IAdditionalConstrai
 			{
 				Cardinalities cardinality = attribute.getCardinality();
 				if (cardinality.equals(Cardinalities.NOTHING_OR_MANY) || 
-						cardinality.equals(Cardinalities.ONE_OR_MANY))
+						cardinality.equals(Cardinalities.ONE_OR_MANY)) {
 					return ValidationStatus.Error;
+				}
 			}
 		}
 		return ValidationStatus.Ignored;
 	}
 
+	@Override
 	public String getMessage(ValidationStatus status, Object object) {
 		if (status.equals(ValidationStatus.Error))
 		{

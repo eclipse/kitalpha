@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,24 +30,29 @@ public class MetamodelHandler extends WorkspaceManager.ElementHandler implements
 		super(viewpoint, wsManager);
 	}
 
+	@Override
 	public List<ViewpointElement> getElements() {
 		throw new UnsupportedOperationException();
 	}
 
+	@Override
 	public List<ViewpointElement> getElementsFromParents() {
 		throw new UnsupportedOperationException();
 	}
 
+	@Override
 	public void removeMetamodels(List<EPackage> packages) {
 		throw new UnsupportedOperationException();
 
 	}
 
+	@Override
 	public void addMetamodels(List<EPackage> packages) {
 		throw new UnsupportedOperationException();
 
 	}
 
+	@Override
 	public Metamodel getMetamodel() {
 		return getViewpoint().getMetamodel();
 	}

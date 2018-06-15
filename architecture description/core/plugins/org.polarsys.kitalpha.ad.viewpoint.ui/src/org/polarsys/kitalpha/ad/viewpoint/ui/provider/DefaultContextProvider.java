@@ -42,8 +42,9 @@ public class DefaultContextProvider implements AFContextProvider {
 	}
 	
 	private ResourceSet analyseSelection(ISelection selection) {
-		if (selection.isEmpty())
+		if (selection.isEmpty()) {
 			return null;
+		}
 		if (selection instanceof TreeSelection) {
 			Object[] selected = ((TreeSelection) selection).toArray();
 			if (selected[0] instanceof EObject)

@@ -36,8 +36,9 @@ public class AFEcoreIntegration {
 	}
 	
 	public static AFEcoreIntegration getInstance(){
-		if (INSTANCE == null)
+		if (INSTANCE == null) {
 			INSTANCE = new AFEcoreIntegration();
+		}
 		
 		return INSTANCE;
 	}
@@ -62,9 +63,9 @@ public class AFEcoreIntegration {
 			ePackagesToRegister.add(ePackage);
 			// Register bundle containing the EPackage
 			AFBundlesIntegration.getInstance().registerBundle(ePackage);
-		}
-		else
+		} else {
 			throw new AFIntegrationException(AFIntegrationException.EPackage, AFIntegrationException.component_Existing_MSG);
+		}
 	}
 	
 	/**

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,6 +35,7 @@ public abstract class AFLabelProvider extends LabelProvider implements ITableLab
 		this.reference = reference;
 	}
 
+	@Override
 	public Image getColumnImage(Object element, int columnIndex) {
 		if (columnIndex == 0 && element instanceof ViewpointElement) {
 			ViewpointElement elt = (ViewpointElement) element;
@@ -44,16 +45,20 @@ public abstract class AFLabelProvider extends LabelProvider implements ITableLab
 				throw new IllegalStateException("target field is null on " + elt);
 			}
 			EList<Viewpoint> allParents = target.getAllParents();
-			if (set.eContainer() instanceof Workspace)
+			if (set.eContainer() instanceof Workspace) {
 				allParents.add(target);
-			for (Viewpoint parent : allParents) {
-				if (getElement(parent, elt) != null)
-					return Activator.getDefault().getImage(AFImages.OVERRIDING);
 			}
-			if (reference != null && !reference.equals(set.eContainer()))
+			for (Viewpoint parent : allParents) {
+				if (getElement(parent, elt) != null) {
+					return Activator.getDefault().getImage(AFImages.OVERRIDING);
+				}
+			}
+			if (reference != null && !reference.equals(set.eContainer())) {
 				return Activator.getDefault().getImage(AFImages.PARENT);
-			if (reference == null && vp != null && !vp.equals(set.eContainer()))
+			}
+			if (reference == null && vp != null && !vp.equals(set.eContainer())) {
 				return Activator.getDefault().getImage(AFImages.PARENT);
+			}
 			return Activator.getDefault().getImage(AFImages.EMPTY);
 		}
 		return null;

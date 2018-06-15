@@ -62,6 +62,7 @@ public class DefaultSelectionProvider implements AFSelectionProvider {
 	/**
 	 * Returns only EMF objects
 	 */
+	@Override
 	public List<Object> getSelection() {
 		List<Object> result = new ArrayList<>();
 		for (Object obj : selectedObjects) {
@@ -72,14 +73,17 @@ public class DefaultSelectionProvider implements AFSelectionProvider {
 		return result;
 	}
 
+	@Override
 	public void addListener(ISelectionListener listener) {
 		listeners.add(listener);
 	}
 
+	@Override
 	public void removeListener(ISelectionListener listener) {
 		listeners.remove(listener);
 	}
 
+	@Override
 	public void dispose() {
 		ISelectionService selectionService = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getSelectionService();
 		selectionService.removeSelectionListener(listener);

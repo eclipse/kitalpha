@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -37,12 +37,14 @@ public class TreeAppendable implements ITreeAppendable, IAcceptor<String>, CharS
 		this.state = state;
 	}
 
+	@Override
 	public ITreeAppendable trace(EObject object) {
 		TreeAppendable result = new TreeAppendable(state, object);
 		children.add(result);
 		return result;
 	}
 
+	@Override
 	public ITreeAppendable append(CharSequence content) {
 		if(content instanceof ITreeAppendable) {
 			return appendTreeAppendable((ITreeAppendable) content);
@@ -105,24 +107,28 @@ public class TreeAppendable implements ITreeAppendable, IAcceptor<String>, CharS
 	}
 
 	private void markClosed() {
-		if (closed)
+		if (closed) {
 			return;
+		}
 		closeLastChild();
 		closed = true;
 	}
 
+	@Override
 	public ITreeAppendable newLine() {
 		closeLastChild();
 		state.appendNewLineAndIndentation(this);
 		return this;
 	}
 	
+	@Override
 	public ITreeAppendable increaseIndentation() {
 		closeLastChild();
 		state.increaseIndentation();
 		return this;
 	}
 
+	@Override
 	public ITreeAppendable decreaseIndentation() {
 		closeLastChild();
 		state.decreaseIndentation();
@@ -137,18 +143,22 @@ public class TreeAppendable implements ITreeAppendable, IAcceptor<String>, CharS
 		return children;
 	}
 
+	@Override
 	public char charAt(int index) {
 		return toString().charAt(index);
 	}
 
+	@Override
 	public int length() {
 		return toString().length();
 	}
 
+	@Override
 	public CharSequence subSequence(int start, int end) {
 		return toString().subSequence(start, end);
 	}
 
+	@Override
 	public void accept(String text) {
 		children.add(text);
 	}

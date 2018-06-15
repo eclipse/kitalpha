@@ -35,6 +35,7 @@ public class VpuiUiModule extends org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text
 		return CommonEObjectHover.class;
 	}
 	
+	@Override
 	public Class<? extends org.eclipse.jface.text.templates.persistence.TemplateStore> bindTemplateStore() {
 		return CommonTemplateStore.class;
 	}

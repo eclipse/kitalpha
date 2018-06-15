@@ -38,8 +38,6 @@ import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint;
-
 import org.polarsys.kitalpha.ad.af.dsl.as.model.afdesc.AfdescFactory;
 import org.polarsys.kitalpha.ad.af.dsl.as.model.afdesc.ArchitectureFramework;
 import org.polarsys.kitalpha.ad.af.dsl.as.model.afdesc.Configuration;
@@ -47,6 +45,7 @@ import org.polarsys.kitalpha.ad.af.dsl.as.model.afdesc.GenerationConfiguration;
 import org.polarsys.kitalpha.ad.af.dsl.as.model.afdesc.Viewpoints;
 import org.polarsys.kitalpha.ad.af.dsl.servicies.project.extension.ConcreteSyntaxResourceCreationManager;
 import org.polarsys.kitalpha.ad.af.dsl.servicies.project.ui.util.ProjectsManager;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint;
 
 /**
  * @author Boubekeur Zendagui
@@ -81,6 +80,7 @@ public class NewAFSpecProject extends Wizard implements INewWizard {
 		super.setNeedsProgressMonitor(true);
 	}
 
+	@Override
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 	}
 
@@ -89,6 +89,7 @@ public class NewAFSpecProject extends Wizard implements INewWizard {
 		try {
 			getContainer().run(false, false, new IRunnableWithProgress() {
 				
+				@Override
 				public void run(IProgressMonitor monitor) throws InvocationTargetException,
 						InterruptedException {
 					try {

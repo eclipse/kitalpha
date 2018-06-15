@@ -25,21 +25,26 @@ public abstract class BasicEditingSupport extends EditingSupport {
 
 	@Override
 	protected boolean canEdit(Object element) {
-		if (modelManager == null)
+		if (modelManager == null) {
 			return false;
+		}
 		return !modelManager.getResourceManager().isReadOnly() && modelManager.isRemovable((ViewpointElement) element);
 	}
 
 	protected abstract void doSetValue(Object element, Object value);
 
+	@Override
 	protected final void setValue(Object element, Object value) {
 		Object oldValue = getValue(element);
-		if (value == null && oldValue == null)
+		if (value == null && oldValue == null) {
 			return;
-		if (value != null && value.equals(oldValue))
+		}
+		if (value != null && value.equals(oldValue)) {
 			return;
-		if (oldValue != null && oldValue.equals(value))
+		}
+		if (oldValue != null && oldValue.equals(value)) {
 			return;
+		}
 		doSetValue(element, value);
 		getModelManager().getResourceManager().saveModel();
 	}

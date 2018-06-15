@@ -20,8 +20,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -34,7 +32,6 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.menus.ExtensionContributionFactory;
 import org.eclipse.ui.menus.IContributionRoot;
 import org.eclipse.ui.services.IServiceLocator;
-import org.polarsys.kitalpha.ad.common.utils.URIFix;
 import org.polarsys.kitalpha.ad.common.utils.URIHelper;
 import org.polarsys.kitalpha.ad.integration.sirius.Activator;
 import org.polarsys.kitalpha.ad.integration.sirius.providers.SiriusSelectionProvider;
@@ -46,11 +43,8 @@ import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.edit.provid
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.edit.provider.ViewpointItemProviderAdapterFactory;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.tools.model.ViewpointElement;
 import org.polarsys.kitalpha.ad.viewpoint.handlers.ModelManager;
-import org.polarsys.kitalpha.ad.viewpoint.integration.services.Implementations;
-import org.polarsys.kitalpha.ad.viewpoint.integration.services.ServiceImplementation;
 import org.polarsys.kitalpha.ad.viewpoint.integration.services.ServiceRunner;
 import org.polarsys.kitalpha.ad.viewpoint.ui.provider.AFSelectionProvider;
-import org.polarsys.kitalpha.ad.viewpoint.utils.ModelAccessor;
 import org.polarsys.kitalpha.resourcereuse.model.Resource;
 
 /**
@@ -164,6 +158,7 @@ public class ServiceActionFactory extends ExtensionContributionFactory {
 	private Viewpoint[] sort(Viewpoint[] vps) {
 		Arrays.sort(vps, new Comparator<Viewpoint>() {
 
+			@Override
 			public int compare(Viewpoint arg0, Viewpoint arg1) {
 				String name0 = arg0.getName() == null ? "" : arg0.getName();
 				String name1 = arg1.getName() == null ? "" : arg1.getName();
@@ -177,6 +172,7 @@ public class ServiceActionFactory extends ExtensionContributionFactory {
 	private List<ViewpointElement> sort(List<ViewpointElement> elements) {
 		Collections.sort(elements, new Comparator<ViewpointElement>() {
 
+			@Override
 			public int compare(ViewpointElement arg0, ViewpointElement arg1) {
 				String name0 = arg0.getName() == null ? "" : arg0.getName();
 				String name1 = arg1.getName() == null ? "" : arg1.getName();

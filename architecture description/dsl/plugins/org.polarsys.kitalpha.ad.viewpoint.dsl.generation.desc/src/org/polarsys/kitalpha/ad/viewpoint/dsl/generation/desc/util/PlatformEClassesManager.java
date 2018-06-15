@@ -114,9 +114,11 @@ public class PlatformEClassesManager {
 		else
 		{
 			NsURIToPlatformResource(uri);
-			for (Map.Entry<URI, Resource> currentResource : NsUriToResource.entrySet()) 
-				if (currentResource.getKey().equals(uri))
+			for (Map.Entry<URI, Resource> currentResource : NsUriToResource.entrySet()) {
+				if (currentResource.getKey().equals(uri)) {
 					result =  currentResource.getValue();
+				}
+			}
 		}
 		return result;
 	}
@@ -136,8 +138,9 @@ public class PlatformEClassesManager {
 		{
 			URI packNsURI  = URI.createURI(genPackage.getEcorePackage().getNsURI());
 			URI platformUri = genPackage.getEcorePackage().eResource().getURI();
-			if (NsUriToResource.containsKey(packNsURI))
+			if (NsUriToResource.containsKey(packNsURI)) {
 				break;
+			}
 		
 			Resource platResource = set.createResource(platformUri);
 			try {

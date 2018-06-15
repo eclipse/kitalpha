@@ -50,14 +50,17 @@ public class ViewpointMiscHandler extends ViewpointManager.ElementHandler implem
 		saveModel();
 	}
 
+	@Override
 	public List<ViewpointElement> getElements() {
 		throw new UnsupportedOperationException();
 	}
 
+	@Override
 	public List<ViewpointElement> getElementsFromParents() {
 		throw new UnsupportedOperationException();
 	}
 
+	@Override
 	public void removeParents(List<Viewpoint> vps) {
 		if (getResourceManager().isReadOnly()){
 			throw new IllegalStateException();
@@ -67,6 +70,7 @@ public class ViewpointMiscHandler extends ViewpointManager.ElementHandler implem
 		}
 	}
 
+	@Override
 	public void addParents(List<Viewpoint> vps) {
 		if (getResourceManager().isReadOnly()){
 			throw new IllegalStateException();
@@ -76,10 +80,12 @@ public class ViewpointMiscHandler extends ViewpointManager.ElementHandler implem
 		}
 	}
 
+	@Override
 	public boolean isAbstract() {
 		return getViewpoint().isAbstract();
 	}
 
+	@Override
 	public void setAbstract(boolean value) {
 		if (getResourceManager().isReadOnly()){
 			throw new IllegalStateException();
@@ -93,10 +99,12 @@ public class ViewpointMiscHandler extends ViewpointManager.ElementHandler implem
 		saveModel();
 	}
 
+	@Override
 	public String getName() {
 		return getViewpoint().getName();
 	}
 
+	@Override
 	public void setName(String txt) {
 		if (getResourceManager().isReadOnly()){
 			throw new IllegalStateException();
@@ -112,10 +120,12 @@ public class ViewpointMiscHandler extends ViewpointManager.ElementHandler implem
 		saveModel();
 	}
 
+	@Override
 	public String getDescription() {
 		return getViewpoint().getDescription();
 	}
 
+	@Override
 	public void setDescription(String txt) {
 		if (getResourceManager().isReadOnly()){
 			throw new IllegalStateException();

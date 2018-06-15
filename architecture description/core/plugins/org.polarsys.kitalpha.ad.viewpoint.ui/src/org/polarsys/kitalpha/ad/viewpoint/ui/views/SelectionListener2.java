@@ -20,10 +20,12 @@ import org.eclipse.swt.events.SelectionListener;
  */
 public class SelectionListener2 implements SelectionListener {
 
+	@Override
 	public void widgetDefaultSelected(SelectionEvent e) {
 		//nothing to do
 	}
 
+	@Override
 	public void widgetSelected(SelectionEvent e) {
 		//nothing to do
 	}

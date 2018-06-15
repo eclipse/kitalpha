@@ -72,10 +72,12 @@ public class OverviewTab extends AbstractTab {
 		super(new ParentslLabelProvider());
 	}
 
+	@Override
 	public ISelectionProvider getSelectionProvider() {
 		return parentsViewer;
 	}
 
+	@Override
 	public void createTab(FormToolkit toolkit, CTabFolder folder) {
 		Composite composite = createTab(toolkit, folder, Messages.OverviewTab_title, AFImages.MISC);
 		GridLayout clayout = new GridLayout();
@@ -99,6 +101,7 @@ public class OverviewTab extends AbstractTab {
 		nameText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		nameText.addFocusListener(new FocusListener2() {
 
+			@Override
 			public void doFocusLost(FocusEvent e) {
 				IMiscHandler miscHandler = modelManager.getMiscHandler();
 				if (miscHandler != null) {
@@ -113,6 +116,7 @@ public class OverviewTab extends AbstractTab {
 		versionText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		versionText.addFocusListener(new FocusListener2() {
 
+			@Override
 			public void doFocusLost(FocusEvent e) {
 				IMiscHandler miscHandler = modelManager.getMiscHandler();
 				if (miscHandler != null) {
@@ -126,6 +130,7 @@ public class OverviewTab extends AbstractTab {
 		descriptionText.setLayoutData(new GridData(GridData.FILL_BOTH));
 		descriptionText.addFocusListener(new FocusListener2() {
 
+			@Override
 			public void doFocusLost(FocusEvent e) {
 				IMiscHandler miscHandler = modelManager.getMiscHandler();
 				if (miscHandler != null) {
@@ -163,6 +168,7 @@ public class OverviewTab extends AbstractTab {
 		table.setLayoutData(new GridData(GridData.FILL_BOTH));
 		SelectionListener headerListener = new SelectionListener2() {
 
+			@Override
 			public void doWidgetSelected(SelectionEvent e) {
 				TableColumn currentSortColumn = table.getSortColumn();
 				TableColumn newSortColumn = (TableColumn) e.getSource();
@@ -218,10 +224,11 @@ public class OverviewTab extends AbstractTab {
 					for (org.polarsys.kitalpha.resourcereuse.model.Resource res : loadResourceDialog.getResult()) {
 						path = new Path(res.getPath());
 						project = root.getProject(path.segment(0));
-						if (project.isAccessible())
+						if (project.isAccessible()) {
 							uri = URIFix.createPlatformResourceURI(res.getPath(), false);
-						else
+						} else {
 							uri = URIFix.createPlatformPluginURI(res.getPath(), false);
+						}
 
 						Viewpoint vp = (Viewpoint) resourceSet.getEObject(uri, true);
 						vps.add(vp);
@@ -251,17 +258,20 @@ public class OverviewTab extends AbstractTab {
 
 		parentsViewer.addSelectionChangedListener(new ISelectionChangedListener() {
 
+			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
 				updateButtons((IStructuredSelection) event.getSelection());
 			}
 		});
 	}
 
+	@Override
 	public void init() {
 		parentsViewer.setInput(viewpoint);
 		workspaceHasChanged();
 	}
 
+	@Override
 	public void workspaceHasChanged() {
 		super.workspaceHasChanged();
 		IMiscHandler miscHandler = modelManager.getMiscHandler();

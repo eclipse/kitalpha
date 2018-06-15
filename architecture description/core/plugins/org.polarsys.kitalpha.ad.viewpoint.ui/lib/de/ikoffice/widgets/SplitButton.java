@@ -50,6 +50,7 @@ public class SplitButton extends Button {
 		setText("");
 		super.addPaintListener(new PaintListener() {
 
+			@Override
 			public void paintControl(PaintEvent e) {
 				// draw the split line and arrow
 
@@ -84,6 +85,7 @@ public class SplitButton extends Button {
 		});
 		super.addListener(SWT.MouseDown, new Listener() {
 
+			@Override
 			public void handleEvent(Event event) {
 				if (isShowMenu(event.x, event.y)) {
 

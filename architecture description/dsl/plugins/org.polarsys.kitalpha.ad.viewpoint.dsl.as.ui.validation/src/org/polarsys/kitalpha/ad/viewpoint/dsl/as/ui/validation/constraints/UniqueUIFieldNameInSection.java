@@ -36,6 +36,7 @@ public class UniqueUIFieldNameInSection implements IAdditionalConstraint {
 	 * (non-Javadoc)
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.extension.IAdditionalConstraint#isObjectInScope(java.lang.Object)
 	 */
+	@Override
 	public boolean isObjectInScope(Object object) {
 		return object instanceof UIField;
 	}
@@ -44,6 +45,7 @@ public class UniqueUIFieldNameInSection implements IAdditionalConstraint {
 	 * (non-Javadoc)
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.extension.IAdditionalConstraint#validationRules(java.lang.Object)
 	 */
+	@Override
 	public ValidationStatus validationRules(Object data) {
 		// Init local variables
 		duplicatedName = "";
@@ -54,8 +56,9 @@ public class UniqueUIFieldNameInSection implements IAdditionalConstraint {
 		 * If the name of the UIField is null then Return an OK Status and let the non-null name 
 		 * Validation rule doing it work
 		 */
-		if (current.getName() == null)
+		if (current.getName() == null) {
 			return ValidationStatus.Ok;
+		}
 		
 		final List<UIContainer> allAvailableSections = getAllAvailableSections(current);
 		for (UIContainer uiContainer : allAvailableSections) 
@@ -101,8 +104,9 @@ public class UniqueUIFieldNameInSection implements IAdditionalConstraint {
 			}
 			
 			error = duplicateFieldsName(uiContainer, referenceObject);
-			if (error)
+			if (error) {
 				return true;
+			}
 		}
 		
 		return false;
@@ -138,6 +142,7 @@ public class UniqueUIFieldNameInSection implements IAdditionalConstraint {
 	 * (non-Javadoc)
 	 * @see org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.extension.IAdditionalConstraint#getMessage(...)
 	 */
+	@Override
 	public String getMessage(ValidationStatus status, Object eObject) {
 		return Messages.bind(Messages.Validation_UIField_Unique_NameInSection, duplicatedName);
 	}

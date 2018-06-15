@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,11 +37,13 @@ public class RelatedRulesDialogCellEditor extends DialogCellEditor {
 	protected Object openDialogBox(Control cellEditorWindow) {
 		Object value = getValue();
 		RelatedRulesDialog dialog = new RelatedRulesDialog(cellEditorWindow.getShell(), handler, (Rule[]) value);
-		if (dialog.open() == Window.OK)
+		if (dialog.open() == Window.OK) {
 			return dialog.getResult();
+		}
 		return null;
 	}
 
+	@Override
 	protected void updateContents(Object value) {
 		if (getDefaultLabel() == null) {
 			return;

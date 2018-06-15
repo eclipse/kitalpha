@@ -100,18 +100,21 @@ public class AfProjectManager {
 		
 		String afProjectName = projectName + ".af";
 		
-		if (monitor != null)
+		if (monitor != null) {
 			monitor.beginTask("Creating artifacts for extension " + afProjectName, 4);
+		}
 		
 		// Creation of the AF model 
 		_vpURI = '/' + afProjectName + "/model/" + viewpointShortName + ".vp";
 		Viewpoint viewpoint = createOrGetAFViewpoint(viewpointId, vpName, viewpointShortName);
 		IProject afProject = ResourcesPlugin.getWorkspace().getRoot().getProject(afProjectName);
-		if (! afProject.exists())
+		if (! afProject.exists()) {
 			afProject = ProjectHelper.createProject(afProjectName, vpName, viewpointId, _vpuuid, _vpURI, monitor);
+		}
 		
-		if (monitor != null)
+		if (monitor != null) {
 			monitor.done();
+		}
 		
 		// Set values for local properties
 		setViewpoint(viewpoint);
@@ -124,8 +127,9 @@ public class AfProjectManager {
 		
 		viewpoint = getExistingViewpoint(viewpointID);
 		
-		if (viewpoint == null)
+		if (viewpoint == null) {
 			viewpoint = createAFModel(vpName, viewpointID);
+		}
 		
 		return viewpoint;
 	}
@@ -293,10 +297,11 @@ public class AfProjectManager {
 		contents.append("</plugin>\n");
 		contents.append("\n");
 		try {
-			if (! xml.exists())
+			if (! xml.exists()) {
 				xml.create(new ByteArrayInputStream(contents.toString().getBytes()), 0, null);
-			else
+			} else {
 				xml.setContents(new ByteArrayInputStream(contents.toString().getBytes()), 0, null);
+			}
 			
 			xml.refreshLocal(IFile.DEPTH_ZERO, null);
 		} catch (CoreException e) {

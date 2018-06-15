@@ -74,8 +74,9 @@ public class SiriusViewpointHelper {
 		while (it.hasNext()){
 			EObject obj = it.next();
 			
-			if (obj instanceof Group)
+			if (obj instanceof Group) {
 				return (Group)obj;
+			}
 		}
 		
 		return null;
@@ -84,10 +85,11 @@ public class SiriusViewpointHelper {
 	public static List<RepresentationDescription> getAllRepresentationDescription(Resource resource){
 		
 		Viewpoint v = getRootviewpoint(resource);
-		if (v != null)
+		if (v != null) {
 			return Collections.unmodifiableList(v.getOwnedRepresentations());
-		else 
+		} else {
 			return null;
+		}
 	}
 	
 	
@@ -107,8 +109,9 @@ public class SiriusViewpointHelper {
 					
 					for (ContainerMapping cm : dd.getAllContainerMappings()) {
 						List<ContainerMapping> subResult = getSubContainers(cm);
-						if (subResult != null && !subResult.isEmpty())
+						if (subResult != null && !subResult.isEmpty()) {
 							result.addAll(subResult);
+						}
 					}
 				}
 			}
@@ -135,8 +138,9 @@ public class SiriusViewpointHelper {
 			// Look for sub mapping
 			for (ContainerMapping cm : dd.getAllContainerMappings()) {
 				List<ContainerMapping> subResult = getSubContainers(cm);
-				if (subResult != null && !subResult.isEmpty())
+				if (subResult != null && !subResult.isEmpty()) {
 					result.addAll(subResult);
+				}
 			}
 		}
 		return result;
@@ -152,13 +156,17 @@ public class SiriusViewpointHelper {
 	public static List<ContainerMapping> getSubContainers(ContainerMapping container){
 		List<ContainerMapping> result = new ArrayList<ContainerMapping>();	
 		for (ContainerMapping containerMapping : container.getSubContainerMappings()) {
-			if (! result.contains(containerMapping))
-				result.add(containerMapping);			
+			if (! result.contains(containerMapping)) {
+				result.add(containerMapping);
+			}			
 			List<ContainerMapping> subResult = getSubContainers(containerMapping);
-			if (subResult != null && subResult.size() > 0)
-				for (ContainerMapping containerMapping2 : subResult) 
-					if (! result.contains(containerMapping2))
+			if (subResult != null && subResult.size() > 0) {
+				for (ContainerMapping containerMapping2 : subResult) {
+					if (! result.contains(containerMapping2)) {
 						result.add(containerMapping2);
+					}
+				}
+			}
 		}
 		
 		return result;
@@ -194,16 +202,20 @@ public class SiriusViewpointHelper {
 
 				for (NodeMapping nm : dd.getAllNodeMappings()) {
 					List<NodeMapping> borderedNodes = getBorderedNodes(nm);
-					if (borderedNodes != null && borderedNodes.size() > 0)
-						for (NodeMapping nodeMapping : borderedNodes) 
-							if (! result.contains(nodeMapping))
+					if (borderedNodes != null && borderedNodes.size() > 0) {
+						for (NodeMapping nodeMapping : borderedNodes) {
+							if (! result.contains(nodeMapping)) {
 								result.add(nodeMapping);
+							}
+						}
+					}
 				}
 
 				for (ContainerMapping iContainerMapping : dd.getAllContainerMappings()) {
 					List<NodeMapping> subNodes = getSubNodes(iContainerMapping);
-					if (subNodes != null && subNodes.size() > 0)
+					if (subNodes != null && subNodes.size() > 0) {
 						result.addAll(subNodes);
+					}
 				}
 			}
 		}
@@ -228,17 +240,21 @@ public class SiriusViewpointHelper {
 				// Get sub NodeMappings
 				for (NodeMapping nm : dd.getAllNodeMappings()) {
 					List<NodeMapping> borderedNodes = getBorderedNodes(nm);
-					if (borderedNodes != null && borderedNodes.size() > 0)
-						for (NodeMapping nodeMapping : borderedNodes) 
-							if (! result.contains(nodeMapping))
+					if (borderedNodes != null && borderedNodes.size() > 0) {
+						for (NodeMapping nodeMapping : borderedNodes) {
+							if (! result.contains(nodeMapping)) {
 								result.add(nodeMapping);
+							}
+						}
+					}
 				}
 
 				// Get Sub NodeMappings of all ContainerMappings
 				for (ContainerMapping iContainerMapping : dd.getAllContainerMappings()) {
 					List<NodeMapping> subNodes = getSubNodes(iContainerMapping);
-					if (subNodes != null && subNodes.size() > 0)
+					if (subNodes != null && subNodes.size() > 0) {
 						result.addAll(subNodes);
+					}
 				}
 			}
 		}
@@ -252,35 +268,46 @@ public class SiriusViewpointHelper {
 		List<NodeMapping> result = new BasicEList<NodeMapping>();
 		// The current Container sub node and their bordered nodes
 		for (NodeMapping subNodeMapping : container.getSubNodeMappings()) {
-			if (! result.contains(subNodeMapping))
+			if (! result.contains(subNodeMapping)) {
 				result.add(subNodeMapping);
+			}
 			List<NodeMapping> nodeBorderedNodes = getBorderedNodes(subNodeMapping);
-			if (nodeBorderedNodes != null && nodeBorderedNodes.size() > 0)
-				for (NodeMapping nodeMapping : nodeBorderedNodes) 
-					if (! result.contains(nodeMapping))
+			if (nodeBorderedNodes != null && nodeBorderedNodes.size() > 0) {
+				for (NodeMapping nodeMapping : nodeBorderedNodes) {
+					if (! result.contains(nodeMapping)) {
 						result.add(nodeMapping);
+					}
+				}
+			}
 		}
 		
 		// The current container bordered nodes
-		for (NodeMapping borderedNodeMapping : container.getBorderedNodeMappings())
-			if (! result.contains(borderedNodeMapping))
-					result.add(borderedNodeMapping);
+		for (NodeMapping borderedNodeMapping : container.getBorderedNodeMappings()) {
+			if (! result.contains(borderedNodeMapping)) {
+				result.add(borderedNodeMapping);
+			}
+		}
 		// Handle sub container of the current Mapping
 		for (ContainerMapping iContainerMapping : container.getSubContainerMappings()) {
 			List<NodeMapping> subContainerSubNodes = getSubNodes(iContainerMapping);
-			if (subContainerSubNodes != null && subContainerSubNodes.size() > 0)
-				for (NodeMapping nodeMapping : subContainerSubNodes) 
-					if (! result.contains(nodeMapping))
-						result.add(nodeMapping);				
+			if (subContainerSubNodes != null && subContainerSubNodes.size() > 0) {
+				for (NodeMapping nodeMapping : subContainerSubNodes) {
+					if (! result.contains(nodeMapping)) {
+						result.add(nodeMapping);
+					}
+				}
+			}				
 		}	
 		return result;
 	}
 
 	public static  List<NodeMapping> getBorderedNodes(NodeMapping node){
 		List<NodeMapping> result = new BasicEList<NodeMapping>();
-		for (NodeMapping borderedNodeMapping : node.getBorderedNodeMappings())
-			if (! result.contains(borderedNodeMapping))
-				result.add(borderedNodeMapping);	
+		for (NodeMapping borderedNodeMapping : node.getBorderedNodeMappings()) {
+			if (! result.contains(borderedNodeMapping)) {
+				result.add(borderedNodeMapping);
+			}
+		}	
 		return result;
 	}
 	
@@ -289,8 +316,9 @@ public class SiriusViewpointHelper {
 		List<EdgeMapping> result = new ArrayList<EdgeMapping>();
 		
 		List<DiagramDescription> diagrams = getAllDiagramDescription(resource);
-		for (DiagramDescription iDiagram : diagrams) 
+		for (DiagramDescription iDiagram : diagrams) {
 			result.addAll(iDiagram.getAllEdgeMappings());
+		}
 		
 		return result;
 	}
@@ -306,8 +334,9 @@ public class SiriusViewpointHelper {
 		
 		if (diagrams != null && !diagrams.isEmpty())
 		{
-			for (DiagramDescription iDiagram : diagrams) 
+			for (DiagramDescription iDiagram : diagrams) {
 				result.addAll(iDiagram.getAllEdgeMappings());
+			}
 		}
 		
 		return result;
@@ -467,8 +496,9 @@ public class SiriusViewpointHelper {
 	
 
 	private static void findAllColorDescription(Group group, List<ColorDescription> result) {
-		if (group != null)
+		if (group != null) {
 			findAllSystemColors(group, result);
+		}
 	}
 
 	private static void findAllSystemColors(Group group, List<ColorDescription> result) {

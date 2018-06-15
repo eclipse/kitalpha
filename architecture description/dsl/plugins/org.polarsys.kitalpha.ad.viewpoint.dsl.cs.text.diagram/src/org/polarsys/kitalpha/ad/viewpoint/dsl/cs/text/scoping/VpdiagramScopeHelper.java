@@ -150,8 +150,9 @@ public class VpdiagramScopeHelper {
 	private static boolean handleExternalExternalAssociation(IEObjectDescription ieod, EClass domainEClass,
 			EClass containerEClass) {
 		
-		if (domainEClass == null || containerEClass == null)
-			return false; 
+		if (domainEClass == null || containerEClass == null) {
+			return false;
+		} 
 		
 		
 		EList<EReference> allReferencesContainerDomain = containerEClass.getEAllReferences();
@@ -168,8 +169,9 @@ public class VpdiagramScopeHelper {
 		EObject r = ieod.getEObjectOrProxy();
 		EReference ref = null;
 		
-		if (r instanceof EReference)
+		if (r instanceof EReference) {
 			ref = (EReference)r;
+		}
 		;
 		return (ref != null) && ((refTypeNames.contains(ref.getEType().getName())) || ref.getEType() == EmdePackage.eINSTANCE.getElementExtension());
 	}
@@ -195,8 +197,9 @@ public class VpdiagramScopeHelper {
 					AbstractClass domainClass = VpDiagramHelper.getDomain_class(nde);
 					AbstractClass containerDomainClass = VpDiagramHelper.getDomainContainerOfContainerOfElement(nde);
 
-					if (domainClass == null)
+					if (domainClass == null) {
 						return  d.getEObjectOrProxy() instanceof AbstractAssociation;
+					}
 
 					if (containerDomainClass == null){
 						//With import
@@ -250,8 +253,9 @@ public class VpdiagramScopeHelper {
 	private static boolean handleLocalLocalAssociation(IEObjectDescription d,
 		Class localVpdescClass, Class containerVpdescClass) {
 		
-		if (localVpdescClass == null || containerVpdescClass == null)
+		if (localVpdescClass == null || containerVpdescClass == null) {
 			return false;
+		}
 			
 		Collection<org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractAssociation> availableAssociations = getAllAssociations(containerVpdescClass);
 		filterWithType(availableAssociations, localVpdescClass);
@@ -353,8 +357,9 @@ public class VpdiagramScopeHelper {
 			Class clazz) {
 		EList<AbstractSuperClass> superClasses = clazz.getInheritences();
 		
-		if (superClasses.isEmpty())
+		if (superClasses.isEmpty()) {
 			return;
+		}
 		
 		for (AbstractSuperClass abstractSuperClass : superClasses) {
 			if (abstractSuperClass instanceof LocalSuperClass){

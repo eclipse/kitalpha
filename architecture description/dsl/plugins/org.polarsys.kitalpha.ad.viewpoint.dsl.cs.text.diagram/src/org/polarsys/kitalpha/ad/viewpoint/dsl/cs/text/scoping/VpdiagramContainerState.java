@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -33,14 +33,17 @@ public class VpdiagramContainerState implements IContainerState {
 		this.globalState = globalState;
 	}
 
+	@Override
 	public Collection<URI> getContents() {
 		return globalState.getContainedURIs(root);
 	}
 
+	@Override
 	public boolean contains(URI uri) {
 		return getContents().contains(uri);
 	}
 	
+	@Override
 	public boolean isEmpty() {
 		return globalState.isEmpty(root);
 	}

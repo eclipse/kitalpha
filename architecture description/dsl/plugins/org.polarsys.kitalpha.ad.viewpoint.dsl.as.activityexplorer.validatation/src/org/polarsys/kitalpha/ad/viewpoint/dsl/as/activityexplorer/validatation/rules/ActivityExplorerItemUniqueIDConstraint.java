@@ -49,6 +49,7 @@ public class ActivityExplorerItemUniqueIDConstraint implements IAdditionalConstr
 		return ValidationStatus.Ok;
 	}
 	
+	@Override
 	public String getMessage(ValidationStatus status, Object object) {
 		ActivityExplorerItem item = (ActivityExplorerItem)object;
 		String name = item.getName();
@@ -104,8 +105,9 @@ public class ActivityExplorerItemUniqueIDConstraint implements IAdditionalConstr
 		
 		// Third: Handle All available Sections.
 		List<Activity> activities = getActivities(viewpointActivityExplorer);
-		if (activities.contains(item))
+		if (activities.contains(item)) {
 			activities.remove(item);
+		}
 		
 		for (Activity activity : activities) 
 		{

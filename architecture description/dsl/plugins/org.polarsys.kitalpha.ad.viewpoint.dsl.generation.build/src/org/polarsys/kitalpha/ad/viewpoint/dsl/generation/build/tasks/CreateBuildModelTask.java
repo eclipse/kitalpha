@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -44,24 +44,29 @@ public class CreateBuildModelTask implements ITaskProduction {
 	public void doExecute(ITaskProductionContext productionContext,IProgressMonitor monitor) throws InvocationException {
 		//target location
 		String targetLocation = productionContext.getInputValue(GeneratorConstants.TARGET_LOCATION, String.class);
-		if (targetLocation == null || "".equals(targetLocation))
+		if (targetLocation == null || "".equals(targetLocation)) {
 			throw new InvocationException(Messages.GeneratorError_TargetPlatformNotFound);
+		}
 		//repository location
 		String repositoryLocation = productionContext.getInputValue(GeneratorConstants.REPOSITORY_LOCATION, String.class);
-		if (repositoryLocation == null || "".equals(repositoryLocation))
-			throw new InvocationException(Messages.GeneratorError_RepositoryLocationNotFound); 
+		if (repositoryLocation == null || "".equals(repositoryLocation)) {
+			throw new InvocationException(Messages.GeneratorError_RepositoryLocationNotFound);
+		} 
 		//repository protocol
 		String repositoryProtocol = productionContext.getInputValue(GeneratorConstants.REPOSITORY_PROTOCOL, String.class);
-		if (repositoryProtocol == null || "".equals(repositoryProtocol))
+		if (repositoryProtocol == null || "".equals(repositoryProtocol)) {
 			throw new InvocationException(Messages.GeneratorError_RepositoryProtocolNotFound);
+		}
 		//root project name
 		String rootProjectName = productionContext.getInputValue(GeneratorConstants.LVPS_ROOT_PROJECT_NAME, String.class);
-		if (rootProjectName == null || "".equals(rootProjectName))
-			throw new InvocationException(Messages.GeneratorError_ProjectNameNotFound); 
+		if (rootProjectName == null || "".equals(rootProjectName)) {
+			throw new InvocationException(Messages.GeneratorError_ProjectNameNotFound);
+		} 
 		//viewpoint short name
 		String lvpsShortName = productionContext.getInputValue(GeneratorConstants.LVPS_SHORT_NAME, String.class);
-		if (lvpsShortName == null || "".equals(lvpsShortName))
+		if (lvpsShortName == null || "".equals(lvpsShortName)) {
 			throw new InvocationException(Messages.GeneratorError_ViewpointShortNameNotFound);
+		}
 		
 		List<String> sourceFolders = productionContext.getInputValue(GeneratorConstants.SOURCE_FOLDERS, List.class);
 		List<String> cronTriggers = productionContext.getInputValue(GeneratorConstants.CRON_TRIGGERS, List.class);

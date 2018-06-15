@@ -181,8 +181,9 @@ public class VpDiagramHelper {
 						superTypesOfRefType = CollectAllSuperTypes(eRefType);
 					}
 
-					if (superTypesOfType.contains(eRefType))
+					if (superTypesOfType.contains(eRefType)) {
 						filtredReferences.add(eReference);
+					}
 
 
 					for (EClass eClass : superTypesOfRefType) {
@@ -259,8 +260,9 @@ public class VpDiagramHelper {
 	 */
 	public static AbstractClass getDomain_class(NodeDomainElement nde){
 		
-		if (nde != null)
+		if (nde != null) {
 			return nde.getDomain_Class();
+		}
 		
 		return null;
 	}
@@ -272,8 +274,9 @@ public class VpDiagramHelper {
 	 * @return The domain context EClass
 	 */
 	public static EClass getDomainContainerOfContainerOfElementExternal(NodeDomainElement nde){
-		if (nde == null)
+		if (nde == null) {
 			return null;
+		}
 
 		EObject container = nde.eContainer().eContainer();
 
@@ -419,8 +422,9 @@ public class VpDiagramHelper {
 	private static EClass getImportedEClass(String importedDomainClassName) {
 		String tmp = null;
 		
-		if (importedDomainClassName == null)
+		if (importedDomainClassName == null) {
 			return null;
+		}
 		
 		if (importedDomainClassName.contains(".")){
 			tmp = importedDomainClassName.substring(importedDomainClassName.lastIndexOf(".") + 1);
@@ -475,8 +479,9 @@ public class VpDiagramHelper {
 
 	public static AbstractClass getDomainContainerOfContainerOfElement(NodeDomainElement nde){
 		
-		if (nde == null)
+		if (nde == null) {
 			return null;
+		}
 		
 		EObject container = nde.eContainer().eContainer();
 		
@@ -635,8 +640,9 @@ public class VpDiagramHelper {
 		
 		EList<AbstractSuperClass> superTypes = clazz.getInheritences();
 		
-		if (superTypes.isEmpty())
+		if (superTypes.isEmpty()) {
 			return;
+		}
 		
 		for (AbstractSuperClass abstractSuperClass : superTypes) {
 			if (abstractSuperClass instanceof ExternalSuperClass){
@@ -707,15 +713,17 @@ public class VpDiagramHelper {
 	 */
 	public static EObject getDiagramContainerInstanceType(EObject context, EClass type)
 	{
-		if (context == null || type == null)
+		if (context == null || type == null) {
 			return null;
+		}
 		
 		EObject container = context.eContainer();
 		
 		while (container != null && container != context && container != EcoreUtil.getRootContainer(context))
 		{
-			if (container.eClass() == type)
+			if (container.eClass() == type) {
 				return container;
+			}
 
 			container = container.eContainer();
 		}
@@ -769,10 +777,11 @@ public class VpDiagramHelper {
 		EObject parent = mapping.eContainer();
 
 		while (parent != null){
-			if (parent instanceof DiagramDescription)
+			if (parent instanceof DiagramDescription) {
 				return (DiagramDescription) parent;
-			else
+			} else {
 				parent = parent.eContainer();
+			}
 		}
 
 		return null;

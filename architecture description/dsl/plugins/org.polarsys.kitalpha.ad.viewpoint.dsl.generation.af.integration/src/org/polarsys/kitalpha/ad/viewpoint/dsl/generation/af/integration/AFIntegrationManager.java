@@ -25,7 +25,6 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.sirius.viewpoint.description.Group;
-
 import org.polarsys.kitalpha.ad.integration.sirius.model.SiriusFactory;
 import org.polarsys.kitalpha.ad.integration.sirius.model.SiriusRepresentation;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Metamodel;
@@ -33,12 +32,10 @@ import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Representat
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.RepresentationElement;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint;
 import org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.ViewpointFactory;
-
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.af.integration.bundles.AFBundlesIntegration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.af.integration.exception.AFIntegrationException;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.af.integration.model.AFEcoreIntegration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.af.integration.model.AFRepresentationIntegration;
-
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper.pde.PDEUtility;
 
 /**
@@ -58,8 +55,9 @@ public class AFIntegrationManager {
 	private Viewpoint viewpoint = null;
 	
 	public static AFIntegrationManager getInstance(){
-		if (INSTANCE == null)
+		if (INSTANCE == null) {
 			INSTANCE = new AFIntegrationManager();
+		}
 		return INSTANCE;
 	}
 	
@@ -98,9 +96,9 @@ public class AFIntegrationManager {
 		{
 			String bundleID = uri.segment(1);
 			doPatchManifest(bundleID);
-		}
-		else
+		} else {
 			throw new AFIntegrationException(AFIntegrationException.Patch_Manifest);
+		}
 	}
 	
 	/**
@@ -121,9 +119,9 @@ public class AFIntegrationManager {
 		{
 			String bundleID = root.eResource().getURI().segment(1);
 			doPatchManifest(bundleID);
-		}
-		else
+		} else {
 			throw new AFIntegrationException(AFIntegrationException.Patch_Manifest);
+		}
 		
 	}
 	
@@ -146,9 +144,9 @@ public class AFIntegrationManager {
 					PDEUtility.updateRequiredBundles(afproject, list, null);
 				}
 			}
-		}
-		else
+		} else {
 			throw new AFIntegrationException(AFIntegrationException.AF_Bundle);
+		}
 
 	}
 	
@@ -180,18 +178,21 @@ public class AFIntegrationManager {
 		if (r.getContents() != null && r.getContents().size() > 0)
 		{
 			EObject root = r.getContents().get(0);
-			if (root instanceof Viewpoint)
+			if (root instanceof Viewpoint) {
 				vp = (Viewpoint) root;
-			else
+			} else {
 				throw new AFIntegrationException(AFIntegrationException.Patch_Model);
+			}
 		}
 		else
-			if (this.viewpoint != null)
+			if (this.viewpoint != null) {
 				vp = this.viewpoint;
+			}
 		
 		// Fire AF Model Patching
-		if (vp != null)
+		if (vp != null) {
 			doPatchModel(vp);
+		}
 		
 		// Unload resources
 		r = null;

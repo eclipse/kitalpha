@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -41,6 +41,7 @@ public class OverrideSharedModule implements Module {
 	/**
 	 * Override Guice shared modules to be able to manage resources with periodic file extensions.
 	 */
+	@Override
 	public void configure(Binder binder) {
 		   binder.bind(UriValidator.class).to(PeriodicURIValidator.class);
 		   binder.bind(IBuilderState.class).to(PeriodicClusteringBuilderState.class).in(Scopes.SINGLETON);

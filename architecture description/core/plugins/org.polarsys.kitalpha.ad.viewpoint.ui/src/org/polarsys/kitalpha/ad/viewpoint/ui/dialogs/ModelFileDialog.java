@@ -133,6 +133,7 @@ public class ModelFileDialog extends TitleAreaDialog {
 				//Nothing to do
 			}
 
+			@Override
 			public Object[] getElements(Object inputElement) {
 				if (inputElement instanceof Collection) {
 					return ((Collection<?>) inputElement).toArray();

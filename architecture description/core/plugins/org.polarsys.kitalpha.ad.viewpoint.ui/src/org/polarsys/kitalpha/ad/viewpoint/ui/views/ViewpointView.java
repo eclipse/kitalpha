@@ -125,6 +125,7 @@ public class ViewpointView extends ViewPart implements ISelectionProvider {
 	/**
 	 * This is a callback that will allow us to create the viewer and initialize it.
 	 */
+	@Override
 	public void createPartControl(Composite parent) {
 
 		Display display = parent.getDisplay();
@@ -144,6 +145,7 @@ public class ViewpointView extends ViewPart implements ISelectionProvider {
 	/**
 	 * Passing the focus request to the viewer's control.
 	 */
+	@Override
 	public void setFocus() {
 		// Nothing to do
 	}
@@ -157,16 +159,18 @@ public class ViewpointView extends ViewPart implements ISelectionProvider {
 
 	@Override
 	public void dispose() {
-		for (Tab tab : tabs)
+		for (Tab tab : tabs) {
 			tab.dispose();
+		}
 		ResourcesPlugin.getWorkspace().removeResourceChangeListener(loader);
 		loader.disposeModel();
 		if (selectionProvider != null) {
 			selectionProvider.removeListener(projectListener);
 			selectionProvider.dispose();
 		}
-		if (viewpointListener != null)
+		if (viewpointListener != null) {
 			ViewpointManager.removeOverallListener(viewpointListener);
+		}
 		viewpointListener = null;
 		viewpointResource = null;
 		super.dispose();
@@ -181,16 +185,18 @@ public class ViewpointView extends ViewPart implements ISelectionProvider {
 		int selectionIndex = folder.getSelectionIndex();
 		for (Tab tab : tabs) {
 			tab.dispose();
-			if (tab.isDesignOnly() && !isDesignMode())
+			if (tab.isDesignOnly() && !isDesignMode()) {
 				continue;
+			}
 			tab.createTab(toolkit, folder);
 		}
 		folder.setLayoutData(new GridData(GridData.FILL_BOTH));
 		folder.setSelection(selectionIndex == -1 ? 0 : selectionIndex);
 
 		for (Tab tab : tabs) {
-			if (tab.isDesignOnly() && !designMode)
+			if (tab.isDesignOnly() && !designMode) {
 				continue;
+			}
 			tab.setModelManager(viewpoint, modelManager);
 			tab.setSelectionProvider(selectionProvider);
 			tab.init();
@@ -200,8 +206,9 @@ public class ViewpointView extends ViewPart implements ISelectionProvider {
 	public void updatePartName() {
 		String name = viewpoint.getName();
 		boolean designMode = isDesignMode();
-		if (designMode)
+		if (designMode) {
 			name += " [design]";
+		}
 		setPartName(name);
 	}
 
@@ -209,9 +216,11 @@ public class ViewpointView extends ViewPart implements ISelectionProvider {
 		return !modelManager.getResourceManager().equals(WorkspaceManager.INSTANCE);
 	}
 
+	@Override
 	public Object getAdapter(Class key) {
-		if (key.equals(IPropertySheetPage.class))
+		if (key.equals(IPropertySheetPage.class)) {
 			return propertySheetPage;
+		}
 		return super.getAdapter(key);
 	}
 
@@ -253,12 +262,14 @@ public class ViewpointView extends ViewPart implements ISelectionProvider {
 			this.site = site;
 		}
 
+		@Override
 		public void hasBeenDeactivated(Object ctx, org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
 			if (resourceId != null && resourceId.equals(vp.getId())) {
 				getSite().getShell().getDisplay().asyncExec( () -> site.getPage().hideView(ViewpointView.this));
 			}
 		}
 
+		@Override
 		public void hasBeenActivated(Object ctx, org.polarsys.kitalpha.resourcereuse.model.Resource vp) {
 			//nothing to do
 		}
@@ -311,8 +322,9 @@ public class ViewpointView extends ViewPart implements ISelectionProvider {
 			if (currentURI == null || !currentURI.equals(uri)) {
 				disposeModel();
 				viewpoint = (Viewpoint) ResourceManager.getResourceSet().getEObject(uri, true);
-				if (viewpoint == null)
+				if (viewpoint == null) {
 					throw new IllegalStateException("Viewpoint has not been loaded: " + uri.toString());
+				}
 				viewpoint.eAdapters().add(new AdapterImpl() {
 
 					@Override
@@ -357,13 +369,15 @@ public class ViewpointView extends ViewPart implements ISelectionProvider {
 			currentURI = null;
 		}
 
+		@Override
 		public void resourceChanged(IResourceChangeEvent event) {
 
 			if (currentURI != null) {
 				String project = currentURI.segment(1);
 				IResourceDelta delta = event.getDelta();
-				if (delta == null)
+				if (delta == null) {
 					return;
+				}
 
 				String path = viewpointResource.getPath().substring(0, viewpointResource.getPath().indexOf('#'));
 				IResourceDelta modelDelta = delta.findMember(new Path(path));
@@ -381,28 +395,34 @@ public class ViewpointView extends ViewPart implements ISelectionProvider {
 		}
 	}
 
+	@Override
 	public ISelection getSelection() { 
 		return null;
 	}
 
+	@Override
 	public void addSelectionChangedListener(ISelectionChangedListener listener) {
 		for (Tab tab : tabs) {
 			ISelectionProvider prov = tab.getSelectionProvider();
-			if (prov == null)
+			if (prov == null) {
 				continue;
+			}
 			prov.addSelectionChangedListener(listener);
 		}
 	}
 
+	@Override
 	public void removeSelectionChangedListener(ISelectionChangedListener listener) {
 		for (Tab tab : tabs) {
 			ISelectionProvider prov = tab.getSelectionProvider();
-			if (prov == null)
+			if (prov == null) {
 				continue;
+			}
 			prov.removeSelectionChangedListener(listener);
 		}
 	}
 
+	@Override
 	public void setSelection(ISelection selection) {
 		for (Tab tab : tabs) {
 			ISelectionProvider prov = tab.getSelectionProvider();

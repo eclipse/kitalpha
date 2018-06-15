@@ -41,11 +41,13 @@ public class SplitButtonExample {
 		menuCreator(btnShutDown.getMenu());
 		btnShutDown.addSplitButtonSelectionListener(new SplitButtonSelectionListener() {
 
+			@Override
 			public boolean showMenu() {
 				System.out.println("Show menu");
 				return true;
 			}
 
+			@Override
 			public void buttonSelected() {
 				System.out.println("click Splitbutton");
 			}

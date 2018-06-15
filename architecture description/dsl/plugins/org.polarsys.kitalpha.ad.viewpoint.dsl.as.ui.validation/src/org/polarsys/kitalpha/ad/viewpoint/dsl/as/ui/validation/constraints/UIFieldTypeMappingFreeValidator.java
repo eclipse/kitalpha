@@ -34,10 +34,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.ui.validation.message.Messages;
 
 public class UIFieldTypeMappingFreeValidator implements IAdditionalConstraint {
 
+	@Override
 	public boolean isObjectInScope(Object object) {
 		return object instanceof UIField;
 	}
 
+	@Override
 	public ValidationStatus validationRules(Object data) {
 		UIField uiField = (UIField) data;
 		UI_Field_Type uiFieldType = uiField.getType();
@@ -122,6 +124,7 @@ public class UIFieldTypeMappingFreeValidator implements IAdditionalConstraint {
 		return false;
 	}
 	
+	@Override
 	public String getMessage(ValidationStatus status, Object eObject) {
 		UIField uiField = (UIField) eObject;
 		UI_Field_Type uiFieldType = uiField.getType();

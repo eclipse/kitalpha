@@ -100,6 +100,7 @@ public class NewServiceWizardPage extends NewElementWizardPage {
 	/*
 	 * @see WizardPage#createControl
 	 */
+	@Override
 	public void createControl(Composite parent) {
 		initializeDialogUnits(parent);
 

@@ -85,8 +85,9 @@ public class VpconfProposalProvider extends AbstractVpconfProposalProvider {
 		List<String> targetPlatformProposals = TargetApplicationReader.getSupportedModelingEnvironment();
 		// Add target platform as proposal
 		for (String proposal :targetPlatformProposals) {
-			if (proposal.contains(SPACE))
+			if (proposal.contains(SPACE)) {
 				proposal = QUOTES + proposal + QUOTES;
+			}
 			acceptor.accept(createCompletionProposal(proposal, context));
 		}
 	}
@@ -135,8 +136,9 @@ public class VpconfProposalProvider extends AbstractVpconfProposalProvider {
 						if (ce instanceof Generation){
 							Generation gen = (Generation)ce;
 							
-							if (proposal.getDisplayString().matches(access.getGenerationAccess().getGenerationKeyword_1().getValue()))
+							if (proposal.getDisplayString().matches(access.getGenerationAccess().getGenerationKeyword_1().getValue())) {
 								return;
+							}
 							
 							EList<ExtensionGeneratrionConfiguration> listConfig = gen.getOwnedExtensionGenConf();
 							
@@ -167,8 +169,9 @@ public class VpconfProposalProvider extends AbstractVpconfProposalProvider {
 						}
 						
 						if (ce instanceof Release){
-							if (proposal.getDisplayString().matches(access.getReleaseAccess().getReleaseKeyword_1().getValue()))
+							if (proposal.getDisplayString().matches(access.getReleaseAccess().getReleaseKeyword_1().getValue())) {
 								return;
+							}
 						}
 					}
 				}

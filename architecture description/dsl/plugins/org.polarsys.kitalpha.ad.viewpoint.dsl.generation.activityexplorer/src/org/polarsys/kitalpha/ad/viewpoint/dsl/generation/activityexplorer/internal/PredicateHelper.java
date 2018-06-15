@@ -26,8 +26,8 @@ public class PredicateHelper {
 			Page page = (Page) element;
 			final String fileExtensions = page.getFileExtensions();
 			return  element.isHasPredicate() || (fileExtensions != null && !fileExtensions.isEmpty());
-		}
-		else
+		} else {
 			return  element.isHasPredicate();
+		}
 	}
 }

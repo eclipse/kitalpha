@@ -52,8 +52,9 @@ public class CommonProposalProvider extends AbstractCommonProposalProvider {
 	
 	//utility functions shared by child grammars	
 	public List<IResource> collectICons(IResource resource, List<IResource> children) {
-		if (resource.getType() == IResource.FILE)
+		if (resource.getType() == IResource.FILE) {
 			return children;
+		}
 		IResource[] members;
 		try {
 			members = ((IContainer) resource).members();
@@ -62,10 +63,11 @@ public class CommonProposalProvider extends AbstractCommonProposalProvider {
 			return children;
 		}
 		for (int i = 0; i < members.length; i++) {
-			if (members[i].getType() == IResource.FILE)
+			if (members[i].getType() == IResource.FILE) {
 				children.add(members[i]);
-			else
+			} else {
 				collectICons(members[i], children);
+			}
 		}
 		return children;
 	}

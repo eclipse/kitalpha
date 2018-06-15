@@ -1,5 +1,13 @@
-/**
- */
+/*******************************************************************************
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *  
+ * Contributors:
+ *   Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird.model.descAirdGenConf.provider;
 
 import java.util.ArrayList;
@@ -108,6 +116,7 @@ public class DescAirdGenConfItemProviderAdapterFactory extends DescAirdGenConfAd
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -118,6 +127,7 @@ public class DescAirdGenConfItemProviderAdapterFactory extends DescAirdGenConfAd
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
@@ -166,6 +176,7 @@ public class DescAirdGenConfItemProviderAdapterFactory extends DescAirdGenConfAd
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -176,6 +187,7 @@ public class DescAirdGenConfItemProviderAdapterFactory extends DescAirdGenConfAd
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
@@ -186,6 +198,7 @@ public class DescAirdGenConfItemProviderAdapterFactory extends DescAirdGenConfAd
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
@@ -200,6 +213,7 @@ public class DescAirdGenConfItemProviderAdapterFactory extends DescAirdGenConfAd
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void dispose() {
 		if (airdGenerationConfigurationItemProvider != null) {
 			airdGenerationConfigurationItemProvider.dispose();
@@ -277,6 +291,7 @@ public class DescAirdGenConfItemProviderAdapterFactory extends DescAirdGenConfAd
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
+		@Override
 		public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain) {
 			ArrayList<Object> result = new ArrayList<Object>();
 		   new CreationSwitch(result, editingDomain).doSwitch((EObject)object);
@@ -288,6 +303,7 @@ public class DescAirdGenConfItemProviderAdapterFactory extends DescAirdGenConfAd
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
+		@Override
 		public ResourceLocator getResourceLocator() {
 			return DescAirdGenConfEditPlugin.INSTANCE;
 		}

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -44,10 +44,12 @@ public class BackwardSynchronizeAction extends BaseSelectionListenerAction imple
 		super(text);
 	}
 	
+	@Override
 	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
 		selection = targetPart.getSite().getWorkbenchWindow().getSelectionService().getSelection();	
 	}
 
+	@Override
 	public void run(IAction action) {
 		IStructuredSelection structuredSelection = (IStructuredSelection)selection;
 		Object obj = structuredSelection.getFirstElement();
@@ -67,6 +69,7 @@ public class BackwardSynchronizeAction extends BaseSelectionListenerAction imple
 		}
 	}
 	
+	@Override
 	public void selectionChanged(IAction action, ISelection selection) {
 	}	
 }

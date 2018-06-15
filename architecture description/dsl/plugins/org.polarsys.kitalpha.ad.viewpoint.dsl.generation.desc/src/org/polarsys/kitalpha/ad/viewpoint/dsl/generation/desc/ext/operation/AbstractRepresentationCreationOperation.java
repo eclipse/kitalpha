@@ -272,16 +272,18 @@ public abstract class AbstractRepresentationCreationOperation extends WorkspaceM
 				{
 					if (dRepresentation instanceof DDiagram)
 					{
-						if (initializeDiagram((DDiagram) dRepresentation))
+						if (initializeDiagram((DDiagram) dRepresentation)) {
 							populateEntitiesDiagram(session, (DDiagram) dRepresentation);
+						}
 					}
 					
 					// Refresh representation.
 					refreshRepresentation(session, dRepresentation);
 					
 					// Layout diagram content
-					if (dRepresentation instanceof DDiagram)
+					if (dRepresentation instanceof DDiagram) {
 						arrangeAll(session, (DDiagram) dRepresentation);
+					}
 				}
 			}
 			
@@ -349,13 +351,15 @@ public abstract class AbstractRepresentationCreationOperation extends WorkspaceM
 		final DiagramDescription description = diagram.getDescription();
 		/** Handle description NodeMppings **/
 		EList<NodeMapping> nodeMappings = description.getAllNodeMappings();
-		if (! nodeMappings.isEmpty())
+		if (! nodeMappings.isEmpty()) {
 			abstractNodeMappings.addAll(nodeMappings);
+		}
 		
 		/** Handle description ContainerMppings **/
 		EList<ContainerMapping> containerMappings = description.getAllContainerMappings();
-		if (! containerMappings.isEmpty())
+		if (! containerMappings.isEmpty()) {
 			abstractNodeMappings.addAll(containerMappings);
+		}
 		
 		final ModelAccessor modelAccessor = session.getModelAccessor();
 		for (final AbstractNodeMapping abstractNodeMapping : abstractNodeMappings) 
@@ -390,8 +394,9 @@ public abstract class AbstractRepresentationCreationOperation extends WorkspaceM
 				for (String representationName : _representationsNames) 
 				{
 					final DRepresentation newRepresentation = createRepresentation(semantic, session, representationName, monitor);
-					if (newRepresentation != null)
+					if (newRepresentation != null) {
 						result.add(newRepresentation);
+					}
 				}
 			}
 			else
@@ -419,8 +424,9 @@ public abstract class AbstractRepresentationCreationOperation extends WorkspaceM
 						// Add an existing representation to the result to refresh and layout it
 						for (RepresentationDescription desc : representationsDescriptions) 
 						{
-							if (desc.getName().equals(description.getName()))
+							if (desc.getName().equals(description.getName())) {
 								result.add(representation);
+							}
 						}
 						
 					}
@@ -432,8 +438,9 @@ public abstract class AbstractRepresentationCreationOperation extends WorkspaceM
 					if (! availableRepresentation.contains(string))
 					{
 						final DRepresentation newRepresentation = createRepresentation(semantic, session, string, monitor);
-						if (newRepresentation != null)
+						if (newRepresentation != null) {
 							result.add(newRepresentation);
+						}
 					}
 				}
 			}
@@ -453,14 +460,17 @@ public abstract class AbstractRepresentationCreationOperation extends WorkspaceM
 	private DRepresentation createRepresentation(final EObject semantic, final Session session, String representationName, IProgressMonitor monitor){
 		final RepresentationDescription representationDescription = getRepresentationDescription(representationName);
 		String domainClass = null;
-		if (representationDescription instanceof DiagramDescription)
+		if (representationDescription instanceof DiagramDescription) {
 			domainClass = ((DiagramDescription) representationDescription).getDomainClass();
-		if (representationDescription instanceof TableDescription)
+		}
+		if (representationDescription instanceof TableDescription) {
 			domainClass = ((TableDescription) representationDescription).getDomainClass();
+		}
 		
 		DRepresentation createRepresentation = null;
-		if (domainClass != null && session.getModelAccessor().eInstanceOf(semantic, domainClass))
+		if (domainClass != null && session.getModelAccessor().eInstanceOf(semantic, domainClass)) {
 			createRepresentation = createRepresentation(semantic, session, representationDescription, monitor);
+		}
 		
 		return createRepresentation;
 	}
@@ -473,8 +483,9 @@ public abstract class AbstractRepresentationCreationOperation extends WorkspaceM
 	private RepresentationDescription getRepresentationDescription(String representationName){
 		for (RepresentationDescription representation : representationsDescriptions) 
 		{
-			if (representation.getName().equals(representationName))
+			if (representation.getName().equals(representationName)) {
 				return representation;
+			}
 		}
 		return null;
 	}
@@ -508,8 +519,9 @@ public abstract class AbstractRepresentationCreationOperation extends WorkspaceM
 		{// If GMF diagram is not initialized, create it
 			util.createNewGMFDiagram();
 			associatedGMFDiagram = util.getAssociatedGMFDiagram();
-			if (associatedGMFDiagram != null) 
+			if (associatedGMFDiagram != null) {
 				session.getServices().putCustomData(CustomDataConstants.GMF_DIAGRAMS, diagram, associatedGMFDiagram);
+			}
 		}
 		else
 		{// Get the GMF diagram
@@ -527,6 +539,7 @@ public abstract class AbstractRepresentationCreationOperation extends WorkspaceM
 		
 		final Diagram associatedGMFDiagramFinal = associatedGMFDiagram;
 		Display.getDefault().syncExec(new Runnable() {
+			@Override
 			@SuppressWarnings({ "rawtypes", "unchecked" })
 			public void run() {
 				Shell shell = new Shell(Display.getDefault());
@@ -601,8 +614,9 @@ public abstract class AbstractRepresentationCreationOperation extends WorkspaceM
 		
 		/** Create the aird file and create a Session **/
 		Session session = SessionManager.INSTANCE.getSession(representationFileURI, new NullProgressMonitor());
-		if (session == null)
+		if (session == null) {
 			session = createAird(project, representationFileURI, monitor);
+		}
 		
 		if (session != null)
 		{
@@ -683,10 +697,11 @@ public abstract class AbstractRepresentationCreationOperation extends WorkspaceM
 			}
 		}
 		
-		if (stringRepresentationURI.length() > 0)
+		if (stringRepresentationURI.length() > 0) {
 			return URI.createPlatformResourceURI(stringRepresentationURI, true);
-		else
+		} else {
 			throw new RuntimeException("Error on creating representation URI");
+		}
 		
 	}
 	
@@ -718,8 +733,9 @@ public abstract class AbstractRepresentationCreationOperation extends WorkspaceM
 			{
 				String[] segments = fileName.split("/");
 				String lastSegment = segments[segments.length - 1];
-				if (lastSegment.contains(AIRD_FILE_EXTENSION))
+				if (lastSegment.contains(AIRD_FILE_EXTENSION)) {
 					return lastSegment;
+				}
 				return lastSegment + "." +AIRD_FILE_EXTENSION;
 			}
 		}

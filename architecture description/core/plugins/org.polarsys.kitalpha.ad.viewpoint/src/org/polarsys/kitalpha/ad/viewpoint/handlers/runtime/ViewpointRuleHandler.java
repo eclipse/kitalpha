@@ -35,6 +35,7 @@ public class ViewpointRuleHandler extends ViewpointManager.ElementHandler implem
 		super(viewpoint, mgr);
 	}
 
+	@Override
 	public void removeRules(List<Rule> rules) {
 		for (Rule rule : rules) {
 			if (!isRemovable(rule)){
@@ -46,10 +47,12 @@ public class ViewpointRuleHandler extends ViewpointManager.ElementHandler implem
 		saveModel();
 	}
 
+	@Override
 	public void createRule(String id) {
 		createRule(id, null, null);
 	}
 
+	@Override
 	public void createRule(String id, String type, String implementation) {
 		RuleSet set = getCurrentRuleSet();
 		Rule rule = ViewpointFactory.eINSTANCE.createRule();
@@ -72,12 +75,14 @@ public class ViewpointRuleHandler extends ViewpointManager.ElementHandler implem
 		return set;
 	}
 
+	@Override
 	public List<ViewpointElement> getElements() {
 		List<ViewpointElement> rules = new ArrayList<ViewpointElement>();
 		rules.addAll(getViewpoint().getRules());
 		return rules;
 	}
 
+	@Override
 	public List<ViewpointElement> getElementsFromParents() {
 		Map<String, ViewpointElement> name2prop = new HashMap<String, ViewpointElement>();
 		for (Viewpoint vp : getViewpoint().getAllParents()) {

@@ -48,6 +48,7 @@ public class VpuiScopeProvider extends AbstractDeclarativeScopeProvider {
 		final EObject context2 = context;
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d) {
 						return (d.getEObjectOrProxy() instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class
 								&& ProjectUtil.areInSameProject(context2, d.getEObjectOrProxy()));
@@ -87,6 +88,7 @@ public class VpuiScopeProvider extends AbstractDeclarativeScopeProvider {
 		final EObject context2 = context;
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d) {
 						if (d.getEObjectOrProxy() instanceof AbstractFeature && ProjectUtil.areInSameProject(context2, d.getEObjectOrProxy())) {
 							if (lastFieldType == null){
@@ -136,15 +138,18 @@ public class VpuiScopeProvider extends AbstractDeclarativeScopeProvider {
 				EDataType type = ((ExternalAttributeType) att.getOwned_type())
 						.getType();
 				if (type != null && type.getName() != null) {
-					if (type.getName().equals("EBoolean"))
+					if (type.getName().equals("EBoolean")) {
 						return false;
-					if (type.getName().equals("EEnumerator"))
+					}
+					if (type.getName().equals("EEnumerator")) {
 						return false;
+					}
 					if (isMapped
 							&& !((org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class) att
 									.eContainer()).getName().equals(
-									clazz.getName()))
+									clazz.getName())) {
 						return false;
+					}
 					return true;
 				}
 			}
@@ -170,13 +175,15 @@ public class VpuiScopeProvider extends AbstractDeclarativeScopeProvider {
 				EDataType type = ((ExternalAttributeType) att.getOwned_type())
 						.getType();
 				if (type != null && type.getName() != null) {
-					if (type.getName().equals("EString"))
+					if (type.getName().equals("EString")) {
 						return true;
+					}
 					if (isMapped
 							&& !((org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class) att
 									.eContainer()).getName().equals(
-									clazz.getName()))
+									clazz.getName())) {
 						return false;
+					}
 				}
 			}
 		}
@@ -201,13 +208,15 @@ public class VpuiScopeProvider extends AbstractDeclarativeScopeProvider {
 				EDataType type = ((ExternalAttributeType) att.getOwned_type())
 						.getType();
 				if (type != null && type.getName() != null) {
-					if (type.getName().equals("EBoolean"))
+					if (type.getName().equals("EBoolean")) {
 						return true;
+					}
 					if (isMapped
 							&& !((org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class) att
 									.eContainer()).getName().equals(
-									clazz.getName()))
+									clazz.getName())) {
 						return false;
+					}
 				}
 			}
 		}
@@ -233,13 +242,15 @@ public class VpuiScopeProvider extends AbstractDeclarativeScopeProvider {
 				EDataType type = ((ExternalAttributeType) att.getOwned_type())
 						.getType();
 				if (type != null && type.getName() != null) {
-					if ((type.getName().equals("EEnumerator") || type instanceof EEnum))
+					if ((type.getName().equals("EEnumerator") || type instanceof EEnum)) {
 						return true;
+					}
 					if (isMapped
 							&& !((org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class) att
 									.eContainer()).getName().equals(
-									clazz.getName()))
+									clazz.getName())) {
 						return false;
+					}
 				}
 			}
 			
@@ -267,12 +278,14 @@ public class VpuiScopeProvider extends AbstractDeclarativeScopeProvider {
 					.getEObjectOrProxy();
 			String cardinality = ass.getCardinality().getName();
 			if (cardinality.equals(Cardinalities.NOTHING_OR_ONE.getName())
-					|| cardinality.equals(Cardinalities.ONLY_ONE.getName()))
+					|| cardinality.equals(Cardinalities.ONLY_ONE.getName())) {
 				return true;
+			}
 			if (isMapped
 					&& !((org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class) ass
-							.eContainer()).getName().equals(clazz.getName()))
+							.eContainer()).getName().equals(clazz.getName())) {
 				return false;
+			}
 		}
 		return false;
 	}
@@ -294,12 +307,14 @@ public class VpuiScopeProvider extends AbstractDeclarativeScopeProvider {
 			String cardinality = ass.getCardinality().getName();
 			if (cardinality.equals(Cardinalities.ONE_OR_MANY.getName())
 					|| cardinality.equals(Cardinalities.NOTHING_OR_MANY
-							.getName()))
+							.getName())) {
 				return true;
+			}
 			if (isMapped
 					&& !((org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class) ass
-							.eContainer()).getName().equals(clazz.getName()))
+							.eContainer()).getName().equals(clazz.getName())) {
 				return false;
+			}
 		}
 		return false;
 	}
@@ -311,11 +326,13 @@ public class VpuiScopeProvider extends AbstractDeclarativeScopeProvider {
 	 * @return
 	 */
 	private UI getUI(EObject object) {
-		if (object instanceof UI)
+		if (object instanceof UI) {
 			return (UI) object;
+		}
 		while (object.eContainer() != null) {
-			if (object.eContainer() instanceof UI)
+			if (object.eContainer() instanceof UI) {
 				return (UI) object.eContainer();
+			}
 			object = object.eContainer();
 		}
 		return null;

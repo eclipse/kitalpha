@@ -64,10 +64,12 @@ public class ConfigurationTab extends AbstractTab {
 		super(new ConfigurationLabelProvider());
 	}
 
+	@Override
 	public ISelectionProvider getSelectionProvider() {
 		return configViewer;
 	}
 
+	@Override
 	public void createTab(FormToolkit toolkit, CTabFolder folder) {
 		final Composite composite = createTab(toolkit, folder, Messages.ConfigurationTab_title, ViewpointEditPlugin.INSTANCE.getImage("full/obj16/Property"));
 		GridLayout clayout = new GridLayout();
@@ -82,6 +84,7 @@ public class ConfigurationTab extends AbstractTab {
 		table.setLayoutData(new GridData(GridData.FILL_BOTH));
 		SelectionListener headerListener = new SelectionListener2() {
 
+			@Override
 			public void doWidgetSelected(SelectionEvent e) {
 				TableColumn currentSortColumn = table.getSortColumn();
 				TableColumn newSortColumn = (TableColumn) e.getSource();
@@ -172,17 +175,20 @@ public class ConfigurationTab extends AbstractTab {
 		});
 		configViewer.addSelectionChangedListener(new ISelectionChangedListener() {
 
+			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
 				updateButtons((IStructuredSelection) event.getSelection());
 			}
 		});
 	}
 
+	@Override
 	public void init() {
 		configViewer.setInput(modelManager.getConfigurationHandler());
 		workspaceHasChanged();
 	}
 
+	@Override
 	public void workspaceHasChanged() {
 		super.workspaceHasChanged();
 		configViewer.refresh();

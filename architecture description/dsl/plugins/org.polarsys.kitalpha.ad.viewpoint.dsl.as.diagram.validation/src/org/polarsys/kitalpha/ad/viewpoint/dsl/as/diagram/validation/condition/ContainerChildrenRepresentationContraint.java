@@ -44,16 +44,19 @@ public class ContainerChildrenRepresentationContraint implements IAdditionalCons
 		Container container = (Container) data;
 		final ContainerLayout contentLayout = container.getContentLayout();
 		if (contentLayout.equals(ContainerLayout.FREE_FORM) || 
-				contentLayout.equals(ContainerLayout.LIST))
+				contentLayout.equals(ContainerLayout.LIST)) {
 			return ValidationStatus.Ok;
+		}
 		
 		final ContainerChildren children = container.getChildren();
 		
-		if (children == null)
+		if (children == null) {
 			return ValidationStatus.Ok;
+		}
 		
-		if (children.getOwned_nodes().isEmpty() && children.getReused_nodes().isEmpty())
+		if (children.getOwned_nodes().isEmpty() && children.getReused_nodes().isEmpty()) {
 			return ValidationStatus.Ok;
+		}
 		
 		EList<AbstractNode> allNodes = new BasicEList<AbstractNode>();
 		final EList<AbstractNode> ownedNodes = children.getOwned_nodes();
@@ -70,15 +73,17 @@ public class ContainerChildrenRepresentationContraint implements IAdditionalCons
 		
 		for (AbstractNode abstractNode : allNodes) 
 		{
-			if (abstractNode instanceof Node)
+			if (abstractNode instanceof Node) {
 				return ValidationStatus.Error;
+			}
 
 			if (abstractNode instanceof Container)
 			{
 				ContainerLayout contentLayout2 = ((Container) abstractNode).getContentLayout();
 				if (contentLayout2.equals(ContainerLayout.HORIZONTAL_STACK) || 
-						contentLayout2.equals(ContainerLayout.VERTICAL_STACK))
+						contentLayout2.equals(ContainerLayout.VERTICAL_STACK)) {
 					return ValidationStatus.Error;
+				}
 			}
 		}
 		return ValidationStatus.Ok;

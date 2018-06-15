@@ -43,6 +43,7 @@ public class CheckCyclesAction extends BaseSelectionListenerAction implements IO
 		super("Check cycle");
 	}
 
+	@Override
 	public void run(IAction action) {
 		URI uri = getDomainURI(this.selection);
 		ArchitectureFramework afdescription = getAFSpecification(uri);
@@ -93,10 +94,12 @@ public class CheckCyclesAction extends BaseSelectionListenerAction implements IO
 		return null;
 	}
 
+	@Override
 	public void selectionChanged(IAction action, ISelection selection) {
 		this.selection = (IStructuredSelection) selection;
 	}
 
+	@Override
 	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
 	}
 

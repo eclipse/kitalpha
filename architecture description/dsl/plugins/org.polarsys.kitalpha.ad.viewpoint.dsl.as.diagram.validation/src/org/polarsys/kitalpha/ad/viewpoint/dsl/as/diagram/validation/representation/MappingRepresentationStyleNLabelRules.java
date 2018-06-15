@@ -34,10 +34,12 @@ public class MappingRepresentationStyleNLabelRules implements IAdditionalConstra
 	private static final int Flag_Node_StyleIsNull = 4;
 
 	
+	@Override
 	public boolean isObjectInScope(Object object) {
 		return object instanceof AbstractDescription;
 	}
 
+	@Override
 	public ValidationStatus validationRules(Object data) {
 		if (data instanceof ContainerDescription)
 		{
@@ -45,13 +47,15 @@ public class MappingRepresentationStyleNLabelRules implements IAdditionalConstra
 			EObject container = cDescription.eContainer();
 			if (MappingUtils.isImport(container))
 			{
-				if (cDescription.getStyle() == null && cDescription.getNode_Label() == null)
+				if (cDescription.getStyle() == null && cDescription.getNode_Label() == null) {
 					return ValidationStatus.getErrorStatusWithRuleFlag(Flag_Container_Import_EitherLabelOrStyle);
+				}
 			}
 			else
 			{
-				if (cDescription.getStyle() == null)
+				if (cDescription.getStyle() == null) {
 					return ValidationStatus.getErrorStatusWithRuleFlag(Flag_Container_StyleIsNull);
+				}
 			}
 		}
 		
@@ -61,19 +65,22 @@ public class MappingRepresentationStyleNLabelRules implements IAdditionalConstra
 			EObject node = nDescription.eContainer();
 			if (MappingUtils.isImport(node))
 			{
-				if (nDescription.getStyle() == null && nDescription.getNode_Label() == null)
+				if (nDescription.getStyle() == null && nDescription.getNode_Label() == null) {
 					return ValidationStatus.getErrorStatusWithRuleFlag(Flag_Node_Import_EitherLabelOrStyle);
+				}
 			}
 			else
 			{
-				if (nDescription.getStyle() == null)
+				if (nDescription.getStyle() == null) {
 					return ValidationStatus.getErrorStatusWithRuleFlag(Flag_Node_StyleIsNull);
+				}
 			}
 		}
 		
 		return ValidationStatus.Ok;
 	}
 
+	@Override
 	public String getMessage(ValidationStatus status, Object object) {
 		NamedElement container = (NamedElement) ((EObject) object).eContainer();
 		

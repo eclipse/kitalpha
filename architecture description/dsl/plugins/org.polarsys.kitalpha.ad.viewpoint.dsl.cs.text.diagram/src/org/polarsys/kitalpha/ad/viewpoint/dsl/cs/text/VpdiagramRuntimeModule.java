@@ -36,12 +36,14 @@ public class VpdiagramRuntimeModule extends org.polarsys.kitalpha.ad.viewpoint.d
 	}
 	
 	// contributed by org.eclipse.xtext.generator.builder.BuilderIntegrationFragment
+	@Override
 	public Class<? extends org.eclipse.xtext.resource.IContainer.Manager> bindIContainer$Manager() {
 		return VpdiagramContainerManager.class;
 	}
 	
 
 	// contributed by org.eclipse.xtext.generator.scoping.AbstractScopingFragment
+	@Override
 	public Class<? extends org.eclipse.xtext.scoping.IGlobalScopeProvider> bindIGlobalScopeProvider() {
 		return VpdiagramGlobalScopeProvider.class;
 	}

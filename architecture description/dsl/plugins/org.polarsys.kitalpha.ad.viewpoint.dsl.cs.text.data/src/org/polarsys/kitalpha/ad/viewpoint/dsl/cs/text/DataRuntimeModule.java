@@ -38,16 +38,19 @@ public class DataRuntimeModule extends org.polarsys.kitalpha.ad.viewpoint.dsl.cs
 	}
 
 	// contributed by org.eclipse.xtext.generator.ecore2xtext.Ecore2XtextValueConverterServiceFragment
+	@Override
 	public Class<? extends org.eclipse.xtext.conversion.IValueConverterService> bindIValueConverterService() {
 		return DataValueConverter.class;
 	}
 	
 	// contributed by org.eclipse.xtext.generator.builder.BuilderIntegrationFragment
+	@Override
 	public Class<? extends org.eclipse.xtext.resource.IContainer.Manager> bindIContainer$Manager() {
 		return DataContainerManager.class;
 	}
 	
 	// contributed by org.eclipse.xtext.generator.scoping.AbstractScopingFragment
+	@Override
 	public Class<? extends org.eclipse.xtext.scoping.IGlobalScopeProvider> bindIGlobalScopeProvider() {
 		return DataGlobalScopeProvider.class;
 	}

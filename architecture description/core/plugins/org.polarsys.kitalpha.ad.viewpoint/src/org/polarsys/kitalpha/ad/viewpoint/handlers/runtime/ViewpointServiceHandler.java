@@ -46,6 +46,7 @@ public class ViewpointServiceHandler extends ViewpointManager.ElementHandler imp
 		return getViewpoint().getServiceSet();
 	}
 
+	@Override
 	public void removeServices(List<Service> services) {
 		for (Service service : services) {
 			if (!isRemovable(service)){
@@ -57,6 +58,7 @@ public class ViewpointServiceHandler extends ViewpointManager.ElementHandler imp
 		saveModel();
 	}
 
+	@Override
 	public void createService(String id, String name, String type, List<Rule> rules) {
 		ServiceSet set = getCurrentServiceSet();
 		Service service = ViewpointFactory.eINSTANCE.createService();
@@ -69,12 +71,14 @@ public class ViewpointServiceHandler extends ViewpointManager.ElementHandler imp
 		saveModel();
 	}
 
+	@Override
 	public List<ViewpointElement> getElements() {
 		List<ViewpointElement> services = new ArrayList<ViewpointElement>();
 		services.addAll(getViewpoint().getServices());
 		return services;
 	}
 
+	@Override
 	public List<ViewpointElement> getElementsFromParents() {
 		Map<String, ViewpointElement> name2prop = new HashMap<String, ViewpointElement>();
 		for (Viewpoint vp : getViewpoint().getAllParents()) {

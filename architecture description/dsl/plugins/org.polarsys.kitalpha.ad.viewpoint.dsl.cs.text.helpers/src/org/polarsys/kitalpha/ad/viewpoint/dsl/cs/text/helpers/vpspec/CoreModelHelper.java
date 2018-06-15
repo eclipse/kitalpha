@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -33,9 +33,9 @@ public class CoreModelHelper {
 			EObject eObject = (EObject) object;
 			EObject rootObject = EcoreUtil.getRootContainer(eObject);
 			// First check the root object type. If it is a Viewpoint then return it
-			if (rootObject instanceof Viewpoint)
+			if (rootObject instanceof Viewpoint) {
 				return (Viewpoint) rootObject;
-			else {
+			} else {
 				// In this case, we handle a Fragmented resource
 				// TODO : case of fragmented resource
 			}
@@ -50,15 +50,17 @@ public class CoreModelHelper {
 	 */
 	public static String getViewpointShortName(Object object){
 		Viewpoint vp;
-		if (object instanceof Viewpoint)
+		if (object instanceof Viewpoint) {
 			vp = (Viewpoint) object;
-		else
+		} else {
 			vp = getDSLViewpoint(object);
+		}
 		
-		if (vp != null)
+		if (vp != null) {
 			return vp.getShortName();
-		else
+		} else {
 			return null;
+		}
 	}
 	
 	/**
@@ -68,15 +70,17 @@ public class CoreModelHelper {
 	 */
 	public static String getViewpointName(Object object){
 		Viewpoint vp;
-		if (object instanceof Viewpoint)
+		if (object instanceof Viewpoint) {
 			vp = (Viewpoint) object;
-		else
+		} else {
 			vp = getDSLViewpoint(object);
+		}
 		
-		if (vp != null)
+		if (vp != null) {
 			return vp.getName();
-		else
+		} else {
 			return null;
+		}
 	}
 	
 	/**
@@ -88,8 +92,9 @@ public class CoreModelHelper {
 	public static String getProjectName(EObject object){	
 		String projectName = EcoreUtil.getURI(object).segment(1);	
 
-		if (projectName == null || projectName.isEmpty())	
-			throw new RuntimeException("Could not find the project where is defined the EObject: " + object);	
+		if (projectName == null || projectName.isEmpty()) {
+			throw new RuntimeException("Could not find the project where is defined the EObject: " + object);
+		}	
 
 		return projectName; 	
 	}

@@ -161,6 +161,7 @@ public class CommonEditorCallback extends NatureAddingEditorCallback {
 
 		final XtextEditor current = editor;
 		Runnable runnable = new Runnable() {		
+			@Override
 			public void run() {			
 				IFile file = (IFile) current.getEditorInput().getAdapter(IFile.class);						
 				doSynchronize(file);

@@ -46,6 +46,7 @@ public class RuleHandler extends WorkspaceManager.ElementHandler implements IRul
 		return ruleSet;
 	}
 
+	@Override
 	public void removeRules(List<Rule> rules) {
 		for (Rule rule : rules) {
 			if (!isRemovable(rule)){
@@ -57,10 +58,12 @@ public class RuleHandler extends WorkspaceManager.ElementHandler implements IRul
 		saveModel();
 	}
 
+	@Override
 	public void createRule(String id) {
 		createRule(id, null, null);
 	}
 
+	@Override
 	public void createRule(String id, String type, String implementation) {
 		if (getWorkspace() == null){
 			throw new IllegalStateException("no workspace available");
@@ -86,6 +89,7 @@ public class RuleHandler extends WorkspaceManager.ElementHandler implements IRul
 		return set;
 	}
 
+	@Override
 	public List<ViewpointElement> getElements() {
 		List<? extends ViewpointElement> toRemove = null;
 		List<? extends ViewpointElement> toAdd = null;
@@ -104,6 +108,7 @@ public class RuleHandler extends WorkspaceManager.ElementHandler implements IRul
 		return computeElements(getViewpoint().getRules(), toRemove, toAdd);
 	}
 
+	@Override
 	public List<ViewpointElement> getElementsFromParents() {
 		Map<String, ViewpointElement> name2prop = new HashMap<String, ViewpointElement>();
 		for (Viewpoint vp : getViewpoint().getAllParents()) {

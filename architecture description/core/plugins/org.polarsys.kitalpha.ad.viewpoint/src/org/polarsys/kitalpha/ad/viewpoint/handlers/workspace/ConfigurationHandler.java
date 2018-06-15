@@ -44,6 +44,7 @@ public class ConfigurationHandler extends WorkspaceManager.ElementHandler implem
 		return propertySet;
 	}
 
+	@Override
 	public void createProperty(String name) {
 		if (getWorkspace() == null){
 			throw new IllegalStateException("no workspace available");
@@ -57,6 +58,7 @@ public class ConfigurationHandler extends WorkspaceManager.ElementHandler implem
 		saveModel();
 	}
 
+	@Override
 	public void removeProperties(List<Property> properties) {
 		for (Property prop : properties) {
 			if (!isRemovable(prop)){
@@ -81,6 +83,7 @@ public class ConfigurationHandler extends WorkspaceManager.ElementHandler implem
 		return elt.getName();
 	}
 
+	@Override
 	public List<ViewpointElement> getElements() {
 		List<? extends ViewpointElement> toRemove = null;
 		List<? extends ViewpointElement> toAdd = null;
@@ -99,6 +102,7 @@ public class ConfigurationHandler extends WorkspaceManager.ElementHandler implem
 		return computeElements(getViewpoint().getProperties(), toRemove, toAdd);
 	}
 
+	@Override
 	public List<ViewpointElement> getElementsFromParents() {
 		Map<String, ViewpointElement> name2prop = new HashMap<String, ViewpointElement>();
 		for (Viewpoint vp : getViewpoint().getAllParents()) {

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2009-2010 Thales Corporate Services S.A.S.
+ * Copyright (c) 2009, 2018 Thales Corporate Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,12 +44,14 @@ public class ValidationContext implements IValidationContext {
 
 	private final Map<IModelConstraint, Object> constraintData = new java.util.HashMap<IModelConstraint, Object>();
 
+	@Override
 	public void addResult(EObject eObject) {
 		assert eObject != null;
 
 		resultLocus.add(eObject);
 	}
 
+	@Override
 	public void addResults(Collection<? extends EObject> eObjects) {
 		assert eObjects != null;
 		// explicitly iterate instead of calling resultLocus.addAll() in order
@@ -59,6 +61,7 @@ public class ValidationContext implements IValidationContext {
 		}
 	}
 
+	@Override
 	public IStatus createFailureStatus(Object... messageArgs) {
 		String message = TextUtils.formatMessage(getDescriptor().getMessagePattern(), (messageArgs == null) ? new Object[0] : messageArgs);
 
@@ -69,6 +72,7 @@ public class ValidationContext implements IValidationContext {
 		return new ConstraintStatus(getConstraint(), getTarget(), message, getResultLocus());
 	}
 
+	@Override
 	public IStatus createSuccessStatus() {
 		if (Trace.shouldTrace(EMFModelValidationDebugOptions.CONSTRAINTS_EVALUATION)) {
 			Trace.trace(EMFModelValidationDebugOptions.CONSTRAINTS_EVALUATION, "Constraint " + getCurrentConstraintId() + " passed."); //$NON-NLS-1$//$NON-NLS-2$
@@ -77,51 +81,63 @@ public class ValidationContext implements IValidationContext {
 		return Status.OK_STATUS;
 	}
 
+	@Override
 	public void disableCurrentConstraint(Throwable exception) {
 		getDescriptor().setError(exception);
 
 	}
 
+	@Override
 	public List<Notification> getAllEvents() {
 		return Collections.emptyList();
 	}
 
+	@Override
 	public Object getCurrentConstraintData() {
 		return constraintData.get(getConstraint());
 	}
 
+	@Override
 	public String getCurrentConstraintId() {
 		return getConstraint().getDescriptor().getId();
 	}
 
+	@Override
 	public EMFEventType getEventType() {
 		return EMFEventType.NULL;
 	}
 
+	@Override
 	public EStructuralFeature getFeature() {
 		return null;
 	}
 
+	@Override
 	public Object getFeatureNewValue() {
 		return null;
 	}
 
+	@Override
 	public Set<EObject> getResultLocus() {
 		return java.util.Collections.unmodifiableSet(resultLocus);
 	}
 
+	@Override
 	public EObject getTarget() {
 		return target;
 	}
 
+	@Override
 	public Object putCurrentConstraintData(Object newData) {
 		return constraintData.put(getConstraint(), newData);
 	}
 
+	@Override
 	public void skipCurrentConstraintFor(EObject eObject) {
 		//nothing to do
 	}
 
+	@Override
 	public void skipCurrentConstraintForAll(Collection<?> eObjects) {
 		//nothing to do
 	}

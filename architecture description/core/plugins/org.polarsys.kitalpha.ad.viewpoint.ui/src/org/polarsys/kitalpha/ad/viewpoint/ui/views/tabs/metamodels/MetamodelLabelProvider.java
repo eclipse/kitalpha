@@ -26,12 +26,15 @@ import org.polarsys.kitalpha.ad.viewpoint.ui.views.tabs.AFLabelProvider;
  */
 public class MetamodelLabelProvider extends AFLabelProvider {
 
+	@Override
 	public String getColumnText(Object element, int columnIndex) {
-		if (!(element instanceof EPackage))
+		if (!(element instanceof EPackage)) {
 			return "";
+		}
 		EPackage prop = (EPackage) element;
-		if (prop.eIsProxy())
+		if (prop.eIsProxy()) {
 			return "File cannot be loaded: " + ((InternalEObject) prop).eProxyURI();
+		}
 
 		return "[" + prop.getName() + "] " + prop.eResource().getURI().toString();
 	}
@@ -40,8 +43,9 @@ public class MetamodelLabelProvider extends AFLabelProvider {
 	public Image getColumnImage(Object element, int columnIndex) {
 		if (element instanceof EPackage) {
 			EPackage prop = (EPackage) element;
-			if (prop.eIsProxy())
+			if (prop.eIsProxy()) {
 				return Activator.getDefault().getImage(AFImages.ERROR_STATE);
+			}
 
 		}
 		return super.getColumnImage(element, columnIndex);

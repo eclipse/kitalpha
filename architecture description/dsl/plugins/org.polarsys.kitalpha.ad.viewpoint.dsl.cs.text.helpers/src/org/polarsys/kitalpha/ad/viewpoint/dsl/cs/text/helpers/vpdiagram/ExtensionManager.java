@@ -35,13 +35,16 @@ public class ExtensionManager {
 		String modelTargetApplication = ConfigurationHelper.getTargetApplication(eObject);
 		IConfigurationElement[] config =Platform.getExtensionRegistry().getConfigurationElementsFor(diagram_filter_extension_point);	
 		List<String> result = new ArrayList<>();
-		if (config.length != 0)
-			for (IConfigurationElement iConfigurationElement : config) 
+		if (config.length != 0) {
+			for (IConfigurationElement iConfigurationElement : config) {
 				if (iConfigurationElement.getName().equals("Filter")) {
 					String tApplication = iConfigurationElement.getAttribute("TargetApplication");
-					if (tApplication.trim().equalsIgnoreCase(modelTargetApplication.trim()))
+					if (tApplication.trim().equalsIgnoreCase(modelTargetApplication.trim())) {
 						result.add(iConfigurationElement.getAttribute("ModelFileExtension"));
-				}	
+					}
+				}
+			}
+		}	
 		return result;
 	}
 

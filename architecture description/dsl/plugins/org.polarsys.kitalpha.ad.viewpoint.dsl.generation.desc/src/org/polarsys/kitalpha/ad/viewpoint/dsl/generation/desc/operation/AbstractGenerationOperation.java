@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,22 +45,25 @@ public abstract class AbstractGenerationOperation  extends WorkspaceModifyOperat
 	}
 	
 	protected void setMonitor(IProgressMonitor monitor) {
-		if (monitor != null)
+		if (monitor != null) {
 			_monitor = monitor;
+		}
 	}
 	
 	public URI getModelUri(boolean resourceUri){
 		IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(_projectName);
 		IFile modelFile = (IFile) project.getFile(_modelsFolder + "/" + _shortName + "." + _modelExtension);
 		URI modelURI = null;
-		if (resourceUri)
+		if (resourceUri) {
 			modelURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(), false);
-		else
+		} else {
 			modelURI = URI.createPlatformPluginURI(modelFile.getFullPath().toString(), false);
+		}
 		
-		if (modelURI != null)
+		if (modelURI != null) {
 			return modelURI;
-		else
+		} else {
 			throw new RuntimeException("Can not create model URI");
+		}
 	}
 }

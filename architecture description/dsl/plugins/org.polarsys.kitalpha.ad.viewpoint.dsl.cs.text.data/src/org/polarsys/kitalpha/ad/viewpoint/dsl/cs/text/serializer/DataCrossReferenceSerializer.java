@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -68,17 +68,20 @@ public class DataCrossReferenceSerializer implements ICrossReferenceSerializer {
 	private IValueConverterService valueConverter;
 
 
+	@Override
 	public String serializeCrossRef(EObject semanticObject, CrossReference crossref, EObject target, INode node,
 			Acceptor errors) {
 
-		if (target.eIsProxy() && node != null)
+		if (target.eIsProxy() && node != null) {
 			return tokenUtil.serializeNode(node);
+		}
 
 		final EReference ref = GrammarUtil.getReference(crossref, semanticObject.eClass());
 		final IScope scope = scopeProvider.getScope(semanticObject, ref);
 		if (scope == null) {
-			if (errors != null)
+			if (errors != null) {
 				errors.accept(diagnostics.getNoScopeFoundDiagnostic(semanticObject, crossref, target));
+			}
 			return null;
 		}
 
@@ -86,11 +89,14 @@ public class DataCrossReferenceSerializer implements ICrossReferenceSerializer {
 			String text = linkingHelper.getCrossRefNodeAsString(node, true);
 			QualifiedName qn = qualifiedNameConverter.toQualifiedName(text);
 			URI targetURI = EcoreUtil.getURI(target);
-			if (target.eResource() != null && target.eResource().getResourceSet() != null)
+			if (target.eResource() != null && target.eResource().getResourceSet() != null) {
 				targetURI = target.eResource().getResourceSet().getURIConverter().normalize(targetURI);
-			for (IEObjectDescription desc : scope.getElements(qn))
-				if (desc.getEObjectURI().equals(targetURI))
+			}
+			for (IEObjectDescription desc : scope.getElements(qn)) {
+				if (desc.getEObjectURI().equals(targetURI)) {
 					return tokenUtil.serializeNode(node);
+				}
+			}
 		}
 
 		return dataSerializer.getCrossReferenceNameFromScope(semanticObject, crossref, target, scope, errors);

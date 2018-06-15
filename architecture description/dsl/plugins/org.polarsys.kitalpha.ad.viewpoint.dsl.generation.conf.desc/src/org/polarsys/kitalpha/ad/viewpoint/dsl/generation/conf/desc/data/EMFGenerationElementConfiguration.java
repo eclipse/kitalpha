@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -66,10 +66,11 @@ public class EMFGenerationElementConfiguration implements IGenerationElementInne
 	public void configure(GenerationElement element){
 		refreshOptions();
 		EmfGeneration emfElement = null;
-		if (element instanceof EmfGeneration)
+		if (element instanceof EmfGeneration) {
 			emfElement = (EmfGeneration) element;
-		else
+		} else {
 			throw new IllegalArgumentException(element.getName() + " Generation element can't be configured by EMFGenerationElementConfiguration");
+		}
 		
 		emfElement.setGenerateModel(genModel);
 		emfElement.setGenerateEdit(genEdit);
@@ -108,8 +109,9 @@ public class EMFGenerationElementConfiguration implements IGenerationElementInne
 			{ 
 				// Try to get the Model plug-in from workspace
 				IProject modelProject = null;
-				if (modelPluginName != null && modelPluginName.length() > 0)
+				if (modelPluginName != null && modelPluginName.length() > 0) {
 					modelProject = ResourcesPlugin.getWorkspace().getRoot().getProject(modelPluginName);
+				}
 				
 				relevant &= modelProject != null && modelProject.exists();
 			}
@@ -118,8 +120,9 @@ public class EMFGenerationElementConfiguration implements IGenerationElementInne
 			{
 				// Try to get the Edit plug-in from workspace
 				IProject editProject = null;
-				if (editPluginName != null && editPluginName.length() > 0)
+				if (editPluginName != null && editPluginName.length() > 0) {
 					editProject = ResourcesPlugin.getWorkspace().getRoot().getProject(editPluginName);
+				}
 				
 				relevant &= editProject != null && editProject.exists();
 			}

@@ -27,6 +27,7 @@ public class ViewpointsTableContentProvider implements IStructuredContentProvide
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public Object[] getElements(final Object inputElement) {
 		if (inputElement instanceof Set<?>) {

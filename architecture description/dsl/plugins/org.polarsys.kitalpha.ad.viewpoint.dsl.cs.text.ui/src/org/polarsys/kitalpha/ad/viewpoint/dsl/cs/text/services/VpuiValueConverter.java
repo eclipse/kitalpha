@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -34,10 +34,11 @@ public class VpuiValueConverter extends Ecore2XtextTerminalConverters{
 				StringBuilder result = new StringBuilder();
 				for(ILeafNode leaf: node.getLeafNodes()) {
 					if (!leaf.isHidden()) {
-						if (leaf.getGrammarElement() instanceof Keyword)
+						if (leaf.getGrammarElement() instanceof Keyword) {
 							result.append(leaf.getText());
-						else
+						} else {
 							result.append(ID().toValue(leaf.getText(), leaf));
+						}
 					}
 				}
 				return result.toString();
@@ -48,8 +49,9 @@ public class VpuiValueConverter extends Ecore2XtextTerminalConverters{
 				String[] splitted = value.split("\\.");
 				StringBuilder result = new StringBuilder(value.length());
 				for(int i = 0; i < splitted.length; i++) {
-					if (i != 0)
+					if (i != 0) {
 						result.append('.');
+					}
 					//trim
 					result.append(ID().toString(splitted[i].replaceAll(" ", "")));
 				}

@@ -66,8 +66,9 @@ public class JavaNamingConvention {
 	 * @return
 	 */
 	public static String getJavaPackageNameFor(String basePackage, JavaUseContext context){
-		if (null == context)
+		if (null == context) {
 			throw new IllegalArgumentException("[VPDSL - Java Class Naming Convention] JavaClassUseContext is mandatory");
+		}
 		
 		final String scontext = context.toString();
 		String javaPackageName = (null != basePackage && !basePackage.isEmpty() ? basePackage + "." + scontext : scontext);
@@ -103,15 +104,18 @@ public class JavaNamingConvention {
 	 * @return The name of a Java Class as String. 
 	 */
 	public static String getJavaClassNameFor(NamedElement element, JavaUseContext context){
-		if (null == context)
+		if (null == context) {
 			throw new IllegalArgumentException("[VPDSL - Java Class Naming Convention] JavaClassUseContext is mandatory");
+		}
 		
-		if (null == element)
+		if (null == element) {
 			throw new IllegalArgumentException("[VPDSL - Java Class Naming Convention] Null element are not accepted");
+		}
 		
 		final String name = element.getName();
-		if (null == name || name.isEmpty())
+		if (null == name || name.isEmpty()) {
 			throw new IllegalArgumentException("[VPDSL - Java Class Naming Convention] No named element are not accepted");
+		}
 		
 		String javaClassName = name + context.toString();
 		

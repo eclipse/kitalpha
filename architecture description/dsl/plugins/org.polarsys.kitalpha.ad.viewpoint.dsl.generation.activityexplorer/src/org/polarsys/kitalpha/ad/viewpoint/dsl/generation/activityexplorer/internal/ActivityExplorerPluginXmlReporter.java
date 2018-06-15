@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,6 +33,7 @@ public class ActivityExplorerPluginXmlReporter implements PatternExecutionReport
 
 	private static final NullProgressMonitor Null_Progress_Monitor = new NullProgressMonitor();
 
+	@Override
 	public void executionFinished(String output, PatternContext context) {
 		String projectName = (String) context.getValue("activity.explorer.project.name");
 		IProject project =ResourcesPlugin.getWorkspace().getRoot().getProject(projectName);
@@ -58,10 +59,11 @@ public class ActivityExplorerPluginXmlReporter implements PatternExecutionReport
 				ByteArrayInputStream outputContent = new ByteArrayInputStream(content.getBytes());
 				try {
 					IFile file = project.getFile("plugin.xml");
-					if (file.exists())
+					if (file.exists()) {
 						file.setContents(outputContent, true, false, null);
-					else
+					} else {
 						file.create(outputContent, true, null);
+					}
 
 				} catch (CoreException e) {
 					e.printStackTrace();
@@ -77,6 +79,7 @@ public class ActivityExplorerPluginXmlReporter implements PatternExecutionReport
 		}
 	}
 	
+	@Override
 	public void loopFinished(String output, String outputWithCallBack,
 			PatternContext context, Map<String, Object> parameterValues) {
 	}

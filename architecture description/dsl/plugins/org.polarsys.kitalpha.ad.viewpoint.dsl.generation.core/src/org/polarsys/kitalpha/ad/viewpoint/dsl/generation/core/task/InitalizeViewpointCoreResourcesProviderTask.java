@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,6 +30,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.provider.resourceimpl.V
 
 public class InitalizeViewpointCoreResourcesProviderTask extends TaskProductionAdapter {
 
+	@Override
 	public void doExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
 		// Clean previous generation data.
@@ -50,8 +51,9 @@ public class InitalizeViewpointCoreResourcesProviderTask extends TaskProductionA
 			// in this case, the resource is not loaded, so try to load it.
 			ResourceSet rSet = new ResourceSetImpl();
 			Resource domainResource = rSet.getResource(domainModel.getUri(), true);
-			if (! domainResource.getContents().isEmpty())
+			if (! domainResource.getContents().isEmpty()) {
 				viewpoint = (Viewpoint) domainResource.getContents().get(0);
+			}
 		}
 
 		if (viewpoint != null)
@@ -59,8 +61,9 @@ public class InitalizeViewpointCoreResourcesProviderTask extends TaskProductionA
 			try {
 				ViewpointResourceProviderRegistry.getInstance().setViewpoint(viewpoint);
 			} catch (ViewpointResourceProviderException e) {
-				if (e.isCritical())
-					throw new InvocationException(e); 
+				if (e.isCritical()) {
+					throw new InvocationException(e);
+				} 
 			}
 		}
 	}

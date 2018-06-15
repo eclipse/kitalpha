@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -60,10 +60,12 @@ public class RelatedRulesDialog extends TitleAreaDialog {
 		super(parentShell);
 		this.handler = handler;
 		rules = new ArrayList<Rule>();
-		for (Rule r : values)
+		for (Rule r : values) {
 			rules.add(r);
+		}
 	}
 
+	@Override
 	protected Control createDialogArea(Composite parent) {
 		// top level composite
 		Composite parentComposite = (Composite) super.createDialogArea(parent);
@@ -119,8 +121,9 @@ public class RelatedRulesDialog extends TitleAreaDialog {
 		deleteBtn.addSelectionListener(new SelectionListener2() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				for (Object obj : ((IStructuredSelection) viewer.getSelection()).toArray())
+				for (Object obj : ((IStructuredSelection) viewer.getSelection()).toArray()) {
 					rules.remove(obj);
+				}
 				viewer.refresh();
 			}
 		});
@@ -174,12 +177,15 @@ public class RelatedRulesDialog extends TitleAreaDialog {
 		viewer.getList().setLayoutData(new GridData(GridData.FILL_BOTH));
 		viewer.setContentProvider(new IStructuredContentProvider() {
 
+			@Override
 			public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
 			}
 
+			@Override
 			public void dispose() {
 			}
 
+			@Override
 			public Object[] getElements(Object inputElement) {
 				if (inputElement instanceof Collection) {
 					return ((Collection<?>) inputElement).toArray();
@@ -197,6 +203,7 @@ public class RelatedRulesDialog extends TitleAreaDialog {
 		});
 		viewer.addSelectionChangedListener(new ISelectionChangedListener() {
 
+			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
 				updateButtons();
 			}
@@ -239,8 +246,9 @@ public class RelatedRulesDialog extends TitleAreaDialog {
 	private int max(int[] selectionIndices) {
 		int result = -1;
 		for (int n : selectionIndices) {
-			if (n > result)
+			if (n > result) {
 				result = n;
+			}
 		}
 		return result;
 	}
@@ -248,8 +256,9 @@ public class RelatedRulesDialog extends TitleAreaDialog {
 	private int min(int[] selectionIndices) {
 		int result = -1;
 		for (int n : selectionIndices) {
-			if (n < result || result < 0)
+			if (n < result || result < 0) {
 				result = n;
+			}
 		}
 		return result;
 	}

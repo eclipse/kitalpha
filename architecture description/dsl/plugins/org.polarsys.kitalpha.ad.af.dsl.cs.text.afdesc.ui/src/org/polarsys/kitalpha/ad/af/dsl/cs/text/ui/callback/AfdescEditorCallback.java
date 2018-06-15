@@ -195,6 +195,7 @@ public class AfdescEditorCallback extends NatureAddingEditorCallback {
 		if (!synchronizing) {
 			final XtextEditor current = editor;
 			Runnable runnable = new Runnable() {		
+				@Override
 				public void run() {			
 					if (!synchronizing) {
 						doSynchronize((IFile) current.getEditorInput().getAdapter(IFile.class));

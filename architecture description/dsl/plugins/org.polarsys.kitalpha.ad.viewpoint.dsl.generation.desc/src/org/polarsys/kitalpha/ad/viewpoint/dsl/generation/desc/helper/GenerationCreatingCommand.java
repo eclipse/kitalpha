@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.eclipse.egf.portfolio.genchain.extension.ExtensionHelper;
 import org.eclipse.egf.portfolio.genchain.extension.ExtensionProperties;
 import org.eclipse.egf.portfolio.genchain.generationChain.EcoreElement;
 import org.eclipse.egf.portfolio.genchain.generationChain.GenerationChain;
@@ -25,8 +26,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-
-import org.eclipse.egf.portfolio.genchain.extension.ExtensionHelper;
 
 /**
  * @author Thomas Guiu

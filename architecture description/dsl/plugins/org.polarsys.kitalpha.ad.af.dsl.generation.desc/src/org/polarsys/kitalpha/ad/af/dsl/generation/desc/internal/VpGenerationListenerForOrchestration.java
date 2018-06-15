@@ -28,8 +28,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.polarsys.kitalpha.ad.af.coredomain.af.model.AF;
 import org.polarsys.kitalpha.ad.af.dsl.as.model.afdesc.ArchitectureFramework;
 import org.polarsys.kitalpha.ad.af.dsl.as.model.afdesc.Viewpoints;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.configuration.VpDslConfigurationHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.event.AbstractGenerationEvent;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.event.listener.GenerationAdapter;
@@ -37,10 +39,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.event.type.ViewpointGen
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper.pde.PDEUtility;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper.viewpoint.PlatformViewpointHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper.viewpoint.ViewpointGenerationHelper;
-
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.configuration.VpDslConfigurationHelper;
-
-import org.polarsys.kitalpha.ad.af.coredomain.af.model.AF;
 
 /**
  * This listener allows to manage Viewpoint generation 
@@ -92,6 +90,7 @@ class VpGenerationListenerForOrchestration extends GenerationAdapter{
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void generationEnd(AbstractGenerationEvent event) {
 		if (_monitor.isCanceled()) {
 			throw new OperationCanceledException();

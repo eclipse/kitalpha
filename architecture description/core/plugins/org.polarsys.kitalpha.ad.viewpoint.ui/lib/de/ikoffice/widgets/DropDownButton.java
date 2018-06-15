@@ -29,6 +29,7 @@ public class DropDownButton extends Button {
 		setText("");
 		super.addListener(SWT.MouseDown, new Listener() {
 
+			@Override
 			public void handleEvent(Event event) {
 				Button button = (Button) event.widget;
 				Rectangle rect = button.getBounds();

@@ -94,6 +94,7 @@ public class LoadViewpointModelDialog extends TitleAreaDialog {
 				//nothing to do
 			}
 
+			@Override
 			public Object[] getElements(Object inputElement) {
 				if (inputElement instanceof Collection) {
 					return ((Collection<?>) inputElement).toArray();

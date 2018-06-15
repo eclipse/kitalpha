@@ -46,8 +46,9 @@ public class FilterGeneratorExtensionByTargetApplicationTask extends TaskProduct
 		
 		List<LauncherExtension> holdedExtensionPointContributions = new ArrayList<LauncherExtension>();
 		List<LauncherExtension> extensionPointContributionsValue = productionContext.getInputValue(collectedExtensionPointContributions, List.class);
-		if (extensionPointContributionsValue == null)
+		if (extensionPointContributionsValue == null) {
 			throw new IllegalArgumentException("Mondatory contract Collected.extension.point.contributions has no value.");
+		}
 		
 		EMFDomain domainModel = productionContext.getInputValue(VPDESC_MODEL, EMFDomain.class);
 		String targetApplication = getTargetApplication(domainModel);
@@ -114,9 +115,9 @@ public class FilterGeneratorExtensionByTargetApplicationTask extends TaskProduct
 		{
 			Viewpoint viewpoint = (Viewpoint) domainResource.getContents().get(0);
 			return VpDslConfigurationHelper.getTargetApplication(viewpoint);
-		}
-		else
+		} else {
 			ViewpointDslLogger.doLogWarning("Model is Empty !!");
+		}
 		
 		return null;
 	}

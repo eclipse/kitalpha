@@ -38,8 +38,9 @@ public class AFBundlesIntegration {
 	}
 	
 	public static AFBundlesIntegration getInstance(){
-		if (INSTANCE == null)
+		if (INSTANCE == null) {
 			INSTANCE = new AFBundlesIntegration();
+		}
 		
 		return INSTANCE;
 	}
@@ -55,8 +56,9 @@ public class AFBundlesIntegration {
 	 * @throws AFIntegrationException
 	 */
 	public void registerBundle(String bundleid) {
-		if (! this.bundles.contains(bundleid))
+		if (! this.bundles.contains(bundleid)) {
 			this.bundles.add(bundleid);
+		}
 	}
 	
 	/**
@@ -70,21 +72,24 @@ public class AFBundlesIntegration {
 		URI uri = null;
 		// Get the resource of the eObject
 		EObject rootContainer = EcoreUtil.getRootContainer(eObject, true);
-		if (rootContainer != null)
+		if (rootContainer != null) {
 			uri = rootContainer.eResource().getURI();
-		else
+		} else {
 			throw new AFIntegrationException(AFIntegrationException.Bundle);
+		}
 		
 		// get the bundle ID from the Resource URI
-		if (uri != null)
+		if (uri != null) {
 			bundleid = uri.segment(1);
-		else
+		} else {
 			throw new AFIntegrationException(AFIntegrationException.Bundle);
+		}
 
-		if (bundleid != null )
+		if (bundleid != null ) {
 			registerBundle(bundleid);
-		else
+		} else {
 			throw new AFIntegrationException(AFIntegrationException.Bundle);
+		}
 	}
 
 }

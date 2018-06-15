@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,9 +30,11 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common.java.JDTUtility;
 
 public class RuleJavaClassReporter implements PatternExecutionReporter {
 
+	@Override
 	public void executionFinished(String output, PatternContext context) {
 	}
 
+	@Override
 	public void loopFinished(String output, String outputWithCallBack,
 			PatternContext context, Map<String, Object> parameterValues) {
 		
@@ -40,19 +42,22 @@ public class RuleJavaClassReporter implements PatternExecutionReporter {
 		String projectName = (String) context.getValue(AfConstants.CONTRACT_PROJECT_NAME);
 		
 		if (ruleName == null || ruleName.length() == 0 || 
-				projectName == null || projectName.length() == 0)
+				projectName == null || projectName.length() == 0) {
 			return;
+		}
 		
 		String javaFile = JDTUtility.getValidClassName(ruleName) + ".java";
 		String[] folders = (projectName+".businessrules").split("\\.");
 		IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(projectName);
 		
-		if (! project.exists())
+		if (! project.exists()) {
 			return;
+		}
 		
 		IFolder srcFolder = project.getFolder("src");
-		if (! srcFolder.exists())
+		if (! srcFolder.exists()) {
 			return;
+		}
 		
 		IFolder theFolder = srcFolder;
 		for (String folder : folders) {
@@ -68,13 +73,14 @@ public class RuleJavaClassReporter implements PatternExecutionReporter {
 		
 		IFile theFile = theFolder.getFile(javaFile);
 		
-		if (! theFile.exists())
+		if (! theFile.exists()) {
 			try {
 				ByteArrayInputStream outputContent = new ByteArrayInputStream(output.getBytes());
 				theFile.create(outputContent, true, null);
 			} catch (CoreException e) {
 				e.printStackTrace();
 			}
+		}
 	}
 
 }

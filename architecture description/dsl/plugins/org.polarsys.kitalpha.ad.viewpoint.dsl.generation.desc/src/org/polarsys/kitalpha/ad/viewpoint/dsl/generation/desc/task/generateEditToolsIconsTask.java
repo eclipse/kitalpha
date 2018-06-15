@@ -58,8 +58,9 @@ public class generateEditToolsIconsTask extends TaskProductionAdapter {
 	}
 
 	public void generateToolsIcon(Viewpoint viewpoint, String dslvpIconFolder) throws ViewpointResourceException{
-		if (! GenerateIconPrecondition.generateIcon())
+		if (! GenerateIconPrecondition.generateIcon()) {
 			return ;
+		}
 		
 		GenmodelProviderImpl genmodelProvider = ViewpointResourceProviderRegistry.getInstance().getGenmodelProvider();
 		GenModel genModel = genmodelProvider.getGenModel();
@@ -68,9 +69,9 @@ public class generateEditToolsIconsTask extends TaskProductionAdapter {
 		String dslvpProjectName = viewpoint.eResource().getURI().segment(1);
 
 		// This is an adapted java code of the method doGenerate defined in the Pattern CreateChildIconForGenClass (plug-in : org.eclipse.egf.emf.pattern.edit)
-		for (GenClass genClass : genPackage.getGenClasses())
-			if (genModel.isCreationCommands() && genModel.isCreationIcons()) 
-				for (GenFeature feature : genClass.getCreateChildFeaturesIncludingDelegation()) 
+		for (GenClass genClass : genPackage.getGenClasses()) {
+			if (genModel.isCreationCommands() && genModel.isCreationIcons()) {
+				for (GenFeature feature : genClass.getCreateChildFeaturesIncludingDelegation()) {
 					for (GenClass childClass : genClass.getChildrenClasses(feature)) 
 					{
 						String iconSrcPath = getIconSourcePath(viewpoint, childClass);
@@ -80,6 +81,9 @@ public class generateEditToolsIconsTask extends TaskProductionAdapter {
 							copyImageFromTo(srcIconPath, genClass.getCreateChildIconFileName(feature,childClass));
 						}
 					}
+				}
+			}
+		}
 
 		// This is an adapted java code of the method doGenerate defined in the Pattern CreateChildIconForGenPackage 
 		// (plug-in : org.eclipse.egf.emf.pattern.edit)
@@ -95,11 +99,11 @@ public class generateEditToolsIconsTask extends TaskProductionAdapter {
 			}
 			if (packages != null)
 			{
-				for (Map.Entry<GenPackage,Map<GenClass,List<GenClass.ChildCreationData>>> packageEntry : packages.entrySet()) 
+				for (Map.Entry<GenPackage,Map<GenClass,List<GenClass.ChildCreationData>>> packageEntry : packages.entrySet()) {
 					for (Map.Entry<GenClass,List<GenClass.ChildCreationData>> classEntry : packageEntry.getValue().entrySet()) 
 					{
 						GenClass genClass=classEntry.getKey();
-						for (GenClass.ChildCreationData childCreationData : classEntry.getValue()) 
+						for (GenClass.ChildCreationData childCreationData : classEntry.getValue()) {
 							if (childCreationData.createClassifier instanceof GenClass && 
 									( childCreationData.delegatedFeature == null || 
 											classEntry.getKey().getAllGenFeatures().contains(childCreationData.delegatedFeature))) 
@@ -113,7 +117,9 @@ public class generateEditToolsIconsTask extends TaskProductionAdapter {
 									copyImageFromTo(srcIconPath, genClass.getCreateChildIconFileName(genModel,feature,childClass));
 								}
 							}
+						}
 					}
+				}
 			}
 		}
 	}
@@ -147,8 +153,9 @@ public class generateEditToolsIconsTask extends TaskProductionAdapter {
 				for (Class iClass : classList)
 				{
 					String ecoreClassName = childClass.getEcoreClass().getName();
-					if (iClass.getName().equalsIgnoreCase(ecoreClassName))
+					if (iClass.getName().equalsIgnoreCase(ecoreClassName)) {
 						return iClass.getIcon();
+					}
 
 				}
 			}

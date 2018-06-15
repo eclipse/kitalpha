@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,16 +40,18 @@ public abstract class AbstractAspectExtensionFilter implements IExtensionFilter 
 	public boolean accept(Object model) {
 		Viewpoint viewpoint = null;
 		
-		if (model instanceof Viewpoint)
+		if (model instanceof Viewpoint) {
 			viewpoint = (Viewpoint) model;
+		}
 		
 		if (model instanceof EMFDomain)
 		{
 			EMFDomain domainModel = (EMFDomain) model;
 			ResourceSet rSet = new ResourceSetImpl();
 			Resource domainResource = rSet.getResource(domainModel.getUri(), true);
-			if (! domainResource.getContents().isEmpty())
+			if (! domainResource.getContents().isEmpty()) {
 				viewpoint = (Viewpoint) domainResource.getContents().get(0);
+			}
 		}
 		
 		if (viewpoint != null)
@@ -57,8 +59,9 @@ public abstract class AbstractAspectExtensionFilter implements IExtensionFilter 
 			for (Aspect aspect : viewpoint.getVP_Aspects()) 
 			{
 				boolean accept = acceptAspect(aspect);
-				if (accept)
+				if (accept) {
 					return true;
+				}
 			}
 		}
 		

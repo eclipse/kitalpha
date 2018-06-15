@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -28,23 +28,28 @@ public class DataQualifiedNameConverter implements IQualifiedNameConverter{
 	
 	@Override
 	public String toString(QualifiedName qualifiedName) {
-		if (qualifiedName == null)
+		if (qualifiedName == null) {
 			throw new IllegalArgumentException("Qualified name cannot be null");
+		}
 		return qualifiedName.toString(getDelimiter());
 	}
 
 	@Override
 	public QualifiedName toQualifiedName(String qualifiedNameAsString) {
-		if (qualifiedNameAsString == null)
+		if (qualifiedNameAsString == null) {
 			throw new IllegalArgumentException("Qualified name cannot be null");
-		if (qualifiedNameAsString.equals(""))
+		}
+		if (qualifiedNameAsString.equals("")) {
 			throw new IllegalArgumentException("Qualified name cannot be empty");
-		if (Strings.isEmpty(getDelimiter()))
+		}
+		if (Strings.isEmpty(getDelimiter())) {
 			return QualifiedName.create(qualifiedNameAsString);
+		}
 		List<String> segs = getDelimiter().length() == 1 ? Strings.split(qualifiedNameAsString, getDelimiter()
 				.charAt(0)) : Strings.split(qualifiedNameAsString, getDelimiter());
-		if (segs.size()>=2 && segs.get(0).equals(ECORE_PREFIX))
+		if (segs.size()>=2 && segs.get(0).equals(ECORE_PREFIX)) {
 			QualifiedName.create(segs.remove(0));
+		}
 	    return QualifiedName.create(segs);
 	}
 	

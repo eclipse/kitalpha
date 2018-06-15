@@ -37,6 +37,7 @@ public class GenerateArchitectureFrameworkAction implements IEditorActionDelegat
 		super();
 	}
 		
+	@Override
 	public void selectionChanged(IAction action, ISelection selection) {
 		if (currentEditor != null) {
 			IFile file = currentEditor.getEditorInput().getAdapter(IFile.class);
@@ -44,6 +45,7 @@ public class GenerateArchitectureFrameworkAction implements IEditorActionDelegat
 		}
 	}
 
+	@Override
 	public void run(IAction action) {
 		if (currentEditor != null) {
 			IFile file = currentEditor.getEditorInput().getAdapter(IFile.class);
@@ -51,6 +53,7 @@ public class GenerateArchitectureFrameworkAction implements IEditorActionDelegat
 		}
 	}
 
+	@Override
 	public void setActiveEditor(IAction action, IEditorPart targetEditor) {
 		if (targetEditor instanceof XtextEditor) {
 			currentEditor = (XtextEditor) targetEditor;

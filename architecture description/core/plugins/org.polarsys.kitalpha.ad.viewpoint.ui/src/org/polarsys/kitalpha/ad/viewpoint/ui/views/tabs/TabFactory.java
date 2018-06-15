@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,6 +31,7 @@ public class TabFactory {
 		IConfigurationElement[] elts = Platform.getExtensionRegistry().getConfigurationElementsFor("org.polarsys.kitalpha.ad.viewpoint.ui.viewpointview.tab");
 		Arrays.sort(elts, new Comparator<IConfigurationElement>() {
 
+			@Override
 			public int compare(IConfigurationElement o1, IConfigurationElement o2) {
 				int attribute2 = Integer.parseInt(o2.getAttribute("weight"));
 				int attribute1 = Integer.parseInt(o1.getAttribute("weight"));
@@ -39,8 +40,9 @@ public class TabFactory {
 		});
 
 		for (IConfigurationElement elt : elts) {
-			if (!addTab(elt, viewpointId))
+			if (!addTab(elt, viewpointId)) {
 				continue;
+			}
 			try {
 				AbstractTab tab = (AbstractTab) elt.createExecutableExtension("class");
 				tab.setSite(site);
@@ -55,14 +57,17 @@ public class TabFactory {
 
 	private boolean addTab(IConfigurationElement elt, String viewpointId) {
 		String attribute = elt.getAttribute("targetViewpointIds");
-		if (attribute == null)
+		if (attribute == null) {
 			return true;
+		}
 		attribute = attribute.trim();
-		if ("".equals(attribute))
+		if ("".equals(attribute)) {
 			return true;
+		}
 		for (String id : attribute.split(",")) {
-			if (id.trim().equals(viewpointId))
+			if (id.trim().equals(viewpointId)) {
 				return true;
+			}
 		}
 		return false;
 	}

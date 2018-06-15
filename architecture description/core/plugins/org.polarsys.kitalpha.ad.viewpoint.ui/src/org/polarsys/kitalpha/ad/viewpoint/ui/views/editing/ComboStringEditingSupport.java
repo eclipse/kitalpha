@@ -53,6 +53,7 @@ public class ComboStringEditingSupport extends AbstractStringEditingSupport {
 		return Arrays.asList(cellEditor.getItems()).indexOf(value);
 	}
 
+	@Override
 	protected final void doSetValue(Object element, Object value) {
 		Integer value2 = (Integer) value;
 		if (value2 >= 0) {

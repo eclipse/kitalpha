@@ -45,6 +45,7 @@ public class NewJavaRuleWizardPage extends NewElementWizardPage {
 	/*
 	 * @see WizardPage#createControl
 	 */
+	@Override
 	public void createControl(Composite parent) {
 		initializeDialogUnits(parent);
 

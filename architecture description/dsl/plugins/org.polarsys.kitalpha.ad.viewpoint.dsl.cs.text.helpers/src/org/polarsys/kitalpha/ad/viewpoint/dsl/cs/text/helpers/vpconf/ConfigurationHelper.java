@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -52,11 +52,12 @@ public class ConfigurationHelper {
 	public static String getTargetApplication(EObject object) {
 		Configuration configuration = getViewpointConfiguration(object);
 		if (configuration != null) {
-			for (ConfigurationElement configurationElement : configuration.getVpConfigurationElements())
+			for (ConfigurationElement configurationElement : configuration.getVpConfigurationElements()) {
 				if (configurationElement instanceof TargetApplication) {
 					TargetApplication targetApplication = (TargetApplication) configurationElement;
 					return targetApplication.getType();
 				}
+			}
 		}
 		return null;
 	}
@@ -69,11 +70,12 @@ public class ConfigurationHelper {
 	public static String getRootProjectName(EObject object) {
 		Configuration configuration = getViewpointConfiguration(object);
 		if (configuration != null) {
-			for (ConfigurationElement configurationElement : configuration.getVpConfigurationElements())
+			for (ConfigurationElement configurationElement : configuration.getVpConfigurationElements()) {
 				if (configurationElement instanceof GenerationConfiguration) {
 					GenerationConfiguration generationConfiguration = (GenerationConfiguration) configurationElement;
 					return generationConfiguration.getProjectName();
 				}
+			}
 		}
 		return null;
 	}
@@ -87,11 +89,12 @@ public class ConfigurationHelper {
 		Configuration configuration = getViewpointConfiguration(object);
 		if (configuration != null) {
 			for (ConfigurationElement configurationElement : configuration
-					.getVpConfigurationElements())
+					.getVpConfigurationElements()) {
 				if (configurationElement instanceof GenerationConfiguration) {
 					GenerationConfiguration generationConfiguration = (GenerationConfiguration) configurationElement;
 					return generationConfiguration.getNsuri();
 				}
+			}
 		}
 		return null;
 	}

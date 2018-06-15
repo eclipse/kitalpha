@@ -90,12 +90,14 @@ public class DataGlobalScopeProvider extends DefaultGlobalScopeProvider {
 		Multimap<QualifiedName, IEObjectDescription> map = LinkedHashMultimap.create(5,2);
 		Iterable<IEObjectDescription> exportedObjectsIterator = Collections.emptyList();
 		for(IEObjectDescription description: getExternalImportObjectDescription(r, exportedObjectsIterator)) {
-			if (map == null)
+			if (map == null) {
 				map = LinkedHashMultimap.create(5,2);
-			if (ignoreCase)
+			}
+			if (ignoreCase) {
 				map.put(description.getName().toLowerCase(), description);
-			else
+			} else {
 				map.put(description.getName(), description);
+			}
 		}
 		
 		if (multiMapDesc != null && !multiMapDesc.isEmpty()){

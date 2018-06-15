@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,15 +47,18 @@ public class RuleIDTypeEditingSupport extends BasicEditingSupport {
 	protected Object getValue(Object element) {
 		String implementation = ((Rule) element).getImplementation();
 		String name = ElementDescriptor.getName(implementations, implementation);
-		if (name == null)
+		if (name == null) {
 			return new Integer(0);
+		}
 		return Arrays.asList(cellEditor.getItems()).indexOf(name);
 	}
 
+	@Override
 	protected final void doSetValue(Object element, Object value) {
 		Integer value2 = (Integer) value;
-		if (value2 == -1)
+		if (value2 == -1) {
 			return;
+		}
 		String name = cellEditor.getItems()[value2];
 		((Rule) element).setImplementation(ElementDescriptor.getImplementation(implementations, name));
 	}

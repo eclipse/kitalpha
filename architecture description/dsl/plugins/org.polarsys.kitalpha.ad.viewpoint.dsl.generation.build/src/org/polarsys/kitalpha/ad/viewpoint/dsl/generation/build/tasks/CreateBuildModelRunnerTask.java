@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -44,16 +44,19 @@ public class CreateBuildModelRunnerTask implements ITaskProduction {
 	public void doExecute(ITaskProductionContext productionContext,IProgressMonitor monitor) throws InvocationException {
 		//build model path
 		String buildModelPath = productionContext.getInputValue(GeneratorConstants.BUILD_MODEL_PATH, String.class);
-		if (buildModelPath == null || "".equals(buildModelPath))
+		if (buildModelPath == null || "".equals(buildModelPath)) {
 			throw new InvocationException(Messages.GeneratorError_BuildModelNotFound);
+		}
 		//root project name
 		String rootProjectName = productionContext.getInputValue(GeneratorConstants.LVPS_ROOT_PROJECT_NAME, String.class);
-		if (rootProjectName == null || "".equals(rootProjectName))
+		if (rootProjectName == null || "".equals(rootProjectName)) {
 			throw new InvocationException(Messages.GeneratorError_ProjectNameNotFound);
+		}
 		//viewpoint short name
 		String lvpsShortName = productionContext.getInputValue(GeneratorConstants.LVPS_SHORT_NAME, String.class);
-		if (lvpsShortName == null || "".equals(lvpsShortName))
+		if (lvpsShortName == null || "".equals(lvpsShortName)) {
 			throw new InvocationException(Messages.GeneratorError_ViewpointShortNameNotFound);
+		}
 		//generate build runner resource
 		String projectId = rootProjectName + "." + "releng" ;
 		JavaUtil.createFolder(projectId, "egf");	

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -57,6 +57,7 @@ public class ActivityExplorerTemplateVariableResolver extends CommonTemplateVari
 			super(PAGE_NAME, PAGE_NAME_DESCRIPTION);
 		}
 		
+		@Override
 		protected String resolve(TemplateContext context) {
 			initIdenxes(context);
 			return computeId(context, true, "page_", pageIndexes);
@@ -69,6 +70,7 @@ public class ActivityExplorerTemplateVariableResolver extends CommonTemplateVari
 			super(PAGE_INDEX, PAGE_INDEX_DESCRIPTION);
 		}
 		
+		@Override
 		protected String resolve(TemplateContext context) {
 			initIdenxes(context);
 			return String.valueOf(computeIndex(context, false, pageIndexes));
@@ -81,6 +83,7 @@ public class ActivityExplorerTemplateVariableResolver extends CommonTemplateVari
 			super(SECTION_NAME, SECTION_NAME_DESCRIPTION);
 		}
 		
+		@Override
 		protected String resolve(TemplateContext context) {
 			initIdenxes(context);
 			return computeId(context, true, "section_", sectionIndexes);
@@ -93,6 +96,7 @@ public class ActivityExplorerTemplateVariableResolver extends CommonTemplateVari
 			super(SECTION_INDEX, SECTION_INDEX_DESCRIPTION);
 		}
 		
+		@Override
 		protected String resolve(TemplateContext context) {
 			initIdenxes(context);
 			return String.valueOf(computeIndex(context, false, sectionIndexes));
@@ -106,6 +110,7 @@ public class ActivityExplorerTemplateVariableResolver extends CommonTemplateVari
 			super(ACTIVITY_NAME, ACTIVITY_NAME_DESCRIPTION);
 		}
 		
+		@Override
 		protected String resolve(TemplateContext context) {
 			initIdenxes(context);
 			return computeId(context, true, "activity_", activityIndexes);
@@ -118,6 +123,7 @@ public class ActivityExplorerTemplateVariableResolver extends CommonTemplateVari
 			super(ACTIVITY_INDEX, ACTIVITY_INDEX_DESCRIPTION);
 		}
 		
+		@Override
 		protected String resolve(TemplateContext context) {
 			initIdenxes(context);
 			return String.valueOf(computeIndex(context, false, activityIndexes));

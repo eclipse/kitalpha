@@ -41,10 +41,12 @@ public class VpspecJavaValidator extends AbstractVpspecJavaValidator {
 		if (!aspects.isEmpty()) {
 			for (String type : types) {
 				int index = types.indexOf(type);
-				if (type.equals(access.getViewpointAccess().getTypeDiagramsKeyword_15_0_0().getValue()) && !(aspects.get(index) instanceof DiagramSet))
+				if (type.equals(access.getViewpointAccess().getTypeDiagramsKeyword_15_0_0().getValue()) && !(aspects.get(index) instanceof DiagramSet)) {
 					error(Messages.VpspecJavaValidator_TypeMismatch, VpspecPackage.Literals.VIEWPOINT__VP_ASPECTS, index);
-				if (type.equals(access.getViewpointAccess().getTypeUIKeyword_14_0_0().getValue()) && !(aspects.get(index) instanceof UIDescription))
+				}
+				if (type.equals(access.getViewpointAccess().getTypeUIKeyword_14_0_0().getValue()) && !(aspects.get(index) instanceof UIDescription)) {
 					error(Messages.VpspecJavaValidator_TypeMismatch, VpspecPackage.Literals.VIEWPOINT__VP_ASPECTS, index);
+				}
 			}
 			EList<Viewpoint> dependencies = vp.getDependencies();
 			for (Viewpoint v : dependencies) {

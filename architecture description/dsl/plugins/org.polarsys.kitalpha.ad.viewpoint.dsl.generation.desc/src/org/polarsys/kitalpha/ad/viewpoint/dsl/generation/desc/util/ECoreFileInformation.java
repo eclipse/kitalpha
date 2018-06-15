@@ -63,10 +63,11 @@ public class ECoreFileInformation {
 	}
 	
 	private String getCorrectECoreFileName(String fileName){
-		if (fileName.endsWith("."+Constant.ECORE_FILE_EXTENSION))
+		if (fileName.endsWith("."+Constant.ECORE_FILE_EXTENSION)) {
 			return fileName;
-		else
+		} else {
 			return fileName+"."+Constant.ECORE_FILE_EXTENSION;
+		}
 	}
 	
 	private boolean checkInforamtions(){

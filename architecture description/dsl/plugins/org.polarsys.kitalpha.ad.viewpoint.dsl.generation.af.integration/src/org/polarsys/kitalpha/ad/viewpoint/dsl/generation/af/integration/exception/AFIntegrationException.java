@@ -43,8 +43,9 @@ public class AFIntegrationException extends Exception {
 				: getComponentName(componentid));
 
 		_component_id = componentid;
-		if (orginalStack != null && orginalStack.length > 0)
+		if (orginalStack != null && orginalStack.length > 0) {
 			this.setStackTrace(orginalStack);
+		}
 	}
 	
 	public AFIntegrationException(int componentid, String main_msg) {

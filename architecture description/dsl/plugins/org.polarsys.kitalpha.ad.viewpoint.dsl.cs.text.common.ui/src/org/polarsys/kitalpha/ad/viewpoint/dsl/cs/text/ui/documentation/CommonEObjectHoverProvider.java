@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -47,10 +47,12 @@ public class CommonEObjectHoverProvider extends DefaultEObjectHoverProvider {
 			ITextViewer viewer, final IRegion region) {
 		return new IInformationControlCreatorProvider() {
 
+			@Override
 			public IInformationControlCreator getHoverControlCreator() {
 				return CommonEObjectHoverProvider.this.getHoverControlCreator();
 			}
 
+			@Override
 			public Object getInfo() {
 				return getExtendedHoverInfo(object, region, null);
 			}
@@ -70,8 +72,9 @@ public class CommonEObjectHoverProvider extends DefaultEObjectHoverProvider {
 		};
 		
 	protected String getAnnotatedDocumentationAsHtml(EObject o) {
-		if (!hasHover(o))
+		if (!hasHover(o)) {
 			return null;
+		}
 		StringBuffer buffer = new StringBuffer();
 		buffer.append (getFirstLine(o));
 		String documentation = getAnnotatedDocumentation(o);

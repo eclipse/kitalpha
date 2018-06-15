@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,8 +25,9 @@ public class GenerateIconPrecondition {
 	public static boolean generateIcon(){
 		GenmodelProviderImpl genmodelProvider = ViewpointResourceProviderRegistry.getInstance().getGenmodelProvider();
 		/** If the GenModel provider is not initialized, so GenModel is not available in the workspace */
-		if (genmodelProvider == null)
+		if (genmodelProvider == null) {
 			return false;
+		}
 		
 		/** If we are here, it means that GenModel exist in the workspace. So we have to check 
 		    if the Edit plug-in exists too */ 

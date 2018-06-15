@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -33,8 +33,9 @@ public class RunBuildModelTask implements ITaskProduction {
 	public void doExecute(ITaskProductionContext productionContext,IProgressMonitor monitor) throws InvocationException {
 		//build runner uri
 		String buildRunnerURI = productionContext.getInputValue(GeneratorConstants.BUILD_RUNNER_URI, String.class);
-		if (buildRunnerURI == null || "".equals(buildRunnerURI))
+		if (buildRunnerURI == null || "".equals(buildRunnerURI)) {
 			throw new InvocationException(Messages.GeneratorError_BuildModelNotFound);
+		}
 		FactoryComponent fc = (FactoryComponent) new TargetPlatformResourceSet().getEObject(URI.createURI(buildRunnerURI), true);
 		try {
 			RunActivityHelper.run(fc, monitor);

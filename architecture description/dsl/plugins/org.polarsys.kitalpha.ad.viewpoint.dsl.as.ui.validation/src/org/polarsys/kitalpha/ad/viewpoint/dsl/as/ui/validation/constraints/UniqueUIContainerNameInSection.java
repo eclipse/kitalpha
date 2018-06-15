@@ -27,11 +27,13 @@ public class UniqueUIContainerNameInSection implements IAdditionalConstraint {
 	private String duplicatedName = "";
 	
 	// Select only SubContainers
+	@Override
 	public boolean isObjectInScope(Object object) {
 		return (object instanceof UIContainer 
 				&& ((EObject)object).eContainer() instanceof UIContainer);
 	}
 
+	@Override
 	public ValidationStatus validationRules(Object data) {
 		duplicatedName = "";
 		
@@ -73,12 +75,14 @@ public class UniqueUIContainerNameInSection implements IAdditionalConstraint {
 
 	private UIContainer getSection(UIContainer uiField){
 		UIContainer result = (UIContainer) uiField.eContainer();
-		while (!(result.eContainer() instanceof UI))
+		while (!(result.eContainer() instanceof UI)) {
 			result = (UIContainer) result.eContainer();
+		}
 		
 		return result;
 	}
 
+	@Override
 	public String getMessage(ValidationStatus status, Object eObject) {
 		return Messages.bind(Messages.Validation_UIContainer_Unique_NameInSection, duplicatedName);
 	}

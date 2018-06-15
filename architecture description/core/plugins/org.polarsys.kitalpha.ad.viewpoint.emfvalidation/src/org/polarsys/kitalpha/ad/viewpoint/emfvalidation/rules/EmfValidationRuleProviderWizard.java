@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2009-2010 Thales Corporate Services S.A.S.
+ * Copyright (c) 2009, 2018 Thales Corporate Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,10 +26,12 @@ import org.polarsys.kitalpha.ad.viewpoint.ui.integration.rules.RuleProviderWizar
  */
 public class EmfValidationRuleProviderWizard implements RuleProviderWizard {
 
+	@Override
 	public String getType() {
 		return EmfValidationRuleProvider.ID;
 	}
 
+	@Override
 	public void openWizard(Shell shell, IRuleHandler handler, IProject project) {
 
 		NewElementCreationWizard wizard = new NewEmfValidationRuleCreationWizard(handler);

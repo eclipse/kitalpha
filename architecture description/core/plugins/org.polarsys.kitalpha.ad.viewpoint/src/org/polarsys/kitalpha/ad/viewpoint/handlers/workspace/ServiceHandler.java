@@ -45,6 +45,7 @@ public class ServiceHandler extends WorkspaceManager.ElementHandler implements I
 		return serviceSet;
 	}
 
+	@Override
 	public void removeServices(List<Service> services) {
 		for (Service service : services) {
 			if (!isRemovable(service)){
@@ -56,6 +57,7 @@ public class ServiceHandler extends WorkspaceManager.ElementHandler implements I
 		saveModel();
 	}
 
+	@Override
 	public void createService(String id, String name, String type, List<Rule> rules) {
 		if (getWorkspace() == null){
 			throw new IllegalStateException("no workspace available");
@@ -79,6 +81,7 @@ public class ServiceHandler extends WorkspaceManager.ElementHandler implements I
 		return set;
 	}
 
+	@Override
 	public List<ViewpointElement> getElements() {
 		List<? extends ViewpointElement> toRemove = null;
 		List<? extends ViewpointElement> toAdd = null;
@@ -97,6 +100,7 @@ public class ServiceHandler extends WorkspaceManager.ElementHandler implements I
 		return computeElements(getViewpoint().getServices(), toRemove, toAdd);
 	}
 
+	@Override
 	public List<ViewpointElement> getElementsFromParents() {
 		Map<String, ViewpointElement> name2prop = new HashMap<String, ViewpointElement>();
 		for (Viewpoint vp : getViewpoint().getAllParents()) {

@@ -91,6 +91,7 @@ public class SiriusTab extends AbstractTab {
 			this.table = table;
 		}
 
+		@Override
 		public void doWidgetSelected(SelectionEvent e) {
 			TableColumn currentSortColumn = table.getSortColumn();
 			TableColumn newSortColumn = (TableColumn) e.getSource();
@@ -204,12 +205,14 @@ public class SiriusTab extends AbstractTab {
 
 		odesignViewer.addSelectionChangedListener(new ISelectionChangedListener() {
 
+			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
 				updateButtons((IStructuredSelection) event.getSelection());
 			}
 		});
 	}
 
+	@Override
 	public void init() {
 		IRepresentationHandler representationHandler = modelManager.getRepresentationHandler();
 		if (representationHandler != null){

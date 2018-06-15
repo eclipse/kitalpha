@@ -32,53 +32,63 @@ public class EdgeDomain implements IAdditionalConstraint {
 	private static final int Flag_BothQueryAndSourceLocator = 40;
 	private static final int Flag_BothQueryAndTargetLocator = 41;
 
+	@Override
 	public boolean isObjectInScope(Object object) {
 		return object instanceof Edge;
 	}
 
+	@Override
 	public ValidationStatus validationRules(Object data) {
 		Edge edge = (Edge) data;
 		EdgeDomainAssociation domain = edge.getThe_domain();
 		
-		if (domain == null)
+		if (domain == null) {
 			return ValidationStatus.getErrorStatusWithRuleFlag(Flag_NullDomain);
+		}
 		
 		if (domain.getTarget_Locator() == null && 
 				(domain.getTarget_query() == null || (
 						domain.getTarget_query() != null && 
-						domain.getTarget_query().trim().length() == 0)))
+						domain.getTarget_query().trim().length() == 0))) {
 			return ValidationStatus.getErrorStatusWithRuleFlag(Flag_NeitherQueryAndTargetLocator);
+		}
 
 		if (domain.getTarget_Locator() != null && 
-				(domain.getTarget_query() != null && domain.getTarget_query().trim().length() > 0))
+				(domain.getTarget_query() != null && domain.getTarget_query().trim().length() > 0)) {
 			return ValidationStatus.getErrorStatusWithRuleFlag(Flag_BothQueryAndTargetLocator);
+		}
 
 		if (domain instanceof EdgeDomainElement)
 		{
 			EdgeDomainElement eDomain = (EdgeDomainElement) domain;
 			
-			if (eDomain.getThe_Domain() == null)
+			if (eDomain.getThe_Domain() == null) {
 				return ValidationStatus.getErrorStatusWithRuleFlag(Flag_NullDomainClass);
+			}
 			
 			if (eDomain.getSource_Locator() == null && 
 					(eDomain.getSource_query() == null || (
 							eDomain.getSource_query() != null && 
-							eDomain.getSource_query().trim().length() == 0)))
+							eDomain.getSource_query().trim().length() == 0))) {
 				return ValidationStatus.getErrorStatusWithRuleFlag(Flag_NeitherQueryAndSourceLocator);
+			}
 
 			if (eDomain.getSource_Locator() != null && 
-					(eDomain.getSource_query() != null && eDomain.getSource_query().trim().length() > 0))
+					(eDomain.getSource_query() != null && eDomain.getSource_query().trim().length() > 0)) {
 				return ValidationStatus.getErrorStatusWithRuleFlag(Flag_BothQueryAndSourceLocator);
+			}
 		}
 		
 		return ValidationStatus.Ok;
 	}
 
+	@Override
 	public String getMessage(ValidationStatus status, Object object) {
 		String edgeName = ((DiagramElement) object).getName();
 
-		if (edgeName == null || edgeName.trim().length() == 0)
+		if (edgeName == null || edgeName.trim().length() == 0) {
 			edgeName = "Edge ";
+		}
 		
 		int flag = Integer.parseInt(status.getRuleFlag().toString());
 		

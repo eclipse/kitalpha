@@ -31,6 +31,7 @@ public class ViewpointRepresentationMetamodelHandler extends ViewpointManager.El
 		super(viewpoint, mgr);
 	}
 
+	@Override
 	public void removeRepresentations(List<RepresentationElement> elts) {
 		if (getResourceManager().isReadOnly()){
 			throw new IllegalStateException();
@@ -41,6 +42,7 @@ public class ViewpointRepresentationMetamodelHandler extends ViewpointManager.El
 		saveModel();
 	}
 
+	@Override
 	public void addRepresentations(List<RepresentationElement> elts) {
 		if (getResourceManager().isReadOnly()){
 			throw new IllegalStateException();
@@ -50,14 +52,17 @@ public class ViewpointRepresentationMetamodelHandler extends ViewpointManager.El
 		saveModel();
 	}
 
+	@Override
 	public List<ViewpointElement> getElements() {
 		throw new UnsupportedOperationException();
 	}
 
+	@Override
 	public List<ViewpointElement> getElementsFromParents() {
 		throw new UnsupportedOperationException();
 	}
 
+	@Override
 	public Representation getRepresentation() {
 		return getViewpoint().getRepresentation();
 	}

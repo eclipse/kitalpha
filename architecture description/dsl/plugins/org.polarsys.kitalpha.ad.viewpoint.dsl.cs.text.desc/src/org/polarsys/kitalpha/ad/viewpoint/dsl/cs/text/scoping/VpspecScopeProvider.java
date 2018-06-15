@@ -34,6 +34,7 @@ public class VpspecScopeProvider extends AbstractDeclarativeScopeProvider {
 		final EObject context2 = context;
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d) {
 						return (d.getEObjectOrProxy() instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint
 								&& !d.getEObjectOrProxy().equals(context2));
@@ -45,6 +46,7 @@ public class VpspecScopeProvider extends AbstractDeclarativeScopeProvider {
 		final EObject context2 = context;
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d) {
 						return (d.getEObjectOrProxy() instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint 
 								&& !d.getEObjectOrProxy().equals(context2));
@@ -55,6 +57,7 @@ public class VpspecScopeProvider extends AbstractDeclarativeScopeProvider {
 	IScope scope_Viewpoint_VP_Data(EObject context, EReference reference) {
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d) {
 						return (d.getEObjectOrProxy() instanceof Data);
 					}
@@ -64,6 +67,7 @@ public class VpspecScopeProvider extends AbstractDeclarativeScopeProvider {
 	IScope scope_Viewpoint_VP_Aspects(EObject context, EReference reference) {
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d) {
 						return (d.getEObjectOrProxy() instanceof Aspect || d.getEObjectOrProxy() instanceof Services);
 					}
@@ -74,6 +78,7 @@ public class VpspecScopeProvider extends AbstractDeclarativeScopeProvider {
 		final EObject context2 = context;
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d) {
 						return (d.getEObjectOrProxy() instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint && 
 								!d.getEObjectOrProxy().equals(context2));

@@ -52,6 +52,7 @@ public class GenchainRunOperation extends AbstractGenerationOperation implements
 		GenerationEventManager.getInstance().addGenerationListener(this);
 	}
 	
+	@Override
 	protected void execute(IProgressMonitor monitor) throws CoreException, InvocationTargetException, InterruptedException {
 		setMonitor(monitor);
 		action.createGenerationchainArtefacts();
@@ -75,8 +76,9 @@ public class GenchainRunOperation extends AbstractGenerationOperation implements
 			generationChain = (GenerationChain) gcSet.getEObject(uri, true);
 			// Fire main feature creation 
 			try {
-				if (set == null)
+				if (set == null) {
 					set = new TargetPlatformResourceSet();
+				}
 				
 				generateFeaturePlugin(set, generationChain, _monitor);
 			} catch (CoreException e) {

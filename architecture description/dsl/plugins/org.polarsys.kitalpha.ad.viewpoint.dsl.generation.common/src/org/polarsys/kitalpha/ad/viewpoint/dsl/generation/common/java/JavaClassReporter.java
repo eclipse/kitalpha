@@ -34,10 +34,12 @@ public class JavaClassReporter implements PatternExecutionReporter {
 	
 	protected String collectedOutput = "";  //$NON-NLS-1$
 	
+	@Override
 	public final void executionFinished(String output, PatternContext context) {
 		Integer saveTime 	 = (Integer)context.getValue("savetime"); //$NON-NLS-1$
-		if (saveTime == null || ! whenExecutionFinished.equals(saveTime))
+		if (saveTime == null || ! whenExecutionFinished.equals(saveTime)) {
 			return;
+		}
 		
 		// Get parameters values
 		String  projectName = (String)context.getValue("projectname"); //$NON-NLS-1$
@@ -45,12 +47,15 @@ public class JavaClassReporter implements PatternExecutionReporter {
 		String  className 	 = (String)context.getValue("classname"); //$NON-NLS-1$
 		
 		// check if parameters have values
-		if (projectName == null || projectName.trim().length() == 0)
+		if (projectName == null || projectName.trim().length() == 0) {
 			throw new IllegalArgumentException(Messages.JavaReporter_Parameters_NameNotNull_Project);
-		if (packageName == null || packageName.trim().length() == 0)
+		}
+		if (packageName == null || packageName.trim().length() == 0) {
 			throw new IllegalArgumentException(Messages.JavaReporter_Parameters_NameNotNull_Package);
-		if (className == null || className.trim().length() == 0)
+		}
+		if (className == null || className.trim().length() == 0) {
 			throw new IllegalArgumentException(Messages.JavaReporter_Parameters_NameNotNull_Class);
+		}
 		
 		// save java class
 		if (collectedOutput != null && collectedOutput.trim().length() != 0){
@@ -61,6 +66,7 @@ public class JavaClassReporter implements PatternExecutionReporter {
 		}
 	}
 
+	@Override
 	public void loopFinished(String output, String outputWithCallBack,
 			PatternContext context, Map<String, Object> parameterValues) {
 		Integer saveTime 	 = (Integer)context.getValue("savetime"); //$NON-NLS-1$
@@ -75,12 +81,15 @@ public class JavaClassReporter implements PatternExecutionReporter {
 		String  className 	 = (String)context.getValue("classname"); //$NON-NLS-1$
 		
 		// check if parameters have values
-		if (projectName == null || projectName.trim().length() == 0)
+		if (projectName == null || projectName.trim().length() == 0) {
 			throw new IllegalArgumentException(Messages.JavaReporter_Parameters_NameNotNull_Project);
-		if (packageName == null || packageName.trim().length() == 0)
+		}
+		if (packageName == null || packageName.trim().length() == 0) {
 			throw new IllegalArgumentException(Messages.JavaReporter_Parameters_NameNotNull_Package);
-		if (className == null || className.trim().length() == 0)
+		}
+		if (className == null || className.trim().length() == 0) {
 			throw new IllegalArgumentException(Messages.JavaReporter_Parameters_NameNotNull_Class);
+		}
 		
 		// save java class
 		if (whenLoopFinished.equals(saveTime)){
@@ -90,8 +99,9 @@ public class JavaClassReporter implements PatternExecutionReporter {
 			
 			String mergedcode = output;
 			
-			if (file.exists())
+			if (file.exists()) {
 				mergedcode = JDTUtility.mergeJavaCode(file, output);
+			}
 			
 			String codeWithCleanImportSction = JDTUtility.organizeImport(file, mergedcode);
 			JDTUtility.writeJavaContent(file, codeWithCleanImportSction);

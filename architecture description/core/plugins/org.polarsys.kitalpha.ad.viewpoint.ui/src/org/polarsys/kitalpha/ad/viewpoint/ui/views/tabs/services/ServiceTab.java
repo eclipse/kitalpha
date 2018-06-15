@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,8 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.runtime.CoreException;
-import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ColumnWeightData;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
@@ -91,15 +89,18 @@ public class ServiceTab extends AbstractTab implements ModelListener {
 
 	private final ISelectionListener listener = new ISelectionListener() {
 
+		@Override
 		public void selectionChanged(IWorkbenchPart part, ISelection selection) {
 			boolean partVisible = site.getPage().isPartVisible(site.getPart());
-			if (partVisible)
+			if (partVisible) {
 				serviceViewer.refresh();
+			}
 		}
 
 	};
 	private final BundleListener bundleListener = new BundleListener() {
 
+		@Override
 		public void bundleChanged(final BundleEvent event) {
 			if (Implementations.hasProvider(event.getBundle())) {
 				refresh();
@@ -108,13 +109,16 @@ public class ServiceTab extends AbstractTab implements ModelListener {
 		}
 
 		private void refresh() {
-			if (site != null)
+			if (site != null) {
 				site.getShell().getDisplay().asyncExec(new Runnable() {
+					@Override
 					public void run() {
-						if (serviceViewer != null && serviceViewer.getTable() != null && !serviceViewer.getTable().isDisposed())
+						if (serviceViewer != null && serviceViewer.getTable() != null && !serviceViewer.getTable().isDisposed()) {
 							serviceViewer.refresh(true);
+						}
 					}
 				});
+			}
 		}
 	};;
 
@@ -123,10 +127,12 @@ public class ServiceTab extends AbstractTab implements ModelListener {
 
 	}
 
+	@Override
 	public ISelectionProvider getSelectionProvider() {
 		return serviceViewer;
 	}
 
+	@Override
 	public void createTab(FormToolkit toolkit, CTabFolder folder) {
 		final Composite composite = createTab(toolkit, folder, Messages.ServiceTab_title, ViewpointEditPlugin.INSTANCE.getImage("full/obj16/Service"));
 		GridLayout clayout = new GridLayout();
@@ -134,6 +140,7 @@ public class ServiceTab extends AbstractTab implements ModelListener {
 		composite.setLayout(clayout);
 
 		serviceViewer = new TableViewer(composite, SWT.FULL_SELECTION | SWT.BORDER) {
+			@Override
 			protected void doUpdateItem(Widget w, Object element, boolean fullMap) {
 				super.doUpdateItem(w, element, fullMap);
 				final TableItem item = (TableItem) w;
@@ -147,6 +154,7 @@ public class ServiceTab extends AbstractTab implements ModelListener {
 					button = new Button(table, SWT.PUSH);
 					button.setImage(Activator.getDefault().getImage(AFImages.RUN));
 					button.addSelectionListener(new SelectionListener2() {
+						@Override
 						public void doWidgetSelected(SelectionEvent e) {
 							Service service = (Service) item.getData();
 							new UIServiceRunner().run(service, modelManager, selectionProvider == null ? null : selectionProvider.getSelection());
@@ -156,6 +164,7 @@ public class ServiceTab extends AbstractTab implements ModelListener {
 					final TableEditor fEditor = editor;
 					final Button fButton = button;
 					item.addDisposeListener(new DisposeListener() {
+						@Override
 						public void widgetDisposed(DisposeEvent e) {
 							fEditor.dispose();
 							fButton.dispose();
@@ -169,8 +178,9 @@ public class ServiceTab extends AbstractTab implements ModelListener {
 				button = (Button) editor.getEditor();
 				Service service = (Service) item.getData();
 				boolean enabled = service != null && service.getType() != null && !"".equals(service.getType());
-				if (enabled) 
+				if (enabled) {
 					enabled = new ServiceRunner().canRun(service, modelManager, selectionProvider.getSelection());
+				}
 				
 				button.setEnabled(enabled);
 			};
@@ -182,6 +192,7 @@ public class ServiceTab extends AbstractTab implements ModelListener {
 		table.setLayoutData(new GridData(GridData.FILL_BOTH));
 		SelectionListener headerListener = new SelectionListener2() {
 
+			@Override
 			public void doWidgetSelected(SelectionEvent e) {
 				TableColumn currentSortColumn = table.getSortColumn();
 				TableColumn newSortColumn = (TableColumn) e.getSource();
@@ -305,6 +316,7 @@ public class ServiceTab extends AbstractTab implements ModelListener {
 
 		serviceViewer.addSelectionChangedListener(new ISelectionChangedListener() {
 
+			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
 				for (Object obj : ((IStructuredSelection) event.getSelection()).toArray()) {
 					if (!modelManager.getServiceHandler().isRemovable((Service) obj)) {
@@ -319,6 +331,7 @@ public class ServiceTab extends AbstractTab implements ModelListener {
 		Activator.getDefault().getBundle().getBundleContext().addBundleListener(bundleListener);
 	}
 
+	@Override
 	public void init() {
 		selectionProvider.addListener(listener);
 
@@ -326,6 +339,7 @@ public class ServiceTab extends AbstractTab implements ModelListener {
 		workspaceHasChanged();
 	}
 
+	@Override
 	public void workspaceHasChanged() {
 		super.workspaceHasChanged();
 		serviceViewer.refresh();
@@ -343,8 +357,9 @@ public class ServiceTab extends AbstractTab implements ModelListener {
 
 	@Override
 	public void dispose() {
-		if (selectionProvider != null)
+		if (selectionProvider != null) {
 			selectionProvider.removeListener(listener);
+		}
 		Activator.getDefault().getBundle().getBundleContext().removeBundleListener(bundleListener);
 		super.dispose();
 	}

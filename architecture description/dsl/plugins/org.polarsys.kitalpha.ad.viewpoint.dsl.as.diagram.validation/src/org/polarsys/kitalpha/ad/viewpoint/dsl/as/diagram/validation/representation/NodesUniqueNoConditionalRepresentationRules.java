@@ -27,10 +27,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.AbstractNode;
 
 public class NodesUniqueNoConditionalRepresentationRules implements IAdditionalConstraint{
 
+	@Override
 	public boolean isObjectInScope(Object object) {
 		return object instanceof AbstractNode;
 	}
 
+	@Override
 	public ValidationStatus validationRules(Object data) {
 		EObject eONode = (EObject)data;
 		
@@ -45,11 +47,13 @@ public class NodesUniqueNoConditionalRepresentationRules implements IAdditionalC
 				int conditionalRepresentationCount = 0;
 				for (AbstractDescription abstractDescription : eStyles) 
 				{
-					if (abstractDescription.getCondition() == null)
+					if (abstractDescription.getCondition() == null) {
 						conditionalRepresentationCount ++;
+					}
 					
-					if (conditionalRepresentationCount > 1)
+					if (conditionalRepresentationCount > 1) {
 						return ValidationStatus.Error;
+					}
 				}
 			}
 		}
@@ -57,6 +61,7 @@ public class NodesUniqueNoConditionalRepresentationRules implements IAdditionalC
 		return ValidationStatus.Ok;
 	}
 
+	@Override
 	public String getMessage(ValidationStatus status, Object object) {
 		NamedElement node = (NamedElement) object;
 		String elementType = node.eClass().getName();

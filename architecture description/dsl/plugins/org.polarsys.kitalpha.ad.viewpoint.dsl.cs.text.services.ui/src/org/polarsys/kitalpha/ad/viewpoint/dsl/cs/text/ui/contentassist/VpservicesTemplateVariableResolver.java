@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -43,6 +43,7 @@ public class VpservicesTemplateVariableResolver extends CommonTemplateVariableRe
 			super(VIEWPOINT_NAME, VIEWPOINT_NAME_DESCRIPTION);
 		}
 		
+		@Override
 		protected String resolve(TemplateContext context) {
 			XtextTemplateContext castedContext = (XtextTemplateContext) context;
 			EObject current = castedContext.getContentAssistContext().getCurrentModel();
@@ -51,8 +52,9 @@ public class VpservicesTemplateVariableResolver extends CommonTemplateVariableRe
 				//get viewpoint information
 				URI primary = ResourceHelper.getPrimaryResourceURI();
 				Resource primaryResource = ResourceHelper.loadResource(primary, resourceSet);
-				if (primaryResource ==null)
+				if (primaryResource ==null) {
 					throw new RuntimeException("could not locate primary resource with uri " + primary);
+				}
 				Viewpoint viewpoint = (Viewpoint) primaryResource.getContents().get(0);
 				return viewpoint.getName();
 			}

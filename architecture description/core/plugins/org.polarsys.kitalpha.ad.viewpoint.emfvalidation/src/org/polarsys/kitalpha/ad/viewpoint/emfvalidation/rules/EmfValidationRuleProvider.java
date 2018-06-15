@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2009-2018 Thales Corporate Services S.A.S.
+ * Copyright (c) 2009, 2018 Thales Corporate Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,6 +46,7 @@ public class EmfValidationRuleProvider implements RuleProvider {
 	private static final String EXTENSION_POINT_ID = "org.eclipse.emf.validation.constraintProviders";
 	public static final String ID = "EMF validation";
 
+	@Override
 	public ElementDescriptor[] getAvailableImplementations() {
 		Set<String> names = new HashSet<String>();
 		Set<String> implementations = new HashSet<String>();
@@ -72,10 +73,12 @@ public class EmfValidationRuleProvider implements RuleProvider {
 		return result.toArray(new ElementDescriptor[result.size()]);
 	}
 
+	@Override
 	public String getType() {
 		return ID;
 	}
 
+	@Override
 	public boolean canExecute(Rule rule, ModelAccessor properties, Object[] selection) {
 		if (!checkSelection(selection)){
 			return false;
@@ -103,6 +106,7 @@ public class EmfValidationRuleProvider implements RuleProvider {
 		return true;
 	}
 
+	@Override
 	public void execute(Rule rule, ModelAccessor properties, Object[] selection) {
 		BasicDiagnostic diagnostic = createDiagnostic(rule);
 		IConstraintDescriptor descriptor = getConstraintDescriptor(rule);
@@ -137,6 +141,7 @@ public class EmfValidationRuleProvider implements RuleProvider {
 		return instance.getDescriptor(rule.getImplementation());
 	}
 
+	@Override
 	public boolean hasProvider(Bundle bundle) {
 		IPluginModelBase model = PDECore.getDefault().getModelManager().findModel(bundle.getSymbolicName());
 		if (model == null){

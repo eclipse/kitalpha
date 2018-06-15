@@ -23,18 +23,22 @@ public class ProjectNature implements IProjectNature {
 	public static final String VP_NATURE = "org.polarsys.kitalpha.ad.common.VPnature";
 	private IProject project;
 
+	@Override
 	public void configure() throws CoreException {
 		//not needed
 	}
 
+	@Override
 	public void deconfigure() throws CoreException {
 		//not needed
 	}
 
+	@Override
 	public IProject getProject() {
 		return project;
 	}
 
+	@Override
 	public void setProject(IProject project) {
 		this.project = project;
 	}

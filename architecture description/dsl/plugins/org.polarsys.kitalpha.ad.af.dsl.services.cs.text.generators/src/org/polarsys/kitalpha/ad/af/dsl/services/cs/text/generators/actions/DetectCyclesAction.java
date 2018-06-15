@@ -46,6 +46,7 @@ public class DetectCyclesAction extends BaseSelectionListenerAction implements I
 		super(text);
 	}
 	
+	@Override
 	public void run(IAction action) {
 		IFile file = null;
 		Iterator<?> iterator = ((StructuredSelection)fakeSelection).iterator();

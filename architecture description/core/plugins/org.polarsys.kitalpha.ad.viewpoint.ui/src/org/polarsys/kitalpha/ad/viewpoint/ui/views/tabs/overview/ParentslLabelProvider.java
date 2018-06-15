@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,6 +28,7 @@ public class ParentslLabelProvider extends AFLabelProvider {
 
 	private final ItemProviderAdapter provider = (ItemProviderAdapter) new ViewpointItemProviderAdapterFactory().createViewpointAdapter();
 
+	@Override
 	public String getColumnText(Object element, int columnIndex) {
 		if (element instanceof Viewpoint) {
 			Viewpoint vp = (Viewpoint) element;

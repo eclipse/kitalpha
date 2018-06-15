@@ -36,6 +36,7 @@ public class ViewpointManager extends ResourceManager {
 		this.viewpoint = viewpoint;
 	}
 
+	@Override
 	public Object getRootModel() {
 		return viewpoint;
 	}
@@ -46,6 +47,7 @@ public class ViewpointManager extends ResourceManager {
 		return resource.getTimeStamp();
 	}
 
+	@Override
 	public void saveModel() {
 		if (isReadOnly()){
 			return;
@@ -68,6 +70,7 @@ public class ViewpointManager extends ResourceManager {
 			super(viewpoint, wsManager);
 		}
 
+		@Override
 		public boolean isRemovable(ViewpointElement element) {
 			if (getResourceManager().isReadOnly()){
 				return false;

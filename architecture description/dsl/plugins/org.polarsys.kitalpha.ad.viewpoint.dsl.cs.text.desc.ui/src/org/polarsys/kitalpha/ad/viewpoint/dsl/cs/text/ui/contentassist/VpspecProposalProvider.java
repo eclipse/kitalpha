@@ -174,13 +174,15 @@ public class VpspecProposalProvider extends AbstractVpspecProposalProvider {
 		
 	@Override
 	protected String getDisplayString(EObject element, String qualifiedNameAsString, String shortName) {
-		if (qualifiedNameAsString == null)
-			qualifiedNameAsString = shortName;
 		if (qualifiedNameAsString == null) {
-			if (element != null)
+			qualifiedNameAsString = shortName;
+		}
+		if (qualifiedNameAsString == null) {
+			if (element != null) {
 				qualifiedNameAsString = labelProvider.getText(element);
-			else
+			} else {
 				return null;
+			}
 		}
 		QualifiedName qualifiedName = qualifiedNameConverter.toQualifiedName(qualifiedNameAsString);		
 		if(qualifiedName.getSegmentCount() >1) {
@@ -207,48 +209,62 @@ public class VpspecProposalProvider extends AbstractVpspecProposalProvider {
 	
 	Predicate<IEObjectDescription> getFilter(String aspectType) {
 		final VpspecGrammarAccess access = (VpspecGrammarAccess) grammar;
-		if (aspectType.equals(access.getViewpointAccess().getTypeBuildKeyword_18_0_0().getValue()))
+		if (aspectType.equals(access.getViewpointAccess().getTypeBuildKeyword_18_0_0().getValue())) {
 			return new Predicate<IEObjectDescription>() {
+				@Override
 				public boolean apply(IEObjectDescription d) {
 					return (d.getEObjectOrProxy() instanceof Build);
 				}
 			};
-		if (aspectType.equals(access.getViewpointAccess().getTypeConfigurationKeyword_19_0_0().getValue()))
+		}
+		if (aspectType.equals(access.getViewpointAccess().getTypeConfigurationKeyword_19_0_0().getValue())) {
 			return new Predicate<IEObjectDescription>() {
+				@Override
 				public boolean apply(IEObjectDescription d) {
 					return (d.getEObjectOrProxy() instanceof Configuration);
 				}
 			};
-		if (aspectType.equals(access.getViewpointAccess().getDataKeyword_13_0().getValue()))
+		}
+		if (aspectType.equals(access.getViewpointAccess().getDataKeyword_13_0().getValue())) {
 			return new Predicate<IEObjectDescription>() {
+				@Override
 				public boolean apply(IEObjectDescription d) {
 					return (d.getEObjectOrProxy() instanceof Data);
 				}
 			};
-		if (aspectType.equals(access.getViewpointAccess().getTypeDiagramsKeyword_15_0_0().getValue()))
+		}
+		if (aspectType.equals(access.getViewpointAccess().getTypeDiagramsKeyword_15_0_0().getValue())) {
 			return new Predicate<IEObjectDescription>() {
+				@Override
 				public boolean apply(IEObjectDescription d) {
 					return (d.getEObjectOrProxy() instanceof DiagramSet);
 				}
 			};
-		if (aspectType.equals(access.getViewpointAccess().getTypeServicesKeyword_17_0_0().getValue()))
+		}
+		if (aspectType.equals(access.getViewpointAccess().getTypeServicesKeyword_17_0_0().getValue())) {
 			return new Predicate<IEObjectDescription>() {
+				@Override
 				public boolean apply(IEObjectDescription d) {
 					return (d.getEObjectOrProxy() instanceof ServiceSet);
 				}
 			};
-		if (aspectType.equals(access.getViewpointAccess().getTypeUIKeyword_14_0_0().getValue()))
+		}
+		if (aspectType.equals(access.getViewpointAccess().getTypeUIKeyword_14_0_0().getValue())) {
 			return new Predicate<IEObjectDescription>() {
+				@Override
 				public boolean apply(IEObjectDescription d) {
 					return (d.getEObjectOrProxy() instanceof UIDescription);
 				}
 			};
-		if (aspectType.equals(access.getViewpointAccess().getTypeActivityExplorerKeyword_16_0_0().getValue()))
+		}
+		if (aspectType.equals(access.getViewpointAccess().getTypeActivityExplorerKeyword_16_0_0().getValue())) {
 			return new Predicate<IEObjectDescription>() {
+				@Override
 				public boolean apply(IEObjectDescription d) {
 					return (d.getEObjectOrProxy() instanceof ViewpointActivityExplorer);
 				}
 			};
+		}
 		return Predicates.<IEObjectDescription> alwaysTrue();
 	}
 	

@@ -23,8 +23,8 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
-import org.polarsys.kitalpha.resourcereuse.helper.ResourceReuse;
 import org.polarsys.kitalpha.resourcereuse.helper.ResourceNotFoundException;
+import org.polarsys.kitalpha.resourcereuse.helper.ResourceReuse;
 
 /**
  * The "New" wizard page allows setting the container for the new file as well
@@ -57,6 +57,7 @@ public class NewViewpointProjectPage extends WizardPage {
 	/**
 	 * @see IDialogPage#createControl(Composite)
 	 */
+	@Override
 	public void createControl(Composite parent) {
 		Composite container = new Composite(parent, SWT.NULL);
 
@@ -83,6 +84,7 @@ public class NewViewpointProjectPage extends WizardPage {
 		viewpointShortNameText.setLayoutData(gd);
 		viewpointShortNameText.setText("myviewpoint");
 		viewpointShortNameText.addModifyListener(new ModifyListener() {
+			@Override
 			public void modifyText(ModifyEvent e) {
 				dialogChanged();
 			}
@@ -101,6 +103,7 @@ public class NewViewpointProjectPage extends WizardPage {
 		viewpointIdText.setLayoutData(gd);
 		viewpointIdText.setText("org.polarsys.kitalpha.viewpoint.myviewpoint");
 		viewpointIdText.addModifyListener(new ModifyListener() {
+			@Override
 			public void modifyText(ModifyEvent e) {
 				dialogChanged();
 			}
@@ -119,6 +122,7 @@ public class NewViewpointProjectPage extends WizardPage {
 		viewpointNameText.setLayoutData(gd);
 		viewpointNameText.setText("My Viewpoint");
 		viewpointNameText.addModifyListener(new ModifyListener() {
+			@Override
 			public void modifyText(ModifyEvent e) {
 				dialogChanged();
 			}
@@ -137,6 +141,7 @@ public class NewViewpointProjectPage extends WizardPage {
 		projectNameText.setLayoutData(gd);
 		projectNameText.setText("org.polarsys.kitalpha.viewpoint.myviewpointproject");
 		projectNameText.addModifyListener(new ModifyListener() {
+			@Override
 			public void modifyText(ModifyEvent e) {
 				dialogChanged();
 			}

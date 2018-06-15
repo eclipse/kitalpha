@@ -85,8 +85,9 @@ public class DocGenGenerationConfiguration implements IGenerationElementInnerCon
 						}
 					}
 				}
-				if (result)
+				if (result) {
 					break;
+				}
 			}
 		}
 		return result;

@@ -20,7 +20,6 @@ import org.eclipse.ui.IWorkbench;
 import org.polarsys.kitalpha.ad.af.dsl.services.cs.text.wizards.AfdslResourceCreator;
 import org.polarsys.kitalpha.ad.af.dsl.services.cs.text.wizards.messages.Messages;
 import org.polarsys.kitalpha.ad.af.dsl.services.preference.helper.AFRootProjectNamePreferencesHelper;
-
 import org.polarsys.kitalpha.ad.af.dsl.servicies.project.ui.NewAFSpecProject;
 
 /**
@@ -56,6 +55,7 @@ public class AfdslFileWizard extends NewAFSpecProject implements INewWizard {
 		setWindowTitle(Messages.AfdslNewFile_AfdslFileWizard);
 	}
 
+	@Override
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.selection = selection; 
 	}

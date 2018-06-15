@@ -29,6 +29,7 @@ public class ClientContextSelector implements IClientSelector {
 	/**
 	 * @see org.eclipse.emf.validation.model.IClientSelector#selects(java.lang.Object)
 	 */
+	@Override
 	public boolean selects(Object arg0) {
 		if (arg0 == null || !(arg0 instanceof EObject)) {
 			return false;

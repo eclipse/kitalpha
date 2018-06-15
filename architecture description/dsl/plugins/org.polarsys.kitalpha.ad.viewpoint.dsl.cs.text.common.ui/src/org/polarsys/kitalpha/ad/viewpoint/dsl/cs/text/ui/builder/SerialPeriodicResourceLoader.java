@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -37,12 +37,14 @@ public class SerialPeriodicResourceLoader extends AbstractResourceLoader {
 		super(resourceSetProvider, sorter);
 	}
 
+	@Override
 	public LoadOperation create(final ResourceSet parent, IProject project) {
 		
 		final Queue<URI> queue = Lists.newLinkedList();
 		
 			return new CheckedLoadOperation(new LoadOperation() {
 
+				@Override
 				public LoadResult next() {
 					URI uri = queue.poll();
 					try {
@@ -58,14 +60,17 @@ public class SerialPeriodicResourceLoader extends AbstractResourceLoader {
 					}
 				}
 
+				@Override
 				public boolean hasNext() {
 					return !queue.isEmpty();
 				}
 
+				@Override
 				public Collection<URI> cancel() {
 					return queue;
 				}
 
+				@Override
 				public void load(Collection<URI> uris) {
 					queue.addAll(getSorter().sort(uris));
 				}

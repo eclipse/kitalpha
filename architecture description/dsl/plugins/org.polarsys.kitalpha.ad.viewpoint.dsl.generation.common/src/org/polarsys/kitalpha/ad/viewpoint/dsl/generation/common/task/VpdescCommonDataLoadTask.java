@@ -28,6 +28,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common.manager.VpdslDes
 
 public class VpdescCommonDataLoadTask extends TaskProductionAdapter {
 
+	@Override
 	public void doExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
 		EMFDomain vpdescDomain = productionContext.getInputValue(VPDESC_MODEL, EMFDomain.class);
@@ -47,8 +48,9 @@ public class VpdescCommonDataLoadTask extends TaskProductionAdapter {
 			productionContext.setOutputValue(REQUIRED_EE, VpDslConfigurationHelper.getViewpointRequiredExecutionEnvironment(viewpoint));
 			
 			/**Initialize Viewpoint in generation **/
-			if (VpdslDescriptionModelManager.INSTANCE.getVpDescriptionElement() == null)
+			if (VpdslDescriptionModelManager.INSTANCE.getVpDescriptionElement() == null) {
 				VpdslDescriptionModelManager.INSTANCE.initialize(viewpoint);
+			}
 		}
 		else
 		{

@@ -1,5 +1,13 @@
-/**
- */
+/*******************************************************************************
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *  
+ * Contributors:
+ *   Thales Global Services S.A.S - initial API and implementation
+ ******************************************************************************/
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird.model.descAirdGenConf.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -96,6 +104,7 @@ public class DescAirdGenConfPackageImpl extends EPackageImpl implements DescAird
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAirdGenerationConfiguration() {
 		return airdGenerationConfigurationEClass;
 	}
@@ -105,6 +114,7 @@ public class DescAirdGenConfPackageImpl extends EPackageImpl implements DescAird
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAirdGenerationConfiguration_GenRepresentations() {
 		return (EAttribute)airdGenerationConfigurationEClass.getEStructuralFeatures().get(0);
 	}
@@ -114,6 +124,7 @@ public class DescAirdGenConfPackageImpl extends EPackageImpl implements DescAird
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DescAirdGenConfFactory getDescAirdGenConfFactory() {
 		return (DescAirdGenConfFactory)getEFactoryInstance();
 	}

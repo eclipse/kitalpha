@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -37,8 +37,9 @@ public class VpspecTemplateContextType extends CommonTemplateContextType impleme
 	public void resolve(TemplateVariable variable, TemplateContext context) {
 		String type= variable.getType();
 		TemplateVariableResolver resolver= getResolver(type);
-		if (resolver == null)
+		if (resolver == null) {
 			resolver= new VpspecTemplateVariableResolver();
+		}
 		if (resolver instanceof VpspecTemplateVariableResolver.AspectName) {
 			((VpspecTemplateVariableResolver.AspectName)resolver).setFileName(currentFile);
 		} 

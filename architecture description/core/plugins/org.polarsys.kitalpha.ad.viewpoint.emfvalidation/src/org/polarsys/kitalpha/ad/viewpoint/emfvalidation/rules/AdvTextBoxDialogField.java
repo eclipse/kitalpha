@@ -23,6 +23,7 @@ public class AdvTextBoxDialogField extends TextBoxDialogField {
 	protected Text createTextControl(Composite parent) {
 		Text text = new Text(parent, SWT.MULTI | SWT.BORDER | SWT.WRAP);
 		text.addTraverseListener(new TraverseListener() {
+			@Override
 			public void keyTraversed(TraverseEvent event) {
 				switch (event.detail) {
 				case SWT.TRAVERSE_ESCAPE:

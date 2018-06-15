@@ -50,6 +50,7 @@ public class OpenViewsAction implements IMenuCreator, IObjectActionDelegate {
 	private List<String> viewIds = new ArrayList<String>();
 	private SelectionListener listener = new SelectionListener() {
 
+		@Override
 		public void widgetSelected(SelectionEvent ee) {
 			if (BundleManager.INSTANCE.isManaged(project)) {
 				try {
@@ -65,6 +66,7 @@ public class OpenViewsAction implements IMenuCreator, IObjectActionDelegate {
 
 		}
 
+		@Override
 		public void widgetDefaultSelected(SelectionEvent e) {
 			//Nothing to do
 		}
@@ -80,6 +82,7 @@ public class OpenViewsAction implements IMenuCreator, IObjectActionDelegate {
 	/**
 	 * @see IObjectActionDelegate#setActivePart(IAction, IWorkbenchPart)
 	 */
+	@Override
 	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
 		IWorkbenchPartSite site = targetPart.getSite();
 		activePage = site.getWorkbenchWindow().getActivePage();
@@ -91,6 +94,7 @@ public class OpenViewsAction implements IMenuCreator, IObjectActionDelegate {
 	/**
 	 * @see IActionDelegate#run(IAction)
 	 */
+	@Override
 	public void run(IAction action) {
 
 		if (BundleManager.INSTANCE.isManaged(project)) {
@@ -115,6 +119,7 @@ public class OpenViewsAction implements IMenuCreator, IObjectActionDelegate {
 	/**
 	 * @see IActionDelegate#selectionChanged(IAction, ISelection)
 	 */
+	@Override
 	public void selectionChanged(IAction action, ISelection selection) {
 		project = null;
 		if (selection instanceof IStructuredSelection) {
@@ -159,14 +164,17 @@ public class OpenViewsAction implements IMenuCreator, IObjectActionDelegate {
 		}
 	}
 
+	@Override
 	public void dispose() {
 		//nothing to do
 	}
 
+	@Override
 	public Menu getMenu(Control parent) {
 		return null;
 	}
 
+	@Override
 	public Menu getMenu(Menu parent) {
 		Menu dynamicMenu = new Menu(parent);
 		for (String id : viewIds) {

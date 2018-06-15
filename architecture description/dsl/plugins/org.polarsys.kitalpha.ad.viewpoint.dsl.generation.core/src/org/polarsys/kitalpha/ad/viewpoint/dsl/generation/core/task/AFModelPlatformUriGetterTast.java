@@ -22,6 +22,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common.adapter.TaskProd
 
 public class AFModelPlatformUriGetterTast extends TaskProductionAdapter {
 
+	@Override
 	public void doExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
 		String rootProjectName = productionContext.getInputValue(ROOT_PROJECT_NAME, String.class);

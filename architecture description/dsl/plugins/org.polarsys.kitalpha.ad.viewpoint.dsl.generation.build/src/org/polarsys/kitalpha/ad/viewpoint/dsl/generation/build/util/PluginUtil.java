@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -36,10 +36,11 @@ public class PluginUtil {
 		try {
 			IFolder metaFolder = project.getFolder("META-INF");
 			IFile manifestFile = metaFolder.getFile("MANIFEST.MF");
-			if (manifestFile.exists())
+			if (manifestFile.exists()) {
 				manifestFile.setContents(fileInputStream, true, false, null);
-			else
+			} else {
 				manifestFile.create(fileInputStream, true, null);
+			}
 			project.refreshLocal(IProject.DEPTH_INFINITE, Null_Progress_Monitor);
 			} catch (CoreException e) {
 			e.printStackTrace();

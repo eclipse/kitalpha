@@ -21,7 +21,6 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.ui.IWorkbenchPart;
 import org.polarsys.kitalpha.ad.common.AD_Log;
-import org.polarsys.kitalpha.ad.viewpoint.ui.provider.AFSelectionProvider.Helper;
 
 /**
  * @author Thomas Guiu

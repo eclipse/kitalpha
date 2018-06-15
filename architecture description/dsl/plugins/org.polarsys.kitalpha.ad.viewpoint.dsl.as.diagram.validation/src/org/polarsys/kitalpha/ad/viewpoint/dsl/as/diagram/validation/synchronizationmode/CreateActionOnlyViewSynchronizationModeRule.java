@@ -28,10 +28,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Synchronization
  */
 public class CreateActionOnlyViewSynchronizationModeRule implements IAdditionalConstraint {
 
+	@Override
 	public boolean isObjectInScope(Object object) {
 		return object instanceof Create && ((Create)object).isOnlyTheView();
 	}
 
+	@Override
 	public String getMessage(ValidationStatus status, Object object) {
 		return Messages.Validation_Create_OnlyView_Synchronization;
 	}

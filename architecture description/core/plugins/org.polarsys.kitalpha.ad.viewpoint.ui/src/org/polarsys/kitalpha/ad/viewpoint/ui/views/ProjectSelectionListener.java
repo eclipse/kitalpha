@@ -29,6 +29,7 @@ import org.polarsys.kitalpha.ad.viewpoint.handlers.workspace.WorkspaceManager;
  */
 public class ProjectSelectionListener implements ISelectionListener {
 
+	@Override
 	public void selectionChanged(IWorkbenchPart part, ISelection selection) {
 		if (!(selection instanceof IStructuredSelection)){
 			return;

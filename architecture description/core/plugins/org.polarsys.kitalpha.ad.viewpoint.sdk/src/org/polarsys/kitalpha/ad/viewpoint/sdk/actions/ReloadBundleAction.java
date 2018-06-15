@@ -40,6 +40,7 @@ public class ReloadBundleAction implements IObjectActionDelegate {
 	/**
 	 * @see IObjectActionDelegate#setActivePart(IAction, IWorkbenchPart)
 	 */
+	@Override
 	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
 		shell = targetPart.getSite().getShell();
 	}
@@ -47,6 +48,7 @@ public class ReloadBundleAction implements IObjectActionDelegate {
 	/**
 	 * @see IActionDelegate#run(IAction)
 	 */
+	@Override
 	public void run(IAction action) {
 		if (BundleManager.INSTANCE.isManaged(project)) {
 			String name = project.getName();
@@ -70,6 +72,7 @@ public class ReloadBundleAction implements IObjectActionDelegate {
 	/**
 	 * @see IActionDelegate#selectionChanged(IAction, ISelection)
 	 */
+	@Override
 	public void selectionChanged(IAction action, ISelection selection) {
 		project = null;
 		if (selection instanceof IStructuredSelection) {

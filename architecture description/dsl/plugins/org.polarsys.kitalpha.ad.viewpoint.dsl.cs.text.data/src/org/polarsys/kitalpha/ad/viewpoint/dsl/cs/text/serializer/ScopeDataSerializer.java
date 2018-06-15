@@ -51,9 +51,10 @@ public class ScopeDataSerializer extends CrossReferenceSerializer {
 			if (descriptionManager != null){
 				IResourceDescription resourceDescription = descriptionManager
 						.getResourceDescription(resource);
-				if (resourceDescription != null)
+				if (resourceDescription != null) {
 					exportedObjects = Iterables.concat(exportedObjects,
 							resourceDescription.getExportedObjects());
+				}
 			}
 		}
 

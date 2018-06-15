@@ -31,40 +31,48 @@ public class AbstractNodeDomain implements IAdditionalConstraint {
 	private static final int Flag_BothQueryAndAssociation = 3;
 	private static final int Flag_NeitherQueryAndAssociation  = 4;
 
+	@Override
 	public boolean isObjectInScope(Object object) {
 		return object instanceof AbstractNode;
 	}
 	
+	@Override
 	public ValidationStatus validationRules(Object data) {
 		if (! MappingUtils.isImport(data))
 		{
 			AbstractNode abstractNode = (AbstractNode) data;
 			NodeDomainElement domain = abstractNode.getThe_domain();
-			if (domain == null)
+			if (domain == null) {
 				return ValidationStatus.getErrorStatusWithRuleFlag(Flag_NullDomain);
-			else
+			} else
 			{
-				if (domain.getDomain_Class() == null)
+				if (domain.getDomain_Class() == null) {
 					return ValidationStatus.getErrorStatusWithRuleFlag(Flag_NullDomainClass);
+				}
 				
 				if (domain.getChlidren_list() == null && 
-						(domain.getQuery() == null || domain.getQuery().trim().length() == 0))
+						(domain.getQuery() == null || domain.getQuery().trim().length() == 0)) {
 					return ValidationStatus.getErrorStatusWithRuleFlag(Flag_NeitherQueryAndAssociation);
+				}
 				
 				if (domain.getChlidren_list() != null && 
-						(domain.getQuery() != null && domain.getQuery().trim().length() > 0))
+						(domain.getQuery() != null && domain.getQuery().trim().length() > 0)) {
 					return ValidationStatus.getErrorStatusWithRuleFlag(Flag_BothQueryAndAssociation);
+				}
 			}
 		}
 		
 		return ValidationStatus.Ok;
 	}
 
+	@Override
 	public String getMessage(ValidationStatus status, Object object) {
 		String nodeName = ((DiagramElement) object).getName();
 
 		if (nodeName == null || nodeName.trim().length() == 0)
+		 {
 			nodeName = "a "+ ((EObject)object).eClass().getName(); //$NON-NLS-1$
+		}
 		
 		int flag = Integer.parseInt(status.getRuleFlag().toString());
 		switch (flag) {

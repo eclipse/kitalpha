@@ -30,6 +30,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.af.utils.AfConstants;
 public class AfProjectManagerTask implements ITaskProduction {
 
 
+	@Override
 	public void preExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
 
@@ -60,11 +61,13 @@ public class AfProjectManagerTask implements ITaskProduction {
 	}
 
 
+	@Override
 	public void doExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
 	}
 
 
+	@Override
 	public void postExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
 	}

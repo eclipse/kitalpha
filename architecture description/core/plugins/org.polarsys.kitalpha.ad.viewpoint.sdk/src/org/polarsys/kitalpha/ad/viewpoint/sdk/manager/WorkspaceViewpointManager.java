@@ -15,7 +15,6 @@ import org.eclipse.osgi.util.NLS;
 import org.osgi.framework.BundleException;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointActivationException;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
-import org.polarsys.kitalpha.ad.services.manager.ViewpointManager.ViewpointFinder;
 import org.polarsys.kitalpha.ad.viewpoint.sdk.Messages;
 
 /**

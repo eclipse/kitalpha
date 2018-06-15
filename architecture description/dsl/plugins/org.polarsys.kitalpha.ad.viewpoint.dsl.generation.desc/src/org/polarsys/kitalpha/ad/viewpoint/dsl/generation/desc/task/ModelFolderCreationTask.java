@@ -30,6 +30,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common.adapter.TaskProd
 
 public class ModelFolderCreationTask extends TaskProductionAdapter {
 	
+	@Override
 	public void doExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
 		

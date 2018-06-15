@@ -45,9 +45,11 @@ public class GenerateArchitectureFramework implements IObjectActionDelegate {
 		super();
 	}
 
+	@Override
 	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
 	}
 
+	@Override
 	public void run(IAction action) {
 		URI uri = getDomainURI(selection);
 
@@ -83,6 +85,7 @@ public class GenerateArchitectureFramework implements IObjectActionDelegate {
 		return null;
 	}
 
+	@Override
 	public void selectionChanged(IAction action, ISelection selection) {
 		this.selection = (IStructuredSelection) selection;
 	}

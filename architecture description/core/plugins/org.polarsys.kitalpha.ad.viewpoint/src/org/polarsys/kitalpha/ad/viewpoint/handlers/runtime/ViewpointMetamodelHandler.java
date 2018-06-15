@@ -31,6 +31,7 @@ public class ViewpointMetamodelHandler extends ViewpointManager.ElementHandler i
 		super(viewpoint, mgr);
 	}
 
+	@Override
 	public void removeMetamodels(List<EPackage> packages) {
 		if (getResourceManager().isReadOnly()) {
 			throw new IllegalStateException();
@@ -45,6 +46,7 @@ public class ViewpointMetamodelHandler extends ViewpointManager.ElementHandler i
 		saveModel();
 	}
 
+	@Override
 	public void addMetamodels(List<EPackage> packages) {
 		if (getResourceManager().isReadOnly()){
 			throw new IllegalStateException();
@@ -58,14 +60,17 @@ public class ViewpointMetamodelHandler extends ViewpointManager.ElementHandler i
 		saveModel();
 	}
 
+	@Override
 	public List<ViewpointElement> getElements() {
 		throw new UnsupportedOperationException();
 	}
 
+	@Override
 	public List<ViewpointElement> getElementsFromParents() {
 		throw new UnsupportedOperationException();
 	}
 
+	@Override
 	public Metamodel getMetamodel() {
 		return getViewpoint().getMetamodel();
 	}

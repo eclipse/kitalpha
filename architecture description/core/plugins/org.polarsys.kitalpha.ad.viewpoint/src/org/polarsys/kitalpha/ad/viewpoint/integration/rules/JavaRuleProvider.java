@@ -50,6 +50,7 @@ public class JavaRuleProvider implements RuleProvider {
 		return null;
 	}
 
+	@Override
 	public ElementDescriptor[] getAvailableImplementations() {
 		Set<String> names = new HashSet<String>();
 		Set<String> implementations = new HashSet<String>();
@@ -73,10 +74,12 @@ public class JavaRuleProvider implements RuleProvider {
 		return result.toArray(new ElementDescriptor[result.size()]);
 	}
 
+	@Override
 	public String getType() {
 		return ID;
 	}
 
+	@Override
 	public void execute(Rule rule, ModelAccessor properties, Object[] selection) {
 		JavaRule jRule = getRule(rule.getImplementation());
 		if (jRule == null){
@@ -86,6 +89,7 @@ public class JavaRuleProvider implements RuleProvider {
 		}
 	}
 
+	@Override
 	public boolean canExecute(Rule rule, ModelAccessor properties, Object[] selection) {
 		String getImplementation = rule.getImplementation();
 		if (getImplementation == null){
@@ -100,6 +104,7 @@ public class JavaRuleProvider implements RuleProvider {
 
 	}
 
+	@Override
 	public boolean hasProvider(Bundle bundle) {
 		IPluginModelBase model = PDECore.getDefault().getModelManager().findModel(bundle.getSymbolicName());
 		if (model == null){

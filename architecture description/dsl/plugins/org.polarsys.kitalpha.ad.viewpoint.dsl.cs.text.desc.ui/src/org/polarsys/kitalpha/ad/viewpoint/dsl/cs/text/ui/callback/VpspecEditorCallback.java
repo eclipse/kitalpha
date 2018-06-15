@@ -78,20 +78,24 @@ public class VpspecEditorCallback extends CommonEditorCallback {
 	public void afterCreatePartControl(XtextEditor editor) {
 		super.afterCreatePartControl(editor);
 		installCompletionListener();
-		if (contextType instanceof VpspecTemplateContextType)
+		if (contextType instanceof VpspecTemplateContextType) {
 			addListener((VpspecTemplateContextType)contextType);
+		}
 	}
 	
 	private void installCompletionListener() {
 		if (getCurrentEditor() != null) {
 			XtextSourceViewer viewer = (XtextSourceViewer) getCurrentEditor().getInternalSourceViewer();
 			autoCompletionListener = new ICompletionListener() {
+				@Override
 				public void selectionChanged(ICompletionProposal proposal, boolean smartToggle) {
 					selectedProposal = proposal.getDisplayString();
 				}
+				@Override
 				public void assistSessionStarted(ContentAssistEvent event) {
 					contentAssistOn = true;
 				}
+				@Override
 				public void assistSessionEnded(ContentAssistEvent event) {
 					if (selectedProposal!=null) {
 						applySelectedProposal();
@@ -259,8 +263,9 @@ public class VpspecEditorCallback extends CommonEditorCallback {
 		if (selectedProposal.equals(VpspecMessages.VpspecEditorCallback_NewUserInterface)) {
 			return WizardIDs.NEW_UI_WIZARD;
 		}
-		if (selectedProposal.equals(VpspecMessages.VpspecEditorCallback_newActivityExplorer))
+		if (selectedProposal.equals(VpspecMessages.VpspecEditorCallback_newActivityExplorer)) {
 			return WizardIDs.NEW_ACTIVITY_EXPLORER_WIZARD;
+		}
 		return null;
 	}
 }

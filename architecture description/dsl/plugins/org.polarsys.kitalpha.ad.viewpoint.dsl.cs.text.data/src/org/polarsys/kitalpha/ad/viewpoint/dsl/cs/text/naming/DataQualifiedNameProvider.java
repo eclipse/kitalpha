@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -25,12 +25,14 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.identifiers.MetamodelIDs;
  */
 public class DataQualifiedNameProvider extends DefaultDeclarativeQualifiedNameProvider {
 	
+	@Override
 	protected QualifiedName qualifiedName(Object obj){
 		if (obj instanceof EDataType) {
 			if(((EDataType) obj).getEPackage().getNsURI().equals(MetamodelIDs.ECORE)) {
 				final String qualifiedName= getResolver().apply((EObject)obj);
-				if (qualifiedName == null)
+				if (qualifiedName == null) {
 					return null;
+				}
 				return QualifiedName.create(qualifiedName);
 			}
 		}

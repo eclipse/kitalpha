@@ -14,7 +14,6 @@ package org.polarsys.kitalpha.ad.af.dsl.services.cs.text.wizards;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
 
@@ -35,7 +34,6 @@ import org.eclipse.ui.actions.WorkspaceModifyOperation;
 import org.eclipse.ui.ide.IDE;
 import org.eclipse.xtext.resource.XtextResource;
 import org.polarsys.kitalpha.ad.af.dsl.services.cs.text.wizards.util.AfdslWizardsUtil;
-
 import org.polarsys.kitalpha.ad.af.dsl.servicies.project.extension.IAFConcreteSyntaxResourceCreator;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint;
 

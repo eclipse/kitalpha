@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -51,8 +51,9 @@ public class AFProjectHelper {
 
 	public IProject createProject(String name, String vpName, String vpId, String vpuuid, String vpURI, IProgressMonitor monitor) throws CoreException, IOException {
 		IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(name);
-		if (!project.exists())
+		if (!project.exists()) {
 			project.create(monitor);
+		}
 		project.open(monitor);
 		addNatures(project, monitor);
 		setupJava(project, monitor);
@@ -176,16 +177,18 @@ public class AFProjectHelper {
 
 	protected IFolder createFolder(IProject project, String name, IProgressMonitor monitor) throws CoreException {
 		IFolder folder = project.getFolder(name);
-		if (!folder.exists())
+		if (!folder.exists()) {
 			folder.create(true, true, monitor);
+		}
 		return folder;
 	}
 
 	protected void writeFile(InputStream source, IFile manifest, IProgressMonitor monitor) throws CoreException {
-		if (manifest.exists())
+		if (manifest.exists()) {
 			manifest.setContents(source, IResource.FORCE | IResource.KEEP_HISTORY, monitor);
-		else
+		} else {
 			manifest.create(source, false, null);
+		}
 	}
 
 }

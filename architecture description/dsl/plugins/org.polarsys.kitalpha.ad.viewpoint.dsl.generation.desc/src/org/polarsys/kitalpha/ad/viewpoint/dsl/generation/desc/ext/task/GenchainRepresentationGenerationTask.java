@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,8 +37,9 @@ public class GenchainRepresentationGenerationTask extends TaskProductionAdapter{
 		if (GenerationConfigurationHelper.canGegenrate(domain))
 		{
 			URI domainURI = productionContext.getInputValue("genchain.uri", URI.class);
-			if (domainURI == null)
+			if (domainURI == null) {
 				throw new RuntimeException("Ecore URI can't be null");
+			}
 
 			GenchainRepresentationCreationOperation creationOperation = new GenchainRepresentationCreationOperation(domainURI);
 			try {

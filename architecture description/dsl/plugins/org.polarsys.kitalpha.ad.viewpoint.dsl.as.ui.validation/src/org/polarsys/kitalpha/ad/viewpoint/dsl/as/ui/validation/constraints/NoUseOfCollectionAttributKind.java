@@ -26,10 +26,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.ui.validation.message.Messages;
 
 public class NoUseOfCollectionAttributKind implements IAdditionalConstraint {
 
+	@Override
 	public boolean isObjectInScope(Object object) {
 		return object instanceof FieldMapping;
 	}
 
+	@Override
 	public ValidationStatus validationRules(Object object) {
 		FieldMapping fieldMapping = (FieldMapping) object;
 		AbstractFeature abstractFeature = fieldMapping.getUI_Field_Mapped_To();
@@ -55,6 +57,7 @@ public class NoUseOfCollectionAttributKind implements IAdditionalConstraint {
 		return ValidationStatus.Ignored;
 	}
 
+	@Override
 	public String getMessage(ValidationStatus status, Object object) {
 		if (status.equals(ValidationStatus.Error))
 		{

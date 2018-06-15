@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -91,8 +91,9 @@ public class VpdiagramNamingHelper {
 			containers.add(container);
 			container = container.eContainer();
 			
-			if (container instanceof Layer)
+			if (container instanceof Layer) {
 				break;
+			}
 		}
 		//Add Layer
 		containers.add(container);
@@ -103,39 +104,47 @@ public class VpdiagramNamingHelper {
 
 	
 	private static String dispatchCallGetLabelOrName(EObject eObject){
-		if (eObject instanceof EdgeMapping)
+		if (eObject instanceof EdgeMapping) {
 			return getLabelOrName((EdgeMapping) eObject);
-		if (eObject instanceof ContainerMapping)
+		}
+		if (eObject instanceof ContainerMapping) {
 			return getLabelOrName((ContainerMapping) eObject);
-		if (eObject instanceof NodeMapping)
+		}
+		if (eObject instanceof NodeMapping) {
 			return getLabelOrName((NodeMapping) eObject);
-		if (eObject instanceof Layer)
+		}
+		if (eObject instanceof Layer) {
 			return getLabelOrName((Layer)eObject);
+		}
 		
 		return "";
 	}
 	
 	private static String getLabelOrName(EdgeMapping edgeMapping) {
-		if (edgeMapping.getLabel() != null && !edgeMapping.getLabel().isEmpty())
+		if (edgeMapping.getLabel() != null && !edgeMapping.getLabel().isEmpty()) {
 			return edgeMapping.getLabel().trim();
+		}
 		return edgeMapping.getName().trim();
 	}
 
 	private static String getLabelOrName(ContainerMapping containerMapping){
-		if (containerMapping.getLabel() != null && !containerMapping.getLabel().isEmpty())
+		if (containerMapping.getLabel() != null && !containerMapping.getLabel().isEmpty()) {
 			return containerMapping.getLabel().trim();
+		}
 		return containerMapping.getName().trim();
 	}
 	
 	private static String getLabelOrName(NodeMapping nodeMapping){
-		if (nodeMapping.getLabel() != null && !nodeMapping.getLabel().isEmpty())
+		if (nodeMapping.getLabel() != null && !nodeMapping.getLabel().isEmpty()) {
 			return nodeMapping.getLabel().trim();
+		}
 		return nodeMapping.getName();
 	}
 	
 	private static String getLabelOrName(Layer layer){
-		if (layer.getLabel() != null && !layer.getLabel().isEmpty())
+		if (layer.getLabel() != null && !layer.getLabel().isEmpty()) {
 			return layer.getLabel().trim();
+		}
 		return layer.getName();
 	}
 

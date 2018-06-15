@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,14 +27,16 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core.utils.GenchainAddi
 
 public class RegisterVpDslProjectTask extends TaskProductionAdapter {
 
+	@Override
 	public void doExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
 		EMFDomain domainModel = productionContext.getInputValue(VPDESC_MODEL, EMFDomain.class);
 		URI uri = domainModel.getUri();
 		String vpDslProjectId = uri.segment(1);
 		IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(vpDslProjectId);
-		if (project.exists())
+		if (project.exists()) {
 			GenchainAdditionsManager.INSTANCE.registerPlugin(project.getName());
+		}
 	}
 
 }

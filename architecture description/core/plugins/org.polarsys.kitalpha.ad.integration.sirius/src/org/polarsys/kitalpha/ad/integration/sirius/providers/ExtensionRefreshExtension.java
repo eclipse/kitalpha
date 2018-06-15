@@ -26,10 +26,12 @@ import org.polarsys.kitalpha.ad.integration.sirius.Activator;
 public class ExtensionRefreshExtension implements IRefreshExtension {
 	private final ResourceSetImpl localSet = new ResourceSetImpl();
 
+	@Override
 	public void beforeRefresh(DDiagram diagram) {
 		process(diagram);
 	}
 
+	@Override
 	public void postRefresh(DDiagram diagram) {
 		//nothing to do
 	}

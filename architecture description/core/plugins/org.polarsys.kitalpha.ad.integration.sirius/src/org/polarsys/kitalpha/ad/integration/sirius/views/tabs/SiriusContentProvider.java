@@ -29,6 +29,7 @@ public class SiriusContentProvider implements IStructuredContentProvider {
 		super();
 	}
 
+	@Override
 	public Object[] getElements(Object element) {
 		if (element instanceof IRepresentationHandler) {
 			IRepresentationHandler handler = (IRepresentationHandler) element;

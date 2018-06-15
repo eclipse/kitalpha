@@ -40,6 +40,7 @@ public class VpbuildUiModule extends org.polarsys.kitalpha.ad.viewpoint.dsl.cs.t
 		return CommonTemplateProposalProvider.class;
 	}
 	
+	@Override
 	public Class<? extends org.eclipse.jface.text.templates.persistence.TemplateStore> bindTemplateStore() {
 		return CommonTemplateStore.class;
 	}

@@ -51,11 +51,13 @@ public class CreateRelengPluginTask implements ITaskProduction {
 		Map<String, String> generationLocation = null;
 		
 		String executionEnvironment = productionContext.getInputValue(GeneratorConstants.EXECUTION_ENVIRONMENT, String.class);
-		if (executionEnvironment == null || "".equals(executionEnvironment))
+		if (executionEnvironment == null || "".equals(executionEnvironment)) {
 			throw new InvocationException(Messages.GeneratorError_ExecutionEnvironmentNotFound);
+		}
 		String rootProjectName = productionContext.getInputValue(GeneratorConstants.LVPS_ROOT_PROJECT_NAME, String.class);
-		if (rootProjectName == null || "".equals(rootProjectName))
-			throw new InvocationException(Messages.GeneratorError_ProjectNameNotFound); 
+		if (rootProjectName == null || "".equals(rootProjectName)) {
+			throw new InvocationException(Messages.GeneratorError_ProjectNameNotFound);
+		} 
 		EMFDomain model = productionContext.getInputValue(GeneratorConstants.LVPS_MODEL, EMFDomain.class);
 		if (!model.getContent().isEmpty()) {
 			Viewpoint viewpoint = (Viewpoint) model.getContent().get(0);
@@ -68,8 +70,9 @@ public class CreateRelengPluginTask implements ITaskProduction {
 					
 					//FIXME: build.getMapped_repositories().get(0) => use 1 to 1 relation or take all repos??
 					
-					if (build.getMapped_repositories() != null && !build.getMapped_repositories().isEmpty())
+					if (build.getMapped_repositories() != null && !build.getMapped_repositories().isEmpty()) {
 						sourceFolders = BuildVPConfigurationHelper.getSourceFolders(build.getMapped_repositories().get(0).getFolders());
+					}
 					
 					if (build.getHudsonDeployment() != null){
 						cronTrigger = BuildVPConfigurationHelper.getCronTriggers(build.getHudsonDeployment().getTriggers());

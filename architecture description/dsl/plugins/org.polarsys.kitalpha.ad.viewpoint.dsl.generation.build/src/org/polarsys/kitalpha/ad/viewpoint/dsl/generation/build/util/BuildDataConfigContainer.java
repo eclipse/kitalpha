@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -65,12 +65,15 @@ public class BuildDataConfigContainer<T> {
 	
 	public Map<T, T> getMap(String id){
 		if (id != null){
-			if (id.equals(GeneratorConstants.USERS) && canManageUsers)
+			if (id.equals(GeneratorConstants.USERS) && canManageUsers) {
 				return this.configMaps.get(id);
-			if (id.equals(GeneratorConstants.HUDSON_PROPERTIES) && canManageHudsonProperties)
+			}
+			if (id.equals(GeneratorConstants.HUDSON_PROPERTIES) && canManageHudsonProperties) {
 				return this.configMaps.get(id);
-			if (id.equals(GeneratorConstants.GENERATION_LOCATION) && canManageGenerationLocation)
+			}
+			if (id.equals(GeneratorConstants.GENERATION_LOCATION) && canManageGenerationLocation) {
 				return this.configMaps.get(id);
+			}
 		}
 		return null;
 	}
@@ -93,12 +96,15 @@ public class BuildDataConfigContainer<T> {
 	
 	public List<T> getList(String id){
 		if (id != null){
-			if (id.equals(GeneratorConstants.SOURCE_FOLDERS) && canManageSourceFolders)
+			if (id.equals(GeneratorConstants.SOURCE_FOLDERS) && canManageSourceFolders) {
 				return this.configLists.get(id);
-			if (id.equals(GeneratorConstants.CRON_TRIGGERS) && canManageCronTriggers)
+			}
+			if (id.equals(GeneratorConstants.CRON_TRIGGERS) && canManageCronTriggers) {
 				return this.configLists.get(id);
-			if (id.equals(GeneratorConstants.SCM_TRIGGERS) && canManageSCMTriggers)
+			}
+			if (id.equals(GeneratorConstants.SCM_TRIGGERS) && canManageSCMTriggers) {
 				return this.configLists.get(id);
+			}
 		}
 		return null;
 	}

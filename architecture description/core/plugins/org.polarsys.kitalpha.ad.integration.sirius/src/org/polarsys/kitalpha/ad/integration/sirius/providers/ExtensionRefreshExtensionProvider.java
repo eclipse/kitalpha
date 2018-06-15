@@ -23,10 +23,12 @@ public class ExtensionRefreshExtensionProvider implements IRefreshExtensionProvi
 
 	private static final ExtensionRefreshExtension REFRESH = new ExtensionRefreshExtension();
 
+	@Override
 	public IRefreshExtension getRefreshExtension(DDiagram viewPoint) {
 		return REFRESH;
 	}
 
+	@Override
 	public boolean provides(DDiagram viewPoint) {
 		// TODO Ne s'interesser qu'aux diagrammes MA
 		return true;

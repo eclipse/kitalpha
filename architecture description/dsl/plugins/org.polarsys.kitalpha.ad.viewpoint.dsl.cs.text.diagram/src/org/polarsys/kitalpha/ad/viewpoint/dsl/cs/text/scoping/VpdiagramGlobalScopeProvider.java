@@ -258,16 +258,19 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 	}
 	
 	private EPackage loadEPackage(String resourceOrNsURI, ResourceSet resourceSet) {
-		if (resourceSet.getPackageRegistry().containsKey(resourceOrNsURI))
+		if (resourceSet.getPackageRegistry().containsKey(resourceOrNsURI)) {
 			return resourceSet.getPackageRegistry().getEPackage(resourceOrNsURI);
+		}
 		URI uri = URI.createURI(resourceOrNsURI);
 		try {
-			if ("http".equalsIgnoreCase(uri.scheme()))
+			if ("http".equalsIgnoreCase(uri.scheme())) {
 				return null;
+			}
 			if (uri.fragment() == null) {
 				Resource resource = resourceSet.getResource(uri, true);
-				if (resource.getContents().isEmpty())
+				if (resource.getContents().isEmpty()) {
 					return null;
+				}
 				EPackage result = (EPackage) resource.getContents().get(0);
 				return result;
 			}
@@ -460,16 +463,18 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 	private Iterable<IEObjectDescription> exportEcoreElements(String uri, Resource resource,	
 			Iterable<IEObjectDescription> exportedObjects) {	
 
-		if (descriptionManager == null)	
-			return exportedObjects;	
+		if (descriptionManager == null) {
+			return exportedObjects;
+		}	
 
 		if (uri.startsWith("http://")){	
 			EPackage ePackage = DataWorkspaceEPackage.INSTANCE.getEPackage(uri);	
 
 			if (ePackage != null && ePackage.eResource()!=null) {	
 				Resource packageResource = resource.getResourceSet().getResource(ePackage.eResource().getURI(), true);	
-				if (packageResource == null)	
-					return exportedObjects;	
+				if (packageResource == null) {
+					return exportedObjects;
+				}	
 
 				IResourceDescription resourceDescription =        descriptionManager
 						.getResourceDescription(packageResource);	
@@ -479,8 +484,9 @@ public class VpdiagramGlobalScopeProvider extends DefaultGlobalScopeProvider {
 			URI puri = createURI(uri);	
 			Resource modelResource = resource.getResourceSet().getResource(puri, true);	
 
-			if (modelResource == null)	
-				return exportedObjects;	
+			if (modelResource == null) {
+				return exportedObjects;
+			}	
 
 			IResourceDescription resourceDescription = descriptionManager.getResourceDescription(modelResource);	
 			exportedObjects = Iterables.concat(exportedObjects, resourceDescription.getExportedObjects());	

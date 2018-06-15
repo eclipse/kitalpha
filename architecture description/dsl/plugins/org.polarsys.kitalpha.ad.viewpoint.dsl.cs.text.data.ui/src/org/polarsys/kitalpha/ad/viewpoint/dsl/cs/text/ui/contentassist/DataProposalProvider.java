@@ -70,8 +70,9 @@ public class DataProposalProvider extends AbstractDataProposalProvider {
 		ICompletionProposal proposal = createCompletionProposal(
 				keyword.getValue(), getKeywordDisplayString(keyword),
 				getImage(keyword), contentAssistContext);
-		if (proposal == null)
+		if (proposal == null) {
 			return;
+		}
 		EObject current = contentAssistContext.getCurrentModel();
 		if (current != null && NodeModelUtils.getNode(current) != null) {
 			// Case for Enumerators: display "values" only for EEnumerators
@@ -122,8 +123,9 @@ public class DataProposalProvider extends AbstractDataProposalProvider {
 	
 	private Collection<String> computeAlreadyImportedURI(EObject model)
 	{
-		if (!(model instanceof DataSpec))
+		if (!(model instanceof DataSpec)) {
 			return Collections.emptyList();
+		}
 		
 		
 		Collection<String> result = new HashSet<String>();
@@ -139,14 +141,16 @@ public class DataProposalProvider extends AbstractDataProposalProvider {
 				
 				String uri = importURI.getImportURI();
 				
-				if (uri != null && !uri.isEmpty())
+				if (uri != null && !uri.isEmpty()) {
 					result.add(uri);
+				}
 			}
 		}
 		
 		return result;
 	}
 
+	@Override
 	public void completeImportURI_ImportURI(EObject model,
 			Assignment assignment, ContentAssistContext context,
 			ICompletionProposalAcceptor acceptor) {
@@ -163,20 +167,23 @@ public class DataProposalProvider extends AbstractDataProposalProvider {
 		
 		for (String uri : nsUris) {
 			
-			if (uri.startsWith("\""))
+			if (uri.startsWith("\"")) {
 				uri = uri.substring(1);
+			}
 
-			if (uri.endsWith("\""))
+			if (uri.endsWith("\"")) {
 				uri = uri.substring(0, uri.length()-1);
+			}
 
 			if (!alreadyImported.contains(uri)){
 
 				StyledString styledUri;
 				
-				if (URI.createURI(uri).isPlatformPlugin())
+				if (URI.createURI(uri).isPlatformPlugin()) {
 					styledUri = new StyledString(uri, StyledString.COUNTER_STYLER);
-				else
+				} else {
 					styledUri = new StyledString(uri, StyledString.DECORATIONS_STYLER);
+				}
 				
 				acceptor.accept(createCompletionProposal(createProposal(uri),
 						styledUri, image, context));

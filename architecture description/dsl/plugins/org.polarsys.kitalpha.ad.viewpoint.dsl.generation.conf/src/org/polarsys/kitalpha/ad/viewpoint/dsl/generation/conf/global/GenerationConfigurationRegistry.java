@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,9 +47,9 @@ public class GenerationConfigurationRegistry  implements GenerationConfiguration
 	 * @param configuration {@link IGenerationElementInnerConfiguration} to register
 	 */
 	public static void register(IGenerationElementInnerConfiguration configuration){
-		if (! innerConfigurationRegistry.contains(configuration))
+		if (! innerConfigurationRegistry.contains(configuration)) {
 			innerConfigurationRegistry.add(configuration);
-		else
+		} else
 		{
 			// FIXME: Throw and exception if needed
 		}
@@ -60,8 +60,9 @@ public class GenerationConfigurationRegistry  implements GenerationConfiguration
 	 * @param configuration {@link IGenerationElementInnerConfiguration} to unregister
 	 */
 	public static void unregister(IGenerationElementInnerConfiguration configuration){
-		if (innerConfigurationRegistry.contains(configuration))
+		if (innerConfigurationRegistry.contains(configuration)) {
 			innerConfigurationRegistry.remove(configuration);
+		}
 	}
 	
 	/**
@@ -69,9 +70,9 @@ public class GenerationConfigurationRegistry  implements GenerationConfiguration
 	 * @param configuration {@link IGenerationElementInnerConfiguration} to register
 	 */
 	public static void register(IGenerationElementDependeciesConfiguration configuration){
-		if (! dependenciesRegistry.contains(configuration))
+		if (! dependenciesRegistry.contains(configuration)) {
 			dependenciesRegistry.add(configuration);
-		else
+		} else
 		{
 			// FIXME: Throw and exception if needed
 		}
@@ -82,8 +83,9 @@ public class GenerationConfigurationRegistry  implements GenerationConfiguration
 	 * @param configuration {@link IGenerationElementInnerConfiguration} to unregister
 	 */
 	public static void unregister(IGenerationElementDependeciesConfiguration configuration){
-		if (dependenciesRegistry.contains(configuration))
+		if (dependenciesRegistry.contains(configuration)) {
 			dependenciesRegistry.remove(configuration);
+		}
 	}
 	
 	/**
@@ -131,8 +133,9 @@ public class GenerationConfigurationRegistry  implements GenerationConfiguration
 	public static IGenerationElementInnerConfiguration getInnerConfigurationFor(GenerationElement element) {
 		for (IGenerationElementInnerConfiguration configuration : innerConfigurationRegistry) 
 		{
-			if (checkConfigurationClass(element, configuration))
+			if (checkConfigurationClass(element, configuration)) {
 				return configuration;
+			}
 		}
 		return null;
 	}
@@ -155,8 +158,9 @@ public class GenerationConfigurationRegistry  implements GenerationConfiguration
 	public static IGenerationElementDependeciesConfiguration getDependenciesConfigurationFor(GenerationElement element) {
 		for (IGenerationElementDependeciesConfiguration configuration : dependenciesRegistry) 
 		{
-			if (checkConfigurationClass(element, configuration))
+			if (checkConfigurationClass(element, configuration)) {
 				return configuration;
+			}
 		}
 		return null;
 	}
@@ -177,8 +181,9 @@ public class GenerationConfigurationRegistry  implements GenerationConfiguration
 		{
 			for (Class<?> interfaze : element.getClass().getInterfaces()) 
 			{
-				if (interfaze.equals(clazz))
+				if (interfaze.equals(clazz)) {
 					return true;
+				}
 			}
 		}
 		return false;

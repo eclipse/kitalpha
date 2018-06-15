@@ -253,10 +253,12 @@ public class ViewpointManagerView extends ViewPart {
 	private OpenViewAction openViewAction;
 	private ViewpointManager.OverallListener vpListener = new ViewpointManager.OverallListener() {
 
+		@Override
 		public void hasBeenDeactivated(Object ctx, Resource vp) {
 			init();
 		}
 
+		@Override
 		public void hasBeenActivated(Object ctx, Resource vp) {
 			init();
 		}

@@ -52,11 +52,13 @@ public abstract class ElementDialog extends TrayDialog {
 		viewer.setSorter(new ViewerSorter());
 		viewer.addDoubleClickListener(new IDoubleClickListener() {
 
+			@Override
 			public void doubleClick(DoubleClickEvent event) {
 				okPressed();
 			}
 		});
 		viewer.addSelectionChangedListener(new ISelectionChangedListener() {
+			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
 				selection = (IStructuredSelection) event.getSelection();
 			}

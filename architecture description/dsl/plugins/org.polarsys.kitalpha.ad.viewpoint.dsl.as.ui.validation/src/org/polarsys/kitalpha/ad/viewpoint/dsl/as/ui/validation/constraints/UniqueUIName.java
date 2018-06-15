@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,10 +26,12 @@ public class UniqueUIName implements ICoreConstraintContribution {
 	public UniqueUIName() {
 	}
 
+	@Override
 	public boolean isObjectInScope(Object object) {
 		return object instanceof UI;
 	}
 
+	@Override
 	public List<String> brothersEStructuralFeatures() {
 		List<String> list = new ArrayList<String>();
 		list.add("UIs");

@@ -46,6 +46,7 @@ public class GenerationGraph {
 		}
 	}
 	
+	@Override
 	@SuppressWarnings("unchecked")
 	public GenerationGraph clone(){
 		GenerationGraph theClone = new GenerationGraph(null);
@@ -59,30 +60,34 @@ public class GenerationGraph {
 		Vector<GenerationEdge> concernedEdges = new Vector<GenerationEdge>();
 		for (GenerationEdge edge : getOwnedEdges()) 
 		{
-			if (edge.getSourceNode().equals(node))
+			if (edge.getSourceNode().equals(node)) {
 				if (!concernedEdges.contains(edge))
 				{
 					concernedEdges.add(edge);
 				}
+			}
 		
-			if (edge.getTargetNode().equals(node))
+			if (edge.getTargetNode().equals(node)) {
 				if (!concernedEdges.contains(edge))
 				{
 					concernedEdges.add(edge);
 				}
+			}
 		}
 		
 		// Remove concerned Edges
-		for (GenerationEdge cEdge : concernedEdges) 
+		for (GenerationEdge cEdge : concernedEdges) {
 			remove(cEdge);
+		}
 		
 		// Remove Node
 		getOwnedNodes().remove(node);
 	}
 	
 	public void remove(GenerationEdge edge){
-		if (getOwnedEdges().contains(edge))
+		if (getOwnedEdges().contains(edge)) {
 			getOwnedEdges().remove(edge);
+		}
 	}
 	
 	private void createGraphEdges(){
@@ -126,18 +131,22 @@ public class GenerationGraph {
 	
 	public Vector<GenerationNode> getReferencingNodes(GenerationNode node){
 		Vector<GenerationNode> result = new Vector<GenerationNode>();
-		for (GenerationEdge edge : getOwnedEdges()) 
-			if (edge.getTargetNode().equals(node) && result.contains(edge.getSourceNode()))
+		for (GenerationEdge edge : getOwnedEdges()) {
+			if (edge.getTargetNode().equals(node) && result.contains(edge.getSourceNode())) {
 				result.add(edge.getSourceNode());
+			}
+		}
 		
 		return result;
 	}
 	
 	public Vector<GenerationNode> getLeafs(){
 		Vector<GenerationNode> result = new Vector<GenerationNode>();
-		for (GenerationNode node : getOwnedNodes()) 
-			if (isIsolatedNode(node))
+		for (GenerationNode node : getOwnedNodes()) {
+			if (isIsolatedNode(node)) {
 				result.add(node);
+			}
+		}
 		
 		Vector<GenerationNode> targetedNodes = new Vector<GenerationNode>();
 		for (GenerationEdge edge : getOwnedEdges()) 
@@ -170,9 +179,11 @@ public class GenerationGraph {
 	
 	public Vector<GenerationNode> getNeighbors(GenerationNode node){
 		Vector<GenerationNode> result = new Vector<GenerationNode>();
-		for (GenerationEdge edge : _owned_GenerationEdges) 
-			if (edge.getSourceNode().equals(node))
+		for (GenerationEdge edge : _owned_GenerationEdges) {
+			if (edge.getSourceNode().equals(node)) {
 				result.add(edge.getTargetNode());
+			}
+		}
 		
 		return result;
 	}
@@ -185,14 +196,18 @@ public class GenerationGraph {
 			{
 				includeViewpointToGraph(viewpoint);
 				List<Viewpoint> vpParents = viewpoint.getParents();
-				if (vpParents != null && vpParents.size() > 0)
-					for (Viewpoint vp : vpParents) 
+				if (vpParents != null && vpParents.size() > 0) {
+					for (Viewpoint vp : vpParents) {
 						includeViewpointToGraph(vp);
+					}
+				}
 				
 				List<Viewpoint> vpDependecies = viewpoint.getDependencies();
-				if (vpDependecies != null && vpDependecies.size() > 0)
-					for (Viewpoint vp : vpDependecies) 
+				if (vpDependecies != null && vpDependecies.size() > 0) {
+					for (Viewpoint vp : vpDependecies) {
 						includeViewpointToGraph(vp);
+					}
+				}
 			}
 		}
 	}
@@ -222,17 +237,20 @@ public class GenerationGraph {
 	private GenerationNode getGenerationNode(Viewpoint viewpoint){
 		for (GenerationNode generationNode : _owned_GenerationNodes) 
 		{
-			if (generationNode.getViewpoint().equals(viewpoint))
+			if (generationNode.getViewpoint().equals(viewpoint)) {
 				return generationNode;
+			}
 		}
 		
 		return null;
 	}
 	
 	public GenerationNode getNode(Viewpoint viewpoint){
-		for (GenerationNode generationNode : _owned_GenerationNodes) 
-			if (EcoreUtil.equals(viewpoint, generationNode.getViewpoint()))
+		for (GenerationNode generationNode : _owned_GenerationNodes) {
+			if (EcoreUtil.equals(viewpoint, generationNode.getViewpoint())) {
 				return generationNode;
+			}
+		}
 		
 		return null;
 	}
@@ -244,9 +262,11 @@ public class GenerationGraph {
 	 * @return True if the node is isolated, False else.
 	 */
 	public boolean isIsolatedNode(GenerationNode node){
-		for (GenerationEdge edge : getOwnedEdges()) 
-			if (edge.getSourceNode().equals(node) || edge.getTargetNode().equals(node))
+		for (GenerationEdge edge : getOwnedEdges()) {
+			if (edge.getSourceNode().equals(node) || edge.getTargetNode().equals(node)) {
 				return false;
+			}
+		}
 		
 		return true;
 	}
@@ -265,10 +285,11 @@ public class GenerationGraph {
 		{
 			System.out.print(node.getName());
 			
-			if (! isLastNode(node))
+			if (! isLastNode(node)) {
 				System.out.print(", ");
-			else
+			} else {
 				System.out.println(" ");
+			}
 		}
 		
 		System.out.println("Edges");

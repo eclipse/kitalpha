@@ -81,6 +81,7 @@ public class AFSpecProjectWizardSecondPage extends AbstractAFSpecProjectWizardPa
 		_afRootProjectName.setText(name);
 	}
 
+	@Override
 	public void createControl(Composite parent) {
 		Composite compo = new Composite(parent, SWT.NONE);
 		setControl(compo);
@@ -118,6 +119,7 @@ public class AFSpecProjectWizardSecondPage extends AbstractAFSpecProjectWizardPa
 		_afRootProjectName = new Text(projectsComposit, SWT.BORDER | SWT.SINGLE);
 		_afRootProjectName.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		_afRootProjectName.addModifyListener(new ModifyListener() {
+			@Override
 			public void modifyText(ModifyEvent e) {
 				boolean valid = vpDataChanged(_afRootProjectName.getText(), "Architecture framework root project name must be valid:", true);
 				if (valid)
@@ -134,6 +136,7 @@ public class AFSpecProjectWizardSecondPage extends AbstractAFSpecProjectWizardPa
 		_afSpecificationProjectName = new Text(projectsComposit, SWT.BORDER | SWT.SINGLE);
 		_afSpecificationProjectName.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		_afSpecificationProjectName.addModifyListener(new ModifyListener() {
+			@Override
 			public void modifyText(ModifyEvent e) {
 				boolean valid = vpDataChanged(_afSpecificationProjectName.getText(), "Architecture framework description project name must be valid:", true);
 				if (valid) {
@@ -262,11 +265,13 @@ public class AFSpecProjectWizardSecondPage extends AbstractAFSpecProjectWizardPa
 	
 	class ListSelectionListener implements SelectionListener{
 
+		@Override
 		public void widgetSelected(SelectionEvent e) {
 			bAdd.setEnabled(lAvailableCreators.getSelectionIndex() != -1);
 			bRemove.setEnabled(lSelectedCreators.getSelectionIndex() != -1);
 		}
 
+		@Override
 		public void widgetDefaultSelected(SelectionEvent e) {
 		}
 	}
@@ -275,6 +280,7 @@ public class AFSpecProjectWizardSecondPage extends AbstractAFSpecProjectWizardPa
 	
 	class ListMouseListener implements MouseListener{
 
+		@Override
 		public void mouseDoubleClick(MouseEvent e) {
 			
 			ListenerUtilities lUtil = new ListenerUtilities();
@@ -304,9 +310,11 @@ public class AFSpecProjectWizardSecondPage extends AbstractAFSpecProjectWizardPa
 			lUtil.updateUI();
 		}
 
+		@Override
 		public void mouseDown(MouseEvent e) {
 		}
 
+		@Override
 		public void mouseUp(MouseEvent e) {
 		}
 		
@@ -315,6 +323,7 @@ public class AFSpecProjectWizardSecondPage extends AbstractAFSpecProjectWizardPa
 	/************************* Button listeners *********************************/
 	
 	class ButtonMouseListener implements MouseListener{
+		@Override
 		public void mouseUp(MouseEvent e) {
 			Button b = (Button)e.getSource();
 			
@@ -358,9 +367,11 @@ public class AFSpecProjectWizardSecondPage extends AbstractAFSpecProjectWizardPa
 		
 		
 		
+		@Override
 		public void mouseDoubleClick(MouseEvent e) {
 		}
 
+		@Override
 		public void mouseDown(MouseEvent e) {
 		}
 	}

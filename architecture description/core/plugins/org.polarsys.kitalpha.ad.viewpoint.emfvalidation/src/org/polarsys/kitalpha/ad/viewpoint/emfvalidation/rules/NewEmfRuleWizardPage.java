@@ -77,6 +77,7 @@ public class NewEmfRuleWizardPage extends NewElementWizardPage {
 		fMessageDialogField = new AdvTextBoxDialogField();
 		fMessageDialogField.setDialogFieldListener(new IDialogFieldListener() {
 
+			@Override
 			public void dialogFieldChanged(DialogField field) {
 				handleFieldChanged(MESSAGE);
 			}
@@ -86,6 +87,7 @@ public class NewEmfRuleWizardPage extends NewElementWizardPage {
 		fDescriptionDialogField = new AdvTextBoxDialogField();
 		fDescriptionDialogField.setDialogFieldListener(new IDialogFieldListener() {
 
+			@Override
 			public void dialogFieldChanged(DialogField field) {
 				handleFieldChanged(DESCRIPTION);
 			}
@@ -114,6 +116,7 @@ public class NewEmfRuleWizardPage extends NewElementWizardPage {
 		return Messages.JavaRuleWizard_rule_label;
 	}
 
+	@Override
 	public void createControl(Composite parent) {
 		initializeDialogUnits(parent);
 
@@ -229,10 +232,12 @@ public class NewEmfRuleWizardPage extends NewElementWizardPage {
 		TextFieldNavigationHandler.install(text);
 	}
 
+	@Override
 	public String getMessage() {
 		return fMessageDialogField.getText();
 	}
 
+	@Override
 	public String getDescription() {
 		return fDescriptionDialogField.getText();
 	}
@@ -249,11 +254,13 @@ public class NewEmfRuleWizardPage extends NewElementWizardPage {
 
 	private class TypeFieldsAdapter implements IStringButtonAdapter, IDialogFieldListener, IListAdapter, SelectionListener {
 		// -------- IStringButtonAdapter
+		@Override
 		public void changeControlPressed(DialogField field) {
 			//nothing to do
 		}
 
 		// -------- IListAdapter
+		@Override
 		public void customButtonPressed(ListDialogField field, int index) {
 			if (field == fPackageDialogField) {
 				if (index == 0) {
@@ -278,22 +285,27 @@ public class NewEmfRuleWizardPage extends NewElementWizardPage {
 			}
 		}
 
+		@Override
 		public void selectionChanged(ListDialogField field) {
 			//nothing to do
 		}
 
+		@Override
 		public void dialogFieldChanged(DialogField field) {
 			//nothing to do
 		}
 
+		@Override
 		public void doubleClicked(ListDialogField field) {
 			//nothing to do
 		}
 
+		@Override
 		public void widgetSelected(SelectionEvent e) {
 			//nothing to do
 		}
 
+		@Override
 		public void widgetDefaultSelected(SelectionEvent e) {
 			//nothing to do
 		}

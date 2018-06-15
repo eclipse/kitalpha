@@ -32,6 +32,7 @@ public class ViewpointManagerContentProvider implements IStructuredContentProvid
 		//nothing to do
 	}
 
+	@Override
 	public Object[] getElements(Object inputElement) {
 		if (inputElement instanceof Description[]) {
 			return (Object[]) inputElement;

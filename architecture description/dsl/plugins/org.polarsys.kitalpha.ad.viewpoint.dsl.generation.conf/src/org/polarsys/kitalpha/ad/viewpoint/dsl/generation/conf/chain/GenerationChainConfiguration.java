@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -79,11 +79,12 @@ public final class GenerationChainConfiguration {
 			IGenerationElementInnerConfiguration configuration = GenerationConfigurationRegistry.getInnerConfigurationFor(element);
 			if (configuration != null)
 			{
-				if (configuration.isRelevant(generationchain, element))
+				if (configuration.isRelevant(generationchain, element)) {
 					configuration.configure(element);
-				else
-					if (clean)
-					elementToRemove.add(element);
+				} else
+					if (clean) {
+						elementToRemove.add(element);
+					}
 			}
 		}
 		
@@ -110,8 +111,9 @@ public final class GenerationChainConfiguration {
 			if (iElement instanceof GenerationChain)
 			{
 				done = removeGenerationElementFrom((GenerationChain) iElement, element);
-				if (done)
+				if (done) {
 					return true;
+				}
 			}
 			else
 			{
@@ -127,9 +129,9 @@ public final class GenerationChainConfiguration {
 		{
 			generationchain.getElements().remove(element);
 			return true;
-		}
-		else
+		} else {
 			return false;
+		}
 			
 	}
 }

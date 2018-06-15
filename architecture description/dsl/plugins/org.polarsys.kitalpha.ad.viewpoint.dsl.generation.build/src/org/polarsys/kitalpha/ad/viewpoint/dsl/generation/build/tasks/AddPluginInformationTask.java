@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -34,12 +34,14 @@ public class AddPluginInformationTask implements ITaskProduction{
 	public void doExecute(ITaskProductionContext productionContext,	IProgressMonitor monitor) throws InvocationException {
 		//root project name
 		String rootProjectName = productionContext.getInputValue(GeneratorConstants.LVPS_ROOT_PROJECT_NAME, String.class);
-		if (rootProjectName == null || "".equals(rootProjectName)) //$NON-NLS-1$
+		if (rootProjectName == null || "".equals(rootProjectName)) {
 			throw new InvocationException(Messages.GeneratorError_ProjectNameNotFound);
+		}
 		//viewpoint short name
 		String lvpsShortName = productionContext.getInputValue(GeneratorConstants.LVPS_SHORT_NAME, String.class);
-		if (lvpsShortName == null || "".equals(lvpsShortName)) //$NON-NLS-1$
+		if (lvpsShortName == null || "".equals(lvpsShortName)) {
 			throw new InvocationException(Messages.GeneratorError_ViewpointShortNameNotFound);
+		}
 		String projectName = rootProjectName + "." + "releng"; //$NON-NLS-1$ //$NON-NLS-2$
 		IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(projectName);
 		if (project.exists()) {

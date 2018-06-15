@@ -37,6 +37,7 @@ public class DataScopeProvider extends AbstractDeclarativeScopeProvider {
 	IScope scope_Class_extends(EObject context, EReference reference) {
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d) {
 						return (d.getEObjectOrProxy() instanceof EClass);
 					}
@@ -46,6 +47,7 @@ public class DataScopeProvider extends AbstractDeclarativeScopeProvider {
 	IScope scope_ExternalSuperClass_superClass(EObject context,	EReference reference) {
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d) {
 						return (d.getEObjectOrProxy() instanceof EClass);
 					}
@@ -57,6 +59,7 @@ public class DataScopeProvider extends AbstractDeclarativeScopeProvider {
 		
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d) {
 						return (d.getEObjectOrProxy() instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class
 								&& !d.getEObjectOrProxy().equals(context2));
@@ -67,6 +70,7 @@ public class DataScopeProvider extends AbstractDeclarativeScopeProvider {
 	IScope scope_ExternalAttributeType_type(EObject context, EReference reference) {
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d) {
 						return (d.getEObjectOrProxy() instanceof EDataType);
 					}
@@ -78,6 +82,7 @@ public class DataScopeProvider extends AbstractDeclarativeScopeProvider {
 		final EObject context2 = context;
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d) {
 						return (d.getEObjectOrProxy() instanceof Enumeration && ProjectUtil.areInSameProject(context2, d.getEObjectOrProxy()));
 					}
@@ -87,6 +92,7 @@ public class DataScopeProvider extends AbstractDeclarativeScopeProvider {
 	IScope scope_ResultData_type(EObject context, EReference reference) {
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d) {
 						return (d.getEObjectOrProxy() instanceof EDataType);
 					}
@@ -97,6 +103,7 @@ public class DataScopeProvider extends AbstractDeclarativeScopeProvider {
 		final EObject context2 = context;
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
+			@Override
 			public boolean apply(IEObjectDescription d) {
 				EObject target = d.getEObjectOrProxy();
 				if (!(context2.equals(target)) && 
@@ -124,6 +131,7 @@ public class DataScopeProvider extends AbstractDeclarativeScopeProvider {
 		final EObject context2 = context;
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d) {
 						return (d.getEObjectOrProxy() instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class 
 								&& ProjectUtil.areInSameProject(context2, d.getEObjectOrProxy()));
@@ -134,6 +142,7 @@ public class DataScopeProvider extends AbstractDeclarativeScopeProvider {
 	IScope scope_ExternalClassAssociation_ExternalTarget(EObject context, EReference reference) {
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d) {
 						return (d.getEObjectOrProxy() instanceof EClass);
 					}
@@ -143,6 +152,7 @@ public class DataScopeProvider extends AbstractDeclarativeScopeProvider {
 	IScope scope_ExternalType_type(EObject context, EReference reference) {
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d) {
 						return (d.getEObjectOrProxy() instanceof EClassifier);
 					}
@@ -154,6 +164,7 @@ public class DataScopeProvider extends AbstractDeclarativeScopeProvider {
 		final EObject context2 = context;
 		return new FilteringScope(delegateGetScope(context, reference),
 				new Predicate<IEObjectDescription>() {
+					@Override
 					public boolean apply(IEObjectDescription d) {
 						return (d.getEObjectOrProxy() instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.ViewpointClassifier
 								&& ProjectUtil.areInSameProject(context2, d.getEObjectOrProxy()));

@@ -52,6 +52,7 @@ public class NewJavaRuleCreationWizard extends NewRuleCreationWizard {
 
 	}
 
+	@Override
 	protected String getType() {
 		return JavaRuleProvider.ID;
 	}

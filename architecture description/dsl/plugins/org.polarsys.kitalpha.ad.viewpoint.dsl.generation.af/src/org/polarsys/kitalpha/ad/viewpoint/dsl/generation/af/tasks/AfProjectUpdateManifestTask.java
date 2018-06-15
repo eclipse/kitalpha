@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,10 +33,12 @@ public class AfProjectUpdateManifestTask implements ITaskProduction {
 
 	public static final String CONTRACT_PLUGINS_LIST = "plugins.names.list"; //$NON-NLS-0$
 	
+	@Override
 	public void preExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
 	}
 
+	@Override
 	public void doExecute(ITaskProductionContext productionContext, IProgressMonitor monitor) throws InvocationException {
 		String projectName = (String) productionContext.getInputValue(AfConstants.CONTRACT_PROJECT_NAME, String.class);
 		if (projectName != null && projectName.trim().length() > 0)
@@ -44,8 +46,9 @@ public class AfProjectUpdateManifestTask implements ITaskProduction {
 			Viewpoint vp = AfProjectManager.INSTANCE.getViewpoint();
 			List<String> requiredBundles = getRequiredBundlesFor(vp);
 			IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(projectName);
-			if (project != null && project.exists())
+			if (project != null && project.exists()) {
 				PDEUtility.updateRequiredBundles(project, requiredBundles, monitor);
+			}
 		}
 	}
 	
@@ -54,13 +57,15 @@ public class AfProjectUpdateManifestTask implements ITaskProduction {
 		final List<Viewpoint> referencedViewpoints = new ArrayList<Viewpoint>();
 		// Handle viewpoint dependencies
 		final List<Viewpoint> dependenciesViewpoints = viewpoint.getDependencies();
-		if (dependenciesViewpoints != null && dependenciesViewpoints.size() > 0)
+		if (dependenciesViewpoints != null && dependenciesViewpoints.size() > 0) {
 			referencedViewpoints.addAll(dependenciesViewpoints);
+		}
 
 		// Handle viewpoint parents
 		final List<Viewpoint> parentsViewpoints = viewpoint.getParents();
-		if (parentsViewpoints != null && parentsViewpoints.size() > 0)
+		if (parentsViewpoints != null && parentsViewpoints.size() > 0) {
 			referencedViewpoints.addAll(parentsViewpoints);
+		}
 
 		// Required dependencies construction 
 		for (Viewpoint iViewpoint : referencedViewpoints) 
@@ -72,6 +77,7 @@ public class AfProjectUpdateManifestTask implements ITaskProduction {
 		return result;
 	}
 
+	@Override
 	public void postExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
 	}

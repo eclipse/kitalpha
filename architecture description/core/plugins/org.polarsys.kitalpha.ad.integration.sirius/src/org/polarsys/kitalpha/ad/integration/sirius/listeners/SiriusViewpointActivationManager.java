@@ -29,10 +29,12 @@ import org.polarsys.kitalpha.resourcereuse.model.Resource;
 
 public final class SiriusViewpointActivationManager implements OverallListener {
 
+	@Override
 	public void hasBeenDeactivated(Object ctx, Resource vp) {
 		updateActiveViewpoint(ctx, getURI(vp), false);
 	}
 
+	@Override
 	public void hasBeenActivated(Object ctx, Resource vp) {
 		updateActiveViewpoint(ctx, getURI(vp), true);
 	}

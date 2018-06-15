@@ -24,24 +24,29 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.EdgeDescription
 
 public class EdgesUniqueNoConditionalRepresentationRules implements IAdditionalConstraint {
 
+	@Override
 	public boolean isObjectInScope(Object object) {
 		return object instanceof AbstractEdge;
 	}
 
+	@Override
 	public ValidationStatus validationRules(Object data) {
 		AbstractEdge aEdge= (AbstractEdge) data;
 		int contionalRepresentationCount = 0;
 		for (EdgeDescription iEdgeDescription : aEdge.getE_description()) 
 		{
-			if (iEdgeDescription.getCondition() == null)
+			if (iEdgeDescription.getCondition() == null) {
 				contionalRepresentationCount ++;
+			}
 			
-			if (contionalRepresentationCount > 1)
+			if (contionalRepresentationCount > 1) {
 				return ValidationStatus.Error;
+			}
 		}
 		return ValidationStatus.Ok;
 	}
 
+	@Override
 	public String getMessage(ValidationStatus status, Object object) {
 		NamedElement edge = (NamedElement) object;
 		String elementType = edge.eClass().getName();

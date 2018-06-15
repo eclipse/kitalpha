@@ -109,6 +109,7 @@ public class NewEmfValidationRuleCreationWizard extends NewRuleCreationWizard {
 		return findModel.getBundleDescription().getSymbolicName() + '.' + getFullClassname();
 	}
 
+	@Override
 	protected String getType() {
 		return EmfValidationRuleProvider.ID;
 	}

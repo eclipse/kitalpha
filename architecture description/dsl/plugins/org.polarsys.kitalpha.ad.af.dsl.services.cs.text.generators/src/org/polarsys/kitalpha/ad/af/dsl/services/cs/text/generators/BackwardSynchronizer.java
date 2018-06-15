@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -30,10 +30,9 @@ import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.validation.IConcreteSyntaxValidator;
+import org.polarsys.kitalpha.ad.af.dsl.as.model.afdesc.ArchitectureFramework;
 import org.polarsys.kitalpha.ad.af.dsl.services.cs.text.generators.messages.Messages;
 import org.polarsys.kitalpha.ad.af.dsl.services.cs.text.generators.util.AfdslGeneratorsUtil;
-
-import org.polarsys.kitalpha.ad.af.dsl.as.model.afdesc.ArchitectureFramework;
 
 /**
  * 

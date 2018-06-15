@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -54,6 +54,7 @@ public class PropertyTypeEditingSupport extends BasicEditingSupport {
 		return Arrays.asList(cellEditor.getItems()).indexOf(toString(value));
 	}
 
+	@Override
 	protected final void doSetValue(Object element, Object value) {
 		String val = cellEditor.getItems()[(Integer) value];
 		((Property) element).setType(Types.getByName(val));

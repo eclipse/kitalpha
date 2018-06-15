@@ -36,6 +36,7 @@ public class DataUiModule extends org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text
 		return CommonTemplateProposalProvider.class;
 	}
 	
+	@Override
 	public Class<? extends org.eclipse.jface.text.templates.persistence.TemplateStore> bindTemplateStore() {
 		return CommonTemplateStore.class;
 	}

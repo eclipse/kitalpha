@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,16 +33,14 @@ import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.sirius.common.tools.api.editing.EditingDomainFactoryService;
 import org.eclipse.sirius.common.tools.api.resource.ResourceSetFactory;
-
 import org.polarsys.kitalpha.ad.ta.extension.ITargetApplication;
 import org.polarsys.kitalpha.ad.ta.extension.TargetApplicationExtensionManager;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.configuration.VpDslConfigurationHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common.manager.VpdslDescriptionModelManager;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.chain.GenerationChainConfiguration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.constant.Constant;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.helper.GenerationCreatingCommand;
-
-import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.chain.GenerationChainConfiguration;
 
 /**
  * @author Boubekeur Zendagui
@@ -57,6 +55,7 @@ public class GenchainGenerationOperation extends AbstractGenerationOperation{
 		super(projectName, ecoreModelName, modelsFolder);
 	}
 	
+	@Override
 	protected void execute(IProgressMonitor monitor){
 		setMonitor(monitor);
 		Resource genchainResource;
@@ -95,18 +94,21 @@ public class GenchainGenerationOperation extends AbstractGenerationOperation{
 		{
 			CompoundCommand genchainCreationCommands = new CompoundCommand();
 			
-			for (RecordingCommand genCmd : elementsCmds) 
+			for (RecordingCommand genCmd : elementsCmds) {
 				genchainCreationCommands.append(genCmd);
+			}
 			
 			// Setting the generation properties for generation chain elements
 			RecordingCommand setupCommand = getSetupCommand(chain);
-			if(setupCommand != null)
+			if(setupCommand != null) {
 				genchainCreationCommands.append(setupCommand);
+			}
 			
 			// Setting generation chain configuration command
 			RecordingCommand configurationCommand = getConfigurationCommand(chain);
-			if(configurationCommand != null)
+			if(configurationCommand != null) {
 				genchainCreationCommands.append(configurationCommand);
+			}
 			
 			// Run all created commands allowing to create and setup Generation Chain elements
 			getEditingDomain().getCommandStack().execute(genchainCreationCommands);
@@ -118,8 +120,9 @@ public class GenchainGenerationOperation extends AbstractGenerationOperation{
 	 * @return a {@link TransactionalEditingDomain}
 	 */
 	public TransactionalEditingDomain getEditingDomain(){
-		if (_editingDomain == null || _editingDomain.getCommandStack() == null)
+		if (_editingDomain == null || _editingDomain.getCommandStack() == null) {
 			_editingDomain = EditingDomainFactoryService.INSTANCE.getEditingDomainFactory().createEditingDomain(_resourceSet);
+		}
 
 		return _editingDomain;
 	}

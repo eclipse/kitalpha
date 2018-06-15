@@ -12,7 +12,6 @@
 package org.polarsys.kitalpha.ad.af.dsl.as.desc.helper.model;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
-
 import org.polarsys.kitalpha.ad.af.dsl.as.model.afdesc.ArchitectureFramework;
 import org.polarsys.kitalpha.ad.af.dsl.as.model.afdesc.Configuration;
 import org.polarsys.kitalpha.ad.af.dsl.as.model.afdesc.ConfigurationElement;

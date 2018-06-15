@@ -25,18 +25,22 @@ import org.polarsys.kitalpha.resourcereuse.model.Resource;
  */
 public class ActivityExplorerUpdater implements OverallListener {
 
+	@Override
 	public void hasBeenDeactivated(Object ctx, Resource vp) {
 		refresh(ctx);
 	}
 
+	@Override
 	public void hasBeenActivated(Object ctx, Resource vp) {
 		refresh(ctx);
 	}
 
+	@Override
 	public void hasBeenFiltered(Object ctx, Resource vp) {
 		refresh(ctx);
 	}
 
+	@Override
 	public void hasBeenDisplayed(Object ctx, Resource vp) {
 		refresh(ctx);
 	}

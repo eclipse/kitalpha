@@ -136,17 +136,19 @@ public class CreateEdgeCommand extends RecordingCommand {
 		Collection<EObject> sematicSources = new ArrayList<EObject>();
 		
 		IInterpreter interpreter = _session.getInterpreter();
-		if (_isElementBasedEdge)
+		if (_isElementBasedEdge) {
 			sematicSources = interpreter.evaluateCollection(_target, _mapping.getSourceFinderExpression());
-		else
+		} else {
 			sematicSources.add(_target);
+		}
 
 		EList<DiagramElementMapping> sourceMapping = _mapping.getSourceMapping();
 		for (EObject eObject : sematicSources) 
 		{
 			List<EdgeTarget> sources = getNodesFromDiagram(sourceMapping, eObject);
-			if (! sources.isEmpty())
+			if (! sources.isEmpty()) {
 				result.addAll(sources);
+			}
 		}
 
 		return result;
@@ -166,8 +168,9 @@ public class CreateEdgeCommand extends RecordingCommand {
 		for (EObject eObject : sematicTarget) 
 		{
 			List<EdgeTarget> targets = getNodesFromDiagram(targetMapping, eObject);
-			if (! targets.isEmpty())
+			if (! targets.isEmpty()) {
 				result.addAll(targets);
+			}
 		}
 
 		return result;
@@ -189,8 +192,9 @@ public class CreateEdgeCommand extends RecordingCommand {
 				EList<DDiagramElementContainer> containers = _diagram.getContainersFromMapping((ContainerMapping) diagramElementMapping);
 				for (DDiagramElementContainer dDiagramElementContainer : containers) 
 				{
-					if (dDiagramElementContainer.getTarget().equals(semantic))
+					if (dDiagramElementContainer.getTarget().equals(semantic)) {
 						result.add(dDiagramElementContainer);
+					}
 				}
 				
 			}
@@ -200,8 +204,9 @@ public class CreateEdgeCommand extends RecordingCommand {
 				EList<DNode> nodes = _diagram.getNodesFromMapping((NodeMapping) diagramElementMapping);
 				for (DNode dNode : nodes) 
 				{
-					if (dNode.getTarget().equals(semantic))
+					if (dNode.getTarget().equals(semantic)) {
 						result.add(dNode);
+					}
 				}
 			}
 		}

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -35,8 +35,9 @@ public class PeriodicURIValidator extends UriValidator {
 	
 	@Override
 	public boolean isValid(URI uri, IStorage storage) {
-		if (uri==null)
+		if (uri==null) {
 			return false;
+		}
 		
 		IResourceServiceProvider resourceServiceProvider = getResourceServiceProvider(uri);
 		
@@ -50,9 +51,11 @@ public class PeriodicURIValidator extends UriValidator {
 		return false;
 	}
 	
+	@Override
 	public boolean canBuild(URI uri, IStorage storage) {
-		if (uri == null)
+		if (uri == null) {
 			return false;
+		}
 		
 		IResourceServiceProvider resourceServiceProvider = getResourceServiceProvider(uri);
 		
@@ -83,8 +86,9 @@ public class PeriodicURIValidator extends UriValidator {
 	
 	@Override
 	public boolean isPossiblyManaged(IStorage storage) {
-		if (!registry.getContentTypeToFactoryMap().isEmpty())
+		if (!registry.getContentTypeToFactoryMap().isEmpty()) {
 			return true;
+		}
 		
 		String name = storage.getName();
 		if (name == null) {

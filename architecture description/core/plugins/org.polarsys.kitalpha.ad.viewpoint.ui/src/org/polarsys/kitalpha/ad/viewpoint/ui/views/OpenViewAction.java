@@ -91,6 +91,7 @@ final class OpenViewAction extends Action implements IMenuCreator {
 		}
 	}
 
+	@Override
 	public void dispose() {
 		//nothing to do
 	}
@@ -107,14 +108,17 @@ final class OpenViewAction extends Action implements IMenuCreator {
 		}
 	}
 
+	@Override
 	public Menu getMenu(Control parent) {
 		Menu dynamicMenu = new Menu(parent);
 		dynamicMenu.addMenuListener(new MenuListener() {
 
+			@Override
 			public void menuShown(MenuEvent e) {
 				fillMenu((Menu) e.getSource());
 			}
 
+			@Override
 			public void menuHidden(MenuEvent e) {
 				//nothing to do
 			}
@@ -123,14 +127,17 @@ final class OpenViewAction extends Action implements IMenuCreator {
 		return dynamicMenu;
 	}
 
+	@Override
 	public Menu getMenu(Menu parent) {
 		Menu dynamicMenu = new Menu(parent);
 		dynamicMenu.addMenuListener(new MenuListener() {
 
+			@Override
 			public void menuShown(MenuEvent e) {
 				fillMenu((Menu) e.getSource());
 			}
 
+			@Override
 			public void menuHidden(MenuEvent e) {
 				//nothing to do
 			}

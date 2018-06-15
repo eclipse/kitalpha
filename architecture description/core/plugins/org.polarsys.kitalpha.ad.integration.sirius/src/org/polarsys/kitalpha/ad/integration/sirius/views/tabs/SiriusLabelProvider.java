@@ -27,6 +27,7 @@ import org.polarsys.kitalpha.ad.viewpoint.ui.views.tabs.AFLabelProvider;
  */
 public class SiriusLabelProvider extends AFLabelProvider {
 
+	@Override
 	public String getColumnText(Object element, int columnIndex) {
 		if (!(element instanceof SiriusRepresentation)){
 			return "";

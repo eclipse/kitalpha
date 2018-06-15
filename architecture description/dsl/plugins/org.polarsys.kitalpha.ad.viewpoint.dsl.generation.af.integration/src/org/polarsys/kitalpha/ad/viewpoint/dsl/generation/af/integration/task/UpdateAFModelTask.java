@@ -26,6 +26,7 @@ public class UpdateAFModelTask implements ITaskProduction {
 	
 	protected static final String MODEL_URI_CONTRACT = "af.model.platform.uri"; // NON-NLS-N$ 
 
+	@Override
 	public void doExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
 		
@@ -37,10 +38,12 @@ public class UpdateAFModelTask implements ITaskProduction {
 		}
 	}
 
+	@Override
 	public void preExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
 	}
 
+	@Override
 	public void postExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
 	}

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -41,10 +41,13 @@ public class DoremiDiagramElementHelper {
 			if (diagramFilter != null && ! diagramFilter.isEmpty()) {
 				for (String dFilter : diagramFilter) {
 					Set<Viewpoint> vpset = ViewpointSelection.getViewpoints(dFilter);
-					for (Viewpoint viewpoint : vpset) 
-						for (RepresentationDescription iRepresentationDescription : viewpoint.getOwnedRepresentations()) 
-							if (iRepresentationDescription instanceof DiagramDescription)
+					for (Viewpoint viewpoint : vpset) {
+						for (RepresentationDescription iRepresentationDescription : viewpoint.getOwnedRepresentations()) {
+							if (iRepresentationDescription instanceof DiagramDescription) {
 								result.add((DiagramDescription)iRepresentationDescription);
+							}
+						}
+					}
 				}
 			}
 		}
@@ -78,8 +81,9 @@ public class DoremiDiagramElementHelper {
 			result.addAll(iDiagram.getAllContainerMappings());
 			for (ContainerMapping containerMapping : iDiagram.getAllContainerMappings()) {
 				List<ContainerMapping> subResult = getSubContainers(containerMapping);
-				if (subResult != null && subResult.size() > 0)
+				if (subResult != null && subResult.size() > 0) {
 					result.addAll(subResult);
+				}
 			}
 		}
 		
@@ -94,13 +98,17 @@ public class DoremiDiagramElementHelper {
 	private static List<ContainerMapping> getSubContainers(ContainerMapping container){
 		List<ContainerMapping> result = new ArrayList<ContainerMapping>();	
 		for (ContainerMapping containerMapping : container.getSubContainerMappings()) {
-			if (! result.contains(containerMapping))
-				result.add(containerMapping);			
+			if (! result.contains(containerMapping)) {
+				result.add(containerMapping);
+			}			
 			List<ContainerMapping> subResult = getSubContainers(containerMapping);
-			if (subResult != null && subResult.size() > 0)
-				for (ContainerMapping containerMapping2 : subResult) 
-					if (! result.contains(containerMapping2))
+			if (subResult != null && subResult.size() > 0) {
+				for (ContainerMapping containerMapping2 : subResult) {
+					if (! result.contains(containerMapping2)) {
 						result.add(containerMapping2);
+					}
+				}
+			}
 		}
 		
 		return result;
@@ -118,15 +126,19 @@ public class DoremiDiagramElementHelper {
 			result.addAll(iDiagram.getAllNodeMappings());
 			for (NodeMapping iNodeMapping : iDiagram.getAllNodeMappings()) {
 				List<NodeMapping> borderedNodes = getBorderedNodes(iNodeMapping);
-				if (borderedNodes != null && borderedNodes.size() > 0)
-					for (NodeMapping nodeMapping : borderedNodes) 
-						if (! result.contains(nodeMapping))
+				if (borderedNodes != null && borderedNodes.size() > 0) {
+					for (NodeMapping nodeMapping : borderedNodes) {
+						if (! result.contains(nodeMapping)) {
 							result.add(nodeMapping);
+						}
+					}
+				}
 			}			
 			for (ContainerMapping iContainerMapping : iDiagram.getAllContainerMappings()) {
 				List<NodeMapping> subNodes = getSubNodes(iContainerMapping);
-				if (subNodes != null && subNodes.size() > 0)
+				if (subNodes != null && subNodes.size() > 0) {
 					result.addAll(subNodes);
+				}
 			}
 		}	
 		return result;
@@ -141,26 +153,35 @@ public class DoremiDiagramElementHelper {
 		List<NodeMapping> result = new BasicEList<NodeMapping>();
 		// The current Container sub node and their bordered nodes
 		for (NodeMapping subNodeMapping : container.getSubNodeMappings()) {
-			if (! result.contains(subNodeMapping))
+			if (! result.contains(subNodeMapping)) {
 				result.add(subNodeMapping);
+			}
 			List<NodeMapping> nodeBorderedNodes = getBorderedNodes(subNodeMapping);
-			if (nodeBorderedNodes != null && nodeBorderedNodes.size() > 0)
-				for (NodeMapping nodeMapping : nodeBorderedNodes) 
-					if (! result.contains(nodeMapping))
+			if (nodeBorderedNodes != null && nodeBorderedNodes.size() > 0) {
+				for (NodeMapping nodeMapping : nodeBorderedNodes) {
+					if (! result.contains(nodeMapping)) {
 						result.add(nodeMapping);
+					}
+				}
+			}
 		}
 		
 		// The current container bordered nodes
-		for (NodeMapping borderedNodeMapping : container.getBorderedNodeMappings())
-			if (! result.contains(borderedNodeMapping))
-					result.add(borderedNodeMapping);
+		for (NodeMapping borderedNodeMapping : container.getBorderedNodeMappings()) {
+			if (! result.contains(borderedNodeMapping)) {
+				result.add(borderedNodeMapping);
+			}
+		}
 		// Handle sub container of the current Mapping
 		for (ContainerMapping iContainerMapping : container.getSubContainerMappings()) {
 			List<NodeMapping> subContainerSubNodes = getSubNodes(iContainerMapping);
-			if (subContainerSubNodes != null && subContainerSubNodes.size() > 0)
-				for (NodeMapping nodeMapping : subContainerSubNodes) 
-					if (! result.contains(nodeMapping))
-						result.add(nodeMapping);				
+			if (subContainerSubNodes != null && subContainerSubNodes.size() > 0) {
+				for (NodeMapping nodeMapping : subContainerSubNodes) {
+					if (! result.contains(nodeMapping)) {
+						result.add(nodeMapping);
+					}
+				}
+			}				
 		}	
 		return result;
 	}
@@ -172,9 +193,11 @@ public class DoremiDiagramElementHelper {
 	 */
 	private static  List<NodeMapping> getBorderedNodes(NodeMapping node){
 		List<NodeMapping> result = new BasicEList<NodeMapping>();
-		for (NodeMapping borderedNodeMapping : node.getBorderedNodeMappings())
-			if (! result.contains(borderedNodeMapping))
-				result.add(borderedNodeMapping);	
+		for (NodeMapping borderedNodeMapping : node.getBorderedNodeMappings()) {
+			if (! result.contains(borderedNodeMapping)) {
+				result.add(borderedNodeMapping);
+			}
+		}	
 		return result;
 	}
 	
@@ -186,8 +209,9 @@ public class DoremiDiagramElementHelper {
 	public static List<EdgeMapping> getAvailableEdgeMappingsFor(EObject anyModelElement ){
 		List<EdgeMapping> result = new ArrayList<EdgeMapping>();
 		List<DiagramDescription> diagrams = getAvailableDoremiDiagramFor(anyModelElement);
-		for (DiagramDescription iDiagram : diagrams) 
+		for (DiagramDescription iDiagram : diagrams) {
 			result.addAll(iDiagram.getAllEdgeMappings());
+		}
 		
 		return result;
 	}

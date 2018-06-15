@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -29,19 +29,23 @@ public class ExternalDataTransient extends DefaultTransientValueService {
 	@Override
 	public boolean isTransient(EObject owner, EStructuralFeature feature, int index) {
 		if (owner instanceof Data &&
-				check_id(VpdescPackage.DATA__ADDITIONAL_EXTERNAL_DATA, feature))
+				check_id(VpdescPackage.DATA__ADDITIONAL_EXTERNAL_DATA, feature)) {
 			return true;
+		}
 		if (owner instanceof Value && 
-				check_id(VpdescPackage.VALUE__NAME, feature))
+				check_id(VpdescPackage.VALUE__NAME, feature)) {
 			return true;
+		}
 		
 		if (owner instanceof Enumeration &&
-				check_id(VpdescPackage.ENUMERATION__ID, feature))
+				check_id(VpdescPackage.ENUMERATION__ID, feature)) {
 			return true;
+		}
 			
 		if (owner instanceof Enumeration &&
-				check_id(VpdescPackage.ENUMERATION__DESCRIPTION, feature))
+				check_id(VpdescPackage.ENUMERATION__DESCRIPTION, feature)) {
 			return true;
+		}
 		
 		if (owner instanceof AbstractFeature &&
 				((check_id(VpdescPackage.ATTRIBUTE__CHANGEABLE, feature)) ||

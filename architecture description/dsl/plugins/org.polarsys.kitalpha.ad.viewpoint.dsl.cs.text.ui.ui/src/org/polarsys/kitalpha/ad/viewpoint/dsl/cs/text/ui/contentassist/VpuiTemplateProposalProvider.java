@@ -73,8 +73,9 @@ public class VpuiTemplateProposalProvider extends CommonTemplateProposalProvider
 			}
 		}	
 		for (Template template : templates) {
-			if (!acceptor.canAcceptMoreTemplates())
+			if (!acceptor.canAcceptMoreTemplates()) {
 				return;
+			}
 			if (validate(template, templateContext)) {	
 				TemplateProposal proposal = createProposal(template, templateContext, context, getImage(template), getRelevance(template));
 				acceptor.accept(proposal);
@@ -92,8 +93,9 @@ public class VpuiTemplateProposalProvider extends CommonTemplateProposalProvider
 		//get viewpoint information
 		URI primary = ResourceHelper.getPrimaryResourceURI(projectName);
 		Resource primaryResource = ResourceHelper.loadResource(primary, resourceSet);
-		if (primaryResource ==null)
+		if (primaryResource ==null) {
 			throw new RuntimeException("could not locate primary resource with uri " + primary);
+		}
 		Viewpoint viewpoint = (Viewpoint) primaryResource.getContents().get(0);
 		//get data from data resource
 		List<URI> dataResourceURIs = ResourceHelper.getSecondaryResourceURIsByExtension(FileExtension.DATA_EXTENSION, projectName);
@@ -148,10 +150,11 @@ public class VpuiTemplateProposalProvider extends CommonTemplateProposalProvider
 					continue;
 				}
 				
-				if (attribute.getOwned_type() instanceof ExternalAttributeType)
+				if (attribute.getOwned_type() instanceof ExternalAttributeType) {
 					type = ResourceHelper.resolveDataType(((ExternalAttributeType)attribute.getOwned_type()).getType(), resourceSet);
-				else
+				} else {
 					continue;
+				}
 				
 				//escape keywords conflicts
 				String attributeName = attribute.getName(); 
@@ -185,8 +188,9 @@ public class VpuiTemplateProposalProvider extends CommonTemplateProposalProvider
 		}
 		
 		if (!containingClass.getVP_Classes_Associations().isEmpty()) {
-			if (!containingClass.getVP_Class_Attributes().isEmpty())
+			if (!containingClass.getVP_Class_Attributes().isEmpty()) {
 				appendable.newLine();
+			}
 			//Associations group
 			appendable.append("Container ").append(vp.getShortName().replaceAll("\"", "")).append("_").append(containingClass.getName()).append("_").append("AssociationGroup").append(" {");
 			appendable.increaseIndentation().newLine();

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,14 +40,17 @@ public class InitializeCoreResourcesProviderTask extends TaskProductionAdapter {
 				try {
 					Thread.sleep(2000);
 					// initialize ECore provider if it is not initialized yet
-					if (! ViewpointResourceProviderRegistry.getInstance().isECoreProviderInitialized())
+					if (! ViewpointResourceProviderRegistry.getInstance().isECoreProviderInitialized()) {
 						ViewpointResourceProviderRegistry.getInstance().initializeEcoreProviders();
+					}
 					// initialize Generation Chain provider if it is not initialized yet
-					if (! ViewpointResourceProviderRegistry.getInstance().isGenchainProviderInitialized())
+					if (! ViewpointResourceProviderRegistry.getInstance().isGenchainProviderInitialized()) {
 						ViewpointResourceProviderRegistry.getInstance().initializeGenchainProviders();
+					}
 					// initialize GenModel provider if it is not initialized yet
-					if (! ViewpointResourceProviderRegistry.getInstance().isGenmodelProviderInitialized())
+					if (! ViewpointResourceProviderRegistry.getInstance().isGenmodelProviderInitialized()) {
 						ViewpointResourceProviderRegistry.getInstance().initializeGenmodelProviders();
+					}
 				} catch (InterruptedException e1) {
 					e1.printStackTrace();
 				} 

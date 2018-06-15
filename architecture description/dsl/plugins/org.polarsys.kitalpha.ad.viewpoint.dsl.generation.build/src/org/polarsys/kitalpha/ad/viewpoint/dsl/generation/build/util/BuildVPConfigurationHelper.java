@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -66,10 +66,11 @@ public class BuildVPConfigurationHelper {
 		if (theusers != null && !theusers.isEmpty()){
 			users = new HashMap<String, String>();
 			for (User user : theusers) {
-				if (user.getPermission() != null)
+				if (user.getPermission() != null) {
 					users.put(user.getLogin(), user.getPermission().getName());
-				else
+				} else {
 					users.put(user.getLogin(), UserPermission.READ.getName());
+				}
 			}
 		}
 		return users;
@@ -125,8 +126,9 @@ public class BuildVPConfigurationHelper {
 						theTriggers.add(((Cron)trigger).getPlanning());
 					}
 				}
-				if (!theTriggers.isEmpty())
+				if (!theTriggers.isEmpty()) {
 					return theTriggers;
+				}
 			}
 			if (type.equals("SCM")){
 				theTriggers = new ArrayList<String>();
@@ -135,8 +137,9 @@ public class BuildVPConfigurationHelper {
 						theTriggers.add(((SCM)trigger).getPlanning());
 					}
 				}
-				if (!theTriggers.isEmpty())
+				if (!theTriggers.isEmpty()) {
 					return theTriggers;
+				}
 			}
 		}
 		return null;

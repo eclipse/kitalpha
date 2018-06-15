@@ -14,14 +14,12 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.as.ui.validation.constraints;
 import org.eclipse.emf.ecore.EObject;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.extension.IAdditionalConstraint;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation.extension.ValidationStatus;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractFeature;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.FieldMapping;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.LocalClass;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.UI;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.UIField;
-
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractFeature;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class;
-
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.ui.validation.message.Messages;
 
 /**
@@ -32,10 +30,12 @@ public class UIDataSourceAndMappingConsistency implements IAdditionalConstraint 
 
 	private String className;
 	
+	@Override
 	public boolean isObjectInScope(Object object) {
 		return object instanceof FieldMapping;
 	}
 
+	@Override
 	public ValidationStatus validationRules(Object data) {
 		EObject parent = ((EObject)data).eContainer();
 
@@ -97,6 +97,7 @@ public class UIDataSourceAndMappingConsistency implements IAdditionalConstraint 
 		return parent;
 	}
 
+	@Override
 	public String getMessage(ValidationStatus status, Object object) {
 		FieldMapping fMapping = (FieldMapping) object;
 		UIField field = (UIField) fMapping.eContainer();

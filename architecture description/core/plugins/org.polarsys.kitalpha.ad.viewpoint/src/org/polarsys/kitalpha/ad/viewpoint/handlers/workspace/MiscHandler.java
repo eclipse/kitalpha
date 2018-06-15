@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,42 +29,52 @@ public class MiscHandler extends WorkspaceManager.ElementHandler implements IMis
 		super(viewpoint, wsManager);
 	}
 
+	@Override
 	public List<ViewpointElement> getElements() {
 		throw new UnsupportedOperationException();
 	}
 
+	@Override
 	public List<ViewpointElement> getElementsFromParents() {
 		throw new UnsupportedOperationException();
 	}
 
+	@Override
 	public void removeParents(List<Viewpoint> vps) {
 		throw new UnsupportedOperationException();
 	}
 
+	@Override
 	public void addParents(List<Viewpoint> vps) {
 		throw new UnsupportedOperationException();
 	}
 
+	@Override
 	public boolean isAbstract() {
 		return getViewpoint().isAbstract();
 	}
 
+	@Override
 	public void setAbstract(boolean value) {
 		throw new UnsupportedOperationException();
 	}
 
+	@Override
 	public String getDescription() {
 		return getViewpoint().getDescription();
 	}
 
+	@Override
 	public void setDescription(String txt) {
 		throw new UnsupportedOperationException();
 	}
 
+	@Override
 	public String getName() {
 		return getViewpoint().getName();
 	}
 
+	@Override
 	public void setName(String txt) {
 		throw new UnsupportedOperationException();
 	}

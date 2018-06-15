@@ -64,8 +64,9 @@ public class JavaUtil {
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
         org.eclipse.core.resources.IProject project = root.getProject(projectId);
         try {
-            if (!project.exists())
-                CoreUtility.createProject(project, root.getRawLocation(), monitor);
+            if (!project.exists()) {
+				CoreUtility.createProject(project, root.getRawLocation(), monitor);
+			}
             project.open(monitor);
             CoreUtility.addNatureToProject(project, JavaCore.NATURE_ID, monitor);
             CoreUtility.createFolder(project.getFolder(DEFAULT_SOURCE_FOLDER));
@@ -111,10 +112,11 @@ public class JavaUtil {
 		String formatedOutput = formatJavaCode(javaCode);
 		ByteArrayInputStream outputContent = new ByteArrayInputStream(formatedOutput.getBytes());
 		try {
-			if (javaFile.exists())
+			if (javaFile.exists()) {
 				javaFile.setContents(outputContent, true, false, null);
-			else
+			} else {
 				javaFile.create(outputContent, true, null);
+			}
 		} catch (CoreException e) {
 			e.printStackTrace();
 		}
@@ -154,8 +156,9 @@ public class JavaUtil {
 			}
 		}
 		Path packageFolderPath = new Path(packageName.replace('.', '/'));
-		if (src.getFolder(packageFolderPath).exists())
-			return;		
+		if (src.getFolder(packageFolderPath).exists()) {
+			return;
+		}		
 		IFolder parent = src;
 		for (int i = 0; i < packageFolderPath.segmentCount(); i++) {
 			IFolder curFolder = parent.getFolder(packageFolderPath.segment(i));

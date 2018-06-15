@@ -58,11 +58,13 @@ public class NsUriFinder {
 	private static Set<String> getUsedModel(Viewpoint vp) {
 		Set<String> uris = new HashSet<String>();
 		
-		if (vp.getUseAnyEMFResource() != null && !vp.getUseAnyEMFResource().isEmpty())
-			 uris.addAll(vp.getUseAnyEMFResource());
+		if (vp.getUseAnyEMFResource() != null && !vp.getUseAnyEMFResource().isEmpty()) {
+			uris.addAll(vp.getUseAnyEMFResource());
+		}
 		
-		if (vp.getUseAnyEMFResource() != null && !vp.getUseAnyEMFResource().isEmpty())
+		if (vp.getUseAnyEMFResource() != null && !vp.getUseAnyEMFResource().isEmpty()) {
 			uris.addAll(getWSAndFSResource(vp));
+		}
 		
 		uris.addAll(getUsedViewpointEPackages(vp));
 		
@@ -74,13 +76,15 @@ public class NsUriFinder {
 		Collection<String> uris = new HashSet<String>();
 		
 		for (String uri : vp.getUseFSResource()) {
-			if (uri.endsWith(".ecore"))
+			if (uri.endsWith(".ecore")) {
 				uris.add(uri);
+			}
 		}
 		
 		 for (String uri : vp.getUseWorkspaceResource()) {
-			 if (uri.endsWith(".ecore"))
-				 uris.add(uri);
+			 if (uri.endsWith(".ecore")) {
+				uris.add(uri);
+			}
 		 }
 		 return uris;
 	}
@@ -126,8 +130,9 @@ public class NsUriFinder {
 					if (ePackageResource != null){
 						URI resourceuri = ePackageResource.getURI();
 						
-						if (resourceuri != null && !resourceuri.isEmpty())
+						if (resourceuri != null && !resourceuri.isEmpty()) {
 							platformsUri.add(resourceuri.toString());
+						}
 					} else {
 						platformsUri.add(nsuri);
 					}
@@ -166,8 +171,9 @@ public class NsUriFinder {
 				}
 				else
 				{
-					if (resource != null)
+					if (resource != null) {
 						resource.load(Collections.emptyMap());
+					}
 				}
 			}
 			else
@@ -195,8 +201,9 @@ public class NsUriFinder {
 			TreeIterator<EObject> it = standaloneResource.getAllContents();
 			while (it.hasNext()){
 				EObject v = it.next();
-				if (v instanceof Viewpoint)
+				if (v instanceof Viewpoint) {
 					return (Viewpoint)v;
+				}
 			}
 		}
 		return null;
@@ -219,8 +226,9 @@ public class NsUriFinder {
 						String project = file.getProject().getName().toString();
 						String segment = uri.segment(1);
 
-						if (project.equalsIgnoreCase(segment))
+						if (project.equalsIgnoreCase(segment)) {
 							return iEditorReference;
+						}
 					}
 
 				} catch (PartInitException e) {

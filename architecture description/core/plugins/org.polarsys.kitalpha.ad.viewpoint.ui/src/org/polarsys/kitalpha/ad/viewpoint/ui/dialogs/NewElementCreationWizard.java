@@ -43,6 +43,7 @@ public abstract class NewElementCreationWizard extends NewElementWizard {
 		setDialogSettings(Activator.loadWizardSettings());
 	}
 
+	@Override
 	public void addPages() {
 		super.addPages();
 		addPage(fPage);
@@ -57,6 +58,7 @@ public abstract class NewElementCreationWizard extends NewElementWizard {
 		return fPage.getElementName();
 	}
 
+	@Override
 	protected void finishPage(final IProgressMonitor monitor) throws InterruptedException, CoreException {
 		IProject project = fPage.getJavaProject().getProject();
 		//
@@ -143,6 +145,7 @@ public abstract class NewElementCreationWizard extends NewElementWizard {
 		return res;
 	}
 
+	@Override
 	public IJavaElement getCreatedElement() {
 		return fPage.getCreatedType();
 	}
