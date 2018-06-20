@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -17,7 +17,7 @@ package org.polarsys.kitalpha.transposer.m2m.uml.to.componentsample.constants;
  */
 public interface IConstants {
 
-	public static String COMPONENTSIMPLE_RESOURCE = "componentsampleResource";
-	public static String UML_EXTENSION="uml";
-	public static String COMPONENTSIMPLE_EXTENSION = "componentsample";
+	String COMPONENTSIMPLE_RESOURCE = "componentsampleResource";
+	String UML_EXTENSION="uml";
+	String COMPONENTSIMPLE_EXTENSION = "componentsample";
 }

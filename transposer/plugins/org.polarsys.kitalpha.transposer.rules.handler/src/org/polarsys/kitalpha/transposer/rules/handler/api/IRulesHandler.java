@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,65 +32,65 @@ import org.polarsys.kitalpha.transposer.rules.handler.rules.common.MappingPossib
  */
 public interface IRulesHandler {
 
-  /**
-   * Sets a default context.
-   * @param defaultContext_p the context
-   */
-  public void setContext(IContext defaultContext_p);
+	/**
+	 * Sets a default context.
+	 * @param defaultContext_p the context
+	 */
+	void setContext(IContext defaultContext_p);
 
-  /**
-   * Returns the current context.
-   * @return IContext
-   */
-  public IContext getContext();
+	/**
+	 * Returns the current context.
+	 * @return IContext
+	 */
+	IContext getContext();
 
-  /**
-   * Initializes the rule handler for the given purpose.
-   * @param purpose_p the mapping purpose selected
-   * @param mappingID_p the mapping id selected
-   * 
-   */
-  public void init(String purpose_p, String mappingID_p) throws NonExistingPurposeException;
-/**
- * Disposes the RuleHandler object.
- */
-  public void dispose();
+	/**
+	 * Initializes the rule handler for the given purpose.
+	 * @param purpose_p the mapping purpose selected
+	 * @param mappingID_p the mapping id selected
+	 * 
+	 */
+	void init(String purpose_p, String mappingID_p) throws NonExistingPurposeException;
+	/**
+	 * Disposes the RuleHandler object.
+	 */
+	void dispose();
 
-  /**
-   * Returns the possibity in the current context.
-   * 
-   * @param <T> common ancestor of all Metaclasses
-   * @param object_p object on which the found rule must be applicable
-   * @throws MappingPossibilityResolutionException
-   */
-  public MappingPossibility getApplicablePossibility(Object object_p) throws MappingPossibilityResolutionException;
+	/**
+	 * Returns the possibity in the current context.
+	 * 
+	 * @param <T> common ancestor of all Metaclasses
+	 * @param object_p object on which the found rule must be applicable
+	 * @throws MappingPossibilityResolutionException
+	 */
+	MappingPossibility getApplicablePossibility(Object object_p) throws MappingPossibilityResolutionException;
 
-  /**
-   * Returns the premises declared by the applicable rule on the given object for the given purpose.
-   * 
-   * @param object_p object on which the found rule must be applied
-   
-   * 
-   * @throws ComputePremisesException
-   */
-  public List<IPremise> getPremises(Object object_p) throws ComputePremisesException;
+	/**
+	 * Returns the premises declared by the applicable rule on the given object for the given purpose.
+	 * 
+	 * @param object_p object on which the found rule must be applied
 
-  public boolean apply(Object object_p, boolean complete_p, IProgressMonitor monitor_p) throws RuleExecutionException;
-/**
- * Returns the mapping purpose.
- * @return String
- */
-  public String getPurpose();
-/**
- * Returns the DomainHelper of the selected mapping.
- * @return IDomainHelper
- */
-  public IDomainHelper getDomainHelper();
+	 * 
+	 * @throws ComputePremisesException
+	 */
+	List<IPremise> getPremises(Object object_p) throws ComputePremisesException;
 
-  /**
-   * Validate the registered mappings.
-   * 
-   */
-  //@return true if there is no detected issues with contributed mappings.
-  public void validatePurpose();
+	boolean apply(Object object_p, boolean complete_p, IProgressMonitor monitor_p) throws RuleExecutionException;
+	/**
+	 * Returns the mapping purpose.
+	 * @return String
+	 */
+	String getPurpose();
+	/**
+	 * Returns the DomainHelper of the selected mapping.
+	 * @return IDomainHelper
+	 */
+	IDomainHelper getDomainHelper();
+
+	/**
+	 * Validate the registered mappings.
+	 * 
+	 */
+	//@return true if there is no detected issues with contributed mappings.
+	void validatePurpose();
 }

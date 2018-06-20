@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,12 +18,12 @@ package org.polarsys.kitalpha.transposer.rules.handler.util;
  */
 public interface Doublet<A, B> {
 
-  public A getFirstElement() ;
+  A getFirstElement() ;
 
-  public void setFirstElement(A firstElement_p) ;
+  void setFirstElement(A firstElement_p) ;
 
-  public B getSecondElement();
+  B getSecondElement();
 
-  public void setSecondElement(B secondElement_p) ;
+  void setSecondElement(B secondElement_p) ;
 
 }

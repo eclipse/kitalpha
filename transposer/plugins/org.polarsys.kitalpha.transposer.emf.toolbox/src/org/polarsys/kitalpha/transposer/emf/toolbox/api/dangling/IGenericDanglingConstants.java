@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,9 +18,10 @@ package org.polarsys.kitalpha.transposer.emf.toolbox.api.dangling;
  */
 public interface IGenericDanglingConstants {
 
-  public static final String DANGLING = "Dangling "; //$NON-NLS-1$
+  String DANGLING = "Dangling "; //$NON-NLS-1$
   
-  public static final String DANGLING_MODEL = "org.polarsys.kitalpha.model.dangling"; //$NON-NLS-1$
-  public static final String DANGLING_REPOSITORY = "org.polarsys.kitalpha.model.dangling.repository"; //$NON-NLS-1$
-  public static final String ANNOTATION_DANGLING_REPOSITORY = DANGLING_REPOSITORY;
+  String DANGLING_MODEL = "org.polarsys.kitalpha.model.dangling"; //$NON-NLS-1$
+  String DANGLING_REPOSITORY = "org.polarsys.kitalpha.model.dangling.repository"; //$NON-NLS-1$
+  String ANNOTATION_DANGLING_REPOSITORY = DANGLING_REPOSITORY;
+  
 }

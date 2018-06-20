@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,45 +31,45 @@ public interface IScheduler {
   /**
    * @return
    */
-  public Set<Edge<?>> getBackTracks();
+  Set<Edge<?>> getBackTracks();
 
   /**
    * Sets the Graph model
    * @param model_p the model to set
    */
-  public void setModel(Graph model_p);
+  void setModel(Graph model_p);
 
   /**
    * Returns the Graph model.
    * @return the model
    */
-  public Graph getModel();
+  Graph getModel();
 
   /**
    * Returns all Vertex not visited during the Graph model scheduling.
    * @return list of vertex not visited
    */
-  public Set<Vertex<?>> getNotVisited();
+  Set<Vertex<?>> getNotVisited();
 
 /**
  * Returns the result of the graph model scheduling.
  * @return transposed tasks.
  */
-  public List<ITransposerTask<Vertex<?>>> getScheduleResult();
+  List<ITransposerTask<Vertex<?>>> getScheduleResult();
 
 /**
  * Returns all Vertex visited during the Graph model scheduling.
  * @return the list of vertex visited
  */
-  public Set<Vertex<?>> getVisited();
+  Set<Vertex<?>> getVisited();
 
   /**
    * Allows to launch the scheduler algorithm.
    * 
    */
-  public void schedule(Comparator<Vertex<?>> comparator_p,IProgressMonitor monitor_p);
+  void schedule(Comparator<Vertex<?>> comparator_p,IProgressMonitor monitor_p);
 /**
  * Disposes the IScheduler object.
  */
-  public void dispose();
+  void dispose();
 }

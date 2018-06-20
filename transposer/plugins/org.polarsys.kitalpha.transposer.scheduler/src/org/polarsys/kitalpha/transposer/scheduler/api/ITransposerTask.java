@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,21 +21,21 @@ public interface ITransposerTask<TaskContent> {
   /**
    * @return the taskContent
    */
-  public TaskContent getTaskContent();
+  TaskContent getTaskContent();
 
   /**
    * @return the isCompletelyTransposable
    */
-  public boolean isCompletelyTransposable();
+  boolean isCompletelyTransposable();
 
   /**
    * @param isCompletelyTransposable_p the isCompletelyTransposable to set
    */
-  public void setCompletelyTransposable(boolean isCompletelyTransposable_p);
+  void setCompletelyTransposable(boolean isCompletelyTransposable_p);
 
   /**
    * @param taskContent_p the taskContent to set
    */
-  public void setTaskContent(TaskContent taskContent_p);
+  void setTaskContent(TaskContent taskContent_p);
 
 }
