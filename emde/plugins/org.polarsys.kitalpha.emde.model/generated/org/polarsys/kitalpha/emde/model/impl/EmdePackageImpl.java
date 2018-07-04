@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -236,8 +236,6 @@ public class EmdePackageImpl extends EPackageImpl implements EmdePackage {
 		// Create annotations
 		// http://www.polarsys.org/kitalpha/emde/1.0.0/extension
 		createExtensionAnnotations();
-		// http://com.thalesgroup.mde/simplifiedM2/Navigable
-		createNavigableAnnotations();
 	}
 
 	/**
@@ -251,17 +249,6 @@ public class EmdePackageImpl extends EPackageImpl implements EmdePackage {
 		addAnnotation(this, source, new String[] { "useUUIDs", "true", //$NON-NLS-1$ //$NON-NLS-2$
 				"useIDAttributes", "false" //$NON-NLS-1$ //$NON-NLS-2$
 		});
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://com.thalesgroup.mde/simplifiedM2/Navigable</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createNavigableAnnotations() {
-		String source = "http://com.thalesgroup.mde/simplifiedM2/Navigable"; //$NON-NLS-1$	
-		addAnnotation(getExtensibleElement_OwnedExtensions(), source, new String[] {});
 	}
 
 } //EmdePackageImpl
