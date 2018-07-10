@@ -12,6 +12,7 @@ package org.polarsys.kitalpha.doc.gen.business.core.sirius.util.diagram;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -56,6 +57,7 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.sirius.business.api.dialect.DialectManager;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.diagram.AbstractDNode;
@@ -65,6 +67,9 @@ import org.eclipse.sirius.diagram.DNode;
 import org.eclipse.sirius.diagram.DSemanticDiagram;
 import org.eclipse.sirius.diagram.impl.DEdgeImpl;
 import org.eclipse.sirius.diagram.ui.edit.api.part.AbstractDiagramEdgeEditPart.ViewEdgeFigure;
+import org.eclipse.sirius.diagram.ui.internal.edit.parts.SiriusNoteEditPart;
+import org.eclipse.sirius.viewpoint.DRepresentation;
+import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.eclipse.sirius.viewpoint.description.AnnotationEntry;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
@@ -72,6 +77,7 @@ import org.polarsys.kitalpha.doc.gen.business.core.Activator;
 import org.polarsys.kitalpha.doc.gen.business.core.internal.GenDocDiagramEditPartService;
 import org.polarsys.kitalpha.doc.gen.business.core.scope.GenerationGlobalScope;
 import org.polarsys.kitalpha.doc.gen.business.core.scope.ScopeStatus;
+import org.polarsys.kitalpha.doc.gen.business.core.sirius.util.session.DiagramSessionHelper;
 import org.polarsys.kitalpha.doc.gen.business.core.util.IDiagramHelper;
 import org.polarsys.kitalpha.doc.gen.business.core.util.SiriusHelper;
 
@@ -81,21 +87,21 @@ import org.polarsys.kitalpha.doc.gen.business.core.util.SiriusHelper;
  * 
  */
 public class CoordinatesCalculator {
-	
+
 	public static final Map<String, Map<Rectangle, EObject>> COORDINATES_MAP = new HashMap<String, Map<Rectangle, EObject>>();
 
 	private static final String JPG = "JPG";
-	
+
 	private final ImageReader reader = ImageIO.getImageReadersBySuffix(JPG).next();
 	private final GenDocDiagramEditPartService tool = new GenDocDiagramEditPartService();
-	
+
 	private IFile imageFile;
 	private DDiagram diagram;
 	private IDiagramHelper helper;
 	private Session session;
-	
+
 	private double scalingFactor = 1.0d; //Default scaling value
-	
+
 	private static IProgressMonitor progressMonitor = new NullProgressMonitor();
 
 	public CoordinatesCalculator(IFile imageFile, DDiagram diagram,
@@ -164,7 +170,7 @@ public class CoordinatesCalculator {
 		}
 
 	}
-	
+
 	public double getScalingFactor() {
 		return scalingFactor;
 	}
@@ -176,7 +182,7 @@ public class CoordinatesCalculator {
 		if (diagram == null || imageFile == null || !imageFile.exists()) {
 			return Collections.emptyMap();
 		}
-		
+
 		final Map<Rectangle, EObject> result = new LinkedHashMap<>();
 		final String diagramId = EcoreUtil.getURI(diagram).fragment();
 		if (COORDINATES_MAP.containsKey(diagramId)) 
@@ -196,18 +202,18 @@ public class CoordinatesCalculator {
 
 						if (! result.isEmpty())
 							COORDINATES_MAP.put(diagramId, result);
-						
+
 					} catch (Exception e) {
 						Activator.logWarning(e.getMessage());
 					}
 				}
 			});
 		}
-		
+
 		// Clean positions of all out of scope model element 
 		return removeObjectOutOfScope(result);
 	}
-	
+
 	/**
 	 * Remove generated Rectangle for out of scope model element. 
 	 * @param postitions a {@link Map} containing areas.
@@ -219,10 +225,32 @@ public class CoordinatesCalculator {
 			final Map<Rectangle, EObject> result = new LinkedHashMap<>();
 			for (Entry<Rectangle, EObject> entry : postitions.entrySet()) 
 			{
-				final EObject key = entry.getValue();
-				final boolean isInScope = GenerationGlobalScope.getInstance().isCopyInScope(key);
-				if (isInScope)
-					result.put(entry.getKey(), entry.getValue());
+				final EObject value = entry.getValue();
+				if (value instanceof DRepresentationDescriptor) {
+					/*
+					 * Handle navigable note
+					 */
+
+					boolean isInScope = GenerationGlobalScope.getInstance().isCopyInScope(((DRepresentationDescriptor)value).getTarget());
+
+					if (isInScope) {
+						Collection<DRepresentation> allRepresentations = DialectManager.INSTANCE.getAllRepresentations(session);
+						final DDiagram candidateDiagram = DiagramSessionHelper.findCorrespondingDiagram((DRepresentationDescriptor)value, allRepresentations);
+
+						/**
+						 * Handle only DSemanticDiagram. Table and other diagrams are not exported. Notes which navigate
+						 * to other diagrams will be not navigable in exported HTML.
+						 */
+						if (candidateDiagram instanceof DSemanticDiagram) {
+							result.put(entry.getKey(), value);
+						}
+					}
+				} else {
+					final boolean isInScope = GenerationGlobalScope.getInstance().isCopyInScope(value);
+					if (isInScope) {
+						result.put(entry.getKey(), value);
+					}
+				}
 			}
 			return result;
 		}
@@ -231,7 +259,7 @@ public class CoordinatesCalculator {
 			return postitions;
 		}
 	}
-	
+
 	/**
 	 * Because the graphical representation of one {@link DDiagramElement} can be composed of many views, 
 	 * so we have to accept a view only if the element associated with it is different from the one associated 
@@ -252,74 +280,97 @@ public class CoordinatesCalculator {
 		throw new IllegalArgumentException("Illegal parameter: Class -> " + this.getClass().getName() + ", method -> acceptView(View view)");
 	}
 
-	
+
 	public Map<Rectangle, EObject> getRectanglesMap(View view, Map<?, ?> registry, int deltaX, int deltaY) {
 		Map<Rectangle, EObject> result = new LinkedHashMap<>();
-		
+
 		GraphicalEditPart gep = (GraphicalEditPart) registry.get(view);
 		if (gep != null) 
 		{
 			final EObject nodeElement = view.getElement();
-			if (nodeElement instanceof DDiagramElement) 
-			{
-				final DDiagramElement element = (DDiagramElement) nodeElement;
-				final EObject eObject = getSemanticElement(element);
+
+			if (gep instanceof SiriusNoteEditPart && ((SiriusNoteEditPart)gep).isLinkNote()) {
 				
-				Rectangle bounds = null;
-				// If the view is an Edge, so handle the bounds of it center label
-				if (view instanceof Edge) 
-				{
-					if (gep.getFigure() instanceof ViewEdgeFigure) 
-					{
-						Rectangle originalBound = ((ViewEdgeFigure) gep.getFigure()).getFigureViewEdgeNameFigure().getBounds();
-						bounds = new Rectangle(originalBound);
+				/*
+				 * Handle navigable note
+				 */
+				
+				if (nodeElement instanceof DRepresentationDescriptor) {
+					DRepresentationDescriptor descriptor = (DRepresentationDescriptor)nodeElement;
+
+					Rectangle bounds = null;
+					bounds = gep.getFigure().getBounds();
+					scale(bounds);
+					if (bounds != null) {
+						bounds.performTranslate(deltaX, deltaY);
+					}
+
+					final boolean acceptView = acceptView(view);
+					if (acceptView) {
+						result.put(bounds, descriptor);
 					}
 				}
-				else
+			} else {
+				if (nodeElement instanceof DDiagramElement) 
 				{
-					Rectangle originalBound = gep.getFigure().getBounds();
-					bounds = new Rectangle(originalBound);
-				}
-				
-				scale(bounds);
-				
-				// Translate parent before handling children
-				if (bounds != null) 
-				{
-					bounds.performTranslate(deltaX, deltaY);
-				}
-				
-				final boolean acceptView = acceptView(view);
-				
-				// Handle children of the current view.
-				if (! (view instanceof Edge)) 
-				{
-					@SuppressWarnings("rawtypes")
-					final EList children = view.getChildren();
-					for (Object object : children) 
+					final DDiagramElement element = (DDiagramElement) nodeElement;
+					final EObject eObject = getSemanticElement(element);
+
+					Rectangle bounds = null;
+					// If the view is an Edge, so handle the bounds of it center label
+					if (view instanceof Edge) 
 					{
-						if (object instanceof View)
+						if (gep.getFigure() instanceof ViewEdgeFigure) 
 						{
-							int newDeltaX = acceptView && ! isBorderedNode((View)object) ? bounds.x + 5 : deltaX;
-							int newDeltaY = acceptView && ! isBorderedNode((View)object) ? bounds.y + 6 : deltaY;
-							final Map<Rectangle, EObject> rectanglesMap = getRectanglesMap((View) object, registry, newDeltaX  , newDeltaY  );
-							if (! rectanglesMap.isEmpty())
-								result.putAll(rectanglesMap);
+							Rectangle originalBound = ((ViewEdgeFigure) gep.getFigure()).getFigureViewEdgeNameFigure().getBounds();
+							bounds = new Rectangle(originalBound);
 						}
 					}
-				}
-				
-				// Handle current view
-				if (acceptView && helper.select(eObject)) 
-				{
-					result.put(bounds, eObject);
+					else
+					{
+						Rectangle originalBound = gep.getFigure().getBounds();
+						bounds = new Rectangle(originalBound);
+					}
+
+					scale(bounds);
+
+					// Translate parent before handling children
+					if (bounds != null) 
+					{
+						bounds.performTranslate(deltaX, deltaY);
+					}
+
+					final boolean acceptView = acceptView(view);
+
+					// Handle children of the current view.
+					if (! (view instanceof Edge)) 
+					{
+						@SuppressWarnings("rawtypes")
+						final EList children = view.getChildren();
+						for (Object object : children) 
+						{
+							if (object instanceof View)
+							{
+								int newDeltaX = acceptView && ! isBorderedNode((View)object) ? bounds.x + 5 : deltaX;
+								int newDeltaY = acceptView && ! isBorderedNode((View)object) ? bounds.y + 6 : deltaY;
+								final Map<Rectangle, EObject> rectanglesMap = getRectanglesMap((View) object, registry, newDeltaX  , newDeltaY  );
+								if (! rectanglesMap.isEmpty())
+									result.putAll(rectanglesMap);
+							}
+						}
+					}
+
+					// Handle current view
+					if (acceptView && helper.select(eObject)) 
+					{
+						result.put(bounds, eObject);
+					}
 				}
 			}
 		}
-			
 		return result;
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	private Map<Rectangle, EObject> getResultMap() {
 		Diagram gmfDiagram = getDiagram();
@@ -343,30 +394,30 @@ public class CoordinatesCalculator {
 			 * Example of such cases are exchanges on DFI (mch)
 			 */
 			diagramEP.getRoot().refresh();
-			
+
 			/*
 			 * flush the viewer to have all connections and ports
 			 */
 			EditPartViewer viewer = diagramEP.getViewer();
-			
+
 			viewer.flush();
 			Map<?, ?> registry = viewer.getEditPartRegistry();
 
 			Dimension imageSize = getImageSize();
 			int width = imageSize.width;
 			int height = imageSize.height;
-			
+
 			Rectangle imageBounds = DiagramImageUtils.calculateImageRectangle(diagramEP.getPrimaryEditParts(), 10, new Dimension(10, 10));
-			
+
 			scalingFactor = SiriusHelper.initAutoScaling(tool, diagramEP);
-			
+
 			scale(imageBounds);
-			
+
 			int deltaX = imageBounds.getTopRight().x - width;
 			int deltaY = imageBounds.getBottomLeft().y - height;
-			
+
 			Map<Rectangle, EObject> resultat = new LinkedHashMap<>();
-			
+
 			// Handle Edges
 			for (Object object : gmfDiagram.getEdges()) 
 			{
@@ -374,7 +425,7 @@ public class CoordinatesCalculator {
 				{
 					continue; 
 				}
-				
+
 				if (object instanceof View)
 				{
 					final Map<Rectangle, EObject> rectanglesMap = getRectanglesMap((View) object, registry, -deltaX, -deltaY);
@@ -384,7 +435,7 @@ public class CoordinatesCalculator {
 					}
 				}
 			}
-			
+
 			// Handle Nodes
 			for (Object object : gmfDiagram.getChildren()) 
 			{
@@ -397,14 +448,14 @@ public class CoordinatesCalculator {
 					}
 				}
 			}
-			
+
 			cleanGenerationData(gmfDiagram, shell, diagramEP);
 			return resultat;
 		}
 		return Collections.emptyMap();
 	}
 
-	
+
 	/**
 	 * Scale the translatable is the factor is less than 1
 	 * @param t to scale
@@ -415,7 +466,7 @@ public class CoordinatesCalculator {
 			t.performScale(factor);
 		}
 	}
-	
+
 	/**
 	 * Check if the Edge has a Center Label.
 	 * @param view an Edge
@@ -432,7 +483,7 @@ public class CoordinatesCalculator {
 		else
 			return false;
 	}
-	
+
 	/**
 	 * Clean data created to compute map areas.
 	 * @param gmfDiagram the exported diagram {@link Diagram}
@@ -449,12 +500,12 @@ public class CoordinatesCalculator {
 		diagramEP.getViewer().flush();
 		CommandStack commandStack = diagramEP.getViewer().getEditDomain().getCommandStack();
 		commandStack.flush();
-		
+
 		if (diagramEP.getViewer().getControl() != null)
 		{
 			diagramEP.getViewer().getControl().dispose();
 		}
-		
+
 		((DiagramEditDomain) diagramEP.getViewer().getEditDomain()).removeViewer(diagramEP.getViewer());
 
 		//
@@ -468,7 +519,7 @@ public class CoordinatesCalculator {
 					true, true, true);
 		}
 	}
-	
+
 	private Dimension getImageSize() {
 		try {
 			if (imageFile != null && imageFile.exists()) {
@@ -526,7 +577,7 @@ public class CoordinatesCalculator {
 		}
 		return null;
 	}
-	
+
 	private boolean isBorderedNode(View node) {
 		EObject element = node.getElement();
 		if (element instanceof DNode) 
@@ -539,7 +590,7 @@ public class CoordinatesCalculator {
 		}
 		return false;
 	}
-	
+
 	private EObject getSemanticElement(DDiagramElement element) {
 		return helper.getSemanticElement(element);
 	}
@@ -551,14 +602,14 @@ public class CoordinatesCalculator {
 	@Deprecated
 	private Map<Rectangle, EObject> proceed(Map<Rectangle, EObject> resultMap, Map<View, EObject> nodeMap) {
 		Map<Rectangle, EObject> map = new HashMap<Rectangle, EObject>(resultMap);
-		
+
 		ArrayList<View> arrayList = new ArrayList<View>(nodeMap.keySet());
-		
+
 		Collections.sort(arrayList, MY_COMPARATOR);
-		
+
 		// Result to return.
 		Map<Rectangle, EObject> result = new LinkedHashMap<Rectangle, EObject>();
-		
+
 		ArrayList<EObject> keyList = new ArrayList<EObject>();
 		for (View node : arrayList) 
 		{
@@ -574,7 +625,7 @@ public class CoordinatesCalculator {
 		}
 		return result;
 	}
-	
+
 	/**
 	 * Get the Rectangle from the Map. Rectangle are key of the Map.
 	 * @param map
@@ -588,10 +639,10 @@ public class CoordinatesCalculator {
 			if (entry.getValue().equals(modelElement))
 				return entry.getKey();
 		}
-		
+
 		throw new RuntimeException("Can't get rectable form model element: " + modelElement.toString());
 	}
-	
+
 	@Deprecated
 	private void translateContainedRectangle(Map<Rectangle, EObject> map, View node, Rectangle childRectangle) {
 		if (!isBorderedNode(node)) 
