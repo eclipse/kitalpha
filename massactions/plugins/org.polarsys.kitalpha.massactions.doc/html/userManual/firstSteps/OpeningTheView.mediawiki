@@ -1,0 +1,14 @@
+= Opening the Mass Editing View =
+
+== Opening the first view ==
+The easiest way to open a Mass Editing or Mass Visualization view is to use the '''Quick Access''' tool bar and search for the view name term, as illustrated in the following image
+[[Image:img/quickAccessOpenMEView.png|thumb|none|400px]]
+
+The view presented below should appear, note that the view is empty since no elements have been yet added.
+[[Image:img/openedMEView.png|thumb|none|400px]]
+
+== Opening multiple views ==
+We support multiple active views, in order to open a new one you must click the '''plus''' button on any of the existing views.
+[[Image:img/plusOpenMEView.png|thumb|none|400px]]
+
+If you have the same element present in one then more view, any updates for this element will be automatically  synchronized between the views.

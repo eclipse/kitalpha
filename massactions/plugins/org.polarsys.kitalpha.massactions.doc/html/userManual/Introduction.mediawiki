@@ -1,0 +1,16 @@
+= Introduction =
+The Mass Editing and Mass Visualization tools are designed to increase your productivity when editing and visualizing EObject elements.
+
+== Mass Editing ==
+The Mass Editing tool allows users to edit multiple (homogenous) objects simultaneously. These objects are selected from a table and have all of their changeable features in common, such as Name, ID or Description.
+
+By aggregating all the values of each of these features, users can quickly choose to either keep or overwrite them.
+
+[[Image:img/meIntro.png|thumb|none|950px]]
+
+== Mass Visualization ==
+The mass Visualization tool allows users to visualize the common aspects of numerous (homogenous) objects. 
+
+By grouping the objects according to their attributes, properties and relationships with other existing objects and filtering the result according to their custom patterns, users have a comprehensive overview over the target of their analysis.
+
+[[Image:img/mvInto.png|thumb|none|950px]]

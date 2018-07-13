@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<!--
+    Copyright (c) 2018  THALES GLOBAL SERVICES.
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v1.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v10.html
+   
+    Contributors:
+    Thales - initial API and implementation
+ -->
+
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            allowMultiple="true"
+            category="org.polarsys.kitalpha.view.category"
+            class="org.polarsys.kitalpha.massactions.edit.MEView"
+            id="org.polarsys.kitalpha.massactions.edit.view"
+            name="Mass Editing"
+            restorable="false">
+      </view>
+      <view
+            allowMultiple="true"
+            category="org.polarsys.kitalpha.view.category"
+            class="org.polarsys.kitalpha.massactions.visualize.MVView"
+            id="org.polarsys.kitalpha.massactions.visualize.view"
+            name="Mass Visualizing"
+            restorable="false">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.sirius.sessionManagerListener">
+      <listener
+            class="org.polarsys.kitalpha.massactions.shared.session.ClearViewOnClosedSessionListener">
+      </listener>
+   </extension>
+
+</plugin>

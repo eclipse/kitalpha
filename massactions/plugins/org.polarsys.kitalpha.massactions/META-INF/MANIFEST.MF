@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Massedition
+Bundle-SymbolicName: org.polarsys.kitalpha.massactions;singleton:=true
+Bundle-Version: 1.3.0.qualifier
+Require-Bundle: org.polarsys.kitalpha.massactions.edit;bundle-version="1.0.0",
+ org.polarsys.kitalpha.massactions.visualize;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Activator: org.polarsys.kitalpha.massactions.activator.MAActivator
+Bundle-ActivationPolicy: lazy
+Export-Package: org.polarsys.kitalpha.massactions.activator,
+ org.polarsys.kitalpha.massactions.edit,
+ org.polarsys.kitalpha.massactions.shared.helper,
+ org.polarsys.kitalpha.massactions.shared.view,
+ org.polarsys.kitalpha.massactions.visualize
+Automatic-Module-Name: org.polarsys.kitalpha.massactions

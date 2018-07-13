@@ -1,0 +1,16 @@
+= Visualization Behavior and Interactions =
+Once the elements that you want to modify have been added to the Mass Visualization view, you can proceed and manipulate any of the displayed aspects.
+
+== Grouping ==
+In order to group the existing value based on a target column you need to drag and drop the column header (containing the column name) in the group by area which contains the '''Drag columns here to group by column values''' message.
+
+[[Image:img/mvEmpty.png|thumb|none|800px]]
+
+You can of course group by multiple columns, therefore creating a tree containing as many depth levels as grouped columns.
+
+[[Image:img/mvGroup.png|thumb|none|800px]]
+
+== Ungrouping ==
+You can '''right-click''' on a grouped column and select the '''Ungroup by''' option in order to ungroup one of the existing columns.
+
+[[Image:img/mvUngroup.png|thumb|none|800px]]

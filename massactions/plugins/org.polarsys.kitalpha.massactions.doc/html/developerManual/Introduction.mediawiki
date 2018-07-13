@@ -1,0 +1,13 @@
+= Introduction =
+
+The Mass Editing tool allows users to change multiple (homogenous) EObjects simultaneously. These objects are selected from a table and have all of their changeable EStructuralFeatures in common, such as Name, ID or Description.
+
+By default the tool displays for a collection of EObjects, as many columns as editable features these EObjects have in common. But we can also contribute with new columns, that will be automatically added to the existing ones. Please note that when new EObjects are added, the column configuration might change, since the number of common features might diminish.
+
+The Mass Visualization tool allows allows users to visualize the common aspects of numerous (homogenous) EObjects, trading the editing aspect for a more complete overview containing non-editable features as well.
+
+The users can group the objects according to their attributes, properties and relationships with other existing objects and filtering the result according to their custom patterns.
+
+If among the common features only a handful are relevant for our use, we can chose to hide some of them by providing a column filter. The hidden columns can always be enabled by the user or by the developer, since they are only visually hidden (but continue to exist in memory).
+
+As a developer you can control both of the aspects mentioned above, with the help of the column provider and the column filter extension points. You can therefore contribute new columns to the existing one and define their visual and editing behavior. You can also contribute to the existing column filters and create new filtering configurations.

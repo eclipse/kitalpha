@@ -1,0 +1,31 @@
+= Editing Behavior and Interactions =
+Once the elements that you want to modify have been added to the Mass Editing view, you can proceed and edit any of the displayed aspects.
+
+== Regular Editing ==
+In order to edit a single cell on the Mass Editing view, you need to '''left click ''' on that cell. Depending on the type of cell and the way that contributors implemented the edit logic, you will be prompted with either a in-line edit mode (meaning that you can enter a new value directly in the selected sell) or a dialog edit mode (meaning that a new dialog will be displayed, containing a wizard that will guide you in selecting a new value). Once the new value is selected press '''Enter''' to commit your change.
+
+[[Image:img/editRegular.png|thumb|none|800px]]
+
+== Mass Editing ==
+In order to mass edit multiple cell you must select all of them and launch an edit command.
+
+[[Image:img/editMass.png|thumb|none|800px]]
+
+=== Selection ===
+
+Multiple selection mechanics exist:
+
+* Continuous cell selection:  Hold the '''left click''' button on the initial point of your selection and drag the mouse over the elements that you want to select.
+* Individual cell selection: Hold the '''Ctrl''' button and '''left click''' on the cells that you want to edit.
+* Column selection: Hold the '''Ctrl''' button and '''left click''' on any of the column header in order to select all the column cells.
+
+'''Note:''' all of the selection mechanics can be combined in order to increase your productivity. You can for example select a whole column and then deselect the cells that you want to exclude by using the '''Ctrl''' key.
+
+=== Launch an edit command ===
+
+Once you have a selection, two ways of launching an edit command currently exist: 
+
+* You can press the '''F2''' key.
+* You can press the '''right click''' button on the current select and click on the '''Edit''' option.
+
+'''Note:''' You can edit cells belonging to different columns as long as they have the '''same type''', please refer to the above image where an edit operation is performed for cells belong to both '''visibleInDoc''' and '''visibleInLM''' columns (since all the elements have the same '''boolean''' type).

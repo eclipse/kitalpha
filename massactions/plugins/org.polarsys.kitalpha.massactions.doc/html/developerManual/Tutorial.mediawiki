@@ -1,0 +1,11 @@
+=Tutorial=
+
+A simple tutorial that adds two new columns and a column filter is available in the form of the <code>org.polarsys.kitalpha.massactions.tutorial</code> plugin.
+
+In order to test it, you need to add two new extensions for the <code>TutorialColumnProvider</code> and the <code>TutorialColumnFilter</code> classes.
+
+== The Column Provider ==
+This column provider adds two new columns. The <code>TextColumn</code> is a simple textual column that displays a string message that the user can modify. The <code>CountColumn</code> displays a composite that when clicked circles through all the letters of the alphabet.
+
+== The Column Filter ==
+This column filter enables a new column configuration that displays only the two new added columns.

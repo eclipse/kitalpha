@@ -1,0 +1,10 @@
+These followings icons are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+
+<icon file path> - <original eclipse plug-in> - <original file path
+
+/icons/error_obj.png - org.eclipse.jface.source - org.eclipse.jface.source/org/eclipse/jface/dialogs/images/message_error.png
+/icons/switch_perspective.png - org.eclipse.jdt.ui - org.eclipse.jdt.ui/icons/full/obj16/cp_order_obj.png
+/icons/edit.gif - org.polarsys.kitalpha.ad.viewpoint.ui - org.polarsys.kitalpha.ad.viewpoint.ui/icons/edit.gif
+/icons/remove.png - org.eclipse.ui - org.eclipse.ui/icons/full/elcl16/remove.png

@@ -1,0 +1,25 @@
+= Adding Elements =
+In order to populate your view with elements you can drag and drop the selection into the Mass Editing or Mass Visualization views.
+
+== Drag and dropping ==
+You can drag and drop any individual element or a selection of elements into the Mass Editing view, in order to edit those elements, the same goes for the Mass Visualization view.
+Any view that contains '''EObject''' elements is a valid source for the selection.
+
+[[Image:img/dragAndDrop.png|thumb|none|600px]]
+
+== Displaying the Elements ==
+
+The table below contains 5 elements that share the same type (SF). This aspect is also visually displayed, note that the elements have the same icon in the row header. While they all share the same columns, the values for each entry are usually different. There are of course exceptions, for example for elements having the same visibility.
+
+[[Image:img/tableSameType.png|thumb|none|850px]]
+
+In the below table we added 5 new elements, of a different type (CAT), than the existing ones.
+
+[[Image:img/tableDifferentType.png|thumb|none|850px]]
+
+'''Note:''' only the '''common''' editable features for the current elements are displayed in the Mass Editing view. This means that when new elements are added two possible scenarios exist:
+
+* The number of columns and their configuration does not change (if the new added elements share '''exactly''' the same editable features with the present ones).
+* The number of columns diminishes and their configuration changes (if the new added elements share '''less''' editable features with the present ones).
+
+In our case, we have less editable features that before.

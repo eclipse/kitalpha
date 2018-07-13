@@ -1,0 +1,11 @@
+=Column Filter=
+
+==Introduction==
+The column filter extension point allows to contribute to the
+existing default column filters. You should use this extension point if among the common columns only a handful are relevant for your use. You can therefore choose to hide some of them.  
+
+Note that the hidden columns can always be enabled by the user, since they are only visually hidden (but continue to exist in memory).
+
+The interface associated to this extension point is <code>IMAColumnFilter</code>, but you should avoid implementing this interface directly and instead extend the <code>AbstractMAColumnFilter</code> class.
+
+The only method you need to implement is the <code>test</code> method, which specifies if the current column should be hidden or not.

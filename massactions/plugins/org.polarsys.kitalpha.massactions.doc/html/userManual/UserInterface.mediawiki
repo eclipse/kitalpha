@@ -1,0 +1,28 @@
+= User Interface =
+The Mass Editing and Mass Visualization views have a fairly similar user interface, which is devised in two main spaces, the toolbar view (1) and the table view (2, 3 and 4).
+
+[[Image:img/viewUi.png|thumb|none|950px]]
+
+== The toolbar view ==
+Let us analyze starting from left to right, each of the buttons (1) present on the view:
+
+* Column filters: Enables the use of column filters, meaning that the same elements can be displayed in a different fashion while hiding some existing columns. A good example is a '''User friendly filter''' that might hide some columns that should not be displayed by default, as opposed to an '''Expert filter''' which will display all of the editable columns.
+
+* Clear: Removes all the elements from the current view and resets it to its initial state. The view can then be reused for a new selection of elements.
+
+* New view: Opens a new Mass Editing view that can be used in parallel with any of the existing views. If you have the same elements present in one then more view, any updates for these elements will be automatically synchronized between the views as they obtain the focus.
+
+== The table view ==
+The table view is decomposed into three main parts, let us analyze each of them in order:
+
+* Header area: (2) Contains the column names for the currently editable features. Clicking on any of the column names allows you to '''sort''' the current elements according to the value contained in the column cells. In the above image, you can observe that the elements are sorted in a ascending order according to their names (note the up arrow next to the '''name''' column that denotes that the column is sorted in a ascending order). Clicking '''once''' sorts in ascending order, '''twice''' for descending order and '''thrice''' resets the table to its pre-sorted state.
+
+* Filtering area: Situated under the header (3), it allows users to filter the current elements according to a pattern for the selected column. In the above image, you can observe that we display only the elements that have the '''true''' value for the '''visibleInDoc''' column cell. Adding a new pattern is as simple as clicking in the filtering area reserved for each column, writing a pattern and using '''Enter''' to commit. In order to clear a pattern you can click on the red icon next to it, or just edit and remove it manually. Note that you can have as many patterns active as columns present in your table view.
+
+* Editing area: Contains for each element the values for its corresponding columns. In this area you can mass edit any of the present cells.
+
+== The contextual header menu ==
+
+By '''right clicking''' on the header area the contextual header menu is displayed. This menu allows you to hide/display the current columns and also auto-resize any of them. For the complete options please refer to the below image.
+
+[[Image:img/headerMenu.png|thumb|none|950px]]
