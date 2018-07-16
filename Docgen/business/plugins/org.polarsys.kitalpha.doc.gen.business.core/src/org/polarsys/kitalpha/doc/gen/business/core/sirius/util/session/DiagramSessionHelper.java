@@ -15,11 +15,16 @@ import java.util.Collections;
 
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
-
-import org.eclipse.sirius.viewpoint.DRepresentation;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.sirius.business.api.dialect.DialectManager;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
+import org.eclipse.sirius.diagram.DDiagram;
+import org.eclipse.sirius.viewpoint.DRepresentation;
+import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 
 /**
  * This class manage the unique sirius session used during documentation
@@ -49,9 +54,8 @@ public class DiagramSessionHelper {
 	}
 
 	public static Session initSessionFromAirdURI(URI airdURI) {
-		if (session == null) {
+		if (session == null)
 			session = findCorrespondingActiveSession(airdURI);
-		}
 		return session;
 	}
 
@@ -82,10 +86,57 @@ public class DiagramSessionHelper {
 		}
 		return Collections.emptyList();
 	}
+	
+	/**
+	 * Returns diagram from descriptor in the session
+	 * @param descriptor
+	 * @return a diagram, otherwise null
+	 */
+	public static DDiagram getDDiagram(DRepresentationDescriptor descriptor) {
+		
+		if (session != null) {
+			Collection<DRepresentation> representations = getSessionDRepresentation();
+			return findCorrespondingDiagram(descriptor, representations);
+		}
+		return null;
+	}
+
+	public static DDiagram findCorrespondingDiagram(DRepresentationDescriptor descriptor,
+			Collection<DRepresentation> representations) {
+		for (DRepresentation dRepresentation : representations) {
+			if (dRepresentation instanceof DDiagram ) {
+				DDiagram diagram = (DDiagram) dRepresentation;
+				if (diagram.getUid() != null && diagram.getUid().equals(descriptor.getRepPath().getResourceURI().fragment())) {
+					return diagram;
+				}
+			}
+		}
+		return null;
+	}
+	
+	/**
+	 * @param eObject
+	 * @return return XMI ID of eObject, otherwise fragment within resource. if it cannot
+	 * find any ID, it returns empty string
+	 */
+	public static String getID(EObject eObject) {
+		String id = ""; //$NON-NLS-1$
+		
+		if (session != null) {
+			Resource sessionResource = session.getSessionResource();
+			if (sessionResource instanceof XMLResource) {
+				id = ((XMLResource) sessionResource).getID(eObject);
+				if (id == null && EcoreUtil.getURI(eObject) != null) {
+					id = EcoreUtil.getURI(eObject).fragment();
+				}
+			}
+		}
+		
+		return id != null? id : ""; //$NON-NLS-1$
+	}
 
 	public static void cleanSession() {
 		session = null;
-
 	}
 
 }

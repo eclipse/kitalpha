@@ -1,4 +1,4 @@
-//Generated with EGF 1.4.0.v20160519-0641
+//Generated with EGF 1.5.1.v20180423-0901
 package org.polarsys.kitalpha.doc.gen.business.core.sirius;
 
 import org.eclipse.egf.common.helper.*;
@@ -21,6 +21,7 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.sirius.diagram.DSemanticDiagram;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.polarsys.kitalpha.doc.gen.business.core.preference.helper.DocgenDiagramPreferencesHelper;
+import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 
 public class DiagramGenerator {
 	protected static String nl;
@@ -202,13 +203,7 @@ public class DiagramGenerator {
 		IFile imageFile = diagramExport.exportAsImage();
 		Resource sessionResource = session.getSessionResource();
 		if (imageFile != null && imageFile.exists()) {
-			String id = "";
-			if (sessionResource instanceof XMLResource) {
-				id = ((XMLResource) sessionResource).getID(diagram);
-				if (id == null && EcoreUtil.getURI(diagram) != null) {
-					id = EcoreUtil.getURI(diagram).fragment();
-				}
-			}
+			String id = DiagramSessionHelper.getID(diagram);
 			String mapName = diagram.getName() + "_" + id + "_PositionMap";
 			mapName = DocGenHtmlUtil.getValidFileName(mapName);
 			CoordinatesCalculator calculator = new CoordinatesCalculator(imageFile, diagram, helper);
@@ -233,14 +228,47 @@ public class DiagramGenerator {
 			stringBuffer.append(mapName);
 			stringBuffer.append(TEXT_9);
 
+			String fragment = null;
+			String fileName = null;
+			String modelName = null;
+
 			for (Entry<Rectangle, EObject> entrySet : positionMap.entrySet()) {
 				EObject value = entrySet.getValue();
-				String fileName = fileNameService.getFileName(value);
-				String fragment = helper.getElementId(value);
 				Rectangle rectangle = entrySet.getKey();
 				Point topLeft = rectangle.getTopLeft();
 				Point bottomRight = rectangle.getBottomRight();
-				String modelName = DocGenHtmlUtil.getModelName(value);
+
+				fragment = null;
+				fileName = null;
+				modelName = null;
+
+				if (value instanceof DRepresentationDescriptor) {
+
+					/*
+					 * Handle navigable note
+					 */
+
+					DRepresentationDescriptor descriptor = (DRepresentationDescriptor) value;
+					org.eclipse.sirius.diagram.DDiagram targetDiagram = DiagramSessionHelper.getDDiagram(descriptor);
+					if (targetDiagram != null) {
+						fragment = DiagramSessionHelper.getID(targetDiagram);
+					} else {
+						fragment = descriptor.getRepPath().getResourceURI().fragment();
+					}
+					fileName = fileNameService.getFileName(descriptor.getTarget());
+					modelName = DocGenHtmlUtil.getModelName(descriptor.getTarget());
+
+				} else {
+
+					fileName = fileNameService.getFileName(value);
+					fragment = helper.getElementId(value);
+					rectangle = entrySet.getKey();
+					topLeft = rectangle.getTopLeft();
+					bottomRight = rectangle.getBottomRight();
+					modelName = DocGenHtmlUtil.getModelName(value);
+
+				}
+
 				stringBuffer.append(TEXT_10);
 				stringBuffer.append(fileName);
 				stringBuffer.append(TEXT_11);

@@ -118,7 +118,7 @@ location neon-release "http://download.eclipse.org/releases/oxygen" {
 }
 
 
-location Sirus "http://download.eclipse.org/sirius/updates/stable/6.0.0-S20180404-103514/oxygen/" {
+location Sirus "http://download.eclipse.org/sirius/updates/releases/6.0.0/oxygen/" {
 	org.eclipse.sirius.doc.feature.feature.group lazy
 	org.eclipse.sirius.runtime.ide.eef.feature.group lazy
 	org.eclipse.sirius.runtime.ide.ui.acceleo.feature.group lazy

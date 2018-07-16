@@ -24,15 +24,15 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.sirius.business.api.session.Session;
+import org.eclipse.sirius.common.tools.api.resource.ImageFileFormat ;
+import org.eclipse.sirius.common.tools.api.util.FileUtil;
+import org.eclipse.sirius.diagram.DDiagram;
+import org.eclipse.sirius.ui.tools.api.actions.export.ExportAction;
+import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.eclipse.swt.widgets.Display;
 import org.polarsys.kitalpha.doc.gen.business.core.Activator;
 import org.polarsys.kitalpha.doc.gen.business.core.util.DocGenHtmlUtil;
-import org.eclipse.sirius.common.tools.api.util.FileUtil;
-import org.eclipse.sirius.diagram.DDiagram;
-import org.eclipse.sirius.viewpoint.DRepresentation;
-import org.eclipse.sirius.business.api.session.Session;
-import org.eclipse.sirius.ui.tools.api.actions.export.ExportAction;
-import org.eclipse.sirius.common.tools.api.resource.ImageFileFormat ;
 
 /**
  * @author Boubekeur Zendagui

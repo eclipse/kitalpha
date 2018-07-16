@@ -45,6 +45,7 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.sirius.business.api.componentization.ViewpointRegistry;
 import org.eclipse.sirius.business.api.dialect.DialectManager;
 import org.eclipse.sirius.business.api.dialect.command.CreateRepresentationCommand;
+import org.eclipse.sirius.business.api.dialect.command.RefreshRepresentationsCommand;
 import org.eclipse.sirius.business.api.modelingproject.ModelingProject;
 import org.eclipse.sirius.business.api.session.CustomDataConstants;
 import org.eclipse.sirius.business.api.session.DefaultLocalSessionCreationOperation;
@@ -593,15 +594,11 @@ public abstract class AbstractRepresentationCreationOperation extends WorkspaceM
 	 */
 	private void refreshRepresentation(final Session session, final DRepresentation representation){
 		final TransactionalEditingDomain editingDomain = session.getTransactionalEditingDomain();
-		RecordingCommand command = new RecordingCommand(editingDomain) {
-			@Override
-			protected void doExecute() {
-				representation.refresh();
-			}
-		};
-		editingDomain.getCommandStack().execute(command);
+		RefreshRepresentationsCommand refreshCommand = new RefreshRepresentationsCommand(session.getTransactionalEditingDomain(), 
+				new NullProgressMonitor(), representation);
+		editingDomain.getCommandStack().execute(refreshCommand);
 	}
-	
+
 
 	/**
 	 * Create the representation file for the model

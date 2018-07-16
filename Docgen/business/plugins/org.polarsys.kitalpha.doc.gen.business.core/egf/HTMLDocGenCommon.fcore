@@ -2,7 +2,8 @@
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:domain="http://www.eclipse.org/egf/1.0.0/domain"
     xmlns:fcore="http://www.eclipse.org/egf/1.0.0/fcore" xmlns:fprod="http://www.eclipse.org/egf/1.0.0/fprod"
     xmlns:ftask="http://www.eclipse.org/egf/1.0.0/ftask" xmlns:jetpattern="http://www.eclipse.org/egf/1.0.0/jetpattern"
-    xmlns:pattern="http://www.eclipse.org/egf/1.0.0/pattern" xmlns:types="http://www.eclipse.org/egf/1.0.0/types">
+    xmlns:pattern="http://www.eclipse.org/egf/1.0.0/pattern" xmlns:types="http://www.eclipse.org/egf/1.0.0/types"
+   >
   <fcore:FactoryComponent xmi:id="_lXoikdzyEd-264OhVlAChA" name="HTMLDocGen">
     <contractContainer xmi:id="_67_owd3rEd-Qav1YnqlO9A">
       <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_67_oxN3rEd-Qav1YnqlO9A"
