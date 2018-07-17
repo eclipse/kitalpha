@@ -1,6 +1,6 @@
 #!/bin/sh
 # ====================================================================
-# Copyright (c) 2006, 2017 THALES GLOBAL SERVICES.
+# Copyright (c) 2006, 2018 THALES GLOBAL SERVICES.
 # All rights reserved. This program and the accompanying materials
 # are made available under the terms of the Eclipse Public License v1.0
 # which accompanies this distribution, and is available at
@@ -27,10 +27,10 @@ clean_component() {
 	ls -al $ROOT_DIR
     rm -f all$COMPONENT_NAME.txt kept$COMPONENT_NAME.txt removed$COMPONENT_NAME.txt
 	# Find all nightly builds
-	find "$ROOT_COMPONENT_DIR" -type d -maxdepth 1 | sort | grep -E '/[0-9]\.[0-9]\.[0-9]-N' > all$COMPONENT_NAME.txt
+	find "$ROOT_COMPONENT_DIR" -type d -maxdepth 1 -printf "%T+\t%p\n" | sort | awk -F '\t' '{print $2}' | grep -E '/[0-9]\.[0-9]\.[0-9]-N' > all$COMPONENT_NAME.txt
 	# For each X.Y stream, keep the 5 most recent X.Y.Z build (whichever Z)
-	for s in $(find "$ROOT_COMPONENT_DIR" -type d -maxdepth 1 | sort | grep -E '/[0-9]\.[0-9]\.[0-9]-N' | sed -r -e 's|.*/([0-9]\.[0-9])\.[0-9]-N.*|\1|' | sort -u); do
-		find "$ROOT_COMPONENT_DIR" -type d -maxdepth 1 -name "${s}.[0-9]-N*" | sort | tail -n 5
+	for s in $(find "$ROOT_COMPONENT_DIR" -type d -maxdepth 1 -printf "%T+\t%p\n" | sort | awk -F '\t' '{print $2}' | grep -E '/[0-9]\.[0-9]\.[0-9]-N' | sed -r -e 's|.*/([0-9]\.[0-9])\.[0-9]-N.*|\1|' | sort -u); do
+		find "$ROOT_COMPONENT_DIR" -type d -maxdepth 1 -name "${s}.[0-9]-N*" -printf "%T+\t%p\n" | sort | awk -F '\t' '{print $2}' | tail -n 5
 	done > kept$COMPONENT_NAME.txt
 	# Identify which ones can be removed
 	comm -23 all$COMPONENT_NAME.txt kept$COMPONENT_NAME.txt > removed$COMPONENT_NAME.txt
