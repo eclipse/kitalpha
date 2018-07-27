@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017, 2018 Thales Global Services S.A.S.
+ * Copyright (c) 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -8,18 +8,22 @@
  * Contributors:
  *  Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
-package org.polarsys.kitalpha.richtext.widget.propertysheet;
+package org.polarsys.kitalpha.richtext.widget.editor.intf;
 
-import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
-import org.polarsys.kitalpha.richtext.widget.editor.MDERichTextEditor;
+import java.util.List;
+
+import org.eclipse.emf.ecore.EStructuralFeature;
 
 /**
  * 
- * @author Faycal Abka
+ * Manage features of input model that can have an impact on Richtext Editor
  *
  */
-public interface  MDERichTextPropertySheetProvider {
-	
-	public TabbedPropertySheetPage getTabbedPropertySheetPageDelegate(MDERichTextEditor contributor);
+public interface EditorInputFeatureContribution {
 
+  /**
+   * 
+   * @return a list of features of input model that editor's titles must be synchronized to
+   */
+  List<EStructuralFeature> getTitleChangingFeatures();
 }

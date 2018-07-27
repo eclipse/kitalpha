@@ -18,7 +18,9 @@ import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.jface.window.Window;
-import org.eclipse.sirius.diagram.DSemanticDiagram;
+import org.eclipse.sirius.viewpoint.DRepresentation;
+import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
+import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.eclipse.swt.widgets.Display;
 import org.polarsys.kitalpha.richtext.widget.tools.dialogs.FilteredElementTreeSelectionDialog;
 import org.polarsys.kitalpha.richtext.widget.tools.intf.LinkHandler;
@@ -36,36 +38,41 @@ public class ModelElementLinkHandler extends AbstractModelOpenLink implements Li
 	public ModelElementLinkHandler() {
 	}
 
-
-
 	@Override
 	public Tuple<String, String> getLink(String linkType, String basePath, Object object) {
 		Tuple<String, String> path = null;
-		if (object instanceof EObject){
-			EObject modelElement = (EObject)object;
+		if (object instanceof EObject) {
+			EObject modelElement = (EObject) object;
 			AdapterFactoryLabelProvider labelProvider = MDERichTextToolsHelper.getLabelProvider(modelElement);
 			AdapterFactoryContentProvider contentProvider = MDERichTextToolsHelper.getContentProvider(modelElement);
-			if (labelProvider != null && contentProvider != null){ 
+			if (labelProvider != null && contentProvider != null) {
 				FilteredElementTreeSelectionDialog dialog = new FilteredElementTreeSelectionDialog(
 						Display.getCurrent().getActiveShell(), labelProvider, contentProvider);
 				dialog.setTitle(Messages.RichTextWidget_Dialog_Title_Model_Element_Selection);
 				dialog.setMessage(Messages.RichTextWidget_Dialog_Title_Selection_Model_Element);
 
 				EObject root;
-				// To find the root container, if the selected element is a diagram, use its target instead
+
+				// To find the root container, if the selected element is a
+				// diagram, use its target instead
 				// otherwise the dialog box will browse the AirdResource.
-				if (modelElement instanceof DSemanticDiagram) {
-					DSemanticDiagram diagram = (DSemanticDiagram) modelElement;
+				if (modelElement instanceof DRepresentationDescriptor) {
+					DRepresentationDescriptor diagram = (DRepresentationDescriptor) modelElement;
 					root = EcoreUtil.getRootContainer(diagram.getTarget());
-	            } else {
-	            	root = EcoreUtil.getRootContainer(modelElement);
-	            }
+
+				} else if (modelElement instanceof DRepresentation && modelElement instanceof DSemanticDecorator) {
+					DSemanticDecorator diagram = (DSemanticDecorator) modelElement;
+					root = EcoreUtil.getRootContainer(diagram.getTarget());
+
+				} else {
+					root = EcoreUtil.getRootContainer(modelElement);
+				}
 
 				dialog.setInput(root.eResource());
 				if (Window.OK == dialog.open()) {
 					Object result = dialog.getFirstResult();
 					if (result instanceof EObject) {
-						String link = EcoreUtil.getURI((EObject)result).toString();
+						String link = EcoreUtil.getURI((EObject) result).toString();
 						path = getTuple(link, result);
 					}
 				}
@@ -73,25 +80,25 @@ public class ModelElementLinkHandler extends AbstractModelOpenLink implements Li
 		}
 		return path;
 	}
-	
+
 	protected Tuple<String, String> getTuple(String link, Object object) {
 		String result = null;
 		String label = null;
 		if (object instanceof EObject) {
-			EObject eObject = (EObject)object;
+			EObject eObject = (EObject) object;
 			label = MDERichTextToolsHelper.getName(eObject);
 			Resource eResource = eObject.eResource();
-			if (eResource instanceof XMLResource){
+			if (eResource instanceof XMLResource) {
 				result = ((XMLResource) eResource).getID(eObject);
 			}
-			if (result == null){
+			if (result == null) {
 				result = EcoreUtil.getURI(eObject).fragment();
-				if (result != null){
+				if (result != null) {
 					return new Tuple<String, String>(result, label);
 				}
 			}
 		}
-		if (result == null){
+		if (result == null) {
 			result = link;
 		}
 		return new Tuple<String, String>(result, label);
@@ -101,13 +108,12 @@ public class ModelElementLinkHandler extends AbstractModelOpenLink implements Li
 	public String encode(String url, String urlDisplayName) {
 		return "<a href=\"hlink://" + url + "\">" + StringEscapeUtils.escapeHtml(urlDisplayName) + "</a>"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 	}
-	
+
 	@Override
 	public String decode(String url, String basePath) {
 		url = url.replaceFirst("hlink://", ""); //$NON-NLS-1$ //$NON-NLS-2$
 		url = url.replaceAll("/", ""); //$NON-NLS-1$ //$NON-NLS-2$
 		return url;
 	}
-
 
 }

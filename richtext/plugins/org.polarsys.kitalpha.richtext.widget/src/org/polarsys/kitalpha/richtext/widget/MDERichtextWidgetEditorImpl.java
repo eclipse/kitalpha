@@ -21,7 +21,7 @@ import org.polarsys.kitalpha.richtext.widget.internal.ListenerInstaller;
  *
  */
 public class MDERichtextWidgetEditorImpl extends MDENebulaBasedRichTextWidgetImpl {
-	
+
 	public MDERichtextWidgetEditorImpl(Composite parent) {
 		super(parent);
 	}
@@ -37,15 +37,19 @@ public class MDERichtextWidgetEditorImpl extends MDENebulaBasedRichTextWidgetImp
 	public MDERichtextWidgetEditorImpl(Composite parent, MDENebulaRichTextConfiguration configuration) {
 		super(parent, configuration);
 	}
-	
+
 	@Override
 	protected void installListenersOnReadyInstance() {
 		ListenerInstaller installer = new ListenerInstaller();
-		
+
 		super.installListenersOnReadyInstance();
-		
+
+		installer.installOnBeforePasteListener(this);
 		installer.installOpenLinkListener(this);
 		installer.installChangeNotificationHandlerListener(this);
 		installer.installChangeContentListener(this);
+		installer.installSaveListener(this);
+		installer.installFocusEventListener(this);
+		installer.installWorkspaceResourceSaveListener(this);
 	}
 }

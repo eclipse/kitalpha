@@ -22,11 +22,20 @@ import org.polarsys.kitalpha.richtext.nebula.widget.toolbar.MDERichTextToolbarIt
  *
  */
 public interface MDENebulaBasedRichTextWidget extends BrowserBasedMDERichTextWidget, MDERichTextWidget {
+
+	public void addToolbarItem(String name, String command, String label, String toolbar, URL iconPath,
+			MDERichTextToolbarItemHandler handler);
+
+	public void addToolbarItem(MDERichTextWidget richtext, String name, String command, String label, String toolbar,
+			URL iconPath, MDERichTextToolbarItemHandler handler);
+
+	public void addToolbarItem(MDERichTextWidget richtext, String name, String command, String label, String toolbar,
+			URL iconPath);
+
+	public void setDirtyStateUpdated(boolean dirtyStateUpdated);
+
+	public boolean isDirtyStateUpdated();
 	
-	void addToolbarItem(String name, String command, String label, String toolbar, URL iconPath, MDERichTextToolbarItemHandler handler);
-	
-	void addToolbarItem(MDERichTextWidget richtext, String name, String command, String label, String toolbar, URL iconPath, MDERichTextToolbarItemHandler handler);
-	
-	void addToolbarItem(MDERichTextWidget richtext, String name, String command, String label, String toolbar, URL iconPath);
+	public boolean isEditorDisposed();
 
 }

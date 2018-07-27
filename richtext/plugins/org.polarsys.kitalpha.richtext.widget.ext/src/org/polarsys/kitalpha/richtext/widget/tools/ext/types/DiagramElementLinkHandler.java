@@ -10,33 +10,17 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.richtext.widget.tools.ext.types;
 
-import java.util.Iterator;
-
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
-import org.eclipse.emf.edit.ui.provider.AdapterFactoryContentProvider;
-import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
-import org.eclipse.jface.viewers.Viewer;
-import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.jface.window.Window;
-import org.eclipse.sirius.business.api.query.DViewQuery;
+import org.eclipse.sirius.business.api.resource.ResourceDescriptor;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
-import org.eclipse.sirius.business.api.session.danalysis.DAnalysisSession;
-import org.eclipse.sirius.business.api.session.resource.AirdResource;
-import org.eclipse.sirius.viewpoint.DAnalysis;
-import org.eclipse.sirius.viewpoint.DRepresentation;
+import org.eclipse.sirius.ui.tools.internal.dialogs.SingleRepresentationTreeSelectionDialog;
 import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
-import org.eclipse.sirius.viewpoint.DView;
-import org.eclipse.sirius.viewpoint.description.Viewpoint;
-import org.eclipse.swt.graphics.Image;
+import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.eclipse.swt.widgets.Display;
-import org.polarsys.kitalpha.richtext.widget.tools.dialogs.FilteredElementTreeSelectionDialog;
 import org.polarsys.kitalpha.richtext.widget.tools.intf.LinkHandler;
-import org.polarsys.kitalpha.richtext.widget.tools.messages.Messages;
 import org.polarsys.kitalpha.richtext.widget.tools.utils.MDERichTextToolsHelper;
 import org.polarsys.kitalpha.richtext.widget.tools.utils.Tuple;
 
@@ -51,94 +35,26 @@ public class DiagramElementLinkHandler extends ModelElementLinkHandler implement
 	public DiagramElementLinkHandler() {
 	}
 
-
 	@Override
 	public Tuple<String, String> getLink(String linkType, String basePath, Object object) {
 		Tuple<String, String> path = null;
-		if (object instanceof EObject){
-			EObject eObject = (EObject)object;
-			AdapterFactoryEditingDomain editingDomain = MDERichTextToolsHelper.getAdapterFactory(eObject);
+		if (object instanceof EObject) {
+			EObject eObject = (EObject) object;
 
-			if (editingDomain != null){
-				AdapterFactoryLabelProvider labelProvider = new AdapterFactoryLabelProvider(editingDomain.getAdapterFactory()){
+			if (eObject instanceof DSemanticDecorator) {
+				eObject = ((DSemanticDecorator) eObject).getTarget();
 
-					@Override
-					public Image getImage(Object object) {
-						if (object instanceof DView) {
-							Viewpoint vp = ((DView) object).getViewpoint();
-							if (vp != null) {
-								return super.getImage(vp);
-							}
-						}
-						return super.getImage(object);
-					}
+			} else if (eObject instanceof DRepresentationDescriptor) {
+				eObject = ((DRepresentationDescriptor) eObject).getTarget();
+			}
 
-					@Override
-					public String getText(Object object) {
-						if (object instanceof DView) {
-							Viewpoint vp = ((DView) object).getViewpoint();
-							if (vp != null) {
-								return super.getText(vp);
-							}
-						}
-						return super.getText(object);
-					}
+			Session session = SessionManager.INSTANCE.getSession(eObject);
+			SingleRepresentationTreeSelectionDialog dialog = new SingleRepresentationTreeSelectionDialog(
+					Display.getCurrent().getActiveShell(), session);
 
-				};
-				AdapterFactoryContentProvider contentProvider = MDERichTextToolsHelper.getContentProvider(eObject);
-
-				FilteredElementTreeSelectionDialog dialog = new FilteredElementTreeSelectionDialog(Display.getCurrent().getActiveShell(), labelProvider, contentProvider);
-
-				dialog.setTitle(Messages.RichTextWidget_Dialog_Title_Diagram_Element_Selection);
-				dialog.setMessage(Messages.RichTextWidget_Dialog_Title_Selection_Diagram_Element);
-
-				dialog.addFilter(new ViewerFilter() {
-
-					@Override
-					public boolean select(Viewer viewer, Object parentElement, Object element) {
-						return ((element instanceof Resource) && containsDRepresentation((Resource) element)) || select(element);
-					}
-
-					private boolean select(Object element) {
-						return (element instanceof DAnalysis) ||
-								((element instanceof DView) && !(new DViewQuery((DView) element).getLoadedRepresentations().isEmpty())) ||
-								(element instanceof DRepresentationDescriptor);
-					}
-					private boolean containsDRepresentation(Resource resource) {
-						for (Iterator<EObject> it = resource.getAllContents(); it.hasNext(); ) {
-							EObject obj = it.next();
-							if (select(obj)) {
-								return true;
-							}
-						}
-						return false;
-					}
-				});
-
-				Resource diagramResource = null;
-				Resource res = eObject.eResource();
-				if (res instanceof AirdResource) {
-					diagramResource = res;
-				} else if (res != null) {
-					Session session = SessionManager.INSTANCE.getSession(res);
-					if (session != null) {
-						Iterator<Resource> analysisResources = ((DAnalysisSession) session).getAllSessionResources().iterator();
-						if (analysisResources.hasNext()) {
-							diagramResource = analysisResources.next();
-						}
-					}
-				}
-				if (diagramResource != null) {
-					dialog.setInput(diagramResource.getResourceSet());
-					if (Window.OK == dialog.open()) {
-						Object result = dialog.getFirstResult();
-						if (result instanceof DRepresentationDescriptor) {
-							DRepresentation representation = ((DRepresentationDescriptor) result).getRepresentation();
-							URI uri = EcoreUtil.getURI(representation);
-							path = getTuple(uri.toString(), representation);
-						}
-					}
-				}
+			if (Window.OK == dialog.open()) {
+				Object result = dialog.getResult();
+				path = getTuple(result.toString(), result);
 			}
 		}
 		return path;
@@ -146,11 +62,19 @@ public class DiagramElementLinkHandler extends ModelElementLinkHandler implement
 
 	@Override
 	protected Tuple<String, String> getTuple(String link, Object object) {
-	  // To create links to DRepresentations, use their UID if possible 
-    if (object instanceof DRepresentation) {
-      String label = MDERichTextToolsHelper.getName((EObject) object);
-      return new Tuple<>(((DRepresentation) object).getUid(), label);
-    }
-	  return super.getTuple(link, object);
+		// To create links to DRepresentations, use their UID
+		if (object instanceof DRepresentationDescriptor) {
+			String label = MDERichTextToolsHelper.getName((EObject) object);
+			String uri = "";
+			ResourceDescriptor path = ((DRepresentationDescriptor) object).getRepPath();
+			if (path != null) {
+				URI urif = path.getResourceURI();
+				if (urif != null) {
+					uri = urif.fragment();
+				}
+			}
+			return new Tuple<>(uri, label);
+		}
+		return super.getTuple(link, object);
 	}
 }

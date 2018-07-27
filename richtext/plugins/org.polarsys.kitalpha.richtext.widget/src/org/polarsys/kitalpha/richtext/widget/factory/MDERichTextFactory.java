@@ -10,9 +10,17 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.richtext.widget.factory;
 
+import org.eclipse.core.commands.Command;
+import org.eclipse.core.commands.ExecutionEvent;
+import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.commands.IExecutionListener;
+import org.eclipse.core.commands.NotHandledException;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.nebula.widgets.richtext.RichTextEditorConfiguration;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.ui.IWorkbenchCommandConstants;
+import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.commands.ICommandService;
 import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
 import org.polarsys.kitalpha.richtext.common.util.MDERichTextHelper;
 import org.polarsys.kitalpha.richtext.nebula.widget.MDENebulaBasedRichTextWidget;
@@ -21,6 +29,7 @@ import org.polarsys.kitalpha.richtext.nebula.widget.MDERichTextConstants;
 import org.polarsys.kitalpha.richtext.widget.MDERichtextWidgetEditorImpl;
 import org.polarsys.kitalpha.richtext.widget.MDERichtextWidgetImpl;
 import org.polarsys.kitalpha.richtext.widget.editor.tools.OpenInEditorHandler;
+import org.polarsys.kitalpha.richtext.widget.helper.MDERichtextWidgetHelper;
 import org.polarsys.kitalpha.richtext.widget.internal.Activator;
 import org.polarsys.kitalpha.richtext.widget.tools.handlers.AddImageHandler;
 import org.polarsys.kitalpha.richtext.widget.tools.handlers.AddLinkHandler;
@@ -60,13 +69,15 @@ public class MDERichTextFactory {
 	 */
 	protected void initializeDefaultConfiguration() {
 		configuration.setOption(MDERichTextConstants.READ_ONLY_MODE, false);
-		configuration.setOption(MDERichTextConstants.PAST_FROM_MS_WORD_PROMPT_CLEANUP, false);
+		configuration.setOption(MDERichTextConstants.PAST_FROM_MS_WORD_PROMPT_CLEANUP, true);
 	}
 
 	public MDERichTextWidget createEditorRichTextWidget(Composite parent){
 		initializeMDEDefaultToolbar(false);
-
-		MDERichtextWidgetEditorImpl widget = new MDERichtextWidgetEditorImpl(parent, configuration);
+		MDERichtextWidgetEditorImpl widget = MDERichtextWidgetHelper.getInstance().getEditorWidgetContribution(parent, configuration); 
+		
+		if (widget == null)
+		  widget = new MDERichtextWidgetEditorImpl(parent, configuration);
 
 		addEditorToolbarItems(widget);
 
@@ -118,7 +129,41 @@ public class MDERichTextFactory {
 		
 		removeUselessItemFromToolbar();
 		
-		MDERichtextWidgetImpl widget = new MDERichtextWidgetImpl(parent, configuration);
+    MDERichtextWidgetImpl widget = new MDERichtextWidgetImpl(parent, configuration) {
+      @Override
+      protected void installListeners() {
+        super.installListeners();
+
+        // Since minimal rich text widget does not contribute a Saveable, it needs to listen to Save event itself
+        ICommandService commandSvc = PlatformUI.getWorkbench().getAdapter(ICommandService.class);
+        Command saveCommand = commandSvc.getCommand(IWorkbenchCommandConstants.FILE_SAVE);
+        saveCommand.addExecutionListener(new IExecutionListener() {
+          @Override
+          public void preExecute(final String commandId, final ExecutionEvent event) {
+            if (!isEditorDisposed() && hasFocus()) {
+              saveContent();
+            }
+          }
+
+          @Override
+          public void postExecuteSuccess(final String commandId, final Object returnValue) {
+            if (!isEditorDisposed() && hasFocus()) {
+              setDirtyStateUpdated(false);
+            }
+          }
+
+          @Override
+          public void postExecuteFailure(final String commandId, final ExecutionException exception) {
+            // Do nothing
+          }
+
+          @Override
+          public void notHandled(final String commandId, final NotHandledException exception) {
+            // Do nothing
+          }
+        });
+      }
+    };
 		
 		addToolbarItems(widget);
 		
@@ -145,8 +190,7 @@ public class MDERichTextFactory {
 		configuration.removeToolbarItems(MDERichTextConstants.LINK, 
 				MDERichTextConstants.ANCHOR, 
 				MDERichTextConstants.STRIKE,
-				MDERichTextConstants.PASTE_FROM_WORD,
-				MDERichTextConstants.PASTE_TEXT);
+				MDERichTextConstants.PASTE_FROM_WORD);
 	}
 
 	/**
@@ -219,6 +263,7 @@ public class MDERichTextFactory {
 		configuration.initializeToolbarItem(MDERichTextConstants.MDE_ENABLE_EDITING_TOOLBAR, MDERichTextConstants.MDE_OPEN_EDITOR);
 		configuration.initializeToolbarItem(MDERichTextConstants.MDE_SAVE_TOOLBAR, MDERichTextConstants.MDE_SAVE);
 		configuration.initializeToolbarItem(MDERichTextConstants.STYLES_TOOLBAR);
+		configuration.initializeToolbarItem(MDERichTextConstants.CLIPBOARD_TOOLBAR);
 		configuration.initializeToolbarItem(MDERichTextConstants.BASIC_STYLES, 
 				MDERichTextConstants.LIST_GROUP);
 		configuration.initializeToolbarItem(MDERichTextConstants.MDE_LINKS_TOOLBAR, MDERichTextConstants.MDE_ADDLINK);

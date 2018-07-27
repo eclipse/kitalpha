@@ -17,7 +17,9 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.sirius,
  org.apache.commons.lang,
  org.polarsys.kitalpha.richtext.widget,
- org.eclipse.sirius.diagram
+ org.eclipse.sirius.diagram,
+ org.eclipse.ui.views.properties.tabbed,
+ org.eclipse.sirius.ui
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.richtext.widget.tools.ext.intf
