@@ -127,7 +127,7 @@ public class DeleteToolForElementBasedEdge
 			expression = "[elementView.sourceNode.eGet('target')->asSet()->including(elementView.targetNode.eGet('target'))->asOrderedSet()->asSequence()/]";
 			break;
 		case AQL:
-			expression = "aql:if(sourceNode.target != targetNode.target) then Sequence{sourceNode.target, targetNode.target} else (sourceNode.target) endif";
+			expression = "aql:Sequence{elementView.sourceNode.target, elementView.targetNode.target}->asSet()";
 			break;
 		}
 
