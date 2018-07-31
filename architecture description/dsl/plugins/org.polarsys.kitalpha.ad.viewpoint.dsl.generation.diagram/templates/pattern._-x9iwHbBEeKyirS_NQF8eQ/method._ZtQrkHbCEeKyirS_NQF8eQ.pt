@@ -4,18 +4,21 @@ SelectModelElementVariable select = ToolFactory.eINSTANCE.createSelectModelEleme
 select.setName("elementsToRemove");
 
 String expression = "";
-if (SiriusExpressionHelper.getCurrentExpressionKind().equals(ExpressionKind.QueryLegacy))
+switch (SiriusExpressionHelper.getCurrentExpressionKind())
 {
-	expression = SiriusExpressionHelper.getExpressoin("if (sourceNode.target != targetNode.target) {") +
-	SiriusExpressionHelper.getExpressoin("sourceNode.target + targetNode.target")+
-	SiriusExpressionHelper.getExpressoin("}else{")+
-	SiriusExpressionHelper.getExpressoin("sourceNode.target")+
-	SiriusExpressionHelper.getExpressoin("}");
-}
-
-if (SiriusExpressionHelper.getCurrentExpressionKind().equals(ExpressionKind.Acceleo_3_x))
-{
-	expression = "[elementView.sourceNode.eGet('target')->asSet()->including(elementView.targetNode.eGet('target'))->asOrderedSet()->asSequence()/]";
+	case QueryLegacy:
+		expression = SiriusExpressionHelper.getExpressoin("if (sourceNode.target != targetNode.target) {")
+				+ SiriusExpressionHelper.getExpressoin("sourceNode.target + targetNode.target")
+				+ SiriusExpressionHelper.getExpressoin("}else{")
+				+ SiriusExpressionHelper.getExpressoin("sourceNode.target")
+				+ SiriusExpressionHelper.getExpressoin("}");
+		break;
+	case Acceleo_3_x:
+		expression = "[elementView.sourceNode.eGet('target')->asSet()->including(elementView.targetNode.eGet('target'))->asOrderedSet()->asSequence()/]";
+		break;
+	case AQL:
+		expression = "aql:if(sourceNode.target != targetNode.target) then Sequence{sourceNode.target, targetNode.target} else (sourceNode.target) endif";
+		break;
 }
 
 select.setCandidatesExpression(expression);

@@ -1,4 +1,4 @@
-//Generated with EGF 1.5.0.v20170901-1223
+//Generated with EGF 1.6.0.201805040915
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.decorators.common;
 
 import java.util.*;

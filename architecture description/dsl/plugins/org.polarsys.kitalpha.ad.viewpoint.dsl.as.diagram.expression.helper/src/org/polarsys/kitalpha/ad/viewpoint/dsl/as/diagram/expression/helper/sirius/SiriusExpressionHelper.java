@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -50,6 +50,7 @@ public class SiriusExpressionHelper {
 		if (source)
 		{
 			switch (currentExpressionKind) {
+			case AQL:
 			case QueryLegacy:
 				return "sourceNode.target";
 
@@ -63,6 +64,7 @@ public class SiriusExpressionHelper {
 		else
 		{
 			switch (currentExpressionKind) {
+			case AQL:
 			case QueryLegacy:
 				return "targetNode.target";
 
@@ -113,6 +115,8 @@ public class SiriusExpressionHelper {
 		switch (getCurrentExpressionKind()) {
 		case QueryLegacy:
 			return "<%" + featureName + "%>";
+		case AQL:
+			return "self."+featureName;
 		case Acceleo_3_x:
 			return featureName;
 		case Ocl:
@@ -130,6 +134,8 @@ public class SiriusExpressionHelper {
 		switch (getCurrentExpressionKind()) {
 		case QueryLegacy:
 			return "<%" + serviceName + "%>";
+		case AQL:
+			return "self."+serviceName;
 		case Acceleo_3_x:
 			return serviceName;
 		case Ocl:
@@ -146,6 +152,7 @@ public class SiriusExpressionHelper {
 		switch (getCurrentExpressionKind()) {
 		case QueryLegacy:
 			return variableHasPrefix(variableName) ? variableName : "$" + variableName;
+		case AQL:
 		case Acceleo_3_x:
 			return getVariableWithoutPrefix(variableName);
 		case Ocl:
@@ -167,16 +174,17 @@ public class SiriusExpressionHelper {
 		switch (getCurrentExpressionKind()) {
 		case QueryLegacy:
 			return string;
+		case AQL:
 		case Acceleo_3_x:
-			return stringHasAcceleo3Delimiters(string) ? string : '\'' + string + '\'';
+			return stringHasDelimiters(string, '\'') ? string : '\'' + string + '\'';
 		case Ocl:
 			throw new OCLExpressionNotSupported();
 		}
 		throw new RuntimeException();
 	}
 	
-	private static boolean stringHasAcceleo3Delimiters(String string){
-		return string.charAt(0) == '\'' && string.charAt(string.length()-1) == '\'';
+	private static boolean stringHasDelimiters(String string, char delimiter){
+		return string.charAt(0) == delimiter && string.charAt(string.length()-1) == delimiter;
 	}
 	
 	/**

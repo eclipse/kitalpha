@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -13,6 +13,7 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util;
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.sirius.ExpressionInterpreter;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.sirius.ExpressionKind;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.sirius.OCLExpressionNotSupported;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.sirius.SiriusExpressionHelper;
 
 /**
@@ -103,11 +104,16 @@ public enum VSMVariable {
 	 * @return a valid value of the variable name to use in the VSM. 
 	 */
 	public String getExpressionVariable(){
-		boolean compatibleA2 = SiriusExpressionHelper.getCurrentExpressionKind().equals(ExpressionKind.QueryLegacy);
-		if (compatibleA2)
-			return "<%$" + this.name() + "%>";
-		else
-			return SiriusExpressionHelper.getExpressoin(this.name(), ExpressionInterpreter.Variable);
+		switch ( SiriusExpressionHelper.getCurrentExpressionKind())
+		{
+			case QueryLegacy:
+				return "<%$" + this.name() + "%>";
+			case AQL:
+			case Acceleo_3_x:
+			case Ocl:
+				return SiriusExpressionHelper.getExpressoin(this.name(), ExpressionInterpreter.Variable);
+		}
+		throw new IllegalStateException();
 	}
 	
 	/**
@@ -123,11 +129,16 @@ public enum VSMVariable {
 	 * @return a valid value of the variable name to use in the VSM. 
 	 */
 	public static String getGenericExpressionVariable(String variableName){
-		boolean compatibleA2 = SiriusExpressionHelper.getCurrentExpressionKind().equals(ExpressionKind.QueryLegacy);
-		if (compatibleA2)
-			return "<%$" + variableName + "%>";
-		else
-			return SiriusExpressionHelper.getExpressoin(variableName, ExpressionInterpreter.Variable);
+		switch ( SiriusExpressionHelper.getCurrentExpressionKind())
+		{
+			case QueryLegacy:
+				return "<%$" + variableName + "%>";
+			case AQL:
+			case Acceleo_3_x:
+			case Ocl:
+				return SiriusExpressionHelper.getExpressoin(variableName, ExpressionInterpreter.Variable);
+		}
+		throw new IllegalStateException();
 	}
 	
 }
