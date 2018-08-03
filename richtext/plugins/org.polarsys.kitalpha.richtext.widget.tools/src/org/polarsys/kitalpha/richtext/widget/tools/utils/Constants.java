@@ -25,6 +25,7 @@ public class Constants {
 
 	//Default supported Links
 	public static final String URL = "http"; //$NON-NLS-1$
+	public static final String URL_SECURE = URL + "s"; //$NON-NLS-1$
 	public static final String FILE = "file"; //$NON-NLS-1$
 	public static final String LOCAL = "local"; //$NON-NLS-1$
 	public static final String MODEL_ELEMENT = "modelElement"; //$NON-NLS-1$

@@ -70,8 +70,7 @@ public class FilteredElementTreeSelectionDialog extends ElementTreeSelectionDial
 	  /**
 	   * @see org.eclipse.swt.events.ModifyListener#modifyText(org.eclipse.swt.events.ModifyEvent)
 	   */
-	  @Override
-	public void modifyText(ModifyEvent e) {
+	  public void modifyText(ModifyEvent e) {
 	    viewerFilter.setPattern(filterTextField.getText());
 	    getTreeViewer().refresh();
 	  }

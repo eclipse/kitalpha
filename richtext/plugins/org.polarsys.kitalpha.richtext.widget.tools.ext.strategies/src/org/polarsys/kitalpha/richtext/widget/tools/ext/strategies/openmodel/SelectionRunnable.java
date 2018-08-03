@@ -31,7 +31,6 @@ public class SelectionRunnable implements Runnable {
 		this.element = element;
 	}
 
-	@Override
 	@SuppressWarnings("synthetic-access")
 	public void run() {
 		if (null == element) {

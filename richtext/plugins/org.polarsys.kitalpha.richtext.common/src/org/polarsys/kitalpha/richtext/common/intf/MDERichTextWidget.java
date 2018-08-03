@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2018 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.swt.events.FocusListener;
 import org.eclipse.swt.events.ModifyListener;
+import org.eclipse.swt.widgets.Composite;
 
 /**
  * Definition of services that MDE Rich text widget must responds to be used in context of MDE
@@ -211,7 +212,16 @@ public interface MDERichTextWidget extends PropertyChangeListener {
 	 */
 	void firePropertyChangeEvent(PropertyChangeEvent event);
 	
+	/**
+	 * @param parent the container to change
+	 */
+	void setParent(Composite parent);
 	
+	 /**
+   * @param parent the container
+   */
+	Composite getParent();
+  
 	/**
 	 * Release resources used by MDE Rich Text Widget
 	 */

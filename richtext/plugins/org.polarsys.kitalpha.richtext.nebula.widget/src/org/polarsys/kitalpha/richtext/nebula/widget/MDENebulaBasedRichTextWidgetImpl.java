@@ -10,6 +10,7 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.richtext.nebula.widget;
 
+import java.beans.PropertyChangeEvent;
 import java.net.URL;
 import java.util.Map;
 
@@ -32,88 +33,126 @@ import org.polarsys.kitalpha.richtext.nebula.widget.toolbar.MDEToolbarItem;
  * @author Faycal Abka
  *
  */
-public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWidgetImpl implements MDENebulaBasedRichTextWidget {
-	
-	private static final String SLASH_CHARACTER = "/"; 		//$NON-NLS-1$
-	private static final String FILE_PROTOCOL = "file://"; 	//$NON-NLS-1$
-	
+public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWidgetImpl
+		implements MDENebulaBasedRichTextWidget {
+
+	private static final String SLASH_CHARACTER = "/"; //$NON-NLS-1$
+	private static final String FILE_PROTOCOL = "file://"; //$NON-NLS-1$
+
 	private final RichTextEditor editor;
 	private final RichTextEditorConfiguration configuration;
-	
+
+	public static final String WIDGET_DIRTY_STATE_UPDATED = "dirtyStateUpdated";
+
 	private boolean editorReady = false;
-	
+
 	private String baseHrefPath = null;
+
+	// As a performance improvement, the widget should NOT listen to all change
+	// events and update its dirty state. This
+	// flag is used to indicate whether the dirty status has been updated
+	private boolean dirtyStateUpdated;
 
 	public MDENebulaBasedRichTextWidgetImpl(Composite parent) {
 		super(parent);
-		this.editor = new RichTextEditor(parent); //default configuration
+		this.editor = new RichTextEditor(parent); // default configuration
 		this.configuration = editor.getEditorConfiguration();
 		GridDataFactory.fillDefaults().grab(true, true).applyTo(this.editor);
-		
+
 		addPropertyChangeListener(this);
-		
+
 		installListeners();
+
+		dirtyStateUpdated = false;
+		
+		customizeRichTextConfiguration(this.configuration);
 	}
-	
+
 	public MDENebulaBasedRichTextWidgetImpl(Composite parent, MDENebulaRichTextConfiguration configuration) {
 		super(parent);
 		this.configuration = configuration;
-		((MDENebulaRichTextConfiguration)this.configuration).createToolbar();
-		this.editor = new RichTextEditor(parent, configuration); //default configuration
+		((MDENebulaRichTextConfiguration) this.configuration).createToolbar();
+		this.editor = new RichTextEditor(parent, configuration); // default
+																	// configuration
 		GridDataFactory.fillDefaults().grab(true, true).applyTo(this.editor);
-		
+
 		addPropertyChangeListener(this);
-		
+
 		installListeners();
+		
+    dirtyStateUpdated = false;
+    
+    customizeRichTextConfiguration(this.configuration);
 	}
-	
+
 	public MDENebulaBasedRichTextWidgetImpl(Composite parent, int style) {
 		super(parent);
-		this.editor = new RichTextEditor(parent, style); //default configuration
+		this.editor = new RichTextEditor(parent, style); // default
+															// configuration
 		this.configuration = editor.getEditorConfiguration();
 		GridDataFactory.fillDefaults().grab(true, true).applyTo(this.editor);
-		
+
 		addPropertyChangeListener(this);
-		
+
 		installListeners();
+		
+    dirtyStateUpdated = false;
+    
+    customizeRichTextConfiguration(this.configuration);
 	}
-	
+
 	public MDENebulaBasedRichTextWidgetImpl(Composite parent, MDENebulaRichTextConfiguration configuration, int style) {
 		super(parent);
 		this.configuration = configuration;
-		((MDENebulaRichTextConfiguration)this.configuration).createToolbar();
-		this.editor = new RichTextEditor(parent, style); //default configuration
+		((MDENebulaRichTextConfiguration) this.configuration).createToolbar();
+		this.editor = new RichTextEditor(parent, style); // default
+															// configuration
 		GridDataFactory.fillDefaults().grab(true, true).applyTo(this.editor);
-		
+
 		addPropertyChangeListener(this);
-		
+
 		installListeners();
+		
+    dirtyStateUpdated = false;
+    
+    customizeRichTextConfiguration(this.configuration);
 	}
-	
+
+	public void setDirtyStateUpdated(boolean dirtyStateUpdated) {
+		this.dirtyStateUpdated = dirtyStateUpdated;
+		// Inform the editor that the dirty state has been updated
+		PropertyChangeEvent event = new PropertyChangeEvent(this, WIDGET_DIRTY_STATE_UPDATED, null, null);
+		firePropertyChangeEvent(event);
+	}
+
+	public boolean isDirtyStateUpdated() {
+		return dirtyStateUpdated;
+	}
+
 	protected void installListeners() {
-		if (getBrowser() != null){
+		if (getBrowser() != null) {
 			getBrowser().addProgressListener(new ProgressListener() {
-				
+
 				@Override
 				public void completed(ProgressEvent event) {
 					editorReady = true;
 					installListenersOnReadyInstance();
 				}
-				
+
 				@Override
 				public void changed(ProgressEvent event) {
 				}
 			});
 		}
 	}
-	
+
 	/**
-	 * Install listener on ready instance event fired by
-	 * ckEditor
+	 * Install listener on ready instance event fired by ckEditor
 	 */
-	protected void installListenersOnReadyInstance(){
-		//This method is intended to be overriden by sub-classes to add listeners to CKEditor
-		//or adding generic listener here.
+	protected void installListenersOnReadyInstance() {
+		// This method is intended to be overriden by sub-classes to add
+		// listeners to CKEditor
+		// or adding generic listener here.
 	}
 
 	@Override
@@ -125,68 +164,64 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 	public void setBaseHrefPath(String baseHref) {
 		boolean forceEditorUpdate = false;
 		baseHref = getBaseHref(baseHref);
-		if (this.baseHrefPath == null 
-				|| this.baseHrefPath.isEmpty()){
+		if (this.baseHrefPath == null || this.baseHrefPath.isEmpty()) {
 			this.baseHrefPath = baseHref;
 		}
-		
-		if (baseHref != null){
+
+		if (baseHref != null) {
 			forceEditorUpdate = setBaseHref(baseHref);
 		}
 
-		if (forceEditorUpdate){
+		if (forceEditorUpdate) {
 			updateEditor();
 		}
 	}
-	
-	
+
 	@Override
 	public boolean isDirty() {
-		if (isReady()){
+		if (isReady()) {
 			return super.isDirty();
 		}
 		return false;
 	}
-	
+
 	@Override
 	public boolean isReady() {
 		return editorReady;
 	}
-	
+
 	private String getBaseHref(String baseHref) {
-		if (baseHref != null){
-			if (!baseHref.endsWith(SLASH_CHARACTER)){
+		if (baseHref != null) {
+			if (!baseHref.endsWith(SLASH_CHARACTER)) {
 				baseHref = baseHref + SLASH_CHARACTER;
 			}
 			baseHref = FILE_PROTOCOL + baseHref;
 		}
 		return baseHref;
 	}
-	
+
 	private boolean setBaseHref(String baseHref) {
 		boolean result = false;
 		Map<String, Object> conf = configuration.getAllOptions();
-		if (conf.containsKey(MDERichTextConstants.BASE_HREF)){
+		if (conf.containsKey(MDERichTextConstants.BASE_HREF)) {
 			Object oldValue = conf.get(MDERichTextConstants.BASE_HREF);
-			result = oldValue == null 
-					|| !oldValue.equals(this.baseHrefPath) 
-					|| !this.baseHrefPath.equals(baseHref);
+			result = oldValue == null || !oldValue.equals(this.baseHrefPath) || !this.baseHrefPath.equals(baseHref);
 		}
 		configuration.setOption(MDERichTextConstants.BASE_HREF, baseHref);
-		this.baseHrefPath = baseHref; //update with latest path
+		this.baseHrefPath = baseHref; // update with latest path
 		return result;
 	}
 
 	@Override
 	public void setVisible(boolean visible) {
-		if (isReady()){
+		if (isReady()) {
 			this.setVisible(visible);
 		}
 	}
 
 	@Override
 	public String getText() {
-		if (isReady()){
+		if (isReady()) {
 			return editor.getText();
 		}
 		return ""; //$NON-NLS-1$
@@ -194,31 +229,31 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 
 	@Override
 	public void setText(String text) {
-		if (text != null){
-			text = escapeSingleQuote(text);
+		if (text != null) {
+			text = escapeSpecialCharacters(text);
 			editor.setText(text);
 		}
 	}
 
 	@Override
 	public void insertText(String text) {
-		if (text != null && isReady()){
-			text = escapeSingleQuote(text);
+		if (text != null && isReady()) {
+			text = escapeSpecialCharacters(text);
 			editor.insertText(text);
 		}
 	}
 
 	@Override
 	public void insertRawText(String html) {
-		if (html != null && isReady()){
-			html = escapeSingleQuote(html);
+		if (html != null && isReady()) {
+			html = escapeSpecialCharacters(html);
 			editor.insertHTML(html);
 		}
 	}
 
 	@Override
 	public String getSelectedText() {
-		if (isReady()){
+		if (isReady()) {
 			return editor.getSelectedText();
 		}
 		return ""; //$NON-NLS-1$
@@ -226,7 +261,7 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 
 	@Override
 	public String getSelectedRawText() {
-		if (isReady()){
+		if (isReady()) {
 			return editor.getSelectedHTML();
 		}
 		return "";
@@ -234,46 +269,45 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 
 	@Override
 	public boolean isEditable() {
-		if (isReady()){
+		if (isReady()) {
 			return editor.isEditable();
-		} 
+		}
 		return false;
 	}
 
 	@Override
 	public void setEditable(boolean editable) {
-		if (isReady()){
+		if (isReady()) {
 			editor.setEditable(editable);
 		}
 	}
 
 	@Override
 	public void updateToolbar() {
-		if (isReady()){
+		if (isReady()) {
 			editor.updateToolbar();
 		}
 	}
 
 	@Override
 	public boolean setToolbarItemState(String command, String state) {
-		if (isReady()){
+		if (isReady()) {
 			StringBuffer updateStateScript = getCommand(command).append(".setState(").append(state).append(");"); //$NON-NLS-1$ //$NON-NLS-2$
 			return executeScript(updateStateScript.toString());
 		}
 		return false;
 	}
-	
-	protected final StringBuffer getCommand(String command){
+
+	protected final StringBuffer getCommand(String command) {
 		return (new StringBuffer("CKEDITOR.instances.editor.getCommand('")).append(command).append("')"); //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	@Override
 	public void updateEditor() {
-		if (isReady()){
+		if (isReady()) {
 			editor.updateEditor();
 		}
 	}
-
 
 	@Override
 	public boolean setFocus() {
@@ -312,8 +346,8 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 
 	@Override
 	public void dispose() {
-    super.dispose();
-    editor.dispose();
+		super.dispose();
+		editor.dispose();
 	}
 
 	@Override
@@ -335,4 +369,23 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 		addToolbarItem(name, command, label, toolbar, iconPath, null);
 	}
 
+	protected void customizeRichTextConfiguration(RichTextEditorConfiguration configuration) {
+	  // Do not take the focus on editor startup
+	  configuration.setOption("startupFocus", false);
+	}
+	
+  @Override
+  public boolean isEditorDisposed() {
+    return editor.isDisposed();
+  }
+  
+  @Override
+  public void setParent(Composite parent) {
+    editor.setParent(parent);
+  }
+  
+  @Override
+  public Composite getParent() {
+    return editor.getParent();
+  }
 }

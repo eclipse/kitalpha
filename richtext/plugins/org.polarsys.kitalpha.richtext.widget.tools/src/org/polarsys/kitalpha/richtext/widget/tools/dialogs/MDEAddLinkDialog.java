@@ -127,7 +127,6 @@ public class MDEAddLinkDialog extends MDEOkCancelDialog {
 		linkType = itemsLinkList[0];
 		linkTypeCombo.setText(linkType);
 		linkTypeCombo.addSelectionListener(new SelectionListener() {
-			@Override
 			@SuppressWarnings("synthetic-access")
 			public void widgetSelected(SelectionEvent event) {
 				linkType = itemsLinkList[linkTypeCombo.getSelectionIndex()];
@@ -142,7 +141,6 @@ public class MDEAddLinkDialog extends MDEOkCancelDialog {
 				urlText.setText(""); //$NON-NLS-1$
 			}
 
-			@Override
 			public void widgetDefaultSelected(SelectionEvent event) {
 				// do nothing
 			}
@@ -170,7 +168,6 @@ public class MDEAddLinkDialog extends MDEOkCancelDialog {
 		urlText = new Text(composite, SWT.BORDER);
 		GridDataFactory.fillDefaults().grab(true, false).hint(300, SWT.DEFAULT).applyTo(urlText);
 		urlText.addModifyListener(new ModifyListener() {
-			@Override
 			public void modifyText(ModifyEvent e) {
 				if (getOK() != null) {
 					getOK().setEnabled(urlText.getText().trim().length() > 0);

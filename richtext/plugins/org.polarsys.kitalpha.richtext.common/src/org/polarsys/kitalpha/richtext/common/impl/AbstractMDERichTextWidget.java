@@ -72,7 +72,7 @@ public abstract class AbstractMDERichTextWidget implements MDERichTextWidget {
 	  // to a new EObject element and a new structure
 	  // must save the content of the current element and the current feature
 	  // if they are not NULL
-	  if (this.owner != null && this.feature != null && this.owner != owner) {
+	  if (this.owner != null && this.feature != null && this.owner != owner && hasFocus()) {
       saveContent();
     }
 	  
@@ -124,18 +124,29 @@ public abstract class AbstractMDERichTextWidget implements MDERichTextWidget {
 		EStructuralFeature feature = getFeature();
 		String storedText = (String) owner.eGet(feature);
 		String text = getText();
-		return !text.equals(storedText) || (storedText == null && !"".equals(text));
+		if (storedText == null) {
+			return !"".equals(text);
+		}
+		return !storedText.equals(text);
 	}
 	
-	@Override
 	public SaveStrategy getSaveStrategy(){
 		return this.saveStrategy;
 	}
 	
-	protected String escapeSingleQuote(String value) {
-		value = value.replace("'", "&#39;"); //$NON-NLS-1$ //$NON-NLS-2$
-		return value;
-	}
+  /**
+   * 
+   * Escape special characters in the HTML code displayed by the editor.
+   * 
+   * @param value
+   * @return
+   */
+  protected String escapeSpecialCharacters(String value) {
+    value = value.replace("'", "&#39;"); //$NON-NLS-1$ //$NON-NLS-2$
+    // If there is backslash in the HTML code, we do not want the editor to translate it as an escape character.
+    value = value.replace("\\", "&#92;"); //$NON-NLS-1$ //$NON-NLS-2$
+    return value;
+  }
 	
 	protected final void areNotNull(Object... objects) {
 		if (objects != null){
@@ -147,17 +158,18 @@ public abstract class AbstractMDERichTextWidget implements MDERichTextWidget {
 		}
 	}
 	
-	@Override
-	public void propertyChange(PropertyChangeEvent evt) {
-		MDERichTextWidget source = (MDERichTextWidget) evt.getSource();
-		if (source != this && source.getElement().equals(getElement()) && source.getFeature().equals(getFeature())) {
-			String newValue = (String) evt.getNewValue();
-			String currentText = getText();
-			if (!currentText.equals(newValue)) {
-				setText(newValue);
-			}
-		}
-	}
+  @Override
+  public void propertyChange(PropertyChangeEvent evt) {
+    MDERichTextWidget source = (MDERichTextWidget) evt.getSource();
+    if (source != this && source.getElement() != null && source.getFeature() != null
+        && source.getElement().equals(getElement()) && source.getFeature().equals(getFeature())) {
+      String newValue = (String) evt.getNewValue();
+      String currentText = getText();
+      if (currentText != null && !currentText.equals(newValue)) {
+        setText(newValue);
+      }
+    }
+  }
 	
 	@Override
 	public void addPropertyChangeListener(PropertyChangeListener listener) {
@@ -166,6 +178,9 @@ public abstract class AbstractMDERichTextWidget implements MDERichTextWidget {
 	
 	@Override
 	public void dispose() {
+    // The save should be done here in case of the widget being disposed since the focus lost event is not fired
+    saveContent();
+    
 		PropertyChangeListener[] propertyChangeListeners = listenersSupports.getPropertyChangeListeners();
 		if (propertyChangeListeners != null && propertyChangeListeners.length > 0) {
 			for (PropertyChangeListener propertyChangeListener : propertyChangeListeners) {
