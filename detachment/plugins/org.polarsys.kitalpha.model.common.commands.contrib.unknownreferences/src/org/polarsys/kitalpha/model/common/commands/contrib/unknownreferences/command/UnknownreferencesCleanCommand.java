@@ -10,8 +10,6 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.model.common.commands.contrib.unknownreferences.command;
 
-import java.util.Collection;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map.Entry;
 
@@ -28,7 +26,6 @@ import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xml.type.AnyType;
-import org.eclipse.emf.edit.command.DeleteCommand;
 import org.eclipse.emf.edit.command.RemoveCommand;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -83,7 +80,6 @@ public class UnknownreferencesCleanCommand extends ModelCommand {
 		}
 		//Should never occur
 		return null;
-		
 	}
 	
 
@@ -201,9 +197,16 @@ public class UnknownreferencesCleanCommand extends ModelCommand {
 					for (AnyType anyType : missingEPackage.getAnalysisResult().getAnyTypes()) {
 						//TODO should use our own crossReferenceAdapter
 						if (ed != null){
-							Command delete = DeleteCommand.create(ed, anyType);
-							if (delete.canExecute()){
-								ed.getCommandStack().execute(delete);
+							final AnyType t = anyType;
+							RecordingCommand cmd = new RecordingCommand(ed) {
+								@Override
+								protected void doExecute() {
+									EcoreUtil.remove(t);									
+								}
+							};
+							
+							if (cmd.canExecute()){
+								ed.getCommandStack().execute(cmd);
 							}
 						} else {
 							EcoreUtil.delete(anyType, true);
@@ -234,7 +237,6 @@ public class UnknownreferencesCleanCommand extends ModelCommand {
 			}
 			
 		} catch (ModelScrutinyException e) {
-			e.printStackTrace();
 			LOGGER.error(e.getMessage(), e);
 		}
 	
@@ -242,34 +244,34 @@ public class UnknownreferencesCleanCommand extends ModelCommand {
 		monitor.done();
 	}
 	
-	private void clean(TransactionalEditingDomain ed, EObject key, EReference r) {
-		Object value = key.eGet(r);
+	private void clean(TransactionalEditingDomain ed, final EObject key, final EReference r) {
+		final Object value = key.eGet(r);
+
 		try {
 			if (ed != null){
-				Collection<Object> values = new HashSet<Object>();
-				values.add(value);
-				RemoveCommand.create(ed, key, r, values);
+
+				RecordingCommand cmd = new RecordingCommand(ed) {
+
+					@Override
+					protected void doExecute() {
+						key.eUnset(r);
+						EcoreUtil.delete((EObject) value);
+					}
+				};
+
+				if (cmd.canExecute()) {
+					ed.getCommandStack().execute(cmd);
+				}
+
 			} else {
+				key.eUnset(r);
 				EcoreUtil.remove(key, r, value);
 			}
-		} catch (Exception e){
-			//If we can't unset the reference, delete the holding
-			//object.
-			//XXX May be do it recursively until the success of clean operation
-			try {
-				Command delete = DeleteCommand.create(ed, key);
-				if (delete.canExecute()){
-					ed.getCommandStack().execute(delete);
-				} else {
-					EcoreUtil.delete(key);
-				}
-			} catch (Exception e2){
-				EReference eContainmentFeature = key.eContainmentFeature();
-				if (eContainmentFeature != null && key.eContainer() != null && !key.equals(EcoreUtil.getRootContainer(key))){
-					EcoreUtil.remove(key.eContainer(), eContainmentFeature, key);
-				}
+		} catch (Exception e2){
+			EReference eContainmentFeature = key.eContainmentFeature();
+			if (eContainmentFeature != null && key.eContainer() != null && !key.equals(EcoreUtil.getRootContainer(key))){
+				EcoreUtil.remove(key.eContainer(), eContainmentFeature, key);
 			}
 		}
 	}
-
 }
