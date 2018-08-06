@@ -71,6 +71,8 @@
                   </enumeration>
                   <enumeration value="QueryLegacy">
                   </enumeration>
+                  <enumeration value="AQL">
+                  </enumeration>
                </restriction>
             </simpleType>
          </attribute>

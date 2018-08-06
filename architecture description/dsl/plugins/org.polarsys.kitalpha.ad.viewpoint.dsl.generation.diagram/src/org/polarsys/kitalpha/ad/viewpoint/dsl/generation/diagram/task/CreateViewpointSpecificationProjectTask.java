@@ -170,6 +170,8 @@ public class CreateViewpointSpecificationProjectTask implements ITaskProduction 
 			dependenciesToRemove.add("org.eclipse.sirius.common.acceleo.aql");
 			requiredBundlesToAdd.add("org.eclipse.sirius.query.legacy");
 			break;
+		case AQL:
+			requiredBundlesToAdd.add("org.eclipse.sirius.common.acceleo.aql");
 		default:
 			break;
 		}

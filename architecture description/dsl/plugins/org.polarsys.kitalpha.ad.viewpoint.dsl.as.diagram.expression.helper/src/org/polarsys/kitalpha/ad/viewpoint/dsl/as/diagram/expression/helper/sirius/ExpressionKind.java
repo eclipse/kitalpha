@@ -17,7 +17,7 @@ package org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.siri
  */
 
 public enum ExpressionKind implements IExpressionFormat{
-	QueryLegacy, Acceleo_3_x, Ocl;
+	QueryLegacy, Acceleo_3_x, Ocl, AQL;
 	
 	/**
 	 * @see IExpressionFormat#format(String)
@@ -34,6 +34,8 @@ public enum ExpressionKind implements IExpressionFormat{
 			return getExpressionAcceleo3(expression);
 		case Ocl:
 			return getExpressionOcl(expression);
+		case AQL:
+			return getExpressionAQL(expression);
 		}
 		throw new IllegalStateException("Expression kind not supported");
 	}
@@ -46,6 +48,7 @@ public enum ExpressionKind implements IExpressionFormat{
 		switch (this) {
 		case QueryLegacy:
 			return "";
+		case AQL:
 		case Acceleo_3_x:
 			return "+";
 		case Ocl:
@@ -66,6 +69,8 @@ public enum ExpressionKind implements IExpressionFormat{
 			return containsDelimiters(expression, 1, 2);
 		case Ocl:
 			return containsDelimiters(expression, 4, -1);
+		case AQL:
+			return containsDelimiters(expression, 4, -1);
 		}
 		return false;
 	}
@@ -83,6 +88,8 @@ public enum ExpressionKind implements IExpressionFormat{
 			return "Acceleo3";
 		case Ocl:
 			return "Ocl";
+		case AQL:
+			return "AQL";
 		}
 		throw new IllegalStateException();
 	}
@@ -105,9 +112,20 @@ public enum ExpressionKind implements IExpressionFormat{
 			return Ocl;
 		}
 		
+		if (expressionKind.equals(ExpressionKind.AQL.toString())) {
+			return AQL;
+		}
+		
 		throw new IllegalStateException();
 	}
-	
+	/**
+	 * This method format the expression to be compatible with AQL. 
+	 */
+	private String getExpressionAQL(String expression){
+		if (expression.startsWith("aql:"))
+			return expression;
+		return "aql:"+expression;
+	}
 	/**
 	 * This method format the expression to be compatible with Acceleo 2. 
 	 * It add <% at the begin of expression and %> at the end of expression.
@@ -174,6 +192,9 @@ public enum ExpressionKind implements IExpressionFormat{
 			break;
 		case Ocl:
 			result = beginDelimiter.equals("ocl:");
+			break;
+		case AQL:
+			result = beginDelimiter.equals("aql:");
 			break;
 		}
 		

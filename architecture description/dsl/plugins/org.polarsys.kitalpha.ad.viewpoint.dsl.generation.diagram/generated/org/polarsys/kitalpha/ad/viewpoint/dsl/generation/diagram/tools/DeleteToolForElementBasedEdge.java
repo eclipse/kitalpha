@@ -1,4 +1,4 @@
-//Generated with EGF 1.4.0.v20160519-0641
+//Generated with EGF 1.6.0.201805040915
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools;
 
 import java.util.*;
@@ -115,16 +115,20 @@ public class DeleteToolForElementBasedEdge
 		select.setName("elementsToRemove");
 
 		String expression = "";
-		if (SiriusExpressionHelper.getCurrentExpressionKind().equals(ExpressionKind.QueryLegacy)) {
+		switch (SiriusExpressionHelper.getCurrentExpressionKind()) {
+		case QueryLegacy:
 			expression = SiriusExpressionHelper.getExpressoin("if (sourceNode.target != targetNode.target) {")
 					+ SiriusExpressionHelper.getExpressoin("sourceNode.target + targetNode.target")
 					+ SiriusExpressionHelper.getExpressoin("}else{")
 					+ SiriusExpressionHelper.getExpressoin("sourceNode.target")
 					+ SiriusExpressionHelper.getExpressoin("}");
-		}
-
-		if (SiriusExpressionHelper.getCurrentExpressionKind().equals(ExpressionKind.Acceleo_3_x)) {
+			break;
+		case Acceleo_3_x:
 			expression = "[elementView.sourceNode.eGet('target')->asSet()->including(elementView.targetNode.eGet('target'))->asOrderedSet()->asSequence()/]";
+			break;
+		case AQL:
+			expression = "aql:if(sourceNode.target != targetNode.target) then Sequence{sourceNode.target, targetNode.target} else (sourceNode.target) endif";
+			break;
 		}
 
 		select.setCandidatesExpression(expression);
