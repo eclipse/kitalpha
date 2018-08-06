@@ -135,6 +135,10 @@ public abstract class MATable implements IMATable {
     return this.factory;
   }
 
+  public IMAConfiguration getTableBaseConfig() {
+    return tableBaseConfig;
+  }
+
   @Override
   public boolean isInitialized() {
     return initialized;

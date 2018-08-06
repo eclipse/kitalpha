@@ -8,7 +8,7 @@
  *  Contributors:
  *  Thales Global Services S.A.S - initial API and implementation
  *******************************************************************************/
-package org.polarsys.kitalpha.massactions.edit.config;
+package org.polarsys.kitalpha.massactions.core.config;
 
 import org.eclipse.nebula.widgets.nattable.style.theme.ModernNatTableThemeConfiguration;
 import org.polarsys.kitalpha.massactions.core.data.provider.MAImageRowHeaderDataProvider;
@@ -21,9 +21,9 @@ import org.polarsys.kitalpha.massactions.core.painter.cell.RowHeaderImagePainter
  * @author Sandu Postaru
  *
  */
-public class METhemeConfiguration extends ModernNatTableThemeConfiguration {
+public class MAThemeConfiguration extends ModernNatTableThemeConfiguration {
 
-  public METhemeConfiguration() {
+  public MAThemeConfiguration() {
     super();
     this.rHeaderSelectionCellPainter = new RowHeaderImagePainter();
     this.rHeaderCellPainter = new RowHeaderImagePainter();

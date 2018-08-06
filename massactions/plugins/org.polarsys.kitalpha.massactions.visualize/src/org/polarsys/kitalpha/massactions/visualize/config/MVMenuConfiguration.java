@@ -11,9 +11,8 @@
 package org.polarsys.kitalpha.massactions.visualize.config;
 
 import org.eclipse.nebula.widgets.nattable.NatTable;
-import org.eclipse.nebula.widgets.nattable.ui.menu.AbstractHeaderMenuConfiguration;
 import org.eclipse.nebula.widgets.nattable.ui.menu.PopupMenuBuilder;
-import org.polarsys.kitalpha.massactions.core.ui.menu.MAPopupMenuBuilder;
+import org.polarsys.kitalpha.massactions.core.config.MAMenuConfiguration;
 import org.polarsys.kitalpha.massactions.visualize.ui.menu.MVPopupMenuBuilder;
 
 /**
@@ -22,17 +21,17 @@ import org.polarsys.kitalpha.massactions.visualize.ui.menu.MVPopupMenuBuilder;
  * @author Sandu Postaru
  *
  */
-public class MVHeaderMenuConfiguration extends AbstractHeaderMenuConfiguration {
+public class MVMenuConfiguration extends MAMenuConfiguration {
 
-	public MVHeaderMenuConfiguration(NatTable natTable) {
+	public MVMenuConfiguration(NatTable natTable) {
 		super(natTable);
 	}
 
 	@Override
-	protected MVPopupMenuBuilder createColumnHeaderMenu(NatTable natTable) {
-		
+	protected MVPopupMenuBuilder createColumnHeaderMenuBuilder(NatTable natTable) {
+
 	  // default options
-	  PopupMenuBuilder popupMenuBuilder = new MVPopupMenuBuilder(natTable)		    		    
+	  PopupMenuBuilder popupMenuBuilder = new MVPopupMenuBuilder(natTable)
 				.withColumnChooserMenuItem()
 				.withHideColumnMenuItem()
 				.withShowAllColumnsMenuItem()
@@ -40,12 +39,7 @@ public class MVHeaderMenuConfiguration extends AbstractHeaderMenuConfiguration {
 	  
 	  // custom options	  
 	  return ((MVPopupMenuBuilder) popupMenuBuilder)
-	      .withSwitchPerspectiveMenuItem();	     	  
+	      .withSwitchPerspectiveMenuItem();
 	}
 	
-  @Override
-  protected PopupMenuBuilder createRowHeaderMenu(NatTable natTable) {   
-    return new MAPopupMenuBuilder(natTable)
-        .withRemoveSelectionMenuItem();
-  }
 }

@@ -18,7 +18,6 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.StructuredSelection;
-import org.eclipse.nebula.widgets.nattable.selection.RowSelectionProvider;
 import org.polarsys.kitalpha.massactions.core.table.IMATable;
 import org.polarsys.kitalpha.massactions.core.table.layer.body.IMABodyLayer;
 
@@ -48,7 +47,7 @@ public class LazyRowSelectionProvider implements ISelectionProvider {
 	 */
 	private List<ISelectionChangedListener> lazySelectionChangedListeners;
 
-	private RowSelectionProvider<EObject> rowSelectionProvider;
+	private RowCellSelectionProvider<EObject> rowSelectionProvider;
 
 	public LazyRowSelectionProvider(IMATable table) {
 		this.table = table;
@@ -62,9 +61,9 @@ public class LazyRowSelectionProvider implements ISelectionProvider {
 		if (canEnable) {
 			IMABodyLayer bodyLayer = table.getGridLayerStack().getBodyLayer();
 
-			rowSelectionProvider = new RowSelectionProvider<>(bodyLayer.getSelectionLayer(),
-					bodyLayer.getBodyDataProvider(), false);
-
+      rowSelectionProvider = new RowCellSelectionProvider<>(bodyLayer.getSelectionLayer(), bodyLayer.getBodyDataProvider(),
+          false, true);
+      
 			lazySelectionChangedListeners
 					.forEach(listener -> rowSelectionProvider.addSelectionChangedListener(listener));
 		}

@@ -13,6 +13,7 @@ package org.polarsys.kitalpha.massactions.core.table;
 import java.util.List;
 
 import org.eclipse.nebula.widgets.nattable.NatTable;
+import org.polarsys.kitalpha.massactions.core.config.IMAConfiguration;
 import org.polarsys.kitalpha.massactions.core.extensionpoint.columnfilter.IMAColumnFilter;
 import org.polarsys.kitalpha.massactions.core.table.layer.IMAComponent;
 import org.polarsys.kitalpha.massactions.core.table.layer.grid.IMAGridLayer;
@@ -36,6 +37,8 @@ public interface IMATable extends IMAComponent {
 
   NatTable getNatTable();
 
+  IMAConfiguration getTableBaseConfig();
+  
   // utility methods
   boolean commitAndCloseActiveCellEditor();
 
