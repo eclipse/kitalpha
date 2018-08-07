@@ -118,7 +118,7 @@ location neon-release "http://download.eclipse.org/releases/oxygen" {
 }
 
 
-location Sirus "http://download.eclipse.org/sirius/updates/releases/6.0.0/oxygen/" {
+location Sirus "http://download.eclipse.org/sirius/updates/stable/6.1.0-S20180713-103406/oxygen/" {
 	org.eclipse.sirius.doc.feature.feature.group lazy
 	org.eclipse.sirius.runtime.ide.eef.feature.group lazy
 	org.eclipse.sirius.runtime.ide.ui.acceleo.feature.group lazy
@@ -141,6 +141,9 @@ location Sirus "http://download.eclipse.org/sirius/updates/releases/6.0.0/oxygen
 	org.eclipse.sirius.runtime.acceleo.source.feature.group lazy
 	org.eclipse.sirius.runtime.aql.feature.group lazy
 	org.eclipse.sirius.runtime.aql.source.feature.group lazy
+	org.eclipse.sirius.aql.feature.group lazy
+	org.eclipse.sirius.aql.source.feature.group lazy
+	org.eclipse.sirius.specifier.ide.ui.aql.feature.group lazy
 }
 
 location EMF-DiffMerge "http://download.eclipse.org/diffmerge/releases/0.9.0/emf-diffmerge-site" {
