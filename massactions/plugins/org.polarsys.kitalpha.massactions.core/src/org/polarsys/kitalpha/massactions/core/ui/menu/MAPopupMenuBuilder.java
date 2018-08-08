@@ -12,7 +12,6 @@ package org.polarsys.kitalpha.massactions.core.ui.menu;
 
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.nebula.widgets.nattable.NatTable;
-import org.eclipse.nebula.widgets.nattable.ui.menu.IMenuItemProvider;
 import org.eclipse.nebula.widgets.nattable.ui.menu.PopupMenuBuilder;
 
 /**
@@ -26,6 +25,10 @@ public class MAPopupMenuBuilder extends PopupMenuBuilder {
   public static final String EDIT_SELECTION_MENU_ITEM_ID = "editSelectionMenuItem"; //$NON-NLS-1$
   public static final String REMOVE_SELECTION_MENU_ITEM_ID = "removeSelectionMenuItem"; //$NON-NLS-1$
 
+  public MenuManager getMenuManager() {
+    return menuManager;
+  }
+  
   public MAPopupMenuBuilder(NatTable parent) {
     super(parent);
   }
@@ -35,17 +38,8 @@ public class MAPopupMenuBuilder extends PopupMenuBuilder {
   }
     
   public MAPopupMenuBuilder withRemoveSelectionMenuItem() {
-    return withMenuItemProvider(REMOVE_SELECTION_MENU_ITEM_ID,
+    return (MAPopupMenuBuilder) withMenuItemProvider(REMOVE_SELECTION_MENU_ITEM_ID,
         MAMenuItemProviders.createRemoveSelectionMenuItemProvider());
   }
 
-  @Override
-  public MAPopupMenuBuilder withMenuItemProvider(IMenuItemProvider menuItemProvider) {
-    return (MAPopupMenuBuilder) super.withMenuItemProvider(menuItemProvider);
-  }
-
-  @Override
-  public MAPopupMenuBuilder withMenuItemProvider(String id, IMenuItemProvider menuItemProvider) {
-    return (MAPopupMenuBuilder) super.withMenuItemProvider(id, menuItemProvider);
-  }
 }

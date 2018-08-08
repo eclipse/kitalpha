@@ -10,17 +10,14 @@
  *******************************************************************************/
 package org.polarsys.kitalpha.massactions.visualize.config;
 
-import java.util.Collection;
-
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.jface.layout.GridDataFactory;
 import org.eclipse.nebula.widgets.nattable.NatTable;
 import org.eclipse.nebula.widgets.nattable.config.IConfigRegistry;
 import org.eclipse.nebula.widgets.nattable.extension.glazedlists.groupBy.GroupByHeaderMenuConfiguration;
-import org.eclipse.nebula.widgets.nattable.sort.config.SingleClickSortConfiguration;
-import org.polarsys.kitalpha.massactions.core.config.IMAConfiguration;
-import org.polarsys.kitalpha.massactions.core.config.MAColumnConfiguration;
-import org.polarsys.kitalpha.massactions.core.config.MAExportConfiguration;
+import org.polarsys.kitalpha.massactions.core.config.MAConfiguration;
+import org.polarsys.kitalpha.massactions.core.config.MAMenuConfiguration;
+import org.polarsys.kitalpha.massactions.core.config.MAThemeConfiguration;
+import org.polarsys.kitalpha.massactions.core.table.layer.body.IMABodyLayer;
+import org.polarsys.kitalpha.massactions.visualize.helpers.LayerExtractionHelper;
 import org.polarsys.kitalpha.massactions.visualize.table.layer.groupby.IMVGroupByLayer;
 
 /**
@@ -29,84 +26,36 @@ import org.polarsys.kitalpha.massactions.visualize.table.layer.groupby.IMVGroupB
  * @author Sandu Postaru
  * 
  */
-public class MVConfiguration implements IMAConfiguration {
+public class MVConfiguration extends MAConfiguration {
 
-	protected final NatTable natTable;
-	protected final IMVGroupByLayer groupByLayer;
-	protected MAColumnConfiguration editorConfiguration;
-	protected IConfigRegistry configRegistry;
+  public MVConfiguration(NatTable natTable, IConfigRegistry configRegistry) {
+    super(natTable, configRegistry);
+  }
 
-	public MVConfiguration(NatTable natTable, IConfigRegistry configRegistry) {
-		this.natTable = natTable;
-		this.configRegistry = configRegistry;
-		this.groupByLayer = (IMVGroupByLayer) natTable.getLayer();
+  protected void addConfigurations() {
+    super.addConfigurations();
 
-		// important since the previous layer use the registry
-		// we must ensure we use the same one
-		this.natTable.setConfigRegistry(configRegistry);
+    GroupByHeaderMenuConfiguration groupByLayer = createGroupByMenuConfiguration();
+    natTable.addConfiguration(groupByLayer);
+  }
 
-		addConfigurations();
-	}
+  protected GroupByHeaderMenuConfiguration createGroupByMenuConfiguration() {
+    IMVGroupByLayer groupByLayer = LayerExtractionHelper.extractGroupByLayer(natTable);
+    return new GroupByHeaderMenuConfiguration(natTable, groupByLayer.getGroupByHeaderLayer());
+  }
 
-	protected void addConfigurations() {
-		addThemeConfiguration();
+  protected MAMenuConfiguration createMenuConfiguration() {
+    return new MVMenuConfiguration(natTable);
+  }
 
-		addColumnConfiguration();
+  @Override
+  protected MAThemeConfiguration createThemeConfiguration() {
+    return new MVThemeConfiguration();
+  }
 
-		addSortConfiguration();
-		
-		addExportConfiguration();
-
-		addHeaderMenuConfiguration();
-		addGroupByHeaderMenuConfiguration();
-	}
-
-	protected void addHeaderMenuConfiguration() {
-		natTable.addConfiguration(new MVHeaderMenuConfiguration(natTable));
-	}
-
-	protected void addGroupByHeaderMenuConfiguration() {
-		natTable.addConfiguration(new GroupByHeaderMenuConfiguration(natTable, groupByLayer.getGroupByHeaderLayer()));
-	}
-
-	protected void addThemeConfiguration() {
-		this.natTable.addConfiguration(new MVThemeConfiguration());
-	}
-
-	protected void addColumnConfiguration() {
-		editorConfiguration = new MAColumnConfiguration(groupByLayer.getGridLayer().getBodyLayer());
-		natTable.addConfiguration(editorConfiguration);
-	}
-
-	protected void addSortConfiguration() {
-		natTable.addConfiguration(new SingleClickSortConfiguration());
-	}
-	
-	protected void addExportConfiguration() {
-	  natTable.addConfiguration(new MAExportConfiguration());
-	}
-
-	@Override
-	public void apply() {
-		natTable.configure();
-		fillDefaults();
-	}
-
-	protected void fillDefaults() {
-		GridDataFactory.fillDefaults().grab(true, true).applyTo(natTable);
-	}
-
-	@Override
-	public void dataChanged(Collection<EObject> data) {
-		editorConfiguration.dataChanged(data);
-
-		natTable.configure();
-		natTable.refresh();
-	}
-
-	@Override
-	public void dispose() {
-		editorConfiguration.dispose();
-	}
+  @Override
+  protected IMABodyLayer getBodyLayer() {
+    return LayerExtractionHelper.extractBodyLayer(natTable);
+  }
 
 }

@@ -10,7 +10,10 @@
  *******************************************************************************/
 package org.polarsys.kitalpha.massactions.core.helper;
 
+import java.util.Collection;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -49,5 +52,27 @@ public class CellSelectionHelper {
     IRowDataProvider<EObject> bodyDataProvider = bodyLayer.getBodyDataProvider();
     return selectedCellsRowIndexes.stream().map(bodyDataProvider::getRowObject).collect(Collectors.toList());
 
+  }
+
+  /**
+   * Returns the corresponding cell's value objects for the current cell selection.
+   * 
+   * @param selectionLayer
+   *          the selection layer.
+   * @return the corresponding cell's value objects for the current cell selection
+   */
+  public static List<Object> getSelectedCellObjects(SelectionLayer selectionLayer) {
+    Collection<Object> objects = new LinkedHashSet<>();
+    Collection<ILayerCell> cells = selectionLayer.getSelectedCells();
+    for (ILayerCell cell : cells) {
+      Object value = cell.getDataValue();
+      if (value instanceof Collection) {
+        objects.addAll((Collection) value);
+      } else {
+        objects.add(value);
+      }
+    }
+    // a selection must be created from a list, and must not have a null in it.
+    return objects.stream().filter(Objects::nonNull).collect(Collectors.toList());
   }
 }

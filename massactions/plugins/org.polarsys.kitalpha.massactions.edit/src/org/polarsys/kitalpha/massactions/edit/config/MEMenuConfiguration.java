@@ -10,8 +10,10 @@
  *******************************************************************************/
 package org.polarsys.kitalpha.massactions.edit.config;
 
+import org.eclipse.jface.action.MenuManager;
 import org.eclipse.nebula.widgets.nattable.NatTable;
-import org.polarsys.kitalpha.massactions.core.config.MABodyMenuConfiguration;
+import org.polarsys.kitalpha.massactions.core.config.MAMenuConfiguration;
+import org.polarsys.kitalpha.massactions.core.ui.menu.MAPopupMenuBuilder;
 import org.polarsys.kitalpha.massactions.edit.ui.menu.MEPopupMenuBuilder;
 
 /**
@@ -20,16 +22,15 @@ import org.polarsys.kitalpha.massactions.edit.ui.menu.MEPopupMenuBuilder;
  * @author Sandu Postaru
  *
  */
-public class MEBodyMenuConfiguration extends MABodyMenuConfiguration {
+public class MEMenuConfiguration extends MAMenuConfiguration {
 
-  public MEBodyMenuConfiguration(NatTable natTable) {
+  public MEMenuConfiguration(NatTable natTable) {
     super(natTable);
   }
 
   @Override
-  protected MEPopupMenuBuilder createBodyHeaderMenu(NatTable natTable) {
-    return new MEPopupMenuBuilder(natTable)
-        .withEditSelectionMenuItem();
+  protected MEPopupMenuBuilder createBodyMenuBuilder(NatTable natTable) {
+    return new MEPopupMenuBuilder(natTable).withEditSelectionMenuItem();
   }
 
 }

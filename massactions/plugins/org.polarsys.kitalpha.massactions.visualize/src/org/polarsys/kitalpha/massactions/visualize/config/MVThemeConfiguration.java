@@ -10,9 +10,8 @@
  *******************************************************************************/
 package org.polarsys.kitalpha.massactions.visualize.config;
 
-import org.eclipse.nebula.widgets.nattable.style.theme.ModernNatTableThemeConfiguration;
+import org.polarsys.kitalpha.massactions.core.config.MAThemeConfiguration;
 import org.polarsys.kitalpha.massactions.core.data.provider.MAImageRowHeaderDataProvider;
-import org.polarsys.kitalpha.massactions.core.painter.cell.RowHeaderImagePainter;
 
 /**
  * An extension of the Modern Theme configuration, that adds support for icon
@@ -22,12 +21,10 @@ import org.polarsys.kitalpha.massactions.core.painter.cell.RowHeaderImagePainter
  * @author Sandu Postaru
  * 
  */
-public class MVThemeConfiguration extends ModernNatTableThemeConfiguration {
+public class MVThemeConfiguration extends MAThemeConfiguration {
 
 	public MVThemeConfiguration() {
 		super();
-		this.rHeaderSelectionCellPainter = new RowHeaderImagePainter();
-		this.rHeaderCellPainter = new RowHeaderImagePainter();
 		addThemeExtension(new MVGroupByThemeExtension());
 	}
 }

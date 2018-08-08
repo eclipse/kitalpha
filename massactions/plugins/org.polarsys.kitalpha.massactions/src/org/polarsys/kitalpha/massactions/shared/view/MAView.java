@@ -42,6 +42,9 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.ViewPart;
 import org.polarsys.kitalpha.massactions.activator.MAActivator;
+import org.polarsys.kitalpha.massactions.core.config.IMAConfiguration;
+import org.polarsys.kitalpha.massactions.core.config.MAConfiguration;
+import org.polarsys.kitalpha.massactions.core.config.MAMenuConfiguration;
 import org.polarsys.kitalpha.massactions.core.selection.LazyRowSelectionProvider;
 import org.polarsys.kitalpha.massactions.core.table.IMATable;
 import org.polarsys.kitalpha.massactions.core.table.layer.IMAComponent;
@@ -81,6 +84,11 @@ public abstract class MAView extends ViewPart implements IMAComponent {
 
   protected LazyRowSelectionProvider selectionProvider;
 
+  private static final String COLUMN_HEADER_MENU_SUFFIX = ".columnHeader";
+  private static final String ROW_HEADER_MENU_SUFFIX = ".rowHeader";
+  private static final String CORNER_MENU_SUFFIX = ".corner";
+  private static final String BODY_MENU_SUFFIX = ".body";
+
   @Override
   public void createPartControl(Composite parent) {
 
@@ -118,6 +126,7 @@ public abstract class MAView extends ViewPart implements IMAComponent {
       selectionProvider.enable();
 
       layout();
+      configureContextMenus();
     }
   }
 
@@ -262,6 +271,22 @@ public abstract class MAView extends ViewPart implements IMAComponent {
   protected void configureSelectionProvider() {
     selectionProvider = new LazyRowSelectionProvider(table);
     getViewSite().setSelectionProvider(selectionProvider);
+  }
+
+  protected void configureContextMenus() {
+    IMAConfiguration configuration = table.getTableBaseConfig();
+    if (configuration instanceof MAConfiguration) {
+      MAMenuConfiguration config = ((MAConfiguration) configuration).getMenuConfiguration();
+      
+      getSite().registerContextMenu(getSite().getId() + ROW_HEADER_MENU_SUFFIX, config.getRowHeaderMenuManager(),
+          selectionProvider);
+      getSite().registerContextMenu(getSite().getId() + COLUMN_HEADER_MENU_SUFFIX, config.getColumnHeaderMenuManager(),
+          selectionProvider);
+      getSite().registerContextMenu(getSite().getId() + CORNER_MENU_SUFFIX, config.getCornerMenuManager(),
+          selectionProvider);
+      getSite().registerContextMenu(getSite().getId() + BODY_MENU_SUFFIX, config.getBodyMenuManager(),
+          selectionProvider);
+    }
   }
 
   protected String getNewViewId() {
