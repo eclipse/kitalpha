@@ -145,8 +145,9 @@ public class CoordinatesCalculator {
 	}
 
 	private Session getSessionFromDiagram(DDiagram diagram) {
-		if (diagram instanceof DSemanticDiagram)
+		if (diagram instanceof DSemanticDiagram) {
 			return SessionManager.INSTANCE.getSession(((DSemanticDiagram) diagram).getTarget());
+		}
 		return null;
 	}
 
@@ -200,8 +201,9 @@ public class CoordinatesCalculator {
 					try {
 						result.putAll(getResultMap());
 
-						if (! result.isEmpty())
+						if (! result.isEmpty()) {
 							COORDINATES_MAP.put(diagramId, result);
+						}
 
 					} catch (Exception e) {
 						Activator.logWarning(e.getMessage());
@@ -300,6 +302,7 @@ public class CoordinatesCalculator {
 
 					Rectangle bounds = null;
 					bounds = gep.getFigure().getBounds();
+					bounds = bounds.getCopy();
 					scale(bounds);
 					if (bounds != null) {
 						bounds.performTranslate(deltaX, deltaY);
