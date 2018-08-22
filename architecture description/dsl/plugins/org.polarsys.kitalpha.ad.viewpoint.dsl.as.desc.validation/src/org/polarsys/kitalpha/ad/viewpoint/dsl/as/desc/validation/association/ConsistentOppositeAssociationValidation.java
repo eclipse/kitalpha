@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -105,7 +105,7 @@ public class ConsistentOppositeAssociationValidation extends AbstractAssociation
 					.append(" ")
 					.append(sourceAssociation.getName()).append(" has a target type [").append(sourceAssociation.getLocalTarget().getName()).append("]")
 					.append(" and the containing class of ").append(targetAssociation.getName())
-					.append(" is [").append(AssociationsHelper.getContainingClass(targetAssociation).getName()).append("].");
+					.append(" is [").append(AssociationsHelper.getContainingClassName(targetAssociation)).append("].");
 				feedback.append("\n");
 				break;
 			case SELF_OPPOSITE:

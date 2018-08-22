@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -92,13 +92,33 @@ public class AssociationsHelper {
 	}
 	
 	/**
-	 * 
+	 * @param e
+	 * @return the name of containing class or "Unknown Container"
+	 */
+	public static String getContainingClassName(LocalClassAssociation e) {
+		Class containingClass = getContainingClass(e);
+		if (containingClass != null) {
+			return containingClass.getName();
+		}
+		return "Unknown Container"; //$NON-NLS-1$
+	}
+	
+	/**
+	 * If eOpposite relation is containment, the current reference must have upper bound equal to 1.
 	 * @param reference
-	 * @return
+	 * @param opposite
+	 * @return true if relation respect the description above or they are simple references
 	 */
 	public static boolean hasSingleContainer(LocalClassAssociation reference, LocalClassAssociation opposite){
 		if (reference.getOpposite() != null && reference.getOpposite() == opposite){
 			boolean containment = opposite.getType().equals(Association_Types.CONTAINMENT);
+			if (!containment) {
+				//The opposite is simple reference, check if reference is simple
+				boolean refIsContainment = reference.getType().equals(Association_Types.CONTAINMENT);
+				if (!refIsContainment) {
+					return true;
+				}
+			}
 			boolean isOne = reference.getCardinality().equals(Cardinalities.NOTHING_OR_ONE) || reference.getCardinality().equals(Cardinalities.ONLY_ONE);
 			return containment && isOne;
 		}
