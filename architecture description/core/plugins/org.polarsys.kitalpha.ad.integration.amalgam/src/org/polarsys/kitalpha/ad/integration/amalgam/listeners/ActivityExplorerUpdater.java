@@ -45,6 +45,11 @@ public class ActivityExplorerUpdater implements OverallListener {
 		refresh(ctx);
 	}
 
+	/*
+	 * TODO Add refresh support of: (Bugzilla: https://bugs.polarsys.org/show_bug.cgi?id=2158)
+	 * 	- Section contributions to an existing page
+	 *  - Activity contributions an existing section
+	 */
 	private void refresh(Object ctx) {
 
 		PlatformUI.getWorkbench().getDisplay().asyncExec(new Runnable() {
