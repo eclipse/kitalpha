@@ -141,6 +141,7 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 
 				@Override
 				public void changed(ProgressEvent event) {
+				    // Do nothing
 				}
 			});
 		}
@@ -292,14 +293,14 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 	@Override
 	public boolean setToolbarItemState(String command, String state) {
 		if (isReady()) {
-			StringBuffer updateStateScript = getCommand(command).append(".setState(").append(state).append(");"); //$NON-NLS-1$ //$NON-NLS-2$
+		    StringBuilder updateStateScript = getCommand(command).append(".setState(").append(state).append(");"); //$NON-NLS-1$ //$NON-NLS-2$
 			return executeScript(updateStateScript.toString());
 		}
 		return false;
 	}
 
-	protected final StringBuffer getCommand(String command) {
-		return (new StringBuffer("CKEDITOR.instances.editor.getCommand('")).append(command).append("')"); //$NON-NLS-1$ //$NON-NLS-2$
+	protected final StringBuilder getCommand(String command) {
+		return (new StringBuilder("CKEDITOR.instances.editor.getCommand('")).append(command).append("')"); //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	@Override
@@ -321,7 +322,8 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 
 	@Override
 	public boolean hasFocus() {
-		return editor.isFocusControl();
+	    Browser browser = editor.getEditorConfiguration().getBrowser();
+		return !browser.isDisposed() && editor.isFocusControl();
 	}
 
 	@Override
