@@ -24,7 +24,7 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helpers,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model;visibility:=reexport
 Import-Package: org.apache.log4j
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.formatting,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.generator,

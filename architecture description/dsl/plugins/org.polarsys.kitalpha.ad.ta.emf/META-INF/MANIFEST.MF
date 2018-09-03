@@ -12,6 +12,6 @@ Require-Bundle: org.eclipse.ui,
  org.polarsys.kitalpha.emde.genchain,
  org.polarsys.kitalpha.doc.gen.business.ecore.genchain;bundle-version="0.5.0"
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Vendor: %BundleVendor
 Bundle-Localization: plugin

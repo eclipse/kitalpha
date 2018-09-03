@@ -18,6 +18,6 @@ Require-Bundle: org.eclipse.ui,
  org.polarsys.kitalpha.resourcereuse
 Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.composer.ui.actions
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Localization: plugin
 Bundle-ClassPath: .

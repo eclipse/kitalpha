@@ -10,7 +10,7 @@ Require-Bundle: org.eclipse.emf.ecore.editor,
  org.polarsys.kitalpha.doc.gen.business.core,
  org.eclipse.sirius.diagram;bundle-version="1.0.0",
  org.polarsys.kitalpha.doc.gen.business.core.preference
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Bundle-Localization: plugin
 Export-Package: org.polarsys.kitalpha.doc.gen.business.core.ui.helper,

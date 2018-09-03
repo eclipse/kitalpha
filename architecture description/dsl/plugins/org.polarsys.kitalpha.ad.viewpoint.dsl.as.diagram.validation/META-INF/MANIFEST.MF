@@ -10,7 +10,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.validation,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.model
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.validation,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.validation.condition,

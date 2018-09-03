@@ -17,5 +17,5 @@ Export-Package: org.polarsys.kitalpha.transposer.examples.m2m.uml.to.ecore,
  org.polarsys.kitalpha.transposer.examples.m2m.uml.to.ecore.rules.generic,
  org.polarsys.kitalpha.transposer.examples.m2m.uml.to.ecore.rules.packages,
  org.polarsys.kitalpha.transposer.examples.m2m.uml.to.ecore.util
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Localization: plugin

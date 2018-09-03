@@ -13,5 +13,5 @@ Export-Package: org.polarsys.kitalpha.transposer.transformation.emf,
  org.polarsys.kitalpha.transposer.transformation.emf.activities,
  org.polarsys.kitalpha.transposer.transformation.emf.resource,
  org.polarsys.kitalpha.transposer.transformation.emf.util
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Localization: plugin

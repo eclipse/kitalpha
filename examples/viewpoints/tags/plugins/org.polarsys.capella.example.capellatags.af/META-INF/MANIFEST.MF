@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: org.polarsys.capella.example.capellatags.af
 Bundle-SymbolicName: org.polarsys.capella.example.capellatags.af;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.polarsys.kitalpha.ad.viewpoint.ui,
  org.polarsys.kitalpha.example.tags.af,
  org.polarsys.capella.example.capellatags

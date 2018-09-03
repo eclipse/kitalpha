@@ -44,7 +44,8 @@ public class OpenConflictEditorRunnable implements Runnable {
 		};
 		CompareUI.openCompareEditor(input);
 		EMFDiffNode compareResult = input.getCompareResult();
-		for (IDifference diff : conflicts)
-			compareResult.getUIComparison().getDifferencesToIgnore().add((EMergeableDifference) diff);
+		for (IDifference diff : conflicts) {
+			((IDifference.Editable)diff).setIgnored(true);
+		}
 	}
 }

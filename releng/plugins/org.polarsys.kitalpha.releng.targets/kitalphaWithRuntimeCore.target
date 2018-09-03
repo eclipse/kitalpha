@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/mbarbero/fr.obeo.releng.targetplatform -->
-<target name="kitalphaWithRuntimeCore" sequenceNumber="1533640918">
+<target name="kitalphaWithRuntimeCore" sequenceNumber="1535982136">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.sdk.feature.group" version="0.0.0"/>
@@ -118,7 +118,7 @@
       <unit id="org.eclipse.acceleo.doc" version="0.0.0"/>
       <unit id="org.eclipse.acceleo.source.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.eef.sdk-feature.feature.group" version="0.0.0"/>
-      <repository id="neon-release" location="http://download.eclipse.org/releases/oxygen"/>
+      <repository id="oxygen-release" location="http://download.eclipse.org/releases/oxygen"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.sirius.doc.feature.feature.group" version="0.0.0"/>
@@ -146,7 +146,7 @@
       <unit id="org.eclipse.sirius.aql.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.sirius.aql.source.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.sirius.specifier.ide.ui.aql.feature.group" version="0.0.0"/>
-      <repository id="Sirus" location="http://download.eclipse.org/sirius/updates/stable/6.1.0-S20180713-103406/oxygen/"/>
+      <repository id="Sirus" location="http://download.eclipse.org/sirius/updates/stable/6.1.0-S20180831-112606/oxygen/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.emf.diffmerge.feature.feature.group" version="0.0.0"/>
@@ -157,14 +157,19 @@
       <unit id="org.eclipse.emf.diffmerge.gmf.feature.source.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.diffmerge.egit.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.diffmerge.egit.feature.source.feature.group" version="0.0.0"/>
-      <repository id="EMF-DiffMerge" location="http://download.eclipse.org/diffmerge/releases/0.9.0/emf-diffmerge-site"/>
+      <repository id="EMF-DiffMerge" location="http://download.eclipse.org/diffmerge/releases/0.11.0/emf-diffmerge-site/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.emf.diffmerge.patterns.sdk.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.diffmerge.patterns.sdk.feature.source.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.source.feature.group" version="0.0.0"/>
-      <repository id="EDM-Patterns" location="http://download.eclipse.org/diffmerge/releases/0.9.0/edm-patterns-site"/>
+      <repository id="EDM-Patterns" location="http://download.eclipse.org/diffmerge/releases/0.11.0/edm-patterns-site/"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.emf.diffmerge.coevolution.sdk.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.diffmerge.coevolution.sdk.feature.source.feature.group" version="0.0.0"/>
+      <repository id="coevolution" location="http://download.eclipse.org/diffmerge/releases/0.11.0/edm-coevolution-site/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.amalgam.explorer.activity.feature.group" version="0.0.0"/>
@@ -175,11 +180,7 @@
       <unit id="org.eclipse.amalgam.explorer.contextual.sirius.source.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.amalgam.explorer.contextual.core.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.amalgam.explorer.contextual.core.source.feature.group" version="0.0.0"/>
-      <repository id="amalgam" location="http://download.eclipse.org/modeling/amalgam/updates/milestones/1.9.0RC1/capella"/>
-    </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.emf.diffmerge.coevolution.sdk.feature.feature.group" version="0.9.0.201710271504"/>
-      <repository id="coevolution" location="http://download.eclipse.org/diffmerge/releases/0.9.0/edm-coevolution-site/"/>
+      <repository id="amalgam" location="http://download.eclipse.org/modeling/amalgam/updates/stable/1.9.0-S20180903/capella/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.emf.ecoretools.sdk.feature.group" version="0.0.0"/>

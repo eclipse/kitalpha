@@ -17,5 +17,5 @@ Export-Package: org.polarsys.kitalpha.validation.configurer,
  org.polarsys.kitalpha.validation.provider.generic
 Bundle-ActivationPolicy: lazy
 Bundle-Activator: org.polarsys.kitalpha.validation.AccuracyPlugin
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Localization: plugin

@@ -11,5 +11,5 @@ Require-Bundle: org.eclipse.ui,
  org.polarsys.kitalpha.model.common.scrutiny,
  org.polarsys.kitalpha.model.detachment.ui,
  org.polarsys.kitalpha.model.common.share
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy

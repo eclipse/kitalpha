@@ -18,7 +18,7 @@ Require-Bundle: org.eclipse.ui,
  org.polarsys.kitalpha.resourcereuse,
  org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.preferences,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.model
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards,
  org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.wizards.impl.activityexplorer,

@@ -52,5 +52,5 @@ Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.kitalpha.vp.componentsamplesafety.design,
  org.polarsys.kitalpha.vp.componentsamplesafety.model,
  org.polarsys.kitalpha.vp.componentsamplesafety.model.edit
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy

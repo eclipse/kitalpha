@@ -16,7 +16,6 @@
       provider-name="%providerName">
 
    <description>
-      org.eclipse.nebula.widgets.richtext
       %description
    </description>
 
@@ -46,6 +45,10 @@
 
    <includes
          id="org.eclipse.emf.diffmerge.coevolution.sdk.feature"
+         version="0.0.0"/>
+         
+   <includes
+         id="org.eclipse.emf.diffmerge.coevolution.sdk.feature.source"
          version="0.0.0"/>
 
    <includes
@@ -110,6 +113,10 @@
 
    <includes
          id="org.eclipse.egf.sdk.feature"
+         version="0.0.0"/>
+         
+   <includes
+         id="org.eclipse.egf.sdk.feature.source"
          version="0.0.0"/>
 
    <includes
@@ -199,6 +206,7 @@
    <includes
          id="org.eclipse.emf.ecoretools.design"
          version="0.0.0"/>
+         
 
    <includes
          id="org.eclipse.emf.ecoretools.explorer.contextual"
@@ -567,7 +575,15 @@
    <includes
          id="org.eclipse.nebula.widgets.richtext.feature"
          version="0.0.0"/>
-
+         
+   <includes
+         id="org.eclipse.nebula.widgets.nattable.core.feature"
+         version="0.0.0"/>
+         
+   <includes
+         id="org.eclipse.nebula.widgets.nattable.extension.glazedlists.feature"
+         version="0.0.0"/>
+   
    <includes
          id="org.eclipse.emf.diffmerge.feature"
          version="0.0.0"/>

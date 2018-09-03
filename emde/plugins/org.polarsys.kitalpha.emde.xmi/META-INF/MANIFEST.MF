@@ -9,5 +9,5 @@ Bundle-Activator: org.polarsys.kitalpha.emde.xmi.Activator
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore.xmi;visibility:=reexport
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.polarsys.kitalpha.emde.xmi

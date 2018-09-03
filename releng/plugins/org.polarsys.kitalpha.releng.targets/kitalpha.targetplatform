@@ -1,6 +1,6 @@
 target "kitapha" with source, requirements
 
-location neon-release "http://download.eclipse.org/releases/oxygen" {
+location oxygen-release "http://download.eclipse.org/releases/oxygen" {
 	org.eclipse.sdk.feature.group lazy
 	org.eclipse.egit.feature.group lazy
 	org.eclipse.equinox.executable.feature.group lazy
@@ -118,7 +118,7 @@ location neon-release "http://download.eclipse.org/releases/oxygen" {
 }
 
 
-location Sirus "http://download.eclipse.org/sirius/updates/stable/6.1.0-S20180713-103406/oxygen/" {
+location Sirus "http://download.eclipse.org/sirius/updates/stable/6.1.0-S20180831-112606/oxygen/" {
 	org.eclipse.sirius.doc.feature.feature.group lazy
 	org.eclipse.sirius.runtime.ide.eef.feature.group lazy
 	org.eclipse.sirius.runtime.ide.ui.acceleo.feature.group lazy
@@ -146,7 +146,7 @@ location Sirus "http://download.eclipse.org/sirius/updates/stable/6.1.0-S2018071
 	org.eclipse.sirius.specifier.ide.ui.aql.feature.group lazy
 }
 
-location EMF-DiffMerge "http://download.eclipse.org/diffmerge/releases/0.9.0/emf-diffmerge-site" {
+location EMF-DiffMerge "http://download.eclipse.org/diffmerge/releases/0.11.0/emf-diffmerge-site/" {
 	org.eclipse.emf.diffmerge.feature.feature.group lazy
 	org.eclipse.emf.diffmerge.feature.source.feature.group lazy
 	org.eclipse.emf.diffmerge.sirius.feature.feature.group lazy
@@ -158,15 +158,19 @@ location EMF-DiffMerge "http://download.eclipse.org/diffmerge/releases/0.9.0/emf
 }
 
 
-location EDM-Patterns "http://download.eclipse.org/diffmerge/releases/0.9.0/edm-patterns-site" {
+location EDM-Patterns "http://download.eclipse.org/diffmerge/releases/0.11.0/edm-patterns-site/" {
 	org.eclipse.emf.diffmerge.patterns.sdk.feature.feature.group lazy
 	org.eclipse.emf.diffmerge.patterns.sdk.feature.source.feature.group lazy
 	org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.feature.group lazy
 	org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.source.feature.group lazy
-
 }
 
-location amalgam "http://download.eclipse.org/modeling/amalgam/updates/milestones/1.9.0RC1/capella" {
+location coevolution "http://download.eclipse.org/diffmerge/releases/0.11.0/edm-coevolution-site/" {
+	 org.eclipse.emf.diffmerge.coevolution.sdk.feature.feature.group lazy
+	 org.eclipse.emf.diffmerge.coevolution.sdk.feature.source.feature.group lazy
+}
+
+location amalgam "http://download.eclipse.org/modeling/amalgam/updates/stable/1.9.0-S20180903/capella/" {
 	org.eclipse.amalgam.explorer.activity.feature.group lazy
 	org.eclipse.amalgam.explorer.activity.source.feature.group lazy
 	org.eclipse.amalgam.explorer.contextual.feature.group lazy
@@ -175,10 +179,6 @@ location amalgam "http://download.eclipse.org/modeling/amalgam/updates/milestone
 	org.eclipse.amalgam.explorer.contextual.sirius.source.feature.group lazy
 	org.eclipse.amalgam.explorer.contextual.core.feature.group lazy
 	org.eclipse.amalgam.explorer.contextual.core.source.feature.group lazy
-}
-
-location coevolution "http://download.eclipse.org/diffmerge/releases/0.9.0/edm-coevolution-site/" {
-	 org.eclipse.emf.diffmerge.coevolution.sdk.feature.feature.group
 }
 
 location EcoreTools "http://download.eclipse.org/ecoretools/updates/milestones/3.3.0RC4/oxygen/" {

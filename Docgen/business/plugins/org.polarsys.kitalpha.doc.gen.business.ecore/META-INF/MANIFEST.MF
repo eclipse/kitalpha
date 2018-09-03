@@ -17,7 +17,7 @@ Require-Bundle: org.polarsys.kitalpha.doc.gen.business.core.ui,
  org.eclipse.sirius.diagram.ui,
  org.eclipse.egf.model.ftask;visibility:=reexport,
  org.polarsys.kitalpha.doc.gen.business.core.preference
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.doc.gen.business.ecore,
  org.polarsys.kitalpha.doc.gen.business.ecore.actions,

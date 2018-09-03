@@ -10,7 +10,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model,
  org.eclipse.ui,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.helper
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.validatation,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.validatation.message,

@@ -14,7 +14,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.egf.model,
  org.polarsys.kitalpha.ad.af.dsl.as.desc.model,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.ad.af.dsl.servicies.project,
  org.polarsys.kitalpha.ad.af.dsl.servicies.project.extension,

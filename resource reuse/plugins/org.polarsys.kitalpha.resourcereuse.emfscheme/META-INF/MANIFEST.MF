@@ -9,7 +9,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore,
  org.polarsys.kitalpha.resourcereuse,
  org.eclipse.emf.ecore.xmi
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.resourcereuse.emfscheme,
  org.polarsys.kitalpha.resourcereuse.emfscheme.api,

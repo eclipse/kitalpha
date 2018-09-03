@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: org.polarsys.kitalpha.vp.componentsampleframework.af
 Bundle-SymbolicName: org.polarsys.kitalpha.vp.componentsampleframework.af;singleton:=true
 Bundle-Version: 1.3.0.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.polarsys.kitalpha.ad.viewpoint.ui,
  org.polarsys.kitalpha.vp.componentsampleframework
 

@@ -12,5 +12,5 @@ Require-Bundle: org.eclipse.ui,
  org.polarsys.kitalpha.composer.examples.basic.ecore.gen.strategy.consonant,
  org.polarsys.kitalpha.composer.examples.basic.allocation.ecore.model
 Eclipse-LazyStart: true
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Localization: plugin

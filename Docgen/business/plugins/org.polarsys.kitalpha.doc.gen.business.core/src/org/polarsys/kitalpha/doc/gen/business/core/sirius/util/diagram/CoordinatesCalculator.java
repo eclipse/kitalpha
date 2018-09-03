@@ -291,7 +291,7 @@ public class CoordinatesCalculator {
 		{
 			final EObject nodeElement = view.getElement();
 
-			if (gep instanceof SiriusNoteEditPart && ((SiriusNoteEditPart)gep).isLinkNote()) {
+			if (gep instanceof SiriusNoteEditPart && ((SiriusNoteEditPart)gep).isRepresentationLink()) {
 				
 				/*
 				 * Handle navigable note

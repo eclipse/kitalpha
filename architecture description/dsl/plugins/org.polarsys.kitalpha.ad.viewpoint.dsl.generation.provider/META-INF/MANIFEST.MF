@@ -12,7 +12,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.egf.portfolio.genchain;bundle-version="1.1.0",
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.model
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.provider,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.provider.exception,

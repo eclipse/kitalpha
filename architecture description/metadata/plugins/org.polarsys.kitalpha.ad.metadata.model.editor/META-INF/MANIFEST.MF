@@ -7,7 +7,7 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-SymbolicName: org.polarsys.kitalpha.ad.metadata.model.editor;singleton:=true
 Bundle-Activator: org.polarsys.kitalpha.ad.metadata.metadata.presentation.MetadataEditorPlugin$Implementation
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.polarsys.kitalpha.ad.metadata.metadata.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,

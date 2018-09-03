@@ -9,6 +9,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.kitalpha.examples.generic.wizard,
  org.eclipse.jface;bundle-version="3.5.2",
  org.eclipse.ui;bundle-version="3.5.2"
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Bundle-Localization: plugin

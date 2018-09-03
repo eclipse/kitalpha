@@ -22,7 +22,7 @@ Require-Bundle: org.eclipse.ui,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core,
  org.eclipse.egf.portfolio.genchain.tools.ui,
  org.eclipse.egf.eclipse.resources.mgt
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.ad.af.dsl.generation.desc,
  org.polarsys.kitalpha.ad.af.dsl.generation.desc.graph,

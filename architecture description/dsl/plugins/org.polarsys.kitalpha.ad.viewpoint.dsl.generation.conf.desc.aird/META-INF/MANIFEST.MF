@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Activator: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird.model.descAirdGenConf.provider.DescAirdGenConfEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird.helper,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird.model.descAirdGenConf,

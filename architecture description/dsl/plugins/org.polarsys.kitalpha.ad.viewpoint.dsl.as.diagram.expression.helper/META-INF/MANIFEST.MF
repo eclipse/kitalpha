@@ -12,7 +12,7 @@ Require-Bundle: org.eclipse.ui,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.provider;bundle-version="0.5.0",
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.model;bundle-version="0.5.0"
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.sirius

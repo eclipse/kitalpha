@@ -13,6 +13,6 @@ Require-Bundle: org.eclipse.ui,
  org.polarsys.kitalpha.transposer.transformation.emf,
  org.polarsys.kitalpha.transposer.examples.m2m.uml.to.ecore
 Eclipse-LazyStart: true
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Localization: plugin
 Bundle-ClassPath: .

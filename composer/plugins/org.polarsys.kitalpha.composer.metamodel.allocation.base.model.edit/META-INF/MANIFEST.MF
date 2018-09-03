@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Activator: org.polarsys.kitalpha.composer.metamodel.allocation.base.provider.AllocationEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.polarsys.kitalpha.composer.metamodel.allocation.base.provider
 Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.kitalpha.composer.metamodel.allocation.base.model;visibility:=reexport,

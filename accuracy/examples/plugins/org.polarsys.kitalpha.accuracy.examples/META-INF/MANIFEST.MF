@@ -15,5 +15,5 @@ Export-Package: .,
  constraint.provider,
  constraint.provider.java
 Bundle-Activator: constraint.provider.startup.Activator
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Localization: plugin
