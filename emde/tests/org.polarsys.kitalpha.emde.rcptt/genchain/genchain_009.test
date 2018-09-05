@@ -1,13 +1,13 @@
 --- RCPTT testcase ---
 Format-Version: 1.0
-Contexts: _O5gIYERyEeis75fBw2dugQ,_e-MekERzEeis75fBw2dugQ
-Element-Name: genchain_005
+Contexts: _Smx_sLKBEei6L4VZaTVYmw
+Element-Name: genchain_009
 Element-Type: testcase
 Element-Version: 3.0
 External-Reference: 
-Id: _wD9ogER6Eeis75fBw2dugQ
+Id: _kl_XQLKBEei6L4VZaTVYmw
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 9/7/18 11:09 AM
+Save-Time: 9/7/18 2:00 PM
 Testcase-Type: ecl
 
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
@@ -20,10 +20,7 @@ with [get-view "Project Explorer" | get-tree] {
 
 wait 20000
 
-
-
-get-view "Project Explorer" | get-tree | select "library.library.cdo/src/library.library.impl/BookImpl.java" 
-    | double-click
+get-editor "BookImpl.java" | click
 get-editor "BookImpl.java" | get-text-viewer | get-property text | equals "package library.library.impl;\n\n"
     + "import library.library.Book;\n\n"
     + "/**\n"
@@ -89,10 +86,11 @@ get-editor "BookImpl.java" | get-text-viewer | get-property text | equals "packa
     + "\t/**\n"
     + "\t * <!-- begin-user-doc -->\n"
     + "\t * <!-- end-user-doc -->\n"
-    + "\t * @generated\n"
+    + "\t * @generated NOT\n"
     + "\t */\n\n"
-    + "\tpublic String getTitle() {\n\n"
-    + "\t\treturn (String) eDynamicGet(LibraryPackage.BOOK__TITLE, LibraryPackage.Literals.BOOK__TITLE, true, true);\n"
+    + "\tpublic String getTitle() {\n"
+    + "\t\t//test\n"
+    + "\t\treturn title;\n"
     + "\t}\n\n"
     + "\t/**\n"
     + "\t * <!-- begin-user-doc -->\n"
@@ -234,164 +232,13 @@ get-editor "BookImpl.java" | get-text-viewer | get-property text | equals "packa
     + "\t\t}\n"
     + "\t\treturn super.eIsSet(featureID);\n"
     + "\t}\n\n"
+    + "\t/**\n"
+    + "\t * @generated\n"
+    + "\t */\n"
+    + "\tpublic void myAddedMethod() {\n"
+    + "\t}\n"
     + "} //BookImpl" | verify-true
-get-view "Project Explorer" | get-tree | select "library.library.cdo/src/library.library.impl/LibraryFactoryImpl.java" 
-    | select "library.library.cdo/src/library.library.impl/LibraryFactoryImpl.java" | double-click
-get-editor "LibraryFactoryImpl.java" | get-text-viewer | get-property text | equals "package library.library.impl;\n\n"
-    + "import library.library.*;\n\n"
-    + "/**\n"
-    + " * <!-- begin-user-doc -->\n"
-    + " * An implementation of the model <b>Factory</b>.\n"
-    + " * <!-- end-user-doc -->\n"
-    + " * @generated\n"
-    + " */\n"
-    + "public class LibraryFactoryImpl extends EFactoryImpl implements LibraryFactory {\n"
-    + "\t/**\n"
-    + "\t * Creates the default factory implementation.\n"
-    + "\t * <!-- begin-user-doc -->\n"
-    + "\t * <!-- end-user-doc -->\n"
-    + "\t * @generated\n"
-    + "\t */\n"
-    + "\tpublic static LibraryFactory init() {\n"
-    + "\t\ttry {\n"
-    + "\t\t\tLibraryFactory theLibraryFactory = (LibraryFactory) EPackage.Registry.INSTANCE\n"
-    + "\t\t\t\t\t.getEFactory(LibraryPackage.eNS_URI);\n"
-    + "\t\t\tif (theLibraryFactory != null) {\n"
-    + "\t\t\t\treturn theLibraryFactory;\n"
-    + "\t\t\t}\n"
-    + "\t\t} catch (Exception exception) {\n"
-    + "\t\t\tEcorePlugin.INSTANCE.log(exception);\n"
-    + "\t\t}\n"
-    + "\t\treturn new LibraryFactoryImpl();\n"
-    + "\t}\n\n"
-    + "\t/**\n"
-    + "\t * Creates an instance of the factory.\n"
-    + "\t * <!-- begin-user-doc -->\n"
-    + "\t * <!-- end-user-doc -->\n"
-    + "\t * @generated\n"
-    + "\t */\n"
-    + "\tpublic LibraryFactoryImpl() {\n"
-    + "\t\tsuper();\n"
-    + "\t}\n\n"
-    + "\t/**\n"
-    + "\t * <!-- begin-user-doc -->\n"
-    + "\t * <!-- end-user-doc -->\n"
-    + "\t * @generated\n"
-    + "\t */\n"
-    + "\t@Override\n"
-    + "\tpublic EObject create(EClass eClass) {\n"
-    + "\t\tswitch (eClass.getClassifierID()) {\n"
-    + "\t\tcase LibraryPackage.BOOK:\n"
-    + "\t\t\treturn (EObject) createBook();\n"
-    + "\t\tcase LibraryPackage.LIBRARY:\n"
-    + "\t\t\treturn (EObject) createLibrary();\n"
-    + "\t\tcase LibraryPackage.WRITER:\n"
-    + "\t\t\treturn (EObject) createWriter();\n"
-    + "\t\tcase LibraryPackage.GUIDE_BOOK_WRITER:\n"
-    + "\t\t\treturn (EObject) createGuideBookWriter();\n"
-    + "\t\tcase LibraryPackage.SPECIALIST_BOOK_WRITER:\n"
-    + "\t\t\treturn (EObject) createSpecialistBookWriter();\n"
-    + "\t\tdefault:\n"
-    + "\t\t\tthrow new IllegalArgumentException(\"The class '\" + eClass.getName() + \"' is not a valid classifier\"); //$NON-NLS-1$ //$NON-NLS-2$\n"
-    + "\t\t}\n"
-    + "\t}\n\n"
-    + "\t/**\n"
-    + "\t * <!-- begin-user-doc -->\n"
-    + "\t * <!-- end-user-doc -->\n"
-    + "\t * @generated\n"
-    + "\t */\n"
-    + "\tpublic Book createBook() {\n"
-    + "\t\tBookImpl book = new BookImpl();\n"
-    + "\t\treturn book;\n"
-    + "\t}\n\n"
-    + "\t/**\n"
-    + "\t * <!-- begin-user-doc -->\n"
-    + "\t * <!-- end-user-doc -->\n"
-    + "\t * @generated\n"
-    + "\t */\n"
-    + "\tpublic Library createLibrary() {\n"
-    + "\t\tLibraryImpl library = new LibraryImpl();\n"
-    + "\t\treturn library;\n"
-    + "\t}\n\n"
-    + "\t/**\n"
-    + "\t * <!-- begin-user-doc -->\n"
-    + "\t * <!-- end-user-doc -->\n"
-    + "\t * @generated\n"
-    + "\t */\n"
-    + "\tpublic Writer createWriter() {\n"
-    + "\t\tWriterImpl writer = new WriterImpl();\n"
-    + "\t\treturn writer;\n"
-    + "\t}\n\n"
-    + "\t/**\n"
-    + "\t * <!-- begin-user-doc -->\n"
-    + "\t * <!-- end-user-doc -->\n"
-    + "\t * @generated\n"
-    + "\t */\n"
-    + "\tpublic GuideBookWriter createGuideBookWriter() {\n"
-    + "\t\tGuideBookWriterImpl guideBookWriter = new GuideBookWriterImpl();\n"
-    + "\t\treturn guideBookWriter;\n"
-    + "\t}\n\n"
-    + "\t/**\n"
-    + "\t * <!-- begin-user-doc -->\n"
-    + "\t * <!-- end-user-doc -->\n"
-    + "\t * @generated\n"
-    + "\t */\n"
-    + "\tpublic SpecialistBookWriter createSpecialistBookWriter() {\n"
-    + "\t\tSpecialistBookWriterImpl specialistBookWriter = new SpecialistBookWriterImpl();\n"
-    + "\t\treturn specialistBookWriter;\n"
-    + "\t}\n\n"
-    + "\t/**\n"
-    + "\t * <!-- begin-user-doc -->\n"
-    + "\t * <!-- end-user-doc -->\n"
-    + "\t * @generated\n"
-    + "\t */\n"
-    + "\tpublic LibraryPackage getLibraryPackage() {\n"
-    + "\t\treturn (LibraryPackage) getEPackage();\n"
-    + "\t}\n\n"
-    + "\t/**\n"
-    + "\t * <!-- begin-user-doc -->\n"
-    + "\t * <!-- end-user-doc -->\n"
-    + "\t * @deprecated\n"
-    + "\t * @generated\n"
-    + "\t */\n"
-    + "\t@Deprecated\n"
-    + "\tpublic static LibraryPackage getPackage() {\n"
-    + "\t\treturn LibraryPackage.eINSTANCE;\n"
-    + "\t}\n\n"
-    + "} //LibraryFactoryImpl" | verify-true
-get-view "Project Explorer" | get-tree | select "library.library.cdo/plugin.xml" | double-click
-get-editor "library.library.cdo" | get-tab-folder | get-tab-item "plugin.xml" | click
-get-editor "library.library.cdo" | get-text-viewer | get-property text 
-    | equals "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
-    + "<?eclipse version=\"3.0\"?>\n\n\n\n\n"
-    + "<plugin>\n\n"
-    + "   <extension point=\"org.eclipse.emf.ecore.factory_override\">\n"
-    + "      <factory\n"
-    + "            uri=\"http://www.eclipse.org/emf/jcrm/samples/emf/sample/Library\"\n"
-    + "            class=\"library.library.impl.LibraryFactoryImpl\"\n"
-    + "      />\n"
-    + "   </extension>\n\n"
-    + "</plugin>" | verify-true
-  
-get-view "Project Explorer" | get-tree | select "library.library.cdo/META-INF/MANIFEST.MF" | double-click
-with [get-editor "library.library.cdo"] {
-    get-section "General Information" | get-editbox -after [get-label "ID:"] | set-focus
-    get-tab-folder | get-tab-item "MANIFEST.MF" | click
-}
-get-editor "library.library.cdo" | get-text-viewer | get-property text | equals "Manifest-Version: 1.0\n"
-    + "Bundle-ManifestVersion: 2\n"
-    + "Bundle-Name: %pluginName\n"
-    + "Bundle-SymbolicName: library.library.cdo;singleton:=true\n"
-    + "Bundle-Version: 1.0.0.qualifier\n"
-    + "Bundle-ClassPath: .\n"
-    + "Bundle-Vendor: %providerName\n"
-    + "Bundle-Localization: plugin\n"
-    + "Export-Package: library.library.impl\n"
-    + "Import-Package: library.library\n"
-    + "Require-Bundle: org.eclipse.core.runtime,\n"
-    + " org.eclipse.emf.ecore;visibility:=reexport,\n"
-    + " org.eclipse.emf.ecore.xmi;visibility:=reexport,\n"
-    + " org.eclipse.emf.cdo;visibility:=reexport,\n"
-    + " org.polarsys.kitalpha.emde.xmi;visibility:=reexport\n"
-    + "Bundle-ActivationPolicy: lazy" | verify-true
+get-view "Project Explorer" | get-tree | get-item -path "library.library.cdo" 
+    | get-property "image.decorations[1].path" | equals "org.eclipse.jdt.ui/$nl$/icons/full/ovr16/error_co.png" 
+    | verify-true
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

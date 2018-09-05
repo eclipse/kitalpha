@@ -219,7 +219,14 @@ public abstract class ManifestHelper {
 		@Override
 		protected List<String> getRequiredPlugins() {
 			List<String> additions = new ArrayList<String>();
-			additions.addAll(genModel.getModelPluginVariables());
+			for (String var : genModel.getModelPluginVariables()) {
+				int indexOf = var.indexOf('=');
+				if (indexOf == -1) {
+					additions.add(var);					
+				} else {
+					additions.add(var.substring(indexOf+1));
+				}
+			}
 			
 			if (ExtensionHelper.hasExtensibleProviderFactory(genModel) || ExtensionHelper.hasChildCreationExtenders(genModel)) {
 				additions.add("org.polarsys.kitalpha.emde.xmi"); //$NON-NLS-1$

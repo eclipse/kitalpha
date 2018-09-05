@@ -88,6 +88,10 @@
           name="pattern.substitutions" invocationContracts="#_IESMg2QNEd-ZRKoL5olDIg">
         <type xmi:type="pattern:TypePatternSubstitution" xmi:id="_EfP_gGQNEd-ZRKoL5olDIg"/>
       </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_ukklwLEMEeiYZNq-hHL4dQ"
+          name="pattern.ids" invocationContracts="#_sYzRwLEMEeiYZNq-hHL4dQ">
+        <type xmi:type="pattern:TypePatternList" xmi:id="_11fOoLEMEeiYZNq-hHL4dQ"/>
+      </contracts>
     </contractContainer>
     <viewpointContainer xmi:id="_yv5QsEejEd-o3oTHnj_3Dw">
       <viewpoints xmi:type="pattern:PatternViewpoint" xmi:id="_zEm8cEejEd-o3oTHnj_3Dw">
@@ -231,6 +235,8 @@
             <type xmi:type="pattern:TypePatternExecutionReporter" xmi:id="_dPMnwFIJEd-eGOdO3WtsxA"
                 value="org.polarsys.kitalpha.emde.egf.reporter.ExtensionContentTypePatternExecutionReporter"/>
           </invocationContracts>
+          <invocationContracts xmi:id="_sYzRwLEMEeiYZNq-hHL4dQ" factoryComponentContract="#_ukklwLEMEeiYZNq-hHL4dQ"
+              invokedContract="fcore:FactoryComponentContract platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_TxwAHVkTEd-bv5aydwO2Qw"/>
         </invocationContractContainer>
       </invocations>
       <invocations xmi:id="_R-CZ0EfHEd-Pxe3gDw8IKg" name="ManifestMF" invokedActivity="ftask:Task platform:/plugin/org.eclipse.egf.emf.pattern.base/egf/EMF_Pattern_Base.fcore#_jT-SgD1hEd-m5uHrCQ1Jew">
@@ -313,6 +319,10 @@
               invokedContract="#_z4TigGmKEd-WDNIQ7luqOw"/>
           <invocationContracts xmi:id="_BI07JD7-Eei6SZWv3x0qPg" factoryComponentContract="#_mehSt-CEEeGKHKVgqEoOmg"
               invokedContract="#_Bk_N0GQNEd-ZRKoL5olDIg"/>
+          <invocationContracts xmi:id="_i0NWELEMEeiYZNq-hHL4dQ" invokedContract="#_ukklwLEMEeiYZNq-hHL4dQ">
+            <type xmi:type="pattern:TypePatternList" xmi:id="_8YgPsLEMEeiYZNq-hHL4dQ"
+                elements="pattern:Pattern platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_PfcPQDG0Ed-kc8dEZsdm2w pattern:Pattern platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_Pe_jUDG0Ed-kc8dEZsdm2w pattern:Pattern platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_Pcm9tDG0Ed-kc8dEZsdm2w pattern:Pattern platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_PdgVkDG0Ed-kc8dEZsdm2w pattern:Pattern platform:/plugin/org.eclipse.egf.emf.pattern.cdo/egf/EMF_Pattern_CDO.fcore#_Mu2cAOEzEeGFJ5Qac-Dqzg pattern:Pattern platform:/plugin/org.eclipse.egf.emf.pattern.cdo/egf/EMF_Pattern_CDO.fcore#_L1UzAOEzEeGFJ5Qac-Dqzg"/>
+          </invocationContracts>
         </invocationContractContainer>
       </invocations>
     </orchestration>
