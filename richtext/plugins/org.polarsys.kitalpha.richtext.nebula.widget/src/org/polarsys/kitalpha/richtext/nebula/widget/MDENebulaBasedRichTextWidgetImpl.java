@@ -55,24 +55,24 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 
 	public MDENebulaBasedRichTextWidgetImpl(Composite parent) {
 		super(parent);
-		this.editor = new RichTextEditor(parent); // default configuration
-		this.configuration = editor.getEditorConfiguration();
+		this.editor = createRichTextEditor(parent, null, -1); // default configuration
+		this.configuration = getEditorConfiguration();
 		GridDataFactory.fillDefaults().grab(true, true).applyTo(this.editor);
 
 		addPropertyChangeListener(this);
 
 		installListeners();
 
-		dirtyStateUpdated = false;
+        dirtyStateUpdated = false;
 		
-		customizeRichTextConfiguration(this.configuration);
+        customizeRichTextConfiguration(this.configuration);
 	}
 
 	public MDENebulaBasedRichTextWidgetImpl(Composite parent, MDENebulaRichTextConfiguration configuration) {
 		super(parent);
 		this.configuration = configuration;
 		((MDENebulaRichTextConfiguration) this.configuration).createToolbar();
-		this.editor = new RichTextEditor(parent, configuration); // default
+		this.editor = createRichTextEditor(parent, configuration, -1); // default
 																	// configuration
 		GridDataFactory.fillDefaults().grab(true, true).applyTo(this.editor);
 
@@ -80,32 +80,32 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 
 		installListeners();
 		
-    dirtyStateUpdated = false;
-    
-    customizeRichTextConfiguration(this.configuration);
+        dirtyStateUpdated = false;
+		
+        customizeRichTextConfiguration(this.configuration);
 	}
 
 	public MDENebulaBasedRichTextWidgetImpl(Composite parent, int style) {
 		super(parent);
-		this.editor = new RichTextEditor(parent, style); // default
+		this.editor = createRichTextEditor(parent, null, style); // default
 															// configuration
-		this.configuration = editor.getEditorConfiguration();
+		this.configuration = getEditorConfiguration();
 		GridDataFactory.fillDefaults().grab(true, true).applyTo(this.editor);
 
 		addPropertyChangeListener(this);
 
 		installListeners();
 		
-    dirtyStateUpdated = false;
+        dirtyStateUpdated = false;
     
-    customizeRichTextConfiguration(this.configuration);
+        customizeRichTextConfiguration(this.configuration);
 	}
 
 	public MDENebulaBasedRichTextWidgetImpl(Composite parent, MDENebulaRichTextConfiguration configuration, int style) {
 		super(parent);
 		this.configuration = configuration;
 		((MDENebulaRichTextConfiguration) this.configuration).createToolbar();
-		this.editor = new RichTextEditor(parent, style); // default
+		this.editor = createRichTextEditor(parent, null, style); // default
 															// configuration
 		GridDataFactory.fillDefaults().grab(true, true).applyTo(this.editor);
 
@@ -113,9 +113,24 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 
 		installListeners();
 		
-    dirtyStateUpdated = false;
+        dirtyStateUpdated = false;
     
-    customizeRichTextConfiguration(this.configuration);
+        customizeRichTextConfiguration(this.configuration);
+	}
+	
+	protected RichTextEditor createRichTextEditor(Composite parent, RichTextEditorConfiguration editorConfig, int style) {
+	    if(editorConfig == null && style == -1) {
+	        return new RichTextEditor(parent);
+	    }else if(editorConfig == null) {
+	        return new RichTextEditor(parent, style);
+	    }else if(style == -1) {
+	        return new RichTextEditor(parent, editorConfig);	        
+	    }
+	    return new RichTextEditor(parent, editorConfig, style);
+	}
+	
+	protected RichTextEditorConfiguration getEditorConfiguration() {
+        return editor.getEditorConfiguration();
 	}
 
 	public void setDirtyStateUpdated(boolean dirtyStateUpdated) {
@@ -158,7 +173,7 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 
 	@Override
 	public Browser getBrowser() {
-		return editor.getEditorConfiguration().getBrowser();
+		return getEditorConfiguration().getBrowser();
 	}
 
 	@Override
