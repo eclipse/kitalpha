@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fcore:FactoryComponent xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:domain="http://www.eclipse.org/egf/1.0.0/domain"
+<fcore:FactoryComponent xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:domain="http://www.eclipse.org/egf/1.0.0/domain"
     xmlns:fcore="http://www.eclipse.org/egf/1.0.0/fcore" xmlns:fprod="http://www.eclipse.org/egf/1.0.0/fprod"
     xmlns:ftask="http://www.eclipse.org/egf/1.0.0/ftask" xmlns:pattern="http://www.eclipse.org/egf/1.0.0/pattern"
-    xmlns:types="http://www.eclipse.org/egf/1.0.0/types" xmi:id="_fpAN4VhCEd-5FJ833LkcRA"
-    name="emf.gen.model.common">
+    xmlns:types="http://www.eclipse.org/egf/1.0.0/types" xmi:id="_fpAN4VhCEd-5FJ833LkcRA" name="emf.gen.model.common">
   <contractContainer xmi:id="_orkvcFjjEd-5FJ833LkcRA">
     <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_orkvcVjjEd-5FJ833LkcRA"
         description="EMF Model Pattern" name="genModelURI" mandatory="true" invocationContracts="#_r7QkwGjMEd-Pwf_Ge6oWrw">
@@ -17,6 +15,10 @@
     <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_orkvdVjjEd-5FJ833LkcRA"
         description="EMF Model Pattern" name="pattern.substitutions" invocationContracts="#_y_GNs1jjEd-5FJ833LkcRA">
       <type xmi:type="pattern:TypePatternSubstitution" xmi:id="_orkvdljjEd-5FJ833LkcRA"/>
+    </contracts>
+    <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_f3H1sLETEeiOzsR6y-DSJg"
+        name="pattern.ids" invocationContracts="#_ijXZgLETEeiOzsR6y-DSJg">
+      <type xmi:type="pattern:TypePatternList" xmi:id="_hNd9kLETEeiOzsR6y-DSJg"/>
     </contracts>
   </contractContainer>
   <viewpointContainer xmi:id="_Rq9G8Fj4Ed-dWqYOpUTYSw">
@@ -43,6 +45,8 @@
             invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.emde.egf/egf/eMDE_EMF_Extension.fcore#_z4TigGmKEd-WDNIQ7luqOw"/>
         <invocationContracts xmi:id="_sPhkkGjMEd-Pwf_Ge6oWrw" sourceInvocationContract="#_y_GNtFjjEd-5FJ833LkcRA"
             invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.emde.egf/egf/eMDE_EMF_Extension.fcore#_Bk_N0GQNEd-ZRKoL5olDIg"/>
+        <invocationContracts xmi:id="_ijXZgLETEeiOzsR6y-DSJg" factoryComponentContract="#_f3H1sLETEeiOzsR6y-DSJg"
+            invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.emde.egf/egf/eMDE_EMF_Extension.fcore#_ukklwLEMEeiYZNq-hHL4dQ"/>
       </invocationContractContainer>
     </invocations>
   </orchestration>
