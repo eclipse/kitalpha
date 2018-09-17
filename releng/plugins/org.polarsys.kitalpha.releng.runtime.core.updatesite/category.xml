@@ -144,7 +144,10 @@
    <feature url="features/org.polarsys.kitalpha.massactions.feature_1.3.0.qualifier.jar" id="org.polarsys.kitalpha.massactions.feature" version="1.3.0.qualifier">
       <category name="RuntimeCore"/>
    </feature>
-    <feature url="features/org.polarsys.kitalpha.massactions.feature.source_1.3.0.qualifier.jar" id="org.polarsys.kitalpha.massactions.feature.source" version="1.3.0.qualifier">
+   <feature url="features/org.polarsys.kitalpha.massactions.feature.source_1.3.0.qualifier.jar" id="org.polarsys.kitalpha.massactions.feature.source" version="1.3.0.qualifier">
+      <category name="RuntimeCore"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.richtext.widget.feature_1.3.0.qualifier" id="org.polarsys.kitalpha.richtext.widget.feature" version="1.3.0.qualifier">
       <category name="RuntimeCore"/>
    </feature>
    <category-def name="RuntimeCore" label="Runtime Core"/>

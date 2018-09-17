@@ -231,8 +231,8 @@
    <feature url="features/org.polarsys.kitalpha.richtext.widget.feature_1.3.0.qualifier.jar" id="org.polarsys.kitalpha.richtext.widget.feature" version="1.3.0.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.richtext.widget.ext.feature_1.3.0.qualifier.jar" id="org.polarsys.kitalpha.richtext.widget.ext.feature" version="1.3.0.qualifier">
-      <category name="Sdk"/>
+   <feature url="features/org.polarsys.kitalpha.richtext.widget.feature.source_1.3.0.qualifier.jar" id="org.polarsys.kitalpha.richtext.widget.feature.source" version="1.3.0.qualifier">
+      <category name="SdkSource"/>
    </feature>
    <category-def name="Sdk" label="Sdk"/>
    <category-def name="SdkSource" label="SdkSource"/>

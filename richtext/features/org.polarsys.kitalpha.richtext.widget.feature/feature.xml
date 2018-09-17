@@ -30,6 +30,11 @@
    <includes
          id="org.polarsys.kitalpha.richtext.widget.ext.feature"
          version="0.0.0"/>
+         
+   <includes
+         id="org.polarsys.kitalpha.richtext.widget.tools.ext.feature"
+         version="0.0.0"/>
+         
 
    <requires>
       <import plugin="org.eclipse.nebula.widgets.richtext"/>
