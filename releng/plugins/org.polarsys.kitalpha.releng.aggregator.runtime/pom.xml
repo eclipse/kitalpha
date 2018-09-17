@@ -80,19 +80,6 @@
     <!-- features -->
     <module>../../../emde/integration/features/org.polarsys.kitalpha.emde.explorer.contextual.feature</module>
      
-    <module>../../../resource reuse/plugins/org.polarsys.kitalpha.resourcereuse.emfscheme.utils</module>
-    <module>../../../resource reuse/plugins/org.polarsys.kitalpha.resourcereuse.emfscheme</module>
-    
-    <!-- features -->
-    <module>../../../resource reuse/features/org.polarsys.kitalpha.resourcereuse.emfscheme.feature</module>
-    
-    <!-- plugins org.polarsys.kitalpha.resourcereuse.emfscheme.ui.feature -->
-    <module>../../../resource reuse/plugins/org.polarsys.kitalpha.resourcereuse.emfscheme.ui</module>
-    <module>../../../resource reuse/plugins/org.polarsys.kitalpha.resourcereuse.emfscheme.dialog</module>
-    
-    <!-- features -->
-    <module>../../../resource reuse/features/org.polarsys.kitalpha.resourcereuse.emfscheme.ui.feature</module>
-    
     <!-- plugins org.polarsys.kitalpha.model.common.ui.menu.feature-->
     <module>../../../detachment/plugins/org.polarsys.kitalpha.model.common.ui.menu</module>
     

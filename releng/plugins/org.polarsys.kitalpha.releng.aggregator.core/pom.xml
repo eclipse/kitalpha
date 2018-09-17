@@ -115,6 +115,10 @@
     <module>../../../architecture description/core/plugins/org.polarsys.kitalpha.ad.viewpoint.emfvalidation</module>
     <module>../../../report/plugins/org.polarsys.kitalpha.report.ui</module>
     <module>../../../resource reuse/plugins/org.polarsys.kitalpha.resourcereuse.ui</module>
+    <module>../../../resource reuse/plugins/org.polarsys.kitalpha.resourcereuse.emfscheme</module>
+    <module>../../../resource reuse/plugins/org.polarsys.kitalpha.resourcereuse.emfscheme.utils</module>
+    <module>../../../resource reuse/plugins/org.polarsys.kitalpha.resourcereuse.emfscheme.ui</module>
+    <module>../../../resource reuse/plugins/org.polarsys.kitalpha.resourcereuse.emfscheme.dialog</module>
     <module>../../../architecture description/core/plugins/org.polarsys.kitalpha.ad.integration.emde</module>
     <module>../../../architecture description/core/plugins/org.polarsys.kitalpha.ad.integration.amalgam</module>
     <module>../../../cadence/plugins/org.polarsys.kitalpha.cadence.ui</module>
@@ -155,11 +159,13 @@
     <module>../../../architecture description/core/features/org.polarsys.kitalpha.ad.feature</module>
     <module>../../../report/features/org.polarsys.kitalpha.report.feature</module>
     <module>../../../resource reuse/features/org.polarsys.kitalpha.resourcereuse.feature</module>
+    <module>../../../resource reuse/features/org.polarsys.kitalpha.resourcereuse.ui.feature</module>
+    <module>../../../resource reuse/features/org.polarsys.kitalpha.resourcereuse.emfscheme.feature</module>
+    <module>../../../resource reuse/features/org.polarsys.kitalpha.resourcereuse.emfscheme.ui.feature</module>
     <module>../../../architecture description/metadata/features/org.polarsys.kitalpha.ad.metadata.feature</module>
     <module>../../../architecture description/core/features/org.polarsys.kitalpha.ad.integration.sirius.feature</module>
     <module>../../../architecture description/core/features/org.polarsys.kitalpha.ad.ui.feature</module>
     <module>../../../report/features/org.polarsys.kitalpha.report.ui.feature</module>
-    <module>../../../resource reuse/features/org.polarsys.kitalpha.resourcereuse.ui.feature</module>
     <module>../../../architecture description/core/features/org.polarsys.kitalpha.ad.integration.emde.feature</module>
     <module>../../../emde/features/org.polarsys.kitalpha.emde.feature</module>
     <module>../../../architecture description/core/features/org.polarsys.kitalpha.ad.integration.amalgam.feature</module>

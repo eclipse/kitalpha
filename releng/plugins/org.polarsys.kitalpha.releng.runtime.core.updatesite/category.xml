@@ -33,6 +33,12 @@
    <feature url="features/org.polarsys.kitalpha.resourcereuse.feature.source_1.3.0.qualifier.jar" id="org.polarsys.kitalpha.resourcereuse.feature.source" version="1.3.0.qualifier">
       <category name="RuntimeCore"/>
    </feature>
+   <feature url="features/org.polarsys.kitalpha.resourcereuse.emfscheme.feature_1.3.0.qualifier.jar" id="org.polarsys.kitalpha.resourcereuse.emfscheme.feature" version="1.3.0.qualifier">
+      <category name="RuntimeCore"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.resourcereuse.emfscheme.ui.feature_1.3.0.qualifier.jar" id="org.polarsys.kitalpha.resourcereuse.emfscheme.ui.feature" version="1.3.0.qualifier">
+      <category name="RuntimeCore"/>
+   </feature>
    <feature url="features/org.polarsys.kitalpha.ad.metadata.feature_1.3.0.qualifier.jar" id="org.polarsys.kitalpha.ad.metadata.feature" version="1.3.0.qualifier">
       <category name="RuntimeCore"/>
    </feature>

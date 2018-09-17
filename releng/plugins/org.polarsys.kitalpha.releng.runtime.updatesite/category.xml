@@ -132,6 +132,10 @@
    <feature url="features/org.polarsys.kitalpha.common.feature.source_1.3.0.qualifier.jar" id="org.polarsys.kitalpha.common.feature.source" version="1.3.0.qualifier">
       <category name="RuntimeSource"/>
    </feature>
+
+   <feature url="features/org.polarsys.kitalpha.richtext.widget.ext.feature_1.3.0.qualifier.jar" id="org.polarsys.kitalpha.richtext.widget.ext.feature" version="1.3.0.qualifier">
+      <category name="Runtime"/>
+   </feature>
    <feature url="features/org.polarsys.kitalpha.richtext.widget.ext.feature.source_1.3.0.qualifier.jar" id="org.polarsys.kitalpha.richtext.widget.ext.feature.source" version="1.3.0.qualifier">
       <category name="RuntimeSource"/>
    </feature>
@@ -142,6 +146,13 @@
       <category name="Runtime"/>
    </feature>
    <feature url="features/org.polarsys.kitalpha.richtext.widget.feature.source_1.3.0.qualifier.jar" id="org.polarsys.kitalpha.richtext.widget.feature.source" version="1.3.0.qualifier">
+      <category name="RuntimeSource"/>
+   </feature>
+   <feature url="features/org.polarsys.kitalpha.richtext.widget.tools.ext.feature_1.3.0.qualifier.jar" id="org.polarsys.kitalpha.richtext.widget.tools.ext.feature" version="1.3.0.qualifier">
+      <category name="Runtime"/>
+   </feature>
+
+   <feature url="features/org.polarsys.kitalpha.richtext.widget.tools.ext.feature.source_1.3.0.qualifier.jar" id="org.polarsys.kitalpha.richtext.widget.tools.ext.feature.source" version="1.3.0.qualifier">
       <category name="RuntimeSource"/>
    </feature>
    <feature url="features/org.polarsys.kitalpha.massactions.feature_1.3.0.qualifier.jar" id="org.polarsys.kitalpha.massactions.feature" version="1.3.0.qualifier">
