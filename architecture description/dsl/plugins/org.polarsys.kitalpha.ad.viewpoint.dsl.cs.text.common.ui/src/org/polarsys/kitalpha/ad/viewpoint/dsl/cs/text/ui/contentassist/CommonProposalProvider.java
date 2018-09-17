@@ -86,7 +86,7 @@ public class CommonProposalProvider extends AbstractCommonProposalProvider {
     
     protected void complete_iconPath(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor){
     	IProject project = ProjectUtil.getEclipseProjectOf(model);
-		List<IResource> resources = ProjectUtil.getFolderResources(project, "icons", IResource.FILE, false);
+		List<IResource> resources = ProjectUtil.getFolderResources(project, "icons", IResource.FILE, true);
 		IFolder iconFolder = ProjectUtil.getFolderInProject(project, "icons");
 		IPath iconRelativePath = iconFolder.getProjectRelativePath();
 		
