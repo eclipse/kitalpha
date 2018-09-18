@@ -23,11 +23,11 @@ import org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSample
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.impl.QualityMeasureImpl#getCriterion <em>Criterion</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.impl.QualityMeasureImpl#getMeasureValue <em>Measure Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

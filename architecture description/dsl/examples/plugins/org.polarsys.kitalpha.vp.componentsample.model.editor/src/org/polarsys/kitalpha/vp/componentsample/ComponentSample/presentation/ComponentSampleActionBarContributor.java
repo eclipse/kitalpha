@@ -452,7 +452,7 @@ public class ComponentSampleActionBarContributor extends EditingDomainActionBarC
 		super.setActiveEditor(part);
 		activeEditorPart = part;
 
-		if (!(part instanceof ComponentSampleEditor)) {
+		if (part instanceof ComponentSampleEditor == false) {
 			if (currentResourceEmdeViewerFilterActions != null) {
 				for (EmdeViewerFilterAction filterAction : currentResourceEmdeViewerFilterActions) {
 					filterAction.setEnabled(false);
@@ -519,7 +519,7 @@ public class ComponentSampleActionBarContributor extends EditingDomainActionBarC
 			resource = (Resource) selectedObject;
 		}
 		if (resource != null) {
-			if (!resource.equals(currentResource)) {
+			if (resource.equals(currentResource) == false) {
 				if (currentResource != null) {
 					if (extensionViewerFilterMenuManager != null) {
 						depopulateManager(extensionViewerFilterMenuManager, currentResourceEmdeViewerFilterActions);

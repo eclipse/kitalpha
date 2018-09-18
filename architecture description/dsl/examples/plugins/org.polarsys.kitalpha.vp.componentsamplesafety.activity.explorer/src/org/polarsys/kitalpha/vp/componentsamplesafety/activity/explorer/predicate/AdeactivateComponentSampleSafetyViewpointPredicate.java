@@ -22,7 +22,7 @@ import org.polarsys.kitalpha.vp.componentsamplesafety.activity.explorer.Constant
  * @generated NOT
  */
 public class AdeactivateComponentSampleSafetyViewpointPredicate implements IPredicate {
-		
+
 	/**
 	 * Default constructor
 	 * @generated NOT
@@ -37,7 +37,7 @@ public class AdeactivateComponentSampleSafetyViewpointPredicate implements IPred
 	 */
 	@Override
 	public boolean isOk() {
-		return ComponentSampleViewpointServices.SERVICE.isReferenced(Constants.ID) && 
-				!ComponentSampleViewpointServices.SERVICE.isInactive(Constants.ID);
+		return ComponentSampleViewpointServices.SERVICE.isReferenced(Constants.ID)
+				&& !ComponentSampleViewpointServices.SERVICE.isInactive(Constants.ID);
 	}
 }

@@ -10,6 +10,12 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.vp.componentsamplequalityassessment.design.service;
 
+import java.util.ArrayList;
+import java.util.List;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.sirius.diagram.DDiagram;
+import org.eclipse.sirius.diagram.DDiagramElement;
+
 // Generated on 22.09.2014 at 12:04:07 CEST by Viewpoint DSL Generator V 0.1
 
 /**
@@ -29,5 +35,6 @@ public class ComponentSampleQualityAssessmentOpenJavaService {
 	* @generated
 	*/
 	public ComponentSampleQualityAssessmentOpenJavaService() {
+		// TODO Auto-generated method stub
 	}
 }

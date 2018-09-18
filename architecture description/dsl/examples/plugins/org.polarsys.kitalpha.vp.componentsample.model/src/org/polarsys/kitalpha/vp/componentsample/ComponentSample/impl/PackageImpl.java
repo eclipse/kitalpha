@@ -17,8 +17,6 @@ import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSampleP
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Package</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

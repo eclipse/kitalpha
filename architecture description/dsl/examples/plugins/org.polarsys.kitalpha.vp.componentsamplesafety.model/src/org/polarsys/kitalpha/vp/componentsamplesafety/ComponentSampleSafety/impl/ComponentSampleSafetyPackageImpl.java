@@ -107,6 +107,7 @@ public class ComponentSampleSafetyPackageImpl extends EPackageImpl implements Co
 		isInited = true;
 
 		// Initialize simple dependencies
+		EmdePackage.eINSTANCE.eClass();
 		ComponentSamplePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects

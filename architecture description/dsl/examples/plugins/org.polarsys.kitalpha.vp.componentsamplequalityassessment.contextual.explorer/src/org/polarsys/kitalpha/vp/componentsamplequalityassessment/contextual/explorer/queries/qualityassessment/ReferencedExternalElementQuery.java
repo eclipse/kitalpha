@@ -30,11 +30,11 @@ import org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSample
 public class ReferencedExternalElementQuery implements IQuery {
 
 	/**
-	   * <!-- begin-user-doc -->
+	* <!-- begin-user-doc -->
 	   * <!-- end-user-doc -->
-	   * Default constructor
-	   * @generated
-	   */
+	* Default constructor
+	* @generated
+	*/
 	public ReferencedExternalElementQuery() {
 		// TODO Auto-generated constructor stub
 	}

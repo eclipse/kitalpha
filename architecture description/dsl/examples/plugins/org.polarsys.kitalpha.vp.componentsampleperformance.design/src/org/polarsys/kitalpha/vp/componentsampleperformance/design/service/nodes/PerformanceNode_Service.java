@@ -12,7 +12,11 @@
 
 package org.polarsys.kitalpha.vp.componentsampleperformance.design.service.nodes;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.sirius.diagram.DDiagram;
+import org.eclipse.sirius.diagram.DDiagramElement;
 import org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.Performance;
 
 /**

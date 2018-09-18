@@ -15,6 +15,7 @@ package org.polarsys.kitalpha.vp.componentsampleperformance.contextual.explorer.
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.amalgam.explorer.contextual.core.query.IQuery;
 import org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.Performance;
 

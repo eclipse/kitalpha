@@ -94,6 +94,7 @@ public class ComponentSamplePerformancePackageImpl extends EPackageImpl implemen
 		isInited = true;
 
 		// Initialize simple dependencies
+		EmdePackage.eINSTANCE.eClass();
 		ComponentSamplePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects

@@ -12,6 +12,8 @@
 
 package org.polarsys.kitalpha.vp.componentsamplesafetypattern.design.service.nodes;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
@@ -23,9 +25,6 @@ import org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.Safe
 import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.SafetyMode;
 
 /**
- * 
- * @author Faycal ABKA
- * 
  * <!-- begin-user-doc -->
  * This class is an implementation of the Sirius JavaExtension '<em><b>[org.polarsys.kitalpha.vp.componentsamplesafetypattern.design.service.nodes.SafetyMode_Service]</b></em>'.
  * <!-- end-user-doc -->
@@ -56,7 +55,7 @@ public class SafetyMode_Service {
 				for (Safety c : involvedComponents) {
 					HardwareComponent eContainer = (HardwareComponent) c.eContainer();
 					String name = eContainer.getName();
-					if (name != null && !name.isEmpty()){
+					if (name != null && !name.isEmpty()) {
 						sb.append(name);
 					} else {
 						sb.append("Empty Name"); //$NON-NLS-1$

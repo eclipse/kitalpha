@@ -99,11 +99,13 @@ public class ComponentSampleQualityAssessmentPackageImpl extends EPackageImpl
 		// Obtain or create and register package
 		ComponentSampleQualityAssessmentPackageImpl theComponentSampleQualityAssessmentPackage = (ComponentSampleQualityAssessmentPackageImpl) (EPackage.Registry.INSTANCE
 				.get(eNS_URI) instanceof ComponentSampleQualityAssessmentPackageImpl
-						? EPackage.Registry.INSTANCE.get(eNS_URI) : new ComponentSampleQualityAssessmentPackageImpl());
+						? EPackage.Registry.INSTANCE.get(eNS_URI)
+						: new ComponentSampleQualityAssessmentPackageImpl());
 
 		isInited = true;
 
 		// Initialize simple dependencies
+		EmdePackage.eINSTANCE.eClass();
 		ComponentSamplePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects

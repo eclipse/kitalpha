@@ -23,10 +23,10 @@ import org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerfor
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.impl.PerformanceStatusImpl#isOverhead <em>Overhead</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

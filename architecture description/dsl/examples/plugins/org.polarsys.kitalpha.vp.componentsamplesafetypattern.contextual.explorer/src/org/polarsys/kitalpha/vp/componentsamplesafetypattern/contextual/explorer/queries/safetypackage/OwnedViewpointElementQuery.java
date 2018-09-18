@@ -30,11 +30,11 @@ import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafe
 public class OwnedViewpointElementQuery implements IQuery {
 
 	/**
-	   * <!-- begin-user-doc -->
+	* <!-- begin-user-doc -->
 	   * <!-- end-user-doc -->
-	   * Default constructor
-	   * @generated
-	   */
+	* Default constructor
+	* @generated
+	*/
 	public OwnedViewpointElementQuery() {
 		// TODO Auto-generated constructor stub
 	}

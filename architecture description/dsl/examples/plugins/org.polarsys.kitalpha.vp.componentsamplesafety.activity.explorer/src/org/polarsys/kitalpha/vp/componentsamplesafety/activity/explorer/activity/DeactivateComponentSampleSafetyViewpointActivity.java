@@ -15,7 +15,10 @@ package org.polarsys.kitalpha.vp.componentsamplesafety.activity.explorer.activit
 import org.eclipse.amalgam.explorer.activity.ui.api.hyperlinkadapter.AbstractHyperlinkAdapter;
 import org.eclipse.amalgam.explorer.activity.ui.api.manager.ActivityExplorerManager;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.sirius.business.api.session.Session;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.forms.events.HyperlinkEvent;
 import org.polarsys.kitalpha.vp.componentsample.activity.explorer.services.ComponentSampleViewpointServices;
 import org.polarsys.kitalpha.vp.componentsamplesafety.activity.explorer.Constants;
@@ -26,7 +29,7 @@ import org.polarsys.kitalpha.vp.componentsamplesafety.activity.explorer.Constant
  *
  */
 public class DeactivateComponentSampleSafetyViewpointActivity extends AbstractHyperlinkAdapter {
-		
+
 	/**
 	 * Default constructor
 	 */

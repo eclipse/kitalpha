@@ -1,14 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-Copyright (c) 2014, 2016 Thales Global Services S.A.S.
-  All rights reserved. This program and the accompanying materials
-  are made available under the terms of the Eclipse Public License v1.0
-  which accompanies this distribution, and is available at
-  http://www.eclipse.org/legal/epl-v10.html
- 
- Contributors:
-  Thales Global Services S.A.S - initial API and implementation
--->
 <?eclipse version="3.4"?>
 <plugin>
 	<extension
@@ -35,6 +25,41 @@ Copyright (c) 2014, 2016 Thales Global Services S.A.S.
 	 	<excludeSources
 	    	id="org.polarsys.kitalpha.vp.componentsamplesafetypattern.view">
 	 	</excludeSources>
+	</extension>
+	<extension
+		point="org.polarsys.kitalpha.ad.viewpoint.javarules">
+		<JavaRule
+			name="ComponentSample.RuleTwo"
+			class="org.polarsys.kitalpha.vp.componentsample.af.businessrules.RuleTwo">
+		</JavaRule>
+	</extension>
+	<extension
+		point="org.polarsys.kitalpha.ad.viewpoint.javarules">
+		<JavaRule
+			name="ComponentSampleFramework.RuleOne"
+			class="org.polarsys.kitalpha.vp.componentsampleframework.af.businessrules.RuleOne">
+		</JavaRule>
+	</extension>
+	<extension
+		point="org.polarsys.kitalpha.ad.viewpoint.javarules">
+		<JavaRule
+			name="ComponentSample.RuleThree"
+			class="org.polarsys.kitalpha.vp.componentsample.af.businessrules.RuleThree">
+		</JavaRule>
+	</extension>
+	<extension
+		point="org.polarsys.kitalpha.ad.viewpoint.javarules">
+		<JavaRule
+			name="ComponentSample.RuleOne"
+			class="org.polarsys.kitalpha.vp.componentsample.af.businessrules.RuleOne">
+		</JavaRule>
+	</extension>
+	<extension
+		point="org.polarsys.kitalpha.ad.viewpoint.javarules">
+		<JavaRule
+			name="ComponentSampleFramework.RuleTwo"
+			class="org.polarsys.kitalpha.vp.componentsampleframework.af.businessrules.RuleTwo">
+		</JavaRule>
 	</extension>
 </plugin>
 
