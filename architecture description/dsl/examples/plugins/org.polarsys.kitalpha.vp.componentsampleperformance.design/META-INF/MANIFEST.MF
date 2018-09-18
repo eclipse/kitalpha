@@ -10,6 +10,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.sirius.common.acceleo.mtl,
  org.eclipse.emf.ecore,
  org.eclipse.sirius.diagram,
- org.polarsys.kitalpha.vp.componentsampleperformance.model
+ org.polarsys.kitalpha.vp.componentsampleperformance.model,
+ org.eclipse.sirius.common.acceleo.aql
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

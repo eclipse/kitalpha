@@ -37,7 +37,7 @@ public class AReferenceComponentSampleSafetyViewpointPredicate implements IPredi
 	 */
 	@Override
 	public boolean isOk() {
-		return !ComponentSampleViewpointServices.SERVICE.isInactive(Constants.ID) && 
-				!ComponentSampleViewpointServices.SERVICE.isReferenced(Constants.ID);
+		return !ComponentSampleViewpointServices.SERVICE.isInactive(Constants.ID)
+				&& !ComponentSampleViewpointServices.SERVICE.isReferenced(Constants.ID);
 	}
 }

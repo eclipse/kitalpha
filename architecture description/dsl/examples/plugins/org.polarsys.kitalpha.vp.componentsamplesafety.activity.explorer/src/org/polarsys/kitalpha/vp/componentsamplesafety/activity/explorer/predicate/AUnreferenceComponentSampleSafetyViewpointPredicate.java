@@ -37,7 +37,7 @@ public class AUnreferenceComponentSampleSafetyViewpointPredicate implements IPre
 	 */
 	@Override
 	public boolean isOk() {
-		return ComponentSampleViewpointServices.SERVICE.isReferenced(Constants.ID) || 
-				ComponentSampleViewpointServices.SERVICE.isInactive(Constants.ID);
+		return ComponentSampleViewpointServices.SERVICE.isReferenced(Constants.ID)
+				|| ComponentSampleViewpointServices.SERVICE.isInactive(Constants.ID);
 	}
 }

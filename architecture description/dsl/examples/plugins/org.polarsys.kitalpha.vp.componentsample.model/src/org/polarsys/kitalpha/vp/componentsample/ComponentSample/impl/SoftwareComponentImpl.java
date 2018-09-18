@@ -18,8 +18,6 @@ import org.polarsys.kitalpha.vp.componentsample.ComponentSample.SoftwareComponen
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Software Component</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

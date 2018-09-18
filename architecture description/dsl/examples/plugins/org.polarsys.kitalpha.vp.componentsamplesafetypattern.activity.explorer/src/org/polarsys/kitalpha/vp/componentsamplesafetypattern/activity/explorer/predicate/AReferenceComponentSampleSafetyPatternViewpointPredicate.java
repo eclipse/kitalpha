@@ -22,7 +22,6 @@ import org.polarsys.kitalpha.vp.componentsamplesafetypattern.activity.explorer.C
  */
 public class AReferenceComponentSampleSafetyPatternViewpointPredicate implements IPredicate {
 
-
 	/**
 	 * Default constructor
 	 * @generated NOT

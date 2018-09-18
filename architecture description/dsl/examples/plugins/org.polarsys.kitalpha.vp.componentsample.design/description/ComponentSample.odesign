@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:filter="http://www.eclipse.org/sirius/diagram/description/filter/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="ComponentSample" version="11.1.1.201610211630">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="ComponentSample" version="12.0.0.2017041100">
   <ownedViewpoints name="ComponentSample_ID" label="ComponentSample" modelFileExtension="componentsample">
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ComponentSampleDiagram" label="ComponentSampleDiagram" domainClass="ComponentSample.ComponentModel" defaultConcern="//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@concerns/@ownedConcernDescriptions.0">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ComponentSampleDiagram" label="ComponentSampleDiagram" domainClass="ComponentSample.ComponentModel">
       <metamodel href="../../org.polarsys.kitalpha.vp.componentsample/models/ComponentSample.ecore#/"/>
-      <filters xsi:type="filter:CompositeFilterDescription" name="myFilter"/>
-      <concerns>
-        <ownedConcernDescriptions name="myconcern" filters="//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@filters[name='myFilter']"/>
-      </concerns>
-      <defaultLayer name="Component Sample" icon="/org.polarsys.kitalpha.vp.componentsample.design/icons/model-icon.png">
+      <defaultLayer name="Component Sample">
         <edgeMappings name="UseComponentToComponentEdge_EM" label="UseComponentToComponentEdge" deletionDescription="//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='UseComponentToComponentEdgeDelete_ID']" sourceMapping="//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM'] //@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subContainerMappings[name='InnerHardwareComponentContainer_CM'] //@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subNodeMappings[name='SoftwareComponentNode_NM']" targetMapping="//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM'] //@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subContainerMappings[name='InnerHardwareComponentContainer_CM'] //@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subNodeMappings[name='SoftwareComponentNode_NM']" targetFinderExpression="feature:use" sourceFinderExpression="" domainClass="" reconnections="//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='UseComponentToComponentReconnectEdge_Source'] //@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='UseComponentToComponentReconnectEdge_Target']">
           <style sizeComputationExpression="0">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -16,22 +12,32 @@
         <containerMappings name="ComponentPackageContainer_CM" label="ComponentPackageContainer" semanticCandidatesExpression="feature:packages" domainClass="ComponentSample.ComponentPackage" dropDescriptions="//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Drop_HardwareComponentContainer']">
           <subContainerMappings name="HardwareComponentContainer_CM" label="HardwareComponentContainer" semanticCandidatesExpression="feature:components" domainClass="ComponentSample.HardwareComponent" dropDescriptions="//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Drop_InnerHardwareComponentContainer'] //@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Drop_SoftwareComponentNode']">
             <subNodeMappings name="SoftwareComponentNode_NM" label="SoftwareComponentNode" semanticCandidatesExpression="feature:abstractComponent" domainClass="ComponentSample.SoftwareComponent">
-              <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" borderColor="//@userColorsPalettes[name='Component%20Sample%20Colors']/@entries[name='BorderColor']" labelPosition="node" resizeKind="NSEW">
+              <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
               </style>
             </subNodeMappings>
             <subContainerMappings name="InnerHardwareComponentContainer_CM" label="InnerHardwareComponentContainer" semanticCandidatesExpression="feature:abstractComponent" domainClass="ComponentSample.HardwareComponent" dropDescriptions="//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Drop_InnerHardwareComponentContainer']" reusedNodeMappings="//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subNodeMappings[name='SoftwareComponentNode_NM']" reusedContainerMappings="//@ownedViewpoints[name='ComponentSample_ID']/@ownedRepresentations[name='ComponentSampleDiagram']/@defaultLayer/@containerMappings[name='ComponentPackageContainer_CM']/@subContainerMappings[name='HardwareComponentContainer_CM']/@subContainerMappings[name='InnerHardwareComponentContainer_CM']">
-              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" borderColor="//@userColorsPalettes[name='Component%20Sample%20Colors']/@entries[name='BorderColor']" backgroundColor="//@userColorsPalettes[name='Component%20Sample%20Colors']/@entries[name='InnerHardwareColor']" foregroundColor="//@userColorsPalettes[name='Component%20Sample%20Colors']/@entries[name='InnerHardwareColor']">
+              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
               </style>
             </subContainerMappings>
-            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" borderColor="//@userColorsPalettes[name='Component%20Sample%20Colors']/@entries[name='BorderColor']" backgroundColor="//@userColorsPalettes[name='Component%20Sample%20Colors']/@entries[name='HardwareColor']" foregroundColor="//@userColorsPalettes[name='Component%20Sample%20Colors']/@entries[name='HardwareColor']">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_orange']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_orange']"/>
             </style>
           </subContainerMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" borderColor="//@userColorsPalettes[name='Component%20Sample%20Colors']/@entries[name='BorderColor']" backgroundColor="//@userColorsPalettes[name='Component%20Sample%20Colors']/@entries[name='PackageColor']" foregroundColor="//@userColorsPalettes[name='Component%20Sample%20Colors']/@entries[name='PackageColor']">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
           </style>
         </containerMappings>
         <toolSections name="ComponentSample" label="ComponentSample">
@@ -130,7 +136,7 @@
             <containerView name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
-                <subModelOperations xsi:type="tool_1:Unset" featureName="use" elementExpression="[elementView.targetNode.oclAsType(viewpoint::DSemanticDecorator).target/]"/>
+                <subModelOperations xsi:type="tool_1:Unset" featureName="use" elementExpression="aql:elementView.targetNode.target"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -142,9 +148,9 @@
             <element name="element"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
-                <subModelOperations xsi:type="tool_1:Unset" featureName="use" elementExpression="[edgeView.targetNode.oclAsType(viewpoint::DSemanticDecorator).target/]"/>
+                <subModelOperations xsi:type="tool_1:Unset" featureName="use" elementExpression="aql:edgeView.targetNode.target"/>
                 <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:target">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="use" valueExpression="[edgeView.targetNode.oclAsType(viewpoint::DSemanticDecorator).target/]"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="use" valueExpression="aql:edgeView.targetNode.target"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -169,7 +175,7 @@
             <elementView name="elementView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
-                <subModelOperations xsi:type="tool_1:If" conditionExpression="service:GoAction(element)"/>
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="service:GoAction(elementView)"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>

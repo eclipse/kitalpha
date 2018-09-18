@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.polarsys.kitalpha.emde.model.EmdePackage;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSamplePackage;
 import org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.ComponentSampleSafetyPackage;
 import org.polarsys.kitalpha.vp.componentsamplesafetypattern.ComponentSampleSafetyPattern.ComponentSampleSafetyPatternFactory;
@@ -99,12 +100,15 @@ public class ComponentSampleSafetyPatternPackageImpl extends EPackageImpl
 		// Obtain or create and register package
 		ComponentSampleSafetyPatternPackageImpl theComponentSampleSafetyPatternPackage = (ComponentSampleSafetyPatternPackageImpl) (EPackage.Registry.INSTANCE
 				.get(eNS_URI) instanceof ComponentSampleSafetyPatternPackageImpl
-						? EPackage.Registry.INSTANCE.get(eNS_URI) : new ComponentSampleSafetyPatternPackageImpl());
+						? EPackage.Registry.INSTANCE.get(eNS_URI)
+						: new ComponentSampleSafetyPatternPackageImpl());
 
 		isInited = true;
 
 		// Initialize simple dependencies
+		EmdePackage.eINSTANCE.eClass();
 		ComponentSampleSafetyPackage.eINSTANCE.eClass();
+		ComponentSamplePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theComponentSampleSafetyPatternPackage.createPackageContents();

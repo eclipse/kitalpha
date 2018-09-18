@@ -23,11 +23,11 @@ import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSampleP
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.vp.componentsample.ComponentSample.impl.ComponentElementImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.vp.componentsample.ComponentSample.impl.ComponentElementImpl#getDescription <em>Description</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

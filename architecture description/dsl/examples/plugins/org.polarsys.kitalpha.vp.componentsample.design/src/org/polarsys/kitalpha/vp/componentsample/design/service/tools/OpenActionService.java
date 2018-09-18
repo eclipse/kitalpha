@@ -12,7 +12,11 @@
 
 package org.polarsys.kitalpha.vp.componentsample.design.service.tools;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.sirius.diagram.DDiagram;
+import org.eclipse.sirius.diagram.DDiagramElement;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.widgets.Display;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentElement;

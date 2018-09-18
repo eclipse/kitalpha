@@ -22,21 +22,21 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.QualityAssessment;
 
 /**
-* <!-- begin-user-doc -->
+ * <!-- begin-user-doc -->
 * <!-- end-user-doc -->
-* <p>
-* </p>
-*
-* @generated
-*/
+ * <p>
+ * </p>
+ *
+ * @generated
+ */
 public class ReferencingViewpointElementQuery implements IQuery {
 
 	/**
-	   * <!-- begin-user-doc -->
+	* <!-- begin-user-doc -->
 	   * <!-- end-user-doc -->
-	   * Default constructor
-	   * @generated
-	   */
+	* Default constructor
+	* @generated
+	*/
 	public ReferencingViewpointElementQuery() {
 		// TODO Auto-generated constructor stub
 	}

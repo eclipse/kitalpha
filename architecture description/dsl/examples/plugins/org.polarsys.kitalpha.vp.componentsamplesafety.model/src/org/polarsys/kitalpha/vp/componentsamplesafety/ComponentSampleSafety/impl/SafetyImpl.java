@@ -26,12 +26,12 @@ import org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.Safe
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.impl.SafetyImpl#getCriticality <em>Criticality</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.impl.SafetyImpl#getDal <em>Dal</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.impl.SafetyImpl#getState <em>State</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

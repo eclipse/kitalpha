@@ -1,32 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-Copyright (c) 2014, 2016 Thales Global Services S.A.S.
-  All rights reserved. This program and the accompanying materials
-  are made available under the terms of the Eclipse Public License v1.0
-  which accompanies this distribution, and is available at
-  http://www.eclipse.org/legal/epl-v10.html
- 
- Contributors:
-  Thales Global Services S.A.S - initial API and implementation
--->
 <?eclipse version="3.0"?>
 
-<!--
-Copyright (c) 2014, 2016 Thales Global Services S.A.S.
- All rights reserved. This program and the accompanying materials
- are made available under the terms of the Eclipse Public License v1.0
- which accompanies this distribution, and is available at
- http://www.eclipse.org/legal/epl-v10.html
 
-Contributors:
- Thales Global Services S.A.S - initial API and implementation
--->
 
 <plugin>
 
    
 <!--@generated-->
   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated ComponentSample -->
       <wizard category="org.polarsys.kitalpha.wizard.category/org.polarsys.kitalpha.mdeCoreTechnology.wizard.category" class="org.polarsys.kitalpha.vp.componentsample.ComponentSample.presentation.ComponentSampleModelWizard" icon="icons/full/obj16/ComponentSampleModelFile.gif" id="org.polarsys.kitalpha.vp.componentsample.ComponentSample.presentation.ComponentSampleModelWizardID" name="%_UI_ComponentSampleModelWizard_label">
          <description>%_UI_ComponentSampleModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
@@ -36,6 +18,7 @@ Contributors:
    
 <!--@generated-->
   <extension point="org.eclipse.ui.editors">
+      <!-- @generated ComponentSample -->
       <editor class="org.polarsys.kitalpha.vp.componentsample.ComponentSample.presentation.ComponentSampleEditor" contributorClass="org.polarsys.kitalpha.vp.componentsample.ComponentSample.presentation.ComponentSampleActionBarContributor" extensions="componentsample" icon="icons/full/obj16/ComponentSampleModelFile.gif" id="org.polarsys.kitalpha.vp.componentsample.ComponentSample.presentation.ComponentSampleEditorID" name="%_UI_ComponentSampleEditor_label">
       </editor>
    </extension>

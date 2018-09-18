@@ -27,10 +27,10 @@ import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSampleP
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.vp.componentsample.ComponentSample.impl.ComponentModelImpl#getPackages <em>Packages</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

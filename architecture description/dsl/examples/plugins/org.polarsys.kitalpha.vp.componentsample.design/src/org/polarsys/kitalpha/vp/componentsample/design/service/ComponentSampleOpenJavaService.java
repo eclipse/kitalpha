@@ -10,7 +10,11 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.vp.componentsample.design.service;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.sirius.diagram.DDiagram;
+import org.eclipse.sirius.diagram.DDiagramElement;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentPackage;
 // Generated on 22.09.2014 at 03:53:03 CEST by Viewpoint DSL Generator V 0.1
 

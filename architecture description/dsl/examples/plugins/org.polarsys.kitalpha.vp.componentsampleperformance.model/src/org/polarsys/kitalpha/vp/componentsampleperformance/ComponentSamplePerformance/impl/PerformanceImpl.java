@@ -26,12 +26,12 @@ import org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerfor
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.impl.PerformanceImpl#getStatus <em>Status</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.impl.PerformanceImpl#getComplexity <em>Complexity</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.vp.componentsampleperformance.ComponentSamplePerformance.impl.PerformanceImpl#getCost <em>Cost</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

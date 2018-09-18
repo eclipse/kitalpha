@@ -28,10 +28,10 @@ import org.polarsys.kitalpha.vp.componentsample.ComponentSample.HardwareComponen
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.vp.componentsample.ComponentSample.impl.HardwareComponentImpl#getAbstractComponent <em>Abstract Component</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

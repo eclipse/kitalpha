@@ -34,6 +34,7 @@ import org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSample
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.impl.QualityAssessmentImpl#getBasedOn <em>Based On</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.impl.QualityAssessmentImpl#getContext <em>Context</em>}</li>
@@ -42,7 +43,6 @@ import org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSample
  *   <li>{@link org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.impl.QualityAssessmentImpl#getConfidenceLevel <em>Confidence Level</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.vp.componentsamplequalityassessment.ComponentSampleQualityAssessment.impl.QualityAssessmentImpl#isAssessed <em>Assessed</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
