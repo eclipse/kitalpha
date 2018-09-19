@@ -11,7 +11,7 @@
 -->
 <feature
       id="org.polarsys.kitalpha.representation.egf.feature"
-      label="EGF diagrams generation EGF"
+      label="%description"
       version="1.3.0.qualifier"
       provider-name="%providerName">
 
