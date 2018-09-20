@@ -11,7 +11,7 @@
 -->
 <feature
       id="org.polarsys.kitalpha.representation.feature"
-      label="Sirius Diagrams and Tables generation"
+      label="%description"
       version="1.3.0.qualifier"
       provider-name="%providerName">
 
