@@ -16,7 +16,7 @@ Entry-Name: .content
 
 get-view "Project Explorer" | get-tree | select "A/A.componentsample" | double-click
 with [get-view "Viewpoint Manager" | get-table] {
-    get-item "Component Sample Safety" | get-property "values['Version']" | equals "1.1.0.qualifier" | verify-true
+    get-item "Component Sample Safety" | get-property "values['Version']" | equals "1.3.0.qualifier" | verify-true
     get-item "Component Sample Safety" | get-property "values['Name']" | equals "Component Sample Safety" | verify-true
     get-item "Component Sample Safety" | get-property "values['State']" | equals Active | verify-true
 }

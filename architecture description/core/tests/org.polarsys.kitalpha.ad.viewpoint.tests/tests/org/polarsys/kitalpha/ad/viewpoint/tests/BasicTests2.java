@@ -137,14 +137,14 @@ public class BasicTests2 extends TestCase {
 		org.polarsys.kitalpha.resourcereuse.model.Resource resource = ResourceReuse.createHelper().getResource("org.polarsys.kitalpha.vp.componentsampleperformance");
 		Version version = ViewpointManager.readVersion(resource);
 		assertNotNull(version);
-		assertEquals("1.1.0.qualifier", version.toString());
+		assertEquals("1.3.0.qualifier", version.toString());
 	}
 	
 	public void testManager12() throws Exception {
 		org.polarsys.kitalpha.resourcereuse.model.Resource resource = ResourceReuse.createHelper().getResource("org.polarsys.kitalpha.vp.componentsamplequalityassessment");
 		Version version = ViewpointManager.readVersion(resource);
 		assertNotNull(version);
-		assertEquals("1.1.0.qualifier", version.toString());
+		assertEquals("1.3.0.qualifier", version.toString());
 	}
 
 	public void testManager13() throws Exception {
@@ -236,12 +236,12 @@ public class BasicTests2 extends TestCase {
 		assertTrue(result.isOK());
 
 		// versions match exactly
-		MetadataHelper.getViewpointMetadata(set).updateVersion(viewpoint, new Version(1, 1, 0, null));
+		MetadataHelper.getViewpointMetadata(set).updateVersion(viewpoint, new Version(1, 3, 0, null));
 		result = ViewpointManager.checkViewpointsCompliancy(set);
 		assertTrue(result.isOK());
 
 		// versions match since major & minor are equals
-		MetadataHelper.getViewpointMetadata(set).updateVersion(viewpoint, new Version(1, 1, 0, null));
+		MetadataHelper.getViewpointMetadata(set).updateVersion(viewpoint, new Version(1, 3, 0, null));
 		result = ViewpointManager.checkViewpointsCompliancy(set);
 		assertTrue(result.isOK());
 
@@ -262,7 +262,7 @@ public class BasicTests2 extends TestCase {
 		assertTrue(result.isOK());
 
 		// versions match exactly
-		MetadataHelper.getViewpointMetadata(set).updateVersion(viewpoint, new Version(1, 1, 0, null));
+		MetadataHelper.getViewpointMetadata(set).updateVersion(viewpoint, new Version(1, 3, 0, null));
 		result = ViewpointManager.checkViewpointsCompliancy(set);
 		assertTrue(result.isOK());
 	}

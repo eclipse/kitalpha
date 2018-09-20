@@ -56,4 +56,21 @@
 		</Section>
 	</Page>
 </extension>
+<extension
+      point="org.eclipse.amalgam.explorer.activity.ui.pagesProvider">
+   <Page
+         class="org.polarsys.kitalpha.vp.componentsample.activity.explorer.page.DocumentationPagePage"
+         id="org.polarsys.kitalpha.vp.componentsample.documentation"
+         index="3"
+         tabName="Documentation"
+         title="Documentation"
+         viewer="false">
+      <Description>
+         
+      </Description>
+      <Predicate
+            class="org.polarsys.kitalpha.vp.componentsample.activity.explorer.predicate.PDocumentationPagePredicate">
+      </Predicate>
+   </Page>
+</extension>
 </plugin>

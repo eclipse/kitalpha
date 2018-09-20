@@ -6,8 +6,8 @@ Element-Type: testcase
 Element-Version: 3.0
 External-Reference: 
 Id: _tBw0gI8DEeaRJJ4zjpMAgQ
-Runtime-Version: 2.1.0.201606221726
-Save-Time: 3/6/17 4:30 PM
+Runtime-Version: 2.2.0.201706152316
+Save-Time: 9/21/18 5:58 PM
 Testcase-Type: ecl
 
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
@@ -26,6 +26,15 @@ with [get-window "New Component sample Project"] {
 }
 with [get-view "Project Explorer" | get-tree] {
     select "example/example.aird" | get-menu "Open Activity Explorer" | click
+}
+get-preferences-menu | click
+with [get-window Preferences] {
+    get-tree | select "Activity Explorer/Management"
+    with [get-tree -after [get-label "Select element:"]] {
+        select "Component Sample Architecture"
+        get-item "Component Sample Architecture" | check
+    }
+    get-button "Apply and Close" | click
 }
 get-tab-folder -index 2 | get-property activePage | equals example | verify-true
 with [get-editor example] {
