@@ -83,7 +83,7 @@ public class ModelReuseURIConverter extends ExtensibleURIConverterImpl {
 			throw new IllegalStateException("The uri '"+uri.toString()+"' does not matche any resource");
 		}
 		if (resources.length > 1) {
-			logger.error(new Status(IStatus.WARNING, Activator.PLUGIN_ID, "The uri '"+uri.toString()+"' matches several resources, using the first one."));
+			logger.warn(new Status(IStatus.WARNING, Activator.PLUGIN_ID, "The uri '"+uri.toString()+"' matches several resources, using the first one."));
 		}
 		
 		Resource resource = resources[0];
