@@ -83,14 +83,19 @@ public class ModelReuseURIConverter extends ExtensibleURIConverterImpl {
 			throw new IllegalStateException("The uri '"+uri.toString()+"' does not matche any resource");
 		}
 		if (resources.length > 1) {
-			logger.error(new Status(IStatus.WARNING, Activator.PLUGIN_ID, "The uri '"+uri.toString()+"' matches several resources, using the first one."));
+			logger.warn(new Status(IStatus.WARNING, Activator.PLUGIN_ID, "The uri '"+uri.toString()+"' matches several resources, using the first one."));
 		}
 		
 		Resource resource = resources[0];
 		Location location = resource.getProviderLocation();
 		
 		boolean useMetadata = useMetadata(uri);
+		if (useMetadata && resource.getMetadataPath() == null)
+			throw new IllegalStateException("Warning. The resource has no metadata");
+		
 		String pathString = useMetadata ? resource.getMetadataPath() : resource.getPath();
+		if (pathString == null)
+			throw new IllegalStateException("The resource has no path");
 		
 		switch (location) {
 
