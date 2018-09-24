@@ -90,7 +90,12 @@ public class ModelReuseURIConverter extends ExtensibleURIConverterImpl {
 		Location location = resource.getProviderLocation();
 		
 		boolean useMetadata = useMetadata(uri);
+		if (useMetadata && resource.getMetadataPath() == null)
+			throw new IllegalStateException("Warning. The resource has no metadata");
+		
 		String pathString = useMetadata ? resource.getMetadataPath() : resource.getPath();
+		if (pathString == null)
+			throw new IllegalStateException("The resource has no path");
 		
 		switch (location) {
 
