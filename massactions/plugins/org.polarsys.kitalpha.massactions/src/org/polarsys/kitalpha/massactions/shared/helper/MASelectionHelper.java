@@ -28,11 +28,7 @@ import org.eclipse.jface.viewers.IStructuredSelection;
  *
  */
 public class MASelectionHelper {
-
-  private MASelectionHelper() {
-    // Exists only to defeat instantiation.
-  }
-
+  
   /**
    * Extracts all of the valid {@link EObject} elements from the current selection.
    * 
@@ -40,7 +36,7 @@ public class MASelectionHelper {
    *          the current selection.
    * @return a list of valid {@link EObject} elements.
    */
-  public static List<EObject> getElementsFromSelection(ISelection selection) {
+  public Collection<EObject> getElementsFromSelection(ISelection selection) {
 
     if (selection.isEmpty() || !(selection instanceof IStructuredSelection)) {
       return Collections.emptyList();
@@ -53,7 +49,7 @@ public class MASelectionHelper {
 
   }
 
-  public static boolean isEditingDomainEqual(Collection<EObject> elements,
+  public boolean isEditingDomainEqual(Collection<EObject> elements,
       TransactionalEditingDomain existingEditingDomain) {
 
     for (EObject element : elements) {
@@ -74,16 +70,16 @@ public class MASelectionHelper {
    *          analyzed elements.
    * @return the editing domain if it is shared by all the elements and null otherwise.
    */
-  public static TransactionalEditingDomain getEditingDomainForFirstElement(List<EObject> elements) {
+  public TransactionalEditingDomain getEditingDomainForFirstElement(Collection<EObject> elements) {
 
     if (elements.isEmpty()) {
       return null;
     }
 
-    return TransactionUtil.getEditingDomain(elements.get(0));
+    return TransactionUtil.getEditingDomain(elements.iterator().next());
   }
 
-  public static boolean selectionSharesSameEditingDomain(List<EObject> elements) {
+  public boolean selectionSharesSameEditingDomain(Collection<EObject> elements) {
     TransactionalEditingDomain defaultEditingDomain = null;
 
     for (EObject element : elements) {

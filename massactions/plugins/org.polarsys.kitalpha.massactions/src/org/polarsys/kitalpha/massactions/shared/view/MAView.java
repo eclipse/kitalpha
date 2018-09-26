@@ -76,6 +76,8 @@ public abstract class MAView extends ViewPart implements IMAComponent {
   protected IMATable table;
 
   protected Composite parent;
+  
+  protected MASelectionHelper selectionHelper;
 
   protected Action clearViewAction;
   protected Action newViewAction;
@@ -129,6 +131,17 @@ public abstract class MAView extends ViewPart implements IMAComponent {
       configureContextMenus();
     }
   }
+  
+  public MASelectionHelper getSelectionHelper() {
+    if(selectionHelper == null) {
+      selectionHelper = createSelectionHelper();
+    }
+    return selectionHelper;
+  }
+  
+  protected MASelectionHelper createSelectionHelper() {
+    return new MASelectionHelper();    
+  }
 
   protected void configureDropAction() {
 
@@ -143,14 +156,14 @@ public abstract class MAView extends ViewPart implements IMAComponent {
       public void drop(DropTargetEvent event) {
 
         ISelection selection = LocalSelectionTransfer.getTransfer().getSelection();
-        List<EObject> validSelectionData = MASelectionHelper.getElementsFromSelection(selection);
+        Collection<EObject> validSelectionData = getSelectionHelper().getElementsFromSelection(selection);
 
         if (editingDomain == null) {
-          boolean shareTheSameEditingDomain = MASelectionHelper.selectionSharesSameEditingDomain(validSelectionData);
+          boolean shareTheSameEditingDomain = getSelectionHelper().selectionSharesSameEditingDomain(validSelectionData);
 
           if (shareTheSameEditingDomain) {
             // initialize the editing domain for the current view
-            editingDomain = MASelectionHelper.getEditingDomainForFirstElement(validSelectionData);
+            editingDomain = getSelectionHelper().getEditingDomainForFirstElement(validSelectionData);
           } else {
             event.detail = DND.DROP_NONE;
             return;
@@ -158,7 +171,7 @@ public abstract class MAView extends ViewPart implements IMAComponent {
         }
 
         // check if the elements come from the same project as the current existing elements in the view
-        if (MASelectionHelper.isEditingDomainEqual(validSelectionData, editingDomain)) {
+        if (getSelectionHelper().isEditingDomainEqual(validSelectionData, editingDomain)) {
           dataChanged(validSelectionData);
         } else {
           event.detail = DND.DROP_NONE;
