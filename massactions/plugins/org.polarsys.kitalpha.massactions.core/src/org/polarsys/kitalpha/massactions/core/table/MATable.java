@@ -85,7 +85,7 @@ public abstract class MATable implements IMATable {
     tableBaseConfig = getMAFactory().createConfiguration(tableBase, configRegistry);
     tableBaseConfig.apply();
 
-    // apply the default filter
+    // Apply the default filter
     currentFilter = getColumnFilterList().get(0);
     applyColumnFilter(currentFilter);
   }
@@ -97,19 +97,14 @@ public abstract class MATable implements IMATable {
 
   @Override
   public void dataChanged(Collection<EObject> newData) {
-
-    if (newData == null) {
-      throw new IllegalArgumentException("Null data list");
-    }
-
-    if (newData.isEmpty()) {
-      throw new IllegalArgumentException("Empty data list");
-    }
-
-    if (!initialized) {
-      initialize(newData);
+    if (newData == null || newData.isEmpty()) {
+      log.error("Invalid data list: Null or empty");
     } else {
-      update(newData);
+      if (!initialized) {
+        initialize(newData);
+      } else {
+        update(newData);
+      }
     }
   }
 
