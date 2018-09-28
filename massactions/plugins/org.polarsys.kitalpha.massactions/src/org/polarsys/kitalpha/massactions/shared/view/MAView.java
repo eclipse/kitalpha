@@ -231,12 +231,12 @@ public abstract class MAView extends ViewPart implements IMAComponent {
             .getActivePartReference();
 
         String primaryViewId = workbenchRef.getId();
-        String viewName = workbenchRef.getPartName() + " " + getNewViewId();
-
+        String secondaryViewId = getSecondaryViewId();
+        
         try {
           MAView view = (MAView) PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage()
-              .showView(primaryViewId, viewName, IWorkbenchPage.VIEW_ACTIVATE);
-          view.setViewName(viewName);
+              .showView(primaryViewId, secondaryViewId, IWorkbenchPage.VIEW_ACTIVATE);
+          view.setViewName(getViewName(workbenchRef.getPartName(), secondaryViewId));
 
         } catch (PartInitException e) {
           log.error(e.getMessage());
@@ -288,12 +288,20 @@ public abstract class MAView extends ViewPart implements IMAComponent {
           selectionProvider);
     }
   }
+  
+  public static String getViewName(String baseName, String secondaryViewId) {
+    return baseName + " " + secondaryViewId;
+  }
 
-  protected String getNewViewId() {
+  /**
+   * Increment and return the id generator.
+   * @return
+   */
+  public static String getSecondaryViewId() {
     return String.valueOf(idGenerator.incrementAndGet());
   }
 
-  protected String getCurrentViewId() {
+  protected String getCurrentSecondaryViewId() {
     return String.valueOf(idGenerator.get());
   }
 

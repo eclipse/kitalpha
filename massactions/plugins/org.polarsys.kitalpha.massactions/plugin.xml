@@ -18,6 +18,7 @@
             allowMultiple="true"
             category="org.polarsys.kitalpha.view.category"
             class="org.polarsys.kitalpha.massactions.edit.MEView"
+            icon="icons/me_view.gif"
             id="org.polarsys.kitalpha.massactions.edit.view"
             name="Mass Editing"
             restorable="false">
@@ -26,6 +27,7 @@
             allowMultiple="true"
             category="org.polarsys.kitalpha.view.category"
             class="org.polarsys.kitalpha.massactions.visualize.MVView"
+            icon="icons/mv_view.gif"
             id="org.polarsys.kitalpha.massactions.visualize.view"
             name="Mass Visualizing"
             restorable="false">
