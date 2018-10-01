@@ -204,7 +204,7 @@ public class BackupAndSaveCommand extends ModelCommand {
 				IResource iResource = ResourcesPlugin.getWorkspace().getRoot().findMember(platformString);
 				if (iResource != null){
 					String iResourceName = iResource.getName();
-					IPath backupPath = new Path("/" + path + "/" + iResourceName); //$NON-NLS-1$
+					IPath backupPath = new Path("/" + path + "/" + iResourceName + ".old"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 					iResource.copy(backupPath, true, subMonitor);
 				}
 			}

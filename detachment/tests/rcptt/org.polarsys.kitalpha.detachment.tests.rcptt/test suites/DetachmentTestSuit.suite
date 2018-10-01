@@ -4,8 +4,8 @@ Element-Name: DetachmentTestSuit
 Element-Type: testsuite
 Element-Version: 2.0
 Id: _GNAGQHXcEea2Ve0UEUBuKQ
-Runtime-Version: 2.1.0.201606221726
-Save-Time: 4/17/18 1:32 PM
+Runtime-Version: 2.2.0.201706152316
+Save-Time: 10/1/18 11:54 AM
 
 ------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8
 Content-Type: text/testcase
@@ -33,5 +33,8 @@ _MfI_wHw1Eee2APpZQTlB7g	// kind: 'test' name: 'UnkownReferencesWithSiriusReferen
 _IYDRMN_jEeeSMpjLLwI5Jw	// kind: 'test' name: 'UnreferenceNotUsedViewpoint' path: '../test cases/UnreferenceNotUsedViewpoint.test'
 _52_XUN_pEeeSMpjLLwI5Jw	// kind: 'test' name: 'DetachReferencedNotUsedViewpoints' path: '../test cases/DetachReferencedNotUsedViewpoints.test'
 _nCrIAEImEeilqbp720uQ0Q	// kind: 'test' name: 'UnknownReferencesWithSiriusCustomColors' path: '../test cases/UnknownReferencesWithSiriusCustomColors.test'
+_88lF4IVUEeaAeqHNRvXNqw	// kind: 'test' name: 'Detachment_00020' path: '../test cases/Detachment_00020/Detachment_00020.test'
+_zRTtsBBtEeeIb6T5EKtzmg	// kind: 'test' name: 'Detachment_00026' path: '../test cases/Detachment_00026/Detachment_00026.test'
+_bnNuYMVZEeiKtJ96oKG8ig	// kind: 'test' name: 'SessionClosedViewpointBackupOldExtension' path: '../test cases/SessionClosedViewpointBackupOldExtension.test'
 
 ------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8--
