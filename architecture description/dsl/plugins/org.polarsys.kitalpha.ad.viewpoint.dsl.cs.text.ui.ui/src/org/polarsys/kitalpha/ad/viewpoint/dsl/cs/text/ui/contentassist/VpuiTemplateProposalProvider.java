@@ -11,8 +11,14 @@
 
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EDataType;
@@ -32,15 +38,18 @@ import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ITemplateAcceptor;
 import org.eclipse.xtext.ui.editor.templates.ContextTypeIdHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractAssociation;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractSuperClass;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Attribute;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Data;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Enumeration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.ExternalAttributeType;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.LocalAttributeType;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.LocalSuperClass;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.FileExtension;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.output.TreeAppendable;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.internal.VpuiActivator;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.vpspec.Viewpoint;
 
 import com.google.inject.Inject;
@@ -56,6 +65,17 @@ public class VpuiTemplateProposalProvider extends CommonTemplateProposalProvider
 	
 	@Inject
 	private IValueConverterService valueConverter;
+	
+	/*
+	 * Used to avoid conflicts with names which are equals
+	 */
+	private int counter = 1;
+	
+	/*
+	 * Contains already generated field names
+	 */
+	private final Set<String> namesTracker = new HashSet<>();
+	
 	
 	@Inject
 	public VpuiTemplateProposalProvider(TemplateStore templateStore, ContextTypeRegistry registry, ContextTypeIdHelper helper) {
@@ -81,6 +101,9 @@ public class VpuiTemplateProposalProvider extends CommonTemplateProposalProvider
 				acceptor.accept(proposal);
 			}
 		}
+		//reset name tracker and counter
+		namesTracker.clear();
+		counter = 1;
 	}
 	
 	
@@ -108,7 +131,9 @@ public class VpuiTemplateProposalProvider extends CommonTemplateProposalProvider
 						TreeAppendable appendable = new TreeAppendable(current, INDENTATION, LINE_SEPARATOR);				
 						EList<Class> vpClasses = data.getVP_Classes();
 						for(Class candidate : vpClasses) {
-							generateUIForCurrentClass(candidate, viewpoint, data.getName(), appendable);
+							if (!candidate.isAbstract()) {
+								generateUIForCurrentClass(candidate, viewpoint, data.getName(), appendable);
+							}
 						}
 						//update template content
 						template.setPattern(appendable.getContent());
@@ -123,12 +148,6 @@ public class VpuiTemplateProposalProvider extends CommonTemplateProposalProvider
 
 	private void generateUIForCurrentClass(Class containingClass, Viewpoint vp, String prefix,	TreeAppendable appendable) {
 		//escape keywords conflicts
-		String className = containingClass.getName(); 
-		try {
-			className = valueConverter.toString(className, "FQN");
-		} catch (ValueConverterException e) {
-			e.printStackTrace();
-		}		
 		appendable.append("UI ").append(vp.getShortName().replaceAll("\"", "")).append("_").append(containingClass.getName()).append(" {");
 		appendable.increaseIndentation().newLine();
 		appendable.append("label: \"").append(toLabel(vp.getShortName().replaceAll("\"", ""))).append("\"");
@@ -136,59 +155,74 @@ public class VpuiTemplateProposalProvider extends CommonTemplateProposalProvider
 		appendable.append("Container ").append(vp.getShortName().replaceAll("\"", "")).append("_").append(containingClass.getName()).append("_Section").append(" {");
 		appendable.increaseIndentation().newLine();
 		// Attributes group
-		if (!containingClass.getVP_Class_Attributes().isEmpty()) {
+		if (hasAttributes(containingClass)) {
 			appendable.append("Container ").append(vp.getShortName().replaceAll("\"", "")).append("_").append(containingClass.getName()).append("_").append("AttributeGroup").append(" {");
 			appendable.increaseIndentation().newLine();
-			appendable.append("label: \"").append(toLabel(containingClass.getName())).append(" Attributes").append("\"");			
+			appendable.append("label: \"").append(toLabel(containingClass.getName())).append(" Attributes").append("\"");
+			
 			//Attributes
-			for (org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Attribute attribute : containingClass.getVP_Class_Attributes()){
+			List<Attribute> allAttributes = collectAllAttributes(containingClass);
+			Collection<Attribute> processed = new HashSet<>();
+			for (org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Attribute attribute : allAttributes){
+				if (processed.contains(attribute)) {
+					continue;
+				}
+				
+				Class ownedClass = (Class)attribute.eContainer();
+				String className = getFQN(ownedClass.getName());
+				
 				EDataType type;
 				
 				if (attribute.getOwned_type() instanceof LocalAttributeType){
 					Enumeration enumeration = ((LocalAttributeType)attribute.getOwned_type()).getType();
+					
 					generateRadioBoxUIEnumeration(enumeration, attribute, className, prefix, appendable);
+					processed.add(attribute);
 					continue;
 				}
 				
 				if (attribute.getOwned_type() instanceof ExternalAttributeType) {
 					type = ResourceHelper.resolveDataType(((ExternalAttributeType)attribute.getOwned_type()).getType(), resourceSet);
 				} else {
+					processed.add(attribute);
 					continue;
 				}
 				
 				//escape keywords conflicts
 				String attributeName = attribute.getName(); 
-				try {
-					attributeName = valueConverter.toString(attributeName, "FQN");
-				} catch (ValueConverterException e) {
-					e.printStackTrace();
-				}
+				attributeName = getFQN(attributeName);
 				
 				if (type.getName().equals("EBoolean")) {	
 					//checkbox				
-					appendable.newLine().append("Field ").append(attribute.getName()).
-					append("Field").append(" label: \"").append(toLabel(attribute.getName())).append("\" type ").
+					appendable.newLine().append("Field ").append(attributeName).append("Field");
+					appendCounterToField(appendable, attributeName);
+					appendable.append(" label: \"").append(toLabel(attribute.getName())).append("\" type ").
 					append("checkbox").append(" , mapped-to ").append(prefix).append(".").append(className).append(".").append(attributeName);
 				}
 				else if (type.getName().equals("EEnumerator") || type instanceof EEnum) {
 					//radiobox			
-					appendable.newLine().append("Field ").append(attribute.getName()).
-					append("Field").append(" label: \"").append(toLabel(attribute.getName())).append("\" type ").
+					appendable.newLine().append("Field ").append(attributeName).append("Field");
+					appendCounterToField(appendable, attributeName);
+					appendable.append(" label: \"").append(toLabel(attribute.getName())).append("\" type ").
 					append("radiobox").append(" , mapped-to ").append(prefix).append(".").append(className).append(".").append(attributeName);			
 				}
 				else {
 					//text			
-					appendable.newLine().append("Field ").append(attribute.getName()).
-					append("Field").append(" label: \"").append(toLabel(attribute.getName())).append("\" type ").
+					appendable.newLine().append("Field ").append(attributeName).append("Field");
+					appendCounterToField(appendable, attributeName);
+					appendable.append(" label: \"").append(toLabel(attribute.getName())).append("\" type ").
 					append("text").append(" , mapped-to ").append(prefix).append(".").append(className).append(".").append(attributeName);
 				}
+				processed.add(attribute);
+				namesTracker.add(attributeName);
 			}
 			appendable.decreaseIndentation().newLine();
-			appendable.append("}");	
+			appendable.append("}");
+			processed.clear();
 		}
 		
-		if (!containingClass.getVP_Classes_Associations().isEmpty()) {
-			if (!containingClass.getVP_Class_Attributes().isEmpty()) {
+		if (hasAssociations(containingClass)) {
+			if (hasAttributes(containingClass)) {
 				appendable.newLine();
 			}
 			//Associations group
@@ -197,24 +231,50 @@ public class VpuiTemplateProposalProvider extends CommonTemplateProposalProvider
 			appendable.append("label: \"").append(toLabel(containingClass.getName())).append(" Associations").append("\"");
 			
 			//Associations
-			EList<AbstractAssociation> vpClassesAssociations = containingClass.getVP_Classes_Associations();
-			for (AbstractAssociation abs : vpClassesAssociations){
+			List<AbstractAssociation> allAssociations = collectAllAssociations(containingClass);
+			Collection<AbstractAssociation> processed = new HashSet<>();
+			for (AbstractAssociation abs : allAssociations){
+				if (processed.contains(abs)) {
+					continue;
+				}
+				
+				Class ownedClass = (Class)abs.eContainer();
+				String className = getFQN(ownedClass.getName());
+				String absName = abs.getName();
+				
 				String cardinality = abs.getCardinality().getName();
 				if (cardinality.equals("One_Or_Many") || cardinality.equals("Nothing_Or_Many")){
-					appendable.newLine().append("Field ").append(abs.getName()).append("Association").append(" label: \"").append(toLabel(abs.getName())).append("\" type ").
-					append("multipleChoiceList").append(" , mapped-to ").append(prefix).append(".").append(className).append(".").append(abs.getName());
+					appendable.newLine().append("Field ").append(absName).append("Association");
+					appendCounterToField(appendable, absName);
+					appendable.append(" label: \"").append(toLabel(absName)).append("\" type ").
+					append("multipleChoiceList").append(" , mapped-to ").append(prefix).append(".").append(className).append(".").append(absName);
 				} else {
-					appendable.newLine().append("Field ").append(abs.getName()).append("Association").append(" label: \"").append(toLabel(abs.getName())).append("\" type ").
-					append("simpleChoiceList").append(" , mapped-to ").append(prefix).append(".").append(className).append(".").append(abs.getName());
-				}		
+					appendable.newLine().append("Field ").append(absName).append("Association");
+					appendCounterToField(appendable, absName);
+					appendable.append(" label: \"").append(toLabel(absName)).append("\" type ").
+					append("simpleChoiceList").append(" , mapped-to ").append(prefix).append(".").append(className).append(".").append(absName);
+				}
+				processed.add(abs);
+				namesTracker.add(absName);
 			}
 			appendable.decreaseIndentation().newLine();
 			appendable.append("}");
+			processed.clear();
 		}
 		appendable.decreaseIndentation().newLine();
 		appendable.append("}");	
 		appendable.decreaseIndentation().newLine();
 		appendable.append("}").newLine();		
+	}
+
+	private String getFQN(String className) {
+		try {
+			className = valueConverter.toString(className, "FQN");
+		} catch (ValueConverterException e) {
+			Status status = new Status(IStatus.ERROR, VpuiActivator.ORG_POLARSYS_KITALPHA_AD_VIEWPOINT_DSL_CS_TEXT_VPUI, e.getMessage(), e);
+			VpuiActivator.getInstance().getLog().log(status);
+		}
+		return className;
 	}
 	
 	
@@ -222,13 +282,94 @@ public class VpuiTemplateProposalProvider extends CommonTemplateProposalProvider
 	private void generateRadioBoxUIEnumeration(Enumeration enumeration, Attribute attribute, String className, String prefix, TreeAppendable appendable){
 		//escape keywords conflicts
 		String attributeName = attribute.getName(); 
-		try {
-			attributeName = valueConverter.toString(attributeName, "FQN");
-		} catch (ValueConverterException e) {
-			e.printStackTrace();
-		}
-		appendable.newLine().append("Field ").append(enumeration.getName()).
-		append("Field").append(" label: \"").append(toLabel(enumeration.getName())).append("\" type ").
+		attributeName = getFQN(attributeName);
+		
+		appendable.newLine().append("Field ").append(attributeName).append("Field");
+		appendCounterToField(appendable, attributeName);
+		appendable.append(" label: \"").append(toLabel(enumeration.getName())).append("\" type ").
 		append("radiobox").append(" , mapped-to ").append(prefix).append(".").append(className).append(".").append(attributeName);
+		
+		namesTracker.add(attributeName);
+	}
+	
+	/**
+	 * 
+	 * @param clazz
+	 * @return true if clazz or one of its superClass defines at least one attribute
+	 */
+	private boolean hasAttributes(Class clazz) {
+		for (AbstractSuperClass superClass: clazz.getInheritences()) {
+			if (superClass instanceof LocalSuperClass) {
+				return hasAttributes(((LocalSuperClass)superClass).getSuperClass());
+			}
+		}
+		return !clazz.getVP_Class_Attributes().isEmpty();
+	}
+	
+	/**
+	 * 
+	 * @param clazz
+	 * @return true if clazz or one of its superClass defines at least one association
+	 */
+	private boolean hasAssociations(Class clazz) {
+		for (AbstractSuperClass superClass: clazz.getInheritences()) {
+			if (superClass instanceof LocalSuperClass) {
+				return hasAssociations(((LocalSuperClass)superClass).getSuperClass());
+			}
+		}
+		return !clazz.getVP_Classes_Associations().isEmpty();
+	}
+	
+	/**
+	 * 
+	 * @param clazz
+	 * @return list of attributes defined in super classes of clazz append to clazz attribute
+	 */
+	private List<Attribute> collectAllAttributes(Class clazz) {
+		List<Attribute> result = new ArrayList<>();
+		
+		for (AbstractSuperClass superClass: clazz.getInheritences()) {
+			if (superClass instanceof LocalSuperClass) {
+				Class superClazz = ((LocalSuperClass)superClass).getSuperClass();
+				result.addAll(superClazz.getVP_Class_Attributes());
+				result.addAll(collectAllAttributes(superClazz));
+			}
+		}
+		result.addAll(clazz.getVP_Class_Attributes());
+		return result;
+	}
+	
+	/**
+	 * 
+	 * @param clazz
+	 * @return list of association defined in super classes of clazz append to clazz attribute
+	 */
+	private List<AbstractAssociation> collectAllAssociations(Class clazz) {
+		List<AbstractAssociation> result = new ArrayList<>();
+		
+		for (AbstractSuperClass superClass: clazz.getInheritences()) {
+			if (superClass instanceof LocalSuperClass) {
+				Class superClazz = ((LocalSuperClass)superClass).getSuperClass();
+				result.addAll(superClazz.getVP_Classes_Associations());
+				result.addAll(collectAllAssociations(superClazz));
+			}
+		}
+		result.addAll(clazz.getVP_Classes_Associations());
+		return result;
+	}
+	
+	/**
+	 * Append counter to fields which name is conflicts each other.
+	 * if the counter is appended, counter is incremented
+	 * @param appendable
+	 * @param name
+	 * @return
+	 */
+	private TreeAppendable appendCounterToField(TreeAppendable appendable, String name) {
+		if (namesTracker.contains(name)) {
+			appendable.append(String.valueOf(counter));
+			counter++;
+		}
+		return appendable;
 	}
 }
