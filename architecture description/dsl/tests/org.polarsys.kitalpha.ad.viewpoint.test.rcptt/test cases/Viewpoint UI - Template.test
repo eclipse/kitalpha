@@ -1,0 +1,89 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _7A2tkHiyEeaI368ba7nlrQ,_2MUm0MbwEeiqEKhiLDHvfw
+Element-Name: Viewpoint UI - Template
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _xh_lsMbwEeiqEKhiLDHvfw
+Runtime-Version: 2.2.0.201706152316
+Save-Time: 10/3/18 1:59 PM
+Testcase-Type: ecl
+Verifications: _BgWqYMbyEeiqEKhiLDHvfw
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+See: https://bugs.polarsys.org/show_bug.cgi?id=2111
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.ui.vpdsl/model/ui.spec.vptext" | get-menu 
+    -path Open | click
+with [get-editor "ui.spec.vptext" | get-text-viewer] {
+    set-caret-pos 11 17
+    key-type Enter
+    key-type "M1+SPACE"
+}
+get-window -from "CompletionProposalPopup.createProposalSelector()" | get-table | select "UI - New User Interface" 
+    | click -default
+get-window "Viewpoint UI File Creation Wizard" | get-button Finish | click
+with [get-editor "ui.ui.vptext" | get-text-viewer] {
+    set-caret-pos 10 5
+    key-type "M1+SPACE"
+}
+get-window -from "CompletionProposalPopup.createProposalSelector()" | get-table 
+    | select "UI - Generate User Interface for all classes" | click -default
+get-editor "ui.ui.vptext" | get-text-viewer | hover-text 30 30
+get-button "Save (M1+S)" | click
+with [get-editor "ui.ui.vptext" | get-text-viewer] {
+    set-caret-pos 40 28
+    select-range 41 14 12 9
+}
+with [get-editor "ui.ui.vptext" | get-text-viewer] {
+    get-property "isTextSelected()" | equals true | verify-true
+    get-property "getSelectionText()" | equals "Container ui_Last_Section {\n"
+        + "\\9\\9\\9Container ui_Last_AttributeGroup {\n"
+        + "\\9\\9\\9\\9label: \"Last Attributes\"\n"
+        + "\\9\\9\\9\\9Field h1Field label: \"H1\" type text , mapped-to ui.data.H.h1\n"
+        + "\\9\\9\\9\\9Field e1Field label: \"E1\" type text , mapped-to ui.data.E.e1\n"
+        + "\\9\\9\\9\\9Field b1Field label: \"B1\" type text , mapped-to ui.data.B.b1\n"
+        + "\\9\\9\\9\\9Field a1Field label: \"A1\" type text , mapped-to ui.data.A.a1\n"
+        + "\\9\\9\\9\\9Field f1Field label: \"F1\" type text , mapped-to ui.data.F.f1\n"
+        + "\\9\\9\\9\\9Field c1Field label: \"C1\" type text , mapped-to ui.data.C.c1\n"
+        + "\\9\\9\\9\\9Field d1Field label: \"D1\" type text , mapped-to ui.data.D.d1\n"
+        + "\\9\\9\\9\\9Field g1Field label: \"G1\" type text , mapped-to ui.data.G.g1\n"
+        + "\\9\\9\\9\\9Field last1Field label: \"Last1\" type text , mapped-to ui.data.Last.last1\n"
+        + "\\9\\9\\9}\n"
+        + "\\9\\9\\9Container ui_Last_AssociationGroup {\n"
+        + "\\9\\9\\9\\9label: \"Last Associations\"\n"
+        + "\\9\\9\\9\\9Field hr1Association label: \"Hr1\" type simpleChoiceList , mapped-to ui.data.H.hr1\n"
+        + "\\9\\9\\9\\9Field er1Association label: \"Er1\" type simpleChoiceList , mapped-to ui.data.E.er1\n"
+        + "\\9\\9\\9\\9Field br1Association label: \"Br1\" type simpleChoiceList , mapped-to ui.data.B.br1\n"
+        + "\\9\\9\\9\\9Field br2Association label: \"Br2\" type multipleChoiceList , mapped-to ui.data.B.br2\n"
+        + "\\9\\9\\9\\9Field br3Association label: \"Br3\" type multipleChoiceList , mapped-to ui.data.B.br3\n"
+        + "\\9\\9\\9\\9Field ar1Association label: \"Ar1\" type multipleChoiceList , mapped-to ui.data.A.ar1\n"
+        + "\\9\\9\\9\\9Field ar2Association label: \"Ar2\" type multipleChoiceList , mapped-to ui.data.A.ar2\n"
+        + "\\9\\9\\9\\9Field fr1Association label: \"Fr1\" type simpleChoiceList , mapped-to ui.data.F.fr1\n"
+        + "\\9\\9\\9\\9Field cr1Association label: \"Cr1\" type simpleChoiceList , mapped-to ui.data.C.cr1\n"
+        + "\\9\\9\\9\\9Field cr2Association label: \"Cr2\" type multipleChoiceList , mapped-to ui.data.C.cr2\n"
+        + "\\9\\9\\9\\9Field cr3Association label: \"Cr3\" type multipleChoiceList , mapped-to ui.data.C.cr3\n"
+        + "\\9\\9\\9\\9Field dr1Association label: \"Dr1\" type simpleChoiceList , mapped-to ui.data.D.dr1\n"
+        + "\\9\\9\\9\\9Field gr1Association label: \"Gr1\" type simpleChoiceList , mapped-to ui.data.G.gr1\n"
+        + "\\9\\9\\9\\9Field toHAssociation label: \"To H\" type multipleChoiceList , mapped-to ui.data.Last.toH\n"
+        + "\\9\\9\\9}" | verify-true
+}
+
+get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.ui.vpdsl/model/ui.vpdesc" 
+    | select "org.polarsys.kitalpha.vp.ui.vpdsl/model/ui.vpdesc" | get-menu -path Open | click
+get-editor "ui.vpdesc" | get-tree | get-item 
+    -path "platform:\\/resource\\/org.polarsys.kitalpha.vp.ui.vpdsl\\/model\\/ui.vpdesc/Viewpoint ui" 
+    | get-property childCount | equals 3 | verify-true
+get-editor "ui.vpdesc" | get-tree | get-item 
+    -path "platform:\\/resource\\/org.polarsys.kitalpha.vp.ui.vpdsl\\/model\\/ui.vpdesc/Viewpoint ui/\\[UI Description\\] ui.ui/UI ui_Last" 
+    | click
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

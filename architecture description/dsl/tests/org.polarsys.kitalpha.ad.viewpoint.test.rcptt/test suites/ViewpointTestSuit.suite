@@ -5,7 +5,7 @@ Element-Type: testsuite
 Element-Version: 2.0
 Id: _g18_kHi1EeaI368ba7nlrQ
 Runtime-Version: 2.2.0.201706152316
-Save-Time: 10/9/17 3:05 PM
+Save-Time: 10/3/18 12:01 PM
 
 ------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8
 Content-Type: text/testcase
@@ -24,5 +24,6 @@ _GpsJcKaIEeap-ORrGyGQRg	// kind: 'test' name: 'Viewpoint Activity Explorer Speci
 _JdRukKaMEeap-ORrGyGQRg	// kind: 'test' name: 'Viewpoint Build Specification' path: '../test cases/Viewpoint Build Specification.test'
 _sCHLcHi0EeaI368ba7nlrQ	// kind: 'test' name: 'menuKitalpha' path: '../test cases/menuKitalpha.test'
 _NELx4KzaEeeugqJ5eBR0lA	// kind: 'test' name: 'Viewpoint Packaging With Version' path: '../test cases/Viewpoint Packaging With Version.test'
+_xh_lsMbwEeiqEKhiLDHvfw	// kind: 'test' name: 'Viewpoint UI - Template' path: '../test cases/Viewpoint UI - Template.test'
 
 ------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8--
