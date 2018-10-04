@@ -70,18 +70,35 @@ public final class EdgeStyleImportMerger {
 		
 		/** Do Merge Attributes */
 		final EdgeStyle viewpointEdgeStyle = viewpointEdgeDescription.getStyle();
-		if (! viewpointEdgeStyle.eIsSet(VpdiagramPackage.eINSTANCE.getEdgeStyle_BeginDecorator()))
+		if (! viewpointEdgeStyle.eIsSet(VpdiagramPackage.eINSTANCE.getEdgeStyle_BeginDecorator())) {
 			result.setSourceArrow(originalStyle.getSourceArrow());
+		}
 		
-		if (! viewpointEdgeStyle.eIsSet(VpdiagramPackage.eINSTANCE.getEdgeStyle_EndDecorator()))
+		if (! viewpointEdgeStyle.eIsSet(VpdiagramPackage.eINSTANCE.getEdgeStyle_EndDecorator())) {
 			result.setTargetArrow(originalStyle.getTargetArrow());
+		}
 		
-		if (! viewpointEdgeStyle.eIsSet(VpdiagramPackage.eINSTANCE.getEdgeStyle_LineStyle()))
+		if (! viewpointEdgeStyle.eIsSet(VpdiagramPackage.eINSTANCE.getEdgeStyle_LineStyle())) {
 			result.setLineStyle(originalStyle.getLineStyle());
+		}
 		
 		/** Do Merge References */
-		if (! viewpointEdgeStyle.eIsSet(VpdiagramPackage.eINSTANCE.getEdgeStyle_Color()))
+		/*
+		 * When a user specifies black color (default one) to override imported style color, the result
+		 * contains the overriden color. eIsSet(...) is not sufficient.
+		 * 
+		 * Example:
+		 * Imported Mapping (color red)
+		 * VPDSL: redefine color to black (default)
+		 * 
+		 * => the merge always reset red color in the target style. If the check is only if the attribute color
+		 * is already setted
+		 * 
+		 * See: https://bugs.polarsys.org/show_bug.cgi?id=2217
+		 */
+		if (! viewpointEdgeStyle.eIsSet(VpdiagramPackage.eINSTANCE.getEdgeStyle_Color())) {
 			result.setStrokeColor(originalStyle.getStrokeColor());
+		}
 		
 		// Do merge Begin Label
 		BasicLabelStyleDescription beginLabel =  mergeLabelDescription(originalStyle.getBeginLabelStyleDescription(), 
@@ -94,15 +111,17 @@ public final class EdgeStyleImportMerger {
 		BasicLabelStyleDescription centerLabel = mergeLabelDescription(originalStyle.getCenterLabelStyleDescription(), 
 																       generatedStyle.getCenterLabelStyleDescription(), 
 																       viewpointEdgeDescription.getCenter_label());
-		if (centerLabel != null)
+		if (centerLabel != null) {
 			result.setCenterLabelStyleDescription((CenterLabelStyleDescription)centerLabel);
+		}
 		
 		// Do merge End Label
 		BasicLabelStyleDescription endLabel = mergeLabelDescription(originalStyle.getEndLabelStyleDescription(), 
 																       generatedStyle.getEndLabelStyleDescription(), 
 																       viewpointEdgeDescription.getEnd_label());
-		if (endLabel != null)
+		if (endLabel != null) {
 			result.setEndLabelStyleDescription((EndLabelStyleDescription)endLabel);
+		}
 		
 		return result;
 	}
@@ -127,8 +146,9 @@ public final class EdgeStyleImportMerger {
 			return EcoreUtil.copy(originalLabel);
 		
 		/** If both label are equal, so return the generated one */
-		if (originalLabel.equals(generatedLabel) || viewpointLabel == null)
+		if (originalLabel.equals(generatedLabel) || viewpointLabel == null) {
 			return generatedLabel;
+		}
 		
 		/** If we are here, this means that the both labels exist, so let do merge ;) */
 		
@@ -139,14 +159,17 @@ public final class EdgeStyleImportMerger {
 		result.setIconPath(originalLabel.getIconPath());
 		
 		// Manage generated label style data 
-		if (! viewpointLabel.eIsSet(VpdiagramPackage.eINSTANCE.getLabel_Color()))
+		if (! viewpointLabel.eIsSet(VpdiagramPackage.eINSTANCE.getLabel_Color())) {
 			result.setLabelColor(originalLabel.getLabelColor());
+		}
 		
-		if (! viewpointLabel.eIsSet(VpdiagramPackage.eINSTANCE.getLabel_Value()))
+		if (! viewpointLabel.eIsSet(VpdiagramPackage.eINSTANCE.getLabel_Value())) {
 			result.setLabelExpression(originalLabel.getLabelExpression());
+		}
 		
-		if (! viewpointLabel.eIsSet(VpdiagramPackage.eINSTANCE.getLabel_Size()))
+		if (! viewpointLabel.eIsSet(VpdiagramPackage.eINSTANCE.getLabel_Size())) {
 			result.setLabelSize(originalLabel.getLabelSize());
+		}
 		
 		if (! (viewpointLabel.eIsSet(VpdiagramPackage.eINSTANCE.getLabel_Bold()) && 
 			   viewpointLabel.eIsSet(VpdiagramPackage.eINSTANCE.getLabel_Italic())))

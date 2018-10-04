@@ -36,12 +36,14 @@ public class NodeStyleImportMerger extends LabelStyleImportMerger{
 												   NodeStyleDescription generatedStyle,
 												   NodeDescription viewpointNodeDescription){
 		/* Imported container has either no style or contains only ConditionalStyles */
-		if (originalStyle == null && generatedStyle != null)
+		if (originalStyle == null && generatedStyle != null) {
 			return generatedStyle;
+		}
 
 		/* No style defined for the imported container */
-		if (generatedStyle == null)
+		if (generatedStyle == null) {
 			return null;
+		}
 
 		NodeStyleDescription result = generatedStyle;
 
@@ -76,7 +78,7 @@ public class NodeStyleImportMerger extends LabelStyleImportMerger{
 		if (viewpointStyle instanceof ImageStyle)
 		{
 			final ImageStyle imageStyle = (ImageStyle) viewpointStyle;
-			if (imageStyle.eIsSet(VpdiagramPackage.eINSTANCE.getImageStyle_ImagePath()))
+			if (! imageStyle.eIsSet(VpdiagramPackage.eINSTANCE.getImageStyle_ImagePath()))
 				((WorkspaceImageDescription)result).setWorkspacePath(((WorkspaceImageDescription)originalStyle).getWorkspacePath());
 		}
 		
