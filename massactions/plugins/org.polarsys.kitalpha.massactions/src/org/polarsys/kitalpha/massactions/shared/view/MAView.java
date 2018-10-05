@@ -28,6 +28,7 @@ import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.jface.action.Separator;
 import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.util.LocalSelectionTransfer;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.nebula.widgets.nattable.NatTable;
@@ -269,9 +270,13 @@ public abstract class MAView extends ViewPart implements IMAComponent {
     };
 
     action.setToolTipText(Messages.MA_VIEW_NEW_VIEW_TOOLTIP_TEXT);
-    action.setImageDescriptor(MAActivator.getDefault().getImageRegistry().getDescriptor(MAActivator.IMAGE_ADD));
+    action.setImageDescriptor(getNewViewIconDescriptor());
 
     return action;
+  }
+
+  protected ImageDescriptor getNewViewIconDescriptor() {
+    return MAActivator.getDefault().getImageRegistry().getDescriptor(MAActivator.IMAGE_ADD);
   }
 
   protected Action createExportToCSVAction() {

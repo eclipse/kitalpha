@@ -10,7 +10,9 @@
  *******************************************************************************/
 package org.polarsys.kitalpha.massactions.edit;
 
+import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.widgets.Composite;
+import org.polarsys.kitalpha.massactions.activator.MAActivator;
 import org.polarsys.kitalpha.massactions.core.table.IMATable;
 import org.polarsys.kitalpha.massactions.edit.table.METable;
 import org.polarsys.kitalpha.massactions.shared.view.MAView;
@@ -28,4 +30,8 @@ public class MEView extends MAView {
 		return new METable(parent);
 	}
 
+	@Override
+	protected ImageDescriptor getNewViewIconDescriptor() {
+	  return MAActivator.getDefault().getImageRegistry().getDescriptor(MAActivator.IMAGE_ME_NEW_VIEW);
+	}
 }

@@ -31,6 +31,8 @@ public class MAActivator extends AbstractUIPlugin {
 	public static final String IMAGE_CLEAR = "IMAGE_CLEAR";
 	public static final String IMAGE_FILTER = "IMAGE_FILTER";
 	public static final String IMAGE_ADD = "IMAGE_ADD";
+	public static final String IMAGE_ME_NEW_VIEW = "IMAGE_ME_NEW_VIEW";
+	public static final String IMAGE_MV_NEW_VIEW = "IMAGE_MV_NEW_VIEW";
 	public static final String IMAGE_EXPORT_CSV = "IMAGE_EXPORT_CSV";
 
 	// The shared instance
@@ -64,6 +66,8 @@ public class MAActivator extends AbstractUIPlugin {
 		reg.put(IMAGE_CLEAR, imageDescriptorFromPlugin(PLUGIN_ID, "icons/clear.png"));
 		reg.put(IMAGE_FILTER, imageDescriptorFromPlugin(PLUGIN_ID, "icons/filter_ps.png"));
 		reg.put(IMAGE_ADD, imageDescriptorFromPlugin(PLUGIN_ID, "icons/add.png"));
+		reg.put(IMAGE_ME_NEW_VIEW, imageDescriptorFromPlugin(PLUGIN_ID, "icons/me_new_view.gif"));
+		reg.put(IMAGE_MV_NEW_VIEW, imageDescriptorFromPlugin(PLUGIN_ID, "icons/mv_new_view.gif"));
 		reg.put(IMAGE_EXPORT_CSV, imageDescriptorFromPlugin(PLUGIN_ID, "icons/export_csv.png"));
 		
 	}
