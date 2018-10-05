@@ -12,6 +12,7 @@ package org.polarsys.kitalpha.massactions.shared.helper;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -80,17 +81,22 @@ public class MASelectionHelper {
   }
 
   public boolean selectionSharesSameEditingDomain(Collection<EObject> elements) {
-    TransactionalEditingDomain defaultEditingDomain = null;
-
-    for (EObject element : elements) {
-
-      if (defaultEditingDomain == null) {
-        defaultEditingDomain = TransactionUtil.getEditingDomain(element);
-      }
-
+    if (elements.isEmpty()) {
+      return false;
+    }
+    
+    Iterator<EObject> iterator = elements.iterator();
+    EObject firstElement = iterator.next();
+    TransactionalEditingDomain sharedEditingDomain = TransactionUtil.getEditingDomain(firstElement);
+    
+    if (sharedEditingDomain == null) {
+      return false;
+    }
+    
+    while (iterator.hasNext()) {
+      EObject element = iterator.next();
       TransactionalEditingDomain currentEditingDomain = TransactionUtil.getEditingDomain(element);
-
-      if (!defaultEditingDomain.equals(currentEditingDomain)) {
+      if (currentEditingDomain == null || !sharedEditingDomain.equals(currentEditingDomain)) {
         return false;
       }
     }

@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.polarsys.kitalpha.massactions.shared.view;
 
+import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedHashSet;
@@ -26,6 +27,7 @@ import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.jface.action.Separator;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.util.LocalSelectionTransfer;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.nebula.widgets.nattable.NatTable;
@@ -36,6 +38,8 @@ import org.eclipse.swt.dnd.DropTarget;
 import org.eclipse.swt.dnd.DropTargetAdapter;
 import org.eclipse.swt.dnd.DropTargetEvent;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPartReference;
 import org.eclipse.ui.PartInitException;
@@ -86,10 +90,10 @@ public abstract class MAView extends ViewPart implements IMAComponent {
 
   protected LazyRowSelectionProvider selectionProvider;
 
-  private static final String COLUMN_HEADER_MENU_SUFFIX = ".columnHeader";
-  private static final String ROW_HEADER_MENU_SUFFIX = ".rowHeader";
-  private static final String CORNER_MENU_SUFFIX = ".corner";
-  private static final String BODY_MENU_SUFFIX = ".body";
+  private static final String COLUMN_HEADER_MENU_SUFFIX = ".columnHeader"; //$NON-NLS-1$
+  private static final String ROW_HEADER_MENU_SUFFIX = ".rowHeader"; //$NON-NLS-1$
+  private static final String CORNER_MENU_SUFFIX = ".corner"; //$NON-NLS-1$
+  private static final String BODY_MENU_SUFFIX = ".body"; //$NON-NLS-1$
 
   @Override
   public void createPartControl(Composite parent) {
@@ -116,19 +120,45 @@ public abstract class MAView extends ViewPart implements IMAComponent {
 
   @Override
   public void dataChanged(Collection<EObject> newData) {
-
-    boolean wasInitialized = table.isInitialized();
-    data.addAll(newData);
-
-    List<EObject> fastAccessData = new ArrayList<>(data);
-    table.dataChanged(fastAccessData);
-
-    if (!wasInitialized) {
-      actionsSetEnabled(true);
-      selectionProvider.enable();
-
-      layout();
-      configureContextMenus();
+    StringBuilder dialogTitleBuilder = new StringBuilder(this.getTitle());
+    StringBuilder dialogContentBuilder = new StringBuilder();
+    boolean showDialogMessage = true;
+    int numberOfSelectedElements = newData.size();
+    
+    boolean selectionShareSameDomain = getSelectionHelper().selectionSharesSameEditingDomain(newData);
+    if (selectionShareSameDomain) {
+      if (editingDomain == null) {
+        // initialize the editing domain for the current view
+        editingDomain = getSelectionHelper().getEditingDomainForFirstElement(newData);
+      }
+      
+      if (editingDomain != null && getSelectionHelper().isEditingDomainEqual(newData, editingDomain)) {
+        showDialogMessage = false;
+        boolean wasInitialized = table.isInitialized();
+        data.addAll(newData);
+        
+        List<EObject> fastAccessData = new ArrayList<>(data);
+        table.dataChanged(fastAccessData);
+        
+        if (!wasInitialized) {
+          actionsSetEnabled(true);
+          selectionProvider.enable();
+          
+          layout();
+          configureContextMenus();
+        }
+      } else {
+        dialogContentBuilder.append(MessageFormat.format(Messages.MA_VIEW_MESSAGE_INFO_1, numberOfSelectedElements));
+      }
+    } else {
+      dialogContentBuilder.append(MessageFormat.format(Messages.MA_VIEW_MESSAGE_INFO_2, numberOfSelectedElements));
+    }
+    
+    if (showDialogMessage) {
+      Shell activeSell = Display.getDefault().getActiveShell();
+      String dialogTitle = dialogTitleBuilder.toString();
+      String dialogContent = dialogContentBuilder.toString();
+      MessageDialog.openInformation(activeSell, dialogTitle, dialogContent);
     }
   }
   
@@ -154,28 +184,9 @@ public abstract class MAView extends ViewPart implements IMAComponent {
 
       @Override
       public void drop(DropTargetEvent event) {
-
         ISelection selection = LocalSelectionTransfer.getTransfer().getSelection();
         Collection<EObject> validSelectionData = getSelectionHelper().getElementsFromSelection(selection);
-
-        if (editingDomain == null) {
-          boolean shareTheSameEditingDomain = getSelectionHelper().selectionSharesSameEditingDomain(validSelectionData);
-
-          if (shareTheSameEditingDomain) {
-            // initialize the editing domain for the current view
-            editingDomain = getSelectionHelper().getEditingDomainForFirstElement(validSelectionData);
-          } else {
-            event.detail = DND.DROP_NONE;
-            return;
-          }
-        }
-
-        // check if the elements come from the same project as the current existing elements in the view
-        if (getSelectionHelper().isEditingDomainEqual(validSelectionData, editingDomain)) {
-          dataChanged(validSelectionData);
-        } else {
-          event.detail = DND.DROP_NONE;
-        }
+        dataChanged(validSelectionData);
       }
     });
   }
@@ -303,7 +314,7 @@ public abstract class MAView extends ViewPart implements IMAComponent {
   }
   
   public static String getViewName(String baseName, String secondaryViewId) {
-    return baseName + " " + secondaryViewId;
+    return baseName + " " + secondaryViewId; //$NON-NLS-1$
   }
 
   /**
