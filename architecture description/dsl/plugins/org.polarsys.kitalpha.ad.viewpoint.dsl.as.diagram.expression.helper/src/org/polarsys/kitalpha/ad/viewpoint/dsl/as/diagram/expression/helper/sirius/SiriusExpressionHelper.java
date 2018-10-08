@@ -167,20 +167,27 @@ public class SiriusExpressionHelper {
 	 * @return a formated string 
 	 */
 	public static String formatString(String string){
-		if (ExpressionInterpreter.isInterpreterExpression(string)) {
+		String trimedString = string.trim();
+		if (ExpressionInterpreter.isInterpreterExpression(trimedString)) {
 			return string;
 		}
 		
-		switch (getCurrentExpressionKind()) {
+		ExpressionKind expressionKind = getCurrentExpressionKind();
+		switch (expressionKind) {
 		case QueryLegacy:
 			return string;
 		case AQL:
+			if (ExpressionKind.AQL.isFormated(trimedString)) {
+				return trimedString.substring(4);
+			}
+			return stringHasDelimiters(string, '\'') ? string : '\'' + string + '\'';
+			
 		case Acceleo_3_x:
 			return stringHasDelimiters(string, '\'') ? string : '\'' + string + '\'';
 		case Ocl:
 			throw new OCLExpressionNotSupported();
 		}
-		throw new RuntimeException();
+		throw new RuntimeException("Interpreter " + expressionKind.toString() + " not known"); //$NON-NLS-1$ //$NON-NLS-2$
 	}
 	
 	private static boolean stringHasDelimiters(String string, char delimiter){
