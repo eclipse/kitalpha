@@ -27,6 +27,9 @@ public class Messages extends NLS {
   public static String MV_VIEW_SWITCH_PERSPECTIVE_TOOLTIP_TEXT;
   public static String MA_VIEW_EXPORT_TO_CSV_TOOLTIP_TEXT;
 
+  public static String MA_VIEW_MESSAGE_INFO_1;
+  public static String MA_VIEW_MESSAGE_INFO_2;
+
   static {
     // initialize resource bundle
     NLS.initializeMessages(BUNDLE_NAME, Messages.class);
