@@ -9,7 +9,9 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui,
  org.eclipse.core.resources,
  org.polarsys.kitalpha.accuracy,
- org.eclipse.core.expressions
+ org.eclipse.core.expressions,
+ org.eclipse.ui.navigator,
+ org.eclipse.emf.edit.ui
 Bundle-ActivationPolicy: lazy
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

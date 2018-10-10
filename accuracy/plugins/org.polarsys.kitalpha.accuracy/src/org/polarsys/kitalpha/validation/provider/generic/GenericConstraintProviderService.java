@@ -10,6 +10,7 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.validation.provider.generic;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -19,7 +20,8 @@ import org.eclipse.emf.validation.preferences.EMFModelValidationPreferences;
 import org.eclipse.emf.validation.service.AbstractConstraintDescriptor;
 import org.eclipse.emf.validation.service.ConstraintExistsException;
 import org.eclipse.emf.validation.service.ConstraintRegistry;
-
+import org.eclipse.emf.validation.service.IConstraintDescriptor;
+import org.eclipse.emf.validation.service.ModelValidationService;
 import org.polarsys.kitalpha.validation.ocl.provider.generic.GenericOCLConstraintProvider;
 
 /**
@@ -115,5 +117,33 @@ public class GenericConstraintProviderService {
 		}
 		return descriptors;
 	}
+	
+	  /**
+	   * Get all constraints contributed via the EMF Validation framework 
+	   * @return {@link List}
+	   */
+	  public List<IConstraintDescriptor> getAllConstraintDescriptors() {
+	    
+	    List<IConstraintDescriptor> result = new ArrayList<>();
+	    
+	    ensureEMFValidationActivation();
+	    
+	    ConstraintRegistry registry = ConstraintRegistry.getInstance();
+	    
+	    result.addAll(registry.getAllDescriptors());
+	    
+	    return result;
+	  }
+	  
+	  
+	  
+	  /**
+	   * Ensure that all constraints have been loaded.
+	   */
+	  public void ensureEMFValidationActivation() {
+	    
+	    ModelValidationService.getInstance().loadXmlConstraintDeclarations();
+	    
+	  }
 
 }

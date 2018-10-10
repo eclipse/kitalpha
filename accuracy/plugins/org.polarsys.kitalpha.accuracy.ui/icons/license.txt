@@ -4,4 +4,5 @@ These followings icons are made available under the terms of the Eclipse Public 
 
 <icon file path> - <original eclipse plug-in> - <original file path>
 
+/icons/validate_16.gif - capella.validation.ui - capella.validation.ui/icons/capella_validate_16.gif
 /icons/sample.gif - org.polarsys.kitalpha.accuracy.ui - org.polarsys.kitalpha.accuracy.ui/icons/sample.gif

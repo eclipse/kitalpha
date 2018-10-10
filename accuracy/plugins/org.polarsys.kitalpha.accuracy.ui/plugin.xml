@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright (c) 2014 Thales Global Services S.A.S.
+Copyright (c) 2014, 2018 Thales Global Services S.A.S.
  All rights reserved. This program and the accompanying materials
  are made available under the terms of the Eclipse Public License v1.0
  which accompanies this distribution, and is available at
@@ -18,10 +18,36 @@ Contributors:
       <menuContribution
             locationURI="popup:org.eclipse.ui.popup.any?before=additions">
          <menu
-               id="org.polarsys.kitalpha.accuracy.ui.menu.accuracy"
+               icon="icons/validate_16.gif"
+               id="org.polarsys.kitalpha.accuracy.ui.menu.root"
                label="%accuracy.menu.label">
             <command
+                  commandId="org.polarsys.kitalpha.accuracy.ui.commands.validateModelCommand"
+                  icon="icons/validate_16.gif"
+                  id="org.polarsys.kitalpha.accuracy.ui.menu.command.validatemodel"
+                  label="Validate Model"
+                  style="push">
+               <visibleWhen
+                     checkEnabled="true">
+                  <with
+                        variable="activeMenuSelection">
+                     <iterate
+                           ifEmpty="false"
+                           operator="and">
+                        <instanceof
+                              value="org.eclipse.emf.ecore.EObject">
+                        </instanceof>
+                     </iterate>
+                  </with>
+               </visibleWhen>
+            </command>
+            <separator
+                  name="org.polarsys.kitalpha.accuracy.ui.menu.commands.separator"
+                  visible="true">
+            </separator>
+            <command
                   commandId="org.polarsys.kitalpha.accuracy.ui.commands.applyConfigurationCommand"
+                  icon="icons/validate_16.gif"
                   id="org.polarsys.kitalpha.accuracy.ui.menu.command"
                   label="%accuracy.command.label"
                   tooltip="%accuracy.command.tooltip">
@@ -86,6 +112,12 @@ Contributors:
             description="%accuracy.command.applyconf.description"
             id="org.polarsys.kitalpha.accuracy.ui.commands.applyConfigurationCommand"
             name="%accuracy.command.applyconf.name">
+      </command>
+      <command
+            categoryId="org.polarsys.kitalpha.accuracy.ui.commands.category"
+            description="%accuracy.command.validatemodel.description"
+            id="org.polarsys.kitalpha.accuracy.ui.commands.validateModelCommand"
+            name="%accuracy.command.validatemodel.name">
       </command>
    </extension>
 
