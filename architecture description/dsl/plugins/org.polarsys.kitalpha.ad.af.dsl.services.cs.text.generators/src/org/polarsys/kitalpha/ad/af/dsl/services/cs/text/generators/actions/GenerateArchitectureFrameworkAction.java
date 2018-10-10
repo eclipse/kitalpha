@@ -35,6 +35,15 @@ import org.polarsys.kitalpha.ad.af.dsl.services.cs.text.generators.messages.Mess
  */
 public class GenerateArchitectureFrameworkAction extends BaseSelectionListenerAction implements IObjectActionDelegate {
 
+	private static final String GENERATE_AND_PACKAGE_CS_TEXT_AF_ACTION = 
+			"org.polarsys.kitalpha.ad.af.dsl.generateAndPackageAF";  //$NON-NLS-1$
+	
+	/*
+	 * Copied from: org.polarsys.kitalpha.ad.af.dsl.as.servicies.action.popup.GenerateArchitectureFramework
+	 */
+	private static final String GENERATE_AND_PACKAGE_AF_ACTION = 
+			"org.polarsys.kitalpha.ad.af.dsl.servicies.action.generateAndPackageAF"; //$NON-NLS-1$
+	
 	public static final String AFDESC_EXTENSION = "afdesc";
 	
 	private ISelection fakeSelection;
@@ -69,8 +78,21 @@ public class GenerateArchitectureFrameworkAction extends BaseSelectionListenerAc
 			IFile xmiFile = ResourcesPlugin.getWorkspace().getRoot().getFile(xmiPath);
 			if (xmiFile.exists()) {
 				fakeSelection = new StructuredSelection(xmiFile);
+				/*
+				 * Set real ID of action (used for packaging)
+				 * see: https://bugs.polarsys.org/show_bug.cgi?id=2228
+				 */
+				String originalID = action.getId();
+				if (GENERATE_AND_PACKAGE_CS_TEXT_AF_ACTION.equals(originalID)) {
+					action.setId(GENERATE_AND_PACKAGE_AF_ACTION);
+				}
 				delegate.selectionChanged(action, fakeSelection);
 				delegate.run(action);
+				
+				/*
+				 * restore the ID
+				 */
+				action.setId(originalID);
 			}
 		}
 		else

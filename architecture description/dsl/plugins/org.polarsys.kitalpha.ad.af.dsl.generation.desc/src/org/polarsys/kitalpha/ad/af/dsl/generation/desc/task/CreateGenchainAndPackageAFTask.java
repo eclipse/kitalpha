@@ -23,6 +23,9 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.core.runtime.jobs.IJobChangeEvent;
+import org.eclipse.core.runtime.jobs.Job;
+import org.eclipse.core.runtime.jobs.JobChangeAdapter;
 import org.eclipse.egf.core.domain.TargetPlatformResourceSet;
 import org.eclipse.egf.core.pde.tools.ConvertProjectOperation;
 import org.eclipse.egf.core.producer.InvocationException;
@@ -155,14 +158,38 @@ public class CreateGenchainAndPackageAFTask extends GenerationAdapter implements
 				}
 				
 				final WorkspaceJob createJob = super.createJob(generationChain, false);
+				final WorkspaceJob createAfterJob = super.createAfterJob();
+				createAfterJob.setPriority(Job.BUILD);
+				
+				/*
+				 * Schedule builder after creating all projects
+				 * Fix a bug: https://bugs.polarsys.org/show_bug.cgi?id=2228
+				 */
+				createJob.addJobChangeListener(new JobChangeAdapter() {
+					
+					@Override
+					public void done(IJobChangeEvent event) {
+						createAfterJob.schedule(2000);
+					}
+					
+				});
+				
+				/*
+				 * Dispose generation listener after building
+				 * Fix a bug: https://bugs.polarsys.org/show_bug.cgi?id=2228
+				 */
+				createAfterJob.addJobChangeListener(new JobChangeAdapter() {
+					
+					@Override
+					public void done(IJobChangeEvent event) {
+						GenerationEventManager.getInstance().removeGenerationListener(CreateGenchainAndPackageAFTask.this);
+					}
+					
+				});
 				createJob.schedule();
 				createJob.join();
 				project.refreshLocal(IProject.DEPTH_INFINITE, monitor);
 				project.build(IncrementalProjectBuilder.INCREMENTAL_BUILD, monitor);
-				// Sleep two seconds
-				final WorkspaceJob createAfterJob = super.createAfterJob();
-				Thread.sleep(2000);
-				createAfterJob.schedule();
 			}
 			
 			@Override
@@ -179,12 +206,8 @@ public class CreateGenchainAndPackageAFTask extends GenerationAdapter implements
 		try {
 			URI uri = URI.createURI("platform:/resource/"+projectId + "/" + Constants.MODELS_FOLDER + "/" + shortName + ".generationchain");
 			onlyBuilder.onlyBuild(uri);
-		} catch (CoreException e) {
-				throw new InvocationException(e);
-		} catch (InterruptedException e) {
-				throw new InvocationException(e);
-		} finally {
-			GenerationEventManager.getInstance().removeGenerationListener(this);
+		} catch (CoreException | InterruptedException e) {
+			throw new InvocationException(e);
 		}
 	}
 	
