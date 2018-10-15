@@ -48,9 +48,12 @@ public class EVpSpecValidatorAdapter extends EObjectValidator {
 		return validate(eObject.eClass(), eObject, diagnostics, context);
 	}
 
+	/*
+	 * Bug 2233: This method is called by several jobs which lead to errors because the jobs are not synchronized
+	 */
 	@Override
 	@SuppressWarnings("unchecked")
-	public boolean validate(EClass eClass, EObject eObject, DiagnosticChain diagnostics, Map context) {
+	public synchronized boolean validate(EClass eClass, EObject eObject, DiagnosticChain diagnostics, Map context) {
 		super.validate(eClass, eObject, diagnostics, context);
 		IStatus status = Status.OK_STATUS;
 		if (diagnostics != null && !hasProcessed(eObject, context)) 
