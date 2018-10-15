@@ -118,7 +118,7 @@ location oxygen-release "http://download.eclipse.org/releases/oxygen" {
 }
 
 
-location Sirus "http://download.eclipse.org/sirius/updates/milestones/6.1.0M4/oxygen/" {
+location Sirus "http://download.eclipse.org/sirius/updates/milestones/6.1.0M5/oxygen/" {
 	org.eclipse.sirius.doc.feature.feature.group lazy
 	org.eclipse.sirius.runtime.ide.eef.feature.group lazy
 	org.eclipse.sirius.runtime.ide.ui.acceleo.feature.group lazy
@@ -170,7 +170,7 @@ location coevolution "http://download.eclipse.org/diffmerge/releases/0.11.0/edm-
 	 org.eclipse.emf.diffmerge.coevolution.sdk.feature.source.feature.group lazy
 }
 
-location amalgam "http://download.eclipse.org/modeling/amalgam/updates/stable/1.9.0-S20181002/capella/" {
+location amalgam "http://download.eclipse.org/modeling/amalgam/updates/stable/1.9.0-S20181015/capella/" {
 	org.eclipse.amalgam.explorer.activity.feature.group lazy
 	org.eclipse.amalgam.explorer.activity.source.feature.group lazy
 	org.eclipse.amalgam.explorer.contextual.feature.group lazy
