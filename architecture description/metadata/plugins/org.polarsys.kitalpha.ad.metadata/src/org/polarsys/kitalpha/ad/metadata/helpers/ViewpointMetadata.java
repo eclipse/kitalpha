@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016-2017 Thales Global Services S.A.S.
+ * Copyright (c) 2016-2018 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -174,11 +174,12 @@ public class ViewpointMetadata {
 	}
 
 	public void unReference(org.polarsys.kitalpha.resourcereuse.model.Resource vpResource) {
-		Metadata metadata = getMetadataStorage(true);
-
-		for (ViewpointReference uv : new ArrayList<ViewpointReference>(metadata.getViewpointReferences())) {
-			if (vpResource.getId().equals(uv.getVpId())) {
-				metadata.getViewpointReferences().remove(uv);
+		Metadata metadata = getMetadataStorage(false);
+		if (metadata != null) {
+			for (ViewpointReference uv : new ArrayList<ViewpointReference>(metadata.getViewpointReferences())) {
+				if (vpResource.getId().equals(uv.getVpId())) {
+					metadata.getViewpointReferences().remove(uv);
+				}
 			}
 		}
 	}
@@ -302,7 +303,9 @@ public class ViewpointMetadata {
 		// None loaded, try to load an existing one
 		URI uri = getExpectedMetadataStorageURI();
 		try {
-			return context.getResource(uri, true);
+			if (context.getURIConverter().exists(uri, new HashMap<>())) {
+				return context.getResource(uri, true);
+			}
 		} catch (Exception e) {
 			// clean proxy resource
 			Resource resource = context.getResource(uri, false);
