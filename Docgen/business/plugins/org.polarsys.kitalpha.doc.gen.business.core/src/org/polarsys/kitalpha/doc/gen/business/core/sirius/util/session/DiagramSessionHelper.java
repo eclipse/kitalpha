@@ -23,6 +23,7 @@ import org.eclipse.sirius.business.api.dialect.DialectManager;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.sirius.diagram.DDiagram;
+import org.eclipse.sirius.diagram.DSemanticDiagram;
 import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 
@@ -116,11 +117,19 @@ public class DiagramSessionHelper {
 	
 	/**
 	 * @param eObject
-	 * @return return XMI ID of eObject, otherwise fragment within resource. if it cannot
+	 * @return return XMI ID of eObject or UID if the eObject is DSemanticDiagram, otherwise fragment within resource. if it cannot
 	 * find any ID, it returns empty string
 	 */
 	public static String getID(EObject eObject) {
 		String id = ""; //$NON-NLS-1$
+		
+		/*
+		 * On diagrams, handle UID rather than XMI ID.
+		 * See: https://bugs.polarsys.org/show_bug.cgi?id=2240
+		 */
+		if (eObject instanceof DSemanticDiagram) {
+			return ((DSemanticDiagram)eObject).getUid();
+		}
 		
 		if (session != null) {
 			Resource sessionResource = session.getSessionResource();
