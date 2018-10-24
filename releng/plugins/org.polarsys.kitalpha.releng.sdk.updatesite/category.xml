@@ -75,10 +75,10 @@
    <feature url="features/org.polarsys.kitalpha.composer.feature.source_1.2.1.qualifier.jar" id="org.polarsys.kitalpha.composer.feature.source" version="1.2.1.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.doc.gen.business.core.feature_1.2.1.qualifier.jar" id="org.polarsys.kitalpha.doc.gen.business.core.feature" version="1.2.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.doc.gen.business.core.feature_1.2.2.qualifier.jar" id="org.polarsys.kitalpha.doc.gen.business.core.feature" version="1.2.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.doc.gen.business.core.feature.source_1.2.1.qualifier.jar" id="org.polarsys.kitalpha.doc.gen.business.core.feature.source" version="1.2.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.doc.gen.business.core.feature.source_1.2.2.qualifier.jar" id="org.polarsys.kitalpha.doc.gen.business.core.feature.source" version="1.2.2.qualifier">
       <category name="SdkSource"/>
    </feature>
    <feature url="features/org.polarsys.kitalpha.emde.explorer.contextual.feature_1.2.1.qualifier.jar" id="org.polarsys.kitalpha.emde.explorer.contextual.feature" version="1.2.1.qualifier">
