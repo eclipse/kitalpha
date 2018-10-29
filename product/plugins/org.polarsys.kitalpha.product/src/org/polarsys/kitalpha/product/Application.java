@@ -148,7 +148,13 @@ public class Application implements IApplication, IExecutableExtension {
 				@Override
 				public void preStartup() {
 					super.preStartup();
+					
+					String bundleVersion = ((String) Platform.getProduct().getDefiningBundle().getHeaders().get("Bundle-version")); //$NON-NLS-1$
+				    System.setProperty("kitalphaVersion", bundleVersion.substring(0, 5));
+				    System.setProperty("buildId", bundleVersion.substring(6));
+					
 					ToolIntegrationHelper.loadTools();
+					
 				}
 			});
 
