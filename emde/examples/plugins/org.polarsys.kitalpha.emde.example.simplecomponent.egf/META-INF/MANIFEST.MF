@@ -2,5 +2,5 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Simplecomponent generator (eMDE Example)
 Bundle-SymbolicName: org.polarsys.kitalpha.emde.example.simplecomponent.egf;singleton:=true
-Bundle-Version: 1.3.0.qualifier
+Bundle-Version: 1.4.0.qualifier
 Bundle-Vendor: www.polarsys.org

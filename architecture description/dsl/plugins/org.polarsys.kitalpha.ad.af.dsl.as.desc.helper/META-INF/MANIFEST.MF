@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %BundleName
 Bundle-SymbolicName: org.polarsys.kitalpha.ad.af.dsl.as.desc.helper
-Bundle-Version: 1.3.0.qualifier
+Bundle-Version: 1.4.0.qualifier
 Bundle-Activator: org.polarsys.kitalpha.ad.af.dsl.as.desc.helper.Activator
 Bundle-Vendor: %BundleVendor
 Bundle-Localization: plugin
