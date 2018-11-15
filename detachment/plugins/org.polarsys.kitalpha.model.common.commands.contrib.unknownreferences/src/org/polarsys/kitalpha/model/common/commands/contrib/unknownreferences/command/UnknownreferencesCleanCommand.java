@@ -12,6 +12,7 @@ package org.polarsys.kitalpha.model.common.commands.contrib.unknownreferences.co
 
 import java.util.List;
 import java.util.Map.Entry;
+import java.util.Set;
 
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -34,6 +35,7 @@ import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.diagram.DiagramPackage;
 import org.eclipse.sirius.diagram.description.Layer;
 import org.eclipse.sirius.diagram.description.filter.FilterDescription;
+import org.eclipse.sirius.table.metamodel.table.DTable;
 import org.eclipse.sirius.viewpoint.DRepresentationElement;
 import org.eclipse.sirius.viewpoint.DView;
 import org.polarsys.kitalpha.model.common.commands.action.ModelCommand;
@@ -41,6 +43,7 @@ import org.polarsys.kitalpha.model.common.commands.contrib.unknownreferences.Mes
 import org.polarsys.kitalpha.model.common.commands.exception.ModelCommandException;
 import org.polarsys.kitalpha.model.common.scrutiny.analyzer.ModelScrutinyException;
 import org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.scrutinizes.InvalidDMapping;
+import org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.scrutinizes.InvalidDTable;
 import org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.scrutinizes.InvalidDView;
 import org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.scrutinizes.InvalidEReferences;
 import org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.scrutinizes.InvalidFilterDescription;
@@ -59,8 +62,8 @@ public class UnknownreferencesCleanCommand extends ModelCommand {
 
 	
 	public UnknownreferencesCleanCommand() {
+		//Do nothing
 	}
-	
 	
 	private ECrossReferenceAdapter installCrossReferencer(Resource resource){
 		EList<Adapter> eAdapters = resource.getResourceSet().eAdapters();
@@ -232,8 +235,30 @@ public class UnknownreferencesCleanCommand extends ModelCommand {
 						}
 					}
 				}
-
 				
+				//Invalid DTables
+				if (finder instanceof InvalidDTable) {
+					monitor.subTask("Clean DTables");
+					InvalidDTable invalidDTable = (InvalidDTable)finder;
+					
+					final Set<DTable> tables = invalidDTable.getAnalysisResult();
+					
+					if (ed != null) {
+						RecordingCommand command = new RecordingCommand(ed) {
+							@Override
+							protected void doExecute() {
+								deleteTables(tables);
+							}
+						};
+						
+						if (command.canExecute()) {
+							ed.getCommandStack().execute(command);
+						}
+					} else {
+						deleteTables(tables);
+					}
+					
+				}
 			}
 			
 		} catch (ModelScrutinyException e) {
@@ -242,6 +267,13 @@ public class UnknownreferencesCleanCommand extends ModelCommand {
 	
 		monitor.worked(1);
 		monitor.done();
+	}
+
+
+	private void deleteTables(final Set<DTable> tables) {
+		for (DTable table : tables) {
+			EcoreUtil.remove(table);
+		}
 	}
 	
 	private void clean(TransactionalEditingDomain ed, final EObject key, final EReference r) {
@@ -254,8 +286,10 @@ public class UnknownreferencesCleanCommand extends ModelCommand {
 
 					@Override
 					protected void doExecute() {
-						key.eUnset(r);
-						EcoreUtil.delete((EObject) value);
+						if (r.isUnsettable()) {
+							key.eUnset(r);
+							EcoreUtil.delete((EObject) value);
+						}
 					}
 				};
 
