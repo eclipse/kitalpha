@@ -1,6 +1,8 @@
-//Generated with EGF 1.4.0.v20160519-0641
+//Generated with EGF 1.5.1.v20180423-0901
 package org.polarsys.kitalpha.doc.gen.business.core.searchIndex;
 
+import java.util.Map.Entry;
+import org.polarsys.kitalpha.doc.gen.business.core.services.IndexItem;
 import org.eclipse.egf.common.helper.*;
 import java.util.*;
 import org.eclipse.emf.ecore.*;
@@ -33,36 +35,45 @@ public class SearchIndex extends org.polarsys.kitalpha.doc.gen.business.core.doc
 			+ "    <p id=\"p2\"></p>\t" + NL + "\t<script type=\"text/javascript\">" + NL + "\t\t" + NL
 			+ "\t\tvar tabCount = ";
 	protected final String TEXT_2 = ";" + NL + "\t\tvar conceptsList = new Array(tabCount);" + NL
-			+ "\t\tvar currentSize = 0;" + NL + "\t\tvar addedConceptCount = 0;" + NL
-			+ "\t\tfor(x = 0; x < tabCount; x++) {" + NL + "\t\t\tif ((";
+			+ "\t\tvar currentSize = 0;" + NL + "\t\tvar addedConceptCount = 0;" + NL + "\t\tvar conceptIcons =  {};"
+			+ NL + "\t\tfor(x = 0; x < tabCount; x++) {" + NL + "\t\t\tif ((";
 	protected final String TEXT_3 = " - addedConceptCount) > 255){" + NL + "\t\t\t\tcurrentSize = 255;" + NL
 			+ "\t\t\t}else{" + NL + "\t\t\t\tcurrentSize = ";
 	protected final String TEXT_4 = " - addedConceptCount;" + NL + "\t\t\t}" + NL
 			+ "\t\t\tvar jConcepts = new Array(currentSize);" + NL + "\t\t\tfor(i = 0; i < currentSize;i++) {" + NL
 			+ "\t\t\t\tjConcepts[i] = new Array();" + NL + "\t\t\t}" + NL + "\t\t\tconceptsList[x] = jConcepts;" + NL
-			+ "\t\t\taddedConceptCount = addedConceptCount + 255;" + NL + "\t\t}" + NL;
-	protected final String TEXT_5 = "conceptsList[";
+			+ "\t\t\taddedConceptCount = addedConceptCount + 255;" + NL + "\t\t} " + NL;
+	protected final String TEXT_5 = NL + "\t\tconceptsList[";
 	protected final String TEXT_6 = "][";
 	protected final String TEXT_7 = "][0] = \"";
 	protected final String TEXT_8 = "\";" + NL + "\t\tconceptsList[";
 	protected final String TEXT_9 = "][";
 	protected final String TEXT_10 = "][1] = \"";
 	protected final String TEXT_11 = "\";" + NL + "\t\t";
-	protected final String TEXT_12 = "\t\t\t" + NL + "\t    $(\"#input1\").keyup(function () {" + NL
+	protected final String TEXT_12 = NL + "\t\tconceptsList[";
+	protected final String TEXT_13 = "][";
+	protected final String TEXT_14 = "][2] = \"";
+	protected final String TEXT_15 = "\";" + NL + "\t\t";
+	protected final String TEXT_16 = NL + "\t\t";
+	protected final String TEXT_17 = NL + "\t\t";
+	protected final String TEXT_18 = NL + NL + NL + "\t    $(\"#input1\").keyup(function () {" + NL
 			+ "\t      var value = $(this).val();" + NL + "\t      // $(\"#p1\").text(value);" + NL
 			+ "\t      var element = document.getElementById('possible_keywords');" + NL + "\t      var t = \"\";" + NL
 			+ "\t      for (x=0; x < tabCount; x++){" + NL + "\t\t  \tvar concepts = conceptsList[x];" + NL
 			+ "\t      \tfor(i=0;i<concepts.length;i++) {" + NL
 			+ "\t      \t\tvar index = concepts[i][0].toLowerCase().indexOf(value.toLowerCase());" + NL
 			+ "\t      \t\tif(index != -1) {" + NL + "\t\t      \t\tvar value2 = concepts[i][0];" + NL
-			+ "\t      \t\t\tvar value3 = concepts[i][1];" + NL
-			+ "\t      \t\t\tt = t.concat(\"<a href='concepts/\" + value3 + \".html' target='content'>\" + value2 + \"</a><br/>\");\t      \t\t"
-			+ NL + "\t      \t\t}" + NL + "\t      \t}" + NL + "\t      }" + NL + "\t      " + NL
-			+ "\t      $(\"#p2\").html(t);" + NL + "\t      " + NL + "\t      element.value = value;" + NL
-			+ "\t    }).keyup();" + NL + "\t    " + NL + "\t</script>" + NL + "\t</div>" + NL + "</body>" + NL
+			+ "\t      \t\t\tvar value3 = concepts[i][1];" + NL + "\t      \t\t\tvar value4 = concepts[i][2]; //icon"
+			+ NL + "\t      \t\t\tif (value4 === undefined) {" + NL
+			+ "\t      \t\t\t\tt = t.concat(\" <a href='concepts/\" + value3 + \".html' target='content'>\" + value2 + \"</a><br/>\");"
+			+ NL + "\t      \t\t\t} else {" + NL
+			+ "\t      \t\t\t\tt = t.concat(value4 + \" <a href='concepts/\" + value3 + \".html' target='content'>\" + value2 + \"</a><br/>\");"
+			+ NL + "\t      \t\t\t}\t      \t\t" + NL + "\t      \t\t}" + NL + "\t      \t}" + NL + "\t      }" + NL
+			+ "\t      " + NL + "\t      $(\"#p2\").html(t);" + NL + "\t      " + NL + "\t      element.value = value;"
+			+ NL + "\t    }).keyup();" + NL + "\t    " + NL + "\t</script>" + NL + "\t</div>" + NL + "</body>" + NL
 			+ "</html>";
-	protected final String TEXT_13 = NL;
-	protected final String TEXT_14 = NL;
+	protected final String TEXT_19 = NL;
+	protected final String TEXT_20 = NL;
 
 	public SearchIndex() {
 		//Here is the constructor
@@ -90,8 +101,8 @@ public class SearchIndex extends org.polarsys.kitalpha.doc.gen.business.core.doc
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_13);
-		stringBuffer.append(TEXT_14);
+		stringBuffer.append(TEXT_19);
+		stringBuffer.append(TEXT_20);
 		return stringBuffer.toString();
 	}
 
@@ -110,20 +121,21 @@ public class SearchIndex extends org.polarsys.kitalpha.doc.gen.business.core.doc
 
 	protected void method_content(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
-		List<String> concepts = (List<String>) ctx.getValue("concepts");
+		Map<String, IndexItem> indexItems = (Map<String, IndexItem>) ctx.getValue("IndexItem");
 
 		stringBuffer.append(TEXT_1);
-		stringBuffer.append((concepts.size() / 255) + 1);
+		stringBuffer.append((indexItems.size() / 255) + 1);
 		stringBuffer.append(TEXT_2);
-		stringBuffer.append(concepts.size());
+		stringBuffer.append(indexItems.size());
 		stringBuffer.append(TEXT_3);
-		stringBuffer.append(concepts.size());
+		stringBuffer.append(indexItems.size());
 		stringBuffer.append(TEXT_4);
 
 		int count = 0;
 		int listCount = 0;
 		int i = 0;
-		for (String currentConcept : concepts) {
+
+		for (Entry<String, IndexItem> entry : indexItems.entrySet()) {
 			i++;
 
 			stringBuffer.append(TEXT_5);
@@ -131,14 +143,24 @@ public class SearchIndex extends org.polarsys.kitalpha.doc.gen.business.core.doc
 			stringBuffer.append(TEXT_6);
 			stringBuffer.append(count);
 			stringBuffer.append(TEXT_7);
-			stringBuffer.append(currentConcept.replace("\"", "\\\""));
+			stringBuffer.append(entry.getValue().getConceptName().replace("\"", "\\\""));
 			stringBuffer.append(TEXT_8);
 			stringBuffer.append(listCount);
 			stringBuffer.append(TEXT_9);
 			stringBuffer.append(count);
 			stringBuffer.append(TEXT_10);
-			stringBuffer.append(i + "_" + DocGenHtmlUtil.getValidFileName(currentConcept));
+			stringBuffer.append(i + "_" + DocGenHtmlUtil.getValidFileName(entry.getValue().getConceptName()));
 			stringBuffer.append(TEXT_11);
+			if (entry.getValue().getIconTag() != null && !entry.getValue().getIconTag().isEmpty()) {
+				stringBuffer.append(TEXT_12);
+				stringBuffer.append(listCount);
+				stringBuffer.append(TEXT_13);
+				stringBuffer.append(count);
+				stringBuffer.append(TEXT_14);
+				stringBuffer.append(entry.getValue().getIconTag().replaceAll("\"", "'").replaceFirst("../", ""));
+				stringBuffer.append(TEXT_15);
+			}
+			stringBuffer.append(TEXT_16);
 
 			if (count == 254) {
 				count = 0;
@@ -146,9 +168,12 @@ public class SearchIndex extends org.polarsys.kitalpha.doc.gen.business.core.doc
 			} else {
 				count++;
 			}
+
+			stringBuffer.append(TEXT_17);
+
 		}
 
-		stringBuffer.append(TEXT_12);
+		stringBuffer.append(TEXT_18);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "content", stringBuffer.toString());
 	}

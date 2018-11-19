@@ -1,0 +1,33 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _7z-fIHN5EeaIXORVNWg1aA,_FyPHIOmgEeifjJ80RQydOQ
+Element-Name: UnknownReferencesWithSiriusTable
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _9Yl7oOmfEeifjJ80RQydOQ
+Runtime-Version: 2.2.0.201706152316
+Save-Time: 11/16/18 2:32 PM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-view "Project Explorer" | get-tree | select "test/test.aird" | get-menu -path "Model Detachment" | click
+get-editor "Detachment" | get-tab-folder | get-tab-item "Unknown references" | click
+get-editor "Detachment" | get-table | get-property itemCount | equals 6 | verify-true
+get-editor "Detachment" | get-button "Perform Detachment" | click
+get-window Information | get-button Yes | click
+get-window "Detachment..." | get-button OK | click
+get-view "Project Explorer" | get-tree | select "test/test.aird" | get-menu -path "Model Detachment" | click
+get-editor "Detachment" | get-tab-folder | get-tab-item "Unknown references" | click
+get-editor "Detachment" | get-table | get-property itemCount | equals 0 | verify-true
+get-view "Project Explorer" | click
+get-editor "Detachment" | close
+get-view "Project Explorer" | get-tree | select test | get-menu -path Delete | click
+with [get-window "Delete Resources"] {
+    get-button "Delete project contents on disk (cannot be undone)" | check
+    get-button OK | click
+}
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

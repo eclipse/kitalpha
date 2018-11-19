@@ -1,5 +1,5 @@
 <%
-List<String> concepts = (List<String>) ctx.getValue("concepts");
+Map<String, IndexItem> indexItems = (Map<String, IndexItem>) ctx.getValue("IndexItem");
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -22,15 +22,16 @@ List<String> concepts = (List<String>) ctx.getValue("concepts");
     <p id="p2"></p>	
 	<script type="text/javascript">
 		
-		var tabCount = <%=(concepts.size()/255)+1%>;
+		var tabCount = <%=(indexItems.size()/255)+1%>;
 		var conceptsList = new Array(tabCount);
 		var currentSize = 0;
 		var addedConceptCount = 0;
+		var conceptIcons =  {};
 		for(x = 0; x < tabCount; x++) {
-			if ((<%=concepts.size()%> - addedConceptCount) > 255){
+			if ((<%=indexItems.size()%> - addedConceptCount) > 255){
 				currentSize = 255;
 			}else{
-				currentSize = <%=concepts.size()%> - addedConceptCount;
+				currentSize = <%=indexItems.size()%> - addedConceptCount;
 			}
 			var jConcepts = new Array(currentSize);
 			for(i = 0; i < currentSize;i++) {
@@ -38,16 +39,22 @@ List<String> concepts = (List<String>) ctx.getValue("concepts");
 			}
 			conceptsList[x] = jConcepts;
 			addedConceptCount = addedConceptCount + 255;
-		}
+		} 
 
 <%
 int count = 0;
 int listCount = 0;
 int i = 0;
-for(String currentConcept : concepts) {
+
+
+for(Entry<String, IndexItem> entry : indexItems.entrySet()) {
 		i++;
-		%>conceptsList[<%=listCount%>][<%=count%>][0] = "<%=currentConcept.replace("\"", "\\\"")%>";
-		conceptsList[<%=listCount%>][<%=count%>][1] = "<%=i+"_"+DocGenHtmlUtil.getValidFileName(currentConcept)%>";
+		%>
+		conceptsList[<%=listCount%>][<%=count%>][0] = "<%=entry.getValue().getConceptName().replace("\"", "\\\"")%>";
+		conceptsList[<%=listCount%>][<%=count%>][1] = "<%=i+"_"+DocGenHtmlUtil.getValidFileName(entry.getValue().getConceptName())%>";
+		<% if (entry.getValue().getIconTag() != null && !entry.getValue().getIconTag().isEmpty()) { %>
+		conceptsList[<%=listCount%>][<%=count%>][2] = "<%= entry.getValue().getIconTag().replaceAll("\"", "'").replaceFirst("../", "") %>";
+		<%}%>
 		<%
 		if (count == 254){
 			count = 0;
@@ -55,8 +62,12 @@ for(String currentConcept : concepts) {
 		}else{
 			count++;
 		}
+		%>
+		<%
 }
-%>			
+%>
+
+
 	    $("#input1").keyup(function () {
 	      var value = $(this).val();
 	      // $("#p1").text(value);
@@ -69,7 +80,12 @@ for(String currentConcept : concepts) {
 	      		if(index != -1) {
 		      		var value2 = concepts[i][0];
 	      			var value3 = concepts[i][1];
-	      			t = t.concat("<a href='concepts/" + value3 + ".html' target='content'>" + value2 + "</a><br/>");	      		
+	      			var value4 = concepts[i][2]; //icon
+	      			if (value4 === undefined) {
+	      				t = t.concat(" <a href='concepts/" + value3 + ".html' target='content'>" + value2 + "</a><br/>");
+	      			} else {
+	      				t = t.concat(value4 + " <a href='concepts/" + value3 + ".html' target='content'>" + value2 + "</a><br/>");
+	      			}	      		
 	      		}
 	      	}
 	      }

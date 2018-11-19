@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015 Thales Global Services S.A.S.
+ * Copyright (c) 2015, 2019 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,8 +25,8 @@ import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.emf.transaction.impl.TransactionalEditingDomainImpl;
 import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.polarsys.kitalpha.doc.gen.business.core.messages.Messages;
 
 /**
@@ -303,8 +303,15 @@ public class GenerationGlobalScope {
 			if (this.scopedResource == null)
 				this.scopedResource = copyResource(modelElement);
 			
-			// Replace the model element from the original resource by the created copy.
-			modelElement = this.copier.get(modelElement);
+			// Replace the model element from the original resource by the created copy if semantic element.
+			if (modelElement instanceof DRepresentationDescriptor)
+			{
+				modelElement = ((DRepresentationDescriptor) modelElement).getRepresentation();
+			}
+			else
+			{
+				modelElement = this.copier.get(modelElement);
+			}
 		}
 		
 		// Compute Scope for the current element and add it to the global scope

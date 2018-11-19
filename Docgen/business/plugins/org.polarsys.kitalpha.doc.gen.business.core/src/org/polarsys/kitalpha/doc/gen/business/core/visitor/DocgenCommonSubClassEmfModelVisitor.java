@@ -27,7 +27,9 @@ import org.eclipse.osgi.util.NLS;
 import org.polarsys.kitalpha.doc.gen.business.core.helper.IConceptsHelper;
 import org.polarsys.kitalpha.doc.gen.business.core.scope.SubClassEmfModelVisitorWithScoping;
 import org.polarsys.kitalpha.doc.gen.business.core.services.ExtensionService;
+import org.polarsys.kitalpha.doc.gen.business.core.services.IndexItem;
 import org.polarsys.kitalpha.doc.gen.business.core.services.IndexerService;
+import org.polarsys.kitalpha.doc.gen.business.core.util.DefaultFileNameService;
 
 
 public class DocgenCommonSubClassEmfModelVisitor extends SubClassEmfModelVisitorWithScoping {
@@ -96,14 +98,15 @@ public class DocgenCommonSubClassEmfModelVisitor extends SubClassEmfModelVisitor
 			{
 				if (iConceptsHelper.accept(model))
 				{
+					String fileName = DefaultFileNameService.INSTANCE.getFileName((EObject) model);
 					String conceptLabel = iConceptsHelper.getConceptLabel(model);
-					if (!IndexerService.INSTANCE.checkConceptExistence(conceptLabel)) 
-						IndexerService.INSTANCE.getElements().add(conceptLabel);
-
+					IndexerService.INSTANCE.getElements().add(conceptLabel);
+					IndexItem item = new IndexItem(conceptLabel, model.getClass().getName(), 
+							null, null, fileName);
+					IndexerService.INSTANCE.getElementsToIndexItems().put(fileName, item);
 					break;
 				}
 			}
 		}
 	}
-
 }

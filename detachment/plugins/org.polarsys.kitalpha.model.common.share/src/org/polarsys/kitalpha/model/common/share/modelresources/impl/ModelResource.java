@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2019 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -69,7 +69,10 @@ public class ModelResource implements IModelResource {
 		
 		if (eObjectURI.startsWith("http://") || eObjectURI.isEmpty()){
 			//FIXME check if return null
-			eObjectURI = DetachmentHelper.getPlatformResourceURIFromEObject(eObject).toString();
+			URI platformResourceURIFromEObject = DetachmentHelper.getPlatformResourceURIFromEObject(eObject);
+			if (platformResourceURIFromEObject == null)
+				throw new ModelResourceException("Cannot resolve "+eObjectURI);
+			eObjectURI = platformResourceURIFromEObject.toString();
 		}
 		
 		if (!resourceUri.equals(eObjectURI)){

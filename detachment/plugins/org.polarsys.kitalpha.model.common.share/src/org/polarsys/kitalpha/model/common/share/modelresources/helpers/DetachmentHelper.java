@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2019 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -65,15 +65,6 @@ public class DetachmentHelper {
 				{
 					r = rs.createResource(genmodelURI);
 					loadedResources.put(uri, r);
-//					try {
-//						if (!r.isLoaded())
-//						{
-//							r.load(null);
-//							loadedResources.put(uri, r);
-//						}
-//					} 
-//					catch (IOException e) {
-//					}
 				}
 				
 			}
@@ -93,14 +84,11 @@ public class DetachmentHelper {
 			EList<EObject> genContents = r.getContents();;
 			if (genContents != null && ! genContents.isEmpty())
 			{
-				if (genContents != null && !genContents.isEmpty())
+				EList<GenPackage> genmodels = ((GenModel)genContents.get(0)).getGenPackages();
+				for(GenPackage genPackage: genmodels)
 				{
-					EList<GenPackage> genmodels = ((GenModel)genContents.get(0)).getGenPackages();
-					for(GenPackage genPackage: genmodels)
-					{
-						URI platformURI = genPackage.getEcorePackage().eResource().getURI();
-						return platformURI;
-					}
+					URI platformURI = genPackage.getEcorePackage().eResource().getURI();
+					return platformURI;
 				}
 			}
 		}
@@ -113,6 +101,9 @@ public class DetachmentHelper {
 		if (rootContainer instanceof EPackage)
 		{
 			String nsURI2 = ((EPackage) rootContainer).getNsURI();
+			if (nsURI2 == null) {
+				return null;
+			}
 			return DetachmentHelper.getPlatformURIFromNSURI(URI.createURI(nsURI2));
 		}
 		else

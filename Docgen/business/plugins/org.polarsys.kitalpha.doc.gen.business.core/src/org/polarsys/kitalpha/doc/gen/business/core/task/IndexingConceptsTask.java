@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2019 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,9 +19,12 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Optional;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
@@ -39,6 +42,7 @@ import org.eclipse.egf.core.producer.InvocationException;
 import org.eclipse.egf.ftask.producer.context.ITaskProductionContext;
 import org.eclipse.egf.ftask.producer.invocation.ITaskProduction;
 import org.polarsys.kitalpha.doc.gen.business.core.Activator;
+import org.polarsys.kitalpha.doc.gen.business.core.services.IndexItem;
 import org.polarsys.kitalpha.doc.gen.business.core.util.DocGenHtmlUtil;
 import org.polarsys.kitalpha.doc.gen.business.core.util.EscapeChars;
 
@@ -50,15 +54,22 @@ public class IndexingConceptsTask implements ITaskProduction {
 	private static final Logger logger = Logger.getLogger(IndexingConceptsTask.class.getName());
 	private static final String INDEXING_PREF = "[INDEXING] ";
 
-	private Map<String, List<String>> conceptsToPageTitle = new HashMap<String, List<String>>();
+	private Map<IndexItem, List<String>> conceptsToPageTitle = new HashMap<>();
 
-	private Map<String, List<String>> conceptsToPageParagraph = new HashMap<String, List<String>>();
+	private Map<IndexItem, List<String>> conceptsToPageParagraph = new HashMap<>();
 
-	private Map<String, List<String>> conceptsToPageList = new HashMap<String, List<String>>();
+	private Map<IndexItem, List<String>> conceptsToPageList = new HashMap<>();
 
-	private Map<String, List<String>> conceptsToPageTable = new HashMap<String, List<String>>();
-
-	private Map<String, String> fileNameToTitle = new HashMap<String, String>();
+	private Map<IndexItem, List<String>> conceptsToPageTable = new HashMap<>();
+	
+	/* 
+	 * Not needed while index items maps file to concepts information
+	 * 
+	 * @Depricated
+	 */
+	@Deprecated
+	private Map<String, String> fileNameToTitle = new HashMap<>();
+	
 
 
 	//Regexp patterns
@@ -120,8 +131,11 @@ public class IndexingConceptsTask implements ITaskProduction {
 		// get Contracts values
 		String projectName = productionContext.getInputValue("projectName", String.class);
 		String outputFolder = productionContext.getInputValue("outputFolder", String.class);
-		List<String> concepts = productionContext.getInputValue("concepts", List.class);
-
+		Map<String, IndexItem> indexItems = productionContext.getInputValue("indexItems", Map.class);
+		
+		// Add all real concept to be cleaned
+		List<String> concepts = indexItems.values().stream().map(item -> item.getConceptName()).collect(Collectors.toList());
+		
 		if (DO_TRACE) {
 			logger.info(INDEXING_PREF + "Start indexing at: " + Calendar.getInstance().get(Calendar.MINUTE));
 			logger.info(INDEXING_PREF + "Project: " + projectName);
@@ -135,7 +149,7 @@ public class IndexingConceptsTask implements ITaskProduction {
 		try {
 			IResource[] content = folder.members();
 			
-			indexResources(concepts, content);
+			indexResources(indexItems, content);
 
 			concepts = removeConceptsWithEmptyPages(concepts);
 
@@ -145,7 +159,7 @@ public class IndexingConceptsTask implements ITaskProduction {
 				logger.info(INDEXING_PREF + "Starting generating index pages");
 			}
 
-			generatingConceptsPages(projectName, outputFolder, concepts);
+			generatingConceptsPages(projectName, outputFolder, concepts, indexItems);
 
 			if (DO_TRACE) {
 				logger.info(INDEXING_PREF + "End generating index pages");
@@ -157,17 +171,17 @@ public class IndexingConceptsTask implements ITaskProduction {
 		}
 	}
 
-	private void indexResources(List<String> concepts, IResource[] content) throws CoreException {
+	private void indexResources(Map<String, IndexItem> indexItems, IResource[] content) throws CoreException {
 		for (IResource currentResource : content) 
 		{
 			if (currentResource instanceof IFile) 
 			{
-				indexFile(concepts, currentResource);
+				indexFile(indexItems, currentResource);
 			}
 		}
 	}
 
-	private void indexFile(List<String> concepts, IResource currentResource) throws CoreException {
+	private void indexFile(Map<String, IndexItem> indexItems, IResource currentResource) throws CoreException {
 		IFile file = (IFile) currentResource;
 		if (file.getName().endsWith(".html") &&	isFileAModelHtmlPage(file.getName())) 
 		{
@@ -175,7 +189,7 @@ public class IndexingConceptsTask implements ITaskProduction {
 				logger.info(INDEXING_PREF + "Starting indexing page: " + file.getName());
 			}
 
-			indexPage(concepts, file);
+			indexPage(indexItems, file);
 
 			if (DO_TRACE) {
 				logger.info(INDEXING_PREF + "Ending indexing page: " + file.getName());
@@ -221,125 +235,164 @@ public class IndexingConceptsTask implements ITaskProduction {
 			final List<String> inTable = conceptsToPageTable.get(currentConcept);
 			noPageTable = inTable == null || inTable.isEmpty(); 
 
-			if (noPage && noPageParagraph && noPageList && noPageTable)
+			if (noPage && noPageParagraph && noPageList && noPageTable) {
 				conceptsToRemove.add(currentConcept);
+			}
 		}
 	}
 
 	private void generatingConceptsPages(String projectName,
-			String outputFolder, List<String> concepts) {
+			String outputFolder, List<String> concepts, Map<String, IndexItem> indexItems) {
 		int i = 0;
-		for (String currentConcept : concepts) 
+		for (Entry<String, IndexItem> currentConcept : indexItems.entrySet()) 
 		{
 			i ++;
 			StringBuffer buffer = new StringBuffer();
 			buffer.append(HEADER);
-			buffer.append("<h1>" + currentConcept + "</h1>");
+			buffer.append("<h1>" + currentConcept.getValue().getConceptName() + "</h1>");
+			
+			generateLinkTowardConcept(indexItems, currentConcept.getValue(), buffer);
 
 			// Title
-			List<String> currentConceptPages = conceptsToPageTitle.get(currentConcept);
-			generateTitle(currentConcept, buffer, currentConceptPages);
+			List<String> currentConceptPages = conceptsToPageTitle.get(currentConcept.getValue());
+			generateTitle(currentConcept.getValue(), indexItems, buffer, currentConceptPages);
 
 			// Paragraph
-			currentConceptPages = conceptsToPageParagraph.get(currentConcept);
-			generateParagraph(currentConcept, buffer, currentConceptPages);
+			currentConceptPages = conceptsToPageParagraph.get(currentConcept.getValue());
+			generateParagraph(currentConcept.getValue(), indexItems, buffer, currentConceptPages);
 
 			// List
-			currentConceptPages = conceptsToPageList.get(currentConcept);
-			generateList(buffer, currentConceptPages);
+			currentConceptPages = conceptsToPageList.get(currentConcept.getValue());
+			generateList(currentConcept.getValue(), indexItems, buffer, currentConceptPages);
 
 			// Table
-			currentConceptPages = conceptsToPageTable.get(currentConcept);
-			generateTable(buffer, currentConceptPages);
+			currentConceptPages = conceptsToPageTable.get(currentConcept.getValue());
+			generateTable(currentConcept.getValue(), indexItems, buffer, currentConceptPages);
 			
 			
 			buffer.append(FOOTER);
 
-			DocGenHtmlUtil.writeFilePatternContent(i+"_"+DocGenHtmlUtil.getValidFileName(currentConcept),
+			DocGenHtmlUtil.writeFilePatternContent(i+"_"+DocGenHtmlUtil.getValidFileName(currentConcept.getValue().getConceptName()),
 					projectName, outputFolder + "/concepts", buffer.toString());
 
 		}
 	}
 
-	private void generateTable(StringBuffer buffer, List<String> currentConceptPages) {
-		if (currentConceptPages != null) 
-		{
-			doGenerateTables(buffer, currentConceptPages);
+	private void generateLinkTowardConcept(Map<String, IndexItem> indexItems, IndexItem indexItem,
+			StringBuffer buffer) {
+		String iconTag = indexItem.getIconTag();
+		String linkTagTowardPageElement = indexItem.getLinkTagTowardPageElement();
+		/*
+		 * Generate the section which has the link to the element in the case
+		 * of link Tag is specified
+		 */
+		if (linkTagTowardPageElement != null && !linkTagTowardPageElement.isEmpty()) {
+			buffer.append("<h2>Direct link toward element page</h2>");
+			buffer.append("<ul class=\"generatedList\"><li>");
+			if (iconTag != null) {
+				buffer.append(iconTag).append(" ");
+			}
+			buffer.append(linkTagTowardPageElement);
+			buffer.append("</li></ul>");
 		}
 	}
 
-	private void generateList(StringBuffer buffer, List<String> currentConceptPages) {
+	private void generateTable(IndexItem indexItem, Map<String, IndexItem> indexItems, StringBuffer buffer, List<String> currentConceptPages) {
 		if (currentConceptPages != null) 
 		{
-			doGenerateLists(buffer, currentConceptPages);
+			doGenerateTables(indexItem, indexItems, buffer, currentConceptPages);
 		}
 	}
 
-	private void generateParagraph(String currentConcept, StringBuffer buffer, List<String> currentConceptPages) {
+	private void generateList(IndexItem indexItem, Map<String, IndexItem> indexItems, StringBuffer buffer, List<String> currentConceptPages) {
 		if (currentConceptPages != null) 
 		{
-			doGenerateParagraphs(currentConcept, buffer);
+			doGenerateLists(indexItem, buffer, indexItems, currentConceptPages);
 		}
 	}
 
-	private void generateTitle(String currentConcept, StringBuffer buffer, List<String> currentConceptPages) {
+	private void generateParagraph(IndexItem indexItem, Map<String, IndexItem> indexItems, StringBuffer buffer, List<String> currentConceptPages) {
 		if (currentConceptPages != null) 
 		{
-			doGenerateTitles(currentConcept, buffer);
+			doGenerateParagraphs(indexItem, indexItems, buffer);
 		}
 	}
 
-	private void doGenerateTables(StringBuffer buffer, List<String> currentConceptPages) {
-		buffer.append("<h2>Concept referenced in Table</h2>");
-		buffer.append("<ul>");
+	private void generateTitle(IndexItem indexItem, Map<String, IndexItem> indexItems, StringBuffer buffer, List<String> currentConceptPages) {
+		if (currentConceptPages != null) 
+		{
+			doGenerateTitles(indexItem, indexItems, buffer);
+		}
+	}
+	
+	private Optional<IndexItem> generateImageTag(String fileName, Map<String, IndexItem> indexItems, StringBuffer buffer) {
+		Optional<IndexItem> findedItem = indexItems.values().stream().
+				filter(item -> item.getFileName().equalsIgnoreCase(fileName.substring(0, fileName.indexOf(".")))).findFirst();
+		if (findedItem.isPresent()) {
+			IndexItem indexItem = findedItem.get();
+			String iconTag = indexItem.getIconTag();
+			if (iconTag != null && !iconTag.isEmpty()) {
+				buffer.append(iconTag).append(" ");
+			}
+		}
+		return findedItem;
+	}
+
+	private void doGenerateTables(IndexItem indexItem, Map<String, IndexItem> indexItems, StringBuffer buffer, List<String> currentConceptPages) {
+		buffer.append("<h2>Tables referencing the Element</h2>");
+		buffer.append("<ul class=\"generatedList\">");
 		for (String fileName : currentConceptPages) 
 		{
-			buffer.append("<li>");
-			buffer.append("<a href=\"../" + fileName + "\">" + fileNameToTitle.get(fileName) + "</a>");
-			buffer.append("</li>");
+			doGenerateHtmlListItem(indexItems, buffer, fileName);
 		}
 
 		buffer.append("</ul>");
 	}
 
-	private void doGenerateLists(StringBuffer buffer, List<String> currentConceptPages) {
-		buffer.append("<h2>Concept referenced in list</h2>");
-		buffer.append("<ul>");
+
+	private void doGenerateLists(IndexItem indexItem, StringBuffer buffer, Map<String, IndexItem> indexItems, List<String> currentConceptPages) {
+		buffer.append("<h2>Lists referencing the Element</h2>");
+		buffer.append("<ul class=\"generatedList\">");
 		for (String fileName : currentConceptPages) 
 		{
-			buffer.append("<li>");
-			buffer.append("<a href=\"../" + fileName + "\">" + fileNameToTitle.get(fileName) + "</a>");
-			buffer.append("</li>");
+			doGenerateHtmlListItem(indexItems, buffer, fileName);
 		}
 
 		buffer.append("</ul>");
 	}
 
-	private void doGenerateParagraphs(String currentConcept, StringBuffer buffer) {
-		buffer.append("<h2>Concept referenced in paraphraph</h2>");
-		buffer.append("<ul>");
-		for (String fileName : conceptsToPageParagraph.get(currentConcept)) 
+	private void doGenerateParagraphs(IndexItem indexItem, Map<String, IndexItem> indexItems, StringBuffer buffer) {
+		buffer.append("<h2>Paragraphs referencing the Element</h2>");
+		buffer.append("<ul class=\"generatedList\">");
+		for (String fileName : conceptsToPageParagraph.get(indexItem)) 
 		{
-			buffer.append("<li>");
-			buffer.append("<a href=\"../" + fileName + "\">" + fileNameToTitle.get(fileName) + "</a>");
-			buffer.append("</li>");
+			doGenerateHtmlListItem(indexItems, buffer, fileName);
 		}
-
 		buffer.append("</ul>");
 	}
 
-	private void doGenerateTitles(String currentConcept, StringBuffer buffer) {
-		buffer.append("<h2>Concept referenced in title</h2>");
-		buffer.append("<ul>");
-		for (String fileName : conceptsToPageTitle.get(currentConcept)) 
+	private void doGenerateTitles(IndexItem indexItem, Map<String, IndexItem> indexItems, StringBuffer buffer) {
+		buffer.append("<h2>Titles referencing the Element</h2>");
+		buffer.append("<ul class=\"generatedList\">");
+		for (String fileName : conceptsToPageTitle.get(indexItem)) 
 		{
-			buffer.append("<li>");
-			buffer.append("<a href=\"../" + fileName + "\">" + fileNameToTitle.get(fileName) + "</a>");
-			buffer.append("</li>");
+			doGenerateHtmlListItem(indexItems, buffer, fileName);
 		}
-
 		buffer.append("</ul>");
 	}
+
+	private void doGenerateHtmlListItem(Map<String, IndexItem> indexItems, StringBuffer buffer, String fileName) {
+		buffer.append("<li>");
+		Optional<IndexItem> findedItem = generateImageTag(fileName, indexItems, buffer);
+		if (findedItem.isPresent()) {
+			IndexItem item = findedItem.get();
+			buffer.append("<a href=\"../" + fileName + "\">" + item.getConceptType() + " - " + item.getConceptName() + "</a>");
+		} else {
+			buffer.append("<a href=\"../" + fileName + "\">" + fileNameToTitle.get(fileName) + "</a>");
+		}
+		buffer.append("</li>");
+	}
+	
 
 	private String getPageContent(IFile file) throws CoreException {
 		StringBuffer buffer = new StringBuffer();
@@ -360,7 +413,7 @@ public class IndexingConceptsTask implements ITaskProduction {
 		return buffer.toString();
 	}
 
-	private void indexPage(List<String> concepts, IFile file)
+	private void indexPage(Map<String, IndexItem> indexItems, IFile file)
 			throws CoreException {
 		String fileName = file.getName();
 
@@ -380,12 +433,13 @@ public class IndexingConceptsTask implements ITaskProduction {
 		mPHeaderOne = mPHeaderOne.reset(pageContent);
 		if (mPHeaderOne.matches()) 
 		{
-			for (String currentConcept : concepts) 
+			for (Entry<String, IndexItem> entry : indexItems.entrySet()) 
 			{
+				String currentConcept = entry.getValue().getConceptName();
 				String title = mPHeaderOne.group(1);
 				String currentConcept_html = EscapeChars.forHTML(currentConcept);
 				if (title.contains(currentConcept_html)) {
-					indexTitle(fileName, currentConcept);
+					indexTitle(fileName, entry.getValue());
 				}
 			}
 		}
@@ -398,12 +452,13 @@ public class IndexingConceptsTask implements ITaskProduction {
 
 		mParagraphe = mParagraphe.reset(pageContent);
 		while (mParagraphe.find()) {
-			for (String currentConcept : concepts) {
+			for (Entry<String, IndexItem> entry : indexItems.entrySet()) {
+				String currentConcept = entry.getValue().getConceptName();
 				for (int i = 1; i <= mParagraphe.groupCount(); i++) {
 					String paragraph = mParagraphe.group(i);
 					String currentConcept_html = EscapeChars.forHTML(currentConcept);
 					if (paragraph.contains(currentConcept_html)) {
-						indexParagraph(fileName, currentConcept);
+						indexParagraph(fileName, entry.getValue());
 						break;
 					}
 				}
@@ -440,12 +495,13 @@ public class IndexingConceptsTask implements ITaskProduction {
 				if (level == 0) {
 					final int listEndIndex = mListStartEnd.end(3);
 					final String listText = pageContent.substring(listStartIndex, listEndIndex);
-					for (final String currentConcept : concepts) 
+					for (Entry<String, IndexItem> entry : indexItems.entrySet())
 					{
+						String currentConcept = entry.getValue().getConceptName();
 						String currentConcept_html = EscapeChars.forHTML(currentConcept);
 						if (listText.contains(currentConcept_html)) 
 						{
-							indexList(fileName, currentConcept);
+							indexList(fileName, entry.getValue());
 						}
 					}
 				}
@@ -464,12 +520,12 @@ public class IndexingConceptsTask implements ITaskProduction {
 		mTable = mTable.reset(pageContent);
 		while (mTable.find()) 
 		{
-			for (String currentConcept : concepts) {
-				String currentConcept_html = EscapeChars.forHTML(currentConcept);
+			for (Entry<String, IndexItem> entry : indexItems.entrySet()) {
+				String currentConcept_html = EscapeChars.forHTML(entry.getValue().getConceptName());
 				for (int i = 1; i <= mTable.groupCount(); i++) {
 					String listGroup = mTable.group(i);
 					if (listGroup.contains(currentConcept_html)) {
-						indexTable(fileName, currentConcept);
+						indexTable(fileName, entry.getValue());
 						break;
 					}
 				}
@@ -481,37 +537,37 @@ public class IndexingConceptsTask implements ITaskProduction {
 		}
 	}
 
-	private void indexList(String fileName, String currentConcept) {
-		List<String> list = conceptsToPageList.get(currentConcept);
+	private void indexList(String fileName, IndexItem indexItem) {
+		List<String> list = conceptsToPageList.get(indexItem);
 		if (list != null && ! list.contains(fileName)) {
 			list.add(fileName);
 		} else {
 			List<String> localList = new ArrayList<String>();
 			localList.add(fileName);
-			conceptsToPageList.put(currentConcept, localList);
+			conceptsToPageList.put(indexItem, localList);
 		}
 
 		if (DO_TRACE) {
-			logger.info(INDEXING_PREF + "Concept: " + currentConcept + " is indexed in file: " + fileName);
+			logger.info(INDEXING_PREF + "Concept: " + indexItem + " is indexed in file: " + fileName);
 		}
 	}
 
-	private void indexParagraph(String fileName, String currentConcept) {
-		List<String> list = conceptsToPageParagraph.get(currentConcept);
+	private void indexParagraph(String fileName, IndexItem indexItem) {
+		List<String> list = conceptsToPageParagraph.get(indexItem);
 		if (list != null && ! list.contains(fileName)) {
 			list.add(fileName);
 		} else {
 			List<String> localList = new ArrayList<String>();
 			localList.add(fileName);
-			conceptsToPageParagraph.put(currentConcept, localList);
+			conceptsToPageParagraph.put(indexItem, localList);
 		}
 
 		if (DO_TRACE) {
-			logger.info(INDEXING_PREF + "Concept: " + currentConcept + " is indexed in file: " + fileName);
+			logger.info(INDEXING_PREF + "Concept: " + indexItem.getConceptName() + " is indexed in file: " + fileName);
 		}
 	}
 
-	private void indexTitle(String fileName, String currentConcept) {
+	private void indexTitle(String fileName, IndexItem currentConcept) {
 
 		List<String> list = conceptsToPageTitle.get(currentConcept);
 		if (list != null && ! list.contains(fileName)) {
@@ -526,18 +582,18 @@ public class IndexingConceptsTask implements ITaskProduction {
 		}
 	}
 
-	private void indexTable(String fileName, String currentConcept) {
+	private void indexTable(String fileName, IndexItem indexItem) {
 
-		List<String> list = conceptsToPageTable.get(currentConcept);
+		List<String> list = conceptsToPageTable.get(indexItem);
 		if (list != null && ! list.contains(fileName)) {
 			list.add(fileName);
 		} else {
 			List<String> localList = new ArrayList<String>();
 			localList.add(fileName);
-			conceptsToPageTable.put(currentConcept, localList);
+			conceptsToPageTable.put(indexItem, localList);
 		}
 		if (DO_TRACE) {
-			logger.info(INDEXING_PREF + "Concept: " + currentConcept + " is indexed in file: " + fileName);
+			logger.info(INDEXING_PREF + "Concept: " + indexItem + " is indexed in file: " + fileName);
 		}
 	}
 
