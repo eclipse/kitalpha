@@ -21,7 +21,7 @@ with [get-view Properties | get-tree] {
     select Models | activate-cell-edit -column 1
     get-button "..." | click
 }
-get-window "Models -- Metamodel" | get-table | get-property itemCount | equals 1 | verify-true
+get-window "Models -- Metamodel" | get-table | get-property itemCount | equals 2 | verify-true
 get-window "Models -- Metamodel" | get-button OK | click
 get-view Properties | get-tree | get-button "..." | click
 with [get-window "Models -- Metamodel"] {

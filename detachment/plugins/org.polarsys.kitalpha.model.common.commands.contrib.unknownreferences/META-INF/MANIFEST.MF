@@ -10,7 +10,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore.xmi,
  org.polarsys.kitalpha.model.common.scrutiny,
  org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences,
- org.eclipse.emf.transaction
+ org.eclipse.emf.transaction,
+ org.eclipse.sirius.table
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: org.apache.log4j
