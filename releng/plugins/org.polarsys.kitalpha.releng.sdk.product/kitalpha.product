@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Kitalpha Product" uid="org.polarsys.kitalpha.releng.sdk.product" id="org.polarsys.kitalpha.product.kitalpha" application="org.polarsys.kitalpha.product.application" version="1.2.1.qualifier" useFeatures="true" includeLaunchers="true">
+<product name="Kitalpha Product" uid="org.polarsys.kitalpha.releng.sdk.product" id="org.polarsys.kitalpha.product.kitalpha" application="org.polarsys.kitalpha.product.application" version="1.2.2.qualifier" useFeatures="true" includeLaunchers="true">
 
    <configIni use="default">
    </configIni>
@@ -31,7 +31,6 @@ openFile
    <splash
       location="org.polarsys.kitalpha.product" />
    <launcher>
-      <solaris/>
       <win useIco="false">
          <bmp/>
       </win>
@@ -188,6 +187,8 @@ http://www.eclipse.org/legal/epl-v10.htm
       <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
       <property name="org.eclipse.update.reconcile" value="false" />
+      <plugin id="org.eclipse.equinox.p2.reconciler.dropins" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.update.configurator" autoStart="true" startLevel="4" />
    </configurations>
 
    <preferencesInfo>
