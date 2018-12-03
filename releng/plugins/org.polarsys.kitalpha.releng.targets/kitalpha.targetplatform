@@ -148,7 +148,7 @@ location acceleo "http://download.eclipse.org/acceleo/updates/releases/3.7/R2017
 	org.eclipse.acceleo.source.feature.group lazy
 }
 
-location Sirus "http://download.eclipse.org/sirius/updates/releases/5.1.2/neon/" {
+location Sirus "https://download.eclipse.org/sirius/updates/stable/5.1.4-S20181130-113030/neon/" {
 	org.eclipse.sirius.doc.feature.feature.group lazy
 	org.eclipse.sirius.runtime.ide.eef.feature.group lazy
 	org.eclipse.sirius.runtime.ide.ui.acceleo.feature.group lazy
@@ -193,7 +193,7 @@ location EDM-Patterns "http://download.eclipse.org/diffmerge/releases/0.9.0/edm-
 
 }
 
-location amalgam "http://download.eclipse.org/modeling/amalgam/updates/stable/1.9.0-S20180528/capella/" {
+location amalgam "https://download.eclipse.org/modeling/amalgam/updates/stable/1.9.2-S20181203/capella/" {
 	org.eclipse.amalgam.explorer.activity.feature.group lazy
 	org.eclipse.amalgam.explorer.activity.source.feature.group lazy
 	org.eclipse.amalgam.explorer.contextual.feature.group lazy
