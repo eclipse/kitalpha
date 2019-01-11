@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2018  Thales Global Services S.A.S.
+ * Copyright (c) 2018, 2019  Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -12,11 +12,13 @@ package org.polarsys.kitalpha.massactions.edit.command;
 
 import java.util.Collection;
 
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.nebula.widgets.nattable.edit.command.EditSelectionCommand;
 import org.eclipse.nebula.widgets.nattable.edit.command.EditSelectionCommandHandler;
 import org.eclipse.nebula.widgets.nattable.edit.command.EditUtils;
 import org.eclipse.nebula.widgets.nattable.layer.cell.ILayerCell;
 import org.eclipse.nebula.widgets.nattable.selection.SelectionLayer;
+import org.eclipse.swt.widgets.Shell;
 import org.polarsys.kitalpha.massactions.core.data.accessor.IMAColumnPropertyAccessor;
 
 /**
@@ -42,6 +44,11 @@ public class MEEditSelectionCommandHandler extends EditSelectionCommandHandler {
   @Override
   public boolean doCommand(EditSelectionCommand command) {
     boolean performed;
+    if(!EditUtils.isEditorSame(selectionLayer, command.getConfigRegistry())) {
+      Shell shell = command.getParent() != null ? command.getParent().getShell() : null;
+      MessageDialog.openWarning(shell, "Multi Edit", "Selected cells don't have the same type.");
+      return true;
+    }
     Collection<ILayerCell> selectedCells = EditUtils.getSelectedCellsForEditing(this.selectionLayer);
 
     if (selectedCells.size() != 1) {
