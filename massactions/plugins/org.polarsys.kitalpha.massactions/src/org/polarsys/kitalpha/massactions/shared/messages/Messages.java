@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2018  Thales Global Services S.A.S.
+ * Copyright (c) 2018, 2019 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,6 +21,7 @@ import org.eclipse.osgi.util.NLS;
 public class Messages extends NLS {
   private static final String BUNDLE_NAME = "org.polarsys.kitalpha.massactions.shared.messages.messages"; //$NON-NLS-1$
 
+  public static String MA_VIEW_NAME;
   public static String MA_VIEW_CLEAR_TOOLTIP_TEXT;
   public static String MA_VIEW_FILTER_TOOLTIP_TEXT;
   public static String MA_VIEW_NEW_VIEW_TOOLTIP_TEXT;

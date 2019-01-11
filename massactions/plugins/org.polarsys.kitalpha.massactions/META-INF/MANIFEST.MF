@@ -12,6 +12,7 @@ Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.massactions.activator,
  org.polarsys.kitalpha.massactions.edit,
  org.polarsys.kitalpha.massactions.shared.helper,
+ org.polarsys.kitalpha.massactions.shared.messages,
  org.polarsys.kitalpha.massactions.shared.view,
  org.polarsys.kitalpha.massactions.visualize
 Automatic-Module-Name: org.polarsys.kitalpha.massactions
