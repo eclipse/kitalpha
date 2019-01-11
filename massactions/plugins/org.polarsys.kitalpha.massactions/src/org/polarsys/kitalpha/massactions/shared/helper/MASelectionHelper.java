@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2018  Thales Global Services S.A.S.
+ * Copyright (c) 2018, 2019 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,6 +21,8 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.ui.ISelectionService;
 
 /**
  * A selection helper, providing some utility methods.
@@ -29,7 +31,7 @@ import org.eclipse.jface.viewers.IStructuredSelection;
  *
  */
 public class MASelectionHelper {
-  
+
   /**
    * Extracts all of the valid {@link EObject} elements from the current selection.
    * 
@@ -50,8 +52,7 @@ public class MASelectionHelper {
 
   }
 
-  public boolean isEditingDomainEqual(Collection<EObject> elements,
-      TransactionalEditingDomain existingEditingDomain) {
+  public boolean isEditingDomainEqual(Collection<EObject> elements, TransactionalEditingDomain existingEditingDomain) {
 
     for (EObject element : elements) {
       TransactionalEditingDomain currentEditingDomain = TransactionUtil.getEditingDomain(element);
@@ -84,15 +85,15 @@ public class MASelectionHelper {
     if (elements.isEmpty()) {
       return false;
     }
-    
+
     Iterator<EObject> iterator = elements.iterator();
     EObject firstElement = iterator.next();
     TransactionalEditingDomain sharedEditingDomain = TransactionUtil.getEditingDomain(firstElement);
-    
+
     if (sharedEditingDomain == null) {
       return false;
     }
-    
+
     while (iterator.hasNext()) {
       EObject element = iterator.next();
       TransactionalEditingDomain currentEditingDomain = TransactionUtil.getEditingDomain(element);
@@ -104,4 +105,27 @@ public class MASelectionHelper {
     return true;
   }
 
+  /**
+   * Returns the EditingDomain for the elements in the current selection service, or null if the elements have different
+   * EditingDomain.
+   * 
+   * @param selectionService
+   *          the {@link SelectionAdapter} service
+   * @return the EditingDomain for the elements in the current selection service, or null if they elements have
+   *         different EditingDomain.
+   */
+  public TransactionalEditingDomain getEditingDomainFromSelectionService(ISelectionService selectionService) {
+    TransactionalEditingDomain editingDomain = null;
+
+    if (selectionService != null) {
+      ISelection siteSelection = selectionService.getSelection();
+      Collection<EObject> elementsFromSelection = getElementsFromSelection(siteSelection);
+
+      if (selectionSharesSameEditingDomain(elementsFromSelection)) {
+        editingDomain = getEditingDomainForFirstElement(elementsFromSelection);
+      }
+    }
+
+    return editingDomain;
+  }
 }
