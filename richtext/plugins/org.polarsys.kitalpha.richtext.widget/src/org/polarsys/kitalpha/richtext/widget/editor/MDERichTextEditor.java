@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017, 2018 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2019 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -34,6 +34,8 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.swt.events.DisposeEvent;
+import org.eclipse.swt.events.DisposeListener;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
@@ -107,6 +109,15 @@ public class MDERichTextEditor extends EditorPart
 			}
 		}
 	};
+
+	private DisposeListener disposeListener = new DisposeListener() {
+    @Override
+    public void widgetDisposed(DisposeEvent e) {
+      widget.saveContent();
+    }
+  };
+
+  private Composite parent;
 
 	public MDERichTextEditor() {
 		PlatformUI.getWorkbench().addWorkbenchListener(closeListener);
@@ -229,7 +240,14 @@ public class MDERichTextEditor extends EditorPart
 	}
 
 	@Override
+  public boolean isSaveOnCloseNeeded() {
+    return false;
+  }
+
+  @Override
 	public void createPartControl(Composite parent) {
+    this.parent = parent;
+    
 		parent.setLayout(new GridLayout());
 		this.widget = (new MDERichTextFactory()).createEditorRichTextWidget(parent);
 		this.widget.addPropertyChangeListener(this);
@@ -237,6 +255,7 @@ public class MDERichTextEditor extends EditorPart
 		MDERichTextEditorInput input = (MDERichTextEditorInput) getEditorInput();
 		this.widget.setSaveStrategy(input.getSaveStrategy());
 		widget.bind(input.getElement(), input.getFeature());
+		this.parent.addDisposeListener(disposeListener);
 	}
 
 	@Override
@@ -260,6 +279,7 @@ public class MDERichTextEditor extends EditorPart
 
 		PlatformUI.getWorkbench().removeWorkbenchListener(closeListener);
 		ResourcesPlugin.getWorkspace().removeResourceChangeListener(resourceChangeListener);
+		parent.removeDisposeListener(disposeListener);
 	}
 
 	private void unregisterResourceSetListener() {
