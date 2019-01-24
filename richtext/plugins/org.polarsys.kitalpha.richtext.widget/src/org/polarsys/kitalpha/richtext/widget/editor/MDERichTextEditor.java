@@ -279,7 +279,6 @@ public class MDERichTextEditor extends EditorPart
 
 		PlatformUI.getWorkbench().removeWorkbenchListener(closeListener);
 		ResourcesPlugin.getWorkspace().removeResourceChangeListener(resourceChangeListener);
-		parent.removeDisposeListener(disposeListener);
 	}
 
 	private void unregisterResourceSetListener() {
