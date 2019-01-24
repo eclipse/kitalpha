@@ -6,18 +6,18 @@ Bundle-Version: 1.3.0.qualifier
 Bundle-Activator: org.polarsys.kitalpha.doc.gen.business.core.Activator
 Bundle-Vendor: %providerName
 Require-Bundle: org.eclipse.ui.ide;bundle-version="3.8.2",
- org.eclipse.egf.pattern;visibility:=reexport,
- org.eclipse.egf.pattern.ftask;visibility:=reexport,
- org.eclipse.egf.model.ftask;visibility:=reexport,
+ org.eclipse.core.filesystem;bundle-version="1.3.200",
  org.eclipse.emf.transaction.ui,
  org.eclipse.gmf.runtime.diagram.ui,
  org.eclipse.gmf.runtime.diagram.ui.render,
+ org.eclipse.sirius.common,
+ org.eclipse.sirius.diagram.sequence,
  org.eclipse.sirius.diagram.ui,
  org.eclipse.sirius.ext.swt;bundle-version="1.0.0",
- org.polarsys.kitalpha.doc.gen.business.core.preference,
- org.eclipse.core.filesystem;bundle-version="1.3.200",
- org.eclipse.sirius.common,
- org.eclipse.sirius.diagram.sequence
+ org.eclipse.egf.pattern;visibility:=reexport,
+ org.eclipse.egf.model.ftask;visibility:=reexport,
+ org.eclipse.egf.pattern.ftask;visibility:=reexport,
+ org.polarsys.kitalpha.doc.gen.business.core.preference
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Bundle-Localization: plugin
@@ -25,7 +25,9 @@ Export-Package: org.polarsys.kitalpha.doc.gen.business.core,
  org.polarsys.kitalpha.doc.gen.business.core.branding,
  org.polarsys.kitalpha.doc.gen.business.core.doccontent,
  org.polarsys.kitalpha.doc.gen.business.core.doccontent.sidebar,
+ org.polarsys.kitalpha.doc.gen.business.core.extension.imp,
  org.polarsys.kitalpha.doc.gen.business.core.extension.intf,
+ org.polarsys.kitalpha.doc.gen.business.core.extension.point.manager,
  org.polarsys.kitalpha.doc.gen.business.core.generic,
  org.polarsys.kitalpha.doc.gen.business.core.helper,
  org.polarsys.kitalpha.doc.gen.business.core.index,
