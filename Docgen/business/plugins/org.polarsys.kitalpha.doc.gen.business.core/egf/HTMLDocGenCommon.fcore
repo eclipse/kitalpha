@@ -2,8 +2,7 @@
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:domain="http://www.eclipse.org/egf/1.0.0/domain"
     xmlns:fcore="http://www.eclipse.org/egf/1.0.0/fcore" xmlns:fprod="http://www.eclipse.org/egf/1.0.0/fprod"
     xmlns:ftask="http://www.eclipse.org/egf/1.0.0/ftask" xmlns:jetpattern="http://www.eclipse.org/egf/1.0.0/jetpattern"
-    xmlns:pattern="http://www.eclipse.org/egf/1.0.0/pattern" xmlns:types="http://www.eclipse.org/egf/1.0.0/types"
-   >
+    xmlns:pattern="http://www.eclipse.org/egf/1.0.0/pattern" xmlns:types="http://www.eclipse.org/egf/1.0.0/types">
   <fcore:FactoryComponent xmi:id="_lXoikdzyEd-264OhVlAChA" name="HTMLDocGen">
     <contractContainer xmi:id="_67_owd3rEd-Qav1YnqlO9A">
       <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_67_oxN3rEd-Qav1YnqlO9A"
@@ -466,6 +465,7 @@
               invokedContract="#_dNnrwF4yEeGfnvXFIF-hXQ"/>
           <invocationContracts xmi:id="_Zt4p8F48EeGfnvXFIF-hXQ" factoryComponentContract="#_67_owt3rEd-Qav1YnqlO9A"
               invokedContract="#_X9cLkF4yEeGfnvXFIF-hXQ"/>
+          <invocationContracts xmi:id="_RO6a4B8LEemlca6iW58mwA" invokedContract="#_MiyqAB8LEemlca6iW58mwA"/>
         </invocationContractContainer>
       </invocations>
       <invocations xmi:id="_FbkMQEHQEeWuloZZIJtB0g" name="Clean Scope Data" invokedActivity="#_v1xvkUHPEeWuloZZIJtB0g"/>
@@ -703,6 +703,8 @@
           name="outputFolder" invocationContracts="#_u00ZsF43EeGfnvXFIF-hXQ #_HoHxQGOIEeGomZzMJF2WIA">
         <type xmi:type="types:TypeString" xmi:id="_rcNRYF4yEeGfnvXFIF-hXQ"/>
       </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_MiyqAB8LEemlca6iW58mwA"
+          name="IndexItem"/>
     </contractContainer>
     <viewpointContainer xmi:id="_TYn8kF4yEeGfnvXFIF-hXQ">
       <viewpoints xmi:type="pattern:PatternViewpoint" xmi:id="_trLDUF4yEeGfnvXFIF-hXQ">
@@ -733,6 +735,8 @@
         <invocationContractContainer xmi:id="_HFwV8WOGEeGomZzMJF2WIA">
           <invocationContracts xmi:id="_Ipn8cGOGEeGomZzMJF2WIA" targetInvocationContract="#_OoUBEGOJEeGomZzMJF2WIA"
               invokedContract="#_wV5vUGOEEeGIkcGFUTU4rg"/>
+          <invocationContracts xmi:id="_O-t_IB41Eemlca6iW58mwA" targetInvocationContract="#_VPwfYB41Eemlca6iW58mwA #_f1tbQB8CEemlca6iW58mwA"
+              invokedContract="#_tLGbAB4xEemlca6iW58mwA"/>
         </invocationContractContainer>
       </invocations>
       <invocations xmi:id="__-gUgGOHEeGomZzMJF2WIA" name="Indexing related pages"
@@ -746,6 +750,8 @@
               invokedContract="#_-TL8EGLgEeGSts2PMSEe3w"/>
           <invocationContracts xmi:id="_Hq9VABDwEeSc8Mt2_Hc9FA" targetInvocationContract="#_TlEWUGOGEeGomZzMJF2WIA"
               invokedContract="#_FM3h8BDwEeSc8Mt2_Hc9FA"/>
+          <invocationContracts xmi:id="_VPwfYB41Eemlca6iW58mwA" sourceInvocationContract="#_O-t_IB41Eemlca6iW58mwA"
+              invokedContract="#__m0vcB4xEemlca6iW58mwA"/>
         </invocationContractContainer>
       </invocations>
       <invocations xmi:id="_-vFa0F4zEeGfnvXFIF-hXQ" name="Creating Search Index" invokedActivity="#_fqFZoGOBEeGIkcGFUTU4rg">
@@ -766,6 +772,8 @@
               invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Pattern_task.fcore#_Y2fXwUhpEd-A7KV9v5yLhw"/>
           <invocationContracts xmi:id="_TlEWUGOGEeGomZzMJF2WIA" sourceInvocationContract="#_Hq9VABDwEeSc8Mt2_Hc9FA"
               invokedContract="#_mOorwGOBEeGIkcGFUTU4rg"/>
+          <invocationContracts xmi:id="_f1tbQB8CEemlca6iW58mwA" sourceInvocationContract="#_O-t_IB41Eemlca6iW58mwA"
+              invokedContract="#_O-UfAB8QEemlca6iW58mwA"/>
         </invocationContractContainer>
       </invocations>
       <invocations xmi:id="_FcspkboOEeGH7bfHyYJ-qQ" name="Remove collected concepts"
@@ -971,6 +979,9 @@
           mode="Out">
         <type xmi:type="types:TypeList" xmi:id="_FM3h8RDwEeSc8Mt2_Hc9FA"/>
       </contracts>
+      <contracts xmi:id="__m0vcB4xEemlca6iW58mwA" name="indexItems" mode="In_Out">
+        <type xmi:type="types:TypeMap" xmi:id="_MkNL4B4yEemlca6iW58mwA"/>
+      </contracts>
     </contractContainer>
   </ftask:Task>
   <ftask:Task xmi:id="_OgAy8GOEEeGIkcGFUTU4rg" name="HTMLDocGen.Collect Concepts Task"
@@ -978,6 +989,9 @@
     <contractContainer xmi:id="_rENMMGOEEeGIkcGFUTU4rg">
       <contracts xmi:id="_wV5vUGOEEeGIkcGFUTU4rg" name="concepts" mode="Out">
         <type xmi:type="types:TypeList" xmi:id="_yO_X4GOEEeGIkcGFUTU4rg"/>
+      </contracts>
+      <contracts xmi:id="_tLGbAB4xEemlca6iW58mwA" name="indexItems" mode="Out">
+        <type xmi:type="types:TypeMap" xmi:id="_vifwMB4xEemlca6iW58mwA"/>
       </contracts>
     </contractContainer>
   </ftask:Task>
@@ -992,6 +1006,9 @@
       </contracts>
       <contracts xmi:id="_mOorwGOBEeGIkcGFUTU4rg" name="concepts" mandatory="true">
         <type xmi:type="types:TypeList" xmi:id="_rFJSQGOCEeGIkcGFUTU4rg"/>
+      </contracts>
+      <contracts xmi:id="_O-UfAB8QEemlca6iW58mwA" name="IndexItem">
+        <type xmi:type="types:TypeMap" xmi:id="_RPBWUB8QEemlca6iW58mwA"/>
       </contracts>
     </contractContainer>
   </ftask:Task>
