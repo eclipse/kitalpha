@@ -66,8 +66,8 @@ import org.eclipse.sirius.diagram.DDiagramElement;
 import org.eclipse.sirius.diagram.DNode;
 import org.eclipse.sirius.diagram.DSemanticDiagram;
 import org.eclipse.sirius.diagram.impl.DEdgeImpl;
-import org.eclipse.sirius.diagram.ui.business.api.query.ViewQuery;
 import org.eclipse.sirius.diagram.ui.edit.api.part.AbstractDiagramEdgeEditPart.ViewEdgeFigure;
+import org.eclipse.sirius.diagram.ui.internal.edit.parts.SiriusNoteEditPart;
 import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.eclipse.sirius.viewpoint.description.AnnotationEntry;
@@ -291,9 +291,7 @@ public class CoordinatesCalculator {
 		{
 			final EObject nodeElement = view.getElement();
 			
-			ViewQuery query = new ViewQuery(view);
-			
-			if (query.isRepresentationLink()) {
+			if (gep instanceof SiriusNoteEditPart && ((SiriusNoteEditPart)gep).isLinkNote()) {
 				
 				/*
 				 * Handle navigable note
