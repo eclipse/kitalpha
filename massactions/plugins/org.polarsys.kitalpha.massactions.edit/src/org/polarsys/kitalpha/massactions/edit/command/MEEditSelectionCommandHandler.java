@@ -44,14 +44,23 @@ public class MEEditSelectionCommandHandler extends EditSelectionCommandHandler {
   @Override
   public boolean doCommand(EditSelectionCommand command) {
     boolean performed;
-    if(!EditUtils.isEditorSame(selectionLayer, command.getConfigRegistry())) {
-      Shell shell = command.getParent() != null ? command.getParent().getShell() : null;
-      MessageDialog.openWarning(shell, "Multi Edit", "Selected cells don't have the same type.");
+    Collection<ILayerCell> selectedCells = EditUtils.getSelectedCellsForEditing(this.selectionLayer);
+    Shell shell = command.getParent() != null ? command.getParent().getShell() : null;
+
+    // Check that all selected cells are editable
+    if (!EditUtils.allCellsEditable(selectedCells, command.getConfigRegistry())) {
+      MessageDialog.openWarning(shell, "Edit",
+          selectedCells.size() > 1 ? "Selected cells are not editable." : "Selected cell is not editable.");
       return true;
     }
-    Collection<ILayerCell> selectedCells = EditUtils.getSelectedCellsForEditing(this.selectionLayer);
 
     if (selectedCells.size() != 1) {
+      // Check that all selected cells have the same ICellEditor and the same IDisplayConverter configured
+      if (!(EditUtils.isEditorSame(selectedCells, command.getConfigRegistry())
+          && EditUtils.isConverterSame(selectedCells, command.getConfigRegistry()))) {
+        MessageDialog.openWarning(shell, "Edit", "Selected cells don't have the same type.");
+        return true;
+      }
       try {
         // signal the column property accessor that a edit selection
         // command will be issued
@@ -78,5 +87,4 @@ public class MEEditSelectionCommandHandler extends EditSelectionCommandHandler {
 
     return performed;
   }
-
 }
