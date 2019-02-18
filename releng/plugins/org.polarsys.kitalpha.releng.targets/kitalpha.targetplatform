@@ -1,6 +1,6 @@
 target "kitapha" with source, requirements
 
-location oxygen-release "http://download.eclipse.org/releases/oxygen" {
+location oxygen-release "http://download.eclipse.org/releases/oxygen/201803211000" {
 	org.eclipse.sdk.feature.group lazy
 	org.eclipse.egit.feature.group lazy
 	org.eclipse.equinox.executable.feature.group lazy
@@ -118,7 +118,7 @@ location oxygen-release "http://download.eclipse.org/releases/oxygen" {
 }
 
 
-location Sirus "http://download.eclipse.org/sirius/updates/milestones/6.1.1rc1/oxygen/" {
+location Sirus "http://download.eclipse.org/sirius/updates/milestones/6.1.2rc3/oxygen" {
 	org.eclipse.sirius.doc.feature.feature.group lazy
 	org.eclipse.sirius.runtime.ide.eef.feature.group lazy
 	org.eclipse.sirius.runtime.ide.ui.acceleo.feature.group lazy
@@ -170,7 +170,7 @@ location coevolution "http://download.eclipse.org/diffmerge/releases/0.11.0/edm-
 	 org.eclipse.emf.diffmerge.coevolution.sdk.feature.source.feature.group lazy
 }
 
-location amalgam "http://download.eclipse.org/modeling/amalgam/updates/stable/1.9.0-S20181029/capella/" {
+location amalgam "http://download.eclipse.org/modeling/amalgam/updates/stable/1.10.0-S20181119/capella" {
 	org.eclipse.amalgam.explorer.activity.feature.group lazy
 	org.eclipse.amalgam.explorer.activity.source.feature.group lazy
 	org.eclipse.amalgam.explorer.contextual.feature.group lazy
@@ -203,4 +203,15 @@ location Nattable "http://download.eclipse.org/nattable/releases/1.5.0/repositor
 
 location orbit "http://download.eclipse.org/tools/orbit/downloads/drops/R20180206163158/repository" {
 	ca.odell.glazedlists lazy
+}
+
+location orbit-R20130827064939 "http://download.eclipse.org/tools/orbit/downloads/drops/R20130827064939/repository" {
+	org.apache.log4j [1.2.15.v201012070815,1.2.15.v201012070815]
+	org.apache.commons.lang [2.4.0.v201005080502,2.4.0.v201005080502]
+	org.apache.commons.net [3.2.0.v201305141515,3.2.0.v201305141515]
+	org.jsoup [1.7.2.v201304221138,1.7.2.v201304221138]
+}
+
+location orbit-R20140525021250 "http://download.eclipse.org/tools/orbit/downloads/drops/R20140525021250/repository" {
+	com.google.guava [15.0.0.v201403281430,15.0.0.v201403281430]
 }
