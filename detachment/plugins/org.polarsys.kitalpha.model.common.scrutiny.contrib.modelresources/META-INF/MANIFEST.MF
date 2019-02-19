@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.polarsys.kitalpha.model.common.scrutiny.contrib.modelresources;singleton:=true
-Bundle-Version: 1.3.0.qualifier
+Bundle-Version: 1.3.1.qualifier
 Bundle-Activator: org.polarsys.kitalpha.model.common.scrutiny.contrib.modelresources.Activator
 Bundle-Vendor: %pluginVendor
 Require-Bundle: org.eclipse.core.runtime,

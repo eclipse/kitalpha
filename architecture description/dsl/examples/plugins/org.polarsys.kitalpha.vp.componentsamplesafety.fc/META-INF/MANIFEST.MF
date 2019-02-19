@@ -2,4 +2,4 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Fc
 Bundle-SymbolicName: org.polarsys.kitalpha.vp.componentsamplesafety.fc;singleton:=true
-Bundle-Version: 1.3.0.qualifier
+Bundle-Version: 1.3.1.qualifier

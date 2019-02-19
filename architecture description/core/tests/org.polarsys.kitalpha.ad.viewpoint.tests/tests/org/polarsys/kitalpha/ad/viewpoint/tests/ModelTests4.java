@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2019 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,7 +37,7 @@ public class ModelTests4 extends ModelTests {
 		IStatus result = ViewpointManager.checkViewpointsCompliancy(set);
 		assertFalse(result.isOK());
 		assertEquals(1, result.getChildren().length);
-		assertEquals("Expecting version '0.0.0' for viewpoint 'org.polarsys.kitalpha.vp.componentsampleperformance' (current version: '1.3.0.qualifier')", result.getChildren()[0].getMessage());
+		assertEquals("Expecting version '0.0.0' for viewpoint 'org.polarsys.kitalpha.vp.componentsampleperformance' (current version: '1.3.1.qualifier')", result.getChildren()[0].getMessage());
 	}
 
 }

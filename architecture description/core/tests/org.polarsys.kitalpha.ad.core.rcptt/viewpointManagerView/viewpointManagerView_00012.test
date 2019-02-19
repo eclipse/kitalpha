@@ -19,22 +19,22 @@ get-editor "A.componentsample" | get-tree
     | get-item "platform:\\/resource\\/A\\/A.componentsample/A/\\[Component Package\\]/A/\\[Performance\\]" 
     | get-property caption | equals "[Performance]" | verify-true
 with [get-view "Viewpoint Manager" | get-table] {
-    get-item "Component Sample Performance" | get-property "values['Version']" | equals "1.3.0.qualifier" | verify-true
+    get-item "Component Sample Performance" | get-property "values['Version']" | equals "1.3.1.qualifier" | verify-true
     get-item "Component Sample Performance" | get-property "values['Name']" | equals "Component Sample Performance" 
         | verify-true
     get-item "Component Sample Performance" | get-property "values['State']" | equals Active | verify-true
 }
 get-view "Viewpoint Manager" | get-table | select "Component Sample Quality Assessment"
 with [get-view "Viewpoint Manager" | get-table] {
-    get-item "Component Sample Quality Assessment" | get-property "values['Version']" | equals "1.3.0.qualifier" 
+    get-item "Component Sample Quality Assessment" | get-property "values['Version']" | equals "1.3.1.qualifier" 
         | verify-true
     get-item "Component Sample Quality Assessment" | get-property "values['Name']" 
         | equals "Component Sample Quality Assessment" | verify-true
     get-item "Component Sample Quality Assessment" | get-property "values['State']" | equals Unreferenced | verify-true
-    get-item "Component Sample Safety" | get-property "values['Version']" | equals "1.3.0.qualifier" | verify-true
+    get-item "Component Sample Safety" | get-property "values['Version']" | equals "1.3.1.qualifier" | verify-true
     get-item "Component Sample Safety" | get-property "values['Name']" | equals "Component Sample Safety" | verify-true
     get-item "Component Sample Safety" | get-property "values['State']" | equals Active | verify-true
-    get-item "Component Sample Performance" | get-property "values['Version']" | equals "1.3.0.qualifier" | verify-true
+    get-item "Component Sample Performance" | get-property "values['Version']" | equals "1.3.1.qualifier" | verify-true
     get-item "Component Sample Performance" | get-property "values['Name']" | equals "Component Sample Performance" 
         | verify-true
     get-item "Component Sample Performance" | get-property "values['State']" | equals Active | verify-true
