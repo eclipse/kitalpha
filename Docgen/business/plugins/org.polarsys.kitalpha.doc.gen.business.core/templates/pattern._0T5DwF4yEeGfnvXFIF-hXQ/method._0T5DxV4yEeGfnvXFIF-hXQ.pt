@@ -1,5 +1,4 @@
 <%
-List<String> concepts = (List<String>) ctx.getValue("concepts");
 Map<String, IndexItem> indexItems = (Map<String, IndexItem>) ctx.getValue("IndexItem");
 %>
 
@@ -23,16 +22,16 @@ Map<String, IndexItem> indexItems = (Map<String, IndexItem>) ctx.getValue("Index
     <p id="p2"></p>	
 	<script type="text/javascript">
 		
-		var tabCount = <%=(concepts.size()/255)+1%>;
+		var tabCount = <%=(indexItems.size()/255)+1%>;
 		var conceptsList = new Array(tabCount);
 		var currentSize = 0;
 		var addedConceptCount = 0;
 		var conceptIcons =  {};
 		for(x = 0; x < tabCount; x++) {
-			if ((<%=concepts.size()%> - addedConceptCount) > 255){
+			if ((<%=indexItems.size()%> - addedConceptCount) > 255){
 				currentSize = 255;
 			}else{
-				currentSize = <%=concepts.size()%> - addedConceptCount;
+				currentSize = <%=indexItems.size()%> - addedConceptCount;
 			}
 			var jConcepts = new Array(currentSize);
 			for(i = 0; i < currentSize;i++) {
@@ -40,7 +39,7 @@ Map<String, IndexItem> indexItems = (Map<String, IndexItem>) ctx.getValue("Index
 			}
 			conceptsList[x] = jConcepts;
 			addedConceptCount = addedConceptCount + 255;
-		}
+		} 
 
 <%
 int count = 0;
@@ -48,16 +47,13 @@ int listCount = 0;
 int i = 0;
 
 
-for(String currentConcept : concepts) {
+for(Entry<String, IndexItem> entry : indexItems.entrySet()) {
 		i++;
 		%>
-		conceptsList[<%=listCount%>][<%=count%>][0] = "<%=currentConcept.replace("\"", "\\\"")%>";
-		conceptsList[<%=listCount%>][<%=count%>][1] = "<%=i+"_"+DocGenHtmlUtil.getValidFileName(currentConcept)%>";
-		<%if (indexItems != null && !indexItems.isEmpty()) {
-			Optional<IndexItem> indexItem = indexItems.values().stream().filter(item -> item.getConceptName().equals(currentConcept)).findFirst();
-			if (indexItem.isPresent()) {%>
-				conceptsList[<%=listCount%>][<%=count%>][2] = "<%= indexItem.get().getIconTag().replaceAll("\"", "'").replaceFirst("../", "") %>";
-			<%}%>
+		conceptsList[<%=listCount%>][<%=count%>][0] = "<%=entry.getValue().getConceptName().replace("\"", "\\\"")%>";
+		conceptsList[<%=listCount%>][<%=count%>][1] = "<%=i+"_"+DocGenHtmlUtil.getValidFileName(entry.getValue().getConceptName())%>";
+		<% if (entry.getValue().getIconTag() != null && !entry.getValue().getIconTag().isEmpty()) { %>
+		conceptsList[<%=listCount%>][<%=count%>][2] = "<%= entry.getValue().getIconTag().replaceAll("\"", "'").replaceFirst("../", "") %>";
 		<%}%>
 		<%
 		if (count == 254){

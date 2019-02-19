@@ -10,8 +10,13 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.doc.gen.business.core.task;
 
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.egf.core.producer.InvocationException;
@@ -31,9 +36,31 @@ public class CollectConceptsTask implements ITaskProduction {
 			IProgressMonitor monitor) throws InvocationException {
 		List<String> concepts = IndexerService.INSTANCE.getSortedElements();
 		Map<String, IndexItem> indexItems = IndexerService.INSTANCE.getElementsToIndexItems();
-
+		
+		/*
+		 * Sort the map
+		 */
+		List<Entry<String, IndexItem>> entryList = new LinkedList<>(indexItems.entrySet());
+		Collections.sort(entryList, new Comparator<Entry<String, IndexItem>>() {
+			
+			@Override
+			public int compare(Entry<String, IndexItem> a, Entry<String, IndexItem> b) {
+				return a.getValue().compareTo(b.getValue());
+			}
+		});
+		
+		Map<String, IndexItem> sortedMap = new LinkedHashMap<>();
+		
+		for (Entry<String, IndexItem> entry : entryList) {
+			sortedMap.put(entry.getKey(), entry.getValue());
+		}
+		
+		/*
+		 * Concepts List not used. To delete
+		 */
 		productionContext.setOutputValue("concepts", concepts);
-		productionContext.setOutputValue("indexItems", indexItems);
+		
+		productionContext.setOutputValue("indexItems", sortedMap);
 
 	}
 

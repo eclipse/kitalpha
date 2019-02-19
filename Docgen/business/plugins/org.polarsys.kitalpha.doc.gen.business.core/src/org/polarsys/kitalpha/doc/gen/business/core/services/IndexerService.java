@@ -10,17 +10,16 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.doc.gen.business.core.services;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class IndexerService {
 
 	public static final IndexerService INSTANCE = new IndexerService();
-	private List<String> elementsToIndex = new ArrayList<>();
 	private Map<String, IndexItem> elementToIndexItems = new HashMap<>(); //Concept name to index item
 
 	private IndexerService() {
@@ -28,7 +27,7 @@ public class IndexerService {
 	}
 
 	public List<String> getElements() {
-		return elementsToIndex;
+		return getSortedElements();
 	}
 	
 	public Map<String, IndexItem> getElementsToIndexItems() {
@@ -48,25 +47,21 @@ public class IndexerService {
 	}
 
 	public List<String> getSortedElements() {
+		List<String> elementsToIndex = getElementsToIndexItems().values().
+				parallelStream().map(v -> v.getConceptName()).collect(Collectors.toList());
 		Collections.sort(elementsToIndex, new IndexerComparator());
 		return elementsToIndex;
 	}
 	
 	public boolean checkConceptExistence(String concept){
-		for (String iConcept : elementsToIndex) {
-			if (iConcept.equals(concept))
-				return true;
-		}
-		return false;
+		return getElementsToIndexItems().containsKey(concept);
 	}
-
+	
 	private class IndexerComparator implements Comparator<String> {
 
 		public int compare(String arg0, String arg1) {
 			return arg0.compareTo(arg1);
-
 		}
-
 	}
 
 }
