@@ -1,4 +1,4 @@
-//Generated with EGF 1.5.0.v20170901-1223
+//Generated with EGF 1.6.1.201902111324
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.decorators;
 
 import java.util.*;
@@ -79,9 +79,7 @@ public class MappingBasedDecoratorPattern
 		EList<DiagramElementMapping> externalMappings = ((MappingBasedDecorator) vpdslDecorator).getExternalMappings();
 		((MappingBasedDecoration) siriusDecorator).getMappings().addAll(externalMappings);
 
-		for (DiagramElement internalMapping : ((MappingBasedDecorator) vpdslDecorator).getInternalMappings()) {
-			internalMapping.getClass();
-		}
+		EList<DiagramElement> internalMappings = ((MappingBasedDecorator) vpdslDecorator).getInternalMappings();
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "setMappings", out.toString());

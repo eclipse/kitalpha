@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2019 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -20,6 +20,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.sirius.diagram.business.internal.metamodel.helper.ContentHelper;
 import org.eclipse.sirius.diagram.description.ContainerMapping;
 import org.eclipse.sirius.diagram.description.DiagramDescription;
 import org.eclipse.sirius.diagram.description.EdgeMapping;
@@ -105,9 +106,9 @@ public class SiriusViewpointHelper {
 			for (RepresentationDescription rd : desc) {
 				if (rd instanceof DiagramDescription){
 					DiagramDescription dd = (DiagramDescription)rd;
-					result.addAll(dd.getAllContainerMappings());
+					result.addAll(ContentHelper.getAllContainerMappings(dd, true));
 					
-					for (ContainerMapping cm : dd.getAllContainerMappings()) {
+					for (ContainerMapping cm : ContentHelper.getAllContainerMappings(dd, true)) {
 						List<ContainerMapping> subResult = getSubContainers(cm);
 						if (subResult != null && !subResult.isEmpty()) {
 							result.addAll(subResult);
@@ -133,10 +134,10 @@ public class SiriusViewpointHelper {
 		for (DiagramDescription dd : diagrams) 
 		{
 			// Add to result all direct contained mapping in the current diagram
-			result.addAll(dd.getAllContainerMappings());
+			result.addAll(ContentHelper.getAllContainerMappings(dd, true));
 
 			// Look for sub mapping
-			for (ContainerMapping cm : dd.getAllContainerMappings()) {
+			for (ContainerMapping cm : ContentHelper.getAllContainerMappings(dd, true)) {
 				List<ContainerMapping> subResult = getSubContainers(cm);
 				if (subResult != null && !subResult.isEmpty()) {
 					result.addAll(subResult);
@@ -198,9 +199,9 @@ public class SiriusViewpointHelper {
 
 		if (desc != null && !desc.isEmpty()){
 			for (DiagramDescription dd : desc) {
-				result.addAll(dd.getAllNodeMappings());
+				result.addAll(ContentHelper.getAllNodeMappings(dd, true));
 
-				for (NodeMapping nm : dd.getAllNodeMappings()) {
+				for (NodeMapping nm : ContentHelper.getAllNodeMappings(dd, true)) {
 					List<NodeMapping> borderedNodes = getBorderedNodes(nm);
 					if (borderedNodes != null && borderedNodes.size() > 0) {
 						for (NodeMapping nodeMapping : borderedNodes) {
@@ -211,7 +212,7 @@ public class SiriusViewpointHelper {
 					}
 				}
 
-				for (ContainerMapping iContainerMapping : dd.getAllContainerMappings()) {
+				for (ContainerMapping iContainerMapping : ContentHelper.getAllContainerMappings(dd, true)) {
 					List<NodeMapping> subNodes = getSubNodes(iContainerMapping);
 					if (subNodes != null && subNodes.size() > 0) {
 						result.addAll(subNodes);
@@ -235,10 +236,10 @@ public class SiriusViewpointHelper {
 			for (DiagramDescription dd : diagrams) 
 			{
 				// Get all direct contained NodeMapping
-				result.addAll(dd.getAllNodeMappings());
+				result.addAll(ContentHelper.getAllNodeMappings(dd, true));
 
 				// Get sub NodeMappings
-				for (NodeMapping nm : dd.getAllNodeMappings()) {
+				for (NodeMapping nm : ContentHelper.getAllNodeMappings(dd, true)) {
 					List<NodeMapping> borderedNodes = getBorderedNodes(nm);
 					if (borderedNodes != null && borderedNodes.size() > 0) {
 						for (NodeMapping nodeMapping : borderedNodes) {
@@ -250,7 +251,7 @@ public class SiriusViewpointHelper {
 				}
 
 				// Get Sub NodeMappings of all ContainerMappings
-				for (ContainerMapping iContainerMapping : dd.getAllContainerMappings()) {
+				for (ContainerMapping iContainerMapping : ContentHelper.getAllContainerMappings(dd, true)) {
 					List<NodeMapping> subNodes = getSubNodes(iContainerMapping);
 					if (subNodes != null && subNodes.size() > 0) {
 						result.addAll(subNodes);

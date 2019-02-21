@@ -1,4 +1,4 @@
-//Generated with EGF 1.4.0.v20160519-0641
+//Generated with EGF 1.6.1.201902111324
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.jservice.diagrams;
 
 import java.util.*;
@@ -21,7 +21,6 @@ public class GenJavaServiceForEdgePattern
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
 	protected final String TEXT_1 = "";
 	protected final String TEXT_2 = NL;
-	protected final String TEXT_3 = NL;
 
 	public GenJavaServiceForEdgePattern() {
 		//Here is the constructor
@@ -58,7 +57,7 @@ public class GenJavaServiceForEdgePattern
 		}
 
 		stringBuffer.append(TEXT_2);
-		stringBuffer.append(TEXT_3);
+		stringBuffer.append(TEXT_2);
 		return stringBuffer.toString();
 	}
 

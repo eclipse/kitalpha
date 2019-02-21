@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2019 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -16,6 +16,7 @@ import java.util.Set;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.sirius.diagram.business.internal.metamodel.helper.ContentHelper;
 import org.eclipse.sirius.diagram.description.ContainerMapping;
 import org.eclipse.sirius.diagram.description.DiagramDescription;
 import org.eclipse.sirius.diagram.description.EdgeMapping;
@@ -78,8 +79,8 @@ public class DoremiDiagramElementHelper {
 		List<ContainerMapping> result = new ArrayList<ContainerMapping>();
 		List<DiagramDescription> diagrams = getAvailableDoremiDiagramFor(anyModelElement);
 		for (DiagramDescription iDiagram : diagrams) {
-			result.addAll(iDiagram.getAllContainerMappings());
-			for (ContainerMapping containerMapping : iDiagram.getAllContainerMappings()) {
+			result.addAll(ContentHelper.getAllContainerMappings(iDiagram, true));
+			for (ContainerMapping containerMapping : ContentHelper.getAllContainerMappings(iDiagram, true)) {
 				List<ContainerMapping> subResult = getSubContainers(containerMapping);
 				if (subResult != null && subResult.size() > 0) {
 					result.addAll(subResult);
@@ -123,8 +124,8 @@ public class DoremiDiagramElementHelper {
 		List<NodeMapping> result = new ArrayList<NodeMapping>();
 		List<DiagramDescription> diagrams = getAvailableDoremiDiagramFor(anyModelElement);
 		for (DiagramDescription iDiagram : diagrams) {
-			result.addAll(iDiagram.getAllNodeMappings());
-			for (NodeMapping iNodeMapping : iDiagram.getAllNodeMappings()) {
+			result.addAll(ContentHelper.getAllNodeMappings(iDiagram, true));
+			for (NodeMapping iNodeMapping : ContentHelper.getAllNodeMappings(iDiagram, true)) {
 				List<NodeMapping> borderedNodes = getBorderedNodes(iNodeMapping);
 				if (borderedNodes != null && borderedNodes.size() > 0) {
 					for (NodeMapping nodeMapping : borderedNodes) {
@@ -134,7 +135,7 @@ public class DoremiDiagramElementHelper {
 					}
 				}
 			}			
-			for (ContainerMapping iContainerMapping : iDiagram.getAllContainerMappings()) {
+			for (ContainerMapping iContainerMapping : ContentHelper.getAllContainerMappings(iDiagram, true)) {
 				List<NodeMapping> subNodes = getSubNodes(iContainerMapping);
 				if (subNodes != null && subNodes.size() > 0) {
 					result.addAll(subNodes);

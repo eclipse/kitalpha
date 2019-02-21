@@ -1,4 +1,4 @@
-//Generated with EGF 1.4.0.v20160519-0641
+//Generated with EGF 1.6.1.201902111324
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.node;
 
 import java.util.*;
@@ -24,6 +24,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.Generation
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.IconPathHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.JavaElementHelper;
 
+import org.eclipse.sirius.diagram.business.internal.metamodel.helper.MappingHelper;
 import org.eclipse.sirius.viewpoint.FontFormat;
 import org.eclipse.sirius.diagram.description.ConditionalContainerStyleDescription;
 import org.eclipse.sirius.diagram.description.style.ContainerStyleDescription;
@@ -157,19 +158,21 @@ public class ContainerImportPattern
 		// ContainerMapping mapping = parameter.getImports();
 
 		// reusing the reused mappings
-		if (mapping.getAllContainerMappings() != null && mapping.getAllContainerMappings().size() > 0)
-			icm.getReusedContainerMappings().addAll(mapping.getAllContainerMappings());
+		if (MappingHelper.getAllContainerMappings(mapping) != null
+				&& MappingHelper.getAllContainerMappings(mapping).size() > 0)
+			icm.getReusedContainerMappings().addAll(MappingHelper.getAllContainerMappings(mapping));
 
-		if (icm.getAllContainerMappings().contains(mapping)) {
+		if (MappingHelper.getAllContainerMappings(icm).contains(mapping)) {
 			icm.getReusedContainerMappings().remove(mapping);
 			icm.getReusedContainerMappings().add(icm);
 		}
 
-		if (mapping.getAllNodeMappings() != null && mapping.getAllNodeMappings().size() > 0)
-			icm.getReusedNodeMappings().addAll(mapping.getAllNodeMappings());
+		if (MappingHelper.getAllNodeMappings(mapping) != null && MappingHelper.getAllNodeMappings(mapping).size() > 0)
+			icm.getReusedNodeMappings().addAll(MappingHelper.getAllNodeMappings(mapping));
 
-		if (mapping.getAllBorderedNodeMappings() != null && mapping.getAllBorderedNodeMappings().size() > 0)
-			icm.getReusedBorderedNodeMappings().addAll(mapping.getAllBorderedNodeMappings());
+		if (MappingHelper.getAllBorderedNodeMappings(mapping) != null
+				&& MappingHelper.getAllBorderedNodeMappings(mapping).size() > 0)
+			icm.getReusedBorderedNodeMappings().addAll(MappingHelper.getAllBorderedNodeMappings(mapping));
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "inheritMappingReuse", out.toString());

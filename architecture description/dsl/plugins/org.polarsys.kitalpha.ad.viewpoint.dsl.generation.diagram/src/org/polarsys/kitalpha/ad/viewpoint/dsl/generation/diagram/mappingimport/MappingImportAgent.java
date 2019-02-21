@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2019 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.sirius.diagram.business.internal.metamodel.helper.ContentHelper;
+import org.eclipse.sirius.diagram.business.internal.metamodel.helper.MappingHelper;
 import org.eclipse.sirius.diagram.description.AbstractNodeMapping;
 import org.eclipse.sirius.diagram.description.ContainerMapping;
 import org.eclipse.sirius.diagram.description.ContainerMappingImport;
@@ -288,16 +290,16 @@ public class MappingImportAgent {
 	
 	public static void reuseMappings(AbstractNodeMapping originalMapping, AbstractNodeMapping importedMapping){
 		// Reuse all Bordered Nodes of the the original mapping (the contained one and reused one)
-		importedMapping.getReusedBorderedNodeMappings().addAll(originalMapping.getAllBorderedNodeMappings());
+		importedMapping.getReusedBorderedNodeMappings().addAll(MappingHelper.getAllBorderedNodeMappings(originalMapping ));
 		
 		if (importedMapping instanceof ContainerMappingImport)
 		{
 			ContainerMapping originalContainerMapping = (ContainerMapping)originalMapping;
 			ContainerMappingImport containerImport = (ContainerMappingImport) importedMapping;
 			// Reuse all Nodes of the the original mapping (contained and reused)
-			containerImport.getReusedNodeMappings().addAll(originalContainerMapping.getAllNodeMappings());
+			containerImport.getReusedNodeMappings().addAll(MappingHelper.getAllNodeMappings(originalContainerMapping));
 			// Reuse all Containers of the the original mapping (contained and reused)
-			containerImport.getReusedContainerMappings().addAll(originalContainerMapping.getAllContainerMappings());
+			containerImport.getReusedContainerMappings().addAll(MappingHelper.getAllContainerMappings(originalContainerMapping));
 		}
 	}
 	

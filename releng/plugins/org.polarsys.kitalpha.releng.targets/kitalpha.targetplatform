@@ -1,6 +1,6 @@
 target "kitapha" with source, requirements
 
-location oxygen-release "http://download.eclipse.org/releases/oxygen" {
+location eclipse-release "http://download.eclipse.org/releases/2019-03/" {
 	org.eclipse.sdk.feature.group lazy
 	org.eclipse.egit.feature.group lazy
 	org.eclipse.equinox.executable.feature.group lazy
@@ -27,7 +27,6 @@ location oxygen-release "http://download.eclipse.org/releases/oxygen" {
 	org.eclipse.xtend.typesystem.emf.source lazy
 	org.eclipse.emf.mwe.utils.source lazy
 	org.eclipse.emf.mwe2.runtime.source lazy
-	org.eclipse.cvs.source.feature.group lazy
 	org.eclipse.draw2d.sdk.feature.group lazy
 	org.eclipse.draw2d.source.feature.group lazy
 	org.eclipse.e4.rcp.source.feature.group lazy
@@ -46,7 +45,6 @@ location oxygen-release "http://download.eclipse.org/releases/oxygen" {
 	org.eclipse.emf.converter.source lazy
 	org.eclipse.emf.databinding.edit.source lazy
 	org.eclipse.emf.databinding.source lazy
-	org.eclipse.emf.doc.source.feature.group lazy
 	org.eclipse.emf.ecore.edit.source lazy
 	org.eclipse.emf.ecore.editor.source lazy
 	org.eclipse.emf.ecore.source lazy
@@ -84,18 +82,11 @@ location oxygen-release "http://download.eclipse.org/releases/oxygen" {
 	org.eclipse.jdt.source.feature.group lazy
 	org.eclipse.jgit lazy
 	org.eclipse.ocl.all.feature.group lazy
+	org.eclipse.cvs.feature.group lazy
 	org.eclipse.pde.source.feature.group lazy
 	org.eclipse.platform.source lazy
 	org.eclipse.rcp.source.feature.group lazy
-	org.eclipse.uml2.codegen.ecore.ui.source lazy
-	org.eclipse.uml2.common.edit.source lazy
-	org.eclipse.uml2.common.source lazy
 	org.eclipse.uml2.doc lazy
-	org.eclipse.uml2.examples.source lazy
-	org.eclipse.uml2.source lazy
-	org.eclipse.uml2.uml.edit.source lazy
-	org.eclipse.uml2.uml.source lazy
-	org.eclipse.xsd.doc.source.feature.group lazy
 	org.eclipse.xsd.ecore.converter.source.feature.group lazy
 	org.eclipse.xsd.edit.source lazy
 	org.eclipse.xsd.editor.source lazy
@@ -118,7 +109,7 @@ location oxygen-release "http://download.eclipse.org/releases/oxygen" {
 }
 
 
-location Sirus "http://download.eclipse.org/sirius/updates/milestones/6.1.1rc1/oxygen/" {
+location Sirus "https://download.eclipse.org/sirius/updates/nightly/6.2.x/2018-12/" {
 	org.eclipse.sirius.doc.feature.feature.group lazy
 	org.eclipse.sirius.runtime.ide.eef.feature.group lazy
 	org.eclipse.sirius.runtime.ide.ui.acceleo.feature.group lazy
@@ -187,7 +178,7 @@ location EcoreTools "http://download.eclipse.org/ecoretools/updates/milestones/3
 	org.eclipse.emf.ecoretools.explorer.contextual.feature.group lazy
 }
 
-location EGFSdk "http://download.eclipse.org/egf/updates/1.6.0/oxygen/" {
+location EGFSdk "http://download.eclipse.org/egf/updates/1.6.1/2019-03/" {
 	org.eclipse.egf.sdk.feature.feature.group lazy
 	org.eclipse.egf.sdk.feature.source.feature.group lazy
 }

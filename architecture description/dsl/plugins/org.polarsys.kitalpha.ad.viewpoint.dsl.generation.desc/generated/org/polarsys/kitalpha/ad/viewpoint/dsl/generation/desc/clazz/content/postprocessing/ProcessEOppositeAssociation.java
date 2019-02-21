@@ -1,4 +1,4 @@
-//Generated with EGF 1.5.0.v20170706-0846
+//Generated with EGF 1.6.1.201902111324
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.clazz.content.postprocessing;
 
 import java.util.*;
@@ -81,7 +81,7 @@ public class ProcessEOppositeAssociation
 					.getName();
 			EReference eOpposite = helper.getEReference(oppositeVpClassName, oppositeReferenceName);
 
-			if (eReference == null) {
+			if (eOpposite == null) {
 				throw new RuntimeException("Could not find eOpposite of reference: " + parameter.getName()); //$NON-NLS-1$
 			}
 

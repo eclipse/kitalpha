@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.0.201805040915
+//Generated with EGF 1.6.1.201902111324
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools;
 
 import java.util.*;
@@ -125,6 +125,7 @@ public class DeleteToolForElementBasedEdge
 			break;
 		case Acceleo_3_x:
 			expression = "[elementView.sourceNode.eGet('target')->asSet()->including(elementView.targetNode.eGet('target'))->asOrderedSet()->asSequence()/]";
+
 			break;
 		case AQL:
 			expression = "aql:Sequence{elementView.sourceNode.target, elementView.targetNode.target}->asSet()";

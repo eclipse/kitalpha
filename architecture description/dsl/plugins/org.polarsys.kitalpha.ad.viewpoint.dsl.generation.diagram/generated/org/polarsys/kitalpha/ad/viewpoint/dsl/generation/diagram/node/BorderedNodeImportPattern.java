@@ -1,4 +1,4 @@
-//Generated with EGF 1.4.0.v20160519-0641
+//Generated with EGF 1.6.1.201902111324
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.node;
 
 import java.util.*;
@@ -40,6 +40,7 @@ import org.eclipse.sirius.diagram.description.style.StyleFactory;
 import org.eclipse.sirius.diagram.description.style.WorkspaceImageDescription;
 import org.eclipse.sirius.diagram.description.style.BundledImageDescription;
 import org.eclipse.sirius.diagram.BundledImageShape;
+import org.eclipse.sirius.diagram.business.internal.metamodel.helper.MappingHelper;
 import org.eclipse.sirius.diagram.ResizeKind;
 import org.eclipse.sirius.diagram.description.style.DotDescription;
 import org.eclipse.sirius.diagram.description.style.EllipseNodeDescription;
@@ -172,8 +173,9 @@ public class BorderedNodeImportPattern
 		// NodeMapping mapping = parameter.getImports();
 
 		// Inherits reused bordered nodes
-		if (mapping.getAllBorderedNodeMappings() != null && mapping.getAllBorderedNodeMappings().size() > 0)
-			inm.getReusedBorderedNodeMappings().addAll(mapping.getAllBorderedNodeMappings());
+		if (MappingHelper.getAllBorderedNodeMappings(mapping) != null
+				&& MappingHelper.getAllBorderedNodeMappings(mapping).size() > 0)
+			inm.getReusedBorderedNodeMappings().addAll(MappingHelper.getAllBorderedNodeMappings(mapping));
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "inheritMappingReuse", out.toString());
