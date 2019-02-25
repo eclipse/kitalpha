@@ -118,7 +118,7 @@ location oxygen-release "http://download.eclipse.org/releases/oxygen/20180321100
 }
 
 
-location Sirus "http://download.eclipse.org/sirius/updates/milestones/6.1.2rc3/oxygen" {
+location Sirus "https://download.eclipse.org/sirius/updates/stable/6.1.3-S20190222-102544/oxygen/" {
 	org.eclipse.sirius.doc.feature.feature.group lazy
 	org.eclipse.sirius.runtime.ide.eef.feature.group lazy
 	org.eclipse.sirius.runtime.ide.ui.acceleo.feature.group lazy
