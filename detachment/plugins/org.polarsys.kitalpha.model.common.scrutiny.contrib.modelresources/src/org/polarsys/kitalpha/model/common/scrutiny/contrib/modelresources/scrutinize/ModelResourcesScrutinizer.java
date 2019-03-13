@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2019 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -82,14 +82,17 @@ public class ModelResourcesScrutinizer implements IScrutinize<IModelResources, S
 				if (_modelResource == null){
 
 					if (resourceURI.toString().startsWith("http://")){
-						resourceURI = DetachmentHelper.getPlatformURIFromNSURI(eObject.eResource().getURI().trimFragment());
+						URI nsuri = eObject.eResource().getURI().trimFragment();
+						resourceURI = DetachmentHelper.getPlatformURIFromNSURI(nsuri);
+						if (resourceURI == null) {
+							LOGGER.warn("Cannot find the resource which provides "+nsuri);
+							return ;
+						}
 					}
-					//FIXME check resourceURI if it is null
 					Map<EObject, Collection<Setting>> c = EcoreUtil.ExternalCrossReferencer.find(eObject);
 					_modelResource = ModelResource.newResource(resourceURI, ModelResourceState.KnownResource);
 					getAnalysisResult().addResource(resourceURI, _modelResource);
 				}
-
 				_modelResource.addModelObject(eObject);
 			}
 
