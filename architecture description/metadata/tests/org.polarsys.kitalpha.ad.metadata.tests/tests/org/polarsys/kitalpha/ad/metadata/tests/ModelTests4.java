@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2019 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,12 +25,9 @@ public class ModelTests4 extends ModelTests {
 	}
 
 	public void testManager1() throws Exception {
-		try {
-			List<ViewpointReference> allViewpointReferences = helper.getAllViewpointReferences();
-			fail("expecting an expection");
-		}
-		catch (IllegalStateException e) {
-		}
+		List<ViewpointReference> allViewpointReferences = helper.getAllViewpointReferences();
+		// no more exception, cycles in metadata are supported
+		
 	}
 	
 
