@@ -119,7 +119,7 @@ location acceleo "https://download.eclipse.org/acceleo/updates/releases/3.7/R201
 }
 
 
-location Sirus "http://download.eclipse.org/sirius/updates/stable/6.1.3-S20190308-082148/oxygen" {
+location Sirus "http://download.eclipse.org/sirius/updates/stable/6.1.3-S20190322-101025/oxygen" {
 	org.eclipse.acceleo.query.feature.group lazy
 	org.eclipse.acceleo.query.source.feature.group lazy
 	org.eclipse.acceleo.ui.interpreter.feature.group lazy
