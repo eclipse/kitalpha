@@ -195,7 +195,7 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 
 	@Override
 	public boolean isDirty() {
-		if (isReady()) {
+		if (isReady() && isEditable()) {
 			return super.isDirty();
 		}
 		return false;
