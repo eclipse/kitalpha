@@ -119,7 +119,7 @@ location acceleo "https://download.eclipse.org/acceleo/updates/releases/3.7/R201
 }
 
 
-location Sirus "https://download.eclipse.org/sirius/updates/stable/6.1.3-S20190408-044611/oxygen" {
+location Sirus "https://download.eclipse.org/sirius/updates/stable/6.1.3-S20190419-043317/oxygen" {
 	org.eclipse.acceleo.query.feature.group lazy
 	org.eclipse.acceleo.query.source.feature.group lazy
 	org.eclipse.acceleo.ui.interpreter.feature.group lazy
@@ -152,7 +152,7 @@ location Sirus "https://download.eclipse.org/sirius/updates/stable/6.1.3-S201904
 	org.eclipse.sirius.specifier.ide.ui.source.feature.group lazy
 }
 
-location EMF-DiffMerge "http://download.eclipse.org/diffmerge/releases/0.11.1/emf-diffmerge-site/" {
+location EMF-DiffMerge "http://download.eclipse.org/diffmerge/releases/0.11.2/emf-diffmerge-site/" {
 	org.eclipse.emf.diffmerge.feature.feature.group lazy
 	org.eclipse.emf.diffmerge.feature.source.feature.group lazy
 	org.eclipse.emf.diffmerge.sirius.feature.feature.group lazy
@@ -176,7 +176,7 @@ location coevolution "http://download.eclipse.org/diffmerge/releases/0.11.0/edm-
 	 org.eclipse.emf.diffmerge.coevolution.sdk.feature.source.feature.group lazy
 }
 
-location amalgam "https://download.eclipse.org/modeling/amalgam/updates/stable/1.10.1-S20190409/capella" {
+location amalgam "https://download.eclipse.org/modeling/amalgam/updates/stable/1.10.1-S20190419/capella" {
 	org.eclipse.amalgam.explorer.activity.feature.group lazy
 	org.eclipse.amalgam.explorer.activity.source.feature.group lazy
 	org.eclipse.amalgam.explorer.contextual.feature.group lazy
