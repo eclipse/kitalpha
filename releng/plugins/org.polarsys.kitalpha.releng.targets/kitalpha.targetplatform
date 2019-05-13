@@ -176,7 +176,7 @@ location coevolution "http://download.eclipse.org/diffmerge/releases/0.11.0/edm-
 	 org.eclipse.emf.diffmerge.coevolution.sdk.feature.source.feature.group lazy
 }
 
-location amalgam "https://download.eclipse.org/modeling/amalgam/updates/stable/1.10.1-S20190419/capella" {
+location amalgam "https://download.eclipse.org/modeling/amalgam/updates/stable/1.10.1-S20190510//capella" {
 	org.eclipse.amalgam.explorer.activity.feature.group lazy
 	org.eclipse.amalgam.explorer.activity.source.feature.group lazy
 	org.eclipse.amalgam.explorer.contextual.feature.group lazy
