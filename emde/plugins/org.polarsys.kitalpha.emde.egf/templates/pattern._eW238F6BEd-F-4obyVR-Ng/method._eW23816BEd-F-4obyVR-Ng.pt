@@ -2,15 +2,16 @@
 /**
  * Copyright (c) 2002-2007 IBM Corporation and others.
  * All rights reserved.   This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
+ * http://www.eclipse.org/legal/epl-v20.html
  *
  * Contributors:
  *   IBM - Initial API and implementation
  */
 %>
 <%GenPackage genPackage = (GenPackage)argument; GenModel genModel=genPackage.getGenModel();%>
+<%final boolean isJDK50 = genModel.getComplianceLevel().getValue() >= GenJDKLevel.JDK50;%>
 <%
 String _CollectionOfAnything = null;
 String _CollectionOfIAction = null;
@@ -43,12 +44,15 @@ package <%=genPackage.getPresentationPackageName()%>;
 /**
  * This is the action bar contributor for the <%=genPackage.getPrefix()%> model editor.
  * <!-- begin-user-doc -->
-<%if (genPackage.isExtensibleProviderFactory()) {%>
- * @implements IPropertyChangeListener
-<%}%>
  * <!-- end-user-doc -->
+<%if (genPackage.hasAPITags()) {%>
+ * <%=genPackage.getAPITags(genModel.getIndentation(stringBuffer))%>
+<%}%>
  * @generated
  */
+<%if (isJDK50 && genPackage.hasAPIDeprecatedTag()) {%>
+@Deprecated
+<%}%>
 public class <%=genPackage.getActionBarContributorClassName()%>
 	extends <%=genModel.getImportedName("org.eclipse.emf.edit.ui.action.EditingDomainActionBarContributor")%>
 	implements <%=genModel.getImportedName("org.eclipse.jface.viewers.ISelectionChangedListener")%><%if (genPackage.isExtensibleProviderFactory()) {%>, <%=genModel.getImportedName("org.eclipse.jface.util.IPropertyChangeListener")%><%}%>
@@ -242,6 +246,9 @@ public class <%=genPackage.getActionBarContributorClassName()%>
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
+<%if (genModel.useInterfaceOverrideAnnotation()) {%>
+		@Override
+<%}%>
 		public void run(<%=genModel.getImportedName("org.eclipse.jface.action.IAction")%> action)
 		{
 			<%=genPackage.getModelWizardClassName()%> wizard = new <%=genPackage.getModelWizardClassName()%>();
@@ -385,7 +392,22 @@ public class <%=genPackage.getActionBarContributorClassName()%>
 		super(ADDITIONS_LAST_STYLE);
 		loadResourceAction = new ExtendedLoadResourceAction();
 		validateAction = new <%=genModel.getImportedName("org.eclipse.emf.edit.ui.action.ValidateAction")%>();
+<%if (genModel.getDecoration() == GenDecoration.LIVE) {%>
+		liveValidationAction = new <%=genModel.getImportedName("org.eclipse.emf.edit.ui.provider.DiagnosticDecorator")%>.LiveValidator.LiveValidationAction(<%=genPackage.getImportedEditorPluginClassName()%>.getPlugin().getDialogSettings());
+<%}%>
 		controlAction = new <%=genModel.getImportedName("org.eclipse.emf.edit.ui.action.ControlAction")%>();
+<%if (genModel.isFindAction()) {%>
+		findAction = <%=genModel.getImportedName("org.eclipse.emf.edit.ui.action.FindAction")%>.create();
+<%}%>
+<%if (genModel.isRevertAction()) {%>
+		revertAction = new <%=genModel.getImportedName("org.eclipse.emf.edit.ui.action.RevertAction")%>();
+<%}%>
+<%if (genModel.isExpandAllAction()) {%>
+		expandAllAction = new <%=genModel.getImportedName("org.eclipse.emf.edit.ui.action.ExpandAllAction")%>();
+<%}%>
+<%if (genModel.isCollapseAllAction()) {%>
+		collapseAllAction = new <%=genModel.getImportedName("org.eclipse.emf.edit.ui.action.CollapseAllAction")%>();
+<%}%>
 	}
 
 <%if (genPackage.isExtensibleProviderFactory()) {%>	
@@ -416,6 +438,7 @@ public class <%=genPackage.getActionBarContributorClassName()%>
 <%}%>
 	public void contributeToToolBar(<%=genModel.getImportedName("org.eclipse.jface.action.IToolBarManager")%> toolBarManager)
 	{
+		super.contributeToToolBar(toolBarManager);
 		toolBarManager.add(new <%=genModel.getImportedName("org.eclipse.jface.action.Separator")%>("<%=genPackage.getPrefix().toLowerCase(genModel.getLocale())%>-settings"));<%=genModel.getNonNLS()%>
 		toolBarManager.add(new <%=genModel.getImportedName("org.eclipse.jface.action.Separator")%>("<%=genPackage.getPrefix().toLowerCase(genModel.getLocale())%>-additions"));<%=genModel.getNonNLS()%>
 	}
@@ -464,6 +487,9 @@ public class <%=genPackage.getActionBarContributorClassName()%>
 		submenuManager.addMenuListener
 			(new <%=genModel.getImportedName("org.eclipse.jface.action.IMenuListener")%>()
 			 {
+<%if (genModel.useInterfaceOverrideAnnotation()) {%>
+				 @Override
+<%}%>
 				 public void menuAboutToShow(<%=genModel.getImportedName("org.eclipse.jface.action.IMenuManager")%> menuManager)
 				 {
 					 menuManager.updateAll(true);
@@ -558,6 +584,9 @@ public class <%=genPackage.getActionBarContributorClassName()%>
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+<%if (genModel.useInterfaceOverrideAnnotation()) {%>
+	@Override
+<%}%>
 	public void selectionChanged(<%=genModel.getImportedName("org.eclipse.jface.viewers.SelectionChangedEvent")%> event)
 	{
 		// Current Selection
@@ -621,12 +650,15 @@ public class <%=genPackage.getActionBarContributorClassName()%>
 		<%=_CollectionOfAnything%> newChildDescriptors = null;
 		<%=_CollectionOfAnything%> newSiblingDescriptors = null;
 
-		if (selectedObject != null)
+		<%=genModel.getImportedName("org.eclipse.jface.viewers.ISelection")%> selection = event.getSelection();
+		if (selection instanceof <%=genModel.getImportedName("org.eclipse.jface.viewers.IStructuredSelection")%> && ((IStructuredSelection)selection).size() == 1)
 		{
+			Object object = ((<%=genModel.getImportedName("org.eclipse.jface.viewers.IStructuredSelection")%>)selection).getFirstElement();
+
 			<%=genModel.getImportedName("org.eclipse.emf.edit.domain.EditingDomain")%> domain = ((<%=genModel.getImportedName("org.eclipse.emf.edit.domain.IEditingDomainProvider")%>)activeEditorPart).getEditingDomain();
 
-			newChildDescriptors = domain.getNewChildDescriptors(selectedObject, null);
-			newSiblingDescriptors = domain.getNewChildDescriptors(null, selectedObject);
+			newChildDescriptors = domain.getNewChildDescriptors(object, null);
+			newSiblingDescriptors = domain.getNewChildDescriptors(null, object);
 		}
 
 		// Generate actions for selection; populate and redraw the menus.
@@ -872,7 +904,7 @@ public class <%=genPackage.getActionBarContributorClassName()%>
 					<%=genModel.getImportedName("org.eclipse.jface.action.MenuManager")%> submenuManager = (<%=genModel.getImportedName("org.eclipse.jface.action.MenuManager")%>)contributionItem;
 					if (submenuActions.containsKey(submenuManager.getMenuText()))
 					{
-						depopulateManager(submenuManager, <%if (!genModel.useGenerics()) {%>(<%=_CollectionOfIAction%>)<%}%>submenuActions.get(contributionItem));
+						depopulateManager(submenuManager, <%if (!genModel.useGenerics()) {%>(<%=_CollectionOfIAction%>)<%}%>submenuActions.get(submenuManager.getMenuText()));
 						manager.remove(contributionItem);
 					}
 				}

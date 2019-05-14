@@ -1,4 +1,4 @@
-//Generated with EGF 1.5.0.v20170223-0952
+//Generated with EGF 1.6.1.201906060805
 package org.polarsys.kitalpha.emde.egf;
 
 import org.polarsys.kitalpha.emde.egf.utils.*;
@@ -24,8 +24,6 @@ public class HeaderProperties extends org.eclipse.egf.emf.pattern.base.HeaderPro
 	protected final String TEXT_1 = "#" + NL + "# ";
 	protected final String TEXT_2 = NL + "#";
 	protected final String TEXT_3 = NL;
-	protected final String TEXT_4 = NL;
-	protected final String TEXT_5 = NL;
 
 	public HeaderProperties() {
 		//Here is the constructor
@@ -61,8 +59,8 @@ public class HeaderProperties extends org.eclipse.egf.emf.pattern.base.HeaderPro
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_4);
-		stringBuffer.append(TEXT_5);
+		stringBuffer.append(TEXT_3);
+		stringBuffer.append(TEXT_3);
 		return stringBuffer.toString();
 	}
 
@@ -92,7 +90,8 @@ public class HeaderProperties extends org.eclipse.egf.emf.pattern.base.HeaderPro
 		{
 			GenBase copyrightHolder = argument instanceof GenBase ? (GenBase) argument
 					: argument instanceof Object[] && ((Object[]) argument)[0] instanceof GenBase
-							? (GenBase) ((Object[]) argument)[0] : null;
+							? (GenBase) ((Object[]) argument)[0]
+							: null;
 			if (copyrightHolder != null && copyrightHolder.hasCopyright()) {
 				stringBuffer.append(TEXT_1);
 				stringBuffer.append(
