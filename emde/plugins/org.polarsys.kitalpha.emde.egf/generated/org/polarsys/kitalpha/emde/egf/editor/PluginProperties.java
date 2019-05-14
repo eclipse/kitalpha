@@ -1,4 +1,4 @@
-//Generated with EGF 1.5.0.v20170223-0952
+//Generated with EGF 1.6.1.201906060805
 package org.polarsys.kitalpha.emde.egf.editor;
 
 import org.polarsys.kitalpha.emde.egf.utils.*;
@@ -34,65 +34,55 @@ public class PluginProperties extends org.eclipse.egf.emf.pattern.editor.PluginP
 	protected final String TEXT_5 = NL + "_UI_";
 	protected final String TEXT_6 = "_menu = &";
 	protected final String TEXT_7 = " Editor";
-	protected final String TEXT_8 = NL;
-	protected final String TEXT_9 = NL + "_UI_CreateChild_menu_item = &New Child" + NL
+	protected final String TEXT_8 = NL + "_UI_CreateChild_menu_item = &New Child" + NL
 			+ "_UI_CreateSibling_menu_item = N&ew Sibling" + NL;
-	protected final String TEXT_10 = NL + "_UI_ShowPropertiesView_menu_item = Show &Properties View" + NL
+	protected final String TEXT_9 = NL + "_UI_ShowPropertiesView_menu_item = Show &Properties View" + NL
 			+ "_UI_RefreshViewer_menu_item = &Refresh" + NL + "" + NL + "_UI_SelectionPage_label = Selection";
-	protected final String TEXT_11 = NL + "_UI_ParentPage_label = Parent" + NL + "_UI_ListPage_label = List" + NL
+	protected final String TEXT_10 = NL + "_UI_ParentPage_label = Parent" + NL + "_UI_ListPage_label = List" + NL
 			+ "_UI_TreePage_label = Tree" + NL + "_UI_TablePage_label = Table" + NL
 			+ "_UI_TreeWithColumnsPage_label = Tree with Columns" + NL + "_UI_ObjectColumn_label = Object" + NL
 			+ "_UI_SelfColumn_label = Self";
-	protected final String TEXT_12 = NL + NL + "_UI_NoObjectSelected = Selected Nothing" + NL
+	protected final String TEXT_11 = NL + NL + "_UI_NoObjectSelected = Selected Nothing" + NL
 			+ "_UI_SingleObjectSelected = Selected Object: {0}" + NL + "_UI_MultiObjectSelected = Selected {0} Objects"
 			+ NL + "" + NL + "_UI_OpenEditorError_label = Open Editor" + NL + "" + NL
 			+ "_UI_Wizard_category = Example EMF Model Creation Wizards" + NL + "" + NL
 			+ "_UI_CreateModelError_message = Problems encountered in file \"{0}\"" + NL;
-	protected final String TEXT_13 = NL + "_UI_";
-	protected final String TEXT_14 = "_label = ";
-	protected final String TEXT_15 = " Model" + NL + "_UI_";
-	protected final String TEXT_16 = "_description = Create a new ";
-	protected final String TEXT_17 = " model" + NL;
-	protected final String TEXT_18 = NL + "_UI_";
-	protected final String TEXT_19 = "_label = ";
-	protected final String TEXT_20 = " Model Editor" + NL + "" + NL + "_UI_";
-	protected final String TEXT_21 = "FilenameDefaultBase = My" + NL + "_UI_";
-	protected final String TEXT_22 = "FilenameExtensions = ";
-	protected final String TEXT_23 = NL;
-	protected final String TEXT_24 = NL + "_UI_Wizard_label = New" + NL + "" + NL
+	protected final String TEXT_12 = "_label = ";
+	protected final String TEXT_13 = " Model" + NL + "_UI_";
+	protected final String TEXT_14 = "_description = Create a new ";
+	protected final String TEXT_15 = " model" + NL;
+	protected final String TEXT_16 = " Model Editor" + NL + "" + NL + "_UI_";
+	protected final String TEXT_17 = "FilenameDefaultBase = My" + NL + "_UI_";
+	protected final String TEXT_18 = "FilenameExtensions = ";
+	protected final String TEXT_19 = NL + "_UI_Wizard_label = New" + NL + "" + NL
 			+ "_WARN_FilenameExtension = The file name must end in ''.{0}''" + NL
 			+ "_WARN_FilenameExtensions = The file name must have one of the following extensions: {0}" + NL + "" + NL
 			+ "_UI_ModelObject = &Model Object" + NL + "_UI_XMLEncoding = &XML Encoding" + NL
 			+ "_UI_XMLEncodingChoices = ";
-	protected final String TEXT_25 = NL
+	protected final String TEXT_20 = NL
 			+ "_UI_Wizard_initial_object_description = Specify a file name and select a model object to create";
-	protected final String TEXT_26 = NL + "_UI_Wizard_initial_object_description = Select a model object to create";
-	protected final String TEXT_27 = NL + NL + "_UI_FileConflict_label = File Conflict" + NL
+	protected final String TEXT_21 = NL + "_UI_Wizard_initial_object_description = Select a model object to create";
+	protected final String TEXT_22 = NL + NL + "_UI_FileConflict_label = File Conflict" + NL
 			+ "_WARN_FileConflict = There are unsaved changes that conflict with changes made outside the editor.  Do you wish to discard this editor's changes?"
 			+ NL;
-	protected final String TEXT_28 = NL + "_UI_";
-	protected final String TEXT_29 = "_ActionSet_label = ";
-	protected final String TEXT_30 = " Action Set" + NL + "_UI_Perspective_label = ";
-	protected final String TEXT_31 = NL + NL + "_UI_Browse_label = &Browse..." + NL + "_UI_File_label = &File" + NL
+	protected final String TEXT_23 = "_ActionSet_label = ";
+	protected final String TEXT_24 = " Action Set" + NL + "_UI_Perspective_label = ";
+	protected final String TEXT_25 = NL + NL + "_UI_Browse_label = &Browse..." + NL + "_UI_File_label = &File" + NL
 			+ "_UI_Question_title = Question" + NL
 			+ "_WARN_FileConflict = The file \"{0}\" already exists.  Do you want to replace the existing file?" + NL
 			+ "_UI_Error_title = Error" + NL + "_WARN_No_Editor = There is no editor registered for the file \"{0}\"."
 			+ NL + "" + NL + "_UI_Application_title = ";
-	protected final String TEXT_32 = " Application" + NL + "_UI_Menu_File_label = &File" + NL
+	protected final String TEXT_26 = " Application" + NL + "_UI_Menu_File_label = &File" + NL
 			+ "_UI_Menu_New_label = &New" + NL + "_UI_Menu_Open_label = &Open..." + NL
 			+ "_UI_Menu_Open_description = Opens a model object file" + NL + "_UI_Menu_OpenURI_label = &Open URI..."
 			+ NL + "_UI_Menu_OpenURI_description = Opens a model object loading it from a URI" + NL
 			+ "_UI_Menu_Edit_label = &Edit" + NL + "_UI_Menu_Window_label = &Window" + NL
 			+ "_UI_Menu_Help_label = &Help" + NL + "_UI_Menu_About_label = ";
-	protected final String TEXT_33 = " &About..." + NL + "_UI_About_title = ";
-	protected final String TEXT_34 = " Application" + NL + "_UI_About_text = ";
-	protected final String TEXT_35 = " Application about box goes here." + NL;
-	protected final String TEXT_36 = NL + "_UI_";
-	protected final String TEXT_37 = "_ActionSet_label = ";
-	protected final String TEXT_38 = " Model Action Set";
-	protected final String TEXT_39 = NL;
-	protected final String TEXT_40 = NL;
-	protected final String TEXT_41 = NL;
+	protected final String TEXT_27 = " &About..." + NL + "_UI_About_title = ";
+	protected final String TEXT_28 = " Application" + NL + "_UI_About_text = ";
+	protected final String TEXT_29 = " Application about box goes here." + NL;
+	protected final String TEXT_30 = " Model Action Set";
+	protected final String TEXT_31 = NL;
 
 	public PluginProperties() {
 		//Here is the constructor
@@ -128,8 +118,8 @@ public class PluginProperties extends org.eclipse.egf.emf.pattern.editor.PluginP
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_40);
-		stringBuffer.append(TEXT_41);
+		stringBuffer.append(TEXT_31);
+		stringBuffer.append(TEXT_31);
 		return stringBuffer.toString();
 	}
 
@@ -159,9 +149,9 @@ public class PluginProperties extends org.eclipse.egf.emf.pattern.editor.PluginP
 		/**
 		 * Copyright (c) 2002-2006 IBM Corporation and others.
 		 * All rights reserved.   This program and the accompanying materials
-		 * are made available under the terms of the Eclipse Public License v1.0
+		 * are made available under the terms of the Eclipse Public License v2.0
 		 * which accompanies this distribution, and is available at
-		 * http://www.eclipse.org/legal/epl-v10.html
+		 * http://www.eclipse.org/legal/epl-v20.html
 		 * 
 		 * Contributors: 
 		 *   IBM - Initial API and implementation
@@ -201,74 +191,73 @@ public class PluginProperties extends org.eclipse.egf.emf.pattern.editor.PluginP
 				stringBuffer.append(genPackage.getPrefix());
 				stringBuffer.append(TEXT_7);
 			}
-			stringBuffer.append(TEXT_8);
+			stringBuffer.append(TEXT_4);
 			if (genModel.isCreationCommands()) {
-				stringBuffer.append(TEXT_9);
+				stringBuffer.append(TEXT_8);
 			}
-			stringBuffer.append(TEXT_10);
+			stringBuffer.append(TEXT_9);
 			if (hasMultiPageEditor) {
-				stringBuffer.append(TEXT_11);
+				stringBuffer.append(TEXT_10);
 			}
-			stringBuffer.append(TEXT_12);
+			stringBuffer.append(TEXT_11);
 			for (GenPackage genPackage : genModel.getAllGenPackagesWithClassifiers()) {
 				if (genPackage.isGenerateModelWizard()) {
+					stringBuffer.append(TEXT_5);
+					stringBuffer.append(genPackage.getModelWizardClassName());
+					stringBuffer.append(TEXT_12);
+					stringBuffer.append(genPackage.getPrefix());
 					stringBuffer.append(TEXT_13);
 					stringBuffer.append(genPackage.getModelWizardClassName());
 					stringBuffer.append(TEXT_14);
 					stringBuffer.append(genPackage.getPrefix());
 					stringBuffer.append(TEXT_15);
-					stringBuffer.append(genPackage.getModelWizardClassName());
-					stringBuffer.append(TEXT_16);
-					stringBuffer.append(genPackage.getPrefix());
-					stringBuffer.append(TEXT_17);
 				}
-				stringBuffer.append(TEXT_18);
+				stringBuffer.append(TEXT_5);
 				stringBuffer.append(genPackage.getEditorClassName());
-				stringBuffer.append(TEXT_19);
+				stringBuffer.append(TEXT_12);
 				stringBuffer.append(genPackage.getPrefix());
-				stringBuffer.append(TEXT_20);
+				stringBuffer.append(TEXT_16);
 				stringBuffer.append(genPackage.getEditorClassName());
-				stringBuffer.append(TEXT_21);
+				stringBuffer.append(TEXT_17);
 				stringBuffer.append(genPackage.getEditorClassName());
-				stringBuffer.append(TEXT_22);
-				stringBuffer.append(genPackage.isMultipleFileExtensions() ? genPackage.getFileExtensions()
-						: genPackage.getFileExtension());
-				stringBuffer.append(TEXT_23);
+				stringBuffer.append(TEXT_18);
+				stringBuffer.append(genPackage.getFileExtensions());
+				stringBuffer.append(TEXT_4);
 			}
-			stringBuffer.append(TEXT_24);
+			stringBuffer.append(TEXT_19);
 			stringBuffer.append(genModel.getXMLEncodingChoices());
 			if (genModel.isRichClientPlatform()) {
-				stringBuffer.append(TEXT_25);
+				stringBuffer.append(TEXT_20);
 			} else {
-				stringBuffer.append(TEXT_26);
+				stringBuffer.append(TEXT_21);
 			}
-			stringBuffer.append(TEXT_27);
+			stringBuffer.append(TEXT_22);
 			if (genModel.isRichClientPlatform()) {
-				stringBuffer.append(TEXT_28);
+				stringBuffer.append(TEXT_5);
 				stringBuffer.append(genModel.getEditorAdvisorClassName());
+				stringBuffer.append(TEXT_23);
+				stringBuffer.append(genModel.getModelName());
+				stringBuffer.append(TEXT_24);
+				stringBuffer.append(genModel.getModelName());
+				stringBuffer.append(TEXT_25);
+				stringBuffer.append(genModel.getModelName());
+				stringBuffer.append(TEXT_26);
+				stringBuffer.append(genModel.getModelName());
+				stringBuffer.append(TEXT_27);
+				stringBuffer.append(genModel.getModelName());
+				stringBuffer.append(TEXT_28);
+				stringBuffer.append(genModel.getModelName());
 				stringBuffer.append(TEXT_29);
-				stringBuffer.append(genModel.getModelName());
-				stringBuffer.append(TEXT_30);
-				stringBuffer.append(genModel.getModelName());
-				stringBuffer.append(TEXT_31);
-				stringBuffer.append(genModel.getModelName());
-				stringBuffer.append(TEXT_32);
-				stringBuffer.append(genModel.getModelName());
-				stringBuffer.append(TEXT_33);
-				stringBuffer.append(genModel.getModelName());
-				stringBuffer.append(TEXT_34);
-				stringBuffer.append(genModel.getModelName());
-				stringBuffer.append(TEXT_35);
 				for (GenPackage genPackage : genModel.getAllGenPackagesWithClassifiers()) {
 					if (genPackage.isGenerateModelWizard()) {
-						stringBuffer.append(TEXT_36);
+						stringBuffer.append(TEXT_5);
 						stringBuffer.append(genPackage.getModelWizardClassName());
-						stringBuffer.append(TEXT_37);
+						stringBuffer.append(TEXT_23);
 						stringBuffer.append(genPackage.getPrefix());
-						stringBuffer.append(TEXT_38);
+						stringBuffer.append(TEXT_30);
 					}
 				}
-				stringBuffer.append(TEXT_39);
+				stringBuffer.append(TEXT_4);
 			}
 		}
 		InternalPatternContext ictx = (InternalPatternContext) ctx;

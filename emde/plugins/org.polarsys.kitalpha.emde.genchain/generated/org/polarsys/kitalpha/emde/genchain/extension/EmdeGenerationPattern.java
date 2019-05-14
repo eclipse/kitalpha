@@ -1,4 +1,4 @@
-//Generated with EGF 1.4.1.v20161010-1704
+//Generated with EGF 1.6.1.201906060805
 package org.polarsys.kitalpha.emde.genchain.extension;
 
 import java.util.HashMap;

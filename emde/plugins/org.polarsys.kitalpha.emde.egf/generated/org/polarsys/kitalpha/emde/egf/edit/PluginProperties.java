@@ -1,4 +1,4 @@
-//Generated with EGF 1.5.0.v20170223-0952
+//Generated with EGF 1.6.1.201906060805
 package org.polarsys.kitalpha.emde.egf.edit;
 
 import org.polarsys.kitalpha.emde.egf.utils.*;
@@ -43,20 +43,14 @@ public class PluginProperties extends org.eclipse.egf.emf.pattern.edit.PluginPro
 	protected final String TEXT_9 = "_type = ";
 	protected final String TEXT_10 = NL + "_UI_Unknown_type = Object" + NL + "" + NL + "_UI_Unknown_datatype= Value"
 			+ NL;
-	protected final String TEXT_11 = NL + "_UI_";
-	protected final String TEXT_12 = "_";
-	protected final String TEXT_13 = "_feature = ";
-	protected final String TEXT_14 = NL + "_UI_";
-	protected final String TEXT_15 = "_";
-	protected final String TEXT_16 = "_description = ";
-	protected final String TEXT_17 = NL + "_UI_Unknown_feature = Unspecified" + NL;
-	protected final String TEXT_18 = NL + "_UI_";
-	protected final String TEXT_19 = "_";
-	protected final String TEXT_20 = "_literal = ";
-	protected final String TEXT_21 = NL;
-	protected final String TEXT_22 = " = ";
-	protected final String TEXT_23 = NL;
-	protected final String TEXT_24 = NL;
+	protected final String TEXT_11 = "_";
+	protected final String TEXT_12 = "_feature = ";
+	protected final String TEXT_13 = "_description = ";
+	protected final String TEXT_14 = NL + "_UI_Unknown_feature = Unspecified" + NL;
+	protected final String TEXT_15 = "_literal = ";
+	protected final String TEXT_16 = NL;
+	protected final String TEXT_17 = " = ";
+	protected final String TEXT_18 = NL;
 
 	public PluginProperties() {
 		//Here is the constructor
@@ -92,8 +86,8 @@ public class PluginProperties extends org.eclipse.egf.emf.pattern.edit.PluginPro
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_23);
-		stringBuffer.append(TEXT_24);
+		stringBuffer.append(TEXT_18);
+		stringBuffer.append(TEXT_18);
 		return stringBuffer.toString();
 	}
 
@@ -123,9 +117,9 @@ public class PluginProperties extends org.eclipse.egf.emf.pattern.edit.PluginPro
 		/**
 		 * Copyright (c) 2002-2007 IBM Corporation and others.
 		 * All rights reserved.   This program and the accompanying materials
-		 * are made available under the terms of the Eclipse Public License v1.0
+		 * are made available under the terms of the Eclipse Public License v2.0
 		 * which accompanies this distribution, and is available at
-		 * http://www.eclipse.org/legal/epl-v10.html
+		 * http://www.eclipse.org/legal/epl-v20.html
 		 * 
 		 * Contributors: 
 		 *   IBM - Initial API and implementation
@@ -174,40 +168,40 @@ public class PluginProperties extends org.eclipse.egf.emf.pattern.edit.PluginPro
 			stringBuffer.append(TEXT_10);
 			for (GenFeature genFeature : genModel.getFilteredAllGenFeatures()) {
 				String description = genFeature.getPropertyDescription();
-				stringBuffer.append(TEXT_11);
+				stringBuffer.append(TEXT_8);
 				stringBuffer.append(genFeature.getGenClass().getName());
-				stringBuffer.append(TEXT_12);
+				stringBuffer.append(TEXT_11);
 				stringBuffer.append(genFeature.getName());
-				stringBuffer.append(TEXT_13);
+				stringBuffer.append(TEXT_12);
 				stringBuffer.append(genFeature.getFormattedName());
 				if (description != null && description.length() > 0) {
-					stringBuffer.append(TEXT_14);
+					stringBuffer.append(TEXT_8);
 					stringBuffer.append(genFeature.getGenClass().getName());
-					stringBuffer.append(TEXT_15);
+					stringBuffer.append(TEXT_11);
 					stringBuffer.append(genFeature.getName());
-					stringBuffer.append(TEXT_16);
+					stringBuffer.append(TEXT_13);
 					stringBuffer.append(description);
 				}
 			}
-			stringBuffer.append(TEXT_17);
+			stringBuffer.append(TEXT_14);
 			for (GenPackage genPackage : genModel.getAllGenAndUsedGenPackagesWithClassifiers()) {
 				if (genPackage.getGenModel() == genModel || !genPackage.getGenModel().hasEditSupport()) {
 					for (GenEnum genEnum : genPackage.getGenEnums()) {
 						for (GenEnumLiteral genEnumLiteral : genEnum.getGenEnumLiterals()) {
-							stringBuffer.append(TEXT_18);
+							stringBuffer.append(TEXT_8);
 							stringBuffer.append(genEnum.getName());
-							stringBuffer.append(TEXT_19);
+							stringBuffer.append(TEXT_11);
 							stringBuffer.append(genEnumLiteral.getName());
-							stringBuffer.append(TEXT_20);
+							stringBuffer.append(TEXT_15);
 							stringBuffer.append(genEnumLiteral.getLiteral());
 						}
 					}
 				}
 			}
 			for (String category : genModel.getPropertyCategories()) {
-				stringBuffer.append(TEXT_21);
+				stringBuffer.append(TEXT_16);
 				stringBuffer.append(genModel.getPropertyCategoryKey(category));
-				stringBuffer.append(TEXT_22);
+				stringBuffer.append(TEXT_17);
 				stringBuffer.append(category);
 			}
 		}

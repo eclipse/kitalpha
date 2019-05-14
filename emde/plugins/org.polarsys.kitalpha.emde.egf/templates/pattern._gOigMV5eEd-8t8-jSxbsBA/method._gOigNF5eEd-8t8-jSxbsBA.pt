@@ -2,15 +2,16 @@
 /**
  * Copyright (c) 2002-2010 IBM Corporation and others.
  * All rights reserved.   This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
+ * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
+ * http://www.eclipse.org/legal/epl-v20.html
  *
  * Contributors:
  *   IBM - Initial API and implementation
  */
 %>
 <%GenPackage genPackage = (GenPackage)argument; GenModel genModel=genPackage.getGenModel(); /* Trick to import java.util.* without warnings */Iterator.class.getName();%>
+<%final boolean isJDK50 = genModel.getComplianceLevel().getValue() >= GenJDKLevel.JDK50;%>
 <%@ egf:patternCall patternId="platform:/plugin/org.eclipse.egf.emf.pattern.base/egf/EMF_Pattern_Base.fcore#LogicalName=org.eclipse.egf.emf.pattern.base.HeaderJava" args="parameter:argument"%>
 package <%=genPackage.getProviderPackageName()%>;
 
@@ -39,8 +40,16 @@ package <%=genPackage.getProviderPackageName()%>;
  * Note that most of the adapters are shared among multiple instances.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+<%if (genPackage.hasAPITags()) {%>
+ * <%=genPackage.getAPITags(genModel.getIndentation(stringBuffer))%>
+<%}%>
  * @generated
  */
+<%if (isJDK50 && genPackage.hasAPIDeprecatedTag()) {%>
+@Deprecated
+<%} else if (isJDK50 && GenModelUtil.hasAPIDeprecatedTag(genPackage.getGenClasses())) {%>
+@SuppressWarnings("deprecation")
+<%}%>
 public class <%=genPackage.getItemProviderAdapterFactoryClassName()%> extends <%=genPackage.getImportedAdapterFactoryClassName()%> implements ComposeableAdapterFactory, IChangeNotifier<%if (genPackage.isDisposableProviderFactory()) {%>, <%=genModel.getImportedName("org.eclipse.emf.edit.provider.IDisposable")%><%}%><%if (genPackage.isExtensibleProviderFactory()) {%>, <%=genModel.getImportedName("org.eclipse.emf.edit.provider.IChildCreationExtender")%><%}%>
 {
 <%if (genModel.hasCopyrightField()) {%>
@@ -147,22 +156,34 @@ public class <%=genPackage.getItemProviderAdapterFactoryClassName()%> extends <%
 <%if (!genClass.isAbstract() && genClass.getProvider() != GenProviderKind.NONE_LITERAL) {%>
 <%if (genClass.isProviderSingleton()) {%>
 	/**
-	 * This keeps track of the one adapter used for all {@link <%=genClass.getQualifiedInterfaceName()%>} instances.
+	 * This keeps track of the one adapter used for all {@link <%=genClass.getRawQualifiedInterfaceName()%>} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+  <%if (genClass.hasAPITags()) {%>
+	 * <%=genClass.getAPITags(genModel.getIndentation(stringBuffer))%>
+  <%}%>
 	 * @generated
 	 */
+  <%if (isJDK50 && genClass.hasAPIDeprecatedTag()) {%>
+	@Deprecated
+  <%}%>
 	protected <%=genClass.getProviderClassName()%> <%=genClass.getUncapName()%>ItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link <%=genClass.getQualifiedInterfaceName()%>}.
+	 * This creates an adapter for a {@link <%=genClass.getRawQualifiedInterfaceName()%>}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+  <%if (genClass.hasAPITags()) {%>
+	 * <%=genClass.getAPITags(genModel.getIndentation(stringBuffer))%>
+  <%}%>
 	 * @generated
 	 */
-<%if (genModel.useClassOverrideAnnotation()) {%>
+  <%if (isJDK50 && genClass.hasAPIDeprecatedTag()) {%>
+	@Deprecated
+  <%}%>
+  <%if (genModel.useClassOverrideAnnotation()) {%>
 	@Override
-<%}%>
+  <%}%>
 	public Adapter create<%=genClass.getName()%>Adapter()
 	{
 		if (<%=genClass.getUncapName()%>ItemProvider == null)
@@ -175,14 +196,20 @@ public class <%=genPackage.getItemProviderAdapterFactoryClassName()%> extends <%
 
 <%} else {%>
 	/**
-	 * This creates an adapter for a {@link <%=genClass.getQualifiedInterfaceName()%>}.
+	 * This creates an adapter for a {@link <%=genClass.getRawQualifiedInterfaceName()%>}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+  <%if (genClass.hasAPITags()) {%>
+	 * <%=genClass.getAPITags(genModel.getIndentation(stringBuffer))%>
+  <%}%>
 	 * @generated
 	 */
-<%if (genModel.useClassOverrideAnnotation()) {%>
+  <%if (isJDK50 && genClass.hasAPIDeprecatedTag()) {%>
+	@Deprecated
+  <%}%>
+  <%if (genModel.useClassOverrideAnnotation()) {%>
 	@Override
-<%}%>
+  <%}%>
 	public Adapter create<%=genClass.getName()%>Adapter()
 	{
 		return new <%=genClass.getProviderClassName()%>(this);
@@ -196,8 +223,14 @@ public class <%=genPackage.getItemProviderAdapterFactoryClassName()%> extends <%
 	 * <%=genClass.getName()%> of <%=genClass.getItemProviderAdapterFactoryClassName()%>
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+  <%if (genClass.hasAPITags()) {%>
+	 * <%=genClass.getAPITags(genModel.getIndentation(stringBuffer))%>
+  <%}%>
 	 * @generated
 	 */
+  <%if (isJDK50 && genClass.hasAPIDeprecatedTag()) {%>
+	@Deprecated
+  <%}%>
 	public Adapter create<%=genClass.getName()%>Adapter()
 	{
 		return
@@ -213,6 +246,9 @@ public class <%=genPackage.getItemProviderAdapterFactoryClassName()%> extends <%
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+<%if (genModel.useInterfaceOverrideAnnotation()){%>
+	@Override
+<%}%>
 	public ComposeableAdapterFactory getRootAdapterFactory()
 	{
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
@@ -224,6 +260,9 @@ public class <%=genPackage.getItemProviderAdapterFactoryClassName()%> extends <%
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+<%if (genModel.useInterfaceOverrideAnnotation()){%>
+	@Override
+<%}%>
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory)
 	{
 		this.parentAdapterFactory = parentAdapterFactory;
@@ -336,6 +375,9 @@ public class <%=genPackage.getItemProviderAdapterFactoryClassName()%> extends <%
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+<%if (genModel.useInterfaceOverrideAnnotation()){%>
+	@Override
+<%}%>
 	public void addListener(INotifyChangedListener notifyChangedListener)
 	{
 		changeNotifier.addListener(notifyChangedListener);
@@ -347,6 +389,9 @@ public class <%=genPackage.getItemProviderAdapterFactoryClassName()%> extends <%
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+<%if (genModel.useInterfaceOverrideAnnotation()){%>
+	@Override
+<%}%>
 	public void removeListener(INotifyChangedListener notifyChangedListener)
 	{
 		changeNotifier.removeListener(notifyChangedListener);
@@ -358,6 +403,9 @@ public class <%=genPackage.getItemProviderAdapterFactoryClassName()%> extends <%
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+<%if (genModel.useInterfaceOverrideAnnotation()){%>
+	@Override
+<%}%>
 	public void fireNotifyChanged(Notification notification)
 	{
 		changeNotifier.fireNotifyChanged(notification);
@@ -375,6 +423,9 @@ public class <%=genPackage.getItemProviderAdapterFactoryClassName()%> extends <%
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+<%if (genModel.useInterfaceOverrideAnnotation()){%>
+	@Override
+<%}%>
 	public void dispose()
 	{
 <%if (genPackage.hasStatefulProvider()) {%>
@@ -453,14 +504,14 @@ public class <%=genPackage.getItemProviderAdapterFactoryClassName()%> extends <%
      <%for (GenClass.ChildCreationData childCreationData : classEntry.getValue()) { GenFeature createFeature = childCreationData.createFeature; GenFeature delegatedFeature = childCreationData.delegatedFeature; GenClassifier createClassifier = childCreationData.createClassifier;%>
       <%if (createFeature.isFeatureMapType()) {%>
         <%if (delegatedFeature.isReferenceType()) { GenClass createClass = (GenClass)createClassifier;%>
-<%@ egf:patternCall patternId="platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#LogicalName=org.eclipse.egf.emf.pattern.edit.call.ItemProvider.ItemProvider.newChildDescriptorsReferenceDelegatedFeature.override" args="createClass:createClass,createFeature:createFeature,delegatedFeature:delegatedFeature,createClassifier:createClassifier,childCreationData:childCreationData,genClass:genClass,genPackage:genPackage,genModel:genModel"%><%//ItemProvider/newChildDescriptorsReferenceDelegatedFeature.override.javajetinc%>
+<%@ egf:patternCall patternId="platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#LogicalName=org.eclipse.egf.emf.pattern.edit.call.ItemProvider.ItemProvider.newChildDescriptorsReferenceDelegatedFeature.override" args="createClass:createClass,createFeature:createFeature,delegatedFeature:delegatedFeature,createClassifier:createClassifier,childCreationData:childCreationData,genClass:genClass,genPackage:genPackage,genModel:genModel,isJDK50:isJDK50"%><%//ItemProvider/newChildDescriptorsReferenceDelegatedFeature.override.javajetinc%>
         <%} else { GenDataType createDataType = (GenDataType)createClassifier;%>
-<%@ egf:patternCall patternId="platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#LogicalName=org.eclipse.egf.emf.pattern.edit.call.ItemProvider.ItemProvider.newChildDescriptorsAttributeDelegatedFeature.override" args="createDataType:createDataType,createFeature:createFeature,delegatedFeature:delegatedFeature,createClassifier:createClassifier,childCreationData:childCreationData,genClass:genClass,genPackage:genPackage,genModel:genModel"%><%//ItemProvider/newChildDescriptorsAttributeDelegatedFeature.override.javajetinc%>
+<%@ egf:patternCall patternId="platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#LogicalName=org.eclipse.egf.emf.pattern.edit.call.ItemProvider.ItemProvider.newChildDescriptorsAttributeDelegatedFeature.override" args="createDataType:createDataType,createFeature:createFeature,delegatedFeature:delegatedFeature,createClassifier:createClassifier,childCreationData:childCreationData,genClass:genClass,genPackage:genPackage,genModel:genModel,isJDK50:isJDK50"%><%//ItemProvider/newChildDescriptorsAttributeDelegatedFeature.override.javajetinc%>
         <%}%>
       <%} else if (createFeature.isReferenceType()) { GenClass createClass = (GenClass)createClassifier;%>
-<%@ egf:patternCall patternId="platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#LogicalName=org.eclipse.egf.emf.pattern.edit.call.ItemProvider.ItemProvider.newChildDescriptorsReferenceFeature.override" args="createClass:createClass,createFeature:createFeature,delegatedFeature:delegatedFeature,createClassifier:createClassifier,childCreationData:childCreationData,genClass:genClass,genPackage:genPackage,genModel:genModel"%><%//ItemProvider/newChildDescriptorsReferenceFeature.override.javajetinc %>
+<%@ egf:patternCall patternId="platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#LogicalName=org.eclipse.egf.emf.pattern.edit.call.ItemProvider.ItemProvider.newChildDescriptorsReferenceFeature.override" args="createClass:createClass,createFeature:createFeature,delegatedFeature:delegatedFeature,createClassifier:createClassifier,childCreationData:childCreationData,genClass:genClass,genPackage:genPackage,genModel:genModel,isJDK50:isJDK50"%><%//ItemProvider/newChildDescriptorsReferenceFeature.override.javajetinc %>
       <%} else { GenDataType createDataType = (GenDataType)createClassifier;%>
-<%@ egf:patternCall patternId="platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#LogicalName=org.eclipse.egf.emf.pattern.edit.call.ItemProvider.ItemProvider.newChildDescriptorsAttributeFeature.override" args="createDataType:createDataType,createFeature:createFeature,delegatedFeature:delegatedFeature,createClassifier:createClassifier,childCreationData:childCreationData,genClass:genClass,genPackage:genPackage,genModel:genModel"%><%//ItemProvider/newChildDescriptorsAttributeFeature.override.javajetinc%>
+<%@ egf:patternCall patternId="platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#LogicalName=org.eclipse.egf.emf.pattern.edit.call.ItemProvider.ItemProvider.newChildDescriptorsAttributeFeature.override" args="createDataType:createDataType,createFeature:createFeature,delegatedFeature:delegatedFeature,createClassifier:createClassifier,childCreationData:childCreationData,genClass:genClass,genPackage:genPackage,genModel:genModel,isJDK50:isJDK50"%><%//ItemProvider/newChildDescriptorsAttributeFeature.override.javajetinc%>
       <%}%>
 
      <%}%>
@@ -488,8 +539,8 @@ public class <%=genPackage.getItemProviderAdapterFactoryClassName()%> extends <%
 		public <%=_Collection%> getNewChildDescriptors(Object object, <%=genModel.getImportedName("org.eclipse.emf.edit.domain.EditingDomain")%> editingDomain)
 		{
 			<%=_ArrayList%> result = new <%=_ArrayList%>();
-		   new CreationSwitch(result, editingDomain).doSwitch((<%=genModel.getImportedName("org.eclipse.emf.ecore.EObject")%>)object);
-		   return result;
+			new CreationSwitch(result, editingDomain).doSwitch((<%=genModel.getImportedName("org.eclipse.emf.ecore.EObject")%>)object);
+			return result;
 		}
 
 		/**

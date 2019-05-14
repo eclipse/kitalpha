@@ -1,4 +1,4 @@
-//Generated with EGF 1.5.0.v20170223-0952
+//Generated with EGF 1.6.1.201906060805
 package org.polarsys.kitalpha.emde.egf.model;
 
 import org.eclipse.egf.emf.pattern.base.*;
@@ -34,7 +34,6 @@ public class PluginProperties extends org.eclipse.egf.emf.pattern.model.PluginPr
 	protected final String TEXT_6 = "_content_type = ";
 	protected final String TEXT_7 = " File";
 	protected final String TEXT_8 = NL;
-	protected final String TEXT_9 = NL;
 
 	public PluginProperties() {
 		//Here is the constructor
@@ -71,7 +70,7 @@ public class PluginProperties extends org.eclipse.egf.emf.pattern.model.PluginPr
 		}
 
 		stringBuffer.append(TEXT_8);
-		stringBuffer.append(TEXT_9);
+		stringBuffer.append(TEXT_8);
 		return stringBuffer.toString();
 	}
 
@@ -101,9 +100,9 @@ public class PluginProperties extends org.eclipse.egf.emf.pattern.model.PluginPr
 		/**
 		 * Copyright (c) 2002-2004 IBM Corporation and others.
 		 * All rights reserved.   This program and the accompanying materials
-		 * are made available under the terms of the Eclipse Public License v1.0
+		 * are made available under the terms of the Eclipse Public License v2.0
 		 * which accompanies this distribution, and is available at
-		 * http://www.eclipse.org/legal/epl-v10.html
+		 * http://www.eclipse.org/legal/epl-v20.html
 		 * 
 		 * Contributors: 
 		 *   IBM - Initial API and implementation

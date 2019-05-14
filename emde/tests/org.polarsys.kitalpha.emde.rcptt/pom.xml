@@ -41,7 +41,7 @@
 					</runner>
 					<aut>
 						<explicit>
-							../../../releng/plugins/org.polarsys.kitalpha.releng.sdk.product/target/products/org.polarsys.kitalpha.releng.sdk.product/linux/gtk/x86_64/
+							../../../releng/plugins/org.polarsys.kitalpha.releng.sdk.product/target/products/org.polarsys.kitalpha.releng.sdk.product/win32/win32/x86_64/
 						</explicit>
 						<injections>
 							<injection>
