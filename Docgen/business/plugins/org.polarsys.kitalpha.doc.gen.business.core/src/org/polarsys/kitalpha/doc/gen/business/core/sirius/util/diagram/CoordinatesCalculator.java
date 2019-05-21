@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2019 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -75,6 +75,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
 import org.polarsys.kitalpha.doc.gen.business.core.Activator;
 import org.polarsys.kitalpha.doc.gen.business.core.internal.GenDocDiagramEditPartService;
+import org.polarsys.kitalpha.doc.gen.business.core.preference.helper.DocgenDiagramPreferencesHelper;
 import org.polarsys.kitalpha.doc.gen.business.core.scope.GenerationGlobalScope;
 import org.polarsys.kitalpha.doc.gen.business.core.scope.ScopeStatus;
 import org.polarsys.kitalpha.doc.gen.business.core.sirius.util.session.DiagramSessionHelper;
@@ -86,13 +87,11 @@ import org.polarsys.kitalpha.doc.gen.business.core.util.SiriusHelper;
  * @author Faycal Abka
  * 
  */
+@SuppressWarnings("restriction")
 public class CoordinatesCalculator {
 
 	public static final Map<String, Map<Rectangle, EObject>> COORDINATES_MAP = new HashMap<String, Map<Rectangle, EObject>>();
 
-	private static final String JPG = "JPG";
-
-	private final ImageReader reader = ImageIO.getImageReadersBySuffix(JPG).next();
 	private final GenDocDiagramEditPartService tool = new GenDocDiagramEditPartService();
 
 	private IFile imageFile;
@@ -108,9 +107,12 @@ public class CoordinatesCalculator {
 			IDiagramHelper filter) {
 		this(imageFile, diagram, filter, null);
 	}
+	
+	private ImageReader getImageReader() {
+		return ImageIO.getImageReadersBySuffix(DocgenDiagramPreferencesHelper.getImageFileExtension()).next();
+	}
 
-	public CoordinatesCalculator(IFile imageFile, DDiagram diagram,
-			IDiagramHelper filter, Session session) {
+	public CoordinatesCalculator(IFile imageFile, DDiagram diagram, IDiagramHelper filter, Session session) {
 		super();
 		this.imageFile = imageFile;
 		if (diagram.eIsProxy()) {
@@ -527,11 +529,10 @@ public class CoordinatesCalculator {
 		try {
 			if (imageFile != null && imageFile.exists()) {
 				String fullPath = imageFile.getLocation().toString();
-				ImageInputStream imageInputStream = ImageIO
-						.createImageInputStream(new File(fullPath));
+				ImageInputStream imageInputStream = ImageIO.createImageInputStream(new File(fullPath));
+				ImageReader reader = getImageReader();
 				reader.setInput(imageInputStream);
-				if (reader.getInput() != null) 
-				{
+				if (reader.getInput() != null) {
 					Dimension size = new Dimension(reader.getWidth(0), reader.getHeight(0));
 					imageInputStream.close();
 					return size;

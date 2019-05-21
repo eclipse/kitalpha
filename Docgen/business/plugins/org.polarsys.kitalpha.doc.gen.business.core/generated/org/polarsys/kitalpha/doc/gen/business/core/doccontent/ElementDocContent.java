@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20160112-1239
+//Generated with EGF 1.6.0.201805040915
 package org.polarsys.kitalpha.doc.gen.business.core.doccontent;
 
 import org.eclipse.egf.common.helper.*;

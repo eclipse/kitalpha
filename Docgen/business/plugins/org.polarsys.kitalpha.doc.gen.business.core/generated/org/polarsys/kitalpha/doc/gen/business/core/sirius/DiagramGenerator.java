@@ -209,10 +209,9 @@ public class DiagramGenerator {
 			DRepresentationQuery rep2descQuery = new DRepresentationQuery(diagram);
 			DRepresentationDescriptor result = rep2descQuery.getRepresentationDescriptor();
 			String mapName = id + "_PositionMap";
-			if (result != null)
-                        {
+			if (result != null) {
 				mapName = result.getName() + "_" + mapName;
-                        }
+			}
 			mapName = DocGenHtmlUtil.getValidFileName(mapName);
 			CoordinatesCalculator calculator = new CoordinatesCalculator(imageFile, diagram, helper);
 			//Map<EObject, Rectangle> positionMap = new HashMap<EObject, Rectangle>();

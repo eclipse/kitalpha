@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016, 2018 Thales Global Services S.A.S.
+ * Copyright (c) 2016, 2019 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -12,11 +12,13 @@
 package org.polarsys.kitalpha.doc.gen.business.core.preference.ui;
 
 import org.eclipse.jface.preference.BooleanFieldEditor;
+import org.eclipse.jface.preference.RadioGroupFieldEditor;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
+import org.polarsys.kitalpha.doc.gen.business.core.preference.helper.DocgenDiagramPreferencesHelper;
 import org.polarsys.kitalpha.doc.gen.business.core.preference.helper.DocgenPreferenceConstant;
 import org.polarsys.kitalpha.doc.gen.business.core.preference.internal.Messages;
 
@@ -26,27 +28,32 @@ import org.polarsys.kitalpha.doc.gen.business.core.preference.internal.Messages;
 public class DocgenDiagramsPreferencesPage extends AbstractDocgenPreferencePage {
 	
 	private BooleanFieldEditor useExportDiagrams;
+//	private ComboFieldEditor useImageFormat;
+	private RadioGroupFieldEditor useImageFormat;
 	
-	/*
-	 * (non-Javadoc)
-	 * @see org.eclipse.jface.preference.FieldEditorPreferencePage#createFieldEditors()
-	 */
 	@Override
 	protected void createFieldEditors() {
-		createExportDiagramsField();
-		addField(useExportDiagrams);
-	}
-	
-	/**
-	 * Creation of the Boolean field. 
-	 * If checked, the diagram will be handled, otherwise, they will ignored.
-	 */
-	private void createExportDiagramsField(){
+		
 		Composite composite = createParent(getFieldEditorParent(), "Diagrams");
+		
 		useExportDiagrams = new BooleanFieldEditor(DocgenPreferenceConstant.DOCGEN_DIAGRAMS_EXPORT, 
 				 Messages.DOCGEN_DIAGRAM_EXPORT_FIELD_LABEL, composite);
+		
+		useImageFormat = new RadioGroupFieldEditor(DocgenPreferenceConstant.DOCGEN_DIAGRAMS_IMAGE_FORMAT, 
+				Messages.DOCGEN_DIAGRAMS_IMAGE_FORMAT_FIELD_LABEL, 7, getImageFormatValues(), composite); //$NON-NLS-1$
+		
+		addField(useExportDiagrams);
+		addField(useImageFormat);
 	}
-	
+		
+	private String[][] getImageFormatValues(){
+		String[][] values = new String[DocgenDiagramPreferencesHelper.IMAGE_FORMAT_SAFE_VALUES.length][2];
+		for (int i = 0; i < DocgenDiagramPreferencesHelper.IMAGE_FORMAT_SAFE_VALUES.length; i++) {
+			values[i][0] = values[i][1] = DocgenDiagramPreferencesHelper.IMAGE_FORMAT_SAFE_VALUES[i].getName();
+		}
+		return values;
+	}
+
 	/*
 	 * (non-Javadoc)
 	 * @see org.eclipse.jface.preference.FieldEditorPreferencePage#performDefaults()
@@ -71,10 +78,11 @@ public class DocgenDiagramsPreferencesPage extends AbstractDocgenPreferencePage 
 		{
 			result = new Group(parent, SWT.NONE);
 			((Group)result).setText(text);
-		} else {
-			result = new Composite(parent, SWT.NONE);
 		}
-			
+		else
+                {
+			result = new Composite(parent, SWT.NONE);
+                }
 		GridData gd = new GridData(GridData.FILL_HORIZONTAL);
 		gd.horizontalSpan = 2;
 		gd.verticalIndent = 5;
