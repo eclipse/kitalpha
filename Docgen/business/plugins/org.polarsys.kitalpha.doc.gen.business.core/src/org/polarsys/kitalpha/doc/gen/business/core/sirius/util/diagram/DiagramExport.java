@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2019 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,14 +32,15 @@ import org.eclipse.sirius.ui.tools.api.actions.export.ExportAction;
 import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.eclipse.swt.widgets.Display;
 import org.polarsys.kitalpha.doc.gen.business.core.Activator;
+import org.polarsys.kitalpha.doc.gen.business.core.preference.helper.DocgenDiagramPreferencesHelper;
 import org.polarsys.kitalpha.doc.gen.business.core.util.DocGenHtmlUtil;
 
 /**
  * @author Boubekeur Zendagui
  * 
  */
+@SuppressWarnings("unused")
 public class DiagramExport {
-	private static final String JPG = "JPG";
 	private final NullProgressMonitor nullProgressMonitor = new NullProgressMonitor();
 	private IPath outputPath;
 	private DDiagram diagram;
@@ -68,7 +69,6 @@ public class DiagramExport {
 		}
 	}
 	
-	
 	private void initDiagramExport(IPath outputPath, DDiagram diagram, Session session) {
 		IFolder folder = ResourcesPlugin.getWorkspace().getRoot().getFolder(outputPath);
 		if (folder != null && ! folder.exists()) {
@@ -95,7 +95,9 @@ public class DiagramExport {
 			Display.getDefault().syncExec(new Runnable() {
 				@Override
 				public void run() {
-					final ExportAction exportAction = new GenDocDiagramExportAction(session, getRepresentationsToExportAsImage(), outputPath, ImageFileFormat.JPG,false);
+					final ExportAction exportAction = new GenDocDiagramExportAction(session, getRepresentationsToExportAsImage(), 
+																					outputPath, DocgenDiagramPreferencesHelper.getImageFileFormat(),
+																					false);
 					try {
 						exportAction.run(nullProgressMonitor);
 					} catch (InterruptedException e) {
@@ -124,9 +126,9 @@ public class DiagramExport {
 		FileUtil obeoDSLFileUtil = new FileUtil(representaionName);
 		String expectedFileName;
 		if (obeoDSLFileUtil.isValid()){
-			expectedFileName = representaionName + "." + JPG.toLowerCase();
+			expectedFileName = representaionName + "." + DocgenDiagramPreferencesHelper.getImageFileExtension().toLowerCase();
 		}else{
-			expectedFileName = obeoDSLFileUtil.getValidFilename() + "." + JPG.toLowerCase();
+			expectedFileName = obeoDSLFileUtil.getValidFilename() + "." + DocgenDiagramPreferencesHelper.getImageFileExtension().toLowerCase();
 		}
 		
 		// Locate the file

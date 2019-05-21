@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016 Thales Global Services S.A.S.
+ * Copyright (c) 2016, 2019 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,4 +39,8 @@ public class DocgenPreferenceConstant {
 	/** This preference allows to know if the diagrams should be generated and exported or no */
 	public static final String DOCGEN_DIAGRAMS_EXPORT = "ExportDiagrams";
 	public static final boolean DOCGEN_DIAGRAMS_EXPORT_DEFAULT_VALUE = true;
+	
+	/** This preference allows to know if the diagrams should be generated and exported or no */
+	public static final String DOCGEN_DIAGRAMS_IMAGE_FORMAT = "ImageFormat";
+	public static final String DOCGEN_DIAGRAMS_IMAGE_FORMAT_DEFAULT_VALUE = DocgenDiagramPreferencesHelper.IMAGE_FORMAT_DEFAULT_VALUE.getName();
 }
