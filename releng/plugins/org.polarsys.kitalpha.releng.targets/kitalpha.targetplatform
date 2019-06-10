@@ -73,22 +73,7 @@ location eclipse-release "http://download.eclipse.org/releases/2019-06/" {
 	org.eclipse.emf.eef.sdk-feature.feature.group lazy
 	org.eclipse.emf.ecoretools.sdk.feature.group lazy
 	org.eclipse.emf.ecoretools.design.feature.group lazy
-	
-}
-
-location emf "http://download.eclipse.org/modeling/emf/emf/builds/milestone/S201905280646" {
 	org.eclipse.emf.sdk.feature.group lazy
-	
-}
-
-location acceleo "https://download.eclipse.org/acceleo/updates/releases/3.7/R201812041426" {
-	org.eclipse.acceleo.doc lazy
-	org.eclipse.acceleo.source.feature.group lazy
-	org.eclipse.acceleo.feature.group lazy
-}
-
-
-location Sirus "http://download.eclipse.org/sirius/updates/milestones/6.2.1rc1/2019-03/" {
 	org.eclipse.sirius.aql.feature.group lazy
 	org.eclipse.sirius.interpreter.feature.feature.group lazy
 	org.eclipse.sirius.properties.feature.feature.group lazy
@@ -100,6 +85,12 @@ location Sirus "http://download.eclipse.org/sirius/updates/milestones/6.2.1rc1/2
 	org.eclipse.sirius.samples.feature.group lazy
 	org.eclipse.sirius.specifier.properties.feature.feature.group lazy
 	org.eclipse.sirius.specifier.feature.group lazy
+}
+
+location acceleo "https://download.eclipse.org/acceleo/updates/releases/3.7/R201812041426" {
+	org.eclipse.acceleo.doc lazy
+	org.eclipse.acceleo.source.feature.group lazy
+	org.eclipse.acceleo.feature.group lazy
 }
 
 location EMF-DiffMerge "http://download.eclipse.org/diffmerge/releases/0.11.2/emf-diffmerge-site/" {
