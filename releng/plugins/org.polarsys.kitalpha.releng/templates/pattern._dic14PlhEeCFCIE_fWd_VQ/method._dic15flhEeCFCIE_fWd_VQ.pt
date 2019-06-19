@@ -1,3 +1,0 @@
-    <hudson.plugins.xvnc.Xvnc>
-      <takeScreenshot>false</takeScreenshot>
-    </hudson.plugins.xvnc.Xvnc>

@@ -1,7 +1,0 @@
-<project name="Kitalpha_examples_Nightly">
-
-	<echo message="Running Job Kitalpha_examples_Nightly in Kitalpha_examples_Nightly/releng"/>
-	<ant dir="Kitalpha_examples_Nightly/releng"/>
-
-
-</project>

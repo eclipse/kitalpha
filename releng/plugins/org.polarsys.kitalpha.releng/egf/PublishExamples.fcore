@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ftask:Task xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ftask="http://www.eclipse.org/egf/1.0.0/ftask"
-    xmi:id="_P2rGsKboEd-ZgeUI-BonwQ" name="PublishExamplesTask" kind="java"
-    implementation="org.polarsys.kitalpha.releng.PublishExamplesTask"/>
