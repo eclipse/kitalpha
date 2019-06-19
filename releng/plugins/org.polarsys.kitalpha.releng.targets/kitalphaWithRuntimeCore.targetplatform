@@ -4,7 +4,7 @@ include "kitalpha.targetplatform"
 
 // For local tests
 //location RuntimeCore "file:/<PathToKitalphaGit>/releng/plugins/org.polarsys.kitalpha.releng.runtime.core.updatesite/target/repository" {
-location RuntimeCore "http://download.polarsys.org/kitalpha/updates/nightly/runtimecore/latest" {
+location RuntimeCore "http://download.eclipse.org/kitalpha/updates/nightly/runtimecore/latest" {
 	org.polarsys.kitalpha.releng.runtime.core.feature.feature.group lazy
 	org.polarsys.kitalpha.cadence.feature.feature.group lazy
 	org.polarsys.kitalpha.ad.feature.feature.group lazy

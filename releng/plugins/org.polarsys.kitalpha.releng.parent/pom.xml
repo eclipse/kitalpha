@@ -118,7 +118,7 @@
       	1 - verify runtimeCore profile before in hudson machine
            mvn clean verify -PruntimeCore
       	2 - Publish runtimeCore update site in huston
-      		url used by this profile : http://download.polarsys.org/kitapha/updates/nightly/runtimecore/latest/
+      		url used by this profile : http://download.eclipse.org/kitapha/updates/nightly/runtimecore/latest/
         3 - and after verify this profile
       		mvn clean verify -PcompletRuntimeCore
        -->
