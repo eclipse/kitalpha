@@ -6,8 +6,8 @@ Element-Type: testcase
 Element-Version: 3.0
 External-Reference: 
 Id: _y7sqoER6Eeis75fBw2dugQ
-Runtime-Version: 2.1.0.201606221726
-Save-Time: 4/20/18 11:19 AM
+Runtime-Version: 2.4.2.201905080442
+Save-Time: 6/7/19 2:14 PM
 Testcase-Type: ecl
 
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
@@ -44,6 +44,7 @@ get-editor "library.library.edit" | get-text-viewer | get-property text | equals
     + "Bundle-ManifestVersion: 2\n"
     + "Bundle-Name: %pluginName\n"
     + "Bundle-SymbolicName: library.library.edit;singleton:=true\n"
+    + "Automatic-Module-Name: library.library.edit\n"
     + "Bundle-Version: 1.0.0.qualifier\n"
     + "Bundle-ClassPath: .\n"
     + "Bundle-Activator: library.library.provider.LibraryEditPlugin$Implementation\n"
@@ -419,6 +420,7 @@ get-editor "LibraryItemProviderAdapterFactory.java" | get-text-viewer | get-prop
     + "\t * <!-- end-user-doc -->\n"
     + "\t * @generated\n"
     + "\t */\n"
+    + "\t@Override\n"
     + "\tpublic ComposeableAdapterFactory getRootAdapterFactory() {\n"
     + "\t\treturn parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();\n"
     + "\t}\n\n"
@@ -428,6 +430,7 @@ get-editor "LibraryItemProviderAdapterFactory.java" | get-text-viewer | get-prop
     + "\t * <!-- end-user-doc -->\n"
     + "\t * @generated\n"
     + "\t */\n"
+    + "\t@Override\n"
     + "\tpublic void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {\n"
     + "\t\tthis.parentAdapterFactory = parentAdapterFactory;\n"
     + "\t}\n\n"
@@ -495,6 +498,7 @@ get-editor "LibraryItemProviderAdapterFactory.java" | get-text-viewer | get-prop
     + "\t * <!-- end-user-doc -->\n"
     + "\t * @generated\n"
     + "\t */\n"
+    + "\t@Override\n"
     + "\tpublic void addListener(INotifyChangedListener notifyChangedListener) {\n"
     + "\t\tchangeNotifier.addListener(notifyChangedListener);\n"
     + "\t}\n\n"
@@ -504,6 +508,7 @@ get-editor "LibraryItemProviderAdapterFactory.java" | get-text-viewer | get-prop
     + "\t * <!-- end-user-doc -->\n"
     + "\t * @generated\n"
     + "\t */\n"
+    + "\t@Override\n"
     + "\tpublic void removeListener(INotifyChangedListener notifyChangedListener) {\n"
     + "\t\tchangeNotifier.removeListener(notifyChangedListener);\n"
     + "\t}\n\n"
@@ -513,6 +518,7 @@ get-editor "LibraryItemProviderAdapterFactory.java" | get-text-viewer | get-prop
     + "\t * <!-- end-user-doc -->\n"
     + "\t * @generated\n"
     + "\t */\n"
+    + "\t@Override\n"
     + "\tpublic void fireNotifyChanged(Notification notification) {\n"
     + "\t\tchangeNotifier.fireNotifyChanged(notification);\n\n"
     + "\t\tif (parentAdapterFactory != null) {\n"
@@ -525,6 +531,7 @@ get-editor "LibraryItemProviderAdapterFactory.java" | get-text-viewer | get-prop
     + "\t * <!-- end-user-doc -->\n"
     + "\t * @generated\n"
     + "\t */\n"
+    + "\t@Override\n"
     + "\tpublic void dispose() {\n"
     + "\t\tif (bookItemProvider != null)\n"
     + "\t\t\tbookItemProvider.dispose();\n"

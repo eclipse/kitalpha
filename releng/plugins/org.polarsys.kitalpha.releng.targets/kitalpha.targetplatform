@@ -33,8 +33,7 @@ location eclipse-release "http://download.eclipse.org/releases/2019-06/" {
 	org.eclipse.ecf.core.feature.feature.group lazy
 	org.eclipse.ecf.core.ssl.feature.feature.group lazy
 	org.eclipse.ecf.filetransfer.feature.feature.group lazy
-	org.eclipse.ecf.filetransfer.httpclient4.feature.feature.group lazy
-	org.eclipse.ecf.filetransfer.httpclient4.ssl.feature.feature.group lazy
+	org.eclipse.ecf.filetransfer.httpclient45.feature.feature.group lazy
 	org.eclipse.ecf.filetransfer.ssl.feature.feature.group lazy
 	org.eclipse.equinox.p2.core.feature.source.feature.group lazy
 	org.eclipse.equinox.p2.extras.feature.source.feature.group lazy

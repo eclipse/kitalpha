@@ -33,7 +33,7 @@ with [get-view "Project Explorer" | get-tree] {
     get-item "org.eclipse.egf.chain.my.feature" | get-property index | equals 5 | verify-true
     get-item "org.polarsys.kitalpha.doc.generation" | get-property index | equals 6 | verify-true
 }
-get-view "Project Explorer" | get-button "Collapse All  (M1+M2+Numpad_Divide)" | click
+//get-view "Project Explorer" | get-button "Collapse All  (M1+M2+Numpad_Divide)" | click
 get-view "Project Explorer" | get-tree | select library
 get-menu -path "Edit/Select All" | click
 with [get-view "Project Explorer" | get-tree] {
