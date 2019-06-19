@@ -280,7 +280,7 @@
       <unit id="org.polarsys.kitalpha.ad.runtime.feature.feature.group" version="0.0.0"/>
       <unit id="org.polarsys.kitalpha.ad.runtime.feature.source.feature.group" version="0.0.0"/>
       <unit id="org.polarsys.kitalpha.model.detachment.contrib.viewpoints.feature.source.feature.group" version="0.0.0"/>
-      <repository id="RuntimeCore" location="http://download.polarsys.org/kitalpha/updates/nightly/runtimecore/latest"/>
+      <repository id="RuntimeCore" location="http://download.eclipse.org/kitalpha/updates/nightly/runtimecore/latest"/>
     </location>
   </locations>
 </target>

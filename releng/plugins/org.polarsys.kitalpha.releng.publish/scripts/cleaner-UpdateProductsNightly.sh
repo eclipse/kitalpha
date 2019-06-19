@@ -50,7 +50,7 @@ BASEDIR=$(dirname $0)
 # Extract global parameters (ie Publish fix part location)
 . $BASEDIR/global-parameters.sh "nightly"
 
-ROOT_DIR="/home/data/httpd/download.polarsys.org/$PRODUCT_NAME"
+ROOT_DIR="/home/data/httpd/download.eclipse.org/$PRODUCT_NAME"
 ROOT_UPDATE_DIR="$ROOT_DIR/updates/nightly"
 RUNTIMECORE_DIR="$ROOT_UPDATE_DIR/runtimecore"
 RUNTIME_DIR="$ROOT_UPDATE_DIR/runtime"
