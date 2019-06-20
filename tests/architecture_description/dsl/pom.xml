@@ -16,7 +16,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>org.polarsys.kitalpha.ad.core.tests.plugins</artifactId>
+    <artifactId>org.polarsys.kitalpha.ad.dsl2.tests</artifactId>
  
     <packaging>pom</packaging>
 

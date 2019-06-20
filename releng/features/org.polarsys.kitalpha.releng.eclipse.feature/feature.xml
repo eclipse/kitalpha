@@ -72,6 +72,10 @@
          version="0.0.0"/>
 
    <includes
+         id="org.eclipse.sirius.specifier"
+         version="0.0.0"/>
+         
+   <includes
          id="org.eclipse.cvs"
          version="0.0.0"/>
 

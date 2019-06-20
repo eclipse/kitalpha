@@ -10,6 +10,7 @@
  *******************************************************************************/
 package org.polarsys.kitalpha.ad.viewpoint.coredomain.model.edit.helpers;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -126,6 +127,8 @@ public class ModelHelper  {
 			while (e != null && e.hasMoreElements()) {
 				URL url = (URL) e.nextElement();
 				String path = url.getPath();
+				if (path.endsWith("/"))
+					continue; // we got a directory
 				URI uri = URI.createPlatformPluginURI(bundle.getSymbolicName() + path, true);
 				fileUris.add(uri);
 			}
