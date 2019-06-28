@@ -334,6 +334,41 @@
                 called="#_KyTtZQEbEeCfXc0sxlW-HQ"/>
           </elements>
         </libraries>
+        <libraries xmi:id="_VuhWIJ51EemYav3Xat9ApA" name="org.polarsys.kitalpha.doc.gen.business.core.doccontent.treeview">
+          <elements xmi:id="_V6ybEJ52EemYav3Xat9ApA" name="TreeViewControlHeader"
+              headerMethod="#_V6ybEp52EemYav3Xat9ApA" conditionMethod="#_V6ybFJ52EemYav3Xat9ApA"
+              initMethod="#_V6ybE552EemYav3Xat9ApA" footerMethod="#_V6ybFp52EemYav3Xat9ApA">
+            <nature xmi:type="jetpattern:JetNature" xmi:id="_V6ybEZ52EemYav3Xat9ApA"
+                name="JET"/>
+            <methods xmi:id="_V6ybEp52EemYav3Xat9ApA" name="header" patternFilePath="templates/pattern._V6ybEJ52EemYav3Xat9ApA/method._V6ybEp52EemYav3Xat9ApA.pt"/>
+            <methods xmi:id="_V6ybE552EemYav3Xat9ApA" name="init" patternFilePath="templates/pattern._V6ybEJ52EemYav3Xat9ApA/method._V6ybE552EemYav3Xat9ApA.pt"/>
+            <methods xmi:id="_V6ybFJ52EemYav3Xat9ApA" name="preCondition" patternFilePath="templates/pattern._V6ybEJ52EemYav3Xat9ApA/method._V6ybFJ52EemYav3Xat9ApA.pt"/>
+            <methods xmi:id="_V6ybFZ52EemYav3Xat9ApA" name="body" patternFilePath="templates/pattern._V6ybEJ52EemYav3Xat9ApA/method._V6ybFZ52EemYav3Xat9ApA.pt"/>
+            <methods xmi:id="_V6ybFp52EemYav3Xat9ApA" name="footer" patternFilePath="templates/pattern._V6ybEJ52EemYav3Xat9ApA/method._V6ybFp52EemYav3Xat9ApA.pt"/>
+            <parameters xmi:id="_A26pUJ8eEemYav3Xat9ApA" name="parameter" type="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+            <parameters xmi:id="_jjC8EJ8cEemYav3Xat9ApA" name="treeID" type="java.lang.String"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_V6ybGJ52EemYav3Xat9ApA"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_JF3nwJ8eEemYav3Xat9ApA"
+                called="#_V6ybFZ52EemYav3Xat9ApA"/>
+          </elements>
+          <elements xmi:id="_-tPnEJ8dEemYav3Xat9ApA" name="TreeViewControlFooter"
+              headerMethod="#_-tPnEp8dEemYav3Xat9ApA" conditionMethod="#_-tPnFJ8dEemYav3Xat9ApA"
+              initMethod="#_-tPnE58dEemYav3Xat9ApA" footerMethod="#_-tPnFp8dEemYav3Xat9ApA">
+            <nature xmi:type="jetpattern:JetNature" xmi:id="_-tPnEZ8dEemYav3Xat9ApA"
+                name="JET"/>
+            <methods xmi:id="_-tPnEp8dEemYav3Xat9ApA" name="header" patternFilePath="templates/pattern._-tPnEJ8dEemYav3Xat9ApA/method._-tPnEp8dEemYav3Xat9ApA.pt"/>
+            <methods xmi:id="_-tPnE58dEemYav3Xat9ApA" name="init" patternFilePath="templates/pattern._-tPnEJ8dEemYav3Xat9ApA/method._-tPnE58dEemYav3Xat9ApA.pt"/>
+            <methods xmi:id="_-tPnFJ8dEemYav3Xat9ApA" name="preCondition" patternFilePath="templates/pattern._-tPnEJ8dEemYav3Xat9ApA/method._-tPnFJ8dEemYav3Xat9ApA.pt"/>
+            <methods xmi:id="_-tPnFZ8dEemYav3Xat9ApA" name="body" patternFilePath="templates/pattern._-tPnEJ8dEemYav3Xat9ApA/method._-tPnFZ8dEemYav3Xat9ApA.pt"/>
+            <methods xmi:id="_-tPnFp8dEemYav3Xat9ApA" name="footer" patternFilePath="templates/pattern._-tPnEJ8dEemYav3Xat9ApA/method._-tPnFp8dEemYav3Xat9ApA.pt"/>
+            <parameters xmi:id="_LtDFYJ8eEemYav3Xat9ApA" name="parameter" type="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+            <parameters xmi:id="_-tPnGZ8dEemYav3Xat9ApA" name="treeID" type="java.lang.String"/>
+            <parameters xmi:id="_Rd1-QKJeEemXudi5U_Uo0A" name="collapsed" type="java.lang.Boolean"/>
+            <orchestration xmi:type="pattern:SuperCall" xmi:id="_-tPnGp8dEemYav3Xat9ApA"/>
+            <orchestration xmi:type="pattern:MethodCall" xmi:id="_Pqr_oJ8eEemYav3Xat9ApA"
+                called="#_-tPnFZ8dEemYav3Xat9ApA"/>
+          </elements>
+        </libraries>
       </viewpoints>
     </viewpointContainer>
     <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_KiGZ8N33Ed-Qav1YnqlO9A">

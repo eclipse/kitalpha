@@ -1,0 +1,8 @@
+<script type="text/javascript">
+	$("#<%=treeID%>").treeview({
+	 collapsed: <%=collapsed%>,
+	 animated: "fast",
+	 unique: false,
+	 control: "#treecontrol"
+	});
+</script>

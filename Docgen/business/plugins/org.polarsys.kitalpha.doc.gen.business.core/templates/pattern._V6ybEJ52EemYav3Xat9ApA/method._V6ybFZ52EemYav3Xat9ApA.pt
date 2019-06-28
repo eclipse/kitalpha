@@ -1,0 +1,8 @@
+<div id="treecontrol" style="float:left">
+	<a href="#">
+		<img src="../../img/open.gif" alt="Collapse All" style="border:0px"/>
+	</a> 
+	<a href="#">
+		<img src="../../img/closed.gif" alt="Expand All" style="border:0px"/>
+	</a>
+</div>
