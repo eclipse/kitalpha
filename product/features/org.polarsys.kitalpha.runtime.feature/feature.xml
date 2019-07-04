@@ -39,7 +39,6 @@
       <import feature="org.polarsys.kitalpha.resourcereuse.ui.feature" version="1.4.0.qualifier"/>
       <import feature="org.polarsys.kitalpha.resourcereuse.emfscheme.feature" version="1.4.0.qualifier"/>
       <import feature="org.polarsys.kitalpha.resourcereuse.emfscheme.ui.feature" version="1.4.0.qualifier"/>
-      <import feature="org.polarsys.kitalpha.model.attachment.feature" version="1.4.0.qualifier"/>
       <import feature="org.polarsys.kitalpha.model.detachment.feature" version="1.4.0.qualifier"/>
       <import feature="org.polarsys.kitalpha.model.detachment.contrib.viewpoints.feature" version="1.4.0.qualifier"/>
       <import feature="org.polarsys.kitalpha.report.feature" version="1.4.0.qualifier"/>

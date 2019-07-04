@@ -60,12 +60,6 @@
     <module>../../../composer/plugins/org.polarsys.kitalpha.composer.ui.help</module>
     
     
-    <!-- plugins org.polarsys.kitalpha.model.attachment.feature -->
-    <module>../../../attachment/plugins/org.polarsys.kitalpha.model.attachment.ui</module>
-    
-    <!-- features -->
-    <module>../../../attachment/features/org.polarsys.kitalpha.model.attachment.feature</module>
-    
     <!-- plugins org.polarsys.kitalpha.doc.gen.business.core.feature -->
     <module>../../../Docgen/business/plugins/org.polarsys.kitalpha.doc.gen.business.core.ui</module>
     <module>../../../Docgen/business/plugins/org.polarsys.kitalpha.doc.gen.business.core</module>

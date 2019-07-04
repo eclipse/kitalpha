@@ -81,7 +81,6 @@ http://www.eclipse.org/legal/epl-v10.htm
       <feature id="org.polarsys.kitalpha.model.common.share.feature"/>
       <feature id="org.polarsys.kitalpha.ad.integration.emde.feature"/>
       <feature id="org.polarsys.kitalpha.ad.integration.amalgam.feature"/>
-      <feature id="org.polarsys.kitalpha.model.attachment.feature"/>
       <feature id="org.polarsys.kitalpha.emde.feature"/>
       <feature id="org.polarsys.kitalpha.resourcereuse.emfscheme.ui.feature"/>
       <feature id="org.polarsys.kitalpha.ad.metadata.feature"/>
@@ -139,7 +138,6 @@ http://www.eclipse.org/legal/epl-v10.htm
       <feature id="org.polarsys.kitalpha.model.common.share.feature.source"/>
       <feature id="org.polarsys.kitalpha.ad.integration.emde.feature.source"/>
       <feature id="org.polarsys.kitalpha.ad.integration.amalgam.feature.source"/>
-      <feature id="org.polarsys.kitalpha.model.attachment.feature.source"/>
       <feature id="org.polarsys.kitalpha.emde.feature.source"/>
       <feature id="org.polarsys.kitalpha.resourcereuse.emfscheme.ui.feature.source"/>
       <feature id="org.polarsys.kitalpha.ad.metadata.feature.source"/>
