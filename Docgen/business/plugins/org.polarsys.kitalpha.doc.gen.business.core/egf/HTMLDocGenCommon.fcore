@@ -383,6 +383,13 @@
               invokedContract="#_iomh0tb3EeWvH7cKIyh8WQ"/>
         </invocationContractContainer>
       </invocations>
+      <invocations xmi:id="_Ueu3MJ2OEemJ2K-s0Y7hRg" name="load page extensions runtime parameters"
+          invokedActivity="#_DPcgsJ2OEemJ2K-s0Y7hRg">
+        <invocationContractContainer xmi:id="_Ueu3MZ2OEemJ2K-s0Y7hRg">
+          <invocationContracts xmi:id="_Ueu3Mp2OEemJ2K-s0Y7hRg" targetInvocationContract="#_n32oAJ2OEemJ2K-s0Y7hRg"
+              invokedContract="#_OXH_wJ2OEemJ2K-s0Y7hRg"/>
+        </invocationContractContainer>
+      </invocations>
       <invocations xmi:id="_6yUdEOdnEd-xZojMuIALSA" name="Create HTML output folder path"
           invokedActivity="#_HCYycOdmEd-xZojMuIALSA">
         <invocationContractContainer xmi:id="_6yUdEednEd-xZojMuIALSA">
@@ -484,6 +491,8 @@
             <type xmi:type="pattern:TypePatternDomainVisitor" xmi:id="_rIkBUOAREd-PV-jXqsW3Mw"
                 value="org.eclipse.egf.pattern.strategy.domaindriven.SubClassEmfModelVisitor"/>
           </invocationContracts>
+          <invocationContracts xmi:id="_n32oAJ2OEemJ2K-s0Y7hRg" sourceInvocationContract="#_Ueu3Mp2OEemJ2K-s0Y7hRg"
+              invokedContract="#_95nEcJ2NEemJ2K-s0Y7hRg"/>
         </invocationContractContainer>
       </invocations>
       <invocations xmi:id="_8JDyYPcREd-opsPVeIv2ZQ" name="Close Sirius session" invokedActivity="#_fhJzQPcQEd-opsPVeIv2ZQ">
@@ -980,6 +989,9 @@
       <contracts xmi:id="_0sfs494oEd-Qav1YnqlO9A" name="outputFolder" mandatory="true">
         <type xmi:type="types:TypeString" xmi:id="_0sfs5N4oEd-Qav1YnqlO9A"/>
       </contracts>
+      <contracts xmi:id="_95nEcJ2NEemJ2K-s0Y7hRg" name="runtime.parameters">
+        <type xmi:type="types:TypeMap" xmi:id="_AhshAJ2OEemJ2K-s0Y7hRg"/>
+      </contracts>
     </contractContainer>
   </ftask:Task>
   <ftask:Task xmi:id="_Lts24fcQEd-opsPVeIv2ZQ" name="HTMLDocGen.Open Sirius Session"
@@ -1047,8 +1059,31 @@
       </contracts>
     </contractContainer>
   </ftask:Task>
+  <ftask:Task xmi:id="_QF8EsJgtEemmGrHrkYlNKg" name="HTMLDocGen.Load.Page.Extensions"
+      kind="java" implementation="org.polarsys.kitalpha.doc.gen.business.core.task.PaternPageExtensionsTask">
+    <contractContainer xmi:id="_THWAMJgtEemmGrHrkYlNKg">
+      <contracts xmi:id="_Tg-oMJgtEemmGrHrkYlNKg" name="domain" mandatory="true">
+        <type xmi:type="types:TypeString" xmi:id="_VMRFUJgtEemmGrHrkYlNKg"/>
+      </contracts>
+      <contracts xmi:id="_WzFSIJgtEemmGrHrkYlNKg" name="pattern.page.extensions" mode="Out">
+        <type xmi:type="pattern:TypePatternList" xmi:id="_iOQ8AJgtEemmGrHrkYlNKg"/>
+      </contracts>
+      <contracts xmi:id="_SgkVsJyvEemJ2K-s0Y7hRg" name="pattern.sidebar.extensions"
+          mode="Out">
+        <type xmi:type="pattern:TypePatternList" xmi:id="_SgkVsZyvEemJ2K-s0Y7hRg"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
   <ftask:Task xmi:id="_HvUzgLoOEeGH7bfHyYJ-qQ" name="Remove Collected Concept For SearchIndex task"
       kind="java" implementation="org.polarsys.kitalpha.doc.gen.business.core.task.RemoveCollectedConceptForSearchIndex"/>
   <ftask:Task xmi:id="_v1xvkUHPEeWuloZZIJtB0g" name="Clean.Scope.Data" kind="java"
       implementation="org.polarsys.kitalpha.doc.gen.business.core.task.CleanScopeDataTask"/>
+  <ftask:Task xmi:id="_DPcgsJ2OEemJ2K-s0Y7hRg" name="load.page.extension.runtime.parameters"
+      kind="java" implementation="org.polarsys.kitalpha.doc.gen.business.core.task.LoadPageExtensionRuntimeParameters">
+    <contractContainer xmi:id="_N9pIwJ2OEemJ2K-s0Y7hRg">
+      <contracts xmi:id="_OXH_wJ2OEemJ2K-s0Y7hRg" name="runtime.parameters" mode="Out">
+        <type xmi:type="types:TypeMap" xmi:id="_O8hy4J2OEemJ2K-s0Y7hRg"/>
+      </contracts>
+    </contractContainer>
+  </ftask:Task>
 </xmi:XMI>
