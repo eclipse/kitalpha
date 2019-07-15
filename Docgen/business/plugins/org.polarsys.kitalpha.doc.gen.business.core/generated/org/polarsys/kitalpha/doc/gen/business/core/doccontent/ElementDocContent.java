@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20160112-1239
+//Generated with EGF 1.5.1.v20180423-0901
 package org.polarsys.kitalpha.doc.gen.business.core.doccontent;
 
 import org.eclipse.egf.common.helper.*;
@@ -28,10 +28,15 @@ public class ElementDocContent extends org.polarsys.kitalpha.doc.gen.business.co
 	protected final String TEXT_2 = "\" />" + NL
 			+ "\t\t<meta http-equiv=\"content-type\" content=\"text/html;charset=ISO-8859-1\" />" + NL
 			+ "\t\t<meta http-equiv=\"Content-Style-Type\" content=\"text/css\" />" + NL + "" + NL + "\t\t<title>";
-	protected final String TEXT_3 = "</title>\t\t" + NL
+	protected final String TEXT_3 = "</title>" + NL
+			+ "\t\t<link rel=\"stylesheet\" href=\"../../scripts/jquery-treeview/jquery.treeview.css\" />" + NL
+			+ "  \t\t<script src=\"../../scripts/jquery-treeview/lib/jquery-1.11.1.js\" type=\"text/javascript\"></script>"
+			+ NL
+			+ "  \t\t<script src=\"../../scripts/jquery-treeview/jquery.treeview.js\" type=\"text/javascript\"></script>"
+			+ NL + "\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"../../css/simpletree.css\" />\t\t" + NL
 			+ "\t\t<link title=\"default\" rel=\"stylesheet\" type=\"text/css\" media=\"screen, projection\" href=\"../../css/content.css\"></link>"
-			+ NL + "\t\t<script type=\"text/javascript\">" + NL + "if(parent.location.href == self.location.href) {"
-			+ NL + "window.location.href = 'index.html?";
+			+ NL + "\t\t" + NL + "\t\t<script type=\"text/javascript\">" + NL
+			+ "if(parent.location.href == self.location.href) {" + NL + "window.location.href = 'index.html?";
 	protected final String TEXT_4 = "';" + NL + "}" + NL + "</script>" + NL + "\t</head>" + NL + "\t" + NL + "\t<body>"
 			+ NL + "\t";
 	protected final String TEXT_5 = "\t</body>" + NL + "</html>" + NL;
