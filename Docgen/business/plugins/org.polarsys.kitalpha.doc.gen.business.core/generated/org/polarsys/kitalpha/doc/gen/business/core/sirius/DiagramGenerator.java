@@ -1,4 +1,4 @@
-//Generated with EGF 1.5.1.v20180423-0901
+//Generated with EGF 1.6.0.201805040915
 package org.polarsys.kitalpha.doc.gen.business.core.sirius;
 
 import org.eclipse.egf.common.helper.*;
@@ -204,7 +204,7 @@ public class DiagramGenerator {
 		Resource sessionResource = session.getSessionResource();
 		if (imageFile != null && imageFile.exists()) {
 			String id = DiagramSessionHelper.getID(diagram);
-			String mapName = diagram.getName() + "_" + id + "_PositionMap";
+			String mapName = diagram.getDescription().getName() + "_" + id + "_PositionMap";
 			mapName = DocGenHtmlUtil.getValidFileName(mapName);
 			CoordinatesCalculator calculator = new CoordinatesCalculator(imageFile, diagram, helper);
 			//Map<EObject, Rectangle> positionMap = new HashMap<EObject, Rectangle>();
@@ -213,7 +213,7 @@ public class DiagramGenerator {
 			stringBuffer.append(TEXT_1);
 			stringBuffer.append(id);
 			stringBuffer.append(TEXT_2);
-			stringBuffer.append(EscapeChars.forHTML(diagram.getName()));
+			stringBuffer.append(EscapeChars.forHTML(diagram.getDescription().getName()));
 			stringBuffer.append(TEXT_3);
 			stringBuffer.append(diagram.hashCode());
 			stringBuffer.append(TEXT_4);
@@ -221,7 +221,7 @@ public class DiagramGenerator {
 			stringBuffer.append(TEXT_5);
 			stringBuffer.append(imageFile.getName());
 			stringBuffer.append(TEXT_6);
-			stringBuffer.append(EscapeChars.forHTML(diagram.getName()));
+			stringBuffer.append(EscapeChars.forHTML(diagram.getDescription().getName()));
 			stringBuffer.append(TEXT_7);
 			stringBuffer.append(mapName);
 			stringBuffer.append(TEXT_8);
@@ -292,10 +292,10 @@ public class DiagramGenerator {
 
 			stringBuffer.append(TEXT_20);
 			stringBuffer.append(helper.diagramDocumentationPostTraitement(((DSemanticDiagram) diagram).getTarget(),
-					diagram.getDocumentation(), projectName, outputFolder));
+					diagram.getDescription().getDocumentation(), projectName, outputFolder));
 			stringBuffer.append(TEXT_21);
 		} else {
-			String diagramName = diagram.getName();
+			String diagramName = diagram.getDescription().getName();
 			if (diagramName != null && diagramName.isEmpty() == false)
 				diagramName = EscapeChars.forHTML(diagramName);
 
@@ -304,12 +304,12 @@ public class DiagramGenerator {
 			stringBuffer.append(TEXT_23);
 			stringBuffer.append(diagramName);
 			stringBuffer.append(TEXT_24);
-			stringBuffer.append(diagram.getDocumentation());
+			stringBuffer.append(diagram.getDescription().getDocumentation());
 			stringBuffer.append(TEXT_25);
 
 			org.polarsys.kitalpha.doc.gen.business.core.Activator.getDefault().getLog()
 					.log(new Status(IStatus.ERROR, org.polarsys.kitalpha.doc.gen.business.core.Activator.PLUGIN_ID,
-							"Error during diagram export action:" + diagram.getName()));
+							"Error during diagram export action:" + diagram.getDescription().getName()));
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;

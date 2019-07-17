@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2019 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -120,7 +120,7 @@ public class DiagramExport {
 	private IFile getGeneratedDiagram() {
 		
 		// Compute diagram exported picture name
-		String representaionName = DocGenHtmlUtil.getValidFileName(diagram.getName());
+		String representaionName = DocGenHtmlUtil.getValidFileName(diagram.getDescription().getName());
 		FileUtil obeoDSLFileUtil = new FileUtil(representaionName);
 		String expectedFileName;
 		if (obeoDSLFileUtil.isValid()){

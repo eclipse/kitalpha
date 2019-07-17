@@ -9,16 +9,16 @@
 	if (imageFile!=null && imageFile.exists())
 	{
 		String id = DiagramSessionHelper.getID(diagram);
-		String mapName = diagram.getName() + "_" + id + "_PositionMap";
+		String mapName = diagram.getDescription().getName() + "_" + id + "_PositionMap";
 		mapName = DocGenHtmlUtil.getValidFileName(mapName);
 		CoordinatesCalculator calculator = new CoordinatesCalculator(imageFile, diagram, helper);
 		//Map<EObject, Rectangle> positionMap = new HashMap<EObject, Rectangle>();
 		Map<Rectangle, EObject> positionMap = calculator.getPositionMap();
 		%>
 	<div>
-	<p class="diagram-name" id="<%=id%>"><%= EscapeChars.forHTML(diagram.getName())%></p>
+	<p class="diagram-name" id="<%=id%>"><%= EscapeChars.forHTML(diagram.getDescription().getName())%></p>
 	<p class="diagram">
-		<img id="<%=diagram.hashCode()%>" src="<%=generatedFolder%>/<%=imageFile.getName()%>" alt="<%= EscapeChars.forHTML(diagram.getName())%>" usemap="#<%=mapName%>" />
+		<img id="<%=diagram.hashCode()%>" src="<%=generatedFolder%>/<%=imageFile.getName()%>" alt="<%= EscapeChars.forHTML(diagram.getDescription().getName())%>" usemap="#<%=mapName%>" />
 		
 		<br/>
 		<br/>
@@ -70,19 +70,19 @@ for (Entry<Rectangle, EObject> entrySet : positionMap.entrySet()){
 %>			
 		</map>
 	</p>
-	<p class="diagram-description"><%= helper.diagramDocumentationPostTraitement(((DSemanticDiagram)diagram).getTarget(), diagram.getDocumentation(), projectName, outputFolder)%></p>
+	<p class="diagram-description"><%= helper.diagramDocumentationPostTraitement(((DSemanticDiagram)diagram).getTarget(), diagram.getDescription().getDocumentation(), projectName, outputFolder)%></p>
 	</div>
 <%}
 else {
-String diagramName = diagram.getName();
+String diagramName = diagram.getDescription().getName();
 if (diagramName != null && diagramName.isEmpty() == false)
 	diagramName = EscapeChars.forHTML(diagramName);
 %>
 <p class="diagram-name" id="<%=sessionResource.getURIFragment(diagram)%>"><%= diagramName%></p>
 <p>image is missing</p>
-<p class="diagram-description"><%= diagram.getDocumentation()%></p>
+<p class="diagram-description"><%= diagram.getDescription().getDocumentation()%></p>
 <%
 			org.polarsys.kitalpha.doc.gen.business.core.Activator.getDefault().getLog().log(
-					new Status(IStatus.ERROR,org.polarsys.kitalpha.doc.gen.business.core.Activator.PLUGIN_ID, "Error during diagram export action:" + diagram.getName()));
+					new Status(IStatus.ERROR,org.polarsys.kitalpha.doc.gen.business.core.Activator.PLUGIN_ID, "Error during diagram export action:" + diagram.getDescription().getName()));
 		}
 %>

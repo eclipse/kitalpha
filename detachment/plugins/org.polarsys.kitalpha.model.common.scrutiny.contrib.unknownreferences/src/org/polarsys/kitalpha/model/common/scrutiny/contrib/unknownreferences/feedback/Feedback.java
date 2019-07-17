@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2019 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -18,6 +18,7 @@ import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.sirius.viewpoint.DRepresentation;
+import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.polarsys.kitalpha.model.common.scrutiny.interfaces.IFeedback;
 
 
@@ -53,8 +54,8 @@ public class Feedback implements IFeedback {
 	public static String getRepresentationName(EObject eObject) {
 		EObject eContainer = eObject;
 		while (eContainer != null) {
-			if (eContainer instanceof DRepresentation) {
-				return " in representation '" + ((DRepresentation) eContainer).getName() + "'";
+			if (eContainer instanceof DRepresentationDescriptor) {
+				return " in representation '" + ((DRepresentationDescriptor) eContainer).getName() + "'";
 			}
 			eContainer = eContainer.eContainer();
 		}

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2007, 2018 THALES GLOBAL SERVICES.
+ * Copyright (c) 2007, 2019 THALES GLOBAL SERVICES.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,6 +34,8 @@ import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.common.tools.api.resource.ImageFileFormat ;
 import org.eclipse.sirius.common.tools.api.util.EclipseUtil;
 import org.eclipse.sirius.common.tools.api.util.FileUtil;
+import org.eclipse.sirius.business.api.query.DRepresentationQuery;
+import org.eclipse.sirius.business.api.resource.ResourceDescriptor;
 import org.eclipse.sirius.diagram.business.api.refresh.CanonicalSynchronizer;
 import org.eclipse.sirius.diagram.business.api.refresh.CanonicalSynchronizerFactory;
 import org.eclipse.sirius.diagram.ui.provider.Messages;
@@ -48,6 +50,7 @@ import org.eclipse.sirius.ui.tools.api.actions.export.IBeforeExport;
 import org.eclipse.sirius.ui.tools.api.actions.export.IExportRepresentationsAsImagesExtension;
 import org.eclipse.sirius.ui.tools.api.actions.export.SizeTooLargeException;
 import org.eclipse.sirius.viewpoint.DRepresentation;
+import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.eclipse.sirius.viewpoint.SiriusPlugin;
 import org.eclipse.swt.SWTException;
 import org.eclipse.swt.widgets.Display;
@@ -125,7 +128,9 @@ public class GenDocDiagramExportAction extends ExportAction {
                     // Check that the file name is informed
                     // Put extension to lowerCase.
                     if (outputPath.toFile().isDirectory()) {
-                    	String representationName = DocGenHtmlUtil.getValidFileName(representation.getName());
+                        DRepresentationQuery rep2descQuery = new DRepresentationQuery(representation);
+                        DRepresentationDescriptor result = rep2descQuery.getRepresentationDescriptor();
+                    	String representationName = (result == null) ? representation.getUid() : DocGenHtmlUtil.getValidFileName(result.getName());
                         filePath = getFilePath(outputPath, representationName, imageFileExtension);
                     } else {
                         if (outputPath.getFileExtension() != null) {
@@ -255,11 +260,11 @@ public class GenDocDiagramExportAction extends ExportAction {
                             throw (SizeTooLargeException) exception;
                         } else if (exception.getStatus() != null && exception.getStatus().getException() instanceof SWTException) {
                             /* Case that can occurs on Windows. */
-                            throw new SizeTooLargeException(new Status(IStatus.ERROR, SiriusPlugin.ID, representation.getName()));
+                            throw new SizeTooLargeException(new Status(IStatus.ERROR, SiriusPlugin.ID, representation.getUid()));
                         }
                         SiriusPlugin.getDefault().error(MessageFormat.format(Messages.DiagramDialectUIServices_exportedDiagramImageCreationError, correctPath), exception);
                     } catch (final ArrayIndexOutOfBoundsException e) {
-                        throw new SizeTooLargeException(new Status(IStatus.ERROR, SiriusPlugin.ID, representation.getName()));
+                        throw new SizeTooLargeException(new Status(IStatus.ERROR, SiriusPlugin.ID, representation.getUid()));
                     } finally {
                         SiriusDecoratorProvider.setActivateSiriusDecoration(isActivateSiriusDecorationPrevious);
 
