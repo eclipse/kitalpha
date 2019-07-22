@@ -12,6 +12,8 @@ package org.polarsys.kitalpha.massactions.core.config;
 
 import java.io.IOException;
 import java.io.OutputStream;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 import org.apache.commons.lang.StringEscapeUtils;
 import org.eclipse.nebula.widgets.nattable.config.AbstractRegistryConfiguration;
@@ -27,6 +29,18 @@ import org.eclipse.nebula.widgets.nattable.layer.cell.ILayerCell;
  *
  */
 public class MAExportConfiguration extends AbstractRegistryConfiguration {
+  protected String csvDelimiter;
+  protected Charset charSet;
+
+  public MAExportConfiguration() {
+    this(",");
+  }
+
+  public MAExportConfiguration(String csvDelimiter) {
+    super();
+    this.csvDelimiter = csvDelimiter;
+    this.charSet = StandardCharsets.UTF_8;
+  }
 
   @Override
   public void configureRegistry(IConfigRegistry configRegistry) {
@@ -51,10 +65,17 @@ public class MAExportConfiguration extends AbstractRegistryConfiguration {
       }
     };
 
-    csvExporter.setDelimiter(",");
-    csvExporter.setCharset("UTF-8");
+    csvExporter.setDelimiter(String.valueOf(csvDelimiter));
+    csvExporter.setCharset(charSet.name());
 
     configRegistry.registerConfigAttribute(ExportConfigAttributes.EXPORTER, csvExporter);
   }
 
+  public void setCsvDelimiter(String csvDelimiter) {
+    this.csvDelimiter = csvDelimiter;
+  }
+
+  public void setCharSet(Charset charSet) {
+    this.charSet = charSet;
+  }
 }

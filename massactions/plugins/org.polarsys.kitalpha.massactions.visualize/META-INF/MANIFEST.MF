@@ -9,7 +9,9 @@ Require-Bundle: org.polarsys.kitalpha.massactions.core;bundle-version="1.0.0",
  org.eclipse.sirius,
  org.eclipse.sirius.common;bundle-version="6.0.0",
  com.google.guava;bundle-version="15.0.0"
-Export-Package: org.polarsys.kitalpha.massactions.visualize.helpers,
+Export-Package: org.polarsys.kitalpha.massactions.visualize.config,
+ org.polarsys.kitalpha.massactions.visualize.helpers,
  org.polarsys.kitalpha.massactions.visualize.helpers.container,
  org.polarsys.kitalpha.massactions.visualize.table,
+ org.polarsys.kitalpha.massactions.visualize.table.factory,
  org.polarsys.kitalpha.massactions.visualize.table.layer.groupby
