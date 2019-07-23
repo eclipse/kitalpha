@@ -24,12 +24,14 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.sirius.business.api.query.DRepresentationQuery;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.common.tools.api.resource.ImageFileFormat ;
 import org.eclipse.sirius.common.tools.api.util.FileUtil;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.ui.tools.api.actions.export.ExportAction;
 import org.eclipse.sirius.viewpoint.DRepresentation;
+import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.eclipse.swt.widgets.Display;
 import org.polarsys.kitalpha.doc.gen.business.core.Activator;
 import org.polarsys.kitalpha.doc.gen.business.core.util.DocGenHtmlUtil;
@@ -120,11 +122,15 @@ public class DiagramExport {
 	private IFile getGeneratedDiagram() {
 		
 		// Compute diagram exported picture name
-		String representaionName = DocGenHtmlUtil.getValidFileName(diagram.getDescription().getName());
-		FileUtil obeoDSLFileUtil = new FileUtil(representaionName);
+        DRepresentationQuery rep2descQuery = new DRepresentationQuery(diagram);
+        DRepresentationDescriptor result = rep2descQuery.getRepresentationDescriptor();
+    	String representationName = (result == null) ? diagram.getUid() : result.getName();
+
+		representationName = DocGenHtmlUtil.getValidFileName(representationName);
+		FileUtil obeoDSLFileUtil = new FileUtil(representationName);
 		String expectedFileName;
 		if (obeoDSLFileUtil.isValid()){
-			expectedFileName = representaionName + "." + JPG.toLowerCase();
+			expectedFileName = representationName + "." + JPG.toLowerCase();
 		}else{
 			expectedFileName = obeoDSLFileUtil.getValidFilename() + "." + JPG.toLowerCase();
 		}

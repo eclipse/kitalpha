@@ -1,6 +1,8 @@
 //Generated with EGF 1.6.0.201805040915
 package org.polarsys.kitalpha.doc.gen.business.core.sirius;
 
+import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
+import org.eclipse.sirius.business.api.query.DRepresentationQuery;
 import org.eclipse.egf.common.helper.*;
 import java.util.*;
 import org.eclipse.emf.ecore.*;
@@ -204,7 +206,13 @@ public class DiagramGenerator {
 		Resource sessionResource = session.getSessionResource();
 		if (imageFile != null && imageFile.exists()) {
 			String id = DiagramSessionHelper.getID(diagram);
-			String mapName = diagram.getDescription().getName() + "_" + id + "_PositionMap";
+			DRepresentationQuery rep2descQuery = new DRepresentationQuery(diagram);
+			DRepresentationDescriptor result = rep2descQuery.getRepresentationDescriptor();
+			String mapName = id + "_PositionMap";
+			if (result != null)
+                        {
+				mapName = result.getName() + "_" + mapName;
+                        }
 			mapName = DocGenHtmlUtil.getValidFileName(mapName);
 			CoordinatesCalculator calculator = new CoordinatesCalculator(imageFile, diagram, helper);
 			//Map<EObject, Rectangle> positionMap = new HashMap<EObject, Rectangle>();
