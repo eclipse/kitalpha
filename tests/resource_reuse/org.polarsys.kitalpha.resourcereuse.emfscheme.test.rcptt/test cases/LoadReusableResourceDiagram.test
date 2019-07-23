@@ -27,7 +27,7 @@ with [get-view "Model Explorer" | get-tree] {
         | double-click
 }
 with [get-editor "reuse class diagram" | get-diagram -index 1] {
-    with [get-edit-part -name "reuse class diagram"] {
+    with [get-edit-part -className DDiagramEditPart] {
         mouse-move 313 154 -height 514 -width 1102
         with [get-edit-part -name ReuseClass | get-edit-part -className DNodeListViewNodeListCompartment2EditPart] {
             mouse-move 118 43 button3 -height 142 -width 257
@@ -43,7 +43,7 @@ with [get-window "Select resource"] {
     get-button OK | click
 }
 
-get-editor "reuse class diagram" | get-diagram -index 1 | get-edit-part -name "reuse class diagram" 
+get-editor "reuse class diagram" | get-diagram -index 1 | get-edit-part -className DDiagramEditPart 
     | mouse-move 424 484 -height 514 -width 1102
   
 get-view Properties | get-section "" | get-button "Browse your data to edit the current value" | click
@@ -52,16 +52,16 @@ with [get-window "ESuper Types -- ReuseClass"] {
     get-button OK | click
 }  
 
-get-editor "reuse class diagram" | get-diagram -index 1 | get-edit-part -name "reuse class diagram" | mouse-move 51 499 
+get-editor "reuse class diagram" | get-diagram -index 1 | get-edit-part -className DDiagramEditPart | mouse-move 51 499 
     -height 514 -width 1102
 
     
-with [get-editor "reuse class diagram" | get-diagram -index 1 | get-edit-part -name "reuse class diagram"] {
+with [get-editor "reuse class diagram" | get-diagram -index 1 | get-edit-part -className DDiagramEditPart] {
     mouse-move 248 134 -height 514 -width 1102
     mouse-move 26 222 -height 514 -width 1102
 }
 get-button "Save (M1+S)" | click
-get-editor "reuse class diagram" | get-diagram -index 1 | get-edit-part -name "reuse class diagram" | get-edit-part 
+get-editor "reuse class diagram" | get-diagram -index 1 | get-edit-part -className DDiagramEditPart | get-edit-part 
     -name ReuseClass | get-edit-part -className DNodeListViewNodeListCompartment2EditPart | mouse-move 97 51 
     -height 142 -width 257
 with [get-view "Model Explorer" | get-tree] {

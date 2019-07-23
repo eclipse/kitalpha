@@ -6,8 +6,8 @@ Element-Type: testcase
 Element-Version: 3.0
 External-Reference: 
 Id: _6XbC8LDBEeaPxMtdcBu6Pg
-Runtime-Version: 2.2.0.201706152316
-Save-Time: 3/20/18 4:43 PM
+Runtime-Version: 2.5.0.201906140854
+Save-Time: 7/23/19 2:37 PM
 Testcase-Type: ecl
 
 ------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
@@ -171,10 +171,7 @@ with [get-view "Viewpoint Manager" | get-table] {
 get-view "Project Explorer" | get-tree 
     | select "testProject/testProject.aird/Representations per category/ComponentSample/ComponentSampleDiagram/Test Diagram" 
     | double-click
-get-editor "Test Diagram" | get-diagram -index 1 | get-edit-part -name "Test Diagram" | mouse-move 138 488 -height 523 
-    -width 1383
-get-tab-folder -index 2 | get-property activePage | equals "Test Diagram" | verify-true
-get-editor "Test Diagram" | get-diagram -index 1 | get-edit-part -name "Test Diagram" | get-edit-part -name p1 
+get-editor "Test Diagram" | get-diagram -index 1 | get-edit-part -className DDiagramEditPart | get-edit-part -name p1 
     | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart | get-edit-part -name h1 
     | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part -name h3 
     | get-edit-part -className DNodeContainerViewNodeContainerCompartment2EditPart | get-edit-part -name h4 

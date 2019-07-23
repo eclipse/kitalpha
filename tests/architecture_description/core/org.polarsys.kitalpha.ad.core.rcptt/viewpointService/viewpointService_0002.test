@@ -6,8 +6,8 @@ Element-Type: testcase
 Element-Version: 3.0
 External-Reference: 
 Id: _vDH0sNJhEea4HYIUnTVcUQ
-Runtime-Version: 2.2.0.201706152316
-Save-Time: 9/24/18 9:28 AM
+Runtime-Version: 2.5.0.201906140854
+Save-Time: 7/23/19 12:32 PM
 Testcase-Type: ecl
 
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
@@ -29,7 +29,7 @@ with [get-editor "new ComponentSampleDiagram"] {
 		mouse-press 73 21 button1 -height 37 -width 125
 		mouse-release 73 21 button1 524288 -height 37 -width 125
 	}
-	with [get-diagram -index 1 | get-edit-part -name "new ComponentSampleDiagram" | get-edit-part -name ""
+	with [get-diagram -index 1 | get-edit-part -className DDiagramEditPart | get-edit-part -name ""
 		| get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart | get-edit-part -name ""
 		-index 1] {
 		mouse-move 104 37 button1 -height 68 -width 148
@@ -43,8 +43,7 @@ get-view "Viewpoint Manager" | get-table | select "Component Sample Quality Asse
 get-view "Component Sample Quality Assessment" | get-tab-folder | get-tab-item Services | click
 get-view "Component Sample Quality Assessment" | get-table | get-item "ComponentSampleQualityAssessment.propagate.qa." +
 	"downward" -column Id | get-property enablement | equals false | verify-true
-with [get-editor "new ComponentSampleDiagram" | get-diagram -index 1 | get-edit-part
-	-name "new ComponentSampleDiagram"] {
+with [get-editor "new ComponentSampleDiagram" | get-diagram -index 1 | get-edit-part -className DDiagramEditPart] {
 	mouse-move 510 336 -height 347 -width 982
 	with [get-edit-part -name "" | get-edit-part -className DNodeContainerViewNodeContainerCompartmentEditPart] {
 		mouse-move 609 213 -height 319 -width 954
@@ -68,8 +67,7 @@ with [get-editor "new ComponentSampleDiagram"] {
 		get-palette-entry "Quality Measure" | mouse-move 61 4 -height 23 -width 139
 		get-palette-entry "Quality Assessment" | mouse-move 36 0 -height 23 -width 139
 	}
-	with [get-editor "new ComponentSampleDiagram" | get-diagram -index 1 | get-edit-part -name "new ComponentSampleDi" +
-		"agram" | get-edit-part -name "" | get-edit-part
+	with [get-editor "new ComponentSampleDiagram" | get-diagram -index 1 | get-edit-part -className DDiagramEditPart | get-edit-part -name "" | get-edit-part
 		-className DNodeContainerViewNodeContainerCompartmentEditPart] {
 		with [get-edit-part -name "" -index 1] {
 			mouse-move 20 157 -height 158 -width 665

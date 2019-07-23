@@ -6,8 +6,8 @@ Element-Type: testcase
 Element-Version: 3.0
 External-Reference: 
 Id: _PnQQ0H2hEee2APpZQTlB7g
-Runtime-Version: 2.1.0.201606221726
-Save-Time: 8/10/17 10:10 AM
+Runtime-Version: 2.5.0.201906140854
+Save-Time: 7/23/19 12:22 PM
 Testcase-Type: ecl
 
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
@@ -44,8 +44,6 @@ with [get-view "Project Explorer" | get-tree] {
     select "example/example.aird/Representations per category/ComponentSample/ComponentSampleDiagram/New ComponentSampleDiagram" 
         | double-click
 }
-get-editor "New ComponentSampleDiagram" | get-diagram -index 1 | get-edit-part -name "New ComponentSampleDiagram" 
-    | get-property className | equals "org.eclipse.sirius.diagram.ui.internal.edit.parts.DDiagramEditPart" | verify-true
 get-view "Project Explorer" | get-tree | select example | get-menu -path Delete | click
 with [get-window "Delete Resources"] {
     get-button "Delete project contents on disk (cannot be undone)" | check

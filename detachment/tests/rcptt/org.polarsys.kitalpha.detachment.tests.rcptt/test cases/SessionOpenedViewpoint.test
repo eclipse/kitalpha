@@ -6,8 +6,8 @@ Element-Type: testcase
 Element-Version: 3.0
 External-Reference: 
 Id: _Ryn70HWrEea2Ve0UEUBuKQ
-Runtime-Version: 2.1.0.201606221726
-Save-Time: 12/12/17 2:29 PM
+Runtime-Version: 2.5.0.201906140854
+Save-Time: 7/23/19 12:17 PM
 Testcase-Type: ecl
 
 ------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
@@ -25,18 +25,10 @@ with [get-view "Project Explorer" | get-tree] {
     select "org.polarsys.kitalpha.vp.componentsample.runtime.model/model/VideoOnDemand.aird/VideoOnDemand.componentsample - \\[platform:\\/resource\\/org.polarsys.kitalpha.vp.componentsample.runtime.model\\/model\\/VideoOnDemand.componentsample\\]/Video On Demande/Video on demand Architecture" 
         | double-click
 }
-get-editor "Video on demand Architecture" | get-diagram -index 1 | get-edit-part -name "Video on demand Architecture" 
-    | mouse-move 227 522 -height 523 -width 1165
 get-view "Viewpoint Manager" | get-table | get-item "Component Sample" | get-property "columns[2]" | equals Active 
     | verify-true
-get-editor "Video on demand Architecture" | get-diagram -index 1 | get-edit-part -name "Video on demand Architecture" 
-    | mouse-move 449 518 -height 523 -width 1165
 
 with [get-editor "Video on demand Architecture"] {
-    with [get-diagram -index 1 | get-edit-part -name "Video on demand Architecture"] {
-        mouse-move 277 310 -height 523 -width 1165
-        mouse-move 242 3 -height 523 -width 1165
-    }
     get-button Layers | click -arrow
 }
 get-menu "Component Sample Performance" | click
@@ -47,8 +39,6 @@ get-menu "File/Save" | click
 wait -ms 1000
 get-view "Viewpoint Manager" | get-table | get-item "Component Sample Performance" | get-property "columns[2]" 
     | equals Active | verify-true
-get-editor "Video on demand Architecture" | get-diagram -index 1 | get-edit-part -name "Video on demand Architecture" 
-    | mouse-move 132 548 -height 551 -width 1165
 with [get-view "Project Explorer" | get-tree] {
     select "org.polarsys.kitalpha.vp.componentsample.runtime.model/model/VideoOnDemand.aird" | get-menu "Close" | click
     select "org.polarsys.kitalpha.vp.componentsample.runtime.model/model/VideoOnDemand.aird" | get-menu "Model Detachment" | click
@@ -61,8 +51,6 @@ with [get-view "Project Explorer" | get-tree] {
     select "org.polarsys.kitalpha.vp.componentsample.runtime.model/model/VideoOnDemand.aird/VideoOnDemand.componentsample - \\[platform:\\/resource\\/org.polarsys.kitalpha.vp.componentsample.runtime.model\\/model\\/VideoOnDemand.componentsample\\]/Video On Demande/Video on demand Architecture" 
         | double-click
     }
-get-editor "Video on demand Architecture" | get-diagram -index 1 | get-edit-part -name "Video on demand Architecture" 
-    | mouse-move 442 357 -height 547 -width 1250
 get-view "Project Explorer" | get-tree 
     | select "org.polarsys.kitalpha.vp.componentsample.runtime.model/model/VideoOnDemand.aird/VideoOnDemand.componentsample - [platform:\\/resource\\/org.polarsys.kitalpha.vp.componentsample.runtime.model\\/model\\/VideoOnDemand.componentsample]/Video On Demande/Video System"
 with [get-view "Project Explorer" | get-tree] {
