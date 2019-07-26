@@ -12,6 +12,13 @@
 		String mapName = diagram.getName() + "_" + id + "_PositionMap";
 		mapName = DocGenHtmlUtil.getValidFileName(mapName);
 		CoordinatesCalculator calculator = new CoordinatesCalculator(imageFile, diagram, helper);
+		Collection<IDiagramHelper> diagramHelpers = new HashSet<IDiagramHelper>();
+			Collection<IFileNameService> fileNameServices = new HashSet<IFileNameService>();
+			for (String dom : PageExtensionRegistry.getInstance().getDomains()) {
+				diagramHelpers.addAll(PageExtensionRegistry.getInstance().getDiagramHelpersExtensions(dom));
+				fileNameServices.addAll(PageExtensionRegistry.getInstance().getFileNameServicesExtensions(dom));
+			}
+		calculator.contributeHelpers(diagramHelpers);
 		//Map<EObject, Rectangle> positionMap = new HashMap<EObject, Rectangle>();
 		Map<Rectangle, EObject> positionMap = calculator.getPositionMap();
 		%>
@@ -52,11 +59,31 @@ for (Entry<Rectangle, EObject> entrySet : positionMap.entrySet()){
 				fragment = descriptor.getRepPath().getResourceURI().fragment();
 			}
 			fileName = fileNameService.getFileName(descriptor.getTarget());
+			if (fileName.equals("unknown")) {
+				String tmpFileName = fileName;
+				for (IFileNameService fileNS: fileNameServices) {
+					tmpFileName = fileNS.getFileName(descriptor.getTarget());
+					if (tmpFileName != fileName) {
+						fileName = tmpFileName;
+						break;
+					}
+				}
+			}
 			modelName = DocGenHtmlUtil.getModelName(descriptor.getTarget());
 			
 		} else {
 		
 			fileName = fileNameService.getFileName(value);
+			if (fileName.equals("unknown")) {
+				String tmpFileName = fileName;
+				for (IFileNameService fileNS: fileNameServices) {
+					tmpFileName = fileNS.getFileName(value);
+					if (tmpFileName != fileName) {
+						fileName = tmpFileName;
+						break;
+					}
+				}
+			}
 			fragment = helper.getElementId(value);
 			rectangle = entrySet.getKey();
 			topLeft = rectangle.getTopLeft();
@@ -67,7 +94,7 @@ for (Entry<Rectangle, EObject> entrySet : positionMap.entrySet()){
 %>
 			<area shape="rect" group="<%=fileName%>" coords="<%=topLeft.x%>,<%=topLeft.y%>,<%=bottomRight.x%>,<%=bottomRight.y%>" href="../<%=modelName%>/<%=fileName%>.html#<%=fragment%>" alt="<%=fileName%>" />
 <%	}
-%>			
+%>		
 		</map>
 	</p>
 	<p class="diagram-description"><%= helper.diagramDocumentationPostTraitement(((DSemanticDiagram)diagram).getTarget(), diagram.getDocumentation(), projectName, outputFolder)%></p>
