@@ -6,25 +6,34 @@
 	DiagramExport diagramExport = new DiagramExport(projectName, outputPath, diagram, session);
 	IFile imageFile = diagramExport.exportAsImage();
 	Resource sessionResource = session.getSessionResource();
+	String id = DiagramSessionHelper.getID(diagram);
+    DRepresentationQuery rep2descQuery = new DRepresentationQuery(diagram);
+    DRepresentationDescriptor result = rep2descQuery.getRepresentationDescriptor();
+	String mapName = id + "_PositionMap";
+	String diagramName = id;
+	if (result != null) {
+		mapName = result.getName() + "_" + mapName;
+		diagramName = result.getName();
+	}
+	mapName = DocGenHtmlUtil.getValidFileName(mapName);
+	diagramName = DocGenHtmlUtil.getValidFileName(diagramName);
 	if (imageFile!=null && imageFile.exists())
 	{
-		String id = DiagramSessionHelper.getID(diagram);
-        DRepresentationQuery rep2descQuery = new DRepresentationQuery(diagram);
-        DRepresentationDescriptor result = rep2descQuery.getRepresentationDescriptor();
-		String mapName =  id + "_PositionMap";
- 		if (result != null) 
-                {
-			mapName = result.getName() + "_" + mapName;	 		
-                }
-		mapName = DocGenHtmlUtil.getValidFileName(mapName);
 		CoordinatesCalculator calculator = new CoordinatesCalculator(imageFile, diagram, helper);
+		Collection<IDiagramHelper> diagramHelpers = new HashSet<IDiagramHelper>();
+			Collection<IFileNameService> fileNameServices = new HashSet<IFileNameService>();
+			for (String dom : PageExtensionRegistry.getInstance().getDomains()) {
+				diagramHelpers.addAll(PageExtensionRegistry.getInstance().getDiagramHelpersExtensions(dom));
+				fileNameServices.addAll(PageExtensionRegistry.getInstance().getFileNameServicesExtensions(dom));
+			}
+		calculator.contributeHelpers(diagramHelpers);
 		//Map<EObject, Rectangle> positionMap = new HashMap<EObject, Rectangle>();
 		Map<Rectangle, EObject> positionMap = calculator.getPositionMap();
 		%>
 	<div>
-	<p class="diagram-name" id="<%=id%>"><%= EscapeChars.forHTML(diagram.getDescription().getName())%></p>
+	<p class="diagram-name" id="<%=id%>"><%= EscapeChars.forHTML(diagramName)%></p>
 	<p class="diagram">
-		<img id="<%=diagram.hashCode()%>" src="<%=generatedFolder%>/<%=imageFile.getName()%>" alt="<%= EscapeChars.forHTML(diagram.getDescription().getName())%>" usemap="#<%=mapName%>" />
+		<img id="<%=diagram.hashCode()%>" src="<%=generatedFolder%>/<%=imageFile.getName()%>" alt="<%= EscapeChars.forHTML(diagramName)%>" usemap="#<%=mapName%>" />
 		
 		<br/>
 		<br/>
@@ -58,11 +67,31 @@ for (Entry<Rectangle, EObject> entrySet : positionMap.entrySet()){
 				fragment = descriptor.getRepPath().getResourceURI().fragment();
 			}
 			fileName = fileNameService.getFileName(descriptor.getTarget());
+			if (fileName.equals("unknown")) {
+				String tmpFileName = fileName;
+				for (IFileNameService fileNS: fileNameServices) {
+					tmpFileName = fileNS.getFileName(descriptor.getTarget());
+					if (tmpFileName != fileName) {
+						fileName = tmpFileName;
+						break;
+					}
+				}
+			}
 			modelName = DocGenHtmlUtil.getModelName(descriptor.getTarget());
 			
 		} else {
 		
 			fileName = fileNameService.getFileName(value);
+			if (fileName.equals("unknown")) {
+				String tmpFileName = fileName;
+				for (IFileNameService fileNS: fileNameServices) {
+					tmpFileName = fileNS.getFileName(value);
+					if (tmpFileName != fileName) {
+						fileName = tmpFileName;
+						break;
+					}
+				}
+			}
 			fragment = helper.getElementId(value);
 			rectangle = entrySet.getKey();
 			topLeft = rectangle.getTopLeft();
@@ -73,22 +102,21 @@ for (Entry<Rectangle, EObject> entrySet : positionMap.entrySet()){
 %>
 			<area shape="rect" group="<%=fileName%>" coords="<%=topLeft.x%>,<%=topLeft.y%>,<%=bottomRight.x%>,<%=bottomRight.y%>" href="../<%=modelName%>/<%=fileName%>.html#<%=fragment%>" alt="<%=fileName%>" />
 <%	}
-%>			
+%>		
 		</map>
 	</p>
-	<p class="diagram-description"><%= helper.diagramDocumentationPostTraitement(((DSemanticDiagram)diagram).getTarget(), diagram.getDescription().getDocumentation(), projectName, outputFolder)%></p>
+	<p class="diagram-description"><%= helper.diagramDocumentationPostTraitement(((DSemanticDiagram)diagram).getTarget(), (result == null) ? "" : result.getDocumentation(), projectName, outputFolder)%></p>
 	</div>
 <%}
 else {
-String diagramName = diagram.getDescription().getName();
 if (diagramName != null && diagramName.isEmpty() == false)
 	diagramName = EscapeChars.forHTML(diagramName);
 %>
 <p class="diagram-name" id="<%=sessionResource.getURIFragment(diagram)%>"><%= diagramName%></p>
 <p>image is missing</p>
-<p class="diagram-description"><%= diagram.getDescription().getDocumentation()%></p>
+<p class="diagram-description"><%= (result == null) ? "" : result.getDocumentation()%></p>
 <%
 			org.polarsys.kitalpha.doc.gen.business.core.Activator.getDefault().getLog().log(
-					new Status(IStatus.ERROR,org.polarsys.kitalpha.doc.gen.business.core.Activator.PLUGIN_ID, "Error during diagram export action:" + diagram.getDescription().getName()));
+					new Status(IStatus.ERROR,org.polarsys.kitalpha.doc.gen.business.core.Activator.PLUGIN_ID, "Error during diagram export action:" + diagramName));
 		}
 %>

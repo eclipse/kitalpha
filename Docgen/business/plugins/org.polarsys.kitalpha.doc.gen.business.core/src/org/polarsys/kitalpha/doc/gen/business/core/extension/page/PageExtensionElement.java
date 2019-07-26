@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.emf.common.util.URI;
+import org.polarsys.kitalpha.doc.gen.business.core.util.IDiagramHelper;
+import org.polarsys.kitalpha.doc.gen.business.core.util.IFileNameService;
 
 /**
  * An object representation of a contribution to the extension point 
@@ -58,6 +60,8 @@ public class PageExtensionElement {
 	private String description;
 	private String domain;
 	private String category;
+	private IDiagramHelper diagramHelper;
+	private IFileNameService fileNameService;
 	private List<URI> pageURI = new ArrayList<URI>();
 	private List<URI> sidebarURI = new ArrayList<URI>();
 	private PageExtensionActivationStatus defaultActivationStatus ;
@@ -86,6 +90,18 @@ public class PageExtensionElement {
 	}
 	public void setCategory(String category) {
 		this.category = category;
+	}
+	public IDiagramHelper getDiagramHelper() {
+		return diagramHelper;
+	}
+	public void setDiagramHelper(IDiagramHelper helper) {
+		this.diagramHelper = helper;
+	}
+	public IFileNameService getFileNameService() {
+		return fileNameService;
+	}
+	public void setFileNameService(IFileNameService fileNameService) {
+		this.fileNameService = fileNameService;
 	}
 	public List<URI> getPageURI() {
 		return pageURI;

@@ -21,7 +21,9 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import javax.imageio.ImageIO;
 import javax.imageio.ImageReader;
@@ -92,11 +94,15 @@ public class CoordinatesCalculator {
 
 	public static final Map<String, Map<Rectangle, EObject>> COORDINATES_MAP = new HashMap<String, Map<Rectangle, EObject>>();
 
+	private static final String JPG = "JPG";
+
+	private final ImageReader reader = ImageIO.getImageReadersBySuffix(JPG).next();
 	private final GenDocDiagramEditPartService tool = new GenDocDiagramEditPartService();
 
 	private IFile imageFile;
 	private DDiagram diagram;
-	private IDiagramHelper helper;
+	private Collection<IDiagramHelper> helpers;
+	private static Map<String, IDiagramHelper> helperMap = new HashMap<String, IDiagramHelper>();
 	private Session session;
 
 	private double scalingFactor = 1.0d; //Default scaling value
@@ -120,11 +126,20 @@ public class CoordinatesCalculator {
 		} else {
 			this.diagram = diagram;
 		}
-		this.helper = filter;
+		this.helpers = new HashSet<IDiagramHelper>(); 
+		this.helpers.add(filter);
 		if (session != null)
 			this.session = session;
 		else
 			this.session = getSessionFromDiagram(diagram);
+	}
+
+	/**
+	 * Contribute additional helpers
+	 * @param helpers
+	 */
+	public void contributeHelpers(Collection<IDiagramHelper> helpers) {
+		this.helpers.addAll(helpers);
 	}
 
 	/**
@@ -366,7 +381,7 @@ public class CoordinatesCalculator {
 					}
 
 					// Handle current view
-					if (acceptView && helper.select(eObject)) 
+					if (acceptView && helpers.stream().anyMatch(help -> help.select(eObject))) 
 					{
 						result.put(bounds, eObject);
 					}
@@ -596,7 +611,26 @@ public class CoordinatesCalculator {
 	}
 
 	private EObject getSemanticElement(DDiagramElement element) {
-		return helper.getSemanticElement(element);
+		Collection<EObject> semanticObjects = helpers.stream().map(help -> help.getSemanticElement(element)).collect(Collectors.toSet());
+		if (!semanticObjects.isEmpty()) {
+			IDiagramHelper semanticObjectHelper = null;
+			for (EObject object: semanticObjects) {
+				semanticObjectHelper = helperMap.get(object.getClass().getCanonicalName());
+			}
+			// helper is still null so its the first iteration on this type of objects
+			if (semanticObjectHelper == null) {
+				for (EObject object: semanticObjects) {
+					Optional<IDiagramHelper> optHelp = helpers.stream().filter(help -> help.select(object)).findFirst();
+					if (optHelp.isPresent()) {
+						helperMap.put(object.getClass().getCanonicalName(), optHelp.get());
+						return object;
+					}
+				}
+			} else {
+				return semanticObjectHelper.getSemanticElement(element);
+			}
+		}
+		return null;
 	}
 
 
@@ -674,7 +708,8 @@ public class CoordinatesCalculator {
 		{
 			Node node = (Node) eContainer;
 			EObject nodeElement = node.getElement();
-			if (nodeElement instanceof DDiagramElement && helper.isContainer((DDiagramElement) nodeElement)) 
+			
+			if (nodeElement instanceof DDiagramElement && helpers.stream().anyMatch(help -> help.isContainer((DDiagramElement) nodeElement))) 
 			{
 				DDiagramElement element = (DDiagramElement) nodeElement;
 				EObject eObject = getSemanticElement(element);

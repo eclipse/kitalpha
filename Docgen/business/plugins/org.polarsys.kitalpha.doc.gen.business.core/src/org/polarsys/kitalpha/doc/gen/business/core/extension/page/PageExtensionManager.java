@@ -16,11 +16,14 @@ import java.util.Collection;
 import java.util.LinkedHashSet;
 import java.util.List;
 
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
 import org.polarsys.kitalpha.doc.gen.business.core.extension.page.PageExtensionElement.PageExtensionActivationStatus;
 import org.polarsys.kitalpha.doc.gen.business.core.extension.page.helpers.NamingOptionalityPreferencesHelper;
+import org.polarsys.kitalpha.doc.gen.business.core.util.IDiagramHelper;
+import org.polarsys.kitalpha.doc.gen.business.core.util.IFileNameService;
 
 /**
  * @author Boubekeur Zendagui
@@ -33,6 +36,8 @@ public class PageExtensionManager {
 	private static final String DOCGEN_PAGE_EXTENSION_ELEMENT__DESCRIPTION = "description";
 	private static final String DOCGEN_PAGE_EXTENSION_ELEMENT__DOMAIN = "domain";
 	private static final String DOCGEN_PAGE_EXTENSION_ELEMENT__CATEGORY = "category";
+	private static final String DOCGEN_PAGE_EXTENSION_ELEMENT__DIAGRAMHELPER = "diagramHelper";
+	private static final String DOCGEN_PAGE_EXTENSION_ELEMENT__FILENAMESERVICE = "fileNameService";
 	private static final String DOCGEN_PAGE_EXTENSION_ELEMENT__DEFAULT_STATUS = "defaultStatus";
 	
 	private static final String DOCGEN_PAGE_EXTENSION_PATTERN_URI = "URI";
@@ -105,6 +110,22 @@ public class PageExtensionManager {
 		peElement.setDescription(element.getAttribute(DOCGEN_PAGE_EXTENSION_ELEMENT__DESCRIPTION));
 		String deaultActivationStatus = element.getAttribute(DOCGEN_PAGE_EXTENSION_ELEMENT__DEFAULT_STATUS);
 		peElement.setDefaultActivationStatus(PageExtensionActivationStatus.getStatus(deaultActivationStatus));
+		try {
+			Object helper = element.createExecutableExtension(DOCGEN_PAGE_EXTENSION_ELEMENT__DIAGRAMHELPER);
+			if (helper instanceof IDiagramHelper) {
+				peElement.setDiagramHelper((IDiagramHelper) helper);
+			}
+		} catch (CoreException e) {
+			peElement.setDiagramHelper(null);
+		}
+		try {
+			Object fileNS = element.createExecutableExtension(DOCGEN_PAGE_EXTENSION_ELEMENT__FILENAMESERVICE);
+			if (fileNS instanceof IFileNameService) {
+				peElement.setFileNameService((IFileNameService) fileNS);
+			}
+		} catch (CoreException e) {
+			peElement.setFileNameService(null);
+		}
 		return peElement;
 	}
 }

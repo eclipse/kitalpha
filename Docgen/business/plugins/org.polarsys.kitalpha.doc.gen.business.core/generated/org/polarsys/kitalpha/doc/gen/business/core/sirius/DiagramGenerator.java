@@ -24,6 +24,7 @@ import org.eclipse.sirius.diagram.DSemanticDiagram;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.polarsys.kitalpha.doc.gen.business.core.preference.helper.DocgenDiagramPreferencesHelper;
 import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
+import org.polarsys.kitalpha.doc.gen.business.core.extension.page.PageExtensionRegistry;
 
 public class DiagramGenerator {
 	protected static String nl;
@@ -56,7 +57,7 @@ public class DiagramGenerator {
 	protected final String TEXT_17 = ".html#";
 	protected final String TEXT_18 = "\" alt=\"";
 	protected final String TEXT_19 = "\" />";
-	protected final String TEXT_20 = "\t\t\t" + NL + "\t\t</map>" + NL + "\t</p>" + NL
+	protected final String TEXT_20 = "\t\t" + NL + "\t\t</map>" + NL + "\t</p>" + NL
 			+ "\t<p class=\"diagram-description\">";
 	protected final String TEXT_21 = "</p>" + NL + "\t</div>";
 	protected final String TEXT_22 = NL + "<p class=\"diagram-name\" id=\"";
@@ -204,23 +205,33 @@ public class DiagramGenerator {
 		DiagramExport diagramExport = new DiagramExport(projectName, outputPath, diagram, session);
 		IFile imageFile = diagramExport.exportAsImage();
 		Resource sessionResource = session.getSessionResource();
+		String id = DiagramSessionHelper.getID(diagram);
+		DRepresentationQuery rep2descQuery = new DRepresentationQuery(diagram);
+		DRepresentationDescriptor result = rep2descQuery.getRepresentationDescriptor();
+		String mapName = id + "_PositionMap";
+		String diagramName = id;
+		if (result != null) {
+			mapName = result.getName() + "_" + mapName;
+			diagramName = result.getName();
+		}
+		mapName = DocGenHtmlUtil.getValidFileName(mapName);
+		diagramName = DocGenHtmlUtil.getValidFileName(diagramName);
 		if (imageFile != null && imageFile.exists()) {
-			String id = DiagramSessionHelper.getID(diagram);
-			DRepresentationQuery rep2descQuery = new DRepresentationQuery(diagram);
-			DRepresentationDescriptor result = rep2descQuery.getRepresentationDescriptor();
-			String mapName = id + "_PositionMap";
-			if (result != null) {
-				mapName = result.getName() + "_" + mapName;
-			}
-			mapName = DocGenHtmlUtil.getValidFileName(mapName);
 			CoordinatesCalculator calculator = new CoordinatesCalculator(imageFile, diagram, helper);
+			Collection<IDiagramHelper> diagramHelpers = new HashSet<IDiagramHelper>();
+			Collection<IFileNameService> fileNameServices = new HashSet<IFileNameService>();
+			for (String dom : PageExtensionRegistry.getInstance().getDomains()) {
+				diagramHelpers.addAll(PageExtensionRegistry.getInstance().getDiagramHelpersExtensions(dom));
+				fileNameServices.addAll(PageExtensionRegistry.getInstance().getFileNameServicesExtensions(dom));
+			}
+			calculator.contributeHelpers(diagramHelpers);
 			//Map<EObject, Rectangle> positionMap = new HashMap<EObject, Rectangle>();
 			Map<Rectangle, EObject> positionMap = calculator.getPositionMap();
 
 			stringBuffer.append(TEXT_1);
 			stringBuffer.append(id);
 			stringBuffer.append(TEXT_2);
-			stringBuffer.append(EscapeChars.forHTML(diagram.getDescription().getName()));
+			stringBuffer.append(EscapeChars.forHTML(diagramName));
 			stringBuffer.append(TEXT_3);
 			stringBuffer.append(diagram.hashCode());
 			stringBuffer.append(TEXT_4);
@@ -228,7 +239,7 @@ public class DiagramGenerator {
 			stringBuffer.append(TEXT_5);
 			stringBuffer.append(imageFile.getName());
 			stringBuffer.append(TEXT_6);
-			stringBuffer.append(EscapeChars.forHTML(diagram.getDescription().getName()));
+			stringBuffer.append(EscapeChars.forHTML(diagramName));
 			stringBuffer.append(TEXT_7);
 			stringBuffer.append(mapName);
 			stringBuffer.append(TEXT_8);
@@ -263,11 +274,31 @@ public class DiagramGenerator {
 						fragment = descriptor.getRepPath().getResourceURI().fragment();
 					}
 					fileName = fileNameService.getFileName(descriptor.getTarget());
+					if (fileName.equals("unknown")) {
+						String tmpFileName = fileName;
+						for (IFileNameService fileNS : fileNameServices) {
+							tmpFileName = fileNS.getFileName(descriptor.getTarget());
+							if (tmpFileName != fileName) {
+								fileName = tmpFileName;
+								break;
+							}
+						}
+					}
 					modelName = DocGenHtmlUtil.getModelName(descriptor.getTarget());
 
 				} else {
 
 					fileName = fileNameService.getFileName(value);
+					if (fileName.equals("unknown")) {
+						String tmpFileName = fileName;
+						for (IFileNameService fileNS : fileNameServices) {
+							tmpFileName = fileNS.getFileName(value);
+							if (tmpFileName != fileName) {
+								fileName = tmpFileName;
+								break;
+							}
+						}
+					}
 					fragment = helper.getElementId(value);
 					rectangle = entrySet.getKey();
 					topLeft = rectangle.getTopLeft();
@@ -299,10 +330,9 @@ public class DiagramGenerator {
 
 			stringBuffer.append(TEXT_20);
 			stringBuffer.append(helper.diagramDocumentationPostTraitement(((DSemanticDiagram) diagram).getTarget(),
-					diagram.getDescription().getDocumentation(), projectName, outputFolder));
+					(result == null) ? "" : result.getDocumentation(), projectName, outputFolder));
 			stringBuffer.append(TEXT_21);
 		} else {
-			String diagramName = diagram.getDescription().getName();
 			if (diagramName != null && diagramName.isEmpty() == false)
 				diagramName = EscapeChars.forHTML(diagramName);
 
@@ -311,12 +341,12 @@ public class DiagramGenerator {
 			stringBuffer.append(TEXT_23);
 			stringBuffer.append(diagramName);
 			stringBuffer.append(TEXT_24);
-			stringBuffer.append(diagram.getDescription().getDocumentation());
+			stringBuffer.append((result == null) ? "" : result.getDocumentation());
 			stringBuffer.append(TEXT_25);
 
 			org.polarsys.kitalpha.doc.gen.business.core.Activator.getDefault().getLog()
 					.log(new Status(IStatus.ERROR, org.polarsys.kitalpha.doc.gen.business.core.Activator.PLUGIN_ID,
-							"Error during diagram export action:" + diagram.getDescription().getName()));
+							"Error during diagram export action:" + diagramName));
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
