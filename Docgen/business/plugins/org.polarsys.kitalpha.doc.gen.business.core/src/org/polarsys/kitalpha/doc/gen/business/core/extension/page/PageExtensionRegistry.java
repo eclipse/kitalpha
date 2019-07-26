@@ -14,8 +14,11 @@ package org.polarsys.kitalpha.doc.gen.business.core.extension.page;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.egf.model.pattern.BundleAccessor;
@@ -38,6 +41,8 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.osgi.framework.Bundle;
 import org.polarsys.kitalpha.doc.gen.business.core.Activator;
 import org.polarsys.kitalpha.doc.gen.business.core.extension.page.PageExtensionElement.PageExtensionActivationStatus;
+import org.polarsys.kitalpha.doc.gen.business.core.util.IDiagramHelper;
+import org.polarsys.kitalpha.doc.gen.business.core.util.IFileNameService;
 
 public class PageExtensionRegistry {
 	private ResourceSet egfResourceSet = new ResourceSetImpl();
@@ -131,6 +136,22 @@ public class PageExtensionRegistry {
 			}
 		}
 		return result;
+	}
+	
+	/**
+	 * @param domain a {@link String} value containing the name of the domain
+	 * @return All available {@link IDiagramHelper} for this domain extension
+	 */
+	public Collection<IDiagramHelper> getDiagramHelpersExtensions(String domain) {
+		return getActiveExtensions(domain).stream().map(PageExtensionElement::getDiagramHelper).filter(diagramHelper -> diagramHelper != null).collect(Collectors.toSet());
+	}
+	
+	/**
+	 * @param domain a {@link String} value containing the name of the domain
+	 * @return All available {@link IFileNameService} for this domain extension
+	 */
+	public Collection<IFileNameService> getFileNameServicesExtensions(String domain) {
+		return getActiveExtensions(domain).stream().map(PageExtensionElement::getFileNameService).filter(fileNS -> fileNS != null).collect(Collectors.toSet());
 	}
 
 	/**

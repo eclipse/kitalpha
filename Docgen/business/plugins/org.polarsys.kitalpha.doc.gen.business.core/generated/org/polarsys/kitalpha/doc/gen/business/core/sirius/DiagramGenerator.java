@@ -22,6 +22,7 @@ import org.eclipse.sirius.diagram.DSemanticDiagram;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.polarsys.kitalpha.doc.gen.business.core.preference.helper.DocgenDiagramPreferencesHelper;
 import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
+import org.polarsys.kitalpha.doc.gen.business.core.extension.page.PageExtensionRegistry;
 
 public class DiagramGenerator {
 	protected static String nl;
@@ -54,7 +55,7 @@ public class DiagramGenerator {
 	protected final String TEXT_17 = ".html#";
 	protected final String TEXT_18 = "\" alt=\"";
 	protected final String TEXT_19 = "\" />";
-	protected final String TEXT_20 = "\t\t\t" + NL + "\t\t</map>" + NL + "\t</p>" + NL
+	protected final String TEXT_20 = "\t\t" + NL + "\t\t</map>" + NL + "\t</p>" + NL
 			+ "\t<p class=\"diagram-description\">";
 	protected final String TEXT_21 = "</p>" + NL + "\t</div>";
 	protected final String TEXT_22 = NL + "<p class=\"diagram-name\" id=\"";
@@ -207,6 +208,13 @@ public class DiagramGenerator {
 			String mapName = diagram.getName() + "_" + id + "_PositionMap";
 			mapName = DocGenHtmlUtil.getValidFileName(mapName);
 			CoordinatesCalculator calculator = new CoordinatesCalculator(imageFile, diagram, helper);
+			Collection<IDiagramHelper> diagramHelpers = new HashSet<IDiagramHelper>();
+			Collection<IFileNameService> fileNameServices = new HashSet<IFileNameService>();
+			for (String dom : PageExtensionRegistry.getInstance().getDomains()) {
+				diagramHelpers.addAll(PageExtensionRegistry.getInstance().getDiagramHelpersExtensions(dom));
+				fileNameServices.addAll(PageExtensionRegistry.getInstance().getFileNameServicesExtensions(dom));
+			}
+			calculator.contributeHelpers(diagramHelpers);
 			//Map<EObject, Rectangle> positionMap = new HashMap<EObject, Rectangle>();
 			Map<Rectangle, EObject> positionMap = calculator.getPositionMap();
 
@@ -256,11 +264,31 @@ public class DiagramGenerator {
 						fragment = descriptor.getRepPath().getResourceURI().fragment();
 					}
 					fileName = fileNameService.getFileName(descriptor.getTarget());
+					if (fileName.equals("unknown")) {
+						String tmpFileName = fileName;
+						for (IFileNameService fileNS : fileNameServices) {
+							tmpFileName = fileNS.getFileName(descriptor.getTarget());
+							if (tmpFileName != fileName) {
+								fileName = tmpFileName;
+								break;
+							}
+						}
+					}
 					modelName = DocGenHtmlUtil.getModelName(descriptor.getTarget());
 
 				} else {
 
 					fileName = fileNameService.getFileName(value);
+					if (fileName.equals("unknown")) {
+						String tmpFileName = fileName;
+						for (IFileNameService fileNS : fileNameServices) {
+							tmpFileName = fileNS.getFileName(value);
+							if (tmpFileName != fileName) {
+								fileName = tmpFileName;
+								break;
+							}
+						}
+					}
 					fragment = helper.getElementId(value);
 					rectangle = entrySet.getKey();
 					topLeft = rectangle.getTopLeft();

@@ -192,6 +192,26 @@ if there are no priority specified, the default one is -1.
                </restriction>
             </simpleType>
          </attribute>
+         <attribute name="diagramHelper" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn=":org.polarsys.kitalpha.doc.gen.business.core.util.IDiagramHelper"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="fileNameService" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn=":org.polarsys.kitalpha.doc.gen.business.core.util.IFileNameService"/>
+               </appInfo>
+            </annotation>
+         </attribute>
       </complexType>
    </element>
 
