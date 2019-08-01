@@ -23,6 +23,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import javax.imageio.ImageIO;
 import javax.imageio.ImageReader;
@@ -375,8 +376,7 @@ public class CoordinatesCalculator {
 					}
 
 					// Handle current view
-					IDiagramHelper helper = helperMap.get(eObject.getClass().getCanonicalName());
-					if (acceptView && helper.select(eObject)) 
+					if (acceptView && helpers.stream().anyMatch(help -> help.select(eObject)))
 					{
 						result.put(bounds, eObject);
 					}
@@ -607,16 +607,24 @@ public class CoordinatesCalculator {
 	}
 
 	private EObject getSemanticElement(DDiagramElement element) {
-		IDiagramHelper helper = helperMap.get(element.getClass().getCanonicalName());
-		if (helper == null) {
-			Optional<IDiagramHelper> optHelper = helpers.stream().filter(help -> help.select(element)).findFirst();
-			if (optHelper.isPresent()) {
-				helper = optHelper.get();
-				helperMap.put(element.getClass().getCanonicalName(), helper);
+		Collection<EObject> semanticObjects = helpers.stream().map(help -> help.getSemanticElement(element)).collect(Collectors.toSet());
+		if (!semanticObjects.isEmpty()) {
+			IDiagramHelper semanticObjectHelper = null;
+			for (EObject object: semanticObjects) {
+				semanticObjectHelper = helperMap.get(object.getClass().getCanonicalName());
 			}
-		}
-		if (helper != null) {
-			return helper.getSemanticElement(element);
+			// helper is still null so its the first iteration on this type of objects
+			if (semanticObjectHelper == null) {
+				for (EObject object: semanticObjects) {
+					Optional<IDiagramHelper> optHelp = helpers.stream().filter(help -> help.select(object)).findFirst();
+					if (optHelp.isPresent()) {
+						helperMap.put(object.getClass().getCanonicalName(), optHelp.get());
+						return object;
+					}
+				}
+			} else {
+				return semanticObjectHelper.getSemanticElement(element);
+			}
 		}
 		return null;
 	}
