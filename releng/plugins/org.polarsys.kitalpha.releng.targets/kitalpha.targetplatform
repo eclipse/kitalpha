@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2019 THALES GLOBAL SERVICES.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Thales - initial API and implementation
+ *******************************************************************************/
 target "kitapha" with source, requirements
 
 location eclipse-release "http://download.eclipse.org/releases/2019-06/" {
@@ -75,7 +85,7 @@ location eclipse-release "http://download.eclipse.org/releases/2019-06/" {
 	org.eclipse.emf.sdk.feature.group lazy
 }
 
-location sirius "https://download.eclipse.org/sirius/updates/stable/6.3.0-S20190716-100145/2019-06" {
+location sirius "https://download.eclipse.org/sirius/updates/stable/6.3.0-S20190830-130932/2019-06/" {
 	org.eclipse.sirius.aql.feature.group lazy
 	org.eclipse.sirius.interpreter.feature.feature.group lazy
 	org.eclipse.sirius.properties.feature.feature.group lazy
@@ -119,7 +129,7 @@ location coevolution "http://download.eclipse.org/diffmerge/releases/0.11.0/edm-
 	 org.eclipse.emf.diffmerge.coevolution.sdk.feature.source.feature.group lazy
 }
 
-location amalgam "https://download.eclipse.org/modeling/amalgam/updates/stable/1.11.0-S20190716/capella/" {
+location amalgam "https://download.eclipse.org/modeling/amalgam/updates/stable/1.11.0-S20190729/capella/" {
 	org.eclipse.amalgam.explorer.activity.feature.group lazy
 	org.eclipse.amalgam.explorer.activity.source.feature.group lazy
 	org.eclipse.amalgam.explorer.contextual.feature.group lazy
