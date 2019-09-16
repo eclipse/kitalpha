@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2018  Thales Global Services S.A.S.
+ * Copyright (c) 2018, 2019  Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,7 +18,8 @@ import org.eclipse.nebula.widgets.nattable.extension.glazedlists.groupBy.GroupBy
 import org.eclipse.nebula.widgets.nattable.layer.cell.ILayerCell;
 import org.eclipse.nebula.widgets.nattable.painter.cell.ImagePainter;
 import org.eclipse.swt.graphics.Image;
-import org.polarsys.kitalpha.massactions.core.helper.EObjectImageProviderHelper;
+import org.polarsys.kitalpha.massactions.core.helper.EObjectImageProvider;
+import org.polarsys.kitalpha.massactions.core.helper.ImageProvider;
 
 /**
  * An image painter based on the the label extracted from an EObject cell data value.
@@ -28,27 +29,37 @@ import org.polarsys.kitalpha.massactions.core.helper.EObjectImageProviderHelper;
  */
 public class LabelImagePainter extends ImagePainter {
 
+  protected ImageProvider imageProvider;
+
+  public LabelImagePainter() {
+    this.imageProvider = EObjectImageProvider.getInstance();
+  }
+
+  public LabelImagePainter(ImageProvider imageProvider) {
+    this.imageProvider = imageProvider;
+  }
+
   @Override
   protected Image getImage(ILayerCell cell, IConfigRegistry configRegistry) {
 
     Image extractedImage = extractImage(cell.getDataValue());
 
     // if we can't extract an image from the current cell, continue with the
-    // default behaviour
+    // default behavior
     return extractedImage != null ? extractedImage : super.getImage(cell, configRegistry);
   }
 
   protected Image extractImage(Object cellDataValue) {
 
     if (cellDataValue instanceof EObject) {
-      return EObjectImageProviderHelper.getImage((EObject) cellDataValue);
+      return imageProvider.getImage(cellDataValue);
     } else if (cellDataValue instanceof List<?>) {
 
       @SuppressWarnings("unchecked")
       List<EObject> cellDataValues = (List<EObject>) cellDataValue;
 
       if (!cellDataValues.isEmpty()) {
-        return EObjectImageProviderHelper.getImage(cellDataValues.get(0));
+        return imageProvider.getImage(cellDataValues.get(0));
       }
     } else if (cellDataValue instanceof GroupByObject) {
       GroupByObject groupByObject = (GroupByObject) cellDataValue;

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2018  Thales Global Services S.A.S.
+ * Copyright (c) 2018, 2019  Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,6 +16,8 @@ import org.eclipse.nebula.widgets.nattable.painter.cell.TextPainter;
 import org.eclipse.nebula.widgets.nattable.painter.cell.decorator.CellPainterDecorator;
 import org.eclipse.nebula.widgets.nattable.painter.cell.decorator.PaddingDecorator;
 import org.eclipse.nebula.widgets.nattable.ui.util.CellEdgeEnum;
+import org.polarsys.kitalpha.massactions.core.helper.EObjectImageProvider;
+import org.polarsys.kitalpha.massactions.core.helper.ImageProvider;
 
 /**
  * A text and label image painter.
@@ -26,15 +28,29 @@ import org.eclipse.nebula.widgets.nattable.ui.util.CellEdgeEnum;
 public class TextAndLabelImagePainter extends CellPainterWrapper {
 
   public TextAndLabelImagePainter() {
-    super(createTextAndLabelImagePainter());
+    super();
+    setWrappedPainter(createTextAndLabelImagePainter(EObjectImageProvider.getInstance()));
   }
 
-  private static ICellPainter createTextAndLabelImagePainter() {
+  public TextAndLabelImagePainter(ImageProvider imageProvider) {
+    super();
+    setWrappedPainter(createTextAndLabelImagePainter(imageProvider));
+  }
 
-    ICellPainter labelImagePainter = new PaddingDecorator(new LabelImagePainter(), 0, 5, 0, 5);
-    ICellPainter textAndLabelImagePainter = new CellPainterDecorator(new TextPainter(), CellEdgeEnum.LEFT,
-        labelImagePainter);
+  protected ICellPainter createTextAndLabelImagePainter(ImageProvider imageProvider) {
+
+    ICellPainter labelImagePainter = createLabelImagePainter(imageProvider);
+    ICellPainter textAndLabelImagePainter = createTextPainter(labelImagePainter);
 
     return new PaddingDecorator(textAndLabelImagePainter);
   }
+
+  protected CellPainterDecorator createTextPainter(ICellPainter labelImagePainter) {
+    return new CellPainterDecorator(new TextPainter(), CellEdgeEnum.LEFT, labelImagePainter);
+  }
+
+  protected PaddingDecorator createLabelImagePainter(ImageProvider imageProvider) {
+    return new PaddingDecorator(new LabelImagePainter(imageProvider), 0, 5, 0, 5);
+  }
+
 }
