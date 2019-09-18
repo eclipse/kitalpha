@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Copyright (c) 2006, 2018 THALES GLOBAL SERVICES.
+  Copyright (c) 2006, 2019 THALES GLOBAL SERVICES.
   All rights reserved. This program and the accompanying materials
   are made available under the terms of the Eclipse Public License v1.0
   which accompanies this distribution, and is available at
@@ -360,7 +360,23 @@
          version="0.0.0"/>
 
    <includes
+         id="org.eclipse.sirius.doc.feature"
+         version="0.0.0"/>
+
+   <includes
          id="org.eclipse.sirius.runtime"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.sirius.runtime.source"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.sirius.runtime.acceleo"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.sirius.runtime.acceleo.source"
          version="0.0.0"/>
 
    <includes
@@ -368,7 +384,7 @@
          version="0.0.0"/>
 
    <includes
-         id="org.eclipse.sirius.aql"
+         id="org.eclipse.sirius.runtime.aql.source"
          version="0.0.0"/>
 
    <includes
@@ -376,13 +392,57 @@
          version="0.0.0"/>
 
    <includes
+         id="org.eclipse.sirius.runtime.ide.eef.source"
+         version="0.0.0"/>
+
+   <includes
          id="org.eclipse.sirius.runtime.ide.ui"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.sirius.runtime.ide.ui.source"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.sirius.runtime.ide.ui.acceleo"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.sirius.runtime.ide.ui.acceleo.source"
          version="0.0.0"/>
 
    <includes
          id="org.eclipse.sirius.runtime.ide.xtext"
          version="0.0.0"/>
 
+   <includes
+         id="org.eclipse.sirius.runtime.ide.xtext.source"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.sirius.runtime.ocl"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.sirius.runtime.ocl.source"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.sirius.specifier.ide.ui"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.sirius.specifier.ide.ui.source"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.sirius.specifier.ide.ui.acceleo"
+         version="0.0.0"/>
+
+   <includes
+         id="org.eclipse.sirius.specifier.ide.ui.acceleo.source"
+         version="0.0.0"/>
+         
    <includes
          id="org.eclipse.uml2"
          version="0.0.0"/>
