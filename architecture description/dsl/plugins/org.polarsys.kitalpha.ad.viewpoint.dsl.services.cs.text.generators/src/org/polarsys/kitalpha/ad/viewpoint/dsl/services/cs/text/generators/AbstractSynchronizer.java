@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2019 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -157,7 +157,7 @@ public abstract class AbstractSynchronizer implements IViewpointBackwardSynchron
               }
             });
           if (aspect!=null)
-          	output.put(5, backwardSynchronize((Configuration)aspect, loadConfigurationResource(aspect, resourceSet)));
+          	output.put(6, backwardSynchronize((Configuration)aspect, loadConfigurationResource(aspect, resourceSet)));
 		
         //UI
         aspect = IterableExtensions.<Aspect>findFirst(aspects,  new Function1<Aspect,Boolean>() {
