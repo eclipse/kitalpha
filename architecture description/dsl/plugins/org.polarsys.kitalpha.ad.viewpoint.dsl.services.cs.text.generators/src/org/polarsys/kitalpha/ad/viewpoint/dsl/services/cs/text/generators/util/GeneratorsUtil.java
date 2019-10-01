@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2019 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -38,7 +38,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ResourceHelper;
 /**
  * 
  * @author Amine Lajmi,
- * Faycal Abka
+ * Faycal Abka,
+ * Arnaud Dieumegard
  *
  */
 
@@ -102,10 +103,13 @@ public class GeneratorsUtil {
 
 		if (diagram != null) {
 
-			StringBuffer imports = new StringBuffer("\n");
+			StringBuffer imports = new StringBuffer("");
 
 			List<EPackage> ePackages = diagram.getAdditionalExternalData();
 
+			if (!ePackages.isEmpty()) {
+				imports.append("\n");
+			}
 			for (EPackage ePackage : ePackages) {
 				imports.append("import external \"");
 				Resource resource = ePackage.eResource();
@@ -128,7 +132,6 @@ public class GeneratorsUtil {
 				.append(group.eResource().getURI().toString()).append("\"\n");
 			}
 
-			imports.append("\n");
 			return imports.toString();
 
 		}

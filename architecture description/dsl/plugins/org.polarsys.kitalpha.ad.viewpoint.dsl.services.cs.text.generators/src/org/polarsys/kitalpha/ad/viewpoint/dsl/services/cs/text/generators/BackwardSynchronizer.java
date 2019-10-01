@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2019 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -40,7 +40,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators.util.R
 /**
  * 
  * @author Amine Lajmi,
- * Faycal Abka
+ * Faycal Abka,
+ * Arnaud Dieumegard
  *
  */
 public class BackwardSynchronizer extends AbstractSynchronizer {
@@ -133,8 +134,10 @@ public class BackwardSynchronizer extends AbstractSynchronizer {
 			services = ServicesFactory.eINSTANCE.createServices();
 			textResource.getContents().add(services);
 		} else {
-			services = (Services) textResource.getContents().get(0);
-		}
+			EObject oldRoot = (Services) textResource.getContents().get(0);
+			services = ServicesFactory.eINSTANCE.createServices();
+			EcoreUtil2.replace(oldRoot, services);
+		} 
 		services.getServices().clear();
 		for (Aspect as : aspects) {
 			EObject clone = copier.get(as);
