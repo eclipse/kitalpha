@@ -650,15 +650,12 @@ public class <%=genPackage.getActionBarContributorClassName()%>
 		<%=_CollectionOfAnything%> newChildDescriptors = null;
 		<%=_CollectionOfAnything%> newSiblingDescriptors = null;
 
-		<%=genModel.getImportedName("org.eclipse.jface.viewers.ISelection")%> selection = event.getSelection();
-		if (selection instanceof <%=genModel.getImportedName("org.eclipse.jface.viewers.IStructuredSelection")%> && ((IStructuredSelection)selection).size() == 1)
+		if (selectedObject != null)
 		{
-			Object object = ((<%=genModel.getImportedName("org.eclipse.jface.viewers.IStructuredSelection")%>)selection).getFirstElement();
-
 			<%=genModel.getImportedName("org.eclipse.emf.edit.domain.EditingDomain")%> domain = ((<%=genModel.getImportedName("org.eclipse.emf.edit.domain.IEditingDomainProvider")%>)activeEditorPart).getEditingDomain();
 
-			newChildDescriptors = domain.getNewChildDescriptors(object, null);
-			newSiblingDescriptors = domain.getNewChildDescriptors(null, object);
+			newChildDescriptors = domain.getNewChildDescriptors(selectedObject, null);
+			newSiblingDescriptors = domain.getNewChildDescriptors(null, selectedObject);
 		}
 
 		// Generate actions for selection; populate and redraw the menus.
