@@ -60,7 +60,7 @@
 		<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
 		<sonar.jacoco.release>0.7.5.201505241946</sonar.jacoco.release>
 		<sonar.jacoco.reportPath>${coverage.destFile}</sonar.jacoco.reportPath>
-		<rcptt-maven-version>2.5.0-SNAPSHOT</rcptt-maven-version>
+		<rcptt-maven-version>2.4.3</rcptt-maven-version>
 	  	<target-platform-name>kitalpha</target-platform-name>
 	  	
 	  	<sonar.exclusions>**/generated/**/*.java,**/src-gen/**/*.java</sonar.exclusions>
