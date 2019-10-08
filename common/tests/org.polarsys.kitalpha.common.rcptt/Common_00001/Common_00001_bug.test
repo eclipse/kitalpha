@@ -1,13 +1,13 @@
 --- RCPTT testcase ---
 Format-Version: 1.0
-Contexts: _hTNYwB5fEeavOeOrSpOt_g
+Contexts: _hTNYwB5fEeavOeOrSpOt_g,_nijywB5mEeavOeOrSpOt_g
 Element-Name: Common_00001_bug
 Element-Type: testcase
 Element-Version: 3.0
 External-Reference: 
 Id: _I854EB5mEeavOeOrSpOt_g
-Runtime-Version: 2.4.2.201905080442
-Save-Time: 6/13/19 9:05 AM
+Runtime-Version: 2.4.3.201909171500
+Save-Time: 10/9/19 9:24 AM
 Testcase-Type: ecl
 
 ------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
@@ -37,7 +37,7 @@ with [get-window "Show View"] {
 get-view "Package Explorer" | get-link "Create a project..." | click
 with [get-window "New Project"] {
     get-editbox -after [get-label "Wizards:"] | set-text dsl
-    get-tree | select "Kitalpha/Viewpoint DSL project"
+    get-tree | select "Kitalpha/Architecture description/Viewpoint DSL project"
     get-button "Next >" | click
 }
 
