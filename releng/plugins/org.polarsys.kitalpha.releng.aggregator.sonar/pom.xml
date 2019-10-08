@@ -295,8 +295,6 @@
 	<module>../../../architecture description/metadata/plugins/org.polarsys.kitalpha.ad.metadata.model.editor</module>
 	
 	<!-- Not need for Sonar Analysis -->
-	<!-- attachment -->
-	<!-- <module>../../../attachment/plugins/org.polarsys.kitalpha.model.attachment.ui</module> -->
 	
 	<!-- cadence -->
 	<module>../../../cadence/plugins/org.polarsys.kitalpha.cadence.core</module>

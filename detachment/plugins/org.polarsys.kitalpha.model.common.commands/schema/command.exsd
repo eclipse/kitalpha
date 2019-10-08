@@ -103,8 +103,6 @@ Contributors:
                   </enumeration>
                   <enumeration value="DETACHMENT">
                   </enumeration>
-                  <enumeration value="ATTACHMENT">
-                  </enumeration>
                </restriction>
             </simpleType>
          </attribute>

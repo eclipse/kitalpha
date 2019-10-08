@@ -8,7 +8,6 @@ The CTK provides Modeling Commonalities.
 *** '''Accuracy''': a component for model validation.
 ** Exchange
 *** '''Model Detachment''': an extensible component to detach information from a model, such as viewpoints.
-*** '''Model Attachment''': an extensible component to attach model parts to a model (two or three ways).
 * Documentation
 ** '''Business Doc Gen''': a framework for html documentation generation from a model. Kitalpha provides by a default an html export from an ecore model.
 * Basic tools
