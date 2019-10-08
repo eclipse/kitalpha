@@ -47,16 +47,6 @@ Contributors:
             </visibleWhen>
          </command>
       </menuContribution>
-      <menuContribution
-            allPopups="false"
-            locationURI="popup:org.polarsys.kitalpha.model.common.ui.menu.architectureDescription?after=additions">
-         <command
-               commandId="org.polarsys.kitalpha.model.attachment.ui.command.attachment"
-               icon="icons/attachment.png"
-               label="Model Attachment"
-               style="push">
-         </command>
-      </menuContribution>
    </extension>
 <extension
       point="org.eclipse.ui.menus">
