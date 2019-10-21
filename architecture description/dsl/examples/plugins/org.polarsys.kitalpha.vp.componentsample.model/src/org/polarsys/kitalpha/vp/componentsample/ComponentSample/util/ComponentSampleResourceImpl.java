@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2017 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2019 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -10,9 +10,6 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.vp.componentsample.ComponentSample.util;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
@@ -23,19 +20,11 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.XMIResource;
-import org.eclipse.emf.ecore.xmi.XMLHelper;
-import org.eclipse.emf.ecore.xmi.XMLLoad;
-import org.eclipse.emf.ecore.xmi.XMLParserPool;
 import org.eclipse.emf.ecore.xmi.XMLResource;
-import org.eclipse.emf.ecore.xmi.XMLSave;
 import org.eclipse.emf.ecore.xmi.XMLSave.XMLTypeInfo;
 import org.eclipse.emf.ecore.xmi.impl.URIHandlerImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
-import org.eclipse.emf.ecore.xmi.impl.XMLParserPoolImpl;
 import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
-import org.polarsys.kitalpha.emde.xmi.XMIExtensionHelperImpl;
-import org.polarsys.kitalpha.emde.xmi.XMIExtensionLoadImpl;
-import org.polarsys.kitalpha.emde.xmi.XMIExtensionSaveImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,27 +35,6 @@ import org.polarsys.kitalpha.emde.xmi.XMIExtensionSaveImpl;
  */
 public class ComponentSampleResourceImpl extends XMIResourceImpl {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private List<Object> lookupTable = new ArrayList<Object>();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private XMLParserPool parserPool = new XMLParserPoolImpl();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private Map<Object, Object> nameToFeatureMap = new HashMap<Object, Object>();
-
-	/**
 	 * Creates an instance of the resource.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -75,46 +43,6 @@ public class ComponentSampleResourceImpl extends XMIResourceImpl {
 	 */
 	public ComponentSampleResourceImpl(URI uri) {
 		super(uri);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected XMLSave createXMLSave() {
-		return new XMIExtensionSaveImpl(createXMLHelper());
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected XMLHelper createXMLHelper() {
-		return new XMIExtensionHelperImpl(this);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected XMLLoad createXMLLoad() {
-		return new XMIExtensionLoadImpl((XMIExtensionHelperImpl) createXMLHelper());
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected boolean useIDAttributes() {
-		return false;
 	}
 
 	/**
@@ -130,7 +58,6 @@ public class ComponentSampleResourceImpl extends XMIResourceImpl {
 		setXMIVersion("2.1"); //$NON-NLS-1$
 		// Save Options
 		getDefaultSaveOptions().put(XMLResource.OPTION_CONFIGURATION_CACHE, Boolean.TRUE);
-		getDefaultSaveOptions().put(XMLResource.OPTION_USE_CACHED_LOOKUP_TABLE, lookupTable);
 		getDefaultSaveOptions().put(XMLResource.OPTION_USE_ENCODED_ATTRIBUTE_STYLE, Boolean.TRUE);
 		getDefaultSaveOptions().put(Resource.OPTION_SAVE_ONLY_IF_CHANGED,
 				Resource.OPTION_SAVE_ONLY_IF_CHANGED_MEMORY_BUFFER);
@@ -151,8 +78,6 @@ public class ComponentSampleResourceImpl extends XMIResourceImpl {
 		getDefaultLoadOptions().put(XMLResource.OPTION_DEFER_ATTACHMENT, Boolean.FALSE);
 		getDefaultLoadOptions().put(XMLResource.OPTION_DEFER_IDREF_RESOLUTION, Boolean.FALSE);
 		getDefaultLoadOptions().put(XMLResource.OPTION_USE_DEPRECATED_METHODS, Boolean.TRUE);
-		getDefaultLoadOptions().put(XMLResource.OPTION_USE_PARSER_POOL, parserPool);
-		getDefaultLoadOptions().put(XMLResource.OPTION_USE_XML_NAME_TO_FEATURE_MAP, nameToFeatureMap);
 		getDefaultLoadOptions().put(XMLResource.OPTION_USE_ENCODED_ATTRIBUTE_STYLE, Boolean.TRUE);
 		getDefaultLoadOptions().put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
 		getDefaultLoadOptions().put(XMLResource.OPTION_EXTENDED_META_DATA, Boolean.TRUE);
