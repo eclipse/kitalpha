@@ -52,6 +52,7 @@ import org.eclipse.gef.commands.CommandStack;
 import org.eclipse.gmf.runtime.diagram.core.listener.DiagramEventBroker;
 import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.image.PartPositionInfo;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramCommandStack;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditDomain;
 import org.eclipse.gmf.runtime.diagram.ui.render.util.DiagramImageUtils;
@@ -70,6 +71,7 @@ import org.eclipse.sirius.diagram.DSemanticDiagram;
 import org.eclipse.sirius.diagram.impl.DEdgeImpl;
 import org.eclipse.sirius.diagram.ui.edit.api.part.AbstractDiagramEdgeEditPart.ViewEdgeFigure;
 import org.eclipse.sirius.diagram.ui.internal.edit.parts.SiriusNoteEditPart;
+import org.eclipse.sirius.diagram.ui.tools.internal.render.SiriusDiagramSVGGenerator;
 import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.eclipse.sirius.viewpoint.description.AnnotationEntry;
@@ -94,9 +96,6 @@ public class CoordinatesCalculator {
 
 	public static final Map<String, Map<Rectangle, EObject>> COORDINATES_MAP = new HashMap<String, Map<Rectangle, EObject>>();
 
-	private static final String JPG = "JPG";
-
-	private final ImageReader reader = ImageIO.getImageReadersBySuffix(JPG).next();
 	private final GenDocDiagramEditPartService tool = new GenDocDiagramEditPartService();
 
 	private IFile imageFile;
@@ -298,8 +297,8 @@ public class CoordinatesCalculator {
 		}
 		throw new IllegalArgumentException("Illegal parameter: Class -> " + this.getClass().getName() + ", method -> acceptView(View view)");
 	}
-
-
+	
+	@Deprecated
 	public Map<Rectangle, EObject> getRectanglesMap(View view, Map<?, ?> registry, int deltaX, int deltaY) {
 		Map<Rectangle, EObject> result = new LinkedHashMap<>();
 
@@ -390,6 +389,61 @@ public class CoordinatesCalculator {
 		}
 		return result;
 	}
+	
+	/**
+	 * Compute and format the {@code <Rectangle,EObject>} pair for the {@code info} element
+	 * @param info An info element
+	 * @param registry
+	 * @param deltaX X coordinate shift to be applied on edge elements rectangle
+	 * @param deltaY Y coordinate shift to be applied on edge elements rectangle
+	 * @return A {@code <Rectangle,EObject>} entry for the {@code info} element
+	 */
+	public Map<Rectangle, EObject> getInfoRectangleMap(PartPositionInfo info, Map<?, ?> registry, int deltaX, int deltaY) {
+		Map<Rectangle, EObject> result = new LinkedHashMap<>();
+
+		final EObject nodeElement = info.getView().getElement();
+		final View view = info.getView();
+		Rectangle bounds = new Rectangle(info.getPartX(), info.getPartY(), info.getPartWidth(), info.getPartHeight());
+
+		/*
+		 * Handle navigable note
+		 */
+		if (nodeElement instanceof DRepresentationDescriptor) {
+			DRepresentationDescriptor descriptor = (DRepresentationDescriptor)nodeElement;
+			final boolean acceptView = acceptView(view);
+			if (acceptView) {
+				result.put(bounds, descriptor);
+			}
+		} else if (nodeElement instanceof DDiagramElement) {
+			final DDiagramElement element = (DDiagramElement) nodeElement;
+			final EObject eObject = getSemanticElement(element);
+
+			if (view instanceof Edge) 
+			{
+				// If the view is an Edge, so handle the bounds of it center label
+				GraphicalEditPart gep = (GraphicalEditPart) registry.get(view);
+				if (gep.getFigure() instanceof ViewEdgeFigure) 
+				{
+					Rectangle originalBound = ((ViewEdgeFigure) gep.getFigure()).getFigureViewEdgeNameFigure().getBounds();
+					bounds = new Rectangle(originalBound);
+					scale(bounds);
+					if (bounds != null) 
+					{
+						bounds.performTranslate(deltaX, deltaY);
+					}
+				}
+			}
+
+			final boolean acceptView = acceptView(view);
+			
+			// Handle current view
+			if (acceptView && helpers.stream().anyMatch(help -> help.select(eObject)))
+			{
+				result.put(bounds, eObject);
+			}
+		}
+		return result;
+	}
 
 	@SuppressWarnings("unchecked")
 	private Map<Rectangle, EObject> getResultMap() {
@@ -436,41 +490,16 @@ public class CoordinatesCalculator {
 			int deltaX = imageBounds.getTopRight().x - width;
 			int deltaY = imageBounds.getBottomLeft().y - height;
 
-			Map<Rectangle, EObject> resultat = new LinkedHashMap<>();
+			Map<Rectangle, EObject> result = new LinkedHashMap<>();
 
-			// Handle Edges
-			for (Object object : gmfDiagram.getEdges()) 
-			{
-				if (! edgeHasCenterLabel((View) object, registry)) 
-				{
-					continue; 
-				}
-
-				if (object instanceof View)
-				{
-					final Map<Rectangle, EObject> rectanglesMap = getRectanglesMap((View) object, registry, -deltaX, -deltaY);
-					if (! rectanglesMap.isEmpty())
-					{
-						resultat.putAll(rectanglesMap);
-					}
-				}
-			}
-
-			// Handle Nodes
-			for (Object object : gmfDiagram.getChildren()) 
-			{
-				if (object instanceof View)
-				{
-					final Map<Rectangle, EObject> rectanglesMap = getRectanglesMap((View) object, registry, -deltaX, -deltaY);
-					if (! rectanglesMap.isEmpty())
-					{
-						resultat.putAll(rectanglesMap);
-					}
-				}
-			}
+			SiriusDiagramSVGGenerator gen = new SiriusDiagramSVGGenerator(diagramEP);
+			List<PartPositionInfo> infos = gen.getDiagramPartInfo();
+			infos.stream().filter(info -> info.getView().getElement() != null).forEach(info -> {
+				result.putAll(getInfoRectangleMap(info, registry, -deltaX, -deltaY));
+			});
 
 			cleanGenerationData(gmfDiagram, shell, diagramEP);
-			return resultat;
+			return result;
 		}
 		return Collections.emptyMap();
 	}
