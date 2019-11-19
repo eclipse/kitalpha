@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2019 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -295,33 +295,33 @@ public final class EscapeChars {
 		if (value != null) {
 			// Translating characters into the html form. Examples: new line ->
 			// <br>, "!" -> "&#33;", etc.
-			value = value.replaceAll("«", "&laquo;");
-			value = value.replaceAll("»", "&raquo;");
-			value = value.replaceAll("“", "&ldquo;");
-			value = value.replaceAll("”", "&rdquo;");
-			value = value.replaceAll("„", "&bdquo;");
-			value = value.replaceAll("‘", "&lsquo;");
-			value = value.replaceAll("’", "&rsquo;");
-			value = value.replaceAll("‚", "&sbquo;");
-			value = value.replaceAll("…", "&hellip;");
-			value = value.replaceAll("´", "&acute;");
-			value = value.replaceAll("é", "&eacute;");
-			value = value.replaceAll("è", "&egrave;");
-			value = value.replaceAll("ç", "&ccedil;");
-			value = value.replaceAll("à", "&agrave;");
-			value = value.replaceAll("ù", "&ugrave;");
+			value = value.replaceAll("Â«", "&laquo;");
+			value = value.replaceAll("Â»", "&raquo;");
+			value = value.replaceAll("Â“", "&ldquo;");
+			value = value.replaceAll("Â”", "&rdquo;");
+			value = value.replaceAll("Â„", "&bdquo;");
+			value = value.replaceAll("Â‘", "&lsquo;");
+			value = value.replaceAll("Â’", "&rsquo;");
+			value = value.replaceAll("Â‚", "&sbquo;");
+			value = value.replaceAll("Â…", "&hellip;");
+			value = value.replaceAll("Â´", "&acute;");
+			value = value.replaceAll("Ã©", "&eacute;");
+			value = value.replaceAll("Ã¨", "&egrave;");
+			value = value.replaceAll("Ã§", "&ccedil;");
+			value = value.replaceAll("Ã ", "&agrave;");
+			value = value.replaceAll("Ã¹", "&ugrave;");
 
-			value = value.replaceAll("â", "&acirc;");
-			value = value.replaceAll("ê", "&ecirc;");
-			value = value.replaceAll("î", "&icirc;");
-			value = value.replaceAll("ô", "&ocirc;");
-			value = value.replaceAll("û", "&ucirc;");
-			value = value.replaceAll("ä", "&auml;");
-			value = value.replaceAll("ë", "&euml;");
-			value = value.replaceAll("ï", "&iuml;");
-			value = value.replaceAll("ö", "&ouml;");
-			value = value.replaceAll("ü", "&uuml;");
-			value = value.replaceAll("°", "&deg;");
+			value = value.replaceAll("Ã¢", "&acirc;");
+			value = value.replaceAll("Ãª", "&ecirc;");
+			value = value.replaceAll("Ã®", "&icirc;");
+			value = value.replaceAll("Ã´", "&ocirc;");
+			value = value.replaceAll("Ã»", "&ucirc;");
+			value = value.replaceAll("Ã¤", "&auml;");
+			value = value.replaceAll("Ã«", "&euml;");
+			value = value.replaceAll("Ã¯", "&iuml;");
+			value = value.replaceAll("Ã¶", "&ouml;");
+			value = value.replaceAll("Ã¼", "&uuml;");
+			value = value.replaceAll("Â°", "&deg;");
 
 		}
 		return value;
@@ -542,6 +542,10 @@ public final class EscapeChars {
 			character = iterator.next();
 		}
 		return result.toString();
+	}
+	
+	public static String removeNewline(String aText) {
+		return aText.replaceAll("\\r\\n|\\n|\\r", "");
 	}
 
 	/**

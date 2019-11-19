@@ -1,15 +1,14 @@
-//Generated with EGF 1.5.1.v20180423-0901
+//Generated with EGF 1.6.0.201805040915
 package org.polarsys.kitalpha.doc.gen.business.core.searchIndex;
 
 import java.util.Map.Entry;
 import org.polarsys.kitalpha.doc.gen.business.core.services.IndexItem;
-import org.eclipse.egf.common.helper.*;
 import java.util.*;
-import org.eclipse.emf.ecore.*;
 import org.eclipse.egf.model.pattern.*;
 import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 import org.polarsys.kitalpha.doc.gen.business.core.util.DocGenHtmlUtil;
+import org.polarsys.kitalpha.doc.gen.business.core.util.EscapeChars;
 
 public class SearchIndex extends org.polarsys.kitalpha.doc.gen.business.core.doccontent.ElementDocContent {
 	protected static String nl;
@@ -69,9 +68,9 @@ public class SearchIndex extends org.polarsys.kitalpha.doc.gen.business.core.doc
 			+ NL + "\t      \t\t\t} else {" + NL
 			+ "\t      \t\t\t\tt = t.concat(value4 + \" <a href='concepts/\" + value3 + \".html' target='content'>\" + value2 + \"</a><br/>\");"
 			+ NL + "\t      \t\t\t}\t      \t\t" + NL + "\t      \t\t}" + NL + "\t      \t}" + NL + "\t      }" + NL
-			+ "\t      " + NL + "\t      $(\"#p2\").html(t);" + NL + "\t      " + NL + "\t      element.value = value;"
-			+ NL + "\t    }).keyup();" + NL + "\t    " + NL + "\t</script>" + NL + "\t</div>" + NL + "</body>" + NL
-			+ "</html>";
+			+ "\t      " + NL + "\t      $(\"#p2\").html(t);" + NL + "\t      if (element != null) {" + NL
+			+ "\t      \telement.value = value;" + NL + "\t      }" + NL + "\t    }).keyup();" + NL + "\t    " + NL
+			+ "\t</script>" + NL + "\t</div>" + NL + "</body>" + NL + "</html>";
 	protected final String TEXT_19 = NL;
 	protected final String TEXT_20 = NL;
 
@@ -143,7 +142,8 @@ public class SearchIndex extends org.polarsys.kitalpha.doc.gen.business.core.doc
 			stringBuffer.append(TEXT_6);
 			stringBuffer.append(count);
 			stringBuffer.append(TEXT_7);
-			stringBuffer.append(entry.getValue().getConceptName().replace("\"", "\\\""));
+			stringBuffer.append(EscapeChars
+					.removeNewline(EscapeChars.forHTML(entry.getValue().getConceptName().replace("\"", "\\\""))));
 			stringBuffer.append(TEXT_8);
 			stringBuffer.append(listCount);
 			stringBuffer.append(TEXT_9);
