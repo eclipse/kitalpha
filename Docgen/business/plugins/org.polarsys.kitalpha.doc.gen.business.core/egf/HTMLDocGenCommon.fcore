@@ -777,8 +777,6 @@
         description="">
       <invocations xmi:id="_G3y14GLrEeGSts2PMSEe3w" name="Collect Concepts" invokedActivity="#_OgAy8GOEEeGIkcGFUTU4rg">
         <invocationContractContainer xmi:id="_HFwV8WOGEeGomZzMJF2WIA">
-          <invocationContracts xmi:id="_Ipn8cGOGEeGomZzMJF2WIA" targetInvocationContract="#_OoUBEGOJEeGomZzMJF2WIA"
-              invokedContract="#_wV5vUGOEEeGIkcGFUTU4rg"/>
           <invocationContracts xmi:id="_O-t_IB41Eemlca6iW58mwA" targetInvocationContract="#_VPwfYB41Eemlca6iW58mwA #_f1tbQB8CEemlca6iW58mwA"
               invokedContract="#_tLGbAB4xEemlca6iW58mwA"/>
         </invocationContractContainer>
@@ -790,10 +788,6 @@
               invokedContract="#_5-WV0GO8EeGomZzMJF2WIA"/>
           <invocationContracts xmi:id="_HoHxQGOIEeGomZzMJF2WIA" factoryComponentContract="#_dNnrwF4yEeGfnvXFIF-hXQ"
               invokedContract="#_hzZzoGLeEeGSts2PMSEe3w"/>
-          <invocationContracts xmi:id="_OoUBEGOJEeGomZzMJF2WIA" sourceInvocationContract="#_Ipn8cGOGEeGomZzMJF2WIA"
-              invokedContract="#_-TL8EGLgEeGSts2PMSEe3w"/>
-          <invocationContracts xmi:id="_Hq9VABDwEeSc8Mt2_Hc9FA" targetInvocationContract="#_TlEWUGOGEeGomZzMJF2WIA"
-              invokedContract="#_FM3h8BDwEeSc8Mt2_Hc9FA"/>
           <invocationContracts xmi:id="_VPwfYB41Eemlca6iW58mwA" sourceInvocationContract="#_O-t_IB41Eemlca6iW58mwA"
               invokedContract="#__m0vcB4xEemlca6iW58mwA"/>
         </invocationContractContainer>
@@ -814,8 +808,6 @@
           </invocationContracts>
           <invocationContracts xmi:id="_Vw2pIF47EeGfnvXFIF-hXQ" factoryComponentContract="#_X9cLkF4yEeGfnvXFIF-hXQ"
               invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Pattern_task.fcore#_Y2fXwUhpEd-A7KV9v5yLhw"/>
-          <invocationContracts xmi:id="_TlEWUGOGEeGomZzMJF2WIA" sourceInvocationContract="#_Hq9VABDwEeSc8Mt2_Hc9FA"
-              invokedContract="#_mOorwGOBEeGIkcGFUTU4rg"/>
           <invocationContracts xmi:id="_f1tbQB8CEemlca6iW58mwA" sourceInvocationContract="#_O-t_IB41Eemlca6iW58mwA"
               invokedContract="#_O-UfAB8QEemlca6iW58mwA"/>
         </invocationContractContainer>
@@ -1019,13 +1011,6 @@
       <contracts xmi:id="_hzZzoGLeEeGSts2PMSEe3w" name="outputFolder" mandatory="true">
         <type xmi:type="types:TypeString" xmi:id="_F9MP0GLgEeGSts2PMSEe3w"/>
       </contracts>
-      <contracts xmi:id="_-TL8EGLgEeGSts2PMSEe3w" name="concepts" mandatory="true">
-        <type xmi:type="types:TypeList" xmi:id="_Alv0kGLhEeGSts2PMSEe3w"/>
-      </contracts>
-      <contracts xmi:id="_FM3h8BDwEeSc8Mt2_Hc9FA" name="concepts.with.pages" mandatory="true"
-          mode="Out">
-        <type xmi:type="types:TypeList" xmi:id="_FM3h8RDwEeSc8Mt2_Hc9FA"/>
-      </contracts>
       <contracts xmi:id="__m0vcB4xEemlca6iW58mwA" name="indexItems" mode="In_Out">
         <type xmi:type="types:TypeMap" xmi:id="_MkNL4B4yEemlca6iW58mwA"/>
       </contracts>
@@ -1034,9 +1019,6 @@
   <ftask:Task xmi:id="_OgAy8GOEEeGIkcGFUTU4rg" name="HTMLDocGen.Collect Concepts Task"
       kind="java" implementation="org.polarsys.kitalpha.doc.gen.business.core.task.CollectConceptsTask">
     <contractContainer xmi:id="_rENMMGOEEeGIkcGFUTU4rg">
-      <contracts xmi:id="_wV5vUGOEEeGIkcGFUTU4rg" name="concepts" mode="Out">
-        <type xmi:type="types:TypeList" xmi:id="_yO_X4GOEEeGIkcGFUTU4rg"/>
-      </contracts>
       <contracts xmi:id="_tLGbAB4xEemlca6iW58mwA" name="indexItems" mode="Out">
         <type xmi:type="types:TypeMap" xmi:id="_vifwMB4xEemlca6iW58mwA"/>
       </contracts>
@@ -1050,9 +1032,6 @@
       </contracts>
       <contracts xmi:id="_l0E2sGOBEeGIkcGFUTU4rg" name="outputFolder" mandatory="true">
         <type xmi:type="types:TypeString" xmi:id="_qFRJoGOCEeGIkcGFUTU4rg"/>
-      </contracts>
-      <contracts xmi:id="_mOorwGOBEeGIkcGFUTU4rg" name="concepts" mandatory="true">
-        <type xmi:type="types:TypeList" xmi:id="_rFJSQGOCEeGIkcGFUTU4rg"/>
       </contracts>
       <contracts xmi:id="_O-UfAB8QEemlca6iW58mwA" name="IndexItem">
         <type xmi:type="types:TypeMap" xmi:id="_RPBWUB8QEemlca6iW58mwA"/>
