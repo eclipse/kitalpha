@@ -543,6 +543,10 @@ public final class EscapeChars {
 		}
 		return result.toString();
 	}
+	
+	public static String removeNewline(String aText) {
+		return aText.replaceAll("\\r\\n|\\n|\\r", "");
+	}
 
 	/**
 	 * Replace characters having special meaning in regular expressions with
