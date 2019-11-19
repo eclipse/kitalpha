@@ -24,7 +24,6 @@ import java.util.Optional;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
@@ -45,6 +44,7 @@ import org.polarsys.kitalpha.doc.gen.business.core.Activator;
 import org.polarsys.kitalpha.doc.gen.business.core.services.IndexItem;
 import org.polarsys.kitalpha.doc.gen.business.core.util.DocGenHtmlUtil;
 import org.polarsys.kitalpha.doc.gen.business.core.util.EscapeChars;
+import org.polarsys.kitalpha.doc.gen.business.core.util.MonitorServices;
 
 
 public class IndexingConceptsTask implements ITaskProduction {
@@ -135,9 +135,6 @@ public class IndexingConceptsTask implements ITaskProduction {
 		String outputFolder = productionContext.getInputValue("outputFolder", String.class);
 		Map<String, IndexItem> indexItems = productionContext.getInputValue("indexItems", Map.class);
 		
-		// Add all real concept to be cleaned
-		List<String> concepts = indexItems.values().stream().map(item -> item.getConceptName()).collect(Collectors.toList());
-		
 		if (DO_TRACE) {
 			logger.info(INDEXING_PREF + "Start indexing at: " + Calendar.getInstance().get(Calendar.MINUTE));
 			logger.info(INDEXING_PREF + "Project: " + projectName);
@@ -150,18 +147,16 @@ public class IndexingConceptsTask implements ITaskProduction {
 		IFolder folder = project.getFolder(new Path(outputFolder));
 		try {
 			IResource[] content = folder.members();
-			
+
+			MonitorServices.init(content.length);
 			indexResources(indexItems, content);
-
-			concepts = removeConceptsWithEmptyPages(concepts);
-
-			productionContext.setOutputValue("concepts.with.pages", concepts);
-
+			
 			if (DO_TRACE) {
 				logger.info(INDEXING_PREF + "Starting generating index pages");
 			}
 
-			generatingConceptsPages(projectName, outputFolder, concepts, indexItems);
+			MonitorServices.init(indexItems.size());
+			generatingConceptsPages(projectName, outputFolder, indexItems, monitor);
 
 			if (DO_TRACE) {
 				logger.info(INDEXING_PREF + "End generating index pages");
@@ -180,6 +175,7 @@ public class IndexingConceptsTask implements ITaskProduction {
 			{
 				indexFile(indexItems, currentResource);
 			}
+			MonitorServices.workSubMonitor("Computing index pages content");
 		}
 	}
 
@@ -199,84 +195,76 @@ public class IndexingConceptsTask implements ITaskProduction {
 		}
 	}
 
-	/**
-	 * [BZE] this method keep only concepts with search index page containing some links
-	 */
-	public List<String> removeConceptsWithEmptyPages(List<String> concepts){
-		List<String> conceptsToRemove = new ArrayList<String>();
-		
-		collectEmptyPages(concepts, conceptsToRemove);
-
-		doClean(concepts, conceptsToRemove);
-
-		return concepts;
-	}
-
-	private void doClean(List<String> concepts, List<String> conceptsToRemove) {
-		if (!conceptsToRemove.isEmpty()) {
-			concepts.removeAll(conceptsToRemove);
-		}
-	}
-
-	private void collectEmptyPages(List<String> concepts, List<String> conceptsToRemove) {
-		for (String currentConcept : concepts) 
-		{
-			boolean noPage = true;
-			final List<String> inPages = conceptsToPageTitle.get(currentConcept);
-			noPage = inPages == null || inPages.isEmpty(); 
-
-			boolean noPageParagraph = true;
-			final List<String> inPageParagraph = conceptsToPageParagraph.get(currentConcept);
-			noPageParagraph = inPageParagraph == null || inPageParagraph.isEmpty();
-
-			boolean noPageList = true;
-			final List<String> inList = conceptsToPageList.get(currentConcept);
-			noPageList = inList == null || inList.isEmpty(); 
-
-			boolean noPageTable = true;
-			final List<String> inTable = conceptsToPageTable.get(currentConcept);
-			noPageTable = inTable == null || inTable.isEmpty(); 
-
-			if (noPage && noPageParagraph && noPageList && noPageTable) {
-				conceptsToRemove.add(currentConcept);
-			}
-		}
-	}
-
 	private void generatingConceptsPages(String projectName,
-			String outputFolder, List<String> concepts, Map<String, IndexItem> indexItems) {
+			String outputFolder, Map<String, IndexItem> indexItems, IProgressMonitor monitor) {
 		int i = 0;
+		List<String> indexItemsToRemove = new ArrayList<String>();
 		for (Entry<String, IndexItem> currentConcept : indexItems.entrySet()) 
 		{
-			i ++;
-			StringBuffer buffer = new StringBuffer();
-			buffer.append(HEADER);
-			buffer.append("<h1>" + currentConcept.getValue().getConceptName() + "</h1>");
-			
-			generateLinkTowardConcept(indexItems, currentConcept.getValue(), buffer);
+			if (!isToRemoveIndexItem(currentConcept.getValue())) {
+				i ++;
+				StringBuffer buffer = new StringBuffer();
+				buffer.append(HEADER);
+				buffer.append("<h1>" + currentConcept.getValue().getConceptName() + "</h1>");
+				
+				generateLinkTowardConcept(indexItems, currentConcept.getValue(), buffer);
+	
+				// Title
+				List<String> currentConceptPages = conceptsToPageTitle.get(currentConcept.getValue());
+				generateTitle(currentConcept.getValue(), indexItems, buffer, currentConceptPages);
+	
+				// Paragraph
+				currentConceptPages = conceptsToPageParagraph.get(currentConcept.getValue());
+				generateParagraph(currentConcept.getValue(), indexItems, buffer, currentConceptPages);
+	
+				// List
+				currentConceptPages = conceptsToPageList.get(currentConcept.getValue());
+				generateList(currentConcept.getValue(), indexItems, buffer, currentConceptPages);
+	
+				// Table
+				currentConceptPages = conceptsToPageTable.get(currentConcept.getValue());
+				generateTable(currentConcept.getValue(), indexItems, buffer, currentConceptPages);
+				
+				
+				buffer.append(FOOTER);
+	
+				DocGenHtmlUtil.writeFilePatternContent(i+"_"+DocGenHtmlUtil.getValidFileName(currentConcept.getValue().getConceptName()),
+						projectName, outputFolder + "/concepts", buffer.toString());
+			} else {
+				indexItemsToRemove.add(currentConcept.getKey());
+			}
+			MonitorServices.workSubMonitor("Generating index pages");
+		}
 
-			// Title
-			List<String> currentConceptPages = conceptsToPageTitle.get(currentConcept.getValue());
-			generateTitle(currentConcept.getValue(), indexItems, buffer, currentConceptPages);
+		// Clean IndexItems
+		doClean(indexItems, indexItemsToRemove);
+	}
+	
+	private boolean isToRemoveIndexItem (IndexItem item) {
+		boolean noPage = true;
+		final List<String> inPages = conceptsToPageTitle.get(item);
+		noPage = inPages == null || inPages.isEmpty(); 
 
-			// Paragraph
-			currentConceptPages = conceptsToPageParagraph.get(currentConcept.getValue());
-			generateParagraph(currentConcept.getValue(), indexItems, buffer, currentConceptPages);
+		boolean noPageParagraph = true;
+		final List<String> inPageParagraph = conceptsToPageParagraph.get(item);
+		noPageParagraph = inPageParagraph == null || inPageParagraph.isEmpty();
 
-			// List
-			currentConceptPages = conceptsToPageList.get(currentConcept.getValue());
-			generateList(currentConcept.getValue(), indexItems, buffer, currentConceptPages);
+		boolean noPageList = true;
+		final List<String> inList = conceptsToPageList.get(item);
+		noPageList = inList == null || inList.isEmpty(); 
 
-			// Table
-			currentConceptPages = conceptsToPageTable.get(currentConcept.getValue());
-			generateTable(currentConcept.getValue(), indexItems, buffer, currentConceptPages);
-			
-			
-			buffer.append(FOOTER);
+		boolean noPageTable = true;
+		final List<String> inTable = conceptsToPageTable.get(item);
+		noPageTable = inTable == null || inTable.isEmpty(); 
+		
+		return noPage && noPageParagraph && noPageList && noPageTable;
+	}
 
-			DocGenHtmlUtil.writeFilePatternContent(i+"_"+DocGenHtmlUtil.getValidFileName(currentConcept.getValue().getConceptName()),
-					projectName, outputFolder + "/concepts", buffer.toString());
-
+	private void doClean(Map<String, IndexItem> indexItems, List<String> indexItemsToRemove) {
+		if (!indexItemsToRemove.isEmpty()) {
+			for (String item: indexItemsToRemove) {
+				indexItems.remove(item);
+			}
 		}
 	}
 

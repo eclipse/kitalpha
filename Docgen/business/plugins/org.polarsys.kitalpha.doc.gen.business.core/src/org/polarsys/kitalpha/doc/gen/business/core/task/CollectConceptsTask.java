@@ -34,7 +34,6 @@ public class CollectConceptsTask implements ITaskProduction {
 
 	public void doExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
-		List<String> concepts = IndexerService.INSTANCE.getSortedElements();
 		Map<String, IndexItem> indexItems = IndexerService.INSTANCE.getElementsToIndexItems();
 		
 		/*
@@ -54,11 +53,6 @@ public class CollectConceptsTask implements ITaskProduction {
 		for (Entry<String, IndexItem> entry : entryList) {
 			sortedMap.put(entry.getKey(), entry.getValue());
 		}
-		
-		/*
-		 * Concepts List not used. To delete
-		 */
-		productionContext.setOutputValue("concepts", concepts);
 		
 		productionContext.setOutputValue("indexItems", sortedMap);
 
