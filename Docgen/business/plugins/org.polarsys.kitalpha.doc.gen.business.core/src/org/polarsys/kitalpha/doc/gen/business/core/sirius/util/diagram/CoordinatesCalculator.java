@@ -640,7 +640,10 @@ public class CoordinatesCalculator {
 	}
 
 	private EObject getSemanticElement(DDiagramElement element) {
-		Collection<EObject> semanticObjects = helpers.stream().map(help -> help.getSemanticElement(element)).collect(Collectors.toSet());
+		Collection<EObject> semanticObjects = helpers.stream()
+				.map(help -> help.getSemanticElement(element))
+				.filter(semElem -> semElem != null)
+				.collect(Collectors.toSet());
 		if (!semanticObjects.isEmpty()) {
 			IDiagramHelper semanticObjectHelper = null;
 			for (EObject object: semanticObjects) {

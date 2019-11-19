@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2019 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,6 +15,7 @@ import java.net.URL;
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
@@ -94,6 +95,11 @@ public class LabelProviderHelper {
 			if (iconFileTemp != null) {
 				iconFile = iconFileTemp;
 			}
+			try {
+				iconFolder.refreshLocal(IResource.DEPTH_ONE, MONITOR);
+			} catch (CoreException e) {
+				Activator.logWarning(e.getMessage(), e);
+			}
 		}
 		return iconFile.getName();
 	}
@@ -147,8 +153,15 @@ public class LabelProviderHelper {
 
 	private static IFolder getIconFolder(String projectName, String folderName) {
 		final IPath path = new Path(projectName).append(folderName);
-		final IContainer parent = ResourcesPlugin.getWorkspace().getRoot()
-				.getFolder(path).getParent();
+		final IFolder pathFolder = ResourcesPlugin.getWorkspace().getRoot().getFolder(path);
+		if (!pathFolder.exists()) {
+			try {
+				pathFolder.create(true, true, MONITOR);
+			} catch (CoreException e) {
+				Activator.logWarning(e.getMessage(), e);
+			}
+		}
+		final IContainer parent = pathFolder.getParent();
 		final IPath iconPath = parent.getFullPath().append(ICON_FOLDER_NAME);
 		final IFolder iconFolder = ResourcesPlugin.getWorkspace().getRoot()
 				.getFolder(iconPath);
