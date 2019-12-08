@@ -249,7 +249,7 @@ public class MDERichTextEditor extends EditorPart
     this.parent = parent;
     
 		parent.setLayout(new GridLayout());
-		this.widget = (new MDERichTextFactory()).createEditorRichTextWidget(parent);
+		this.widget = getRichTextFactory().createEditorRichTextWidget(parent);
 		this.widget.addPropertyChangeListener(this);
 
 		MDERichTextEditorInput input = (MDERichTextEditorInput) getEditorInput();
@@ -409,5 +409,10 @@ public class MDERichTextEditor extends EditorPart
 			firePropertyChange(PROP_DIRTY);
 			firePropertyChange(PROP_TITLE);
 		}
+	}
+	
+
+	protected MDERichTextFactory getRichTextFactory() {
+		return new MDERichTextFactory();
 	}
 }
