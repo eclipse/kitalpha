@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017, 2018 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2018, 2019 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -16,6 +16,7 @@ import java.beans.PropertyChangeListener;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.swt.events.FocusListener;
+import org.eclipse.swt.events.KeyListener;
 import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.widgets.Composite;
 
@@ -190,16 +191,32 @@ public interface MDERichTextWidget extends PropertyChangeListener {
 	
 	/**
 	 * Add Modify listener to the underlying Rich Text control
+	 * 
 	 * @param listener to add
 	 */
 	void addModifyListener(ModifyListener listener);
 	
 	/**
 	 * Remove Modify listener to the underlying Rich Text control
+	 * 
 	 * @param listener to remove
 	 */
 	void removeModifyListener(ModifyListener listener);
 	
+	/**
+	 * Add Key listener to the underlying Rich Text control
+	 * 
+	 * @param listener to add
+	 */
+	void addKeyListener(KeyListener listener);
+	
+	/**
+	 * Remove Key listener to the underlying Rich Text control
+	 * 
+	 * @param listener to remove
+	 */
+	void removeKeyListener(KeyListener listener);
+
 	/**
 	 * Add property change listener
 	 * @param listener

@@ -21,6 +21,7 @@ import org.eclipse.swt.browser.Browser;
 import org.eclipse.swt.browser.ProgressEvent;
 import org.eclipse.swt.browser.ProgressListener;
 import org.eclipse.swt.events.FocusListener;
+import org.eclipse.swt.events.KeyListener;
 import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.widgets.Composite;
 import org.polarsys.kitalpha.richtext.common.impl.BrowserBasedMDERichTextWidgetImpl;
@@ -133,6 +134,7 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
         return editor.getEditorConfiguration();
 	}
 
+	@Override
 	public void setDirtyStateUpdated(boolean dirtyStateUpdated) {
 		this.dirtyStateUpdated = dirtyStateUpdated;
 		// Inform the editor that the dirty state has been updated
@@ -140,6 +142,7 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 		firePropertyChangeEvent(event);
 	}
 
+	@Override
 	public boolean isDirtyStateUpdated() {
 		return dirtyStateUpdated;
 	}
@@ -359,6 +362,16 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 	@Override
 	public void removeModifyListener(ModifyListener listener) {
 		editor.removeModifyListener(listener);
+	}
+
+	@Override
+	public void addKeyListener(KeyListener listener) {
+		editor.addKeyListener(listener);
+	}
+
+	@Override
+	public void removeKeyListener(KeyListener listener) {
+		editor.removeKeyListener(listener);
 	}
 
 	@Override
