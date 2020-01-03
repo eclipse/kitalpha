@@ -151,7 +151,7 @@
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.egf.sdk.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.egf.sdk.feature.source.feature.group" version="0.0.0"/>
-      <repository id="EGFSdk" location="https://download.eclipse.org/egf/updates/1.6.1/2019-06/"/>
+      <repository id="EGFSdk" location="https://download.eclipse.org/egf/updates/1.6.2/2019-06/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.nebula.widgets.richtext.feature.feature.group" version="0.0.0"/>
