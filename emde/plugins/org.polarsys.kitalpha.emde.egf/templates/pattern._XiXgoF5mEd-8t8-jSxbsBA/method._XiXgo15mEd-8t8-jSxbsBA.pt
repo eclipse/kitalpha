@@ -338,7 +338,7 @@ public class <%=genClass.getProviderClassName()%>
 	public void notifyChanged(Notification notification)
 	{
 		updateChildren(notification);
-<%if (!genClass.getLabelNotifyFeatures().isEmpty() || !genClass.getContentNotifyFeatures().isEmpty() || !genClass.getLabelAndContentNotifyFeatures().isEmpty()) {%>
+<%boolean hasSwitch = !genClass.getLabelNotifyFeatures().isEmpty() || !genClass.getContentNotifyFeatures().isEmpty() || !genClass.getLabelAndContentNotifyFeatures().isEmpty(); if (hasSwitch) {%>
 
 		switch (notification.getFeatureID(<%=genClass.getRawImportedInterfaceName()%>.class))
 		{
@@ -363,16 +363,16 @@ public class <%=genClass.getProviderClassName()%>
 				fireNotifyChanged(new <%=genModel.getImportedName("org.eclipse.emf.edit.provider.ViewerNotification")%>(notification, notification.getNotifier(), true, true));
 				return;
   <%}%>
-<%if (forceDefaultCase) {%>
+  <%if (forceDefaultCase) {%>
 			default:
-<%} else { // {%>
+  <%} else { // {%>
 		}
+  <%} // }%>
 <%}%>
-<%=indentDefaultCase%>		super.notifyChanged(notification);
-<%if (forceDefaultCase) { // {%>
+<%=hasSwitch ? indentDefaultCase : ""%>		super.notifyChanged(notification);
+<%if (hasSwitch && forceDefaultCase) { // {%>
 <%=indentDefaultCase%>		return;
 			}
-<%} // }%>
 <%}%>
 	}
 
@@ -465,6 +465,6 @@ public class <%=genClass.getProviderClassName()%>
 	}
 
 <%}%>
-<%@ egf:patternCall patternId="platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#LogicalName=org.eclipse.egf.emf.pattern.edit.call.ItemProvider.ItemProvider.insert" args="genClass:genClass,genPackage:genPackage,genModel:genModel,isJDK50:isJDK50,forceDefaultCase:forceDefaultCase,indentDefaultCase:indentDefaultCase,_List:_List"%>
+<%@ egf:patternCall patternId="platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#LogicalName=org.eclipse.egf.emf.pattern.edit.call.ItemProvider.ItemProvider.insert" args="genClass:genClass,genPackage:genPackage,genModel:genModel,isJDK50:isJDK50,forceDefaultCase:forceDefaultCase,indentDefaultCase:indentDefaultCase,_List:_List,hasSwitch:hasSwitch"%>
 }
 <%genModel.emitSortedImports();%>

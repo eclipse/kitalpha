@@ -158,7 +158,7 @@ location amalgam "https://download.eclipse.org/modeling/amalgam/updates/stable/1
 	org.eclipse.amalgam.explorer.contextual.core.source.feature.group lazy
 }
 
-location EGFSdk "https://download.eclipse.org/egf/updates/1.6.1/2019-06/" {
+location EGFSdk "https://download.eclipse.org/egf/updates/1.6.2/2019-06/" {
 	org.eclipse.egf.sdk.feature.feature.group lazy
 	org.eclipse.egf.sdk.feature.source.feature.group lazy
 }
