@@ -187,7 +187,7 @@ location amalgam "https://download.eclipse.org/modeling/amalgam/updates/stable/1
 	org.eclipse.amalgam.explorer.contextual.core.source.feature.group lazy
 }
 
-location EcoreTools "http://download.eclipse.org/ecoretools/updates/milestones/3.3.0RC4/oxygen/" {
+location EcoreTools "http://download.eclipse.org/ecoretools/updates/releases/3.3.0/oxygen/" {
 	org.eclipse.emf.ecoretools.sdk.feature.group lazy
 	org.eclipse.emf.ecoretools.design lazy
 	org.eclipse.emf.ecoretools.explorer.contextual.feature.group lazy
