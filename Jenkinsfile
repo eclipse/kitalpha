@@ -13,11 +13,6 @@ pipeline {
         }
       }
     }
-    stage('Archive artifacts') {
-      steps {
-        archiveArtifacts artifacts: 'releng/plugins/org.polarsys.kitalpha.releng.samplecomponent.updatesite/target/Manifestcomponent.txt, releng/plugins/org.polarsys.kitalpha.releng.samplecomponent.updatesite/target/repository/**,releng/plugins/org.polarsys.kitalpha.releng.sdk.product/target/Manifestproducts.txt,releng/plugins/org.polarsys.kitalpha.releng.sdk.updatesite/target/Manifestsdk.txt,releng/plugins/org.polarsys.kitalpha.releng.runtime.updatesite/target/Manifestruntime.txt,releng/plugins/org.polarsys.kitalpha.releng.runtime.core.updatesite/target/Manifestruntimecore.txt,releng/plugins/org.polarsys.kitalpha.releng.runtime.core.updatesite/target/repository/**,releng/plugins/org.polarsys.kitalpha.releng.runtime.updatesite/target/repository/**,releng/plugins/org.polarsys.kitalpha.releng.sdk.updatesite/target/repository/**'
-      }
-    }
     stage('Deploy') {
       when {
          not { changeRequest() }
@@ -52,7 +47,7 @@ pipeline {
   }
   post {
     always {
-       archiveArtifacts artifacts: '**/*.log,**/*.layout'
+	   archiveArtifacts artifacts: '**/*.log, **/*.layout, releng/plugins/org.polarsys.kitalpha.releng.samplecomponent.updatesite/target/repository/**, releng/plugins/org.polarsys.kitalpha.releng.runtime.core.updatesite/target/repository/**,releng/plugins/org.polarsys.kitalpha.releng.runtime.updatesite/target/repository/**,releng/plugins/org.polarsys.kitalpha.releng.sdk.updatesite/target/repository/**, releng/plugins/org.polarsys.kitalpha.releng.sdk.product/target/products/*.zip'
        junit '**/target/surefire-reports/*.xml'
     }
   }
