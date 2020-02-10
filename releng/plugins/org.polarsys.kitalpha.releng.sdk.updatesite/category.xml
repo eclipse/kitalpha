@@ -1,237 +1,237 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/org.polarsys.kitalpha.sdk.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.sdk.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.sdk.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.sdk.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.sdk.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.sdk.feature.source" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.sdk.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.sdk.feature.source" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.ad.sdk.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.ad.sdk.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.ad.sdk.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.ad.sdk.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.ad.ta.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.ad.ta.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.ad.ta.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.ad.ta.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.ad.dsl.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.ad.dsl.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.ad.dsl.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.ad.dsl.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.vp.componentsample.example.installer.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.vp.componentsample.example.installer.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.vp.componentsample.example.installer.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.vp.componentsample.example.installer.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.representation.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.representation.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.representation.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.representation.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.doc.gen.business.ecore.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.doc.gen.business.ecore.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.doc.gen.business.ecore.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.doc.gen.business.ecore.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.emde.sdk.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.emde.sdk.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.emde.sdk.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.emde.sdk.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.cadence.examples.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.cadence.examples.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.cadence.examples.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.cadence.examples.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.composer.examples.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.composer.examples.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.composer.examples.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.composer.examples.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.composer.componentsample.installer.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.composer.componentsample.installer.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.composer.componentsample.installer.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.composer.componentsample.installer.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.transposer.examples.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.transposer.examples.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.transposer.examples.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.transposer.examples.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.transposer.componentsample.installer.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.transposer.componentsample.installer.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.transposer.componentsample.installer.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.transposer.componentsample.installer.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.product.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.product.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.product.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.product.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.runtime.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.runtime.feature.source" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.runtime.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.runtime.feature.source" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.runtime.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.runtime.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.runtime.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.runtime.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.accuracy.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.accuracy.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.accuracy.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.accuracy.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.accuracy.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.accuracy.feature.source" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.accuracy.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.accuracy.feature.source" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.ad.runtime.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.ad.runtime.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.ad.runtime.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.ad.runtime.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.ad.runtime.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.ad.runtime.feature.source" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.ad.runtime.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.ad.runtime.feature.source" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.cadence.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.cadence.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.cadence.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.cadence.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.cadence.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.cadence.feature.source" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.cadence.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.cadence.feature.source" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.composer.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.composer.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.composer.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.composer.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.composer.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.composer.feature.source" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.composer.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.composer.feature.source" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.doc.gen.business.core.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.doc.gen.business.core.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.doc.gen.business.core.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.doc.gen.business.core.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.doc.gen.business.core.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.doc.gen.business.core.feature.source" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.doc.gen.business.core.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.doc.gen.business.core.feature.source" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.emde.explorer.contextual.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.emde.explorer.contextual.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.emde.explorer.contextual.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.emde.explorer.contextual.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.emde.explorer.contextual.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.emde.explorer.contextual.feature.source" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.emde.explorer.contextual.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.emde.explorer.contextual.feature.source" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.emde.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.emde.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.emde.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.emde.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.emde.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.emde.feature.source" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.emde.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.emde.feature.source" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.emde.ui.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.emde.ui.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.emde.ui.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.emde.ui.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.emde.ui.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.emde.ui.feature.source" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.emde.ui.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.emde.ui.feature.source" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.model.attachment.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.model.attachment.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.model.attachment.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.model.attachment.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.model.attachment.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.model.attachment.feature.source" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.model.attachment.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.model.attachment.feature.source" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.model.detachment.contrib.viewpoints.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.model.detachment.contrib.viewpoints.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.model.detachment.contrib.viewpoints.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.model.detachment.contrib.viewpoints.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.model.detachment.contrib.viewpoints.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.model.detachment.contrib.viewpoints.feature.source" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.model.detachment.contrib.viewpoints.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.model.detachment.contrib.viewpoints.feature.source" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.patterns.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.patterns.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.patterns.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.patterns.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.patterns.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.patterns.feature.source" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.patterns.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.patterns.feature.source" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.model.detachment.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.model.detachment.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.model.detachment.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.model.detachment.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.model.detachment.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.model.detachment.feature.source" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.model.detachment.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.model.detachment.feature.source" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.report.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.report.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.report.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.report.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.report.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.report.feature.source" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.report.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.report.feature.source" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.report.ui.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.report.ui.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.report.ui.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.report.ui.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.report.ui.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.report.ui.feature.source" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.report.ui.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.report.ui.feature.source" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.resourcereuse.emfscheme.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.resourcereuse.emfscheme.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.resourcereuse.emfscheme.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.resourcereuse.emfscheme.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.resourcereuse.emfscheme.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.resourcereuse.emfscheme.feature.source" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.resourcereuse.emfscheme.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.resourcereuse.emfscheme.feature.source" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.resourcereuse.ui.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.resourcereuse.ui.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.resourcereuse.ui.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.resourcereuse.ui.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.resourcereuse.ui.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.resourcereuse.ui.feature.source" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.resourcereuse.ui.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.resourcereuse.ui.feature.source" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.resourcereuse.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.resourcereuse.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.resourcereuse.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.resourcereuse.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.resourcereuse.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.resourcereuse.feature.source" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.resourcereuse.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.resourcereuse.feature.source" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.resourcereuse.emfscheme.ui.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.resourcereuse.emfscheme.ui.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.resourcereuse.emfscheme.ui.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.resourcereuse.emfscheme.ui.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.resourcereuse.emfscheme.ui.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.resourcereuse.emfscheme.ui.feature.source" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.resourcereuse.emfscheme.ui.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.resourcereuse.emfscheme.ui.feature.source" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.transposer.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.transposer.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.transposer.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.transposer.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.transposer.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.transposer.feature.source" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.transposer.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.transposer.feature.source" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.sdk.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.sdk.feature.source" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.sdk.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.sdk.feature.source" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.ad.sdk.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.ad.sdk.feature.source" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.ad.sdk.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.ad.sdk.feature.source" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.ad.ta.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.ad.ta.feature.source" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.ad.ta.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.ad.ta.feature.source" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.ad.dsl.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.ad.dsl.feature.source" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.ad.dsl.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.ad.dsl.feature.source" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.vp.componentsample.example.installer.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.vp.componentsample.example.installer.feature.source" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.vp.componentsample.example.installer.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.vp.componentsample.example.installer.feature.source" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.representation.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.representation.feature.source" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.representation.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.representation.feature.source" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.doc.gen.business.ecore.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.doc.gen.business.ecore.feature.source" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.doc.gen.business.ecore.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.doc.gen.business.ecore.feature.source" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.emde.sdk.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.emde.sdk.feature.source" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.emde.sdk.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.emde.sdk.feature.source" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.cadence.examples.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.cadence.examples.feature.source" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.cadence.examples.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.cadence.examples.feature.source" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.composer.examples.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.composer.examples.feature.source" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.composer.examples.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.composer.examples.feature.source" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.composer.componentsample.installer.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.composer.componentsample.installer.feature.source" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.composer.componentsample.installer.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.composer.componentsample.installer.feature.source" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.transposer.examples.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.transposer.examples.feature.source" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.transposer.examples.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.transposer.examples.feature.source" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.transposer.componentsample.installer.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.transposer.componentsample.installer.feature.source" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.transposer.componentsample.installer.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.transposer.componentsample.installer.feature.source" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.product.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.product.feature.source" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.product.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.product.feature.source" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.model.common.ui.menu.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.model.common.ui.menu.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.model.common.ui.menu.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.model.common.ui.menu.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.model.common.ui.menu.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.model.common.ui.menu.feature.source" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.model.common.ui.menu.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.model.common.ui.menu.feature.source" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.doc.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.doc.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.doc.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.doc.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.doc.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.doc.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.doc.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.doc.feature" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.ad.ui.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.ad.ui.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.ad.ui.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.ad.ui.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.ad.ui.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.ad.ui.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.ad.ui.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.ad.ui.feature" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.richtext.widget.doc.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.richtext.widget.doc.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.richtext.widget.doc.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.richtext.widget.doc.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.richtext.widget.feature_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.richtext.widget.feature" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.richtext.widget.feature_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.richtext.widget.feature" version="1.3.2.qualifier">
       <category name="Sdk"/>
    </feature>
-   <feature url="features/org.polarsys.kitalpha.richtext.widget.feature.source_1.3.1.qualifier.jar" id="org.polarsys.kitalpha.richtext.widget.feature.source" version="1.3.1.qualifier">
+   <feature url="features/org.polarsys.kitalpha.richtext.widget.feature.source_1.3.2.qualifier.jar" id="org.polarsys.kitalpha.richtext.widget.feature.source" version="1.3.2.qualifier">
       <category name="SdkSource"/>
    </feature>
    <category-def name="Sdk" label="Sdk"/>

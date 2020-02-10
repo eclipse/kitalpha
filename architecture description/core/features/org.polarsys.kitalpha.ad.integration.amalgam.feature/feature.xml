@@ -12,7 +12,7 @@
 <feature
       id="org.polarsys.kitalpha.ad.integration.amalgam.feature"
       label="Kitalpha AD Amalgam Integration Feature"
-      version="1.3.1.qualifier">
+      version="1.3.2.qualifier">
 
    <description>
       %description
@@ -27,7 +27,7 @@
    </license>
 
    <requires>
-      <import feature="org.polarsys.kitalpha.ad.ui.feature" version="1.3.1.qualifier"/>
+      <import feature="org.polarsys.kitalpha.ad.ui.feature" version="1.3.2.qualifier"/>
    </requires>
 
    <plugin

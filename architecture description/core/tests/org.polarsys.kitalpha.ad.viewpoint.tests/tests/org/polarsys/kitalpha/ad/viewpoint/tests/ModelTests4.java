@@ -37,7 +37,7 @@ public class ModelTests4 extends ModelTests {
 		IStatus result = ViewpointManager.checkViewpointsCompliancy(set);
 		assertFalse(result.isOK());
 		assertEquals(1, result.getChildren().length);
-		assertEquals("Expecting version '0.0.0' for viewpoint 'org.polarsys.kitalpha.vp.componentsampleperformance' (current version: '1.3.1.qualifier')", result.getChildren()[0].getMessage());
+		assertEquals("Expecting version '0.0.0' for viewpoint 'org.polarsys.kitalpha.vp.componentsampleperformance' (current version: '1.3.2.qualifier')", result.getChildren()[0].getMessage());
 	}
 
 }

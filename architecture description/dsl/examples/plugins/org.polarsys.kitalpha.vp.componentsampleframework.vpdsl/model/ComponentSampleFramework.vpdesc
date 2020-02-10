@@ -5,7 +5,7 @@
     <vpConfigurationElements xsi:type="vpconf:TargetApplication" type="EMF"/>
     <vpConfigurationElements xsi:type="vpconf:GenerationConfiguration" projectName="org.polarsys.kitalpha.vp.componentsampleframework" nsuri="http://www.polarsys.org/kitalpha/ComponentSampleFramework/1.0.0"/>
     <vpConfigurationElements xsi:type="vpconf:ViewConfiguration" visible="false" activable="true"/>
-    <vpConfigurationElements xsi:type="vpconf:Release" viewpointVersion="1.3.1.qualifier" viewpointDescription="Component Sample Framework Viewpoint">
+    <vpConfigurationElements xsi:type="vpconf:Release" viewpointVersion="1.3.2.qualifier" viewpointDescription="Component Sample Framework Viewpoint">
       <requiredExecutionEnvironment>JavaSE-1.6</requiredExecutionEnvironment>
     </vpConfigurationElements>
     <vpConfigurationElements xsi:type="vpconf:Generation">

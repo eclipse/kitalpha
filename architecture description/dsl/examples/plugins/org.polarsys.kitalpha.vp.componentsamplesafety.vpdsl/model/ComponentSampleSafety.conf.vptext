@@ -24,7 +24,7 @@ Configuration ComponentSampleSafety.conf {
 		activable : true
 	}
 	release {
-		version : 1.3.1.qualifier
+		version : 1.3.2.qualifier
 		description : "Viewpoint Description"
 		execution environments : "JavaSE-1.6"
 	}

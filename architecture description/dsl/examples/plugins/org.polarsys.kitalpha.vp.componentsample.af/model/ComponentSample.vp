@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<vp:Viewpoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sirius="http://www.polarsys.org/kitalpha/ad/sirius/1.0.0" xmlns:vp="http://www.polarsys.org/kitalpha/ad/viewpoint/1.0.0" name="Component Sample" id="org.polarsys.kitalpha.vp.componentsample" vpid="_upHvUEJfEeSX2_-AyeUK-w" version="1.3.1.qualifier">
+<vp:Viewpoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sirius="http://www.polarsys.org/kitalpha/ad/sirius/1.0.0" xmlns:vp="http://www.polarsys.org/kitalpha/ad/viewpoint/1.0.0" name="Component Sample" id="org.polarsys.kitalpha.vp.componentsample" vpid="_upHvUEJfEeSX2_-AyeUK-w" version="1.3.2.qualifier">
   <ruleSet vpid="_8IlRgqD9EeaIoIXKF9oJhg" target="_upHvUEJfEeSX2_-AyeUK-w">
     <newRules name="RuleOne" id="ComponentSample.RuleOne" vpid="_8IlRg6D9EeaIoIXKF9oJhg" implementation="org.polarsys.kitalpha.vp.componentsample.af.businessrules.RuleOne" language="" type="Java"/>
     <newRules name="RuleTwo" id="ComponentSample.RuleTwo" vpid="_8IlRhKD9EeaIoIXKF9oJhg" implementation="org.polarsys.kitalpha.vp.componentsample.af.businessrules.RuleTwo" language="" type="Java"/>

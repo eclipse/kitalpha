@@ -12,7 +12,7 @@
 <feature
       id="org.polarsys.kitalpha.emde.example.simplecomponent.safety.feature"
       label="Safety for Simplecomponent Feature (eMDE example)"
-      version="1.3.1.qualifier"
+      version="1.3.2.qualifier"
       provider-name="%providerName">
 
    <description>
@@ -28,7 +28,7 @@
    </license>
 
    <requires>
-      <import feature="org.polarsys.kitalpha.emde.example.simplecomponent.feature" version="1.3.1.qualifier"/>
+      <import feature="org.polarsys.kitalpha.emde.example.simplecomponent.feature" version="1.3.2.qualifier"/>
    </requires>
 
    <plugin

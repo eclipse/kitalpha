@@ -12,7 +12,7 @@
 <feature
       id="org.polarsys.kitalpha.richtext.widget.ext.feature"
       label="%Feature-Name"
-      version="1.3.1.qualifier"
+      version="1.3.2.qualifier"
       provider-name="%Feature-Vendor">
 
    <description>

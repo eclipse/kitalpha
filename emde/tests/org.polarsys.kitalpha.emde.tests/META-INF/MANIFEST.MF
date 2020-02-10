@@ -4,7 +4,7 @@ Bundle-Name: %pluginName
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-SymbolicName: org.polarsys.kitalpha.emde.tests
-Bundle-Version: 1.3.1.qualifier
+Bundle-Version: 1.3.2.qualifier
 Bundle-Activator: org.polarsys.kitalpha.emde.tests.Activator
 Require-Bundle: org.eclipse.core.runtime,
  org.junit,
