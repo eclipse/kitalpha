@@ -39,8 +39,9 @@ public class SAXHelper {
 		List<String> processed = new ArrayList<String>();
 		Map<EObject, AnyType> anyTypes = resource.getEObjectToExtensionMap();
 		if (anyTypes != null && !anyTypes.isEmpty()) {
-			for (EObject key : anyTypes.keySet()) {
-				AnyType type = anyTypes.get(key);
+			for (Map.Entry<EObject, AnyType> anyTypesEntry: anyTypes.entrySet()) {
+				EObject key = anyTypesEntry.getKey();
+				AnyType type = anyTypesEntry.getValue();
 				@SuppressWarnings("unchecked")
 				List<? extends FeatureMap.Entry> mixedEntries = (List<? extends FeatureMap.Entry>) type.eGet(XMLTypePackage.eINSTANCE.getAnyType_Mixed());
 				for (FeatureMap.Entry mixedEntry : mixedEntries) {

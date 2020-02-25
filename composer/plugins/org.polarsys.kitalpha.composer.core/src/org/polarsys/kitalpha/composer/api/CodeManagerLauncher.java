@@ -365,11 +365,13 @@ public final class CodeManagerLauncher implements ICodeManagerWorkflowConstants 
 
 	public static String getParameterErrorsTrace(
 			Map<String, ParameterError> parametersMap) {
-		String result = "bad value for: ";
-		Set<String> keys = parametersMap.keySet();
-		for (String key : keys) {
-			result += key + "->" + parametersMap.get(key).getReason() + ",";
+		
+		StringBuffer buf = new StringBuffer();
+		buf.append("bad value for: ");
+		for (Map.Entry<String, ParameterError> parametersMapEntry: parametersMap.entrySet()) {
+			buf.append(parametersMapEntry.getKey() + "->" + parametersMapEntry.getValue().getReason() + ",");
 		}
+		String result = buf.toString();
 
 		int end = result.lastIndexOf(",");
 		return result.substring(0, end);

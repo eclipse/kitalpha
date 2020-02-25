@@ -329,15 +329,11 @@ public class CodeManagerLaunchConfigurationType implements
 			final Map<String, String> stringMap,
 			final Map<String, Parameter> parametersMap) {
 
-		Set<String> params = parametersMap.keySet();
-
-		for (String param : params) {
-			String stringValue = (String) stringMap.get(param);
-			Parameter parametersValue = parametersMap.get(param);
+		for (Map.Entry<String, Parameter> parameterEntry: parametersMap.entrySet()) {
+			String stringValue = (String) stringMap.get(parameterEntry.getKey());
+			Parameter parametersValue = parameterEntry.getValue();
 			parametersValue.setValue(stringValue);
-
-			parametersMap.put(param, parametersValue);
-
+			parametersMap.put(parameterEntry.getKey(), parametersValue);
 		}
 
 		return parametersMap;

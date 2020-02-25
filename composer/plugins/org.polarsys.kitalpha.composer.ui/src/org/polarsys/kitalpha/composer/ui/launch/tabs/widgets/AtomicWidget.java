@@ -59,7 +59,6 @@ public class AtomicWidget {
 	ComboViewer comboViewer;
 	ComboViewerFilter filter;
 	TableViewer tableViewer;
-	Button button;
 	Composite composite;
 
 	private static final String VALIDATION_STR = "validate";
@@ -342,20 +341,18 @@ public class AtomicWidget {
 		if (reference != null) {
 			goodMap = reference.getParameters();
 			if (goodMap != null) {
-				Set<String> params = goodMap.keySet();
-
-				for (String param : params) {
+				for (Map.Entry<String, Parameter> parameterEntry: goodMap.entrySet()) {
+					Parameter parameter = parameterEntry.getValue();
+					final String param = parameterEntry.getKey();
 					if (!map.containsKey(param)) {
 						//
 						// It's a new parameter
-						Parameter parameter = goodMap.get(param);
 						map.put(param, parameter.getValue());
 					} else {
 						String stringValue = (String) map.get(param);
-						Parameter parametersValue = goodMap.get(param);
-						parametersValue.setName(param);
-						parametersValue.setValue(stringValue);
-						goodMap.put(param, parametersValue);
+						parameter.setName(param);
+						parameter.setValue(stringValue);
+						goodMap.put(param, parameter);
 					}
 				}
 			}

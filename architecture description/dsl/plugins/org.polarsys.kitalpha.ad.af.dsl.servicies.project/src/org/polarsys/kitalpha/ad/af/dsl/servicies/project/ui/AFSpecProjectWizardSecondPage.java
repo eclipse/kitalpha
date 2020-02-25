@@ -193,9 +193,8 @@ public class AFSpecProjectWizardSecondPage extends AbstractAFSpecProjectWizardPa
 		lAvailableCreators.addMouseListener(new ListMouseListener());
 		
 		if (availableCreator != null && availableCreator.size() != 0){
-			Set<String> idSet = availableCreator.keySet();
-			for (String id : idSet){
-				lAvailableCreators.add(availableCreator.get(id));
+			for (Map.Entry<String, String> availableCreatorEntry: availableCreator.entrySet()) {
+				lAvailableCreators.add(availableCreatorEntry.getValue());
 			}
 		}
 		
@@ -240,11 +239,10 @@ public class AFSpecProjectWizardSecondPage extends AbstractAFSpecProjectWizardPa
 		lSelectedCreators.addMouseListener(new ListMouseListener());
 		
 		if (selectedCreator != null && selectedCreator.size() != 0){
-			Set<String> idSet = selectedCreator.keySet();
-			for (String id : idSet){
-				lSelectedCreators.add(selectedCreator.get(id));
-				((NewAFSpecProject)getWizard()).setSelectedConcreteSyntaxCreators(selectedCreator);
+			for (Map.Entry<String, String> selectedCreatorEntry: selectedCreator.entrySet()) {
+				lSelectedCreators.add(selectedCreatorEntry.getValue());
 			}
+			((NewAFSpecProject)getWizard()).setSelectedConcreteSyntaxCreators(selectedCreator);
 		}
 		
 		return csComposit;
@@ -398,7 +396,7 @@ public class AFSpecProjectWizardSecondPage extends AbstractAFSpecProjectWizardPa
 			}
 
 			bAdd.setEnabled(lAvailableCreators.getSelectionIndex() != -1 &&  availableCreator.size() != 0);
-			bAddAll.setEnabled(availableCreator.size() != 0);
+			bAddAll.setEnabled(availableCreator != null && availableCreator.size() != 0);
 			bRemove.setEnabled(lSelectedCreators.getSelectionIndex() != -1 && selectedCreator.size() != 0);
 			bRemoveAll.setEnabled(selectedCreator.size() != 0);
 		}
