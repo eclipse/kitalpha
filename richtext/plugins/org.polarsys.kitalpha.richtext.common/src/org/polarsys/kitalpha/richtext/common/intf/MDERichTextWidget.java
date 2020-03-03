@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017, 2018, 2019 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2020 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -30,11 +30,14 @@ public interface MDERichTextWidget extends PropertyChangeListener {
 	
 	
 	/**
-	 * Set base href to the widget.
+	 * Sets the base href URL used to resolve relative and absolute URLs in the editor content. If the base href URL
+	 * changes, the current CKEditor object is destroyed and recreated. Registered listeners on the original editor are
+	 * removed and must be re-added.
 	 * 
-	 * @param baseHref
+	 * @param baseHref the base href.
+	 * @return true if the base href has been modified, false otherwise.
 	 */
-	void setBaseHrefPath(String baseHref);
+	boolean setBaseHrefPath(String baseHref);
 	
 	
 	/**

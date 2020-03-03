@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017, 2019 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2020 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -180,7 +180,7 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 	}
 
 	@Override
-	public void setBaseHrefPath(String baseHref) {
+	public boolean setBaseHrefPath(String baseHref) {
 		boolean forceEditorUpdate = false;
 		baseHref = getBaseHref(baseHref);
 		if (this.baseHrefPath == null || this.baseHrefPath.isEmpty()) {
@@ -194,6 +194,8 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 		if (forceEditorUpdate) {
 			updateEditor();
 		}
+
+		return forceEditorUpdate;
 	}
 
 	@Override
