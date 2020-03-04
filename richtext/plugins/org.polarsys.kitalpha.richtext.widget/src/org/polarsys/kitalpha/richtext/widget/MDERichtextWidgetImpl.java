@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017, 2018 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2020 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -21,9 +21,11 @@ import org.polarsys.kitalpha.richtext.widget.internal.ListenerInstaller;
  *
  */
 public class MDERichtextWidgetImpl extends MDENebulaBasedRichTextWidgetImpl {
+	
+	protected ListenerInstaller installer = new ListenerInstaller();
 
 	public MDERichtextWidgetImpl(Composite parent) {
-		super(parent);
+		super(parent);		
 	}
 
 	public MDERichtextWidgetImpl(Composite parent, int style) {
@@ -40,16 +42,20 @@ public class MDERichtextWidgetImpl extends MDENebulaBasedRichTextWidgetImpl {
 
 	@Override
 	protected void installListenersOnReadyInstance() {
-		ListenerInstaller installer = new ListenerInstaller();
-
 		super.installListenersOnReadyInstance();
 
-		installer.installOnBeforePasteListener(this);
-		installer.installOpenLinkListener(this);
-		installer.installChangeNotificationHandlerListener(this);
-		installer.installChangeContentListener(this);
-		installer.installSaveListener(this);
-		installer.installFocusEventListener(this);
-		installer.installWorkspaceResourceSaveListener(this);
+		installer.createAllListeners(this);
+		installer.installAllListeners(this);
+	}
+
+	@Override
+	public boolean setBaseHrefPath(String baseHref) {
+		boolean change = super.setBaseHrefPath(baseHref);
+
+		if (change) {
+			installer.installAllListeners(this);
+		}
+
+		return change;
 	}
 }
