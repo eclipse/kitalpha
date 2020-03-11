@@ -85,7 +85,7 @@ location eclipse-release "https://download.eclipse.org/releases/2019-06/" {
 	org.eclipse.emf.sdk.feature.group lazy
 }
 
-location sirius "https://download.eclipse.org/sirius/updates/milestones/6.3.0rc1/2019-06/" {
+location sirius "https://download.eclipse.org/sirius/updates/releases/6.3.0/2019-06/" {
 	org.eclipse.sirius.doc.feature.feature.group lazy
     org.eclipse.sirius.runtime.source.feature.group lazy
     org.eclipse.sirius.runtime.acceleo.feature.group lazy
