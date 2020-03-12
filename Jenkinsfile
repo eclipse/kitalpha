@@ -13,6 +13,17 @@ pipeline {
         }
 	  }
     }
+    stage('SonarQube analysis') { 
+    	withSonarQubeEnv('Sonar') {
+			//-Dsonar.auth.token=${SONAR_AUTH_TOKEN} -Dsonar.login=${SONAR_LOGIN} -Dsonar.password=${SONAR_PASSWORD} -Dsonar.jdbc.url=${SONAR_JDBC_URL} -Dsonar.jdbc.username=${SONAR_JDBC_USERNAME} -Dsonar.jdbc.password=${SONAR_JDBC_PASSWORD}"
+          sh 'mvn $SONAR_MAVEN_GOAL -PKitalphaSonar ' + 
+          '-f all/pom.xml ' +
+          '-Dsonar.host.url=https://sonar.eclipse.org/ '
+          '-Dsonar.projectKey=org.polarsys:org.polarsys.kitalpha ' +
+          '-Dsonar.login=$SONAR_UN ' +
+          '-Dsonar.password=$SONAR_PW '
+        }
+    }
     stage('Deploy') {
       when {
          not { changeRequest() }
