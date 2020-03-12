@@ -57,7 +57,6 @@
 		<sonar.java.source>8</sonar.java.source>
 		
 		<sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
-		<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
 		<sonar.jacoco.release>0.7.5.201505241946</sonar.jacoco.release>
 		<sonar.jacoco.reportPath>${coverage.destFile}</sonar.jacoco.reportPath>
 		<rcptt-maven-version>2.4.3</rcptt-maven-version>
@@ -153,6 +152,7 @@
       </activation>
       <properties>
   			<target-platform-name>kitalpha</target-platform-name>
+  			<sonar.host.url>https://sonar.eclipse.org</sonar.host.url>
   	   </properties>
       <modules>
       	<!-- module TP -->
@@ -160,6 +160,28 @@
       	<!-- module Sonar -->
       	<module>../../plugins/org.polarsys.kitalpha.releng.aggregator.sonar</module>
     </modules>
+    <build>
+	<plugins>
+		<plugin>
+			<groupId>org.jacoco</groupId>
+			<artifactId>jacoco-maven-plugin</artifactId>
+			<executions>
+				<execution>
+					<id>prepare-agent</id>
+					<goals>
+						<goal>prepare-agent</goal>
+					</goals>
+				</execution>
+				<execution>
+					<id>report</id>
+					<goals>
+						<goal>report</goal>
+					</goals>
+				</execution>
+			</executions>
+		</plugin>
+	</plugins>
+	</build>
   </profile>
  </profiles>
 	<build>
@@ -182,6 +204,22 @@
 					<testFailureIgnore>true</testFailureIgnore>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-report-plugin</artifactId>
+				<version>3.0.0-M4</version>
+				<configuration>
+					<outputDirectory>${basedir}/target/site</outputDirectory>
+				</configuration>
+			</plugin>
+			<plugin>
+        		<groupId>org.apache.maven.plugins</groupId>
+        		<artifactId>maven-site-plugin</artifactId>
+        		<version>2.1</version>
+        		<configuration>
+          			<outputDirectory>${basedir}/target/site</outputDirectory>
+        		</configuration>
+      		</plugin>
   			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>target-platform-configuration</artifactId>
