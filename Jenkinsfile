@@ -28,7 +28,7 @@ podTemplate(
     stage('Deploy') {
           sshagent ( ['projects-storage.eclipse.org-bot-ssh']) {
             sh '''
-              	    if [ -z "$CHANGE_TARGET" ]
+     	    if [ -z "$CHANGE_TARGET" ]
 					then
 						# if the variable is empty, then a PR has been built.
 						echo "deploy update sites"
@@ -56,7 +56,6 @@ podTemplate(
 						ssh genie.kitalpha@projects-storage.eclipse.org mkdir -p ${DEST_DIR}
 						scp -r releng/plugins/org.polarsys.kitalpha.releng.sdk.product/target/products/*.zip genie.kitalpha@projects-storage.eclipse.org:${DEST_DIR}
 					fi
-			  
             '''
         }
     }
