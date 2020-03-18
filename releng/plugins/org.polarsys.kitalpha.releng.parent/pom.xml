@@ -196,6 +196,15 @@
 							<classifier>../../../releng/plugins/org.polarsys.kitalpha.releng.targets/${target-platform-name}</classifier>
 						</artifact>
 					</target>
+					    <dependency-resolution>
+						  <extraRequirements>
+							<requirement>
+							  <type>eclipse-plugin</type>
+							  <id>org.eclipse.osgi.compatibility.state</id>
+							  <versionRange>[1.1.0,2.0.0)</versionRange>
+							</requirement>
+						  </extraRequirements>
+						</dependency-resolution>
 				</configuration>
 			</plugin>
 			<plugin>
