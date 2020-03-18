@@ -12,7 +12,7 @@
 <feature
       id="org.polarsys.kitalpha.accuracy.feature"
       label="Kitalpha Accuracy Feature"
-      version="1.4.0.qualifier">
+      version="1.4.1.qualifier">
 
    <description>
       %description
