@@ -43,4 +43,13 @@ public class DocgenPreferenceConstant {
 	/** This preference allows to know if the diagrams should be generated and exported or no */
 	public static final String DOCGEN_DIAGRAMS_IMAGE_FORMAT = "ImageFormat";
 	public static final String DOCGEN_DIAGRAMS_IMAGE_FORMAT_DEFAULT_VALUE = DocgenDiagramPreferencesHelper.IMAGE_FORMAT_DEFAULT_VALUE.getName();
+	
+	/** This value is the name of the project-scoped preference node containing resource-specific preferences */
+	public static final String DOCGEN_PROJECT__PREFERENCE_NODE = "org.polarsys.kitalpha.doc.gen";
+	
+	/** This value is the name of the project-scoped preference node containing resource-specific preferences */
+	public static final String DOCGEN_PROJECT__DEFAULT_RESOURCE_NODE = "DefaultProjectResourceNodeName";
+	
+	/** This preference allows to know the last used output path for a specific resource */
+	public static final String DOCGEN_PROJECT__OUTPUT_PATH = "DocgenProjectResourceOutputPath";
 }

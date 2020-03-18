@@ -1,15 +1,14 @@
-//Generated with EGF 1.5.1.v20180423-0901
+//Generated with EGF 1.6.1.201906060805
 package org.polarsys.kitalpha.doc.gen.business.core.searchIndex;
 
 import java.util.Map.Entry;
 import org.polarsys.kitalpha.doc.gen.business.core.services.IndexItem;
-import org.eclipse.egf.common.helper.*;
 import java.util.*;
-import org.eclipse.emf.ecore.*;
 import org.eclipse.egf.model.pattern.*;
 import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 import org.polarsys.kitalpha.doc.gen.business.core.util.DocGenHtmlUtil;
+import org.polarsys.kitalpha.doc.gen.business.core.util.EscapeChars;
 
 public class SearchIndex extends org.polarsys.kitalpha.doc.gen.business.core.doccontent.ElementDocContent {
 	protected static String nl;
@@ -47,16 +46,11 @@ public class SearchIndex extends org.polarsys.kitalpha.doc.gen.business.core.doc
 	protected final String TEXT_6 = "][";
 	protected final String TEXT_7 = "][0] = \"";
 	protected final String TEXT_8 = "\";" + NL + "\t\tconceptsList[";
-	protected final String TEXT_9 = "][";
-	protected final String TEXT_10 = "][1] = \"";
-	protected final String TEXT_11 = "\";" + NL + "\t\t";
-	protected final String TEXT_12 = NL + "\t\tconceptsList[";
-	protected final String TEXT_13 = "][";
-	protected final String TEXT_14 = "][2] = \"";
-	protected final String TEXT_15 = "\";" + NL + "\t\t";
-	protected final String TEXT_16 = NL + "\t\t";
-	protected final String TEXT_17 = NL + "\t\t";
-	protected final String TEXT_18 = NL + NL + NL + "\t    $(\"#input1\").keyup(function () {" + NL
+	protected final String TEXT_9 = "][1] = \"";
+	protected final String TEXT_10 = "\";" + NL + "\t\t";
+	protected final String TEXT_11 = "][2] = \"";
+	protected final String TEXT_12 = NL + "\t\t";
+	protected final String TEXT_13 = NL + NL + NL + "\t    $(\"#input1\").keyup(function () {" + NL
 			+ "\t      var value = $(this).val();" + NL + "\t      // $(\"#p1\").text(value);" + NL
 			+ "\t      var element = document.getElementById('possible_keywords');" + NL + "\t      var t = \"\";" + NL
 			+ "\t      for (x=0; x < tabCount; x++){" + NL + "\t\t  \tvar concepts = conceptsList[x];" + NL
@@ -69,11 +63,10 @@ public class SearchIndex extends org.polarsys.kitalpha.doc.gen.business.core.doc
 			+ NL + "\t      \t\t\t} else {" + NL
 			+ "\t      \t\t\t\tt = t.concat(value4 + \" <a href='concepts/\" + value3 + \".html' target='content'>\" + value2 + \"</a><br/>\");"
 			+ NL + "\t      \t\t\t}\t      \t\t" + NL + "\t      \t\t}" + NL + "\t      \t}" + NL + "\t      }" + NL
-			+ "\t      " + NL + "\t      $(\"#p2\").html(t);" + NL + "\t      " + NL + "\t      element.value = value;"
-			+ NL + "\t    }).keyup();" + NL + "\t    " + NL + "\t</script>" + NL + "\t</div>" + NL + "</body>" + NL
-			+ "</html>";
-	protected final String TEXT_19 = NL;
-	protected final String TEXT_20 = NL;
+			+ "\t      " + NL + "\t      $(\"#p2\").html(t);" + NL + "\t      if (element != null) {" + NL
+			+ "\t      \telement.value = value;" + NL + "\t      }" + NL + "\t    }).keyup();" + NL + "\t    " + NL
+			+ "\t</script>" + NL + "\t</div>" + NL + "</body>" + NL + "</html>";
+	protected final String TEXT_14 = NL;
 
 	public SearchIndex() {
 		//Here is the constructor
@@ -101,8 +94,8 @@ public class SearchIndex extends org.polarsys.kitalpha.doc.gen.business.core.doc
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_19);
-		stringBuffer.append(TEXT_20);
+		stringBuffer.append(TEXT_14);
+		stringBuffer.append(TEXT_14);
 		return stringBuffer.toString();
 	}
 
@@ -143,24 +136,25 @@ public class SearchIndex extends org.polarsys.kitalpha.doc.gen.business.core.doc
 			stringBuffer.append(TEXT_6);
 			stringBuffer.append(count);
 			stringBuffer.append(TEXT_7);
-			stringBuffer.append(entry.getValue().getConceptName().replace("\"", "\\\""));
+			stringBuffer.append(EscapeChars
+					.removeNewline(EscapeChars.forHTML(entry.getValue().getConceptName().replace("\"", "\\\""))));
 			stringBuffer.append(TEXT_8);
 			stringBuffer.append(listCount);
-			stringBuffer.append(TEXT_9);
+			stringBuffer.append(TEXT_6);
 			stringBuffer.append(count);
-			stringBuffer.append(TEXT_10);
+			stringBuffer.append(TEXT_9);
 			stringBuffer.append(i + "_" + DocGenHtmlUtil.getValidFileName(entry.getValue().getConceptName()));
-			stringBuffer.append(TEXT_11);
+			stringBuffer.append(TEXT_10);
 			if (entry.getValue().getIconTag() != null && !entry.getValue().getIconTag().isEmpty()) {
-				stringBuffer.append(TEXT_12);
+				stringBuffer.append(TEXT_5);
 				stringBuffer.append(listCount);
-				stringBuffer.append(TEXT_13);
+				stringBuffer.append(TEXT_6);
 				stringBuffer.append(count);
-				stringBuffer.append(TEXT_14);
+				stringBuffer.append(TEXT_11);
 				stringBuffer.append(entry.getValue().getIconTag().replaceAll("\"", "'").replaceFirst("../", ""));
-				stringBuffer.append(TEXT_15);
+				stringBuffer.append(TEXT_10);
 			}
-			stringBuffer.append(TEXT_16);
+			stringBuffer.append(TEXT_12);
 
 			if (count == 254) {
 				count = 0;
@@ -169,11 +163,11 @@ public class SearchIndex extends org.polarsys.kitalpha.doc.gen.business.core.doc
 				count++;
 			}
 
-			stringBuffer.append(TEXT_17);
+			stringBuffer.append(TEXT_12);
 
 		}
 
-		stringBuffer.append(TEXT_18);
+		stringBuffer.append(TEXT_13);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "content", stringBuffer.toString());
 	}

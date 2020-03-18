@@ -7,7 +7,7 @@ Element-Version: 3.0
 External-Reference: 
 Id: _GpsJcKaIEeap-ORrGyGQRg
 Runtime-Version: 2.4.3.201909171500
-Save-Time: 10/7/19 3:25 PM
+Save-Time: 3/18/20 9:02 AM
 Testcase-Type: ecl
 
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
@@ -100,12 +100,6 @@ with [get-editor "workflow.vpdesc" | get-tree] {
     get-item "platform:\\/resource\\/org.polarsys.kitalpha.vp.workflow.vpdsl\\/model\\/workflow.vpdesc/Viewpoint workflow/\\[Viewpoint Activity Explorer\\] workflow.activityexplorer/\\[Page\\] WorkflowPage/Section workflowSection" 
         | get-property childCount | equals 1 | verify-true
 }
-
-get-view "Project Explorer" | get-button -index 0 | click
-get-menu "Edit/Select All" | click
-get-menu "Edit/Delete" | click
-with [get-window "Delete Resources"] {
-    get-button "Delete project contents on disk (cannot be undone)" | check
-    get-button OK | click
-}
+  
+str "workspace:/org.polarsys.kitalpha.vp.workflow.vpdsl" | delete-file
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

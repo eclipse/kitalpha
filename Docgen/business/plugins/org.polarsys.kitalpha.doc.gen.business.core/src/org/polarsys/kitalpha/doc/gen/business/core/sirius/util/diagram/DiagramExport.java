@@ -18,6 +18,7 @@ import java.util.Map;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
@@ -56,7 +57,6 @@ public class DiagramExport {
 	
 	public DiagramExport(String projectName, IPath outputPath, DDiagram diagram, Session session) {
 		project = ResourcesPlugin.getWorkspace().getRoot().getProject(projectName);
-		refreshProject();
 		initDiagramExport(outputPath, diagram, session);
 	}
 	
@@ -77,7 +77,12 @@ public class DiagramExport {
 			try {
 				folder.create(true, true, nullProgressMonitor);
 			} catch (CoreException e) {
-				Activator.logError("can't create forlder " + folder.getName());
+				Activator.logError("can't create folder " + folder.getName());
+			}
+			try {
+				folder.refreshLocal(IProject.DEPTH_ONE, nullProgressMonitor);
+			} catch (CoreException e) {
+				Activator.logError("can't refresh folder " + folder.getName());
 			}
 		}
 		this.outputPath = folder != null ? folder.getLocation() : null;
