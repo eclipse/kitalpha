@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2019 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,6 +41,7 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.ContainerSelectionDialog;
+import org.polarsys.kitalpha.doc.gen.business.core.preference.helper.DocgenProjectPreferencesHelper;
 import org.polarsys.kitalpha.doc.gen.business.core.scope.ScopeReferencesStrategy;
 import org.polarsys.kitalpha.doc.gen.business.core.ui.wizards.string.Messages;
 
@@ -246,7 +247,10 @@ public class HTMLDocumentationGenerationWizardPage extends WizardPage {
 				if (uri.isPlatform())
 				{
 					this.modelURIText.setText(uri.toString());
-					this.containerText.setText("/" + uri.segments()[1]);
+					String outputPathDefaultValue = "/" + uri.segments()[1];
+					outputPathDefaultValue = DocgenProjectPreferencesHelper.getInstance(obj)
+												.getOutputLocationPreference(outputPathDefaultValue);
+					this.containerText.setText(outputPathDefaultValue);
 				}
 			}
 			else
@@ -254,6 +258,7 @@ public class HTMLDocumentationGenerationWizardPage extends WizardPage {
 				// Setting the output folder path
 				if (obj instanceof IResource) 
 				{
+
 					IContainer container;
 					if (obj instanceof IContainer) {
 						container = (IContainer) obj;
@@ -261,7 +266,10 @@ public class HTMLDocumentationGenerationWizardPage extends WizardPage {
 						container = ((IResource) obj).getParent();
 					}
 
-					containerText.setText(container.getFullPath().toString());
+					String outputPathDefaultValue = container.getFullPath().toString();
+					outputPathDefaultValue = DocgenProjectPreferencesHelper.getInstance(obj)
+												.getOutputLocationPreference(outputPathDefaultValue);
+					containerText.setText(outputPathDefaultValue);
 				}
 
 				// Setting the model URI
@@ -364,5 +372,16 @@ public class HTMLDocumentationGenerationWizardPage extends WizardPage {
 				return "";
 			}
 		}
+	}
+
+	/**
+	 * Save project specific preferences:
+	 * - Output path
+	 */
+	public void savePreferences() {
+		IStructuredSelection ssel = (IStructuredSelection) selection;
+		Object obj = ssel.getFirstElement();
+		DocgenProjectPreferencesHelper.getInstance(obj)
+		   .setOutputLocationPreference(containerText.getText());
 	}
 }
