@@ -24,6 +24,7 @@ import org.eclipse.swt.events.FocusListener;
 import org.eclipse.swt.events.KeyListener;
 import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
 import org.polarsys.kitalpha.richtext.common.impl.BrowserBasedMDERichTextWidgetImpl;
 import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
 import org.polarsys.kitalpha.richtext.nebula.widget.toolbar.MDERichTextToolbarItemHandler;
@@ -251,8 +252,25 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 	@Override
 	public void setText(String text) {
 		if (text != null) {
-			text = escapeSpecialCharacters(text);
-			editor.setText(text);
+
+			while (true) {
+				spinEventQueue(Display.getCurrent());
+				if (editor.isDisposed()) {
+					break;
+				}
+				try {
+					String currentValue = getText();
+					text = escapeSpecialCharacters(text);
+					if (!currentValue.equals(text)) {
+						editor.setText(text);
+					} else {
+						break;
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+					break;
+				}
+			}
 		}
 	}
 
