@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017, 2019 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2020 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -14,9 +14,12 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
 import org.eclipse.core.runtime.Assert;
+import org.eclipse.core.runtime.ISafeRunnable;
+import org.eclipse.core.runtime.SafeRunner;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
 import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
 import org.polarsys.kitalpha.richtext.common.intf.SaveStrategy;
 import org.polarsys.kitalpha.richtext.common.messages.Messages;
@@ -84,33 +87,51 @@ public abstract class AbstractMDERichTextWidget implements MDERichTextWidget {
 		loadContent();
 	}
 
-	
-	@Override
-	public void loadContent() {
-		
-		areNotNull(getElement(), getFeature());
-		
-		Object text = getElement().eGet(getFeature());
-		String oldValue = getText();
-		
-		String value = (String)((text instanceof String)? text: ""); //$NON-NLS-1$
-		if (value != null && !value.equals(oldValue)){ 
-			setText(value);
+	/**
+	 * see Workbench.spinEventQueueToUpdateSplash
+	 */
+	protected static void spinEventQueue(final Display display) {
+		if (!display.isDisposed() && display.getThread() == Thread.currentThread()) {
+			SafeRunner.run(new ISafeRunnable() {
+				@Override
+				public void run() throws Exception {
+					int safetyCounter = 0;
+					while (display.readAndDispatch() && safetyCounter++ < 100) {
+						// process until the queue is empty or until we hit the safetyCounter limit
+					}
+				}
+			});
 		}
 	}
 
-	
-	@Override
-	public final void saveContent() {
-		areNotNull(getElement(), getFeature());
-		String text = getText();
-		if (text != null && isEditable()){
-			getSaveStrategy().save(text, getElement(), getFeature());
-			//Notifies listeners that the save has been done
-			firePropertyChangeEvent(new PropertyChangeEvent(this, WIDGET_SAVED_PROP, null, null));
+	protected void waitUntilReady(Display display) {
+		int safetyCounter = 0;
+		while (!isReady() && safetyCounter++ < 100) {
+			spinEventQueue(display);
 		}
 	}
-	
+
+	@Override
+	public void loadContent() {
+		areNotNull(getElement(), getFeature());
+		waitUntilReady(Display.getCurrent());
+		Object text = getElement().eGet(getFeature());
+		String value = (String) ((text instanceof String) ? text : ""); //$NON-NLS-1$
+		setText(value);
+	}
+
+	@Override
+	public final void saveContent() {
+		waitUntilReady(Display.getCurrent());
+		areNotNull(getElement(), getFeature());
+		String text = getText();
+		if (text != null && isEditable()) {
+			getSaveStrategy().save(text, getElement(), getFeature());
+			// Notifies listeners that the save has been done
+			firePropertyChangeEvent(new PropertyChangeEvent(this, WIDGET_SAVED_PROP, null, null));
+		}
+		spinEventQueue(Display.getCurrent());
+	}
 
 	@Override
 	public final void setSaveStrategy(SaveStrategy strategy) {
