@@ -13,11 +13,7 @@ package org.polarsys.kitalpha.richtext.widget.helper;
 
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
-import java.util.stream.Collectors;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
@@ -25,12 +21,16 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.ui.IEditorPart;
+import org.eclipse.ui.IEditorReference;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 import org.polarsys.kitalpha.richtext.nebula.widget.MDENebulaRichTextConfiguration;
-import org.polarsys.kitalpha.richtext.nebula.widget.MDERichTextConstants;
 import org.polarsys.kitalpha.richtext.widget.MDERichtextWidgetEditorImpl;
 import org.polarsys.kitalpha.richtext.widget.editor.MDERichTextEditor;
 import org.polarsys.kitalpha.richtext.widget.editor.MDERichTextEditorInput;
@@ -58,23 +58,50 @@ public class MDERichtextWidgetHelper {
 		return instance;
 	}
 
-	public static List<MDERichTextEditor> getActiveMDERichTextEditors() {
-		IWorkbenchWindow activeWorkbenchWindow = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
-		if (activeWorkbenchWindow != null) {
-			IWorkbenchPage activePage = activeWorkbenchWindow.getActivePage();
-			if (activePage != null) {
-				return Arrays.stream(activePage.getEditorReferences())
-						.filter(ref -> MDERichTextConstants.RICHTEXT_EDITOR_ID.equals(ref.getId()))
-						.map(ref -> ref.getEditor(false)).filter(Objects::nonNull).map(MDERichTextEditor.class::cast)
-						.collect(Collectors.toList());
-			}
-		}
-		return Collections.emptyList();
+	/**
+	 * Returns whether the given editor is a Richtext Editor
+	 */
+	public static boolean isRichtextEditor(IEditorReference editor) {
+		return editor.getEditor(false) instanceof MDERichTextEditor;
 	}
 
+	/**
+	 * Return all Richtext editors
+	 */
+	public static List<MDERichTextEditor> getActiveMDERichTextEditors() {
+		ArrayList<MDERichTextEditor> references = new ArrayList<MDERichTextEditor>();
+		for (IWorkbenchWindow window : PlatformUI.getWorkbench().getWorkbenchWindows()) {
+			for (IWorkbenchPage page : window.getPages()) {
+				for (IEditorReference editor : page.getEditorReferences()) {
+					if (MDERichtextWidgetHelper.isRichtextEditor(editor)) {
+						references.add((MDERichTextEditor) editor.getEditor(false));
+					}
+				}
+			}
+		}
+		return references;
+	}
+
+  /**
+   * Return all Richtext editors associated to the given editingDomain
+   */
+	public static List<MDERichTextEditor> getActiveMDERichTextEditors(TransactionalEditingDomain domain) {
+		List<MDERichTextEditor> activeEditors = new ArrayList<>();
+		for (MDERichTextEditor richtextEditor : getActiveMDERichTextEditors()) {
+			MDERichTextEditorInput input = (MDERichTextEditorInput) richtextEditor.getEditorInput();
+			if (domain == TransactionUtil.getEditingDomain(input.getElement())) {
+				activeEditors.add(richtextEditor);
+			}
+		}
+		return activeEditors;
+	}
+
+  /**
+   * Return all Richtext editors associated to the given element
+   */
 	public static List<MDERichTextEditor> getActiveMDERichTextEditors(EObject element) {
 		List<MDERichTextEditor> activeEditors = new ArrayList<>();
-		for (MDERichTextEditor richtextEditor : MDERichtextWidgetHelper.getActiveMDERichTextEditors()) {
+		for (MDERichTextEditor richtextEditor : getActiveMDERichTextEditors()) {
 			MDERichTextEditorInput input = (MDERichTextEditorInput) richtextEditor.getEditorInput();
 			if (element == input.getElement()) {
 				activeEditors.add(richtextEditor);
@@ -104,7 +131,7 @@ public class MDERichtextWidgetHelper {
 		}
 		return inputFeatureContributions;
 	}
-	
+
 	public MDERichtextWidgetEditorImpl getEditorWidgetContribution(Composite parent,
 			MDENebulaRichTextConfiguration configuration) {
 		if (contributedEditorWidget == null) {
@@ -129,4 +156,69 @@ public class MDERichtextWidgetHelper {
 		}
 		return contributedEditorWidget;
 	}
+
+	/**
+	 * Close all invalid editors of the given editing domain or null one
+	 */
+	public static void closeInvalidEditors(TransactionalEditingDomain editingDomain) {
+		closeEditors(editingDomain, true, false);
+	}
+
+	/**
+	 * Close all editors of the given editing domain
+	 * 
+	 */
+	public static void closeEditors(TransactionalEditingDomain editingDomain) {
+		closeEditors(editingDomain, false, true);
+	}
+
+	/**
+	 * Close all editors related to the given editingDomain or null one.
+	 * 
+	 * @param onlyInvalid:        if true, only invalid editors will be closed
+	 * 
+	 * @param desactivateEditors: if desactivateEditors is true, then editors will
+	 *                            be switchDeactivateState before closing. (which is
+	 *                            seems to disable save of the editor)
+	 */
+	private static void closeEditors(TransactionalEditingDomain editingDomain, boolean onlyInvalid,
+			boolean desactivateEditors) {
+		for (MDERichTextEditor editor : getActiveMDERichTextEditors()) {
+			MDERichTextEditorInput editorInput = (MDERichTextEditorInput) editor.getEditorInput();
+			EObject element = editorInput.getElement();
+			TransactionalEditingDomain eltEditingDomain = TransactionUtil.getEditingDomain(element);
+
+			if (desactivateEditors) {
+				editor.switchDeactivateState();
+			}
+
+			if (eltEditingDomain == null) {
+				close(editor);
+
+			} else if (onlyInvalid && element.eResource() == null) {
+				close(editor);
+
+			} else if (!onlyInvalid && eltEditingDomain == editingDomain) {
+				close(editor);
+			}
+		}
+	}
+
+	/**
+	 * Close the given editor
+	 */
+	private static void close(IEditorPart editor) {
+		if (editor != null) {
+			Display.getDefault().asyncExec(new Runnable() {
+				@Override
+				public void run() {
+					IWorkbenchPage page = editor.getEditorSite().getPage();
+					if (page != null) {
+						page.closeEditor(editor, false);
+					}
+				}
+			});
+		}
+	}
+
 }
