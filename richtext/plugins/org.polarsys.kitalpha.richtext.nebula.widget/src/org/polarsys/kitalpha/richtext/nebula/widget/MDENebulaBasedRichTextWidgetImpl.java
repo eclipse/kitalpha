@@ -23,6 +23,7 @@ import org.eclipse.swt.browser.ProgressListener;
 import org.eclipse.swt.events.FocusListener;
 import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
 import org.polarsys.kitalpha.richtext.common.impl.BrowserBasedMDERichTextWidgetImpl;
 import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
 import org.polarsys.kitalpha.richtext.nebula.widget.toolbar.MDERichTextToolbarItemHandler;
@@ -247,7 +248,28 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 	public void setText(String text) {
 		if (text != null) {
 			text = escapeSpecialCharacters(text);
-			editor.setText(text);
+			int safetyCounter = 0;
+			// We ensure a bit that getText has been properly updated
+			while (safetyCounter++ < 5) {
+				spinEventQueue(Display.getCurrent());
+				if (editor.isDisposed()) {
+					break;
+				}
+				try {
+					String currentValue = getText();
+					// We avoid to set several time the same text.
+					// With old descriptions, the text getText will be different to the given
+					// parameter as browser will refactor the HTML string
+					if (!currentValue.equals(text)) {
+						editor.setText(text);
+					} else {
+						break;
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+					break;
+				}
+			}
 		}
 	}
 
