@@ -20,10 +20,6 @@ location eclipse-release "https://download.eclipse.org/releases/2019-06/" {
 	org.eclipse.emf.validation.ocl lazy
 	org.eclipse.emf.transaction.sdk.feature.group lazy
 	org.eclipse.emf.transaction.doc.feature.group lazy
-	org.eclipse.gmf.runtime.sdk.feature.group lazy
-	org.eclipse.gmf.examples.runtime.feature.group lazy
-	org.eclipse.gmf.examples.runtime.ui.pde.feature.group lazy
-	org.eclipse.gmf.runtime.notation.sdk.feature.group lazy
 	org.eclipse.gef.sdk.feature.group lazy
 	org.eclipse.ui.ide lazy
 	org.eclipse.ui.workbench lazy
@@ -50,13 +46,6 @@ location eclipse-release "https://download.eclipse.org/releases/2019-06/" {
 	org.eclipse.equinox.p2.rcp.feature.source.feature.group lazy
 	org.eclipse.equinox.p2.user.ui.source.feature.group lazy
 	org.eclipse.gef.source lazy
-	org.eclipse.gmf.examples.runtime lazy
-	org.eclipse.gmf.examples.runtime.ui.pde lazy
-	org.eclipse.gmf.runtime.notation.sdk lazy
-	org.eclipse.gmf.runtime.notation.source lazy
-	org.eclipse.gmf.runtime.sdk lazy
-	org.eclipse.gmf.runtime.thirdparty.source.feature.group lazy
-	org.eclipse.gmf.source.feature.group lazy
 	org.eclipse.help.source lazy
 	org.eclipse.jdt.source.feature.group lazy
 	org.eclipse.jgit lazy
@@ -85,7 +74,16 @@ location eclipse-release "https://download.eclipse.org/releases/2019-06/" {
 	org.eclipse.emf.sdk.feature.group lazy
 }
 
-location sirius "https://download.eclipse.org/sirius/updates/releases/6.3.0/2019-06/" {
+location GMF-Notation-1.13.0 "http://download.eclipse.org/modeling/gmp/gmf-notation/updates/milestones/S202003100829" {
+    org.eclipse.gmf.runtime.notation.sdk.feature.group lazy
+}
+
+location GMF-Runtime-1.13.0 "http://download.eclipse.org/modeling/gmp/gmf-runtime/updates/milestones/S202003121028" {
+    org.eclipse.gmf.runtime.sdk.feature.group lazy
+    org.eclipse.gmf.runtime.thirdparty.feature.group lazy
+}
+
+location sirius "https://download.eclipse.org/sirius/updates/stable/6.3.1-S20200320-102312/2019-06/" {
 	org.eclipse.sirius.doc.feature.feature.group lazy
     org.eclipse.sirius.runtime.source.feature.group lazy
     org.eclipse.sirius.runtime.acceleo.feature.group lazy
@@ -147,7 +145,7 @@ location coevolution "https://download.eclipse.org/diffmerge/releases/0.12.0/edm
 	 org.eclipse.emf.diffmerge.coevolution.sdk.feature.source.feature.group lazy
 }
 
-location amalgam "https://download.eclipse.org/modeling/amalgam/updates/stable/1.11.0-S20190729/capella/" {
+location amalgam "https://download.eclipse.org/modeling/amalgam/updates/stable/1.11.0-S20191007/capella/" {
 	org.eclipse.amalgam.explorer.activity.feature.group lazy
 	org.eclipse.amalgam.explorer.activity.source.feature.group lazy
 	org.eclipse.amalgam.explorer.contextual.feature.group lazy
