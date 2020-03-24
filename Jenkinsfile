@@ -16,7 +16,7 @@ podTemplate(
     node("migration-custom") {
     stage('Package & test Kitalpha') {
 	  	wrap([$class: 'Xvnc', takeScreenshot: false, useXauthority: true]) {
-                git branch: env.BRANCH_NAME, url: 'https://github.com/eclipse/kitalpha.git'
+	  			checkout scm
               	sh '''
               	    export JAVA_HOME=/opt/tools/java/oracle/jdk-8/latest
                     /opt/tools/apache-maven/latest/bin/mvn -Dmaven.test.failure.ignore=true -Dtycho.localArtifacts=ignore clean verify -B -e -f releng/plugins/org.polarsys.kitalpha.releng.parent/pom.xml
