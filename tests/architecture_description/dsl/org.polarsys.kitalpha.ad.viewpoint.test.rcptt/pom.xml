@@ -39,6 +39,11 @@
 					<runner>
 						<version>${rcptt-maven-version}</version>
 					</runner>
+					<testOptions>
+            			<execTimeout>3600</execTimeout>
+            			<testExecTimeout>3600</testExecTimeout>
+           	 			<restartAUTOnFailure>false</restartAUTOnFailure>
+          			</testOptions>
 					<aut>
 						<explicit>
 							../../../../releng/plugins/org.polarsys.kitalpha.releng.sdk.product/target/products/org.polarsys.kitalpha.releng.sdk.product/linux/gtk/x86_64/
