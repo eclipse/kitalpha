@@ -40,9 +40,7 @@
 						<version>${rcptt-maven-version}</version>
 					</runner>
 					<testOptions>
-            			<execTimeout>3600</execTimeout>
             			<testExecTimeout>3600</testExecTimeout>
-           	 			<restartAUTOnFailure>false</restartAUTOnFailure>
           			</testOptions>
 					<aut>
 						<explicit>
