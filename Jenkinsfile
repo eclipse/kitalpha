@@ -1,4 +1,3 @@
-
 pipeline {
   agent { label 'migration-6gb' }
 
@@ -12,14 +11,14 @@ pipeline {
 	  	wrap([$class: 'Xvnc', takeScreenshot: false, useXauthority: true]) {
         	sh 'mvn  -Dmaven.test.failure.ignore=true -Dtycho.localArtifacts=ignore clean install  -e -f releng/plugins/org.polarsys.kitalpha.releng.parent/pom.xml'
         }
-	    }
+	  }
     }
     stage('Deploy') {
           sshagent ( ['projects-storage.eclipse.org-bot-ssh']) {
             sh '''
 						echo "deploy update sites"
 						DEST_DIR=/home/data/httpd/download.eclipse.org/kitalpha/updates/nightly
-						VERSION=1.4.x
+						VERSION=master
 						ssh genie.kitalpha@projects-storage.eclipse.org rm -rf ${DEST_DIR}
 						ssh genie.kitalpha@projects-storage.eclipse.org rm -rf ${DEST_DIR}/component/${VERSION}
 						ssh genie.kitalpha@projects-storage.eclipse.org rm -rf ${DEST_DIR}/runtime/${VERSION}
@@ -44,8 +43,8 @@ pipeline {
 			  
             '''
         }
+      }
     }
-  }
 
   post {
     always {
