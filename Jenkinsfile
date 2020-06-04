@@ -14,6 +14,9 @@ pipeline {
 	  }
     }
     stage('Deploy') {
+      when {
+         not { changeRequest() }
+      }
       steps {
           sshagent ( ['projects-storage.eclipse.org-bot-ssh']) {
             sh '''
