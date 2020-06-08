@@ -22,7 +22,7 @@ pipeline {
             sh '''
 						echo "deploy update sites"
 						DEST_DIR=/home/data/httpd/download.eclipse.org/kitalpha/updates/nightly
-						VERSION=master
+						VERSION=1.4.x
 						ssh genie.kitalpha@projects-storage.eclipse.org rm -rf ${DEST_DIR}
 						ssh genie.kitalpha@projects-storage.eclipse.org rm -rf ${DEST_DIR}/component/${VERSION}
 						ssh genie.kitalpha@projects-storage.eclipse.org rm -rf ${DEST_DIR}/runtime/${VERSION}
