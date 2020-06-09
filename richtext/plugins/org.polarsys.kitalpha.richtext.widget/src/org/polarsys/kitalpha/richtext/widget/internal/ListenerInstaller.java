@@ -257,7 +257,7 @@ public class ListenerInstaller {
 		/**
 		 * Notice that firePropertyChangeEvent() javascript function is defined MDERichTextEditor.
 		 */
-		script.append("CKEDITOR.instances.editor.on('change', function () {");
+		script.append("CKEDITOR.instances.editor.on('key', function () {");
 		script.append("firePropertyChangeEvent();");
 		script.append("});");
 
