@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2020 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -329,15 +329,11 @@ public class CodeManagerLaunchConfigurationType implements
 			final Map<String, String> stringMap,
 			final Map<String, Parameter> parametersMap) {
 
-		Set<String> params = parametersMap.keySet();
-
-		for (String param : params) {
-			String stringValue = (String) stringMap.get(param);
-			Parameter parametersValue = parametersMap.get(param);
+		for (Map.Entry<String, Parameter> parameterEntry: parametersMap.entrySet()) {
+			String stringValue = (String) stringMap.get(parameterEntry.getKey());
+			Parameter parametersValue = parameterEntry.getValue();
 			parametersValue.setValue(stringValue);
-
-			parametersMap.put(param, parametersValue);
-
+			parametersMap.put(parameterEntry.getKey(), parametersValue);
 		}
 
 		return parametersMap;

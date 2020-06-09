@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2020 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -66,6 +66,8 @@ public class EGFBuildHelper {
 	
 	private final static String PROTOCOL_SVN = "svn";
 	private final static String PROTOCOL_SSH = "svnssh";
+	private final static String RELENG_EXT = ".releng";
+	private final static String RELENG_POST = "_releng";
 			
 	
 	
@@ -157,7 +159,7 @@ public class EGFBuildHelper {
 			buildStep = createBuildStep(conf, svnLocation);
 		} else {
 			GIT git = BuildscmFactory.eINSTANCE.createGIT();
-			GITLocation gitLocation = createGITLocation("git_viewpoint", protocol);
+			GITLocation gitLocation = createGITLocation("git_viewpoint");
 			
 			git.setLocations(gitLocation);
 			gitLocation.setBranch("master");
@@ -228,7 +230,7 @@ public class EGFBuildHelper {
 	}
 
 
-	private static GITLocation createGITLocation(String url, String protocol) {
+	private static GITLocation createGITLocation(String url) {
 		GITLocation location = BuildscmFactory.eINSTANCE.createGITLocation();
 		
 		location.setProtocol(GITProtocol.HTTP);
@@ -372,40 +374,38 @@ public class EGFBuildHelper {
 		if (protocol.contains("svn")) {
 			generateSVNLocation(hudsonDeployment, generationLocation, scm, lvpsShortName, protocol, rootProjectName, repositoryLocation);
 		} else {
-			generateGitLocation(hudsonDeployment, generationLocation, scm, lvpsShortName, protocol, rootProjectName, repositoryLocation);
+			generateGitLocation(hudsonDeployment, generationLocation, lvpsShortName, rootProjectName, repositoryLocation);
 		}
 			
 
 	}
 
 
-	private static void generateGitLocation(HudsonDeployment hudsonDeployment, Map<String, String> generationLocation, SCM scm, String lvpsShortName, String protocol, String rootProjectName, String repositoryLocation) {
+	private static void generateGitLocation(HudsonDeployment hudsonDeployment, Map<String, String> generationLocation, String lvpsShortName, String rootProjectName, String repositoryLocation) {
 		
 		GITGenerationLocation gitGenerationLocation = BuildscmFactory.eINSTANCE.createGITGenerationLocation();
 
 		if (generationLocation != null){
-			for(String key: generationLocation.keySet()){
-
+			for (Map.Entry<String, String> generationLocationEntry: generationLocation.entrySet()) {
+				String key = generationLocationEntry.getKey();
+				String url = generationLocationEntry.getValue();
+				
 				gitGenerationLocation.setFolderName(key);
 				GITLocation gitLocation = BuildscmFactory.eINSTANCE.createGITLocation();
 
-				String url = generationLocation.get(key);
 				if (url != null){
-
-					gitLocation.setUrl(generationLocation.get(key));
-					gitLocation.setLocalPath(lvpsShortName + "_releng");
-
+					gitLocation.setUrl(url);
+					gitLocation.setLocalPath(lvpsShortName + RELENG_POST);
 				} else {
 					if (repositoryLocation.endsWith("/")) {
-						url = repositoryLocation + rootProjectName + "." + lvpsShortName + ".releng";
+						url = repositoryLocation + rootProjectName + "." + lvpsShortName + RELENG_EXT;
 					} else {
-						url = repositoryLocation + "/" + rootProjectName + "." + lvpsShortName + ".releng";
+						url = repositoryLocation + "/" + rootProjectName + "." + lvpsShortName + RELENG_EXT;
 					}
 					gitLocation.setUrl(url);
 				}
 
-					gitLocation.setProtocol(GITProtocol.HTTP);
-
+				gitLocation.setProtocol(GITProtocol.HTTP);
 				gitGenerationLocation.setGitLocation(gitLocation);
 
 				break;
@@ -430,13 +430,13 @@ public class EGFBuildHelper {
 				if (url != null){
 
 					svnLocation.setUrl(generationLocation.get(entry.getKey()));
-					svnLocation.setLocalPath(lvpsShortName + "_releng");
+					svnLocation.setLocalPath(lvpsShortName + RELENG_POST);
 
 				} else {
 					if (repositoryLocation.endsWith("/")) {
-						url = repositoryLocation + rootProjectName + "." + lvpsShortName + ".releng";
+						url = repositoryLocation + rootProjectName + "." + lvpsShortName + RELENG_EXT;
 					} else {
-						url = repositoryLocation + "/" + rootProjectName + "." + lvpsShortName + ".releng";
+						url = repositoryLocation + "/" + rootProjectName + "." + lvpsShortName + RELENG_EXT;
 					}
 					svnLocation.setUrl(url);
 				}
@@ -509,19 +509,19 @@ public class EGFBuildHelper {
 				if (key.equals("antName")) {
 					String tmp = properties.get(key);
 					if (tmp != null && !tmp.equals("")) {
-						hudsonDeployment.setAntName(new String(tmp));
+						hudsonDeployment.setAntName(tmp);
 					}
 				}
 				if (key.equals("assignedNode")) {
 					String tmp = properties.get(key);
 					if (tmp != null && !tmp.equals("")) {
-						hudsonDeployment.setAssignedNode(new String(tmp));
+						hudsonDeployment.setAssignedNode(tmp);
 					}
 				}
 				if (key.equals("build_id")) {
 					String tmp = properties.get(key);
 					if (tmp != null && !tmp.equals("")) {
-						hudsonDeployment.setBuildId(new String(tmp));
+						hudsonDeployment.setBuildId(tmp);
 					}
 				}
 				if (key.equals("enabled")) {
@@ -535,20 +535,20 @@ public class EGFBuildHelper {
 				if (key.equals("jdkName")) {
 					String tmp = properties.get(key);
 					if (tmp != null && !tmp.equals("")) {
-						hudsonDeployment.setJdkName(new String(tmp));
+						hudsonDeployment.setJdkName(tmp);
 					}
 				}
 				if (key.equals("userDeployJobName")) {
 					String tmp = properties.get(key);
 					if (tmp != null && !tmp.equals("")) {
-						hudsonDeployment.setUserDeployJobName(new String(tmp));
+						hudsonDeployment.setUserDeployJobName(tmp);
 
 					}
 				}
 				if (key.equals("userDeployServerUrl")) {
 					String tmp = properties.get(key);
 					if (tmp != null && !tmp.equals("")) {
-						hudsonDeployment.setUserDeployServerUrl(new String(tmp));
+						hudsonDeployment.setUserDeployServerUrl(tmp);
 					}
 				}
 			}

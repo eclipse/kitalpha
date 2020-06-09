@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2020 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -365,11 +365,13 @@ public final class CodeManagerLauncher implements ICodeManagerWorkflowConstants 
 
 	public static String getParameterErrorsTrace(
 			Map<String, ParameterError> parametersMap) {
-		String result = "bad value for: ";
-		Set<String> keys = parametersMap.keySet();
-		for (String key : keys) {
-			result += key + "->" + parametersMap.get(key).getReason() + ",";
+		
+		StringBuffer buf = new StringBuffer();
+		buf.append("bad value for: ");
+		for (Map.Entry<String, ParameterError> parametersMapEntry: parametersMap.entrySet()) {
+			buf.append(parametersMapEntry.getKey() + "->" + parametersMapEntry.getValue().getReason() + ",");
 		}
+		String result = buf.toString();
 
 		int end = result.lastIndexOf(",");
 		return result.substring(0, end);

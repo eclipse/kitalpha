@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2020 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -86,13 +86,14 @@ public class CodeManagerApplication implements IApplication {
 		System.out.println("Reading properties file"); ////$NON-NLS-1$
 		
 		Properties properties = new Properties();
-		properties.load(new FileInputStream(composer_property_path));
+		FileInputStream stream = new FileInputStream(composer_property_path); 
+		properties.load(stream);
 
 		final String gen_path0 = properties
 				.getProperty(IStandaloneConstants.GENERATOR_PATH);
 
 		
-		System.out.println("Creation tempory project");
+		System.out.println("Creation temporary project");
 		
 		// creating a linked project (environment)
 		final IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
@@ -126,6 +127,7 @@ public class CodeManagerApplication implements IApplication {
 		
 		IStatus status = createLaunchConfig(properties, model_f, gen_f);
 		project.delete(true, new NullProgressMonitor());
+		stream.close();
 		
 		return status.isOK() ? IApplication.EXIT_OK : IApplicationContext.EXIT_ASYNC_RESULT;
 		
@@ -384,10 +386,10 @@ public class CodeManagerApplication implements IApplication {
 	private Map<String, Parameter> setParameters(Properties properties_p,
 			Map<String, Parameter> params_p, String key_prefix_p) {
 
-		for (String key : params_p.keySet()) {
-			final String file_key = key_prefix_p + "." + key; //$NON-NLS-1$
+		for (Map.Entry<String, Parameter> paramsEntry: params_p.entrySet()) {
+			final String file_key = key_prefix_p + "." + paramsEntry.getKey(); //$NON-NLS-1$
 			String value = properties_p.getProperty(file_key);
-			Parameter p = params_p.get(key);
+			Parameter p = paramsEntry.getValue();
 			if(value!=null) {
 				p.setValue(value);
 			}

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2020 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -193,9 +193,8 @@ public class AFSpecProjectWizardSecondPage extends AbstractAFSpecProjectWizardPa
 		lAvailableCreators.addMouseListener(new ListMouseListener());
 		
 		if (availableCreator != null && availableCreator.size() != 0){
-			Set<String> idSet = availableCreator.keySet();
-			for (String id : idSet){
-				lAvailableCreators.add(availableCreator.get(id));
+			for (Map.Entry<String, String> availableCreatorEntry: availableCreator.entrySet()) {
+				lAvailableCreators.add(availableCreatorEntry.getValue());
 			}
 		}
 		
@@ -240,11 +239,10 @@ public class AFSpecProjectWizardSecondPage extends AbstractAFSpecProjectWizardPa
 		lSelectedCreators.addMouseListener(new ListMouseListener());
 		
 		if (selectedCreator != null && selectedCreator.size() != 0){
-			Set<String> idSet = selectedCreator.keySet();
-			for (String id : idSet){
-				lSelectedCreators.add(selectedCreator.get(id));
-				((NewAFSpecProject)getWizard()).setSelectedConcreteSyntaxCreators(selectedCreator);
+			for (Map.Entry<String, String> selectedCreatorEntry: selectedCreator.entrySet()) {
+				lSelectedCreators.add(selectedCreatorEntry.getValue());
 			}
+			((NewAFSpecProject)getWizard()).setSelectedConcreteSyntaxCreators(selectedCreator);
 		}
 		
 		return csComposit;
@@ -398,7 +396,7 @@ public class AFSpecProjectWizardSecondPage extends AbstractAFSpecProjectWizardPa
 			}
 
 			bAdd.setEnabled(lAvailableCreators.getSelectionIndex() != -1 &&  availableCreator.size() != 0);
-			bAddAll.setEnabled(availableCreator.size() != 0);
+			bAddAll.setEnabled(availableCreator != null && availableCreator.size() != 0);
 			bRemove.setEnabled(lSelectedCreators.getSelectionIndex() != -1 && selectedCreator.size() != 0);
 			bRemoveAll.setEnabled(selectedCreator.size() != 0);
 		}
@@ -412,6 +410,8 @@ public class AFSpecProjectWizardSecondPage extends AbstractAFSpecProjectWizardPa
 			case selectedCreator_source:
 				key = selectedCreator.keySet();
 				break;
+			default:
+				return null;
 			}
 			if (key == null){
 				return null;

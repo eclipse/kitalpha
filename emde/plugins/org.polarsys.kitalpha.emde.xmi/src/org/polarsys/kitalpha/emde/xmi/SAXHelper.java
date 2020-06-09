@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2018 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2020 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,8 +39,9 @@ public class SAXHelper {
 		List<String> processed = new ArrayList<String>();
 		Map<EObject, AnyType> anyTypes = resource.getEObjectToExtensionMap();
 		if (anyTypes != null && !anyTypes.isEmpty()) {
-			for (EObject key : anyTypes.keySet()) {
-				AnyType type = anyTypes.get(key);
+			for (Map.Entry<EObject, AnyType> anyTypesEntry: anyTypes.entrySet()) {
+				EObject key = anyTypesEntry.getKey();
+				AnyType type = anyTypesEntry.getValue();
 				@SuppressWarnings("unchecked")
 				List<? extends FeatureMap.Entry> mixedEntries = (List<? extends FeatureMap.Entry>) type.eGet(XMLTypePackage.eINSTANCE.getAnyType_Mixed());
 				for (FeatureMap.Entry mixedEntry : mixedEntries) {
