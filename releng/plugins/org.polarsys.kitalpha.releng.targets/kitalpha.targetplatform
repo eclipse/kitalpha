@@ -1,6 +1,16 @@
+/*******************************************************************************
+ * Copyright (c) 2019 THALES GLOBAL SERVICES.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Thales - initial API and implementation
+ *******************************************************************************/
 target "kitapha" with source, requirements
 
-location oxygen-release "http://download.eclipse.org/releases/oxygen/201803211000" {
+location oxygen-release "https://download.eclipse.org/releases/oxygen/201803211000" {
 	org.eclipse.sdk.feature.group lazy
 	org.eclipse.egit.feature.group lazy
 	org.eclipse.equinox.executable.feature.group lazy
@@ -119,7 +129,7 @@ location acceleo "https://download.eclipse.org/acceleo/updates/releases/3.7/R201
 }
 
 
-location Sirus "https://download.eclipse.org/sirius/updates/stable/6.1.4-S20200120-085637/oxygen" {
+location Sirus "https://download.eclipse.org/sirius/updates/releases/6.1.3/oxygen" {
 	org.eclipse.acceleo.query.feature.group lazy
 	org.eclipse.acceleo.query.source.feature.group lazy
 	org.eclipse.acceleo.ui.interpreter.feature.group lazy
@@ -152,7 +162,7 @@ location Sirus "https://download.eclipse.org/sirius/updates/stable/6.1.4-S202001
 	org.eclipse.sirius.specifier.ide.ui.source.feature.group lazy
 }
 
-location EMF-DiffMerge "http://download.eclipse.org/diffmerge/releases/0.11.2/emf-diffmerge-site/" {
+location EMF-DiffMerge "https://download.eclipse.org/diffmerge/releases/0.11.2/emf-diffmerge-site/" {
 	org.eclipse.emf.diffmerge.feature.feature.group lazy
 	org.eclipse.emf.diffmerge.feature.source.feature.group lazy
 	org.eclipse.emf.diffmerge.sirius.feature.feature.group lazy
@@ -164,19 +174,19 @@ location EMF-DiffMerge "http://download.eclipse.org/diffmerge/releases/0.11.2/em
 }
 
 
-location EDM-Patterns "http://download.eclipse.org/diffmerge/releases/0.11.0/edm-patterns-site/" {
+location EDM-Patterns "https://download.eclipse.org/diffmerge/releases/0.11.0/edm-patterns-site/" {
 	org.eclipse.emf.diffmerge.patterns.sdk.feature.feature.group lazy
 	org.eclipse.emf.diffmerge.patterns.sdk.feature.source.feature.group lazy
 	org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.feature.group lazy
 	org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.source.feature.group lazy
 }
 
-location coevolution "http://download.eclipse.org/diffmerge/releases/0.11.0/edm-coevolution-site/" {
+location coevolution "https://download.eclipse.org/diffmerge/releases/0.11.0/edm-coevolution-site/" {
 	 org.eclipse.emf.diffmerge.coevolution.sdk.feature.feature.group lazy
 	 org.eclipse.emf.diffmerge.coevolution.sdk.feature.source.feature.group lazy
 }
 
-location amalgam "https://download.eclipse.org/modeling/amalgam/updates/stable/1.10.1-S20190510//capella" {
+location amalgam "https://download.eclipse.org/modeling/amalgam/updates/stable/1.10.1-S20190510/capella" {
 	org.eclipse.amalgam.explorer.activity.feature.group lazy
 	org.eclipse.amalgam.explorer.activity.source.feature.group lazy
 	org.eclipse.amalgam.explorer.contextual.feature.group lazy
@@ -187,37 +197,37 @@ location amalgam "https://download.eclipse.org/modeling/amalgam/updates/stable/1
 	org.eclipse.amalgam.explorer.contextual.core.source.feature.group lazy
 }
 
-location EcoreTools "http://download.eclipse.org/ecoretools/updates/releases/3.3.0/oxygen/" {
+location EcoreTools "https://download.eclipse.org/ecoretools/updates/releases/3.3.0/oxygen/" {
 	org.eclipse.emf.ecoretools.sdk.feature.group lazy
 	org.eclipse.emf.ecoretools.design lazy
 	org.eclipse.emf.ecoretools.explorer.contextual.feature.group lazy
 }
 
-location EGFSdk "http://download.eclipse.org/egf/updates/1.6.0/oxygen/" {
+location EGFSdk "https://download.eclipse.org/egf/updates/1.6.1/2019-06/" {
 	org.eclipse.egf.sdk.feature.feature.group lazy
 	org.eclipse.egf.sdk.feature.source.feature.group lazy
 }
 
-location Nebula "http://download.eclipse.org/nebula/releases/1.4.0/" {
+location Nebula "https://download.eclipse.org/nebula/releases/1.4.0/" {
 	org.eclipse.nebula.widgets.richtext.feature.feature.group lazy
 }
 
-location Nattable "http://download.eclipse.org/nattable/releases/1.5.0/repository/" {
+location Nattable "https://download.eclipse.org/nattable/releases/1.5.0/repository/" {
 	org.eclipse.nebula.widgets.nattable.core.feature.feature.group lazy
 	org.eclipse.nebula.widgets.nattable.extension.glazedlists.feature.feature.group lazy
 }
 
-location orbit "http://download.eclipse.org/tools/orbit/downloads/drops/R20180206163158/repository" {
+location orbit "https://download.eclipse.org/tools/orbit/downloads/drops/R20180206163158/repository" {
 	ca.odell.glazedlists lazy
 }
 
-location orbit-R20130827064939 "http://download.eclipse.org/tools/orbit/downloads/drops/R20130827064939/repository" {
+location orbit-R20130827064939 "https://download.eclipse.org/tools/orbit/downloads/drops/R20130827064939/repository" {
 	org.apache.log4j [1.2.15.v201012070815,1.2.15.v201012070815]
 	org.apache.commons.lang [2.4.0.v201005080502,2.4.0.v201005080502]
 	org.apache.commons.net [3.2.0.v201305141515,3.2.0.v201305141515]
 	org.jsoup [1.7.2.v201304221138,1.7.2.v201304221138]
 }
 
-location orbit-R20140525021250 "http://download.eclipse.org/tools/orbit/downloads/drops/R20140525021250/repository" {
+location orbit-R20140525021250 "https://download.eclipse.org/tools/orbit/downloads/drops/R20140525021250/repository" {
 	com.google.guava [15.0.0.v201403281430,15.0.0.v201403281430]
 }
