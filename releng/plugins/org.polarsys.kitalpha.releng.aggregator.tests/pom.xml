@@ -34,7 +34,7 @@
     </comments>
 		</license>
 	</licenses>
-
+	
 	<modules>
 		<!-- plugins Test -->
 		<module>../../../detachment/tests/junit/org.polarsys.kitalpha.detachment.tests.ju</module>
