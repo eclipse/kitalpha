@@ -55,6 +55,7 @@
 						</injections>
 						<vmArgs>
 							<vmArg>${failsafeArgline}</vmArg>
+							<vmArg>${rcptt.weaving}</vmArg>
 						</vmArgs>
 					</aut>
 					<!-- The main configuration section goes here -->

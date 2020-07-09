@@ -35,6 +35,10 @@
 		</license>
 	</licenses>
 
+	<properties>
+		<rcptt.weaving>-Dosgi.framework.extensions=org.eclipse.equinox.weaving.hook</rcptt.weaving>
+	</properties>
+	
 	<modules>
 		<!-- plugins Test -->
 		<module>../../../detachment/tests/junit/org.polarsys.kitalpha.detachment.tests.ju</module>
