@@ -77,6 +77,9 @@
 	  	 <target-platform-name>kitalpha</target-platform-name>
       </properties>
       <modules>
+        <!-- module TP -->
+        <module>../../plugins/org.polarsys.kitalpha.releng.targets</module>
+
         <module>../../plugins/org.polarsys.kitalpha.releng.aggregator.product</module>
         <module>../../plugins/org.polarsys.kitalpha.releng.aggregator.tests</module>
       </modules>
