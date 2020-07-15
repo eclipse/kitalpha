@@ -9,7 +9,7 @@ pipeline {
     stage('Package & test Kitalpha') {
       steps {
 	  	wrap([$class: 'Xvnc', takeScreenshot: false, useXauthority: true]) {
-        	sh 'mvn  -Dmaven.test.failure.ignore=true -Dtycho.localArtifacts=ignore clean install -P full -P sign -P product -e -f releng/plugins/org.polarsys.kitalpha.releng.parent/pom.xml'
+        	sh 'mvn  -Dmaven.test.failure.ignore=true -Dtycho.localArtifacts=ignore clean install -P core -P sign -P product -e -f releng/plugins/org.polarsys.kitalpha.releng.parent/pom.xml'
         }
 	  }
     }

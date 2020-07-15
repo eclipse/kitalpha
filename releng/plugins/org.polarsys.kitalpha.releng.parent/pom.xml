@@ -85,7 +85,7 @@
       </modules>
     </profile>
     <profile>
-      <id>full</id>
+      <id>core</id>
       <activation>
         <activeByDefault>true</activeByDefault>
       </activation>
