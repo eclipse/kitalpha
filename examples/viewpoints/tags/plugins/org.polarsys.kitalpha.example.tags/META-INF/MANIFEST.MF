@@ -2,5 +2,5 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Tags
 Bundle-SymbolicName: org.polarsys.kitalpha.example.tags;singleton:=true
-Bundle-Version: 1.3.2.qualifier
+Bundle-Version: 1.3.3.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

@@ -137,14 +137,14 @@ public class BasicTests2 extends TestCase {
 		org.polarsys.kitalpha.resourcereuse.model.Resource resource = ResourceReuse.createHelper().getResource("org.polarsys.kitalpha.vp.componentsampleperformance");
 		Version version = ViewpointManager.readVersion(resource);
 		assertNotNull(version);
-		assertEquals("1.3.2.qualifier", version.toString());
+		assertEquals("1.3.3.qualifier", version.toString());
 	}
 	
 	public void testManager12() throws Exception {
 		org.polarsys.kitalpha.resourcereuse.model.Resource resource = ResourceReuse.createHelper().getResource("org.polarsys.kitalpha.vp.componentsamplequalityassessment");
 		Version version = ViewpointManager.readVersion(resource);
 		assertNotNull(version);
-		assertEquals("1.3.2.qualifier", version.toString());
+		assertEquals("1.3.3.qualifier", version.toString());
 	}
 
 	public void testManager13() throws Exception {

@@ -54,7 +54,7 @@
     <vpConfigurationElements xsi:type="vpconf:TargetApplication" type="EMF"/>
     <vpConfigurationElements xsi:type="vpconf:GenerationConfiguration" projectName="org.polarsys.kitalpha.vp.componentsample" nsuri="http://www.polarsys.org/kitalpha/ComponentSample/1.0.0"/>
     <vpConfigurationElements xsi:type="vpconf:ViewConfiguration"/>
-    <vpConfigurationElements xsi:type="vpconf:Release" viewpointVersion="1.3.2.qualifier" viewpointDescription="Component Sample Core Viewpoint">
+    <vpConfigurationElements xsi:type="vpconf:Release" viewpointVersion="1.3.3.qualifier" viewpointDescription="Component Sample Core Viewpoint">
       <requiredExecutionEnvironment>JavaSE-1.6</requiredExecutionEnvironment>
     </vpConfigurationElements>
     <vpConfigurationElements xsi:type="vpconf:Generation">

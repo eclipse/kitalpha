@@ -32,7 +32,7 @@ public class ModelTests3 extends ModelTests {
 		IStatus result = ViewpointManager.checkViewpointsCompliancy(set);
 		assertFalse(result.isOK());
 		assertEquals(1, result.getChildren().length);
-		assertEquals("The viewpoint 'org.polarsys.kitalpha.vp.componentsampleperformance' is needed in incompatible versions :1.3.2.qualifier / 1.1.1.qualifier", result.getChildren()[0].getMessage());
+		assertEquals("The viewpoint 'org.polarsys.kitalpha.vp.componentsampleperformance' is needed in incompatible versions :1.3.3.qualifier / 1.1.1.qualifier", result.getChildren()[0].getMessage());
 	}
 
 }

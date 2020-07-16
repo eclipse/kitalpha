@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata:Metadata xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:metadata="http://www.polarsys.org/kitalpha/ad/metadata/1.0.0" id="_xGgCwv_1Eea3Pf9PqSy3BQ">
-  <viewpointReferences id="aaa" vpId="org.polarsys.kitalpha.vp.componentsampleframework" version="1.3.2.qualifier"/>
-  <viewpointReferences id="aaaa" vpId="org.polarsys.kitalpha.vp.componentsample" version="1.3.2.qualifier"/>
-  <viewpointReferences id="_plLw8v_2Eea3Pf9PqSy3BQ" vpId="org.polarsys.kitalpha.vp.componentsamplesafety" version="1.3.2.qualifier"/>
+  <viewpointReferences id="aaa" vpId="org.polarsys.kitalpha.vp.componentsampleframework" version="1.3.3.qualifier"/>
+  <viewpointReferences id="aaaa" vpId="org.polarsys.kitalpha.vp.componentsample" version="1.3.3.qualifier"/>
+  <viewpointReferences id="_plLw8v_2Eea3Pf9PqSy3BQ" vpId="org.polarsys.kitalpha.vp.componentsamplesafety" version="1.3.3.qualifier"/>
   <additionalMetadata href="My2_b.afm#_oExuIP_2Eea3Pf9PqSy3BQ"/>
 </metadata:Metadata>
