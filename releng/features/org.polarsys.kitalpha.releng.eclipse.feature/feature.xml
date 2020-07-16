@@ -46,7 +46,7 @@
    <includes
          id="org.eclipse.emf.diffmerge.coevolution.sdk.feature"
          version="0.0.0"/>
-         
+
    <includes
          id="org.eclipse.emf.diffmerge.coevolution.sdk.feature.source"
          version="0.0.0"/>
@@ -114,7 +114,7 @@
    <includes
          id="org.eclipse.egf.sdk.feature"
          version="0.0.0"/>
-         
+
    <includes
          id="org.eclipse.egf.sdk.feature.source"
          version="0.0.0"/>
@@ -205,11 +205,6 @@
 
    <includes
          id="org.eclipse.emf.ecoretools.design"
-         version="0.0.0"/>
-         
-
-   <includes
-         id="org.eclipse.emf.ecoretools.explorer.contextual"
          version="0.0.0"/>
 
    <includes
@@ -369,29 +364,9 @@
          version="0.0.0"/>
 
    <includes
-         id="org.eclipse.sirius.doc.feature"
-         version="0.0.0"/>
-
-   <includes
          id="org.eclipse.sirius.runtime"
          version="0.0.0"/>
 
-   <includes
-         id="org.eclipse.sirius.runtime.source"
-         version="0.0.0"/>
-
-   <includes
-         id="org.eclipse.sirius.runtime.acceleo"
-         version="0.0.0"/>
-
-   <includes
-         id="org.eclipse.sirius.runtime.acceleo.source"
-         version="0.0.0"/>
-
-	<includes
-         id="org.eclipse.sirius.specifier.ide.ui.aql"
-         version="0.0.0"/>
-		 
    <includes
          id="org.eclipse.sirius.runtime.aql"
          version="0.0.0"/>
@@ -401,19 +376,7 @@
          version="0.0.0"/>
 
    <includes
-         id="org.eclipse.sirius.runtime.aql.source"
-         version="0.0.0"/>
-
-   <includes
-         id="org.eclipse.sirius.aql.source"
-         version="0.0.0"/>
-
-   <includes
          id="org.eclipse.sirius.runtime.ide.eef"
-         version="0.0.0"/>
-
-   <includes
-         id="org.eclipse.sirius.runtime.ide.eef.source"
          version="0.0.0"/>
 
    <includes
@@ -421,47 +384,7 @@
          version="0.0.0"/>
 
    <includes
-         id="org.eclipse.sirius.runtime.ide.ui.source"
-         version="0.0.0"/>
-
-   <includes
-         id="org.eclipse.sirius.runtime.ide.ui.acceleo"
-         version="0.0.0"/>
-
-   <includes
-         id="org.eclipse.sirius.runtime.ide.ui.acceleo.source"
-         version="0.0.0"/>
-
-   <includes
          id="org.eclipse.sirius.runtime.ide.xtext"
-         version="0.0.0"/>
-
-   <includes
-         id="org.eclipse.sirius.runtime.ide.xtext.source"
-         version="0.0.0"/>
-
-   <includes
-         id="org.eclipse.sirius.runtime.ocl"
-         version="0.0.0"/>
-
-   <includes
-         id="org.eclipse.sirius.runtime.ocl.source"
-         version="0.0.0"/>
-
-   <includes
-         id="org.eclipse.sirius.specifier.ide.ui"
-         version="0.0.0"/>
-
-   <includes
-         id="org.eclipse.sirius.specifier.ide.ui.source"
-         version="0.0.0"/>
-
-   <includes
-         id="org.eclipse.sirius.specifier.ide.ui.acceleo"
-         version="0.0.0"/>
-
-   <includes
-         id="org.eclipse.sirius.specifier.ide.ui.acceleo.source"
          version="0.0.0"/>
 
    <includes
@@ -575,15 +498,15 @@
    <includes
          id="org.eclipse.nebula.widgets.richtext.feature"
          version="0.0.0"/>
-         
+
    <includes
          id="org.eclipse.nebula.widgets.nattable.core.feature"
          version="0.0.0"/>
-         
+
    <includes
          id="org.eclipse.nebula.widgets.nattable.extension.glazedlists.feature"
          version="0.0.0"/>
-   
+
    <includes
          id="org.eclipse.emf.diffmerge.feature"
          version="0.0.0"/>
