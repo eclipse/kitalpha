@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2018 Thales Global Services S.A.S.
+ * Copyright (c) 2018, 2020 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -20,11 +20,7 @@ import org.eclipse.emf.transaction.NotificationFilter;
 import org.eclipse.emf.transaction.ResourceSetChangeEvent;
 import org.eclipse.emf.transaction.ResourceSetListener;
 import org.eclipse.emf.transaction.ResourceSetListenerImpl;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.emf.transaction.util.TransactionUtil;
-import org.eclipse.swt.widgets.Display;
 import org.polarsys.kitalpha.richtext.widget.editor.MDERichTextEditor;
-import org.polarsys.kitalpha.richtext.widget.editor.MDERichTextEditorInput;
 import org.polarsys.kitalpha.richtext.widget.helper.MDERichtextWidgetHelper;
 
 /**
@@ -47,8 +43,7 @@ public class RichtextEditorResourceSetListener extends ResourceSetListenerImpl i
     // Close dangling editors if there are REMOVE/REMOVE_MANY notifications
     if (notifications.stream().anyMatch(notification -> (notification.getEventType() == Notification.REMOVE
         || notification.getEventType() == Notification.REMOVE_MANY))) {
-      MDERichtextWidgetHelper.getActiveMDERichTextEditors().stream()
-          .forEach(editor -> handleClosingEditors(editor, event.getEditingDomain()));
+      MDERichtextWidgetHelper.closeInvalidEditors(event.getEditingDomain());
     }
 
     // Update editors' titles if there are SET notifications
@@ -68,38 +63,16 @@ public class RichtextEditorResourceSetListener extends ResourceSetListenerImpl i
     return true;
   }
 
-  private void close(MDERichTextEditor richtextEditor) {
-    if (richtextEditor != null) {
-      Display.getDefault().asyncExec(() -> richtextEditor.getEditorSite().getPage().closeEditor(richtextEditor, false));
-    }
-  }
-
-  private void handleClosingEditors(MDERichTextEditor richtextEditor, TransactionalEditingDomain editingDomain) {
-    MDERichTextEditorInput editorInput;
-    editorInput = (MDERichTextEditorInput) richtextEditor.getEditorInput();
-    EObject element = editorInput.getElement();
-    TransactionalEditingDomain eltEditingDomain = TransactionUtil.getEditingDomain(element);
-    /*
-     * If the editing domain of element is null or we are in the same editing domain and the resource of the element is
-     * null => Close the editor
-     */
-    if ((eltEditingDomain == null || eltEditingDomain == editingDomain) && element.eResource() == null) {
-      close(richtextEditor);
-    }
-  }
-
   private List<EStructuralFeature> getContributedTitleChangingFeatures() {
     return MDERichtextWidgetHelper.getInstance().getEditorInputFeatureContribution().stream()
         .flatMap(contribution -> contribution.getTitleChangingFeatures().stream()).collect(Collectors.toList());
   }
 
   private void updateEditorsTitle(Notification notification) {
-    if (getContributedTitleChangingFeatures().contains(notification.getFeature())) {
-      for (MDERichTextEditor richtextEditor : MDERichtextWidgetHelper.getActiveMDERichTextEditors()) {
-        MDERichTextEditorInput input = (MDERichTextEditorInput) richtextEditor.getEditorInput();
-        EObject element = input.getElement();
-        if (element == notification.getNotifier()) {
-          richtextEditor.setMDERichTextEditorPartName();
+    if (notification.getNotifier() instanceof EObject) {
+      if (getContributedTitleChangingFeatures().contains(notification.getFeature())) {
+        for (MDERichTextEditor editor : MDERichtextWidgetHelper.getActiveMDERichTextEditors((EObject) notification.getNotifier())) {
+        	editor.setMDERichTextEditorPartName();
         }
       }
     }

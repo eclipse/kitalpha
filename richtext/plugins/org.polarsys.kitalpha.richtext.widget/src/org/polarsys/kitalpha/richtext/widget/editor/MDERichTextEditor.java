@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017, 2019 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2020 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -12,7 +12,6 @@ package org.polarsys.kitalpha.richtext.widget.editor;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
-import java.util.Arrays;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
@@ -40,7 +39,6 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IEditorInput;
-import org.eclipse.ui.IEditorReference;
 import org.eclipse.ui.IEditorSite;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchListener;
@@ -55,9 +53,9 @@ import org.polarsys.kitalpha.richtext.common.impl.AbstractMDERichTextWidget;
 import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
 import org.polarsys.kitalpha.richtext.common.util.MDERichTextHelper;
 import org.polarsys.kitalpha.richtext.nebula.widget.MDENebulaBasedRichTextWidgetImpl;
-import org.polarsys.kitalpha.richtext.nebula.widget.MDERichTextConstants;
 import org.polarsys.kitalpha.richtext.widget.editor.intf.MDERichTextEditorCallback;
 import org.polarsys.kitalpha.richtext.widget.factory.MDERichTextFactory;
+import org.polarsys.kitalpha.richtext.widget.helper.MDERichtextWidgetHelper;
 import org.polarsys.kitalpha.richtext.widget.internal.Activator;
 import org.polarsys.kitalpha.richtext.widget.internal.RichtextEditorResourceSetListener;
 import org.polarsys.kitalpha.richtext.widget.internal.extension.MDERichTextExtensionManager;
@@ -288,34 +286,17 @@ public class MDERichTextEditor extends EditorPart
 		EObject element = widget.getElement();
 		TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(element);
 
-		IWorkbenchPage page = getSite().getPage();
-
 		/*
 		 * Handle removing listener peer editing domain
 		 */
-		long nbOpenedEditors = Arrays.stream(page.getEditorReferences())
-				.filter(e -> MDERichTextConstants.RICHTEXT_EDITOR_ID.equals(e.getId())
-						&& isInSameEditingDomain(editingDomain, e))
-				.count();
+		long nbOpenedEditors = MDERichtextWidgetHelper.getActiveMDERichTextEditors(editingDomain).size();
 
 		disposeResourceSetListener = nbOpenedEditors == 0;
 		if (editingDomain != null && disposeResourceSetListener) {
 			editingDomain.removeResourceSetListener(closeEditorResourceSetListener);
 		}
 	}
-
-	private boolean isInSameEditingDomain(TransactionalEditingDomain editingDomain, IEditorReference eReference) {
-		try {
-			MDERichTextEditorInput editorInput = (MDERichTextEditorInput) eReference.getEditorInput();
-			TransactionalEditingDomain ed = TransactionUtil.getEditingDomain(editorInput.getElement());
-			return ed == editingDomain;
-		} catch (PartInitException e) {
-			Status status = new Status(IStatus.WARNING, Activator.PLUGIN_ID, "Cannot Retrieve The Editor Input", e);
-			Activator.getDefault().getLog().log(status);
-		}
-		return false;
-	}
-
+	
 	@Override
 	public String getContributorId() {
 		return propertySheetExtensionManager.getContributorId();
