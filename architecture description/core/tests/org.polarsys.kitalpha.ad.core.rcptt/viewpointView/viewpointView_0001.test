@@ -22,7 +22,7 @@ get-view "Viewpoint Manager" | get-label "Project b" | get-property caption | eq
 get-view "Viewpoint Manager" | get-table | select "Component Sample" | get-menu "Show view/Component Sample" | click
 with [get-view "Component Sample"] {
     get-editbox -after [get-label "Name:"] | get-property text | equals "Component Sample" | verify-true
-    get-editbox -after [get-label "Version:"] | get-property text | equals "1.3.2.qualifier" | verify-true
+    get-editbox -after [get-label "Version:"] | get-property text | equals "1.3.3.qualifier" | verify-true
     with [get-tab-folder] {
         get-property activePage | equals Overview | verify-true
         get-property "pages[0]" | equals Overview | verify-true
@@ -47,7 +47,7 @@ with [get-view "Viewpoint Manager"] {
 }
 with [get-view "Component Sample Framework"] {
     get-editbox -after [get-label "Name:"] | get-property text | equals "Component Sample Framework" | verify-true
-    get-editbox -after [get-label "Version:"] | get-property text | equals "1.3.2.qualifier" | verify-true
+    get-editbox -after [get-label "Version:"] | get-property text | equals "1.3.3.qualifier" | verify-true
     get-table | get-property itemCount | equals 0 | verify-true
     with [get-button Abstract] {
         get-property caption | equals Abstract | verify-true

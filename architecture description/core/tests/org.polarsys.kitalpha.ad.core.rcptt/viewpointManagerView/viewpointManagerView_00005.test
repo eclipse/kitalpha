@@ -23,7 +23,7 @@ with [get-editor "My.componentsample" | get-tree] {
         | get-menu "New Child/Performance" | click
 }
 with [get-view "Viewpoint Manager" | get-table] {
-    get-item "Component Sample Performance" | get-property "values['Version']" | equals "1.3.2.qualifier" | verify-true
+    get-item "Component Sample Performance" | get-property "values['Version']" | equals "1.3.3.qualifier" | verify-true
     get-item "Component Sample Performance" | get-property "values['Name']" | equals "Component Sample Performance" 
         | verify-true
 }
