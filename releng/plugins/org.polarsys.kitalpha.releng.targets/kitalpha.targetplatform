@@ -129,7 +129,7 @@ location acceleo "https://download.eclipse.org/acceleo/updates/releases/3.7/R201
 }
 
 
-location Sirus "https://download.eclipse.org/sirius/updates/releases/6.1.3/oxygen" {
+location Sirus "https://download.eclipse.org/sirius/updates/releases/6.1.4/oxygen" {
 	org.eclipse.acceleo.query.feature.group lazy
 	org.eclipse.acceleo.query.source.feature.group lazy
 	org.eclipse.acceleo.ui.interpreter.feature.group lazy
@@ -203,7 +203,7 @@ location EcoreTools "https://download.eclipse.org/ecoretools/updates/releases/3.
 	org.eclipse.emf.ecoretools.explorer.contextual.feature.group lazy
 }
 
-location EGFSdk "https://download.eclipse.org/egf/updates/1.6.1/2019-06/" {
+location EGFSdk "https://download.eclipse.org/egf/updates/1.6.0/oxygen/" {
 	org.eclipse.egf.sdk.feature.feature.group lazy
 	org.eclipse.egf.sdk.feature.source.feature.group lazy
 }
