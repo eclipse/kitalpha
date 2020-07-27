@@ -14,7 +14,7 @@
 <feature
       id="org.polarsys.kitalpha.accuracy.examples.feature"
       label="Kitalpha Accuracy Examples Feature"
-      version="1.4.0.qualifier">
+      version="5.0.0.qualifier">
 
    <description>
       %description

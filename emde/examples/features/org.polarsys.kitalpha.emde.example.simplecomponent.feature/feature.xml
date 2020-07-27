@@ -12,7 +12,7 @@
 <feature
       id="org.polarsys.kitalpha.emde.example.simplecomponent.feature"
       label="Simplecomponent Example Feature (eMDE example)"
-      version="1.4.0.qualifier"
+      version="5.0.0.qualifier"
       provider-name="%providerName">
 
    <description>

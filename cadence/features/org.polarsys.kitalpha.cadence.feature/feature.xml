@@ -12,7 +12,7 @@
 <feature
       id="org.polarsys.kitalpha.cadence.feature"
       label="%providerName"
-      version="1.4.0.qualifier"
+      version="5.0.0.qualifier"
       provider-name="%providerVendor">
 
    <description>
