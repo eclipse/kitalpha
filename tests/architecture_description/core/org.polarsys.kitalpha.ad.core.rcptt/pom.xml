@@ -28,6 +28,9 @@
 		<version>1.4.0-SNAPSHOT</version>
 		<relativePath>../../../../releng/plugins/org.polarsys.kitalpha.releng.parent</relativePath>
 	</parent>
+	<properties>
+		<rcptt.aut.version>1.4.0-SNAPSHOT</rcptt.aut.version>
+	</properties>
 	<build>
 		<plugins>
 			<plugin>
@@ -40,9 +43,9 @@
 						<version>${rcptt-maven-version}</version>
 					</runner>
 					<aut>
- 						<explicit>
-							../../../../releng/plugins/org.polarsys.kitalpha.releng.sdk.product/target/products/org.polarsys.kitalpha.releng.sdk.product/linux/gtk/x86_64/
-						</explicit>
+						<groupId>org.polarsys</groupId>
+						<artifactId>org.polarsys.kitalpha.releng.sdk.product</artifactId>
+						<version>1.4.0-SNAPSHOT</version>
 						<injections>
 							<injection>
 								<site>${project.baseUri}../../../../releng/plugins/org.polarsys.kitalpha.releng.samplecomponent.updatesite/target/repository</site>
