@@ -105,14 +105,6 @@
         <module>../../plugins/org.polarsys.kitalpha.releng.aggregator.runtime</module>
         <!-- module SDK -->
         <module>../../plugins/org.polarsys.kitalpha.releng.aggregator.sdk</module>
-        <!-- module Product -->
-        <!-- module>../../plugins/org.polarsys.kitalpha.releng.aggregator.product</module-->
-        <!-- module Examples -->
-        <!--module>../../plugins/org.polarsys.kitalpha.releng.aggregator.examples</module-->
-        <!-- module Sample Component -->
-        <!--module>../../plugins/org.polarsys.kitalpha.releng.aggregator.samplecomponent</module-->
-        <!-- module Junit tests -->
-        <!-- module>../../plugins/org.polarsys.kitalpha.releng.aggregator.tests</module-->
       </modules>
     </profile>
 	<profile>
