@@ -42,7 +42,6 @@
       <import feature="org.polarsys.kitalpha.composer.componentsample.installer.feature" version="1.4.0.qualifier"/>
       <import feature="org.polarsys.kitalpha.transposer.examples.feature" version="1.4.0.qualifier"/>
       <import feature="org.polarsys.kitalpha.transposer.componentsample.installer.feature" version="1.4.0.qualifier"/>
-      <import feature="org.polarsys.kitalpha.product.feature" version="1.4.0.qualifier"/>
    </requires>
 
 </feature>

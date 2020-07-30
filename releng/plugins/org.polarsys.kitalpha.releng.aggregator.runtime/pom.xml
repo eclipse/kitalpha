@@ -48,6 +48,7 @@
     <!-- features -->
     <module>../../../accuracy/features/org.polarsys.kitalpha.accuracy.feature</module>
     <module>../../../composer/features/org.polarsys.kitalpha.composer.feature</module>
+    <module>../../../product/features/org.polarsys.kitalpha.runtime.feature</module>
     
     <module>../../../accuracy/plugins/org.polarsys.kitalpha.accuracy</module>
     <module>../../../accuracy/plugins/org.polarsys.kitalpha.accuracy.ui</module>

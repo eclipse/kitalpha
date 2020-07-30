@@ -47,9 +47,7 @@
     <module>../../../product/plugins/org.polarsys.kitalpha.product</module>
     
     <!-- features -->
-    <module>../../../product/features/org.polarsys.kitalpha.runtime.feature</module>
     <module>../../../product/features/org.polarsys.kitalpha.product.feature</module>
-    <module>../../../product/features/org.polarsys.kitalpha.sdk.feature</module>
 
     
     <!-- features for eclipse dependencies -->

@@ -57,12 +57,6 @@
    <feature id="org.polarsys.kitalpha.model.common.ui.menu.feature.source" version="0.0.0">
       <category name="SdkSource"/>
    </feature>
-   <feature id="org.polarsys.kitalpha.product.feature" version="0.0.0">
-      <category name="Sdk"/>
-   </feature>
-   <feature id="org.polarsys.kitalpha.product.feature.source" version="0.0.0">
-      <category name="SdkSource"/>
-   </feature>
    <feature id="org.polarsys.kitalpha.representation.feature" version="0.0.0">
       <category name="Sdk"/>
    </feature>

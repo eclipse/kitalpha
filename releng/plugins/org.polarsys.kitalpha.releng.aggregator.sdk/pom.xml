@@ -171,6 +171,7 @@
     
     <!-- features -->
     <module>../../../architecture description/core/features/org.polarsys.kitalpha.ad.sdk.feature</module>
+    <module>../../../product/features/org.polarsys.kitalpha.sdk.feature</module>
     
     <!-- plugins org.polarsys.kitalpha.ad.ta.feature -->
     <module>../../../architecture description/dsl/plugins/org.polarsys.kitalpha.ad.ta.emf</module>
