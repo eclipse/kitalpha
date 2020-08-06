@@ -53,9 +53,6 @@
 		<coverage.skip>false</coverage.skip>
 		<coverage.destFile>./target/jacoco.exec</coverage.destFile>
 		
-		<sonar-version>3.0.2</sonar-version>
-		<sonar.java.source>8</sonar.java.source>
-		
 		<sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
 		<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
 		<sonar.jacoco.release>0.7.5.201505241946</sonar.jacoco.release>
@@ -246,21 +243,6 @@
         <module>../../plugins/org.polarsys.kitalpha.releng.aggregator.samplecomponent</module>
         <!-- module Junit tests -->
         <module>../../plugins/org.polarsys.kitalpha.releng.aggregator.tests</module>
-    </modules>
-  </profile>
-  <profile>
-      <id>KitalphaSonar</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
-      <properties>
-  			<target-platform-name>kitalpha</target-platform-name>
-  	   </properties>
-      <modules>
-      	<!-- module TP -->
-        <module>../../plugins/org.polarsys.kitalpha.releng.targets</module>
-      	<!-- module Sonar -->
-      	<module>../../plugins/org.polarsys.kitalpha.releng.aggregator.sonar</module>
     </modules>
   </profile>
  </profiles>
