@@ -12,7 +12,7 @@
 <feature
       id="org.polarsys.kitalpha.model.common.ui.menu.feature"
       label="%MODEL_COMMON_KITALPHA_UI_FEATRE_NAME"
-      version="1.4.1.qualifier"
+      version="1.4.2.qualifier"
       provider-name="%providerName">
 
    <description>

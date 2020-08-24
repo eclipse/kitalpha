@@ -12,7 +12,7 @@
 <feature
       id="org.polarsys.kitalpha.ad.af.dsl.feature"
       label="Architecture framework dsl feature"
-      version="1.4.1.qualifier"
+      version="1.4.2.qualifier"
       provider-name="%providerName">
 
    <description>
