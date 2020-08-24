@@ -33,11 +33,12 @@ import org.polarsys.kitalpha.richtext.widget.tools.manager.LinkManagerImpl;
 public class ListenerInstaller {
 
 	/**
-	 * Creates all the Java listeners for the current widget. In order to bind the listeners to the rich text widget, the
-	 * {@link ListenerInstaller#installAllListeners(MDENebulaBasedRichTextWidget)} method must be called afterwards.
+	 * Creates all the Java listeners for the current widget. In order to bind the
+	 * listeners to the rich text widget, the
+	 * {@link ListenerInstaller#installAllListeners(MDENebulaBasedRichTextWidget)}
+	 * method must be called afterwards.
 	 * 
-	 * @param widget
-	 *          the rich text widget.
+	 * @param widget the rich text widget.
 	 */
 	public void createAllListeners(final MDENebulaBasedRichTextWidget widget) {
 		createBeforePasteConfirmationDialogListener(widget);
@@ -47,15 +48,18 @@ public class ListenerInstaller {
 		createChangeContentListener(widget);
 		createFocusEventListener(widget);
 		createWorkspaceResourceSaveListener(widget);
+		createDataReadyEventListener(widget);
+		createSetDataEventListener(widget);
 	}
 
 	/**
 	 * Installs on the rich text widget the Java listeners created by the
-	 * {@link ListenerInstaller#createAllListeners(MDENebulaBasedRichTextWidget)}. The
-	 * {@link ListenerInstaller#createAllListeners(MDENebulaBasedRichTextWidget)} method must thus be called before.
+	 * {@link ListenerInstaller#createAllListeners(MDENebulaBasedRichTextWidget)}.
+	 * The
+	 * {@link ListenerInstaller#createAllListeners(MDENebulaBasedRichTextWidget)}
+	 * method must thus be called before.
 	 * 
-	 * @param widget
-	 *          the rich text widget.
+	 * @param widget the rich text widget.
 	 */
 	public void installAllListeners(final MDENebulaBasedRichTextWidget widget) {
 		installBeforePasteConfirmationDialogListener(widget);
@@ -64,6 +68,8 @@ public class ListenerInstaller {
 		installChangeNotificationHandlerListener(widget);
 		installChangeContentListener(widget);
 		installFocusEventListener(widget);
+		installDataReadyEventListener(widget);
+		installSetDataEventListener(widget);
 	}
 
 	protected void createBeforePasteConfirmationDialogListener(final MDENebulaBasedRichTextWidget widget) {
@@ -71,7 +77,7 @@ public class ListenerInstaller {
 			@Override
 			public Object function(Object[] arguments) {
 				return "Press OK to clean the Non-XHTML before pasting.\n\n"
-				    + "Press Cancel to paste text as it is (not recommended) or better use toolbar action \"Paste as plain text\"";
+						+ "Press Cancel to paste text as it is (not recommended) or better use toolbar action \"Paste as plain text\"";
 			}
 		};
 	}
@@ -98,15 +104,15 @@ public class ListenerInstaller {
 
 		if (!widget.executeScript(script.toString())) {
 			Activator.getDefault().getLog().log(new Status(IStatus.WARNING, Activator.PLUGIN_ID,
-			    "Rich text widget can not install beforePaste/afterPaste/beforeCommandExec listeners!")); //$NON-NLS-1$
+					"Rich text widget can not install beforePaste/afterPaste/beforeCommandExec listeners!")); //$NON-NLS-1$
 		}
 	}
 
 	/**
-	 * Listener that overrides the default double click event of CKEDITOR to open links.
+	 * Listener that overrides the default double click event of CKEDITOR to open
+	 * links.
 	 * 
-	 * @param widget
-	 *          the rich text widget.
+	 * @param widget the rich text widget.
 	 */
 	protected void createOpenLinkListener(final MDENebulaBasedRichTextWidget widget) {
 		new BrowserFunction(widget.getBrowser(), "openLinks") { //$NON-NLS-1$
@@ -128,7 +134,7 @@ public class ListenerInstaller {
 		scriptAddMenu.append("  CKEDITOR.instances.editor.on('doubleclick', function(event)");
 		scriptAddMenu.append("  {");
 		scriptAddMenu.append(
-		    "    var element = CKEDITOR.plugins.link.getSelectedLink( CKEDITOR.currentInstance ) || event.data.element;");
+				"    var element = CKEDITOR.plugins.link.getSelectedLink( CKEDITOR.currentInstance ) || event.data.element;");
 		scriptAddMenu.append("    if (element!=undefined &&  element.is( 'a' ) ) {");
 		scriptAddMenu.append("      event.stop();");
 		scriptAddMenu.append("      openLinks(element.getAttribute('href'));");
@@ -139,9 +145,10 @@ public class ListenerInstaller {
 
 		scriptAddMenu.append("CKEDITOR.instances.editor.addCommand(\"openLink\", {");
 		scriptAddMenu.append("exec : function( editor ) {");
-		scriptAddMenu.append("			var linkTag = editor.getSelection().getStartElement().getAscendant('a', true);");
 		scriptAddMenu
-		    .append("          if (linkTag != null && linkTag.is('a')){ openLinks(linkTag.getAttribute('href'));}");
+				.append("			var linkTag = editor.getSelection().getStartElement().getAscendant('a', true);");
+		scriptAddMenu
+				.append("          if (linkTag != null && linkTag.is('a')){ openLinks(linkTag.getAttribute('href'));}");
 		scriptAddMenu.append("    }});");
 		scriptAddMenu.append("	var openLink = {");
 		scriptAddMenu.append("   label : 'Open Link',");
@@ -163,16 +170,15 @@ public class ListenerInstaller {
 		scriptAddMenu.append("});");
 
 		if (!widget.executeScript(scriptAddMenu.toString())) {
-			Activator.getDefault().getLog().log(
-			    new Status(IStatus.WARNING, Activator.PLUGIN_ID, "Rich text widget cannot install the open link command")); //$NON-NLS-1$
+			Activator.getDefault().getLog().log(new Status(IStatus.WARNING, Activator.PLUGIN_ID,
+					"Rich text widget cannot install the open link command")); //$NON-NLS-1$
 		}
 	}
 
 	/**
 	 * Listener that saves the editor content when receiving a focus out event.
 	 * 
-	 * @param widget
-	 *          the rich text widget.
+	 * @param widget the rich text widget.
 	 */
 	protected void createSaveListener(final MDENebulaBasedRichTextWidget widget) {
 		new BrowserFunction(widget.getBrowser(), "saveContent") { //$NON-NLS-1$
@@ -192,16 +198,15 @@ public class ListenerInstaller {
 		script.append("});");
 
 		if (!widget.executeScript(script.toString())) {
-			Activator.getDefault().getLog()
-			    .log(new Status(IStatus.WARNING, Activator.PLUGIN_ID, "Rich text widget cannot install the save handler")); //$NON-NLS-1$
+			Activator.getDefault().getLog().log(new Status(IStatus.WARNING, Activator.PLUGIN_ID,
+					"Rich text widget cannot install the save handler")); //$NON-NLS-1$
 		}
 	}
 
 	/**
 	 * Listener that sends a PropertyChangeEvent when receiving a blur out event.
 	 * 
-	 * @param widget
-	 *          the rich text widget.
+	 * @param widget the rich text widget.
 	 */
 	protected void createChangeNotificationHandlerListener(final MDENebulaBasedRichTextWidget widget) {
 		new BrowserFunction(widget.getBrowser(), "changeHandler") { //$NON-NLS-1$
@@ -224,16 +229,16 @@ public class ListenerInstaller {
 		script.append("});");
 
 		if (!widget.executeScript(script.toString())) {
-			Activator.getDefault().getLog().log(
-			    new Status(IStatus.WARNING, Activator.PLUGIN_ID, "Rich text widget cannot install the notification handler")); //$NON-NLS-1$
+			Activator.getDefault().getLog().log(new Status(IStatus.WARNING, Activator.PLUGIN_ID,
+					"Rich text widget cannot install the notification handler")); //$NON-NLS-1$
 		}
 	}
 
 	/**
-	 * Listener that temporary saves the editor content when receiving a 'change' event.
+	 * Listener that temporary saves the editor content when receiving a 'change'
+	 * event.
 	 * 
-	 * @param widget
-	 *          the rich text widget.
+	 * @param widget the rich text widget.
 	 */
 	protected void createChangeContentListener(final MDENebulaBasedRichTextWidget widget) {
 		new BrowserFunction(widget.getBrowser(), "firePropertyChangeEvent") { //$NON-NLS-1$
@@ -255,7 +260,8 @@ public class ListenerInstaller {
 		StringBuilder script = new StringBuilder();
 
 		/**
-		 * Notice that firePropertyChangeEvent() javascript function is defined MDERichTextEditor.
+		 * Notice that firePropertyChangeEvent() javascript function is defined
+		 * MDERichTextEditor.
 		 */
 		script.append("CKEDITOR.instances.editor.on('key', function () {");
 		script.append("firePropertyChangeEvent();");
@@ -263,15 +269,14 @@ public class ListenerInstaller {
 
 		if (!widget.executeScript(script.toString())) {
 			Activator.getDefault().getLog().log(new Status(IStatus.WARNING, Activator.PLUGIN_ID,
-			    "Rich text widget cannot install firePropertyChangeEvent handler")); //$NON-NLS-1$
+					"Rich text widget cannot install firePropertyChangeEvent handler")); //$NON-NLS-1$
 		}
 	}
 
 	/**
 	 * Listeners that resets the dirty state when receiving a 'focus' event.
 	 * 
-	 * @param widget
-	 *          the rich text widget.
+	 * @param widget the rich text widget.
 	 */
 	protected void createFocusEventListener(final MDENebulaBasedRichTextWidget widget) {
 		new BrowserFunction(widget.getBrowser(), "resetDirtyState") { //$NON-NLS-1$
@@ -292,26 +297,77 @@ public class ListenerInstaller {
 		script.append("});");
 
 		if (!widget.executeScript(script.toString())) {
-			Activator.getDefault().getLog().log(
-			    new Status(IStatus.WARNING, Activator.PLUGIN_ID, "Rich text widget cannot install resetDirtyState handler")); //$NON-NLS-1$
+			Activator.getDefault().getLog().log(new Status(IStatus.WARNING, Activator.PLUGIN_ID,
+					"Rich text widget cannot install resetDirtyState handler")); //$NON-NLS-1$
 		}
 	}
 
 	/**
-	 * Register the widget as a listener for when workspace resources have been saved.
+	 * @param widget the rich text widget.
+	 */
+	protected void createDataReadyEventListener(final MDENebulaBasedRichTextWidget widget) {
+		new BrowserFunction(widget.getBrowser(), "notifyDataReady") { //$NON-NLS-1$
+			@Override
+			public Object function(Object[] arguments) {
+				widget.setIsLoading(false);
+				return null;
+			}
+
+		};
+	}
+
+	protected void installDataReadyEventListener(final MDENebulaBasedRichTextWidget widget) {
+		StringBuilder script = new StringBuilder();
+
+		script.append("CKEDITOR.instances.editor.on('dataReady', function () {");
+		script.append("notifyDataReady();");
+		script.append("});");
+
+		if (!widget.executeScript(script.toString())) {
+			Activator.getDefault().getLog().log(new Status(IStatus.WARNING, Activator.PLUGIN_ID,
+					"Rich text widget cannot install dataReady handler")); //$NON-NLS-1$
+		}
+	}
+
+	protected void createSetDataEventListener(final MDENebulaBasedRichTextWidget widget) {
+		new BrowserFunction(widget.getBrowser(), "notifySetData") { //$NON-NLS-1$
+			@Override
+			public Object function(Object[] arguments) {
+				widget.setIsLoading(true);
+				return null;
+			}
+
+		};
+	}
+
+	protected void installSetDataEventListener(final MDENebulaBasedRichTextWidget widget) {
+		StringBuilder script = new StringBuilder();
+
+		script.append("CKEDITOR.instances.editor.on('setData', function () {");
+		script.append("notifySetData();");
+		script.append("});");
+
+		if (!widget.executeScript(script.toString())) {
+			Activator.getDefault().getLog().log(new Status(IStatus.WARNING, Activator.PLUGIN_ID,
+					"Rich text widget cannot install setData handler")); //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * Register the widget as a listener for when workspace resources have been
+	 * saved.
 	 * 
-	 * @param widget
-	 *          the rich text widget.
+	 * @param widget the rich text widget.
 	 */
 	protected void createWorkspaceResourceSaveListener(MDERichTextWidget widget) {
 		IConfigurationElement[] contributions = Platform.getExtensionRegistry()
-		    .getConfigurationElementsFor(MDERichTextEditor.SAVE_CALLBACK_EXTENSION_ID);
+				.getConfigurationElementsFor(MDERichTextEditor.SAVE_CALLBACK_EXTENSION_ID);
 
 		if (contributions != null && contributions.length > 0) {
 			for (IConfigurationElement c : contributions) {
 				try {
 					MDERichTextEditorCallback callback = (MDERichTextEditorCallback) c
-					    .createExecutableExtension(MDERichTextEditor.SAVE_CALLBACK_CLASS_ATTR);
+							.createExecutableExtension(MDERichTextEditor.SAVE_CALLBACK_CLASS_ATTR);
 					callback.registerWorkspaceResourceSaveListener(widget);
 				} catch (CoreException e) {
 					Status status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getMessage(), e);
