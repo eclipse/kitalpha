@@ -14,12 +14,9 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
 import org.eclipse.core.runtime.Assert;
-import org.eclipse.core.runtime.ISafeRunnable;
-import org.eclipse.core.runtime.SafeRunner;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Display;
 import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
 import org.polarsys.kitalpha.richtext.common.intf.SaveStrategy;
 import org.polarsys.kitalpha.richtext.common.messages.Messages;
@@ -32,32 +29,31 @@ import org.polarsys.kitalpha.richtext.common.util.MDERichTextHelper;
  *
  */
 public abstract class AbstractMDERichTextWidget implements MDERichTextWidget {
-	
+
 	private final static MDERichTextPropertyChangeListenerSupport listenersSupports = new MDERichTextPropertyChangeListenerSupport();
-	
+
 	private EObject owner;
 	private EStructuralFeature feature;
-	
+
 	private SaveStrategy saveStrategy;
 	public static final String WIDGET_SAVED_PROP = "widgetSaved";
-	
+	// Whether the browser is loading its content
+	private boolean isLoading = false;
 	private final SaveStrategy DEFAULT_SAVE_STRATEGY = new SaveStrategy() {
 		@Override
 		public void save(String editorText, EObject objectOwner, EStructuralFeature objectFeature) {
 			objectOwner.eSet(objectFeature, editorText);
 		}
 	};
-	
-	
+
 	public AbstractMDERichTextWidget(Composite parent) {
 		setSaveStrategy(DEFAULT_SAVE_STRATEGY);
 	}
-	
+
 	public AbstractMDERichTextWidget(Composite parent, int style) {
 		this(parent);
 	}
-	
-	
+
 	@Override
 	public EObject getElement() {
 		return this.owner;
@@ -70,51 +66,26 @@ public abstract class AbstractMDERichTextWidget implements MDERichTextWidget {
 
 	@Override
 	public void bind(EObject owner, EStructuralFeature feature) {
-	  // https://bugs.polarsys.org/show_bug.cgi?id=1952
-	  // Before changing the owner and the feature of this widget 
-	  // to a new EObject element and a new structure
-	  // must save the content of the current element and the current feature
-	  // if they are not NULL
-	  if (this.owner != null && this.feature != null && this.owner != owner && hasFocus()) {
-      saveContent();
-    }
-	  
+		// https://bugs.polarsys.org/show_bug.cgi?id=1952
+		// Before changing the owner and the feature of this widget
+		// to a new EObject element and a new structure
+		// must save the content of the current element and the current feature
+		// if they are not NULL
+		if (this.owner != null && this.feature != null && this.owner != owner && hasFocus()) {
+			saveContent();
+		}
+
 		this.owner = owner;
 		this.feature = feature;
-		
+
 		setBaseHrefPath(MDERichTextHelper.getProjectPath(owner));
-		
+
 		loadContent();
-	}
-
-	/**
-	 * see Workbench.spinEventQueueToUpdateSplash
-	 */
-	protected static void spinEventQueue(final Display display) {
-		if (!display.isDisposed() && display.getThread() == Thread.currentThread()) {
-			SafeRunner.run(new ISafeRunnable() {
-				@Override
-				public void run() throws Exception {
-					int safetyCounter = 0;
-					while (display.readAndDispatch() && safetyCounter++ < 100) {
-						// process until the queue is empty or until we hit the safetyCounter limit
-					}
-				}
-			});
-		}
-	}
-
-	protected void waitUntilReady(Display display) {
-		int safetyCounter = 0;
-		while (!isReady() && safetyCounter++ < 100) {
-			spinEventQueue(display);
-		}
 	}
 
 	@Override
 	public void loadContent() {
 		areNotNull(getElement(), getFeature());
-		waitUntilReady(Display.getCurrent());
 		Object text = getElement().eGet(getFeature());
 		String value = (String) ((text instanceof String) ? text : ""); //$NON-NLS-1$
 		setText(value);
@@ -122,7 +93,6 @@ public abstract class AbstractMDERichTextWidget implements MDERichTextWidget {
 
 	@Override
 	public final void saveContent() {
-		waitUntilReady(Display.getCurrent());
 		areNotNull(getElement(), getFeature());
 		String text = getText();
 		if (text != null && isEditable()) {
@@ -130,7 +100,6 @@ public abstract class AbstractMDERichTextWidget implements MDERichTextWidget {
 			// Notifies listeners that the save has been done
 			firePropertyChangeEvent(new PropertyChangeEvent(this, WIDGET_SAVED_PROP, null, null));
 		}
-		spinEventQueue(Display.getCurrent());
 	}
 
 	@Override
@@ -138,7 +107,7 @@ public abstract class AbstractMDERichTextWidget implements MDERichTextWidget {
 		Assert.isLegal(strategy != null, Messages.RichTextWidget_Common_NullableStrategy_Error);
 		this.saveStrategy = strategy;
 	}
-	
+
 	@Override
 	public boolean isDirty() {
 		EObject owner = getElement();
@@ -150,27 +119,28 @@ public abstract class AbstractMDERichTextWidget implements MDERichTextWidget {
 		}
 		return !storedText.equals(text);
 	}
-	
-	public SaveStrategy getSaveStrategy(){
+
+	public SaveStrategy getSaveStrategy() {
 		return this.saveStrategy;
 	}
-	
-  /**
-   * 
-   * Escape special characters in the HTML code displayed by the editor.
-   * 
-   * @param value
-   * @return
-   */
-  protected String escapeSpecialCharacters(String value) {
-    value = value.replace("'", "&#39;"); //$NON-NLS-1$ //$NON-NLS-2$
-    // If there is backslash in the HTML code, we do not want the editor to translate it as an escape character.
-    value = value.replace("\\", "&#92;"); //$NON-NLS-1$ //$NON-NLS-2$
-    return value;
-  }
-	
+
+	/**
+	 * 
+	 * Escape special characters in the HTML code displayed by the editor.
+	 * 
+	 * @param value
+	 * @return
+	 */
+	protected String escapeSpecialCharacters(String value) {
+		value = value.replace("'", "&#39;"); //$NON-NLS-1$ //$NON-NLS-2$
+		// If there is backslash in the HTML code, we do not want the editor to
+		// translate it as an escape character.
+		value = value.replace("\\", "&#92;"); //$NON-NLS-1$ //$NON-NLS-2$
+		return value;
+	}
+
 	protected final void areNotNull(Object... objects) {
-		if (objects != null){
+		if (objects != null) {
 			int index = 0;
 			for (Object object : objects) {
 				index++;
@@ -178,30 +148,31 @@ public abstract class AbstractMDERichTextWidget implements MDERichTextWidget {
 			}
 		}
 	}
-	
-  @Override
-  public void propertyChange(PropertyChangeEvent evt) {
-    MDERichTextWidget source = (MDERichTextWidget) evt.getSource();
-    if (source != this && source.getElement() != null && source.getFeature() != null
-        && source.getElement().equals(getElement()) && source.getFeature().equals(getFeature())) {
-      String newValue = (String) evt.getNewValue();
-      String currentText = getText();
-      if (currentText != null && !currentText.equals(newValue)) {
-        setText(newValue);
-      }
-    }
-  }
-	
+
+	@Override
+	public void propertyChange(PropertyChangeEvent evt) {
+		MDERichTextWidget source = (MDERichTextWidget) evt.getSource();
+		if (source != this && source.getElement() != null && source.getFeature() != null
+				&& source.getElement().equals(getElement()) && source.getFeature().equals(getFeature())) {
+			String newValue = (String) evt.getNewValue();
+			String currentText = getText();
+			if (currentText != null && !currentText.equals(newValue)) {
+				setText(newValue);
+			}
+		}
+	}
+
 	@Override
 	public void addPropertyChangeListener(PropertyChangeListener listener) {
 		listenersSupports.addPropertyChangeListener(listener);
 	}
-	
+
 	@Override
 	public void dispose() {
-    // The save should be done here in case of the widget being disposed since the focus lost event is not fired
-    saveContent();
-    
+		// The save should be done here in case of the widget being disposed since the
+		// focus lost event is not fired
+		saveContent();
+
 		PropertyChangeListener[] propertyChangeListeners = listenersSupports.getPropertyChangeListeners();
 		if (propertyChangeListeners != null && propertyChangeListeners.length > 0) {
 			for (PropertyChangeListener propertyChangeListener : propertyChangeListeners) {
@@ -209,12 +180,20 @@ public abstract class AbstractMDERichTextWidget implements MDERichTextWidget {
 			}
 		}
 	}
-	
+
 	@Override
 	public void firePropertyChangeEvent(PropertyChangeEvent event) {
 		if (event.getSource() == this) {
 			listenersSupports.fire(event);
 		}
 	}
-	
+
+	public void setIsLoading(boolean isLoading) {
+		this.isLoading = isLoading;
+	}
+
+	public boolean isLoading() {
+		return this.isLoading;
+	}
+
 }
