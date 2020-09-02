@@ -34,6 +34,7 @@ import org.polarsys.kitalpha.richtext.widget.internal.Activator;
 import org.polarsys.kitalpha.richtext.widget.tools.handlers.AddImageHandler;
 import org.polarsys.kitalpha.richtext.widget.tools.handlers.AddLinkHandler;
 import org.polarsys.kitalpha.richtext.widget.tools.handlers.ClearContentHandler;
+import org.polarsys.kitalpha.richtext.widget.tools.handlers.RefreshHandler;
 import org.polarsys.kitalpha.richtext.widget.tools.handlers.SaveContentHandler;
 import org.polarsys.kitalpha.richtext.widget.tools.utils.Constants;
 
@@ -199,8 +200,11 @@ public class MDERichTextFactory {
 	 */
 	protected void addEditorToolbarItems(MDENebulaBasedRichTextWidget widget) {
 		widget.addToolbarItem(widget, MDERichTextConstants.MDE_SAVE, MDERichTextConstants.MDE_SAVE,
-				"Save", MDERichTextConstants.MDE_SAVE_TOOLBAR, Constants.SAVE_IMAGE_ICON, new SaveContentHandler());
-		
+				"Save editor content", MDERichTextConstants.MDE_SAVE_TOOLBAR, Constants.SAVE_IMAGE_ICON, new SaveContentHandler());
+
+		widget.addToolbarItem(widget, MDERichTextConstants.MDE_REFRESH, MDERichTextConstants.MDE_REFRESH,
+				"Refresh editor", MDERichTextConstants.MDE_REFRESH, Constants.REFRESH_IMAGE_ICON, new RefreshHandler());
+    
 		widget.addToolbarItem(widget, MDERichTextConstants.MDE_CLEAN, 
 				MDERichTextConstants.MDE_CLEAN, MDERichTextConstants.MDE_CLEAN, 
 				MDERichTextConstants.MDE_CLEAN_TOOLBAR, Constants.CLEAR_ICON, new ClearContentHandler());
@@ -221,8 +225,11 @@ public class MDERichTextFactory {
 				MDERichTextHelper.getURL(Activator.PLUGIN_ID, "icons/openInEditor.gif"), //$NON-NLS-1$
 				new OpenInEditorHandler());
 			
-		widget.addToolbarItem(widget, MDERichTextConstants.MDE_SAVE, MDERichTextConstants.MDE_SAVE, "Save",
+		widget.addToolbarItem(widget, MDERichTextConstants.MDE_SAVE, MDERichTextConstants.MDE_SAVE, "Save editor",
 				MDERichTextConstants.MDE_SAVE_TOOLBAR, Constants.SAVE_IMAGE_ICON, new SaveContentHandler());
+
+		widget.addToolbarItem(widget, MDERichTextConstants.MDE_REFRESH, MDERichTextConstants.MDE_REFRESH,
+				"Refresh editor", MDERichTextConstants.MDE_REFRESH, Constants.REFRESH_IMAGE_ICON, new RefreshHandler());		
 		
 		addEditorToolbarItems(widget);
 	}
@@ -238,6 +245,7 @@ public class MDERichTextFactory {
 			configuration.initializeToolbarItem(MDERichTextConstants.MDE_ENABLE_EDITING_TOOLBAR, MDERichTextConstants.MDE_OPEN_EDITOR);
 		}
 		configuration.initializeToolbarItem(MDERichTextConstants.MDE_SAVE_TOOLBAR, MDERichTextConstants.MDE_SAVE);
+		configuration.initializeToolbarItem(MDERichTextConstants.MDE_REFRESH, MDERichTextConstants.MDE_REFRESH);
 		configuration.initializeToolbarItem(MDERichTextConstants.STYLES_TOOLBAR);
 		configuration.initializeToolbarItem(MDERichTextConstants.CLIPBOARD_TOOLBAR);
 		configuration.initializeToolbarItem(MDERichTextConstants.MDE_CLEAN_TOOLBAR, MDERichTextConstants.MDE_CLEAN);
@@ -262,6 +270,7 @@ public class MDERichTextFactory {
 	protected MDERichTextFactory initializeMDEMinimalToolbar(){
 		configuration.initializeToolbarItem(MDERichTextConstants.MDE_ENABLE_EDITING_TOOLBAR, MDERichTextConstants.MDE_OPEN_EDITOR);
 		configuration.initializeToolbarItem(MDERichTextConstants.MDE_SAVE_TOOLBAR, MDERichTextConstants.MDE_SAVE);
+		configuration.initializeToolbarItem(MDERichTextConstants.MDE_REFRESH, MDERichTextConstants.MDE_REFRESH);
 		configuration.initializeToolbarItem(MDERichTextConstants.STYLES_TOOLBAR);
 		configuration.initializeToolbarItem(MDERichTextConstants.CLIPBOARD_TOOLBAR);
 		configuration.initializeToolbarItem(MDERichTextConstants.BASIC_STYLES, 
