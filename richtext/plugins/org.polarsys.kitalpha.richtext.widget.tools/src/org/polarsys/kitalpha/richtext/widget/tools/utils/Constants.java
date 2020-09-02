@@ -47,5 +47,6 @@ public class Constants {
     public static final URL ADD_LINK_ICON = MDERichTextHelper.getURL(Activator.PLUGIN_ID, "icons/add_link.gif"); 	//$NON-NLS-1$
     public static final URL ADD_IMAGE_ICON = MDERichTextHelper.getURL(Activator.PLUGIN_ID, "icons/add_image.gif"); 	//$NON-NLS-1$
 	public static final URL SAVE_IMAGE_ICON = MDERichTextHelper.getURL(Activator.PLUGIN_ID, "icons/save_image.gif"); 	//$NON-NLS-1$
+	public static final URL REFRESH_IMAGE_ICON = MDERichTextHelper.getURL(Activator.PLUGIN_ID, "icons/refresh.gif");   //$NON-NLS-1$
 
 }
