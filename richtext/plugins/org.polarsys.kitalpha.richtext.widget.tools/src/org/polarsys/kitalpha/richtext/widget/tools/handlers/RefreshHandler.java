@@ -18,6 +18,7 @@ public class RefreshHandler implements MDERichTextToolbarItemHandler {
 	@Override
 	public void execute(MDERichTextWidget richText) {
 		richText.updateEditor();
+		richText.installListenersOnReadyInstance();
 	}
 
 }
