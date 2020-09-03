@@ -264,5 +264,7 @@ public interface MDERichTextWidget extends PropertyChangeListener {
 	void setIsLoading(boolean isLoading);
 
 	boolean isLoading();
+	
+	public void installListenersOnReadyInstance();
 
 }
