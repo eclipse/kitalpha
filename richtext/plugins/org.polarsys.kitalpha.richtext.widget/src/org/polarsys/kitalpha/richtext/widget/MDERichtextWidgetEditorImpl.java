@@ -41,7 +41,7 @@ public class MDERichtextWidgetEditorImpl extends MDENebulaBasedRichTextWidgetImp
 	}
 
 	@Override
-	protected void installListenersOnReadyInstance() {
+	public void installListenersOnReadyInstance() {
 		super.installListenersOnReadyInstance();
 
 		installer.createAllListeners(this);

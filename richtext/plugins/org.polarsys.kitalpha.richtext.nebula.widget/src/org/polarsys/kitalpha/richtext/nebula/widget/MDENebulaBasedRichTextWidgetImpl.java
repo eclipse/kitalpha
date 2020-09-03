@@ -169,7 +169,7 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 	/**
 	 * Install listener on ready instance event fired by ckEditor
 	 */
-	protected void installListenersOnReadyInstance() {
+	public void installListenersOnReadyInstance() {
 		// This method is intended to be overriden by sub-classes to add
 		// listeners to CKEditor
 		// or adding generic listener here.
