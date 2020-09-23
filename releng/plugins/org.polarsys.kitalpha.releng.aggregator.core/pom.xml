@@ -99,6 +99,7 @@
     <module>../../../richtext/plugins/org.polarsys.kitalpha.richtext.nebula.widget</module>
     
     <!-- plugins org.polarsys.kitalpha.common.feature -->
+    <module>../../../common/plugins/org.polarsys.kitalpha.common.sirius.extension.rotativeimage</module>
     <module>../../../common/plugins/org.polarsys.kitalpha.common.ui</module>
     <module>../../../common/plugins/org.polarsys.kitalpha.examples.generic.wizard</module>
     <!-- plugins org.polarsys.kitalpha.emde.genchain.feature -->
