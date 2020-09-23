@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
-<!-- generated with https://github.com/mbarbero/fr.obeo.releng.targetplatform -->
-<target name="kitapha" sequenceNumber="1583925254">
+<!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
+<target name="kitapha" sequenceNumber="1600783711">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.m2e.feature.feature.group" version="0.0.0"/>
@@ -77,7 +77,11 @@
       <unit id="org.eclipse.emf.ecoretools.sdk.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.ecoretools.design.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.sdk.feature.group" version="0.0.0"/>
-      <repository id="eclipse-release" location="https://download.eclipse.org/releases/2019-06/"/>
+      <unit id="org.eclipse.acceleo.doc" version="0.0.0"/>
+      <unit id="org.eclipse.acceleo.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.acceleo.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.emf.cdo.feature.group" version="0.0.0"/>
+      <repository id="eclipse-release" location="https://download.eclipse.org/releases/2020-06/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.sirius.doc.feature.feature.group" version="0.0.0"/>
@@ -107,13 +111,7 @@
       <unit id="org.eclipse.sirius.samples.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.sirius.specifier.properties.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.sirius.specifier.feature.group" version="0.0.0"/>
-      <repository id="sirius" location="https://download.eclipse.org/sirius/updates/releases/6.3.0/2019-06/"/>
-    </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.acceleo.doc" version="0.0.0"/>
-      <unit id="org.eclipse.acceleo.source.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.acceleo.feature.group" version="0.0.0"/>
-      <repository id="acceleo" location="https://download.eclipse.org/acceleo/updates/releases/3.7/R201812041426"/>
+      <repository id="sirius" location="https://download.eclipse.org/sirius/updates/stable/6.4.0-S20200921-043506/2020-06/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.emf.diffmerge.feature.feature.group" version="0.0.0"/>
@@ -147,7 +145,7 @@
       <unit id="org.eclipse.amalgam.explorer.contextual.sirius.source.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.amalgam.explorer.contextual.core.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.amalgam.explorer.contextual.core.source.feature.group" version="0.0.0"/>
-      <repository id="amalgam" location="https://download.eclipse.org/modeling/amalgam/updates/stable/1.11.0-S20190729/capella/"/>
+      <repository id="amalgam" location="https://download.eclipse.org/modeling/amalgam/updates/stable/1.11.0-S20191007/capella/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.egf.sdk.feature.feature.group" version="0.0.0"/>

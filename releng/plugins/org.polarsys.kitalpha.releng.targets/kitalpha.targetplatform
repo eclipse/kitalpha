@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2019 THALES GLOBAL SERVICES.
+ * Copyright (c) 2020 THALES GLOBAL SERVICES.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,7 +10,7 @@
  *******************************************************************************/
 target "kitapha" with source, requirements
 
-location eclipse-release "https://download.eclipse.org/releases/2019-06/" {
+location eclipse-release "https://download.eclipse.org/releases/2020-06/" {
 	org.eclipse.m2e.feature.feature.group lazy
 	org.eclipse.sdk.feature.group lazy
 	org.eclipse.egit.feature.group lazy
@@ -84,9 +84,13 @@ location eclipse-release "https://download.eclipse.org/releases/2019-06/" {
 	org.eclipse.emf.ecoretools.sdk.feature.group lazy
 	org.eclipse.emf.ecoretools.design.feature.group lazy
 	org.eclipse.emf.sdk.feature.group lazy
+	org.eclipse.acceleo.doc lazy
+	org.eclipse.acceleo.source.feature.group lazy
+	org.eclipse.acceleo.feature.group lazy
+	org.eclipse.emf.cdo.feature.group lazy
 }
 
-location sirius "https://download.eclipse.org/sirius/updates/releases/6.3.0/2019-06/" {
+location sirius "https://download.eclipse.org/sirius/updates/stable/6.4.0-S20200921-043506/2020-06/" {
 	org.eclipse.sirius.doc.feature.feature.group lazy
     org.eclipse.sirius.runtime.source.feature.group lazy
     org.eclipse.sirius.runtime.acceleo.feature.group lazy
@@ -118,12 +122,6 @@ location sirius "https://download.eclipse.org/sirius/updates/releases/6.3.0/2019
 	org.eclipse.sirius.specifier.feature.group lazy
 }
 
-location acceleo "https://download.eclipse.org/acceleo/updates/releases/3.7/R201812041426" {
-	org.eclipse.acceleo.doc lazy
-	org.eclipse.acceleo.source.feature.group lazy
-	org.eclipse.acceleo.feature.group lazy
-}
-
 location EMF-DiffMerge "https://download.eclipse.org/diffmerge/releases/0.12.0/emf-diffmerge-site/" {
 	org.eclipse.emf.diffmerge.feature.feature.group lazy
 	org.eclipse.emf.diffmerge.feature.source.feature.group lazy
@@ -148,7 +146,7 @@ location coevolution "https://download.eclipse.org/diffmerge/releases/0.12.0/edm
 	 org.eclipse.emf.diffmerge.coevolution.sdk.feature.source.feature.group lazy
 }
 
-location amalgam "https://download.eclipse.org/modeling/amalgam/updates/stable/1.11.0-S20190729/capella/" {
+location amalgam "https://download.eclipse.org/modeling/amalgam/updates/stable/1.11.0-S20191007/capella/" {
 	org.eclipse.amalgam.explorer.activity.feature.group lazy
 	org.eclipse.amalgam.explorer.activity.source.feature.group lazy
 	org.eclipse.amalgam.explorer.contextual.feature.group lazy
