@@ -2,8 +2,9 @@
 
 This content is produced and maintained by the Polarsys Kitalpha project.
 
-* Project home: https://www.polarsys.org/kitalpha/
-* Project portal: https://www.polarsys.org/projects/polarsys.kitalpha
+
+* Project home: https://www.eclipse.org/kitalpha/
+* Project portal: https://projects.eclipse.org/projects/polarsys.kitalpha
 
 ## Trademarks
 
@@ -25,8 +26,8 @@ this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
 
 The project maintains the following source code repositories:
 
-* http://git.polarsys.org/c/kitalpha/kitalpha.git/
-* http://git.polarsys.org/c/kitalpha/kitalpha-addons.git/
+* https://github.com/eclipse/kitalpha/
+* https://github.com/eclipse/kitalpha-addons/
 
 ## Third-party Content
 
