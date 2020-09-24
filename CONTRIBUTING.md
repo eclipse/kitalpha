@@ -27,25 +27,25 @@ Thanks for your interest in this project.
  
  For more detailed information see the Kitalpha Overviews and Project Plan.
 
-* https://www.polarsys.org/kitalpha/
-* https://www.polarsys.org/projects/polarsys.kitalpha
+* https://www.eclipse.org/kitalpha/
+* https://projects.eclipse.org/projects/polarsys.kitalpha
 
 ## Developer resources
 
 Information regarding source code management, builds, coding standards, and
 more.
 
-* https://www.polarsys.org/projects/polarsys.kitalpha/developer
+* https://wiki.eclipse.org/Kitalpha/technical
 
 The project maintains the following source code repositories
 
-* http://git.polarsys.org/c/kitalpha/kitalpha.git/
-* http://git.polarsys.org/c/kitalpha/kitalpha-addons.git/
+* https://github.com/eclipse/kitalpha/
+* https://github.com/eclipse/kitalpha-addons/
 
 This project uses Bugzilla to track ongoing development and issues.
 
-* Search for issues: https://bugs.polarsys.org/buglist.cgi?product=Kitalpha
-* Create a new report: https://bugs.polarsys.org/enter_bug.cgi?product=Kitalpha
+* Search for issues: https://bugs.eclipse.org/bugs/buglist.cgi?classification=Polarsys&list_id=19950826&product=Kitalpha&query_format=advanced
+* Create a new report: https://bugs.eclipse.org/bugs/describecomponents.cgi?product=Kitalpha
 
 Be sure to search for existing bugs before you create another one. Remember that
 contributions are always welcome!
@@ -72,8 +72,8 @@ https://www.eclipse.org/projects/handbook/#resources-commit
 
 Ask questions via the project's forum:
 
-* https://polarsys.org/forums/index.php/f/8/
+* https://www.eclipse.org/forums/index.php/f/511/
 
 Contact the project developers via the project's "dev" list.
 
-* https://dev.polarsys.org/mailman/listinfo/kitalpha-dev
+* https://projects.eclipse.org/projects/polarsys.kitalpha/contact
