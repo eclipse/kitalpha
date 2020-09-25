@@ -24,7 +24,6 @@ import org.eclipse.swt.events.FocusListener;
 import org.eclipse.swt.events.KeyListener;
 import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Display;
 import org.polarsys.kitalpha.richtext.common.impl.BrowserBasedMDERichTextWidgetImpl;
 import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
 import org.polarsys.kitalpha.richtext.nebula.widget.toolbar.MDERichTextToolbarItemHandler;
@@ -65,9 +64,9 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 
 		installListeners();
 
-        dirtyStateUpdated = false;
-		
-        customizeRichTextConfiguration(this.configuration);
+		dirtyStateUpdated = false;
+
+		customizeRichTextConfiguration(this.configuration);
 	}
 
 	public MDENebulaBasedRichTextWidgetImpl(Composite parent, MDENebulaRichTextConfiguration configuration) {
@@ -75,32 +74,32 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 		this.configuration = configuration;
 		((MDENebulaRichTextConfiguration) this.configuration).createToolbar();
 		this.editor = createRichTextEditor(parent, configuration, -1); // default
-																	// configuration
+																		// configuration
 		GridDataFactory.fillDefaults().grab(true, true).applyTo(this.editor);
 
 		addPropertyChangeListener(this);
 
 		installListeners();
-		
-        dirtyStateUpdated = false;
-		
-        customizeRichTextConfiguration(this.configuration);
+
+		dirtyStateUpdated = false;
+
+		customizeRichTextConfiguration(this.configuration);
 	}
 
 	public MDENebulaBasedRichTextWidgetImpl(Composite parent, int style) {
 		super(parent);
 		this.editor = createRichTextEditor(parent, null, style); // default
-															// configuration
+		// configuration
 		this.configuration = getEditorConfiguration();
 		GridDataFactory.fillDefaults().grab(true, true).applyTo(this.editor);
 
 		addPropertyChangeListener(this);
 
 		installListeners();
-		
-        dirtyStateUpdated = false;
-    
-        customizeRichTextConfiguration(this.configuration);
+
+		dirtyStateUpdated = false;
+
+		customizeRichTextConfiguration(this.configuration);
 	}
 
 	public MDENebulaBasedRichTextWidgetImpl(Composite parent, MDENebulaRichTextConfiguration configuration, int style) {
@@ -108,31 +107,32 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 		this.configuration = configuration;
 		((MDENebulaRichTextConfiguration) this.configuration).createToolbar();
 		this.editor = createRichTextEditor(parent, null, style); // default
-															// configuration
+		// configuration
 		GridDataFactory.fillDefaults().grab(true, true).applyTo(this.editor);
 
 		addPropertyChangeListener(this);
 
 		installListeners();
-		
-        dirtyStateUpdated = false;
-    
-        customizeRichTextConfiguration(this.configuration);
+
+		dirtyStateUpdated = false;
+
+		customizeRichTextConfiguration(this.configuration);
 	}
-	
-	protected RichTextEditor createRichTextEditor(Composite parent, RichTextEditorConfiguration editorConfig, int style) {
-	    if(editorConfig == null && style == -1) {
-	        return new RichTextEditor(parent);
-	    }else if(editorConfig == null) {
-	        return new RichTextEditor(parent, style);
-	    }else if(style == -1) {
-	        return new RichTextEditor(parent, editorConfig);	        
-	    }
-	    return new RichTextEditor(parent, editorConfig, style);
+
+	protected RichTextEditor createRichTextEditor(Composite parent, RichTextEditorConfiguration editorConfig,
+			int style) {
+		if (editorConfig == null && style == -1) {
+			return new RichTextEditor(parent);
+		} else if (editorConfig == null) {
+			return new RichTextEditor(parent, style);
+		} else if (style == -1) {
+			return new RichTextEditor(parent, editorConfig);
+		}
+		return new RichTextEditor(parent, editorConfig, style);
 	}
-	
+
 	protected RichTextEditorConfiguration getEditorConfiguration() {
-        return editor.getEditorConfiguration();
+		return editor.getEditorConfiguration();
 	}
 
 	@Override
@@ -160,7 +160,7 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 
 				@Override
 				public void changed(ProgressEvent event) {
-				    // Do nothing
+					// Do nothing
 				}
 			});
 		}
@@ -169,7 +169,7 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 	/**
 	 * Install listener on ready instance event fired by ckEditor
 	 */
-	protected void installListenersOnReadyInstance() {
+	public void installListenersOnReadyInstance() {
 		// This method is intended to be overriden by sub-classes to add
 		// listeners to CKEditor
 		// or adding generic listener here.
@@ -256,7 +256,6 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 			int safetyCounter = 0;
 			// We ensure a bit that getText has been properly updated
 			while (safetyCounter++ < 5) {
-				spinEventQueue(Display.getCurrent());
 				if (editor.isDisposed()) {
 					break;
 				}
@@ -335,7 +334,7 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 	@Override
 	public boolean setToolbarItemState(String command, String state) {
 		if (isReady()) {
-		    StringBuilder updateStateScript = getCommand(command).append(".setState(").append(state).append(");"); //$NON-NLS-1$ //$NON-NLS-2$
+			StringBuilder updateStateScript = getCommand(command).append(".setState(").append(state).append(");"); //$NON-NLS-1$ //$NON-NLS-2$
 			return executeScript(updateStateScript.toString());
 		}
 		return false;
@@ -364,7 +363,7 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 
 	@Override
 	public boolean hasFocus() {
-	    Browser browser = editor.getEditorConfiguration().getBrowser();
+		Browser browser = editor.getEditorConfiguration().getBrowser();
 		return !browser.isDisposed() && editor.isFocusControl();
 	}
 
@@ -424,22 +423,22 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 	}
 
 	protected void customizeRichTextConfiguration(RichTextEditorConfiguration configuration) {
-	  // Do not take the focus on editor startup
-	  configuration.setOption("startupFocus", false);
+		// Do not take the focus on editor startup
+		configuration.setOption("startupFocus", false);
 	}
-	
-  @Override
-  public boolean isEditorDisposed() {
-    return editor.isDisposed();
-  }
-  
-  @Override
-  public void setParent(Composite parent) {
-    editor.setParent(parent);
-  }
-  
-  @Override
-  public Composite getParent() {
-    return editor.getParent();
-  }
+
+	@Override
+	public boolean isEditorDisposed() {
+		return editor.isDisposed();
+	}
+
+	@Override
+	public void setParent(Composite parent) {
+		editor.setParent(parent);
+	}
+
+	@Override
+	public Composite getParent() {
+		return editor.getParent();
+	}
 }

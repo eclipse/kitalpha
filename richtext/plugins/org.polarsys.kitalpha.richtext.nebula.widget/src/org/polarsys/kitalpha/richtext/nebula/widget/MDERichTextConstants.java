@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017, 2018 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2020 Thales Global Services S.A.S.
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
@@ -49,7 +49,8 @@ public final class MDERichTextConstants {
 	
 	public static final String MDE_SAVE_TOOLBAR = "mdesave"; 		//$NON-NLS-1$
 	public static final String MDE_SAVE = "MDESave";			//$NON-NLS-1$
-	
+	public static final String MDE_REFRESH = "Refresh"; //$NON-NLS-1$
+
 	public static final String MDE_LINKS_TOOLBAR = "mdelinks"; 		//$NON-NLS-1$
 	public static final String MDE_ADDLINK = "Addlink"; 			//$NON-NLS-1$
 	public static final String MDE_ADDIMAGE = "AddImage";			//$NON-NLS-1$

@@ -179,6 +179,9 @@ http://www.eclipse.org/legal/epl-v10.htm
       <feature id="org.polarsys.kitalpha.emde.genchain.feature"/>
       <feature id="org.polarsys.kitalpha.emde.genchain.feature.source"/>
       <feature id="org.polarsys.kitalpha.richtext.widget.ext.feature"/>
+      <feature id="org.polarsys.kitalpha.richtext.widget.ext.feature.source"/>
+	  <feature id="org.polarsys.kitalpha.richtext.widget.tools.ext.feature"/>
+	  <feature id="org.polarsys.kitalpha.richtext.widget.tools.ext.feature.source"/>
       <feature id="org.eclipse.nebula.widgets.richtext.feature"/>
       <feature id="org.polarsys.kitalpha.massactions.feature"/>
    </features>

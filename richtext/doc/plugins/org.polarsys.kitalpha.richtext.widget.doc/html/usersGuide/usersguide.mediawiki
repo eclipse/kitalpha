@@ -18,6 +18,14 @@ Commonly used Tools (also, called items):
 |'''Open in Editor''' 
 | Allows to open an Eclipse editor which contains a MDE Rich Text Widget binded to the current model element
 |-
+|[[File:../img/save_image.gif|Save editor content]]
+|'''Save editor content'''
+| Allows to set the content of the editor to the feature of the element associated to the editor
+|-
+|[[File:../img/refresh.gif|Refresh editor]]
+|'''Refresh editor'''
+| Allows to refresh the content of the editor
+|-
 |[[File:../img/richtext_styles.png|Style]]
 |'''Styles'''
 | Allows to apply a style on the selected or typed characters
