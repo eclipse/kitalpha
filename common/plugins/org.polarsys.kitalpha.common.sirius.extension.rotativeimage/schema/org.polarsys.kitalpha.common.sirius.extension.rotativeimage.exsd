@@ -6,7 +6,7 @@
          <meta.schema plugin="org.polarsys.kitalpha.common.sirius.extension.rotativeimage" id="org.polarsys.kitalpha.common.sirius.extension.rotativeimage" name="Image"/>
       </appInfo>
       <documentation>
-         [Enter description of this extension point.]
+         This extension point allows odesign specifiers to create automatically rotating &quot;Workspace images&quot; mapping styles.
       </documentation>
    </annotation>
 
@@ -48,18 +48,31 @@
    </element>
 
    <element name="imageid">
+      <annotation>
+         <documentation>
+            Each &lt;b&gt;&lt;em&gt;imageid&lt;/em&gt;&lt;/b&gt; extension element defines:
+&lt;ul&gt;
+&lt;li&gt;a workspace image path (&lt;b&gt;&lt;em&gt;id&lt;/em&gt;&lt;/b&gt; attribute)  used to match the images to use as rotated images; and&lt;/li&gt;
+&lt;li&gt;a treatment (&lt;b&gt;&lt;em&gt;kind&lt;/em&gt;&lt;/b&gt; attribute) done on the pointed image&lt;/li&gt;
+&lt;/ul&gt;
+         </documentation>
+      </annotation>
       <complexType>
          <attribute name="id" type="string" use="required">
             <annotation>
                <documentation>
-                  
+                  The path to an image. The path must be of the form &lt;b&gt;&lt;em&gt;/project_name/path_to_image/image_name.extension&lt;/em&gt;&lt;/b&gt;
+The &lt;b&gt;&lt;em&gt;project_name&lt;/em&gt;&lt;/b&gt; value is resolved first in the workspace and if not found it will be resolved in the platform plugins.
                </documentation>
             </annotation>
          </attribute>
          <attribute name="kind" use="required">
             <annotation>
                <documentation>
-                  
+                  Specifies the treatment done on the image pointed by the &lt;b&gt;&lt;em&gt;id&lt;/em&gt;&lt;/b&gt; attribute.
+If &lt;b&gt;&lt;em&gt;rotative&lt;/em&gt;&lt;/b&gt; then the pointed image will be resolved and its rotation computed. The provided image is the image that will be displayed at the top position the other (left, right, bottom) potiion images are computed.
+If &lt;b&gt;&lt;em&gt;4images&lt;/em&gt;&lt;/b&gt; then the pointed image path will be used to compute the path to the 4 turned images. The images path that are looked for are:
+&lt;b&gt;&lt;em&gt;/project_name/path_to_image/image_name[_top|_right|_left|_bottom].extension&lt;/em&gt;&lt;/b&gt;
                </documentation>
             </annotation>
             <simpleType>
@@ -88,7 +101,35 @@
          <meta.section type="examples"/>
       </appInfo>
       <documentation>
-         [Enter extension point usage example here.]
+         &lt;/br&gt;
+An extension &lt;b&gt;&lt;em&gt;imageid&lt;/em&gt;&lt;/b&gt; with 
+&lt;/br&gt;
+&lt;b&gt;&lt;em&gt;id&lt;/em&gt;&lt;/b&gt; = &quot;/org.polarsys.kitalpha.pdt.modeler.resources/icons/ports/ext_point_obj.gif&quot; and
+&lt;/br&gt;
+&lt;b&gt;&lt;em&gt;kind&lt;/em&gt;&lt;/b&gt; = &quot;4images&quot;
+&lt;/br&gt;
+Will look for the four images:
+&lt;/br&gt;
+/org.polarsys.kitalpha.pdt.modeler.resources/icons/ports/ext_point_obj_top.gif
+&lt;/br&gt;
+/org.polarsys.kitalpha.pdt.modeler.resources/icons/ports/ext_point_obj_bottom.gif
+&lt;/br&gt;
+/org.polarsys.kitalpha.pdt.modeler.resources/icons/ports/ext_point_obj_left.gif
+&lt;/br&gt;
+/org.polarsys.kitalpha.pdt.modeler.resources/icons/ports/ext_point_obj_right.gif
+&lt;/br&gt;
+&lt;/br&gt;
+An extension &lt;b&gt;&lt;em&gt;imageid&lt;/em&gt;&lt;/b&gt; with
+&lt;/br&gt;
+&lt;b&gt;&lt;em&gt;id&lt;/em&gt;&lt;/b&gt; = &quot;/org.polarsys.kitalpha.pdt.modeler.resources/icons/ports/extension_obj.gif&quot; and
+&lt;/br&gt;
+&lt;b&gt;&lt;em&gt;kind&lt;/em&gt;&lt;/b&gt; = &quot;rotative&quot;
+&lt;/br&gt;
+Will rely on the image:
+&lt;/br&gt;
+/org.polarsys.kitalpha.pdt.modeler.resources/icons/ports/extension_obj.gif
+&lt;/br&gt;
+That will be rotated when needed.
       </documentation>
    </annotation>
 
