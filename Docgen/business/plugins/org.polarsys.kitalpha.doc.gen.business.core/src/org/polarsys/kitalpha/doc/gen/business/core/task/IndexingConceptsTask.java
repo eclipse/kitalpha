@@ -425,9 +425,8 @@ public class IndexingConceptsTask implements ITaskProduction {
 		{
 			for (Entry<String, IndexItem> entry : indexItems.entrySet()) 
 			{
-				String currentConcept = entry.getValue().getConceptName();
 				String title = mPHeaderOne.group(1);
-				String currentConcept_html = EscapeChars.forHTML(currentConcept);
+				String currentConcept_html = entry.getValue().getEscapedForHTMLConceptName();
 				if (title.contains(currentConcept_html)) {
 					indexTitle(fileName, entry.getValue());
 				}
@@ -443,10 +442,9 @@ public class IndexingConceptsTask implements ITaskProduction {
 		mParagraphe = mParagraphe.reset(pageContent);
 		while (mParagraphe.find()) {
 			for (Entry<String, IndexItem> entry : indexItems.entrySet()) {
-				String currentConcept = entry.getValue().getConceptName();
+				String currentConcept_html = entry.getValue().getEscapedForHTMLConceptName();
 				for (int i = 1; i <= mParagraphe.groupCount(); i++) {
 					String paragraph = mParagraphe.group(i);
-					String currentConcept_html = EscapeChars.forHTML(currentConcept);
 					if (paragraph.contains(currentConcept_html)) {
 						indexParagraph(fileName, entry.getValue());
 						break;
@@ -487,8 +485,7 @@ public class IndexingConceptsTask implements ITaskProduction {
 					final String listText = pageContent.substring(listStartIndex, listEndIndex);
 					for (Entry<String, IndexItem> entry : indexItems.entrySet())
 					{
-						String currentConcept = entry.getValue().getConceptName();
-						String currentConcept_html = EscapeChars.forHTML(currentConcept);
+						String currentConcept_html = entry.getValue().getEscapedForHTMLConceptName();
 						if (listText.contains(currentConcept_html)) 
 						{
 							indexList(fileName, entry.getValue());
