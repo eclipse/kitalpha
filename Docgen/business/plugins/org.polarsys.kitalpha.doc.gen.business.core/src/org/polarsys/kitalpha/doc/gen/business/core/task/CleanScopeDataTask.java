@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015 Thales Global Services S.A.S.
+ * Copyright (c) 2015, 2020 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -8,7 +8,6 @@
  * Contributors:
  *   Thales Global Services S.A.S - initial API and implementation
  ******************************************************************************/
-
 package org.polarsys.kitalpha.doc.gen.business.core.task;
 
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -16,6 +15,7 @@ import org.eclipse.egf.core.producer.InvocationException;
 import org.eclipse.egf.ftask.producer.context.ITaskProductionContext;
 import org.eclipse.egf.ftask.producer.invocation.ITaskProduction;
 import org.polarsys.kitalpha.doc.gen.business.core.scope.GenerationGlobalScope;
+import org.polarsys.kitalpha.doc.gen.business.core.sirius.util.diagram.DiagramExportRegistry;
 
 /**
  * @author Boubekeur Zendagui
@@ -32,7 +32,7 @@ public class CleanScopeDataTask implements ITaskProduction {
 	public void doExecute(ITaskProductionContext productionContext,
 			IProgressMonitor monitor) throws InvocationException {
 		GenerationGlobalScope.getInstance().cleanScope();
-
+		DiagramExportRegistry.getInstance().clean();
 	}
 
 	@Override

@@ -4,31 +4,48 @@
 	Session session = DiagramSessionHelper.getCurrentSession();
 	IPath outputPath = new Path(projectName).append(outputFolder).append(generatedFolder);
 	DiagramExport diagramExport = new DiagramExport(projectName, outputPath, diagram, session);
-	IFile imageFile = diagramExport.exportAsImage();
 	Resource sessionResource = session.getSessionResource();
 	String id = DiagramSessionHelper.getID(diagram);
-    DRepresentationQuery rep2descQuery = new DRepresentationQuery(diagram);
-    DRepresentationDescriptor result = rep2descQuery.getRepresentationDescriptor();
-	String mapName = id + "_PositionMap";
-	String diagramName = id;
-	if (result != null) {
-		mapName = result.getName() + "_" + mapName;
-		diagramName = result.getName();
+	IFile imageFile;
+	DRepresentationDescriptor result;
+	String mapName;
+	String diagramName;
+	Boolean diagramDataCached = DiagramExportRegistry.getInstance().hasDataForDiagram(diagram);
+	if (diagramDataCached) {
+		imageFile = DiagramExportRegistry.getInstance().getDiagramRelatedRegistryObject(diagram).getFile();
+		result = DiagramExportRegistry.getInstance().getDiagramRelatedRegistryObject(diagram)
+				.getRepresentationDescriptor();
+		mapName = DiagramExportRegistry.getInstance().getDiagramRelatedRegistryObject(diagram).getMapName();
+		diagramName = DiagramExportRegistry.getInstance().getDiagramRelatedRegistryObject(diagram).getDiagramName();
+	} else {
+		imageFile = diagramExport.exportAsImage();
+		DRepresentationQuery rep2descQuery = new DRepresentationQuery(diagram);
+		result = rep2descQuery.getRepresentationDescriptor();
+		mapName = id + "_PositionMap";
+		diagramName = id;
+		if (result != null) {
+			mapName = result.getName() + "_" + mapName;
+			diagramName = result.getName();
+		}
+		mapName = DocGenHtmlUtil.getValidFileName(mapName);
+		diagramName = DocGenHtmlUtil.getValidFileName(diagramName);
 	}
-	mapName = DocGenHtmlUtil.getValidFileName(mapName);
-	diagramName = DocGenHtmlUtil.getValidFileName(diagramName);
-	if (imageFile!=null && imageFile.exists())
-	{
-		CoordinatesCalculator calculator = new CoordinatesCalculator(imageFile, diagram, helper);
+
+	if (imageFile != null && imageFile.exists()) {
+		// Resolve FileNameServices and DiagramHelpers
 		Collection<IDiagramHelper> diagramHelpers = new HashSet<IDiagramHelper>();
-			Collection<IFileNameService> fileNameServices = new HashSet<IFileNameService>();
-			for (String dom : PageExtensionRegistry.getInstance().getDomains()) {
-				diagramHelpers.addAll(PageExtensionRegistry.getInstance().getDiagramHelpersExtensions(dom));
-				fileNameServices.addAll(PageExtensionRegistry.getInstance().getFileNameServicesExtensions(dom));
-			}
+		Collection<IFileNameService> fileNameServices = new HashSet<IFileNameService>();
+		for (String dom : PageExtensionRegistry.getInstance().getDomains()) {
+			diagramHelpers.addAll(PageExtensionRegistry.getInstance().getDiagramHelpersExtensions(dom));
+			fileNameServices.addAll(PageExtensionRegistry.getInstance().getFileNameServicesExtensions(dom));
+		}
+
+		CoordinatesCalculator calculator = new CoordinatesCalculator(imageFile, diagram, helper);
 		calculator.contributeHelpers(diagramHelpers);
-		//Map<EObject, Rectangle> positionMap = new HashMap<EObject, Rectangle>();
 		Map<Rectangle, EObject> positionMap = calculator.getPositionMap();
+		if (!diagramDataCached) {
+			DiagramExportRegistry.getInstance().addEntry(diagram, imageFile, result, mapName, diagramName);
+		}
 		%>
 	<div>
 	<p class="diagram-name" id="<%=id%>"><%= EscapeChars.forHTML(diagramName)%></p>
