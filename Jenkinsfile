@@ -14,39 +14,40 @@ pipeline {
 	  }
     }
     stage('Deploy') {
-      when {
-         not { changeRequest() }
-      }
       steps {
           sshagent ( ['projects-storage.eclipse.org-bot-ssh']) {
-            sh '''
-						echo "deploy update sites"
-						DEST_DIR=/home/data/httpd/download.eclipse.org/kitalpha/updates/nightly
-						VERSION=master
-						ssh genie.kitalpha@projects-storage.eclipse.org rm -rf ${DEST_DIR}/component/${VERSION}
-						ssh genie.kitalpha@projects-storage.eclipse.org rm -rf ${DEST_DIR}/runtime/${VERSION}
-						ssh genie.kitalpha@projects-storage.eclipse.org rm -rf ${DEST_DIR}/runtimecore/${VERSION}
-						ssh genie.kitalpha@projects-storage.eclipse.org rm -rf ${DEST_DIR}/sdk/${VERSION}
-						
-						ssh genie.kitalpha@projects-storage.eclipse.org mkdir -p ${DEST_DIR}/component/${VERSION}
-						ssh genie.kitalpha@projects-storage.eclipse.org mkdir -p ${DEST_DIR}/runtime/${VERSION}
-						ssh genie.kitalpha@projects-storage.eclipse.org mkdir -p ${DEST_DIR}/runtimecore/${VERSION}
-						ssh genie.kitalpha@projects-storage.eclipse.org mkdir -p ${DEST_DIR}/runtimecore/${VERSION}/targets/
-						ssh genie.kitalpha@projects-storage.eclipse.org mkdir -p ${DEST_DIR}/sdk/${VERSION}
-						
-						scp -r releng/plugins/org.polarsys.kitalpha.releng.samplecomponent.updatesite/target/repository/* genie.kitalpha@projects-storage.eclipse.org:${DEST_DIR}/component/${VERSION}
-						scp -r releng/plugins/org.polarsys.kitalpha.releng.runtime.updatesite/target/repository/* genie.kitalpha@projects-storage.eclipse.org:${DEST_DIR}/runtime/${VERSION}
-						scp -r releng/plugins/org.polarsys.kitalpha.releng.runtime.core.updatesite/target/repository/* genie.kitalpha@projects-storage.eclipse.org:${DEST_DIR}/runtimecore/${VERSION}
-						scp -r releng/plugins/org.polarsys.kitalpha.releng.targets/*.target* genie.kitalpha@projects-storage.eclipse.org:${DEST_DIR}/runtimecore/${VERSION}/targets
-						scp -r releng/plugins/org.polarsys.kitalpha.releng.sdk.updatesite/target/repository/* genie.kitalpha@projects-storage.eclipse.org:${DEST_DIR}/sdk/${VERSION}
-						
-						echo "deploy product"
-						DEST_DIR=/home/data/httpd/download.eclipse.org/kitalpha/products/nightly/${VERSION}
-						ssh genie.kitalpha@projects-storage.eclipse.org rm -rf ${DEST_DIR}
-						ssh genie.kitalpha@projects-storage.eclipse.org mkdir -p ${DEST_DIR}
-						scp -r releng/plugins/org.polarsys.kitalpha.releng.sdk.product/target/products/*.zip genie.kitalpha@projects-storage.eclipse.org:${DEST_DIR}
-			  
-            '''
+          	script {
+				def VERSION = BRANCH_NAME
+				if (VERSION.matches("v\\d\\.\\d\\.x")) {
+					VERSION = VERSION.substring(1)
+				}
+          	
+				def DEST_UPDATESITE_DIR='/home/data/httpd/download.eclipse.org/kitalpha/updates/nightly'
+				def DEST_PRODUCT_DIR='/home/data/httpd/download.eclipse.org/kitalpha/products/nightly/'+VERSION
+				
+				sh "echo 'deploy update sites'"
+				sh "ssh genie.kitalpha@projects-storage.eclipse.org rm -rf ${DEST_UPDATESITE_DIR}/component/${VERSION}"
+				sh "ssh genie.kitalpha@projects-storage.eclipse.org rm -rf ${DEST_UPDATESITE_DIR}/runtime/${VERSION}"
+				sh "ssh genie.kitalpha@projects-storage.eclipse.org rm -rf ${DEST_UPDATESITE_DIR}/runtimecore/${VERSION}"
+				sh "ssh genie.kitalpha@projects-storage.eclipse.org rm -rf ${DEST_UPDATESITE_DIR}/sdk/${VERSION}"
+				
+				sh "ssh genie.kitalpha@projects-storage.eclipse.org mkdir -p ${DEST_UPDATESITE_DIR}/component/${VERSION}"
+				sh "ssh genie.kitalpha@projects-storage.eclipse.org mkdir -p ${DEST_UPDATESITE_DIR}/runtime/${VERSION}"
+				sh "ssh genie.kitalpha@projects-storage.eclipse.org mkdir -p ${DEST_UPDATESITE_DIR}/runtimecore/${VERSION}"
+				sh "ssh genie.kitalpha@projects-storage.eclipse.org mkdir -p ${DEST_UPDATESITE_DIR}/runtimecore/${VERSION}/targets/"
+				sh "ssh genie.kitalpha@projects-storage.eclipse.org mkdir -p ${DEST_UPDATESITE_DIR}/sdk/${VERSION}"
+				
+				sh "scp -r releng/plugins/org.polarsys.kitalpha.releng.samplecomponent.updatesite/target/repository/* genie.kitalpha@projects-storage.eclipse.org:${DEST_UPDATESITE_DIR}/component/${VERSION}"
+				sh "scp -r releng/plugins/org.polarsys.kitalpha.releng.runtime.updatesite/target/repository/* genie.kitalpha@projects-storage.eclipse.org:${DEST_UPDATESITE_DIR}/runtime/${VERSION}"
+				sh "scp -r releng/plugins/org.polarsys.kitalpha.releng.runtime.core.updatesite/target/repository/* genie.kitalpha@projects-storage.eclipse.org:${DEST_UPDATESITE_DIR}/runtimecore/${VERSION}"
+				sh "scp -r releng/plugins/org.polarsys.kitalpha.releng.targets/*.target* genie.kitalpha@projects-storage.eclipse.org:${DEST_UPDATESITE_DIR}/runtimecore/${VERSION}/targets"
+				sh "scp -r releng/plugins/org.polarsys.kitalpha.releng.sdk.updatesite/target/repository/* genie.kitalpha@projects-storage.eclipse.org:${DEST_UPDATESITE_DIR}/sdk/${VERSION}"
+
+				sh "echo 'deploy product'"
+				sh "ssh genie.kitalpha@projects-storage.eclipse.org rm -rf ${DEST_PRODUCT_DIR}"
+				sh "ssh genie.kitalpha@projects-storage.eclipse.org mkdir -p ${DEST_PRODUCT_DIR}"
+				sh "scp -r releng/plugins/org.polarsys.kitalpha.releng.sdk.product/target/products/*.zip genie.kitalpha@projects-storage.eclipse.org:${DEST_PRODUCT_DIR}"
+            }
         }
       }
     }
