@@ -73,56 +73,34 @@ public class RotativeImageEditPart extends WorkspaceImageEditPart implements ISt
 	}
 
 	/**
-	 * @generated
-	 */
-	protected LayoutEditPolicy createLayoutEditPolicy() {
-		LayoutEditPolicy lep = new LayoutEditPolicy() {
-
-			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if (result == null) {
-					result = new NonResizableEditPolicy();
-				}
-				return result;
-			}
-
-			protected Command getMoveChildrenCommand(Request request) {
-				return null;
-			}
-
-			protected Command getCreateCommand(CreateRequest request) {
-				return null;
-			}
-		};
-		return lep;
-	}
-
-	/**
 	 * @generated NOT
 	 */
 	protected IFigure createNodeShape() {
-		WorkspaceImage wkImage = (WorkspaceImage) resolveSemanticElement();
-
-		RotativeDescription desc = Activator.getDefault().getBestDescription(wkImage.getWorkspacePath());
-
-		if (desc.mode == RotativeDescription.ROTATIVE) {
-			primaryShape = new RotativeWorkspaceImageFigure(wkImage.getWorkspacePath());
-
-		} else {
-			int pos = desc.id.lastIndexOf(".");
-			String deb = desc.id.substring(0, pos);
-			String ext = desc.id.substring(pos);
-
-			primaryShape = new RotativeWorkspaceImageFigure(desc.id,
-					WorkspaceImageFigure.flyWeightImage(deb + "_top" + ext),
-					WorkspaceImageFigure.flyWeightImage(deb + "_left" + ext),
-					WorkspaceImageFigure.flyWeightImage(deb + "_bottom" + ext),
-					WorkspaceImageFigure.flyWeightImage(deb + "_right" + ext));
+		EObject element = resolveSemanticElement();
+		if (element instanceof WorkspaceImage) {
+			WorkspaceImage wkImage = (WorkspaceImage) element;
+	
+			RotativeDescription desc = Activator.getDefault().getBestDescription(wkImage.getWorkspacePath());
+	
+			if (desc.mode == RotativeDescription.ROTATIVE) {
+				primaryShape = new RotativeWorkspaceImageFigure(wkImage.getWorkspacePath());
+	
+			} else {
+				int pos = desc.id.lastIndexOf(".");
+				String deb = desc.id.substring(0, pos);
+				String ext = desc.id.substring(pos);
+	
+				RotativeWorkspaceImageHelper.createImage(desc.id, deb + "_top" + ext, PositionConstants.NORTH);
+				RotativeWorkspaceImageHelper.createImage(desc.id, deb + "_left" + ext, PositionConstants.WEST);
+				RotativeWorkspaceImageHelper.createImage(desc.id, deb + "_bottom" + ext, PositionConstants.SOUTH);
+				RotativeWorkspaceImageHelper.createImage(desc.id, deb + "_right" + ext, PositionConstants.EAST);
+				primaryShape = new RotativeWorkspaceImageFigure(desc.id);
+			}
+	
+			switchImageListener = new SwitchImageListener(this);
+			primaryShape.addAncestorListener(switchImageListener);
+			primaryShape.addPropertyChangeListener(switchImageListener);
 		}
-
-		switchImageListener = new SwitchImageListener(this);
-		primaryShape.addAncestorListener(switchImageListener);
-		primaryShape.addPropertyChangeListener(switchImageListener);
 		return primaryShape;
 	}
 
@@ -153,24 +131,10 @@ public class RotativeImageEditPart extends WorkspaceImageEditPart implements ISt
 			IBorderItemLocator borderItemLocator = getBorderItemLocator();
 			if (borderItemLocator != null) {
 				BorderedNodeFigure borderedNodeFigure = getBorderedNodeFigure();
-				int side = DBorderItemLocator.findClosestSideOfParent(editPart.getFigure().getBounds(),
-						borderedNodeFigure.getBounds());
+				int side = DBorderItemLocator.findClosestSideOfParent(editPart.getFigure().getBounds(),	borderedNodeFigure.getBounds());
 
 				RotativeWorkspaceImageFigure primaryShape = (RotativeWorkspaceImageFigure)editPart.primaryShape;
-				switch (side) {
-				case PositionConstants.SOUTH:
-					primaryShape.setImage(primaryShape.getBottomImage());
-					break;
-				case PositionConstants.NORTH:
-					primaryShape.setImage(primaryShape.getTopImage());
-					break;
-				case PositionConstants.WEST:
-					primaryShape.setImage(primaryShape.getLeftImage());
-					break;
-				case PositionConstants.EAST:
-					primaryShape.setImage(primaryShape.getRightImage());
-					break;
-				}
+				primaryShape.setOrientation(side);
 			}
 		}
 
