@@ -14,12 +14,14 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.diffmerge.api.IComparison;
-import org.eclipse.emf.diffmerge.api.diff.IDifference;
-import org.eclipse.emf.diffmerge.api.diff.IValuePresence;
 import org.eclipse.emf.diffmerge.api.scopes.IEditableModelScope;
 import org.eclipse.emf.diffmerge.api.scopes.IModelScope;
+import org.eclipse.emf.diffmerge.diffdata.EComparison;
 import org.eclipse.emf.diffmerge.diffdata.impl.EComparisonImpl;
+import org.eclipse.emf.diffmerge.generic.api.IComparison;
+import org.eclipse.emf.diffmerge.generic.api.diff.IDifference;
+import org.eclipse.emf.diffmerge.generic.api.diff.IValuePresence;
+import org.eclipse.emf.diffmerge.generic.api.scopes.ITreeDataScope;
 import org.eclipse.emf.diffmerge.impl.policies.DefaultDiffPolicy;
 import org.eclipse.emf.diffmerge.impl.policies.DefaultMatchPolicy;
 import org.eclipse.emf.diffmerge.impl.scopes.FragmentedModelScope;
@@ -198,12 +200,12 @@ public class TransformedElementOrder {
 	private boolean diffAnalysis(Resource outputResource2) {
 		IEditableModelScope targetScope = new FragmentedModelScope(outputResource2, true);
 		IEditableModelScope referenceScope = new FragmentedModelScope(referenceResource, true);
-		IComparison comparaison = new EComparisonImpl(targetScope, referenceScope);
+		EComparison comparaison = new EComparisonImpl(targetScope, referenceScope);
 		
 		comparaison.compute(new DefaultMatchPolicy(){
 			
 			@Override
-			public Object getMatchID(EObject element_p, IModelScope scope_p) {
+			public Object getMatchID(EObject element_p, ITreeDataScope<EObject> scope_p) {
 				return getFQN(element_p);
 			}
 			
