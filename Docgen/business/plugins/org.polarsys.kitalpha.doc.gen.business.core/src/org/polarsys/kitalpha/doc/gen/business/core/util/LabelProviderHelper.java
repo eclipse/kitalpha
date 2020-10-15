@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2019 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2020 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,10 +39,8 @@ public class LabelProviderHelper {
 	private static final String ICON_FOLDER_NAME = "icon";
 	private static final NullProgressMonitor MONITOR = new NullProgressMonitor();
 
-	/**
-	 * Hidden consctructor
-	 */
-	private LabelProviderHelper(){
+	protected LabelProviderHelper(){
+		// Allow subclassing
 	}
 	
 	public static void initImageRegistry() {
@@ -65,7 +63,7 @@ public class LabelProviderHelper {
 		return result;
 	}
 
-	private static Object getIItemLabelProvider(EObject eObject) {
+	public static Object getIItemLabelProvider(EObject eObject) {
 		ComposedAdapterFactory adapterFactory = new ComposedAdapterFactory(
 				ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
 		return adapterFactory.adapt(eObject, IItemLabelProvider.class);

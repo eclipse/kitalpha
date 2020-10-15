@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2019 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2020 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -73,10 +73,10 @@ public class IndexingConceptsTask implements ITaskProduction {
 
 
 	//Regexp patterns
-	private static final Pattern pTable = Pattern.compile("<table>(.*?)</table>"); 	//table
-	private static final Pattern pTitle = Pattern.compile(".*<title>(.*)</title>.*"); 	//title
-	private static final Pattern pHeaderOne = Pattern.compile("<h1>(.*)</h1>"); 			//title head <h1>
-	private static final Pattern pParagraphe = Pattern.compile("<p>(.*?)</p>"); 	//paragraph
+	private static final Pattern pTable = Pattern.compile("<table>(.*?)</table>", Pattern.DOTALL); 	//table
+	private static final Pattern pTitle = Pattern.compile("<title>(.*)</title>", Pattern.DOTALL); 	//title
+	private static final Pattern pHeaderOne = Pattern.compile("<h1>(.*)</h1>", Pattern.DOTALL); 			//title head <h1>
+	private static final Pattern pParagraphe = Pattern.compile("<p>(.*?)</p>", Pattern.DOTALL); 	//paragraph
 	private static final Pattern pListStartEnd = Pattern.compile("((<ul.*?>)|(</ul>))", Pattern.DOTALL);	//indexed list
 
 	//Matchers
@@ -316,16 +316,16 @@ public class IndexingConceptsTask implements ITaskProduction {
 	}
 	
 	private Optional<IndexItem> generateImageTag(String fileName, Map<String, IndexItem> indexItems, StringBuffer buffer) {
-		Optional<IndexItem> findedItem = indexItems.values().stream().
-				filter(item -> item.getFileName().equalsIgnoreCase(fileName.substring(0, fileName.indexOf(".")))).findFirst();
-		if (findedItem.isPresent()) {
-			IndexItem indexItem = findedItem.get();
-			String iconTag = indexItem.getIconTag();
+		IndexItem matchingItem = indexItems.get(fileName.substring(0, fileName.indexOf(".")));
+		if (matchingItem != null) {
+			String iconTag = matchingItem.getIconTag();
 			if (iconTag != null && !iconTag.isEmpty()) {
 				buffer.append(iconTag).append(" ");
 			}
+			return Optional.of(matchingItem);
+		} else {
+			return Optional.empty();
 		}
-		return findedItem;
 	}
 
 	private void doGenerateTables(IndexItem indexItem, Map<String, IndexItem> indexItems, StringBuffer buffer, List<String> currentConceptPages) {
@@ -425,9 +425,8 @@ public class IndexingConceptsTask implements ITaskProduction {
 		{
 			for (Entry<String, IndexItem> entry : indexItems.entrySet()) 
 			{
-				String currentConcept = entry.getValue().getConceptName();
 				String title = mPHeaderOne.group(1);
-				String currentConcept_html = EscapeChars.forHTML(currentConcept);
+				String currentConcept_html = entry.getValue().getEscapedForHTMLConceptName();
 				if (title.contains(currentConcept_html)) {
 					indexTitle(fileName, entry.getValue());
 				}
@@ -443,10 +442,9 @@ public class IndexingConceptsTask implements ITaskProduction {
 		mParagraphe = mParagraphe.reset(pageContent);
 		while (mParagraphe.find()) {
 			for (Entry<String, IndexItem> entry : indexItems.entrySet()) {
-				String currentConcept = entry.getValue().getConceptName();
+				String currentConcept_html = entry.getValue().getEscapedForHTMLConceptName();
 				for (int i = 1; i <= mParagraphe.groupCount(); i++) {
 					String paragraph = mParagraphe.group(i);
-					String currentConcept_html = EscapeChars.forHTML(currentConcept);
 					if (paragraph.contains(currentConcept_html)) {
 						indexParagraph(fileName, entry.getValue());
 						break;
@@ -487,8 +485,7 @@ public class IndexingConceptsTask implements ITaskProduction {
 					final String listText = pageContent.substring(listStartIndex, listEndIndex);
 					for (Entry<String, IndexItem> entry : indexItems.entrySet())
 					{
-						String currentConcept = entry.getValue().getConceptName();
-						String currentConcept_html = EscapeChars.forHTML(currentConcept);
+						String currentConcept_html = entry.getValue().getEscapedForHTMLConceptName();
 						if (listText.contains(currentConcept_html)) 
 						{
 							indexList(fileName, entry.getValue());
@@ -567,6 +564,7 @@ public class IndexingConceptsTask implements ITaskProduction {
 			localList.add(fileName);
 			conceptsToPageTitle.put(currentConcept, localList);
 		}
+		
 		if (DO_TRACE) {
 			logger.info(INDEXING_PREF + "Concept: " + currentConcept + " is indexed in file: " + fileName);
 		}
