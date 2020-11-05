@@ -384,7 +384,7 @@
         </invocationContractContainer>
       </invocations>
       <invocations xmi:id="_Lg8PAAyDEeuATuFqNvKAVw" name="Initialize Registry Data"
-          invokedActivity="#_v1xvkUHPEeWuloZZIJtB0g"/>
+          invokedActivity="#_UcyBgB9vEeuxOqSqip439A"/>
       <invocations xmi:id="_Ueu3MJ2OEemJ2K-s0Y7hRg" name="load page extensions runtime parameters"
           invokedActivity="#_DPcgsJ2OEemJ2K-s0Y7hRg">
         <invocationContractContainer xmi:id="_Ueu3MZ2OEemJ2K-s0Y7hRg">
@@ -515,6 +515,8 @@
         </invocationContractContainer>
       </invocations>
       <invocations xmi:id="_FbkMQEHQEeWuloZZIJtB0g" name="Clean Scope Data" invokedActivity="#_v1xvkUHPEeWuloZZIJtB0g"/>
+      <invocations xmi:id="_bMmIcB9vEeuxOqSqip439A" name="Initialize Registry Data"
+          invokedActivity="#_UcyBgB9vEeuxOqSqip439A"/>
     </orchestration>
   </fcore:FactoryComponent>
   <fcore:FactoryComponent xmi:id="_NFDG8Of_Ed-RW5fqwaBgOQ" name="HTMLDocGen.Index builder">
@@ -1059,6 +1061,8 @@
       kind="java" implementation="org.polarsys.kitalpha.doc.gen.business.core.task.RemoveCollectedConceptForSearchIndex"/>
   <ftask:Task xmi:id="_v1xvkUHPEeWuloZZIJtB0g" name="Clean.Scope.Data" kind="java"
       implementation="org.polarsys.kitalpha.doc.gen.business.core.task.CleanScopeDataTask"/>
+  <ftask:Task xmi:id="_UcyBgB9vEeuxOqSqip439A" name="Clean.Registry.Data" kind="java"
+      implementation="org.polarsys.kitalpha.doc.gen.business.core.task.CleanRegistryDataTask"/>
   <ftask:Task xmi:id="_DPcgsJ2OEemJ2K-s0Y7hRg" name="load.page.extension.runtime.parameters"
       kind="java" implementation="org.polarsys.kitalpha.doc.gen.business.core.task.LoadPageExtensionRuntimeParameters">
     <contractContainer xmi:id="_N9pIwJ2OEemJ2K-s0Y7hRg">
