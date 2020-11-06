@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Copyright (c) 2006, 2018 THALES GLOBAL SERVICES.
+  Copyright (c) 2006, 2020 THALES GLOBAL SERVICES.
   All rights reserved. This program and the accompanying materials
   are made available under the terms of the Eclipse Public License v1.0
   which accompanies this distribution, and is available at
@@ -12,7 +12,7 @@
 <feature
       id="org.polarsys.kitalpha.sdk.feature"
       label="Kitalpha SDK Feature"
-      version="1.4.2.qualifier"
+      version="1.4.3.qualifier"
       provider-name="%providerName"
       plugin="org.polarsys.kitalpha.product">
 
@@ -29,20 +29,20 @@
    </license>
 
    <requires>
-      <import feature="org.polarsys.kitalpha.runtime.feature" version="1.4.2.qualifier"/>
-      <import feature="org.polarsys.kitalpha.ad.sdk.feature" version="1.4.2.qualifier"/>
-      <import feature="org.polarsys.kitalpha.ad.ta.feature" version="1.4.2.qualifier"/>
-      <import feature="org.polarsys.kitalpha.ad.dsl.feature" version="1.4.2.qualifier"/>
-      <import feature="org.polarsys.kitalpha.vp.componentsample.example.installer.feature" version="1.4.2.qualifier"/>
-      <import feature="org.polarsys.kitalpha.representation.feature" version="1.4.2.qualifier"/>
-      <import feature="org.polarsys.kitalpha.doc.gen.business.ecore.feature" version="1.4.2.qualifier"/>
-      <import feature="org.polarsys.kitalpha.emde.sdk.feature" version="1.4.2.qualifier"/>
-      <import feature="org.polarsys.kitalpha.cadence.examples.feature" version="1.4.2.qualifier"/>
-      <import feature="org.polarsys.kitalpha.composer.examples.feature" version="1.4.2.qualifier"/>
-      <import feature="org.polarsys.kitalpha.composer.componentsample.installer.feature" version="1.4.2.qualifier"/>
-      <import feature="org.polarsys.kitalpha.transposer.examples.feature" version="1.4.2.qualifier"/>
-      <import feature="org.polarsys.kitalpha.transposer.componentsample.installer.feature" version="1.4.2.qualifier"/>
-      <import feature="org.polarsys.kitalpha.product.feature" version="1.4.2.qualifier"/>
+      <import feature="org.polarsys.kitalpha.runtime.feature" version="1.4.3.qualifier"/>
+      <import feature="org.polarsys.kitalpha.ad.sdk.feature" version="1.4.3.qualifier"/>
+      <import feature="org.polarsys.kitalpha.ad.ta.feature" version="1.4.3.qualifier"/>
+      <import feature="org.polarsys.kitalpha.ad.dsl.feature" version="1.4.3.qualifier"/>
+      <import feature="org.polarsys.kitalpha.vp.componentsample.example.installer.feature" version="1.4.3.qualifier"/>
+      <import feature="org.polarsys.kitalpha.representation.feature" version="1.4.3.qualifier"/>
+      <import feature="org.polarsys.kitalpha.doc.gen.business.ecore.feature" version="1.4.3.qualifier"/>
+      <import feature="org.polarsys.kitalpha.emde.sdk.feature" version="1.4.3.qualifier"/>
+      <import feature="org.polarsys.kitalpha.cadence.examples.feature" version="1.4.3.qualifier"/>
+      <import feature="org.polarsys.kitalpha.composer.examples.feature" version="1.4.3.qualifier"/>
+      <import feature="org.polarsys.kitalpha.composer.componentsample.installer.feature" version="1.4.3.qualifier"/>
+      <import feature="org.polarsys.kitalpha.transposer.examples.feature" version="1.4.3.qualifier"/>
+      <import feature="org.polarsys.kitalpha.transposer.componentsample.installer.feature" version="1.4.3.qualifier"/>
+      <import feature="org.polarsys.kitalpha.product.feature" version="1.4.3.qualifier"/>
    </requires>
 
 </feature>

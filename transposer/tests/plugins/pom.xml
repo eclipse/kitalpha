@@ -4,7 +4,7 @@
     http://maven.apache.org/maven-v4_0_0.xsd"> 
     
 <!--
-  Copyright (c) 2006, 2018 THALES GLOBAL SERVICES.
+  Copyright (c) 2006, 2020 THALES GLOBAL SERVICES.
   All rights reserved. This program and the accompanying materials
   are made available under the terms of the Eclipse Public License v1.0
   which accompanies this distribution, and is available at
@@ -23,7 +23,7 @@
   <parent>
     <groupId>org.polarsys</groupId>
     <artifactId>org.polarsys.kitalpha</artifactId>
-    <version>1.4.2-SNAPSHOT</version>
+    <version>1.4.3-SNAPSHOT</version>
     <relativePath>../../releng/plugins/org.polarsys.kitalpha.releng.parent</relativePath>
   </parent>
 </project>
