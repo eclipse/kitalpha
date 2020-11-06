@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-SymbolicName: org.polarsys.kitalpha.vp.componentsamplequalityassessment.vpdsl;singleton:=true
 Bundle-Name: %Bundle-Name 
 Bundle-Vendor: %Bundle-Vendor 
-Bundle-Version: 1.4.2.qualifier
+Bundle-Version: 1.4.3.qualifier
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.polarsys.kitalpha.resourcereuse
