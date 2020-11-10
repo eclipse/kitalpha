@@ -6,8 +6,7 @@ Element-Type: testcase
 Element-Version: 3.0
 External-Reference: 
 Id: _6hzHcDCPEeaFuoOf0aDQ6Q
-Runtime-Version: 2.0.2.201511100828
-Save-Time: 11/9/16 10:05 AM
+Save-Time: 11/10/20, 2:23 PM
 Testcase-Type: ecl
 
 ------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
@@ -39,13 +38,13 @@ with [get-window "Find/Replace"] {
     get-combo -after [get-label "Find:"] | set-text Epackage
     get-button Find | click
 }
-get-window "Find/Replace" | get-label "String Not Found" | get-property caption | equals "String Not Found" 
+get-window "Find/Replace" | get-label "String not found" | get-property caption | equals "String not found" 
     | verify-true
 with [get-window "Find/Replace"] {
     get-combo -after [get-label "Find:"] | set-text EClass
     get-button Find | click
 }
-get-window "Find/Replace" | get-label "String Not Found" | get-property caption | equals "String Not Found" 
+get-window "Find/Replace" | get-label "String not found" | get-property caption | equals "String not found" 
     | verify-true
 get-window "Find/Replace" | get-button Close | click
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--
