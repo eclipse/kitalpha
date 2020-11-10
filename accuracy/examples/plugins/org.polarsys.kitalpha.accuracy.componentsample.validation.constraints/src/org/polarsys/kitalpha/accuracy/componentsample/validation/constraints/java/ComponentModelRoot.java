@@ -13,6 +13,7 @@ package org.polarsys.kitalpha.accuracy.componentsample.validation.constraints.ja
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.polarsys.kitalpha.validation.java.provider.generic.IJavaConstraint;
+import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentModel;
 
 /**
  * 

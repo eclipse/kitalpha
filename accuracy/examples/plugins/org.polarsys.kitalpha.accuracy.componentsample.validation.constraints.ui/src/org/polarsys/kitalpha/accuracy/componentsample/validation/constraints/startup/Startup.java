@@ -16,6 +16,7 @@ import org.polarsys.kitalpha.accuracy.componentsample.validation.constraints.pro
 import org.polarsys.kitalpha.accuracy.componentsample.validation.constraints.providers.OCLConstraintsProvider;
 import org.polarsys.kitalpha.validation.ocl.provider.generic.EValidatorAdapter;
 import org.polarsys.kitalpha.validation.provider.generic.GenericConstraintProviderService;
+import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentSamplePackage;
 
 /**
  * 
