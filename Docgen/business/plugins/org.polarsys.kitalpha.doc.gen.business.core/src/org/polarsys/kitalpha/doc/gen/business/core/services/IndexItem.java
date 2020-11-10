@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2019 Thales Global Services S.A.S.
+ * Copyright (c) 2019, 2020 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -11,6 +11,8 @@
 package org.polarsys.kitalpha.doc.gen.business.core.services;
 
 import java.util.Objects;
+
+import org.polarsys.kitalpha.doc.gen.business.core.util.EscapeChars;
 
 /**
  * 
@@ -24,6 +26,7 @@ public class IndexItem implements Comparable<IndexItem>{
 	private final String iconTag;
 	private final String linkTagTowardPage;
 	private final String fileName;
+	private final String escapedForHTMLConceptName;
 	
 	/**
 	 * New index item
@@ -40,6 +43,7 @@ public class IndexItem implements Comparable<IndexItem>{
 		this.iconTag = iconTag;
 		this.linkTagTowardPage = linkTagTowardPage;
 		this.fileName = fileName;
+		this.escapedForHTMLConceptName = EscapeChars.forHTML(conceptName);
 	}
 	
 	public String getConceptName() {
@@ -62,6 +66,10 @@ public class IndexItem implements Comparable<IndexItem>{
 		return conceptType;
 	}
 	
+	public String getEscapedForHTMLConceptName() {
+		return escapedForHTMLConceptName;
+	}
+
 	@Override
 	public boolean equals(Object arg0) {
 		if (arg0 instanceof IndexItem) {
