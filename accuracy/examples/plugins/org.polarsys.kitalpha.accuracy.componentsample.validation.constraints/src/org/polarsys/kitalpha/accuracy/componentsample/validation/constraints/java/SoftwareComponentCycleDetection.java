@@ -16,6 +16,9 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.polarsys.kitalpha.validation.java.provider.generic.IJavaConstraint;
+import org.polarsys.kitalpha.vp.componentsample.ComponentSample.AbstractComponent;
+import org.polarsys.kitalpha.vp.componentsample.ComponentSample.ComponentModel;
+import org.polarsys.kitalpha.vp.componentsample.ComponentSample.SoftwareComponent;
 
 /**
  * 
