@@ -90,7 +90,7 @@ location eclipse-release "https://download.eclipse.org/releases/2020-06/" {
 	org.eclipse.emf.cdo.feature.group lazy
 }
 
-location sirius "https://download.eclipse.org/sirius/updates/stable/6.4.0-S20201109-104839/2020-06/" {
+location sirius "https://download.eclipse.org/sirius/updates/stable/6.4.0-S20201119-043506/2020-06/" {
 	org.eclipse.sirius.doc.feature.feature.group lazy
     org.eclipse.sirius.runtime.source.feature.group lazy
     org.eclipse.sirius.runtime.acceleo.feature.group lazy
