@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201906060805
+//Generated with EGF 1.6.2.202001031546
 package org.polarsys.kitalpha.doc.gen.business.core.searchIndex;
 
 import java.util.Map.Entry;
@@ -44,8 +44,8 @@ public class SearchIndex extends org.polarsys.kitalpha.doc.gen.business.core.doc
 			+ "\t\t\taddedConceptCount = addedConceptCount + 255;" + NL + "\t\t} " + NL;
 	protected final String TEXT_5 = NL + "\t\tconceptsList[";
 	protected final String TEXT_6 = "][";
-	protected final String TEXT_7 = "][0] = \"";
-	protected final String TEXT_8 = "\";" + NL + "\t\tconceptsList[";
+	protected final String TEXT_7 = "][0] = encodeURIComponent(\"";
+	protected final String TEXT_8 = "\");" + NL + "\t\tconceptsList[";
 	protected final String TEXT_9 = "][1] = \"";
 	protected final String TEXT_10 = "\";" + NL + "\t\t";
 	protected final String TEXT_11 = "][2] = \"";
@@ -55,13 +55,13 @@ public class SearchIndex extends org.polarsys.kitalpha.doc.gen.business.core.doc
 			+ "\t      var element = document.getElementById('possible_keywords');" + NL + "\t      var t = \"\";" + NL
 			+ "\t      for (x=0; x < tabCount; x++){" + NL + "\t\t  \tvar concepts = conceptsList[x];" + NL
 			+ "\t      \tfor(i=0;i<concepts.length;i++) {" + NL
-			+ "\t      \t\tvar index = concepts[i][0].toLowerCase().indexOf(value.toLowerCase());" + NL
-			+ "\t      \t\tif(index != -1) {" + NL + "\t\t      \t\tvar value2 = concepts[i][0];" + NL
+			+ "\t      \t\tvar index = concepts[i][0].toLowerCase().indexOf(encodeURIComponent(value).toLowerCase());"
+			+ NL + "\t      \t\tif(index != -1) {" + NL + "\t\t      \t\tvar value2 = concepts[i][0];" + NL
 			+ "\t      \t\t\tvar value3 = concepts[i][1];" + NL + "\t      \t\t\tvar value4 = concepts[i][2]; //icon"
 			+ NL + "\t      \t\t\tif (value4 === undefined) {" + NL
-			+ "\t      \t\t\t\tt = t.concat(\" <a href='concepts/\" + value3 + \".html' target='content'>\" + value2 + \"</a><br/>\");"
+			+ "\t      \t\t\t\tt = t.concat(\" <a href='concepts/\" + value3 + \".html' target='content'>\" + decodeURIComponent(value2) + \"</a><br/>\");"
 			+ NL + "\t      \t\t\t} else {" + NL
-			+ "\t      \t\t\t\tt = t.concat(value4 + \" <a href='concepts/\" + value3 + \".html' target='content'>\" + value2 + \"</a><br/>\");"
+			+ "\t      \t\t\t\tt = t.concat(value4 + \" <a href='concepts/\" + value3 + \".html' target='content'>\" + decodeURIComponent(value2) + \"</a><br/>\");"
 			+ NL + "\t      \t\t\t}\t      \t\t" + NL + "\t      \t\t}" + NL + "\t      \t}" + NL + "\t      }" + NL
 			+ "\t      " + NL + "\t      $(\"#p2\").html(t);" + NL + "\t      if (element != null) {" + NL
 			+ "\t      \telement.value = value;" + NL + "\t      }" + NL + "\t    }).keyup();" + NL + "\t    " + NL
@@ -137,7 +137,7 @@ public class SearchIndex extends org.polarsys.kitalpha.doc.gen.business.core.doc
 			stringBuffer.append(count);
 			stringBuffer.append(TEXT_7);
 			stringBuffer.append(EscapeChars
-					.removeNewline(EscapeChars.forHTML(entry.getValue().getConceptName().replace("\"", "\\\""))));
+					.removeNewline(entry.getValue().getConceptName().replace("\\", "\\\\").replace("\"", "\\\"")));
 			stringBuffer.append(TEXT_8);
 			stringBuffer.append(listCount);
 			stringBuffer.append(TEXT_6);
