@@ -50,7 +50,7 @@ int i = 0;
 for(Entry<String, IndexItem> entry : indexItems.entrySet()) {
 		i++;
 		%>
-		conceptsList[<%=listCount%>][<%=count%>][0] = "<%=EscapeChars.removeNewline(EscapeChars.forHTML(entry.getValue().getConceptName().replace("\"", "\\\"")))%>";
+		conceptsList[<%=listCount%>][<%=count%>][0] = encodeURIComponent("<%=EscapeChars.removeNewline(entry.getValue().getConceptName().replace("\\", "\\\\").replace("\"", "\\\""))%>");
 		conceptsList[<%=listCount%>][<%=count%>][1] = "<%=i+"_"+DocGenHtmlUtil.getValidFileName(entry.getValue().getConceptName())%>";
 		<% if (entry.getValue().getIconTag() != null && !entry.getValue().getIconTag().isEmpty()) { %>
 		conceptsList[<%=listCount%>][<%=count%>][2] = "<%= entry.getValue().getIconTag().replaceAll("\"", "'").replaceFirst("../", "") %>";
@@ -76,15 +76,15 @@ for(Entry<String, IndexItem> entry : indexItems.entrySet()) {
 	      for (x=0; x < tabCount; x++){
 		  	var concepts = conceptsList[x];
 	      	for(i=0;i<concepts.length;i++) {
-	      		var index = concepts[i][0].toLowerCase().indexOf(value.toLowerCase());
+	      		var index = concepts[i][0].toLowerCase().indexOf(encodeURIComponent(value).toLowerCase());
 	      		if(index != -1) {
 		      		var value2 = concepts[i][0];
 	      			var value3 = concepts[i][1];
 	      			var value4 = concepts[i][2]; //icon
 	      			if (value4 === undefined) {
-	      				t = t.concat(" <a href='concepts/" + value3 + ".html' target='content'>" + value2 + "</a><br/>");
+	      				t = t.concat(" <a href='concepts/" + value3 + ".html' target='content'>" + decodeURIComponent(value2) + "</a><br/>");
 	      			} else {
-	      				t = t.concat(value4 + " <a href='concepts/" + value3 + ".html' target='content'>" + value2 + "</a><br/>");
+	      				t = t.concat(value4 + " <a href='concepts/" + value3 + ".html' target='content'>" + decodeURIComponent(value2) + "</a><br/>");
 	      			}	      		
 	      		}
 	      	}
