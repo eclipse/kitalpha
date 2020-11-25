@@ -508,7 +508,7 @@ public class IndexingConceptsTask implements ITaskProduction {
 		while (mTable.find()) 
 		{
 			for (Entry<String, IndexItem> entry : indexItems.entrySet()) {
-				String currentConcept_html = EscapeChars.forHTML(entry.getValue().getConceptName());
+				String currentConcept_html = entry.getValue().getEscapedForHTMLConceptName();
 				for (int i = 1; i <= mTable.groupCount(); i++) {
 					String listGroup = mTable.group(i);
 					if (listGroup.contains(currentConcept_html)) {
