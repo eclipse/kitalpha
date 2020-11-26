@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2014 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2020 Thales Global Services S.A.S.
  *  This program and the accompanying materials are made available under the
  *  terms of the Eclipse Public License 2.0 which is available at
  *  http://www.eclipse.org/legal/epl-2.0
@@ -45,7 +45,7 @@ public class GenBuildDocumentation implements IGenerator {
     _builder.append("/*******************************************************************************");
     _builder.newLine();
     _builder.append(" ");
-    _builder.append("* Copyright (c) 2014 Thales Global Services S.A.S.");
+    _builder.append("* Copyright (c) 2014, 2020 Thales Global Services S.A.S.");
     _builder.newLine();
     _builder.append(" ");
     _builder.append("*  This program and the accompanying materials are made available under the");
