@@ -24,10 +24,10 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.api.IPurpose#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.transposer.rules.handler.rules.api.ApiPackage#getIPurpose()
  * @model interface="true" abstract="true"

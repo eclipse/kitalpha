@@ -23,6 +23,8 @@ public interface ITransposerLaunchConfigurationConstants {
   String PURPOSE_NAME = "purpose_name"; //$NON-NLS-1$
   String MAPPING_ID = "mapping_id"; //$NON-NLS-1$
   String MAPPING_NAME = "mapping_name"; //$NON-NLS-1$
+  
+  String TARGET_FOLDER = "target_folder"; //$NON-NLS-1$
 
   String SELECTED_FILES = "SELECTED_FILES"; //$NON-NLS-1$
 

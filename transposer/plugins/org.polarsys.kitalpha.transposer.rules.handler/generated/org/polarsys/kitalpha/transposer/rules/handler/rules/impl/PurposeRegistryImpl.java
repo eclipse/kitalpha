@@ -44,11 +44,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.impl.PurposeRegistryImpl#getRegisteredPurposes <em>Registered Purposes</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.impl.PurposeRegistryImpl#getContributedPurposes <em>Contributed Purposes</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

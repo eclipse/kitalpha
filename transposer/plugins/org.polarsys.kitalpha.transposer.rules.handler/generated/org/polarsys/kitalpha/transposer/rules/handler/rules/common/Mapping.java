@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.Mapping#getName <em>Name</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.Mapping#getExtendedMapping <em>Extended Mapping</em>}</li>
@@ -50,8 +51,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.Mapping#getOwnedContext <em>Owned Context</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.Mapping#getContext <em>Context</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.Mapping#isPrivate <em>Private</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.Mapping#isSelectableOutputFolder <em>Selectable Output Folder</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.transposer.rules.handler.rules.common.CommonPackage#getMapping()
  * @model
@@ -520,6 +521,42 @@ public interface Mapping extends EObject {
 	 */
 
 	void setPrivate(boolean value);
+
+
+
+
+	/**
+	 * Returns the value of the '<em><b>Selectable Output Folder</b></em>' attribute.
+
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Selectable Output Folder</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Selectable Output Folder</em>' attribute.
+	 * @see #setSelectableOutputFolder(boolean)
+	 * @see org.polarsys.kitalpha.transposer.rules.handler.rules.common.CommonPackage#getMapping_SelectableOutputFolder()
+	 * @model required="true"
+	 * @generated
+	 */
+
+	boolean isSelectableOutputFolder();
+
+
+
+
+	/**
+	 * Sets the value of the '{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.Mapping#isSelectableOutputFolder <em>Selectable Output Folder</em>}' attribute.
+
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Selectable Output Folder</em>' attribute.
+	 * @see #isSelectableOutputFolder()
+	 * @generated
+	 */
+
+	void setSelectableOutputFolder(boolean value);
 
 
 

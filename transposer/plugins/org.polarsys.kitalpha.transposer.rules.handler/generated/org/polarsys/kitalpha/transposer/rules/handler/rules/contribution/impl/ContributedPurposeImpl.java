@@ -42,11 +42,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.contribution.impl.ContributedPurposeImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.contribution.impl.ContributedPurposeImpl#getMappings <em>Mappings</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

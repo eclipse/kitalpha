@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.MappingElement#getOwnedDefaultPossibility <em>Owned Default Possibility</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.MappingElement#getDefaultPossibility <em>Default Possibility</em>}</li>
@@ -36,7 +37,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.MappingElement#getExtenders <em>Extenders</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.MappingElement#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.transposer.rules.handler.rules.common.CommonPackage#getMappingElement()
  * @model

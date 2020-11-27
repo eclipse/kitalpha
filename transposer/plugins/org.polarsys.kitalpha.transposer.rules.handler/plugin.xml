@@ -15,9 +15,49 @@ Contributors:
 
 <plugin>
 
+   
+<!--@generated-->
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated mapping -->
+      <package
+            uri="http://www.polarsys.org/transposer/rules"
+            class="org.polarsys.kitalpha.transposer.rules.handler.rules.RulesPackage"/>
+   </extension>
 
-   <extension-point id="mapping" name="mapping" schema="schema/mapping.exsd"/>
+   
+<!--@generated-->
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated mapping -->
+      <package
+            uri="http://www.polarsys.org/transposer/rules/api"
+            class="org.polarsys.kitalpha.transposer.rules.handler.rules.api.ApiPackage"/>
+   </extension>
 
-  
+   
+<!--@generated-->
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated mapping -->
+      <package
+            uri="http://www.polarsys.org/transposer/rules/common"
+            class="org.polarsys.kitalpha.transposer.rules.handler.rules.common.CommonPackage"/>
+   </extension>
 
-</plugin>
+   
+<!--@generated-->
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated mapping -->
+      <package
+            uri="http://www.polarsys.org/transposer/rules/runtime"
+            class="org.polarsys.kitalpha.transposer.rules.handler.rules.runtime.RuntimePackage"/>
+   </extension>
+
+   
+<!--@generated-->
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated mapping -->
+      <package
+            uri="http://www.polarsys.org/transposer/rules/contribution"
+            class="org.polarsys.kitalpha.transposer.rules.handler.rules.contribution.ContributionPackage"/>
+   </extension>
+
+<extension-point id="mapping" name="mapping" schema="schema/mapping.exsd"/></plugin>

@@ -308,6 +308,15 @@ public class CommonPackageImpl extends EPackageImpl implements CommonPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getMapping_SelectableOutputFolder() {
+		return (EAttribute)mappingEClass.getEStructuralFeatures().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getMappingPackage() {
 		return mappingPackageEClass;
 	}
@@ -536,6 +545,7 @@ public class CommonPackageImpl extends EPackageImpl implements CommonPackage {
 		createEAttribute(mappingEClass, MAPPING__OWNED_CONTEXT);
 		createEAttribute(mappingEClass, MAPPING__CONTEXT);
 		createEAttribute(mappingEClass, MAPPING__PRIVATE);
+		createEAttribute(mappingEClass, MAPPING__SELECTABLE_OUTPUT_FOLDER);
 
 		mappingPackageEClass = createEClass(MAPPING_PACKAGE);
 		createEReference(mappingPackageEClass, MAPPING_PACKAGE__OWNED_PACKAGES);
@@ -613,6 +623,7 @@ public class CommonPackageImpl extends EPackageImpl implements CommonPackage {
 		initEAttribute(getMapping_OwnedContext(), theApiPackage.getIContext(), "ownedContext", null, 0, 1, Mapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		initEAttribute(getMapping_Context(), theApiPackage.getIContext(), "context", null, 0, 1, Mapping.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		initEAttribute(getMapping_Private(), ecorePackage.getEBoolean(), "private", null, 1, 1, Mapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getMapping_SelectableOutputFolder(), ecorePackage.getEBoolean(), "selectableOutputFolder", null, 1, 1, Mapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 
 		addEOperation(mappingEClass, theApiPackage.getIStatus(), "validate", 0, 1, IS_UNIQUE, IS_ORDERED); //$NON-NLS-1$
 

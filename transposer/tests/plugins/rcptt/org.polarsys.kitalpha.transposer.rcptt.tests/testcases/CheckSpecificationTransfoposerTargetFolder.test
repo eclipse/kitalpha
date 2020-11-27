@@ -1,0 +1,54 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _XQWz8GIsEeuoncJB0RMDrg,_bye7UGIsEeuoncJB0RMDrg
+Element-Name: CheckSpecificationTransfoposerTargetFolder
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _JJKPwGIsEeuoncJB0RMDrg
+Runtime-Version: 2.4.3.201909171500
+Save-Time: 2/10/21 4:23 PM
+Testcase-Type: ecl
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+Check the apparition of Transposer Target Folder in Transposer Launch configuration
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-menu -path "Run/Debug Configurations..." | click
+with [get-window "Debug Configurations"] {
+    get-tree | select Transposer | double-click
+    get-editbox -after [get-label "Name:"] | set-text defaultTransposerLaunchConfiguration
+    get-group Purpose | get-combo 
+        | select "org.polarsys.kitalpha.vp.componentsample.rules.transformation.mapping.purpose"
+}
+
+try {
+get-window "Debug Configurations" | get-group "Output Folder Path" | get-property caption | equals "Output Folder Path" 
+    | verify-false
+} -catch {
+}
+    
+get-window "Debug Configurations" | get-button Apply | click
+
+with [get-window "Debug Configurations"] {
+    get-tree | select Transposer | double-click
+    with [get-editbox -after [get-label "Name:"]] {
+        click-text 1
+        key-type "M1+a"
+        set-text CustomTransposerLaunchConfiguration
+    }
+    get-group Purpose | get-combo 
+        | select "org.polarsys.kitalpha.vp.componentsample.rules.transformation.mapping.custom.purpose"
+}
+get-window "Debug Configurations" | get-group "Output Folder Path" | get-property caption | equals "Output Folder Path" 
+    | verify-true
+
+get-window "Debug Configurations" | get-button Apply | click
+get-window "Debug Configurations" | get-button "Close" | click
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

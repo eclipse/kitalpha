@@ -43,7 +43,7 @@ public class ApiFactoryImpl extends EFactoryImpl implements ApiFactory {
 	 */
 	public static ApiFactory init() {
 		try {
-			ApiFactory theApiFactory = (ApiFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.polarsys.org/transposer/rules/api"); //$NON-NLS-1$ 
+			ApiFactory theApiFactory = (ApiFactory)EPackage.Registry.INSTANCE.getEFactory(ApiPackage.eNS_URI);
 			if (theApiFactory != null) {
 				return theApiFactory;
 			}

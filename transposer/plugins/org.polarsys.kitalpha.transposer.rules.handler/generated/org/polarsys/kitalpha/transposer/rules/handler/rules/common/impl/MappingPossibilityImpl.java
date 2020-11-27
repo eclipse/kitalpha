@@ -36,13 +36,13 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.impl.MappingPossibilityImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.impl.MappingPossibilityImpl#getContext <em>Context</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.impl.MappingPossibilityImpl#getCompleteRule <em>Complete Rule</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.impl.MappingPossibilityImpl#getIncompleteRule <em>Incomplete Rule</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

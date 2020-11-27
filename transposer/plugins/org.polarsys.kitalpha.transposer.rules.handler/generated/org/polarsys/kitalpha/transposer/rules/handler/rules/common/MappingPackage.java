@@ -24,13 +24,13 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.MappingPackage#getOwnedPackages <em>Owned Packages</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.MappingPackage#getOwnedMappingElements <em>Owned Mapping Elements</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.MappingPackage#getName <em>Name</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.MappingPackage#getAllMappingElements <em>All Mapping Elements</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.transposer.rules.handler.rules.common.CommonPackage#getMappingPackage()
  * @model

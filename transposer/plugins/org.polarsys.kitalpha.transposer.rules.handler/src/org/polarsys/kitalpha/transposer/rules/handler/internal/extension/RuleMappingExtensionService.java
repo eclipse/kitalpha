@@ -46,7 +46,8 @@ import com.google.common.base.Strings;
  */
 public final class RuleMappingExtensionService implements IRuleMappingExtensionConstants {
 
-  /** The instance of the service. */
+
+/** The instance of the service. */
   private static RuleMappingExtensionService __instance = new RuleMappingExtensionService();
 
   /**
@@ -217,6 +218,11 @@ public final class RuleMappingExtensionService implements IRuleMappingExtensionC
     final boolean isPrivate = Strings.isNullOrEmpty(isPrivateStr) ? false : Boolean.parseBoolean(isPrivateStr) ;
     
     currentMapping.setPrivate(isPrivate);
+    
+    final String isSelectableOutputFolderStr = mappingConfigurationElement_p.getAttribute(MAPPING_SELECTABLE_OUTPUT_FOLDER);
+    final boolean isSelectableOutputFolder = Strings.isNullOrEmpty(isSelectableOutputFolderStr) ? false : Boolean.parseBoolean(isSelectableOutputFolderStr);
+    
+    currentMapping.setSelectableOutputFolder(isSelectableOutputFolder);
 
     if (mappingConfigurationElement_p.getAttribute(MAPPING_DOMAIN_HELPER) != null) {
 

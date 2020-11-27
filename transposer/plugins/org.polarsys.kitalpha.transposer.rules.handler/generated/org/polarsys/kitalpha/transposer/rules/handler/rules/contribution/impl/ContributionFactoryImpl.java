@@ -41,7 +41,7 @@ public class ContributionFactoryImpl extends EFactoryImpl implements Contributio
 	 */
 	public static ContributionFactory init() {
 		try {
-			ContributionFactory theContributionFactory = (ContributionFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.polarsys.org/transposer/rules/contribution"); //$NON-NLS-1$ 
+			ContributionFactory theContributionFactory = (ContributionFactory)EPackage.Registry.INSTANCE.getEFactory(ContributionPackage.eNS_URI);
 			if (theContributionFactory != null) {
 				return theContributionFactory;
 			}
