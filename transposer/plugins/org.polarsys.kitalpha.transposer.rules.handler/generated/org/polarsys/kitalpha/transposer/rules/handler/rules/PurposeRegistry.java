@@ -36,11 +36,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.PurposeRegistry#getRegisteredPurposes <em>Registered Purposes</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.PurposeRegistry#getContributedPurposes <em>Contributed Purposes</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.transposer.rules.handler.rules.RulesPackage#getPurposeRegistry()
  * @model abstract="true"

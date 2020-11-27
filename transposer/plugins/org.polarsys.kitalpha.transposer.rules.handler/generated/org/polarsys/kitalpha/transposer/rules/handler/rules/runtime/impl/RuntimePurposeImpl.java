@@ -41,13 +41,13 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.runtime.impl.RuntimePurposeImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.runtime.impl.RuntimePurposeImpl#getMapping <em>Mapping</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.runtime.impl.RuntimePurposeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.runtime.impl.RuntimePurposeImpl#getId <em>Id</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

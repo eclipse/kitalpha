@@ -39,13 +39,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.impl.MappingPackageImpl#getOwnedPackages <em>Owned Packages</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.impl.MappingPackageImpl#getOwnedMappingElements <em>Owned Mapping Elements</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.impl.MappingPackageImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.impl.MappingPackageImpl#getAllMappingElements <em>All Mapping Elements</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -5,13 +5,14 @@ Bundle-SymbolicName: org.polarsys.kitalpha.transposer.ui;singleton:=true
 Bundle-Version: 5.1.0.qualifier
 Bundle-Activator: org.polarsys.kitalpha.transposer.ui.TransposerUiPlugin
 Bundle-Vendor: %providerName
-Require-Bundle: org.eclipse.debug.ui,
- org.eclipse.ui,
- org.eclipse.emf.edit,
- org.polarsys.kitalpha.transposer.core;visibility:=reexport,
- org.polarsys.kitalpha.cadence.ui;visibility:=reexport,
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.ui.ide,
  org.eclipse.core.expressions,
- com.google.guava
+ org.eclipse.debug.ui,
+ org.eclipse.emf.edit,
+ com.google.guava,
+ org.polarsys.kitalpha.transposer.core;visibility:=reexport,
+ org.polarsys.kitalpha.cadence.ui;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.transposer.ui.actions,
  org.polarsys.kitalpha.transposer.ui.launch

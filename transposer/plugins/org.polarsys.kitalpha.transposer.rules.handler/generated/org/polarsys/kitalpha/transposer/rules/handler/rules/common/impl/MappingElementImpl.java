@@ -40,6 +40,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.impl.MappingElementImpl#getOwnedDefaultPossibility <em>Owned Default Possibility</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.impl.MappingElementImpl#getDefaultPossibility <em>Default Possibility</em>}</li>
@@ -52,7 +53,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.impl.MappingElementImpl#getExtenders <em>Extenders</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.impl.MappingElementImpl#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

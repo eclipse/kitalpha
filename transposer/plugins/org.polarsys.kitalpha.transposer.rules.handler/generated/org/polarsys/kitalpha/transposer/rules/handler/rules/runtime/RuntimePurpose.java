@@ -33,12 +33,12 @@ import org.polarsys.kitalpha.transposer.rules.handler.rules.common.MappingPossib
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.runtime.RuntimePurpose#getMapping <em>Mapping</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.runtime.RuntimePurpose#getDescription <em>Description</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.runtime.RuntimePurpose#getId <em>Id</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.transposer.rules.handler.rules.runtime.RuntimePackage#getRuntimePurpose()
  * @model

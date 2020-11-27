@@ -212,13 +212,22 @@ public interface CommonPackage extends EPackage {
 	int MAPPING__PRIVATE = 14;
 
 	/**
+	 * The feature id for the '<em><b>Selectable Output Folder</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING__SELECTABLE_OUTPUT_FOLDER = 15;
+
+	/**
 	 * The number of structural features of the '<em>Mapping</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAPPING_FEATURE_COUNT = 15;
+	int MAPPING_FEATURE_COUNT = 16;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.impl.MappingPackageImpl <em>Mapping Package</em>}' class.
@@ -616,6 +625,17 @@ public interface CommonPackage extends EPackage {
 	EAttribute getMapping_Private();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.Mapping#isSelectableOutputFolder <em>Selectable Output Folder</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Selectable Output Folder</em>'.
+	 * @see org.polarsys.kitalpha.transposer.rules.handler.rules.common.Mapping#isSelectableOutputFolder()
+	 * @see #getMapping()
+	 * @generated
+	 */
+	EAttribute getMapping_SelectableOutputFolder();
+
+	/**
 	 * Returns the meta object for class '{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.MappingPackage <em>Mapping Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -994,6 +1014,14 @@ public interface CommonPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MAPPING__PRIVATE = eINSTANCE.getMapping_Private();
+
+		/**
+		 * The meta object literal for the '<em><b>Selectable Output Folder</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MAPPING__SELECTABLE_OUTPUT_FOLDER = eINSTANCE.getMapping_SelectableOutputFolder();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.impl.MappingPackageImpl <em>Mapping Package</em>}' class.

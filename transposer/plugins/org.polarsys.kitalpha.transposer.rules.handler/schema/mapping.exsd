@@ -6,7 +6,6 @@
          <meta.schema plugin="org.polarsys.kitalpha.rules.handler" id="transposer.rules.handler.mapping" name="rules.handler.mapping"/>
       </appinfo>
       <documentation>
-         
       </documentation>
    </annotation>
 
@@ -90,6 +89,13 @@ Pim metaclasses are mapped to different possibilities [rules] that are mutually 
             <annotation>
                <documentation>
                   This attribute allows to hide the mapping in the GUI
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="enableOutputFolder" type="boolean" use="default" value="false">
+            <annotation>
+               <documentation>
+                  This attribute allows selection of output folder on the GUI
                </documentation>
             </annotation>
          </attribute>

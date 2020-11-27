@@ -32,6 +32,7 @@ public interface IRuleMappingExtensionConstants {
   String MAPPING_DOMAIN_HELPER = "domainHelper"; //$NON-NLS-1$
   String MAPPING_DEFAULT_CONTEXT = "context"; //$NON-NLS-1$
   String MAPPING_PRIVATE = "private"; //$NON-NLS-1$
+  String MAPPING_SELECTABLE_OUTPUT_FOLDER = "enableOutputFolder"; //$NON-NLS-1$
 
   String MAPPING_PACKAGE_TAG_ENGINE = "mappingPackage"; //$NON-NLS-1$
   String MAPPING_PACKAGE_NAME = "name"; //$NON-NLS-1$

@@ -33,13 +33,13 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.MappingPossibility#getName <em>Name</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.MappingPossibility#getContext <em>Context</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.MappingPossibility#getCompleteRule <em>Complete Rule</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.MappingPossibility#getIncompleteRule <em>Incomplete Rule</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.polarsys.kitalpha.transposer.rules.handler.rules.common.CommonPackage#getMappingPossibility()
  * @model
@@ -142,7 +142,7 @@ public interface MappingPossibility extends EObject {
 	 * @return the value of the '<em>Complete Rule</em>' attribute.
 	 * @see #setCompleteRule(IRule)
 	 * @see org.polarsys.kitalpha.transposer.rules.handler.rules.common.CommonPackage#getMappingPossibility_CompleteRule()
-	 * @model dataType="org.polarsys.kitalpha.transposer.rules.handler.rules.api.IRule<?>" required="true"
+	 * @model dataType="org.polarsys.kitalpha.transposer.rules.handler.rules.api.IRule&lt;?&gt;" required="true"
 	 * @generated
 	 */
 
@@ -181,7 +181,7 @@ public interface MappingPossibility extends EObject {
 	 * @return the value of the '<em>Incomplete Rule</em>' attribute.
 	 * @see #setIncompleteRule(IRule)
 	 * @see org.polarsys.kitalpha.transposer.rules.handler.rules.common.CommonPackage#getMappingPossibility_IncompleteRule()
-	 * @model dataType="org.polarsys.kitalpha.transposer.rules.handler.rules.api.IRule<?>"
+	 * @model dataType="org.polarsys.kitalpha.transposer.rules.handler.rules.api.IRule&lt;?&gt;"
 	 * @generated
 	 */
 

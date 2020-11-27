@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+
+<!--
+  Copyright (c) 2014, 2020 Thales Global Services S.A.S.
+  This program and the accompanying materials are made available under the
+  terms of the Eclipse Public License 2.0 which is available at
+  http://www.eclipse.org/legal/epl-2.0
+  
+  SPDX-License-Identifier: EPL-2.0
+ 
+  Contributors:
+     Thales Global Services S.A.S - initial API and implementation
+-->
+<plugin>
+   <extension
+         id="org.polarsys.kitalpha.vp.componentsample.rules.transformation.defaultMapping"
+         name="Default Output Folder Mapping"
+         point="org.polarsys.kitalpha.transposer.rules.handler.mapping">
+      <mapping
+            domainHelper="org.polarsys.kitalpha.vp.componentsample.rules.transformation.domain.ComponentSampleDomainHelper"
+            enableOutputFolder="false"
+            mappingName="Default Output Folder mapping"
+            mappingPurpose="org.polarsys.kitalpha.vp.componentsample.rules.transformation.mapping.purpose"
+            private="false">
+         <mappingElement
+               domainMetaClass="org.polarsys.kitalpha.vp.componentsample.ComponentSample.SoftwareComponent"
+               name="Transform Software Component"
+               reuseExtendedElementDefaultPossibility="true"
+               reuseExtendedElementPossibilities="true">
+            <defaultMappingPossibility
+                  completeRule="org.polarsys.kitalpha.vp.componentsample.rules.transformation.SoftwareComponentRule"
+                  enabled="true"
+                  name="Software Component Rule">
+            </defaultMappingPossibility>
+         </mappingElement>
+      </mapping>
+   </extension>
+   <extension
+         id="org.polarsys.kitalpha.vp.componentsample.rules.transformation.customMapping"
+         name="Custom Output Folder Mapping"
+         point="org.polarsys.kitalpha.transposer.rules.handler.mapping">
+      <mapping
+            domainHelper="org.polarsys.kitalpha.vp.componentsample.rules.transformation.domain.ComponentSampleDomainHelper"
+            enableOutputFolder="true"
+            mappingName="Custom Output Folder mapping"
+            mappingPurpose="org.polarsys.kitalpha.vp.componentsample.rules.transformation.mapping.custom.purpose"
+            private="false">
+         <mappingElement
+               domainMetaClass="org.polarsys.kitalpha.vp.componentsample.ComponentSample.SoftwareComponent"
+               name="Software Transformation Rule (Custom Output)"
+               reuseExtendedElementDefaultPossibility="true"
+               reuseExtendedElementPossibilities="true">
+            <defaultMappingPossibility
+                  completeRule="org.polarsys.kitalpha.vp.componentsample.rules.transformation.SoftwareComponentRule"
+                  enabled="true"
+                  name="Software Transformation Rule belonging to custom output folder">
+            </defaultMappingPossibility>
+         </mappingElement>
+      </mapping>
+   </extension>
+
+</plugin>

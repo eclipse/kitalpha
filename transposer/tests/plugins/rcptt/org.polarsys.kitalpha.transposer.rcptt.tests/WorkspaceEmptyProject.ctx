@@ -1,0 +1,31 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Context-Type: org.eclipse.rcptt.ctx.workspace
+Element-Name: WorkspaceEmptyProject
+Element-Type: context
+Element-Version: 2.0
+Id: _bye7UGIsEeuoncJB0RMDrg
+Save-Time: 2/3/21 3:21 PM
+
+------=_contents/emptyProject/.project-1a8d5446-1671-3f48-9122-c3bfebaf0410
+Content-Type: q7/binary
+Entry-Name: contents/emptyProject/.project
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAkALmNvbnRlbnRVVAUAAQAAAACzsa/IzVEoSy0qzszP
+s1Uy1DNQUkjNS85PycxLt1UKDXHTtVCyt+Plsikoys9KTS5xSS1OLsosKAGqBopy2uQl5qbapeYWlFQG
+QBTY6IOFQHLJ+bm5qXkldjb6MBZIFGpQMZijj8JLKs3MSQkuSE2GyKFy8xJLSotSodoQHLgRqC4DAFBL
+BwgDDEFrgwAAANgAAABQSwECFAAUAAgICAAAACEAAwxBa4MAAADYAAAACAAJAAAAAAAAAAAAAAAAAAAA
+LmNvbnRlbnRVVAUAAQAAAABQSwUGAAAAAAEAAQA/AAAAwgAAAAAA
+------=_contents/emptyProject/.project-1a8d5446-1671-3f48-9122-c3bfebaf0410--
+------=_.q7.content-3d2e0690-ce48-3609-83e0-c704d49f1eaf
+Content-Type: q7/binary
+Entry-Name: .q7.content
+
+UEsDBBQACAgIAAAAIQAAAAAAAAAAAAAAAAAIAAkALmNvbnRlbnRVVAUAAQAAAACVkMFKAzEQhu+C7xDm
+blK9KMuuBbVIhYIIojfZptM1upuEZNZN397Ztlm9ibdM+P7vz6Scp64VXxiicbaCczkDgVa7jbFNBT1t
+z65gfn16UrrQSNSt8RFl0J5IakpycOEz+lpj8ZJPt84SJhKpM8XkvRi93GRjwfcVvBP5QqlhGKTrGsly
+9bpaZuSPrimemTG+5xRzauJA2LpjenraovO0ewzuAzWBMJsK3tY7vHy+X8YF9s7qh5vZ0+ouNMAbC1Hq
+cRVL+4FHf0jGoxZ/244MU1vTYkakz2WYUPdUr1u+pdAjqGxVWXvoVD+lpfrvp3PoG1BLBwjiplhQ8gAA
+ANEBAABQSwECFAAUAAgICAAAACEA4qZYUPIAAADRAQAACAAJAAAAAAAAAAAAAAAAAAAALmNvbnRlbnRV
+VAUAAQAAAABQSwUGAAAAAAEAAQA/AAAAMQEAAAAA
+------=_.q7.content-3d2e0690-ce48-3609-83e0-c704d49f1eaf--

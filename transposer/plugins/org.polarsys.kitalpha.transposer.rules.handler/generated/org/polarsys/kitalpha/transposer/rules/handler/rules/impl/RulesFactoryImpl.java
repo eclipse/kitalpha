@@ -47,7 +47,7 @@ public class RulesFactoryImpl extends EFactoryImpl implements RulesFactory {
 	 */
 	public static RulesFactory init() {
 		try {
-			RulesFactory theRulesFactory = (RulesFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.polarsys.org/transposer/rules"); //$NON-NLS-1$ 
+			RulesFactory theRulesFactory = (RulesFactory)EPackage.Registry.INSTANCE.getEFactory(RulesPackage.eNS_URI);
 			if (theRulesFactory != null) {
 				return theRulesFactory;
 			}

@@ -90,6 +90,7 @@ public class MappingItemProvider
 			addOwnedContextPropertyDescriptor(object);
 			addContextPropertyDescriptor(object);
 			addPrivatePropertyDescriptor(object);
+			addSelectableOutputFolderPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -407,6 +408,30 @@ public class MappingItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Selectable Output Folder feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSelectableOutputFolderPropertyDescriptor(Object object) {
+
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Mapping_selectableOutputFolder_feature"), //$NON-NLS-1$
+				 getString("_UI_PropertyDescriptor_description", "_UI_Mapping_selectableOutputFolder_feature", "_UI_Mapping_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				 CommonPackage.Literals.MAPPING__SELECTABLE_OUTPUT_FOLDER,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -483,6 +508,7 @@ public class MappingItemProvider
 			case CommonPackage.MAPPING__OWNED_CONTEXT:
 			case CommonPackage.MAPPING__CONTEXT:
 			case CommonPackage.MAPPING__PRIVATE:
+			case CommonPackage.MAPPING__SELECTABLE_OUTPUT_FOLDER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case CommonPackage.MAPPING__OWNED_PACKAGES:
@@ -504,17 +530,19 @@ public class MappingItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-				newChildDescriptors.add
-					(createChildParameter
-						(CommonPackage.Literals.MAPPING__OWNED_PACKAGES,
-						 CommonFactory.eINSTANCE.createMappingPackage()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CommonPackage.Literals.MAPPING__OWNED_PACKAGES,
+				 CommonFactory.eINSTANCE.createMappingPackage()));
 
 
 
-				newChildDescriptors.add
-					(createChildParameter
-						(CommonPackage.Literals.MAPPING__OWNED_MAPPING_ELEMENTS,
-						 CommonFactory.eINSTANCE.createMappingElement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CommonPackage.Literals.MAPPING__OWNED_MAPPING_ELEMENTS,
+				 CommonFactory.eINSTANCE.createMappingElement()));
 
 
 	}

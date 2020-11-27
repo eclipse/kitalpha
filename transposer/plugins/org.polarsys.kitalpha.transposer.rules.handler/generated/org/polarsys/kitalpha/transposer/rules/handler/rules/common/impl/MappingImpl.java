@@ -52,6 +52,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.impl.MappingImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.impl.MappingImpl#getExtendedMapping <em>Extended Mapping</em>}</li>
@@ -68,8 +69,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.impl.MappingImpl#getOwnedContext <em>Owned Context</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.impl.MappingImpl#getContext <em>Context</em>}</li>
  *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.impl.MappingImpl#isPrivate <em>Private</em>}</li>
+ *   <li>{@link org.polarsys.kitalpha.transposer.rules.handler.rules.common.impl.MappingImpl#isSelectableOutputFolder <em>Selectable Output Folder</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -305,6 +306,28 @@ public class MappingImpl extends EObjectImpl implements Mapping {
 	 * @ordered
 	 */
 	protected boolean private_ = PRIVATE_EDEFAULT;
+
+
+
+	/**
+	 * The default value of the '{@link #isSelectableOutputFolder() <em>Selectable Output Folder</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSelectableOutputFolder()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean SELECTABLE_OUTPUT_FOLDER_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isSelectableOutputFolder() <em>Selectable Output Folder</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSelectableOutputFolder()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean selectableOutputFolder = SELECTABLE_OUTPUT_FOLDER_EDEFAULT;
 
 
 
@@ -769,6 +792,32 @@ public class MappingImpl extends EObjectImpl implements Mapping {
 	 * @generated
 	 */
 
+	public boolean isSelectableOutputFolder() {
+
+		return selectableOutputFolder;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+
+	public void setSelectableOutputFolder(boolean newSelectableOutputFolder) {
+
+		boolean oldSelectableOutputFolder = selectableOutputFolder;
+		selectableOutputFolder = newSelectableOutputFolder;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CommonPackage.MAPPING__SELECTABLE_OUTPUT_FOLDER, oldSelectableOutputFolder, selectableOutputFolder));
+
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+
 	public IStatus validate() {
 
 		// TODO: implement this method
@@ -942,6 +991,8 @@ public class MappingImpl extends EObjectImpl implements Mapping {
 				return getContext();
 			case CommonPackage.MAPPING__PRIVATE:
 				return isPrivate();
+			case CommonPackage.MAPPING__SELECTABLE_OUTPUT_FOLDER:
+				return isSelectableOutputFolder();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -984,6 +1035,9 @@ public class MappingImpl extends EObjectImpl implements Mapping {
 			case CommonPackage.MAPPING__PRIVATE:
 				setPrivate((Boolean)newValue);
 				return;
+			case CommonPackage.MAPPING__SELECTABLE_OUTPUT_FOLDER:
+				setSelectableOutputFolder((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1023,6 +1077,9 @@ public class MappingImpl extends EObjectImpl implements Mapping {
 				return;
 			case CommonPackage.MAPPING__PRIVATE:
 				setPrivate(PRIVATE_EDEFAULT);
+				return;
+			case CommonPackage.MAPPING__SELECTABLE_OUTPUT_FOLDER:
+				setSelectableOutputFolder(SELECTABLE_OUTPUT_FOLDER_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -1068,6 +1125,8 @@ public class MappingImpl extends EObjectImpl implements Mapping {
 				return CONTEXT_EDEFAULT == null ? getContext() != null : !CONTEXT_EDEFAULT.equals(getContext());
 			case CommonPackage.MAPPING__PRIVATE:
 				return private_ != PRIVATE_EDEFAULT;
+			case CommonPackage.MAPPING__SELECTABLE_OUTPUT_FOLDER:
+				return selectableOutputFolder != SELECTABLE_OUTPUT_FOLDER_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1095,6 +1154,8 @@ public class MappingImpl extends EObjectImpl implements Mapping {
 		result.append(ownedContext);
 		result.append(", private: "); //$NON-NLS-1$
 		result.append(private_);
+		result.append(", selectableOutputFolder: "); //$NON-NLS-1$
+		result.append(selectableOutputFolder);
 		result.append(')');
 		return result.toString();
 	}

@@ -44,7 +44,7 @@ public class CommonFactoryImpl extends EFactoryImpl implements CommonFactory {
 	 */
 	public static CommonFactory init() {
 		try {
-			CommonFactory theCommonFactory = (CommonFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.polarsys.org/transposer/rules/common"); //$NON-NLS-1$ 
+			CommonFactory theCommonFactory = (CommonFactory)EPackage.Registry.INSTANCE.getEFactory(CommonPackage.eNS_URI);
 			if (theCommonFactory != null) {
 				return theCommonFactory;
 			}

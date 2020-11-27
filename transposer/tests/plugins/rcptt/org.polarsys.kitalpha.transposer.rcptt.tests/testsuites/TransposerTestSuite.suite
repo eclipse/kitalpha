@@ -1,0 +1,15 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Element-Name: TransposerTestSuite
+Element-Type: testsuite
+Element-Version: 2.0
+Id: _ID5JcGIvEeuoncJB0RMDrg
+Save-Time: 1/29/21 1:40 PM
+
+------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8
+Content-Type: text/testcase
+Entry-Name: testcase-items
+
+_JJKPwGIsEeuoncJB0RMDrg	// kind: 'test' name: 'CheckSpecificationTransfoposerTargetFolder' path: '../testcases/CheckSpecificationTransfoposerTargetFolder.test'
+
+------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8--
