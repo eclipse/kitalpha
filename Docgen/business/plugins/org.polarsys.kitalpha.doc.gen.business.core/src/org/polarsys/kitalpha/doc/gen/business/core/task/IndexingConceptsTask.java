@@ -254,8 +254,8 @@ public class IndexingConceptsTask implements ITaskProduction {
 				
 				buffer.append(FOOTER);
 	
-				DocGenHtmlUtil.writeFilePatternContent(i+"_"+DocGenHtmlUtil.getValidFileName(currentConcept.getValue().getConceptName()),
-						projectName, outputFolder + "/concepts", buffer.toString());
+				DocGenHtmlUtil.writeFilePatternContent(Integer.toString(i), projectName, outputFolder + "/concepts",
+						buffer.toString());
 			} else {
 				indexItemsToRemove.add(currentConcept.getKey());
 			}

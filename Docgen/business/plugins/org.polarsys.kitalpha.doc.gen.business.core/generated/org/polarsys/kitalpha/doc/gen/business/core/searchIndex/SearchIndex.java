@@ -149,7 +149,7 @@ public class SearchIndex extends org.polarsys.kitalpha.doc.gen.business.core.doc
 			stringBuffer.append(TEXT_9);
 			stringBuffer.append(count);
 			stringBuffer.append(TEXT_10);
-			stringBuffer.append(i + "_" + DocGenHtmlUtil.getValidFileName(entry.getValue().getConceptName()));
+			stringBuffer.append(i);
 			stringBuffer.append(TEXT_11);
 			if (entry.getValue().getIconTag() != null && !entry.getValue().getIconTag().isEmpty()) {
 				stringBuffer.append(TEXT_12);
