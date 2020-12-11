@@ -51,7 +51,7 @@ for(Entry<String, IndexItem> entry : indexItems.entrySet()) {
 		i++;
 		%>
 		conceptsList[<%=listCount%>][<%=count%>][0] = "<%=EscapeChars.removeNewline(EscapeChars.forHTML(entry.getValue().getConceptName().replace("\"", "\\\"")))%>";
-		conceptsList[<%=listCount%>][<%=count%>][1] = "<%=i+"_"+DocGenHtmlUtil.getValidFileName(entry.getValue().getConceptName())%>";
+		conceptsList[<%=listCount%>][<%=count%>][1] = "<%=i+"_"+entry.getValue().getFileName()%>";
 		<% if (entry.getValue().getIconTag() != null && !entry.getValue().getIconTag().isEmpty()) { %>
 		conceptsList[<%=listCount%>][<%=count%>][2] = "<%= entry.getValue().getIconTag().replaceAll("\"", "'").replaceFirst("../", "") %>";
 		<%}%>

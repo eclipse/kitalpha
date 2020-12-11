@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2007, 2018 THALES GLOBAL SERVICES.
+ * Copyright (c) 2007, 2020 THALES GLOBAL SERVICES.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -53,6 +53,7 @@ import org.eclipse.swt.SWTException;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.polarsys.kitalpha.doc.gen.business.core.internal.GenDocDiagramEditPartService;
+import org.polarsys.kitalpha.doc.gen.business.core.sirius.util.session.DiagramSessionHelper;
 import org.polarsys.kitalpha.doc.gen.business.core.util.DocGenHtmlUtil;
 import org.polarsys.kitalpha.doc.gen.business.core.util.SiriusHelper;
 
@@ -125,7 +126,7 @@ public class GenDocDiagramExportAction extends ExportAction {
                     // Check that the file name is informed
                     // Put extension to lowerCase.
                     if (outputPath.toFile().isDirectory()) {
-                    	String representationName = DocGenHtmlUtil.getValidFileName(representation.getName());
+                    	String representationName = DocGenHtmlUtil.getValidFileName(DiagramSessionHelper.getID(representation));
                         filePath = getFilePath(outputPath, representationName, imageFileExtension);
                     } else {
                         if (outputPath.getFileExtension() != null) {

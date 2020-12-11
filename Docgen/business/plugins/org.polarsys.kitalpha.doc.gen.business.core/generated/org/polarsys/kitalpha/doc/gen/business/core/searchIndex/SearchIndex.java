@@ -7,7 +7,6 @@ import java.util.*;
 import org.eclipse.egf.model.pattern.*;
 import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
-import org.polarsys.kitalpha.doc.gen.business.core.util.DocGenHtmlUtil;
 import org.polarsys.kitalpha.doc.gen.business.core.util.EscapeChars;
 
 public class SearchIndex extends org.polarsys.kitalpha.doc.gen.business.core.doccontent.ElementDocContent {
@@ -149,7 +148,7 @@ public class SearchIndex extends org.polarsys.kitalpha.doc.gen.business.core.doc
 			stringBuffer.append(TEXT_9);
 			stringBuffer.append(count);
 			stringBuffer.append(TEXT_10);
-			stringBuffer.append(i + "_" + DocGenHtmlUtil.getValidFileName(entry.getValue().getConceptName()));
+			stringBuffer.append(i + "_" + entry.getValue().getFileName());
 			stringBuffer.append(TEXT_11);
 			if (entry.getValue().getIconTag() != null && !entry.getValue().getIconTag().isEmpty()) {
 				stringBuffer.append(TEXT_12);

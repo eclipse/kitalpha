@@ -32,7 +32,7 @@
         <type xmi:type="types:TypeString" xmi:id="_pShHc94pEd-Qav1YnqlO9A" value="output"/>
       </contracts>
       <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_3maSED6YEeCPZfLLsgz4KA"
-          name="model.element.generation.visitor" invocationContracts="#_oT46QeAREd-PV-jXqsW3Mw">
+          name="model.element.generation.visitor" invocationContracts="#_oT46QeAREd-PV-jXqsW3Mw #_Txx2MOATEd-PV-jXqsW3Mw">
         <type xmi:type="pattern:TypePatternDomainVisitor" xmi:id="_E_zVED6ZEeCPZfLLsgz4KA"/>
       </contracts>
       <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_3qVygDk5EeKfl43CFVnoFw"
@@ -424,7 +424,8 @@
               invokedContract="#_0sfs4d4oEd-Qav1YnqlO9A"/>
           <invocationContracts xmi:id="_Mf3OSN6TEd-ZSZ6AN4Dlrg" sourceInvocationContract="#_6yUdFOdnEd-xZojMuIALSA"
               invokedContract="#_0sfs494oEd-Qav1YnqlO9A"/>
-          <invocationContracts xmi:id="_Txx2MOATEd-PV-jXqsW3Mw" invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Model_driven_pattern_strategy_task.fcore#_zJXimcAXOEd-ra8cys1-yIrg">
+          <invocationContracts xmi:id="_Txx2MOATEd-PV-jXqsW3Mw" factoryComponentContract="#_3maSED6YEeCPZfLLsgz4KA"
+              invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Model_driven_pattern_strategy_task.fcore#_zJXimcAXOEd-ra8cys1-yIrg">
             <type xmi:type="pattern:TypePatternDomainVisitor" xmi:id="_Txx2MeATEd-PV-jXqsW3Mw"
                 value="org.polarsys.kitalpha.doc.gen.business.core.visitor.DocgenCommonSubClassEmfModelVisitor"/>
           </invocationContracts>
