@@ -43,7 +43,6 @@ import org.eclipse.egf.ftask.producer.invocation.ITaskProduction;
 import org.polarsys.kitalpha.doc.gen.business.core.Activator;
 import org.polarsys.kitalpha.doc.gen.business.core.services.IndexItem;
 import org.polarsys.kitalpha.doc.gen.business.core.util.DocGenHtmlUtil;
-import org.polarsys.kitalpha.doc.gen.business.core.util.EscapeChars;
 import org.polarsys.kitalpha.doc.gen.business.core.util.MonitorServices;
 
 
@@ -74,8 +73,8 @@ public class IndexingConceptsTask implements ITaskProduction {
 
 	//Regexp patterns
 	private static final Pattern pTable = Pattern.compile("<table>(.*?)</table>", Pattern.DOTALL); 	//table
-	private static final Pattern pTitle = Pattern.compile("<title>(.*)</title>", Pattern.DOTALL); 	//title
-	private static final Pattern pHeaderOne = Pattern.compile("<h1>(.*)</h1>", Pattern.DOTALL); 			//title head <h1>
+	private static final Pattern pTitle = Pattern.compile(".*<title>(.*?)</title>.*", Pattern.DOTALL); 	//title
+	private static final Pattern pHeaderOne = Pattern.compile(".*<h1>(.*?)</h1>.*", Pattern.DOTALL); 			//title head <h1>
 	private static final Pattern pParagraphe = Pattern.compile("<p>(.*?)</p>", Pattern.DOTALL); 	//paragraph
 	private static final Pattern pListStartEnd = Pattern.compile("((<ul.*?>)|(</ul>))", Pattern.DOTALL);	//indexed list
 
