@@ -45,7 +45,7 @@
       <import feature="org.polarsys.kitalpha.report.feature" version="1.3.3.qualifier"/>
       <import feature="org.polarsys.kitalpha.report.ui.feature" version="1.3.3.qualifier"/>
       <import feature="org.polarsys.kitalpha.ad.runtime.feature" version="1.3.3.qualifier"/>
-      <import feature="org.polarsys.kitalpha.doc.gen.business.core.feature" version="1.3.3.qualifier"/>
+      <import feature="org.polarsys.kitalpha.doc.gen.business.core.feature" version="1.3.4.qualifier"/>
       <import feature="org.polarsys.kitalpha.patterns.feature" version="1.3.3.qualifier"/>
       <import feature="org.polarsys.kitalpha.richtext.widget.feature" version="1.3.3.qualifier"/>
       <import feature="org.polarsys.kitalpha.doc.feature" version="1.3.3.qualifier"/>
