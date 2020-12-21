@@ -29,13 +29,12 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditDomain;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.sirius.business.api.query.DRepresentationQuery;
 import org.eclipse.sirius.business.api.session.CustomDataConstants;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.common.tools.api.resource.ImageFileFormat ;
 import org.eclipse.sirius.common.tools.api.util.EclipseUtil;
 import org.eclipse.sirius.common.tools.api.util.FileUtil;
-import org.eclipse.sirius.business.api.query.DRepresentationQuery;
-import org.eclipse.sirius.business.api.resource.ResourceDescriptor;
 import org.eclipse.sirius.diagram.business.api.refresh.CanonicalSynchronizer;
 import org.eclipse.sirius.diagram.business.api.refresh.CanonicalSynchronizerFactory;
 import org.eclipse.sirius.diagram.ui.provider.Messages;
@@ -56,6 +55,7 @@ import org.eclipse.swt.SWTException;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.polarsys.kitalpha.doc.gen.business.core.internal.GenDocDiagramEditPartService;
+import org.polarsys.kitalpha.doc.gen.business.core.sirius.util.session.DiagramSessionHelper;
 import org.polarsys.kitalpha.doc.gen.business.core.util.DocGenHtmlUtil;
 import org.polarsys.kitalpha.doc.gen.business.core.util.SiriusHelper;
 
@@ -128,9 +128,7 @@ public class GenDocDiagramExportAction extends ExportAction {
                     // Check that the file name is informed
                     // Put extension to lowerCase.
                     if (outputPath.toFile().isDirectory()) {
-                        DRepresentationQuery rep2descQuery = new DRepresentationQuery(representation);
-                        DRepresentationDescriptor result = rep2descQuery.getRepresentationDescriptor();
-                    	String representationName = (result == null) ? representation.getUid() : DocGenHtmlUtil.getValidFileName(result.getName());
+                    	String representationName = DocGenHtmlUtil.getValidFileName(DiagramSessionHelper.getID(representation));
                         filePath = getFilePath(outputPath, representationName, imageFileExtension);
                     } else {
                         if (outputPath.getFileExtension() != null) {
