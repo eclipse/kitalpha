@@ -14,7 +14,7 @@ Export-Package: org.polarsys.kitalpha.patterns.emde.gen.emdepatternsupport,
 Bundle-Vendor: %providerName
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
-Bundle-Version: 0.8.0.qualifier
+Bundle-Version: 1.4.3.qualifier
 Bundle-Localization: plugin
 Bundle-Name: %pluginName
 Bundle-ManifestVersion: 2
