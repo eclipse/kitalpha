@@ -406,7 +406,7 @@
             invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_67_oxN3rEd-Qav1YnqlO9A"/>
         <invocationContracts xmi:id="_14mwUN6lEeC7p7H7gvnXVA" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_3maSED6YEeCPZfLLsgz4KA">
           <type xmi:type="pattern:TypePatternDomainVisitor" xmi:id="__NgDIN6lEeC7p7H7gvnXVA"
-              value="org.eclipse.egf.pattern.strategy.domaindriven.SubClassEmfModelVisitor"/>
+              value="org.polarsys.kitalpha.doc.gen.business.ecore.visitor.EcoreModelVisitor"/>
         </invocationContracts>
         <invocationContracts xmi:id="_41h0cN6lEeC7p7H7gvnXVA" invokedContract="fcore:FactoryComponentContract platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_fGFi8N4ZEd-Qav1YnqlO9A">
           <type xmi:type="pattern:TypePatternList" xmi:id="_-IgxAN6lEeC7p7H7gvnXVA"
