@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2019 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2020 Thales Global Services S.A.S.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,7 +18,6 @@ import java.util.Map;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
@@ -27,7 +26,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.sirius.business.api.query.DRepresentationQuery;
 import org.eclipse.sirius.business.api.session.Session;
-import org.eclipse.sirius.common.tools.api.resource.ImageFileFormat ;
 import org.eclipse.sirius.common.tools.api.util.FileUtil;
 import org.eclipse.sirius.diagram.DDiagram;
 import org.eclipse.sirius.ui.tools.api.actions.export.ExportAction;
@@ -36,6 +34,7 @@ import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.eclipse.swt.widgets.Display;
 import org.polarsys.kitalpha.doc.gen.business.core.Activator;
 import org.polarsys.kitalpha.doc.gen.business.core.preference.helper.DocgenDiagramPreferencesHelper;
+import org.polarsys.kitalpha.doc.gen.business.core.sirius.util.session.DiagramSessionHelper;
 import org.polarsys.kitalpha.doc.gen.business.core.util.DocGenHtmlUtil;
 
 /**
@@ -129,11 +128,7 @@ public class DiagramExport {
 	private IFile getGeneratedDiagram() {
 		
 		// Compute diagram exported picture name
-        DRepresentationQuery rep2descQuery = new DRepresentationQuery(diagram);
-        DRepresentationDescriptor result = rep2descQuery.getRepresentationDescriptor();
-    	String representationName = (result == null) ? diagram.getUid() : result.getName();
-
-		representationName = DocGenHtmlUtil.getValidFileName(representationName);
+    	String representationName = DocGenHtmlUtil.getValidFileName(DiagramSessionHelper.getID(diagram));
 		FileUtil obeoDSLFileUtil = new FileUtil(representationName);
 		String expectedFileName;
 		if (obeoDSLFileUtil.isValid()){
