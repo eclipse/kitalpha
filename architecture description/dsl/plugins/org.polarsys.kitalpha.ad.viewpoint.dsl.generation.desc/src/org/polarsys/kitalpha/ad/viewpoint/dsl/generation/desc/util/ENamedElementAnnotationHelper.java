@@ -24,6 +24,10 @@ import org.eclipse.emf.ecore.impl.EStringToStringMapEntryImpl;
 
 public class ENamedElementAnnotationHelper {
 	
+	public static final String KEY_DOCUMENTATION = "http://www.polarsys.org/kitalpha/ecore/documentation";
+
+	public static final String ENTRY_DOCUMENTATION_KEY = "description";
+	
 	public static void annotate(ENamedElement namedElement, 
 									String source, 
 									String key, 
