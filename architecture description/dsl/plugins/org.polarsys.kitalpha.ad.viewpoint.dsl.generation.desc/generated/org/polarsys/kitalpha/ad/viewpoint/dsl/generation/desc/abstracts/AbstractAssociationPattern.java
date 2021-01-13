@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.2.202001031546
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.abstracts;
 
 import java.util.*;
@@ -19,6 +19,7 @@ public class AbstractAssociationPattern
 	public AbstractAssociationPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -112,15 +113,12 @@ public class AbstractAssociationPattern
 			containingEClass.getEStructuralFeatures().add(ref);
 
 			/* Set EReference description */
-			/**
-			if (description != null && description.trim().length() != 0){
-				ENamedElementAnnotationHelper.annotate(ref, 
-														ENamedElementAnnotationHelper.KEY_DOCUMENTATION, 
-														ENamedElementAnnotationHelper.ENTRY_DOCUMENTATION_KEY,
-														description,
-														true);
+			if (abstractAssociation.getDescription() != null
+					&& abstractAssociation.getDescription().trim().length() != 0) {
+				ENamedElementAnnotationHelper.annotate(ref, ENamedElementAnnotationHelper.KEY_DOCUMENTATION,
+						ENamedElementAnnotationHelper.ENTRY_DOCUMENTATION_KEY, abstractAssociation.getDescription(),
+						true);
 			}
-			**/
 
 		}
 

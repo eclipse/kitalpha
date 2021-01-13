@@ -20,14 +20,12 @@ if (containingEClass != null && targetEClass != null){
 		
 		
 		/* Set EReference description */
-		/**
-		if (description != null && description.trim().length() != 0){
+		if (abstractAssociation.getDescription() != null && abstractAssociation.getDescription().trim().length() != 0){
 			ENamedElementAnnotationHelper.annotate(ref, 
 													ENamedElementAnnotationHelper.KEY_DOCUMENTATION, 
 													ENamedElementAnnotationHelper.ENTRY_DOCUMENTATION_KEY,
-													description,
+													abstractAssociation.getDescription(),
 													true);
 		}
-		**/
 		
 	}  

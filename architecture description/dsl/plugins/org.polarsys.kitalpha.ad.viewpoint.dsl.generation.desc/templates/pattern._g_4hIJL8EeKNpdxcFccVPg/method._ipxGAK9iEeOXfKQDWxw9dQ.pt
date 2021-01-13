@@ -78,7 +78,6 @@
 	}
 	
 	containingEClass.getEStructuralFeatures().add(eAt);
-	/**
 	if (parameter.getDescription() != null && parameter.getDescription().trim().length() != 0)
 	{
 		ENamedElementAnnotationHelper.annotate(eAt, 
@@ -87,7 +86,6 @@
 											parameter.getDescription(),
 											true);
 	}
-	**/
 	
 	/******************************************
 	if (parameter.getOwned_annotations().size() > 0)

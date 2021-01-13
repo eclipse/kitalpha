@@ -1,0 +1,55 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _7A2tkHiyEeaI368ba7nlrQ,_OEahgKZ7Eeap-ORrGyGQRg
+Element-Name: Viewpoint Data Generation
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _F2AZYFWpEeuNu7cI_rjBtg
+Save-Time: 1/13/21, 3:40 PM
+Testcase-Type: ecl
+Verifications: _J-bDcFWtEeuNu7cI_rjBtg
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Content-Type: text/plain
+Entry-Name: .description
+
+AQL Generation: https://git.polarsys.org/r/#/c/6736/
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-view "Project Explorer" | get-tree | select "data/data specification" | double-click
+with [get-editor "data specification" | get-text-viewer] {
+    set-caret-pos 26 46
+    key-type "M1+a"
+    key-type "M1+c"
+}
+get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.datatest.vpdsl/model/datatest.data.vptext" 
+    | double-click
+with [get-editor "datatest.data.vptext" | get-text-viewer] {
+    set-caret-pos 11 2
+    key-type "M1+a"
+    key-type "M1+v"
+    key-type "M1+s"
+}
+
+with [get-editor "datatest.data.vptext" | get-text-viewer] {
+    set-caret-pos 45 19
+    select-range 46 51 45 19
+    key-type Del
+    set-caret-pos 33 19
+    select-range 34 30 33 19
+    key-type Del
+    key-type "M1+s"
+}
+
+get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.datatest.vpdsl/model/datatest.vpdesc" | get-menu 
+    -path "Viewpoint DSL/Generate viewpoint with selection" | click
+with [get-window "User Extension Selection"] {
+    get-button "Unselect all" | uncheck
+    get-button Finish | click
+}
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

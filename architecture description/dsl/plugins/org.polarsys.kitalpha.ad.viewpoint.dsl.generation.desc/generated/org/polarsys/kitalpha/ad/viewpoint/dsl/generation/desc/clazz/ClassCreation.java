@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.2.202001031546
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.clazz;
 
 import java.util.*;
@@ -19,6 +19,7 @@ public class ClassCreation
 	public ClassCreation() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -76,14 +77,10 @@ public class ClassCreation
 		generatedEClass.setAbstract(parameter.isAbstract());
 
 		/************************* EClass Generic Annotation *************************/
-		/**
+
 		if (parameter.getDescription() != null && parameter.getDescription().trim().length() != 0)
-			ENamedElementAnnotationHelper.annotate(generatedEClass, 
-													ENamedElementAnnotationHelper.KEY_DOCUMENTATION, 
-													ENamedElementAnnotationHelper.ENTRY_DOCUMENTATION_KEY,
-													parameter.getDescription(),
-													true);
-		**/
+			ENamedElementAnnotationHelper.annotate(generatedEClass, ENamedElementAnnotationHelper.KEY_DOCUMENTATION,
+					ENamedElementAnnotationHelper.ENTRY_DOCUMENTATION_KEY, parameter.getDescription(), true);
 
 		ECoreResourceManager.INSTANCE.getEPackage().getEClassifiers().add(generatedEClass);
 
