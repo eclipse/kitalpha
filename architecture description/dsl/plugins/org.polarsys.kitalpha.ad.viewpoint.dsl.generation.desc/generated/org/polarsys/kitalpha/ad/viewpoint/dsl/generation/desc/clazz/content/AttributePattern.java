@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.2.202001031546
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.clazz.content;
 
 import java.util.*;
@@ -9,6 +9,7 @@ import org.eclipse.egf.pattern.query.*;
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.util.ECoreResourceManager;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.util.PlatformEClassesManager;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.util.ENamedElementAnnotationHelper;
 import org.eclipse.emf.ecore.impl.EStringToStringMapEntryImpl;
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Annotation;
@@ -25,6 +26,7 @@ public class AttributePattern
 	public AttributePattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -151,16 +153,10 @@ public class AttributePattern
 		}
 
 		containingEClass.getEStructuralFeatures().add(eAt);
-		/**
-		if (parameter.getDescription() != null && parameter.getDescription().trim().length() != 0)
-		{
-			ENamedElementAnnotationHelper.annotate(eAt, 
-												ENamedElementAnnotationHelper.KEY_DOCUMENTATION, 
-												ENamedElementAnnotationHelper.ENTRY_DOCUMENTATION_KEY,
-												parameter.getDescription(),
-												true);
+		if (parameter.getDescription() != null && parameter.getDescription().trim().length() != 0) {
+			ENamedElementAnnotationHelper.annotate(eAt, ENamedElementAnnotationHelper.KEY_DOCUMENTATION,
+					ENamedElementAnnotationHelper.ENTRY_DOCUMENTATION_KEY, parameter.getDescription(), true);
 		}
-		**/
 
 		/******************************************
 		if (parameter.getOwned_annotations().size() > 0)

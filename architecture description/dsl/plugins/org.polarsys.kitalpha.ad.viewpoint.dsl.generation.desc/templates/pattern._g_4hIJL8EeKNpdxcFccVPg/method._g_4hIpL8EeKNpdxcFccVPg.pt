@@ -8,6 +8,7 @@ import org.eclipse.egf.pattern.query.*;
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.util.ECoreResourceManager;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.util.PlatformEClassesManager;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.util.ENamedElementAnnotationHelper;
 import org.eclipse.emf.ecore.impl.EStringToStringMapEntryImpl;
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Annotation;

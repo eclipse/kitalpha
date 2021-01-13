@@ -10,20 +10,21 @@ Save-Time: 1/19/21, 10:25 AM
 Content-Type: text/testcase
 Entry-Name: testcase-items
 
-_wfyLsKaKEeap-ORrGyGQRg	//
-_18Et4KaNEeap-ORrGyGQRg	//
-_Y2JPoKaEEeap-ORrGyGQRg	//
-_GHzeAHqOEeadK6jIYFHAOw	//
-_g1Qm0KZ6Eeap-ORrGyGQRg	//
-_MIoeYJCPEeaf3P1eYGh88w	//
-_KKECsJnAEeau1tOlZGduxg	//
-_cz690HaiEeaI368ba7nlrQ	//
-_z-mU0Jm5Eeau1tOlZGduxg	//
-_GpsJcKaIEeap-ORrGyGQRg	//
-_JdRukKaMEeap-ORrGyGQRg	//
-_NELx4KzaEeeugqJ5eBR0lA	//
-_xh_lsMbwEeiqEKhiLDHvfw	//
-_GcX2IM1NEeij1cLrB8jXsA	//
-_uY2WkFo2EeuKid43r99IsQ	//
+_wfyLsKaKEeap-ORrGyGQRg	// kind: 'test' name: 'Viewpoint Services Specification' path: '../test cases/Viewpoint Services Specification.test'
+_18Et4KaNEeap-ORrGyGQRg	// kind: 'test' name: 'Viewpoint Generate Textual Files' path: '../test cases/Viewpoint Generate Textual Files.test'
+_Y2JPoKaEEeap-ORrGyGQRg	// kind: 'test' name: 'Viewpoint Diagram Specification' path: '../test cases/Viewpoint Diagram Specification.test'
+_GHzeAHqOEeadK6jIYFHAOw	// kind: 'test' name: 'ImportMappingWithSynchronizationMode' path: '../test cases/ImportMappingWithSynchronizationMode.test'
+_g1Qm0KZ6Eeap-ORrGyGQRg	// kind: 'test' name: 'Viewpoint Data Specification' path: '../test cases/Viewpoint Data Specification.test'
+_MIoeYJCPEeaf3P1eYGh88w	// kind: 'test' name: 'Viewpoint Activity Explorer Integration - Generator' path: '../test cases/Viewpoint Activity Explorer Integration - Generator.test'
+_KKECsJnAEeau1tOlZGduxg	// kind: 'test' name: 'ViewpointActivableGen' path: '../test cases/ViewpointActivableGen.test'
+_cz690HaiEeaI368ba7nlrQ	// kind: 'test' name: 'ViewpointVisibilityGen' path: '../test cases/ViewpointVisibilityGen.test'
+_z-mU0Jm5Eeau1tOlZGduxg	// kind: 'test' name: 'DiagramExtensionEdgeGeneration' path: '../test cases/DiagramExtensionEdgeGeneration.test'
+_GpsJcKaIEeap-ORrGyGQRg	// kind: 'test' name: 'Viewpoint Activity Explorer Specification' path: '../test cases/Viewpoint Activity Explorer Specification.test'
+_JdRukKaMEeap-ORrGyGQRg	// kind: 'test' name: 'Viewpoint Build Specification' path: '../test cases/Viewpoint Build Specification.test'
+_NELx4KzaEeeugqJ5eBR0lA	// kind: 'test' name: 'Viewpoint Packaging With Version' path: '../test cases/Viewpoint Packaging With Version.test'
+_xh_lsMbwEeiqEKhiLDHvfw	// kind: 'test' name: 'Viewpoint UI - Template' path: '../test cases/Viewpoint UI - Template.test'
+_GcX2IM1NEeij1cLrB8jXsA	// kind: 'test' name: 'Viewpoint Odesign AQL Generation' path: '../test cases/Viewpoint Odesign AQL Generation.test'
+_uY2WkFo2EeuKid43r99IsQ	// kind: 'test' name: 'Viewpoint Spec Generation' path: '../test cases/Viewpoint Spec Generation.test'
+_F2AZYFWpEeuNu7cI_rjBtg	// kind: 'test' name: 'Viewpoint Data Generation' path: '../test cases/Viewpoint Data Generation.test'
 
 ------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8--
