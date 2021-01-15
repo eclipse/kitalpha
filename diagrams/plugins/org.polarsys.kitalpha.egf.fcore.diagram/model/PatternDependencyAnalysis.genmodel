@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2020 THALES GLOBAL SERVICES.&#xA;This program and the accompanying materials are made available under the&#xA;terms of the Eclipse Public License 2.0 which is available at&#xA;http://www.eclipse.org/legal/epl-2.0&#xA;&#xA;SPDX-License-Identifier: EPL-2.0&#xA; &#xA;Contributors:&#xA;  Thales - initial API and implementation"
+    modelDirectory="/org.polarsys.kitalpha.egf.fcore.diagram.pda/src" editDirectory="/org.polarsys.kitalpha.egf.fcore.diagram.pda.edit/src"
+    editorDirectory="/org.polarsys.kitalpha.egf.fcore.diagram.pda.editor/src" modelPluginID="org.polarsys.kitalpha.egf.fcore.diagram.pda"
+    modelName="PatternDependencyAnalysis" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" editPluginID="org.polarsys.kitalpha.egf.fcore.diagram.pda.edit"
+    editorPluginID="org.polarsys.kitalpha.egf.fcore.diagram.pda.editor" usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../org.eclipse.egf.model/model/Fcore.genmodel#//fcore ../../org.eclipse.egf.model/model/Pattern.genmodel#//pattern ../../org.eclipse.egf.model/model/Types.genmodel#//types"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>PatternDependencyAnalysis.ecore</foreignModel>
+  <genPackages prefix="PatternDependencyAnalysis" disposableProviderFactory="true"
+      fileExtensions="pda" ecorePackage="PatternDependencyAnalysis.ecore#/">
+    <genClasses ecoreClass="PatternDependencyAnalysis.ecore#//Root">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PatternDependencyAnalysis.ecore#//Root/patterns"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PatternDependencyAnalysis.ecore#//Root/sectionsAnalyses"/>
+    </genClasses>
+    <genClasses ecoreClass="PatternDependencyAnalysis.ecore#//PatternAnalysis">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PatternDependencyAnalysis.ecore#//PatternAnalysis/pattern"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PatternDependencyAnalysis.ecore#//PatternAnalysis/superPattern"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PatternDependencyAnalysis.ecore#//PatternAnalysis/methods"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PatternDependencyAnalysis.ecore#//PatternAnalysis/parameters"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PatternDependencyAnalysis.ecore#//PatternAnalysis/calledBy"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PatternDependencyAnalysis.ecore#//PatternAnalysis/inheritedBy"/>
+    </genClasses>
+    <genClasses ecoreClass="PatternDependencyAnalysis.ecore#//PatternMethodAnalysis">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PatternDependencyAnalysis.ecore#//PatternMethodAnalysis/method"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference PatternDependencyAnalysis.ecore#//PatternMethodAnalysis/calls"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute PatternDependencyAnalysis.ecore#//PatternMethodAnalysis/content"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PatternDependencyAnalysis.ecore#//PatternMethodAnalysis/sectionContributions"/>
+    </genClasses>
+    <genClasses ecoreClass="PatternDependencyAnalysis.ecore#//PatternParameterAnalysis">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PatternDependencyAnalysis.ecore#//PatternParameterAnalysis/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PatternDependencyAnalysis.ecore#//PatternParameterAnalysis/type"/>
+    </genClasses>
+    <genClasses ecoreClass="PatternDependencyAnalysis.ecore#//SectionAnalysis">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PatternDependencyAnalysis.ecore#//SectionAnalysis/sectionName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PatternDependencyAnalysis.ecore#//SectionAnalysis/contributingPatterns"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

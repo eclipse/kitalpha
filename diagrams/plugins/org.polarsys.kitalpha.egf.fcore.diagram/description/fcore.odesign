@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:filter="http://www.eclipse.org/sirius/diagram/description/filter/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" documentation="A simple viewpoint for EGF fcore resources" name="fcore" version="12.0.0.2017041100">
+  <ownedViewpoints name="fcore analysis" modelFileExtension="fcore">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="DiagramPatternHierarchy" domainClass="pattern::PatternViewpoint" enablePopupBars="true">
+      <metamodel href="http://www.eclipse.org/egf/1.0.0/builddeploy#/"/>
+      <metamodel href="http://www.eclipse.org/egf/1.0.0/buildfile#/"/>
+      <metamodel href="http://www.eclipse.org/egf/1.0.0/buildscm#/"/>
+      <metamodel href="http://www.eclipse.org/egf/1.0.0/domain#/"/>
+      <metamodel href="http://www.eclipse.org/egf/1.0.0/fcore#/"/>
+      <metamodel href="http://www.eclipse.org/egf/1.0.0/fprod#/"/>
+      <metamodel href="http://www.eclipse.org/egf/1.0.0/ftask#/"/>
+      <metamodel href="http://www.eclipse.org/egf/1.0.0/generationChain#/"/>
+      <metamodel href="http://www.eclipse.org/egf/1.0.0/javapattern#/"/>
+      <metamodel href="http://www.eclipse.org/egf/1.0.0/jetpattern#/"/>
+      <metamodel href="http://www.eclipse.org/egf/1.0.0/mapping#/"/>
+      <metamodel href="http://www.eclipse.org/egf/1.0.0/pattern#/"/>
+      <metamodel href="http://www.eclipse.org/egf/1.0.0/trace#/"/>
+      <metamodel href="http://www.eclipse.org/egf/1.0.0/types#/"/>
+      <metamodel href="http://www.eclipse.org/egf/1.0.1/buildcore#/"/>
+      <metamodel href="http://www.eclipse.org/egf/1.0.2/buildstep#/"/>
+      <filters xsi:type="filter:CompositeFilterDescription" name="CustomMethodsFilter">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='fcore%20analysis']/@ownedRepresentations[name='DiagramPatternHierarchy']/@defaultLayer/@containerMappings[name='ContainerPatternLibrary']/@subContainerMappings[name='ContainerListPattern']/@subNodeMappings[name='CustomNodeMethods']"/>
+      </filters>
+      <filters xsi:type="filter:CompositeFilterDescription" name="DefaultMethodsFilter">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='fcore%20analysis']/@ownedRepresentations[name='DiagramPatternHierarchy']/@defaultLayer/@containerMappings[name='ContainerPatternLibrary']/@subContainerMappings[name='ContainerListPattern']/@subNodeMappings[name='DefaultNodeMethods']"/>
+      </filters>
+      <filters xsi:type="filter:CompositeFilterDescription" name="VariablesFilter">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='fcore%20analysis']/@ownedRepresentations[name='DiagramPatternHierarchy']/@defaultLayer/@containerMappings[name='ContainerPatternLibrary']/@subContainerMappings[name='ContainerListPattern']/@subNodeMappings[name='NodeVariable']"/>
+      </filters>
+      <filters xsi:type="filter:CompositeFilterDescription" name="ParametersFilter">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='fcore%20analysis']/@ownedRepresentations[name='DiagramPatternHierarchy']/@defaultLayer/@containerMappings[name='ContainerPatternLibrary']/@subContainerMappings[name='ContainerListPattern']/@subNodeMappings[name='NodeParameter']"/>
+      </filters>
+      <layout xsi:type="description_1:CustomLayoutConfiguration" id="org.eclipse.elk.layered" label="ELK Layered" description="Layer-based algorithm provided by the Eclipse Layout Kernel. Arranges as many edges as possible into one direction by placing nodes into subsequent layers. This implementation supports different routing styles (straight, orthogonal, splines); if orthogonal routing is selected, arbitrary port constraints are respected, thus enabling the layout of block diagrams such as actor-oriented models or circuit schematics. Furthermore, full layout of compound graphs with cross-hierarchy edges is supported when the respective option is activated on the top level.">
+        <layoutOptions xsi:type="description_1:EnumLayoutOption" id="org.eclipse.elk.alignment">
+          <targets>NODE</targets>
+          <value name="RIGHT"/>
+        </layoutOptions>
+        <layoutOptions xsi:type="description_1:EnumLayoutOption" id="org.eclipse.elk.layered.cycleBreaking.strategy">
+          <targets>PARENT</targets>
+          <value name="DEPTH_FIRST"/>
+        </layoutOptions>
+        <layoutOptions xsi:type="description_1:EnumLayoutOption" id="org.eclipse.elk.direction">
+          <targets>PARENT</targets>
+          <value name="UP"/>
+        </layoutOptions>
+        <layoutOptions xsi:type="description_1:EnumLayoutOption" id="org.eclipse.elk.edgeRouting">
+          <targets>PARENT</targets>
+          <value name="ORTHOGONAL"/>
+        </layoutOptions>
+        <layoutOptions xsi:type="description_1:BooleanLayoutOption" id="org.eclipse.elk.interactiveLayout" value="true">
+          <targets>PARENT</targets>
+        </layoutOptions>
+      </layout>
+      <defaultLayer name="Default">
+        <edgeMappings name="RelationSuperPattern" sourceMapping="//@ownedViewpoints[name='fcore%20analysis']/@ownedRepresentations[name='DiagramPatternHierarchy']/@defaultLayer/@containerMappings[name='ContainerPatternLibrary']/@subContainerMappings[name='ContainerListPattern']" targetMapping="//@ownedViewpoints[name='fcore%20analysis']/@ownedRepresentations[name='DiagramPatternHierarchy']/@defaultLayer/@containerMappings[name='ContainerPatternLibrary']/@subContainerMappings[name='ContainerListPattern']" targetFinderExpression="feature:superPattern">
+          <style targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="RelationPatternPatternCalls" sourceMapping="//@ownedViewpoints[name='fcore%20analysis']/@ownedRepresentations[name='DiagramPatternHierarchy']/@defaultLayer/@containerMappings[name='ContainerPatternLibrary']/@subContainerMappings[name='ContainerListPattern']" targetMapping="//@ownedViewpoints[name='fcore%20analysis']/@ownedRepresentations[name='DiagramPatternHierarchy']/@defaultLayer/@containerMappings[name='ContainerPatternLibrary']/@subContainerMappings[name='ContainerListPattern']" targetFinderExpression="service:self.getAllMethodCalledPatterns()">
+          <style lineStyle="dash" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="RelationPatternPatternOrchestratedCalls" sourceMapping="//@ownedViewpoints[name='fcore%20analysis']/@ownedRepresentations[name='DiagramPatternHierarchy']/@defaultLayer/@containerMappings[name='ContainerPatternLibrary']/@subContainerMappings[name='ContainerListPattern']" targetMapping="//@ownedViewpoints[name='fcore%20analysis']/@ownedRepresentations[name='DiagramPatternHierarchy']/@defaultLayer/@containerMappings[name='ContainerPatternLibrary']/@subContainerMappings[name='ContainerListPattern']" targetFinderExpression="aql:self.orchestration->filter(pattern::PatternCall).called">
+          <style lineStyle="dash" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="RelationPatternPatternOrchestratedInjectedCalls" sourceMapping="//@ownedViewpoints[name='fcore%20analysis']/@ownedRepresentations[name='DiagramPatternHierarchy']/@defaultLayer/@containerMappings[name='ContainerPatternLibrary']/@subContainerMappings[name='ContainerListPattern']" targetMapping="//@ownedViewpoints[name='fcore%20analysis']/@ownedRepresentations[name='DiagramPatternHierarchy']/@defaultLayer/@containerMappings[name='ContainerPatternLibrary']/@subContainerMappings[name='ContainerListPattern']" targetFinderExpression="aql:self.orchestration->filter(pattern::PatternInjectedCall).called">
+          <style lineStyle="dash" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_purple']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="ContainerPatternLibrary" semanticCandidatesExpression="aql:self.libraries->closure(e | e.elements.superPattern.container.patternViewpoint.libraries)" domainClass="pattern::PatternLibrary">
+          <subContainerMappings name="ContainerListPattern" semanticCandidatesExpression="feature:elements" domainClass="pattern::Pattern" childrenPresentation="List">
+            <subNodeMappings name="NodeVariable" semanticCandidatesExpression="feature:variables" domainClass="pattern::PatternVariable">
+              <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="ocl:self.name + ' : ' + self.type" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='chocolate']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='chocolate']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="NodeParameter" semanticCandidatesExpression="feature:parameters" domainClass="pattern::PatternParameter">
+              <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="ocl:self.name + ' : ' + self.type" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="CustomNodeMethods" semanticCandidatesExpression="ocl:self.methods->excluding(self.headerMethod)->excluding(self.initMethod)->excluding(self.conditionMethod)->excluding(self.footerMethod)" domainClass="pattern::PatternMethod">
+              <style xsi:type="style:SquareDescription" labelSize="12" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="DefaultNodeMethods" semanticCandidatesExpression="ocl:Set{self.headerMethod,self.initMethod,self.conditionMethod,self.footerMethod}" domainClass="pattern::PatternMethod">
+              <style xsi:type="style:SquareDescription" labelSize="12" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </subNodeMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="Tools">
+          <ownedTools xsi:type="tool:PopupMenu" name="FCore analysis" precondition="aql:self.oclIsKindOf(pattern::PatternViewpoint)">
+            <menuItemDescription xsi:type="tool:OperationAction" name="Export patterns analysis" elementsToSelect="aql:self">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:If" conditionExpression="service:self.exportViewpointPatterns()"/>
+              </initialOperation>
+            </menuItemDescription>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_2:EditionTableDescription" name="OverallPatternDependencies" domainClass="pattern::PatternViewpoint">
+      <metamodel href="http://www.eclipse.org/egf/1.0.0/builddeploy#/"/>
+      <metamodel href="http://www.eclipse.org/egf/1.0.0/buildfile#/"/>
+      <metamodel href="http://www.eclipse.org/egf/1.0.0/buildscm#/"/>
+      <metamodel href="http://www.eclipse.org/egf/1.0.0/domain#/"/>
+      <metamodel href="http://www.eclipse.org/egf/1.0.0/fcore#/"/>
+      <metamodel href="http://www.eclipse.org/egf/1.0.0/fprod#/"/>
+      <metamodel href="http://www.eclipse.org/egf/1.0.0/ftask#/"/>
+      <metamodel href="http://www.eclipse.org/egf/1.0.0/generationChain#/"/>
+      <metamodel href="http://www.eclipse.org/egf/1.0.0/javapattern#/"/>
+      <metamodel href="http://www.eclipse.org/egf/1.0.0/jetpattern#/"/>
+      <metamodel href="http://www.eclipse.org/egf/1.0.0/mapping#/"/>
+      <metamodel href="http://www.eclipse.org/egf/1.0.0/pattern#/"/>
+      <metamodel href="http://www.eclipse.org/egf/1.0.0/trace#/"/>
+      <metamodel href="http://www.eclipse.org/egf/1.0.0/types#/"/>
+      <metamodel href="http://www.eclipse.org/egf/1.0.1/buildcore#/"/>
+      <metamodel href="http://www.eclipse.org/egf/1.0.2/buildstep#/"/>
+      <ownedLineMappings name="PatternLine" domainClass="pattern::Pattern" semanticCandidatesExpression="aql:self.libraries->closure(e | e.elements.superPattern.container.eContainer().libraries.elements)" headerLabelExpression="aql:self.container.name + '.' + self.name">
+        <ownedSubLines name="MethodLine" domainClass="pattern::PatternMethod" semanticCandidatesExpression="aql:self.methods" headerLabelExpression="aql:self.name">
+          <ownedSubLines name="CalledPattern" domainClass="pattern::Pattern" semanticCandidatesExpression="service:self.getCalledPatterns()" headerLabelExpression="aql:self.container.name + '.' + self.name"/>
+        </ownedSubLines>
+      </ownedLineMappings>
+      <ownedColumnMappings name="ParentPattern" headerLabelExpression="Parent" featureName="superPattern" labelExpression="aql:if (self.superPattern &lt;> null) then (self.superPattern.container.name + '.' +self.superPattern.name) else ('') endif"/>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="org.polarsys.kitalpha.egf.fcore.diagram.service.FCoreServices"/>
+  </ownedViewpoints>
+</description:Group>

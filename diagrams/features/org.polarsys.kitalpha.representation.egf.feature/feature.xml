@@ -35,4 +35,31 @@
          version="0.0.0"
          unpack="false"/>
 
+   <plugin
+         id="org.polarsys.kitalpha.egf.fcore.diagram"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.polarsys.kitalpha.egf.fcore.diagram.pda"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.polarsys.kitalpha.egf.fcore.diagram.pda.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.polarsys.kitalpha.egf.fcore.diagram.pda.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
 </feature>

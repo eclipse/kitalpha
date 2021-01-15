@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated PatternDependencyAnalysis -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="PatternDependencyAnalysis.presentation.PatternDependencyAnalysisModelWizardID"
+            name="%_UI_PatternDependencyAnalysisModelWizard_label"
+            class="PatternDependencyAnalysis.presentation.PatternDependencyAnalysisModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/PatternDependencyAnalysisModelFile.gif">
+         <description>%_UI_PatternDependencyAnalysisModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated PatternDependencyAnalysis -->
+      <editor
+            id="PatternDependencyAnalysis.presentation.PatternDependencyAnalysisEditorID"
+            name="%_UI_PatternDependencyAnalysisEditor_label"
+            icon="icons/full/obj16/PatternDependencyAnalysisModelFile.gif"
+            extensions="pda"
+            class="PatternDependencyAnalysis.presentation.PatternDependencyAnalysisEditor"
+            contributorClass="PatternDependencyAnalysis.presentation.PatternDependencyAnalysisActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

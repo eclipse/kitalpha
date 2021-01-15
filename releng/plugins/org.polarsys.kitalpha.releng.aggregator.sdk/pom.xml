@@ -197,6 +197,10 @@
     <module>../../../diagrams/plugins/org.polarsys.kitalpha.egf.genchain.diagram</module>
     <module>../../../diagrams/plugins/org.polarsys.kitalpha.ecore.diagram</module>
     <module>../../../diagrams/plugins/org.polarsys.kitalpha.emde.diagram</module>
+    <module>../../../diagrams/plugins/org.polarsys.kitalpha.egf.fcore.diagram</module>
+    <module>../../../diagrams/plugins/org.polarsys.kitalpha.egf.fcore.diagram.pda</module>
+    <module>../../../diagrams/plugins/org.polarsys.kitalpha.egf.fcore.diagram.pda.edit</module>
+    <module>../../../diagrams/plugins/org.polarsys.kitalpha.egf.fcore.diagram.pda.editor</module>
     
     <!-- features -->
     <module>../../../diagrams/features/org.polarsys.kitalpha.representation.egf.feature</module>

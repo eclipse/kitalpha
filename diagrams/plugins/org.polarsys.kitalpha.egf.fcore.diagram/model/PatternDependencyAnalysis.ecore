@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="PatternDependencyAnalysis" nsURI="https://org.polarsys.kitalpha.ecore.diagram/PatternDependencyAnalysis/0.1"
+    nsPrefix="PatternDependencyAnalysis">
+  <eClassifiers xsi:type="ecore:EClass" name="Root">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="patterns" upperBound="-1"
+        eType="#//PatternAnalysis" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sectionsAnalyses" upperBound="-1"
+        eType="#//SectionAnalysis" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PatternAnalysis">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pattern" lowerBound="1"
+        eType="ecore:EClass ../../org.eclipse.egf.model/model/Pattern.ecore#//Pattern"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superPattern" eType="ecore:EClass ../../org.eclipse.egf.model/model/Pattern.ecore#//Pattern"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="methods" upperBound="-1"
+        eType="#//PatternMethodAnalysis" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="#//PatternParameterAnalysis" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="calledBy" upperBound="-1"
+        eType="ecore:EClass ../../org.eclipse.egf.model/model/Pattern.ecore#//Pattern"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inheritedBy" upperBound="-1"
+        eType="ecore:EClass ../../org.eclipse.egf.model/model/Pattern.ecore#//Pattern"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PatternMethodAnalysis">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="method" lowerBound="1"
+        eType="ecore:EClass ../../org.eclipse.egf.model/model/Pattern.ecore#//PatternMethod"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="calls" upperBound="-1"
+        eType="#//PatternAnalysis" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sectionContributions" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PatternParameterAnalysis">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SectionAnalysis">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sectionName" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contributingPatterns" upperBound="-1"
+        eType="ecore:EClass ../../org.eclipse.egf.model/model/Pattern.ecore#//Pattern"/>
+  </eClassifiers>
+</ecore:EPackage>

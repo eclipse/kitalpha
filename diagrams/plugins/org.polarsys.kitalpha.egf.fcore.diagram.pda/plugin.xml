@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated PatternDependencyAnalysis -->
+      <package
+            uri="https://org.polarsys.kitalpha.ecore.diagram/PatternDependencyAnalysis/0.1"
+            class="PatternDependencyAnalysis.PatternDependencyAnalysisPackage"/>
+   </extension>
+
+</plugin>
