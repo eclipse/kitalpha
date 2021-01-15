@@ -37,8 +37,7 @@
               invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdescCommonDataLoad.fcore#_6m4KsPtNEeK-QL-B45qveg"/>
           <invocationContracts xmi:id="_DmQoM4KgEeOrLd1N8v_fcw" targetInvocationContract="#_yGLF0glWEeKTrvXiiChdUw #_Yeg7Yy9DEeKlecntHtUaFg #_kMPz03qwEeKZnLNBJ96SOA #_dGk-Uu9OEeWSA4m5zh7DIw"
               invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdescCommonDataLoad.fcore#_8BK-cPtNEeK-QL-B45qveg"/>
-          <invocationContracts xmi:id="_DmQoNIKgEeOrLd1N8v_fcw" targetInvocationContract="#_Yeg7ZS9DEeKlecntHtUaFg"
-              invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdescCommonDataLoad.fcore#_ONdBUPtREeK-QL-B45qveg"/>
+          <invocationContracts xmi:id="_DmQoNIKgEeOrLd1N8v_fcw" invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdescCommonDataLoad.fcore#_ONdBUPtREeK-QL-B45qveg"/>
           <invocationContracts xmi:id="_DmQoNYKgEeOrLd1N8v_fcw" targetInvocationContract="#_yGLF0wlWEeKTrvXiiChdUw #_kMPz0nqwEeKZnLNBJ96SOA #_dGk-U-9OEeWSA4m5zh7DIw #_sfMmwu9REeWSA4m5zh7DIw"
               invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdescCommonDataLoad.fcore#_8mR2oPtNEeK-QL-B45qveg"/>
           <invocationContracts xmi:id="_DmQoNoKgEeOrLd1N8v_fcw" invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdescCommonDataLoad.fcore#_817cMPtNEeK-QL-B45qveg"/>
@@ -46,6 +45,8 @@
               invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdescCommonDataLoad.fcore#_jYkpsOuREeW0Hf5pn0JwLg"/>
           <invocationContracts xmi:id="_WxU3EOwaEeW0Hf5pn0JwLg" targetInvocationContract="#_klSgwOwbEeW0Hf5pn0JwLg #_sfMmw-9REeWSA4m5zh7DIw"
               invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdescCommonDataLoad.fcore#_hG_BkOuREeW0Hf5pn0JwLg"/>
+          <invocationContracts xmi:id="_WB9pgFc8EeuokZ5ajTuW9g" targetInvocationContract="#_Yeg7ZS9DEeKlecntHtUaFg"
+              invokedContract="platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common/egf/VpdescCommonDataLoad.fcore#_7VEtcPtNEeK-QL-B45qveg"/>
         </invocationContractContainer>
       </invocations>
       <invocations xmi:id="_dpUloC8-EeKlecntHtUaFg" name="Generator Extensions Collector"
@@ -111,7 +112,7 @@
               invokedContract="#_c25tYC9CEeKlecntHtUaFg"/>
           <invocationContracts xmi:id="_Yeg7ZC9DEeKlecntHtUaFg" factoryComponentContract="#_bAXJoI68EeGdJv40MVeUZQ"
               invokedContract="#_IdoHIC9CEeKlecntHtUaFg"/>
-          <invocationContracts xmi:id="_Yeg7ZS9DEeKlecntHtUaFg" sourceInvocationContract="#_DmQoNIKgEeOrLd1N8v_fcw"
+          <invocationContracts xmi:id="_Yeg7ZS9DEeKlecntHtUaFg" sourceInvocationContract="#_WB9pgFc8EeuokZ5ajTuW9g"
               invokedContract="#_e37xAC9CEeKlecntHtUaFg"/>
           <invocationContracts xmi:id="_kTtokOwbEeW0Hf5pn0JwLg" sourceInvocationContract="#_VKW5QOwaEeW0Hf5pn0JwLg"
               invokedContract="#_dA1GQOwaEeW0Hf5pn0JwLg"/>
