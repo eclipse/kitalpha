@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated with EGF 1.2.0.v20140805-0858
+//Generated with EGF 1.6.2.202001031546
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.af.property;
 
 import java.util.*;
@@ -50,8 +39,7 @@ public class PropertyPattern {
 			}
 		}
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 	}
 
@@ -66,14 +54,12 @@ public class PropertyPattern {
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
 
-	protected void method_createAFProperty(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_createAFProperty(final StringBuffer out, final PatternContext ctx) throws Exception {
 		Property property = ViewpointFactory.eINSTANCE.createProperty();
 
 		/*** From VPDesc Model ***/
@@ -100,8 +86,7 @@ public class PropertyPattern {
 		property.setValue(parameter.getValue());
 
 		/*** Generated ***/
-		property.setId(AFModelUtils.getInstance()
-				.generateAFElementID(parameter));
+		property.setId(AFModelUtils.getInstance().generateAFElementID(parameter));
 		//property.setVpid(parameter.getVpid()); 
 		property.setVpid(parameter.getVpid());
 
@@ -109,17 +94,14 @@ public class PropertyPattern {
 		pS.getNewProperties().add(property);
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "createAFProperty",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "createAFProperty", out.toString());
 	}
 
-	protected void method_getPropertySet(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_getPropertySet(final StringBuffer out, final PatternContext ctx) throws Exception {
 		pS = AfProjectManager.INSTANCE.getViewpoint().getPropertySet();
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "getPropertySet",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "getPropertySet", out.toString());
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
@@ -128,15 +110,13 @@ public class PropertyPattern {
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.Property parameter;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.Property parameter) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.Property parameter) {
 		this.parameter = parameter;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.PropertySet pS;
 
-	public void set_pS(
-			org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.PropertySet pS) {
+	public void set_pS(org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.PropertySet pS) {
 		this.pS = pS;
 	}
 

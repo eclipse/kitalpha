@@ -1,14 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials are made 
- * available under the terms of the Eclipse Public License v1.0 which accompanies
- * this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *    Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated with EGF 1.3.0.v20150507-0831
+//Generated with EGF 1.6.2.202001031546
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.extensions.categories;
 
 import java.util.*;
@@ -19,20 +9,17 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.cat
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.category.ContextualExplorerCategoryCompliance;
 
 public class OwnedViewpointElementCategory
-		extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.common.AbstractCategoryPattern {
+		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.common.AbstractCategoryPattern {
 	protected static String nl;
 
-	public static synchronized OwnedViewpointElementCategory create(
-			String lineSeparator) {
+	public static synchronized OwnedViewpointElementCategory create(String lineSeparator) {
 		nl = lineSeparator;
 		OwnedViewpointElementCategory result = new OwnedViewpointElementCategory();
 		nl = null;
 		return result;
 	}
 
-	public final String NL = nl == null ? (System.getProperties()
-			.getProperty("line.separator")) : nl;
+	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
 	protected final String TEXT_1 = "";
 	protected final String TEXT_2 = NL;
 
@@ -67,8 +54,7 @@ public class OwnedViewpointElementCategory
 		}
 		ctx.setNode(currentNode);
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
 		stringBuffer.append(TEXT_1);
@@ -86,16 +72,14 @@ public class OwnedViewpointElementCategory
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class parameter = null;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class object) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class object) {
 		this.parameter = object;
 	}
 
@@ -105,26 +89,21 @@ public class OwnedViewpointElementCategory
 		return parameters;
 	}
 
-	protected void method_setVpClass(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_setVpClass(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		vpClass = parameter;
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setVpClass",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setVpClass", stringBuffer.toString());
 	}
 
-	protected void method_setCategoryType(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_setCategoryType(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		category = ContextualExplorerCategories.OwnedViewpointElement;
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setCategoryType",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setCategoryType", stringBuffer.toString());
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
-		return ContextualExplorerCategoryCompliance
-				.ownedViewpointCategoryCompliance(parameter);
+		return ContextualExplorerCategoryCompliance.ownedViewpointCategoryCompliance(parameter);
 	}
 }

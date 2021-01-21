@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated with EGF 1.2.0.v20140805-0858
+//Generated with EGF 1.6.2.202001031546
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.af.rule;
 
 import org.eclipse.egf.common.helper.*;
@@ -37,57 +26,25 @@ public class RuleJavaClasse {
 		return result;
 	}
 
-	public final String NL = nl == null ? (System.getProperties()
-			.getProperty("line.separator")) : nl;
+	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
 	protected final String TEXT_1 = "// DSL Viewpoint Generator V0.1 ";
 	protected final String TEXT_2 = NL + NL + "package ";
-	protected final String TEXT_3 = ";"
-			+ NL
-			+ ""
-			+ NL
-			+ "import org.polarsys.kitalpha.ad.viewpoint.integration.rules.JavaRule;"
-			+ NL
-			+ "import org.polarsys.kitalpha.ad.viewpoint.utils.ModelAccessor;"
-			+ NL + "" + NL + "public class ";
-	protected final String TEXT_4 = " implements JavaRule {"
-			+ NL
-			+ ""
-			+ NL
-			+ "\t/* (non-Javadoc)"
-			+ NL
+	protected final String TEXT_3 = ";" + NL + "" + NL
+			+ "import org.polarsys.kitalpha.ad.viewpoint.integration.rules.JavaRule;" + NL
+			+ "import org.polarsys.kitalpha.ad.viewpoint.utils.ModelAccessor;" + NL + "" + NL + "public class ";
+	protected final String TEXT_4 = " implements JavaRule {" + NL + "" + NL + "\t/* (non-Javadoc)" + NL
 			+ "\t * @see org.polarsys.kitalpha.ad.viewpoint.integration.rules.JavaRule#run(org.polarsys.kitalpha.ad.viewpoint.utils.ModelAccessor, java.lang.Object[])"
-			+ NL
-			+ "\t */"
-			+ NL
-			+ "\tpublic void run(ModelAccessor properties, Object[] selection) {"
-			+ NL
-			+ "\t\t// TODO Auto-generated method stub"
-			+ NL
-			+ "\t\torg.eclipse.jface.dialogs.MessageDialog.openInformation("
-			+ NL
-			+ "\t\t\t\torg.eclipse.ui.PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), "
-			+ NL + "\t\t\t\t\"Java rule execution\", " + NL
-			+ "\t\t\t\t\"DSL Viewpoint generated rule \\n Message from ";
-	protected final String TEXT_5 = " rule\");"
-			+ NL
-			+ ""
-			+ NL
-			+ "\t}"
-			+ NL
-			+ ""
-			+ NL
-			+ "\t/* (non-Javadoc)"
-			+ NL
+			+ NL + "\t */" + NL + "\tpublic void run(ModelAccessor properties, Object[] selection) {" + NL
+			+ "\t\t// TODO Auto-generated method stub" + NL
+			+ "\t\torg.eclipse.jface.dialogs.MessageDialog.openInformation(" + NL
+			+ "\t\t\t\torg.eclipse.ui.PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), " + NL
+			+ "\t\t\t\t\"Java rule execution\", " + NL + "\t\t\t\t\"DSL Viewpoint generated rule \\n Message from ";
+	protected final String TEXT_5 = " rule\");" + NL + "" + NL + "\t}" + NL + "" + NL + "\t/* (non-Javadoc)" + NL
 			+ "\t * @see org.polarsys.kitalpha.ad.viewpoint.integration.rules.JavaRule#canRun(org.polarsys.kitalpha.ad.viewpoint.utils.ModelAccessor, java.lang.Object[])"
-			+ NL
-			+ "\t */"
-			+ NL
-			+ "\tpublic boolean canRun(ModelAccessor properties, Object[] selection) {"
-			+ NL + "\t\t// TODO Auto-generated method stub" + NL
-			+ "\t\treturn true;" + NL + "\t}" + NL + "" + NL + "}";
+			+ NL + "\t */" + NL + "\tpublic boolean canRun(ModelAccessor properties, Object[] selection) {" + NL
+			+ "\t\t// TODO Auto-generated method stub" + NL + "\t\treturn true;" + NL + "\t}" + NL + "" + NL + "}";
 	protected final String TEXT_6 = " ";
 	protected final String TEXT_7 = NL;
-	protected final String TEXT_8 = NL;
 
 	public RuleJavaClasse() {
 		//Here is the constructor
@@ -120,12 +77,11 @@ public class RuleJavaClasse {
 		}
 		ctx.setNode(currentNode);
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
 		stringBuffer.append(TEXT_7);
-		stringBuffer.append(TEXT_8);
+		stringBuffer.append(TEXT_7);
 		return stringBuffer.toString();
 	}
 
@@ -147,8 +103,7 @@ public class RuleJavaClasse {
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
@@ -173,8 +128,7 @@ public class RuleJavaClasse {
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.Rule parameter = null;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.Rule object) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.Rule object) {
 		this.parameter = object;
 	}
 
@@ -184,8 +138,7 @@ public class RuleJavaClasse {
 		return parameters;
 	}
 
-	protected void method_body(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_body(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		stringBuffer.append(TEXT_1);
 		stringBuffer.append(genTime);
@@ -197,67 +150,51 @@ public class RuleJavaClasse {
 		stringBuffer.append(ruleName);
 		stringBuffer.append(TEXT_5);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "body",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "body", stringBuffer.toString());
 	}
 
-	protected void method_setPackName(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_setPackName(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
-		packageName = (String) ctx.getValue(AfConstants.CONTRACT_PROJECT_NAME)
-				+ ".businessrules";
+		packageName = (String) ctx.getValue(AfConstants.CONTRACT_PROJECT_NAME) + ".businessrules";
 		packageName = JDTUtility.getValidPackageName(packageName);
 		stringBuffer.append(TEXT_6);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setPackName",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setPackName", stringBuffer.toString());
 	}
 
-	protected void method_setRuleName(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_setRuleName(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		ruleName = ((Rule) parameter).getName();
-		ruleName = ruleName.substring(0, 1).toUpperCase()
-				+ ruleName.substring(1);
+		ruleName = ruleName.substring(0, 1).toUpperCase() + ruleName.substring(1);
 		ruleName = JDTUtility.getValidClassName(ruleName);
 		ctx.setValue("ruleName", ruleName);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setRuleName",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setRuleName", stringBuffer.toString());
 	}
 
-	protected void method_setDateTime(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_setDateTime(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		Calendar cal = Calendar.getInstance();
-		SimpleDateFormat sdf = new SimpleDateFormat(
-				"dd.MM.yyyy 'at' hh:mm:ss z");
+		SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy 'at' hh:mm:ss z");
 		genTime = sdf.format(cal.getTime());
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setDateTime",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setDateTime", stringBuffer.toString());
 	}
 
-	protected void method_registerJavaRuleClass(
-			final StringBuffer stringBuffer, final PatternContext ctx)
+	protected void method_registerJavaRuleClass(final StringBuffer stringBuffer, final PatternContext ctx)
 			throws Exception {
 
 		// TODO : à refaire 
-		AfProjectManager.INSTANCE.registerJavaRule(AFModelUtils.getInstance()
-				.generateAFElementID(parameter), packageName + "." + ruleName);
+		AfProjectManager.INSTANCE.registerJavaRule(AFModelUtils.getInstance().generateAFElementID(parameter),
+				packageName + "." + ruleName);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "registerJavaRuleClass",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "registerJavaRuleClass", stringBuffer.toString());
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
-		return parameter
-				.getType()
-				.toString()
-				.equals(VpservicesPackage.eINSTANCE.getRules_Types()
-						.getEEnumLiteral(0).toString())
-				&& (parameter.getClass_() == null || parameter.getClass_()
-						.trim().length() == 0);
+		return parameter.getType().toString()
+				.equals(VpservicesPackage.eINSTANCE.getRules_Types().getEEnumLiteral(0).toString())
+				&& (parameter.getClass_() == null || parameter.getClass_().trim().length() == 0);
 	}
 }

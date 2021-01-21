@@ -1,9 +1,10 @@
 /**
- * Copyright (c) 2014 Thales Global Services S.A.S.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
+ * Copyright (c) 2014, 2020 Thales Global Services S.A.S.
+ *  This program and the accompanying materials are made available under the
+ *  terms of the Eclipse Public License 2.0 which is available at
+ *  http://www.eclipse.org/legal/epl-2.0
+ * 
+ *  SPDX-License-Identifier: EPL-2.0
  * 
  * Contributors:
  *  Thales Global Services S.A.S - initial API and implementation
@@ -36,8 +37,7 @@ public class GenBuildDocumentation implements IGenerator {
   }
   
   public void doGenerate(final Resource input, final IFileSystemAccess fsa) {
-    CharSequence _generateContent = this.generateContent();
-    fsa.generateFile("README.txt", _generateContent);
+    fsa.generateFile("README.txt", this.generateContent());
   }
   
   public CharSequence generateContent() {
@@ -45,19 +45,22 @@ public class GenBuildDocumentation implements IGenerator {
     _builder.append("/*******************************************************************************");
     _builder.newLine();
     _builder.append(" ");
-    _builder.append("* Copyright (c) 2014 Thales Global Services S.A.S.");
+    _builder.append("* Copyright (c) 2014, 2020 Thales Global Services S.A.S.");
     _builder.newLine();
     _builder.append(" ");
-    _builder.append("*  All rights reserved. This program and the accompanying materials");
+    _builder.append("*  This program and the accompanying materials are made available under the");
     _builder.newLine();
     _builder.append(" ");
-    _builder.append("*  are made available under the terms of the Eclipse Public License v1.0");
+    _builder.append("*  terms of the Eclipse Public License 2.0 which is available at");
     _builder.newLine();
     _builder.append(" ");
-    _builder.append("*  which accompanies this distribution, and is available at");
+    _builder.append("*  http://www.eclipse.org/legal/epl-2.0");
     _builder.newLine();
     _builder.append(" ");
-    _builder.append("*  http://www.eclipse.org/legal/epl-v10.html");
+    _builder.append("*  ");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.append("*  SPDX-License-Identifier: EPL-2.0");
     _builder.newLine();
     _builder.append(" ");
     _builder.append("* ");
@@ -73,7 +76,7 @@ public class GenBuildDocumentation implements IGenerator {
     _builder.newLine();
     _builder.newLine();
     _builder.append("This file describes the steps to be taken towards the configuration of a Jenkins build job for the viewpoint ");
-    _builder.append(this.viewpointShortName, "");
+    _builder.append(this.viewpointShortName);
     _builder.append(".");
     _builder.newLineIfNotEmpty();
     _builder.newLine();
@@ -97,14 +100,14 @@ public class GenBuildDocumentation implements IGenerator {
     _builder.append("3. In \"Gestion de code source\" section, select the type of repository where the viewpoints plugins are located");
     _builder.newLine();
     _builder.append("4. In \"URL du repository\" section, enter ");
-    _builder.append(this.repositoryUrl, "");
+    _builder.append(this.repositoryUrl);
     _builder.newLineIfNotEmpty();
     _builder.append("5. In \"Repertoire local du module\" section, enter \"svn/svn_viewpoint\"");
     _builder.newLine();
     _builder.append("6. In \"Build\" section, click on \"avancé\" button");
     _builder.newLine();
     _builder.append("7. In \"Fichier du build\", enter ");
-    _builder.append(this.buildFilePath, "");
+    _builder.append(this.buildFilePath);
     _builder.newLineIfNotEmpty();
     _builder.append("8. Save the job and you are done.");
     _builder.newLine();

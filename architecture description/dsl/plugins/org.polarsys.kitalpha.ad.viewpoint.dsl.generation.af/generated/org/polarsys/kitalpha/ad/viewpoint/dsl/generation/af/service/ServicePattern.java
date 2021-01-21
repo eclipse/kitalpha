@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated with EGF 1.2.0.v20140805-0858
+//Generated with EGF 1.6.2.202001031546
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.af.service;
 
 import java.util.*;
@@ -50,8 +39,7 @@ public class ServicePattern {
 			}
 		}
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 	}
 
@@ -67,14 +55,12 @@ public class ServicePattern {
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
 
-	protected void method_createService(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_createService(final StringBuffer out, final PatternContext ctx) throws Exception {
 		Service service = ViewpointFactory.eINSTANCE.createService();
 
 		/*** From VPDesc Model ***/
@@ -92,21 +78,17 @@ public class ServicePattern {
 		sS.getNewServices().add(service);
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "createService",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "createService", out.toString());
 	}
 
-	protected void method_getServiceSet(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_getServiceSet(final StringBuffer out, final PatternContext ctx) throws Exception {
 		sS = AfProjectManager.INSTANCE.getViewpoint().getServiceSet();
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "getServiceSet",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "getServiceSet", out.toString());
 	}
 
-	protected void method_setVpID(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_setVpID(final StringBuffer out, final PatternContext ctx) throws Exception {
 		parameter.setVpid(EcoreUtil.generateUUID());
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
@@ -119,15 +101,13 @@ public class ServicePattern {
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.Service parameter;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.Service parameter) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.Service parameter) {
 		this.parameter = parameter;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.ServiceSet sS;
 
-	public void set_sS(
-			org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.ServiceSet sS) {
+	public void set_sS(org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.ServiceSet sS) {
 		this.sS = sS;
 	}
 

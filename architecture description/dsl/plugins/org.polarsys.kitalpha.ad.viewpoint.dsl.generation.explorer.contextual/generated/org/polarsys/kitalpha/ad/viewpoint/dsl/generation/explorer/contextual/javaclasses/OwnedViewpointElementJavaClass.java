@@ -1,14 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials are made 
- * available under the terms of the Eclipse Public License v1.0 which accompanies
- * this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *    Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated with EGF 1.3.0.v20150507-0831
+//Generated with EGF 1.6.2.202001031546
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.javaclasses;
 
 import java.util.*;
@@ -21,53 +11,36 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.LocalClassAssociat
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.category.ContextualExplorerCategoryCompliance;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.util.ClassUtils;
 
-public class OwnedViewpointElementJavaClass
-		extends
+public class OwnedViewpointElementJavaClass extends
 		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.common.AbstractAssociationJavaClass {
 	protected static String nl;
 
-	public static synchronized OwnedViewpointElementJavaClass create(
-			String lineSeparator) {
+	public static synchronized OwnedViewpointElementJavaClass create(String lineSeparator) {
 		nl = lineSeparator;
 		OwnedViewpointElementJavaClass result = new OwnedViewpointElementJavaClass();
 		nl = null;
 		return result;
 	}
 
-	public final String NL = nl == null ? (System.getProperties()
-			.getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "\t"
-			+ NL
-			+ "\t/**"
-			+ NL
-			+ "    * <!-- begin-user-doc -->"
-			+ NL
-			+ "    * <!-- end-user-doc -->"
-			+ NL
-			+ "    * @param object_p: The model element for which the Contextual Explorer extension is generated"
-			+ NL
-			+ "    * @return List of object to display in the parent category"
-			+ NL + "    * @generated" + NL + "    */" + NL
-			+ "\tpublic List<Object> compute(Object object_p) {" + NL
-			+ "\t\tList<Object> result = new ArrayList<Object>();" + NL
-			+ "\t\t";
+	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+	protected final String TEXT_1 = "\t" + NL + "\t/**" + NL + "    * <!-- begin-user-doc -->" + NL
+			+ "    * <!-- end-user-doc -->" + NL
+			+ "    * @param object_p: The model element for which the Contextual Explorer extension is generated" + NL
+			+ "    * @return List of object to display in the parent category" + NL + "    * @generated" + NL + "    */"
+			+ NL + "\tpublic List<Object> compute(Object object_p) {" + NL
+			+ "\t\tList<Object> result = new ArrayList<Object>();" + NL + "\t\t";
 	protected final String TEXT_2 = " object = (";
 	protected final String TEXT_3 = ") object_p;" + NL + "\t\t";
-	protected final String TEXT_4 = " \t\t\t\t" + NL
-			+ "\t\t\t\tfor (EObject eObject : object.";
-	protected final String TEXT_5 = "())" + NL
-			+ "\t\t\t\t\tresult.add(eObject);";
+	protected final String TEXT_4 = " \t\t\t\t" + NL + "\t\t\t\tfor (EObject eObject : object.";
+	protected final String TEXT_5 = "())" + NL + "\t\t\t\t\tresult.add(eObject);";
 	protected final String TEXT_6 = NL + "\t\t\t\tif (object.";
-	protected final String TEXT_7 = "() != null)\t" + NL
-			+ "\t\t\t\t\tresult.add(object.";
+	protected final String TEXT_7 = "() != null)\t" + NL + "\t\t\t\t\tresult.add(object.";
 	protected final String TEXT_8 = "());\t";
 	protected final String TEXT_9 = "\t\t\t\t";
-	protected final String TEXT_10 = NL + "\t\t" + NL + "\t\treturn result;"
-			+ NL + "\t}" + NL + "" + NL + "\t";
+	protected final String TEXT_10 = NL + "\t\t" + NL + "\t\treturn result;" + NL + "\t}" + NL + "" + NL + "\t";
 	protected final String TEXT_11 = NL + NL + "import ";
 	protected final String TEXT_12 = ";" + NL;
 	protected final String TEXT_13 = NL;
-	protected final String TEXT_14 = NL;
 
 	public OwnedViewpointElementJavaClass() {
 		//Here is the constructor
@@ -100,12 +73,11 @@ public class OwnedViewpointElementJavaClass
 		}
 		ctx.setNode(currentNode);
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
 		stringBuffer.append(TEXT_13);
-		stringBuffer.append(TEXT_14);
+		stringBuffer.append(TEXT_13);
 		return stringBuffer.toString();
 	}
 
@@ -119,16 +91,14 @@ public class OwnedViewpointElementJavaClass
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class parameter = null;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class object) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class object) {
 		this.parameter = object;
 	}
 
@@ -138,20 +108,17 @@ public class OwnedViewpointElementJavaClass
 		return parameters;
 	}
 
-	protected void method_genClassMethods(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_genClassMethods(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		stringBuffer.append(TEXT_1);
 		stringBuffer.append(vpClassName);
 		stringBuffer.append(TEXT_2);
 		stringBuffer.append(vpClassName);
 		stringBuffer.append(TEXT_3);
-		for (AbstractAssociation abstractAssociation : parameter
-				.getVP_Classes_Associations()) {
+		for (AbstractAssociation abstractAssociation : parameter.getVP_Classes_Associations()) {
 			if (abstractAssociation instanceof LocalClassAssociation
 					&& abstractAssociation.getType() == Association_Types.CONTAINMENT) {
-				String vpAssociationGetterName = ClassUtils.INSTANCE
-						.getAssociationAccesssorName(abstractAssociation);
+				String vpAssociationGetterName = ClassUtils.INSTANCE.getAssociationAccesssorName(abstractAssociation);
 				if (ClassUtils.isAssociationMultiple(abstractAssociation)) {
 					stringBuffer.append(TEXT_4);
 					stringBuffer.append(vpAssociationGetterName);
@@ -168,41 +135,35 @@ public class OwnedViewpointElementJavaClass
 		}
 		stringBuffer.append(TEXT_10);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "genClassMethods",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "genClassMethods", stringBuffer.toString());
 	}
 
-	protected void method_genSemanticImoprt(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_genSemanticImoprt(final StringBuffer stringBuffer, final PatternContext ctx)
+			throws Exception {
 
 		stringBuffer.append(TEXT_11);
 		stringBuffer.append(vpClassInterfaceFullyQualifiedName);
 		stringBuffer.append(TEXT_12);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "genSemanticImoprt",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "genSemanticImoprt", stringBuffer.toString());
 	}
 
-	protected void method_setJavaClassName(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_setJavaClassName(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		javaClassName = "OwnedViewpointElementQuery";
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setJavaClassName",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setJavaClassName", stringBuffer.toString());
 	}
 
-	protected void method_setConcernedVPClass(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_setConcernedVPClass(final StringBuffer stringBuffer, final PatternContext ctx)
+			throws Exception {
 
 		vpClass = parameter;
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setConcernedVPClass",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setConcernedVPClass", stringBuffer.toString());
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
-		return ContextualExplorerCategoryCompliance
-				.ownedViewpointCategoryCompliance(parameter);
+		return ContextualExplorerCategoryCompliance.ownedViewpointCategoryCompliance(parameter);
 	}
 }

@@ -1,14 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials are made 
- * available under the terms of the Eclipse Public License v1.0 which accompanies
- * this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *    Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated with EGF 1.3.0.v20150507-0831
+//Generated with EGF 1.6.2.202001031546
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.extensions;
 
 import org.eclipse.egf.common.helper.*;
@@ -28,13 +18,11 @@ public class PluginPattern {
 		return result;
 	}
 
-	public final String NL = nl == null ? (System.getProperties()
-			.getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
-			+ NL + "<?eclipse version=\"3.4\"?>" + NL + "<plugin>" + NL;
+	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+	protected final String TEXT_1 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + NL + "<?eclipse version=\"3.4\"?>"
+			+ NL + "<plugin>" + NL;
 	protected final String TEXT_2 = "</plugin>";
 	protected final String TEXT_3 = NL;
-	protected final String TEXT_4 = NL;
 
 	public PluginPattern() {
 		//Here is the constructor
@@ -67,12 +55,11 @@ public class PluginPattern {
 		}
 		ctx.setNode(currentNode);
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
 		stringBuffer.append(TEXT_3);
-		stringBuffer.append(TEXT_4);
+		stringBuffer.append(TEXT_3);
 		return stringBuffer.toString();
 	}
 
@@ -93,16 +80,14 @@ public class PluginPattern {
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint parameter = null;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint object) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint object) {
 		this.parameter = object;
 	}
 
@@ -112,22 +97,18 @@ public class PluginPattern {
 		return parameters;
 	}
 
-	protected void method_beginXmlPlugin(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_beginXmlPlugin(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		stringBuffer.append(TEXT_1);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "beginXmlPlugin",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "beginXmlPlugin", stringBuffer.toString());
 	}
 
-	protected void method_endXmlPlugin(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_endXmlPlugin(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		stringBuffer.append(TEXT_2);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "endXmlPlugin",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "endXmlPlugin", stringBuffer.toString());
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {

@@ -2,9 +2,9 @@
 <!-- Schema file written by PDE -->
 <schema targetNamespace="org.polarsys.kitalpha.composer.core" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
-      <appinfo>
+      <appInfo>
          <meta.schema plugin="org.polarsys.kitalpha.composer.core" id="org.polarsys.kitalpha.composer.cots" name="Code generator"/>
-      </appinfo>
+      </appInfo>
       <documentation>
          Provides code generator to Code Generation Manager
       </documentation>
@@ -12,9 +12,9 @@
 
    <element name="extension">
       <annotation>
-         <appinfo>
+         <appInfo>
             <meta.element />
-         </appinfo>
+         </appInfo>
       </annotation>
       <complexType>
          <sequence>
@@ -39,9 +39,9 @@
                <documentation>
                   
                </documentation>
-               <appinfo>
+               <appInfo>
                   <meta.attribute translatable="true"/>
-               </appinfo>
+               </appInfo>
             </annotation>
          </attribute>
       </complexType>
@@ -49,9 +49,9 @@
 
    <element name="generator">
       <annotation>
-         <appinfo>
+         <appInfo>
             <meta.element labelAttribute="Name"/>
-         </appinfo>
+         </appInfo>
       </annotation>
       <complexType>
          <attribute name="Name" type="string" use="required">
@@ -66,9 +66,9 @@
                <documentation>
                   
                </documentation>
-               <appinfo>
+               <appInfo>
                   <meta.attribute translatable="true"/>
-               </appinfo>
+               </appInfo>
             </annotation>
          </attribute>
          <attribute name="NsUri" type="string" use="required">
@@ -90,49 +90,65 @@
                <documentation>
                   Generator class, which implements the COST interface
                </documentation>
-               <appinfo>
+               <appInfo>
                   <meta.attribute kind="java" basedOn=":org.polarsys.kitalpha.composer.extension.points.IGenerator"/>
-               </appinfo>
+               </appInfo>
             </annotation>
          </attribute>
       </complexType>
    </element>
 
    <annotation>
-      <appinfo>
+      <appInfo>
          <meta.section type="since"/>
-      </appinfo>
+      </appInfo>
       <documentation>
          [Enter the first release in which this extension point appears.]
       </documentation>
    </annotation>
 
    <annotation>
-      <appinfo>
+      <appInfo>
          <meta.section type="examples"/>
-      </appinfo>
+      </appInfo>
       <documentation>
          [Enter extension point usage example here.]
       </documentation>
    </annotation>
 
    <annotation>
-      <appinfo>
+      <appInfo>
          <meta.section type="apiInfo"/>
-      </appinfo>
+      </appInfo>
       <documentation>
          [Enter API information here.]
       </documentation>
    </annotation>
 
    <annotation>
-      <appinfo>
+      <appInfo>
          <meta.section type="implementation"/>
-      </appinfo>
+      </appInfo>
       <documentation>
          [Enter information about supplied implementation of this extension point.]
       </documentation>
    </annotation>
 
+   <annotation>
+      <appInfo>
+         <meta.section type="copyright"/>
+      </appInfo>
+      <documentation>
+         Copyright (c) 2020 Thales Global Services S.A.S.
+This program and the accompanying materials are made available under the
+terms of the Eclipse Public License 2.0 which is available at
+http://www.eclipse.org/legal/epl-2.0
+
+SPDX-License-Identifier: EPL-2.0
+ 
+Contributors:
+  Thales Global Services S.A.S - initial API and implementation
+      </documentation>
+   </annotation>
 
 </schema>
