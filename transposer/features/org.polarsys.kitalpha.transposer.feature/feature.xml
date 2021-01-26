@@ -15,7 +15,7 @@
 <feature
       id="org.polarsys.kitalpha.transposer.feature"
       label="Kitalpha Transposer Feature"
-      version="5.0.0.qualifier">
+      version="5.0.1.qualifier">
 
    <description>
       %description

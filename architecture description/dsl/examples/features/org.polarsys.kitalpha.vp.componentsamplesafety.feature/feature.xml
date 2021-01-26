@@ -13,7 +13,7 @@
 <feature
       id="org.polarsys.kitalpha.vp.componentsamplesafety.feature"
       label="ComponentSampleSafety Feature"
-      version="5.0.0.qualifier">
+      version="5.0.1.qualifier">
 
    <description>
       %description
