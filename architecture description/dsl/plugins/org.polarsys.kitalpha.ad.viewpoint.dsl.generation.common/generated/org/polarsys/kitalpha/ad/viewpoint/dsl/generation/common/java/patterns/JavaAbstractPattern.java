@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated on Fri Feb 28 10:42:38 CET 2014 with EGF 1.1.0.v20140227-0558
+//Generated with EGF 1.6.2.202001031546
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common.java.patterns;
 
 import org.eclipse.egf.common.helper.*;
@@ -30,14 +19,12 @@ public class JavaAbstractPattern {
 		return result;
 	}
 
-	public final String NL = nl == null ? (System.getProperties()
-			.getProperty("line.separator")) : nl;
+	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
 	protected final String TEXT_1 = " ";
 	protected final String TEXT_2 = NL + "// Generated on ";
 	protected final String TEXT_3 = " by Viewpoint DSL Generator V 0.1" + NL;
 	protected final String TEXT_4 = NL + NL;
 	protected final String TEXT_5 = NL;
-	protected final String TEXT_6 = NL;
 
 	public JavaAbstractPattern() {
 		//Here is the constructor
@@ -62,12 +49,11 @@ public class JavaAbstractPattern {
 
 		ctx.setNode(currentNode);
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
 		stringBuffer.append(TEXT_5);
-		stringBuffer.append(TEXT_6);
+		stringBuffer.append(TEXT_5);
 		return stringBuffer.toString();
 	}
 
@@ -122,17 +108,14 @@ public class JavaAbstractPattern {
 		return parameters;
 	}
 
-	protected void method_setParameters(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_setParameters(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		// To implement in sub patterns
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setParameters",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setParameters", stringBuffer.toString());
 	}
 
-	protected void method_setReporterParameters(
-			final StringBuffer stringBuffer, final PatternContext ctx)
+	protected void method_setReporterParameters(final StringBuffer stringBuffer, final PatternContext ctx)
 			throws Exception {
 
 		// Do not change in sub pattern
@@ -143,36 +126,29 @@ public class JavaAbstractPattern {
 
 		stringBuffer.append(TEXT_1);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setReporterParameters",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setReporterParameters", stringBuffer.toString());
 	}
 
-	protected void method_TransformsfirstLetterToUpperCase(
-			final StringBuffer stringBuffer, final PatternContext ctx)
+	protected void method_TransformsfirstLetterToUpperCase(final StringBuffer stringBuffer, final PatternContext ctx)
 			throws Exception {
 
 		char first = Character.toUpperCase(classname.charAt(0));
 		classname = first + classname.substring(1);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(),
-				"TransformsfirstLetterToUpperCase", stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "TransformsfirstLetterToUpperCase", stringBuffer.toString());
 	}
 
-	protected void method_setCopyright(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_setCopyright(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setCopyright",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setCopyright", stringBuffer.toString());
 	}
 
-	protected void method_genClassHeaderComment(
-			final StringBuffer stringBuffer, final PatternContext ctx)
+	protected void method_genClassHeaderComment(final StringBuffer stringBuffer, final PatternContext ctx)
 			throws Exception {
 
 		Calendar cal = Calendar.getInstance();
-		SimpleDateFormat sdf = new SimpleDateFormat(
-				"dd.MM.yyyy 'at' hh:mm:ss z");
+		SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy 'at' hh:mm:ss z");
 		String genTime = sdf.format(cal.getTime());
 
 		stringBuffer.append(TEXT_2);
@@ -183,8 +159,7 @@ public class JavaAbstractPattern {
 		}
 		stringBuffer.append(TEXT_4);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "genClassHeaderComment",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "genClassHeaderComment", stringBuffer.toString());
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {

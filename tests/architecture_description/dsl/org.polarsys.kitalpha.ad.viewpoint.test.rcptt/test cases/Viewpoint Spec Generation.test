@@ -1,0 +1,82 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Contexts: _OEahgKZ7Eeap-ORrGyGQRg,_7A2tkHiyEeaI368ba7nlrQ
+Element-Name: Viewpoint Spec Generation
+Element-Type: testcase
+Element-Version: 3.0
+External-Reference: 
+Id: _uY2WkFo2EeuKid43r99IsQ
+Save-Time: 1/19/21, 10:47 AM
+Testcase-Type: ecl
+
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Content-Type: text/ecl
+Entry-Name: .content
+
+get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.datatest.vpdsl/model/datatest.spec.vptext" 
+    | double-click
+with [get-editor "datatest.spec.vptext" | get-text-viewer] {
+    set-caret-pos 10 17
+    select-range 10 12 10 20
+    hover-text 10 16
+    type-text "Data test Viewpoint"
+    key-type "M1+s"
+}
+get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.datatest.vpdsl/model/datatest.spec.vptext" 
+    | get-menu -path "Viewpoint DSL/Generate viewpoint with selection" | click
+with [get-window "User Extension Selection"] {
+    get-button "Unselect all" | uncheck
+    get-table | get-item -path "Architecture Framework intergation" -column Name | check
+    get-button Finish | click
+}
+get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.datatest.af/plugin.xml" | double-click
+with [get-editor "org.polarsys.kitalpha.vp.datatest.af"] {
+    get-tab-folder | get-tab-item Extensions | click
+    get-section "All Extensions" | get-tree 
+        | select "org.eclipse.ui.views/Data test Viewpoint (view)"
+    get-section "Extension Element Details" | get-editbox 
+    -after [get-label "id*:"] -index 1 | get-property text | equals "Data test Viewpoint" | verify-true
+    get-section "All Extensions" | get-tree 
+    | select "org.polarsys.kitalpha.resourcereuse.resources/Data test Viewpoint (resource)"
+	get-section "Extension Element Details" | get-editbox 
+    -after [get-label "name:"] | get-property text | equals "Data test Viewpoint" | verify-true
+}
+
+with [get-editor "datatest.spec.vptext"] {
+    click
+    with [get-text-viewer] {
+        set-caret-pos 10 31
+        type-text " update"
+        set-caret-pos 14 2
+        key-type "M1+s"
+    }
+}
+get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.datatest.vpdsl/model/datatest.spec.vptext" 
+    | get-menu -path "Viewpoint DSL/Generate viewpoint with selection" | click
+with [get-window "User Extension Selection"] {
+    get-button "Unselect all" | uncheck
+    get-table | get-item -path "Architecture Framework intergation" -column Name | check
+    get-button Finish | click
+}
+
+get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.datatest.af/plugin.xml" | double-click
+with [get-editor "org.polarsys.kitalpha.vp.datatest.af"] {
+    get-tab-folder | get-tab-item Extensions | click
+    get-section "All Extensions" | get-tree 
+        | select "org.eclipse.ui.views/Data test Viewpoint update (view)"
+    get-section "Extension Element Details" | get-editbox 
+    -after [get-label "id*:"] -index 1 | get-property text | equals "Data test Viewpoint update" | verify-true
+    get-section "All Extensions" | get-tree 
+    | select "org.polarsys.kitalpha.resourcereuse.resources/Data test Viewpoint update (resource)"
+	get-section "Extension Element Details" | get-editbox 
+    -after [get-label "name:"] | get-property text | equals "Data test Viewpoint update" | verify-true
+}
+
+get-view "Project Explorer" | get-button -index 0 | click
+get-menu "Edit/Select All" | click
+get-menu "Edit/Delete" | click
+with [get-window "Delete Resources"] {
+    get-button "Delete project contents on disk (cannot be undone)" | check
+    get-button OK | click
+}
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--

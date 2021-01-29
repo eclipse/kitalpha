@@ -1,14 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials are made 
- * available under the terms of the Eclipse Public License v1.0 which accompanies
- * this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *    Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated with EGF 1.3.0.v20150507-0831
+//Generated with EGF 1.6.2.202001031546
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.javaclasses;
 
 import java.util.*;
@@ -19,8 +9,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.cat
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.util.ClassUtils;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common.java.JDTUtility;
 
-public class ParentJavaClass
-		extends
+public class ParentJavaClass extends
 		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.common.LoopFinishedJavaClassForContextualExplorer {
 	protected static String nl;
 
@@ -31,56 +20,25 @@ public class ParentJavaClass
 		return result;
 	}
 
-	public final String NL = nl == null ? (System.getProperties()
-			.getProperty("line.separator")) : nl;
+	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
 	protected final String TEXT_1 = "package ";
-	protected final String TEXT_2 = ";"
-			+ NL
-			+ ""
-			+ NL
-			+ "import java.util.ArrayList;"
-			+ NL
-			+ "import java.util.List;"
-			+ NL
-			+ ""
-			+ NL
-			+ "import org.eclipse.emf.ecore.EObject;"
-			+ NL
-			+ ""
-			+ NL
-			+ "import org.eclipse.amalgam.explorer.contextual.core.query.IQuery;"
-			+ NL + "" + NL + "/**" + NL + " * <!-- begin-user-doc -->" + NL
-			+ " * <!-- end-user-doc -->" + NL + " * <p>" + NL + " * </p>" + NL
+	protected final String TEXT_2 = ";" + NL + "" + NL + "import java.util.ArrayList;" + NL + "import java.util.List;"
+			+ NL + "" + NL + "import org.eclipse.emf.ecore.EObject;" + NL + "" + NL
+			+ "import org.eclipse.amalgam.explorer.contextual.core.query.IQuery;" + NL + "" + NL + "/**" + NL
+			+ " * <!-- begin-user-doc -->" + NL + " * <!-- end-user-doc -->" + NL + " * <p>" + NL + " * </p>" + NL
 			+ " *" + NL + " * @generated" + NL + " */" + NL + "public class ";
-	protected final String TEXT_3 = " implements IQuery {" + NL + "" + NL
-			+ "/**" + NL + "   * <!-- begin-user-doc -->" + NL
-			+ "   * <!-- end-user-doc -->" + NL + "   * Default constructor"
-			+ NL + "   * @generated" + NL + "   */" + NL + "\tpublic ";
-	protected final String TEXT_4 = "() {"
-			+ NL
-			+ "\t\t// TODO Auto-generated constructor stub"
-			+ NL
-			+ "\t}"
-			+ NL
-			+ ""
-			+ NL
-			+ "   /**"
-			+ NL
-			+ "    * <!-- begin-user-doc -->"
-			+ NL
-			+ "    * <!-- end-user-doc -->"
-			+ NL
-			+ "    * @param object_p: The model element for which the Contextual Explorer extension is generated"
-			+ NL
-			+ "    * @return List of object to display in the parent category"
-			+ NL + "    * @generated" + NL + "    */" + NL
-			+ "\tpublic List<Object> compute(Object object_p) {" + NL
-			+ "\t\tList<Object> result = new ArrayList<Object>();" + NL
-			+ "\t\tEObject eObject = (EObject) object_p;" + NL
-			+ "\t\tresult.add(eObject.eContainer());" + NL
-			+ "\t\treturn result;" + NL + "\t}" + NL + "" + NL + "}" + NL;
+	protected final String TEXT_3 = " implements IQuery {" + NL + "" + NL + "/**" + NL + "   * <!-- begin-user-doc -->"
+			+ NL + "   * <!-- end-user-doc -->" + NL + "   * Default constructor" + NL + "   * @generated" + NL
+			+ "   */" + NL + "\tpublic ";
+	protected final String TEXT_4 = "() {" + NL + "\t\t// TODO Auto-generated constructor stub" + NL + "\t}" + NL + ""
+			+ NL + "   /**" + NL + "    * <!-- begin-user-doc -->" + NL + "    * <!-- end-user-doc -->" + NL
+			+ "    * @param object_p: The model element for which the Contextual Explorer extension is generated" + NL
+			+ "    * @return List of object to display in the parent category" + NL + "    * @generated" + NL + "    */"
+			+ NL + "\tpublic List<Object> compute(Object object_p) {" + NL
+			+ "\t\tList<Object> result = new ArrayList<Object>();" + NL + "\t\tEObject eObject = (EObject) object_p;"
+			+ NL + "\t\tresult.add(eObject.eContainer());" + NL + "\t\treturn result;" + NL + "\t}" + NL + "" + NL + "}"
+			+ NL;
 	protected final String TEXT_5 = NL;
-	protected final String TEXT_6 = NL;
 
 	public ParentJavaClass() {
 		//Here is the constructor
@@ -113,12 +71,11 @@ public class ParentJavaClass
 		}
 		ctx.setNode(currentNode);
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
 		stringBuffer.append(TEXT_5);
-		stringBuffer.append(TEXT_6);
+		stringBuffer.append(TEXT_5);
 		return stringBuffer.toString();
 	}
 
@@ -134,16 +91,14 @@ public class ParentJavaClass
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class parameter = null;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class object) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class object) {
 		this.parameter = object;
 	}
 
@@ -153,22 +108,17 @@ public class ParentJavaClass
 		return parameters;
 	}
 
-	protected void method_setParameters(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_setParameters(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		classname = "ParentQuery";
-		String vpClassName = ClassUtils.INSTANCE
-				.getClassInterfaceName(parameter);
+		String vpClassName = ClassUtils.INSTANCE.getClassInterfaceName(parameter);
 		projectname = ClassUtils.INSTANCE.getProjectName();
-		packagename = JDTUtility.getValidPackageName(projectname + ".queries"
-				+ "." + vpClassName);
+		packagename = JDTUtility.getValidPackageName(projectname + ".queries" + "." + vpClassName);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setParameters",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setParameters", stringBuffer.toString());
 	}
 
-	protected void method_genClass(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_genClass(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		stringBuffer.append(TEXT_1);
 		stringBuffer.append(packagename);
@@ -178,12 +128,10 @@ public class ParentJavaClass
 		stringBuffer.append(classname);
 		stringBuffer.append(TEXT_4);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "genClass",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "genClass", stringBuffer.toString());
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
-		return ContextualExplorerCategoryCompliance
-				.parentCategoryCompliance(parameter);
+		return ContextualExplorerCategoryCompliance.parentCategoryCompliance(parameter);
 	}
 }

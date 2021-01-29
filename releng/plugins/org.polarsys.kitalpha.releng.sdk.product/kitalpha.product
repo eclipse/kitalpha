@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Kitalpha Product" uid="org.polarsys.kitalpha.releng.sdk.product" id="org.polarsys.kitalpha.product.kitalpha" application="org.polarsys.kitalpha.product.application" version="5.0.0.qualifier" useFeatures="true" includeLaunchers="true">
+<product name="Kitalpha Product" uid="org.polarsys.kitalpha.releng.sdk.product" id="org.polarsys.kitalpha.product.kitalpha" application="org.polarsys.kitalpha.product.application" version="5.0.1.qualifier" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
       <image path="/org.polarsys.kitalpha.product/icons/KitalphaAbout.png"/>
@@ -45,14 +45,13 @@ openFile
 
    <license>
         <text>
-   Eclipse Public License v1.0
-
-All rights reserved.
+Eclipse Public License 2.0
 
 This program and the accompanying materials are made available under the
-terms of the Eclipse Public License v1.0 which accompanies this
-distribution, and is available at
-http://www.eclipse.org/legal/epl-v10.htm
+terms of the Eclipse Public License 2.0 which is available at
+http://www.eclipse.org/legal/epl-2.0
+
+SPDX-License-Identifier: EPL-2.0
          </text>
    </license>
 

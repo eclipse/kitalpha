@@ -1,9 +1,10 @@
 /*******************************************************************************
  * Copyright (c) 2014, 2020 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0
+ * 
+ * SPDX-License-Identifier: EPL-2.0
  *  
  * Contributors:
  *   Thales Global Services S.A.S - initial API and implementation
@@ -30,11 +31,17 @@ import org.polarsys.kitalpha.doc.gen.business.core.services.ExtensionService;
 import org.polarsys.kitalpha.doc.gen.business.core.services.IndexItem;
 import org.polarsys.kitalpha.doc.gen.business.core.services.IndexerService;
 import org.polarsys.kitalpha.doc.gen.business.core.util.DefaultFileNameService;
+import org.polarsys.kitalpha.doc.gen.business.core.util.IFileNameService;
 
 
 public class DocgenCommonSubClassEmfModelVisitor extends SubClassEmfModelVisitorWithScoping {
 
 	private List<Pattern> originePatterns;
+	protected IFileNameService fileNameService;
+	
+	public DocgenCommonSubClassEmfModelVisitor() {
+		fileNameService = DefaultFileNameService.INSTANCE;
+	}
 
 	@Override
 	public void setPatterns(List<Pattern> patterns) throws PatternException {
@@ -101,7 +108,7 @@ public class DocgenCommonSubClassEmfModelVisitor extends SubClassEmfModelVisitor
 			{
 				if (iConceptsHelper.accept(model))
 				{
-					String fileName = DefaultFileNameService.INSTANCE.getFileName((EObject) model);
+					String fileName = fileNameService.getFileName((EObject) model);
 					String conceptLabel = iConceptsHelper.getConceptLabel(model);
 					IndexItem item = new IndexItem(conceptLabel, model.getClass().getName(), 
 							null, null, fileName);

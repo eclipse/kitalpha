@@ -2,7 +2,7 @@
 <feature
       id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.build.fc.feature"
       label="vpbuild Feature"
-      version="5.0.0.qualifier">
+      version="5.0.1.qualifier">
 
    <description>
       %description

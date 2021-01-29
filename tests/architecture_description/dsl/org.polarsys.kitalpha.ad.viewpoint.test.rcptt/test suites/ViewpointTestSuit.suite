@@ -4,8 +4,7 @@ Element-Name: ViewpointTestSuit
 Element-Type: testsuite
 Element-Version: 2.0
 Id: _g18_kHi1EeaI368ba7nlrQ
-Runtime-Version: 2.4.3.201909171500
-Save-Time: 10/8/19 9:58 AM
+Save-Time: 1/19/21, 10:25 AM
 
 ------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8
 Content-Type: text/testcase
@@ -25,5 +24,7 @@ _JdRukKaMEeap-ORrGyGQRg	// kind: 'test' name: 'Viewpoint Build Specification' pa
 _NELx4KzaEeeugqJ5eBR0lA	// kind: 'test' name: 'Viewpoint Packaging With Version' path: '../test cases/Viewpoint Packaging With Version.test'
 _xh_lsMbwEeiqEKhiLDHvfw	// kind: 'test' name: 'Viewpoint UI - Template' path: '../test cases/Viewpoint UI - Template.test'
 _GcX2IM1NEeij1cLrB8jXsA	// kind: 'test' name: 'Viewpoint Odesign AQL Generation' path: '../test cases/Viewpoint Odesign AQL Generation.test'
+_uY2WkFo2EeuKid43r99IsQ	// kind: 'test' name: 'Viewpoint Spec Generation' path: '../test cases/Viewpoint Spec Generation.test'
+_F2AZYFWpEeuNu7cI_rjBtg	// kind: 'test' name: 'Viewpoint Data Generation' path: '../test cases/Viewpoint Data Generation.test'
 
 ------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8--

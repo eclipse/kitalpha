@@ -2,9 +2,9 @@
 <!-- Schema file written by PDE -->
 <schema targetNamespace="org.polarsys.kitalpha.common.sirius.extension.rotativeimage" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
-      <appInfo>
+      <appinfo>
          <meta.schema plugin="org.polarsys.kitalpha.common.sirius.extension.rotativeimage" id="org.polarsys.kitalpha.common.sirius.extension.rotativeimage" name="Image"/>
-      </appInfo>
+      </appinfo>
       <documentation>
          This extension point allows odesign specifiers to create automatically rotating &quot;Workspace images&quot; mapping styles.
       </documentation>
@@ -12,9 +12,9 @@
 
    <element name="extension">
       <annotation>
-         <appInfo>
+         <appinfo>
             <meta.element />
-         </appInfo>
+         </appinfo>
       </annotation>
       <complexType>
          <sequence>
@@ -39,9 +39,9 @@
                <documentation>
                   
                </documentation>
-               <appInfo>
+               <appinfo>
                   <meta.attribute translatable="true"/>
-               </appInfo>
+               </appinfo>
             </annotation>
          </attribute>
       </complexType>
@@ -88,18 +88,18 @@ If &lt;b&gt;&lt;em&gt;4images&lt;/em&gt;&lt;/b&gt; then the pointed image path w
    </element>
 
    <annotation>
-      <appInfo>
+      <appinfo>
          <meta.section type="since"/>
-      </appInfo>
+      </appinfo>
       <documentation>
          [Enter the first release in which this extension point appears.]
       </documentation>
    </annotation>
 
    <annotation>
-      <appInfo>
+      <appinfo>
          <meta.section type="examples"/>
-      </appInfo>
+      </appinfo>
       <documentation>
          &lt;/br&gt;
 An extension &lt;b&gt;&lt;em&gt;imageid&lt;/em&gt;&lt;/b&gt; with 
@@ -134,22 +134,38 @@ That will be rotated when needed.
    </annotation>
 
    <annotation>
-      <appInfo>
+      <appinfo>
          <meta.section type="apiinfo"/>
-      </appInfo>
+      </appinfo>
       <documentation>
          [Enter API information here.]
       </documentation>
    </annotation>
 
    <annotation>
-      <appInfo>
+      <appinfo>
          <meta.section type="implementation"/>
-      </appInfo>
+      </appinfo>
       <documentation>
          [Enter information about supplied implementation of this extension point.]
       </documentation>
    </annotation>
 
+   <annotation>
+      <appinfo>
+         <meta.section type="copyright"/>
+      </appinfo>
+      <documentation>
+         Copyright (c) 2020 Thales Global Services S.A.S.
+This program and the accompanying materials are made available under the
+terms of the Eclipse Public License 2.0 which is available at
+http://www.eclipse.org/legal/epl-2.0
+
+SPDX-License-Identifier: EPL-2.0
+ 
+Contributors:
+  Thales Global Services S.A.S - initial API and implementation
+      </documentation>
+   </annotation>
 
 </schema>

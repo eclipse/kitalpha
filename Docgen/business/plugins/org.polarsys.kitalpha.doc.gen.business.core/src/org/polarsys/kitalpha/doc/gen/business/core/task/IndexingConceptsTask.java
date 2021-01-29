@@ -1,9 +1,10 @@
 /*******************************************************************************
  * Copyright (c) 2014, 2020 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0
+ * 
+ * SPDX-License-Identifier: EPL-2.0
  *  
  * Contributors:
  *   Thales Global Services S.A.S - initial API and implementation
@@ -43,7 +44,6 @@ import org.eclipse.egf.ftask.producer.invocation.ITaskProduction;
 import org.polarsys.kitalpha.doc.gen.business.core.Activator;
 import org.polarsys.kitalpha.doc.gen.business.core.services.IndexItem;
 import org.polarsys.kitalpha.doc.gen.business.core.util.DocGenHtmlUtil;
-import org.polarsys.kitalpha.doc.gen.business.core.util.EscapeChars;
 import org.polarsys.kitalpha.doc.gen.business.core.util.MonitorServices;
 
 
@@ -74,8 +74,8 @@ public class IndexingConceptsTask implements ITaskProduction {
 
 	//Regexp patterns
 	private static final Pattern pTable = Pattern.compile("<table>(.*?)</table>", Pattern.DOTALL); 	//table
-	private static final Pattern pTitle = Pattern.compile("<title>(.*)</title>", Pattern.DOTALL); 	//title
-	private static final Pattern pHeaderOne = Pattern.compile("<h1>(.*)</h1>", Pattern.DOTALL); 			//title head <h1>
+	private static final Pattern pTitle = Pattern.compile(".*<title>(.*?)</title>.*", Pattern.DOTALL); 	//title
+	private static final Pattern pHeaderOne = Pattern.compile(".*<h1>(.*?)</h1>.*", Pattern.DOTALL); 			//title head <h1>
 	private static final Pattern pParagraphe = Pattern.compile("<p>(.*?)</p>", Pattern.DOTALL); 	//paragraph
 	private static final Pattern pListStartEnd = Pattern.compile("((<ul.*?>)|(</ul>))", Pattern.DOTALL);	//indexed list
 
@@ -228,8 +228,8 @@ public class IndexingConceptsTask implements ITaskProduction {
 				
 				buffer.append(FOOTER);
 	
-				DocGenHtmlUtil.writeFilePatternContent(i+"_"+DocGenHtmlUtil.getValidFileName(currentConcept.getValue().getConceptName()),
-						projectName, outputFolder + "/concepts", buffer.toString());
+				DocGenHtmlUtil.writeFilePatternContent(i + "_" + currentConcept.getValue().getFileName(), projectName,
+						outputFolder + "/concepts", buffer.toString());
 			} else {
 				indexItemsToRemove.add(currentConcept.getKey());
 			}

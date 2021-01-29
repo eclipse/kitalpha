@@ -1,14 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials are made 
- * available under the terms of the Eclipse Public License v1.0 which accompanies
- * this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *    Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated with EGF 1.3.0.v20150507-0831
+//Generated with EGF 1.6.2.202001031546
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.common;
 
 import org.eclipse.egf.common.helper.*;
@@ -24,32 +14,24 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.uti
 public class AbstractCategoryPattern {
 	protected static String nl;
 
-	public static synchronized AbstractCategoryPattern create(
-			String lineSeparator) {
+	public static synchronized AbstractCategoryPattern create(String lineSeparator) {
 		nl = lineSeparator;
 		AbstractCategoryPattern result = new AbstractCategoryPattern();
 		nl = null;
 		return result;
 	}
 
-	public final String NL = nl == null ? (System.getProperties()
-			.getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "      <category" + NL
-			+ "            id=\"";
-	protected final String TEXT_2 = "\"" + NL
-			+ "            isTopLevel=\"true\"" + NL + "            name=\"";
-	protected final String TEXT_3 = "\">" + NL + "         <targetExplorerId"
-			+ NL + "               id=\"";
-	protected final String TEXT_4 = "\">" + NL + "         </targetExplorerId>"
-			+ NL + "         <availableForType" + NL
+	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+	protected final String TEXT_1 = "      <category" + NL + "            id=\"";
+	protected final String TEXT_2 = "\"" + NL + "            isTopLevel=\"true\"" + NL + "            name=\"";
+	protected final String TEXT_3 = "\">" + NL + "         <targetExplorerId" + NL + "               id=\"";
+	protected final String TEXT_4 = "\">" + NL + "         </targetExplorerId>" + NL + "         <availableForType" + NL
 			+ "               class=\"";
-	protected final String TEXT_5 = "\">" + NL + "         </availableForType>"
-			+ NL + "         <categoryQuery>" + NL + "            <basicQuery"
-			+ NL + "                  class=\"";
-	protected final String TEXT_6 = "\">" + NL + "            </basicQuery>"
-			+ NL + "         </categoryQuery>" + NL + "      </category>";
+	protected final String TEXT_5 = "\">" + NL + "         </availableForType>" + NL + "         <categoryQuery>" + NL
+			+ "            <basicQuery" + NL + "                  class=\"";
+	protected final String TEXT_6 = "\">" + NL + "            </basicQuery>" + NL + "         </categoryQuery>" + NL
+			+ "      </category>";
 	protected final String TEXT_7 = NL;
-	protected final String TEXT_8 = NL;
 
 	public AbstractCategoryPattern() {
 		//Here is the constructor
@@ -74,12 +56,11 @@ public class AbstractCategoryPattern {
 
 		ctx.setNode(currentNode);
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
 		stringBuffer.append(TEXT_7);
-		stringBuffer.append(TEXT_8);
+		stringBuffer.append(TEXT_7);
 		return stringBuffer.toString();
 	}
 
@@ -129,8 +110,7 @@ public class AbstractCategoryPattern {
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class vpClass = null;
 
-	public void set_vpClass(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class object) {
+	public void set_vpClass(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class object) {
 		this.vpClass = object;
 	}
 
@@ -145,44 +125,34 @@ public class AbstractCategoryPattern {
 		return parameters;
 	}
 
-	protected void method_setCategoryType(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_setCategoryType(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		// to be implemented by Patterns which inherits from this Pattern 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setCategoryType",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setCategoryType", stringBuffer.toString());
 	}
 
-	protected void method_setVpClass(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_setVpClass(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		// to be implemented by Patterns which inherits from this Pattern 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setVpClass",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "setVpClass", stringBuffer.toString());
 	}
 
-	protected void method_intLocalVariable(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_intLocalVariable(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		ContextualExplorerCategories cat = (ContextualExplorerCategories) category;
 		String projectName = ClassUtils.INSTANCE.getProjectName();
-		categoryID = ContextualExplorerCategoriesHelper.getCategoryID(cat,
-				vpClass, projectName);
+		categoryID = ContextualExplorerCategoriesHelper.getCategoryID(cat, vpClass, projectName);
 		categoryName = cat.getCategoryName();
 		targetExplorerId = cat.getTargetExplorerID();
-		domainClassFQN = ClassUtils.INSTANCE
-				.getClassInterfaceFullyQualifiedName(vpClass);
-		queryJavaClassFQN = ContextualExplorerCategoriesHelper
-				.getQueryJavaClassFQN(cat, vpClass, projectName);
+		domainClassFQN = ClassUtils.INSTANCE.getClassInterfaceFullyQualifiedName(vpClass);
+		queryJavaClassFQN = ContextualExplorerCategoriesHelper.getQueryJavaClassFQN(cat, vpClass, projectName);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "intLocalVariable",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "intLocalVariable", stringBuffer.toString());
 	}
 
-	protected void method_genCategoryConfigurationElement(
-			final StringBuffer stringBuffer, final PatternContext ctx)
+	protected void method_genCategoryConfigurationElement(final StringBuffer stringBuffer, final PatternContext ctx)
 			throws Exception {
 
 		stringBuffer.append(TEXT_1);
@@ -197,8 +167,7 @@ public class AbstractCategoryPattern {
 		stringBuffer.append(queryJavaClassFQN);
 		stringBuffer.append(TEXT_6);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(),
-				"genCategoryConfigurationElement", stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "genCategoryConfigurationElement", stringBuffer.toString());
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {

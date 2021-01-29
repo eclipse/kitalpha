@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated with EGF 1.2.0.v20140805-0858
+//Generated with EGF 1.6.2.202001031546
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.af.rule;
 
 import java.util.*;
@@ -55,8 +44,7 @@ public class RulesPattern {
 			}
 		}
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 	}
 
@@ -72,14 +60,12 @@ public class RulesPattern {
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
 
-	protected void method_createAFRule(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_createAFRule(final StringBuffer out, final PatternContext ctx) throws Exception {
 		Rule rule = ViewpointFactory.eINSTANCE.createRule();
 
 		/*** From VPDesc Model ***/
@@ -90,15 +76,10 @@ public class RulesPattern {
 		if (clazz != null && clazz.trim().length() != 0) {
 			rule.setImplementation(parameter.getClass_());
 		} else {
-			if (rule.getType().equals(
-					VpservicesPackage.eINSTANCE.getRules_Types()
-							.getEEnumLiteral(0).toString())) {
-				final String projectName = ctx.getValue(
-						AfConstants.CONTRACT_PROJECT_NAME).toString();
-				final String packageName = JDTUtility
-						.getValidPackageName(projectName + ".businessrules.");
-				final String className = JDTUtility.getValidClassName(parameter
-						.getName());
+			if (rule.getType().equals(VpservicesPackage.eINSTANCE.getRules_Types().getEEnumLiteral(0).toString())) {
+				final String projectName = ctx.getValue(AfConstants.CONTRACT_PROJECT_NAME).toString();
+				final String packageName = JDTUtility.getValidPackageName(projectName + ".businessrules.");
+				final String className = JDTUtility.getValidClassName(parameter.getName());
 				final String implementation = packageName + className;
 				rule.setImplementation(implementation);
 			}
@@ -116,21 +97,17 @@ public class RulesPattern {
 		rS.getNewRules().add(rule);
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "createAFRule",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "createAFRule", out.toString());
 	}
 
-	protected void method_getRuleSet(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_getRuleSet(final StringBuffer out, final PatternContext ctx) throws Exception {
 		rS = AfProjectManager.INSTANCE.getViewpoint().getRuleSet();
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "getRuleSet",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "getRuleSet", out.toString());
 	}
 
-	protected void method_SetVpID(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_SetVpID(final StringBuffer out, final PatternContext ctx) throws Exception {
 		parameter.setVpid(EcoreUtil.generateUUID());
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
@@ -143,15 +120,13 @@ public class RulesPattern {
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.Rule parameter;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.Rule parameter) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.Rule parameter) {
 		this.parameter = parameter;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.RuleSet rS;
 
-	public void set_rS(
-			org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.RuleSet rS) {
+	public void set_rS(org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.RuleSet rS) {
 		this.rS = rS;
 	}
 

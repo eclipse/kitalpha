@@ -1,15 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2014 Thales Global Services S.A.S.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *  
- * Contributors:
- *   Thales Global Services S.A.S - initial API and implementation
- ******************************************************************************/
-
-//Generated with EGF 1.2.0.v20140805-0858
+//Generated with EGF 1.6.2.202001031546
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.af.property;
 
 import java.util.*;
@@ -49,8 +38,7 @@ public class PropertySetPattern {
 			}
 		}
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 	}
 
@@ -64,14 +52,12 @@ public class PropertySetPattern {
 			parameterValues.put("parameter", this.parameter);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
 
-	protected void method_createPropertySet(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
+	protected void method_createPropertySet(final StringBuffer out, final PatternContext ctx) throws Exception {
 		PropertySet ps = ViewpointFactory.eINSTANCE.createPropertySet();
 		ps.setTarget(AfProjectManager.INSTANCE.getViewpoint());
 		ps.setVpid(EcoreUtil.generateUUID());
@@ -80,8 +66,7 @@ public class PropertySetPattern {
 		AfProjectManager.INSTANCE.getViewpoint().setPropertySet(ps);
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "createPropertySet",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "createPropertySet", out.toString());
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
@@ -90,8 +75,7 @@ public class PropertySetPattern {
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.PropertySet parameter;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.PropertySet parameter) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.PropertySet parameter) {
 		this.parameter = parameter;
 	}
 
