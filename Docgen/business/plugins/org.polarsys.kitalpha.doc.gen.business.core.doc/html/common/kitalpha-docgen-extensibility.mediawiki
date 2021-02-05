@@ -1,0 +1,4 @@
+= Extensibility =
+
+The HTML documentation is extensible through the use of Eclipse extension points. Detailed documentation can be found on the 
+[https://wiki.eclipse.org/images/1/18/Contributive_xhtml_DocGen-1.0.0.pdf contributive docgen] presentation.

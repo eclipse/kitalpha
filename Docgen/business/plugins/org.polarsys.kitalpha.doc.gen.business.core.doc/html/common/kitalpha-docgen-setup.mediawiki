@@ -1,0 +1,26 @@
+= Setup documentation generation =
+
+Use the '''GenerationChain Model''' wizard to setup the generation.
+In any project, create a ''genchain'' model (Menu New > EGF/GenerationChain Model). Click '''Next'''.
+
+[[Image:img/NewGenchain.png|thumb|none|600px]]
+
+Set the ''genchain'' file location and name. Click '''Next'''.
+
+[[Image:img/NewGenchain2_NewModel.png|thumb|none|600px]]
+
+Select the element to generate documentation from by clicking the '''+''' button. This element must be an EMF model.
+
+[[Image:img/NewGenchain3_AddSource.png|thumb|none|600px]]
+
+Select the ''Kitalpha EMF Documentation'' build and set the parameters. Click '''Finish'''
+
+[[Image:img/NewGenchain4_SelectDocumentationGeneration.png|thumb|none|600px]]
+
+The newly created ''genchain'' model is opened and preferences are set.
+
+[[Image:img/NewGenchain5_GenDocModelAndProperties.png|thumb|none|600px]]
+
+Run the generation by selecting the '''Run Generation Chain''' operation in the contextual menu either on the ''genchain'' file or on the ''Generation Chain'' object in the ''genchain'' editor.
+
+[[Image:img/NewGenchain6_Run.png|thumb|none|600px]]

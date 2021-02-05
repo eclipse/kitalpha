@@ -1,0 +1,19 @@
+= Preferences =
+
+Kitalpha's documentation generation provides some level of customization accessible from Eclipse '''Preferences''' menu.
+
+[[Image:img/Preferences_Root.png|thumb|none|600px]]
+
+Branding information are included in the generated HTML pages:
+* Copyright content in the footer of the pages
+* A Logo image in the header of the pages
+
+[[Image:img/Preferences_Branding.png|thumb|none|600px]]
+
+When diagrams are included in the generation, their export format can be selected in the '''Diagrams''' preferences. 
+
+[[Image:img/Preferences_Diagrams.png|thumb|none|600px]]
+
+HTML pages extensions can be contributed through Eclipse extension points (see '''Extensibility''' page for further information). Contributed extensions can be (de)activated from the '''Page extensions''' preferences.
+
+[[Image:img/Preferences_PageExtensions.png|thumb|none|600px]]
