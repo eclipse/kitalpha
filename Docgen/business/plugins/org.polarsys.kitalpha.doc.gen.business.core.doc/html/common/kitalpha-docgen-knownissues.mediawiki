@@ -1,0 +1,18 @@
+= Known issues =
+
+== Content ==
+
+# [[#Some image are not displayed in the generated documentation]]
+
+== Some image are not displayed in the generated documentation ==
+
+Some images embedded in an HTML-formatted documentation fields (using the RichText editor) are not displayed in the generated documentation.
+
+=== Possible cause ===
+
+In some case the path to these images can be long the web browser may not display the image.
+
+=== Workarounds ===
+
+* Rename the image and/or move the referenced image to a shorter path.
+* If the image link is an "absolute path", try to generate the documentation at the root of the drive.
