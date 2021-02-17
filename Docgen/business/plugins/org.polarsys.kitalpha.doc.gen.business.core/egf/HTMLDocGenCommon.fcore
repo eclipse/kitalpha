@@ -51,6 +51,26 @@
           name="copyright" invocationContracts="#_ozVlwtb3EeWvH7cKIyh8WQ">
         <type xmi:type="types:TypeString" xmi:id="_WRnzgdb2EeWvH7cKIyh8WQ"/>
       </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_L-P-EHBEEeu1dez3AdF-_g"
+          name="pattern.execution.reporter" invocationContracts="#_Bj7SUd4pEd-Qav1YnqlO9A">
+        <type xmi:type="pattern:TypePatternExecutionReporter" xmi:id="_XMv20HBEEeu1dez3AdF-_g"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_92Y28HHBEeu1dez3AdF-_g"
+          name="pattern.execution.reporter.sidebar" invocationContracts="#_Mf3OQ96TEd-ZSZ6AN4Dlrg">
+        <type xmi:type="pattern:TypePatternExecutionReporter" xmi:id="_92Y28XHBEeu1dez3AdF-_g"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_WPDYUHBsEeu1dez3AdF-_g"
+          name="pattern.execution.reporter.index.domain" invocationContracts="#_ZnydcHBmEeu1dez3AdF-_g">
+        <type xmi:type="pattern:TypePatternExecutionReporter" xmi:id="_WPDYUXBsEeu1dez3AdF-_g"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_tu0OYHBsEeu1dez3AdF-_g"
+          name="pattern.execution.reporter.index.general" invocationContracts="#_Rgvd0HBmEeu1dez3AdF-_g">
+        <type xmi:type="pattern:TypePatternExecutionReporter" xmi:id="_tu0OYXBsEeu1dez3AdF-_g"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_xHyVUHBsEeu1dez3AdF-_g"
+          name="pattern.execution.reporter.index.search" invocationContracts="#_UK4v4HBmEeu1dez3AdF-_g">
+        <type xmi:type="pattern:TypePatternExecutionReporter" xmi:id="_xHyVUXBsEeu1dez3AdF-_g"/>
+      </contracts>
     </contractContainer>
     <viewpointContainer xmi:id="_aR1dYdzzEd-Vzvs7Wt1vzQ">
       <viewpoints xmi:type="pattern:PatternViewpoint" xmi:id="_a2fpoNzzEd-Vzvs7Wt1vzQ">
@@ -414,7 +434,8 @@
         <invocationContractContainer xmi:id="_Mf3OQd6TEd-ZSZ6AN4Dlrg">
           <invocationContracts xmi:id="_Mf3OQt6TEd-ZSZ6AN4Dlrg" factoryComponentContract="#_67_oxN3rEd-Qav1YnqlO9A"
               invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Model_driven_pattern_strategy_task.fcore#_DgB2IP6fEd64XaYPo3s6sPg"/>
-          <invocationContracts xmi:id="_Mf3OQ96TEd-ZSZ6AN4Dlrg" invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Model_driven_pattern_strategy_task.fcore#_L6JSwAHAEd-4faJMEplCjxw">
+          <invocationContracts xmi:id="_Mf3OQ96TEd-ZSZ6AN4Dlrg" factoryComponentContract="#_92Y28HHBEeu1dez3AdF-_g"
+              invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Model_driven_pattern_strategy_task.fcore#_L6JSwAHAEd-4faJMEplCjxw">
             <type xmi:type="pattern:TypePatternExecutionReporter" xmi:id="_SKAsoN6eEd-ZSZ6AN4Dlrg"
                 value="org.polarsys.kitalpha.doc.gen.business.core.reporter.DocGenHtmlReporterSideBar"/>
           </invocationContracts>
@@ -452,6 +473,8 @@
               invokedContract="#_S0NCKef_Ed-RW5fqwaBgOQ"/>
           <invocationContracts xmi:id="_EmjR1egZEd-RW5fqwaBgOQ" sourceInvocationContract="#_6yUdFOdnEd-xZojMuIALSA"
               invokedContract="#_S0NCK-f_Ed-RW5fqwaBgOQ"/>
+          <invocationContracts xmi:id="_ZnydcHBmEeu1dez3AdF-_g" factoryComponentContract="#_WPDYUHBsEeu1dez3AdF-_g"
+              invokedContract="#_oYp7oHBkEeu1dez3AdF-_g"/>
         </invocationContractContainer>
       </invocations>
       <invocations xmi:id="_4zh_oOgsEd-RW5fqwaBgOQ" name="Create general index" invokedActivity="#_vaSAAOgmEd-RW5fqwaBgOQ">
@@ -464,6 +487,8 @@
               invokedContract="#_zy7bRegmEd-RW5fqwaBgOQ"/>
           <invocationContracts xmi:id="_4zh_pegsEd-RW5fqwaBgOQ" factoryComponentContract="#_pShHct4pEd-Qav1YnqlO9A"
               invokedContract="#_zy7bR-gmEd-RW5fqwaBgOQ"/>
+          <invocationContracts xmi:id="_Rgvd0HBmEeu1dez3AdF-_g" factoryComponentContract="#_tu0OYHBsEeu1dez3AdF-_g"
+              invokedContract="#__-AcUHBkEeu1dez3AdF-_g"/>
         </invocationContractContainer>
       </invocations>
       <invocations xmi:id="__u20YPcREd-opsPVeIv2ZQ" name="Open Sirius session" invokedActivity="#_Lts24fcQEd-opsPVeIv2ZQ">
@@ -477,7 +502,8 @@
         <invocationContractContainer xmi:id="_-1Iw0N4oEd-Qav1YnqlO9A">
           <invocationContracts xmi:id="_Bj7SUN4pEd-Qav1YnqlO9A" factoryComponentContract="#_67_oxN3rEd-Qav1YnqlO9A"
               invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Model_driven_pattern_strategy_task.fcore#_DgB2IP6fEd64XaYPo3s6sPg"/>
-          <invocationContracts xmi:id="_Bj7SUd4pEd-Qav1YnqlO9A" invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Model_driven_pattern_strategy_task.fcore#_L6JSwAHAEd-4faJMEplCjxw">
+          <invocationContracts xmi:id="_Bj7SUd4pEd-Qav1YnqlO9A" factoryComponentContract="#_L-P-EHBEEeu1dez3AdF-_g"
+              invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Model_driven_pattern_strategy_task.fcore#_L6JSwAHAEd-4faJMEplCjxw">
             <type xmi:type="pattern:TypePatternExecutionReporter" xmi:id="_jUmXgN4pEd-Qav1YnqlO9A"
                 value="org.polarsys.kitalpha.doc.gen.business.core.reporter.DocGenHtmlReporter"/>
           </invocationContracts>
@@ -513,6 +539,8 @@
           <invocationContracts xmi:id="_Zt4p8F48EeGfnvXFIF-hXQ" factoryComponentContract="#_67_owt3rEd-Qav1YnqlO9A"
               invokedContract="#_X9cLkF4yEeGfnvXFIF-hXQ"/>
           <invocationContracts xmi:id="_RO6a4B8LEemlca6iW58mwA" invokedContract="#_MiyqAB8LEemlca6iW58mwA"/>
+          <invocationContracts xmi:id="_UK4v4HBmEeu1dez3AdF-_g" factoryComponentContract="#_xHyVUHBsEeu1dez3AdF-_g"
+              invokedContract="#_68XucHBkEeu1dez3AdF-_g"/>
         </invocationContractContainer>
       </invocations>
       <invocations xmi:id="_FbkMQEHQEeWuloZZIJtB0g" name="Clean Scope Data" invokedActivity="#_v1xvkUHPEeWuloZZIJtB0g"/>
@@ -539,6 +567,10 @@
           description="Project folder where the result of the emf document generation is located"
           name="outputFolder" invocationContracts="#_5BiZs-gcEd-RW5fqwaBgOQ #_w2ProzRtEeCwvtbfKFEs6w #_tJ6uYzRuEeCwvtbfKFEs6w">
         <type xmi:type="types:TypeString" xmi:id="_S0NCLOf_Ed-RW5fqwaBgOQ" value="output"/>
+      </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_oYp7oHBkEeu1dez3AdF-_g"
+          name="pattern.execution.reporter" invocationContracts="#_tJ6uZzRuEeCwvtbfKFEs6w #_5BiZtugcEd-RW5fqwaBgOQ #_w2PrpzRtEeCwvtbfKFEs6w">
+        <type xmi:type="pattern:TypePatternExecutionReporter" xmi:id="_oYp7oXBkEeu1dez3AdF-_g"/>
       </contracts>
     </contractContainer>
     <viewpointContainer xmi:id="_RF8JgOf_Ed-RW5fqwaBgOQ">
@@ -688,7 +720,8 @@
           </invocationContracts>
           <invocationContracts xmi:id="_5BiZtegcEd-RW5fqwaBgOQ" factoryComponentContract="#_S0NCIef_Ed-RW5fqwaBgOQ"
               invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Pattern_task.fcore#_4ngvABe5Ed-O0P2188kAmA"/>
-          <invocationContracts xmi:id="_5BiZtugcEd-RW5fqwaBgOQ" invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Pattern_task.fcore#_7-xlwBe5Ed-O0P2188kAmA">
+          <invocationContracts xmi:id="_5BiZtugcEd-RW5fqwaBgOQ" factoryComponentContract="#_oYp7oHBkEeu1dez3AdF-_g"
+              invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Pattern_task.fcore#_7-xlwBe5Ed-O0P2188kAmA">
             <type xmi:type="pattern:TypePatternExecutionReporter" xmi:id="_AG_ZcOgdEd-RW5fqwaBgOQ"
                 value="org.polarsys.kitalpha.doc.gen.business.core.reporter.DocGenHtmlReporterIndex"/>
           </invocationContracts>
@@ -708,7 +741,8 @@
           </invocationContracts>
           <invocationContracts xmi:id="_w2PrpjRtEeCwvtbfKFEs6w" factoryComponentContract="#_S0NCIef_Ed-RW5fqwaBgOQ"
               invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Pattern_task.fcore#_4ngvABe5Ed-O0P2188kAmA"/>
-          <invocationContracts xmi:id="_w2PrpzRtEeCwvtbfKFEs6w" invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Pattern_task.fcore#_7-xlwBe5Ed-O0P2188kAmA">
+          <invocationContracts xmi:id="_w2PrpzRtEeCwvtbfKFEs6w" factoryComponentContract="#_oYp7oHBkEeu1dez3AdF-_g"
+              invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Pattern_task.fcore#_7-xlwBe5Ed-O0P2188kAmA">
             <type xmi:type="pattern:TypePatternExecutionReporter" xmi:id="_w2PrqDRtEeCwvtbfKFEs6w"
                 value="org.polarsys.kitalpha.doc.gen.business.core.reporter.DocGenHtmlReporterIndex"/>
           </invocationContracts>
@@ -728,7 +762,8 @@
           </invocationContracts>
           <invocationContracts xmi:id="_tJ6uZjRuEeCwvtbfKFEs6w" factoryComponentContract="#_S0NCIef_Ed-RW5fqwaBgOQ"
               invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Pattern_task.fcore#_4ngvABe5Ed-O0P2188kAmA"/>
-          <invocationContracts xmi:id="_tJ6uZzRuEeCwvtbfKFEs6w" invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Pattern_task.fcore#_7-xlwBe5Ed-O0P2188kAmA">
+          <invocationContracts xmi:id="_tJ6uZzRuEeCwvtbfKFEs6w" factoryComponentContract="#_oYp7oHBkEeu1dez3AdF-_g"
+              invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Pattern_task.fcore#_7-xlwBe5Ed-O0P2188kAmA">
             <type xmi:type="pattern:TypePatternExecutionReporter" xmi:id="_tJ6uaDRuEeCwvtbfKFEs6w"
                 value="org.polarsys.kitalpha.doc.gen.business.core.reporter.DocGenHtmlReporterIndex"/>
           </invocationContracts>
@@ -754,6 +789,10 @@
       </contracts>
       <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_MiyqAB8LEemlca6iW58mwA"
           name="IndexItem"/>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="_68XucHBkEeu1dez3AdF-_g"
+          name="pattern.execution.reporter" invocationContracts="#_TNzdkF47EeGfnvXFIF-hXQ">
+        <type xmi:type="pattern:TypePatternExecutionReporter" xmi:id="_68XucXBkEeu1dez3AdF-_g"/>
+      </contracts>
     </contractContainer>
     <viewpointContainer xmi:id="_TYn8kF4yEeGfnvXFIF-hXQ">
       <viewpoints xmi:type="pattern:PatternViewpoint" xmi:id="_trLDUF4yEeGfnvXFIF-hXQ">
@@ -807,7 +846,8 @@
             <type xmi:type="pattern:TypePatternList" xmi:id="_dokMQF47EeGfnvXFIF-hXQ"
                 elements="#_0T5DwF4yEeGfnvXFIF-hXQ"/>
           </invocationContracts>
-          <invocationContracts xmi:id="_TNzdkF47EeGfnvXFIF-hXQ" invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Pattern_task.fcore#_7-xlwBe5Ed-O0P2188kAmA">
+          <invocationContracts xmi:id="_TNzdkF47EeGfnvXFIF-hXQ" factoryComponentContract="#_68XucHBkEeu1dez3AdF-_g"
+              invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Pattern_task.fcore#_7-xlwBe5Ed-O0P2188kAmA">
             <type xmi:type="pattern:TypePatternExecutionReporter" xmi:id="_ehoiQF47EeGfnvXFIF-hXQ"
                 value="org.polarsys.kitalpha.doc.gen.business.core.reporter.DocGenHtmlReporterIndex"/>
           </invocationContracts>
@@ -841,6 +881,10 @@
           name="outputFolder" invocationContracts="#_1Tp8Q-goEd-RW5fqwaBgOQ #_WArME-gpEd-RW5fqwaBgOQ">
         <type xmi:type="types:TypeString" xmi:id="_zy7bSOgmEd-RW5fqwaBgOQ" value="output"/>
       </contracts>
+      <contracts xmi:type="fcore:FactoryComponentContract" xmi:id="__-AcUHBkEeu1dez3AdF-_g"
+          name="pattern.execution.reporter" invocationContracts="#_WArMF-gpEd-RW5fqwaBgOQ">
+        <type xmi:type="pattern:TypePatternExecutionReporter" xmi:id="__-AcUXBkEeu1dez3AdF-_g"/>
+      </contracts>
     </contractContainer>
     <orchestration xmi:type="fprod:ProductionPlan" xmi:id="_0P2V4OgoEd-RW5fqwaBgOQ">
       <invocations xmi:id="_1Tp8QOgoEd-RW5fqwaBgOQ" name="Collect domain index" invokedActivity="#_1kgRIOgnEd-RW5fqwaBgOQ">
@@ -867,7 +911,8 @@
           </invocationContracts>
           <invocationContracts xmi:id="_WArMFugpEd-RW5fqwaBgOQ" factoryComponentContract="#_zy7bQegmEd-RW5fqwaBgOQ"
               invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Pattern_task.fcore#_4ngvABe5Ed-O0P2188kAmA"/>
-          <invocationContracts xmi:id="_WArMF-gpEd-RW5fqwaBgOQ" invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Pattern_task.fcore#_7-xlwBe5Ed-O0P2188kAmA">
+          <invocationContracts xmi:id="_WArMF-gpEd-RW5fqwaBgOQ" factoryComponentContract="#__-AcUHBkEeu1dez3AdF-_g"
+              invokedContract="platform:/plugin/org.eclipse.egf.pattern.ftask/egf/Pattern_task.fcore#_7-xlwBe5Ed-O0P2188kAmA">
             <type xmi:type="pattern:TypePatternExecutionReporter" xmi:id="_q6vWgOi-Ed-G3PmuWcY1wg"
                 value="org.polarsys.kitalpha.doc.gen.business.core.reporter.DocGenHtmlReporterIndex"/>
           </invocationContracts>
