@@ -34,26 +34,25 @@ public class DiagramGenerator {
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
 	protected final String TEXT_1 = "\t<div>" + NL + "\t<p class=\"diagram-name\" id=\"";
 	protected final String TEXT_2 = "\">";
-	protected final String TEXT_3 = "</p>" + NL + "\t<p class=\"diagram\">" + NL + "\t\t<img id=\"";
-	protected final String TEXT_4 = "\" src=\"";
-	protected final String TEXT_5 = "/";
-	protected final String TEXT_6 = "\" alt=\"";
-	protected final String TEXT_7 = "\" usemap=\"#";
-	protected final String TEXT_8 = "\" />" + NL + "\t\t" + NL + "\t\t<br/>" + NL + "\t\t<br/>" + NL
+	protected final String TEXT_3 = "</p>" + NL + "\t<p class=\"diagram\">" + NL + "\t\t<img src=\"";
+	protected final String TEXT_4 = "/";
+	protected final String TEXT_5 = "\" alt=\"";
+	protected final String TEXT_6 = "\" usemap=\"#";
+	protected final String TEXT_7 = "\" />" + NL + "\t\t" + NL + "\t\t<br/>" + NL + "\t\t<br/>" + NL
 			+ "\t\t<map name=\"";
-	protected final String TEXT_9 = NL + "\t\t\t<area shape=\"rect\" group=\"";
-	protected final String TEXT_10 = "\" coords=\"";
-	protected final String TEXT_11 = ",";
-	protected final String TEXT_12 = "\" href=\"../";
-	protected final String TEXT_13 = ".html#";
-	protected final String TEXT_14 = "\" />";
-	protected final String TEXT_15 = "\t\t" + NL + "\t\t</map>" + NL + "\t</p>" + NL
+	protected final String TEXT_8 = NL + "\t\t\t<area shape=\"rect\" group=\"";
+	protected final String TEXT_9 = "\" coords=\"";
+	protected final String TEXT_10 = ",";
+	protected final String TEXT_11 = "\" href=\"../";
+	protected final String TEXT_12 = ".html#";
+	protected final String TEXT_13 = "\" />";
+	protected final String TEXT_14 = "\t\t" + NL + "\t\t</map>" + NL + "\t</p>" + NL
 			+ "\t<p class=\"diagram-description\">";
-	protected final String TEXT_16 = "</p>" + NL + "\t</div>";
-	protected final String TEXT_17 = NL + "<p class=\"diagram-name\" id=\"";
-	protected final String TEXT_18 = "</p>" + NL + "<p>image is missing</p>" + NL + "<p class=\"diagram-description\">";
-	protected final String TEXT_19 = "</p>";
-	protected final String TEXT_20 = NL;
+	protected final String TEXT_15 = "</p>" + NL + "\t</div>";
+	protected final String TEXT_16 = NL + "<p class=\"diagram-name\" id=\"";
+	protected final String TEXT_17 = "</p>" + NL + "<p>image is missing</p>" + NL + "<p class=\"diagram-description\">";
+	protected final String TEXT_18 = "</p>";
+	protected final String TEXT_19 = NL;
 
 	public DiagramGenerator() {
 		//Here is the constructor
@@ -112,8 +111,8 @@ public class DiagramGenerator {
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_20);
-		stringBuffer.append(TEXT_20);
+		stringBuffer.append(TEXT_19);
+		stringBuffer.append(TEXT_19);
 		return stringBuffer.toString();
 	}
 
@@ -239,16 +238,14 @@ public class DiagramGenerator {
 			stringBuffer.append(TEXT_2);
 			stringBuffer.append(EscapeChars.forHTML(diagramName));
 			stringBuffer.append(TEXT_3);
-			stringBuffer.append(diagram.hashCode());
-			stringBuffer.append(TEXT_4);
 			stringBuffer.append(generatedFolder);
-			stringBuffer.append(TEXT_5);
+			stringBuffer.append(TEXT_4);
 			stringBuffer.append(imageFile.getName());
-			stringBuffer.append(TEXT_6);
+			stringBuffer.append(TEXT_5);
 			stringBuffer.append(EscapeChars.forHTML(diagramName));
-			stringBuffer.append(TEXT_7);
+			stringBuffer.append(TEXT_6);
 			stringBuffer.append(mapName);
-			stringBuffer.append(TEXT_8);
+			stringBuffer.append(TEXT_7);
 			stringBuffer.append(mapName);
 			stringBuffer.append(TEXT_2);
 
@@ -313,42 +310,42 @@ public class DiagramGenerator {
 
 				}
 
-				stringBuffer.append(TEXT_9);
+				stringBuffer.append(TEXT_8);
 				stringBuffer.append(fileName);
-				stringBuffer.append(TEXT_10);
+				stringBuffer.append(TEXT_9);
 				stringBuffer.append(topLeft.x);
-				stringBuffer.append(TEXT_11);
+				stringBuffer.append(TEXT_10);
 				stringBuffer.append(topLeft.y);
-				stringBuffer.append(TEXT_11);
+				stringBuffer.append(TEXT_10);
 				stringBuffer.append(bottomRight.x);
-				stringBuffer.append(TEXT_11);
+				stringBuffer.append(TEXT_10);
 				stringBuffer.append(bottomRight.y);
-				stringBuffer.append(TEXT_12);
+				stringBuffer.append(TEXT_11);
 				stringBuffer.append(modelName);
+				stringBuffer.append(TEXT_4);
+				stringBuffer.append(fileName);
+				stringBuffer.append(TEXT_12);
+				stringBuffer.append(fragment);
 				stringBuffer.append(TEXT_5);
 				stringBuffer.append(fileName);
 				stringBuffer.append(TEXT_13);
-				stringBuffer.append(fragment);
-				stringBuffer.append(TEXT_6);
-				stringBuffer.append(fileName);
-				stringBuffer.append(TEXT_14);
 			}
 
-			stringBuffer.append(TEXT_15);
+			stringBuffer.append(TEXT_14);
 			stringBuffer.append(helper.diagramDocumentationPostTraitement(((DSemanticDiagram) diagram).getTarget(),
 					(result == null) ? "" : result.getDocumentation(), projectName, outputFolder));
-			stringBuffer.append(TEXT_16);
+			stringBuffer.append(TEXT_15);
 		} else {
 			if (diagramName != null && diagramName.isEmpty() == false)
 				diagramName = EscapeChars.forHTML(diagramName);
 
-			stringBuffer.append(TEXT_17);
+			stringBuffer.append(TEXT_16);
 			stringBuffer.append(sessionResource.getURIFragment(diagram));
 			stringBuffer.append(TEXT_2);
 			stringBuffer.append(diagramName);
-			stringBuffer.append(TEXT_18);
+			stringBuffer.append(TEXT_17);
 			stringBuffer.append((result == null) ? "" : result.getDocumentation());
-			stringBuffer.append(TEXT_19);
+			stringBuffer.append(TEXT_18);
 
 			org.polarsys.kitalpha.doc.gen.business.core.Activator.getDefault().getLog()
 					.log(new Status(IStatus.ERROR, org.polarsys.kitalpha.doc.gen.business.core.Activator.PLUGIN_ID,

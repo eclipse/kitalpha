@@ -50,7 +50,7 @@
 	<div>
 	<p class="diagram-name" id="<%=id%>"><%= EscapeChars.forHTML(diagramName)%></p>
 	<p class="diagram">
-		<img id="<%=diagram.hashCode()%>" src="<%=generatedFolder%>/<%=imageFile.getName()%>" alt="<%= EscapeChars.forHTML(diagramName)%>" usemap="#<%=mapName%>" />
+		<img src="<%=generatedFolder%>/<%=imageFile.getName()%>" alt="<%= EscapeChars.forHTML(diagramName)%>" usemap="#<%=mapName%>" />
 		
 		<br/>
 		<br/>
