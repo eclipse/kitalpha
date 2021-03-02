@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016, 2020 Thales Global Services S.A.S.
+ * Copyright (c) 2016, 2021 Thales Global Services S.A.S.
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License 2.0 which is available at
  * http://www.eclipse.org/legal/epl-2.0
@@ -77,14 +77,12 @@ public class ViewpointActivationStateListener extends Stub {
   protected void handleOpenSession(final Session session) {
 
     try {
-      final Set<org.eclipse.sirius.viewpoint.description.Viewpoint> newSelectedViewpoints = new HashSet<org.eclipse.sirius.viewpoint.description.Viewpoint>();
       final Set<org.eclipse.sirius.viewpoint.description.Viewpoint> newDeselectedViewpoints = new HashSet<org.eclipse.sirius.viewpoint.description.Viewpoint>();
 
       final Set<String> toActivate = new HashSet<String>();
       final Set<String> toDesactivate = new HashSet<String>();
       ViewpointManager mgr = SiriusHelper.getViewpointManager(session);
       SiriusViewpointManager.INSTANCE.collectSiriusViewpoint(mgr, toActivate, toDesactivate);
-      final Map<String, org.eclipse.sirius.viewpoint.description.Viewpoint> allSiriusViewpoints = SiriusViewpointManager.INSTANCE.getAllSiriusViewpoints();
 
       for (org.eclipse.sirius.viewpoint.description.Viewpoint vp : session.getSelectedViewpoints(false)) {
         if (toActivate.contains(vp.getName())) {
@@ -93,12 +91,9 @@ public class ViewpointActivationStateListener extends Stub {
           newDeselectedViewpoints.add(vp);
         }
       }
-      for (String name : toActivate) {
-        newSelectedViewpoints.add(allSiriusViewpoints.get(name));
-      }
-
-      RecordingCommand command = new SyncCommand(session.getTransactionalEditingDomain(), newDeselectedViewpoints, new NullProgressMonitor(), session, newSelectedViewpoints);
-      if (!newSelectedViewpoints.isEmpty() || !newDeselectedViewpoints.isEmpty()){
+      
+      RecordingCommand command = new SyncCommand(session.getTransactionalEditingDomain(), newDeselectedViewpoints, new NullProgressMonitor(), session, toActivate);
+      if (!toActivate.isEmpty() || !newDeselectedViewpoints.isEmpty()){
         session.getTransactionalEditingDomain().getCommandStack().execute(command);
       }
     } catch (Exception e) {
