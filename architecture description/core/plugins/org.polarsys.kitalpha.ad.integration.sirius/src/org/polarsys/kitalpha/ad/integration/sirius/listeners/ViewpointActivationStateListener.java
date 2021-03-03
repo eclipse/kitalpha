@@ -25,6 +25,7 @@ import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionListener;
 import org.eclipse.sirius.business.api.session.SessionManagerListener.Stub;
 import org.eclipse.sirius.ui.business.api.viewpoint.ViewpointSelectionCallback;
+import org.eclipse.sirius.viewpoint.description.Viewpoint;
 import org.polarsys.kitalpha.ad.integration.sirius.Activator;
 import org.polarsys.kitalpha.ad.integration.sirius.SiriusViewpointManager;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
@@ -77,12 +78,14 @@ public class ViewpointActivationStateListener extends Stub {
   protected void handleOpenSession(final Session session) {
 
     try {
+      final Set<org.eclipse.sirius.viewpoint.description.Viewpoint> newSelectedViewpoints = new HashSet<org.eclipse.sirius.viewpoint.description.Viewpoint>();
       final Set<org.eclipse.sirius.viewpoint.description.Viewpoint> newDeselectedViewpoints = new HashSet<org.eclipse.sirius.viewpoint.description.Viewpoint>();
 
       final Set<String> toActivate = new HashSet<String>();
       final Set<String> toDesactivate = new HashSet<String>();
       ViewpointManager mgr = SiriusHelper.getViewpointManager(session);
       SiriusViewpointManager.INSTANCE.collectSiriusViewpoint(mgr, toActivate, toDesactivate);
+      final Map<String, org.eclipse.sirius.viewpoint.description.Viewpoint> allSiriusViewpoints = SiriusViewpointManager.INSTANCE.getAllSiriusViewpoints();
 
       for (org.eclipse.sirius.viewpoint.description.Viewpoint vp : session.getSelectedViewpoints(false)) {
         if (toActivate.contains(vp.getName())) {
@@ -91,9 +94,15 @@ public class ViewpointActivationStateListener extends Stub {
           newDeselectedViewpoints.add(vp);
         }
       }
-      
-      RecordingCommand command = new SyncCommand(session.getTransactionalEditingDomain(), newDeselectedViewpoints, new NullProgressMonitor(), session, toActivate);
-      if (!toActivate.isEmpty() || !newDeselectedViewpoints.isEmpty()){
+      for (String name : toActivate) {
+    	  Viewpoint viewpoint = allSiriusViewpoints.get(name);
+    	  if (viewpoint != null) {
+    		  newSelectedViewpoints.add(viewpoint);
+    	  }
+      }
+
+      RecordingCommand command = new SyncCommand(session.getTransactionalEditingDomain(), newDeselectedViewpoints, new NullProgressMonitor(), session, newSelectedViewpoints);
+      if (!newSelectedViewpoints.isEmpty() || !newDeselectedViewpoints.isEmpty()){
         session.getTransactionalEditingDomain().getCommandStack().execute(command);
       }
     } catch (Exception e) {
