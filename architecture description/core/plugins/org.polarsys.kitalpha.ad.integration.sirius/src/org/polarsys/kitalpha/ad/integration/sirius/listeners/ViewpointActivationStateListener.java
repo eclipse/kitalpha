@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016, 2020 Thales Global Services S.A.S.
+ * Copyright (c) 2016, 2021 Thales Global Services S.A.S.
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License 2.0 which is available at
  * http://www.eclipse.org/legal/epl-2.0
@@ -25,6 +25,7 @@ import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionListener;
 import org.eclipse.sirius.business.api.session.SessionManagerListener.Stub;
 import org.eclipse.sirius.ui.business.api.viewpoint.ViewpointSelectionCallback;
+import org.eclipse.sirius.viewpoint.description.Viewpoint;
 import org.polarsys.kitalpha.ad.integration.sirius.Activator;
 import org.polarsys.kitalpha.ad.integration.sirius.SiriusViewpointManager;
 import org.polarsys.kitalpha.ad.services.manager.ViewpointManager;
@@ -94,7 +95,10 @@ public class ViewpointActivationStateListener extends Stub {
         }
       }
       for (String name : toActivate) {
-        newSelectedViewpoints.add(allSiriusViewpoints.get(name));
+    	  Viewpoint viewpoint = allSiriusViewpoints.get(name);
+    	  if (viewpoint != null) {
+    		  newSelectedViewpoints.add(viewpoint);
+    	  }
       }
 
       RecordingCommand command = new SyncCommand(session.getTransactionalEditingDomain(), newDeselectedViewpoints, new NullProgressMonitor(), session, newSelectedViewpoints);
