@@ -12,7 +12,9 @@
 
 package org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text;
 
+import org.eclipse.xtext.naming.IQualifiedNameProvider;
 import org.eclipse.xtext.resource.IResourceServiceProvider;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.naming.VpspecQualifiedNameProvider;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.generator.IViewpointSynchronizer;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.generator.VpspecGenerator;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resource.VpspecResourceServiceProvider;
@@ -49,4 +51,11 @@ public class VpspecRuntimeModule extends org.polarsys.kitalpha.ad.viewpoint.dsl.
 	public Class<? extends IViewpointSynchronizer> bindIViewpointSynchronizer() {
 		return VpspecGenerator.class;
 	}
+	
+	@Override
+	public Class<? extends IQualifiedNameProvider> bindIQualifiedNameProvider() {
+		return VpspecQualifiedNameProvider.class;
+	}
+	
+	
 }
