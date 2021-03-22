@@ -189,7 +189,7 @@ public class AfdslResourceCreator implements IAFConcreteSyntaxResourceCreator {
 		
 			String body = "		";
 			for (int i=0; i<viewpoints.size(); i++) {
-				body = body + viewpoints.get(i).getName();
+				body = body + viewpoints.get(i).getShortName();
 				if (i<(viewpoints.size()-1)) {
 					body = body + ", ";
 				}
