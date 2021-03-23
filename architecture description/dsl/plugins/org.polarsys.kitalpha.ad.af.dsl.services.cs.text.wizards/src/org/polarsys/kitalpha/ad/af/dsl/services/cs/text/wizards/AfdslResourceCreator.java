@@ -159,13 +159,15 @@ public class AfdslResourceCreator implements IAFConcreteSyntaxResourceCreator {
 		
 	}
 	private URI computeURI() {
-		String stringURI =null;
+		String aftextFileName = null;
 		if (fileName!=null) {
-			String vpName = fileName.substring(0, fileName.indexOf("."));
-			stringURI = '/' + dslProjectName + getSubFolders(parentFolder) + vpName+ "." + AFTEXT_EXTENSION;
+			aftextFileName = fileName.substring(0, fileName.indexOf("."));
 		} else {
-			stringURI = '/' + dslProjectName + getSubFolders(parentFolder) + shortName+ "." + AFTEXT_EXTENSION;
+			aftextFileName = shortName; 
 		}
+		// Use lowerCased file name as a file naming convention
+		aftextFileName = aftextFileName.toLowerCase();
+		String stringURI = '/' + dslProjectName + getSubFolders(parentFolder) + aftextFileName + "." + AFTEXT_EXTENSION;
 		return AfdslWizardsUtil.URIFix.createPlatformResourceURI(stringURI, false);	
 	}
 	

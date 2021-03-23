@@ -62,6 +62,7 @@ public class CreateGenchainAndPackageAFTask extends GenerationAdapter implements
 	private String projectId;
 	
 	private String shortName;
+	private String shortNameLowerCase;
 		
 	private int waitFor = 0;
 	
@@ -110,7 +111,9 @@ public class CreateGenchainAndPackageAFTask extends GenerationAdapter implements
 		
 		// First create generation chain
 		GenerationChain chain = createGenerationChain(shortName, projectId);
-		URI uri = URI.createURI("platform:/resource/"+projectId + "/" + Constants.MODELS_FOLDER + "/" + shortName + ".generationchain");
+		// Use lowerCased shortName as a file naming convention
+		shortNameLowerCase = shortName.toLowerCase(); 
+		URI uri = URI.createURI("platform:/resource/"+projectId + "/" + Constants.MODELS_FOLDER + "/" + shortNameLowerCase + ".generationchain");
 		ResourceSet set = new ResourceSetImpl();
 		final Resource genchainResource = set.createResource(uri);
 		genchainResource.getContents().add(chain);
@@ -205,7 +208,7 @@ public class CreateGenchainAndPackageAFTask extends GenerationAdapter implements
 		
 		AfdslOnlyBuildApplicationHelper onlyBuilder = new AfdslOnlyBuildApplicationHelper();
 		try {
-			URI uri = URI.createURI("platform:/resource/"+projectId + "/" + Constants.MODELS_FOLDER + "/" + shortName + ".generationchain");
+			URI uri = URI.createURI("platform:/resource/"+projectId + "/" + Constants.MODELS_FOLDER + "/" + shortNameLowerCase + ".generationchain");
 			onlyBuilder.onlyBuild(uri);
 		} catch (CoreException | InterruptedException e) {
 			throw new InvocationException(e);
