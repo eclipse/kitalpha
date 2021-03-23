@@ -28,7 +28,6 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.dialogs.MessageDialog;
-import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.validation.IConcreteSyntaxValidator;
 import org.polarsys.kitalpha.ad.af.dsl.as.model.afdesc.ArchitectureFramework;
@@ -70,7 +69,7 @@ public class BackwardSynchronizer {
 	
 	private void initializeAftextResource(EObject rootObject) {
 		EcoreUtil.resolveAll(rootObject);
-		EObject clone = EcoreUtil2.clone(rootObject);
+		EObject clone = EcoreUtil.copy(rootObject);
 		if (validateObject(clone)) {
 			aftextResource.getContents().add(clone);
 			String serializationContent = aftextResource.getSerializer().serialize(clone);

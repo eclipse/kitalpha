@@ -59,8 +59,10 @@ public class CreateAFModelTask implements ITaskProduction {
 		String shortName = productionContext.getInputValue(Constants.CONTRACT_SHORT_NAME, String.class);
 		
 		List<Viewpoint> notGeneratedViewpoints = new ArrayList<Viewpoint>();
-		
-		String uris = "/"+projectId+"/"+Constants.MODELS_FOLDER+"/"+shortName+ Constants.AF_MODELS_EXTENSION;
+
+		// Use lowerCased shortName as a file naming convention
+		String shortNameLowerCase = shortName.toLowerCase(); 
+		String uris = "/"+projectId+"/"+Constants.MODELS_FOLDER+"/"+shortNameLowerCase+ Constants.AF_MODELS_EXTENSION;
 		URI uri = URI.createPlatformResourceURI(uris, false);
 		
 		ResourceSet resourceSet = new ResourceSetImpl();
