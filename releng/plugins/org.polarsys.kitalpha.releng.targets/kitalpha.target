@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
-<target name="kitapha" sequenceNumber="1616072737">
+<target name="kitapha" sequenceNumber="1616610658">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.m2e.feature.feature.group" version="0.0.0"/>
@@ -77,11 +77,12 @@
       <unit id="org.eclipse.emf.ecoretools.sdk.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.ecoretools.design.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.sdk.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.acceleo.doc" version="0.0.0"/>
-      <unit id="org.eclipse.acceleo.source.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.acceleo.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.cdo.feature.group" version="0.0.0"/>
       <repository id="eclipse-release" location="https://download.eclipse.org/releases/2020-06/"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.acceleo.feature.group" version="3.7.11.202102190929"/>
+      <repository id="acceleo" location="https://download.eclipse.org/acceleo/updates/releases/3.7/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.sirius.doc.feature.feature.group" version="0.0.0"/>
