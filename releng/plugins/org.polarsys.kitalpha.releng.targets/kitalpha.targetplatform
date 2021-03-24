@@ -85,10 +85,11 @@ location eclipse-release "https://download.eclipse.org/releases/2020-06/" {
 	org.eclipse.emf.ecoretools.sdk.feature.group lazy
 	org.eclipse.emf.ecoretools.design.feature.group lazy
 	org.eclipse.emf.sdk.feature.group lazy
-	org.eclipse.acceleo.doc lazy
-	org.eclipse.acceleo.source.feature.group lazy
-	org.eclipse.acceleo.feature.group lazy
 	org.eclipse.emf.cdo.feature.group lazy
+}
+
+location acceleo "https://download.eclipse.org/acceleo/updates/releases/3.7/" {
+	org.eclipse.acceleo.feature.group [3.7.11,3.7.12)
 }
 
 location sirius "https://download.eclipse.org/sirius/updates/stable/6.5.0-S20210225-102754/2020-06/" {
