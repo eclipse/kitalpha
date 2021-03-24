@@ -26,11 +26,14 @@ import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.osgi.util.NLS;
 import org.polarsys.kitalpha.doc.gen.business.core.helper.IConceptsHelper;
+import org.polarsys.kitalpha.doc.gen.business.core.messages.Messages;
+import org.polarsys.kitalpha.doc.gen.business.core.Activator;
 import org.polarsys.kitalpha.doc.gen.business.core.scope.SubClassEmfModelVisitorWithScoping;
 import org.polarsys.kitalpha.doc.gen.business.core.services.ExtensionService;
 import org.polarsys.kitalpha.doc.gen.business.core.services.IndexItem;
 import org.polarsys.kitalpha.doc.gen.business.core.services.IndexerService;
 import org.polarsys.kitalpha.doc.gen.business.core.util.DefaultFileNameService;
+import org.polarsys.kitalpha.doc.gen.business.core.util.EscapeChars;
 import org.polarsys.kitalpha.doc.gen.business.core.util.IFileNameService;
 
 
@@ -110,6 +113,10 @@ public class DocgenCommonSubClassEmfModelVisitor extends SubClassEmfModelVisitor
 				{
 					String fileName = fileNameService.getFileName((EObject) model);
 					String conceptLabel = iConceptsHelper.getConceptLabel(model);
+					if (conceptLabel == null) {
+						Activator.logWarning(NLS.bind(Messages.Warning_ConceptNameReplacedWithNull, model));
+						conceptLabel = EscapeChars.NULL_STRING;
+					}
 					IndexItem item = new IndexItem(conceptLabel, model.getClass().getName(), 
 							null, null, fileName);
 					IndexerService.INSTANCE.getElementsToIndexItems().put(fileName, item);
