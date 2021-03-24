@@ -28,11 +28,13 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedImage;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.ImageData;
 import org.eclipse.swt.graphics.ImageLoader;
 import org.polarsys.kitalpha.doc.gen.business.core.Activator;
+import org.polarsys.kitalpha.doc.gen.business.core.messages.Messages;
 
 public class LabelProviderHelper {
 	private static final String PNG = "png";
@@ -67,7 +69,13 @@ public class LabelProviderHelper {
 	public static Object getIItemLabelProvider(EObject eObject) {
 		ComposedAdapterFactory adapterFactory = new ComposedAdapterFactory(
 				ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
-		return adapterFactory.adapt(eObject, IItemLabelProvider.class);
+		Object result = null;
+		try {
+			result = adapterFactory.adapt(eObject, IItemLabelProvider.class);
+		} catch (NullPointerException e) {
+			Activator.logWarning(NLS.bind(Messages.Warning_LabelProvider_GetText_NPE, eObject, e.getMessage()), e);
+		}
+		return result;
 	}
 
 	public static Object getImage(EObject eObject) {

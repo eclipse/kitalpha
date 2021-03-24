@@ -19,6 +19,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.eclipse.draw2d.text.TextFlow;
+import org.eclipse.osgi.util.NLS;
+import org.polarsys.kitalpha.doc.gen.business.core.Activator;
+import org.polarsys.kitalpha.doc.gen.business.core.messages.Messages;
 
 /**
  * Convenience methods for escaping special characters related to HTML, XML, and
@@ -54,6 +57,7 @@ import org.eclipse.draw2d.text.TextFlow;
 public final class EscapeChars {
 
 	private static final String AND_CHARACTER = "&amp;";
+	public static final String NULL_STRING = "null";
 	/**
 	 * Escape characters for text appearing in HTML markup.
 	 * 
@@ -212,6 +216,10 @@ public final class EscapeChars {
 	 */
 	public static String forHTML(String aText) {
 		final StringBuilder result = new StringBuilder();
+		if (aText == null) {
+			Activator.logWarning(Messages.Warning_TextReplacedWithNull);
+			return NULL_STRING;
+		}
 		final StringCharacterIterator iterator = new StringCharacterIterator(
 				aText);
 		char character = iterator.current();
