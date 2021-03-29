@@ -90,6 +90,8 @@ location eclipse-release "https://download.eclipse.org/releases/2020-06/" {
 
 location acceleo "https://download.eclipse.org/acceleo/updates/releases/3.7/" {
 	org.eclipse.acceleo.feature.group [3.7.11,3.7.12)
+	org.eclipse.acceleo.source.feature.group [3.7.11,3.7.12)
+	org.eclipse.acceleo.doc [3.7.11,3.7.12)
 }
 
 location sirius "https://download.eclipse.org/sirius/updates/stable/6.5.0-S20210326-125830/2020-06/" {
@@ -124,7 +126,7 @@ location sirius "https://download.eclipse.org/sirius/updates/stable/6.5.0-S20210
 	org.eclipse.sirius.specifier.feature.group lazy
 }
 
-location EMF-DiffMerge "https://download.eclipse.org/diffmerge/stable/0.14.0-M1/emf-diffmerge-site/" {
+location EMF-DiffMerge "https://download.eclipse.org/diffmerge/stable/0.13.1-M1/emf-diffmerge-site/" {
 	org.eclipse.emf.diffmerge.feature.feature.group lazy
 	org.eclipse.emf.diffmerge.feature.source.feature.group lazy
 	org.eclipse.emf.diffmerge.sirius.feature.feature.group lazy
@@ -135,14 +137,14 @@ location EMF-DiffMerge "https://download.eclipse.org/diffmerge/stable/0.14.0-M1/
 	org.eclipse.emf.diffmerge.egit.feature.source.feature.group lazy
 }
 
-location EDM-Patterns "https://download.eclipse.org/diffmerge/stable/0.14.0-M1/edm-patterns-site/" {
+location EDM-Patterns "https://download.eclipse.org/diffmerge/stable/0.13.1-M1/edm-patterns-site/" {
 	org.eclipse.emf.diffmerge.patterns.sdk.feature.feature.group lazy
 	org.eclipse.emf.diffmerge.patterns.sdk.feature.source.feature.group lazy
 	org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.feature.group lazy
 	org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.source.feature.group lazy
 }
 
-location coevolution "https://download.eclipse.org/diffmerge/stable/0.14.0-M1/edm-coevolution-site/" {
+location coevolution "https://download.eclipse.org/diffmerge/stable/0.13.1-M1/edm-coevolution-site/" {
 	 org.eclipse.emf.diffmerge.coevolution.sdk.feature.feature.group lazy
 	 org.eclipse.emf.diffmerge.coevolution.sdk.feature.source.feature.group lazy
 }
