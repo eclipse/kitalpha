@@ -35,9 +35,7 @@
 		<tycho-version>2.0.0</tycho-version>
 		<tycho-extras-version>2.0.0</tycho-extras-version>
 		<platform-version-name>oxygen</platform-version-name>
-
-		<tycho.scmUrl>scm:git:https://git.polarsys.org/r/kitalpha/kitalpha</tycho.scmUrl>
-
+		<tycho.scmUrl>scm:git:https://github.com/eclipse/kitalpha.git</tycho.scmUrl>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<!-- To disable source package set sourcePhase to none -->
@@ -48,15 +46,13 @@
 		<coverage.skip>false</coverage.skip>
 
 		<sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
-		<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
 		<sonar.jacoco.release>0.8.6</sonar.jacoco.release>
 		<rcptt-maven-version>2.5.1</rcptt-maven-version>
 		<target-platform-name>kitalpha</target-platform-name>
 
 		<sonar.exclusions>**/generated/**/*.java,**/src-gen/**/*.java</sonar.exclusions>
 		<sonar.test.exclusions>**/tests/**/*.java,**/test/**/*.java</sonar.test.exclusions>
-    	<aggregate.report.dir>../../../tests/target/site/jacoco-aggregate/jacoco.xml</aggregate.report.dir>
-
+    <aggregate.report.dir>../../../tests/target/site/jacoco-aggregate/jacoco.xml</aggregate.report.dir>
 	</properties>
 	<profiles>
 		<profile>
