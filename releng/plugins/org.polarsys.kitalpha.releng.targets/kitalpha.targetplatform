@@ -115,7 +115,7 @@ location sirius "https://download.eclipse.org/sirius/updates/releases/6.3.3/2019
 	org.eclipse.sirius.specifier.feature.group lazy
 }
 
-location acceleo "https://download.eclipse.org/acceleo/updates/releases/3.7/R201812041426" {
+location acceleo "https://download.eclipse.org/acceleo/updates/releases/3.7/R201902261618/" {
 	org.eclipse.acceleo.doc lazy
 	org.eclipse.acceleo.source.feature.group lazy
 	org.eclipse.acceleo.feature.group lazy
