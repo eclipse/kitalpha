@@ -73,7 +73,7 @@ public class LabelProviderHelper {
 		try {
 			result = adapterFactory.adapt(eObject, IItemLabelProvider.class);
 		} catch (NullPointerException e) {
-			Activator.logWarning(NLS.bind(Messages.Warning_LabelProvider_GetText_NPE, eObject, e.getMessage()), e);
+			Activator.logWarning(NLS.bind(Messages.warning_LabelProvider_GetText_NPE, eObject, e.getMessage()), e);
 		}
 		return result;
 	}

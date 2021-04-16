@@ -224,9 +224,15 @@ public class ExtensionCodegenGeneratorAdapter extends CodegenGeneratorAdapter {
 					}
 				}
 
-				OutputStream outputStream = createOutputStream(targetFile);
-				outputStream.write(bytes);
-				outputStream.close();
+				OutputStream outputStream = null;
+				try {
+					outputStream = createOutputStream(targetFile);
+					outputStream.write(bytes);
+				} finally {
+					if (null != outputStream) {
+						outputStream.close();
+					}
+				}
 			}
 		} catch (Exception e) {
 			// DMS Do a better job with specific exceptions? Just use chained

@@ -34,19 +34,19 @@ public class ComponentSampleDomainHelper extends EmfDomainHelper implements IDom
 	}
 
 	@Override
-	public Class<?> getDomainMetaclass(String name_p) {
+	public Class<?> getDomainMetaclass(String name) {
 		try {
-			return Class.forName(name_p);
+			return Class.forName(name);
 		} catch (ClassNotFoundException e) {
 			TransposerEMFPlugin.getDefault().getLog().log(
-					new Status(IStatus.ERROR, TransposerEMFPlugin.PLUGIN_ID, "No Domain Class called : " + name_p, e)); //$NON-NLS-1$
+					new Status(IStatus.ERROR, TransposerEMFPlugin.PLUGIN_ID, "No Domain Class called : " + name, e)); //$NON-NLS-1$
 		}
 		return null;
 	}
 	
 	@Override
 	protected Set<EPackage> getEPackages() {
-		Set<EPackage> eAllPackages = new LinkedHashSet<EPackage>();
+		Set<EPackage> eAllPackages = new LinkedHashSet<>();
 		eAllPackages.add(ComponentSamplePackage.eINSTANCE);
 		return eAllPackages;
 	}

@@ -310,10 +310,20 @@ public final class PluginUtil {
 			final long size = file.length();
 			if (size>0) {
 				final byte buff[] = new byte[(int) size];
-				final FileInputStream fis = new FileInputStream(file);
-				final DataInputStream dis = new DataInputStream(fis);
-				dis.readFully(buff);
-				dis.close();
+				FileInputStream fis = null;
+				DataInputStream dis = null;
+				try {
+					fis = new FileInputStream(file);
+					dis = new DataInputStream(fis);
+					dis.readFully(buff);
+				} finally {
+					if (null != fis) {
+						fis.close();
+					}
+					if (null != dis) {
+						dis.close();
+					}
+				}
 				return buff;
 			} else {
 				throw new RuntimeException("could not find plugin.xml file of project: " + project.getName());

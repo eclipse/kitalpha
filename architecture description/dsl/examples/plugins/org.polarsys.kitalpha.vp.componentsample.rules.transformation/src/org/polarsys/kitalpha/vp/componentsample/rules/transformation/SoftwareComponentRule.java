@@ -14,8 +14,12 @@ package org.polarsys.kitalpha.vp.componentsample.rules.transformation;
 import java.util.Collections;
 import java.util.List;
 
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
+import org.polarsys.kitalpha.transposer.TransposerCorePlugin;
 import org.polarsys.kitalpha.transposer.rules.handler.rules.api.IContext;
 import org.polarsys.kitalpha.transposer.rules.handler.rules.api.IRule;
+import org.polarsys.kitalpha.transposer.transformation.emf.TransposerEMFPlugin;
 import org.polarsys.kitalpha.vp.componentsample.ComponentSample.SoftwareComponent;
 
 /**
@@ -40,8 +44,9 @@ public class SoftwareComponentRule implements IRule<SoftwareComponent> {
 	}
 
 	@Override
-	public void apply(SoftwareComponent softwareCps, IContext context_p) throws Exception {
-		System.out.println("Transformation of Software component..."); //$NON-NLS-1$
+	public void apply(SoftwareComponent softwareCps, IContext context) throws Exception {
+		TransposerEMFPlugin.getDefault().getLog().log(
+				new Status(IStatus.INFO, TransposerEMFPlugin.PLUGIN_ID, "Transformation of Software component...", null)); //$NON-NLS-1$
 	}
 
 	@Override

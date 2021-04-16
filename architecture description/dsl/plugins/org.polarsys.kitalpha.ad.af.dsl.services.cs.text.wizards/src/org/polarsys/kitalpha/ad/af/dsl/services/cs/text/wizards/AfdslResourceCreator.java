@@ -189,11 +189,12 @@ public class AfdslResourceCreator implements IAFConcreteSyntaxResourceCreator {
 			"	shortName: \"" + shortName + "\"" + "\n" + 
 			"	Viewpoints { \n" ;
 		
-			String body = "		";
+			StringBuilder sB_Body = new StringBuilder();
+			sB_Body.append("		");
 			for (int i=0; i<viewpoints.size(); i++) {
-				body = body + viewpoints.get(i).getShortName();
+				sB_Body.append(viewpoints.get(i).getShortName());
 				if (i<(viewpoints.size()-1)) {
-					body = body + ", ";
+					sB_Body.append(", ");
 				}
 			}
 			
@@ -203,7 +204,7 @@ public class AfdslResourceCreator implements IAFConcreteSyntaxResourceCreator {
 			"		rootProjectName: " + rootProjectName + "\n" +
 			"	}\n" +	
 			"}";
-			String fileContent = header + body + footer;
+			String fileContent = header + sB_Body.toString() + footer;
 		return fileContent;
 	}
 
