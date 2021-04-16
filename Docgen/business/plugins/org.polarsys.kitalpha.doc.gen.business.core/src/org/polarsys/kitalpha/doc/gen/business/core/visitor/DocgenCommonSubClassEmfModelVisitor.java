@@ -114,7 +114,7 @@ public class DocgenCommonSubClassEmfModelVisitor extends SubClassEmfModelVisitor
 					String fileName = fileNameService.getFileName((EObject) model);
 					String conceptLabel = iConceptsHelper.getConceptLabel(model);
 					if (conceptLabel == null) {
-						Activator.logWarning(NLS.bind(Messages.Warning_ConceptNameReplacedWithNull, model));
+						Activator.logWarning(NLS.bind(Messages.warning_ConceptNameReplacedWithNull, model));
 						conceptLabel = EscapeChars.NULL_STRING;
 					}
 					IndexItem item = new IndexItem(conceptLabel, model.getClass().getName(), 

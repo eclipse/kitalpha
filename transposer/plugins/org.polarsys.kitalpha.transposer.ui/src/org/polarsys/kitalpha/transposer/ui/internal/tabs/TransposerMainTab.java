@@ -28,6 +28,7 @@ import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.ViewerSorter;
+import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;
@@ -455,8 +456,6 @@ public class TransposerMainTab extends AbstractLaunchConfigurationTab {
 		Button button = new Button(outputFolderGroup, SWT.PUSH);
 		button.setText("Browse workspace...");
 		
-		//cw.createEmptyLabel();
-		
 		gd = new GridData();
 		gd.horizontalAlignment = SWT.RIGHT;
 		gd.horizontalSpan = 3;
@@ -471,33 +470,34 @@ public class TransposerMainTab extends AbstractLaunchConfigurationTab {
   
   
 	private void attachBrowseWorkspaceListener(Button button_p,
-			final Text text_p) {
+			final Text text) {
 		button_p.addSelectionListener(new SelectionAdapter() {
+			@Override
 			public void widgetSelected(SelectionEvent e) {
-				handleBrowseWorkspace(text_p);
+				handleBrowseWorkspace(text);
 				updateLaunchConfigurationDialog();
 			}
 		});
 	}
 
-	private void attachModifyListener(final Text text_p){
-			text_p.addModifyListener(new ModifyListener() {
+	private void attachModifyListener(final Text text){
+			text.addModifyListener(new ModifyListener() {
 				public void modifyText(ModifyEvent e) {
-					_targetPath=text_p.getText();
+					_targetPath=text.getText();
 					updateLaunchConfigurationDialog();
 				}
 			});
 		}
 	
 	
-	private void handleBrowseWorkspace(Text text_p) {
+	private void handleBrowseWorkspace(Text text) {
 		ContainerSelectionDialog dialog = new ContainerSelectionDialog(
 				getShell(), ResourcesPlugin.getWorkspace().getRoot(), false,
 		"Select new file container");
-		if (dialog.open() == ContainerSelectionDialog.OK) {
+		if (dialog.open() == Window.OK) {
 			Object[] result = dialog.getResult();
 			if (result.length == 1) {
-				text_p.setText(((Path) result[0]).toString());
+				text.setText(((Path) result[0]).toString());
 			}
 		}
 	}

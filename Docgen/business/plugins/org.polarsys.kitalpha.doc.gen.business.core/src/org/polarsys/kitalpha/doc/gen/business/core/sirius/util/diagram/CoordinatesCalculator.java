@@ -574,13 +574,20 @@ public class CoordinatesCalculator {
 		try {
 			if (imageFile != null && imageFile.exists()) {
 				String fullPath = imageFile.getLocation().toString();
-				ImageInputStream imageInputStream = ImageIO.createImageInputStream(new File(fullPath));
-				ImageReader reader = getImageReader();
-				reader.setInput(imageInputStream);
-				if (reader.getInput() != null) {
-					Dimension size = new Dimension(reader.getWidth(0), reader.getHeight(0));
-					imageInputStream.close();
-					return size;
+				ImageInputStream imageInputStream = null;
+				try {
+					imageInputStream = ImageIO.createImageInputStream(new File(fullPath));
+					ImageReader reader = getImageReader();
+					reader.setInput(imageInputStream);
+					if (reader.getInput() != null) {
+						Dimension size = new Dimension(reader.getWidth(0), reader.getHeight(0));
+						imageInputStream.close();
+						return size;
+					}
+				} finally {
+					if (null != imageInputStream) {
+						imageInputStream.close();
+					}
 				}
 			}
 		} catch (Exception e) {

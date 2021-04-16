@@ -26,9 +26,9 @@ public class Messages extends NLS {
 	public static String Scope_There_Is_No_Scope;
 	public static String Scope_No_Resource_For_Export_References_Strategy;
 	
-	public static String Warning_LabelProvider_GetText_NPE;
-	public static String Warning_TextReplacedWithNull;
-	public static String Warning_ConceptNameReplacedWithNull;
+	public static String warning_LabelProvider_GetText_NPE;
+	public static String warning_TextReplacedWithNull;
+	public static String warning_ConceptNameReplacedWithNull;
 	
 	public static String Generation_Bad_Input;
 	

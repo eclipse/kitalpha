@@ -172,11 +172,13 @@ public abstract class AbstractExampleWizard extends Wizard
 			return;
 		}
 		
+		ZipInputStream zipFileStream = null;
+		
 		try {
 			// We make sure that the project is created from this point forward.
 			project.create(monitor);
 			
-			ZipInputStream zipFileStream = new ZipInputStream(interpreterZipUrl.openStream());
+			zipFileStream = new ZipInputStream(interpreterZipUrl.openStream());
 			ZipEntry zipEntry = zipFileStream.getNextEntry();
 			
 			// We derive a regexedProjectName so that the dots don't end up being
@@ -234,6 +236,14 @@ public abstract class AbstractExampleWizard extends Wizard
 			log(e);
 		} catch (CoreException e) {
 			log(e);
+		} finally {
+			try {
+				if (null != zipFileStream) {
+					zipFileStream.close();
+				}
+			} catch (IOException e) {
+				log(e);
+			}
 		}
 	}
 

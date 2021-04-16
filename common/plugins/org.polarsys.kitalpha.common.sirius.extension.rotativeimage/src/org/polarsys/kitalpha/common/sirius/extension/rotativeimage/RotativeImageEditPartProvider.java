@@ -33,26 +33,22 @@ public class RotativeImageEditPartProvider extends AbstractEditPartProvider {
 		String type = view.getType();
 		final EObject resolvedSemanticElement = ViewUtil.resolveSemanticElement(view);
 
-		if (String.valueOf(RotativeImageEditPart.VISUAL_ID).equals(type)) {
-			if (resolvedSemanticElement instanceof WorkspaceImage) {
-				final WorkspaceImage customStyle = (WorkspaceImage) resolvedSemanticElement;
-				for (RotativeDescription desc : Activator.getDefault().getDescriptions()) {
-					if (customStyle.getWorkspacePath() != null 
-							&& customStyle.getWorkspacePath().startsWith(desc.id))
-						return RotativeImageEditPart.class;
-				}
+		if (String.valueOf(WorkspaceImageEditPart.VISUAL_ID).equals(type) && resolvedSemanticElement instanceof WorkspaceImage) {
+			final WorkspaceImage customStyle = (WorkspaceImage) resolvedSemanticElement;
+			for (RotativeDescription desc : Activator.getDefault().getDescriptions()) {
+				if (customStyle.getWorkspacePath() != null 
+						&& customStyle.getWorkspacePath().startsWith(desc.id))
+					return RotativeImageEditPart.class;
 			}
 		} else {
-			if (String.valueOf(RotativeDNode4EditPart.VISUAL_ID).equals(type)) {
-				if (resolvedSemanticElement instanceof DNode) {
-					DNode spec = (DNode) resolvedSemanticElement;
-					if (spec.getOwnedStyle() != null && spec.getOwnedStyle() instanceof WorkspaceImage) {
-						WorkspaceImage customStyle = (WorkspaceImage) spec.getOwnedStyle();
-						for (RotativeDescription desc : Activator.getDefault().getDescriptions()) {
-							if (customStyle.getWorkspacePath() != null
-									&& customStyle.getWorkspacePath().startsWith(desc.id))
-								return RotativeDNode4EditPart.class;
-						}
+			if (String.valueOf(DNode4EditPart.VISUAL_ID).equals(type) && resolvedSemanticElement instanceof DNode) {
+				DNode spec = (DNode) resolvedSemanticElement;
+				if (spec.getOwnedStyle() != null && spec.getOwnedStyle() instanceof WorkspaceImage) {
+					WorkspaceImage customStyle = (WorkspaceImage) spec.getOwnedStyle();
+					for (RotativeDescription desc : Activator.getDefault().getDescriptions()) {
+						if (customStyle.getWorkspacePath() != null
+								&& customStyle.getWorkspacePath().startsWith(desc.id))
+							return RotativeDNode4EditPart.class;
 					}
 				}
 			}

@@ -19,7 +19,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.eclipse.draw2d.text.TextFlow;
-import org.eclipse.osgi.util.NLS;
 import org.polarsys.kitalpha.doc.gen.business.core.Activator;
 import org.polarsys.kitalpha.doc.gen.business.core.messages.Messages;
 
@@ -217,7 +216,7 @@ public final class EscapeChars {
 	public static String forHTML(String aText) {
 		final StringBuilder result = new StringBuilder();
 		if (aText == null) {
-			Activator.logWarning(Messages.Warning_TextReplacedWithNull);
+			Activator.logWarning(Messages.warning_TextReplacedWithNull);
 			return NULL_STRING;
 		}
 		final StringCharacterIterator iterator = new StringCharacterIterator(
