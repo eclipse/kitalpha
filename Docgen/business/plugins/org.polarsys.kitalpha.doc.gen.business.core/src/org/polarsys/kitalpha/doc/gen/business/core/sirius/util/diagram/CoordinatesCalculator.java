@@ -493,7 +493,7 @@ public class CoordinatesCalculator {
 
 			Map<Rectangle, EObject> result = new LinkedHashMap<>();
 
-			SiriusDiagramSVGGenerator gen = new SiriusDiagramSVGGenerator(diagramEP);
+			SiriusDiagramSVGGenerator gen = new SiriusDiagramSVGGenerator(diagramEP, true);
 			List<PartPositionInfo> infos = gen.getDiagramPartInfo();
 			infos.stream().filter(info -> info.getView().getElement() != null).forEach(info -> {
 				result.putAll(getInfoRectangleMap(info, registry, -deltaX, -deltaY));
