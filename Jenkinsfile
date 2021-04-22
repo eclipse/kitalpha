@@ -16,7 +16,7 @@ pipeline {
 				wrap([$class: 'Xvnc', takeScreenshot: false, useXauthority: true]) {
 					script {
 						def jacocoPrepareAgent = "-Djacoco.destFile=$JACOCO_EXEC_FILE_PATH -Djacoco.append=true org.jacoco:jacoco-maven-plugin:$JACOCO_VERSION:prepare-agent"
-						sh 'mvn -Dmaven.test.failure.ignore=true -Dtycho.localArtifacts=ignore ${jacocoPrepareAgent} clean verify -P core -P sign -P product -P test -e -f releng/plugins/org.polarsys.kitalpha.releng.parent/pom.xml'
+						sh "mvn -Dmaven.test.failure.ignore=true -Dtycho.localArtifacts=ignore ${jacocoPrepareAgent} clean verify -P core -P sign -P product -P test -e -f releng/plugins/org.polarsys.kitalpha.releng.parent/pom.xml"
 					}
 				}
 			}
@@ -74,8 +74,8 @@ pipeline {
 		stage('Perform Sonar analysis') {
 			environment {
 			    PROJECT_NAME = 'kitalpha'
-	    		SONARCLOUD_TOKEN = credentials('sonar-token-$PROJECT_NAME')
-			    SONAR_PROJECT_KEY = 'eclipse_$PROJECT_NAME'
+	    		SONARCLOUD_TOKEN = credentials('sonar-token-kitalpha')
+			    SONAR_PROJECT_KEY = 'eclipse_kitalpha'
 			}
 			steps {
 				withEnv(['MAVEN_OPTS=-Xmx4g']) {
