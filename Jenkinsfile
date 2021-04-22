@@ -7,7 +7,7 @@ pipeline {
 	}
 	environment {
 	    JACOCO_VERSION = "0.8.6"
-	    MVN_QUALITY_PROFILES = '-P core -P test'
+	    MVN_QUALITY_PROFILES = '-P core -P product -P test'
 	    JACOCO_EXEC_FILE_PATH = '${WORKSPACE}/jacoco.exec'
 	}
 	stages {
