@@ -29,6 +29,7 @@
 		<version>5.1.0-SNAPSHOT</version>
 		<relativePath>../../../releng/plugins/org.polarsys.kitalpha.releng.parent</relativePath>
 	</parent>
+	
 	<build>
 		<plugins>
 			<plugin>
@@ -39,11 +40,14 @@
 				<configuration>
 					<runner>
 						<version>${rcptt-maven-version}</version>
+						<vmArgs>
+							<vmArg>-Xmx2g</vmArg>
+						</vmArgs>
 					</runner>
 					<aut>
 						<groupId>org.polarsys</groupId>
 						<artifactId>org.polarsys.kitalpha.releng.sdk.product</artifactId>
-						<version>5.1.0-SNAPSHOT</version>
+						<version>${project.version}</version>
 						<injections>
 							<injection>
 								<site>https://download.eclipse.org/kitalpha/addons/introspector/nightly/master/updates/</site>
@@ -55,11 +59,10 @@
 								<site>${project.baseUri}../../../releng/plugins/org.polarsys.kitalpha.releng.examples.updatesite/target/repository</site>
 							</injection>
 						</injections>
-						<vmArgs>
-							<vmArg>${failsafeArgline}</vmArg>
-						</vmArgs>
+						<args>
+							<arg>-autArgs</arg>
+						</args>
 					</aut>
-					<!-- The main configuration section goes here -->
 				</configuration>
 			</plugin>
 		</plugins>
