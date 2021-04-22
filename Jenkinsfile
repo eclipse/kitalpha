@@ -22,6 +22,12 @@ pipeline {
 			}
 		}
 		stage('Deploy') {
+			when {
+				anyOf {
+					branch pattern : "v\\d\\.\\d\\.x", comparator: "REGEXP";
+					branch 'master'
+				}
+			}
 			steps {
 				sshagent ( ['projects-storage.eclipse.org-bot-ssh']) {
 					script {
@@ -59,11 +65,37 @@ pipeline {
 				}
 			}
 		}
+		stage('Publish tests results') {
+			steps {
+				junit allowEmptyResults: true, testResults: '*.xml,**/target/surefire-reports/*.xml'
+				sh "mvn -Djacoco.dataFile=$JACOCO_EXEC_FILE_PATH org.jacoco:jacoco-maven-plugin:$JACOCO_VERSION:report $MVN_QUALITY_PROFILES -e -f releng/plugins/org.polarsys.kitalpha.releng.parent/pom.xml"
+			}
+		}
+		stage('Perform Sonar analysis') {
+			environment {
+			    PROJECT_NAME = 'kitalpha'
+	    		SONARCLOUD_TOKEN = credentials('sonar-token-$PROJECT_NAME')
+			    SONAR_PROJECT_KEY = 'eclipse_$PROJECT_NAME'
+			}
+			steps {
+				withEnv(['MAVEN_OPTS=-Xmx4g']) {
+					script {
+						def jacocoParameters = "-Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml -Dsonar.java.coveragePlugin=jacoco -Dsonar.core.codeCoveragePlugin=jacoco "
+						def sonarExclusions = "-Dsonar.exclusions='**/generated/**/*.java,**/src-gen/**/*.java' "
+						def javaVersion = "8"
+						def sonarCommon = "sonar:sonar -Dsonar.projectKey=$SONAR_PROJECT_KEY -Dsonar.organization=eclipse -Dsonar.host.url=https://sonarcloud.io -Dsonar.login='$SONARCLOUD_TOKEN' -Dsonar.skipDesign=true -Dsonar.dynamic=reuseReports -Dsonar.java.source=${javaVersion} -Dsonar.scanner.force-deprecated-java-version=true "
+						def sonarBranchAnalysis = "-Dsonar.branch.name=${BRANCH_NAME}"
+						def sonarPullRequestAnalysis = ("${BRANCH_NAME}".contains('PR-') ? "-Dsonar.pullrequest.provider=GitHub -Dsonar.pullrequest.github.repository=eclipse/$PROJECT_NAME -Dsonar.pullrequest.key=${CHANGE_ID} -Dsonar.pullrequest.branch=${CHANGE_BRANCH}" : "" )
+						def sonar = sonarCommon + jacocoParameters + sonarExclusions + ("${BRANCH_NAME}".contains('PR-') ? sonarPullRequestAnalysis : sonarBranchAnalysis)
+						sh "mvn ${sonar} $MVN_QUALITY_PROFILES -e -f releng/plugins/org.polarsys.kitalpha.releng.parent/pom.xml"
+					}
+				}
+			}
+		}
 	}
 	post {
 		always {
 			archiveArtifacts artifacts: '**/*.log, **/*.layout, releng/plugins/org.polarsys.kitalpha.releng.samplecomponent.updatesite/target/repository/**, releng/plugins/org.polarsys.kitalpha.releng.runtime.core.updatesite/target/repository/**,releng/plugins/org.polarsys.kitalpha.releng.runtime.updatesite/target/repository/**,releng/plugins/org.polarsys.kitalpha.releng.sdk.updatesite/target/repository/**, releng/plugins/org.polarsys.kitalpha.releng.sdk.product/target/products/*.zip, releng/plugins/org.polarsys.kitalpha.releng.targets'
-			junit '**/target/surefire-reports/*.xml'
 		}
 	}
 }

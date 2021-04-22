@@ -41,29 +41,19 @@
 		<tycho-version>2.0.0</tycho-version>
 		<tycho-extras-version>2.0.0</tycho-extras-version>
 		<platform-version-name>oxygen</platform-version-name>
-
 		<tycho.scmUrl>scm:git:https://git.polarsys.org/r/kitalpha/kitalpha</tycho.scmUrl>
-
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		<!-- To disable source package set sourcePhase to none -->
-		<!-- sourcePhase default value package -->
-		<!-- <sourcePhase>none</sourcePhase> -->
+		
 		<sourcePhase>package</sourcePhase>
 		<testFiltreClass>**/*TestSuite.java</testFiltreClass>
 		<coverage.skip>false</coverage.skip>
-		<coverage.destFile>./target/jacoco.exec</coverage.destFile>
-
-		<sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
-		<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+		
 		<sonar.jacoco.release>0.8.6</sonar.jacoco.release>
-		<sonar.jacoco.reportPath>${coverage.destFile}</sonar.jacoco.reportPath>
+		
 		<rcptt-maven-version>2.5.1</rcptt-maven-version>
+		
 		<target-platform-name>kitalpha</target-platform-name>
-
-		<sonar.exclusions>**/generated/**/*.java,**/src-gen/**/*.java</sonar.exclusions>
-		<sonar.test.exclusions>**/tests/**/*.java,**/test/**/*.java</sonar.test.exclusions>
-
 	</properties>
 	<profiles>
 		<profile>
@@ -161,7 +151,7 @@
 						<enabled>true</enabled>
 					</releases>
 					<snapshots>
-						<enabled>true</enabled>
+						<enabled>false</enabled>
 					</snapshots>
 				</pluginRepository>
 			</pluginRepositories>
@@ -371,32 +361,9 @@
 					</execution>
 				</executions>
 			</plugin>
-			<!-- Enabling use of jacoco -->
-			<plugin>
-				<groupId>org.jacoco</groupId>
-				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>${sonar.jacoco.release}</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>prepare-agent</goal>
-						</goals>
-						<configuration>
-							<skip>${coverage.skip}</skip>
-							<destFile>${sonar.jacoco.reportPath}</destFile>
-							<propertyName>failsafeArgline</propertyName>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
 		</plugins>
 		<pluginManagement>
 			<plugins>
-				<plugin>
-					<groupId>org.sonarsource.scanner.maven</groupId>
-					<artifactId>sonar-maven-plugin</artifactId>
-					<version>${sonar-version}</version>
-				</plugin>
 				<plugin>
 					<groupId>org.eclipse.tycho</groupId>
 					<artifactId>target-platform-configuration</artifactId>
