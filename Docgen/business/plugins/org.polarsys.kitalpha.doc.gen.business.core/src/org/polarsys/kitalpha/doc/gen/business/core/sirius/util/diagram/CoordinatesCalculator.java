@@ -580,9 +580,7 @@ public class CoordinatesCalculator {
 					ImageReader reader = getImageReader();
 					reader.setInput(imageInputStream);
 					if (reader.getInput() != null) {
-						Dimension size = new Dimension(reader.getWidth(0), reader.getHeight(0));
-						imageInputStream.close();
-						return size;
+						return new Dimension(reader.getWidth(0), reader.getHeight(0));
 					}
 				} finally {
 					if (null != imageInputStream) {
