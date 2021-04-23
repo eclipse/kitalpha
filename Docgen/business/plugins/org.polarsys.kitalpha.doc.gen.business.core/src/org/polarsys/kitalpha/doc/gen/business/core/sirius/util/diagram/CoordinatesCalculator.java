@@ -581,7 +581,6 @@ public class CoordinatesCalculator {
 					reader.setInput(imageInputStream);
 					if (reader.getInput() != null) {
 						Dimension size = new Dimension(reader.getWidth(0), reader.getHeight(0));
-						imageInputStream.close();
 						return size;
 					}
 				} finally {
