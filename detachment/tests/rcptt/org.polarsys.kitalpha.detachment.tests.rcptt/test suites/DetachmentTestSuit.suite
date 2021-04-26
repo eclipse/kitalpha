@@ -4,7 +4,7 @@ Element-Name: DetachmentTestSuit
 Element-Type: testsuite
 Element-Version: 2.0
 Id: _GNAGQHXcEea2Ve0UEUBuKQ
-Save-Time: 2/16/21 9:54 AM
+Save-Time: 4/26/21 10:39 AM
 
 ------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8
 Content-Type: text/testcase
@@ -36,5 +36,6 @@ _88lF4IVUEeaAeqHNRvXNqw	// kind: 'test' name: 'Detachment_00020' path: '../test 
 _zRTtsBBtEeeIb6T5EKtzmg	// kind: 'test' name: 'Detachment_00026' path: '../test cases/Detachment_00026/Detachment_00026.test'
 _bnNuYMVZEeiKtJ96oKG8ig	// kind: 'test' name: 'SessionClosedViewpointBackupOldExtension' path: '../test cases/SessionClosedViewpointBackupOldExtension.test'
 _Zi9lcHAyEeulkKMuOPg56g	// kind: 'test' name: 'UnkownReferences_selectedViews' path: '../test cases/UnkownReferences_selectedViews.test'
+_yhjFUKZpEeufANHYRTixWw	// kind: 'test' name: 'InvalidDSemanticDiagram' path: '../test cases/InvalidDSemanticDiagram.test'
 
 ------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8--
