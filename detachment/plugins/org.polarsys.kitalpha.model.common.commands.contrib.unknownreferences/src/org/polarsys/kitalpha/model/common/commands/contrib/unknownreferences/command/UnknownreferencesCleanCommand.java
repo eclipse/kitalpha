@@ -34,6 +34,7 @@ import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.sirius.diagram.DDiagram;
+import org.eclipse.sirius.diagram.DSemanticDiagram;
 import org.eclipse.sirius.diagram.DiagramPackage;
 import org.eclipse.sirius.diagram.description.Layer;
 import org.eclipse.sirius.diagram.description.filter.FilterDescription;
@@ -45,6 +46,7 @@ import org.polarsys.kitalpha.model.common.commands.contrib.unknownreferences.Mes
 import org.polarsys.kitalpha.model.common.commands.exception.ModelCommandException;
 import org.polarsys.kitalpha.model.common.scrutiny.analyzer.ModelScrutinyException;
 import org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.scrutinizes.InvalidDMapping;
+import org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.scrutinizes.InvalidDSemanticDiagram;
 import org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.scrutinizes.InvalidDTable;
 import org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.scrutinizes.InvalidDView;
 import org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownreferences.scrutinizes.InvalidEReferences;
@@ -260,6 +262,25 @@ public class UnknownreferencesCleanCommand extends ModelCommand {
 						deleteTables(tables);
 					}
 					
+				}
+				
+				if (finder instanceof InvalidDSemanticDiagram) {
+					monitor.subTask("Clean Diagram");
+					InvalidDSemanticDiagram invalidDiagram = (InvalidDSemanticDiagram)finder;
+					Set<DSemanticDiagram> diagrams = invalidDiagram.getAnalysisResult();
+					if (ed != null){
+						RecordingCommand command = new RecordingCommand(ed) {
+							@Override
+							protected void doExecute() {
+								diagrams.stream().forEach(diag -> diag.eResource().getContents().remove(diag));
+							}
+						};
+						if (command.canExecute()) {
+							ed.getCommandStack().execute(command);
+						}
+					} else {
+						diagrams.stream().forEach(diag -> diag.eResource().getContents().remove(diag));
+					}
 				}
 			}
 			
