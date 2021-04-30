@@ -62,6 +62,9 @@
 						<args>
 							<arg>-autArgs</arg>
 						</args>
++						<vmArgs>
++							<vmArg>${argLine}</vmArg>
++						</vmArgs>
 					</aut>
 				</configuration>
 			</plugin>
