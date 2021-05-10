@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2020 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2021 Thales Global Services S.A.S.
  *  This program and the accompanying materials are made available under the
  *  terms of the Eclipse Public License 2.0 which is available at
  *  http://www.eclipse.org/legal/epl-2.0
@@ -190,7 +190,7 @@ public class AfdslResourceCreator implements IAFConcreteSyntaxResourceCreator {
 			"	Viewpoints { \n" ;
 		
 			StringBuilder sB_Body = new StringBuilder();
-			sB_Body.append("		");
+			sB_Body.append("\t\t");
 			for (int i=0; i<viewpoints.size(); i++) {
 				sB_Body.append(viewpoints.get(i).getShortName());
 				if (i<(viewpoints.size()-1)) {

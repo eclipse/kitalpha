@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2020 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2021 Thales Global Services S.A.S.
  *  This program and the accompanying materials are made available under the
  *  terms of the Eclipse Public License 2.0 which is available at
  *  http://www.eclipse.org/legal/epl-2.0
@@ -17,6 +17,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 
+import javax.xml.XMLConstants;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -130,6 +131,8 @@ public class DetachmentHelper {
 			saxFactory.setNamespaceAware(false);
 			SAXModelsElementsParser modelEltParser = new SAXModelsElementsParser();
 			SAXParser saxParser = saxFactory.newSAXParser();
+			saxParser.setProperty(XMLConstants.ACCESS_EXTERNAL_DTD, "");
+			saxParser.setProperty(XMLConstants.ACCESS_EXTERNAL_SCHEMA, "");
 			XMLReader xmlReader = saxParser.getXMLReader();
 			xmlReader.setContentHandler(modelEltParser);
 			InputSource is = new InputSource();
