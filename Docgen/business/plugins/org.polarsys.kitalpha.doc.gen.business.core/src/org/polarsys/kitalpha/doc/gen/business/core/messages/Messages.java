@@ -30,6 +30,8 @@ public class Messages extends NLS {
 	public static String warning_TextReplacedWithNull;
 	public static String warning_ConceptNameReplacedWithNull;
 	
+	public static String errorUnziptaskOutsideOfTargetDirectory;
+	
 	public static String Generation_Bad_Input;
 	
 	static {

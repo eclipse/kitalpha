@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2013, 2020 IBM Corporation.
+ * Copyright (c) 2013, 2021 IBM Corporation.
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License 2.0 which is available at
  * http://www.eclipse.org/legal/epl-2.0
@@ -163,7 +163,7 @@ public abstract class AbstractExampleWizard extends Wizard
 		String bundleName = descriptor.getBundleName();
 		String zipLocation = descriptor.getZipLocation();
 		String projectName = descriptor.getProjectName();
-		
+
 		URL interpreterZipUrl = FileLocator.find(Platform.getBundle(bundleName), new Path(zipLocation), null);
 		
 		IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(projectName);
@@ -172,13 +172,13 @@ public abstract class AbstractExampleWizard extends Wizard
 			return;
 		}
 		
-		ZipInputStream zipFileStream = null;
-		
-		try {
+		try (
+				ZipInputStream zipFileStream = new ZipInputStream(interpreterZipUrl.openStream())
+			)
+		{
 			// We make sure that the project is created from this point forward.
 			project.create(monitor);
 			
-			zipFileStream = new ZipInputStream(interpreterZipUrl.openStream());
 			ZipEntry zipEntry = zipFileStream.getNextEntry();
 			
 			// We derive a regexedProjectName so that the dots don't end up being
@@ -236,14 +236,6 @@ public abstract class AbstractExampleWizard extends Wizard
 			log(e);
 		} catch (CoreException e) {
 			log(e);
-		} finally {
-			try {
-				if (null != zipFileStream) {
-					zipFileStream.close();
-				}
-			} catch (IOException e) {
-				log(e);
-			}
 		}
 	}
 

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2020 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2021 Thales Global Services S.A.S.
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License 2.0 which is available at
  * http://www.eclipse.org/legal/epl-2.0
@@ -87,10 +87,12 @@ public class CodeManagerApplication implements IApplication {
 		System.out.println("Reading properties file"); ////$NON-NLS-1$
 		
 		Properties properties = new Properties();
-		FileInputStream stream = null;
-		try {
-		    stream = new FileInputStream(composer_property_path); 
-		    properties.load(stream);
+		
+		try (
+				FileInputStream stream = new FileInputStream(composer_property_path); 
+			)
+		{
+			properties.load(stream);
 
 			final String gen_path0 = properties
 					.getProperty(IStandaloneConstants.GENERATOR_PATH);
@@ -131,10 +133,6 @@ public class CodeManagerApplication implements IApplication {
 			IStatus status = createLaunchConfig(properties, model_f, gen_f);
 			project.delete(true, new NullProgressMonitor());
 			return status.isOK() ? IApplication.EXIT_OK : IApplicationContext.EXIT_ASYNC_RESULT;
-		} finally {
-			if (null != stream) {
-				stream.close();
-			}
 		}
 		
 	}

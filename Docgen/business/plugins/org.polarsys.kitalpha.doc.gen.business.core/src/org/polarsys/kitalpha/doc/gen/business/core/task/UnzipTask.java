@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2020 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2021 Thales Global Services S.A.S.
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License 2.0 which is available at
  * http://www.eclipse.org/legal/epl-2.0
@@ -36,6 +36,7 @@ import org.eclipse.egf.ftask.producer.context.ITaskProductionContext;
 import org.eclipse.egf.ftask.producer.invocation.ITaskProduction;
 import org.eclipse.emf.common.util.URI;
 import org.polarsys.kitalpha.doc.gen.business.core.Activator;
+import org.polarsys.kitalpha.doc.gen.business.core.messages.Messages;
 
 public class UnzipTask implements ITaskProduction {
 	private static final String TEMP_ZIP = "temp.zip";
@@ -94,6 +95,16 @@ public class UnzipTask implements ITaskProduction {
 			while (entries.hasMoreElements()) {
 				ZipEntry entry = entries.nextElement();
 				String fileName = destination + "/" + entry.getName();
+
+				// Avoid zip slip vulnerabilities
+				File destinationFile = new File(destination);
+				File file = new File(fileName);
+				String canonicalDestinationPath = destinationFile.getCanonicalPath();
+				String canonicalfileNamePath = file.getCanonicalPath();
+				if (!canonicalfileNamePath.startsWith(canonicalDestinationPath)) {
+					throw new IOException(Messages.errorUnziptaskOutsideOfTargetDirectory);
+				}
+
 				if (entry.isDirectory()) {
 					// Assume directories are stored parents first then
 					// children.
