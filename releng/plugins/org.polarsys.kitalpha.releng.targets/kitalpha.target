@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
-<target name="kitapha" sequenceNumber="1620635809">
+<target name="kitapha" sequenceNumber="1620720251">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.m2e.feature.feature.group" version="0.0.0"/>
@@ -125,19 +125,19 @@
       <unit id="org.eclipse.emf.diffmerge.gmf.feature.source.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.diffmerge.egit.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.diffmerge.egit.feature.source.feature.group" version="0.0.0"/>
-      <repository id="EMF-DiffMerge" location="https://download.eclipse.org/diffmerge/stable/0.13.1-M2/emf-diffmerge-site/"/>
+      <repository id="EMF-DiffMerge" location="https://download.eclipse.org/diffmerge/stable/0.13.1-M3/emf-diffmerge-site/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.emf.diffmerge.patterns.sdk.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.diffmerge.patterns.sdk.feature.source.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.source.feature.group" version="0.0.0"/>
-      <repository id="EDM-Patterns" location="https://download.eclipse.org/diffmerge/stable/0.13.1-M2/edm-patterns-site/"/>
+      <repository id="EDM-Patterns" location="https://download.eclipse.org/diffmerge/stable/0.13.1-M3/edm-patterns-site/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.emf.diffmerge.coevolution.sdk.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.diffmerge.coevolution.sdk.feature.source.feature.group" version="0.0.0"/>
-      <repository id="coevolution" location="https://download.eclipse.org/diffmerge/stable/0.13.1-M2/edm-coevolution-site/"/>
+      <repository id="coevolution" location="https://download.eclipse.org/diffmerge/stable/0.13.1-M3/edm-coevolution-site/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.amalgam.explorer.activity.feature.group" version="0.0.0"/>
