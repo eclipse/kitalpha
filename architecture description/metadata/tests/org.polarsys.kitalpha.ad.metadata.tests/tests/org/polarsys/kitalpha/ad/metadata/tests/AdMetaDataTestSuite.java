@@ -37,6 +37,7 @@ public class AdMetaDataTestSuite {
 		suite.addTest(new TestSuite(ModelTests2.class));
 		suite.addTest(new TestSuite(ModelTests3.class));
 		suite.addTest(new TestSuite(ModelTests4.class));
+		suite.addTest(new TestSuite(UpdateReferencedViewpointsTests.class));
 		return suite;
 	}
 
