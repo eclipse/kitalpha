@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2016, 2020 Thales Global Services S.A.S.
+ * Copyright (c) 2016, 2021 Thales Global Services S.A.S.
  *  This program and the accompanying materials are made available under the
  *  terms of the Eclipse Public License 2.0 which is available at
  *  http://www.eclipse.org/legal/epl-2.0
@@ -17,6 +17,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -51,12 +52,13 @@ import org.polarsys.kitalpha.resourcereuse.helper.ResourceReuse;
  */
 public class UsedAFViewpoints implements IScrutinize<ViewpointTreeContainer, Object> {
 
-	private Set<String> usedNsURI = new HashSet<String>();
-	private Set<String> usedViewpoints = new HashSet<String>();
+	private Set<String> usedNsURI = new HashSet<>();
+	private Set<String> usedViewpoints = new HashSet<>();
 	private ViewpointTreeContainer container;
 	private final ResourceHelper resourceReuseHelper = ResourceReuse.createHelper();
 
 	public UsedAFViewpoints() {
+		// No initialization code is required
 	}
 
 	@Override
@@ -123,11 +125,12 @@ public class UsedAFViewpoints implements IScrutinize<ViewpointTreeContainer, Obj
 	}
 
 	public Collection<String> getUsedNsURIs() {
-		return new ArrayList<String>(usedNsURI);
+		return new ArrayList<>(usedNsURI);
 	}
 
 	/**
 	 * Please use lookUp(resourceSet) instead of calling many lookUp(resource) for performance issues
+	 * @deprecated
 	 */
 	@Deprecated
 	public static Set<org.polarsys.kitalpha.resourcereuse.model.Resource> lookUp(Resource resource) {
@@ -135,7 +138,7 @@ public class UsedAFViewpoints implements IScrutinize<ViewpointTreeContainer, Obj
 	}
 
 	public static Set<org.polarsys.kitalpha.resourcereuse.model.Resource> lookUp(Collection<Resource> resources) {
-		Set<org.polarsys.kitalpha.resourcereuse.model.Resource> result = new HashSet<org.polarsys.kitalpha.resourcereuse.model.Resource>();
+		Set<org.polarsys.kitalpha.resourcereuse.model.Resource> result = new HashSet<>();
 
 		/*
 		 * Fix Concurrent Exception on the original list.
@@ -143,14 +146,15 @@ public class UsedAFViewpoints implements IScrutinize<ViewpointTreeContainer, Obj
 		 * in the resource set (i.e., this causes the the modification of the list of the resource
 		 * while we iterate over).
 		 */
-		Collection<Resource> resourcesCopyList = new ArrayList<Resource>();
+		Collection<Resource> resourcesCopyList = new ArrayList<>();
 		resourcesCopyList.addAll(resources);
 
 		ModelScrutinyRegistry analysis = Scrutineer.startScrutiny(resourcesCopyList);
 
-		Set<String> nsUris = new HashSet<String>();
-		Set<String> odesigns = new HashSet<String>();
-		collectData(analysis, nsUris, odesigns);
+		Set<String> nsUris = new HashSet<>();
+		Set<String> odesigns = new HashSet<>();
+		Set<String> collectedUsedViewpoints = new HashSet<>();
+		collectData(analysis, nsUris, odesigns, collectedUsedViewpoints);
 
 		ResourceSet set = new ResourceSetImpl();
 		try {
@@ -158,7 +162,7 @@ public class UsedAFViewpoints implements IScrutinize<ViewpointTreeContainer, Obj
 				try {
 					URI uri = URIHelper.createURI(res);
 					Viewpoint vp = (Viewpoint) set.getEObject(uri, true);
-					lookupViewpointResources(result, nsUris, odesigns, res, vp);
+					lookupViewpointResources(result, nsUris, odesigns, collectedUsedViewpoints, res, vp);
 				} catch (Exception e) {
 					ViewpointManager.pinError(res, e);
 				}
@@ -178,15 +182,31 @@ public class UsedAFViewpoints implements IScrutinize<ViewpointTreeContainer, Obj
 	}
 
 	private static void lookupViewpointResources(Set<org.polarsys.kitalpha.resourcereuse.model.Resource> result,
-			Set<String> nsUris, Set<String> odesigns, org.polarsys.kitalpha.resourcereuse.model.Resource res,
+			Set<String> nsUris, Set<String> odesigns, Set<String> usedViewpoints, org.polarsys.kitalpha.resourcereuse.model.Resource res,
 			Viewpoint vp) {
+		lookupUsedViewpoints(result, usedViewpoints, res, vp);
 		lookupViewpointEPackages(result, nsUris, res, vp);
 		lookupViewpointOdesign(result, odesigns, res, vp);
 	}
 
+	/**
+	 * Add used viewpoints resources in the set of to be updated resources
+	 * @param result
+	 * @param usedViewpoints
+	 * @param res
+	 * @param vp
+	 */
+	private static void lookupUsedViewpoints(Set<org.polarsys.kitalpha.resourcereuse.model.Resource> result,
+			Set<String> usedViewpoints, org.polarsys.kitalpha.resourcereuse.model.Resource res, Viewpoint vp) {
+		if (usedViewpoints.contains(vp.getId()) && !result.contains(res)) {
+			result.add(res);
+		}
+	}
+
 	private static void lookupViewpointOdesign(Set<org.polarsys.kitalpha.resourcereuse.model.Resource> result,
 			Set<String> odesigns, org.polarsys.kitalpha.resourcereuse.model.Resource res, Viewpoint vp) {
-		if (vp.getRepresentation() != null) {
+		// Check for representation existence and if resource has already been added
+		if (vp.getRepresentation() != null && !result.contains(res)) {
 			for (RepresentationElement representation : vp.getRepresentation().getRepresentations()) {
 				if (representation instanceof SiriusRepresentation) {
 					SiriusRepresentation sr = (SiriusRepresentation) representation;
@@ -201,7 +221,8 @@ public class UsedAFViewpoints implements IScrutinize<ViewpointTreeContainer, Obj
 
 	private static void lookupViewpointEPackages(Set<org.polarsys.kitalpha.resourcereuse.model.Resource> result,
 			Set<String> nsUris, org.polarsys.kitalpha.resourcereuse.model.Resource res, Viewpoint vp) {
-		if (vp.getMetamodel() != null) {
+		// Check for metamodel existence and if resource has already been added
+		if (vp.getMetamodel() != null && !result.contains(res)) {
 			for (EPackage pack : vp.getMetamodel().getModels()) {
 				if (pack.getNsURI() != null && nsUris.contains(pack.getNsURI())) {
 					result.add(res);
@@ -210,7 +231,7 @@ public class UsedAFViewpoints implements IScrutinize<ViewpointTreeContainer, Obj
 		}
 	}
 
-	private static void collectData(ModelScrutinyRegistry analysis, Set<String> nsUris, Set<String> odesigns) {
+	private static void collectData(ModelScrutinyRegistry analysis, Set<String> nsUris, Set<String> odesigns, Set<String> collectedUsedViewpoints) {
 		try {
 			// look for odesign
 			RegistryElement element = analysis.getRegistryElement("org.polarsys.kitalpha.model.common.scrutiny.contrib.unknownresources.scrutiny");
@@ -229,6 +250,8 @@ public class UsedAFViewpoints implements IScrutinize<ViewpointTreeContainer, Obj
 				if (iFinder instanceof UsedAFViewpoints) {
 					UsedAFViewpoints afFinder = (UsedAFViewpoints) iFinder;
 					nsUris.addAll(afFinder.getUsedNsURIs());
+					// Add used VPs for migration
+					collectedUsedViewpoints.addAll(afFinder.usedViewpoints.stream().collect(Collectors.toList()));
 				}
 			}
 
