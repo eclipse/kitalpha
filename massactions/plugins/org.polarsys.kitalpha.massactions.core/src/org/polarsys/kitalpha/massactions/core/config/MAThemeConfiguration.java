@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2018, 2020  Thales Global Services S.A.S.
+ * Copyright (c) 2018, 2021  Thales Global Services S.A.S.
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License 2.0 which is available at
  * http://www.eclipse.org/legal/epl-2.0
@@ -26,7 +26,12 @@ public class MAThemeConfiguration extends ModernNatTableThemeConfiguration {
 
   public MAThemeConfiguration() {
     super();
-    this.rHeaderSelectionCellPainter = new RowHeaderImagePainter();
-    this.rHeaderCellPainter = new RowHeaderImagePainter();
+  }
+  
+  @Override
+  public void createPainterInstances() {
+	  super.createPainterInstances();
+	  this.rHeaderSelectionCellPainter = new RowHeaderImagePainter();
+	  this.rHeaderCellPainter = new RowHeaderImagePainter();
   }
 }

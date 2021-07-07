@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2018, 2020  Thales Global Services S.A.S.
+ * Copyright (c) 2018, 2021  Thales Global Services S.A.S.
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License 2.0 which is available at
  * http://www.eclipse.org/legal/epl-2.0
@@ -24,6 +24,7 @@ import org.eclipse.sirius.ecore.extender.business.api.permission.IPermissionAuth
 import org.eclipse.sirius.ecore.extender.business.api.permission.PermissionAuthorityRegistry;
 import org.polarsys.kitalpha.massactions.core.glazedlists.MAObservableElementList;
 
+import ca.odell.glazedlists.ObservableElementChangeHandler;
 import ca.odell.glazedlists.ObservableElementList;
 
 /**
@@ -79,8 +80,8 @@ public class MAConnector implements ObservableElementList.Connector<EObject> {
   }
 
   @Override
-  public void setObservableElementList(ObservableElementList<? extends EObject> list) {
-    this.list = (MAObservableElementList) list;
+  public void setObservableElementList(ObservableElementChangeHandler<? extends EObject> list) {
+	  this.list = (MAObservableElementList) list;
   }
 
   /**
