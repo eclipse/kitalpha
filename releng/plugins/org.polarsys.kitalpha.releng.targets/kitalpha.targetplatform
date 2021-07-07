@@ -9,23 +9,18 @@
  * Contributors:
  *    Thales - initial API and implementation
  *******************************************************************************/
-target "kitapha" with source, requirements
+target "kitalpha" with source, requirements
 
-location eclipse-release "https://download.eclipse.org/releases/2020-06/" {
+include "https://download.eclipse.org/sirius/updates/stable/7.0.0-S20210722-123507/2021-06/targets/sirius_2021-06.targetplatform"
+
+location Eclipse-2021-06 "https://download.eclipse.org/releases/2021-06/" {
 	org.eclipse.m2e.feature.feature.group lazy
-	org.eclipse.sdk.feature.group lazy
 	org.eclipse.egit.feature.group lazy
 	org.eclipse.equinox.executable.feature.group lazy
-	org.eclipse.uml2.sdk.feature.group lazy
-	org.eclipse.xtext.sdk.feature.group lazy
 	org.eclipse.emf.validation.ocl lazy
-	org.eclipse.emf.transaction.sdk.feature.group lazy
 	org.eclipse.emf.transaction.doc.feature.group lazy
-	org.eclipse.gmf.runtime.sdk.feature.group lazy
-	org.eclipse.gmf.examples.runtime.feature.group lazy
-	org.eclipse.gmf.examples.runtime.ui.pde.feature.group lazy
-	org.eclipse.gmf.runtime.notation.sdk.feature.group lazy
-	org.eclipse.gef.sdk.feature.group lazy
+	org.eclipse.gmf.runtime.notation.sdk lazy
+	org.eclipse.gmf.runtime.notation.source lazy
 	org.eclipse.ui.ide lazy
 	org.eclipse.ui.workbench lazy
 	lpg.runtime.java.source lazy
@@ -38,7 +33,6 @@ location eclipse-release "https://download.eclipse.org/releases/2020-06/" {
 	org.eclipse.xtend.typesystem.emf.source lazy
 	org.eclipse.emf.mwe.utils.source lazy
 	org.eclipse.emf.mwe2.runtime.source lazy
-	org.eclipse.draw2d.sdk.feature.group lazy
 	org.eclipse.draw2d.source.feature.group lazy
 	org.eclipse.e4.rcp.source.feature.group lazy
 	org.eclipse.ecf.core.feature.feature.group lazy
@@ -52,17 +46,9 @@ location eclipse-release "https://download.eclipse.org/releases/2020-06/" {
 	org.eclipse.equinox.p2.rcp.feature.source.feature.group lazy
 	org.eclipse.equinox.p2.user.ui.source.feature.group lazy
 	org.eclipse.gef.source lazy
-	org.eclipse.gmf.examples.runtime lazy
-	org.eclipse.gmf.examples.runtime.ui.pde lazy
-	org.eclipse.gmf.runtime.notation.sdk lazy
-	org.eclipse.gmf.runtime.notation.source lazy
-	org.eclipse.gmf.runtime.sdk lazy
-	org.eclipse.gmf.runtime.thirdparty.source.feature.group lazy
-	org.eclipse.gmf.source.feature.group lazy
 	org.eclipse.help.source lazy
 	org.eclipse.jdt.source.feature.group lazy
 	org.eclipse.jgit lazy
-	org.eclipse.ocl.all.feature.group lazy
 	org.eclipse.cvs.feature.group lazy
 	org.eclipse.pde.source.feature.group lazy
 	org.eclipse.platform.source lazy
@@ -75,7 +61,6 @@ location eclipse-release "https://download.eclipse.org/releases/2020-06/" {
 	org.eclipse.xsd.mapping.source.feature.group lazy
 	org.eclipse.xsd.sdk.feature.group lazy
 	org.eclipse.xsd.source lazy
-	org.eclipse.xtend.sdk.feature.group lazy
 	org.eclipse.xtext.docs.feature.group lazy
 	org.eclipse.xtext.ui.source lazy
 	org.eclipse.xtext.xbase.lib.source lazy
@@ -84,17 +69,16 @@ location eclipse-release "https://download.eclipse.org/releases/2020-06/" {
 	org.eclipse.emf.eef.sdk-feature.feature.group lazy
 	org.eclipse.emf.ecoretools.sdk.feature.group lazy
 	org.eclipse.emf.ecoretools.design.feature.group lazy
-	org.eclipse.emf.sdk.feature.group lazy
 	org.eclipse.emf.cdo.feature.group lazy
+	org.eclipse.collections.feature.source.feature.group lazy
 }
 
 location acceleo "https://download.eclipse.org/acceleo/updates/releases/3.7/" {
-	org.eclipse.acceleo.feature.group [3.7.11,3.7.12)
 	org.eclipse.acceleo.source.feature.group [3.7.11,3.7.12)
 	org.eclipse.acceleo.doc [3.7.11,3.7.12)
 }
 
-location sirius "https://download.eclipse.org/sirius/updates/releases/6.5.1/2020-06/" {
+location sirius "https://download.eclipse.org/sirius/updates/stable/7.0.0-S20210722-123507/2021-06/" {
 	org.eclipse.sirius.doc.feature.feature.group lazy
     org.eclipse.sirius.runtime.source.feature.group lazy
     org.eclipse.sirius.runtime.acceleo.feature.group lazy
@@ -126,7 +110,7 @@ location sirius "https://download.eclipse.org/sirius/updates/releases/6.5.1/2020
 	org.eclipse.sirius.specifier.feature.group lazy
 }
 
-location EMF-DiffMerge "https://download.eclipse.org/diffmerge/stable/0.13.1-M3/emf-diffmerge-site/" {
+location EMF-DiffMerge "https://download.eclipse.org/diffmerge/releases/0.13.1/emf-diffmerge-site/" {
 	org.eclipse.emf.diffmerge.feature.feature.group lazy
 	org.eclipse.emf.diffmerge.feature.source.feature.group lazy
 	org.eclipse.emf.diffmerge.sirius.feature.feature.group lazy
@@ -137,14 +121,14 @@ location EMF-DiffMerge "https://download.eclipse.org/diffmerge/stable/0.13.1-M3/
 	org.eclipse.emf.diffmerge.egit.feature.source.feature.group lazy
 }
 
-location EDM-Patterns "https://download.eclipse.org/diffmerge/stable/0.13.1-M3/edm-patterns-site/" {
+location EDM-Patterns "https://download.eclipse.org/diffmerge/releases/0.13.1/edm-patterns-site/" {
 	org.eclipse.emf.diffmerge.patterns.sdk.feature.feature.group lazy
 	org.eclipse.emf.diffmerge.patterns.sdk.feature.source.feature.group lazy
 	org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.feature.group lazy
 	org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.source.feature.group lazy
 }
 
-location coevolution "https://download.eclipse.org/diffmerge/stable/0.13.1-M3/edm-coevolution-site/" {
+location coevolution "https://download.eclipse.org/diffmerge/releases/0.13.1/edm-coevolution-site/" {
 	 org.eclipse.emf.diffmerge.coevolution.sdk.feature.feature.group lazy
 	 org.eclipse.emf.diffmerge.coevolution.sdk.feature.source.feature.group lazy
 }
@@ -165,16 +149,16 @@ location EGFSdk "https://download.eclipse.org/egf/updates/1.6.2/2019-06/" {
 	org.eclipse.egf.sdk.feature.source.feature.group lazy
 }
 
-location Nebula "https://download.eclipse.org/nebula/releases/1.4.0/" {
+location Nebula "https://download.eclipse.org/nebula/releases/2.3.0/" {
 	org.eclipse.nebula.widgets.richtext.feature.feature.group lazy
 	org.eclipse.nebula.widgets.tablecombo.feature.feature.group lazy
 }
 
-location Nattable "https://download.eclipse.org/nattable/releases/1.5.0/repository/" {
+location Nattable "https://download.eclipse.org/nattable/releases/2.0.1/repository/" {
 	org.eclipse.nebula.widgets.nattable.core.feature.feature.group lazy
 	org.eclipse.nebula.widgets.nattable.extension.glazedlists.feature.feature.group lazy
 }
 
-location orbit "https://download.eclipse.org/tools/orbit/downloads/drops/R20180206163158/repository" {
+location Orbit "https://download.eclipse.org/tools/orbit/downloads/drops/R20210602031627/repository" {
 	ca.odell.glazedlists lazy
 }
