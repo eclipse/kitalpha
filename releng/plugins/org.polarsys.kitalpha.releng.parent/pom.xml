@@ -236,6 +236,7 @@
 				<version>${tycho-version}</version>
 				<configuration>
 					<targetDefinitionIncludeSource>honor</targetDefinitionIncludeSource>
+					<executionEnvironment>JavaSE-14</executionEnvironment>
 					<target>
 						<artifact>
 							<groupId>org.polarsys</groupId>
