@@ -25,7 +25,7 @@ pipeline {
 			when {
 				anyOf {
 					branch pattern : "v\\d\\.\\d\\.x", comparator: "REGEXP";
-					branch 'master'
+					branch pattern : "master.*", comparator: "REGEXP";
 				}
 			}
 			steps {
