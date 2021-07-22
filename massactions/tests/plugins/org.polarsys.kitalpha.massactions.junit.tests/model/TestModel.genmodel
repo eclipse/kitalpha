@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.polarsys.kitalpha.massactions.tests.ju/src-gen"
+    editDirectory="/org.polarsys.kitalpha.massactions.tests.ju.edit/src-gen" editorDirectory="/org.polarsys.kitalpha.massactions.tests.ju.editor/src-gen"
+    modelPluginID="org.polarsys.kitalpha.massactions.tests.ju" modelName="TestModel"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" testsDirectory="/org.polarsys.kitalpha.massactions.tests.ju.tests/src-gen"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>TestModel.ecore</foreignModel>
+  <genPackages prefix="TestModel" disposableProviderFactory="true" ecorePackage="TestModel.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="TestModel.ecore#//Sex">
+      <genEnumLiterals ecoreEnumLiteral="TestModel.ecore#//Sex/Male"/>
+      <genEnumLiterals ecoreEnumLiteral="TestModel.ecore#//Sex/Female"/>
+      <genEnumLiterals ecoreEnumLiteral="TestModel.ecore#//Sex/Unknown"/>
+    </genEnums>
+    <genClasses ecoreClass="TestModel.ecore#//Person">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestModel.ecore#//Person/married"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestModel.ecore#//Person/salary"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TestModel.ecore#//Person/children"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TestModel.ecore#//Person/friends"/>
+    </genClasses>
+    <genClasses ecoreClass="TestModel.ecore#//Man"/>
+    <genClasses ecoreClass="TestModel.ecore#//Woman"/>
+    <genClasses ecoreClass="TestModel.ecore#//Entity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestModel.ecore#//Entity/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestModel.ecore#//Entity/age"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestModel.ecore#//Entity/sex"/>
+    </genClasses>
+    <genClasses ecoreClass="TestModel.ecore#//Elf">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestModel.ecore#//Elf/mana"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
