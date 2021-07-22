@@ -21,10 +21,14 @@
  
     <packaging>pom</packaging>
 
-  <parent>
-    <groupId>org.polarsys</groupId>
-    <artifactId>org.polarsys.kitalpha</artifactId>
-    <version>5.2.0-SNAPSHOT</version>
-    <relativePath>../../../releng/plugins/org.polarsys.kitalpha.releng.parent</relativePath>
-  </parent>
+	<parent>
+		<groupId>org.polarsys</groupId>
+		<artifactId>org.polarsys.kitalpha</artifactId>
+		<version>5.2.0-SNAPSHOT</version>
+		<relativePath>../../../releng/plugins/org.polarsys.kitalpha.releng.parent</relativePath>
+	</parent>
+
+	<properties>
+		<tycho.surefire.useUIHarness>true</tycho.surefire.useUIHarness>
+	</properties>
 </project>

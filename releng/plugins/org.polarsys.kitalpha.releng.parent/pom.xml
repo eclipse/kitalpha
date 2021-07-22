@@ -44,6 +44,7 @@
 		<tycho.scmUrl>scm:git:https://git.polarsys.org/r/kitalpha/kitalpha</tycho.scmUrl>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
+		<tycho.surefire.useUIHarness>false</tycho.surefire.useUIHarness>
 		
 		<sourcePhase>package</sourcePhase>
 		<testFiltreClass>**/*TestSuite.java</testFiltreClass>
@@ -228,6 +229,7 @@
 						<include>${testFiltreClass}</include>
 					</includes>
 					<testFailureIgnore>true</testFailureIgnore>
+					<useUIHarness>${tycho.surefire.useUIHarness}</useUIHarness>
 				</configuration>
 			</plugin>
 			<plugin>
