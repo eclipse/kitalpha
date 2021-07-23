@@ -21,7 +21,7 @@ openFile
       <programArgsLin>--launcher.GTK_version
 2
       </programArgsLin>
-      <vmArgs>-Dosgi.requiredJavaVersion=1.8
+      <vmArgs>-Dosgi.requiredJavaVersion=11
 -Xms512m
 -Xmx2048m
 -XX:PermSize=256M
@@ -45,7 +45,7 @@ openFile
 
    <license>
         <text>
-Eclipse Public License 2.0
+   Eclipse Public License 2.0
 
 This program and the accompanying materials are made available under the
 terms of the Eclipse Public License 2.0 which is available at
@@ -179,21 +179,21 @@ SPDX-License-Identifier: EPL-2.0
       <feature id="org.polarsys.kitalpha.emde.genchain.feature.source"/>
       <feature id="org.polarsys.kitalpha.richtext.widget.ext.feature"/>
       <feature id="org.polarsys.kitalpha.richtext.widget.ext.feature.source"/>
-	  <feature id="org.polarsys.kitalpha.richtext.widget.tools.ext.feature"/>
-	  <feature id="org.polarsys.kitalpha.richtext.widget.tools.ext.feature.source"/>
+      <feature id="org.polarsys.kitalpha.richtext.widget.tools.ext.feature"/>
+      <feature id="org.polarsys.kitalpha.richtext.widget.tools.ext.feature.source"/>
       <feature id="org.eclipse.nebula.widgets.richtext.feature"/>
       <feature id="org.polarsys.kitalpha.massactions.feature"/>
    </features>
 
    <configurations>
+      <plugin id="org.apache.felix.scr" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
-      <plugin id="org.apache.felix.scr" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
-      <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
       <plugin id="org.eclipse.equinox.p2.reconciler.dropins" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
       <plugin id="org.eclipse.update.configurator" autoStart="true" startLevel="4" />
-      <property name="org.eclipse.update.reconcile" value="false" />     
+      <property name="org.eclipse.update.reconcile" value="false" />
    </configurations>
 
    <preferencesInfo>
