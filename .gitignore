@@ -31,6 +31,7 @@ tmp/
 ## Sonar
 ########
 org.sonar.ide.eclipse.core.prefs
+org.sonarlint.eclipse.core.prefs
 
 #########
 ## KDiff3
