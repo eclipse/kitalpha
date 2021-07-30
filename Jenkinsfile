@@ -6,6 +6,7 @@ pipeline {
 		jdk 'openjdk-jdk14-latest'
 	}
 	environment {
+		BUILD_KEY = (github.isPullRequest() ? CHANGE_TARGET : BRANCH_NAME).replaceFirst(/^v/, '')
 	    JACOCO_VERSION = "0.8.6"
 	    MVN_QUALITY_PROFILES = '-P core -P product -P test'
 	    JACOCO_EXEC_FILE_PATH = '${WORKSPACE}/jacoco.exec'
@@ -16,7 +17,9 @@ pipeline {
 				wrap([$class: 'Xvnc', takeScreenshot: false, useXauthority: true]) {
 					script {
 						def jacocoPrepareAgent = "-Djacoco.destFile=$JACOCO_EXEC_FILE_PATH -Djacoco.append=true org.jacoco:jacoco-maven-plugin:$JACOCO_VERSION:prepare-agent"
-						sh "mvn -Dmaven.test.failure.ignore=true -Dtycho.localArtifacts=ignore ${jacocoPrepareAgent} clean verify -P core -P sign -P product -P test -e -f releng/plugins/org.polarsys.kitalpha.releng.parent/pom.xml"
+						def sign = github.isPullRequest() ? '' : '-Psign'
+						currentBuild.description = BUILD_KEY
+						sh "mvn -Dmaven.test.failure.ignore=true -Dtycho.localArtifacts=ignore ${jacocoPrepareAgent} clean verify -P core ${sign} -P product -P test -e -f releng/plugins/org.polarsys.kitalpha.releng.parent/pom.xml"
 					}
 				}
 			}
@@ -85,8 +88,8 @@ pipeline {
 						def javaVersion = "8"
 						def sonarCommon = "sonar:sonar -Dsonar.projectKey=$SONAR_PROJECT_KEY -Dsonar.organization=eclipse -Dsonar.host.url=https://sonarcloud.io -Dsonar.login='$SONARCLOUD_TOKEN' -Dsonar.skipDesign=true -Dsonar.dynamic=reuseReports -Dsonar.java.source=${javaVersion} -Dsonar.scanner.force-deprecated-java-version=true "
 						def sonarBranchAnalysis = "-Dsonar.branch.name=${BRANCH_NAME}"
-						def sonarPullRequestAnalysis = ("${BRANCH_NAME}".contains('PR-') ? "-Dsonar.pullrequest.provider=GitHub -Dsonar.pullrequest.github.repository=eclipse/$PROJECT_NAME -Dsonar.pullrequest.key=${CHANGE_ID} -Dsonar.pullrequest.branch=${CHANGE_BRANCH}" : "" )
-						def sonar = sonarCommon + jacocoParameters + sonarExclusions + ("${BRANCH_NAME}".contains('PR-') ? sonarPullRequestAnalysis : sonarBranchAnalysis)
+						def sonarPullRequestAnalysis = (github.isPullRequest() ? "-Dsonar.pullrequest.provider=GitHub -Dsonar.pullrequest.github.repository=eclipse/$PROJECT_NAME -Dsonar.pullrequest.key=${CHANGE_ID} -Dsonar.pullrequest.branch=${CHANGE_BRANCH}" : "" )
+						def sonar = sonarCommon + jacocoParameters + sonarExclusions + (github.isPullRequest() ? sonarPullRequestAnalysis : sonarBranchAnalysis)
 						sh "mvn ${sonar} $MVN_QUALITY_PROFILES -e -f releng/plugins/org.polarsys.kitalpha.releng.parent/pom.xml"
 					}
 				}
