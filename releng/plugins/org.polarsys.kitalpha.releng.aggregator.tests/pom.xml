@@ -87,6 +87,7 @@
 
 		<!-- Test RCPTT -->
 		<!-- module>../../../architecture description/dsl/examples/tests/rcptt/org.polarsys.kitalpha.activityexplorer.test.rcptt</module-->
+		<!-- 
 		<module>../../../tests/architecture_description/core/org.polarsys.kitalpha.ad.core.rcptt</module>
 		<module>../../../tests/resource_reuse/org.polarsys.kitalpha.resourcereuse.emfscheme.test.rcptt</module>
 		<module>../../../Docgen/business/tests/rcptt/org.polarsys.kitalpha.doc.gen.test.rcptt</module>
@@ -97,6 +98,7 @@
 		<module>../../../common/tests/org.polarsys.kitalpha.common.rcptt</module>
 		<module>../../../emde/tests/org.polarsys.kitalpha.emde.rcptt</module>
 		<module>../../../transposer/tests/plugins/rcptt/org.polarsys.kitalpha.transposer.rcptt.tests</module>
+		 -->
 	</modules>
 </project>
 
