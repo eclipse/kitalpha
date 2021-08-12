@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
-<target name="kitalpha" sequenceNumber="1627295136">
+<target name="kitalpha" sequenceNumber="1629817553">
   <locations>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.apache.log4j" version="0.0.0"/>
+      <unit id="org.easymock" version="0.0.0"/>
+      <unit id="org.hamcrest.library" version="0.0.0"/>
+      <unit id="org.junit" version="4.13.0.v20200204-1500"/>
+      <unit id="org.slf4j.api" version="1.7.2.v20121108-1250"/>
+      <unit id="ch.qos.logback.slf4j" version="1.0.7.v201505121915"/>
+      <unit id="ch.qos.logback.classic" version="1.0.7.v20121108-1250"/>
+      <unit id="ch.qos.logback.core" version="1.0.7.v20121108-1250"/>
+      <unit id="org.apache.xalan" version="2.7.2.v20201124-1837"/>
+      <unit id="org.antlr.runtime" version="4.7.1.v20181120-0808"/>
+      <unit id="org.apache.batik.ext" version="1.14.0.v20210324-0332"/>
+      <unit id="org.apache.batik.codec" version="1.14.0.v20210324-0332"/>
+      <unit id="org.apache.batik.bridge" version="1.14.0.v20210324-0332"/>
+      <unit id="org.apache.batik.script" version="1.14.0.v20210324-0332"/>
+      <repository id="Orbit" location="https://download.eclipse.org/tools/orbit/downloads/drops/R20210602031627/repository"/>
+    </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.swtbot.eclipse.feature.group" version="3.1.0.202106041005"/>
       <unit id="org.eclipse.swtbot.eclipse.gef.feature.group" version="3.1.0.202106041005"/>
@@ -191,19 +208,19 @@
       <unit id="org.eclipse.emf.diffmerge.gmf.feature.source.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.diffmerge.egit.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.diffmerge.egit.feature.source.feature.group" version="0.0.0"/>
-      <repository id="EMF-DiffMerge" location="https://download.eclipse.org/diffmerge/releases/0.13.1/emf-diffmerge-site/"/>
+      <repository id="EMF-DiffMerge" location="https://download.eclipse.org/diffmerge/stable/0.14.0-S20210823/emf-diffmerge-site/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.emf.diffmerge.patterns.sdk.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.diffmerge.patterns.sdk.feature.source.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.source.feature.group" version="0.0.0"/>
-      <repository id="EDM-Patterns" location="https://download.eclipse.org/diffmerge/releases/0.13.1/edm-patterns-site/"/>
+      <repository id="EDM-Patterns" location="https://download.eclipse.org/diffmerge/stable/0.14.0-S20210823/edm-patterns-site/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.emf.diffmerge.coevolution.sdk.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.emf.diffmerge.coevolution.sdk.feature.source.feature.group" version="0.0.0"/>
-      <repository id="coevolution" location="https://download.eclipse.org/diffmerge/releases/0.13.1/edm-coevolution-site/"/>
+      <repository id="coevolution" location="https://download.eclipse.org/diffmerge/stable/0.14.0-S20210823/edm-coevolution-site/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.amalgam.explorer.activity.feature.group" version="0.0.0"/>
@@ -214,7 +231,7 @@
       <unit id="org.eclipse.amalgam.explorer.contextual.sirius.source.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.amalgam.explorer.contextual.core.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.amalgam.explorer.contextual.core.source.feature.group" version="0.0.0"/>
-      <repository id="amalgam" location="https://download.eclipse.org/modeling/amalgam/updates/stable/1.12.1-S20210330/capella"/>
+      <repository id="amalgam" location="https://download.eclipse.org/modeling/amalgam/updates/stable/1.13.0-S20210824/capella"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.egf.sdk.feature.feature.group" version="0.0.0"/>
@@ -233,21 +250,7 @@
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="ca.odell.glazedlists" version="0.0.0"/>
-      <unit id="org.apache.log4j" version="0.0.0"/>
-      <unit id="org.easymock" version="0.0.0"/>
-      <unit id="org.hamcrest.library" version="0.0.0"/>
-      <unit id="org.junit" version="4.13.0.v20200204-1500"/>
-      <unit id="org.slf4j.api" version="1.7.2.v20121108-1250"/>
-      <unit id="ch.qos.logback.slf4j" version="1.0.7.v201505121915"/>
-      <unit id="ch.qos.logback.classic" version="1.0.7.v20121108-1250"/>
-      <unit id="ch.qos.logback.core" version="1.0.7.v20121108-1250"/>
-      <unit id="org.apache.xalan" version="2.7.2.v20201124-1837"/>
-      <unit id="org.antlr.runtime" version="4.7.1.v20181120-0808"/>
-      <unit id="org.apache.batik.ext" version="1.14.0.v20210324-0332"/>
-      <unit id="org.apache.batik.codec" version="1.14.0.v20210324-0332"/>
-      <unit id="org.apache.batik.bridge" version="1.14.0.v20210324-0332"/>
-      <unit id="org.apache.batik.script" version="1.14.0.v20210324-0332"/>
-      <repository id="Orbit" location="https://download.eclipse.org/tools/orbit/downloads/drops/R20210602031627/repository"/>
+      <repository id="Orbit2s" location="https://download.eclipse.org/tools/orbit/downloads/2021-06"/>
     </location>
   </locations>
 </target>
