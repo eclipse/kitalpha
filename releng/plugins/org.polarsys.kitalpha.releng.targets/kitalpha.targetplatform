@@ -110,7 +110,7 @@ location sirius "https://download.eclipse.org/sirius/updates/stable/7.0.0-S20210
 	org.eclipse.sirius.specifier.feature.group lazy
 }
 
-location EMF-DiffMerge "https://download.eclipse.org/diffmerge/releases/0.13.1/emf-diffmerge-site/" {
+location EMF-DiffMerge "https://download.eclipse.org/diffmerge/stable/0.14.0-S20210823/emf-diffmerge-site/" {
 	org.eclipse.emf.diffmerge.feature.feature.group lazy
 	org.eclipse.emf.diffmerge.feature.source.feature.group lazy
 	org.eclipse.emf.diffmerge.sirius.feature.feature.group lazy
@@ -121,19 +121,19 @@ location EMF-DiffMerge "https://download.eclipse.org/diffmerge/releases/0.13.1/e
 	org.eclipse.emf.diffmerge.egit.feature.source.feature.group lazy
 }
 
-location EDM-Patterns "https://download.eclipse.org/diffmerge/releases/0.13.1/edm-patterns-site/" {
+location EDM-Patterns "https://download.eclipse.org/diffmerge/stable/0.14.0-S20210823/edm-patterns-site/" {
 	org.eclipse.emf.diffmerge.patterns.sdk.feature.feature.group lazy
 	org.eclipse.emf.diffmerge.patterns.sdk.feature.source.feature.group lazy
 	org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.feature.group lazy
 	org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.source.feature.group lazy
 }
 
-location coevolution "https://download.eclipse.org/diffmerge/releases/0.13.1/edm-coevolution-site/" {
+location coevolution "https://download.eclipse.org/diffmerge/stable/0.14.0-S20210823/edm-coevolution-site/" {
 	 org.eclipse.emf.diffmerge.coevolution.sdk.feature.feature.group lazy
 	 org.eclipse.emf.diffmerge.coevolution.sdk.feature.source.feature.group lazy
 }
 
-location amalgam "https://download.eclipse.org/modeling/amalgam/updates/stable/1.12.1-S20210330/capella" {
+location amalgam "https://download.eclipse.org/modeling/amalgam/updates/stable/1.13.0-S20210824/capella" {
 	org.eclipse.amalgam.explorer.activity.feature.group lazy
 	org.eclipse.amalgam.explorer.activity.source.feature.group lazy
 	org.eclipse.amalgam.explorer.contextual.feature.group lazy
@@ -159,6 +159,6 @@ location Nattable "https://download.eclipse.org/nattable/releases/2.0.1/reposito
 	org.eclipse.nebula.widgets.nattable.extension.glazedlists.feature.feature.group lazy
 }
 
-location Orbit "https://download.eclipse.org/tools/orbit/downloads/drops/R20210602031627/repository" {
+location Orbit2 "https://download.eclipse.org/tools/orbit/downloads/2021-06" {
 	ca.odell.glazedlists lazy
 }
