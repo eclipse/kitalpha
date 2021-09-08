@@ -207,16 +207,16 @@
 	
 	<!-- Type interpreter Plugin -->
 	<module>../../../sirius/plugins/org.polarsys.kitalpha.sirius.typeinterpreter</module>
-	
+
 	<!-- Type interpreter Feature -->
 	<module>../../../sirius/features/org.polarsys.kitalpha.sirius.typeinterpreter.feature</module>
-	
-	<!-- Diff/Merge Bridge Integration Plugin -->
-	<module>../../../transposer/plugins/org.polarsys.kitalpha.diffmerge.bridge.integration.transposer</module>
-	
-	<!-- Diff/Merge Bridge Integration Feature -->
-	<module>../../../transposer/features/org.polarsys.kitalpha.transposer.diffmerge.feature</module>
-	
+
+    <!-- Diff/Merge Bridge Integration Plugin -->
+    <module>../../../transposer/plugins/org.polarsys.kitalpha.diffmerge.bridge.integration.transposer</module>
+
+    <!-- Diff/Merge Bridge Integration Feature -->
+    <module>../../../transposer/features/org.polarsys.kitalpha.transposer.diffmerge.feature</module>
+
   </modules>
 </project>
 
