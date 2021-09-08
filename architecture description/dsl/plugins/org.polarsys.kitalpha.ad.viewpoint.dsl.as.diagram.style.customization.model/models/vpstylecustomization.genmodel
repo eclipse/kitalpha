@@ -7,7 +7,7 @@
     modelName="Vpstylecustomization" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     testsDirectory="/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization.model.tests/generated"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
-    usedGenPackages="platform:/plugin/org.eclipse.sirius/model/viewpoint.genmodel#//viewpoint platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.model/model/expression.genmodel#//expression platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.model/model/vpdesc.genmodel#//vpdesc platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/org.eclipse.sirius.diagram/model/diagram.genmodel#//diagram"
+    usedGenPackages="platform:/plugin/org.eclipse.sirius.model/model/viewpoint.genmodel#//viewpoint platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.model/model/expression.genmodel#//expression platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.model/model/vpdesc.genmodel#//vpdesc platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/org.eclipse.sirius.diagram.model/model/diagram.genmodel#//diagram"
     operationReflection="true" importOrganizing="true">
   <foreignModel>../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization/models/vpstylecustomization.ecore</foreignModel>
   <genPackages prefix="Vpstylecustomization" basePackage="org.polarsys.kitalpha.ad.viewpoint.dsl.as.model"

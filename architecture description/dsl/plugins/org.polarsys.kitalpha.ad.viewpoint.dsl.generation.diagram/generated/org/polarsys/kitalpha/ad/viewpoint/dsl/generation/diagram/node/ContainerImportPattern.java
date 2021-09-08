@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.2.201911290829
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.node;
 
 import java.util.*;
@@ -24,7 +24,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.Generation
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.IconPathHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.JavaElementHelper;
 
-import org.eclipse.sirius.diagram.business.internal.metamodel.helper.MappingHelper;
+import org.eclipse.sirius.diagram.model.business.internal.helper.MappingHelper;
 import org.eclipse.sirius.viewpoint.FontFormat;
 import org.eclipse.sirius.diagram.description.ConditionalContainerStyleDescription;
 import org.eclipse.sirius.diagram.description.style.ContainerStyleDescription;
@@ -44,8 +44,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.mappingimport.m
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
-public class ContainerImportPattern
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.node.ContainerPattern {
+public class ContainerImportPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.node.ContainerPattern {
 
 	public ContainerImportPattern() {
 		//Here is the constructor
@@ -87,8 +86,7 @@ public class ContainerImportPattern
 			parameters.put("original_m", this.mapping);
 			parameters.put("imported_m", this.icm);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_MLHN4ISnEeKlgrb0i1zvPQ",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_MLHN4ISnEeKlgrb0i1zvPQ",
 					ctx_local, parameters);
 		}
 		ictx.setNode(currentNode);
@@ -158,8 +156,7 @@ public class ContainerImportPattern
 		// ContainerMapping mapping = parameter.getImports();
 
 		// reusing the reused mappings
-		if (MappingHelper.getAllContainerMappings(mapping) != null
-				&& MappingHelper.getAllContainerMappings(mapping).size() > 0)
+		if (MappingHelper.getAllContainerMappings(mapping) != null && MappingHelper.getAllContainerMappings(mapping).size() > 0)
 			icm.getReusedContainerMappings().addAll(MappingHelper.getAllContainerMappings(mapping));
 
 		if (MappingHelper.getAllContainerMappings(icm).contains(mapping)) {
@@ -170,8 +167,7 @@ public class ContainerImportPattern
 		if (MappingHelper.getAllNodeMappings(mapping) != null && MappingHelper.getAllNodeMappings(mapping).size() > 0)
 			icm.getReusedNodeMappings().addAll(MappingHelper.getAllNodeMappings(mapping));
 
-		if (MappingHelper.getAllBorderedNodeMappings(mapping) != null
-				&& MappingHelper.getAllBorderedNodeMappings(mapping).size() > 0)
+		if (MappingHelper.getAllBorderedNodeMappings(mapping) != null && MappingHelper.getAllBorderedNodeMappings(mapping).size() > 0)
 			icm.getReusedBorderedNodeMappings().addAll(MappingHelper.getAllBorderedNodeMappings(mapping));
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
@@ -214,15 +210,12 @@ public class ContainerImportPattern
 				if (fEE instanceof JavaElement) {
 					// 
 					String javaMethodName = ((JavaElement) fEE).getMethod();
-					String mParameters = VSMVariable.view.getInnerVariable() + ","
-							+ VSMVariable.container.getInnerVariable();
+					String mParameters = VSMVariable.view.getInnerVariable() + "," + VSMVariable.container.getInnerVariable();
 					javaMethodName = JavaElementHelper.addDefaultParameterToJavaMethod(javaMethodName, mParameters);
-					acceleoExpression = SiriusExpressionHelper.getExpressoin(javaMethodName,
-							ExpressionInterpreter.Service);
+					acceleoExpression = SiriusExpressionHelper.getExpressoin(javaMethodName, ExpressionInterpreter.Service);
 				}
 				if (fEE instanceof DomainElement) {
-					acceleoExpression = SiriusExpressionHelper.getExpressoin(
-							((DomainElement) fEE).getAttribute().getName(), ExpressionInterpreter.Feature);
+					acceleoExpression = SiriusExpressionHelper.getExpressoin(((DomainElement) fEE).getAttribute().getName(), ExpressionInterpreter.Feature);
 				}
 
 				ccStyleDesc = DescriptionFactory.eINSTANCE.createConditionalContainerStyleDescription();
@@ -278,8 +271,7 @@ public class ContainerImportPattern
 				String labelExpression = SiriusExpressionHelper.getExpressoin("name", ExpressionInterpreter.Feature);
 
 				if (label != null) {
-					String mParameters = VSMVariable.diagram.getInnerVariable() + ","
-							+ VSMVariable.view.getInnerVariable();
+					String mParameters = VSMVariable.diagram.getInnerVariable() + "," + VSMVariable.view.getInnerVariable();
 					((ExpressionImpl) label.getValue()).adaptValue(mParameters, true);
 
 					if (label.getValue() != null)
@@ -300,8 +292,7 @@ public class ContainerImportPattern
 				/************************************************************************************************/
 				ContainerStyleDescription cStyleDesc_merged = null;
 				try {
-					cStyleDesc_merged = ContainerStyleImportMerger.mergeStyles(parameter.getImports().getStyle(),
-							cStyleDesc, iContainerDescription);
+					cStyleDesc_merged = ContainerStyleImportMerger.mergeStyles(parameter.getImports().getStyle(), cStyleDesc, iContainerDescription);
 				} catch (Exception e) {
 				}
 

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2020 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 202 Thales Global Services S.A.S.
  *  This program and the accompanying materials are made available under the
  *  terms of the Eclipse Public License 2.0 which is available at
  *  http://www.eclipse.org/legal/epl-2.0
@@ -31,6 +31,7 @@ import org.eclipse.sirius.diagram.description.ContainerMapping;
 import org.eclipse.sirius.diagram.description.DiagramDescription;
 import org.eclipse.sirius.diagram.description.EdgeMapping;
 import org.eclipse.sirius.diagram.description.NodeMapping;
+import org.eclipse.sirius.diagram.model.business.internal.helper.ContentHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.commondata.AbstractAssociation;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.commondata.AbstractClass;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.commondata.ExternalAssociation;
@@ -769,7 +770,7 @@ public class VpDiagramHelper {
 
 		DiagramExtension diagramExtension = (DiagramExtension)eObject;
 		DiagramDescription diagDesc = diagramExtension.getExtented_diagram();
-		EList<EdgeMapping> edges = diagDesc.getAllEdgeMappings();
+		EList<EdgeMapping> edges = ContentHelper.getAllEdgeMappings(diagDesc, false);
 
 		return edges.contains(eObjectOrProxy);
 	}
