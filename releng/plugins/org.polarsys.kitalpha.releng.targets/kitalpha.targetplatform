@@ -94,7 +94,7 @@ location acceleo "https://download.eclipse.org/acceleo/updates/releases/3.7/" {
 	org.eclipse.acceleo.doc [3.7.11,3.7.12)
 }
 
-location sirius "https://download.eclipse.org/sirius/updates/releases/6.5.1/2020-06/" {
+location sirius "https://download.eclipse.org/sirius/updates/stable/6.6.0-S20210906-045606/2020-06/" {
 	org.eclipse.sirius.doc.feature.feature.group lazy
     org.eclipse.sirius.runtime.source.feature.group lazy
     org.eclipse.sirius.runtime.acceleo.feature.group lazy
