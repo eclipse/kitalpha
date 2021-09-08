@@ -1,14 +1,31 @@
 //Generated with EGF 1.6.1.201902111324
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.node;
 
-import java.util.*;
-import org.eclipse.emf.ecore.*;
-import org.eclipse.egf.model.pattern.*;
-import org.eclipse.egf.pattern.execution.*;
-import org.eclipse.egf.pattern.query.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.commondata.AbstractAssociation;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.commondata.AbstractClass;
+import org.eclipse.egf.model.pattern.Node;
+import org.eclipse.egf.model.pattern.PatternContext;
+import org.eclipse.egf.pattern.execution.CallHelper;
+import org.eclipse.egf.pattern.execution.ExecutionContext;
+import org.eclipse.egf.pattern.execution.InternalPatternContext;
+import org.eclipse.egf.pattern.execution.OutputManager;
+import org.eclipse.egf.pattern.execution.SuperOrchestrationContext;
+import org.eclipse.egf.pattern.query.IQuery;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.sirius.diagram.description.ConditionalContainerStyleDescription;
+import org.eclipse.sirius.diagram.description.ContainerMapping;
+import org.eclipse.sirius.diagram.description.DescriptionFactory;
+import org.eclipse.sirius.diagram.description.style.ContainerStyleDescription;
+import org.eclipse.sirius.diagram.description.style.FlatContainerStyleDescription;
+import org.eclipse.sirius.diagram.description.style.StyleFactory;
+import org.eclipse.sirius.diagram.description.style.WorkspaceImageDescription;
+import org.eclipse.sirius.diagram.model.business.internal.helper.MappingHelper;
+import org.eclipse.sirius.viewpoint.FontFormat;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.sirius.ExpressionInterpreter;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.sirius.SiriusExpressionHelper;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper.conf.DiagramGenerationConfigurationHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.DomainElement;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.ForeignExpressionElement;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.JavaElement;
@@ -19,30 +36,11 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.ContainerDescri
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.FlatStyle;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.ImageStyle;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Label;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.NodeDomainElement;
+import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.mappingimport.merge.ContainerStyleImportMerger;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.GenerationUtil;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.IconPathHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.JavaElementHelper;
-
-import org.eclipse.sirius.diagram.business.internal.metamodel.helper.MappingHelper;
-import org.eclipse.sirius.viewpoint.FontFormat;
-import org.eclipse.sirius.diagram.description.ConditionalContainerStyleDescription;
-import org.eclipse.sirius.diagram.description.style.ContainerStyleDescription;
-import org.eclipse.sirius.diagram.description.DescriptionFactory;
-import org.eclipse.sirius.diagram.description.Layer;
-import org.eclipse.sirius.diagram.description.ContainerMapping;
-import org.eclipse.sirius.diagram.description.style.FlatContainerStyleDescription;
-import org.eclipse.sirius.diagram.description.style.StyleFactory;
-import org.eclipse.sirius.diagram.description.style.WorkspaceImageDescription;
-
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.sirius.SiriusExpressionHelper;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.sirius.ExpressionInterpreter;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.VSMVariable;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper.conf.DiagramGenerationConfigurationHelper;
-
-import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.mappingimport.merge.ContainerStyleImportMerger;
-
-import org.eclipse.emf.ecore.util.EcoreUtil;
 
 public class ContainerImportPattern
 		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.node.ContainerPattern {
