@@ -11,7 +11,7 @@
  *******************************************************************************/
 target "kitalpha" with source, requirements
 
-include "https://download.eclipse.org/sirius/updates/stable/7.0.0-S20210722-123507/2021-06/targets/modules/gmf-runtime-1.14.tpd"
+include "https://download.eclipse.org/sirius/updates/stable/7.0.0-S20210908-102403/2021-06/targets/modules/gmf-runtime-1.14.tpd"
 
 location Eclipse-2021-06 "https://download.eclipse.org/releases/2021-06/" {
 	org.eclipse.m2e.feature.feature.group lazy
@@ -85,7 +85,7 @@ location acceleo "https://download.eclipse.org/acceleo/updates/releases/3.7/" {
 	org.eclipse.acceleo.doc [3.7.11,3.7.12)
 }
 
-location sirius "https://download.eclipse.org/sirius/updates/stable/7.0.0-S20210722-123507/2021-06/" {
+location sirius "https://download.eclipse.org/sirius/updates/stable/7.0.0-S20210908-102403/2021-06/" {
 	org.eclipse.sirius.doc.feature.feature.group lazy
     org.eclipse.sirius.runtime.source.feature.group lazy
     org.eclipse.sirius.runtime.acceleo.feature.group lazy
@@ -166,7 +166,7 @@ location Nattable "https://download.eclipse.org/nattable/releases/2.0.1/reposito
 	org.eclipse.nebula.widgets.nattable.extension.glazedlists.feature.feature.group lazy
 }
 
-location Orbit "https://download.eclipse.org/tools/orbit/downloads/2021-06" {
+location Orbit "https://download.eclipse.org/tools/orbit/downloads/drops/R20210602031627/repository" {
 	ca.odell.glazedlists lazy
 	org.apache.batik.bridge.source lazy
 	org.apache.batik.script.source lazy

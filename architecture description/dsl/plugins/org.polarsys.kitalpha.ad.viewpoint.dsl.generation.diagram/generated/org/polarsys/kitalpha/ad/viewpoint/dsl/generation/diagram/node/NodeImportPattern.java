@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.2.201911290829
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.node;
 
 import java.util.*;
@@ -26,7 +26,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.Generation
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.IconPathHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.JavaElementHelper;
 
-import org.eclipse.sirius.diagram.business.internal.metamodel.helper.MappingHelper;
+import org.eclipse.sirius.diagram.model.business.internal.helper.MappingHelper;
 import org.eclipse.sirius.diagram.description.style.GaugeCompositeStyleDescription;
 import org.eclipse.sirius.diagram.description.style.GaugeSectionDescription;
 import org.eclipse.sirius.diagram.description.Layer;
@@ -100,8 +100,7 @@ public class NodeImportPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.ge
 			parameters.put("original_m", this.mapping);
 			parameters.put("imported_m", this.inm);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_MLHN4ISnEeKlgrb0i1zvPQ",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_MLHN4ISnEeKlgrb0i1zvPQ",
 					ctx_local, parameters);
 		}
 		ictx.setNode(currentNode);
@@ -170,8 +169,7 @@ public class NodeImportPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.ge
 		// NodeMapping mapping = parameter.getImports();
 
 		// Inherits reused bordered nodes
-		if (MappingHelper.getAllBorderedNodeMappings(mapping) != null
-				&& MappingHelper.getAllBorderedNodeMappings(mapping).size() > 0)
+		if (MappingHelper.getAllBorderedNodeMappings(mapping) != null && MappingHelper.getAllBorderedNodeMappings(mapping).size() > 0)
 			inm.getReusedBorderedNodeMappings().addAll(MappingHelper.getAllBorderedNodeMappings(mapping));
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
@@ -214,16 +212,13 @@ public class NodeImportPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.ge
 				String acceleoExpression = "";
 				if (fEE instanceof JavaElement) {
 					String javaMethodName = ((JavaElement) fEE).getMethod();
-					String mParameters = VSMVariable.view.getInnerVariable() + ","
-							+ VSMVariable.container.getInnerVariable();
+					String mParameters = VSMVariable.view.getInnerVariable() + "," + VSMVariable.container.getInnerVariable();
 					javaMethodName = JavaElementHelper.addDefaultParameterToJavaMethod(javaMethodName, mParameters);
-					acceleoExpression = SiriusExpressionHelper.getExpressoin(javaMethodName,
-							ExpressionInterpreter.Service);
+					acceleoExpression = SiriusExpressionHelper.getExpressoin(javaMethodName, ExpressionInterpreter.Service);
 					//acceleoExpression = SiriusExpressionHelper.getExpressoin(((JavaElement) fEE).getMethod());
 				}
 				if (fEE instanceof DomainElement) {
-					acceleoExpression = SiriusExpressionHelper
-							.getExpressoin(((DomainElement) fEE).getAttribute().getName());
+					acceleoExpression = SiriusExpressionHelper.getExpressoin(((DomainElement) fEE).getAttribute().getName());
 				}
 
 				cnStyleDesc = DescriptionFactory.eINSTANCE.createConditionalNodeStyleDescription();
@@ -322,16 +317,11 @@ public class NodeImportPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.ge
 					doremiGaugeStyle.setBorderColor(GenerationUtil.getSystemColor(vpHistogramStyle.getBorderColor()));
 					for (HistogramSection iHistogramSection : vpHistogramStyle.getSections()) {
 						GaugeSectionDescription one_section = StyleFactory.eINSTANCE.createGaugeSectionDescription();
-						one_section.setBackgroundColor(
-								GenerationUtil.getSystemColor(iHistogramSection.getBackgroundColor()));
-						one_section.setForegroundColor(
-								GenerationUtil.getSystemColor(iHistogramSection.getForgroundColor()));
-						one_section.setMaxValueExpression(
-								SiriusExpressionHelper.getExpressoin(iHistogramSection.getMaxValue().toString()));
-						one_section.setMinValueExpression(
-								SiriusExpressionHelper.getExpressoin(iHistogramSection.getMinValue().toString()));
-						one_section.setValueExpression(
-								SiriusExpressionHelper.getExpressoin(iHistogramSection.getValue().toString()));
+						one_section.setBackgroundColor(GenerationUtil.getSystemColor(iHistogramSection.getBackgroundColor()));
+						one_section.setForegroundColor(GenerationUtil.getSystemColor(iHistogramSection.getForgroundColor()));
+						one_section.setMaxValueExpression(SiriusExpressionHelper.getExpressoin(iHistogramSection.getMaxValue().toString()));
+						one_section.setMinValueExpression(SiriusExpressionHelper.getExpressoin(iHistogramSection.getMinValue().toString()));
+						one_section.setValueExpression(SiriusExpressionHelper.getExpressoin(iHistogramSection.getValue().toString()));
 						doremiGaugeStyle.getSections().add(one_section);
 					}
 				}
@@ -351,8 +341,7 @@ public class NodeImportPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.ge
 
 				if (label != null) {
 					//((ExpressionImpl) label.getValue()).adaptValue();
-					String mParameters = VSMVariable.diagram.getInnerVariable() + ","
-							+ VSMVariable.view.getInnerVariable();
+					String mParameters = VSMVariable.diagram.getInnerVariable() + "," + VSMVariable.view.getInnerVariable();
 					((ExpressionImpl) label.getValue()).adaptValue(mParameters, true);
 
 					if (label.getValue() != null)
@@ -378,8 +367,7 @@ public class NodeImportPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.ge
 				/************************************************************************************************/
 				NodeStyleDescription nStyleDesc_marged = null;
 				try {
-					nStyleDesc_marged = NodeStyleImportMerger.mergeStyles(parameter.getImports().getStyle(), nStyleDesc,
-							iNodeDescription);
+					nStyleDesc_marged = NodeStyleImportMerger.mergeStyles(parameter.getImports().getStyle(), nStyleDesc, iNodeDescription);
 				} catch (Exception e) {
 				}
 				if (nStyleDesc_marged != null)

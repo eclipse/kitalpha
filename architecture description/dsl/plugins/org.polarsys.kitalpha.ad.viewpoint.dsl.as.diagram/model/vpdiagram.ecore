@@ -17,7 +17,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DiagramExtension" eSuperTypes="#//DiagramRepresentation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="extented_diagram" lowerBound="1"
-        eType="ecore:EClass ../../org.eclipse.sirius.diagram/model/diagram.ecore#//description/DiagramDescription"/>
+        eType="ecore:EClass ../../org.eclipse.sirius.diagram.model/model/diagram.ecore#//description/DiagramDescription"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedCustomizations" eType="ecore:EClass ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization/models/vpstylecustomization.ecore#//Customizations"
         containment="true"/>
   </eClassifiers>
@@ -36,8 +36,8 @@
         eType="#//AbstractDecorator" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractDecorator" abstract="true" eSuperTypes="../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc/model/vpdesc.ecore#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" eType="ecore:EEnum ../../org.eclipse.sirius/model/viewpoint.ecore#//description/Position"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" eType="ecore:EEnum ../../org.eclipse.sirius/model/viewpoint.ecore#//description/DecorationDistributionDirection"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" eType="ecore:EEnum ../../org.eclipse.sirius.model/model/viewpoint.ecore#//description/Position"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" eType="ecore:EEnum ../../org.eclipse.sirius.model/model/viewpoint.ecore#//description/DecorationDistributionDirection"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="icon" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="precondition" eType="ecore:EClass ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression/model/expression.ecore#//ExpressionElement"
         containment="true"/>
@@ -47,7 +47,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="BasicDecorator" eSuperTypes="#//AbstractDecorator"/>
   <eClassifiers xsi:type="ecore:EClass" name="MappingBasedDecorator" eSuperTypes="#//AbstractDecorator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="externalMappings" upperBound="-1"
-        eType="ecore:EClass ../../org.eclipse.sirius.diagram/model/diagram.ecore#//description/DiagramElementMapping"/>
+        eType="ecore:EClass ../../org.eclipse.sirius.diagram.model/model/diagram.ecore#//description/DiagramElementMapping"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="internalMappings" upperBound="-1"
         eType="#//DiagramElement"/>
   </eClassifiers>
@@ -64,7 +64,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Node" eSuperTypes="#//DiagramChildren #//AbstractNode">
     <eStructuralFeatures xsi:type="ecore:EReference" name="style" upperBound="-1"
         eType="#//NodeDescription" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" eType="ecore:EClass ../../org.eclipse.sirius.diagram/model/diagram.ecore#//description/NodeMapping"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" eType="ecore:EClass ../../org.eclipse.sirius.diagram.model/model/diagram.ecore#//description/NodeMapping"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="children" eType="#//NodeChildren"
         containment="true"/>
   </eClassifiers>
@@ -97,12 +97,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="italic" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression/model/expression.ecore#//Expression"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="ecore:EEnum ../../org.eclipse.sirius/model/viewpoint.ecore#//description/SystemColors"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="ecore:EEnum ../../org.eclipse.sirius.model/model/viewpoint.ecore#//description/SystemColors"
         defaultValueLiteral=""/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EdgeImport" eSuperTypes="#//AbstractEdge">
     <eStructuralFeatures xsi:type="ecore:EReference" name="imports" lowerBound="1"
-        eType="ecore:EClass ../../org.eclipse.sirius.diagram/model/diagram.ecore#//description/EdgeMapping"/>
+        eType="ecore:EClass ../../org.eclipse.sirius.diagram.model/model/diagram.ecore#//description/EdgeMapping"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EdgeDescription">
     <eStructuralFeatures xsi:type="ecore:EReference" name="style" eType="#//EdgeStyle"
@@ -119,17 +119,17 @@
   <eClassifiers xsi:type="ecore:EClass" name="NodeDescription" eSuperTypes="#//AbstractDescription">
     <eStructuralFeatures xsi:type="ecore:EReference" name="style" eType="#//AbstractNodeStyle"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label_position" eType="ecore:EEnum ../../org.eclipse.sirius.diagram/model/diagram.ecore#//LabelPosition"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label_alignement" eType="ecore:EEnum ../../org.eclipse.sirius/model/viewpoint.ecore#//LabelAlignment"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label_position" eType="ecore:EEnum ../../org.eclipse.sirius.diagram.model/model/diagram.ecore#//LabelPosition"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label_alignement" eType="ecore:EEnum ../../org.eclipse.sirius.model/model/viewpoint.ecore#//LabelAlignment"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EdgeStyle">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lineStyle" eType="ecore:EEnum ../../org.eclipse.sirius.diagram/model/diagram.ecore#//LineStyle"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="beginDecorator" eType="ecore:EEnum ../../org.eclipse.sirius.diagram/model/diagram.ecore#//EdgeArrows"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="endDecorator" eType="ecore:EEnum ../../org.eclipse.sirius.diagram/model/diagram.ecore#//EdgeArrows"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="ecore:EEnum ../../org.eclipse.sirius/model/viewpoint.ecore#//description/SystemColors"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lineStyle" eType="ecore:EEnum ../../org.eclipse.sirius.diagram.model/model/diagram.ecore#//LineStyle"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="beginDecorator" eType="ecore:EEnum ../../org.eclipse.sirius.diagram.model/model/diagram.ecore#//EdgeArrows"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="endDecorator" eType="ecore:EEnum ../../org.eclipse.sirius.diagram.model/model/diagram.ecore#//EdgeArrows"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="ecore:EEnum ../../org.eclipse.sirius.model/model/viewpoint.ecore#//description/SystemColors"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BasicStyle" eSuperTypes="#//AbstractNodeStyle">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="backgroundColor" eType="ecore:EEnum ../../org.eclipse.sirius/model/viewpoint.ecore#//description/SystemColors"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="backgroundColor" eType="ecore:EEnum ../../org.eclipse.sirius.model/model/viewpoint.ecore#//description/SystemColors"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="form" eType="#//Node_Form"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EdgeDomainElement" eSuperTypes="#//EdgeDomainAssociation">
@@ -151,7 +151,7 @@
     <eLiterals name="Ring" value="7"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractNodeStyle" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="borderColor" eType="ecore:EEnum ../../org.eclipse.sirius/model/viewpoint.ecore#//description/SystemColors"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="borderColor" eType="ecore:EEnum ../../org.eclipse.sirius.model/model/viewpoint.ecore#//description/SystemColors"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ImageStyle" eSuperTypes="#//AbstractNodeStyle #//AbstractContainerStyle">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="imagePath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -167,29 +167,29 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass ../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression/model/expression.ecore#//ForeignExpressionElement"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="backgroundColor" eType="ecore:EEnum ../../org.eclipse.sirius/model/viewpoint.ecore#//description/SystemColors"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="forgroundColor" eType="ecore:EEnum ../../org.eclipse.sirius/model/viewpoint.ecore#//description/SystemColors"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="backgroundColor" eType="ecore:EEnum ../../org.eclipse.sirius.model/model/viewpoint.ecore#//description/SystemColors"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="forgroundColor" eType="ecore:EEnum ../../org.eclipse.sirius.model/model/viewpoint.ecore#//description/SystemColors"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Container" eSuperTypes="#//DiagramChildren #//AbstractNode">
     <eStructuralFeatures xsi:type="ecore:EReference" name="style" upperBound="-1"
         eType="#//ContainerDescription" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" eType="ecore:EClass ../../org.eclipse.sirius.diagram/model/diagram.ecore#//description/ContainerMapping"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" eType="ecore:EClass ../../org.eclipse.sirius.diagram.model/model/diagram.ecore#//description/ContainerMapping"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="children" eType="#//ContainerChildren"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentLayout" eType="ecore:EEnum ../../org.eclipse.sirius.diagram/model/diagram.ecore#//ContainerLayout"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentLayout" eType="ecore:EEnum ../../org.eclipse.sirius.diagram.model/model/diagram.ecore#//ContainerLayout"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ContainerDescription" eSuperTypes="#//AbstractDescription">
     <eStructuralFeatures xsi:type="ecore:EReference" name="style" eType="#//AbstractContainerStyle"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FlatStyle" eSuperTypes="#//AbstractContainerStyle">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="backgroundColor" eType="ecore:EEnum ../../org.eclipse.sirius/model/viewpoint.ecore#//description/SystemColors"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="forgroundColor" eType="ecore:EEnum ../../org.eclipse.sirius/model/viewpoint.ecore#//description/SystemColors"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="borderColor" eType="ecore:EEnum ../../org.eclipse.sirius/model/viewpoint.ecore#//description/SystemColors"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="backgroundStyle" eType="ecore:EEnum ../../org.eclipse.sirius.diagram/model/diagram.ecore#//BackgroundStyle"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="backgroundColor" eType="ecore:EEnum ../../org.eclipse.sirius.model/model/viewpoint.ecore#//description/SystemColors"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="forgroundColor" eType="ecore:EEnum ../../org.eclipse.sirius.model/model/viewpoint.ecore#//description/SystemColors"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="borderColor" eType="ecore:EEnum ../../org.eclipse.sirius.model/model/viewpoint.ecore#//description/SystemColors"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="backgroundStyle" eType="ecore:EEnum ../../org.eclipse.sirius.diagram.model/model/diagram.ecore#//BackgroundStyle"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BorderedNode" eSuperTypes="#//AbstractNode #//DiagramElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" eType="ecore:EClass ../../org.eclipse.sirius.diagram/model/diagram.ecore#//description/NodeMapping"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" eType="ecore:EClass ../../org.eclipse.sirius.diagram.model/model/diagram.ecore#//description/NodeMapping"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="style" upperBound="-1"
         eType="#//NodeDescription" containment="true"/>
   </eClassifiers>
@@ -251,7 +251,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="diagrams" upperBound="-1"
         eType="#//DiagramRepresentation" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="additionalExternalGroup"
-        upperBound="-1" eType="ecore:EClass ../../org.eclipse.sirius/model/viewpoint.ecore#//description/Group"/>
+        upperBound="-1" eType="ecore:EClass ../../org.eclipse.sirius.model/model/viewpoint.ecore#//description/Group"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="additionalExternalData"
         upperBound="-1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EPackage"/>
   </eClassifiers>

@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.model/src"
     modelPluginID="org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.model" modelName="Vpdiagram"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="8.0" copyrightFields="false" usedGenPackages="platform:/plugin/org.eclipse.sirius.diagram/model/diagram.genmodel#//diagram platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.conf.model/model/vpconf.genmodel#//vpconf platform:/plugin/org.eclipse.sirius/model/viewpoint.genmodel#//viewpoint platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.model/model/vpdesc.genmodel#//vpdesc platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    complianceLevel="8.0" copyrightFields="false" usedGenPackages="platform:/plugin/org.eclipse.sirius.diagram.model/model/diagram.genmodel#//diagram platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.conf.model/model/vpconf.genmodel#//vpconf platform:/plugin/org.eclipse.sirius.model/model/viewpoint.genmodel#//viewpoint platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.model/model/vpdesc.genmodel#//vpdesc platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
     operationReflection="true" importOrganizing="true">
   <foreignModel>../../org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram/model/vpdiagram.ecore</foreignModel>
   <genPackages prefix="Vpdiagram" basePackage="org.polarsys.kitalpha.ad.viewpoint.dsl.as.model"

@@ -39,7 +39,7 @@ import org.eclipse.sirius.diagram.description.style.StyleFactory;
 import org.eclipse.sirius.diagram.description.style.WorkspaceImageDescription;
 import org.eclipse.sirius.diagram.description.style.BundledImageDescription;
 import org.eclipse.sirius.diagram.BundledImageShape;
-import org.eclipse.sirius.diagram.business.internal.metamodel.helper.MappingHelper;
+import org.eclipse.sirius.diagram.model.business.internal.helper.MappingHelper;
 import org.eclipse.sirius.diagram.ResizeKind;
 import org.eclipse.sirius.diagram.description.style.DotDescription;
 import org.eclipse.sirius.diagram.description.style.EllipseNodeDescription;
