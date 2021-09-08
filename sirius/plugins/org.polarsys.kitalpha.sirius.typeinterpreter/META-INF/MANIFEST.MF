@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.polarsys.kitalpha.sirius.typeinterpreter;singleton:=true
+Bundle-Version: 5.1.0.qualifier
+Bundle-Activator: org.polarsys.kitalpha.sirius.typeinterpreter.TypeInterpreterPlugin
+Bundle-Vendor: %providerName
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.query,
+ org.eclipse.sirius,
+ org.eclipse.sirius.common,
+ org.eclipse.sirius.ecore.extender
+Bundle-ActivationPolicy: lazy
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.polarsys.kitalpha.sirius.typeinterpreter
