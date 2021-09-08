@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Explorer
 Bundle-SymbolicName: org.polarsys.kitalpha.vp.componentsample.activity.explorer;singleton:=true
-Bundle-Version: 5.1.0.qualifier
+Bundle-Version: 5.2.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Activator: org.polarsys.kitalpha.vp.componentsample.activity.explorer.Activator
 Require-Bundle: org.eclipse.ui.workbench,

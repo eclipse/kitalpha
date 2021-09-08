@@ -13,7 +13,7 @@
 <feature
       id="org.polarsys.kitalpha.model.common.commands.feature"
       label="%MODEL_CMD_FEATURE_NAME"
-      version="5.1.0.qualifier"
+      version="5.2.0.qualifier"
       provider-name="%providerName">
 
    <description>
