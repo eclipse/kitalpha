@@ -205,6 +205,12 @@
 	<!-- Mass Actions Features -->
 	<module>../../../massactions/features/org.polarsys.kitalpha.massactions.feature</module>
 	
+	<!-- Type interpreter Plugin -->
+	<module>../../../sirius/plugins/org.polarsys.kitalpha.sirius.typeinterpreter</module>
+	
+	<!-- Type interpreter Feature -->
+	<module>../../../sirius/features/org.polarsys.kitalpha.sirius.typeinterpreter.feature</module>
+	
   </modules>
 </project>
 
