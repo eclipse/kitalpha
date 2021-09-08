@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2020 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2021 Thales Global Services S.A.S.
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License 2.0 which is available at
  * http://www.eclipse.org/legal/epl-2.0
@@ -20,17 +20,15 @@ import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.sirius.diagram.business.internal.metamodel.helper.ContentHelper;
-import org.eclipse.sirius.diagram.business.internal.metamodel.helper.MappingHelper;
 import org.eclipse.sirius.diagram.description.ContainerMapping;
 import org.eclipse.sirius.diagram.description.DiagramDescription;
 import org.eclipse.sirius.diagram.description.EdgeMapping;
 import org.eclipse.sirius.diagram.description.NodeMapping;
+import org.eclipse.sirius.diagram.model.business.internal.helper.ContentHelper;
 import org.eclipse.sirius.ui.business.api.viewpoint.ViewpointSelection;
 import org.eclipse.sirius.viewpoint.description.Group;
 import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
 import org.eclipse.sirius.viewpoint.description.Viewpoint;
-
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Aspect;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramRepresentation;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramSet;
@@ -133,8 +131,9 @@ public class DoremiDiagramElementHelper {
 		List<DiagramDescription> diagrams = getAvailableDoremiDiagramFor(anyModelElement);
 		for (DiagramDescription iDiagram : diagrams) 
 		{
-			result.addAll(ContentHelper.getAllContainerMappings(iDiagram, true));
-			for (ContainerMapping containerMapping : ContentHelper.getAllContainerMappings(iDiagram, true)) 
+			List<ContainerMapping> allContainerMappings = ContentHelper.getAllContainerMappings(iDiagram, true);
+			result.addAll(allContainerMappings);
+			for (ContainerMapping containerMapping : allContainerMappings) 
 			{
 				List<ContainerMapping> subResult = getSubContainers(containerMapping);
 				if (subResult != null && subResult.size() > 0)
@@ -179,8 +178,9 @@ public class DoremiDiagramElementHelper {
 		List<DiagramDescription> diagrams = getAvailableDoremiDiagramFor(anyModelElement);
 		for (DiagramDescription iDiagram : diagrams) 
 		{
-			result.addAll(ContentHelper.getAllNodeMappings(iDiagram, true));
-			for (NodeMapping iNodeMapping : ContentHelper.getAllNodeMappings(iDiagram, true)) 
+			List<NodeMapping> allNodeMappings = ContentHelper.getAllNodeMappings(iDiagram, true);
+			result.addAll(allNodeMappings);
+			for (NodeMapping iNodeMapping : allNodeMappings) 
 			{
 				List<NodeMapping> borderedNodes = getBorderedNodes(iNodeMapping);
 				if (borderedNodes != null && borderedNodes.size() > 0)
@@ -264,7 +264,7 @@ public class DoremiDiagramElementHelper {
 		
 		List<DiagramDescription> diagrams = getAvailableDoremiDiagramFor(anyModelElement);
 		for (DiagramDescription iDiagram : diagrams) 
-			result.addAll(iDiagram.getAllEdgeMappings());
+			result.addAll(ContentHelper.getAllEdgeMappings(iDiagram, false));
 		
 		return result;
 	}

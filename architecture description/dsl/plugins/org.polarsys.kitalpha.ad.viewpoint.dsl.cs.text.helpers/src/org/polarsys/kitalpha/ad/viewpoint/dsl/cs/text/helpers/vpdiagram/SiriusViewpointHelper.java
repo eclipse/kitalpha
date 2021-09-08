@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2020 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2021 Thales Global Services S.A.S.
  *  This program and the accompanying materials are made available under the
  *  terms of the Eclipse Public License 2.0 which is available at
  *  http://www.eclipse.org/legal/epl-2.0
@@ -21,13 +21,13 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.sirius.diagram.business.internal.metamodel.helper.ContentHelper;
 import org.eclipse.sirius.diagram.description.ContainerMapping;
 import org.eclipse.sirius.diagram.description.DiagramDescription;
 import org.eclipse.sirius.diagram.description.EdgeMapping;
 import org.eclipse.sirius.diagram.description.NodeMapping;
 import org.eclipse.sirius.diagram.description.style.ContainerStyleDescription;
 import org.eclipse.sirius.diagram.description.style.HideLabelCapabilityStyleDescription;
+import org.eclipse.sirius.diagram.model.business.internal.helper.ContentHelper;
 import org.eclipse.sirius.viewpoint.description.ColorDescription;
 import org.eclipse.sirius.viewpoint.description.ConditionalStyleDescription;
 import org.eclipse.sirius.viewpoint.description.Group;
@@ -107,9 +107,10 @@ public class SiriusViewpointHelper {
 			for (RepresentationDescription rd : desc) {
 				if (rd instanceof DiagramDescription){
 					DiagramDescription dd = (DiagramDescription)rd;
-					result.addAll(ContentHelper.getAllContainerMappings(dd, true));
+					EList<ContainerMapping> allContainerMappings = ContentHelper.getAllContainerMappings(dd, true);
+					result.addAll(allContainerMappings);
 					
-					for (ContainerMapping cm : ContentHelper.getAllContainerMappings(dd, true)) {
+					for (ContainerMapping cm : allContainerMappings) {
 						List<ContainerMapping> subResult = getSubContainers(cm);
 						if (subResult != null && !subResult.isEmpty()) {
 							result.addAll(subResult);
@@ -135,10 +136,11 @@ public class SiriusViewpointHelper {
 		for (DiagramDescription dd : diagrams) 
 		{
 			// Add to result all direct contained mapping in the current diagram
-			result.addAll(ContentHelper.getAllContainerMappings(dd, true));
+			EList<ContainerMapping> allContainerMappings = ContentHelper.getAllContainerMappings(dd, true);
+			result.addAll(allContainerMappings);
 
 			// Look for sub mapping
-			for (ContainerMapping cm : ContentHelper.getAllContainerMappings(dd, true)) {
+			for (ContainerMapping cm : allContainerMappings) {
 				List<ContainerMapping> subResult = getSubContainers(cm);
 				if (subResult != null && !subResult.isEmpty()) {
 					result.addAll(subResult);
@@ -200,9 +202,10 @@ public class SiriusViewpointHelper {
 
 		if (desc != null && !desc.isEmpty()){
 			for (DiagramDescription dd : desc) {
-				result.addAll(ContentHelper.getAllNodeMappings(dd, true));
+				EList<NodeMapping> allNodeMappings = ContentHelper.getAllNodeMappings(dd, true);
+				result.addAll(allNodeMappings);
 
-				for (NodeMapping nm : ContentHelper.getAllNodeMappings(dd, true)) {
+				for (NodeMapping nm : allNodeMappings) {
 					List<NodeMapping> borderedNodes = getBorderedNodes(nm);
 					if (borderedNodes != null && borderedNodes.size() > 0) {
 						for (NodeMapping nodeMapping : borderedNodes) {
@@ -237,10 +240,11 @@ public class SiriusViewpointHelper {
 			for (DiagramDescription dd : diagrams) 
 			{
 				// Get all direct contained NodeMapping
-				result.addAll(ContentHelper.getAllNodeMappings(dd, true));
+				EList<NodeMapping> allNodeMappings = ContentHelper.getAllNodeMappings(dd, true);
+				result.addAll(allNodeMappings);
 
 				// Get sub NodeMappings
-				for (NodeMapping nm : ContentHelper.getAllNodeMappings(dd, true)) {
+				for (NodeMapping nm : allNodeMappings) {
 					List<NodeMapping> borderedNodes = getBorderedNodes(nm);
 					if (borderedNodes != null && borderedNodes.size() > 0) {
 						for (NodeMapping nodeMapping : borderedNodes) {
@@ -319,7 +323,7 @@ public class SiriusViewpointHelper {
 		
 		List<DiagramDescription> diagrams = getAllDiagramDescription(resource);
 		for (DiagramDescription iDiagram : diagrams) {
-			result.addAll(iDiagram.getAllEdgeMappings());
+			result.addAll(ContentHelper.getAllEdgeMappings(iDiagram, false));
 		}
 		
 		return result;
@@ -337,7 +341,7 @@ public class SiriusViewpointHelper {
 		if (diagrams != null && !diagrams.isEmpty())
 		{
 			for (DiagramDescription iDiagram : diagrams) {
-				result.addAll(iDiagram.getAllEdgeMappings());
+				result.addAll(ContentHelper.getAllEdgeMappings(iDiagram, false));
 			}
 		}
 		
