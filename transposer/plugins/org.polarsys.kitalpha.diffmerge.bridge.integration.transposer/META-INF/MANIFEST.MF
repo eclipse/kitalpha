@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.polarsys.kitalpha.diffmerge.bridge.integration.transposer
+Bundle-Version: 5.1.0.qualifier
+Bundle-Activator: org.polarsys.kitalpha.diffmerge.bridge.integration.transposer.TransposerBridgePlugin
+Bundle-Vendor: %providerName
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.diffmerge.bridge;visibility:=reexport,
+ org.polarsys.kitalpha.transposer.transformation.emf;visibility:=reexport
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Bundle-Localization: plugin
+Bundle-Name: %pluginName
+Export-Package: org.polarsys.kitalpha.diffmerge.bridge.integration.transposer
+Import-Package: org.apache.log4j
+Automatic-Module-Name: org.polarsys.kitalpha.diffmerge.bridge.integration.transposer
