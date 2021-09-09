@@ -11,8 +11,8 @@
        Thales - initial API and implementation
 -->
 <feature
-      id="org.polarsys.kitalpha.transposer.examples.feature"
-      label="Kitalpha Transposer Examples Feature"
+      id="org.polarsys.kitalpha.transposer.diffmerge.feature"
+      label="%featureName"
       version="5.2.0.qualifier">
 
    <description>
@@ -28,21 +28,7 @@
    </license>
 
    <plugin
-         id="org.polarsys.kitalpha.transposer.examples"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.polarsys.kitalpha.transposer.examples.m2m.uml.to.ecore"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.polarsys.kitalpha.transposer.examples.m2m.uml.to.ecore.extended"
+         id="org.polarsys.kitalpha.diffmerge.bridge.integration.transposer"
          download-size="0"
          install-size="0"
          version="0.0.0"
