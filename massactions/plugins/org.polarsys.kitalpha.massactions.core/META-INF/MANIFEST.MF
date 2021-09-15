@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Massedition
+Bundle-Name: %pluginName
 Bundle-SymbolicName: org.polarsys.kitalpha.massactions.core;singleton:=true
-Bundle-Version: 5.1.0.qualifier
+Bundle-Version: 6.0.0.qualifier
 Bundle-Activator: org.polarsys.kitalpha.massactions.core.activator.MACoreActivator
 Require-Bundle: org.eclipse.nebula.widgets.nattable.core;visibility:=reexport,
  org.eclipse.nebula.widgets.nattable.extension.glazedlists;bundle-version="1.5.0";visibility:=reexport,
@@ -16,6 +16,7 @@ Require-Bundle: org.eclipse.nebula.widgets.nattable.core;visibility:=reexport,
  org.eclipse.collections
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
+Bundle-Localization: plugin
 Export-Package: org.polarsys.kitalpha.massactions.core.activator,
  org.polarsys.kitalpha.massactions.core.column,
  org.polarsys.kitalpha.massactions.core.column.primitive,
@@ -47,3 +48,4 @@ Export-Package: org.polarsys.kitalpha.massactions.core.activator,
  org.polarsys.kitalpha.massactions.core.table.layer.row,
  org.polarsys.kitalpha.massactions.core.ui.menu
 Automatic-Module-Name: org.polarsys.kitalpha.massactions.core
+Bundle-Vendor: %providerName
