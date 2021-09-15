@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Visualize
+Bundle-Name: %pluginName
 Bundle-SymbolicName: org.polarsys.kitalpha.massactions.visualize;singleton:=true
-Bundle-Version: 5.2.0.qualifier
+Bundle-Version: 6.0.0.qualifier
 Automatic-Module-Name: org.polarsys.kitalpha.massactions.visualize
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.polarsys.kitalpha.massactions.core;bundle-version="1.0.0",
@@ -15,3 +15,5 @@ Export-Package: org.polarsys.kitalpha.massactions.visualize.config,
  org.polarsys.kitalpha.massactions.visualize.table,
  org.polarsys.kitalpha.massactions.visualize.table.factory,
  org.polarsys.kitalpha.massactions.visualize.table.layer.groupby
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin

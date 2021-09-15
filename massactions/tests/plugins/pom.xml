@@ -24,7 +24,7 @@
 	<parent>
 		<groupId>org.polarsys</groupId>
 		<artifactId>org.polarsys.kitalpha</artifactId>
-		<version>5.2.0-SNAPSHOT</version>
+		<version>6.0.0-SNAPSHOT</version>
 		<relativePath>../../../releng/plugins/org.polarsys.kitalpha.releng.parent</relativePath>
 	</parent>
 

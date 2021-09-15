@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: %Bundle-name
-Bundle-Vendor: %Bundle-vendor
-Bundle-Version: 5.2.0.qualifier
+Bundle-Name: %BundleName
+Bundle-Vendor: %BundleVendor
+Bundle-Version: 6.0.0.qualifier
 Bundle-SymbolicName: org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer;visibility:=reexport,
@@ -22,6 +22,7 @@ Require-Bundle: org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer;
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.helper
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Localization: plugin
 Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.antlr,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.quickfix,
