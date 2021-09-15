@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
-Bundle-Name: org.polarsys.kitalpha.ad.example.simplecomponent.design
+Bundle-Name: %pluginName
 Bundle-SymbolicName: org.polarsys.kitalpha.ad.example.simplecomponent.design;singleton=true
-Bundle-Version: 5.2.0.qualifier
+Bundle-Version: 6.0.0.qualifier
 Bundle-Activator: org.polarsys.kitalpha.ad.example.simplecomponent.design.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
@@ -9,3 +9,5 @@ Require-Bundle: org.eclipse.ui,
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Provide-Package: org.polarsys.kitalpha.ad.example.simplecomponent.design
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin

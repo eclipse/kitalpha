@@ -1,9 +1,11 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Example
+Bundle-Name: %pluginName
 Bundle-SymbolicName: org.polarsys.kitalpha.massactions.example;singleton:=true
-Bundle-Version: 5.2.0.qualifier
+Bundle-Version: 6.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Automatic-Module-Name: org.polarsys.kitalpha.massactions.example
 Require-Bundle: org.polarsys.kitalpha.massactions.core
+Bundle-Localization: plugin
+Bundle-Vendor: %providerName
