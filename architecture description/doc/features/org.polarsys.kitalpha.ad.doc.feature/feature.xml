@@ -12,8 +12,9 @@
 -->
 <feature
       id="org.polarsys.kitalpha.ad.doc.feature"
-      label="Kitalpha AD Documentation Feature"
-      version="5.1.0.qualifier">
+      label="%featureName"
+      version="6.0.0.qualifier"
+      provider-name="%providerName">
 
    <description>
       %description
