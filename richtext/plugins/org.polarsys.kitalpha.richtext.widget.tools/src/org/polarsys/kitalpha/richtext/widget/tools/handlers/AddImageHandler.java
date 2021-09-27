@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017, 2020 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2021 Thales Global Services S.A.S.
  *  This program and the accompanying materials are made available under the
  *  terms of the Eclipse Public License 2.0 which is available at
  *  http://www.eclipse.org/legal/epl-2.0
@@ -11,21 +11,32 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.richtext.widget.tools.handlers;
 
-import org.eclipse.swt.widgets.Display;
+import java.util.List;
+
+import org.eclipse.sirius.business.api.image.ImageManager;
+import org.eclipse.sirius.business.api.image.ImageManagerProvider;
+import org.eclipse.sirius.diagram.ui.business.api.image.ImageSelector;
+import org.eclipse.sirius.diagram.ui.business.api.image.ImageSelectorService;
 import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
 import org.polarsys.kitalpha.richtext.nebula.widget.toolbar.MDERichTextToolbarItemHandler;
-import org.polarsys.kitalpha.richtext.widget.tools.dialogs.MDEAddImageDialog;
-import org.polarsys.kitalpha.richtext.widget.tools.manager.ImageManagerImpl;
 
 /**
  * @author Faycal Abka
  */
 public class AddImageHandler implements MDERichTextToolbarItemHandler {
 
-	@Override
+  @Override
 	public void execute(MDERichTextWidget richText) {
-		MDEAddImageDialog dialog = new MDEAddImageDialog(Display.getCurrent().getActiveShell(), richText, new ImageManagerImpl(richText));
-		dialog.open();
-	}
+		ImageSelector imageSelector = ImageSelectorService.INSTANCE.getImageSelector();
+		List<String> imagePaths = imageSelector.selectImages(richText.getElement(),
+				ImageSelector.SelectionMode.MONO_SELECTION);
 
+		ImageManager imageManager = ImageManagerProvider.getImageManager();
+		for (String originalPath : imagePaths) {
+			originalPath = originalPath.replace("\\", "/");
+			String imageTag = "<img src=\"" + originalPath + "\"/>";
+			imageTag = imageManager.computeAndConvertPathsToHtmlFromOriginal(richText.getElement(), imageTag);
+			richText.insertRawText(imageTag);
+		}
+	}
 }
