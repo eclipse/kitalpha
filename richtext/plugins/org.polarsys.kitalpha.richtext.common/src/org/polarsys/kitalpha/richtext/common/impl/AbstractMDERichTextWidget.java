@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017, 2020 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2021 Thales Global Services S.A.S.
  *  This program and the accompanying materials are made available under the
  *  terms of the Eclipse Public License 2.0 which is available at
  *  http://www.eclipse.org/legal/epl-2.0
@@ -17,6 +17,7 @@ import java.beans.PropertyChangeListener;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.sirius.business.api.image.ImageManagerProvider;
 import org.eclipse.swt.widgets.Composite;
 import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
 import org.polarsys.kitalpha.richtext.common.intf.SaveStrategy;
@@ -34,12 +35,16 @@ public abstract class AbstractMDERichTextWidget implements MDERichTextWidget {
 	private final static MDERichTextPropertyChangeListenerSupport listenersSupports = new MDERichTextPropertyChangeListenerSupport();
 
 	private EObject owner;
+
 	private EStructuralFeature feature;
 
 	private SaveStrategy saveStrategy;
+
 	public static final String WIDGET_SAVED_PROP = "widgetSaved";
+
 	// Whether the browser is loading its content
 	private boolean isLoading = false;
+
 	private final SaveStrategy DEFAULT_SAVE_STRATEGY = new SaveStrategy() {
 		@Override
 		public void save(String editorText, EObject objectOwner, EStructuralFeature objectFeature) {
@@ -87,17 +92,32 @@ public abstract class AbstractMDERichTextWidget implements MDERichTextWidget {
 	@Override
 	public void loadContent() {
 		areNotNull(getElement(), getFeature());
-		Object text = getElement().eGet(getFeature());
-		String value = (String) ((text instanceof String) ? text : ""); //$NON-NLS-1$
-		setText(value);
+		Object value = getElement().eGet(getFeature());
+		String text = (String) ((value instanceof String) ? value : ""); //$NON-NLS-1$
+
+		text = ImageManagerProvider.getImageManager().computeAndConvertPathsToHtmlFromOriginal(getElement(), text);
+
+		setText(text);
 	}
 
 	@Override
 	public final void saveContent() {
 		areNotNull(getElement(), getFeature());
 		String text = getText();
-		if (text != null && isEditable()) {
+
+		text = ImageManagerProvider.getImageManager().convertToOriginalPathFromPathUsedForHtml(getElement(), text);
+
+		Object currentValue = getElement().eGet(getFeature());
+		if (text != null && isEditable() && !text.equals(currentValue)) {
 			getSaveStrategy().save(text, getElement(), getFeature());
+
+			// A precommit listener will update the base64 string to a path to a new
+			// image. So the string may be changed during save.
+			Object newValue = getElement().eGet(getFeature());
+			if (currentValue != newValue) {
+				loadContent();
+			}
+
 			// Notifies listeners that the save has been done
 			firePropertyChangeEvent(new PropertyChangeEvent(this, WIDGET_SAVED_PROP, null, null));
 		}
@@ -121,6 +141,7 @@ public abstract class AbstractMDERichTextWidget implements MDERichTextWidget {
 		return !storedText.equals(text);
 	}
 
+	@Override
 	public SaveStrategy getSaveStrategy() {
 		return this.saveStrategy;
 	}
@@ -189,10 +210,12 @@ public abstract class AbstractMDERichTextWidget implements MDERichTextWidget {
 		}
 	}
 
+	@Override
 	public void setIsLoading(boolean isLoading) {
 		this.isLoading = isLoading;
 	}
 
+	@Override
 	public boolean isLoading() {
 		return this.isLoading;
 	}
