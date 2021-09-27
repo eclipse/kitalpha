@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017, 2020 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2021 Thales Global Services S.A.S.
  *  This program and the accompanying materials are made available under the
  *  terms of the Eclipse Public License 2.0 which is available at
  *  http://www.eclipse.org/legal/epl-2.0
@@ -38,9 +38,6 @@ public class Constants {
 	public static final String FILE_LOCAL_LABEL = "File (project relative path)"; //$NON-NLS-1$
 	public static final String MODEL_ELEMENT_LABEL = "Model Element"; //$NON-NLS-1$
 	public static final String DIAGRAM_ELEMENT_LABEL = "Diagram Element"; //$NON-NLS-1$
-
-	public static final String DISK_LABEL = "Image (absolute path)"; //$NON-NLS-1$
-	public static final String LOCAL_LABEL = "Image (project relative path)"; //$NON-NLS-1$
 	
 	 //URL CONSTANTS
     public static final URL EDIT_ICON = MDERichTextHelper.getURL(Activator.PLUGIN_ID, "icons/edit.gif"); 		//$NON-NLS-1$
