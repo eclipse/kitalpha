@@ -45,6 +45,18 @@
    <feature id="org.polarsys.kitalpha.runtime.feature" version="0.0.0">
       <category name="Runtime"/>
    </feature>
+   <feature id="org.polarsys.kitalpha.sirius.typeinterpreter.feature" version="0.0.0">
+      <category name="Runtime"/>
+   </feature>
+   <feature id="org.polarsys.kitalpha.sirius.typeinterpreter.feature.source" version="0.0.0">
+      <category name="RuntimeSource"/>
+   </feature>
+   <feature id="org.polarsys.kitalpha.transposer.diffmerge.feature" version="0.0.0">
+      <category name="Runtime"/>
+   </feature>
+   <feature id="org.polarsys.kitalpha.transposer.diffmerge.feature.source" version="0.0.0">
+      <category name="RuntimeSource"/>
+   </feature>
  
 <!-- from runtime core -->
    <feature id="org.polarsys.kitalpha.releng.runtime.core.feature" version="0.0.0">
