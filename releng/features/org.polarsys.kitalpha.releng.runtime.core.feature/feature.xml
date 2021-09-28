@@ -40,10 +40,6 @@
          id="org.polarsys.kitalpha.emde.genchain.feature"
          version="0.0.0"/>
 
-   <includes
-         id="org.polarsys.kitalpha.sirius.typeinterpreter.feature"
-         version="0.0.0"/>
-
    <plugin
          id="org.polarsys.kitalpha.ad.af.coredomain"
          download-size="0"
