@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.2.202001031546
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.af.viewpoint;
 
 import java.util.*;
@@ -82,15 +82,12 @@ public class ViewpointPattern {
 		ResourceSet resourceSet = parameter.eResource().getResourceSet();
 		for (Viewpoint viewpoint : parameter.getParents()) {
 			String afViewpointID = VpDslConfigurationHelper.getRootProjectName(viewpoint);
-			org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint viewpoint_af = PlatformViewpointHelper
-					.getAFViewpoint(afViewpointID, resourceSet);
+			org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint viewpoint_af = PlatformViewpointHelper.getAFViewpoint(afViewpointID, resourceSet);
 
 			if (viewpoint_af != null) {
 				boolean isAlreadyAdded = false;
-				for (org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint iVp : AfProjectManager.INSTANCE
-						.getViewpoint().getParents()) {
-					if (iVp.getName().equals(viewpoint_af.getName()) && iVp.getId().equals(viewpoint_af.getId())
-							&& iVp.getVpid().equals(viewpoint_af.getVpid())) {
+				for (org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint iVp : AfProjectManager.INSTANCE.getViewpoint().getParents()) {
+					if (iVp.getName().equals(viewpoint_af.getName()) && iVp.getId().equals(viewpoint_af.getId()) && iVp.getVpid().equals(viewpoint_af.getVpid())) {
 						isAlreadyAdded = true;
 						break;
 					}
@@ -102,15 +99,12 @@ public class ViewpointPattern {
 
 		for (Viewpoint viewpoint : parameter.getDependencies()) {
 			String afViewpointID = VpDslConfigurationHelper.getRootProjectName(viewpoint);
-			org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint viewpoint_af = PlatformViewpointHelper
-					.getAFViewpoint(afViewpointID, resourceSet);
+			org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint viewpoint_af = PlatformViewpointHelper.getAFViewpoint(afViewpointID, resourceSet);
 
 			if (viewpoint_af != null) {
 				boolean isAlreadyAdded = false;
-				for (org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint iVp : AfProjectManager.INSTANCE
-						.getViewpoint().getDependencies()) {
-					if (iVp.getName().equals(viewpoint_af.getName()) && iVp.getId().equals(viewpoint_af.getId())
-							&& iVp.getVpid().equals(viewpoint_af.getVpid())) {
+				for (org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint iVp : AfProjectManager.INSTANCE.getViewpoint().getDependencies()) {
+					if (iVp.getName().equals(viewpoint_af.getName()) && iVp.getId().equals(viewpoint_af.getId()) && iVp.getVpid().equals(viewpoint_af.getVpid())) {
 						isAlreadyAdded = true;
 						break;
 					}
@@ -122,15 +116,12 @@ public class ViewpointPattern {
 
 		for (Viewpoint viewpoint : parameter.getUseViewpoint()) {
 			String afViewpointID = VpDslConfigurationHelper.getRootProjectName(viewpoint);
-			org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint viewpoint_af = PlatformViewpointHelper
-					.getAFViewpoint(afViewpointID, resourceSet);
+			org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint viewpoint_af = PlatformViewpointHelper.getAFViewpoint(afViewpointID, resourceSet);
 
 			if (viewpoint_af != null) {
 				boolean isAlreadyAdded = false;
-				for (org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint iVp : AfProjectManager.INSTANCE
-						.getViewpoint().getDependencies()) {
-					if (iVp.getName().equals(viewpoint_af.getName()) && iVp.getId().equals(viewpoint_af.getId())
-							&& iVp.getVpid().equals(viewpoint_af.getVpid())) {
+				for (org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint iVp : AfProjectManager.INSTANCE.getViewpoint().getDependencies()) {
+					if (iVp.getName().equals(viewpoint_af.getName()) && iVp.getId().equals(viewpoint_af.getId()) && iVp.getVpid().equals(viewpoint_af.getVpid())) {
 						isAlreadyAdded = true;
 						break;
 					}
@@ -154,8 +145,7 @@ public class ViewpointPattern {
 
 		for (org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Viewpoint viewpoint : allVP) {
 			String bundleID = EcoreUtil.getURI(viewpoint).segment(1);
-			PDEUtility.updateRequiredBundles(AfProjectManager.INSTANCE.getProject(), bundleID,
-					new NullProgressMonitor());
+			PDEUtility.updateRequiredBundles(AfProjectManager.INSTANCE.getProject(), bundleID, new NullProgressMonitor());
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;

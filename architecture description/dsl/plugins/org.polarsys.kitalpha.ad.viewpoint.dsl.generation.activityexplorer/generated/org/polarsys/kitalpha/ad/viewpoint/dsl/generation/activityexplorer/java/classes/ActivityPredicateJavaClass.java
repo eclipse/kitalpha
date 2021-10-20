@@ -1,4 +1,4 @@
-//Generated with EGF 1.4.1.v20161010-1704
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.java.classes;
 
 import org.eclipse.egf.common.helper.*;
@@ -8,8 +8,7 @@ import org.eclipse.egf.model.pattern.*;
 import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 
-public class ActivityPredicateJavaClass extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.java.abstracts.AbstractPredicatedElementJavaClass {
+public class ActivityPredicateJavaClass extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.java.abstracts.AbstractPredicatedElementJavaClass {
 	protected static String nl;
 
 	public static synchronized ActivityPredicateJavaClass create(String lineSeparator) {
@@ -20,7 +19,9 @@ public class ActivityPredicateJavaClass extends
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+
 	protected final String TEXT_1 = "";
+
 	protected final String TEXT_2 = NL;
 
 	public ActivityPredicateJavaClass() {
@@ -79,8 +80,7 @@ public class ActivityPredicateJavaClass extends
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Activity parameter = null;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Activity object) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Activity object) {
 		this.parameter = object;
 	}
 
@@ -90,8 +90,7 @@ public class ActivityPredicateJavaClass extends
 		return parameters;
 	}
 
-	protected void method_setPredicatedElement(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_setPredicatedElement(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		predicatedElement = parameter;
 		InternalPatternContext ictx = (InternalPatternContext) ctx;

@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.style;
 
 import java.util.*;
@@ -20,12 +20,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.Cont
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.FlatContainerStyleCustomization;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.ShapeContainerStyleCustomization;
 
-public class ContainerStyleCustomizationPattern extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.common.AbstractNodeStyleCustomizationPattern {
+public class ContainerStyleCustomizationPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.common.AbstractNodeStyleCustomizationPattern {
 
 	public ContainerStyleCustomizationPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -65,8 +65,7 @@ public class ContainerStyleCustomizationPattern extends
 			parameters.put("appliedOn", this.appliedOn);
 			parameters.put("stylePropertyData", this.arcWidth);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
 					ctx_local, parameters);
 		}
 		{
@@ -76,8 +75,7 @@ public class ContainerStyleCustomizationPattern extends
 			parameters.put("appliedOn", this.appliedOn);
 			parameters.put("stylePropertyData", this.arcHeight);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
 					ctx_local, parameters);
 		}
 		{
@@ -87,8 +85,7 @@ public class ContainerStyleCustomizationPattern extends
 			parameters.put("appliedOn", this.appliedOn);
 			parameters.put("stylePropertyData", this.roundedCorner);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
 					ctx_local, parameters);
 		}
 		{
@@ -98,8 +95,7 @@ public class ContainerStyleCustomizationPattern extends
 			parameters.put("stylePropertyData", this.workspacePath);
 			parameters.put("appliedOn", this.workspacePathAppliedOn);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
 					ctx_local, parameters);
 		}
 		{
@@ -109,8 +105,7 @@ public class ContainerStyleCustomizationPattern extends
 			parameters.put("stylePropertyData", this.backgroundStyle);
 			parameters.put("appliedOn", this.backgroundStyleAppliedOn);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
 					ctx_local, parameters);
 		}
 		{
@@ -120,8 +115,7 @@ public class ContainerStyleCustomizationPattern extends
 			parameters.put("stylePropertyData", this.shape);
 			parameters.put("appliedOn", this.shapeAppliedOn);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
 					ctx_local, parameters);
 		}
 		ictx.setNode(currentNode);
@@ -170,14 +164,12 @@ public class ContainerStyleCustomizationPattern extends
 	}
 
 	protected void method_initializeCustomStyleData(final StringBuffer out, final PatternContext ctx) throws Exception {
-		final EList<SpecificContainerStyleCustomization> specificCustomizations = parameter
-				.getOwnedSpecificContainerStyleCustomization();
+		final EList<SpecificContainerStyleCustomization> specificCustomizations = parameter.getOwnedSpecificContainerStyleCustomization();
 		for (SpecificContainerStyleCustomization specificCustomization : specificCustomizations) {
 			if (specificCustomization instanceof ContainerWorkspaceImageCustomization) {
 				ContainerWorkspaceImageCustomization cwic = (ContainerWorkspaceImageCustomization) specificCustomization;
 				set_workspacePathAppliedOn(cwic.getAppliedOn());
-				if (cwic.eIsSet(VpstylecustomizationPackage.eINSTANCE
-						.getContainerWorkspaceImageCustomization_WorkspacePath())) {
+				if (cwic.eIsSet(VpstylecustomizationPackage.eINSTANCE.getContainerWorkspaceImageCustomization_WorkspacePath())) {
 					set_workspacePath(new StylePropertyNameValueCouple("workspacePath", cwic.getWorkspacePath()));
 				}
 			}
@@ -185,17 +177,14 @@ public class ContainerStyleCustomizationPattern extends
 			if (specificCustomization instanceof FlatContainerStyleCustomization) {
 				FlatContainerStyleCustomization fcsc = (FlatContainerStyleCustomization) specificCustomization;
 				set_backgroundStyleAppliedOn(fcsc.getAppliedOn());
-				if (fcsc.eIsSet(
-						VpstylecustomizationPackage.eINSTANCE.getFlatContainerStyleCustomization_BackgroundStyle())) {
+				if (fcsc.eIsSet(VpstylecustomizationPackage.eINSTANCE.getFlatContainerStyleCustomization_BackgroundStyle())) {
 					String enumLiteralName = fcsc.getBackgroundStyle().toString();
-					String methodCode = "return DiagramPackage.eINSTANCE.getBackgroundStyle().getEEnumLiteral(\""
-							+ enumLiteralName + "\");";
+					String methodCode = "return DiagramPackage.eINSTANCE.getBackgroundStyle().getEEnumLiteral(\"" + enumLiteralName + "\");";
 					char first = Character.toUpperCase(enumLiteralName.charAt(0));
 					enumLiteralName = first + enumLiteralName.substring(1).toLowerCase();
 					String methodName = "getBackgroundStyle" + enumLiteralName;
 
-					JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral,
-							methodCode);
+					JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
 
 					// Set method parameters data
 					javaMethodData.addMethodParameter("any", "EObject", "any model element");
@@ -217,14 +206,12 @@ public class ContainerStyleCustomizationPattern extends
 				set_shapeAppliedOn(scsc.getAppliedOn());
 				if (scsc.eIsSet(VpstylecustomizationPackage.eINSTANCE.getShapeContainerStyleCustomization_Shape())) {
 					String enumLiteralName = scsc.getShape().toString();
-					String methodCode = "return DiagramPackage.eINSTANCE.getContainerShape().getEEnumLiteral(\""
-							+ enumLiteralName + "\");";
+					String methodCode = "return DiagramPackage.eINSTANCE.getContainerShape().getEEnumLiteral(\"" + enumLiteralName + "\");";
 					char first = Character.toUpperCase(enumLiteralName.charAt(0));
 					enumLiteralName = first + enumLiteralName.substring(1).toLowerCase();
 					String methodName = "getContainerShape" + enumLiteralName;
 
-					JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral,
-							methodCode);
+					JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
 
 					// Set method parameters data
 					javaMethodData.addMethodParameter("any", "EObject", "any model element");
@@ -248,50 +235,43 @@ public class ContainerStyleCustomizationPattern extends
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.ContainerStyleCustomization parameter;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.ContainerStyleCustomization parameter) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.ContainerStyleCustomization parameter) {
 		this.parameter = parameter;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple arcWidth;
 
-	public void set_arcWidth(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple arcWidth) {
+	public void set_arcWidth(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple arcWidth) {
 		this.arcWidth = arcWidth;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple arcHeight;
 
-	public void set_arcHeight(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple arcHeight) {
+	public void set_arcHeight(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple arcHeight) {
 		this.arcHeight = arcHeight;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple roundedCorner;
 
-	public void set_roundedCorner(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple roundedCorner) {
+	public void set_roundedCorner(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple roundedCorner) {
 		this.roundedCorner = roundedCorner;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple workspacePath;
 
-	public void set_workspacePath(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple workspacePath) {
+	public void set_workspacePath(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple workspacePath) {
 		this.workspacePath = workspacePath;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple backgroundStyle;
 
-	public void set_backgroundStyle(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple backgroundStyle) {
+	public void set_backgroundStyle(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple backgroundStyle) {
 		this.backgroundStyle = backgroundStyle;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple shape;
 
-	public void set_shape(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple shape) {
+	public void set_shape(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple shape) {
 		this.shape = shape;
 	}
 

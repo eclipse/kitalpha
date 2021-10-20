@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.style;
 
 import java.util.*;
@@ -17,6 +17,7 @@ public class InitializeEnumerationHelperJServiceData {
 	public InitializeEnumerationHelperJServiceData() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -93,8 +94,7 @@ public class InitializeEnumerationHelperJServiceData {
 		new Node.DataLeaf(ictx.getNode(), getClass(), "getCorrespondingLineStyle", out.toString());
 	}
 
-	protected void method_getCorrespondingEdgeArrows(final StringBuffer out, final PatternContext ctx)
-			throws Exception {
+	protected void method_getCorrespondingEdgeArrows(final StringBuffer out, final PatternContext ctx) throws Exception {
 		String methodCode = "return DiagramPackage.eINSTANCE.getEdgeArrows().getEEnumLiteral(name);";
 		String methodName = "getCorrespondingEdgeArrows";
 
@@ -116,8 +116,7 @@ public class InitializeEnumerationHelperJServiceData {
 		new Node.DataLeaf(ictx.getNode(), getClass(), "getCorrespondingEdgeArrows", out.toString());
 	}
 
-	protected void method_getCorrespondingEdgeRouting(final StringBuffer out, final PatternContext ctx)
-			throws Exception {
+	protected void method_getCorrespondingEdgeRouting(final StringBuffer out, final PatternContext ctx) throws Exception {
 		String methodCode = "return DiagramPackage.eINSTANCE.getEdgeRouting().getEEnumLiteral(name);";
 		String methodName = "getCorrespondingEdgeRouting";
 
@@ -139,8 +138,7 @@ public class InitializeEnumerationHelperJServiceData {
 		new Node.DataLeaf(ictx.getNode(), getClass(), "getCorrespondingEdgeRouting", out.toString());
 	}
 
-	protected void method_getCorrespondingBundledImageShape(final StringBuffer out, final PatternContext ctx)
-			throws Exception {
+	protected void method_getCorrespondingBundledImageShape(final StringBuffer out, final PatternContext ctx) throws Exception {
 		String methodCode = "return DiagramPackage.eINSTANCE.getBundledImageShape().getEEnumLiteral(name);";
 		String methodName = "getCorrespondingBundledImageShape";
 
@@ -162,8 +160,7 @@ public class InitializeEnumerationHelperJServiceData {
 		new Node.DataLeaf(ictx.getNode(), getClass(), "getCorrespondingBundledImageShape", out.toString());
 	}
 
-	protected void method_getCorrespondingFoldingStyle(final StringBuffer out, final PatternContext ctx)
-			throws Exception {
+	protected void method_getCorrespondingFoldingStyle(final StringBuffer out, final PatternContext ctx) throws Exception {
 		String methodCode = "return DescriptionPackage.eINSTANCE.getFoldingStyle().getEEnumLiteral(name);";
 		String methodName = "getCorrespondingFoldingStyle";
 
@@ -185,8 +182,7 @@ public class InitializeEnumerationHelperJServiceData {
 		new Node.DataLeaf(ictx.getNode(), getClass(), "getCorrespondingFoldingStyle", out.toString());
 	}
 
-	protected void method_getCorrespondingResizeKind(final StringBuffer out, final PatternContext ctx)
-			throws Exception {
+	protected void method_getCorrespondingResizeKind(final StringBuffer out, final PatternContext ctx) throws Exception {
 		String methodCode = "return DiagramPackage.eINSTANCE.getResizeKind().getEEnumLiteral(name);";
 		String methodName = "getCorrespondingResizeKind";
 
@@ -208,8 +204,7 @@ public class InitializeEnumerationHelperJServiceData {
 		new Node.DataLeaf(ictx.getNode(), getClass(), "getCorrespondingResizeKind", out.toString());
 	}
 
-	protected void method_getCorrespondingCenteringStyle(final StringBuffer out, final PatternContext ctx)
-			throws Exception {
+	protected void method_getCorrespondingCenteringStyle(final StringBuffer out, final PatternContext ctx) throws Exception {
 		String methodCode = "return DescriptionPackage.eINSTANCE.getCenteringStyle().getEEnumLiteral(name);";
 		String methodName = "getCorrespondingCenteringStyle";
 
@@ -231,8 +226,7 @@ public class InitializeEnumerationHelperJServiceData {
 		new Node.DataLeaf(ictx.getNode(), getClass(), "getCorrespondingCenteringStyle", out.toString());
 	}
 
-	protected void method_getCorrespondingFontFormat(final StringBuffer out, final PatternContext ctx)
-			throws Exception {
+	protected void method_getCorrespondingFontFormat(final StringBuffer out, final PatternContext ctx) throws Exception {
 		String methodCode = "return ViewpointPackage.eINSTANCE.getFontFormat().getEEnumLiteral(name);";
 		String methodName = "getCorrespondingFontFormat";
 
@@ -254,8 +248,7 @@ public class InitializeEnumerationHelperJServiceData {
 		new Node.DataLeaf(ictx.getNode(), getClass(), "getCorrespondingFontFormat", out.toString());
 	}
 
-	protected void method_getCorrespondingLabelAlignment(final StringBuffer out, final PatternContext ctx)
-			throws Exception {
+	protected void method_getCorrespondingLabelAlignment(final StringBuffer out, final PatternContext ctx) throws Exception {
 		String methodCode = "return ViewpointPackage.eINSTANCE.getLabelAlignment().getEEnumLiteral(name);";
 		String methodName = "getCorrespondingLabelAlignment";
 
@@ -277,8 +270,7 @@ public class InitializeEnumerationHelperJServiceData {
 		new Node.DataLeaf(ictx.getNode(), getClass(), "getCorrespondingLabelAlignment", out.toString());
 	}
 
-	protected void method_getCorrespondingLabelPosition(final StringBuffer out, final PatternContext ctx)
-			throws Exception {
+	protected void method_getCorrespondingLabelPosition(final StringBuffer out, final PatternContext ctx) throws Exception {
 		String methodCode = "return DiagramPackage.eINSTANCE.getLabelPosition().getEEnumLiteral(name);";
 		String methodName = "getCorrespondingLabelPosition";
 
@@ -306,15 +298,13 @@ public class InitializeEnumerationHelperJServiceData {
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.Customizations parameter;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.Customizations parameter) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.Customizations parameter) {
 		this.parameter = parameter;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.javaservice.JavaServiceData javaServiceData;
 
-	public void set_javaServiceData(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.javaservice.JavaServiceData javaServiceData) {
+	public void set_javaServiceData(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.javaservice.JavaServiceData javaServiceData) {
 		this.javaServiceData = javaServiceData;
 	}
 

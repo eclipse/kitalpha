@@ -140,7 +140,7 @@ location coevolution "https://download.eclipse.org/diffmerge/stable/0.14.0-S2021
 	 org.eclipse.emf.diffmerge.coevolution.sdk.feature.source.feature.group lazy
 }
 
-location amalgam "https://download.eclipse.org/modeling/amalgam/updates/stable/1.13.0-S20210824/capella" {
+location amalgam "https://download.eclipse.org/modeling/amalgam/updates/stable/1.13.0-S20210909/capella" {
 	org.eclipse.amalgam.explorer.activity.feature.group lazy
 	org.eclipse.amalgam.explorer.activity.source.feature.group lazy
 	org.eclipse.amalgam.explorer.contextual.feature.group lazy
@@ -151,7 +151,7 @@ location amalgam "https://download.eclipse.org/modeling/amalgam/updates/stable/1
 	org.eclipse.amalgam.explorer.contextual.core.source.feature.group lazy
 }
 
-location EGFSdk "https://download.eclipse.org/egf/updates/1.6.2/2019-06/" {
+location EGFSdk "https://download.eclipse.org/egf/updates/stable/1.6.3/2021-06/" {
 	org.eclipse.egf.sdk.feature.feature.group lazy
 	org.eclipse.egf.sdk.feature.source.feature.group lazy
 }

@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20150924-1035
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.doc.gen.business.ecore.extension.content.impl;
 
 import org.eclipse.egf.common.helper.*;
@@ -25,15 +25,18 @@ public class EClassRepresentations {
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+
 	protected final String TEXT_1 = "";
+
 	protected final String TEXT_2 = NL;
+
 	protected final String TEXT_3 = NL + "<h2>Representations</h2>" + NL;
+
 	protected final String TEXT_4 = NL + "<p><strong>";
+
 	protected final String TEXT_5 = "</strong></p>";
+
 	protected final String TEXT_6 = NL;
-	protected final String TEXT_7 = NL;
-	protected final String TEXT_8 = NL;
-	protected final String TEXT_9 = NL;
 
 	public EClassRepresentations() {
 		//Here is the constructor
@@ -51,20 +54,13 @@ public class EClassRepresentations {
 
 		paramDesc = new IQuery.ParameterDescription("parameter", "http://www.eclipse.org/emf/2002/Ecore#//EClass");
 		queryCtx = new HashMap<String, String>();
-		List<Object> parameterList = QueryHelper
-				.load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.injected.context")
-				.execute(paramDesc, queryCtx, ctx);
-		paramDesc = new IQuery.ParameterDescription("helper",
-				"org.polarsys.kitalpha.doc.gen.business.core.util.IDiagramHelper");
+		List<Object> parameterList = QueryHelper.load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.injected.context").execute(paramDesc, queryCtx, ctx);
+		paramDesc = new IQuery.ParameterDescription("helper", "org.polarsys.kitalpha.doc.gen.business.core.util.IDiagramHelper");
 		queryCtx = new HashMap<String, String>();
-		List<Object> helperList = QueryHelper.load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.diagramHelper")
-				.execute(paramDesc, queryCtx, ctx);
-		paramDesc = new IQuery.ParameterDescription("fileNameService",
-				"org.polarsys.kitalpha.doc.gen.business.core.util.IFileNameService");
+		List<Object> helperList = QueryHelper.load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.diagramHelper").execute(paramDesc, queryCtx, ctx);
+		paramDesc = new IQuery.ParameterDescription("fileNameService", "org.polarsys.kitalpha.doc.gen.business.core.util.IFileNameService");
 		queryCtx = new HashMap<String, String>();
-		List<Object> fileNameServiceList = QueryHelper
-				.load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.inject.file.name.service")
-				.execute(paramDesc, queryCtx, ctx);
+		List<Object> fileNameServiceList = QueryHelper.load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.inject.file.name.service").execute(paramDesc, queryCtx, ctx);
 
 		for (Object parameterParameter : parameterList) {
 			for (Object helperParameter : helperList) {
@@ -87,8 +83,8 @@ public class EClassRepresentations {
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_8);
-		stringBuffer.append(TEXT_9);
+		stringBuffer.append(TEXT_6);
+		stringBuffer.append(TEXT_6);
 		return stringBuffer.toString();
 	}
 
@@ -148,15 +144,13 @@ public class EClassRepresentations {
 
 			stringBuffer.append(TEXT_3);
 			for (DRepresentation diagram : diagramList) {
-				if ((diagram instanceof DSemanticDiagram)
-						&& (!((DSemanticDiagram) diagram).getDescription().getName().equals("Inheritance")
-								&& !((DSemanticDiagram) diagram).getDescription().getName().equals("Class Focus")
-								&& ((DSemanticDiagram) diagram).getTarget() == parameter)) {
+				if ((diagram instanceof DSemanticDiagram) && (!((DSemanticDiagram) diagram).getDescription().getName().equals("Inheritance")
+						&& !((DSemanticDiagram) diagram).getDescription().getName().equals("Class Focus") && ((DSemanticDiagram) diagram).getTarget() == parameter)) {
 					String generatedFolder = fileNameService.getFileName(((DSemanticDiagram) diagram).getTarget());
 					stringBuffer.append(TEXT_4);
 					stringBuffer.append(((DSemanticDiagram) diagram).getDescription().getName());
 					stringBuffer.append(TEXT_5);
-					stringBuffer.append(TEXT_6);
+					stringBuffer.append(TEXT_2);
 					{
 						//<%@ egf:patternCall patternId="platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#LogicalName=org.polarsys.kitalpha.doc.gen.business.core.sirius.DiagramGenerator" args="diagram:diagram, outputFolder:outputFolder, projectName:projectName, generatedFolder:generatedFolder, fileNameService:fileNameService, helper:helper"%>
 
@@ -171,13 +165,12 @@ public class EClassRepresentations {
 						callParameters.put("generatedFolder", generatedFolder);
 						callParameters.put("fileNameService", fileNameService);
 						callParameters.put("helper", helper);
-						CallHelper.executeWithParameterInjection(
-								"platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_yyU7IvYiEd-jis7N5RhttA",
+						CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_yyU7IvYiEd-jis7N5RhttA",
 								new ExecutionContext((InternalPatternContext) ctx), callParameters);
 						stringBuffer.setLength(0);
 					}
 
-					stringBuffer.append(TEXT_7);
+					stringBuffer.append(TEXT_2);
 
 				}
 			}

@@ -19,30 +19,34 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.PropertySet;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.RuleSet;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.ServiceSet;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.generator.CommonGenerator;
 
 @SuppressWarnings("all")
 public class VpservicesGenerator extends CommonGenerator {
-  @Override
   public boolean checkInput(final List<EObject> objects) {
-    final Function1<EObject, Boolean> _function = (EObject c) -> {
-      return Boolean.valueOf((c instanceof ServiceSet));
+    final Function1<EObject, Boolean> _function = new Function1<EObject, Boolean>() {
+      public Boolean apply(final EObject c) {
+        return Boolean.valueOf((c instanceof ServiceSet));
+      }
     };
     EObject services = IterableExtensions.<EObject>findFirst(objects, _function);
     boolean _notEquals = (!Objects.equal(services, null));
     if (_notEquals) {
       return true;
     }
-    final Function1<EObject, Boolean> _function_1 = (EObject c) -> {
-      return Boolean.valueOf((c instanceof RuleSet));
+    final Function1<EObject, Boolean> _function_1 = new Function1<EObject, Boolean>() {
+      public Boolean apply(final EObject c) {
+        return Boolean.valueOf((c instanceof RuleSet));
+      }
     };
     EObject rules = IterableExtensions.<EObject>findFirst(objects, _function_1);
     boolean _notEquals_1 = (!Objects.equal(rules, null));
     if (_notEquals_1) {
       return true;
     }
-    final Function1<EObject, Boolean> _function_2 = (EObject c) -> {
-      return Boolean.valueOf((c instanceof PropertySet));
+    final Function1<EObject, Boolean> _function_2 = new Function1<EObject, Boolean>() {
+      public Boolean apply(final EObject c) {
+        return Boolean.valueOf((c instanceof PropertySet));
+      }
     };
     EObject properties = IterableExtensions.<EObject>findFirst(objects, _function_2);
     boolean _notEquals_2 = (!Objects.equal(properties, null));

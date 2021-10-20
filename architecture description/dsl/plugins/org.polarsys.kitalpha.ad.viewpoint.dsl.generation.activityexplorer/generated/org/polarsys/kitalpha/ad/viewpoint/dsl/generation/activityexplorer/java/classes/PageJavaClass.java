@@ -1,4 +1,4 @@
-//Generated with EGF 1.4.1.v20161010-1704
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.java.classes;
 
 import org.eclipse.egf.common.helper.*;
@@ -15,8 +15,7 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.internal.JavaNamingConvention;
 
-public class PageJavaClass extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.java.abstracts.AbstractActivityExplorerJavaClass {
+public class PageJavaClass extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.java.abstracts.AbstractActivityExplorerJavaClass {
 	protected static String nl;
 
 	public static synchronized PageJavaClass create(String lineSeparator) {
@@ -27,15 +26,18 @@ public class PageJavaClass extends
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "import org.polarsys.kitalpha.ad.integration.amalgam.pages.ADActivityExplorerPage;"
-			+ NL + NL + NL;
+
+	protected final String TEXT_1 = "import org.polarsys.kitalpha.ad.integration.amalgam.pages.ADActivityExplorerPage;" + NL + NL + NL;
+
 	protected final String TEXT_2 = NL + "public class ";
-	protected final String TEXT_3 = " extends ADActivityExplorerPage  {" + NL + "" + NL
-			+ "\tprotected String getViewpointID(){" + NL + "\t\treturn \t\"";
+
+	protected final String TEXT_3 = " extends ADActivityExplorerPage  {" + NL + "" + NL + "\tprotected String getViewpointID(){" + NL + "\t\treturn \t\"";
+
 	protected final String TEXT_4 = "\"; //$NON-NLS-1$" + NL + "\t}" + NL + "" + NL + "}" + NL;
+
 	protected final String TEXT_5 = NL + NL;
+
 	protected final String TEXT_6 = NL;
-	protected final String TEXT_7 = NL;
 
 	public PageJavaClass() {
 		//Here is the constructor
@@ -72,7 +74,7 @@ public class PageJavaClass extends
 		}
 
 		stringBuffer.append(TEXT_6);
-		stringBuffer.append(TEXT_7);
+		stringBuffer.append(TEXT_6);
 		return stringBuffer.toString();
 	}
 
@@ -95,8 +97,7 @@ public class PageJavaClass extends
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Page parameter = null;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Page object) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Page object) {
 		this.parameter = object;
 	}
 
@@ -129,15 +130,13 @@ public class PageJavaClass extends
 		stringBuffer.append(TEXT_2);
 		stringBuffer.append(classname);
 		stringBuffer.append(TEXT_3);
-		stringBuffer.append(org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.configuration.VpDslConfigurationHelper
-				.getRootProjectName(parameter));
+		stringBuffer.append(org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.configuration.VpDslConfigurationHelper.getRootProjectName(parameter));
 		stringBuffer.append(TEXT_4);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "genClassCode", stringBuffer.toString());
 	}
 
-	protected void method_updateProjectDependecies(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_updateProjectDependecies(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(projectname);
 		NullProgressMonitor npm = new NullProgressMonitor();

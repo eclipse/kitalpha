@@ -1,4 +1,4 @@
-//Generated with EGF 1.4.1.v20161010-1704
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.extensions.libs;
 
 import org.eclipse.egf.common.helper.*;
@@ -21,7 +21,9 @@ public class IconCopyerPattern {
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+
 	protected final String TEXT_1 = "";
+
 	protected final String TEXT_2 = NL;
 
 	public IconCopyerPattern() {
@@ -86,8 +88,7 @@ public class IconCopyerPattern {
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Icon iconElement = null;
 
-	public void set_iconElement(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Icon object) {
+	public void set_iconElement(org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Icon object) {
 		this.iconElement = object;
 	}
 

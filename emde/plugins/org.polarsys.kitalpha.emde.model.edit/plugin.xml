@@ -3,7 +3,7 @@
 
 <!--
 #
-# 	Copyright (c) THALES, 2007-2010. All rights reserved.
+#      Copyright (c) THALES, 2007-2010. All rights reserved.
 #
 -->
 <plugin>
@@ -11,6 +11,7 @@
    
 <!--@generated-->
   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated eMDE -->
       <factory class="org.polarsys.kitalpha.emde.model.edit.provider.EmdeItemProviderAdapterFactory" supportedTypes="org.eclipse.emf.edit.provider.IEditingDomainItemProvider                org.eclipse.emf.edit.provider.IStructuredItemContentProvider                org.eclipse.emf.edit.provider.ITreeItemContentProvider                org.eclipse.emf.edit.provider.IItemLabelProvider                org.eclipse.emf.edit.provider.IItemPropertySource                org.eclipse.emf.edit.provider.ITableItemLabelProvider                org.eclipse.emf.edit.provider.ITableItemColorProvider                org.eclipse.emf.edit.provider.ITableItemFontProvider                org.eclipse.emf.edit.provider.IItemColorProvider                org.eclipse.emf.edit.provider.IItemFontProvider" uri="http://www.polarsys.org/kitalpha/emde/1.0.0"/>
    </extension>
 

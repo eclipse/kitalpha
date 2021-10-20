@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common;
 
 import java.util.*;
@@ -8,12 +8,12 @@ import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 import org.eclipse.egf.common.helper.*;
 
-public class AbstractTargetEdgeReconnectionTool
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common.AbstractEdgeReconnectionTool {
+public class AbstractTargetEdgeReconnectionTool extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common.AbstractEdgeReconnectionTool {
 
 	public AbstractTargetEdgeReconnectionTool() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {

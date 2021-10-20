@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools;
 
 import java.util.*;
@@ -48,12 +48,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.siriu
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.sirius.ExpressionInterpreter;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.VSMVariable;
 
-public class CreateToolPattern
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common.AbstractCreationTool {
+public class CreateToolPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common.AbstractCreationTool {
 
 	public CreateToolPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -108,8 +108,7 @@ public class CreateToolPattern
 		String vSource = VSMVariable.source.getExpressionVariable();
 		String vTarget = VSMVariable.target.getExpressionVariable();
 
-		String mParameters = "(" + VSMVariable.sourceView.getInnerVariable() + ","
-				+ VSMVariable.target.getInnerVariable() + "," + VSMVariable.targetView.getInnerVariable() + ")";
+		String mParameters = "(" + VSMVariable.sourceView.getInnerVariable() + "," + VSMVariable.target.getInnerVariable() + "," + VSMVariable.targetView.getInnerVariable() + ")";
 
 		String icon_path = null;
 		if (parameter.getIcon() != null && parameter.getIcon().trim().length() > 0) {
@@ -126,16 +125,13 @@ public class CreateToolPattern
 
 			AbstractNode node_mapping = (AbstractNode) parameter.getTool_For();
 
-			InitialNodeCreationOperation init = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE
-					.createInitialNodeCreationOperation();
+			InitialNodeCreationOperation init = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE.createInitialNodeCreationOperation();
 			NodeCreationVariable v_container = ToolFactory.eINSTANCE.createNodeCreationVariable();
 			v_container.setName("container");
-			ContainerViewVariable v_container_view = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE
-					.createContainerViewVariable();
+			ContainerViewVariable v_container_view = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE.createContainerViewVariable();
 			v_container_view.setName("containerView");
 
-			ChangeContext gotoContainer = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE
-					.createChangeContext();
+			ChangeContext gotoContainer = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE.createChangeContext();
 			String pContainer = VSMVariable.container.getExpressionVariable();
 			gotoContainer.setBrowseExpression(pContainer);
 
@@ -165,22 +161,18 @@ public class CreateToolPattern
 					String n_method_name = "CreateInstance" + node_mapping.getThe_domain().getDomain_Class().getName();
 					JavaMethodReturnType n_returnType = JavaMethodReturnType.Boolean;
 					JavaMethodData javaMethodData = new JavaMethodData(n_method_name, n_returnType);
-					javaMethodData.addMethodParameter(VSMVariable.container.toString(), "EObject",
-							"the semantic container of the new model element");
-					javaMethodData.addMethodParameter(VSMVariable.containerView.toString(), "EObject",
-							"the view of the semantic container");
+					javaMethodData.addMethodParameter(VSMVariable.container.toString(), "EObject", "the semantic container of the new model element");
+					javaMethodData.addMethodParameter(VSMVariable.containerView.toString(), "EObject", "the view of the semantic container");
 
 					javaServiceData.addMethod(javaMethodData);
 
 					If n_if = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE.createIf();
 					String pContainerView = "(" + VSMVariable.containerView.getInnerVariable() + ")";
-					n_if.setConditionExpression(SiriusExpressionHelper.getExpressoin(n_method_name + pContainerView,
-							ExpressionInterpreter.Service));
+					n_if.setConditionExpression(SiriusExpressionHelper.getExpressoin(n_method_name + pContainerView, ExpressionInterpreter.Service));
 					gotoContainer.getSubModelOperations().add(n_if);
 				}
 			} else {
-				CreateInstance createIntance = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE
-						.createCreateInstance();
+				CreateInstance createIntance = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE.createCreateInstance();
 				createIntance.setReferenceName(referenceName);
 				createIntance.setTypeName(clazzName);
 				createIntance.setVariableName("instance");
@@ -191,8 +183,7 @@ public class CreateToolPattern
 
 			MappingBasedToolDescription creationTool = null;
 
-			if (node_mapping instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Node
-					|| node_mapping instanceof BorderedNode) {
+			if (node_mapping instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Node || node_mapping instanceof BorderedNode) {
 				creationTool = ToolFactory.eINSTANCE.createNodeCreationDescription();
 				NodeCreationDescription nodeCreationTool = (NodeCreationDescription) creationTool;
 				if (icon_path != null && icon_path.trim().length() > 0) {
@@ -247,8 +238,7 @@ public class CreateToolPattern
 			}
 
 			// Default variable creation
-			InitEdgeCreationOperation e_init = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE
-					.createInitEdgeCreationOperation();
+			InitEdgeCreationOperation e_init = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE.createInitEdgeCreationOperation();
 			SourceEdgeCreationVariable source = ToolFactory.eINSTANCE.createSourceEdgeCreationVariable();
 			source.setName("source");
 			TargetEdgeCreationVariable target = ToolFactory.eINSTANCE.createTargetEdgeCreationVariable();
@@ -301,24 +291,18 @@ public class CreateToolPattern
 						String e_method_name = "create" + clazz.getName() + "Instance";
 						JavaMethodReturnType n_returnType = JavaMethodReturnType.Boolean;
 						JavaMethodData javaMethodData = new JavaMethodData(e_method_name, n_returnType);
-						javaMethodData.addMethodParameter(VSMVariable.source.toString(), "EObject",
-								"the semantic source element");
-						javaMethodData.addMethodParameter(VSMVariable.sourceView.toString(), "EObject",
-								"the semantic source view");
-						javaMethodData.addMethodParameter(VSMVariable.target.toString(), "EObject",
-								"the semantic target element");
-						javaMethodData.addMethodParameter(VSMVariable.targetView.toString(), "EObject",
-								"the semantic target view");
+						javaMethodData.addMethodParameter(VSMVariable.source.toString(), "EObject", "the semantic source element");
+						javaMethodData.addMethodParameter(VSMVariable.sourceView.toString(), "EObject", "the semantic source view");
+						javaMethodData.addMethodParameter(VSMVariable.target.toString(), "EObject", "the semantic target element");
+						javaMethodData.addMethodParameter(VSMVariable.targetView.toString(), "EObject", "the semantic target view");
 
 						javaServiceData.addMethod(javaMethodData);
 
-						ChangeContext gotoElementContainer = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE
-								.createChangeContext();
+						ChangeContext gotoElementContainer = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE.createChangeContext();
 						gotoElementContainer.setBrowseExpression(vSource);
 
 						If iv = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE.createIf();
-						iv.setConditionExpression(SiriusExpressionHelper.getExpressoin(e_method_name + mParameters,
-								ExpressionInterpreter.Service));
+						iv.setConditionExpression(SiriusExpressionHelper.getExpressoin(e_method_name + mParameters, ExpressionInterpreter.Service));
 
 						gotoElementContainer.getSubModelOperations().add(iv);
 						e_init.setFirstModelOperations(gotoElementContainer);
@@ -390,14 +374,12 @@ public class CreateToolPattern
 						} */
 					}
 				} else {
-					ChangeContext gotoSource = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE
-							.createChangeContext();
+					ChangeContext gotoSource = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE.createChangeContext();
 					gotoSource.setBrowseExpression(vSource);
 					ContainerModelOperation operation = null;
 
 					if (target_asso != null) {
-						operation = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE
-								.createSetValue();
+						operation = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE.createSetValue();
 						SetValue setValue = (SetValue) operation;
 						setValue.setFeatureName(target_asso.getName());
 						setValue.setValueExpression(vTarget);
@@ -414,21 +396,16 @@ public class CreateToolPattern
 							JavaMethodReturnType n_returnType = JavaMethodReturnType.Boolean;
 							JavaMethodData javaMethodData = new JavaMethodData(e_method_name, n_returnType);
 
-							javaMethodData.addMethodParameter(VSMVariable.source.toString(), "EObject",
-									"the semantic source element");
-							javaMethodData.addMethodParameter(VSMVariable.sourceView.toString(), "EObject",
-									"the semantic source view");
-							javaMethodData.addMethodParameter(VSMVariable.target.toString(), "EObject",
-									"the semantic target element");
-							javaMethodData.addMethodParameter(VSMVariable.targetView.toString(), "EObject",
-									"the semantic target view");
+							javaMethodData.addMethodParameter(VSMVariable.source.toString(), "EObject", "the semantic source element");
+							javaMethodData.addMethodParameter(VSMVariable.sourceView.toString(), "EObject", "the semantic source view");
+							javaMethodData.addMethodParameter(VSMVariable.target.toString(), "EObject", "the semantic target element");
+							javaMethodData.addMethodParameter(VSMVariable.targetView.toString(), "EObject", "the semantic target view");
 
 							javaServiceData.addMethod(javaMethodData);
 
 							operation = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE.createIf();
 							If n_if = (If) operation;
-							n_if.setConditionExpression(SiriusExpressionHelper
-									.getExpressoin(e_method_name + mParameters, ExpressionInterpreter.Service));
+							n_if.setConditionExpression(SiriusExpressionHelper.getExpressoin(e_method_name + mParameters, ExpressionInterpreter.Service));
 						}
 					}
 

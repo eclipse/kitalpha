@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.2.202001031546
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.clazz.content;
 
 import java.util.*;
@@ -20,8 +20,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.ExternalAttributeT
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.LocalAttributeType;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Value;
 
-public class AttributePattern
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.abstracts.ClassAbstractContentElement {
+public class AttributePattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.abstracts.ClassAbstractContentElement {
 
 	public AttributePattern() {
 		//Here is the constructor
@@ -154,8 +153,7 @@ public class AttributePattern
 
 		containingEClass.getEStructuralFeatures().add(eAt);
 		if (parameter.getDescription() != null && parameter.getDescription().trim().length() != 0) {
-			ENamedElementAnnotationHelper.annotate(eAt, ENamedElementAnnotationHelper.KEY_DOCUMENTATION,
-					ENamedElementAnnotationHelper.ENTRY_DOCUMENTATION_KEY, parameter.getDescription(), true);
+			ENamedElementAnnotationHelper.annotate(eAt, ENamedElementAnnotationHelper.KEY_DOCUMENTATION, ENamedElementAnnotationHelper.ENTRY_DOCUMENTATION_KEY, parameter.getDescription(), true);
 		}
 
 		/******************************************

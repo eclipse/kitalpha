@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20150924-1035
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.doc.gen.business.ecore.extension.content.impl;
 
 import org.eclipse.egf.common.helper.*;
@@ -20,12 +20,16 @@ public class EEnumHTMLContent {
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+
 	protected final String TEXT_1 = NL + "<p><strong>Default value :</strong> ";
+
 	protected final String TEXT_2 = "</p>";
+
 	protected final String TEXT_3 = NL + "<h2>Literals</h2>";
+
 	protected final String TEXT_4 = NL;
+
 	protected final String TEXT_5 = NL;
-	protected final String TEXT_6 = NL;
 
 	public EEnumHTMLContent() {
 		//Here is the constructor
@@ -43,9 +47,7 @@ public class EEnumHTMLContent {
 
 		paramDesc = new IQuery.ParameterDescription("parameter", "http://www.eclipse.org/emf/2002/Ecore#//EEnum");
 		queryCtx = new HashMap<String, String>();
-		List<Object> parameterList = QueryHelper
-				.load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.injected.context")
-				.execute(paramDesc, queryCtx, ctx);
+		List<Object> parameterList = QueryHelper.load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.injected.context").execute(paramDesc, queryCtx, ctx);
 
 		for (Object parameterParameter : parameterList) {
 
@@ -63,7 +65,7 @@ public class EEnumHTMLContent {
 		}
 
 		stringBuffer.append(TEXT_5);
-		stringBuffer.append(TEXT_6);
+		stringBuffer.append(TEXT_5);
 		return stringBuffer.toString();
 	}
 
@@ -103,8 +105,7 @@ public class EEnumHTMLContent {
 		stringBuffer.append((parameter).getDefaultValue());
 		stringBuffer.append(TEXT_2);
 
-		String literalList = org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EEnumContentHelper
-				.getLiteralsList(parameter, projectName, outputFolder);
+		String literalList = org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EEnumContentHelper.getLiteralsList(parameter, projectName, outputFolder);
 		if (literalList != "") {
 
 			stringBuffer.append(TEXT_3);

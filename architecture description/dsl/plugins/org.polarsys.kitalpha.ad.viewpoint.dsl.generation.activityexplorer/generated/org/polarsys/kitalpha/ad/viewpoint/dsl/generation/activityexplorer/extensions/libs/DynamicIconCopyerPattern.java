@@ -1,4 +1,4 @@
-//Generated with EGF 1.4.1.v20161010-1704
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.extensions.libs;
 
 import org.eclipse.egf.common.helper.*;
@@ -21,7 +21,9 @@ public class DynamicIconCopyerPattern {
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+
 	protected final String TEXT_1 = "";
+
 	protected final String TEXT_2 = NL;
 
 	public DynamicIconCopyerPattern() {
@@ -77,8 +79,7 @@ public class DynamicIconCopyerPattern {
 			parameters.put("activityExplorerProjectName", this.activityExplorerProjectName);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
 			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer/egf/vpdslActivityExplorerGeneration.fcore#_77MRMDdmEeW9-uNJc0wiRg",
-					ctx_local, parameters);
+					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer/egf/vpdslActivityExplorerGeneration.fcore#_77MRMDdmEeW9-uNJc0wiRg", ctx_local, parameters);
 		}
 
 		method_copyIconOnFile(new StringBuffer(), ictx);
@@ -96,8 +97,7 @@ public class DynamicIconCopyerPattern {
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.DynamicIcon dynamicIconElement = null;
 
-	public void set_dynamicIconElement(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.DynamicIcon object) {
+	public void set_dynamicIconElement(org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.DynamicIcon object) {
 		this.dynamicIconElement = object;
 	}
 

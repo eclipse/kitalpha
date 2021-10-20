@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.2.202001031546
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.common;
 
 import org.eclipse.core.runtime.Assert;
@@ -11,8 +11,7 @@ import org.eclipse.egf.pattern.query.*;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common.java.JDTUtility;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.util.ClassUtils;
 
-public class AbstractAssociationJavaClass extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.common.LoopFinishedJavaClassForContextualExplorer {
+public class AbstractAssociationJavaClass extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.common.LoopFinishedJavaClassForContextualExplorer {
 	protected static String nl;
 
 	public static synchronized AbstractAssociationJavaClass create(String lineSeparator) {
@@ -23,18 +22,24 @@ public class AbstractAssociationJavaClass extends
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+
 	protected final String TEXT_1 = "package ";
+
 	protected final String TEXT_2 = ";";
-	protected final String TEXT_3 = "import java.util.ArrayList;" + NL + "import java.util.List;" + NL + "" + NL
-			+ "import org.eclipse.emf.ecore.EObject;" + NL + "" + NL
+
+	protected final String TEXT_3 = "import java.util.ArrayList;" + NL + "import java.util.List;" + NL + "" + NL + "import org.eclipse.emf.ecore.EObject;" + NL + "" + NL
 			+ "import org.eclipse.amalgam.explorer.contextual.core.query.IQuery; ";
-	protected final String TEXT_4 = "/**" + NL + " * <!-- begin-user-doc -->" + NL + " * <!-- end-user-doc -->" + NL
-			+ " * <p>" + NL + " * </p>" + NL + " *" + NL + " * @generated" + NL + " */" + NL + "public class ";
-	protected final String TEXT_5 = " implements IQuery {" + NL + "" + NL + "/**" + NL + "   * <!-- begin-user-doc -->"
-			+ NL + "   * <!-- end-user-doc -->" + NL + "   * Default constructor" + NL + "   * @generated" + NL
-			+ "   */" + NL + "\tpublic ";
+
+	protected final String TEXT_4 = "/**" + NL + " * <!-- begin-user-doc -->" + NL + " * <!-- end-user-doc -->" + NL + " * <p>" + NL + " * </p>" + NL + " *" + NL + " * @generated" + NL + " */" + NL
+			+ "public class ";
+
+	protected final String TEXT_5 = " implements IQuery {" + NL + "" + NL + "/**" + NL + "   * <!-- begin-user-doc -->" + NL + "   * <!-- end-user-doc -->" + NL + "   * Default constructor" + NL
+			+ "   * @generated" + NL + "   */" + NL + "\tpublic ";
+
 	protected final String TEXT_6 = "() {" + NL + "\t\t// TODO Auto-generated constructor stub" + NL + "\t}";
+
 	protected final String TEXT_7 = "}";
+
 	protected final String TEXT_8 = NL;
 
 	public AbstractAssociationJavaClass() {
@@ -134,15 +139,13 @@ public class AbstractAssociationJavaClass extends
 		new Node.DataLeaf(ictx.getNode(), getClass(), "setJavaClassName", stringBuffer.toString());
 	}
 
-	protected void method_setConcernedVPClass(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_setConcernedVPClass(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "setConcernedVPClass", stringBuffer.toString());
 	}
 
-	protected void method_setLocalVariableValues(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_setLocalVariableValues(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		Assert.isNotNull(vpClass, "Class in null");
 		vpClassName = ClassUtils.INSTANCE.getClassInterfaceName(vpClass);
@@ -176,8 +179,7 @@ public class AbstractAssociationJavaClass extends
 		new Node.DataLeaf(ictx.getNode(), getClass(), "genDefaultImport", stringBuffer.toString());
 	}
 
-	protected void method_genSemanticImoprt(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_genSemanticImoprt(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "genSemanticImoprt", stringBuffer.toString());

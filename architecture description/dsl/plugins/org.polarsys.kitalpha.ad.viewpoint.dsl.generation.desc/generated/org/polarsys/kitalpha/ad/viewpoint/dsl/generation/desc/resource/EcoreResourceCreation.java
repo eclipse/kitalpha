@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.resource;
 
 import java.util.*;
@@ -22,12 +22,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.desc.CoreModelHelpe
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common.adapter.IContractProvider;
 
-public class EcoreResourceCreation
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.common.AnyVPSpecElement {
+public class EcoreResourceCreation extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.common.AnyVPSpecElement {
 
 	public EcoreResourceCreation() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -65,9 +65,8 @@ public class EcoreResourceCreation
 			parameters.put("vpElement", this.parameter);
 			parameters.put("eElement", this.gEPackage);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc/egf/vpdslECoreGenerator.fcore#_HKpWoL4sEeKDeKot98nSrA",
-					ctx_local, parameters);
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc/egf/vpdslECoreGenerator.fcore#_HKpWoL4sEeKDeKot98nSrA", ctx_local,
+					parameters);
 		}
 		ictx.setNode(currentNode);
 		if (ictx.useReporter()) {
@@ -99,8 +98,7 @@ public class EcoreResourceCreation
 
 		// Resource creation
 		ResourceSet resourceSet = new ResourceSetImpl();
-		URI uri = URI.createPlatformResourceURI(rootProjectName + "/" + modelFolder + "/" + shortName + ".ecore",
-				false);
+		URI uri = URI.createPlatformResourceURI(rootProjectName + "/" + modelFolder + "/" + shortName + ".ecore", false);
 		Resource resource = resourceSet.createResource(uri);
 		resource.getContents().add(gEPackage);
 		resource.save(Collections.EMPTY_MAP);
@@ -114,8 +112,7 @@ public class EcoreResourceCreation
 
 	protected void method_loadEcoreResource(final StringBuffer out, final PatternContext ctx) throws Exception {
 		// Loading resource
-		ECoreResourceManager.INSTANCE
-				.loadECoreResource(new ECoreFileInformation(rootProjectName, modelFolder, shortName));
+		ECoreResourceManager.INSTANCE.loadECoreResource(new ECoreFileInformation(rootProjectName, modelFolder, shortName));
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "loadEcoreResource", out.toString());

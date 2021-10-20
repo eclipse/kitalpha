@@ -1,4 +1,4 @@
-//Generated with EGF 1.4.0.v20160519-0641
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.doc.gen.business.core.doccontent;
 
 import org.eclipse.egf.common.helper.*;
@@ -21,23 +21,34 @@ public class ElementSideBarContent extends org.polarsys.kitalpha.doc.gen.busines
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+
 	protected final String TEXT_1 = " ";
+
 	protected final String TEXT_2 = NL + "<li ";
+
 	protected final String TEXT_3 = "id=\"";
+
 	protected final String TEXT_4 = "\" ";
+
 	protected final String TEXT_5 = ">" + NL;
+
 	protected final String TEXT_6 = NL;
+
 	protected final String TEXT_7 = NL + "<img src=\"../icon/";
+
 	protected final String TEXT_8 = "\" alt=\"";
+
 	protected final String TEXT_9 = "\"/> <a href=\"../";
+
 	protected final String TEXT_10 = "/";
+
 	protected final String TEXT_11 = ".html\" target=\"content\">";
+
 	protected final String TEXT_12 = "</a>" + NL + NL;
+
 	protected final String TEXT_13 = "</li>" + NL;
+
 	protected final String TEXT_14 = NL + NL;
-	protected final String TEXT_15 = NL;
-	protected final String TEXT_16 = NL;
-	protected final String TEXT_17 = NL;
 
 	public ElementSideBarContent() {
 		//Here is the constructor
@@ -65,8 +76,8 @@ public class ElementSideBarContent extends org.polarsys.kitalpha.doc.gen.busines
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_16);
-		stringBuffer.append(TEXT_17);
+		stringBuffer.append(TEXT_6);
+		stringBuffer.append(TEXT_6);
 		return stringBuffer.toString();
 	}
 
@@ -115,8 +126,7 @@ public class ElementSideBarContent extends org.polarsys.kitalpha.doc.gen.busines
 		new Node.DataLeaf(ictx.getNode(), getClass(), "setCurrentObject", stringBuffer.toString());
 	}
 
-	protected void method_startSidebarElement(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_startSidebarElement(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		String id = EcoreUtil.getID(currentObject);
 		stringBuffer.append(TEXT_2);
@@ -130,8 +140,7 @@ public class ElementSideBarContent extends org.polarsys.kitalpha.doc.gen.busines
 		new Node.DataLeaf(ictx.getNode(), getClass(), "startSidebarElement", stringBuffer.toString());
 	}
 
-	protected void method_contentSidebarElement(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_contentSidebarElement(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		String projectName = ctx.getValue("projectName").toString();
 		String outputFolder = ctx.getValue("outputFolder").toString();
@@ -155,8 +164,7 @@ public class ElementSideBarContent extends org.polarsys.kitalpha.doc.gen.busines
 		new Node.DataLeaf(ictx.getNode(), getClass(), "contentSidebarElement", stringBuffer.toString());
 	}
 
-	protected void method_startSidebarSubElement(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_startSidebarSubElement(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		{
 			//<%@ egf:patternCall patternId="platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#LogicalName=org.polarsys.kitalpha.doc.gen.business.core.doccontent.sidebar.ElementSideBarSubEntry_Start" args="currentObject:parameter"%>
@@ -167,8 +175,7 @@ public class ElementSideBarContent extends org.polarsys.kitalpha.doc.gen.busines
 
 			final Map<String, Object> callParameters = new HashMap<String, Object>();
 			callParameters.put("parameter", currentObject);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_76_64AEaEeCfXc0sxlW-HQ",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_76_64AEaEeCfXc0sxlW-HQ",
 					new ExecutionContext((InternalPatternContext) ctx), callParameters);
 			stringBuffer.setLength(0);
 		}
@@ -177,8 +184,7 @@ public class ElementSideBarContent extends org.polarsys.kitalpha.doc.gen.busines
 		new Node.DataLeaf(ictx.getNode(), getClass(), "startSidebarSubElement", stringBuffer.toString());
 	}
 
-	protected void method_endSidebarSubElement(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_endSidebarSubElement(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		{
 			//<%@ egf:patternCall patternId="platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#LogicalName=org.polarsys.kitalpha.doc.gen.business.core.doccontent.sidebar.ElementSideBarSubEntry_End" args="currentObject:parameter"%>
@@ -189,8 +195,7 @@ public class ElementSideBarContent extends org.polarsys.kitalpha.doc.gen.busines
 
 			final Map<String, Object> callParameters = new HashMap<String, Object>();
 			callParameters.put("parameter", currentObject);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_KyTtYAEbEeCfXc0sxlW-HQ",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_KyTtYAEbEeCfXc0sxlW-HQ",
 					new ExecutionContext((InternalPatternContext) ctx), callParameters);
 			stringBuffer.setLength(0);
 		}
@@ -199,8 +204,7 @@ public class ElementSideBarContent extends org.polarsys.kitalpha.doc.gen.busines
 		new Node.DataLeaf(ictx.getNode(), getClass(), "endSidebarSubElement", stringBuffer.toString());
 	}
 
-	protected void method_endSidebarElement(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_endSidebarElement(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		stringBuffer.append(TEXT_13);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
@@ -213,7 +217,7 @@ public class ElementSideBarContent extends org.polarsys.kitalpha.doc.gen.busines
 		String outputFolder = ctx.getValue("outputFolder").toString();
 
 		stringBuffer.append(TEXT_14);
-		stringBuffer.append(TEXT_15);
+		stringBuffer.append(TEXT_6);
 		{
 			//<%@ egf:patternCall patternId="platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#LogicalName=org.polarsys.kitalpha.doc.gen.business.core.doccontent.sidebar.ElementSideBarEntry" args="currentObject:parameter, projectName:projectName, outputFolder:folderName"%>
 
@@ -225,8 +229,7 @@ public class ElementSideBarContent extends org.polarsys.kitalpha.doc.gen.busines
 			callParameters.put("parameter", currentObject);
 			callParameters.put("projectName", projectName);
 			callParameters.put("folderName", outputFolder);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_-jjtYPeqEd-vRuaiXg4Fzg",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_-jjtYPeqEd-vRuaiXg4Fzg",
 					new ExecutionContext((InternalPatternContext) ctx), callParameters);
 			stringBuffer.setLength(0);
 		}

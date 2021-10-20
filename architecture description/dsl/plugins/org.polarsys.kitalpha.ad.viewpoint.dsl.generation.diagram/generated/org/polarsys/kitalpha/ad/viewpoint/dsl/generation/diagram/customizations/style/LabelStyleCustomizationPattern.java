@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.style;
 
 import java.util.*;
@@ -25,12 +25,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.javaservice.Jav
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.SiriusSystemColorHelper;
 
-public class LabelStyleCustomizationPattern extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.common.AbstractStyleCustomizationPattern {
+public class LabelStyleCustomizationPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.common.AbstractStyleCustomizationPattern {
 
 	public LabelStyleCustomizationPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -74,8 +74,7 @@ public class LabelStyleCustomizationPattern extends
 			parameters.put("appliedOn", this.appliedOn);
 			parameters.put("stylePropertyData", this.labelSize);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
 					ctx_local, parameters);
 		}
 		{
@@ -85,8 +84,7 @@ public class LabelStyleCustomizationPattern extends
 			parameters.put("appliedOn", this.appliedOn);
 			parameters.put("stylePropertyData", this.fontFormat);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
 					ctx_local, parameters);
 		}
 		{
@@ -96,8 +94,7 @@ public class LabelStyleCustomizationPattern extends
 			parameters.put("appliedOn", this.appliedOn);
 			parameters.put("stylePropertyData", this.showIcon);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
 					ctx_local, parameters);
 		}
 		{
@@ -107,8 +104,7 @@ public class LabelStyleCustomizationPattern extends
 			parameters.put("appliedOn", this.appliedOn);
 			parameters.put("stylePropertyData", this.iconPath);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
 					ctx_local, parameters);
 		}
 		{
@@ -118,8 +114,7 @@ public class LabelStyleCustomizationPattern extends
 			parameters.put("stylePropertyData", this.labelAlignment);
 			parameters.put("appliedOn", this.labelAlignmentAppliedOn);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
 					ctx_local, parameters);
 		}
 		{
@@ -129,8 +124,7 @@ public class LabelStyleCustomizationPattern extends
 			parameters.put("appliedOn", this.appliedOn);
 			parameters.put("stylePropertyData", this.labelExpression);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
 					ctx_local, parameters);
 		}
 		{
@@ -140,8 +134,7 @@ public class LabelStyleCustomizationPattern extends
 			parameters.put("appliedOn", this.appliedOn);
 			parameters.put("stylePropertyData", this.color);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_VpyWIGz4EeWW0teG0FdF7g",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_VpyWIGz4EeWW0teG0FdF7g",
 					ctx_local, parameters);
 		}
 		ictx.setNode(currentNode);
@@ -174,14 +167,12 @@ public class LabelStyleCustomizationPattern extends
 	protected void method_initFontFormatData(final StringBuffer out, final PatternContext ctx) throws Exception {
 		if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getLabelCustomization_Format())) {
 			String enumLiteralName = parameter.getFormat().toString();
-			String methodCode = "return ViewpointPackage.eINSTANCE.getFontFormat().getEEnumLiteral(\"" + enumLiteralName
-					+ "\");";
+			String methodCode = "return ViewpointPackage.eINSTANCE.getFontFormat().getEEnumLiteral(\"" + enumLiteralName + "\");";
 			char first = Character.toUpperCase(enumLiteralName.charAt(0));
 			enumLiteralName = first + enumLiteralName.substring(1).toLowerCase();
 			String methodName = "getFontFormat" + enumLiteralName;
 
-			JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral,
-					methodCode);
+			JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
 
 			// Set method parameters data
 			javaMethodData.addMethodParameter("any", "EObject", "any model element");
@@ -223,18 +214,15 @@ public class LabelStyleCustomizationPattern extends
 		LabelAlignmentCustomization labelAlignmentCustomization = parameter.getOwnedLabelAlignment();
 
 		if (labelAlignmentCustomization != null) {
-			if (labelAlignmentCustomization
-					.eIsSet(VpstylecustomizationPackage.eINSTANCE.getLabelAlignmentCustomization_Alignment())) {
+			if (labelAlignmentCustomization.eIsSet(VpstylecustomizationPackage.eINSTANCE.getLabelAlignmentCustomization_Alignment())) {
 				set_labelAlignmentAppliedOn(labelAlignmentCustomization.getAppliedOn());
 				String enumLiteralName = labelAlignmentCustomization.getAlignment().toString();
-				String methodCode = "return ViewpointPackage.eINSTANCE.getLabelAlignment().getEEnumLiteral(\""
-						+ enumLiteralName + "\");";
+				String methodCode = "return ViewpointPackage.eINSTANCE.getLabelAlignment().getEEnumLiteral(\"" + enumLiteralName + "\");";
 				char first = Character.toUpperCase(enumLiteralName.charAt(0));
 				enumLiteralName = first + enumLiteralName.substring(1).toLowerCase();
 				String methodName = "getLabelAlignment" + enumLiteralName;
 
-				JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral,
-						methodCode);
+				JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
 
 				// Set method parameters data
 				javaMethodData.addMethodParameter("any", "EObject", "any model element");
@@ -260,8 +248,7 @@ public class LabelStyleCustomizationPattern extends
 			final CustomizationExpression expression = parameter.getExpression();
 			final AbstractComputableElement expressionElement = expression.getOwnedExpressionElement();
 			if (expressionElement != null) {
-				final String newLabelExpression = DiagramExpressionUtil.getAbstractComputableElementExpression(
-						expressionElement, VSMVariable.view, VSMVariable.container);
+				final String newLabelExpression = DiagramExpressionUtil.getAbstractComputableElementExpression(expressionElement, VSMVariable.view, VSMVariable.container);
 				set_labelExpression(new StylePropertyNameValueCouple("labelExpression", newLabelExpression));
 			}
 		}
@@ -272,8 +259,7 @@ public class LabelStyleCustomizationPattern extends
 
 	protected void method_initColorData(final StringBuffer out, final PatternContext ctx) throws Exception {
 		if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getLabelCustomization_Color())) {
-			set_color(new StylePropertyNameValueCouple("labelColor",
-					SiriusSystemColorHelper.getSystemColorDescription(parameter.getColor().getName())));
+			set_color(new StylePropertyNameValueCouple("labelColor", SiriusSystemColorHelper.getSystemColorDescription(parameter.getColor().getName())));
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
@@ -282,43 +268,37 @@ public class LabelStyleCustomizationPattern extends
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.LabelCustomization parameter;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.LabelCustomization parameter) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.LabelCustomization parameter) {
 		this.parameter = parameter;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple labelSize;
 
-	public void set_labelSize(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple labelSize) {
+	public void set_labelSize(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple labelSize) {
 		this.labelSize = labelSize;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple fontFormat;
 
-	public void set_fontFormat(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple fontFormat) {
+	public void set_fontFormat(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple fontFormat) {
 		this.fontFormat = fontFormat;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple showIcon;
 
-	public void set_showIcon(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple showIcon) {
+	public void set_showIcon(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple showIcon) {
 		this.showIcon = showIcon;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple iconPath;
 
-	public void set_iconPath(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple iconPath) {
+	public void set_iconPath(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple iconPath) {
 		this.iconPath = iconPath;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple labelAlignment;
 
-	public void set_labelAlignment(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple labelAlignment) {
+	public void set_labelAlignment(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple labelAlignment) {
 		this.labelAlignment = labelAlignment;
 	}
 
@@ -330,15 +310,13 @@ public class LabelStyleCustomizationPattern extends
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple labelExpression;
 
-	public void set_labelExpression(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple labelExpression) {
+	public void set_labelExpression(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple labelExpression) {
 		this.labelExpression = labelExpression;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple color;
 
-	public void set_color(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple color) {
+	public void set_color(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple color) {
 		this.color = color;
 	}
 

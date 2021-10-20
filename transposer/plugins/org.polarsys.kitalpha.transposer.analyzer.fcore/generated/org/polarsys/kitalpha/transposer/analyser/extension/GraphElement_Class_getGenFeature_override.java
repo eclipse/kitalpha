@@ -1,4 +1,4 @@
-//Generated on Wed Oct 08 18:19:47 CEST 2014 with EGF 1.2.0.v20140717-0709
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.transposer.analyser.extension;
 
 import org.eclipse.egf.common.helper.*;
@@ -8,50 +8,35 @@ import org.eclipse.egf.model.pattern.*;
 import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 
-public class GraphElement_Class_getGenFeature_override extends
-		org.eclipse.egf.emf.pattern.model.call.Class.ClassgetGenFeatureoverride {
+public class GraphElement_Class_getGenFeature_override extends org.eclipse.egf.emf.pattern.model.call.Class.ClassgetGenFeatureoverride {
 	protected static String nl;
 
-	public static synchronized GraphElement_Class_getGenFeature_override create(
-			String lineSeparator) {
+	public static synchronized GraphElement_Class_getGenFeature_override create(String lineSeparator) {
 		nl = lineSeparator;
 		GraphElement_Class_getGenFeature_override result = new GraphElement_Class_getGenFeature_override();
 		nl = null;
 		return result;
 	}
 
-	public final String NL = nl == null ? (System.getProperties()
-			.getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = " /**" + NL
-			+ "    * <!-- begin-user-doc -->" + NL
-			+ "    * <!-- end-user-doc -->" + NL + "    * @generated" + NL
-			+ "    */" + NL + " @SuppressWarnings(\"unchecked\")" + NL
-			+ " public ";
+	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+
+	protected final String TEXT_1 = " /**" + NL + "    * <!-- begin-user-doc -->" + NL + "    * <!-- end-user-doc -->" + NL + "    * @generated" + NL + "    */" + NL
+			+ " @SuppressWarnings(\"unchecked\")" + NL + " public ";
+
 	protected final String TEXT_2 = " ";
+
 	protected final String TEXT_3 = "_";
-	protected final String TEXT_4 = "() " + NL + "    {" + NL
-			+ "     if (!(content instanceof ";
-	protected final String TEXT_5 = "))"
-			+ NL
-			+ "\t\t\t\treturn content;"
-			+ NL
-			+ "\t\t\telse if (content != null && ((EObject) content).eIsProxy()) {"
-			+ NL + "\t\t\t" + NL + "\t\t\t\tInternalEObject oldContent = (";
-	protected final String TEXT_6 = ") content;"
-			+ NL
-			+ "\t\t\t\tcontent = (ContentClass) eResolveProxy(oldContent);"
-			+ NL
-			+ "\t\t\t\tif (content != oldContent) {"
-			+ NL
-			+ "\t\t\t\t\tif (eNotificationRequired())"
-			+ NL
-			+ "\t\t\t\t\t\teNotify(new ENotificationImpl(this, Notification.RESOLVE,"
-			+ NL
-			+ "\t\t\t\t\t\t\t\tGraphPackage.GRAPH_ELEMENT__CONTENT, oldContent,"
-			+ NL + "\t\t\t\t\t\t\t\tcontent));" + NL + "\t\t\t\t}" + NL
-			+ "\t\t\t}" + NL + "\t\treturn content;" + NL + "    }";
+
+	protected final String TEXT_4 = "() " + NL + "    {" + NL + "     if (!(content instanceof ";
+
+	protected final String TEXT_5 = "))" + NL + "\t\t\t\treturn content;" + NL + "\t\t\telse if (content != null && ((EObject) content).eIsProxy()) {" + NL + "\t\t\t" + NL
+			+ "\t\t\t\tInternalEObject oldContent = (";
+
+	protected final String TEXT_6 = ") content;" + NL + "\t\t\t\tcontent = (ContentClass) eResolveProxy(oldContent);" + NL + "\t\t\t\tif (content != oldContent) {" + NL
+			+ "\t\t\t\t\tif (eNotificationRequired())" + NL + "\t\t\t\t\t\teNotify(new ENotificationImpl(this, Notification.RESOLVE," + NL
+			+ "\t\t\t\t\t\t\t\tGraphPackage.GRAPH_ELEMENT__CONTENT, oldContent," + NL + "\t\t\t\t\t\t\t\tcontent));" + NL + "\t\t\t\t}" + NL + "\t\t\t}" + NL + "\t\treturn content;" + NL + "    }";
+
 	protected final String TEXT_7 = NL;
-	protected final String TEXT_8 = NL;
 
 	public GraphElement_Class_getGenFeature_override() {
 		//Here is the constructor
@@ -83,7 +68,13 @@ public class GraphElement_Class_getGenFeature_override extends
 		//this pattern can only be called by another (i.e. it's not an entry point in execution)
 		List<Object> isImplementationList = null;
 		//this pattern can only be called by another (i.e. it's not an entry point in execution)
+		List<Object> useInterfaceOverrideAnnotationList = null;
+		//this pattern can only be called by another (i.e. it's not an entry point in execution)
 		List<Object> isGWTList = null;
+		//this pattern can only be called by another (i.e. it's not an entry point in execution)
+		List<Object> forceDefaultCaseList = null;
+		//this pattern can only be called by another (i.e. it's not an entry point in execution)
+		List<Object> indentDefaultCaseList = null;
 		//this pattern can only be called by another (i.e. it's not an entry point in execution)
 		List<Object> publicStaticFinalFlagList = null;
 		//this pattern can only be called by another (i.e. it's not an entry point in execution)
@@ -105,36 +96,43 @@ public class GraphElement_Class_getGenFeature_override extends
 						for (Object isJDK50Parameter : isJDK50List) {
 							for (Object isInterfaceParameter : isInterfaceList) {
 								for (Object isImplementationParameter : isImplementationList) {
-									for (Object isGWTParameter : isGWTList) {
-										for (Object publicStaticFinalFlagParameter : publicStaticFinalFlagList) {
-											for (Object singleWildcardParameter : singleWildcardList) {
-												for (Object negativeOffsetCorrectionParameter : negativeOffsetCorrectionList) {
-													for (Object positiveOffsetCorrectionParameter : positiveOffsetCorrectionList) {
-														for (Object negativeOperationOffsetCorrectionParameter : negativeOperationOffsetCorrectionList) {
-															for (Object positiveOperationOffsetCorrectionParameter : positiveOperationOffsetCorrectionList) {
+									for (Object useInterfaceOverrideAnnotationParameter : useInterfaceOverrideAnnotationList) {
+										for (Object isGWTParameter : isGWTList) {
+											for (Object forceDefaultCaseParameter : forceDefaultCaseList) {
+												for (Object indentDefaultCaseParameter : indentDefaultCaseList) {
+													for (Object publicStaticFinalFlagParameter : publicStaticFinalFlagList) {
+														for (Object singleWildcardParameter : singleWildcardList) {
+															for (Object negativeOffsetCorrectionParameter : negativeOffsetCorrectionList) {
+																for (Object positiveOffsetCorrectionParameter : positiveOffsetCorrectionList) {
+																	for (Object negativeOperationOffsetCorrectionParameter : negativeOperationOffsetCorrectionList) {
+																		for (Object positiveOperationOffsetCorrectionParameter : positiveOperationOffsetCorrectionList) {
 
-																this.genFeature = (org.eclipse.emf.codegen.ecore.genmodel.GenFeature) genFeatureParameter;
-																this.genClass = (org.eclipse.emf.codegen.ecore.genmodel.GenClass) genClassParameter;
-																this.genPackage = (org.eclipse.emf.codegen.ecore.genmodel.GenPackage) genPackageParameter;
-																this.genModel = (org.eclipse.emf.codegen.ecore.genmodel.GenModel) genModelParameter;
-																this.isJDK50 = (java.lang.Boolean) isJDK50Parameter;
-																this.isInterface = (java.lang.Boolean) isInterfaceParameter;
-																this.isImplementation = (java.lang.Boolean) isImplementationParameter;
-																this.isGWT = (java.lang.Boolean) isGWTParameter;
-																this.publicStaticFinalFlag = (java.lang.String) publicStaticFinalFlagParameter;
-																this.singleWildcard = (java.lang.String) singleWildcardParameter;
-																this.negativeOffsetCorrection = (java.lang.String) negativeOffsetCorrectionParameter;
-																this.positiveOffsetCorrection = (java.lang.String) positiveOffsetCorrectionParameter;
-																this.negativeOperationOffsetCorrection = (java.lang.String) negativeOperationOffsetCorrectionParameter;
-																this.positiveOperationOffsetCorrection = (java.lang.String) positiveOperationOffsetCorrectionParameter;
+																			this.genFeature = (org.eclipse.emf.codegen.ecore.genmodel.GenFeature) genFeatureParameter;
+																			this.genClass = (org.eclipse.emf.codegen.ecore.genmodel.GenClass) genClassParameter;
+																			this.genPackage = (org.eclipse.emf.codegen.ecore.genmodel.GenPackage) genPackageParameter;
+																			this.genModel = (org.eclipse.emf.codegen.ecore.genmodel.GenModel) genModelParameter;
+																			this.isJDK50 = (java.lang.Boolean) isJDK50Parameter;
+																			this.isInterface = (java.lang.Boolean) isInterfaceParameter;
+																			this.isImplementation = (java.lang.Boolean) isImplementationParameter;
+																			this.useInterfaceOverrideAnnotation = (java.lang.Boolean) useInterfaceOverrideAnnotationParameter;
+																			this.isGWT = (java.lang.Boolean) isGWTParameter;
+																			this.forceDefaultCase = (java.lang.Boolean) forceDefaultCaseParameter;
+																			this.indentDefaultCase = (java.lang.String) indentDefaultCaseParameter;
+																			this.publicStaticFinalFlag = (java.lang.String) publicStaticFinalFlagParameter;
+																			this.singleWildcard = (java.lang.String) singleWildcardParameter;
+																			this.negativeOffsetCorrection = (java.lang.String) negativeOffsetCorrectionParameter;
+																			this.positiveOffsetCorrection = (java.lang.String) positiveOffsetCorrectionParameter;
+																			this.negativeOperationOffsetCorrection = (java.lang.String) negativeOperationOffsetCorrectionParameter;
+																			this.positiveOperationOffsetCorrection = (java.lang.String) positiveOperationOffsetCorrectionParameter;
 
-																if (preCondition(ctx)) {
-																	ctx.setNode(new Node.Container(
-																			currentNode,
-																			getClass()));
-																	orchestration(ctx);
+																			if (preCondition(ctx)) {
+																				ctx.setNode(new Node.Container(currentNode, getClass()));
+																				orchestration(ctx);
+																			}
+
+																		}
+																	}
 																}
-
 															}
 														}
 													}
@@ -151,12 +149,11 @@ public class GraphElement_Class_getGenFeature_override extends
 		}
 		ctx.setNode(currentNode);
 		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(
-					OutputManager.computeExecutionOutput(ctx), ctx);
+			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
 		stringBuffer.append(TEXT_7);
-		stringBuffer.append(TEXT_8);
+		stringBuffer.append(TEXT_7);
 		return stringBuffer.toString();
 	}
 
@@ -174,22 +171,19 @@ public class GraphElement_Class_getGenFeature_override extends
 			parameterValues.put("isJDK50", this.isJDK50);
 			parameterValues.put("isInterface", this.isInterface);
 			parameterValues.put("isImplementation", this.isImplementation);
+			parameterValues.put("useInterfaceOverrideAnnotation", this.useInterfaceOverrideAnnotation);
 			parameterValues.put("isGWT", this.isGWT);
-			parameterValues.put("publicStaticFinalFlag",
-					this.publicStaticFinalFlag);
+			parameterValues.put("forceDefaultCase", this.forceDefaultCase);
+			parameterValues.put("indentDefaultCase", this.indentDefaultCase);
+			parameterValues.put("publicStaticFinalFlag", this.publicStaticFinalFlag);
 			parameterValues.put("singleWildcard", this.singleWildcard);
-			parameterValues.put("negativeOffsetCorrection",
-					this.negativeOffsetCorrection);
-			parameterValues.put("positiveOffsetCorrection",
-					this.positiveOffsetCorrection);
-			parameterValues.put("negativeOperationOffsetCorrection",
-					this.negativeOperationOffsetCorrection);
-			parameterValues.put("positiveOperationOffsetCorrection",
-					this.positiveOperationOffsetCorrection);
+			parameterValues.put("negativeOffsetCorrection", this.negativeOffsetCorrection);
+			parameterValues.put("positiveOffsetCorrection", this.positiveOffsetCorrection);
+			parameterValues.put("negativeOperationOffsetCorrection", this.negativeOperationOffsetCorrection);
+			parameterValues.put("positiveOperationOffsetCorrection", this.positiveOperationOffsetCorrection);
 			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
 			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx,
-					parameterValues);
+			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
 		}
 		return null;
 	}
@@ -203,22 +197,20 @@ public class GraphElement_Class_getGenFeature_override extends
 		parameters.put("isJDK50", this.isJDK50);
 		parameters.put("isInterface", this.isInterface);
 		parameters.put("isImplementation", this.isImplementation);
+		parameters.put("useInterfaceOverrideAnnotation", this.useInterfaceOverrideAnnotation);
 		parameters.put("isGWT", this.isGWT);
+		parameters.put("forceDefaultCase", this.forceDefaultCase);
+		parameters.put("indentDefaultCase", this.indentDefaultCase);
 		parameters.put("publicStaticFinalFlag", this.publicStaticFinalFlag);
 		parameters.put("singleWildcard", this.singleWildcard);
-		parameters.put("negativeOffsetCorrection",
-				this.negativeOffsetCorrection);
-		parameters.put("positiveOffsetCorrection",
-				this.positiveOffsetCorrection);
-		parameters.put("negativeOperationOffsetCorrection",
-				this.negativeOperationOffsetCorrection);
-		parameters.put("positiveOperationOffsetCorrection",
-				this.positiveOperationOffsetCorrection);
+		parameters.put("negativeOffsetCorrection", this.negativeOffsetCorrection);
+		parameters.put("positiveOffsetCorrection", this.positiveOffsetCorrection);
+		parameters.put("negativeOperationOffsetCorrection", this.negativeOperationOffsetCorrection);
+		parameters.put("positiveOperationOffsetCorrection", this.positiveOperationOffsetCorrection);
 		return parameters;
 	}
 
-	protected void method_doGenerate(final StringBuffer stringBuffer,
-			final PatternContext ctx) throws Exception {
+	protected void method_doGenerate(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		stringBuffer.append(TEXT_1);
 		stringBuffer.append(genFeature.getImportedType(genClass));
@@ -228,21 +220,16 @@ public class GraphElement_Class_getGenFeature_override extends
 			stringBuffer.append(TEXT_3);
 		}
 		stringBuffer.append(TEXT_4);
-		stringBuffer.append(genModel
-				.getImportedName("org.eclipse.emf.ecore.EObject"));
+		stringBuffer.append(genModel.getImportedName("org.eclipse.emf.ecore.EObject"));
 		stringBuffer.append(TEXT_5);
-		stringBuffer.append(genModel
-				.getImportedName("org.eclipse.emf.ecore.InternalEObject"));
+		stringBuffer.append(genModel.getImportedName("org.eclipse.emf.ecore.InternalEObject"));
 		stringBuffer.append(TEXT_6);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "doGenerate",
-				stringBuffer.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "doGenerate", stringBuffer.toString());
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
-		if ("GraphElement".equals(genFeature.getGenClass().getEcoreClass()
-				.getName())
-				&& "content".equals(genFeature.getName())) {
+		if ("GraphElement".equals(genFeature.getGenClass().getEcoreClass().getName()) && "content".equals(genFeature.getName())) {
 			return true;
 		}
 		return false;

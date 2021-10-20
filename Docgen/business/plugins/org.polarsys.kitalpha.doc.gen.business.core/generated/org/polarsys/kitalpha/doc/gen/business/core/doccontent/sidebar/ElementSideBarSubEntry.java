@@ -1,4 +1,4 @@
-//Generated with EGF 1.4.0.v20160519-0641
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.doc.gen.business.core.doccontent.sidebar;
 
 import org.eclipse.egf.common.helper.*;
@@ -19,10 +19,12 @@ public class ElementSideBarSubEntry extends org.polarsys.kitalpha.doc.gen.busine
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+
 	protected final String TEXT_1 = "<ul>" + NL;
+
 	protected final String TEXT_2 = "</ul>" + NL;
+
 	protected final String TEXT_3 = NL;
-	protected final String TEXT_4 = NL;
 
 	public ElementSideBarSubEntry() {
 		//Here is the constructor
@@ -59,7 +61,7 @@ public class ElementSideBarSubEntry extends org.polarsys.kitalpha.doc.gen.busine
 		}
 
 		stringBuffer.append(TEXT_3);
-		stringBuffer.append(TEXT_4);
+		stringBuffer.append(TEXT_3);
 		return stringBuffer.toString();
 	}
 
@@ -99,16 +101,14 @@ public class ElementSideBarSubEntry extends org.polarsys.kitalpha.doc.gen.busine
 		return parameters;
 	}
 
-	protected void method_startSubEntrySection(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_startSubEntrySection(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		stringBuffer.append(TEXT_1);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "startSubEntrySection", stringBuffer.toString());
 	}
 
-	protected void method_endSubEntrySection(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_endSubEntrySection(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		stringBuffer.append(TEXT_2);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;

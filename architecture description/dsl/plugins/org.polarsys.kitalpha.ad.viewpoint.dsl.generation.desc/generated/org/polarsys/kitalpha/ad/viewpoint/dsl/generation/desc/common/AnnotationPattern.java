@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.common;
 
 import java.util.*;
@@ -18,6 +18,7 @@ public class AnnotationPattern {
 	public AnnotationPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -72,8 +73,7 @@ public class AnnotationPattern {
 				eAnnotation.setSource(source);
 				if (iAnnotation.getOwned_details().size() > 0) {
 					for (Detail iDetail : iAnnotation.getOwned_details()) {
-						EStringToStringMapEntryImpl entry = (EStringToStringMapEntryImpl) EcoreFactory.eINSTANCE
-								.create(EcorePackage.eINSTANCE.getEStringToStringMapEntry());
+						EStringToStringMapEntryImpl entry = (EStringToStringMapEntryImpl) EcoreFactory.eINSTANCE.create(EcorePackage.eINSTANCE.getEStringToStringMapEntry());
 						entry.setKey(iDetail.getKey());
 						if (iDetail.getValue() != null)
 							entry.setValue(iDetail.getValue());

@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common;
 
 import java.util.*;
@@ -31,12 +31,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.siriu
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.sirius.ExpressionInterpreter;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.VSMVariable;
 
-public class AbstractEdgeReconnectionTool
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common.AbstractTool {
+public class AbstractEdgeReconnectionTool extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common.AbstractTool {
 
 	public AbstractEdgeReconnectionTool() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -87,8 +87,7 @@ public class AbstractEdgeReconnectionTool
 
 	protected void method_createConcretTool(final StringBuffer out, final PatternContext ctx) throws Exception {
 		ReconnectEdgeDescription reconnect = ToolFactory.eINSTANCE.createReconnectEdgeDescription();
-		reconnect.setReconnectionKind(source_reconnection ? ReconnectionKind.RECONNECT_SOURCE_LITERAL
-				: ReconnectionKind.RECONNECT_TARGET_LITERAL);
+		reconnect.setReconnectionKind(source_reconnection ? ReconnectionKind.RECONNECT_SOURCE_LITERAL : ReconnectionKind.RECONNECT_TARGET_LITERAL);
 		reconnect.setName(tool_name);
 
 		EObject doEdgeMapping = GenerationUtil.getDoremiElement(associated_mapping);
@@ -99,12 +98,9 @@ public class AbstractEdgeReconnectionTool
 		TargetEdgeCreationVariable v_Target = ToolFactory.eINSTANCE.createTargetEdgeCreationVariable();
 		SourceEdgeViewCreationVariable v_sourceView = ToolFactory.eINSTANCE.createSourceEdgeViewCreationVariable();
 		TargetEdgeViewCreationVariable v_TargetView = ToolFactory.eINSTANCE.createTargetEdgeViewCreationVariable();
-		ElementSelectVariable v_element = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE
-				.createElementSelectVariable();
-		ElementSelectVariable v_edgeView = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE
-				.createElementSelectVariable();
-		initial_operation = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE
-				.createInitialOperation();
+		ElementSelectVariable v_element = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE.createElementSelectVariable();
+		ElementSelectVariable v_edgeView = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE.createElementSelectVariable();
+		initial_operation = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE.createInitialOperation();
 
 		// Set the names of the variable
 		v_source.setName("source");
@@ -196,25 +192,18 @@ public class AbstractEdgeReconnectionTool
 				javaServiceData.setContext(parameter);
 				JavaMethodReturnType returnType = JavaMethodReturnType.Boolean;
 				JavaMethodData javaMethodData = new JavaMethodData(tool_name, returnType);
-				javaMethodData.addMethodParameter(VSMVariable.source.toString(), "EObject",
-						"the semantic source element");
-				javaMethodData.addMethodParameter(VSMVariable.sourceView.toString(), "EObject",
-						"the source element view");
-				javaMethodData.addMethodParameter(VSMVariable.target.toString(), "EObject",
-						"the semantic target element");
-				javaMethodData.addMethodParameter(VSMVariable.targetView.toString(), "EObject",
-						"the target element view");
-				javaMethodData.addMethodParameter(VSMVariable.element.toString(), "EObject",
-						"the semantic element behind the edge");
+				javaMethodData.addMethodParameter(VSMVariable.source.toString(), "EObject", "the semantic source element");
+				javaMethodData.addMethodParameter(VSMVariable.sourceView.toString(), "EObject", "the source element view");
+				javaMethodData.addMethodParameter(VSMVariable.target.toString(), "EObject", "the semantic target element");
+				javaMethodData.addMethodParameter(VSMVariable.targetView.toString(), "EObject", "the target element view");
+				javaMethodData.addMethodParameter(VSMVariable.element.toString(), "EObject", "the semantic element behind the edge");
 				javaMethodData.addMethodParameter(VSMVariable.edgeView.toString(), "EObject", "the edge view");
 				javaServiceData.addMethod(javaMethodData);
 
 				If iv = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE.createIf();
-				String mParameters = "(" + VSMVariable.sourceView.getInnerVariable() + ","
-						+ VSMVariable.target.getInnerVariable() + "," + VSMVariable.targetView.getInnerVariable() + ","
+				String mParameters = "(" + VSMVariable.sourceView.getInnerVariable() + "," + VSMVariable.target.getInnerVariable() + "," + VSMVariable.targetView.getInnerVariable() + ","
 						+ VSMVariable.element.getInnerVariable() + "," + VSMVariable.edgeView.getInnerVariable() + ")";
-				iv.setConditionExpression(
-						SiriusExpressionHelper.getExpressoin(tool_name + mParameters, ExpressionInterpreter.Service));
+				iv.setConditionExpression(SiriusExpressionHelper.getExpressoin(tool_name + mParameters, ExpressionInterpreter.Service));
 				initial_operation.setFirstModelOperations(iv);
 			}
 		}
@@ -231,15 +220,13 @@ public class AbstractEdgeReconnectionTool
 
 	protected org.eclipse.sirius.viewpoint.description.tool.InitialOperation initial_operation;
 
-	public void set_initial_operation(
-			org.eclipse.sirius.viewpoint.description.tool.InitialOperation initial_operation) {
+	public void set_initial_operation(org.eclipse.sirius.viewpoint.description.tool.InitialOperation initial_operation) {
 		this.initial_operation = initial_operation;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramElement associated_mapping;
 
-	public void set_associated_mapping(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramElement associated_mapping) {
+	public void set_associated_mapping(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramElement associated_mapping) {
 		this.associated_mapping = associated_mapping;
 	}
 

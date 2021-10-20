@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.2.202001031546
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.extensions.categories;
 
 import java.util.*;
@@ -8,8 +8,7 @@ import org.eclipse.egf.pattern.query.*;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.category.ContextualExplorerCategories;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.category.ContextualExplorerCategoryCompliance;
 
-public class ReferencedExternalElementCategory
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.common.AbstractCategoryPattern {
+public class ReferencedExternalElementCategory extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.common.AbstractCategoryPattern {
 	protected static String nl;
 
 	public static synchronized ReferencedExternalElementCategory create(String lineSeparator) {
@@ -20,7 +19,9 @@ public class ReferencedExternalElementCategory
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+
 	protected final String TEXT_1 = "";
+
 	protected final String TEXT_2 = NL;
 
 	public ReferencedExternalElementCategory() {

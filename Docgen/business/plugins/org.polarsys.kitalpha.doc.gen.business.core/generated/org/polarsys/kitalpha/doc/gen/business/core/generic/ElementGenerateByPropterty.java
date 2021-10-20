@@ -1,4 +1,4 @@
-//Generated with EGF 1.4.0.v20160519-0641
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.doc.gen.business.core.generic;
 
 import org.eclipse.egf.common.helper.*;
@@ -9,8 +9,7 @@ import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 import org.polarsys.kitalpha.doc.gen.business.core.util.*;
 
-public class ElementGenerateByPropterty
-		extends org.polarsys.kitalpha.doc.gen.business.core.generic.AbstractElementDescription {
+public class ElementGenerateByPropterty extends org.polarsys.kitalpha.doc.gen.business.core.generic.AbstractElementDescription {
 	protected static String nl;
 
 	public static synchronized ElementGenerateByPropterty create(String lineSeparator) {
@@ -21,13 +20,18 @@ public class ElementGenerateByPropterty
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+
 	protected final String TEXT_1 = "";
+
 	protected final String TEXT_2 = NL + "\t" + NL + NL;
+
 	protected final String TEXT_3 = NL + "<h2>";
+
 	protected final String TEXT_4 = "</h2>" + NL + "<p>";
+
 	protected final String TEXT_5 = "</p>";
+
 	protected final String TEXT_6 = NL;
-	protected final String TEXT_7 = NL;
 
 	public ElementGenerateByPropterty() {
 		//Here is the constructor
@@ -74,7 +78,7 @@ public class ElementGenerateByPropterty
 		}
 
 		stringBuffer.append(TEXT_6);
-		stringBuffer.append(TEXT_7);
+		stringBuffer.append(TEXT_6);
 		return stringBuffer.toString();
 	}
 
@@ -115,8 +119,7 @@ public class ElementGenerateByPropterty
 		return parameters;
 	}
 
-	protected void method_generateDescription(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_generateDescription(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		EClass eClass = eObject.eClass();
 		EStructuralFeature eStructuralFeature = eClass.getEStructuralFeature(property);

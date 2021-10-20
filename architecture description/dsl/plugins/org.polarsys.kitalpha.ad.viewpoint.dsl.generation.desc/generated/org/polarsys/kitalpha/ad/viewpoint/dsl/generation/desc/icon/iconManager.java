@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.icon;
 
 import java.util.*;
@@ -23,6 +23,7 @@ public class iconManager {
 	public iconManager() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -105,8 +106,7 @@ public class iconManager {
 		if (editProject != null && editProject.exists()) {
 			WorkspaceModifyOperation wo = new WorkspaceModifyOperation() {
 				@Override
-				protected void execute(IProgressMonitor monitor)
-						throws CoreException, InvocationTargetException, InterruptedException {
+				protected void execute(IProgressMonitor monitor) throws CoreException, InvocationTargetException, InterruptedException {
 
 					IFolder vpIconFolder = vpdslProject.getFolder("icons");
 
@@ -154,8 +154,7 @@ public class iconManager {
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
-		return GenerateIconPrecondition.generateIcon() && parameter.getIcon() != null
-				&& parameter.getIcon().trim().length() > 0;
+		return GenerateIconPrecondition.generateIcon() && parameter.getIcon() != null && parameter.getIcon().trim().length() > 0;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class parameter;

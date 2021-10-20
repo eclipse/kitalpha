@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.2.202001031546
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.doc.gen.business.core.sirius;
 
 import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
@@ -32,26 +32,43 @@ public class DiagramGenerator {
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+
 	protected final String TEXT_1 = "\t<div>" + NL + "\t<p class=\"diagram-name\" id=\"";
+
 	protected final String TEXT_2 = "\">";
+
 	protected final String TEXT_3 = "</p>" + NL + "\t<p class=\"diagram\">" + NL + "\t\t<img src=\"";
+
 	protected final String TEXT_4 = "/";
+
 	protected final String TEXT_5 = "\" alt=\"";
+
 	protected final String TEXT_6 = "\" usemap=\"#";
-	protected final String TEXT_7 = "\" />" + NL + "\t\t" + NL + "\t\t<br/>" + NL + "\t\t<br/>" + NL
-			+ "\t\t<map name=\"";
+
+	protected final String TEXT_7 = "\" />" + NL + "\t\t" + NL + "\t\t<br/>" + NL + "\t\t<br/>" + NL + "\t\t<map name=\"";
+
 	protected final String TEXT_8 = NL + "\t\t\t<area shape=\"rect\" group=\"";
+
 	protected final String TEXT_9 = "\" coords=\"";
+
 	protected final String TEXT_10 = ",";
+
 	protected final String TEXT_11 = "\" href=\"../";
+
 	protected final String TEXT_12 = ".html#";
+
 	protected final String TEXT_13 = "\" />";
-	protected final String TEXT_14 = "\t\t" + NL + "\t\t</map>" + NL + "\t</p>" + NL
-			+ "\t<p class=\"diagram-description\">";
+
+	protected final String TEXT_14 = "\t\t" + NL + "\t\t</map>" + NL + "\t</p>" + NL + "\t<p class=\"diagram-description\">";
+
 	protected final String TEXT_15 = "</p>" + NL + "\t</div>";
+
 	protected final String TEXT_16 = NL + "<p class=\"diagram-name\" id=\"";
+
 	protected final String TEXT_17 = "</p>" + NL + "<p>image is missing</p>" + NL + "<p class=\"diagram-description\">";
+
 	protected final String TEXT_18 = "</p>";
+
 	protected final String TEXT_19 = NL;
 
 	public DiagramGenerator() {
@@ -199,8 +216,7 @@ public class DiagramGenerator {
 		Boolean diagramDataCached = DiagramExportRegistry.getInstance().hasDataForDiagram(diagram);
 		if (diagramDataCached) {
 			imageFile = DiagramExportRegistry.getInstance().getDiagramRelatedRegistryObject(diagram).getFile();
-			result = DiagramExportRegistry.getInstance().getDiagramRelatedRegistryObject(diagram)
-					.getRepresentationDescriptor();
+			result = DiagramExportRegistry.getInstance().getDiagramRelatedRegistryObject(diagram).getRepresentationDescriptor();
 			mapName = DiagramExportRegistry.getInstance().getDiagramRelatedRegistryObject(diagram).getMapName();
 			diagramName = DiagramExportRegistry.getInstance().getDiagramRelatedRegistryObject(diagram).getDiagramName();
 		} else {
@@ -332,8 +348,7 @@ public class DiagramGenerator {
 			}
 
 			stringBuffer.append(TEXT_14);
-			stringBuffer.append(helper.diagramDocumentationPostTraitement(((DSemanticDiagram) diagram).getTarget(),
-					(result == null) ? "" : result.getDocumentation(), projectName, outputFolder));
+			stringBuffer.append(helper.diagramDocumentationPostTraitement(((DSemanticDiagram) diagram).getTarget(), (result == null) ? "" : result.getDocumentation(), projectName, outputFolder));
 			stringBuffer.append(TEXT_15);
 		} else {
 			if (diagramName != null && diagramName.isEmpty() == false)
@@ -348,8 +363,7 @@ public class DiagramGenerator {
 			stringBuffer.append(TEXT_18);
 
 			org.polarsys.kitalpha.doc.gen.business.core.Activator.getDefault().getLog()
-					.log(new Status(IStatus.ERROR, org.polarsys.kitalpha.doc.gen.business.core.Activator.PLUGIN_ID,
-							"Error during diagram export action:" + diagramName));
+					.log(new Status(IStatus.ERROR, org.polarsys.kitalpha.doc.gen.business.core.Activator.PLUGIN_ID, "Error during diagram export action:" + diagramName));
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;

@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.style.specific;
 
 import java.util.*;
@@ -13,12 +13,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.DiagramExp
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.VSMVariable;
 
-public class Node_DotCustomizationPattern extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.common.AbstractSpecificNodeCustomizationPattern {
+public class Node_DotCustomizationPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.common.AbstractSpecificNodeCustomizationPattern {
 
 	public Node_DotCustomizationPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -56,8 +56,7 @@ public class Node_DotCustomizationPattern extends
 			parameters.put("appliedOn", this.appliedOn);
 			parameters.put("stylePropertyData", this.strokeSizeComputationExpression);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
 					ctx_local, parameters);
 		}
 		ictx.setNode(currentNode);
@@ -78,17 +77,13 @@ public class Node_DotCustomizationPattern extends
 		new Node.DataLeaf(ictx.getNode(), getClass(), "setParentMapping", out.toString());
 	}
 
-	protected void method_initStrokeSizeComputationExpressionData(final StringBuffer out, final PatternContext ctx)
-			throws Exception {
-		if (parameter
-				.eIsSet(VpstylecustomizationPackage.eINSTANCE.getDotCustomization_StrokeSizeComputationExpression())) {
+	protected void method_initStrokeSizeComputationExpressionData(final StringBuffer out, final PatternContext ctx) throws Exception {
+		if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getDotCustomization_StrokeSizeComputationExpression())) {
 			final CustomizationExpression expression = parameter.getStrokeSizeComputationExpression();
 			final AbstractComputableElement expressionElement = expression.getOwnedExpressionElement();
 			if (expressionElement != null) {
-				final String newLabelExpression = DiagramExpressionUtil.getAbstractComputableElementExpression(
-						expressionElement, VSMVariable.view, VSMVariable.container);
-				set_strokeSizeComputationExpression(
-						new StylePropertyNameValueCouple("strokeSizeComputationExpression", newLabelExpression));
+				final String newLabelExpression = DiagramExpressionUtil.getAbstractComputableElementExpression(expressionElement, VSMVariable.view, VSMVariable.container);
+				set_strokeSizeComputationExpression(new StylePropertyNameValueCouple("strokeSizeComputationExpression", newLabelExpression));
 			}
 		}
 
@@ -98,15 +93,13 @@ public class Node_DotCustomizationPattern extends
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.DotCustomization parameter;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.DotCustomization parameter) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.DotCustomization parameter) {
 		this.parameter = parameter;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple strokeSizeComputationExpression;
 
-	public void set_strokeSizeComputationExpression(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple strokeSizeComputationExpression) {
+	public void set_strokeSizeComputationExpression(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple strokeSizeComputationExpression) {
 		this.strokeSizeComputationExpression = strokeSizeComputationExpression;
 	}
 

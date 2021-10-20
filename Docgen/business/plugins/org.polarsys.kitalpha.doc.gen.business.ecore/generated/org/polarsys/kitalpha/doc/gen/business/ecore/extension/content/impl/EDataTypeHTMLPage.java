@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20150924-1035
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.doc.gen.business.ecore.extension.content.impl;
 
 import org.eclipse.egf.common.helper.*;
@@ -22,15 +22,20 @@ public class EDataTypeHTMLPage {
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+
 	protected final String TEXT_1 = "";
+
 	protected final String TEXT_2 = NL + "<h2>EDataType</h2>";
+
 	protected final String TEXT_3 = NL;
+
 	protected final String TEXT_4 = NL + "<br/>" + NL + "<ul>" + NL + "\t<li>Name : ";
+
 	protected final String TEXT_5 = "</li>" + NL + "\t<li>Instance Class: ";
+
 	protected final String TEXT_6 = "</li>" + NL + "</ul>";
+
 	protected final String TEXT_7 = NL;
-	protected final String TEXT_8 = NL;
-	protected final String TEXT_9 = NL;
 
 	public EDataTypeHTMLPage() {
 		//Here is the constructor
@@ -50,9 +55,7 @@ public class EDataTypeHTMLPage {
 
 		paramDesc = new IQuery.ParameterDescription("parameter", "http://www.eclipse.org/emf/2002/Ecore#//EDataType");
 		queryCtx = new HashMap<String, String>();
-		List<Object> parameterList = QueryHelper
-				.load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.injected.context")
-				.execute(paramDesc, queryCtx, ctx);
+		List<Object> parameterList = QueryHelper.load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.injected.context").execute(paramDesc, queryCtx, ctx);
 
 		for (Object parameterParameter : parameterList) {
 
@@ -69,8 +72,8 @@ public class EDataTypeHTMLPage {
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_8);
-		stringBuffer.append(TEXT_9);
+		stringBuffer.append(TEXT_7);
+		stringBuffer.append(TEXT_7);
 		return stringBuffer.toString();
 	}
 
@@ -116,7 +119,7 @@ public class EDataTypeHTMLPage {
 			stringBuffer.append(parameter.getInstanceClass().getCanonicalName());
 			stringBuffer.append(TEXT_6);
 		}
-		stringBuffer.append(TEXT_7);
+		stringBuffer.append(TEXT_3);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "content", stringBuffer.toString());
 	}

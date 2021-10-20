@@ -40,10 +40,8 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ElementItemProvider extends ExtensionItemProviderAdapter
-		implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
-		IItemLabelProvider, IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider,
-		ITableItemFontProvider, IItemColorProvider, IItemFontProvider {
+public class ElementItemProvider extends ExtensionItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider,
+		IItemPropertySource, ITableItemLabelProvider, ITableItemColorProvider, ITableItemFontProvider, IItemColorProvider, IItemFontProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -70,6 +68,21 @@ public class ElementItemProvider extends ExtensionItemProviderAdapter
 	}
 
 	/**
+	 * This returns <code>getImage(object)</code> for the column index <code>0</code> or <code>super.getImage(object)</code> otherwise.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getText(Object)
+	 * @see #getColumnText(Object, int)
+	 * @generated
+	 */
+	@Override
+	public Object getColumnImage(Object object, int columnIndex) {
+		// TODO: implement this method to return appropriate information for each column.
+		// Ensure that you remove @generated or mark it @generated NOT
+		return columnIndex == 0 ? getImage(object) : super.getImage(object);
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -81,6 +94,21 @@ public class ElementItemProvider extends ExtensionItemProviderAdapter
 		// begin-extension-code
 		return "[" + getString("_UI_Element_type") + "]"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		// end-extension-code
+	}
+
+	/**
+	 * This returns <code>getText(object)</code> for the column index <code>0</code> or <code>super.getText(object)</code> otherwise.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getImage(Object)
+	 * @see #getColumnImage(Object, int)
+	 * @generated
+	 */
+	@Override
+	public String getColumnText(Object object, int columnIndex) {
+		// TODO: implement this method to return appropriate information for each column.
+		// Ensure that you remove @generated or mark it @generated NOT
+		return columnIndex == 0 ? getText(object) : super.getText(object);
 	}
 
 	/**

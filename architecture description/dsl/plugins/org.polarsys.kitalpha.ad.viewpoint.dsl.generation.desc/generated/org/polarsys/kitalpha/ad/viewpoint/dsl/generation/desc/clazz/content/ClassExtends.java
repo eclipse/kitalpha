@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.clazz.content;
 
 import java.util.*;
@@ -20,12 +20,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.desc.CoreModelHelpe
 
 import org.polarsys.kitalpha.emde.model.impl.EmdePackageImpl;
 
-public class ClassExtends
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.abstracts.ClassAbstractPattern {
+public class ClassExtends extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.abstracts.ClassAbstractPattern {
 
 	public ClassExtends() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -105,16 +105,13 @@ public class ClassExtends
 		for (Object iClazz : targetClasses) {
 			EClass clazz = (EClass) iClazz;
 			String clazzName = clazz.getName();
-			strExtendedElement = strExtendedElement + " " + clazz.getEPackage().getNsURI() + Constant.URI_SEPARATOR
-					+ clazzName;
+			strExtendedElement = strExtendedElement + " " + clazz.getEPackage().getNsURI() + Constant.URI_SEPARATOR + clazzName;
 			strMapping = strMapping + " " + EcoreUtil.getURI(clazz).toString();
 		}
 
 		// Creation of the Annotation details Entries			
-		EStringToStringMapEntryImpl detExtendedElement = (EStringToStringMapEntryImpl) EcoreFactory.eINSTANCE
-				.create(EcorePackage.eINSTANCE.getEStringToStringMapEntry());
-		EStringToStringMapEntryImpl detMapping = (EStringToStringMapEntryImpl) EcoreFactory.eINSTANCE
-				.create(EcorePackage.eINSTANCE.getEStringToStringMapEntry());
+		EStringToStringMapEntryImpl detExtendedElement = (EStringToStringMapEntryImpl) EcoreFactory.eINSTANCE.create(EcorePackage.eINSTANCE.getEStringToStringMapEntry());
+		EStringToStringMapEntryImpl detMapping = (EStringToStringMapEntryImpl) EcoreFactory.eINSTANCE.create(EcorePackage.eINSTANCE.getEStringToStringMapEntry());
 		detExtendedElement.setValue(strExtendedElement);
 		detExtendedElement.setKey(Constant.EXTENDTED_ELEMENT_DETAIL);
 		detMapping.setValue(strMapping);
@@ -133,16 +130,14 @@ public class ClassExtends
 		new Node.DataLeaf(ictx.getNode(), getClass(), "AnnotateCurEClass", out.toString());
 	}
 
-	protected void method_checkIfTargetClassesAreExtensible(final StringBuffer out, final PatternContext ctx)
-			throws Exception {
+	protected void method_checkIfTargetClassesAreExtensible(final StringBuffer out, final PatternContext ctx) throws Exception {
 		if (targetClasses != null && targetClasses.size() > 0) {
 			for (Object iClazz : targetClasses) {
 				EClass clazz = (EClass) iClazz;
 				boolean throwEception = true;
 
 				for (EClass itClass : clazz.getEAllSuperTypes()) {
-					if (itClass.getEPackage().getNsURI().equals(EmdePackageImpl.eINSTANCE.getNsURI())
-							&& itClass.getClassifierID() == EmdePackageImpl.EXTENSIBLE_ELEMENT) {
+					if (itClass.getEPackage().getNsURI().equals(EmdePackageImpl.eINSTANCE.getNsURI()) && itClass.getClassifierID() == EmdePackageImpl.EXTENSIBLE_ELEMENT) {
 						throwEception = false;
 						break;
 					}
