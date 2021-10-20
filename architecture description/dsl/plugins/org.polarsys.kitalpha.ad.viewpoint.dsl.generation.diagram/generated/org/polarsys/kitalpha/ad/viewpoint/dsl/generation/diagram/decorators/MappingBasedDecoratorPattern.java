@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.decorators;
 
 import java.util.*;
@@ -14,12 +14,12 @@ import org.eclipse.sirius.diagram.description.MappingBasedDecoration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramElement;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.MappingBasedDecorator;
 
-public class MappingBasedDecoratorPattern
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.decorators.common.AbstractDecorator {
+public class MappingBasedDecoratorPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.decorators.common.AbstractDecorator {
 
 	public MappingBasedDecoratorPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -87,8 +87,7 @@ public class MappingBasedDecoratorPattern
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.MappingBasedDecorator parameter;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.MappingBasedDecorator parameter) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.MappingBasedDecorator parameter) {
 		this.parameter = parameter;
 	}
 

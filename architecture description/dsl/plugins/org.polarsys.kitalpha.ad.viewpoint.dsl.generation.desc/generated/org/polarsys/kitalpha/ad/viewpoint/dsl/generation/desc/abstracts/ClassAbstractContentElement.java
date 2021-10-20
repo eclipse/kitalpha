@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.abstracts;
 
 import java.util.*;
@@ -10,12 +10,12 @@ import org.eclipse.egf.common.helper.*;
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.util.ECoreResourceManager;
 
-public class ClassAbstractContentElement
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.common.AnyVPSpecElement {
+public class ClassAbstractContentElement extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.common.AnyVPSpecElement {
 
 	public ClassAbstractContentElement() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -45,9 +45,8 @@ public class ClassAbstractContentElement
 			parameters.put("vpElement", this.annotatableElement);
 			parameters.put("eElement", this.ecoreElement);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc/egf/vpdslECoreGenerator.fcore#_HKpWoL4sEeKDeKot98nSrA",
-					ctx_local, parameters);
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc/egf/vpdslECoreGenerator.fcore#_HKpWoL4sEeKDeKot98nSrA", ctx_local,
+					parameters);
 		}
 		ictx.setNode(currentNode);
 		return null;
@@ -99,8 +98,7 @@ public class ClassAbstractContentElement
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AnnotatableElement annotatableElement;
 
-	public void set_annotatableElement(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AnnotatableElement annotatableElement) {
+	public void set_annotatableElement(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AnnotatableElement annotatableElement) {
 		this.annotatableElement = annotatableElement;
 	}
 

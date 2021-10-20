@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.2.202001031546
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.clazz;
 
 import java.util.*;
@@ -13,8 +13,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.util.ECoreResource
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.util.ENamedElementAnnotationHelper;
 
-public class ClassCreation
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.abstracts.ClassAbstractPattern {
+public class ClassCreation extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.abstracts.ClassAbstractPattern {
 
 	public ClassCreation() {
 		//Here is the constructor
@@ -55,9 +54,8 @@ public class ClassCreation
 			parameters.put("vpElement", this.parameter);
 			parameters.put("eElement", this.generatedEClass);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc/egf/vpdslECoreGenerator.fcore#_HKpWoL4sEeKDeKot98nSrA",
-					ctx_local, parameters);
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc/egf/vpdslECoreGenerator.fcore#_HKpWoL4sEeKDeKot98nSrA", ctx_local,
+					parameters);
 		}
 		ictx.setNode(currentNode);
 		if (ictx.useReporter()) {
@@ -79,8 +77,8 @@ public class ClassCreation
 		/************************* EClass Generic Annotation *************************/
 
 		if (parameter.getDescription() != null && parameter.getDescription().trim().length() != 0)
-			ENamedElementAnnotationHelper.annotate(generatedEClass, ENamedElementAnnotationHelper.KEY_DOCUMENTATION,
-					ENamedElementAnnotationHelper.ENTRY_DOCUMENTATION_KEY, parameter.getDescription(), true);
+			ENamedElementAnnotationHelper.annotate(generatedEClass, ENamedElementAnnotationHelper.KEY_DOCUMENTATION, ENamedElementAnnotationHelper.ENTRY_DOCUMENTATION_KEY, parameter.getDescription(),
+					true);
 
 		ECoreResourceManager.INSTANCE.getEPackage().getEClassifiers().add(generatedEClass);
 

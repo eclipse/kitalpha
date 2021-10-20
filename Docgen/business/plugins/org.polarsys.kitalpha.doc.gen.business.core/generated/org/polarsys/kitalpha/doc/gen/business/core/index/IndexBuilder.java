@@ -1,4 +1,4 @@
-//Generated with EGF 1.4.0.v20160519-0641
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.doc.gen.business.core.index;
 
 import org.eclipse.egf.common.helper.*;
@@ -19,21 +19,22 @@ public class IndexBuilder extends org.polarsys.kitalpha.doc.gen.business.core.do
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Frameset//EN\"" + NL
-			+ "   \"http://www.w3.org/TR/html4/frameset.dtd\">" + NL + "<html>" + NL + "<head>" + NL + "<title>";
+
+	protected final String TEXT_1 = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Frameset//EN\"" + NL + "   \"http://www.w3.org/TR/html4/frameset.dtd\">" + NL + "<html>" + NL + "<head>" + NL
+			+ "<title>";
+
 	protected final String TEXT_2 = "</title>" + NL + "</head>";
+
 	protected final String TEXT_3 = "</html>";
+
 	protected final String TEXT_4 = "<frameset rows=\"63,*,40\" frameborder=\"0\" framespacing=\"0\" border=\"0\">" + NL
-			+ "  <frame src=\"header.html\" name=\"header\" marginheight=\"0\" marginwidth=\"0\" scrolling=\"no\" noresize=\"0\"/>"
-			+ NL + "  <frameset cols=\"22%,*\" border=\"5\" frameborder=\"1\" framespacing=\"1\">" + NL
-			+ "  <frame src=\"sidebar.html\" name=\"sideBar\"/>" + NL + "  <frame name=\"content\"/>" + NL
-			+ "  <noframes>" + NL + "    Oops ! Your browser cannot display this page !" + NL + "  </noframes>" + NL
-			+ "  </frameset>" + NL
-			+ "  <frame src=\"footer.html\" name=\"footer\" scrolling=\"no\" frameborder=\"0\" noresize=\"noresize\"/>"
-			+ NL + "  <noframes>" + NL + "    Oops ! Your browser cannot display this page !" + NL + "  </noframes>"
-			+ NL + "</frameset>";
+			+ "  <frame src=\"header.html\" name=\"header\" marginheight=\"0\" marginwidth=\"0\" scrolling=\"no\" noresize=\"0\"/>" + NL
+			+ "  <frameset cols=\"22%,*\" border=\"5\" frameborder=\"1\" framespacing=\"1\">" + NL + "  <frame src=\"sidebar.html\" name=\"sideBar\"/>" + NL + "  <frame name=\"content\"/>" + NL
+			+ "  <noframes>" + NL + "    Oops ! Your browser cannot display this page !" + NL + "  </noframes>" + NL + "  </frameset>" + NL
+			+ "  <frame src=\"footer.html\" name=\"footer\" scrolling=\"no\" frameborder=\"0\" noresize=\"noresize\"/>" + NL + "  <noframes>" + NL
+			+ "    Oops ! Your browser cannot display this page !" + NL + "  </noframes>" + NL + "</frameset>";
+
 	protected final String TEXT_5 = NL;
-	protected final String TEXT_6 = NL;
 
 	public IndexBuilder() {
 		//Here is the constructor
@@ -62,7 +63,7 @@ public class IndexBuilder extends org.polarsys.kitalpha.doc.gen.business.core.do
 		}
 
 		stringBuffer.append(TEXT_5);
-		stringBuffer.append(TEXT_6);
+		stringBuffer.append(TEXT_5);
 		return stringBuffer.toString();
 	}
 

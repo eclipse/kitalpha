@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201906060805
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.emde.egf;
 
 import java.io.StringReader;
@@ -36,6 +36,7 @@ public class PluginXMLExtensionHook {
 	public PluginXMLExtensionHook() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {

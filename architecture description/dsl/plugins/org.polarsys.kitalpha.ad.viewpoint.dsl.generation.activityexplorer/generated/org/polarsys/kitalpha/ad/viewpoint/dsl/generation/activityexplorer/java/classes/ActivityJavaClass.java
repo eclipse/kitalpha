@@ -1,4 +1,4 @@
-//Generated with EGF 1.4.1.v20161010-1704
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.java.classes;
 
 import org.eclipse.egf.common.helper.*;
@@ -15,8 +15,7 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.internal.JavaNamingConvention;
 
-public class ActivityJavaClass extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.java.abstracts.AbstractActivityExplorerJavaClass {
+public class ActivityJavaClass extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.java.abstracts.AbstractActivityExplorerJavaClass {
 	protected static String nl;
 
 	public static synchronized ActivityJavaClass create(String lineSeparator) {
@@ -27,34 +26,36 @@ public class ActivityJavaClass extends
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "import org.eclipse.amalgam.explorer.activity.ui.api.hyperlinkadapter.AbstractHyperlinkAdapter;"
-			+ NL + "import org.eclipse.amalgam.explorer.activity.ui.api.manager.ActivityExplorerManager;" + NL
-			+ "import org.eclipse.emf.ecore.EObject;" + NL + "import org.eclipse.jface.dialogs.MessageDialog;" + NL
-			+ "import org.eclipse.sirius.business.api.session.Session;" + NL + "import org.eclipse.swt.widgets.Shell;"
-			+ NL + "import org.eclipse.ui.PlatformUI;" + NL + "import org.eclipse.ui.forms.events.HyperlinkEvent;" + NL
-			+ NL;
+
+	protected final String TEXT_1 = "import org.eclipse.amalgam.explorer.activity.ui.api.hyperlinkadapter.AbstractHyperlinkAdapter;" + NL
+			+ "import org.eclipse.amalgam.explorer.activity.ui.api.manager.ActivityExplorerManager;" + NL + "import org.eclipse.emf.ecore.EObject;" + NL
+			+ "import org.eclipse.jface.dialogs.MessageDialog;" + NL + "import org.eclipse.sirius.business.api.session.Session;" + NL + "import org.eclipse.swt.widgets.Shell;" + NL
+			+ "import org.eclipse.ui.PlatformUI;" + NL + "import org.eclipse.ui.forms.events.HyperlinkEvent;" + NL + NL;
+
 	protected final String TEXT_2 = NL + "public class ";
-	protected final String TEXT_3 = " extends AbstractHyperlinkAdapter {" + NL + "\t" + NL + "\t/**" + NL
-			+ "\t * Default constructor" + NL + "\t */" + NL + "\tpublic ";
-	protected final String TEXT_4 = "() {" + NL + "\t\tsuper(ActivityExplorerManager.INSTANCE.getRootSemanticModel());"
-			+ NL + "\t}" + NL + "\t" + NL + "\t/**" + NL + "\t * Constructor with parameters" + NL
-			+ "\t * @param root the root model element ({@link EObject})" + NL
-			+ "\t * @param session the associated {@link Session} with the activity explorer" + NL + "\t */" + NL
-			+ "\tpublic ";
-	protected final String TEXT_5 = "(EObject root) {" + NL + "\t\tsuper(root);" + NL + "\t}" + NL + "" + NL + "\t\t/*"
-			+ NL + "\t * (non-Javadoc)" + NL
+
+	protected final String TEXT_3 = " extends AbstractHyperlinkAdapter {" + NL + "\t" + NL + "\t/**" + NL + "\t * Default constructor" + NL + "\t */" + NL + "\tpublic ";
+
+	protected final String TEXT_4 = "() {" + NL + "\t\tsuper(ActivityExplorerManager.INSTANCE.getRootSemanticModel());" + NL + "\t}" + NL + "\t" + NL + "\t/**" + NL
+			+ "\t * Constructor with parameters" + NL + "\t * @param root the root model element ({@link EObject})" + NL
+			+ "\t * @param session the associated {@link Session} with the activity explorer" + NL + "\t */" + NL + "\tpublic ";
+
+	protected final String TEXT_5 = "(EObject root) {" + NL + "\t\tsuper(root);" + NL + "\t}" + NL + "" + NL + "\t\t/*" + NL + "\t * (non-Javadoc)" + NL
 			+ "\t * @see org.eclipse.amalgam.explorer.activity.ui.api.hyperlinkadapter.AbstractHyperlinkAdapter#linkPressed(org.eclipse.ui.forms.events.HyperlinkEvent, org.eclipse.emf.ecore.EObject, org.eclipse.sirius.business.api.session.Session)"
-			+ NL + "\t */" + NL + "\t@Override" + NL
-			+ "\tprotected void linkPressed(HyperlinkEvent event, EObject project_p, Session session) {" + NL
-			+ "\t\tShell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();" + NL
-			+ "\t\tMessageDialog.openInformation(shell, \"Activity Explorer - ";
+			+ NL + "\t */" + NL + "\t@Override" + NL + "\tprotected void linkPressed(HyperlinkEvent event, EObject project_p, Session session) {" + NL
+			+ "\t\tShell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();" + NL + "\t\tMessageDialog.openInformation(shell, \"Activity Explorer - ";
+
 	protected final String TEXT_6 = "\", " + NL + "\t\t\t\t\t\t\t\t\t  \"Default implementation for ";
+
 	protected final String TEXT_7 = ".\\n ";
+
 	protected final String TEXT_8 = ".";
+
 	protected final String TEXT_9 = ".java\");" + NL + "\t}" + NL + "}" + NL;
+
 	protected final String TEXT_10 = NL + " ";
+
 	protected final String TEXT_11 = NL;
-	protected final String TEXT_12 = NL;
 
 	public ActivityJavaClass() {
 		//Here is the constructor
@@ -91,7 +92,7 @@ public class ActivityJavaClass extends
 		}
 
 		stringBuffer.append(TEXT_11);
-		stringBuffer.append(TEXT_12);
+		stringBuffer.append(TEXT_11);
 		return stringBuffer.toString();
 	}
 
@@ -114,8 +115,7 @@ public class ActivityJavaClass extends
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Activity parameter = null;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Activity object) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Activity object) {
 		this.parameter = object;
 	}
 
@@ -129,11 +129,9 @@ public class ActivityJavaClass extends
 
 		// Set the parameters values
 		NamedElement namedParameter = (NamedElement) parameter;
-		classname = JavaNamingConvention.getJavaClassNameFor(namedParameter,
-				JavaNamingConvention.JavaUseContext.Activity);
+		classname = JavaNamingConvention.getJavaClassNameFor(namedParameter, JavaNamingConvention.JavaUseContext.Activity);
 		projectname = (String) ctx.getValue("activity.explorer.project.name");
-		packagename = JavaNamingConvention.getJavaPackageNameFor(projectname,
-				JavaNamingConvention.JavaUseContext.Activity);
+		packagename = JavaNamingConvention.getJavaPackageNameFor(projectname, JavaNamingConvention.JavaUseContext.Activity);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "setParameters", stringBuffer.toString());
 	}
@@ -166,15 +164,13 @@ public class ActivityJavaClass extends
 		new Node.DataLeaf(ictx.getNode(), getClass(), "genClassCode", stringBuffer.toString());
 	}
 
-	protected void method_updateProjectDependecies(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_updateProjectDependecies(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(projectname);
 		PDEUtility.updateRequiredBundles(project, "org.eclipse.ui.forms", new NullProgressMonitor());
 		PDEUtility.updateRequiredBundles(project, "org.eclipse.ui", new NullProgressMonitor());
 		PDEUtility.updateRequiredBundles(project, "org.eclipse.core.runtime", new NullProgressMonitor());
-		PDEUtility.updateRequiredBundles(project, "org.eclipse.amalgam.explorer.activity.ui",
-				new NullProgressMonitor());
+		PDEUtility.updateRequiredBundles(project, "org.eclipse.amalgam.explorer.activity.ui", new NullProgressMonitor());
 		PDEUtility.updateRequiredBundles(project, "org.eclipse.emf.ecore", new NullProgressMonitor());
 		PDEUtility.updateRequiredBundles(project, "org.eclipse.sirius", new NullProgressMonitor());
 		PDEUtility.updateRequiredBundles(project, "org.eclipse.ui.forms", new NullProgressMonitor());

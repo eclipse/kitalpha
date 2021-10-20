@@ -1,4 +1,4 @@
-//Generated with EGF 1.4.1.v20161010-1704
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.contributions;
 
 import org.eclipse.egf.common.helper.*;
@@ -19,11 +19,12 @@ public class ActivityProviderPattern {
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "<extension" + NL
-			+ "      point=\"org.eclipse.amalgam.explorer.activity.ui.activitiesProvider\">";
+
+	protected final String TEXT_1 = "<extension" + NL + "      point=\"org.eclipse.amalgam.explorer.activity.ui.activitiesProvider\">";
+
 	protected final String TEXT_2 = "</extension>" + NL;
+
 	protected final String TEXT_3 = NL;
-	protected final String TEXT_4 = NL;
 
 	public ActivityProviderPattern() {
 		//Here is the constructor
@@ -60,7 +61,7 @@ public class ActivityProviderPattern {
 		}
 
 		stringBuffer.append(TEXT_3);
-		stringBuffer.append(TEXT_4);
+		stringBuffer.append(TEXT_3);
 		return stringBuffer.toString();
 	}
 
@@ -88,8 +89,7 @@ public class ActivityProviderPattern {
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.SectionExtension parameter = null;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.SectionExtension object) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.SectionExtension object) {
 		this.parameter = object;
 	}
 

@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.2.202001031546
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.javaclasses;
 
 import java.util.*;
@@ -9,8 +9,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.cat
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.util.ClassUtils;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common.java.JDTUtility;
 
-public class ParentJavaClass extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.common.LoopFinishedJavaClassForContextualExplorer {
+public class ParentJavaClass extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.common.LoopFinishedJavaClassForContextualExplorer {
 	protected static String nl;
 
 	public static synchronized ParentJavaClass create(String lineSeparator) {
@@ -21,23 +20,22 @@ public class ParentJavaClass extends
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+
 	protected final String TEXT_1 = "package ";
-	protected final String TEXT_2 = ";" + NL + "" + NL + "import java.util.ArrayList;" + NL + "import java.util.List;"
-			+ NL + "" + NL + "import org.eclipse.emf.ecore.EObject;" + NL + "" + NL
-			+ "import org.eclipse.amalgam.explorer.contextual.core.query.IQuery;" + NL + "" + NL + "/**" + NL
-			+ " * <!-- begin-user-doc -->" + NL + " * <!-- end-user-doc -->" + NL + " * <p>" + NL + " * </p>" + NL
-			+ " *" + NL + " * @generated" + NL + " */" + NL + "public class ";
-	protected final String TEXT_3 = " implements IQuery {" + NL + "" + NL + "/**" + NL + "   * <!-- begin-user-doc -->"
-			+ NL + "   * <!-- end-user-doc -->" + NL + "   * Default constructor" + NL + "   * @generated" + NL
-			+ "   */" + NL + "\tpublic ";
-	protected final String TEXT_4 = "() {" + NL + "\t\t// TODO Auto-generated constructor stub" + NL + "\t}" + NL + ""
-			+ NL + "   /**" + NL + "    * <!-- begin-user-doc -->" + NL + "    * <!-- end-user-doc -->" + NL
-			+ "    * @param object_p: The model element for which the Contextual Explorer extension is generated" + NL
-			+ "    * @return List of object to display in the parent category" + NL + "    * @generated" + NL + "    */"
-			+ NL + "\tpublic List<Object> compute(Object object_p) {" + NL
-			+ "\t\tList<Object> result = new ArrayList<Object>();" + NL + "\t\tEObject eObject = (EObject) object_p;"
-			+ NL + "\t\tresult.add(eObject.eContainer());" + NL + "\t\treturn result;" + NL + "\t}" + NL + "" + NL + "}"
-			+ NL;
+
+	protected final String TEXT_2 = ";" + NL + "" + NL + "import java.util.ArrayList;" + NL + "import java.util.List;" + NL + "" + NL + "import org.eclipse.emf.ecore.EObject;" + NL + "" + NL
+			+ "import org.eclipse.amalgam.explorer.contextual.core.query.IQuery;" + NL + "" + NL + "/**" + NL + " * <!-- begin-user-doc -->" + NL + " * <!-- end-user-doc -->" + NL + " * <p>" + NL
+			+ " * </p>" + NL + " *" + NL + " * @generated" + NL + " */" + NL + "public class ";
+
+	protected final String TEXT_3 = " implements IQuery {" + NL + "" + NL + "/**" + NL + "   * <!-- begin-user-doc -->" + NL + "   * <!-- end-user-doc -->" + NL + "   * Default constructor" + NL
+			+ "   * @generated" + NL + "   */" + NL + "\tpublic ";
+
+	protected final String TEXT_4 = "() {" + NL + "\t\t// TODO Auto-generated constructor stub" + NL + "\t}" + NL + "" + NL + "   /**" + NL + "    * <!-- begin-user-doc -->" + NL
+			+ "    * <!-- end-user-doc -->" + NL + "    * @param object_p: The model element for which the Contextual Explorer extension is generated" + NL
+			+ "    * @return List of object to display in the parent category" + NL + "    * @generated" + NL + "    */" + NL + "\tpublic List<Object> compute(Object object_p) {" + NL
+			+ "\t\tList<Object> result = new ArrayList<Object>();" + NL + "\t\tEObject eObject = (EObject) object_p;" + NL + "\t\tresult.add(eObject.eContainer());" + NL + "\t\treturn result;" + NL
+			+ "\t}" + NL + "" + NL + "}" + NL;
+
 	protected final String TEXT_5 = NL;
 
 	public ParentJavaClass() {

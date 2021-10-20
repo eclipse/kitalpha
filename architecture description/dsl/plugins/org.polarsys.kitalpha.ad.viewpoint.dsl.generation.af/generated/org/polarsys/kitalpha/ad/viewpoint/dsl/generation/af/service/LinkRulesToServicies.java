@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.2.202001031546
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.af.service;
 
 import java.util.*;
@@ -75,8 +75,7 @@ public class LinkRulesToServicies {
 
 		for (Service service : AfProjectManager.INSTANCE.getViewpoint().getServiceSet().getNewServices()) {
 			if (service.getVpid() == serviceID) {
-				for (org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Rule rule : AfProjectManager.INSTANCE
-						.getViewpoint().getRuleSet().getNewRules()) {
+				for (org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.Rule rule : AfProjectManager.INSTANCE.getViewpoint().getRuleSet().getNewRules()) {
 					if (ruleListID.contains(rule.getVpid())) {
 						service.getRelatedRules().add(rule);
 					}

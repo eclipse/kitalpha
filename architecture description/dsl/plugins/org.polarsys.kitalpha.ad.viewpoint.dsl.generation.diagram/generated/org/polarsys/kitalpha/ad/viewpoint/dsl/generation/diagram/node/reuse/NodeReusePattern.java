@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.node.reuse;
 
 import java.util.*;
@@ -13,12 +13,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.Generation
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper.conf.DiagramGenerationConfigurationHelper;
 
-public class NodeReusePattern
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.AbstractDiagramPattern {
+public class NodeReusePattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.AbstractDiagramPattern {
 
 	public NodeReusePattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -73,8 +73,7 @@ public class NodeReusePattern
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
-		return DiagramGenerationConfigurationHelper.generateVSM(parameter) && parameter.getChildren() != null
-				&& parameter.getChildren().getReused_boderednodes() != null
+		return DiagramGenerationConfigurationHelper.generateVSM(parameter) && parameter.getChildren() != null && parameter.getChildren().getReused_boderednodes() != null
 				&& !parameter.getChildren().getReused_boderednodes().isEmpty();
 	}
 

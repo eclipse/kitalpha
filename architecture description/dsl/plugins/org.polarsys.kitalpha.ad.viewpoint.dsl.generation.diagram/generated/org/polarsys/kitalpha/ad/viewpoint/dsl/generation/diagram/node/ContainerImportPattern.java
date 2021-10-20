@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.2.201911290829
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.node;
 
 import java.util.*;
@@ -49,6 +49,7 @@ public class ContainerImportPattern extends org.polarsys.kitalpha.ad.viewpoint.d
 	public ContainerImportPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {

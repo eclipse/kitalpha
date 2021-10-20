@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.style.specific;
 
 import java.util.*;
@@ -13,12 +13,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.DiagramExp
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.VSMVariable;
 
-public class Node_EllipseCustomizationPattern extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.common.AbstractSpecificNodeCustomizationPattern {
+public class Node_EllipseCustomizationPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.common.AbstractSpecificNodeCustomizationPattern {
 
 	public Node_EllipseCustomizationPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -57,8 +57,7 @@ public class Node_EllipseCustomizationPattern extends
 			parameters.put("appliedOn", this.appliedOn);
 			parameters.put("stylePropertyData", this.horizontalDiameterComputationExpression);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
 					ctx_local, parameters);
 		}
 		{
@@ -68,8 +67,7 @@ public class Node_EllipseCustomizationPattern extends
 			parameters.put("appliedOn", this.appliedOn);
 			parameters.put("stylePropertyData", this.verticalDiameterComputationExpression);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
 					ctx_local, parameters);
 		}
 		ictx.setNode(currentNode);
@@ -90,36 +88,27 @@ public class Node_EllipseCustomizationPattern extends
 		new Node.DataLeaf(ictx.getNode(), getClass(), "setParentMapping", out.toString());
 	}
 
-	protected void method_initHorizontalDiameterComputationExpressionData(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
-		if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE
-				.getEllipseCustomization_HorizontalDiameterComputationExpression())) {
+	protected void method_initHorizontalDiameterComputationExpressionData(final StringBuffer out, final PatternContext ctx) throws Exception {
+		if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getEllipseCustomization_HorizontalDiameterComputationExpression())) {
 			final CustomizationExpression expression = parameter.getHorizontalDiameterComputationExpression();
 			final AbstractComputableElement expressionElement = expression.getOwnedExpressionElement();
 			if (expressionElement != null) {
-				final String newLabelExpression = DiagramExpressionUtil.getAbstractComputableElementExpression(
-						expressionElement, VSMVariable.view, VSMVariable.container);
-				set_horizontalDiameterComputationExpression(new StylePropertyNameValueCouple(
-						"horizontalDiameterComputationExpression", newLabelExpression));
+				final String newLabelExpression = DiagramExpressionUtil.getAbstractComputableElementExpression(expressionElement, VSMVariable.view, VSMVariable.container);
+				set_horizontalDiameterComputationExpression(new StylePropertyNameValueCouple("horizontalDiameterComputationExpression", newLabelExpression));
 			}
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "initHorizontalDiameterComputationExpressionData",
-				out.toString());
+		new Node.DataLeaf(ictx.getNode(), getClass(), "initHorizontalDiameterComputationExpressionData", out.toString());
 	}
 
-	protected void method_initVerticalDiameterComputationExpressionData(final StringBuffer out,
-			final PatternContext ctx) throws Exception {
-		if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE
-				.getEllipseCustomization_VerticalDiameterComputationExpression())) {
+	protected void method_initVerticalDiameterComputationExpressionData(final StringBuffer out, final PatternContext ctx) throws Exception {
+		if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getEllipseCustomization_VerticalDiameterComputationExpression())) {
 			final CustomizationExpression expression = parameter.getVerticalDiameterComputationExpression();
 			final AbstractComputableElement expressionElement = expression.getOwnedExpressionElement();
 			if (expressionElement != null) {
-				final String newLabelExpression = DiagramExpressionUtil.getAbstractComputableElementExpression(
-						expressionElement, VSMVariable.view, VSMVariable.container);
-				set_verticalDiameterComputationExpression(
-						new StylePropertyNameValueCouple("verticalDiameterComputationExpression", newLabelExpression));
+				final String newLabelExpression = DiagramExpressionUtil.getAbstractComputableElementExpression(expressionElement, VSMVariable.view, VSMVariable.container);
+				set_verticalDiameterComputationExpression(new StylePropertyNameValueCouple("verticalDiameterComputationExpression", newLabelExpression));
 			}
 		}
 
@@ -129,22 +118,19 @@ public class Node_EllipseCustomizationPattern extends
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.EllipseCustomization parameter;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.EllipseCustomization parameter) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.EllipseCustomization parameter) {
 		this.parameter = parameter;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple horizontalDiameterComputationExpression;
 
-	public void set_horizontalDiameterComputationExpression(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple horizontalDiameterComputationExpression) {
+	public void set_horizontalDiameterComputationExpression(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple horizontalDiameterComputationExpression) {
 		this.horizontalDiameterComputationExpression = horizontalDiameterComputationExpression;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple verticalDiameterComputationExpression;
 
-	public void set_verticalDiameterComputationExpression(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple verticalDiameterComputationExpression) {
+	public void set_verticalDiameterComputationExpression(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple verticalDiameterComputationExpression) {
 		this.verticalDiameterComputationExpression = verticalDiameterComputationExpression;
 	}
 

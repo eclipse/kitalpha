@@ -20,8 +20,6 @@ import org.polarsys.kitalpha.emde.model.EmdePackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Element Extension</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

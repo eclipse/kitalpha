@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.node;
 
 import java.util.*;
@@ -40,6 +40,7 @@ import org.eclipse.sirius.diagram.description.style.StyleFactory;
 import org.eclipse.sirius.diagram.description.style.WorkspaceImageDescription;
 import org.eclipse.sirius.diagram.description.style.BundledImageDescription;
 import org.eclipse.sirius.diagram.BundledImageShape;
+import org.eclipse.sirius.diagram.model.business.internal.helper.MappingHelper;
 import org.eclipse.sirius.diagram.ResizeKind;
 import org.eclipse.sirius.diagram.description.style.DotDescription;
 import org.eclipse.sirius.diagram.description.style.EllipseNodeDescription;
@@ -52,12 +53,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.siriu
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.sirius.ExpressionInterpreter;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.VSMVariable;
 
-public class BorderedNodePattern
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.DiagramElementPattern {
+public class BorderedNodePattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.DiagramElementPattern {
 
 	public BorderedNodePattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -123,15 +124,13 @@ public class BorderedNodePattern
 			// Semantic candidate expression
 			AbstractAssociation association = domain.getChlidren_list();
 			if (association != null) {
-				semanticCandidateExpression = SiriusExpressionHelper.getExpressoin(association.getName(),
-						ExpressionInterpreter.Feature);
+				semanticCandidateExpression = SiriusExpressionHelper.getExpressoin(association.getName(), ExpressionInterpreter.Feature);
 			} else {
 				if (domain.getQuery() != null && domain.getQuery().trim().length() > 0) {
 					semanticCandidateExpression = domain.getQuery();
 				} else {
 					if (genDefaultSemanticCandidatesExpression == null || genDefaultSemanticCandidatesExpression) {
-						semanticCandidateExpression = SiriusExpressionHelper.getExpressoin("eAllContents",
-								ExpressionInterpreter.Feature);
+						semanticCandidateExpression = SiriusExpressionHelper.getExpressoin("eAllContents", ExpressionInterpreter.Feature);
 					}
 				}
 			}
@@ -195,16 +194,13 @@ public class BorderedNodePattern
 				String acceleoExpression = "";
 				if (fEE instanceof JavaElement) {
 					String javaMethodName = ((JavaElement) fEE).getMethod();
-					String mParameters = VSMVariable.view.getInnerVariable() + ","
-							+ VSMVariable.container.getInnerVariable();
+					String mParameters = VSMVariable.view.getInnerVariable() + "," + VSMVariable.container.getInnerVariable();
 					javaMethodName = JavaElementHelper.addDefaultParameterToJavaMethod(javaMethodName, mParameters);
-					acceleoExpression = SiriusExpressionHelper.getExpressoin(javaMethodName,
-							ExpressionInterpreter.Service);
+					acceleoExpression = SiriusExpressionHelper.getExpressoin(javaMethodName, ExpressionInterpreter.Service);
 					//acceleoExpression = SiriusExpressionHelper.getExpressoin(((JavaElement) fEE).getMethod());
 				}
 				if (fEE instanceof DomainElement) {
-					acceleoExpression = SiriusExpressionHelper
-							.getExpressoin(((DomainElement) fEE).getAttribute().getName());
+					acceleoExpression = SiriusExpressionHelper.getExpressoin(((DomainElement) fEE).getAttribute().getName());
 				}
 
 				cnStyleDesc = DescriptionFactory.eINSTANCE.createConditionalNodeStyleDescription();
@@ -303,16 +299,11 @@ public class BorderedNodePattern
 					doremiGaugeStyle.setBorderColor(GenerationUtil.getSystemColor(vpHistogramStyle.getBorderColor()));
 					for (HistogramSection iHistogramSection : vpHistogramStyle.getSections()) {
 						GaugeSectionDescription one_section = StyleFactory.eINSTANCE.createGaugeSectionDescription();
-						one_section.setBackgroundColor(
-								GenerationUtil.getSystemColor(iHistogramSection.getBackgroundColor()));
-						one_section.setForegroundColor(
-								GenerationUtil.getSystemColor(iHistogramSection.getForgroundColor()));
-						one_section.setMaxValueExpression(
-								SiriusExpressionHelper.getExpressoin(iHistogramSection.getMaxValue().toString()));
-						one_section.setMinValueExpression(
-								SiriusExpressionHelper.getExpressoin(iHistogramSection.getMinValue().toString()));
-						one_section.setValueExpression(
-								SiriusExpressionHelper.getExpressoin(iHistogramSection.getValue().toString()));
+						one_section.setBackgroundColor(GenerationUtil.getSystemColor(iHistogramSection.getBackgroundColor()));
+						one_section.setForegroundColor(GenerationUtil.getSystemColor(iHistogramSection.getForgroundColor()));
+						one_section.setMaxValueExpression(SiriusExpressionHelper.getExpressoin(iHistogramSection.getMaxValue().toString()));
+						one_section.setMinValueExpression(SiriusExpressionHelper.getExpressoin(iHistogramSection.getMinValue().toString()));
+						one_section.setValueExpression(SiriusExpressionHelper.getExpressoin(iHistogramSection.getValue().toString()));
 						doremiGaugeStyle.getSections().add(one_section);
 					}
 				}
@@ -325,8 +316,7 @@ public class BorderedNodePattern
 
 				if (label != null) {
 					//((ExpressionImpl) label.getValue()).adaptValue();
-					String mParameters = VSMVariable.diagram.getInnerVariable() + ","
-							+ VSMVariable.view.getInnerVariable();
+					String mParameters = VSMVariable.diagram.getInnerVariable() + "," + VSMVariable.view.getInnerVariable();
 					((ExpressionImpl) label.getValue()).adaptValue(mParameters, true);
 
 					if (label.getValue() != null)

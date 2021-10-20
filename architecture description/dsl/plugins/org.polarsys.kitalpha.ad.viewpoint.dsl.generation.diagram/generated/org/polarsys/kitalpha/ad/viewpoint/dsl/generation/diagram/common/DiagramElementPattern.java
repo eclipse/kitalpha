@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common;
 
 import java.util.*;
@@ -14,12 +14,12 @@ import org.eclipse.sirius.diagram.description.DiagramElementMapping;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.SynchronizationMode;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramElement;
 
-public class DiagramElementPattern
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.DoremiElementPattern {
+public class DiagramElementPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.DoremiElementPattern {
 
 	public DiagramElementPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -62,8 +62,7 @@ public class DiagramElementPattern
 	protected void method_setSynchronizationMode(final StringBuffer out, final PatternContext ctx) throws Exception {
 		if (doremiElement instanceof DiagramElementMapping) {
 			// Getting attribute default values.
-			final EAttribute synchronizationLock = DescriptionPackage.eINSTANCE
-					.getDiagramElementMapping_SynchronizationLock();
+			final EAttribute synchronizationLock = DescriptionPackage.eINSTANCE.getDiagramElementMapping_SynchronizationLock();
 			boolean synchronizationLockDefaultValue = (Boolean) synchronizationLock.getDefaultValue();
 			final EAttribute createElements = DescriptionPackage.eINSTANCE.getDiagramElementMapping_CreateElements();
 			boolean createElementDefaultValue = (Boolean) createElements.getDefaultValue();

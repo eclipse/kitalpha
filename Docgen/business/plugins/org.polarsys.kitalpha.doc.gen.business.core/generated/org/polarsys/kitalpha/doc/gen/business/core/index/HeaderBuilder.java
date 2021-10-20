@@ -1,4 +1,4 @@
-//Generated with EGF 1.4.0.v20160519-0641
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.doc.gen.business.core.index;
 
 import org.eclipse.egf.common.helper.*;
@@ -22,21 +22,24 @@ public class HeaderBuilder extends org.polarsys.kitalpha.doc.gen.business.core.d
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"" + NL
-			+ "       \"http://www.w3.org/TR/html4/loose.dtd\">" + NL + "<html>" + NL + "<head>" + NL + "<title>";
+
+	protected final String TEXT_1 = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"" + NL + "       \"http://www.w3.org/TR/html4/loose.dtd\">" + NL + "<html>" + NL + "<head>" + NL
+			+ "<title>";
+
 	protected final String TEXT_2 = "</title>" + NL + "</head>";
+
 	protected final String TEXT_3 = "</html>";
-	protected final String TEXT_4 = NL + "<body style=\"background-color:#5C74A2; " + NL
-			+ "\t  background-image:url('../../img/heander_fndContenuGauche_small3.jpg'); " + NL
-			+ "\t  background-repeat:repeat-x;\">" + NL + "\t" + NL + "\t<h1 style=\"width:50%; " + NL
-			+ "\t\tfloat:left; " + NL + "\t\tcolor:#FFFFFF; " + NL + "\t\tmargin:15px; " + NL
+
+	protected final String TEXT_4 = NL + "<body style=\"background-color:#5C74A2; " + NL + "\t  background-image:url('../../img/heander_fndContenuGauche_small3.jpg'); " + NL
+			+ "\t  background-repeat:repeat-x;\">" + NL + "\t" + NL + "\t<h1 style=\"width:50%; " + NL + "\t\tfloat:left; " + NL + "\t\tcolor:#FFFFFF; " + NL + "\t\tmargin:15px; " + NL
 			+ "\t\tfont-family: Arial, sans-serif; " + NL + "\t\tfont-size:25px\">" + NL + "\t\t";
-	protected final String TEXT_5 = NL + "\t</h1>" + NL + "\t<div style=\"float:right; " + NL
-			+ "\t\t position:relative; " + NL + "\t\t top:10px; " + NL + "\t\t right:30px;\">" + NL
+
+	protected final String TEXT_5 = NL + "\t</h1>" + NL + "\t<div style=\"float:right; " + NL + "\t\t position:relative; " + NL + "\t\t top:10px; " + NL + "\t\t right:30px;\">" + NL
 			+ "\t\t <img style=\"height:45px;\" " + NL + "\t\t\t  src=\"../../img/logo.gif\" " + NL + "\t\t\t  alt=\"";
+
 	protected final String TEXT_6 = "\"/> " + NL + "\t</div>" + NL + "</body>";
+
 	protected final String TEXT_7 = NL;
-	protected final String TEXT_8 = NL;
 
 	public HeaderBuilder() {
 		//Here is the constructor
@@ -65,7 +68,7 @@ public class HeaderBuilder extends org.polarsys.kitalpha.doc.gen.business.core.d
 		}
 
 		stringBuffer.append(TEXT_7);
-		stringBuffer.append(TEXT_8);
+		stringBuffer.append(TEXT_7);
 		return stringBuffer.toString();
 	}
 
@@ -119,8 +122,7 @@ public class HeaderBuilder extends org.polarsys.kitalpha.doc.gen.business.core.d
 			DocumentationBrandingDataHelper.copyLogoFile(projectName, outputFolder, logoPath);
 
 		stringBuffer.append(TEXT_4);
-		stringBuffer
-				.append(org.polarsys.kitalpha.doc.gen.business.core.util.DocGenHtmlUtil.getModelName(domain.get(0)));
+		stringBuffer.append(org.polarsys.kitalpha.doc.gen.business.core.util.DocGenHtmlUtil.getModelName(domain.get(0)));
 		stringBuffer.append(TEXT_5);
 		stringBuffer.append(logoAlt);
 		stringBuffer.append(TEXT_6);

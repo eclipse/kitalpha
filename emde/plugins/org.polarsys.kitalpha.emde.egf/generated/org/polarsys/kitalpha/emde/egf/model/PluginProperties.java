@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201906060805
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.emde.egf.model;
 
 import org.eclipse.egf.emf.pattern.base.*;
@@ -26,13 +26,21 @@ public class PluginProperties extends org.eclipse.egf.emf.pattern.model.PluginPr
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+
 	protected final String TEXT_1 = "";
+
 	protected final String TEXT_2 = NL + NL + "pluginName = eMDE Extension for ";
+
 	protected final String TEXT_3 = " Model" + NL + "providerName = www.polarsys.org";
+
 	protected final String TEXT_4 = NL;
+
 	protected final String TEXT_5 = NL + "_UI_";
+
 	protected final String TEXT_6 = "_content_type = ";
+
 	protected final String TEXT_7 = " File";
+
 	protected final String TEXT_8 = NL;
 
 	public PluginProperties() {
@@ -119,8 +127,7 @@ public class PluginProperties extends org.eclipse.egf.emf.pattern.model.PluginPr
 
 			final Map<String, Object> callParameters = new HashMap<String, Object>();
 			callParameters.put("argument", parameter);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.eclipse.egf.emf.pattern.base/egf/EMF_Pattern_Base.fcore#_FEoPwCwuEd-jc5T-XaRJlg",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.eclipse.egf.emf.pattern.base/egf/EMF_Pattern_Base.fcore#_FEoPwCwuEd-jc5T-XaRJlg",
 					new ExecutionContext((InternalPatternContext) ctx), callParameters);
 			stringBuffer.setLength(0);
 		}

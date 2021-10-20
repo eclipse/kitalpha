@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20150924-1035
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.doc.gen.business.ecore.extension.content.impl;
 
 import org.eclipse.egf.common.helper.*;
@@ -22,15 +22,16 @@ public class EPackageHTMLSectionHeader {
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+
 	protected final String TEXT_1 = "<h1>";
+
 	protected final String TEXT_2 = "</h1>" + NL + "<p>";
+
 	protected final String TEXT_3 = "</p>";
+
 	protected final String TEXT_4 = NL;
+
 	protected final String TEXT_5 = NL;
-	protected final String TEXT_6 = NL;
-	protected final String TEXT_7 = NL;
-	protected final String TEXT_8 = NL;
-	protected final String TEXT_9 = NL;
 
 	public EPackageHTMLSectionHeader() {
 		//Here is the constructor
@@ -50,9 +51,7 @@ public class EPackageHTMLSectionHeader {
 
 		paramDesc = new IQuery.ParameterDescription("parameter", "http://www.eclipse.org/emf/2002/Ecore#//EPackage");
 		queryCtx = new HashMap<String, String>();
-		List<Object> parameterList = QueryHelper
-				.load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.injected.context")
-				.execute(paramDesc, queryCtx, ctx);
+		List<Object> parameterList = QueryHelper.load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.injected.context").execute(paramDesc, queryCtx, ctx);
 
 		for (Object parameterParameter : parameterList) {
 
@@ -69,8 +68,8 @@ public class EPackageHTMLSectionHeader {
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_8);
-		stringBuffer.append(TEXT_9);
+		stringBuffer.append(TEXT_5);
+		stringBuffer.append(TEXT_5);
 		return stringBuffer.toString();
 	}
 
@@ -111,21 +110,16 @@ public class EPackageHTMLSectionHeader {
 		stringBuffer.append(TEXT_1);
 		stringBuffer.append(text);
 		stringBuffer.append(TEXT_2);
-		stringBuffer.append(
-				org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getDescription(parameter));
+		stringBuffer.append(org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getDescription(parameter));
 		stringBuffer.append(TEXT_3);
 		stringBuffer.append(TEXT_4);
-		stringBuffer.append(
-				org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getUsageGuideline(parameter));
-		stringBuffer.append(TEXT_5);
-		stringBuffer.append(
-				org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getUsedInLevels(parameter));
-		stringBuffer.append(TEXT_6);
-		stringBuffer.append(
-				org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getUsageExamples(parameter));
-		stringBuffer.append(TEXT_7);
-		stringBuffer.append(
-				org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getConstraints(parameter));
+		stringBuffer.append(org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getUsageGuideline(parameter));
+		stringBuffer.append(TEXT_4);
+		stringBuffer.append(org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getUsedInLevels(parameter));
+		stringBuffer.append(TEXT_4);
+		stringBuffer.append(org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getUsageExamples(parameter));
+		stringBuffer.append(TEXT_4);
+		stringBuffer.append(org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getConstraints(parameter));
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "content", stringBuffer.toString());
 	}

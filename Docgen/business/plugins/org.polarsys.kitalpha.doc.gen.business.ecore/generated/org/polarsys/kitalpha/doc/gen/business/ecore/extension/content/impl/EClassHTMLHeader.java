@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20150924-1035
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.doc.gen.business.ecore.extension.content.impl;
 
 import org.eclipse.egf.common.helper.*;
@@ -25,14 +25,16 @@ public class EClassHTMLHeader {
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "<div style=\"position: fixed; top: 0; left: 1%; width: 98%; z-index: 2; background-color: white; \";>"
-			+ NL + "<p><strong>Package :</strong> ";
+
+	protected final String TEXT_1 = "<div style=\"position: fixed; top: 0; left: 1%; width: 98%; z-index: 2; background-color: white; \";>" + NL + "<p><strong>Package :</strong> ";
+
 	protected final String TEXT_2 = "</p>" + NL + "<h1>";
+
 	protected final String TEXT_3 = "</h1>" + NL + "<img src=\"";
-	protected final String TEXT_4 = "\" alt=\"\" />" + NL + "<hr style=\"width:98%; align : center; \" /> " + NL
-			+ "</div>";
+
+	protected final String TEXT_4 = "\" alt=\"\" />" + NL + "<hr style=\"width:98%; align : center; \" /> " + NL + "</div>";
+
 	protected final String TEXT_5 = NL;
-	protected final String TEXT_6 = NL;
 
 	public EClassHTMLHeader() {
 		//Here is the constructor
@@ -50,9 +52,7 @@ public class EClassHTMLHeader {
 
 		paramDesc = new IQuery.ParameterDescription("parameter", "http://www.eclipse.org/emf/2002/Ecore#//EClass");
 		queryCtx = new HashMap<String, String>();
-		List<Object> parameterList = QueryHelper
-				.load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.injected.context")
-				.execute(paramDesc, queryCtx, ctx);
+		List<Object> parameterList = QueryHelper.load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.injected.context").execute(paramDesc, queryCtx, ctx);
 
 		for (Object parameterParameter : parameterList) {
 
@@ -70,7 +70,7 @@ public class EClassHTMLHeader {
 		}
 
 		stringBuffer.append(TEXT_5);
-		stringBuffer.append(TEXT_6);
+		stringBuffer.append(TEXT_5);
 		return stringBuffer.toString();
 	}
 
@@ -117,8 +117,7 @@ public class EClassHTMLHeader {
 		text = EscapeChars.forHTML(text);
 
 		stringBuffer.append(TEXT_1);
-		stringBuffer.append(org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper
-				.getTypeHyperLink((parameter).getEPackage()));
+		stringBuffer.append(org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getTypeHyperLink((parameter).getEPackage()));
 		stringBuffer.append(TEXT_2);
 		stringBuffer.append(text);
 		stringBuffer.append(TEXT_3);
