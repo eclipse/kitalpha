@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.2.202001031546
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.abstracts;
 
 import java.util.*;
@@ -13,8 +13,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.util.ENamedElement
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.util.ECoreResourceManager;
 
-public class AbstractAssociationPattern
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.abstracts.ClassAbstractContentElement {
+public class AbstractAssociationPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.abstracts.ClassAbstractContentElement {
 
 	public AbstractAssociationPattern() {
 		//Here is the constructor
@@ -48,15 +47,13 @@ public class AbstractAssociationPattern
 	}
 
 	protected void method_initContainingEClassName(final StringBuffer out, final PatternContext ctx) throws Exception {
-		eClassName = ((org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class) abstractAssociation.eContainer())
-				.getName();
+		eClassName = ((org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class) abstractAssociation.eContainer()).getName();
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "initContainingEClassName", out.toString());
 	}
 
-	protected void method_setAbstractAssociationParameter(final StringBuffer out, final PatternContext ctx)
-			throws Exception {
+	protected void method_setAbstractAssociationParameter(final StringBuffer out, final PatternContext ctx) throws Exception {
 		//To be implemented by derided patterns 
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
@@ -113,11 +110,9 @@ public class AbstractAssociationPattern
 			containingEClass.getEStructuralFeatures().add(ref);
 
 			/* Set EReference description */
-			if (abstractAssociation.getDescription() != null
-					&& abstractAssociation.getDescription().trim().length() != 0) {
-				ENamedElementAnnotationHelper.annotate(ref, ENamedElementAnnotationHelper.KEY_DOCUMENTATION,
-						ENamedElementAnnotationHelper.ENTRY_DOCUMENTATION_KEY, abstractAssociation.getDescription(),
-						true);
+			if (abstractAssociation.getDescription() != null && abstractAssociation.getDescription().trim().length() != 0) {
+				ENamedElementAnnotationHelper.annotate(ref, ENamedElementAnnotationHelper.KEY_DOCUMENTATION, ENamedElementAnnotationHelper.ENTRY_DOCUMENTATION_KEY,
+						abstractAssociation.getDescription(), true);
 			}
 
 		}
@@ -136,8 +131,7 @@ public class AbstractAssociationPattern
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractAssociation abstractAssociation;
 
-	public void set_abstractAssociation(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractAssociation abstractAssociation) {
+	public void set_abstractAssociation(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractAssociation abstractAssociation) {
 		this.abstractAssociation = abstractAssociation;
 	}
 

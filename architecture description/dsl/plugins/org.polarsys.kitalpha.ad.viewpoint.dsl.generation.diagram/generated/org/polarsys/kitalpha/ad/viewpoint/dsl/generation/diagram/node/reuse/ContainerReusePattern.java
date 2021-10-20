@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.node.reuse;
 
 import java.util.HashMap;
@@ -20,12 +20,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.BorderedNode;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Container;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.GenerationUtil;
 
-public class ContainerReusePattern
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.AbstractDiagramPattern {
+public class ContainerReusePattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.AbstractDiagramPattern {
 
 	public ContainerReusePattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -95,8 +95,7 @@ public class ContainerReusePattern
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
-		return DiagramGenerationConfigurationHelper.generateVSM(parameter) && parameter.getChildren() != null
-				&& parameter.getChildren().getReused_nodes() != null
+		return DiagramGenerationConfigurationHelper.generateVSM(parameter) && parameter.getChildren() != null && parameter.getChildren().getReused_nodes() != null
 				&& !parameter.getChildren().getReused_nodes().isEmpty();
 	}
 

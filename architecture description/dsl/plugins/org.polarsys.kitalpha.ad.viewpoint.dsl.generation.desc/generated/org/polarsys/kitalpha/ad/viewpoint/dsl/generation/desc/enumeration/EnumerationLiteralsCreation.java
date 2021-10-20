@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.enumeration;
 
 import java.util.*;
@@ -15,12 +15,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.util.ECoreResource
 
 import org.eclipse.emf.ecore.impl.EStringToStringMapEntryImpl;
 
-public class EnumerationLiteralsCreation
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.common.AnyVPSpecElement {
+public class EnumerationLiteralsCreation extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.common.AnyVPSpecElement {
 
 	public EnumerationLiteralsCreation() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -57,9 +57,8 @@ public class EnumerationLiteralsCreation
 			parameters.put("vpElement", this.parameter);
 			parameters.put("eElement", this.literal);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc/egf/vpdslECoreGenerator.fcore#_HKpWoL4sEeKDeKot98nSrA",
-					ctx_local, parameters);
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc/egf/vpdslECoreGenerator.fcore#_HKpWoL4sEeKDeKot98nSrA", ctx_local,
+					parameters);
 		}
 		ictx.setNode(currentNode);
 		if (ictx.useReporter()) {
@@ -103,8 +102,7 @@ public class EnumerationLiteralsCreation
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
-		return super.preCondition(ctx)
-				&& parameter.eContainer() instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Enumeration;
+		return super.preCondition(ctx) && parameter.eContainer() instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Enumeration;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Value parameter;

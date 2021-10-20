@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20150924-1035
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.doc.gen.business.ecore.extension.content.impl;
 
 import org.eclipse.egf.common.helper.*;
@@ -25,12 +25,14 @@ public class EClassOperations {
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+
 	protected final String TEXT_1 = "";
+
 	protected final String TEXT_2 = NL + NL + "<h2>Operations</h2>";
+
 	protected final String TEXT_3 = NL;
+
 	protected final String TEXT_4 = NL;
-	protected final String TEXT_5 = NL;
-	protected final String TEXT_6 = NL;
 
 	public EClassOperations() {
 		//Here is the constructor
@@ -48,9 +50,7 @@ public class EClassOperations {
 
 		paramDesc = new IQuery.ParameterDescription("parameter", "http://www.eclipse.org/emf/2002/Ecore#//EClass");
 		queryCtx = new HashMap<String, String>();
-		List<Object> parameterList = QueryHelper
-				.load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.injected.context")
-				.execute(paramDesc, queryCtx, ctx);
+		List<Object> parameterList = QueryHelper.load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.injected.context").execute(paramDesc, queryCtx, ctx);
 
 		for (Object parameterParameter : parameterList) {
 
@@ -67,8 +67,8 @@ public class EClassOperations {
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_5);
-		stringBuffer.append(TEXT_6);
+		stringBuffer.append(TEXT_4);
+		stringBuffer.append(TEXT_4);
 		return stringBuffer.toString();
 	}
 
@@ -110,9 +110,8 @@ public class EClassOperations {
 
 			stringBuffer.append(TEXT_2);
 			stringBuffer.append(TEXT_3);
-			stringBuffer.append(org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EClassContentHelper
-					.getOperationsTable(parameter));
-			stringBuffer.append(TEXT_4);
+			stringBuffer.append(org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EClassContentHelper.getOperationsTable(parameter));
+			stringBuffer.append(TEXT_3);
 
 		}
 

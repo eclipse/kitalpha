@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.jservice.common;
 
 import java.util.*;
@@ -16,12 +16,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.javaservice.Jav
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.GenerationUtil;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.JavaElementHelper;
 
-public class JavaElementPattern
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.AbstractDiagramPattern {
+public class JavaElementPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.AbstractDiagramPattern {
 
 	public JavaElementPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -88,8 +88,7 @@ public class JavaElementPattern
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.JavaElement parameter;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.JavaElement parameter) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.JavaElement parameter) {
 		this.parameter = parameter;
 	}
 

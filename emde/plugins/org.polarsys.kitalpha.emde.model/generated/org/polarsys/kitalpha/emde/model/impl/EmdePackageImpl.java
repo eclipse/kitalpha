@@ -79,7 +79,7 @@ public class EmdePackageImpl extends EPackageImpl implements EmdePackage {
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link EmdePackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -94,9 +94,8 @@ public class EmdePackageImpl extends EPackageImpl implements EmdePackage {
 			return (EmdePackage) EPackage.Registry.INSTANCE.getEPackage(EmdePackage.eNS_URI);
 
 		// Obtain or create and register package
-		EmdePackageImpl theEmdePackage = (EmdePackageImpl) (EPackage.Registry.INSTANCE
-				.get(eNS_URI) instanceof EmdePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
-						: new EmdePackageImpl());
+		Object registeredEmdePackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		EmdePackageImpl theEmdePackage = registeredEmdePackage instanceof EmdePackageImpl ? (EmdePackageImpl) registeredEmdePackage : new EmdePackageImpl();
 
 		isInited = true;
 
@@ -222,14 +221,11 @@ public class EmdePackageImpl extends EPackageImpl implements EmdePackage {
 		// Initialize classes, features, and operations; add parameters
 		initEClass(elementEClass, Element.class, "Element", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
-		initEClass(extensibleElementEClass, ExtensibleElement.class, "ExtensibleElement", IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
-				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getExtensibleElement_OwnedExtensions(), this.getElementExtension(), null, "ownedExtensions", //$NON-NLS-1$
-				null, 0, -1, ExtensibleElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
-				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(extensibleElementEClass, ExtensibleElement.class, "ExtensibleElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(getExtensibleElement_OwnedExtensions(), this.getElementExtension(), null, "ownedExtensions", null, 0, -1, ExtensibleElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, //$NON-NLS-1$
+				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(elementExtensionEClass, ElementExtension.class, "ElementExtension", IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
-				IS_GENERATED_INSTANCE_CLASS);
+		initEClass(elementExtensionEClass, ElementExtension.class, "ElementExtension", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		// Create resource
 		createResource(eNS_URI);
@@ -246,7 +242,7 @@ public class EmdePackageImpl extends EPackageImpl implements EmdePackage {
 	 * @generated
 	 */
 	protected void createExtensionAnnotations() {
-		String source = "http://www.polarsys.org/kitalpha/emde/1.0.0/extension"; //$NON-NLS-1$	
+		String source = "http://www.polarsys.org/kitalpha/emde/1.0.0/extension"; //$NON-NLS-1$
 		addAnnotation(this, source, new String[] { "useUUIDs", "true", //$NON-NLS-1$ //$NON-NLS-2$
 				"useIDAttributes", "false" //$NON-NLS-1$ //$NON-NLS-2$
 		});

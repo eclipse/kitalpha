@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.style.specific;
 
 import java.util.*;
@@ -11,12 +11,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.javaservice.Jav
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.javaservice.JavaMethodData.JavaMethodReturnType;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple;
 
-public class Node_BundleImageCustomization extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.common.AbstractSpecificNodeCustomizationPattern {
+public class Node_BundleImageCustomization extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.common.AbstractSpecificNodeCustomizationPattern {
 
 	public Node_BundleImageCustomization() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -54,8 +54,7 @@ public class Node_BundleImageCustomization extends
 			parameters.put("appliedOn", this.appliedOn);
 			parameters.put("stylePropertyData", this.shape);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
 					ctx_local, parameters);
 		}
 		ictx.setNode(currentNode);
@@ -79,14 +78,12 @@ public class Node_BundleImageCustomization extends
 	protected void method_initShapeData(final StringBuffer out, final PatternContext ctx) throws Exception {
 		if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getBundledImageCustomization_Shape())) {
 			String enumLiteralName = parameter.getShape().toString();
-			String methodCode = "return DiagramPackage.eINSTANCE.getBundledImageShape().getEEnumLiteral(\""
-					+ enumLiteralName + "\");";
+			String methodCode = "return DiagramPackage.eINSTANCE.getBundledImageShape().getEEnumLiteral(\"" + enumLiteralName + "\");";
 			char first = Character.toUpperCase(enumLiteralName.charAt(0));
 			enumLiteralName = first + enumLiteralName.substring(1).toLowerCase();
 			String methodName = "getBundledImageShape" + enumLiteralName;
 
-			JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral,
-					methodCode);
+			JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
 
 			// Set method parameters data
 			javaMethodData.addMethodParameter("any", "EObject", "any model element");
@@ -108,15 +105,13 @@ public class Node_BundleImageCustomization extends
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.BundledImageCustomization parameter;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.BundledImageCustomization parameter) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.BundledImageCustomization parameter) {
 		this.parameter = parameter;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple shape;
 
-	public void set_shape(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple shape) {
+	public void set_shape(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple shape) {
 		this.shape = shape;
 	}
 

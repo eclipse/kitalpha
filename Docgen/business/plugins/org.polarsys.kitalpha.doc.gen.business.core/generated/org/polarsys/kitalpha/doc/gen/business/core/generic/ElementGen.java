@@ -1,4 +1,4 @@
-//Generated with EGF 1.4.0.v20160519-0641
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.doc.gen.business.core.generic;
 
 import org.eclipse.egf.common.helper.*;
@@ -19,7 +19,9 @@ public class ElementGen {
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+
 	protected final String TEXT_1 = "";
+
 	protected final String TEXT_2 = NL;
 
 	public ElementGen() {
@@ -72,8 +74,7 @@ public class ElementGen {
 		return parameters;
 	}
 
-	protected void method_setFileNameService(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_setFileNameService(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "setFileNameService", stringBuffer.toString());

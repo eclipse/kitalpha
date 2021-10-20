@@ -1,4 +1,4 @@
-//Generated with EGF 1.4.0.v20160519-0641
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.doc.gen.business.core.doccontent.sidebar;
 
 import org.eclipse.egf.common.helper.*;
@@ -19,9 +19,10 @@ public class ElementSideBarSubEntry_Start extends org.polarsys.kitalpha.doc.gen.
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+
 	protected final String TEXT_1 = "<ul>" + NL;
+
 	protected final String TEXT_2 = NL;
-	protected final String TEXT_3 = NL;
 
 	public ElementSideBarSubEntry_Start() {
 		//Here is the constructor
@@ -58,7 +59,7 @@ public class ElementSideBarSubEntry_Start extends org.polarsys.kitalpha.doc.gen.
 		}
 
 		stringBuffer.append(TEXT_2);
-		stringBuffer.append(TEXT_3);
+		stringBuffer.append(TEXT_2);
 		return stringBuffer.toString();
 	}
 

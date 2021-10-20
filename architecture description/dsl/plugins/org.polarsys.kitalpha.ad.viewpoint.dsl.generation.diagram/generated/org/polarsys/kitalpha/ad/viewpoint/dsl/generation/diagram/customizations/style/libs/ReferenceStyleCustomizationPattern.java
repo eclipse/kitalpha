@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.style.libs;
 
 import java.util.*;
@@ -15,6 +15,7 @@ public class ReferenceStyleCustomizationPattern {
 	public ReferenceStyleCustomizationPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -96,8 +97,7 @@ public class ReferenceStyleCustomizationPattern {
 						(applyOnAll || (stylePropertyData != null && (stylePropertyData.getName() != null
 						&& stylePropertyData.getName().isEmpty() == false && stylePropertyData.getValue() != null )));*/
 
-		return parent != null && (applyOnAll || (appliedOn != null && appliedOn.isEmpty() == false))
-				&& stylePropertyData != null && stylePropertyData.getName() != null
+		return parent != null && (applyOnAll || (appliedOn != null && appliedOn.isEmpty() == false)) && stylePropertyData != null && stylePropertyData.getName() != null
 				&& stylePropertyData.getName().isEmpty() == false && stylePropertyData.getValue() != null;
 	}
 
@@ -121,8 +121,7 @@ public class ReferenceStyleCustomizationPattern {
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple stylePropertyData;
 
-	public void set_stylePropertyData(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple stylePropertyData) {
+	public void set_stylePropertyData(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple stylePropertyData) {
 		this.stylePropertyData = stylePropertyData;
 	}
 

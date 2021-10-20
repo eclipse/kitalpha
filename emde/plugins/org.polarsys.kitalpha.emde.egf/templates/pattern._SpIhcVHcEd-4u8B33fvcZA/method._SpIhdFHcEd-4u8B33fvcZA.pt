@@ -42,6 +42,29 @@ public class <%=genPackage.getResourceClassName()%> extends <%=genPackage.getImp
 	public static final <%=genModel.getImportedName("java.lang.String")%> copyright = <%=genModel.getCopyrightFieldLiteral()%>;<%=genModel.getNonNLS()%>
 
 <%}%>
+<%if (genPackage.getResource() == GenResourceKind.XML_LITERAL || genPackage.getResource() == GenResourceKind.XMI_LITERAL) {%>
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */  
+	private <%=genModel.getImportedName("java.util.List")%><Object> lookupTable = new <%=genModel.getImportedName("java.util.ArrayList")%><Object>();
+  
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */  
+	private <%=genModel.getImportedName("org.eclipse.emf.ecore.xmi.XMLParserPool")%> parserPool = new <%=genModel.getImportedName("org.eclipse.emf.ecore.xmi.impl.XMLParserPoolImpl")%>();  
+  
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */  
+	private <%=genModel.getImportedName("java.util.Map")%><Object, Object> nameToFeatureMap = new <%=genModel.getImportedName("java.util.HashMap")%><Object, Object>();
+	
+<%}%>
 	/**
 	 * Creates an instance of the resource.
 	 * <!-- begin-user-doc -->
@@ -52,10 +75,171 @@ public class <%=genPackage.getResourceClassName()%> extends <%=genPackage.getImp
 	public <%=genPackage.getResourceClassName()%>(URI uri)
 	{
 		super(uri);
-<%if (genPackage.getResource() == GenResourceKind.XML_LITERAL) { // Do nothing%>
+	}	
+<%if (genPackage.getResource() == GenResourceKind.XML_LITERAL || genPackage.getResource() == GenResourceKind.XMI_LITERAL) {%>
+<%if (genPackage.isExtensibleProviderFactory() || genPackage.isChildCreationExtenders()) {%>
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+<%if (genModel.useClassOverrideAnnotation()) {%>
+	@Override
+<%}%>
+	protected <%=genModel.getImportedName("org.eclipse.emf.ecore.xmi.XMLSave")%> createXMLSave() {
+<%if (genPackage.getResource() == GenResourceKind.XML_LITERAL) {%>
+		return new <%=genModel.getImportedName("org.polarsys.kitalpha.emde.xmi.XMLExtensionSaveImpl")%>(createXMLHelper());
+<%}else{%>
+		return new <%=genModel.getImportedName("org.polarsys.kitalpha.emde.xmi.XMIExtensionSaveImpl")%>(createXMLHelper());
 <%}%>
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+<%if (genModel.useClassOverrideAnnotation()) {%>
+	@Override
+<%}%>
+	protected <%=genModel.getImportedName("org.eclipse.emf.ecore.xmi.XMLHelper")%> createXMLHelper() {
+<%if (genPackage.getResource() == GenResourceKind.XML_LITERAL) {%>
+		return new <%=genModel.getImportedName("org.polarsys.kitalpha.emde.xmi.XMLExtensionHelperImpl")%>(this);
+<%}else{%>
+		return new <%=genModel.getImportedName("org.polarsys.kitalpha.emde.xmi.XMIExtensionHelperImpl")%>(this);
+<%}%>	
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+<%if (genModel.useClassOverrideAnnotation()) {%>
+	@Override
+<%}%>
+	protected <%=genModel.getImportedName("org.eclipse.emf.ecore.xmi.XMLLoad")%> createXMLLoad() {
+<%if (genPackage.getResource() == GenResourceKind.XML_LITERAL) {%>
+		return new <%=genModel.getImportedName("org.polarsys.kitalpha.emde.xmi.XMLExtensionLoadImpl")%>((<%=genModel.getImportedName("org.polarsys.kitalpha.emde.xmi.XMLExtensionHelperImpl")%>) createXMLHelper());
+<%}else{%>
+		return new <%=genModel.getImportedName("org.polarsys.kitalpha.emde.xmi.XMIExtensionLoadImpl")%>((<%=genModel.getImportedName("org.polarsys.kitalpha.emde.xmi.XMIExtensionHelperImpl")%>) createXMLHelper());
+<%}%>	
+	}	
+<%}%>
+<%if (ExtensionHelper.isUseIDAttributes(genPackage) == false) {%>
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+<%if (genModel.useClassOverrideAnnotation()) {%>
+	@Override
+<%}%>
+	protected boolean useIDAttributes() {
+		return false;
+	}
+<%}%>
+<%if (ExtensionHelper.isUseUUIDS(genPackage)) {%>
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+<%if (genModel.useClassOverrideAnnotation()) {%>
+	@Override
+<%}%>
+	protected boolean useUUIDs() {
+		return true;
+	}
+<%}%>
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+<%if (genModel.useClassOverrideAnnotation()) {%>
+	@Override
+<%}%>
+	protected void init() {
+		super.init();
+<%if (ExtensionHelper.isTrackResourceModification(genPackage)) {%>
+		setTrackingModification(true);
+<%}%>
+		setEncoding("UTF-8"); <%=genModel.getNonNLS()%>
+		setXMIVersion("2.1"); <%=genModel.getNonNLS()%>
+		// Save Options
+		getDefaultSaveOptions().put(<%=genModel.getImportedName("org.eclipse.emf.ecore.xmi.XMLResource")%>.OPTION_CONFIGURATION_CACHE, Boolean.TRUE);
+		getDefaultSaveOptions().put(<%=genModel.getImportedName("org.eclipse.emf.ecore.xmi.XMLResource")%>.OPTION_USE_CACHED_LOOKUP_TABLE, lookupTable);    
+		getDefaultSaveOptions().put(<%=genModel.getImportedName("org.eclipse.emf.ecore.xmi.XMLResource")%>.OPTION_USE_ENCODED_ATTRIBUTE_STYLE, Boolean.TRUE);
+		getDefaultSaveOptions().put(<%=genModel.getImportedName("org.eclipse.emf.ecore.resource.Resource")%>.OPTION_SAVE_ONLY_IF_CHANGED, Resource.OPTION_SAVE_ONLY_IF_CHANGED_MEMORY_BUFFER);
+		getDefaultSaveOptions().put(<%=genModel.getImportedName("org.eclipse.emf.ecore.xmi.XMLResource")%>.OPTION_SAVE_TYPE_INFORMATION, new <%=genModel.getImportedName("org.eclipse.emf.ecore.xmi.XMLSave.XMLTypeInfo")%>() {
+			public boolean shouldSaveType(<%=genModel.getImportedName("org.eclipse.emf.ecore.EClass")%> objectType, <%=genModel.getImportedName("org.eclipse.emf.ecore.EClassifier")%> featureType, <%=genModel.getImportedName("org.eclipse.emf.ecore.EStructuralFeature")%> feature) {
+				return objectType != featureType && objectType != <%=genModel.getImportedName("org.eclipse.emf.ecore.xml.type.XMLTypePackage")%>.Literals.ANY_TYPE;
+			}
+
+			public boolean shouldSaveType(<%=genModel.getImportedName("org.eclipse.emf.ecore.EClass")%> objectType, EClass featureType, <%=genModel.getImportedName("org.eclipse.emf.ecore.EStructuralFeature")%> feature) {
+				return objectType != featureType && objectType != <%=genModel.getImportedName("org.eclipse.emf.ecore.xml.type.XMLTypePackage")%>.Literals.ANY_TYPE;
+			}
+		});
+		getDefaultSaveOptions().put(<%=genModel.getImportedName("org.eclipse.emf.ecore.xmi.XMLResource")%>.OPTION_LINE_WIDTH, new Integer(80));
+		getDefaultSaveOptions().put(<%=genModel.getImportedName("org.eclipse.emf.ecore.xmi.XMLResource")%>.OPTION_URI_HANDLER, new <%=genModel.getImportedName("org.eclipse.emf.ecore.xmi.impl.URIHandlerImpl")%>.PlatformSchemeAware());
+		getDefaultSaveOptions().put(<%=genModel.getImportedName("org.eclipse.emf.ecore.xmi.XMLResource")%>.OPTION_EXTENDED_META_DATA, Boolean.TRUE);
+<%if (genPackage.getResource() == GenResourceKind.XMI_LITERAL) {%>
+		getDefaultSaveOptions().put(<%=genModel.getImportedName("org.eclipse.emf.ecore.xmi.XMIResource")%>.OPTION_USE_XMI_TYPE, Boolean.TRUE);
+<%}%>						        
+		// Load Options
+		getDefaultLoadOptions().put(<%=genModel.getImportedName("org.eclipse.emf.ecore.xmi.XMLResource")%>.OPTION_DEFER_ATTACHMENT, Boolean.FALSE);
+		getDefaultLoadOptions().put(<%=genModel.getImportedName("org.eclipse.emf.ecore.xmi.XMLResource")%>.OPTION_DEFER_IDREF_RESOLUTION, Boolean.FALSE);
+		getDefaultLoadOptions().put(<%=genModel.getImportedName("org.eclipse.emf.ecore.xmi.XMLResource")%>.OPTION_USE_DEPRECATED_METHODS, Boolean.TRUE);
+		getDefaultLoadOptions().put(<%=genModel.getImportedName("org.eclipse.emf.ecore.xmi.XMLResource")%>.OPTION_USE_PARSER_POOL, parserPool);
+		getDefaultLoadOptions().put(<%=genModel.getImportedName("org.eclipse.emf.ecore.xmi.XMLResource")%>.OPTION_USE_XML_NAME_TO_FEATURE_MAP, nameToFeatureMap);
+		getDefaultLoadOptions().put(<%=genModel.getImportedName("org.eclipse.emf.ecore.xmi.XMLResource")%>.OPTION_USE_ENCODED_ATTRIBUTE_STYLE, Boolean.TRUE);
+		getDefaultLoadOptions().put(<%=genModel.getImportedName("org.eclipse.emf.ecore.xmi.XMLResource")%>.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
+		getDefaultLoadOptions().put(<%=genModel.getImportedName("org.eclipse.emf.ecore.xmi.XMLResource")%>.OPTION_EXTENDED_META_DATA, Boolean.TRUE);		
+	}
+	
+	
+	// override to integrate the bug fix
+	// https://bugs.eclipse.org/bugs/show_bug.cgi?id=412753. The bug has been
+	// resolved in EMF 2.9.1 and 2.10
+	<%if (genModel.useClassOverrideAnnotation()) {%>
+	@Override
+<%}%>
+	protected void detachedHelper(<%=genModel.getImportedName("org.eclipse.emf.ecore.EObject")%> eObject) {
+		if (useIDs() && unloadingContents == null) {
+			if (useUUIDs()) {
+				DETACHED_EOBJECT_TO_ID_MAP.put(eObject, getID(eObject));
+			}
+
+			if (idToEObjectMap != null && eObjectToIDMap != null) {
+				setID(eObject, null);
+			}
+		}
+		resourceImplDetachedHelper(eObject);
+	}
+
+	// Duplicated from
+	// org.eclipse.emf.ecore.resource.impl.ResourceImpl.detachedHelper(EObject)
+	private void resourceImplDetachedHelper(<%=genModel.getImportedName("org.eclipse.emf.ecore.EObject")%> eObject) {
+		Map<String, EObject> map = getIntrinsicIDToEObjectMap();
+		if (map != null) {
+			String id = <%=genModel.getImportedName("org.eclipse.emf.ecore.util.EcoreUtil")%>.getID(eObject);
+			if (id != null) {
+				map.remove(id);
+			}
+		}
+
+		if (isTrackingModification()) {
+			eObject.eAdapters().remove(modificationTrackingAdapter);
+		}
+	}
+	
+
+<%}%>
 <%if (genPackage.isDataTypeConverters() && (genPackage.hasDocumentRoot() || org.eclipse.emf.ecore.xml.type.XMLTypePackage.eNS_URI.equals(genPackage.getNSURI()))) { boolean isXMLTypePackage = org.eclipse.emf.ecore.xml.type.XMLTypePackage.eNS_URI.equals(genPackage.getNSURI());%>
 <%final String _Map = genModel.useGenerics() ? "Map<?, ?>" : "Map";%>
 <%final String _MapStringBoolean = genModel.useGenerics() ? "Map<String, Boolean>" : "Map";%>
@@ -84,7 +268,7 @@ public class <%=genPackage.getResourceClassName()%> extends <%=genPackage.getImp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String OPTION_USE_DATA_CONVERTER = "USE_DATA_CONVERTER";
+	public static final String OPTION_USE_DATA_CONVERTER = "USE_DATA_CONVERTER"; <%=genModel.getNonNLS()%>
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -159,7 +343,7 @@ public class <%=genPackage.getResourceClassName()%> extends <%=genPackage.getImp
 	public static EObject load(InputSource inputSource, <%=_MapStringBoolean%> features, <%=_MapStringWildcard%> properties, boolean useLexicalHandler) throws IOException
 	{
 		<%=_MapStringBoolean%> requiredFeatures = new <%=_MapStringBoolean.replaceAll("Map","HashMap")%>();
-		requiredFeatures.put("http://xml.org/sax/features/namespaces", Boolean.TRUE); 
+		requiredFeatures.put("http://xml.org/sax/features/namespaces", Boolean.TRUE); <%=genModel.getNonNLS()%> 
 		if (features != null)
 		{
 			requiredFeatures.putAll(features);

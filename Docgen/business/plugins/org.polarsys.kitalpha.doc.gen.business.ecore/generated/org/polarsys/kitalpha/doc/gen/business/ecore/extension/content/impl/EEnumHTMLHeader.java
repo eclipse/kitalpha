@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20150924-1035
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.doc.gen.business.ecore.extension.content.impl;
 
 import org.eclipse.egf.common.helper.*;
@@ -20,11 +20,14 @@ public class EEnumHTMLHeader {
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+
 	protected final String TEXT_1 = "<p><strong>Package :</strong> ";
+
 	protected final String TEXT_2 = "</p>" + NL + "<h1>";
+
 	protected final String TEXT_3 = "</h1>";
+
 	protected final String TEXT_4 = NL;
-	protected final String TEXT_5 = NL;
 
 	public EEnumHTMLHeader() {
 		//Here is the constructor
@@ -42,15 +45,10 @@ public class EEnumHTMLHeader {
 
 		paramDesc = new IQuery.ParameterDescription("parameter", "http://www.eclipse.org/emf/2002/Ecore#//EEnum");
 		queryCtx = new HashMap<String, String>();
-		List<Object> parameterList = QueryHelper
-				.load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.injected.context")
-				.execute(paramDesc, queryCtx, ctx);
-		paramDesc = new IQuery.ParameterDescription("fileNameService",
-				"org.polarsys.kitalpha.doc.gen.business.core.util.IFileNameService");
+		List<Object> parameterList = QueryHelper.load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.injected.context").execute(paramDesc, queryCtx, ctx);
+		paramDesc = new IQuery.ParameterDescription("fileNameService", "org.polarsys.kitalpha.doc.gen.business.core.util.IFileNameService");
 		queryCtx = new HashMap<String, String>();
-		List<Object> fileNameServiceList = QueryHelper
-				.load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.inject.file.name.service")
-				.execute(paramDesc, queryCtx, ctx);
+		List<Object> fileNameServiceList = QueryHelper.load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.inject.file.name.service").execute(paramDesc, queryCtx, ctx);
 
 		for (Object parameterParameter : parameterList) {
 			for (Object fileNameServiceParameter : fileNameServiceList) {
@@ -71,7 +69,7 @@ public class EEnumHTMLHeader {
 		}
 
 		stringBuffer.append(TEXT_4);
-		stringBuffer.append(TEXT_5);
+		stringBuffer.append(TEXT_4);
 		return stringBuffer.toString();
 	}
 
@@ -118,8 +116,7 @@ public class EEnumHTMLHeader {
 		text = EscapeChars.forHTML(text);
 
 		stringBuffer.append(TEXT_1);
-		stringBuffer.append(org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper
-				.getTypeHyperLink((parameter).getEPackage()));
+		stringBuffer.append(org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getTypeHyperLink((parameter).getEPackage()));
 		stringBuffer.append(TEXT_2);
 		stringBuffer.append(text);
 		stringBuffer.append(TEXT_3);

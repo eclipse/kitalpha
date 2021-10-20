@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.2.202001031546
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.extensions;
 
 import org.eclipse.egf.common.helper.*;
@@ -19,9 +19,11 @@ public class PluginPattern {
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + NL + "<?eclipse version=\"3.4\"?>"
-			+ NL + "<plugin>" + NL;
+
+	protected final String TEXT_1 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + NL + "<?eclipse version=\"3.4\"?>" + NL + "<plugin>" + NL;
+
 	protected final String TEXT_2 = "</plugin>";
+
 	protected final String TEXT_3 = NL;
 
 	public PluginPattern() {

@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201906060805
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.emde.genchain.extension;
 
 import java.util.HashMap;
@@ -32,6 +32,7 @@ public class EmdeCdoGenerationPattern {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
 		activity = "platform:/plugin/org.polarsys.kitalpha.emde.egf/egf/eMDE_EMF_Extension.fcore#_pL9xED5HEeiGQ4OFxriD0Q";
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -73,16 +74,14 @@ public class EmdeCdoGenerationPattern {
 	}
 
 	protected void method_body(final StringBuffer out, final PatternContext ctx) throws Exception {
-		Map<GenerationElement, FactoryComponent> fcs = (Map<GenerationElement, FactoryComponent>) ctx
-				.getValue(FcoreBuilderConstants.CURRENT_FCORE);
+		Map<GenerationElement, FactoryComponent> fcs = (Map<GenerationElement, FactoryComponent>) ctx.getValue(FcoreBuilderConstants.CURRENT_FCORE);
 		FactoryComponent fc = fcs.get((GenerationElement) (parameter.eContainer()));
 
 		ProductionPlan pp = (ProductionPlan) fc.getOrchestration();
 		DomainViewpoint dvp = (DomainViewpoint) fc.getViewpointContainer().getViewpoint(DomainViewpoint.class);
 		ResourceSet resourceSet = fc.eResource().getResourceSet();
 
-		URI uri = ((HashMap<String, URI>) ctx.getValue(FcoreBuilderConstants.GENMODEL_URIS))
-				.get(parameter.getModelPath());
+		URI uri = ((HashMap<String, URI>) ctx.getValue(FcoreBuilderConstants.GENMODEL_URIS)).get(parameter.getModelPath());
 		EMFDomain genModelDomain = ActivityInvocationHelper.getDomain(dvp, uri);
 
 		Map<String, Type> contracts = new HashMap<String, Type>();
@@ -97,8 +96,7 @@ public class EmdeCdoGenerationPattern {
 		TypeDomain typeDomain = DomainFactory.eINSTANCE.createTypeDomain();
 		typeDomain.setDomain(genModelDomain);
 		contracts.put("genModel", typeDomain);
-		ActivityInvocationHelper.addInvocation(pp,
-				(Activity) resourceSet.getEObject(URI.createURI(this.activity, false), true), contracts, parameters);
+		ActivityInvocationHelper.addInvocation(pp, (Activity) resourceSet.getEObject(URI.createURI(this.activity, false), true), contracts, parameters);
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "body", out.toString());

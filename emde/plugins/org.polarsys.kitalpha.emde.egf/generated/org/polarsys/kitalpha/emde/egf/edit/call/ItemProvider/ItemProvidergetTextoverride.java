@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201906060805
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.emde.egf.edit.call.ItemProvider;
 
 import org.polarsys.kitalpha.emde.egf.helper.*;
@@ -16,8 +16,7 @@ import org.eclipse.egf.model.pattern.*;
 import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 
-public class ItemProvidergetTextoverride
-		extends org.eclipse.egf.emf.pattern.edit.call.ItemProvider.ItemProvidergetTextoverride {
+public class ItemProvidergetTextoverride extends org.eclipse.egf.emf.pattern.edit.call.ItemProvider.ItemProvidergetTextoverride {
 	protected static String nl;
 
 	public static synchronized ItemProvidergetTextoverride create(String lineSeparator) {
@@ -28,42 +27,77 @@ public class ItemProvidergetTextoverride
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+
 	protected final String TEXT_1 = "\t\treturn ((";
+
 	protected final String TEXT_2 = ")getStyledText(object)).getString();";
+
 	protected final String TEXT_3 = NL + "\t\t";
+
 	protected final String TEXT_4 = "<?, ?>";
+
 	protected final String TEXT_5 = " ";
+
 	protected final String TEXT_6 = " = (";
+
 	protected final String TEXT_7 = ")object;";
+
 	protected final String TEXT_8 = NL + "\t\treturn \"\" + ";
+
 	protected final String TEXT_9 = ".getKey() + \" -> \" + ";
+
 	protected final String TEXT_10 = ".getValue();";
+
 	protected final String TEXT_11 = NL + "\t\tString key = crop(\"\" + ";
+
 	protected final String TEXT_12 = ".getKey());";
+
 	protected final String TEXT_13 = NL + "\t\tString key = \"\" + ";
+
 	protected final String TEXT_14 = ".getKey();";
+
 	protected final String TEXT_15 = NL + "\t\tString value = crop(\"\" + ";
+
 	protected final String TEXT_16 = ".getValue());";
+
 	protected final String TEXT_17 = NL + "\t\tString value = \"\" + ";
+
 	protected final String TEXT_18 = NL + "\t\treturn key + \" -> \" + value;";
+
 	protected final String TEXT_19 = ")object;" + NL + "\t\t// begin-extension-code" + NL + "\t\treturn ";
+
 	protected final String TEXT_20 = ".";
+
 	protected final String TEXT_21 = "() + \" [\" + getString(\"_UI_";
+
 	protected final String TEXT_22 = "_type\") + \"]\";";
+
 	protected final String TEXT_23 = NL + "\t\t// end-extension-code";
+
 	protected final String TEXT_24 = NL + "\t\tString label = crop(((";
+
 	protected final String TEXT_25 = ")object).";
+
 	protected final String TEXT_26 = "());";
+
 	protected final String TEXT_27 = NL + "\t\tString label = ((";
+
 	protected final String TEXT_28 = "();";
+
 	protected final String TEXT_29 = " labelValue = ((";
+
 	protected final String TEXT_30 = ")object).eGet(";
+
 	protected final String TEXT_31 = ");";
+
 	protected final String TEXT_32 = NL + "\t\tString label = labelValue == null ? null : labelValue.toString();";
-	protected final String TEXT_33 = NL + "\t\t// begin-extension-code" + NL
-			+ "\t\treturn label == null || label.length() == 0 ?" + NL + "\t\t\t\"[\" + getString(\"_UI_";
+
+	protected final String TEXT_33 = NL + "\t\t// begin-extension-code" + NL + "\t\treturn label == null || label.length() == 0 ?" + NL + "\t\t\t\"[\" + getString(\"_UI_";
+
 	protected final String TEXT_34 = "_type\") + \"]\" : label;";
+
 	protected final String TEXT_35 = NL + "\t\t// begin-extension-code" + NL + "\t\treturn \"[\" + getString(\"_UI_";
+
 	protected final String TEXT_36 = NL;
 
 	public ItemProvidergetTextoverride() {
@@ -189,8 +223,7 @@ public class ItemProvidergetTextoverride
 					stringBuffer.append(TEXT_4);
 				}
 				stringBuffer.append(TEXT_7);
-				if (!genClass.getMapEntryKeyFeature().isPropertyMultiLine()
-						&& !genClass.getMapEntryValueFeature().isPropertyMultiLine()) {
+				if (!genClass.getMapEntryKeyFeature().isPropertyMultiLine() && !genClass.getMapEntryValueFeature().isPropertyMultiLine()) {
 					stringBuffer.append(TEXT_8);
 					stringBuffer.append(genClass.getSafeUncapName());
 					stringBuffer.append(TEXT_9);
@@ -226,8 +259,7 @@ public class ItemProvidergetTextoverride
 				}
 			} else if (genClass.getLabelFeature() != null) {
 				GenFeature labelFeature = genClass.getLabelFeature();
-				if (labelFeature.isPrimitiveType() && !labelFeature.getGenClass().isDynamic()
-						&& !labelFeature.isSuppressedGetVisibility()) {
+				if (labelFeature.isPrimitiveType() && !labelFeature.getGenClass().isDynamic() && !labelFeature.isSuppressedGetVisibility()) {
 					stringBuffer.append(TEXT_3);
 					stringBuffer.append(genClass.getImportedInterfaceName());
 					stringBuffer.append(genClass.getInterfaceWildTypeArguments());
@@ -248,8 +280,7 @@ public class ItemProvidergetTextoverride
 					stringBuffer.append(genModel.getNonNLS(3));
 					stringBuffer.append(TEXT_23);
 				} else {
-					if (labelFeature.isStringType() && !labelFeature.getGenClass().isDynamic()
-							&& !labelFeature.isSuppressedGetVisibility()) {
+					if (labelFeature.isStringType() && !labelFeature.getGenClass().isDynamic() && !labelFeature.isSuppressedGetVisibility()) {
 						if (labelFeature.isPropertyMultiLine()) {
 							stringBuffer.append(TEXT_24);
 							stringBuffer.append(genClass.getImportedInterfaceName());

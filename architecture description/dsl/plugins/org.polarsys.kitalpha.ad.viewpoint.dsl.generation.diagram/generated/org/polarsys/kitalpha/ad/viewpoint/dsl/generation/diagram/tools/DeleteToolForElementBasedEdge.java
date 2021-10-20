@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools;
 
 import java.util.*;
@@ -19,12 +19,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.siriu
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.VSMVariable;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.sirius.ExpressionKind;
 
-public class DeleteToolForElementBasedEdge
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common.AbstractEdgeDeleteTool {
+public class DeleteToolForElementBasedEdge extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common.AbstractEdgeDeleteTool {
 
 	public DeleteToolForElementBasedEdge() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -117,11 +117,8 @@ public class DeleteToolForElementBasedEdge
 		String expression = "";
 		switch (SiriusExpressionHelper.getCurrentExpressionKind()) {
 		case QueryLegacy:
-			expression = SiriusExpressionHelper.getExpressoin("if (sourceNode.target != targetNode.target) {")
-					+ SiriusExpressionHelper.getExpressoin("sourceNode.target + targetNode.target")
-					+ SiriusExpressionHelper.getExpressoin("}else{")
-					+ SiriusExpressionHelper.getExpressoin("sourceNode.target")
-					+ SiriusExpressionHelper.getExpressoin("}");
+			expression = SiriusExpressionHelper.getExpressoin("if (sourceNode.target != targetNode.target) {") + SiriusExpressionHelper.getExpressoin("sourceNode.target + targetNode.target")
+					+ SiriusExpressionHelper.getExpressoin("}else{") + SiriusExpressionHelper.getExpressoin("sourceNode.target") + SiriusExpressionHelper.getExpressoin("}");
 			break;
 		case Acceleo_3_x:
 			expression = "[elementView.sourceNode.eGet('target')->asSet()->including(elementView.targetNode.eGet('target'))->asOrderedSet()->asSequence()/]";
@@ -141,8 +138,8 @@ public class DeleteToolForElementBasedEdge
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
-		return super.preCondition(ctx) && (parameter.getTool_For() != null && parameter.getTool_For() instanceof Edge
-				&& (((Edge) parameter.getTool_For()).getThe_domain() instanceof EdgeDomainElement));
+		return super.preCondition(ctx)
+				&& (parameter.getTool_For() != null && parameter.getTool_For() instanceof Edge && (((Edge) parameter.getTool_For()).getThe_domain() instanceof EdgeDomainElement));
 	}
 
 	public Map<String, Object> getParameters() {

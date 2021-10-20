@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.common;
 
 import java.util.*;
@@ -14,12 +14,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.DiagramExp
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.VSMVariable;
 
-public class AbstractNodeStyleCustomizationPattern extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.common.AbstractStyleCustomizationPattern {
+public class AbstractNodeStyleCustomizationPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.common.AbstractStyleCustomizationPattern {
 
 	public AbstractNodeStyleCustomizationPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -48,8 +48,7 @@ public class AbstractNodeStyleCustomizationPattern extends
 			parameters.put("appliedOn", this.appliedOn);
 			parameters.put("stylePropertyData", this.borderSizeComputationExpression);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
 					ctx_local, parameters);
 		}
 		{
@@ -59,8 +58,7 @@ public class AbstractNodeStyleCustomizationPattern extends
 			parameters.put("appliedOn", this.appliedOn);
 			parameters.put("stylePropertyData", this.tooltipExpression);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
 					ctx_local, parameters);
 		}
 		ictx.setNode(currentNode);
@@ -68,27 +66,22 @@ public class AbstractNodeStyleCustomizationPattern extends
 	}
 
 	protected void method_initExpressionsData(final StringBuffer out, final PatternContext ctx) throws Exception {
-		if (dslvpElement.eIsSet(VpstylecustomizationPackage.eINSTANCE
-				.getAbstractNodeStyleCustomization_BorderSizeComputationExpression())) {
+		if (dslvpElement.eIsSet(VpstylecustomizationPackage.eINSTANCE.getAbstractNodeStyleCustomization_BorderSizeComputationExpression())) {
 			AbstractNodeStyleCustomization customization = (AbstractNodeStyleCustomization) dslvpElement;
 			final CustomizationExpression expression = customization.getBorderSizeComputationExpression();
 			final AbstractComputableElement expressionElement = expression.getOwnedExpressionElement();
 			if (expressionElement != null) {
-				final String bscExpression = DiagramExpressionUtil.getAbstractComputableElementExpression(
-						expressionElement, VSMVariable.view, VSMVariable.container);
-				set_borderSizeComputationExpression(
-						new StylePropertyNameValueCouple("borderSizeComputationExpression", bscExpression));
+				final String bscExpression = DiagramExpressionUtil.getAbstractComputableElementExpression(expressionElement, VSMVariable.view, VSMVariable.container);
+				set_borderSizeComputationExpression(new StylePropertyNameValueCouple("borderSizeComputationExpression", bscExpression));
 			}
 		}
 
-		if (dslvpElement
-				.eIsSet(VpstylecustomizationPackage.eINSTANCE.getAbstractNodeStyleCustomization_TooltipExpression())) {
+		if (dslvpElement.eIsSet(VpstylecustomizationPackage.eINSTANCE.getAbstractNodeStyleCustomization_TooltipExpression())) {
 			AbstractNodeStyleCustomization customization = (AbstractNodeStyleCustomization) dslvpElement;
 			final CustomizationExpression expression = customization.getTooltipExpression();
 			final AbstractComputableElement expressionElement = expression.getOwnedExpressionElement();
 			if (expressionElement != null) {
-				final String ttExpression = DiagramExpressionUtil.getAbstractComputableElementExpression(
-						expressionElement, VSMVariable.view, VSMVariable.container);
+				final String ttExpression = DiagramExpressionUtil.getAbstractComputableElementExpression(expressionElement, VSMVariable.view, VSMVariable.container);
 				set_tooltipExpression(new StylePropertyNameValueCouple("tooltipExpression", ttExpression));
 			}
 		}
@@ -99,15 +92,13 @@ public class AbstractNodeStyleCustomizationPattern extends
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple tooltipExpression;
 
-	public void set_tooltipExpression(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple tooltipExpression) {
+	public void set_tooltipExpression(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple tooltipExpression) {
 		this.tooltipExpression = tooltipExpression;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple borderSizeComputationExpression;
 
-	public void set_borderSizeComputationExpression(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple borderSizeComputationExpression) {
+	public void set_borderSizeComputationExpression(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple borderSizeComputationExpression) {
 		this.borderSizeComputationExpression = borderSizeComputationExpression;
 	}
 

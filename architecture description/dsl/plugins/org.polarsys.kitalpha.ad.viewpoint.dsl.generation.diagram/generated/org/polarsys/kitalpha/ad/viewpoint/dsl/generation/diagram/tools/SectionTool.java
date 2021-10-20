@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools;
 
 import java.util.*;
@@ -20,6 +20,7 @@ public class SectionTool extends org.polarsys.kitalpha.ad.viewpoint.dsl.generati
 	public SectionTool() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -96,8 +97,7 @@ public class SectionTool extends org.polarsys.kitalpha.ad.viewpoint.dsl.generati
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
 		final ActionSet actionSet = (ActionSet) parameter;
-		final boolean hasActions = actionSet.getActions().isEmpty() == false
-				|| actionSet.getOpenActions().isEmpty() == false;
+		final boolean hasActions = actionSet.getActions().isEmpty() == false || actionSet.getOpenActions().isEmpty() == false;
 		return super.preCondition(ctx) && hasActions;
 	}
 

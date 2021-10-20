@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.2.202001031546
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.common;
 
 import org.eclipse.egf.common.helper.*;
@@ -22,15 +22,19 @@ public class AbstractCategoryPattern {
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+
 	protected final String TEXT_1 = "      <category" + NL + "            id=\"";
+
 	protected final String TEXT_2 = "\"" + NL + "            isTopLevel=\"true\"" + NL + "            name=\"";
+
 	protected final String TEXT_3 = "\">" + NL + "         <targetExplorerId" + NL + "               id=\"";
-	protected final String TEXT_4 = "\">" + NL + "         </targetExplorerId>" + NL + "         <availableForType" + NL
-			+ "               class=\"";
-	protected final String TEXT_5 = "\">" + NL + "         </availableForType>" + NL + "         <categoryQuery>" + NL
-			+ "            <basicQuery" + NL + "                  class=\"";
-	protected final String TEXT_6 = "\">" + NL + "            </basicQuery>" + NL + "         </categoryQuery>" + NL
-			+ "      </category>";
+
+	protected final String TEXT_4 = "\">" + NL + "         </targetExplorerId>" + NL + "         <availableForType" + NL + "               class=\"";
+
+	protected final String TEXT_5 = "\">" + NL + "         </availableForType>" + NL + "         <categoryQuery>" + NL + "            <basicQuery" + NL + "                  class=\"";
+
+	protected final String TEXT_6 = "\">" + NL + "            </basicQuery>" + NL + "         </categoryQuery>" + NL + "      </category>";
+
 	protected final String TEXT_7 = NL;
 
 	public AbstractCategoryPattern() {
@@ -152,8 +156,7 @@ public class AbstractCategoryPattern {
 		new Node.DataLeaf(ictx.getNode(), getClass(), "intLocalVariable", stringBuffer.toString());
 	}
 
-	protected void method_genCategoryConfigurationElement(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_genCategoryConfigurationElement(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		stringBuffer.append(TEXT_1);
 		stringBuffer.append(categoryID);

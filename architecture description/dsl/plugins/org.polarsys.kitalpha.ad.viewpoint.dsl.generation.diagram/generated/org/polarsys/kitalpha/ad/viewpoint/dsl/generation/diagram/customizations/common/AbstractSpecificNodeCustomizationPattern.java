@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.common;
 
 import java.util.*;
@@ -13,12 +13,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.Abst
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.Customizations;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.GenerationUtil;
 
-public class AbstractSpecificNodeCustomizationPattern extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.common.AbstractStyleCustomizationPattern {
+public class AbstractSpecificNodeCustomizationPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.common.AbstractStyleCustomizationPattern {
 
 	public AbstractSpecificNodeCustomizationPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -69,8 +69,7 @@ public class AbstractSpecificNodeCustomizationPattern extends
 		new Node.DataLeaf(ictx.getNode(), getClass(), "initializeCommonStyleData", out.toString());
 	}
 
-	protected void method_initEnumHelperJavaServiceData(final StringBuffer out, final PatternContext ctx)
-			throws Exception {
+	protected void method_initEnumHelperJavaServiceData(final StringBuffer out, final PatternContext ctx) throws Exception {
 		EObject customizations = dslvpElement.eContainer().eContainer().eContainer();
 		if (customizations != null && customizations instanceof Customizations)
 			enumHelperJavaServiceData = GenerationUtil.getJavaServiceDataFor(customizations);

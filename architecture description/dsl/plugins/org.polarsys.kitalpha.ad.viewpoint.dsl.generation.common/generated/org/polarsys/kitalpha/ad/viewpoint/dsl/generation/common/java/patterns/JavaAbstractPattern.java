@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.2.202001031546
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common.java.patterns;
 
 import org.eclipse.egf.common.helper.*;
@@ -20,10 +20,15 @@ public class JavaAbstractPattern {
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+
 	protected final String TEXT_1 = " ";
+
 	protected final String TEXT_2 = NL + "// Generated on ";
+
 	protected final String TEXT_3 = " by Viewpoint DSL Generator V 0.1" + NL;
+
 	protected final String TEXT_4 = NL + NL;
+
 	protected final String TEXT_5 = NL;
 
 	public JavaAbstractPattern() {
@@ -115,8 +120,7 @@ public class JavaAbstractPattern {
 		new Node.DataLeaf(ictx.getNode(), getClass(), "setParameters", stringBuffer.toString());
 	}
 
-	protected void method_setReporterParameters(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_setReporterParameters(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		// Do not change in sub pattern
 		ctx.setValue("projectname", projectname);
@@ -129,8 +133,7 @@ public class JavaAbstractPattern {
 		new Node.DataLeaf(ictx.getNode(), getClass(), "setReporterParameters", stringBuffer.toString());
 	}
 
-	protected void method_TransformsfirstLetterToUpperCase(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_TransformsfirstLetterToUpperCase(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		char first = Character.toUpperCase(classname.charAt(0));
 		classname = first + classname.substring(1);
@@ -144,8 +147,7 @@ public class JavaAbstractPattern {
 		new Node.DataLeaf(ictx.getNode(), getClass(), "setCopyright", stringBuffer.toString());
 	}
 
-	protected void method_genClassHeaderComment(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_genClassHeaderComment(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		Calendar cal = Calendar.getInstance();
 		SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy 'at' hh:mm:ss z");

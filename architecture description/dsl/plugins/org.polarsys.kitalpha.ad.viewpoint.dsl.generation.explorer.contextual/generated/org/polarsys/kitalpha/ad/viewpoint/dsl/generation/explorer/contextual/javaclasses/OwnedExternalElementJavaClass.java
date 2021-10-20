@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.2.202001031546
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.javaclasses;
 
 import java.util.*;
@@ -11,8 +11,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.ExternalClassAssoc
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.category.ContextualExplorerCategoryCompliance;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.util.ClassUtils;
 
-public class OwnedExternalElementJavaClass extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.common.AbstractAssociationJavaClass {
+public class OwnedExternalElementJavaClass extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.common.AbstractAssociationJavaClass {
 	protected static String nl;
 
 	public static synchronized OwnedExternalElementJavaClass create(String lineSeparator) {
@@ -23,24 +22,33 @@ public class OwnedExternalElementJavaClass extends
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "\t" + NL + "\t/**" + NL + "    * <!-- begin-user-doc -->" + NL
-			+ "    * <!-- end-user-doc -->" + NL
-			+ "    * @param object_p: The model element for which the Contextual Explorer extension is generated" + NL
-			+ "    * @return List of object to display in the parent category" + NL + "    * @generated" + NL + "    */"
-			+ NL + "\tpublic List<Object> compute(Object object_p) {" + NL
-			+ "\t\tList<Object> result = new ArrayList<Object>();" + NL + "\t\t";
+
+	protected final String TEXT_1 = "\t" + NL + "\t/**" + NL + "    * <!-- begin-user-doc -->" + NL + "    * <!-- end-user-doc -->" + NL
+			+ "    * @param object_p: The model element for which the Contextual Explorer extension is generated" + NL + "    * @return List of object to display in the parent category" + NL
+			+ "    * @generated" + NL + "    */" + NL + "\tpublic List<Object> compute(Object object_p) {" + NL + "\t\tList<Object> result = new ArrayList<Object>();" + NL + "\t\t";
+
 	protected final String TEXT_2 = " object = (";
+
 	protected final String TEXT_3 = ") object_p;" + NL + "\t\t";
+
 	protected final String TEXT_4 = NL;
+
 	protected final String TEXT_5 = " \t\t\t\t" + NL + "\t\t\t\tfor (EObject eObject : object.";
+
 	protected final String TEXT_6 = "())" + NL + "\t\t\t\t\tresult.add(eObject);";
+
 	protected final String TEXT_7 = NL + "\t\t\t\tif (object.";
+
 	protected final String TEXT_8 = "() != null)\t" + NL + "\t\t\t\t\tresult.add(object.";
+
 	protected final String TEXT_9 = "());\t";
+
 	protected final String TEXT_10 = "\t\t\t\t";
-	protected final String TEXT_11 = "\t\t" + NL + "\t\t" + NL + "\t\treturn result;" + NL + "\t}" + NL + "" + NL
-			+ "\t";
+
+	protected final String TEXT_11 = "\t\t" + NL + "\t\t" + NL + "\t\treturn result;" + NL + "\t}" + NL + "" + NL + "\t";
+
 	protected final String TEXT_12 = NL + NL + "import ";
+
 	protected final String TEXT_13 = ";" + NL;
 
 	public OwnedExternalElementJavaClass() {
@@ -117,8 +125,7 @@ public class OwnedExternalElementJavaClass extends
 		stringBuffer.append(vpClassName);
 		stringBuffer.append(TEXT_3);
 		for (AbstractAssociation abstractAssociation : parameter.getVP_Classes_Associations()) {
-			if (abstractAssociation instanceof ExternalClassAssociation
-					&& abstractAssociation.getType() == Association_Types.CONTAINMENT) {
+			if (abstractAssociation instanceof ExternalClassAssociation && abstractAssociation.getType() == Association_Types.CONTAINMENT) {
 				String vpAssociationGetterName = ClassUtils.INSTANCE.getAssociationAccesssorName(abstractAssociation);
 				stringBuffer.append(TEXT_4);
 				if (ClassUtils.isAssociationMultiple(abstractAssociation)) {
@@ -140,8 +147,7 @@ public class OwnedExternalElementJavaClass extends
 		new Node.DataLeaf(ictx.getNode(), getClass(), "genClassMethods", stringBuffer.toString());
 	}
 
-	protected void method_genSemanticImoprt(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_genSemanticImoprt(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		stringBuffer.append(TEXT_12);
 		stringBuffer.append(vpClassInterfaceFullyQualifiedName);
@@ -158,8 +164,7 @@ public class OwnedExternalElementJavaClass extends
 		new Node.DataLeaf(ictx.getNode(), getClass(), "setJavaClassName", stringBuffer.toString());
 	}
 
-	protected void method_setConcernedVPClass(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_setConcernedVPClass(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		vpClass = parameter;
 		InternalPatternContext ictx = (InternalPatternContext) ctx;

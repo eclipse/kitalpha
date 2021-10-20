@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import org.eclipse.egf.portfolio.eclipse.build.buildcore.Chain;
 import org.eclipse.egf.portfolio.eclipse.build.buildcore.Job;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.build.templates.EGFBuildHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.build.util.BuildDataConfigContainer;
 
 @SuppressWarnings("all")
