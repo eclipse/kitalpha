@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common;
 
 import java.util.*;
@@ -12,12 +12,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.Generation
 import org.eclipse.sirius.viewpoint.description.tool.ToolFactory;
 import org.eclipse.sirius.diagram.description.DiagramElementMapping;
 
-public class AbstractDeleteTool
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common.AbstractTool {
+public class AbstractDeleteTool extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common.AbstractTool {
 
 	public AbstractDeleteTool() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -79,8 +79,7 @@ public class AbstractDeleteTool
 	}
 
 	protected void method_createConcretTool(final StringBuffer out, final PatternContext ctx) throws Exception {
-		delete_tool = org.eclipse.sirius.diagram.description.tool.ToolFactory.eINSTANCE
-				.createDeleteElementDescription();
+		delete_tool = org.eclipse.sirius.diagram.description.tool.ToolFactory.eINSTANCE.createDeleteElementDescription();
 		delete_tool.setName(tool_name + "_ID");
 		delete_tool.setLabel(tool_name);
 
@@ -124,15 +123,13 @@ public class AbstractDeleteTool
 
 	protected org.eclipse.sirius.viewpoint.description.tool.InitialOperation initial_operation;
 
-	public void set_initial_operation(
-			org.eclipse.sirius.viewpoint.description.tool.InitialOperation initial_operation) {
+	public void set_initial_operation(org.eclipse.sirius.viewpoint.description.tool.InitialOperation initial_operation) {
 		this.initial_operation = initial_operation;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramElement associated_mapping;
 
-	public void set_associated_mapping(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramElement associated_mapping) {
+	public void set_associated_mapping(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.DiagramElement associated_mapping) {
 		this.associated_mapping = associated_mapping;
 	}
 
@@ -144,22 +141,19 @@ public class AbstractDeleteTool
 
 	protected org.eclipse.sirius.viewpoint.description.tool.ElementDeleteVariable element_del_var;
 
-	public void set_element_del_var(
-			org.eclipse.sirius.viewpoint.description.tool.ElementDeleteVariable element_del_var) {
+	public void set_element_del_var(org.eclipse.sirius.viewpoint.description.tool.ElementDeleteVariable element_del_var) {
 		this.element_del_var = element_del_var;
 	}
 
 	protected org.eclipse.sirius.viewpoint.description.tool.ElementDeleteVariable elementView_del_var;
 
-	public void set_elementView_del_var(
-			org.eclipse.sirius.viewpoint.description.tool.ElementDeleteVariable elementView_del_var) {
+	public void set_elementView_del_var(org.eclipse.sirius.viewpoint.description.tool.ElementDeleteVariable elementView_del_var) {
 		this.elementView_del_var = elementView_del_var;
 	}
 
 	protected org.eclipse.sirius.viewpoint.description.tool.ContainerViewVariable containerView_del_var;
 
-	public void set_containerView_del_var(
-			org.eclipse.sirius.viewpoint.description.tool.ContainerViewVariable containerView_del_var) {
+	public void set_containerView_del_var(org.eclipse.sirius.viewpoint.description.tool.ContainerViewVariable containerView_del_var) {
 		this.containerView_del_var = containerView_del_var;
 	}
 

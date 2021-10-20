@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common;
 
 import java.util.*;
@@ -22,12 +22,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.siriu
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.sirius.ExpressionInterpreter;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.VSMVariable;
 
-public class AbstractEdgeDeleteTool
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common.AbstractDeleteTool {
+public class AbstractEdgeDeleteTool extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common.AbstractDeleteTool {
 
 	public AbstractEdgeDeleteTool() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -110,10 +110,8 @@ public class AbstractEdgeDeleteTool
 				javaServiceData.addMethod(javaMethodData);
 
 				If iv = ToolFactory.eINSTANCE.createIf();
-				String mParameters = "(" + VSMVariable.elementView.getInnerVariable() + ","
-						+ VSMVariable.containerView.getInnerVariable() + ")";
-				iv.setConditionExpression(
-						SiriusExpressionHelper.getExpressoin(tool_name + mParameters, ExpressionInterpreter.Service));
+				String mParameters = "(" + VSMVariable.elementView.getInnerVariable() + "," + VSMVariable.containerView.getInnerVariable() + ")";
+				iv.setConditionExpression(SiriusExpressionHelper.getExpressoin(tool_name + mParameters, ExpressionInterpreter.Service));
 				initial_operation.setFirstModelOperations(iv);
 			}
 		}

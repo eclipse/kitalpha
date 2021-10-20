@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.style.specific;
 
 import java.util.*;
@@ -13,12 +13,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.DiagramExp
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.VSMVariable;
 
-public class Node_LozengeCustomizationPattern extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.common.AbstractSpecificNodeCustomizationPattern {
+public class Node_LozengeCustomizationPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.common.AbstractSpecificNodeCustomizationPattern {
 
 	public Node_LozengeCustomizationPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -57,8 +57,7 @@ public class Node_LozengeCustomizationPattern extends
 			parameters.put("appliedOn", this.appliedOn);
 			parameters.put("stylePropertyData", this.widthComputationExpression);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
 					ctx_local, parameters);
 		}
 		{
@@ -68,8 +67,7 @@ public class Node_LozengeCustomizationPattern extends
 			parameters.put("appliedOn", this.appliedOn);
 			parameters.put("stylePropertyData", this.heightComputationExpression);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
 					ctx_local, parameters);
 		}
 		ictx.setNode(currentNode);
@@ -90,17 +88,13 @@ public class Node_LozengeCustomizationPattern extends
 		new Node.DataLeaf(ictx.getNode(), getClass(), "setParentMapping", out.toString());
 	}
 
-	protected void method_initWidthComputationExpressionData(final StringBuffer out, final PatternContext ctx)
-			throws Exception {
-		if (parameter
-				.eIsSet(VpstylecustomizationPackage.eINSTANCE.getLozengeCustomization_WidthComputationExpression())) {
+	protected void method_initWidthComputationExpressionData(final StringBuffer out, final PatternContext ctx) throws Exception {
+		if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getLozengeCustomization_WidthComputationExpression())) {
 			final CustomizationExpression expression = parameter.getWidthComputationExpression();
 			final AbstractComputableElement expressionElement = expression.getOwnedExpressionElement();
 			if (expressionElement != null) {
-				final String newLabelExpression = DiagramExpressionUtil.getAbstractComputableElementExpression(
-						expressionElement, VSMVariable.view, VSMVariable.container);
-				set_widthComputationExpression(
-						new StylePropertyNameValueCouple("widthComputationExpression", newLabelExpression));
+				final String newLabelExpression = DiagramExpressionUtil.getAbstractComputableElementExpression(expressionElement, VSMVariable.view, VSMVariable.container);
+				set_widthComputationExpression(new StylePropertyNameValueCouple("widthComputationExpression", newLabelExpression));
 			}
 		}
 
@@ -108,17 +102,13 @@ public class Node_LozengeCustomizationPattern extends
 		new Node.DataLeaf(ictx.getNode(), getClass(), "initWidthComputationExpressionData", out.toString());
 	}
 
-	protected void method_initHeightComputationExpressionData(final StringBuffer out, final PatternContext ctx)
-			throws Exception {
-		if (parameter
-				.eIsSet(VpstylecustomizationPackage.eINSTANCE.getLozengeCustomization_HeightComputationExpression())) {
+	protected void method_initHeightComputationExpressionData(final StringBuffer out, final PatternContext ctx) throws Exception {
+		if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getLozengeCustomization_HeightComputationExpression())) {
 			final CustomizationExpression expression = parameter.getHeightComputationExpression();
 			final AbstractComputableElement expressionElement = expression.getOwnedExpressionElement();
 			if (expressionElement != null) {
-				final String newLabelExpression = DiagramExpressionUtil.getAbstractComputableElementExpression(
-						expressionElement, VSMVariable.view, VSMVariable.container);
-				set_heightComputationExpression(
-						new StylePropertyNameValueCouple("heightComputationExpression", newLabelExpression));
+				final String newLabelExpression = DiagramExpressionUtil.getAbstractComputableElementExpression(expressionElement, VSMVariable.view, VSMVariable.container);
+				set_heightComputationExpression(new StylePropertyNameValueCouple("heightComputationExpression", newLabelExpression));
 			}
 		}
 
@@ -128,22 +118,19 @@ public class Node_LozengeCustomizationPattern extends
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.LozengeCustomization parameter;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.LozengeCustomization parameter) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.LozengeCustomization parameter) {
 		this.parameter = parameter;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple widthComputationExpression;
 
-	public void set_widthComputationExpression(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple widthComputationExpression) {
+	public void set_widthComputationExpression(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple widthComputationExpression) {
 		this.widthComputationExpression = widthComputationExpression;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple heightComputationExpression;
 
-	public void set_heightComputationExpression(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple heightComputationExpression) {
+	public void set_heightComputationExpression(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple heightComputationExpression) {
 		this.heightComputationExpression = heightComputationExpression;
 	}
 

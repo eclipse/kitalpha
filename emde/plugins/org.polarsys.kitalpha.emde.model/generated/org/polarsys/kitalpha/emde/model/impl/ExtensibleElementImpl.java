@@ -33,10 +33,10 @@ import org.polarsys.kitalpha.emde.model.ExtensibleElement;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.polarsys.kitalpha.emde.model.impl.ExtensibleElementImpl#getOwnedExtensions <em>Owned Extensions</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -80,8 +80,7 @@ public abstract class ExtensibleElementImpl extends ElementImpl implements Exten
 	public EList<ElementExtension> getOwnedExtensions() {
 
 		if (ownedExtensions == null) {
-			ownedExtensions = new EObjectContainmentEList<ElementExtension>(ElementExtension.class, this,
-					EmdePackage.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS);
+			ownedExtensions = new EObjectContainmentEList<ElementExtension>(ElementExtension.class, this, EmdePackage.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS);
 		}
 		return ownedExtensions;
 	}

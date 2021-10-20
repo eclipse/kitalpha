@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20150924-1035
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.doc.gen.business.ecore.sidebar;
 
 import org.eclipse.egf.common.helper.*;
@@ -21,15 +21,22 @@ public class ecoreElementSideBar extends org.polarsys.kitalpha.doc.gen.business.
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+
 	protected final String TEXT_1 = "";
+
 	protected final String TEXT_2 = NL + "<img src=\"../icon/";
+
 	protected final String TEXT_3 = "\" alt=\"";
+
 	protected final String TEXT_4 = "\"/> <a href=\"../";
+
 	protected final String TEXT_5 = "/";
+
 	protected final String TEXT_6 = ".html\" target=\"content\">";
+
 	protected final String TEXT_7 = "</a>" + NL + NL;
+
 	protected final String TEXT_8 = NL;
-	protected final String TEXT_9 = NL;
 
 	public ecoreElementSideBar() {
 		//Here is the constructor
@@ -66,7 +73,7 @@ public class ecoreElementSideBar extends org.polarsys.kitalpha.doc.gen.business.
 		}
 
 		stringBuffer.append(TEXT_8);
-		stringBuffer.append(TEXT_9);
+		stringBuffer.append(TEXT_8);
 		return stringBuffer.toString();
 	}
 
@@ -105,8 +112,7 @@ public class ecoreElementSideBar extends org.polarsys.kitalpha.doc.gen.business.
 		new Node.DataLeaf(ictx.getNode(), getClass(), "setCurrentObject", stringBuffer.toString());
 	}
 
-	protected void method_setFileNameService(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_setFileNameService(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		fileNameService = EcoreFileNameService.INSTANCE;
 
@@ -114,8 +120,7 @@ public class ecoreElementSideBar extends org.polarsys.kitalpha.doc.gen.business.
 		new Node.DataLeaf(ictx.getNode(), getClass(), "setFileNameService", stringBuffer.toString());
 	}
 
-	protected void method_startSidebarSubElement(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_startSidebarSubElement(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		if (org.polarsys.kitalpha.doc.gen.business.ecore.helpers.SideBarHelper.hasChildren(parameter)) {
 			super.method_startSidebarSubElement(stringBuffer, ctx);
@@ -125,8 +130,7 @@ public class ecoreElementSideBar extends org.polarsys.kitalpha.doc.gen.business.
 		new Node.DataLeaf(ictx.getNode(), getClass(), "startSidebarSubElement", stringBuffer.toString());
 	}
 
-	protected void method_endSidebarSubElement(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_endSidebarSubElement(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		if (org.polarsys.kitalpha.doc.gen.business.ecore.helpers.SideBarHelper.hasChildren(parameter)) {
 			super.method_endSidebarSubElement(stringBuffer, ctx);
@@ -136,8 +140,7 @@ public class ecoreElementSideBar extends org.polarsys.kitalpha.doc.gen.business.
 		new Node.DataLeaf(ictx.getNode(), getClass(), "endSidebarSubElement", stringBuffer.toString());
 	}
 
-	protected void method_contentSidebarElement(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_contentSidebarElement(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		String projectName = ctx.getValue("projectName").toString();
 		String outputFolder = ctx.getValue("outputFolder").toString();

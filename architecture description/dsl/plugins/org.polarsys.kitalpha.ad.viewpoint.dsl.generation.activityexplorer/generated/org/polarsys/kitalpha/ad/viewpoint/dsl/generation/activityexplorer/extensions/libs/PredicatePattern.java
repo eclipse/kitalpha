@@ -1,4 +1,4 @@
-//Generated with EGF 1.4.1.v20161010-1704
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.extensions.libs;
 
 import org.eclipse.egf.common.helper.*;
@@ -22,10 +22,12 @@ public class PredicatePattern {
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+
 	protected final String TEXT_1 = NL + "\t\t\t<Predicate" + NL + "\t\t\t\tclass=\"";
+
 	protected final String TEXT_2 = "\">" + NL + "\t\t\t</Predicate>" + NL;
+
 	protected final String TEXT_3 = NL;
-	protected final String TEXT_4 = NL;
 
 	public PredicatePattern() {
 		//Here is the constructor
@@ -67,7 +69,7 @@ public class PredicatePattern {
 		}
 
 		stringBuffer.append(TEXT_3);
-		stringBuffer.append(TEXT_4);
+		stringBuffer.append(TEXT_3);
 		return stringBuffer.toString();
 	}
 
@@ -89,8 +91,7 @@ public class PredicatePattern {
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.PredicateElement predicatedElement = null;
 
-	public void set_predicatedElement(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.PredicateElement object) {
+	public void set_predicatedElement(org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.PredicateElement object) {
 		this.predicatedElement = object;
 	}
 
@@ -107,11 +108,9 @@ public class PredicatePattern {
 		return parameters;
 	}
 
-	protected void method_genPredicateElement(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_genPredicateElement(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
-		String className = JavaNamingConvention.getJavaClassFQNFor(basePackage, (NamedElement) predicatedElement,
-				JavaNamingConvention.JavaUseContext.Predicate);
+		String className = JavaNamingConvention.getJavaClassFQNFor(basePackage, (NamedElement) predicatedElement, JavaNamingConvention.JavaUseContext.Predicate);
 		stringBuffer.append(TEXT_1);
 		stringBuffer.append(className);
 		stringBuffer.append(TEXT_2);

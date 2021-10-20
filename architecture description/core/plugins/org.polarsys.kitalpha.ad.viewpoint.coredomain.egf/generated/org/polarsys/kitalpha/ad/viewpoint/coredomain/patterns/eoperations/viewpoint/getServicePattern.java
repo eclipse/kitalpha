@@ -1,4 +1,4 @@
-//Generated with EGF 1.4.1.v20161010-1704
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.coredomain.patterns.eoperations.viewpoint;
 
 import org.eclipse.egf.common.helper.*;
@@ -8,8 +8,7 @@ import org.eclipse.egf.model.pattern.*;
 import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 
-public class getServicePattern
-		extends org.eclipse.egf.emf.pattern.model.call.Class.ClassimplementedGenOperationTODOoverride {
+public class getServicePattern extends org.eclipse.egf.emf.pattern.model.call.Class.ClassimplementedGenOperationTODOoverride {
 	protected static String nl;
 
 	public static synchronized getServicePattern create(String lineSeparator) {
@@ -20,15 +19,13 @@ public class getServicePattern
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "\t\tif (getServiceSet() != null) {" + NL
-			+ "\t\t\tfor (Service service : getServiceSet().getNewServices()) {" + NL
-			+ "\t\t\t\tif (id.equals(service.getId()))" + NL + "\t\t\t\t\treturn service;" + NL + "\t\t\t}" + NL
-			+ "\t\t\tfor (Service service : getServiceSet().getHiddenServices()) {" + NL
-			+ "\t\t\t\tif (id.equals(service.getId()))" + NL + "\t\t\t\t\treturn null;" + NL + "\t\t\t}" + NL + "\t\t}"
-			+ NL + "\t\tfor (Viewpoint vp : getParents()) {" + NL + "\t\t\tService service = vp.getService(id);" + NL
+
+	protected final String TEXT_1 = "\t\tif (getServiceSet() != null) {" + NL + "\t\t\tfor (Service service : getServiceSet().getNewServices()) {" + NL + "\t\t\t\tif (id.equals(service.getId()))" + NL
+			+ "\t\t\t\t\treturn service;" + NL + "\t\t\t}" + NL + "\t\t\tfor (Service service : getServiceSet().getHiddenServices()) {" + NL + "\t\t\t\tif (id.equals(service.getId()))" + NL
+			+ "\t\t\t\t\treturn null;" + NL + "\t\t\t}" + NL + "\t\t}" + NL + "\t\tfor (Viewpoint vp : getParents()) {" + NL + "\t\t\tService service = vp.getService(id);" + NL
 			+ "\t\t\tif (service != null)" + NL + "\t\t\t\treturn service;" + NL + "\t\t}" + NL + "\t\treturn null;";
+
 	protected final String TEXT_2 = NL;
-	protected final String TEXT_3 = NL;
 
 	public getServicePattern() {
 		//Here is the constructor
@@ -60,7 +57,13 @@ public class getServicePattern
 		//this pattern can only be called by another (i.e. it's not an entry point in execution)
 		List<Object> isImplementationList = null;
 		//this pattern can only be called by another (i.e. it's not an entry point in execution)
+		List<Object> useInterfaceOverrideAnnotationList = null;
+		//this pattern can only be called by another (i.e. it's not an entry point in execution)
 		List<Object> isGWTList = null;
+		//this pattern can only be called by another (i.e. it's not an entry point in execution)
+		List<Object> forceDefaultCaseList = null;
+		//this pattern can only be called by another (i.e. it's not an entry point in execution)
+		List<Object> indentDefaultCaseList = null;
 		//this pattern can only be called by another (i.e. it's not an entry point in execution)
 		List<Object> publicStaticFinalFlagList = null;
 		//this pattern can only be called by another (i.e. it's not an entry point in execution)
@@ -82,35 +85,43 @@ public class getServicePattern
 						for (Object isJDK50Parameter : isJDK50List) {
 							for (Object isInterfaceParameter : isInterfaceList) {
 								for (Object isImplementationParameter : isImplementationList) {
-									for (Object isGWTParameter : isGWTList) {
-										for (Object publicStaticFinalFlagParameter : publicStaticFinalFlagList) {
-											for (Object singleWildcardParameter : singleWildcardList) {
-												for (Object negativeOffsetCorrectionParameter : negativeOffsetCorrectionList) {
-													for (Object positiveOffsetCorrectionParameter : positiveOffsetCorrectionList) {
-														for (Object negativeOperationOffsetCorrectionParameter : negativeOperationOffsetCorrectionList) {
-															for (Object positiveOperationOffsetCorrectionParameter : positiveOperationOffsetCorrectionList) {
+									for (Object useInterfaceOverrideAnnotationParameter : useInterfaceOverrideAnnotationList) {
+										for (Object isGWTParameter : isGWTList) {
+											for (Object forceDefaultCaseParameter : forceDefaultCaseList) {
+												for (Object indentDefaultCaseParameter : indentDefaultCaseList) {
+													for (Object publicStaticFinalFlagParameter : publicStaticFinalFlagList) {
+														for (Object singleWildcardParameter : singleWildcardList) {
+															for (Object negativeOffsetCorrectionParameter : negativeOffsetCorrectionList) {
+																for (Object positiveOffsetCorrectionParameter : positiveOffsetCorrectionList) {
+																	for (Object negativeOperationOffsetCorrectionParameter : negativeOperationOffsetCorrectionList) {
+																		for (Object positiveOperationOffsetCorrectionParameter : positiveOperationOffsetCorrectionList) {
 
-																this.genOperation = (org.eclipse.emf.codegen.ecore.genmodel.GenOperation) genOperationParameter;
-																this.genClass = (org.eclipse.emf.codegen.ecore.genmodel.GenClass) genClassParameter;
-																this.genPackage = (org.eclipse.emf.codegen.ecore.genmodel.GenPackage) genPackageParameter;
-																this.genModel = (org.eclipse.emf.codegen.ecore.genmodel.GenModel) genModelParameter;
-																this.isJDK50 = (java.lang.Boolean) isJDK50Parameter;
-																this.isInterface = (java.lang.Boolean) isInterfaceParameter;
-																this.isImplementation = (java.lang.Boolean) isImplementationParameter;
-																this.isGWT = (java.lang.Boolean) isGWTParameter;
-																this.publicStaticFinalFlag = (java.lang.String) publicStaticFinalFlagParameter;
-																this.singleWildcard = (java.lang.String) singleWildcardParameter;
-																this.negativeOffsetCorrection = (java.lang.String) negativeOffsetCorrectionParameter;
-																this.positiveOffsetCorrection = (java.lang.String) positiveOffsetCorrectionParameter;
-																this.negativeOperationOffsetCorrection = (java.lang.String) negativeOperationOffsetCorrectionParameter;
-																this.positiveOperationOffsetCorrection = (java.lang.String) positiveOperationOffsetCorrectionParameter;
+																			this.genOperation = (org.eclipse.emf.codegen.ecore.genmodel.GenOperation) genOperationParameter;
+																			this.genClass = (org.eclipse.emf.codegen.ecore.genmodel.GenClass) genClassParameter;
+																			this.genPackage = (org.eclipse.emf.codegen.ecore.genmodel.GenPackage) genPackageParameter;
+																			this.genModel = (org.eclipse.emf.codegen.ecore.genmodel.GenModel) genModelParameter;
+																			this.isJDK50 = (java.lang.Boolean) isJDK50Parameter;
+																			this.isInterface = (java.lang.Boolean) isInterfaceParameter;
+																			this.isImplementation = (java.lang.Boolean) isImplementationParameter;
+																			this.useInterfaceOverrideAnnotation = (java.lang.Boolean) useInterfaceOverrideAnnotationParameter;
+																			this.isGWT = (java.lang.Boolean) isGWTParameter;
+																			this.forceDefaultCase = (java.lang.Boolean) forceDefaultCaseParameter;
+																			this.indentDefaultCase = (java.lang.String) indentDefaultCaseParameter;
+																			this.publicStaticFinalFlag = (java.lang.String) publicStaticFinalFlagParameter;
+																			this.singleWildcard = (java.lang.String) singleWildcardParameter;
+																			this.negativeOffsetCorrection = (java.lang.String) negativeOffsetCorrectionParameter;
+																			this.positiveOffsetCorrection = (java.lang.String) positiveOffsetCorrectionParameter;
+																			this.negativeOperationOffsetCorrection = (java.lang.String) negativeOperationOffsetCorrectionParameter;
+																			this.positiveOperationOffsetCorrection = (java.lang.String) positiveOperationOffsetCorrectionParameter;
 
-																if (preCondition(ctx)) {
-																	ctx.setNode(new Node.Container(currentNode,
-																			getClass()));
-																	orchestration(ctx);
+																			if (preCondition(ctx)) {
+																				ctx.setNode(new Node.Container(currentNode, getClass()));
+																				orchestration(ctx);
+																			}
+
+																		}
+																	}
 																}
-
 															}
 														}
 													}
@@ -131,7 +142,7 @@ public class getServicePattern
 		}
 
 		stringBuffer.append(TEXT_2);
-		stringBuffer.append(TEXT_3);
+		stringBuffer.append(TEXT_2);
 		return stringBuffer.toString();
 	}
 
@@ -149,7 +160,10 @@ public class getServicePattern
 			parameterValues.put("isJDK50", this.isJDK50);
 			parameterValues.put("isInterface", this.isInterface);
 			parameterValues.put("isImplementation", this.isImplementation);
+			parameterValues.put("useInterfaceOverrideAnnotation", this.useInterfaceOverrideAnnotation);
 			parameterValues.put("isGWT", this.isGWT);
+			parameterValues.put("forceDefaultCase", this.forceDefaultCase);
+			parameterValues.put("indentDefaultCase", this.indentDefaultCase);
 			parameterValues.put("publicStaticFinalFlag", this.publicStaticFinalFlag);
 			parameterValues.put("singleWildcard", this.singleWildcard);
 			parameterValues.put("negativeOffsetCorrection", this.negativeOffsetCorrection);
@@ -172,7 +186,10 @@ public class getServicePattern
 		parameters.put("isJDK50", this.isJDK50);
 		parameters.put("isInterface", this.isInterface);
 		parameters.put("isImplementation", this.isImplementation);
+		parameters.put("useInterfaceOverrideAnnotation", this.useInterfaceOverrideAnnotation);
 		parameters.put("isGWT", this.isGWT);
+		parameters.put("forceDefaultCase", this.forceDefaultCase);
+		parameters.put("indentDefaultCase", this.indentDefaultCase);
 		parameters.put("publicStaticFinalFlag", this.publicStaticFinalFlag);
 		parameters.put("singleWildcard", this.singleWildcard);
 		parameters.put("negativeOffsetCorrection", this.negativeOffsetCorrection);

@@ -1,4 +1,4 @@
-//Generated with EGF 1.4.0.v20160519-0641
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.doc.gen.business.core.doccontent.sidebar;
 
 import org.eclipse.egf.common.helper.*;
@@ -20,14 +20,20 @@ public class ElementSideBarEntry extends org.polarsys.kitalpha.doc.gen.business.
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+
 	protected final String TEXT_1 = "<li>" + NL;
+
 	protected final String TEXT_2 = NL + "<img src=\"../icon/";
+
 	protected final String TEXT_3 = "\" alt=\"";
+
 	protected final String TEXT_4 = "\"/>";
+
 	protected final String TEXT_5 = NL + NL;
+
 	protected final String TEXT_6 = "</li>" + NL;
+
 	protected final String TEXT_7 = NL;
-	protected final String TEXT_8 = NL;
 
 	public ElementSideBarEntry() {
 		//Here is the constructor
@@ -74,7 +80,7 @@ public class ElementSideBarEntry extends org.polarsys.kitalpha.doc.gen.business.
 		}
 
 		stringBuffer.append(TEXT_7);
-		stringBuffer.append(TEXT_8);
+		stringBuffer.append(TEXT_7);
 		return stringBuffer.toString();
 	}
 
@@ -90,9 +96,7 @@ public class ElementSideBarEntry extends org.polarsys.kitalpha.doc.gen.business.
 			final Map<String, Object> parameters = new HashMap<String, Object>();
 			parameters.put("parameter", this.parameter);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_76_64AEaEeCfXc0sxlW-HQ",
-					ctx_local, parameters);
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_76_64AEaEeCfXc0sxlW-HQ", ctx_local, parameters);
 		}
 
 		{
@@ -105,9 +109,7 @@ public class ElementSideBarEntry extends org.polarsys.kitalpha.doc.gen.business.
 			final Map<String, Object> parameters = new HashMap<String, Object>();
 			parameters.put("parameter", this.parameter);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_KyTtYAEbEeCfXc0sxlW-HQ",
-					ctx_local, parameters);
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_KyTtYAEbEeCfXc0sxlW-HQ", ctx_local, parameters);
 		}
 
 		method_endSidebarElement(new StringBuffer(), ictx);
@@ -150,16 +152,14 @@ public class ElementSideBarEntry extends org.polarsys.kitalpha.doc.gen.business.
 		return parameters;
 	}
 
-	protected void method_startSidebarElement(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_startSidebarElement(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		stringBuffer.append(TEXT_1);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "startSidebarElement", stringBuffer.toString());
 	}
 
-	protected void method_contentSidebarElement(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_contentSidebarElement(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		String imageFileName = LabelProviderHelper.getImageFileName(parameter, projectName, folderName);
 		stringBuffer.append(TEXT_2);
@@ -173,8 +173,7 @@ public class ElementSideBarEntry extends org.polarsys.kitalpha.doc.gen.business.
 		new Node.DataLeaf(ictx.getNode(), getClass(), "contentSidebarElement", stringBuffer.toString());
 	}
 
-	protected void method_endSidebarElement(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_endSidebarElement(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		stringBuffer.append(TEXT_6);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;

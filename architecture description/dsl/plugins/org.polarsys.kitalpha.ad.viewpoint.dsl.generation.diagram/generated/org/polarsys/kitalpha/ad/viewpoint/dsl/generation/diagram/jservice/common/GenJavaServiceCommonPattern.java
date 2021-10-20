@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.jservice.common;
 
 import org.eclipse.egf.common.helper.*;
@@ -18,8 +18,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.Generation
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper.conf.DiagramGenerationConfigurationHelper;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
-public class GenJavaServiceCommonPattern
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common.java.patterns.JavaAbstractPattern {
+public class GenJavaServiceCommonPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common.java.patterns.JavaAbstractPattern {
 	protected static String nl;
 
 	public static synchronized GenJavaServiceCommonPattern create(String lineSeparator) {
@@ -30,37 +29,53 @@ public class GenJavaServiceCommonPattern
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+
 	protected final String TEXT_1 = "package ";
-	protected final String TEXT_2 = ";" + NL + "" + NL + "import java.util.ArrayList;" + NL + "import java.util.List;"
-			+ NL + "" + NL + "import org.eclipse.emf.ecore.EObject;" + NL + "" + NL
-			+ "import org.eclipse.sirius.diagram.DDiagram;" + NL + "import org.eclipse.sirius.diagram.DDiagramElement;"
-			+ NL;
+
+	protected final String TEXT_2 = ";" + NL + "" + NL + "import java.util.ArrayList;" + NL + "import java.util.List;" + NL + "" + NL + "import org.eclipse.emf.ecore.EObject;" + NL + "" + NL
+			+ "import org.eclipse.sirius.diagram.DDiagram;" + NL + "import org.eclipse.sirius.diagram.DDiagramElement;" + NL;
+
 	protected final String TEXT_3 = NL + "import ";
+
 	protected final String TEXT_4 = ";";
-	protected final String TEXT_5 = NL + NL + "/**" + NL + " * <!-- begin-user-doc -->" + NL
-			+ " * This class is an implementation of the Sirius JavaExtension '<em><b>[";
-	protected final String TEXT_6 = "]</b></em>'." + NL + " * <!-- end-user-doc -->" + NL + " * <p>" + NL + " * </p>"
-			+ NL + " *" + NL + " * @generated" + NL + " */ " + NL + "" + NL + "public class ";
+
+	protected final String TEXT_5 = NL + NL + "/**" + NL + " * <!-- begin-user-doc -->" + NL + " * This class is an implementation of the Sirius JavaExtension '<em><b>[";
+
+	protected final String TEXT_6 = "]</b></em>'." + NL + " * <!-- end-user-doc -->" + NL + " * <p>" + NL + " * </p>" + NL + " *" + NL + " * @generated" + NL + " */ " + NL + "" + NL + "public class ";
+
 	protected final String TEXT_7 = "{";
+
 	protected final String TEXT_8 = "\t";
-	protected final String TEXT_9 = NL + "\t/**" + NL + "\t* <!-- begin-user-doc -->" + NL
-			+ "\t* <!-- end-user-doc -->";
+
+	protected final String TEXT_9 = NL + "\t/**" + NL + "\t* <!-- begin-user-doc -->" + NL + "\t* <!-- end-user-doc -->";
+
 	protected final String TEXT_10 = NL + "\t* @param ";
+
 	protected final String TEXT_11 = " : ";
+
 	protected final String TEXT_12 = NL + "\t* @generated" + NL + "\t*/" + NL + "public ";
+
 	protected final String TEXT_13 = " ";
+
 	protected final String TEXT_14 = "(";
+
 	protected final String TEXT_15 = NL + "\t\t\t\t\t\t";
+
 	protected final String TEXT_16 = ",";
+
 	protected final String TEXT_17 = "){";
+
 	protected final String TEXT_18 = NL + "\t";
+
 	protected final String TEXT_19 = NL + "// TODO Auto-generated method stub";
-	protected final String TEXT_20 = NL + "\t// Ensure that you remove @generated or mark it @generated NOT" + NL
-			+ "\tthrow new UnsupportedOperationException();";
+
+	protected final String TEXT_20 = NL + "\t// Ensure that you remove @generated or mark it @generated NOT" + NL + "\tthrow new UnsupportedOperationException();";
+
 	protected final String TEXT_21 = NL + "}";
+
 	protected final String TEXT_22 = NL;
+
 	protected final String TEXT_23 = "}";
-	protected final String TEXT_24 = NL;
 
 	public GenJavaServiceCommonPattern() {
 		//Here is the constructor
@@ -88,8 +103,8 @@ public class GenJavaServiceCommonPattern
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_24);
-		stringBuffer.append(TEXT_24);
+		stringBuffer.append(TEXT_22);
+		stringBuffer.append(TEXT_22);
 		return stringBuffer.toString();
 	}
 
@@ -111,8 +126,7 @@ public class GenJavaServiceCommonPattern
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.javaservice.JavaServiceData java_service_data = null;
 
-	public void set_java_service_data(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.javaservice.JavaServiceData object) {
+	public void set_java_service_data(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.javaservice.JavaServiceData object) {
 		this.java_service_data = object;
 	}
 
@@ -140,8 +154,7 @@ public class GenJavaServiceCommonPattern
 		new Node.DataLeaf(ictx.getNode(), getClass(), "setParameters", stringBuffer.toString());
 	}
 
-	protected void method_addServiceToODesignModel(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_addServiceToODesignModel(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		if (java_service_data != null) {
 			String JS_Name = packagename + "." + classname;
@@ -154,8 +167,7 @@ public class GenJavaServiceCommonPattern
 		new Node.DataLeaf(ictx.getNode(), getClass(), "addServiceToODesignModel", stringBuffer.toString());
 	}
 
-	protected void method_generateJSCHeader(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_generateJSCHeader(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		if (java_service_data != null) {
 			stringBuffer.append(TEXT_1);
@@ -178,8 +190,7 @@ public class GenJavaServiceCommonPattern
 		new Node.DataLeaf(ictx.getNode(), getClass(), "generateJSCHeader", stringBuffer.toString());
 	}
 
-	protected void method_generateJSCMethods(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_generateJSCMethods(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		if (java_service_data != null) {
 			stringBuffer.append(TEXT_8);

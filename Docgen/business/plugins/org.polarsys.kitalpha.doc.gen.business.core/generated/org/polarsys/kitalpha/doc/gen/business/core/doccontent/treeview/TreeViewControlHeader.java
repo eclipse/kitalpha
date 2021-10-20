@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.0.201805040915
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.doc.gen.business.core.doccontent.treeview;
 
 import org.eclipse.egf.common.helper.*;
@@ -19,13 +19,11 @@ public class TreeViewControlHeader {
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "<div id=\"treecontrol\" style=\"float:left\">" + NL + "\t<a href=\"#\">" + NL
-			+ "\t\t<img src=\"../../img/open.gif\" alt=\"Collapse All\" style=\"border:0px\"/>" + NL + "\t</a> " + NL
-			+ "\t<a href=\"#\">" + NL
-			+ "\t\t<img src=\"../../img/closed.gif\" alt=\"Expand All\" style=\"border:0px\"/>" + NL + "\t</a>" + NL
-			+ "</div>";
+
+	protected final String TEXT_1 = "<div id=\"treecontrol\" style=\"float:left\">" + NL + "\t<a href=\"#\">" + NL + "\t\t<img src=\"../../img/open.gif\" alt=\"Collapse All\" style=\"border:0px\"/>"
+			+ NL + "\t</a> " + NL + "\t<a href=\"#\">" + NL + "\t\t<img src=\"../../img/closed.gif\" alt=\"Expand All\" style=\"border:0px\"/>" + NL + "\t</a>" + NL + "</div>";
+
 	protected final String TEXT_2 = NL;
-	protected final String TEXT_3 = NL;
 
 	public TreeViewControlHeader() {
 		//Here is the constructor
@@ -67,7 +65,7 @@ public class TreeViewControlHeader {
 		}
 
 		stringBuffer.append(TEXT_2);
-		stringBuffer.append(TEXT_3);
+		stringBuffer.append(TEXT_2);
 		return stringBuffer.toString();
 	}
 

@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.jservice.customizations.style;
 
 import org.eclipse.egf.common.helper.*;
@@ -10,8 +10,7 @@ import org.eclipse.egf.pattern.query.*;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.GenerationUtil;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.javaservice.JavaServiceData;
 
-public class genJavaServiceForEnumerationHelper
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.jservice.common.GenJavaServiceCommonPattern {
+public class genJavaServiceForEnumerationHelper extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.jservice.common.GenJavaServiceCommonPattern {
 	protected static String nl;
 
 	public static synchronized genJavaServiceForEnumerationHelper create(String lineSeparator) {
@@ -22,7 +21,9 @@ public class genJavaServiceForEnumerationHelper
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+
 	protected final String TEXT_1 = "";
+
 	protected final String TEXT_2 = NL;
 
 	public genJavaServiceForEnumerationHelper() {
@@ -81,8 +82,7 @@ public class genJavaServiceForEnumerationHelper
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.Customizations customizations = null;
 
-	public void set_customizations(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.Customizations object) {
+	public void set_customizations(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.Customizations object) {
 		this.customizations = object;
 	}
 

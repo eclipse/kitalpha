@@ -1,4 +1,4 @@
-//Generated with EGF 1.4.1.v20161010-1704
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.java.abstracts;
 
 import org.eclipse.egf.common.helper.*;
@@ -9,8 +9,7 @@ import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common.java.JavaClassReporter;
 
-public class AbstractActivityExplorerJavaClass
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common.java.patterns.JavaAbstractPattern {
+public class AbstractActivityExplorerJavaClass extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common.java.patterns.JavaAbstractPattern {
 	protected static String nl;
 
 	public static synchronized AbstractActivityExplorerJavaClass create(String lineSeparator) {
@@ -21,10 +20,12 @@ public class AbstractActivityExplorerJavaClass
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+
 	protected final String TEXT_1 = "package ";
+
 	protected final String TEXT_2 = ";" + NL;
+
 	protected final String TEXT_3 = NL;
-	protected final String TEXT_4 = NL;
 
 	public AbstractActivityExplorerJavaClass() {
 		//Here is the constructor
@@ -53,7 +54,7 @@ public class AbstractActivityExplorerJavaClass
 		}
 
 		stringBuffer.append(TEXT_3);
-		stringBuffer.append(TEXT_4);
+		stringBuffer.append(TEXT_3);
 		return stringBuffer.toString();
 	}
 
@@ -105,8 +106,7 @@ public class AbstractActivityExplorerJavaClass
 		new Node.DataLeaf(ictx.getNode(), getClass(), "genClassCode", stringBuffer.toString());
 	}
 
-	protected void method_updateProjectDependecies(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_updateProjectDependecies(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "updateProjectDependecies", stringBuffer.toString());

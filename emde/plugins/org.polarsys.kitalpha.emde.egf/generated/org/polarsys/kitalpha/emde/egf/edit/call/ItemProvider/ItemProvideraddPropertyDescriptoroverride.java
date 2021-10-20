@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201906060805
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.emde.egf.edit.call.ItemProvider;
 
 import org.polarsys.kitalpha.emde.egf.helper.*;
@@ -16,8 +16,7 @@ import org.eclipse.egf.model.pattern.*;
 import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 
-public class ItemProvideraddPropertyDescriptoroverride
-		extends org.eclipse.egf.emf.pattern.edit.call.ItemProvider.ItemProvideraddPropertyDescriptoroverride {
+public class ItemProvideraddPropertyDescriptoroverride extends org.eclipse.egf.emf.pattern.edit.call.ItemProvider.ItemProvideraddPropertyDescriptoroverride {
 	protected static String nl;
 
 	public static synchronized ItemProvideraddPropertyDescriptoroverride create(String lineSeparator) {
@@ -28,41 +27,63 @@ public class ItemProvideraddPropertyDescriptoroverride
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+
 	protected final String TEXT_1 = "\t\t// begin-extension-code" + NL + "\t\t";
-	protected final String TEXT_2 = "PropertyDescriptor = createItemPropertyDescriptor" + NL
-			+ "\t\t// end-extension-code\t\t";
-	protected final String TEXT_3 = NL + "\t\t// begin-extension-code" + NL + "\t\titemPropertyDescriptors.add" + NL
-			+ "\t\t\t(createItemPropertyDescriptor" + NL + "\t\t// end-extension-code";
+
+	protected final String TEXT_2 = "PropertyDescriptor = createItemPropertyDescriptor" + NL + "\t\t// end-extension-code\t\t";
+
+	protected final String TEXT_3 = NL + "\t\t// begin-extension-code" + NL + "\t\titemPropertyDescriptors.add" + NL + "\t\t\t(createItemPropertyDescriptor" + NL + "\t\t// end-extension-code";
+
 	protected final String TEXT_4 = NL + "\t\t\t\t(((";
-	protected final String TEXT_5 = ")adapterFactory).getRootAdapterFactory()," + NL + "\t\t\t\t getResourceLocator(),"
-			+ NL + "\t\t\t\t getString(\"_UI_";
+
+	protected final String TEXT_5 = ")adapterFactory).getRootAdapterFactory()," + NL + "\t\t\t\t getResourceLocator()," + NL + "\t\t\t\t getString(\"_UI_";
+
 	protected final String TEXT_6 = "_";
+
 	protected final String TEXT_7 = "_feature\"),";
+
 	protected final String TEXT_8 = NL + "\t\t\t\t getString(\"_UI_PropertyDescriptor_description\", \"_UI_";
+
 	protected final String TEXT_9 = "_feature\", \"_UI_";
+
 	protected final String TEXT_10 = "_type\"),";
+
 	protected final String TEXT_11 = NL + "\t\t\t\t getString(\"_UI_";
+
 	protected final String TEXT_12 = "_description\"),";
+
 	protected final String TEXT_13 = NL + "\t\t\t\t ";
+
 	protected final String TEXT_14 = "," + NL + "\t\t\t\t ";
+
 	protected final String TEXT_15 = ",";
+
 	protected final String TEXT_16 = NL + "\t\t\t\t null,";
+
 	protected final String TEXT_17 = ".";
+
 	protected final String TEXT_18 = NL + "\t\t\t\t getString(\"";
+
 	protected final String TEXT_19 = "\"),";
-	protected final String TEXT_20 = NL + "\t\t// begin-extension-code" + NL + "\t\t\t\t null);" + NL
-			+ "\t\titemPropertyDescriptors.add(";
+
+	protected final String TEXT_20 = NL + "\t\t// begin-extension-code" + NL + "\t\t\t\t null);" + NL + "\t\titemPropertyDescriptors.add(";
+
 	protected final String TEXT_21 = "PropertyDescriptor);" + NL + "\t\t// end-extension-code";
-	protected final String TEXT_22 = NL + "\t\t// begin-extension-code" + NL + "\t\t\t\t null));" + NL
-			+ "\t\t// end-extension-code";
+
+	protected final String TEXT_22 = NL + "\t\t// begin-extension-code" + NL + "\t\t\t\t null));" + NL + "\t\t// end-extension-code";
+
 	protected final String TEXT_23 = NL + "\t\t\t\t new String[] {";
+
 	protected final String TEXT_24 = NL + "\t\t\t\t\t\"";
+
 	protected final String TEXT_25 = "\"";
-	protected final String TEXT_26 = NL + "\t\t// begin-extension-code" + NL + "\t\t\t\t });" + NL
-			+ "\t\titemPropertyDescriptors.add(";
+
+	protected final String TEXT_26 = NL + "\t\t// begin-extension-code" + NL + "\t\t\t\t });" + NL + "\t\titemPropertyDescriptors.add(";
+
 	protected final String TEXT_27 = "PropertyDescriptor);" + NL + "\t\t// begin-extension-code";
-	protected final String TEXT_28 = NL + "\t\t// begin-extension-code" + NL + "\t\t\t\t }));" + NL
-			+ "\t\t// end-extension-code";
+
+	protected final String TEXT_28 = NL + "\t\t// begin-extension-code" + NL + "\t\t\t\t }));" + NL + "\t\t// end-extension-code";
+
 	protected final String TEXT_29 = NL;
 
 	public ItemProvideraddPropertyDescriptoroverride() {
@@ -176,8 +197,7 @@ public class ItemProvideraddPropertyDescriptoroverride
 
 	protected void method_doGenerate(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
-		if (ExtensionHelper.hasExtensibleProviderFactory(genModel)
-				|| ExtensionHelper.hasChildCreationExtenders(genModel)) {
+		if (ExtensionHelper.hasExtensibleProviderFactory(genModel) || ExtensionHelper.hasChildCreationExtenders(genModel)) {
 			if (genFeature.getEcoreFeature() instanceof EReference && genFeature.getEcoreFeature().isMany() == false) {
 				stringBuffer.append(TEXT_1);
 				stringBuffer.append(genFeature.getName());
@@ -242,10 +262,8 @@ public class ItemProvideraddPropertyDescriptoroverride
 			stringBuffer.append(genModel.getNonNLS());
 		}
 		if (genFeature.getPropertyFilterFlags().isEmpty()) {
-			if (ExtensionHelper.hasExtensibleProviderFactory(genModel)
-					|| ExtensionHelper.hasChildCreationExtenders(genModel)) {
-				if (genFeature.getEcoreFeature() instanceof EReference
-						&& genFeature.getEcoreFeature().isMany() == false) {
+			if (ExtensionHelper.hasExtensibleProviderFactory(genModel) || ExtensionHelper.hasChildCreationExtenders(genModel)) {
+				if (genFeature.getEcoreFeature() instanceof EReference && genFeature.getEcoreFeature().isMany() == false) {
 					stringBuffer.append(TEXT_20);
 					stringBuffer.append(genFeature.getName());
 					stringBuffer.append(TEXT_21);
@@ -269,10 +287,8 @@ public class ItemProvideraddPropertyDescriptoroverride
 					stringBuffer.append(genModel.getNonNLS());
 				}
 			}
-			if (ExtensionHelper.hasExtensibleProviderFactory(genModel)
-					|| ExtensionHelper.hasChildCreationExtenders(genModel)) {
-				if (genFeature.getEcoreFeature() instanceof EReference
-						&& genFeature.getEcoreFeature().isMany() == false) {
+			if (ExtensionHelper.hasExtensibleProviderFactory(genModel) || ExtensionHelper.hasChildCreationExtenders(genModel)) {
+				if (genFeature.getEcoreFeature() instanceof EReference && genFeature.getEcoreFeature().isMany() == false) {
 					stringBuffer.append(TEXT_26);
 					stringBuffer.append(genFeature.getName());
 					stringBuffer.append(TEXT_27);

@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common;
 
 import java.util.*;
@@ -16,12 +16,12 @@ import org.eclipse.sirius.viewpoint.description.tool.AbstractToolDescription;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Action;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.OpenAction;
 
-public class AbstractTool
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.AbstractDiagramPattern {
+public class AbstractTool extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.AbstractDiagramPattern {
 
 	public AbstractTool() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {

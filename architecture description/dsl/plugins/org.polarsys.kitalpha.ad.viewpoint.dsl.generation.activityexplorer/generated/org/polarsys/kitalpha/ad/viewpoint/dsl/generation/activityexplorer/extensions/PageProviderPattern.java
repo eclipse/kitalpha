@@ -1,4 +1,4 @@
-//Generated with EGF 1.4.0.v20160516-1506
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.extensions;
 
 import org.eclipse.egf.common.helper.*;
@@ -22,29 +22,40 @@ public class PageProviderPattern {
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = NL + "<extension point=\"org.eclipse.amalgam.explorer.activity.ui.pagesProvider\">"
-			+ NL + "\t<Page" + NL + "\t\tclass=\"";
+
+	protected final String TEXT_1 = NL + "<extension point=\"org.eclipse.amalgam.explorer.activity.ui.pagesProvider\">" + NL + "\t<Page" + NL + "\t\tclass=\"";
+
 	protected final String TEXT_2 = "\"" + NL + "        id=\"";
+
 	protected final String TEXT_3 = "\"";
+
 	protected final String TEXT_4 = " " + NL + "\t\timageOff=\"";
-	protected final String TEXT_5 = "\"";
-	protected final String TEXT_6 = " " + NL + "\t\timageOn=\"";
-	protected final String TEXT_7 = "\"";
-	protected final String TEXT_8 = NL + "        index=\"";
-	protected final String TEXT_9 = "\"" + NL + "        tabName=\"";
-	protected final String TEXT_10 = "\"" + NL + "        title=\"";
-	protected final String TEXT_11 = "\"" + NL + "        viewer=\"";
-	protected final String TEXT_12 = "\">";
-	protected final String TEXT_13 = "\t</Page>" + NL + "</extension>" + NL;
-	protected final String TEXT_14 = NL + "\t\t<Overview";
-	protected final String TEXT_15 = " imageOff=\"";
-	protected final String TEXT_16 = "\"";
-	protected final String TEXT_17 = " imageOn=\"";
-	protected final String TEXT_18 = "\"";
-	protected final String TEXT_19 = ">" + NL + "\t\t\t<Description>" + NL + "\t\t\t\t";
-	protected final String TEXT_20 = NL + "\t\t\t</Description>" + NL + "\t\t</Overview>";
-	protected final String TEXT_21 = NL;
-	protected final String TEXT_22 = NL;
+
+	protected final String TEXT_5 = " " + NL + "\t\timageOn=\"";
+
+	protected final String TEXT_6 = NL + "        index=\"";
+
+	protected final String TEXT_7 = "\"" + NL + "        tabName=\"";
+
+	protected final String TEXT_8 = "\"" + NL + "        title=\"";
+
+	protected final String TEXT_9 = "\"" + NL + "        viewer=\"";
+
+	protected final String TEXT_10 = "\">";
+
+	protected final String TEXT_11 = "\t</Page>" + NL + "</extension>" + NL;
+
+	protected final String TEXT_12 = NL + "\t\t<Overview";
+
+	protected final String TEXT_13 = " imageOff=\"";
+
+	protected final String TEXT_14 = " imageOn=\"";
+
+	protected final String TEXT_15 = ">" + NL + "\t\t\t<Description>" + NL + "\t\t\t\t";
+
+	protected final String TEXT_16 = NL + "\t\t\t</Description>" + NL + "\t\t</Overview>";
+
+	protected final String TEXT_17 = NL;
 
 	public PageProviderPattern() {
 		//Here is the constructor
@@ -80,8 +91,8 @@ public class PageProviderPattern {
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_21);
-		stringBuffer.append(TEXT_22);
+		stringBuffer.append(TEXT_17);
+		stringBuffer.append(TEXT_17);
 		return stringBuffer.toString();
 	}
 
@@ -96,8 +107,7 @@ public class PageProviderPattern {
 			parameters.put("parameter", this.parameter);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
 			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer/egf/vpdslActivityExplorerGeneration.fcore#_vr47oDbKEeW9-uNJc0wiRg",
-					ctx_local, parameters);
+					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer/egf/vpdslActivityExplorerGeneration.fcore#_vr47oDbKEeW9-uNJc0wiRg", ctx_local, parameters);
 		}
 
 		{
@@ -106,8 +116,7 @@ public class PageProviderPattern {
 			parameters.put("basePackage", this.projectName);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
 			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer/egf/vpdslActivityExplorerGeneration.fcore#_JYnqcDbJEeW9-uNJc0wiRg",
-					ctx_local, parameters);
+					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer/egf/vpdslActivityExplorerGeneration.fcore#_JYnqcDbJEeW9-uNJc0wiRg", ctx_local, parameters);
 		}
 
 		method_genOverview(new StringBuffer(), ictx);
@@ -117,8 +126,7 @@ public class PageProviderPattern {
 			parameters.put("activityExplorerProjectName", this.projectName);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
 			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer/egf/vpdslActivityExplorerGeneration.fcore#_DdCxsDdqEeW9-uNJc0wiRg",
-					ctx_local, parameters);
+					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer/egf/vpdslActivityExplorerGeneration.fcore#_DdCxsDdqEeW9-uNJc0wiRg", ctx_local, parameters);
 		}
 
 		{
@@ -134,8 +142,7 @@ public class PageProviderPattern {
 			parameters.put("activityExplorerProjectName", this.projectName);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
 			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer/egf/vpdslActivityExplorerGeneration.fcore#_DdCxsDdqEeW9-uNJc0wiRg",
-					ctx_local, parameters);
+					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer/egf/vpdslActivityExplorerGeneration.fcore#_DdCxsDdqEeW9-uNJc0wiRg", ctx_local, parameters);
 		}
 
 		if (ictx.useReporter()) {
@@ -156,15 +163,13 @@ public class PageProviderPattern {
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Overview overview = null;
 
-	public void set_overview(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Overview object) {
+	public void set_overview(org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Overview object) {
 		this.overview = object;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Page parameter = null;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Page object) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Page object) {
 		this.parameter = object;
 	}
 
@@ -184,21 +189,17 @@ public class PageProviderPattern {
 
 	protected void method_genPageBegin(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
-		String className = JavaNamingConvention.getJavaClassFQNFor(projectName, parameter,
-				JavaNamingConvention.JavaUseContext.Page);
+		String className = JavaNamingConvention.getJavaClassFQNFor(projectName, parameter, JavaNamingConvention.JavaUseContext.Page);
 
 		String id = parameter.getActivityExplorerItemID();
 		if (null == id || (null != id && id.isEmpty()))
 			id = "Page1";
 
-		final boolean labelIsSet = parameter
-				.eIsSet(ViewpointActivityExplorerPackage.eINSTANCE.getActivityExplorerItem_Label());
-		final String name = labelIsSet && false == parameter.getLabel().isEmpty() ? parameter.getLabel()
-				: parameter.getName();
+		final boolean labelIsSet = parameter.eIsSet(ViewpointActivityExplorerPackage.eINSTANCE.getActivityExplorerItem_Label());
+		final String name = labelIsSet && false == parameter.getLabel().isEmpty() ? parameter.getLabel() : parameter.getName();
 
 		final boolean tabNameIsSet = parameter.eIsSet(ViewpointActivityExplorerPackage.eINSTANCE.getPage_TabName());
-		final String tabName = tabNameIsSet && false == parameter.getTabName().isEmpty() ? parameter.getTabName()
-				: name;
+		final String tabName = tabNameIsSet && false == parameter.getTabName().isEmpty() ? parameter.getTabName() : name;
 
 		stringBuffer.append(TEXT_1);
 		stringBuffer.append(className);
@@ -208,29 +209,29 @@ public class PageProviderPattern {
 		if (parameter.getImagePathOff() != null && parameter.getImagePathOff().isEmpty() == false) {
 			stringBuffer.append(TEXT_4);
 			stringBuffer.append(IconsFileHelper.ICONS_FOLDER_NAME + "/" + parameter.getImagePathOff());
-			stringBuffer.append(TEXT_5);
+			stringBuffer.append(TEXT_3);
 		}
 		if (parameter.getImagePathOn() != null && parameter.getImagePathOn().isEmpty() == false) {
-			stringBuffer.append(TEXT_6);
+			stringBuffer.append(TEXT_5);
 			stringBuffer.append(IconsFileHelper.ICONS_FOLDER_NAME + "/" + parameter.getImagePathOn());
-			stringBuffer.append(TEXT_7);
+			stringBuffer.append(TEXT_3);
 		}
-		stringBuffer.append(TEXT_8);
+		stringBuffer.append(TEXT_6);
 		stringBuffer.append(parameter.getIndex());
-		stringBuffer.append(TEXT_9);
+		stringBuffer.append(TEXT_7);
 		stringBuffer.append(tabName);
-		stringBuffer.append(TEXT_10);
+		stringBuffer.append(TEXT_8);
 		stringBuffer.append(name);
-		stringBuffer.append(TEXT_11);
+		stringBuffer.append(TEXT_9);
 		stringBuffer.append(parameter.isShowViewer());
-		stringBuffer.append(TEXT_12);
+		stringBuffer.append(TEXT_10);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "genPageBegin", stringBuffer.toString());
 	}
 
 	protected void method_genPageEnd(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
-		stringBuffer.append(TEXT_13);
+		stringBuffer.append(TEXT_11);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "genPageEnd", stringBuffer.toString());
 	}
@@ -244,20 +245,20 @@ public class PageProviderPattern {
 			description = description.replaceAll(">", "&gt;");
 		}
 		if (overview != null) {
-			stringBuffer.append(TEXT_14);
+			stringBuffer.append(TEXT_12);
 			if (overview.getImagePathOff() != null && false == overview.getImagePathOff().isEmpty()) {
-				stringBuffer.append(TEXT_15);
+				stringBuffer.append(TEXT_13);
 				stringBuffer.append(IconsFileHelper.ICONS_FOLDER_NAME + "/" + overview.getImagePathOff());
-				stringBuffer.append(TEXT_16);
+				stringBuffer.append(TEXT_3);
 			}
 			if (overview.getImagePathOn() != null && false == overview.getImagePathOn().isEmpty()) {
-				stringBuffer.append(TEXT_17);
+				stringBuffer.append(TEXT_14);
 				stringBuffer.append(IconsFileHelper.ICONS_FOLDER_NAME + "/" + overview.getImagePathOn());
-				stringBuffer.append(TEXT_18);
+				stringBuffer.append(TEXT_3);
 			}
-			stringBuffer.append(TEXT_19);
+			stringBuffer.append(TEXT_15);
 			stringBuffer.append(description);
-			stringBuffer.append(TEXT_20);
+			stringBuffer.append(TEXT_16);
 		}
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "genOverview", stringBuffer.toString());

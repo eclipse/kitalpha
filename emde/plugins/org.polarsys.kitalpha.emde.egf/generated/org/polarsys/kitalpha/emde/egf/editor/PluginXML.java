@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201906060805
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.emde.egf.editor;
 
 import org.polarsys.kitalpha.emde.egf.utils.*;
@@ -28,131 +28,202 @@ public class PluginXML extends org.eclipse.egf.emf.pattern.editor.PluginXML {
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + NL + "<?eclipse version=\"3.0\"?>"
-			+ NL;
+
+	protected final String TEXT_1 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + NL + "<?eclipse version=\"3.0\"?>" + NL;
+
 	protected final String TEXT_2 = NL;
+
 	protected final String TEXT_3 = NL + "<plugin>";
+
 	protected final String TEXT_4 = NL + "<plugin" + NL + "      name=\"%pluginName\"" + NL + "      id=\"";
-	protected final String TEXT_5 = "\"" + NL + "      version=\"1.0.0.qualifier\"" + NL
-			+ "      provider-name=\"%providerName\"" + NL + "      class=\"";
+
+	protected final String TEXT_5 = "\"" + NL + "      version=\"1.0.0.qualifier\"" + NL + "      provider-name=\"%providerName\"" + NL + "      class=\"";
+
 	protected final String TEXT_6 = "$Implementation\">" + NL + "" + NL + "   <requires>";
+
 	protected final String TEXT_7 = NL + "      <import plugin=\"";
+
 	protected final String TEXT_8 = "\"";
+
 	protected final String TEXT_9 = " export=\"true\"";
+
 	protected final String TEXT_10 = "/>";
+
 	protected final String TEXT_11 = NL + "   </requires>" + NL + "" + NL + "   <runtime>";
+
 	protected final String TEXT_12 = NL + "      <library name=\"";
+
 	protected final String TEXT_13 = ".jar\">";
+
 	protected final String TEXT_14 = NL + "      <library name=\".\">";
-	protected final String TEXT_15 = NL + "         <export name=\"*\"/>" + NL + "      </library>" + NL
-			+ "   </runtime>";
+
+	protected final String TEXT_15 = NL + "         <export name=\"*\"/>" + NL + "      </library>" + NL + "   </runtime>";
+
 	protected final String TEXT_16 = NL + NL + "   <extension point=\"org.eclipse.emf.ecore.generated_package\">";
+
 	protected final String TEXT_17 = NL + "      <!-- @generated ";
+
 	protected final String TEXT_18 = " -->";
+
 	protected final String TEXT_19 = NL + "      <package" + NL + "            uri=\"";
+
 	protected final String TEXT_20 = NL + "            class=\"";
+
 	protected final String TEXT_21 = "\"" + NL + "            genModel=\"";
+
 	protected final String TEXT_22 = "\"/>";
+
 	protected final String TEXT_23 = NL + "   </extension>";
+
 	protected final String TEXT_24 = NL + NL + "   <extension point=\"org.eclipse.emf.ecore.content_parser\">";
+
 	protected final String TEXT_25 = NL + "      <parser" + NL + "            contentTypeIdentifier=\"";
+
 	protected final String TEXT_26 = "\"" + NL + "            class=\"";
-	protected final String TEXT_27 = "\"/>" + NL + "   </extension>" + NL + "" + NL
-			+ "   <extension point=\"org.eclipse.core.contenttype.contentTypes\">";
+
+	protected final String TEXT_27 = "\"/>" + NL + "   </extension>" + NL + "" + NL + "   <extension point=\"org.eclipse.core.contenttype.contentTypes\">";
+
 	protected final String TEXT_28 = NL + "      <content-type" + NL + "            base-type=\"";
+
 	protected final String TEXT_29 = "\"" + NL + "            file-extensions=\"";
+
 	protected final String TEXT_30 = "\"" + NL + "            id=\"";
+
 	protected final String TEXT_31 = "\"" + NL + "            name=\"%_UI_";
+
 	protected final String TEXT_32 = "_content_type\"" + NL + "            priority=\"normal\">" + NL
 			+ "         <describer class=\"org.eclipse.emf.ecore.xmi.impl.RootXMLContentHandlerImpl$Describer\">";
+
 	protected final String TEXT_33 = NL + "            <parameter name=\"namespace\" value=\"";
+
 	protected final String TEXT_34 = NL + "            <parameter name=\"kind\" value=\"xmi\"/>";
-	protected final String TEXT_35 = NL + "         </describer>" + NL + "      </content-type>" + NL
-			+ "   </extension>";
+
+	protected final String TEXT_35 = NL + "         </describer>" + NL + "      </content-type>" + NL + "   </extension>";
+
 	protected final String TEXT_36 = NL + NL + "   <extension point=\"org.eclipse.emf.ecore.extension_parser\">";
+
 	protected final String TEXT_37 = NL + "      <parser" + NL + "            type=\"";
-	protected final String TEXT_38 = NL + NL
-			+ "   <extension point=\"org.eclipse.emf.edit.itemProviderAdapterFactories\">";
+
+	protected final String TEXT_38 = NL + NL + "   <extension point=\"org.eclipse.emf.edit.itemProviderAdapterFactories\">";
+
 	protected final String TEXT_39 = NL + "      <factory" + NL + "            uri=\"";
+
 	protected final String TEXT_40 = "\"" + NL + "            supportedTypes=";
+
 	protected final String TEXT_41 = NL + "              ";
+
 	protected final String TEXT_42 = NL + NL + "   <extension point=\"org.eclipse.emf.edit.childCreationExtenders\">";
+
 	protected final String TEXT_43 = NL + "      <extender" + NL + "            uri=\"";
+
 	protected final String TEXT_44 = "$";
-	protected final String TEXT_45 = NL + NL + "   <extension" + NL
-			+ "         point=\"org.eclipse.core.runtime.applications\"" + NL + "         id=\"";
+
+	protected final String TEXT_45 = NL + NL + "   <extension" + NL + "         point=\"org.eclipse.core.runtime.applications\"" + NL + "         id=\"";
+
 	protected final String TEXT_46 = "Application\">";
+
 	protected final String TEXT_47 = NL + "      <application>" + NL + "         <run class=\"";
-	protected final String TEXT_48 = "$Application\"/>" + NL + "      </application>" + NL + "   </extension>" + NL + ""
-			+ NL + "   <extension point=\"org.eclipse.ui.perspectives\">";
-	protected final String TEXT_49 = NL + "      <perspective" + NL + "            name=\"%_UI_Perspective_label\"" + NL
-			+ "            class=\"";
+
+	protected final String TEXT_48 = "$Application\"/>" + NL + "      </application>" + NL + "   </extension>" + NL + "" + NL + "   <extension point=\"org.eclipse.ui.perspectives\">";
+
+	protected final String TEXT_49 = NL + "      <perspective" + NL + "            name=\"%_UI_Perspective_label\"" + NL + "            class=\"";
+
 	protected final String TEXT_50 = "$Perspective\"" + NL + "            id=\"";
-	protected final String TEXT_51 = "Perspective\">" + NL + "      </perspective>" + NL + "   </extension>" + NL + ""
-			+ NL + "   <extension point=\"org.eclipse.ui.commands\">";
-	protected final String TEXT_52 = NL + "      <command" + NL + "            name=\"%_UI_Menu_OpenURI_label\"" + NL
-			+ "            description=\"%_UI_Menu_OpenURI_description\"" + NL
+
+	protected final String TEXT_51 = "Perspective\">" + NL + "      </perspective>" + NL + "   </extension>" + NL + "" + NL + "   <extension point=\"org.eclipse.ui.commands\">";
+
+	protected final String TEXT_52 = NL + "      <command" + NL + "            name=\"%_UI_Menu_OpenURI_label\"" + NL + "            description=\"%_UI_Menu_OpenURI_description\"" + NL
 			+ "            categoryId=\"org.eclipse.ui.category.file\"" + NL + "            id=\"";
+
 	protected final String TEXT_53 = "OpenURICommand\"/>";
-	protected final String TEXT_54 = NL + "      <command" + NL + "            name=\"%_UI_Menu_Open_label\"" + NL
-			+ "            description=\"%_UI_Menu_Open_description\"" + NL
+
+	protected final String TEXT_54 = NL + "      <command" + NL + "            name=\"%_UI_Menu_Open_label\"" + NL + "            description=\"%_UI_Menu_Open_description\"" + NL
 			+ "            categoryId=\"org.eclipse.ui.category.file\"" + NL + "            id=\"";
+
 	protected final String TEXT_55 = "OpenCommand\"/>";
+
 	protected final String TEXT_56 = NL + "   </extension>" + NL;
+
 	protected final String TEXT_57 = NL + "   <extension point=\"org.eclipse.ui.bindings\">";
+
 	protected final String TEXT_58 = NL + "      <key" + NL + "            commandId=\"";
-	protected final String TEXT_59 = "OpenURICommand\"" + NL + "            sequence=\"M1+U\"" + NL
-			+ "            schemeId=\"org.eclipse.ui.defaultAcceleratorConfiguration\"/>" + NL + "      <key" + NL
-			+ "            commandId=\"";
-	protected final String TEXT_60 = "OpenCommand\"" + NL + "            sequence=\"M1+O\"" + NL
-			+ "            schemeId=\"org.eclipse.ui.defaultAcceleratorConfiguration\"/>" + NL + "   </extension>";
+
+	protected final String TEXT_59 = "OpenURICommand\"" + NL + "            sequence=\"M1+U\"" + NL + "            schemeId=\"org.eclipse.ui.defaultAcceleratorConfiguration\"/>" + NL + "      <key"
+			+ NL + "            commandId=\"";
+
+	protected final String TEXT_60 = "OpenCommand\"" + NL + "            sequence=\"M1+O\"" + NL + "            schemeId=\"org.eclipse.ui.defaultAcceleratorConfiguration\"/>" + NL + "   </extension>";
+
 	protected final String TEXT_61 = NL + NL + "   <extension point=\"org.eclipse.ui.actionSets\">";
+
 	protected final String TEXT_62 = NL + "      <actionSet" + NL + "            label=\"%_UI_";
-	protected final String TEXT_63 = "_ActionSet_label\"" + NL + "            visible=\"true\"" + NL
-			+ "            id=\"";
-	protected final String TEXT_64 = "ActionSet\">" + NL + "         <action" + NL
-			+ "               label=\"%_UI_Menu_About_label\"" + NL + "               class=\"";
-	protected final String TEXT_65 = "$AboutAction\"" + NL + "               menubarPath=\"help/additions\"" + NL
-			+ "               id=\"";
-	protected final String TEXT_66 = "AboutAction\"/>" + NL + "         <action" + NL
-			+ "               label=\"%_UI_Menu_OpenURI_label\"" + NL + "               definitionId=\"";
+
+	protected final String TEXT_63 = "_ActionSet_label\"" + NL + "            visible=\"true\"" + NL + "            id=\"";
+
+	protected final String TEXT_64 = "ActionSet\">" + NL + "         <action" + NL + "               label=\"%_UI_Menu_About_label\"" + NL + "               class=\"";
+
+	protected final String TEXT_65 = "$AboutAction\"" + NL + "               menubarPath=\"help/additions\"" + NL + "               id=\"";
+
+	protected final String TEXT_66 = "AboutAction\"/>" + NL + "         <action" + NL + "               label=\"%_UI_Menu_OpenURI_label\"" + NL + "               definitionId=\"";
+
 	protected final String TEXT_67 = "OpenURICommand\"" + NL + "               class=\"";
-	protected final String TEXT_68 = "$OpenURIAction\"" + NL + "               menubarPath=\"file/additions\"" + NL
-			+ "               id=\"";
+
+	protected final String TEXT_68 = "$OpenURIAction\"" + NL + "               menubarPath=\"file/additions\"" + NL + "               id=\"";
+
 	protected final String TEXT_69 = "OpenURIAction\"/>";
-	protected final String TEXT_70 = NL + "         <action" + NL + "               label=\"%_UI_Menu_Open_label\"" + NL
-			+ "               definitionId=\"";
+
+	protected final String TEXT_70 = NL + "         <action" + NL + "               label=\"%_UI_Menu_Open_label\"" + NL + "               definitionId=\"";
+
 	protected final String TEXT_71 = "OpenCommand\"" + NL + "               class=\"";
-	protected final String TEXT_72 = "$OpenAction\"" + NL + "               menubarPath=\"file/additions\"" + NL
-			+ "               id=\"";
+
+	protected final String TEXT_72 = "$OpenAction\"" + NL + "               menubarPath=\"file/additions\"" + NL + "               id=\"";
+
 	protected final String TEXT_73 = "OpenAction\"/>";
+
 	protected final String TEXT_74 = NL + "      </actionSet>" + NL + "   </extension>";
+
 	protected final String TEXT_75 = "ActionSet\">" + NL + "         <action" + NL + "               label=\"%_UI_";
+
 	protected final String TEXT_76 = "_label\"" + NL + "               class=\"";
-	protected final String TEXT_77 = "$NewAction\"" + NL + "               menubarPath=\"file/new/additions\"" + NL
-			+ "               id=\"";
+
+	protected final String TEXT_77 = "$NewAction\"" + NL + "               menubarPath=\"file/new/additions\"" + NL + "               id=\"";
+
 	protected final String TEXT_78 = "NewAction\"/>" + NL + "      </actionSet>" + NL + "   </extension>";
+
 	protected final String TEXT_79 = NL + NL + "   <extension point=\"org.eclipse.ui.newWizards\">";
+
 	protected final String TEXT_80 = NL + "      <wizard" + NL + "            id=\"";
+
 	protected final String TEXT_81 = "ID\"" + NL + "            name=\"%_UI_";
+
 	protected final String TEXT_82 = "_label\"" + NL + "            class=\"";
-	protected final String TEXT_83 = "\"" + NL
-			+ "            category=\"org.polarsys.kitalpha.wizard.category/org.polarsys.kitalpha.mdeCoreTechnology.wizard.category\""
-			+ NL + "            icon=\"icons/full/obj16/";
+
+	protected final String TEXT_83 = "\"" + NL + "            category=\"org.polarsys.kitalpha.wizard.category/org.polarsys.kitalpha.mdeCoreTechnology.wizard.category\"" + NL
+			+ "            icon=\"icons/full/obj16/";
+
 	protected final String TEXT_84 = "ModelFile.gif\">" + NL + "         <description>%_UI_";
-	protected final String TEXT_85 = "_description</description>" + NL
-			+ "         <selection class=\"org.eclipse.core.resources.IResource\"/>" + NL + "      </wizard>" + NL
-			+ "   </extension>";
+
+	protected final String TEXT_85 = "_description</description>" + NL + "         <selection class=\"org.eclipse.core.resources.IResource\"/>" + NL + "      </wizard>" + NL + "   </extension>";
+
 	protected final String TEXT_86 = NL + NL + "   <extension point=\"org.eclipse.ui.editors\">";
+
 	protected final String TEXT_87 = NL + "      <editor" + NL + "            id=\"";
+
 	protected final String TEXT_88 = "_label\"" + NL + "            icon=\"icons/full/obj16/";
+
 	protected final String TEXT_89 = "ModelFile.gif\"";
+
 	protected final String TEXT_90 = NL + "            extensions=\"";
+
 	protected final String TEXT_91 = "\"" + NL + "            contributorClass=\"";
+
 	protected final String TEXT_92 = "\">";
+
 	protected final String TEXT_93 = NL + "         <contentTypeBinding contentTypeId=\"";
+
 	protected final String TEXT_94 = NL + "      </editor>" + NL + "   </extension>";
+
 	protected final String TEXT_95 = NL + NL + "</plugin>";
+
 	protected final String TEXT_96 = NL;
 
 	public PluginXML() {
@@ -244,8 +315,7 @@ public class PluginXML extends org.eclipse.egf.emf.pattern.editor.PluginXML {
 
 			final Map<String, Object> callParameters = new HashMap<String, Object>();
 			callParameters.put("argument", parameter);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.eclipse.egf.emf.pattern.base/egf/EMF_Pattern_Base.fcore#__h1VkCwtEd-jc5T-XaRJlg",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.eclipse.egf.emf.pattern.base/egf/EMF_Pattern_Base.fcore#__h1VkCwtEd-jc5T-XaRJlg",
 					new ExecutionContext((InternalPatternContext) ctx), callParameters);
 			stringBuffer.setLength(0);
 		}
@@ -319,8 +389,7 @@ public class PluginXML extends org.eclipse.egf.emf.pattern.editor.PluginXML {
 						stringBuffer.append(TEXT_18);
 					}
 					stringBuffer.append(TEXT_28);
-					stringBuffer.append(
-							genPackage.isXMIResource() ? "org.eclipse.emf.ecore.xmi" : "org.eclipse.core.runtime.xml");
+					stringBuffer.append(genPackage.isXMIResource() ? "org.eclipse.emf.ecore.xmi" : "org.eclipse.core.runtime.xml");
 					stringBuffer.append(TEXT_29);
 					stringBuffer.append(genPackage.getFileExtensions());
 					stringBuffer.append(TEXT_30);
@@ -379,12 +448,10 @@ public class PluginXML extends org.eclipse.egf.emf.pattern.editor.PluginXML {
 					}
 					stringBuffer.append(TEXT_23);
 					if (genPackage.isChildCreationExtenders()) {
-						Map<GenPackage, Map<GenClass, List<GenClass.ChildCreationData>>> extendedChildCreationData = ExtensionHelper
-								.getExtendedChildCreationData(genPackage);
+						Map<GenPackage, Map<GenClass, List<GenClass.ChildCreationData>>> extendedChildCreationData = ExtensionHelper.getExtendedChildCreationData(genPackage);
 						if (!extendedChildCreationData.isEmpty()) {
 							stringBuffer.append(TEXT_42);
-							for (Map.Entry<GenPackage, Map<GenClass, List<GenClass.ChildCreationData>>> entry : extendedChildCreationData
-									.entrySet()) {
+							for (Map.Entry<GenPackage, Map<GenClass, List<GenClass.ChildCreationData>>> entry : extendedChildCreationData.entrySet()) {
 								if (hasKey) {
 									stringBuffer.append(TEXT_17);
 									stringBuffer.append(key);
@@ -562,8 +629,7 @@ public class PluginXML extends org.eclipse.egf.emf.pattern.editor.PluginXML {
 		new Node.DataLeaf(ictx.getNode(), getClass(), "doGenerate", stringBuffer.toString());
 	}
 
-	protected void method_call_PluginXMLExtensionHook(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_call_PluginXMLExtensionHook(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		{
 			//<%@ egf:patternCall patternId="platform:/plugin/org.polarsys.kitalpha.emde.egf/egf/eMDE_EMF_Extension.fcore#LogicalName=org.polarsys.kitalpha.emde.egf.editor.EditorPluginXMLExtensionHook" args="parameter:genModel,targetPathName:targetPathName"%>
@@ -575,19 +641,17 @@ public class PluginXML extends org.eclipse.egf.emf.pattern.editor.PluginXML {
 			final Map<String, Object> callParameters = new HashMap<String, Object>();
 			callParameters.put("genModel", parameter);
 			callParameters.put("targetPathName", targetPathName);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.emde.egf/egf/eMDE_EMF_Extension.fcore#_WPDpADA4EeCJ8qG0PlPcqA",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.emde.egf/egf/eMDE_EMF_Extension.fcore#_WPDpADA4EeCJ8qG0PlPcqA",
 					new ExecutionContext((InternalPatternContext) ctx), callParameters);
 			stringBuffer.setLength(0);
 		}
 
-		stringBuffer.append(TEXT_96);
+		stringBuffer.append(TEXT_2);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "call_PluginXMLExtensionHook", stringBuffer.toString());
 	}
 
-	protected void method_setReporterVariables(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_setReporterVariables(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		GenModel genModel = parameter;
 		targetPathName = genModel.getEditorProjectDirectory() + "/plugin.xml";

@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.style;
 
 import java.util.*;
@@ -21,12 +21,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.SiriusSyst
 import org.eclipse.sirius.viewpoint.description.SystemColor;
 import org.eclipse.sirius.viewpoint.description.SystemColors;
 
-public class ColorCustomizationPattern extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.common.AbstractStyleCustomizationPattern {
+public class ColorCustomizationPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.common.AbstractStyleCustomizationPattern {
 
 	public ColorCustomizationPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -67,8 +67,7 @@ public class ColorCustomizationPattern extends
 			parameters.put("appliedOn", this.appliedOn);
 			parameters.put("stylePropertyData", this.borderColor);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_VpyWIGz4EeWW0teG0FdF7g",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_VpyWIGz4EeWW0teG0FdF7g",
 					ctx_local, parameters);
 		}
 		{
@@ -78,8 +77,7 @@ public class ColorCustomizationPattern extends
 			parameters.put("appliedOn", this.appliedOn);
 			parameters.put("stylePropertyData", this.backgroundColor);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_VpyWIGz4EeWW0teG0FdF7g",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_VpyWIGz4EeWW0teG0FdF7g",
 					ctx_local, parameters);
 		}
 		{
@@ -89,8 +87,7 @@ public class ColorCustomizationPattern extends
 			parameters.put("appliedOn", this.appliedOn);
 			parameters.put("stylePropertyData", this.foregroundColor);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_VpyWIGz4EeWW0teG0FdF7g",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_VpyWIGz4EeWW0teG0FdF7g",
 					ctx_local, parameters);
 		}
 		{
@@ -100,8 +97,7 @@ public class ColorCustomizationPattern extends
 			parameters.put("appliedOn", this.colorAppliedOn);
 			parameters.put("stylePropertyData", this.color);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_VpyWIGz4EeWW0teG0FdF7g",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_VpyWIGz4EeWW0teG0FdF7g",
 					ctx_local, parameters);
 		}
 		{
@@ -111,8 +107,7 @@ public class ColorCustomizationPattern extends
 			parameters.put("appliedOn", this.strokeColorAppliedOn);
 			parameters.put("stylePropertyData", this.strokeColor);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_VpyWIGz4EeWW0teG0FdF7g",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_VpyWIGz4EeWW0teG0FdF7g",
 					ctx_local, parameters);
 		}
 		ictx.setNode(currentNode);
@@ -137,8 +132,7 @@ public class ColorCustomizationPattern extends
 		if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getColorCustomization_Color())) {
 			final ColorUseCase colorUseCase = parameter.getColorUseCase();
 			if (colorUseCase.equals(ColorUseCase.BORDER)) {
-				set_borderColor(new StylePropertyNameValueCouple("borderColor",
-						SiriusSystemColorHelper.getSystemColorDescription(parameter.getColor().getName())));
+				set_borderColor(new StylePropertyNameValueCouple("borderColor", SiriusSystemColorHelper.getSystemColorDescription(parameter.getColor().getName())));
 			}
 		}
 
@@ -150,8 +144,7 @@ public class ColorCustomizationPattern extends
 		if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getColorCustomization_Color())) {
 			final ColorUseCase colorUseCase = parameter.getColorUseCase();
 			if (colorUseCase.equals(ColorUseCase.BACKGROUND)) {
-				set_backgroundColor(new StylePropertyNameValueCouple("backgroundColor",
-						SiriusSystemColorHelper.getSystemColorDescription(parameter.getColor().getName())));
+				set_backgroundColor(new StylePropertyNameValueCouple("backgroundColor", SiriusSystemColorHelper.getSystemColorDescription(parameter.getColor().getName())));
 			}
 		}
 
@@ -163,8 +156,7 @@ public class ColorCustomizationPattern extends
 		if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getColorCustomization_Color())) {
 			final ColorUseCase colorUseCase = parameter.getColorUseCase();
 			if (colorUseCase.equals(ColorUseCase.FOREGROUND)) {
-				set_foregroundColor(new StylePropertyNameValueCouple("foregroundColor",
-						SiriusSystemColorHelper.getSystemColorDescription(parameter.getColor().getName())));
+				set_foregroundColor(new StylePropertyNameValueCouple("foregroundColor", SiriusSystemColorHelper.getSystemColorDescription(parameter.getColor().getName())));
 			}
 		}
 
@@ -172,8 +164,7 @@ public class ColorCustomizationPattern extends
 		new Node.DataLeaf(ictx.getNode(), getClass(), "initForegroundColorData", out.toString());
 	}
 
-	protected void method_initColorAndStrokeColorData(final StringBuffer out, final PatternContext ctx)
-			throws Exception {
+	protected void method_initColorAndStrokeColorData(final StringBuffer out, final PatternContext ctx) throws Exception {
 		if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getColorCustomization_Color())) {
 			final ColorUseCase colorUseCase = parameter.getColorUseCase();
 			if (colorUseCase.equals(ColorUseCase.COLOR)) {
@@ -211,43 +202,37 @@ public class ColorCustomizationPattern extends
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.ColorCustomization parameter;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.ColorCustomization parameter) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.ColorCustomization parameter) {
 		this.parameter = parameter;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple borderColor;
 
-	public void set_borderColor(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple borderColor) {
+	public void set_borderColor(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple borderColor) {
 		this.borderColor = borderColor;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple backgroundColor;
 
-	public void set_backgroundColor(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple backgroundColor) {
+	public void set_backgroundColor(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple backgroundColor) {
 		this.backgroundColor = backgroundColor;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple foregroundColor;
 
-	public void set_foregroundColor(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple foregroundColor) {
+	public void set_foregroundColor(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple foregroundColor) {
 		this.foregroundColor = foregroundColor;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple color;
 
-	public void set_color(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple color) {
+	public void set_color(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple color) {
 		this.color = color;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple strokeColor;
 
-	public void set_strokeColor(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple strokeColor) {
+	public void set_strokeColor(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple strokeColor) {
 		this.strokeColor = strokeColor;
 	}
 

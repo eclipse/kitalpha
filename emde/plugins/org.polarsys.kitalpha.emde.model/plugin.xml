@@ -3,7 +3,7 @@
 
 <!--
 #
-# 	Copyright (c) THALES, 2007-2010. All rights reserved.
+#      Copyright (c) THALES, 2007-2010. All rights reserved.
 #
 -->
 <plugin>
@@ -11,12 +11,14 @@
    
 <!--@generated-->
   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated eMDE -->
       <package class="org.polarsys.kitalpha.emde.model.EmdePackage" genModel="model/eMDE.genmodel" uri="http://www.polarsys.org/kitalpha/emde/1.0.0"/>
    </extension>
 
    
 <!--@generated-->
   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated eMDE -->
       <parser class="org.polarsys.kitalpha.emde.model.util.EmdeResourceFactoryImpl" type="emde"/>
    </extension>
 

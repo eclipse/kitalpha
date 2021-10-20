@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.clazz.content;
 
 import java.util.*;
@@ -16,12 +16,12 @@ import org.polarsys.kitalpha.ad.ta.extension.TargetApplicationExtensionManager;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.configuration.VpDslConfigurationHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.AbstractSuperClass;
 
-public class ClassInheritenceFromDefaultClasses
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.abstracts.ClassAbstractPattern {
+public class ClassInheritenceFromDefaultClasses extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.abstracts.ClassAbstractPattern {
 
 	public ClassInheritenceFromDefaultClasses() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -74,8 +74,7 @@ public class ClassInheritenceFromDefaultClasses
 		//}
 
 		if (superClasses.size() == 0) {
-			String taName = VpDslConfigurationHelper
-					.getTargetApplication(VpdslDescriptionModelManager.INSTANCE.getVpDescriptionElement());
+			String taName = VpDslConfigurationHelper.getTargetApplication(VpdslDescriptionModelManager.INSTANCE.getVpDescriptionElement());
 			if (taName != null && taName.trim().length() > 0) {
 				ITargetApplication ta = TargetApplicationExtensionManager.getTargetApplicationClass(taName);
 				if (ta != null) {

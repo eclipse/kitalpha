@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common;
 
 import java.util.*;
@@ -10,12 +10,12 @@ import org.eclipse.egf.common.helper.*;
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.GenerationUtil;
 
-public class DoremiElementPattern
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.AbstractDiagramPattern {
+public class DoremiElementPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.AbstractDiagramPattern {
 
 	public DoremiElementPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -50,8 +50,7 @@ public class DoremiElementPattern
 		new Node.DataLeaf(ictx.getNode(), getClass(), "setParentMapping", out.toString());
 	}
 
-	protected void method_registerElementsInGenerationMap(final StringBuffer out, final PatternContext ctx)
-			throws Exception {
+	protected void method_registerElementsInGenerationMap(final StringBuffer out, final PatternContext ctx) throws Exception {
 		if (dslvpElement != null && doremiElement != null) {
 			GenerationUtil.addObjectMapping(dslvpElement, doremiElement);
 		}

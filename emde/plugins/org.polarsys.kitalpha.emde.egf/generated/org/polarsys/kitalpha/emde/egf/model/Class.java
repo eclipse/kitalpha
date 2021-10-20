@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201906060805
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.emde.egf.model;
 
 import org.eclipse.egf.emf.pattern.base.*;
@@ -27,333 +27,571 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+
 	protected final String TEXT_1 = "";
+
 	protected final String TEXT_2 = NL + "package ";
+
 	protected final String TEXT_3 = ";";
+
 	protected final String TEXT_4 = NL;
-	protected final String TEXT_5 = NL + "/**" + NL + " * <!-- begin-user-doc -->" + NL
-			+ " * An implementation of the model object '<em><b>";
+
+	protected final String TEXT_5 = NL + "/**" + NL + " * <!-- begin-user-doc -->" + NL + " * An implementation of the model object '<em><b>";
+
 	protected final String TEXT_6 = "</b></em>'." + NL + " * <!-- end-user-doc -->";
-	protected final String TEXT_7 = NL + " * <p>" + NL + " * The following features are implemented:" + NL + " * </p>"
-			+ NL + " * <ul>";
+
+	protected final String TEXT_7 = NL + " * <p>" + NL + " * The following features are implemented:" + NL + " * </p>" + NL + " * <ul>";
+
 	protected final String TEXT_8 = NL + " *   <li>{@link ";
+
 	protected final String TEXT_9 = "#";
+
 	protected final String TEXT_10 = " <em>";
+
 	protected final String TEXT_11 = "</em>}</li>";
+
 	protected final String TEXT_12 = NL + " * </ul>";
+
 	protected final String TEXT_13 = NL + " *";
+
 	protected final String TEXT_14 = NL + " * ";
+
 	protected final String TEXT_15 = NL + " * @generated" + NL + " */";
+
 	protected final String TEXT_16 = NL + "@Deprecated";
+
 	protected final String TEXT_17 = NL + "@SuppressWarnings(\"deprecation\")";
+
 	protected final String TEXT_18 = NL + "public";
+
 	protected final String TEXT_19 = " abstract";
+
 	protected final String TEXT_20 = " class ";
+
 	protected final String TEXT_21 = NL + "public interface ";
+
 	protected final String TEXT_22 = NL + "{";
-	protected final String TEXT_23 = NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->" + NL
-			+ "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */" + NL + "\t";
+
+	protected final String TEXT_23 = NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */" + NL + "\t";
+
 	protected final String TEXT_24 = " copyright = ";
-	protected final String TEXT_25 = NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->" + NL
-			+ "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */" + NL + "\tpublic static final ";
+
+	protected final String TEXT_25 = NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */" + NL + "\tpublic static final ";
+
 	protected final String TEXT_26 = " mofDriverNumber = \"";
+
 	protected final String TEXT_27 = "\";";
-	protected final String TEXT_28 = NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->" + NL
-			+ "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */" + NL
+
+	protected final String TEXT_28 = NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */" + NL
 			+ "\tprivate static final long serialVersionUID = 1L;" + NL;
-	protected final String TEXT_29 = NL + "\t/**" + NL
-			+ "\t * An array of objects representing the values of non-primitive features." + NL
-			+ "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL
-			+ "\t */";
+
+	protected final String TEXT_29 = NL + "\t/**" + NL + "\t * An array of objects representing the values of non-primitive features." + NL + "\t * <!-- begin-user-doc -->" + NL
+			+ "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */";
+
 	protected final String TEXT_30 = NL + "\t@";
+
 	protected final String TEXT_31 = NL + "\tprotected Object[] ";
+
 	protected final String TEXT_32 = ";" + NL;
-	protected final String TEXT_33 = NL + "\t/**" + NL
-			+ "\t * A bit field representing the indices of non-primitive feature values." + NL
-			+ "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL
-			+ "\t */";
+
+	protected final String TEXT_33 = NL + "\t/**" + NL + "\t * A bit field representing the indices of non-primitive feature values." + NL + "\t * <!-- begin-user-doc -->" + NL
+			+ "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */";
+
 	protected final String TEXT_34 = NL + "\tprotected int ";
-	protected final String TEXT_35 = NL + "\t/**" + NL
-			+ "\t * A set of bit flags representing the values of boolean attributes and whether unsettable features have been set."
-			+ NL + "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL
-			+ "\t * @ordered" + NL + "\t */";
+
+	protected final String TEXT_35 = NL + "\t/**" + NL + "\t * A set of bit flags representing the values of boolean attributes and whether unsettable features have been set." + NL
+			+ "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t * @ordered" + NL + "\t */";
+
 	protected final String TEXT_36 = " = 0;" + NL;
+
 	protected final String TEXT_37 = NL + "\t/**" + NL + "\t * The empty value for the '{@link #";
+
 	protected final String TEXT_38 = "() <em>";
-	protected final String TEXT_39 = "</em>}' array accessor." + NL
-			+ "\t * This is specialized for the more specific element type known in this context." + NL
-			+ "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @see #";
+
+	protected final String TEXT_39 = "</em>}' array accessor." + NL + "\t * This is specialized for the more specific element type known in this context." + NL + "\t * <!-- begin-user-doc -->" + NL
+			+ "\t * <!-- end-user-doc -->" + NL + "\t * @see #";
+
 	protected final String TEXT_40 = "()";
+
 	protected final String TEXT_41 = NL + "\t * ";
+
 	protected final String TEXT_42 = NL + "\t * @generated" + NL + "\t * @ordered" + NL + "\t */";
+
 	protected final String TEXT_43 = NL + "\t@Deprecated";
+
 	protected final String TEXT_44 = NL + "\t@SuppressWarnings(\"rawtypes\")";
+
 	protected final String TEXT_45 = NL + "\tprotected static final ";
+
 	protected final String TEXT_46 = "[] ";
+
 	protected final String TEXT_47 = "_EEMPTY_ARRAY = new ";
+
 	protected final String TEXT_48 = " [0]";
-	protected final String TEXT_49 = NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->" + NL
-			+ "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */" + NL + "\tprivate static final int ";
+
+	protected final String TEXT_49 = NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */" + NL
+			+ "\tprivate static final int ";
+
 	protected final String TEXT_50 = " = ";
+
 	protected final String TEXT_51 = ".getFeatureID(";
+
 	protected final String TEXT_52 = ") - ";
-	protected final String TEXT_53 = NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->" + NL
-			+ "\t * <!-- end-user-doc -->";
+
+	protected final String TEXT_53 = NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->";
+
 	protected final String TEXT_54 = NL + "\t * @generated" + NL + "\t */";
+
 	protected final String TEXT_55 = NL + "\tprivate static final int ";
-	protected final String TEXT_56 = NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->" + NL
-			+ "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */" + NL
+
+	protected final String TEXT_56 = NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */" + NL
 			+ "\tprivate static final int EOPERATION_OFFSET_CORRECTION = ";
+
 	protected final String TEXT_57 = ".getOperationID(";
+
 	protected final String TEXT_58 = "public";
+
 	protected final String TEXT_59 = "protected";
+
 	protected final String TEXT_60 = " ";
+
 	protected final String TEXT_61 = "()" + NL + "\t{";
+
 	protected final String TEXT_62 = NL + "\t\t";
+
 	protected final String TEXT_63 = " |= ";
+
 	protected final String TEXT_64 = "_EFLAG";
+
 	protected final String TEXT_65 = "_DEFAULT";
-	protected final String TEXT_66 = NL + "\t}" + NL + "" + NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->" + NL
-			+ "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */";
+
+	protected final String TEXT_66 = NL + "\t}" + NL + "" + NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */";
+
 	protected final String TEXT_67 = NL + "\t@Override";
+
 	protected final String TEXT_68 = NL + "\tprotected ";
+
 	protected final String TEXT_69 = " eStaticClass()" + NL + "\t{" + NL + "\t\treturn ";
+
 	protected final String TEXT_70 = ";" + NL + "\t}" + NL;
-	protected final String TEXT_71 = NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->" + NL
-			+ "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */";
+
+	protected final String TEXT_71 = NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */";
+
 	protected final String TEXT_72 = NL + "\t@SuppressWarnings(\"unchecked\")";
+
 	protected final String TEXT_73 = NL + "\tpublic ";
+
 	protected final String TEXT_74 = " eInverseAdd(";
+
 	protected final String TEXT_75 = " otherEnd, int featureID, ";
+
 	protected final String TEXT_76 = " msgs)" + NL + "\t{" + NL + "\t\tswitch (featureID";
+
 	protected final String TEXT_77 = ")" + NL + "\t\t{";
+
 	protected final String TEXT_78 = NL + "\t\t\tcase ";
+
 	protected final String TEXT_79 = ":";
+
 	protected final String TEXT_80 = NL + "\t\t\t\treturn ((";
+
 	protected final String TEXT_81 = "(";
+
 	protected final String TEXT_82 = ".InternalMapView";
+
 	protected final String TEXT_83 = ")";
+
 	protected final String TEXT_84 = "()).eMap()).basicAdd(otherEnd, msgs);";
+
 	protected final String TEXT_85 = NL + "\t\t\t\treturn (";
+
 	protected final String TEXT_86 = "()).basicAdd(otherEnd, msgs);";
-	protected final String TEXT_87 = NL + "\t\t\t\tif (eInternalContainer() != null)" + NL
-			+ "\t\t\t\t\tmsgs = eBasicRemoveFromContainer(msgs);";
+
+	protected final String TEXT_87 = NL + "\t\t\t\tif (eInternalContainer() != null)" + NL + "\t\t\t\t\tmsgs = eBasicRemoveFromContainer(msgs);";
+
 	protected final String TEXT_88 = NL + "\t\t\t\treturn basicSet";
+
 	protected final String TEXT_89 = "((";
+
 	protected final String TEXT_90 = ")otherEnd, msgs);";
+
 	protected final String TEXT_91 = NL + "\t\t\t\treturn eBasicSetContainer(otherEnd, ";
+
 	protected final String TEXT_92 = ", msgs);";
+
 	protected final String TEXT_93 = NL + "\t\t\t\t";
+
 	protected final String TEXT_94 = " = (";
+
 	protected final String TEXT_95 = ")eVirtualGet(";
+
 	protected final String TEXT_96 = ");";
+
 	protected final String TEXT_97 = "basicGet";
+
 	protected final String TEXT_98 = "();";
+
 	protected final String TEXT_99 = NL + "\t\t\t\tif (";
+
 	protected final String TEXT_100 = " != null)";
+
 	protected final String TEXT_101 = NL + "\t\t\t\t\tmsgs = ";
+
 	protected final String TEXT_102 = ".eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ";
+
 	protected final String TEXT_103 = ", null, msgs);";
+
 	protected final String TEXT_104 = ".eInverseRemove(this, ";
+
 	protected final String TEXT_105 = ", ";
+
 	protected final String TEXT_106 = ".class, msgs);";
+
 	protected final String TEXT_107 = NL + "\t\t\tdefault:";
+
 	protected final String TEXT_108 = NL + "\t\t}";
+
 	protected final String TEXT_109 = "\t\treturn super.eInverseAdd(otherEnd, featureID, msgs);";
+
 	protected final String TEXT_110 = "\t\treturn eDynamicInverseAdd(otherEnd, featureID, msgs);";
+
 	protected final String TEXT_111 = NL + "\t}" + NL;
+
 	protected final String TEXT_112 = " eInverseRemove(";
+
 	protected final String TEXT_113 = ")((";
+
 	protected final String TEXT_114 = "()).eMap()).basicRemove(otherEnd, msgs);";
+
 	protected final String TEXT_115 = ".Internal.Wrapper)";
+
 	protected final String TEXT_116 = "()).featureMap()).basicRemove(otherEnd, msgs);";
+
 	protected final String TEXT_117 = "()).basicRemove(otherEnd, msgs);";
+
 	protected final String TEXT_118 = NL + "\t\t\t\treturn eBasicSetContainer(null, ";
+
 	protected final String TEXT_119 = NL + "\t\t\t\treturn basicUnset";
+
 	protected final String TEXT_120 = "(msgs);";
+
 	protected final String TEXT_121 = "(null, msgs);";
+
 	protected final String TEXT_122 = "\t\treturn super.eInverseRemove(otherEnd, featureID, msgs);";
+
 	protected final String TEXT_123 = "\t\treturn eDynamicInverseRemove(otherEnd, featureID, msgs);";
+
 	protected final String TEXT_124 = " eBasicRemoveFromContainerFeature(";
+
 	protected final String TEXT_125 = " msgs)" + NL + "\t{" + NL + "\t\tswitch (eContainerFeatureID()";
+
 	protected final String TEXT_126 = ":" + NL + "\t\t\t\treturn eInternalContainer().eInverseRemove(this, ";
+
 	protected final String TEXT_127 = "\t\treturn super.eBasicRemoveFromContainerFeature(msgs);";
+
 	protected final String TEXT_128 = "\t\treturn eDynamicBasicRemoveFromContainer(msgs);";
-	protected final String TEXT_129 = NL + "\tpublic Object eGet(int featureID, boolean resolve, boolean coreType)" + NL
-			+ "\t{" + NL + "\t\tswitch (featureID";
+
+	protected final String TEXT_129 = NL + "\tpublic Object eGet(int featureID, boolean resolve, boolean coreType)" + NL + "\t{" + NL + "\t\tswitch (featureID";
+
 	protected final String TEXT_130 = NL + "\t\t\t\treturn ";
+
 	protected final String TEXT_131 = "() ? Boolean.TRUE : Boolean.FALSE;";
+
 	protected final String TEXT_132 = NL + "\t\t\t\treturn new ";
+
 	protected final String TEXT_133 = "());";
+
 	protected final String TEXT_134 = NL + "\t\t\t\tif (resolve) return ";
+
 	protected final String TEXT_135 = "();" + NL + "\t\t\t\treturn basicGet";
+
 	protected final String TEXT_136 = NL + "\t\t\t\tif (coreType) return ((";
+
 	protected final String TEXT_137 = "()).eMap();" + NL + "\t\t\t\telse return ";
+
 	protected final String TEXT_138 = NL + "\t\t\t\tif (coreType) return ";
+
 	protected final String TEXT_139 = "();" + NL + "\t\t\t\telse return ";
+
 	protected final String TEXT_140 = "().map();";
+
 	protected final String TEXT_141 = "()).featureMap();" + NL + "\t\t\t\treturn ";
+
 	protected final String TEXT_142 = "();" + NL + "\t\t\t\treturn ((";
+
 	protected final String TEXT_143 = ".Internal)";
+
 	protected final String TEXT_144 = "()).getWrapper();";
+
 	protected final String TEXT_145 = "\t\treturn super.eGet(featureID, resolve, coreType);";
+
 	protected final String TEXT_146 = "\t\treturn eDynamicGet(featureID, resolve, coreType);";
-	protected final String TEXT_147 = NL + "\tpublic void eSet(int featureID, Object newValue)" + NL + "\t{" + NL
-			+ "\t\tswitch (featureID";
+
+	protected final String TEXT_147 = NL + "\tpublic void eSet(int featureID, Object newValue)" + NL + "\t{" + NL + "\t\tswitch (featureID";
+
 	protected final String TEXT_148 = NL + "\t\t\t\t((";
+
 	protected final String TEXT_149 = ".Internal)((";
+
 	protected final String TEXT_150 = "()).featureMap()).set(newValue);";
+
 	protected final String TEXT_151 = "()).set(newValue);";
+
 	protected final String TEXT_152 = ".Setting)((";
+
 	protected final String TEXT_153 = "()).eMap()).set(newValue);";
+
 	protected final String TEXT_154 = ".Setting)";
+
 	protected final String TEXT_155 = "().clear();" + NL + "\t\t\t\t";
+
 	protected final String TEXT_156 = "().addAll((";
+
 	protected final String TEXT_157 = "<? extends ";
+
 	protected final String TEXT_158 = ">";
+
 	protected final String TEXT_159 = ")newValue);";
+
 	protected final String TEXT_160 = NL + "\t\t\t\tset";
+
 	protected final String TEXT_161 = "(((";
+
 	protected final String TEXT_162 = ")newValue).";
+
 	protected final String TEXT_163 = "newValue);";
+
 	protected final String TEXT_164 = NL + "\t\t\t\treturn;";
+
 	protected final String TEXT_165 = "\t\tsuper.eSet(featureID, newValue);";
+
 	protected final String TEXT_166 = "\t\teDynamicSet(featureID, newValue);";
+
 	protected final String TEXT_167 = NL + "\tpublic int eBaseStructuralFeatureID(int derivedFeatureID, Class";
+
 	protected final String TEXT_168 = " baseClass)" + NL + "\t{";
+
 	protected final String TEXT_169 = NL + "\t\tif (baseClass == ";
+
 	protected final String TEXT_170 = ".class)" + NL + "\t\t{" + NL + "\t\t\tswitch (derivedFeatureID";
+
 	protected final String TEXT_171 = ")" + NL + "\t\t\t{";
+
 	protected final String TEXT_172 = NL + "\t\t\t\tcase ";
+
 	protected final String TEXT_173 = ": return ";
+
 	protected final String TEXT_174 = NL + "\t\t\t\tdefault: return -1;" + NL + "\t\t\t}" + NL + "\t\t}";
-	protected final String TEXT_175 = NL + "\t\treturn super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);"
-			+ NL + "\t}";
-	protected final String TEXT_176 = NL + NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->" + NL
-			+ "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */";
+
+	protected final String TEXT_175 = NL + "\t\treturn super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);" + NL + "\t}";
+
+	protected final String TEXT_176 = NL + NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */";
+
 	protected final String TEXT_177 = NL + "\tpublic int eDerivedStructuralFeatureID(int baseFeatureID, Class";
+
 	protected final String TEXT_178 = ".class)" + NL + "\t\t{" + NL + "\t\t\tswitch (baseFeatureID)" + NL + "\t\t\t{";
+
 	protected final String TEXT_179 = ".class)" + NL + "\t\t{" + NL + "\t\t\tswitch (baseFeatureID";
-	protected final String TEXT_180 = NL + "\t\treturn super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);"
-			+ NL + "\t}" + NL;
+
+	protected final String TEXT_180 = NL + "\t\treturn super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);" + NL + "\t}" + NL;
+
 	protected final String TEXT_181 = NL + "\tpublic int eDerivedOperationID(int baseOperationID, Class";
+
 	protected final String TEXT_182 = ".class)" + NL + "\t\t{" + NL + "\t\t\tswitch (baseOperationID)" + NL + "\t\t\t{";
-	protected final String TEXT_183 = NL
-			+ "\t\t\t\tdefault: return super.eDerivedOperationID(baseOperationID, baseClass);" + NL + "\t\t\t}" + NL
-			+ "\t\t}";
+
+	protected final String TEXT_183 = NL + "\t\t\t\tdefault: return super.eDerivedOperationID(baseOperationID, baseClass);" + NL + "\t\t\t}" + NL + "\t\t}";
+
 	protected final String TEXT_184 = ".class)" + NL + "\t\t{" + NL + "\t\t\tswitch (baseOperationID";
-	protected final String TEXT_185 = NL + "\t\treturn super.eDerivedOperationID(baseOperationID, baseClass);" + NL
-			+ "\t}" + NL;
+
+	protected final String TEXT_185 = NL + "\t\treturn super.eDerivedOperationID(baseOperationID, baseClass);" + NL + "\t}" + NL;
+
 	protected final String TEXT_186 = NL + "\tprotected Object[] eVirtualValues()" + NL + "\t{" + NL + "\t\treturn ";
-	protected final String TEXT_187 = ";" + NL + "\t}" + NL + "" + NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->"
-			+ NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */";
-	protected final String TEXT_188 = NL + "\tprotected void eSetVirtualValues(Object[] newValues)" + NL + "\t{" + NL
-			+ "\t\t";
+
+	protected final String TEXT_187 = ";" + NL + "\t}" + NL + "" + NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */";
+
+	protected final String TEXT_188 = NL + "\tprotected void eSetVirtualValues(Object[] newValues)" + NL + "\t{" + NL + "\t\t";
+
 	protected final String TEXT_189 = " = newValues;" + NL + "\t}" + NL;
-	protected final String TEXT_190 = NL + "\tprotected int eVirtualIndexBits(int offset)" + NL + "\t{" + NL
-			+ "\t\tswitch (offset)" + NL + "\t\t{";
+
+	protected final String TEXT_190 = NL + "\tprotected int eVirtualIndexBits(int offset)" + NL + "\t{" + NL + "\t\tswitch (offset)" + NL + "\t\t{";
+
 	protected final String TEXT_191 = " :" + NL + "\t\t\t\treturn ";
-	protected final String TEXT_192 = NL + "\t\t\tdefault :" + NL + "\t\t\t\tthrow new IndexOutOfBoundsException();"
-			+ NL + "\t\t}" + NL + "\t}" + NL + "" + NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->" + NL
-			+ "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */";
-	protected final String TEXT_193 = NL + "\tprotected void eSetVirtualIndexBits(int offset, int newIndexBits)" + NL
-			+ "\t{" + NL + "\t\tswitch (offset)" + NL + "\t\t{";
+
+	protected final String TEXT_192 = NL + "\t\t\tdefault :" + NL + "\t\t\t\tthrow new IndexOutOfBoundsException();" + NL + "\t\t}" + NL + "\t}" + NL + "" + NL + "\t/**" + NL
+			+ "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */";
+
+	protected final String TEXT_193 = NL + "\tprotected void eSetVirtualIndexBits(int offset, int newIndexBits)" + NL + "\t{" + NL + "\t\tswitch (offset)" + NL + "\t\t{";
+
 	protected final String TEXT_194 = " :" + NL + "\t\t\t\t";
+
 	protected final String TEXT_195 = " = newIndexBits;" + NL + "\t\t\t\tbreak;";
-	protected final String TEXT_196 = NL + "\t\t\tdefault :" + NL + "\t\t\t\tthrow new IndexOutOfBoundsException();"
-			+ NL + "\t\t}" + NL + "\t}" + NL;
+
+	protected final String TEXT_196 = NL + "\t\t\tdefault :" + NL + "\t\t\t\tthrow new IndexOutOfBoundsException();" + NL + "\t\t}" + NL + "\t}" + NL;
+
 	protected final String TEXT_197 = NL + "\t@SuppressWarnings(";
+
 	protected final String TEXT_198 = "\"unchecked\"";
+
 	protected final String TEXT_199 = "{\"rawtypes\", \"unchecked\" }";
+
 	protected final String TEXT_200 = NL + "\tpublic Object eInvoke(int operationID, ";
+
 	protected final String TEXT_201 = " arguments) throws ";
+
 	protected final String TEXT_202 = NL + "\t{" + NL + "\t\tswitch (operationID";
+
 	protected final String TEXT_203 = NL + "\t\t\t\ttry" + NL + "\t\t\t\t{";
+
 	protected final String TEXT_204 = "arguments.get(";
+
 	protected final String TEXT_205 = ").";
+
 	protected final String TEXT_206 = ");" + NL + "\t\t\t\t";
+
 	protected final String TEXT_207 = "return null;";
+
 	protected final String TEXT_208 = "return ";
+
 	protected final String TEXT_209 = "new ";
+
 	protected final String TEXT_210 = NL + "\t\t\t\t}" + NL + "\t\t\t\tcatch (";
+
 	protected final String TEXT_211 = " throwable)" + NL + "\t\t\t\t{" + NL + "\t\t\t\t\tthrow new ";
+
 	protected final String TEXT_212 = "(throwable);" + NL + "\t\t\t\t}";
+
 	protected final String TEXT_213 = "\t\treturn super.eInvoke(operationID, arguments);";
+
 	protected final String TEXT_214 = "\t\treturn eDynamicInvoke(operationID, arguments);";
-	protected final String TEXT_215 = NL + "\tpublic String toString()" + NL + "\t{" + NL
-			+ "\t\tif (eIsProxy()) return super.toString();" + NL + "" + NL + "\t\t";
+
+	protected final String TEXT_215 = NL + "\tpublic String toString()" + NL + "\t{" + NL + "\t\tif (eIsProxy()) return super.toString();" + NL + "" + NL + "\t\t";
+
 	protected final String TEXT_216 = " result = new ";
+
 	protected final String TEXT_217 = "(super.toString());";
+
 	protected final String TEXT_218 = NL + "\t\tresult.append(\" (";
+
 	protected final String TEXT_219 = ": \");";
+
 	protected final String TEXT_220 = NL + "\t\tresult.append(\", ";
+
 	protected final String TEXT_221 = NL + "\t\tif (eVirtualIsSet(";
+
 	protected final String TEXT_222 = ")) result.append(eVirtualGet(";
+
 	protected final String TEXT_223 = ")); else result.append(\"<unset>\");";
+
 	protected final String TEXT_224 = NL + "\t\tif (";
+
 	protected final String TEXT_225 = " & ";
+
 	protected final String TEXT_226 = "_ESETFLAG) != 0";
+
 	protected final String TEXT_227 = "ESet";
+
 	protected final String TEXT_228 = ") result.append((";
+
 	protected final String TEXT_229 = "_EFLAG) != 0); else result.append(\"<unset>\");";
+
 	protected final String TEXT_230 = ") result.append(";
+
 	protected final String TEXT_231 = "_EFLAG_VALUES[(";
+
 	protected final String TEXT_232 = "_EFLAG) >>> ";
+
 	protected final String TEXT_233 = "_EFLAG_OFFSET]); else result.append(\"<unset>\");";
+
 	protected final String TEXT_234 = "); else result.append(\"<unset>\");";
+
 	protected final String TEXT_235 = NL + "\t\tresult.append(eVirtualGet(";
+
 	protected final String TEXT_236 = "));";
+
 	protected final String TEXT_237 = NL + "\t\tresult.append((";
+
 	protected final String TEXT_238 = "_EFLAG) != 0);";
+
 	protected final String TEXT_239 = NL + "\t\tresult.append(";
+
 	protected final String TEXT_240 = "_EFLAG_OFFSET]);";
-	protected final String TEXT_241 = NL + "\t\tresult.append(')');" + NL + "\t\treturn result.toString();" + NL + "\t}"
-			+ NL;
-	protected final String TEXT_242 = NL + "\tprotected int hash = -1;" + NL + "" + NL + "\t/**" + NL
-			+ "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL
+
+	protected final String TEXT_241 = NL + "\t\tresult.append(')');" + NL + "\t\treturn result.toString();" + NL + "\t}" + NL;
+
+	protected final String TEXT_242 = NL + "\tprotected int hash = -1;" + NL + "" + NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL
 			+ "\t */";
-	protected final String TEXT_243 = NL + "\tpublic int getHash()" + NL + "\t{" + NL + "\t\tif (hash == -1)" + NL
-			+ "\t\t{" + NL + "\t\t\t";
-	protected final String TEXT_244 = " theKey = getKey();" + NL
-			+ "\t\t\thash = (theKey == null ? 0 : theKey.hashCode());" + NL + "\t\t}" + NL + "\t\treturn hash;" + NL
-			+ "\t}" + NL + "" + NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->"
-			+ NL + "\t * @generated" + NL + "\t */";
-	protected final String TEXT_245 = NL + "\tpublic void setHash(int hash)" + NL + "\t{" + NL + "\t\tthis.hash = hash;"
-			+ NL + "\t}" + NL + "" + NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->" + NL
-			+ "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */";
+
+	protected final String TEXT_243 = NL + "\tpublic int getHash()" + NL + "\t{" + NL + "\t\tif (hash == -1)" + NL + "\t\t{" + NL + "\t\t\t";
+
+	protected final String TEXT_244 = " theKey = getKey();" + NL + "\t\t\thash = (theKey == null ? 0 : theKey.hashCode());" + NL + "\t\t}" + NL + "\t\treturn hash;" + NL + "\t}" + NL + "" + NL
+			+ "\t/**" + NL + "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */";
+
+	protected final String TEXT_245 = NL + "\tpublic void setHash(int hash)" + NL + "\t{" + NL + "\t\tthis.hash = hash;" + NL + "\t}" + NL + "" + NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->"
+			+ NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL + "\t */";
+
 	protected final String TEXT_246 = " getKey()" + NL + "\t{";
+
 	protected final String TEXT_247 = NL + "\t\treturn new ";
+
 	protected final String TEXT_248 = "(getTypedKey());";
+
 	protected final String TEXT_249 = NL + "\t\treturn getTypedKey();";
+
 	protected final String TEXT_250 = NL + "\tpublic void setKey(";
+
 	protected final String TEXT_251 = " key)" + NL + "\t{";
+
 	protected final String TEXT_252 = NL + "\t\tgetTypedKey().addAll(";
+
 	protected final String TEXT_253 = "key);";
+
 	protected final String TEXT_254 = NL + "\t\tsetTypedKey(key);";
+
 	protected final String TEXT_255 = NL + "\t\tsetTypedKey(((";
+
 	protected final String TEXT_256 = ")key).";
+
 	protected final String TEXT_257 = NL + "\t\tsetTypedKey((";
+
 	protected final String TEXT_258 = ")key);";
+
 	protected final String TEXT_259 = " getValue()" + NL + "\t{";
+
 	protected final String TEXT_260 = "(getTypedValue());";
+
 	protected final String TEXT_261 = NL + "\t\treturn getTypedValue();";
+
 	protected final String TEXT_262 = " setValue(";
+
 	protected final String TEXT_263 = " value)" + NL + "\t{" + NL + "\t\t";
+
 	protected final String TEXT_264 = " oldValue = getValue();";
+
 	protected final String TEXT_265 = NL + "\t\tgetTypedValue().clear();" + NL + "\t\tgetTypedValue().addAll(";
+
 	protected final String TEXT_266 = "value);";
+
 	protected final String TEXT_267 = NL + "\t\tsetTypedValue(value);";
+
 	protected final String TEXT_268 = NL + "\t\tsetTypedValue(((";
+
 	protected final String TEXT_269 = ")value).";
+
 	protected final String TEXT_270 = NL + "\t\tsetTypedValue((";
+
 	protected final String TEXT_271 = ")value);";
-	protected final String TEXT_272 = NL + "\t\treturn oldValue;" + NL + "\t}" + NL + "" + NL + "\t/**" + NL
-			+ "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL + "\t * @generated" + NL
-			+ "\t */";
+
+	protected final String TEXT_272 = NL + "\t\treturn oldValue;" + NL + "\t}" + NL + "" + NL + "\t/**" + NL + "\t * <!-- begin-user-doc -->" + NL + "\t * <!-- end-user-doc -->" + NL
+			+ "\t * @generated" + NL + "\t */";
+
 	protected final String TEXT_273 = " getEMap()" + NL + "\t{" + NL + "\t\t";
+
 	protected final String TEXT_274 = " container = eContainer();" + NL + "\t\treturn container == null ? null : (";
+
 	protected final String TEXT_275 = ")container.eGet(eContainmentFeature());" + NL + "\t}" + NL;
+
 	protected final String TEXT_276 = NL + "} //";
+
 	protected final String TEXT_277 = NL;
 
 	public Class() {
@@ -436,25 +674,16 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 		final boolean isJDK50 = genModel.getComplianceLevel().getValue() >= GenJDKLevel.JDK50;
 		final boolean isInterface = Boolean.TRUE.equals(((Object[]) argument)[1]);
 		final boolean isImplementation = Boolean.TRUE.equals(((Object[]) argument)[2]);
-		final boolean useInterfaceOverrideAnnotation = genModel.useInterfaceOverrideAnnotation()
-				&& !(isInterface && isImplementation);
+		final boolean useInterfaceOverrideAnnotation = genModel.useInterfaceOverrideAnnotation() && !(isInterface && isImplementation);
 		final boolean isGWT = genModel.getRuntimePlatform() == GenRuntimePlatform.GWT;
 		final boolean forceDefaultCase = genModel.isSwitchMissingDefaultCase();
 		final String indentDefaultCase = forceDefaultCase ? "\t\t" : "";
 		final String publicStaticFinalFlag = isImplementation ? "public static final " : "";
 		final String singleWildcard = isJDK50 ? "<?>" : "";
-		final String negativeOffsetCorrection = genClass.hasOffsetCorrection()
-				? " - " + genClass.getOffsetCorrectionField(null)
-				: "";
-		final String positiveOffsetCorrection = genClass.hasOffsetCorrection()
-				? " + " + genClass.getOffsetCorrectionField(null)
-				: "";
-		final String negativeOperationOffsetCorrection = genClass.hasOffsetCorrection()
-				? " - EOPERATION_OFFSET_CORRECTION"
-				: "";
-		final String positiveOperationOffsetCorrection = genClass.hasOffsetCorrection()
-				? " + EOPERATION_OFFSET_CORRECTION"
-				: "";
+		final String negativeOffsetCorrection = genClass.hasOffsetCorrection() ? " - " + genClass.getOffsetCorrectionField(null) : "";
+		final String positiveOffsetCorrection = genClass.hasOffsetCorrection() ? " + " + genClass.getOffsetCorrectionField(null) : "";
+		final String negativeOperationOffsetCorrection = genClass.hasOffsetCorrection() ? " - EOPERATION_OFFSET_CORRECTION" : "";
+		final String positiveOperationOffsetCorrection = genClass.hasOffsetCorrection() ? " + EOPERATION_OFFSET_CORRECTION" : "";
 		stringBuffer.append(TEXT_1);
 		{
 			//<%@ egf:patternCall patternId="platform:/plugin/org.eclipse.egf.emf.pattern.base/egf/EMF_Pattern_Base.fcore#LogicalName=org.eclipse.egf.emf.pattern.base.HeaderJava" args="parameter:argument"%>
@@ -465,8 +694,7 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 
 			final Map<String, Object> callParameters = new HashMap<String, Object>();
 			callParameters.put("argument", parameter);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.eclipse.egf.emf.pattern.base/egf/EMF_Pattern_Base.fcore#_XHLrsCwtEd-jc5T-XaRJlg",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.eclipse.egf.emf.pattern.base/egf/EMF_Pattern_Base.fcore#_XHLrsCwtEd-jc5T-XaRJlg",
 					new ExecutionContext((InternalPatternContext) ctx), callParameters);
 			stringBuffer.setLength(0);
 		}
@@ -512,8 +740,7 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 				callParameters.put("positiveOffsetCorrection", positiveOffsetCorrection);
 				callParameters.put("negativeOperationOffsetCorrection", negativeOperationOffsetCorrection);
 				callParameters.put("positiveOperationOffsetCorrection", positiveOperationOffsetCorrection);
-				CallHelper.executeWithParameterInjection(
-						"platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_C2iO4eXDEeCxnsoQRwU99Q",
+				CallHelper.executeWithParameterInjection("platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_C2iO4eXDEeCxnsoQRwU99Q",
 						new ExecutionContext((InternalPatternContext) ctx), callParameters);
 				stringBuffer.setLength(0);
 			}
@@ -548,11 +775,8 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 		}
 		if (isImplementation) {
 			if (isJDK50 && !genClass.hasAPIDeprecatedTag()
-					&& GenModelUtil.hasImplicitAPIDeprecatedTag(genClass.getEGetGenFeatures(),
-							genClass.getEIsSetGenFeatures(), genClass.getESetGenFeatures(),
-							genClass.getEUnsetGenFeatures(), genClass.getEInverseAddGenFeatures(),
-							genClass.getEInverseRemoveGenFeatures(), genClass.getEBasicRemoveFromContainerGenFeatures(),
-							genClass.getToStringGenFeatures())) {
+					&& GenModelUtil.hasImplicitAPIDeprecatedTag(genClass.getEGetGenFeatures(), genClass.getEIsSetGenFeatures(), genClass.getESetGenFeatures(), genClass.getEUnsetGenFeatures(),
+							genClass.getEInverseAddGenFeatures(), genClass.getEInverseRemoveGenFeatures(), genClass.getEBasicRemoveFromContainerGenFeatures(), genClass.getToStringGenFeatures())) {
 				stringBuffer.append(TEXT_17);
 			}
 			stringBuffer.append(TEXT_18);
@@ -612,8 +836,7 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 						stringBuffer.append(TEXT_33);
 						if (isGWT) {
 							stringBuffer.append(TEXT_30);
-							stringBuffer
-									.append(genModel.getImportedName("com.google.gwt.user.client.rpc.GwtTransient"));
+							stringBuffer.append(genModel.getImportedName("com.google.gwt.user.client.rpc.GwtTransient"));
 						}
 						stringBuffer.append(TEXT_34);
 						stringBuffer.append(eVirtualIndexBitField);
@@ -622,8 +845,7 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 				}
 			}
 		}
-		if (isImplementation && genClass.isModelRoot() && genModel.isBooleanFlagsEnabled()
-				&& genModel.getBooleanFlagsReservedBits() == -1) {
+		if (isImplementation && genClass.isModelRoot() && genModel.isBooleanFlagsEnabled() && genModel.getBooleanFlagsReservedBits() == -1) {
 			stringBuffer.append(TEXT_35);
 			if (isGWT) {
 				stringBuffer.append(TEXT_30);
@@ -635,8 +857,7 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 		}
 		if (isImplementation && !genModel.isReflectiveDelegation()) {
 			for (GenFeature genFeature : genClass.getReifiedGenFeatures()) {
-				if (genModel.isArrayAccessors() && genFeature.isListType() && !genFeature.isFeatureMapType()
-						&& !genFeature.isMapType()) {
+				if (genModel.isArrayAccessors() && genFeature.isListType() && !genFeature.isFeatureMapType() && !genFeature.isMapType()) {
 					String rawListItemType = genFeature.getRawListItemType(genClass);
 					int index = rawListItemType.indexOf('[');
 					String head = rawListItemType;
@@ -660,8 +881,7 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 					if (isJDK50 && genFeature.hasAPIDeprecatedTag()) {
 						stringBuffer.append(TEXT_43);
 					}
-					if (genFeature.getQualifiedListItemType(genClass).contains("<")
-							|| genFeature.getArrayItemType(genClass).contains("<")) {
+					if (genFeature.getQualifiedListItemType(genClass).contains("<") || genFeature.getArrayItemType(genClass).contains("<")) {
 						stringBuffer.append(TEXT_44);
 					}
 					stringBuffer.append(TEXT_45);
@@ -702,8 +922,7 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 					callParameters.put("positiveOffsetCorrection", positiveOffsetCorrection);
 					callParameters.put("negativeOperationOffsetCorrection", negativeOperationOffsetCorrection);
 					callParameters.put("positiveOperationOffsetCorrection", positiveOperationOffsetCorrection);
-					CallHelper.executeWithParameterInjection(
-							"platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_0jpGTmJ-Ed-FqczH3ESmRw",
+					CallHelper.executeWithParameterInjection("platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_0jpGTmJ-Ed-FqczH3ESmRw",
 							new ExecutionContext((InternalPatternContext) ctx), callParameters);
 					stringBuffer.setLength(0);
 				}
@@ -747,8 +966,7 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 				}
 			}
 		}
-		if (genModel.isOperationReflection() && isImplementation && genClass.hasOffsetCorrection()
-				&& !genClass.getImplementedGenOperations().isEmpty()) {
+		if (genModel.isOperationReflection() && isImplementation && genClass.hasOffsetCorrection() && !genClass.getImplementedGenOperations().isEmpty()) {
 			stringBuffer.append(TEXT_56);
 			stringBuffer.append(genClass.getQualifiedClassifierAccessor());
 			stringBuffer.append(TEXT_57);
@@ -792,8 +1010,7 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 				callParameters.put("positiveOffsetCorrection", positiveOffsetCorrection);
 				callParameters.put("negativeOperationOffsetCorrection", negativeOperationOffsetCorrection);
 				callParameters.put("positiveOperationOffsetCorrection", positiveOperationOffsetCorrection);
-				CallHelper.executeWithParameterInjection(
-						"platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_JLBM0HroEeC0XN9kbwkPYQ",
+				CallHelper.executeWithParameterInjection("platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_JLBM0HroEeC0XN9kbwkPYQ",
 						new ExecutionContext((InternalPatternContext) ctx), callParameters);
 				stringBuffer.setLength(0);
 			}
@@ -845,8 +1062,7 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 				callParameters.put("positiveOffsetCorrection", positiveOffsetCorrection);
 				callParameters.put("negativeOperationOffsetCorrection", negativeOperationOffsetCorrection);
 				callParameters.put("positiveOperationOffsetCorrection", positiveOperationOffsetCorrection);
-				CallHelper.executeWithParameterInjection(
-						"platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_WUeasCSWEemxeP6B0lLOpA",
+				CallHelper.executeWithParameterInjection("platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_WUeasCSWEemxeP6B0lLOpA",
 						new ExecutionContext((InternalPatternContext) ctx), callParameters);
 				stringBuffer.setLength(0);
 			}
@@ -877,9 +1093,8 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 			callParameters.put("positiveOffsetCorrection", positiveOffsetCorrection);
 			callParameters.put("negativeOperationOffsetCorrection", negativeOperationOffsetCorrection);
 			callParameters.put("positiveOperationOffsetCorrection", positiveOperationOffsetCorrection);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_0kFyMGJ-Ed-FqczH3ESmRw",
-					new ExecutionContext((InternalPatternContext) ctx), callParameters);
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_0kFyMGJ-Ed-FqczH3ESmRw", new ExecutionContext((InternalPatternContext) ctx),
+					callParameters);
 			stringBuffer.setLength(0);
 		}
 
@@ -888,9 +1103,7 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 			new Runnable() {
 				public void run() {
 					GenClass classExtendsGenClass = genClass.getClassExtendsGenClass();
-					List<GenFeature> classExtendsAllGenFeatures = classExtendsGenClass == null
-							? Collections.<GenFeature>emptyList()
-							: classExtendsGenClass.getAllGenFeatures();
+					List<GenFeature> classExtendsAllGenFeatures = classExtendsGenClass == null ? Collections.<GenFeature> emptyList() : classExtendsGenClass.getAllGenFeatures();
 					for (GenFeature genFeature : genClass.getReifiedGenFeatures()) {
 						stringBuffer.append(TEXT_4);
 						{
@@ -920,8 +1133,7 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 							callParameters.put("positiveOffsetCorrection", positiveOffsetCorrection);
 							callParameters.put("negativeOperationOffsetCorrection", negativeOperationOffsetCorrection);
 							callParameters.put("positiveOperationOffsetCorrection", positiveOperationOffsetCorrection);
-							CallHelper.executeWithParameterInjection(
-									"platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_odzp0LM-EeKd56X4hcZPSw",
+							CallHelper.executeWithParameterInjection("platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_odzp0LM-EeKd56X4hcZPSw",
 									new ExecutionContext((InternalPatternContext) ctx), callParameters);
 							stringBuffer.setLength(0);
 						}
@@ -933,8 +1145,7 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 		}
 		new Runnable() {
 			public void run() {
-				for (GenFeature genFeature : (isImplementation ? genClass.getImplementedGenFeatures()
-						: genClass.getDeclaredGenFeatures())) {
+				for (GenFeature genFeature : (isImplementation ? genClass.getImplementedGenFeatures() : genClass.getDeclaredGenFeatures())) {
 					stringBuffer.append(TEXT_4);
 					{
 						//<%@ egf:patternCall patternId="platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#LogicalName=org.eclipse.egf.emf.pattern.model.call.Class.Class.genFeature.override" args="genFeature:genFeature,genClass:genClass,genPackage:genPackage,genModel:genModel,isJDK50:isJDK50,isInterface:isInterface,isImplementation:isImplementation,useInterfaceOverrideAnnotation:useInterfaceOverrideAnnotation,isGWT:isGWT,forceDefaultCase:forceDefaultCase,indentDefaultCase:indentDefaultCase,publicStaticFinalFlag:publicStaticFinalFlag,singleWildcard:singleWildcard,negativeOffsetCorrection:negativeOffsetCorrection,positiveOffsetCorrection:positiveOffsetCorrection,negativeOperationOffsetCorrection:negativeOperationOffsetCorrection,positiveOperationOffsetCorrection:positiveOperationOffsetCorrection"%>
@@ -961,8 +1172,7 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 						callParameters.put("positiveOffsetCorrection", positiveOffsetCorrection);
 						callParameters.put("negativeOperationOffsetCorrection", negativeOperationOffsetCorrection);
 						callParameters.put("positiveOperationOffsetCorrection", positiveOperationOffsetCorrection);
-						CallHelper.executeWithParameterInjection(
-								"platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_0kO8IGJ-Ed-FqczH3ESmRw",
+						CallHelper.executeWithParameterInjection("platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_0kO8IGJ-Ed-FqczH3ESmRw",
 								new ExecutionContext((InternalPatternContext) ctx), callParameters);
 						stringBuffer.setLength(0);
 					}
@@ -971,8 +1181,7 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 				} //for
 			}
 		}.run();
-		for (GenOperation genOperation : (isImplementation ? genClass.getImplementedGenOperations()
-				: genClass.getDeclaredGenOperations())) {
+		for (GenOperation genOperation : (isImplementation ? genClass.getImplementedGenOperations() : genClass.getDeclaredGenOperations())) {
 			stringBuffer.append(TEXT_4);
 			{
 				//<%@ egf:patternCall patternId="platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#LogicalName=org.eclipse.egf.emf.pattern.model.call.Class.Class.genOperation.override" args="genOperation:genOperation,genClass:genClass,genPackage:genPackage,genModel:genModel,isJDK50:isJDK50,isInterface:isInterface,isImplementation:isImplementation,useInterfaceOverrideAnnotation:useInterfaceOverrideAnnotation,isGWT:isGWT,forceDefaultCase:forceDefaultCase,indentDefaultCase:indentDefaultCase,publicStaticFinalFlag:publicStaticFinalFlag,singleWildcard:singleWildcard,negativeOffsetCorrection:negativeOffsetCorrection,positiveOffsetCorrection:positiveOffsetCorrection,negativeOperationOffsetCorrection:negativeOperationOffsetCorrection,positiveOperationOffsetCorrection:positiveOperationOffsetCorrection"%>
@@ -999,16 +1208,14 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 				callParameters.put("positiveOffsetCorrection", positiveOffsetCorrection);
 				callParameters.put("negativeOperationOffsetCorrection", negativeOperationOffsetCorrection);
 				callParameters.put("positiveOperationOffsetCorrection", positiveOperationOffsetCorrection);
-				CallHelper.executeWithParameterInjection(
-						"platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_0tBrwGJ-Ed-FqczH3ESmRw",
+				CallHelper.executeWithParameterInjection("platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_0tBrwGJ-Ed-FqczH3ESmRw",
 						new ExecutionContext((InternalPatternContext) ctx), callParameters);
 				stringBuffer.setLength(0);
 			}
 
 			//Class/implementedGenOperation.override.javajetinc
 		} //for
-		if (isImplementation && !genModel.isReflectiveDelegation()
-				&& genClass.implementsAny(genClass.getEInverseAddGenFeatures())) {
+		if (isImplementation && !genModel.isReflectiveDelegation() && genClass.implementsAny(genClass.getEInverseAddGenFeatures())) {
 			stringBuffer.append(TEXT_71);
 			if (genModel.useGenerics()) {
 				for (GenFeature genFeature : genClass.getEInverseAddGenFeatures()) {
@@ -1035,11 +1242,8 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 				stringBuffer.append(genClass.getQualifiedFeatureID(genFeature));
 				stringBuffer.append(TEXT_79);
 				if (genFeature.isListType()) {
-					String cast = "(" + genModel.getImportedName("org.eclipse.emf.ecore.util.InternalEList")
-							+ (!genModel.useGenerics() ? ")"
-									: "<" + genModel.getImportedName("org.eclipse.emf.ecore.InternalEObject") + ">)("
-											+ genModel.getImportedName("org.eclipse.emf.ecore.util.InternalEList")
-											+ "<?>)");
+					String cast = "(" + genModel.getImportedName("org.eclipse.emf.ecore.util.InternalEList") + (!genModel.useGenerics() ? ")"
+							: "<" + genModel.getImportedName("org.eclipse.emf.ecore.InternalEObject") + ">)(" + genModel.getImportedName("org.eclipse.emf.ecore.util.InternalEList") + "<?>)");
 					if (genFeature.isMapType() && genFeature.isEffectiveSuppressEMFTypes()) {
 						stringBuffer.append(TEXT_80);
 						stringBuffer.append(cast);
@@ -1082,8 +1286,7 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 						stringBuffer.append(genClass.getQualifiedFeatureID(genFeature));
 						stringBuffer.append(positiveOffsetCorrection);
 						stringBuffer.append(TEXT_96);
-					} else if (genFeature.isVolatile()
-							|| genClass.getImplementingGenModel(genFeature).isDynamicDelegation()) {
+					} else if (genFeature.isVolatile() || genClass.getImplementingGenModel(genFeature).isDynamicDelegation()) {
 						stringBuffer.append(TEXT_93);
 						stringBuffer.append(genFeature.getImportedType(genClass));
 						stringBuffer.append(TEXT_60);
@@ -1110,9 +1313,7 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 					} else {
 						GenFeature reverseFeature = genFeature.getReverse();
 						GenClass targetClass = reverseFeature.getGenClass();
-						String reverseOffsetCorrection = targetClass.hasOffsetCorrection()
-								? " + " + genClass.getOffsetCorrectionField(genFeature)
-								: "";
+						String reverseOffsetCorrection = targetClass.hasOffsetCorrection() ? " + " + genClass.getOffsetCorrectionField(genFeature) : "";
 						stringBuffer.append(TEXT_101);
 						stringBuffer.append(genFeature.getAsInternalEObject(genFeature.getSafeName(), true));
 						stringBuffer.append(TEXT_104);
@@ -1148,8 +1349,7 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 			}
 			stringBuffer.append(TEXT_111);
 		}
-		if (isImplementation && !genModel.isReflectiveDelegation()
-				&& genClass.implementsAny(genClass.getEInverseRemoveGenFeatures())) {
+		if (isImplementation && !genModel.isReflectiveDelegation() && genClass.implementsAny(genClass.getEInverseRemoveGenFeatures())) {
 			stringBuffer.append(TEXT_71);
 			if (genModel.useClassOverrideAnnotation()) {
 				stringBuffer.append(TEXT_67);
@@ -1230,8 +1430,7 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 			} // }
 			stringBuffer.append(TEXT_111);
 		}
-		if (isImplementation && !genModel.isReflectiveDelegation()
-				&& genClass.implementsAny(genClass.getEBasicRemoveFromContainerGenFeatures())) {
+		if (isImplementation && !genModel.isReflectiveDelegation() && genClass.implementsAny(genClass.getEBasicRemoveFromContainerGenFeatures())) {
 			stringBuffer.append(TEXT_71);
 			if (genModel.useClassOverrideAnnotation()) {
 				stringBuffer.append(TEXT_67);
@@ -1246,9 +1445,7 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 			for (GenFeature genFeature : genClass.getEBasicRemoveFromContainerGenFeatures()) {
 				GenFeature reverseFeature = genFeature.getReverse();
 				GenClass targetClass = reverseFeature.getGenClass();
-				String reverseOffsetCorrection = targetClass.hasOffsetCorrection()
-						? " + " + genClass.getOffsetCorrectionField(genFeature)
-						: "";
+				String reverseOffsetCorrection = targetClass.hasOffsetCorrection() ? " + " + genClass.getOffsetCorrectionField(genFeature) : "";
 				stringBuffer.append(TEXT_78);
 				stringBuffer.append(genClass.getQualifiedFeatureID(genFeature));
 				stringBuffer.append(TEXT_126);
@@ -1277,8 +1474,7 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 			} // }
 			stringBuffer.append(TEXT_111);
 		}
-		if (isImplementation && !genModel.isReflectiveDelegation()
-				&& genClass.implementsAny(genClass.getEGetGenFeatures())) {
+		if (isImplementation && !genModel.isReflectiveDelegation() && genClass.implementsAny(genClass.getEGetGenFeatures())) {
 			stringBuffer.append(TEXT_71);
 			if (genModel.useClassOverrideAnnotation()) {
 				stringBuffer.append(TEXT_67);
@@ -1371,13 +1567,11 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 			} // }
 			stringBuffer.append(TEXT_111);
 		}
-		if (isImplementation && !genModel.isReflectiveDelegation()
-				&& genClass.implementsAny(genClass.getESetGenFeatures())) {
+		if (isImplementation && !genModel.isReflectiveDelegation() && genClass.implementsAny(genClass.getESetGenFeatures())) {
 			stringBuffer.append(TEXT_71);
 			if (genModel.useGenerics()) {
 				for (GenFeature genFeature : genClass.getESetGenFeatures()) {
-					if (genFeature.isUncheckedCast(genClass) && !genFeature.isFeatureMapType()
-							&& !genFeature.isMapType()) {
+					if (genFeature.isUncheckedCast(genClass) && !genFeature.isFeatureMapType() && !genFeature.isMapType()) {
 						stringBuffer.append(TEXT_72);
 						break;
 					}
@@ -1452,8 +1646,7 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 					stringBuffer.append(TEXT_160);
 					stringBuffer.append(genFeature.getAccessorName());
 					stringBuffer.append(TEXT_81);
-					if (genFeature.getTypeGenDataType() == null || !genFeature.getTypeGenDataType().isObjectType()
-							|| !genFeature.getRawType().equals(genFeature.getType(genClass))) {
+					if (genFeature.getTypeGenDataType() == null || !genFeature.getTypeGenDataType().isObjectType() || !genFeature.getRawType().equals(genFeature.getType(genClass))) {
 						stringBuffer.append(TEXT_81);
 						stringBuffer.append(genFeature.getObjectType(genClass));
 						stringBuffer.append(TEXT_83);
@@ -1487,8 +1680,7 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 			} // }
 			stringBuffer.append(TEXT_111);
 		}
-		if (isImplementation && !genModel.isReflectiveDelegation()
-				&& genClass.implementsAny(genClass.getEUnsetGenFeatures())) {
+		if (isImplementation && !genModel.isReflectiveDelegation() && genClass.implementsAny(genClass.getEUnsetGenFeatures())) {
 			stringBuffer.append(TEXT_4);
 			{
 				//<%@ egf:patternCall patternId="platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#LogicalName=org.eclipse.egf.emf.pattern.model.call.Class.Class.eUnset.override" args="genClass:genClass,genPackage:genPackage,genModel:genModel,isJDK50:isJDK50,isInterface:isInterface,isImplementation:isImplementation,useInterfaceOverrideAnnotation:useInterfaceOverrideAnnotation,isGWT:isGWT,forceDefaultCase:forceDefaultCase,indentDefaultCase:indentDefaultCase,publicStaticFinalFlag:publicStaticFinalFlag,singleWildcard:singleWildcard,negativeOffsetCorrection:negativeOffsetCorrection,positiveOffsetCorrection:positiveOffsetCorrection,negativeOperationOffsetCorrection:negativeOperationOffsetCorrection,positiveOperationOffsetCorrection:positiveOperationOffsetCorrection"%>
@@ -1514,16 +1706,14 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 				callParameters.put("positiveOffsetCorrection", positiveOffsetCorrection);
 				callParameters.put("negativeOperationOffsetCorrection", negativeOperationOffsetCorrection);
 				callParameters.put("positiveOperationOffsetCorrection", positiveOperationOffsetCorrection);
-				CallHelper.executeWithParameterInjection(
-						"platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_0uN-kGJ-Ed-FqczH3ESmRw",
+				CallHelper.executeWithParameterInjection("platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_0uN-kGJ-Ed-FqczH3ESmRw",
 						new ExecutionContext((InternalPatternContext) ctx), callParameters);
 				stringBuffer.setLength(0);
 			}
 
 			//Class/eUnset.override.javajetinc
 		}
-		if (isImplementation && !genModel.isReflectiveDelegation()
-				&& genClass.implementsAny(genClass.getEIsSetGenFeatures())) {
+		if (isImplementation && !genModel.isReflectiveDelegation() && genClass.implementsAny(genClass.getEIsSetGenFeatures())) {
 			stringBuffer.append(TEXT_4);
 			{
 				//<%@ egf:patternCall patternId="platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#LogicalName=org.eclipse.egf.emf.pattern.model.call.Class.Class.eIsSet.override" args="genClass:genClass,genPackage:genPackage,genModel:genModel,isJDK50:isJDK50,isInterface:isInterface,isImplementation:isImplementation,useInterfaceOverrideAnnotation:useInterfaceOverrideAnnotation,isGWT:isGWT,forceDefaultCase:forceDefaultCase,indentDefaultCase:indentDefaultCase,publicStaticFinalFlag:publicStaticFinalFlag,singleWildcard:singleWildcard,negativeOffsetCorrection:negativeOffsetCorrection,positiveOffsetCorrection:positiveOffsetCorrection,negativeOperationOffsetCorrection:negativeOperationOffsetCorrection,positiveOperationOffsetCorrection:positiveOperationOffsetCorrection"%>
@@ -1549,16 +1739,14 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 				callParameters.put("positiveOffsetCorrection", positiveOffsetCorrection);
 				callParameters.put("negativeOperationOffsetCorrection", negativeOperationOffsetCorrection);
 				callParameters.put("positiveOperationOffsetCorrection", positiveOperationOffsetCorrection);
-				CallHelper.executeWithParameterInjection(
-						"platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_0uXvkGJ-Ed-FqczH3ESmRw",
+				CallHelper.executeWithParameterInjection("platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_0uXvkGJ-Ed-FqczH3ESmRw",
 						new ExecutionContext((InternalPatternContext) ctx), callParameters);
 				stringBuffer.setLength(0);
 			}
 
 			//Class/eIsSet.override.javajetinc
 		}
-		if (isImplementation && (!genClass.getMixinGenFeatures().isEmpty()
-				|| genClass.hasOffsetCorrection() && !genClass.getGenFeatures().isEmpty())) {
+		if (isImplementation && (!genClass.getMixinGenFeatures().isEmpty() || genClass.hasOffsetCorrection() && !genClass.getGenFeatures().isEmpty())) {
 			if (!genClass.getMixinGenFeatures().isEmpty()) {
 				stringBuffer.append(TEXT_71);
 				if (genModel.useClassOverrideAnnotation()) {
@@ -1624,9 +1812,7 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 			stringBuffer.append(TEXT_180);
 		}
 		if (genModel.isOperationReflection() && isImplementation
-				&& (!genClass.getMixinGenOperations().isEmpty()
-						|| !genClass.getOverrideGenOperations(genClass.getExtendedGenOperations(),
-								genClass.getImplementedGenOperations()).isEmpty()
+				&& (!genClass.getMixinGenOperations().isEmpty() || !genClass.getOverrideGenOperations(genClass.getExtendedGenOperations(), genClass.getImplementedGenOperations()).isEmpty()
 						|| genClass.hasOffsetCorrection() && !genClass.getGenOperations().isEmpty())) {
 			stringBuffer.append(TEXT_71);
 			if (genModel.useClassOverrideAnnotation()) {
@@ -1638,8 +1824,7 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 			for (GenClass extendedGenClass : genClass.getExtendedGenClasses()) {
 				List<GenOperation> extendedImplementedGenOperations = extendedGenClass.getImplementedGenOperations();
 				List<GenOperation> implementedGenOperations = genClass.getImplementedGenOperations();
-				if (!genClass.getOverrideGenOperations(extendedImplementedGenOperations, implementedGenOperations)
-						.isEmpty()) {
+				if (!genClass.getOverrideGenOperations(extendedImplementedGenOperations, implementedGenOperations).isEmpty()) {
 					stringBuffer.append(TEXT_169);
 					stringBuffer.append(extendedGenClass.getRawImportedInterfaceName());
 					stringBuffer.append(TEXT_182);
@@ -1666,8 +1851,7 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 					stringBuffer.append(TEXT_172);
 					stringBuffer.append(mixinGenClass.getQualifiedOperationID(genOperation));
 					stringBuffer.append(TEXT_173);
-					stringBuffer.append(genClass.getQualifiedOperationID(
-							overrideGenOperation != null ? overrideGenOperation : genOperation));
+					stringBuffer.append(genClass.getQualifiedOperationID(overrideGenOperation != null ? overrideGenOperation : genOperation));
 					stringBuffer.append(positiveOperationOffsetCorrection);
 					stringBuffer.append(TEXT_3);
 				}
@@ -1711,8 +1895,7 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 			{
 				List<String> eVirtualIndexBitFields = genClass.getEVirtualIndexBitFields(new ArrayList<String>());
 				if (!eVirtualIndexBitFields.isEmpty()) {
-					List<String> allEVirtualIndexBitFields = genClass
-							.getAllEVirtualIndexBitFields(new ArrayList<String>());
+					List<String> allEVirtualIndexBitFields = genClass.getAllEVirtualIndexBitFields(new ArrayList<String>());
 					stringBuffer.append(TEXT_71);
 					if (genModel.useClassOverrideAnnotation()) {
 						stringBuffer.append(TEXT_67);
@@ -1749,17 +1932,13 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 			if (genModel.useGenerics()) {
 				boolean isUnchecked = false;
 				boolean isRaw = false;
-				LOOP: for (GenOperation genOperation : (genModel.isMinimalReflectiveMethods()
-						? genClass.getImplementedGenOperations()
-						: genClass.getAllGenOperations())) {
+				LOOP: for (GenOperation genOperation : (genModel.isMinimalReflectiveMethods() ? genClass.getImplementedGenOperations() : genClass.getAllGenOperations())) {
 					for (GenParameter genParameter : genOperation.getGenParameters()) {
 						if (genParameter.isUncheckedCast()) {
-							if (genParameter.getTypeGenDataType() == null
-									|| !genParameter.getTypeGenDataType().isObjectType()) {
+							if (genParameter.getTypeGenDataType() == null || !genParameter.getTypeGenDataType().isObjectType()) {
 								isUnchecked = true;
 							}
-							if (genParameter.usesOperationTypeParameters() && !genParameter.getEcoreParameter()
-									.getEGenericType().getETypeArguments().isEmpty()) {
+							if (genParameter.usesOperationTypeParameters() && !genParameter.getEcoreParameter().getEGenericType().getETypeArguments().isEmpty()) {
 								isRaw = true;
 								break LOOP;
 							}
@@ -1780,22 +1959,18 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 			stringBuffer.append(genModel.getImportedName("org.eclipse.emf.common.util.EList"));
 			stringBuffer.append(singleWildcard);
 			stringBuffer.append(TEXT_201);
-			stringBuffer.append(genModel.getImportedName(isGWT ? "org.eclipse.emf.common.util.InvocationTargetException"
-					: "java.lang.reflect.InvocationTargetException"));
+			stringBuffer.append(genModel.getImportedName(isGWT ? "org.eclipse.emf.common.util.InvocationTargetException" : "java.lang.reflect.InvocationTargetException"));
 			stringBuffer.append(TEXT_202);
 			stringBuffer.append(negativeOperationOffsetCorrection);
 			stringBuffer.append(TEXT_77);
-			for (GenOperation genOperation : (genModel.isMinimalReflectiveMethods()
-					? genClass.getImplementedGenOperations()
-					: genClass.getAllGenOperations())) {
+			for (GenOperation genOperation : (genModel.isMinimalReflectiveMethods() ? genClass.getImplementedGenOperations() : genClass.getAllGenOperations())) {
 				List<GenParameter> genParameters = genOperation.getGenParameters();
 				int size = genParameters.size();
 				boolean hasCheckedException = genOperation.hasCheckedException();
 				String indent = hasCheckedException ? "\t" : "";
 				GenOperation overrideGenOperation = genClass.getOverrideGenOperation(genOperation);
 				stringBuffer.append(TEXT_78);
-				stringBuffer.append(genClass
-						.getQualifiedOperationID(overrideGenOperation != null ? overrideGenOperation : genOperation));
+				stringBuffer.append(genClass.getQualifiedOperationID(overrideGenOperation != null ? overrideGenOperation : genOperation));
 				stringBuffer.append(TEXT_79);
 				if (hasCheckedException) {
 					stringBuffer.append(TEXT_203);
@@ -1810,14 +1985,10 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 						if (!isJDK50 && genParameter.isPrimitiveType()) {
 							stringBuffer.append(TEXT_81);
 						}
-						if (genParameter.getTypeGenDataType() == null
-								|| !genParameter.getTypeGenDataType().isObjectType()
-								|| !genParameter.usesOperationTypeParameters()
-										&& !genParameter.getRawType().equals(genParameter.getType(genClass))) {
+						if (genParameter.getTypeGenDataType() == null || !genParameter.getTypeGenDataType().isObjectType()
+								|| !genParameter.usesOperationTypeParameters() && !genParameter.getRawType().equals(genParameter.getType(genClass))) {
 							stringBuffer.append(TEXT_81);
-							stringBuffer.append(
-									genParameter.usesOperationTypeParameters() ? genParameter.getRawImportedType()
-											: genParameter.getObjectType(genClass));
+							stringBuffer.append(genParameter.usesOperationTypeParameters() ? genParameter.getRawImportedType() : genParameter.getObjectType(genClass));
 							stringBuffer.append(TEXT_83);
 						}
 						stringBuffer.append(TEXT_204);
@@ -1851,14 +2022,10 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 						if (!isJDK50 && genParameter.isPrimitiveType()) {
 							stringBuffer.append(TEXT_81);
 						}
-						if (genParameter.getTypeGenDataType() == null
-								|| !genParameter.getTypeGenDataType().isObjectType()
-								|| !genParameter.usesOperationTypeParameters()
-										&& !genParameter.getRawType().equals(genParameter.getType(genClass))) {
+						if (genParameter.getTypeGenDataType() == null || !genParameter.getTypeGenDataType().isObjectType()
+								|| !genParameter.usesOperationTypeParameters() && !genParameter.getRawType().equals(genParameter.getType(genClass))) {
 							stringBuffer.append(TEXT_81);
-							stringBuffer.append(
-									genParameter.usesOperationTypeParameters() ? genParameter.getRawImportedType()
-											: genParameter.getObjectType(genClass));
+							stringBuffer.append(genParameter.usesOperationTypeParameters() ? genParameter.getRawImportedType() : genParameter.getObjectType(genClass));
 							stringBuffer.append(TEXT_83);
 						}
 						stringBuffer.append(TEXT_204);
@@ -1883,9 +2050,7 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 					stringBuffer.append(TEXT_210);
 					stringBuffer.append(genModel.getImportedName("java.lang.Throwable"));
 					stringBuffer.append(TEXT_211);
-					stringBuffer.append(
-							genModel.getImportedName(isGWT ? "org.eclipse.emf.common.util.InvocationTargetException"
-									: "java.lang.reflect.InvocationTargetException"));
+					stringBuffer.append(genModel.getImportedName(isGWT ? "org.eclipse.emf.common.util.InvocationTargetException" : "java.lang.reflect.InvocationTargetException"));
 					stringBuffer.append(TEXT_212);
 				}
 			}
@@ -1908,8 +2073,8 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 			} // }
 			stringBuffer.append(TEXT_111);
 		}
-		if (!genClass.hasImplementedToStringGenOperation() && isImplementation && !genModel.isReflectiveDelegation()
-				&& !genModel.isDynamicDelegation() && !genClass.getToStringGenFeatures().isEmpty()) {
+		if (!genClass.hasImplementedToStringGenOperation() && isImplementation && !genModel.isReflectiveDelegation() && !genModel.isDynamicDelegation()
+				&& !genClass.getToStringGenFeatures().isEmpty()) {
 			stringBuffer.append(TEXT_71);
 			if (genModel.useClassOverrideAnnotation()) {
 				stringBuffer.append(TEXT_67);
@@ -2051,8 +2216,7 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 			String objectType = genModel.getImportedName("java.lang.Object");
 			String keyType = isJDK50 ? keyFeature.getObjectType(genClass) : objectType;
 			String valueType = isJDK50 ? valueFeature.getObjectType(genClass) : objectType;
-			String eMapType = genModel.getImportedName("org.eclipse.emf.common.util.EMap")
-					+ (isJDK50 ? "<" + keyType + ", " + valueType + ">" : "");
+			String eMapType = genModel.getImportedName("org.eclipse.emf.common.util.EMap") + (isJDK50 ? "<" + keyType + ", " + valueType + ">" : "");
 			stringBuffer.append(TEXT_71);
 			if (isGWT) {
 				stringBuffer.append(TEXT_30);
@@ -2193,9 +2357,8 @@ public class Class extends org.eclipse.egf.emf.pattern.model.Class {
 			callParameters.put("positiveOffsetCorrection", positiveOffsetCorrection);
 			callParameters.put("negativeOperationOffsetCorrection", negativeOperationOffsetCorrection);
 			callParameters.put("positiveOperationOffsetCorrection", positiveOperationOffsetCorrection);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_0ug5gGJ-Ed-FqczH3ESmRw",
-					new ExecutionContext((InternalPatternContext) ctx), callParameters);
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.eclipse.egf.emf.pattern/egf/EMF_Pattern.fcore#_0ug5gGJ-Ed-FqczH3ESmRw", new ExecutionContext((InternalPatternContext) ctx),
+					callParameters);
 			stringBuffer.setLength(0);
 		}
 

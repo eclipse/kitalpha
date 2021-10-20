@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.style.specific;
 
 import java.util.*;
@@ -11,12 +11,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.javaservice.Jav
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.javaservice.JavaMethodData.JavaMethodReturnType;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple;
 
-public class Node_GaugeCustomizationPattern extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.common.AbstractSpecificNodeCustomizationPattern {
+public class Node_GaugeCustomizationPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.common.AbstractSpecificNodeCustomizationPattern {
 
 	public Node_GaugeCustomizationPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -55,8 +55,7 @@ public class Node_GaugeCustomizationPattern extends
 			parameters.put("appliedOn", this.appliedOn);
 			parameters.put("stylePropertyData", this.alignementKind);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
 					ctx_local, parameters);
 		}
 		{
@@ -66,8 +65,7 @@ public class Node_GaugeCustomizationPattern extends
 			parameters.put("appliedOn", this.appliedOn);
 			parameters.put("stylePropertyData", this.sections);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_VpyWIGz4EeWW0teG0FdF7g",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_VpyWIGz4EeWW0teG0FdF7g",
 					ctx_local, parameters);
 		}
 		ictx.setNode(currentNode);
@@ -91,14 +89,12 @@ public class Node_GaugeCustomizationPattern extends
 	protected void method_initAlignementKindData(final StringBuffer out, final PatternContext ctx) throws Exception {
 		if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getGaugeCustomization_Alignement())) {
 			String enumLiteralName = parameter.getAlignement().toString();
-			String methodCode = "return DiagramPackage.eINSTANCE.getAlignmentKind().getEEnumLiteral(\""
-					+ enumLiteralName + "\");";
+			String methodCode = "return DiagramPackage.eINSTANCE.getAlignmentKind().getEEnumLiteral(\"" + enumLiteralName + "\");";
 			char first = Character.toUpperCase(enumLiteralName.charAt(0));
 			enumLiteralName = first + enumLiteralName.substring(1).toLowerCase();
 			String methodName = "getAlignmentKind" + enumLiteralName;
 
-			JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral,
-					methodCode);
+			JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
 
 			// Set method parameters data
 			javaMethodData.addMethodParameter("any", "EObject", "any model element");
@@ -129,22 +125,19 @@ public class Node_GaugeCustomizationPattern extends
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.GaugeCustomization parameter;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.GaugeCustomization parameter) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.GaugeCustomization parameter) {
 		this.parameter = parameter;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple alignementKind;
 
-	public void set_alignementKind(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple alignementKind) {
+	public void set_alignementKind(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple alignementKind) {
 		this.alignementKind = alignementKind;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple sections;
 
-	public void set_sections(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple sections) {
+	public void set_sections(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple sections) {
 		this.sections = sections;
 	}
 
