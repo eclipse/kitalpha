@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools;
 
 import java.util.*;
@@ -15,12 +15,12 @@ import org.eclipse.sirius.viewpoint.description.tool.*;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.sirius.SiriusExpressionHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.VSMVariable;
 
-public class ReconnectEdgeSource_ElementBasedTool extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common.AbstractSourceEdgeReconnectionTool {
+public class ReconnectEdgeSource_ElementBasedTool extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common.AbstractSourceEdgeReconnectionTool {
 
 	public ReconnectEdgeSource_ElementBasedTool() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -89,8 +89,7 @@ public class ReconnectEdgeSource_ElementBasedTool extends
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
 		return super.preCondition(ctx)
-				&& ((parameter.getTool_For() != null) && (parameter.getTool_For() instanceof Edge)
-						&& (((Edge) parameter.getTool_For()).getThe_domain() instanceof EdgeDomainElement));
+				&& ((parameter.getTool_For() != null) && (parameter.getTool_For() instanceof Edge) && (((Edge) parameter.getTool_For()).getThe_domain() instanceof EdgeDomainElement));
 	}
 
 	public Map<String, Object> getParameters() {

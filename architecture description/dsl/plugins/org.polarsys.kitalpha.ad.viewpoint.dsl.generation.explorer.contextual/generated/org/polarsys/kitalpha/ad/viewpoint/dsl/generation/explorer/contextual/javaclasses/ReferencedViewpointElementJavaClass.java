@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.2.202001031546
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.javaclasses;
 
 import java.util.*;
@@ -11,8 +11,7 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.LocalClassAssociat
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.category.ContextualExplorerCategoryCompliance;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.util.ClassUtils;
 
-public class ReferencedViewpointElementJavaClass extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.common.AbstractAssociationJavaClass {
+public class ReferencedViewpointElementJavaClass extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.common.AbstractAssociationJavaClass {
 	protected static String nl;
 
 	public static synchronized ReferencedViewpointElementJavaClass create(String lineSeparator) {
@@ -23,23 +22,33 @@ public class ReferencedViewpointElementJavaClass extends
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "\t" + NL + "\t/**" + NL + "    * <!-- begin-user-doc -->" + NL
-			+ "    * <!-- end-user-doc -->" + NL
-			+ "    * @param object_p: The model element for which the Contextual Explorer extension is generated" + NL
-			+ "    * @return List of object to display in the parent category" + NL + "    * @generated" + NL + "    */"
-			+ NL + "\tpublic List<Object> compute(Object object_p) {" + NL
-			+ "\t\tList<Object> result = new ArrayList<Object>();" + NL + "\t\t";
+
+	protected final String TEXT_1 = "\t" + NL + "\t/**" + NL + "    * <!-- begin-user-doc -->" + NL + "    * <!-- end-user-doc -->" + NL
+			+ "    * @param object_p: The model element for which the Contextual Explorer extension is generated" + NL + "    * @return List of object to display in the parent category" + NL
+			+ "    * @generated" + NL + "    */" + NL + "\tpublic List<Object> compute(Object object_p) {" + NL + "\t\tList<Object> result = new ArrayList<Object>();" + NL + "\t\t";
+
 	protected final String TEXT_2 = " object = (";
+
 	protected final String TEXT_3 = ") object_p;";
+
 	protected final String TEXT_4 = " \t\t\t\t" + NL + "\t\t\t\tfor (EObject eObject : object.";
+
 	protected final String TEXT_5 = "())" + NL + "\t\t\t\t\tresult.add(eObject);";
+
 	protected final String TEXT_6 = NL + "\t\t\t\tif (object.";
+
 	protected final String TEXT_7 = "() != null)\t" + NL + "\t\t\t\t\tresult.add(object.";
+
 	protected final String TEXT_8 = "());\t";
+
 	protected final String TEXT_9 = "\t\t\t\t";
+
 	protected final String TEXT_10 = NL + "\t\t" + NL + "\t\treturn result;" + NL + "\t}" + NL + "" + NL + "\t";
+
 	protected final String TEXT_11 = NL + NL + "import ";
+
 	protected final String TEXT_12 = ";" + NL;
+
 	protected final String TEXT_13 = NL;
 
 	public ReferencedViewpointElementJavaClass() {
@@ -116,8 +125,7 @@ public class ReferencedViewpointElementJavaClass extends
 		stringBuffer.append(vpClassName);
 		stringBuffer.append(TEXT_3);
 		for (AbstractAssociation abstractAssociation : parameter.getVP_Classes_Associations()) {
-			if (abstractAssociation instanceof LocalClassAssociation
-					&& abstractAssociation.getType() == Association_Types.REFERENCE) {
+			if (abstractAssociation instanceof LocalClassAssociation && abstractAssociation.getType() == Association_Types.REFERENCE) {
 				String vpAssociationGetterName = ClassUtils.INSTANCE.getAssociationAccesssorName(abstractAssociation);
 				if (ClassUtils.isAssociationMultiple(abstractAssociation)) {
 					stringBuffer.append(TEXT_4);
@@ -138,8 +146,7 @@ public class ReferencedViewpointElementJavaClass extends
 		new Node.DataLeaf(ictx.getNode(), getClass(), "genClassMethods", stringBuffer.toString());
 	}
 
-	protected void method_genSemanticImoprt(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_genSemanticImoprt(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		stringBuffer.append(TEXT_11);
 		stringBuffer.append(vpClassInterfaceFullyQualifiedName);
@@ -155,8 +162,7 @@ public class ReferencedViewpointElementJavaClass extends
 		new Node.DataLeaf(ictx.getNode(), getClass(), "setJavaClassName", stringBuffer.toString());
 	}
 
-	protected void method_setConcernedVPClass(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_setConcernedVPClass(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		vpClass = parameter;
 		InternalPatternContext ictx = (InternalPatternContext) ctx;

@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.clazz.content;
 
 import java.util.*;
@@ -10,12 +10,12 @@ import org.eclipse.egf.common.helper.*;
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.util.PlatformEClassesManager;
 
-public class ExternalClassAssociation
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.abstracts.AbstractAssociationPattern {
+public class ExternalClassAssociation extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.abstracts.AbstractAssociationPattern {
 
 	public ExternalClassAssociation() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -56,8 +56,7 @@ public class ExternalClassAssociation
 		return null;
 	}
 
-	protected void method_setAbstractAssociationParameter(final StringBuffer out, final PatternContext ctx)
-			throws Exception {
+	protected void method_setAbstractAssociationParameter(final StringBuffer out, final PatternContext ctx) throws Exception {
 		//default content
 
 		abstractAssociation = parameter;
@@ -75,8 +74,7 @@ public class ExternalClassAssociation
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.ExternalClassAssociation parameter;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.ExternalClassAssociation parameter) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.ExternalClassAssociation parameter) {
 		this.parameter = parameter;
 	}
 

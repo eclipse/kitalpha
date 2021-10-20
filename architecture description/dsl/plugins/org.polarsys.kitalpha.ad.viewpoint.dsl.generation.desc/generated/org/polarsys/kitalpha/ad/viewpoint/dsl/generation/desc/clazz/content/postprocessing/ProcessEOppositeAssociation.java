@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.clazz.content.postprocessing;
 
 import java.util.*;
@@ -12,12 +12,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.util.ECoreResource
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.LocalClassAssociation;
 
-public class ProcessEOppositeAssociation
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.common.AnyVPSpecElement {
+public class ProcessEOppositeAssociation extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.common.AnyVPSpecElement {
 
 	public ProcessEOppositeAssociation() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -70,15 +70,13 @@ public class ProcessEOppositeAssociation
 			EReference eReference = helper.getEReference(vpClassName, parameter.getName());
 
 			if (eReference == null) {
-				throw new RuntimeException(
-						"Could not find a reference (" + parameter.getName() + " to compute its eOpposite"); //$NON-NLS-1$
+				throw new RuntimeException("Could not find a reference (" + parameter.getName() + " to compute its eOpposite"); //$NON-NLS-1$
 			}
 
 			//eOppoiste reference
 			EObject oppositeVpClass = opposite.eContainer();
 			String oppositeReferenceName = opposite.getName();
-			String oppositeVpClassName = ((org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class) oppositeVpClass)
-					.getName();
+			String oppositeVpClassName = ((org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class) oppositeVpClass).getName();
 			EReference eOpposite = helper.getEReference(oppositeVpClassName, oppositeReferenceName);
 
 			if (eOpposite == null) {

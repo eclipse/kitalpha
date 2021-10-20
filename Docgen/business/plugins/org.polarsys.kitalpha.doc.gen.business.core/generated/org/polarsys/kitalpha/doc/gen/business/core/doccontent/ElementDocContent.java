@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.0.201805040915
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.doc.gen.business.core.doccontent;
 
 import org.eclipse.egf.common.helper.*;
@@ -20,30 +20,30 @@ public class ElementDocContent extends org.polarsys.kitalpha.doc.gen.business.co
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>" + NL
-			+ "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"" + NL
-			+ "    \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">" + NL
-			+ "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">" + NL + "" + NL + "\t<head>"
-			+ NL + "\t\t<meta name=\"copyright\" content=\"";
-	protected final String TEXT_2 = "\" />" + NL
-			+ "\t\t<meta http-equiv=\"content-type\" content=\"text/html;charset=ISO-8859-1\" />" + NL
+
+	protected final String TEXT_1 = "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>" + NL + "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"" + NL
+			+ "    \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">" + NL + "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">" + NL + "" + NL + "\t<head>" + NL
+			+ "\t\t<meta name=\"copyright\" content=\"";
+
+	protected final String TEXT_2 = "\" />" + NL + "\t\t<meta http-equiv=\"content-type\" content=\"text/html;charset=ISO-8859-1\" />" + NL
 			+ "\t\t<meta http-equiv=\"Content-Style-Type\" content=\"text/css\" />" + NL + "" + NL + "\t\t<title>";
-	protected final String TEXT_3 = "</title>" + NL
-			+ "\t\t<link rel=\"stylesheet\" href=\"../../scripts/jquery-treeview/jquery.treeview.css\" />" + NL
-			+ "  \t\t<script src=\"../../scripts/jquery-treeview/lib/jquery-1.11.1.js\" type=\"text/javascript\"></script>"
-			+ NL
-			+ "  \t\t<script src=\"../../scripts/jquery-treeview/jquery.treeview.js\" type=\"text/javascript\"></script>"
-			+ NL + "\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"../../css/simpletree.css\" />\t\t" + NL
-			+ "\t\t<link title=\"default\" rel=\"stylesheet\" type=\"text/css\" media=\"screen, projection\" href=\"../../css/content.css\"></link>"
-			+ NL + "\t\t" + NL + "\t\t<script type=\"text/javascript\">" + NL
-			+ "if(parent.location.href == self.location.href) {" + NL + "window.location.href = 'index.html?";
-	protected final String TEXT_4 = "';" + NL + "}" + NL + "</script>" + NL + "\t</head>" + NL + "\t" + NL + "\t<body>"
-			+ NL + "\t";
+
+	protected final String TEXT_3 = "</title>" + NL + "\t\t<link rel=\"stylesheet\" href=\"../../scripts/jquery-treeview/jquery.treeview.css\" />" + NL
+			+ "  \t\t<script src=\"../../scripts/jquery-treeview/lib/jquery-1.11.1.js\" type=\"text/javascript\"></script>" + NL
+			+ "  \t\t<script src=\"../../scripts/jquery-treeview/jquery.treeview.js\" type=\"text/javascript\"></script>" + NL
+			+ "\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"../../css/simpletree.css\" />\t\t" + NL
+			+ "\t\t<link title=\"default\" rel=\"stylesheet\" type=\"text/css\" media=\"screen, projection\" href=\"../../css/content.css\"></link>" + NL + "\t\t" + NL
+			+ "\t\t<script type=\"text/javascript\">" + NL + "if(parent.location.href == self.location.href) {" + NL + "window.location.href = 'index.html?";
+
+	protected final String TEXT_4 = "';" + NL + "}" + NL + "</script>" + NL + "\t</head>" + NL + "\t" + NL + "\t<body>" + NL + "\t";
+
 	protected final String TEXT_5 = "\t</body>" + NL + "</html>" + NL;
+
 	protected final String TEXT_6 = "<div id=\"content\">" + NL;
+
 	protected final String TEXT_7 = " </div>";
+
 	protected final String TEXT_8 = NL;
-	protected final String TEXT_9 = NL;
 
 	public ElementDocContent() {
 		//Here is the constructor
@@ -74,7 +74,7 @@ public class ElementDocContent extends org.polarsys.kitalpha.doc.gen.business.co
 		}
 
 		stringBuffer.append(TEXT_8);
-		stringBuffer.append(TEXT_9);
+		stringBuffer.append(TEXT_8);
 		return stringBuffer.toString();
 	}
 
@@ -127,8 +127,7 @@ public class ElementDocContent extends org.polarsys.kitalpha.doc.gen.business.co
 		return parameters;
 	}
 
-	protected void method_setReporterContext(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_setReporterContext(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		ctx.setValue("fileName", fileName);
 
@@ -169,11 +168,9 @@ public class ElementDocContent extends org.polarsys.kitalpha.doc.gen.business.co
 		new Node.DataLeaf(ictx.getNode(), getClass(), "startContent", stringBuffer.toString());
 	}
 
-	protected void method_preContentExtension(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_preContentExtension(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
-		org.polarsys.kitalpha.doc.gen.business.core.extension.intf.DocGenExtensionFactory.newDocGenExtensionEngine()
-				.apply("PRE_CONTENT_EXTENSION", ctx, getParameters(), stringBuffer);
+		org.polarsys.kitalpha.doc.gen.business.core.extension.intf.DocGenExtensionFactory.newDocGenExtensionEngine().apply("PRE_CONTENT_EXTENSION", ctx, getParameters(), stringBuffer);
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "preContentExtension", stringBuffer.toString());
@@ -185,11 +182,9 @@ public class ElementDocContent extends org.polarsys.kitalpha.doc.gen.business.co
 		new Node.DataLeaf(ictx.getNode(), getClass(), "content", stringBuffer.toString());
 	}
 
-	protected void method_postContentExtension(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_postContentExtension(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
-		org.polarsys.kitalpha.doc.gen.business.core.extension.intf.DocGenExtensionFactory.newDocGenExtensionEngine()
-				.apply("POST_CONTENT_EXTENSION", ctx, getParameters(), stringBuffer);
+		org.polarsys.kitalpha.doc.gen.business.core.extension.intf.DocGenExtensionFactory.newDocGenExtensionEngine().apply("POST_CONTENT_EXTENSION", ctx, getParameters(), stringBuffer);
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "postContentExtension", stringBuffer.toString());

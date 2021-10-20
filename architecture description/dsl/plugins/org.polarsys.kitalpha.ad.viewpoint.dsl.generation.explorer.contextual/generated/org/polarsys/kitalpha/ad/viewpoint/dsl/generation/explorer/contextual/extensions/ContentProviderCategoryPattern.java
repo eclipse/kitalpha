@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.2.202001031546
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.extensions;
 
 import org.eclipse.egf.common.helper.*;
@@ -20,9 +20,11 @@ public class ContentProviderCategoryPattern {
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "<extension " + NL
-			+ "\tpoint=\"org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory\">" + NL;
+
+	protected final String TEXT_1 = "<extension " + NL + "\tpoint=\"org.eclipse.amalgam.explorer.contextual.core.contentProviderCategory\">" + NL;
+
 	protected final String TEXT_2 = "\t</extension>" + NL;
+
 	protected final String TEXT_3 = NL;
 
 	public ContentProviderCategoryPattern() {
@@ -73,8 +75,8 @@ public class ContentProviderCategoryPattern {
 			parameters.put("parameter", this.parameter);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
 			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual/egf/VpdslContextualExplorerGeneration.fcore#_JZ5FAMSFEeKIpNoHTXzETQ",
-					ctx_local, parameters);
+					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual/egf/VpdslContextualExplorerGeneration.fcore#_JZ5FAMSFEeKIpNoHTXzETQ", ctx_local,
+					parameters);
 		}
 
 		{
@@ -82,8 +84,8 @@ public class ContentProviderCategoryPattern {
 			parameters.put("parameter", this.parameter);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
 			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual/egf/VpdslContextualExplorerGeneration.fcore#_1VS8AMSJEeKIpNoHTXzETQ",
-					ctx_local, parameters);
+					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual/egf/VpdslContextualExplorerGeneration.fcore#_1VS8AMSJEeKIpNoHTXzETQ", ctx_local,
+					parameters);
 		}
 
 		{
@@ -91,8 +93,8 @@ public class ContentProviderCategoryPattern {
 			parameters.put("parameter", this.parameter);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
 			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual/egf/VpdslContextualExplorerGeneration.fcore#_95H-QMSJEeKIpNoHTXzETQ",
-					ctx_local, parameters);
+					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual/egf/VpdslContextualExplorerGeneration.fcore#_95H-QMSJEeKIpNoHTXzETQ", ctx_local,
+					parameters);
 		}
 
 		{
@@ -100,8 +102,8 @@ public class ContentProviderCategoryPattern {
 			parameters.put("parameter", this.parameter);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
 			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual/egf/VpdslContextualExplorerGeneration.fcore#_DKDsYMSKEeKIpNoHTXzETQ",
-					ctx_local, parameters);
+					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual/egf/VpdslContextualExplorerGeneration.fcore#_DKDsYMSKEeKIpNoHTXzETQ", ctx_local,
+					parameters);
 		}
 
 		{
@@ -109,8 +111,8 @@ public class ContentProviderCategoryPattern {
 			parameters.put("parameter", this.parameter);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
 			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual/egf/VpdslContextualExplorerGeneration.fcore#_KmUpoMSKEeKIpNoHTXzETQ",
-					ctx_local, parameters);
+					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual/egf/VpdslContextualExplorerGeneration.fcore#_KmUpoMSKEeKIpNoHTXzETQ", ctx_local,
+					parameters);
 		}
 
 		{
@@ -118,8 +120,8 @@ public class ContentProviderCategoryPattern {
 			parameters.put("parameter", this.parameter);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
 			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual/egf/VpdslContextualExplorerGeneration.fcore#_Ql5mcMSKEeKIpNoHTXzETQ",
-					ctx_local, parameters);
+					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual/egf/VpdslContextualExplorerGeneration.fcore#_Ql5mcMSKEeKIpNoHTXzETQ", ctx_local,
+					parameters);
 		}
 
 		{

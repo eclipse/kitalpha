@@ -1,4 +1,4 @@
-//Generated with EGF 1.4.0.v20160519-0641
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.doc.gen.business.core.index;
 
 import org.eclipse.egf.common.helper.*;
@@ -19,22 +19,22 @@ public class GeneralIndexBuilder {
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + NL
-			+ "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" " + NL
-			+ "        \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">" + NL
-			+ "<html xmlns=\"http://www.w3.org/1999/xhtml\">" + NL + "" + NL + "    <head>" + NL
-			+ "\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"../css/generalindex.css\" />" + NL + "    </head>"
-			+ NL + "    " + NL + "    <body>" + NL + "    <ul class=\"generalIndex\">";
-	protected final String TEXT_2 = NL + "\t\t<li>" + NL
-			+ "\t\t\t<div style=\"float:left; margin-left:5px; font-size:12px; font-family:Arial\">" + NL
-			+ "\t\t\t\t<a href=\"";
+
+	protected final String TEXT_1 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + NL + "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" " + NL
+			+ "        \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">" + NL + "<html xmlns=\"http://www.w3.org/1999/xhtml\">" + NL + "" + NL + "    <head>" + NL
+			+ "\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"../css/generalindex.css\" />" + NL + "    </head>" + NL + "    " + NL + "    <body>" + NL + "    <ul class=\"generalIndex\">";
+
+	protected final String TEXT_2 = NL + "\t\t<li>" + NL + "\t\t\t<div style=\"float:left; margin-left:5px; font-size:12px; font-family:Arial\">" + NL + "\t\t\t\t<a href=\"";
+
 	protected final String TEXT_3 = "/index.html\" target=\"_top\">";
+
 	protected final String TEXT_4 = "</a>" + NL + "\t\t\t</div>" + NL + "\t\t</li>";
+
 	protected final String TEXT_5 = NL;
+
 	protected final String TEXT_6 = "\t</ul>" + NL + "    </body>" + NL + "</html>";
+
 	protected final String TEXT_7 = " ";
-	protected final String TEXT_8 = NL;
-	protected final String TEXT_9 = NL;
 
 	public GeneralIndexBuilder() {
 		//Here is the constructor
@@ -62,8 +62,8 @@ public class GeneralIndexBuilder {
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_8);
-		stringBuffer.append(TEXT_9);
+		stringBuffer.append(TEXT_5);
+		stringBuffer.append(TEXT_5);
 		return stringBuffer.toString();
 	}
 
@@ -122,8 +122,7 @@ public class GeneralIndexBuilder {
 		new Node.DataLeaf(ictx.getNode(), getClass(), "htmlFooter", stringBuffer.toString());
 	}
 
-	protected void method_setContextVariable(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_setContextVariable(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		ctx.setValue("fileName", "modelindex");
 		stringBuffer.append(TEXT_7);

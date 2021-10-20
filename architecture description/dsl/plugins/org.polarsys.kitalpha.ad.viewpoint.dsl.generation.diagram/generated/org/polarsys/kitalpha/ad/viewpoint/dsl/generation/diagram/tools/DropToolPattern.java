@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools;
 
 import java.util.*;
@@ -36,12 +36,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.VSMVariabl
 import org.eclipse.emf.ecore.EStructuralFeature.Setting;
 import org.eclipse.emf.ecore.util.ECrossReferenceAdapter;
 
-public class DropToolPattern
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common.AbstractTool {
+public class DropToolPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common.AbstractTool {
 
 	public DropToolPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -95,8 +95,7 @@ public class DropToolPattern
 			return;
 		}
 
-		ContainerDropDescription drop = org.eclipse.sirius.diagram.description.tool.ToolFactory.eINSTANCE
-				.createContainerDropDescription();
+		ContainerDropDescription drop = org.eclipse.sirius.diagram.description.tool.ToolFactory.eINSTANCE.createContainerDropDescription();
 		drop.setName("Drop_" + mapping.getName());
 		((DragAndDropTargetDescription) d_mapping_container).getDropDescriptions().add(drop);
 		drop.getMappings().add((DiagramElementMapping) GenerationUtil.getDoremiElement(mapping));
@@ -169,24 +168,18 @@ public class DropToolPattern
 							String n_method_name = mappingParentName + "Drop" + mapping.getName();
 							JavaMethodReturnType n_returnType = JavaMethodReturnType.Boolean;
 							JavaMethodData javaMethodData = new JavaMethodData(n_method_name, n_returnType);
-							javaMethodData.addMethodParameter("oldSemanticContainer", "EObject",
-									"the old semantic container");
-							javaMethodData.addMethodParameter("newSemanticContainer", "EObject",
-									"the new semantic container");
-							javaMethodData.addMethodParameter(VSMVariable.element.toString(), "EObject",
-									"the semantic container of the mapping");
-							javaMethodData.addMethodParameter("newContainerView", "EObject",
-									"the view of the new container");
+							javaMethodData.addMethodParameter("oldSemanticContainer", "EObject", "the old semantic container");
+							javaMethodData.addMethodParameter("newSemanticContainer", "EObject", "the new semantic container");
+							javaMethodData.addMethodParameter(VSMVariable.element.toString(), "EObject", "the semantic container of the mapping");
+							javaMethodData.addMethodParameter("newContainerView", "EObject", "the view of the new container");
 
 							javaServiceData.addMethod(javaMethodData);
 
 							If d_if = ToolFactory.eINSTANCE.createIf();
-							String mParameters = "(" + VSMVariable.getGenericInnerVariable("newSemanticContainer") + ","
-									+ VSMVariable.element.getInnerVariable() + ","
+							String mParameters = "(" + VSMVariable.getGenericInnerVariable("newSemanticContainer") + "," + VSMVariable.element.getInnerVariable() + ","
 									+ VSMVariable.getGenericInnerVariable("newContainerView") + ")";
 
-							d_if.setConditionExpression(SiriusExpressionHelper
-									.getExpressoin(n_method_name + mParameters, ExpressionInterpreter.Service));
+							d_if.setConditionExpression(SiriusExpressionHelper.getExpressoin(n_method_name + mParameters, ExpressionInterpreter.Service));
 							gotoNewContainer.getSubModelOperations().add(d_if);
 						}
 					}

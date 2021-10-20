@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201906060805
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.emde.egf.editor.call.Editor;
 
 import org.polarsys.kitalpha.emde.egf.utils.*;
@@ -16,8 +16,7 @@ import org.eclipse.egf.model.pattern.*;
 import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 
-public class EditoraddItemProviderFactoriesinsert
-		extends org.eclipse.egf.emf.pattern.editor.call.Editor.EditoraddItemProviderFactoriesinsert {
+public class EditoraddItemProviderFactoriesinsert extends org.eclipse.egf.emf.pattern.editor.call.Editor.EditoraddItemProviderFactoriesinsert {
 	protected static String nl;
 
 	public static synchronized EditoraddItemProviderFactoriesinsert create(String lineSeparator) {
@@ -28,12 +27,15 @@ public class EditoraddItemProviderFactoriesinsert
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+
 	protected final String TEXT_1 = "\t\tfor (AdapterFactory extendedAdapterFactory : ";
+
 	protected final String TEXT_2 = ".INSTANCE.getExtendedModelAdapterFactories(";
-	protected final String TEXT_3 = ".class.getName())) {" + NL
-			+ "\t\t\tadapterFactory.addAdapterFactory(extendedAdapterFactory);" + NL + "\t\t}";
-	protected final String TEXT_4 = NL
-			+ "\t\tadapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());";
+
+	protected final String TEXT_3 = ".class.getName())) {" + NL + "\t\t\tadapterFactory.addAdapterFactory(extendedAdapterFactory);" + NL + "\t\t}";
+
+	protected final String TEXT_4 = NL + "\t\tadapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());";
+
 	protected final String TEXT_5 = NL;
 
 	public EditoraddItemProviderFactoriesinsert() {
@@ -171,14 +173,9 @@ public class EditoraddItemProviderFactoriesinsert
 																															this._ListOfPropertySheetPage = (java.lang.String) _ListOfPropertySheetPageParameter;
 																															this._ArrayListOfPropertySheetPage = (java.lang.String) _ArrayListOfPropertySheetPageParameter;
 
-																															if (preCondition(
-																																	ctx)) {
-																																ctx.setNode(
-																																		new Node.Container(
-																																				currentNode,
-																																				getClass()));
-																																orchestration(
-																																		ctx);
+																															if (preCondition(ctx)) {
+																																ctx.setNode(new Node.Container(currentNode, getClass()));
+																																orchestration(ctx);
 																															}
 
 																														}
@@ -301,8 +298,7 @@ public class EditoraddItemProviderFactoriesinsert
 
 		if (genPackage.isExtensibleProviderFactory()) {
 			stringBuffer.append(TEXT_1);
-			stringBuffer
-					.append(genModel.getImportedName("org.polarsys.kitalpha.emde.extension.ModelExtensionDescriptor"));
+			stringBuffer.append(genModel.getImportedName("org.polarsys.kitalpha.emde.extension.ModelExtensionDescriptor"));
 			stringBuffer.append(TEXT_2);
 			stringBuffer.append(genPackage.getImportedItemProviderAdapterFactoryClassName());
 			stringBuffer.append(TEXT_3);

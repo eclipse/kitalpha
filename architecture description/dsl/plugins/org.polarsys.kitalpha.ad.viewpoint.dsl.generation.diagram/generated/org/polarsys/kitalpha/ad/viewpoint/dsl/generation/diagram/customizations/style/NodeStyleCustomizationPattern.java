@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.style;
 
 import java.util.*;
@@ -23,12 +23,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.VSMVariabl
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.javaservice.JavaMethodData;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.javaservice.JavaMethodData.JavaMethodReturnType;
 
-public class NodeStyleCustomizationPattern extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.common.AbstractNodeStyleCustomizationPattern {
+public class NodeStyleCustomizationPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.common.AbstractNodeStyleCustomizationPattern {
 
 	public NodeStyleCustomizationPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -69,8 +69,7 @@ public class NodeStyleCustomizationPattern extends
 			parameters.put("appliedOn", this.appliedOn);
 			parameters.put("stylePropertyData", this.labelPosition);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
 					ctx_local, parameters);
 		}
 		{
@@ -80,8 +79,7 @@ public class NodeStyleCustomizationPattern extends
 			parameters.put("appliedOn", this.appliedOn);
 			parameters.put("stylePropertyData", this.hideLabelByDefault);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
 					ctx_local, parameters);
 		}
 		{
@@ -91,8 +89,7 @@ public class NodeStyleCustomizationPattern extends
 			parameters.put("appliedOn", this.appliedOn);
 			parameters.put("stylePropertyData", this.resizeKind);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
 					ctx_local, parameters);
 		}
 		{
@@ -102,8 +99,7 @@ public class NodeStyleCustomizationPattern extends
 			parameters.put("appliedOn", this.appliedOn);
 			parameters.put("stylePropertyData", this.sizeComputationExpression);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
 					ctx_local, parameters);
 		}
 		ictx.setNode(currentNode);
@@ -127,14 +123,12 @@ public class NodeStyleCustomizationPattern extends
 	protected void method_initLabelPositionData(final StringBuffer out, final PatternContext ctx) throws Exception {
 		if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getNodeStyleCustomization_LabelPosition())) {
 			String enumLiteralName = parameter.getLabelPosition().toString();
-			String methodCode = "return DiagramPackage.eINSTANCE.getLabelPosition().getEEnumLiteral(\""
-					+ enumLiteralName + "\");";
+			String methodCode = "return DiagramPackage.eINSTANCE.getLabelPosition().getEEnumLiteral(\"" + enumLiteralName + "\");";
 			char first = Character.toUpperCase(enumLiteralName.charAt(0));
 			enumLiteralName = first + enumLiteralName.substring(1).toLowerCase();
 			String methodName = "getLabelPosition" + enumLiteralName;
 
-			JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral,
-					methodCode);
+			JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
 
 			// Set method parameters data
 			javaMethodData.addMethodParameter("any", "EObject", "any model element");
@@ -154,11 +148,9 @@ public class NodeStyleCustomizationPattern extends
 		new Node.DataLeaf(ictx.getNode(), getClass(), "initLabelPositionData", out.toString());
 	}
 
-	protected void method_initHideLabelByDefaultData(final StringBuffer out, final PatternContext ctx)
-			throws Exception {
+	protected void method_initHideLabelByDefaultData(final StringBuffer out, final PatternContext ctx) throws Exception {
 		if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getNodeStyleCustomization_HideLabelByDefault())) {
-			set_hideLabelByDefault(
-					new StylePropertyNameValueCouple("hideLabelByDefault", parameter.isHideLabelByDefault()));
+			set_hideLabelByDefault(new StylePropertyNameValueCouple("hideLabelByDefault", parameter.isHideLabelByDefault()));
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
@@ -168,14 +160,12 @@ public class NodeStyleCustomizationPattern extends
 	protected void method_initResizeKindData(final StringBuffer out, final PatternContext ctx) throws Exception {
 		if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getNodeStyleCustomization_ResizeKind())) {
 			String enumLiteralName = parameter.getResizeKind().toString();
-			String methodCode = "return DiagramPackage.eINSTANCE.getResizeKind().getEEnumLiteral(\"" + enumLiteralName
-					+ "\");";
+			String methodCode = "return DiagramPackage.eINSTANCE.getResizeKind().getEEnumLiteral(\"" + enumLiteralName + "\");";
 			char first = Character.toUpperCase(enumLiteralName.charAt(0));
 			enumLiteralName = first + enumLiteralName.substring(1).toLowerCase();
 			String methodName = "getResizeKind" + enumLiteralName;
 
-			JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral,
-					methodCode);
+			JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
 
 			// Set method parameters data
 			javaMethodData.addMethodParameter("any", "EObject", "any model element");
@@ -195,17 +185,13 @@ public class NodeStyleCustomizationPattern extends
 		new Node.DataLeaf(ictx.getNode(), getClass(), "initResizeKindData", out.toString());
 	}
 
-	protected void method_initSizeComputationExpressionData(final StringBuffer out, final PatternContext ctx)
-			throws Exception {
-		if (parameter
-				.eIsSet(VpstylecustomizationPackage.eINSTANCE.getNodeStyleCustomization_SizeComputationExpression())) {
+	protected void method_initSizeComputationExpressionData(final StringBuffer out, final PatternContext ctx) throws Exception {
+		if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getNodeStyleCustomization_SizeComputationExpression())) {
 			final CustomizationExpression expression = parameter.getSizeComputationExpression();
 			final AbstractComputableElement expressionElement = expression.getOwnedExpressionElement();
 			if (expressionElement != null) {
-				final String newLabelExpression = DiagramExpressionUtil.getAbstractComputableElementExpression(
-						expressionElement, VSMVariable.view, VSMVariable.container);
-				set_sizeComputationExpression(
-						new StylePropertyNameValueCouple("sizeComputationExpression", newLabelExpression));
+				final String newLabelExpression = DiagramExpressionUtil.getAbstractComputableElementExpression(expressionElement, VSMVariable.view, VSMVariable.container);
+				set_sizeComputationExpression(new StylePropertyNameValueCouple("sizeComputationExpression", newLabelExpression));
 			}
 		}
 
@@ -215,36 +201,31 @@ public class NodeStyleCustomizationPattern extends
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.NodeStyleCustomization parameter;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.NodeStyleCustomization parameter) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.NodeStyleCustomization parameter) {
 		this.parameter = parameter;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple labelPosition;
 
-	public void set_labelPosition(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple labelPosition) {
+	public void set_labelPosition(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple labelPosition) {
 		this.labelPosition = labelPosition;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple hideLabelByDefault;
 
-	public void set_hideLabelByDefault(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple hideLabelByDefault) {
+	public void set_hideLabelByDefault(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple hideLabelByDefault) {
 		this.hideLabelByDefault = hideLabelByDefault;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple resizeKind;
 
-	public void set_resizeKind(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple resizeKind) {
+	public void set_resizeKind(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple resizeKind) {
 		this.resizeKind = resizeKind;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple sizeComputationExpression;
 
-	public void set_sizeComputationExpression(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple sizeComputationExpression) {
+	public void set_sizeComputationExpression(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple sizeComputationExpression) {
 		this.sizeComputationExpression = sizeComputationExpression;
 	}
 

@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.edge;
 
 import java.util.*;
@@ -36,12 +36,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.VSMVariabl
 
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.mappingimport.merge.EdgeStyleImportMerger;
 
-public class EdgeImportPattern
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.DiagramElementPattern {
+public class EdgeImportPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.DiagramElementPattern {
 
 	public EdgeImportPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -136,15 +136,12 @@ public class EdgeImportPattern
 				String acceleoExpression = "";
 				if (fEE instanceof JavaElement) {
 					String javaMethodName = ((JavaElement) fEE).getMethod();
-					String mParameters = VSMVariable.view.getInnerVariable() + ","
-							+ VSMVariable.container.getInnerVariable();
+					String mParameters = VSMVariable.view.getInnerVariable() + "," + VSMVariable.container.getInnerVariable();
 					javaMethodName = JavaElementHelper.addDefaultParameterToJavaMethod(javaMethodName, mParameters);
-					acceleoExpression = SiriusExpressionHelper.getExpressoin(javaMethodName,
-							ExpressionInterpreter.Service);
+					acceleoExpression = SiriusExpressionHelper.getExpressoin(javaMethodName, ExpressionInterpreter.Service);
 				}
 				if (fEE instanceof DomainElement) {
-					acceleoExpression = SiriusExpressionHelper.getExpressoin(
-							((DomainElement) fEE).getAttribute().getName(), ExpressionInterpreter.Feature);
+					acceleoExpression = SiriusExpressionHelper.getExpressoin(((DomainElement) fEE).getAttribute().getName(), ExpressionInterpreter.Feature);
 				}
 
 				ceStyleDesc = DescriptionFactory.eINSTANCE.createConditionalEdgeStyleDescription();
@@ -253,8 +250,7 @@ public class EdgeImportPattern
 
 			EdgeStyleDescription eStyleDesc_merged = null;
 			try {
-				eStyleDesc_merged = EdgeStyleImportMerger.mergeStyles(parameter.getImports().getStyle(), eStyleDesc,
-						iEgdeDescription);
+				eStyleDesc_merged = EdgeStyleImportMerger.mergeStyles(parameter.getImports().getStyle(), eStyleDesc, iEgdeDescription);
 			} catch (Exception e) {
 			}
 

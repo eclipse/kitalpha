@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools;
 
 import java.util.*;
@@ -30,12 +30,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.Generation
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.IconPathHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.VSMVariable;
 
-public class CreateViewToolPattern
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common.AbstractCreationTool {
+public class CreateViewToolPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common.AbstractCreationTool {
 
 	public CreateViewToolPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -99,21 +99,18 @@ public class CreateViewToolPattern
 			v_container.setName("container");
 
 			// Selection variable
-			SelectModelElementVariable selection = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE
-					.createSelectModelElementVariable();
+			SelectModelElementVariable selection = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE.createSelectModelElementVariable();
 			selection.setName("selection");
 			selection.setMultiple(true);
 			selection.setMessage("Select one or more model elements ...");
 			selection.setCandidatesExpression(scExpression);
 			v_container.getSubVariables().add(selection);
 
-			ContainerViewVariable v_container_view = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE
-					.createContainerViewVariable();
+			ContainerViewVariable v_container_view = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE.createContainerViewVariable();
 			v_container_view.setName("containerView");
 
 			// ChangeContext creation 
-			ChangeContext gotoContainer = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE
-					.createChangeContext();
+			ChangeContext gotoContainer = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE.createChangeContext();
 			String pContainer = VSMVariable.container.getExpressionVariable();
 			gotoContainer.setBrowseExpression(pContainer);
 
@@ -123,8 +120,7 @@ public class CreateViewToolPattern
 			gotoContainer.getSubModelOperations().add(_for);
 
 			// ChangeContext creation 
-			ChangeContext gotoI = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE
-					.createChangeContext();
+			ChangeContext gotoI = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE.createChangeContext();
 			gotoI.setBrowseExpression(VSMVariable.i.getExpressionVariable());
 			_for.getSubModelOperations().add(gotoI);
 			CreateView createView = ToolFactory.eINSTANCE.createCreateView();
@@ -135,8 +131,7 @@ public class CreateViewToolPattern
 			gotoI.getSubModelOperations().add(createView);
 
 			// Init creation
-			InitialNodeCreationOperation init = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE
-					.createInitialNodeCreationOperation();
+			InitialNodeCreationOperation init = org.eclipse.sirius.viewpoint.description.tool.ToolFactory.eINSTANCE.createInitialNodeCreationOperation();
 			init.setFirstModelOperations(gotoContainer);
 
 			// Tool creation
@@ -144,8 +139,7 @@ public class CreateViewToolPattern
 			String label = parameter.getLabel();
 			label = label != null && !label.isEmpty() ? label : mappingName;
 
-			if (node_mapping instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Node
-					|| node_mapping instanceof BorderedNode) {
+			if (node_mapping instanceof org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Node || node_mapping instanceof BorderedNode) {
 				creationTool = ToolFactory.eINSTANCE.createNodeCreationDescription();
 				NodeCreationDescription nodeCreationTool = (NodeCreationDescription) creationTool;
 				if (icon_path != null && !icon_path.isEmpty()) {

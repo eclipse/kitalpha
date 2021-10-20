@@ -1,4 +1,4 @@
-//Generated with EGF 1.4.1.v20161010-1704
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.java.classes;
 
 import org.eclipse.egf.common.helper.*;
@@ -12,8 +12,7 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper.pde.PDEUtility;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.internal.StringHelper;
 
-public class PagePredicateJavaClass extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.java.abstracts.AbstractPredicatedElementJavaClass {
+public class PagePredicateJavaClass extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.java.abstracts.AbstractPredicatedElementJavaClass {
 	protected static String nl;
 
 	public static synchronized PagePredicateJavaClass create(String lineSeparator) {
@@ -24,46 +23,49 @@ public class PagePredicateJavaClass extends
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+
 	protected final String TEXT_1 = "/**" + NL + " * @generated " + NL + " */" + NL + "public class ";
-	protected final String TEXT_2 = " implements IPredicate {" + NL + "\t/**" + NL + "\t * Default constructor" + NL
-			+ "\t * @generated" + NL + "\t */" + NL + "\tpublic ";
-	protected final String TEXT_3 = "() {" + NL + "\t\t// TODO Auto-generated constructor stub" + NL + "\t}" + NL + ""
-			+ NL + "\t/**" + NL + "\t * @generated " + NL + "\t */" + NL + "\t@Override" + NL
+
+	protected final String TEXT_2 = " implements IPredicate {" + NL + "\t/**" + NL + "\t * Default constructor" + NL + "\t * @generated" + NL + "\t */" + NL + "\tpublic ";
+
+	protected final String TEXT_3 = "() {" + NL + "\t\t// TODO Auto-generated constructor stub" + NL + "\t}" + NL + "" + NL + "\t/**" + NL + "\t * @generated " + NL + "\t */" + NL + "\t@Override" + NL
 			+ "\tpublic boolean isOk() {";
+
 	protected final String TEXT_4 = NL + "\t\treturn fileExtensionPredicate() && userPredicate();";
+
 	protected final String TEXT_5 = " return ";
+
 	protected final String TEXT_6 = " userPredicate(); ";
+
 	protected final String TEXT_7 = " fileExtensionPredicate(); ";
+
 	protected final String TEXT_8 = NL + "\t}" + NL;
-	protected final String TEXT_9 = "\t" + NL + "\t/**" + NL + "\t * User predicate implementation" + NL
-			+ "\t * @return True if OK, false otherwise." + NL + "\t * @generated" + NL + "\t */" + NL
-			+ "\tprivate boolean userPredicate(){" + NL
-			+ "\t\t// TODO: implement this method to provide the user predicate" + NL
-			+ "\t\t// Ensure that you remove @generated or mark it @generated NOT" + NL + "\t\treturn true;" + NL
-			+ "\t}";
-	protected final String TEXT_10 = "\t" + NL + "\t/**" + NL
-			+ "\t * This method check if the extension of the resource file associated with the " + NL
-			+ "\t * Sirius session is provided by viewpoint specifier." + NL + "\t * " + NL
-			+ "\t * @return True if the current page can be used with the current resource. " + NL + "\t * @generated"
-			+ NL + "\t */" + NL + "\tprotected boolean fileExtensionPredicate(){" + NL
-			+ "\t\tfinal EObject rootSemanticModel = ActivityExplorerManager.INSTANCE.getRootSemanticModel();" + NL
-			+ "\t\tfinal Resource eResource = rootSemanticModel.eResource();" + NL + "\t\tif (null == eResource)" + NL
-			+ "\t\t\treturn false;" + NL + "\t\t" + NL + "\t\tfinal URI resourceURI = eResource.getURI();" + NL
-			+ "\t\tif (null == resourceURI)" + NL + "\t\t\treturn false;" + NL + "\t\t" + NL
+
+	protected final String TEXT_9 = "\t" + NL + "\t/**" + NL + "\t * User predicate implementation" + NL + "\t * @return True if OK, false otherwise." + NL + "\t * @generated" + NL + "\t */" + NL
+			+ "\tprivate boolean userPredicate(){" + NL + "\t\t// TODO: implement this method to provide the user predicate" + NL + "\t\t// Ensure that you remove @generated or mark it @generated NOT"
+			+ NL + "\t\treturn true;" + NL + "\t}";
+
+	protected final String TEXT_10 = "\t" + NL + "\t/**" + NL + "\t * This method check if the extension of the resource file associated with the " + NL
+			+ "\t * Sirius session is provided by viewpoint specifier." + NL + "\t * " + NL + "\t * @return True if the current page can be used with the current resource. " + NL + "\t * @generated"
+			+ NL + "\t */" + NL + "\tprotected boolean fileExtensionPredicate(){" + NL + "\t\tfinal EObject rootSemanticModel = ActivityExplorerManager.INSTANCE.getRootSemanticModel();" + NL
+			+ "\t\tfinal Resource eResource = rootSemanticModel.eResource();" + NL + "\t\tif (null == eResource)" + NL + "\t\t\treturn false;" + NL + "\t\t" + NL
+			+ "\t\tfinal URI resourceURI = eResource.getURI();" + NL + "\t\tif (null == resourceURI)" + NL + "\t\t\treturn false;" + NL + "\t\t" + NL
 			+ "\t\tfinal List<String> allowedFileExtensions = Arrays.asList(";
-	protected final String TEXT_11 = ");" + NL
-			+ "\t\tfinal String fileExtension = resourceURI.fileExtension().toLowerCase();" + NL + "\t\t" + NL
+
+	protected final String TEXT_11 = ");" + NL + "\t\tfinal String fileExtension = resourceURI.fileExtension().toLowerCase();" + NL + "\t\t" + NL
 			+ "\t\treturn allowedFileExtensions.contains(fileExtension);" + NL + "\t}";
+
 	protected final String TEXT_12 = NL + "}";
-	protected final String TEXT_13 = "import org.eclipse.amalgam.explorer.activity.ui.api.editor.predicates.IPredicate;"
-			+ NL;
+
+	protected final String TEXT_13 = "import org.eclipse.amalgam.explorer.activity.ui.api.editor.predicates.IPredicate;" + NL;
+
 	protected final String TEXT_14 = NL + "import java.util.Arrays;" + NL + "import java.util.List;" + NL + "" + NL
-			+ "import org.eclipse.amalgam.explorer.activity.ui.api.manager.ActivityExplorerManager;" + NL + "" + NL
-			+ "import org.eclipse.emf.common.util.URI;" + NL + "import org.eclipse.emf.ecore.resource.Resource;" + NL
-			+ "import org.eclipse.emf.ecore.EObject;";
+			+ "import org.eclipse.amalgam.explorer.activity.ui.api.manager.ActivityExplorerManager;" + NL + "" + NL + "import org.eclipse.emf.common.util.URI;" + NL
+			+ "import org.eclipse.emf.ecore.resource.Resource;" + NL + "import org.eclipse.emf.ecore.EObject;";
+
 	protected final String TEXT_15 = "\t";
+
 	protected final String TEXT_16 = NL;
-	protected final String TEXT_17 = NL;
 
 	public PagePredicateJavaClass() {
 		//Here is the constructor
@@ -100,7 +102,7 @@ public class PagePredicateJavaClass extends
 		}
 
 		stringBuffer.append(TEXT_16);
-		stringBuffer.append(TEXT_17);
+		stringBuffer.append(TEXT_16);
 		return stringBuffer.toString();
 	}
 
@@ -134,8 +136,7 @@ public class PagePredicateJavaClass extends
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Page parameter = null;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Page object) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Page object) {
 		this.parameter = object;
 	}
 
@@ -145,8 +146,7 @@ public class PagePredicateJavaClass extends
 		return parameters;
 	}
 
-	protected void method_setPredicatedElement(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_setPredicatedElement(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		predicatedElement = parameter;
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
@@ -197,8 +197,7 @@ public class PagePredicateJavaClass extends
 		new Node.DataLeaf(ictx.getNode(), getClass(), "genImports", stringBuffer.toString());
 	}
 
-	protected void method_initPredicateType(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_initPredicateType(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		genUserPredicate = parameter.isHasPredicate();
 		final String modelFileExtension = parameter.getFileExtensions();
@@ -207,8 +206,7 @@ public class PagePredicateJavaClass extends
 		new Node.DataLeaf(ictx.getNode(), getClass(), "initPredicateType", stringBuffer.toString());
 	}
 
-	protected void method_updateProjectDependecies(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_updateProjectDependecies(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		super.method_updateProjectDependecies(stringBuffer, ctx);
 		// Add org.eclipse.emf.ecore

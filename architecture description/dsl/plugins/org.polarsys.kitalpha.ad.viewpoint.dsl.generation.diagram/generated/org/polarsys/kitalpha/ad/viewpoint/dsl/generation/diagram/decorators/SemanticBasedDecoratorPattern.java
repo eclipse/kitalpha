@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.decorators;
 
 import java.util.*;
@@ -11,12 +11,12 @@ import org.eclipse.sirius.viewpoint.description.SemanticBasedDecoration;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.commondata.AbstractClass;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.SemanticBasedDecorator;
 
-public class SemanticBasedDecoratorPattern
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.decorators.common.AbstractDecorator {
+public class SemanticBasedDecoratorPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.decorators.common.AbstractDecorator {
 
 	public SemanticBasedDecoratorPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -85,8 +85,7 @@ public class SemanticBasedDecoratorPattern
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.SemanticBasedDecorator parameter;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.SemanticBasedDecorator parameter) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.SemanticBasedDecorator parameter) {
 		this.parameter = parameter;
 	}
 

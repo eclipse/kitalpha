@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.style;
 
 import java.util.*;
@@ -15,12 +15,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.VSMVariabl
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.javaservice.JavaMethodData;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.javaservice.JavaMethodData.JavaMethodReturnType;
 
-public class EdgeStyleCustomizationPattern extends
-		org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.common.AbstractStyleCustomizationPattern {
+public class EdgeStyleCustomizationPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.common.AbstractStyleCustomizationPattern {
 
 	public EdgeStyleCustomizationPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -66,8 +66,7 @@ public class EdgeStyleCustomizationPattern extends
 			parameters.put("stylePropertyData", this.lineStyle);
 			parameters.put("parent", this.parent);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
 					ctx_local, parameters);
 		}
 		{
@@ -77,8 +76,7 @@ public class EdgeStyleCustomizationPattern extends
 			parameters.put("appliedOn", this.appliedOn);
 			parameters.put("stylePropertyData", this.sourceArrow);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
 					ctx_local, parameters);
 		}
 		{
@@ -88,8 +86,7 @@ public class EdgeStyleCustomizationPattern extends
 			parameters.put("appliedOn", this.appliedOn);
 			parameters.put("stylePropertyData", this.targetArrow);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
 					ctx_local, parameters);
 		}
 		{
@@ -99,8 +96,7 @@ public class EdgeStyleCustomizationPattern extends
 			parameters.put("appliedOn", this.appliedOn);
 			parameters.put("stylePropertyData", this.routineStyle);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
 					ctx_local, parameters);
 		}
 		{
@@ -110,8 +106,7 @@ public class EdgeStyleCustomizationPattern extends
 			parameters.put("appliedOn", this.appliedOn);
 			parameters.put("stylePropertyData", this.foldingStyle);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
 					ctx_local, parameters);
 		}
 		{
@@ -121,8 +116,7 @@ public class EdgeStyleCustomizationPattern extends
 			parameters.put("appliedOn", this.appliedOn);
 			parameters.put("stylePropertyData", this.endCentering);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
 					ctx_local, parameters);
 		}
 		{
@@ -132,8 +126,7 @@ public class EdgeStyleCustomizationPattern extends
 			parameters.put("appliedOn", this.appliedOn);
 			parameters.put("stylePropertyData", this.sizeComputationExpression);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_IXiPcGdyEeWYaMtt1GGGww",
 					ctx_local, parameters);
 		}
 		{
@@ -143,8 +136,7 @@ public class EdgeStyleCustomizationPattern extends
 			parameters.put("appliedOn", this.appliedOn);
 			parameters.put("stylePropertyData", this.beginLabelStyleDescription);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_VpyWIGz4EeWW0teG0FdF7g",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_VpyWIGz4EeWW0teG0FdF7g",
 					ctx_local, parameters);
 		}
 		{
@@ -154,8 +146,7 @@ public class EdgeStyleCustomizationPattern extends
 			parameters.put("appliedOn", this.appliedOn);
 			parameters.put("stylePropertyData", this.endLabelStyleDescription);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_VpyWIGz4EeWW0teG0FdF7g",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_VpyWIGz4EeWW0teG0FdF7g",
 					ctx_local, parameters);
 		}
 		{
@@ -165,8 +156,7 @@ public class EdgeStyleCustomizationPattern extends
 			parameters.put("appliedOn", this.appliedOn);
 			parameters.put("stylePropertyData", this.centerLabelStyleDescription);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_VpyWIGz4EeWW0teG0FdF7g",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_VpyWIGz4EeWW0teG0FdF7g",
 					ctx_local, parameters);
 		}
 		{
@@ -176,8 +166,7 @@ public class EdgeStyleCustomizationPattern extends
 			parameters.put("appliedOn", this.appliedOn);
 			parameters.put("stylePropertyData", this.centeredTargetMappings);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_VpyWIGz4EeWW0teG0FdF7g",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_VpyWIGz4EeWW0teG0FdF7g",
 					ctx_local, parameters);
 		}
 		{
@@ -187,8 +176,7 @@ public class EdgeStyleCustomizationPattern extends
 			parameters.put("appliedOn", this.appliedOn);
 			parameters.put("stylePropertyData", this.centeredSourceMappings);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_VpyWIGz4EeWW0teG0FdF7g",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram/egf/VpdslSiriusDiagramGenerator.fcore#_VpyWIGz4EeWW0teG0FdF7g",
 					ctx_local, parameters);
 		}
 		ictx.setNode(currentNode);
@@ -212,14 +200,12 @@ public class EdgeStyleCustomizationPattern extends
 	protected void method_initLineStyleData(final StringBuffer out, final PatternContext ctx) throws Exception {
 		if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getEdgeStyleCustomization_LineStyle())) {
 			String enumLiteralName = parameter.getLineStyle().toString();
-			String methodCode = "return DiagramPackage.eINSTANCE.getLineStyle().getEEnumLiteral(\"" + enumLiteralName
-					+ "\");";
+			String methodCode = "return DiagramPackage.eINSTANCE.getLineStyle().getEEnumLiteral(\"" + enumLiteralName + "\");";
 			char first = Character.toUpperCase(enumLiteralName.charAt(0));
 			enumLiteralName = first + enumLiteralName.substring(1).toLowerCase();
 			String methodName = "getLineStyle" + enumLiteralName;
 
-			JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral,
-					methodCode);
+			JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
 
 			// Set method parameters data
 			javaMethodData.addMethodParameter("any", "EObject", "any model element");
@@ -242,14 +228,12 @@ public class EdgeStyleCustomizationPattern extends
 	protected void method_initSourceArrowdata(final StringBuffer out, final PatternContext ctx) throws Exception {
 		if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getEdgeStyleCustomization_SourceArrow())) {
 			String enumLiteralName = parameter.getSourceArrow().toString();
-			String methodCode = "return DiagramPackage.eINSTANCE.getEdgeArrows().getEEnumLiteral(\"" + enumLiteralName
-					+ "\");";
+			String methodCode = "return DiagramPackage.eINSTANCE.getEdgeArrows().getEEnumLiteral(\"" + enumLiteralName + "\");";
 			char first = Character.toUpperCase(enumLiteralName.charAt(0));
 			enumLiteralName = first + enumLiteralName.substring(1).toLowerCase();
 			String methodName = "getEdgeArrows" + enumLiteralName;
 
-			JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral,
-					methodCode);
+			JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
 
 			// Set method parameters data
 			javaMethodData.addMethodParameter("any", "EObject", "any model element");
@@ -272,14 +256,12 @@ public class EdgeStyleCustomizationPattern extends
 	protected void method_initTargetArrowData(final StringBuffer out, final PatternContext ctx) throws Exception {
 		if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getEdgeStyleCustomization_TargetArrow())) {
 			String enumLiteralName = parameter.getTargetArrow().toString();
-			String methodCode = "return DiagramPackage.eINSTANCE.getEdgeArrows().getEEnumLiteral(\"" + enumLiteralName
-					+ "\");";
+			String methodCode = "return DiagramPackage.eINSTANCE.getEdgeArrows().getEEnumLiteral(\"" + enumLiteralName + "\");";
 			char first = Character.toUpperCase(enumLiteralName.charAt(0));
 			enumLiteralName = first + enumLiteralName.substring(1).toLowerCase();
 			String methodName = "getEdgeArrows" + enumLiteralName;
 
-			JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral,
-					methodCode);
+			JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
 
 			// Set method parameters data
 			javaMethodData.addMethodParameter("any", "EObject", "any model element");
@@ -302,14 +284,12 @@ public class EdgeStyleCustomizationPattern extends
 	protected void method_initRoutingStyleData(final StringBuffer out, final PatternContext ctx) throws Exception {
 		if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getEdgeStyleCustomization_RoutingStyle())) {
 			String enumLiteralName = parameter.getRoutingStyle().toString();
-			String methodCode = "return DiagramPackage.eINSTANCE.getEdgeRouting().getEEnumLiteral(\"" + enumLiteralName
-					+ "\");";
+			String methodCode = "return DiagramPackage.eINSTANCE.getEdgeRouting().getEEnumLiteral(\"" + enumLiteralName + "\");";
 			char first = Character.toUpperCase(enumLiteralName.charAt(0));
 			enumLiteralName = first + enumLiteralName.substring(1).toLowerCase();
 			String methodName = "getEdgeRouting" + enumLiteralName;
 
-			JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral,
-					methodCode);
+			JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
 
 			// Set method parameters data
 			javaMethodData.addMethodParameter("any", "EObject", "any model element");
@@ -332,14 +312,12 @@ public class EdgeStyleCustomizationPattern extends
 	protected void method_initFoldingStyleData(final StringBuffer out, final PatternContext ctx) throws Exception {
 		if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getEdgeStyleCustomization_FoldingStyle())) {
 			String enumLiteralName = parameter.getFoldingStyle().toString();
-			String methodCode = "return DescriptionPackage.eINSTANCE.getFoldingStyle().getEEnumLiteral(\""
-					+ enumLiteralName + "\");";
+			String methodCode = "return DescriptionPackage.eINSTANCE.getFoldingStyle().getEEnumLiteral(\"" + enumLiteralName + "\");";
 			char first = Character.toUpperCase(enumLiteralName.charAt(0));
 			enumLiteralName = first + enumLiteralName.substring(1).toLowerCase();
 			String methodName = "getFoldingStyle" + enumLiteralName;
 
-			JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral,
-					methodCode);
+			JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
 
 			// Set method parameters data
 			javaMethodData.addMethodParameter("any", "EObject", "any model element");
@@ -362,14 +340,12 @@ public class EdgeStyleCustomizationPattern extends
 	protected void method_initEndCenteringData(final StringBuffer out, final PatternContext ctx) throws Exception {
 		if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getEdgeStyleCustomization_EndCentering())) {
 			String enumLiteralName = parameter.getEndCentering().toString();
-			String methodCode = "return DescriptionPackage.eINSTANCE.getCenteringStyle().getEEnumLiteral(\""
-					+ enumLiteralName + "\");";
+			String methodCode = "return DescriptionPackage.eINSTANCE.getCenteringStyle().getEEnumLiteral(\"" + enumLiteralName + "\");";
 			char first = Character.toUpperCase(enumLiteralName.charAt(0));
 			enumLiteralName = first + enumLiteralName.substring(1).toLowerCase();
 			String methodName = "getEndCentering" + enumLiteralName;
 
-			JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral,
-					methodCode);
+			JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
 
 			// Set method parameters data
 			javaMethodData.addMethodParameter("any", "EObject", "any model element");
@@ -389,17 +365,13 @@ public class EdgeStyleCustomizationPattern extends
 		new Node.DataLeaf(ictx.getNode(), getClass(), "initEndCenteringData", out.toString());
 	}
 
-	protected void method_initSizeComputationExpressionData(final StringBuffer out, final PatternContext ctx)
-			throws Exception {
-		if (parameter
-				.eIsSet(VpstylecustomizationPackage.eINSTANCE.getEdgeStyleCustomization_SizeComputationExpression())) {
+	protected void method_initSizeComputationExpressionData(final StringBuffer out, final PatternContext ctx) throws Exception {
+		if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getEdgeStyleCustomization_SizeComputationExpression())) {
 			final CustomizationExpression expression = parameter.getSizeComputationExpression();
 			final AbstractComputableElement expressionElement = expression.getOwnedExpressionElement();
 			if (expressionElement != null) {
-				final String sceExpression = DiagramExpressionUtil.getAbstractComputableElementExpression(
-						expressionElement, VSMVariable.view, VSMVariable.container);
-				set_sizeComputationExpression(
-						new StylePropertyNameValueCouple("sizeComputationExpression", sceExpression));
+				final String sceExpression = DiagramExpressionUtil.getAbstractComputableElementExpression(expressionElement, VSMVariable.view, VSMVariable.container);
+				set_sizeComputationExpression(new StylePropertyNameValueCouple("sizeComputationExpression", sceExpression));
 			}
 		}
 
@@ -407,24 +379,17 @@ public class EdgeStyleCustomizationPattern extends
 		new Node.DataLeaf(ictx.getNode(), getClass(), "initSizeComputationExpressionData", out.toString());
 	}
 
-	protected void method_initLabelStyleDescriptionData(final StringBuffer out, final PatternContext ctx)
-			throws Exception {
-		if (parameter
-				.eIsSet(VpstylecustomizationPackage.eINSTANCE.getEdgeStyleCustomization_BeginLabelStyleDescription())) {
-			set_beginLabelStyleDescription(new StylePropertyNameValueCouple("beginLabelStyleDescription",
-					parameter.getBeginLabelStyleDescription()));
+	protected void method_initLabelStyleDescriptionData(final StringBuffer out, final PatternContext ctx) throws Exception {
+		if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getEdgeStyleCustomization_BeginLabelStyleDescription())) {
+			set_beginLabelStyleDescription(new StylePropertyNameValueCouple("beginLabelStyleDescription", parameter.getBeginLabelStyleDescription()));
 		}
 
-		if (parameter
-				.eIsSet(VpstylecustomizationPackage.eINSTANCE.getEdgeStyleCustomization_EndLabelStyleDescription())) {
-			set_endLabelStyleDescription(new StylePropertyNameValueCouple("endLabelStyleDescription",
-					parameter.getEndLabelStyleDescription()));
+		if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getEdgeStyleCustomization_EndLabelStyleDescription())) {
+			set_endLabelStyleDescription(new StylePropertyNameValueCouple("endLabelStyleDescription", parameter.getEndLabelStyleDescription()));
 		}
 
-		if (parameter.eIsSet(
-				VpstylecustomizationPackage.eINSTANCE.getEdgeStyleCustomization_CenterLabelStyleDescription())) {
-			set_centerLabelStyleDescription(new StylePropertyNameValueCouple("centerLabelStyleDescription",
-					parameter.getCenterLabelStyleDescription()));
+		if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getEdgeStyleCustomization_CenterLabelStyleDescription())) {
+			set_centerLabelStyleDescription(new StylePropertyNameValueCouple("centerLabelStyleDescription", parameter.getCenterLabelStyleDescription()));
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
@@ -432,16 +397,12 @@ public class EdgeStyleCustomizationPattern extends
 	}
 
 	protected void method_initCenteredMappingsData(final StringBuffer out, final PatternContext ctx) throws Exception {
-		if (parameter
-				.eIsSet(VpstylecustomizationPackage.eINSTANCE.getEdgeStyleCustomization_CenteredSourceMappings())) {
-			set_centeredSourceMappings(
-					new StylePropertyNameValueCouple("centeredSourceMappings", parameter.getCenteredSourceMappings()));
+		if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getEdgeStyleCustomization_CenteredSourceMappings())) {
+			set_centeredSourceMappings(new StylePropertyNameValueCouple("centeredSourceMappings", parameter.getCenteredSourceMappings()));
 		}
 
-		if (parameter
-				.eIsSet(VpstylecustomizationPackage.eINSTANCE.getEdgeStyleCustomization_CenteredTargetMappings())) {
-			set_centeredTargetMappings(
-					new StylePropertyNameValueCouple("centeredTargetMappings", parameter.getCenteredTargetMappings()));
+		if (parameter.eIsSet(VpstylecustomizationPackage.eINSTANCE.getEdgeStyleCustomization_CenteredTargetMappings())) {
+			set_centeredTargetMappings(new StylePropertyNameValueCouple("centeredTargetMappings", parameter.getCenteredTargetMappings()));
 		}
 
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
@@ -450,92 +411,79 @@ public class EdgeStyleCustomizationPattern extends
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.EdgeStyleCustomization parameter;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.EdgeStyleCustomization parameter) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.EdgeStyleCustomization parameter) {
 		this.parameter = parameter;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple lineStyle;
 
-	public void set_lineStyle(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple lineStyle) {
+	public void set_lineStyle(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple lineStyle) {
 		this.lineStyle = lineStyle;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple sourceArrow;
 
-	public void set_sourceArrow(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple sourceArrow) {
+	public void set_sourceArrow(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple sourceArrow) {
 		this.sourceArrow = sourceArrow;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple targetArrow;
 
-	public void set_targetArrow(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple targetArrow) {
+	public void set_targetArrow(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple targetArrow) {
 		this.targetArrow = targetArrow;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple routineStyle;
 
-	public void set_routineStyle(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple routineStyle) {
+	public void set_routineStyle(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple routineStyle) {
 		this.routineStyle = routineStyle;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple foldingStyle;
 
-	public void set_foldingStyle(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple foldingStyle) {
+	public void set_foldingStyle(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple foldingStyle) {
 		this.foldingStyle = foldingStyle;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple endCentering;
 
-	public void set_endCentering(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple endCentering) {
+	public void set_endCentering(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple endCentering) {
 		this.endCentering = endCentering;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple sizeComputationExpression;
 
-	public void set_sizeComputationExpression(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple sizeComputationExpression) {
+	public void set_sizeComputationExpression(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple sizeComputationExpression) {
 		this.sizeComputationExpression = sizeComputationExpression;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple beginLabelStyleDescription;
 
-	public void set_beginLabelStyleDescription(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple beginLabelStyleDescription) {
+	public void set_beginLabelStyleDescription(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple beginLabelStyleDescription) {
 		this.beginLabelStyleDescription = beginLabelStyleDescription;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple endLabelStyleDescription;
 
-	public void set_endLabelStyleDescription(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple endLabelStyleDescription) {
+	public void set_endLabelStyleDescription(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple endLabelStyleDescription) {
 		this.endLabelStyleDescription = endLabelStyleDescription;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple centerLabelStyleDescription;
 
-	public void set_centerLabelStyleDescription(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple centerLabelStyleDescription) {
+	public void set_centerLabelStyleDescription(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple centerLabelStyleDescription) {
 		this.centerLabelStyleDescription = centerLabelStyleDescription;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple centeredTargetMappings;
 
-	public void set_centeredTargetMappings(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple centeredTargetMappings) {
+	public void set_centeredTargetMappings(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple centeredTargetMappings) {
 		this.centeredTargetMappings = centeredTargetMappings;
 	}
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple centeredSourceMappings;
 
-	public void set_centeredSourceMappings(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple centeredSourceMappings) {
+	public void set_centeredSourceMappings(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.StylePropertyNameValueCouple centeredSourceMappings) {
 		this.centeredSourceMappings = centeredSourceMappings;
 	}
 

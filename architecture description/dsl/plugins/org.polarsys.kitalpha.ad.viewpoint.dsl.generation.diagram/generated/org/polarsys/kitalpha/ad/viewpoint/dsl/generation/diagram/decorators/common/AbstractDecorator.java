@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.decorators.common;
 
 import java.util.*;
@@ -14,12 +14,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.diagram.expression.String
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.GenerationUtil;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.IconPathHelper;
 
-public class AbstractDecorator
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.AbstractDiagramPattern {
+public class AbstractDecorator extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.AbstractDiagramPattern {
 
 	public AbstractDecorator() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -105,8 +105,7 @@ public class AbstractDecorator
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.AbstractDecorator vpdslDecorator;
 
-	public void set_vpdslDecorator(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.AbstractDecorator vpdslDecorator) {
+	public void set_vpdslDecorator(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.AbstractDecorator vpdslDecorator) {
 		this.vpdslDecorator = vpdslDecorator;
 	}
 

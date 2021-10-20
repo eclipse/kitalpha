@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20150924-1035
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.doc.gen.business.ecore.extension.content.impl;
 
 import org.eclipse.egf.common.helper.*;
@@ -25,13 +25,18 @@ public class EClassSuperType {
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+
 	protected final String TEXT_1 = "<p><strong>Inherits from: </strong><br />";
+
 	protected final String TEXT_2 = "&nbsp;";
+
 	protected final String TEXT_3 = NL + "</p>" + NL;
+
 	protected final String TEXT_4 = NL + "<p><strong>Inheritance: </strong></p>";
+
 	protected final String TEXT_5 = NL;
+
 	protected final String TEXT_6 = NL;
-	protected final String TEXT_7 = NL;
 
 	public EClassSuperType() {
 		//Here is the constructor
@@ -49,20 +54,13 @@ public class EClassSuperType {
 
 		paramDesc = new IQuery.ParameterDescription("parameter", "http://www.eclipse.org/emf/2002/Ecore#//EClass");
 		queryCtx = new HashMap<String, String>();
-		List<Object> parameterList = QueryHelper
-				.load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.injected.context")
-				.execute(paramDesc, queryCtx, ctx);
-		paramDesc = new IQuery.ParameterDescription("helper",
-				"org.polarsys.kitalpha.doc.gen.business.core.util.IDiagramHelper");
+		List<Object> parameterList = QueryHelper.load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.injected.context").execute(paramDesc, queryCtx, ctx);
+		paramDesc = new IQuery.ParameterDescription("helper", "org.polarsys.kitalpha.doc.gen.business.core.util.IDiagramHelper");
 		queryCtx = new HashMap<String, String>();
-		List<Object> helperList = QueryHelper.load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.diagramHelper")
-				.execute(paramDesc, queryCtx, ctx);
-		paramDesc = new IQuery.ParameterDescription("fileNameService",
-				"org.polarsys.kitalpha.doc.gen.business.core.util.IFileNameService");
+		List<Object> helperList = QueryHelper.load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.diagramHelper").execute(paramDesc, queryCtx, ctx);
+		paramDesc = new IQuery.ParameterDescription("fileNameService", "org.polarsys.kitalpha.doc.gen.business.core.util.IFileNameService");
 		queryCtx = new HashMap<String, String>();
-		List<Object> fileNameServiceList = QueryHelper
-				.load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.inject.file.name.service")
-				.execute(paramDesc, queryCtx, ctx);
+		List<Object> fileNameServiceList = QueryHelper.load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.inject.file.name.service").execute(paramDesc, queryCtx, ctx);
 
 		for (Object parameterParameter : parameterList) {
 			for (Object helperParameter : helperList) {
@@ -86,7 +84,7 @@ public class EClassSuperType {
 		}
 
 		stringBuffer.append(TEXT_6);
-		stringBuffer.append(TEXT_7);
+		stringBuffer.append(TEXT_6);
 		return stringBuffer.toString();
 	}
 
@@ -145,8 +143,7 @@ public class EClassSuperType {
 
 			for (EClass eClass : (parameter).getESuperTypes()) {
 
-				stringBuffer.append(org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper
-						.getTypeHyperLink(parameter));
+				stringBuffer.append(org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getTypeHyperLink(parameter));
 				stringBuffer.append(TEXT_2);
 
 			}
@@ -155,9 +152,7 @@ public class EClassSuperType {
 
 		}
 		for (DRepresentation diagram : diagramList) {
-			if ((diagram instanceof DSemanticDiagram)
-					&& (((DSemanticDiagram) diagram).getDescription().getName().equals("Inheritance")
-							&& ((DSemanticDiagram) diagram).getTarget() == parameter)) {
+			if ((diagram instanceof DSemanticDiagram) && (((DSemanticDiagram) diagram).getDescription().getName().equals("Inheritance") && ((DSemanticDiagram) diagram).getTarget() == parameter)) {
 				String generatedFolder = fileNameService.getFileName(((DSemanticDiagram) diagram).getTarget());
 
 				stringBuffer.append(TEXT_4);
@@ -176,8 +171,7 @@ public class EClassSuperType {
 					callParameters.put("generatedFolder", generatedFolder);
 					callParameters.put("fileNameService", fileNameService);
 					callParameters.put("helper", helper);
-					CallHelper.executeWithParameterInjection(
-							"platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_yyU7IvYiEd-jis7N5RhttA",
+					CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_yyU7IvYiEd-jis7N5RhttA",
 							new ExecutionContext((InternalPatternContext) ctx), callParameters);
 					stringBuffer.setLength(0);
 				}

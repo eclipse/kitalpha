@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.2.201911290829
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.node;
 
 import java.util.*;
@@ -62,8 +62,9 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 public class BorderedNodeImportPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.node.BorderedNodePattern {
 
 	public BorderedNodeImportPattern() {
-		// Here is the constructor
+		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -72,7 +73,7 @@ public class BorderedNodeImportPattern extends org.polarsys.kitalpha.ad.viewpoin
 		Map<String, String> queryCtx = null;
 		Node.Container currentNode = ctx.getNode();
 		List<Object> parameterList = null;
-		// this pattern can only be called by another (i.e. it's not an entry point in execution)
+		//this pattern can only be called by another (i.e. it's not an entry point in execution)
 
 		for (Object parameterParameter : parameterList) {
 
@@ -133,7 +134,7 @@ public class BorderedNodeImportPattern extends org.polarsys.kitalpha.ad.viewpoin
 	}
 
 	protected void method_inheritLabelSpecification(final StringBuffer out, final PatternContext ctx) throws Exception {
-		// NodeMapping mapping = parameter.getImports();
+		//NodeMapping mapping = parameter.getImports();
 
 		// Inherits label if not defined
 		boolean inheritsLabel = true;
@@ -179,7 +180,7 @@ public class BorderedNodeImportPattern extends org.polarsys.kitalpha.ad.viewpoin
 	}
 
 	protected void method_inheritSemanticData(final StringBuffer out, final PatternContext ctx) throws Exception {
-		// NodeMapping mapping = parameter.getImports();
+		//NodeMapping mapping = parameter.getImports();
 
 		boolean inheritSemanticCandidatesExpression = false;
 
@@ -217,7 +218,7 @@ public class BorderedNodeImportPattern extends org.polarsys.kitalpha.ad.viewpoin
 					String mParameters = VSMVariable.view.getInnerVariable() + "," + VSMVariable.container.getInnerVariable();
 					javaMethodName = JavaElementHelper.addDefaultParameterToJavaMethod(javaMethodName, mParameters);
 					acceleoExpression = SiriusExpressionHelper.getExpressoin(javaMethodName, ExpressionInterpreter.Service);
-					// acceleoExpression = SiriusExpressionHelper.getExpressoin(((JavaElement) fEE).getMethod());
+					//acceleoExpression = SiriusExpressionHelper.getExpressoin(((JavaElement) fEE).getMethod());
 				}
 				if (fEE instanceof DomainElement) {
 					acceleoExpression = SiriusExpressionHelper.getExpressoin(((DomainElement) fEE).getAttribute().getName());
@@ -239,7 +240,7 @@ public class BorderedNodeImportPattern extends org.polarsys.kitalpha.ad.viewpoin
 				if (vpStyle instanceof BasicStyle) {
 					BasicStyle basicStyle = (BasicStyle) vpStyle;
 					SystemColor backGroundColor = GenerationUtil.getSystemColor(basicStyle.getBackgroundColor());
-					// basicStyle.getBorderColor(basicStyle.getBorderColor());
+					//basicStyle.getBorderColor(basicStyle.getBorderColor());
 					switch (basicStyle.getForm()) {
 					case SQUARE:
 						nStyleDesc = StyleFactory.eINSTANCE.createSquareDescription();
@@ -305,7 +306,7 @@ public class BorderedNodeImportPattern extends org.polarsys.kitalpha.ad.viewpoin
 							IconPathHelper.copyIconFile(vpImageStyle.getImagePath(), parameter);
 						}
 					}
-					// doremiImageStyle.setWorkspacePath(vpImageStyle.getImagePath());
+					//doremiImageStyle.setWorkspacePath(vpImageStyle.getImagePath());
 
 					doremiImageStyle.setBorderColor(GenerationUtil.getSystemColor(vpImageStyle.getBorderColor()));
 				}
@@ -341,7 +342,7 @@ public class BorderedNodeImportPattern extends org.polarsys.kitalpha.ad.viewpoin
 				String labelExpression = SiriusExpressionHelper.getExpressoin("name", ExpressionInterpreter.Feature);
 
 				if (label != null) {
-					// ((ExpressionImpl) label.getValue()).adaptValue();
+					//((ExpressionImpl) label.getValue()).adaptValue();
 					String mParameters = VSMVariable.diagram.getInnerVariable() + "," + VSMVariable.view.getInnerVariable();
 					((ExpressionImpl) label.getValue()).adaptValue(mParameters, true);
 

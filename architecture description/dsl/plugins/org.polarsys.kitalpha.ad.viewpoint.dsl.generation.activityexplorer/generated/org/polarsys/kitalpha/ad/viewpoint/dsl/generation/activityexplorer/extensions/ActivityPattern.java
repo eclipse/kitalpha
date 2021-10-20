@@ -1,4 +1,4 @@
-//Generated with EGF 1.4.0.v20160516-1506
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.extensions;
 
 import org.eclipse.egf.common.helper.*;
@@ -22,20 +22,26 @@ public class ActivityPattern {
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+
 	protected final String TEXT_1 = NL + "\t\t\t<Activity" + NL + "\t\t\t\tclass=\"";
+
 	protected final String TEXT_2 = "\"" + NL + "\t\t\t\tid=\"";
+
 	protected final String TEXT_3 = "\"" + NL + "\t\t\t\tindex=\"";
+
 	protected final String TEXT_4 = "\"";
+
 	protected final String TEXT_5 = " " + NL + "\t\t\t\timage=\"";
-	protected final String TEXT_6 = "\"";
-	protected final String TEXT_7 = NL + "\t\t\t\tname=\"";
-	protected final String TEXT_8 = "\"";
-	protected final String TEXT_9 = NL + "\t\t\t\tsectionId=\"";
-	protected final String TEXT_10 = "\"";
-	protected final String TEXT_11 = ">";
-	protected final String TEXT_12 = "\t\t\t</Activity>" + NL;
-	protected final String TEXT_13 = NL;
-	protected final String TEXT_14 = NL;
+
+	protected final String TEXT_6 = NL + "\t\t\t\tname=\"";
+
+	protected final String TEXT_7 = NL + "\t\t\t\tsectionId=\"";
+
+	protected final String TEXT_8 = ">";
+
+	protected final String TEXT_9 = "\t\t\t</Activity>" + NL;
+
+	protected final String TEXT_10 = NL;
 
 	public ActivityPattern() {
 		//Here is the constructor
@@ -71,8 +77,8 @@ public class ActivityPattern {
 			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
 		}
 
-		stringBuffer.append(TEXT_13);
-		stringBuffer.append(TEXT_14);
+		stringBuffer.append(TEXT_10);
+		stringBuffer.append(TEXT_10);
 		return stringBuffer.toString();
 	}
 
@@ -89,8 +95,7 @@ public class ActivityPattern {
 			parameters.put("parameter", this.parameter);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
 			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer/egf/vpdslActivityExplorerGeneration.fcore#_vr47oDbKEeW9-uNJc0wiRg",
-					ctx_local, parameters);
+					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer/egf/vpdslActivityExplorerGeneration.fcore#_vr47oDbKEeW9-uNJc0wiRg", ctx_local, parameters);
 		}
 
 		{
@@ -99,8 +104,7 @@ public class ActivityPattern {
 			parameters.put("basePackage", this.projectName);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
 			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer/egf/vpdslActivityExplorerGeneration.fcore#_JYnqcDbJEeW9-uNJc0wiRg",
-					ctx_local, parameters);
+					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer/egf/vpdslActivityExplorerGeneration.fcore#_JYnqcDbJEeW9-uNJc0wiRg", ctx_local, parameters);
 		}
 
 		method_genActivityEnd(new StringBuffer(), ictx);
@@ -110,8 +114,7 @@ public class ActivityPattern {
 			parameters.put("activityExplorerProjectName", this.projectName);
 			ExecutionContext ctx_local = new ExecutionContext(ictx);
 			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer/egf/vpdslActivityExplorerGeneration.fcore#_77MRMDdmEeW9-uNJc0wiRg",
-					ctx_local, parameters);
+					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer/egf/vpdslActivityExplorerGeneration.fcore#_77MRMDdmEeW9-uNJc0wiRg", ctx_local, parameters);
 		}
 
 		if (ictx.useReporter()) {
@@ -144,8 +147,7 @@ public class ActivityPattern {
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Activity parameter = null;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Activity object) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Activity object) {
 		this.parameter = object;
 	}
 
@@ -178,18 +180,15 @@ public class ActivityPattern {
 
 	protected void method_genActivityBegin(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
-		String className = JavaNamingConvention.getJavaClassFQNFor(projectName, parameter,
-				JavaNamingConvention.JavaUseContext.Activity);
+		String className = JavaNamingConvention.getJavaClassFQNFor(projectName, parameter, JavaNamingConvention.JavaUseContext.Activity);
 
 		String id = parameter.getActivityExplorerItemID();
 		if (null == id || (null != id && id.isEmpty()))
 			id = "Activity1";
 
 		boolean hasImage = parameter.getImagePathOff() != null;
-		final boolean labelIsSet = parameter
-				.eIsSet(ViewpointActivityExplorerPackage.eINSTANCE.getActivityExplorerItem_Label());
-		final String name = labelIsSet && false == parameter.getLabel().isEmpty() ? parameter.getLabel()
-				: parameter.getName();
+		final boolean labelIsSet = parameter.eIsSet(ViewpointActivityExplorerPackage.eINSTANCE.getActivityExplorerItem_Label());
+		final String name = labelIsSet && false == parameter.getLabel().isEmpty() ? parameter.getLabel() : parameter.getName();
 
 		stringBuffer.append(TEXT_1);
 		stringBuffer.append(className);
@@ -201,24 +200,24 @@ public class ActivityPattern {
 		if (hasImage) {
 			stringBuffer.append(TEXT_5);
 			stringBuffer.append(IconsFileHelper.ICONS_FOLDER_NAME + "/" + parameter.getImagePathOff());
-			stringBuffer.append(TEXT_6);
+			stringBuffer.append(TEXT_4);
 		}
-		stringBuffer.append(TEXT_7);
+		stringBuffer.append(TEXT_6);
 		stringBuffer.append(name);
-		stringBuffer.append(TEXT_8);
+		stringBuffer.append(TEXT_4);
 		if (genSectionID) {
-			stringBuffer.append(TEXT_9);
+			stringBuffer.append(TEXT_7);
 			stringBuffer.append(sectionID);
-			stringBuffer.append(TEXT_10);
+			stringBuffer.append(TEXT_4);
 		}
-		stringBuffer.append(TEXT_11);
+		stringBuffer.append(TEXT_8);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "genActivityBegin", stringBuffer.toString());
 	}
 
 	protected void method_genActivityEnd(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
-		stringBuffer.append(TEXT_12);
+		stringBuffer.append(TEXT_9);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "genActivityEnd", stringBuffer.toString());
 	}

@@ -47,7 +47,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.PropertySet;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.RuleSet;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpservices.ServiceSet;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpui.UIDescription;
-import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.generator.IViewpointSynchronizer;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.helpers.vpspec.CoreModelHelper;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ExternalDataHelper;
 
@@ -55,7 +54,6 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.resources.ExternalDataHelp
 public abstract class CommonGenerator implements IViewpointSynchronizer {
   protected EcoreUtil.Copier copier;
   
-  @Override
   public EObject synchronize(final List<EObject> input, final EObject output) {
     boolean _checkInput = this.checkInput(input);
     if (_checkInput) {
@@ -108,8 +106,10 @@ public abstract class CommonGenerator implements IViewpointSynchronizer {
           }
         }
         if ((key instanceof UIDescription)) {
-          final Function1<Aspect, Boolean> _function = (Aspect c) -> {
-            return Boolean.valueOf((c instanceof UIDescription));
+          final Function1<Aspect, Boolean> _function = new Function1<Aspect, Boolean>() {
+            public Boolean apply(final Aspect c) {
+              return Boolean.valueOf((c instanceof UIDescription));
+            }
           };
           Aspect oldUi = IterableExtensions.<Aspect>findFirst(target.getVP_Aspects(), _function);
           boolean _notEquals_1 = (!Objects.equal(oldUi, null));
@@ -121,8 +121,10 @@ public abstract class CommonGenerator implements IViewpointSynchronizer {
           }
         }
         if ((key instanceof DiagramSet)) {
-          final Function1<Aspect, Boolean> _function_1 = (Aspect c) -> {
-            return Boolean.valueOf((c instanceof DiagramSet));
+          final Function1<Aspect, Boolean> _function_1 = new Function1<Aspect, Boolean>() {
+            public Boolean apply(final Aspect c) {
+              return Boolean.valueOf((c instanceof DiagramSet));
+            }
           };
           Aspect oldDiagramSet = IterableExtensions.<Aspect>findFirst(target.getVP_Aspects(), _function_1);
           boolean _notEquals_2 = (!Objects.equal(oldDiagramSet, null));
@@ -138,8 +140,10 @@ public abstract class CommonGenerator implements IViewpointSynchronizer {
               EStructuralFeature importGroupAttr = imp_1.eClass().getEStructuralFeature("importedGroup");
               String importValue_1 = imp_1.eGet(importGroupAttr).toString();
               ResourceSetImpl resourceSet = new ResourceSetImpl();
-              final Function1<Aspect, Boolean> _function_2 = (Aspect d) -> {
-                return Boolean.valueOf((d instanceof DiagramSet));
+              final Function1<Aspect, Boolean> _function_2 = new Function1<Aspect, Boolean>() {
+                public Boolean apply(final Aspect d) {
+                  return Boolean.valueOf((d instanceof DiagramSet));
+                }
               };
               Aspect targetDiagram = IterableExtensions.<Aspect>findFirst(target.getVP_Aspects(), _function_2);
               boolean _isEcoreURI = this.isEcoreURI(importValue_1);
@@ -164,8 +168,10 @@ public abstract class CommonGenerator implements IViewpointSynchronizer {
           }
         }
         if ((key instanceof Build)) {
-          final Function1<Aspect, Boolean> _function_3 = (Aspect c) -> {
-            return Boolean.valueOf((c instanceof Build));
+          final Function1<Aspect, Boolean> _function_3 = new Function1<Aspect, Boolean>() {
+            public Boolean apply(final Aspect c) {
+              return Boolean.valueOf((c instanceof Build));
+            }
           };
           Aspect oldBuild = IterableExtensions.<Aspect>findFirst(target.getVP_Aspects(), _function_3);
           boolean _notEquals_6 = (!Objects.equal(oldBuild, null));
@@ -177,8 +183,10 @@ public abstract class CommonGenerator implements IViewpointSynchronizer {
           }
         }
         if ((key instanceof Configuration)) {
-          final Function1<Aspect, Boolean> _function_4 = (Aspect c) -> {
-            return Boolean.valueOf((c instanceof Configuration));
+          final Function1<Aspect, Boolean> _function_4 = new Function1<Aspect, Boolean>() {
+            public Boolean apply(final Aspect c) {
+              return Boolean.valueOf((c instanceof Configuration));
+            }
           };
           Aspect oldConf = IterableExtensions.<Aspect>findFirst(target.getVP_Aspects(), _function_4);
           boolean _notEquals_7 = (!Objects.equal(oldConf, null));
@@ -190,8 +198,10 @@ public abstract class CommonGenerator implements IViewpointSynchronizer {
           }
         }
         if ((key instanceof RuleSet)) {
-          final Function1<Aspect, Boolean> _function_5 = (Aspect c) -> {
-            return Boolean.valueOf((c instanceof RuleSet));
+          final Function1<Aspect, Boolean> _function_5 = new Function1<Aspect, Boolean>() {
+            public Boolean apply(final Aspect c) {
+              return Boolean.valueOf((c instanceof RuleSet));
+            }
           };
           Aspect oldRules = IterableExtensions.<Aspect>findFirst(target.getVP_Aspects(), _function_5);
           boolean _notEquals_8 = (!Objects.equal(oldRules, null));
@@ -203,8 +213,10 @@ public abstract class CommonGenerator implements IViewpointSynchronizer {
           }
         }
         if ((key instanceof ServiceSet)) {
-          final Function1<Aspect, Boolean> _function_6 = (Aspect c) -> {
-            return Boolean.valueOf((c instanceof ServiceSet));
+          final Function1<Aspect, Boolean> _function_6 = new Function1<Aspect, Boolean>() {
+            public Boolean apply(final Aspect c) {
+              return Boolean.valueOf((c instanceof ServiceSet));
+            }
           };
           Aspect oldServices = IterableExtensions.<Aspect>findFirst(target.getVP_Aspects(), _function_6);
           boolean _notEquals_9 = (!Objects.equal(oldServices, null));
@@ -216,8 +228,10 @@ public abstract class CommonGenerator implements IViewpointSynchronizer {
           }
         }
         if ((key instanceof PropertySet)) {
-          final Function1<Aspect, Boolean> _function_7 = (Aspect c) -> {
-            return Boolean.valueOf((c instanceof PropertySet));
+          final Function1<Aspect, Boolean> _function_7 = new Function1<Aspect, Boolean>() {
+            public Boolean apply(final Aspect c) {
+              return Boolean.valueOf((c instanceof PropertySet));
+            }
           };
           Aspect oldProperties = IterableExtensions.<Aspect>findFirst(target.getVP_Aspects(), _function_7);
           boolean _notEquals_10 = (!Objects.equal(oldProperties, null));
@@ -229,8 +243,10 @@ public abstract class CommonGenerator implements IViewpointSynchronizer {
           }
         }
         if ((key instanceof ViewpointActivityExplorer)) {
-          final Function1<Aspect, Boolean> _function_8 = (Aspect c) -> {
-            return Boolean.valueOf((c instanceof ViewpointActivityExplorer));
+          final Function1<Aspect, Boolean> _function_8 = new Function1<Aspect, Boolean>() {
+            public Boolean apply(final Aspect c) {
+              return Boolean.valueOf((c instanceof ViewpointActivityExplorer));
+            }
           };
           Aspect oldViewpointActivityExplorer = IterableExtensions.<Aspect>findFirst(target.getVP_Aspects(), _function_8);
           boolean _notEquals_11 = (!Objects.equal(oldViewpointActivityExplorer, null));
@@ -300,7 +316,6 @@ public abstract class CommonGenerator implements IViewpointSynchronizer {
     }
   }
   
-  @Override
   public void doGenerate(final Resource input, final IFileSystemAccess fsa) {
   }
 }

@@ -4,3 +4,6 @@
 /GenBuildModelRunner.java
 /GenBuildDocumentation.java
 /GenBuildModel.java
+/.GenBuildDocumentation.xtendbin
+/.GenBuildModel.xtendbin
+/.GenBuildModelRunner.xtendbin

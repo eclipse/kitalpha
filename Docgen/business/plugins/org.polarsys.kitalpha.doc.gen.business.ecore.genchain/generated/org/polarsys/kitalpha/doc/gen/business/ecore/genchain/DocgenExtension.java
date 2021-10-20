@@ -1,4 +1,4 @@
-//Generated with EGF 1.4.0.v20160519-0641
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.doc.gen.business.ecore.genchain;
 
 import java.util.*;
@@ -27,6 +27,7 @@ public class DocgenExtension {
 	public DocgenExtension() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -86,8 +87,7 @@ public class DocgenExtension {
 	}
 
 	protected void method_body(final StringBuffer out, final PatternContext ctx) throws Exception {
-		URI DOC_GEN_ACTIVITY_MODEL_URI = URI.createPlatformPluginURI(
-				"/org.polarsys.kitalpha.doc.gen.business.ecore/egf/EcoreDocGenLauncher.fcore", false);
+		URI DOC_GEN_ACTIVITY_MODEL_URI = URI.createPlatformPluginURI("/org.polarsys.kitalpha.doc.gen.business.ecore/egf/EcoreDocGenLauncher.fcore", false);
 		String DOC_GEN_ACTIVITY_ID = "_B9nwIR4UEeSYicwoCfn9sQ";
 
 		/** Preparing the contract values **/
@@ -118,13 +118,11 @@ public class DocgenExtension {
 
 		/** Adding the Ecore documentation luncher to the FC.  **/
 		@SuppressWarnings("unchecked")
-		Map<GenerationElement, FactoryComponent> fcs = (Map<GenerationElement, FactoryComponent>) ctx
-				.getValue(FcoreBuilderConstants.CURRENT_FCORE);
+		Map<GenerationElement, FactoryComponent> fcs = (Map<GenerationElement, FactoryComponent>) ctx.getValue(FcoreBuilderConstants.CURRENT_FCORE);
 		FactoryComponent fc = fcs.get((GenerationElement) (parameter.eContainer()));
 		Resource eResource = fc.eResource();
 		ResourceSet resourceSet = eResource.getResourceSet();
-		Activity activity = (Activity) resourceSet.getResource(DOC_GEN_ACTIVITY_MODEL_URI, true)
-				.getEObject(DOC_GEN_ACTIVITY_ID);
+		Activity activity = (Activity) resourceSet.getResource(DOC_GEN_ACTIVITY_MODEL_URI, true).getEObject(DOC_GEN_ACTIVITY_ID);
 		ProductionPlan pp = (ProductionPlan) fc.getOrchestration();
 		ActivityInvocationHelper.addInvocation(pp, activity, contract2type);
 
@@ -138,8 +136,7 @@ public class DocgenExtension {
 
 	protected org.polarsys.kitalpha.doc.gen.business.ecore.genchain.DocgenGenchainExtension.KitalphaDocumentationGeneration parameter;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.doc.gen.business.ecore.genchain.DocgenGenchainExtension.KitalphaDocumentationGeneration parameter) {
+	public void set_parameter(org.polarsys.kitalpha.doc.gen.business.ecore.genchain.DocgenGenchainExtension.KitalphaDocumentationGeneration parameter) {
 		this.parameter = parameter;
 	}
 

@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201906060805
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.emde.egf.model;
 
 import org.eclipse.egf.emf.pattern.base.*;
@@ -26,52 +26,90 @@ public class PluginXML extends org.eclipse.egf.emf.pattern.model.PluginXML {
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + NL + "<?eclipse version=\"3.0\"?>"
-			+ NL;
+
+	protected final String TEXT_1 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + NL + "<?eclipse version=\"3.0\"?>" + NL;
+
 	protected final String TEXT_2 = NL;
+
 	protected final String TEXT_3 = NL + "<plugin>";
+
 	protected final String TEXT_4 = NL + "<plugin" + NL + "      name=\"%pluginName\"" + NL + "      id=\"";
+
 	protected final String TEXT_5 = "\"" + NL + "      version=\"1.0.0.qualifier\"";
+
 	protected final String TEXT_6 = NL + "      provider-name=\"%providerName\"" + NL + "      class=\"";
+
 	protected final String TEXT_7 = "$Implementation\">";
+
 	protected final String TEXT_8 = NL + "      provider-name=\"%providerName\">";
+
 	protected final String TEXT_9 = NL + NL + "   <requires>";
+
 	protected final String TEXT_10 = NL + "      <import plugin=\"";
+
 	protected final String TEXT_11 = "\"";
+
 	protected final String TEXT_12 = " export=\"true\"";
+
 	protected final String TEXT_13 = "/>";
+
 	protected final String TEXT_14 = NL + "   </requires>" + NL + "" + NL + "   <runtime>";
+
 	protected final String TEXT_15 = NL + "      <library name=\"";
+
 	protected final String TEXT_16 = ".jar\">";
+
 	protected final String TEXT_17 = NL + "      <library name=\".\">";
-	protected final String TEXT_18 = NL + "         <export name=\"*\"/>" + NL + "      </library>" + NL
-			+ "   </runtime>";
+
+	protected final String TEXT_18 = NL + "         <export name=\"*\"/>" + NL + "      </library>" + NL + "   </runtime>";
+
 	protected final String TEXT_19 = NL + NL + "   <extension point=\"org.eclipse.emf.ecore.generated_package\">";
+
 	protected final String TEXT_20 = NL + "      <!-- @generated ";
+
 	protected final String TEXT_21 = " -->";
+
 	protected final String TEXT_22 = NL + "      <package" + NL + "            uri=\"";
+
 	protected final String TEXT_23 = NL + "            class=\"";
+
 	protected final String TEXT_24 = "\"" + NL + "            genModel=\"";
+
 	protected final String TEXT_25 = "\"/>";
+
 	protected final String TEXT_26 = NL + "   </extension>";
+
 	protected final String TEXT_27 = NL + NL + "   <extension point=\"org.eclipse.emf.ecore.content_parser\">";
+
 	protected final String TEXT_28 = NL + "      <parser" + NL + "            contentTypeIdentifier=\"";
+
 	protected final String TEXT_29 = "\"" + NL + "            class=\"";
-	protected final String TEXT_30 = "\"/>" + NL + "   </extension>" + NL + "" + NL
-			+ "   <extension point=\"org.eclipse.core.contenttype.contentTypes\">";
+
+	protected final String TEXT_30 = "\"/>" + NL + "   </extension>" + NL + "" + NL + "   <extension point=\"org.eclipse.core.contenttype.contentTypes\">";
+
 	protected final String TEXT_31 = NL + "      <content-type" + NL + "            base-type=\"";
+
 	protected final String TEXT_32 = "\"" + NL + "            file-extensions=\"";
+
 	protected final String TEXT_33 = "\"" + NL + "            id=\"";
+
 	protected final String TEXT_34 = "\"" + NL + "            name=\"%_UI_";
+
 	protected final String TEXT_35 = "_content_type\"" + NL + "            priority=\"normal\">" + NL
 			+ "         <describer class=\"org.eclipse.emf.ecore.xmi.impl.RootXMLContentHandlerImpl$Describer\">";
+
 	protected final String TEXT_36 = NL + "            <parameter name=\"namespace\" value=\"";
+
 	protected final String TEXT_37 = NL + "            <parameter name=\"kind\" value=\"xmi\"/>";
-	protected final String TEXT_38 = NL + "         </describer>" + NL + "      </content-type>" + NL
-			+ "   </extension>";
+
+	protected final String TEXT_38 = NL + "         </describer>" + NL + "      </content-type>" + NL + "   </extension>";
+
 	protected final String TEXT_39 = NL + NL + "   <extension point=\"org.eclipse.emf.ecore.extension_parser\">";
+
 	protected final String TEXT_40 = NL + "      <parser" + NL + "            type=\"";
+
 	protected final String TEXT_41 = NL + NL + "</plugin>";
+
 	protected final String TEXT_42 = NL;
 
 	public PluginXML() {
@@ -164,8 +202,7 @@ public class PluginXML extends org.eclipse.egf.emf.pattern.model.PluginXML {
 
 			final Map<String, Object> callParameters = new HashMap<String, Object>();
 			callParameters.put("argument", parameter);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.eclipse.egf.emf.pattern.base/egf/EMF_Pattern_Base.fcore#__h1VkCwtEd-jc5T-XaRJlg",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.eclipse.egf.emf.pattern.base/egf/EMF_Pattern_Base.fcore#__h1VkCwtEd-jc5T-XaRJlg",
 					new ExecutionContext((InternalPatternContext) ctx), callParameters);
 			stringBuffer.setLength(0);
 		}
@@ -244,8 +281,7 @@ public class PluginXML extends org.eclipse.egf.emf.pattern.model.PluginXML {
 					stringBuffer.append(TEXT_21);
 				}
 				stringBuffer.append(TEXT_31);
-				stringBuffer.append(
-						genPackage.isXMIResource() ? "org.eclipse.emf.ecore.xmi" : "org.eclipse.core.runtime.xml");
+				stringBuffer.append(genPackage.isXMIResource() ? "org.eclipse.emf.ecore.xmi" : "org.eclipse.core.runtime.xml");
 				stringBuffer.append(TEXT_32);
 				stringBuffer.append(genPackage.getFileExtensions());
 				stringBuffer.append(TEXT_33);
@@ -284,8 +320,7 @@ public class PluginXML extends org.eclipse.egf.emf.pattern.model.PluginXML {
 		new Node.DataLeaf(ictx.getNode(), getClass(), "doGenerate", stringBuffer.toString());
 	}
 
-	protected void method_setReporterVariables(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_setReporterVariables(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		GenModel genModel = parameter;
 		targetPathName = genModel.getModelProjectDirectory() + "/plugin.xml";
@@ -296,8 +331,7 @@ public class PluginXML extends org.eclipse.egf.emf.pattern.model.PluginXML {
 		new Node.DataLeaf(ictx.getNode(), getClass(), "setReporterVariables", stringBuffer.toString());
 	}
 
-	protected void method_call_PluginXMLExtensionHook(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_call_PluginXMLExtensionHook(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		{
 			//<%@ egf:patternCall patternId="platform:/plugin/org.polarsys.kitalpha.emde.egf/egf/eMDE_EMF_Extension.fcore#LogicalName=org.polarsys.kitalpha.emde.egf.model.ModelPluginXMLExtensionHook" args="parameter:genModel,targetPathName:targetPathName"%>
@@ -309,13 +343,12 @@ public class PluginXML extends org.eclipse.egf.emf.pattern.model.PluginXML {
 			final Map<String, Object> callParameters = new HashMap<String, Object>();
 			callParameters.put("genModel", parameter);
 			callParameters.put("targetPathName", targetPathName);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.emde.egf/egf/eMDE_EMF_Extension.fcore#_rV5NMC-mEeCJ8qG0PlPcqA",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.emde.egf/egf/eMDE_EMF_Extension.fcore#_rV5NMC-mEeCJ8qG0PlPcqA",
 					new ExecutionContext((InternalPatternContext) ctx), callParameters);
 			stringBuffer.setLength(0);
 		}
 
-		stringBuffer.append(TEXT_42);
+		stringBuffer.append(TEXT_2);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "call_PluginXMLExtensionHook", stringBuffer.toString());
 	}

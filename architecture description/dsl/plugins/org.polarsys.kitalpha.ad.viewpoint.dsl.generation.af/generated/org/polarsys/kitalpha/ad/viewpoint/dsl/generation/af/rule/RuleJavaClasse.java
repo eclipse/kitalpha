@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.2.202001031546
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.af.rule;
 
 import org.eclipse.egf.common.helper.*;
@@ -27,23 +27,26 @@ public class RuleJavaClasse {
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+
 	protected final String TEXT_1 = "// DSL Viewpoint Generator V0.1 ";
+
 	protected final String TEXT_2 = NL + NL + "package ";
-	protected final String TEXT_3 = ";" + NL + "" + NL
-			+ "import org.polarsys.kitalpha.ad.viewpoint.integration.rules.JavaRule;" + NL
-			+ "import org.polarsys.kitalpha.ad.viewpoint.utils.ModelAccessor;" + NL + "" + NL + "public class ";
+
+	protected final String TEXT_3 = ";" + NL + "" + NL + "import org.polarsys.kitalpha.ad.viewpoint.integration.rules.JavaRule;" + NL + "import org.polarsys.kitalpha.ad.viewpoint.utils.ModelAccessor;"
+			+ NL + "" + NL + "public class ";
+
 	protected final String TEXT_4 = " implements JavaRule {" + NL + "" + NL + "\t/* (non-Javadoc)" + NL
-			+ "\t * @see org.polarsys.kitalpha.ad.viewpoint.integration.rules.JavaRule#run(org.polarsys.kitalpha.ad.viewpoint.utils.ModelAccessor, java.lang.Object[])"
-			+ NL + "\t */" + NL + "\tpublic void run(ModelAccessor properties, Object[] selection) {" + NL
-			+ "\t\t// TODO Auto-generated method stub" + NL
-			+ "\t\torg.eclipse.jface.dialogs.MessageDialog.openInformation(" + NL
-			+ "\t\t\t\torg.eclipse.ui.PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), " + NL
-			+ "\t\t\t\t\"Java rule execution\", " + NL + "\t\t\t\t\"DSL Viewpoint generated rule \\n Message from ";
+			+ "\t * @see org.polarsys.kitalpha.ad.viewpoint.integration.rules.JavaRule#run(org.polarsys.kitalpha.ad.viewpoint.utils.ModelAccessor, java.lang.Object[])" + NL + "\t */" + NL
+			+ "\tpublic void run(ModelAccessor properties, Object[] selection) {" + NL + "\t\t// TODO Auto-generated method stub" + NL + "\t\torg.eclipse.jface.dialogs.MessageDialog.openInformation("
+			+ NL + "\t\t\t\torg.eclipse.ui.PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), " + NL + "\t\t\t\t\"Java rule execution\", " + NL
+			+ "\t\t\t\t\"DSL Viewpoint generated rule \\n Message from ";
+
 	protected final String TEXT_5 = " rule\");" + NL + "" + NL + "\t}" + NL + "" + NL + "\t/* (non-Javadoc)" + NL
-			+ "\t * @see org.polarsys.kitalpha.ad.viewpoint.integration.rules.JavaRule#canRun(org.polarsys.kitalpha.ad.viewpoint.utils.ModelAccessor, java.lang.Object[])"
-			+ NL + "\t */" + NL + "\tpublic boolean canRun(ModelAccessor properties, Object[] selection) {" + NL
-			+ "\t\t// TODO Auto-generated method stub" + NL + "\t\treturn true;" + NL + "\t}" + NL + "" + NL + "}";
+			+ "\t * @see org.polarsys.kitalpha.ad.viewpoint.integration.rules.JavaRule#canRun(org.polarsys.kitalpha.ad.viewpoint.utils.ModelAccessor, java.lang.Object[])" + NL + "\t */" + NL
+			+ "\tpublic boolean canRun(ModelAccessor properties, Object[] selection) {" + NL + "\t\t// TODO Auto-generated method stub" + NL + "\t\treturn true;" + NL + "\t}" + NL + "" + NL + "}";
+
 	protected final String TEXT_6 = " ";
+
 	protected final String TEXT_7 = NL;
 
 	public RuleJavaClasse() {
@@ -182,19 +185,16 @@ public class RuleJavaClasse {
 		new Node.DataLeaf(ictx.getNode(), getClass(), "setDateTime", stringBuffer.toString());
 	}
 
-	protected void method_registerJavaRuleClass(final StringBuffer stringBuffer, final PatternContext ctx)
-			throws Exception {
+	protected void method_registerJavaRuleClass(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
 		// TODO : à refaire 
-		AfProjectManager.INSTANCE.registerJavaRule(AFModelUtils.getInstance().generateAFElementID(parameter),
-				packageName + "." + ruleName);
+		AfProjectManager.INSTANCE.registerJavaRule(AFModelUtils.getInstance().generateAFElementID(parameter), packageName + "." + ruleName);
 		InternalPatternContext ictx = (InternalPatternContext) ctx;
 		new Node.DataLeaf(ictx.getNode(), getClass(), "registerJavaRuleClass", stringBuffer.toString());
 	}
 
 	public boolean preCondition(PatternContext ctx) throws Exception {
-		return parameter.getType().toString()
-				.equals(VpservicesPackage.eINSTANCE.getRules_Types().getEEnumLiteral(0).toString())
+		return parameter.getType().toString().equals(VpservicesPackage.eINSTANCE.getRules_Types().getEEnumLiteral(0).toString())
 				&& (parameter.getClass_() == null || parameter.getClass_().trim().length() == 0);
 	}
 }

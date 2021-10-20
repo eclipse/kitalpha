@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201906060805
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.emde.egf.edit;
 
 import java.util.*;
@@ -13,6 +13,7 @@ public class EditPluginXMLExtensionHook extends org.polarsys.kitalpha.emde.egf.P
 	public EditPluginXMLExtensionHook() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -64,8 +65,7 @@ public class EditPluginXMLExtensionHook extends org.polarsys.kitalpha.emde.egf.P
 			final Map<String, Object> callParameters = new HashMap<String, Object>();
 			callParameters.put("root", root);
 			callParameters.put("genModel", genModel);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.emde.egf/egf/eMDE_EMF_Extension.fcore#_xdtBEDA3EeCJ8qG0PlPcqA",
+			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.emde.egf/egf/eMDE_EMF_Extension.fcore#_xdtBEDA3EeCJ8qG0PlPcqA",
 					new ExecutionContext((InternalPatternContext) ctx), callParameters);
 		}
 

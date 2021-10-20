@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.common;
 
 import java.util.*;
@@ -17,12 +17,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.Generation
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.AbstractCustomization;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.Customizations;
 
-public class AbstractStyleCustomizationPattern
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.DiagramElementPattern {
+public class AbstractStyleCustomizationPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.DiagramElementPattern {
 
 	public AbstractStyleCustomizationPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -61,8 +61,7 @@ public class AbstractStyleCustomizationPattern
 		set_applyOnAll(abstractCustomization.isApplyonAll());
 
 		/** Set the Applied on  variable **/
-		final EStructuralFeature appliedOnEReference = abstractCustomization.eClass()
-				.getEStructuralFeature("appliedOn");
+		final EStructuralFeature appliedOnEReference = abstractCustomization.eClass().getEStructuralFeature("appliedOn");
 		final Object appliedOnValue = abstractCustomization.eGet(appliedOnEReference);
 		if (appliedOnValue instanceof EList<?>) {
 			set_appliedOn((List<?>) appliedOnValue);
@@ -82,8 +81,7 @@ public class AbstractStyleCustomizationPattern
 		new Node.DataLeaf(ictx.getNode(), getClass(), "initializeCustomStyleData", out.toString());
 	}
 
-	protected void method_initEnumHelperJavaServiceData(final StringBuffer out, final PatternContext ctx)
-			throws Exception {
+	protected void method_initEnumHelperJavaServiceData(final StringBuffer out, final PatternContext ctx) throws Exception {
 		EObject customizations = dslvpElement.eContainer().eContainer();
 		if (customizations != null && customizations instanceof Customizations)
 			enumHelperJavaServiceData = GenerationUtil.getJavaServiceDataFor(customizations);
@@ -112,8 +110,7 @@ public class AbstractStyleCustomizationPattern
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.javaservice.JavaServiceData enumHelperJavaServiceData;
 
-	public void set_enumHelperJavaServiceData(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.javaservice.JavaServiceData enumHelperJavaServiceData) {
+	public void set_enumHelperJavaServiceData(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.javaservice.JavaServiceData enumHelperJavaServiceData) {
 		this.enumHelperJavaServiceData = enumHelperJavaServiceData;
 	}
 

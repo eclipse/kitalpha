@@ -1,4 +1,4 @@
-//Generated with EGF 1.3.0.v20150924-1035
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.doc.gen.business.ecore.index;
 
 import org.eclipse.egf.common.helper.*;
@@ -19,22 +19,18 @@ public class indexBuilder extends org.polarsys.kitalpha.doc.gen.business.core.in
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
-	protected final String TEXT_1 = "  <script type=\"text/javascript\">" + NL
-			+ "document.write('<frameset rows=\"63,*,40\" frameborder=\"0\" framespacing=\"0\" border=\"0\">');" + NL
-			+ "document.write('<frame src=\"header.html\" name=\"header\" marginheight=\"0\" marginwidth=\"0\" scrolling=\"no\" noresize=\"0\" >');"
-			+ NL + "document.write('<frameset cols=\"22%,*\" border=\"5\" frameborder=\"1\" framespacing=\"1\">');" + NL
-			+ "document.write('<frame src=\"sidebar.html\" name=\"sideBar\">');" + NL
+
+	protected final String TEXT_1 = "  <script type=\"text/javascript\">" + NL + "document.write('<frameset rows=\"63,*,40\" frameborder=\"0\" framespacing=\"0\" border=\"0\">');" + NL
+			+ "document.write('<frame src=\"header.html\" name=\"header\" marginheight=\"0\" marginwidth=\"0\" scrolling=\"no\" noresize=\"0\" >');" + NL
+			+ "document.write('<frameset cols=\"22%,*\" border=\"5\" frameborder=\"1\" framespacing=\"1\">');" + NL + "document.write('<frame src=\"sidebar.html\" name=\"sideBar\">');" + NL
 			+ "var locationText = (location.search ? location.search.substring(1):\"";
-	protected final String TEXT_2 = "\");" + NL
-			+ "document.write('<frame src=\"'+ locationText +'.html\" name=\"content\"\\/>');" + NL
-			+ "document.write('<noframes>');" + NL + "document.write('Oops ! Your browser cannot display this page !');"
-			+ NL + "  document.write('</noframes>');" + NL + "document.write('</frameset>');" + NL
-			+ "document.write('<frame src=\"footer.html\" name=\"footer\" scrolling=\"no\" frameborder=\"0\" noresize=\"noresize\" >');"
-			+ NL + "document.write('<noframes>');" + NL
-			+ "document.write('Oops ! Your browser cannot display this page !');" + NL
-			+ "document.write('</noframes>');" + NL + "document.write('</frameset>');" + NL + "</script>";
+
+	protected final String TEXT_2 = "\");" + NL + "document.write('<frame src=\"'+ locationText +'.html\" name=\"content\"\\/>');" + NL + "document.write('<noframes>');" + NL
+			+ "document.write('Oops ! Your browser cannot display this page !');" + NL + "  document.write('</noframes>');" + NL + "document.write('</frameset>');" + NL
+			+ "document.write('<frame src=\"footer.html\" name=\"footer\" scrolling=\"no\" frameborder=\"0\" noresize=\"noresize\" >');" + NL + "document.write('<noframes>');" + NL
+			+ "document.write('Oops ! Your browser cannot display this page !');" + NL + "document.write('</noframes>');" + NL + "document.write('</frameset>');" + NL + "</script>";
+
 	protected final String TEXT_3 = NL;
-	protected final String TEXT_4 = NL;
 
 	public indexBuilder() {
 		//Here is the constructor
@@ -63,7 +59,7 @@ public class indexBuilder extends org.polarsys.kitalpha.doc.gen.business.core.in
 		}
 
 		stringBuffer.append(TEXT_3);
-		stringBuffer.append(TEXT_4);
+		stringBuffer.append(TEXT_3);
 		return stringBuffer.toString();
 	}
 
@@ -86,8 +82,7 @@ public class indexBuilder extends org.polarsys.kitalpha.doc.gen.business.core.in
 		String fileName = "";
 		for (Object currentObject : model) {
 			if (currentObject instanceof EPackage) {
-				fileName = org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreFileNameService.INSTANCE
-						.getFileName((EPackage) currentObject);
+				fileName = org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreFileNameService.INSTANCE.getFileName((EPackage) currentObject);
 				break;
 			}
 		}

@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.jservice.diagrams;
 
 import java.util.*;
@@ -6,8 +6,7 @@ import org.eclipse.egf.model.pattern.*;
 import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 
-public class GenOpenJavaServiceForDiagramSet
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.jservice.common.GenJavaServiceCommonPattern {
+public class GenOpenJavaServiceForDiagramSet extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.jservice.common.GenJavaServiceCommonPattern {
 	protected static String nl;
 
 	public static synchronized GenOpenJavaServiceForDiagramSet create(String lineSeparator) {
@@ -18,7 +17,9 @@ public class GenOpenJavaServiceForDiagramSet
 	}
 
 	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+
 	protected final String TEXT_1 = "";
+
 	protected final String TEXT_2 = NL;
 
 	public GenOpenJavaServiceForDiagramSet() {

@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.1.201902111324
+//Generated with EGF 1.6.3.202110291409
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.style;
 
 import java.util.*;
@@ -28,12 +28,12 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.javaservice.Jav
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.javaservice.JavaMethodData.JavaMethodReturnType;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.DiagramExpressionUtil;
 
-public class StyleCustomizationDescriptionsPattern
-		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.DiagramElementPattern {
+public class StyleCustomizationDescriptionsPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.DiagramElementPattern {
 
 	public StyleCustomizationDescriptionsPattern() {
 		//Here is the constructor
 		// add initialisation of the pattern variables (declaration has been already done).
+
 	}
 
 	public void generate(Object argument) throws Exception {
@@ -90,8 +90,7 @@ public class StyleCustomizationDescriptionsPattern
 		if (precondtionExpression != null) {
 			final AbstractComputableElement expressionElement = precondtionExpression.getOwnedExpressionElement();
 			if (expressionElement != null) {
-				String expression = DiagramExpressionUtil.getAbstractComputableElementExpression(expressionElement,
-						VSMVariable.view, VSMVariable.container);
+				String expression = DiagramExpressionUtil.getAbstractComputableElementExpression(expressionElement, VSMVariable.view, VSMVariable.container);
 				vsmElementCustomization.setPredicateExpression(expression);
 			}
 		}
@@ -117,8 +116,7 @@ public class StyleCustomizationDescriptionsPattern
 
 	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.StyleCustomizationDescriptions parameter;
 
-	public void set_parameter(
-			org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.StyleCustomizationDescriptions parameter) {
+	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.StyleCustomizationDescriptions parameter) {
 		this.parameter = parameter;
 	}
 
