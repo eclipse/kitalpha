@@ -94,7 +94,7 @@ location acceleo "https://download.eclipse.org/acceleo/updates/releases/3.7/" {
 	org.eclipse.acceleo.doc [3.7.11,3.7.12)
 }
 
-location sirius "https://download.eclipse.org/sirius/updates/stable/6.6.0-S20210906-045606/2020-06/" {
+location sirius "https://download.eclipse.org/sirius/updates/stable/6.6.0-S20211026-113903/2020-06/" {
 	org.eclipse.sirius.doc.feature.feature.group lazy
     org.eclipse.sirius.runtime.source.feature.group lazy
     org.eclipse.sirius.runtime.acceleo.feature.group lazy
@@ -126,7 +126,7 @@ location sirius "https://download.eclipse.org/sirius/updates/stable/6.6.0-S20210
 	org.eclipse.sirius.specifier.feature.group lazy
 }
 
-location EMF-DiffMerge "https://download.eclipse.org/diffmerge/stable/0.13.1-M3/emf-diffmerge-site/" {
+location EMF-DiffMerge "https://download.eclipse.org/diffmerge/releases/0.13.1/emf-diffmerge-site/" {
 	org.eclipse.emf.diffmerge.feature.feature.group lazy
 	org.eclipse.emf.diffmerge.feature.source.feature.group lazy
 	org.eclipse.emf.diffmerge.sirius.feature.feature.group lazy
@@ -137,19 +137,19 @@ location EMF-DiffMerge "https://download.eclipse.org/diffmerge/stable/0.13.1-M3/
 	org.eclipse.emf.diffmerge.egit.feature.source.feature.group lazy
 }
 
-location EDM-Patterns "https://download.eclipse.org/diffmerge/stable/0.13.1-M3/edm-patterns-site/" {
+location EDM-Patterns "https://download.eclipse.org/diffmerge/releases/0.13.1/edm-patterns-site/" {
 	org.eclipse.emf.diffmerge.patterns.sdk.feature.feature.group lazy
 	org.eclipse.emf.diffmerge.patterns.sdk.feature.source.feature.group lazy
 	org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.feature.group lazy
 	org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.source.feature.group lazy
 }
 
-location coevolution "https://download.eclipse.org/diffmerge/stable/0.13.1-M3/edm-coevolution-site/" {
+location coevolution "https://download.eclipse.org/diffmerge/releases/0.13.1/edm-coevolution-site/" {
 	 org.eclipse.emf.diffmerge.coevolution.sdk.feature.feature.group lazy
 	 org.eclipse.emf.diffmerge.coevolution.sdk.feature.source.feature.group lazy
 }
 
-location amalgam "https://download.eclipse.org/modeling/amalgam/updates/stable/1.12.1-S20210330/capella" {
+location amalgam "https://download.eclipse.org/modeling/amalgam/updates/releases/1.12.1/capella" {
 	org.eclipse.amalgam.explorer.activity.feature.group lazy
 	org.eclipse.amalgam.explorer.activity.source.feature.group lazy
 	org.eclipse.amalgam.explorer.contextual.feature.group lazy
