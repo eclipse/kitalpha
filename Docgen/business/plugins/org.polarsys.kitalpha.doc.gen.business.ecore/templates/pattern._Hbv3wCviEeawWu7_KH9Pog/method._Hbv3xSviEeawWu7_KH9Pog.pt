@@ -7,7 +7,7 @@ String projectName = ctx.getValue("projectName").toString();
 if(( parameter).getESuperTypes().size() > 0) {%>
 <p><strong>Inherits from: </strong><br /><%
 for(EClass eClass : ( parameter).getESuperTypes()) {
-%><%=org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getTypeHyperLink(parameter)%>&nbsp;
+%><%=org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getTypeHyperLink(eClass)%>&nbsp;
 <%
 }
 %>

@@ -143,7 +143,7 @@ public class EClassSuperType {
 
 			for (EClass eClass : (parameter).getESuperTypes()) {
 
-				stringBuffer.append(org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getTypeHyperLink(parameter));
+				stringBuffer.append(org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getTypeHyperLink(eClass));
 				stringBuffer.append(TEXT_2);
 
 			}
