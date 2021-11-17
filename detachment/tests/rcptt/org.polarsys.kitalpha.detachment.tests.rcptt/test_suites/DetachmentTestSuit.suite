@@ -1,0 +1,43 @@
+--- RCPTT testcase ---
+Format-Version: 1.0
+Element-Name: DetachmentTestSuit
+Element-Type: testsuite
+Element-Version: 2.0
+Id: _GNAGQHXcEea2Ve0UEUBuKQ
+Runtime-Version: 2.5.2.202109092356
+Save-Time: 11/17/21, 10:07 AM
+
+------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8
+Content-Type: text/testcase
+Entry-Name: testcase-items
+
+_6XbC8LDBEeaPxMtdcBu6Pg	// kind: 'test' name: 'SessionOpenedWithSiriusPreferencesDeactivated' path: '../target/projects/org.polarsys.kitalpha.detachment.tests.rcptt/test cases/SessionOpenedWithSiriusPreferencesDeactivated.test'
+_9Yl7oOmfEeifjJ80RQydOQ	// kind: 'test' name: 'UnknownReferencesWithSiriusTable' path: '../target/projects/org.polarsys.kitalpha.detachment.tests.rcptt/test cases/UnknownReferencesWithSiriusTable.test'
+_MfI_wHw1Eee2APpZQTlB7g	// kind: 'test' name: 'UnkownReferencesWithSiriusReferencesDeactivated' path: '../target/projects/org.polarsys.kitalpha.detachment.tests.rcptt/test cases/UnkownReferencesWithSiriusReferencesDeactivated.test'
+_88lF4IVUEeaAeqHNRvXNqw	// kind: 'test' name: 'Detachment_00020' path: '../target/projects/org.polarsys.kitalpha.detachment.tests.rcptt/test cases/Detachment_00020/Detachment_00020.test'
+_PnQQ0H2hEee2APpZQTlB7g	// kind: 'test' name: 'UnknownReferenceWithoutRefreshSiriusDiagramPreference' path: '../target/projects/org.polarsys.kitalpha.detachment.tests.rcptt/test cases/UnknownReferenceWithoutRefreshSiriusDiagramPreference.test'
+_-nkQ0HXZEea2Ve0UEUBuKQ	// kind: 'test' name: 'EMFTreeViewerViewpointDetachment' path: '../target/projects/org.polarsys.kitalpha.detachment.tests.rcptt/test cases/EMFTreeViewerViewpointDetachment.test'
+_Bs5QkHW6Eea2Ve0UEUBuKQ	// kind: 'test' name: 'SessionClosedUsedResources' path: '../target/projects/org.polarsys.kitalpha.detachment.tests.rcptt/test cases/SessionClosedUsedResources.test'
+_CRo1AHW9Eea2Ve0UEUBuKQ	// kind: 'test' name: 'SessionClosedUsedResourceWithViewpoints' path: '../target/projects/org.polarsys.kitalpha.detachment.tests.rcptt/test cases/SessionClosedUsedResourceWithViewpoints.test'
+_Zi9lcHAyEeulkKMuOPg56g	// kind: 'test' name: 'UnkownReferences_selectedViews' path: '../target/projects/org.polarsys.kitalpha.detachment.tests.rcptt/test cases/UnkownReferences_selectedViews.test'
+_MVkPsHXLEea2Ve0UEUBuKQ	// kind: 'test' name: 'SessionClosedViewpointsResources' path: '../target/projects/org.polarsys.kitalpha.detachment.tests.rcptt/test cases/SessionClosedViewpointsResources.test'
+_1RZ8EHXAEea2Ve0UEUBuKQ	// kind: 'test' name: 'SessionOpenedViewpointsResources' path: '../target/projects/org.polarsys.kitalpha.detachment.tests.rcptt/test cases/SessionOpenedViewpointsResources.test'
+_nx_-kHN5EeaIXORVNWg1aA	// kind: 'test' name: 'UnkownReferences' path: '../target/projects/org.polarsys.kitalpha.detachment.tests.rcptt/test cases/UnkownReferences.test'
+_yhjFUKZpEeufANHYRTixWw	// kind: 'test' name: 'InvalidDSemanticDiagram' path: '../target/projects/org.polarsys.kitalpha.detachment.tests.rcptt/test cases/InvalidDSemanticDiagram.test'
+_lffSIA_1EeelGOkyatCORw	// kind: 'test' name: 'Detachment_00024' path: '../target/projects/org.polarsys.kitalpha.detachment.tests.rcptt/test cases/Detachment_00024/Detachment_00024.test'
+_bnNuYMVZEeiKtJ96oKG8ig	// kind: 'test' name: 'SessionClosedViewpointBackupOldExtension' path: '../target/projects/org.polarsys.kitalpha.detachment.tests.rcptt/test cases/SessionClosedViewpointBackupOldExtension.test'
+_IYDRMN_jEeeSMpjLLwI5Jw	// kind: 'test' name: 'UnreferenceNotUsedViewpoint' path: '../target/projects/org.polarsys.kitalpha.detachment.tests.rcptt/test cases/UnreferenceNotUsedViewpoint.test'
+_52_XUN_pEeeSMpjLLwI5Jw	// kind: 'test' name: 'DetachReferencedNotUsedViewpoints' path: '../target/projects/org.polarsys.kitalpha.detachment.tests.rcptt/test cases/DetachReferencedNotUsedViewpoints.test'
+_zRTtsBBtEeeIb6T5EKtzmg	// kind: 'test' name: 'Detachment_00026' path: '../target/projects/org.polarsys.kitalpha.detachment.tests.rcptt/test cases/Detachment_00026/Detachment_00026.test'
+_P4kp8HWrEea2Ve0UEUBuKQ	// kind: 'test' name: 'SessionClosedResources' path: '../target/projects/org.polarsys.kitalpha.detachment.tests.rcptt/test cases/SessionClosedResources.test'
+_FefrMHXAEea2Ve0UEUBuKQ	// kind: 'test' name: 'SessionOpenedUsedResourceWithViewpoints' path: '../target/projects/org.polarsys.kitalpha.detachment.tests.rcptt/test cases/SessionOpenedUsedResourceWithViewpoints.test'
+_UBOhYHWrEea2Ve0UEUBuKQ	// kind: 'test' name: 'SessionClosedViewpoint' path: '../target/projects/org.polarsys.kitalpha.detachment.tests.rcptt/test cases/SessionClosedViewpoint.test'
+_Ryn70HWrEea2Ve0UEUBuKQ	// kind: 'test' name: 'SessionOpenedViewpoint' path: '../target/projects/org.polarsys.kitalpha.detachment.tests.rcptt/test cases/SessionOpenedViewpoint.test'
+_HRvCULI4EeapGbjeeI_tcw	// kind: 'test' name: 'DetachmentWithViewpointInWorkspace' path: '../target/projects/org.polarsys.kitalpha.detachment.tests.rcptt/test cases/DetachmentWithViewpointInWorkspace.test'
+_lyRxEHW_Eea2Ve0UEUBuKQ	// kind: 'test' name: 'SessionOpenUsedResources' path: '../target/projects/org.polarsys.kitalpha.detachment.tests.rcptt/test cases/SessionOpenUsedResources.test'
+_5mvtIBBqEeeIb6T5EKtzmg	// kind: 'test' name: 'Detachment_00025' path: '../target/projects/org.polarsys.kitalpha.detachment.tests.rcptt/test cases/Detachment_00025/Detachment_00025.test'
+_Na9QMLDAEeaPxMtdcBu6Pg	// kind: 'test' name: 'SessionClosedWithSiriusPreferencesDeactivated' path: '../target/projects/org.polarsys.kitalpha.detachment.tests.rcptt/test cases/SessionClosedWithSiriusPreferencesDeactivated.test'
+_nCrIAEImEeilqbp720uQ0Q	// kind: 'test' name: 'UnknownReferencesWithSiriusCustomColors' path: '../target/projects/org.polarsys.kitalpha.detachment.tests.rcptt/test cases/UnknownReferencesWithSiriusCustomColors.test'
+_pPR04HN5EeaIXORVNWg1aA	// kind: 'test' name: 'SessionOpenedResources' path: '../target/projects/org.polarsys.kitalpha.detachment.tests.rcptt/test cases/SessionOpenedResources.test'
+
+------=_testcase-items-62c497da-4241-31f4-811a-6b453a3ecff8--
