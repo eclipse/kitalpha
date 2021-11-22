@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="40.433159mm"
+   height="40.431999mm"
+   viewBox="0 0 40.433159 40.431999"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="4imagesIcon_error.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     width="40mm"
+     inkscape:zoom="2.9434896"
+     inkscape:cx="-39.23914"
+     inkscape:cy="76.270016"
+     inkscape:window-width="1294"
+     inkscape:window-height="969"
+     inkscape:window-x="559"
+     inkscape:window-y="317"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0.21715929,0.21600001)">
+    <rect
+       style="fill:none;fill-opacity:0;stroke:#1b0031;stroke-width:0.432;stroke-miterlimit:4;stroke-dasharray:5.184, 0.432;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect846"
+       width="40"
+       height="40"
+       x="2.6645353e-15"
+       y="-1.7763568e-15"
+       rx="2.5" />
+    <rect
+       style="fill:#00c5d9;fill-opacity:0;stroke:#1ed920;stroke-width:0.432;stroke-miterlimit:4;stroke-dasharray:0.432, 0.432;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect950"
+       width="30.561798"
+       height="30.292135"
+       x="4.719101"
+       y="9.7078648"
+       rx="2.5000002" />
+  </g>
+</svg>

@@ -43,6 +43,7 @@
 		<module>../../../architecture description/core/tests/org.polarsys.kitalpha.ad.viewpoint.tests</module>
 		<module>../../../transposer/tests/plugins/junits/org.polarsys.kitalpha.transposer.junit.tests</module>
 		<module>../../../massactions/tests/plugins/org.polarsys.kitalpha.massactions.junit.tests</module>
+		<module>../../../common/tests/org.polarsys.kitalpha.common.sirius.extension.rotativeimage.junit.tests</module>
 		
 		<!--  Not activated tests -->
 		<module>../../../detachment/tests/junit/org.polarsys.kitalpha.detachment.tests.ju</module>
