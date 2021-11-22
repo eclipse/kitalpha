@@ -17,7 +17,7 @@
    <extension
         point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders">
      <editpartProvider
-           class="org.polarsys.kitalpha.common.sirius.extension.rotativeimage.RotativeImageEditPartProvider">
+           class="org.polarsys.kitalpha.common.sirius.extension.rotativeimage.editpart.RotativeImageEditPartProvider">
         <Priority
               name="Highest">
         </Priority>

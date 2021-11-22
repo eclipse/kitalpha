@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2020 Thales Global Services S.A.S.
+ * Copyright (c) 2020, 2021 Thales Global Services S.A.S.
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License 2.0 which is available at
  * http://www.eclipse.org/legal/epl-2.0
@@ -9,16 +9,16 @@
  * Contributors:
  *   Thales Global Services S.A.S - initial API and implementation
  *******************************************************************************/
-package org.polarsys.kitalpha.common.sirius.extension.internal.rotativeimage;
+package org.polarsys.kitalpha.common.sirius.extension.rotativeimage;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
-import org.polarsys.kitalpha.common.sirius.extension.rotativeimage.RotativeDescription;
+import org.polarsys.kitalpha.common.sirius.extension.rotativeimage.extension.RotativeDescription;
 
 /**
  * The activator class controls the plug-in life cycle
@@ -33,18 +33,33 @@ public class Activator extends AbstractUIPlugin {
 	// The shared instance
 	private static Activator plugin;
 
-	private List<RotativeDescription> descriptions;
+	private Map<String, RotativeDescription> descriptions;
 	
-	public List<RotativeDescription> getDescriptions() {
+	public Map<String, RotativeDescription> getDescriptions() {
+	    if (descriptions == null) {
+	        descriptions = new HashMap<>();
+	        
+	        IConfigurationElement[] config = Platform.getExtensionRegistry().getConfigurationElementsFor(EXT_ID);
+	        for (IConfigurationElement e : config) {
+	            String id = e.getAttribute("id");
+	            int kind = RotativeDescription.ROTATIVE;
+	            if (e.getAttribute("kind").equals("4images")) kind=RotativeDescription.FOUR_IMAGES;
+	            descriptions.put(id, new RotativeDescription(id, kind));
+	        }
+	    }
 		return descriptions;
 	}
 	
 	public RotativeDescription getBestDescription(String id) {
-		if (id==null) return null;
-		for (RotativeDescription desc : descriptions) {
-			if (id.startsWith(desc.id)) return desc;
+	    if (id==null) return null;
+		if (descriptions == null) {
+		    getDescriptions();
 		}
-		return null;
+		RotativeDescription result = null;
+		if (descriptions != null) {
+		    result = descriptions.get(id);
+		}
+		return result;
 	}
 	
 	/**
@@ -60,17 +75,6 @@ public class Activator extends AbstractUIPlugin {
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		plugin = this;
-		
-		descriptions=new ArrayList<RotativeDescription>();
-		
-		IConfigurationElement[] config = Platform.getExtensionRegistry().getConfigurationElementsFor(EXT_ID);
-		for (IConfigurationElement e : config) {
-			String id = e.getAttribute("id");
-			int kind = RotativeDescription.ROTATIVE;
-			if (e.getAttribute("kind").equals("4images")) kind=RotativeDescription.FOUR_IMAGES;
-			descriptions.add(new RotativeDescription(id, kind));
-		}
-
 	}
 
 	/*

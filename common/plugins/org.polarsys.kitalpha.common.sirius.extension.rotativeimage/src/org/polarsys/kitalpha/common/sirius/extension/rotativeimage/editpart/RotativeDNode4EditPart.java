@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2006, 2020 THALES GLOBAL SERVICES.
+ * Copyright (c) 2006, 2021 THALES GLOBAL SERVICES.
  * 
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License 2.0 which is available at
@@ -10,7 +10,7 @@
  * Contributors:
  *    Thales - initial API and implementation
  *******************************************************************************/
-package org.polarsys.kitalpha.common.sirius.extension.rotativeimage;
+package org.polarsys.kitalpha.common.sirius.extension.rotativeimage.editpart;
 
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.sirius.diagram.ui.internal.edit.parts.DNode4EditPart;
