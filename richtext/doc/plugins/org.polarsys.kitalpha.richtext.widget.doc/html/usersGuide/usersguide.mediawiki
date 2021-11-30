@@ -139,11 +139,13 @@ The link types allowed are:
 |URL
 | for instance: http://www.polarsys.org/kitalpha/
 |-
-|File (Absolute Path)
-| Link to the files on the local disk of the computer. For instance: /home/me/folders/program.c
+|File (Absolute Path) '''not recommended'''
+| Choice not recommended if you want to share information and collaborate. Use URL link instead.
+Link to the files on the local disk of the computer. For instance: /home/me/folders/program.c
 |-
-|File (Project Relative Path)
-| Link to the file in the workspace. For instance: /project.name/model.componentsample
+|File (Project Relative Path) '''not recommended'''
+| Choice not recommended if you want to share information and collaborate. Use URL link instead.
+Link to the file in the workspace. For instance: /project.name/model.componentsample
 |-
 |Model Element
 | Link to any model element of the resource set of the element being editing.
