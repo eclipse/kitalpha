@@ -309,6 +309,12 @@
    <feature id="org.polarsys.kitalpha.transposer.diffmerge.feature.source" version="0.0.0">
       <category name="RuntimeCoreSource"/>
    </feature>
+   <feature id="org.polarsys.kitalpha.sirius.rotativeimage.feature" version="0.0.0">
+      <category name="RuntimeCore"/>
+   </feature>
+   <feature id="org.polarsys.kitalpha.sirius.rotativeimage.feature.source" version="0.0.0">
+      <category name="RuntimeCoreSource"/>
+   </feature>
    <category-def name="RuntimeCore" label="Runtime Core"/>
    <category-def name="RuntimeCoreSource" label="Runtime Core Source"/>
    <category-def name="Runtime" label="Runtime"/>
