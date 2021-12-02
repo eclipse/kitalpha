@@ -224,6 +224,12 @@
    <feature id="org.polarsys.kitalpha.richtext.widget.feature.source" version="0.0.0">
       <category name="RuntimeCoreSource"/>
    </feature>
+   <feature id="org.polarsys.kitalpha.sirius.rotativeimage.feature" version="0.0.0">
+      <category name="RuntimeCore"/>
+   </feature>
+   <feature id="org.polarsys.kitalpha.sirius.rotativeimage.feature.source" version="0.0.0">
+      <category name="RuntimeCoreSource"/>
+   </feature>
 
 
 
