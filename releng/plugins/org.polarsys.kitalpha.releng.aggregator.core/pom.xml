@@ -99,7 +99,6 @@
     <module>../../../richtext/plugins/org.polarsys.kitalpha.richtext.nebula.widget</module>
     
     <!-- plugins org.polarsys.kitalpha.common.feature -->
-    <module>../../../common/plugins/org.polarsys.kitalpha.common.sirius.extension.rotativeimage</module>
     <module>../../../common/plugins/org.polarsys.kitalpha.common.ui</module>
     <module>../../../common/plugins/org.polarsys.kitalpha.examples.generic.wizard</module>
     <!-- plugins org.polarsys.kitalpha.emde.genchain.feature -->
@@ -211,6 +210,10 @@
 	<!-- Type interpreter Feature -->
 	<module>../../../sirius/features/org.polarsys.kitalpha.sirius.typeinterpreter.feature</module>
 	
+	<!-- Sirius Rotative Images Feature -->
+    <module>../../../sirius/plugins/org.polarsys.kitalpha.sirius.rotativeimage</module>
+    <module>../../../sirius/features/org.polarsys.kitalpha.sirius.rotativeimage.feature</module>
+    
 	<!-- Diff/Merge Bridge Integration Plugin -->
 	<module>../../../transposer/plugins/org.polarsys.kitalpha.diffmerge.bridge.integration.transposer</module>
 	

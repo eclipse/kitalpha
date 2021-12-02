@@ -1,0 +1,1347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:filter="http://www.eclipse.org/sirius/diagram/description/filter/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:test="http://kitalpha.test" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/filter/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/filter http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style http://kitalpha.test test.ecore">
+  <viewpoint:DAnalysis uid="_eSmO8E1NEeySgagIY4HK9g" selectedViews="_e94AkE1NEeySgagIY4HK9g _eWPY0E1NEeySgagIY4HK9g" version="14.6.0.202110251100">
+    <semanticResources>Test1.xmi</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" uid="_eWPY0E1NEeySgagIY4HK9g">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.polarsys.kitalpha.ad.integration.sirius/description/ad.odesign#//@ownedViewpoints[name='ad']"/>
+    </ownedViews>
+    <ownedViews xmi:type="viewpoint:DView" uid="_e94AkE1NEeySgagIY4HK9g">
+      <viewpoint xmi:type="description:Viewpoint" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_idds4E1NEeySgagIY4HK9g" name="new Root diagram" repPath="#_idBoAE1NEeySgagIY4HK9g" changeId="45a5f15b-44b0-44fe-96f2-3303645901b6">
+        <description xmi:type="description_1:DiagramDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram']"/>
+        <target xmi:type="test:Root" href="Test1.xmi#/"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_h9U1ME4GEeyTxN2ah5Tp3g" name="new Root diagram png" repPath="#_h8ypsE4GEeyTxN2ah5Tp3g" changeId="94030792-2f12-4557-991d-2db3c45af2f5">
+        <description xmi:type="description_1:DiagramDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20png']"/>
+        <target xmi:type="test:Root" href="Test1.xmi#/"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_4gkTAE6SEeyXs6TJVt2feA" name="new Root diagram error png" repPath="#_4gHnEE6SEeyXs6TJVt2feA" changeId="450269fa-94d6-46f7-9f57-8070fcab522a">
+        <description xmi:type="description_1:DiagramDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20png']"/>
+        <target xmi:type="test:Root" href="Test1.xmi#/"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_BTwm8E6TEeyXs6TJVt2feA" name="new Root diagram error svg" repPath="#_BTv_4E6TEeyXs6TJVt2feA" changeId="a7caf775-6a63-47c0-9141-e4fa75e25f43">
+        <description xmi:type="description_1:DiagramDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20svg']"/>
+        <target xmi:type="test:Root" href="Test1.xmi#/"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_xkHCoFKBEeytGcI8gHYSmQ" name="new Root diagram error" repPath="#_xkCxMFKBEeytGcI8gHYSmQ" changeId="95b21195-ae35-4831-a767-4d990e5fb1a0">
+        <description xmi:type="description_1:DiagramDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error']"/>
+        <target xmi:type="test:Root" href="Test1.xmi#/"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_D1SIkFKxEeyPyIXvHv24Lw" name="new Root diagram" repPath="#_D00OgFKxEeyPyIXvHv24Lw" changeId="505e7fa2-18ad-4e5c-a396-bd9c0ec788fc">
+        <description xmi:type="description_1:DiagramDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram']"/>
+        <target xmi:type="test:Root" href="Test2.xmi#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram uid="_idBoAE1NEeySgagIY4HK9g">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_ieAfcE1NEeySgagIY4HK9g" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_ieAfcU1NEeySgagIY4HK9g" type="Sirius" element="_idBoAE1NEeySgagIY4HK9g" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_ifjXkE1NEeySgagIY4HK9g" type="2001" element="_ieg1wE1NEeySgagIY4HK9g">
+          <children xmi:type="notation:Node" xmi:id="_ifo3IE1NEeySgagIY4HK9g" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_ifo3IU1NEeySgagIY4HK9g" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_ifyBEE1NEeySgagIY4HK9g" type="3001" element="_ieoKgE1NEeySgagIY4HK9g">
+            <children xmi:type="notation:Node" xmi:id="_ifz2QE1NEeySgagIY4HK9g" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_ifz2QU1NEeySgagIY4HK9g" y="5"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_iklBgE1NEeySgagIY4HK9g" type="3005" element="_ie4CIE1NEeySgagIY4HK9g">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_iklBgU1NEeySgagIY4HK9g" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iklBgk1NEeySgagIY4HK9g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_ifyBEU1NEeySgagIY4HK9g" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ifyBEk1NEeySgagIY4HK9g" x="20" y="-12" width="151" height="151"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_ikBA0E1NEeySgagIY4HK9g" type="3001" element="_ie8TkE1NEeySgagIY4HK9g">
+            <children xmi:type="notation:Node" xmi:id="_ikBn4E1NEeySgagIY4HK9g" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_ikBn4U1NEeySgagIY4HK9g" y="5"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_iklokE1NEeySgagIY4HK9g" type="3005" element="_ie-IwE1NEeySgagIY4HK9g">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_iklokU1NEeySgagIY4HK9g" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iklokk1NEeySgagIY4HK9g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_ikBA0U1NEeySgagIY4HK9g" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ikBA0k1NEeySgagIY4HK9g" x="72" y="20" width="151" height="151"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_ikPqUE1NEeySgagIY4HK9g" type="3001" element="_ie-v0E1NEeySgagIY4HK9g">
+            <children xmi:type="notation:Node" xmi:id="_ikQRYE1NEeySgagIY4HK9g" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_ikQRYU1NEeySgagIY4HK9g" x="21" y="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_ikmPoE1NEeySgagIY4HK9g" type="3005" element="_ifAlAE1NEeySgagIY4HK9g">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_ikmPoU1NEeySgagIY4HK9g" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ikmPok1NEeySgagIY4HK9g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_ikPqUU1NEeySgagIY4HK9g" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ikPqUk1NEeySgagIY4HK9g" x="-12" y="30" width="151" height="151"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_ikaCYE1NEeySgagIY4HK9g" type="3001" element="_ifBMEE1NEeySgagIY4HK9g">
+            <children xmi:type="notation:Node" xmi:id="_ikaCY01NEeySgagIY4HK9g" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_ikaCZE1NEeySgagIY4HK9g" y="5"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_ikm2sE1NEeySgagIY4HK9g" type="3005" element="_ifDBQE1NEeySgagIY4HK9g">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_ikm2sU1NEeySgagIY4HK9g" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ikm2sk1NEeySgagIY4HK9g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_ikaCYU1NEeySgagIY4HK9g" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ikaCYk1NEeySgagIY4HK9g" x="38" y="72" width="151" height="151"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_dggOME1OEeySgagIY4HK9g" type="3003" element="_ddpugE1OEeySgagIY4HK9g">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_dggOMU1OEeySgagIY4HK9g" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dggOMk1OEeySgagIY4HK9g"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_ifjXkU1NEeySgagIY4HK9g" fontName="Segoe UI"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ifjXkk1NEeySgagIY4HK9g" x="32" y="32" width="80" height="80"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_ifwy8E1NEeySgagIY4HK9g" type="2001" element="_iemVUE1NEeySgagIY4HK9g">
+          <children xmi:type="notation:Node" xmi:id="_ifxaAE1NEeySgagIY4HK9g" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_ifxaAU1NEeySgagIY4HK9g" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_dgg1QE1OEeySgagIY4HK9g" type="3003" element="_ddrjsE1OEeySgagIY4HK9g">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_dgg1QU1OEeySgagIY4HK9g" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dgg1Qk1OEeySgagIY4HK9g"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_ZSDhME6VEey8JIaoK8ucAw" type="3001" element="_ZRjK4U6VEey8JIaoK8ucAw">
+            <children xmi:type="notation:Node" xmi:id="_ZSOgUE6VEey8JIaoK8ucAw" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_ZSOgUU6VEey8JIaoK8ucAw" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_3-jqwE6VEey8JIaoK8ucAw" type="3005" element="_37wOYE6VEey8JIaoK8ucAw">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_3-jqwU6VEey8JIaoK8ucAw" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3-jqwk6VEey8JIaoK8ucAw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_ZSDhMU6VEey8JIaoK8ucAw" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZSDhMk6VEey8JIaoK8ucAw" x="15" y="-12" width="20" height="20"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_ZZEIIE6VEey8JIaoK8ucAw" type="3001" element="_ZRoqcU6VEey8JIaoK8ucAw">
+            <children xmi:type="notation:Node" xmi:id="_ZZEvME6VEey8JIaoK8ucAw" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_ZZEvMU6VEey8JIaoK8ucAw" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_3-kR0E6VEey8JIaoK8ucAw" type="3005" element="_37w1ck6VEey8JIaoK8ucAw">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_3-kR0U6VEey8JIaoK8ucAw" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3-kR0k6VEey8JIaoK8ucAw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_ZZEIIU6VEey8JIaoK8ucAw" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZZEIIk6VEey8JIaoK8ucAw" x="72" y="20" width="20" height="20"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_ZZVN4E6VEey8JIaoK8ucAw" type="3001" element="_ZRrtwU6VEey8JIaoK8ucAw">
+            <children xmi:type="notation:Node" xmi:id="_ZZV08k6VEey8JIaoK8ucAw" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_ZZV0806VEey8JIaoK8ucAw" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_3-kR006VEey8JIaoK8ucAw" type="3005" element="_37w1dU6VEey8JIaoK8ucAw">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_3-kR1E6VEey8JIaoK8ucAw" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3-kR1U6VEey8JIaoK8ucAw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_ZZV08E6VEey8JIaoK8ucAw" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZZV08U6VEey8JIaoK8ucAw" x="-12" y="40" width="20" height="20"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_ZZiCME6VEey8JIaoK8ucAw" type="3001" element="_ZRuxEk6VEey8JIaoK8ucAw">
+            <children xmi:type="notation:Node" xmi:id="_ZZipQE6VEey8JIaoK8ucAw" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_ZZipQU6VEey8JIaoK8ucAw" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_3-k44E6VEey8JIaoK8ucAw" type="3005" element="_37xcgk6VEey8JIaoK8ucAw">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_3-k44U6VEey8JIaoK8ucAw" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3-k44k6VEey8JIaoK8ucAw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_ZZiCMU6VEey8JIaoK8ucAw" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZZiCMk6VEey8JIaoK8ucAw" x="35" y="72" width="20" height="20"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_ifwy8U1NEeySgagIY4HK9g" fontName="Segoe UI"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ifwy8k1NEeySgagIY4HK9g" x="100" y="170" width="80" height="80"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_ieAfck1NEeySgagIY4HK9g"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_ifRqwE1NEeySgagIY4HK9g" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_ifSR0E1NEeySgagIY4HK9g"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_ieg1wE1NEeySgagIY4HK9g" name="e1" width="8" height="8" resizeKind="NSEW">
+      <target xmi:type="test:Element" href="Test1.xmi#//@elements.0"/>
+      <semanticElements xmi:type="test:Element" href="Test1.xmi#//@elements.0"/>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_ieoKgE1NEeySgagIY4HK9g" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.0"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.0"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_ie4CIE1NEeySgagIY4HK9g" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/4imagesIcon.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_ie8TkE1NEeySgagIY4HK9g" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.1"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.1"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_ie-IwE1NEeySgagIY4HK9g" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/4imagesIcon.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_ie-v0E1NEeySgagIY4HK9g" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.2"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.2"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_ifAlAE1NEeySgagIY4HK9g" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/4imagesIcon.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_ifBMEE1NEeySgagIY4HK9g" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.3"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.3"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_ifDBQE1NEeySgagIY4HK9g" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/4imagesIcon.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" uid="_ddpugE1OEeySgagIY4HK9g" labelSize="12" labelPosition="node">
+        <description xmi:type="style:SquareDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram']/@defaultLayer/@nodeMappings[name='ElementNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram']/@defaultLayer/@nodeMappings[name='ElementNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_iemVUE1NEeySgagIY4HK9g" name="e2" width="8" height="8" resizeKind="NSEW">
+      <target xmi:type="test:Element" href="Test1.xmi#//@elements.1"/>
+      <semanticElements xmi:type="test:Element" href="Test1.xmi#//@elements.1"/>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_ZRjK4U6VEey8JIaoK8ucAw" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.0"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.0"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_ZRoqcE6VEey8JIaoK8ucAw"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_37wOYE6VEey8JIaoK8ucAw" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/rotationIcon.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@conditionnalStyles.0/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_ZRoqcU6VEey8JIaoK8ucAw" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.1"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.1"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_ZRrtwE6VEey8JIaoK8ucAw"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_37w1ck6VEey8JIaoK8ucAw" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/rotationIcon.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@conditionnalStyles.0/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_ZRrtwU6VEey8JIaoK8ucAw" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.2"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.2"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_ZRuxEU6VEey8JIaoK8ucAw"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_37w1dU6VEey8JIaoK8ucAw" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/rotationIcon.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@conditionnalStyles.0/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_ZRuxEk6VEey8JIaoK8ucAw" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.3"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.3"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_ZRx0YU6VEey8JIaoK8ucAw"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_37xcgk6VEey8JIaoK8ucAw" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/rotationIcon.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@conditionnalStyles.0/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" uid="_ddrjsE1OEeySgagIY4HK9g" labelSize="12" labelPosition="node">
+        <description xmi:type="style:SquareDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram']/@defaultLayer/@nodeMappings[name='ElementNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram']/@defaultLayer/@nodeMappings[name='ElementNode']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram']"/>
+    <activatedFilters xmi:type="filter:CompositeFilterDescription" href="platform:/plugin/org.polarsys.kitalpha.ad.integration.sirius/description/ad.odesign#//@ownedViewpoints[name='ad']/@ownedRepresentations[name='AD%20diagram']/@filters[name='ModelExtensionFilter']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_idQRgE1NEeySgagIY4HK9g"/>
+    <activatedLayers xmi:type="description_1:Layer" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram']/@defaultLayer"/>
+    <target xmi:type="test:Root" href="Test1.xmi#/"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram uid="_h8ypsE4GEeyTxN2ah5Tp3g">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_h-Cm4E4GEeyTxN2ah5Tp3g" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_h-Cm4U4GEeyTxN2ah5Tp3g" type="Sirius" element="_h8ypsE4GEeyTxN2ah5Tp3g" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_iCm90E4GEeyTxN2ah5Tp3g" type="2001" element="_h-w_oE4GEeyTxN2ah5Tp3g">
+          <children xmi:type="notation:Node" xmi:id="_iC1AQE4GEeyTxN2ah5Tp3g" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_iC1AQU4GEeyTxN2ah5Tp3g" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_iDRFIE4GEeyTxN2ah5Tp3g" type="3001" element="_iB9dkU4GEeyTxN2ah5Tp3g">
+            <children xmi:type="notation:Node" xmi:id="_iDSTQE4GEeyTxN2ah5Tp3g" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_iDSTQU4GEeyTxN2ah5Tp3g" y="-9"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_iD9osE4GEeyTxN2ah5Tp3g" type="3005" element="_iB_SwE4GEeyTxN2ah5Tp3g">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_iD9osU4GEeyTxN2ah5Tp3g" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iD9osk4GEeyTxN2ah5Tp3g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_iDRFIU4GEeyTxN2ah5Tp3g" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iDRFIk4GEeyTxN2ah5Tp3g" x="20" y="-12" width="20" height="20"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_iDz3sE4GEeyTxN2ah5Tp3g" type="3001" element="_iCBvAU4GEeyTxN2ah5Tp3g">
+            <children xmi:type="notation:Node" xmi:id="_iD1F0E4GEeyTxN2ah5Tp3g" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_iD1F0U4GEeyTxN2ah5Tp3g" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_iD-PwE4GEeyTxN2ah5Tp3g" type="3005" element="_iCCWEE4GEeyTxN2ah5Tp3g">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_iD-PwU4GEeyTxN2ah5Tp3g" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iD-Pwk4GEeyTxN2ah5Tp3g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_iDz3sU4GEeyTxN2ah5Tp3g" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iDz3sk4GEeyTxN2ah5Tp3g" x="72" y="20" width="20" height="20"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_iD1s4E4GEeyTxN2ah5Tp3g" type="3001" element="_iCC9IU4GEeyTxN2ah5Tp3g">
+            <children xmi:type="notation:Node" xmi:id="_iD2T8E4GEeyTxN2ah5Tp3g" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_iD2T8U4GEeyTxN2ah5Tp3g" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_iD-20E4GEeyTxN2ah5Tp3g" type="3005" element="_iCC9Ik4GEeyTxN2ah5Tp3g">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_iD-20U4GEeyTxN2ah5Tp3g" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iD-20k4GEeyTxN2ah5Tp3g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_iD1s4U4GEeyTxN2ah5Tp3g" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iD1s4k4GEeyTxN2ah5Tp3g" x="-12" y="40" width="20" height="20"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_iD4JIE4GEeyTxN2ah5Tp3g" type="3001" element="_iCDkMU4GEeyTxN2ah5Tp3g">
+            <children xmi:type="notation:Node" xmi:id="_iD4wME4GEeyTxN2ah5Tp3g" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_iD4wMU4GEeyTxN2ah5Tp3g" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_iD_d4E4GEeyTxN2ah5Tp3g" type="3005" element="_iCDkMk4GEeyTxN2ah5Tp3g">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_iD_d4U4GEeyTxN2ah5Tp3g" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iD_d4k4GEeyTxN2ah5Tp3g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_iD4JIU4GEeyTxN2ah5Tp3g" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iD4JIk4GEeyTxN2ah5Tp3g" x="20" y="72" width="20" height="20"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_iD7zgE4GEeyTxN2ah5Tp3g" type="3003" element="_iB2v4E4GEeyTxN2ah5Tp3g">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_iD7zgU4GEeyTxN2ah5Tp3g" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iD7zgk4GEeyTxN2ah5Tp3g"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_iCm90U4GEeyTxN2ah5Tp3g" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iCm90k4GEeyTxN2ah5Tp3g" x="30" y="30" width="80" height="80"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_iDNawE4GEeyTxN2ah5Tp3g" type="2001" element="_iB82gE4GEeyTxN2ah5Tp3g">
+          <children xmi:type="notation:Node" xmi:id="_iDOo4E4GEeyTxN2ah5Tp3g" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_iDOo4U4GEeyTxN2ah5Tp3g" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_iEJO4E4GEeyTxN2ah5Tp3g" type="3003" element="_iB82gU4GEeyTxN2ah5Tp3g">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_iEJO4U4GEeyTxN2ah5Tp3g" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iEJO4k4GEeyTxN2ah5Tp3g"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_bflIsE6VEey8JIaoK8ucAw" type="3001" element="_bfZigE6VEey8JIaoK8ucAw">
+            <children xmi:type="notation:Node" xmi:id="_bflvwE6VEey8JIaoK8ucAw" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_bflvwU6VEey8JIaoK8ucAw" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_AhCCIE6WEey8JIaoK8ucAw" type="3005" element="_Aer4w06WEey8JIaoK8ucAw">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_AhCCIU6WEey8JIaoK8ucAw" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AhCCIk6WEey8JIaoK8ucAw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_bflIsU6VEey8JIaoK8ucAw" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bflIsk6VEey8JIaoK8ucAw" x="30" y="-12" width="20" height="20"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_bfu5sE6VEey8JIaoK8ucAw" type="3001" element="_bfb-wk6VEey8JIaoK8ucAw">
+            <children xmi:type="notation:Node" xmi:id="_bfu5s06VEey8JIaoK8ucAw" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_bfu5tE6VEey8JIaoK8ucAw" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_AhCCI06WEey8JIaoK8ucAw" type="3005" element="_Aer4xk6WEey8JIaoK8ucAw">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_AhCCJE6WEey8JIaoK8ucAw" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AhCCJU6WEey8JIaoK8ucAw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_bfu5sU6VEey8JIaoK8ucAw" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bfu5sk6VEey8JIaoK8ucAw" x="72" y="40" width="20" height="20"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_bfvgwE6VEey8JIaoK8ucAw" type="3001" element="_bffCEU6VEey8JIaoK8ucAw">
+            <children xmi:type="notation:Node" xmi:id="_bfvgw06VEey8JIaoK8ucAw" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_bfvgxE6VEey8JIaoK8ucAw" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_AhCpME6WEey8JIaoK8ucAw" type="3005" element="_Aesf0k6WEey8JIaoK8ucAw">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_AhCpMU6WEey8JIaoK8ucAw" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AhCpMk6WEey8JIaoK8ucAw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_bfvgwU6VEey8JIaoK8ucAw" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bfvgwk6VEey8JIaoK8ucAw" x="-12" y="40" width="20" height="20"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_bfwH0E6VEey8JIaoK8ucAw" type="3001" element="_bfheU06VEey8JIaoK8ucAw">
+            <children xmi:type="notation:Node" xmi:id="_bfwH006VEey8JIaoK8ucAw" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_bfwH1E6VEey8JIaoK8ucAw" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_AhCpM06WEey8JIaoK8ucAw" type="3005" element="_Aesf1U6WEey8JIaoK8ucAw">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_AhCpNE6WEey8JIaoK8ucAw" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AhCpNU6WEey8JIaoK8ucAw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_bfwH0U6VEey8JIaoK8ucAw" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_bfwH0k6VEey8JIaoK8ucAw" x="10" y="72" width="20" height="20"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_iDNawU4GEeyTxN2ah5Tp3g" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iDNawk4GEeyTxN2ah5Tp3g" x="280" y="60" width="80" height="80"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_h-Cm4k4GEeyTxN2ah5Tp3g"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_iCJDwE4GEeyTxN2ah5Tp3g" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_iCJq0E4GEeyTxN2ah5Tp3g"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_h-w_oE4GEeyTxN2ah5Tp3g" name="e1" width="8" height="8" resizeKind="NSEW">
+      <target xmi:type="test:Element" href="Test1.xmi#//@elements.0"/>
+      <semanticElements xmi:type="test:Element" href="Test1.xmi#//@elements.0"/>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_iB9dkU4GEeyTxN2ah5Tp3g" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.0"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.0"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_iCBvAE4GEeyTxN2ah5Tp3g"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_iB_SwE4GEeyTxN2ah5Tp3g" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/4imagesIcon.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20png']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20png']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_iCBvAU4GEeyTxN2ah5Tp3g" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.1"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.1"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_iCC9IE4GEeyTxN2ah5Tp3g"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_iCCWEE4GEeyTxN2ah5Tp3g" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/4imagesIcon.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20png']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20png']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_iCC9IU4GEeyTxN2ah5Tp3g" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.2"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.2"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_iCDkME4GEeyTxN2ah5Tp3g"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_iCC9Ik4GEeyTxN2ah5Tp3g" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/4imagesIcon.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20png']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20png']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_iCDkMU4GEeyTxN2ah5Tp3g" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.3"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.3"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_iCELQU4GEeyTxN2ah5Tp3g"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_iCDkMk4GEeyTxN2ah5Tp3g" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/4imagesIcon.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20png']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20png']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" uid="_iB2v4E4GEeyTxN2ah5Tp3g" labelSize="12" labelPosition="node">
+        <description xmi:type="style:SquareDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20png']/@defaultLayer/@nodeMappings[name='ElementNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20png']/@defaultLayer/@nodeMappings[name='ElementNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_iB82gE4GEeyTxN2ah5Tp3g" name="e2" width="8" height="8" resizeKind="NSEW">
+      <target xmi:type="test:Element" href="Test1.xmi#//@elements.1"/>
+      <semanticElements xmi:type="test:Element" href="Test1.xmi#//@elements.1"/>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_bfZigE6VEey8JIaoK8ucAw" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.0"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.0"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_bfb-wU6VEey8JIaoK8ucAw"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_Aer4w06WEey8JIaoK8ucAw" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/rotationIcon.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20png']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@conditionnalStyles.0/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20png']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_bfb-wk6VEey8JIaoK8ucAw" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.1"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.1"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_bffCEE6VEey8JIaoK8ucAw"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_Aer4xk6WEey8JIaoK8ucAw" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/rotationIcon.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20png']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@conditionnalStyles.0/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20png']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_bffCEU6VEey8JIaoK8ucAw" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.2"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.2"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_bfheUk6VEey8JIaoK8ucAw"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_Aesf0k6WEey8JIaoK8ucAw" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/rotationIcon.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20png']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@conditionnalStyles.0/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20png']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_bfheU06VEey8JIaoK8ucAw" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.3"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.3"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_bfkhoE6VEey8JIaoK8ucAw"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_Aesf1U6WEey8JIaoK8ucAw" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/rotationIcon.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20png']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@conditionnalStyles.0/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20png']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" uid="_iB82gU4GEeyTxN2ah5Tp3g" labelSize="12" labelPosition="node">
+        <description xmi:type="style:SquareDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20png']/@defaultLayer/@nodeMappings[name='ElementNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20png']/@defaultLayer/@nodeMappings[name='ElementNode']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20png']"/>
+    <activatedFilters xmi:type="filter:CompositeFilterDescription" href="platform:/plugin/org.polarsys.kitalpha.ad.integration.sirius/description/ad.odesign#//@ownedViewpoints[name='ad']/@ownedRepresentations[name='AD%20diagram']/@filters[name='ModelExtensionFilter']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_h9E9kE4GEeyTxN2ah5Tp3g"/>
+    <activatedLayers xmi:type="description_1:Layer" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20png']/@defaultLayer"/>
+    <target xmi:type="test:Root" href="Test1.xmi#/"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram uid="_4gHnEE6SEeyXs6TJVt2feA">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_4hXkQE6SEeyXs6TJVt2feA" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_4hXkQU6SEeyXs6TJVt2feA" type="Sirius" element="_4gHnEE6SEeyXs6TJVt2feA" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_4lvG4E6SEeyXs6TJVt2feA" type="2001" element="_4iEH0E6SEeyXs6TJVt2feA">
+          <children xmi:type="notation:Node" xmi:id="_4l--gE6SEeyXs6TJVt2feA" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_4l--gU6SEeyXs6TJVt2feA" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_4mYAEE6SEeyXs6TJVt2feA" type="3001" element="_4lLGMU6SEeyXs6TJVt2feA">
+            <children xmi:type="notation:Node" xmi:id="_4mYAE06SEeyXs6TJVt2feA" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_4mYAFE6SEeyXs6TJVt2feA" y="-9"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_4mzd4E6SEeyXs6TJVt2feA" type="3005" element="_4lMUUE6SEeyXs6TJVt2feA">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_4mzd4U6SEeyXs6TJVt2feA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4mzd4k6SEeyXs6TJVt2feA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_4mYAEU6SEeyXs6TJVt2feA" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4mYAEk6SEeyXs6TJVt2feA" x="20" y="-12" width="20" height="20"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_4mtXQE6SEeyXs6TJVt2feA" type="3001" element="_4lNicU6SEeyXs6TJVt2feA">
+            <children xmi:type="notation:Node" xmi:id="_4mt-UE6SEeyXs6TJVt2feA" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_4mt-UU6SEeyXs6TJVt2feA" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_4m0E8E6SEeyXs6TJVt2feA" type="3005" element="_4lNick6SEeyXs6TJVt2feA">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_4m0E8U6SEeyXs6TJVt2feA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4m0E8k6SEeyXs6TJVt2feA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_4mtXQU6SEeyXs6TJVt2feA" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4mtXQk6SEeyXs6TJVt2feA" x="72" y="20" width="20" height="20"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_4mulYE6SEeyXs6TJVt2feA" type="3001" element="_4lOJgU6SEeyXs6TJVt2feA">
+            <children xmi:type="notation:Node" xmi:id="_4mvMcE6SEeyXs6TJVt2feA" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_4mvMcU6SEeyXs6TJVt2feA" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_4m0sAE6SEeyXs6TJVt2feA" type="3005" element="_4lOJgk6SEeyXs6TJVt2feA">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_4m0sAU6SEeyXs6TJVt2feA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4m0sAk6SEeyXs6TJVt2feA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_4mulYU6SEeyXs6TJVt2feA" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4mulYk6SEeyXs6TJVt2feA" x="-12" y="40" width="20" height="20"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_4mvzgE6SEeyXs6TJVt2feA" type="3001" element="_4lOJhU6SEeyXs6TJVt2feA">
+            <children xmi:type="notation:Node" xmi:id="_4mwakE6SEeyXs6TJVt2feA" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_4mwakU6SEeyXs6TJVt2feA" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_4m0sA06SEeyXs6TJVt2feA" type="3005" element="_4lOJhk6SEeyXs6TJVt2feA">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_4m0sBE6SEeyXs6TJVt2feA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4m0sBU6SEeyXs6TJVt2feA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_4mvzgU6SEeyXs6TJVt2feA" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4mvzgk6SEeyXs6TJVt2feA" x="35" y="72" width="20" height="20"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_4myPwE6SEeyXs6TJVt2feA" type="3003" element="_4lFmoE6SEeyXs6TJVt2feA">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_4myPwU6SEeyXs6TJVt2feA" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4myPwk6SEeyXs6TJVt2feA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_4lvG4U6SEeyXs6TJVt2feA" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4lvG4k6SEeyXs6TJVt2feA" x="170" y="175" width="80" height="80"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_4mUVsE6SEeyXs6TJVt2feA" type="2001" element="_4lKfIE6SEeyXs6TJVt2feA">
+          <children xmi:type="notation:Node" xmi:id="_4mU8wE6SEeyXs6TJVt2feA" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_4mU8wU6SEeyXs6TJVt2feA" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_4m5kgE6SEeyXs6TJVt2feA" type="3003" element="_4lKfIU6SEeyXs6TJVt2feA">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_4m5kgU6SEeyXs6TJVt2feA" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4m5kgk6SEeyXs6TJVt2feA"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_dHVJoE6VEey8JIaoK8ucAw" type="3001" element="_dHJjck6VEey8JIaoK8ucAw">
+            <children xmi:type="notation:Node" xmi:id="_dHVwsE6VEey8JIaoK8ucAw" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_dHVwsU6VEey8JIaoK8ucAw" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_FeVpoE6WEey8JIaoK8ucAw" type="3005" element="_Fb4ylU6WEey8JIaoK8ucAw">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_FeVpoU6WEey8JIaoK8ucAw" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FeVpok6WEey8JIaoK8ucAw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_dHVJoU6VEey8JIaoK8ucAw" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dHVJok6VEey8JIaoK8ucAw" x="35" y="-12" width="20" height="20"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_dHWXwE6VEey8JIaoK8ucAw" type="3001" element="_dHMmwk6VEey8JIaoK8ucAw">
+            <children xmi:type="notation:Node" xmi:id="_dHW-0E6VEey8JIaoK8ucAw" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_dHW-0U6VEey8JIaoK8ucAw" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_FeWQsE6WEey8JIaoK8ucAw" type="3005" element="_Fb4ymE6WEey8JIaoK8ucAw">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_FeWQsU6WEey8JIaoK8ucAw" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FeWQsk6WEey8JIaoK8ucAw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_dHWXwU6VEey8JIaoK8ucAw" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dHWXwk6VEey8JIaoK8ucAw" x="72" y="42" width="20" height="20"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_dHXl4E6VEey8JIaoK8ucAw" type="3001" element="_dHPqEE6VEey8JIaoK8ucAw">
+            <children xmi:type="notation:Node" xmi:id="_dHXl406VEey8JIaoK8ucAw" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_dHXl5E6VEey8JIaoK8ucAw" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_FeWQs06WEey8JIaoK8ucAw" type="3005" element="_Fb4ym06WEey8JIaoK8ucAw">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_FeWQtE6WEey8JIaoK8ucAw" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FeWQtU6WEey8JIaoK8ucAw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_dHXl4U6VEey8JIaoK8ucAw" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dHXl4k6VEey8JIaoK8ucAw" x="-12" y="42" width="20" height="20"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_dHYM8E6VEey8JIaoK8ucAw" type="3001" element="_dHSGUk6VEey8JIaoK8ucAw">
+            <children xmi:type="notation:Node" xmi:id="_dHY0AE6VEey8JIaoK8ucAw" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_dHY0AU6VEey8JIaoK8ucAw" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_FeWQtk6WEey8JIaoK8ucAw" type="3005" element="_Fb4ynk6WEey8JIaoK8ucAw">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_FeWQt06WEey8JIaoK8ucAw" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FeWQuE6WEey8JIaoK8ucAw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_dHYM8U6VEey8JIaoK8ucAw" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dHYM8k6VEey8JIaoK8ucAw" x="9" y="72" width="20" height="20"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_4mUVsU6SEeyXs6TJVt2feA" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4mUVsk6SEeyXs6TJVt2feA" x="310" y="185" width="80" height="80"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_4hXkQk6SEeyXs6TJVt2feA"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_4lUQIE6SEeyXs6TJVt2feA" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_4lUQIU6SEeyXs6TJVt2feA"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_4iEH0E6SEeyXs6TJVt2feA" name="e1" width="8" height="8" resizeKind="NSEW">
+      <target xmi:type="test:Element" href="Test1.xmi#//@elements.0"/>
+      <semanticElements xmi:type="test:Element" href="Test1.xmi#//@elements.0"/>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_4lLGMU6SEeyXs6TJVt2feA" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.0"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.0"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_4lNicE6SEeyXs6TJVt2feA"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_4lMUUE6SEeyXs6TJVt2feA" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.test.ju/icons/4imagesIcon_error.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20png']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20png']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_4lNicU6SEeyXs6TJVt2feA" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.1"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.1"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_4lOJgE6SEeyXs6TJVt2feA"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_4lNick6SEeyXs6TJVt2feA" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.test.ju/icons/4imagesIcon_error.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20png']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20png']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_4lOJgU6SEeyXs6TJVt2feA" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.2"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.2"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_4lOJhE6SEeyXs6TJVt2feA"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_4lOJgk6SEeyXs6TJVt2feA" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.test.ju/icons/4imagesIcon_error.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20png']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20png']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_4lOJhU6SEeyXs6TJVt2feA" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.3"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.3"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_4lOwkU6SEeyXs6TJVt2feA"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_4lOJhk6SEeyXs6TJVt2feA" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.test.ju/icons/4imagesIcon_error.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20png']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20png']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" uid="_4lFmoE6SEeyXs6TJVt2feA" labelSize="12" labelPosition="node">
+        <description xmi:type="style:SquareDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20png']/@defaultLayer/@nodeMappings[name='ElementNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20png']/@defaultLayer/@nodeMappings[name='ElementNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_4lKfIE6SEeyXs6TJVt2feA" name="e2" width="8" height="8" resizeKind="NSEW">
+      <target xmi:type="test:Element" href="Test1.xmi#//@elements.1"/>
+      <semanticElements xmi:type="test:Element" href="Test1.xmi#//@elements.1"/>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_dHJjck6VEey8JIaoK8ucAw" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.0"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.0"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_dHMmwU6VEey8JIaoK8ucAw"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_Fb4ylU6WEey8JIaoK8ucAw" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.test.ju/icons/rotationIcon.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20png']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@conditionnalStyles.0/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20png']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_dHMmwk6VEey8JIaoK8ucAw" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.1"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.1"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_dHPDAk6VEey8JIaoK8ucAw"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_Fb4ymE6WEey8JIaoK8ucAw" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.test.ju/icons/rotationIcon.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20png']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@conditionnalStyles.0/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20png']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_dHPqEE6VEey8JIaoK8ucAw" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.2"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.2"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_dHSGUU6VEey8JIaoK8ucAw"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_Fb4ym06WEey8JIaoK8ucAw" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.test.ju/icons/rotationIcon.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20png']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@conditionnalStyles.0/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20png']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_dHSGUk6VEey8JIaoK8ucAw" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.3"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.3"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_dHUikU6VEey8JIaoK8ucAw"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_Fb4ynk6WEey8JIaoK8ucAw" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.test.ju/icons/rotationIcon.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20png']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@conditionnalStyles.0/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20png']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" uid="_4lKfIU6SEeyXs6TJVt2feA" labelSize="12" labelPosition="node">
+        <description xmi:type="style:SquareDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20png']/@defaultLayer/@nodeMappings[name='ElementNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20png']/@defaultLayer/@nodeMappings[name='ElementNode']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20png']"/>
+    <activatedFilters xmi:type="filter:CompositeFilterDescription" href="platform:/plugin/org.polarsys.kitalpha.ad.integration.sirius/description/ad.odesign#//@ownedViewpoints[name='ad']/@ownedRepresentations[name='AD%20diagram']/@filters[name='ModelExtensionFilter']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_4gVCcE6SEeyXs6TJVt2feA"/>
+    <activatedLayers xmi:type="description_1:Layer" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20png']/@defaultLayer"/>
+    <target xmi:type="test:Root" href="Test1.xmi#/"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram uid="_BTv_4E6TEeyXs6TJVt2feA">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_BTx1EE6TEeyXs6TJVt2feA" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_BTx1EU6TEeyXs6TJVt2feA" type="Sirius" element="_BTv_4E6TEeyXs6TJVt2feA" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_BT7mEE6TEeyXs6TJVt2feA" type="2001" element="_BTycIE6TEeyXs6TJVt2feA">
+          <children xmi:type="notation:Node" xmi:id="_BT8NIE6TEeyXs6TJVt2feA" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_BT8NIU6TEeyXs6TJVt2feA" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_BT9bQE6TEeyXs6TJVt2feA" type="3001" element="_BT0RUU6TEeyXs6TJVt2feA">
+            <children xmi:type="notation:Node" xmi:id="_BT9bQ06TEeyXs6TJVt2feA" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_BT9bRE6TEeyXs6TJVt2feA" y="-9"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_BcK8EE6TEeyXs6TJVt2feA" type="3005" element="_BT0RUk6TEeyXs6TJVt2feA">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_BcK8EU6TEeyXs6TJVt2feA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BcK8Ek6TEeyXs6TJVt2feA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_BT9bQU6TEeyXs6TJVt2feA" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BT9bQk6TEeyXs6TJVt2feA" x="25" y="-12" width="20" height="20"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_BbaHEE6TEeyXs6TJVt2feA" type="3001" element="_BT04YU6TEeyXs6TJVt2feA">
+            <children xmi:type="notation:Node" xmi:id="_BbaHE06TEeyXs6TJVt2feA" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_BbaHFE6TEeyXs6TJVt2feA" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_BcK8E06TEeyXs6TJVt2feA" type="3005" element="_BT04Yk6TEeyXs6TJVt2feA">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_BcK8FE6TEeyXs6TJVt2feA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BcK8FU6TEeyXs6TJVt2feA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_BbaHEU6TEeyXs6TJVt2feA" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BbaHEk6TEeyXs6TJVt2feA" x="72" y="25" width="20" height="20"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_BbwsYE6TEeyXs6TJVt2feA" type="3001" element="_BT1fcU6TEeyXs6TJVt2feA">
+            <children xmi:type="notation:Node" xmi:id="_BbwsY06TEeyXs6TJVt2feA" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_BbwsZE6TEeyXs6TJVt2feA" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_BcLjIE6TEeyXs6TJVt2feA" type="3005" element="_BT1fck6TEeyXs6TJVt2feA">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_BcLjIU6TEeyXs6TJVt2feA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BcLjIk6TEeyXs6TJVt2feA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_BbwsYU6TEeyXs6TJVt2feA" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BbwsYk6TEeyXs6TJVt2feA" x="-12" y="40" width="20" height="20"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_Bb9gsE6TEeyXs6TJVt2feA" type="3001" element="_BT2GgU6TEeyXs6TJVt2feA">
+            <children xmi:type="notation:Node" xmi:id="_Bb_V4E6TEeyXs6TJVt2feA" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_Bb_V4U6TEeyXs6TJVt2feA" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_BcLjI06TEeyXs6TJVt2feA" type="3005" element="_BT2Ggk6TEeyXs6TJVt2feA">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_BcLjJE6TEeyXs6TJVt2feA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BcLjJU6TEeyXs6TJVt2feA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_Bb9gsU6TEeyXs6TJVt2feA" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Bb9gsk6TEeyXs6TJVt2feA" x="25" y="72" width="20" height="20"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_BcKVAE6TEeyXs6TJVt2feA" type="3003" element="_BTzDME6TEeyXs6TJVt2feA">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_BcKVAU6TEeyXs6TJVt2feA" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BcKVAk6TEeyXs6TJVt2feA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_BT7mEU6TEeyXs6TJVt2feA" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BT7mEk6TEeyXs6TJVt2feA" x="140" y="230" width="80" height="80"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_BT8NIk6TEeyXs6TJVt2feA" type="2001" element="_BTzqQU6TEeyXs6TJVt2feA">
+          <children xmi:type="notation:Node" xmi:id="_BT80ME6TEeyXs6TJVt2feA" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_BT80MU6TEeyXs6TJVt2feA" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_BdET8E6TEeyXs6TJVt2feA" type="3003" element="_BTzqQk6TEeyXs6TJVt2feA">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_BdET8U6TEeyXs6TJVt2feA" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BdET8k6TEeyXs6TJVt2feA"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_fB7OEE6VEey8JIaoK8ucAw" type="3001" element="_fBvn4k6VEey8JIaoK8ucAw">
+            <children xmi:type="notation:Node" xmi:id="_fB71IE6VEey8JIaoK8ucAw" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_fB71IU6VEey8JIaoK8ucAw" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_JNxIwE6WEey8JIaoK8ucAw" type="3005" element="_JLAIoU6WEey8JIaoK8ucAw">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_JNxIwU6WEey8JIaoK8ucAw" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JNxIwk6WEey8JIaoK8ucAw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_fB7OEU6VEey8JIaoK8ucAw" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fB7OEk6VEey8JIaoK8ucAw" x="30" y="-12" width="20" height="20"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_fCBUsE6VEey8JIaoK8ucAw" type="3001" element="_fByEI06VEey8JIaoK8ucAw">
+            <children xmi:type="notation:Node" xmi:id="_fCBUs06VEey8JIaoK8ucAw" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_fCBUtE6VEey8JIaoK8ucAw" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_JNxv0E6WEey8JIaoK8ucAw" type="3005" element="_JLAIpE6WEey8JIaoK8ucAw">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_JNxv0U6WEey8JIaoK8ucAw" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JNxv0k6WEey8JIaoK8ucAw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_fCBUsU6VEey8JIaoK8ucAw" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fCBUsk6VEey8JIaoK8ucAw" x="72" y="45" width="20" height="20"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_fCEYAE6VEey8JIaoK8ucAw" type="3001" element="_fB0gY06VEey8JIaoK8ucAw">
+            <children xmi:type="notation:Node" xmi:id="_fCE_EE6VEey8JIaoK8ucAw" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_fCE_EU6VEey8JIaoK8ucAw" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_JNxv006WEey8JIaoK8ucAw" type="3005" element="_JLAvsE6WEey8JIaoK8ucAw">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_JNxv1E6WEey8JIaoK8ucAw" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JNxv1U6WEey8JIaoK8ucAw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_fCEYAU6VEey8JIaoK8ucAw" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fCEYAk6VEey8JIaoK8ucAw" x="-12" y="42" width="20" height="20"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_fCICYE6VEey8JIaoK8ucAw" type="3001" element="_fB4Kwk6VEey8JIaoK8ucAw">
+            <children xmi:type="notation:Node" xmi:id="_fCIpcE6VEey8JIaoK8ucAw" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_fCIpcU6VEey8JIaoK8ucAw" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_JNyW4E6WEey8JIaoK8ucAw" type="3005" element="_JLAvs06WEey8JIaoK8ucAw">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_JNyW4U6WEey8JIaoK8ucAw" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JNyW4k6WEey8JIaoK8ucAw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_fCICYU6VEey8JIaoK8ucAw" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fCICYk6VEey8JIaoK8ucAw" x="9" y="72" width="20" height="20"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_BT8NI06TEeyXs6TJVt2feA" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BT8NJE6TEeyXs6TJVt2feA" x="195" y="70" width="80" height="80"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_BB870FHhEeyDtuhqOWIuCA" type="2001" element="_BB7GpFHhEeyDtuhqOWIuCA">
+          <children xmi:type="notation:Node" xmi:id="_BB8701HhEeyDtuhqOWIuCA" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_BB871FHhEeyDtuhqOWIuCA" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_BB9i4FHhEeyDtuhqOWIuCA" type="3003" element="_BB7GpVHhEeyDtuhqOWIuCA">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_BB9i4VHhEeyDtuhqOWIuCA" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BB9i4lHhEeyDtuhqOWIuCA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_BB870VHhEeyDtuhqOWIuCA" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BB870lHhEeyDtuhqOWIuCA" width="80" height="80"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_BTx1Ek6TEeyXs6TJVt2feA"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_BT5w406TEeyXs6TJVt2feA" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_BT5w5E6TEeyXs6TJVt2feA"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_BTycIE6TEeyXs6TJVt2feA" name="e1" width="8" height="8" resizeKind="NSEW">
+      <target xmi:type="test:Element" href="Test1.xmi#//@elements.0"/>
+      <semanticElements xmi:type="test:Element" href="Test1.xmi#//@elements.0"/>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_BT0RUU6TEeyXs6TJVt2feA" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.0"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.0"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_BT04YE6TEeyXs6TJVt2feA"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_BT0RUk6TEeyXs6TJVt2feA" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.test.ju/icons/4imagesIcon_error.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20svg']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20svg']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_BT04YU6TEeyXs6TJVt2feA" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.1"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.1"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_BT1fcE6TEeyXs6TJVt2feA"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_BT04Yk6TEeyXs6TJVt2feA" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.test.ju/icons/4imagesIcon_error.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20svg']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20svg']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_BT1fcU6TEeyXs6TJVt2feA" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.2"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.2"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_BT2GgE6TEeyXs6TJVt2feA"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_BT1fck6TEeyXs6TJVt2feA" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.test.ju/icons/4imagesIcon_error.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20svg']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20svg']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_BT2GgU6TEeyXs6TJVt2feA" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.3"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.3"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_BT2tkU6TEeyXs6TJVt2feA"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_BT2Ggk6TEeyXs6TJVt2feA" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.test.ju/icons/4imagesIcon_error.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20svg']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20svg']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" uid="_BTzDME6TEeyXs6TJVt2feA" labelSize="12" labelPosition="node">
+        <description xmi:type="style:SquareDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20svg']/@defaultLayer/@nodeMappings[name='ElementNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20svg']/@defaultLayer/@nodeMappings[name='ElementNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_BTzqQU6TEeyXs6TJVt2feA" name="e2" width="8" height="8" resizeKind="NSEW">
+      <target xmi:type="test:Element" href="Test1.xmi#//@elements.1"/>
+      <semanticElements xmi:type="test:Element" href="Test1.xmi#//@elements.1"/>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_fBvn4k6VEey8JIaoK8ucAw" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.0"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.0"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_fByEIk6VEey8JIaoK8ucAw"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_JLAIoU6WEey8JIaoK8ucAw" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.test.ju/icons/rotationIcon.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20svg']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@conditionnalStyles.0/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20svg']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_fByEI06VEey8JIaoK8ucAw" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.1"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.1"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_fB0gYk6VEey8JIaoK8ucAw"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_JLAIpE6WEey8JIaoK8ucAw" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.test.ju/icons/rotationIcon.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20svg']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@conditionnalStyles.0/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20svg']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_fB0gY06VEey8JIaoK8ucAw" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.2"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.2"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_fB4KwU6VEey8JIaoK8ucAw"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_JLAvsE6WEey8JIaoK8ucAw" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.test.ju/icons/rotationIcon.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20svg']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@conditionnalStyles.0/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20svg']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_fB4Kwk6VEey8JIaoK8ucAw" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.3"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.3"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_fB6nAk6VEey8JIaoK8ucAw"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_JLAvs06WEey8JIaoK8ucAw" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.test.ju/icons/rotationIcon.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20svg']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@conditionnalStyles.0/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20svg']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" uid="_BTzqQk6TEeyXs6TJVt2feA" labelSize="12" labelPosition="node">
+        <description xmi:type="style:SquareDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20svg']/@defaultLayer/@nodeMappings[name='ElementNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20svg']/@defaultLayer/@nodeMappings[name='ElementNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_BB7GpFHhEeyDtuhqOWIuCA" name="e3" width="8" height="8" resizeKind="NSEW">
+      <target xmi:type="test:Element" href="Test1.xmi#//@elements.2"/>
+      <semanticElements xmi:type="test:Element" href="Test1.xmi#//@elements.2"/>
+      <ownedStyle xmi:type="diagram:Square" uid="_BB7GpVHhEeyDtuhqOWIuCA" labelSize="12" labelPosition="node">
+        <description xmi:type="style:SquareDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20svg']/@defaultLayer/@nodeMappings[name='ElementNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20svg']/@defaultLayer/@nodeMappings[name='ElementNode']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20svg']"/>
+    <activatedFilters xmi:type="filter:CompositeFilterDescription" href="platform:/plugin/org.polarsys.kitalpha.ad.integration.sirius/description/ad.odesign#//@ownedViewpoints[name='ad']/@ownedRepresentations[name='AD%20diagram']/@filters[name='ModelExtensionFilter']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_BTv_4U6TEeyXs6TJVt2feA"/>
+    <activatedLayers xmi:type="description_1:Layer" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error%20svg']/@defaultLayer"/>
+    <target xmi:type="test:Root" href="Test1.xmi#/"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram uid="_xkCxMFKBEeytGcI8gHYSmQ">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_xkSo0FKBEeytGcI8gHYSmQ" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_xkSo0VKBEeytGcI8gHYSmQ" type="Sirius" element="_xkCxMFKBEeytGcI8gHYSmQ" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_xkZWgFKBEeytGcI8gHYSmQ" type="2001" element="_xkT28FKBEeytGcI8gHYSmQ">
+          <children xmi:type="notation:Node" xmi:id="_xkZ9kFKBEeytGcI8gHYSmQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_xkZ9kVKBEeytGcI8gHYSmQ" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_xkakolKBEeytGcI8gHYSmQ" type="3001" element="_xkVsIFKBEeytGcI8gHYSmQ">
+            <children xmi:type="notation:Node" xmi:id="_xkbLsFKBEeytGcI8gHYSmQ" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_xkbLsVKBEeytGcI8gHYSmQ" y="-9"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_xkgEMFKBEeytGcI8gHYSmQ" type="3005" element="_xkVsIVKBEeytGcI8gHYSmQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_xkgEMVKBEeytGcI8gHYSmQ" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xkgEMlKBEeytGcI8gHYSmQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_xkako1KBEeytGcI8gHYSmQ" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xkakpFKBEeytGcI8gHYSmQ" x="35" y="-12" width="20" height="20"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_xkcZ0FKBEeytGcI8gHYSmQ" type="3001" element="_xkWTMlKBEeytGcI8gHYSmQ">
+            <children xmi:type="notation:Node" xmi:id="_xkdA4FKBEeytGcI8gHYSmQ" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_xkdA4VKBEeytGcI8gHYSmQ" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_xkgrQFKBEeytGcI8gHYSmQ" type="3005" element="_xkWTM1KBEeytGcI8gHYSmQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_xkgrQVKBEeytGcI8gHYSmQ" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xkgrQlKBEeytGcI8gHYSmQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_xkcZ0VKBEeytGcI8gHYSmQ" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xkcZ0lKBEeytGcI8gHYSmQ" x="72" y="20" width="20" height="20"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_xkePAFKBEeytGcI8gHYSmQ" type="3001" element="_xkWTNlKBEeytGcI8gHYSmQ">
+            <children xmi:type="notation:Node" xmi:id="_xke2EFKBEeytGcI8gHYSmQ" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_xke2EVKBEeytGcI8gHYSmQ" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_xkgrQ1KBEeytGcI8gHYSmQ" type="3005" element="_xkW6QFKBEeytGcI8gHYSmQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_xkgrRFKBEeytGcI8gHYSmQ" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xkgrRVKBEeytGcI8gHYSmQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_xkePAVKBEeytGcI8gHYSmQ" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xkePAlKBEeytGcI8gHYSmQ" x="-12" y="40" width="20" height="20"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_xke2ElKBEeytGcI8gHYSmQ" type="3001" element="_xkW6Q1KBEeytGcI8gHYSmQ">
+            <children xmi:type="notation:Node" xmi:id="_xkfdIFKBEeytGcI8gHYSmQ" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_xkfdIVKBEeytGcI8gHYSmQ" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_xkhSUFKBEeytGcI8gHYSmQ" type="3005" element="_xkW6RFKBEeytGcI8gHYSmQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_xkhSUVKBEeytGcI8gHYSmQ" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xkhSUlKBEeytGcI8gHYSmQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_xke2E1KBEeytGcI8gHYSmQ" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xke2FFKBEeytGcI8gHYSmQ" x="10" y="72" width="20" height="20"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_xkfdIlKBEeytGcI8gHYSmQ" type="3003" element="_xkUeAFKBEeytGcI8gHYSmQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_xkfdI1KBEeytGcI8gHYSmQ" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xkfdJFKBEeytGcI8gHYSmQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_xkZWgVKBEeytGcI8gHYSmQ" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xkZWglKBEeytGcI8gHYSmQ" x="32" y="47" width="80" height="80"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_xkZ9klKBEeytGcI8gHYSmQ" type="2001" element="_xkVFEFKBEeytGcI8gHYSmQ">
+          <children xmi:type="notation:Node" xmi:id="_xkakoFKBEeytGcI8gHYSmQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_xkakoVKBEeytGcI8gHYSmQ" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_xkhSU1KBEeytGcI8gHYSmQ" type="3001" element="_xkW6R1KBEeytGcI8gHYSmQ">
+            <children xmi:type="notation:Node" xmi:id="_xkh5YFKBEeytGcI8gHYSmQ" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_xkh5YVKBEeytGcI8gHYSmQ" y="-9"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_xlMAsFKBEeytGcI8gHYSmQ" type="3005" element="_xkW6SFKBEeytGcI8gHYSmQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_xlMAsVKBEeytGcI8gHYSmQ" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xlMAslKBEeytGcI8gHYSmQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_xkhSVFKBEeytGcI8gHYSmQ" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xkhSVVKBEeytGcI8gHYSmQ" x="30" y="-12" width="20" height="20"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_xk9XMFKBEeytGcI8gHYSmQ" type="3001" element="_xkXhUlKBEeytGcI8gHYSmQ">
+            <children xmi:type="notation:Node" xmi:id="_xk9-QFKBEeytGcI8gHYSmQ" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_xk9-QVKBEeytGcI8gHYSmQ" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_xlMnwFKBEeytGcI8gHYSmQ" type="3005" element="_xkXhU1KBEeytGcI8gHYSmQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_xlMnwVKBEeytGcI8gHYSmQ" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xlMnwlKBEeytGcI8gHYSmQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_xk9XMVKBEeytGcI8gHYSmQ" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xk9XMlKBEeytGcI8gHYSmQ" x="72" y="25" width="20" height="20"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_xlBooFKBEeytGcI8gHYSmQ" type="3001" element="_xkXhVlKBEeytGcI8gHYSmQ">
+            <children xmi:type="notation:Node" xmi:id="_xlCPsFKBEeytGcI8gHYSmQ" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_xlCPsVKBEeytGcI8gHYSmQ" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_xlN14FKBEeytGcI8gHYSmQ" type="3005" element="_xkXhV1KBEeytGcI8gHYSmQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_xlN14VKBEeytGcI8gHYSmQ" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xlN14lKBEeytGcI8gHYSmQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_xlBooVKBEeytGcI8gHYSmQ" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xlBoolKBEeytGcI8gHYSmQ" x="-12" y="40" width="20" height="20"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_xlHIMFKBEeytGcI8gHYSmQ" type="3001" element="_xkYIYVKBEeytGcI8gHYSmQ">
+            <children xmi:type="notation:Node" xmi:id="_xlHvQFKBEeytGcI8gHYSmQ" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_xlHvQVKBEeytGcI8gHYSmQ" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_xlOc8FKBEeytGcI8gHYSmQ" type="3005" element="_xkYIYlKBEeytGcI8gHYSmQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_xlOc8VKBEeytGcI8gHYSmQ" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xlOc8lKBEeytGcI8gHYSmQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_xlHIMVKBEeytGcI8gHYSmQ" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xlHIMlKBEeytGcI8gHYSmQ" x="10" y="72" width="20" height="20"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_xlLZoFKBEeytGcI8gHYSmQ" type="3003" element="_xkVFEVKBEeytGcI8gHYSmQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_xlLZoVKBEeytGcI8gHYSmQ" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xlLZolKBEeytGcI8gHYSmQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_xkZ9k1KBEeytGcI8gHYSmQ" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xkZ9lFKBEeytGcI8gHYSmQ" x="217" y="32" width="80" height="80"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_xkSo0lKBEeytGcI8gHYSmQ"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_xkYIZVKBEeytGcI8gHYSmQ" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_xkYIZlKBEeytGcI8gHYSmQ"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_xkT28FKBEeytGcI8gHYSmQ" name="e1" width="8" height="8" resizeKind="NSEW">
+      <target xmi:type="test:Element" href="Test1.xmi#//@elements.0"/>
+      <semanticElements xmi:type="test:Element" href="Test1.xmi#//@elements.0"/>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_xkVsIFKBEeytGcI8gHYSmQ" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.0"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.0"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_xkWTMVKBEeytGcI8gHYSmQ"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_xkVsIVKBEeytGcI8gHYSmQ" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/4imagesIcon_error.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_xkWTMlKBEeytGcI8gHYSmQ" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.1"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.1"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_xkWTNVKBEeytGcI8gHYSmQ"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_xkWTM1KBEeytGcI8gHYSmQ" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/4imagesIcon_error.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_xkWTNlKBEeytGcI8gHYSmQ" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.2"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.2"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_xkW6QlKBEeytGcI8gHYSmQ"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_xkW6QFKBEeytGcI8gHYSmQ" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/4imagesIcon_error.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_xkW6Q1KBEeytGcI8gHYSmQ" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.3"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.0/@borderElements.3"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_xkW6RlKBEeytGcI8gHYSmQ"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_xkW6RFKBEeytGcI8gHYSmQ" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/4imagesIcon_error.png">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" uid="_xkUeAFKBEeytGcI8gHYSmQ" labelSize="12" labelPosition="node">
+        <description xmi:type="style:SquareDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error']/@defaultLayer/@nodeMappings[name='ElementNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error']/@defaultLayer/@nodeMappings[name='ElementNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_xkVFEFKBEeytGcI8gHYSmQ" name="e2" width="8" height="8" resizeKind="NSEW">
+      <target xmi:type="test:Element" href="Test1.xmi#//@elements.1"/>
+      <semanticElements xmi:type="test:Element" href="Test1.xmi#//@elements.1"/>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_xkW6R1KBEeytGcI8gHYSmQ" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.0"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.0"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_xkXhUVKBEeytGcI8gHYSmQ"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_xkW6SFKBEeytGcI8gHYSmQ" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/4imagesIcon_error.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@conditionnalStyles.0/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_xkXhUlKBEeytGcI8gHYSmQ" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.1"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.1"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_xkXhVVKBEeytGcI8gHYSmQ"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_xkXhU1KBEeytGcI8gHYSmQ" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/4imagesIcon_error.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@conditionnalStyles.0/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_xkXhVlKBEeytGcI8gHYSmQ" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.2"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.2"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_xkYIYFKBEeytGcI8gHYSmQ"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_xkXhV1KBEeytGcI8gHYSmQ" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/4imagesIcon_error.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@conditionnalStyles.0/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_xkYIYVKBEeytGcI8gHYSmQ" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.3"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test1.xmi#//@elements.1/@borderElements.3"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_xkYIZFKBEeytGcI8gHYSmQ"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_xkYIYlKBEeytGcI8gHYSmQ" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/4imagesIcon_error.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@conditionnalStyles.0/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" uid="_xkVFEVKBEeytGcI8gHYSmQ" labelSize="12" labelPosition="node">
+        <description xmi:type="style:SquareDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error']/@defaultLayer/@nodeMappings[name='ElementNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error']/@defaultLayer/@nodeMappings[name='ElementNode']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error']"/>
+    <activatedFilters xmi:type="filter:CompositeFilterDescription" href="platform:/plugin/org.polarsys.kitalpha.ad.integration.sirius/description/ad.odesign#//@ownedViewpoints[name='ad']/@ownedRepresentations[name='AD%20diagram']/@filters[name='ModelExtensionFilter']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_xkEmYFKBEeytGcI8gHYSmQ"/>
+    <activatedLayers xmi:type="description_1:Layer" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram%20error']/@defaultLayer"/>
+    <target xmi:type="test:Root" href="Test1.xmi#/"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram uid="_D00OgFKxEeyPyIXvHv24Lw">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_D1aEYFKxEeyPyIXvHv24Lw" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_D1aEYVKxEeyPyIXvHv24Lw" type="Sirius" element="_D00OgFKxEeyPyIXvHv24Lw" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_D24EAFKxEeyPyIXvHv24Lw" type="2001" element="_D1bSgFKxEeyPyIXvHv24Lw">
+          <children xmi:type="notation:Node" xmi:id="_D25SIFKxEeyPyIXvHv24Lw" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_D25SIVKxEeyPyIXvHv24Lw" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_D255MFKxEeyPyIXvHv24Lw" type="3001" element="_D22O0FKxEeyPyIXvHv24Lw">
+            <children xmi:type="notation:Node" xmi:id="_D255M1KxEeyPyIXvHv24Lw" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_D255NFKxEeyPyIXvHv24Lw" y="-9"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_D3OpU1KxEeyPyIXvHv24Lw" type="3005" element="_D22O0VKxEeyPyIXvHv24Lw">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_D3OpVFKxEeyPyIXvHv24Lw" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D3OpVVKxEeyPyIXvHv24Lw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_D255MVKxEeyPyIXvHv24Lw" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D255MlKxEeyPyIXvHv24Lw" x="20" y="-12" width="20" height="20"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_D3GtgFKxEeyPyIXvHv24Lw" type="3001" element="_D22O1FKxEeyPyIXvHv24Lw">
+            <children xmi:type="notation:Node" xmi:id="_D3Gtg1KxEeyPyIXvHv24Lw" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_D3GthFKxEeyPyIXvHv24Lw" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_D3OpVlKxEeyPyIXvHv24Lw" type="3005" element="_D2214FKxEeyPyIXvHv24Lw">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_D3PQYFKxEeyPyIXvHv24Lw" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D3PQYVKxEeyPyIXvHv24Lw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_D3GtgVKxEeyPyIXvHv24Lw" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D3GtglKxEeyPyIXvHv24Lw" x="72" y="25" width="20" height="20"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_D3IisFKxEeyPyIXvHv24Lw" type="3001" element="_D22141KxEeyPyIXvHv24Lw">
+            <children xmi:type="notation:Node" xmi:id="_D3JJwFKxEeyPyIXvHv24Lw" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_D3JJwVKxEeyPyIXvHv24Lw" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_D3PQYlKxEeyPyIXvHv24Lw" type="3005" element="_D2215FKxEeyPyIXvHv24Lw">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_D3PQY1KxEeyPyIXvHv24Lw" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D3PQZFKxEeyPyIXvHv24Lw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_D3IisVKxEeyPyIXvHv24Lw" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D3IislKxEeyPyIXvHv24Lw" x="-12" y="40" width="20" height="20"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_D3K-8FKxEeyPyIXvHv24Lw" type="3001" element="_D23c8VKxEeyPyIXvHv24Lw">
+            <children xmi:type="notation:Node" xmi:id="_D3LmAFKxEeyPyIXvHv24Lw" visible="false" type="5001">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_D3LmAVKxEeyPyIXvHv24Lw" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_D3PQZVKxEeyPyIXvHv24Lw" type="3005" element="_D23c8lKxEeyPyIXvHv24Lw">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_D3PQZlKxEeyPyIXvHv24Lw" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D3PQZ1KxEeyPyIXvHv24Lw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_D3K-8VKxEeyPyIXvHv24Lw" fontName="Segoe UI" fontHeight="12"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D3K-8lKxEeyPyIXvHv24Lw" x="10" y="72" width="20" height="20"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_D3OpUFKxEeyPyIXvHv24Lw" type="3003" element="_D21nwFKxEeyPyIXvHv24Lw">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_D3OpUVKxEeyPyIXvHv24Lw" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D3OpUlKxEeyPyIXvHv24Lw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_D24EAVKxEeyPyIXvHv24Lw" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D24EAlKxEeyPyIXvHv24Lw" x="100" y="170" width="80" height="80"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_D1aEYlKxEeyPyIXvHv24Lw"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_D23c9VKxEeyPyIXvHv24Lw" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_D23c9lKxEeyPyIXvHv24Lw"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_D1bSgFKxEeyPyIXvHv24Lw" name="e2" width="8" height="8" resizeKind="NSEW">
+      <target xmi:type="test:Element" href="Test2.xmi#//@elements.0"/>
+      <semanticElements xmi:type="test:Element" href="Test2.xmi#//@elements.0"/>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_D22O0FKxEeyPyIXvHv24Lw" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test2.xmi#//@elements.0/@borderElements.0"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test2.xmi#//@elements.0/@borderElements.0"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_D22O01KxEeyPyIXvHv24Lw"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_D22O0VKxEeyPyIXvHv24Lw" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.test.ju/icons/rotationIcon.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@conditionnalStyles.0/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_D22O1FKxEeyPyIXvHv24Lw" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test2.xmi#//@elements.0/@borderElements.1"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test2.xmi#//@elements.0/@borderElements.1"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_D2214lKxEeyPyIXvHv24Lw"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_D2214FKxEeyPyIXvHv24Lw" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.test.ju/icons/rotationIcon.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@conditionnalStyles.0/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_D22141KxEeyPyIXvHv24Lw" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test2.xmi#//@elements.0/@borderElements.2"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test2.xmi#//@elements.0/@borderElements.2"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_D23c8FKxEeyPyIXvHv24Lw"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_D2215FKxEeyPyIXvHv24Lw" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.test.ju/icons/rotationIcon.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@conditionnalStyles.0/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" uid="_D23c8VKxEeyPyIXvHv24Lw" width="2" height="2">
+        <target xmi:type="test:BorderElement" href="Test2.xmi#//@elements.0/@borderElements.3"/>
+        <semanticElements xmi:type="test:BorderElement" href="Test2.xmi#//@elements.0/@borderElements.3"/>
+        <graphicalFilters xmi:type="diagram:HideLabelFilter" uid="_D23c9FKxEeyPyIXvHv24Lw"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_D23c8lKxEeyPyIXvHv24Lw" labelSize="12" showIcon="false" hideLabelByDefault="true" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.test.ju/icons/rotationIcon.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']/@conditionnalStyles.0/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram']/@defaultLayer/@nodeMappings[name='ElementNode']/@borderedNodeMappings[name='BorderNode']"/>
+      </ownedBorderedNodes>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" uid="_D21nwFKxEeyPyIXvHv24Lw" labelSize="12" labelPosition="node">
+        <description xmi:type="style:SquareDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram']/@defaultLayer/@nodeMappings[name='ElementNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram']/@defaultLayer/@nodeMappings[name='ElementNode']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram']"/>
+    <activatedFilters xmi:type="filter:CompositeFilterDescription" href="platform:/plugin/org.polarsys.kitalpha.ad.integration.sirius/description/ad.odesign#//@ownedViewpoints[name='ad']/@ownedRepresentations[name='AD%20diagram']/@filters[name='ModelExtensionFilter']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_D01coFKxEeyPyIXvHv24Lw"/>
+    <activatedLayers xmi:type="description_1:Layer" href="../description/test.odesign#//@ownedViewpoints[name='Test%20viewpoint']/@ownedRepresentations[name='Root%20diagram']/@defaultLayer"/>
+    <target xmi:type="test:Root" href="Test2.xmi#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>
