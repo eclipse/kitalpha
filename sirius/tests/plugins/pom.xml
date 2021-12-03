@@ -30,5 +30,6 @@
 
 	<properties>
 		<tycho.surefire.useUIHarness>true</tycho.surefire.useUIHarness>
+		<sonar.skip>true</sonar.skip>
 	</properties>
 </project>

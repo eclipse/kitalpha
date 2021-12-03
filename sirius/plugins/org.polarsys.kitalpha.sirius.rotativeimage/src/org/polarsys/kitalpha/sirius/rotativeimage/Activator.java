@@ -29,39 +29,45 @@ public class Activator extends AbstractUIPlugin {
 	public static final String PLUGIN_ID = "org.polarsys.kitalpha.sirius.rotativeimage";
 
 	public static final String EXT_ID = "org.polarsys.kitalpha.sirius.rotativeimage";
-	
+
 	// The shared instance
 	private static Activator plugin;
 
 	private Map<String, RotativeDescription> descriptions;
-	
+
+	/**
+	 * Gets all the "org.polarsys.kitalpha.sirius.rotativeimage" extensions contributed.
+	 * 
+	 * @return The result keys are the contributions id fields, the result values are the contributions kind fields.
+	 */
 	public Map<String, RotativeDescription> getDescriptions() {
-	    if (descriptions == null) {
-	        descriptions = new HashMap<>();
-	        
-	        IConfigurationElement[] config = Platform.getExtensionRegistry().getConfigurationElementsFor(EXT_ID);
-	        for (IConfigurationElement e : config) {
-	            String id = e.getAttribute("id");
-	            int kind = RotativeDescription.ROTATIVE;
-	            if (e.getAttribute("kind").equals("4images")) kind=RotativeDescription.FOUR_IMAGES;
-	            descriptions.put(id, new RotativeDescription(id, kind));
-	        }
-	    }
+		if (descriptions == null) {
+			descriptions = new HashMap<>();
+
+			IConfigurationElement[] config = Platform.getExtensionRegistry().getConfigurationElementsFor(EXT_ID);
+			for (IConfigurationElement e : config) {
+				String id = e.getAttribute("id");
+				int kind = RotativeDescription.ROTATIVE;
+				if (e.getAttribute("kind").equals("4images"))
+					kind = RotativeDescription.FOUR_IMAGES;
+				descriptions.put(id, new RotativeDescription(id, kind));
+			}
+		}
 		return descriptions;
 	}
-	
+
+	/**
+	 * Gets the best matching "org.polarsys.kitalpha.sirius.rotativeimage" extension instance.
+	 * 
+	 * @param id
+	 * @return
+	 */
 	public RotativeDescription getBestDescription(String id) {
-	    if (id==null) return null;
-		if (descriptions == null) {
-		    getDescriptions();
-		}
-		RotativeDescription result = null;
-		if (descriptions != null) {
-		    result = descriptions.get(id);
-		}
-		return result;
+		if (id == null)
+			return null;
+		return getDescriptions().get(id);
 	}
-	
+
 	/**
 	 * The constructor
 	 */

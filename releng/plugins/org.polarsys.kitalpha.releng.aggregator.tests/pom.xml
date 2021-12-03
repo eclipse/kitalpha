@@ -34,10 +34,6 @@
 			</comments>
 		</license>
 	</licenses>
-	
-	<properties>
-		<sonar.exclusions>../../../resource reuse/tests/plugins/org.polarsys.kitalpha.resourcereuse.tests, ../../../emde/tests/org.polarsys.kitalpha.emde.tests, ../../../architecture description/metadata/tests/org.polarsys.kitalpha.ad.metadata.tests, ../../../architecture description/core/tests/org.polarsys.kitalpha.ad.viewpoint.tests, ../../../transposer/tests/plugins/junits/org.polarsys.kitalpha.transposer.junit.tests, ../../../massactions/tests/plugins/org.polarsys.kitalpha.massactions.junit.tests, ../../../sirius/tests/plugins/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests</sonar.exclusions>
-	</properties>
 
 	<modules>
 		<!-- plugins Test -->
