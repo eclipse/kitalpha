@@ -15,7 +15,6 @@ package org.polarsys.kitalpha.sirius.rotativeimage.figures;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.sirius.diagram.WorkspaceImage;
 import org.eclipse.sirius.diagram.ui.tools.api.figure.SVGWorkspaceImageFigure;
-import org.eclipse.sirius.diagram.ui.tools.internal.figure.svg.SimpleImageTranscoder;
 import org.polarsys.kitalpha.sirius.rotativeimage.internal.helpers.RotativeWorkspaceImageHelper;
 
 /**

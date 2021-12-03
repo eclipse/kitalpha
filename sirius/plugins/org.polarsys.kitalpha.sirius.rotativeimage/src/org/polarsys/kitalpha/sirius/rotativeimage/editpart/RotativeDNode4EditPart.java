@@ -17,8 +17,8 @@ import org.eclipse.sirius.diagram.ui.internal.edit.parts.DNode4EditPart;
 
 public class RotativeDNode4EditPart extends DNode4EditPart {
 
-	public RotativeDNode4EditPart(View view_p) {
-		super(view_p);
+	public RotativeDNode4EditPart(View view) {
+		super(view);
 	}
 
 }
