@@ -56,8 +56,8 @@ import org.polarsys.kitalpha.sirius.rotativeimage.figures.RotativeWorkspaceImage
 
 /**
  * Checks the displayed images in rotative ports. Compares displayed images with Image registers content. PNG images are
- * stored in the static {@link org.polarsys.kitalpha.sirius.rotativeimage.Activator ImageRegistry} SVG
- * images are stored in the static {@link org.eclipse.sirius.diagram.ui.tools.api.figure.SVGFigure.ImageCache}
+ * stored in the static {@link org.polarsys.kitalpha.sirius.rotativeimage.Activator ImageRegistry} SVG images are stored
+ * in the static {@link org.eclipse.sirius.diagram.ui.tools.api.figure.SVGFigure.ImageCache}
  * 
  * @author <a href="mailto:arnaud.dieumegard@obeo.fr">Arnaud Dieumegard</a>
  */
@@ -95,14 +95,12 @@ public class RotativeImageDisplayTest extends SiriusDiagramTestCase {
 
 	private static final String ROTATIONICON = "org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/rotationIcon";
 
-	private static final String ROTATIONICON_EXPECTED = "org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/expected/rotationIcon";
-
 	private static final String ROTATIONICON_SVG = ROTATIONICON + SVG;
-	
+
 	private static final String ROTATIONICON_PNG = ROTATIONICON + PNG;
 
 	private static final String FOURIMAGESICON_PREFIX = "/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/4imagesIcon";
-	
+
 	private static final String FOURIMAGESICON_ERROR = FOURIMAGESICON_PREFIX + "_error";
 
 	private static final String TOP = "top";
@@ -230,15 +228,15 @@ public class RotativeImageDisplayTest extends SiriusDiagramTestCase {
 			assertNotNull(figure);
 
 			// Get expected image
-			Image expectedImage =  getImageFromPath(FOURIMAGESICON_PREFIX + buildExpectedImagePostfix(position, PNG), PNG);
+			Image expectedImage = getImageFromPath(FOURIMAGESICON_PREFIX + buildExpectedImagePostfix(position, PNG), PNG);
 			assertNotNull(expectedImage);
 			compareImages(figure, expectedImage, PositionConstants.NORTH);
 		}
 	}
 
 	/**
-	 * Ensure 4Images WorkspaceImages reference default WorkspaceImage (the one defined in the odesign)
-	 * when no postfixed 4image exists (_top, ...)
+	 * Ensure 4Images WorkspaceImages reference default WorkspaceImage (the one defined in the odesign) when no
+	 * postfixed 4image exists (_top, ...)
 	 */
 	public void testFaultyRotativeDiagramImages() {
 		String repId = ID_REPRESENTATION_DESCRIPTOR_FAULTY_4IMAGES;
@@ -249,20 +247,20 @@ public class RotativeImageDisplayTest extends SiriusDiagramTestCase {
 			String extension = entry.getValue();
 
 			IFigure figure = getFigure(ddiagram, elementId);
-			
+
 			if (figure instanceof RotativeWorkspaceImageFigure) {
 				// Get expected image
-				Image expectedImage =  getImageNotFoundImage();
+				Image expectedImage = getImageNotFoundImage();
 				assertNotNull(expectedImage);
 				compareImages((RotativeWorkspaceImageFigure) figure, expectedImage, PositionConstants.NORTH);
 			} else {
-				String figureDocumentKey = ((Rotative4ImagesSVGWorkspaceImageFigure)figure).getDocumentKey();
+				String figureDocumentKey = ((Rotative4ImagesSVGWorkspaceImageFigure) figure).getDocumentKey();
 				assertTrue("Figure " + entry.getKey() + " should reference uri " + FOURIMAGESICON_ERROR + extension + " instead uri is " + figureDocumentKey,
-					figureDocumentKey.endsWith(FOURIMAGESICON_ERROR + extension));
+						figureDocumentKey.endsWith(FOURIMAGESICON_ERROR + extension));
 			}
 		}
 	}
-	
+
 	private Image getImageFromPath(String path, String extension) {
 		if (extension.equals(SVG)) {
 			return DiagramUIPlugin.getPlugin().getBundledImage(path);
@@ -282,7 +280,7 @@ public class RotativeImageDisplayTest extends SiriusDiagramTestCase {
 				return getImageNotFoundImage();
 			}
 		}
-    }
+	}
 
 	private Image getImageNotFoundImage() {
 		return DiagramUIPlugin.getPlugin().getImage(DiagramUIPlugin.Implementation.findImageWithDimensionDescriptor(DiagramImagesPath.IMAGE_NOT_FOUND));
@@ -396,10 +394,8 @@ public class RotativeImageDisplayTest extends SiriusDiagramTestCase {
 		final Iterator<EObject> it = diagram.eAllContents();
 		while (it.hasNext()) {
 			final EObject cur = it.next();
-			if (searchedClass.isInstance(cur) && uidFeature(cur.eClass()) != null) {
-				if (uid.equals(getUidValue(cur))) {
-					found.add(searchedClass.cast(cur));
-				}
+			if (searchedClass.isInstance(cur) && (uidFeature(cur.eClass()) != null) && uid.equals(getUidValue(cur))) {
+				found.add(searchedClass.cast(cur));
 			}
 		}
 		return found;

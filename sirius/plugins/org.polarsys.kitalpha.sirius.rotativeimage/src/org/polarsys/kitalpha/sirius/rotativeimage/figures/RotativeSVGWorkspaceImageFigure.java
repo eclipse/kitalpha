@@ -13,11 +13,9 @@
 package org.polarsys.kitalpha.sirius.rotativeimage.figures;
 
 import org.eclipse.draw2d.PositionConstants;
-import org.eclipse.draw2d.geometry.PrecisionRectangle;
 import org.eclipse.sirius.diagram.WorkspaceImage;
 import org.eclipse.sirius.diagram.ui.tools.api.figure.SVGWorkspaceImageFigure;
 import org.eclipse.sirius.diagram.ui.tools.internal.figure.svg.SimpleImageTranscoder;
-import org.eclipse.swt.graphics.Image;
 import org.polarsys.kitalpha.sirius.rotativeimage.internal.helpers.RotativeSVGImageTranscoder;
 import org.w3c.dom.Document;
 
@@ -42,7 +40,7 @@ public class RotativeSVGWorkspaceImageFigure extends SVGWorkspaceImageFigure {
         orientation = PositionConstants.NORTH;
     }
 
-    public static RotativeSVGWorkspaceImageFigure createImageFigure(final WorkspaceImage image, String path, int orientation) {
+    public static RotativeSVGWorkspaceImageFigure createImageFigure(final WorkspaceImage image) {
         RotativeSVGWorkspaceImageFigure fig = new RotativeSVGWorkspaceImageFigure();
         fig.refreshFigure(image);
         return fig;

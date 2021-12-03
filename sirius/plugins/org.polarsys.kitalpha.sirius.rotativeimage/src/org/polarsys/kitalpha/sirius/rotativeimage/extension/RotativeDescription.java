@@ -14,7 +14,7 @@ package org.polarsys.kitalpha.sirius.rotativeimage.extension;
 public class RotativeDescription {
 	
 	public static final int FOUR_IMAGES = 0;
-	public static  final int ROTATIVE = 1;
+	public static final int ROTATIVE = 1;
 	
 	public String id;
 	public int mode;
