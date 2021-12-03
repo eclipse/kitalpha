@@ -34,22 +34,17 @@ public class RotativeImageEditPartProvider extends AbstractEditPartProvider {
 		String type = view.getType();
 		final EObject resolvedSemanticElement = ViewUtil.resolveSemanticElement(view);
 
-		if (String.valueOf(WorkspaceImageEditPart.VISUAL_ID).equals(type) && resolvedSemanticElement instanceof WorkspaceImage) {
-			if (isRotativeImageEditPart(resolvedSemanticElement)) {
-				return RotativeImageEditPart.class;
-			}
+		if (String.valueOf(WorkspaceImageEditPart.VISUAL_ID).equals(type) && resolvedSemanticElement instanceof WorkspaceImage && isRotativeImageEditPart((WorkspaceImage) resolvedSemanticElement)) {
+			return RotativeImageEditPart.class;
 		} else {
-			if (String.valueOf(DNode4EditPart.VISUAL_ID).equals(type) && resolvedSemanticElement instanceof DNode) {
-				if (isRotativeDNode4editPart(resolvedSemanticElement)) {
-					return RotativeDNode4EditPart.class;
-				}
+			if (String.valueOf(DNode4EditPart.VISUAL_ID).equals(type) && resolvedSemanticElement instanceof DNode && isRotativeDNode4editPart((DNode) resolvedSemanticElement)) {
+				return RotativeDNode4EditPart.class;
 			}
 		}
 		return super.getNodeEditPartClass(view);
 	}
 
-	private boolean isRotativeDNode4editPart(final EObject resolvedSemanticElement) {
-		DNode spec = (DNode) resolvedSemanticElement;
+	private boolean isRotativeDNode4editPart(final DNode spec) {
 		if (spec.getOwnedStyle() instanceof WorkspaceImage) {
 			WorkspaceImage customStyle = (WorkspaceImage) spec.getOwnedStyle();
 			if (customStyle.getWorkspacePath() != null) {
@@ -62,8 +57,7 @@ public class RotativeImageEditPartProvider extends AbstractEditPartProvider {
 		return false;
 	}
 
-	private boolean isRotativeImageEditPart(final EObject resolvedSemanticElement) {
-		final WorkspaceImage customStyle = (WorkspaceImage) resolvedSemanticElement;
+	private boolean isRotativeImageEditPart(final WorkspaceImage customStyle) {
 		if (customStyle.getWorkspacePath() != null) {
 		    RotativeDescription rotativeDescription = Activator.getDefault().getDescriptions().get(customStyle.getWorkspacePath());
 		    if (rotativeDescription != null) {

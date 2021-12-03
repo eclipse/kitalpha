@@ -79,6 +79,26 @@ public class RotativeWorkspaceImageHelper {
 	}
 
 	public static String get4ImagesDocumentKey(String path, int orientation) {
+		String result = getImageURI(getOrientedPath(path, orientation));
+		if (result == null) {
+			// Default to original file path
+			result = getImageURI(path);
+		}
+		return result;
+	}
+
+	/**
+	 * Inserts {@code orientation} as "_top", "_bottom", "_left", "_right" between file name in {@code path} and file
+	 * extension.
+	 * 
+	 * @param path
+	 * @param orientation
+	 *            one of PositionConstants.WEST, PositionConstants.EAST, PositionConstants.SOUTH,
+	 *            PositionConstants.NORTH
+	 * @return {@code path} with inserted {@code orientation}. If {@code orientation} is not among expected values then
+	 *         {@code path} is kepts as is.
+	 */
+	public static String getOrientedPath(String path, int orientation) {
 		int extentionPosition = path.lastIndexOf(".");
 		String baseName = path.substring(0, extentionPosition);
 		String ext = path.substring(extentionPosition);
@@ -98,12 +118,7 @@ public class RotativeWorkspaceImageHelper {
 		default:
 			// Do nothing to default to baseName
 		}
-		String result = getImageURI(baseName + ext);
-		if (result == null) {
-			// Default to original file path
-			result = getImageURI(path);
-		}
-		return result;
+		return baseName + ext;
 	}
 
 	private static String getImageURI(String basepath) {
@@ -114,12 +129,13 @@ public class RotativeWorkspaceImageHelper {
 		return null;
 	}
 
-	public static void createImage(String mainPath, String path, int orientation) {
+	public static void createImage(String mainPath, int orientation) {
 		String key = getKey(mainPath, orientation);
+		String orientedPath = getOrientedPath(mainPath, orientation);
 		ImageRegistry registry = Activator.getDefault().getImageRegistry();
 		Image image = registry.get(key);
 		if (image == null) {
-			image = WorkspaceImageFigure.flyWeightImage(path);
+			image = WorkspaceImageFigure.flyWeightImage(orientedPath);
 			registry.put(key, image);
 		}
 	}

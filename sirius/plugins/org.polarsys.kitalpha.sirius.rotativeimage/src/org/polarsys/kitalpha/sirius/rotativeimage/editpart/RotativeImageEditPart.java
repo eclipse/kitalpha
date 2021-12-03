@@ -51,8 +51,6 @@ import org.polarsys.kitalpha.sirius.rotativeimage.internal.messages.Messages;
  */
 public class RotativeImageEditPart extends WorkspaceImageEditPart implements IStyleEditPart {
 
-    private SwitchImageListener switchImageListener;
-
     /**
      * Creates a new port edit part.
      * 
@@ -66,6 +64,7 @@ public class RotativeImageEditPart extends WorkspaceImageEditPart implements ISt
     /**
      * @generated NOT
      */
+    @Override
     protected IFigure createNodeShape() {
         EObject element = resolveSemanticElement();
         if (element instanceof WorkspaceImage) {
@@ -79,7 +78,7 @@ public class RotativeImageEditPart extends WorkspaceImageEditPart implements ISt
             }
             
             primaryShape = getWorkspaceImageFigure(wkImage, workspacePath, desc);
-            switchImageListener = new SwitchImageListener(this);
+            SwitchImageListener switchImageListener = new SwitchImageListener(this);
             primaryShape.addAncestorListener(switchImageListener);
             primaryShape.addPropertyChangeListener(switchImageListener);
             
@@ -95,23 +94,19 @@ public class RotativeImageEditPart extends WorkspaceImageEditPart implements ISt
 		IWorkspaceImageFigure figure;
 		if (description.mode == RotativeDescription.ROTATIVE) {
 		    if (WorkspaceImageFigure.isSvgImage(workspacePath)) {
-		        figure = RotativeSVGWorkspaceImageFigure.createImageFigure(workspaceImage, workspacePath, PositionConstants.NORTH);
+		        figure = RotativeSVGWorkspaceImageFigure.createImageFigure(workspaceImage);
 		    } else {
 		    	figure = new RotativeWorkspaceImageFigure(workspacePath);
 		    }
 		} else {
 		    // RotativeDescription.FOUR_IMAGES mode
-		    int pos = description.id.lastIndexOf(".");
-		    String baseName = description.id.substring(0, pos);
-		    String ext = description.id.substring(pos);
-
 		    if (WorkspaceImageFigure.isSvgImage(description.id)) {
 		    	figure = Rotative4ImagesSVGWorkspaceImageFigure.createImageFigures(workspaceImage, workspacePath);
 		    } else {
-		        RotativeWorkspaceImageHelper.createImage(description.id, baseName + "_top" + ext, PositionConstants.NORTH);
-		        RotativeWorkspaceImageHelper.createImage(description.id, baseName + "_left" + ext, PositionConstants.WEST);
-		        RotativeWorkspaceImageHelper.createImage(description.id, baseName + "_bottom" + ext, PositionConstants.SOUTH);
-		        RotativeWorkspaceImageHelper.createImage(description.id, baseName + "_right" + ext, PositionConstants.EAST);
+		        RotativeWorkspaceImageHelper.createImage(description.id, PositionConstants.NORTH);
+		        RotativeWorkspaceImageHelper.createImage(description.id, PositionConstants.WEST);
+		        RotativeWorkspaceImageHelper.createImage(description.id, PositionConstants.SOUTH);
+		        RotativeWorkspaceImageHelper.createImage(description.id, PositionConstants.EAST);
 		        figure = new RotativeWorkspaceImageFigure(description.id);
 		    }
 		}
