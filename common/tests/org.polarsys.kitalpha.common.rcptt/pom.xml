@@ -43,9 +43,6 @@
 						<version>${project.version}</version>
 						<injections>
 							<injection>
-								<site>https://download.eclipse.org/kitalpha/addons/introspector/nightly/master/updates/</site>
-							</injection>
-							<injection>
 								<site>${project.baseUri}../../../releng/plugins/org.polarsys.kitalpha.releng.samplecomponent.updatesite/target/repository</site>
 							</injection>
 							<injection>
