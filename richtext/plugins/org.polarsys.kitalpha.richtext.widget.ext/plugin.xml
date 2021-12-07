@@ -35,14 +35,6 @@ Contributors:
             handler="org.polarsys.kitalpha.richtext.widget.tools.ext.types.DiagramElementLinkHandler"
             type="modelDiagram">
       </LinkHandler>
-      <LinkHandler
-            handler="org.polarsys.kitalpha.richtext.widget.tools.ext.types.AbsoluteImageHandler"
-            type="Image (absolute path)">
-      </LinkHandler>
-      <LinkHandler
-            handler="org.polarsys.kitalpha.richtext.widget.tools.ext.types.ProjectImageHandler"
-            type="Image (project relative path)">
-      </LinkHandler>
    </extension>
    <extension
          point="org.polarsys.kitalpha.richtext.widget.saveResourceCallback">
