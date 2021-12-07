@@ -84,10 +84,17 @@ public class DocgenCommonSubClassEmfModelVisitor extends SubClassEmfModelVisitor
 			for (EClass superType : eAllSuperTypes) 
 			{
 				String fullName = EcoreUtil.getURI(superType).toString();
+				String instanceTypeName = superType.getInstanceTypeName();
+				// Look for patterns matching the element URI
 				List<Pattern> patterns = type2patterns.get(fullName);
+                // Look for patterns matching the element class
+				List<Pattern> instanceTypePatterns = type2patterns.get(instanceTypeName);
 				if (patterns != null) {
 					list.addAll(patterns);
 				}
+				if (instanceTypePatterns != null) {
+                    list.addAll(instanceTypePatterns);
+                }
 			}
 
 			List<Pattern> result = new ArrayList<Pattern>();
