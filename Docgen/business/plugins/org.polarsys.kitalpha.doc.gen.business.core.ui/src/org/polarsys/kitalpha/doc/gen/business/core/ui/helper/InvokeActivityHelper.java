@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2020 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2021 Thales Global Services S.A.S.
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License 2.0 which is available at
  * http://www.eclipse.org/legal/epl-2.0
@@ -43,6 +43,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.progress.IProgressService;
+import org.polarsys.kitalpha.doc.gen.business.core.exceptions.DocgenRuntimeException;
 import org.polarsys.kitalpha.doc.gen.business.core.ui.Messages;
 import org.polarsys.kitalpha.doc.gen.business.core.util.MonitorServices;
 
@@ -51,6 +52,8 @@ public class InvokeActivityHelper {
 
 	private static EditingDomain editingDomain;
 
+	InvokeActivityHelper() {}
+	
 	public static boolean validateAndInvoke(Activity activity) {
 		try {
 			Diagnostic diagnostic = Diagnostician.INSTANCE.validate(activity);
@@ -78,7 +81,7 @@ public class InvokeActivityHelper {
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static void invokeOutOfUIThread(Activity activity)
 			throws MissingExtensionException, InvocationException,
-			CoreException {
+			CoreException, DocgenRuntimeException {
 		ActivityManagerProducer producer = EGFProducerPlugin
 				.getActivityManagerProducer(activity);
 		final IActivityManager activityManager = producer
@@ -92,21 +95,17 @@ public class InvokeActivityHelper {
 			public void run() {
 				try {
 					ps.busyCursorWhile(new IRunnableWithProgress() {
-						@Override
+					    @Override
 						public void run(IProgressMonitor monitor) {
-							try {
-								MonitorServices.initMonitor(monitor);
-								MonitorServices.init(0);
-								activityManager.invoke(monitor);
-								activityManager.dispose();
-								MonitorServices.dispose();
-							} catch (Exception e) {
-								EGFPatternPlugin.getDefault().logError(e);
-							}
+                            launchDocgen(activityManager, monitor);
 						}
 					});
 				} catch (InvocationTargetException e) {
-					e.printStackTrace();
+				    if (e.getCause() instanceof DocgenRuntimeException) {
+				        throw (DocgenRuntimeException) e.getCause();
+				    } else {
+				        e.printStackTrace();
+				    }
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
@@ -125,17 +124,7 @@ public class InvokeActivityHelper {
 				.createActivityManager(activity);
 		activityManager.initializeContext();
 
-		try {
-			MonitorServices.initMonitor(monitor);
-			MonitorServices.init(0);
-			activityManager.invoke(monitor);
-			activityManager.dispose();
-			MonitorServices.dispose();
-		} catch (Exception e) {
-			EGFPatternPlugin.getDefault().logError(e);
-		}
-
-
+		launchDocgen(activityManager, monitor);
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
@@ -152,17 +141,12 @@ public class InvokeActivityHelper {
 				Messages.InvokeActivityHelper_HTML_Documentation_Generation) {
 			@Override
 			protected IStatus run(IProgressMonitor monitor) {
-				try {
-					MonitorServices.initMonitor(monitor);
-					MonitorServices.init(0);
-					activityManager.invoke(monitor);
-					activityManager.dispose();
-					MonitorServices.dispose();
-				} catch (Exception e) {
-					EGFPatternPlugin.getDefault().logError(e);
-					return Status.CANCEL_STATUS;
-				}
-				return Status.OK_STATUS;
+			    try {
+			        launchDocgen(activityManager, monitor);
+			    } catch (DocgenRuntimeException e) {
+			        return Status.CANCEL_STATUS;
+			    }
+			    return Status.OK_STATUS;
 			}
 		};
 		job.setUser(true);
@@ -174,6 +158,19 @@ public class InvokeActivityHelper {
 		ResourceSet rs = editingDomain.getResourceSet();
 		return (Activity) rs.getEObject(activityURI, true);
 	}
+    
+    private static void launchDocgen(final IActivityManager<Activity> activityManager, IProgressMonitor monitor) throws DocgenRuntimeException {
+        try {
+            MonitorServices.initMonitor(monitor);
+            MonitorServices.init(0);
+            activityManager.invoke(monitor);
+            activityManager.dispose();
+            MonitorServices.dispose();
+        } catch (Exception e) {
+            EGFPatternPlugin.getDefault().logError(e);
+            throw new DocgenRuntimeException(e);
+        }
+    }
 
 	private static EditingDomain getEditingDomain() {
 		if (editingDomain == null) {
