@@ -13,5 +13,6 @@ Require-Bundle: org.eclipse.emf.ecore.editor,
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Bundle-Localization: plugin
-Export-Package: org.polarsys.kitalpha.doc.gen.business.core.ui.helper,
+Export-Package: org.polarsys.kitalpha.doc.gen.business.core.ui,
+ org.polarsys.kitalpha.doc.gen.business.core.ui.helper,
  org.polarsys.kitalpha.doc.gen.business.core.ui.wizards
