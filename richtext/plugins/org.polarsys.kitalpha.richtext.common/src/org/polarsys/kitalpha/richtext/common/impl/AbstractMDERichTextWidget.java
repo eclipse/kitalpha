@@ -105,21 +105,23 @@ public abstract class AbstractMDERichTextWidget implements MDERichTextWidget {
 		areNotNull(getElement(), getFeature());
 		String text = getText();
 
-		text = ImageManagerProvider.getImageManager().convertToOriginalPathFromPathUsedForHtml(getElement(), text);
-
-		Object currentValue = getElement().eGet(getFeature());
-		if (text != null && isEditable() && !text.equals(currentValue)) {
-			getSaveStrategy().save(text, getElement(), getFeature());
-
-			// A precommit listener will update the base64 string to a path to a new
-			// image. So the string may be changed during save.
-			Object newValue = getElement().eGet(getFeature());
-			if (currentValue != newValue) {
-				loadContent();
+		if (text != null && isEditable()) {
+			text = ImageManagerProvider.getImageManager().convertToOriginalPathFromPathUsedForHtml(getElement(), text);
+	
+			Object currentValue = getElement().eGet(getFeature());
+			if (text != null && !text.equals(currentValue)) {
+				getSaveStrategy().save(text, getElement(), getFeature());
+	
+				// A precommit listener will update the base64 string to a path to a new
+				// image. So the string may be changed during save.
+				Object newValue = getElement().eGet(getFeature());
+				if (currentValue != newValue) {
+					loadContent();
+				}
+	
+				// Notifies listeners that the save has been done
+				firePropertyChangeEvent(new PropertyChangeEvent(this, WIDGET_SAVED_PROP, null, null));
 			}
-
-			// Notifies listeners that the save has been done
-			firePropertyChangeEvent(new PropertyChangeEvent(this, WIDGET_SAVED_PROP, null, null));
 		}
 	}
 
