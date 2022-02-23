@@ -13,6 +13,7 @@
 package org.polarsys.kitalpha.sirius.rotativeimage.internal.helpers;
 
 import java.io.File;
+import java.util.HashMap;
 
 import org.eclipse.core.runtime.Path;
 import org.eclipse.draw2d.PositionConstants;
@@ -28,6 +29,8 @@ import org.polarsys.kitalpha.sirius.rotativeimage.Activator;
  * An utility class to create rotated images and access them. It stores images in the ImageRegistry of this plugin
  */
 public class RotativeWorkspaceImageHelper {
+    
+    private static HashMap<String, String> IMAGE_PATHS_CACHE = new HashMap<>();
 
 	private RotativeWorkspaceImageHelper() {
 		throw new IllegalStateException("Utility class");
@@ -79,11 +82,15 @@ public class RotativeWorkspaceImageHelper {
 	}
 
 	public static String get4ImagesDocumentKey(String path, int orientation) {
-		String result = getImageURI(getOrientedPath(path, orientation));
-		if (result == null) {
-			// Default to original file path
-			result = getImageURI(path);
-		}
+        String result = IMAGE_PATHS_CACHE.get(path+orientation);
+        if (result == null) {
+            result = getImageURI(getOrientedPath(path, orientation));
+            if (result == null) {
+                // Default to original file path
+                result = getImageURI(path);
+            }
+            IMAGE_PATHS_CACHE.put(path+orientation, result);
+        }
 		return result;
 	}
 
@@ -123,7 +130,7 @@ public class RotativeWorkspaceImageHelper {
 
 	private static String getImageURI(String basepath) {
 		final File imageFile = FileProvider.getDefault().getFile(new Path(basepath));
-		if (imageFile != null && imageFile.exists() && imageFile.canRead()) {
+		if (imageFile != null) {
 			return imageFile.toURI().toString();
 		}
 		return null;

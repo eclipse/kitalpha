@@ -14,7 +14,6 @@ package org.polarsys.kitalpha.sirius.rotativeimage.editpart;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
-import org.eclipse.draw2d.AncestorListener;
 import org.eclipse.draw2d.FigureListener;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
@@ -79,7 +78,7 @@ public class RotativeImageEditPart extends WorkspaceImageEditPart implements ISt
             
             primaryShape = getWorkspaceImageFigure(wkImage, workspacePath, desc);
             SwitchImageListener switchImageListener = new SwitchImageListener(this);
-            primaryShape.addAncestorListener(switchImageListener);
+            primaryShape.addFigureListener(switchImageListener);
             primaryShape.addPropertyChangeListener(switchImageListener);
             
             EditPart parent = this.getParent();
@@ -101,7 +100,7 @@ public class RotativeImageEditPart extends WorkspaceImageEditPart implements ISt
 		} else {
 		    // RotativeDescription.FOUR_IMAGES mode
 		    if (WorkspaceImageFigure.isSvgImage(description.id)) {
-		    	figure = Rotative4ImagesSVGWorkspaceImageFigure.createImageFigures(workspaceImage, workspacePath);
+		    	figure = Rotative4ImagesSVGWorkspaceImageFigure.createImageFigure(workspaceImage, workspacePath);
 		    } else {
 		        RotativeWorkspaceImageHelper.createImage(description.id, PositionConstants.NORTH);
 		        RotativeWorkspaceImageHelper.createImage(description.id, PositionConstants.WEST);
@@ -113,25 +112,13 @@ public class RotativeImageEditPart extends WorkspaceImageEditPart implements ISt
 		return figure;
 	}
 
-    private static class SwitchImageListener implements AncestorListener, PropertyChangeListener, FigureListener {
+    private static class SwitchImageListener implements PropertyChangeListener, FigureListener {
 
         private RotativeImageEditPart editPart;
 
         public SwitchImageListener(final RotativeImageEditPart editPart) {
             this.editPart = editPart;
 
-        }
-
-        public void ancestorAdded(IFigure ancestor) {
-            updateImage();
-        }
-
-        public void ancestorMoved(IFigure ancestor) {
-            updateImage();
-        }
-
-        public void ancestorRemoved(IFigure ancestor) {
-            updateImage();
         }
 
         public void propertyChange(PropertyChangeEvent arg0) {
