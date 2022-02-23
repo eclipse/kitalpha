@@ -12,6 +12,8 @@
  *******************************************************************************/
 package org.polarsys.kitalpha.sirius.rotativeimage.figures;
 
+import java.util.HashMap;
+
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.sirius.diagram.WorkspaceImage;
 import org.eclipse.sirius.diagram.ui.tools.api.figure.SVGWorkspaceImageFigure;
@@ -39,17 +41,10 @@ public class Rotative4ImagesSVGWorkspaceImageFigure extends SVGWorkspaceImageFig
 		super();
 	}
 
-	public static Rotative4ImagesSVGWorkspaceImageFigure createImageFigures(final WorkspaceImage image, String basepath) {
-		Rotative4ImagesSVGWorkspaceImageFigure topFigure = Rotative4ImagesSVGWorkspaceImageFigure.createImageFigure(image, basepath, PositionConstants.NORTH);
-		Rotative4ImagesSVGWorkspaceImageFigure.createImageFigure(image, basepath, PositionConstants.SOUTH);
-		Rotative4ImagesSVGWorkspaceImageFigure.createImageFigure(image, basepath, PositionConstants.EAST);
-		Rotative4ImagesSVGWorkspaceImageFigure.createImageFigure(image, basepath, PositionConstants.WEST);
-		return topFigure;
-	}
-
-	public static Rotative4ImagesSVGWorkspaceImageFigure createImageFigure(WorkspaceImage image, String basepath, int orientation) {
+	public static Rotative4ImagesSVGWorkspaceImageFigure createImageFigure(WorkspaceImage image, String basepath) {
 		Rotative4ImagesSVGWorkspaceImageFigure figure = new Rotative4ImagesSVGWorkspaceImageFigure();
-		figure.orientation = orientation;
+		// Set default orientation (will be changed with calls to setOrientation)
+		figure.orientation = PositionConstants.NORTH;
 		figure.basepath = basepath;
 		figure.refreshFigure(image);
 		return figure;
@@ -63,9 +58,11 @@ public class Rotative4ImagesSVGWorkspaceImageFigure extends SVGWorkspaceImageFig
 	 */
 	@Override
 	public void refreshFigure(final WorkspaceImage workspaceImage) {
-		String uri = RotativeWorkspaceImageHelper.get4ImagesDocumentKey(basepath, orientation);
-		this.setURI(uri);
-		this.contentChanged();
+	    String documentKey = this.getDocumentKey();
+	    if (!documentKey.equals(this.getURI())) {
+	        this.setURI(this.getDocumentKey(), false);
+	        this.contentChanged();
+	    }
 	}
 
 	/**
@@ -74,9 +71,10 @@ public class Rotative4ImagesSVGWorkspaceImageFigure extends SVGWorkspaceImageFig
 	 *            PositionConstants.NORTH
 	 */
 	public void setOrientation(int orientation) {
-		this.orientation = orientation;
-		this.setURI(this.getDocumentKey());
-		this.contentChanged();
+	    if (this.orientation != orientation) {
+    		this.orientation = orientation;
+    		refreshFigure(null);
+	    }
 	}
 
 	@Override
