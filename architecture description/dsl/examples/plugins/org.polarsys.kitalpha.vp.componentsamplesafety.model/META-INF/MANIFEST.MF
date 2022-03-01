@@ -6,7 +6,7 @@ Bundle-Version: 6.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety,
  org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.impl,
  org.polarsys.kitalpha.vp.componentsamplesafety.ComponentSampleSafety.util

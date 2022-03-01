@@ -8,7 +8,7 @@ Bundle-Vendor: %pluginVendor
 Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.kitalpha.model.common.scrutiny;visibility:=reexport,
  org.polarsys.kitalpha.model.common.share;visibility:=reexport
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-ActivationPolicy: lazy
 Import-Package: org.apache.log4j,
  org.eclipse.emf.codegen.ecore.genmodel

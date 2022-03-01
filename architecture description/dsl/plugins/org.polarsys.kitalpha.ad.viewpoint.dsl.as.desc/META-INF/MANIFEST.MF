@@ -5,5 +5,5 @@ Bundle-SymbolicName: org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc;singleton:=t
 Bundle-Version: 6.0.0.qualifier
 Require-Bundle: org.eclipse.emf.ecore
 Bundle-Vendor: %BundleVendor
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-Localization: plugin

@@ -8,7 +8,7 @@ Bundle-Activator: org.polarsys.kitalpha.resourcereuse.Activator
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.pde.core,
  org.eclipse.equinox.registry
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-ActivationPolicy: lazy
 Bundle-Localization: plugin
 Export-Package: org.polarsys.kitalpha.resourcereuse,

@@ -3,4 +3,4 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Analysis
 Bundle-SymbolicName: org.polarsys.kitalpha.vp.componentsamplequalityassessment.rules.analysis;singleton:=true
 Bundle-Version: 6.0.0.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-11

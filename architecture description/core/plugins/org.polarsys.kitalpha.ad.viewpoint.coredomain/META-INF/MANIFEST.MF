@@ -8,5 +8,5 @@ Bundle-SymbolicName: org.polarsys.kitalpha.ad.viewpoint.coredomain;singleton:=tr
 Bundle-Activator: org.polarsys.kitalpha.ad.viewpoint.coredomain.Activator
 Require-Bundle: org.eclipse.core.runtime
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: org.polarsys.kitalpha.ad.viewpoint.coredomain

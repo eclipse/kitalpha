@@ -41,7 +41,7 @@ Require-Bundle: org.eclipse.ui,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.event,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf.desc.aird
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Import-Package: org.eclipse.ui.actions
 Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.abstracts,

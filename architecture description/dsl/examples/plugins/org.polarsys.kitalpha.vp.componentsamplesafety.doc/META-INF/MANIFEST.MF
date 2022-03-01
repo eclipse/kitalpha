@@ -3,6 +3,6 @@ Bundle-ManifestVersion: 2
 Bundle-Name: org.polarsys.kitalpha.vp.componentsamplesafety.doc
 Bundle-SymbolicName: org.polarsys.kitalpha.vp.componentsamplesafety.doc;singleton:=true
 Bundle-Version: 6.0.0.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-Vendor: Polarsys
 

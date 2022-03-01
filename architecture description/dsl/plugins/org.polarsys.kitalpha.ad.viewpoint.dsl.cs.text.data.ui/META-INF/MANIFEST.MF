@@ -25,7 +25,7 @@ Require-Bundle: org.eclipse.xtext.ui,
 Import-Package: org.apache.log4j,
  org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.helper.desc
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.antlr,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.internal,

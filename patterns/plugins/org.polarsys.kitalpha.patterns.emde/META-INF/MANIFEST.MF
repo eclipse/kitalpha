@@ -19,5 +19,5 @@ Bundle-Name: %pluginName
 Bundle-Activator: org.polarsys.kitalpha.patterns.emde.EmdePatternSupportPlugin
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: org.polarsys.kitalpha.patterns.emde;singleton:=true
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 

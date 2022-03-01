@@ -9,5 +9,5 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.polarsys.kitalpha.examples.generic.wizard
 Eclipse-LazyStart: true
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-Localization: plugin

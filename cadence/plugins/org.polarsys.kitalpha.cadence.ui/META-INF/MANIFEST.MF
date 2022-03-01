@@ -13,5 +13,5 @@ Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.cadence.ui.api,
  org.polarsys.kitalpha.cadence.ui.api.dialog,
  org.polarsys.kitalpha.cadence.ui.api.launch
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-Localization: plugin
