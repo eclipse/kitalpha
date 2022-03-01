@@ -12,8 +12,6 @@
  *******************************************************************************/
 package org.polarsys.kitalpha.sirius.rotativeimage.figures;
 
-import java.util.HashMap;
-
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.sirius.diagram.WorkspaceImage;
 import org.eclipse.sirius.diagram.ui.tools.api.figure.SVGWorkspaceImageFigure;
