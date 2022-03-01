@@ -8,6 +8,6 @@ Bundle-Activator: org.polarsys.kitalpha.ad.af.dsl.services.preference.Activator
 Bundle-Vendor: %BundleVendor
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.ad.af.dsl.services.preference.helper

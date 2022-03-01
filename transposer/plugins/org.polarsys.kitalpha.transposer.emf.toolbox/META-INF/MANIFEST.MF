@@ -13,5 +13,5 @@ Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.transposer.emf.toolbox.activities,
  org.polarsys.kitalpha.transposer.emf.toolbox.api,
  org.polarsys.kitalpha.transposer.emf.toolbox.api.dangling
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-Localization: plugin

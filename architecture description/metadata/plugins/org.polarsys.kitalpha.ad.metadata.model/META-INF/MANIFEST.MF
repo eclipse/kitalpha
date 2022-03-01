@@ -6,7 +6,7 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-SymbolicName: org.polarsys.kitalpha.ad.metadata.model;singleton:=true
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: org.polarsys.kitalpha.ad.metadata.metadata,
  org.polarsys.kitalpha.ad.metadata.metadata.impl,
  org.polarsys.kitalpha.ad.metadata.metadata.util

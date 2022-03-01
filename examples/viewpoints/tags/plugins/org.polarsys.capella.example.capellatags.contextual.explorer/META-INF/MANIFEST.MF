@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Explorer
 Bundle-SymbolicName: org.polarsys.capella.example.capellatags.contextual.explorer;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.amalgam.explorer.contextual.core,
  org.polarsys.capella.example.capellatags.model.edit

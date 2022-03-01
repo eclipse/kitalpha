@@ -6,4 +6,4 @@ Bundle-Version: 6.0.0.qualifier
 Bundle-ClassPath: org.polarsys.kitalpha.transposer.rules.handler.generation.chain
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11

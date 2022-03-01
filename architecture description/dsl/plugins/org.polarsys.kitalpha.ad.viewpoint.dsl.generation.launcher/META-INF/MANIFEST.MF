@@ -14,7 +14,7 @@ Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.launcher,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.launcher.manager,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.launcher.modelchecking,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.launcher.precondition
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Import-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common.adapter
 Bundle-Localization: plugin
 Bundle-Vendor: %BundleVendor

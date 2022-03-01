@@ -4,6 +4,6 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: org.polarsys.kitalpha.composer.examples.basic.allocation.ecore
 Bundle-Version: 6.0.0.qualifier
 Require-Bundle: org.eclipse.emf.ecore
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-Localization: plugin
 Bundle-Vendor: %providerName

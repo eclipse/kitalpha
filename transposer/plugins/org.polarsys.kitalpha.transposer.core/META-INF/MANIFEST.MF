@@ -14,7 +14,7 @@ Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.transposer,
  org.polarsys.kitalpha.transposer.api,
  org.polarsys.kitalpha.transposer.generic
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-Localization: plugin
 Bundle-ClassPath: .
 Import-Package: org.polarsys.kitalpha.transposer.analyzer.api

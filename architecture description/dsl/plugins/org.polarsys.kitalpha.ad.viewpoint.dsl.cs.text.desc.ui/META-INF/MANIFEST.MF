@@ -30,7 +30,7 @@ Require-Bundle: org.eclipse.xtext.ui,
  org.polarsys.kitalpha.ad.viewpoint.dsl.services.cs.text.generators
 Import-Package: org.apache.log4j,
  org.eclipse.emf.codegen.ecore.genmodel
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.callback,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist,

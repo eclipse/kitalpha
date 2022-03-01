@@ -24,7 +24,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.kitalpha.model.common.share,
  org.polarsys.kitalpha.model.common.commands
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: de.ikoffice.widgets,
  org.polarsys.kitalpha.ad.viewpoint.ui,
  org.polarsys.kitalpha.ad.viewpoint.ui.dialogs,

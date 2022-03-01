@@ -14,7 +14,7 @@ Require-Bundle: org.junit;bundle-version="4.12.0",
  org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: TestModel,
  TestModel.impl,
  TestModel.util

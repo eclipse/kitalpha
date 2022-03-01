@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Explorer
 Bundle-SymbolicName: org.polarsys.kitalpha.vp.componentsample.contextual.explorer;singleton:=true
 Bundle-Version: 6.0.0.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.amalgam.explorer.contextual.core,
  org.polarsys.kitalpha.vp.componentsample.model.edit

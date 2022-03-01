@@ -6,7 +6,7 @@ Bundle-Version: 6.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: org.polarsys.kitalpha.report.model,
  org.polarsys.kitalpha.report.model.impl,
  org.polarsys.kitalpha.report.model.util

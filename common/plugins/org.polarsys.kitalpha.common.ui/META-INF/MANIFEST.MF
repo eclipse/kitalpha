@@ -9,5 +9,5 @@ Bundle-Activator: org.polarsys.kitalpha.common.ui.Activator
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: org.polarsys.kitalpha.common.ui.preference

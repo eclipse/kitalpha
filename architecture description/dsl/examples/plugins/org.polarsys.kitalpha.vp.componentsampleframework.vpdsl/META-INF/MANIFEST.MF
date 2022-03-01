@@ -5,5 +5,5 @@ Bundle-Name: %Bundle-Name
 Bundle-Vendor: %Bundle-Vendor 
 Bundle-Version: 6.0.0.qualifier
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Bundle: org.polarsys.kitalpha.resourcereuse

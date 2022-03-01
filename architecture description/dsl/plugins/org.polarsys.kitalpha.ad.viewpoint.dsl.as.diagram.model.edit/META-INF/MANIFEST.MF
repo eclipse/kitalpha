@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Activator: org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.provider.VpdiagramEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.configuration.provider,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.provider
 Require-Bundle: org.eclipse.core.runtime,
