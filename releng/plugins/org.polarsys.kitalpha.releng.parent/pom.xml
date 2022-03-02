@@ -86,8 +86,6 @@
 				<!-- module TP -->
 				<module>../../plugins/org.polarsys.kitalpha.releng.targets</module>
 				<!-- module Component Aggregator -->
-				<!-- module Core - Needed to build Capella -->
-				<module>../../plugins/org.polarsys.kitalpha.releng.aggregator.core</module>
 				<!-- module Runtime -->
 				<module>../../plugins/org.polarsys.kitalpha.releng.aggregator.runtime</module>
 				<!-- module SDK -->
@@ -156,50 +154,6 @@
 					</snapshots>
 				</pluginRepository>
 			</pluginRepositories>
-		</profile>
-		<profile>
-			<id>runtimeCore</id>
-			<activation>
-				<activeByDefault>false</activeByDefault>
-			</activation>
-			<properties>
-				<target-platform-name>kitalpha</target-platform-name>
-			</properties>
-			<modules>
-				<!-- module TP -->
-				<module>../../plugins/org.polarsys.kitalpha.releng.targets</module>
-				<!-- module Component Aggregator -->
-				<!-- module Core - Needed to build Capella -->
-				<module>../../plugins/org.polarsys.kitalpha.releng.aggregator.core</module>
-			</modules>
-		</profile>
-		<profile>
-			<id>completRuntimeCore</id>
-			<!-- Be careful : For launch this profile you need : 1 - verify runtimeCore 
-				profile before in hudson machine mvn clean verify -PruntimeCore 2 - Publish 
-				runtimeCore update site in huston url used by this profile : http://download.eclipse.org/kitapha/updates/nightly/runtimecore/latest/ 
-				3 - and after verify this profile mvn clean verify -PcompletRuntimeCore -->
-			<activation>
-				<activeByDefault>false</activeByDefault>
-			</activation>
-			<properties>
-				<target-platform-name>kitalphaWithRuntimeCore</target-platform-name>
-			</properties>
-			<modules>
-				<!-- module TP -->
-				<module>../../plugins/org.polarsys.kitalpha.releng.targets</module>
-				<!-- module Component Aggregator -->
-				<!-- module Runtime -->
-				<module>../../plugins/org.polarsys.kitalpha.releng.aggregator.runtime</module>
-				<!-- module SDK -->
-				<module>../../plugins/org.polarsys.kitalpha.releng.aggregator.sdk</module>
-				<!-- module Product -->
-				<module>../../plugins/org.polarsys.kitalpha.releng.aggregator.product</module>
-				<!-- module Examples -->
-				<module>../../plugins/org.polarsys.kitalpha.releng.aggregator.examples</module>
-				<!-- module Sample Component -->
-				<module>../../plugins/org.polarsys.kitalpha.releng.aggregator.samplecomponent</module>
-			</modules>
 		</profile>
 		<profile>
 			<id>test</id>

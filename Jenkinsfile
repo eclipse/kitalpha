@@ -45,19 +45,16 @@ pipeline {
 						sh "echo 'deploy update sites'"
 						sh "ssh genie.kitalpha@projects-storage.eclipse.org rm -rf ${DEST_UPDATESITE_DIR}/component/${VERSION}"
 						sh "ssh genie.kitalpha@projects-storage.eclipse.org rm -rf ${DEST_UPDATESITE_DIR}/runtime/${VERSION}"
-						sh "ssh genie.kitalpha@projects-storage.eclipse.org rm -rf ${DEST_UPDATESITE_DIR}/runtimecore/${VERSION}"
 						sh "ssh genie.kitalpha@projects-storage.eclipse.org rm -rf ${DEST_UPDATESITE_DIR}/sdk/${VERSION}"
 	
 						sh "ssh genie.kitalpha@projects-storage.eclipse.org mkdir -p ${DEST_UPDATESITE_DIR}/component/${VERSION}"
 						sh "ssh genie.kitalpha@projects-storage.eclipse.org mkdir -p ${DEST_UPDATESITE_DIR}/runtime/${VERSION}"
-						sh "ssh genie.kitalpha@projects-storage.eclipse.org mkdir -p ${DEST_UPDATESITE_DIR}/runtimecore/${VERSION}"
-						sh "ssh genie.kitalpha@projects-storage.eclipse.org mkdir -p ${DEST_UPDATESITE_DIR}/runtimecore/${VERSION}/targets/"
+						sh "ssh genie.kitalpha@projects-storage.eclipse.org mkdir -p ${DEST_UPDATESITE_DIR}/runtime/${VERSION}/targets/"
 						sh "ssh genie.kitalpha@projects-storage.eclipse.org mkdir -p ${DEST_UPDATESITE_DIR}/sdk/${VERSION}"
 	
 						sh "scp -r releng/plugins/org.polarsys.kitalpha.releng.samplecomponent.updatesite/target/repository/* genie.kitalpha@projects-storage.eclipse.org:${DEST_UPDATESITE_DIR}/component/${VERSION}"
 						sh "scp -r releng/plugins/org.polarsys.kitalpha.releng.runtime.updatesite/target/repository/* genie.kitalpha@projects-storage.eclipse.org:${DEST_UPDATESITE_DIR}/runtime/${VERSION}"
-						sh "scp -r releng/plugins/org.polarsys.kitalpha.releng.runtime.core.updatesite/target/repository/* genie.kitalpha@projects-storage.eclipse.org:${DEST_UPDATESITE_DIR}/runtimecore/${VERSION}"
-						sh "scp -r releng/plugins/org.polarsys.kitalpha.releng.targets/*.target* genie.kitalpha@projects-storage.eclipse.org:${DEST_UPDATESITE_DIR}/runtimecore/${VERSION}/targets"
+						sh "scp -r releng/plugins/org.polarsys.kitalpha.releng.targets/*.target* genie.kitalpha@projects-storage.eclipse.org:${DEST_UPDATESITE_DIR}/runtime/${VERSION}/targets"
 						sh "scp -r releng/plugins/org.polarsys.kitalpha.releng.sdk.updatesite/target/repository/* genie.kitalpha@projects-storage.eclipse.org:${DEST_UPDATESITE_DIR}/sdk/${VERSION}"
 	
 						sh "echo 'deploy product'"
@@ -98,7 +95,7 @@ pipeline {
 	}
 	post {
 		always {
-			archiveArtifacts artifacts: '**/*.log, **/*.layout, releng/plugins/org.polarsys.kitalpha.releng.samplecomponent.updatesite/target/repository/**, releng/plugins/org.polarsys.kitalpha.releng.runtime.core.updatesite/target/repository/**,releng/plugins/org.polarsys.kitalpha.releng.runtime.updatesite/target/repository/**,releng/plugins/org.polarsys.kitalpha.releng.sdk.updatesite/target/repository/**, releng/plugins/org.polarsys.kitalpha.releng.sdk.product/target/products/*.zip, releng/plugins/org.polarsys.kitalpha.releng.targets'
+			archiveArtifacts artifacts: '**/*.log, **/*.layout, releng/plugins/org.polarsys.kitalpha.releng.samplecomponent.updatesite/target/repository/**, releng/plugins/org.polarsys.kitalpha.releng.runtime.updatesite/target/repository/**,releng/plugins/org.polarsys.kitalpha.releng.sdk.updatesite/target/repository/**, releng/plugins/org.polarsys.kitalpha.releng.sdk.product/target/products/*.zip, releng/plugins/org.polarsys.kitalpha.releng.targets'
 		}
 	}
 }
