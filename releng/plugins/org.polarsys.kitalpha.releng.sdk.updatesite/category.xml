@@ -132,191 +132,183 @@
    <feature id="org.polarsys.kitalpha.runtime.feature" version="0.0.0">
       <category name="Runtime"/>
    </feature>
-   <feature id="org.polarsys.kitalpha.releng.runtime.core.feature" version="0.0.0">
-      <category name="RuntimeCore"/>
-   </feature>
-   <feature id="org.polarsys.kitalpha.releng.runtime.core.feature.source" version="0.0.0">
-      <category name="RuntimeCoreSource"/>
-   </feature>
    <feature id="org.polarsys.kitalpha.emde.genchain.feature" version="0.0.0">
-      <category name="RuntimeCore"/>
+      <category name="Runtime"/>
    </feature>
    <feature id="org.polarsys.kitalpha.common.feature" version="0.0.0">
-      <category name="RuntimeCore"/>
+      <category name="Runtime"/>
    </feature>
    <feature id="org.polarsys.kitalpha.common.feature.source" version="0.0.0">
-      <category name="RuntimeCoreSource"/>
+      <category name="RuntimeSource"/>
    </feature>
    <feature id="org.polarsys.kitalpha.ad.feature" version="0.0.0">
-      <category name="RuntimeCore"/>
+      <category name="Runtime"/>
    </feature>
    <feature id="org.polarsys.kitalpha.ad.feature.source" version="0.0.0">
-      <category name="RuntimeCoreSource"/>
+      <category name="RuntimeSource"/>
    </feature>
    <feature id="org.polarsys.kitalpha.report.feature" version="0.0.0">
-      <category name="RuntimeCore"/>
+      <category name="Runtime"/>
    </feature>
    <feature id="org.polarsys.kitalpha.report.feature.source" version="0.0.0">
-      <category name="RuntimeCoreSource"/>
+      <category name="RuntimeSource"/>
    </feature>
    <feature id="org.polarsys.kitalpha.resourcereuse.feature" version="0.0.0">
-      <category name="RuntimeCore"/>
+      <category name="Runtime"/>
    </feature>
    <feature id="org.polarsys.kitalpha.resourcereuse.feature.source" version="0.0.0">
-      <category name="RuntimeCoreSource"/>
+      <category name="RuntimeSource"/>
    </feature>
    <feature id="org.polarsys.kitalpha.resourcereuse.emfscheme.feature" version="0.0.0">
-      <category name="RuntimeCore"/>
+      <category name="Runtime"/>
    </feature>
    <feature id="org.polarsys.kitalpha.resourcereuse.emfscheme.feature.source" version="0.0.0">
-      <category name="RuntimeCoreSource"/>
+      <category name="RuntimeSource"/>
    </feature>
    <feature id="org.polarsys.kitalpha.resourcereuse.emfscheme.ui.feature" version="0.0.0">
-      <category name="RuntimeCore"/>
+      <category name="Runtime"/>
    </feature>
    <feature id="org.polarsys.kitalpha.resourcereuse.emfscheme.ui.feature.source" version="0.0.0">
-      <category name="RuntimeCoreSource"/>
+      <category name="RuntimeSource"/>
    </feature>
    <feature id="org.polarsys.kitalpha.ad.metadata.feature" version="0.0.0">
-      <category name="RuntimeCore"/>
+      <category name="Runtime"/>
    </feature>
    <feature id="org.polarsys.kitalpha.ad.metadata.feature.source" version="0.0.0">
-      <category name="RuntimeCoreSource"/>
+      <category name="RuntimeSource"/>
    </feature>
    <feature id="org.polarsys.kitalpha.ad.integration.sirius.feature" version="0.0.0">
-      <category name="RuntimeCore"/>
+      <category name="Runtime"/>
    </feature>
    <feature id="org.polarsys.kitalpha.ad.integration.sirius.feature.source" version="0.0.0">
-      <category name="RuntimeCoreSource"/>
+      <category name="RuntimeSource"/>
    </feature>
    <feature id="org.polarsys.kitalpha.ad.ui.feature" version="0.0.0">
-      <category name="RuntimeCore"/>
+      <category name="Runtime"/>
    </feature>
    <feature id="org.polarsys.kitalpha.ad.ui.feature.source" version="0.0.0">
-      <category name="RuntimeCoreSource"/>
+      <category name="RuntimeSource"/>
    </feature>
    <feature id="org.polarsys.kitalpha.report.ui.feature" version="0.0.0">
-      <category name="RuntimeCore"/>
+      <category name="Runtime"/>
    </feature>
    <feature id="org.polarsys.kitalpha.report.ui.feature.source" version="0.0.0">
-      <category name="RuntimeCoreSource"/>
+      <category name="RuntimeSource"/>
    </feature>
    <feature id="org.polarsys.kitalpha.resourcereuse.ui.feature" version="0.0.0">
-      <category name="RuntimeCore"/>
+      <category name="Runtime"/>
    </feature>
    <feature id="org.polarsys.kitalpha.resourcereuse.ui.feature.source" version="0.0.0">
-      <category name="RuntimeCoreSource"/>
+      <category name="RuntimeSource"/>
    </feature>
    <feature id="org.polarsys.kitalpha.ad.integration.emde.feature" version="0.0.0">
-      <category name="RuntimeCore"/>
+      <category name="Runtime"/>
    </feature>
    <feature id="org.polarsys.kitalpha.ad.integration.emde.feature.source" version="0.0.0">
-      <category name="RuntimeCoreSource"/>
+      <category name="RuntimeSource"/>
    </feature>
    <feature id="org.polarsys.kitalpha.emde.feature" version="0.0.0">
-      <category name="RuntimeCore"/>
+      <category name="Runtime"/>
    </feature>
    <feature id="org.polarsys.kitalpha.emde.feature.source" version="0.0.0">
-      <category name="RuntimeCoreSource"/>
+      <category name="RuntimeSource"/>
    </feature>
    <feature id="org.polarsys.kitalpha.ad.integration.amalgam.feature" version="0.0.0">
-      <category name="RuntimeCore"/>
+      <category name="Runtime"/>
    </feature>
    <feature id="org.polarsys.kitalpha.ad.integration.amalgam.feature.source" version="0.0.0">
-      <category name="RuntimeCoreSource"/>
+      <category name="RuntimeSource"/>
    </feature>
    <feature id="org.polarsys.kitalpha.cadence.feature" version="0.0.0">
-      <category name="RuntimeCore"/>
+      <category name="Runtime"/>
    </feature>
    <feature id="org.polarsys.kitalpha.cadence.feature.source" version="0.0.0">
-      <category name="RuntimeCoreSource"/>
+      <category name="RuntimeSource"/>
    </feature>
    <feature id="org.polarsys.kitalpha.transposer.feature" version="0.0.0">
-      <category name="RuntimeCore"/>
+      <category name="Runtime"/>
    </feature>
    <feature id="org.polarsys.kitalpha.transposer.feature.source" version="0.0.0">
-      <category name="RuntimeCoreSource"/>
+      <category name="RuntimeSource"/>
    </feature>
    <feature id="org.polarsys.kitalpha.patterns.feature" version="0.0.0">
-      <category name="RuntimeCore"/>
+      <category name="Runtime"/>
    </feature>
    <feature id="org.polarsys.kitalpha.patterns.feature.source" version="0.0.0">
-      <category name="RuntimeCoreSource"/>
+      <category name="RuntimeSource"/>
    </feature>
    <feature id="org.polarsys.kitalpha.emde.ui.feature" version="0.0.0">
-      <category name="RuntimeCore"/>
+      <category name="Runtime"/>
    </feature>
    <feature id="org.polarsys.kitalpha.emde.ui.feature.source" version="0.0.0">
-      <category name="RuntimeCoreSource"/>
+      <category name="RuntimeSource"/>
    </feature>
    <feature id="org.polarsys.kitalpha.model.common.commands.feature" version="0.0.0">
-      <category name="RuntimeCore"/>
+      <category name="Runtime"/>
    </feature>
    <feature id="org.polarsys.kitalpha.model.common.commands.feature.source" version="0.0.0">
-      <category name="RuntimeCoreSource"/>
+      <category name="RuntimeSource"/>
    </feature>
    <feature id="org.polarsys.kitalpha.model.common.scrutiny.feature" version="0.0.0">
-      <category name="RuntimeCore"/>
+      <category name="Runtime"/>
    </feature>
    <feature id="org.polarsys.kitalpha.model.common.scrutiny.feature.source" version="0.0.0">
-      <category name="RuntimeCoreSource"/>
+      <category name="RuntimeSource"/>
    </feature>
    <feature id="org.polarsys.kitalpha.model.common.share.feature" version="0.0.0">
-      <category name="RuntimeCore"/>
+      <category name="Runtime"/>
    </feature>
    <feature id="org.polarsys.kitalpha.model.common.share.feature.source" version="0.0.0">
-      <category name="RuntimeCoreSource"/>
+      <category name="RuntimeSource"/>
    </feature>
    <feature id="org.polarsys.kitalpha.model.detachment.feature" version="0.0.0">
-      <category name="RuntimeCore"/>
+      <category name="Runtime"/>
    </feature>
    <feature id="org.polarsys.kitalpha.model.detachment.feature.source" version="0.0.0">
-      <category name="RuntimeCoreSource"/>
+      <category name="RuntimeSource"/>
    </feature>
    <feature id="org.polarsys.kitalpha.ad.runtime.feature" version="0.0.0">
-      <category name="RuntimeCore"/>
+      <category name="Runtime"/>
    </feature>
    <feature id="org.polarsys.kitalpha.ad.runtime.feature.source" version="0.0.0">
-      <category name="RuntimeCoreSource"/>
+      <category name="RuntimeSource"/>
    </feature>
    <feature id="org.polarsys.kitalpha.model.detachment.contrib.viewpoints.feature" version="0.0.0">
-      <category name="RuntimeCore"/>
+      <category name="Runtime"/>
    </feature>
    <feature id="org.polarsys.kitalpha.model.detachment.contrib.viewpoints.feature.source" version="0.0.0">
-      <category name="RuntimeCoreSource"/>
+      <category name="RuntimeSource"/>
    </feature>
    <feature id="org.polarsys.kitalpha.massactions.feature" version="0.0.0">
-      <category name="RuntimeCore"/>
+      <category name="Runtime"/>
    </feature>
    <feature id="org.polarsys.kitalpha.massactions.feature.source" version="0.0.0">
-      <category name="RuntimeCoreSource"/>
+      <category name="RuntimeSource"/>
    </feature>
    <feature id="org.polarsys.kitalpha.richtext.widget.feature" version="0.0.0">
-      <category name="RuntimeCore"/>
+      <category name="Runtime"/>
    </feature>
    <feature id="org.polarsys.kitalpha.richtext.widget.feature.source" version="0.0.0">
-      <category name="RuntimeCoreSource"/>
+      <category name="RuntimeSource"/>
    </feature>
    <feature id="org.polarsys.kitalpha.sirius.typeinterpreter.feature" version="0.0.0">
-      <category name="RuntimeCore"/>
+      <category name="Runtime"/>
    </feature>
    <feature id="org.polarsys.kitalpha.sirius.typeinterpreter.feature.source" version="0.0.0">
-      <category name="RuntimeCoreSource"/>
+      <category name="RuntimeSource"/>
    </feature>
    <feature id="org.polarsys.kitalpha.transposer.diffmerge.feature" version="0.0.0">
-      <category name="RuntimeCore"/>
+      <category name="Runtime"/>
    </feature>
    <feature id="org.polarsys.kitalpha.transposer.diffmerge.feature.source" version="0.0.0">
-      <category name="RuntimeCoreSource"/>
+      <category name="RuntimeSource"/>
    </feature>
    <feature id="org.polarsys.kitalpha.sirius.rotativeimage.feature" version="0.0.0">
-      <category name="RuntimeCore"/>
+      <category name="Runtime"/>
    </feature>
    <feature id="org.polarsys.kitalpha.sirius.rotativeimage.feature.source" version="0.0.0">
-      <category name="RuntimeCoreSource"/>
+      <category name="RuntimeSource"/>
    </feature>
-   <category-def name="RuntimeCore" label="Runtime Core"/>
-   <category-def name="RuntimeCoreSource" label="Runtime Core Source"/>
    <category-def name="Runtime" label="Runtime"/>
    <category-def name="RuntimeSource" label="Runtime Source"/>
    <category-def name="Sdk" label="Sdk"/>
