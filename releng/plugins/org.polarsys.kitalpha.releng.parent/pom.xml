@@ -42,8 +42,6 @@
 		<tycho-extras-version>2.2.0</tycho-extras-version>
 		<platform-version-name>oxygen</platform-version-name>
 		<tycho.scmUrl>scm:git:https://git.polarsys.org/r/kitalpha/kitalpha</tycho.scmUrl>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
 		<tycho.surefire.useUIHarness>false</tycho.surefire.useUIHarness>
 		
 		<sourcePhase>package</sourcePhase>
@@ -192,7 +190,7 @@
 				<version>${tycho-version}</version>
 				<configuration>
 					<targetDefinitionIncludeSource>honor</targetDefinitionIncludeSource>
-					<executionEnvironment>JavaSE-14</executionEnvironment>
+					<executionEnvironment>JavaSE-11</executionEnvironment>
 					<target>
 						<artifact>
 							<groupId>org.polarsys</groupId>
