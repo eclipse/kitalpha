@@ -50,7 +50,7 @@
 		
 		<sonar.jacoco.release>0.8.6</sonar.jacoco.release>
 		
-		<rcptt-maven-version>2.5.2-SNAPSHOT</rcptt-maven-version>
+		<rcptt-maven-version>2.5.3</rcptt-maven-version>
 		
 		<target-platform-name>kitalpha</target-platform-name>
 	</properties>
