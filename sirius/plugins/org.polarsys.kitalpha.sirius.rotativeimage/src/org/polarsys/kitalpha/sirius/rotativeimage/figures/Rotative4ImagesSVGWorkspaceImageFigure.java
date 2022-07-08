@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2021 THALES GLOBAL SERVICES.
+ * Copyright (c) 2022 THALES GLOBAL SERVICES.
  * 
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License 2.0 which is available at
@@ -27,7 +27,7 @@ public class Rotative4ImagesSVGWorkspaceImageFigure extends SVGWorkspaceImageFig
 	/**
 	 * One of {@link PositionConstants} among NORTH, SOUTH, EAST, WEST
 	 */
-	private int orientation;
+	private int orientation = PositionConstants.NONE;
 
 	private String basepath;
 
@@ -41,10 +41,7 @@ public class Rotative4ImagesSVGWorkspaceImageFigure extends SVGWorkspaceImageFig
 
 	public static Rotative4ImagesSVGWorkspaceImageFigure createImageFigure(WorkspaceImage image, String basepath) {
 		Rotative4ImagesSVGWorkspaceImageFigure figure = new Rotative4ImagesSVGWorkspaceImageFigure();
-		// Set default orientation (will be changed with calls to setOrientation)
-		figure.orientation = PositionConstants.NORTH;
 		figure.basepath = basepath;
-		figure.refreshFigure(image);
 		return figure;
 	}
 
@@ -56,11 +53,13 @@ public class Rotative4ImagesSVGWorkspaceImageFigure extends SVGWorkspaceImageFig
 	 */
 	@Override
 	public void refreshFigure(final WorkspaceImage workspaceImage) {
-	    String documentKey = this.getDocumentKey();
-	    if (!documentKey.equals(this.getURI())) {
-	        this.setURI(this.getDocumentKey(), false);
-	        this.contentChanged();
-	    }
+		if (this.orientation != PositionConstants.NONE) {
+			String documentKey = this.getDocumentKey();
+			if (!documentKey.equals(this.getURI())) {
+				this.setURI(this.getDocumentKey(), false);
+				this.contentChanged();
+			}
+		}
 	}
 
 	/**
