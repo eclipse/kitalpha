@@ -11,7 +11,7 @@
  *******************************************************************************/
 target "kitalpha" with source, requirements
 
-include "https://download.eclipse.org/sirius/updates/stable/7.0.1-S20220519-115310/2021-06/targets/modules/gmf-runtime-1.14.tpd"
+include "https://download.eclipse.org/sirius/updates/milestones/7.0.2rc2/2021-06/targets/modules/gmf-runtime-1.14.tpd"
 
 location Eclipse-2021-06 "https://download.eclipse.org/releases/2021-06/" {
 	org.eclipse.m2e.feature.feature.group lazy
@@ -85,7 +85,7 @@ location acceleo "https://download.eclipse.org/acceleo/updates/releases/3.7/" {
 	org.eclipse.acceleo.doc [3.7.11,3.7.12)
 }
 
-location sirius "https://download.eclipse.org/sirius/updates/stable/7.0.1-S20220519-115310/2021-06/" {
+location sirius "https://download.eclipse.org/sirius/updates/milestones/7.0.2rc2/2021-06/" {
 	org.eclipse.sirius.doc.feature.feature.group lazy
     org.eclipse.sirius.runtime.source.feature.group lazy
     org.eclipse.sirius.runtime.acceleo.feature.group lazy
@@ -119,7 +119,7 @@ location sirius "https://download.eclipse.org/sirius/updates/stable/7.0.1-S20220
 	org.eclipse.sirius.tests.feature.group lazy
 }
 
-location EMF-DiffMerge "https://download.eclipse.org/diffmerge/stable/0.14.0-S20220524/emf-diffmerge-site/" {
+location EMF-DiffMerge "https://download.eclipse.org/diffmerge/stable/0.14.0-S20220629/emf-diffmerge-site/" {
 	org.eclipse.emf.diffmerge.feature.feature.group lazy
 	org.eclipse.emf.diffmerge.feature.source.feature.group lazy
 	org.eclipse.emf.diffmerge.sirius.feature.feature.group lazy
@@ -130,19 +130,19 @@ location EMF-DiffMerge "https://download.eclipse.org/diffmerge/stable/0.14.0-S20
 	org.eclipse.emf.diffmerge.egit.feature.source.feature.group lazy
 }
 
-location EDM-Patterns "https://download.eclipse.org/diffmerge/stable/0.14.0-S20220524/edm-patterns-site/" {
+location EDM-Patterns "https://download.eclipse.org/diffmerge/stable/0.14.0-S20220629/edm-patterns-site/" {
 	org.eclipse.emf.diffmerge.patterns.sdk.feature.feature.group lazy
 	org.eclipse.emf.diffmerge.patterns.sdk.feature.source.feature.group lazy
 	org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.feature.group lazy
 	org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.source.feature.group lazy
 }
 
-location coevolution "https://download.eclipse.org/diffmerge/stable/0.14.0-S20220524/edm-coevolution-site/" {
+location coevolution "https://download.eclipse.org/diffmerge/stable/0.14.0-S20220629/edm-coevolution-site/" {
 	 org.eclipse.emf.diffmerge.coevolution.sdk.feature.feature.group lazy
 	 org.eclipse.emf.diffmerge.coevolution.sdk.feature.source.feature.group lazy
 }
 
-location amalgam "https://download.eclipse.org/modeling/amalgam/updates/stable/1.13.0-S20220524/capella" {
+location amalgam "https://download.eclipse.org/modeling/amalgam/updates/stable/1.13.0-S20220629/capella" {
 	org.eclipse.amalgam.explorer.activity.feature.group lazy
 	org.eclipse.amalgam.explorer.activity.source.feature.group lazy
 	org.eclipse.amalgam.explorer.contextual.feature.group lazy
