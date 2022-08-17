@@ -119,7 +119,7 @@ location sirius "https://download.eclipse.org/sirius/updates/milestones/7.0.2rc3
 	org.eclipse.sirius.tests.feature.group lazy
 }
 
-location EMF-DiffMerge "https://download.eclipse.org/diffmerge/stable/0.14.0-S20220803/emf-diffmerge-site/" {
+location EMF-DiffMerge "https://download.eclipse.org/diffmerge/stable/0.14.0-S20220817/emf-diffmerge-site/" {
 	org.eclipse.emf.diffmerge.feature.feature.group lazy
 	org.eclipse.emf.diffmerge.feature.source.feature.group lazy
 	org.eclipse.emf.diffmerge.sirius.feature.feature.group lazy
@@ -130,14 +130,14 @@ location EMF-DiffMerge "https://download.eclipse.org/diffmerge/stable/0.14.0-S20
 	org.eclipse.emf.diffmerge.egit.feature.source.feature.group lazy
 }
 
-location EDM-Patterns "https://download.eclipse.org/diffmerge/stable/0.14.0-S20220803/edm-patterns-site/" {
+location EDM-Patterns "https://download.eclipse.org/diffmerge/stable/0.14.0-S20220817/edm-patterns-site/" {
 	org.eclipse.emf.diffmerge.patterns.sdk.feature.feature.group lazy
 	org.eclipse.emf.diffmerge.patterns.sdk.feature.source.feature.group lazy
 	org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.feature.group lazy
 	org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.source.feature.group lazy
 }
 
-location coevolution "https://download.eclipse.org/diffmerge/stable/0.14.0-S20220803/edm-coevolution-site/" {
+location coevolution "https://download.eclipse.org/diffmerge/stable/0.14.0-S20220817/edm-coevolution-site/" {
 	 org.eclipse.emf.diffmerge.coevolution.sdk.feature.feature.group lazy
 	 org.eclipse.emf.diffmerge.coevolution.sdk.feature.source.feature.group lazy
 }
