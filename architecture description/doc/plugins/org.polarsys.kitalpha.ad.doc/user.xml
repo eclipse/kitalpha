@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<toc label="Viewpoint Technology" link_to="PLUGINS_ROOT/org.polarsys.kitalpha.doc/kitalpha-ctk.xml#UserManual">
+   <topic label="Viewpoints">
+	  <topic href="html/usersguide/vp-lifecycle.html" label="Viewpoint life cycle">
+	  </topic>
+      <topic href="html/usersguide/viewpointmanager.html" label="Viewpoint Manager">
+      </topic>
+   </topic>
+</toc>

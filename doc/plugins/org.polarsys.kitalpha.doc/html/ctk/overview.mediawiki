@@ -1,16 +1,18 @@
-The CTK provides Modeling Commonalities.
-* Modeling tools
-** Transformation
-*** '''Composer''': a component for model-to-code generation which differentiates the logic of generation and the logic of organization and persistence in files.
-*** '''Transposer''': a component for model transformation with the ability for instance to support incremental transformations and to develop model bridges.
-*** '''Pattern integration''': an integration of the Pattern technique provided by [https://wiki.eclipse.org/EMF_DiffMerge EMF Diff/Merge].
-** Validation
-*** '''Accuracy''': a component for model validation.
-** Exchange
-*** '''Model Detachment''': an extensible component to detach information from a model, such as viewpoints.
-* Documentation
-** '''Business Doc Gen''': a framework for html documentation generation from a model. Kitalpha provides by a default an html export from an ecore model.
-* Basic tools
-** '''Resource Reuse''': a component to retrieve a resource from a version number while managing the workspace / target platform priority.
-** '''Reports''': an extensible component to report messages by filter (e.g., Debug, Info, Warning, Error) and by concerns (e.g., splitting reports by non-functional concerns).
-** '''eMDE''': a component to support model extensibility.
+= Core Components =
+
+== Modeling tools ==
+* Transformation
+** '''Composer''': a component for model-to-code generation which differentiates the logic of generation and the logic of organization and persistence in files.
+** '''Transposer''': a component for model transformation with the ability for instance to support incremental transformations and to develop model bridges.
+* Validation
+** '''Accuracy''': a component for model validation.
+* Exchange
+** '''Model Detachment''': an extensible component to detach information from a model, such as viewpoints.
+
+== Documentation ==
+* '''Business Doc Gen''': a framework for html documentation generation from a model. Kitalpha provides by a default an html export from an ecore model.
+
+== Basic tools ==
+* '''Resource Reuse''': a component to retrieve a resource from a version number while managing the workspace / target platform priority.
+* '''Reports''': an extensible component to report messages by filter (e.g., Debug, Info, Warning, Error) and by concerns (e.g., splitting reports by non-functional concerns).
+* '''eMDE''': a component to support model extensibility.

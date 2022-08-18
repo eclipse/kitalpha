@@ -6,7 +6,7 @@
 
 == An environment to develop and execute MBE workbenches… ==
 
-Kitalpha is dedicated to implement modelling frameworks and viewpoints, and this in coherence with the ISO/IEC 42010 standard for description of system architecture. In this standard, an architecture framework aggregates viewpoints. Each viewpoint describes at least one system concern, such as non-functional concerns (e.g., performance, safety, security, and cost), for involved stakeholders (e.g., safety engineer). Kitalpha extends the definition of viewpoint to also consider it as an engineering extension which comes with its own metamodels, representations (e.g., diagrams, tables, user interfaces), rules (e.g., validation, analysis, transformation), services and tools to address an engineering specialty. Consequently, an MBE workbench is the result of a flexible assembly of core viewpoints extended by new ones which are, in the context of co-engineering, appropriate and valuable for specialty engineers. The set of all the viewpoints provide a solution for the complete description of a system.
+Kitalpha is dedicated to implement modelling frameworks and viewpoints, and this in coherence with the [http://en.wikipedia.org/wiki/ISO/IEC_42010 ISO/IEC 42010 standard] for description of system architecture. In this standard, an architecture framework aggregates viewpoints. Each viewpoint describes at least one system concern, such as non-functional concerns (e.g., performance, safety, security, and cost), for involved stakeholders (e.g., safety engineer). Kitalpha extends the definition of viewpoint to also consider it as an engineering extension which comes with its own metamodels, representations (e.g., diagrams, tables, user interfaces), rules (e.g., validation, analysis, transformation), services and tools to address an engineering specialty. Consequently, an MBE workbench is the result of a flexible assembly of core viewpoints extended by new ones which are, in the context of co-engineering, appropriate and valuable for specialty engineers. The set of all the viewpoints provide a solution for the complete description of a system.
 
 == ...providing both development and runtime services to define, use and manage architecture frameworks and viewpoints ==
 
@@ -27,3 +27,7 @@ At this stage, a textual syntax with Xtext is supported, even if the foundations
 * Services for the definition of business rules, services, and parameters
 * Build to automatically generate continuous integration scripts
 * Configuration to tune the generation parameters of architecture framework and viewpoint artefacts.
+
+== Presentation ==
+
+A presentation of Kitalpha can be found [https://raw.githubusercontent.com/wiki/eclipse/kitalpha/pdf/Kitalpha-A01-Introduction-1.1.2.pdf here].

@@ -1,0 +1,18 @@
+<toc label="MDE RichText Widget" link_to="PLUGINS_ROOT/org.polarsys.kitalpha.doc/kitalpha-ctk.xml#DeveloperManual">
+	<topic label="MDE Rich Text Widget">
+       <topic href="html/programmersGuide/usecase/componentsample.html" label="Use Case: Component Sample Elements Description">
+       </topic>
+       <topic href="html/programmersGuide/architecture/bigpicture.html" label="Big Picture">
+       </topic>
+       <topic href="html/programmersGuide/manual/configuration.html" label="MDE Rich Text Configuration">
+       </topic>
+       <topic href="html/programmersGuide/manual/widget.html" label="MDE Rich Text Widget">
+       </topic>
+       <topic href="html/programmersGuide/manual/customitems.html" label="Custom Items">
+       </topic>
+    <topic label="References">
+       <topic href="html/references/apireferences/apireferences.html" label="API References">
+       </topic>
+    </topic>
+	</topic>
+</toc>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (c) 2018, 2020 Thales Global Services S.A.S.
+This program and the accompanying materials are made available under the
+terms of the Eclipse Public License 2.0 which is available at
+http://www.eclipse.org/legal/epl-2.0
+
+SPDX-License-Identifier: EPL-2.0
+ 
+Contributors:
+  Thales Global Services S.A.S - initial API and implementation
+-->
+<toc label="Mass Editing and Visualization" link_to="PLUGINS_ROOT/org.polarsys.kitalpha.doc/kitalpha-ctk.xml#DeveloperManual">
+  <topic label="Mass Editing and Visualization">
+      <topic href="html/developerManual/Introduction.html" label="Introduction">
+      </topic>
+      <topic href="html/developerManual/Tutorial.html" label="Tutorial">
+      </topic>
+      <topic label="Extension Points References">
+         <topic href="html/references/apiReferences/ColumnProvider.html" label="Column provider">
+         </topic>
+         <topic href="html/references/apiReferences/ColumnFilter.html" label="Column filter">
+         </topic>
+      </topic>
+  </topic>
+   
+</toc>

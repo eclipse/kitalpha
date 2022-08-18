@@ -12,14 +12,12 @@ Contributors:
 -->
 <toc label="EMDE" link_to="PLUGINS_ROOT/org.polarsys.kitalpha.doc/kitalpha-ctk.xml#KitalphaComponent" topic="html/emde.html">
  	<topic href="html/emde.html" label="EMDE">
-	<topic href="html/concepts.html" label="Concepts">
+	<topic href="html/emde.html#concepts" label="Concepts">
    	</topic>
-    <topic label="Programmer&apos;s Guide">
-       <topic href="html/ProgrammersGuide/extensibillitymodeling.html" label="Modeling the models extensibility and extensions">
-       </topic>
-       <topic href="html/ProgrammersGuide/emfapisgeneration.html" label="Generating extensible EMF APIs">
-       </topic>
-    </topic>   	
+    <topic href="html/ProgrammersGuide/extensibillitymodeling.html" label="Modeling the models extensibility and extensions">
+    </topic>
+    <topic href="html/ProgrammersGuide/emfapisgeneration.html" label="Generating extensible EMF APIs">
+    </topic>
    	<topic label="References">
       <topic href="html/apisreferences.html" label="APIs References">
       </topic>

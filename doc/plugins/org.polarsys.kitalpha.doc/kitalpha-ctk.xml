@@ -1,18 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<toc label="Kitalpha - Core Technology Kit Guide" topic="html/common/kitalpha.html">
- 	<topic href="html/ctk/overview.html" label="Overview">
+<toc label="Kitalpha Guide" topic="html/common/kitalpha.html">
+	
+	<topic label="Release Notes">
+	   	<topic href="html/common/news.html" label="What’s new">
+		</topic>
+	   	<topic href="html/common/knownissues.html" label="Known issues">
+		</topic>
+	</topic>
+	
+   <topic label="User Manual">
+	   <anchor id="UserManual"/>
+   	   <topic href="html/ctk/overview.html" label="Core Components">
+   	   </topic>
    </topic>
-   <anchor id="KitalphaComponent"/>
-   <topic label="Addons">
-      <anchor id="KitalphaAddons"/>
+   <topic label="Developer Manual">
+   
+   <topic href="html/ctk/overview.html" label="Core Components">
+	   <topic href="html/ctk/accuracy.html" label="Accuracy">
+		<topic href="html/ctk/accuracy.html#objectives" label="Objectives"></topic>
+		<topic href="html/ctk/accuracy.html#extensibility" label="Extensibility">
+			<topic href="html/ctk/accuracy.html#declaring-validation-rules" label="Declaring Validation Rules">
+				<topic href="html/ctk/accuracy.html#the-ocl-file" label="The Ocl File"></topic>
+				<topic href="html/ctk/accuracy.html#the-java-file" label="The Java File"></topic>
+				<topic href="html/ctk/accuracy.html#interface" label="Interface"></topic>
+				<topic href="html/ctk/accuracy.html#configuration-file" label="Configuration File"></topic>
+				<topic href="html/ctk/accuracy.html#the-constraints" label="The Constraints"></topic>
+			</topic>
+			<topic href="html/ctk/accuracy.html#contributing-constraitnes-to-accuracy" label="Contributing Constraitnes to Accuracy">
+				<topic href="html/ctk/accuracy.html#declaring-a-constraint-category-for-the-validation-rules" label="Declaring a Constraint Category For The Validation Rules"></topic>
+			</topic>
+			<topic href="html/ctk/accuracy.html#declaring-validation-rules-mapping-to-business-metamodel" label="Declaring Validation Rules Mapping to Business Metamodel">
+				<topic href="html/ctk/accuracy.html#declaring-validation-rules-mapping-to-business-metamodel2" label="Declaring Validation Rules Mapping to Business Metamodel"></topic>
+			</topic>
+		</topic>
+		<topic href="html/ctk/accuracy.html#presentation" label="Presentation"></topic>
+	</topic>
+	<topic href="html/ctk/cadence.html" label="Cadence">
+		<topic href="html/ctk/cadence.html#objectives" label="Objectives">
+			<topic href="html/ctk/cadence.html#general-schema" label="General Schema"></topic>
+			<topic href="html/ctk/cadence.html#workflow-element-and-activity" label="Workflow Element and Activity"></topic>
+		</topic>
+		<topic href="html/ctk/cadence.html#interfaces" label="Interfaces">
+			<topic href="html/ctk/cadence.html#cadencelauncher" label="CadenceLauncher"></topic>
+			<topic href="html/ctk/cadence.html#cadenceregistry" label="CadenceRegistry"></topic>
+			<topic href="html/ctk/cadence.html#cadenceuiregistry" label="CadenceUIRegistry"></topic>
+			<topic href="html/ctk/cadence.html#cadencetab" label="CadenceTab"></topic>
+		</topic>
+		<topic href="html/ctk/cadence.html#extensibility" label="Extensibility">
+			<topic href="html/ctk/cadence.html#contributing-a-workflow-to-a-process" label="Contributing a Workflow to a Process"></topic>
+			<topic href="html/ctk/cadence.html#contributing-activity-to-a-workflow" label="Contributing Activity to a Workflow">
+				<topic href="html/ctk/cadence.html#api" label="API"></topic>
+			</topic>
+		</topic>
+		<topic href="html/ctk/cadence.html#presentation" label="Presentation"></topic>
+	</topic>
+	  <topic href="html/ctk/composer.html" label="Composer">
+		<topic href="html/ctk/composer.html#objectives" label="Objectives"></topic>
+		<topic href="html/ctk/composer.html#interfaces" label="Interfaces">
+			<topic href="html/ctk/composer.html#generic-allocation-model" label="Generic Allocation Model"></topic>
+			<topic href="html/ctk/composer.html#code-manager-launcher" label="Code Manager Launcher"></topic>
+			<topic href="html/ctk/composer.html#code-manager-registry" label="Code Manager Registry"></topic>
+		</topic>
+		<topic href="html/ctk/composer.html#how-to-use-it" label="How to use it">
+			<topic href="html/ctk/composer.html#contributing-an-allocation-metamodel-and-a-binding-to-a-given-semantic-metamodel" label="Contributing an Allocation Metamodel and a Binding to a given semantic metamodel"></topic>
+			<topic href="html/ctk/composer.html#contributing-a-strategy" label="Contributing a Strategy">
+				<topic href="html/ctk/composer.html#api" label="API"></topic>
+			</topic>
+			<topic href="html/ctk/composer.html#contributing-a-refinery" label="Contributing a Refinery">
+				<topic href="html/ctk/composer.html#api2" label="API"></topic>
+			</topic>
+			<topic href="html/ctk/composer.html#contributing-a-generator" label="Contributing a Generator">
+				<topic href="html/ctk/composer.html#api3" label="API"></topic>
+			</topic>
+		</topic>
+		<topic href="html/ctk/composer.html#presentation" label="Presentation"></topic>
+	</topic>
+	  <topic href="html/ctk/resourcereuse.html" label="Resource Reuse">
+		<topic href="html/ctk/resourcereuse.html#objectives" label="Objectives"></topic>
+		<topic href="html/ctk/resourcereuse.html#api" label="API">
+			<topic href="html/ctk/resourcereuse.html#resourcehelper" label="ResourceHelper"></topic>
+			<topic href="html/ctk/resourcereuse.html#contributing-a-resource-to-resourcereuse-registry" label="Contributing a resource to ResourceReuse registry"></topic>
+		</topic>
+	</topic>
+	<topic href="html/ctk/transposer.html" label="Transposer">
+		<topic href="html/ctk/transposer.html#objectives" label="Objectives"></topic>
+		<topic href="html/ctk/transposer.html#interfaces" label="Interfaces">
+			<topic href="html/ctk/transposer.html#transposerlauncher" label="TransposerLauncher"></topic>
+			<topic href="html/ctk/transposer.html#transposerconfiguration" label="TransposerConfiguration"></topic>
+		</topic>
+		<topic href="html/ctk/transposer.html#extensibility" label="Extensibility">
+			<topic href="html/ctk/transposer.html#transposerworkflow" label="TransposerWorkflow">
+				<topic href="html/ctk/transposer.html#itransposerworkflow" label="ITransposerWorkflow"></topic>
+			</topic>
+			<topic href="html/ctk/transposer.html#customising-the-the-transposer-behaviour" label="Customising The The Transposer Behaviour"></topic>
+			<topic href="html/ctk/transposer.html#itransposer" label="ITransposer"></topic>
+			<topic href="html/ctk/transposer.html#ischeduler" label="IScheduler"></topic>
+			<topic href="html/ctk/transposer.html#irulehandler" label="IRuleHandler"></topic>
+			<topic href="html/ctk/transposer.html#itransposertask" label="ITransposerTask"></topic>
+			<topic href="html/ctk/transposer.html#contributing-a-set-of-rules-to-transposer" label="Contributing a Set Of Rules to Transposer">
+				<topic href="html/ctk/transposer.html#apis" label="APIs">
+					<topic href="html/ctk/transposer.html#irule-interface" label="IRule Interface"></topic>
+					<topic href="html/ctk/transposer.html#idomainhelper-interface" label="IDomainHelper Interface"></topic>
+				</topic>
+			</topic>
+		</topic>
+		<topic href="html/ctk/transposer.html#presentation" label="Presentation"></topic>
+	</topic>
+	<topic href="html/ctk/detachment.html" label="Model Detachment">
+		<topic href="html/ctk/detachment.html#presentation" label="Presentation"></topic>
+	</topic>
+	   <anchor id="KitalphaComponent"/>
    </topic>
-   <topic label="Viewpoints">
-      <anchor id="KitalphaViewpoints"/>
+	<topic label="Addons">
+	   <anchor id="KitalphaAddons"/>
+	</topic>
+	<topic label="Viewpoints">
+	   <anchor id="KitalphaViewpoints"/>
+	</topic>
+	   <anchor id="DeveloperManual"/>
    </topic>
-   <topic href="html/ctk/news.html" label="What’s new">
-   </topic>
-   <topic href="html/common/underconstruction.html" label="FAQ">
-   </topic>
-   <topic href="html/common/legal.html" label="Legal">
-   </topic>
+   
 </toc>

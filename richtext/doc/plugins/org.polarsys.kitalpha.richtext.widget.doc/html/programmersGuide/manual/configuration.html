@@ -1,12 +1,61 @@
-<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>configuration</title><link type="text/css" rel="stylesheet" href="PLUGINS_ROOT/org.polarsys.kitalpha.doc/html/common/style/style.css"/></head><body><h1 id="MDE_Rich_Text_Configuration">MDE Rich Text Configuration</h1><p>MDE Rich Text Configuration is set of key/value structure that allows to configure the underlying <a href="/wiki/http://www.ckeditor.com" title="http://www.ckeditor.com">CKEditor</a> component.
-The configuration allows to customize the editor and adding new features. For more information, please refers to <a href="/wiki/https://docs.ckeditor.com/#.21.2Fguide.2Fdev_configuration" title="https://docs.ckeditor.com/#!/guide/dev_configuration">setting configuration</a> and <a href="/wiki/https://docs.ckeditor.com/#.21.2Fapi.2FCKEDITOR.config" title="https://docs.ckeditor.com/#!/api/CKEDITOR.config">CKEDITOR.config</a> pages.</p><p>The implementation <i>org.polarsys.kitalpha.richtext.nebula.widget.MDENebulaRichTextConfiguration</i> is an extension of <i>org.eclipse.nebula.widgets.richtext.RichTextEditorConfiguration</i> and it is aware of default configuration of the MDE Rich Text Editor.</p><p>The default configuration is located in Javascript resource in <i>org.polarsys.kitalpha.richtext.nebula.widget/resources/config.js</i>. The configuration specify that the widget allows all content, activate the native spell checker of the editor, encode special characters in serialized format...</p><p>The resource is setted in configuration with <i>customConfig</i> key and fully path to config.js.</p><p>The MDERichTextConfiguration provides facilities to configure the toolbar by adding items, to set position of the toolbar in widget...</p><p>A set of keys which allows to configure the widget are listed in <i>org.polarsys.kitalpha.richtext.nebula.widget.MDERichTextConstants</i></p><h4 id="Toolbar_configuration">Toolbar configuration</h4><p>The easy way to configure the toolbar is to use the dedicated method to add items to groups. the method is initializeToolbarItem(String toolbar, String... items);</p><p>After that, the configuration is transformed to the following patterns:</p><pre class="source-Javascript">[{name: toolbar1, groups = [ items1, items2... ]}, {name: toolbar2, groups = [ items3... ]}]
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>configuration</title>
+		<link type="text/css" rel="stylesheet" href="PLUGINS_ROOT/org.polarsys.kitalpha.doc/html/common/style/style.css"/>
+	</head>
+	<body>
+		<h1 id="MDE_Rich_Text_Configuration">MDE Rich Text Configuration</h1>
+		<p>MDE Rich Text Configuration is set of key/value structure that allows to configure the underlying 
+			<a href="/wiki/http://www.ckeditor.com" title="http://www.ckeditor.com">CKEditor</a> component.
+			The configuration allows to customize the editor and adding new features. For more information, please refers to 
+			<a href="/wiki/https://docs.ckeditor.com/#.21.2Fguide.2Fdev_configuration" title="https://docs.ckeditor.com/#!/guide/dev_configuration">setting configuration</a> and 
+			<a href="/wiki/https://docs.ckeditor.com/#.21.2Fapi.2FCKEDITOR.config" title="https://docs.ckeditor.com/#!/api/CKEDITOR.config">CKEDITOR.config</a> pages.
+		</p>
+		<p>The implementation 
+			<i>org.polarsys.kitalpha.richtext.nebula.widget.MDENebulaRichTextConfiguration</i> is an extension of 
+			<i>org.eclipse.nebula.widgets.richtext.RichTextEditorConfiguration</i> and it is aware of default configuration of the MDE Rich Text Editor.
+		</p>
+		<p>The default configuration is located in Javascript resource in 
+			<i>org.polarsys.kitalpha.richtext.nebula.widget/resources/config.js</i>. The configuration specify that the widget allows all content, activate the native spell checker of the editor, encode special characters in serialized format...
+		</p>
+		<p>The resource is setted in configuration with 
+			<i>customConfig</i> key and fully path to config.js.
+		</p>
+		<p>The MDERichTextConfiguration provides facilities to configure the toolbar by adding items, to set position of the toolbar in widget...</p>
+		<p>A set of keys which allows to configure the widget are listed in 
+			<i>org.polarsys.kitalpha.richtext.nebula.widget.MDERichTextConstants</i>
+		</p>
+		<h4 id="Toolbar_configuration">Toolbar configuration</h4>
+		<p>The easy way to configure the toolbar is to use the dedicated method to add items to groups. the method is initializeToolbarItem(String toolbar, String... items);</p>
+		<p>After that, the configuration is transformed to the following patterns:</p>
+		<pre class="source-Javascript">[{name: toolbar1, groups = [ items1, items2... ]}, {name: toolbar2, groups = [ items3... ]}]
 
-</pre><p>After the transformation, the key <i>TOOLBAR_GROUPS</i> to the result.</p><h3 id="Examples">Examples</h3><h4 id="Add_group_of_items_to_toolbar">Add group of items to toolbar</h4><p>This snippet add style group to toolbar.</p><pre class="source-Java">	final MDENebulaRichTextConfiguration configuration;
+</pre>
+		<p>After the transformation, the key 
+			<i>TOOLBAR_GROUPS</i> to the result.
+		</p>
+		<h3 id="Examples">Examples</h3>
+		<h4 id="Add_group_of_items_to_toolbar">Add group of items to toolbar</h4>
+		<p>This snippet add style group to toolbar.</p>
+		<pre class="source-Java">	final MDENebulaRichTextConfiguration configuration;
 	configuration.initializeToolbarItem(MDERichTextConstants.STYLES_TOOLBAR);
 
-</pre><p><img width="600" alt="Add group of items to the toolbar" border="0" src="../../img/richtext_config_style_toolbar.png"/></p><h4 id="Change_the_position_and_the_color_of_the_toolbar">Change the position and the color of the toolbar</h4><p>This snippet shows how to configure the position toolbar and the color of the toolbar</p><pre class="source-Java">	final MDENebulaRichTextConfiguration configuration;
+</pre>
+		<p>
+			<img width="600" alt="Add group of items to the toolbar" border="0" src="../../img/richtext_config_style_toolbar.png"/>
+		</p>
+		<h4 id="Change_the_position_and_the_color_of_the_toolbar">Change the position and the color of the toolbar</h4>
+		<p>This snippet shows how to configure the position toolbar and the color of the toolbar</p>
+		<pre class="source-Java">	final MDENebulaRichTextConfiguration configuration;
 	configuration.initializeToolbarItem(MDERichTextConstants.BASIC_STYLES);
 	configuration.setOption(MDERichTextConstants.TOOLBAR_POSITION, MDERichTextConstants.TOOLBAR_POSITION_BOTTOM);
 	configuration.setOption(MDERichTextConstants.UI_COLOR, "#AAAAFF");
 
-</pre><p><img width="600" alt="Add group of items to the toolbar" border="0" src="../../img/richtext_config_style_toolbar_color.png"/></p></body></html>
+</pre>
+		<p>
+			<img width="600" alt="Add group of items to the toolbar" border="0" src="../../img/richtext_config_style_toolbar_color.png"/>
+		</p>
+	</body>
+</html>

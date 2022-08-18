@@ -1,0 +1,10 @@
+<toc label="MDE RichText Widget" link_to="PLUGINS_ROOT/org.polarsys.kitalpha.doc/kitalpha-ctk.xml#UserManual">
+	<topic label="MDE Rich Text Widget">
+	    <topic href="html/overview.html" label="Overview">
+	    </topic>
+	    <topic href="html/examples.html" label="Examples">
+	    </topic>
+	    <topic label="User Interface" href="html/usersGuide/usersguide.html">
+	    </topic>
+	</topic>
+</toc>

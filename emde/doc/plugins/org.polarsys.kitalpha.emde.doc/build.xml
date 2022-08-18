@@ -26,13 +26,19 @@
 			<include name="*.jar"/>
 		</fileset>
 	</path>
-        
-	<taskdef classpathref="wikitext.classpath" resource="org/eclipse/mylyn/wikitext/core/ant/tasks.properties" />
+
+	<taskdef classpathref="wikitext.classpath" resource="org/eclipse/mylyn/wikitext/ant/tasks.properties" />
 
 	<target name="generate-html" description="Generate HTML from textile source">
-		<wikitext-to-html markupLanguage="MediaWiki">
+		<wikitext-to-html markupLanguage="MediaWiki" formatOutput="true" defaultAbsoluteLinkTarget="_blank">
 			<fileset dir="${basedir}">
 				<include name="**/*.mediawiki"/>
+			</fileset>
+			<stylesheet url="PLUGINS_ROOT/org.polarsys.kitalpha.doc/html/common/style/style.css"/>
+		</wikitext-to-html>
+		<wikitext-to-html markupLanguage="Markdown" formatOutput="true" defaultAbsoluteLinkTarget="_blank">
+			<fileset dir="${basedir}">
+				<include name="**/*md"/>
 			</fileset>
 			<stylesheet url="PLUGINS_ROOT/org.polarsys.kitalpha.doc/html/common/style/style.css"/>
 		</wikitext-to-html>

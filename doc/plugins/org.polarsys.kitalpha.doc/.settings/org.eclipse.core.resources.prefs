@@ -1,4 +1,8 @@
 eclipse.preferences.version=1
-encoding//html/common/legal.html=UTF-8
-encoding//html/ctk/news.html=UTF-8
+encoding//html/common/news.html=UTF-8
+encoding//html/ctk/accuracy.html=UTF-8
+encoding//html/ctk/cadence.html=UTF-8
+encoding//html/ctk/composer.html=UTF-8
 encoding//html/ctk/overview.html=UTF-8
+encoding//html/ctk/resourcereuse.html=UTF-8
+encoding//html/ctk/transposer.html=UTF-8

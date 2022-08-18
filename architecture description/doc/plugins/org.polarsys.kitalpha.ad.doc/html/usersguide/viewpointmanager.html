@@ -1,5 +1,129 @@
-<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>viewpointmanager</title><link type="text/css" rel="stylesheet" href="PLUGINS_ROOT/org.polarsys.kitalpha.doc/html/common/style/style.css"/></head><body><h1 id="The_Viewpoint_Manager">The Viewpoint Manager</h1><h2 id="Introduction">Introduction</h2><p>The Viewpoint Manager enables to manage the state of viewpoints used by a project. Once a viewpoint is installed, in conformance to the Viewpoint Lifecycle, four actions are available in the viewpoint manager: reference, unreference, activate, deactivate.</p><p><blockquote>
-<i>Note:</i>  
-<i>This management, introduced in Kitalpha 1.1.0, differs from the older versions of Kitalpha when the management of viewpoints was at the workspace level and the viewpoint actions were Start and Stop.</i> 
-</blockquote></p><h2 id="Management_of_viewpoint_at_the_project_level">Management of viewpoint at the project level</h2><p>The state of viewpoint is individually managed by project. To know or change the state of a viewpoint for a project:</p><ul><li>Click on a model element of the project (e.g., on an element of the project browser, on a diagram or diagram element)</li><li>Visualize the viewpoint state in the viewpoint manager</li></ul><h2 id="Open_the_Viewpoint_Manager_view">Open the Viewpoint Manager view</h2><ul><li>Menu sequence [Window]/[Show View]/[Other…]</li><li>In the "Kitalpha" section of the "Show View" window, select "Viewpoint Manager"</li><li>Click on "OK"</li></ul><h2 id="Reference">Reference</h2><p>After installation, the initial state of a viewpoint in the viewpoint manager is <i>Unsed</i> .</p><p><div class="thumb"><div class="thumbinner" style="width:452px;"><a href="../img/KitalphaViewpointManagerUnused.png" class="image"><img class="thumbimage" width="450" border="0" src="../img/KitalphaViewpointManagerUnused.png"/></a></div></div></p><h3 id="Reference_of_viewpoint">Reference of viewpoint</h3><p>Referencing a viewpoint enables to use this viewpoint.</p><ul><li>Right-click on a viewpoint in the list of the Viewpoint Manager</li><li>Select Reference</li></ul><p><div class="thumb"><div class="thumbinner" style="width:452px;"><a href="../img/KitalphaViewpointManagerReference.png" class="image"><img class="thumbimage" width="450" border="0" src="../img/KitalphaViewpointManagerReference.png"/></a></div></div></p><h3 id="Show_the_details_of_a_viewpoint">Show the details of a viewpoint</h3><ul><li>Right-click on a viewpoint of the Viewpoint Manager</li><li>Select the view proposed in the "Show in view" menu</li></ul><h2 id="Unreference">Unreference</h2><h3 id="Unreference_of_viewpoint">Unreference of viewpoint</h3><p>Unreferencing a viewpoint enables to stop using a viewpoint.</p><ul><li>Save the project</li><li>Right-click on a viewpoint in the list of the Viewpoint Manager</li><li>Select Unreference</li></ul><p><div class="thumb"><div class="thumbinner" style="width:452px;"><a href="../img/KitalphaViewpointManagerUnreference.png" class="image"><img class="thumbimage" width="450" border="0" src="../img/KitalphaViewpointManagerUnreference.png"/></a></div></div></p><h3 id="Detachment_of_viewpoint_data">Detachment of viewpoint data</h3><p>The action of unreferencing is not straightforward. This requires that all the viewpoint data must be removed from the project using this viewpoint by a detachment action.</p><ul><li>The Model Detachment is automatically launched</li><li>Go to the "Viewpoints Tree Page"</li><li>Unselect the viewpoint</li><li>Click on "Launch Detachment</li></ul><p><div class="thumb"><div class="thumbinner" style="width:452px;"><a href="../img/KitalphaViewpointLifecycleUnferenceAndDetachment.png" class="image"><img class="thumbimage" width="450" border="0" src="../img/KitalphaViewpointLifecycleUnferenceAndDetachment.png"/></a></div></div></p><h2 id="Deactivate">Deactivate</h2><p>The deactivation enables to deactivate all the representations of the viewpoint (e.g., in the model browser, diagrams) without unreferencing the viewpoint.</p><ul><li>Right-click on a viewpoint in the list of the Viewpoint Manager</li><li>Select Deactivate</li></ul><p><div class="thumb"><div class="thumbinner" style="width:452px;"><a href="../img/KitalphaViewpointManagerDeactivate.png" class="image"><img class="thumbimage" width="450" border="0" src="../img/KitalphaViewpointManagerDeactivate.png"/></a></div></div></p><h2 id="Activate">Activate</h2><p>The activation enables to activate all the representations of the viewpoint (e.g., in the model browser, diagrams) when the viewpoint was previsouly deactivated.</p><ul><li>Right-click on a viewpoint in the list of the Viewpoint Manager</li><li>Select Activate</li></ul><p><div class="thumb"><div class="thumbinner" style="width:452px;"><a href="../img/KitalphaViewpointManagerActivate.png" class="image"><img class="thumbimage" width="450" border="0" src="../img/KitalphaViewpointManagerActivate.png"/></a></div></div></p><h2 id="Option_of_Activation.2FDeactivation">Option of Activation/Deactivation</h2><p>By default, the actions Activate / Deactivate are not available.
-The boolean "activable" in the Configuration section of the Viewpoint DSL enables to make available this option visible in the contextual menu of the viewpoint manager.</p></body></html>
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>viewpointmanager</title>
+		<link type="text/css" rel="stylesheet" href="PLUGINS_ROOT/org.polarsys.kitalpha.doc/html/common/style/style.css"/>
+	</head>
+	<body>
+		<h1 id="Viewpoint_Manager">Viewpoint Manager</h1>
+		<h2 id="Introduction">Introduction</h2>
+		<p>The Viewpoint Manager enables to manage the state of viewpoints used by a project. Once a viewpoint is installed, in conformance to the Viewpoint Lifecycle, four actions are available in the viewpoint manager: reference, unreference, activate, deactivate.</p>
+		<p><blockquote>
+			Note:  
+			This management, introduced in Kitalpha 1.1.0, differs from the older versions of Kitalpha when the management of viewpoints was at the workspace level and the viewpoint actions were Start and Stop.
+</blockquote></p>
+		<h2 id="Management_of_viewpoint_at_the_project_level">Management of viewpoint at the project level</h2>
+		<p>The state of viewpoint is individually managed by project. To know or change the state of a viewpoint for a project:</p>
+		<ul>
+			<li>Click on a model element of the project (e.g., on an element of the project browser, on a diagram or diagram element)</li>
+			<li>Visualize the viewpoint state in the viewpoint manager</li>
+		</ul>
+		<h2 id="Open_the_Viewpoint_Manager_view">Open the Viewpoint Manager view</h2>
+		<ul>
+			<li>Menu sequence [Window]/[Show View]/[Other…]</li>
+			<li>In the "Kitalpha" section of the "Show View" window, select "Viewpoint Manager"</li>
+			<li>Click on "OK"</li>
+		</ul>
+		<h2 id="Reference">Reference</h2>
+		<p>After installation, the initial state of a viewpoint in the viewpoint manager is 
+			<i>Unsed</i> .
+		</p>
+		<p>
+			<div class="thumb">
+				<div class="thumbinner" style="width:452px;">
+					<a href="../img/KitalphaViewpointManagerUnused.png" class="image">
+						<img class="thumbimage" width="450" border="0" src="../img/KitalphaViewpointManagerUnused.png"/>
+					</a>
+				</div>
+			</div>
+		</p>
+		<h3 id="Reference_of_viewpoint">Reference of viewpoint</h3>
+		<p>Referencing a viewpoint enables to use this viewpoint.</p>
+		<ul>
+			<li>Right-click on a viewpoint in the list of the Viewpoint Manager</li>
+			<li>Select Reference</li>
+		</ul>
+		<p>
+			<div class="thumb">
+				<div class="thumbinner" style="width:452px;">
+					<a href="../img/KitalphaViewpointManagerReference.png" class="image">
+						<img class="thumbimage" width="450" border="0" src="../img/KitalphaViewpointManagerReference.png"/>
+					</a>
+				</div>
+			</div>
+		</p>
+		<h3 id="Show_the_details_of_a_viewpoint">Show the details of a viewpoint</h3>
+		<ul>
+			<li>Right-click on a viewpoint of the Viewpoint Manager</li>
+			<li>Select the view proposed in the "Show in view" menu</li>
+		</ul>
+		<h2 id="Unreference">Unreference</h2>
+		<h3 id="Unreference_of_viewpoint">Unreference of viewpoint</h3>
+		<p>Unreferencing a viewpoint enables to stop using a viewpoint.</p>
+		<ul>
+			<li>Save the project</li>
+			<li>Right-click on a viewpoint in the list of the Viewpoint Manager</li>
+			<li>Select Unreference</li>
+		</ul>
+		<p>
+			<div class="thumb">
+				<div class="thumbinner" style="width:452px;">
+					<a href="../img/KitalphaViewpointManagerUnreference.png" class="image">
+						<img class="thumbimage" width="450" border="0" src="../img/KitalphaViewpointManagerUnreference.png"/>
+					</a>
+				</div>
+			</div>
+		</p>
+		<h3 id="Detachment_of_viewpoint_data">Detachment of viewpoint data</h3>
+		<p>The action of unreferencing is not straightforward. This requires that all the viewpoint data must be removed from the project using this viewpoint by a detachment action.</p>
+		<ul>
+			<li>The Model Detachment is automatically launched</li>
+			<li>Go to the "Viewpoints Tree Page"</li>
+			<li>Unselect the viewpoint</li>
+			<li>Click on "Launch Detachment</li>
+		</ul>
+		<p>
+			<div class="thumb">
+				<div class="thumbinner" style="width:452px;">
+					<a href="../img/KitalphaViewpointLifecycleUnferenceAndDetachment.png" class="image">
+						<img class="thumbimage" width="450" border="0" src="../img/KitalphaViewpointLifecycleUnferenceAndDetachment.png"/>
+					</a>
+				</div>
+			</div>
+		</p>
+		<h2 id="Deactivate">Deactivate</h2>
+		<p>The deactivation enables to deactivate all the representations of the viewpoint (e.g., in the model browser, diagrams) without unreferencing the viewpoint.</p>
+		<ul>
+			<li>Right-click on a viewpoint in the list of the Viewpoint Manager</li>
+			<li>Select Deactivate</li>
+		</ul>
+		<p>
+			<div class="thumb">
+				<div class="thumbinner" style="width:452px;">
+					<a href="../img/KitalphaViewpointManagerDeactivate.png" class="image">
+						<img class="thumbimage" width="450" border="0" src="../img/KitalphaViewpointManagerDeactivate.png"/>
+					</a>
+				</div>
+			</div>
+		</p>
+		<h2 id="Activate">Activate</h2>
+		<p>The activation enables to activate all the representations of the viewpoint (e.g., in the model browser, diagrams) when the viewpoint was previsouly deactivated.</p>
+		<ul>
+			<li>Right-click on a viewpoint in the list of the Viewpoint Manager</li>
+			<li>Select Activate</li>
+		</ul>
+		<p>
+			<div class="thumb">
+				<div class="thumbinner" style="width:452px;">
+					<a href="../img/KitalphaViewpointManagerActivate.png" class="image">
+						<img class="thumbimage" width="450" border="0" src="../img/KitalphaViewpointManagerActivate.png"/>
+					</a>
+				</div>
+			</div>
+		</p>
+		<h2 id="Option_of_Activation.2FDeactivation">Option of Activation/Deactivation</h2>
+		<p>By default, the actions Activate / Deactivate are not available.
+			The boolean "activable" in the Configuration section of the Viewpoint DSL enables to make available this option visible in the contextual menu of the viewpoint manager.</p>
+	</body>
+</html>

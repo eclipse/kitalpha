@@ -1,3 +1,4 @@
 = Technology =
 
-Kitalpha's documentation generation technology relies on [https://www.eclipse.org/egf/ EGF]. Details on the toolset, its architecture and usage can be found in the [https://wiki.eclipse.org/images/c/c5/Kitalpha-xhtmlDocGenFramework-1.0.0.pdf DocGen Framework] presentation.
+Kitalpha's documentation generation technology relies on [https://www.eclipse.org/egf/ EGF]. Details on the toolset, its architecture and usage can be found in the [https://raw.githubusercontent.com/wiki/eclipse/kitalpha/pdf/Kitalpha-xhtmlDocGenFramework-1.0.0.pdf DocGen Framework] presentation.
+

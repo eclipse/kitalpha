@@ -1,3 +1,0 @@
-= Kitalpha - Documentation generation Technology  =
-
-Kitalpha's documentation generation technology aims at providing tools for the generation of html documentation from EMF-based models.

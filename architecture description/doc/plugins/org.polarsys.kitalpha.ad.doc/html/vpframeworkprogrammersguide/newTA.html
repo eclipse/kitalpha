@@ -1,2 +1,488 @@
-<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>newTA</title><link type="text/css" rel="stylesheet" href="PLUGINS_ROOT/org.polarsys.kitalpha.doc/html/common/style/style.css"/></head><body><h1 id="Defining_a_new__Target_Application">Defining a new  Target Application</h1><p>The three phases shown in the picture below describe how to create a new Target Application.</p><p><div class="thumb"><div class="thumbinner" style="width:702px;"><a href="../img/newTA-steps.png" class="image"><img class="thumbimage" width="700" border="0" src="../img/newTA-steps.png"/></a></div></div></p><h2 id="Phase_1._Creating_new_Target_Application">Phase 1. Creating new Target Application</h2><ul><li><b>Extension point:</b>  org.polarsys.kitalpha.ad.ta.definition</li><li><b>Description:</b> Contributions must define a Definition element. It allows to provide all information the viewpoint DSL editors and generations need for the viewpoint specification and generation.</li></ul><table border="1"><tr><td><b>Name</b> </td><td>Setting the name of a Target Application. In most cases, this attribute contains the name of the targeted MBE.</td></tr><tr><td><b>Root Project Name</b> </td><td>Providing a project name namespace to initialize the viewpoint root project name configuration attribute. End-users can customize this value in the viewpoint specification files (*.conf.vptext or *.vpdesc). This attribute value must respect all rules related to the Eclipse platform project naming.<p>The Viewpoint generation uses the root project name to define each generated project name. For example, the project wherein the Sirius diagrams are generated is named as: [root project name].design.</p></td></tr><tr><td><b>Class</b> </td><td>Providing an implementation of <i>org.polarsys.kitalpha.ad.ta.extension.ITargetApplication</i>  Java interface. This class provides to the viewpoint generation the following information:<ul><li>A List of EClasses to use as super classes for each generated EClass.</li><li>Defaults generations used each time a viewpoint is generated (exp: EMF Generation)</li></ul></td></tr><tr><td><b>Root NsUri</b> </td><td>Providing an NsUri namespace to use in the generated Ecore models. The format of NsUris of any generated ecore is: [Root NsUri].[Viewpoint short name].</td></tr><tr><td><b>Description</b> </td><td>Providing a short description of the Target Application..</td></tr></table><h2 id="Phase_2._Binding_MBE_resources">Phase 2. Binding MBE resources</h2><h3 id="Step_1._External_data_loader">Step 1. External data loader</h3><h4 id="Implementation">Implementation</h4><table border="1"><tr><td><b>Plugin name</b> </td><td>org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper</td></tr><tr><td><b>Java Package</b> </td><td>org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.extension</td></tr><tr><td><b>Class name</b> </td><td>ExtensionManager</td></tr></table><h4 id="Extension_point.28s.29">Extension point(s)</h4><table border="1"><tr><td><b>Name</b> </td><td><b>Plugin</b> </td><td><b>Schema</b> </td></tr><tr><td><b>externaldataloader</b> </td><td>org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.common</td><td>externaldataloader.exsd</td></tr></table><h4 id="Extension.28s.29">Extension(s)</h4><table border="1"><tr><td><b>Description</b> </td><td colspan="2">Contributions must bind the Target Application with the NsURIs of the targeted MBE Ecore model.</td></tr><tr><td rowspan="2"><b>ExternalDataLoader</b> </td><td><b>ID</b> </td><td>Providing an id of the External Data Loader</td></tr><tr><td><b>Target</b> </td><td>Providing an id of the External Data Loader</td></tr><tr><td rowspan="2"><b>NameSpacePattern</b> </td><td><b>ID</b> </td><td>Providing an id of the Name Space Pattern</td></tr><tr><td><b>Value</b> </td><td>A Pattern representing all or a subset of Targeted MBE ecore NsURIs</td></tr></table><h3 id="Step_2._Diagram_filter">Step 2. Diagram filter</h3><h4 id="Implementation_2">Implementation</h4><table border="1"><tr><td><b>Plugin name</b> </td><td>org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper</td></tr><tr><td><b>Java Package</b> </td><td>org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper.extension</td></tr><tr><td><b>Class name</b> </td><td>ExtensionManager</td></tr></table><h4 id="Extension_point.28s.29_2">Extension point(s)</h4><table border="1"><tr><td><b>Name</b> </td><td><b>Plugin</b> </td><td><b>Schema</b> </td></tr><tr><td>diagramfilter</td><td>org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper</td><td>diagramfilter.exsd</td></tr></table><h4 id="Extension.28s.29_2">Extension(s)</h4><table border="1"><tr><td><b>Description</b> </td><td colspan="2">Contributions must define a Filter element that allow to bind a Target Application with the targeted MBE model file extension. Many filters can be defined.</td></tr><tr><td rowspan="2"><b>Filter</b> </td><td><b>Target Application</b> </td><td>Selecting the concerned Target Application</td></tr><tr><td><b>Model File Extension</b> </td><td>Providing the model file extension</td></tr></table><h3 id="Step_3._Diagram_expression_language">Step 3. Diagram expression language</h3><h4 id="Implementation_3">Implementation</h4><table border="1"><tr><td><b>Plugin name</b> </td><td>org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper</td></tr><tr><td><b>Java Package</b> </td><td>org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.extension</td></tr><tr><td><b>Class name</b> </td><td>ExtensionManager</td></tr></table><h4 id="Extension_point.28s.29_3">Extension point(s)</h4><table border="1"><tr><td><b>Name</b> </td><td><b>Plugin</b> </td><td><b>Schema</b> </td></tr><tr><td>diagramExpressionLanguage</td><td>org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper</td><td>diagramExpressionLanguage.exsd</td></tr></table><h4 id="Extension.28s.29_3">Extension(s)</h4><table border="1"><tr><td><b>Description</b> </td><td colspan="2">Contributions must define an Expression element that allow to bind a Target Application with the expression language supported by the targeted MBE.</td></tr><tr><td rowspan="2"><b>Filter</b> </td><td><b>Target Application</b> </td><td>Selecting the concerned Target Application</td></tr><tr><td><b>Language</b> </td><td>Choosing one of the following languages:<ul><li>Acceleo 3</li><li>Query Legacy</li></ul></td></tr></table><h2 id="Phase_3._Declaring_MBE_technical_specificities">Phase 3. Declaring MBE technical specificities</h2><h3 id="Step_1._Diagram_expression_language">Step 1. Diagram expression language</h3><h4 id="Implementation_4">Implementation</h4><table border="1"><tr><td><b>Plugin name</b> </td><td>org.polarsys.kitalpha.ad.viewpoint.dsl.generation.ui</td></tr><tr><td><b>Java Package</b> </td><td>org.polarsys.kitalpha.ad.viewpoint.dsl.generation.ui.extension</td></tr><tr><td><b>Class name</b> </td><td>UIPropertiesExtensionManager</td></tr></table><h4 id="Extension_point.28s.29_4">Extension point(s)</h4><table border="1"><tr><td><b>Name</b> </td><td><b>Plugin</b> </td><td><b>Schema</b> </td></tr><tr><td>UIPropertiesContributors</td><td>org.polarsys.kitalpha.ad.viewpoint.dsl.generation.ui</td><td>UIPropertiesContributors.exsd</td></tr></table><h4 id="Extension.28s.29_4">Extension(s)</h4><table border="1"><tr><td><b>Description</b> </td><td colspan="2">Contributions provide properties contributors information to use in property view generation. A PropertyContributor is defined by extension point org.eclipse.properties.tabbed.propertyContributor.</td></tr><tr><td><b>PropertiesContributors</b> </td><td><b>Target Application</b> </td><td>Selecting the concerned Target Application</td></tr><tr><td rowspan="4"><b>Contributor</b> </td></tr><tr><td><b>Id</b> </td><td>Providing a Contributor ID</td></tr><tr><td><b>Name</b> </td><td>Providing a name of this contributor</td></tr><tr><td><b>Property tab category</b> </td><td>Providing a Property Category</td></tr></table><h3 id="Step_2._Customs_generations">Step 2. Customs generations</h3><h4 id="Implementation_5">Implementation</h4><table border="1"><tr><td><b>Plugin name</b> </td><td>org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core</td></tr><tr><td><b>Java Package</b> </td><td>org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core.extension</td></tr><tr><td><b>Class name</b> </td><td>IExtensionFilter, AbstractAspectExtensionFilter</td></tr></table><h4 id="Extension_point.28s.29_5">Extension point(s)</h4><table border="1"><tr><td><b>Name</b> </td><td><b>Plugin</b> </td><td><b>Schema</b> </td></tr><tr><td>ExtensionLauncher</td><td>org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core</td><td>ExtensionLauncher.exsd</td></tr></table><h4 id="Extension.28s.29_5">Extension(s)</h4><table border="1"><tr><td><b>Description</b></td><td colspan="2">Contributions provide a generation that is available only for one Target Application by:<ol><li>Declaring the generation as un extension to the Viewpoint Core generation (using <b>Launcher</b> element)</li><li>Binding the generation with an existing Target Application (using a <b>Filter</b> element)</li></ol></td></tr><tr><td rowspan="4"><b>Launcher</b></td><td><b>Name</b></td><td>Setting a name for the generation, it will be displayed in the “Generation with selection” wizard.</td></tr><tr><td><b>Fcore</b></td><td>Referencing the EGF activity that represent the root element of the generation. The Fcore<p>attribute value must follows the following format:
-<i>platform:/plugin/[Plugin ID]/[Folder]/[File name].fcore#[Activity ID]</i></p></td></tr><tr><td><b>Category</b></td><td>Generation categories are used to differentiate generations. Two categories are defined:<ol><li><b>Aspect</b>: generations are sensitive to the viewpoint specification. In general, they are related to a viewpoint Aspect. The result of these generations vary according to viewpoints</li><li><b>Addition</b>: generations aren’t sensitive to the viewpoint specification. In the most cases, this kind of generation can uses some viewpoint data like configuration attributes or viewpoint name/short name but not more. The result doesn’t vary from a viewpoint to another.</li></ol></td></tr><tr><td><b>Description</b></td><td>Setting a short description for a generation, it will be displayed in the “Generation with selection” wizard.</td></tr><tr><td rowspan="2"><b>Filter</b></td><td><b>TargetApplication</b></td><td>Selecting the Target Application with which the generation is associated. The current generation will not be visible for the other generations.</td></tr><tr><td><b>Java</b></td><td>Providing a Java implementation of a filter that activate/deactivate a generation depending on the generation context.<p>A Java filter must implements IExtensionFilter java interface (see previous page). It can inherits from AbstractAspectExtensionFilter Java abstract class (see previous page).</p></td></tr></table></body></html>
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>newTA</title>
+		<link type="text/css" rel="stylesheet" href="PLUGINS_ROOT/org.polarsys.kitalpha.doc/html/common/style/style.css"/>
+	</head>
+	<body>
+		<h1 id="Defining_a_new__Target_Application">Defining a new  Target Application</h1>
+		<p>The three phases shown in the picture below describe how to create a new Target Application.</p>
+		<p>
+			<div class="thumb">
+				<div class="thumbinner" style="width:702px;">
+					<a href="../img/newTA-steps.png" class="image">
+						<img class="thumbimage" width="700" border="0" src="../img/newTA-steps.png"/>
+					</a>
+				</div>
+			</div>
+		</p>
+		<h2 id="Phase_1._Creating_new_Target_Application">Phase 1. Creating new Target Application</h2>
+		<ul>
+			<li>
+				<b>Extension point:</b>  org.polarsys.kitalpha.ad.ta.definition
+			</li>
+			<li>
+				<b>Description:</b> Contributions must define a Definition element. It allows to provide all information the viewpoint DSL editors and generations need for the viewpoint specification and generation.
+			</li>
+		</ul>
+		<table border="1">
+			<tr>
+				<td>
+					<b>Name</b> 
+				</td>
+				<td>Setting the name of a Target Application. In most cases, this attribute contains the name of the targeted MBE.</td>
+			</tr>
+			<tr>
+				<td>
+					<b>Root Project Name</b> 
+				</td>
+				<td>Providing a project name namespace to initialize the viewpoint root project name configuration attribute. End-users can customize this value in the viewpoint specification files (*.conf.vptext or *.vpdesc). This attribute value must respect all rules related to the Eclipse platform project naming.
+					<p>The Viewpoint generation uses the root project name to define each generated project name. For example, the project wherein the Sirius diagrams are generated is named as: [root project name].design.</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<b>Class</b> 
+				</td>
+				<td>Providing an implementation of 
+					<i>org.polarsys.kitalpha.ad.ta.extension.ITargetApplication</i>  Java interface. This class provides to the viewpoint generation the following information:
+					<ul>
+						<li>A List of EClasses to use as super classes for each generated EClass.</li>
+						<li>Defaults generations used each time a viewpoint is generated (exp: EMF Generation)</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<b>Root NsUri</b> 
+				</td>
+				<td>Providing an NsUri namespace to use in the generated Ecore models. The format of NsUris of any generated ecore is: [Root NsUri].[Viewpoint short name].</td>
+			</tr>
+			<tr>
+				<td>
+					<b>Description</b> 
+				</td>
+				<td>Providing a short description of the Target Application..</td>
+			</tr>
+		</table>
+		<h2 id="Phase_2._Binding_MBE_resources">Phase 2. Binding MBE resources</h2>
+		<h3 id="Step_1._External_data_loader">Step 1. External data loader</h3>
+		<h4 id="Implementation">Implementation</h4>
+		<table border="1">
+			<tr>
+				<td>
+					<b>Plugin name</b> 
+				</td>
+				<td>org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper</td>
+			</tr>
+			<tr>
+				<td>
+					<b>Java Package</b> 
+				</td>
+				<td>org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.extension</td>
+			</tr>
+			<tr>
+				<td>
+					<b>Class name</b> 
+				</td>
+				<td>ExtensionManager</td>
+			</tr>
+		</table>
+		<h4 id="Extension_point.28s.29">Extension point(s)</h4>
+		<table border="1">
+			<tr>
+				<td>
+					<b>Name</b> 
+				</td>
+				<td>
+					<b>Plugin</b> 
+				</td>
+				<td>
+					<b>Schema</b> 
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<b>externaldataloader</b> 
+				</td>
+				<td>org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.common</td>
+				<td>externaldataloader.exsd</td>
+			</tr>
+		</table>
+		<h4 id="Extension.28s.29">Extension(s)</h4>
+		<table border="1">
+			<tr>
+				<td>
+					<b>Description</b> 
+				</td>
+				<td colspan="2">Contributions must bind the Target Application with the NsURIs of the targeted MBE Ecore model.</td>
+			</tr>
+			<tr>
+				<td rowspan="2">
+					<b>ExternalDataLoader</b> 
+				</td>
+				<td>
+					<b>ID</b> 
+				</td>
+				<td>Providing an id of the External Data Loader</td>
+			</tr>
+			<tr>
+				<td>
+					<b>Target</b> 
+				</td>
+				<td>Providing an id of the External Data Loader</td>
+			</tr>
+			<tr>
+				<td rowspan="2">
+					<b>NameSpacePattern</b> 
+				</td>
+				<td>
+					<b>ID</b> 
+				</td>
+				<td>Providing an id of the Name Space Pattern</td>
+			</tr>
+			<tr>
+				<td>
+					<b>Value</b> 
+				</td>
+				<td>A Pattern representing all or a subset of Targeted MBE ecore NsURIs</td>
+			</tr>
+		</table>
+		<h3 id="Step_2._Diagram_filter">Step 2. Diagram filter</h3>
+		<h4 id="Implementation_2">Implementation</h4>
+		<table border="1">
+			<tr>
+				<td>
+					<b>Plugin name</b> 
+				</td>
+				<td>org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper</td>
+			</tr>
+			<tr>
+				<td>
+					<b>Java Package</b> 
+				</td>
+				<td>org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper.extension</td>
+			</tr>
+			<tr>
+				<td>
+					<b>Class name</b> 
+				</td>
+				<td>ExtensionManager</td>
+			</tr>
+		</table>
+		<h4 id="Extension_point.28s.29_2">Extension point(s)</h4>
+		<table border="1">
+			<tr>
+				<td>
+					<b>Name</b> 
+				</td>
+				<td>
+					<b>Plugin</b> 
+				</td>
+				<td>
+					<b>Schema</b> 
+				</td>
+			</tr>
+			<tr>
+				<td>diagramfilter</td>
+				<td>org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper</td>
+				<td>diagramfilter.exsd</td>
+			</tr>
+		</table>
+		<h4 id="Extension.28s.29_2">Extension(s)</h4>
+		<table border="1">
+			<tr>
+				<td>
+					<b>Description</b> 
+				</td>
+				<td colspan="2">Contributions must define a Filter element that allow to bind a Target Application with the targeted MBE model file extension. Many filters can be defined.</td>
+			</tr>
+			<tr>
+				<td rowspan="2">
+					<b>Filter</b> 
+				</td>
+				<td>
+					<b>Target Application</b> 
+				</td>
+				<td>Selecting the concerned Target Application</td>
+			</tr>
+			<tr>
+				<td>
+					<b>Model File Extension</b> 
+				</td>
+				<td>Providing the model file extension</td>
+			</tr>
+		</table>
+		<h3 id="Step_3._Diagram_expression_language">Step 3. Diagram expression language</h3>
+		<h4 id="Implementation_3">Implementation</h4>
+		<table border="1">
+			<tr>
+				<td>
+					<b>Plugin name</b> 
+				</td>
+				<td>org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper</td>
+			</tr>
+			<tr>
+				<td>
+					<b>Java Package</b> 
+				</td>
+				<td>org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.extension</td>
+			</tr>
+			<tr>
+				<td>
+					<b>Class name</b> 
+				</td>
+				<td>ExtensionManager</td>
+			</tr>
+		</table>
+		<h4 id="Extension_point.28s.29_3">Extension point(s)</h4>
+		<table border="1">
+			<tr>
+				<td>
+					<b>Name</b> 
+				</td>
+				<td>
+					<b>Plugin</b> 
+				</td>
+				<td>
+					<b>Schema</b> 
+				</td>
+			</tr>
+			<tr>
+				<td>diagramExpressionLanguage</td>
+				<td>org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper</td>
+				<td>diagramExpressionLanguage.exsd</td>
+			</tr>
+		</table>
+		<h4 id="Extension.28s.29_3">Extension(s)</h4>
+		<table border="1">
+			<tr>
+				<td>
+					<b>Description</b> 
+				</td>
+				<td colspan="2">Contributions must define an Expression element that allow to bind a Target Application with the expression language supported by the targeted MBE.</td>
+			</tr>
+			<tr>
+				<td rowspan="2">
+					<b>Filter</b> 
+				</td>
+				<td>
+					<b>Target Application</b> 
+				</td>
+				<td>Selecting the concerned Target Application</td>
+			</tr>
+			<tr>
+				<td>
+					<b>Language</b> 
+				</td>
+				<td>Choosing one of the following languages:
+					<ul>
+						<li>Acceleo 3</li>
+						<li>Query Legacy</li>
+					</ul>
+				</td>
+			</tr>
+		</table>
+		<h2 id="Phase_3._Declaring_MBE_technical_specificities">Phase 3. Declaring MBE technical specificities</h2>
+		<h3 id="Step_1._Diagram_expression_language">Step 1. Diagram expression language</h3>
+		<h4 id="Implementation_4">Implementation</h4>
+		<table border="1">
+			<tr>
+				<td>
+					<b>Plugin name</b> 
+				</td>
+				<td>org.polarsys.kitalpha.ad.viewpoint.dsl.generation.ui</td>
+			</tr>
+			<tr>
+				<td>
+					<b>Java Package</b> 
+				</td>
+				<td>org.polarsys.kitalpha.ad.viewpoint.dsl.generation.ui.extension</td>
+			</tr>
+			<tr>
+				<td>
+					<b>Class name</b> 
+				</td>
+				<td>UIPropertiesExtensionManager</td>
+			</tr>
+		</table>
+		<h4 id="Extension_point.28s.29_4">Extension point(s)</h4>
+		<table border="1">
+			<tr>
+				<td>
+					<b>Name</b> 
+				</td>
+				<td>
+					<b>Plugin</b> 
+				</td>
+				<td>
+					<b>Schema</b> 
+				</td>
+			</tr>
+			<tr>
+				<td>UIPropertiesContributors</td>
+				<td>org.polarsys.kitalpha.ad.viewpoint.dsl.generation.ui</td>
+				<td>UIPropertiesContributors.exsd</td>
+			</tr>
+		</table>
+		<h4 id="Extension.28s.29_4">Extension(s)</h4>
+		<table border="1">
+			<tr>
+				<td>
+					<b>Description</b> 
+				</td>
+				<td colspan="2">Contributions provide properties contributors information to use in property view generation. A PropertyContributor is defined by extension point org.eclipse.properties.tabbed.propertyContributor.</td>
+			</tr>
+			<tr>
+				<td>
+					<b>PropertiesContributors</b> 
+				</td>
+				<td>
+					<b>Target Application</b> 
+				</td>
+				<td>Selecting the concerned Target Application</td>
+			</tr>
+			<tr>
+				<td rowspan="4">
+					<b>Contributor</b> 
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<b>Id</b> 
+				</td>
+				<td>Providing a Contributor ID</td>
+			</tr>
+			<tr>
+				<td>
+					<b>Name</b> 
+				</td>
+				<td>Providing a name of this contributor</td>
+			</tr>
+			<tr>
+				<td>
+					<b>Property tab category</b> 
+				</td>
+				<td>Providing a Property Category</td>
+			</tr>
+		</table>
+		<h3 id="Step_2._Customs_generations">Step 2. Customs generations</h3>
+		<h4 id="Implementation_5">Implementation</h4>
+		<table border="1">
+			<tr>
+				<td>
+					<b>Plugin name</b> 
+				</td>
+				<td>org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core</td>
+			</tr>
+			<tr>
+				<td>
+					<b>Java Package</b> 
+				</td>
+				<td>org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core.extension</td>
+			</tr>
+			<tr>
+				<td>
+					<b>Class name</b> 
+				</td>
+				<td>IExtensionFilter, AbstractAspectExtensionFilter</td>
+			</tr>
+		</table>
+		<h4 id="Extension_point.28s.29_5">Extension point(s)</h4>
+		<table border="1">
+			<tr>
+				<td>
+					<b>Name</b> 
+				</td>
+				<td>
+					<b>Plugin</b> 
+				</td>
+				<td>
+					<b>Schema</b> 
+				</td>
+			</tr>
+			<tr>
+				<td>ExtensionLauncher</td>
+				<td>org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core</td>
+				<td>ExtensionLauncher.exsd</td>
+			</tr>
+		</table>
+		<h4 id="Extension.28s.29_5">Extension(s)</h4>
+		<table border="1">
+			<tr>
+				<td>
+					<b>Description</b>
+				</td>
+				<td colspan="2">Contributions provide a generation that is available only for one Target Application by:
+					<ol>
+						<li>Declaring the generation as un extension to the Viewpoint Core generation (using 
+							<b>Launcher</b> element)
+						</li>
+						<li>Binding the generation with an existing Target Application (using a 
+							<b>Filter</b> element)
+						</li>
+					</ol>
+				</td>
+			</tr>
+			<tr>
+				<td rowspan="4">
+					<b>Launcher</b>
+				</td>
+				<td>
+					<b>Name</b>
+				</td>
+				<td>Setting a name for the generation, it will be displayed in the “Generation with selection” wizard.</td>
+			</tr>
+			<tr>
+				<td>
+					<b>Fcore</b>
+				</td>
+				<td>Referencing the EGF activity that represent the root element of the generation. The Fcore
+					<p>attribute value must follows the following format:
+
+						<i>platform:/plugin/[Plugin ID]/[Folder]/[File name].fcore#[Activity ID]</i>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<b>Category</b>
+				</td>
+				<td>Generation categories are used to differentiate generations. Two categories are defined:
+					<ol>
+						<li>
+							<b>Aspect</b>: generations are sensitive to the viewpoint specification. In general, they are related to a viewpoint Aspect. The result of these generations vary according to viewpoints
+						</li>
+						<li>
+							<b>Addition</b>: generations aren’t sensitive to the viewpoint specification. In the most cases, this kind of generation can uses some viewpoint data like configuration attributes or viewpoint name/short name but not more. The result doesn’t vary from a viewpoint to another.
+						</li>
+					</ol>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<b>Description</b>
+				</td>
+				<td>Setting a short description for a generation, it will be displayed in the “Generation with selection” wizard.</td>
+			</tr>
+			<tr>
+				<td rowspan="2">
+					<b>Filter</b>
+				</td>
+				<td>
+					<b>TargetApplication</b>
+				</td>
+				<td>Selecting the Target Application with which the generation is associated. The current generation will not be visible for the other generations.</td>
+			</tr>
+			<tr>
+				<td>
+					<b>Java</b>
+				</td>
+				<td>Providing a Java implementation of a filter that activate/deactivate a generation depending on the generation context.
+					<p>A Java filter must implements IExtensionFilter java interface (see previous page). It can inherits from AbstractAspectExtensionFilter Java abstract class (see previous page).</p>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

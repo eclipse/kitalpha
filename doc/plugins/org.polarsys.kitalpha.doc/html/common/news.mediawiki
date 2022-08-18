@@ -1,0 +1,4 @@
+
+= What's New in Kitalpha =
+
+The descriptions of some of the changes of interest are available in the [https://github.com/eclipse/kitalpha Kitalpha Github repository].

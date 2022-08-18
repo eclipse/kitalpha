@@ -1,3 +1,32 @@
-<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>apireferences</title><link type="text/css" rel="stylesheet" href="PLUGINS_ROOT/org.polarsys.kitalpha.doc/html/common/style/style.css"/></head><body><h1 id="API_References">API References</h1><h2 id="Helpers">Helpers</h2><p>Two helpers are provided:</p><ul><li>org.polarsys.kitalpha.richtext.common.util.MDERichTextHelper: contains methods that allow to retrieve project from an EObject, project path and the URL of resource in a bundle.</li><li>org.polarsys.kitalpha.richtext.widget.tools.utils.MDERichTextToolsHelper: contains utilities to work with model such as getting the Editing Domain of the model, a content and label providers...</li></ul><h2 id="MDE_Rich_Text_Tools">MDE Rich Text Tools</h2><p>Contains implementation of two tools</p><ul><li>Add Link tool allows to add links such as URL links, to files and model elements</li><li>Add Image tool allows to add images</li></ul><h3 id="Extension_points">Extension points</h3><p><i>org.polarsys.kitalpha.richtext.widget.tools.linkHandler</i> allows to contribute to link handler. A link handler manages how to encode, decode and navigate with links of a certain protocol.
-Only one contribtion is allowed, otherwise, the behavior is not deterministic.</p><p><i>org.polarsys.kitalpha.richtext.widget.tools.ext.openLinkStrategy</i> allows to contribute with a strategy to navigate to a target of link which are model element.
-Only one contribtion is allowed, otherwise, the behavior is not deterministic.   </p></body></html>
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>apireferences</title>
+		<link type="text/css" rel="stylesheet" href="PLUGINS_ROOT/org.polarsys.kitalpha.doc/html/common/style/style.css"/>
+	</head>
+	<body>
+		<h1 id="API_References">API References</h1>
+		<h2 id="Helpers">Helpers</h2>
+		<p>Two helpers are provided:</p>
+		<ul>
+			<li>org.polarsys.kitalpha.richtext.common.util.MDERichTextHelper: contains methods that allow to retrieve project from an EObject, project path and the URL of resource in a bundle.</li>
+			<li>org.polarsys.kitalpha.richtext.widget.tools.utils.MDERichTextToolsHelper: contains utilities to work with model such as getting the Editing Domain of the model, a content and label providers...</li>
+		</ul>
+		<h2 id="MDE_Rich_Text_Tools">MDE Rich Text Tools</h2>
+		<p>Contains implementation of two tools</p>
+		<ul>
+			<li>Add Link tool allows to add links such as URL links, to files and model elements</li>
+			<li>Add Image tool allows to add images</li>
+		</ul>
+		<h3 id="Extension_points">Extension points</h3>
+		<p>
+			<i>org.polarsys.kitalpha.richtext.widget.tools.linkHandler</i> allows to contribute to link handler. A link handler manages how to encode, decode and navigate with links of a certain protocol.
+			Only one contribtion is allowed, otherwise, the behavior is not deterministic.
+		</p>
+		<p>
+			<i>org.polarsys.kitalpha.richtext.widget.tools.ext.openLinkStrategy</i> allows to contribute with a strategy to navigate to a target of link which are model element.
+			Only one contribtion is allowed, otherwise, the behavior is not deterministic.   
+		</p>
+	</body>
+</html>
