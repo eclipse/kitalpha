@@ -161,6 +161,15 @@
 			<modules>
 				<module>../../plugins/org.polarsys.kitalpha.releng.aggregator.tests</module>
 			</modules>
+		</profile><profile>
+			<id>rcptt</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<modules>
+				<module>../../plugins/org.polarsys.kitalpha.releng.targets</module>
+				<module>../../plugins/org.polarsys.kitalpha.releng.aggregator.rcptt.tests</module>
+			</modules>
 		</profile>
 	</profiles>
 	<build>

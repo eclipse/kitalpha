@@ -76,29 +76,6 @@
 		<module>../../../architecture description/core/tests/usecase1/b.b.edit</module>
 		<module>../../../architecture description/core/tests/usecase1/org.polarsys.kitalpha.viewpoint.a</module>
 		<module>../../../architecture description/core/tests/usecase1/org.polarsys.kitalpha.viewpoint.b</module>
-
-		<!-- 
-			Plugins used by: 
-			1. ... 
-		-->
-		<!-- Here the plugins between <module>plugin A</module> -->
-
-
-		<!-- ******************** SECTION END OF EXTRA-PLUGINS USEFUL FOR JUNIT ******************** -->
-
-		<!-- Test RCPTT -->
-		<!-- module>../../../architecture description/dsl/examples/tests/rcptt/org.polarsys.kitalpha.activityexplorer.test.rcptt</module-->
-		
-		<module>../../../tests/architecture_description/core/org.polarsys.kitalpha.ad.core.rcptt</module>
-		<module>../../../tests/resource_reuse/org.polarsys.kitalpha.resourcereuse.emfscheme.test.rcptt</module>
-		<module>../../../Docgen/business/tests/rcptt/org.polarsys.kitalpha.doc.gen.test.rcptt</module>
-		<module>../../../Docgen/business/tests/rcptt/org.polarsys.kitalpha.doc.gen.business.ecore.test.rcptt</module>
-		<module>../../../detachment/tests/rcptt/org.polarsys.kitalpha.detachment.tests.rcptt</module>
-		<module>../../../tests/architecture_description/dsl/org.polarsys.kitalpha.ad.viewpoint.test.rcptt</module>
-		<module>../../../tests/architecture_description/core/org.polarsys.kitalpha.ad.rcptt</module>
-		<module>../../../common/tests/org.polarsys.kitalpha.common.rcptt</module>
-		<module>../../../emde/tests/org.polarsys.kitalpha.emde.rcptt</module>
-		<module>../../../transposer/tests/plugins/rcptt/org.polarsys.kitalpha.transposer.rcptt.tests</module>
 		 
 	</modules>
 </project>

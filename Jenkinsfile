@@ -8,18 +8,18 @@ pipeline {
 	environment {
 		BUILD_KEY = (github.isPullRequest() ? CHANGE_TARGET : BRANCH_NAME).replaceFirst(/^v/, '')
 	    JACOCO_VERSION = "0.8.6"
-	    MVN_QUALITY_PROFILES = '-P core -P product -P test'
+	    MVN_QUALITY_PROFILES = '-P core -P product -P test -P rcptt'
 	    JACOCO_EXEC_FILE_PATH = '${WORKSPACE}/jacoco.exec'
 	}
 	stages {
-		stage('Package & Test Kitalpha') {
+		stage('Package & JU Test Kitalpha') {
 			steps {
 				wrap([$class: 'Xvnc', takeScreenshot: false, useXauthority: true]) {
 					script {
 						def jacocoPrepareAgent = "-Djacoco.destFile=$JACOCO_EXEC_FILE_PATH -Djacoco.append=true org.jacoco:jacoco-maven-plugin:$JACOCO_VERSION:prepare-agent"
 						def sign = github.isPullRequest() ? '' : '-Psign'
 						currentBuild.description = BUILD_KEY
-						sh "mvn -Dmaven.test.failure.ignore=true -Dtycho.localArtifacts=ignore ${jacocoPrepareAgent} clean verify -P core ${sign} -P product -P test -e -f releng/plugins/org.polarsys.kitalpha.releng.parent/pom.xml"
+						sh "mvn -Dmaven.test.failure.ignore=true -Dtycho.localArtifacts=ignore ${jacocoPrepareAgent} clean verify -P core ${sign} -P product -P test -T C1 -e -f releng/plugins/org.polarsys.kitalpha.releng.parent/pom.xml"
 					}
 				}
 			}
@@ -61,6 +61,18 @@ pipeline {
 						sh "ssh genie.kitalpha@projects-storage.eclipse.org rm -rf ${DEST_PRODUCT_DIR}"
 						sh "ssh genie.kitalpha@projects-storage.eclipse.org mkdir -p ${DEST_PRODUCT_DIR}"
 						sh "scp -r releng/plugins/org.polarsys.kitalpha.releng.sdk.product/target/products/*.zip genie.kitalpha@projects-storage.eclipse.org:${DEST_PRODUCT_DIR}"
+					}
+				}
+			}
+		}
+		stage('RCPTT Tests Kitalpha') {
+			steps {
+				wrap([$class: 'Xvnc', takeScreenshot: false, useXauthority: true]) {
+					script {
+						def jacocoPrepareAgent = "-Djacoco.destFile=$JACOCO_EXEC_FILE_PATH -Djacoco.append=true org.jacoco:jacoco-maven-plugin:$JACOCO_VERSION:prepare-agent"
+						def sign = github.isPullRequest() ? '' : '-Psign'
+						currentBuild.description = BUILD_KEY
+						sh "mvn -Dmaven.test.failure.ignore=true -Dtycho.localArtifacts=ignore ${jacocoPrepareAgent} test ${sign} -P rcptt -e -f releng/plugins/org.polarsys.kitalpha.releng.parent/pom.xml"
 					}
 				}
 			}
