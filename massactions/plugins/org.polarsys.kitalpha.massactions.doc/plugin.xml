@@ -16,7 +16,11 @@
    <extension
          point="org.eclipse.help.toc">
       <toc
-            file="me.xml"
+            file="user.xml"
+            primary="true">
+      </toc>
+      <toc
+            file="dev.xml"
             primary="true">
       </toc>
    </extension>

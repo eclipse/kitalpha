@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>resourcereuse</title>
+		<link type="text/css" rel="stylesheet" href="PLUGINS_ROOT/org.polarsys.kitalpha.doc/html/common/style/style.css"/>
+	</head>
+	<body>
+		<h1 id="resource-reuse">Resource Reuse</h1>
+		<h2 id="objectives">Objectives</h2>
+		<p>Resource enables to retrieve a resource in the Eclipse platform / workspace, such as a document or model. During the search, it manages the workspace / platform priority.
+			After being marked, a resource can be retrieve by criteria:</p>
+		<ul>
+			<li>An identifier</li>
+			<li>a name</li>
+			<li>a domain</li>
+			<li>a version</li>
+			<li>a set of tags</li>
+		</ul>
+		<h2 id="api">API</h2>
+		<h3 id="resourcehelper">ResourceHelper</h3>
+		<p>This class provide API to retrieve programmatically a resource.</p>
+		<p>Provided by bundle: org.polarsys.kitalpha.resourcereuse</p>
+		<p>File name: 
+			<a href="https://github.com/eclipse/kitalpha/blob/master/resource%20reuse/plugins/org.polarsys.kitalpha.resourcereuse/src/org/polarsys/kitalpha/resourcereuse/helper/ResourceHelper.java" target="_blank">org.polarsys.kitalpha.resourcereuse.helper.ResourceHelper.java</a>
+		</p>
+		<h3 id="contributing-a-resource-to-resourcereuse-registry">Contributing a resource to ResourceReuse registry</h3>
+		<p>To contribute a resource is done through extension point 
+			<a href="https://github.com/eclipse/kitalpha/blob/master/resource%20reuse/plugins/org.polarsys.kitalpha.resourcereuse/schema/resources.exsd" target="_blank">org.polarsys.kitalpha.resourcereuse.resources</a>
+		</p>
+		<p>Attributes of the ResourceReuse extension point: </p>
+		<ul>
+			<li>
+				<code>id</code>:	The ID of the resource (mandatory)
+			</li>
+			<li>
+				<code>name</code>:	The Name of the resource (mandatory)
+			</li>
+			<li>
+				<code>path</code>:	Path to access the resource
+			</li>
+			<li>
+				<code>version</code>: a version associated to the resource 
+			</li>
+			<li>
+				<code>domain</code>: The resource domain
+			</li>
+			<li>
+				<code>tags</code>:	A set of tags separated by a comma
+			</li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<toc label="Viewpoint Technology" link_to="PLUGINS_ROOT/org.polarsys.kitalpha.doc/kitalpha-ctk.xml#DeveloperManual">
+   <topic label="Viewpoints">
+      <topic href="html/vpframeworkprogrammersguide/dev.html" label="Introduction">
+      </topic>
+      <topic href="html/vpframeworkprogrammersguide/dev.html#tutorials" label="Tutorials">
+      </topic>
+	  <topic href="html/vpframeworkprogrammersguide/dev.html#migration" label="Migration">
+	  </topic>
+      <topic label="Extending Viewpoint DSL">
+         <topic href="html/vpframeworkprogrammersguide/newTA.html" label="Defining a new target application">
+         </topic>
+      </topic>
+   </topic>
+</toc>

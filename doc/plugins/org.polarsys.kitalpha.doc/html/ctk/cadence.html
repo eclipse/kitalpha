@@ -1,0 +1,193 @@
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>cadence</title>
+		<link type="text/css" rel="stylesheet" href="PLUGINS_ROOT/org.polarsys.kitalpha.doc/html/common/style/style.css"/>
+	</head>
+	<body>
+		<h1 id="cadence">Cadence</h1>
+		<h2 id="objectives">Objectives</h2>
+		<p>This project defines an architecture to insert specific actions in an execution process. Cadence uses
+			the Eclipse architecture profits by exploiting the concept of plug-in.</p>
+		<h3 id="general-schema">General Schema</h3>
+		<p>The next schema shows an abstract description of the concepts introduced in Cadence.</p>
+		<p>
+			<img alt="image" border="0" src="Images/185395992-d466c5a8-f403-4c7b-9afd-003e3812f04d.png"/>
+		</p>
+		<p>This Cadence defines three important concepts:</p>
+		<ul>
+			<li>Workflow: a workflow is a process where several sub processes (p1, p2, â€¦) are executed one after others;</li>
+			<li>ï€ Workflow Element: a workflow element is a step in the workflow between a sub process and the next one;</li>
+			<li>Activity: an activity is an independent program that can be launch between to subprocesses, i.e. at a workflow element.</li>
+		</ul>
+		<h3 id="workflow-element-and-activity">Workflow Element and Activity</h3>
+		<p>
+			<img alt="image" border="0" src="Images/185396025-c682754a-28f5-49f6-b6ee-9e1705d11a52.png"/>
+			In this schema we zoom on the workflow element and introduce the concept of parameters. The parameters in red are defined by the workflow element. All the activities that contribute for this workflow element receive these parameters. For instance a parameter could be a semantic model and an activity could be implemented to test and validate the model before another sub process execution. Obviously the activity can access to the semantic model and the workflow element has to declare it as a parameter.
+			Each activity may define its own parameters, represented in blue on the previous schema. These parameters are also defined for the activity.
+		</p>
+		<h2 id="interfaces">Interfaces</h2>
+		<h3 id="cadencelauncher">CadenceLauncher</h3>
+		<p>Allows launching Cadence programmatically.
+			It's this class that your process should call in order to execute cadence. </p>
+		<p>Provided by bundle:org.polarsys.kitalpha.cadence.core</p>
+		<p>File name: 
+			<a href="https://github.com/eclipse/kitalpha/tree/master/cadence/plugins/org.polarsys.kitalpha.cadence.core/src/org/polarsys/kitalpha/cadence/core/api" target="_blank">org.polarsys.kitalpha.cadence.core.api.CadenceLauncher.java</a>
+		</p>
+		<h3 id="cadenceregistry">CadenceRegistry</h3>
+		<p>This class allows getting activities, workflows, etc... contributing at the Cadence extensions points.</p>
+		<p>Provided by bundle:org.polarsys.kitalpha.cadence.core</p>
+		<p>File name:
+			<a href="https://github.com/eclipse/kitalpha/blob/master/cadence/plugins/org.polarsys.kitalpha.cadence.core/src/org/polarsys/kitalpha/cadence/core/api/CadenceRegistry.java" target="_blank">org.polarsys.kitalpha.cadence.api.CadenceRegistry.java</a>
+		</p>
+		<h3 id="cadenceuiregistry">CadenceUIRegistry</h3>
+		<p>This class allows to launch a Cadence execution from the Eclipse UI or to get the Map of activities.</p>
+		<p>Provided by bundle:org.polarsys.kitalpha.cadence.ui</p>
+		<p>File name: 
+			<a href="https://github.com/eclipse/kitalpha/blob/master/cadence/plugins/org.polarsys.kitalpha.cadence.ui/src/org/polarsys/kitalpha/cadence/ui/api/CadenceUiRegistry.java" target="_blank">org.polarsys.kitalpha.cadence.ui.api.CadenceUIRegistry.java</a>
+		</p>
+		<h3 id="cadencetab">CadenceTab</h3>
+		<p>This class extends AbstractLaunchConfigurationTab and allows providing a tab for the Launch Configuration UI eclipse mechanism.</p>
+		<p>Provided by bundle:org.polarsys.kitalpha.cadence.ui</p>
+		<p>File name: 
+			<a href="https://github.com/eclipse/kitalpha/blob/master/cadence/plugins/org.polarsys.kitalpha.cadence.ui/src/org/polarsys/kitalpha/cadence/ui/api/CadenceTab.java" target="_blank">org.polarsys.kitalpha.cadence.ui.api.CadenceTab.java</a>
+		</p>
+		<h2 id="extensibility">Extensibility</h2>
+		<p>Cadence is an Eclipse plug-in that defined two extension points:</p>
+		<ul>
+			<li>Workflow extension point: permits to define a workflow and its workflow elements ;</li>
+			<li>Activity extension point: permits to define activity related to a workflow element.</li>
+		</ul>
+		<p>A program is identified as a workflow if it can be divided in sub processes. a workflow can define many Workflow elements. Many activities can be defined for one workflow element and an activity can be defined for several workflow elements.</p>
+		<h3 id="contributing-a-workflow-to-a-process">Contributing a Workflow to a Process</h3>
+		<p>Provided by bundle:org.polarsys.kitalpha.cadence.core</p>
+		<p>Extension point name: 
+			<a href="https://github.com/eclipse/kitalpha/blob/master/cadence/plugins/org.polarsys.kitalpha.cadence.core/schema/org.polarsys.kitalpha.cadence.workflow.declaration.exsd" target="_blank">org.polarsys.kitalpha.cadence.workflow.declaration</a>.
+		</p>
+		<p>Contributing a workflow to a process is done through the following extension (in the bundle plugin.xml file):</p>
+		<pre><code>&lt;extension
+         point="org.polarsys.kitalpha.cadence.core.workflow.declaration"&gt;
+      &lt;WorkflowDefinition
+            Identifier="org.polarsys.kitalpha.example.workflow.definition"
+            Name="Cadence Workflow Declaration Example"&gt;
+         &lt;Description&gt;
+           Description body text
+         &lt;/Description&gt;
+         &lt;WorkflowElement
+               AllowMultipleContributions="true"
+               Identifier="org.polarsys.kitalpha.example.workflow.element.definition"
+               Name="Workflow Element 1"
+               orderNumber="0"&gt;
+            &lt;Description&gt;
+               Description body text
+            &lt;/Description&gt;
+            &lt;ParameterDefinition
+                  Name="Parameter 1"
+                  Type="test.ParameterDefinition1"&gt;
+               &lt;Description&gt;
+                  Description body text
+               &lt;/Description&gt;
+            &lt;/ParameterDefinition&gt;
+         &lt;/WorkflowElement&gt;
+      &lt;/WorkflowDefinition&gt;
+   &lt;/extension&gt;</code></pre>
+		<p>Only one workflow can be defined per extension.
+			<br/>
+		</p>
+		<p>Worflow Declaration Attributes:</p>
+		<ul>
+			<li>
+				<code>identifier</code>:	The ID of the workflow. (mandatory)
+			</li>
+			<li>
+				<code>name</code>:	The Name of the Worflow. (mandatory)
+			</li>
+			<li>
+				<code>description</code>:	A quick description for users about the workflow. (optional)
+			</li>
+		</ul>
+		<p>Workflow Element Declaration Attributes: </p>
+		<ul>
+			<li>
+				<code>identifier</code>:	The ID of the WorkflowElement. (mandatory)
+			</li>
+			<li>
+				<code>name</code>:	The Name of the WorflowElement. (mandatory)
+			</li>
+			<li>
+				<code>description</code>:	A quick description for users about the workflowElement. 
+			</li>
+			<li>
+				<code>orderNumber</code>:	This attribute allows to sort WorkFlowElements by order.
+			</li>
+		</ul>
+		<p>ParameterDefinitionAttributes:</p>
+		<ul>
+			<li>
+				<code>name</code>:	The Name of the Workflow. (mandatory)
+			</li>
+			<li>
+				<code>description</code>:	A quick description for users about the workflow. (optional)
+			</li>
+			<li>
+				<code>type</code>:	The type of the declared parameter (String, List&amp;ltEObject&gt;, etc...)
+			</li>
+		</ul>
+		<h3 id="contributing-activity-to-a-workflow">Contributing Activity to a Workflow</h3>
+		<p>Provided by bundle: org.polarsys.kitalpha.cadence.core</p>
+		<p>Extension point name: 
+			<a href="https://github.com/eclipse/kitalpha/blob/master/cadence/plugins/org.polarsys.kitalpha.cadence.core/schema/org.polarsys.kitalpha.cadence.activity.declaration.exsd" target="_blank">org.polarsys.kitalpha.cadence.core.activity.declaration</a>.
+			Contributing an activity to a workflow is done through the following extension (in the bundle plugin.xml file):
+		</p>
+		<pre><code>&lt;extension
+   point="org.polarsys.kitalpha.cadence.core.activity.declaration"&gt;
+    &lt;ActivityDeclaration
+      Identifier="org.polarsys.kitalpha.example.activity.contribution"
+      Multiple="false"
+      Name="My Contributed Activity"
+      ActivityClass="org.polarsys.kitalpha.example.activity.MyActivity"
+      WorkflowElementIdentifier="org.polarsys.kitalpha.example.workflow.element.definition"
+      WorkflowIdentifier="org.polarsys.kitalpha.example.workflow.definition"&gt;
+      &lt;Description&gt;
+          Description body text
+      &lt;/Description&gt;
+   &lt;/ActivityDeclaration&gt;
+&lt;/extension&gt;
+</code></pre>
+		<p>Activity Declaration Attributes: </p>
+		<ul>
+			<li>
+				<code>Identifier</code>:	The ID of the Activity. (mandatory)
+			</li>
+			<li>
+				<code>Name</code>:	The Name of the WorflowElement. (mandatory)
+			</li>
+			<li>
+				<code>Description</code>:	A quick description for users about the workflowElement. 
+			</li>
+			<li>
+				<code>Multiple</code>	
+			</li>
+			<li>
+				<code>WorkflowIdentifier</code>:	The ID of the contributed Workflow
+			</li>
+			<li>
+				<code>WorkflowElementIdentifier</code>:	The ID of the contributed WorkflowElement
+			</li>
+			<li>
+				<code>ActivityClass</code>:	The JAVA Class of the Activity (implements IActivity, see below)
+			</li>
+		</ul>
+		<h4 id="api">API</h4>
+		<p>This interface specifies the contract for providing activity.</p>
+		<p>Provided by bundle:org.polarsys.kitalpha.cadence.core</p>
+		<p>File name: 
+			<a href="https://github.com/eclipse/kitalpha/blob/master/cadence/plugins/org.polarsys.kitalpha.cadence.core/src/org/polarsys/kitalpha/cadence/core/api/IActivity.java" target="_blank">org.polarsys.kitalpha.cadence.core.api.IActivity.java</a>
+		</p>
+		<h2 id="presentation">Presentation</h2>
+		<p>Additional documentation can be found on the 
+			<a href="https://raw.githubusercontent.com/wiki/eclipse/kitalpha/pdf/Kitalpha-CTK-TR-Cadence.pdf" target="_blank">presentation</a>.
+		</p>
+	</body>
+</html>

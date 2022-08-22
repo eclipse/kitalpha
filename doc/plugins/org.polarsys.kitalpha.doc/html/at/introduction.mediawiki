@@ -1,7 +1,0 @@
-
-= Introduction =
-
-== Environment of development and execution of DSMs and MBSE Workbenches ==
-* Implementation of the [http://en.wikipedia.org/wiki/ISO/IEC_42010 '''ISO/IEC 42010 standard'''] for the description of system architecture.
-* An integrated and pure DSL environment for accurate, safe, and fast '''development of [http://en.wikipedia.org/wiki/Domain-specific_modeling DSMs]''' and '''viewpoints'''.
-<br>

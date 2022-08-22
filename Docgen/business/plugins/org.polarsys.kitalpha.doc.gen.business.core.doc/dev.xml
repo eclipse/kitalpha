@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<toc label="HTML Documentation Generation Technology" link_to="PLUGINS_ROOT/org.polarsys.kitalpha.doc/kitalpha-ctk.xml#DeveloperManual">
+ 	<topic label="HTML Documentation Generation">
+     <topic href="html/common/kitalpha-docgen-technology.html" label="Technology">
+     </topic>
+     <topic href="html/common/kitalpha-docgen-extensibility.html" label="Extensibility">
+     </topic>
+   </topic>
+</toc>

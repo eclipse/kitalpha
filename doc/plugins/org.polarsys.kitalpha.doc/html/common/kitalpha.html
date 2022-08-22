@@ -1,1 +1,47 @@
-<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>kitalpha</title><link type="text/css" rel="stylesheet" href="PLUGINS_ROOT/org.polarsys.kitalpha.doc/html/common/style/style.css"/></head><body><h1 id="Kitalpha">Kitalpha</h1><p><b>Kitalpha</b> is an environment to develop and execute MBE (Model-Based Engineering) workbenches for description of systems in system, software and hardware engineering.</p><h2 id="An_environment_to_develop_and_execute_MBE_workbenches.E2.80.A6">An environment to develop and execute MBE workbenches…</h2><p>Kitalpha is dedicated to implement modelling frameworks and viewpoints, and this in coherence with the ISO/IEC 42010 standard for description of system architecture. In this standard, an architecture framework aggregates viewpoints. Each viewpoint describes at least one system concern, such as non-functional concerns (e.g., performance, safety, security, and cost), for involved stakeholders (e.g., safety engineer). Kitalpha extends the definition of viewpoint to also consider it as an engineering extension which comes with its own metamodels, representations (e.g., diagrams, tables, user interfaces), rules (e.g., validation, analysis, transformation), services and tools to address an engineering specialty. Consequently, an MBE workbench is the result of a flexible assembly of core viewpoints extended by new ones which are, in the context of co-engineering, appropriate and valuable for specialty engineers. The set of all the viewpoints provide a solution for the complete description of a system.</p><h2 id="...providing_both_development_and_runtime_services_to_define.2C_use_and_manage_architecture_frameworks_and_viewpoints">...providing both development and runtime services to define, use and manage architecture frameworks and viewpoints</h2><p><div class="thumb"><div class="thumbinner" style="width:902px;"><a href="img/overview.png" class="image"><img class="thumbimage" width="900" border="0" src="img/overview.png"/></a></div></div></p><h2 id="DSL_Structure_in_Kitalpha">DSL Structure in Kitalpha</h2><p>The two Kitalpha DSLs, for the definition of architecture framework and viewpoints of an MBE Workbench, follow the same structure: </p><ul><li>An abstract syntax that defines the languages to describe architecture frameworks and viewpoints</li><li>A concrete syntax that enables the designers and developers to describe architectures frameworks and viewpoints</li></ul><p>At this stage, a textual syntax with Xtext is supported, even if the foundations are able to accept other kinds of representations (e.g., graphical or tabular). A mechanism of synchronisation translates concrete syntax into abstract syntax and vice versa. The viewpoint DSL is more complex than the architecture framework DSL. The DSL is decomposed by aspects:</p><ul><li>Data for the definition of metamodels</li><li>User interface for the data representation by user interfaces</li><li>Diagram for the graphical representation of data</li><li>Services for the definition of business rules, services, and parameters</li><li>Build to automatically generate continuous integration scripts</li><li>Configuration to tune the generation parameters of architecture framework and viewpoint artefacts.</li></ul></body></html>
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>kitalpha</title>
+		<link type="text/css" rel="stylesheet" href="PLUGINS_ROOT/org.polarsys.kitalpha.doc/html/common/style/style.css"/>
+	</head>
+	<body>
+		<h1 id="Kitalpha">Kitalpha</h1>
+		<p>
+			<b>Kitalpha</b> is an environment to develop and execute MBE (Model-Based Engineering) workbenches for description of systems in system, software and hardware engineering.
+		</p>
+		<h2 id="An_environment_to_develop_and_execute_MBE_workbenches.E2.80.A6">An environment to develop and execute MBE workbenches…</h2>
+		<p>Kitalpha is dedicated to implement modelling frameworks and viewpoints, and this in coherence with the 
+			<a href="http://en.wikipedia.org/wiki/ISO/IEC_42010" target="_blank">ISO/IEC 42010 standard</a> for description of system architecture. In this standard, an architecture framework aggregates viewpoints. Each viewpoint describes at least one system concern, such as non-functional concerns (e.g., performance, safety, security, and cost), for involved stakeholders (e.g., safety engineer). Kitalpha extends the definition of viewpoint to also consider it as an engineering extension which comes with its own metamodels, representations (e.g., diagrams, tables, user interfaces), rules (e.g., validation, analysis, transformation), services and tools to address an engineering specialty. Consequently, an MBE workbench is the result of a flexible assembly of core viewpoints extended by new ones which are, in the context of co-engineering, appropriate and valuable for specialty engineers. The set of all the viewpoints provide a solution for the complete description of a system.
+		</p>
+		<h2 id="...providing_both_development_and_runtime_services_to_define.2C_use_and_manage_architecture_frameworks_and_viewpoints">...providing both development and runtime services to define, use and manage architecture frameworks and viewpoints</h2>
+		<p>
+			<div class="thumb">
+				<div class="thumbinner" style="width:902px;">
+					<a href="img/overview.png" class="image">
+						<img class="thumbimage" width="900" border="0" src="img/overview.png"/>
+					</a>
+				</div>
+			</div>
+		</p>
+		<h2 id="DSL_Structure_in_Kitalpha">DSL Structure in Kitalpha</h2>
+		<p>The two Kitalpha DSLs, for the definition of architecture framework and viewpoints of an MBE Workbench, follow the same structure: </p>
+		<ul>
+			<li>An abstract syntax that defines the languages to describe architecture frameworks and viewpoints</li>
+			<li>A concrete syntax that enables the designers and developers to describe architectures frameworks and viewpoints</li>
+		</ul>
+		<p>At this stage, a textual syntax with Xtext is supported, even if the foundations are able to accept other kinds of representations (e.g., graphical or tabular). A mechanism of synchronisation translates concrete syntax into abstract syntax and vice versa. The viewpoint DSL is more complex than the architecture framework DSL. The DSL is decomposed by aspects:</p>
+		<ul>
+			<li>Data for the definition of metamodels</li>
+			<li>User interface for the data representation by user interfaces</li>
+			<li>Diagram for the graphical representation of data</li>
+			<li>Services for the definition of business rules, services, and parameters</li>
+			<li>Build to automatically generate continuous integration scripts</li>
+			<li>Configuration to tune the generation parameters of architecture framework and viewpoint artefacts.</li>
+		</ul>
+		<h2 id="Presentation">Presentation</h2>
+		<p>A presentation of Kitalpha can be found 
+			<a href="https://raw.githubusercontent.com/wiki/eclipse/kitalpha/pdf/Kitalpha-A01-Introduction-1.1.2.pdf" target="_blank">here</a>.
+		</p>
+	</body>
+</html>

@@ -15,7 +15,11 @@ Contributors:
    <extension
          point="org.eclipse.help.toc">
       <toc
-            file="kitalpha-docgen.xml"
+            file="user.xml"
+            primary="true">
+      </toc>
+      <toc
+            file="dev.xml"
             primary="true">
       </toc>
    </extension>

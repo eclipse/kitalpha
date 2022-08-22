@@ -1,3 +1,0 @@
-= Resources =
-
-[https://github.com/eclipse/kitalpha/issues Issues] can be raised on the project's [https://github.com/eclipse/kitalpha/ Github repository]. Docgen related issues should be tagged with the '''ctk-doc''' tag.

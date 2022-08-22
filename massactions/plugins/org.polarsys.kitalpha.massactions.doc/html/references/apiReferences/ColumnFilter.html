@@ -1,2 +1,17 @@
-<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>ColumnFilter</title><link type="text/css" rel="stylesheet" href="PLUGINS_ROOT/org.polarsys.capella.doc/html/styles.css"/></head><body><h1 id="Column_Filter">Column Filter</h1><h2 id="Introduction">Introduction</h2><p>The column filter extension point allows to contribute to the
-existing default column filters. You should use this extension point if among the common columns only a handful are relevant for your use. You can therefore choose to hide some of them.  </p><p>Note that the hidden columns can always be enabled by the user, since they are only visually hidden (but continue to exist in memory).</p><p>The interface associated to this extension point is <code>IMAColumnFilter</code>, but you should avoid implementing this interface directly and instead extend the <code>AbstractMAColumnFilter</code> class.</p><p>The only method you need to implement is the <code>test</code> method, which specifies if the current column should be hidden or not.</p></body></html>
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>ColumnFilter</title>
+		<link type="text/css" rel="stylesheet" href="PLUGINS_ROOT/org.polarsys.capella.doc/html/styles.css"/>
+	</head>
+	<body>
+		<h1 id="Column_Filter">Column Filter</h1>
+		<h2 id="Introduction">Introduction</h2>
+		<p>The column filter extension point allows to contribute to the
+			existing default column filters. You should use this extension point if among the common columns only a handful are relevant for your use. You can therefore choose to hide some of them.  </p>
+		<p>Note that the hidden columns can always be enabled by the user, since they are only visually hidden (but continue to exist in memory).</p>
+		<p>The interface associated to this extension point is <code>IMAColumnFilter</code>, but you should avoid implementing this interface directly and instead extend the <code>AbstractMAColumnFilter</code> class.</p>
+		<p>The only method you need to implement is the <code>test</code> method, which specifies if the current column should be hidden or not.</p>
+	</body>
+</html>

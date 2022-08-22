@@ -1,1 +1,24 @@
-<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>emde</title><link type="text/css" rel="stylesheet" href="PLUGINS_ROOT/org.polarsys.kitalpha.doc/html/common/style/style.css"/></head><body><h1 id="eMDE_.28essential_MDE.29_documentation"><center>eMDE (essential MDE) documentation</center></h1><p><b>eMDE</b> is a framework allowing the extension of model by aggregations.</p></body></html>
+<?xml version='1.0' encoding='utf-8' ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>emde</title>
+		<link type="text/css" rel="stylesheet" href="PLUGINS_ROOT/org.polarsys.kitalpha.doc/html/common/style/style.css"/>
+	</head>
+	<body>
+		<h1 id="emde">eMDE</h1>
+		<p>eMDE is a component with a top-level metamodel which enables to support metamodel extensions by aggregation. This component is essentially used for viewpoint development.</p>
+		<h2 id="concepts">Concepts</h2>
+		<h3 id="extension-by-inheritance">Extension by Inheritance</h3>
+		<p>EMF enables extensibility only by sub-classing existing classes (see picture bellow). This mechanism enables inheritance of all properties, constraints, and representations (e.g., user interfaces, diagrams). But the type of a model element cannot be changed during its lifecycle.</p>
+		<p>
+			<img alt="Extension by Inheritance" border="0" src="img/emf_extension.png"/>
+		</p>
+		<h3 id="extension-by-aggregation">Extension by Aggregation</h3>
+		<p>Kitalpha introduces the mechanism of extension by aggregation, the same model element can be decorated by data from different concerns (i.e. viewpoints).</p>
+		<p>The picture bellow shows how eMDE introduce the extension by aggregation. Conceptually, ClassA aggregates ClassB and ClassC.</p>
+		<p>
+			<img alt="Extension by Aggregation" border="0" src="img/emde_extension.png"/>
+		</p>
+	</body>
+</html>

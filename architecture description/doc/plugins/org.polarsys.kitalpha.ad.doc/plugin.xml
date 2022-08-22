@@ -4,7 +4,11 @@
    <extension
          point="org.eclipse.help.toc">
       <toc
-            file="kitalpha-Viewpoint.xml"
+            file="user.xml"
+            primary="false">
+      </toc>
+      <toc
+            file="dev.xml"
             primary="false">
       </toc>
    </extension>
