@@ -11,7 +11,7 @@
  *******************************************************************************/
 target "kitalpha" with source, requirements
 
-include "https://download.eclipse.org/sirius/updates/milestones/7.0.2rc3/2021-06/targets/modules/gmf-runtime-1.14.tpd"
+include "https://download.eclipse.org/sirius/updates/milestones/7.0.4rc1/2021-06/targets/modules/gmf-runtime-1.14.tpd"
 
 location Eclipse-2021-06 "https://download.eclipse.org/releases/2021-06/" {
 	org.eclipse.m2e.feature.feature.group lazy
@@ -85,7 +85,7 @@ location acceleo "https://download.eclipse.org/acceleo/updates/releases/3.7/" {
 	org.eclipse.acceleo.doc [3.7.11,3.7.12)
 }
 
-location sirius "https://download.eclipse.org/sirius/updates/milestones/7.0.2rc3/2021-06/" {
+location sirius "https://download.eclipse.org/sirius/updates/milestones/7.0.4rc1/2021-06/" {
 	org.eclipse.sirius.doc.feature.feature.group lazy
     org.eclipse.sirius.runtime.source.feature.group lazy
     org.eclipse.sirius.runtime.acceleo.feature.group lazy

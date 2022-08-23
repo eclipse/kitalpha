@@ -113,7 +113,7 @@
       <unit id="org.eclipse.sirius.specifier.properties.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.sirius.specifier.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.sirius.tests.feature.group" version="0.0.0"/>
-      <repository id="sirius" location="https://download.eclipse.org/sirius/updates/milestones/7.0.2rc3/2021-06/"/>
+      <repository id="sirius" location="https://download.eclipse.org/sirius/updates/milestones/7.0.4rc1/2021-06/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.emf.diffmerge.feature.feature.group" version="0.0.0"/>
