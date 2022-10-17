@@ -13,7 +13,7 @@
 <feature
       id="org.polarsys.kitalpha.resourcereuse.emfscheme.feature"
       label="%featureName"
-      version="6.0.0.qualifier"
+      version="6.1.0.qualifier"
       provider-name="%providerName">
 
    <description>

@@ -2,12 +2,12 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.polarsys.kitalpha.sirius.rotativeimage.junit.tests;singleton:=true
-Bundle-Version: 6.0.0.qualifier
+Bundle-Version: 6.1.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Bundle: org.junit,
  org.eclipse.emf.ecore,
  org.eclipse.sirius,
- org.polarsys.kitalpha.sirius.rotativeimage;bundle-version="6.0.0",
+ org.polarsys.kitalpha.sirius.rotativeimage;bundle-version="6.1.0",
  org.eclipse.ui.workbench;bundle-version="3.122.200",
  org.eclipse.emf.transaction,
  org.eclipse.sirius.diagram.model,
