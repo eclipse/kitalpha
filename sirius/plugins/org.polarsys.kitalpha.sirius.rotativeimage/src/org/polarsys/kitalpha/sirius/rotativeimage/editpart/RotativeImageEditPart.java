@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2020, 2021 Thales Global Services S.A.S.
+ * Copyright (c) 2020, 2023 Thales Global Services S.A.S.
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License 2.0 which is available at
  * http://www.eclipse.org/legal/epl-2.0
@@ -17,6 +17,7 @@ import java.beans.PropertyChangeListener;
 import org.eclipse.draw2d.FigureListener;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
+import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
@@ -139,15 +140,19 @@ public class RotativeImageEditPart extends WorkspaceImageEditPart implements ISt
                 if (borderedNodeFigure == null) {
                 	return;
                 }
-                int side = DBorderItemLocator.findClosestSideOfParent(editPart.getFigure().getBounds(), borderedNodeFigure.getBounds());
-
-                IWorkspaceImageFigure figure = editPart.getPrimaryShape();
-                if (figure instanceof RotativeSVGWorkspaceImageFigure) {
-                    ((RotativeSVGWorkspaceImageFigure) figure).setOrientation(side);
-                } else if (figure instanceof Rotative4ImagesSVGWorkspaceImageFigure) {
-                    ((Rotative4ImagesSVGWorkspaceImageFigure) figure).setOrientation(side);
-                } else {
-                    ((RotativeWorkspaceImageFigure) figure).setOrientation(side);
+                // Update the figure only if the parent figure has already been computed
+                Rectangle parentBounds = borderedNodeFigure.getBounds();
+                if (parentBounds.height != 0 && parentBounds.width != 0) {
+                  int side = DBorderItemLocator.findClosestSideOfParent(editPart.getFigure().getBounds(), borderedNodeFigure.getBounds());
+  
+                  IWorkspaceImageFigure figure = editPart.getPrimaryShape();
+                  if (figure instanceof RotativeSVGWorkspaceImageFigure) {
+                      ((RotativeSVGWorkspaceImageFigure) figure).setOrientation(side);
+                  } else if (figure instanceof Rotative4ImagesSVGWorkspaceImageFigure) {
+                      ((Rotative4ImagesSVGWorkspaceImageFigure) figure).setOrientation(side);
+                  } else {
+                      ((RotativeWorkspaceImageFigure) figure).setOrientation(side);
+                  }
                 }
             }
         }
