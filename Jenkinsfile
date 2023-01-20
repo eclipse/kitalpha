@@ -12,14 +12,19 @@ pipeline {
 	    JACOCO_EXEC_FILE_PATH = '${WORKSPACE}/jacoco.exec'
 	}
 	stages {
-		stage('Package & Test Kitalpha') {
+		stage('Generate Target Platform') {
+			steps {
+		        sh 'mvn verify -f releng/plugins/org.polarsys.kitalpha.releng.targets/pom.xml'
+			}
+		}
+		stage('Package Kitalpha') {
 			steps {
 				wrap([$class: 'Xvnc', takeScreenshot: false, useXauthority: true]) {
 					script {
 						def jacocoPrepareAgent = "-Djacoco.destFile=$JACOCO_EXEC_FILE_PATH -Djacoco.append=true org.jacoco:jacoco-maven-plugin:$JACOCO_VERSION:prepare-agent"
 						def sign = github.isPullRequest() ? '' : '-Psign'
 						currentBuild.description = BUILD_KEY
-						sh "mvn -Dmaven.test.failure.ignore=true -Dtycho.localArtifacts=ignore ${jacocoPrepareAgent} clean verify -P core ${sign} -P product -P test -e -f releng/plugins/org.polarsys.kitalpha.releng.parent/pom.xml"
+						sh "mvn -Dmaven.test.failure.ignore=true ${jacocoPrepareAgent} package -P core -P product -P test ${sign} -e -f releng/plugins/org.polarsys.kitalpha.releng.parent/pom.xml"
 					}
 				}
 			}
@@ -65,10 +70,18 @@ pipeline {
 				}
 			}
 		}
-		stage('Publish tests results') {
+		stage('Test Kitalpha') {
 			steps {
-				junit allowEmptyResults: true, testResults: '*.xml,**/target/surefire-reports/*.xml'
-				sh "mvn -Djacoco.dataFile=$JACOCO_EXEC_FILE_PATH org.jacoco:jacoco-maven-plugin:$JACOCO_VERSION:report $MVN_QUALITY_PROFILES -e -f releng/plugins/org.polarsys.kitalpha.releng.parent/pom.xml"
+				wrap([$class: 'Xvnc', takeScreenshot: false, useXauthority: true]) {
+					script {
+						def jacocoPrepareAgent = "-Djacoco.destFile=$JACOCO_EXEC_FILE_PATH -Djacoco.append=true org.jacoco:jacoco-maven-plugin:$JACOCO_VERSION:prepare-agent"
+						def sign = github.isPullRequest() ? '' : ''
+						currentBuild.description = BUILD_KEY
+						sh "mvn -Dmaven.test.failure.ignore=true ${jacocoPrepareAgent} verify -P core ${sign} -P product -P test -P rcptt -e -f releng/plugins/org.polarsys.kitalpha.releng.parent/pom.xml"
+						junit allowEmptyResults: true, testResults: '*.xml,**/target/surefire-reports/*.xml'
+						sh "mvn -Djacoco.dataFile=$JACOCO_EXEC_FILE_PATH org.jacoco:jacoco-maven-plugin:$JACOCO_VERSION:report $MVN_QUALITY_PROFILES -e -f releng/plugins/org.polarsys.kitalpha.releng.parent/pom.xml"
+					}
+				}
 			}
 		}
 		stage('Perform Sonar analysis') {
@@ -95,7 +108,7 @@ pipeline {
 	}
 	post {
 		always {
-			archiveArtifacts artifacts: '**/*.log, **/*.layout, releng/plugins/org.polarsys.kitalpha.releng.samplecomponent.updatesite/target/repository/**, releng/plugins/org.polarsys.kitalpha.releng.runtime.updatesite/target/repository/**,releng/plugins/org.polarsys.kitalpha.releng.sdk.updatesite/target/repository/**, releng/plugins/org.polarsys.kitalpha.releng.sdk.product/target/products/*.zip, releng/plugins/org.polarsys.kitalpha.releng.targets'
+			archiveArtifacts artifacts: '**/*.log'
 		}
 	}
 }

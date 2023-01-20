@@ -10,21 +10,84 @@
   Contributors:
        Thales - initial API and implementation
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.polarsys</groupId>
-  <artifactId>kitalpha</artifactId>
-  <version>6.1.0-SNAPSHOT</version>
-  <packaging>eclipse-target-definition</packaging>
-  
-  <name>Kitalpha Product</name>
-  <parent>
-    <groupId>org.polarsys</groupId>
-    <artifactId>org.polarsys.kitalpha</artifactId>
-    <version>6.1.0-SNAPSHOT</version>
-    <relativePath>../../../releng/plugins/org.polarsys.kitalpha.releng.parent</relativePath>
-  </parent>
+	<groupId>org.polarsys</groupId>
+	<artifactId>kitalpha</artifactId>
+	<version>6.1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<licenses>
+		<license>
+			<name>Eclipse Public License 2.0</name>
+			<comments>
+				This program and the accompanying materials are made available under the
+				terms of the Eclipse Public License 2.0 which is available at
+				http://www.eclipse.org/legal/epl-2.0.htm
+				
+				SPDX-License-Identifier: EPL-2.0
+			</comments>
+		</license>
+	</licenses>
+
+	<properties>
+    	<sonar.skip>true</sonar.skip>
+		<tycho-version>2.0.0</tycho-version>
+		<tycho-extras-version>2.0.0</tycho-extras-version>
+		<targetPlatform.name>kitalpha.targetplatform</targetPlatform.name>
+		<converterApplication.name>fr.obeo.releng.targetplatform.targetPlatform.converter</converterApplication.name>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho.extras</groupId>
+				<artifactId>tycho-eclipserun-plugin</artifactId>
+				<version>${tycho-extras-version}</version>
+				<configuration>
+					<repositories>
+						<repository>
+							<id>targetplatform-tp</id>
+							<layout>p2</layout>
+							<url>http://download.eclipse.org/releases/oxygen/201709271000</url>
+						</repository>
+						<repository>
+							<id>targetplatform</id>
+							<layout>p2</layout>
+							<url>http://pdulth.github.io/fr.obeo.releng.targetplatform/p2/latest</url>
+						</repository>
+					</repositories>
+					<!-- Set dependencies to launch the application -->
+					<dependencies>
+						<dependency>
+							<artifactId>fr.obeo.releng.targetplatform-feature</artifactId>
+							<type>eclipse-feature</type>
+						</dependency>
+						<dependency>
+							<artifactId>org.eclipse.equinox.p2.sdk</artifactId>
+							<type>eclipse-feature</type>
+						</dependency>
+					</dependencies>
+					<executionEnvironment>JavaSE-11</executionEnvironment>
+				</configuration>
+				<executions>
+					<execution>
+						<id>generate.target</id>
+						<phase>validate</phase>
+						<configuration>
+							<applicationsArgs>
+								<args>-application ${converterApplication.name} ${targetPlatform.name}</args>
+							</applicationsArgs>
+							<executionEnvironment>JavaSE-11</executionEnvironment>
+						</configuration>
+						<goals>
+							<goal>eclipse-run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>
