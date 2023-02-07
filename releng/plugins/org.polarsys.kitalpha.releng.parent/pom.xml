@@ -38,8 +38,8 @@
 	</licenses>
 
 	<properties>
-		<tycho-version>2.2.0</tycho-version>
-		<tycho-extras-version>2.2.0</tycho-extras-version>
+		<tycho-version>2.7.5</tycho-version>
+		<tycho-extras-version>2.7.5</tycho-extras-version>
 		<platform-version-name>oxygen</platform-version-name>
 		<tycho.scmUrl>scm:git:https://git.polarsys.org/r/kitalpha/kitalpha</tycho.scmUrl>
 		<tycho.surefire.useUIHarness>false</tycho.surefire.useUIHarness>
@@ -60,13 +60,7 @@
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
-			<properties>
-				<target-platform-name>kitalpha</target-platform-name>
-			</properties>
 			<modules>
-				<!-- module TP -->
-				<module>../../plugins/org.polarsys.kitalpha.releng.targets</module>
-
 				<module>../../plugins/org.polarsys.kitalpha.releng.aggregator.product</module>
 				<module>../../plugins/org.polarsys.kitalpha.releng.aggregator.examples</module>
 				<module>../../plugins/org.polarsys.kitalpha.releng.aggregator.samplecomponent</module>
@@ -77,13 +71,7 @@
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
-			<properties>
-				<target-platform-name>kitalpha</target-platform-name>
-			</properties>
 			<modules>
-				<!-- module TP -->
-				<module>../../plugins/org.polarsys.kitalpha.releng.targets</module>
-				<!-- module Component Aggregator -->
 				<!-- module Runtime -->
 				<module>../../plugins/org.polarsys.kitalpha.releng.aggregator.runtime</module>
 				<!-- module SDK -->
@@ -162,6 +150,28 @@
 				<module>../../plugins/org.polarsys.kitalpha.releng.aggregator.tests</module>
 			</modules>
 		</profile>
+		<profile>
+			<id>rcptt</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<modules>
+				<!-- Test RCPTT -->
+				<!-- module>../../../architecture description/dsl/examples/tests/rcptt/org.polarsys.kitalpha.activityexplorer.test.rcptt</module-->
+				
+				<module>../../../tests/architecture_description/core/org.polarsys.kitalpha.ad.core.rcptt</module>
+				<module>../../../tests/resource_reuse/org.polarsys.kitalpha.resourcereuse.emfscheme.test.rcptt</module>
+				<module>../../../Docgen/business/tests/rcptt/org.polarsys.kitalpha.doc.gen.test.rcptt</module>
+				<module>../../../Docgen/business/tests/rcptt/org.polarsys.kitalpha.doc.gen.business.ecore.test.rcptt</module>
+				<module>../../../detachment/tests/rcptt/org.polarsys.kitalpha.detachment.tests.rcptt</module>
+				<module>../../../tests/architecture_description/dsl/org.polarsys.kitalpha.ad.viewpoint.test.rcptt</module>
+				<module>../../../tests/architecture_description/core/org.polarsys.kitalpha.ad.rcptt</module>
+				<module>../../../common/tests/org.polarsys.kitalpha.common.rcptt</module>
+				<module>../../../emde/tests/org.polarsys.kitalpha.emde.rcptt</module>
+				<module>../../../transposer/tests/plugins/rcptt/org.polarsys.kitalpha.transposer.rcptt.tests</module>
+				 
+			</modules>
+		</profile>
 	</profiles>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
@@ -189,25 +199,33 @@
 				<artifactId>target-platform-configuration</artifactId>
 				<version>${tycho-version}</version>
 				<configuration>
-					<targetDefinitionIncludeSource>honor</targetDefinitionIncludeSource>
+					<targetDefinitionIncludeSource>force</targetDefinitionIncludeSource>
 					<executionEnvironment>JavaSE-11</executionEnvironment>
 					<target>
 						<artifact>
 							<groupId>org.polarsys</groupId>
-							<artifactId>kitalpha</artifactId>
+							<artifactId>org.polarsys.kitalpha</artifactId>
 							<version>6.1.0-SNAPSHOT</version>
-							<classifier>../../../releng/plugins/org.polarsys.kitalpha.releng.targets/${target-platform-name}</classifier>
+							<classifier>../org.polarsys.kitalpha.releng.targets/${target-platform-name}</classifier>
 						</artifact>
 					</target>
-					<dependency-resolution>
-						<extraRequirements>
-							<requirement>
-								<type>eclipse-plugin</type>
-								<id>org.eclipse.osgi.compatibility.state</id>
-								<versionRange>[1.1.0,2.0.0)</versionRange>
-							</requirement>
-						</extraRequirements>
-					</dependency-resolution>
+					<environments>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>macosx</os>
+							<ws>cocoa</ws>
+							<arch>x86_64</arch>
+						</environment>
+					</environments>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -319,32 +337,6 @@
 		</plugins>
 		<pluginManagement>
 			<plugins>
-				<plugin>
-					<groupId>org.eclipse.tycho</groupId>
-					<artifactId>target-platform-configuration</artifactId>
-					<version>${tycho-version}</version>
-					<configuration>
-						<resolver>p2</resolver>
-						<pomDependencies>consider</pomDependencies>
-						<environments>
-							<environment>
-								<os>linux</os>
-								<ws>gtk</ws>
-								<arch>x86_64</arch>
-							</environment>
-							<environment>
-								<os>win32</os>
-								<ws>win32</ws>
-								<arch>x86_64</arch>
-							</environment>
-							<environment>
-								<os>macosx</os>
-								<ws>cocoa</ws>
-								<arch>x86_64</arch>
-							</environment>
-						</environments>
-					</configuration>
-				</plugin>
 				<plugin>
 					<groupId>org.eclipse.tycho</groupId>
 					<artifactId>tycho-compiler-plugin</artifactId>

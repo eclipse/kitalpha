@@ -29,35 +29,27 @@
    </license>
 
    <requires>
-      <import plugin="org.eclipse.ui"/>
-      <import plugin="org.eclipse.core.runtime"/>
-      <import plugin="org.polarsys.kitalpha.examples.generic.wizard"/>
-      <import plugin="org.eclipse.emf.ecore"/>
-      <import plugin="org.polarsys.kitalpha.composer.metamodel.allocation.base.model"/>
-      <import plugin="org.eclipse.emf.edit"/>
-      <import plugin="org.polarsys.kitalpha.composer.metamodel.allocation.base.model.edit"/>
-      <import plugin="org.eclipse.core.resources"/>
-      <import plugin="org.eclipse.emf.ecore.xmi"/>
-      <import plugin="org.eclipse.emf.edit.ui"/>
-      <import plugin="org.eclipse.ui.ide"/>
-      <import plugin="org.polarsys.kitalpha.composer.core"/>
-      <import plugin="org.eclipse.ocl"/>
-      <import plugin="org.eclipse.ocl.ecore"/>
+      <import feature="org.polarsys.kitalpha.cadence.feature"/>
+      <import plugin="com.google.guava"/>
       <import plugin="org.eclipse.acceleo.common"/>
       <import plugin="org.eclipse.acceleo.engine"/>
       <import plugin="org.eclipse.acceleo.model"/>
       <import plugin="org.eclipse.acceleo.profiler"/>
-      <import plugin="org.eclipse.acceleo.common" version="3.3.2" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.acceleo.engine" version="3.3.2" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.acceleo.model" version="3.3.2" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.acceleo.profiler" version="3.3.2" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="org.eclipse.emf.ecore.edit"/>
-      <import plugin="com.google.guava"/>
-      <import plugin="org.eclipse.acceleo.common" version="3.3.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.acceleo.engine" version="3.3.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.acceleo.model" version="3.3.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.acceleo.profiler" version="3.3.0" match="greaterOrEqual"/>
-      <import feature="org.polarsys.kitalpha.cadence.feature" version="6.1.0.qualifier"/>
+      <import plugin="org.eclipse.emf.ecore.xmi"/>
+      <import plugin="org.eclipse.emf.edit"/>
+      <import plugin="org.eclipse.emf.edit.ui"/>
+      <import plugin="org.eclipse.ocl"/>
+      <import plugin="org.eclipse.ocl.ecore"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.polarsys.kitalpha.composer.core"/>
+      <import plugin="org.polarsys.kitalpha.composer.metamodel.allocation.base.model"/>
+      <import plugin="org.polarsys.kitalpha.composer.metamodel.allocation.base.model.edit"/>
+      <import plugin="org.polarsys.kitalpha.examples.generic.wizard"/>
    </requires>
 
    <plugin

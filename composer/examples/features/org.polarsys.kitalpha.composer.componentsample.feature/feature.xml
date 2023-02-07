@@ -29,7 +29,7 @@
    </license>
 
    <requires>
-      <import feature="org.polarsys.kitalpha.composer.feature" version="1.0.0.v20150930-1954"/>
+      <import feature="org.polarsys.kitalpha.composer.feature"/>
       <import plugin="org.polarsys.kitalpha.vp.componentsample.model"/>
    </requires>
 

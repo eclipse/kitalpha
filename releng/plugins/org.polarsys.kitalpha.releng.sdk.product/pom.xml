@@ -35,15 +35,9 @@
 				<version>${tycho-version}</version>
 				<executions>
 					<execution>
-						<id>materialize-products</id>
+						<id>create-products</id>
 						<goals>
 							<goal>materialize-products</goal>
-						</goals>
-					</execution>
-					<execution>
-						<phase>pre-integration-test</phase>
-						<id>archive-products</id>
-						<goals>
 							<goal>archive-products</goal>
 						</goals>
 					</execution>
@@ -65,7 +59,7 @@
 				<executions>
 					<execution>
 						<id>create-dropin-folders</id>
-						<phase>package</phase>
+						<phase>prepare-package</phase>
 						<configuration>
 							<target>
 								<echo>Create dropin folders in products</echo>

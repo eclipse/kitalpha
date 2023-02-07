@@ -11,7 +11,7 @@
  *******************************************************************************/
 target "kitalpha" with source, requirements
 
-include "https://download.eclipse.org/sirius/updates/releases/7.0.4/2021-06/targets/modules/gmf-runtime-1.14.tpd"
+include "https://download.eclipse.org/sirius/updates/stable/7.1.0-S20230202-112117/2021-06/targets/modules/gmf-runtime-1.15.tpd"
 
 location Eclipse-2021-06 "https://download.eclipse.org/releases/2021-06/" {
 	org.eclipse.m2e.feature.feature.group lazy
@@ -23,7 +23,6 @@ location Eclipse-2021-06 "https://download.eclipse.org/releases/2021-06/" {
 	org.eclipse.emf.validation.ocl lazy
 	org.eclipse.emf.transaction.sdk.feature.group lazy
 	org.eclipse.emf.transaction.doc.feature.group lazy
-	org.eclipse.gef.sdk.feature.group lazy
 	org.eclipse.ui.ide lazy
 	org.eclipse.ui.workbench lazy
 	lpg.runtime.java.source lazy
@@ -36,8 +35,6 @@ location Eclipse-2021-06 "https://download.eclipse.org/releases/2021-06/" {
 	org.eclipse.xtend.typesystem.emf.source lazy
 	org.eclipse.emf.mwe.utils.source lazy
 	org.eclipse.emf.mwe2.runtime.source lazy
-	org.eclipse.draw2d.sdk.feature.group lazy
-	org.eclipse.draw2d.source.feature.group lazy
 	org.eclipse.e4.rcp.source.feature.group lazy
 	org.eclipse.ecf.core.feature.feature.group lazy
 	org.eclipse.ecf.core.ssl.feature.feature.group lazy
@@ -49,7 +46,6 @@ location Eclipse-2021-06 "https://download.eclipse.org/releases/2021-06/" {
 	org.eclipse.equinox.p2.extras.feature.source.feature.group lazy
 	org.eclipse.equinox.p2.rcp.feature.source.feature.group lazy
 	org.eclipse.equinox.p2.user.ui.source.feature.group lazy
-	org.eclipse.gef.source lazy
 	org.eclipse.help.source lazy
 	org.eclipse.jdt.source.feature.group lazy
 	org.eclipse.jgit lazy
@@ -85,7 +81,7 @@ location acceleo "https://download.eclipse.org/acceleo/updates/releases/3.7/" {
 	org.eclipse.acceleo.doc [3.7.11,3.7.12)
 }
 
-location sirius "https://download.eclipse.org/sirius/updates/releases/7.0.4/2021-06/" {
+location sirius "https://download.eclipse.org/sirius/updates/stable/7.1.0-S20230202-112117/2021-06/" {
 	org.eclipse.sirius.doc.feature.feature.group lazy
     org.eclipse.sirius.runtime.source.feature.group lazy
     org.eclipse.sirius.runtime.acceleo.feature.group lazy
@@ -119,7 +115,7 @@ location sirius "https://download.eclipse.org/sirius/updates/releases/7.0.4/2021
 	org.eclipse.sirius.tests.feature.group lazy
 }
 
-location EMF-DiffMerge "https://download.eclipse.org/diffmerge/releases/0.14.0/emf-diffmerge-site/" {
+location EMF-DiffMerge "https://download.eclipse.org/diffmerge/stable/0.14.1-S20221130/emf-diffmerge-site/" {
 	org.eclipse.emf.diffmerge.feature.feature.group lazy
 	org.eclipse.emf.diffmerge.feature.source.feature.group lazy
 	org.eclipse.emf.diffmerge.sirius.feature.feature.group lazy
@@ -130,14 +126,14 @@ location EMF-DiffMerge "https://download.eclipse.org/diffmerge/releases/0.14.0/e
 	org.eclipse.emf.diffmerge.egit.feature.source.feature.group lazy
 }
 
-location EDM-Patterns "https://download.eclipse.org/diffmerge/releases/0.14.0/edm-patterns-site/" {
+location EDM-Patterns "https://download.eclipse.org/diffmerge/stable/0.14.1-S20221130/edm-patterns-site/" {
 	org.eclipse.emf.diffmerge.patterns.sdk.feature.feature.group lazy
 	org.eclipse.emf.diffmerge.patterns.sdk.feature.source.feature.group lazy
 	org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.feature.group lazy
 	org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.source.feature.group lazy
 }
 
-location coevolution "https://download.eclipse.org/diffmerge/releases/0.14.0/edm-coevolution-site/" {
+location coevolution "https://download.eclipse.org/diffmerge/stable/0.14.1-S20221130/edm-coevolution-site/" {
 	 org.eclipse.emf.diffmerge.coevolution.sdk.feature.feature.group lazy
 	 org.eclipse.emf.diffmerge.coevolution.sdk.feature.source.feature.group lazy
 }
