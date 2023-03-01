@@ -23,5 +23,6 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.emf.transaction
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-ActivationPolicy: lazy
-Export-Package: org.polarsys.kitalpha.richtext.widget.tools.ext.intf
+Export-Package: org.polarsys.kitalpha.richtext.widget.tools.ext.intf,
+ org.polarsys.kitalpha.richtext.widget.tools.ext.util
 Bundle-Vendor: %Bundle-vendor

@@ -13,14 +13,9 @@ package org.polarsys.kitalpha.richtext.widget.tools.ext.types;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.jface.window.Window;
 import org.eclipse.sirius.business.api.resource.ResourceDescriptor;
-import org.eclipse.sirius.business.api.session.Session;
-import org.eclipse.sirius.business.api.session.SessionManager;
-import org.eclipse.sirius.ui.tools.internal.dialogs.SingleRepresentationTreeSelectionDialog;
 import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
-import org.eclipse.sirius.viewpoint.DSemanticDecorator;
-import org.eclipse.swt.widgets.Display;
+import org.polarsys.kitalpha.richtext.widget.tools.ext.util.RichTextUtils;
 import org.polarsys.kitalpha.richtext.widget.tools.intf.LinkHandler;
 import org.polarsys.kitalpha.richtext.widget.tools.utils.MDERichTextToolsHelper;
 import org.polarsys.kitalpha.richtext.widget.tools.utils.Tuple;
@@ -40,23 +35,8 @@ public class DiagramElementLinkHandler extends ModelElementLinkHandler implement
 	public Tuple<String, String> getLink(String linkType, String basePath, Object object) {
 		Tuple<String, String> path = null;
 		if (object instanceof EObject) {
-			EObject eObject = (EObject) object;
-
-			if (eObject instanceof DSemanticDecorator) {
-				eObject = ((DSemanticDecorator) eObject).getTarget();
-
-			} else if (eObject instanceof DRepresentationDescriptor) {
-				eObject = ((DRepresentationDescriptor) eObject).getTarget();
-			}
-
-			Session session = SessionManager.INSTANCE.getSession(eObject);
-			SingleRepresentationTreeSelectionDialog dialog = new SingleRepresentationTreeSelectionDialog(
-					Display.getCurrent().getActiveShell(), session);
-
-			if (Window.OK == dialog.open()) {
-				Object result = dialog.getResult();
-				path = getTuple(result.toString(), result);
-			}
+      Object result = RichTextUtils.eInstance.selectDiagramElementFromDialog((EObject) object);
+      path = getTuple(result.toString(), result);
 		}
 		return path;
 	}
