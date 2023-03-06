@@ -32,6 +32,7 @@ public class Messages extends NLS {
 	public static String RichTextWidget_Exception_Error_Unknown_openlink;
 	public static String RichTextWidget_Exception_Error_Unknown_getPath;
 	public static String RichTextWidget_Dialog_Filter;
+  public static String RichTextWidget_Dialog_Edit_Link;
 	public static String RichTextWidget_Dialog_Add_Link;
 	public static String RichTextWidget_Dialog_Add_Link_Browse;
 	public static String RichTextWidget_Dialog_Add_Link_URL_Display;

@@ -35,6 +35,10 @@ public class LinkManagerImpl implements LinkManager {
 	
 	protected final Map<String, String> label2type = new HashMap<String, String>();
 	
+  public LinkManagerImpl() {
+    this(null);
+  }
+
 	public LinkManagerImpl(MDERichTextWidget richText) {
 		
 		this.widget = richText;
