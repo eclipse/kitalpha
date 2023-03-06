@@ -11,11 +11,13 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.richtext.widget.tools.handlers;
 
+import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.swt.widgets.Display;
 import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
 import org.polarsys.kitalpha.richtext.nebula.widget.toolbar.MDERichTextToolbarItemHandler;
-import org.polarsys.kitalpha.richtext.widget.tools.dialogs.MDEAddLinkDialog;
+import org.polarsys.kitalpha.richtext.widget.tools.dialogs.MDELinkDialog;
 import org.polarsys.kitalpha.richtext.widget.tools.manager.LinkManagerImpl;
+import org.polarsys.kitalpha.richtext.widget.tools.messages.Messages;
 
 /**
  * 
@@ -26,8 +28,12 @@ public class AddLinkHandler implements MDERichTextToolbarItemHandler {
 
 	@Override
 	public void execute(MDERichTextWidget richText) {
-		MDEAddLinkDialog dialog = new MDEAddLinkDialog(Display.getCurrent().getActiveShell(), richText, new LinkManagerImpl(richText));
-		dialog.open();
+    MDELinkDialog linkDialog = new MDELinkDialog(Display.getCurrent().getActiveShell(), richText.getElement(),
+        richText.getSelectedText(), Messages.RichTextWidget_Dialog_Add_Link, new LinkManagerImpl(richText));
+    if (linkDialog.open() == Dialog.OK) {
+      String encodedString = linkDialog.getEncodedURL();
+      richText.insertRawText(encodedString);
+      richText.forceFocus();
+    }
 	}
-
 }
