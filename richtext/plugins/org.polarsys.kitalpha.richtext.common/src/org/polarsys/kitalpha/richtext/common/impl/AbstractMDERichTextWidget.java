@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017, 2021 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2023 Thales Global Services S.A.S.
  *  This program and the accompanying materials are made available under the
  *  terms of the Eclipse Public License 2.0 which is available at
  *  http://www.eclipse.org/legal/epl-2.0
@@ -129,18 +129,6 @@ public abstract class AbstractMDERichTextWidget implements MDERichTextWidget {
 	public final void setSaveStrategy(SaveStrategy strategy) {
 		Assert.isLegal(strategy != null, Messages.RichTextWidget_Common_NullableStrategy_Error);
 		this.saveStrategy = strategy;
-	}
-
-	@Override
-	public boolean isDirty() {
-		EObject owner = getElement();
-		EStructuralFeature feature = getFeature();
-		String storedText = (String) owner.eGet(feature);
-		String text = getText();
-		if (storedText == null) {
-			return !"".equals(text);
-		}
-		return !storedText.equals(text);
 	}
 
 	@Override

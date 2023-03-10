@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017, 2020 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2023 Thales Global Services S.A.S.
  *  This program and the accompanying materials are made available under the
  *  terms of the Eclipse Public License 2.0 which is available at
  *  http://www.eclipse.org/legal/epl-2.0
@@ -116,11 +116,6 @@ public interface MDERichTextWidget extends PropertyChangeListener {
 	 * @param editable is the editable state
 	 */
 	void setEditable(boolean editable);
-
-	/**
-	 * @return if the widget is in dirty mode
-	 */
-	boolean isDirty();
 
 	/**
 	 * @return true if the editor is ready

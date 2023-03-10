@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017, 2020 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2023 Thales Global Services S.A.S.
  *  This program and the accompanying materials are made available under the
  *  terms of the Eclipse Public License 2.0 which is available at
  *  http://www.eclipse.org/legal/epl-2.0
@@ -245,13 +245,10 @@ public class ListenerInstaller {
 		new BrowserFunction(widget.getBrowser(), "firePropertyChangeEvent") { //$NON-NLS-1$
 			@Override
 			public Object function(Object[] arguments) {
-				if (!widget.isDirtyStateUpdated() && widget.isDirty()) {
-					// As a performance improvement, the saveContent is only
-					// called only if the dirty state of the widget is not
-					// updated
-					widget.saveContent();
-					widget.setDirtyStateUpdated(true);
-				}
+        // Do nothing
+        // Do not save the content of the editor in the model
+        // Do not update the sate to dirty
+        // the state of the editor is linked to if the model is sync with what is edited in the editor
 				return null;
 			}
 		};
