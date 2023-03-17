@@ -133,8 +133,10 @@ public class MDERichTextEditor extends EditorPart
 
 		if (eResource != null) {
 			IFile file = MDERichTextHelper.getFile(element);
-			String fileString = file.getFullPath().toString();
-			processResourceDelta(affectedChildren, fileString);
+			if (file != null) {
+			  String fileString = file.getFullPath().toString();
+			  processResourceDelta(affectedChildren, fileString);
+			}
 		} else {
 			Status status = new Status(IStatus.WARNING, Activator.PLUGIN_ID,
 					"Could nof find the resource of the editor: " + editorInput.getName());
