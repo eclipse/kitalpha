@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017, 2020 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2023 Thales Global Services S.A.S.
  *  This program and the accompanying materials are made available under the
  *  terms of the Eclipse Public License 2.0 which is available at
  *  http://www.eclipse.org/legal/epl-2.0
@@ -19,6 +19,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.swt.browser.BrowserFunction;
+import org.polarsys.kitalpha.richtext.common.impl.AbstractMDERichTextWidget;
 import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
 import org.polarsys.kitalpha.richtext.nebula.widget.MDENebulaBasedRichTextWidget;
 import org.polarsys.kitalpha.richtext.widget.editor.MDERichTextEditor;
@@ -65,10 +66,10 @@ public class ListenerInstaller {
 	public void installAllListeners(final MDENebulaBasedRichTextWidget widget) {
 		installBeforePasteConfirmationDialogListener(widget);
 		installOpenLinkListener(widget);
-		installSaveListener(widget);
+    installFocusOutListener(widget);
 		installChangeNotificationHandlerListener(widget);
 		installChangeContentListener(widget);
-		installFocusEventListener(widget);
+    installFocusInListener(widget);
 		installDataReadyEventListener(widget);
 		installSetDataEventListener(widget);
 	}
@@ -191,7 +192,14 @@ public class ListenerInstaller {
 		};
 	}
 
-	protected void installSaveListener(final MDENebulaBasedRichTextWidget widget) {
+  /**
+   * Inject java script that calls dedicated functions when the editor receives a focus out event.
+   * 
+   * Note that, as defined in org\eclipse\nebula\widgets\richtext\resources\template.html, focusOut() is called on
+   * 'blur' event but only the last BrowserFunction is called(not all registered). So it is preferable to have a
+   * specific method.
+   */
+  protected void installFocusOutListener(final MDENebulaBasedRichTextWidget widget) {
 		StringBuilder script = new StringBuilder();
 
 		script.append("CKEDITOR.instances.editor.on('blur', function () {");
@@ -236,44 +244,59 @@ public class ListenerInstaller {
 	}
 
 	/**
-	 * Listener that temporary saves the editor content when receiving a 'change'
-	 * event.
-	 * 
-	 * @param widget the rich text widget.
-	 */
+   * Listener that is called when the content of the editor changes.<br/>
+   * It temporarily saves the editor content when receiving the 'change' event the first time.
+   */
 	protected void createChangeContentListener(final MDENebulaBasedRichTextWidget widget) {
-		new BrowserFunction(widget.getBrowser(), "firePropertyChangeEvent") { //$NON-NLS-1$
-			@Override
-			public Object function(Object[] arguments) {
-				if (!widget.isDirtyStateUpdated() && widget.isDirty()) {
-					// As a performance improvement, the saveContent is only
-					// called only if the dirty state of the widget is not
-					// updated
-					widget.saveContent();
-					widget.setDirtyStateUpdated(true);
-				}
-				return null;
-			}
-		};
+    final boolean[] widgetSaveTriggeredByContentChangeDetection = { false };
+
+    // if supp (resp. backspace) key is used at the end (resp. beginning) of the text, the 'change' event is emitted
+    // and the widget is saved. But in this case isDirtyStateUpdated should be still be false because there has been non
+    // change<br/>
+    // That's why we call setDirtyStateUpdated only if a model change has been effectively be done.
+    widget.addPropertyChangeListener(evt -> {
+      if (evt.getSource() == widget && AbstractMDERichTextWidget.WIDGET_SAVED_PROP.equals(evt.getPropertyName())) {
+        widget.setDirtyStateUpdated(widgetSaveTriggeredByContentChangeDetection[0]);
+      }
+    });
+
+    new BrowserFunction(widget.getBrowser(), "onChangeEvent") { //$NON-NLS-1$
+      @Override
+      public Object function(Object[] arguments) {
+        if (!widget.isDirtyStateUpdated()) {
+          // In some case, saveContent is called in a context where the model is persisted. In this context,
+          // setDirtyStateUpdated(false) need to be called so that saveContent is called at the next editor change.
+          // But, by design we can not ensure that.
+          // So we ensure that we prevent further saveContent only if the saveContent is triggered by the edition.
+          widgetSaveTriggeredByContentChangeDetection[0] = true;
+          widget.saveContent();
+          widgetSaveTriggeredByContentChangeDetection[0] = false;
+        }
+        return null;
+      }
+    };
 	}
 
-	protected void installChangeContentListener(final MDENebulaBasedRichTextWidget widget) {
-		StringBuilder script = new StringBuilder();
+  /**
+   * Inject java script that calls dedicated functions when the editor receives a 'change' in event.
+   * 
+   * Note that, as defined in org\eclipse\nebula\widgets\richtext\resources\template.html, textModified() is called on
+   * 'change' event but only the last BrowserFunction is called(not all registered). So it is preferable to have a
+   * specific method.
+   */
+	 protected void installChangeContentListener(final MDENebulaBasedRichTextWidget widget) {
+	    StringBuilder script = new StringBuilder();
 
-		/**
-		 * Notice that firePropertyChangeEvent() javascript function is defined
-		 * MDERichTextEditor.
-		 */
-		script.append("CKEDITOR.instances.editor.on('key', function () {");
-		script.append("firePropertyChangeEvent();");
-		script.append("});");
+	    script.append("CKEDITOR.instances.editor.on('change', function () {");
+	    script.append("onChangeEvent();");
+	    script.append("});");
 
-		if (!widget.executeScript(script.toString())) {
-			Activator.getDefault().getLog().log(new Status(IStatus.WARNING, Activator.PLUGIN_ID,
-					"Rich text widget cannot install firePropertyChangeEvent handler")); //$NON-NLS-1$
-		}
-	}
-
+	    if (!widget.executeScript(script.toString())) {
+	      Activator.getDefault().getLog().log(new Status(IStatus.WARNING, Activator.PLUGIN_ID,
+	          "Rich text widget cannot install onChangeEvent handler")); //$NON-NLS-1$
+	    }
+	  }
+	
 	/**
 	 * Listeners that resets the dirty state when receiving a 'focus' event.
 	 * 
@@ -290,7 +313,14 @@ public class ListenerInstaller {
 		};
 	}
 
-	protected void installFocusEventListener(final MDENebulaBasedRichTextWidget widget) {
+  /**
+   * Inject java script that calls dedicated functions when the editor receives a 'focus' in event.
+   * 
+   * Note that, as defined in org\eclipse\nebula\widgets\richtext\resources\template.html, focusIn() is called on
+   * 'focus' event but only the last BrowserFunction is called(not all registered). So it is preferable to have a
+   * specific method.
+   */
+  protected void installFocusInListener(final MDENebulaBasedRichTextWidget widget) {
 		StringBuilder script = new StringBuilder();
 
 		script.append("CKEDITOR.instances.editor.on('focus', function () {");

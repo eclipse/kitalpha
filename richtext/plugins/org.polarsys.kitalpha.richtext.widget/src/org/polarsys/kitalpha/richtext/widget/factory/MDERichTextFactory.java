@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017, 2020 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2023 Thales Global Services S.A.S.
  *  This program and the accompanying materials are made available under the
  *  terms of the Eclipse Public License 2.0 which is available at
  *  http://www.eclipse.org/legal/epl-2.0
@@ -132,40 +132,62 @@ public class MDERichTextFactory {
 		removeUselessItemFromToolbar();
 		
     MDERichtextWidgetImpl widget = new MDERichtextWidgetImpl(parent, configuration) {
-      @Override
-      protected void installListeners() {
-        super.installListeners();
+        IExecutionListener executionListener = null;
 
-        // Since minimal rich text widget does not contribute a Saveable, it needs to listen to Save event itself
-        ICommandService commandSvc = PlatformUI.getWorkbench().getAdapter(ICommandService.class);
-        Command saveCommand = commandSvc.getCommand(IWorkbenchCommandConstants.FILE_SAVE);
-        saveCommand.addExecutionListener(new IExecutionListener() {
-          @Override
-          public void preExecute(final String commandId, final ExecutionEvent event) {
-            if (!isEditorDisposed() && hasFocus()) {
-              saveContent();
+        @Override
+        protected void installListeners() {
+            super.installListeners();
+
+            executionListener = new IExecutionListener() {
+                @Override
+                public void preExecute(final String commandId, final ExecutionEvent event) {
+                    if (!isEditorDisposed() && hasFocus()) {
+                        saveContent();
+                    }
+                }
+
+                @Override
+                public void postExecuteSuccess(final String commandId, final Object returnValue) {
+                    if (!isEditorDisposed() && hasFocus()) {
+                        setDirtyStateUpdated(false);
+                    }
+                }
+
+                @Override
+                public void postExecuteFailure(final String commandId, final ExecutionException exception) {
+                    // Do nothing
+                }
+
+                @Override
+                public void notHandled(final String commandId, final NotHandledException exception) {
+                    // Do nothing
+                }
+            };
+
+            // Since minimal rich text widget does not contribute a Saveable, it needs to listen to Save/SaveAll
+            // events itself
+            ICommandService commandSvc = PlatformUI.getWorkbench().getAdapter(ICommandService.class);
+            Command saveCommand = commandSvc.getCommand(IWorkbenchCommandConstants.FILE_SAVE);
+            Command saveAllCommand = commandSvc.getCommand(IWorkbenchCommandConstants.FILE_SAVE_ALL);
+
+            saveCommand.addExecutionListener(executionListener);
+            saveAllCommand.addExecutionListener(executionListener);
+        }
+
+        @Override
+        public void dispose() {
+            if (executionListener != null) {
+                ICommandService commandSvc = PlatformUI.getWorkbench().getAdapter(ICommandService.class);
+                Command saveCommand = commandSvc.getCommand(IWorkbenchCommandConstants.FILE_SAVE);
+                Command saveAllCommand = commandSvc.getCommand(IWorkbenchCommandConstants.FILE_SAVE_ALL);
+
+                saveCommand.removeExecutionListener(executionListener);
+                saveAllCommand.removeExecutionListener(executionListener);
+                executionListener = null;
             }
-          }
 
-          @Override
-          public void postExecuteSuccess(final String commandId, final Object returnValue) {
-            if (!isEditorDisposed() && hasFocus()) {
-              setDirtyStateUpdated(false);
-            }
-          }
-
-          @Override
-          public void postExecuteFailure(final String commandId, final ExecutionException exception) {
-            // Do nothing
-          }
-
-          @Override
-          public void notHandled(final String commandId, final NotHandledException exception) {
-            // Do nothing
-          }
-        });
-      }
-    };
+            super.dispose();
+        }    };
 		
 		addToolbarItems(widget);
 		
