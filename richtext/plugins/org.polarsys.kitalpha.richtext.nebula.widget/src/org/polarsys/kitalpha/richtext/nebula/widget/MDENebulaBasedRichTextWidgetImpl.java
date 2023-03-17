@@ -265,7 +265,7 @@ public class MDENebulaBasedRichTextWidgetImpl extends BrowserBasedMDERichTextWid
 					// We avoid to set several time the same text.
 					// With old descriptions, the text getText will be different to the given
 					// parameter as browser will refactor the HTML string
-					if (!currentValue.equals(text)) {
+          if (currentValue != null && !currentValue.equals(text)) {
 						editor.setText(text);
 					} else {
 						break;
