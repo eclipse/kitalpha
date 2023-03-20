@@ -107,7 +107,9 @@ public class ModelElementLinkHandler extends AbstractModelOpenLink implements Li
 
 	@Override
 	public String encode(String url, String urlDisplayName) {
-		return "<a href=\"hlink://" + url + "\">" + StringEscapeUtils.escapeHtml(urlDisplayName) + "</a>"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+    String replaced = MDERichTextToolsHelper.encodeWhiteSpaces(StringEscapeUtils.escapeHtml(urlDisplayName));
+    return "<a href=\"hlink://" + url + "\">" + replaced //$NON-NLS-1$ //$NON-NLS-2$
+        + "</a>"; //$NON-NLS-1$
 	}
 
 	@Override
@@ -116,5 +118,4 @@ public class ModelElementLinkHandler extends AbstractModelOpenLink implements Li
 		url = url.replaceAll("/", ""); //$NON-NLS-1$ //$NON-NLS-2$
 		return url;
 	}
-
 }

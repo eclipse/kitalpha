@@ -11,6 +11,9 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.richtext.widget.tools.utils;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -113,5 +116,19 @@ public class MDERichTextToolsHelper {
 		
 	}
 	
+  public static String encodeWhiteSpaces(String input) {
+    Matcher matcher = Pattern.compile("\\s+").matcher(input);
+    String replaced = matcher.replaceAll(match -> replaceAllWhiteSpacesButLast(match.group()));
+    return replaced;
+  }
+
+  private static String replaceAllWhiteSpacesButLast(String input) {
+    String result = "";
+    for (int i = 0; i < input.length() - 1; i++) {
+      result += "&nbsp;";
+    }
+    result += " ";
+    return result;
+  }
 	
 }
