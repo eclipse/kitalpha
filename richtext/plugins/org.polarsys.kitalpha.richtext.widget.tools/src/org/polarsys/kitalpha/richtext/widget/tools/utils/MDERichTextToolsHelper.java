@@ -122,10 +122,16 @@ public class MDERichTextToolsHelper {
     return replaced;
   }
 
+  public static String decodeWhiteSpaces(String input) {
+    String replaced = input.replaceAll("&nbsp;", " ");
+    replaced = input.replaceAll("&#160;", " ");
+    return replaced;
+  }
+
   private static String replaceAllWhiteSpacesButLast(String input) {
     String result = "";
     for (int i = 0; i < input.length() - 1; i++) {
-      result += "&nbsp;";
+      result += "&#160;";
     }
     result += " ";
     return result;
