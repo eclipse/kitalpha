@@ -92,7 +92,6 @@ public class MDENebulaRichTextConfiguration extends RichTextEditorConfiguration 
 		}
 	}
 
-
 	public void removeToolbarItems(String... itemNames) {
 		for (String item : itemNames) {
 			removedItems.add(item);
