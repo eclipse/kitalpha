@@ -71,6 +71,7 @@ public class MDERichTextFactory {
 	 */
 	protected void initializeDefaultConfiguration() {
 		configuration.setOption(MDERichTextConstants.READ_ONLY_MODE, false);
+		configuration.setOption(MDERichTextConstants.IMAGE_PREVIEW, " ");
 		configuration.setOption(MDERichTextConstants.PAST_FROM_MS_WORD_PROMPT_CLEANUP, true);
 	}
 
