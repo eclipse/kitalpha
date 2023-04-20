@@ -70,7 +70,7 @@
 							<type>eclipse-feature</type>
 						</dependency>
 					</dependencies>
-					<executionEnvironment>JavaSE-11</executionEnvironment>
+					<executionEnvironment>JavaSE-17</executionEnvironment>
 				</configuration>
 				<executions>
 					<execution>
@@ -80,7 +80,7 @@
 							<applicationsArgs>
 								<args>-application ${converterApplication.name} ${targetPlatform.name}</args>
 							</applicationsArgs>
-							<executionEnvironment>JavaSE-11</executionEnvironment>
+							<executionEnvironment>JavaSE-17</executionEnvironment>
 						</configuration>
 						<goals>
 							<goal>eclipse-run</goal>
