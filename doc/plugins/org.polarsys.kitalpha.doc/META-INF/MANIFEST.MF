@@ -7,7 +7,7 @@ Bundle-Activator: org.polarsys.kitalpha.doc.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.help
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: %BundleVendor
 Bundle-Localization: plugin

@@ -15,7 +15,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.sirius.diagram,
  org.eclipse.sirius.diagram.ui,
  org.eclipse.osgi
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Eclipse-LazyStart: true
 Export-Package: org.polarsys.kitalpha.sirius.rotativeimage,
  org.polarsys.kitalpha.sirius.rotativeimage.editpart,

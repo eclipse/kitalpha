@@ -4,6 +4,6 @@ Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: org.polarsys.kitalpha.composer.metamodel.allocation.base.ecore
 Bundle-Version: 6.1.0.qualifier
 Require-Bundle: org.eclipse.emf.ecore
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-Vendor: %Bundle-Vendor
 Bundle-Localization: OSGI-INF/l10n/bundle

@@ -9,5 +9,5 @@ Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.kitalpha.composer.examples.advanced.ecore.gen.generator,
  org.polarsys.kitalpha.composer.core
 Eclipse-LazyStart: true
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-Localization: plugin

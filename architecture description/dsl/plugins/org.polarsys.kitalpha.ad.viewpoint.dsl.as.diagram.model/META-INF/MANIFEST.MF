@@ -6,7 +6,7 @@ Bundle-Version: 6.1.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.configuration,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.configuration.impl,

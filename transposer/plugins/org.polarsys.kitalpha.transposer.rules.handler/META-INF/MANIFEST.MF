@@ -40,6 +40,6 @@ Export-Package: org.polarsys.kitalpha.transposer.rules.handler,
  org.polarsys.kitalpha.transposer.rules.handler.rules.runtime.spec,
  org.polarsys.kitalpha.transposer.rules.handler.rules.runtime.util,
  org.polarsys.kitalpha.transposer.rules.handler.rules.util
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
 Bundle-Activator: org.polarsys.kitalpha.transposer.rules.handler.RuleHandlerPlugin

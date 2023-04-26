@@ -15,7 +15,7 @@ Require-Bundle: org.eclipse.ui,
  org.polarsys.kitalpha.ad.af.dsl.as.desc.model,
  org.polarsys.kitalpha.ad.af.dsl.generation.desc
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.polarsys.kitalpha.ad.af.dsl.as.servicies.action.popup
 Bundle-Localization: plugin
 Bundle-Vendor: %BundleVendor

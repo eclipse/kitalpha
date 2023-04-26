@@ -7,7 +7,7 @@ Bundle-Activator: org.polarsys.kitalpha.model.common.scrutiny.Activator
 Bundle-Vendor: %VENDOR
 Require-Bundle: org.eclipse.core.runtime;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
 Import-Package: org.apache.log4j
 Export-Package: org.polarsys.kitalpha.model.common.scrutiny;uses:="org.eclipse.ui,org.osgi.framework",

@@ -8,7 +8,7 @@ Automatic-Module-Name: org.polarsys.kitalpha.emde.model.edit
 Bundle-Version: 6.1.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: org.polarsys.kitalpha.emde.model.edit.provider.EmdeEditPlugin$Implementation
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.polarsys.kitalpha.emde.model.edit.provider,
  org.polarsys.kitalpha.emde.model.edit.provider.helpers
 Require-Bundle: org.eclipse.core.runtime,

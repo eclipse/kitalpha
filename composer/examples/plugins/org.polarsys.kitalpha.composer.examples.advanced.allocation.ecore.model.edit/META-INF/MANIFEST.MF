@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Activator: ecoreadvancedalloc.provider.EcoreadvancedallocEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: ecoreadvancedalloc.provider
 Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.kitalpha.composer.examples.advanced.allocation.ecore.model;visibility:=reexport,

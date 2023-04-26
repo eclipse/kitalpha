@@ -7,7 +7,7 @@ Bundle-Version: 6.1.0.qualifier
 Bundle-SymbolicName: org.polarsys.kitalpha.ad.af.coredomain.model.editor;singleton:=true
 Bundle-ClassPath: .
 Bundle-Activator: org.polarsys.kitalpha.ad.af.coredomain.af.model.editor.presentation.AfEditorPlugin$Implementation
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.polarsys.kitalpha.ad.af.coredomain.af.model.editor.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,

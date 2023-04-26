@@ -8,7 +8,7 @@ Bundle-SymbolicName: org.polarsys.kitalpha.ad.viewpoint.coredomain.egf;singleton
 Require-Bundle: org.eclipse.egf.pattern;visibility:=reexport,
  org.eclipse.egf.pattern.ftask;visibility:=reexport,
  org.eclipse.egf.emf.pattern
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.polarsys.kitalpha.ad.viewpoint.coredomain.patterns.eoperations.viewpoint,
  org.polarsys.kitalpha.ad.viewpoint.coredomain.patterns.eoperations.workspace,
  org.polarsys.kitalpha.ad.viewpoint.coredomain.patterns.labelproviders

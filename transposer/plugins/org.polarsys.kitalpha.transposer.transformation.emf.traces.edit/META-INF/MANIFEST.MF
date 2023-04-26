@@ -11,5 +11,5 @@ Export-Package: org.polarsys.kitalpha.transposer.transformation.emf.traces.provi
 Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.kitalpha.transposer.transformation.emf.traces;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
