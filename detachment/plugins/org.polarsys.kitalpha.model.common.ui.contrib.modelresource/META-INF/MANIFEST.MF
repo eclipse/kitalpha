@@ -10,6 +10,6 @@ Require-Bundle: org.eclipse.ui,
  org.polarsys.kitalpha.model.detachment.ui,
  org.polarsys.kitalpha.model.common.share
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ClassPath: .
 Bundle-Vendor: %pluginVendor

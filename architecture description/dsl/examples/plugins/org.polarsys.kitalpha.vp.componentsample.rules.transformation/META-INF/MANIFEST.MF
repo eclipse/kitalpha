@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Transformation
 Bundle-SymbolicName: org.polarsys.kitalpha.vp.componentsample.rules.transformation;singleton:=true
 Bundle-Version: 6.1.0.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Require-Bundle: org.polarsys.kitalpha.vp.componentsample.model,
  org.polarsys.kitalpha.transposer.core,
  org.polarsys.kitalpha.transposer.rules.handler,

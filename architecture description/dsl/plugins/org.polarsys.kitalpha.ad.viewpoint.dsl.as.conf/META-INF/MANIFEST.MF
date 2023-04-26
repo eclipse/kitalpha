@@ -6,5 +6,5 @@ Bundle-Version: 6.1.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %BundleVendor
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy

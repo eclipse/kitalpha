@@ -7,5 +7,5 @@ Bundle-Activator: org.polarsys.kitalpha.composer.examples.advanced.allocation.ec
 Bundle-Vendor: %providerName
 Require-Bundle: org.eclipse.core.runtime
 Eclipse-LazyStart: true
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-Localization: plugin

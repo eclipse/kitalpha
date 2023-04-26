@@ -3,4 +3,4 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Transformation
 Bundle-SymbolicName: org.polarsys.kitalpha.vp.componentsamplesafetypattern.rules.transformation;singleton:=true
 Bundle-Version: 6.1.0.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17

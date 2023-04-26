@@ -9,5 +9,5 @@ Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.transposer.transformation.context,
  org.polarsys.kitalpha.transposer.transformation.rule,
  org.polarsys.kitalpha.transposer.transformation.trace
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-Localization: plugin

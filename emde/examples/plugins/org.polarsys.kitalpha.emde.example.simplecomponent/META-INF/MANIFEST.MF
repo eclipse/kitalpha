@@ -6,6 +6,6 @@ Bundle-Version: 6.1.0.qualifier
 Bundle-Activator: org.polarsys.kitalpha.emde.example.simplecomponent.Activator
 Require-Bundle: org.eclipse.core.runtime
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.polarsys.kitalpha.emde.example.simplecomponent
 Bundle-Vendor: www.polarsys.org

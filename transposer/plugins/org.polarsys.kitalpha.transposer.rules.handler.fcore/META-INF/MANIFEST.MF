@@ -9,4 +9,4 @@ Bundle-Localization: plugin
 Require-Bundle: org.eclipse.egf.pattern;visibility:=reexport,
  org.eclipse.egf.emf.pattern;visibility:=reexport,
  org.eclipse.egf.pattern.ftask;visibility:=reexport
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17

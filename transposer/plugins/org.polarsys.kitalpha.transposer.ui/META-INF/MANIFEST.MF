@@ -16,6 +16,6 @@ Require-Bundle: org.eclipse.ui,
 Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.transposer.ui.actions,
  org.polarsys.kitalpha.transposer.ui.launch
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-Localization: plugin
 Import-Package: org.polarsys.kitalpha.transposer.rules.handler.rules.common.provider

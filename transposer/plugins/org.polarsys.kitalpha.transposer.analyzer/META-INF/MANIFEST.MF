@@ -17,4 +17,4 @@ Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.validation;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-Activator: org.polarsys.kitalpha.transposer.analyzer.GraphPlugin$Implementation
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
