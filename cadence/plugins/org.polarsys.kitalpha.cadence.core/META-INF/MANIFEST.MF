@@ -9,5 +9,5 @@ Require-Bundle: org.eclipse.core.runtime
 Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.cadence.core.api,
  org.polarsys.kitalpha.cadence.core.api.parameter
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-Localization: plugin

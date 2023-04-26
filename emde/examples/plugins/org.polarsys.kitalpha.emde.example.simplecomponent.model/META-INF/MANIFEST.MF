@@ -6,7 +6,7 @@ Bundle-Version: 6.1.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.polarsys.kitalpha.emde.example.simplecomponent.model.simplecomponent,
  org.polarsys.kitalpha.emde.example.simplecomponent.model.simplecomponent.impl,
  org.polarsys.kitalpha.emde.example.simplecomponent.model.simplecomponent.util

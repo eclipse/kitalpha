@@ -13,5 +13,5 @@ Require-Bundle: org.eclipse.ui,
  org.polarsys.kitalpha.report.example.customization.model,
  org.polarsys.kitalpha.report.example.customization.model.edit,
  org.eclipse.core.resources
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.polarsys.kitalpha.report.example.customization

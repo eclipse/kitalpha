@@ -6,7 +6,7 @@ Bundle-Localization: plugin
 Bundle-Version: 6.1.0.qualifier
 Bundle-SymbolicName: org.polarsys.kitalpha.ad.viewpoint.coredomain.model;singleton:=true
 Bundle-ClassPath: .
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model,
  org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.impl,
  org.polarsys.kitalpha.ad.viewpoint.coredomain.viewpoint.model.util,

@@ -21,7 +21,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.ui.views.properties.tabbed,
  org.eclipse.sirius.ui,
  org.eclipse.emf.transaction
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.richtext.widget.tools.ext.intf,
  org.polarsys.kitalpha.richtext.widget.tools.ext.types

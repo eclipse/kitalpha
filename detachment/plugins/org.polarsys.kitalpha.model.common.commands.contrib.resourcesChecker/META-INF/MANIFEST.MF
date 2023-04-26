@@ -8,6 +8,6 @@ Bundle-Vendor: %VENDOR
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources,
  org.polarsys.kitalpha.model.common.commands
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
 Import-Package: org.apache.log4j

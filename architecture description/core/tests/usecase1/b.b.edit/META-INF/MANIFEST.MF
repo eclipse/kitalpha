@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Activator: B.B.provider.BEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: B.B.provider
 Require-Bundle: org.eclipse.core.runtime,
  b.b;visibility:=reexport,

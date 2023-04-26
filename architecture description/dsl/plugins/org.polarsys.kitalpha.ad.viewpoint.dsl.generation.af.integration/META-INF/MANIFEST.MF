@@ -16,7 +16,7 @@ Require-Bundle: org.eclipse.ui,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.helper,
  org.eclipse.sirius,
  org.polarsys.kitalpha.ad.integration.sirius.model
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.af.integration,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.af.integration.bundles,

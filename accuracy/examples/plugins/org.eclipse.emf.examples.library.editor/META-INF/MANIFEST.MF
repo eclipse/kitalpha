@@ -7,7 +7,7 @@ Bundle-ClassPath: org.eclipse.emf.examples.library.editor.jar
 Bundle-Activator: org.eclipse.emf.examples.extlibrary.presentation.EXTLibraryEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.eclipse.emf.examples.extlibrary.presentation,
  org.eclipse.emf.examples.extlibrary.presentation,
  org.eclipse.emf.examples.extlibrary.actions

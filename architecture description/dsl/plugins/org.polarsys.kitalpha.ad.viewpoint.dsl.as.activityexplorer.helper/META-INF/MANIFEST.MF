@@ -11,7 +11,7 @@ Require-Bundle: org.eclipse.ui,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.model;bundle-version="0.5.1",
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model;bundle-version="0.5.1"
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.helper,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.helper.exception,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.helper.extensions
