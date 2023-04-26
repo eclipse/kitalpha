@@ -14,7 +14,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.sirius.diagram,
  org.polarsys.kitalpha.ad.viewpoint.coredomain.model,
  org.polarsys.kitalpha.ad.integration.sirius.model
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.helper.conf,

@@ -3,5 +3,5 @@ Bundle-ManifestVersion: 2
 Bundle-Name: ComponentSample Releng
 Bundle-SymbolicName: org.polarsys.kitalpha.vp.componentsample.releng;singleton:=true
 Bundle-Version: 6.1.0.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-Vendor: www.polarsys.org

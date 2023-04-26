@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Activator: ecorerecursivealloc.provider.EcorerecursiveallocEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: ecorerecursivealloc.provider
 Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.kitalpha.composer.examples.recursive.allocation.ecore.model;visibility:=reexport,

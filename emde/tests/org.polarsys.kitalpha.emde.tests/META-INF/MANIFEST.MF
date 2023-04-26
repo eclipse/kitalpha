@@ -55,5 +55,5 @@ Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.kitalpha.vp.componentsamplesafety.model,
  org.polarsys.kitalpha.vp.componentsamplesafety.model.edit,
  org.polarsys.kitalpha.egf.genchain.diagram
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy

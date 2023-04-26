@@ -21,7 +21,7 @@ Require-Bundle: org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.activityexplorer;
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.desc,
  org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.helper
 Import-Package: org.apache.log4j
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-Localization: plugin
 Export-Package: org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist,
  org.polarsys.kitalpha.ad.viewpoint.dsl.cs.text.ui.contentassist.antlr,

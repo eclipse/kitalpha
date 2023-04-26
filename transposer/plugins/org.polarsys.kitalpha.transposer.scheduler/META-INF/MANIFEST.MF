@@ -10,5 +10,5 @@ Export-Package: org.polarsys.kitalpha.transposer.scheduler.api,
  org.polarsys.kitalpha.transposer.scheduler.generic,
  org.polarsys.kitalpha.transposer.scheduler.scheduler.impl,
  org.polarsys.kitalpha.transposer.scheduler.taskwrapper.impl
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-Localization: plugin

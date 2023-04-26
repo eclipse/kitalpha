@@ -10,5 +10,5 @@ Require-Bundle: org.eclipse.egf.pattern;visibility:=reexport,
  org.eclipse.egf.emf.pattern;visibility:=reexport,
  org.eclipse.egf.pattern.ftask;visibility:=reexport,
  org.polarsys.kitalpha.emde.egf
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.polarsys.kitalpha.transposer.analyser.extension

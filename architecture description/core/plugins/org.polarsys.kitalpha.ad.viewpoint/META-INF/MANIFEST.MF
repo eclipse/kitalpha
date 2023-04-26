@@ -10,7 +10,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.pde.core,
  org.polarsys.kitalpha.ad.services;visibility:=reexport
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.polarsys.kitalpha.ad.viewpoint.handlers,
  org.polarsys.kitalpha.ad.viewpoint.handlers.runtime,
  org.polarsys.kitalpha.ad.viewpoint.handlers.workspace,

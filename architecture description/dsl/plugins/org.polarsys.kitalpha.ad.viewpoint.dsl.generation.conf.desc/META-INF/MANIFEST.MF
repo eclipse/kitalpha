@@ -13,6 +13,6 @@ Require-Bundle: org.eclipse.ui,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.common,
  org.polarsys.kitalpha.ad.viewpoint.dsl.generation.conf
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-Vendor: %BundleVendor
 Bundle-Localization: plugin
