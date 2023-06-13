@@ -91,6 +91,7 @@ public abstract class AbstractMDERichTextWidget implements MDERichTextWidget {
 
 	@Override
 	public void loadContent() {
+		setIsLoading(true);
 		areNotNull(getElement(), getFeature());
 		Object value = getElement().eGet(getFeature());
 		String text = (String) ((value instanceof String) ? value : ""); //$NON-NLS-1$
@@ -98,29 +99,38 @@ public abstract class AbstractMDERichTextWidget implements MDERichTextWidget {
 		text = ImageManagerProvider.getImageManager().computeAndConvertPathsToHtmlFromOriginal(getElement(), text);
 
 		setText(text);
+		setIsLoading(false);
 	}
 
 	@Override
 	public final void saveContent() {
-		areNotNull(getElement(), getFeature());
-		String text = getText();
+		// This avoids a potential infinite loop
+		// Indeed loadContent will trigger onChangeEvent that will call this method
+		// again. Unfortunately, the text value is not effectively set at that time. So
+		// getText() return a different value than the one stored in the model hence
+		// getSaveStrategy().save(...) is called again.
+		if (!isLoading()) {
+			areNotNull(getElement(), getFeature());
+			String text = getText();
 
-		if (text != null && isEditable()) {
-			text = ImageManagerProvider.getImageManager().convertToOriginalPathFromPathUsedForHtml(getElement(), text);
-	
-			Object currentValue = getElement().eGet(getFeature());
-			if (text != null && !text.equals(currentValue)) {
-				getSaveStrategy().save(text, getElement(), getFeature());
-	
-				// A precommit listener will update the base64 string to a path to a new
-				// image. So the string may be changed during save.
-				Object newValue = getElement().eGet(getFeature());
-				if (currentValue != newValue) {
-					loadContent();
+			if (text != null && isEditable()) {
+				text = ImageManagerProvider.getImageManager().convertToOriginalPathFromPathUsedForHtml(getElement(),
+						text);
+
+				Object currentValue = getElement().eGet(getFeature());
+				if (text != null && !text.equals(currentValue)) {
+					getSaveStrategy().save(text, getElement(), getFeature());
+
+					// A precommit listener will update the base64 string to a path to a new
+					// image. So the string may be changed during save.
+					Object newValue = getElement().eGet(getFeature());
+					if (currentValue != newValue) {
+						loadContent();
+					}
+
+					// Notifies listeners that the save has been done
+					firePropertyChangeEvent(new PropertyChangeEvent(this, WIDGET_SAVED_PROP, null, null));
 				}
-	
-				// Notifies listeners that the save has been done
-				firePropertyChangeEvent(new PropertyChangeEvent(this, WIDGET_SAVED_PROP, null, null));
 			}
 		}
 	}
