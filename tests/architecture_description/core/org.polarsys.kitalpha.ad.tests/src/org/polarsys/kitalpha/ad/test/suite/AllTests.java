@@ -18,9 +18,7 @@ import org.junit.runners.Suite.SuiteClasses;
 import org.polarsys.kitalpha.ad.test.testcase.GenerateAFTest;
 
 @RunWith(Suite.class)
-@SuiteClasses({
-	GenerateAFTest.class
-})
+@SuiteClasses({ GenerateAFTest.class })
 public class AllTests {
 
 }
