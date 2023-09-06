@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017, 2020 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2023 Thales Global Services S.A.S.
  *  This program and the accompanying materials are made available under the
  *  terms of the Eclipse Public License 2.0 which is available at
  *  http://www.eclipse.org/legal/epl-2.0
@@ -11,15 +11,25 @@
  ******************************************************************************/
 package org.polarsys.kitalpha.richtext.widget.tools.ext.types;
 
+import java.io.File;
+import java.net.URI;
+
 import org.apache.commons.lang.StringEscapeUtils;
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.ElementTreeSelectionDialog;
+import org.eclipse.ui.ide.IDE;
 import org.eclipse.ui.model.BaseWorkbenchContentProvider;
 import org.eclipse.ui.model.WorkbenchLabelProvider;
 import org.polarsys.kitalpha.richtext.common.util.MDERichTextHelper;
+import org.polarsys.kitalpha.richtext.widget.tools.ext.internal.Activator;
 import org.polarsys.kitalpha.richtext.widget.tools.intf.LinkHandler;
 import org.polarsys.kitalpha.richtext.widget.tools.utils.Tuple;
 
@@ -40,7 +50,17 @@ public class LocalFileLinkHandler implements LinkHandler {
 
 	@Override
 	public void openLink(Object object, String link) {
-
+        File file = new File(link);
+        if (file.exists()) {
+            URI uri = file.toURI();
+            IFile[] files = ResourcesPlugin.getWorkspace().getRoot().findFilesForLocationURI(uri);
+            try {
+                IDE.openEditor(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage(), files[0]);
+            } catch (PartInitException e) {
+                Status status = new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Cannot open editor concerning file: " + uri.getPath(), e);
+                Activator.getDefault().getLog().log(status);
+            }
+        }
 	}
 
 	@Override
