@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.3.202110291409
+//Generated with EGF 1.6.4.202309111303
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.customizations.style;
 
 import java.util.*;
@@ -14,304 +14,311 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.javaservice.Jav
 
 public class InitializeEnumerationHelperJServiceData {
 
-	public InitializeEnumerationHelperJServiceData() {
-		//Here is the constructor
-		// add initialisation of the pattern variables (declaration has been already done).
-
-	}
-
-	public void generate(Object argument) throws Exception {
-		InternalPatternContext ctx = (InternalPatternContext) argument;
-		IQuery.ParameterDescription paramDesc = null;
-		Map<String, String> queryCtx = null;
-		Node.Container currentNode = ctx.getNode();
-		List<Object> parameterList = null;
-		//this pattern can only be called by another (i.e. it's not an entry point in execution)
-
-		for (Object parameterParameter : parameterList) {
-
-			this.parameter = (org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.Customizations) parameterParameter;
-
-			if (preCondition(ctx)) {
-				ctx.setNode(new Node.Container(currentNode, getClass()));
-				orchestration((PatternContext) argument);
-
-			}
-		}
-		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
-		}
-	}
-
-	public String orchestration(PatternContext ctx) throws Exception {
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		Node.Container currentNode = ictx.getNode();
-		method_initializeJServiceData(new StringBuffer(), ictx);
-		ictx.setNode(currentNode);
-		if (ictx.useReporter()) {
-			Map<String, Object> parameterValues = new HashMap<String, Object>();
-			parameterValues.put("parameter", this.parameter);
-			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
-			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
-		}
-		return null;
-	}
-
-	protected void method_initializeJServiceData(final StringBuffer out, final PatternContext ctx) throws Exception {
-		String package_name = (String) ctx.getValue("design.project.name") + ".service.customizations";
-		String class_name = "StyleEnumerationsHelper";
-		String service_name = package_name + "." + class_name;
-
-		javaServiceData = GenerationUtil.getJavaServiceData(service_name);
-
-		if (javaServiceData != null)
-			javaServiceData.setContext(parameter);
-
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "initializeJServiceData", out.toString());
-	}
-
-	protected void method_getCorrespondingLineStyle(final StringBuffer out, final PatternContext ctx) throws Exception {
-		String methodCode = "return DiagramPackage.eINSTANCE.getLineStyle().getEEnumLiteral(name);";
-		String methodName = "getCorrespondingLineStyle";
-
-		JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
-
-		// Set method parameters data
-		javaMethodData.addMethodParameter("any", "EObject", "any model element");
-		javaMethodData.addMethodParameter("name", "String", "the name of the Enumeration literal");
-
-		// Set method Required classes FQN
-		javaMethodData.getRequiredClassesFQN().add("org.eclipse.emf.ecore.EEnumLiteral");
-		javaMethodData.getRequiredClassesFQN().add("org.eclipse.sirius.diagram.DiagramPackage");
-
-		// Add the method to the Java Service.
-		if (javaMethodData != null)
-			javaServiceData.addMethod(javaMethodData);
+  public InitializeEnumerationHelperJServiceData() {
+    //Here is the constructor
+    // add initialisation of the pattern variables (declaration has been already done).
+
+  }
+
+  public void generate(Object argument) throws Exception {
+    InternalPatternContext ctx = (InternalPatternContext) argument;
+    IQuery.ParameterDescription paramDesc = null;
+    Map<String, String> queryCtx = null;
+    Node.Container currentNode = ctx.getNode();
+    List<Object> parameterList = null;
+    //this pattern can only be called by another (i.e. it's not an entry point in execution)
+
+    for (Object parameterParameter : parameterList) {
+
+      this.parameter = (org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.Customizations) parameterParameter;
+
+      if (preCondition(ctx)) {
+        ctx.setNode(new Node.Container(currentNode, getClass()));
+        orchestration((PatternContext) argument);
+
+      }
+    }
+    if (ctx.useReporter()) {
+      ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
+    }
+  }
+
+  public String orchestration(PatternContext ctx) throws Exception {
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    Node.Container currentNode = ictx.getNode();
+    method_initializeJServiceData(new StringBuffer(), ictx);
+    ictx.setNode(currentNode);
+    if (ictx.useReporter()) {
+      Map<String, Object> parameterValues = new HashMap<String, Object>();
+      parameterValues.put("parameter", this.parameter);
+      String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
+      String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
+      ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
+    }
+    return null;
+  }
+
+  protected void method_initializeJServiceData(final StringBuffer out, final PatternContext ctx) throws Exception {
+    String package_name = (String) ctx.getValue("design.project.name") + ".service.customizations";
+    String class_name = "StyleEnumerationsHelper";
+    String service_name = package_name + "." + class_name;
+
+    javaServiceData = GenerationUtil.getJavaServiceData(service_name);
+
+    if (javaServiceData != null)
+      javaServiceData.setContext(parameter);
+
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "initializeJServiceData", out.toString());
+  }
+
+  protected void method_getCorrespondingLineStyle(final StringBuffer out, final PatternContext ctx) throws Exception {
+    String methodCode = "return DiagramPackage.eINSTANCE.getLineStyle().getEEnumLiteral(name);";
+    String methodName = "getCorrespondingLineStyle";
+
+    JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
+
+    // Set method parameters data
+    javaMethodData.addMethodParameter("any", "EObject", "any model element");
+    javaMethodData.addMethodParameter("name", "String", "the name of the Enumeration literal");
+
+    // Set method Required classes FQN
+    javaMethodData.getRequiredClassesFQN().add("org.eclipse.emf.ecore.EEnumLiteral");
+    javaMethodData.getRequiredClassesFQN().add("org.eclipse.sirius.diagram.DiagramPackage");
+
+    // Add the method to the Java Service.
+    if (javaMethodData != null)
+      javaServiceData.addMethod(javaMethodData);
+
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "getCorrespondingLineStyle", out.toString());
+  }
+
+  protected void method_getCorrespondingEdgeArrows(final StringBuffer out, final PatternContext ctx) throws Exception {
+    String methodCode = "return DiagramPackage.eINSTANCE.getEdgeArrows().getEEnumLiteral(name);";
+    String methodName = "getCorrespondingEdgeArrows";
+
+    JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
+
+    // Set method parameters data
+    javaMethodData.addMethodParameter("any", "EObject", "any model element");
+    javaMethodData.addMethodParameter("name", "String", "the name of the Enumeration literal");
+
+    // Set method Required classes FQN
+    javaMethodData.getRequiredClassesFQN().add("org.eclipse.emf.ecore.EEnumLiteral");
+    javaMethodData.getRequiredClassesFQN().add("org.eclipse.sirius.diagram.DiagramPackage");
+
+    // Add the method to the Java Service.
+    if (javaMethodData != null)
+      javaServiceData.addMethod(javaMethodData);
+
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "getCorrespondingEdgeArrows", out.toString());
+  }
 
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "getCorrespondingLineStyle", out.toString());
-	}
+  protected void method_getCorrespondingEdgeRouting(final StringBuffer out, final PatternContext ctx) throws Exception {
+    String methodCode = "return DiagramPackage.eINSTANCE.getEdgeRouting().getEEnumLiteral(name);";
+    String methodName = "getCorrespondingEdgeRouting";
 
-	protected void method_getCorrespondingEdgeArrows(final StringBuffer out, final PatternContext ctx) throws Exception {
-		String methodCode = "return DiagramPackage.eINSTANCE.getEdgeArrows().getEEnumLiteral(name);";
-		String methodName = "getCorrespondingEdgeArrows";
+    JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
 
-		JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
-
-		// Set method parameters data
-		javaMethodData.addMethodParameter("any", "EObject", "any model element");
-		javaMethodData.addMethodParameter("name", "String", "the name of the Enumeration literal");
-
-		// Set method Required classes FQN
-		javaMethodData.getRequiredClassesFQN().add("org.eclipse.emf.ecore.EEnumLiteral");
-		javaMethodData.getRequiredClassesFQN().add("org.eclipse.sirius.diagram.DiagramPackage");
-
-		// Add the method to the Java Service.
-		if (javaMethodData != null)
-			javaServiceData.addMethod(javaMethodData);
+    // Set method parameters data
+    javaMethodData.addMethodParameter("any", "EObject", "any model element");
+    javaMethodData.addMethodParameter("name", "String", "the name of the Enumeration literal");
 
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "getCorrespondingEdgeArrows", out.toString());
-	}
+    // Set method Required classes FQN
+    javaMethodData.getRequiredClassesFQN().add("org.eclipse.emf.ecore.EEnumLiteral");
+    javaMethodData.getRequiredClassesFQN().add("org.eclipse.sirius.diagram.DiagramPackage");
 
-	protected void method_getCorrespondingEdgeRouting(final StringBuffer out, final PatternContext ctx) throws Exception {
-		String methodCode = "return DiagramPackage.eINSTANCE.getEdgeRouting().getEEnumLiteral(name);";
-		String methodName = "getCorrespondingEdgeRouting";
+    // Add the method to the Java Service.
+    if (javaMethodData != null)
+      javaServiceData.addMethod(javaMethodData);
 
-		JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "getCorrespondingEdgeRouting", out.toString());
+  }
 
-		// Set method parameters data
-		javaMethodData.addMethodParameter("any", "EObject", "any model element");
-		javaMethodData.addMethodParameter("name", "String", "the name of the Enumeration literal");
+  protected void method_getCorrespondingBundledImageShape(final StringBuffer out, final PatternContext ctx)
+      throws Exception {
+    String methodCode = "return DiagramPackage.eINSTANCE.getBundledImageShape().getEEnumLiteral(name);";
+    String methodName = "getCorrespondingBundledImageShape";
 
-		// Set method Required classes FQN
-		javaMethodData.getRequiredClassesFQN().add("org.eclipse.emf.ecore.EEnumLiteral");
-		javaMethodData.getRequiredClassesFQN().add("org.eclipse.sirius.diagram.DiagramPackage");
+    JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
 
-		// Add the method to the Java Service.
-		if (javaMethodData != null)
-			javaServiceData.addMethod(javaMethodData);
+    // Set method parameters data
+    javaMethodData.addMethodParameter("any", "EObject", "any model element");
+    javaMethodData.addMethodParameter("name", "String", "the name of the Enumeration literal");
 
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "getCorrespondingEdgeRouting", out.toString());
-	}
+    // Set method Required classes FQN
+    javaMethodData.getRequiredClassesFQN().add("org.eclipse.emf.ecore.EEnumLiteral");
+    javaMethodData.getRequiredClassesFQN().add("org.eclipse.sirius.diagram.DiagramPackage");
 
-	protected void method_getCorrespondingBundledImageShape(final StringBuffer out, final PatternContext ctx) throws Exception {
-		String methodCode = "return DiagramPackage.eINSTANCE.getBundledImageShape().getEEnumLiteral(name);";
-		String methodName = "getCorrespondingBundledImageShape";
+    // Add the method to the Java Service.
+    if (javaMethodData != null)
+      javaServiceData.addMethod(javaMethodData);
 
-		JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "getCorrespondingBundledImageShape", out.toString());
+  }
 
-		// Set method parameters data
-		javaMethodData.addMethodParameter("any", "EObject", "any model element");
-		javaMethodData.addMethodParameter("name", "String", "the name of the Enumeration literal");
+  protected void method_getCorrespondingFoldingStyle(final StringBuffer out, final PatternContext ctx)
+      throws Exception {
+    String methodCode = "return DescriptionPackage.eINSTANCE.getFoldingStyle().getEEnumLiteral(name);";
+    String methodName = "getCorrespondingFoldingStyle";
 
-		// Set method Required classes FQN
-		javaMethodData.getRequiredClassesFQN().add("org.eclipse.emf.ecore.EEnumLiteral");
-		javaMethodData.getRequiredClassesFQN().add("org.eclipse.sirius.diagram.DiagramPackage");
+    JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
 
-		// Add the method to the Java Service.
-		if (javaMethodData != null)
-			javaServiceData.addMethod(javaMethodData);
+    // Set method parameters data
+    javaMethodData.addMethodParameter("any", "EObject", "any model element");
+    javaMethodData.addMethodParameter("name", "String", "the name of the Enumeration literal");
 
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "getCorrespondingBundledImageShape", out.toString());
-	}
+    // Set method Required classes FQN
+    javaMethodData.getRequiredClassesFQN().add("org.eclipse.emf.ecore.EEnumLiteral");
+    javaMethodData.getRequiredClassesFQN().add("org.eclipse.sirius.diagram.description.DescriptionPackage");
 
-	protected void method_getCorrespondingFoldingStyle(final StringBuffer out, final PatternContext ctx) throws Exception {
-		String methodCode = "return DescriptionPackage.eINSTANCE.getFoldingStyle().getEEnumLiteral(name);";
-		String methodName = "getCorrespondingFoldingStyle";
+    // Add the method to the Java Service.
+    if (javaMethodData != null)
+      javaServiceData.addMethod(javaMethodData);
 
-		JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "getCorrespondingFoldingStyle", out.toString());
+  }
 
-		// Set method parameters data
-		javaMethodData.addMethodParameter("any", "EObject", "any model element");
-		javaMethodData.addMethodParameter("name", "String", "the name of the Enumeration literal");
+  protected void method_getCorrespondingResizeKind(final StringBuffer out, final PatternContext ctx) throws Exception {
+    String methodCode = "return DiagramPackage.eINSTANCE.getResizeKind().getEEnumLiteral(name);";
+    String methodName = "getCorrespondingResizeKind";
 
-		// Set method Required classes FQN
-		javaMethodData.getRequiredClassesFQN().add("org.eclipse.emf.ecore.EEnumLiteral");
-		javaMethodData.getRequiredClassesFQN().add("org.eclipse.sirius.diagram.description.DescriptionPackage");
+    JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
 
-		// Add the method to the Java Service.
-		if (javaMethodData != null)
-			javaServiceData.addMethod(javaMethodData);
+    // Set method parameters data
+    javaMethodData.addMethodParameter("any", "EObject", "any model element");
+    javaMethodData.addMethodParameter("name", "String", "the name of the Enumeration literal");
 
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "getCorrespondingFoldingStyle", out.toString());
-	}
+    // Set method Required classes FQN
+    javaMethodData.getRequiredClassesFQN().add("org.eclipse.emf.ecore.EEnumLiteral");
+    javaMethodData.getRequiredClassesFQN().add("org.eclipse.sirius.diagram.DiagramPackage");
 
-	protected void method_getCorrespondingResizeKind(final StringBuffer out, final PatternContext ctx) throws Exception {
-		String methodCode = "return DiagramPackage.eINSTANCE.getResizeKind().getEEnumLiteral(name);";
-		String methodName = "getCorrespondingResizeKind";
+    // Add the method to the Java Service.
+    if (javaMethodData != null)
+      javaServiceData.addMethod(javaMethodData);
 
-		JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "getCorrespondingResizeKind", out.toString());
+  }
 
-		// Set method parameters data
-		javaMethodData.addMethodParameter("any", "EObject", "any model element");
-		javaMethodData.addMethodParameter("name", "String", "the name of the Enumeration literal");
+  protected void method_getCorrespondingCenteringStyle(final StringBuffer out, final PatternContext ctx)
+      throws Exception {
+    String methodCode = "return DescriptionPackage.eINSTANCE.getCenteringStyle().getEEnumLiteral(name);";
+    String methodName = "getCorrespondingCenteringStyle";
 
-		// Set method Required classes FQN
-		javaMethodData.getRequiredClassesFQN().add("org.eclipse.emf.ecore.EEnumLiteral");
-		javaMethodData.getRequiredClassesFQN().add("org.eclipse.sirius.diagram.DiagramPackage");
+    JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
 
-		// Add the method to the Java Service.
-		if (javaMethodData != null)
-			javaServiceData.addMethod(javaMethodData);
+    // Set method parameters data
+    javaMethodData.addMethodParameter("any", "EObject", "any model element");
+    javaMethodData.addMethodParameter("name", "String", "the name of the Enumeration literal");
 
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "getCorrespondingResizeKind", out.toString());
-	}
+    // Set method Required classes FQN
+    javaMethodData.getRequiredClassesFQN().add("org.eclipse.emf.ecore.EEnumLiteral");
+    javaMethodData.getRequiredClassesFQN().add("org.eclipse.sirius.diagram.description.DescriptionPackage");
 
-	protected void method_getCorrespondingCenteringStyle(final StringBuffer out, final PatternContext ctx) throws Exception {
-		String methodCode = "return DescriptionPackage.eINSTANCE.getCenteringStyle().getEEnumLiteral(name);";
-		String methodName = "getCorrespondingCenteringStyle";
+    // Add the method to the Java Service.
+    if (javaMethodData != null)
+      javaServiceData.addMethod(javaMethodData);
 
-		JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "getCorrespondingCenteringStyle", out.toString());
+  }
 
-		// Set method parameters data
-		javaMethodData.addMethodParameter("any", "EObject", "any model element");
-		javaMethodData.addMethodParameter("name", "String", "the name of the Enumeration literal");
+  protected void method_getCorrespondingFontFormat(final StringBuffer out, final PatternContext ctx) throws Exception {
+    String methodCode = "return ViewpointPackage.eINSTANCE.getFontFormat().getEEnumLiteral(name);";
+    String methodName = "getCorrespondingFontFormat";
 
-		// Set method Required classes FQN
-		javaMethodData.getRequiredClassesFQN().add("org.eclipse.emf.ecore.EEnumLiteral");
-		javaMethodData.getRequiredClassesFQN().add("org.eclipse.sirius.diagram.description.DescriptionPackage");
+    JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
 
-		// Add the method to the Java Service.
-		if (javaMethodData != null)
-			javaServiceData.addMethod(javaMethodData);
+    // Set method parameters data
+    javaMethodData.addMethodParameter("any", "EObject", "any model element");
+    javaMethodData.addMethodParameter("name", "String", "the name of the Enumeration literal");
 
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "getCorrespondingCenteringStyle", out.toString());
-	}
+    // Set method Required classes FQN
+    javaMethodData.getRequiredClassesFQN().add("org.eclipse.emf.ecore.EEnumLiteral");
+    javaMethodData.getRequiredClassesFQN().add("org.eclipse.sirius.viewpoint.ViewpointPackage");
 
-	protected void method_getCorrespondingFontFormat(final StringBuffer out, final PatternContext ctx) throws Exception {
-		String methodCode = "return ViewpointPackage.eINSTANCE.getFontFormat().getEEnumLiteral(name);";
-		String methodName = "getCorrespondingFontFormat";
+    // Add the method to the Java Service.
+    if (javaMethodData != null)
+      javaServiceData.addMethod(javaMethodData);
 
-		JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "getCorrespondingFontFormat", out.toString());
+  }
 
-		// Set method parameters data
-		javaMethodData.addMethodParameter("any", "EObject", "any model element");
-		javaMethodData.addMethodParameter("name", "String", "the name of the Enumeration literal");
+  protected void method_getCorrespondingLabelAlignment(final StringBuffer out, final PatternContext ctx)
+      throws Exception {
+    String methodCode = "return ViewpointPackage.eINSTANCE.getLabelAlignment().getEEnumLiteral(name);";
+    String methodName = "getCorrespondingLabelAlignment";
 
-		// Set method Required classes FQN
-		javaMethodData.getRequiredClassesFQN().add("org.eclipse.emf.ecore.EEnumLiteral");
-		javaMethodData.getRequiredClassesFQN().add("org.eclipse.sirius.viewpoint.ViewpointPackage");
+    JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
 
-		// Add the method to the Java Service.
-		if (javaMethodData != null)
-			javaServiceData.addMethod(javaMethodData);
+    // Set method parameters data
+    javaMethodData.addMethodParameter("any", "EObject", "any model element");
+    javaMethodData.addMethodParameter("name", "String", "the name of the Enumeration literal");
 
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "getCorrespondingFontFormat", out.toString());
-	}
+    // Set method Required classes FQN
+    javaMethodData.getRequiredClassesFQN().add("org.eclipse.emf.ecore.EEnumLiteral");
+    javaMethodData.getRequiredClassesFQN().add("org.eclipse.sirius.viewpoint.ViewpointPackage");
 
-	protected void method_getCorrespondingLabelAlignment(final StringBuffer out, final PatternContext ctx) throws Exception {
-		String methodCode = "return ViewpointPackage.eINSTANCE.getLabelAlignment().getEEnumLiteral(name);";
-		String methodName = "getCorrespondingLabelAlignment";
+    // Add the method to the Java Service.
+    if (javaMethodData != null)
+      javaServiceData.addMethod(javaMethodData);
 
-		JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "getCorrespondingLabelAlignment", out.toString());
+  }
 
-		// Set method parameters data
-		javaMethodData.addMethodParameter("any", "EObject", "any model element");
-		javaMethodData.addMethodParameter("name", "String", "the name of the Enumeration literal");
+  protected void method_getCorrespondingLabelPosition(final StringBuffer out, final PatternContext ctx)
+      throws Exception {
+    String methodCode = "return DiagramPackage.eINSTANCE.getLabelPosition().getEEnumLiteral(name);";
+    String methodName = "getCorrespondingLabelPosition";
 
-		// Set method Required classes FQN
-		javaMethodData.getRequiredClassesFQN().add("org.eclipse.emf.ecore.EEnumLiteral");
-		javaMethodData.getRequiredClassesFQN().add("org.eclipse.sirius.viewpoint.ViewpointPackage");
+    JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
 
-		// Add the method to the Java Service.
-		if (javaMethodData != null)
-			javaServiceData.addMethod(javaMethodData);
+    // Set method parameters data
+    javaMethodData.addMethodParameter("any", "EObject", "any model element");
+    javaMethodData.addMethodParameter("name", "String", "the name of the Enumeration literal");
 
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "getCorrespondingLabelAlignment", out.toString());
-	}
+    // Set method Required classes FQN
+    javaMethodData.getRequiredClassesFQN().add("org.eclipse.emf.ecore.EEnumLiteral");
+    javaMethodData.getRequiredClassesFQN().add("org.eclipse.sirius.diagram.DiagramPackage");
 
-	protected void method_getCorrespondingLabelPosition(final StringBuffer out, final PatternContext ctx) throws Exception {
-		String methodCode = "return DiagramPackage.eINSTANCE.getLabelPosition().getEEnumLiteral(name);";
-		String methodName = "getCorrespondingLabelPosition";
+    // Add the method to the Java Service.
+    if (javaMethodData != null)
+      javaServiceData.addMethod(javaMethodData);
 
-		JavaMethodData javaMethodData = new JavaMethodData(methodName, JavaMethodReturnType.EEnumLiteral, methodCode);
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "getCorrespondingLabelPosition", out.toString());
+  }
 
-		// Set method parameters data
-		javaMethodData.addMethodParameter("any", "EObject", "any model element");
-		javaMethodData.addMethodParameter("name", "String", "the name of the Enumeration literal");
+  public boolean preCondition(PatternContext ctx) throws Exception {
+    return true;
+  }
 
-		// Set method Required classes FQN
-		javaMethodData.getRequiredClassesFQN().add("org.eclipse.emf.ecore.EEnumLiteral");
-		javaMethodData.getRequiredClassesFQN().add("org.eclipse.sirius.diagram.DiagramPackage");
+  protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.Customizations parameter;
 
-		// Add the method to the Java Service.
-		if (javaMethodData != null)
-			javaServiceData.addMethod(javaMethodData);
+  public void set_parameter(
+      org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.Customizations parameter) {
+    this.parameter = parameter;
+  }
 
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "getCorrespondingLabelPosition", out.toString());
-	}
+  protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.javaservice.JavaServiceData javaServiceData;
 
-	public boolean preCondition(PatternContext ctx) throws Exception {
-		return true;
-	}
+  public void set_javaServiceData(
+      org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.javaservice.JavaServiceData javaServiceData) {
+    this.javaServiceData = javaServiceData;
+  }
 
-	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.Customizations parameter;
-
-	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpstylecustomization.Customizations parameter) {
-		this.parameter = parameter;
-	}
-
-	protected org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.javaservice.JavaServiceData javaServiceData;
-
-	public void set_javaServiceData(org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.javaservice.JavaServiceData javaServiceData) {
-		this.javaServiceData = javaServiceData;
-	}
-
-	public Map<String, Object> getParameters() {
-		Map<String, Object> parameters = new HashMap<String, Object>();
-		parameters.put("parameter", this.parameter);
-		return parameters;
-	}
+  public Map<String, Object> getParameters() {
+    Map<String, Object> parameters = new HashMap<String, Object>();
+    parameters.put("parameter", this.parameter);
+    return parameters;
+  }
 
 }

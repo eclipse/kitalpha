@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.3.202110291409
+//Generated with EGF 1.6.4.202309111303
 package org.polarsys.kitalpha.doc.gen.business.core.doccontent.sidebar;
 
 import org.eclipse.egf.common.helper.*;
@@ -10,173 +10,172 @@ import org.eclipse.egf.pattern.query.*;
 import org.polarsys.kitalpha.doc.gen.business.core.util.*;
 
 public class ElementSideBarEntry extends org.polarsys.kitalpha.doc.gen.business.core.generic.ElementGen {
-	protected static String nl;
+  protected static String nl;
 
-	public static synchronized ElementSideBarEntry create(String lineSeparator) {
-		nl = lineSeparator;
-		ElementSideBarEntry result = new ElementSideBarEntry();
-		nl = null;
-		return result;
-	}
+  public static synchronized ElementSideBarEntry create(String lineSeparator) {
+    nl = lineSeparator;
+    ElementSideBarEntry result = new ElementSideBarEntry();
+    nl = null;
+    return result;
+  }
 
-	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+  public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+  protected final String TEXT_1 = "<li>" + NL;
+  protected final String TEXT_2 = NL + "<img src=\"../icon/";
+  protected final String TEXT_3 = "\" alt=\"";
+  protected final String TEXT_4 = "\"/>";
+  protected final String TEXT_5 = NL + NL;
+  protected final String TEXT_6 = "</li>" + NL;
+  protected final String TEXT_7 = NL;
 
-	protected final String TEXT_1 = "<li>" + NL;
+  public ElementSideBarEntry() {
+    //Here is the constructor
+    StringBuffer stringBuffer = new StringBuffer();
 
-	protected final String TEXT_2 = NL + "<img src=\"../icon/";
+    // add initialisation of the pattern variables (declaration has been already done).
 
-	protected final String TEXT_3 = "\" alt=\"";
+  }
 
-	protected final String TEXT_4 = "\"/>";
+  public String generate(Object argument) throws Exception {
+    final StringBuffer stringBuffer = new StringBuffer();
 
-	protected final String TEXT_5 = NL + NL;
+    InternalPatternContext ctx = (InternalPatternContext) argument;
+    Map<String, String> queryCtx = null;
+    IQuery.ParameterDescription paramDesc = null;
+    Node.Container currentNode = ctx.getNode();
 
-	protected final String TEXT_6 = "</li>" + NL;
+    List<Object> parameterList = null;
+    //this pattern can only be called by another (i.e. it's not an entry point in execution)
+    List<Object> projectNameList = null;
+    //this pattern can only be called by another (i.e. it's not an entry point in execution)
+    List<Object> folderNameList = null;
+    //this pattern can only be called by another (i.e. it's not an entry point in execution)
 
-	protected final String TEXT_7 = NL;
+    for (Object parameterParameter : parameterList) {
+      for (Object projectNameParameter : projectNameList) {
+        for (Object folderNameParameter : folderNameList) {
 
-	public ElementSideBarEntry() {
-		//Here is the constructor
-		StringBuffer stringBuffer = new StringBuffer();
+          this.parameter = (org.eclipse.emf.ecore.EObject) parameterParameter;
+          this.projectName = (java.lang.String) projectNameParameter;
+          this.folderName = (java.lang.String) folderNameParameter;
 
-		// add initialisation of the pattern variables (declaration has been already done).
+          if (preCondition(ctx)) {
+            ctx.setNode(new Node.Container(currentNode, getClass()));
+            orchestration(ctx);
+          }
 
-	}
+        }
+      }
+    }
+    ctx.setNode(currentNode);
+    if (ctx.useReporter()) {
+      ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
+    }
 
-	public String generate(Object argument) throws Exception {
-		final StringBuffer stringBuffer = new StringBuffer();
+    stringBuffer.append(TEXT_7);
+    stringBuffer.append(TEXT_7);
+    return stringBuffer.toString();
+  }
 
-		InternalPatternContext ctx = (InternalPatternContext) argument;
-		Map<String, String> queryCtx = null;
-		IQuery.ParameterDescription paramDesc = null;
-		Node.Container currentNode = ctx.getNode();
+  public String orchestration(PatternContext ctx) throws Exception {
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
 
-		List<Object> parameterList = null;
-		//this pattern can only be called by another (i.e. it's not an entry point in execution)
-		List<Object> projectNameList = null;
-		//this pattern can only be called by another (i.e. it's not an entry point in execution)
-		List<Object> folderNameList = null;
-		//this pattern can only be called by another (i.e. it's not an entry point in execution)
+    super.orchestration(new SuperOrchestrationContext(ictx));
 
-		for (Object parameterParameter : parameterList) {
-			for (Object projectNameParameter : projectNameList) {
-				for (Object folderNameParameter : folderNameList) {
+    method_startSidebarElement(new StringBuffer(), ictx);
 
-					this.parameter = (org.eclipse.emf.ecore.EObject) parameterParameter;
-					this.projectName = (java.lang.String) projectNameParameter;
-					this.folderName = (java.lang.String) folderNameParameter;
+    method_contentSidebarElement(new StringBuffer(), ictx);
+    {
+      final Map<String, Object> parameters = new HashMap<String, Object>();
+      parameters.put("parameter", this.parameter);
+      ExecutionContext ctx_local = new ExecutionContext(ictx);
+      CallHelper.executeWithParameterInjection(
+          "platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_76_64AEaEeCfXc0sxlW-HQ",
+          ctx_local, parameters);
+    }
 
-					if (preCondition(ctx)) {
-						ctx.setNode(new Node.Container(currentNode, getClass()));
-						orchestration(ctx);
-					}
+    {
+      final Map<String, Object> parameters = getParameters();
+      CallbackContext ctx_callback = new CallbackContext(ictx);
+      CallHelper.callBack(ctx_callback, parameters);
+    }
 
-				}
-			}
-		}
-		ctx.setNode(currentNode);
-		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
-		}
+    {
+      final Map<String, Object> parameters = new HashMap<String, Object>();
+      parameters.put("parameter", this.parameter);
+      ExecutionContext ctx_local = new ExecutionContext(ictx);
+      CallHelper.executeWithParameterInjection(
+          "platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_KyTtYAEbEeCfXc0sxlW-HQ",
+          ctx_local, parameters);
+    }
 
-		stringBuffer.append(TEXT_7);
-		stringBuffer.append(TEXT_7);
-		return stringBuffer.toString();
-	}
+    method_endSidebarElement(new StringBuffer(), ictx);
 
-	public String orchestration(PatternContext ctx) throws Exception {
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
+    if (ictx.useReporter()) {
+      Map<String, Object> parameterValues = new HashMap<String, Object>();
+      parameterValues.put("parameter", this.parameter);
+      parameterValues.put("projectName", this.projectName);
+      parameterValues.put("folderName", this.folderName);
+      String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
+      String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
+      ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
+    }
+    return null;
+  }
 
-		super.orchestration(new SuperOrchestrationContext(ictx));
+  protected org.eclipse.emf.ecore.EObject parameter = null;
 
-		method_startSidebarElement(new StringBuffer(), ictx);
+  public void set_parameter(org.eclipse.emf.ecore.EObject object) {
+    this.parameter = object;
+  }
 
-		method_contentSidebarElement(new StringBuffer(), ictx);
-		{
-			final Map<String, Object> parameters = new HashMap<String, Object>();
-			parameters.put("parameter", this.parameter);
-			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_76_64AEaEeCfXc0sxlW-HQ", ctx_local, parameters);
-		}
+  protected java.lang.String projectName = null;
 
-		{
-			final Map<String, Object> parameters = getParameters();
-			CallbackContext ctx_callback = new CallbackContext(ictx);
-			CallHelper.callBack(ctx_callback, parameters);
-		}
+  public void set_projectName(java.lang.String object) {
+    this.projectName = object;
+  }
 
-		{
-			final Map<String, Object> parameters = new HashMap<String, Object>();
-			parameters.put("parameter", this.parameter);
-			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_KyTtYAEbEeCfXc0sxlW-HQ", ctx_local, parameters);
-		}
+  protected java.lang.String folderName = null;
 
-		method_endSidebarElement(new StringBuffer(), ictx);
+  public void set_folderName(java.lang.String object) {
+    this.folderName = object;
+  }
 
-		if (ictx.useReporter()) {
-			Map<String, Object> parameterValues = new HashMap<String, Object>();
-			parameterValues.put("parameter", this.parameter);
-			parameterValues.put("projectName", this.projectName);
-			parameterValues.put("folderName", this.folderName);
-			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
-			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
-		}
-		return null;
-	}
+  public Map<String, Object> getParameters() {
+    final Map<String, Object> parameters = new HashMap<String, Object>();
+    parameters.put("parameter", this.parameter);
+    parameters.put("projectName", this.projectName);
+    parameters.put("folderName", this.folderName);
+    return parameters;
+  }
 
-	protected org.eclipse.emf.ecore.EObject parameter = null;
+  protected void method_startSidebarElement(final StringBuffer stringBuffer, final PatternContext ctx)
+      throws Exception {
 
-	public void set_parameter(org.eclipse.emf.ecore.EObject object) {
-		this.parameter = object;
-	}
+    stringBuffer.append(TEXT_1);
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "startSidebarElement", stringBuffer.toString());
+  }
 
-	protected java.lang.String projectName = null;
+  protected void method_contentSidebarElement(final StringBuffer stringBuffer, final PatternContext ctx)
+      throws Exception {
 
-	public void set_projectName(java.lang.String object) {
-		this.projectName = object;
-	}
+    String imageFileName = LabelProviderHelper.getImageFileName(parameter, projectName, folderName);
+    stringBuffer.append(TEXT_2);
+    stringBuffer.append(imageFileName);
+    stringBuffer.append(TEXT_3);
+    stringBuffer.append(parameter.eClass().getName());
+    stringBuffer.append(TEXT_4);
+    stringBuffer.append(LabelProviderHelper.getText(parameter));
+    stringBuffer.append(TEXT_5);
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "contentSidebarElement", stringBuffer.toString());
+  }
 
-	protected java.lang.String folderName = null;
+  protected void method_endSidebarElement(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
-	public void set_folderName(java.lang.String object) {
-		this.folderName = object;
-	}
-
-	public Map<String, Object> getParameters() {
-		final Map<String, Object> parameters = new HashMap<String, Object>();
-		parameters.put("parameter", this.parameter);
-		parameters.put("projectName", this.projectName);
-		parameters.put("folderName", this.folderName);
-		return parameters;
-	}
-
-	protected void method_startSidebarElement(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
-
-		stringBuffer.append(TEXT_1);
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "startSidebarElement", stringBuffer.toString());
-	}
-
-	protected void method_contentSidebarElement(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
-
-		String imageFileName = LabelProviderHelper.getImageFileName(parameter, projectName, folderName);
-		stringBuffer.append(TEXT_2);
-		stringBuffer.append(imageFileName);
-		stringBuffer.append(TEXT_3);
-		stringBuffer.append(parameter.eClass().getName());
-		stringBuffer.append(TEXT_4);
-		stringBuffer.append(LabelProviderHelper.getText(parameter));
-		stringBuffer.append(TEXT_5);
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "contentSidebarElement", stringBuffer.toString());
-	}
-
-	protected void method_endSidebarElement(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
-
-		stringBuffer.append(TEXT_6);
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "endSidebarElement", stringBuffer.toString());
-	}
+    stringBuffer.append(TEXT_6);
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "endSidebarElement", stringBuffer.toString());
+  }
 }

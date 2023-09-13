@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.3.202110291409
+//Generated with EGF 1.6.4.202309111303
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.extensions;
 
 import org.eclipse.egf.common.helper.*;
@@ -9,111 +9,109 @@ import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 
 public class PluginXmlPattern {
-	protected static String nl;
+  protected static String nl;
 
-	public static synchronized PluginXmlPattern create(String lineSeparator) {
-		nl = lineSeparator;
-		PluginXmlPattern result = new PluginXmlPattern();
-		nl = null;
-		return result;
-	}
+  public static synchronized PluginXmlPattern create(String lineSeparator) {
+    nl = lineSeparator;
+    PluginXmlPattern result = new PluginXmlPattern();
+    nl = null;
+    return result;
+  }
 
-	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+  public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+  protected final String TEXT_1 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + NL + "<?eclipse version=\"3.4\"?>" + NL
+      + "<plugin>" + NL;
+  protected final String TEXT_2 = "</plugin>";
+  protected final String TEXT_3 = NL;
 
-	protected final String TEXT_1 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + NL + "<?eclipse version=\"3.4\"?>" + NL + "<plugin>" + NL;
+  public PluginXmlPattern() {
+    //Here is the constructor
+    StringBuffer stringBuffer = new StringBuffer();
 
-	protected final String TEXT_2 = "</plugin>";
+    // add initialisation of the pattern variables (declaration has been already done).
 
-	protected final String TEXT_3 = NL;
+  }
 
-	public PluginXmlPattern() {
-		//Here is the constructor
-		StringBuffer stringBuffer = new StringBuffer();
+  public String generate(Object argument) throws Exception {
+    final StringBuffer stringBuffer = new StringBuffer();
 
-		// add initialisation of the pattern variables (declaration has been already done).
+    InternalPatternContext ctx = (InternalPatternContext) argument;
+    Map<String, String> queryCtx = null;
+    IQuery.ParameterDescription paramDesc = null;
+    Node.Container currentNode = ctx.getNode();
 
-	}
+    List<Object> parameterList = null;
+    //this pattern can only be called by another (i.e. it's not an entry point in execution)
 
-	public String generate(Object argument) throws Exception {
-		final StringBuffer stringBuffer = new StringBuffer();
+    for (Object parameterParameter : parameterList) {
 
-		InternalPatternContext ctx = (InternalPatternContext) argument;
-		Map<String, String> queryCtx = null;
-		IQuery.ParameterDescription paramDesc = null;
-		Node.Container currentNode = ctx.getNode();
+      this.parameter = (org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint) parameterParameter;
 
-		List<Object> parameterList = null;
-		//this pattern can only be called by another (i.e. it's not an entry point in execution)
+      if (preCondition(ctx)) {
+        ctx.setNode(new Node.Container(currentNode, getClass()));
+        orchestration(ctx);
+      }
 
-		for (Object parameterParameter : parameterList) {
+    }
+    ctx.setNode(currentNode);
+    if (ctx.useReporter()) {
+      ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
+    }
 
-			this.parameter = (org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint) parameterParameter;
+    stringBuffer.append(TEXT_3);
+    stringBuffer.append(TEXT_3);
+    return stringBuffer.toString();
+  }
 
-			if (preCondition(ctx)) {
-				ctx.setNode(new Node.Container(currentNode, getClass()));
-				orchestration(ctx);
-			}
+  public String orchestration(PatternContext ctx) throws Exception {
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
 
-		}
-		ctx.setNode(currentNode);
-		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
-		}
+    method_beginXmlPlugin(new StringBuffer(), ictx);
+    {
+      final Map<String, Object> parameters = getParameters();
+      CallbackContext ctx_callback = new CallbackContext(ictx);
+      CallHelper.callBack(ctx_callback, parameters);
+    }
 
-		stringBuffer.append(TEXT_3);
-		stringBuffer.append(TEXT_3);
-		return stringBuffer.toString();
-	}
+    method_endXmlPlugin(new StringBuffer(), ictx);
 
-	public String orchestration(PatternContext ctx) throws Exception {
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
+    if (ictx.useReporter()) {
+      Map<String, Object> parameterValues = new HashMap<String, Object>();
+      parameterValues.put("parameter", this.parameter);
+      String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
+      String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
+      ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
+    }
+    return null;
+  }
 
-		method_beginXmlPlugin(new StringBuffer(), ictx);
-		{
-			final Map<String, Object> parameters = getParameters();
-			CallbackContext ctx_callback = new CallbackContext(ictx);
-			CallHelper.callBack(ctx_callback, parameters);
-		}
+  protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint parameter = null;
 
-		method_endXmlPlugin(new StringBuffer(), ictx);
+  public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint object) {
+    this.parameter = object;
+  }
 
-		if (ictx.useReporter()) {
-			Map<String, Object> parameterValues = new HashMap<String, Object>();
-			parameterValues.put("parameter", this.parameter);
-			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
-			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
-		}
-		return null;
-	}
+  public Map<String, Object> getParameters() {
+    final Map<String, Object> parameters = new HashMap<String, Object>();
+    parameters.put("parameter", this.parameter);
+    return parameters;
+  }
 
-	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint parameter = null;
+  protected void method_beginXmlPlugin(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
-	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Viewpoint object) {
-		this.parameter = object;
-	}
+    stringBuffer.append(TEXT_1);
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "beginXmlPlugin", stringBuffer.toString());
+  }
 
-	public Map<String, Object> getParameters() {
-		final Map<String, Object> parameters = new HashMap<String, Object>();
-		parameters.put("parameter", this.parameter);
-		return parameters;
-	}
+  protected void method_endXmlPlugin(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
-	protected void method_beginXmlPlugin(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
+    stringBuffer.append(TEXT_2);
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "endXmlPlugin", stringBuffer.toString());
+  }
 
-		stringBuffer.append(TEXT_1);
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "beginXmlPlugin", stringBuffer.toString());
-	}
-
-	protected void method_endXmlPlugin(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
-
-		stringBuffer.append(TEXT_2);
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "endXmlPlugin", stringBuffer.toString());
-	}
-
-	public boolean preCondition(PatternContext ctx) throws Exception {
-		return true;
-	}
+  public boolean preCondition(PatternContext ctx) throws Exception {
+    return true;
+  }
 }

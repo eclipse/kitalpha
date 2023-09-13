@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.3.202110291409
+//Generated with EGF 1.6.4.202309111303
 package org.polarsys.kitalpha.doc.gen.business.ecore.extension.content.impl;
 
 import org.eclipse.egf.common.helper.*;
@@ -12,119 +12,119 @@ import org.polarsys.kitalpha.doc.gen.business.core.util.EscapeChars;
 import org.polarsys.kitalpha.doc.gen.business.core.util.LabelProviderHelper;
 
 public class EPackageHTMLSectionHeader {
-	protected static String nl;
+  protected static String nl;
 
-	public static synchronized EPackageHTMLSectionHeader create(String lineSeparator) {
-		nl = lineSeparator;
-		EPackageHTMLSectionHeader result = new EPackageHTMLSectionHeader();
-		nl = null;
-		return result;
-	}
+  public static synchronized EPackageHTMLSectionHeader create(String lineSeparator) {
+    nl = lineSeparator;
+    EPackageHTMLSectionHeader result = new EPackageHTMLSectionHeader();
+    nl = null;
+    return result;
+  }
 
-	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+  public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+  protected final String TEXT_1 = "<h1>";
+  protected final String TEXT_2 = "</h1>" + NL + "<p>";
+  protected final String TEXT_3 = "</p>";
+  protected final String TEXT_4 = NL;
 
-	protected final String TEXT_1 = "<h1>";
+  public EPackageHTMLSectionHeader() {
+    //Here is the constructor
+    StringBuffer stringBuffer = new StringBuffer();
 
-	protected final String TEXT_2 = "</h1>" + NL + "<p>";
+    // add initialisation of the pattern variables (declaration has been already done).
 
-	protected final String TEXT_3 = "</p>";
+  }
 
-	protected final String TEXT_4 = NL;
+  public String generate(Object argument) throws Exception {
+    final StringBuffer stringBuffer = new StringBuffer();
 
-	protected final String TEXT_5 = NL;
+    InternalPatternContext ctx = (InternalPatternContext) argument;
+    Map<String, String> queryCtx = null;
+    IQuery.ParameterDescription paramDesc = null;
+    Node.Container currentNode = ctx.getNode();
 
-	public EPackageHTMLSectionHeader() {
-		//Here is the constructor
-		StringBuffer stringBuffer = new StringBuffer();
+    paramDesc = new IQuery.ParameterDescription("parameter", "http://www.eclipse.org/emf/2002/Ecore#//EPackage");
+    queryCtx = new HashMap<String, String>();
+    List<Object> parameterList = QueryHelper.load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.injected.context")
+        .execute(paramDesc, queryCtx, ctx);
 
-		// add initialisation of the pattern variables (declaration has been already done).
+    for (Object parameterParameter : parameterList) {
 
-	}
+      this.parameter = (org.eclipse.emf.ecore.EPackage) parameterParameter;
 
-	public String generate(Object argument) throws Exception {
-		final StringBuffer stringBuffer = new StringBuffer();
+      if (preCondition(ctx)) {
+        ctx.setNode(new Node.Container(currentNode, getClass()));
+        orchestration(ctx);
+      }
 
-		InternalPatternContext ctx = (InternalPatternContext) argument;
-		Map<String, String> queryCtx = null;
-		IQuery.ParameterDescription paramDesc = null;
-		Node.Container currentNode = ctx.getNode();
+    }
+    ctx.setNode(currentNode);
+    if (ctx.useReporter()) {
+      ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
+    }
 
-		paramDesc = new IQuery.ParameterDescription("parameter", "http://www.eclipse.org/emf/2002/Ecore#//EPackage");
-		queryCtx = new HashMap<String, String>();
-		List<Object> parameterList = QueryHelper.load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.injected.context").execute(paramDesc, queryCtx, ctx);
+    stringBuffer.append(TEXT_4);
+    stringBuffer.append(TEXT_4);
+    return stringBuffer.toString();
+  }
 
-		for (Object parameterParameter : parameterList) {
+  public String orchestration(PatternContext ctx) throws Exception {
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
 
-			this.parameter = (org.eclipse.emf.ecore.EPackage) parameterParameter;
+    method_content(new StringBuffer(), ictx);
 
-			if (preCondition(ctx)) {
-				ctx.setNode(new Node.Container(currentNode, getClass()));
-				orchestration(ctx);
-			}
+    if (ictx.useReporter()) {
+      Map<String, Object> parameterValues = new HashMap<String, Object>();
+      parameterValues.put("parameter", this.parameter);
+      String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
+      String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
+      ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
+    }
+    return null;
+  }
 
-		}
-		ctx.setNode(currentNode);
-		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
-		}
+  protected org.eclipse.emf.ecore.EPackage parameter = null;
 
-		stringBuffer.append(TEXT_5);
-		stringBuffer.append(TEXT_5);
-		return stringBuffer.toString();
-	}
+  public void set_parameter(org.eclipse.emf.ecore.EPackage object) {
+    this.parameter = object;
+  }
 
-	public String orchestration(PatternContext ctx) throws Exception {
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
+  public Map<String, Object> getParameters() {
+    final Map<String, Object> parameters = new HashMap<String, Object>();
+    parameters.put("parameter", this.parameter);
+    return parameters;
+  }
 
-		method_content(new StringBuffer(), ictx);
+  protected void method_content(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
-		if (ictx.useReporter()) {
-			Map<String, Object> parameterValues = new HashMap<String, Object>();
-			parameterValues.put("parameter", this.parameter);
-			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
-			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
-		}
-		return null;
-	}
+    String text = LabelProviderHelper.getText(parameter);
+    text = EscapeChars.forHTML(text);
+    String projectName = ctx.getValue("projectName").toString();
+    String outputFolder = ctx.getValue("outputFolder").toString();
 
-	protected org.eclipse.emf.ecore.EPackage parameter = null;
+    stringBuffer.append(TEXT_1);
+    stringBuffer.append(text);
+    stringBuffer.append(TEXT_2);
+    stringBuffer
+        .append(org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getDescription(parameter));
+    stringBuffer.append(TEXT_3);
+    stringBuffer.append(TEXT_4);
+    stringBuffer
+        .append(org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getUsageGuideline(parameter));
+    stringBuffer.append(TEXT_4);
+    stringBuffer
+        .append(org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getUsedInLevels(parameter));
+    stringBuffer.append(TEXT_4);
+    stringBuffer
+        .append(org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getUsageExamples(parameter));
+    stringBuffer.append(TEXT_4);
+    stringBuffer
+        .append(org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getConstraints(parameter));
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "content", stringBuffer.toString());
+  }
 
-	public void set_parameter(org.eclipse.emf.ecore.EPackage object) {
-		this.parameter = object;
-	}
-
-	public Map<String, Object> getParameters() {
-		final Map<String, Object> parameters = new HashMap<String, Object>();
-		parameters.put("parameter", this.parameter);
-		return parameters;
-	}
-
-	protected void method_content(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
-
-		String text = LabelProviderHelper.getText(parameter);
-		text = EscapeChars.forHTML(text);
-		String projectName = ctx.getValue("projectName").toString();
-		String outputFolder = ctx.getValue("outputFolder").toString();
-
-		stringBuffer.append(TEXT_1);
-		stringBuffer.append(text);
-		stringBuffer.append(TEXT_2);
-		stringBuffer.append(org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getDescription(parameter));
-		stringBuffer.append(TEXT_3);
-		stringBuffer.append(TEXT_4);
-		stringBuffer.append(org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getUsageGuideline(parameter));
-		stringBuffer.append(TEXT_4);
-		stringBuffer.append(org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getUsedInLevels(parameter));
-		stringBuffer.append(TEXT_4);
-		stringBuffer.append(org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getUsageExamples(parameter));
-		stringBuffer.append(TEXT_4);
-		stringBuffer.append(org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getConstraints(parameter));
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "content", stringBuffer.toString());
-	}
-
-	public boolean preCondition(PatternContext ctx) throws Exception {
-		return true;
-	}
+  public boolean preCondition(PatternContext ctx) throws Exception {
+    return true;
+  }
 }
