@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.3.202110291409
+//Generated with EGF 1.6.4.202309111303
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.extensions;
 
 import org.eclipse.egf.common.helper.*;
@@ -12,217 +12,214 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpoin
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.ViewpointActivityExplorerPackage;
 
 public class ActivityPattern {
-	protected static String nl;
+  protected static String nl;
 
-	public static synchronized ActivityPattern create(String lineSeparator) {
-		nl = lineSeparator;
-		ActivityPattern result = new ActivityPattern();
-		nl = null;
-		return result;
-	}
+  public static synchronized ActivityPattern create(String lineSeparator) {
+    nl = lineSeparator;
+    ActivityPattern result = new ActivityPattern();
+    nl = null;
+    return result;
+  }
 
-	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+  public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+  protected final String TEXT_1 = NL + "\t\t\t<Activity" + NL + "\t\t\t\tclass=\"";
+  protected final String TEXT_2 = "\"" + NL + "\t\t\t\tid=\"";
+  protected final String TEXT_3 = "\"" + NL + "\t\t\t\tindex=\"";
+  protected final String TEXT_4 = "\"";
+  protected final String TEXT_5 = " " + NL + "\t\t\t\timage=\"";
+  protected final String TEXT_6 = NL + "\t\t\t\tname=\"";
+  protected final String TEXT_7 = NL + "\t\t\t\tsectionId=\"";
+  protected final String TEXT_8 = ">";
+  protected final String TEXT_9 = "\t\t\t</Activity>" + NL;
+  protected final String TEXT_10 = NL;
 
-	protected final String TEXT_1 = NL + "\t\t\t<Activity" + NL + "\t\t\t\tclass=\"";
+  public ActivityPattern() {
+    //Here is the constructor
+    StringBuffer stringBuffer = new StringBuffer();
 
-	protected final String TEXT_2 = "\"" + NL + "\t\t\t\tid=\"";
+    // add initialisation of the pattern variables (declaration has been already done).
 
-	protected final String TEXT_3 = "\"" + NL + "\t\t\t\tindex=\"";
+  }
 
-	protected final String TEXT_4 = "\"";
+  public String generate(Object argument) throws Exception {
+    final StringBuffer stringBuffer = new StringBuffer();
 
-	protected final String TEXT_5 = " " + NL + "\t\t\t\timage=\"";
+    InternalPatternContext ctx = (InternalPatternContext) argument;
+    Map<String, String> queryCtx = null;
+    IQuery.ParameterDescription paramDesc = null;
+    Node.Container currentNode = ctx.getNode();
 
-	protected final String TEXT_6 = NL + "\t\t\t\tname=\"";
+    List<Object> parameterList = null;
+    //this pattern can only be called by another (i.e. it's not an entry point in execution)
 
-	protected final String TEXT_7 = NL + "\t\t\t\tsectionId=\"";
+    for (Object parameterParameter : parameterList) {
 
-	protected final String TEXT_8 = ">";
+      this.parameter = (org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Activity) parameterParameter;
 
-	protected final String TEXT_9 = "\t\t\t</Activity>" + NL;
+      if (preCondition(ctx)) {
+        ctx.setNode(new Node.Container(currentNode, getClass()));
+        orchestration(ctx);
+      }
 
-	protected final String TEXT_10 = NL;
+    }
+    ctx.setNode(currentNode);
+    if (ctx.useReporter()) {
+      ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
+    }
 
-	public ActivityPattern() {
-		//Here is the constructor
-		StringBuffer stringBuffer = new StringBuffer();
+    stringBuffer.append(TEXT_10);
+    stringBuffer.append(TEXT_10);
+    return stringBuffer.toString();
+  }
 
-		// add initialisation of the pattern variables (declaration has been already done).
+  public String orchestration(PatternContext ctx) throws Exception {
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
 
-	}
+    method_initGenType(new StringBuffer(), ictx);
 
-	public String generate(Object argument) throws Exception {
-		final StringBuffer stringBuffer = new StringBuffer();
+    method_setProjectName(new StringBuffer(), ictx);
 
-		InternalPatternContext ctx = (InternalPatternContext) argument;
-		Map<String, String> queryCtx = null;
-		IQuery.ParameterDescription paramDesc = null;
-		Node.Container currentNode = ctx.getNode();
+    method_genActivityBegin(new StringBuffer(), ictx);
+    {
+      final Map<String, Object> parameters = new HashMap<String, Object>();
+      parameters.put("parameter", this.parameter);
+      ExecutionContext ctx_local = new ExecutionContext(ictx);
+      CallHelper.executeWithParameterInjection(
+          "platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer/egf/vpdslActivityExplorerGeneration.fcore#_vr47oDbKEeW9-uNJc0wiRg",
+          ctx_local, parameters);
+    }
 
-		List<Object> parameterList = null;
-		//this pattern can only be called by another (i.e. it's not an entry point in execution)
+    {
+      final Map<String, Object> parameters = new HashMap<String, Object>();
+      parameters.put("predicatedElement", this.parameter);
+      parameters.put("basePackage", this.projectName);
+      ExecutionContext ctx_local = new ExecutionContext(ictx);
+      CallHelper.executeWithParameterInjection(
+          "platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer/egf/vpdslActivityExplorerGeneration.fcore#_JYnqcDbJEeW9-uNJc0wiRg",
+          ctx_local, parameters);
+    }
 
-		for (Object parameterParameter : parameterList) {
+    method_genActivityEnd(new StringBuffer(), ictx);
+    {
+      final Map<String, Object> parameters = new HashMap<String, Object>();
+      parameters.put("iconElement", this.parameter);
+      parameters.put("activityExplorerProjectName", this.projectName);
+      ExecutionContext ctx_local = new ExecutionContext(ictx);
+      CallHelper.executeWithParameterInjection(
+          "platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer/egf/vpdslActivityExplorerGeneration.fcore#_77MRMDdmEeW9-uNJc0wiRg",
+          ctx_local, parameters);
+    }
 
-			this.parameter = (org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Activity) parameterParameter;
+    if (ictx.useReporter()) {
+      Map<String, Object> parameterValues = new HashMap<String, Object>();
+      parameterValues.put("parameter", this.parameter);
+      String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
+      String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
+      ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
+    }
+    return null;
+  }
 
-			if (preCondition(ctx)) {
-				ctx.setNode(new Node.Container(currentNode, getClass()));
-				orchestration(ctx);
-			}
+  protected java.lang.String projectName = null;
 
-		}
-		ctx.setNode(currentNode);
-		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
-		}
+  public void set_projectName(java.lang.String object) {
+    this.projectName = object;
+  }
 
-		stringBuffer.append(TEXT_10);
-		stringBuffer.append(TEXT_10);
-		return stringBuffer.toString();
-	}
+  protected java.lang.Boolean genSectionID = null;
 
-	public String orchestration(PatternContext ctx) throws Exception {
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
+  public void set_genSectionID(java.lang.Boolean object) {
+    this.genSectionID = object;
+  }
 
-		method_initGenType(new StringBuffer(), ictx);
+  protected java.lang.String sectionID = null;
 
-		method_setProjectName(new StringBuffer(), ictx);
+  public void set_sectionID(java.lang.String object) {
+    this.sectionID = object;
+  }
 
-		method_genActivityBegin(new StringBuffer(), ictx);
-		{
-			final Map<String, Object> parameters = new HashMap<String, Object>();
-			parameters.put("parameter", this.parameter);
-			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer/egf/vpdslActivityExplorerGeneration.fcore#_vr47oDbKEeW9-uNJc0wiRg", ctx_local, parameters);
-		}
+  protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Activity parameter = null;
 
-		{
-			final Map<String, Object> parameters = new HashMap<String, Object>();
-			parameters.put("predicatedElement", this.parameter);
-			parameters.put("basePackage", this.projectName);
-			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer/egf/vpdslActivityExplorerGeneration.fcore#_JYnqcDbJEeW9-uNJc0wiRg", ctx_local, parameters);
-		}
+  public void set_parameter(
+      org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Activity object) {
+    this.parameter = object;
+  }
 
-		method_genActivityEnd(new StringBuffer(), ictx);
-		{
-			final Map<String, Object> parameters = new HashMap<String, Object>();
-			parameters.put("iconElement", this.parameter);
-			parameters.put("activityExplorerProjectName", this.projectName);
-			ExecutionContext ctx_local = new ExecutionContext(ictx);
-			CallHelper.executeWithParameterInjection(
-					"platform:/plugin/org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer/egf/vpdslActivityExplorerGeneration.fcore#_77MRMDdmEeW9-uNJc0wiRg", ctx_local, parameters);
-		}
+  public Map<String, Object> getParameters() {
+    final Map<String, Object> parameters = new HashMap<String, Object>();
+    parameters.put("parameter", this.parameter);
+    return parameters;
+  }
 
-		if (ictx.useReporter()) {
-			Map<String, Object> parameterValues = new HashMap<String, Object>();
-			parameterValues.put("parameter", this.parameter);
-			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
-			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
-		}
-		return null;
-	}
+  protected void method_initGenType(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
-	protected java.lang.String projectName = null;
+    genSectionID = false;
+    final EObject activityParent = parameter.eContainer();
+    if (activityParent instanceof SectionExtension) {
+      genSectionID = true;
+      SectionExtension sectionExtension = (SectionExtension) activityParent;
+      sectionID = sectionExtension.getExtendedSectionID();
+    }
 
-	public void set_projectName(java.lang.String object) {
-		this.projectName = object;
-	}
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "initGenType", stringBuffer.toString());
+  }
 
-	protected java.lang.Boolean genSectionID = null;
+  protected void method_setProjectName(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
-	public void set_genSectionID(java.lang.Boolean object) {
-		this.genSectionID = object;
-	}
+    projectName = (String) ctx.getValue("activity.explorer.project.name");
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "setProjectName", stringBuffer.toString());
+  }
 
-	protected java.lang.String sectionID = null;
+  protected void method_genActivityBegin(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
-	public void set_sectionID(java.lang.String object) {
-		this.sectionID = object;
-	}
+    String className = JavaNamingConvention.getJavaClassFQNFor(projectName, parameter,
+        JavaNamingConvention.JavaUseContext.Activity);
 
-	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Activity parameter = null;
+    String id = parameter.getActivityExplorerItemID();
+    if (null == id || (null != id && id.isEmpty()))
+      id = "Activity1";
 
-	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.activityexplorer.model.viewpointActivityExplorer.Activity object) {
-		this.parameter = object;
-	}
+    boolean hasImage = parameter.getImagePathOff() != null;
+    final boolean labelIsSet = parameter
+        .eIsSet(ViewpointActivityExplorerPackage.eINSTANCE.getActivityExplorerItem_Label());
+    final String name = labelIsSet && false == parameter.getLabel().isEmpty() ? parameter.getLabel()
+        : parameter.getName();
 
-	public Map<String, Object> getParameters() {
-		final Map<String, Object> parameters = new HashMap<String, Object>();
-		parameters.put("parameter", this.parameter);
-		return parameters;
-	}
+    stringBuffer.append(TEXT_1);
+    stringBuffer.append(className);
+    stringBuffer.append(TEXT_2);
+    stringBuffer.append(id);
+    stringBuffer.append(TEXT_3);
+    stringBuffer.append(parameter.getIndex());
+    stringBuffer.append(TEXT_4);
+    if (hasImage) {
+      stringBuffer.append(TEXT_5);
+      stringBuffer.append(IconsFileHelper.ICONS_FOLDER_NAME + "/" + parameter.getImagePathOff());
+      stringBuffer.append(TEXT_4);
+    }
+    stringBuffer.append(TEXT_6);
+    stringBuffer.append(name);
+    stringBuffer.append(TEXT_4);
+    if (genSectionID) {
+      stringBuffer.append(TEXT_7);
+      stringBuffer.append(sectionID);
+      stringBuffer.append(TEXT_4);
+    }
+    stringBuffer.append(TEXT_8);
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "genActivityBegin", stringBuffer.toString());
+  }
 
-	protected void method_initGenType(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
+  protected void method_genActivityEnd(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
-		genSectionID = false;
-		final EObject activityParent = parameter.eContainer();
-		if (activityParent instanceof SectionExtension) {
-			genSectionID = true;
-			SectionExtension sectionExtension = (SectionExtension) activityParent;
-			sectionID = sectionExtension.getExtendedSectionID();
-		}
+    stringBuffer.append(TEXT_9);
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "genActivityEnd", stringBuffer.toString());
+  }
 
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "initGenType", stringBuffer.toString());
-	}
-
-	protected void method_setProjectName(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
-
-		projectName = (String) ctx.getValue("activity.explorer.project.name");
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setProjectName", stringBuffer.toString());
-	}
-
-	protected void method_genActivityBegin(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
-
-		String className = JavaNamingConvention.getJavaClassFQNFor(projectName, parameter, JavaNamingConvention.JavaUseContext.Activity);
-
-		String id = parameter.getActivityExplorerItemID();
-		if (null == id || (null != id && id.isEmpty()))
-			id = "Activity1";
-
-		boolean hasImage = parameter.getImagePathOff() != null;
-		final boolean labelIsSet = parameter.eIsSet(ViewpointActivityExplorerPackage.eINSTANCE.getActivityExplorerItem_Label());
-		final String name = labelIsSet && false == parameter.getLabel().isEmpty() ? parameter.getLabel() : parameter.getName();
-
-		stringBuffer.append(TEXT_1);
-		stringBuffer.append(className);
-		stringBuffer.append(TEXT_2);
-		stringBuffer.append(id);
-		stringBuffer.append(TEXT_3);
-		stringBuffer.append(parameter.getIndex());
-		stringBuffer.append(TEXT_4);
-		if (hasImage) {
-			stringBuffer.append(TEXT_5);
-			stringBuffer.append(IconsFileHelper.ICONS_FOLDER_NAME + "/" + parameter.getImagePathOff());
-			stringBuffer.append(TEXT_4);
-		}
-		stringBuffer.append(TEXT_6);
-		stringBuffer.append(name);
-		stringBuffer.append(TEXT_4);
-		if (genSectionID) {
-			stringBuffer.append(TEXT_7);
-			stringBuffer.append(sectionID);
-			stringBuffer.append(TEXT_4);
-		}
-		stringBuffer.append(TEXT_8);
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "genActivityBegin", stringBuffer.toString());
-	}
-
-	protected void method_genActivityEnd(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
-
-		stringBuffer.append(TEXT_9);
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "genActivityEnd", stringBuffer.toString());
-	}
-
-	public boolean preCondition(PatternContext ctx) throws Exception {
-		return true;
-	}
+  public boolean preCondition(PatternContext ctx) throws Exception {
+    return true;
+  }
 }

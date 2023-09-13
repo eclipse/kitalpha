@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.3.202110291409
+//Generated with EGF 1.6.4.202309111303
 package org.polarsys.kitalpha.doc.gen.business.ecore.extension.content.impl;
 
 import org.eclipse.egf.common.helper.*;
@@ -15,157 +15,161 @@ import org.polarsys.kitalpha.doc.gen.business.core.util.SiriusHelper;
 import org.polarsys.kitalpha.doc.gen.business.core.util.DefaultSiriusDiagramHelper;
 
 public class EClassFocusDiagram {
-	protected static String nl;
+  protected static String nl;
 
-	public static synchronized EClassFocusDiagram create(String lineSeparator) {
-		nl = lineSeparator;
-		EClassFocusDiagram result = new EClassFocusDiagram();
-		nl = null;
-		return result;
-	}
+  public static synchronized EClassFocusDiagram create(String lineSeparator) {
+    nl = lineSeparator;
+    EClassFocusDiagram result = new EClassFocusDiagram();
+    nl = null;
+    return result;
+  }
 
-	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+  public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+  protected final String TEXT_1 = " ";
+  protected final String TEXT_2 = NL;
+  protected final String TEXT_3 = NL + "<p><strong>Focus: </strong></p>";
 
-	protected final String TEXT_1 = " ";
+  public EClassFocusDiagram() {
+    //Here is the constructor
+    StringBuffer stringBuffer = new StringBuffer();
 
-	protected final String TEXT_2 = NL;
+  }
 
-	protected final String TEXT_3 = NL + "<p><strong>Focus: </strong></p>";
+  public String generate(Object argument) throws Exception {
+    final StringBuffer stringBuffer = new StringBuffer();
 
-	protected final String TEXT_4 = NL;
+    InternalPatternContext ctx = (InternalPatternContext) argument;
+    Map<String, String> queryCtx = null;
+    IQuery.ParameterDescription paramDesc = null;
+    Node.Container currentNode = ctx.getNode();
 
-	public EClassFocusDiagram() {
-		//Here is the constructor
-		StringBuffer stringBuffer = new StringBuffer();
+    paramDesc = new IQuery.ParameterDescription("parameter", "http://www.eclipse.org/emf/2002/Ecore#//EClass");
+    queryCtx = new HashMap<String, String>();
+    List<Object> parameterList = QueryHelper.load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.injected.context")
+        .execute(paramDesc, queryCtx, ctx);
+    paramDesc = new IQuery.ParameterDescription("helper",
+        "org.polarsys.kitalpha.doc.gen.business.core.util.IDiagramHelper");
+    queryCtx = new HashMap<String, String>();
+    List<Object> helperList = QueryHelper.load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.diagramHelper")
+        .execute(paramDesc, queryCtx, ctx);
+    paramDesc = new IQuery.ParameterDescription("fileNameService",
+        "org.polarsys.kitalpha.doc.gen.business.core.util.IFileNameService");
+    queryCtx = new HashMap<String, String>();
+    List<Object> fileNameServiceList = QueryHelper
+        .load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.inject.file.name.service")
+        .execute(paramDesc, queryCtx, ctx);
 
-	}
+    for (Object parameterParameter : parameterList) {
+      for (Object helperParameter : helperList) {
+        for (Object fileNameServiceParameter : fileNameServiceList) {
 
-	public String generate(Object argument) throws Exception {
-		final StringBuffer stringBuffer = new StringBuffer();
+          this.parameter = (org.eclipse.emf.ecore.EClass) parameterParameter;
+          this.helper = (org.polarsys.kitalpha.doc.gen.business.core.util.IDiagramHelper) helperParameter;
+          this.fileNameService = (org.polarsys.kitalpha.doc.gen.business.core.util.IFileNameService) fileNameServiceParameter;
 
-		InternalPatternContext ctx = (InternalPatternContext) argument;
-		Map<String, String> queryCtx = null;
-		IQuery.ParameterDescription paramDesc = null;
-		Node.Container currentNode = ctx.getNode();
+          if (preCondition(ctx)) {
+            ctx.setNode(new Node.Container(currentNode, getClass()));
+            orchestration(ctx);
+          }
 
-		paramDesc = new IQuery.ParameterDescription("parameter", "http://www.eclipse.org/emf/2002/Ecore#//EClass");
-		queryCtx = new HashMap<String, String>();
-		List<Object> parameterList = QueryHelper.load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.injected.context").execute(paramDesc, queryCtx, ctx);
-		paramDesc = new IQuery.ParameterDescription("helper", "org.polarsys.kitalpha.doc.gen.business.core.util.IDiagramHelper");
-		queryCtx = new HashMap<String, String>();
-		List<Object> helperList = QueryHelper.load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.diagramHelper").execute(paramDesc, queryCtx, ctx);
-		paramDesc = new IQuery.ParameterDescription("fileNameService", "org.polarsys.kitalpha.doc.gen.business.core.util.IFileNameService");
-		queryCtx = new HashMap<String, String>();
-		List<Object> fileNameServiceList = QueryHelper.load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.inject.file.name.service").execute(paramDesc, queryCtx, ctx);
+        }
+      }
+    }
+    ctx.setNode(currentNode);
+    if (ctx.useReporter()) {
+      ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
+    }
 
-		for (Object parameterParameter : parameterList) {
-			for (Object helperParameter : helperList) {
-				for (Object fileNameServiceParameter : fileNameServiceList) {
+    stringBuffer.append(TEXT_2);
+    stringBuffer.append(TEXT_2);
+    return stringBuffer.toString();
+  }
 
-					this.parameter = (org.eclipse.emf.ecore.EClass) parameterParameter;
-					this.helper = (org.polarsys.kitalpha.doc.gen.business.core.util.IDiagramHelper) helperParameter;
-					this.fileNameService = (org.polarsys.kitalpha.doc.gen.business.core.util.IFileNameService) fileNameServiceParameter;
+  public String orchestration(PatternContext ctx) throws Exception {
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
 
-					if (preCondition(ctx)) {
-						ctx.setNode(new Node.Container(currentNode, getClass()));
-						orchestration(ctx);
-					}
+    method_content(new StringBuffer(), ictx);
 
-				}
-			}
-		}
-		ctx.setNode(currentNode);
-		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
-		}
+    if (ictx.useReporter()) {
+      Map<String, Object> parameterValues = new HashMap<String, Object>();
+      parameterValues.put("parameter", this.parameter);
+      parameterValues.put("helper", this.helper);
+      parameterValues.put("fileNameService", this.fileNameService);
+      String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
+      String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
+      ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
+    }
+    return null;
+  }
 
-		stringBuffer.append(TEXT_4);
-		stringBuffer.append(TEXT_4);
-		return stringBuffer.toString();
-	}
+  protected org.eclipse.emf.ecore.EClass parameter = null;
 
-	public String orchestration(PatternContext ctx) throws Exception {
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
+  public void set_parameter(org.eclipse.emf.ecore.EClass object) {
+    this.parameter = object;
+  }
 
-		method_content(new StringBuffer(), ictx);
+  protected org.polarsys.kitalpha.doc.gen.business.core.util.IDiagramHelper helper = null;
 
-		if (ictx.useReporter()) {
-			Map<String, Object> parameterValues = new HashMap<String, Object>();
-			parameterValues.put("parameter", this.parameter);
-			parameterValues.put("helper", this.helper);
-			parameterValues.put("fileNameService", this.fileNameService);
-			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
-			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
-		}
-		return null;
-	}
+  public void set_helper(org.polarsys.kitalpha.doc.gen.business.core.util.IDiagramHelper object) {
+    this.helper = object;
+  }
 
-	protected org.eclipse.emf.ecore.EClass parameter = null;
+  protected org.polarsys.kitalpha.doc.gen.business.core.util.IFileNameService fileNameService = null;
 
-	public void set_parameter(org.eclipse.emf.ecore.EClass object) {
-		this.parameter = object;
-	}
+  public void set_fileNameService(org.polarsys.kitalpha.doc.gen.business.core.util.IFileNameService object) {
+    this.fileNameService = object;
+  }
 
-	protected org.polarsys.kitalpha.doc.gen.business.core.util.IDiagramHelper helper = null;
+  public Map<String, Object> getParameters() {
+    final Map<String, Object> parameters = new HashMap<String, Object>();
+    parameters.put("parameter", this.parameter);
+    parameters.put("helper", this.helper);
+    parameters.put("fileNameService", this.fileNameService);
+    return parameters;
+  }
 
-	public void set_helper(org.polarsys.kitalpha.doc.gen.business.core.util.IDiagramHelper object) {
-		this.helper = object;
-	}
+  protected void method_content(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
-	protected org.polarsys.kitalpha.doc.gen.business.core.util.IFileNameService fileNameService = null;
+    String outputFolder = ctx.getValue("outputFolder").toString();
+    String projectName = ctx.getValue("projectName").toString();
 
-	public void set_fileNameService(org.polarsys.kitalpha.doc.gen.business.core.util.IFileNameService object) {
-		this.fileNameService = object;
-	}
+    stringBuffer.append(TEXT_1);
+    Collection<DRepresentation> diagramList = SiriusHelper.getDiagramForObject(parameter);
+    stringBuffer.append(TEXT_2);
+    for (DRepresentation diagram : diagramList) {
+      if ((diagram instanceof DSemanticDiagram)
+          && (((DSemanticDiagram) diagram).getDescription().getName().equals("Class Focus")
+              && ((DSemanticDiagram) diagram).getTarget() == parameter)) {
+        String generatedFolder = fileNameService.getFileName(((DSemanticDiagram) diagram).getTarget());
+        stringBuffer.append(TEXT_3);
+        stringBuffer.append(TEXT_2);
+        {
+          //<%@ egf:patternCall patternId="platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#LogicalName=org.polarsys.kitalpha.doc.gen.business.core.sirius.DiagramGenerator" args="diagram:diagram, outputFolder:outputFolder, projectName:projectName, generatedFolder:generatedFolder, fileNameService:fileNameService, helper:helper"%>
 
-	public Map<String, Object> getParameters() {
-		final Map<String, Object> parameters = new HashMap<String, Object>();
-		parameters.put("parameter", this.parameter);
-		parameters.put("helper", this.helper);
-		parameters.put("fileNameService", this.fileNameService);
-		return parameters;
-	}
+          InternalPatternContext ictx = (InternalPatternContext) ctx;
+          new Node.DataLeaf(ictx.getNode(), getClass(), null, stringBuffer.toString());
+          stringBuffer.setLength(0);
 
-	protected void method_content(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
+          final Map<String, Object> callParameters = new HashMap<String, Object>();
+          callParameters.put("diagram", diagram);
+          callParameters.put("outputFolder", outputFolder);
+          callParameters.put("projectName", projectName);
+          callParameters.put("generatedFolder", generatedFolder);
+          callParameters.put("fileNameService", fileNameService);
+          callParameters.put("helper", helper);
+          CallHelper.executeWithParameterInjection(
+              "platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_yyU7IvYiEd-jis7N5RhttA",
+              new ExecutionContext((InternalPatternContext) ctx), callParameters);
+          stringBuffer.setLength(0);
+        }
 
-		String outputFolder = ctx.getValue("outputFolder").toString();
-		String projectName = ctx.getValue("projectName").toString();
+      }
+    }
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "content", stringBuffer.toString());
+  }
 
-		stringBuffer.append(TEXT_1);
-		Collection<DRepresentation> diagramList = SiriusHelper.getDiagramForObject(parameter);
-		stringBuffer.append(TEXT_2);
-		for (DRepresentation diagram : diagramList) {
-			if ((diagram instanceof DSemanticDiagram) && (((DSemanticDiagram) diagram).getDescription().getName().equals("Class Focus") && ((DSemanticDiagram) diagram).getTarget() == parameter)) {
-				String generatedFolder = fileNameService.getFileName(((DSemanticDiagram) diagram).getTarget());
-				stringBuffer.append(TEXT_3);
-				stringBuffer.append(TEXT_2);
-				{
-					//<%@ egf:patternCall patternId="platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#LogicalName=org.polarsys.kitalpha.doc.gen.business.core.sirius.DiagramGenerator" args="diagram:diagram, outputFolder:outputFolder, projectName:projectName, generatedFolder:generatedFolder, fileNameService:fileNameService, helper:helper"%>
-
-					InternalPatternContext ictx = (InternalPatternContext) ctx;
-					new Node.DataLeaf(ictx.getNode(), getClass(), null, stringBuffer.toString());
-					stringBuffer.setLength(0);
-
-					final Map<String, Object> callParameters = new HashMap<String, Object>();
-					callParameters.put("diagram", diagram);
-					callParameters.put("outputFolder", outputFolder);
-					callParameters.put("projectName", projectName);
-					callParameters.put("generatedFolder", generatedFolder);
-					callParameters.put("fileNameService", fileNameService);
-					callParameters.put("helper", helper);
-					CallHelper.executeWithParameterInjection("platform:/plugin/org.polarsys.kitalpha.doc.gen.business.core/egf/HTMLDocGenCommon.fcore#_yyU7IvYiEd-jis7N5RhttA",
-							new ExecutionContext((InternalPatternContext) ctx), callParameters);
-					stringBuffer.setLength(0);
-				}
-
-			}
-		}
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "content", stringBuffer.toString());
-	}
-
-	public boolean preCondition(PatternContext ctx) throws Exception {
-		return true;
-	}
+  public boolean preCondition(PatternContext ctx) throws Exception {
+    return true;
+  }
 }

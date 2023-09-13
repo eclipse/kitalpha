@@ -26,25 +26,25 @@ import org.polarsys.kitalpha.emde.model.EmdePackage;
  * @generated
  */
 public abstract class ElementImpl extends EObjectImpl implements Element {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ElementImpl() {
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected ElementImpl() {
 
-		super();
+    super();
 
-	}
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass() {
-		return EmdePackage.Literals.ELEMENT;
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  protected EClass eStaticClass() {
+    return EmdePackage.Literals.ELEMENT;
+  }
 
 } //ElementImpl

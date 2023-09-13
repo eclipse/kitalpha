@@ -22,21 +22,21 @@ import org.eclipse.emf.ecore.EFactory;
  * @generated
  */
 public interface EmdeFactory extends EFactory {
-	/**
-	 * The singleton instance of the factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	EmdeFactory eINSTANCE = org.polarsys.kitalpha.emde.model.impl.EmdeFactoryImpl.init();
+  /**
+   * The singleton instance of the factory.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  EmdeFactory eINSTANCE = org.polarsys.kitalpha.emde.model.impl.EmdeFactoryImpl.init();
 
-	/**
-	 * Returns the package supported by this factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the package supported by this factory.
-	 * @generated
-	 */
-	EmdePackage getEmdePackage();
+  /**
+   * Returns the package supported by this factory.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the package supported by this factory.
+   * @generated
+   */
+  EmdePackage getEmdePackage();
 
 } //EmdeFactory

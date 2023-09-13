@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.3.202110291409
+//Generated with EGF 1.6.4.202309111303
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.activityexplorer.extensions.libs;
 
 import org.eclipse.egf.common.helper.*;
@@ -9,107 +9,104 @@ import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 
 public class DescriptionPattern {
-	protected static String nl;
+  protected static String nl;
 
-	public static synchronized DescriptionPattern create(String lineSeparator) {
-		nl = lineSeparator;
-		DescriptionPattern result = new DescriptionPattern();
-		nl = null;
-		return result;
-	}
+  public static synchronized DescriptionPattern create(String lineSeparator) {
+    nl = lineSeparator;
+    DescriptionPattern result = new DescriptionPattern();
+    nl = null;
+    return result;
+  }
 
-	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+  public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+  protected final String TEXT_1 = NL + "\t\t\t<Description>" + NL + "\t\t\t\t";
+  protected final String TEXT_2 = NL + "\t\t\t</Description>";
+  protected final String TEXT_3 = NL;
 
-	protected final String TEXT_1 = NL + "\t\t\t<Description>" + NL + "\t\t\t\t";
+  public DescriptionPattern() {
+    //Here is the constructor
+    StringBuffer stringBuffer = new StringBuffer();
 
-	protected final String TEXT_2 = NL + "\t\t\t</Description>";
+    // add initialisation of the pattern variables (declaration has been already done).
 
-	protected final String TEXT_3 = NL;
+  }
 
-	public DescriptionPattern() {
-		//Here is the constructor
-		StringBuffer stringBuffer = new StringBuffer();
+  public String generate(Object argument) throws Exception {
+    final StringBuffer stringBuffer = new StringBuffer();
 
-		// add initialisation of the pattern variables (declaration has been already done).
+    InternalPatternContext ctx = (InternalPatternContext) argument;
+    Map<String, String> queryCtx = null;
+    IQuery.ParameterDescription paramDesc = null;
+    Node.Container currentNode = ctx.getNode();
 
-	}
+    List<Object> parameterList = null;
+    //this pattern can only be called by another (i.e. it's not an entry point in execution)
 
-	public String generate(Object argument) throws Exception {
-		final StringBuffer stringBuffer = new StringBuffer();
+    for (Object parameterParameter : parameterList) {
 
-		InternalPatternContext ctx = (InternalPatternContext) argument;
-		Map<String, String> queryCtx = null;
-		IQuery.ParameterDescription paramDesc = null;
-		Node.Container currentNode = ctx.getNode();
+      this.parameter = (org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.NamedElement) parameterParameter;
 
-		List<Object> parameterList = null;
-		//this pattern can only be called by another (i.e. it's not an entry point in execution)
+      if (preCondition(ctx)) {
+        ctx.setNode(new Node.Container(currentNode, getClass()));
+        orchestration(ctx);
+      }
 
-		for (Object parameterParameter : parameterList) {
+    }
+    ctx.setNode(currentNode);
+    if (ctx.useReporter()) {
+      ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
+    }
 
-			this.parameter = (org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.NamedElement) parameterParameter;
+    stringBuffer.append(TEXT_3);
+    stringBuffer.append(TEXT_3);
+    return stringBuffer.toString();
+  }
 
-			if (preCondition(ctx)) {
-				ctx.setNode(new Node.Container(currentNode, getClass()));
-				orchestration(ctx);
-			}
+  public String orchestration(PatternContext ctx) throws Exception {
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
 
-		}
-		ctx.setNode(currentNode);
-		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
-		}
+    method_genDescription(new StringBuffer(), ictx);
 
-		stringBuffer.append(TEXT_3);
-		stringBuffer.append(TEXT_3);
-		return stringBuffer.toString();
-	}
+    if (ictx.useReporter()) {
+      Map<String, Object> parameterValues = new HashMap<String, Object>();
+      parameterValues.put("parameter", this.parameter);
+      String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
+      String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
+      ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
+    }
+    return null;
+  }
 
-	public String orchestration(PatternContext ctx) throws Exception {
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
+  protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.NamedElement parameter = null;
 
-		method_genDescription(new StringBuffer(), ictx);
+  public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.NamedElement object) {
+    this.parameter = object;
+  }
 
-		if (ictx.useReporter()) {
-			Map<String, Object> parameterValues = new HashMap<String, Object>();
-			parameterValues.put("parameter", this.parameter);
-			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
-			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
-		}
-		return null;
-	}
+  public Map<String, Object> getParameters() {
+    final Map<String, Object> parameters = new HashMap<String, Object>();
+    parameters.put("parameter", this.parameter);
+    return parameters;
+  }
 
-	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.NamedElement parameter = null;
+  protected void method_genDescription(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
-	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.NamedElement object) {
-		this.parameter = object;
-	}
+    String description = parameter.getDescription();
+    if (null == description || (null != description && description.isEmpty()))
+      description = "Description body text";
+    else {
+      description = description.replaceAll("<", "&lt;");
+      description = description.replaceAll(">", "&gt;");
+    }
 
-	public Map<String, Object> getParameters() {
-		final Map<String, Object> parameters = new HashMap<String, Object>();
-		parameters.put("parameter", this.parameter);
-		return parameters;
-	}
+    stringBuffer.append(TEXT_1);
+    stringBuffer.append(description);
+    stringBuffer.append(TEXT_2);
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "genDescription", stringBuffer.toString());
+  }
 
-	protected void method_genDescription(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
-
-		String description = parameter.getDescription();
-		if (null == description || (null != description && description.isEmpty()))
-			description = "Description body text";
-		else {
-			description = description.replaceAll("<", "&lt;");
-			description = description.replaceAll(">", "&gt;");
-		}
-
-		stringBuffer.append(TEXT_1);
-		stringBuffer.append(description);
-		stringBuffer.append(TEXT_2);
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "genDescription", stringBuffer.toString());
-	}
-
-	public boolean preCondition(PatternContext ctx) throws Exception {
-		return true;
-	}
+  public boolean preCondition(PatternContext ctx) throws Exception {
+    return true;
+  }
 }

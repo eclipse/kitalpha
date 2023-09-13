@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.3.202110291409
+//Generated with EGF 1.6.4.202309111303
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.edge;
 
 import java.util.*;
@@ -41,7 +41,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.siriu
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.sirius.ExpressionInterpreter;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.VSMVariable;
 
-public class EdgePattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.DiagramElementPattern {
+public class EdgePattern
+		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.common.DiagramElementPattern {
 
 	public EdgePattern() {
 		//Here is the constructor
@@ -156,7 +157,8 @@ public class EdgePattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generati
 
 			// Source finder Expression
 			if (edElement.getSource_Locator() != null)
-				sourceFinderExpression = SiriusExpressionHelper.getExpressoin(edElement.getSource_Locator().getName(), ExpressionInterpreter.Feature);
+				sourceFinderExpression = SiriusExpressionHelper.getExpressoin(edElement.getSource_Locator().getName(),
+						ExpressionInterpreter.Feature);
 			else {
 				String s_query = edElement.getSource_query();
 				if (s_query != null && s_query.trim().length() > 0)
@@ -170,7 +172,8 @@ public class EdgePattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generati
 		/************* The case of both Relation and Element based Edge Mapping ***************/
 		// Target finder Expression
 		if (domain.getTarget_Locator() != null)
-			targetFinderExpression = SiriusExpressionHelper.getExpressoin(domain.getTarget_Locator().getName(), ExpressionInterpreter.Feature);
+			targetFinderExpression = SiriusExpressionHelper.getExpressoin(domain.getTarget_Locator().getName(),
+					ExpressionInterpreter.Feature);
 		else {
 			String t_query = domain.getTarget_query();
 			if (t_query != null && t_query.trim().length() > 0)
@@ -200,9 +203,11 @@ public class EdgePattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generati
 				String acceleoExpression = "";
 				if (fEE instanceof JavaElement) {
 					String javaMethodName = ((JavaElement) fEE).getMethod();
-					String mParameters = VSMVariable.view.getInnerVariable() + "," + VSMVariable.container.getInnerVariable();
+					String mParameters = VSMVariable.view.getInnerVariable() + ","
+							+ VSMVariable.container.getInnerVariable();
 					javaMethodName = JavaElementHelper.addDefaultParameterToJavaMethod(javaMethodName, mParameters);
-					acceleoExpression = SiriusExpressionHelper.getExpressoin(javaMethodName, ExpressionInterpreter.Service);
+					acceleoExpression = SiriusExpressionHelper.getExpressoin(javaMethodName,
+							ExpressionInterpreter.Service);
 				}
 				if (fEE instanceof DomainElement)
 					acceleoExpression = "<%" + ((DomainElement) fEE).getAttribute().getName() + "%>";
@@ -237,7 +242,8 @@ public class EdgePattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generati
 					if (c_label.getValue() != null)
 						c_labelExpression = c_label.getValue().getValue();
 
-					CenterLabelStyleDescription cLabelStyleDesc = StyleFactory.eINSTANCE.createCenterLabelStyleDescription();
+					CenterLabelStyleDescription cLabelStyleDesc = StyleFactory.eINSTANCE
+							.createCenterLabelStyleDescription();
 					cLabelStyleDesc.setLabelExpression(c_labelExpression);
 					cLabelStyleDesc.setLabelSize(c_label.getSize());
 					cLabelStyleDesc.setShowIcon(false);
@@ -264,7 +270,8 @@ public class EdgePattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generati
 					if (b_label.getValue() != null)
 						b_labelExpression = b_label.getValue().getValue();
 
-					BeginLabelStyleDescription bLabelStyleDesc = StyleFactory.eINSTANCE.createBeginLabelStyleDescription();
+					BeginLabelStyleDescription bLabelStyleDesc = StyleFactory.eINSTANCE
+							.createBeginLabelStyleDescription();
 					bLabelStyleDesc.setLabelExpression(b_labelExpression);
 					bLabelStyleDesc.setLabelSize(b_label.getSize());
 					bLabelStyleDesc.setShowIcon(false);

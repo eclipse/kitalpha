@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.3.202110291409
+//Generated with EGF 1.6.4.202309111303
 package org.polarsys.kitalpha.doc.gen.business.core.doccontent;
 
 import org.eclipse.egf.common.helper.*;
@@ -10,190 +10,192 @@ import org.eclipse.egf.pattern.query.*;
 import org.polarsys.kitalpha.doc.gen.business.core.branding.DocumentationBrandingData;
 
 public class ElementDocContent extends org.polarsys.kitalpha.doc.gen.business.core.generic.ElementGen {
-	protected static String nl;
+  protected static String nl;
 
-	public static synchronized ElementDocContent create(String lineSeparator) {
-		nl = lineSeparator;
-		ElementDocContent result = new ElementDocContent();
-		nl = null;
-		return result;
-	}
+  public static synchronized ElementDocContent create(String lineSeparator) {
+    nl = lineSeparator;
+    ElementDocContent result = new ElementDocContent();
+    nl = null;
+    return result;
+  }
 
-	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+  public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+  protected final String TEXT_1 = "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>" + NL
+      + "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"" + NL
+      + "    \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">" + NL
+      + "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">" + NL + "" + NL + "\t<head>" + NL
+      + "\t\t<meta name=\"copyright\" content=\"";
+  protected final String TEXT_2 = "\" />" + NL
+      + "\t\t<meta http-equiv=\"content-type\" content=\"text/html;charset=ISO-8859-1\" />" + NL
+      + "\t\t<meta http-equiv=\"Content-Style-Type\" content=\"text/css\" />" + NL + "" + NL + "\t\t<title>";
+  protected final String TEXT_3 = "</title>" + NL
+      + "\t\t<link rel=\"stylesheet\" href=\"../../scripts/jquery-treeview/jquery.treeview.css\" />" + NL
+      + "  \t\t<script src=\"../../scripts/jquery-treeview/lib/jquery-1.11.1.js\" type=\"text/javascript\"></script>"
+      + NL + "  \t\t<script src=\"../../scripts/jquery-treeview/jquery.treeview.js\" type=\"text/javascript\"></script>"
+      + NL + "\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"../../css/simpletree.css\" />\t\t" + NL
+      + "\t\t<link title=\"default\" rel=\"stylesheet\" type=\"text/css\" media=\"screen, projection\" href=\"../../css/content.css\"></link>"
+      + NL + "\t\t" + NL + "\t\t<script type=\"text/javascript\">" + NL
+      + "if(parent.location.href == self.location.href) {" + NL + "window.location.href = 'index.html?";
+  protected final String TEXT_4 = "';" + NL + "}" + NL + "</script>" + NL + "\t</head>" + NL + "\t" + NL + "\t<body>"
+      + NL + "\t";
+  protected final String TEXT_5 = "\t</body>" + NL + "</html>" + NL;
+  protected final String TEXT_6 = "<div id=\"content\">" + NL;
+  protected final String TEXT_7 = " </div>";
+  protected final String TEXT_8 = NL;
 
-	protected final String TEXT_1 = "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>" + NL + "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"" + NL
-			+ "    \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">" + NL + "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">" + NL + "" + NL + "\t<head>" + NL
-			+ "\t\t<meta name=\"copyright\" content=\"";
+  public ElementDocContent() {
+    //Here is the constructor
+    StringBuffer stringBuffer = new StringBuffer();
 
-	protected final String TEXT_2 = "\" />" + NL + "\t\t<meta http-equiv=\"content-type\" content=\"text/html;charset=ISO-8859-1\" />" + NL
-			+ "\t\t<meta http-equiv=\"Content-Style-Type\" content=\"text/css\" />" + NL + "" + NL + "\t\t<title>";
+    title = "";
+    copyright = (String) DocumentationBrandingData.getInstance().getData("copyright");
+    fileName = "default";
 
-	protected final String TEXT_3 = "</title>" + NL + "\t\t<link rel=\"stylesheet\" href=\"../../scripts/jquery-treeview/jquery.treeview.css\" />" + NL
-			+ "  \t\t<script src=\"../../scripts/jquery-treeview/lib/jquery-1.11.1.js\" type=\"text/javascript\"></script>" + NL
-			+ "  \t\t<script src=\"../../scripts/jquery-treeview/jquery.treeview.js\" type=\"text/javascript\"></script>" + NL
-			+ "\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"../../css/simpletree.css\" />\t\t" + NL
-			+ "\t\t<link title=\"default\" rel=\"stylesheet\" type=\"text/css\" media=\"screen, projection\" href=\"../../css/content.css\"></link>" + NL + "\t\t" + NL
-			+ "\t\t<script type=\"text/javascript\">" + NL + "if(parent.location.href == self.location.href) {" + NL + "window.location.href = 'index.html?";
+  }
 
-	protected final String TEXT_4 = "';" + NL + "}" + NL + "</script>" + NL + "\t</head>" + NL + "\t" + NL + "\t<body>" + NL + "\t";
+  public String generate(Object argument) throws Exception {
+    final StringBuffer stringBuffer = new StringBuffer();
 
-	protected final String TEXT_5 = "\t</body>" + NL + "</html>" + NL;
+    InternalPatternContext ctx = (InternalPatternContext) argument;
+    Map<String, String> queryCtx = null;
+    IQuery.ParameterDescription paramDesc = null;
+    Node.Container currentNode = ctx.getNode();
 
-	protected final String TEXT_6 = "<div id=\"content\">" + NL;
+    if (preCondition(ctx)) {
+      ctx.setNode(new Node.Container(currentNode, getClass()));
+      orchestration(ctx);
+    }
 
-	protected final String TEXT_7 = " </div>";
+    ctx.setNode(currentNode);
+    if (ctx.useReporter()) {
+      ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
+    }
 
-	protected final String TEXT_8 = NL;
+    stringBuffer.append(TEXT_8);
+    stringBuffer.append(TEXT_8);
+    return stringBuffer.toString();
+  }
 
-	public ElementDocContent() {
-		//Here is the constructor
-		StringBuffer stringBuffer = new StringBuffer();
+  public String orchestration(PatternContext ctx) throws Exception {
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
 
-		title = "";
-		copyright = (String) DocumentationBrandingData.getInstance().getData("copyright");
-		fileName = "default";
+    super.orchestration(new SuperOrchestrationContext(ictx));
 
-	}
+    method_setContext(new StringBuffer(), ictx);
 
-	public String generate(Object argument) throws Exception {
-		final StringBuffer stringBuffer = new StringBuffer();
+    method_setReporterContext(new StringBuffer(), ictx);
 
-		InternalPatternContext ctx = (InternalPatternContext) argument;
-		Map<String, String> queryCtx = null;
-		IQuery.ParameterDescription paramDesc = null;
-		Node.Container currentNode = ctx.getNode();
+    method_docHeader(new StringBuffer(), ictx);
 
-		if (preCondition(ctx)) {
-			ctx.setNode(new Node.Container(currentNode, getClass()));
-			orchestration(ctx);
-		}
+    method_startContent(new StringBuffer(), ictx);
 
-		ctx.setNode(currentNode);
-		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
-		}
+    method_preContentExtension(new StringBuffer(), ictx);
 
-		stringBuffer.append(TEXT_8);
-		stringBuffer.append(TEXT_8);
-		return stringBuffer.toString();
-	}
+    method_content(new StringBuffer(), ictx);
 
-	public String orchestration(PatternContext ctx) throws Exception {
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
+    method_postContentExtension(new StringBuffer(), ictx);
 
-		super.orchestration(new SuperOrchestrationContext(ictx));
+    method_endContent(new StringBuffer(), ictx);
 
-		method_setContext(new StringBuffer(), ictx);
+    method_docFooter(new StringBuffer(), ictx);
 
-		method_setReporterContext(new StringBuffer(), ictx);
+    return null;
+  }
 
-		method_docHeader(new StringBuffer(), ictx);
+  protected java.lang.String title = null;
 
-		method_startContent(new StringBuffer(), ictx);
+  public void set_title(java.lang.String object) {
+    this.title = object;
+  }
 
-		method_preContentExtension(new StringBuffer(), ictx);
+  protected java.lang.String copyright = null;
 
-		method_content(new StringBuffer(), ictx);
+  public void set_copyright(java.lang.String object) {
+    this.copyright = object;
+  }
 
-		method_postContentExtension(new StringBuffer(), ictx);
+  protected java.lang.String fileName = null;
 
-		method_endContent(new StringBuffer(), ictx);
+  public void set_fileName(java.lang.String object) {
+    this.fileName = object;
+  }
 
-		method_docFooter(new StringBuffer(), ictx);
+  public Map<String, Object> getParameters() {
+    final Map<String, Object> parameters = new HashMap<String, Object>();
+    return parameters;
+  }
 
-		return null;
-	}
+  protected void method_setReporterContext(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
-	protected java.lang.String title = null;
+    ctx.setValue("fileName", fileName);
 
-	public void set_title(java.lang.String object) {
-		this.title = object;
-	}
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "setReporterContext", stringBuffer.toString());
+  }
 
-	protected java.lang.String copyright = null;
+  protected void method_docHeader(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
-	public void set_copyright(java.lang.String object) {
-		this.copyright = object;
-	}
+    stringBuffer.append(TEXT_1);
+    stringBuffer.append(copyright);
+    stringBuffer.append(TEXT_2);
+    stringBuffer.append(title);
+    stringBuffer.append(TEXT_3);
+    stringBuffer.append(fileName);
+    stringBuffer.append(TEXT_4);
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "docHeader", stringBuffer.toString());
+  }
 
-	protected java.lang.String fileName = null;
+  protected void method_docFooter(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
-	public void set_fileName(java.lang.String object) {
-		this.fileName = object;
-	}
+    stringBuffer.append(TEXT_5);
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "docFooter", stringBuffer.toString());
+  }
 
-	public Map<String, Object> getParameters() {
-		final Map<String, Object> parameters = new HashMap<String, Object>();
-		return parameters;
-	}
+  protected void method_setContext(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
-	protected void method_setReporterContext(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "setContext", stringBuffer.toString());
+  }
 
-		ctx.setValue("fileName", fileName);
+  protected void method_startContent(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setReporterContext", stringBuffer.toString());
-	}
+    stringBuffer.append(TEXT_6);
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "startContent", stringBuffer.toString());
+  }
 
-	protected void method_docHeader(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
+  protected void method_preContentExtension(final StringBuffer stringBuffer, final PatternContext ctx)
+      throws Exception {
 
-		stringBuffer.append(TEXT_1);
-		stringBuffer.append(copyright);
-		stringBuffer.append(TEXT_2);
-		stringBuffer.append(title);
-		stringBuffer.append(TEXT_3);
-		stringBuffer.append(fileName);
-		stringBuffer.append(TEXT_4);
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "docHeader", stringBuffer.toString());
-	}
+    org.polarsys.kitalpha.doc.gen.business.core.extension.intf.DocGenExtensionFactory.newDocGenExtensionEngine()
+        .apply("PRE_CONTENT_EXTENSION", ctx, getParameters(), stringBuffer);
 
-	protected void method_docFooter(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "preContentExtension", stringBuffer.toString());
+  }
 
-		stringBuffer.append(TEXT_5);
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "docFooter", stringBuffer.toString());
-	}
+  protected void method_content(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
-	protected void method_setContext(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "content", stringBuffer.toString());
+  }
 
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setContext", stringBuffer.toString());
-	}
+  protected void method_postContentExtension(final StringBuffer stringBuffer, final PatternContext ctx)
+      throws Exception {
 
-	protected void method_startContent(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
+    org.polarsys.kitalpha.doc.gen.business.core.extension.intf.DocGenExtensionFactory.newDocGenExtensionEngine()
+        .apply("POST_CONTENT_EXTENSION", ctx, getParameters(), stringBuffer);
 
-		stringBuffer.append(TEXT_6);
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "startContent", stringBuffer.toString());
-	}
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "postContentExtension", stringBuffer.toString());
+  }
 
-	protected void method_preContentExtension(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
+  protected void method_endContent(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
-		org.polarsys.kitalpha.doc.gen.business.core.extension.intf.DocGenExtensionFactory.newDocGenExtensionEngine().apply("PRE_CONTENT_EXTENSION", ctx, getParameters(), stringBuffer);
-
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "preContentExtension", stringBuffer.toString());
-	}
-
-	protected void method_content(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
-
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "content", stringBuffer.toString());
-	}
-
-	protected void method_postContentExtension(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
-
-		org.polarsys.kitalpha.doc.gen.business.core.extension.intf.DocGenExtensionFactory.newDocGenExtensionEngine().apply("POST_CONTENT_EXTENSION", ctx, getParameters(), stringBuffer);
-
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "postContentExtension", stringBuffer.toString());
-	}
-
-	protected void method_endContent(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
-
-		stringBuffer.append(TEXT_7);
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "endContent", stringBuffer.toString());
-	}
+    stringBuffer.append(TEXT_7);
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "endContent", stringBuffer.toString());
+  }
 }

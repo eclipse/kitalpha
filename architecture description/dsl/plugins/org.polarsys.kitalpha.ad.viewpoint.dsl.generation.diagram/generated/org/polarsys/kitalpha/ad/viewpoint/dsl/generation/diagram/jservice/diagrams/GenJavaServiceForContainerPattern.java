@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.3.202110291409
+//Generated with EGF 1.6.4.qualifier
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.jservice.diagrams;
 
 import java.util.*;
@@ -7,97 +7,96 @@ import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.GenerationUtil;
 
-public class GenJavaServiceForContainerPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.jservice.common.GenJavaServiceCommonPattern {
-	protected static String nl;
+public class GenJavaServiceForContainerPattern
+    extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.jservice.common.GenJavaServiceCommonPattern {
+  protected static String nl;
 
-	public static synchronized GenJavaServiceForContainerPattern create(String lineSeparator) {
-		nl = lineSeparator;
-		GenJavaServiceForContainerPattern result = new GenJavaServiceForContainerPattern();
-		nl = null;
-		return result;
-	}
+  public static synchronized GenJavaServiceForContainerPattern create(String lineSeparator) {
+    nl = lineSeparator;
+    GenJavaServiceForContainerPattern result = new GenJavaServiceForContainerPattern();
+    nl = null;
+    return result;
+  }
 
-	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+  public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+  protected final String TEXT_1 = "";
+  protected final String TEXT_2 = NL;
 
-	protected final String TEXT_1 = "";
+  public GenJavaServiceForContainerPattern() {
+    //Here is the constructor
+    StringBuffer stringBuffer = new StringBuffer();
 
-	protected final String TEXT_2 = NL;
+    // add initialisation of the pattern variables (declaration has been already done).
 
-	public GenJavaServiceForContainerPattern() {
-		//Here is the constructor
-		StringBuffer stringBuffer = new StringBuffer();
+  }
 
-		// add initialisation of the pattern variables (declaration has been already done).
+  public String generate(Object argument) throws Exception {
+    final StringBuffer stringBuffer = new StringBuffer();
 
-	}
+    InternalPatternContext ctx = (InternalPatternContext) argument;
+    Map<String, String> queryCtx = null;
+    IQuery.ParameterDescription paramDesc = null;
+    Node.Container currentNode = ctx.getNode();
 
-	public String generate(Object argument) throws Exception {
-		final StringBuffer stringBuffer = new StringBuffer();
+    List<Object> containerList = null;
+    //this pattern can only be called by another (i.e. it's not an entry point in execution)
 
-		InternalPatternContext ctx = (InternalPatternContext) argument;
-		Map<String, String> queryCtx = null;
-		IQuery.ParameterDescription paramDesc = null;
-		Node.Container currentNode = ctx.getNode();
+    for (Object containerParameter : containerList) {
 
-		List<Object> containerList = null;
-		//this pattern can only be called by another (i.e. it's not an entry point in execution)
+      this.container = (org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Container) containerParameter;
 
-		for (Object containerParameter : containerList) {
+      if (preCondition(ctx)) {
+        ctx.setNode(new Node.Container(currentNode, getClass()));
+        orchestration(ctx);
+      }
 
-			this.container = (org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Container) containerParameter;
+    }
+    ctx.setNode(currentNode);
+    if (ctx.useReporter()) {
+      ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
+    }
 
-			if (preCondition(ctx)) {
-				ctx.setNode(new Node.Container(currentNode, getClass()));
-				orchestration(ctx);
-			}
+    stringBuffer.append(TEXT_1);
+    stringBuffer.append(TEXT_2);
+    return stringBuffer.toString();
+  }
 
-		}
-		ctx.setNode(currentNode);
-		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
-		}
+  public String orchestration(PatternContext ctx) throws Exception {
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
 
-		stringBuffer.append(TEXT_1);
-		stringBuffer.append(TEXT_2);
-		return stringBuffer.toString();
-	}
+    super.orchestration(new SuperOrchestrationContext(ictx));
 
-	public String orchestration(PatternContext ctx) throws Exception {
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
+    if (ictx.useReporter()) {
+      Map<String, Object> parameterValues = new HashMap<String, Object>();
+      parameterValues.put("container", this.container);
+      String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
+      String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
+      ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
+    }
+    return null;
+  }
 
-		super.orchestration(new SuperOrchestrationContext(ictx));
+  protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Container container = null;
 
-		if (ictx.useReporter()) {
-			Map<String, Object> parameterValues = new HashMap<String, Object>();
-			parameterValues.put("container", this.container);
-			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
-			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
-		}
-		return null;
-	}
+  public void set_container(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Container object) {
+    this.container = object;
+  }
 
-	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Container container = null;
+  public Map<String, Object> getParameters() {
+    final Map<String, Object> parameters = new HashMap<String, Object>();
+    parameters.put("container", this.container);
+    return parameters;
+  }
 
-	public void set_container(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Container object) {
-		this.container = object;
-	}
+  protected void method_setParameters(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
-	public Map<String, Object> getParameters() {
-		final Map<String, Object> parameters = new HashMap<String, Object>();
-		parameters.put("container", this.container);
-		return parameters;
-	}
+    super.parameter = container;
+    super.method_setParameters(stringBuffer, ctx);
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "setParameters", stringBuffer.toString());
+  }
 
-	protected void method_setParameters(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
-
-		super.parameter = container;
-		super.method_setParameters(stringBuffer, ctx);
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setParameters", stringBuffer.toString());
-	}
-
-	public boolean preCondition(PatternContext ctx) throws Exception {
-		return super.preCondition(ctx) && GenerationUtil.getJavaServiceDataFor(container) != null;
-	}
+  public boolean preCondition(PatternContext ctx) throws Exception {
+    return super.preCondition(ctx) && GenerationUtil.getJavaServiceDataFor(container) != null;
+  }
 }

@@ -41,122 +41,123 @@ import org.polarsys.kitalpha.emde.model.ExtensibleElement;
  * @generated
  */
 public abstract class ExtensibleElementImpl extends ElementImpl implements ExtensibleElement {
-	/**
-	 * The cached value of the '{@link #getOwnedExtensions() <em>Owned Extensions</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOwnedExtensions()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ElementExtension> ownedExtensions;
+  /**
+   * The cached value of the '{@link #getOwnedExtensions() <em>Owned Extensions</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOwnedExtensions()
+   * @generated
+   * @ordered
+   */
+  protected EList<ElementExtension> ownedExtensions;
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ExtensibleElementImpl() {
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected ExtensibleElementImpl() {
 
-		super();
+    super();
 
-	}
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass() {
-		return EmdePackage.Literals.EXTENSIBLE_ELEMENT;
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  protected EClass eStaticClass() {
+    return EmdePackage.Literals.EXTENSIBLE_ELEMENT;
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<ElementExtension> getOwnedExtensions() {
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<ElementExtension> getOwnedExtensions() {
 
-		if (ownedExtensions == null) {
-			ownedExtensions = new EObjectContainmentEList<ElementExtension>(ElementExtension.class, this, EmdePackage.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS);
-		}
-		return ownedExtensions;
-	}
+    if (ownedExtensions == null) {
+      ownedExtensions = new EObjectContainmentEList<ElementExtension>(ElementExtension.class, this,
+          EmdePackage.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS);
+    }
+    return ownedExtensions;
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case EmdePackage.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS:
-			return ((InternalEList<?>) getOwnedExtensions()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+    switch (featureID) {
+    case EmdePackage.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS:
+      return ((InternalEList<?>) getOwnedExtensions()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-		case EmdePackage.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS:
-			return getOwnedExtensions();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType) {
+    switch (featureID) {
+    case EmdePackage.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS:
+      return getOwnedExtensions();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-		case EmdePackage.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS:
-			getOwnedExtensions().clear();
-			getOwnedExtensions().addAll((Collection<? extends ElementExtension>) newValue);
-			return;
-		}
-		super.eSet(featureID, newValue);
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @SuppressWarnings("unchecked")
+  @Override
+  public void eSet(int featureID, Object newValue) {
+    switch (featureID) {
+    case EmdePackage.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS:
+      getOwnedExtensions().clear();
+      getOwnedExtensions().addAll((Collection<? extends ElementExtension>) newValue);
+      return;
+    }
+    super.eSet(featureID, newValue);
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-		case EmdePackage.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS:
-			getOwnedExtensions().clear();
-			return;
-		}
-		super.eUnset(featureID);
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID) {
+    switch (featureID) {
+    case EmdePackage.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS:
+      getOwnedExtensions().clear();
+      return;
+    }
+    super.eUnset(featureID);
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-		case EmdePackage.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS:
-			return ownedExtensions != null && !ownedExtensions.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID) {
+    switch (featureID) {
+    case EmdePackage.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS:
+      return ownedExtensions != null && !ownedExtensions.isEmpty();
+    }
+    return super.eIsSet(featureID);
+  }
 
 } //ExtensibleElementImpl
