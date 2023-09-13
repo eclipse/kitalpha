@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.3.202110291409
+//Generated with EGF 1.6.4.202309111303
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.extensions.categories;
 
 import java.util.*;
@@ -8,103 +8,102 @@ import org.eclipse.egf.pattern.query.*;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.category.ContextualExplorerCategories;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.category.ContextualExplorerCategoryCompliance;
 
-public class ReferencedViewpointElementCategory extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.common.AbstractCategoryPattern {
-	protected static String nl;
+public class ReferencedViewpointElementCategory
+    extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.explorer.contextual.common.AbstractCategoryPattern {
+  protected static String nl;
 
-	public static synchronized ReferencedViewpointElementCategory create(String lineSeparator) {
-		nl = lineSeparator;
-		ReferencedViewpointElementCategory result = new ReferencedViewpointElementCategory();
-		nl = null;
-		return result;
-	}
+  public static synchronized ReferencedViewpointElementCategory create(String lineSeparator) {
+    nl = lineSeparator;
+    ReferencedViewpointElementCategory result = new ReferencedViewpointElementCategory();
+    nl = null;
+    return result;
+  }
 
-	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+  public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+  protected final String TEXT_1 = "";
+  protected final String TEXT_2 = NL;
 
-	protected final String TEXT_1 = "";
+  public ReferencedViewpointElementCategory() {
+    //Here is the constructor
+    StringBuffer stringBuffer = new StringBuffer();
 
-	protected final String TEXT_2 = NL;
+    // add initialisation of the pattern variables (declaration has been already done).
 
-	public ReferencedViewpointElementCategory() {
-		//Here is the constructor
-		StringBuffer stringBuffer = new StringBuffer();
+  }
 
-		// add initialisation of the pattern variables (declaration has been already done).
+  public String generate(Object argument) throws Exception {
+    final StringBuffer stringBuffer = new StringBuffer();
 
-	}
+    InternalPatternContext ctx = (InternalPatternContext) argument;
+    Map<String, String> queryCtx = null;
+    IQuery.ParameterDescription paramDesc = null;
+    Node.Container currentNode = ctx.getNode();
 
-	public String generate(Object argument) throws Exception {
-		final StringBuffer stringBuffer = new StringBuffer();
+    List<Object> parameterList = null;
+    //this pattern can only be called by another (i.e. it's not an entry point in execution)
 
-		InternalPatternContext ctx = (InternalPatternContext) argument;
-		Map<String, String> queryCtx = null;
-		IQuery.ParameterDescription paramDesc = null;
-		Node.Container currentNode = ctx.getNode();
+    for (Object parameterParameter : parameterList) {
 
-		List<Object> parameterList = null;
-		//this pattern can only be called by another (i.e. it's not an entry point in execution)
+      this.parameter = (org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class) parameterParameter;
 
-		for (Object parameterParameter : parameterList) {
+      if (preCondition(ctx)) {
+        ctx.setNode(new Node.Container(currentNode, getClass()));
+        orchestration(ctx);
+      }
 
-			this.parameter = (org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class) parameterParameter;
+    }
+    ctx.setNode(currentNode);
+    if (ctx.useReporter()) {
+      ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
+    }
 
-			if (preCondition(ctx)) {
-				ctx.setNode(new Node.Container(currentNode, getClass()));
-				orchestration(ctx);
-			}
+    stringBuffer.append(TEXT_1);
+    stringBuffer.append(TEXT_2);
+    return stringBuffer.toString();
+  }
 
-		}
-		ctx.setNode(currentNode);
-		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
-		}
+  public String orchestration(PatternContext ctx) throws Exception {
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
 
-		stringBuffer.append(TEXT_1);
-		stringBuffer.append(TEXT_2);
-		return stringBuffer.toString();
-	}
+    super.orchestration(new SuperOrchestrationContext(ictx));
 
-	public String orchestration(PatternContext ctx) throws Exception {
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
+    if (ictx.useReporter()) {
+      Map<String, Object> parameterValues = new HashMap<String, Object>();
+      parameterValues.put("parameter", this.parameter);
+      String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
+      String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
+      ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
+    }
+    return null;
+  }
 
-		super.orchestration(new SuperOrchestrationContext(ictx));
+  protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class parameter = null;
 
-		if (ictx.useReporter()) {
-			Map<String, Object> parameterValues = new HashMap<String, Object>();
-			parameterValues.put("parameter", this.parameter);
-			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
-			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
-		}
-		return null;
-	}
+  public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class object) {
+    this.parameter = object;
+  }
 
-	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class parameter = null;
+  public Map<String, Object> getParameters() {
+    final Map<String, Object> parameters = new HashMap<String, Object>();
+    parameters.put("parameter", this.parameter);
+    return parameters;
+  }
 
-	public void set_parameter(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdesc.Class object) {
-		this.parameter = object;
-	}
+  protected void method_setVpClass(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
-	public Map<String, Object> getParameters() {
-		final Map<String, Object> parameters = new HashMap<String, Object>();
-		parameters.put("parameter", this.parameter);
-		return parameters;
-	}
+    vpClass = parameter;
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "setVpClass", stringBuffer.toString());
+  }
 
-	protected void method_setVpClass(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
+  protected void method_setCategoryType(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
-		vpClass = parameter;
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setVpClass", stringBuffer.toString());
-	}
+    category = ContextualExplorerCategories.ReferencedViewpointElement;
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "setCategoryType", stringBuffer.toString());
+  }
 
-	protected void method_setCategoryType(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
-
-		category = ContextualExplorerCategories.ReferencedViewpointElement;
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setCategoryType", stringBuffer.toString());
-	}
-
-	public boolean preCondition(PatternContext ctx) throws Exception {
-		return ContextualExplorerCategoryCompliance.referencedViewpointCategoryCompliance(parameter);
-	}
+  public boolean preCondition(PatternContext ctx) throws Exception {
+    return ContextualExplorerCategoryCompliance.referencedViewpointCategoryCompliance(parameter);
+  }
 }

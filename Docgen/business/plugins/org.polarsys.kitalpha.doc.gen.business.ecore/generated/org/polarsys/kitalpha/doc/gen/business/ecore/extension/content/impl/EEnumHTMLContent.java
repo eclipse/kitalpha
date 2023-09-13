@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.3.202110291409
+//Generated with EGF 1.6.4.202309111303
 package org.polarsys.kitalpha.doc.gen.business.ecore.extension.content.impl;
 
 import org.eclipse.egf.common.helper.*;
@@ -10,113 +10,109 @@ import org.eclipse.egf.pattern.query.*;
 import org.polarsys.kitalpha.doc.gen.business.core.util.EscapeChars;
 
 public class EEnumHTMLContent {
-	protected static String nl;
+  protected static String nl;
 
-	public static synchronized EEnumHTMLContent create(String lineSeparator) {
-		nl = lineSeparator;
-		EEnumHTMLContent result = new EEnumHTMLContent();
-		nl = null;
-		return result;
-	}
+  public static synchronized EEnumHTMLContent create(String lineSeparator) {
+    nl = lineSeparator;
+    EEnumHTMLContent result = new EEnumHTMLContent();
+    nl = null;
+    return result;
+  }
 
-	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+  public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+  protected final String TEXT_1 = NL + "<p><strong>Default value :</strong> ";
+  protected final String TEXT_2 = "</p>";
+  protected final String TEXT_3 = NL + "<h2>Literals</h2>";
+  protected final String TEXT_4 = NL;
 
-	protected final String TEXT_1 = NL + "<p><strong>Default value :</strong> ";
+  public EEnumHTMLContent() {
+    //Here is the constructor
+    StringBuffer stringBuffer = new StringBuffer();
 
-	protected final String TEXT_2 = "</p>";
+  }
 
-	protected final String TEXT_3 = NL + "<h2>Literals</h2>";
+  public String generate(Object argument) throws Exception {
+    final StringBuffer stringBuffer = new StringBuffer();
 
-	protected final String TEXT_4 = NL;
+    InternalPatternContext ctx = (InternalPatternContext) argument;
+    Map<String, String> queryCtx = null;
+    IQuery.ParameterDescription paramDesc = null;
+    Node.Container currentNode = ctx.getNode();
 
-	protected final String TEXT_5 = NL;
+    paramDesc = new IQuery.ParameterDescription("parameter", "http://www.eclipse.org/emf/2002/Ecore#//EEnum");
+    queryCtx = new HashMap<String, String>();
+    List<Object> parameterList = QueryHelper.load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.injected.context")
+        .execute(paramDesc, queryCtx, ctx);
 
-	public EEnumHTMLContent() {
-		//Here is the constructor
-		StringBuffer stringBuffer = new StringBuffer();
+    for (Object parameterParameter : parameterList) {
 
-	}
+      this.parameter = (org.eclipse.emf.ecore.EEnum) parameterParameter;
 
-	public String generate(Object argument) throws Exception {
-		final StringBuffer stringBuffer = new StringBuffer();
+      if (preCondition(ctx)) {
+        ctx.setNode(new Node.Container(currentNode, getClass()));
+        orchestration(ctx);
+      }
 
-		InternalPatternContext ctx = (InternalPatternContext) argument;
-		Map<String, String> queryCtx = null;
-		IQuery.ParameterDescription paramDesc = null;
-		Node.Container currentNode = ctx.getNode();
+    }
+    ctx.setNode(currentNode);
+    if (ctx.useReporter()) {
+      ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
+    }
 
-		paramDesc = new IQuery.ParameterDescription("parameter", "http://www.eclipse.org/emf/2002/Ecore#//EEnum");
-		queryCtx = new HashMap<String, String>();
-		List<Object> parameterList = QueryHelper.load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.injected.context").execute(paramDesc, queryCtx, ctx);
+    stringBuffer.append(TEXT_4);
+    stringBuffer.append(TEXT_4);
+    return stringBuffer.toString();
+  }
 
-		for (Object parameterParameter : parameterList) {
+  public String orchestration(PatternContext ctx) throws Exception {
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
 
-			this.parameter = (org.eclipse.emf.ecore.EEnum) parameterParameter;
+    method_content(new StringBuffer(), ictx);
 
-			if (preCondition(ctx)) {
-				ctx.setNode(new Node.Container(currentNode, getClass()));
-				orchestration(ctx);
-			}
+    if (ictx.useReporter()) {
+      Map<String, Object> parameterValues = new HashMap<String, Object>();
+      parameterValues.put("parameter", this.parameter);
+      String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
+      String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
+      ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
+    }
+    return null;
+  }
 
-		}
-		ctx.setNode(currentNode);
-		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
-		}
+  protected org.eclipse.emf.ecore.EEnum parameter = null;
 
-		stringBuffer.append(TEXT_5);
-		stringBuffer.append(TEXT_5);
-		return stringBuffer.toString();
-	}
+  public void set_parameter(org.eclipse.emf.ecore.EEnum object) {
+    this.parameter = object;
+  }
 
-	public String orchestration(PatternContext ctx) throws Exception {
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
+  public Map<String, Object> getParameters() {
+    final Map<String, Object> parameters = new HashMap<String, Object>();
+    parameters.put("parameter", this.parameter);
+    return parameters;
+  }
 
-		method_content(new StringBuffer(), ictx);
+  protected void method_content(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
-		if (ictx.useReporter()) {
-			Map<String, Object> parameterValues = new HashMap<String, Object>();
-			parameterValues.put("parameter", this.parameter);
-			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
-			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
-		}
-		return null;
-	}
+    String outputFolder = ctx.getValue("outputFolder").toString();
+    String projectName = ctx.getValue("projectName").toString();
 
-	protected org.eclipse.emf.ecore.EEnum parameter = null;
+    stringBuffer.append(TEXT_1);
+    stringBuffer.append((parameter).getDefaultValue());
+    stringBuffer.append(TEXT_2);
 
-	public void set_parameter(org.eclipse.emf.ecore.EEnum object) {
-		this.parameter = object;
-	}
+    String literalList = org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EEnumContentHelper
+        .getLiteralsList(parameter, projectName, outputFolder);
+    if (literalList != "") {
 
-	public Map<String, Object> getParameters() {
-		final Map<String, Object> parameters = new HashMap<String, Object>();
-		parameters.put("parameter", this.parameter);
-		return parameters;
-	}
+      stringBuffer.append(TEXT_3);
+      stringBuffer.append(TEXT_4);
+      stringBuffer.append(literalList);
+    }
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "content", stringBuffer.toString());
+  }
 
-	protected void method_content(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
-
-		String outputFolder = ctx.getValue("outputFolder").toString();
-		String projectName = ctx.getValue("projectName").toString();
-
-		stringBuffer.append(TEXT_1);
-		stringBuffer.append((parameter).getDefaultValue());
-		stringBuffer.append(TEXT_2);
-
-		String literalList = org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EEnumContentHelper.getLiteralsList(parameter, projectName, outputFolder);
-		if (literalList != "") {
-
-			stringBuffer.append(TEXT_3);
-			stringBuffer.append(TEXT_4);
-			stringBuffer.append(literalList);
-		}
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "content", stringBuffer.toString());
-	}
-
-	public boolean preCondition(PatternContext ctx) throws Exception {
-		return true;
-	}
+  public boolean preCondition(PatternContext ctx) throws Exception {
+    return true;
+  }
 }

@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.3.202110291409
+//Generated with EGF 1.6.4.202309111303
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools;
 
 import java.util.*;
@@ -24,7 +24,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.siriu
 import org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.expression.helper.sirius.ExpressionInterpreter;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.VSMVariable;
 
-public class OpenActionPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common.AbstractTool {
+public class OpenActionPattern
+		extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.tools.common.AbstractTool {
 
 	public OpenActionPattern() {
 		//Here is the constructor
@@ -117,7 +118,8 @@ public class OpenActionPattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.ge
 
 			If d_if = ToolFactory.eINSTANCE.createIf();
 			String pElementView = "(" + VSMVariable.elementView.getInnerVariable() + ")";
-			d_if.setConditionExpression(SiriusExpressionHelper.getExpressoin(n_method_name + pElementView, ExpressionInterpreter.Service));
+			d_if.setConditionExpression(
+					SiriusExpressionHelper.getExpressoin(n_method_name + pElementView, ExpressionInterpreter.Service));
 			gotoElement.getSubModelOperations().add(d_if);
 		}
 

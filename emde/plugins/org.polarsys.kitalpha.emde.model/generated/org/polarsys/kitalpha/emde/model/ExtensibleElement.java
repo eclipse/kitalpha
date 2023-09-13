@@ -30,21 +30,21 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface ExtensibleElement extends Element {
-	/**
-	 * Returns the value of the '<em><b>Owned Extensions</b></em>' containment reference list.
-	 * The list contents are of type {@link org.polarsys.kitalpha.emde.model.ElementExtension}.
-	
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Owned Extensions</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Owned Extensions</em>' containment reference list.
-	 * @see org.polarsys.kitalpha.emde.model.EmdePackage#getExtensibleElement_OwnedExtensions()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<ElementExtension> getOwnedExtensions();
+  /**
+   * Returns the value of the '<em><b>Owned Extensions</b></em>' containment reference list.
+   * The list contents are of type {@link org.polarsys.kitalpha.emde.model.ElementExtension}.
+  
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Owned Extensions</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Owned Extensions</em>' containment reference list.
+   * @see org.polarsys.kitalpha.emde.model.EmdePackage#getExtensibleElement_OwnedExtensions()
+   * @model containment="true"
+   * @generated
+   */
+  EList<ElementExtension> getOwnedExtensions();
 
 } // ExtensibleElement

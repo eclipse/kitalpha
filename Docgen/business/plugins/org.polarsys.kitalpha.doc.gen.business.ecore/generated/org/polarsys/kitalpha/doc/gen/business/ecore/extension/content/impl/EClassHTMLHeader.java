@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.3.202110291409
+//Generated with EGF 1.6.4.202309111303
 package org.polarsys.kitalpha.doc.gen.business.ecore.extension.content.impl;
 
 import org.eclipse.egf.common.helper.*;
@@ -15,130 +15,129 @@ import org.polarsys.kitalpha.doc.gen.business.core.util.SiriusHelper;
 import org.polarsys.kitalpha.doc.gen.business.core.util.DefaultSiriusDiagramHelper;
 
 public class EClassHTMLHeader {
-	protected static String nl;
+  protected static String nl;
 
-	public static synchronized EClassHTMLHeader create(String lineSeparator) {
-		nl = lineSeparator;
-		EClassHTMLHeader result = new EClassHTMLHeader();
-		nl = null;
-		return result;
-	}
+  public static synchronized EClassHTMLHeader create(String lineSeparator) {
+    nl = lineSeparator;
+    EClassHTMLHeader result = new EClassHTMLHeader();
+    nl = null;
+    return result;
+  }
 
-	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+  public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+  protected final String TEXT_1 = "<div style=\"position: fixed; top: 0; left: 1%; width: 98%; z-index: 2; background-color: white; \";>"
+      + NL + "<p><strong>Package :</strong> ";
+  protected final String TEXT_2 = "</p>" + NL + "<h1>";
+  protected final String TEXT_3 = "</h1>" + NL + "<img src=\"";
+  protected final String TEXT_4 = "\" alt=\"\" />" + NL + "<hr style=\"width:98%; align : center; \" /> " + NL
+      + "</div>";
+  protected final String TEXT_5 = NL;
 
-	protected final String TEXT_1 = "<div style=\"position: fixed; top: 0; left: 1%; width: 98%; z-index: 2; background-color: white; \";>" + NL + "<p><strong>Package :</strong> ";
+  public EClassHTMLHeader() {
+    //Here is the constructor
+    StringBuffer stringBuffer = new StringBuffer();
 
-	protected final String TEXT_2 = "</p>" + NL + "<h1>";
+  }
 
-	protected final String TEXT_3 = "</h1>" + NL + "<img src=\"";
+  public String generate(Object argument) throws Exception {
+    final StringBuffer stringBuffer = new StringBuffer();
 
-	protected final String TEXT_4 = "\" alt=\"\" />" + NL + "<hr style=\"width:98%; align : center; \" /> " + NL + "</div>";
+    InternalPatternContext ctx = (InternalPatternContext) argument;
+    Map<String, String> queryCtx = null;
+    IQuery.ParameterDescription paramDesc = null;
+    Node.Container currentNode = ctx.getNode();
 
-	protected final String TEXT_5 = NL;
+    paramDesc = new IQuery.ParameterDescription("parameter", "http://www.eclipse.org/emf/2002/Ecore#//EClass");
+    queryCtx = new HashMap<String, String>();
+    List<Object> parameterList = QueryHelper.load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.injected.context")
+        .execute(paramDesc, queryCtx, ctx);
 
-	public EClassHTMLHeader() {
-		//Here is the constructor
-		StringBuffer stringBuffer = new StringBuffer();
+    for (Object parameterParameter : parameterList) {
 
-	}
+      this.parameter = (org.eclipse.emf.ecore.EClass) parameterParameter;
 
-	public String generate(Object argument) throws Exception {
-		final StringBuffer stringBuffer = new StringBuffer();
+      if (preCondition(ctx)) {
+        ctx.setNode(new Node.Container(currentNode, getClass()));
+        orchestration(ctx);
+      }
 
-		InternalPatternContext ctx = (InternalPatternContext) argument;
-		Map<String, String> queryCtx = null;
-		IQuery.ParameterDescription paramDesc = null;
-		Node.Container currentNode = ctx.getNode();
+    }
+    ctx.setNode(currentNode);
+    if (ctx.useReporter()) {
+      ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
+    }
 
-		paramDesc = new IQuery.ParameterDescription("parameter", "http://www.eclipse.org/emf/2002/Ecore#//EClass");
-		queryCtx = new HashMap<String, String>();
-		List<Object> parameterList = QueryHelper.load(ctx, "org.polarsys.kitalpha.doc.gen.business.ecore.injected.context").execute(paramDesc, queryCtx, ctx);
+    stringBuffer.append(TEXT_5);
+    stringBuffer.append(TEXT_5);
+    return stringBuffer.toString();
+  }
 
-		for (Object parameterParameter : parameterList) {
+  public String orchestration(PatternContext ctx) throws Exception {
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
 
-			this.parameter = (org.eclipse.emf.ecore.EClass) parameterParameter;
+    method_setContext(new StringBuffer(), ictx);
 
-			if (preCondition(ctx)) {
-				ctx.setNode(new Node.Container(currentNode, getClass()));
-				orchestration(ctx);
-			}
+    method_content(new StringBuffer(), ictx);
 
-		}
-		ctx.setNode(currentNode);
-		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
-		}
+    if (ictx.useReporter()) {
+      Map<String, Object> parameterValues = new HashMap<String, Object>();
+      parameterValues.put("parameter", this.parameter);
+      String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
+      String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
+      ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
+    }
+    return null;
+  }
 
-		stringBuffer.append(TEXT_5);
-		stringBuffer.append(TEXT_5);
-		return stringBuffer.toString();
-	}
+  protected java.lang.String iconPath = null;
 
-	public String orchestration(PatternContext ctx) throws Exception {
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
+  public void set_iconPath(java.lang.String object) {
+    this.iconPath = object;
+  }
 
-		method_setContext(new StringBuffer(), ictx);
+  protected org.eclipse.emf.ecore.EClass parameter = null;
 
-		method_content(new StringBuffer(), ictx);
+  public void set_parameter(org.eclipse.emf.ecore.EClass object) {
+    this.parameter = object;
+  }
 
-		if (ictx.useReporter()) {
-			Map<String, Object> parameterValues = new HashMap<String, Object>();
-			parameterValues.put("parameter", this.parameter);
-			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
-			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
-		}
-		return null;
-	}
+  public Map<String, Object> getParameters() {
+    final Map<String, Object> parameters = new HashMap<String, Object>();
+    parameters.put("parameter", this.parameter);
+    return parameters;
+  }
 
-	protected java.lang.String iconPath = null;
+  protected void method_content(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
-	public void set_iconPath(java.lang.String object) {
-		this.iconPath = object;
-	}
+    String outputFolder = ctx.getValue("outputFolder").toString();
+    String projectName = ctx.getValue("projectName").toString();
+    String text = (parameter).getName();
+    text = EscapeChars.forHTML(text);
 
-	protected org.eclipse.emf.ecore.EClass parameter = null;
+    stringBuffer.append(TEXT_1);
+    stringBuffer.append(org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper
+        .getTypeHyperLink((parameter).getEPackage()));
+    stringBuffer.append(TEXT_2);
+    stringBuffer.append(text);
+    stringBuffer.append(TEXT_3);
+    stringBuffer.append(iconPath);
+    stringBuffer.append(TEXT_4);
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "content", stringBuffer.toString());
+  }
 
-	public void set_parameter(org.eclipse.emf.ecore.EClass object) {
-		this.parameter = object;
-	}
+  protected void method_setContext(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
-	public Map<String, Object> getParameters() {
-		final Map<String, Object> parameters = new HashMap<String, Object>();
-		parameters.put("parameter", this.parameter);
-		return parameters;
-	}
+    if (((EClass) parameter).isAbstract())
+      iconPath = "../../img/AbstractClass.png";
+    else
+      iconPath = "../../img/ConcreteClass.png";
 
-	protected void method_content(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "setContext", stringBuffer.toString());
+  }
 
-		String outputFolder = ctx.getValue("outputFolder").toString();
-		String projectName = ctx.getValue("projectName").toString();
-		String text = (parameter).getName();
-		text = EscapeChars.forHTML(text);
-
-		stringBuffer.append(TEXT_1);
-		stringBuffer.append(org.polarsys.kitalpha.doc.gen.business.ecore.helpers.EcoreModelHelper.getTypeHyperLink((parameter).getEPackage()));
-		stringBuffer.append(TEXT_2);
-		stringBuffer.append(text);
-		stringBuffer.append(TEXT_3);
-		stringBuffer.append(iconPath);
-		stringBuffer.append(TEXT_4);
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "content", stringBuffer.toString());
-	}
-
-	protected void method_setContext(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
-
-		if (((EClass) parameter).isAbstract())
-			iconPath = "../../img/AbstractClass.png";
-		else
-			iconPath = "../../img/ConcreteClass.png";
-
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setContext", stringBuffer.toString());
-	}
-
-	public boolean preCondition(PatternContext ctx) throws Exception {
-		return true;
-	}
+  public boolean preCondition(PatternContext ctx) throws Exception {
+    return true;
+  }
 }

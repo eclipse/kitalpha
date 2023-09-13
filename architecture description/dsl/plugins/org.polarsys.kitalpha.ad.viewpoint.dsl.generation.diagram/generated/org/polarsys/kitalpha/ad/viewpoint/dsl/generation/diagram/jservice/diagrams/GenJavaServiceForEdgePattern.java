@@ -1,4 +1,4 @@
-//Generated with EGF 1.6.3.202110291409
+//Generated with EGF 1.6.4.qualifier
 package org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.jservice.diagrams;
 
 import java.util.*;
@@ -7,98 +7,97 @@ import org.eclipse.egf.pattern.execution.*;
 import org.eclipse.egf.pattern.query.*;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.util.GenerationUtil;
 
-public class GenJavaServiceForEdgePattern extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.jservice.common.GenJavaServiceCommonPattern {
-	protected static String nl;
+public class GenJavaServiceForEdgePattern
+    extends org.polarsys.kitalpha.ad.viewpoint.dsl.generation.diagram.jservice.common.GenJavaServiceCommonPattern {
+  protected static String nl;
 
-	public static synchronized GenJavaServiceForEdgePattern create(String lineSeparator) {
-		nl = lineSeparator;
-		GenJavaServiceForEdgePattern result = new GenJavaServiceForEdgePattern();
-		nl = null;
-		return result;
-	}
+  public static synchronized GenJavaServiceForEdgePattern create(String lineSeparator) {
+    nl = lineSeparator;
+    GenJavaServiceForEdgePattern result = new GenJavaServiceForEdgePattern();
+    nl = null;
+    return result;
+  }
 
-	public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+  public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
+  protected final String TEXT_1 = "";
+  protected final String TEXT_2 = NL;
 
-	protected final String TEXT_1 = "";
+  public GenJavaServiceForEdgePattern() {
+    //Here is the constructor
+    StringBuffer stringBuffer = new StringBuffer();
 
-	protected final String TEXT_2 = NL;
+    // add initialisation of the pattern variables (declaration has been already done).
 
-	public GenJavaServiceForEdgePattern() {
-		//Here is the constructor
-		StringBuffer stringBuffer = new StringBuffer();
+  }
 
-		// add initialisation of the pattern variables (declaration has been already done).
+  public String generate(Object argument) throws Exception {
+    final StringBuffer stringBuffer = new StringBuffer();
 
-	}
+    InternalPatternContext ctx = (InternalPatternContext) argument;
+    Map<String, String> queryCtx = null;
+    IQuery.ParameterDescription paramDesc = null;
+    Node.Container currentNode = ctx.getNode();
 
-	public String generate(Object argument) throws Exception {
-		final StringBuffer stringBuffer = new StringBuffer();
+    List<Object> edgeList = null;
+    //this pattern can only be called by another (i.e. it's not an entry point in execution)
 
-		InternalPatternContext ctx = (InternalPatternContext) argument;
-		Map<String, String> queryCtx = null;
-		IQuery.ParameterDescription paramDesc = null;
-		Node.Container currentNode = ctx.getNode();
+    for (Object edgeParameter : edgeList) {
 
-		List<Object> edgeList = null;
-		//this pattern can only be called by another (i.e. it's not an entry point in execution)
+      this.edge = (org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Edge) edgeParameter;
 
-		for (Object edgeParameter : edgeList) {
+      if (preCondition(ctx)) {
+        ctx.setNode(new Node.Container(currentNode, getClass()));
+        orchestration(ctx);
+      }
 
-			this.edge = (org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Edge) edgeParameter;
+    }
+    ctx.setNode(currentNode);
+    if (ctx.useReporter()) {
+      ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
+    }
 
-			if (preCondition(ctx)) {
-				ctx.setNode(new Node.Container(currentNode, getClass()));
-				orchestration(ctx);
-			}
+    stringBuffer.append(TEXT_2);
+    stringBuffer.append(TEXT_2);
+    return stringBuffer.toString();
+  }
 
-		}
-		ctx.setNode(currentNode);
-		if (ctx.useReporter()) {
-			ctx.getReporter().executionFinished(OutputManager.computeExecutionOutput(ctx), ctx);
-		}
+  public String orchestration(PatternContext ctx) throws Exception {
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
 
-		stringBuffer.append(TEXT_2);
-		stringBuffer.append(TEXT_2);
-		return stringBuffer.toString();
-	}
+    super.orchestration(new SuperOrchestrationContext(ictx));
 
-	public String orchestration(PatternContext ctx) throws Exception {
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
+    if (ictx.useReporter()) {
+      Map<String, Object> parameterValues = new HashMap<String, Object>();
+      parameterValues.put("edge", this.edge);
+      String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
+      String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
+      ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
+    }
+    return null;
+  }
 
-		super.orchestration(new SuperOrchestrationContext(ictx));
+  protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Edge edge = null;
 
-		if (ictx.useReporter()) {
-			Map<String, Object> parameterValues = new HashMap<String, Object>();
-			parameterValues.put("edge", this.edge);
-			String outputWithCallBack = OutputManager.computeLoopOutput(ictx);
-			String loop = OutputManager.computeLoopOutputWithoutCallback(ictx);
-			ictx.getReporter().loopFinished(loop, outputWithCallBack, ictx, parameterValues);
-		}
-		return null;
-	}
+  public void set_edge(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Edge object) {
+    this.edge = object;
+  }
 
-	protected org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Edge edge = null;
+  public Map<String, Object> getParameters() {
+    final Map<String, Object> parameters = new HashMap<String, Object>();
+    parameters.put("edge", this.edge);
+    return parameters;
+  }
 
-	public void set_edge(org.polarsys.kitalpha.ad.viewpoint.dsl.as.model.vpdiagram.Edge object) {
-		this.edge = object;
-	}
+  protected void method_setParameters(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
 
-	public Map<String, Object> getParameters() {
-		final Map<String, Object> parameters = new HashMap<String, Object>();
-		parameters.put("edge", this.edge);
-		return parameters;
-	}
+    super.parameter = edge;
+    super.method_setParameters(stringBuffer, ctx);
+    stringBuffer.append(TEXT_1);
+    InternalPatternContext ictx = (InternalPatternContext) ctx;
+    new Node.DataLeaf(ictx.getNode(), getClass(), "setParameters", stringBuffer.toString());
+  }
 
-	protected void method_setParameters(final StringBuffer stringBuffer, final PatternContext ctx) throws Exception {
-
-		super.parameter = edge;
-		super.method_setParameters(stringBuffer, ctx);
-		stringBuffer.append(TEXT_1);
-		InternalPatternContext ictx = (InternalPatternContext) ctx;
-		new Node.DataLeaf(ictx.getNode(), getClass(), "setParameters", stringBuffer.toString());
-	}
-
-	public boolean preCondition(PatternContext ctx) throws Exception {
-		return super.preCondition(ctx) && GenerationUtil.getJavaServiceDataFor(edge) != null;
-	}
+  public boolean preCondition(PatternContext ctx) throws Exception {
+    return super.preCondition(ctx) && GenerationUtil.getJavaServiceDataFor(edge) != null;
+  }
 }
