@@ -11,7 +11,7 @@
  *******************************************************************************/
 target "kitalpha" with source, requirements
 
-include "https://download.eclipse.org/sirius/updates/releases/7.2.0/2023-03/targets/modules/gmf-runtime-1.15.tpd"
+include "https://download.eclipse.org/sirius/updates/stable/7.3.0-S20230929-065140/2023-03/targets/modules/gmf-runtime-1.16.tpd"
 
 location Eclipse-2021-12 "https://download.eclipse.org/releases/2021-12/" {
 	org.eclipse.cvs.feature.group lazy
@@ -96,7 +96,7 @@ location acceleo "https://download.eclipse.org/acceleo/updates/releases/3.7/" {
 	org.eclipse.acceleo.doc [3.7.11,3.7.12)
 }
 
-location sirius "https://download.eclipse.org/sirius/updates/releases/7.2.0/2023-03" {
+location sirius "https://download.eclipse.org/sirius/updates/stable/7.3.0-S20230929-065140/2023-03" {
 	org.eclipse.sirius.doc.feature.feature.group lazy
     org.eclipse.sirius.runtime.source.feature.group lazy
     org.eclipse.sirius.runtime.acceleo.feature.group lazy
@@ -163,7 +163,7 @@ location amalgam "https://download.eclipse.org/modeling/amalgam/updates/stable/1
 	org.eclipse.amalgam.explorer.contextual.core.source.feature.group lazy
 }
 
-location EGFSdk "https://download.eclipse.org/egf/updates/stable/1.6.4/2023-03/" {
+location EGFSdk "https://download.eclipse.org/egf/updates/1.6.4/2023-03/" {
 	org.eclipse.egf.sdk.feature.feature.group lazy
 	org.eclipse.egf.sdk.feature.source.feature.group lazy
 }
