@@ -122,7 +122,7 @@ public final class GenericPurposeRegistry extends PurposeRegistryImpl {
       message = "WARNING ! Registered purpose validate with warnings, check the error log for information."; //$NON-NLS-1$
     }
 
-    if (severity == IStatus.WARNING) {
+    if (severity == IStatus.ERROR) {
       message = "ERROR ! Some registered purpose are invalid, check the error log for information."; //$NON-NLS-1$
     }
 
@@ -148,7 +148,7 @@ public final class GenericPurposeRegistry extends PurposeRegistryImpl {
       message = "WARNING ! Contributed purpose validate with warnings, check the error log for information."; //$NON-NLS-1$
     }
 
-    if (severity == IStatus.WARNING) {
+    if (severity == IStatus.ERROR) {
       message = "ERROR ! Some contributed purpose are invalid, check the error log for information."; //$NON-NLS-1$
     }
 
