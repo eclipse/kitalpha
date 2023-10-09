@@ -53,7 +53,7 @@ public class RuntimePurposeSpec extends RuntimePurposeImpl {
   @Override
   public IStatus validate() {
     int severity = IStatus.INFO;
-    String message = "Runtime purpose " + getName() + " is valid, check the error log for information."; //$NON-NLS-1$ //$NON-NLS-2$
+    String message = "Runtime purpose " + getName() + " is valid."; //$NON-NLS-1$ //$NON-NLS-2$
 
     IStatus result = this.getMapping().validate();
     if (result.getSeverity() != IStatus.INFO) {
@@ -64,7 +64,7 @@ public class RuntimePurposeSpec extends RuntimePurposeImpl {
       message = "WARNING ! Runtime purpose " + getName() + " validates with warnings, check the error log for information."; //$NON-NLS-1$ //$NON-NLS-2$
     }
 
-    if (severity == IStatus.WARNING) {
+    if (severity == IStatus.ERROR) {
       message = "ERROR ! Runtime purpose " + getName() + " is invalid, check the error log for information."; //$NON-NLS-1$ //$NON-NLS-2$
     }
 
