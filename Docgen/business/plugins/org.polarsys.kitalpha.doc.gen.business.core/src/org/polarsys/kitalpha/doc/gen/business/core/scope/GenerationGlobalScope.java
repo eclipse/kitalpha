@@ -19,6 +19,7 @@ import java.util.Map.Entry;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -27,6 +28,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
+import org.eclipse.sirius.business.api.query.URIQuery;
 import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.polarsys.kitalpha.doc.gen.business.core.messages.Messages;
 
@@ -254,8 +256,14 @@ public class GenerationGlobalScope {
 		this.domain = TransactionUtil.getEditingDomain(anySourceModelElement);
 		if (this.domain != null)
 		{
-			final Resource resource = domain.createResource(anySourceModelElement.eResource().getURI().toString());
-			this.domain.getResourceSet().getResources().add(resource);
+      URI resourceURI = anySourceModelElement.eResource().getURI();
+      URI copiedResourceURI = URI.createHierarchicalURI(URIQuery.INMEMORY_URI_SCHEME, resourceURI.authority(),
+          resourceURI.device(), resourceURI.segments(), resourceURI.query(), resourceURI.fragment());
+
+      final Resource resource = domain.createResource(anySourceModelElement.eResource().getURI().toString());
+
+      this.domain.getResourceSet().getResources().add(resource);
+
 			this.copier = new EcoreUtil.Copier();
 			this.domain.getCommandStack().execute(new RecordingCommand(domain) {
 				@Override
@@ -271,6 +279,7 @@ public class GenerationGlobalScope {
 		}
 		else
 		{
+		  this.copier = new EcoreUtil.Copier();
 			final Resource resource = new ResourceImpl();
 			final EObject rootContainer = EcoreUtil.getRootContainer(anySourceModelElement);
 			final EObject copyModelRootElement = copier.copy(rootContainer);
