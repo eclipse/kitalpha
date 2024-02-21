@@ -20,13 +20,13 @@ public class ElementDocContent extends org.polarsys.kitalpha.doc.gen.business.co
   }
 
   public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
-  protected final String TEXT_1 = "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>" + NL
+  protected final String TEXT_1 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + NL
       + "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"" + NL
       + "    \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">" + NL
       + "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">" + NL + "" + NL + "\t<head>" + NL
       + "\t\t<meta name=\"copyright\" content=\"";
   protected final String TEXT_2 = "\" />" + NL
-      + "\t\t<meta http-equiv=\"content-type\" content=\"text/html;charset=ISO-8859-1\" />" + NL
+      + "\t\t<meta http-equiv=\"content-type\" content=\"text/html;charset=UTF-8\" />" + NL
       + "\t\t<meta http-equiv=\"Content-Style-Type\" content=\"text/css\" />" + NL + "" + NL + "\t\t<title>";
   protected final String TEXT_3 = "</title>" + NL
       + "\t\t<link rel=\"stylesheet\" href=\"../../scripts/jquery-treeview/jquery.treeview.css\" />" + NL
