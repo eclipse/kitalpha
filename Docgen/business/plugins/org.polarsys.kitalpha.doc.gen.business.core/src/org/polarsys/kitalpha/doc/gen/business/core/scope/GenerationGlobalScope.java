@@ -260,7 +260,7 @@ public class GenerationGlobalScope {
       URI copiedResourceURI = URI.createHierarchicalURI(URIQuery.INMEMORY_URI_SCHEME, resourceURI.authority(),
           resourceURI.device(), resourceURI.segments(), resourceURI.query(), resourceURI.fragment());
 
-      final Resource resource = domain.createResource(anySourceModelElement.eResource().getURI().toString());
+      final Resource resource = domain.createResource(copiedResourceURI.toString());
 
       this.domain.getResourceSet().getResources().add(resource);
 
