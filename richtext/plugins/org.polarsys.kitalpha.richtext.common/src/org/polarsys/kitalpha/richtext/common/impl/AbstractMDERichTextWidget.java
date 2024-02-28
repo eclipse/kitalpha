@@ -18,6 +18,8 @@ import org.eclipse.core.runtime.Assert;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.sirius.business.api.image.ImageManagerProvider;
+import org.eclipse.sirius.business.api.session.Session;
+import org.eclipse.sirius.business.api.session.SessionManager;
 import org.eclipse.swt.widgets.Composite;
 import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
 import org.polarsys.kitalpha.richtext.common.intf.SaveStrategy;
@@ -78,7 +80,10 @@ public abstract class AbstractMDERichTextWidget implements MDERichTextWidget {
 		// must save the content of the current element and the current feature
 		// if they are not NULL
 		if (this.owner != null && this.feature != null && this.owner != owner && hasFocus()) {
-			saveContent();
+		  Session session = SessionManager.INSTANCE.getSession(this.owner);
+      if(session != null) {
+        saveContent();
+      }			
 		}
 
 		this.owner = owner;
