@@ -18,6 +18,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.StringWriter;
+import java.io.UnsupportedEncodingException;
 import java.io.Writer;
 
 import org.eclipse.core.resources.IFile;
@@ -124,10 +125,9 @@ public class DocGenHtmlUtil {
 
 	public static void writeFilePatternContent(String fileName,
 			String projectName, String outputFolder, String content) {
-
-		ByteArrayInputStream outputContent = new ByteArrayInputStream(content
-				.getBytes());
 		try {
+		  ByteArrayInputStream outputContent = new ByteArrayInputStream(content
+	        .getBytes("UTF-8"));
 			IFile file = DocGenHtmlUtil.getFile(fileName, projectName,
 					outputFolder);
 			if (file.exists()) {
@@ -136,8 +136,10 @@ public class DocGenHtmlUtil {
 				file.create(outputContent, true, null);
 			}
 		} catch (CoreException e) {
-			Activator.logError(e.getMessage(), e);
-		}
+		  Activator.logError(e.getMessage(), e);
+		} catch (UnsupportedEncodingException e) {
+		  Activator.logError(e.getMessage(), e);
+    }
 	}
 
 	/**
