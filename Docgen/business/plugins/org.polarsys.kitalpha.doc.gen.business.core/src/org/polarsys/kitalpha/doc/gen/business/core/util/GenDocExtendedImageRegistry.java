@@ -12,6 +12,7 @@
 package org.polarsys.kitalpha.doc.gen.business.core.util;
 
 import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
+import org.eclipse.swt.graphics.Image;
 
 public class GenDocExtendedImageRegistry extends ExtendedImageRegistry {
 
@@ -22,6 +23,9 @@ public class GenDocExtendedImageRegistry extends ExtendedImageRegistry {
 	}
 
 	public void dispose() {
+		for(Image image : table.values()) {
+			image.dispose();
+		}
 		table.clear();
 	}
 }
