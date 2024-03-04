@@ -44,6 +44,7 @@ import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.progress.IProgressService;
 import org.polarsys.kitalpha.doc.gen.business.core.exceptions.DocgenRuntimeException;
+import org.polarsys.kitalpha.doc.gen.business.core.sirius.util.session.DiagramSessionHelper;
 import org.polarsys.kitalpha.doc.gen.business.core.ui.Messages;
 import org.polarsys.kitalpha.doc.gen.business.core.util.MonitorServices;
 
@@ -163,6 +164,8 @@ public class InvokeActivityHelper {
         try {
             MonitorServices.initMonitor(monitor);
             MonitorServices.init(0);
+            //Ensure that all representations are loaded
+            DiagramSessionHelper.getSessionDRepresentation();
             activityManager.invoke(monitor);
             activityManager.dispose();
             MonitorServices.dispose();
