@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2018, 2020  Thales Global Services S.A.S.
+ * Copyright (c) 2018, 2024  Thales Global Services S.A.S.
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License 2.0 which is available at
  * http://www.eclipse.org/legal/epl-2.0
@@ -47,17 +47,25 @@ public class DisplayConverterHelper {
     displayConverterCache = new HashMap<>();
 
     displayConverterCache.put(Literals.EBOOLEAN.getName(), new DefaultBooleanDisplayConverter());
+    displayConverterCache.put(Literals.EBOOLEAN_OBJECT.getName(), new DefaultBooleanDisplayConverter());
     displayConverterCache.put(Literals.ECHAR.getName(), new DefaultCharacterDisplayConverter());
+    displayConverterCache.put(Literals.ECHARACTER_OBJECT.getName(), new DefaultCharacterDisplayConverter());
     displayConverterCache.put(Literals.EDATE.getName(), new DefaultDateDisplayConverter());
     displayConverterCache.put(Literals.ESTRING.getName(), new DefaultDisplayConverter());
     displayConverterCache.put(Literals.EBIG_DECIMAL.getName(), new DefaultBigDecimalDisplayConverter());
     displayConverterCache.put(Literals.EDOUBLE.getName(), new DefaultDoubleDisplayConverter());
+    displayConverterCache.put(Literals.EDOUBLE_OBJECT.getName(), new DefaultDoubleDisplayConverter());
     displayConverterCache.put(Literals.EFLOAT.getName(), new DefaultFloatDisplayConverter());
+    displayConverterCache.put(Literals.EFLOAT_OBJECT.getName(), new DefaultFloatDisplayConverter());
     displayConverterCache.put(Literals.EBYTE.getName(), new DefaultByteDisplayConverter());
+    displayConverterCache.put(Literals.EBYTE_OBJECT.getName(), new DefaultByteDisplayConverter());
     displayConverterCache.put(Literals.EINT.getName(), new DefaultIntegerDisplayConverter());
+    displayConverterCache.put(Literals.EINTEGER_OBJECT.getName(), new DefaultIntegerDisplayConverter());
     displayConverterCache.put(Literals.ELONG.getName(), new DefaultLongDisplayConverter());
+    displayConverterCache.put(Literals.ELONG_OBJECT.getName(), new DefaultLongDisplayConverter());
     displayConverterCache.put(Literals.EBIG_INTEGER.getName(), new DefaultBigIntegerDisplayConverter());
     displayConverterCache.put(Literals.ESHORT.getName(), new DefaultShortDisplayConverter());
+    displayConverterCache.put(Literals.ESHORT_OBJECT.getName(), new DefaultShortDisplayConverter());
   }
 
   // method sends Null if no display is found
