@@ -23,7 +23,7 @@
 
 	<groupId>org.polarsys</groupId>
 	<artifactId>org.polarsys.kitalpha</artifactId>
-	<version>6.1.0-SNAPSHOT</version>
+	<version>6.2.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<licenses>
@@ -205,7 +205,7 @@
 						<artifact>
 							<groupId>org.polarsys</groupId>
 							<artifactId>org.polarsys.kitalpha</artifactId>
-							<version>6.1.0-SNAPSHOT</version>
+							<version>6.2.0-SNAPSHOT</version>
 							<classifier>../org.polarsys.kitalpha.releng.targets/${target-platform-name}</classifier>
 						</artifact>
 					</target>
