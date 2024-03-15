@@ -32,7 +32,7 @@ pipeline {
 		stage('Deploy') {
 			when {
 				anyOf {
-					branch pattern : "v\\d\\.\\d\\.x", comparator: "REGEXP";
+					branch pattern : "v\\d\\.x", comparator: "REGEXP";
 					branch pattern : "master.*", comparator: "REGEXP";
 				}
 			}
@@ -40,7 +40,7 @@ pipeline {
 				sshagent ( ['projects-storage.eclipse.org-bot-ssh']) {
 					script {
 						def VERSION = BRANCH_NAME
-						if (VERSION.matches("v\\d\\.\\d\\.x")) {
+						if (VERSION.matches("v\\d\\.x")) {
 							VERSION = VERSION.substring(1)
 						}
 	
