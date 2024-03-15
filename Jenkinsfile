@@ -14,7 +14,7 @@ pipeline {
 	stages {
 		stage('Generate Target Platform') {
 			steps {
-		        sh 'mvn verify -f releng/plugins/org.polarsys.kitalpha.releng.targets/pom.xml'
+		        sh 'mvn verify -Declipse.p2.mirrors=false -f releng/plugins/org.polarsys.kitalpha.releng.targets/pom.xml'
 			}
 		}
 		stage('Package Kitalpha') {
@@ -24,7 +24,7 @@ pipeline {
 						def jacocoPrepareAgent = "-Djacoco.destFile=$JACOCO_EXEC_FILE_PATH -Djacoco.append=true org.jacoco:jacoco-maven-plugin:$JACOCO_VERSION:prepare-agent"
 						def sign = github.isPullRequest() ? '' : '-Psign'
 						currentBuild.description = BUILD_KEY
-						sh "mvn -Dmaven.test.failure.ignore=true ${jacocoPrepareAgent} package -P core -P product -P test ${sign} -e -f releng/plugins/org.polarsys.kitalpha.releng.parent/pom.xml"
+						sh "mvn -Declipse.p2.mirrors=false -Dmaven.test.failure.ignore=true ${jacocoPrepareAgent} package -P core -P product -P test ${sign} -e -f releng/plugins/org.polarsys.kitalpha.releng.parent/pom.xml"
 					}
 				}
 			}
