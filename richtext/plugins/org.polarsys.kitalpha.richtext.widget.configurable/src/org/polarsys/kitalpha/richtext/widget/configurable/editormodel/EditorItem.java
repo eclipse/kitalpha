@@ -14,8 +14,8 @@ package org.polarsys.kitalpha.richtext.widget.configurable.editormodel;
 
 public class EditorItem extends EditorModelNode {
 	
-	public EditorItem(String itemId, String itemRteId, String itemLabel)
+	public EditorItem(String parentId, String itemId, String itemRteId, String itemLabel)
 	{
-		super(itemId, itemRteId, itemLabel);
+		super(parentId, itemId, itemRteId, itemLabel);
 	}
 }
