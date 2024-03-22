@@ -48,11 +48,13 @@
 		<testFiltreClass>**/*TestSuite.java</testFiltreClass>
 		<coverage.skip>false</coverage.skip>
 		
-		<sonar.jacoco.release>0.8.6</sonar.jacoco.release>
+		<sonar.jacoco.release>0.8.8</sonar.jacoco.release>
 		
-		<rcptt-maven-version>2.5.3</rcptt-maven-version>
+		<rcptt-maven-version>2.5.5-SNAPSHOT</rcptt-maven-version>
 		
 		<target-platform-name>kitalpha</target-platform-name>
+		
+		<targetPlatform.name>kitalpha.targetplatform</targetPlatform.name>
 	</properties>
 	<profiles>
 		<profile>
@@ -61,6 +63,7 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<modules>
+				<module>../org.polarsys.kitalpha.releng.targets</module>
 				<module>../../plugins/org.polarsys.kitalpha.releng.aggregator.product</module>
 				<module>../../plugins/org.polarsys.kitalpha.releng.aggregator.examples</module>
 				<module>../../plugins/org.polarsys.kitalpha.releng.aggregator.samplecomponent</module>
@@ -150,25 +153,19 @@
 				<module>../../plugins/org.polarsys.kitalpha.releng.aggregator.tests</module>
 			</modules>
 		</profile>
+		
 		<profile>
 			<id>rcptt</id>
 			<activation>
 				<activeByDefault>false</activeByDefault>
 			</activation>
+			<properties>
+				<targetplatformPath>../org.polarsys.kitalpha.releng.targets/kitalpha_rcptt</targetplatformPath>
+				<target-platform-name>kitalpha_rcptt</target-platform-name>
+				<targetPlatform.name>kitalpha_rcptt.targetplatform</targetPlatform.name>
+			</properties>
 			<modules>
-				<!-- Test RCPTT -->
-				<!-- module>../../../architecture description/dsl/examples/tests/rcptt/org.polarsys.kitalpha.activityexplorer.test.rcptt</module-->
-				
-				<module>../../../tests/architecture_description/core/org.polarsys.kitalpha.ad.core.rcptt</module>
-				<module>../../../tests/resource_reuse/org.polarsys.kitalpha.resourcereuse.emfscheme.test.rcptt</module>
-				<module>../../../Docgen/business/tests/rcptt/org.polarsys.kitalpha.doc.gen.test.rcptt</module>
-				<module>../../../Docgen/business/tests/rcptt/org.polarsys.kitalpha.doc.gen.business.ecore.test.rcptt</module>
-				<module>../../../detachment/tests/rcptt/org.polarsys.kitalpha.detachment.tests.rcptt</module>
-				<module>../../../tests/architecture_description/dsl/org.polarsys.kitalpha.ad.viewpoint.test.rcptt</module>
-				<module>../../../tests/architecture_description/core/org.polarsys.kitalpha.ad.rcptt</module>
-				<module>../../../common/tests/org.polarsys.kitalpha.common.rcptt</module>
-				<module>../../../emde/tests/org.polarsys.kitalpha.emde.rcptt</module>
-				<module>../../../transposer/tests/plugins/rcptt/org.polarsys.kitalpha.transposer.rcptt.tests</module>
+				<module>../../plugins/org.polarsys.kitalpha.releng.aggregator.tests.rcptt</module>
 				 
 			</modules>
 		</profile>
