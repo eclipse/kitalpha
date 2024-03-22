@@ -12,6 +12,8 @@
 
 package org.polarsys.kitalpha.richtext.widget.configurable.preferences.ui;
 
+import java.util.Optional;
+
 import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.jface.preference.BooleanFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
@@ -47,10 +49,12 @@ import org.polarsys.kitalpha.richtext.widget.configurable.preferences.core.Prefe
 public class MDERichTextEditorConfigurationPage
 	extends FieldEditorPreferencePage
 	implements IWorkbenchPreferencePage {
+	
+	IPreferenceStore preferenceStore = null;
 
 	public MDERichTextEditorConfigurationPage() {
 		super(GRID);
-		IPreferenceStore preferenceStore = new ScopedPreferenceStore(InstanceScope.INSTANCE, "org.polarsys.kitalpha.richtext.widget.configurable.preferences.core");
+		preferenceStore = new ScopedPreferenceStore(InstanceScope.INSTANCE, "org.polarsys.kitalpha.richtext.widget.configurable.preferences.core");
 		setPreferenceStore(preferenceStore);
 	}
 	
@@ -133,21 +137,17 @@ public class MDERichTextEditorConfigurationPage
 		super.initialize();
 		
 		EditorItem globalEnablementItem = EditorModel.INSTANCE.getGlobalEnablementItem();
+		boolean isEnabled = globalEnablementItem.getPreferenceField().getBooleanValue();
 		if (EditorModel.INSTANCE.isNodeToBeActivated(globalEnablementItem))
 		{
 			for (EditorToolbar toolbar : EditorModel.INSTANCE.getToolbars())
 			{
-				boolean toolbarValue = toolbar.getPreferenceField().getBooleanValue();
 				for (EditorGroup group : toolbar.getGroups())
 				{
-					boolean groupValue = group.getPreferenceField().getBooleanValue();
-					group.getPreferenceField().setEnabled(toolbarValue, group.getParent());
+					group.getPreferenceField().setEnabled(isEnabled, group.getParent());
 					for (EditorItem item : group.getItems())
 					{
-						if (!toolbarValue || !groupValue)
-						{
-							item.getPreferenceField().setEnabled(false, item.getParent());
-						}
+						item.getPreferenceField().setEnabled(isEnabled, item.getParent());
 					}
 				}
 			}
@@ -181,9 +181,14 @@ public class MDERichTextEditorConfigurationPage
 		{
 			EditorToolbar toolbar = (EditorToolbar) editorModelNode;
 			boolean toolbarValue = newValue;
+			
+			preferenceStore.setValue(toolbar.getId(), toolbarValue);
+			toolbar.getPreferenceField().load();
+			
 			for (EditorGroup group : toolbar.getGroups())
 			{
-				group.getPreferenceField().setEnabled(toolbarValue, group.getParent());
+				preferenceStore.setValue(group.getId(), toolbarValue);
+				group.getPreferenceField().load();
 				boolean groupValue = group.getPreferenceField().getBooleanValue();
 				for (EditorItem item : group.getItems())
 				{
@@ -196,18 +201,23 @@ public class MDERichTextEditorConfigurationPage
 					{
 						isEnabled = true;
 					}
-					
-					item.getPreferenceField().setEnabled(isEnabled, item.getParent());
+					preferenceStore.setValue(item.getId(), isEnabled);
+					item.getPreferenceField().load();
 				}
 			}
 		}
 		else if (editorModelNode instanceof EditorGroup)
 		{
 			EditorGroup group = (EditorGroup) editorModelNode;
+			preferenceStore.setValue(group.getId(), newValue);
+			group.getPreferenceField().load();
 			for (EditorItem item : group.getItems())
 			{
-				item.getPreferenceField().setEnabled(newValue, item.getParent());
+				preferenceStore.setValue(item.getId(), newValue);
+				item.getPreferenceField().load();
 			}
+			// Update the parent
+			updateParentToolBar(group);
 		}
 		else if (editorModelNode instanceof EditorItem)
 		{
@@ -218,16 +228,62 @@ public class MDERichTextEditorConfigurationPage
 			{
 				for (EditorToolbar toolbar : EditorModel.INSTANCE.getToolbars())
 				{
+					preferenceStore.setValue(toolbar.getId(), isEnabled);
+					toolbar.getPreferenceField().load();
 					toolbar.getPreferenceField().setEnabled(isEnabled, toolbar.getParent());
 					for (EditorGroup group : toolbar.getGroups())
 					{
+						preferenceStore.setValue(group.getId(), isEnabled);
+						group.getPreferenceField().load();
 						group.getPreferenceField().setEnabled(isEnabled, group.getParent());
 						for (EditorItem item : group.getItems())
 						{
+							preferenceStore.setValue(item.getId(), isEnabled);
+							item.getPreferenceField().load();
 							item.getPreferenceField().setEnabled(isEnabled, item.getParent());
 						}
 					}
 				}
+			} else {
+				
+				preferenceStore.setValue(changedItem.getId(), isEnabled);
+				changedItem.getPreferenceField().load();
+				
+				// Update the parent
+				EditorModelNode parentNode = EditorModel.INSTANCE.getNode(changedItem.getParentId());
+				if (parentNode instanceof EditorGroup) {
+					EditorGroup parentGroup = (EditorGroup) parentNode;
+					
+					// @formatter:off
+					Optional<Boolean> currentParentState = parentGroup.getItems().stream()
+							.map(EditorItem::getPreferenceField)
+							.map(BooleanFieldEditor::getBooleanValue)
+							.reduce((b1, b2) -> b1 || b2);
+					// @formatter:on
+					if (currentParentState.isPresent()) {
+						preferenceStore.setValue(parentGroup.getId(), currentParentState.get());
+						parentGroup.getPreferenceField().load();
+						updateParentToolBar(parentGroup);
+					}
+				}
+			}
+		}
+	}
+
+	private void updateParentToolBar(EditorGroup group) {
+		EditorModelNode parentNode = EditorModel.INSTANCE.getNode(group.getParentId());
+		if (parentNode instanceof EditorToolbar) {
+			EditorToolbar parentToolBar = (EditorToolbar) parentNode;
+			
+			// @formatter:off
+			Optional<Boolean> currentParentState = parentToolBar.getGroups().stream()
+					.map(EditorGroup::getPreferenceField)
+					.map(BooleanFieldEditor::getBooleanValue)
+					.reduce((b1, b2) -> b1 || b2);
+			// @formatter:on
+			if (currentParentState.isPresent()) {
+				preferenceStore.setValue(parentToolBar.getId(), currentParentState.get());
+				parentToolBar.getPreferenceField().load();
 			}
 		}
 	}
