@@ -17,17 +17,23 @@ import org.eclipse.swt.widgets.Composite;
 
 public abstract class EditorModelNode {
 
+	private String				parentId;
 	private String				id;
 	private String				rteId;
 	private String				label;
 	private BooleanFieldEditor	preferenceField;
 	private Composite			parent;
 	
-	protected EditorModelNode(String nodeId, String nodeRteId, String nodeLabel)
+	protected EditorModelNode(String parentId, String nodeId, String nodeRteId, String nodeLabel)
 	{
+		this.parentId = parentId;
 		this.id = nodeId;
 		this.rteId = nodeRteId;
 		this.label = nodeLabel;
+	}
+	
+	public String getParentId() {
+		return parentId;
 	}
 	
 	public String getId()
