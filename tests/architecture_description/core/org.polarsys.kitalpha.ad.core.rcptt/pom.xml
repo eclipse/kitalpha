@@ -45,9 +45,7 @@
 						</vmArgs>
 					</runner>
 					<aut>
-						<groupId>org.polarsys</groupId>
-						<artifactId>org.polarsys.kitalpha.releng.sdk.product</artifactId>
-						<version>${project.version}</version>
+						<explicit>../../../../releng/plugins/org.polarsys.kitalpha.releng.sdk.product/target/products/kitalpha-[platform].zip</explicit>						
 						<injections>
 							<injection>
 								<site>${project.baseUri}../../../../releng/plugins/org.polarsys.kitalpha.releng.samplecomponent.updatesite/target/repository</site>

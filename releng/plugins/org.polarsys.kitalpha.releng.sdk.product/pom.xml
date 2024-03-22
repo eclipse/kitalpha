@@ -47,7 +47,7 @@
 					<products>
 						<product>
 							<id>org.polarsys.kitalpha.releng.sdk.product</id>
-							<archiveFileName>kitalpha-${qualifiedVersion}</archiveFileName>
+							<archiveFileName>kitalpha</archiveFileName>
 						</product>
 					</products>
 				</configuration>
