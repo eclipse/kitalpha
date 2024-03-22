@@ -18,14 +18,14 @@ public class EditorGroup extends EditorModelNode {
 	
 	private List<EditorItem> items;
 	
-	public EditorGroup(String groupId, String groupRteId, String groupLabel)
+	public EditorGroup(String parentId, String groupId, String groupRteId, String groupLabel)
 	{
-		super(groupId, groupRteId, groupLabel);
+		super(parentId, groupId, groupRteId, groupLabel);
 	}
 	
-	public EditorGroup(String groupId, String groupRteId, String groupLabel, List<EditorItem> items)
+	public EditorGroup(String parentId, String groupId, String groupRteId, String groupLabel, List<EditorItem> items)
 	{
-		super(groupId, groupRteId, groupLabel);
+		super(parentId, groupId, groupRteId, groupLabel);
 		this.items = items;
 	}
 	

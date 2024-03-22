@@ -18,14 +18,14 @@ public class EditorToolbar extends EditorModelNode {
 	
 	private List<EditorGroup> groups;
 	
-	public EditorToolbar(String toolbarId, String toolbarRteId, String toolbarLabel)
+	public EditorToolbar(String parentId, String toolbarId, String toolbarRteId, String toolbarLabel)
 	{
-		super(toolbarId, toolbarRteId, toolbarLabel);
+		super(parentId, toolbarId, toolbarRteId, toolbarLabel);
 	}
 	
-	public EditorToolbar(String toolbarId, String toolbarRteId, String toolbarLabel, List<EditorGroup> groups)
+	public EditorToolbar(String parentId, String toolbarId, String toolbarRteId, String toolbarLabel, List<EditorGroup> groups)
 	{
-		super(toolbarId, toolbarRteId, toolbarLabel);
+		super(parentId, toolbarId, toolbarRteId, toolbarLabel);
 		this.groups = groups;
 	}
 	
