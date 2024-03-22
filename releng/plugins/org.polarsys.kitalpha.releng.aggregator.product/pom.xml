@@ -41,7 +41,25 @@
       </comments>
     </license>
   </licenses>
-  
+  <profiles>
+  <profile>
+			<id>product</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<modules>
+				<!-- Product -->
+			<module>../../../releng/plugins/org.polarsys.kitalpha.releng.sdk.product</module>
+			</modules>
+		</profile>
+		<profile>
+			<id>rcptt</id>
+			<modules>
+				<!-- RCPTT Product -->
+			<module>../../../tests/org.polarsys.kitalpha.tests.rcptt.product</module>
+			</modules>
+		</profile>
+  </profiles>
   <modules>
     <!-- plugins -->
     <module>../../../product/plugins/org.polarsys.kitalpha.product</module>
@@ -53,8 +71,7 @@
     <!-- features for eclipse dependencies -->
     <module>../../../releng/features/org.polarsys.kitalpha.releng.eclipse.feature</module>
     
-    <!-- Product -->
-    <module>../../../releng/plugins/org.polarsys.kitalpha.releng.sdk.product</module>
+    
     
   </modules>
 </project>

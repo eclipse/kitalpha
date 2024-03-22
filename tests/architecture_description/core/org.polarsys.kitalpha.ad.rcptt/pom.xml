@@ -25,43 +25,8 @@
 	
 	<parent>
 		<groupId>org.polarsys</groupId>
-		<artifactId>org.polarsys.kitalpha</artifactId>
+		<artifactId>org.polarsys.kitalpha.releng.rcptt</artifactId>
 		<version>7.0.0-SNAPSHOT</version>
-		<relativePath>../../../../releng/plugins/org.polarsys.kitalpha.releng.parent</relativePath>
+		<relativePath>../../../../releng/plugins/org.polarsys.kitalpha.releng.rcptt</relativePath>
 	</parent>
-	
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.eclipse.rcptt</groupId>
-				<artifactId>rcptt-maven-plugin</artifactId>
-				<version>${rcptt-maven-version}</version>
-				<extensions>true</extensions>
-				<configuration>
-					<runner>
-						<version>${rcptt-maven-version}</version>
-						<vmArgs>
-							<vmArg>-Xmx2g</vmArg>
-						</vmArgs>
-					</runner>
-					<aut>
-						<groupId>org.polarsys</groupId>
-						<artifactId>org.polarsys.kitalpha.releng.sdk.product</artifactId>
-						<version>${project.version}</version>
-						<injections>
-							<injection>
-								<site>${project.baseUri}../../../../releng/plugins/org.polarsys.kitalpha.releng.samplecomponent.updatesite/target/repository</site>
-							</injection>
-							<injection>
-								<site>${project.baseUri}../../../../releng/plugins/org.polarsys.kitalpha.releng.examples.updatesite/target/repository</site>
-							</injection>
-						</injections>
-						<args>
-							<arg>-autArgs</arg>
-						</args>
-					</aut>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
 </project>

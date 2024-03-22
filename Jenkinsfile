@@ -17,14 +17,14 @@ pipeline {
 		        sh 'mvn verify -f releng/plugins/org.polarsys.kitalpha.releng.targets/pom.xml'
 			}
 		}
-		stage('Package Kitalpha') {
+		stage('Package & Install Kitalpha') {
 			steps {
 				wrap([$class: 'Xvnc', takeScreenshot: false, useXauthority: true]) {
 					script {
 						def jacocoPrepareAgent = "-Djacoco.destFile=$JACOCO_EXEC_FILE_PATH -Djacoco.append=true org.jacoco:jacoco-maven-plugin:$JACOCO_VERSION:prepare-agent"
 						def sign = github.isPullRequest() ? '' : '-Psign'
 						currentBuild.description = BUILD_KEY
-						sh "mvn -Dmaven.test.failure.ignore=true ${jacocoPrepareAgent} package -P core -P product -P test ${sign} -e -f releng/plugins/org.polarsys.kitalpha.releng.parent/pom.xml"
+						sh "mvn -Dmaven.test.failure.ignore=true ${jacocoPrepareAgent} install -P core -P product -P test ${sign} -e -f releng/plugins/org.polarsys.kitalpha.releng.parent/pom.xml"
 					}
 				}
 			}
@@ -70,14 +70,20 @@ pipeline {
 				}
 			}
 		}
+		stage('Build RCPTT Product & Run Tests') {
+			steps {
+				sh 'mvn verify -P rcptt -f releng/plugins/org.polarsys.kitalpha.releng.targets/pom.xml'
+				sh 'mvn verify -P core -P product -P rcptt -f releng/plugins/org.polarsys.kitalpha.releng.parent/pom.xml'
+			}
+		}
 		stage('Test Kitalpha') {
 			steps {
-				wrap([$class: 'Xvnc', takeScreenshot: false, useXauthority: true]) {
+				wrap([$class: 'Xvnc', takeScreenshot: true, useXauthority: true]) {
 					script {
 						def jacocoPrepareAgent = "-Djacoco.destFile=$JACOCO_EXEC_FILE_PATH -Djacoco.append=true org.jacoco:jacoco-maven-plugin:$JACOCO_VERSION:prepare-agent"
 						def sign = github.isPullRequest() ? '' : ''
 						currentBuild.description = BUILD_KEY
-						sh "mvn -Dmaven.test.failure.ignore=true ${jacocoPrepareAgent} verify -P core ${sign} -P product -P test -P rcptt -e -f releng/plugins/org.polarsys.kitalpha.releng.parent/pom.xml"
+						sh "mvn -Dmaven.test.failure.ignore=true ${jacocoPrepareAgent} verify -P core ${sign} -P product -P test -e -f releng/plugins/org.polarsys.kitalpha.releng.parent/pom.xml"
 						junit allowEmptyResults: true, testResults: '*.xml,**/target/surefire-reports/*.xml'
 						sh "mvn -Djacoco.dataFile=$JACOCO_EXEC_FILE_PATH org.jacoco:jacoco-maven-plugin:$JACOCO_VERSION:report $MVN_QUALITY_PROFILES -e -f releng/plugins/org.polarsys.kitalpha.releng.parent/pom.xml"
 					}
