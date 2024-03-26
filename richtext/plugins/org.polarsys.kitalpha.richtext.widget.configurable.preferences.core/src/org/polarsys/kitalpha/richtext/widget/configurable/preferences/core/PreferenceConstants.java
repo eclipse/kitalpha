@@ -37,6 +37,10 @@ public final class PreferenceConstants {
 	public static final String MDE_SAVE_TOOLBAR_ENABLEMENT_ID = PREFERENCES_PREFIX + "mdeSave_toolbar_enablement";
 	public static final String MDE_SAVE_TOOLBAR_ENABLEMENT_LABEL = "MDE Save Toolbar";
 	public static final Boolean MDE_SAVE_TOOLBAR_ENABLEMENT_DEFAULT = true;
+
+	public static final String MDE_SAVE_GROUP_ENABLEMENT_ID = PREFERENCES_PREFIX + "mdeSave_group_enablement";
+	public static final String MDE_SAVE_GROUP_ENABLEMENT_LABEL = "MDE Save Group";
+	public static final Boolean MDE_SAVE_GROUP_ENABLEMENT_DEFAULT = true;
 	
 	public static final String MDE_SAVE_ITEM_ENABLEMENT_ID = PREFERENCES_PREFIX + "mdeSave_item_enablement";
 	public static final String MDE_SAVE_ITEM_ENABLEMENT_LABEL = "MDE Save Item";
@@ -47,9 +51,13 @@ public final class PreferenceConstants {
 	public static final Boolean MDE_REFRESH_ITEM_ENABLEMENT_DEFAULT = true;
 	
 	// MDE LINKS TOOLBAR
-	public static final String MDE_LINKS_TOOLBAR_ENABLEMENT_ID = PREFERENCES_PREFIX + "mdeLinks_item_enablement";
+	public static final String MDE_LINKS_TOOLBAR_ENABLEMENT_ID = PREFERENCES_PREFIX + "mdeLinks_toolbar_enablement";
 	public static final String MDE_LINKS_TOOLBAR_ENABLEMENT_LABEL = "MDE Links Toolbar";
 	public static final Boolean MDE_LINKS_TOOLBAR_ENABLEMENT_DEFAULT = true;
+
+	public static final String MDE_LINKS_GROUP_ENABLEMENT_ID = PREFERENCES_PREFIX + "mdeLinks_group_enablement";
+	public static final String MDE_LINKS_GROUP_ENABLEMENT_LABEL = "MDE Links Group";
+	public static final Boolean MDE_LINKS_GROUP_ENABLEMENT_DEFAULT = true;
 	
 	public static final String MDE_ADDLINK_ITEM_ENABLEMENT_ID = PREFERENCES_PREFIX + "mdeAddlink_item_enablement";
 	public static final String MDE_ADDLINK_ITEM_ENABLEMENT_LABEL = "MDE AddLink Item";
@@ -72,6 +80,10 @@ public final class PreferenceConstants {
 	public static final String MDE_CLEAN_TOOLBAR_ENABLEMENT_ID = PREFERENCES_PREFIX + "mdeClean_toolbar_enablement";
 	public static final String MDE_CLEAN_TOOLBAR_ENABLEMENT_LABEL = "MDE Clean Toolbar";
 	public static final Boolean MDE_CLEAN_TOOLBAR_ENABLEMENT_DEFAULT = true;
+
+	public static final String MDE_CLEAN_GROUP_ENABLEMENT_ID = PREFERENCES_PREFIX + "mdeClean_group_enablement";
+	public static final String MDE_CLEAN_GROUP_ENABLEMENT_LABEL = "MDE Clean Group";
+	public static final Boolean MDE_CLEAN_GROUP_ENABLEMENT_DEFAULT = true;
 	
 	public static final String MDE_CLEAN_ITEM_ENABLEMENT_ID = PREFERENCES_PREFIX + "mdeClean_item_enablement";
 	public static final String MDE_CLEAN_ITEM_ENABLEMENT_LABEL = "MDE Clean Item";
