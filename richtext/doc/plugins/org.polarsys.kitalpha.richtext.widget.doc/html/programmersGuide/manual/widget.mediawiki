@@ -156,6 +156,10 @@ Here a snippet from Kitalpha Component Sample example embeded in page of Activit
 * Editor Rich Text Widget: provides a widget with a toolbar adapted to be displayed on '''Eclipse editor area''' without Open in Editor item
 * Minimal Rich Text Widget: provides a widget with a toolbar adapted to be displayed on '''Eclipse view area''' with Open in Editor item
 
+==== Configurable Rich Text ====
+
+The RichText editor configuration can be manually configured by the user in the preferences regardless of the configuration that was chosen programmatically.
+
 === MDE Rich Text Editor ===
 
 MDE Rich Text Wiget is also embded in an Eclipse editor. This editor can be opened with widget configuration provided by the MDE Rich Text Widget Factory by clicking on the dedicated item on the toolbar ([[File:../../img/openInEditor.gif|Open In Editor]]).
