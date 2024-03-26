@@ -46,6 +46,83 @@ public class EditorModel {
 				PreferenceConstants.GLOBAL_CONFIGURABLE_ENABLEMENT_LABEL
 			);
 		
+		// MDE CLEAN TOOLBAR
+		List<EditorItem> mdeCleaningGroupItems = new ArrayList<>();
+		mdeCleaningGroupItems.add(new EditorItem(PreferenceConstants.MDE_CLEAN_GROUP_ENABLEMENT_ID,
+				PreferenceConstants.MDE_CLEAN_ITEM_ENABLEMENT_ID,
+				MDERichTextConstants.MDE_CLEAN,
+				PreferenceConstants.MDE_CLEAN_ITEM_ENABLEMENT_LABEL
+				));
+
+
+		List<EditorGroup> mdeCleaningToolbarGroups = new ArrayList<>();
+		mdeCleaningToolbarGroups.add(new EditorGroup(PreferenceConstants.MDE_CLEAN_TOOLBAR_ENABLEMENT_ID,
+				PreferenceConstants.MDE_CLEAN_GROUP_ENABLEMENT_ID,
+				MDERichTextConstants.MDE_CLEAN_TOOLBAR,
+				PreferenceConstants.MDE_CLEAN_GROUP_ENABLEMENT_LABEL,
+				mdeCleaningGroupItems
+				));
+
+		toolbars.add(new EditorToolbar(null,
+				PreferenceConstants.MDE_CLEAN_TOOLBAR_ENABLEMENT_ID,
+				MDERichTextConstants.MDE_CLEAN_TOOLBAR,
+				PreferenceConstants.MDE_CLEAN_ITEM_ENABLEMENT_LABEL,
+				mdeCleaningToolbarGroups
+				));
+		
+		// MDE SAVE TOOLBAR
+		List<EditorItem> mdeSaveGroupItems = new ArrayList<>();
+		mdeSaveGroupItems.add(new EditorItem(PreferenceConstants.MDE_SAVE_GROUP_ENABLEMENT_ID,
+				PreferenceConstants.MDE_SAVE_ITEM_ENABLEMENT_ID,
+				MDERichTextConstants.MDE_SAVE,
+				PreferenceConstants.MDE_SAVE_ITEM_ENABLEMENT_LABEL
+			));
+		
+		List<EditorGroup> mdeSaveToolbarGroups = new ArrayList<>();
+		mdeSaveToolbarGroups.add(new EditorGroup(PreferenceConstants.MDE_SAVE_TOOLBAR_ENABLEMENT_ID,
+				PreferenceConstants.MDE_SAVE_GROUP_ENABLEMENT_ID,
+				MDERichTextConstants.MDE_SAVE,
+				PreferenceConstants.MDE_SAVE_GROUP_ENABLEMENT_LABEL,
+				mdeSaveGroupItems
+			));
+		
+		toolbars.add(new EditorToolbar(null,
+				PreferenceConstants.MDE_SAVE_TOOLBAR_ENABLEMENT_ID,
+				MDERichTextConstants.MDE_SAVE_TOOLBAR,
+				PreferenceConstants.MDE_SAVE_TOOLBAR_ENABLEMENT_LABEL,
+				mdeSaveToolbarGroups
+			));
+		
+		// MDE LINK TOOLBAR
+		List<EditorItem> mdeLinkGroupItems = new ArrayList<>();
+		mdeLinkGroupItems.add(new EditorItem(PreferenceConstants.MDE_LINKS_GROUP_ENABLEMENT_ID,
+				PreferenceConstants.MDE_ADDLINK_ITEM_ENABLEMENT_ID,
+				MDERichTextConstants.MDE_ADDLINK,
+				PreferenceConstants.MDE_ADDLINK_ITEM_ENABLEMENT_LABEL
+			));
+		
+		mdeLinkGroupItems.add(new EditorItem(PreferenceConstants.MDE_LINKS_GROUP_ENABLEMENT_ID,
+				PreferenceConstants.MDE_ADDIMAGE_ITEM_ENABLEMENT_ID,
+				MDERichTextConstants.MDE_ADDIMAGE,
+				PreferenceConstants.MDE_ADDIMAGE_ITEM_ENABLEMENT_LABEL
+			));
+		
+		List<EditorGroup> mdeLinkToolbarGroups = new ArrayList<>();
+		mdeLinkToolbarGroups.add(new EditorGroup(PreferenceConstants.MDE_LINKS_TOOLBAR_ENABLEMENT_ID,
+				PreferenceConstants.MDE_LINKS_GROUP_ENABLEMENT_ID,
+				MDERichTextConstants.MDE_LINKS_TOOLBAR,
+				PreferenceConstants.MDE_LINKS_GROUP_ENABLEMENT_LABEL,
+				mdeLinkGroupItems
+			));
+		
+		toolbars.add(new EditorToolbar(null,
+				PreferenceConstants.MDE_LINKS_TOOLBAR_ENABLEMENT_ID,
+				MDERichTextConstants.MDE_LINKS_TOOLBAR,
+				PreferenceConstants.MDE_LINKS_TOOLBAR_ENABLEMENT_LABEL,
+				mdeLinkToolbarGroups
+			));
+		
+		
 		// DOCUMENT TOOLBAR
 		List<EditorItem> modeGroupItems = new ArrayList<>();
 		modeGroupItems.add(new EditorItem(PreferenceConstants.MODE_GROUP_ENABLEMENT_ID,
