@@ -165,6 +165,7 @@
 				<targetPlatform.name>kitalpha_rcptt.targetplatform</targetPlatform.name>
 			</properties>
 			<modules>
+				<module>../org.polarsys.kitalpha.releng.targets</module>
 				<module>../../plugins/org.polarsys.kitalpha.releng.aggregator.tests.rcptt</module>
 				 
 			</modules>

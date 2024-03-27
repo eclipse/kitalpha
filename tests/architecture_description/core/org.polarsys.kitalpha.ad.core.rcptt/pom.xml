@@ -55,6 +55,10 @@
 							<injection>
 								<site>${project.baseUri}../../../../releng/plugins/org.polarsys.kitalpha.releng.examples.updatesite/target/repository</site>
 							</injection>
+							<injection>
+								<site>https://download.eclipse.org/rcptt/nightly/2.5.5/latest/repository/</site>
+							</injection>
+							
 						</injections>
 						<args>
 							<arg>-autArgs</arg>
