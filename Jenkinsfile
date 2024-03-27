@@ -24,7 +24,7 @@ pipeline {
 						def jacocoPrepareAgent = "-Djacoco.destFile=$JACOCO_EXEC_FILE_PATH -Djacoco.append=true org.jacoco:jacoco-maven-plugin:$JACOCO_VERSION:prepare-agent"
 						def sign = github.isPullRequest() ? '' : '-Psign'
 						currentBuild.description = BUILD_KEY
-						sh "mvn -Dmaven.test.failure.ignore=true ${jacocoPrepareAgent} package install -P core -P product ${sign} -e -f releng/plugins/org.polarsys.kitalpha.releng.parent/pom.xml"
+						sh "mvn -Dmaven.test.failure.ignore=true ${jacocoPrepareAgent} install -P core -P product ${sign} -e -f releng/plugins/org.polarsys.kitalpha.releng.parent/pom.xml"
 					}
 				}
 			}
