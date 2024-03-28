@@ -58,7 +58,12 @@
 							<injection>
 								<site>https://download.eclipse.org/rcptt/nightly/2.5.5/latest/repository/</site>
 							</injection>
-							
+							<injection>
+								<site>https://download.eclipse.org/releases/2023-03</site>
+								 <features>
+									 <feature>org.antlr.runtime</feature>
+								</features>    
+							</injection>
 						</injections>
 						<args>
 							<arg>-autArgs</arg>
