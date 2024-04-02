@@ -13,7 +13,7 @@
 <feature
       id="org.polarsys.kitalpha.richtext.widget.feature"
       label="%Feature-Name"
-      version="7.0.0.qualifier"
+      version="6.2.0.qualifier"
       provider-name="%Feature-Vendor">
 
    <description>
@@ -73,13 +73,6 @@
 
    <plugin
          id="org.polarsys.kitalpha.richtext.widget.configurable.preferences.core"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.polarsys.kitalpha.richtext.widget.configurable.preferences.ui"
          download-size="0"
          install-size="0"
          version="0.0.0"

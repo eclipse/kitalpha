@@ -222,6 +222,12 @@
    <feature id="org.polarsys.kitalpha.sirius.rotativeimage.feature.source" version="0.0.0">
       <category name="RuntimeSource"/>
    </feature>
+   <feature id="org.polarsys.kitalpha.richtext.widget.configurable.preferences.ui.feature">
+      <category name="Runtime"/>
+   </feature>
+   <feature id="org.polarsys.kitalpha.richtext.widget.configurable.preferences.ui.feature.source" version="0.0.0">
+      <category name="RuntimeSource"/>
+   </feature>
    <category-def name="Runtime" label="Runtime"/>
    <category-def name="RuntimeSource" label="Runtime Source"/>
 </site>
