@@ -196,6 +196,7 @@
 	<module>../../../richtext/plugins/org.polarsys.kitalpha.richtext.widget</module>
 	<module>../../../richtext/plugins/org.polarsys.kitalpha.richtext.widget.configurable</module>
 	<module>../../../richtext/plugins/org.polarsys.kitalpha.richtext.widget.configurable.preferences.core</module>
+	<module>../../../richtext/features/org.polarsys.kitalpha.richtext.widget.configurable.preferences.ui.feature</module>
 	<module>../../../richtext/plugins/org.polarsys.kitalpha.richtext.widget.configurable.preferences.ui</module>
 	
 	<module>../../../sirius/features/org.polarsys.kitalpha.sirius.rotativeimage.feature</module>
