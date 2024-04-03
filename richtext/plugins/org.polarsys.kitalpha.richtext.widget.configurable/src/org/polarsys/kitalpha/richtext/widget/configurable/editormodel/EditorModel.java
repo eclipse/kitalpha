@@ -665,29 +665,6 @@ public class EditorModel {
 				PreferenceConstants.TOOLS_TOOLBAR_ENABLEMENT_LABEL,
 				toolsToolbarGroups
 			));
-		
-		// ABOUT TOOLBAR
-		List<EditorItem> aboutGroupItems = new ArrayList<>();
-		aboutGroupItems.add(new EditorItem(PreferenceConstants.ABOUT_GROUP_ENABLEMENT_ID,
-				PreferenceConstants.ABOUT_ITEM_ENABLEMENT_ID,
-				MDERichTextConstants.ABOUT,
-				PreferenceConstants.ABOUT_ITEM_ENABLEMENT_LABEL
-			));
-		
-		List<EditorGroup> aboutToolbarGroups = new ArrayList<>();
-		aboutToolbarGroups.add(new EditorGroup(PreferenceConstants.ABOUT_TOOLBAR_ENABLEMENT_ID,
-				PreferenceConstants.ABOUT_GROUP_ENABLEMENT_ID,
-				MDERichTextConstants.ABOUT_GROUP,
-				PreferenceConstants.ABOUT_GROUP_ENABLEMENT_LABEL,
-				aboutGroupItems
-			));
-		
-		toolbars.add(new EditorToolbar(null,
-				PreferenceConstants.ABOUT_TOOLBAR_ENABLEMENT_ID,
-				MDERichTextConstants.ABOUT_TOOLBAR,
-				PreferenceConstants.ABOUT_TOOLBAR_ENABLEMENT_LABEL,
-				aboutToolbarGroups
-			));
 	}
 	
 	public EditorItem getGlobalEnablementItem()
