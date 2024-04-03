@@ -431,17 +431,5 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 				PreferenceConstants.SHOWBLOCKS_ITEM_ENABLEMENT_ID,
 				PreferenceConstants.SHOWBLOCKS_ITEM_ENABLEMENT_DEFAULT
 		);
-		preferenceStore.setDefault(
-				PreferenceConstants.ABOUT_TOOLBAR_ENABLEMENT_ID,
-				PreferenceConstants.ABOUT_TOOLBAR_ENABLEMENT_DEFAULT
-		);
-		preferenceStore.setDefault(
-				PreferenceConstants.ABOUT_GROUP_ENABLEMENT_ID,
-				PreferenceConstants.ABOUT_GROUP_ENABLEMENT_DEFAULT
-		);
-		preferenceStore.setDefault(
-				PreferenceConstants.ABOUT_ITEM_ENABLEMENT_ID,
-				PreferenceConstants.ABOUT_ITEM_ENABLEMENT_DEFAULT
-		);
 	}
 }
