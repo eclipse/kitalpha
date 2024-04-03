@@ -441,17 +441,4 @@ public final class PreferenceConstants {
 	public static final String SHOWBLOCKS_ITEM_ENABLEMENT_ID = PREFERENCES_PREFIX + "showBlocks_item_enablement";
 	public static final String SHOWBLOCKS_ITEM_ENABLEMENT_LABEL = "Show Blocks Item";
 	public static final Boolean SHOWBLOCKS_ITEM_ENABLEMENT_DEFAULT = true;
-	
-	// ABOUT TOOLBAR
-	public static final String ABOUT_TOOLBAR_ENABLEMENT_ID = PREFERENCES_PREFIX + "about_toolbar_enablement";
-	public static final String ABOUT_TOOLBAR_ENABLEMENT_LABEL = "About Toolbar";
-	public static final Boolean ABOUT_TOOLBAR_ENABLEMENT_DEFAULT = true;
-		
-	public static final String ABOUT_GROUP_ENABLEMENT_ID = PREFERENCES_PREFIX + "about_group_enablement";
-	public static final String ABOUT_GROUP_ENABLEMENT_LABEL = "About Group";
-	public static final Boolean ABOUT_GROUP_ENABLEMENT_DEFAULT = true;
-		
-	public static final String ABOUT_ITEM_ENABLEMENT_ID = PREFERENCES_PREFIX + "about_item_enablement";
-	public static final String ABOUT_ITEM_ENABLEMENT_LABEL = "About Item";
-	public static final Boolean ABOUT_ITEM_ENABLEMENT_DEFAULT = true;
 }
