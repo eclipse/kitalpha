@@ -100,37 +100,9 @@ public final class PreferenceConstants {
 	public static final String DOCUMENT_TOOLBAR_ENABLEMENT_LABEL = "Document Toolbar";
 	public static final Boolean DOCUMENT_TOOLBAR_ENABLEMENT_DEFAULT = true;
 	
-	public static final String MODE_GROUP_ENABLEMENT_ID = PREFERENCES_PREFIX + "mode_group_enablement";
-	public static final String MODE_GROUP_ENABLEMENT_LABEL = "Mode Group";
-	public static final Boolean MODE_GROUP_ENABLEMENT_DEFAULT = true;
-	
-	public static final String SOURCE_ITEM_ENABLEMENT_ID = PREFERENCES_PREFIX + "source_item_enablement";
-	public static final String SOURCE_ITEM_ENABLEMENT_LABEL = "Source Item";
-	public static final Boolean SOURCE_ITEM_ENABLEMENT_DEFAULT = true;
-	
 	public static final String DOCUMENT_GROUP_ENABLEMENT_ID = PREFERENCES_PREFIX + "document_group_enablement";
 	public static final String DOCUMENT_GROUP_ENABLEMENT_LABEL = "Document Group";
 	public static final Boolean DOCUMENT_GROUP_ENABLEMENT_DEFAULT = true;
-	
-	public static final String SAVE_ITEM_ENABLEMENT_ID = PREFERENCES_PREFIX + "save_item_enablement";
-	public static final String SAVE_ITEM_ENABLEMENT_LABEL = "Save Item";
-	public static final Boolean SAVE_ITEM_ENABLEMENT_DEFAULT = true;
-	
-	public static final String NEWPAGE_ITEM_ENABLEMENT_ID = PREFERENCES_PREFIX + "newPage_item_enablement";
-	public static final String NEWPAGE_ITEM_ENABLEMENT_LABEL = "New Page Item";
-	public static final Boolean NEWPAGE_ITEM_ENABLEMENT_DEFAULT = true;
-	
-	public static final String PREVIEW_ITEM_ENABLEMENT_ID = PREFERENCES_PREFIX + "preview_item_enablement";
-	public static final String PREVIEW_ITEM_ENABLEMENT_LABEL = "Preview Item";
-	public static final Boolean PREVIEW_ITEM_ENABLEMENT_DEFAULT = true;
-	
-	public static final String PRINT_ITEM_ENABLEMENT_ID = PREFERENCES_PREFIX + "print_item_enablement";
-	public static final String PRINT_ITEM_ENABLEMENT_LABEL = "Print Item";
-	public static final Boolean PRINT_ITEM_ENABLEMENT_DEFAULT = true;
-	
-	public static final String DOCPROPOS_ITEM_ENABLEMENT_ID = PREFERENCES_PREFIX + "docProps_item_enablement";
-	public static final String DOCPROPOS_ITEM_ENABLEMENT_LABEL = "DocProps Item";
-	public static final Boolean DOCPROPOS_ITEM_ENABLEMENT_DEFAULT = true;
 	
 	public static final String DOCTOOLS_GROUP_ENABLEMENT_ID = PREFERENCES_PREFIX + "docTools_group_enablement";
 	public static final String DOCTOOLS_GROUP_ENABLEMENT_LABEL = "Document Tools Group";
@@ -381,27 +353,6 @@ public final class PreferenceConstants {
 	public static final String LANGUAGE_ITEM_ENABLEMENT_LABEL = "Language Item";
 	public static final Boolean LANGUAGE_ITEM_ENABLEMENT_DEFAULT = true;
 	
-	// LINKS TOOLBAR
-	public static final String LINKS_TOOLBAR_ENABLEMENT_ID = PREFERENCES_PREFIX + "links_toolbar_enablement";
-	public static final String LINKS_TOOLBAR_ENABLEMENT_LABEL = "Links Toolbar";
-	public static final Boolean LINKS_TOOLBAR_ENABLEMENT_DEFAULT = true;
-	
-	public static final String LINKS_GROUP_ENABLEMENT_ID = PREFERENCES_PREFIX + "links_group_enablement";
-	public static final String LINKS_GROUP_ENABLEMENT_LABEL = "Links Group";
-	public static final Boolean LINKS_GROUP_ENABLEMENT_DEFAULT = true;
-	
-	public static final String LINK_ITEM_ENABLEMENT_ID = PREFERENCES_PREFIX + "link_item_enablement";
-	public static final String LINK_ITEM_ENABLEMENT_LABEL = "Link Item";
-	public static final Boolean LINK_ITEM_ENABLEMENT_DEFAULT = true;
-	
-	public static final String UNLINK_ITEM_ENABLEMENT_ID = PREFERENCES_PREFIX + "unlink_item_enablement";
-	public static final String UNLINK_ITEM_ENABLEMENT_LABEL = "Unlink Item";
-	public static final Boolean UNLINK_ITEM_ENABLEMENT_DEFAULT = true;
-	
-	public static final String ANCHOR_ITEM_ENABLEMENT_ID = PREFERENCES_PREFIX + "anchor_item_enablement";
-	public static final String ANCHOR_ITEM_ENABLEMENT_LABEL = "Anchor Item";
-	public static final Boolean ANCHOR_ITEM_ENABLEMENT_DEFAULT = true;
-	
 	// INSERT TOOLBAR
 	public static final String INSERT_TOOLBAR_ENABLEMENT_ID = PREFERENCES_PREFIX + "insert_toolbar_enablement";
 	public static final String INSERT_TOOLBAR_ENABLEMENT_LABEL = "Insert Toolbar";
@@ -411,14 +362,6 @@ public final class PreferenceConstants {
 	public static final String INSERT_GROUP_ENABLEMENT_LABEL = "Insert Group";
 	public static final Boolean INSERT_GROUP_ENABLEMENT_DEFAULT = true;
 	
-	public static final String IMAGE_ITEM_ENABLEMENT_ID = PREFERENCES_PREFIX + "image_item_enablement";
-	public static final String IMAGE_ITEM_ENABLEMENT_LABEL = "Image Item";
-	public static final Boolean IMAGE_ITEM_ENABLEMENT_DEFAULT = true;
-	
-	public static final String FLASH_ITEM_ENABLEMENT_ID = PREFERENCES_PREFIX + "flash_item_enablement";
-	public static final String FLASH_ITEM_ENABLEMENT_LABEL = "Flash Item";
-	public static final Boolean FLASH_ITEM_ENABLEMENT_DEFAULT = true;
-	
 	public static final String TABLE_ITEM_ENABLEMENT_ID = PREFERENCES_PREFIX + "table_item_enablement";
 	public static final String TABLE_ITEM_ENABLEMENT_LABEL = "Table Item";
 	public static final Boolean TABLE_ITEM_ENABLEMENT_DEFAULT = true;
@@ -427,21 +370,9 @@ public final class PreferenceConstants {
 	public static final String HORIZONTALRULE_ITEM_ENABLEMENT_LABEL = "Horizontal Rule Item";
 	public static final Boolean HORIZONTALRULE_ITEM_ENABLEMENT_DEFAULT = true;
 	
-	public static final String SMILEYS_ITEM_ENABLEMENT_ID = PREFERENCES_PREFIX + "smileys_item_enablement";
-	public static final String SMILEYS_ITEM_ENABLEMENT_LABEL = "Smileys Item";
-	public static final Boolean SMILEYS_ITEM_ENABLEMENT_DEFAULT = true;
-	
 	public static final String SPECIALCHAR_ITEM_ENABLEMENT_ID = PREFERENCES_PREFIX + "specialChar_item_enablement";
 	public static final String SPECIALCHAR_ITEM_ENABLEMENT_LABEL = "Special Char Item";
 	public static final Boolean SPECIALCHAR_ITEM_ENABLEMENT_DEFAULT = true;
-	
-	public static final String PAGEBREAK_ITEM_ENABLEMENT_ID = PREFERENCES_PREFIX + "pageBreak_item_enablement";
-	public static final String PAGEBREAK_ITEM_ENABLEMENT_LABEL = "Page Break Item";
-	public static final Boolean PAGEBREAK_ITEM_ENABLEMENT_DEFAULT = true;
-	
-	public static final String IFRAME_ITEM_ENABLEMENT_ID = PREFERENCES_PREFIX + "iFrame_item_enablement";
-	public static final String IFRAME_ITEM_ENABLEMENT_LABEL = "Iframe Item";
-	public static final Boolean IFRAME_ITEM_ENABLEMENT_DEFAULT = true;
 	
 	// STYLES TOOLBAR
 	public static final String STYLES_TOOLBAR_ENABLEMENT_ID = PREFERENCES_PREFIX + "styles_toolbar_enablement";
