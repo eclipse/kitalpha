@@ -46,6 +46,54 @@ public class EditorModel {
 				PreferenceConstants.GLOBAL_CONFIGURABLE_ENABLEMENT_LABEL
 			);
 		
+		// MDE ENABLE EDIT TOOLBAR
+		
+		//MDE_ENABLE_EDITING_TOOLBAR_ENABLEMENT_ID
+		List<EditorItem> mdeEnableEditGroupItems = new ArrayList<>();
+		mdeEnableEditGroupItems.add(new EditorItem(PreferenceConstants.MDE_EDITABLE_GROUP_ENABLEMENT_ID,
+				PreferenceConstants.MDE_OPEN_EDITOR_ITEM_ENABLEMENT_ID,
+				MDERichTextConstants.MDE_OPEN_EDITOR,
+				PreferenceConstants.MDE_OPEN_EDITOR_ITEM_ENABLEMENT_LABEL
+				));
+		
+		List<EditorGroup> mdeEnableEditToolbarGroups = new ArrayList<>();
+		mdeEnableEditToolbarGroups.add(new EditorGroup(PreferenceConstants.MDE_ENABLE_EDITING_TOOLBAR_ENABLEMENT_ID,
+				PreferenceConstants.MDE_EDITABLE_GROUP_ENABLEMENT_ID,
+				MDERichTextConstants.MDE_ENABLE_EDITING_TOOLBAR,
+				PreferenceConstants.MDE_EDITABLE_GROUP_ENABLEMENT_LABEL,
+				mdeEnableEditGroupItems
+				));
+		
+		toolbars.add(new EditorToolbar(null,
+				PreferenceConstants.MDE_ENABLE_EDITING_TOOLBAR_ENABLEMENT_ID,
+				MDERichTextConstants.MDE_ENABLE_EDITING_TOOLBAR,
+				PreferenceConstants.MDE_ENABLE_EDITING_TOOLBAR_ENABLEMENT_LABEL,
+				mdeEnableEditToolbarGroups
+				));
+		
+		// MDE REFRESH
+		List<EditorItem> mdeRefreshGroupItems = new ArrayList<>();
+		mdeRefreshGroupItems.add(new EditorItem(PreferenceConstants.MDE_REFRESH_GROUP_ENABLEMENT_ID,
+				PreferenceConstants.MDE_REFRESH_ITEM_ENABLEMENT_ID,
+				MDERichTextConstants.MDE_REFRESH,
+				PreferenceConstants.MDE_REFRESH_ITEM_ENABLEMENT_LABEL
+				));
+		
+		List<EditorGroup> mdeRefreshToolbarGroups = new ArrayList<>();
+		mdeRefreshToolbarGroups.add(new EditorGroup(PreferenceConstants.MDE_REFRESH_TOOLBAR_ENABLEMENT_ID,
+				PreferenceConstants.MDE_REFRESH_GROUP_ENABLEMENT_ID,
+				MDERichTextConstants.MDE_REFRESH,
+				PreferenceConstants.MDE_REFRESH_GROUP_ENABLEMENT_LABEL,
+				mdeRefreshGroupItems
+				));
+		
+		toolbars.add(new EditorToolbar(null,
+				PreferenceConstants.MDE_REFRESH_TOOLBAR_ENABLEMENT_ID,
+				MDERichTextConstants.MDE_REFRESH,
+				PreferenceConstants.MDE_REFRESH_TOOLBAR_ENABLEMENT_LABEL,
+				mdeRefreshToolbarGroups
+				));
+		
 		// MDE CLEAN TOOLBAR
 		List<EditorItem> mdeCleaningGroupItems = new ArrayList<>();
 		mdeCleaningGroupItems.add(new EditorItem(PreferenceConstants.MDE_CLEAN_GROUP_ENABLEMENT_ID,

@@ -46,6 +46,15 @@ public final class PreferenceConstants {
 	public static final String MDE_SAVE_ITEM_ENABLEMENT_LABEL = "MDE Save Item";
 	public static final Boolean MDE_SAVE_ITEM_ENABLEMENT_DEFAULT = true;
 	
+	// MDE REFRESH TOOLBAR
+	public static final String MDE_REFRESH_TOOLBAR_ENABLEMENT_ID = PREFERENCES_PREFIX + "mdeRefresh_toolbar_enablement";
+	public static final String MDE_REFRESH_TOOLBAR_ENABLEMENT_LABEL = "MDE Refresh Toolbar";
+	public static final Boolean MDE_REFRESH_TOOLBAR_ENABLEMENT_DEFAULT = true;
+	
+	public static final String MDE_REFRESH_GROUP_ENABLEMENT_ID = PREFERENCES_PREFIX + "mdeRefresh_group_enablement";
+	public static final String MDE_REFRESH_GROUP_ENABLEMENT_LABEL = "MDE Refresh Group";
+	public static final Boolean MDE_REFRESH_GROUP_ENABLEMENT_DEFAULT = true;
+	
 	public static final String MDE_REFRESH_ITEM_ENABLEMENT_ID = PREFERENCES_PREFIX + "mdeRefresh_item_enablement";
 	public static final String MDE_REFRESH_ITEM_ENABLEMENT_LABEL = "MDE Refresh Item";
 	public static final Boolean MDE_REFRESH_ITEM_ENABLEMENT_DEFAULT = true;
@@ -72,9 +81,9 @@ public final class PreferenceConstants {
 	public static final String MDE_ENABLE_EDITING_TOOLBAR_ENABLEMENT_LABEL = "MDE EnableEditing Toolbar";
 	public static final Boolean MDE_ENABLE_EDITING_TOOLBAR_ENABLEMENT_DEFAULT = true;
 	
-	public static final String MDE_EDITABLE_ITEM_ENABLEMENT_ID = PREFERENCES_PREFIX + "mdeEditable_item_enablement";
-	public static final String MDE_EDITABLE_ITEM_ENABLEMENT_LABEL = "MDE Editable Item";
-	public static final Boolean MDE_EDITABLE_ITEM_ENABLEMENT_DEFAULT = true;
+	public static final String MDE_EDITABLE_GROUP_ENABLEMENT_ID = PREFERENCES_PREFIX + "mdeEditable_group_enablement";
+	public static final String MDE_EDITABLE_GROUP_ENABLEMENT_LABEL = "MDE Editable Group";
+	public static final Boolean MDE_EDITABLE_GROUP_ENABLEMENT_DEFAULT = true;
 	
 	// MDE CLEAN TOOLBAR
 	public static final String MDE_CLEAN_TOOLBAR_ENABLEMENT_ID = PREFERENCES_PREFIX + "mdeClean_toolbar_enablement";

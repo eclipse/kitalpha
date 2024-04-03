@@ -15,6 +15,8 @@ package org.polarsys.kitalpha.richtext.widget.factory;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
+import org.polarsys.kitalpha.richtext.common.util.MDERichTextHelper;
+import org.polarsys.kitalpha.richtext.nebula.widget.MDENebulaBasedRichTextWidget;
 import org.polarsys.kitalpha.richtext.nebula.widget.MDENebulaRichTextConfiguration;
 import org.polarsys.kitalpha.richtext.nebula.widget.MDERichTextConstants;
 import org.polarsys.kitalpha.richtext.widget.MDERichtextWidgetImpl;
@@ -22,6 +24,8 @@ import org.polarsys.kitalpha.richtext.widget.configurable.editormodel.EditorGrou
 import org.polarsys.kitalpha.richtext.widget.configurable.editormodel.EditorItem;
 import org.polarsys.kitalpha.richtext.widget.configurable.editormodel.EditorModel;
 import org.polarsys.kitalpha.richtext.widget.configurable.editormodel.EditorToolbar;
+import org.polarsys.kitalpha.richtext.widget.editor.tools.OpenInEditorHandler;
+import org.polarsys.kitalpha.richtext.widget.internal.Activator;
 
 public class MDERichTextConfigurableFactory extends MDERichTextFactory {
 	public MDERichTextWidget createPreferencesCompliantRichTextWidget(Composite parent) {
@@ -62,7 +66,7 @@ public class MDERichTextConfigurableFactory extends MDERichTextFactory {
 					
 					if (itemIsActivated)
 					{
-						configuration.initializeToolbarItem(toolbar.getRteId(), item.getRteId());
+							configuration.initializeToolbarItem(toolbar.getRteId(), item.getRteId());
 					}
 					else
 					{
@@ -94,6 +98,15 @@ public class MDERichTextConfigurableFactory extends MDERichTextFactory {
 		
 		addEditorToolbarItems(widget);
 		return widget;
+	}
+	
+	@Override
+	protected void addEditorToolbarItems(MDENebulaBasedRichTextWidget widget) {
+		super.addEditorToolbarItems(widget);
+		widget.addToolbarItem(widget, MDERichTextConstants.MDE_OPEN_EDITOR, MDERichTextConstants.MDE_OPEN_EDITOR, "Open in Editor", //$NON-NLS-1$ 
+				MDERichTextConstants.MDE_ENABLE_EDITING_TOOLBAR,
+				MDERichTextHelper.getURL(Activator.PLUGIN_ID, "icons/openInEditor.gif"), //$NON-NLS-1$
+				new OpenInEditorHandler());
 	}
 	
 	
