@@ -123,63 +123,6 @@ public class EditorModel {
 			));
 		
 		
-		// DOCUMENT TOOLBAR
-		List<EditorItem> modeGroupItems = new ArrayList<>();
-		modeGroupItems.add(new EditorItem(PreferenceConstants.MODE_GROUP_ENABLEMENT_ID,
-				PreferenceConstants.SOURCE_ITEM_ENABLEMENT_ID,
-				MDERichTextConstants.SOURCE,
-				PreferenceConstants.SOURCE_ITEM_ENABLEMENT_LABEL
-			));
-		
-		List<EditorGroup> documentToolbarGroups = new ArrayList<>();
-		documentToolbarGroups.add(new EditorGroup(PreferenceConstants.DOCUMENT_TOOLBAR_ENABLEMENT_ID,
-				PreferenceConstants.MODE_GROUP_ENABLEMENT_ID,
-				MDERichTextConstants.MODE_GROUP,
-				PreferenceConstants.MODE_GROUP_ENABLEMENT_LABEL,
-				modeGroupItems
-			));
-		
-		List<EditorItem> documentGroupItems = new ArrayList<>();
-		documentGroupItems.add(new EditorItem(PreferenceConstants.DOCUMENT_GROUP_ENABLEMENT_ID,
-				PreferenceConstants.SAVE_ITEM_ENABLEMENT_ID,
-				MDERichTextConstants.SAVE,
-				PreferenceConstants.SAVE_ITEM_ENABLEMENT_LABEL
-			));
-		documentGroupItems.add(new EditorItem(PreferenceConstants.DOCUMENT_GROUP_ENABLEMENT_ID,
-				PreferenceConstants.NEWPAGE_ITEM_ENABLEMENT_ID,
-				MDERichTextConstants.NEW_PAGE,
-				PreferenceConstants.NEWPAGE_ITEM_ENABLEMENT_LABEL
-			));
-		documentGroupItems.add(new EditorItem(PreferenceConstants.DOCUMENT_GROUP_ENABLEMENT_ID,
-				PreferenceConstants.PREVIEW_ITEM_ENABLEMENT_ID,
-				MDERichTextConstants.PREVIEW,
-				PreferenceConstants.PREVIEW_ITEM_ENABLEMENT_LABEL
-			));
-		documentGroupItems.add(new EditorItem(PreferenceConstants.DOCUMENT_GROUP_ENABLEMENT_ID,
-				PreferenceConstants.PRINT_ITEM_ENABLEMENT_ID,
-				MDERichTextConstants.PRINT,
-				PreferenceConstants.PRINT_ITEM_ENABLEMENT_LABEL
-			));
-		documentGroupItems.add(new EditorItem(PreferenceConstants.DOCUMENT_GROUP_ENABLEMENT_ID,
-				PreferenceConstants.DOCPROPOS_ITEM_ENABLEMENT_ID,
-				MDERichTextConstants.DOC_PROPOS,
-				PreferenceConstants.DOCPROPOS_ITEM_ENABLEMENT_LABEL
-			));
-		
-		documentToolbarGroups.add(new EditorGroup(PreferenceConstants.DOCUMENT_TOOLBAR_ENABLEMENT_ID,
-				PreferenceConstants.DOCUMENT_GROUP_ENABLEMENT_ID,
-				MDERichTextConstants.DOCUMENT_GROUP,
-				PreferenceConstants.DOCUMENT_GROUP_ENABLEMENT_LABEL,
-				documentGroupItems
-			));
-		
-		toolbars.add(new EditorToolbar(null,
-				PreferenceConstants.DOCUMENT_TOOLBAR_ENABLEMENT_ID,
-				MDERichTextConstants.DOCUMENT_TOOLBAR,
-				PreferenceConstants.DOCUMENT_TOOLBAR_ENABLEMENT_LABEL,
-				documentToolbarGroups
-			));
-		
 		// CLIPBOARD TOOLBAR
 		List<EditorItem> clipboardGroupItems = new ArrayList<>();
 		clipboardGroupItems.add(new EditorItem(PreferenceConstants.CLIPBOARD_GROUP_ENABLEMENT_ID,
@@ -547,51 +490,9 @@ public class EditorModel {
 				paragraphToolbarGroups
 			));
 		
-		// LINKS TOOLBAR
-		List<EditorItem> linksGroupItems = new ArrayList<>();
-		linksGroupItems.add(new EditorItem(PreferenceConstants.LINKS_GROUP_ENABLEMENT_ID,
-				PreferenceConstants.LINK_ITEM_ENABLEMENT_ID,
-				MDERichTextConstants.LINK,
-				PreferenceConstants.LINK_ITEM_ENABLEMENT_LABEL
-			));
-		linksGroupItems.add(new EditorItem(PreferenceConstants.LINKS_GROUP_ENABLEMENT_ID,
-				PreferenceConstants.UNLINK_ITEM_ENABLEMENT_ID,
-				MDERichTextConstants.UNLINK,
-				PreferenceConstants.UNLINK_ITEM_ENABLEMENT_LABEL
-			));
-		linksGroupItems.add(new EditorItem(PreferenceConstants.LINKS_GROUP_ENABLEMENT_ID,
-				PreferenceConstants.ANCHOR_ITEM_ENABLEMENT_ID,
-				MDERichTextConstants.ANCHOR,
-				PreferenceConstants.ANCHOR_ITEM_ENABLEMENT_LABEL
-			));
-		
-		List<EditorGroup> linksToolbarGroups = new ArrayList<>();
-		linksToolbarGroups.add(new EditorGroup(PreferenceConstants.LINKS_TOOLBAR_ENABLEMENT_ID,
-				PreferenceConstants.LINKS_GROUP_ENABLEMENT_ID,
-				MDERichTextConstants.LINKS_GROUP,
-				PreferenceConstants.LINKS_GROUP_ENABLEMENT_LABEL,
-				linksGroupItems
-			));
-		
-		toolbars.add(new EditorToolbar(null,
-				PreferenceConstants.LINKS_TOOLBAR_ENABLEMENT_ID,
-				MDERichTextConstants.LINKS_TOOLBAR,
-				PreferenceConstants.LINKS_TOOLBAR_ENABLEMENT_LABEL,
-				linksToolbarGroups
-			));
-		
+
 		// INSERT TOOLBAR
 		List<EditorItem> insertGroupItems = new ArrayList<>();
-		insertGroupItems.add(new EditorItem(PreferenceConstants.INSERT_GROUP_ENABLEMENT_ID,
-				PreferenceConstants.IMAGE_ITEM_ENABLEMENT_ID,
-				MDERichTextConstants.IMAGE,
-				PreferenceConstants.IMAGE_ITEM_ENABLEMENT_LABEL
-			));
-		insertGroupItems.add(new EditorItem(PreferenceConstants.INSERT_GROUP_ENABLEMENT_ID,
-				PreferenceConstants.FLASH_ITEM_ENABLEMENT_ID,
-				MDERichTextConstants.FLASH,
-				PreferenceConstants.FLASH_ITEM_ENABLEMENT_LABEL
-			));
 		insertGroupItems.add(new EditorItem(PreferenceConstants.INSERT_GROUP_ENABLEMENT_ID,
 				PreferenceConstants.TABLE_ITEM_ENABLEMENT_ID,
 				MDERichTextConstants.TABLE,
@@ -603,24 +504,9 @@ public class EditorModel {
 				PreferenceConstants.HORIZONTALRULE_ITEM_ENABLEMENT_LABEL
 			));
 		insertGroupItems.add(new EditorItem(PreferenceConstants.INSERT_GROUP_ENABLEMENT_ID,
-				PreferenceConstants.SMILEYS_ITEM_ENABLEMENT_ID,
-				MDERichTextConstants.SMILEYS,
-				PreferenceConstants.SMILEYS_ITEM_ENABLEMENT_LABEL
-			));
-		insertGroupItems.add(new EditorItem(PreferenceConstants.INSERT_GROUP_ENABLEMENT_ID,
 				PreferenceConstants.SPECIALCHAR_ITEM_ENABLEMENT_ID,
 				MDERichTextConstants.SPECIAL_CHAR,
 				PreferenceConstants.SPECIALCHAR_ITEM_ENABLEMENT_LABEL
-			));
-		insertGroupItems.add(new EditorItem(PreferenceConstants.INSERT_GROUP_ENABLEMENT_ID,
-				PreferenceConstants.PAGEBREAK_ITEM_ENABLEMENT_ID,
-				MDERichTextConstants.PAGE_BREAK,
-				PreferenceConstants.PAGEBREAK_ITEM_ENABLEMENT_LABEL
-			));
-		insertGroupItems.add(new EditorItem(PreferenceConstants.INSERT_GROUP_ENABLEMENT_ID,
-				PreferenceConstants.IFRAME_ITEM_ENABLEMENT_ID,
-				MDERichTextConstants.IFRAME,
-				PreferenceConstants.IFRAME_ITEM_ENABLEMENT_LABEL
 			));
 		
 		List<EditorGroup> insertToolbarGroups = new ArrayList<>();

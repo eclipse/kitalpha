@@ -40,8 +40,16 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 				PreferenceConstants.MDE_SAVE_TOOLBAR_ENABLEMENT_DEFAULT
 		);
 		preferenceStore.setDefault(
+				PreferenceConstants.MDE_CLEAN_GROUP_ENABLEMENT_ID,
+				PreferenceConstants.MDE_CLEAN_GROUP_ENABLEMENT_DEFAULT
+		);
+		preferenceStore.setDefault(
 				PreferenceConstants.MDE_SAVE_ITEM_ENABLEMENT_ID,
 				PreferenceConstants.MDE_SAVE_ITEM_ENABLEMENT_DEFAULT
+		);
+		preferenceStore.setDefault(
+				PreferenceConstants.MDE_SAVE_GROUP_ENABLEMENT_ID,
+				PreferenceConstants.MDE_SAVE_GROUP_ENABLEMENT_DEFAULT
 		);
 		preferenceStore.setDefault(
 				PreferenceConstants.MDE_REFRESH_ITEM_ENABLEMENT_ID,
@@ -51,6 +59,10 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 				PreferenceConstants.MDE_LINKS_TOOLBAR_ENABLEMENT_ID,
 				PreferenceConstants.MDE_LINKS_TOOLBAR_ENABLEMENT_DEFAULT
 		);
+		preferenceStore.setDefault(
+				PreferenceConstants.MDE_LINKS_GROUP_ENABLEMENT_ID,
+				PreferenceConstants.MDE_LINKS_GROUP_ENABLEMENT_DEFAULT
+				);
 		preferenceStore.setDefault(
 				PreferenceConstants.MDE_ADDLINK_ITEM_ENABLEMENT_ID,
 				PreferenceConstants.MDE_ADDLINK_ITEM_ENABLEMENT_DEFAULT
@@ -84,36 +96,8 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 				PreferenceConstants.DOCUMENT_TOOLBAR_ENABLEMENT_DEFAULT
 		);
 		preferenceStore.setDefault(
-				PreferenceConstants.MODE_GROUP_ENABLEMENT_ID,
-				PreferenceConstants.MODE_GROUP_ENABLEMENT_DEFAULT
-		);
-		preferenceStore.setDefault(
-				PreferenceConstants.SOURCE_ITEM_ENABLEMENT_ID,
-				PreferenceConstants.SOURCE_ITEM_ENABLEMENT_DEFAULT
-		);
-		preferenceStore.setDefault(
 				PreferenceConstants.DOCUMENT_GROUP_ENABLEMENT_ID,
 				PreferenceConstants.DOCUMENT_GROUP_ENABLEMENT_DEFAULT
-		);
-		preferenceStore.setDefault(
-				PreferenceConstants.SAVE_ITEM_ENABLEMENT_ID,
-				PreferenceConstants.SAVE_ITEM_ENABLEMENT_DEFAULT
-		);
-		preferenceStore.setDefault(
-				PreferenceConstants.NEWPAGE_ITEM_ENABLEMENT_ID,
-				PreferenceConstants.NEWPAGE_ITEM_ENABLEMENT_DEFAULT
-		);
-		preferenceStore.setDefault(
-				PreferenceConstants.PREVIEW_ITEM_ENABLEMENT_ID,
-				PreferenceConstants.PREVIEW_ITEM_ENABLEMENT_DEFAULT
-		);
-		preferenceStore.setDefault(
-				PreferenceConstants.PRINT_ITEM_ENABLEMENT_ID,
-				PreferenceConstants.PRINT_ITEM_ENABLEMENT_DEFAULT
-		);
-		preferenceStore.setDefault(
-				PreferenceConstants.DOCPROPOS_ITEM_ENABLEMENT_ID,
-				PreferenceConstants.DOCPROPOS_ITEM_ENABLEMENT_DEFAULT
 		);
 		preferenceStore.setDefault(
 				PreferenceConstants.DOCTOOLS_GROUP_ENABLEMENT_ID,
@@ -360,40 +344,12 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 				PreferenceConstants.LANGUAGE_ITEM_ENABLEMENT_DEFAULT
 		);
 		preferenceStore.setDefault(
-				PreferenceConstants.LINKS_TOOLBAR_ENABLEMENT_ID,
-				PreferenceConstants.LINKS_TOOLBAR_ENABLEMENT_DEFAULT
-		);
-		preferenceStore.setDefault(
-				PreferenceConstants.LINKS_GROUP_ENABLEMENT_ID,
-				PreferenceConstants.LINKS_GROUP_ENABLEMENT_DEFAULT
-		);
-		preferenceStore.setDefault(
-				PreferenceConstants.LINK_ITEM_ENABLEMENT_ID,
-				PreferenceConstants.LINK_ITEM_ENABLEMENT_DEFAULT
-		);
-		preferenceStore.setDefault(
-				PreferenceConstants.UNLINK_ITEM_ENABLEMENT_ID,
-				PreferenceConstants.UNLINK_ITEM_ENABLEMENT_DEFAULT
-		);
-		preferenceStore.setDefault(
-				PreferenceConstants.ANCHOR_ITEM_ENABLEMENT_ID,
-				PreferenceConstants.ANCHOR_ITEM_ENABLEMENT_DEFAULT
-		);
-		preferenceStore.setDefault(
 				PreferenceConstants.INSERT_TOOLBAR_ENABLEMENT_ID,
 				PreferenceConstants.INSERT_TOOLBAR_ENABLEMENT_DEFAULT
 		);
 		preferenceStore.setDefault(
 				PreferenceConstants.INSERT_GROUP_ENABLEMENT_ID,
 				PreferenceConstants.INSERT_GROUP_ENABLEMENT_DEFAULT
-		);
-		preferenceStore.setDefault(
-				PreferenceConstants.IMAGE_ITEM_ENABLEMENT_ID,
-				PreferenceConstants.IMAGE_ITEM_ENABLEMENT_DEFAULT
-		);
-		preferenceStore.setDefault(
-				PreferenceConstants.FLASH_ITEM_ENABLEMENT_ID,
-				PreferenceConstants.FLASH_ITEM_ENABLEMENT_DEFAULT
 		);
 		preferenceStore.setDefault(
 				PreferenceConstants.TABLE_ITEM_ENABLEMENT_ID,
@@ -404,20 +360,8 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 				PreferenceConstants.HORIZONTALRULE_ITEM_ENABLEMENT_DEFAULT
 		);
 		preferenceStore.setDefault(
-				PreferenceConstants.SMILEYS_ITEM_ENABLEMENT_ID,
-				PreferenceConstants.SMILEYS_ITEM_ENABLEMENT_DEFAULT
-		);
-		preferenceStore.setDefault(
 				PreferenceConstants.SPECIALCHAR_ITEM_ENABLEMENT_ID,
 				PreferenceConstants.SPECIALCHAR_ITEM_ENABLEMENT_DEFAULT
-		);
-		preferenceStore.setDefault(
-				PreferenceConstants.PAGEBREAK_ITEM_ENABLEMENT_ID,
-				PreferenceConstants.PAGEBREAK_ITEM_ENABLEMENT_DEFAULT
-		);
-		preferenceStore.setDefault(
-				PreferenceConstants.IFRAME_ITEM_ENABLEMENT_ID,
-				PreferenceConstants.IFRAME_ITEM_ENABLEMENT_DEFAULT
 		);
 		preferenceStore.setDefault(
 				PreferenceConstants.STYLES_TOOLBAR_ENABLEMENT_ID,

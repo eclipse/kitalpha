@@ -16,12 +16,12 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
 import org.polarsys.kitalpha.richtext.nebula.widget.MDENebulaRichTextConfiguration;
+import org.polarsys.kitalpha.richtext.nebula.widget.MDERichTextConstants;
 import org.polarsys.kitalpha.richtext.widget.MDERichtextWidgetImpl;
 import org.polarsys.kitalpha.richtext.widget.configurable.editormodel.EditorGroup;
 import org.polarsys.kitalpha.richtext.widget.configurable.editormodel.EditorItem;
 import org.polarsys.kitalpha.richtext.widget.configurable.editormodel.EditorModel;
 import org.polarsys.kitalpha.richtext.widget.configurable.editormodel.EditorToolbar;
-import org.polarsys.kitalpha.richtext.widget.configurable.preferences.core.PreferenceConstants;
 
 public class MDERichTextConfigurableFactory extends MDERichTextFactory {
 	public MDERichTextWidget createPreferencesCompliantRichTextWidget(Composite parent) {
@@ -66,19 +66,21 @@ public class MDERichTextConfigurableFactory extends MDERichTextFactory {
 					}
 					else
 					{
-						if (item.getId().equals(PreferenceConstants.SMILEYS_ITEM_ENABLEMENT_ID))
-						{
-							configuration.setOption(MDENebulaRichTextConfiguration.REMOVE_PLUGINS, item.getRteId());
-						}
-						else
-						{
-							configuration.removeToolbarItems(item.getRteId());
-						}
+						configuration.removeToolbarItems(item.getRteId());
 					}
 				}
 			}
 		}
 		
+		// Remove systematically when we configure the rich text editor
+		configuration.setOption(MDENebulaRichTextConfiguration.REMOVE_PLUGINS, MDERichTextConstants.SMILEYS);
+		
+		configuration.removeDefaultToolbarButton(MDERichTextConstants.FLASH);
+		configuration.removeDefaultToolbarButton(MDERichTextConstants.IFRAME);
+		configuration.removeDefaultToolbarButton(MDERichTextConstants.IMAGE);
+		configuration.removeDefaultToolbarButton(MDERichTextConstants.PAGE_BREAK);
+		configuration.removeDefaultToolbarButton(MDERichTextConstants.SMILEYS);
+
 		MDERichtextWidgetImpl widget;
 		
 		if (style != -1)
