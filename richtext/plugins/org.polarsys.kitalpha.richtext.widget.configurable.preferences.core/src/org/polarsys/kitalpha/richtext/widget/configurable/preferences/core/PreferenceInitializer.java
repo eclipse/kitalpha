@@ -76,8 +76,8 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 				PreferenceConstants.MDE_ENABLE_EDITING_TOOLBAR_ENABLEMENT_DEFAULT
 		);
 		preferenceStore.setDefault(
-				PreferenceConstants.MDE_EDITABLE_ITEM_ENABLEMENT_ID,
-				PreferenceConstants.MDE_EDITABLE_ITEM_ENABLEMENT_DEFAULT
+				PreferenceConstants.MDE_EDITABLE_GROUP_ENABLEMENT_ID,
+				PreferenceConstants.MDE_EDITABLE_GROUP_ENABLEMENT_DEFAULT
 		);
 		preferenceStore.setDefault(
 				PreferenceConstants.MDE_CLEAN_TOOLBAR_ENABLEMENT_ID,
@@ -86,6 +86,18 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 		preferenceStore.setDefault(
 				PreferenceConstants.MDE_CLEAN_ITEM_ENABLEMENT_ID,
 				PreferenceConstants.MDE_CLEAN_ITEM_ENABLEMENT_DEFAULT
+		);
+		preferenceStore.setDefault(
+				PreferenceConstants.MDE_REFRESH_TOOLBAR_ENABLEMENT_ID,
+				PreferenceConstants.MDE_REFRESH_TOOLBAR_ENABLEMENT_DEFAULT
+		);
+		preferenceStore.setDefault(
+				PreferenceConstants.MDE_REFRESH_GROUP_ENABLEMENT_ID,
+				PreferenceConstants.MDE_REFRESH_GROUP_ENABLEMENT_DEFAULT
+		);
+		preferenceStore.setDefault(
+				PreferenceConstants.MDE_REFRESH_ITEM_ENABLEMENT_ID,
+				PreferenceConstants.MDE_REFRESH_ITEM_ENABLEMENT_DEFAULT
 		);
 		preferenceStore.setDefault(
 				PreferenceConstants.MDE_OPEN_EDITOR_ITEM_ENABLEMENT_ID,
