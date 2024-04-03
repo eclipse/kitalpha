@@ -15,8 +15,6 @@ package org.polarsys.kitalpha.richtext.widget.factory;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
-import org.polarsys.kitalpha.richtext.common.util.MDERichTextHelper;
-import org.polarsys.kitalpha.richtext.nebula.widget.MDENebulaBasedRichTextWidget;
 import org.polarsys.kitalpha.richtext.nebula.widget.MDENebulaRichTextConfiguration;
 import org.polarsys.kitalpha.richtext.nebula.widget.MDERichTextConstants;
 import org.polarsys.kitalpha.richtext.widget.MDERichtextWidgetImpl;
@@ -24,8 +22,6 @@ import org.polarsys.kitalpha.richtext.widget.configurable.editormodel.EditorGrou
 import org.polarsys.kitalpha.richtext.widget.configurable.editormodel.EditorItem;
 import org.polarsys.kitalpha.richtext.widget.configurable.editormodel.EditorModel;
 import org.polarsys.kitalpha.richtext.widget.configurable.editormodel.EditorToolbar;
-import org.polarsys.kitalpha.richtext.widget.editor.tools.OpenInEditorHandler;
-import org.polarsys.kitalpha.richtext.widget.internal.Activator;
 
 public class MDERichTextConfigurableFactory extends MDERichTextFactory {
 	public MDERichTextWidget createPreferencesCompliantRichTextWidget(Composite parent) {
@@ -78,12 +74,11 @@ public class MDERichTextConfigurableFactory extends MDERichTextFactory {
 		
 		// Remove systematically when we configure the rich text editor
 		configuration.setOption(MDENebulaRichTextConfiguration.REMOVE_PLUGINS, MDERichTextConstants.SMILEYS);
-		
-		configuration.removeDefaultToolbarButton(MDERichTextConstants.FLASH);
-		configuration.removeDefaultToolbarButton(MDERichTextConstants.IFRAME);
-		configuration.removeDefaultToolbarButton(MDERichTextConstants.IMAGE);
-		configuration.removeDefaultToolbarButton(MDERichTextConstants.PAGE_BREAK);
-		configuration.removeDefaultToolbarButton(MDERichTextConstants.SMILEYS);
+		configuration.removeToolbarItems(MDERichTextConstants.FLASH);
+		configuration.removeToolbarItems(MDERichTextConstants.IFRAME);
+		configuration.removeToolbarItems(MDERichTextConstants.IMAGE);
+		configuration.removeToolbarItems(MDERichTextConstants.PAGE_BREAK);
+		configuration.removeToolbarItems(MDERichTextConstants.SMILEYS);
 
 		MDERichtextWidgetImpl widget;
 		
@@ -96,17 +91,8 @@ public class MDERichTextConfigurableFactory extends MDERichTextFactory {
 			widget = new MDERichtextWidgetImpl(parent, configuration);
 		}
 		
-		addEditorToolbarItems(widget);
+		addToolbarItems(widget);
 		return widget;
-	}
-	
-	@Override
-	protected void addEditorToolbarItems(MDENebulaBasedRichTextWidget widget) {
-		super.addEditorToolbarItems(widget);
-		widget.addToolbarItem(widget, MDERichTextConstants.MDE_OPEN_EDITOR, MDERichTextConstants.MDE_OPEN_EDITOR, "Open in Editor", //$NON-NLS-1$ 
-				MDERichTextConstants.MDE_ENABLE_EDITING_TOOLBAR,
-				MDERichTextHelper.getURL(Activator.PLUGIN_ID, "icons/openInEditor.gif"), //$NON-NLS-1$
-				new OpenInEditorHandler());
 	}
 	
 	
