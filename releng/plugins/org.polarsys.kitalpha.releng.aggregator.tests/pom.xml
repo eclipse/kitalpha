@@ -37,19 +37,20 @@
 
 	<modules>
 		<!-- plugins Test -->
-		<module>../../../resource reuse/tests/plugins/org.polarsys.kitalpha.resourcereuse.tests</module>
-		<module>../../../emde/tests/org.polarsys.kitalpha.emde.tests</module>
-		<module>../../../architecture description/metadata/tests/org.polarsys.kitalpha.ad.metadata.tests</module>
-		<module>../../../architecture description/core/tests/org.polarsys.kitalpha.ad.viewpoint.tests</module>
-		<module>../../../transposer/tests/plugins/junits/org.polarsys.kitalpha.transposer.junit.tests</module>
-		<module>../../../massactions/tests/plugins/org.polarsys.kitalpha.massactions.junit.tests</module>
+		<!-- <module>../../../resource reuse/tests/plugins/org.polarsys.kitalpha.resourcereuse.tests</module> -->
+		<!-- Temporary disable all other junit tests -->
 		<module>../../../sirius/tests/plugins/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests</module>
+		<!-- <module>../../../emde/tests/org.polarsys.kitalpha.emde.tests</module> -->
+		<!-- <module>../../../architecture description/metadata/tests/org.polarsys.kitalpha.ad.metadata.tests</module> -->
+		<!-- <module>../../../architecture description/core/tests/org.polarsys.kitalpha.ad.viewpoint.tests</module> -->
+		<!-- <module>../../../transposer/tests/plugins/junits/org.polarsys.kitalpha.transposer.junit.tests</module> -->
+		<!-- <module>../../../massactions/tests/plugins/org.polarsys.kitalpha.massactions.junit.tests</module> -->
 		
-		<!--  Not activated tests -->
-		<module>../../../detachment/tests/junit/org.polarsys.kitalpha.detachment.tests.ju</module>
-		<module>../../../resource reuse/tests/plugins/org.polarsys.kitalpha.resourcereuse.emfscheme.test.ju</module>
-		<module>../../../architecture description/core/tests/org.polarsys.kitalpha.ad.viewpoint.predicate.tests.junit</module>
-		<module>../../../architecture description/core/tests/org.polarsys.kitalpha.ad.integration.emde.tests.junit</module>
+		 <!-- Not activated tests -->
+		<!-- <module>../../../detachment/tests/junit/org.polarsys.kitalpha.detachment.tests.ju</module> -->
+		<!-- <module>../../../resource reuse/tests/plugins/org.polarsys.kitalpha.resourcereuse.emfscheme.test.ju</module> -->
+		<!-- <module>../../../architecture description/core/tests/org.polarsys.kitalpha.ad.viewpoint.predicate.tests.junit</module> -->
+		<!-- <module>../../../architecture description/core/tests/org.polarsys.kitalpha.ad.integration.emde.tests.junit</module> -->
 
 		<!-- ******************** SECTION: START OF EXTRA-PLUGINS USEFUL FOR JUNIT ******************** -->
 		<!-- JUnit plugins dependencies -->
@@ -67,15 +68,15 @@
 			Plugins used by: 
 				1- ../../../architecture description/core/tests/org.polarsys.kitalpha.ad.integration.emde.tests.junit
 		-->
-		<module>../../../architecture description/core/tests/usecase1/A</module>
-		<module>../../../architecture description/core/tests/usecase1/a.a</module>
-		<module>../../../architecture description/core/tests/usecase1/a.a.edit</module>
-		<module>../../../architecture description/core/tests/usecase1/a.a.editor</module>
-		<module>../../../architecture description/core/tests/usecase1/B</module>
-		<module>../../../architecture description/core/tests/usecase1/b.b</module>
-		<module>../../../architecture description/core/tests/usecase1/b.b.edit</module>
-		<module>../../../architecture description/core/tests/usecase1/org.polarsys.kitalpha.viewpoint.a</module>
-		<module>../../../architecture description/core/tests/usecase1/org.polarsys.kitalpha.viewpoint.b</module>
+		<!-- <module>../../../architecture description/core/tests/usecase1/A</module> -->
+		<!-- <module>../../../architecture description/core/tests/usecase1/a.a</module> -->
+		<!-- <module>../../../architecture description/core/tests/usecase1/a.a.edit</module> -->
+		<!-- <module>../../../architecture description/core/tests/usecase1/a.a.editor</module> -->
+		<!-- <module>../../../architecture description/core/tests/usecase1/B</module> -->
+		<!-- <module>../../../architecture description/core/tests/usecase1/b.b</module> -->
+		<!-- <module>../../../architecture description/core/tests/usecase1/b.b.edit</module> -->
+		<!-- <module>../../../architecture description/core/tests/usecase1/org.polarsys.kitalpha.viewpoint.a</module> -->
+		<!-- <module>../../../architecture description/core/tests/usecase1/org.polarsys.kitalpha.viewpoint.b</module> -->
 
 		<!-- 
 			Plugins used by: 

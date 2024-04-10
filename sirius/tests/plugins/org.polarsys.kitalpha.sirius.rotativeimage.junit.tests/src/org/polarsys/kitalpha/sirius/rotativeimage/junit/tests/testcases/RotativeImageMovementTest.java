@@ -16,12 +16,17 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.transaction.RecordingCommand;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.gmf.runtime.diagram.ui.actions.ActionIds;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditor;
@@ -41,6 +46,8 @@ import org.eclipse.sirius.ui.business.api.dialect.DialectUIManager;
 import org.eclipse.sirius.ui.business.api.session.IEditingSession;
 import org.eclipse.sirius.ui.business.api.session.SessionUIManager;
 import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
+import org.eclipse.swt.graphics.Resource;
+import org.eclipse.ui.PlatformUI;
 import org.junit.Assert;
 import org.polarsys.kitalpha.sirius.rotativeimage.figures.Rotative4ImagesSVGWorkspaceImageFigure;
 
@@ -76,8 +83,9 @@ public class RotativeImageMovementTest extends SiriusDiagramTestCase {
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
+		Resource.setNonDisposeHandler(null);
 		genericSetUp(TEST_XMI_PATH, TEST_ODESIGN_PATH, TEST_AIRD_PATH);
-	}
+  }
 
 	/**
 	 * Ensure Rotative and 4Images WorkspaceImages reference expected SVG images
@@ -94,34 +102,56 @@ public class RotativeImageMovementTest extends SiriusDiagramTestCase {
 		TestsUtil.synchronizationWithUIThread();
 
 		List<DDiagramElement> diagramElementsFromLabel = getDiagramElementsFromUid(ddiagram, BOTTOM_E1_BORDERNODE_ID, DDiagramElement.class);
-		for (DDiagramElement dDiagramElement : diagramElementsFromLabel) {
-			IGraphicalEditPart editPart = getEditPart(dDiagramElement);
-			if (editPart instanceof DNode2EditPart) {
-				List<WorkspaceImageEditPart> childrens = (List<WorkspaceImageEditPart>) editPart.getChildren().stream().filter(WorkspaceImageEditPart.class::isInstance).collect(Collectors.toList());
-				assertNotNull(childrens);
-				assertEquals(1, childrens.size());
+		assertTrue(diagramElementsFromLabel.size() == 1);
+		DDiagramElement port = diagramElementsFromLabel.iterator().next();
 
-				WorkspaceImageEditPart bottomEditPart = childrens.get(0);
-				assertNotNull(bottomEditPart);
-				Rotative4ImagesSVGWorkspaceImageFigure bottomFigure = (Rotative4ImagesSVGWorkspaceImageFigure) bottomEditPart.getContentPane();
-				assertNotNull(bottomFigure);
+		IGraphicalEditPart editPart = getEditPart(port);
+		if (editPart instanceof DNode2EditPart) {
+			
+			// Check for SVGImage DocumentKey
+			Rotative4ImagesSVGWorkspaceImageFigure bottomFigure = getFigure(editPart);
+			String figureDocumentKey = bottomFigure.getDocumentKey();
+			assertTrue("Figure should reference uri " + FOURIMAGESICON_PREFIX + "_" + LEFT + SVG + " instead uri is "
+			    + figureDocumentKey, figureDocumentKey.endsWith(FOURIMAGESICON_PREFIX + "_" + LEFT + SVG));
+			
+			// We change the name of a port. After an Arrange all, it will move to west according to conditional style.
+			setName(port, "southSideOnly");
+			performArrangeAll(ddiagram, ((DiagramEditor) editor));
+			TestsUtil.synchronizationWithUIThread();
 
-				// Check for SVGImage DocumentKey
-				String figureDocumentKey = bottomFigure.getDocumentKey();
-				assertTrue("Figure should reference uri " + FOURIMAGESICON_PREFIX + "_" + BOTTOM + SVG + " instead uri is " + figureDocumentKey,
-						figureDocumentKey.endsWith(FOURIMAGESICON_PREFIX + "_" + BOTTOM + SVG));
+			// Check new position
+			bottomFigure = getFigure(editPart);
+			figureDocumentKey = bottomFigure.getDocumentKey();
+			assertTrue("Figure should reference uri " + FOURIMAGESICON_PREFIX + "_" + BOTTOM + SVG + " instead uri is "
+			    + figureDocumentKey, figureDocumentKey.endsWith(FOURIMAGESICON_PREFIX + "_" + BOTTOM + SVG));
 
-				// Arrange all in diagram
-				performArrangeAll(ddiagram, (DiagramEditor) editor);
-
-				// Check new position
-				figureDocumentKey = bottomFigure.getDocumentKey();
-				assertTrue("Figure should reference uri " + FOURIMAGESICON_PREFIX + "_" + LEFT + SVG + " instead uri is " + figureDocumentKey,
-						figureDocumentKey.endsWith(FOURIMAGESICON_PREFIX + "_" + LEFT + SVG));
-
-			}
 		}
 
+	}
+
+	private Rotative4ImagesSVGWorkspaceImageFigure getFigure(IGraphicalEditPart editPart) {
+		List<WorkspaceImageEditPart> childrens = (List<WorkspaceImageEditPart>) editPart.getChildren().stream()
+		    .filter(WorkspaceImageEditPart.class::isInstance).collect(Collectors.toList());
+		assertNotNull(childrens);
+		assertEquals(1, childrens.size());
+
+		WorkspaceImageEditPart bottomEditPart = childrens.get(0);
+		assertNotNull(bottomEditPart);
+		Rotative4ImagesSVGWorkspaceImageFigure bottomFigure = (Rotative4ImagesSVGWorkspaceImageFigure) bottomEditPart
+		    .getContentPane();
+		assertNotNull(bottomFigure);
+		return bottomFigure;
+
+	}
+
+	private void setName(EObject target, String name) {
+		TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(target);
+    domain.getCommandStack().execute(new RecordingCommand(domain) {
+			@Override
+			protected void doExecute() {
+				((DDiagramElement)target).getTarget().eSet(((DDiagramElement)target).getTarget().eClass().getEStructuralFeature("name"), name);
+			}
+		});
 	}
 
 	private void performArrangeAll(DDiagram ddiagram, DiagramEditor editor) {
@@ -180,6 +210,9 @@ public class RotativeImageMovementTest extends SiriusDiagramTestCase {
 	protected void tearDown() throws Exception {
 		doCleanup();
 		super.tearDown();
+		Collection<DialectEditor> editors = Stream.of(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getEditorReferences()).map(x -> x.getEditor(false)).filter(Objects::nonNull).filter(DialectEditor.class::isInstance).map(DialectEditor.class::cast).collect(Collectors.toSet());
+		editors.forEach(e -> DialectUIManager.INSTANCE.closeEditor(e, false));
+		TestsUtil.emptyEventsFromUIThread();
 	}
 
 	private void doCleanup() {

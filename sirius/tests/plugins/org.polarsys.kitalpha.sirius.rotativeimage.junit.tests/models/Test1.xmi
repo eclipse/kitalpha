@@ -1,34 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<test:Root xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:test="http://kitalpha.test"
-    xsi:schemaLocation="http://kitalpha.test test.ecore"
-    name="root">
-  <elements
-      name="e1">
-    <borderElements
-        name="e11"/>
-    <borderElements
-        name="e12"/>
-    <borderElements
-        name="e13"/>
-    <borderElements
-        name="e14"/>
+<test:Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:test="http://kitalpha.test" xsi:schemaLocation="http://kitalpha.test test.ecore" name="root">
+  <elements name="e1">
+    <borderElements name="e11"/>
+    <borderElements name="e12"/>
+    <borderElements name="e13"/>
+    <borderElements name="westSideOnly"/>
   </elements>
-  <elements
-      name="e2">
-    <borderElements
-        rotative="true"
-        name="e21"/>
-    <borderElements
-        rotative="true"
-        name="e22"/>
-    <borderElements
-        rotative="true"
-        name="e23"/>
-    <borderElements
-        rotative="true"
-        name="e24"/>
+  <elements name="e2">
+    <borderElements rotative="true" name="e21"/>
+    <borderElements rotative="true" name="e22"/>
+    <borderElements rotative="true" name="e23"/>
+    <borderElements rotative="true" name="e24"/>
   </elements>
 </test:Root>

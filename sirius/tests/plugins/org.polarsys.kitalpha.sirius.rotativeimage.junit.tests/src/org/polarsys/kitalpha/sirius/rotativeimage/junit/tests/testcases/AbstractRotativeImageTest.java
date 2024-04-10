@@ -49,6 +49,7 @@ public class AbstractRotativeImageTest {
 		resourceSet = new ResourceSetImpl();
 		resources = new ArrayList<>();
 		sessions = new ArrayList<>();
+		org.eclipse.swt.graphics.Resource.setNonDisposeHandler(null);
 		for (URI uri : resourcesToLoad()) {
 		    Resource resource = resourceSet.getResource(uri, true);
 		    if (resource == null) {
