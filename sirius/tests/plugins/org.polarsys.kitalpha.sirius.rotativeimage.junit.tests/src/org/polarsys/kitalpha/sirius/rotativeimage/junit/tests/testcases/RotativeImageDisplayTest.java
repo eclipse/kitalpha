@@ -19,8 +19,10 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.draw2d.IFigure;
@@ -49,6 +51,8 @@ import org.eclipse.sirius.ui.business.api.session.SessionUIManager;
 import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.ImageData;
+import org.eclipse.swt.graphics.Resource;
+import org.eclipse.ui.PlatformUI;
 import org.junit.Assert;
 import org.polarsys.kitalpha.sirius.rotativeimage.figures.Rotative4ImagesSVGWorkspaceImageFigure;
 import org.polarsys.kitalpha.sirius.rotativeimage.figures.RotativeSVGWorkspaceImageFigure;
@@ -114,8 +118,9 @@ public class RotativeImageDisplayTest extends SiriusDiagramTestCase {
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
+		Resource.setNonDisposeHandler(null);
 		genericSetUp(TEST_XMI_PATH, TEST_ODESIGN_PATH, TEST_AIRD_PATH);
-
+    
 		// Set test data
 		dDiagramElementToPositionConstantFourImagesSVG = new HashMap<>();
 		dDiagramElementToPositionConstantFourImagesSVG.put("_ieoKgE1NEeySgagIY4HK9g", PositionConstants.NORTH);
@@ -151,7 +156,6 @@ public class RotativeImageDisplayTest extends SiriusDiagramTestCase {
 		dDiagramElementsToFileExtensionForFauly4Images.put("_xkXhVlKBEeytGcI8gHYSmQ", SVG);
 		dDiagramElementsToFileExtensionForFauly4Images.put("_xkYIYVKBEeytGcI8gHYSmQ", SVG);
 	}
-
 	/**
 	 * Ensure Rotative and 4Images WorkspaceImages reference expected SVG images
 	 */
@@ -159,6 +163,7 @@ public class RotativeImageDisplayTest extends SiriusDiagramTestCase {
 	public void testSVGDiagramImages() {
 		String repId = ID_REPRESENTATION_DESCRIPTOR_SVG;
 		DDiagram ddiagram = getDDiagramFromId(repId);
+		DialectEditor editor = getEditor(ddiagram);
 
 		for (Entry<String, Integer> entry : dDiagramElementToPositionConstantRotationSVG.entrySet()) {
 			String elementId = entry.getKey();
@@ -191,6 +196,7 @@ public class RotativeImageDisplayTest extends SiriusDiagramTestCase {
 					figureDocumentKey.endsWith(FOURIMAGESICON_PREFIX + postfix));
 		}
 	}
+	
 
 	/**
 	 * Ensure Rotative and 4Images WorkspaceImages reference expected PNG images
@@ -199,6 +205,7 @@ public class RotativeImageDisplayTest extends SiriusDiagramTestCase {
 	public void testPNGDiagramImages() {
 		String repId = ID_REPRESENTATION_DESCRIPTOR_PNG;
 		DDiagram ddiagram = getDDiagramFromId(repId);
+		DialectEditor editor = getEditor(ddiagram);
 
 		// Ensure displayed images rely on the correct rotated image
 		for (Entry<String, Integer> entry : dDiagramElementToPositionConstantRotationPNG.entrySet()) {
@@ -241,7 +248,7 @@ public class RotativeImageDisplayTest extends SiriusDiagramTestCase {
 	public void testFaultyRotativeDiagramImages() {
 		String repId = ID_REPRESENTATION_DESCRIPTOR_FAULTY_4IMAGES;
 		DDiagram ddiagram = getDDiagramFromId(repId);
-
+		DialectEditor editor = getEditor(ddiagram);
 		for (Entry<String, String> entry : dDiagramElementsToFileExtensionForFauly4Images.entrySet()) {
 			String elementId = entry.getKey();
 			String extension = entry.getValue();
@@ -259,6 +266,14 @@ public class RotativeImageDisplayTest extends SiriusDiagramTestCase {
 						figureDocumentKey.endsWith(FOURIMAGESICON_ERROR + extension));
 			}
 		}
+	}
+
+	private DialectEditor getEditor(DDiagram ddiagram) {
+		DialectEditor editor = (DialectEditor) DialectUIManager.INSTANCE.openEditor(session, ddiagram, new NullProgressMonitor());
+		TestsUtil.synchronizationWithUIThread();
+		DialectUIManager.INSTANCE.refreshEditor(editor, new NullProgressMonitor());
+		TestsUtil.synchronizationWithUIThread();
+		return editor;
 	}
 
 	private Image getImageFromPath(String path, String extension) {
@@ -297,11 +312,7 @@ public class RotativeImageDisplayTest extends SiriusDiagramTestCase {
 	private DDiagram getDDiagramFromId(String repId) {
 		DRepresentationDescriptor desc = getRepresentationDescriptor(session, repId);
 		DDiagram ddiagram = (DDiagram) desc.getRepresentation();
-
-		DialectEditor editor = (DialectEditor) DialectUIManager.INSTANCE.openEditor(session, ddiagram, new NullProgressMonitor());
-		TestsUtil.synchronizationWithUIThread();
-		DialectUIManager.INSTANCE.refreshEditor(editor, new NullProgressMonitor());
-		TestsUtil.synchronizationWithUIThread();
+		
 		return ddiagram;
 	}
 
@@ -330,9 +341,9 @@ public class RotativeImageDisplayTest extends SiriusDiagramTestCase {
 	 * whose values should be among:
 	 * <ul>
 	 * <li>PositionConstants.NORTH: No rotation</li>
-	 * <li>PositionConstants.EAST: 90° rotation to the right</li>
-	 * <li>PositionConstants.WEST: 90° rotation to the left</li>
-	 * <li>PositionConstants.SOUTH: 180° rotation</li>
+	 * <li>PositionConstants.EAST: 90ï¿½ rotation to the right</li>
+	 * <li>PositionConstants.WEST: 90ï¿½ rotation to the left</li>
+	 * <li>PositionConstants.SOUTH: 180ï¿½ rotation</li>
 	 * </ul>
 	 * 
 	 * @param figure
@@ -448,6 +459,9 @@ public class RotativeImageDisplayTest extends SiriusDiagramTestCase {
 			session = null;
 		}
 		viewpoints.clear();
+		Collection<DialectEditor> editors = Stream.of(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getEditorReferences()).map(x -> x.getEditor(false)).filter(Objects::nonNull).filter(DialectEditor.class::isInstance).map(DialectEditor.class::cast).collect(Collectors.toSet());
+		editors.forEach(e -> DialectUIManager.INSTANCE.closeEditor(e, false));
+		TestsUtil.emptyEventsFromUIThread();
 	}
 
 	private void doCloseSession() {

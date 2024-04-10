@@ -24,7 +24,7 @@ import org.polarsys.kitalpha.sirius.rotativeimage.junit.tests.testcases.Rotative
  * @author <a href="mailto:arnaud.dieumegard@obeo.fr">Arnaud Dieumegard</a>
  */
 @RunWith(Suite.class)
-@SuiteClasses({ ExtensionPointTest.class, LoadSessionWithExtensionTest.class, RotativeImageDisplayTest.class, RotativeImageMovementTest.class })
+@SuiteClasses({ RotativeImageDisplayTest.class, RotativeImageMovementTest.class, ExtensionPointTest.class, LoadSessionWithExtensionTest.class })
 public class RotativeImageTestSuite {
 
 }

@@ -16,6 +16,15 @@
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               </style>
             </conditionnalStyles>
+            <conditionnalStyles predicateExpression="aql:self.name.contains('westSideOnly')">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:''" hideLabelByDefault="true" sizeComputationExpression="2" arcWidth="0" arcHeight="0" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/4imagesIcon.svg">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <forbiddenSides>SOUTH</forbiddenSides>
+                <forbiddenSides>EAST</forbiddenSides>
+                <forbiddenSides>NORTH</forbiddenSides>
+              </style>
+            </conditionnalStyles>
           </borderedNodeMappings>
           <borderedNodeMappings name="BorderNodeNoRotation" semanticCandidatesExpression="feature:no_rotative_border_elements" synchronizationLock="true" domainClass="test::SimpleBorderElement">
             <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:''" hideLabelByDefault="true" sizeComputationExpression="2" arcWidth="0" arcHeight="0" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/no_4imagesIcon.png">
