@@ -73,6 +73,10 @@ public class Rotative4ImagesSVGWorkspaceImageFigure extends SVGWorkspaceImageFig
     		refreshFigure(null);
 	    }
 	}
+	
+	public int getOrientation() {
+		return orientation;
+	}
 
 	@Override
 	public String getDocumentKey() {
