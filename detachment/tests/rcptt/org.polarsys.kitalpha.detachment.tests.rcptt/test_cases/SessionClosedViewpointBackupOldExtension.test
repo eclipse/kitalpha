@@ -6,8 +6,8 @@ Element-Type: testcase
 Element-Version: 3.0
 External-Reference: 
 Id: _bnNuYMVZEeiKtJ96oKG8ig
-Runtime-Version: 2.2.0.201706152316
-Save-Time: 10/1/18 11:54 AM
+Runtime-Version: 2.5.5.202312181455
+Save-Time: 4/4/24, 11:21 AM
 Testcase-Type: ecl
 
 ------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
@@ -22,7 +22,7 @@ get-window Information | get-button Yes | click
 get-window "Detachment..." | get-button OK | click
 get-eclipse-window | key-type "M1+M2+r"
 get-window "Open Resource" | get-editbox 
-    -after [get-label "Enter resource name prefix, path prefix or pattern (?, * or camel case):"] | set-text "*.old"
+    -after [get-label "Enter resource name, path or pattern (?, * or camel case):"] | set-text "*.old"
 get-window "Open Resource" | get-table | get-property itemCount | equals 3 | verify-true
 get-window "Open Resource" | get-button Cancel | click
 get-view "Project Explorer" | get-tree | select "org.polarsys.kitalpha.vp.componentsample.runtime.model" | get-menu 
