@@ -115,6 +115,7 @@ location sirius "https://download.eclipse.org/sirius/updates/stable/7.4.1-S20240
     org.eclipse.sirius.specifier.ide.ui.source.feature.group lazy
     org.eclipse.sirius.specifier.ide.ui.acceleo.feature.group lazy
     org.eclipse.sirius.specifier.ide.ui.acceleo.source.feature.group lazy
+	org.eclipse.acceleo.query.source.feature.group
 	
 	org.eclipse.sirius.interpreter.feature.feature.group lazy
 	org.eclipse.sirius.properties.feature.feature.group lazy
