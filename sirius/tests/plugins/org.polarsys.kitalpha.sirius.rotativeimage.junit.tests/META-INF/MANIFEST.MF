@@ -24,7 +24,8 @@ Require-Bundle: org.junit,
  org.eclipse.gmf.runtime.draw2d.ui,
  org.eclipse.gmf.runtime.diagram.ui,
  org.eclipse.sirius.common,
- org.apache.batik.transcoder;bundle-version="1.14.0"
+ org.apache.batik.transcoder,
+ org.eclipse.emf.common.ui
 Bundle-Vendor: %providerName
 Import-Package: org.eclipse.core.runtime,
  org.eclipse.gmf.runtime.diagram.ui.editparts

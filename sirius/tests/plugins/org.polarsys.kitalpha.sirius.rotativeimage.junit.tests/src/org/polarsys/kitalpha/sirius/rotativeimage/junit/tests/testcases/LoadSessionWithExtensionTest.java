@@ -25,6 +25,7 @@ import org.eclipse.sirius.ui.business.api.dialect.DialectUIManager;
 import org.eclipse.sirius.ui.business.api.session.IEditingSession;
 import org.eclipse.sirius.ui.business.api.session.SessionUIManager;
 import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
+import org.eclipse.swt.graphics.Resource;
 import org.junit.Assert;
 
 /**
@@ -51,6 +52,7 @@ public class LoadSessionWithExtensionTest extends SiriusDiagramTestCase {
     @Override
     protected void setUp() throws Exception {
         super.setUp();
+        Resource.setNonDisposeHandler(null);
         genericSetUp(TEST_XMI_PATH, TEST_ODESIGN_PATH, TEST_AIRD_PATH);
     }
 
@@ -68,6 +70,8 @@ public class LoadSessionWithExtensionTest extends SiriusDiagramTestCase {
 	        DialectEditor editor = (DialectEditor) DialectUIManager.INSTANCE.openEditor(session, ddiagram, new NullProgressMonitor());
 	        TestsUtil.synchronizationWithUIThread();
 	        DialectUIManager.INSTANCE.refreshEditor(editor, new NullProgressMonitor());
+	        TestsUtil.synchronizationWithUIThread();
+	        DialectUIManager.INSTANCE.closeEditor(editor, false);
 	        TestsUtil.synchronizationWithUIThread();
     	}
     }

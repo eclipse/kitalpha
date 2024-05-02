@@ -71,6 +71,16 @@ pipeline {
 			}
 		}	
 
+		stage('Run JUnit Tests') {
+			steps {
+				wrap([$class: 'Xvnc', takeScreenshot: false, useXauthority: true]) {
+					script {
+						sh "mvn -Dmaven.test.failure.ignore=true verify -P test -e"
+					}
+				}
+			}
+		}
+		
 		stage('Run RCPTT Tests') {
 			steps {
 				wrap([$class: 'Xvnc', takeScreenshot: false, useXauthority: true]) {
@@ -80,16 +90,6 @@ pipeline {
 					}
 				}
 			}		
-		}
-		
-		stage('Run JUnit Tests') {
-			steps {
-				wrap([$class: 'Xvnc', takeScreenshot: false, useXauthority: true]) {
-					script {
-						sh "mvn -Dmaven.test.failure.ignore=true verify -P test -e"
-					}
-				}
-			}
 		}
 		
 		stage('Publish tests results') {

@@ -6,36 +6,45 @@
       <defaultLayer name="Default">
         <nodeMappings name="ElementNode" semanticCandidatesExpression="feature:elements" synchronizationLock="true" domainClass="test::Element">
           <borderedNodeMappings name="BorderNode" semanticCandidatesExpression="feature:borderElements" synchronizationLock="true" domainClass="test::BorderElement">
-            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:''" hideLabelByDefault="true" sizeComputationExpression="2" arcWidth="0" arcHeight="0" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/4imagesIcon.svg">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" hideLabelByDefault="true" sizeComputationExpression="2" arcWidth="0" arcHeight="0" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/4imagesIcon.svg">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
             <conditionnalStyles predicateExpression="feature:rotative">
-              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:''" hideLabelByDefault="true" sizeComputationExpression="2" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/rotationIcon.svg">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" hideLabelByDefault="true" sizeComputationExpression="2" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/rotationIcon.svg">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               </style>
             </conditionnalStyles>
+            <conditionnalStyles predicateExpression="feature:left">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" hideLabelByDefault="true" sizeComputationExpression="2" arcWidth="0" arcHeight="0" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/4imagesIcon.svg">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <forbiddenSides>SOUTH</forbiddenSides>
+                <forbiddenSides>EAST</forbiddenSides>
+                <forbiddenSides>NORTH</forbiddenSides>
+              </style>
+            </conditionnalStyles>
           </borderedNodeMappings>
           <borderedNodeMappings name="BorderNodeNoRotation" semanticCandidatesExpression="feature:no_rotative_border_elements" synchronizationLock="true" domainClass="test::SimpleBorderElement">
-            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:''" hideLabelByDefault="true" sizeComputationExpression="2" arcWidth="0" arcHeight="0" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/no_4imagesIcon.png">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" hideLabelByDefault="true" sizeComputationExpression="2" arcWidth="0" arcHeight="0" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/no_4imagesIcon.png">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
             <conditionnalStyles predicateExpression="aql:self.isSVG and (not (self.rotative))">
-              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:''" hideLabelByDefault="true" sizeComputationExpression="2" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/no_4imagesIcon.svg">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" hideLabelByDefault="true" sizeComputationExpression="2" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/no_4imagesIcon.svg">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               </style>
             </conditionnalStyles>
             <conditionnalStyles predicateExpression="aql:self.isSVG and self.rotative">
-              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:''" hideLabelByDefault="true" sizeComputationExpression="2" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/no_rotationIcon.svg">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" hideLabelByDefault="true" sizeComputationExpression="2" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/no_rotationIcon.svg">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               </style>
             </conditionnalStyles>
             <conditionnalStyles predicateExpression="aql:(not (self.isSVG)) and self.rotative">
-              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:''" hideLabelByDefault="true" sizeComputationExpression="2" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/no_rotationIcon.png">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" hideLabelByDefault="true" sizeComputationExpression="2" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/no_rotationIcon.png">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               </style>
@@ -54,36 +63,36 @@
       <defaultLayer name="Default">
         <nodeMappings name="ElementNode" semanticCandidatesExpression="feature:elements" synchronizationLock="true" domainClass="test::Element">
           <borderedNodeMappings name="BorderNode" semanticCandidatesExpression="feature:borderElements" synchronizationLock="true" domainClass="test::BorderElement">
-            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:''" hideLabelByDefault="true" sizeComputationExpression="2" arcWidth="0" arcHeight="0" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/4imagesIcon.png">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" hideLabelByDefault="true" sizeComputationExpression="2" arcWidth="0" arcHeight="0" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/4imagesIcon.png">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
             <conditionnalStyles predicateExpression="feature:rotative">
-              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:''" hideLabelByDefault="true" sizeComputationExpression="2" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/rotationIcon.png">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" hideLabelByDefault="true" sizeComputationExpression="2" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/rotationIcon.png">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               </style>
             </conditionnalStyles>
           </borderedNodeMappings>
           <borderedNodeMappings name="BorderNodeNoRotation" semanticCandidatesExpression="feature:no_rotative_border_elements" synchronizationLock="true" domainClass="test::SimpleBorderElement">
-            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:''" hideLabelByDefault="true" sizeComputationExpression="2" arcWidth="0" arcHeight="0" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/no_4imagesIcon.png">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" hideLabelByDefault="true" sizeComputationExpression="2" arcWidth="0" arcHeight="0" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/no_4imagesIcon.png">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
             <conditionnalStyles predicateExpression="aql:self.isSVG and (not (self.rotative))">
-              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:''" hideLabelByDefault="true" sizeComputationExpression="2" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/no_4imagesIcon.svg">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" hideLabelByDefault="true" sizeComputationExpression="2" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/no_4imagesIcon.svg">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               </style>
             </conditionnalStyles>
             <conditionnalStyles predicateExpression="aql:self.isSVG and self.rotative">
-              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:''" hideLabelByDefault="true" sizeComputationExpression="2" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/no_rotationIcon.svg">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" hideLabelByDefault="true" sizeComputationExpression="2" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/no_rotationIcon.svg">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               </style>
             </conditionnalStyles>
             <conditionnalStyles predicateExpression="aql:(not (self.isSVG)) and self.rotative">
-              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:''" hideLabelByDefault="true" sizeComputationExpression="2" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/no_rotationIcon.png">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" hideLabelByDefault="true" sizeComputationExpression="2" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/no_rotationIcon.png">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               </style>
@@ -102,12 +111,12 @@
       <defaultLayer name="Default">
         <nodeMappings name="ElementNode" semanticCandidatesExpression="feature:elements" synchronizationLock="true" domainClass="test::Element">
           <borderedNodeMappings name="BorderNode" semanticCandidatesExpression="feature:borderElements" synchronizationLock="true" domainClass="test::BorderElement">
-            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:''" hideLabelByDefault="true" sizeComputationExpression="2" arcWidth="0" arcHeight="0" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/4imagesIcon_error.png">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" hideLabelByDefault="true" sizeComputationExpression="2" arcWidth="0" arcHeight="0" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/4imagesIcon_error.png">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
             <conditionnalStyles predicateExpression="feature:rotative">
-              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:''" hideLabelByDefault="true" sizeComputationExpression="2" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/4imagesIcon_error.svg">
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" hideLabelByDefault="true" sizeComputationExpression="2" workspacePath="/org.polarsys.kitalpha.sirius.rotativeimage.junit.tests/icons/4imagesIcon_error.svg">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               </style>
