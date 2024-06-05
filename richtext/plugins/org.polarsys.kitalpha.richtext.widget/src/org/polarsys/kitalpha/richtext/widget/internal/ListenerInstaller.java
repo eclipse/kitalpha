@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017, 2023 Thales Global Services S.A.S.
+ * Copyright (c) 2017, 2024 Thales Global Services S.A.S.
  *  This program and the accompanying materials are made available under the
  *  terms of the Eclipse Public License 2.0 which is available at
  *  http://www.eclipse.org/legal/epl-2.0
@@ -12,6 +12,13 @@
 package org.polarsys.kitalpha.richtext.widget.internal;
 
 import java.beans.PropertyChangeEvent;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+
+import javax.xml.XMLConstants;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
@@ -19,12 +26,18 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.swt.browser.BrowserFunction;
+import org.eclipse.swt.dnd.Clipboard;
+import org.eclipse.swt.dnd.HTMLTransfer;
+import org.eclipse.swt.widgets.Display;
 import org.polarsys.kitalpha.richtext.common.impl.AbstractMDERichTextWidget;
 import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
 import org.polarsys.kitalpha.richtext.nebula.widget.MDENebulaBasedRichTextWidget;
 import org.polarsys.kitalpha.richtext.widget.editor.MDERichTextEditor;
 import org.polarsys.kitalpha.richtext.widget.editor.intf.MDERichTextEditorCallback;
 import org.polarsys.kitalpha.richtext.widget.tools.manager.LinkManagerImpl;
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
 
 /**
  * 
@@ -44,6 +57,7 @@ public class ListenerInstaller {
 	 */
 	public void createAllListeners(final MDENebulaBasedRichTextWidget widget) {
 		createBeforePasteConfirmationDialogListener(widget);
+		createShouldCleanupClipboardFunction(widget);
 		createOpenLinkListener(widget);
 		createSaveListener(widget);
 		createChangeNotificationHandlerListener(widget);
@@ -54,6 +68,112 @@ public class ListenerInstaller {
 		createSetDataEventListener(widget);
 	}
 
+	class OneTagChecker extends DefaultHandler {
+		private boolean onlyOneTag = true;
+
+		private boolean inRoot = false;
+
+		private static final String ROOT_ELEMENT = "clipboard";
+
+		private String expectedTag;
+
+		public OneTagChecker(String tag) {
+			expectedTag = tag;
+		}
+
+		@Override
+		public void startDocument() throws SAXException {
+			super.startDocument();
+			onlyOneTag = true;
+			inRoot = false;
+		}
+
+		@Override
+		public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+			super.startElement(uri, localName, qName, attributes);
+			if (inRoot) {
+				if (!qName.equals(expectedTag)) {
+					onlyOneTag = false;
+				}
+			} else {
+				if (qName.equals(ROOT_ELEMENT)) {
+					inRoot = true;
+				}
+			}
+		}
+
+		@Override
+		public void endElement(String uri, String localName, String qName) throws SAXException {
+			if (qName.equals(ROOT_ELEMENT)) {
+				inRoot = false;
+			}
+			super.endElement(uri, localName, qName);
+		}
+
+		public boolean containOnlyOneTag() {
+			return onlyOneTag;
+		}
+	}
+
+	/**
+	 * This method check the content of the clipboard and determine whether it is really necessary to prompt the cleanup
+	 * dialog to the user. Currently this method avoid to display the prompt when the clipboard contains only links to
+	 * avoid this prompt when the clipboard contain links to Capella elements.
+	 * 
+	 * @param currentShouldCleanup
+	 *            the actual value of editor.config.pasteFromWordPromptCleanup
+	 * @return the new value to assign to editor.config.pasteFromWordPromptCleanup
+	 */
+	private boolean shouldCleanupClipboard(final boolean currentShouldCleanup) {
+		// If the cleanup has already been canceled (cleanup value is false),
+		// we can directly return false and avoid computing anything.
+		if (!currentShouldCleanup) {
+			return currentShouldCleanup;
+		} else {
+			// get html clipboard
+			HTMLTransfer htmlTransfer = HTMLTransfer.getInstance();
+			Clipboard clipboard = new Clipboard(Display.getCurrent());
+			String htmlData = (String) clipboard.getContents(htmlTransfer);
+			clipboard.dispose();
+
+			if (htmlData != null) {
+				// we put htmlData in clipboard to have root tag and to avoid parsing error.
+				String htmlDocument = "<clipboard>" + htmlData + "</clipboard>";
+				try {
+					// parse the clipboard to determine if there is only links inside
+					SAXParserFactory factory = SAXParserFactory.newInstance();
+					factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+					SAXParser saxParser = factory.newSAXParser();
+					saxParser.setProperty(XMLConstants.ACCESS_EXTERNAL_DTD, "");
+					saxParser.setProperty(XMLConstants.ACCESS_EXTERNAL_SCHEMA, "");
+					OneTagChecker checker = new OneTagChecker("a");
+					saxParser.parse(new ByteArrayInputStream(htmlDocument.getBytes()), checker);
+
+					if (checker.containOnlyOneTag()) {
+						// cancel the prompt
+						return false;
+					} else {
+						return currentShouldCleanup;
+					}
+				} catch (ParserConfigurationException | SAXException | IOException e) {
+					// if we can't determine whether the clipboard contains only links, keep the last value
+					return currentShouldCleanup;
+				}
+			} else {
+				// if there is no HTML data, keep the last value
+				return currentShouldCleanup;
+			}
+		}
+	}
+
+	public void createShouldCleanupClipboardFunction(final MDENebulaBasedRichTextWidget widget) {
+		new BrowserFunction(widget.getBrowser(), "shouldCleanupClipboard") { //$NON-NLS-1$
+			@Override
+			public Object function(Object[] arguments) {
+				return shouldCleanupClipboard((boolean) arguments[0]);
+			}
+		};
+	}
 	/**
 	 * Installs on the rich text widget the Java listeners created by the
 	 * {@link ListenerInstaller#createAllListeners(MDENebulaBasedRichTextWidget)}.
@@ -89,6 +209,7 @@ public class ListenerInstaller {
 		script.append("editor = CKEDITOR.instances.editor;");
 		script.append("editor.on('beforePaste', function (event) {");
 		script.append("editor.lang.pastefromword.confirmCleanup = getConfirmCleanupMsg();");
+		script.append("editor.config.pasteFromWordPromptCleanup = shouldCleanupClipboard(editor.config.pasteFromWordPromptCleanup);");
 		script.append("});");
 
 		// Set pasteFromWordPromptCleanup to false to prevent the confirm dialog
@@ -99,7 +220,7 @@ public class ListenerInstaller {
 		script.append("editor.config.pasteFromWordPromptCleanup = false;");
 		script.append("}});");
 
-		// Set the pasteFromWordPromptCleanup to true
+		// Restore the pasteFromWordPromptCleanup to true
 		script.append("editor.on('afterPaste', function (event) {");
 		script.append("editor.config.pasteFromWordPromptCleanup = true;");
 		script.append("});");
