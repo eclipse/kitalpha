@@ -76,6 +76,13 @@ public class MDERichTextFactory {
 	}
 
 	public MDERichTextWidget createEditorRichTextWidget(Composite parent){
+		
+		if (MDERichTextConfigurableFactory.isConfigurableRTEActivated())
+		{
+			MDERichTextConfigurableFactory configurableFactory = new MDERichTextConfigurableFactory();
+			return configurableFactory.createPreferencesCompliantRichTextWidget(parent);
+		}
+		
 		initializeMDEDefaultToolbar(false);
 		MDERichtextWidgetEditorImpl widget = MDERichtextWidgetHelper.getInstance().getEditorWidgetContribution(parent, configuration); 
 		
@@ -89,6 +96,13 @@ public class MDERichTextFactory {
 	}
 	
 	public MDERichTextWidget createEditorRichTextWidget(Composite parent, int style){
+		
+		if (MDERichTextConfigurableFactory.isConfigurableRTEActivated())
+		{
+			MDERichTextConfigurableFactory configurableFactory = new MDERichTextConfigurableFactory();
+			return configurableFactory.createPreferencesCompliantRichTextWidget(parent);
+		}
+		
 		initializeMDEDefaultToolbar(false);
 
 		MDERichtextWidgetEditorImpl widget = new MDERichtextWidgetEditorImpl(parent, configuration, style);
@@ -101,6 +115,13 @@ public class MDERichTextFactory {
 	
 	
 	public MDERichTextWidget createDefaultRichTextWidget(Composite parent){
+		
+		if (MDERichTextConfigurableFactory.isConfigurableRTEActivated())
+		{
+			MDERichTextConfigurableFactory configurableFactory = new MDERichTextConfigurableFactory();
+			return configurableFactory.createPreferencesCompliantRichTextWidget(parent);
+		}
+		
 		initializeMDEDefaultToolbar(true);
 		
 		removeUselessItemFromToolbar();
@@ -114,6 +135,13 @@ public class MDERichTextFactory {
 	
 	
 	public MDERichTextWidget createDefaultRichTextWidget(Composite parent, int style){
+		
+		if (MDERichTextConfigurableFactory.isConfigurableRTEActivated())
+		{
+			MDERichTextConfigurableFactory configurableFactory = new MDERichTextConfigurableFactory();
+			return configurableFactory.createPreferencesCompliantRichTextWidget(parent);
+		}
+		
 		initializeMDEDefaultToolbar(true);
 		
 		removeUselessItemFromToolbar();
@@ -128,6 +156,13 @@ public class MDERichTextFactory {
 	}
 	
 	public MDERichTextWidget createMinimalRichTextWidget(Composite parent){
+		
+		if (MDERichTextConfigurableFactory.isConfigurableRTEActivated())
+		{
+			MDERichTextConfigurableFactory configurableFactory = new MDERichTextConfigurableFactory();
+			return configurableFactory.createPreferencesCompliantRichTextWidget(parent);
+		}
+		
 		initializeMDEMinimalToolbar();
 		
 		removeUselessItemFromToolbar();
@@ -198,6 +233,13 @@ public class MDERichTextFactory {
 	}
 	
 	public MDERichTextWidget createMinimalRichTextWidget(Composite parent, int style){
+		
+		if (MDERichTextConfigurableFactory.isConfigurableRTEActivated())
+		{
+			MDERichTextConfigurableFactory configurableFactory = new MDERichTextConfigurableFactory();
+			return configurableFactory.createPreferencesCompliantRichTextWidget(parent);
+		}
+		
 		initializeMDEMinimalToolbar();
 		
 		removeUselessItemFromToolbar();
@@ -273,7 +315,7 @@ public class MDERichTextFactory {
 		configuration.initializeToolbarItem(MDERichTextConstants.STYLES_TOOLBAR);
 		configuration.initializeToolbarItem(MDERichTextConstants.CLIPBOARD_TOOLBAR);
 		configuration.initializeToolbarItem(MDERichTextConstants.MDE_CLEAN_TOOLBAR, MDERichTextConstants.MDE_CLEAN);
-		configuration.initializeToolbarItem(MDERichTextConstants.BASIC_STYLES, 
+		configuration.initializeToolbarItem(MDERichTextConstants.BASIC_STYLES_GROUP, 
 				MDERichTextConstants.BOLD, MDERichTextConstants.ITALIC, 
 				MDERichTextConstants.UNDERLINE, MDERichTextConstants.SUBSCRIPT, 
 				MDERichTextConstants.SUPERSCRIPT);
@@ -297,7 +339,7 @@ public class MDERichTextFactory {
 		configuration.initializeToolbarItem(MDERichTextConstants.MDE_REFRESH, MDERichTextConstants.MDE_REFRESH);
 		configuration.initializeToolbarItem(MDERichTextConstants.STYLES_TOOLBAR);
 		configuration.initializeToolbarItem(MDERichTextConstants.CLIPBOARD_TOOLBAR);
-		configuration.initializeToolbarItem(MDERichTextConstants.BASIC_STYLES, 
+		configuration.initializeToolbarItem(MDERichTextConstants.BASIC_STYLES_GROUP, 
 				MDERichTextConstants.LIST_GROUP);
 		configuration.initializeToolbarItem(MDERichTextConstants.MDE_LINKS_TOOLBAR, MDERichTextConstants.MDE_ADDLINK);
 		return this;

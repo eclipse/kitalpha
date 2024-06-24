@@ -30,7 +30,7 @@ import org.polarsys.kitalpha.richtext.nebula.widget.internal.Activator;
 public final class MDERichTextConstants {
 	
 	
-	//Customization
+	// Customization
 	public static final String TOOLBAR_COLOR = "uiColor"; 			//$NON-NLS-1$
 	public static final String TOOLBAR_POSITION = "toolbarLocation";//$NON-NLS-1$
 	public static final String TOOLBAR_POSITION_TOP = "top";		//$NON-NLS-1$
@@ -50,8 +50,8 @@ public final class MDERichTextConstants {
 	//****************** MDE Items and toolbar ******************//
 	
 	public static final String MDE_SAVE_TOOLBAR = "mdesave"; 		//$NON-NLS-1$
-	public static final String MDE_SAVE = "MDESave";			//$NON-NLS-1$
-	public static final String MDE_REFRESH = "Refresh"; //$NON-NLS-1$
+	public static final String MDE_SAVE = "MDESave";				//$NON-NLS-1$
+	public static final String MDE_REFRESH = "Refresh"; 			//$NON-NLS-1$
 
 	public static final String MDE_LINKS_TOOLBAR = "mdelinks"; 		//$NON-NLS-1$
 	public static final String MDE_ADDLINK = "Addlink"; 			//$NON-NLS-1$
@@ -68,87 +68,151 @@ public final class MDERichTextConstants {
 	
 	
 	//****************** CKEditor Items and toolbar ******************//
-	 //Document
+	// Document
 	public static final String DOCUMENT_TOOLBAR = "document"; 		//$NON-NLS-1$
+
+	public static final String MODE_GROUP = "mode";		 			//$NON-NLS-1$
     public static final String SOURCE = "Source"; 					//$NON-NLS-1$
+	
+	public static final String DOCUMENT_GROUP = "document"; 		//$NON-NLS-1$
     public static final String SAVE = "Save"; 						//$NON-NLS-1$
     public static final String NEW_PAGE = "NewPage"; 				//$NON-NLS-1$
-    public static final String DOC_PROPOS = "DocProps"; 			//$NON-NLS-1$
     public static final String PREVIEW = "Preview"; 				//$NON-NLS-1$
     public static final String PRINT = "Print"; 					//$NON-NLS-1$
+    
+    public static final String DOC_PROPOS = "DocProps"; 			//$NON-NLS-1$
+    
+	public static final String DOCTOOLS_GROUP = "doctools"; 		//$NON-NLS-1$
     public static final String TEMPLATE = "Templates"; 				//$NON-NLS-1$
      
 
-    //Clipboard
+    // Clipboard
     public static final String CLIPBOARD_TOOLBAR = "clipboard"; 	//$NON-NLS-1$
+    
+    public static final String CLIPBOARD_GROUP = "clipboard"; 		//$NON-NLS-1$
     public static final String CUT = "Cut"; 						//$NON-NLS-1$
     public static final String COPY = "Copy"; 						//$NON-NLS-1$
     public static final String PASTE = "Paste"; 					//$NON-NLS-1$
     public static final String PASTE_TEXT = "PasteText"; 			//$NON-NLS-1$
     public static final String PASTE_FROM_WORD = "PasteFromWord"; 	//$NON-NLS-1$
+    
+    public static final String UNDO_GROUP = "undo"; 				//$NON-NLS-1$
     public static final String UNDO = "Undo"; 						//$NON-NLS-1$
     public static final String REDO = "Redo"; 						//$NON-NLS-1$
 
-    //editing
+    // Editing
     public static final String EDITING_TOOLBAR = "editing"; 		//$NON-NLS-1$
+    
+    public static final String FIND_GROUP = "find"; 				//$NON-NLS-1$
     public static final String FIND = "Find"; 						//$NON-NLS-1$
     public static final String REPLACE = "Replace"; 				//$NON-NLS-1$
+    
+    public static final String SELECTION_GROUP = "selection"; 		//$NON-NLS-1$
     public static final String SELECT_ALL = "SelectAll"; 			//$NON-NLS-1$
+    
+    public static final String SPELLCHECKER_GROUP = "spellchecker";	//$NON-NLS-1$
+    public static final String SPELLCHECKER = "Scayt"; 				//$NON-NLS-1$
 
-    //Styles
-    public static final String BASIC_STYLES = "basicstyles"; 		//$NON-NLS-1$
+    // Forms
+    public static final String FORMS_TOOLBAR = "forms";		 		//$NON-NLS-1$
+    
+    public static final String FORMS_GROUP = "forms"; 				//$NON-NLS-1$
+    public static final String FORM = "Form"; 						//$NON-NLS-1$
+    public static final String CHECKBOX = "Checkbox"; 				//$NON-NLS-1$
+    public static final String RADIO = "Radio"; 					//$NON-NLS-1$
+    public static final String TEXTFIELD = "TextField"; 			//$NON-NLS-1$
+    public static final String TEXTAREA = "Textarea"; 				//$NON-NLS-1$
+    public static final String SELECT = "Select"; 					//$NON-NLS-1$
+    public static final String BUTTON = "Button";	 				//$NON-NLS-1$
+    public static final String IMAGEBUTTON = "ImageButton";			//$NON-NLS-1$
+    public static final String HIDDENFIELD = "HiddenField";			//$NON-NLS-1$
+
+    // BasicStyles
+    public static final String BASIC_STYLES_TOOLBAR = "basicstyles";	//$NON-NLS-1$
+    
+    public static final String BASIC_STYLES_GROUP = "basicstyles"; 	//$NON-NLS-1$
     public static final String BOLD = "Bold"; 						//$NON-NLS-1$
     public static final String ITALIC = "Italic"; 					//$NON-NLS-1$
     public static final String UNDERLINE = "Underline"; 			//$NON-NLS-1$
     public static final String STRIKE = "Strike"; 					//$NON-NLS-1$
     public static final String SUBSCRIPT = "Subscript"; 			//$NON-NLS-1$
     public static final String SUPERSCRIPT = "Superscript"; 		//$NON-NLS-1$
+    
+    public static final String CLEANUP_GROUP = "cleanup"; 			//$NON-NLS-1$
     public static final String REMOVE_FORMAT = "RemoveFormat"; 		//$NON-NLS-1$
+    public static final String COPY_FORMAT = "CopyFormatting"; 		//$NON-NLS-1$
 
-    //Paragraph
+    // Paragraph
     public static final String PARAGRAPH_TOOLBAR = "paragraph"; 	//$NON-NLS-1$
+    
+    public static final String LIST_GROUP = "list"; 				//$NON-NLS-1$
     public static final String NUMBERED_LIST = "NumberedList"; 		//$NON-NLS-1$
     public static final String BULLETED_LIST = "BulletedList"; 		//$NON-NLS-1$
-    public static final String OUT_INDENT = "Outdent"; 				//$NON-NLS-1$
-    public static final String INDENT = "Indent"; 					//$NON-NLS-1$ 
+    
     public static final String INDENT_GROUP = "indent"; 			//$NON-NLS-1$
-    public static final String LIST_GROUP = "list"; 				//$NON-NLS-1$
-    public static final String ALIGN_GROUP = "align"; 				//$NON-NLS-1$
+    public static final String INDENT = "Indent"; 					//$NON-NLS-1$
+    public static final String OUT_INDENT = "Outdent"; 				//$NON-NLS-1$
+    
+    public static final String BLOCKS_GROUP = "blocks"; 			//$NON-NLS-1$
     public static final String BLOCK_QUOTE = "Blockquote"; 			//$NON-NLS-1$
     public static final String CREATE_DIV = "CreateDiv"; 			//$NON-NLS-1$
+    
+    public static final String ALIGN_GROUP = "align"; 				//$NON-NLS-1$
     public static final String JUSTIFY_LEFT = "JustifyLeft"; 		//$NON-NLS-1$
     public static final String JUSTIFY_CENTER = "JustifyCenter"; 	//$NON-NLS-1$
     public static final String JUSTIFY_RIGHT = "JustifyRight"; 		//$NON-NLS-1$
     public static final String JUSTIFY_BLOCK = "JustifyBlock"; 		//$NON-NLS-1$
+    
+    public static final String BIDI_GROUP = "bidi"; 				//$NON-NLS-1$
     public static final String BIDI_LTR = "BidiLtr"; 				//$NON-NLS-1$
     public static final String BIDI_RTL = "BidiRtl"; 				//$NON-NLS-1$
+    public static final String LANGUAGE = "Language"; 				//$NON-NLS-1$
 
-    //links
+    // Links
     public static final String LINKS_TOOLBAR = "links"; 			//$NON-NLS-1$
+    
+    public static final String LINKS_GROUP = "links"; 				//$NON-NLS-1$
     public static final String LINK = "Link"; 						//$NON-NLS-1$
     public static final String UNLINK = "Unlink"; 					//$NON-NLS-1$
     public static final String ANCHOR = "Anchor"; 					//$NON-NLS-1$
 
-    //Insert
+    // Insert
     public static final String INSERT_TOOLBAR = "insert"; 			//$NON-NLS-1$
+    
+    public static final String INSERT_GROUP = "insert"; 			//$NON-NLS-1$
     public static final String IMAGE = "Image"; 					//$NON-NLS-1$
+    public static final String FLASH = "Flash"; 					//$NON-NLS-1$
     public static final String TABLE = "Table"; 					//$NON-NLS-1$
     public static final String HORIZONTAL_RULE = "HorizontalRule"; 	//$NON-NLS-1$
+    public static final String SMILEYS = "smiley"; 				//$NON-NLS-1$
     public static final String SPECIAL_CHAR = "SpecialChar"; 		//$NON-NLS-1$
     public static final String PAGE_BREAK = "PageBreak"; 			//$NON-NLS-1$
+    public static final String IFRAME = "Iframe"; 					//$NON-NLS-1$
 
-    //Styles
+    // Styles
     public static final String STYLES_TOOLBAR = "styles"; 			//$NON-NLS-1$
-    public static final String STYLE = "style"; 					//$NON-NLS-1$
+    public static final String STYLES_GROUP = "styles"; 			//$NON-NLS-1$
     public static final String STYLES = "Styles";					//$NON-NLS-1$
     public static final String FORMAT = "Format"; 					//$NON-NLS-1$
     public static final String FONT = "Font"; 						//$NON-NLS-1$
     public static final String FONT_SIZE = "FontSize"; 				//$NON-NLS-1$
 
-    //Colors
+    // Colors
     public static final String COLORS_TOOLBAR = "colors"; 			//$NON-NLS-1$
+    public static final String COLORS_GROUP = "colors"; 			//$NON-NLS-1$
     public static final String TEXT_COLOR = "TextColor"; 			//$NON-NLS-1$
-    public static final String BG_COlOR = "BGColor"; 				//$NON-NLS-1$
+    public static final String BG_COLOR = "BGColor"; 				//$NON-NLS-1$
+    
+    // Tools
+    public static final String TOOLS_TOOLBAR = "tools"; 			//$NON-NLS-1$
+    public static final String TOOLS_GROUP = "tools"; 				//$NON-NLS-1$
+    public static final String MAXIMIZE = "Maximize"; 				//$NON-NLS-1$
+    public static final String SHOWBLOCKS = "ShowBlocks"; 			//$NON-NLS-1$
+    
+    // About
+    public static final String ABOUT_TOOLBAR = "about"; 			//$NON-NLS-1$
+    public static final String ABOUT_GROUP = "about"; 				//$NON-NLS-1$
+    public static final String ABOUT = "About"; 					//$NON-NLS-1$
     
     /*
 	 * cf. CKEditor documentation about state of commands
