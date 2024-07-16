@@ -66,7 +66,7 @@ public class MDERichTextEditorConfigurationPage
 	 */
 	public void createFieldEditors(){
 		
-		EditorItem globalEnablementItem = EditorModel.INSTANCE.getGlobalEnablementItem();
+		EditorItem globalEnablementItem = EditorModel.getInstance().getGlobalEnablementItem();
 		
 		BooleanFieldEditor globalConfigurableEnablementPreferenceField = new BooleanFieldEditor(
 				globalEnablementItem.getId(),
@@ -78,7 +78,7 @@ public class MDERichTextEditorConfigurationPage
 		globalEnablementItem.setParent(getFieldEditorParent());
 		addField(globalConfigurableEnablementPreferenceField);
 		
-		for (EditorToolbar toolbar : EditorModel.INSTANCE.getToolbars())
+		for (EditorToolbar toolbar : EditorModel.getInstance().getToolbars())
 		{
 	        Composite toolbarGroup = new Composite(getFieldEditorParent(), SWT.NONE);
 			GridData toolbarGroupGridData = new GridData();
@@ -136,11 +136,11 @@ public class MDERichTextEditorConfigurationPage
 	protected void initialize() {
 		super.initialize();
 		
-		EditorItem globalEnablementItem = EditorModel.INSTANCE.getGlobalEnablementItem();
+		EditorItem globalEnablementItem = EditorModel.getInstance().getGlobalEnablementItem();
 		boolean isEnabled = globalEnablementItem.getPreferenceField().getBooleanValue();
-		if (EditorModel.INSTANCE.isNodeToBeActivated(globalEnablementItem))
+		if (EditorModel.getInstance().isNodeToBeActivated(globalEnablementItem))
 		{
-			for (EditorToolbar toolbar : EditorModel.INSTANCE.getToolbars())
+			for (EditorToolbar toolbar : EditorModel.getInstance().getToolbars())
 			{
 				for (EditorGroup group : toolbar.getGroups())
 				{
@@ -154,7 +154,7 @@ public class MDERichTextEditorConfigurationPage
 		}
 		else
 		{
-			for (EditorToolbar toolbar : EditorModel.INSTANCE.getToolbars())
+			for (EditorToolbar toolbar : EditorModel.getInstance().getToolbars())
 			{
 				toolbar.getPreferenceField().setEnabled(false, toolbar.getParent());
 				for (EditorGroup group : toolbar.getGroups())
@@ -174,7 +174,7 @@ public class MDERichTextEditorConfigurationPage
 		super.propertyChange(event);
 		
 		BooleanFieldEditor preferenceField = (BooleanFieldEditor) event.getSource();
-		EditorModelNode editorModelNode = EditorModel.INSTANCE.getNode(preferenceField);
+		EditorModelNode editorModelNode = EditorModel.getInstance().getNode(preferenceField);
 		boolean newValue = (boolean) event.getNewValue();
 		
 		if (editorModelNode instanceof EditorToolbar)
@@ -226,52 +226,110 @@ public class MDERichTextEditorConfigurationPage
 			
 			if (changedItem.getId() == PreferenceConstants.GLOBAL_CONFIGURABLE_ENABLEMENT_ID)
 			{
-				for (EditorToolbar toolbar : EditorModel.INSTANCE.getToolbars())
-				{
-					preferenceStore.setValue(toolbar.getId(), isEnabled);
-					toolbar.getPreferenceField().load();
-					toolbar.getPreferenceField().setEnabled(isEnabled, toolbar.getParent());
-					for (EditorGroup group : toolbar.getGroups())
-					{
-						preferenceStore.setValue(group.getId(), isEnabled);
-						group.getPreferenceField().load();
-						group.getPreferenceField().setEnabled(isEnabled, group.getParent());
-						for (EditorItem item : group.getItems())
-						{
-							preferenceStore.setValue(item.getId(), isEnabled);
-							item.getPreferenceField().load();
-							item.getPreferenceField().setEnabled(isEnabled, item.getParent());
-						}
-					}
-				}
+				updateToolbarsState(isEnabled);
 			} else {
 				
-				preferenceStore.setValue(changedItem.getId(), isEnabled);
-				changedItem.getPreferenceField().load();
-				
-				// Update the parent
-				EditorModelNode parentNode = EditorModel.INSTANCE.getNode(changedItem.getParentId());
-				if (parentNode instanceof EditorGroup) {
-					EditorGroup parentGroup = (EditorGroup) parentNode;
-					
-					// @formatter:off
-					Optional<Boolean> currentParentState = parentGroup.getItems().stream()
-							.map(EditorItem::getPreferenceField)
-							.map(BooleanFieldEditor::getBooleanValue)
-							.reduce((b1, b2) -> b1 || b2);
-					// @formatter:on
-					if (currentParentState.isPresent()) {
-						preferenceStore.setValue(parentGroup.getId(), currentParentState.get());
-						parentGroup.getPreferenceField().load();
-						updateParentToolBar(parentGroup);
-					}
-				}
+				handleItemSelection(changedItem, isEnabled);
 			}
 		}
 	}
 
+	/**
+	 * Handle the item selection
+	 * 
+	 * @param changedItem the changed state item
+	 * @param isEnabled whether the item is selected or not
+	 */
+	private void handleItemSelection(EditorItem changedItem, boolean isEnabled) {
+		preferenceStore.setValue(changedItem.getId(), isEnabled);
+		changedItem.getPreferenceField().load();
+		
+		// Update the parent
+		EditorModelNode parentNode = EditorModel.getInstance().getNode(changedItem.getParentId());
+		if (parentNode instanceof EditorGroup) {
+			handleParentItemSelectionUpdate(parentNode);
+		}
+	}
+
+	/**
+	 * Handle the item parent selection state
+	 * 
+	 * @param parentNode the parent item node
+	 */
+	private void handleParentItemSelectionUpdate(EditorModelNode parentNode) {
+		EditorGroup parentGroup = (EditorGroup) parentNode;
+		
+		// @formatter:off
+		Optional<Boolean> currentParentState = parentGroup.getItems().stream()
+				.map(EditorItem::getPreferenceField)
+				.map(BooleanFieldEditor::getBooleanValue)
+				.reduce((b1, b2) -> b1 || b2);
+		// @formatter:on
+		if (currentParentState.isPresent()) {
+			preferenceStore.setValue(parentGroup.getId(), currentParentState.get());
+			parentGroup.getPreferenceField().load();
+			updateParentToolBar(parentGroup);
+		}
+	}
+
+	/**
+	 * Update the toolbars state
+	 * 
+	 * @param isEnabled whether the toolbars are enabled
+	 */
+	private void updateToolbarsState(boolean isEnabled) {
+		for (EditorToolbar toolbar : EditorModel.getInstance().getToolbars())
+		{
+			updateToolbarState(toolbar, isEnabled);
+		}
+	}
+
+	/**
+	 * Update the toolbar state
+	 * 
+	 * @param toolbar the current toolbar
+	 * @param isEnabled whether the toolbar is enabled
+	 */
+	private void updateToolbarState(EditorToolbar toolbar, boolean isEnabled) {
+		preferenceStore.setValue(toolbar.getId(), isEnabled);
+		toolbar.getPreferenceField().load();
+		toolbar.getPreferenceField().setEnabled(isEnabled, toolbar.getParent());
+		for (EditorGroup group : toolbar.getGroups())
+		{
+			updateGroupState(group, isEnabled);
+		}
+	}
+
+	/**
+	 * Update the group state
+	 * 
+	 * @param group the current group
+	 * @param isEnabled whether the group is enabled
+	 */
+	private void updateGroupState(EditorGroup group, boolean isEnabled) {
+		preferenceStore.setValue(group.getId(), isEnabled);
+		group.getPreferenceField().load();
+		group.getPreferenceField().setEnabled(isEnabled, group.getParent());
+		for (EditorItem item : group.getItems())
+		{
+			updateItemState(item, isEnabled);
+		}
+	}
+
+	/**
+	 * Update the item state
+	 * 
+	 * @param item the current item
+	 * @param isEnabled whether the item is enable
+	 */
+	private void updateItemState(EditorItem item, boolean isEnabled) {
+		preferenceStore.setValue(item.getId(), isEnabled);
+		item.getPreferenceField().load();
+		item.getPreferenceField().setEnabled(isEnabled, item.getParent());
+	}
+
 	private void updateParentToolBar(EditorGroup group) {
-		EditorModelNode parentNode = EditorModel.INSTANCE.getNode(group.getParentId());
+		EditorModelNode parentNode = EditorModel.getInstance().getNode(group.getParentId());
 		if (parentNode instanceof EditorToolbar) {
 			EditorToolbar parentToolBar = (EditorToolbar) parentNode;
 			
@@ -290,10 +348,10 @@ public class MDERichTextEditorConfigurationPage
 	
 	@Override
 	public void dispose() {
-		EditorItem globalEditorItem =  EditorModel.INSTANCE.getGlobalEnablementItem();
+		EditorItem globalEditorItem =  EditorModel.getInstance().getGlobalEnablementItem();
 		globalEditorItem.getPreferenceField().dispose();
 		
-		for (EditorToolbar toolbar : EditorModel.INSTANCE.getToolbars())
+		for (EditorToolbar toolbar : EditorModel.getInstance().getToolbars())
 		{
 			for (EditorGroup group : toolbar.getGroups())
 			{
