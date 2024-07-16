@@ -12,6 +12,7 @@
 
 package org.polarsys.kitalpha.richtext.widget.factory;
 
+import org.eclipse.nebula.widgets.richtext.RichTextEditorConfiguration;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.polarsys.kitalpha.richtext.common.intf.MDERichTextWidget;
@@ -30,7 +31,7 @@ public class MDERichTextConfigurableFactory extends MDERichTextFactory {
 	
 	public MDERichTextWidget createPreferencesCompliantRichTextWidget(Composite parent, int style) {
 
-		EditorModel editorModel = EditorModel.INSTANCE;
+		EditorModel editorModel = EditorModel.getInstance();
 		MDENebulaRichTextConfiguration configuration = (MDENebulaRichTextConfiguration) super.getConfiguration();
 		
 		if (editorModel.areAllNodesToBeDisabled())
@@ -39,41 +40,10 @@ public class MDERichTextConfigurableFactory extends MDERichTextFactory {
 			dialog.open();
 		}
 		
-		for (EditorToolbar toolbar : editorModel.getToolbars())
-		{
-			boolean toolbarIsActivated = editorModel.isNodeToBeActivated(toolbar);
-			
-			for (EditorGroup group : toolbar.getGroups())
-			{
-				boolean groupIsActivated = toolbarIsActivated && editorModel.isNodeToBeActivated(group);
-				
-				if(groupIsActivated)
-				{
-					configuration.initializeToolbarItem(toolbar.getRteId(), group.getRteId());	
-				}
-				else
-				{
-					configuration.removeToolbarItems(group.getRteId());
-				}
-				
-				for (EditorItem item : group.getItems())
-				{
-					boolean itemIsActivated = groupIsActivated && editorModel.isNodeToBeActivated(item);
-					
-					if (itemIsActivated)
-					{
-							configuration.initializeToolbarItem(toolbar.getRteId(), item.getRteId());
-					}
-					else
-					{
-						configuration.removeToolbarItems(item.getRteId());
-					}
-				}
-			}
-		}
+		configureRichTextEditorToolbar(editorModel, configuration);
 		
 		// Remove systematically when we configure the rich text editor
-		configuration.setOption(MDENebulaRichTextConfiguration.REMOVE_PLUGINS, MDERichTextConstants.SMILEYS);
+		configuration.setOption(RichTextEditorConfiguration.REMOVE_PLUGINS, MDERichTextConstants.SMILEYS);
 		configuration.removeToolbarItems(MDERichTextConstants.FLASH);
 		configuration.removeToolbarItems(MDERichTextConstants.IFRAME);
 		configuration.removeToolbarItems(MDERichTextConstants.IMAGE);
@@ -94,12 +64,83 @@ public class MDERichTextConfigurableFactory extends MDERichTextFactory {
 		addToolbarItems(widget);
 		return widget;
 	}
+
+	
+	/**
+	 * Configure richtext editor toolbar
+	 * 
+	 * @param editorModel the editor model
+	 * @param configuration the richtext editor configuration
+	 */
+	protected void configureRichTextEditorToolbar(EditorModel editorModel, MDENebulaRichTextConfiguration configuration) {
+		for (EditorToolbar toolbar : editorModel.getToolbars())
+		{
+			boolean toolbarIsActivated = editorModel.isNodeToBeActivated(toolbar);
+			
+			for (EditorGroup group : toolbar.getGroups())
+			{
+				configureRichTextToolbarGroup(editorModel, configuration, toolbar, toolbarIsActivated, group);
+			}
+		}
+	}
+
+	/**
+	 * Configure toolbar group
+	 * 
+	 * @param editorModel the editor model
+	 * @param configuration the richtext configuration
+	 * @param toolbar the current toolbar
+	 * @param isToolbarActivated whether the toolbar is active
+	 * @param group the current group to configure
+	 */
+	protected void configureRichTextToolbarGroup(EditorModel editorModel, MDENebulaRichTextConfiguration configuration,
+			EditorToolbar toolbar, boolean isToolbarActivated, EditorGroup group) {
+		boolean groupIsActivated = isToolbarActivated && editorModel.isNodeToBeActivated(group);
+		
+		if(groupIsActivated)
+		{
+			configuration.initializeToolbarItem(toolbar.getRteId(), group.getRteId());	
+		}
+		else
+		{
+			configuration.removeToolbarItems(group.getRteId());
+		}
+		
+		for (EditorItem item : group.getItems())
+		{
+			configureRichTextToolbarGroupItem(editorModel, configuration, toolbar, groupIsActivated, item);
+		}
+	}
+
+	/**
+	 * Configure the group item
+	 * 
+	 * @param editorModel the editor model
+	 * @param configuration the richtext configuration
+	 * @param toolbar the current toolbar
+	 * @param isGroupActivated whether the item's group is activated
+	 * @param item the current item to configure
+	 */
+	protected void configureRichTextToolbarGroupItem(EditorModel editorModel,
+			MDENebulaRichTextConfiguration configuration, EditorToolbar toolbar, boolean isGroupActivated,
+			EditorItem item) {
+		boolean itemIsActivated = isGroupActivated && editorModel.isNodeToBeActivated(item);
+		
+		if (itemIsActivated)
+		{
+			configuration.initializeToolbarItem(toolbar.getRteId(), item.getRteId());
+		}
+		else
+		{
+			configuration.removeToolbarItems(item.getRteId());
+		}
+	}
 	
 	
 	public static boolean isConfigurableRTEActivated()
 	{
-		EditorItem globalEnablementItem = EditorModel.INSTANCE.getGlobalEnablementItem();
+		EditorItem globalEnablementItem = EditorModel.getInstance().getGlobalEnablementItem();
 		
-		return EditorModel.INSTANCE.isNodeToBeActivated(globalEnablementItem);
+		return EditorModel.getInstance().isNodeToBeActivated(globalEnablementItem);
 	}
 }

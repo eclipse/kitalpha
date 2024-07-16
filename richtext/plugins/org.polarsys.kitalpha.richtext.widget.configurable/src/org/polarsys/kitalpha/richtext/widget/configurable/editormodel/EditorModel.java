@@ -24,7 +24,7 @@ import org.polarsys.kitalpha.richtext.widget.configurable.preferences.core.Prefe
 
 public class EditorModel {
 
-	public static final EditorModel INSTANCE = new EditorModel();
+	public static EditorModel instance = null;
 	
 	private EditorItem globalEnablementItem;
 	
@@ -34,6 +34,14 @@ public class EditorModel {
 	private EditorModel()
 	{
 		instanciateModel();
+	}
+	
+	public static EditorModel getInstance() {
+		if (instance == null) {
+			instance = new EditorModel();
+		}
+		
+		return instance;
 	}
 	
 	private void instanciateModel() {
@@ -679,28 +687,28 @@ public class EditorModel {
 	
 	public boolean areAllNodesToBeDisabled()
 	{
-		List<EditorToolbar> instanceToolbars = INSTANCE.getToolbars();
+		List<EditorToolbar> instanceToolbars = getInstance().getToolbars();
 		
-		if (!INSTANCE.isNodeToBeActivated(globalEnablementItem))
+		if (!getInstance().isNodeToBeActivated(globalEnablementItem))
 		{
 			return true;
 		}
 		
 		for (EditorToolbar toolbar : instanceToolbars)
 		{
-			if (!INSTANCE.isNodeToBeActivated(toolbar))
+			if (!getInstance().isNodeToBeActivated(toolbar))
 			{
 				continue;
 			}
 			for (EditorGroup group : toolbar.getGroups())
 			{
-				if (!INSTANCE.isNodeToBeActivated(group))
+				if (!getInstance().isNodeToBeActivated(group))
 				{
 					continue;
 				}
 				for (EditorItem item : group.getItems())
 				{
-					if (INSTANCE.isNodeToBeActivated(item))
+					if (getInstance().isNodeToBeActivated(item))
 					{
 						return false;
 					}
@@ -719,15 +727,32 @@ public class EditorModel {
 		return (preferenceStore.getBoolean(node.getId()));
 	}
 	
+	/**
+	 * Get editor model node of preference field
+	 * 
+	 * @param preferenceField the current preference field
+	 * @return the found editor model node. Otherwise <code>null</code>
+	 */
 	public EditorModelNode getNode(BooleanFieldEditor preferenceField)
 	{
-		List<EditorToolbar> instanceToolbars = INSTANCE.getToolbars();
+		List<EditorToolbar> instanceToolbars = getInstance().getToolbars();
 		
-		if (INSTANCE.getGlobalEnablementItem().getPreferenceField().equals(preferenceField))
+		if (getInstance().getGlobalEnablementItem().getPreferenceField().equals(preferenceField))
 		{
 			return globalEnablementItem;
 		}
 		
+		return getNode(instanceToolbars, preferenceField);
+	}
+
+	/**
+	 * Get the editor model node in toolbar tool instance of preference field
+	 * 
+	 * @param instanceToolbars a list of toolbars tool instances
+	 * @param preferenceField the current preference field
+	 * @return the found editor model node. Otherwise <code>null</code>
+	 */
+	private EditorModelNode getNode(List<EditorToolbar> instanceToolbars, BooleanFieldEditor preferenceField) {
 		for (EditorToolbar toolbar : instanceToolbars)
 		{
 			if (toolbar.getPreferenceField().equals(preferenceField))
@@ -736,17 +761,33 @@ public class EditorModel {
 			}
 			for (EditorGroup group : toolbar.getGroups())
 			{
-				if (group.getPreferenceField().equals(preferenceField))
-				{
-					return group;
+				EditorModelNode result = getNode(group, preferenceField);
+				
+				if (result != null) {
+					return result;
 				}
-				for (EditorItem item : group.getItems())
-				{
-					if (item.getPreferenceField().equals(preferenceField))
-					{
-						return item;
-					}
-				}
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * Get the editor model node in group of preference field
+	 * 
+	 * @param group the current group
+	 * @param preferenceField the current preference field
+	 * @return the found editor model node. Otherwise <code>null</code>
+	 */
+	private EditorModelNode getNode(EditorGroup group, BooleanFieldEditor preferenceField) {
+		if (group.getPreferenceField().equals(preferenceField))
+		{
+			return group;
+		}
+		for (EditorItem item : group.getItems())
+		{
+			if (item.getPreferenceField().equals(preferenceField))
+			{
+				return item;
 			}
 		}
 		return null;
@@ -754,7 +795,7 @@ public class EditorModel {
 	
 	public EditorModelNode getNode(String id)
 	{
-		List<EditorToolbar> instanceToolbars = INSTANCE.getToolbars();
+		List<EditorToolbar> instanceToolbars = getInstance().getToolbars();
 		
 		
 		for (EditorToolbar toolbar : instanceToolbars)
