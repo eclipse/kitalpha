@@ -7,7 +7,7 @@ Bundle-Activator: org.polarsys.kitalpha.richtext.widget.configurable.preferences
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.jface,
  org.eclipse.ui.workbench
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Automatic-Module-Name: org.polarsys.kitalpha.richtext.widget.configurable.preferences.core
 Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.richtext.widget.configurable.preferences.core
