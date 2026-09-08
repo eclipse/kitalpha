@@ -40,7 +40,7 @@
 	<properties>
 		<tycho-version>4.0.13</tycho-version>
 		<tycho-extras-version>4.0.13</tycho-extras-version>
-		<platform-version-name>oxygen</platform-version-name>
+		<platform-version-name>2025-09</platform-version-name>
 		<tycho.scmUrl>scm:git:https://git.polarsys.org/r/kitalpha/kitalpha</tycho.scmUrl>
 		<tycho.surefire.useUIHarness>false</tycho.surefire.useUIHarness>
 		
@@ -210,7 +210,7 @@
 				<version>${tycho-version}</version>
 				<configuration>
 					<targetDefinitionIncludeSource>force</targetDefinitionIncludeSource>
-					<executionEnvironment>JavaSE-17</executionEnvironment>
+					<executionEnvironment>JavaSE-21</executionEnvironment>
 					<target>
 						<artifact>
 							<groupId>org.polarsys</groupId>
