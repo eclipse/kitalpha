@@ -3,28 +3,31 @@ pipeline {
 
 	tools {
 		maven 'apache-maven-latest'
-		jdk 'openjdk-jdk21-latest'
+		jdk 'openjdk-jdk17-latest'
 	}
+	options {
+		buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
+    }
 	environment {
 		BUILD_KEY = (github.isPullRequest() ? CHANGE_TARGET : BRANCH_NAME).replaceFirst(/^v/, '')
-	    JACOCO_VERSION = "0.8.6"
-	    MVN_QUALITY_PROFILES = '-P core -P product -P test'
+	    JACOCO_VERSION = "0.8.10"
+	    MVN_QUALITY_PROFILES = '-P core -P product -P test -P rcptt'
 	    JACOCO_EXEC_FILE_PATH = '${WORKSPACE}/jacoco.exec'
 	}
 	stages {
 		stage('Generate Target Platform') {
 			steps {
-		        sh 'mvn verify -Declipse.p2.mirrors=false -f releng/plugins/org.polarsys.kitalpha.releng.targets/pom.xml'
+		        sh 'mvn verify -P targetPlatform'
 			}
 		}
-		stage('Package Kitalpha') {
+		stage('Package & Install Kitalpha') {
 			steps {
 				wrap([$class: 'Xvnc', takeScreenshot: false, useXauthority: true]) {
 					script {
 						def jacocoPrepareAgent = "-Djacoco.destFile=$JACOCO_EXEC_FILE_PATH -Djacoco.append=true org.jacoco:jacoco-maven-plugin:$JACOCO_VERSION:prepare-agent"
-						def sign = github.isPullRequest() ? '' : '-Psign'
+						def sign = github.isPullRequest() ? false : true
 						currentBuild.description = BUILD_KEY
-						sh "mvn -Declipse.p2.mirrors=false -Dmaven.test.failure.ignore=true ${jacocoPrepareAgent} package -P core -P product -P test ${sign} -e -f releng/plugins/org.polarsys.kitalpha.releng.parent/pom.xml"
+						sh "mvn -Dmaven.test.failure.ignore=true ${jacocoPrepareAgent} install  -P core -P product -DBUILD_SIGN=${sign} -e "
 					}
 				}
 			}
@@ -32,7 +35,7 @@ pipeline {
 		stage('Deploy') {
 			when {
 				anyOf {
-					branch pattern : "v\\d\\.x", comparator: "REGEXP";
+					branch pattern : "v\\d\\.\\d\\.x", comparator: "REGEXP";
 					branch pattern : "master.*", comparator: "REGEXP";
 				}
 			}
@@ -40,7 +43,7 @@ pipeline {
 				sshagent ( ['projects-storage.eclipse.org-bot-ssh']) {
 					script {
 						def VERSION = BRANCH_NAME
-						if (VERSION.matches("v\\d\\.x")) {
+						if (VERSION.matches("v\\d\\.\\d\\.x")) {
 							VERSION = VERSION.substring(1)
 						}
 	
@@ -69,21 +72,37 @@ pipeline {
 					}
 				}
 			}
-		}
-		stage('Test Kitalpha') {
+		}	
+
+		stage('Run JUnit Tests') {
 			steps {
 				wrap([$class: 'Xvnc', takeScreenshot: false, useXauthority: true]) {
 					script {
-						def jacocoPrepareAgent = "-Djacoco.destFile=$JACOCO_EXEC_FILE_PATH -Djacoco.append=true org.jacoco:jacoco-maven-plugin:$JACOCO_VERSION:prepare-agent"
-						def sign = github.isPullRequest() ? '' : ''
-						currentBuild.description = BUILD_KEY
-						sh "mvn -Dmaven.test.failure.ignore=true ${jacocoPrepareAgent} verify -P core ${sign} -P product -P test -P rcptt -e -f releng/plugins/org.polarsys.kitalpha.releng.parent/pom.xml"
-						junit allowEmptyResults: true, testResults: '*.xml,**/target/surefire-reports/*.xml'
-						sh "mvn -Djacoco.dataFile=$JACOCO_EXEC_FILE_PATH org.jacoco:jacoco-maven-plugin:$JACOCO_VERSION:report $MVN_QUALITY_PROFILES -e -f releng/plugins/org.polarsys.kitalpha.releng.parent/pom.xml"
+						sh "mvn -Dmaven.test.failure.ignore=true verify -P test -e"
 					}
 				}
 			}
 		}
+		
+		stage('Run RCPTT Tests') {
+			steps {
+				wrap([$class: 'Xvnc', takeScreenshot: false, useXauthority: true]) {
+					script {
+						sh 'mvn -Dmaven.test.failure.ignore=true verify -P rcptt -e'
+
+					}
+				}
+			}		
+		}
+		
+		stage('Publish tests results') {
+			steps {
+				junit allowEmptyResults: true, testResults: '*.xml,**/target/surefire-reports/*.xml'
+				sh "mvn -Djacoco.dataFile=$JACOCO_EXEC_FILE_PATH org.jacoco:jacoco-maven-plugin:$JACOCO_VERSION:report $MVN_QUALITY_PROFILES -e -f pom.xml"
+			}
+		}
+		
+		
 		stage('Perform Sonar analysis') {
 			environment {
 			    PROJECT_NAME = 'kitalpha'
@@ -91,7 +110,7 @@ pipeline {
 			    SONAR_PROJECT_KEY = 'eclipse_kitalpha'
 			}
 			steps {
-				withEnv(['MAVEN_OPTS=-Xmx4g']) {
+				withEnv(['MAVEN_OPTS=-Xmx3g']) {
 					script {
 						def jacocoParameters = "-Dsonar.coverage.jacoco.xmlReportPaths='target/site/jacoco/jacoco.xml,target/surefire-reports/TEST*.xml' -Dsonar.java.coveragePlugin=jacoco -Dsonar.core.codeCoveragePlugin=jacoco "
 						def sonarExclusions = "-Dsonar.exclusions='**/generated/**/*.java,**/src-gen/**/*.java' "
