@@ -23,7 +23,7 @@
 
 	<groupId>org.polarsys</groupId>
 	<artifactId>org.polarsys.kitalpha</artifactId>
-	<version>7.0.1-SNAPSHOT</version>
+	<version>2026.9.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<licenses>
@@ -38,9 +38,9 @@
 	</licenses>
 
 	<properties>
-		<tycho-version>2.7.5</tycho-version>
-		<tycho-extras-version>2.7.5</tycho-extras-version>
-		<platform-version-name>oxygen</platform-version-name>
+		<tycho-version>4.0.13</tycho-version>
+		<tycho-extras-version>4.0.13</tycho-extras-version>
+		<platform-version-name>2025-09</platform-version-name>
 		<tycho.scmUrl>scm:git:https://git.polarsys.org/r/kitalpha/kitalpha</tycho.scmUrl>
 		<tycho.surefire.useUIHarness>false</tycho.surefire.useUIHarness>
 		
@@ -48,9 +48,9 @@
 		<testFiltreClass>**/*TestSuite.java</testFiltreClass>
 		<coverage.skip>false</coverage.skip>
 		
-		<sonar.jacoco.release>0.8.10</sonar.jacoco.release>
+		<sonar.jacoco.release>0.8.6</sonar.jacoco.release>
 		
-		<rcptt-maven-version>2.5.5-MO</rcptt-maven-version>
+		<rcptt-maven-version>2.5.3</rcptt-maven-version>
 		
 		<target-platform-name>kitalpha</target-platform-name>
 	</properties>
@@ -127,6 +127,7 @@
 					</plugin>
 				</plugins>
 			</build>
+
 			<pluginRepositories>
 				<pluginRepository>
 					<id>cbi</id>
@@ -154,33 +155,22 @@
 			<activation>
 				<activeByDefault>false</activeByDefault>
 			</activation>
-			<pluginRepositories>
-					<pluginRepository>
-						<id>rcptt-releases</id>
-						<name>RCPTT Maven repository</name>
-						<url>https://repo.eclipse.org/content/repositories/rcptt-releases/</url>
-					</pluginRepository>
-					<pluginRepository>
-						<id>rcptt-snapshots</id>
-						<name>RCPTT Maven Snapshots repository</name>
-						<snapshots>
-							<updatePolicy>always</updatePolicy>
-						</snapshots>
-						<url>https://repo.eclipse.org/content/repositories/rcptt-snapshots/</url>
-					</pluginRepository>
-			</pluginRepositories>
 			<modules>
-				<module>../org.polarsys.kitalpha.releng.aggregator.tests.rcptt</module>
-			</modules>			
-		</profile>
-		<profile>
-			<id>targetPlatform</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-			<modules>
-				<module>../org.polarsys.kitalpha.releng.targets</module>
-			</modules>	
+				<!-- Test RCPTT -->
+				<!-- module>../../../architecture description/dsl/examples/tests/rcptt/org.polarsys.kitalpha.activityexplorer.test.rcptt</module-->
+				
+				<module>../../../tests/architecture_description/core/org.polarsys.kitalpha.ad.core.rcptt</module>
+				<module>../../../tests/resource_reuse/org.polarsys.kitalpha.resourcereuse.emfscheme.test.rcptt</module>
+				<module>../../../Docgen/business/tests/rcptt/org.polarsys.kitalpha.doc.gen.test.rcptt</module>
+				<module>../../../Docgen/business/tests/rcptt/org.polarsys.kitalpha.doc.gen.business.ecore.test.rcptt</module>
+				<module>../../../detachment/tests/rcptt/org.polarsys.kitalpha.detachment.tests.rcptt</module>
+				<module>../../../tests/architecture_description/dsl/org.polarsys.kitalpha.ad.viewpoint.test.rcptt</module>
+				<module>../../../tests/architecture_description/core/org.polarsys.kitalpha.ad.rcptt</module>
+				<module>../../../common/tests/org.polarsys.kitalpha.common.rcptt</module>
+				<module>../../../emde/tests/org.polarsys.kitalpha.emde.rcptt</module>
+				<module>../../../transposer/tests/plugins/rcptt/org.polarsys.kitalpha.transposer.rcptt.tests</module>
+				 
+			</modules>
 		</profile>
 	</profiles>
 	<build>
@@ -210,12 +200,12 @@
 				<version>${tycho-version}</version>
 				<configuration>
 					<targetDefinitionIncludeSource>force</targetDefinitionIncludeSource>
-					<executionEnvironment>JavaSE-17</executionEnvironment>
+					<executionEnvironment>JavaSE-21</executionEnvironment>
 					<target>
 						<artifact>
 							<groupId>org.polarsys</groupId>
 							<artifactId>org.polarsys.kitalpha</artifactId>
-							<version>7.0.1-SNAPSHOT</version>
+							<version>2026.9.0-SNAPSHOT</version>
 							<classifier>../org.polarsys.kitalpha.releng.targets/${target-platform-name}</classifier>
 						</artifact>
 					</target>
@@ -255,6 +245,44 @@
 							<goal>plugin-source</goal>
 						</goals>
 					</execution>
+					<execution>
+						<id>feature-source</id>
+						<phase>${sourcePhase}</phase>
+						<goals>
+							<goal>feature-source</goal>
+						</goals>
+						<configuration>
+							<excludes>
+								<!-- Exclude all plugins without source -->
+								<plugin id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.commondata.fc" />
+								<plugin id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.fc" />
+								<plugin id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.services.fc" />
+								<plugin id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.ui.fc" />
+								<plugin id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization" />
+								<plugin id="org.polarsys.kitalpha.composer.metamodel.allocation.base.ecore" />
+								<plugin id="org.polarsys.kitalpha.composer.examples.basic.allocation.ecore" />
+								<plugin id="org.polarsys.kitalpha.composer.examples.extended.ecorex.allocation" />
+								<plugin id="org.polarsys.kitalpha.transposer.analyzer.ecore" />
+								<plugin id="org.polarsys.kitalpha.transposer.rules.handler.ecore" />
+								<plugin id="org.polarsys.kitalpha.transposer.transformation.emf.traces.ecore" />
+								<plugin id="org.polarsys.kitalpha.vp.componentsampleframework.vpdsl" />
+								<plugin id="org.polarsys.kitalpha.vp.componentsampleframework.model" />
+								<plugin id="org.polarsys.kitalpha.vp.componentsamplequalityassessment.vpdsl" />
+								<plugin id="org.polarsys.kitalpha.vp.componentsamplesafetypattern.af" />
+								<plugin id="org.polarsys.kitalpha.vp.componentsamplesafetypattern.vpdsl" />
+								<plugin id="org.polarsys.kitalpha.vp.componentsampleperformance.af" />
+								<plugin id="org.polarsys.kitalpha.vp.componentsampleperformance.vpds" />
+								<plugin id="org.polarsys.kitalpha.vp.componentsampleperformance.vpdsl" />
+								<plugin id="org.polarsys.kitalpha.vp.componentsample.vpdsl" />
+								<plugin id="org.polarsys.kitalpha.vp.componentsamplesafety.af" />
+								<plugin id="org.polarsys.kitalpha.vp.componentsamplesafety.vpdsl" />
+								<plugin id="org.polarsys.kitalpha.af.componentsamplearchitectureframework" />
+								<plugin id="org.polarsys.kitalpha.ad.doc" />
+								<plugin id="org.polarsys.kitalpha.emde.doc" />
+								<plugin id="org.polarsys.kitalpha.richtext.widget.doc" />
+							</excludes>
+						</configuration>
+					</execution>
 				</executions>
 			</plugin>
 			<plugin>
@@ -273,76 +301,6 @@
 						<version>${tycho-extras-version}</version>
 					</dependency>
 				</dependencies>
-			</plugin>
-			<plugin>
-				<groupId>org.eclipse.tycho.extras</groupId>
-				<artifactId>tycho-source-feature-plugin</artifactId>
-				<version>${tycho-extras-version}</version>
-				<configuration>
-					<archive>
-						<addMavenDescriptor>false</addMavenDescriptor>
-					</archive>
-					<excludes>
-						<!-- Exlude all plugins without source -->
-						<plugin
-							id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.commondata.fc" />
-						<plugin
-							id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.desc.fc" />
-						<plugin
-							id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.services.fc" />
-						<plugin
-							id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.ui.fc" />
-						<plugin
-							id="org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.style.customization" />
-						<plugin
-							id="org.polarsys.kitalpha.composer.metamodel.allocation.base.ecore" />
-						<plugin
-							id="org.polarsys.kitalpha.composer.examples.basic.allocation.ecore" />
-						<plugin
-							id="org.polarsys.kitalpha.composer.examples.extended.ecorex.allocation" />
-						<plugin
-							id="org.polarsys.kitalpha.transposer.analyzer.ecore" />
-						<plugin
-							id="org.polarsys.kitalpha.transposer.rules.handler.ecore" />
-						<plugin
-							id="org.polarsys.kitalpha.transposer.transformation.emf.traces.ecore" />
-						<plugin
-							id="org.polarsys.kitalpha.vp.componentsampleframework.vpdsl" />
-						<plugin
-							id="org.polarsys.kitalpha.vp.componentsampleframework.model" />
-						<plugin
-							id="org.polarsys.kitalpha.vp.componentsamplequalityassessment.vpdsl" />
-						<plugin
-							id="org.polarsys.kitalpha.vp.componentsamplesafetypattern.af" />
-						<plugin
-							id="org.polarsys.kitalpha.vp.componentsamplesafetypattern.vpdsl" />
-						<plugin
-							id="org.polarsys.kitalpha.vp.componentsampleperformance.af" />
-						<plugin
-							id="org.polarsys.kitalpha.vp.componentsampleperformance.vpds" />
-						<plugin
-							id="org.polarsys.kitalpha.vp.componentsampleperformance.vpdsl" />
-						<plugin id="org.polarsys.kitalpha.vp.componentsample.vpdsl" />
-						<plugin
-							id="org.polarsys.kitalpha.vp.componentsamplesafety.af" />
-						<plugin
-							id="org.polarsys.kitalpha.vp.componentsamplesafety.vpdsl" />
-						<plugin
-							id="org.polarsys.kitalpha.af.componentsamplearchitectureframework" />
-						<plugin id="org.polarsys.kitalpha.ad.doc" />
-						<plugin id="org.polarsys.kitalpha.emde.doc" />
-						<plugin id="org.polarsys.kitalpha.richtext.widget.doc" />
-					</excludes>
-				</configuration>
-				<executions>
-					<execution>
-						<id>source-feature</id>
-						<phase>${sourcePhase}</phase>
-						<goals>
-							<goal>source-feature</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 		</plugins>
 		<pluginManagement>
@@ -414,4 +372,19 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>rcptt-releases</id>
+			<name>RCPTT Maven repository</name>
+			<url>https://repo.eclipse.org/content/repositories/rcptt-releases/</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>rcptt-snapshots</id>
+			<name>RCPTT Maven Snapshots repository</name>
+			<snapshots>
+				<updatePolicy>always</updatePolicy>
+			</snapshots>
+			<url>https://repo.eclipse.org/content/repositories/rcptt-snapshots/</url>
+		</pluginRepository>
+	</pluginRepositories>
 </project>

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2014, 2020 Thales Global Services S.A.S.
+ * Copyright (c) 2014, 2026 Thales Global Services S.A.S.
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License 2.0 which is available at
  * http://www.eclipse.org/legal/epl-2.0
@@ -26,7 +26,6 @@ import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.pde.internal.core.ClasspathComputer;
-import org.eclipse.pde.internal.core.natures.PDE;
 import org.polarsys.kitalpha.ad.viewpoint.dsl.services.project.nature.ViewpointDslProjectNature;
 
 /**
@@ -35,6 +34,8 @@ import org.polarsys.kitalpha.ad.viewpoint.dsl.services.project.nature.ViewpointD
 
 @SuppressWarnings("restriction")
 public class ProjectsManager {
+	
+	private static final String PDE_PLUGIN_NATURE = "org.eclipse.pde.PluginNature";
 	
 	public static ProjectsManager INSTANCE = new ProjectsManager();
 	
@@ -64,7 +65,7 @@ public class ProjectsManager {
 	
 	private static void addNatures(IProject project, IProgressMonitor monitor) throws CoreException {
 		IProjectDescription description = project.getDescription();
-		String[] projectNatures = { ViewpointDslProjectNature.NATURE_ID, JavaCore.NATURE_ID, PDE.PLUGIN_NATURE};
+		String[] projectNatures = { ViewpointDslProjectNature.NATURE_ID, JavaCore.NATURE_ID, PDE_PLUGIN_NATURE};
 		description.setNatureIds(projectNatures);
 		project.setDescription(description, monitor);
 	}
