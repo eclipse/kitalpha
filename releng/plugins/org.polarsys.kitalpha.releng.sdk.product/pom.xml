@@ -40,6 +40,13 @@
 							<goal>materialize-products</goal>
 							<goal>archive-products</goal>
 						</goals>
+						<configuration>
+							<formats>
+								<linux>zip</linux>
+								<macosx>zip</macosx>
+								<windows>zip</windows>
+         			       </formats>
+     					</configuration>
 					</execution>
 				</executions>
 				<configuration>
