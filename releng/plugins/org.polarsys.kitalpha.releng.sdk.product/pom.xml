@@ -18,13 +18,13 @@
 	<name>Kitalpha Product</name>
 	<groupId>org.polarsys</groupId>
 	<artifactId>org.polarsys.kitalpha.releng.sdk.product</artifactId>
-	<version>7.0.1-SNAPSHOT</version>
+	<version>2026.9.0-SNAPSHOT</version>
 	<packaging>eclipse-repository</packaging>
 	
 	<parent>
 		<groupId>org.polarsys</groupId>
 		<artifactId>org.polarsys.kitalpha</artifactId>
-		<version>7.0.1-SNAPSHOT</version>
+		<version>2026.9.0-SNAPSHOT</version>
 		<relativePath>../../../releng/plugins/org.polarsys.kitalpha.releng.parent</relativePath>
 	</parent>
 	<build>
@@ -40,6 +40,13 @@
 							<goal>materialize-products</goal>
 							<goal>archive-products</goal>
 						</goals>
+						<configuration>
+							<formats>
+								<linux>zip</linux>
+								<macosx>zip</macosx>
+								<windows>zip</windows>
+         			       </formats>
+     					</configuration>
 					</execution>
 				</executions>
 				<configuration>
@@ -55,7 +62,6 @@
 			<plugin>
 				<!-- Copy ziped component in zips -->
 				<artifactId>maven-antrun-plugin</artifactId>
-				<version>1.7</version>
 				<executions>
 					<execution>
 						<id>create-dropin-folders</id>
