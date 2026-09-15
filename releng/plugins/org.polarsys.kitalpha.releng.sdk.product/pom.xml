@@ -40,6 +40,13 @@
 							<goal>materialize-products</goal>
 							<goal>archive-products</goal>
 						</goals>
+						<configuration>
+							<formats>
+								<linux>zip</linux>
+								<macosx>zip</macosx>
+								<windows>zip</windows>
+         			       </formats>
+     					</configuration>
 					</execution>
 				</executions>
 				<configuration>
@@ -55,7 +62,6 @@
 			<plugin>
 				<!-- Copy ziped component in zips -->
 				<artifactId>maven-antrun-plugin</artifactId>
-				<version>1.7</version>
 				<executions>
 					<execution>
 						<id>create-dropin-folders</id>
