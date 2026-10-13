@@ -2,6 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %BundleName
 Bundle-SymbolicName: org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.fc;singleton:=true
+Automatic-Module-Name: org.polarsys.kitalpha.ad.viewpoint.dsl.as.diagram.fc
 Bundle-Version: 7.1.0.qualifier
 Bundle-Localization: plugin
 Bundle-Vendor: %BundleVendor

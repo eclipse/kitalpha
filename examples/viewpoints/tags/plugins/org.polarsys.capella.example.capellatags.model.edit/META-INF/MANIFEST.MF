@@ -2,6 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.polarsys.capella.example.capellatags.model.edit;singleton:=true
+Automatic-Module-Name: org.polarsys.capella.example.capellatags.model.edit
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: org.polarsys.capella.example.capellatags.CapellaTags.provider.CapellaTagsEditPlugin$Implementation

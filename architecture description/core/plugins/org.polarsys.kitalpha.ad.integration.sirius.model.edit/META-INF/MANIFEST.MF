@@ -5,6 +5,7 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-Version: 7.1.0.qualifier
 Bundle-SymbolicName: org.polarsys.kitalpha.ad.integration.sirius.model.edit;singleton:=true
+Automatic-Module-Name: org.polarsys.kitalpha.ad.integration.sirius.model.edit
 Bundle-ClassPath: .
 Bundle-Activator: org.polarsys.kitalpha.ad.integration.sirius.model.edit.provider.IntegrationEditPlugin$Implementation
 Bundle-RequiredExecutionEnvironment: JavaSE-17

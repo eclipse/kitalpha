@@ -6,6 +6,7 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-SymbolicName: org.polarsys.kitalpha.ad.metadata.model.editor;singleton:=true
+Automatic-Module-Name: org.polarsys.kitalpha.ad.metadata.model.editor
 Bundle-Activator: org.polarsys.kitalpha.ad.metadata.metadata.presentation.MetadataEditorPlugin$Implementation
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.polarsys.kitalpha.ad.metadata.metadata.presentation

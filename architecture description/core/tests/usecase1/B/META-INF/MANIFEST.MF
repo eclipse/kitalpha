@@ -2,4 +2,5 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: B
 Bundle-SymbolicName: B;singleton:=true
+Automatic-Module-Name: B
 Bundle-Version: 7.1.0.qualifier

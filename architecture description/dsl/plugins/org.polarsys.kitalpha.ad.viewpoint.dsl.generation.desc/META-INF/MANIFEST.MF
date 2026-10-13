@@ -4,6 +4,7 @@ Bundle-Name: %BundleName
 Bundle-Vendor: %BundleVendor
 Bundle-Localization: plugin
 Bundle-SymbolicName: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc;singleton:=true
+Automatic-Module-Name: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc
 Bundle-Version: 7.1.0.qualifier
 Bundle-Activator: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.desc.Activator
 Require-Bundle: org.eclipse.ui,

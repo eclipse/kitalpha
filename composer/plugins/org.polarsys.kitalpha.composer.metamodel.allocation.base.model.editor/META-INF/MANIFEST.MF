@@ -2,6 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.polarsys.kitalpha.composer.metamodel.allocation.base.model.editor;singleton:=true
+Automatic-Module-Name: org.polarsys.kitalpha.composer.metamodel.allocation.base.model.editor
 Bundle-Version: 7.1.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: org.polarsys.kitalpha.composer.metamodel.allocation.base.presentation.AllocationEditorPlugin$Implementation

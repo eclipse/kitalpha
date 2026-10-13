@@ -4,6 +4,7 @@ Bundle-Name: %pluginName
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-SymbolicName: org.polarsys.kitalpha.vp.componentsample.importer;singleton:=true
+Automatic-Module-Name: org.polarsys.kitalpha.vp.componentsample.importer
 Bundle-Version: 7.1.0.qualifier
 Bundle-Activator: org.polarsys.kitalpha.vp.componentsample.importer.Activator
 Require-Bundle: org.eclipse.core.runtime,

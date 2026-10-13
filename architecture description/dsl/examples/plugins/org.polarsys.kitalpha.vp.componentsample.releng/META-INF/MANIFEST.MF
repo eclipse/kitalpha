@@ -2,6 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: ComponentSample Releng
 Bundle-SymbolicName: org.polarsys.kitalpha.vp.componentsample.releng;singleton:=true
+Automatic-Module-Name: org.polarsys.kitalpha.vp.componentsample.releng
 Bundle-Version: 7.1.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-Vendor: www.polarsys.org

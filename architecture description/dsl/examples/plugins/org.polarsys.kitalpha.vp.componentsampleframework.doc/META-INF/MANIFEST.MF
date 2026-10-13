@@ -2,6 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: org.polarsys.kitalpha.vp.componentsampleframework.doc
 Bundle-SymbolicName: org.polarsys.kitalpha.vp.componentsampleframework.doc;singleton:=true
+Automatic-Module-Name: org.polarsys.kitalpha.vp.componentsampleframework.doc
 Bundle-Version: 7.1.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-Vendor: Polarsys
