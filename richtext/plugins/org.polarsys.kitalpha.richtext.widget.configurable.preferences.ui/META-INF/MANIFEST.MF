@@ -9,7 +9,7 @@ Require-Bundle: org.eclipse.ui,
  org.polarsys.kitalpha.richtext.widget.configurable,
  org.polarsys.kitalpha.richtext.widget.configurable.preferences.core
 Bundle-RequiredExecutionEnvironment: JavaSE-17
-Automatic-Module-Name: org.kitalpha.richtext.widget.configurable.preferences.ui
+Automatic-Module-Name: org.polarsys.kitalpha.richtext.widget.configurable.preferences.ui
 Bundle-ActivationPolicy: lazy
 Export-Package: org.polarsys.kitalpha.richtext.widget.configurable.preferences.ui
 Bundle-Vendor: %Bundle-Vendor

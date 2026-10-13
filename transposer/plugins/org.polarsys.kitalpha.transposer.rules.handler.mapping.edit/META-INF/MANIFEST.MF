@@ -2,6 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.polarsys.kitalpha.transposer.rules.handler.mapping.edit;singleton:=true
+Automatic-Module-Name: org.polarsys.kitalpha.transposer.rules.handler.mapping.edit
 Bundle-Version: 7.1.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: org.polarsys.kitalpha.transposer.rules.handler.rules.provider.MappingEditPlugin$Implementation

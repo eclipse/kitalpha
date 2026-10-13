@@ -5,6 +5,7 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-Version: 7.1.0.qualifier
 Bundle-SymbolicName: org.polarsys.kitalpha.ad.services;singleton:=true
+Automatic-Module-Name: org.polarsys.kitalpha.ad.services
 Bundle-Activator: org.polarsys.kitalpha.ad.services.Activator
 Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.kitalpha.ad.common;visibility:=reexport,

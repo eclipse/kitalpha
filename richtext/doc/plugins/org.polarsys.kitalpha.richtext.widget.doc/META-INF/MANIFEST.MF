@@ -2,6 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %Bundle-name
 Bundle-SymbolicName: org.polarsys.kitalpha.richtext.widget.doc;singleton:=true
+Automatic-Module-Name: org.polarsys.kitalpha.richtext.widget.doc
 Bundle-Version: 7.1.0.qualifier
 Bundle-Vendor: %Bundle-vendor
 Require-Bundle: org.eclipse.help

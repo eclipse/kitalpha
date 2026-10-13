@@ -25,4 +25,5 @@ Bundle-ManifestVersion: 2
 Bundle-Activator: org.polarsys.kitalpha.composer.Activator
 Bundle-SymbolicName: org.polarsys.kitalpha.composer.core;singleton:=tr
  ue
+Automatic-Module-Name: org.polarsys.kitalpha.composer.core
 

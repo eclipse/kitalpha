@@ -2,6 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.eclipse.emf.examples.library.editor; singleton:=true
+Automatic-Module-Name: org.eclipse.emf.examples.library.editor
 Bundle-Version: 0.9.0.qualifier
 Bundle-ClassPath: org.eclipse.emf.examples.library.editor.jar
 Bundle-Activator: org.eclipse.emf.examples.extlibrary.presentation.EXTLibraryEditorPlugin$Implementation

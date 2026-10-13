@@ -2,4 +2,5 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Fc
 Bundle-SymbolicName: org.polarsys.capella.example.capellatags.fc;singleton:=true
+Automatic-Module-Name: org.polarsys.capella.example.capellatags.fc
 Bundle-Version: 0.1.0.qualifier

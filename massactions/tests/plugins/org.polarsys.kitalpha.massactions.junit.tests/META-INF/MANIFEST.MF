@@ -19,4 +19,4 @@ Export-Package: TestModel,
  TestModel.impl,
  TestModel.util
 Bundle-ActivationPolicy: lazy
-Automatic-Module-Name: org.polarsys.kitalpha.massactions.tests.ju
+Automatic-Module-Name: org.polarsys.kitalpha.massactions.junit.tests

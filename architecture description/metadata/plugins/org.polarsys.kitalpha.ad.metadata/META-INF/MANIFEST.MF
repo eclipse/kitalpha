@@ -5,6 +5,7 @@ Bundle-Version: 7.1.0.qualifier
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-SymbolicName: org.polarsys.kitalpha.ad.metadata;singleton:=true
+Automatic-Module-Name: org.polarsys.kitalpha.ad.metadata
 Bundle-Activator: org.polarsys.kitalpha.ad.metadata.Activator
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.transaction,

@@ -2,6 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Transposer simplecomponent ecore to VP DSL text
 Bundle-SymbolicName: org.polarsys.kitalpha.transposer.m2m.simplecomponent.ecore;singleton:=true
+Automatic-Module-Name: org.polarsys.kitalpha.transposer.m2m.simplecomponent.ecore
 Bundle-Version: 7.1.0.qualifier
 Bundle-Activator: org.polarsys.kitalpha.transposer.m2t.simplecomponent.ecore.Activator
 Bundle-Vendor: Polarsys

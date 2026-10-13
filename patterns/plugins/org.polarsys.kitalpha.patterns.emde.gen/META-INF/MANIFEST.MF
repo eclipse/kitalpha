@@ -19,5 +19,6 @@ Bundle-Localization: plugin
 Bundle-Name: %pluginName
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: org.polarsys.kitalpha.patterns.emde.gen;singleton:=true
+Automatic-Module-Name: org.polarsys.kitalpha.patterns.emde.gen
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 

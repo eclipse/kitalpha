@@ -2,6 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.polarsys.kitalpha.cadence.core;singleton:=true
+Automatic-Module-Name: org.polarsys.kitalpha.cadence.core
 Bundle-Version: 7.1.0.qualifier
 Bundle-Activator: org.polarsys.kitalpha.cadence.core.Activator
 Bundle-Vendor: %providerName

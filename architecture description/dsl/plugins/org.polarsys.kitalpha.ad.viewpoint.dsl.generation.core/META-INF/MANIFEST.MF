@@ -4,6 +4,7 @@ Bundle-Name: %BundleName
 Bundle-Vendor: %BundleVendor
 Bundle-Localization: plugin
 Bundle-SymbolicName: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core;singleton:=true
+Automatic-Module-Name: org.polarsys.kitalpha.ad.viewpoint.dsl.generation.core
 Bundle-Version: 7.1.0.qualifier
 Require-Bundle: org.eclipse.egf.pattern,
  org.eclipse.egf.pattern.ftask;visibility:=reexport,

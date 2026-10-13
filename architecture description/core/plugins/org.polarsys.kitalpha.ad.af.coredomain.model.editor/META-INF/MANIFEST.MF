@@ -5,6 +5,7 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-Version: 7.1.0.qualifier
 Bundle-SymbolicName: org.polarsys.kitalpha.ad.af.coredomain.model.editor;singleton:=true
+Automatic-Module-Name: org.polarsys.kitalpha.ad.af.coredomain.model.editor
 Bundle-ClassPath: .
 Bundle-Activator: org.polarsys.kitalpha.ad.af.coredomain.af.model.editor.presentation.AfEditorPlugin$Implementation
 Bundle-RequiredExecutionEnvironment: JavaSE-17

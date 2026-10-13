@@ -1,6 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: org.polarsys.kitalpha.vp.componentsamplesafety.vpdsl;singleton:=true
+Automatic-Module-Name: org.polarsys.kitalpha.vp.componentsamplesafety.vpdsl
 Bundle-Name: %Bundle-Name 
 Bundle-Vendor: %Bundle-Vendor 
 Bundle-Version: 7.1.0.qualifier

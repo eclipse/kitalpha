@@ -2,6 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Report Customization Example
 Bundle-SymbolicName: org.polarsys.kitalpha.report.example.customization;singleton:=true
+Automatic-Module-Name: org.polarsys.kitalpha.report.example.customization
 Bundle-Version: 7.1.0.qualifier
 Bundle-Localization: plugin
 Bundle-Activator: org.polarsys.kitalpha.report.example.customization.Activator

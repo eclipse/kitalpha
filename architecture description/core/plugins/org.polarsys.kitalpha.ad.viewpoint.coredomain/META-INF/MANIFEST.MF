@@ -5,6 +5,7 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-Version: 7.1.0.qualifier
 Bundle-SymbolicName: org.polarsys.kitalpha.ad.viewpoint.coredomain;singleton:=true
+Automatic-Module-Name: org.polarsys.kitalpha.ad.viewpoint.coredomain
 Bundle-Activator: org.polarsys.kitalpha.ad.viewpoint.coredomain.Activator
 Require-Bundle: org.eclipse.core.runtime
 Bundle-ActivationPolicy: lazy

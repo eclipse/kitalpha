@@ -2,5 +2,6 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Componentsamplequalityassessment
 Bundle-SymbolicName: org.polarsys.kitalpha.vp.componentsamplequalityassessment;singleton:=true
+Automatic-Module-Name: org.polarsys.kitalpha.vp.componentsamplequalityassessment
 Bundle-Version: 7.1.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-17
