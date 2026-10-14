@@ -154,11 +154,13 @@ location Nebula "https://download.eclipse.org/nebula/updates/release/3.2.0/" {
 	org.eclipse.nebula.widgets.tablecombo.feature.feature.group lazy
 }
 
-location Nattable "https://download.eclipse.org/nattable/releases/2.1.0/repository/" {
+location Nattable "https://download.eclipse.org/nattable/releases/2.6.0/repository/" {
 	org.eclipse.nebula.widgets.nattable.core.feature.feature.group lazy
 	org.eclipse.nebula.widgets.nattable.extension.glazedlists.feature.feature.group lazy
 }
 
-location Orbit "https://download.eclipse.org/tools/orbit/downloads/drops/R20221123021534/repository/"{
+location Orbit "https://download.eclipse.org/tools/orbit/simrel/orbit-aggregation/2025-09" {
 	ca.odell.glazedlists lazy
+	org.eclipse.collections.api lazy
+	org.eclipse.collections.impl lazy
 }
