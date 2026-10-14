@@ -13,7 +13,8 @@ Require-Bundle: org.eclipse.nebula.widgets.nattable.core;visibility:=reexport,
  org.eclipse.sirius;visibility:=reexport,
  org.apache.commons.logging;bundle-version="1.1.1";visibility:=reexport,
  org.apache.commons.lang,
- org.eclipse.collections
+ org.eclipse.collections.api,
+ org.eclipse.collections.impl
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
 Bundle-Localization: plugin
