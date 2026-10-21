@@ -159,9 +159,22 @@ location Nattable "https://download.eclipse.org/nattable/releases/2.6.0/reposito
 	org.eclipse.nebula.widgets.nattable.extension.glazedlists.feature.feature.group lazy
 }
 
-location Orbit "https://download.eclipse.org/tools/orbit/simrel/orbit-aggregation/2025-09" {
+location Orbit-2026-06 "https://download.eclipse.org/tools/orbit/simrel/orbit-aggregation/2026-06" {
 	ca.odell.glazedlists lazy
 	org.apache.aries.spifly.dynamic.bundle lazy
 	org.eclipse.collections.api lazy
 	org.eclipse.collections.impl lazy
+	com.google.guava lazy
+}
+
+location Maven-Jetty-12.1.14 "https://download.eclipse.org/tools/orbit/simrel/maven-jetty/release/12.1.14" {
+	org.eclipse.jetty.ee8.security [12.1.14,12.2.0)
+	org.eclipse.jetty.ee8.server [12.1.14,12.2.0)
+	org.eclipse.jetty.ee8.servlet [12.1.14,12.2.0)
+	org.eclipse.jetty.http [12.1.14,12.2.0)
+	org.eclipse.jetty.io [12.1.14,12.2.0)
+	org.eclipse.jetty.security [12.1.14,12.2.0)
+	org.eclipse.jetty.server [12.1.14,12.2.0)
+	org.eclipse.jetty.session [12.1.14,12.2.0)
+	org.eclipse.jetty.util [12.1.14,12.2.0)
 }
