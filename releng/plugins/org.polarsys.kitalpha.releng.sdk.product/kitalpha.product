@@ -21,7 +21,7 @@ openFile
       <programArgsLin>--launcher.GTK_version
 2
       </programArgsLin>
-      <vmArgs>-Dosgi.requiredJavaVersion=17
+      <vmArgs>-Dosgi.requiredJavaVersion=21
 -Dosgi.dataAreaRequiresExplicitInit=true
 -Declipse.e4.inject.javax.warning=false
 -Declipse.platform.mergeTrust=true
