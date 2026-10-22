@@ -13,7 +13,12 @@ target "kitalpha" with source, requirements
 
 environment JavaSE-21
 
-include "https://download.eclipse.org/sirius/updates/releases/7.5.0/2025-09/targets/modules/gmf-runtime-1.16.tpd"
+include "https://download.eclipse.org/sirius/updates/milestones/7.5.1rc2/2025-09/targets/modules/gmf-runtime-1.16.tpd"
+
+location GMF-Runtime-1.16.7 "https://download.eclipse.org/modeling/gmp/gmf-runtime/updates/releases/R202512020858/" {
+    org.eclipse.gmf.source.feature.group
+    org.eclipse.gmf.runtime.thirdparty.source.feature.group
+}
 
 location Eclipse-2025-09 "https://download.eclipse.org/releases/2025-09/" {
 	org.eclipse.m2e.feature.feature.group lazy
@@ -79,7 +84,7 @@ location acceleo "https://download.eclipse.org/acceleo/updates/releases/3.7/" {
 	org.eclipse.acceleo.doc [3.7.11,3.7.12)
 }
 
-location sirius "https://download.eclipse.org/sirius/updates/releases/7.5.0/2025-09/" {
+location sirius "https://download.eclipse.org/sirius/updates/milestones/7.5.1rc2/2025-09/" {
 	org.eclipse.sirius.doc.feature.feature.group lazy
     org.eclipse.sirius.runtime.source.feature.group lazy
 	org.eclipse.sirius.aql.feature.group lazy
